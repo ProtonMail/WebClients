@@ -49,7 +49,8 @@
 		// Show label for active tab or when dragging over it
 		&[aria-selected='true'],
 		&.hovered {
-			.tag-label {
+			.tag-label,
+			.tag-count {
 				display: block;
 			}
 		}
@@ -70,34 +71,31 @@
 		}
 	}
 
-	// Medium and above (≥ 820px): expand tabs, show labels
+	// Medium and above (≥ 820px): expand tabs, show labels and counts
 	@container (min-width: #{rem(820)}) {
 		.tab-wrapper {
 			flex: 1;
-			max-inline-size: rem(136);
+			inline-size: rem(136);
 		}
 
 		.tab-container {
 			padding-inline: rem(16);
 
-			.tag-label {
+			.tag-label,
+			.tag-count {
 				display: block;
 			}
 		}
 	}
 
-	// Large (≥ 1024px): wider tabs, larger font, show count
+	// Large (≥ 1024px): wider tabs, larger font
 	@container (min-width: #{rem(1024)}) {
 		.tab-wrapper {
 			max-inline-size: rem(200);
 		}
 
 		.tab-container {
-			.tag-count {
-				display: revert;
-			}
-
-			.tag-label-text {
+			.tag-label {
 				font-size: rem(13);
 			}
 		}
