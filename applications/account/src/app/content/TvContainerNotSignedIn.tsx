@@ -14,10 +14,10 @@ import { useFlag } from '@proton/unleash/useFlag';
 import { TvNotSignedIn } from '@proton/vpn/components/tv';
 import { VPN_TV_USER_TIER } from '@proton/vpn/constants/tvUserTier.ts';
 
-import Layout from '../../public/Layout';
-import Main from '../../public/Main';
-import SupportDropdown from '../../public/SupportDropdown';
-import type { Paths } from '../helper';
+import Layout from '../public/Layout';
+import Main from '../public/Main';
+import SupportDropdown from '../public/SupportDropdown';
+import type { Paths } from './helper';
 
 export const TvContainerNotSignedIn = ({ searchParams, paths }: { searchParams: URLSearchParams; paths: Paths }) => {
     const api = useApi();
@@ -42,7 +42,7 @@ export const TvContainerNotSignedIn = ({ searchParams, paths }: { searchParams: 
 
     return (
         <Layout toApp="proton-vpn-settings" hasDecoration hasAppLogos={false} hasFooter={false}>
-            <Main className="flex flex-column gap-4 p-4 w-auto" style={{ 'justify-self': 'center' }}>
+            <Main className="flex flex-column gap-4 p-4 w-auto" style={{ justifySelf: 'center' }}>
                 <TvNotSignedIn searchParams={searchParams} paths={paths} />
                 <SupportDropdown buttonClassName="mx-auto link link-focus" content={c('Link').t`Trouble signing in?`}>
                     <Link
