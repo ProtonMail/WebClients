@@ -1,6 +1,7 @@
 import { type FunctionComponent, Suspense, lazy, useState } from 'react';
 import { Router } from 'react-router-dom';
 
+import { PassScopeApiModal } from '@proton/account/pass/PassScopeApiModal';
 import {
     ApiProvider,
     AuthenticationProvider,
@@ -88,6 +89,7 @@ const PrivateApp = () => {
                                             >
                                                 <ApiProvider api={extraThunkArguments.api}>
                                                     <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                        <PassScopeApiModal api={extraThunkArguments.api} />
                                                         <Suspense fallback={loader}>
                                                             <LazyMainContainer />
                                                         </Suspense>
