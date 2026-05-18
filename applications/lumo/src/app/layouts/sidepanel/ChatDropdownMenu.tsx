@@ -12,9 +12,10 @@ import type { Conversation } from '../../types';
 
 interface Props {
     conversation: Conversation;
+    onOpenChange?: (isOpen: boolean) => void;
 }
 
-const ChatDropdownMenu = ({ conversation }: Props) => {
+const ChatDropdownMenu = ({ conversation, onOpenChange }: Props) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const { handleStarToggle, showFavoritesUpsellModal, favoritesUpsellModalProps, isStarred } = useConversationStar({
@@ -28,7 +29,11 @@ const ChatDropdownMenu = ({ conversation }: Props) => {
         });
 
     const toggleDropdown = () => {
-        setIsDropdownOpen((prev) => !prev);
+        setIsDropdownOpen((prev) => {
+            const next = !prev;
+            onOpenChange?.(next);
+            return next;
+        });
     };
 
     const options: DropdownOptions[] = [
