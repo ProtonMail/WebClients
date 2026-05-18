@@ -40,7 +40,8 @@ export class UploadEventHandler {
         private conflictManager: ConflictManager,
         private sdkTransferActivity: SDKTransferActivity,
         private sdkPhotosTransferActivity: SDKTransferActivity,
-        private cancelFolderChildren: (uploadId: string) => void
+        private cancelFolderChildren: (uploadId: string) => void,
+        private onWakeOrchestrator: () => void = () => {}
     ) {
         this.eventHandlers = {
             'file:queued': (event: Extract<UploadEvent, { type: 'file:queued' }>) => this.handleFileQueued(event),
@@ -113,14 +114,12 @@ export class UploadEventHandler {
         const item = queueStore.getItem(event.uploadId);
 
         this.capacityManager.releasePreparing(event.uploadId);
+        this.onWakeOrchestrator();
 
         if (!item || item.status === UploadStatus.Cancelled) {
             return;
         }
 
-        if ('clearTextExpectedSize' in item) {
-            this.capacityManager.reserveUploading(event.uploadId, item.clearTextExpectedSize);
-        }
         queueStore.updateQueueItems(event.uploadId, { status: UploadStatus.Waiting });
     }
 
