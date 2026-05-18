@@ -71,7 +71,7 @@ export const Tab = ({ category, count, tabState }: Props) => {
             <span
                 title={getLabelFromCategoryId(category.id)}
                 className={clsx(
-                    'tag-label tag-label-text text-sm truncate min-w-0',
+                    'tag-label text-sm truncate min-w-0',
                     tabState === TabState.ACTIVE ? 'color-norm' : 'color-weak'
                 )}
             >
