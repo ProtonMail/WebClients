@@ -91,7 +91,7 @@ export const VPNClientsSection = () => {
     ].map(LinkItem);
 
     const isDesktopDownloadApiEnabled = useFlag('DesktopDownloadApiEnabled');
-    const links = useFetchDownloadLinks();
+    const links = useFetchDownloadLinks(isDesktopDownloadApiEnabled);
 
     return (
         <SettingsSectionWide>
@@ -121,25 +121,17 @@ export const VPNClientsSection = () => {
                     title={c('VPNClient').t`Windows`}
                     icon="brand-windows"
                     link="https://protonvpn.com/download-windows/"
-                    items={
-                        isDesktopDownloadApiEnabled
-                            ? links.windows?.map(({ title, link: href }) => (
-                                  <LinkItem key={title()} text={title()} href={href} />
-                              ))
-                            : undefined
-                    }
+                    items={links.windows?.map(({ title, link: href }) => (
+                        <LinkItem key={title()} text={title()} href={href} />
+                    ))}
                 />
                 <DownloadClientCard
                     title={c('VPNClient').t`macOS`}
                     icon="brand-mac"
                     link="https://protonvpn.com/download-macos/"
-                    items={
-                        isDesktopDownloadApiEnabled
-                            ? links.mac?.map(({ title, link: href }) => (
-                                  <LinkItem key={title()} text={title()} href={href} />
-                              ))
-                            : undefined
-                    }
+                    items={links.mac?.map(({ title, link: href }) => (
+                        <LinkItem key={title()} text={title()} href={href} />
+                    ))}
                 />
                 <DownloadClientCard
                     title={c('VPNClient').t`GNU/Linux`}
