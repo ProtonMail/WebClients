@@ -154,12 +154,13 @@ export class UploadManager {
         const filesArray = isDataTransferList(filesOrDataTransfer)
             ? await processDroppedItems(filesOrDataTransfer)
             : Array.from(filesOrDataTransfer);
+
         const hasStructure = hasFolderStructure(filesArray);
 
         if (isForPhotos) {
-            for (const file of filesArray) {
-                const abortController = new AbortController();
-                const uploadId = queueStore.addItem({
+            const abortControllers = filesArray.map(() => new AbortController());
+            const uploadIds = queueStore.addItems(
+                filesArray.map((file) => ({
                     type: NodeType.Photo,
                     file,
                     name: file.name,
@@ -168,18 +169,18 @@ export class UploadManager {
                     status: UploadStatus.Pending,
                     batchId,
                     isForPhotos,
-                });
-                this.orchestrator.emitFileQueued(uploadId, true, abortController);
-            }
+                }))
+            );
+            uploadIds.forEach((uploadId, i) => this.orchestrator.emitFileQueued(uploadId, true, abortControllers[i]));
         } else {
             if (!parentUid) {
                 // Should never happen
                 throw new Error('parentUid is mendatory for non-photos upload, you probably called wrong endpoint');
             }
             if (!hasStructure) {
-                for (const file of filesArray) {
-                    const abortController = new AbortController();
-                    const uploadId = queueStore.addItem({
+                const abortControllers = filesArray.map(() => new AbortController());
+                const uploadIds = queueStore.addItems(
+                    filesArray.map((file) => ({
                         type: NodeType.File,
                         file,
                         parentUid,
@@ -188,15 +189,17 @@ export class UploadManager {
                         clearTextExpectedSize: file.size,
                         status: UploadStatus.Pending,
                         batchId,
-                    });
-                    this.orchestrator.emitFileQueued(uploadId, false, abortController);
-                }
+                    }))
+                );
+                uploadIds.forEach((uploadId, i) =>
+                    this.orchestrator.emitFileQueued(uploadId, false, abortControllers[i])
+                );
             } else {
                 const { filesWithStructure, standaloneFiles } = this.separateFilesAndFolders(filesArray);
 
-                for (const file of standaloneFiles) {
-                    const abortController = new AbortController();
-                    const uploadId = queueStore.addItem({
+                const standaloneAbortControllers = standaloneFiles.map(() => new AbortController());
+                const standaloneUploadIds = queueStore.addItems(
+                    standaloneFiles.map((file) => ({
                         type: NodeType.File,
                         file,
                         parentUid,
@@ -205,9 +208,11 @@ export class UploadManager {
                         clearTextExpectedSize: file.size,
                         status: UploadStatus.Pending,
                         batchId,
-                    });
-                    this.orchestrator.emitFileQueued(uploadId, false, abortController);
-                }
+                    }))
+                );
+                standaloneUploadIds.forEach((uploadId, i) =>
+                    this.orchestrator.emitFileQueued(uploadId, false, standaloneAbortControllers[i])
+                );
 
                 const rootFolders = this.groupFilesByRootFolder(filesWithStructure);
                 for (const rootFiles of rootFolders.values()) {
