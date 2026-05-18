@@ -1,4 +1,5 @@
 import { updateServerTime } from '@protontech/crypto/serverTime';
+
 import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
 import { authStore } from '@proton/pass/lib/auth/store';
 import {
@@ -20,6 +21,7 @@ import {
     getApiError,
     getApiErrorMessage,
     getIsOfflineError,
+    getIsTimeoutError,
     getIsUnreachableError,
 } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getClientID } from '@proton/shared/lib/apps/helper';
@@ -86,7 +88,7 @@ export const createApi = ({
         const pending = state.get('pendingCount') + 1;
         state.set('pendingCount', pending);
 
-        if (threshold && pending > threshold) {
+        if (threshold && pending > threshold && !options.prioritize) {
             const trigger = awaiter<void>();
             state.get('queued').push(trigger);
             await trigger;
@@ -120,9 +122,12 @@ export const createApi = ({
                     state.set('unreachable', false);
                     state.set('online', true);
 
-                    /** Defer ONLINE: concurrent requests may still fail. Countdown capped at
-                     * threshold (if set) so high-volume polling doesn't delay resolution. */
-                    if (broadcast) state.set('pendingConnectivityChange', Math.min(pendingCount, threshold));
+                    /** Deferred ONLINE broadcast: arm a one-shot countdown so we don't publish
+                     * recovery on a single lucky success while concurrent requests may still
+                     * fail. Each settled request (success or failure) drains the counter via
+                     * `.finally`. ONLINE fires when it hits 0. Subsequent concurrent successes
+                     * can't re-arm. Cap at `threshold` to avoid long resolution. */
+                    if (broadcast) state.set('ticksUntilOnline', Math.min(pendingCount, threshold));
                 }
 
                 return Promise.resolve(
@@ -148,9 +153,11 @@ export const createApi = ({
                 const silent = getSilenced(options, code);
 
                 const networkError = code === PassErrorCode.SERVICE_NETWORK_ERROR;
+                const timedOut = getIsTimeoutError(e);
+                const offline = getIsOfflineError(e);
                 const missingScope = code === PassErrorCode.MISSING_SCOPE;
                 const restricted = isAccessRestricted(code, options.url);
-                const online = !(getIsOfflineError(e) || networkError);
+                const online = !(offline || timedOut || networkError);
                 const unreachable = getIsUnreachableError(e);
                 const sessionLocked = e.name === 'LockedSession';
                 const sessionInactive = e.name === 'InactiveSession' || code === PassErrorCode.SRP_ERROR;
@@ -164,9 +171,10 @@ export const createApi = ({
                 state.set('online', online);
 
                 if (broadcast) {
-                    /** Broadcast OFFLINE/DOWNTIME immediately and discard any deferred ONLINE.
-                     * A failure supersedes a concurrent success from a healthier response. */
-                    state.set('pendingConnectivityChange', 0);
+                    /** Failure supersedes any deferred ONLINE: reset the countdown and
+                     * publish OFFLINE/DOWNTIME immediately. A concurrent success can
+                     * still re-arm on its next tick if state flips back. */
+                    state.set('ticksUntilOnline', 0);
                     pubsub.publish({ type: 'connectivity', online, unreachable });
                 }
 
@@ -183,10 +191,15 @@ export const createApi = ({
                 state.get('queued').shift()?.resolve();
 
                 if (sideEffects && !aborted) {
-                    const pending = state.get('pendingConnectivityChange');
+                    /** Drain the deferred-ONLINE countdown. Each settled request contributes
+                     * one tick. Publish ONLINE on the final tick. Hardcoded `online: true,
+                     * unreachable: false` is invariant here: the only path that can arm the
+                     * counter is the success-block flip to ONLINE, and any failure mid-drain
+                     * would have reset it to 0 via the catch path. */
+                    const pending = state.get('ticksUntilOnline');
                     if (pending > 0) {
                         const next = pending - 1;
-                        state.set('pendingConnectivityChange', next);
+                        state.set('ticksUntilOnline', next);
                         if (next === 0) pubsub.publish({ type: 'connectivity', online: true, unreachable: false });
                     }
                 }

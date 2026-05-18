@@ -116,6 +116,7 @@ export enum WorkerMessageType {
     CLIPBOARD_OFFSCREEN_WRITE = 'CLIPBOARD_OFFSCREEN_WRITE',
 
     CONNECTIVITY = 'CONNECTIVITY',
+    CONNECTIVITY_SYNC = 'CONNECTIVITY_SYNC',
 
     DEBUG = 'DEBUG',
     DESKTOP_UNLOCK_SECRET = 'DESKTOP_UNLOCK_SECRET',
@@ -216,11 +217,12 @@ export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQU
 export type AutosuggestAliasMessage = { type: WorkerMessageType.AUTOSUGGEST_ALIAS };
 export type B2BEventMessage = WithPayload<WorkerMessageType.B2B_EVENT, { event: B2BEvent }>;
 
-export type ClientInitMessage = WithPayload<WorkerMessageType.CLIENT_INIT, { tabId: TabId }>;
+export type ClientInitMessage = WithPayload<WorkerMessageType.CLIENT_INIT, { tabId: TabId; online: boolean }>;
 export type ClipboardReadMessage = { type: WorkerMessageType.CLIPBOARD_OFFSCREEN_READ };
 export type ClipboardWriteMessage = WithPayload<WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE, ClipboardWriteDTO>;
 export type ClipboardAutoClearMessage = WithPayload<WorkerMessageType.CLIPBOARD_AUTOCLEAR, ClipboardAutoClearDTO>;
 export type ConnectivityStatusMessage = WithPayload<WorkerMessageType.CONNECTIVITY, { status: ConnectivityStatus }>;
+export type ConnectivitySyncMessage = WithPayload<WorkerMessageType.CONNECTIVITY_SYNC, { online: boolean }>;
 
 export type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string }>;
 export type DesktopUnlockSecretMessage = { type: WorkerMessageType.DESKTOP_UNLOCK_SECRET };
@@ -321,6 +323,7 @@ export type WorkerMessage =
     | ClipboardReadMessage
     | ClipboardWriteMessage
     | ConnectivityStatusMessage
+    | ConnectivitySyncMessage
     | DebugMessage
     | DesktopUnlockSecretMessage
     | EndpointInitMessage

@@ -82,7 +82,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
     const boot = withContext<(payload: Parameters<typeof bootIntent>[0]) => void>((ctx, payload) => {
         void alarms.clearAutoResume();
         void alarms.resetAutoResume();
-        ctx.service.store.dispatch(bootIntent(payload));
+        if (!ctx.getState().booted) ctx.service.store.dispatch(bootIntent(payload));
     });
 
     const authService = createCoreAuthService({
@@ -100,16 +100,9 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             if (clientAuthorized(ctx.status)) return true;
             if (clientUnauthorized(ctx.status)) return false;
 
-            /** Refresh connectivity before attempting a session resume so downstream
-             * decisions (offline fallback in `onResumeStart` and `onSessionFailure`)
-             * operate on a current status. Skipped on the early-return paths above
-             * to avoid an unnecessary `/ping` when no resume will run. */
-            await ctx.service.connectivity.check();
-
             /* If worker is logged out (unauthorized or locked) during an init call,
              * this means the login or resumeSession calls failed - we can safely early
-             * return as the authentication store will have been configured. Waits for
-             * connectivity check in-order to prompt for offline unlock. */
+             * return as the authentication store will have been configured. */
             if (or(clientDesktopLocked, clientSessionLocked)(ctx.status)) return false;
 
             return ctx.service.auth.resumeSession(undefined, options);
@@ -133,7 +126,8 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         }),
 
         onLoginComplete: withContext(async (ctx, _) => {
-            ctx.setStatus(AppStatus.AUTHORIZED);
+            if (ctx.getState().booted) ctx.setStatus(AppStatus.READY);
+            else ctx.setStatus(AppStatus.AUTHORIZED);
             boot({ offline: false });
             await ctx.service.storage.local.removeItem('forceLock');
             await ctx.service.storage.session.setItems(authStore.getSession());
@@ -344,7 +338,12 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                 ctx.setBooted(false);
             }
 
+            /** Retry-chain bookkeeping, three outcomes based on failure context:
+             * - retryable: alarm-driven attempt → advance the chain via `scheduleAutoResume`.
+             * - unlocked: user just provided credentials → deliberate gesture should reset.
+             * - default: non-retryable → burn a slot via `registerResumeFailure`. */
             if (options.retryable) await alarms.scheduleAutoResume({ extend: false });
+            else if (options.unlocked) await alarms.resetAutoResume();
             else await alarms.registerResumeFailure();
         }),
 
@@ -519,9 +518,15 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             const localID = authStore.getLocalID();
             const status = ctx.getState().status;
 
-            logger.info(`[AuthService] auto-resume alarm fired [${status}]`);
+            logger.debug(`[AuthService] auto-resume alarm fired [${status}]`);
 
             if (!connectivity.online) {
+                /** Connectivity state may be stale after SW idle-shutdown or a long
+                 * gap between alarms. Probe before gating so the switch and the
+                 * downstream resume operate on trusted status. `check` also rewinds
+                 * the connectivity retry backoff so a recovery is caught sooner. */
+                await connectivity.check();
+
                 /** DOWNTIME: burn a slot so the chain advances and eventually exhausts.
                  * Extending here would keep the SW alive forever with no progress.
                  * OFFLINE: stop. The connectivity subscriber resumes on reconnect.
@@ -553,7 +558,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                 /** Password-locked with popup opened: avoid triggering a resume
                  * while the user is trying to offline-unlock. Always extend as
                  * this isn't a real attempt. The the cap stays intact for real failures. */
-                logger.info('[AuthService] deferred auto resume [popup-opened]');
+                logger.debug('[AuthService] deferred auto resume [popup-opened]');
                 return alarms.scheduleAutoResume({ extend: true });
             }
 
@@ -562,7 +567,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                 return authService.init({ forceLock, retryable: true, silence: true });
             }
 
-            logger.info(`[AuthService] dropped auto resume [${status}]`);
+            logger.debug(`[AuthService] dropped auto resume [${status}]`);
         });
 
         /** Bootstrap the auto-resume alarm chain for offline-booted clients.
@@ -570,8 +575,9 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
          * `onSessionFailure`, no alarm is pending after it. This handler
          * schedules the first retry on the next ONLINE transition. From there
          * `onSessionFailure` keeps the chain going with backoff. */
-        ctx.service.connectivity.subscribe((status) => {
-            const online = status === ConnectivityStatus.ONLINE;
+        ctx.service.connectivity.subscribe((event) => {
+            if (event.type !== 'status') return;
+            const online = event.status === ConnectivityStatus.ONLINE;
             const appStatus = ctx.getState().status;
             const shouldResume = online && or(clientOffline, clientPasswordLocked, clientErrored)(appStatus);
             if (shouldResume) void alarms.scheduleAutoResume({ extend: false });

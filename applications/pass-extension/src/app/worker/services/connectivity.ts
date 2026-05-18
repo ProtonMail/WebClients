@@ -25,8 +25,15 @@ export const createConnectivityService = (): ConnectivityService => {
         );
     };
 
-    service.subscribe(broadcast);
-    void service.init();
+    /** Only trust the popup as a valid source of navigator online/offline changes. */
+    WorkerMessageBroker.registerMessage(WorkerMessageType.CONNECTIVITY_SYNC, ({ sender, payload }) => {
+        if (sender !== 'popup') return true;
+        service.syncNavigatorOnline(payload.online);
+        return true;
+    });
+
+    service.subscribe((event) => event.type === 'status' && broadcast(event.status));
+    service.init();
 
     return service;
 };
