@@ -1,3 +1,4 @@
+import metrics from '@proton/metrics';
 import type { Entry } from '@proton/proton-foundation-search';
 
 import type { MainThreadBridge } from '../mainThread/MainThreadBridge';
@@ -40,6 +41,17 @@ export class SharedWorkerAPI {
 
     constructor() {
         this.clientsCoordinator.subscribeClientChanged(this.handleActiveClientChanged.bind(this));
+    }
+
+    /**
+     * Configure the worker's @proton/metrics singleton so emitted metrics reach the backend.
+     * The SharedWorker runs in its own JS realm with a separate metrics singleton that the
+     * main-thread bootstrap never reaches; without these headers every POST is unauthenticated
+     * and the request queue jails itself after a few failures.
+     */
+    setMetricsHeaders({ uid, clientID, appVersion }: { uid: string; clientID: string; appVersion: string }): void {
+        metrics.setAuthHeaders(uid);
+        metrics.setVersionHeaders(clientID, appVersion);
     }
 
     private async getDb(userId: string) {
