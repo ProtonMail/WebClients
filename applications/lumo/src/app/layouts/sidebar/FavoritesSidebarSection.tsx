@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { IcStar } from '@proton/icons/icons/IcStar';
 
 import { useConversation } from '../../providers/ConversationProvider';
-import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectStarredConversationsSorted } from '../../redux/selectors';
@@ -21,9 +20,8 @@ export const FavoritesSidebarSection = ({ showText, onItemClick }: FavoritesSide
     const favorites = useLumoSelector(selectStarredConversationsSorted, shallowEqual);
     const { conversationId } = useConversation();
     const isGuest = useIsGuest();
-    const { isGhostChatMode } = useGhostChat();
 
-    if (favorites.length === 0 || isGuest || isGhostChatMode) {
+    if (favorites.length === 0 || isGuest) {
         return null;
     }
 
