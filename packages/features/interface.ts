@@ -76,7 +76,6 @@ export enum FeatureCode {
     NewsletterSubscriptionSpotlight = 'NewsletterSubscriptionSpotlight',
 
     // Flags for the category views
-    CategoryViewBadgeSpotlight = 'CategoryViewBadgeSpotlight',
     CategoryViewEditReminderSpotlight = 'CategoryViewEditReminderSpotlight',
     CategoryViewB2COnboardingViewFlags = 'CategoryViewB2COnboardingViewFlags',
     CategoryViewB2BOnboardingViewFlags = 'CategoryViewB2BOnboardingViewFlags',
