@@ -20,14 +20,12 @@ import {
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import {
     APPS,
-    type APP_NAMES,
     BRAND_NAME,
     DARK_WEB_MONITORING_NAME,
     PRODUCT_NAMES,
     PROTON_SENTINEL_NAME,
 } from '@proton/shared/lib/constants';
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
-import type { Address, GroupMembershipReturn, OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 import { UserType } from '@proton/shared/lib/interfaces';
 import {
     getIsBYOEAccount,
@@ -38,14 +36,8 @@ import {
 import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 import { isSubscriptionRenewEnabled } from '@proton/shared/lib/subscription/helpers';
 import { getHasStorageSplit } from '@proton/shared/lib/user/storage';
-import type {
-    DriveDashboardVariant,
-    MailDashboardVariant,
-    MeetDashboardVariant,
-    PassDashboardVariant,
-    VPNDashboardVariant,
-} from '@proton/unleash/UnleashFeatureFlagsVariants';
 
+import type { AccountRouterParams } from '../../content/router-params';
 import { recoveryIds } from './recoveryIds';
 
 function getV2DashboardSections(canPay: boolean, planIsManagedExternally: boolean, hasPendingInvitations: boolean) {
@@ -337,69 +329,35 @@ const getRecoverySettings = ({
 export const getAccountAppRoutes = ({
     app,
     user,
-    isSessionRecoveryAvailable,
     subscription,
+    organization,
     isDataRecoveryAvailable,
-    isMnemonicAvailable,
-    isRecoveryFileAvailable,
+    isSessionRecoveryAvailable,
     isReferralProgramEnabled,
     recoveryNotification,
-    organization,
     showVPNDashboard,
     showVPNDashboardVariant,
     showThemeSelection,
     assistantKillSwitch,
     memberships,
-    isZoomIntegrationEnabled,
-    isProtonMeetIntegrationEnabled,
     isB2BTrial,
     referralInfo,
-    canDisplayNonPrivateEmailPhone,
     showMailDashboard,
     showPassDashboard,
     showDriveDashboard,
     showMeetDashboard,
     hasPendingInvitations,
-    isOLESEnabled,
-    isRecoverySettingsRedesignEnabled,
-}: {
-    app: APP_NAMES;
-    user: UserModel;
-    addresses?: Address[];
-    subscription: MaybeFreeSubscription;
-    isDataRecoveryAvailable: boolean;
-    isMnemonicAvailable: boolean;
-    isRecoveryFileAvailable: boolean;
-    isSessionRecoveryAvailable: boolean;
-    isReferralProgramEnabled: boolean;
-    recoveryNotification?: ThemeColor;
-    organization?: OrganizationExtended;
-    showVPNDashboard: boolean;
-    showVPNDashboardVariant: VPNDashboardVariant | 'disabled' | undefined;
-    showThemeSelection: boolean;
-    assistantKillSwitch: boolean;
-    memberships: GroupMembershipReturn[] | undefined;
-    isZoomIntegrationEnabled: boolean;
-    isProtonMeetIntegrationEnabled: boolean;
-    isB2BTrial: boolean;
-    referralInfo: {
-        refereeRewardAmount: string;
-        referrerRewardAmount: string;
-        maxRewardAmount: string;
-    };
-    canDisplayNonPrivateEmailPhone: boolean;
-    showMailDashboard: boolean;
-    showMailDashboardVariant: MailDashboardVariant | 'disabled' | undefined;
-    showPassDashboard: boolean;
-    showPassDashboardVariant: PassDashboardVariant | 'disabled' | undefined;
-    showDriveDashboard: boolean;
-    showDriveDashboardVariant: DriveDashboardVariant | 'disabled' | undefined;
-    showMeetDashboard: boolean;
-    showMeetDashboardVariant: MeetDashboardVariant | 'disabled' | undefined;
-    hasPendingInvitations: boolean;
-    isOLESEnabled: boolean;
-    isRecoverySettingsRedesignEnabled: boolean;
-}) => {
+    flags,
+}: AccountRouterParams) => {
+    const {
+        isZoomIntegrationEnabled = false,
+        isProtonMeetIntegrationEnabled = false,
+        canDisplayNonPrivateEmailPhone = false,
+        isOLESEnabled = false,
+        isRecoverySettingsRedesignEnabled = false,
+        isMnemonicAvailable = false,
+        isRecoveryFileAvailable = false,
+    } = flags;
     const { isFree, canPay, isPaid, isMember, isAdmin, Type, hasPaidMail } = user;
     const credits = referralInfo.maxRewardAmount;
 

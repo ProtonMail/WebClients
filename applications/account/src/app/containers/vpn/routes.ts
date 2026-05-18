@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import type { SectionConfig } from '@proton/components';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
-export const getVpnAppRoutes = ({ app }: { app: APP_NAMES }) => {
+import type { GeneralRouterParams } from '../../content/router-params';
+
+export const getVpnAppRoutes = ({ app }: GeneralRouterParams) => {
     return <const>{
         available: app === APPS.PROTONVPN_SETTINGS,
         header: VPN_APP_NAME,
