@@ -71,7 +71,9 @@ const BaseRecoveryKitAction = ({
             <div className="flex-1">
                 <div className="text-lg text-bold">{c('RecoveryPhrase: Info').t`Download PDF`}</div>
                 <div className="color-weak text-sm md:text-rg">{RECOVERY_KIT_FILE_NAME}</div>
-                <div className="color-weak text-xs md:text-sm">{size}</div>
+                <div className="color-weak text-xs md:text-sm" data-testid="recovery-kit-size">
+                    {size}
+                </div>
             </div>
             <Button
                 color={hasSentPayload ? 'weak' : 'norm'}
