@@ -29,6 +29,7 @@ interface Props {
     model: ContactPublicKeyModelWithApiKeySource;
     setModel: Dispatch<SetStateAction<ContactPublicKeyModelWithApiKeySource | undefined>>;
     supportV6Keys: boolean;
+    setWarnActiveSignerNotPinned: Dispatch<SetStateAction<boolean>>;
 }
 
 type LocalKeyModel = {
@@ -100,7 +101,10 @@ const getKeyInternalUsageInfo = ({
     return { isActiveSigner, isUsedForSendingFallback };
 };
 
-const ContactKeysTable = ({ model, setModel, supportV6Keys }: Props) => {
+// translator: Please translate as in the sentence "this key is the active signer"
+export const activeSignerText = c('Key badge').t`Active Signer`;
+
+const ContactKeysTable = ({ model, setModel, supportV6Keys, setWarnActiveSignerNotPinned }: Props) => {
     const [keys, setKeys] = useState<LocalKeyModel[]>([]);
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -111,8 +115,6 @@ const ContactKeysTable = ({ model, setModel, supportV6Keys }: Props) => {
     const primaryText = c('Key badge').t`Primary`;
     // translator: Please translate as in the sentence "this key is the fallback one"
     const fallbackText = c('Key badge').t`Fallback`;
-    // translator: Please translate as in the sentence "this key is the active signer one"
-    const activeSignerText = c('Key badge').t`Active Signer`;
     // translator: Please translate as in the sentence "this key is obsolete"
     const obsoleteText = c('Key badge').t`Obsolete`;
     // translator: Please translate as in the sentence "this key is compromised"
@@ -221,6 +223,7 @@ const ContactKeysTable = ({ model, setModel, supportV6Keys }: Props) => {
             })
         );
         setKeys(parsedKeys);
+        setWarnActiveSignerNotPinned(parsedKeys.some(({ isActiveSigner, isTrusted }) => isActiveSigner && !isTrusted));
     };
 
     useEffect(() => {
