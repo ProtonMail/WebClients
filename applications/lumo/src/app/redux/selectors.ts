@@ -1,5 +1,7 @@
 import type { Selector } from 'react-redux';
 
+import { createSelector } from '@reduxjs/toolkit';
+
 import type { UserState } from '@proton/account';
 
 import type { LocalId, RemoteId, ResourceType } from '../remote/types';
@@ -131,3 +133,48 @@ export const selectIsFileExcluded = (messageId: string, filename: string) => (st
     const filter = state.contextFilters.filters.find((filter: any) => filter.messageId === messageId);
     return filter ? filter.excludedFiles.includes(filename) : false;
 };
+
+/*
+ * Memoized selectors — use with shallowEqual in useLumoSelector to avoid
+ * re-renders when the derived data hasn't meaningfully changed.
+ */
+
+// Sorted array of starred (non-ghost) conversations. Stable reference when
+// the starred subset is unchanged (e.g. during non-starred conversation streaming).
+export const selectStarredConversationsSorted = createSelector([selectConversations], (conversations) =>
+    Object.values(conversations)
+        .filter((c: Conversation) => !c.ghost && c.starred === true)
+        .sort(sortByDate('desc'))
+);
+
+// Conversation count per spaceId. Does NOT change when only titles stream —
+// use with shallowEqual so project lists skip re-renders during streaming.
+export const selectConversationCountsBySpaceId = createSelector([selectConversations], (conversations) => {
+    const counts: Record<string, number> = {};
+    Object.values(conversations).forEach((c: Conversation) => {
+        if (c.spaceId) {
+            counts[c.spaceId] = (counts[c.spaceId] ?? 0) + 1;
+        }
+    });
+    return counts;
+});
+
+// Attachment count per spaceId (excluding errored/processing attachments).
+export const selectAttachmentCountsBySpaceId = createSelector([selectAttachments], (attachments) => {
+    const counts: Record<string, number> = {};
+    Object.values(attachments).forEach((a: Attachment) => {
+        if (a.spaceId && !a.error && !a.processing) {
+            counts[a.spaceId] = (counts[a.spaceId] ?? 0) + 1;
+        }
+    });
+    return counts;
+});
+
+// Pre-filtered, sorted base list for ChatHistory. Excludes ghost and starred
+// conversations (starred appear in FavoritesSidebarSection). Use with shallowEqual —
+// streaming a starred conversation's title no longer re-renders ChatHistory at all.
+export const selectHistoryConversationsSorted = createSelector([selectConversations], (conversations) =>
+    Object.values(conversations)
+        .filter((c: Conversation) => !c.ghost && !c.starred)
+        .sort(sortByDate<Conversation>('desc', 'updatedAt'))
+);
