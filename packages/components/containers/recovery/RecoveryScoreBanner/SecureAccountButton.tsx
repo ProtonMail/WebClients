@@ -7,6 +7,7 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import { useRecoverySettingsTelemetry } from '../recoverySettingsTelemetry';
 import { type RecoveryScoreTone, SCORE_TONE_CLASS } from './recoveryScoreState';
 
 interface Props extends Omit<ButtonLikeProps<typeof AppLink>, 'as' | 'to'> {
@@ -15,6 +16,7 @@ interface Props extends Omit<ButtonLikeProps<typeof AppLink>, 'as' | 'to'> {
 
 const SecureAccountButton = ({ scoreTone, className, ...restButtonProps }: Props) => {
     const app = getAppFromPathnameSafe(window.location.pathname);
+    const { sendAccountSafetyReviewClick } = useRecoverySettingsTelemetry();
     const securityCheckupParams = new URLSearchParams({
         back: encodeURIComponent(window.location.href),
         source: 'recovery_settings',
@@ -34,6 +36,7 @@ const SecureAccountButton = ({ scoreTone, className, ...restButtonProps }: Props
                 scoreTone && `recovery-score-accent-${SCORE_TONE_CLASS[scoreTone]}`,
                 className
             )}
+            onClick={() => sendAccountSafetyReviewClick()}
         >
             {c('Action').t`Secure account`}
         </ButtonLike>
