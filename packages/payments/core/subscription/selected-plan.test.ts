@@ -414,6 +414,57 @@ describe('SelectedPlan', () => {
         expect(updatedSelectedPlan).toBe(selectedPlan);
     });
 
+    it('should drop foreign lumo addons that do not match the primary plan', () => {
+        // Sentry regression: DUO subscription carrying a foreign lumo addon (e.g. left over
+        // from a BUNDLE -> DUO migration). capLumos must drop the foreign addon instead of
+        // looping with setLumoCount, which only mutated the DUO-matching addon name.
+        const planIDs = {
+            [PLANS.DUO]: 1,
+            [ADDON_NAMES.LUMO_BUNDLE]: 3,
+        };
+        const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+
+        expect(selectedPlan.getTotalUsers()).toBe(2);
+        expect(selectedPlan.getTotalLumos()).toBe(3);
+
+        const normalized = SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+
+        expect(normalized.getTotalLumos()).toBeLessThanOrEqual(normalized.getTotalUsers());
+        expect(normalized.planIDs).toEqual({ [PLANS.DUO]: 1 });
+    });
+
+    it('should drop foreign scribe addons that do not match the primary plan', () => {
+        const planIDs = {
+            [PLANS.MAIL_PRO]: 1,
+            [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO]: 5,
+        };
+        const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+
+        expect(selectedPlan.getTotalUsers()).toBe(1);
+        expect(selectedPlan.getTotalScribes()).toBe(5);
+
+        const normalized = SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+
+        expect(normalized.getTotalScribes()).toBeLessThanOrEqual(normalized.getTotalUsers());
+        expect(normalized.planIDs).toEqual({ [PLANS.MAIL_PRO]: 1 });
+    });
+
+    it('should drop foreign meet addons that do not match the primary plan', () => {
+        const planIDs = {
+            [PLANS.MAIL_PRO]: 1,
+            [ADDON_NAMES.MEET_BUNDLE_PRO]: 5,
+        };
+        const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+
+        expect(selectedPlan.getTotalUsers()).toBe(1);
+        expect(selectedPlan.getTotalMeets()).toBe(5);
+
+        const normalized = SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+
+        expect(normalized.getTotalMeets()).toBeLessThanOrEqual(normalized.getTotalUsers());
+        expect(normalized.planIDs).toEqual({ [PLANS.MAIL_PRO]: 1 });
+    });
+
     describe('Free subscription', () => {
         it.each([FREE_SUBSCRIPTION, null, undefined])('should return default cycle and currency', (subscription) => {
             const selectedPlan = SelectedPlan.createFromSubscription(subscription, PLANS_MAP);
