@@ -20,8 +20,8 @@ export const useGridSort = <T extends IdentifiableItem>(items: T[], onReorder: O
     const [order, setOrder] = useState<string[]>(base);
     const [active, setActive] = useState<string | null>(null);
 
-    const onDragStart = useCallback<DragStartEvent>(
-        (event) => {
+    const onDragStart = useCallback(
+        (event: DragStartEvent) => {
             const { source } = event.operation;
             snapshot.current = order;
             setActive(source?.id?.toString() ?? null);
@@ -29,8 +29,8 @@ export const useGridSort = <T extends IdentifiableItem>(items: T[], onReorder: O
         [order]
     );
 
-    const onDragEnd = useCallback<DragEndEvent>(
-        (event) => {
+    const onDragEnd = useCallback(
+        (event: DragEndEvent) => {
             if (event.canceled) {
                 setOrder(snapshot.current);
                 setActive(null);
@@ -54,7 +54,7 @@ export const useGridSort = <T extends IdentifiableItem>(items: T[], onReorder: O
         [onReorder]
     );
 
-    const onDragOver = useCallback<DragOverEvent>((event) => {
+    const onDragOver = useCallback((event: DragOverEvent) => {
         // Disable default reordering by OptimisticSortingPlugin,
         // manual sorting is handled below.
         event.preventDefault();
