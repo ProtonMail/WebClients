@@ -3,13 +3,14 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms/Href/Href';
 import type { SidebarConfig } from '@proton/components';
 import { getMailRouteTitles } from '@proton/components/containers/account/constants/settingsRouteTitles';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { ADDRESS_TYPE, APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Address, OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { getIsExternalAccount } from '@proton/shared/lib/keys';
+
+import type { OrganizationRouterParams } from '../../content/router-params';
 
 export const getHasPmMeAddress = (addresses?: Address[]) => {
     return !!addresses?.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
@@ -32,16 +33,9 @@ export const getMailAppRoutes = ({
     user,
     addresses,
     organization,
-    isCryptoPostQuantumOptInEnabled,
-    isCategoryViewEnabled,
-}: {
-    app: APP_NAMES;
-    user: UserModel;
-    addresses?: Address[];
-    organization?: OrganizationExtended;
-    isCryptoPostQuantumOptInEnabled?: boolean;
-    isCategoryViewEnabled?: boolean;
-}): SidebarConfig => {
+    flags,
+}: OrganizationRouterParams): SidebarConfig => {
+    const { isCryptoPostQuantumOptInEnabled = false, isCategoryViewEnabled = false } = flags;
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const learnMoreLink = (
         <Href key="learn" href={getKnowledgeBaseUrl('/using-folders-labels')}>{c('Link').t`Learn more`}</Href>

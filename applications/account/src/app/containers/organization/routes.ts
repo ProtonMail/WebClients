@@ -18,12 +18,10 @@ import {
     planSupportsSSO,
     upsellPlanSSO,
 } from '@proton/payments';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { hasMeet, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
 import { appSupportsSSO } from '@proton/shared/lib/apps/apps';
 import {
     APPS,
-    type APP_NAMES,
     BRAND_NAME,
     ORGANIZATION_STATE,
     ORGANIZATION_TWOFA_SETTING,
@@ -31,29 +29,9 @@ import {
 } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
-import type { Group, OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 import { getOrganizationDenomination, isOrganizationPassFamily } from '@proton/shared/lib/organization/helper';
 
-interface Props {
-    app: APP_NAMES;
-    user: UserModel;
-    organization?: OrganizationExtended;
-    subscription: MaybeFreeSubscription;
-    canDisplayB2BLogsVPN: boolean;
-    isUserGroupsFeatureEnabled: boolean;
-    isUserGroupsNoCustomDomainEnabled: boolean;
-    isUserGroupsPassBusinessEnabled: boolean;
-    groups: Group[] | undefined;
-    isScribeEnabled?: boolean;
-    isZoomIntegrationEnabled: boolean;
-    isProtonMeetIntegrationEnabled: boolean;
-    isSharedServerFeatureEnabled: boolean;
-    isSsoForPbsEnabled: boolean;
-    isRetentionPoliciesEnabled: boolean;
-    isGroupOwner: boolean | null;
-    isOLESEnabled?: boolean;
-    isRolesAndPermissionsEnabled?: boolean;
-}
+import type { OrganizationRouterParams } from '../../content/router-params';
 
 const videoConferenceValidApplications = new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]);
 const scribeValidApplications = new Set<string>([APPS.PROTONMAIL]);
@@ -63,21 +41,24 @@ export const getOrganizationAppRoutes = ({
     user,
     organization,
     subscription,
-    canDisplayB2BLogsVPN,
-    isUserGroupsFeatureEnabled,
-    isUserGroupsNoCustomDomainEnabled,
-    isUserGroupsPassBusinessEnabled,
     groups,
-    isScribeEnabled,
-    isZoomIntegrationEnabled,
-    isProtonMeetIntegrationEnabled,
-    isSharedServerFeatureEnabled,
-    isSsoForPbsEnabled,
-    isRetentionPoliciesEnabled,
     isGroupOwner,
-    isOLESEnabled,
-    isRolesAndPermissionsEnabled,
-}: Props): SidebarConfig => {
+    flags,
+}: OrganizationRouterParams): SidebarConfig => {
+    const {
+        canDisplayB2BLogsVPN = false,
+        isUserGroupsFeatureEnabled = false,
+        isUserGroupsNoCustomDomainEnabled = false,
+        isUserGroupsPassBusinessEnabled = false,
+        isScribeEnabled = false,
+        isZoomIntegrationEnabled = false,
+        isProtonMeetIntegrationEnabled = false,
+        isSharedServerFeatureEnabled = false,
+        isSsoForPbsEnabled = false,
+        isRetentionPoliciesEnabled = false,
+        isOLESEnabled = false,
+        isRolesAndPermissionsEnabled = false,
+    } = flags;
     const isAdmin = user.isAdmin && user.isSelf;
 
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);

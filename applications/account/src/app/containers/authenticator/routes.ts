@@ -3,7 +3,10 @@ import { c } from 'ttag';
 import type { SectionConfig } from '@proton/components';
 import { AUTHENTICATOR_APP_NAME } from '@proton/shared/lib/constants';
 
-export const getAuthenticatorAppRoutes = ({ isAuthenticatorAvailable }: { isAuthenticatorAvailable: boolean }) => {
+import type { GeneralRouterParams } from '../../content/router-params';
+
+export const getAuthenticatorAppRoutes = ({ flags }: GeneralRouterParams) => {
+    const { isAuthenticatorAvailable = false } = flags;
     return <const>{
         header: AUTHENTICATOR_APP_NAME,
         available: isAuthenticatorAvailable,
