@@ -1258,6 +1258,9 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Back to sign-in": [
+        "Voltar para o início de sessão"
       ]
     },
     "action": {
@@ -3858,6 +3861,29 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereço do Gmail",
         "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereços do Gmail"
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Bloqueie a capacidade do Google de criar um perfil seu. O Gmail não pode ver o que você faz no ${ MAIL_APP_NAME }"
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Para conectar um endereço Gmail diferente, remova os endereços extras do Gmail que estão sendo encaminhados para ${ BRAND_NAME }."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Lamentamos sua saída. Se tiver um momento, gostaríamos muito de saber o motivo do cancelamento. Seu feedback nos ajuda a fazer a ${ BRAND_NAME } ainda melhor para todos."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Você já possui um endereço do Gmail encaminhando para o ${ MAIL_APP_NAME }. Conecte-o abaixo para enviar e receber mensagens diretamente no ${ MAIL_APP_NAME }."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Você está encaminhando ${ numAddressesOrSync } endereço do Gmail para o ${ MAIL_APP_NAME }.",
+        "Você está encaminhando ${ numAddressesOrSync } endereços do Gmail para o ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Você conectou ${ MAX_SYNC_PAID_USER } endereço do Gmail. Para adicionar outro, primeiro desconecte uma das contas já conectadas.",
+        "Você conectou ${ MAX_SYNC_PAID_USER } endereços do Gmail. Para adicionar outro, primeiro desconecte uma das contas já conectadas."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Você conectou um endereço de conta externa no ${ MAIL_APP_NAME }."
       ]
     },
     "description": {
@@ -9059,6 +9085,9 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Você receberá a recompensa em créditos 1 mês após seu amigo(a) assinar um plano anual e 2 meses após ele (ela) assinar um plano mensal."
       ]
     },
     "info": {
@@ -17359,6 +17388,12 @@
       ],
       "Your subscriptions": [
         "Suas assinaturas"
+      ],
+      "Reverse charge not supported": [
+        "Carregamento reverso não suportado"
+      ],
+      "Something went wrong": [
+        "Algo deu errado"
       ]
     },
     "Title for payment methods table": {
@@ -18232,6 +18267,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Após uma verificação bem sucedida, não remova este registro TXT, pois ele é necessário para confirmar que você continua sendo proprietário do domínio."
+      ]
+    },
+    "Easy switch": {
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Você está encaminhando e-mails de uma conta externa para ${ MAIL_APP_NAME }."
       ]
     }
   }

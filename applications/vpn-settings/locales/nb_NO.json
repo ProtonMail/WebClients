@@ -1258,6 +1258,12 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Back to sign-in": [
+        "Tilbake til pålogging"
+      ],
+      "Save & exit": [
+        "Lagre og avslutt"
       ]
     },
     "action": {
@@ -1513,6 +1519,12 @@
       ],
       "User admin:": [
         "Brukeradministrator:"
+      ],
+      "2 new admin roles": [
+        "2 nye administratorroller"
+      ],
+      "New: Control admin access for many users at once": [
+        "Nytt: kontroller administratortilgang for mange brukere samtidig"
       ]
     },
     "AdminRole_Info": {
@@ -2182,6 +2194,144 @@
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Din nåværende plan tillater opptil ${ maxMembers } bruker. For å migrere flere brukere, legg til flere plasser i abonnementet ditt.",
         "Din nåværende plan tillater opptil ${ maxMembers } brukere. For å migrere flere brukere, legg til flere plasser i abonnementet ditt."
+      ],
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } av ${ providerUsers.length }"
+      ],
+      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "**p=none**: ikke sett uautoriserte e-poster i karantene eller avvis e-poster. Vanligvis bruker folk bare denne retningslinjen til å feilsøke eller teste."
+      ],
+      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "**p=quarantine**: ber mottakerplattformene om å merke de uautoriserte e-postene som søppelpost eller sette dem i karantene."
+      ],
+      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
+        "**p=reject**: ber mottakerplattformene om å avvise de uautoriserte e-postene."
+      ],
+      "Account disconnected": [
+        "Konto frakoblet"
+      ],
+      "Activation link": [
+        "Aktiveringskobling"
+      ],
+      "Activation link copied to clipboard": [
+        "Aktiveringskobling kopiert til utklippstavlen"
+      ],
+      "Add domain": [
+        "Legg til domene"
+      ],
+      "Add users": [
+        "Legg til brukere"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresse er allerede i bruk av en bruker på utsiden av din organisasjon. Kontakt kundestøtte for å løse dette."
+      ],
+      "An unknown error occurred": [
+        "En ukjent feil har oppstått"
+      ],
+      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Er du sikker på at du vil fortsette? Brukere som ikke har gjort krav på kontoen sin før overføringen er fullført, må be om en tilbakestilling av passordet fra administratoren for ${ BRAND_NAME }-organisasjonen."
+      ],
+      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
+        "Så snart kontoene er opprettet, kan du dele aktiveringskoblingen slik at brukerne kan gjøre krav på ${ BRAND_NAME }-kontoen sin."
+      ],
+      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
+        "Velg hva du vil migrere. Valget ditt gjelder for alle brukere. Migreringen starter etter at du har bestemt deg for hvilke brukere du vil kopiere."
+      ],
+      "Configure domain": [
+        "Konfigurer domene"
+      ],
+      "Copy activation link": [
+        "Kopier aktiveringskoblingen"
+      ],
+      "Creating accounts": [
+        "Oppretter kontoer"
+      ],
+      "DKIM records": [
+        "DKIM-poster"
+      ],
+      "Domain added": [
+        "Domene lagt til"
+      ],
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
+        "Sørg for at e-postene dine havner i innboksen, ikke i søppelpostmappen. Hvis du oppdaterer SPF, kan brukere sende fra ${ BRAND_NAME } og Google samtidig under migreringen."
+      ],
+      "Errors": [
+        "Feil"
+      ],
+      "Finalize migration": [
+        "Fullfør migreringen"
+      ],
+      "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
+        "Når migreringen er fullført, blir alle e-postene dine sendt direkte til ${ BRAND_NAME }. Brukerne vil slutte å motta e-poster på Google-kontoene sine, og dataene vil ikke lenger bli synkronisert mellom ${ BRAND_NAME } og Google."
+      ],
+      "Find out what can be migrated.": [
+        "Finn ut hva som kan migreres."
+      ],
+      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
+        "Vent litt, vi setter opp brukerkontoer og begynner snart å importere brukerdata."
+      ],
+      "Import errors for ${ user.AdminSetName }": [
+        "Importfeil for ${ user.AdminSetName }"
+      ],
+      "Loading your organization data": [
+        "Laster inn organisasjonsdataene dine"
+      ],
+      "Migrated": [
+        "Migrert"
+      ],
+      "Missing organization public key": [
+        "Mangler offentlig nøkkel for organisasjonen"
+      ],
+      "No error details available. Please contact customer support for more information": [
+        "Ingen feilinformasjon tilgjengelig. Ta kontakt med kundestøtte for mer informasjon."
+      ],
+      "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
+        "Når brukerne har gjort krav på ${ BRAND_NAME }-kontoen sin, fullfør migreringen."
+      ],
+      "Please select at least one product to migrate": [
+        "Velg minst ett produkt du vil migrere"
+      ],
+      "Refresh": [
+        "Oppdater"
+      ],
+      "Select users to migrate": [
+        "Velg brukere som skal migreres"
+      ],
+      "Set up secure sending (DKIM)": [
+        "Konfigurer sikker sending (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Konfigurer sikker sending (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Konfigurer sikker sending (SPF)"
+      ],
+      "Some accounts are not claimed": [
+        "Noen kontoer er ikke gjort krav på"
+      ],
+      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
+        "Standardinnstillingen er ingen. For å forbedre sikkerheten anbefaler vi imidlertid at du setter denne verdien til p=quarantine."
+      ],
+      "Update records for receiving": [
+        "Oppdater poster for mottak"
+      ],
+      "User needs to activate their account through the activation link shown above": [
+        "Brukeren må aktivere kontoen sin via aktiveringskoblingen som vises ovenfor."
+      ],
+      "User status": [
+        "Brukerstatus"
+      ],
+      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
+        "Brukere kan bruke ${ BRAND_NAME } eller Google samtidig under migreringen."
+      ],
+      "We're still checking the MX records with your domain provider.": [
+        "Vi sjekker fortsatt MX-postene med domeneleverandøren din."
+      ],
+      "You": [
+        "Du"
+      ],
+      "You're all set!": [
+        "Nå er du klar!"
       ]
     },
     "Browser": {
@@ -4383,6 +4533,9 @@
       ],
       "Your recovery contact has helped you recover data.": [
         "Kontakten din for gjenoppretting har hjulpet deg med å gjenopprette data."
+      ],
+      "Start recovery": [
+        "Start gjenoppretting"
       ]
     },
     "Empty group name": {
@@ -9162,6 +9315,10 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "Creating gateway with ${ total } server": [
+        "Oppretter gateway med ${ total } server",
+        "Oppretter gateway med ${ total } servere"
       ]
     },
     "info": {
@@ -10283,6 +10440,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Host name": [
+        "Vertsnavn"
       ]
     },
     "label": {
@@ -10334,6 +10494,12 @@
       ],
       "Use default value": [
         "Bruk standardverdi"
+      ],
+      "Type": [
+        "Type"
+      ],
+      "Valid ${ group.name } record found": [
+        "Gyldig ${ group.name }-post funnet"
       ]
     },
     "Label for new member": {
@@ -12209,6 +12375,12 @@
       ],
       "Product updates": [
         "Produktoppdateringer"
+      ],
+      "${ BRAND_NAME } for Business communications": [
+        "${ BRAND_NAME } for forretningskommunikasjon"
+      ],
+      "Email communications": [
+        "E-postkommunikasjon"
       ]
     },
     "Notification": {
@@ -14866,6 +15038,24 @@
       ],
       "Click a user's name to manage their role and permissions.": [
         "Klikk på en brukers navn for å administrere rollen og tillatelsene deres."
+      ],
+      "Assign delegated roles": [
+        "Tildel delegerte roller"
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Klikk på Rediger for å tilordne roller til denne gruppen og administrere medlemstilgang automatisk."
+      ],
+      "New: Roles and permissions tab": [
+        "Nytt: roller og tillatelser-fanen"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Åpne denne fanen for å gi spesifikke tillatelser uten full administratortilgang."
+      ],
+      "User roles available": [
+        "Tilgjengelige brukerroller"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Du kan nå tilordne roller til individuelle brukere fra denne fanen."
       ]
     },
     "sso": {
@@ -15968,6 +16158,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Du vil motta brukernavnet ditt via SMS innen et minutt hvis du har oppgitt et gyldig telefonnummer for gjenoppretting."
+      ],
+      "Activation link copied to clipboard": [
+        "Aktiveringskobling kopiert til utklippstavlen"
       ]
     },
     "Success message": {
@@ -17461,6 +17654,9 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Something went wrong": [
+        "Noe gikk galt"
       ]
     },
     "Title for payment methods table": {
@@ -18006,6 +18202,12 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
+      ],
+      "(via ${ groupName })": [
+        "(via ${ groupName })"
+      ],
+      "(via group)": [
+        "(via gruppe)"
       ]
     },
     "Users table: badge": {
