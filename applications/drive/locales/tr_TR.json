@@ -7982,34 +7982,34 @@
         "${ downloads } indirilme"
       ],
       "Created ${ created }": [
-        "${ created } tarihinde oluşturuldu"
+        "Oluşturulma: ${ created }"
       ],
       "Deleted ${ deleted }": [
         "${ deleted } silindi"
       ],
       "Device #${ position }": [
-        "Cihaz #${ position }"
+        "Aygıt no ${ position }"
       ],
       "Device: ${ name }": [
-        "Cihaz: ${ name }"
+        "Aygıt: ${ name }"
       ],
       "Expired on ${ formatted }": [
-        "${ formatted } tarihinde sona erdi"
+        "${ formatted } zamanında geçersiz oldu"
       ],
       "Expires ${ formatted }": [
-        "Geçerlilik süresi ${ formatted }"
+        "Geçerlilik sonu: ${ formatted }"
       ],
       "Item #${ position }": [
-        "Öğe #${ position }"
+        "Öge no ${ position }"
       ],
       "Location: ${ item.location }": [
         "Konum: ${ item.location }"
       ],
       "Modified ${ modified }": [
-        "${ modified } tarihinde değiştirildi"
+        "Değiştirilme: ${ modified }"
       ],
       "Never expires": [
-        "Asla sona ermez"
+        "Asla geçersiz olmaz"
       ],
       "Not selected": [
         "Seçilmemiş"
@@ -8027,7 +8027,7 @@
         "Herkese açık bağlantı ile paylaşıldı"
       ],
       "Shared on ${ sharedOn }": [
-        "${ sharedOn } tarihinde paylaşıldı"
+        "${ sharedOn } zamanında paylaşıldı"
       ]
     },
     "Label for contact group color": {
