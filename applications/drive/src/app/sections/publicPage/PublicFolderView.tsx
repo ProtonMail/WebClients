@@ -297,7 +297,7 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
     };
 
     return (
-        <UploadDragDrop className="h-full flex flex-column" disabled={!isEditor} onDrop={handleDrop}>
+        <UploadDragDrop className="h-full flex flex-column flex-nowrap" disabled={!isEditor} onDrop={handleDrop}>
             <input multiple type="file" ref={fileInputRef} className="hidden" onChange={handleFileChange} />
             <input multiple type="file" ref={folderInputRef} className="hidden" onChange={handleFolderChange} />
             <PublicFolderItemContextMenu
