@@ -2,6 +2,7 @@ import type { useFormik } from 'formik';
 
 import type {
     Domain,
+    EnhancedGroup,
     EnhancedMember,
     Group,
     GroupFlags,
@@ -45,7 +46,7 @@ export interface DomainSuggestion {
 export interface GroupsManagementReturn {
     groups: Group[];
     members: EnhancedMember[];
-    selectedGroup: Group | undefined;
+    selectedGroup: EnhancedGroup | undefined;
     uiState: GROUPS_STATE;
     form: ReturnType<typeof useFormik<GroupFormData>>;
     loadingGroupMembers: boolean;
