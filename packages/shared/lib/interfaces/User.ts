@@ -1,5 +1,6 @@
 import type { Currency } from '@proton/payments';
 
+import type { Product } from '../ProductEnum';
 import type { AccessType } from '../authentication/accessType';
 import type { USER_ROLES } from '../constants';
 import type { Key } from './Key';
@@ -61,6 +62,11 @@ export enum UNPAID_STATE {
     AVAILABLE = 1,
     OVERDUE = 2,
 }
+
+type ForbiddenProduct = Extract<
+    Product,
+    'Mail' | 'Calendar' | 'VPN' | 'Pass' | 'Drive' | 'Wallet' | 'Lumo' | 'Meet' | 'Authenticator'
+>;
 
 export interface User {
     ID: string;
@@ -124,6 +130,7 @@ export interface User {
     LockedFlags?: number;
     Billed?: boolean;
     HasMultipleSubscriptions: boolean;
+    ForbiddenProducts: ForbiddenProduct[];
 }
 
 export function isBilledUser(user: User | undefined): boolean {

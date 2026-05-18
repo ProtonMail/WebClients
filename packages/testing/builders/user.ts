@@ -83,6 +83,7 @@ export const buildUser = (value?: Partial<UserModel>): UserModel => {
         accessType: AccessType.Self,
         AccountRecovery: null,
         HasMultipleSubscriptions: false,
+        ForbiddenProducts: [],
         ...value,
     };
 };

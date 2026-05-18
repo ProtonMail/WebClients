@@ -17,6 +17,7 @@ import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getShouldProcessLinkClick } from '@proton/shared/lib/helpers/dom';
 import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
+import type { User } from '@proton/shared/lib/interfaces';
 import { getIsBYOEAccount, getIsExternalAccount } from '@proton/shared/lib/keys';
 import {
     hasPaidDrive,
@@ -65,12 +66,10 @@ interface App {
     isNew?: boolean;
     style: CSSProperties;
     priority: number;
+    isForbidden?: boolean;
 }
 
-export const getExploreApps = ({ ...options }: Omit<Parameters<typeof getAvailableApps>[0], 'context'>) => {
-    const user = options.user;
-    const availableApps = getAvailableApps({ ...options, context: 'dropdown' });
-
+const getAppConfigs = ({ user }: { user?: User }) => {
     const priorities = { default: 100, higher: 1, lower: 1000 };
 
     const getMailPriority = () => {
@@ -247,9 +246,28 @@ export const getExploreApps = ({ ...options }: Omit<Parameters<typeof getAvailab
                 '--shadow-color-3': 'rgb(240 139 86 / 0.3)',
             } as CSSProperties,
         },
-    ]
+    ];
+};
+
+export const getExploreApps = (options: Omit<Parameters<typeof getAvailableApps>[0], 'context'>): App[] => {
+    const user = options.user;
+    const availableApps = getAvailableApps({ ...options, context: 'dropdown' });
+
+    return getAppConfigs({ user })
         .sort((a, b) => a.priority - b.priority)
         .filter(({ name }) => availableApps.includes(name));
+};
+
+export const getForbiddenAppConfigs = ({
+    user,
+    forbiddenApps,
+}: {
+    user: User;
+    forbiddenApps: Set<APP_NAMES>;
+}): App[] => {
+    return getAppConfigs({ user })
+        .filter(({ name }) => forbiddenApps.has(name))
+        .map((config) => ({ ...config, style: { filter: 'grayscale(100%)', opacity: 0.5 }, isForbidden: true }));
 };
 
 interface Props {
@@ -366,13 +384,14 @@ const ExploreAppsListV2 = ({ onExplore, apps, subscription, localID }: Props) =>
                     const isNew = app.isNew;
                     const href = getExploreAppHref('/', appName, localID);
                     const settingsHref = getSettingsHref(appName, localID);
+                    const isForbidden = app.isForbidden;
                     return (
                         <li className="explore-apps-list-item" key={appName} style={{ '--animation-order': index }}>
                             <a
                                 href={href}
                                 data-testid={appName.replace('proton-', 'explore-')}
                                 onClick={(event) => {
-                                    if (loading) {
+                                    if (loading || isForbidden) {
                                         event.preventDefault();
                                         return;
                                     }
@@ -387,18 +406,25 @@ const ExploreAppsListV2 = ({ onExplore, apps, subscription, localID }: Props) =>
                                     }
                                     // Otherwise let link (e.g. new tab) clicks fall through
                                 }}
-                                onContextMenu={(e) => onContextMenu(e, href, settingsHref, appName)}
+                                onContextMenu={(e) => {
+                                    if (isForbidden) {
+                                        e.preventDefault();
+                                        return;
+                                    }
+                                    onContextMenu(e, href, settingsHref, appName);
+                                }}
                                 aria-label={goToPlanOrAppNameText(getAppName(appName))}
                                 className={clsx(
                                     `explore-app explore-app-${appName}`,
                                     'flex flex-column items-center flex-nowrap gap-1 text-no-decoration text-center',
-                                    showLoader && 'pointer-events-none'
+                                    showLoader && 'pointer-events-none',
+                                    isForbidden && 'explore-app-inaccessible cursor-not-allowed'
                                 )}
                                 style={app.style}
                             >
                                 <div className="relative">
                                     <AppIcon appName={appName}>
-                                        {appName === APPS.PROTONLUMO ? (
+                                        {appName === APPS.PROTONLUMO && !isForbidden ? (
                                             <LumoLogoAnimated
                                                 size={12}
                                                 variant="glyph-only"
@@ -416,7 +442,7 @@ const ExploreAppsListV2 = ({ onExplore, apps, subscription, localID }: Props) =>
                                             />
                                         )}
                                     </AppIcon>
-                                    {isNew && (
+                                    {isNew && !isForbidden && (
                                         <span className="explore-app-new-badge absolute text-xs rounded-full px-2 py-1 text-semibold">
                                             {c('Info').t`New`}
                                         </span>
@@ -432,13 +458,13 @@ const ExploreAppsListV2 = ({ onExplore, apps, subscription, localID }: Props) =>
                                     )}
                                 </div>
                                 <div className="relative flex justify-center">
-                                    {paid && planName ? (
+                                    {paid && planName && !isForbidden ? (
                                         <span className="explore-app-plan-badge color-primary text-semibold text-sm rounded-full px-2 py-0.5">
                                             {planName}
                                         </span>
                                     ) : undefined}
                                     <div className="explore-app-description hidden md:block text-sm color-weak">
-                                        {description}
+                                        {isForbidden ? c('Info').t`${name} is not available` : description}
                                     </div>
                                 </div>
                             </a>
