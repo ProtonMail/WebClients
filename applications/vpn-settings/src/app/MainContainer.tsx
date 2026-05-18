@@ -5,6 +5,7 @@ import { Redirect, Switch, useHistory, useLocation } from 'react-router-dom';
 
 import OrganizationSettingsRouter from 'proton-account/src/app/containers/organization/OrganizationSettingsRouter';
 import { getOrganizationAppRoutes } from 'proton-account/src/app/containers/organization/routes';
+import type { Flags } from 'proton-account/src/app/content/router-params';
 import { c } from 'ttag';
 
 import { useGroups } from '@proton/account/groups/hooks';
@@ -150,23 +151,29 @@ const MainContainer: FunctionComponent = () => {
         recoveryNotificationColor: recoveryNotification?.color,
     });
 
+    const flags: Flags = {
+        canDisplayB2BLogsVPN,
+        isUserGroupsFeatureEnabled,
+        isUserGroupsNoCustomDomainEnabled,
+        isUserGroupsPassBusinessEnabled,
+        isZoomIntegrationEnabled,
+        isProtonMeetIntegrationEnabled,
+        isSharedServerFeatureEnabled,
+        isSsoForPbsEnabled,
+        isRetentionPoliciesEnabled,
+        isRolesAndPermissionsEnabled,
+    };
+
     const organizationAppRoutes = getOrganizationAppRoutes({
         app: APPS.PROTONVPN_SETTINGS,
         organization,
         user,
         subscription,
-        isUserGroupsFeatureEnabled,
-        canDisplayB2BLogsVPN,
         groups,
-        isZoomIntegrationEnabled,
-        isSharedServerFeatureEnabled,
-        isSsoForPbsEnabled,
-        isRetentionPoliciesEnabled,
-        isProtonMeetIntegrationEnabled,
-        isUserGroupsNoCustomDomainEnabled,
-        isUserGroupsPassBusinessEnabled,
+        isB2BDrive: false,
+        isB2BTrial,
         isGroupOwner,
-        isRolesAndPermissionsEnabled,
+        flags,
     });
 
     const canEnableChat = useCanEnableChat(user);

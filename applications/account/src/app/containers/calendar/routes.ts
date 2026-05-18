@@ -3,31 +3,18 @@ import { c } from 'ttag';
 import type { SectionConfig, SidebarConfig } from '@proton/components';
 import { getIsB2BAudienceFromPlan } from '@proton/payments';
 import { CALENDAR_SETTINGS_ROUTE, CALENDAR_SETTINGS_SECTION_ID } from '@proton/shared/lib/calendar/constants';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
-import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 
-interface Props {
-    app: APP_NAMES;
-    user: UserModel;
-    isZoomIntegrationEnabled: boolean;
-    isProtonMeetIntegrationEnabled: boolean;
-    organization?: Organization;
-}
+import type { OrganizationRouterParams } from '../../content/router-params';
 
 /**
  * Calendar config is coupled to CalendarSidebar.
  * Any additional section must also be added to CalendarSidebar.
  */
-export const getCalendarAppRoutes = ({
-    app,
-    user,
-    organization,
-    isZoomIntegrationEnabled,
-    isProtonMeetIntegrationEnabled,
-}: Props): SidebarConfig => {
+export const getCalendarAppRoutes = ({ app, user, organization, flags }: OrganizationRouterParams): SidebarConfig => {
+    const { isZoomIntegrationEnabled = false, isProtonMeetIntegrationEnabled = false } = flags;
     const isB2BAudience = getIsB2BAudienceFromPlan(organization?.PlanName);
     const isFamilyOrg = !!organization && getOrganizationDenomination(organization) === 'familyGroup';
     const isVisionary = isOrganizationVisionary(organization);

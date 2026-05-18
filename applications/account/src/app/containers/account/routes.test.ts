@@ -3,6 +3,7 @@ import { Renew, hasCancellablePlan, isCancellableOnlyViaSupport } from '@proton/
 import { APPS } from '@proton/shared/lib/constants';
 import { buildUser } from '@proton/testing/builders/user';
 
+import type { AccountRouterParams, Flags } from '../../content/router-params';
 import { getAccountAppRoutes } from './routes';
 
 jest.mock('@proton/payments', () => ({
@@ -19,40 +20,62 @@ jest.mock('@proton/payments', () => ({
 const mockedHasCancellablePlan = jest.mocked(hasCancellablePlan);
 const mockedIsCancellableOnlyViaSupport = jest.mocked(isCancellableOnlyViaSupport);
 
-function buildDefaultParams(overrides?: Record<string, any>) {
+const defaultFlags: Flags = {
+    canDisplayB2BLogsPass: false,
+    canDisplayB2BLogsVPN: false,
+    canDisplayPassReports: false,
+    canB2BHidePhotos: false,
+    canDisplayNonPrivateEmailPhone: false,
+    isUserGroupsFeatureEnabled: false,
+    isUserGroupsNoCustomDomainEnabled: false,
+    isUserGroupsPassBusinessEnabled: false,
+    isScribeEnabled: false,
+    isZoomIntegrationEnabled: false,
+    isProtonMeetIntegrationEnabled: false,
+    isSharedServerFeatureEnabled: false,
+    isCryptoPostQuantumOptInEnabled: false,
+    isSsoForPbsEnabled: false,
+    isRetentionPoliciesEnabled: false,
+    isAuthenticatorAvailable: false,
+    isOLESEnabled: false,
+    isCategoryViewEnabled: false,
+    isRecoveryContactsEnabled: false,
+    isRolesAndPermissionsEnabled: false,
+    isRecoverySettingsRedesignEnabled: false,
+};
+
+type Overrides = Omit<Partial<AccountRouterParams>, 'flags'> & { flags?: Partial<Flags> };
+
+function buildDefaultParams({ flags: flagOverrides, ...rest }: Overrides = {}): AccountRouterParams {
     return {
         app: APPS.PROTONMAIL,
         user: buildUser(),
         subscription: { Renew: Renew.Enabled } as Subscription,
         isDataRecoveryAvailable: false,
-        isRecoveryFileAvailable: false,
-        isMnemonicAvailable: false,
         isSessionRecoveryAvailable: false,
         isReferralProgramEnabled: false,
         recoveryNotification: undefined,
         organization: undefined,
         showVPNDashboard: false,
-        showVPNDashboardVariant: 'disabled' as const,
+        showVPNDashboardVariant: 'disabled',
         showThemeSelection: false,
         assistantKillSwitch: false,
         memberships: undefined,
-        isZoomIntegrationEnabled: false,
-        isProtonMeetIntegrationEnabled: false,
         isB2BTrial: false,
+        isB2BDrive: false,
+        isGroupOwner: null,
         referralInfo: { refereeRewardAmount: '0', referrerRewardAmount: '0', maxRewardAmount: '0' },
-        canDisplayNonPrivateEmailPhone: false,
         showMailDashboard: true,
-        showMailDashboardVariant: 'disabled' as const,
+        showMailDashboardVariant: 'disabled',
         showPassDashboard: false,
-        showPassDashboardVariant: 'disabled' as const,
+        showPassDashboardVariant: 'disabled',
         showDriveDashboard: false,
-        showDriveDashboardVariant: 'disabled' as const,
+        showDriveDashboardVariant: 'disabled',
         showMeetDashboard: false,
-        showMeetDashboardVariant: 'disabled' as const,
+        showMeetDashboardVariant: 'disabled',
         hasPendingInvitations: false,
-        isOLESEnabled: false,
-        isRecoverySettingsRedesignEnabled: false,
-        ...overrides,
+        flags: { ...defaultFlags, ...flagOverrides },
+        ...rest,
     };
 }
 
