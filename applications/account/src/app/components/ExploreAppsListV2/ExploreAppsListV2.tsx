@@ -1,11 +1,11 @@
 import type { CSSProperties, ReactNode } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Logo } from '@proton/components';
-import useLoading from '@proton/hooks/useLoading';
+import { useLoadingByKey } from '@proton/hooks/useLoading';
 import type { PLANS } from '@proton/payments';
 import { getHasPlusPlan, getHasProPlan } from '@proton/payments';
 import { getHasBusinessProductPlan } from '@proton/payments/core/plan/helpers';
@@ -15,7 +15,8 @@ import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { getShouldProcessLinkClick } from '@proton/shared/lib/helpers/dom';
+import { getIsEventModified, getShouldProcessLinkClick } from '@proton/shared/lib/helpers/dom';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import type { User } from '@proton/shared/lib/interfaces';
 import { getIsBYOEAccount, getIsExternalAccount } from '@proton/shared/lib/keys';
@@ -31,7 +32,7 @@ import {
 import clsx from '@proton/utils/clsx';
 
 import LumoLogoAnimated from './LumoLogoAnimated';
-import { sendExploreAppsListAppClick, sendExploreAppsListTimeSpent } from './exploreAppsListTelemetry';
+import { useExploreAppsListTelemetry } from './exploreAppsListTelemetry';
 import { useExploreAppContextMenu } from './useExploreAppContextMenu';
 
 import './ExploreAppsListV2.scss';
@@ -337,30 +338,29 @@ const AppIcon = ({ children, appName }: { children: ReactNode; appName: APP_NAME
     );
 };
 
+const getShouldObserveAppClick = (event: MouseEvent) => {
+    const middleClick = event.button === 1;
+    const leftClick = event.button === 0;
+
+    return leftClick || middleClick;
+};
+
+const getWillLikelyOpenInNewTab = (event: MouseEvent) => {
+    const middleClick = event.button === 1;
+    const leftClick = event.button === 0;
+
+    return middleClick || (leftClick && getIsEventModified(event));
+};
+
 const ExploreAppsListV2 = ({ onExplore, apps, subscription, localID }: Props) => {
-    const [loading, withLoading] = useLoading();
-    const [type, setType] = useState<APP_NAMES | null>(null);
-    const mountTimeRef = useRef<number | null>(null);
+    const [loading, withLoading] = useLoadingByKey();
+    const { sendPageLoad, sendAppClick } = useExploreAppsListTelemetry();
 
-    // Helper function to send time spent
-    const sendTimeSpent = () => {
-        if (mountTimeRef.current !== null) {
-            const timeSpentMs = Date.now() - mountTimeRef.current;
-            const timeSpentSec = Math.round((timeSpentMs / 1000) * 10) / 10;
-            sendExploreAppsListTimeSpent({ timeSpentSec });
-            mountTimeRef.current = null;
-        }
-    };
-
-    const handleContextMenuClick = () => {
-        sendTimeSpent();
-    };
-
-    const { contextMenu, onContextMenu } = useExploreAppContextMenu({ onClick: handleContextMenuClick });
+    const { contextMenu, onContextMenu } = useExploreAppContextMenu();
 
     useEffect(() => {
-        mountTimeRef.current = Date.now();
-    }, []);
+        sendPageLoad();
+    }, [sendPageLoad]);
 
     let planName = getNameFromPlan(subscription.plan);
     if (hasBit(subscription.subscribed, allBits)) {
@@ -379,39 +379,48 @@ const ExploreAppsListV2 = ({ onExplore, apps, subscription, localID }: Props) =>
                     const appName = app.name;
                     const name = getAppShortName(appName);
                     const description = app.description();
-                    const showLoader = type === appName && loading;
+                    const showLoader = loading[appName];
                     const paid = hasBit(subscription.subscribed, app.bit);
                     const isNew = app.isNew;
-                    const href = getExploreAppHref('/', appName, localID);
+                    const appHref = getExploreAppHref('/', appName, localID);
                     const settingsHref = getSettingsHref(appName, localID);
                     const isForbidden = app.isForbidden;
+
                     return (
                         <li className="explore-apps-list-item" key={appName} style={{ '--animation-order': index }}>
                             <a
-                                href={href}
+                                href={appHref}
                                 data-testid={appName.replace('proton-', 'explore-')}
-                                onClick={(event) => {
-                                    if (loading || isForbidden) {
+                                onClick={async (event) => {
+                                    if (Object.values(loading).some((i) => i === true) || isForbidden) {
                                         event.preventDefault();
                                         return;
                                     }
+
+                                    if (getShouldObserveAppClick(event.nativeEvent)) {
+                                        sendAppClick({
+                                            appName,
+                                            openMethod: getWillLikelyOpenInNewTab(event.nativeEvent)
+                                                ? 'new_tab'
+                                                : 'same_tab',
+                                        });
+                                        await wait(50); // This ensures the telemetry event has time to be initiated and sent before the page redirects
+                                    }
+
                                     const target = event.currentTarget?.getAttribute('target') || '';
                                     if (getShouldProcessLinkClick(event.nativeEvent, target)) {
                                         event.preventDefault();
-                                        sendTimeSpent();
-                                        sendExploreAppsListAppClick({ appName });
-                                        setType(appName);
-                                        void withLoading(onExplore(appName));
+                                        await withLoading(appName, onExplore(appName));
                                         return;
                                     }
                                     // Otherwise let link (e.g. new tab) clicks fall through
                                 }}
-                                onContextMenu={(e) => {
+                                onContextMenu={(event) => {
                                     if (isForbidden) {
-                                        e.preventDefault();
+                                        event.preventDefault();
                                         return;
                                     }
-                                    onContextMenu(e, href, settingsHref, appName);
+                                    onContextMenu({ event, appHref, settingsHref, appName });
                                 }}
                                 aria-label={goToPlanOrAppNameText(getAppName(appName))}
                                 className={clsx(

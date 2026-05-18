@@ -11,6 +11,7 @@ export enum TelemetryMeasurementGroups {
     accountResetPassword = 'account.web.reset_password',
     accountUnauthLost2FA = 'account.web.unauth_lost_2fa',
     accountDashboard = 'account.web.dashboard',
+    accountUpgradePage = 'account.web.upgrade_page',
     referralDiscover = 'any.web.referral_discover',
     alwaysOnUpsell = 'any.web.always_on_upsell',
     calendarEncryptedSearch = 'calendar.web.encrypted_search',
@@ -64,6 +65,7 @@ export enum TelemetryMeasurementGroups {
     b2bOnboarding = 'any.web.b2b_onboarding',
     bringYourOwnEmail = 'any.web.bring_your_own_email',
     appSwitcher = 'any.web.app_switcher',
+    accountExploreApps = 'account.web.explore_apps',
     preventWasmLoading = 'any.web.prevent_wasm_loading',
     /** Docs */
     docsSuggestions = 'common.web.suggestions',
@@ -221,6 +223,12 @@ export enum TelemetrySafetyReviewScoreDiffEvents {
 
 export enum TelemetryAccountDashboardEvents {
     pageLoad = 'page_load',
+}
+
+export enum TelemetryUpgradePageEvents {
+    page_load = 'page_load',
+    cta_click = 'cta_click',
+    subscription_success = 'subscription_success',
 }
 
 export enum TelemetryRecoverySettingsEvents {
@@ -474,6 +482,11 @@ export enum TelemetryAppSwitcher {
     dropdown_app_click = 'dropdown_app_click',
 }
 
+export enum TelemetryExploreAppsEvents {
+    page_load = 'page_load',
+    app_click = 'app_click',
+}
+
 export enum TelemetryESMigrationToolEvents {
     migration_finished = 'es_migration_tool.migration_finished',
 }
@@ -538,11 +551,13 @@ export type TelemetryEvents =
     | TelemetryUnlimitedToDuoOffer
     | TelemetryListSetting
     | TelemetryAppSwitcher
+    | TelemetryExploreAppsEvents
     | TelemetryESMigrationToolEvents
     | TelemetryUnauthLost2FAEvents
     | TelemetryAccountCancellationFlowFeedbackEvents
     | TelemetrySafetyReviewCtrEvents
     | TelemetrySafetyReviewScoreDiffEvents
+    | TelemetryUpgradePageEvents
     | TelemetryVpnTvEvents
     | TelemetryPreventWasmLoading;
 
