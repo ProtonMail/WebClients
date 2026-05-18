@@ -59,35 +59,16 @@ const SubmenuButton = createComponent(function SubmenuButton(props: Ariakit.Butt
   )
 })
 
-interface BorderLineStyleButtonProps extends Omit<Ariakit.ButtonProps, 'title'> {
-  title: string
-}
-
-const BorderLineStyleButton = createComponent(function BorderLineStyleButton({
-  title,
-  className,
-  ...props
-}: BorderLineStyleButtonProps) {
-  return (
-    <Ariakit.TooltipProvider placement="left">
-      <Ariakit.TooltipAnchor
-        render={<Button {...props} />}
-        className={clsx(
-          'flex h-[20px] items-center justify-center rounded px-2.5 data-[active-item]:bg-[#C2C0BE59]',
-          className,
-        )}
-      />
-      <UI.Tooltip>{title}</UI.Tooltip>
-    </Ariakit.TooltipProvider>
-  )
-})
-
 type BorderSelectorProps = {
   isDarkMode?: boolean
   disabledBorderLocations?: BorderLocation[]
   onChange?(location: BorderLocation, color: Color | undefined, style: BorderStyle | undefined): void
   borders?: Borders | null
   theme: SpreadsheetTheme
+  color: Color | undefined
+  style: BorderStyle
+  onColorChange: (color: Color | undefined) => void
+  onStyleChange: (style: BorderStyle) => void
 } & Pick<ComponentProps<typeof ColorSelector>, 'userDefinedColors' | 'onAddUserDefinedColor'>
 
 export function BorderSelectorContent({
@@ -97,9 +78,11 @@ export function BorderSelectorContent({
   userDefinedColors,
   onAddUserDefinedColor,
   disabledBorderLocations,
+  color,
+  style,
+  onColorChange,
+  onStyleChange,
 }: BorderSelectorProps) {
-  const [color, setColorState] = useState<Color | undefined>(undefined)
-  const [style, setStyleState] = useState<BorderStyle>('solid')
   const [borderLocation, setBorderLocationState] = useState<BorderLocation>()
   const getDefaultBorderColor = useCallback(() => {
     return { theme: 1, tint: isDarkMode ? 1 : 0 } as Color
@@ -109,26 +92,26 @@ export function BorderSelectorContent({
 
   const setColor = useCallback(
     (col: Color | undefined) => {
-      setColorState(col)
+      onColorChange(col)
 
       // Upstream change
       if (borderLocation) {
         onChange?.(borderLocation, col ?? getDefaultBorderColor(), style)
       }
     },
-    [getDefaultBorderColor, borderLocation, style, onChange],
+    [getDefaultBorderColor, borderLocation, style, onChange, onColorChange],
   )
 
   const setStyle = useCallback(
     (styl: BorderStyle) => {
-      setStyleState(styl)
+      onStyleChange(styl)
 
       // Upstream change
       if (borderLocation) {
         onChange?.(borderLocation, color ?? getDefaultBorderColor(), styl)
       }
     },
-    [getDefaultBorderColor, color, borderLocation, onChange],
+    [getDefaultBorderColor, color, borderLocation, onChange, onStyleChange],
   )
 
   const setBorderLocation = useCallback(
@@ -205,31 +188,26 @@ export function BorderSelectorContent({
           </Atoms.DropdownPopover>
         </Ariakit.PopoverProvider>
 
-        <Ariakit.PopoverProvider>
-          <Ariakit.PopoverDisclosure render={<SubmenuButton />}>
+        <Ariakit.SelectProvider value={style} setValue={(value) => setStyle(value as BorderStyle)}>
+          <Ariakit.Select render={<SubmenuButton />}>
             <MdLineStyle />
-          </Ariakit.PopoverDisclosure>
+          </Ariakit.Select>
 
-          <Atoms.DropdownPopover
-            {...Atoms.DROPDOWN_POPOVER_DEFAULTS}
-            className="p-2"
-            render={<Ariakit.Popover unmountOnHide />}
-          >
+          <UI.SelectPopover className="py-2">
             {BORDER_LINE_STYLES.map(({ icon, style, title }) => {
               return (
-                <BorderLineStyleButton
+                <UI.SelectItem
                   key={style}
-                  title={title}
-                  onClick={() => {
-                    setStyle(style)
-                  }}
+                  value={style}
+                  aria-label={title}
+                  className="[&>span:nth-child(2)]:flex [&>span:nth-child(2)]:justify-center"
                 >
                   {icon}
-                </BorderLineStyleButton>
+                </UI.SelectItem>
               )
             })}
-          </Atoms.DropdownPopover>
-        </Ariakit.PopoverProvider>
+          </UI.SelectPopover>
+        </Ariakit.SelectProvider>
       </div>
     </div>
   )
