@@ -1,5 +1,5 @@
 import { BrowserWindow } from 'electron';
-import { isClientAppReady } from 'proton-pass-desktop/lib/client';
+import { isClientBooted } from 'proton-pass-desktop/lib/client';
 import type { SshKeyData } from 'proton-pass-desktop/native';
 import { ssh_agent_napi } from 'proton-pass-desktop/native';
 import { store } from 'proton-pass-desktop/store';
@@ -34,7 +34,7 @@ const intoNativeSshKey = (item: ItemRevision<'sshKey'>): SshKeyData => ({
 let sshSynced = false;
 let readyLock: MaybeNull<Promise<void>> = null;
 
-const isReady = () => sshSynced && isClientAppReady();
+const isReady = () => sshSynced && isClientBooted();
 
 /** Create a callback that will be called from Rust when SSH
  * operations occur. Returns true if app is unlocked, false if
