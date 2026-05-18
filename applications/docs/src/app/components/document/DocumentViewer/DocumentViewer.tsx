@@ -504,7 +504,7 @@ export function DocumentViewer({
   }
 
   return (
-    <div className="relative h-full w-full">
+    <div className="relative flex h-full w-full flex-col">
       {ready && isDebugMode && editorController && documentState && (
         <DebugMenu
           docController={docController}
