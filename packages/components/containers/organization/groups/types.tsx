@@ -7,6 +7,7 @@ import type {
     GroupFlags,
     GroupMember,
     GroupPermissions,
+    RoleAssignment,
 } from '@proton/shared/lib/interfaces';
 
 import type { GROUPS_STATE } from './useGroupsManagement';
@@ -55,6 +56,7 @@ export interface GroupsManagementReturn {
     suggestedAddressDomainSource: 'customdomain' | 'group' | 'pm.me' | null;
     addressToMemberMap: { [key: string]: EnhancedMember | undefined };
     addressEmailToMemberMap: { [key: string]: EnhancedMember | undefined };
+    groupRolesMap: { [groupID: string]: RoleAssignment[] | undefined };
     getSerializedGroup: () => { type: 'new' | 'edit'; payload: SerializedGroupFormData } | undefined;
     actions: {
         onDiscardChanges: () => void;
