@@ -38,7 +38,7 @@
         "@proton/testing": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
-        "fast-xml-parser": "^5.7.1",
+        "fast-xml-parser": "^5.8.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-router-dom": "^5.3.4",
@@ -59,12 +59,12 @@
         "babel-plugin-transform-require-context": "^0.1.1",
         "core-js": "^3.49.0",
         "eslint": "^9.39.4",
-        "jest": "^30.3.0",
-        "jest-environment-jsdom": "^30.3.0",
+        "jest": "^30.4.2",
+        "jest-environment-jsdom": "^30.4.1",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "ts-jest": "^29.4.9",
         "typescript": "^6.0.2",
-        "vitest": "^4.1.5"
+        "vitest": "^4.1.6"
     }
 }
