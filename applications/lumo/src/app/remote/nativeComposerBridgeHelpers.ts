@@ -145,12 +145,12 @@ export const onNativePreviewFile = (handler: PreviewFileEventHandler): (() => vo
 
 export const onNativeToggleCreateImage = (handler: SimpleToggleEventHandler): (() => void) => {
     window.addEventListener('lumo:toggleCreateImage', handler as EventListener);
-    return () => window.addEventListener('lumo:toggleCreateImage', handler as EventListener);
+    return () => window.removeEventListener('lumo:toggleCreateImage', handler as EventListener);
 };
 
 export const onNativeChangeModelTier = (handler: ChangeModelTypeEventHandler): (() => void) => {
     window.addEventListener('lumo:changeModelTier', handler as EventListener);
-    return () => window.addEventListener('lumo:changeModelTier', handler as EventListener);
+    return () => window.removeEventListener('lumo:changeModelTier', handler as EventListener);
 };
 
 export const setNativeComposerVisibility = (visible: boolean): void => {
