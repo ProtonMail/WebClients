@@ -138,6 +138,7 @@ pub mod msix_updater {
     }
 }
 
+#[napi]
 pub mod ssh_agent_napi {
     use napi::bindgen_prelude::Promise;
     use napi::threadsafe_function::ThreadsafeFunction;
