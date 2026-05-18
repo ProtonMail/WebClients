@@ -74,6 +74,7 @@ import Main from '../public/Main';
 import AccountSidebar from './AccountSidebar';
 import AccountStartupModals from './AccountStartupModals';
 import SettingsSearch from './SettingsSearch';
+import type { AccountSettings, Flags, OrganizationSettings } from './router-params';
 import { getRoutes } from './routes';
 
 const MailSettingsRouter = lazy(
@@ -247,42 +248,16 @@ const MainContainer = () => {
 
     const { isUserEligible: isReferralProgramEnabled } = useReferralUserEligible();
 
-    const routes = getRoutes({
-        app,
-        user,
-        addresses,
-        organization,
-        subscription,
-        isReferralProgramEnabled,
+    const accountSettings: AccountSettings = {
         isDataRecoveryAvailable,
-        isMnemonicAvailable,
-        isRecoveryFileAvailable,
         isSessionRecoveryAvailable,
+        isReferralProgramEnabled,
         recoveryNotification: recoveryNotification?.color,
         showVPNDashboard,
         showVPNDashboardVariant: showVPNDashboardVariant.name,
-        isUserGroupsFeatureEnabled,
         showThemeSelection,
         assistantKillSwitch,
-        canDisplayB2BLogsPass,
-        canDisplayB2BLogsVPN,
-        canDisplayPassReports,
-        memberships,
-        groups,
-        isUserGroupsNoCustomDomainEnabled,
-        isUserGroupsPassBusinessEnabled,
-        canB2BHidePhotos,
-        isB2BDrive,
-        isScribeEnabled: isScribePaymentEnabled && isScribeAdminSettingFeatureEnabled,
-        isZoomIntegrationEnabled: !isZoomIntegrationDisabled,
-        isProtonMeetIntegrationEnabled,
-        isSharedServerFeatureEnabled,
-        isCryptoPostQuantumOptInEnabled,
-        isB2BTrial,
-        isRetentionPoliciesEnabled,
-        isSsoForPbsEnabled,
         referralInfo: referralInfo.uiData,
-        canDisplayNonPrivateEmailPhone,
         showMailDashboard,
         showMailDashboardVariant: showMailDashboardVariant.name,
         showPassDashboard,
@@ -291,13 +266,51 @@ const MainContainer = () => {
         showDriveDashboardVariant: showDriveDashboardVariant.name,
         showMeetDashboard,
         showMeetDashboardVariant: showMeetDashboardVariant.name,
-        isAuthenticatorAvailable,
         hasPendingInvitations,
+    };
+
+    const organizationSettings: OrganizationSettings = {
+        groups,
+        organization,
+        isB2BDrive,
+        isB2BTrial,
         isGroupOwner,
+        memberships,
+    };
+
+    const flags: Flags = {
+        canDisplayB2BLogsPass,
+        canDisplayB2BLogsVPN,
+        canDisplayPassReports,
+        canB2BHidePhotos,
+        canDisplayNonPrivateEmailPhone,
+        isUserGroupsFeatureEnabled,
+        isUserGroupsNoCustomDomainEnabled,
+        isUserGroupsPassBusinessEnabled,
+        isScribeEnabled: isScribePaymentEnabled && isScribeAdminSettingFeatureEnabled,
+        isZoomIntegrationEnabled: !isZoomIntegrationDisabled,
+        isProtonMeetIntegrationEnabled,
+        isSharedServerFeatureEnabled,
+        isCryptoPostQuantumOptInEnabled,
+        isSsoForPbsEnabled,
+        isRetentionPoliciesEnabled,
+        isAuthenticatorAvailable,
         isOLESEnabled,
         isCategoryViewEnabled,
         isRolesAndPermissionsEnabled,
         isRecoverySettingsRedesignEnabled,
+        isMnemonicAvailable,
+        isRecoveryFileAvailable,
+    };
+
+    const routes = getRoutes({
+        app,
+        user,
+        addresses,
+        subscription,
+        accountSettings,
+        organizationSettings,
+        flags,
     });
 
     useEffect(() => {
