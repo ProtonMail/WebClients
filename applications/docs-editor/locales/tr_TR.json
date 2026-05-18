@@ -235,6 +235,15 @@
       ],
       "Table of contents": [
         "İçindekiler"
+      ],
+      "Page break": [
+        "Sayfa sonu"
+      ],
+      "Subscript": [
+        "Alt karakter"
+      ],
+      "Superscript": [
+        "Üst karakter"
       ]
     },
     "color": {
@@ -461,7 +470,7 @@
         "Belge güncellemeleri işlenirken bir sorun çıktı. Lütfen sayfayı yeniden yükleyip yeniden deneyin."
       ],
       "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
-        "Bu hesap tablosu geçerli istemci sürümüyle uyumlu değil. Lütfen istemciyi yeniden yüklemeyi deneyin. Sorun sürerse lütfen destek ekibiyle görüşün."
+        "Bu elektronik tablo geçerli istemci sürümüyle uyumlu değil. Lütfen istemciyi yeniden yüklemeyi deneyin. Sorun sürerse destek ekibiyle görüşün."
       ],
       "Tried to import Sheet data into Lexical": [
         "Sayfa verileri Lexical içine aktarılmaya çalışıldı"
@@ -582,6 +591,9 @@
       ],
       "No title": [
         "Başlık yok"
+      ],
+      "New": [
+        "Yeni"
       ]
     },
     "Label": {
@@ -692,6 +704,9 @@
       ],
       "Text and highlight color": [
         "Yazı ve vurgu rengi"
+      ],
+      "Page break": [
+        "Sayfa sonu"
       ]
     },
     "Placeholder": {
@@ -732,7 +747,7 @@
     },
     "sheets_2025:Bottom bar": {
       "All sheets": [
-        "Tüm sayfalar"
+        "Tüm çalışma sayfaları"
       ],
       "New sheet": [
         "Yeni sayfa"
@@ -760,7 +775,7 @@
         "Adlandırılmış aralıklar"
       ],
       "Sheets": [
-        "Sayfalar"
+        "Çalışma sayfaları"
       ],
       "Tables": [
         "Tablolar"
@@ -885,7 +900,7 @@
         "Kopyala"
       ],
       "Create a filter": [
-        "Bir süzgeç oluşturun"
+        "Bir süzgeç oluştur"
       ],
       "Custom": [
         "Özel"
@@ -1053,7 +1068,7 @@
     },
     "sheets_2025:Spreadsheet delete sheet dialog": {
       "Are you sure you want to delete ${ sheetName }?": [
-        "${ sheetName } sayfasını silmek istediğinize emin misiniz?"
+        "${ sheetName } çalışma sayfasını silmek istediğinize emin misiniz?"
       ],
       "Cancel": [
         "İptal"
@@ -1076,7 +1091,7 @@
         "Bu özelliği yakında kullanıma sunmak için çalışıyoruz. Sayfalar şu anda yalnızca bilgisayarda düzenlenebilir."
       ],
       "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
-        "Ekranınız bu hesap tablosunu düzenlemek için çok küçük. Yalnızca görüntüleme kipindesiniz. Değişiklik yapmak için bu hesap tablosunu daha büyük bir ekranda açın veya tarayıcı pencerenizi genişletin."
+        "Ekranınız bu elektronik tabloyu düzenlemek için çok küçük. Yalnızca görüntüleme kipindesiniz. Değişiklik yapmak için bu elektronik tabloyu daha büyük bir ekranda açın veya tarayıcı pencerenizi genişletin."
       ]
     },
     "sheets_2025:Spreadsheet editor": {
@@ -1109,7 +1124,7 @@
     },
     "sheets_2025:Spreadsheet editor menubar data menu": {
       "Create a filter": [
-        "Bir süzgeç oluşturun"
+        "Bir süzgeç oluştur"
       ],
       "Data validation": [
         "Veri doğrulama"
@@ -1138,7 +1153,7 @@
         "${ columnLetter } sutünuna"
       ],
       "Sort sheet by": [
-        "Sayfayı şuna göre sırala"
+        "Çalışma sayfasını şuna göre sırala"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar edit menu": {
@@ -1211,13 +1226,13 @@
         "Yeni belge"
       ],
       "New spreadsheet": [
-        "Yeni hesap tablosu"
+        "Yeni elektronik tablo"
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } uygulamasını aç"
       ],
       "OpenDocument Spreadsheet (.ods) (Beta)": [
-        "OpenDocument hesap tablosu (.ods) (Beta)"
+        "OpenDocument elektronik tablosu (.ods) (Beta)"
       ],
       "Print": [
         "Yazdır"
@@ -1235,7 +1250,7 @@
         "Hata ayıklama kipini aç/kapat"
       ],
       "View recent spreadsheets": [
-        "Son kullanılan hesap tablolarını görüntüle"
+        "Son kullanılan elektronik tabloları görüntüle"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu": {
@@ -1357,7 +1372,7 @@
         "Satırlar"
       ],
       "Sheet": [
-        "Sayfa"
+        "Çalışma sayfası"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
@@ -1534,7 +1549,7 @@
         "Kaydet ve yeniden yükle"
       ],
       "Settings for this spreadsheet": [
-        "Bu hesap tablosunun ayarları"
+        "Bu elektronikl tablonun ayarları"
       ],
       "This affects formatting details such as functions, dates and currency": [
         "Bu işlem işlevler, tarihler ve para birimleri gibi biçimlendirme ayrıntılarını etkiler"
@@ -1608,7 +1623,7 @@
         "Hücreleri birleştir"
       ],
       "More": [
-        "Daha fazla"
+        "Diğer"
       ],
       "More formats": [
         "Diğer biçimler"
