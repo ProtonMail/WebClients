@@ -8,15 +8,11 @@ const ORIGINAL_FETCH = self.fetch;
 
 export const sendDebugLog = HTTP_DEBUGGER
     ? (type: 'log' | 'info' | 'warn' | 'error' | 'debug', message: string) => {
-          void ORIGINAL_FETCH(
-              `http://localhost:${HTTP_DEBUGGER_PORT}/log?message=${encodeURIComponent(
-                  JSON.stringify({
-                      date: Date.now(),
-                      type,
-                      message,
-                  })
-              )}`
-          ).catch(noop);
+          void ORIGINAL_FETCH(`http://localhost:${HTTP_DEBUGGER_PORT}/log`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ date: Date.now(), type, message }),
+          }).catch(noop);
       }
     : noop;
 
