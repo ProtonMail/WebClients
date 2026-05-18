@@ -1,4 +1,5 @@
 import type { Address } from './Address';
+import type { RoleAssignment } from './OrganizationRole';
 
 export enum GroupPermissions {
     NobodyCanSend = 0,
@@ -36,3 +37,8 @@ export interface Group {
     Flags?: GroupFlags;
     MemberCount?: number;
 }
+
+export type EnhancedGroup = Group & {
+    roleState?: 'stale' | 'pending' | 'rejected' | 'full';
+    GroupOrganizationRoles?: RoleAssignment[];
+};
