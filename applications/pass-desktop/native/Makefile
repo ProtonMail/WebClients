@@ -9,8 +9,10 @@ fmt:
 	cargo fmt --all
 
 lint:
-	@for target in $(TARGETS); do \
+	@rc=0; \
+	for target in $(TARGETS); do \
 		rustup target list --installed | grep -qx $$target || rustup target add $$target; \
 		printf '\n[clippy] %s\n' $$target; \
-		cargo clippy --workspace --all-targets --target $$target -- -D warnings; \
-	done
+		cargo clippy --workspace --all-targets --target $$target -- -D warnings || rc=1; \
+	done; \
+	exit $$rc
