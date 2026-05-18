@@ -2,16 +2,25 @@ import type { PayloadAction, ThunkAction, UnknownAction } from '@reduxjs/toolkit
 import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import {  CacheType } from '@proton/redux-utilities/interface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
+import { CacheType } from '@proton/redux-utilities/interface';
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getGroup, getGroups } from '@proton/shared/lib/api/groups';
+import { getGroupOrganizationRoles } from '@proton/shared/lib/api/organizationRoles';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Api, Group, GroupMembershipReturn, Organization, UserModel } from '@proton/shared/lib/interfaces';
+import type {
+    Api,
+    EnhancedGroup,
+    Group,
+    GroupMembershipReturn,
+    Organization,
+    RoleAssignment,
+    UserModel,
+} from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_PERMISSIONS } from '@proton/shared/lib/interfaces';
 
 import type { DomainsState } from '../domains';
@@ -27,15 +36,19 @@ import { userThunk } from '../user';
 const name = 'groups';
 
 export interface GroupsState extends DomainsState, OrganizationKeyState, GroupMembershipsState {
-    [name]: ModelState<Group[]>;
+    [name]: ModelState<EnhancedGroup[]>;
 }
 
 type SliceState = GroupsState[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
-const initialState: SliceState = getInitialModelState<Group[]>();
+const initialState: SliceState = getInitialModelState<EnhancedGroup[]>();
 
 export const selectGroups = (state: GroupsState) => state[name];
+
+const getGroupFromState = (state: ModelState<EnhancedGroup[]>, target: Pick<Group, 'ID'>) => {
+    return state.value?.find((group) => group.ID === target.ID);
+};
 
 const canFetch = (user: UserModel, organization: Organization, memberships: GroupMembershipReturn[]): boolean => {
     if (user.isAdmin && organization?.ID) {
@@ -75,7 +88,13 @@ const slice = createSlice({
     reducers: {
         eventLoopV6: (state, action: PayloadAction<UpdateCollectionV6<Group>>) => {
             if (state.value) {
-                state.value = updateCollectionV6(state.value, action.payload);
+                state.value = updateCollectionV6(state.value, action.payload, {
+                    merge: (a, b): EnhancedGroup => ({
+                        ...a,
+                        ...b,
+                        roleState: 'stale',
+                    }),
+                });
             }
         },
         addGroup: (state, action: PayloadAction<Group>) => {
@@ -96,7 +115,39 @@ const slice = createSlice({
             }
             const index = state.value.findIndex((group) => group.ID === action.payload.ID);
             if (index !== -1) {
-                state.value[index] = action.payload;
+                const previous = state.value[index];
+                const previousRoleState = previous.GroupOrganizationRoles
+                    ? {
+                          roleState: 'stale' as const,
+                          GroupOrganizationRoles: previous.GroupOrganizationRoles,
+                      }
+                    : {};
+                state.value[index] = {
+                    ...action.payload,
+                    ...previousRoleState,
+                };
+            }
+        },
+        groupRoleFetchPending: (state, action: PayloadAction<{ group: Pick<Group, 'ID'> }>) => {
+            const group = getGroupFromState(state, action.payload.group);
+            if (group) {
+                group.roleState = 'pending';
+            }
+        },
+        groupRoleFetchFulfilled: (
+            state,
+            action: PayloadAction<{ group: Pick<Group, 'ID'>; organizationRoles: RoleAssignment[] }>
+        ) => {
+            const group = getGroupFromState(state, action.payload.group);
+            if (group) {
+                group.roleState = 'full';
+                group.GroupOrganizationRoles = action.payload.organizationRoles;
+            }
+        },
+        groupRoleFetchRejected: (state, action: PayloadAction<{ group: Pick<Group, 'ID'> }>) => {
+            const group = getGroupFromState(state, action.payload.group);
+            if (group) {
+                group.roleState = 'rejected';
             }
         },
         removeGroup: (state, action: PayloadAction<string>) => {
@@ -167,6 +218,62 @@ export const { addGroup, updateGroup, removeGroup, setNoEncryptFlag } = slice.ac
 export const groupsReducer = { [name]: slice.reducer };
 export const groupsActions = slice.actions;
 export const groupThunk = modelThunk.thunk;
+
+const getTemporaryRolePromiseMap = (() => {
+    let map: undefined | Map<string, Promise<RoleAssignment[]>>;
+    return () => {
+        if (!map) {
+            map = new Map();
+        }
+        return map;
+    };
+})();
+
+export const getGroupRoles = ({
+    group: targetGroup,
+    retry,
+    cache,
+}: {
+    group: Pick<Group, 'ID'>;
+    retry?: boolean;
+    cache?: CacheType;
+}): ThunkAction<Promise<RoleAssignment[]>, GroupsState, ProtonThunkArguments, UnknownAction> => {
+    const map = getTemporaryRolePromiseMap();
+
+    return async (dispatch, getState, extra) => {
+        const group = getGroupFromState(selectGroups(getState()), targetGroup);
+        if (!group) {
+            return [];
+        }
+        if (cache !== CacheType.None) {
+            if (group.roleState === 'full' && group.GroupOrganizationRoles) {
+                return group.GroupOrganizationRoles;
+            }
+            if (group.roleState === 'rejected' && !retry) {
+                return [];
+            }
+        }
+        const oldPromise = map.get(group.ID);
+        if (oldPromise) {
+            return oldPromise;
+        }
+        const promise = extra
+            .api<{ RoleAssignments: RoleAssignment[] }>(getGroupOrganizationRoles(group.ID))
+            .then(({ RoleAssignments }) => RoleAssignments);
+        try {
+            map.set(group.ID, promise);
+            dispatch(slice.actions.groupRoleFetchPending({ group }));
+            const result = await promise;
+            dispatch(slice.actions.groupRoleFetchFulfilled({ group, organizationRoles: result }));
+            return result;
+        } catch (e) {
+            dispatch(slice.actions.groupRoleFetchRejected({ group }));
+            throw e;
+        } finally {
+            map.delete(group.ID);
+        }
+    };
+};
 
 export const groupsEventLoopV6Thunk = ({
     event,
