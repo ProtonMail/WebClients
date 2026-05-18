@@ -57,7 +57,7 @@ export const ItemA11yActivator = ({
 );
 
 export const ItemA11yActivatorCell = (props: ItemA11yActivatorProps) => (
-    <td className="item-a11y-activator-cell absolute inset-0 p-0 border-0">
+    <td className="item-a11y-activator-cell absolute inset-0 p-0 border-0 m-0">
         <ItemA11yActivator {...props} />
     </td>
 );
