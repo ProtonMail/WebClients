@@ -8,7 +8,7 @@ import { DefaultFont } from '../Shared/Fonts'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { EditorSystemMode, type DocumentRole } from '@proton/docs-shared'
 import type { MouseEventHandler } from 'react'
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useRef } from 'react'
 import Toolbar from '../Toolbar/Toolbar'
 import { EditorUserMode } from '../Lib/EditorUserMode'
 import type { EditorState } from 'lexical'
@@ -23,11 +23,13 @@ export function PreviewModeEditor({
   role,
   onUserModeChange,
   clientInvoker,
+  initialScrollTop,
 }: {
   clonedEditorState: EditorState
   role: DocumentRole
   onUserModeChange: (mode: EditorUserMode) => void
   clientInvoker: EditorRequiresClientMethods
+  initialScrollTop: number | null
 }) {
   const handlePreviewModeLinkClick: MouseEventHandler = useCallback(
     (event) => {
@@ -100,9 +102,31 @@ export function PreviewModeEditor({
         ErrorBoundary={LexicalErrorBoundary}
       />
       <PreviewStateSyncPlugin clonedEditorState={clonedEditorState} />
+      <PreviewScrollRestorePlugin initialScrollTop={initialScrollTop} />
       <PreviewCleanupPlugin />
     </SafeLexicalComposer>
   )
+}
+
+function PreviewScrollRestorePlugin({ initialScrollTop }: { initialScrollTop: number | null }) {
+  const [previewEditor] = useLexicalComposerContext()
+  const hasRestoredScroll = useRef(false)
+
+  useLayoutEffect(() => {
+    if (initialScrollTop === null || hasRestoredScroll.current) {
+      return
+    }
+
+    const scrollContainer = previewEditor.getRootElement()?.parentElement
+    if (!scrollContainer) {
+      return
+    }
+
+    scrollContainer.scrollTop = initialScrollTop
+    hasRestoredScroll.current = true
+  }, [initialScrollTop, previewEditor])
+
+  return null
 }
 
 function PreviewStateSyncPlugin({ clonedEditorState }: { clonedEditorState: EditorState }) {

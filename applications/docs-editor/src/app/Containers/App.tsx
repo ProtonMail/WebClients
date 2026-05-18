@@ -93,6 +93,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   const latestSpreadsheetStateToLogRef = useRef<unknown>({})
   const [clonedEditorState, setClonedEditorState] = useState<EditorState>()
   const [isEditorRefReady, setIsEditorRefReady] = useState(false)
+  const scrollPositionBeforePreview = useRef<number | null>(null)
 
   useEffect(() => {
     if (userMode !== EditorUserMode.Preview) {
@@ -516,6 +517,10 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
         return
       }
 
+      if (mode === EditorUserMode.Preview) {
+        scrollPositionBeforePreview.current = editorRef.current?.getRootElement()?.parentElement?.scrollTop ?? null
+      }
+
       setUserMode(mode)
     },
     [application, setUserMode, suggestionsEnabled],
@@ -653,6 +658,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
                 role={application.getRole()}
                 onUserModeChange={onUserModeChange}
                 clientInvoker={bridge.getClientInvoker()}
+                initialScrollTop={scrollPositionBeforePreview.current}
               />
             </div>
           )}
