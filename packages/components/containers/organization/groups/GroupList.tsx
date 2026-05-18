@@ -35,7 +35,7 @@ const getSortedGroups = (input: string, groups: Group[]) => {
 };
 
 const GroupList = ({
-    groupsManagement: { uiState, groups, selectedGroup, actions, getSerializedGroup },
+    groupsManagement: { uiState, groups, selectedGroup, actions, getSerializedGroup, groupRolesMap },
     canOnlyDelete,
     hasUsableDomain,
 }: Props) => {
@@ -126,6 +126,7 @@ const GroupList = ({
                         }}
                         onDeleteGroup={actions.onDeleteGroup}
                         canOnlyDelete={canOnlyDelete}
+                        groupOrganizationRoles={groupRolesMap[group.ID]}
                     />
                 ))}
             </Scroll>
