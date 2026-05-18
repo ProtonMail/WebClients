@@ -1,4 +1,4 @@
-import { clientReady } from '@proton/pass/lib/client';
+import { clientBooted } from '@proton/pass/lib/client';
 import type { AppState } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types';
 
@@ -18,7 +18,7 @@ const CLIENT_STATE: { app: AppState } = {
     },
 };
 
-export const isClientAppReady = () => clientReady(CLIENT_STATE.app.status);
+export const isClientBooted = () => clientBooted(CLIENT_STATE.app.status);
 
 export const setupIpcHandlers = () => {
     setupIpcHandler('client:setAppState', (_, state) => {
