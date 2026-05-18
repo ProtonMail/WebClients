@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { shallowEqual } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -13,10 +14,9 @@ import { useConversation } from '../../providers/ConversationProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoSelector } from '../../redux/hooks';
-import { selectConversations } from '../../redux/selectors';
-import type { Space } from '../../types';
+import { selectHistoryConversationsSorted } from '../../redux/selectors';
+import { selectSpaceMap } from '../../redux/slices/core/spaces';
 import { LumoChatHistoryUpsell } from '../../upsells';
-import { sortByDate } from '../../util/date';
 import RecentChatsList from './RecentChatsList';
 import { categorizeConversations, searchConversations } from './helpers';
 
@@ -28,43 +28,10 @@ interface Props {
     searchInput?: string; // External search input value
 }
 
-/**
- * Filters conversations based on user type, ghost chat mode, and project settings
- */
-const getVisibleConversations = (
-    conversationMap: Record<string, any>,
-    spaceMap: Record<string, Space>,
-    isGuest: boolean,
-    isGhostChatMode: boolean,
-    showProjectConversations: boolean,
-    conversationId?: string
-) => {
-    // Guest users in ghost chat mode see no conversations
-    if (isGuest && isGhostChatMode) {
-        return [];
-    }
-
-    // Guest users not in ghost chat mode see only their active conversation
-    if (isGuest) {
-        const activeConversation = conversationId && conversationMap[conversationId];
-        return activeConversation ? [activeConversation] : [];
-    }
-
-    return Object.values(conversationMap).filter((conversation) => {
-        if (conversation.ghost) return false;
-        if (!showProjectConversations) {
-            const space = conversation.spaceId ? spaceMap[conversation.spaceId] : undefined;
-            // Only filter out if the space is explicitly marked as a project
-            if (space?.isProject === true) return false;
-        }
-        return true;
-    });
-};
-
 export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
-    const conversationMap = useLumoSelector(selectConversations);
-    const spaceMap = useLumoSelector((state) => state.spaces) as Record<string, Space>;
-    const { conversationId } = useConversation(); //switch to using react-router-dom parameters
+    const sortedConversations = useLumoSelector(selectHistoryConversationsSorted, shallowEqual);
+    const spaceMap = useLumoSelector(selectSpaceMap, shallowEqual);
+    const { conversationId } = useConversation();
     const isGuest = useIsGuest();
     const { hasLumoPlus } = useLumoPlan();
     const { isGhostChatMode } = useGhostChat();
@@ -76,33 +43,37 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
     const isLoading = false; // fixme is this correct?
 
     const { categorizedConversations, noConversationAtAll, noSearchMatch } = useMemo(() => {
-        const conversations = getVisibleConversations(
-            conversationMap,
-            spaceMap,
-            isGuest,
-            isGhostChatMode,
-            showProjectConversationsInHistory,
-            conversationId
-        );
+        const empty = {
+            categorizedConversations: { today: [], lastWeek: [], expiringSoon: [], lastMonth: [], earlier: [] },
+            noConversationAtAll: true,
+            noSearchMatch: false,
+        };
 
-        // Sort by updatedAt (most recently updated conversations first)
-        const sortedConversations = conversations.sort(sortByDate('desc', 'updatedAt'));
-        // Exclude favorites from history - they appear in a separate section
-        const nonFavorites = sortedConversations.filter((conversation) => !conversation.starred);
-        const filteredConversations = searchConversations(nonFavorites, searchInput);
+        // Guest render path returns early below and never uses these values.
+        if (isGuest || isGhostChatMode) {
+            return empty;
+        }
+
+        const conversations = showProjectConversationsInHistory
+            ? sortedConversations
+            : sortedConversations.filter((conversation) => {
+                  const space = conversation.spaceId ? spaceMap[conversation.spaceId] : undefined;
+                  return space?.isProject !== true;
+              });
+
+        const filteredConversations = searchConversations(conversations, searchInput);
         const categorizedConversations = categorizeConversations(filteredConversations, hasLumoPlus);
 
         return {
             categorizedConversations,
-            noConversationAtAll: sortedConversations.length === 0,
-            noSearchMatch: filteredConversations.length === 0 && nonFavorites.length > 0,
+            noConversationAtAll: conversations.length === 0,
+            noSearchMatch: filteredConversations.length === 0 && conversations.length > 0,
         };
     }, [
-        conversationMap,
+        sortedConversations,
         spaceMap,
         searchInput,
         isGuest,
-        conversationId,
         isGhostChatMode,
         showProjectConversationsInHistory,
         hasLumoPlus,

@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 import { clsx } from 'clsx';
 
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 
@@ -66,11 +65,9 @@ export const CollapsibleSidebarSection = ({
     return (
         <div className={clsx('collapsible-sidebar-section', className)}>
             {isCollapsed ? (
-                <Tooltip title={label} originalPlacement="right">
-                    <button className="sidebar-item" onClick={toggle} aria-label={label}>
-                        <div className="sidebar-item-icon">{icon}</div>
-                    </button>
-                </Tooltip>
+                <button className="sidebar-item" onClick={toggle} aria-label={label}>
+                    <div className="sidebar-item-icon">{icon}</div>
+                </button>
             ) : (
                 <>
                     {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
