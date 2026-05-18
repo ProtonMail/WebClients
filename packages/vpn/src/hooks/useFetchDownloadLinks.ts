@@ -129,17 +129,65 @@ const fetchVpnWindowsDownloadLink = async (): Promise<Links | undefined> => {
     }
 };
 
-export function useFetchDownloadLinks() {
+export function useFetchDownloadLinks(flag: boolean) {
     const [windows, setWindows] = useState<Links>();
     const [mac, setMac] = useState<Links>();
 
     useEffect(() => {
-        void fetchVpnWindowsDownloadLink().then(setWindows).catch();
-    }, []);
+        const effect = () => {
+            if (flag) {
+                void fetchVpnWindowsDownloadLink().then(setWindows).catch();
+            } else {
+                setWindows([
+                    {
+                        title: () => c('Download').t`Windows 10/11 (x64)`,
+                        link: 'https://protonvpn.com/download/ProtonVPN_v4.3.11_x64.exe',
+                    },
+                    {
+                        title: () => c('Download').t`Windows 10/11 (ARM64)`,
+                        link: 'https://protonvpn.com/download/ProtonVPN_v4.3.11_arm64.exe',
+                    },
+                ]);
+            }
+        };
+        effect();
+    }, [flag]);
 
     useEffect(() => {
-        void fetchVpnMacosDownloadLink().then(setMac).catch();
-    }, []);
+        const effect = () => {
+            if (flag) {
+                void fetchVpnMacosDownloadLink().then(setMac).catch();
+            } else {
+                setMac([
+                    {
+                        title: () => c('Download').t`macOS 14 (Sonoma) or newer`,
+                        link: 'https://protonvpn.com/download/macos/6.3.0/ProtonVPN_mac_v6.3.0.dmg',
+                    },
+                    {
+                        title: () => c('Download').t`macOS Ventura`,
+                        link: 'https://protonvpn.com/download/macos/5.1.0/ProtonVPN_mac_v5.1.0.dmg',
+                    },
+                    {
+                        title: () => c('Download').t`macOS Monterey`,
+                        link: 'https://protonvpn.com/download/macos/4.8.0/ProtonVPN_mac_v4.8.0.dmg',
+                    },
+                    {
+                        title: () => c('Download').t`macOS Big Sur`,
+                        link: 'https://protonvpn.com/download/ProtonVPN_mac_v3.3.6.dmg',
+                    },
+                    {
+                        title: () => c('Download').t`macOS Catalina`,
+                        link: 'https://protonvpn.com/download/ProtonVPN_mac_v3.0.22.dmg',
+                    },
+                    {
+                        title: () => c('Download').t`macOS Mojave or earlier`,
+                        link: 'https://protonvpn.com/download/ProtonVPN_mac_v1.9.6.dmg',
+                    },
+                ]);
+            }
+        };
+        effect();
+    }, [flag]);
 
     return { windows, mac };
 }
