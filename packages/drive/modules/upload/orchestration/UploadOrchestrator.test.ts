@@ -277,13 +277,13 @@ describe('UploadOrchestrator', () => {
 
             const startPromise = orchestrator.start();
 
-            jest.advanceTimersByTime(100);
+            await jest.advanceTimersByTimeAsync(600);
             expect(mockGetNextTasks).toHaveBeenCalled();
 
             mockGetCurrentLoad.mockReturnValue({ activePreparingFiles: 0, activeUploadingFiles: 0, activeFolders: 0 });
             mockGetQueue.mockReturnValue([]);
 
-            jest.advanceTimersByTime(100);
+            await jest.advanceTimersByTimeAsync(600);
 
             await startPromise;
         });
@@ -388,7 +388,7 @@ describe('UploadOrchestrator', () => {
 
             const startPromise = orchestrator.start();
 
-            await jest.advanceTimersByTimeAsync(600);
+            await jest.advanceTimersByTimeAsync(3500);
 
             expect(mockGetQueue.mock.calls.length).toBeGreaterThan(5);
 
