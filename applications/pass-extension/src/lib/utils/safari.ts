@@ -12,9 +12,12 @@ import { throwError } from '@proton/pass/utils/fp/throw';
 import { logger } from '@proton/pass/utils/logger';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
+type SafariHostCredentials = Pick<AuthSession, 'UID' | 'AccessToken' | 'RefreshToken' | 'UserID'>;
+type SafariHostRefreshTokens = Pick<RefreshSessionData, 'AccessToken' | 'RefreshTime' | 'RefreshToken'>;
+
 type NativeSafariMessage =
-    | { credentials: MaybeNull<AuthSession> }
-    | { refreshCredentials: Pick<RefreshSessionData, 'AccessToken' | 'RefreshTime' | 'RefreshToken'> }
+    | { credentials: MaybeNull<SafariHostCredentials> }
+    | { refreshCredentials: SafariHostRefreshTokens }
     | { readFromClipboard: {} }
     | { writeToClipboard: { Content: string } }
     | { environment: string };
@@ -25,12 +28,23 @@ type NativeSafariMessage =
  * popover window is listed there, the expanded tab is not. */
 export const isSafariPopoverWindow = (): boolean => browser.extension.getViews({ type: 'popup' }).includes(window);
 
+export const intoSafariCredentials = (session: AuthSession): SafariHostCredentials => ({
+    UID: session.UID,
+    AccessToken: session.AccessToken,
+    RefreshToken: session.RefreshToken,
+    UserID: session.UserID,
+});
+
 export const sendSafariMessage = async <T = unknown>(message: NativeSafariMessage): Promise<Maybe<T>> => {
+    const type = Object.keys(message)[0];
+
     try {
+        logger.info(`[Safari::NM] dispatching message [${type}]`);
         const result = await browser.runtime.sendNativeMessage<string, T>(SAFARI_MESSAGE_KEY, JSON.stringify(message));
+        logger.debug(`[Safari::NM] message processed [${type}]`);
         return result;
     } catch (err) {
-        logger.warn(`[Safari] Native message failure`, err);
+        logger.warn(`[Safari::NM] message failure [${type}]`, err);
     }
 };
 
