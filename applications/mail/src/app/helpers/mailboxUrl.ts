@@ -92,8 +92,12 @@ const stringToInt = (string: string | undefined): number | undefined => {
     return isNumber(string) ? parseInt(string, 10) : undefined;
 };
 
-export const sortToString = (sort: Sort): string | undefined =>
-    sort.sort === 'Time' ? (sort.desc ? undefined : 'date') : sort.desc ? '-size' : 'size';
+export const sortToString = (sort: Sort): string | undefined => {
+    if (sort.sort === 'SnoozeTime' || sort.sort === 'Time') {
+        return sort.sort === 'Time' && !sort.desc ? 'date' : undefined;
+    }
+    return sort.desc ? '-size' : 'size';
+};
 
 const stringToFilter = (string: string | undefined): Filter => {
     switch (string) {
