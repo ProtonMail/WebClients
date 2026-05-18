@@ -8,7 +8,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { createAuthStore } from '@proton/pass/lib/auth/store';
-import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
+import type { ConnectivityEvent, ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import { bootIntent, offlineResume } from '@proton/pass/store/actions';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
@@ -53,7 +53,7 @@ describe('Extension AuthService', () => {
         ctx = {
             booted: false,
             status: AppStatus.IDLE,
-            getState: jest.fn(() => ({ status: ctx.status })),
+            getState: jest.fn(() => ({ status: ctx.status, booted: ctx.booted })),
             setBooted: jest.fn((value: boolean) => (ctx.booted = value)),
             setStatus: jest.fn((value: AppStatus) => (ctx.status = value)),
             service: {
@@ -117,17 +117,15 @@ describe('Extension AuthService', () => {
                 expect(auth.alarms.clearAutoLock).toHaveBeenCalled();
             });
 
-            test('should not call `connectivity.check` on early-return statuses', async () => {
+            test('should not resume on early-return statuses', async () => {
                 ctx.status = AppStatus.UNAUTHORIZED;
                 await auth.config.onInit?.({});
-                expect(connectivity.check).not.toHaveBeenCalled();
                 expect(auth.resumeSession).not.toHaveBeenCalled();
             });
 
-            test('should call `connectivity.check` and resume when status proceeds', async () => {
+            test('should resume when status proceeds', async () => {
                 ctx.status = AppStatus.IDLE;
                 await auth.config.onInit?.({});
-                expect(connectivity.check).toHaveBeenCalled();
                 expect(auth.resumeSession).toHaveBeenCalled();
             });
         });
@@ -227,15 +225,32 @@ describe('Extension AuthService', () => {
         });
 
         describe('`onLoginComplete`', () => {
-            test('should set `AUTHORIZED` status and trigger boot', async () => {
+            test('should set `AUTHORIZED` status and trigger boot when not booted', async () => {
+                ctx.booted = false;
                 await auth.config.onLoginComplete?.('userId', undefined);
                 expect(ctx.setStatus).toHaveBeenCalledWith(AppStatus.AUTHORIZED);
                 expect(ctx.service.store.dispatch).toHaveBeenCalledWith(bootIntent({ offline: false }));
             });
 
-            test('should reset auto-resume count on successful login', async () => {
+            test('should set `READY` status and skip boot dispatch when already booted', async () => {
+                ctx.booted = true;
+                await auth.config.onLoginComplete?.('userId', undefined);
+                expect(ctx.setStatus).toHaveBeenCalledWith(AppStatus.READY);
+                expect(ctx.setStatus).not.toHaveBeenCalledWith(AppStatus.AUTHORIZED);
+                expect(ctx.service.store.dispatch).not.toHaveBeenCalledWith(bootIntent({ offline: false }));
+            });
+
+            test('should reset auto-resume count on successful login regardless of booted state', async () => {
+                ctx.booted = false;
                 await auth.config.onLoginComplete?.('userId', undefined);
                 expect(auth.alarms.resetAutoResume).toHaveBeenCalled();
+
+                jest.clearAllMocks();
+
+                ctx.booted = true;
+                await auth.config.onLoginComplete?.('userId', undefined);
+                expect(auth.alarms.resetAutoResume).toHaveBeenCalled();
+                expect(auth.alarms.clearAutoResume).toHaveBeenCalled();
             });
         });
 
@@ -536,6 +551,14 @@ describe('Extension AuthService', () => {
                 expect(auth.alarms.scheduleAutoResume).not.toHaveBeenCalled();
             });
 
+            test('should call resetAutoResume when retryable: false and unlocked: true', async () => {
+                ctx.status = AppStatus.IDLE;
+                await auth.config.onSessionFailure?.({ retryable: false, unlocked: true }, genericError);
+                expect(auth.alarms.resetAutoResume).toHaveBeenCalled();
+                expect(auth.alarms.registerResumeFailure).not.toHaveBeenCalled();
+                expect(auth.alarms.scheduleAutoResume).not.toHaveBeenCalled();
+            });
+
             test('should land in `ERROR` (not PASSWORD_LOCKED) on connection error when flag is OFF', async () => {
                 ctx.status = AppStatus.IDLE;
                 featureFlags.PassExtensionOfflineV1 = false;
@@ -639,7 +662,7 @@ describe('Extension AuthService', () => {
         });
 
         describe('Connectivity events', () => {
-            let subscriber: (status: ConnectivityStatus) => void;
+            let subscriber: (event: ConnectivityEvent) => void;
 
             beforeEach(() => {
                 jest.spyOn(auth.alarms, 'scheduleAutoResume').mockResolvedValue(undefined);
@@ -651,7 +674,7 @@ describe('Extension AuthService', () => {
             test('should bootstrap auto-resume alarm when coming online from offline-booted client', () => {
                 ctx.status = AppStatus.OFFLINE;
                 ctx.booted = true;
-                subscriber(ConnectivityStatus.ONLINE);
+                subscriber({ type: 'status', status: ConnectivityStatus.ONLINE });
                 expect(auth.alarms.scheduleAutoResume).toHaveBeenCalled();
                 expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
                 expect(auth.init).not.toHaveBeenCalled();
@@ -660,7 +683,7 @@ describe('Extension AuthService', () => {
             test('should bootstrap auto-resume alarm when coming online from password-locked status', () => {
                 ctx.status = AppStatus.PASSWORD_LOCKED;
                 ctx.booted = false;
-                subscriber(ConnectivityStatus.ONLINE);
+                subscriber({ type: 'status', status: ConnectivityStatus.ONLINE });
                 expect(auth.alarms.scheduleAutoResume).toHaveBeenCalled();
                 expect(auth.init).not.toHaveBeenCalled();
                 expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
@@ -669,7 +692,7 @@ describe('Extension AuthService', () => {
             test('should bootstrap auto-resume alarm when coming online from errored status', () => {
                 ctx.status = AppStatus.ERROR;
                 ctx.booted = false;
-                subscriber(ConnectivityStatus.ONLINE);
+                subscriber({ type: 'status', status: ConnectivityStatus.ONLINE });
                 expect(auth.alarms.scheduleAutoResume).toHaveBeenCalled();
                 expect(auth.init).not.toHaveBeenCalled();
                 expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
@@ -678,7 +701,7 @@ describe('Extension AuthService', () => {
             test('should noop when network goes offline', () => {
                 ctx.status = AppStatus.OFFLINE;
                 ctx.booted = true;
-                subscriber(ConnectivityStatus.OFFLINE);
+                subscriber({ type: 'status', status: ConnectivityStatus.OFFLINE });
                 expect(auth.alarms.scheduleAutoResume).not.toHaveBeenCalled();
                 expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
                 expect(auth.init).not.toHaveBeenCalled();
@@ -687,7 +710,7 @@ describe('Extension AuthService', () => {
             test('should noop when online and already booted online', () => {
                 ctx.status = AppStatus.READY;
                 ctx.booted = true;
-                subscriber(ConnectivityStatus.ONLINE);
+                subscriber({ type: 'status', status: ConnectivityStatus.ONLINE });
                 expect(auth.alarms.scheduleAutoResume).not.toHaveBeenCalled();
                 expect(auth.init).not.toHaveBeenCalled();
             });
@@ -695,7 +718,7 @@ describe('Extension AuthService', () => {
             test('should noop when online but status is idle', () => {
                 ctx.status = AppStatus.IDLE;
                 ctx.booted = false;
-                subscriber(ConnectivityStatus.ONLINE);
+                subscriber({ type: 'status', status: ConnectivityStatus.ONLINE });
                 expect(auth.alarms.scheduleAutoResume).not.toHaveBeenCalled();
                 expect(auth.init).not.toHaveBeenCalled();
             });
@@ -787,6 +810,43 @@ describe('Extension AuthService', () => {
                 await alarmListener();
                 expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
                 expect(auth.init).not.toHaveBeenCalled();
+                expect(auth.alarms.scheduleAutoResume).not.toHaveBeenCalled();
+            });
+
+            test('should probe connectivity when worker thinks it is offline', async () => {
+                /** Connectivity state may be stale after SW idle-shutdown; the
+                 * alarm must probe before trusting the offline gate. */
+                ctx.status = AppStatus.PASSWORD_LOCKED;
+                connectivity.online = false;
+                connectivity.status = ConnectivityStatus.OFFLINE;
+                await alarmListener();
+                expect(connectivity.check).toHaveBeenCalledTimes(1);
+            });
+
+            test('should skip the probe when worker already reports online', async () => {
+                ctx.status = AppStatus.PASSWORD_LOCKED;
+                connectivity.online = true;
+                connectivity.status = ConnectivityStatus.ONLINE;
+                await alarmListener();
+                expect(connectivity.check).not.toHaveBeenCalled();
+            });
+
+            test('post-probe ONLINE drives the resume path (stale OFFLINE recovered)', async () => {
+                /** Probe flips the stale OFFLINE status to ONLINE — the alarm must
+                 * proceed with the resume instead of returning via the OFFLINE switch. */
+                ctx.status = AppStatus.PASSWORD_LOCKED;
+                connectivity.online = false;
+                connectivity.status = ConnectivityStatus.OFFLINE;
+                (connectivity.check as jest.Mock).mockImplementationOnce(async () => {
+                    connectivity.online = true;
+                    connectivity.status = ConnectivityStatus.ONLINE;
+                });
+                await alarmListener();
+                expect(auth.init).toHaveBeenCalledWith({
+                    forceLock: expect.any(Boolean),
+                    retryable: true,
+                    silence: true,
+                });
                 expect(auth.alarms.scheduleAutoResume).not.toHaveBeenCalled();
             });
         });

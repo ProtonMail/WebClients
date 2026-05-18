@@ -6,7 +6,7 @@ import type { WorkerContextInterface } from 'proton-pass-extension/app/worker/co
 import { SESSION_RESUME_MAX_RETRIES } from '@proton/pass/lib/auth/scheduler';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { createAuthStore } from '@proton/pass/lib/auth/store';
-import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
+import type { ConnectivityEvent, ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import { bootIntent, offlineResume } from '@proton/pass/store/actions';
 import type { Api, Maybe } from '@proton/pass/types';
@@ -64,7 +64,7 @@ describe('Auth integration', () => {
     let connectivity: { -readonly [P in keyof ConnectivityService]: ConnectivityService[P] };
     let ctx: WorkerContextInterface;
     let alarmState: ReturnType<typeof wireTestAlarm>;
-    let connectivitySubscriber: ((status: ConnectivityStatus) => void) | undefined;
+    let connectivitySubscriber: ((event: ConnectivityEvent) => void) | undefined;
 
     /** Plant offline components + a session with `offlineKD` so `unlocked`
      * resolves true via `validOfflineSession(authStore.getSession())`. */
@@ -97,7 +97,7 @@ describe('Auth integration', () => {
         ctx = {
             booted: false,
             status: AppStatus.IDLE,
-            getState: jest.fn(() => ({ status: ctx.status })),
+            getState: jest.fn(() => ({ status: ctx.status, booted: ctx.booted })),
             setStatus: jest.fn((value: AppStatus) => (ctx.status = value)),
             setBooted: jest.fn((value: boolean) => (ctx.booted = value)),
             service: {
@@ -211,7 +211,7 @@ describe('Auth integration', () => {
             ctx.booted = true;
             /** 1. Initial schedule. `setAutoResume` is invoked via the connectivity
              * subscriber for offline-booted clients on `ONLINE` transition. */
-            connectivitySubscriber?.(ConnectivityStatus.ONLINE);
+            connectivitySubscriber?.({ type: 'status', status: ConnectivityStatus.ONLINE });
             await flushAsync();
 
             const firstWhen = alarmState.getScheduledTime();
@@ -222,8 +222,8 @@ describe('Auth integration', () => {
              * would naively re-schedule and push the retry out further. The `pending`
              * guard inside `setAutoResume` must keep the original `when`. */
             for (let i = 0; i < 5; i++) {
-                connectivitySubscriber?.(ConnectivityStatus.OFFLINE);
-                connectivitySubscriber?.(ConnectivityStatus.ONLINE);
+                connectivitySubscriber?.({ type: 'status', status: ConnectivityStatus.OFFLINE });
+                connectivitySubscriber?.({ type: 'status', status: ConnectivityStatus.ONLINE });
                 await flushAsync();
             }
 
@@ -236,13 +236,13 @@ describe('Auth integration', () => {
             ctx.booted = true;
 
             /** 1. Bootstrap the chain via the subscriber. */
-            connectivitySubscriber?.(ConnectivityStatus.ONLINE);
+            connectivitySubscriber?.({ type: 'status', status: ConnectivityStatus.ONLINE });
             await flushAsync();
             expect(browser.alarms.create).toHaveBeenCalledTimes(1);
 
             /** 2. Simulate flap noise around the alarm fire. */
-            connectivitySubscriber?.(ConnectivityStatus.OFFLINE);
-            connectivitySubscriber?.(ConnectivityStatus.ONLINE);
+            connectivitySubscriber?.({ type: 'status', status: ConnectivityStatus.OFFLINE });
+            connectivitySubscriber?.({ type: 'status', status: ConnectivityStatus.ONLINE });
             await fireAlarm(SESSION_RESUME_ALARM);
 
             /** 3. Assert offline-resume intent dispatched. */

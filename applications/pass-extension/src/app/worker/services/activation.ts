@@ -75,7 +75,7 @@ export const createActivationService = () => {
     /* throttle update checks for updates every hour */
     const handleActivation = async () => {
         try {
-            logger.info('[Activation] activating worker [alarms cleared - checking for update]');
+            logger.debug('[Activation] activating worker [alarms cleared - checking for update]');
             await browser.alarms.clearAll();
             const alarmRegistered = await browser.alarms.get(UPDATE_ALARM_NAME);
             if (!alarmRegistered) void browser.alarms.create(UPDATE_ALARM_NAME, { periodInMinutes: 60 });
@@ -196,6 +196,18 @@ export const createActivationService = () => {
             const fromPopup = endpoint === 'popup';
             const fromPage = endpoint === 'page';
             const fromClientApp = fromPopup || fromPage;
+
+            /** Forward the popup's navigator state into the worker's service as
+             * navigator events are unreliable. Drives the same retry handler
+             * transition  as a worker-observed navigator transition would.
+             * Popup-only: see `CONNECTIVITY_SYNC` for the rationale. */
+            if (fromPopup) ctx.service.connectivity.syncNavigatorOnline(payload.online);
+            const revalidateConn = fromPopup && payload.online && !ctx.service.connectivity.online;
+
+            /** Resolve real connectivity status on popup wakeup when the worker thinks
+             * it's offline. Skip the probe entirely if the client signaled offline.
+             * no point pinging when the device itself reports no network. */
+            if (revalidateConn) await ctx.service.connectivity.check();
             const online = ctx.service.connectivity.online;
 
             /* Resume the session immediately if the worker is stale/idle or if the wakeup request
@@ -216,7 +228,7 @@ export const createActivationService = () => {
                      * alarm-driven retry chain. `isResumeThrottled` covers both the "alarm
                      * pending" case (chain alive) and the "post-max window" (chain exhausted) */
                     if (await ctx.service.auth.alarms.isResumeThrottled()) {
-                        logger.info(`[Activation] Automatic session resume throttled`);
+                        logger.debug(`[Activation] Automatic session resume throttled`);
                         return false;
                     }
 
@@ -237,7 +249,7 @@ export const createActivationService = () => {
             if (fromPopup) {
                 /** Try a background offline-resume when opening the popup
                  * and connectivity is available. */
-                if (clientOffline(status) && ctx.service.connectivity.online) {
+                if (clientOffline(status) && online) {
                     ctx.service.store.dispatch(
                         offlineResume.intent({
                             localID: authStore.getLocalID(),

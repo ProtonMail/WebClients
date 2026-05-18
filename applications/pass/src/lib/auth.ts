@@ -45,6 +45,7 @@ import { getInitialLockedAppStatus } from '@proton/pass/lib/auth/utils';
 import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import { clientBooted, clientOffline } from '@proton/pass/lib/client';
 import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
+import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import {
     bootIntent,
     cacheCancel,
@@ -116,10 +117,11 @@ export const createAuthService = ({
     const scheduler = createAuthScheduler();
 
     /** Wraps `bootIntent` dispatch with a scheduler reset: any successful boot
-     *  invalidates the offline-resume retry chain. */
+     *  invalidates the offline-resume retry chain. Skips the dispatch when the
+     *  app is already booted (offline-resume handles hydration). */
     const boot = (payload: Parameters<typeof bootIntent>[0]) => {
         scheduler.reset();
-        store.dispatch(bootIntent(payload));
+        if (!app.getState().booted) store.dispatch(bootIntent(payload));
     };
 
     const auth = createCoreAuthService({
@@ -555,9 +557,9 @@ export const createAuthService = ({
             logger.info('[AuthServiceProvider] Session resume failure');
             await api.idle();
 
-            /** Only advance the retry chain on real connectivity failures. */
+            /** Only advance the retry chain on server-side downtime */
             const connectionIssue = getIsConnectionIssue(err);
-            if (connectionIssue) scheduler.attempt();
+            if (connectionIssue && connectivity.status === ConnectivityStatus.DOWNTIME) scheduler.attempt();
 
             /** Offline-booted: do not mutate app state on resume failures. */
             if (clientOffline(app.getState().status)) return;
@@ -616,25 +618,44 @@ export const createAuthService = ({
     auth.registerLockAdapter(passwordLockAdapterFactory(auth));
     auth.registerLockAdapter(biometricsLockAdapterFactory(auth, core));
 
-    /** Event-driven offline-resume triggers without alarm timers. Retries fire
-     * opportunistically on tab focus or connectivity transitions. Connectivity
-     * transitions are gated by the scheduler's cooldown; user gestures (tab focus)
-     * bypass it (iso with the extension's popup-open path). */
+    /** Event-driven offline-resume: connectivity transitions dispatch through
+     * the scheduler's cooldown. User gestures (visibility, desktop system wake)
+     * bypass it via `onWake` & also re-syncs navigator state to recover from
+     * events missed across system suspend. */
     auth.listen = () => {
         const tryOfflineResume = (throttle: boolean) => {
             if (clientOffline(app.getState().status) && connectivity.online) {
-                const localID = authStore.getLocalID();
                 if (throttle && scheduler.isThrottled()) return;
+                const localID = authStore.getLocalID();
                 if (localID) store.dispatch(offlineResume.intent({ localID, silence: true }));
             }
         };
 
-        const connectivityUnsub = connectivity.subscribe(() => tryOfflineResume(true));
-        const onVisibilityChange = () => document.visibilityState === 'visible' && tryOfflineResume(false);
+        const onWake = async () => {
+            scheduler.reset();
+            connectivity.syncNavigatorOnline(navigator.onLine);
+            if (navigator.onLine && !connectivity.online) await connectivity.check();
+            tryOfflineResume(false);
+        };
+
+        /** Connectivity service subscriber */
+        const connectivityUnsub = connectivity.subscribe((evt) => {
+            const navigatorOnline = evt.type === 'navigator-online';
+            const apiOnline = evt.type === 'status' && evt.status === ConnectivityStatus.ONLINE;
+            if (navigatorOnline || apiOnline) scheduler.reset();
+            if (evt.type === 'status') tryOfflineResume(true);
+        });
+
+        /** Desktop-only system wake subscriber */
+        const systemWakeUnsub = DESKTOP_BUILD ? window.ctxBridge?.onSystemWake(onWake) : undefined;
+
+        /** Visibility-change handler */
+        const onVisibilityChange = () => document.visibilityState === 'visible' && onWake();
         document.addEventListener('visibilitychange', onVisibilityChange);
 
         return () => {
             connectivityUnsub();
+            systemWakeUnsub?.();
             document.removeEventListener('visibilitychange', onVisibilityChange);
         };
     };

@@ -16,6 +16,8 @@ export type ContextBridgeApi = {
     windowShow: () => Promise<void>;
     onWindowHide: (callback: () => void) => void;
 
+    onSystemWake: (callback: () => void) => () => void;
+
     writeToClipboard: (text: string) => Promise<void>;
     readFromClipboard: () => Promise<string>;
 

@@ -52,7 +52,7 @@ describe('API factory', () => {
             expect(api.getState()).toEqual({
                 appVersionBad: false,
                 online: true,
-                pendingConnectivityChange: 0,
+                ticksUntilOnline: 0,
                 pendingCount: 0,
                 queued: [],
                 refreshing: false,
@@ -122,6 +122,29 @@ describe('API factory', () => {
 
             resolvers[2](mockAPIResponse());
             await call3;
+        });
+
+        test('`prioritize` bypasses the threshold queue', async () => {
+            const backPressuredApi = createApi({ config, getAuth, threshold: 1 });
+            const resolvers: ((res: Response) => void)[] = [];
+
+            fetchMock
+                .mockImplementationOnce(() => new Promise<Response>((res) => resolvers.push(res)))
+                .mockImplementationOnce(() => new Promise<Response>((res) => resolvers.push(res)));
+
+            /** Saturate the threshold with a normal request */
+            const blocking = backPressuredApi({});
+            await asyncNextTick();
+            expect(fetchMock).toHaveBeenCalledTimes(1);
+
+            /** Priority request dispatches immediately, bypassing the gate */
+            const priority = backPressuredApi({ prioritize: true });
+            await asyncNextTick();
+            expect(fetchMock).toHaveBeenCalledTimes(2);
+
+            resolvers[0](mockAPIResponse());
+            resolvers[1](mockAPIResponse());
+            await Promise.all([blocking, priority]);
         });
     });
 
@@ -345,6 +368,15 @@ describe('API factory', () => {
             await expect(api({})).rejects.toThrow('App version outdated');
             expect(api.getState().appVersionBad).toBe(true);
         });
+
+        test('should classify TimeoutError as OFFLINE', async () => {
+            const timeoutError = Object.assign(new Error('timeout'), { name: 'TimeoutError' });
+            fetchMock.mockRejectedValueOnce(timeoutError);
+
+            await expect(api({})).rejects.toThrow();
+            expect(api.getState().online).toBe(false);
+            expect(listener).toHaveBeenCalledWith({ type: 'connectivity', online: false, unreachable: false });
+        });
     });
 
     describe('Connectivity stabilization', () => {
@@ -370,14 +402,14 @@ describe('API factory', () => {
             /** 3. First request settles: countdown at 1, no ONLINE event yet */
             resolvers[0](mockAPIResponse());
             await call1;
-            expect(api.getState().pendingConnectivityChange).toBe(1);
+            expect(api.getState().ticksUntilOnline).toBe(1);
             expect(listener).not.toHaveBeenCalledWith({ type: 'connectivity', online: true, unreachable: false });
 
             /** 4. Last request settles: countdown reaches 0, ONLINE flushed */
             resolvers[1](mockAPIResponse());
             await call2;
             expect(listener).toHaveBeenCalledWith({ type: 'connectivity', online: true, unreachable: false });
-            expect(api.getState().pendingConnectivityChange).toBe(0);
+            expect(api.getState().ticksUntilOnline).toBe(0);
         });
 
         test('broadcasts OFFLINE immediately without waiting for pending requests to drain', async () => {
@@ -394,13 +426,13 @@ describe('API factory', () => {
             /** 2. Failure resolves first: OFFLINE broadcast immediately, deferred ONLINE discarded */
             await offlineFetch;
             expect(listener).toHaveBeenCalledWith({ type: 'connectivity', online: false, unreachable: false });
-            expect(api.getState().pendingConnectivityChange).toBe(0);
+            expect(api.getState().ticksUntilOnline).toBe(0);
 
             /** 3. Deferred success resolves: back ONLINE */
             resolvers[0](mockAPIResponse());
             await successFetch;
             expect(listener).toHaveBeenCalledWith({ type: 'connectivity', online: true, unreachable: false });
-            expect(api.getState().pendingConnectivityChange).toBe(0);
+            expect(api.getState().ticksUntilOnline).toBe(0);
         });
 
         test('does not re-broadcast OFFLINE when already offline', async () => {
@@ -437,14 +469,14 @@ describe('API factory', () => {
             /** 3. First request succeeds */
             resolvers[0](mockAPIResponse());
             await successFetch;
-            expect(api.getState().pendingConnectivityChange).toBe(1);
+            expect(api.getState().ticksUntilOnline).toBe(1);
             expect(listener).not.toHaveBeenCalledWith({ type: 'connectivity', online: true, unreachable: false });
             listener.mockClear();
 
             /** 4. Second request fails: OFFLINE broadcast immediately */
             rejecters[0]({ ok: false });
             await offlineFetch;
-            expect(api.getState().pendingConnectivityChange).toBe(0);
+            expect(api.getState().ticksUntilOnline).toBe(0);
             expect(listener).toHaveBeenCalledWith({ type: 'connectivity', online: false, unreachable: false });
         });
     });
