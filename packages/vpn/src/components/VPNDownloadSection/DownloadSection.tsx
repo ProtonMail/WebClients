@@ -83,7 +83,7 @@ enum PlatformIndex {
 
 function useDownloadData() {
     const flag = useFlag('DesktopDownloadApiEnabled');
-    const { windows, mac } = useFetchDownloadLinks();
+    const { windows, mac } = useFetchDownloadLinks(flag);
 
     return [
         {
@@ -98,18 +98,7 @@ function useDownloadData() {
                                   image: windowsPreview,
                                   downloadButton: {
                                       title: () => c('Download').t`Download for Windows`,
-                                      links: flag
-                                          ? windows
-                                          : [
-                                                {
-                                                    title: () => c('Download').t`Windows 10/11 (x64)`,
-                                                    link: 'https://protonvpn.com/download/ProtonVPN_v4.3.11_x64.exe',
-                                                },
-                                                {
-                                                    title: () => c('Download').t`Windows 10/11 (ARM64)`,
-                                                    link: 'https://protonvpn.com/download/ProtonVPN_v4.3.11_arm64.exe',
-                                                },
-                                            ],
+                                      links: windows,
                                   },
                                   footnote: {
                                       title: () => c('Download').t`Installation guide`,
@@ -128,34 +117,7 @@ function useDownloadData() {
                                   image: macosPreview,
                                   downloadButton: {
                                       title: () => c('Download').t`Download for macOS`,
-                                      links: flag
-                                          ? mac
-                                          : [
-                                                {
-                                                    title: () => c('Download').t`macOS 14 (Sonoma) or newer`,
-                                                    link: 'https://protonvpn.com/download/macos/6.3.0/ProtonVPN_mac_v6.3.0.dmg',
-                                                },
-                                                {
-                                                    title: () => c('Download').t`macOS Ventura`,
-                                                    link: 'https://protonvpn.com/download/macos/5.1.0/ProtonVPN_mac_v5.1.0.dmg',
-                                                },
-                                                {
-                                                    title: () => c('Download').t`macOS Monterey`,
-                                                    link: 'https://protonvpn.com/download/macos/4.8.0/ProtonVPN_mac_v4.8.0.dmg',
-                                                },
-                                                {
-                                                    title: () => c('Download').t`macOS Big Sur`,
-                                                    link: 'https://protonvpn.com/download/ProtonVPN_mac_v3.3.6.dmg',
-                                                },
-                                                {
-                                                    title: () => c('Download').t`macOS Catalina`,
-                                                    link: 'https://protonvpn.com/download/ProtonVPN_mac_v3.0.22.dmg',
-                                                },
-                                                {
-                                                    title: () => c('Download').t`macOS Mojave or earlier`,
-                                                    link: 'https://protonvpn.com/download/ProtonVPN_mac_v1.9.6.dmg',
-                                                },
-                                            ],
+                                      links: mac,
                                   },
                                   footnote: {
                                       title: () => c('Download').t`Installation guide`,
