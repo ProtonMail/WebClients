@@ -34,7 +34,7 @@ interface Props {
 }
 
 const ViewGroup = ({
-    groupsManagement: { actions, selectedGroup, groupMembers, loadingGroupMembers, addressToMemberMap },
+    groupsManagement: { actions, selectedGroup, groupMembers, loadingGroupMembers, addressToMemberMap, groupRolesMap },
     groupsManagement,
     groupData,
     canOnlyDelete,
@@ -71,6 +71,8 @@ const ViewGroup = ({
     const showMailFeatures = shouldShowMail(organization?.PlanName);
     const primaryGroupAddressKey = groupData.Address.Keys[0];
     const isE2eeEnabled = !hasBit(primaryGroupAddressKey?.Flags ?? 0, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
+
+    const roleNames = groupRolesMap[groupData.ID]?.map((assignment) => assignment.Role.Name).join(', ');
 
     return (
         <>
@@ -144,6 +146,13 @@ const ViewGroup = ({
                         <span className="text-bold mr-1">{c('Group detail label').t`Description:`}</span>
                         {groupData.Description}
                     </div>
+
+                    {roleNames && (
+                        <div className="text-ellipsis-two-lines text-break">
+                            <span className="text-bold mr-1">{c('Group detail label').t`Roles and permission:`}</span>
+                            {roleNames}
+                        </div>
+                    )}
 
                     {showMailFeatures && groupData.Address.Email && (
                         <div className="flex items-center">

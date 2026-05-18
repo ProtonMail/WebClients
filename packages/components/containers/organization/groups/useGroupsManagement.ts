@@ -11,6 +11,7 @@ import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
 import { createGroup, editGroup } from '@proton/account/groups/actions';
 import { addGroupMembersThunk } from '@proton/account/groups/addGroupMember';
 import { useGroups } from '@proton/account/groups/hooks';
+import { useGroupRoles } from '@proton/account/groups/useGroupRoles';
 import { useMembers } from '@proton/account/members/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
@@ -50,6 +51,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     const [members] = useMembers();
     const [memberships, loadingMemberships] = useGroupMemberships();
     const [groups, loadingGroups] = useGroups();
+    const { value: groupRolesMap } = useGroupRoles({ groups });
     const [user, loadingUser] = useUser();
     const api = useApi();
     const dispatch = useDispatch();
@@ -370,6 +372,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         groupMembers: transformedGroupMembers,
         addressToMemberMap,
         addressEmailToMemberMap,
+        groupRolesMap,
         loadingGroupMembers,
         domainData,
         suggestedAddressDomainName,
