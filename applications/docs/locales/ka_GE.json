@@ -982,6 +982,24 @@
       ],
       "View only": [
         "მხოლოდ დათვალიერებისათვის"
+      ],
+      "Change my access": [
+        "ჩემი წვდომების შეცვლა"
+      ],
+      "Encrypted": [
+        "დაშიფრული"
+      ],
+      "Remove my access": [
+        "ჩემი წვდომის გაუქმება"
+      ],
+      "Set password or expiration date": [
+        "პაროლის, ან ვადის ამოწურვის თარიღის დაყენება"
+      ],
+      "Shared": [
+        "გაზიარებული"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "გაზიარება გამჭოლად დაშიფრულია"
       ]
     },
     "Action subscription": {
@@ -3407,6 +3425,42 @@
       ],
       "Wrong billing address": [
         "არასწორი გადახდის მისამართი"
+      ],
+      "An error occurred": [
+        "ნაპოვნია შეცდომა"
+      ],
+      "Failed to create public share node": [
+        "საჯარო ზიარის კვანძის შექმნა ჩავარდა"
+      ],
+      "Failed to fetch node": [
+        "კვანზის მოთხოვნის შეცდომა"
+      ],
+      "Failed to fetch sharing info": [
+        "გაზიარების ინფორმაციის მოთხოვნის შეცდომა"
+      ],
+      "Failed to resend invitation": [
+        "მოსაწვევის თავიდან გაგზავნის შეცდომა"
+      ],
+      "Failed to unshare node": [
+        "კვანძის გაზიარების გაუქმების შეცდომა"
+      ],
+      "Failed to update direct share node": [
+        "პირდაპირი გაზიარების კვანძის განახლება ჩავარდა"
+      ],
+      "Failed to update public share node": [
+        "საჯარო ზიარის კვანძის განახლება ჩავარდა"
+      ],
+      "Stopping the sharing of this item has failed": [
+        "ამ ელემენტის გაზიარების გაჩერება ჩავარდა"
+      ],
+      "The link to your item failed to be deleted": [
+        "ბმული თქვენს ელემენტამდე არასწორი ან წაშლილია"
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ არაგაშიფვრადი მოწყობილობა"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ არგაშიფვრადი სახელი"
       ]
     },
     "Error importing calendar": {
@@ -5741,6 +5795,27 @@
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "დაკარგავთ წვდომას ${ boldPlanTitle }-სთან. თარიღი: ${ boldEndDate }."
+      ],
+      "Can edit": [
+        "შეუძლია, ჩაასწოროს"
+      ],
+      "Can edit and manage access": [
+        "შეუძლია წვდომების ჩასწორება და მართვა"
+      ],
+      "Can view and edit": [
+        "შეუძლია ნახვა და ჩასწორება"
+      ],
+      "Can view only": [
+        "მხოლოდ ნახვა"
+      ],
+      "Link copied": [
+        "ბმული დაკოპირებულია"
+      ],
+      "owner": [
+        "მფლობელი"
+      ],
+      "Who has access": [
+        "ვის აქვს წვდომა"
       ]
     },
     "info": {
@@ -6370,6 +6445,45 @@
       ],
       "Your password (trusted contact)": [
         "თქვენი პაროლი (სანდო კონტაქტი)"
+      ],
+      "Access": [
+        "წვდომა"
+      ],
+      "Active": [
+        "აქტიური"
+      ],
+      "Allow editors to change permissions and share": [
+        "რედაქტორებისთვის წვდომებისა და გაზიარების შეცვლის უფლების მიცემა"
+      ],
+      "Anonymous": [
+        "ანონიმური"
+      ],
+      "Anyone on the Internet with the link": [
+        "ბმულის მქონე ნებისმიერ პირს ინტერნეტში"
+      ],
+      "can edit": [
+        "შეუძლია, ჩაასწოროს"
+      ],
+      "can view": [
+        "შეუძლია, ნახოს"
+      ],
+      "Delete link and remove access for everyone": [
+        "ბმულის წაშლა და ყველასთვის წვდომის შეწყვეტა"
+      ],
+      "Disable this link on a specific date": [
+        "ამ ბმულის გამორთვა მითითებულ თარიღზე"
+      ],
+      "Expiry": [
+        "ვადა"
+      ],
+      "Not active": [
+        "აქტიური არაა"
+      ],
+      "Require password": [
+        "პაროლის მოთხოვნა"
+      ],
+      "Set a password to limit access via link": [
+        "დააყენეთ პაროლი ბმულით წვდომის შესაზღუდად"
       ]
     },
     "Label for contact group color": {
@@ -9182,6 +9296,12 @@
       ],
       "Pending": [
         "რიგში"
+      ],
+      "pending": [
+        "რიგში"
+      ],
+      "user joined": [
+        "მომხმარებელი შემოვიდა"
       ]
     },
     "Storage": {
@@ -10354,6 +10474,18 @@
       ],
       "Your download includes a ${ DOCS_APP_NAME } file": [
         "თქვენი გადმოწერა ${ DOCS_APP_NAME } ფაილს შეიცავს"
+      ],
+      "Public link": [
+        "საჯარო ბმული"
+      ],
+      "Public link settings": [
+        "საჯარო ბმულის მორგება"
+      ],
+      "Remove your access?": [
+        "გავაუქმოთ თქვენი წვდომა?"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "პარამეტრები ${ sharedFileName }-ისთვის"
       ]
     },
     "Title subscription": {

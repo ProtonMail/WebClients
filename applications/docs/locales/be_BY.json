@@ -17,7 +17,7 @@
         "Выяўлены ${ name } і ${ remainingCount } іншыя(х) патэнцыяльныя(х) ўцечкі(ак). Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Выяўлены ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+        "Выяўлена ${ name } і яшчэ 1 іншая патэнцыяльная ўцечка даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Выяўлена патэнцыяльная ўцечка ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
@@ -29,7 +29,7 @@
         "Выяўлена патэнцыяльная ўцечка ад ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Вашы звесткі былі знойдзены прынамсі ў адной уцечкі даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ]
     },
     "Action": {
@@ -184,7 +184,7 @@
         "Скапіяваць запрашальную спасылку"
       ],
       "Copy link": [
-        "Капіяваць спасылку"
+        "Скапіяваць спасылку"
       ],
       "Create a copy": [
         "Стварыць копію"
@@ -337,7 +337,7 @@
         "Імпартаваць лісты"
       ],
       "Import from .csv or vCard": [
-        "Імпартаванне з .csv або vCard"
+        "Імпартаваць з .csv або vCard"
       ],
       "Import from Google": [
         "Імпартаваць з Google"
@@ -574,7 +574,7 @@
         "Зарэгістравацца"
       ],
       "Skip verification": [
-        "Прапусціць праверку"
+        "Прапусціць спраўджанне"
       ],
       "Start import": [
         "Пачаць імпартаванне"
@@ -712,7 +712,7 @@
         "Дадаць іншы ўліковы запіс"
       ],
       "Ask me next time": [
-        "Спытайце мяне наступны раз"
+        "Спытаць мяне наступны раз"
       ],
       "Change password": [
         "Змяніць пароль"
@@ -1001,6 +1001,24 @@
       ],
       "View only": [
         "Толькі прагляд"
+      ],
+      "Change my access": [
+        "Змяніць мой доступ"
+      ],
+      "Encrypted": [
+        "Зашыфравана"
+      ],
+      "Remove my access": [
+        "Выдаліць мой доступ"
+      ],
+      "Set password or expiration date": [
+        "Задаць пароль або тэрмін дзеяння"
+      ],
+      "Shared": [
+        "Абагуленыя"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Абагуліць са скразным шыфраваннем"
       ]
     },
     "Action subscription": {
@@ -2599,7 +2617,7 @@
         "Атрымайце неабмежаваную колькасць псеўданімаў і сховішча аб'ёмам у 500 ГБ з тарыфным планам ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае групы. Паглядзіце, як неабходна імпартаваць такія групы."
+        "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае некаторыя групы. Паглядзіце, як неабходна імпартаваць такія групы."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Аб'яднанне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
@@ -2741,7 +2759,7 @@
         "Таксама мы аўтаматычна параўналі палі CSV з палямі vCard. Вы можаце праверыць і змяніць гэтыя адпаведнасці ўручную."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Мы выявілі наступныя палі ў файле CSV, які вы запампавалі. Адзначце тыя, якія вы хочаце імпартаваць."
+        "Выяўлены наступныя палі ў файле CSV, які вы запампавалі. Адзначце тыя, якія вы хочаце імпартаваць."
       ]
     },
     "Downgrade account reason": {
@@ -3134,7 +3152,7 @@
         "Не ўдалося запампаваць відарыс"
       ],
       "IMAP server is required": [
-        "Патрабуецца ўвесці сервер IMAP"
+        "Патрабуецца сервер IMAP"
       ],
       "Incorrect password. Please try again.": [
         "Няправільны пароль. Паспрабуйце яшчэ раз."
@@ -3278,10 +3296,10 @@
         "Не ўдалося знайсці"
       ],
       "Signature not verified": [
-        "Подпіс не правераны"
+        "Подпіс не спраўджаны"
       ],
       "Signature verification failed": [
-        "Не ўдалося праверыць подпіс"
+        "Не ўдалося спраўдзіць подпіс"
       ],
       "Some contacts could not be deleted": [
         "Не ўдалося выдаліць некаторыя кантакты"
@@ -3302,7 +3320,7 @@
         "Назвы некаторых вашых метак недаступны. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Назвы некаторых вашых метак перавышаюць абмежаванні колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
+        "Назвы некаторых вашых метак перавышаюць максімальнае абмежаванне па колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
       ],
       "status page": [
         "статус старонкі"
@@ -3371,10 +3389,10 @@
         "У вашым знешнім уліковым запісе занадта шмат папак. Наладзьце імпартаванне, каб выдаліць некаторыя папкі."
       ],
       "There was an error when exporting the contacts vCards": [
-        "Адбылася памылка падчас экспартавання кантактаў vCard"
+        "Адбылася памылка пры экспартаванні кантактаў vCard"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Гэта поле перавышае максімальную колькасць сімвалаў (максімум: ${ maximumLength })."
+        "Гэта поле перавышае максімальную колькасць сімвалаў (дазволена: ${ maximumLength })."
       ],
       "This field is required": [
         "Абавязковае поле"
@@ -3452,7 +3470,7 @@
         "Увядзіце сваё імя карыстальніка без дамена (@example.com)"
       ],
       "Failed loading group members": [
-        "Збой загрузкі членаў групы"
+        "Збой загрузкі ўдзельнікаў групы"
       ],
       "Failed to copy photo to album": [
         "Не ўдалося скапіяваць фатаграфію ў альбом"
@@ -3519,6 +3537,48 @@
       ],
       "Wrong billing address": [
         "Няправільны плацежны адрас"
+      ],
+      "An error occurred": [
+        "Адбылася памылка"
+      ],
+      "Failed to change permissions settings": [
+        "Не ўдалося змяніць налады дазволаў"
+      ],
+      "Failed to create public share node": [
+        "Не ўдалося стварыць публічны вузел абагульвання"
+      ],
+      "Failed to fetch node": [
+        "Не ўдалося атрымаць вузел"
+      ],
+      "Failed to fetch sharing info": [
+        "Не ўдалося атрымаць зветкі абагульвання"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Не ўдалося загрузіць даныя падпіскі. Паспрабуйце яшчэ раз пазней."
+      ],
+      "Failed to resend invitation": [
+        "Не ўдалося паўторна адправіць запрашэнне"
+      ],
+      "Failed to unshare node": [
+        "Не ўдалося скасаваць абаагульванне вузла"
+      ],
+      "Failed to update direct share node": [
+        "Не ўдалося абнавіць прамы вузел абагульвання"
+      ],
+      "Failed to update public share node": [
+        "Не ўдалося абнавіць публічны вузел абагульвання"
+      ],
+      "Stopping the sharing of this item has failed": [
+        "Збой спынення абагульвання гэтага элемента"
+      ],
+      "The link to your item failed to be deleted": [
+        "Не ўдалося выдаліць спасылку на ваш элемент"
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Прылада не паддаецца расшыфроўцы"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Назва не паддаецца расшыфроўцы"
       ]
     },
     "Error importing calendar": {
@@ -4211,7 +4271,7 @@
         "Двухэтапная праверка ўключана ў вашым знешнім уліковым запісе электроннай пошты."
       ],
       "IMAP access is enabled in your external account.": [
-        "У вашым знешнім уліковым запісе ўключаны IMAP."
+        "У вашым знешнім уліковым запісе ўключаны доступ па IMAP."
       ],
       "IMAP access is enabled in your Yahoo account.": [
         "У вашым уліковым запісе Yahoo уключаны IMAP."
@@ -4223,7 +4283,7 @@
         "Выкарыстоўвайце свой пароль праграмы, калі:"
       ],
       "Use your app password instead of your regular password if:": [
-        "Выкарыстоўвайце ваш пароль праграмы замест звычайнага пароля, калі:"
+        "Выкарыстоўвайце пароль праграмы замест звычайнага пароля, калі:"
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Ваш пароль праграмы правільны. ${ boldNot } выкарыстоўвайце свой звычайны пароль."
@@ -4238,7 +4298,7 @@
         "Ваш адрас электроннай пошты і пароль ад праграмы з'яўляюцца правільнымі. ${ boldNot } выкарыстоўвайце свой звычайны пароль."
       ],
       "Your email address and password are correct.": [
-        "Вашы адрас электроннай пошты і пароль правільныя."
+        "Ваш адрас электроннай пошты і пароль правільныя."
       ],
       "Your password is correct.": [
         "Ваш пароль правільны."
@@ -4324,7 +4384,7 @@
         "пароль праграмы або ўключыць IMAP"
       ],
       "CSV or a VCF (vCard) file": [
-        "Файл CSV або VCF (vCard)"
+        "файл CSV або VCF (vCard)"
       ],
       "full calendar view": [
         "поўнага выгляду календара"
@@ -4338,10 +4398,10 @@
     },
     "Import instructions step": {
       "Go to ${ calendarViewLink } in Yahoo.": [
-        "Перайсці да ${ calendarViewLink } у Yahoo."
+        "Перайсці да ${ calendarViewLink } ў Yahoo."
       ],
       "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "Навядзіце курсор мышы на каляндар, які вы хочаце імпартаваць, і адкрыйце выпадное меню."
+        "Навядзіце курсор мышы на каляндар, які хочаце імпартаваць, і адкрыйце выпадное меню."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Выберыце ${ boldExport }, каб экспартаваць каляндар як файл ICS."
@@ -4947,7 +5007,7 @@
         "Лагатып JCB"
       ],
       "Just confirm your selection and we'll do the rest.": [
-        "Проста пацвердзіце свой выбар, а мы зробім усё астатняе."
+        "Проста пацвердзіце свой выбар, а астатнія дзеянні будуць зроблены праграмай."
       ],
       "Keep your files secure with end-to-end encryption.": [
         "Бяспечна захоўвайце свае файлы з дапамогай скразнога шыфравання."
@@ -5028,7 +5088,7 @@
         "Назіранне за ўліковымі запісамі"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выбераце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
+        "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выберыце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
       ],
       "New": [
         "Новы"
@@ -5073,7 +5133,7 @@
         "Па-за сеткай"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як скампраметаваныя. Мы рэкамендуем вам не давяраць гэтым ключам."
+        "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як \"скампраметаваныя\". Рэкамендуецца не давяраць гэтым ключам."
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
         "Дазволены толькі ${ MAX_CUSTOM_PASSWORD_LENGTH } сімвал",
@@ -5133,7 +5193,7 @@
         "Звярніце ўвагу, што адрасы прызначаныя гэтай групе НЕ будуць выдалены."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Звярніце ўвагу, што адрасы, якія прызначаны гэтай групе, НЕ будуць выдалены."
+        "Звярніце ўвагу, што адрасы прызначаныя гэтай групе, НЕ будуць выдалены."
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Звярніце ўвагу, што гэты працэс можа заняць некаторы час у залежнасці ад памеру вашай адраснай кнігі."
@@ -5169,7 +5229,7 @@
         "Пачакайце, пакуль мы шукаем кантакты, якія можна паўторна падпісаць пры дапамозе асноўнага ключа шыфравання."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Пачакайце, пакуль мы шукаем кантакты, якія змяшчаюць даныя, зашыфраваныя з дапамогай неактыўнага ключа."
+        "Пачакайце, пакуль адбываецца пошук кантактаў, якія змяшчаюць зашыфраваныя даныя з дапамогай неактыўнага ключа."
       ],
       "Preparing link to file": [
         "Падрыхтоўка спасылкі на файл"
@@ -5190,7 +5250,7 @@
         "рэкамендаваны браўзер"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
-        "Інфармацыя з аднаўленнем застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
+        "Інфармацыя аб аднаўленні застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
@@ -5205,7 +5265,7 @@
         "Выберыце пастаўшчыка паслуг, каб пачаць"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць як прадвызначаны, пры адпраўцы паведамленняў гэтым адрасатам."
+        "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць як прадвызначаны для адпраўкі лістоў на гэты адрас электроннай пошты."
       ],
       "Select what you want to import.": [
         "Выберыце, што вы хочаце імпартаваць."
@@ -5256,7 +5316,7 @@
         "Завяршэнне падпіскі: актывуйце яе паўторна да ${ byDate }, каб пакінуць перавагі свайго тарыфнага плана ${ planName }. ${ reactivateLink }"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Часова недаступны. Паспрабуйце яшчэ раз пазней."
+        "Часова недаступна. Паспрабуйце яшчэ раз пазней."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Магчыма, што ўліковы запіс мае новы ключ або наступныя элементы былі падроблены: ${ items }. Адкрывайце толькі калі давяраеце ім."
@@ -5334,7 +5394,7 @@
         "Гэта заменіць існуючую папку файлам"
       ],
       "This will upload a new version of the file": [
-        "Гэта запампуе новую версію файла"
+        "Гэта прывядзе да запампоўвання новай версіі файла"
       ],
       "This will upload a new version of the folder": [
         "Гэта запампуе новую версію папкі"
@@ -5556,7 +5616,7 @@
         "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. Лісты больш не будуць дастаўляцца ў вашу паштовую скрыню. Абагуленыя спасылкі на воблачным дыску больш не дзейнічаюць і вы не можаце запампоўваць новыя файлы. Для аднаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
+        "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Доступ да сэрвісу неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Доступ да яго абмежаваны і ўсе сэрвісы ў ім заблакіраваны да паступлення аплаты. ${ payInvoiceLink }"
@@ -5655,7 +5715,7 @@
         "**Крок 3:** Атрымайце ${ referrerRewardAmount } крэдытаў за кожнага сябра, які падпішацца на тарыфны план."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Крок 3:** Атрымайце ${ referrerRewardAmount } крэдытаў за кожную асобу, якая падпішацца на тарыфны план."
+        "**Крок 3:** Вы атрымаеце ${ referrerRewardAmount } у крэдытах за кожную асобу, якая падпішацца на тарыфны план."
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Бяспечнае падключэнне неабходна пры аддаленай працы. VPN абараняе даныя кампаніі ад кіберпагроз і захоўвае прыватнасць вашай працы."
@@ -5682,10 +5742,10 @@
         "Усе"
       ],
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }"
+        "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }"
       ],
       "an anonymous user": [
         "ананімны карыстальнік"
@@ -5901,7 +5961,7 @@
         "Лічбавы подпіс часткова правераны. Гэты файл запампаваны з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
       ],
       "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Лічбавы подпіс часткова правераны. Гэта папка запампавана з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
+        "Лічбавы подпіс быў часткова спраўджаны. Гэта папка запампавана з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "Здаецца, што ўведзены вамі URL-адрас быў няправільна скапіяваны з платформы Slack. Пры капіяванні доўгіх спасылак з дадзенай платформы, націсніце на спасылку правай кнопкай мышы і выберыце \"Капіяваць спасылку\", а не капіюйце скарочаны тэкст URL-адраса наўпрост."
@@ -6076,6 +6136,36 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "Can edit": [
+        "Можа рэдагаваць"
+      ],
+      "Can edit and manage access": [
+        "Можа рэдагаваць і кіраваць доступам"
+      ],
+      "Can view and edit": [
+        "Можа праглядаць і рэдагаваць"
+      ],
+      "Can view only": [
+        "Можа толькі праглядаць"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Калі вы выдаліце сябе, то вы страціце доступ да \"${ fileName }\" і не зможаце адкрыць яго зноў. Толькі ўладальнік можа абагуліць яго з вамі."
+      ],
+      "Link copied": [
+        "Спасылка скапіявана"
+      ],
+      "owner": [
+        "уладальнік"
+      ],
+      "Who has access": [
+        "Хто мае доступ"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Вы не зможаце абагуліць \"${ fileName }\" пасля змены доступу на праглядальніка. Толькі ўладальнік можа змяніць ваш доступ зноў."
       ]
     },
     "info": {
@@ -6723,6 +6813,45 @@
       ],
       "Your password (trusted contact)": [
         "Ваш пароль (давераны кантакт)"
+      ],
+      "Access": [
+        "Доступ"
+      ],
+      "Active": [
+        "Актыўна"
+      ],
+      "Allow editors to change permissions and share": [
+        "Дазволіць рэдактарам змяняць дазволы і абагульваць"
+      ],
+      "Anonymous": [
+        "Ананімны"
+      ],
+      "Anyone on the Internet with the link": [
+        "Любы карыстальнік у інтэрнэце з гэтай спасылкай"
+      ],
+      "can edit": [
+        "можа рэдагаваць"
+      ],
+      "can view": [
+        "можа праглядаць"
+      ],
+      "Delete link and remove access for everyone": [
+        "Выдаліць спасылку і доступ для кожнага ўдзельніка"
+      ],
+      "Disable this link on a specific date": [
+        "Адключыць гэту спасылку на ўказаную дату"
+      ],
+      "Expiry": [
+        "Тэрмін дзеяння"
+      ],
+      "Not active": [
+        "Не актыўна"
+      ],
+      "Require password": [
+        "Патрабаваць пароль"
+      ],
+      "Set a password to limit access via link": [
+        "Задаць пароль для абмежавання доступу праз спасылку"
       ]
     },
     "Label for contact group color": {
@@ -6769,13 +6898,13 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Каб дадаць новы каляндар, выдаліце адзін з існуючых."
+        "Выдаліце адзін з існуючых календароў, каб дадаць новы."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
         "Каб дадаць новы каляндар, выдаліце іншы каляндар або палепшыце свой тарыфны план ${ BRAND_NAME } да платнага тарыфнага плана ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Вы дасягнулі максімальнай колькасці календароў, даступных на вашым тарыфным плане."
+        "Вы дасягнулі максімальнай колькасці календароў, якія даступны на вашым тарыфным плане."
       ]
     },
     "Link": {
@@ -6890,7 +7019,7 @@
         "Збор вашых даных"
       ],
       "We're gathering your data from your provider": [
-        "Мы збіраем даныя ад вашага пастаўшчыка паслуг"
+        "Адбываецца збор даных ад вашага пастаўшчыка паслуг"
       ],
       "Your import is starting": [
         "Пачалося імпартаванне"
@@ -7908,6 +8037,18 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN з блакіроўшчыкам рэкламы і абаронай ад шкодных праграм"
+      ],
+      "Appointment scheduling": [
+        "Планаванне сустрэч"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Планіруйце сустрэчы з ${ n } старонкай браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкамі браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкамі браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкамі браніравання"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Вылучаныя серверы аптымізаваныя для хуткасці"
       ]
     },
     "new_plans: feature highlight": {
@@ -8116,7 +8257,7 @@
         "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "Стварайце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтычнасці ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
+        "Стварайце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць удзельнікам сям'і. Выкарыстоўвайце іх для ідэнтычнасці ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу"
@@ -8649,6 +8790,15 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Ваш адрас ${ BRAND_NAME } гатовы да выкарыстання"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" абагулены"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Налады абноўлены. Рэдактары могуць змяняць дазволы і абагульваць."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Налады абноўлены. Рэдактары не могуць змяняць дазволы і абагульваць."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8658,7 +8808,7 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "Далей вы павінны ўвайсці ў ваш уліковы запіс Google і даць нам доступ да вашых даных ${ BRAND_NAME }."
+        "На наступным кроку вы павінны ўвайсці ў свой уліковы запіс Google і даць доступ ${ BRAND_NAME } да сваіх даных."
       ]
     },
     "Oauth instructions video": {
@@ -8972,7 +9122,7 @@
         "${ emailAddress } пазначыў гэты ключ як скампраметаваны. Гэты ключ нельга выкарыстоўваць ні для шыфравання, ні для праверкі подпісу."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } пазначыў гэты ключ як састарэлы. Гэты ключ можа выкарыстоўвацца толькі для праверкі подпісу."
+        "${ emailAddress } пазначыў гэты ключ як састарэлы. Гэты ключ можа выкарыстоўвацца толькі для спраўджання подпісу."
       ],
       "External key automatically fetched from keys.openpgp.org.": [
         "Знешні ключ аўтаматычна атрыманы з вэб-сайта keys.openpgp.org."
@@ -9594,7 +9744,7 @@
         "Бяспечнае патокавае вяшчанне"
       ],
       "Support online privacy": [
-        "Падтрыманне прыватнасці ў інтэрнэце"
+        "Падтрымка прыватнасці ў інтэрнэце"
       ]
     },
     "specialoffer: Footer": {
@@ -9796,6 +9946,12 @@
       ],
       "Pending": [
         "У чаканні"
+      ],
+      "pending": [
+        "у чаканні"
+      ],
+      "user joined": [
+        "карыстальнік далучыўся"
       ]
     },
     "Storage": {
@@ -10698,7 +10854,7 @@
         "Запытаць новы код"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
-        "Захаванне для пазнейшага разгляду ў ${ DRIVE_APP_NAME }"
+        "Захаваць пазней у ${ DRIVE_APP_NAME }"
       ],
       "Security center": [
         "Цэнтр бяспекі"
@@ -11020,6 +11176,24 @@
       ],
       "Your download includes a ${ DOCS_APP_NAME } file": [
         "Ваша спампоўванне ўключае файл ${ DOCS_APP_NAME }"
+      ],
+      "Change access to viewer?": [
+        "Змяніць доступ на прагляд?"
+      ],
+      "Public link": [
+        "Публічная спасылка"
+      ],
+      "Public link settings": [
+        "Налады публічнай спасылкі"
+      ],
+      "Remove your access?": [
+        "Выдаліць ваш доступ?"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Налады для ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Абагуліць \"${ fileName }\""
       ]
     },
     "Title subscription": {
@@ -11112,7 +11286,7 @@
         "Запампуйце адкрыты ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"
       ],
       "We have sent them an invite to access the item.": [
-        "Мы адправілі ім запрашэнне на доступ да элемента."
+        "Ім адпраўлена запрашэнне, каб яны змаглі атрымаць доступ да элемента."
       ],
       "You do not have any contacts to export": [
         "У вас няма кантактаў для экспартавання"
@@ -11122,6 +11296,9 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Зашыфраваныя паролі (нават скампраметаваныя) застануцца ў бяспецы, пакуль не будуць расшыфраваны."
+      ],
+      "Change shared item settings": [
+        "Змяніць налады абагуленага элемента"
       ]
     },
     "tooltip": {
@@ -11343,7 +11520,7 @@
         "Справаздачы не шыфруюцца скразным метадам. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."
       ],
       "Skip verification?": [
-        "Прапусціць праверку?"
+        "Прапусціць спраўджанне?"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Некаторыя аб'яднаныя кантакты маюць памылкі. Праверце іх асобна"
@@ -11364,7 +11541,7 @@
         "Не ўдалося расшыфраваць зашыфраванае змесціва."
       ],
       "The verification of the contact details' signature failed.": [
-        "Не ўдалося праверыць подпіс кантактных звестак."
+        "Не ўдалося спраўдзіць подпіс кантактных звестак."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Гэта незваротнае дзеянне. Увядзіце слова ${ boldDanger } у поле, каб працягнуць."
@@ -12097,7 +12274,7 @@
         "Параіць сябрам"
       ],
       "Start earning credits": [
-        "Пачніце зарабляць крэдыты"
+        "Пачаць зарабляць крэдыты"
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Вы можаце атрымаць да **${ maxRewardAmount }** у крэдытах."

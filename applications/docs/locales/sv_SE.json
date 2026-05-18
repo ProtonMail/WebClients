@@ -988,6 +988,24 @@
       ],
       "View only": [
         "Endast visa"
+      ],
+      "Change my access": [
+        "Ändra min åtkomst"
+      ],
+      "Encrypted": [
+        "Krypterad"
+      ],
+      "Remove my access": [
+        "Ta bort min åtkomst"
+      ],
+      "Set password or expiration date": [
+        "Ställ in lösenord eller utgångsdatum"
+      ],
+      "Shared": [
+        "Delad"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Delning är end-to-end-krypterad"
       ]
     },
     "Action subscription": {
@@ -2682,6 +2700,9 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Vi kan inte komma åt ${ boldEmails } längre."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Om du vill fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut dina konton."
       ]
     },
     "description": {
@@ -3442,6 +3463,45 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Du har nått gränsen för antalet kontakter för ditt konto"
+      ],
+      "An error occurred": [
+        "Ett fel uppstod"
+      ],
+      "Failed to change permissions settings": [
+        "Misslyckades att ändra behörighetsinställningar"
+      ],
+      "Failed to create public share node": [
+        "Misslyckades att skapa offentlig delningsnod"
+      ],
+      "Failed to fetch node": [
+        "Misslyckades att hämta nod"
+      ],
+      "Failed to fetch sharing info": [
+        "Misslyckades att hämta delningsinformation"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Misslyckades med att ladda prenumerationsdata. Försök igen senare."
+      ],
+      "Failed to resend invitation": [
+        "Misslyckades att skicka inbjudan igen"
+      ],
+      "Failed to unshare node": [
+        "Misslyckades att sluta dela nod"
+      ],
+      "Failed to update direct share node": [
+        "Misslyckades att uppdatera direkt delningsnod"
+      ],
+      "Failed to update public share node": [
+        "Misslyckades att uppdatera offentlig delningsnod"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Något gick fel vid hämtning av tillgängliga domäner"
+      ],
+      "Stopping the sharing of this item has failed": [
+        "Misslyckades att stoppa delning av detta objekt"
+      ],
+      "The link to your item failed to be deleted": [
+        "Länken till ditt objekt misslyckades att tas bort"
       ]
     },
     "Error importing calendar": {
@@ -5881,6 +5941,27 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "Can edit": [
+        "Kan redigera"
+      ],
+      "Can edit and manage access": [
+        "Kan redigera och hantera åtkomst"
+      ],
+      "Can view and edit": [
+        "Kan visa och redigera"
+      ],
+      "Can view only": [
+        "Kan endast visa"
+      ],
+      "Link copied": [
+        "Länk kopierad"
+      ],
+      "owner": [
+        "ägare"
+      ],
+      "Who has access": [
+        "Vem har åtkomst"
       ]
     },
     "info": {
@@ -6519,6 +6600,45 @@
       ],
       "Your password (trusted contact)": [
         "Ditt lösenord (betrodd kontakt)"
+      ],
+      "Access": [
+        "Åtkomst"
+      ],
+      "Active": [
+        "Aktiv"
+      ],
+      "Allow editors to change permissions and share": [
+        "Tillåt redaktörer att ändra behörigheter och dela"
+      ],
+      "Anonymous": [
+        "Anonymt"
+      ],
+      "Anyone on the Internet with the link": [
+        "Vem som helst på internet med länken"
+      ],
+      "can edit": [
+        "kan redigera"
+      ],
+      "can view": [
+        "kan visa"
+      ],
+      "Delete link and remove access for everyone": [
+        "Ta bort länk och ta bort åtkomst för alla"
+      ],
+      "Disable this link on a specific date": [
+        "Inaktivera denna länk på ett specifikt datum"
+      ],
+      "Expiry": [
+        "Löper ut"
+      ],
+      "Not active": [
+        "Inte aktiv"
+      ],
+      "Require password": [
+        "Kräv lösenord"
+      ],
+      "Set a password to limit access via link": [
+        "Ställ in ett lösenord för att begränsa åtkomst via länk"
       ]
     },
     "Label for contact group color": {
@@ -7649,6 +7769,9 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN med annonsblockerare och skydd mot skadlig kod"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Dedikerade servrar optimerade för hastighet"
       ]
     },
     "new_plans: feature highlight": {
@@ -8347,6 +8470,15 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Din ${ BRAND_NAME }-adress är redo att användas"
+      ],
+      "\"${ fileName }\" shared": [
+        "”${ fileName }” delad"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Inställning uppdaterad. Redaktörer kan ändra behörigheter och dela."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Inställning uppdaterad. Redaktörer kan inte ändra behörigheter eller dela."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9435,6 +9567,12 @@
       ],
       "Pending": [
         "Väntande"
+      ],
+      "pending": [
+        "väntande"
+      ],
+      "user joined": [
+        "användare gick med"
       ]
     },
     "Storage": {
@@ -10607,6 +10745,21 @@
       ],
       "Your download includes a ${ DOCS_APP_NAME } file": [
         "Din nedladdning inkluderar en ${ DOCS_APP_NAME }-fil"
+      ],
+      "Public link": [
+        "Offentlig länk"
+      ],
+      "Public link settings": [
+        "Inställning för offentlig länk"
+      ],
+      "Remove your access?": [
+        "Ta bort din åtkomst?"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Inställningar för ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Dela ”${ fileName }”"
       ]
     },
     "Title subscription": {

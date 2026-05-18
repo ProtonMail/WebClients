@@ -695,7 +695,7 @@
         "Weiteres Konto hinzufügen"
       ],
       "Ask me next time": [
-        "Frag mich nächstes Mal"
+        "Nächstes Mal fragen"
       ],
       "Change password": [
         "Passwort ändern"
@@ -988,6 +988,24 @@
       ],
       "View only": [
         "Nur anzeigen"
+      ],
+      "Change my access": [
+        "Meinen Zugriff ändern"
+      ],
+      "Encrypted": [
+        "Verschlüsselt"
+      ],
+      "Remove my access": [
+        "Meinen Zugriff entfernen"
+      ],
+      "Set password or expiration date": [
+        "Passwort oder Ablaufdatum festlegen"
+      ],
+      "Shared": [
+        "Geteilt"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Die Freigabe ist Ende-zu-Ende-verschlüsselt"
       ]
     },
     "Action subscription": {
@@ -3459,6 +3477,48 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Du hast die maximale Anzahl von Kontakten für dein Konto erreicht"
+      ],
+      "An error occurred": [
+        "Ein Fehler ist aufgetreten"
+      ],
+      "Failed to change permissions settings": [
+        "Fehler beim Ändern der Berechtigungseinstellungen"
+      ],
+      "Failed to create public share node": [
+        "Fehler beim Erstellen des öffentlich geteilten Knotens"
+      ],
+      "Failed to fetch node": [
+        "Fehler beim Abrufen des Knotens"
+      ],
+      "Failed to fetch sharing info": [
+        "Fehler beim Abrufen der Freigabeinformationen"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Abonnementsdaten konnten nicht geladen werden. Bitte versuche es später nochmals."
+      ],
+      "Failed to resend invitation": [
+        "Fehler beim erneuten Senden der Einladung"
+      ],
+      "Failed to unshare node": [
+        "Fehler beim Zurücknehmen des freigegebenen Knotens"
+      ],
+      "Failed to update direct share node": [
+        "Fehler beim Aktualisieren des direkt geteilten Knotens"
+      ],
+      "Failed to update public share node": [
+        "Fehler beim Aktualisieren des öffentlich geteilten Knotens"
+      ],
+      "Stopping the sharing of this item has failed": [
+        "Das Beenden der Freigabe dieses Eintrags ist fehlgeschlagen"
+      ],
+      "The link to your item failed to be deleted": [
+        "Der Link zu deinem Eintrag konnte nicht gelöscht werden"
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Nicht entschlüsselbares Gerät"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nicht entschlüsselbarer Name"
       ]
     },
     "Error importing calendar": {
@@ -4874,7 +4934,7 @@
         "Noch keine Kontakte hinzugefügt"
       ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Kein Dokument in der URL angegeben. Kehre zu ${ DRIVE_APP_NAME } zurück und wähle ein Dokument aus."
+        "Kein Dokument in der URL angegeben. Zu ${ DRIVE_APP_NAME } zurückkehren und ein Dokument auswählen."
       ],
       "No email address": [
         "Keine E-Mail-Adresse"
@@ -5906,6 +5966,33 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kannst weiterhin deine eigenen Kontodaten ansehen, aber alle Benutzerkonten werden aus deiner Organisation entfernt."
+      ],
+      "Can edit": [
+        "Darf bearbeiten"
+      ],
+      "Can edit and manage access": [
+        "Darf bearbeiten und Zugriff verwalten"
+      ],
+      "Can view and edit": [
+        "Anzeigen und Bearbeiten möglich"
+      ],
+      "Can view only": [
+        "Nur anzeigen möglich"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Wenn du dich selbst entfernst, verlierst du den Zugriff auf die Datei \"${ fileName }\" und kannst sie nicht wieder öffnen, es sei denn, der Inhaber teilt sie mit dir."
+      ],
+      "Link copied": [
+        "Link kopiert"
+      ],
+      "owner": [
+        "Besitzer"
+      ],
+      "Who has access": [
+        "Wer hat Zugriff"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Du kannst \"${ fileName }\" nicht mehr teilen, nachdem du den Zugriff auf \"Betrachter\" geändert hast. Nur der Inhaber kann deinen Zugriff erneut ändern."
       ]
     },
     "info": {
@@ -6477,7 +6564,7 @@
         "Anwendungsprotokolle im Fehlerbericht einschließen"
       ],
       "Include document name in notification": [
-        "Dokumentname in der Benachrichtigung anzeigen"
+        "Dokumentname in der Benachrichtigung einbeziehen"
       ],
       "Integrated 2FA authenticator": [
         "Integrierter 2FA-Authentifikator"
@@ -6547,6 +6634,45 @@
       ],
       "Your password (trusted contact)": [
         "Dein Passwort (vertrauenswürdiger Kontakt)"
+      ],
+      "Access": [
+        "Zugriff"
+      ],
+      "Active": [
+        "Aktiv"
+      ],
+      "Allow editors to change permissions and share": [
+        "Ermögliche es Bearbeitern, Berechtigungen zu ändern und zu teilen"
+      ],
+      "Anonymous": [
+        "Anonym"
+      ],
+      "Anyone on the Internet with the link": [
+        "Jeder im Internet mit dem Link"
+      ],
+      "can edit": [
+        "Kann bearbeiten"
+      ],
+      "can view": [
+        "Kann anzeigen"
+      ],
+      "Delete link and remove access for everyone": [
+        "Link löschen und Zugriff für alle entfernen"
+      ],
+      "Disable this link on a specific date": [
+        "Diesen Link an einem bestimmten Datum deaktivieren"
+      ],
+      "Expiry": [
+        "Ablauf"
+      ],
+      "Not active": [
+        "Nicht aktiv"
+      ],
+      "Require password": [
+        "Passwort erforderlich"
+      ],
+      "Set a password to limit access via link": [
+        "Passwort festlegen, um den Zugriff per Link zu beschränken"
       ]
     },
     "Label for contact group color": {
@@ -7687,6 +7813,9 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN mit Werbeblocker und Malware-Schutz"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Dedizierte Server, optimiert für hohe Geschwindigkeit"
       ]
     },
     "new_plans: feature highlight": {
@@ -8379,6 +8508,15 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Deine ${ BRAND_NAME }-E-Mail-Adresse ist einsatzbereit"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" geteilt"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Einstellung aktualisiert. Mitwirkende dürfen Berechtigungen ändern und Inhalte freigeben."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Einstellung aktualisiert. Mitwirkende dürfen keine Berechtigungen ändern oder Inhalte freigeben."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9446,6 +9584,12 @@
       ],
       "Pending": [
         "Ausstehend"
+      ],
+      "pending": [
+        "Ausstehend"
+      ],
+      "user joined": [
+        "Benutzer beigetreten"
       ]
     },
     "Storage": {
@@ -10624,6 +10768,24 @@
       ],
       "Your download includes a ${ DOCS_APP_NAME } file": [
         "Dein Download beinhaltet eine ${ DOCS_APP_NAME }-Datei."
+      ],
+      "Change access to viewer?": [
+        "Zugriff auf Betrachter ändern?"
+      ],
+      "Public link": [
+        "Öffentlicher Link"
+      ],
+      "Public link settings": [
+        "Einstellungen für öffentliche Links"
+      ],
+      "Remove your access?": [
+        "Deinen Zugriff entfernen?"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Einstellungen für ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "\"${ fileName }\" teilen"
       ]
     },
     "Title subscription": {
@@ -10726,6 +10888,9 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Solange sie nicht entschlüsselt werden, bleiben verschlüsselte Passwörter sicher, auch wenn sie offengelegt wurden."
+      ],
+      "Change shared item settings": [
+        "Einstellungen für freigegebene Elemente ändern"
       ]
     },
     "tooltip": {

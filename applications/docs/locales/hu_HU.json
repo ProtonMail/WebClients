@@ -841,6 +841,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt",
         "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt"
+      ],
+      "Copy link": [
+        "Hivatkozás másolása"
       ]
     },
     "Actions message": {
@@ -2969,6 +2972,36 @@
       ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
+      ],
+      "Failed to create public share node": [
+        "Nem sikerült létrehozni a nyilvános megosztási csomópontot"
+      ],
+      "Failed to fetch node": [
+        "Csomópont lekérése sikertelen"
+      ],
+      "Failed to fetch sharing info": [
+        "Megosztási információk lekérése sikertelen"
+      ],
+      "Failed to resend invitation": [
+        "Nem sikerült újraküldeni a meghívást"
+      ],
+      "Failed to unshare node": [
+        "Csomópont megosztásának megszüntetése sikertelen"
+      ],
+      "Failed to update direct share node": [
+        "Nem sikerült frissíteni a közvetlen megosztási csomópontot"
+      ],
+      "Failed to update public share node": [
+        "Nem sikerült frissíteni a nyilvános megosztási csomópontot"
+      ],
+      "Stopping the sharing of this item has failed": [
+        "Az elem megosztásának leállítása nem sikerült"
+      ],
+      "The link to your item failed to be deleted": [
+        "A fájlra vonatkozó hivatkozás törlése nem sikerült"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nem dekódolható név"
       ]
     },
     "error": {

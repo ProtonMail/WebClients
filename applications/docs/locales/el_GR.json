@@ -988,6 +988,24 @@
       ],
       "View only": [
         "Μόνο προβολή"
+      ],
+      "Change my access": [
+        "Αλλαγή της πρόσβασής μου"
+      ],
+      "Encrypted": [
+        "Κρυπτογραφημένο"
+      ],
+      "Remove my access": [
+        "Αφαίρεση της πρόσβασής μου"
+      ],
+      "Set password or expiration date": [
+        "Ορισμός κωδικού πρόσβασης ή ημερομηνίας λήξης"
+      ],
+      "Shared": [
+        "Κοινοποιημένα"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Η κοινοποίηση είναι, διατερματικά κρυπτογραφημένη"
       ]
     },
     "Action subscription": {
@@ -3459,6 +3477,48 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Έχετε συμπληρώσει το νούμερο ορίου επαφών για τον λογαριασμό σας"
+      ],
+      "An error occurred": [
+        "Παρουσιάστηκε σφάλμα"
+      ],
+      "Failed to change permissions settings": [
+        "Αποτυχία αλλαγής ρυθμίσεων δικαιωμάτων"
+      ],
+      "Failed to create public share node": [
+        "Αποτυχία δημιουργίας δημόσιου κόμβου κοινοποίησης"
+      ],
+      "Failed to fetch node": [
+        "Αποτυχία ανάκτησης κόμβου"
+      ],
+      "Failed to fetch sharing info": [
+        "Αποτυχία ανάκτησης πληροφοριών κοινοποίησης"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Αποτυχία φόρτωσης δεδομένων συνδρομής. Παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
+      "Failed to resend invitation": [
+        "Αποτυχία επαναποστολής πρόσκλησης"
+      ],
+      "Failed to unshare node": [
+        "Αποτυχία κατάργησης κοινοχρησίας κόμβου"
+      ],
+      "Failed to update direct share node": [
+        "Αποτυχία ενημέρωσης άμεσου κόμβου κοινοποίησης"
+      ],
+      "Failed to update public share node": [
+        "Αποτυχία ενημέρωσης δημόσιου κόμβου κοινοποίησης"
+      ],
+      "Stopping the sharing of this item has failed": [
+        "Η διακοπή της κοινοποίησης αυτού του στοιχείου απέτυχε"
+      ],
+      "The link to your item failed to be deleted": [
+        "Αποτυχία διαγραφής του συνδέσμου για το στοιχείο σας"
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Μη αποκρυπτογραφήσιμη συσκευή"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Μη αποκρυπτογραφήσιμο όνομα"
       ]
     },
     "Error importing calendar": {
@@ -5909,6 +5969,33 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Θα εξακολουθείτε να μπορείτε να βλέπετε τα δικά σας δεδομένα λογαριασμού, αλλά όλοι οι λογαριασμοί χρηστών θα καταργηθούν από τον οργανισμό σας."
+      ],
+      "Can edit": [
+        "Δυνατότητα επεξεργασίας"
+      ],
+      "Can edit and manage access": [
+        "Δυνατότητα επεξεργασίας και να διαχείρισης πρόσβασης"
+      ],
+      "Can view and edit": [
+        "Δυνατότητα προβολής και επεξεργασίας"
+      ],
+      "Can view only": [
+        "Δυνατότητα προβολής μόνο"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Αν αφαιρέσετε τον εαυτό σας, θα χάσετε την πρόσβαση στο \"${ fileName }\" και δε θα μπορείτε να το ανοίξετε ξανά εκτός αν ο κάτοχος το μοιραστεί μαζί σας."
+      ],
+      "Link copied": [
+        "Ο σύνδεσμος αντιγράφηκε"
+      ],
+      "owner": [
+        "ιδιοκτήτης"
+      ],
+      "Who has access": [
+        "Ποιος έχει πρόσβαση"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Δεν θα μπορείτε να μοιραστείτε το \"${ fileName }\" μετά την αλλαγή της πρόσβασης σε προβολέα. Μόνο ο ιδιοκτήτης μπορεί να αλλάξει ξανά την πρόσβασή σας."
       ]
     },
     "info": {
@@ -6459,7 +6546,7 @@
         "Μηνύματα ηλεκτρονικού ταχυδρομείου (τελευταίοι 6 μήνες)"
       ],
       "Enable email notifications": [
-        "Ενεργοποίηση ειδοποιήσεων email"
+        "Ενεργοποίηση ειδοποιήσεων ηλεκτρονικού ταχυδρομείου"
       ],
       "File": [
         "Αρχείο"
@@ -6541,6 +6628,45 @@
       ],
       "Your password (trusted contact)": [
         "Ο κωδικός πρόσβασής σας (έμπιστη επαφή)"
+      ],
+      "Access": [
+        "Πρόσβαση"
+      ],
+      "Active": [
+        "Ενεργό"
+      ],
+      "Allow editors to change permissions and share": [
+        "Επιτρέψτε στους συντάκτες να αλλάζουν δικαιώματα και να κοινοποιούν"
+      ],
+      "Anonymous": [
+        "Ανώνυμα"
+      ],
+      "Anyone on the Internet with the link": [
+        "Οποιοσδήποτε στο Διαδίκτυο με τον σύνδεσμο"
+      ],
+      "can edit": [
+        "μπορεί να επεξεργαστεί"
+      ],
+      "can view": [
+        "μπορεί να δει"
+      ],
+      "Delete link and remove access for everyone": [
+        "Διαγραφή συνδέσμου και κατάργηση πρόσβασης για όλους"
+      ],
+      "Disable this link on a specific date": [
+        "Απενεργοποιήστε αυτόν τον σύνδεσμο σε μια συγκεκριμένη ημερομηνία"
+      ],
+      "Expiry": [
+        "Λήξη"
+      ],
+      "Not active": [
+        "Μη ενεργό"
+      ],
+      "Require password": [
+        "Απαίτηση κωδικού πρόσβασης"
+      ],
+      "Set a password to limit access via link": [
+        "Ορίστε έναν κωδικό πρόσβασης για να περιορίσετε την πρόσβαση μέσω συνδέσμου"
       ]
     },
     "Label for contact group color": {
@@ -7624,6 +7750,9 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN με αποκλεισμός διαφημίσεων και προστασία από κακόβουλο λογισμικό"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Αποκλειστικοί διακομιστές βελτιστοποιημένοι για ταχύτητα"
       ]
     },
     "new_plans: feature highlight": {
@@ -8319,6 +8448,15 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Η διεύθυνσή σας ${ BRAND_NAME } είναι έτοιμη για χρήση"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" κοινοποιήθηκε"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Η ρύθμιση ενημερώθηκε. Οι συντάκτες μπορούν να αλλάξουν τα δικαιώματα και να κοινοποιήσουν."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Η ρύθμιση ενημερώθηκε. Οι συντάκτες δε μπορούν να αλλάξουν τα δικαιώματα ή να κοινοποιήσουν."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9367,6 +9505,12 @@
       ],
       "Pending": [
         "Σε εκκρεμότητα"
+      ],
+      "pending": [
+        "εκκρεμεί"
+      ],
+      "user joined": [
+        "χρήστης συνδέθηκε"
       ]
     },
     "Storage": {
@@ -10545,6 +10689,24 @@
       ],
       "Your download includes a ${ DOCS_APP_NAME } file": [
         "Η λήψη σας περιλαμβάνει ένα αρχείο ${ DOCS_APP_NAME }"
+      ],
+      "Change access to viewer?": [
+        "Αλλαγή πρόσβασης σε προβολέα;"
+      ],
+      "Public link": [
+        "Δημόσιος σύνδεσμος"
+      ],
+      "Public link settings": [
+        "Ρυθμίσεις δημοσιευμένου συνδέσμου"
+      ],
+      "Remove your access?": [
+        "Αφαίρεση της πρόσβασής σας;"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Ρυθμίσεις για ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Κοινοποίηση \"${ fileName }\""
       ]
     },
     "Title subscription": {
@@ -10647,6 +10809,9 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Εκτός αν αποκρυπτογραφηθούν, οι κρυπτογραφημένοι κωδικοί παραμένουν ασφαλείς ακόμα και αν εκτεθούν."
+      ],
+      "Change shared item settings": [
+        "Αλλαγή ρυθμίσεων κοινόχρηστου στοιχείου"
       ]
     },
     "tooltip": {
@@ -11097,7 +11262,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Παρακαλώ συνδεθείτε με μια διεύθυνση Gmail που ήδη προωθεί στο ${ MAIL_APP_NAME }"
+        "Παρακαλούμε συνδεθείτε με μια διεύθυνση Gmail που ήδη προωθεί στο ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Παρακαλούμε συνδεθείτε με την ίδια διεύθυνση Gmail που συνδεθήκατε αρχικά."

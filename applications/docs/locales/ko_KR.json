@@ -983,6 +983,24 @@
       ],
       "View only": [
         "보기 전용"
+      ],
+      "Change my access": [
+        "내 접근 권한 변경"
+      ],
+      "Encrypted": [
+        "암호화됨"
+      ],
+      "Remove my access": [
+        "내 접근 권한 제거"
+      ],
+      "Set password or expiration date": [
+        "비밀번호 또는 만료 시간 설정"
+      ],
+      "Shared": [
+        "공유됨"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "공유가 종단간 암호화됩니다"
       ]
     },
     "Action subscription": {
@@ -3437,6 +3455,45 @@
       ],
       "Wrong billing address": [
         "청구 주소가 잘못되었습니다"
+      ],
+      "An error occurred": [
+        "오류 발생"
+      ],
+      "Failed to change permissions settings": [
+        "권한 설정을 변경할 수 없습니다."
+      ],
+      "Failed to create public share node": [
+        "공개 공유 노드 생성 실패"
+      ],
+      "Failed to fetch node": [
+        "노드 가져오기 실패"
+      ],
+      "Failed to fetch sharing info": [
+        "공유 정보 가져오기 실패"
+      ],
+      "Failed to resend invitation": [
+        "초대장 재전송 실패"
+      ],
+      "Failed to unshare node": [
+        "노드 공유 해제 실패"
+      ],
+      "Failed to update direct share node": [
+        "직접 공유 노드 업데이트 실패"
+      ],
+      "Failed to update public share node": [
+        "공개 공유 노드 업데이트 실패"
+      ],
+      "Stopping the sharing of this item has failed": [
+        "이 항목에 대한 공유 중단 작업을 수행할 수 없습니다."
+      ],
+      "The link to your item failed to be deleted": [
+        "항목 링크를 삭제하는 데 실패했습니다."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ 복호화할 수 없는 기기"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ 복호화할 수 없는 이름"
       ]
     },
     "Error importing calendar": {
@@ -5838,6 +5895,33 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
+      ],
+      "Can edit": [
+        "편집 가능"
+      ],
+      "Can edit and manage access": [
+        "편집 및 접근 권한 관리 가능"
+      ],
+      "Can view and edit": [
+        "보거나 편집 가능"
+      ],
+      "Can view only": [
+        "보기만 가능"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "만약 나 자신을 제거하는 경우, \"${ fileName }\"에 대한 접근 권한을 잃게 되며, 소유자가 다시 공유하지 않는 한 다시 열 수 없게 됩니다."
+      ],
+      "Link copied": [
+        "링크를 복사했습니다"
+      ],
+      "owner": [
+        "소유자"
+      ],
+      "Who has access": [
+        "접근 가능한 사용자"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "접근 권한을 뷰어로 변경하면 \"${ fileName }\"을(를) 공유할 수 없게 됩니다. 소유자만 사용자의 접근 범위를 다시 변경할 수 있습니다."
       ]
     },
     "info": {
@@ -6476,6 +6560,45 @@
       ],
       "Your password (trusted contact)": [
         "사용자 비밀번호 (신뢰할 수 있는 연락처)"
+      ],
+      "Access": [
+        "접근"
+      ],
+      "Active": [
+        "활성"
+      ],
+      "Allow editors to change permissions and share": [
+        "편집자가 권한을 변경하거나 공유하도록 허용"
+      ],
+      "Anonymous": [
+        "익명"
+      ],
+      "Anyone on the Internet with the link": [
+        "인터넷에서 링크를 가진 누구나"
+      ],
+      "can edit": [
+        "편집 가능"
+      ],
+      "can view": [
+        "보기 가능"
+      ],
+      "Delete link and remove access for everyone": [
+        "링크를 삭제하고 모두의 접근 권한을 삭제합니다"
+      ],
+      "Disable this link on a specific date": [
+        "특정 날짜에 이 링크 비활성화"
+      ],
+      "Expiry": [
+        "만료"
+      ],
+      "Not active": [
+        "비활성"
+      ],
+      "Require password": [
+        "비밀번호 요구"
+      ],
+      "Set a password to limit access via link": [
+        "링크로 접근을 제한하도록 비밀번호를 설정하세요"
       ]
     },
     "Label for contact group color": {
@@ -8195,6 +8318,15 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "${ BRAND_NAME } 주소를 사용할 수 있습니다."
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\"이(가) 공유됨"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "설정이 업데이트되었습니다. 편집자가 권한이나 공유 사항을 변경할 수 있습니다."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "설정이 업데이트되었습니다. 편집자는 권한이나 공유 사항을 변경할 수 없습니다."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9249,6 +9381,12 @@
       ],
       "Pending": [
         "대기 중"
+      ],
+      "pending": [
+        "대기 중"
+      ],
+      "user joined": [
+        "명 사용자 참여함"
       ]
     },
     "Storage": {
@@ -10404,6 +10542,24 @@
       ],
       "Your download includes a ${ DOCS_APP_NAME } file": [
         "다운로드에 ${ DOCS_APP_NAME } 파일이 포함되어 있습니다."
+      ],
+      "Change access to viewer?": [
+        "뷰어에게 접근 권한을 변경하시겠습니까?"
+      ],
+      "Public link": [
+        "공개 링크"
+      ],
+      "Public link settings": [
+        "공개 링크 설정"
+      ],
+      "Remove your access?": [
+        "내 접근 권한을 제거하시겠습니까?"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "${ sharedFileName }에 대한 설정"
+      ],
+      "Share \"${ fileName }\"": [
+        "\"${ fileName }\" 공유"
       ]
     },
     "Title subscription": {
@@ -10506,6 +10662,9 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "해독되지 않는 한, 암호화된 비밀번호는 노출되더라도 안전하게 유지됩니다."
+      ],
+      "Change shared item settings": [
+        "공유된 항목 설정 변경"
       ]
     },
     "tooltip": {

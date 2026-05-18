@@ -998,6 +998,24 @@
       ],
       "View only": [
         "Len na zobrazenie"
+      ],
+      "Change my access": [
+        "Zmeniť môj prístup"
+      ],
+      "Encrypted": [
+        "Šifrované"
+      ],
+      "Remove my access": [
+        "Odstrániť mô prístup"
+      ],
+      "Set password or expiration date": [
+        "Nastaviť heslo alebo dátum exspirácie"
+      ],
+      "Shared": [
+        "Zdieľané"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Zdieľanie je end-to-end šifrované"
       ]
     },
     "Action subscription": {
@@ -3521,6 +3539,48 @@
       ],
       "Wrong billing address": [
         "Nesprávna fakturačná adresa"
+      ],
+      "An error occurred": [
+        "Došlo k chybe"
+      ],
+      "Failed to change permissions settings": [
+        "Zmena nastavení oprávnení zlyhala"
+      ],
+      "Failed to create public share node": [
+        "Nepodarilo sa vytvoriť uzol verejného zdieľania"
+      ],
+      "Failed to fetch node": [
+        "Načítanie uzla zlyhalo"
+      ],
+      "Failed to fetch sharing info": [
+        "Načítanie informácií o zdieľaní zlyhalo"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Načítanie údajov o predplatnom sa nepodarilo. Skúste to neskôr, prosím."
+      ],
+      "Failed to resend invitation": [
+        "Opätovné odoslanie pozvánky zlyhalo"
+      ],
+      "Failed to unshare node": [
+        "Nepodarilo sa zrušiť zdieľanie uzla"
+      ],
+      "Failed to update direct share node": [
+        "Nepodarilo sa aktualizovať uzol priameho zdieľania"
+      ],
+      "Failed to update public share node": [
+        "Nepodarilo sa aktualizovať uzol verejného zdieľania"
+      ],
+      "Stopping the sharing of this item has failed": [
+        "Ukončenie zdieľania tejto položky zlyhalo"
+      ],
+      "The link to your item failed to be deleted": [
+        "Odkaz na vašu položku sa nepodarilo zmazať"
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Nerozšifrovateľné zariadenie"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nerozšifrovateľný názov"
       ]
     },
     "Error importing calendar": {
@@ -6076,6 +6136,33 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále si budete môcť prezerať svoje vlastné údaje, ale všetky používateľské účty budú z vašej organizácie odstránené."
+      ],
+      "Can edit": [
+        "Môže upravovať"
+      ],
+      "Can edit and manage access": [
+        "Môže upravovať a spravovať prístup"
+      ],
+      "Can view and edit": [
+        "Môže zobraziť a upraviť"
+      ],
+      "Can view only": [
+        "Môže len zobraziť"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Ak odstránite seba, stratíte prístup k súboru \"${ fileName }\" a nebudete ho môcť znova otvoriť, pokiaľ vám ho vlastník znovu nesprístupní."
+      ],
+      "Link copied": [
+        "Odkaz bol skopírovaný"
+      ],
+      "owner": [
+        "vlastník"
+      ],
+      "Who has access": [
+        "Kto má prístup"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Po zmene prístupu na prehliadač nebudete môcť zdieľať \"${ fileName }\". Iba vlastník môže znova zmeniť váš prístup."
       ]
     },
     "info": {
@@ -6723,6 +6810,45 @@
       ],
       "Your password (trusted contact)": [
         "Vaše heslo (dôveryhodný kontakt)"
+      ],
+      "Access": [
+        "Prístup"
+      ],
+      "Active": [
+        "Aktívne"
+      ],
+      "Allow editors to change permissions and share": [
+        "Povoliť editorom zmeniť oprávnenia a zdieľať"
+      ],
+      "Anonymous": [
+        "Anonymne"
+      ],
+      "Anyone on the Internet with the link": [
+        "Ktokoľvek na internete s odkazom"
+      ],
+      "can edit": [
+        "môže upravovať"
+      ],
+      "can view": [
+        "môže zobraziť"
+      ],
+      "Delete link and remove access for everyone": [
+        "Odstrániť odkaz a zrušiť pre všetkých prístup"
+      ],
+      "Disable this link on a specific date": [
+        "Deaktivovať tento odkaz k určitému dátumu"
+      ],
+      "Expiry": [
+        "Platnosť"
+      ],
+      "Not active": [
+        "Neaktívne"
+      ],
+      "Require password": [
+        "Vyžadovať heslo"
+      ],
+      "Set a password to limit access via link": [
+        "Nastavte heslo, aby ste obmedzili prístup prostredníctvom odkazu"
       ]
     },
     "Label for contact group color": {
@@ -7244,7 +7370,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "Vysoká rýchlosť VPN"
+        "Najvyššia rýchlosť VPN"
       ],
       "Keep your inbox organized with folders": [
         "Udržujte svoju doručenú poštu organizovanú pomocou priečinkov"
@@ -7866,6 +7992,9 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN s blokovaním reklám a ochranou pred malvérom"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Dedikované servery optimalizované na rýchlosť"
       ]
     },
     "new_plans: feature highlight": {
@@ -8607,6 +8736,15 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Vaša adresa ${ BRAND_NAME } je pripravená na použitie"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" zdieľané"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Nastavenie aktualizované. Editori môžu meniť oprávnenia a zdieľať."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Nastavenie aktualizované. Editori nemôžu meniť oprávnenia ani zdieľať."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9738,6 +9876,12 @@
       ],
       "Pending": [
         "Čakajúce"
+      ],
+      "pending": [
+        "čakajúce"
+      ],
+      "user joined": [
+        "používateľ sa pripojil"
       ]
     },
     "Storage": {
@@ -10962,6 +11106,24 @@
       ],
       "Your download includes a ${ DOCS_APP_NAME } file": [
         "Vaše sťahovanie obsahuje ${ DOCS_APP_NAME } súbor"
+      ],
+      "Change access to viewer?": [
+        "Zmeniť prístup čitateľovi?"
+      ],
+      "Public link": [
+        "Verejný odkaz"
+      ],
+      "Public link settings": [
+        "Nastavenia verejného odkazu"
+      ],
+      "Remove your access?": [
+        "Odstrániť váš prístup?"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Nastavenia pre ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Zdieľať \"${ fileName }\""
       ]
     },
     "Title subscription": {
@@ -11064,6 +11226,9 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Pokiaľ nie sú dešifrované, zašifrované heslá zostávajú v bezpečí, aj keď sú odhalené."
+      ],
+      "Change shared item settings": [
+        "Zmeniť nastavenia zdieľanej položky"
       ]
     },
     "tooltip": {

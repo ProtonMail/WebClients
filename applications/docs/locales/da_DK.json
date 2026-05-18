@@ -991,6 +991,24 @@
       ],
       "View only": [
         "Kun visning"
+      ],
+      "Change my access": [
+        "Ændr min adgang"
+      ],
+      "Encrypted": [
+        "Krypteret"
+      ],
+      "Remove my access": [
+        "Fjern min adgang"
+      ],
+      "Set password or expiration date": [
+        "Indstil adgangskode eller udløbsdato"
+      ],
+      "Shared": [
+        "Delt"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Deling er end-to-end-krypteret"
       ]
     },
     "Action subscription": {
@@ -3405,6 +3423,48 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Du har nået grænsen for antallet af kontakter på din konto"
+      ],
+      "An error occurred": [
+        "Der opstod en fejl"
+      ],
+      "Failed to change permissions settings": [
+        "Tilladelsesindstillinger kunne ikke ændres"
+      ],
+      "Failed to create public share node": [
+        "Det lykkedes ikke at oprette offentlig delingsknude"
+      ],
+      "Failed to fetch node": [
+        "Kunne ikke hente knude"
+      ],
+      "Failed to fetch sharing info": [
+        "Kunne ikke hente delingsoplysninger"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kunne ikke indlæse abonnementsdata. Prøv igen senere."
+      ],
+      "Failed to resend invitation": [
+        "Kunne ikke gensende invitation"
+      ],
+      "Failed to unshare node": [
+        "Kunne ikke fjerne deling af knude"
+      ],
+      "Failed to update direct share node": [
+        "Det lykkedes ikke at opdatere direkte delingsknude"
+      ],
+      "Failed to update public share node": [
+        "Det lykkedes ikke at opdatere offentlig delingsknude"
+      ],
+      "Stopping the sharing of this item has failed": [
+        "Det lykkedes ikke at stoppe delingen af dette element"
+      ],
+      "The link to your item failed to be deleted": [
+        "Linket til dit element kunne ikke slettes"
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Enhed, der ikke kan dekrypteres"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Navn, der ikke kan dekrypteres"
       ]
     },
     "Error importing calendar": {
@@ -5852,6 +5912,33 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "Can edit": [
+        "Kan redigere"
+      ],
+      "Can edit and manage access": [
+        "Kan redigere og administrere adgang"
+      ],
+      "Can view and edit": [
+        "Kan se og redigere"
+      ],
+      "Can view only": [
+        "Kan kun se"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Hvis du fjerner dig selv, mister du adgang til \"${ fileName }\" og du vil ikke kunne åbne den igen, medmindre ejeren deler den med dig."
+      ],
+      "Link copied": [
+        "Link kopieret"
+      ],
+      "owner": [
+        "ejer"
+      ],
+      "Who has access": [
+        "Hvem har adgang"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Du vil ikke kunne dele \"${ fileName }\" efter du har ændret adgangen til seer. Kun ejeren kan ændre din adgang igen."
       ]
     },
     "info": {
@@ -6408,7 +6495,7 @@
         "Inkluder applikationslogfiler i fejlrapporten"
       ],
       "Include document name in notification": [
-        "Inkludér dokumentnavn i notifikation"
+        "Inkludér dokumentnavn i notifikationen"
       ],
       "Integrated 2FA authenticator": [
         "Integreret 2FA-godkendelsesværktøj"
@@ -6478,6 +6565,45 @@
       ],
       "Your password (trusted contact)": [
         "Din adgangskode (betroet kontakt)"
+      ],
+      "Access": [
+        "Adgang"
+      ],
+      "Active": [
+        "Aktiv"
+      ],
+      "Allow editors to change permissions and share": [
+        "Tillad redaktører at ændre tilladelser og dele"
+      ],
+      "Anonymous": [
+        "Anonym"
+      ],
+      "Anyone on the Internet with the link": [
+        "Enhver på internettet med linket"
+      ],
+      "can edit": [
+        "kan redigere"
+      ],
+      "can view": [
+        "kan se"
+      ],
+      "Delete link and remove access for everyone": [
+        "Slet link og fjern adgang for alle"
+      ],
+      "Disable this link on a specific date": [
+        "Deaktiver dette link på en bestemt dato"
+      ],
+      "Expiry": [
+        "Udløb"
+      ],
+      "Not active": [
+        "Ikke aktiv"
+      ],
+      "Require password": [
+        "Kræv adgangskode"
+      ],
+      "Set a password to limit access via link": [
+        "Indstil en adgangskode for at begrænse adgang via link"
       ]
     },
     "Label for contact group color": {
@@ -7547,6 +7673,16 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN med annonceblokering og beskyttelse mod malware"
+      ],
+      "Appointment scheduling": [
+        "Mødebooking"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Mødebooking med ${ n } bookingside",
+        "Mødebooking med ${ n } bookingsider"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Dedikerede hastighedsoptimerede servere"
       ]
     },
     "new_plans: feature highlight": {
@@ -8236,6 +8372,15 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Din ${ BRAND_NAME }-adresse er klar til brug"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" delt"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Indstilling opdateret. Redaktører kan ændre tilladelser og dele."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Indstilling opdateret. Redaktører kan ikke ændre tilladelser eller dele."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9261,6 +9406,12 @@
       ],
       "Pending": [
         "Afventer"
+      ],
+      "pending": [
+        "afventer"
+      ],
+      "user joined": [
+        "Bruger tilsluttede sig"
       ]
     },
     "Storage": {
@@ -10439,6 +10590,24 @@
       ],
       "Your download includes a ${ DOCS_APP_NAME } file": [
         "Dit download inkluderer en ${ DOCS_APP_NAME }-fil"
+      ],
+      "Change access to viewer?": [
+        "Skift adgang til seer?"
+      ],
+      "Public link": [
+        "Offentligt link"
+      ],
+      "Public link settings": [
+        "Indstillinger for offentligt link"
+      ],
+      "Remove your access?": [
+        "Fjern din adgang?"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Indstillinger for ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Del \"${ fileName }\""
       ]
     },
     "Title subscription": {
@@ -10541,6 +10710,9 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Medmindre de dechifreres, forbliver krypterede adgangskoder sikre, selv hvis de eksponeres."
+      ],
+      "Change shared item settings": [
+        "Skift indstillinger for delte elementer"
       ]
     },
     "tooltip": {

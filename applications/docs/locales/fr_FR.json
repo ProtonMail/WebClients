@@ -991,6 +991,24 @@
       ],
       "View only": [
         "Lecture seule"
+      ],
+      "Change my access": [
+        "Modifier mon accès"
+      ],
+      "Encrypted": [
+        "Chiffré"
+      ],
+      "Remove my access": [
+        "Retirer mon accès"
+      ],
+      "Set password or expiration date": [
+        "Définir le mot de passe ou la date d'expiration"
+      ],
+      "Shared": [
+        "Partagé"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Le partage est chiffré de bout en bout"
       ]
     },
     "Action subscription": {
@@ -3468,6 +3486,48 @@
       ],
       "Wrong billing address": [
         "L'adresse de facturation n'est pas correct."
+      ],
+      "An error occurred": [
+        "Une erreur s’est produite."
+      ],
+      "Failed to change permissions settings": [
+        "Impossible de modifier les paramètres des autorisations"
+      ],
+      "Failed to create public share node": [
+        "La création du nœud de partage public n'a pas abouti."
+      ],
+      "Failed to fetch node": [
+        "La récupération du nœud n'a pas abouti."
+      ],
+      "Failed to fetch sharing info": [
+        "La récupération des informations de partage n'a pas abouti."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Les données d'abonnement n'ont pas pu être chargées. Veuillez réessayer plus tard."
+      ],
+      "Failed to resend invitation": [
+        "Le renvoi de l'invitation n'a pas abouti."
+      ],
+      "Failed to unshare node": [
+        "La désactivation du partage du nœud n'a pas abouti."
+      ],
+      "Failed to update direct share node": [
+        "La mise à jour du nœud de partage direct n'a pas abouti."
+      ],
+      "Failed to update public share node": [
+        "La mise à jour du nœud de partage public n'a pas abouti."
+      ],
+      "Stopping the sharing of this item has failed": [
+        "L'arrêt du partage de cet élément n'a pas abouti."
+      ],
+      "The link to your item failed to be deleted": [
+        "Le lien vers votre élément n'a pas pu être supprimé."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Appareil indéchiffrable"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nom indéchiffrable"
       ]
     },
     "Error importing calendar": {
@@ -3878,12 +3938,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Veuillez réessayer."
+        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
+        "Insérez une clé de sécurité associée à votre compte ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clé de sécurité"
@@ -4571,7 +4631,7 @@
         "Création du lien vers le dossier"
       ],
       "Creating new document...": [
-        "Création du document en cours..."
+        "Création d'un document en cours..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédit pour la période non utilisée de votre abonnement précédent"
@@ -4679,7 +4739,7 @@
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Enter verification code. Digit ${ digit }."
+        "Saisissez le code de vérification. Entrez ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
@@ -4872,7 +4932,7 @@
         "Priorité basse"
       ],
       "Making a copy...": [
-        "Création d'une copie..."
+        "Création d'une copie en cours..."
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -5613,7 +5673,7 @@
         "Recevez des mises à jour par e-mail pour les commentaires et suggestions ajoutés à vos documents."
       ],
       "Get Notified About Comments": [
-        "Être notifié des commentaires"
+        "Recevoir des notifications concernant les commentaires"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Les gouvernements et les FAI peuvent surveiller vos activités en ligne. En masquant votre véritable IP et en chiffrant vos activités, votre navigation devient privée."
@@ -5926,6 +5986,33 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Vous pourrez toujours consulter les données de votre propre compte, mais tous les comptes utilisateur seront retirés de votre organisation."
+      ],
+      "Can edit": [
+        "Peut modifier"
+      ],
+      "Can edit and manage access": [
+        "Peut modifier et gérer l'accès"
+      ],
+      "Can view and edit": [
+        "Peut voir et modifier"
+      ],
+      "Can view only": [
+        "Peut voir seulement"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Si vous vous retirez, vous perdrez l’accès à « ${ fileName } » et ne pourrez plus l’ouvrir à moins que le propriétaire ne le partage avec vous."
+      ],
+      "Link copied": [
+        "Lien copié"
+      ],
+      "owner": [
+        "propriétaire"
+      ],
+      "Who has access": [
+        "Qui a accès"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Vous ne pourrez plus partager « ${ fileName } » après avoir modifié les droits d'accès en lecture seule. Seul le propriétaire pourra à nouveau modifier votre accès."
       ]
     },
     "info": {
@@ -6567,6 +6654,45 @@
       ],
       "Your password (trusted contact)": [
         "Votre mot de passe (contacts de confiance)"
+      ],
+      "Access": [
+        "Accès"
+      ],
+      "Active": [
+        "Actif"
+      ],
+      "Allow editors to change permissions and share": [
+        "Permettre aux éditeurs de modifier les autorisations et de partager"
+      ],
+      "Anonymous": [
+        "Anonyme"
+      ],
+      "Anyone on the Internet with the link": [
+        "Toute personne sur Internet disposant du lien"
+      ],
+      "can edit": [
+        "peut modifier"
+      ],
+      "can view": [
+        "peut consulter"
+      ],
+      "Delete link and remove access for everyone": [
+        "Supprimer le lien et retirer l'accès pour tous"
+      ],
+      "Disable this link on a specific date": [
+        "Désactiver ce lien à une date spécifique"
+      ],
+      "Expiry": [
+        "Expiration"
+      ],
+      "Not active": [
+        "Inactif"
+      ],
+      "Require password": [
+        "Exiger le mot de passe"
+      ],
+      "Set a password to limit access via link": [
+        "Définir un mot de passe pour limiter l'accès par lien"
       ]
     },
     "Label for contact group color": {
@@ -7700,6 +7826,16 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN avec bloqueur de publicité et protection contre les logiciels malveillants"
+      ],
+      "Appointment scheduling": [
+        "Planification de rendez-vous"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Planification de rendez-vous avec ${ n } page de réservation",
+        "Planification de rendez-vous avec ${ n } pages de réservation"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Serveurs dédiés optimisés pour la vitesse"
       ]
     },
     "new_plans: feature highlight": {
@@ -8395,6 +8531,15 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Votre adresse ${ BRAND_NAME } est prête à être utilisée"
+      ],
+      "\"${ fileName }\" shared": [
+        "« ${ fileName } » partagé"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Les paramètres ont été mis à jour. Les éditeurs peuvent modifier les autorisations et partager."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Les paramètres ont été mis à jour. Les éditeurs ne peuvent pas modifier les autorisations ni partager."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9480,6 +9625,12 @@
       ],
       "Pending": [
         "En attente"
+      ],
+      "pending": [
+        "en attente"
+      ],
+      "user joined": [
+        "l’utilisateur a rejoint"
       ]
     },
     "Storage": {
@@ -10658,6 +10809,24 @@
       ],
       "Your download includes a ${ DOCS_APP_NAME } file": [
         "Votre téléchargement comprend un fichier ${ DOCS_APP_NAME }."
+      ],
+      "Change access to viewer?": [
+        "Modifier les droits d'accès en lecture seule ?"
+      ],
+      "Public link": [
+        "Lien public"
+      ],
+      "Public link settings": [
+        "Paramètres de lien public"
+      ],
+      "Remove your access?": [
+        "Retirer votre accès ?"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Paramètres de ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Partager « ${ fileName } »"
       ]
     },
     "Title subscription": {
@@ -10760,6 +10929,9 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "À moins d’être déchiffrés, les mots de passe chiffrés restent sécurisés même s’ils sont exposés."
+      ],
+      "Change shared item settings": [
+        "Modifier les paramètres de l'élément partagé"
       ]
     },
     "tooltip": {
