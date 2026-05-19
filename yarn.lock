@@ -10534,6 +10534,7 @@ __metadata:
   resolution: "@proton/colors@workspace:packages/colors"
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
+    "@proton/types": "workspace:^"
     "@types/css-tree": "npm:^2.3.11"
     "@types/jest": "npm:^30.0.0"
     "@types/node": "npm:^24.12.4"
