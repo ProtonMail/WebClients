@@ -219,6 +219,9 @@
       "Back to sign in": [
         "Volver a iniciar sesión"
       ],
+      "Back to sign-in": [
+        "Volver a iniciar sesión"
+      ],
       "Block": [
         "Bloquear"
       ],
@@ -1493,9 +1496,6 @@
       ],
       "Set as default": [
         "Establecer por defecto"
-      ],
-      "Set as default mail application": [
-        "Establecer como aplicación de correo por defecto"
       ],
       "Set catch-all": [
         "Configurar catch-all"
@@ -5238,12 +5238,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } en ${ DRIVE_APP_NAME } le permite trabajar juntos en un entorno seguro y cifrado."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } no es su aplicación de correo por defecto."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } es su aplicación de correo por defecto."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } mantiene seguro los datos de su negocio y le permite enviar correos cifrados a cualquiera."
       ],
@@ -5391,9 +5385,6 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lea, responda y manténgase al día con Gmail desde dentro de ${ MAIL_APP_NAME }"
       ],
-      "Send a code to your recovery email or phone": [
-        "Envíe un código a su correo electrónico o teléfono de recuperación"
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Configure las cuentas para todos los usuarios e invítelos a unirse a ${ BRAND_NAME }."
       ],
@@ -5442,6 +5433,9 @@
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Mejore su plan para obtener ${ activatePmUser } para una dirección de correo electrónico más corta y fácil de recordar, además de su dirección actual."
+      ],
+      "Use a recovery method to reset your password": [
+        "Use un método de recuperación para restablecer su contraseña"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Use esta guía para que su organización se beneficie inmediatamente del cifrado y ecosistema de privacidad líderes en la industria de ${ BRAND_NAME }."
@@ -12904,9 +12898,6 @@
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Cuando está desactivado, esto evita que las imágenes remotas se carguen sin su conocimiento."
       ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Al activarse comprobaremos si ${ MAIL_APP_NAME } es su aplicación de correo por defecto y le notificaremos si no lo es."
-      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Al activar SAML para ${ appName } en el proveedor de identidad, es posible que se le solicite que use la URL de devolución de llamada (ACS) y el ID del emisor. Simplemente copie y pegue los datos a continuación en los campos del proveedor de identidad."
       ],
@@ -17913,8 +17904,8 @@
       "${ app } product updates": [
         "Actualizaciones de producto para ${ app }"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Boletín de ${ BRAND_NAME } for Business"
+      "${ BRAND_NAME } for Business communications": [
+        "Comunicaciones de ${ BRAND_NAME } for Business"
       ],
       "${ BRAND_NAME } important announcements": [
         "Avisos importantes de ${ BRAND_NAME }"
@@ -17967,8 +17958,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "Durante el primer mes de uso de ${ BRAND_NAME }"
       ],
-      "Email subscriptions": [
-        "Suscripciones de correo"
+      "Email communications": [
+        "Comunicaciones por correo electrónico"
       ],
       "In-app notifications": [
         "Notificaciones dentro de la aplicación"
@@ -24710,9 +24701,6 @@
       "Change second password": [
         "Cambiar la segunda contraseña"
       ],
-      "Check your default mail application": [
-        "Compruebe su aplicación de correo por defecto"
-      ],
       "Choose a provider": [
         "Elegir un proveedor"
       ],
@@ -25907,6 +25895,9 @@
       ],
       "Some of your encrypted data is locked": [
         "Algunos de sus datos cifrados están bloqueados"
+      ],
+      "Something went wrong": [
+        "Algo salió mal"
       ],
       "Sort folders alphabetically": [
         "Ordenar las carpetas alfabéticamente"

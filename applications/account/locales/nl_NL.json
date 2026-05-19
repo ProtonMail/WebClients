@@ -219,6 +219,9 @@
       "Back to sign in": [
         "Terug naar inloggen"
       ],
+      "Back to sign-in": [
+        "Terug naar aanmelden"
+      ],
       "Block": [
         "Blokkeer"
       ],
@@ -1490,9 +1493,6 @@
       ],
       "Set as default": [
         "Als standaard instellen"
-      ],
-      "Set as default mail application": [
-        "Stel in als standaard e-mailapplicatie"
       ],
       "Set catch-all": [
         "Stel catch-all in"
@@ -5151,12 +5151,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "Met ${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } kunt u samenwerken met anderen in een veilige, versleutelde omgeving."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } is niet uw standaard e-mailapplicatie."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } is uw standaard e-mailapplicatie."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } houdt uw bedrijfsgegevens veilig en laat u versleutelde e-mails verzenden naar iedereen."
       ],
@@ -5301,9 +5295,6 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lees, beantwoord en houd uw Gmail bij vanuit ${ MAIL_APP_NAME }"
       ],
-      "Send a code to your recovery email or phone": [
-        "Verzend een code naar uw herstel e-mailadres of telefoon"
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Stel accounts in voor alle gebruikers en nodig hen uit om lid te worden van ${ BRAND_NAME }."
       ],
@@ -5352,6 +5343,9 @@
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Upgrade om ${ activatePmUser } te krijgen voor een korter, makkelijk te onthouden e-mailadres, toegevoegd aan uw huidige adres."
+      ],
+      "Use a recovery method to reset your password": [
+        "Gebruik een herstelmethode om uw wachtwoord opnieuw in te stellen."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Gebruik deze handleiding om uw organisatie snel te laten profiteren van ${ BRAND_NAME }'s toonaangevende versleuteling en privacy ecosysteem."
@@ -10401,6 +10395,10 @@
         "Gatewayserver wordt opgezet: ${ serverNumber } / ${ total }",
         "Gatewayservers worden opgezet: ${ serverNumber } / ${ total }"
       ],
+      "Creating gateway with ${ total } server": [
+        "Gateway aanmaken met ${ total } server",
+        "Gateway aanmaken met ${ total } servers"
+      ],
       "Creating your account": [
         "Account aan het aanmaken"
       ],
@@ -12776,9 +12774,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Indien uitgeschakeld, voorkomt dit dat externe afbeeldingen worden geladen zonder dat u het weet."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Wanneer ingeschakeld, zullen we controleren of ${ MAIL_APP_NAME } uw standaard e-mail applicatie is en u informeren indien dit niet het geval is."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Wanneer u SAML inschakelt voor ${ appName } in uw identiteitsprovider, kunt u worden gevraagd om de callback (ACS) URL en uitgevende ID te gebruiken. Kopieer en plak onderstaande gegevens in de velden van uw identiteitsprovider."
@@ -17762,8 +17757,8 @@
       "${ app } product updates": [
         "${ app } productupdates"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } voor Bedrijven-nieuwsbrief"
+      "${ BRAND_NAME } for Business communications": [
+        "${ BRAND_NAME } voor zakelijke communicatie"
       ],
       "${ BRAND_NAME } important announcements": [
         "${ BRAND_NAME } belangrijke aankondigingen"
@@ -17816,8 +17811,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "Gedurende de eerste maand gebruik van een ${ BRAND_NAME } product"
       ],
-      "Email subscriptions": [
-        "Nieuwsbrieven"
+      "Email communications": [
+        "Communicatie per e-mail"
       ],
       "In-app notifications": [
         "In-app-notificaties"
@@ -20953,11 +20948,17 @@
       "Add": [
         "Toevoegen"
       ],
+      "Add an emergency contact": [
+        "Een contactpersoon voor noodgevallen toevoegen"
+      ],
       "Add emergency contacts": [
         "Contactpersonen voor noodgevallen toevoegen"
       ],
       "Add options": [
         "Opties toevoegen"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Voeg mensen toe die u vertrouwt en die u gemakkelijk kunt bereiken. Uw contactpersoon voor noodgevallen heeft toegang tot uw account en kan uw wachtwoord voor u opnieuw instellen als dat nodig is."
       ],
       "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
         "Voeg mensen toe die u vertrouwt en waarmee u gemakkelijk contact kunt opnemen. Zij kunnen u helpen uw gegevens te ontgrendelen nadat u uw wachtwoord opnieuw heeft ingesteld."
@@ -21090,6 +21091,9 @@
       ],
       "They must already have a ${ BRAND_NAME } Account.": [
         "Ze moeten al een ${ BRAND_NAME }-account hebben."
+      ],
+      "They will not be able to see or access your data.": [
+        "Zij zullen uw gegevens niet kunnen zien of bekijken."
       ],
       "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
         "Hiermee krijgt u snel toegang tot uw ${ BRAND_NAME }-account, zodat u uw wachtwoord kunt wijzigen."
@@ -21368,6 +21372,9 @@
       ]
     },
     "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "Om de hoogst mogelijke beveiliging van uw account te garanderen, schakelt u herstel via e-mail en SMS uit."
+      ],
       "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
         "Download uw herstelzin om ervoor te zorgen dat u altijd toegang heeft tot uw ${ BRAND_NAME }-account."
       ],
@@ -24541,9 +24548,6 @@
       "Change second password": [
         "Verander tweede wachtwoord"
       ],
-      "Check your default mail application": [
-        "Controleer uw standaard e-mailapplicatie."
-      ],
       "Choose a provider": [
         "Kies een provider"
       ],
@@ -24721,6 +24725,9 @@
       ],
       "Data recovery": [
         "Dataherstel"
+      ],
+      "Data recovery contacts": [
+        "Contactpersonen voor gegevensherstel"
       ],
       "Data recovery options": [
         "Opties voor gegevensherstel"
@@ -25735,6 +25742,9 @@
       ],
       "Some of your encrypted data is locked": [
         "Een deel van uw versleutelde gegevens is vergrendeld."
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan."
       ],
       "Sort folders alphabetically": [
         "Mappen alfabetisch sorteren"
