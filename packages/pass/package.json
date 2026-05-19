@@ -4,7 +4,7 @@
     "license": "GPL-3.0",
     "sideEffects": false,
     "scripts": {
-        "check-types": "tsc",
+        "check-types": "tsgo",
         "cherry": "scripts/cherry.sh",
         "docs:build": "yarn workspace @proton/pass-docs build",
         "docs:dev": "yarn workspace @proton/pass-docs dev",
@@ -69,6 +69,7 @@
         "@types/react-dom": "^18.3.7",
         "@types/react-router-dom": "^5.3.3",
         "@types/webextension-polyfill": "^0.12.5",
+        "@typescript/native-preview": "^7.0.0-0",
         "circular-dependency-plugin": "^5.2.2",
         "core-js": "^3.49.0",
         "cross-env": "^10.1.0",
