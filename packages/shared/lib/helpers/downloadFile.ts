@@ -7,7 +7,9 @@ const downloadFile = (blob: Blob | undefined, filename: string | undefined) => {
         throw new Error('Download requires a newer browser.');
     }
 
-    saveAs(blob, filename);
+    if (blob) {
+        saveAs(blob, filename);
+    }
 };
 
 export default downloadFile;
