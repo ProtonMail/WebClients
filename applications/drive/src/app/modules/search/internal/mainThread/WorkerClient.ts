@@ -38,8 +38,7 @@ export class WorkerClient {
         private userId: UserId,
         private appVersion: string,
         private clientId: ClientId,
-        private bridge: MainThreadBridge,
-        private metricsHeaders: { uid: string; clientID: string }
+        private bridge: MainThreadBridge
     ) {
         this.api = this.createWorker();
 
@@ -60,15 +59,7 @@ export class WorkerClient {
 
         Logger.listenForWorkerLogs();
 
-        const api = Comlink.wrap<SharedWorkerAPI>(worker.port);
-        // Forward auth + version headers into the worker so its @proton/metrics singleton
-        // can emit authenticated POSTs. Must happen on every (re)connection.
-        void api.setMetricsHeaders({
-            uid: this.metricsHeaders.uid,
-            clientID: this.metricsHeaders.clientID,
-            appVersion: this.appVersion,
-        });
-        return api;
+        return Comlink.wrap<SharedWorkerAPI>(worker.port);
     }
 
     private startHeartbeat() {
