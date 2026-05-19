@@ -8,7 +8,6 @@ import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shar
 import { AnonymousUserEmail, CommentThreadState } from '@proton/docs-shared'
 import clsx from '@proton/utils/clsx'
 import { c } from 'ttag'
-import { useApplication } from '../../Containers/ApplicationProvider'
 import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { CommentsComposer } from './CommentsComposer'
 import { useCommentsContext } from './CommentsContext'
@@ -18,8 +17,6 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 import { ACCEPT_SUGGESTION_COMMAND, REJECT_SUGGESTION_COMMAND } from '../Suggestions/Commands'
 import { useSuggestionCommentContent } from './useSuggestionCommentContent'
 import { generateSuggestionSummary } from '../Suggestions/generateSuggestionSummary'
-import { useContactEmails } from '../../Hooks/useContactEmails'
-import { useSyncedState } from '../../Hooks/useSyncedState'
 
 export function CommentsPanelListComment({
   comment,
@@ -36,12 +33,28 @@ export function CommentsPanelListComment({
 }): JSX.Element {
   const [editor] = useLexicalComposerContext()
 
-  const { application } = useApplication()
-  const { userName, suggestionsEnabled } = useSyncedState()
-  const { displayNameForEmail } = useContactEmails()
-
-  const { userAddress, controller, markNodeMap, removeMarkNode, awarenessStates, showConfirmModal } =
-    useCommentsContext()
+  const {
+    userAddress,
+    getDisplayNameForEmail,
+    acceptSuggestion,
+    rejectSuggestion,
+    deleteThread,
+    deleteComment,
+    editComment,
+    resolveThread,
+    unresolveThread,
+    markNodeMap,
+    removeMarkNode,
+    awarenessStates,
+    showConfirmModal,
+    canEdit,
+    languageCode,
+    logger,
+    userName,
+    suggestionsEnabled,
+    beganTypingInThread,
+    stoppedTypingInThread,
+  } = useCommentsContext()
 
   const [isDeleting, setIsDeleting] = useState(false)
   const [isEditing, setIsEditing] = useState(false)
@@ -51,7 +64,7 @@ export function CommentsPanelListComment({
   const suggestionID = isSuggestionComment ? thread.markID : null
   const suggestionContent = useSuggestionCommentContent(comment, thread, suggestionID, editor)
 
-  const acceptSuggestion: MouseEventHandler = (event) => {
+  const handleAcceptSuggestion: MouseEventHandler = (event) => {
     if (!suggestionID) {
       return
     }
@@ -62,12 +75,12 @@ export function CommentsPanelListComment({
     if (!didAccept) {
       return
     }
-    application.logger.info('Accepting suggestion thread', thread.id)
-    controller.acceptSuggestion(thread.id, summary).catch(reportErrorToSentry)
+    logger.info('Accepting suggestion thread', thread.id)
+    acceptSuggestion(thread.id, summary).catch(reportErrorToSentry)
     editor.focus()
   }
 
-  const rejectSuggestion: MouseEventHandler = (event) => {
+  const handleRejectSuggestion: MouseEventHandler = (event) => {
     if (!suggestionID) {
       return
     }
@@ -78,12 +91,12 @@ export function CommentsPanelListComment({
     if (!didReject) {
       return
     }
-    application.logger.info('Rejecting suggestion thread', thread.id)
-    controller.rejectSuggestion(thread.id, summary).catch(reportErrorToSentry)
+    logger.info('Rejecting suggestion thread', thread.id)
+    rejectSuggestion(thread.id, summary).catch(reportErrorToSentry)
     editor.focus()
   }
 
-  const deleteThread = async () => {
+  const handleDeleteThread = async () => {
     showConfirmModal({
       title: c('Title').t`Delete thread`,
       submitText: c('Action').t`Delete`,
@@ -91,8 +104,7 @@ export function CommentsPanelListComment({
       onSubmit: async () => {
         setIsDeleting(true)
         setIsDeletingThread(true)
-        controller
-          .deleteThread(thread.id)
+        deleteThread(thread.id)
           .then((deleted) => {
             if (deleted) {
               removeMarkNode(thread.markID)
@@ -107,15 +119,14 @@ export function CommentsPanelListComment({
     })
   }
 
-  const deleteComment = () => {
+  const handleDeleteComment = () => {
     showConfirmModal({
       title: c('Title').t`Delete comment`,
       submitText: c('Action').t`Delete`,
       message: c('Info').t`Are you sure you want to delete this comment?`,
       onSubmit: async () => {
         setIsDeleting(true)
-        controller
-          .deleteComment(thread.id, comment.id)
+        deleteComment(thread.id, comment.id)
           .catch(reportErrorToSentry)
           .finally(() => {
             setIsDeleting(false)
@@ -125,11 +136,10 @@ export function CommentsPanelListComment({
   }
 
   const isAuthorCurrentUser = comment.author === userAddress || (!comment.author && userAddress === AnonymousUserEmail)
-  const canEdit = application.getRole().canEdit()
 
   const isThreadActive = thread.state === CommentThreadState.Active
 
-  const authorDisplayName = isAuthorCurrentUser ? userName : displayNameForEmail(comment.author)
+  const authorDisplayName = isAuthorCurrentUser ? userName : getDisplayNameForEmail(comment.author)
   const color = awarenessStates.find((state) => state.name === comment.author)?.color
 
   const showEditButton = (!isFirstComment || isThreadActive) && isAuthorCurrentUser && !isSuggestionComment
@@ -184,14 +194,14 @@ export function CommentsPanelListComment({
               {authorDisplayName}
             </span>
             <span className="select-none text-xs opacity-50" data-testid="comment-creation-time">
-              <CommentTime createTime={comment.createTime} languageCode={application.languageCode} />
+              <CommentTime createTime={comment.createTime} languageCode={languageCode} />
               {comment.createTime.milliseconds !== comment.modifyTime.milliseconds && ' • Edited'}
             </span>
           </div>
 
           {isSuggestionComment && suggestionsEnabled && thread.state === CommentThreadState.Active && (
             <>
-              <Tooltip title={c('Action').t`Decline suggestion`} onClick={rejectSuggestion}>
+              <Tooltip title={c('Action').t`Decline suggestion`} onClick={handleRejectSuggestion}>
                 <Button
                   icon
                   pill
@@ -206,7 +216,7 @@ export function CommentsPanelListComment({
                   <Icon size={4.5} name="cross" />
                 </Button>
               </Tooltip>
-              <Tooltip title={c('Action').t`Accept suggestion`} onClick={acceptSuggestion}>
+              <Tooltip title={c('Action').t`Accept suggestion`} onClick={handleAcceptSuggestion}>
                 <Button
                   icon
                   pill
@@ -257,7 +267,7 @@ export function CommentsPanelListComment({
                   <DropdownMenuButton
                     className="flex items-center gap-3 text-left text-sm"
                     onClick={() => {
-                      controller.resolveThread(thread.id).catch(reportErrorToSentry)
+                      resolveThread(thread.id).catch(reportErrorToSentry)
                     }}
                     data-testid="resolve-button"
                   >
@@ -269,7 +279,7 @@ export function CommentsPanelListComment({
                   <DropdownMenuButton
                     className="flex items-center gap-3 text-left text-sm"
                     onClick={() => {
-                      controller.unresolveThread(thread.id).catch(reportErrorToSentry)
+                      unresolveThread(thread.id).catch(reportErrorToSentry)
                     }}
                     data-testid="reopen-button"
                   >
@@ -281,11 +291,11 @@ export function CommentsPanelListComment({
                     className="flex items-center gap-3 text-left text-sm hover:text-[color:--signal-danger]"
                     onClick={() => {
                       if (isFirstComment) {
-                        deleteThread().catch(reportErrorToSentry)
+                        handleDeleteThread().catch(reportErrorToSentry)
                         return
                       }
 
-                      deleteComment()
+                      handleDeleteComment()
                     }}
                     data-testid="delete-button"
                   >
@@ -314,22 +324,22 @@ export function CommentsPanelListComment({
             className="border-weak border ring-[--primary] focus-within:border-[--primary] focus-within:ring focus-within:ring-[--primary-minor-1]"
             placeholder={c('Placeholder').t`Edit comment...`}
             onSubmit={async (content) => {
-              const success = await controller.editComment(thread.id, comment.id, content)
+              const success = await editComment(thread.id, comment.id, content)
               if (success) {
                 setIsEditing(false)
-                void controller.stoppedTypingInThread(thread.id)
+                void stoppedTypingInThread(thread.id)
               }
               return success
             }}
             onTextContentChange={(textContent) => {
               if (textContent.length > 0) {
-                void controller.beganTypingInThread(thread.id)
+                void beganTypingInThread(thread.id)
               } else {
-                void controller.stoppedTypingInThread(thread.id)
+                void stoppedTypingInThread(thread.id)
               }
             }}
             onBlur={() => {
-              void controller.stoppedTypingInThread(thread.id)
+              void stoppedTypingInThread(thread.id)
             }}
             onCancel={cancelEditing}
             buttons={(canSubmit, submitComment) => (
