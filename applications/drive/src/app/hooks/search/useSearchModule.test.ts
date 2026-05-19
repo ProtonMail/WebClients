@@ -48,8 +48,7 @@ jest.mock('@proton/account/userKeys/hooks', () => ({
 
 jest.mock('@proton/components', () => ({
     useApi: () => jest.fn(),
-    useConfig: () => ({ APP_VERSION: '1.0.0', APP_NAME: 'proton-drive' }),
-    useAuthentication: () => ({ UID: 'session-uid' }),
+    useConfig: () => ({ APP_VERSION: '1.0.0' }),
 }));
 
 jest.mock('@proton/drive', () => ({

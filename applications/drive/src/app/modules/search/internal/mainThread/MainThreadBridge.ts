@@ -3,6 +3,7 @@ import type { DriveEvent, MaybeNode, NodeType } from '@protontech/drive-sdk';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { Logger } from '../shared/Logger';
+import { type SearchMetrics, searchMetrics } from '../shared/searchMetrics';
 import type { TreeEventScopeId } from '../shared/types';
 import { CryptoProxyBridge } from './CryptoProxyBridge';
 
@@ -68,6 +69,7 @@ export class MainThreadBridge {
         // Bind methods so they survive Comlink proxy dispatch (which loses `this`).
         this.fetchLastEventIdForTreeScopeId = this.fetchLastEventIdForTreeScopeId.bind(this);
         this.updateLatestEventId = this.updateLatestEventId.bind(this);
+        this.dispatchSearchMetric = this.dispatchSearchMetric.bind(this);
     }
 
     // AbortController can't be serialized across Comlink, so we create a fresh one here.
@@ -78,6 +80,13 @@ export class MainThreadBridge {
 
     updateLatestEventId(treeEventScopeId: string, eventId: string): void {
         this.latestEventIdProvider.saveLatestEventId(treeEventScopeId, eventId);
+    }
+
+    /**
+     * Forward a search-metric event from the worker to the main-thread `searchMetrics`.
+     */
+    dispatchSearchMetric<K extends keyof SearchMetrics>(method: K, args: Parameters<SearchMetrics[K]>[0]): void {
+        (searchMetrics[method] as (input: typeof args) => void)(args);
     }
 }
 
