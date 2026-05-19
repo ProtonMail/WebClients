@@ -1380,9 +1380,6 @@
       "Set as default": [
         "ნაგულისხმევად დაყენება"
       ],
-      "Set as default mail application": [
-        "ნაგულიხმევ ელფოსტის აპლიკაციად დაყენება"
-      ],
       "Set catch-all": [
         "დომენის ყველა ელფოსტის მიღება"
       ],
@@ -4608,12 +4605,6 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } თქვენი ნაგულისხმევი ელფოსტის აპლიკაცია არაა."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } თქვენი ნაგულისხმევი ელფოსტის აპლიკაციაა."
-      ],
       "A checked box means the feature is disabled.": [
         "ჩართული ნიშნავს, რომ ეს ფუნქცია გამორთულია."
       ],
@@ -4715,9 +4706,6 @@
       ],
       "No one in your organization can connect to shared servers.": [
         "თქვენს ორგანიზაციაში გაზიარებულ სერვერებთან დაკავშირება არავის შეუძლია."
-      ],
-      "Send a code to your recovery email or phone": [
-        "კოდის გაგზავნა თქვენს აღდგენის ელფოსტაზე ან ტელეფონზე"
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "მოირგეთ ანგარიშები ყველა მომხმარებლისთვის და მოიწვიეთ ისინი ${ BRAND_NAME }-ზე."
@@ -8110,9 +8098,6 @@
       ],
       "Contact us": [
         "დაგვიკავშირდით"
-      ],
-      "Downloads": [
-        "გადმოწერები"
       ],
       "Enjoying ${ planName }?": [
         "მოგწონთ${ planName }?"
@@ -15865,9 +15850,6 @@
       "${ app } product updates": [
         "${ app }-ის პროდუქტის განახლებები"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME }-ის საქმიანი გაზეთი"
-      ],
       "${ BRAND_NAME } important announcements": [
         "${ BRAND_NAME }-ის მნიშვნელოვანი განცხადებები"
       ],
@@ -15915,9 +15897,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "${ BRAND_NAME }-ის პროდუქტის გამოყენების პირველი თვის განმავლობაში"
-      ],
-      "Email subscriptions": [
-        "ელფოსტის გამოწერები"
       ],
       "In-app notifications": [
         "აპის შეტყობინებები"
@@ -21714,9 +21693,6 @@
       "Change second password": [
         "მეორე პაროლის შეცვლა"
       ],
-      "Check your default mail application": [
-        "შეამოწმეთ თქვენი ნაგულისხმევი ელფოსტის აპლიკაცია"
-      ],
       "Choose a provider": [
         "აირჩიეთ პროვაიდერი"
       ],
@@ -22785,6 +22761,9 @@
       ],
       "Snooze:": [
         "დროებით დადუმება:"
+      ],
+      "Something went wrong": [
+        "რაღაც არასწორად წავიდა"
       ],
       "Sort folders alphabetically": [
         "საქაღალდეების ანბანით დალაგება"

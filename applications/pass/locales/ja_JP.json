@@ -1458,6 +1458,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME } へのアクセスには指紋または端末のPINが必要です。"
       ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "アクセストークン「${ action.token.Name }」は既に期限切れです。削除すると、表示されなくなります。"
+      ],
       "Add your custom email address to monitor:": [
         "監視対象にカスタムメールアドレスを追加："
       ],
@@ -1884,9 +1887,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
-      ],
       "Moving items": [
         "アイテムの移動"
       ],
@@ -1928,6 +1928,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME } へのオンラインアクセスにはPINコードが必要です。3回の試行に失敗するとログアウトされます。"
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "過去30日以内に有効期限が切れたトークンのみが表示されます。それより古いトークンは自動的に削除されます。"
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Safariの拡張機能設定を開き、${ BRAND_NAME } ドメインに対するサイトのアクセス許可が有効になっていることをご確認ください"
@@ -2847,6 +2850,9 @@
       ],
       "Expired": [
         "有効期限切れ"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "期限切れトークン(${ expired.length })"
       ],
       "Expiry Date": [
         "有効期限"

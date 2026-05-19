@@ -7062,6 +7062,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-brukernavn"
       ],
+      "${ downloads } downloads": [
+        "${ downloads } nedlastinger"
+      ],
       "${ n } month": [
         "${ n } måned",
         "${ n } måneder"
@@ -7248,6 +7251,9 @@
       "Created": [
         "Opprettet"
       ],
+      "Created ${ created }": [
+        "Opprettet ${ created }"
+      ],
       "Credits": [
         "Kreditter"
       ],
@@ -7267,11 +7273,20 @@
       "Deleted": [
         "Slettet"
       ],
+      "Deleted ${ deleted }": [
+        "Slettet ${ deleted }"
+      ],
       "Device": [
         "Enhet"
       ],
+      "Device #${ position }": [
+        "Enhet #${ position }"
+      ],
       "Device name": [
         "Enhetsnavn"
+      ],
+      "Device: ${ name }": [
+        "Enhet: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Deaktiver denne koblingen på en bestemt dato"
@@ -7330,8 +7345,14 @@
       "Expired": [
         "Utløpt"
       ],
+      "Expired on ${ formatted }": [
+        "Utløpt ${ formatted }"
+      ],
       "Expires": [
         "Utløper"
+      ],
+      "Expires ${ formatted }": [
+        "Utløper ${ formatted }"
       ],
       "Expiry": [
         "Utløp"
@@ -7405,6 +7426,9 @@
       "Integrated 2FA authenticator": [
         "Integrert 2FA-autentisering"
       ],
+      "Item #${ position }": [
+        "Element #${ position }"
+      ],
       "Keep both": [
         "Behold begge"
       ],
@@ -7435,6 +7459,9 @@
       "Location": [
         "Plassering"
       ],
+      "Location: ${ item.location }": [
+        "Plassering: ${ item.location }"
+      ],
       "Log in or sign up ": [
         "Logg på eller registrer deg "
       ],
@@ -7456,6 +7483,9 @@
       "Modified": [
         "Endret"
       ],
+      "Modified ${ modified }": [
+        "Endret ${ modified }"
+      ],
       "Move to Archive": [
         "Flytt til arkiv"
       ],
@@ -7476,6 +7506,9 @@
       ],
       "Never": [
         "Aldri"
+      ],
+      "Never expires": [
+        "Utløper aldri"
       ],
       "New password": [
         "Nytt passord"
@@ -7521,6 +7554,9 @@
       ],
       "Payment method": [
         "Betalingsmåte"
+      ],
+      "Pending invitation": [
+        "Ventende invitasjon"
       ],
       "PGP scheme": [
         "PGP-skjema"
@@ -7600,8 +7636,17 @@
       "Shared by": [
         "Delt av"
       ],
+      "Shared by ${ sharedBy }": [
+        "Delt av ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Delt via offentlig kobling"
+      ],
       "Shared on": [
         "Delt den"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Delt på ${ sharedOn }"
       ],
       "Shared with me": [
         "Delt med meg"

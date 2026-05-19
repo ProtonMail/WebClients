@@ -196,6 +196,9 @@
       "Copy forwarding address": [
         "Copiar la dirección de reenvío"
       ],
+      "Copy instructions": [
+        "Copiar instrucciones"
+      ],
       "Copy link": [
         "Copiar enlace"
       ],
@@ -1014,6 +1017,9 @@
       "Could not validate addresses at the moment.": [
         "No se han podido validar las direcciones por el momento."
       ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "No se pudieron cargar las instrucciones de configuración del agente. Copia el token que verás a continuación, no se mostrará de nuevo."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Faltan los encabezados esperados del archivo CSV: ${ missingHeaders }"
       ],
@@ -1102,6 +1108,9 @@
       "Failed to edit user's access.": [
         "Error al editar el acceso del usuario."
       ],
+      "Failed to load access tokens": [
+        "No se pudieron cargar las instrucciones de configuración del agente. Copia el token que verás a continuación, no se mostrará de nuevo."
+      ],
       "Failed to load breaches for this address": [
         "Error al cargar vulneraciones para esta dirección"
       ],
@@ -1113,6 +1122,9 @@
       ],
       "Failed to load item history": [
         "Error al cargar el historial del elemento"
+      ],
+      "Failed to load token actions": [
+        "No se pudieron cargar las acciones de token"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Error al mover todos los elementos desde \"${ payload.content.name }\""
@@ -1548,6 +1560,9 @@
         "${ row.breachCount } vulneración detectada",
         "${ row.breachCount } vulneraciones detectadas"
       ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } seleccionados"
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } miembro)",
         "(${ memberCount } miembros)"
@@ -1581,6 +1596,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "El acceso a ${ PASS_APP_NAME } requerirá tu huella dactilar o el código PIN del dispositivo."
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "El token de acceso \"${ action.token.Name }\" ya ha expirado. Si lo eliminas, no volverá a mostrarse."
       ],
       "Add your custom email address to monitor:": [
         "Añade tu dirección de correo personalizado para monitorear:"
@@ -1729,6 +1747,9 @@
       "Created ${ time }.": [
         "Creado el ${ time }."
       ],
+      "Created item": [
+        "Elemento creado"
+      ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "El formato CSV es conveniente para visualizar tus datos. Por su simpleza, algunos datos no serán incluidos (campos personalizados, claves de acceso...). Para exportar datos de manera completa, utiliza otro formato."
       ],
@@ -1837,8 +1858,16 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Cada vez que tu alias reciba un correo de alguien, se creará automáticamente un contacto."
       ],
+      "Expired ${ abs } hour ago": [
+        "Caducó hace ${ abs } hora",
+        "Caducó hace ${ abs } horas"
+      ],
       "Expires in": [
         "Expira en"
+      ],
+      "Expires in ${ hours } hour": [
+        "Caduca en ${ hours } hora",
+        "Caduca en ${ hours } horas"
       ],
       "Expires in ${ remainingTime }": [
         "Expira en ${ remainingTime }"
@@ -2030,6 +2059,9 @@
         "Mover ${ count } elemento",
         "Mover ${ count } elementos"
       ],
+      "Moved item to trash": [
+        "Elemento movido a la papelera"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
@@ -2080,6 +2112,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "El acceso en línea a ${ PASS_APP_NAME } requerirá un código PIN. Se cerrará la sesión después de 3 intentos incorrectos."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Solo se muestran los tokens que expiraron en los últimos 30 días. Los tokens más antiguos se eliminan automáticamente."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Abre los ajustes de Safari para la extensión y verifica que los permisos del sitio están activados para los dominios de ${ BRAND_NAME }"
@@ -2497,6 +2532,9 @@
       "Unverified": [
         "Sin verificar"
       ],
+      "Updated item": [
+        "Elemento actualizado"
+      ],
       "Updating vault organization...": [
         "Actualizando organización de caja fuerte..."
       ],
@@ -2804,6 +2842,9 @@
       "A-Z": [
         "A-Z"
       ],
+      "Access tokens": [
+        "Tokens de acceso"
+      ],
       "Account": [
         "Cuenta"
       ],
@@ -3073,6 +3114,9 @@
       ],
       "Expired": [
         "Expirado"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Tokens expirados (${ expired.length })"
       ],
       "Expiry Date": [
         "Fecha de expiración"
@@ -4303,6 +4347,11 @@
       ],
       "Unknown": [
         "Desconocido"
+      ]
+    },
+    "Status": {
+      "Agent": [
+        "Agente"
       ]
     },
     "Success": {

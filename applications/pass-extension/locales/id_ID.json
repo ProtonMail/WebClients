@@ -4899,6 +4899,9 @@
       "Extra password should have at least 8 characters": [
         "Kata sandi tambahan harus mengandung setidaknya 8 karakter"
       ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Gagal melakukan penulisan otomatis. Pastikan ${ PASS_APP_NAME } memiliki izin yang diperlukan, lalu coba lagi (${ error })."
+      ],
       "Failed to load breaches.": [
         "Gagal memuat pembobolan."
       ],

@@ -128,6 +128,9 @@
       "Back to sign in": [
         "Voltar para o início de sessão"
       ],
+      "Back to sign-in": [
+        "Voltar para o início de sessão"
+      ],
       "Block": [
         "Bloquear"
       ],
@@ -3700,6 +3703,9 @@
       "Automatically forward incoming email to another email address.": [
         "Encaminhe automaticamente os e-mails recebidos para outro endereço de e-mail."
       ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Bloqueie a capacidade do Google de criar um perfil seu. O Gmail não pode ver o que você faz no ${ MAIL_APP_NAME }"
+      ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Crie confiança e reconhecimento de marca com endereços de e-mail profissionais em seu próprio domínio."
       ],
@@ -3814,6 +3820,9 @@
       "Still need help? Our support team is here for you.": [
         "Precisa de ajuda? Nossa equipe de suporte está aqui para você."
       ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Para conectar um endereço Gmail diferente, remova os endereços extras do Gmail que estão sendo encaminhados para ${ BRAND_NAME }."
+      ],
       "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
         "Para conectar até ${ MAX_SYNC_PAID_USER } endereço do Gmail, faça o upgrade para o plano ${ planName }.",
         "Para conectar até ${ MAX_SYNC_PAID_USER } endereços do Gmail, faça o upgrade para o plano ${ planName }."
@@ -3842,6 +3851,12 @@
       "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
         "Inciamos a importação de seus últimos 180 dias de e-mail do Gmail. Avisaremos quando estiver pronto."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Lamentamos sua saída. Se tiver um momento, gostaríamos muito de saber o motivo do cancelamento. Seu feedback nos ajuda a fazer a ${ BRAND_NAME } ainda melhor para todos."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Você já possui um endereço do Gmail encaminhando para o ${ MAIL_APP_NAME }. Conecte-o abaixo para enviar e receber mensagens diretamente no ${ MAIL_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Você pode importar eventos no formato iCal (arquivo ICS). O arquivo deve ter o tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu arquivo for maior, divida-o em arquivos menores."
       ],
@@ -3850,6 +3865,17 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Você agora pode enviar e-mails da ${ BRAND_NAME } usando este endereço."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Você está encaminhando ${ numAddressesOrSync } endereço do Gmail para o ${ MAIL_APP_NAME }.",
+        "Você está encaminhando ${ numAddressesOrSync } endereços do Gmail para o ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Você conectou ${ MAX_SYNC_PAID_USER } endereço do Gmail. Para adicionar outro, primeiro desconecte uma das contas já conectadas.",
+        "Você conectou ${ MAX_SYNC_PAID_USER } endereços do Gmail. Para adicionar outro, primeiro desconecte uma das contas já conectadas."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Você conectou um endereço de conta externa no ${ MAIL_APP_NAME }."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Seu plano suporta ${ MAX_SYNC_FREE_USER } endereço do Gmail.",
@@ -4139,6 +4165,11 @@
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Compartilhe os benefícios do seu plano com ${ BRAND_NAME } Duo"
+      ]
+    },
+    "Easy switch": {
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Você está encaminhando e-mails de uma conta externa para ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -5832,6 +5863,11 @@
       "${ memberCount } member": [
         "${ memberCount } membro",
         "${ memberCount } membros"
+      ]
+    },
+    "group_modal": {
+      "Roles and permissions": [
+        "Funções e permissões"
       ]
     },
     "Header": {
@@ -8924,6 +8960,9 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Você não poderá recuperar dados bloqueados usando os arquivos de recuperação baixados. Isso também desativará a recuperação baseada em dispositivo."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Você receberá a recompensa em créditos 1 mês após seu amigo(a) assinar um plano anual e 2 meses após ele (ela) assinar um plano mensal."
       ],
       "You'll receive the credit reward 1 month after your friend's trial ended.": [
         "Você receberá a recompensa em créditos 1 mês após o término do período de teste do seu amigo."
@@ -12044,9 +12083,6 @@
       "${ app } product updates": [
         "Atualizações de produto do ${ app }"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Boletim da ${ BRAND_NAME } for Business"
-      ],
       "${ BRAND_NAME } important announcements": [
         "Comunicados importantes da ${ BRAND_NAME }"
       ],
@@ -12098,8 +12134,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "Durante o seu primeiro mês de uso de um produto da ${ BRAND_NAME }"
       ],
-      "Email subscriptions": [
-        "Inscrições de e-mail"
+      "Email communications": [
+        "Comunicação por e-mail"
       ],
       "In-app notifications": [
         "Notificações dentro do aplicativo"
@@ -17017,6 +17053,9 @@
       "Restore administrator privileges": [
         "Restaurar os privilégios de administrador"
       ],
+      "Reverse charge not supported": [
+        "Carregamento reverso não suportado"
+      ],
       "Revoke certificate?": [
         "Revogar certificado?"
       ],
@@ -17127,6 +17166,9 @@
       ],
       "Single-sign on (SSO)": [
         "Início de sessão único (SSO)"
+      ],
+      "Something went wrong": [
+        "Algo deu errado"
       ],
       "Spam, block, and allow lists": [
         "Listas de endereços permitidos, bloqueados e spam"

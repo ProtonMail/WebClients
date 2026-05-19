@@ -128,6 +128,9 @@
       "Back to sign in": [
         "Вярнуцца да ўваходу"
       ],
+      "Back to sign-in": [
+        "Вярнуцца да ўваходу"
+      ],
       "Block": [
         "Блакіраваць"
       ],
@@ -6109,6 +6112,9 @@
       ],
       "Group address:": [
         "Адрас групы:"
+      ],
+      "Roles and permission:": [
+        "Ролі і дазволы:"
       ]
     },
     "Group member count": {
@@ -6117,6 +6123,14 @@
         "${ memberCount } удзельнікі",
         "${ memberCount } удзельнікаў",
         "${ memberCount } удзельнікаў"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "Агульныя"
+      ],
+      "Roles and permissions": [
+        "Ролі і дазволы"
       ]
     },
     "Header": {
@@ -11779,6 +11793,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Access all countries": [
+        "Доступ да ўсіх краін"
+      ],
       "Activity logs and policy": [
         "Журналы актыўнасці і палітыка"
       ],
@@ -11959,6 +11976,9 @@
       "Multiple admin roles": [
         "Некалькі роляў адміністратара"
       ],
+      "No streaming support": [
+        "Падтрымка трансляцыі адсутнічае"
+      ],
       "No-logs policy": [
         "Палітыка адсутнасці журналаў актыўнасці"
       ],
@@ -12123,6 +12143,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Неабмежаваны аб'ём даных і паласа прапускання"
+      ],
+      "Unlock streaming": [
+        "Разблакіраваць трансляцыі"
       ],
       "Up to ${ n } user": [
         "Да ${ n } карыстальніка",
@@ -12655,8 +12678,8 @@
       "${ app } product updates": [
         "Абнаўленні прадукту ${ app }"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Рассылка ${ BRAND_NAME } for Business"
+      "${ BRAND_NAME } for Business communications": [
+        "Камунікацыі ${ BRAND_NAME } for Business"
       ],
       "${ BRAND_NAME } important announcements": [
         "Важныя абвяшчэнні ${ BRAND_NAME }"
@@ -12709,8 +12732,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "На працягу першага месяца выкарыстання прадукту ${ BRAND_NAME }"
       ],
-      "Email subscriptions": [
-        "Падпіскі электроннай пошты"
+      "Email communications": [
+        "Камунікацыі па электроннай пошце"
       ],
       "In-app notifications": [
         "Апавяшчэнні ў праграме"
@@ -17823,6 +17846,9 @@
       ],
       "Single-sign on (SSO)": [
         "Адзіны ўваход (SSO)"
+      ],
+      "Something went wrong": [
+        "Нешта пайшло не так"
       ],
       "Spam, block, and allow lists": [
         "Спам, а таксама спісы заблакіраваных і дазволеных адрасоў"

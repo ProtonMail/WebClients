@@ -219,6 +219,9 @@
       "Back to sign in": [
         "Voltar para o início de sessão"
       ],
+      "Back to sign-in": [
+        "Voltar para o início de sessão"
+      ],
       "Block": [
         "Bloquear"
       ],
@@ -1490,9 +1493,6 @@
       ],
       "Set as default": [
         "Definir como padrão"
-      ],
-      "Set as default mail application": [
-        "Definir como aplicativo de e-mail padrão"
       ],
       "Set catch-all": [
         "Definir catch-all"
@@ -5120,12 +5120,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } em ${ DRIVE_APP_NAME } permite que você colabore com outras pessoas em um ambiente seguro e criptografado."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } não é seu aplicativo padrão de e-mail."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } é seu aplicativo padrão de e-mail."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } mantém os dados do seu negócio seguros e permite que você envie e-mails criptografados a qualquer um."
       ],
@@ -5149,6 +5143,9 @@
       ],
       "Available with ${ title }": [
         "Disponível com ${ title }"
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Bloqueie a capacidade do Google de criar um perfil seu. O Gmail não pode ver o que você faz no ${ MAIL_APP_NAME }"
       ],
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Traga seus e-mails, eventos do calendário e contatos de outro provedor."
@@ -5255,9 +5252,6 @@
       "No one in your organization can connect to shared servers.": [
         "Ninguém na sua organização pode se conectar a servidores compartilhados."
       ],
-      "Send a code to your recovery email or phone": [
-        "Enviar um código para seu e-mail ou telefone de recuperação"
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Configure contas para todos os usuários e convide-os a ingressar no ${ BRAND_NAME }."
       ],
@@ -5269,6 +5263,9 @@
       ],
       "Still need help? Our support team is here for you.": [
         "Precisa de ajuda? Nossa equipe de suporte está aqui para você."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Para conectar um endereço Gmail diferente, remova os endereços extras do Gmail que estão sendo encaminhados para ${ BRAND_NAME }."
       ],
       "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
         "Para conectar até ${ MAX_SYNC_PAID_USER } endereço do Gmail, faça o upgrade para o plano ${ planName }.",
@@ -5301,6 +5298,12 @@
       "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
         "Inciamos a importação de seus últimos 180 dias de e-mail do Gmail. Avisaremos quando estiver pronto."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Lamentamos sua saída. Se tiver um momento, gostaríamos muito de saber o motivo do cancelamento. Seu feedback nos ajuda a fazer a ${ BRAND_NAME } ainda melhor para todos."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Você já possui um endereço do Gmail encaminhando para o ${ MAIL_APP_NAME }. Conecte-o abaixo para enviar e receber mensagens diretamente no ${ MAIL_APP_NAME }."
+      ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "Você pode personalizar a lista de domínios onde certas funções automáticas na extensão do navegador ${ PASS_APP_NAME } (preenchimento automático, sugestão automática e salvamento automático) não devem ser executadas."
       ],
@@ -5315,6 +5318,17 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Você agora pode enviar e-mails da ${ BRAND_NAME } usando este endereço."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Você está encaminhando ${ numAddressesOrSync } endereço do Gmail para o ${ MAIL_APP_NAME }.",
+        "Você está encaminhando ${ numAddressesOrSync } endereços do Gmail para o ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Você conectou ${ MAX_SYNC_PAID_USER } endereço do Gmail. Para adicionar outro, primeiro desconecte uma das contas já conectadas.",
+        "Você conectou ${ MAX_SYNC_PAID_USER } endereços do Gmail. Para adicionar outro, primeiro desconecte uma das contas já conectadas."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Você conectou um endereço de conta externa no ${ MAIL_APP_NAME }."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Seu plano suporta ${ MAX_SYNC_FREE_USER } endereço do Gmail.",
@@ -5770,6 +5784,11 @@
       ],
       "90m": [
         "90 min"
+      ]
+    },
+    "Easy switch": {
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Você está encaminhando e-mails de uma conta externa para ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -8734,6 +8753,11 @@
         "Membros do grupo"
       ]
     },
+    "group_modal": {
+      "Roles and permissions": [
+        "Funções e permissões"
+      ]
+    },
     "Header": {
       "Access": [
         "Acesso"
@@ -8937,7 +8961,7 @@
         "Contate-nos"
       ],
       "Downloads": [
-        "Downloads"
+        "Baixados"
       ],
       "Enjoying ${ planName }?": [
         "Aproveitando o ${ planName }?"
@@ -9470,6 +9494,9 @@
       ],
       "${ name } for Windows": [
         "${ name } para Windows"
+      ],
+      "${ name } is not available": [
+        "${ name } não está disponível"
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: não coloque em quarentena nem rejeite e-mails não autorizados. Normalmente, as pessoas usam esta política apenas para solucionar problemas ou testar."
@@ -12550,9 +12577,6 @@
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Quando desativado, isso impede que imagens remoras sejam carregados sem seu conhecimento."
       ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Quando ativado, verificaremos se o ${ MAIL_APP_NAME } é seu aplicativo de e-mail padrão e o notificaremo caso não seja."
-      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Ao ativar o SAML para ${ appName } em seu provedor de identidade, você poderá ser solicitado a usar o URL de retorno de chamada (ACS) e o ID do emissor. Basta copiar e colar os dados abaixo nos campos do seu provedor de identidade."
       ],
@@ -12849,6 +12873,9 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Você não poderá recuperar dados bloqueados usando os arquivos de recuperação baixados. Isso também desativará a recuperação baseada em dispositivo."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Você receberá a recompensa em créditos 1 mês após seu amigo(a) assinar um plano anual e 2 meses após ele (ela) assinar um plano mensal."
       ],
       "You'll receive the credit reward 1 month after your friend's trial ended.": [
         "Você receberá a recompensa em créditos 1 mês após o término do período de teste do seu amigo."
@@ -17535,9 +17562,6 @@
       "${ app } product updates": [
         "Atualizações de produto do ${ app }"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Boletim da ${ BRAND_NAME } for Business"
-      ],
       "${ BRAND_NAME } important announcements": [
         "Comunicados importantes da ${ BRAND_NAME }"
       ],
@@ -17589,8 +17613,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "Durante o seu primeiro mês de uso de um produto da ${ BRAND_NAME }"
       ],
-      "Email subscriptions": [
-        "Inscrições de e-mail"
+      "Email communications": [
+        "Comunicação por e-mail"
       ],
       "In-app notifications": [
         "Notificações dentro do aplicativo"
@@ -24217,9 +24241,6 @@
       "Change second password": [
         "Alterar segunda senha"
       ],
-      "Check your default mail application": [
-        "Verifique seu aplicativo de e-mail padrão"
-      ],
       "Choose a provider": [
         "Selecione um provedor"
       ],
@@ -25247,6 +25268,9 @@
       "Reused passwords": [
         "Senhas reutilizadas"
       ],
+      "Reverse charge not supported": [
+        "Carregamento reverso não suportado"
+      ],
       "Revoke certificate?": [
         "Revogar certificado?"
       ],
@@ -25414,6 +25438,9 @@
       ],
       "Some of your encrypted data is locked": [
         "Alguns de seus dados criptografado estão bloqueados"
+      ],
+      "Something went wrong": [
+        "Algo deu errado"
       ],
       "Sort folders alphabetically": [
         "Ordenar pastas por ordem alfabética"

@@ -1482,9 +1482,6 @@
       "Set as default": [
         "Nastavit jako výchozí"
       ],
-      "Set as default mail application": [
-        "Nastavit jako výchozí e-mailovou aplikaci"
-      ],
       "Set catch-all": [
         "Nastavení doménového koše"
       ],
@@ -5011,12 +5008,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vám umožní spolupracovat s ostatními v bezpečném a šifrovaném prostředí."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } není vaší výchozí e-mailovou aplikací."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } je vaše výchozí e-mailová aplikace."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } uchovává vaše firemní data v bezpečí a umožňuje posílat šifrované e-maily komukoli."
       ],
@@ -5163,9 +5154,6 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Čtěte, odpovídejte a mějte přehled o Gmailu přímo z aplikace ${ MAIL_APP_NAME }"
-      ],
-      "Send a code to your recovery email or phone": [
-        "Odeslání kódu na váš e-mail nebo telefon pro obnovení"
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Nastavte účty pro všechny uživatele a pozvěte je, aby se připojili k ${ BRAND_NAME }."
@@ -8969,9 +8957,6 @@
       ],
       "Contact us": [
         "Kontaktujte nás"
-      ],
-      "Downloads": [
-        "Stažení"
       ],
       "Enjoying ${ planName }?": [
         "Užíváte si ${ planName }?"
@@ -12806,9 +12791,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Pokud je deaktivováno, zabraňuje načítání vzdálených obrázků bez vašeho vědomí."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Pokud je povoleno, zkontrolujeme, zda je ${ MAIL_APP_NAME } vaší výchozí e-mailovou aplikací, a upozorníme vás, pokud tomu tak není."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Při povolování SAML pro ${ appName } u poskytovatele identit můžete být vyzváni k použití zpětné adresy URL (ACS) a ID vydavatele. Níže uvedené údaje stačí zkopírovat a vložit do polí poskytovatele identit."
@@ -17916,9 +17898,6 @@
       "${ app } product updates": [
         "Aktualizace produktu ${ app }"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Novinky ${ BRAND_NAME } for Business"
-      ],
       "${ BRAND_NAME } important announcements": [
         "Důležitá oznámení ${ BRAND_NAME }"
       ],
@@ -17969,9 +17948,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Během prvního měsíce používání produktu ${ BRAND_NAME }"
-      ],
-      "Email subscriptions": [
-        "E-mailové odběry"
       ],
       "In-app notifications": [
         "Upozornění v aplikaci"
@@ -24633,9 +24609,6 @@
       "Change second password": [
         "Změnit druhé heslo"
       ],
-      "Check your default mail application": [
-        "Zkontrolujte výchozí e-mailovou aplikaci"
-      ],
       "Choose a provider": [
         "Vybrat poskytovatele"
       ],
@@ -25835,6 +25808,9 @@
       ],
       "Some of your encrypted data is locked": [
         "Některá z vašich šifrovaných dat jsou uzamčena"
+      ],
+      "Something went wrong": [
+        "Něco se pokazilo"
       ],
       "Sort folders alphabetically": [
         "Řadit složky abecedně"
