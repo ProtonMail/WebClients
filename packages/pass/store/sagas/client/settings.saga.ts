@@ -8,6 +8,7 @@ import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { selectProxiedSettings } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
+import { AppStatus } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
 import { updateLocale } from '@proton/shared/lib/api/settings';
 
@@ -46,6 +47,15 @@ function* settingsEditWorker(
 export default function* watcher(options: RootSagaOptions) {
     yield takeEvery(settingsEditIntent.match, settingsEditWorker, options);
     yield takeEvery(isSettingsAction, function* () {
+        /** Guard against syncing settings to disk while the app is in a
+         * "post-state-destroyed" state (locked/unauthorized/errored).
+         * Any uncanceled & in-flight sagas dispatching a settings mutating
+         * action could land after state has been destroyed causing corruption.
+         * `BOOTING` state is whitelisted so legitimate writes during the boot
+         * sequence still go through although the app isn't fully booted yet. */
+        const { booted, status } = options.getAppState();
+        if (!booted && status !== AppStatus.BOOTING) return;
+
         const settings: ProxiedSettings = yield select(selectProxiedSettings);
         yield options.onSettingsUpdated?.(settings);
     });
