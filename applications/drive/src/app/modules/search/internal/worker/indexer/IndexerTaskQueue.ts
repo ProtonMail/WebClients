@@ -14,7 +14,7 @@ import {
     isPermanentIndexerError,
     sendErrorReportForSearch,
 } from '../../shared/errors';
-import { searchMetrics } from '../../shared/searchMetrics';
+import type { SearchMetrics } from '../../shared/searchMetrics';
 import type { IndexPopulatorStatus, UserId } from '../../shared/types';
 import { brandTreeEventScopeId } from '../../shared/types';
 import type { IndexRegistry } from '../index/IndexRegistry';
@@ -90,7 +90,8 @@ export class IndexerTaskQueue {
         private readonly indexRegistry: IndexRegistry,
         private readonly bridge: MainThreadBridge,
         private readonly db: SearchDB,
-        treeSubscriptionRegistry: TreeSubscriptionRegistry
+        treeSubscriptionRegistry: TreeSubscriptionRegistry,
+        private readonly searchMetrics: SearchMetrics
     ) {
         this.treeSubscriptionRegistry = treeSubscriptionRegistry;
     }
@@ -266,6 +267,7 @@ export class IndexerTaskQueue {
             indexRegistry: this.indexRegistry,
             treeSubscriptionRegistry: this.treeSubscriptionRegistry,
             signal,
+            searchMetrics: this.searchMetrics,
             markIndexing: () => {
                 this.updateState({ isIndexing: true }).catch((err) =>
                     Logger.error('IndexerTaskQueue: markIndexing updateState failed', err)
@@ -293,13 +295,13 @@ export class IndexerTaskQueue {
             Logger.info(`IndexerTaskQueue - Starting task: ${uid}`);
             await task.execute(ctx);
             this.taskAttempts.delete(uid);
-            searchMetrics.markIndexerTaskSucceeded({ taskUid: uid, taskKind: task.getKind() });
+            this.searchMetrics.markIndexerTaskSucceeded({ taskUid: uid, taskKind: task.getKind() });
         } catch (e) {
             if (isAbortError(e) || signal.aborted) {
                 return;
             }
 
-            searchMetrics.markIndexerError({
+            this.searchMetrics.markIndexerError({
                 error: e,
                 taskUid: uid,
                 taskKind: task.getKind(),
@@ -355,7 +357,7 @@ export class IndexerTaskQueue {
         Promise.all(
             [...this.indexRegistry.getAll()].map(async ({ indexKind }) => {
                 const sizeBytes = await this.db.getIndexBlobsByteSize(indexKind);
-                searchMetrics.markIndexSizeOnInit({ sizeMb: sizeBytes / 1024 / 1024 });
+                this.searchMetrics.markIndexSizeOnInit({ sizeMb: sizeBytes / 1024 / 1024 });
             })
         ).catch((error) => sendErrorReportForSearch('IndexerTaskQueue: startup index stats observation failed', error));
     }

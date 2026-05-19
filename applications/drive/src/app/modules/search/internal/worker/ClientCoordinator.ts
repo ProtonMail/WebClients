@@ -1,6 +1,6 @@
 import type { MainThreadBridge } from '../mainThread/MainThreadBridge';
 import { Logger } from '../shared/Logger';
-import { searchMetrics } from '../shared/searchMetrics';
+import type { SearchMetrics } from '../shared/searchMetrics';
 import type { ClientId, UserId } from '../shared/types';
 
 const HEARTBEAT_TIMEOUT = 300_000; // 5 minutes — generous to survive browser throttling of background tabs.
@@ -21,6 +21,13 @@ export class ClientCoordinator {
     private activeClientId: ClientId | null = null;
     private cleanupInterval: number | undefined;
     private subscribers = new Set<(context: ClientContext | null) => void>();
+
+    constructor(
+        // Getter so the coordinator picks up the currently-active bridged metrics; metrics
+        // are dropped if no client is connected (This happens on worker init briefly or if all
+        // tabs are closed - and the worker will be disposed/destroyed anyway).
+        private readonly getSearchMetrics: () => SearchMetrics | null
+    ) {}
 
     subscribeClientChanged(listener: (clientContext: ClientContext | null) => void): () => void {
         this.subscribers.add(listener);
@@ -102,7 +109,7 @@ export class ClientCoordinator {
                 this.disconnect(clientId);
                 // Clients normally disconnect via beforeunload in WorkerClient.
                 // Heartbeat timeout is a fallback — report so we can track how often it happens.
-                searchMetrics.markClientDisconnectTimeout({
+                this.getSearchMetrics()?.markClientDisconnectTimeout({
                     staleness: now - lastSeen,
                     remainingClients: this.clients.size,
                 });
