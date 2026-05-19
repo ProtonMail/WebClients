@@ -2152,7 +2152,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -5496,6 +5497,9 @@
       ],
       "Offline": [
         "Çevrim dışı"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Otomatik olarak doldurulamadı. Lütfen ${ PASS_APP_NAME } uygulamasına gerekli izinlerin verildiğinden emin olun ve yeniden deneyin (${ error })."
       ]
     },
     "Activity": {

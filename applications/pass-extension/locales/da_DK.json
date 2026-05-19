@@ -2140,7 +2140,8 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links."
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -5484,6 +5485,9 @@
       ],
       "Offline": [
         "Offline"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Autoindtastning mislykkedes. Vær sikker på at ${ PASS_APP_NAME } har de nødvendige tilladelser og prøv igen (${ error })."
       ]
     },
     "Activity": {

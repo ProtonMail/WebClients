@@ -5120,6 +5120,9 @@
       ],
       "Offline": [
         "オフライン"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "オートタイプに失敗しました。${ PASS_APP_NAME } に必要な権限が付与されていることをご確認の上、もう一度お試しください (${ error })。"
       ]
     }
   }

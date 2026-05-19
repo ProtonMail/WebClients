@@ -5192,6 +5192,9 @@
       ],
       "Offline": [
         "오프라인"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "자동 입력에 실패했습니다. ${ PASS_APP_NAME }가 필요한 권한을 가지고 있는지 확인 후 다시 시도해주세요. (${ error })"
       ]
     }
   }

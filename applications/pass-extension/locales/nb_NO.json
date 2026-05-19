@@ -779,6 +779,24 @@
       ],
       "Load more": [
         "Last inn mer"
+      ],
+      "Copy instructions": [
+        "Kopier instruksjoner"
+      ],
+      "Copy token": [
+        "Kopier token"
+      ],
+      "Create token": [
+        "Opprett token"
+      ],
+      "Manage vault access": [
+        "Administrer hvelvtilgang"
+      ],
+      "New token": [
+        "Nytt token"
+      ],
+      "View agent activity": [
+        "Se agentaktivitet"
       ]
     },
     "Browser": {
@@ -1402,6 +1420,30 @@
       ],
       "Name is required": [
         "Navn kreves"
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Kunne ikke laste inn instruksjonene for agentoppsett. Kopier tokenet nedenfor. Det vises ikke igjen."
+      ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "Utløpstiden må være mellom 60 minutter og 1 år"
+      ],
+      "Failed to create access token": [
+        "Kunne ikke opprette tilgangstoken"
+      ],
+      "Failed to delete access token": [
+        "Kunne ikke slette tilgangstoken"
+      ],
+      "Failed to load access tokens": [
+        "Kunne ikke laste inn tilgangstokener"
+      ],
+      "Failed to load token actions": [
+        "Kunne ikke laste inn tokenhandlinger"
+      ],
+      "Failed to update vault access": [
+        "Kunne ikke oppdatere hvelvtilgang"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Navnet må være 191 tegn eller færre"
       ]
     },
     "Error message": {
@@ -2330,7 +2372,7 @@
         "Trykk Enter for å kopiere"
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Beskyttet av ${ PROTON_SENTINEL_LINK }, vårt avanserte kontobeskyttelsesprogram"
+        "Beskyttet av ${ PROTON_SENTINEL_LINK }, vår avanserte kontobeskyttelsesprogram"
       ],
       "Quickly autofill your 2FA tokens.": [
         "Autofyll raskt ut 2FA-tokenene dine."
@@ -2826,6 +2868,104 @@
       ],
       "New": [
         "Ny"
+      ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } valgt"
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Tilgangstoken \"${ action.token.Name }\" er allerede utløpt. Hvis det slettes, vil det ikke lenger vises."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Tilgangstokenet \"${ action.token.Name }\" vil slutte å virke umiddelbart. Denne handlingen kan ikke angres."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Tilgangstokener, brukt sammen med ${ passCliLink }, lar deg automatisere CI/CD eller gi KI-agenten din tilgang til det den trenger for å kjøre jobben sin."
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Mellom 60 (1 time) og 525600 (1 år)"
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Kopier markdown nedenfor og send den til KI-agenten din. Dette er den eneste gangen tokenet vises."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Kopier dette tokenet nå. Av sikkerhetshensyn vil det ikke vises igjen."
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Opprett et token for å integrere ${ PASS_APP_NAME } med skriptene og verktøyene dine."
+      ],
+      "Created ${ createdDate }": [
+        "Opprettet ${ createdDate }"
+      ],
+      "Created item": [
+        "Opprettet element"
+      ],
+      "Deleted item": [
+        "Slettet element"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Last ned pass-cli fra ${ passCliLink }."
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "Alle handlinger dette agenttokenet har utført, nyeste først."
+      ],
+      "Expired ${ abs } hour ago": [
+        "Utløp for ${ abs } time siden",
+        "Utløp for ${ abs } timer siden"
+      ],
+      "Expires in ${ hours } hour": [
+        "Utløper om ${ hours } time",
+        "Utløper om ${ hours } timer"
+      ],
+      "Expires in less than an hour": [
+        "Utløper om mindre enn en time"
+      ],
+      "Log out of any existing session:": [
+        "Logg ut av enhver eksisterende økt:"
+      ],
+      "Moved item to trash": [
+        "Flyttet element til papirkurven"
+      ],
+      "No activity recorded yet.": [
+        "Ingen aktivitet registrert ennå."
+      ],
+      "No vaults available.": [
+        "Ingen hvelv tilgjengelig."
+      ],
+      "None selected": [
+        "Ingen valgt"
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Bare tokener som har utløpt i løpet av de siste 30 dagene vises. Eldre tokener slettes automatisk."
+      ],
+      "Read item": [
+        "Les element"
+      ],
+      "Restored item from trash": [
+        "Gjenopprettet element fra papirkurven"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Velg hvelvene \"${ token.Name }\" kan lese."
+      ],
+      "Test the token by logging in and listing vaults:": [
+        "Test tokenet ved å logge på og liste opp hvelv:"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Agenten må oppgi en grunn for hver handling den utfører, og hver handling registreres i en revisjonslogg du kan se gjennom. Etter at tokenet er opprettet, får du instruksjoner om hvordan du kopierer og limer inn i KI-agenten din."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Deretter kan du gå til ${ url } for å kopiere instruksjonene som skal sendes til KI-agenten din."
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Dette tokenet får skrivebeskyttet tilgang til hvelvene du velger. Den kan lese elementer, men kan ikke redigere dem, dele hvelv eller invitere andre. Du kan endre dette senere."
+      ],
+      "Updated item": [
+        "Oppdaterte element"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Oppgrader til ${ PASS_APP_NAME } Plus for å opprette tilgangstokener og bruke ${ PASS_APP_NAME } programmatisk."
+      ],
+      "Vault access granted": [
+        "Tilgang til hvelv gitt"
       ]
     },
     "Keyboard key": {
@@ -3965,13 +4105,28 @@
         "Ditt domene"
       ],
       "ZIP": [
-        "Postnummer"
+        "ZIP-fil"
       ],
       "ZIP or Postal code": [
         "Postnummer"
       ],
       "Token name": [
         "Tokennavn"
+      ],
+      "Access tokens": [
+        "Tilgangstokener"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Utløpte tokener (${ expired.length })"
+      ],
+      "Expires in (minutes)": [
+        "Utløper om (minutter)"
+      ],
+      "Use for AI agent": [
+        "Bruk for KI-agent"
+      ],
+      "Vault access": [
+        "Hvelvtilgang"
       ]
     },
     "Link": {
@@ -4017,6 +4172,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } er aktivert"
+      ],
+      "Access token deleted": [
+        "Tilgangstoken slettet"
       ]
     },
     "Onboarding": {
@@ -4283,6 +4441,9 @@
       ],
       "e.g. My automation script": [
         "f.eks. Mitt automatiseringsskript"
+      ],
+      "e.g. 60": [
+        "f.eks. 60"
       ]
     },
     "Security Center - Info": {
@@ -4954,6 +5115,30 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du er i ferd med å slette permanent ${ aliasCount } alias.",
         "Du er i ferd med å slette permanent ${ aliasCount } aliaser."
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Tilgangstokener krever ${ PASS_APP_NAME } Plus"
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "Aktivitet for \"${ token.Name }\""
+      ],
+      "Agent setup instructions": [
+        "Instruksjoner for agentoppsett"
+      ],
+      "Create new access token": [
+        "Opprett nytt tilgangstoken"
+      ],
+      "Delete access token?": [
+        "Slette tilgangstoken?"
+      ],
+      "Manage vault access": [
+        "Administrer hvelvtilgang"
+      ],
+      "No access tokens yet": [
+        "Ingen tilgangstokener ennå"
+      ],
+      "Your new access token": [
+        "Ditt nye tilgangstoken"
       ]
     },
     "Title_cloned_item": {
@@ -5300,6 +5485,43 @@
       ],
       "Offline": [
         "Frakoblet"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Automatisk utfylling mislyktes. Sørg for at ${ PASS_APP_NAME } har de nødvendige tillatelsene, og prøv på nytt (${ error })."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Aktivitet"
+      ],
+      "Activity details could not be loaded.": [
+        "Aktivitetsdetaljene kunne ikke lastes inn."
+      ],
+      "Folder": [
+        "Mappe"
+      ],
+      "Item": [
+        "Element"
+      ],
+      "Reason": [
+        "Årsak"
+      ],
+      "Vault": [
+        "Hvelv"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Agent": [
+        "Agent"
+      ],
+      "Expired": [
+        "Utløpt"
+      ],
+      "Expiring soon": [
+        "Utløper snart"
       ]
     }
   }

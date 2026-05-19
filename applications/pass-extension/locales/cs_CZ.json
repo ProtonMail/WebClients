@@ -2140,7 +2140,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -5423,6 +5426,9 @@
       ],
       "Offline": [
         "Offline"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Automatické vyplnění selhalo. Ujistěte se, prosím, že ${ PASS_APP_NAME } má potřebná oprávnění a zkuste to znovu (${ error })."
       ]
     }
   }

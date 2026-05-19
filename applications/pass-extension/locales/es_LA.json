@@ -2152,7 +2152,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -5496,6 +5497,9 @@
       ],
       "Offline": [
         "Sin conexión"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Error de escritura automática. Asegúrese de que ${ PASS_APP_NAME } tiene los permisos necesarios e intente de nuevo (${ error })."
       ]
     },
     "Activity": {

@@ -5627,6 +5627,9 @@
       ],
       "Offline": [
         "Offline"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Automatické zadávanie zlyhalo. Uistite sa, že aplikácia ${ PASS_APP_NAME } má potrebné povolenia a skúste to znova (${ error })."
       ]
     },
     "Activity": {

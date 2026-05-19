@@ -2098,7 +2098,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2825,6 +2826,12 @@
       ],
       "New": [
         "Nieuw"
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Het toegangstoken \"${ action.token.Name }\" is verlopen. Als het wordt verwijderd, wordt het niet meer weergegeven."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Alleen tokens die in de afgelopen 30 dagen zijn verlopen, worden weergegeven. Oudere tokens worden automatisch verwijderd."
       ]
     },
     "Keyboard key": {
@@ -3971,6 +3978,9 @@
       ],
       "Token name": [
         "Token naam"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Verlopen tokens (${ expired.length })"
       ]
     },
     "Link": {
@@ -5296,6 +5306,9 @@
       ],
       "Offline": [
         "Offline"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Automatisch invullen is mislukt. Zorg ervoor dat ${ PASS_APP_NAME } de nodige machtigingen heeft en probeer het opnieuw (${ error })."
       ]
     }
   }
