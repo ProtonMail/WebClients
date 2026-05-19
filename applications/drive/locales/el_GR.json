@@ -8539,6 +8539,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Access all countries": [
+        "Πρόσβαση σε όλες τις χώρες"
+      ],
       "Ad-blocker and malware protection": [
         "Αποκλεισμός διαφημίσεων και προστασία από κακόβουλο λογισμικό"
       ],
@@ -8697,6 +8700,9 @@
       "Multiple admin roles": [
         "Πολλαπλοί ρόλοι διαχειριστή"
       ],
+      "No streaming support": [
+        "Δεν υπάρχει υποστήριξη ροής"
+      ],
       "Online document editor": [
         "Online επεξεργαστής εγγράφων"
       ],
@@ -8846,6 +8852,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Απεριόριστος όγκος / εύρος ζώνης"
+      ],
+      "Unlock streaming": [
+        "Ξεκλειδώστε τη ροή"
       ],
       "Up to ${ n } user": [
         "Μέχρι και ${ n } χρήστη",
@@ -9249,6 +9258,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } χώρα",
+        "${ n } χώρες"
+      ],
       "Access advanced VPN features": [
         "Πρόσβαση σε προηγμένα χαρακτηριστικά VPN"
       ],
