@@ -5789,6 +5789,9 @@
     "Easy switch": {
       "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
         "Você está encaminhando e-mails de uma conta externa para ${ MAIL_APP_NAME }."
+      ],
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Para encaminhar e-mails de até ${ MAX_SYNC_PAID_USER } contas, faça o upgrade para ${ planName }."
       ]
     },
     "Edit billing address form note": {
@@ -6781,6 +6784,9 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Seus contatos de recuperação devem ser pessoas que você conhece e com quem pode entrar em contato facilmente."
+      ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Para adicionar contatos de recuperação, é necessário ter um endereço de e-mail ou um número de telefone para recuperação."
       ]
     },
     "Empty group name": {
@@ -17067,6 +17073,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
+      ],
+      "Access all countries": [
+        "Acesso a todos os países"
       ]
     },
     "new_plans: feature highlight": {
@@ -17550,6 +17559,10 @@
       "Support for ${ n } custom email domain": [
         "Suporte para ${ n } domínio de e-mail personalizado",
         "Suporte para ${ n } domínios de e-mail personalizados"
+      ],
+      "${ n } country": [
+        "${ n } país",
+        "${ n } países"
       ]
     },
     "news": {
