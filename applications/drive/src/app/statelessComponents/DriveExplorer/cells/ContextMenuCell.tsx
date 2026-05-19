@@ -52,6 +52,19 @@ export function ContextMenuCellWithControls({
 
     const handleClick = (e: React.MouseEvent) => {
         selectionMethods.selectItem(uid);
+        // Keyboard-triggered clicks (Space/Enter on the focused button) have
+        // detail === 0 and clientX/clientY === 0, which would open the menu at
+        // the viewport's top-left. Anchor it to the button instead.
+        if (e.detail === 0) {
+            const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+            contextMenuControls.showContextMenu({
+                clientX: rect.right,
+                clientY: rect.bottom,
+                stopPropagation: () => e.stopPropagation(),
+                preventDefault: () => e.preventDefault(),
+            } as React.MouseEvent<Element>);
+            return;
+        }
         contextMenuControls.showContextMenu(e);
     };
 

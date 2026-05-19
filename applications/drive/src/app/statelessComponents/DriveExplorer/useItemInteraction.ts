@@ -102,12 +102,15 @@ export const useItemInteraction = ({
 
     const handleKeyDown = useCallback(
         (event: React.KeyboardEvent) => {
-            if (event.key === ' ' || event.key === 'Enter') {
+            if (event.key === 'Enter') {
                 event.preventDefault();
                 events?.onItemDoubleClick?.(itemId, event);
+            } else if (event.key === ' ') {
+                event.preventDefault();
+                selection?.selectionMethods.toggleSelectItem(itemId);
             }
         },
-        [itemId, events]
+        [itemId, events, selection?.selectionMethods]
     );
 
     const handleDragStart = useCallback(
