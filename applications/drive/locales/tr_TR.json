@@ -7252,7 +7252,7 @@
         "Oluşturulma"
       ],
       "Created ${ created }": [
-        "${ created } tarihinde oluşturuldu"
+        "Oluşturulma: ${ created }"
       ],
       "Credits": [
         "Kredi"
@@ -7280,13 +7280,13 @@
         "Aygıt"
       ],
       "Device #${ position }": [
-        "Cihaz #${ position }"
+        "Aygıt no ${ position }"
       ],
       "Device name": [
         "Aygıt adı"
       ],
       "Device: ${ name }": [
-        "Cihaz: ${ name }"
+        "Aygıt: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Bu bağlantıyı belirli bir tarihte kullanımdan kaldır"
@@ -7346,13 +7346,13 @@
         "Geçerlilik süresi dolmuş"
       ],
       "Expired on ${ formatted }": [
-        "${ formatted } tarihinde sona erdi"
+        "${ formatted } zamanında geçersiz oldu"
       ],
       "Expires": [
         "Geçerlilik süresi sonu"
       ],
       "Expires ${ formatted }": [
-        "Geçerlilik süresi ${ formatted }"
+        "Geçerlilik sonu: ${ formatted }"
       ],
       "Expiry": [
         "Geçerlilik sonu"
@@ -7427,7 +7427,7 @@
         "Bütünleşik iki adımlı kimlik doğrulayıcı"
       ],
       "Item #${ position }": [
-        "Öğe #${ position }"
+        "Öge no ${ position }"
       ],
       "Keep both": [
         "İkisi de tutulsun"
@@ -7484,7 +7484,7 @@
         "Değiştirilme"
       ],
       "Modified ${ modified }": [
-        "${ modified } tarihinde değiştirildi"
+        "Değiştirilme: ${ modified }"
       ],
       "Move to Archive": [
         "Arşivle"
@@ -7508,7 +7508,7 @@
         "Asla"
       ],
       "Never expires": [
-        "Asla sona ermez"
+        "Asla geçersiz olmaz"
       ],
       "New password": [
         "Yeni parola"
@@ -7646,7 +7646,7 @@
         "Paylaşılma zamanı"
       ],
       "Shared on ${ sharedOn }": [
-        "${ sharedOn } tarihinde paylaşıldı"
+        "${ sharedOn } zamanında paylaşıldı"
       ],
       "Shared with me": [
         "Benimle paylaşılanlar"
@@ -8539,6 +8539,9 @@
       "99.95% SLA": [
         "%99.95 hizmet sürekliliği"
       ],
+      "Access all countries": [
+        "Tüm ülkelere erişin"
+      ],
       "Ad-blocker and malware protection": [
         "Reklam engelleyici ve kötü amaçlı yazılım koruması"
       ],
@@ -8697,6 +8700,9 @@
       "Multiple admin roles": [
         "Birden çok yönetici rolü"
       ],
+      "No streaming support": [
+        "Yayın akışı desteği yok"
+      ],
       "Online document editor": [
         "Çevrim içi belge düzenleyici"
       ],
@@ -8846,6 +8852,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Sınırsız trafik/bant genişliği"
+      ],
+      "Unlock streaming": [
+        "Yayın akışı hizmetlerinin engelini kaldırın"
       ],
       "Up to ${ n } user": [
         "${ n } kullanıcıya kadar",
@@ -9249,6 +9258,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } ülke",
+        "${ n } ülke"
+      ],
       "Access advanced VPN features": [
         "Gelişmiş VPN özelliklerine erişin"
       ],

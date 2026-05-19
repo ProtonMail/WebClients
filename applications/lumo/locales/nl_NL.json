@@ -950,6 +950,9 @@
       "Draw a sketch": [
         "Maak een schets"
       ],
+      "Edit": [
+        "Wijzig"
+      ],
       "Enable ghost mode": [
         "Spookmodus inschakelen"
       ],
@@ -988,6 +991,9 @@
       ],
       "Report an issue": [
         "Meld een probleem"
+      ],
+      "Save": [
+        "Opslaan"
       ],
       "Select all": [
         "Selecteer alles"
@@ -1284,6 +1290,26 @@
       ],
       "You've reached the maximum of ${ limit } messages in this conversation. Start a new conversation to continue chatting with ${ LUMO_SHORT_APP_NAME }.": [
         "U hebt het maximum aantal berichten in dit gesprek bereikt ${ limit }. Start een nieuw gesprek om verder te chatten met ${ LUMO_SHORT_APP_NAME }."
+      ]
+    },
+    "collider_2025: Error (file processing)": {
+      "Error processing file: ${ file.name }": [
+        "Fout bij het verwerken van bestand: ${ file.name }"
+      ]
+    },
+    "collider_2025: Error (local processing)": {
+      "Error processing file: ${ file.name }": [
+        "Fout bij het verwerken van bestand: ${ file.name }"
+      ]
+    },
+    "collider_2025: Error (processing)": {
+      "File format not supported: ${ result.fileName }": [
+        "Bestandsformaat wordt niet ondersteund: ${ result.fileName }"
+      ]
+    },
+    "collider_2025: Error (validation)": {
+      "File format not supported: ${ file.name }": [
+        "Bestandsformaat wordt niet ondersteund: ${ file.name }"
       ]
     },
     "collider_2025: Error Message": {
@@ -2379,7 +2405,7 @@
         "Downloaden"
       ],
       "Download image": [
-        "Download afbeelding"
+        "Afbeelding downloaden"
       ],
       "Edit image": [
         "Afbeelding bewerken"
@@ -2809,6 +2835,9 @@
       ],
       "No projects yet": [
         "Nog geen projecten"
+      ],
+      "PASTED": [
+        "GEPLAKT"
       ],
       "Processing file...": [
         "Bestand wordt verwerkt..."

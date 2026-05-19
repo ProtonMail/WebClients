@@ -196,6 +196,9 @@
       "Back to sign in": [
         "Volver al inicio de sesión"
       ],
+      "Back to sign-in": [
+        "Volver al inicio de sesión"
+      ],
       "Block": [
         "Bloquear"
       ],
@@ -4587,9 +4590,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } en ${ DRIVE_APP_NAME } te permite trabajar con otros en un entorno seguro y cifrado."
       ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } es tu aplicación de correo por defecto."
-      ],
       "A checked box means the feature is disabled.": [
         "Una casilla marcada significa que la función está desactivada."
       ],
@@ -4698,9 +4698,6 @@
       "No one in your organization can connect to shared servers.": [
         "Nadie en tu organización puede conectarse a servidores compartidos."
       ],
-      "Send a code to your recovery email or phone": [
-        "Envíe un código a tu correo electrónico o teléfono de recuperación"
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Configura cuentas para todos los usuarios e invítalos a unirse a ${ BRAND_NAME }."
       ],
@@ -4727,6 +4724,9 @@
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Mejora tu plan para obtener ${ activatePmUser } para una dirección de correo electrónico más corta y fácil de recordar, además de tu dirección actual."
+      ],
+      "Use a recovery method to reset your password": [
+        "Usa un método de recuperación para restablecer tu contraseña"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Usa esta guía para que tu organización se beneficie rápidamente del cifrado y el ecosistema de privacidad líderes del sector de ${ BRAND_NAME }."
@@ -9320,6 +9320,10 @@
         "Creando servidor de puerta de enlace: ${ serverNumber } / ${ total }",
         "Creando servidores de puerta de enlace: ${ serverNumber } / ${ total }"
       ],
+      "Creating gateway with ${ total } server": [
+        "Creando puerta de enlace con ${ total } servidor",
+        "Creando puerta de enlace con ${ total } servidores"
+      ],
       "Creating your account": [
         "Creando tu cuenta"
       ],
@@ -11470,9 +11474,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Cuando está desactivado, esto evita que las imágenes remotas se carguen sin tu conocimiento."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Cuando esta opción esté activada, comprobaremos si ${ MAIL_APP_NAME } es tu aplicación de correo por defecto y te notificaremos si no lo es."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Al habilitar SAML para ${ appName } en tu proveedor de identidad, es posible que se te solicite que uses la URL de devolución de llamada (ACS) y el ID del emisor. Simplemente copia y pega los datos a continuación en los campos de tu proveedor de identidad."
@@ -16032,8 +16033,8 @@
       "${ app } product updates": [
         "Actualizaciones de producto para ${ app }"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Boletín de ${ BRAND_NAME } for Business"
+      "${ BRAND_NAME } for Business communications": [
+        "${ BRAND_NAME } para comunicaciones empresariales"
       ],
       "${ BRAND_NAME } important announcements": [
         "Avisos importantes de ${ BRAND_NAME }"
@@ -16086,8 +16087,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "Durante el primer mes de uso de un producto de ${ BRAND_NAME }"
       ],
-      "Email subscriptions": [
-        "Suscripciones de correo"
+      "Email communications": [
+        "Comunicaciones por correo electrónico"
       ],
       "In-app notifications": [
         "Notificaciones dentro de la aplicación"
@@ -19105,6 +19106,11 @@
       ],
       "No results found": [
         "No se han encontrado resultados."
+      ]
+    },
+    "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "Para garantizar la máxima seguridad de tu cuenta, desactiva la recuperación por correo electrónico y SMS."
       ]
     },
     "Server-Info": {
@@ -22205,6 +22211,9 @@
       "Data recovery": [
         "Recuperación de datos"
       ],
+      "Data recovery contacts": [
+        "Contactos de recuperación de datos"
+      ],
       "Data retention": [
         "Conservación de datos"
       ],
@@ -23119,6 +23128,9 @@
       ],
       "Snooze:": [
         "Posponer:"
+      ],
+      "Something went wrong": [
+        "Se ha producido un error."
       ],
       "Sort folders alphabetically": [
         "Ordenar las carpetas alfabéticamente"

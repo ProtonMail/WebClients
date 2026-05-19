@@ -1528,6 +1528,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Toegang tot ${ PASS_APP_NAME } vereist uw vingerafdruk of apparaat pincode."
       ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Het toegangstoken \"${ action.token.Name }\" is verlopen. Als het wordt verwijderd, wordt het niet meer weergegeven."
+      ],
       "Add your custom email address to monitor:": [
         "Voeg uw aangepast e-mailadres toe om te monitoren:"
       ],
@@ -1977,8 +1980,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2021,6 +2023,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online-toegang tot ${ PASS_APP_NAME } vereist een PIN-code. U wordt uitgelogd na 3 mislukte pogingen."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Alleen tokens die in de afgelopen 30 dagen zijn verlopen, worden weergegeven. Oudere tokens worden automatisch verwijderd."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Open uw Safari-instellingen voor de extensie en controleer of site toelatingen zijn ingeschakeld voor ${ BRAND_NAME }-domeinen"
@@ -3002,6 +3007,9 @@
       ],
       "Expired": [
         "Verlopen"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Verlopen tokens (${ expired.length })"
       ],
       "Expiry Date": [
         "Vervaldatum"

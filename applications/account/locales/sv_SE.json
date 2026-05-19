@@ -219,6 +219,9 @@
       "Back to sign in": [
         "Tillbaka till inloggning"
       ],
+      "Back to sign-in": [
+        "Tillbaka till inloggning"
+      ],
       "Block": [
         "Blockera"
       ],
@@ -2870,6 +2873,9 @@
       "An unknown error occurred": [
         "Ett okänt fel uppstod"
       ],
+      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
+        "Så snart kontona har skapats kan du dela aktiveringslänken så att användarna kan göra anspråk på sitt ${ BRAND_NAME }-konto."
+      ],
       "Authenticate": [
         "Autentisera"
       ],
@@ -3020,6 +3026,9 @@
       ],
       "More details": [
         "Mer detaljer"
+      ],
+      "Move your users, emails, and settings from Google Workspace automatically. We’ll guide you through connecting your account, verifying your domain, and migrating users securely.": [
+        "Flytta dina användare, e-post och inställningar automatiskt från Google Workspace. Vi guidar dig genom att ansluta ditt konto, verifiera din domän och migrera användare säkert."
       ],
       "No error details available. Please contact customer support for more information": [
         "Inga feldetaljer tillgängliga. Kontakta kundsupport för mer information."
@@ -5102,12 +5111,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } låter dig arbeta tillsammans med andra i en säker, krypterad miljö."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } är inte din standardapplikation för e-post."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } är din standardapplikation för e-post."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } håller din företagsdata säker och låter dig skicka krypterad e-post till vem som helst."
       ],
@@ -5249,9 +5252,6 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Läs, svara och håll koll på Gmail inifrån ${ MAIL_APP_NAME }"
       ],
-      "Send a code to your recovery email or phone": [
-        "Skicka en kod till din e-post eller telefon för återställning"
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Ställ in konton för alla användare och bjud in dem att gå med i ${ BRAND_NAME }."
       ],
@@ -5263,6 +5263,9 @@
       ],
       "Still need help? Our support team is here for you.": [
         "Behöver du fortfarande hjälp? Vårt supportteam finns här för dig."
+      ],
+      "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
+        "Detta låter dig återfå åtkomst till ditt ${ BRAND_NAME }-konto men återställer inte dina krypterade data."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Detta kan hända om behörigheter togs bort eller ditt lösenord har ändrats."
@@ -5297,6 +5300,9 @@
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Uppgradera för att få ${ activatePmUser } för en kortare e-postadress som är lätt att komma ihåg utöver din nuvarande."
+      ],
+      "Use a recovery method to reset your password": [
+        "Använd en återställningsmetod för att återställa ditt lösenord"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Använd den här guiden för att din organisation snabbt ska kunna dra nytta av ${ BRAND_NAME }:s branschledande kryptering och ekosystem för integritet."
@@ -6487,6 +6493,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Data recovery contacts": [
+        "Ta bort återställningskontakter"
+      ],
       "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
         "Data har återställts. Du kan nu dekryptera dina befintliga data och krypterade filer."
       ],
@@ -6702,6 +6711,9 @@
       ],
       "Time required before automatically granting them access": [
         "Tid som krävs innan de automatiskt beviljas åtkomst"
+      ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "För att lägga till återställningskontakter måste du ha en e-postadress eller ett telefonnummer för återställning."
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "För att inaktivera denna återställningsmetod, ta bort alla dina återställningskontakter."
@@ -8701,6 +8713,9 @@
       ],
       "Group address:": [
         "Gruppadress:"
+      ],
+      "Roles and permission:": [
+        "Roller och behörigheter:"
       ]
     },
     "Group member count": {
@@ -8758,6 +8773,14 @@
       ],
       "Group membership": [
         "Gruppmedlemskap"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "Allmänt"
+      ],
+      "Roles and permissions": [
+        "Roller och behörigheter"
       ]
     },
     "Header": {
@@ -9488,6 +9511,9 @@
       "${ name } for Windows": [
         "${ name } för Windows"
       ],
+      "${ name } is not available": [
+        "${ name } är inte tillgängligt"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: sätt inte i karantän eller avvisa ej oauktoriserade e-postmeddelanden. Vanligtvis använder människor bara denna policy för felsökning eller testning."
       ],
@@ -9645,6 +9671,9 @@
       ],
       "(formerly Twitter)": [
         "(tidigare Twitter)"
+      ],
+      "**${ appName }** is not available for your account.": [
+        "**${ appName }** är inte tillgängligt för ditt konto."
       ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** stöds inte i din organisation **${ organizationName }**."
@@ -10072,6 +10101,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Innan du kan börja skicka och ta emot e-postmeddelanden från dina nya adresser måste du skapa krypteringsnycklar för dem."
       ],
+      "BEST FOR TV": [
+        "BÄST FÖR TV"
+      ],
       "Beta": [
         "Beta"
       ],
@@ -10258,6 +10290,10 @@
         "Skapar gatewayserver: ${ serverNumber }/${ total }",
         "Skapar gatewayservrar: ${ serverNumber }/${ total }"
       ],
+      "Creating gateway with ${ total } server": [
+        "Skapar gateway med ${ total } server",
+        "Skapar gateway med ${ total } servrar"
+      ],
       "Creating your account": [
         "Skapar ditt konto"
       ],
@@ -10305,6 +10341,9 @@
       ],
       "Data recoverable with recovery phrase": [
         "Data återställningsbar med återställningsfras"
+      ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "Dataåterställning kräver ett alternativ för lösenordsåterställning (e-post eller SMS)"
       ],
       "dedicated servers": [
         "dedikerade servrar"
@@ -10743,6 +10782,9 @@
       "Get visibility into account access": [
         "Skaffa insyn i kontoåtkomst"
       ],
+      "Get VPN Plus": [
+        "Skaffa VPN Plus"
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Ge detta token ett beskrivande namn, t.ex. vilken tjänst du avser att använda det med och välj en av dina aktiva anpassade domänadresser. Endast denna adress kan skicka e-post med denna token."
       ],
@@ -11060,6 +11102,9 @@
       ],
       "It’s often the easiest way to recover your account if you’re signed in.": [
         "Det är ofta det enklaste sättet att återställa ditt konto om du är inloggad."
+      ],
+      "It’s the only way to instantly recover everything, so make sure you keep it somewhere safe but accessible.": [
+        "Det är det enda sättet att omedelbart återställa allt, så se till att du förvarar det någonstans säkert men åtkomligt."
       ],
       "JCB logo": [
         "JCB-logga"
@@ -11795,6 +11840,12 @@
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Visa varje avsändares bild i meddelandelistan. Avsändarens initialer kommer att visas om ett foto inte är tillgängligt."
       ],
+      "Show fewer benefits": [
+        "Visa färre fördelar"
+      ],
+      "Show more benefits": [
+        "Visa fler fördelar"
+      ],
       "Show original message": [
         "Visa originalmeddelande"
       ],
@@ -12451,6 +12502,9 @@
       "Visa Secure logo": [
         "Logga för Visa Secure"
       ],
+      "VPN Plus": [
+        "VPN Plus"
+      ],
       "VPN with dedicated servers and IP addresses": [
         "VPN med dedikerade servrar och IP-adresser"
       ],
@@ -12564,9 +12618,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "När detta är inaktiverat förhindrar det att fjärrbilder laddas utan din vetskap."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "När det är aktiverat kommer vi kontrollera om ${ MAIL_APP_NAME } är din standardapplikation för e-post och avisera dig om det inte är det."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Vid aktivering av SAML för ${ appName } hos din identitetsleverantör så kan du bli ombedd att använda callback (ACS) URL och utfärdar-ID. Kopiera och klistra in värdena nedan i fälten hos din identitetsleverantör."
@@ -15111,6 +15162,9 @@
       "Without attachment": [
         "Utan bilaga"
       ],
+      "Yearly": [
+        "Årligen"
+      ],
       "Yearly free storage bonus": [
         "Årlig bonus med gratis lagringsutrymme"
       ],
@@ -16598,6 +16652,9 @@
       "99.95% SLA": [
         "99.95 % SLA"
       ],
+      "Access all countries": [
+        "Åtkomst till alla länder"
+      ],
       "Activity logs and policy": [
         "Aktivitetsloggar och policy"
       ],
@@ -17407,6 +17464,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } land",
+        "${ n } länder"
+      ],
       "Access advanced VPN features": [
         "Få tillgång till avancerade VPN-funktioner"
       ],
@@ -17468,9 +17529,6 @@
       "${ app } product updates": [
         "Produktuppdateringar för ${ app }"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } för Business-nyhetsbrev"
-      ],
       "${ BRAND_NAME } important announcements": [
         "Viktiga meddelanden från ${ BRAND_NAME }"
       ],
@@ -17522,8 +17580,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "Under din första månad med användning av en ${ BRAND_NAME }-produkt"
       ],
-      "Email subscriptions": [
-        "E-postprenumerationer"
+      "Email communications": [
+        "E-postkommunikationer"
       ],
       "In-app notifications": [
         "Aviseringar i app"
@@ -20636,8 +20694,17 @@
       "Add recovery phone": [
         "Lägg till telefon för återställning"
       ],
+      "Added emergency contacts": [
+        "Lade till nödkontakter"
+      ],
       "Added recovery contacts": [
         "Lade till återställningskontakter"
+      ],
+      "Added recovery email": [
+        "Lade till e-post för återställning"
+      ],
+      "Added recovery phone": [
+        "Lade till telefon för återställning"
       ],
       "Allow": [
         "Tillåt"
@@ -20740,6 +20807,12 @@
       ],
       "They must already have a ${ BRAND_NAME } Account.": [
         "Du måste redan ha ett ${ BRAND_NAME }-konto."
+      ],
+      "They will not be able to see or access your data.": [
+        "De kommer inte kunna se eller komma åt dina data."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Detta ger dig snabb åtkomst till ditt ${ BRAND_NAME }-konto så du kan ändra ditt lösenord."
       ],
       "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "Detta kommer återställa åtkomst till e-post, kontakter, filer, lösenord och annan krypterad data på ditt konto efter en lösenordsåterställning."
@@ -24170,9 +24243,6 @@
       "Change second password": [
         "Ändra andra lösenord"
       ],
-      "Check your default mail application": [
-        "Kontrollera din standardapplikation för e-post"
-      ],
       "Choose a provider": [
         "Välj en leverantör"
       ],
@@ -24700,6 +24770,9 @@
       ],
       "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
         "Få ${ planMaxSpace } lagringsutrymme för dina filer, foton och dokument med ${ planName }. ${ upgradeButton }"
+      ],
+      "Get ${ VPN_APP_NAME } on your TV": [
+        "Skaffa ${ VPN_APP_NAME } på din TV"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Skaffa ${ vpnPlus } för att komma åt alla servrar"
@@ -25352,6 +25425,9 @@
       ],
       "Some of your encrypted data is locked": [
         "En del av din krypterade data är låst"
+      ],
+      "Something went wrong": [
+        "Något gick fel"
       ],
       "Sort folders alphabetically": [
         "Sortera mappar alfabetiskt"

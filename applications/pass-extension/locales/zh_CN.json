@@ -1655,6 +1655,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "访问 ${ PASS_APP_NAME } 需要您的指纹或设备 PIN 码。"
       ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "访问令牌“${ action.token.Name }”已过期。若删除，将不再显示。"
+      ],
       "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
         "访问令牌“${ action.token.Name }”将立即失效，此操作无法撤销！"
       ],
@@ -2248,6 +2251,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "在线访问 ${ PASS_APP_NAME } 将需要 PIN 码。您将在 3 次尝试失败后注销。"
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "仅显示过去 30 天内过期的令牌，更早的令牌将被自动删除。"
       ],
       "Open ${ PASS_APP_NAME } in a larger window": [
         "在更大窗口中打开 ${ PASS_APP_NAME }"
@@ -3314,6 +3320,9 @@
       ],
       "Expired": [
         "已失效"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "已过期的令牌（${ expired.length } 个）"
       ],
       "Expires in (minutes)": [
         "过期时间（分钟）"
@@ -5232,6 +5241,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "额外密码至少要有 8 个字符"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "自动填充失败，请确保 ${ PASS_APP_NAME } 具有必要的权限并重试 (${ error })。"
       ],
       "Failed to load breaches.": [
         "加载泄露信息失败"

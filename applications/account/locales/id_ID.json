@@ -1359,9 +1359,6 @@
       "Set as default": [
         "Atur sebagai bawaan"
       ],
-      "Set as default mail application": [
-        "Tetapkan sebagai aplikasi email bawaan"
-      ],
       "Set catch-all": [
         "Tentukan alamat catch-all"
       ],
@@ -4554,12 +4551,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } di ${ DRIVE_APP_NAME } memungkinkan Anda untuk saling bekerja sama dalam lingkungan yang aman dan terenkripsi."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } bukan aplikasi email bawaan Anda."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } merupakan aplikasi email bawaan Anda."
-      ],
       "A checked box means the feature is disabled.": [
         "Boks yang tercentang merupakan tanda bahwa fitur tersebut sedang dinonaktifkan."
       ],
@@ -4661,9 +4652,6 @@
       ],
       "No one in your organization can connect to shared servers.": [
         "Tidak ada siapa pun dalam organisasi Anda yang dapat menghubungkan ke server terbagi."
-      ],
-      "Send a code to your recovery email or phone": [
-        "Kirim kode ke alamat email atau nomor telepon pemulihan Anda"
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Siapkan akun untuk seluruh pengguna dan undang mereka untuk bergabung dengan ${ BRAND_NAME }"
@@ -7956,9 +7944,6 @@
       "Contact us": [
         "Hubungi kami"
       ],
-      "Downloads": [
-        "Unduhan"
-      ],
       "Enjoying ${ planName }?": [
         "Menikmati ${ planName }?"
       ],
@@ -11175,9 +11160,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Saat dinonaktifkan, ini mencegah gambar jarak jauh dimuat tanpa sepengetahuan Anda."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Saat diaktifkan, kami akan memeriksa apakah ${ MAIL_APP_NAME } adalah aplikasi email bawaan Anda dan memberitahu Anda jika bukan."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Pada saat mengaktifkan SAML untuk ${ appName } di layanan penyedia identitas Anda, Anda mungkin akan diminta untuk menggunakan URL Callback (ACS) dan Issuer ID. Cukup salin dan tempel data di bawah ini ke kolom yang disediakan oleh penyedia identitas Anda."
@@ -15619,9 +15601,6 @@
       "${ app } product updates": [
         "Pembaruan produk ${ app }"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Buletin ${ BRAND_NAME } for Business"
-      ],
       "${ BRAND_NAME } important announcements": [
         "Pengumuman penting ${ BRAND_NAME }"
       ],
@@ -15669,9 +15648,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Selama bulan pertama Anda mengunakan produk ${ BRAND_NAME }"
-      ],
-      "Email subscriptions": [
-        "Langganan email"
       ],
       "In-app notifications": [
         "Notifikasi dalam aplikasi"
@@ -21362,9 +21338,6 @@
       "Change second password": [
         "Ubah kata sandi kedua"
       ],
-      "Check your default mail application": [
-        "Periksa aplikasi email bawaan Anda"
-      ],
       "Choose an account": [
         "Pilih akun"
       ],
@@ -22414,6 +22387,9 @@
       ],
       "Snooze:": [
         "Tunda:"
+      ],
+      "Something went wrong": [
+        "Terjadi kesalahan"
       ],
       "Sort folders alphabetically": [
         "Urut folder sesuai abjad"

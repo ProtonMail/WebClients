@@ -1678,6 +1678,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Per accedir a ${ PASS_APP_NAME } caldrà la vostra empremta digital o el codi PIN del dispositiu."
       ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "El testimoni d'accés \"${ action.token.Name }\" ja ha caducat. Si l'elimineu, no es tornarà a mostrar."
+      ],
       "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
         "L'identificador d'accés \"${ action.token.Name }\" deixarà de funcionar immediatament. Aquesta acció no es podrà desfer."
       ],
@@ -2278,6 +2281,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "L'accés en línia a ${ PASS_APP_NAME } requerirà un codi PIN. Se us tancarà la sessió després de 3 intents que no han funcionat."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Només es mostren els testimonis que han caducat en els darrers 30 dies. Els més antics s'eliminen automàticament."
       ],
       "Open ${ PASS_APP_NAME } in a larger window": [
         "Obriu ${ PASS_APP_NAME } en una finestra més gran"
@@ -3367,6 +3373,9 @@
       ],
       "Expired": [
         "Caducat"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Testimonis caducats (${ expired.length })"
       ],
       "Expires in (minutes)": [
         "Caducarà en (minuts)"
@@ -5299,6 +5308,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "La contrasenya addicional ha de tenir com a mínim 8 caràcters."
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "No s'ha pogut autocompletar. Assegureu-vos que ${ PASS_APP_NAME } tingui els permisos necessaris i torneu-ho a provar (${ error })."
       ],
       "Failed to load breaches.": [
         "No s'han pogut carregar les infraccions."

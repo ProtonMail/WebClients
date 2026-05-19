@@ -219,6 +219,9 @@
       "Back to sign in": [
         "Вярнуцца да ўваходу"
       ],
+      "Back to sign-in": [
+        "Вярнуцца да ўваходу"
+      ],
       "Block": [
         "Блакіраваць"
       ],
@@ -5455,9 +5458,6 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Чытайце, адказвайце і будзьце ў курсе таго, што адбываецца ў Gmail з дапамогай ${ MAIL_APP_NAME }"
       ],
-      "Send a code to your recovery email or phone": [
-        "Адправіць код на вашу электронную пошту для аднаўлення доступу або на нумар тэлефона"
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Наладзьце ўліковыя запісы для ўсіх карыстальнікаў і запрасіце іх далучыцца да ${ BRAND_NAME }."
       ],
@@ -5508,6 +5508,9 @@
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Абнавіце падпіску, каб атрымаць больш кароткі і запамінальны адрас электроннай пошты ${ activatePmUser } у дадатак да вашага бягучага."
+      ],
+      "Use a recovery method to reset your password": [
+        "Скарыстайцеся спосабам аднаўлення, каб скінуць свой пароль"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Выкарыстоўвайце гэты дапаможнік, каб ваша арганізацыя хутка змагла атрымаць перавагі ад ${ BRAND_NAME }. Дадзеная экасістэма з'яўляецца адной з лепшых у галіне шыфравання і прыватнасці."
@@ -6995,6 +6998,9 @@
       ],
       "We received a request to unlock the encrypted data of your contact **${ user }**.": [
         "Атрыманы запыт на разблакіроўку зашыфраваных даных вашага кантакту **${ user }**."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "Адпраўлены ліст з запытам ${ user }, каб даць карыстальніку зразумець, што гэта сапраўды вы спрабуеце аднавіць доступ."
       ],
       "We were not able to verify the recovery data. Proceed anyway?": [
         "Не ўдалося спраўдзіць даныя для аднаўлення. Працягнуць у любым выпадку?"
@@ -9029,6 +9035,9 @@
       ],
       "Group address:": [
         "Адрас групы:"
+      ],
+      "Roles and permission:": [
+        "Ролі і дазволы:"
       ]
     },
     "Group member count": {
@@ -9088,6 +9097,14 @@
       ],
       "Group membership": [
         "Прыналежнасць да групы"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "Агульныя"
+      ],
+      "Roles and permissions": [
+        "Ролі і дазволы"
       ]
     },
     "Header": {
@@ -9751,6 +9768,9 @@
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "Тарыфныя планы ${ BRAND_NAME } Business даюць вашай камандзе ўсе інструменты для сумеснай працы, якія ім спатрэбяцца для прадукцыйнай і арганізаванай працы, адначасова абараняючы ваш бізнес."
       ],
+      "${ BRAND_NAME } Free": [
+        "${ BRAND_NAME } Free"
+      ],
       "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
         "${ BRAND_NAME } атрымлівае незлаежнае фінанстванне і працуе без рэкламы. Ніжэй прыведзены прыклады таго, як гэтая незалежнасць выкарыстоўвалася на практыцы."
       ],
@@ -9870,6 +9890,9 @@
       ],
       "${ name } for Windows": [
         "${ name } для Windows"
+      ],
+      "${ name } is not available": [
+        "${ name } недаступна"
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: не пераводзіць у каранцін і не адхіляе неаўтарызаваныя лісты. Звычайна карыстальнікі выкарыстоўваюць гэту палітыку пры непаладках або тэсціраванні."
@@ -10065,6 +10088,9 @@
       ],
       "(formerly Twitter)": [
         "(раней вядомы як Twitter)"
+      ],
+      "**${ appName }** is not available for your account.": [
+        "**${ appName }** недаступна для вашага ўліковага запісу."
       ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** не падтрымліваецца ў вашай арганізацыі **${ organizationName }**."
@@ -10531,6 +10557,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перад тым, як пачаць адпраўляць і атрымліваць электронную пошту з вашых новых адрасоў, вам неабходна стварыць ключы шыфравання для іх."
       ],
+      "BEST FOR TV": [
+        "ЛЕПШЫ ВЫБАР ДЛЯ ТЭЛЕВІЗАРА"
+      ],
       "Beta": [
         "Бэта"
       ],
@@ -10665,6 +10694,9 @@
       ],
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Працягніце падключэнне гэтага аб'екта з вашай арганізацыяй ${ BRAND_NAME }."
+      ],
+      "Continue with ${ BRAND_NAME } Free": [
+        "Працягнуць з ${ BRAND_NAME } Free"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Працягнуўшы, вы падключыце ўліковы запіс ${ BRAND_NAME } да ${ name }."
@@ -11238,6 +11270,9 @@
       ],
       "Get visibility into account access": [
         "Атрымайце агляд доступу да ўліковага запісу"
+      ],
+      "Get VPN Plus": [
+        "Атрымаць VPN Plus"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Дайце токену апісальную назву. Гэта можа быць назва паслугі, з якой вы плануеце яго выкарыстоўваць, і выберыце адзін з вашых актыўных адрасоў карыстальніцкіх даменаў. Толькі гэты адрас зможа адпраўляць лісты з гэтым токенам."
@@ -12349,6 +12384,12 @@
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Паказвае відарыс кожнага адпраўніка ў спісе паведамлення. Будуць паказаны ініцыялы адпраўніка ў выпадку, калі фатаграфія недаступна."
       ],
+      "Show fewer benefits": [
+        "Паказаць менш пераваг"
+      ],
+      "Show more benefits": [
+        "Паказаць больш пераваг"
+      ],
       "Show original message": [
         "Паказаць арыгінальнае паведамленне"
       ],
@@ -12892,6 +12933,9 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Пакуль вы не выйдзеце са свайго ўліковага запісу або не зменіце свой пароль, ваш сеанс будзе актыўным. Сеансы спыняюцца праз 60 дзён бяздзейнасці."
       ],
+      "Unlock streaming with VPN Plus.": [
+        "Разблакіраваць трансляцыі з VPN Plus"
+      ],
       "Unsaved changes": [
         "Незахаваныя змены"
       ],
@@ -13038,6 +13082,9 @@
       ],
       "Visa Secure logo": [
         "Лагатып Visa Secure"
+      ],
+      "VPN Plus": [
+        "VPN Plus"
       ],
       "VPN with dedicated servers and IP addresses": [
         "VPN з вылучанымі серверамі і IP-адрасамі"
@@ -17394,6 +17441,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Access all countries": [
+        "Доступ да ўсіх краін"
+      ],
       "Activity logs and policy": [
         "Журналы актыўнасці і палітыка"
       ],
@@ -17580,6 +17630,9 @@
       "Multiple admin roles": [
         "Некалькі роляў адміністратара"
       ],
+      "No streaming support": [
+        "Падтрымка трансляцыі адсутнічае"
+      ],
       "No-logs policy": [
         "Палітыка адсутнасці журналаў актыўнасці"
       ],
@@ -17747,6 +17800,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Неабмежаваны аб'ём даных і паласа прапускання"
+      ],
+      "Unlock streaming": [
+        "Разблакіраваць трансляцыі"
       ],
       "Up to ${ n } user": [
         "Да ${ n } карыстальніка",
@@ -18303,8 +18359,8 @@
       "${ app } product updates": [
         "Абнаўленні прадукту ${ app }"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Рассылка ${ BRAND_NAME } for Business"
+      "${ BRAND_NAME } for Business communications": [
+        "Камунікацыі ${ BRAND_NAME } for Business"
       ],
       "${ BRAND_NAME } important announcements": [
         "Важныя абвяшчэнні ${ BRAND_NAME }"
@@ -18357,8 +18413,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "На працягу першага месяца выкарыстання прадукту ${ BRAND_NAME }"
       ],
-      "Email subscriptions": [
-        "Падпіскі электроннай пошты"
+      "Email communications": [
+        "Камунікацыі па электроннай пошце"
       ],
       "In-app notifications": [
         "Апавяшчэнні ў праграме"
@@ -25756,6 +25812,9 @@
       "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
         "Атрымайце ${ planMaxSpace } сховішча для вашых файлаў, фатаграфій і дакументаў з тарыфным планам ${ planName }. ${ upgradeButton }"
       ],
+      "Get ${ VPN_APP_NAME } on your TV": [
+        "Атрымайце ${ VPN_APP_NAME } на свой тэлевізар"
+      ],
       "Get ${ vpnPlus } to access all servers": [
         "Атрымаць ${ vpnPlus } для доступу да ўсіх сервераў"
       ],
@@ -26412,6 +26471,9 @@
       ],
       "Some of your encrypted data is locked": [
         "Некаторыя вашы зашыфраваныя даныя заблакіраваны"
+      ],
+      "Something went wrong": [
+        "Нешта пайшло не так"
       ],
       "Sort folders alphabetically": [
         "Сартаваць папкі па алфавіце"

@@ -219,6 +219,9 @@
       "Back to sign in": [
         "Retour à la connexion"
       ],
+      "Back to sign-in": [
+        "Retour à la connexion"
+      ],
       "Block": [
         "Bloquer"
       ],
@@ -5391,9 +5394,6 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lisez, répondez et restez au courant de Gmail depuis ${ MAIL_APP_NAME }"
       ],
-      "Send a code to your recovery email or phone": [
-        "Envoyer un code à votre adresse e-mail ou à votre téléphone de récupération"
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Configurez les comptes pour tous les utilisateurs et invitez-les à rejoindre ${ BRAND_NAME }."
       ],
@@ -5442,6 +5442,9 @@
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Changez d'abonnement pour obtenir ${ activatePmUser } pour une adresse e-mail plus courte et facile à retenir en plus de votre adresse actuelle."
+      ],
+      "Use a recovery method to reset your password": [
+        "Utilisez une méthode de récupération pour réinitialiser votre mot de passe."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilisez ce guide pour que votre organisation bénéficie rapidement du chiffrement et de l’écosystème de respect de la vie privée de pointe de ${ BRAND_NAME }."
@@ -8901,6 +8904,9 @@
       ],
       "Group address:": [
         "Adresse du groupe :"
+      ],
+      "Roles and permission:": [
+        "Rôles et permissions :"
       ]
     },
     "Group member count": {
@@ -8958,6 +8964,14 @@
       ],
       "Group membership": [
         "Membres du groupe"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "Général"
+      ],
+      "Roles and permissions": [
+        "Rôles et permissions"
       ]
     },
     "Header": {
@@ -9603,6 +9617,9 @@
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "Les abonnements ${ BRAND_NAME } Business offrent à votre équipe tous les outils dont elle a besoin pour être productive et organisée dans son travail, tout en protégeant votre entreprise."
       ],
+      "${ BRAND_NAME } Free": [
+        "${ BRAND_NAME } Free"
+      ],
       "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
         "${ BRAND_NAME } est financé de manière indépendante et opère sans publicité.\nCi-dessous se trouvent des exemples pratique de l'utilisation de cette indépendance."
       ],
@@ -9708,6 +9725,9 @@
       ],
       "${ name } for Windows": [
         "${ name } pour Windows"
+      ],
+      "${ name } is not available": [
+        "${ name } n'est pas disponible."
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none } : ne met pas en quarantaine ou ne rejette pas les messages non autorisés. Cette règle est généralement utilisée à des fins de dépannage ou de test."
@@ -9869,6 +9889,9 @@
       ],
       "(formerly Twitter)": [
         "(anciennement Twitter)"
+      ],
+      "**${ appName }** is not available for your account.": [
+        "**${ appName }** n'est pas disponible pour votre compte."
       ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** n'est pas pris en charge dans votre organisation **${ organizationName }**."
@@ -10317,6 +10340,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Avant de pouvoir envoyer et recevoir des messages avec vos nouvelles adresses, vous devez leur créer des clés de chiffrement."
       ],
+      "BEST FOR TV": [
+        "LE MEILLEUR SUR TV"
+      ],
       "Beta": [
         "Version bêta"
       ],
@@ -10451,6 +10477,9 @@
       ],
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Poursuivez la connexion entre l'entité et votre organisation ${ BRAND_NAME }."
+      ],
+      "Continue with ${ BRAND_NAME } Free": [
+        "Continuer avec ${ BRAND_NAME } Free"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "En continuant, vous connecterez votre compte ${ BRAND_NAME } à ${ name }."
@@ -11012,6 +11041,9 @@
       ],
       "Get visibility into account access": [
         "Obtenez une visibilité sur l'accès au compte"
+      ],
+      "Get VPN Plus": [
+        "Obtenir VPN Plus"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Donnez un nom descriptif au jeton, comme le service avec lequel vous prévoyez de l'utiliser, et sélectionnez une de vos adresses de domaine personnalisées actives. Seule cette adresse pourra envoyer des messages avec ce jeton."
@@ -12107,6 +12139,12 @@
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Affichez l'image de chaque expéditeur dans la liste des messages. Si aucune photo n'est disponible, les initiales de l'expéditeur seront affichées."
       ],
+      "Show fewer benefits": [
+        "Afficher moins d'avantages"
+      ],
+      "Show more benefits": [
+        "Afficher plus d'avantages"
+      ],
       "Show original message": [
         "Afficher le message d'origine"
       ],
@@ -12640,6 +12678,9 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Si vous ne vous déconnectez pas de votre compte ou ne changez pas votre mot de passe, votre session restera active. Les sessions expirent après 60 jours d'inactivité."
       ],
+      "Unlock streaming with VPN Plus.": [
+        "Débloquez le streaming avec VPN Plus."
+      ],
       "Unsaved changes": [
         "Les modifications ne sont pas enregistrées."
       ],
@@ -12786,6 +12827,9 @@
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
+      ],
+      "VPN Plus": [
+        "VPN Plus"
       ],
       "VPN with dedicated servers and IP addresses": [
         "VPN avec adresses IP et serveurs dédiés"
@@ -17030,6 +17074,9 @@
       "99.95% SLA": [
         "SLA/uptime : 99,95 % de disponibilité du service"
       ],
+      "Access all countries": [
+        "Accédez à tous les pays"
+      ],
       "Activity logs and policy": [
         "Journaux d'activité et politique"
       ],
@@ -17212,6 +17259,9 @@
       "Multiple admin roles": [
         "Plusieurs rôles d'administrateur"
       ],
+      "No streaming support": [
+        "Pas de prise en charge du streaming"
+      ],
       "No-logs policy": [
         "Politique de non-journalisation (no log)"
       ],
@@ -17377,6 +17427,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Volume et bande passante illimités"
+      ],
+      "Unlock streaming": [
+        "Débloquez le streaming"
       ],
       "Up to ${ n } user": [
         "Jusqu'à ${ n } utilisateur",
@@ -17852,6 +17905,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } pays",
+        "${ n } pays"
+      ],
       "Access advanced VPN features": [
         "Accédez à des fonctionnalités VPN avancées."
       ],
@@ -17913,8 +17970,8 @@
       "${ app } product updates": [
         "Nouveautés sur le produit ${ app }"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Newsletter ${ BRAND_NAME } for Business"
+      "${ BRAND_NAME } for Business communications": [
+        "Communications ${ BRAND_NAME } for Business"
       ],
       "${ BRAND_NAME } important announcements": [
         "Annonces importantes de ${ BRAND_NAME }"
@@ -17967,8 +18024,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "Pendant votre premier mois d'utilisation d'un produit ${ BRAND_NAME }"
       ],
-      "Email subscriptions": [
-        "Newsletters"
+      "Email communications": [
+        "Communications par e-mail"
       ],
       "In-app notifications": [
         "Notifications dans l'application"
@@ -25256,6 +25313,9 @@
       "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
         "Obtenez ${ planMaxSpace } espace de stockage pour vos fichiers, photos et documents avec ${ planName }. ${ upgradeButton }"
       ],
+      "Get ${ VPN_APP_NAME } on your TV": [
+        "Obtenez ${ VPN_APP_NAME } sur votre TV"
+      ],
       "Get ${ vpnPlus } to access all servers": [
         "Obtenir ${ vpnPlus } pour accéder à tous les serveurs."
       ],
@@ -25910,6 +25970,9 @@
       ],
       "Some of your encrypted data is locked": [
         "Une partie de vos données chiffrées est verrouillée."
+      ],
+      "Something went wrong": [
+        "Une erreur s'est produite."
       ],
       "Sort folders alphabetically": [
         "Trier les dossiers par ordre alphabétique"
