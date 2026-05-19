@@ -4,7 +4,6 @@ import { useState, useEffect, Fragment } from 'react'
 import debounce from 'lodash/debounce'
 import { useMarkNodesContext } from '../MarkNodesContext'
 import { type SuggestionSummaryContent, generateSuggestionSummary } from '../Suggestions/generateSuggestionSummary'
-import { useCommentsContext } from './CommentsContext'
 import SpeechBubblePenIcon from '../../Icons/SpeechBubblePenIcon'
 import { c } from 'ttag'
 
@@ -21,7 +20,6 @@ export function useSuggestionCommentContent(
   suggestionID: string | null,
   editor: LexicalEditor,
 ) {
-  const { controller } = useCommentsContext()
   const { markNodeMap } = useMarkNodesContext()
   const [suggestionContent, setSuggestionContent] = useState<SuggestionSummaryContent | null>(null)
 
@@ -62,7 +60,6 @@ export function useSuggestionCommentContent(
     comment.content,
     comment.id,
     comment.isPlaceholder,
-    controller,
     editor,
     markNodeMap,
     suggestionID,
