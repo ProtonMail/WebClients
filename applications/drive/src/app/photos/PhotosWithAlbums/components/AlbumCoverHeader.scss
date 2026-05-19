@@ -1,0 +1,17 @@
+@keyframes album-cover-loading {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.album-cover-header {
+	&--loading {
+		background-color: var(--background-strong);
+		opacity: 0;
+		animation: album-cover-loading alternate 1s ease-in-out infinite both;
+	}
+}
