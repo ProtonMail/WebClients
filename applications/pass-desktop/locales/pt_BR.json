@@ -1410,6 +1410,9 @@
       ],
       "Name must be 191 characters or fewer": [
         "O nome deve ter no máximo 191 caracteres"
+      ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "O prazo de expiração deve ser entre 60 minutos e 1 ano"
       ]
     },
     "Error message": {
@@ -2082,8 +2085,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outra pasta apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2785,6 +2787,24 @@
       ],
       "${ selectedShareIds.size } selected": [
         "${ selectedShareIds.size } selecionado"
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Entre 60 (1 hora) e 525600 (1 ano)"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Baixar pass-cli de ${ passCliLink }."
+      ],
+      "Restored item from trash": [
+        "Item restaurado da lixeira"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Selecione os cofres que \"${ token.Name }\" pode ler."
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Faça o upgrade para o ${ PASS_APP_NAME } Plus para criar tokens de acesso e usar o ${ PASS_APP_NAME } programaticamente."
+      ],
+      "Vault access granted": [
+        "Acesso ao cofre concedido"
       ]
     },
     "Keyboard key": {
@@ -4036,6 +4056,12 @@
       ],
       "Vault access": [
         "Acesso ao cofre"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Tokens expirados (${ expired.length })"
+      ],
+      "Use for AI agent": [
+        "Uso para agente de IA"
       ]
     },
     "Link": {
@@ -4100,6 +4126,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } foi ativado"
+      ],
+      "Access token deleted": [
+        "Token de acesso excluído"
       ]
     },
     "Option": {
@@ -5019,6 +5048,21 @@
       ],
       "Manage vault access": [
         "Gerenciar acesso ao cofre"
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Os tokens de acesso exigem o ${ PASS_APP_NAME } Plus"
+      ],
+      "Agent setup instructions": [
+        "Intruções de confirmação de agente"
+      ],
+      "Create new access token": [
+        "Criar novo token de acesso"
+      ],
+      "No access tokens yet": [
+        "Ainda não há tokens de acesso"
+      ],
+      "Your new access token": [
+        "Seu novo token de acesso"
       ]
     },
     "Title_cloned_item": {
