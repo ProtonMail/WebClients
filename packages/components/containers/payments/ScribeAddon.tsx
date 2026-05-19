@@ -1,4 +1,4 @@
-import type { ReactElement } from 'react';
+import { type ReactElement, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -13,6 +13,7 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 
 import { NumberCustomiser, type NumberCustomiserProps } from './planCustomizer/NumberCustomiser';
+import type { CustomiserMode } from './planCustomizer/addonCustomizerHelpers';
 
 const ScribeB2BBanner = ({ onClick, price }: { onClick: () => void; price: ReactElement }) => (
     <div
@@ -43,16 +44,24 @@ const ScribeB2BBanner = ({ onClick, price }: { onClick: () => void; price: React
 interface ScribeAddonProps extends Omit<NumberCustomiserProps, 'label' | 'tooltip'> {
     price: ReactElement;
     audience?: Audience;
-    showScribeBanner?: boolean;
     onAddScribe: () => void;
     showTooltip?: boolean;
+    mode: CustomiserMode;
 }
 
-const ScribeAddon = ({ price, audience, showScribeBanner, onAddScribe, showTooltip, ...rest }: ScribeAddonProps) => {
+const ScribeAddon = ({ price, audience, onAddScribe, showTooltip, mode, ...rest }: ScribeAddonProps) => {
+    const [showScribeBanner, setShowScribeBanner] = useState(mode === 'signup');
+
     if (audience === Audience.B2B && showScribeBanner) {
         return (
             <div>
-                <ScribeB2BBanner price={price} onClick={onAddScribe} />
+                <ScribeB2BBanner
+                    price={price}
+                    onClick={() => {
+                        setShowScribeBanner(false);
+                        onAddScribe();
+                    }}
+                />
             </div>
         );
     }

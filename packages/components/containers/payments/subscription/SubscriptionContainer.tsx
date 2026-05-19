@@ -97,8 +97,8 @@ import { changeDefaultPaymentMethodBeforePayment } from '../DefaultPaymentMethod
 import PaymentGiftCode from '../PaymentGiftCode';
 import PaymentWrapper from '../PaymentWrapper';
 import { PassFakeAddon } from '../planCustomizer/PassFakeAddon';
-import { ProtonPlanCustomizer, forceAddonsMinMaxConstraints } from '../planCustomizer/ProtonPlanCustomizer';
-import { getHasPlanCustomizer } from '../planCustomizer/helpers';
+import { ProtonPlanCustomizer } from '../planCustomizer/ProtonPlanCustomizer';
+import { forceAddonsMinMaxConstraints, getHasPlanCustomizer } from '../planCustomizer/helpers';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
 import PlanSelection from './PlanSelection';
 import { RenewalEnableNote } from './RenewalEnableNote';
@@ -445,6 +445,7 @@ const SubscriptionContainerInner = ({
     const hideLumoAddonForVpn2024 = useFlag('HideLumoAddonForVpn2024');
 
     const couponConfig = useCouponConfig({ checkResult, planIDs: model.planIDs, plansMap: plansMapRef.current });
+
     const lumoAddonEnabled = showLumoAddonCustomizer({
         subscription,
         couponConfig,
@@ -453,7 +454,6 @@ const SubscriptionContainerInner = ({
         cycle: model.cycle,
         hideLumoAddonForVpn2024,
     });
-
     const [selectedProductPlans, setSelectedProductPlans] = useState(
         defaultSelectedProductPlans ||
             getDefaultSelectedProductPlans({
@@ -1223,13 +1223,15 @@ const SubscriptionContainerInner = ({
                                             !noAddonVariant &&
                                             getHasPlanCustomizer(model.planIDs) && (
                                                 <ProtonPlanCustomizer
-                                                    scribeAddonEnabled={scribeEnabled.paymentsEnabled}
-                                                    lumoAddonEnabled={
-                                                        overrideAddonsBehaviour ? displayLumoOnly : lumoAddonEnabled
-                                                    }
-                                                    meetAddonEnabled={
-                                                        overrideAddonsBehaviour ? displayMeetOnly : meetAddonFlag
-                                                    }
+                                                    addonFlags={{
+                                                        scribeAddonEnabled: scribeEnabled.paymentsEnabled,
+                                                        lumoAddonEnabled: overrideAddonsBehaviour
+                                                            ? displayLumoOnly
+                                                            : lumoAddonEnabled,
+                                                        meetAddonEnabled: overrideAddonsBehaviour
+                                                            ? displayMeetOnly
+                                                            : meetAddonFlag,
+                                                    }}
                                                     loading={blockAccountSizeSelector}
                                                     currency={model.currency}
                                                     cycle={model.cycle}
