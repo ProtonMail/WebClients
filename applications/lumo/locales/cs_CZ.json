@@ -1077,7 +1077,7 @@
         "GA"
       ],
       "New": [
-        "Nový"
+        "Nové"
       ],
       "OpenAI-compatible": [
         "Kompatibilní s OpenAI"
@@ -1213,7 +1213,7 @@
         "Vždy povolit vyhledávání na webu u nových konverzací"
       ],
       "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
-        "Pomocí klíčů API můžete k aplikaci ${ LUMO_SHORT_APP_NAME } přistupovat programově. Každý klíč se po vytvoření zobrazí pouze jednou."
+        "Klíče API vám umožní programový přístup k ${ LUMO_SHORT_APP_NAME }. Každý klíč je po vytvoření zobrazen jen jednou."
       ],
       "Auto choose the best model": [
         "Automatický výběr nejvhodnějšího modelu"
@@ -1231,7 +1231,7 @@
         "Zahrnout konverzace projektu do hlavního chatu"
       ],
       "Keep it safe — it won't be shown again": [
-        "Uložte si to – už se to znovu nezobrazí"
+        "Uložte si ho – znovu nebude zobrazen"
       ],
       "Last updated on ${ formattedDate }": [
         "Poslední aktualizace: ${ formattedDate }"
@@ -1306,10 +1306,10 @@
         "Soubor byl nahrán, ale nepodařilo se jej přidat do databáze znalostí"
       ],
       "Name is required": [
-        "Jméno je povinné"
+        "Název je povinný"
       ],
       "Name must be 191 characters or fewer": [
-        "Jméno nesmí obsahovat více než 191 znaků"
+        "Název nesmí být delší než 191 znaků"
       ],
       "Please select a category to describe what went wrong with the generated text": [
         "Vyberte prosím kategorii, ve které popíšete, co je s vygenerovaným textem špatně"
@@ -1354,7 +1354,7 @@
         "V tomto projektu jste dosáhli maximálního počtu ${ limit } souborů. Před nahráním nových souborů nejprve některé soubory odeberte."
       ],
       "You've reached the maximum of ${ limit } messages in this conversation. Start a new conversation to continue chatting with ${ LUMO_SHORT_APP_NAME }.": [
-        "V této konverzaci jste dosáhli maximálního počtu ${ limit } zpráv. Chcete-li pokračovat s ${ LUMO_SHORT_APP_NAME }, založte novou konverzaci."
+        "V této konverzaci jste dosáhli maximálního počtu ${ limit } zpráv. Pro pokračování založte novou konverzaci ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "collider_2025: Error Message": {
@@ -1517,13 +1517,13 @@
         "${ LUMO_SHORT_APP_NAME } poskytuje přístup k pokročilým modelům pro pomoc se složitějšími dotazy a pro poskytování lepších odpovědí"
       ],
       "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
-        "${ LUMO_SHORT_APP_NAME }+ — Přístup k API a klíče jsou součástí předplatného služby ${ LUMO_SHORT_APP_NAME }+ (přihlaste se, chcete-li provést upgrade nebo spravovat klíče)"
+        "${ LUMO_SHORT_APP_NAME }+ - Přístup k API a klíče jsou součástí předplatného ${ LUMO_SHORT_APP_NAME }+ (pro navýšení nebo správu klíčů se přihlaste)"
       ],
       "${ LUMO_SHORT_APP_NAME }+ — the ${ LUMO_SHORT_APP_NAME } API and API keys require an active ${ LUMO_SHORT_APP_NAME }+ subscription. ": [
-        "${ LUMO_SHORT_APP_NAME }+ — API a API klíče služby ${ LUMO_SHORT_APP_NAME }+ vyžadují aktivní předplatné služby ${ LUMO_SHORT_APP_NAME }+. "
+        "${ LUMO_SHORT_APP_NAME }+ - API a API klíče ${ LUMO_SHORT_APP_NAME } vyžadují aktivní předplatné ${ LUMO_SHORT_APP_NAME }+. "
       ],
       ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
-        ". Je v souladu se schématem API OpenAI – stačí do stávajícího klienta vložit jediný řádek."
+        ". Je v souladu se schématem API OpenAI - stačí ve vašem stávajícím klientu změnit jeden řádek."
       ],
       "1 file": [
         "1 soubor"
@@ -1574,7 +1574,7 @@
         "Připojené soubory"
       ],
       "Authenticates the request. Never expose this in client-side code.": [
-        "Ověřuje se požadavek. Nikdy tuto funkci nezveřejňujte v kódu na straně klienta."
+        "Ověřuje požadavek. Nikdy to nezveřejňujte v kódu na straně klienta."
       ],
       "Auto-matched": [
         "Automaticky shodné"
@@ -1586,7 +1586,7 @@
         "Vytvářejte asistenty, u nichž je na prvním místě ochrana soukromí, s využitím streamování a trvalého kontextu."
       ],
       "Chain tool calls to orchestrate multi-step pipelines end-to-end.": [
-        "Řetězová volání nástrojů pro orchestraci vícekrokových kanálů od začátku do konce."
+        "Nástroj řetězců slouží ke koordinaci vícestupňových procesů od začátku do konce."
       ],
       "characters not shown": [
         "znaků se nezobrazuje"
@@ -1625,7 +1625,7 @@
         "Vyloučeno"
       ],
       "Expired ": [
-        "Vypršelo "
+        "Platnost vypršela "
       ],
       "Expires ": [
         "Vyprší "
@@ -1634,7 +1634,7 @@
         "Vyprší zítra"
       ],
       "Extract, analyse, and summarise documents, PDFs, and images.": [
-        "Extrahujte, analyzujte a shrňujte dokumenty, soubory PDF a obrázky."
+        "Extrahujte, analyzujte a sumarizujte dokumenty, PDF a obrázky."
       ],
       "File capacity": [
         "Kapacita souboru"
@@ -1688,10 +1688,10 @@
         "Uveďte vámi použitý požadavek a odpověď, abyste nám pomohli vylepšit přesnost."
       ],
       "Ingest a customer message, classify urgency and topic with ${ LUMO_SHORT_APP_NAME }, branch on whether it needs escalation, then draft a reply or hand off to a human.": [
-        "Načtěte zprávu od zákazníka, určete její naléhavost a téma pomocí ${ LUMO_SHORT_APP_NAME }, rozhodněte, zda je třeba ji eskalovat, a poté připravte odpověď nebo ji předávejte lidskému pracovníkovi."
+        "Pomocí ${ LUMO_SHORT_APP_NAME } načtěte zprávu od zákazníka, určete její naléhavost a téma, rozhodněte, zda je potřeba ji upřednostnit, a poté nechte připravte návrh odpovědi nebo ho nechte na lidském pracovníkovi."
       ],
       "Load two versions of a policy, ask ${ LUMO_SHORT_APP_NAME } to list differences and risks, then produce a short recommendation for which version to adopt.": [
-        "Načtěte dvě verze zásady, požádejte ${ LUMO_SHORT_APP_NAME } o výpis rozdílů a rizik a poté vypracujte stručné doporučení, kterou verzi zvolit."
+        "Načtěte dvě verze zásady, požádejte ${ LUMO_SHORT_APP_NAME } o výpis rozdílů a rizik a následně o stručné doporučení, kterou verzi zvolit."
       ],
       "Loading": [
         "Načítání"
@@ -1742,7 +1742,7 @@
         "Částečný obsah"
       ],
       "Pass model: \"auto\" to let ${ LUMO_SHORT_APP_NAME } route to the best available model for your task. Specify a model ID directly for predictable latency or capability targeting.": [
-        "Zadejte model: „auto“, aby služba ${ LUMO_SHORT_APP_NAME } mohla směrovat požadavek na nejvhodnější dostupný model pro daný úkol. Chcete-li zajistit předvídatelnou latenci nebo zacílit na konkrétní výkonnostní parametry, zadejte přímo ID modelu."
+        "Zadejte model: „Automatický“, aby ${ LUMO_SHORT_APP_NAME } směřovala požadavek na nejvhodnější dostupný model pro daný úkol. Chcete-li zajistit předvídatelnou latenci nebo reakce, zadejte přímo ID modelu."
       ],
       "Please share what you expected": [
         "Prosím, uveďte to, co jste očekávali"
@@ -1766,7 +1766,7 @@
         "Znalosti projektu"
       ],
       "Read a batch of text files, extract people, organizations, and dates with ${ LUMO_SHORT_APP_NAME }, then emit a CSV of entities per file.": [
-        "Načti sadu textových souborů, pomocí ${ LUMO_SHORT_APP_NAME } z nich extrahuj osoby, organizace a data a poté pro každý soubor vygeneruj CSV soubor s entitami."
+        "Načtěte sadu textových souborů, pomocí ${ LUMO_SHORT_APP_NAME } z nich extrahujte osoby, organizace a data a poté pro každý soubor vygenerujte CSV soubor s entitami."
       ],
       "Relevant files will be automatically retrieved based on your questions.": [
         "Relevantní soubory budou automaticky načteny na základě vašich dotazů."
@@ -1805,7 +1805,7 @@
         "Přihlaste se nebo si vytvořte účet, abyste mohli procházet a přidávat soubory ze svého ${ DRIVE_APP_NAME } (koncově šifrovaného cloudového úložiště) do svých znalostí chatu."
       ],
       "Sign in to create and manage API keys for ${ LUMO_SHORT_APP_NAME }.": [
-        "Přihlaste se a vytvořte a spravujte klíče API pro ${ LUMO_SHORT_APP_NAME }."
+        "Pro tvorbu a správu klíčů ${ LUMO_SHORT_APP_NAME } API se přihlaste."
       ],
       "Sign in to generate workflows with ${ LUMO_SHORT_APP_NAME }.": [
         "Přihlaste se a vytvářejte pracovní postupy pomocí ${ LUMO_SHORT_APP_NAME }."
@@ -1823,10 +1823,10 @@
         "API ${ LUMO_SHORT_APP_NAME } vám poskytuje programový přístup k jazykovým modelům s integrovanou architekturou ochrany soukromí společnosti ${ BRAND_NAME }. Žádné trénování dat na základě vašich požadavků. Žádné sledování."
       ],
       "The ${ LUMO_SHORT_APP_NAME } API is a RESTful interface at ": [
-        "API ${ LUMO_SHORT_APP_NAME } je rozhraní typu REST, které je k dispozici na adrese "
+        "${ LUMO_SHORT_APP_NAME } API je rozhraní typu REST, které je na "
       ],
       "The ${ LUMO_SHORT_APP_NAME } API is available for ${ LUMO_SHORT_APP_NAME }+ subscribers. Upgrade to create API keys and use the API programmatically.": [
-        "API služba ${ LUMO_SHORT_APP_NAME } je k dispozici pro předplatitele služby ${ LUMO_SHORT_APP_NAME }+. Proveďte upgrade, abyste mohli vytvářet klíče API a využívat API programově."
+        "${ LUMO_SHORT_APP_NAME } API je k dispozici pro předplatitele ${ LUMO_SHORT_APP_NAME }+. Navyšte svůj účet, abyste mohli vytvářet klíče API a využívat API programově."
       ],
       "There was an error processing this file.": [
         "Došlo k chybě při zpracování tohoto souboru."
@@ -1844,7 +1844,7 @@
         "Chcete-li se později k této konverzaci vrátit, přihlaste se nebo si vytvořte účet."
       ],
       "tokens / 30d": [
-        "tokeny / 30d"
+        "tokeny / 30 dnů"
       ],
       "Try the smartest version of ${ LUMO_SHORT_APP_NAME } with advanced capabilities.": [
         "Vyzkoušejte nejchytřejší verzi ${ LUMO_SHORT_APP_NAME } s pokročilými funkcemi."
@@ -1930,7 +1930,7 @@
         "Základní"
       ],
       "Code language": [
-        "Kód jazyka"
+        "Jazyk kódu"
       ],
       "Compare two drafts": [
         "Porovnejte dva návrhy"
@@ -1960,7 +1960,7 @@
         "Příklady nápadů"
       ],
       "Fast": [
-        "Rychlý"
+        "Rychle"
       ],
       "File upload": [
         "Nahrát soubor"
@@ -2008,7 +2008,7 @@
         "Rust"
       ],
       "Status": [
-        "Status"
+        "Stav"
       ],
       "Summarize documents": [
         "Shrňte dokumenty"
@@ -2298,7 +2298,7 @@
         "Smazat vše"
       ],
       "Document intelligence": [
-        "Inteligentní zpracování dokumentů"
+        "Data k dokumentu"
       ],
       "Don't lose the thread": [
         "Neztrácejte nit"
@@ -2331,7 +2331,7 @@
         "Požadavky"
       ],
       "Privacy included by default.": [
-        "Ochrana soukromí je samozřejmostí."
+        "Ochrana soukromí ve výchozím stavu."
       ],
       "Raw response": [
         "Neupravená odpověď"
@@ -2525,7 +2525,7 @@
         "Blíží se limit počtu souborů"
       ],
       "Approaching message limit": [
-        "Blíží se limit zpráv"
+        "Blíží se limit zprávy"
       ],
       "Failed to index file for search: ${ processingResult.message }": [
         "Nepodařilo se indexovat soubor pro vyhledávání: ${ processingResult.message }"
@@ -2736,7 +2736,7 @@
         "Zobrazit postranní panel"
       ],
       "Shuffle suggestions": [
-        "Návrhy pro náhodné přehrávání"
+        "Zamíchat návrhy"
       ],
       "Think longer": [
         "Přemýšlet déle"
@@ -2878,10 +2878,10 @@
         "Nepodařilo se propojit složku Drive"
       ],
       "Failed to load image": [
-        "Obrázek se nepodařilo načíst"
+        "Načtení obrázku selhalo"
       ],
       "Failed to load images. Please try again.": [
-        "Načtení obrázků se nezdařilo. Zkuste to prosím znovu."
+        "Načtení obrázků selhalo. Zkuste to prosím znovu."
       ],
       "Failed to process file: ${ file.name }": [
         "Zpracování souboru selhalo: ${ file.name }"
@@ -2941,7 +2941,7 @@
         "Poměr ceny a zisku"
       ],
       "Profit Margin": [
-        "Marže"
+        "Zisková marže"
       ],
       "Revenue (TTM)": [
         "Výnosy (TTM)"
@@ -2949,16 +2949,16 @@
     },
     "collider_2025:Gallery suggestion hint": {
       "Draw a sketch to bring to life": [
-        "Nakreslete náčrt, který oživí váš nápad"
+        "Nakreslete náčrt toho, co chcete uvést v život"
       ],
       "Upload a photo to caricature": [
         "Nahrajte fotku pro vytvoření karikatury"
       ],
       "Upload a photo to package": [
-        "Nahrát fotografii do balíčku"
+        "Nahrát fotku k balení"
       ],
       "Upload a photo to transform": [
-        "Nahrajte fotku a proveďte transformaci"
+        "Nahrajte fotku k úpravě"
       ]
     },
     "collider_2025:Gallery suggestion title": {
@@ -2966,13 +2966,13 @@
         "Bauhaus moderní umění"
       ],
       "Comic Caricature": [
-        "Komická karikatura"
+        "Vtipná karikatura"
       ],
       "Cubist Deconstruction": [
         "Kubistická dekonstrukce"
       ],
       "Decorated Cookie": [
-        "Modifikovaná cookie"
+        "Zdobené cukroví"
       ],
       "Impressionist Painting": [
         "Impresionistická malba"
@@ -2992,7 +2992,7 @@
     },
     "collider_2025:Hint": {
       "Draw on the image to annotate, and/or describe what to change": [
-        "Na obrázku nakreslete poznámky a/nebo popište, co je třeba změnit"
+        "Na obrázku nakreslete a/nebo popište, co je potřeba změnit"
       ]
     },
     "collider_2025:Icon": {
@@ -3104,7 +3104,7 @@
         "Zadejte @filename pro dotaz ke konkrétnímu souboru"
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
-        "Navyšte na ${ LUMO_SHORT_APP_NAME } Plus a vytvořte neomezený počet projektů, odemkněte pokročilé modely AI a další."
+        "Navyšte na ${ LUMO_SHORT_APP_NAME } Plus pro tvorbu neomezeného počtu projektů a odemknutí pokročilých modelů AI a další."
       ],
       "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
         "Používání ${ DRIVE_APP_NAME } umožňuje ${ LUMO_SHORT_APP_NAME } pracovat s většími soubory."
@@ -3127,7 +3127,7 @@
         "Vytvořeno"
       ],
       "Discover what ${ LUMO_SHORT_APP_NAME } can create": [
-        "Zjistěte, co dokáže ${ LUMO_SHORT_APP_NAME }"
+        "Zjistěte, co dokáže ${ LUMO_SHORT_APP_NAME } vytvořit"
       ],
       "Edit conversation title": [
         "Upravit název konverzace"
@@ -3142,7 +3142,7 @@
         "Pokyny k projektu (nepovinné)"
       ],
       "Selected:": [
-        "Vybrány:"
+        "Vybráno:"
       ],
       "Untitled chat": [
         "Nepojmenovaný chat"
@@ -3163,7 +3163,7 @@
     },
     "collider_2025:Placeholder": {
       "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
-        "Přidejte instrukce týkající se tónu, stylu a osobnosti, které si má ${ LUMO_SHORT_APP_NAME } osvojit."
+        "Přidejte instrukce týkající se tónu, stylu a osobnosti, kterou si má ${ LUMO_SHORT_APP_NAME } osvojit."
       ],
       "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt. These instructions will apply to all chats in this project.": [
         "Přidej pokyny ohledně tónu, stylu a osobnosti, které má ${ LUMO_SHORT_APP_NAME } přijmout. Tyto pokyny se budou vztahovat na všechny chaty v tomto projektu."
@@ -3178,7 +3178,7 @@
         "např. „Zbarvi oblohu do fialova“, „Odstraň položky označené červeným kruhem“"
       ],
       "e.g. Iterate over documents in a folder, extract people and dates from each, then build a graph of how terms relate.": [
-        "např. projít dokumenty ve složce, z každého z nich extrahovat jména osob a data a poté sestavit graf znázorňující vzájemné vztahy mezi těmito pojmy."
+        "např. projít dokumenty ve složce, z každého z nich získat jména osob a data a poté sestavit graf znázorňující vzájemné vztahy mezi těmito údaji."
       ],
       "Enter folder name": [
         "Zadejte název složky"
@@ -3215,7 +3215,7 @@
         "Naučte se jazyk"
       ],
       "Plan financial goals with personalized insights": [
-        "Naplánuj finanční cíle s personalizovanými postřehy"
+        "Plánujte finanční cíle s personalizovanými postřehy"
       ],
       "Practice conversations, learn grammar, and build vocabulary in your target language": [
         "Cvičte konverzace, učte se gramatiku a rozšiřujte slovní zásobu ve svém cílovém jazyce"
@@ -3342,10 +3342,10 @@
     },
     "collider_2025:Reasoning": {
       "Checked ${ BRAND_NAME } knowledge": [
-        "Ověřeny znalosti o značce ${ BRAND_NAME }"
+        "Zkontrolovány znalosti ${ BRAND_NAME }"
       ],
       "Checking ${ BRAND_NAME } knowledge...": [
-        "Ověřuji znalosti o značce ${ BRAND_NAME }..."
+        "Kontrola znalostí ${ BRAND_NAME }..."
       ],
       "Dividend Yield": [
         "Dividendový roční výnos"
@@ -3357,13 +3357,13 @@
         "Probíhá úprava obrázku..."
       ],
       "Executed tool": [
-        "Spuštěný nástroj"
+        "Spuštěn nástroj"
       ],
       "Executing tool...": [
         "Spouštění nástroje..."
       ],
       "Expand reasoning": [
-        "Rozvést úvahu"
+        "Vysvětlit důvody"
       ],
       "Extracted page content": [
         "Extrahovaný obsah stránky"
@@ -3378,13 +3378,13 @@
         "Generování obrázku..."
       ],
       "Last updated: ": [
-        "Naposledy aktualizováno: "
+        "Poslední aktualizace: "
       ],
       "Looked at your image": [
-        "Prohlédl jsem si tvůj obrázek"
+        "Obrázek prohlédnut"
       ],
       "Looking at your image...": [
-        "Prohlížím si tvůj obrázek..."
+        "Prohlížím si váš obrázek..."
       ],
       "Market Cap": [
         "Tržní kapitalizace"
@@ -3399,7 +3399,7 @@
         "Cena"
       ],
       "Profit Margin": [
-        "Marže"
+        "Zisková marže"
       ],
       "Revenue TTM": [
         "Výnosy (TTM)"
@@ -3411,7 +3411,7 @@
         "Názor k tomuto"
       ],
       "Thought for ": [
-        "Myšlenka pro "
+        "Přemýšlení "
       ]
     },
     "collider_2025:Status": {
@@ -5832,7 +5832,7 @@
         "Vyprší"
       ],
       "Expires in": [
-        "Vyprší v"
+        "Vyprší za"
       ],
       "First name": [
         "Křestní jméno"
@@ -6078,7 +6078,7 @@
         "Zrušit přepsání"
       ],
       "Composer limit banner preview": [
-        "Náhled banneru s omezením počtu skladeb"
+        "Náhled banneru editoru v limitu"
       ],
       "Create Test Chats": [
         "Vytvořit testovací chaty"
@@ -6117,7 +6117,7 @@
         "Zprávy"
       ],
       "Notifications": [
-        "Oznámení"
+        "Upozornění"
       ],
       "Performance": [
         "Výkon"
@@ -8852,10 +8852,10 @@
         "Nalezeno ${ orphanedDocCount } dokumentů"
       ],
       "referencing ${ orphanedSpaceIds.length } missing space.": [
-        "odkaz na ${ orphanedSpaceIds.length } chybějící mezeru.",
-        "odkaz na ${ orphanedSpaceIds.length } chybějící mezery.",
-        "odkaz na ${ orphanedSpaceIds.length } chybějících mezer.",
-        "odkaz na ${ orphanedSpaceIds.length } chybějících mezer."
+        "odkazující na ${ orphanedSpaceIds.length } chybějící mezeru.",
+        "odkazující na ${ orphanedSpaceIds.length } chybějící mezery.",
+        "odkazující na ${ orphanedSpaceIds.length } chybějících mezer.",
+        "odkazující na ${ orphanedSpaceIds.length } chybějících mezer."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."
