@@ -83,7 +83,13 @@ if (typeof browser !== 'undefined') {
         browser.runtime.onUpdateAvailable.addListener(context.service.activation.onUpdateAvailable);
     }
 
-    if (BUILD_TARGET !== 'safari') {
+    /* `browser.commands` may be `undefined` on the first SW boot after
+     * the 1.37.0 update that declares the `commands` manifest key. Chromium
+     * gates the API on the effective manifest, and our `skipWaiting()`
+     * above forces eager activation that likely races with that binding.
+     * Listener re-attaches on next SW restart.
+     * FIXME: remove when sufficient users have migrated to 1.37.0 */
+    if (BUILD_TARGET !== 'safari' && browser.commands) {
         browser.commands.onCommand.addListener(handleExtensionCommand);
     }
 
