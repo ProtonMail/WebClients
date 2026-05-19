@@ -11306,6 +11306,7 @@ __metadata:
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-router-dom": "npm:^5.3.3"
     "@types/webextension-polyfill": "npm:^0.12.5"
+    "@typescript/native-preview": "npm:^7.0.0-0"
     "@zip.js/zip.js": "npm:^2.8.26"
     circular-dependency-plugin: "npm:^5.2.2"
     client-zip: "npm:^2.5.0"
@@ -17394,6 +17395,87 @@ __metadata:
     "@typescript-eslint/types": "npm:8.59.3"
     eslint-visitor-keys: "npm:^5.0.0"
   checksum: 10/66241bdcf6679ae784cf0ae5581ca009cdb7d589656da6df8ef1d8b3ffca6717f55718776d13af35d28a49b124ab5f5533f7631b51878f08f1070e0407e5a4a4
+  languageName: node
+  linkType: hard
+
+"@typescript/native-preview-darwin-arm64@npm:7.0.0-dev.20260516.1":
+  version: 7.0.0-dev.20260516.1
+  resolution: "@typescript/native-preview-darwin-arm64@npm:7.0.0-dev.20260516.1"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@typescript/native-preview-darwin-x64@npm:7.0.0-dev.20260516.1":
+  version: 7.0.0-dev.20260516.1
+  resolution: "@typescript/native-preview-darwin-x64@npm:7.0.0-dev.20260516.1"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@typescript/native-preview-linux-arm64@npm:7.0.0-dev.20260516.1":
+  version: 7.0.0-dev.20260516.1
+  resolution: "@typescript/native-preview-linux-arm64@npm:7.0.0-dev.20260516.1"
+  conditions: os=linux & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@typescript/native-preview-linux-arm@npm:7.0.0-dev.20260516.1":
+  version: 7.0.0-dev.20260516.1
+  resolution: "@typescript/native-preview-linux-arm@npm:7.0.0-dev.20260516.1"
+  conditions: os=linux & cpu=arm
+  languageName: node
+  linkType: hard
+
+"@typescript/native-preview-linux-x64@npm:7.0.0-dev.20260516.1":
+  version: 7.0.0-dev.20260516.1
+  resolution: "@typescript/native-preview-linux-x64@npm:7.0.0-dev.20260516.1"
+  conditions: os=linux & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@typescript/native-preview-win32-arm64@npm:7.0.0-dev.20260516.1":
+  version: 7.0.0-dev.20260516.1
+  resolution: "@typescript/native-preview-win32-arm64@npm:7.0.0-dev.20260516.1"
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@typescript/native-preview-win32-x64@npm:7.0.0-dev.20260516.1":
+  version: 7.0.0-dev.20260516.1
+  resolution: "@typescript/native-preview-win32-x64@npm:7.0.0-dev.20260516.1"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@typescript/native-preview@npm:^7.0.0-0":
+  version: 7.0.0-dev.20260516.1
+  resolution: "@typescript/native-preview@npm:7.0.0-dev.20260516.1"
+  dependencies:
+    "@typescript/native-preview-darwin-arm64": "npm:7.0.0-dev.20260516.1"
+    "@typescript/native-preview-darwin-x64": "npm:7.0.0-dev.20260516.1"
+    "@typescript/native-preview-linux-arm": "npm:7.0.0-dev.20260516.1"
+    "@typescript/native-preview-linux-arm64": "npm:7.0.0-dev.20260516.1"
+    "@typescript/native-preview-linux-x64": "npm:7.0.0-dev.20260516.1"
+    "@typescript/native-preview-win32-arm64": "npm:7.0.0-dev.20260516.1"
+    "@typescript/native-preview-win32-x64": "npm:7.0.0-dev.20260516.1"
+  dependenciesMeta:
+    "@typescript/native-preview-darwin-arm64":
+      optional: true
+    "@typescript/native-preview-darwin-x64":
+      optional: true
+    "@typescript/native-preview-linux-arm":
+      optional: true
+    "@typescript/native-preview-linux-arm64":
+      optional: true
+    "@typescript/native-preview-linux-x64":
+      optional: true
+    "@typescript/native-preview-win32-arm64":
+      optional: true
+    "@typescript/native-preview-win32-x64":
+      optional: true
+  bin:
+    tsgo: bin/tsgo.js
+  checksum: 10/41c17ec53649c70f3d755d95a3836cb60a4c44eef2a91416b76f3bf3dfa09f53b4e0e33e4a5abad7c89a3edb7a9f6492254cf536d1c46374cbc272f1f5a0856e
   languageName: node
   linkType: hard
 
@@ -42231,6 +42313,7 @@ __metadata:
     "@proton/icons": "workspace:^"
     "@proton/pack": "workspace:^"
     "@proton/types": "workspace:^"
+    "@typescript/native-preview": "npm:^7.0.0-0"
     "@vercel/webpack-asset-relocator-loader": "npm:1.7.3"
     cross-env: "npm:^10.1.0"
     electron: "npm:39.8.10"
@@ -42263,6 +42346,7 @@ __metadata:
     "@types/react-helmet": "npm:^6.1.11"
     "@types/socketcluster-server": "npm:^19.0.1"
     "@types/webextension-polyfill": "npm:^0.12.5"
+    "@typescript/native-preview": "npm:^7.0.0-0"
     argon2id: "npm:^1.0.1"
     babel-loader: "npm:^10.0.0"
     babel-plugin-transform-require-context: "npm:^0.1.1"
@@ -42302,6 +42386,7 @@ __metadata:
     "@proton/testing": "workspace:^"
     "@proton/types": "workspace:^"
     "@proton/utils": "workspace:^"
+    "@typescript/native-preview": "npm:^7.0.0-0"
     core-js: "npm:^3.49.0"
     cross-env: "npm:^10.1.0"
     eslint: "npm:^9.39.4"
