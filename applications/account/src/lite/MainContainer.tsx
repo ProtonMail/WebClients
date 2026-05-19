@@ -13,6 +13,7 @@ import SpamFiltersSettings from './actions/SpamFiltersSettings';
 import SubscribeAccount from './actions/SubscribeAccount';
 import VPNLite from './actions/VPNLite';
 import WalletSettings from './actions/WalletSettings';
+import { CategoriesLiteView } from './components/CategoryView/CategoriesLiteView';
 import { SupportedActions } from './helper';
 
 interface Props {
@@ -35,6 +36,7 @@ const MainContainer = ({ action, redirect, app, searchParams, loader, layout }: 
             {action === SupportedActions.AccountSettings && <AccountSettings layout={layout} loader={loader} />}
             {action === SupportedActions.EmailSignatures && <SignatureSettings layout={layout} loader={loader} />}
             {action === SupportedActions.EmailSettings && <EmailSettings layout={layout} loader={loader} />}
+            {action === SupportedActions.CategoryView && <CategoriesLiteView layout={layout} loader={loader} />}
             {action === SupportedActions.LabelsSettings && <LabelsSettings layout={layout} />}
             {action === SupportedActions.SpamFiltersSettings && <SpamFiltersSettings layout={layout} />}
             {action === SupportedActions.PrivacySecuritySettings && (
