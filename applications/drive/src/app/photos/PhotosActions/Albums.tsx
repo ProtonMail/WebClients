@@ -40,14 +40,15 @@ export const renameAlbum = async (nodeUid: string, name: string): Promise<void> 
         const maybeNode = await getDriveForPhotos().updateAlbum(nodeUid, {
             name,
         });
+        const { node } = getNodeEntity(maybeNode);
         await getBusDriver().emit(
             {
                 type: BusDriverEventName.UPDATED_NODES,
                 items: [
                     {
-                        uid: maybeNode.ok ? maybeNode.value.uid : maybeNode.error.uid,
-                        parentUid: maybeNode.ok ? maybeNode.value.parentUid : maybeNode.error.parentUid,
-                        isShared: maybeNode.ok ? maybeNode.value.isShared : maybeNode.error.isShared,
+                        uid: node.uid,
+                        parentUid: node.parentUid,
+                        isShared: node.isShared,
                     },
                 ],
             },
@@ -78,18 +79,25 @@ export const toggleFavorite = async (nodeUid: string) => {
                 },
             ])
         );
+        const photosRootFolder = await getDriveForPhotos().getMyPhotosRootFolder();
+        const photosRootFolderUid = photosRootFolder.ok ? photosRootFolder.value.uid : undefined;
+
         await getBusDriver().emit(
             {
                 type: BusDriverEventName.UPDATED_NODES,
-                items: [{ uid: nodeUid, parentUid: photoItem.additionalInfo?.parentNodeUid }],
+                items: [
+                    {
+                        uid: nodeUid,
+                        parentUid: photoItem.additionalInfo?.parentNodeUid,
+                        isShared: photoItem.additionalInfo?.isShared,
+                    },
+                ],
             },
             getDriveForPhotos()
         );
 
         // Show notification only when favoriting from a shared album (i.e. the photo is copied to own stream).
         // We check if the photo's parent is NOT the user's own photos root folder.
-        const photosRootFolder = await getDriveForPhotos().getMyPhotosRootFolder();
-        const photosRootFolderUid = photosRootFolder.ok ? photosRootFolder.value.uid : undefined;
         const isOwnPhoto = photosRootFolderUid && photoItem.additionalInfo?.parentNodeUid === photosRootFolderUid;
         if (!isOwnPhoto && !isFavorite) {
             getNotificationsManager().createNotification({

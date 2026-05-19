@@ -1,10 +1,12 @@
 import type { FC } from 'react';
+import { useRef } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { Icon } from '@proton/components';
+import { uploadManager } from '@proton/drive/modules/upload';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { PHOTOS_ACCEPTED_INPUT } from '@proton/shared/lib/drive/constants';
 import { DRIVE_ANDROID_APP, DRIVE_IOS_APP } from '@proton/shared/lib/drive/urls';
@@ -13,16 +15,24 @@ import emptyPhotosSvg from '@proton/styles/assets/img/illustrations/empty-photos
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';
 
 import { DriveEmptyView } from '../../components/layout/DriveEmptyView';
-import { useFileUploadInput } from '../../store';
 
-interface EmptyPhotosProps {
-    volumeId: string;
-    shareId: string;
-    linkId: string;
-}
+export const EmptyPhotos: FC = () => {
+    const fileInput = useRef<HTMLInputElement>(null);
 
-export const EmptyPhotos: FC<EmptyPhotosProps> = ({ volumeId, shareId, linkId }) => {
-    const { inputRef: fileInput, handleClick, handleChange } = useFileUploadInput(volumeId, shareId, linkId, true);
+    const handleClick = () => {
+        if (fileInput.current) {
+            fileInput.current.value = '';
+            fileInput.current.click();
+        }
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { files } = e.target;
+        if (!files) {
+            return;
+        }
+        void uploadManager.uploadPhotos(files);
+    };
 
     return (
         <DriveEmptyView

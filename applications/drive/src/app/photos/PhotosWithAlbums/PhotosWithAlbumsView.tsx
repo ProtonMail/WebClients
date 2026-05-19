@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { useOutletContext } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
@@ -13,6 +13,7 @@ import { useUserSettings } from '../../hooks/user';
 import { useShiftKey } from '../../hooks/util/useShiftKey';
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../zustand/photos/layout.store';
 import { toggleFavorite } from '../PhotosActions/Albums';
+import { usePhotosStore } from '../usePhotos.store';
 import { EmptyPhotos } from './EmptyPhotos';
 import { EmptyTagView } from './EmptyTagView';
 import { PhotosGrid } from './PhotosGrid';
@@ -24,22 +25,8 @@ import { enqueueAdditionalInfo } from './loaders/loadAdditionalInfo';
 export const PhotosWithAlbumsView = () => {
     useAppTitle(c('Title').t`Photos`);
 
-    const {
-        albumPhotos,
-
-        volumeId,
-        shareId,
-        linkId,
-        photos,
-        isPhotosLoading,
-
-        selectedTags,
-        handleSelectTag,
-        isPhotosEmpty,
-        photoTimelineUids,
-        albumPhotosNodeUidToIndexMap,
-        photoNodeUidToIndexMap,
-    } = useOutletContext<PhotosLayoutOutletContext>();
+    const { isPhotosLoading, selectedTags, handleSelectTag, photoTimelineUids, albumPhotoTimelineUids } =
+        useOutletContext<PhotosLayoutOutletContext>();
 
     const { photoTags } = useUserSettings();
     const isShiftPressed = useShiftKey();
@@ -49,11 +36,28 @@ export const PhotosWithAlbumsView = () => {
             setPreviewNodeUid: state.setPreviewNodeUid,
         }))
     );
+
+    const photoItems = usePhotosStore((state) => state.photoItems);
+
+    const activeUids = useMemo(() => {
+        const uids = Array.from(
+            currentPageType === AlbumsPageTypes.ALBUMSGALLERY
+                ? (albumPhotoTimelineUids ?? new Set<string>())
+                : photoTimelineUids
+        );
+        if (selectedTags.includes(PhotoTag.All)) {
+            return uids;
+        }
+        return uids.filter((uid) => {
+            const tags = photoItems.get(uid)?.tags ?? [];
+            return selectedTags.some((tag) => tags.includes(tag));
+        });
+    }, [currentPageType, albumPhotoTimelineUids, photoTimelineUids, selectedTags, photoItems]);
+
     const { selectedItems, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection({
-        photos,
-        albumPhotos,
-        albumPhotosNodeUidToIndexMap,
-        photoNodeUidToIndexMap,
+        photoTimelineUids,
+        albumPhotoTimelineUids,
+        selectedTags,
     });
 
     const handleItemRender = useCallback((nodeUid: string, domRef: React.MutableRefObject<unknown>) => {
@@ -72,11 +76,17 @@ export const PhotosWithAlbumsView = () => {
         []
     );
 
+    // TODO: ALBUMSADDPHOTOS and ALBUMS page types may need their own empty-state logic
+    const isPhotosEmpty =
+        currentPageType === AlbumsPageTypes.ALBUMSGALLERY
+            ? (albumPhotoTimelineUids?.size ?? 0) === 0
+            : photoTimelineUids.size === 0;
+
     // We want to show the view in case they are more page to load, we can start to show what we already have
-    if (!volumeId || !shareId || !linkId || (isPhotosLoading && photoTimelineUids.size === 0)) {
+    if (isPhotosLoading && activeUids.length === 0) {
         return <Loader />;
     }
-    const isSelectedTagEmtpy = !isPhotosEmpty && photos.length === 0;
+    const isSelectedTagEmtpy = !isPhotosEmpty && activeUids.length === 0;
 
     const isAddAlbumPhotosView = currentPageType === AlbumsPageTypes.ALBUMSADDPHOTOS;
 
@@ -87,16 +97,16 @@ export const PhotosWithAlbumsView = () => {
                     <PhotosTags
                         selectedTags={selectedTags}
                         tags={[PhotoTag.All, ...photoTags]}
-                        onTagSelect={(newTags) => handleSelectTag(new AbortController().signal, newTags)}
+                        onTagSelect={handleSelectTag}
                     />
                 </div>
             )}
 
-            {isPhotosEmpty && <EmptyPhotos volumeId={volumeId} shareId={shareId} linkId={linkId} />}
+            {isPhotosEmpty && <EmptyPhotos />}
             {isSelectedTagEmtpy && <EmptyTagView tag={selectedTags[0]} />}
             {!isPhotosEmpty && !isSelectedTagEmtpy && (
                 <PhotosGrid
-                    data={photos}
+                    uids={activeUids}
                     onItemRender={handleItemRender}
                     onItemRenderLoadedLink={handleItemRenderLoadedLink}
                     isLoading={isPhotosLoading}
@@ -108,7 +118,8 @@ export const PhotosWithAlbumsView = () => {
                     isItemSelected={isItemSelected}
                     onFavorite={toggleFavorite}
                     isAddAlbumPhotosView={isAddAlbumPhotosView}
-                    rootLinkId={linkId}
+                    // TODO: rootLinkId is used to determine isOwnedByCurrentUser in PhotosCard — migrate to nodeUid-based check
+                    rootLinkId=""
                     hasSelection={selectedItems.length > 0 || currentPageType === AlbumsPageTypes.ALBUMSADDPHOTOS}
                 />
             )}
