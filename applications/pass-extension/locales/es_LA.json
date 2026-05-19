@@ -193,6 +193,9 @@
       "Copy forwarding address": [
         "Copiar la dirección de reenvío"
       ],
+      "Copy instructions": [
+        "Copiar instrucciones"
+      ],
       "Copy link": [
         "Copiar enlace"
       ],
@@ -210,6 +213,9 @@
       ],
       "Copy to clipboard": [
         "Copiar al portapapeles"
+      ],
+      "Copy token": [
+        "Copiar token"
       ],
       "Copy username": [
         "Copiar nombre de usuario"
@@ -246,6 +252,9 @@
       ],
       "Create note": [
         "Crear nota"
+      ],
+      "Create token": [
+        "Crear token"
       ],
       "Create vault": [
         "Crear bóveda"
@@ -451,6 +460,9 @@
       "Manage access": [
         "Gestionar acceso"
       ],
+      "Manage vault access": [
+        "Gestionar acceso de bóveda"
+      ],
       "Manually sync your data": [
         "Sincronizar los datos manualmente"
       ],
@@ -486,6 +498,9 @@
       ],
       "Multiple select": [
         "Selección múltiple"
+      ],
+      "New token": [
+        "Token nuevo"
       ],
       "Next month": [
         "Mes siguiente"
@@ -750,6 +765,9 @@
       "Via secure link": [
         "Vía enlace seguro"
       ],
+      "View agent activity": [
+        "Ver actividad del agente"
+      ],
       "View app logs": [
         "Ver registros de la aplicación"
       ],
@@ -776,6 +794,26 @@
       ],
       "Your password manager is not here? Request it.": [
         "¿No aparece su gestor de contraseñas? Solicítelo."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Actividad"
+      ],
+      "Activity details could not be loaded.": [
+        "No se pudieron cargar los detalles de la actividad."
+      ],
+      "Folder": [
+        "Carpeta"
+      ],
+      "Item": [
+        "Elemento"
+      ],
+      "Reason": [
+        "Motivo"
+      ],
+      "Vault": [
+        "Bóveda"
       ]
     },
     "Browser": {
@@ -1003,6 +1041,9 @@
       "Could not validate addresses at the moment.": [
         "No se pudieron validar las direcciones por el momento."
       ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "No se pudieron cargar las instrucciones de configuración del agente. Copie el token de abajo, no se mostrará de nuevo."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Faltan los encabezados esperados del archivo CSV: ${ missingHeaders }"
       ],
@@ -1046,6 +1087,9 @@
       "Error reporting problem": [
         "Error al reportar el problema"
       ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "La expiración debe estar entre 60 minutos y 1 año"
+      ],
       "Failed loading group members": [
         "Error al cargar los miembros del grupo"
       ],
@@ -1067,6 +1111,9 @@
       "Failed to change mailbox": [
         "Error al cambiar el buzón"
       ],
+      "Failed to create access token": [
+        "Error al crear el token de acceso"
+      ],
       "Failed to create domain": [
         "Error al crear el dominio"
       ],
@@ -1075,6 +1122,9 @@
       ],
       "Failed to create the contact": [
         "Error al crear el contacto"
+      ],
+      "Failed to delete access token": [
+        "Error al eliminar el token de acceso"
       ],
       "Failed to delete domain": [
         "Error al eliminar el dominio"
@@ -1094,6 +1144,9 @@
       "Failed to edit user's access.": [
         "Error al editar el acceso del usuario."
       ],
+      "Failed to load access tokens": [
+        "No se pudieron cargar las instrucciones de configuración del agente. Copie el token de abajo, no se mostrará de nuevo."
+      ],
       "Failed to load breaches for this address": [
         "Error al cargar vulneraciones para esta dirección"
       ],
@@ -1105,6 +1158,9 @@
       ],
       "Failed to load item history": [
         "Error al leer el historial de elementos"
+      ],
+      "Failed to load token actions": [
+        "Error al cargar las acciones de token"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Error al mover todos los elementos desde \"${ payload.content.name }\""
@@ -1162,6 +1218,9 @@
       ],
       "Failed to update random prefix generation setting.": [
         "No se pudo actualizar el ajuste de generación de prefijo aleatorio."
+      ],
+      "Failed to update vault access": [
+        "Error al actualizar el acceso a la bóveda"
       ],
       "Failed to verify domain": [
         "Error al verificar el dominio"
@@ -1228,6 +1287,9 @@
       ],
       "Name is required": [
         "El nombre es obligatorio."
+      ],
+      "Name must be 191 characters or fewer": [
+        "El nombre debe tener 191 caracteres como máximo"
       ],
       "Network error": [
         "Error de red"
@@ -1569,6 +1631,9 @@
         "${ row.breachCount } vulneración detectada",
         "${ row.breachCount } vulneraciones detectadas"
       ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } seleccionado(s)"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } día restante",
         "${ trialDaysLeft } días restantes"
@@ -1612,6 +1677,15 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "El acceso a ${ PASS_APP_NAME } requerirá su huella dactilar o el código PIN del dispositivo."
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "El token de acceso «${ action.token.Name }» ya expiró. Si lo elimina ya no se mostrará."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "El token de acceso «${ action.token.Name }» dejará de funcionar inmediatamente. Esta acción no se puede deshacer."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Los tokens de acceso, usados junto con ${ passCliLink }, permiten automatizar CI/CD o proporcionar a su agente de IA acceso restringido a lo que necesita para ejecutar su tarea."
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Acceda a sus contraseñas sobre la marcha con nuestras aplicaciones móviles."
@@ -1703,6 +1777,9 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Antes de exportar tus datos con este formato, abra y desactive Ajustes de Safari -> General -> Abrir archivos seguros al descargarlos. Esto evitará que Safari extraiga el archivo exportado de manera incorrecta."
       ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Entre 60 (1 hora) y 525600 (1 año)"
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Se registró el bloqueo automático biométrico. Úselo para desbloquear ${ PASS_APP_NAME }."
       ],
@@ -1772,14 +1849,29 @@
       "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
         "Copiado al portapapeles (expira en ${ timeoutDurationHumanReadable })"
       ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Copie el código Markdown que aparece a continuación y envíelo a su agente de IA. Esta es la única vez que se mostrará el token."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Copie este token ahora. Por razones de seguridad, no se mostrará de nuevo."
+      ],
       "Coupon successfully applied!": [
         "Se aplicó el cupón."
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Cree un token para integrar ${ PASS_APP_NAME } con sus scripts y herramientas."
       ],
       "Create contact illustration": [
         "Crear la ilustración del contacto"
       ],
+      "Created ${ createdDate }": [
+        "Creado el ${ createdDate }"
+      ],
       "Created ${ time }.": [
         "Creado el ${ time }."
+      ],
+      "Created item": [
+        "Elemento creado"
       ],
       "Creating alias...": [
         "Creando alias..."
@@ -1795,6 +1887,9 @@
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "Eso es el nombre a mostrar por defecto para los alias creados con ${ domainDisplay } a menos que se sobrescriba con el nombre a mostrar del alias."
+      ],
+      "Deleted item": [
+        "Elemento eliminado"
       ],
       "Deleted items will be moved here first": [
         "Los elementos eliminados serán movidos aquí primero"
@@ -1819,6 +1914,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Dominio: ${ domainPath } o @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Descargar pass-cli de ${ passCliLink }."
       ],
       "Drop file here to upload": [
         "Suelte los archivos aquí para cargarlos"
@@ -1898,14 +1996,28 @@
       "Enter your PIN code": [
         "Ingrese el código PIN"
       ],
+      "Every action this agent token has performed, newest first.": [
+        "Cada acción que ha realizado este token de agente, la más reciente primero."
+      ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Cada vez que su alias reciba un correo de alguien, se creará automáticamente un contacto."
+      ],
+      "Expired ${ abs } hour ago": [
+        "Expiró hace ${ abs } hora",
+        "Expiró hace ${ abs } horas"
       ],
       "Expires in": [
         "Expira en"
       ],
+      "Expires in ${ hours } hour": [
+        "Expira en ${ hours } hora",
+        "Expira en ${ hours } horas"
+      ],
       "Expires in ${ remainingTime }": [
         "Expira en ${ remainingTime }"
+      ],
+      "Expires in less than an hour": [
+        "Expira en menos de una hora"
       ],
       "Exporting your data...": [
         "Exportando sus datos..."
@@ -2063,6 +2175,9 @@
       "Loading...": [
         "Cargando..."
       ],
+      "Log out of any existing session:": [
+        "Salir de toda sesión existente:"
+      ],
       "Logging you out...": [
         "Cerrando la sesión..."
       ],
@@ -2090,6 +2205,9 @@
       "Move ${ count } item": [
         "Mover ${ count } elemento",
         "Mover ${ count } elementos"
+      ],
+      "Moved item to trash": [
+        "Elemento movido a la papelera"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
@@ -2122,6 +2240,9 @@
       "New": [
         "Nuevo"
       ],
+      "No activity recorded yet.": [
+        "Aún no hay actividad registrada."
+      ],
       "No breaches detected": [
         "No se detectaron vulneraciones"
       ],
@@ -2137,8 +2258,14 @@
       "No network connection": [
         "No hay conexión a la red"
       ],
+      "No vaults available.": [
+        "No hay bóvedas disponibles."
+      ],
       "None": [
         "Ninguno"
+      ],
+      "None selected": [
+        "Sin selección"
       ],
       "Not configured": [
         "No configurado"
@@ -2154,6 +2281,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "El acceso en línea a ${ PASS_APP_NAME } requerirá un código PIN. Se cerrará la sesión después de 3 intentos incorrectos."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Solo se muestran los tokens que han expirado en los últimos 30 días. Los tokens más antiguos son eliminados automáticamente."
       ],
       "Open ${ PASS_APP_NAME } in a larger window": [
         "Abra ${ PASS_APP_NAME } en su navegador"
@@ -2354,6 +2484,9 @@
       "Quickly autofill your saved credentials.": [
         "Completa automáticamente y rápidamente sus credenciales guardadas."
       ],
+      "Read item": [
+        "Leer elemento"
+      ],
       "Reconnect": [
         "Reconectar"
       ],
@@ -2387,6 +2520,9 @@
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
         "Al restablecer el historial se eliminarán permanentemente todas las versiones anteriores de los elementos y no se podrán deshacer."
       ],
+      "Restored item from trash": [
+        "Elemento restaurado de la papelera"
+      ],
       "Restoring items from trash": [
         "Restaurando los elementos de la papelera"
       ],
@@ -2413,6 +2549,9 @@
       ],
       "Select destination vault": [
         "Seleccione la bóveda de destino"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Seleccione las bóvedas que «${ token.Name }» puede leer."
       ],
       "Select where you want your imported vaults to be saved.": [
         "Seleccione dónde desea guardar sus bóvedas importadas."
@@ -2486,8 +2625,14 @@
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "Pulse el ícono ${ gearIcon } para personalizar el alias como desee."
       ],
+      "Test the token by logging in and listing vaults:": [
+        "Pruebe el token iniciando sesión y listando las bóvedas:"
+      ],
       "Thank you, the problem has been reported": [
         "Gracias, el problema ha sido reportado"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "El agente deberá proporcionar un motivo para cada acción que realice y cada acción se registrará en un registro de auditoría que usted podrá revisar. Después de la creación del token, recibirá instrucciones para copiar y pegar en su agente de IA."
       ],
       "The display name when sending an email from this alias.": [
         "El nombre a mostrar cuando envíe un correo electrónico desde este alias."
@@ -2519,6 +2664,9 @@
       ],
       "The user did not accept the invitation yet.": [
         "El usuario aún no aceptó la invitación."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Luego puede ir a ${ url } para copiar las instrucciones para enviar a su agente de IA."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Esta exportación no estará cifrada y cualquier persona con acceso al archivo exportado podrá ver sus contraseñas. Por seguridad, elimínelo una vez que haya terminado de usarlo."
@@ -2552,6 +2700,9 @@
       ],
       "This setting is enforced by your organization": [
         "La organización aplica esta configuración."
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Este token obtiene acceso de solo lectura a las bóvedas que seleccione. Puede leer elementos, pero no puede editarlos, compartir bóvedas ni invitar a otros. Puede cambiar esto más adelante."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Esta bóveda ya no se comparte con nadie. Invite a personas para compartirla con otros."
@@ -2625,6 +2776,9 @@
       "Update login": [
         "Actualizar el inicio de sesión"
       ],
+      "Updated item": [
+        "Elemento actualizado"
+      ],
       "Updating vault organization...": [
         "Actualizando la bóveda de la organización"
       ],
@@ -2633,6 +2787,9 @@
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Mejore el plan ahora para desbloquear funciones premium"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Actualice a ${ PASS_APP_NAME } Plus para crear tokens de acceso y usar ${ PASS_APP_NAME } programáticamente."
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Mejore a un plan de pago para crear varias bóvedas."
@@ -2657,6 +2814,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed.": [
         "La bóveda «${ share.content.name }» fue eliminada."
+      ],
+      "Vault access granted": [
+        "Acceso de bóveda concedido"
       ],
       "Vault organization successfully updated": [
         "Bóveda de la organización actualizada con éxito"
@@ -2938,6 +3098,9 @@
       "A-Z": [
         "A-Z"
       ],
+      "Access tokens": [
+        "Tokens de acceso"
+      ],
       "Account": [
         "Cuenta"
       ],
@@ -3210,6 +3373,12 @@
       ],
       "Expired": [
         "Expirado"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Tokens expirados (${ expired.length })"
+      ],
+      "Expires in (minutes)": [
+        "Expira en (minutos)"
       ],
       "Expiry Date": [
         "Fecha de expiración"
@@ -3883,6 +4052,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Use ${ PASS_APP_NAME } como gestor de contraseñas de su navegador por defecto"
       ],
+      "Use for AI agent": [
+        "Uso para agente de IA"
+      ],
       "Used in": [
         "Usada en"
       ],
@@ -3897,6 +4069,9 @@
       ],
       "Value:": [
         "Valor:"
+      ],
+      "Vault access": [
+        "Acceso de bóveda"
       ],
       "Vault ID": [
         "ID de bóveda"
@@ -4002,6 +4177,9 @@
       ],
       "${ reason } has been enabled": [
         "Se ha activado ${ reason }."
+      ],
+      "Access token deleted": [
+        "Token de acceso eliminado"
       ]
     },
     "Onboarding": {
@@ -4185,6 +4363,9 @@
       "Coupon": [
         "Cupón"
       ],
+      "e.g. 60": [
+        "p. ej. 60"
+      ],
       "e.g. My automation script": [
         "p. ej., mi script de automatización"
       ],
@@ -4345,6 +4526,20 @@
         "Desconocido"
       ]
     },
+    "Status": {
+      "Active": [
+        "Activo"
+      ],
+      "Agent": [
+        "Agente"
+      ],
+      "Expired": [
+        "Expirado"
+      ],
+      "Expiring soon": [
+        "Expirará pronto"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Se activó la sincronización de alias. Los alias de SimpleLogin puede tomar un tiempo en sincronizarse."
@@ -4439,6 +4634,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Los tokens de acceso requieren de ${ PASS_APP_NAME } Plus"
+      ],
       "Account protection": [
         "Protección de la cuenta"
       ],
@@ -4448,11 +4646,17 @@
       "Activity": [
         "Actividad"
       ],
+      "Activity for \"${ token.Name }\"": [
+        "Actividad para «${ token.Name }»"
+      ],
       "Add custom domain": [
         "Agregar un dominio personalizado"
       ],
       "Add mailbox": [
         "Agregar un buzón"
+      ],
+      "Agent setup instructions": [
+        "Instrucciones de configuración del agente"
       ],
       "Alias contacts": [
         "Contactos del alias"
@@ -4511,6 +4715,9 @@
       "Create contact": [
         "Crear contacto"
       ],
+      "Create new access token": [
+        "Crear token de acceso"
+      ],
       "Create PIN code": [
         "Crear código PIN"
       ],
@@ -4541,6 +4748,9 @@
       "Delete ${ deletedItemsCount } item?": [
         "¿Eliminar ${ deletedItemsCount } elemento?",
         "¿Eliminar ${ deletedItemsCount } elementos?"
+      ],
+      "Delete access token?": [
+        "¿Eliminar token de acceso?"
       ],
       "Delete domain": [
         "Eliminar el dominio"
@@ -4674,6 +4884,9 @@
       "Mailbox": [
         "Buzón"
       ],
+      "Manage vault access": [
+        "Gestionar el acceso a la bóveda"
+      ],
       "Mark as resolved?": [
         "¿Marcar como resuelta?"
       ],
@@ -4708,6 +4921,9 @@
       ],
       "Next": [
         "Siguiente"
+      ],
+      "No access tokens yet": [
+        "Aún no hay tokens de acceso"
       ],
       "No excluded items": [
         "No hay elementos excluidos"
@@ -4930,6 +5146,9 @@
       "Your exposed information": [
         "Sus datos expuestos"
       ],
+      "Your new access token": [
+        "Su token de acceso nuevo"
+      ],
       "Your vault is empty": [
         "La bóveda está vacía"
       ],
@@ -5089,6 +5308,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "La contraseña adicional debe tener al menos 8 caracteres"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Error de escritura automática. Asegúrese de que ${ PASS_APP_NAME } tiene los permisos necesarios e intente de nuevo (${ error })."
       ],
       "Failed to load breaches.": [
         "Error al cargar vulneraciones."
