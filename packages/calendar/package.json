@@ -30,6 +30,7 @@
         "./videoConferencing/constants": "./components/videoConferencing/constants.ts",
         "./videoConferencing/helpers": "./components/videoConferencing/modelHelpers.ts",
         "./videoConferencing/protonMeetHelpers": "./components/videoConferencing/protonMeet/protonMeetHelpers.ts",
+        "./videoConferencing/zoomHelpers": "./components/videoConferencing/zoom/zoomHelpers.ts",
         "./videoConferencing/telemetry": "./components/videoConferencing/useVideoConfTelemetry.tsx",
         "./videoConferencing/videoConfHelpers": "./components/videoConferencing/videoConfHelpers.ts",
         "./videoConferencing/widget": "./components/videoConferencing/useVideoConferencingWidget.tsx",
