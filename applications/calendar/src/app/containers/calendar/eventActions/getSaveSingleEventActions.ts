@@ -1,4 +1,5 @@
 import type { PublicKeyReference } from '@protontech/crypto';
+
 import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_METHOD, SAVE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants';
