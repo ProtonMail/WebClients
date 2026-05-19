@@ -1,10 +1,10 @@
 import type { MutableRefObject } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
-import type { FocusableElement } from 'tabbable';
-import { isFocusable, tabbable } from 'tabbable';
-
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
+
+import { isFocusable, tabbable } from './tabbableWrapper';
+import type { FocusableElement } from './tabbableWrapper';
 
 const findParentElement = <T extends Element>(el: Element | null | undefined, cb: (el: Element) => el is T) => {
     let nextEl = el;
