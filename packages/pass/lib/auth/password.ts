@@ -72,7 +72,7 @@ export const verifyExtraPassword = async (credentials: UnsafePasswordCredentials
 
     const srp = await getSrp(authInfo, credentials, Version);
 
-    await api({
+    const { ServerProof } = await api({
         url: 'pass/v1/user/srp/auth',
         method: 'post',
         data: {
@@ -81,6 +81,10 @@ export const verifyExtraPassword = async (credentials: UnsafePasswordCredentials
             SrpSessionID: info.SrpSessionID,
         },
     });
+
+    if (ServerProof !== srp.expectedServerProof) {
+        throw new Error('Unexpected server proof');
+    }
 
     return true;
 };
