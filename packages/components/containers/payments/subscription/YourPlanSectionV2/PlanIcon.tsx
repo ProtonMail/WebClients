@@ -116,15 +116,17 @@ export const PlanIcon = ({
             </LogoIconShape>
         );
     }
-    if (
-        hasMeetBusiness(subscription) ||
-        planName === PLANS.MEET_BUSINESS ||
-        hasMeet(subscription) ||
-        planName === PLANS.MEET
-    ) {
+    if (hasMeetBusiness(subscription) || planName === PLANS.MEET_BUSINESS) {
         return (
             <LogoIconShape border={false} size={size}>
                 <CustomLogo planName={PLANS.MEET_BUSINESS} app={app} size={size} />
+            </LogoIconShape>
+        );
+    }
+    if (hasMeet(subscription) || planName === PLANS.MEET) {
+        return (
+            <LogoIconShape size={size}>
+                <CustomLogo planName={PLANS.MEET} app={app} size={size} />
             </LogoIconShape>
         );
     }

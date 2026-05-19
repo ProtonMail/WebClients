@@ -19,6 +19,7 @@ import mailPro from './logo/plan-mail-pro.svg';
 import mail from './logo/plan-mail.svg';
 import meetBusiness from './logo/plan-meet-business.svg';
 import meetFree from './logo/plan-meet-free.svg';
+import meet from './logo/plan-meet.svg';
 import passBusiness from './logo/plan-pass-business.svg';
 import passFamily from './logo/plan-pass-family.svg';
 import passFree from './logo/plan-pass-free-light.svg';
@@ -52,6 +53,7 @@ export type CustomLogoPlanName =
     | PLANS.BUNDLE_PRO_2024
     | PLANS.BUNDLE_BIZ_2025
     | PLANS.MEET_BUSINESS
+    | PLANS.MEET
     | PLANS.VPN_PASS_BUNDLE
     | PLANS.PASS_FAMILY
     | PLANS.PASS_LIFETIME
@@ -119,6 +121,9 @@ const CustomLogo = ({ planName, app, size, dark, ...rest }: Props) => {
     }
     if (planName === PLANS.VPN_PASS_BUNDLE || planName === PLANS.VPN_PASS_BUNDLE_BUSINESS) {
         return <img {...rest} src={vpnPassBundle} width={size} alt="" className="w-full" />;
+    }
+    if (planName === PLANS.MEET) {
+        return <img {...rest} src={meet} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.MEET_BUSINESS) {
         return <img {...rest} src={meetBusiness} width={size} alt="" className="w-full" />;
