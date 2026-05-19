@@ -14,6 +14,7 @@ import type {
     DriveExplorerSelection,
     GridDefinition,
 } from './types';
+import { useArrowKeyNavigation } from './useArrowKeyNavigation';
 import { useGridVirtualizer } from './useGridVirtualizer';
 import { useItemVisibility } from './useItemVisibility';
 
@@ -103,6 +104,13 @@ export const DriveExplorerGridBody = ({
         containerRef,
         totalItems
     );
+
+    useArrowKeyNavigation({
+        containerRef,
+        itemIds,
+        itemsPerRow,
+        rowHeightWithGap,
+    });
 
     return (
         <div
