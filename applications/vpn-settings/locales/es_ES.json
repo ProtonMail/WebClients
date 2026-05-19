@@ -122,6 +122,9 @@
       "Back to sign in": [
         "Volver al inicio de sesión"
       ],
+      "Back to sign-in": [
+        "Volver al inicio de sesión"
+      ],
       "Block": [
         "Bloquear"
       ],
@@ -6528,6 +6531,10 @@
         "Creando servidor de puerta de enlace: ${ serverNumber } / ${ total }",
         "Creando servidores de puerta de enlace: ${ serverNumber } / ${ total }"
       ],
+      "Creating gateway with ${ total } server": [
+        "Creando puerta de enlace con ${ total } servidor",
+        "Creando puerta de enlace con ${ total } servidores"
+      ],
       "Creating your account": [
         "Creando tu cuenta"
       ],
@@ -11327,8 +11334,8 @@
       "${ app } product updates": [
         "Actualizaciones de producto para ${ app }"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Boletín de ${ BRAND_NAME } for Business"
+      "${ BRAND_NAME } for Business communications": [
+        "${ BRAND_NAME } para comunicaciones empresariales"
       ],
       "${ BRAND_NAME } important announcements": [
         "Avisos importantes de ${ BRAND_NAME }"
@@ -11381,8 +11388,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "Durante el primer mes de uso de un producto de ${ BRAND_NAME }"
       ],
-      "Email subscriptions": [
-        "Suscripciones de correo"
+      "Email communications": [
+        "Comunicaciones por correo electrónico"
       ],
       "In-app notifications": [
         "Notificaciones dentro de la aplicación"
@@ -16261,6 +16268,9 @@
       ],
       "Single-sign on (SSO)": [
         "Inicio de sesión único (SSO)"
+      ],
+      "Something went wrong": [
+        "Se ha producido un error."
       ],
       "Spam, block, and allow lists": [
         "Listas de direcciones permitidas, bloqueadas y spam"
