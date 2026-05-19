@@ -219,6 +219,9 @@
       "Back to sign in": [
         "Torneu a l'inici de sessió"
       ],
+      "Back to sign-in": [
+        "Tornar a l'inici de sessió"
+      ],
       "Block": [
         "Bloqueja"
       ],
@@ -1495,7 +1498,7 @@
         "Estableix com a predeterminat"
       ],
       "Set as default mail application": [
-        "Establiu com a aplicació de correu per defecte"
+        "Establiu com aplicació de correu per defecte"
       ],
       "Set catch-all": [
         "Configura l'adreça d'arreplega"
@@ -5242,7 +5245,7 @@
         "${ MAIL_APP_NAME } no és la vostra aplicació de correu per defecte."
       ],
       "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } és la vostra aplicació de correu  electrònic per defecte."
+        "${ MAIL_APP_NAME } és la vostra aplicació de correu electrònic per defecte."
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } manté segures les dades del vostre negoci i us permet enviar correus electrònics xifrats a qualsevol persona."
@@ -5391,9 +5394,6 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Llegiu, responeu i estigueu al dia de Gmail des de ${ MAIL_APP_NAME }"
       ],
-      "Send a code to your recovery email or phone": [
-        "Envieu un codi al vostre correu electrònic o telèfon de recuperació."
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Configureu comptes per a tots els usuaris i convideu-los a unir-se a ${ BRAND_NAME }."
       ],
@@ -5442,6 +5442,9 @@
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Milloreu el vostre pla per a obtenir ${ activatePmUser } a fi de disposar d'una adreça de correu electrònic més curta i fàcil de recordar, a més de la vostra actual."
+      ],
+      "Use a recovery method to reset your password": [
+        "Feu servir un mètode de recuperació per restablir la contrasenya"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilitzeu aquesta guia per aconseguir que la vostra organització es beneficiï ràpidament de l'ecosistema d'encriptació i privadesa líder del sector del ${ BRAND_NAME }."
@@ -8898,6 +8901,9 @@
       ],
       "Group address:": [
         "Adreça del grup:"
+      ],
+      "Roles and permission:": [
+        "Rols i permisos:"
       ]
     },
     "Group member count": {
@@ -8955,6 +8961,14 @@
       ],
       "Group membership": [
         "Membres del grup"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "General"
+      ],
+      "Roles and permissions": [
+        "Rols i permisos"
       ]
     },
     "Header": {
@@ -9600,6 +9614,9 @@
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "Els plans d'empresa de ${ BRAND_NAME } donen al vostre equip totes les eines de col·laboració que necessiten per ser productius i organitzats en la seva feina, mentre protegeixen el vostre negoci."
       ],
+      "${ BRAND_NAME } Free": [
+        "${ BRAND_NAME } gratuït"
+      ],
       "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
         "${ BRAND_NAME } es finança de manera independent i funciona sense publicitat.\nA continuació teniu exemples de com s'ha aplicat aquesta independència a la pràctica."
       ],
@@ -9705,6 +9722,9 @@
       ],
       "${ name } for Windows": [
         "${ name } per a Windows"
+      ],
+      "${ name } is not available": [
+        "${ name } no està disponible"
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: no posar en quarantena ni rebutjar correus electrònics no autoritzats. Normalment, la gent només utilitza aquesta política per solucionar problemes o fer proves."
@@ -9866,6 +9886,9 @@
       ],
       "(formerly Twitter)": [
         "(abansTwitter)"
+      ],
+      "**${ appName }** is not available for your account.": [
+        "**${ appName }** no està disponible per al vostre compte."
       ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "No s'admet **${ appName }** a la vostra organització **${ organizationName }**."
@@ -10314,6 +10337,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Abans que pugueu enviar i rebre missatges des de les noves direccions, necessiteu crear les seves claus de xifrat respectives."
       ],
+      "BEST FOR TV": [
+        "EL MILLOR PER AL TELEVISOR"
+      ],
       "Beta": [
         "Beta"
       ],
@@ -10445,6 +10471,9 @@
       ],
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Continueu connectant aquesta entitat amb la vostra organització de ${ BRAND_NAME }."
+      ],
+      "Continue with ${ BRAND_NAME } Free": [
+        "Continueu amb la versió gratuïta de ${ BRAND_NAME }"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Si continueu, connectareu el vostre compte de ${ BRAND_NAME } amb ${ name }."
@@ -11006,6 +11035,9 @@
       ],
       "Get visibility into account access": [
         "Obtingueu visibilitat sobre l'accés al compte"
+      ],
+      "Get VPN Plus": [
+        "Obtingueu VPN Plus"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Poseu un nom descriptiu al testimoni, com ara el servei amb què teniu previst utilitzar-lo, i seleccioneu una de les vostres adreces de domini personalitzat actives. Només aquesta adreça podrà enviar correus amb aquest testimoni."
@@ -12101,6 +12133,12 @@
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Mostra la imatge de cada remitent a la llista de missatges. Es mostraran les inicials del remitent si no hi ha una fotografia disponible."
       ],
+      "Show fewer benefits": [
+        "Mostra menys avantatges"
+      ],
+      "Show more benefits": [
+        "Mostra més avantatges"
+      ],
       "Show original message": [
         "Mostra el missatge original"
       ],
@@ -12634,6 +12672,9 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Tret que tanqueu la sessió del vostre compte o canvieu la vostra contrasenya, la vostra sessió es mantindrà activa. Les sessions expiraran després de 30 dies d'inactivitat."
       ],
+      "Unlock streaming with VPN Plus.": [
+        "Desbloquegeu la reproducció en continu amb VPN Plus"
+      ],
       "Unsaved changes": [
         "Canvis no desats"
       ],
@@ -12780,6 +12821,9 @@
       ],
       "Visa Secure logo": [
         "Logo de Visa Secure"
+      ],
+      "VPN Plus": [
+        "VPN Plus"
       ],
       "VPN with dedicated servers and IP addresses": [
         "VPN amb adreces IP i servidors dedicats"
@@ -17024,6 +17068,9 @@
       "99.95% SLA": [
         "SLA del 99,5%"
       ],
+      "Access all countries": [
+        "Accediu a tots els països"
+      ],
       "Activity logs and policy": [
         "Registres d'activitat i política"
       ],
@@ -17206,6 +17253,9 @@
       "Multiple admin roles": [
         "Múltiples rols d'administració"
       ],
+      "No streaming support": [
+        "No hi ha suport per la reproducció en continu"
+      ],
       "No-logs policy": [
         "Política de no registres"
       ],
@@ -17371,6 +17421,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Sense límit de volum / amplada de banda"
+      ],
+      "Unlock streaming": [
+        "Desbloquegeu la reproducció en continu"
       ],
       "Up to ${ n } user": [
         "Fins a ${ n } usuari",
@@ -17846,6 +17899,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } país",
+        "${ n } països"
+      ],
       "Access advanced VPN features": [
         "Accediu a característiques de VPN avançades"
       ],
@@ -17907,8 +17964,8 @@
       "${ app } product updates": [
         "Actualitzacions de producte per a ${ app }"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Butlletí de ${ BRAND_NAME } for Business"
+      "${ BRAND_NAME } for Business communications": [
+        "${ BRAND_NAME } per a comunicacions d'empresa"
       ],
       "${ BRAND_NAME } important announcements": [
         "Anuncis importants de ${ BRAND_NAME }"
@@ -17961,8 +18018,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "Durant el primer mes d'ús d'un producte de ${ BRAND_NAME }"
       ],
-      "Email subscriptions": [
-        "Subscripcions per correu electrònic"
+      "Email communications": [
+        "Comunicacions per correu electrònic"
       ],
       "In-app notifications": [
         "Notificacions dins l'aplicació"
@@ -24612,7 +24669,7 @@
         "Canvia la segona contrasenya"
       ],
       "Check your default mail application": [
-        "Comproveu la vostra aplicació de correu predeterminada"
+        "Comproveu la vostra aplicació de correu per defecte"
       ],
       "Choose a provider": [
         "Escolliu un proveïdor"
@@ -25153,6 +25210,9 @@
       ],
       "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
         "Obtingueu ${ planMaxSpace } d'emmagatzematge per als vostres fitxers, fotos i documents amb ${ planName }. ${ upgradeButton }"
+      ],
+      "Get ${ VPN_APP_NAME } on your TV": [
+        "Obtingueu ${ VPN_APP_NAME } al vostre televisor"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Obteniu ${ vpnPlus } per accedir a tots els servidors"
@@ -25808,6 +25868,9 @@
       ],
       "Some of your encrypted data is locked": [
         "Algunes de les vostres dades xifrades estan bloquejades"
+      ],
+      "Something went wrong": [
+        "S'ha produït un error."
       ],
       "Sort folders alphabetically": [
         "Ordena les carpetes alfabèticament"

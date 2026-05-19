@@ -1338,9 +1338,6 @@
       "Set as default": [
         "I-set bilang default"
       ],
-      "Set as default mail application": [
-        "I-set bilang default na mail application"
-      ],
       "Set catch-all": [
         "I-set ang catch-all"
       ],
@@ -4520,12 +4517,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "Pinapayagan ka ng ${ DOCS_SHORT_APP_NAME } sa ${ DRIVE_APP_NAME } na makipagtulungan sa iba sa isang secure at naka-encrypt na environment."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "Hindi ang ${ MAIL_APP_NAME } ang default na mail application."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "Ang ${ MAIL_APP_NAME } ay ang iyong default na mail application."
-      ],
       "A checked box means the feature is disabled.": [
         "Ang naka-check na kahon ay nangangahulugang hindi pinagana ang feature."
       ],
@@ -4627,9 +4618,6 @@
       ],
       "No one in your organization can connect to shared servers.": [
         "Walang sinuman sa iyong organisasyon ang makakakonekta sa mga shared server."
-      ],
-      "Send a code to your recovery email or phone": [
-        "Magpadala ng code sa recovery email o telepono"
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "I-set up ang mga account para sa lahat ng user at imbitahan silang sumali sa ${ BRAND_NAME }."
@@ -7908,9 +7896,6 @@
       "Contact us": [
         "Makipag-ugnayan sa amin"
       ],
-      "Downloads": [
-        "Mga Download"
-      ],
       "Enjoying ${ planName }?": [
         "Nag-eenjoy sa ${ planName }?"
       ],
@@ -11128,9 +11113,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Kapag hindi pinagana, pinipigilan nito ang mga remote na larawan na mag-load nang hindi mo nalalaman."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Kapag pinagana, susuriin kung ang ${ MAIL_APP_NAME } ay ang iyong default na mail application at aabisuhan ka kung hindi."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Kapag pinagagana ang SAML para sa ${ appName } sa iyong identity provider, maaaring hilingin sa iyo na gamitin ang callback (ACS) URL at ID ng issuer. I-copy-paste lang ang data sa ibaba sa mga field ng iyong identity provider."
@@ -15588,9 +15570,6 @@
       "${ app } product updates": [
         "Mga product update ng ${ app }"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Newsletter ng ${ BRAND_NAME } for Business"
-      ],
       "${ BRAND_NAME } important announcements": [
         "Mga mahahalagang anunsyo ng ${ BRAND_NAME }"
       ],
@@ -15638,9 +15617,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Sa iyong unang buwan ng paggamit ng produktong ${ BRAND_NAME }"
-      ],
-      "Email subscriptions": [
-        "Mga subscription sa email"
       ],
       "In-app notifications": [
         "Mga in-app na abiso"
@@ -21325,9 +21301,6 @@
       "Change second password": [
         "Palitan ang pangalawang password"
       ],
-      "Check your default mail application": [
-        "Suriin ang default na mail application"
-      ],
       "Choose an account": [
         "Pumili ng account"
       ],
@@ -22366,6 +22339,9 @@
       ],
       "Snooze:": [
         "I-snooze:"
+      ],
+      "Something went wrong": [
+        "Nagkaproblema"
       ],
       "Sort folders alphabetically": [
         "I-sort ang mga folder nang paalpabeto"

@@ -1338,9 +1338,6 @@
       "Set as default": [
         "ตั้งเป็นค่าเริ่มต้น"
       ],
-      "Set as default mail application": [
-        "ตั้งเป็นแอปพลิเคชั่นเมลค่าเริ่มต้น"
-      ],
       "Set catch-all": [
         "ตั้งค่าฟีเจอร์ catch-all"
       ],
@@ -4497,12 +4494,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } ใน ${ DRIVE_APP_NAME } ช่วยให้ทำงานร่วมกับผู้อื่นได้ในสภาพแวดล้อมที่ปลอดภัยและเข้ารหัส"
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } ไม่ใช่แอปพลิเคชันอีเมลเริ่มต้นของคุณ"
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } เป็นแอปพลิเคชันอีเมลเริ่มต้นของคุณ"
-      ],
       "A checked box means the feature is disabled.": [
         "กล่องที่ทำเครื่องหมายหมายถึงคุณสมบัตินั้นถูกปิดใช้งาน"
       ],
@@ -4604,9 +4595,6 @@
       ],
       "No one in your organization can connect to shared servers.": [
         "ไม่มีใครในองค์กรที่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ที่แชร์ได้"
-      ],
-      "Send a code to your recovery email or phone": [
-        "ส่งรหัสไปยังอีเมลหรือโทรศัพท์สำหรับการกู้คืนของคุณ"
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "ตั้งค่าบัญชีสำหรับผู้ใช้ทุกคนและเชิญให้เข้าร่วม ${ BRAND_NAME }"
@@ -7867,9 +7855,6 @@
       "Contact us": [
         "ติดต่อเรา"
       ],
-      "Downloads": [
-        "ดาวน์โหลด"
-      ],
       "Enjoying ${ planName }?": [
         "ชอบ ${ planName } หรือไม่?"
       ],
@@ -11038,9 +11023,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "เมื่อปิดใช้งาน จะป้องกันไม่ให้โหลดรูปภาพระยะไกลโดยที่คุณไม่ทราบ"
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "เมื่อเปิดใช้งาน จะตรวจสอบว่า ${ MAIL_APP_NAME } เป็นแอปพลิเคชันอีเมลเริ่มต้นของคุณหรือไม่ และแจ้งให้ทราบหากไม่ใช่"
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "เมื่อเปิดใช้งาน SAML สำหรับ ${ appName } ในผู้ให้บริการข้อมูลระบุตัวตน คุณอาจได้รับแจ้งให้ใช้ Callback (ACS) URL และ Issuer ID เพียงคัดลอกและวางข้อมูลด้านล่างลงในช่องข้อมูลของผู้ให้บริการข้อมูลระบุตัวตน"
@@ -15458,9 +15440,6 @@
       "${ app } product updates": [
         "การอัปเดตผลิตภัณฑ์ ${ app }"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "จดหมายข่าว ${ BRAND_NAME } for Business"
-      ],
       "${ BRAND_NAME } important announcements": [
         "ประกาศสำคัญจาก ${ BRAND_NAME }"
       ],
@@ -15508,9 +15487,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "ในช่วงเดือนแรกของการใช้ผลิตภัณฑ์ ${ BRAND_NAME }"
-      ],
-      "Email subscriptions": [
-        "สมัครสมาชิกอีเมล"
       ],
       "In-app notifications": [
         "การแจ้งเตือนในแอป"
@@ -21155,9 +21131,6 @@
       "Change second password": [
         "เปลี่ยนรหัสผ่านที่สอง"
       ],
-      "Check your default mail application": [
-        "ตรวจสอบแอปพลิเคชั่นเมลค่าเริ่มต้น"
-      ],
       "Choose an account": [
         "เลือกบัญชี"
       ],
@@ -22192,6 +22165,9 @@
       ],
       "Snooze:": [
         "ปิดเสียงเตือนชั่วคราว:"
+      ],
+      "Something went wrong": [
+        "เกิดข้อผิดพลาดบางอย่าง"
       ],
       "Sort folders alphabetically": [
         "เรียงแฟ้มตามตัวอักษร"

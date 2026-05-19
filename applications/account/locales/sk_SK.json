@@ -219,6 +219,9 @@
       "Back to sign in": [
         "Späť na prihlásenie"
       ],
+      "Back to sign-in": [
+        "Späť na prihlásenie"
+      ],
       "Block": [
         "Blokovať"
       ],
@@ -1493,9 +1496,6 @@
       ],
       "Set as default": [
         "Nastaviť ako predvolený"
-      ],
-      "Set as default mail application": [
-        "Nastaviť ako predvolenú poštovú aplikáciu"
       ],
       "Set catch-all": [
         "Nastavenie doménového koša"
@@ -5302,12 +5302,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vám umožňuje spolupracovať s ostatnými v zabezpečenom, šifrovanom prostredí."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } nie je vašou predvolenou poštovou aplikáciou."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } je vašou predvolenou poštovou aplikáciou."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } uchováva vaše obchodné údaje v bezpečí a umožňuje posielať šifrované emaily komukoľvek."
       ],
@@ -5455,9 +5449,6 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Čítajte, odpovedajte a majte prehľad o Gmaile z aplikácie ${ MAIL_APP_NAME }"
       ],
-      "Send a code to your recovery email or phone": [
-        "Odoslať kód na váš obnovovací email alebo telefón"
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Nastavte účty pre všetkých používateľov a pozvite ich, aby sa pripojili k službe ${ BRAND_NAME }."
       ],
@@ -5508,6 +5499,9 @@
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Zvýšením úrovne získate ${ activatePmUser } - kratšiu, ľahko zapamätateľnú emailovú adresu k vašej súčasnej adrese."
+      ],
+      "Use a recovery method to reset your password": [
+        "Na resetovanie hesla použite metódu obnovenia"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Použite tohto sprievodcu, aby vaša organizácia mohla okamžite využívať výhody špičkového ekosystému šifrovania a ochrany osobných údajov od spoločnosti ${ BRAND_NAME }."
@@ -9296,7 +9290,7 @@
         "Kontaktujte nás"
       ],
       "Downloads": [
-        "Na stiahnutie"
+        "Stiahnuté"
       ],
       "Enjoying ${ planName }?": [
         "Páči sa vám ${ planName }?"
@@ -13158,9 +13152,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Pokiaľ je vypnuté, zabraňuje sa načítaniu vzdialených obrázkov bez vášho vedomia."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Ak je táto funkcia povolená, skontrolujeme, či je ${ MAIL_APP_NAME } vašou predvolenou poštovou aplikáciou a upozorníme vás, ak nie je."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Pri povolení SAML pre ${ appName } u poskytovateľa identity sa môže zobraziť výzva na použitie URL adresy spätného volania (ACS) a ID vydavateľa. Stačí skopírovať a vložiť nižšie uvedené údaje do polí poskytovateľa identity."
@@ -18306,8 +18297,8 @@
       "${ app } product updates": [
         "Aktualizácie produktu ${ app }"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } novinky pre firmy"
+      "${ BRAND_NAME } for Business communications": [
+        "${ BRAND_NAME } pre firemnú komunikáciu"
       ],
       "${ BRAND_NAME } important announcements": [
         "Dôležité oznámenia ${ BRAND_NAME }"
@@ -18360,8 +18351,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "Počas prvého mesiaca používania produktu ${ BRAND_NAME }"
       ],
-      "Email subscriptions": [
-        "Zasielanie pravidelných emailov"
+      "Email communications": [
+        "Emailová komunikácia"
       ],
       "In-app notifications": [
         "Oznámenia v aplikácii"
@@ -25213,9 +25204,6 @@
       "Change second password": [
         "Zmeniť druhé heslo"
       ],
-      "Check your default mail application": [
-        "Skontrolovať predvolenú poštovú aplikáciu"
-      ],
       "Choose a provider": [
         "Vyberte poskytovateľa"
       ],
@@ -26418,6 +26406,9 @@
       ],
       "Some of your encrypted data is locked": [
         "Niektoré z vašich šifrovaných údajov sú uzamknuté"
+      ],
+      "Something went wrong": [
+        "Niečo sa pokazilo"
       ],
       "Sort folders alphabetically": [
         "Zoradiť priečinky abecedne"

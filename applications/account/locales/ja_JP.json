@@ -1362,9 +1362,6 @@
       "Set as default": [
         "デフォルトとして設定"
       ],
-      "Set as default mail application": [
-        "デフォルトのメールアプリとして設定"
-      ],
       "Set catch-all": [
         "Catch-All を設定"
       ],
@@ -4650,12 +4647,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DRIVE_APP_NAME }の${ DOCS_SHORT_APP_NAME }では、安全で暗号化された環境で他の人と共同作業ができます。"
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME }はデフォルトのメールアプリではありません。"
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "既定のメールアプリは${ MAIL_APP_NAME }です。"
-      ],
       "A checked box means the feature is disabled.": [
         "チェックボックスは、機能が無効になっていることを意味します。"
       ],
@@ -4763,9 +4754,6 @@
       ],
       "No one in your organization can connect to shared servers.": [
         "組織内の誰も共有サーバーに接続することはできません。"
-      ],
-      "Send a code to your recovery email or phone": [
-        "回復用メールアドレスまたは電話番号にコードを送信"
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "すべてのユーザーに対してアカウントを設定し、${ BRAND_NAME }に参加するよう招待してください。"
@@ -8221,9 +8209,6 @@
       "Contact us": [
         "お問い合わせ"
       ],
-      "Downloads": [
-        "ダウンロード"
-      ],
       "Enjoying ${ planName }?": [
         "${ planName } を楽しんでいますか？"
       ],
@@ -10609,6 +10594,9 @@
       "Recently used servers:": [
         "最近使用したサーバー:"
       ],
+      "RECOMMENDED": [
+        "推奨"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "信頼できるデバイスで推奨されます。 ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -11508,9 +11496,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "無効にすることで、お客様の知らないうちにリモートが画像が読み込まれるのを防ぎます。"
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "有効にすると、${ MAIL_APP_NAME } が規定のメールアプリであるかを確認し、そうでない場合は通知します。"
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "ID プロバイダーで ${ appName } の SAML を有効にすると、コールバック (ACS) URL と発行者 ID を使用するように求められる場合があります。以下のデータをコピーして ID プロバイダーのフィールドに貼り付けるだけです。"
@@ -16071,8 +16056,8 @@
       "${ app } product updates": [
         "${ app }のプロダクトアップデート"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "ビジネス向け${ BRAND_NAME }ニュースレター"
+      "${ BRAND_NAME } for Business communications": [
+        "ビジネスコミュニケーション向け ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } important announcements": [
         "${ BRAND_NAME }の重要なお知らせ"
@@ -16122,8 +16107,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "${ BRAND_NAME } 製品を使用している最初の1ヶ月間に"
       ],
-      "Email subscriptions": [
-        "メール購読"
+      "Email communications": [
+        "メールコミュニケーション"
       ],
       "In-app notifications": [
         "アプリ内通知"
@@ -22060,9 +22045,6 @@
       "Change second password": [
         "セカンドパスワードを変更"
       ],
-      "Check your default mail application": [
-        "デフォルトのメールアプリを確認"
-      ],
       "Choose a provider": [
         "プロバイダーを選択"
       ],
@@ -23130,6 +23112,9 @@
       ],
       "Snooze:": [
         "スヌーズ:"
+      ],
+      "Something went wrong": [
+        "何か問題が発生しました"
       ],
       "Sort folders alphabetically": [
         "フォルダーをアルファベット順に並べ替える"

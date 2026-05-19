@@ -2907,9 +2907,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Popis kontakata koji uvozite sadrži neke grupe. Pregledajte kako bi ove grupe trebalo uvesti."
       ],
-      "Send a code to your recovery email or phone": [
-        "Pošaljite kôd na svoju adresu e-pošte za oporavak ili telefon"
-      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Možete uvesti događaje u iCal formatu (ICS datoteka). Datoteka bi trebala imati maksimalnu veličinu od ${ MAX_IMPORT_FILE_SIZE_STRING } i imati do ${ MAX_IMPORT_EVENTS_STRING } događaja. Ako je vaša datoteka veća, podijelite je na manje datoteke."
       ]
@@ -8834,9 +8831,6 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "Tijekom prvog mjeseca korištenja ${ BRAND_NAME } proizvoda"
       ],
-      "Email subscriptions": [
-        "Redovno slanje e-pošte"
-      ],
       "In-app notifications": [
         "Obavijesti unutar aplikacije"
       ],
@@ -12484,6 +12478,9 @@
       ],
       "Snooze:": [
         "Odgodi:"
+      ],
+      "Something went wrong": [
+        "Nešto je pošlo po zlu"
       ],
       "Sort folders alphabetically": [
         "Sortiraj mape abecedno"

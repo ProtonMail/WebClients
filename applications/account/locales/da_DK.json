@@ -219,6 +219,9 @@
       "Back to sign in": [
         "Tilbage til login"
       ],
+      "Back to sign-in": [
+        "Tilbage til login"
+      ],
       "Block": [
         "Blokér"
       ],
@@ -5116,7 +5119,7 @@
         "${ MAIL_APP_NAME } er ikke din standard mailapplikation."
       ],
       "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } er din standardapplikation til mail."
+        "${ MAIL_APP_NAME } er din standard mailapplikation."
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } holder din virksomhedsdata sikker og lader dig sende krypterede e-mails til alle."
@@ -5265,9 +5268,6 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Læs, svar og hold styr på Gmail direkte fra ${ MAIL_APP_NAME }"
       ],
-      "Send a code to your recovery email or phone": [
-        "Send en kode til din gendannelses-e-mail eller din telefon"
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Konfigurer konti for alle brugere, og inviter dem til at tilmelde sig ${ BRAND_NAME }."
       ],
@@ -5316,6 +5316,9 @@
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Opgrader for at få ${ activatePmUser } og en kortere e-mailadresse, der er nem at huske, ud over din nuværende."
+      ],
+      "Use a recovery method to reset your password": [
+        "Brug en gendannelsesmetode til at nulstille din adgangskode"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Brug denne vejledning for hurtigt at lade din organisation drage fordel af ${ BRAND_NAME }'s branchens førende kryptering og privatlivsøkosystem."
@@ -6524,6 +6527,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Data recovery contacts": [
+        "Kontakter til gendannelse af data"
+      ],
       "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
         "Data gendannet. Du kan du dekryptere dine eksisterende data og krypterede filer."
       ],
@@ -6749,7 +6755,7 @@
         "Krævet tid før der automatisk gives adgang"
       ],
       "To add recovery contacts, you must have a recovery email address or phone number.": [
-        "For at tilføje genoprettelseskontakter skal du have en genoprettelses-e-mailadresse eller et telefonnummer."
+        "For at tilføje gendannelseskontakter skal du have en e-mailadresse eller et telefonnummer til gendannelse."
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "For at deaktivere denne gendannelsesmetode, skal du fjerne alle dine gendannelseskontakter."
@@ -6782,7 +6788,7 @@
         "Vi har modtaget en anmodning om at låse de krypterede data op for din kontakt **${ user }**."
       ],
       "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
-        "Vi sendte en e-mail-anmodning til ${ user }. Lad dem vide, at det virkelig er dig, der prøver at få adgang igen."
+        "Vi sendte en e-mail-anmodning til ${ user }. Fortæl dem, at det virkelig er dig, der prøver at få adgang igen."
       ],
       "We were not able to verify the recovery data. Proceed anyway?": [
         "Vi kunne ikke verificere gendannelsesdataen. Vil du fortsætte alligevel?"
@@ -8772,6 +8778,9 @@
       ],
       "Group address:": [
         "Gruppeadresse:"
+      ],
+      "Roles and permission:": [
+        "Roller og tilladelser:"
       ]
     },
     "Group member count": {
@@ -8829,6 +8838,14 @@
       ],
       "Group membership": [
         "Gruppemedlemskab"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "Generelt"
+      ],
+      "Roles and permissions": [
+        "Roller og tilladelser"
       ]
     },
     "Header": {
@@ -9474,6 +9491,9 @@
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "${ BRAND_NAME } Business abonnementer giver dit team alle værktøjerne til at samarbejde produktivt og på en organiseret måde, samtidig med at holde din virksomhed sikker."
       ],
+      "${ BRAND_NAME } Free": [
+        "${ BRAND_NAME } Free"
+      ],
       "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
         "${ BRAND_NAME } er uafhængigt finansieret og drives uden nogen markedsføring. \nNedenfor er nogle eksempler på hvordan denne uafhængighed er blevet brugt i praksis."
       ],
@@ -9579,6 +9599,9 @@
       ],
       "${ name } for Windows": [
         "${ name } til Windows"
+      ],
+      "${ name } is not available": [
+        "${ name } er ikke tilgængelig"
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: sæt hverken uautoriserede e-mails i karantæne eller afvis dem. Normalt bruger folk kun denne politik til fejlfinding eller test."
@@ -9740,6 +9763,9 @@
       ],
       "(formerly Twitter)": [
         "(tidligere Twitter)"
+      ],
+      "**${ appName }** is not available for your account.": [
+        "**${ appName }** er ikke tilgængelig for din konto."
       ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** understøttes ikke i din organisation **${ organizationName }**"
@@ -10188,6 +10214,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Inden du kan begynde at sende og modtage e-mails fra dine nye adresser, skal du oprette krypteringsnøgler til dem."
       ],
+      "BEST FOR TV": [
+        "BEDST TIL TV"
+      ],
       "Beta": [
         "Beta"
       ],
@@ -10323,6 +10352,9 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Forbind stadig denne enhed med din ${ BRAND_NAME } organisation."
       ],
+      "Continue with ${ BRAND_NAME } Free": [
+        "Fortsæt med ${ BRAND_NAME } Free"
+      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "At fortsætte vil forbinde din ${ BRAND_NAME }-konto til ${ name }."
       ],
@@ -10383,6 +10415,10 @@
         "Opretter gateway-server: ${ serverNumber } / ${ total }",
         "Opretter gateway-servere: ${ serverNumber } / ${ total }"
       ],
+      "Creating gateway with ${ total } server": [
+        "Opretter gateway med ${ total } server",
+        "Opretter gateway med ${ total } servere"
+      ],
       "Creating your account": [
         "Opretter din konto"
       ],
@@ -10430,6 +10466,9 @@
       ],
       "Data recoverable with recovery phrase": [
         "Data kan gendannes med gendannelsessætning"
+      ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "Datagendannelse kræver en metode til at nulstille adgangskoden (e-mail eller SMS)"
       ],
       "dedicated servers": [
         "dedikerede servere"
@@ -10876,6 +10915,9 @@
       ],
       "Get visibility into account access": [
         "Få indsigt i kontoadgang"
+      ],
+      "Get VPN Plus": [
+        "Få VPN Plus"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Giv tokenet et beskrivende navn, såsom den tjeneste, du planlægger at bruge det til, og vælg en af dine aktive brugerdomæneadresser. Kun denne adresse vil kunne sende e-mails med dette token."
@@ -11971,6 +12013,12 @@
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Viser hver afsenders billede i beskedlisten. Afsenderens initialer vises, hvis der ikke er et billede til rådighed."
       ],
+      "Show fewer benefits": [
+        "Vis færre fordele"
+      ],
+      "Show more benefits": [
+        "Vis flere fordele"
+      ],
       "Show original message": [
         "Vis oprindelig besked"
       ],
@@ -12237,6 +12285,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Dette kan tage noget tid. Luk ikke denne side, og afbryd ikke forbindelsen til internettet."
       ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "Denne datagendannelsesmetode kræver en metode til at nulstille adgangskoden (e-mail eller SMS)"
+      ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Denne funktion forsinker afsendelsen af dine e-mails med mulighed for at fortryde afsendelsen inden for den valgte tidsramme."
       ],
@@ -12501,6 +12552,9 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Medmindre du logger ud eller ændrer din adgangskode, forbliver din session aktiv. Sessioner udløber efter 60 dages inaktivitet."
       ],
+      "Unlock streaming with VPN Plus.": [
+        "Lås op for streaming med VPN Plus."
+      ],
       "Unsaved changes": [
         "Ikke-gemte ændringer"
       ],
@@ -12648,6 +12702,9 @@
       "Visa Secure logo": [
         "Visa Secure-logo"
       ],
+      "VPN Plus": [
+        "VPN Plus"
+      ],
       "VPN with dedicated servers and IP addresses": [
         "VPN med dedikerede servere og IP-adresser"
       ],
@@ -12766,7 +12823,7 @@
         "Når deaktiveret, forhindrer dette eksterne billeder i at blive indlæst uden din viden."
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Hvis aktiveret, vil vi tjekke, om ${ MAIL_APP_NAME } er din standard mailapplikation og give dig besked, hvis det ikke er tilfældet."
+        "Hvis aktiveret, tjekker vi at ${ MAIL_APP_NAME } er din standard mailapplikation, og giver dig besked, hvis det ikke er tilfældet."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Ved aktivering af SAML for ${ appName } i din identitetsudbyder, kan du blive bedt om at bruge callback-URL'en (ACS) og udsteder-ID'et. Kopier og indsæt blot nedenstående data i din identitetsudbyders felter."
@@ -16882,6 +16939,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Access all countries": [
+        "Få adgang til alle lande"
+      ],
       "Activity logs and policy": [
         "Aktivitetslog og politik"
       ],
@@ -17064,6 +17124,9 @@
       "Multiple admin roles": [
         "Flere administratorroller"
       ],
+      "No streaming support": [
+        "Understøtter ikke streaming"
+      ],
       "No-logs policy": [
         "Ingen logfiler-politik"
       ],
@@ -17229,6 +17292,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ubegrænset mængde/båndbredde"
+      ],
+      "Unlock streaming": [
+        "Lås op for streaming"
       ],
       "Up to ${ n } user": [
         "Op til ${ n } bruger",
@@ -17704,6 +17770,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } land",
+        "${ n } lande"
+      ],
       "Access advanced VPN features": [
         "Få adgang til avancerede VPN-funktioner"
       ],
@@ -17765,8 +17835,8 @@
       "${ app } product updates": [
         "${ app } produktopdateringer"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } for Business nyhedsbrev"
+      "${ BRAND_NAME } for Business communications": [
+        "${ BRAND_NAME } til erhvervskommunikation"
       ],
       "${ BRAND_NAME } important announcements": [
         "${ BRAND_NAME } vigtige meddelelser"
@@ -17819,8 +17889,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "I løbet af din første måned med et ${ BRAND_NAME }-produkt"
       ],
-      "Email subscriptions": [
-        "E-mailabonnementer"
+      "Email communications": [
+        "E-mail-kommunikation"
       ],
       "In-app notifications": [
         "Notifikationer i appen"
@@ -20956,11 +21026,17 @@
       "Add": [
         "Tilføj"
       ],
+      "Add an emergency contact": [
+        "Tilføj en nødkontakt"
+      ],
       "Add emergency contacts": [
         "Tilføj nødkontakter"
       ],
       "Add options": [
         "Tilføj muligheder"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Tilføj personer du stoler på og nemt kan kontakte. Din nødkontakt vil kunne tilgå din konto og nulstille din adgangskode for dig, hvis det bliver nødvendigt."
       ],
       "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
         "Tilføj personer du stoler på og nemt kan kontakte. De vil kunne hjælpe dig med at låse op for din data efter du har nulstillet din adgangskode."
@@ -21093,6 +21169,9 @@
       ],
       "They must already have a ${ BRAND_NAME } Account.": [
         "De skal allerede have en ${ BRAND_NAME }-konto."
+      ],
+      "They will not be able to see or access your data.": [
+        "De vil ikke kunne se eller tilgå dine data."
       ],
       "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
         "Dette giver dig mulighed for hurtigt at tilgå din ${ BRAND_NAME }-konto, så du kan ændre din adgangskode."
@@ -21371,6 +21450,9 @@
       ]
     },
     "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "Opnå størst mulig sikkerhed på din konto ved at slå gendannelse via e-mail og SMS fra."
+      ],
       "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
         "Download din gendannelsessætning for at sikre, at du altid kan tilgå din ${ BRAND_NAME }-konto."
       ],
@@ -24545,7 +24627,7 @@
         "Ændr anden adgangskode"
       ],
       "Check your default mail application": [
-        "Tjek din standard-e-mailapplikation"
+        "Tjek din standard mailapplikation"
       ],
       "Choose a provider": [
         "Vælg en udbyder"
@@ -24724,6 +24806,9 @@
       ],
       "Data recovery": [
         "Datagendannelse"
+      ],
+      "Data recovery contacts": [
+        "Kontakter til gendannelse af data"
       ],
       "Data recovery options": [
         "Metoder til datagendannelse"
@@ -25083,6 +25168,9 @@
       ],
       "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
         "Få ${ planMaxSpace } lagerplads til diner filer, billeder og dokumenter med ${ planName }. ${ upgradeButton }"
+      ],
+      "Get ${ VPN_APP_NAME } on your TV": [
+        "Få ${ VPN_APP_NAME } på dit TV"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Få ${ vpnPlus } for at få adgang til alle servere"
@@ -25738,6 +25826,9 @@
       ],
       "Some of your encrypted data is locked": [
         "Noget af din krypteret data er låst"
+      ],
+      "Something went wrong": [
+        "Et eller andet gik galt"
       ],
       "Sort folders alphabetically": [
         "Sortér mapper alfabetisk"
