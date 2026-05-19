@@ -159,4 +159,71 @@ describe('properties to model', () => {
             expect(model.description).toBe('Just a plain description');
         });
     });
+
+    describe('Zoom fallback from description', () => {
+        const ZOOM_URL = 'https://us05web.zoom.us/j/88128811438?pwd=tXBwNj7tnajHLftxrqTkU4DtS2M7Au.1';
+        const ZOOM_ID = '88128811438';
+        const ZOOM_PASSWORD = '4qNpNK';
+        const EMBEDDED_BLOCK = `\n${SEPARATOR_PROTON_EVENTS}\Join Zoom Meeting: ${ZOOM_URL} (ID: 88128811438, passcode: 4qNpNK)\n${SEPARATOR_PROTON_EVENTS}`;
+        const DEFAULT_PARAMS = {
+            hasDefaultNotifications: false,
+            isAllDay: false,
+            isProtonProtonInvite: false,
+            tzid: 'Europe/Paris',
+        };
+
+        test('extracts conferenceUrl and conferenceId when x-pm-conference-* properties are absent', () => {
+            const veventComponent: VcalVeventComponent = { ...BASE_VEVENT, description: { value: EMBEDDED_BLOCK } };
+            const model = propertiesToModel({ veventComponent, ...DEFAULT_PARAMS });
+
+            expect(model.conferenceUrl).toBe(ZOOM_URL);
+            expect(model.conferenceId).toBe(ZOOM_ID);
+            expect(model.conferencePassword).toBe(ZOOM_PASSWORD);
+            expect(model.conferenceProvider).toBe(VIDEO_CONFERENCE_PROVIDER.ZOOM);
+        });
+
+        test('strips the embedded video conf block from the returned description', () => {
+            const veventComponent: VcalVeventComponent = {
+                ...BASE_VEVENT,
+                description: { value: `Team standup${EMBEDDED_BLOCK}` },
+            };
+            const model = propertiesToModel({ veventComponent, ...DEFAULT_PARAMS });
+
+            expect(model.description).toBe('Team standup');
+            expect(model.conferenceUrl).toBe(ZOOM_URL);
+        });
+
+        test('produces an empty description when only the embedded block is present', () => {
+            const veventComponent: VcalVeventComponent = { ...BASE_VEVENT, description: { value: EMBEDDED_BLOCK } };
+            const model = propertiesToModel({ veventComponent, ...DEFAULT_PARAMS });
+
+            expect(model.description).toBe('');
+        });
+
+        test('prefers x-pm-conference-url over the description fallback when both are present', () => {
+            const storedUrl = 'https://meet.proton.me/join/id-STORED1234#pwd-storedpwd';
+            const veventComponent: VcalVeventComponent = {
+                ...BASE_VEVENT,
+                'x-pm-conference-id': { value: 'STORED1234', parameters: { 'x-pm-provider': '2' } },
+                'x-pm-conference-url': { value: storedUrl, parameters: {} },
+                description: { value: EMBEDDED_BLOCK },
+            };
+            const model = propertiesToModel({ veventComponent, ...DEFAULT_PARAMS });
+
+            expect(model.conferenceUrl).toBe(storedUrl);
+            expect(model.conferenceId).toBe('STORED1234');
+        });
+
+        test('sets no conference data when neither x-pm-conference-* nor an embedded Meet link is present', () => {
+            const veventComponent: VcalVeventComponent = {
+                ...BASE_VEVENT,
+                description: { value: 'Just a plain description' },
+            };
+            const model = propertiesToModel({ veventComponent, ...DEFAULT_PARAMS });
+
+            expect(model.conferenceUrl).toBeUndefined();
+            expect(model.conferenceId).toBeUndefined();
+            expect(model.description).toBe('Just a plain description');
+        });
+    });
 });
