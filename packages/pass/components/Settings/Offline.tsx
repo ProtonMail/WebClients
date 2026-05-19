@@ -14,7 +14,7 @@ import clsx from '@proton/utils/clsx';
 
 import { SettingsPanel } from './SettingsPanel';
 
-export const Offline: FC = WithFeatureFlag(() => {
+const OfflineSection: FC = () => {
     const [setup, loading] = useOfflineSetup();
 
     const enabled = useSelector(selectOfflineEnabled);
@@ -58,4 +58,8 @@ export const Offline: FC = WithFeatureFlag(() => {
             </SettingsPanel>
         </>
     );
-}, PassFeature.PassExtensionOfflineV1);
+};
+
+export const Offline = EXTENSION_BUILD
+    ? WithFeatureFlag(OfflineSection, PassFeature.PassExtensionOfflineV1)
+    : OfflineSection;

@@ -5,7 +5,7 @@ import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/m
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { getMinimalHostPermissions, hasHostPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { isPagePort, isPopupPort } from 'proton-pass-extension/lib/utils/port';
-import { safariPullFork, sendSafariMessage } from 'proton-pass-extension/lib/utils/safari';
+import { intoSafariCredentials, safariPullFork, sendSafariMessage } from 'proton-pass-extension/lib/utils/safari';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import {
@@ -129,11 +129,13 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             if (ctx.getState().booted) ctx.setStatus(AppStatus.READY);
             else ctx.setStatus(AppStatus.AUTHORIZED);
             boot({ offline: false });
+
+            const session = authStore.getSession();
             await ctx.service.storage.local.removeItem('forceLock');
-            await ctx.service.storage.session.setItems(authStore.getSession());
+            await ctx.service.storage.session.setItems(session);
             setSentryUID(authStore.getUID());
 
-            if (BUILD_TARGET === 'safari') await sendSafariMessage({ credentials: authStore.getSession() });
+            if (BUILD_TARGET === 'safari') void sendSafariMessage({ credentials: intoSafariCredentials(session) });
         }),
 
         onLogoutComplete: withContext((ctx, _) => {

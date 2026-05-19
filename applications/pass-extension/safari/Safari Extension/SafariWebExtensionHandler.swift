@@ -32,6 +32,9 @@ final class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
     private let writeToClipboard = resolve(\SharedUseCaseContainer.writeToClipboard)
     private let createLogger = resolve(\SharedUseCaseContainer.createLogger)
 
+    /// Entry point for every `browser.runtime.sendNativeMessage` from the safari extension.
+    /// we MUST call `context.completeRequest` exactly once per invocation, otherwise the JS
+    // side promise will hang forever (Safari never times out the bridge).
     func beginRequest(with context: NSExtensionContext) {
         let request = context.inputItems.first as? NSExtensionItem
 
@@ -43,11 +46,13 @@ final class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
 
         if let message {
             Task { [weak self] in
-                if let result = await self?.handle(message: String(describing: message)) {
-                    let response = NSExtensionItem()
+                let result = await self?.handle(message: String(describing: message))
+                let response = NSExtensionItem()
+                if let result {
                     response.userInfo = [SFExtensionMessageKey: result]
-                    context.completeRequest(returningItems: [response], completionHandler: nil)
                 }
+
+                context.completeRequest(returningItems: [response], completionHandler: nil)
             }
         }
     }
