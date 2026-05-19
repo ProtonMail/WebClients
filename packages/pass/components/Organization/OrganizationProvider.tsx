@@ -5,10 +5,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { selectOrganizationState, selectPassPlan, selectUser } from '@proton/pass/store/selectors';
+import { selectOrganizationState, selectPassPlan, selectUser, selectUserPlan } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import type { Organization } from '@proton/shared/lib/interfaces';
+import { isAdmin } from '@proton/shared/lib/user/helpers';
 
 export type OrganizationContextValue = {
     organization: Organization;
@@ -27,9 +28,12 @@ export const OrganizationProvider: FC<PropsWithChildren> = ({ children }) => {
     const dispatch = useDispatch();
 
     const passPlan = useSelector(selectPassPlan);
+    const userPlan = useSelector(selectUserPlan);
     const user = useSelector(selectUser);
     const org = useSelector(selectOrganizationState);
-    const b2bAdmin = user ? isB2BAdmin(user, passPlan) : false;
+
+    const isPassEssentialsAdmin = !!user && isAdmin(user) && userPlan?.InternalName === 'passpro2024';
+    const b2bAdmin = (user ? isB2BAdmin(user, passPlan) : false) || isPassEssentialsAdmin;
 
     const context = useMemo<MaybeNull<OrganizationContextValue>>(
         () =>
