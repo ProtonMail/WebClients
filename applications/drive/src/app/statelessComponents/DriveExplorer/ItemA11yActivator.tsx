@@ -48,6 +48,7 @@ export const ItemA11yActivator = ({
         style={{ background: 'transparent', border: 0, padding: 0, cursor: 'default' }}
         aria-label={ariaLabel}
         aria-pressed={isSelected}
+        data-item-activator=""
         data-testid="item-a11y-activator"
         onMouseDown={onMouseDown}
         onClick={onClick}

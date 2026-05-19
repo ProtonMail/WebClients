@@ -4,6 +4,7 @@ import { Table, TableBody } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { VirtualListItem } from './VirtualListItem';
+import { defaultConfig } from './constants';
 import type {
     CellDefinition,
     ContextMenuControls,
@@ -14,6 +15,7 @@ import type {
     DriveExplorerEvents,
     DriveExplorerSelection,
 } from './types';
+import { useArrowKeyNavigation } from './useArrowKeyNavigation';
 import { useItemVisibility } from './useItemVisibility';
 import { useListVirtualizer } from './useListVirtualizer';
 
@@ -65,6 +67,18 @@ export const DriveExplorerBody = ({
         onItemRender: events?.onItemRender,
         threshold: 0.1,
         rootMargin: '50px',
+    });
+
+    // Pixel distance between two consecutive rows' top edges. Used by the arrow-key
+    // hook to compute scrollTop directly when the target row is outside the
+    // virtualizer's window (no DOM node to scrollIntoView - we scroll first, then
+    // refocus on the next frame once the virtualizer renders the row).
+    const rowHeightWithGap = (config?.itemHeight ?? defaultConfig.itemHeight) + (config?.gap ?? defaultConfig.gap);
+    useArrowKeyNavigation({
+        containerRef,
+        itemIds,
+        itemsPerRow: 1,
+        rowHeightWithGap,
     });
 
     return (
