@@ -1,4 +1,4 @@
-import { type ChangeEvent, type MouseEvent, useCallback } from 'react';
+import { type MouseEvent, useCallback } from 'react';
 
 import { Checkbox } from '@proton/components';
 import clsx from '@proton/utils/clsx';
@@ -22,16 +22,6 @@ export const CheckboxCell = ({
     style,
 }: CheckboxCellProps) => {
     const isSelected = Boolean(selectionMethods.isSelected(uid));
-
-    const handleCheckboxChange = useCallback(
-        (e: ChangeEvent<HTMLElement>) => {
-            const el = document.activeElement ?? e.currentTarget;
-            if (isSelected && el instanceof HTMLElement && 'blur' in el) {
-                el.blur();
-            }
-        },
-        [isSelected]
-    );
 
     const handleCheckboxClick = useCallback(
         (e: MouseEvent<HTMLElement>) => {
@@ -69,12 +59,12 @@ export const CheckboxCell = ({
             onKeyDown={(e) => e.stopPropagation()}
             onClick={handleCheckboxWrapperClick}
         >
-            <Checkbox
-                className="expand-click-area"
-                checked={isSelected}
-                onChange={handleCheckboxChange}
-                onClick={handleCheckboxClick}
-            />
+            {/*
+              The checked state is fully controlled by the onClick handlers, so readOnly is required to
+              silence React's controlled-input warning (a checked input needs either onChange or readOnly).
+              TODO(a11y): Get rid of that non-a11y compliant interaction wrapper div.
+            */}
+            <Checkbox className="expand-click-area" checked={isSelected} readOnly onClick={handleCheckboxClick} />
         </div>
     );
 };
