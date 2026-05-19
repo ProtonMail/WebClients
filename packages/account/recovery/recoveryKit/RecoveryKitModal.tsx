@@ -86,7 +86,13 @@ const DownloadRecoveryKitModal = ({ onSuccess, ...rest }: Props) => {
                         loading={loading}
                         onSaveRecoveryKit={handleSaveRecoveryKit}
                         continueButton={() => (
-                            <Button color="norm" size="large" fullWidth onClick={rest.onClose}>
+                            <Button
+                                color="norm"
+                                size="large"
+                                fullWidth
+                                disabled={!recoveryKitData?.hasSentPayload}
+                                onClick={rest.onClose}
+                            >
                                 {c('Action').t`Done`}
                             </Button>
                         )}
