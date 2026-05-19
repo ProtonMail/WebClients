@@ -33,16 +33,18 @@ const SubscriptionCheckoutAddonSection = ({ initialCoupon }: Props) => {
             <>
                 <h2 className="text-2xl text-bold mt-8 mb-4">{c('Label').t`Add extra services`}</h2>
                 <ProtonPlanCustomizer
-                    scribeAddonEnabled={scribeEnabled.paymentsEnabled}
-                    lumoAddonEnabled={lumoAddonEnabled}
-                    meetAddonEnabled={meetAddonFlag}
-                    loading={loading}
                     currency={currency}
                     cycle={cycle}
                     plansMap={plansMap}
                     selectedPlanIDs={planIDs}
-                    onChangePlanIDs={(planIDs) => selectPlanIDs(planIDs)}
+                    onChangePlanIDs={selectPlanIDs}
+                    loading={loading}
                     latestSubscription={latestSubscription}
+                    addonFlags={{
+                        scribeAddonEnabled: scribeEnabled.paymentsEnabled,
+                        lumoAddonEnabled,
+                        meetAddonEnabled: meetAddonFlag,
+                    }}
                     telemetryContext={telemetryContext}
                 />
             </>

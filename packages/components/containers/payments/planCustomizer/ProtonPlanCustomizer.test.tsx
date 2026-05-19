@@ -1,27 +1,21 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS, type PlanIDs, Renew } from '@proton/payments';
+import {
+    ADDON_NAMES,
+    CYCLE,
+    FREE_SUBSCRIPTION,
+    type FreeSubscription,
+    PLANS,
+    type PlanIDs,
+    Renew,
+    type Subscription,
+} from '@proton/payments';
 import { buildSubscription } from '@proton/testing/builders';
 import { PLANS_MAP } from '@proton/testing/data';
 
 import { type Props, ProtonPlanCustomizer } from './ProtonPlanCustomizer';
 
 const onChangePlanIDsMock = jest.fn();
-
-const defaultProps: Props = {
-    scribeAddonEnabled: true,
-    lumoAddonEnabled: true,
-    loading: false,
-    currency: 'EUR',
-    cycle: CYCLE.MONTHLY,
-    selectedPlanIDs: {
-        [PLANS.MAIL]: 1,
-    },
-    onChangePlanIDs: onChangePlanIDsMock,
-    plansMap: PLANS_MAP,
-    latestSubscription: FREE_SUBSCRIPTION,
-    telemetryContext: 'other',
-};
 
 const mockUseFlag = jest.fn().mockReturnValue(false);
 jest.mock('@proton/unleash/useFlag', () => ({
@@ -33,8 +27,34 @@ beforeEach(() => {
     mockUseFlag.mockReturnValue(false);
 });
 
+const buildProps = ({
+    selectedPlanIDs,
+    latestSubscription = FREE_SUBSCRIPTION,
+    scribeAddonEnabled = true,
+    lumoAddonEnabled = true,
+    loading = false,
+}: {
+    selectedPlanIDs: PlanIDs;
+    latestSubscription?: Subscription | FreeSubscription;
+    scribeAddonEnabled?: boolean;
+    lumoAddonEnabled?: boolean;
+    loading?: boolean;
+}): Props => ({
+    currency: 'EUR',
+    cycle: CYCLE.MONTHLY,
+    selectedPlanIDs,
+    onChangePlanIDs: onChangePlanIDsMock,
+    plansMap: PLANS_MAP,
+    loading,
+    latestSubscription,
+    addonFlags: { scribeAddonEnabled, lumoAddonEnabled, meetAddonEnabled: false },
+    telemetryContext: 'other',
+});
+
+const defaultProps = buildProps({ selectedPlanIDs: {} });
+
 it('should render', () => {
-    render(<ProtonPlanCustomizer {...defaultProps} />);
+    render(<ProtonPlanCustomizer {...buildProps({ selectedPlanIDs: { [PLANS.MAIL]: 1 } })} />);
 });
 
 const lumoAddonBannerTestId = 'lumo-addon-banner';
@@ -143,14 +163,7 @@ it.each([
         expectedCustomizers: [`${ADDON_NAMES.MEMBER_LUMO_BUSINESS}-customizer`],
     },
 ])('should show available addons for $plan', ({ plan, expectedCustomizers }) => {
-    const props: Props = {
-        ...defaultProps,
-        selectedPlanIDs: {
-            [plan]: 1,
-        },
-    };
-
-    render(<ProtonPlanCustomizer {...props} />);
+    render(<ProtonPlanCustomizer {...buildProps({ selectedPlanIDs: { [plan]: 1 } })} />);
 
     expectedCustomizers.forEach((customizer) => {
         expect(screen.getByTestId(customizer)).toBeInTheDocument();
@@ -163,15 +176,14 @@ it('should disable decrease button if the user cancelled the subscription', () =
         [ADDON_NAMES.MEMBER_MAIL_PRO]: 1,
     };
 
-    const props: Props = {
-        ...defaultProps,
-        latestSubscription: buildSubscription(planIDs, {
-            Renew: Renew.Disabled,
-        }),
-        selectedPlanIDs: planIDs,
-    };
-
-    render(<ProtonPlanCustomizer {...props} />);
+    render(
+        <ProtonPlanCustomizer
+            {...buildProps({
+                selectedPlanIDs: planIDs,
+                latestSubscription: buildSubscription(planIDs, { Renew: Renew.Disabled }),
+            })}
+        />
+    );
     expect(screen.queryByTestId(`decrease-addon-${ADDON_NAMES.MEMBER_MAIL_PRO}`)).toBeDisabled();
     expect(screen.getByTestId('decrease-blocked-reason')).toBeInTheDocument();
 });
@@ -201,13 +213,11 @@ it.each(plansWithIpAddons)(
             [addon]: 1,
         };
 
-        const props: Props = {
-            ...defaultProps,
-            selectedPlanIDs: planIDs,
-            latestSubscription: buildSubscription(planIDs),
-        };
-
-        render(<ProtonPlanCustomizer {...props} />);
+        render(
+            <ProtonPlanCustomizer
+                {...buildProps({ selectedPlanIDs: planIDs, latestSubscription: buildSubscription(planIDs) })}
+            />
+        );
         expect(screen.getByTestId(`decrease-addon-${addon}`)).toBeEnabled();
     }
 );
@@ -219,13 +229,11 @@ it('should increase the number of scribes together with the number of members', 
         [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 2, // 2 scribes
     };
 
-    const props: Props = {
-        ...defaultProps,
-        selectedPlanIDs: planIDs,
-        latestSubscription: buildSubscription(planIDs),
-    };
-
-    render(<ProtonPlanCustomizer {...props} />);
+    render(
+        <ProtonPlanCustomizer
+            {...buildProps({ selectedPlanIDs: planIDs, latestSubscription: buildSubscription(planIDs) })}
+        />
+    );
 
     const increaseMemberButton = screen.getByTestId(`increase-addon-${ADDON_NAMES.MEMBER_MAIL_PRO}`);
 
@@ -244,13 +252,11 @@ it('should decrease the number of scribes together with the number of members', 
         [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 2, // 2 scribes
     };
 
-    const props: Props = {
-        ...defaultProps,
-        selectedPlanIDs: planIDs,
-        latestSubscription: buildSubscription(planIDs),
-    };
-
-    render(<ProtonPlanCustomizer {...props} />);
+    render(
+        <ProtonPlanCustomizer
+            {...buildProps({ selectedPlanIDs: planIDs, latestSubscription: buildSubscription(planIDs) })}
+        />
+    );
 
     const decreaseMemberButton = screen.getByTestId(`decrease-addon-${ADDON_NAMES.MEMBER_MAIL_PRO}`);
     fireEvent.click(decreaseMemberButton);
@@ -266,13 +272,11 @@ it('should not increase the number of scribes if the number of members is not th
         [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 2, // 2 scribes
     };
 
-    const props: Props = {
-        ...defaultProps,
-        selectedPlanIDs: planIDs,
-        latestSubscription: buildSubscription(planIDs),
-    };
-
-    render(<ProtonPlanCustomizer {...props} />);
+    render(
+        <ProtonPlanCustomizer
+            {...buildProps({ selectedPlanIDs: planIDs, latestSubscription: buildSubscription(planIDs) })}
+        />
+    );
 
     const increaseMemberButton = screen.getByTestId(`increase-addon-${ADDON_NAMES.MEMBER_MAIL_PRO}`);
     fireEvent.click(increaseMemberButton);
@@ -290,13 +294,11 @@ it('should not decrease the number of scribes if the number of members is not th
         [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 2, // 2 scribes
     };
 
-    const props: Props = {
-        ...defaultProps,
-        selectedPlanIDs: planIDs,
-        latestSubscription: buildSubscription(planIDs),
-    };
-
-    render(<ProtonPlanCustomizer {...props} />);
+    render(
+        <ProtonPlanCustomizer
+            {...buildProps({ selectedPlanIDs: planIDs, latestSubscription: buildSubscription(planIDs) })}
+        />
+    );
 
     const decreaseMemberButton = screen.getByTestId(`decrease-addon-${ADDON_NAMES.MEMBER_MAIL_PRO}`);
     fireEvent.click(decreaseMemberButton);
@@ -313,13 +315,11 @@ it('should allow input of members through text field', async () => {
         [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 2, // 2 scribes
     };
 
-    const props: Props = {
-        ...defaultProps,
-        selectedPlanIDs: planIDs,
-        latestSubscription: buildSubscription(planIDs),
-    };
-
-    render(<ProtonPlanCustomizer {...props} />);
+    render(
+        <ProtonPlanCustomizer
+            {...buildProps({ selectedPlanIDs: planIDs, latestSubscription: buildSubscription(planIDs) })}
+        />
+    );
 
     const input = screen.getByTestId(`${ADDON_NAMES.MEMBER_MAIL_PRO}-customizer`);
     fireEvent.change(input, { target: { value: '10' } });
@@ -379,6 +379,23 @@ describe('domain addon gating (VPN_BUSINESS)', () => {
         expect(screen.getByTestId(domainCustomizerId)).toBeInTheDocument();
     });
 
+    it('still renders the domain customizer when latestSubscription has domain addons but selectedPlanIDs does not (regression: must use currentPlan not selectedPlan)', () => {
+        const latestPlanIDs: PlanIDs = {
+            [PLANS.VPN_BUSINESS]: 1,
+            [ADDON_NAMES.DOMAIN_VPN_BUSINESS]: 2,
+        };
+
+        render(
+            <ProtonPlanCustomizer
+                {...defaultProps}
+                selectedPlanIDs={{ [PLANS.VPN_BUSINESS]: 1 }}
+                latestSubscription={buildSubscription(latestPlanIDs)}
+            />
+        );
+
+        expect(screen.getByTestId(domainCustomizerId)).toBeInTheDocument();
+    });
+
     it('does not affect member or IP customizers when DomainVpnBiz2023 flag is false', () => {
         const planIDs: PlanIDs = { [PLANS.VPN_BUSINESS]: 1 };
 
@@ -416,13 +433,11 @@ it('should balance scribes and lumos when total exceeds members', () => {
         [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 4, // 4 scribes
     };
 
-    const props: Props = {
-        ...defaultProps,
-        selectedPlanIDs: planIDs,
-        latestSubscription: buildSubscription(planIDs),
-    };
-
-    const { rerender } = render(<ProtonPlanCustomizer {...props} />);
+    const { rerender } = render(
+        <ProtonPlanCustomizer
+            {...buildProps({ selectedPlanIDs: planIDs, latestSubscription: buildSubscription(planIDs) })}
+        />
+    );
 
     // the banner Add Lumo button replaces all scribes with lumos
     const lumoBannerAddButton = screen.getByTestId(`lumo-addon-banner-add-button`);
@@ -433,7 +448,11 @@ it('should balance scribes and lumos when total exceeds members', () => {
         [ADDON_NAMES.LUMO_MAIL_PRO]: 4,
     };
     expect(onChangePlanIDsMock).toHaveBeenCalledWith(newPlanIDs);
-    rerender(<ProtonPlanCustomizer {...props} selectedPlanIDs={newPlanIDs} />);
+    rerender(
+        <ProtonPlanCustomizer
+            {...buildProps({ selectedPlanIDs: newPlanIDs, latestSubscription: buildSubscription(planIDs) })}
+        />
+    );
 
     // at this point we have max number of lumos so addon add button is disabled
     expect(screen.getByTestId(`increase-addon-${ADDON_NAMES.LUMO_MAIL_PRO}`)).toBeDisabled();
@@ -455,7 +474,11 @@ it('should balance scribes and lumos when total exceeds members', () => {
         [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 1,
         [ADDON_NAMES.LUMO_MAIL_PRO]: 3,
     };
-    rerender(<ProtonPlanCustomizer {...props} selectedPlanIDs={newPlanIDs2} />);
+    rerender(
+        <ProtonPlanCustomizer
+            {...buildProps({ selectedPlanIDs: newPlanIDs2, latestSubscription: buildSubscription(planIDs) })}
+        />
+    );
     const increaseLumoButton = screen.getByTestId(`increase-addon-${ADDON_NAMES.LUMO_MAIL_PRO}`);
     fireEvent.click(increaseLumoButton);
     expect(onChangePlanIDsMock).toHaveBeenCalledWith({
