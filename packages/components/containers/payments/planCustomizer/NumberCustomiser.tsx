@@ -6,19 +6,17 @@ import type { DecreaseBlockedReason, IncreaseBlockedReason } from './helpers';
 
 export interface NumberCustomiserProps {
     addon: Plan;
-
     label: string;
-    tooltip?: string;
-
+    max: number;
     value: number;
-    min?: number;
-    max?: number;
-    step?: number;
-    disabled?: boolean;
-    onChange?: (newValue: number) => void;
     decreaseBlockedReasons: DecreaseBlockedReason[];
     increaseBlockedReasons: IncreaseBlockedReason[];
     increaseBlockedReasonText?: string;
+    tooltip?: string;
+    min?: number;
+    step?: number;
+    disabled?: boolean;
+    onChange?: (newValue: number) => void;
 }
 
 export const NumberCustomiser = ({

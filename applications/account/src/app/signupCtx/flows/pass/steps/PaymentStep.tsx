@@ -161,14 +161,17 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
                             <ProtonPlanCustomizer
                                 separator
                                 mode="signup"
-                                loading={false}
                                 currency={payments.options.currency}
                                 cycle={payments.options.cycle}
                                 plansMap={payments.plansMap}
                                 selectedPlanIDs={planIDs}
                                 onChangePlanIDs={(planIDs) => payments.selectPlanIDs(planIDs)}
                                 audience={Audience.B2C}
-                                scribeAddonEnabled
+                                addonFlags={{
+                                    scribeAddonEnabled: true,
+                                    lumoAddonEnabled: false,
+                                    meetAddonEnabled: false,
+                                }}
                                 showUsersTooltip
                                 telemetryContext={payments.telemetryContext}
                             />
