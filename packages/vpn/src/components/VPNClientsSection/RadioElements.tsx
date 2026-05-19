@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -45,11 +45,10 @@ export const RadioElements = ({
     ];
 
     return options.map((option, i) => (
-        <>
+        <Fragment key={option.value}>
             <Radio
                 name="feedback-survey"
                 id={`${name}-radio_${i}`}
-                key={option.value}
                 onChange={() => {
                     onChangeRadio(option.value);
                 }}
@@ -61,6 +60,7 @@ export const RadioElements = ({
             </Radio>
             {option.value === 'Podcast' && radioValue === 'Podcast' ? (
                 <SearchableSelect
+                    key="podcast-selector"
                     caretClassName="hidden"
                     search
                     value={podcastValue}
@@ -71,6 +71,6 @@ export const RadioElements = ({
                     {podcastOptions}
                 </SearchableSelect>
             ) : undefined}
-        </>
+        </Fragment>
     ));
 };
