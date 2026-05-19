@@ -122,6 +122,9 @@
       "Back": [
         "Takaisin"
       ],
+      "Back to sign-in": [
+        "Palaa kirjautumiseen"
+      ],
       "Block": [
         "Estä"
       ],
@@ -3871,6 +3874,9 @@
       "Recovery request sent": [
         "Palautuspyyntö lähetetty"
       ],
+      "Start recovery": [
+        "Aloita palautus"
+      ],
       "Trusted contact": [
         "Luotettu yhteyshenkilö"
       ]
@@ -5258,10 +5264,23 @@
         "Palvelut"
       ]
     },
+    "Group detail label": {
+      "Roles and permission:": [
+        "Roolit ja oikeudet:"
+      ]
+    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } jäsen",
         "${ memberCount } jäsentä"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "Yleinen"
+      ],
+      "Roles and permissions": [
+        "Roolit ja oikeudet"
       ]
     },
     "Header": {
@@ -5999,7 +6018,7 @@
         "Tili on päivitetty"
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Aktivoi tiedoillesi ainakin palautustapa, jolla varmistat pääsysi ${ BRAND_NAME }-tilisi sisältöön, jos kadotat salasanasi."
+        "Aktivoi vähintään yksi tietojen palautustapa, jotta pääset edelleen ${ BRAND_NAME }-tilisi sisältöön, jos kadotat salasanasi."
       ],
       "active": [
         "käytössä"
@@ -6709,6 +6728,9 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Jos menetät todennuslaitteesi, voit kirjautua tilillesi käyttäen näitä koodeja 6-numeroisen vahvistuskoodin sijaan. Koodit ovat kertakäyttöisiä."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Jos et voi käyttää tunnistautumissovellustasi, voit käyttää yhtä kuudestatoista varmuuspalautuskoodistasi, jotka sait lisätessäsi kaksivaiheisen tunnistautumisen. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Jos jatkat alennusta, menetät maksullisten ${ MAIL_APP_NAME } ja ${ VPN_APP_NAME } -ominaisuuksien käyttöoikeuden."
@@ -10922,8 +10944,8 @@
       "${ app } product updates": [
         "${ app } -tuotepäivitykset"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } for Business -uutiskirje"
+      "${ BRAND_NAME } for Business communications": [
+        "${ BRAND_NAME } for Business viestintään"
       ],
       "${ BRAND_NAME } important announcements": [
         "Tärkeät ${ BRAND_NAME } -ilmoitukset"
@@ -10976,8 +10998,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "Ensimmäisen ${ BRAND_NAME } -tuotteen käyttökuukautesi aikana"
       ],
-      "Email subscriptions": [
-        "Sähköpostitilaukset"
+      "Email communications": [
+        "Sähköpostiviestintä"
       ],
       "In-app notifications": [
         "Sovelluksensisäiset ilmoitukset"
@@ -15565,6 +15587,9 @@
       ],
       "Single sign-on": [
         "Kertakirjautuminen"
+      ],
+      "Something went wrong": [
+        "Jotain meni pieleen"
       ],
       "Spam, block, and allow lists": [
         "Roskapostin, estettyjen ja sallittujen listat"

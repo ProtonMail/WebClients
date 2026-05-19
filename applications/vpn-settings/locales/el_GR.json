@@ -128,6 +128,9 @@
       "Back to sign in": [
         "Επιστροφή στη σύνδεση"
       ],
+      "Back to sign-in": [
+        "Επιστροφή στη σύνδεση"
+      ],
       "Block": [
         "Αποκλεισμός"
       ],
@@ -6007,12 +6010,23 @@
       ],
       "Group address:": [
         "Διεύθυνση ομάδας:"
+      ],
+      "Roles and permission:": [
+        "Ρόλοι και δικαιώματα:"
       ]
     },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } μέλος",
         "${ memberCount } μέλη"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "Γενικά"
+      ],
+      "Roles and permissions": [
+        "Ρόλοι και δικαιώματα"
       ]
     },
     "Header": {
@@ -7163,6 +7177,10 @@
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Δημιουργία διακομιστή πύλης: ${ serverNumber } / ${ total }",
         "Δημιουργία διακομιστών πύλης: ${ serverNumber } / ${ total }"
+      ],
+      "Creating gateway with ${ total } server": [
+        "Δημιουργία πύλης με ${ total } διακομιστή",
+        "Δημιουργία πύλης με ${ total } διακομιστές"
       ],
       "Creating your account": [
         "Δημιουργία του λογαριασμού σας"
@@ -11453,6 +11471,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Access all countries": [
+        "Πρόσβαση σε όλες τις χώρες"
+      ],
       "Activity logs and policy": [
         "Αρχεία καταγραφής δραστηριότητας και πολιτική"
       ],
@@ -11629,6 +11650,9 @@
       "Multiple admin roles": [
         "Πολλαπλοί ρόλοι διαχειριστή"
       ],
+      "No streaming support": [
+        "Δεν υπάρχει υποστήριξη ροής"
+      ],
       "No-logs policy": [
         "Πολιτική μη διατήρησης αρχείων καταγραφής"
       ],
@@ -11791,6 +11815,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Απεριόριστος όγκος / εύρος ζώνης"
+      ],
+      "Unlock streaming": [
+        "Ξεκλειδώστε τη ροή"
       ],
       "Up to ${ n } user": [
         "Μέχρι και ${ n } χρήστη",
@@ -12245,6 +12272,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } χώρα",
+        "${ n } χώρες"
+      ],
       "Access advanced VPN features": [
         "Πρόσβαση σε προηγμένα χαρακτηριστικά VPN"
       ],
@@ -12303,8 +12334,8 @@
       "${ app } product updates": [
         "Ενημερώσεις προϊόντος ${ app }"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Ενημερωτικό δελτίο ${ BRAND_NAME } για επιχειρήσεις"
+      "${ BRAND_NAME } for Business communications": [
+        "${ BRAND_NAME } για Επιχειρησιακές επικοινωνίες"
       ],
       "${ BRAND_NAME } important announcements": [
         "Σημαντικές ανακοινώσεις του ${ BRAND_NAME }"
@@ -12357,8 +12388,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "Κατά τη διάρκεια του πρώτου μήνα χρήσης ενός προϊόντος ${ BRAND_NAME }"
       ],
-      "Email subscriptions": [
-        "Συνδρομές Email"
+      "Email communications": [
+        "Επικοινωνίες μέσω email"
       ],
       "In-app notifications": [
         "Ειδοποιήσεις εντός εφαρμογής"
@@ -17313,6 +17344,9 @@
       ],
       "Single-sign on (SSO)": [
         "Ενιαία είσοδος (SSO)"
+      ],
+      "Something went wrong": [
+        "Κάτι πήγε στραβά"
       ],
       "Spam, block, and allow lists": [
         "Λίστες ανεπιθύμητης αλληλογραφίας, αποκλεισμού και αποδοχής"
