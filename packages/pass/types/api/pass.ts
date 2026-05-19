@@ -806,6 +806,11 @@ export type UpdateUserMonitorStateRequest = {
     /* Enable or disable monitor for aliases. Null leaves the value as is */
     Aliases?: boolean | null;
 };
+export type UserHasSRPResponse = {
+    /* If the user has SRP enabled */
+    HasSRP: boolean;
+    Code: 1000;
+};
 export type AddSRPRequest = {
     /* SRP Parameter ID */
     SrpModulusID: Id;
@@ -821,6 +826,11 @@ export type SRPAuthRequest = {
     ClientProof: BinaryString;
     /* SRP session ID */
     SrpSessionID: string;
+};
+export type UserSRPAuthResponse = {
+    /* Base64 encoded SRP server proof */
+    ServerProof: BinaryString;
+    Code: 1000;
 };
 export type UpdateInAppNotificationsDisabledRequest = {
     /* Enable or disable the "InApp notifications disabled" setting */
@@ -2084,6 +2094,20 @@ export type SyncEventListOutput = {
     /* If true this user needs a full sync. Perform the same procedure as if the user just logged in. */
     FullRefresh: boolean;
 };
+export type VaultLargestItemsResult = {
+    /* Encrypted item ID */
+    ItemID: Id;
+    /* Total size of vault files in bytes */
+    TotalSize: number;
+};
+export type VaultFileStorageInfo = {
+    /* Encrypted vault ID */
+    VaultID: Id;
+    /* Total size of vault files in bytes */
+    TotalSize: number;
+    /* Collection of X biggest PassFile objects in a vault */
+    LargestFiles: VaultLargestItemsResult[];
+};
 export type ApiResponse<Path extends string, Method extends string> =
     Path extends `pass/v1/share/${string}/item/${string}/file/${string}/chunk/${string}` ?
         Method extends `get` ?
@@ -2457,7 +2481,7 @@ export type ApiResponse<Path extends string, Method extends string> =
         : never
     : Path extends `pass/v1/user/srp/auth` ?
         Method extends `post` ?
-            { Code: ResponseCodeSuccess }
+            UserSRPAuthResponse
         :   never
     : Path extends `pass/v1/user/srp/info` ?
         Method extends `get` ?
@@ -2498,6 +2522,10 @@ export type ApiResponse<Path extends string, Method extends string> =
     : Path extends `pass/v1/vault/share/${string}` ?
         Method extends `get` ?
             { Code: ResponseCodeSuccess; Share?: ShareGetResponse | null }
+        :   never
+    : Path extends `pass/v1/vault/usage/${string}` ?
+        Method extends `get` ?
+            { Code: ResponseCodeSuccess; VaultFileStorageInfo: VaultFileStorageInfo }
         :   never
     : Path extends `pass/v1/file/${string}/chunk` ?
         Method extends `post` ?
@@ -2610,7 +2638,8 @@ export type ApiResponse<Path extends string, Method extends string> =
             { Code: ResponseCodeSuccess; Monitor?: UserMonitorStatusResponse | null }
         :   never
     : Path extends `pass/v1/user/srp` ?
-        Method extends `post` ? { Code: ResponseCodeSuccess }
+        Method extends `get` ? UserHasSRPResponse
+        : Method extends `post` ? { Code: ResponseCodeSuccess }
         : Method extends `delete` ? { Code: ResponseCodeSuccess }
         : never
     : Path extends `pass/v1/user/sync_event` ?
