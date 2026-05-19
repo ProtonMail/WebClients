@@ -1613,6 +1613,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Toegang tot ${ PASS_APP_NAME } vereist uw vingerafdruk of apparaat pincode."
       ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Het toegangstoken \"${ action.token.Name }\" is verlopen. Als het wordt verwijderd, wordt het niet meer weergegeven."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Krijg onderweg toegang tot uw wachtwoorden met onze mobiele apps."
       ],
@@ -2154,6 +2157,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online-toegang tot ${ PASS_APP_NAME } vereist een PIN-code. U wordt uitgelogd na 3 mislukte pogingen."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Alleen tokens die in de afgelopen 30 dagen zijn verlopen, worden weergegeven. Oudere tokens worden automatisch verwijderd."
       ],
       "Open ${ PASS_APP_NAME } in a larger window": [
         "Open ${ PASS_APP_NAME } in een groter venster"
@@ -3210,6 +3216,9 @@
       ],
       "Expired": [
         "Verlopen"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Verlopen tokens (${ expired.length })"
       ],
       "Expiry Date": [
         "Vervaldatum"
@@ -5086,6 +5095,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Extra wachtwoord moet ten minste 8 tekens bevatten"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Automatisch invullen is mislukt. Zorg ervoor dat ${ PASS_APP_NAME } de nodige machtigingen heeft en probeer het opnieuw (${ error })."
       ],
       "Failed to load breaches.": [
         "Kon inbreuken niet laden."

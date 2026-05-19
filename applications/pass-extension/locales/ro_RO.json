@@ -1701,6 +1701,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Accesul la ${ PASS_APP_NAME } va necesita amprenta digitală sau codul PIN al dispozitivului."
       ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Codul de acces „${ action.token.Name }” este deja expirat. Dacă este șters, nu va mai fi afișat."
+      ],
       "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
         "Codul de acces „${ action.token.Name }” va înceta să funcționeze imediat. Această acțiune nu poate fi anulată."
       ],
@@ -2308,6 +2311,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Accesul online la ${ PASS_APP_NAME } va necesita un cod PIN. După 3 încercări nereușite contul va fi deconectat."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Sunt afișate doar codurile de acces care au expirat în ultimele 30 de zile. Cele mai vechi sunt șterse automat."
       ],
       "Open ${ PASS_APP_NAME } in a larger window": [
         "Deschidere ${ PASS_APP_NAME } într-o fereastră mai mare"
@@ -3417,6 +3423,9 @@
       ],
       "Expired": [
         "Expirat"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Coduri de acces expirate (${ expired.length })"
       ],
       "Expires in (minutes)": [
         "Expiră peste (minute)"
@@ -5363,6 +5372,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Parola suplimentară trebuie să aibă cel puțin 8 caractere."
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Autocompletarea a eșuat. Asigurați-vă că ${ PASS_APP_NAME } are permisiunile necesare și apoi reîncercați (${ error })."
       ],
       "Failed to load breaches.": [
         "Încărcarea divulgărilor a eșuat."

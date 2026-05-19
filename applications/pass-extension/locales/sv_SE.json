@@ -765,6 +765,9 @@
       "Via secure link": [
         "Via säker länk"
       ],
+      "View agent activity": [
+        "Visa agentaktivitet"
+      ],
       "View app logs": [
         "Visa apploggar"
       ],
@@ -1651,6 +1654,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Åtkomst till ${ PASS_APP_NAME } kommer kräva ditt fingeravtryck eller enhetens PIN-kod."
       ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Åtkomsttoken “${ action.token.Name }“ kommer att sluta fungera omedelbart. Denna åtgärd kan inte ångras."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Kom åt dina lösenord när du är på språng med våra mobilappar."
       ],
@@ -1809,6 +1815,9 @@
       ],
       "Coupon successfully applied!": [
         "Kupong tillämpad!"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Skapa en token för att integrera ${ PASS_APP_NAME } med dina skript och verktyg."
       ],
       "Create contact illustration": [
         "Skapa kontaktillustration"
@@ -2403,6 +2412,9 @@
       "Press Enter to copy": [
         "Tryck på Enter för att kopiera"
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Skyddad av ${ PROTON_SENTINEL_LINK }, vårt avancerade kontoskyddsprogram"
+      ],
       "Quickly autofill your 2FA tokens.": [
         "Fyll snabbt i dina 2FA-token automatiskt."
       ],
@@ -2477,6 +2489,9 @@
       ],
       "Select destination vault": [
         "Välj målvalv"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Välj valvet som “${ token.Name }“ kan läsa."
       ],
       "Select where you want your imported vaults to be saved.": [
         "Välj var du vill att dina importerade valv ska sparas."
@@ -5191,6 +5206,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Extralösenord bör ha minst 8 tecken"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Misslyckades att skriva automatiskt. Se till att ${ PASS_APP_NAME } har nödvändiga behörigheter och försök igen (${ error })."
       ],
       "Failed to load breaches.": [
         "Misslyckades att ladda intrång."
