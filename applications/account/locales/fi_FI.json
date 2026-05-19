@@ -199,6 +199,9 @@
       "Back": [
         "Takaisin"
       ],
+      "Back to sign-in": [
+        "Palaa kirjautumiseen"
+      ],
       "Block": [
         "Estä"
       ],
@@ -4422,9 +4425,6 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lue, vastaa ja pysy ajan tasalla Gmailista suoraan ${ MAIL_APP_NAME } -sovelluksessa"
       ],
-      "Send a code to your recovery email or phone": [
-        "Lähetä koodi palautussähköpostiisi tai -puhelimeesi"
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Määritä tilit kaikille käyttäjille ja kutsu heidät liittymään ${ BRAND_NAME }iin."
       ],
@@ -4464,6 +4464,9 @@
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Päivitä tilauksesi saadaksesi ${ activatePmUser }, toisen lyhyemmän ja helpommin muistettavan sähköpostiosoitten nykyisen lisäksi."
+      ],
+      "Use a recovery method to reset your password": [
+        "Nollaa salasanasi palautustoiminnon avulla"
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Emme voi enää käyttää ${ boldEmails } -osoitteita."
@@ -5379,6 +5382,9 @@
       "${ user } is requesting emergency access to your account": [
         "${ user } pyytää hätäpääsyä tilillesi"
       ],
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** on nyt palautusyhteyshenkilösi. Hän voi auttaa sinua avaamaan tietosi, kun olet nollannut salasanasi."
+      ],
       "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
         "**Jos hän ei pyytänyt apuasi**, on mahdollista, että joku muu yrittää käyttää hänen tiliään. Jätä tämä pyyntö tällöin huomiotta."
       ],
@@ -5394,6 +5400,9 @@
       "Add emergency contact": [
         "Lisää hätäyhteyshenkilö"
       ],
+      "Add recovery method": [
+        "Lisää palautustapa"
+      ],
       "Added on ${ formattedDate }": [
         "Lisätty ${ formattedDate }"
       ],
@@ -5405,6 +5414,9 @@
       ],
       "Change wait time": [
         "Muuta odotusaikaa"
+      ],
+      "Data recovery contacts": [
+        "Tietojen palautuksen yhteystiedot"
       ],
       "Disabled": [
         "ei käytössä"
@@ -5475,6 +5487,9 @@
       "Request access?": [
         "Pyydä käyttöoikeutta?"
       ],
+      "Start recovery": [
+        "Aloita palautus"
+      ],
       "They may ask to access my account in case of an emergency.": [
         "He voivat pyytää pääsyä tililleni hätätilanteessa."
       ],
@@ -5484,6 +5499,9 @@
       ],
       "Time required before automatically granting them access": [
         "Vaadittu aika ennen automaattisen pääsyn myöntämistä heille."
+      ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Palautustietojen lisäämiseksi, sinulla on oltava palautussähköpostiosoite tai puhelinnumero."
       ],
       "Trusted contact": [
         "Luotettu yhteyshenkilö"
@@ -5502,6 +5520,9 @@
       ],
       "Wait time saved": [
         "Odotusaika tallennettu"
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "Olemme lähettäneet sähköpostipyynnön käyttäjälle ${ user }. Ilmoita hänelle, että olet todellakin sinä ja yrität saada käyttöoikeutesi takaisin."
       ],
       "You are signed in to the account ${ account }.": [
         "Olet kirjautunut tunnuksella ${ account }."
@@ -7306,6 +7327,11 @@
         "Palvelut"
       ]
     },
+    "Group detail label": {
+      "Roles and permission:": [
+        "Roolit ja oikeudet:"
+      ]
+    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } jäsen",
@@ -7361,6 +7387,14 @@
       ],
       "Group membership": [
         "Ryhmän jäsenyys"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "Yleinen"
+      ],
+      "Roles and permissions": [
+        "Roolit ja oikeudet"
       ]
     },
     "Header": {
@@ -8060,6 +8094,9 @@
       "${ name } for Windows": [
         "${ name } Windowsille"
       ],
+      "${ name } is not available": [
+        "${ name } ei ole saatavilla"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: älä merkitse roskapostiksi tai hylkää luvattomia sähköposteja. Tätä politiikkaa käytetään yleensä vianhakuun ja testaamiseen."
       ],
@@ -8203,6 +8240,9 @@
       "(Filter if ANY of the following conditions are met)": [
         "(suodata, jos JOTKIN seuraavista ehdoista täyttyvät)"
       ],
+      "**${ appName }** is not available for your account.": [
+        "**${ appName }** ei ole saatavilla tilillesi."
+      ],
       "**${ appName }** is not supported.": [
         "**${ appName }** ei ole tuettu."
       ],
@@ -8275,7 +8315,7 @@
         "Tili on päivitetty"
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Aktivoi tiedoillesi ainakin palautustapa, jolla varmistat pääsysi ${ BRAND_NAME }-tilisi sisältöön, jos kadotat salasanasi."
+        "Aktivoi vähintään yksi tietojen palautustapa, jotta pääset edelleen ${ BRAND_NAME }-tilisi sisältöön, jos kadotat salasanasi."
       ],
       "Active": [
         "Aktiiviset"
@@ -8749,6 +8789,9 @@
       ],
       "Data recoverable with recovery phrase": [
         "Tiedot, jotka voidaan palauttaa palautuslauseella"
+      ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "Tietojen palauttaminen edellyttää salasanan nollausmahdollisuutta (sähköpostitse tai tekstiviestillä)"
       ],
       "dedicated servers": [
         "omia palvelimia"
@@ -9225,6 +9268,9 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Jos menetät todennuslaitteesi, voit kirjautua tilillesi käyttäen näitä koodeja 6-numeroisen vahvistuskoodin sijaan. Koodit ovat kertakäyttöisiä."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Jos et voi käyttää tunnistautumissovellustasi, voit käyttää yhtä kuudestatoista varmuuspalautuskoodistasi, jotka sait lisätessäsi kaksivaiheisen tunnistautumisen. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Jos jatkat alennusta, menetät maksullisten ${ MAIL_APP_NAME } ja ${ VPN_APP_NAME } -ominaisuuksien käyttöoikeuden."
@@ -10309,6 +10355,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Tämä saattaa kestää jonkin aikaa. Älä sulje tätä sivua tai katkaise Internet-yhteyttäsi."
+      ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "Tämä tietojen palautusmenetelmä edellyttää salasanan nollausvaihtoehtoa (sähköposti tai tekstiviesti)"
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Ominaisuus viivästyttää sähköpostiesi lähetystä mahdollistaen lähetyksen kumoamiseen valitun ajan sisällä."
@@ -15158,8 +15207,8 @@
       "${ app } product updates": [
         "${ app } -tuotepäivitykset"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } for Business -uutiskirje"
+      "${ BRAND_NAME } for Business communications": [
+        "${ BRAND_NAME } for Business viestintään"
       ],
       "${ BRAND_NAME } important announcements": [
         "Tärkeät ${ BRAND_NAME } -ilmoitukset"
@@ -15212,8 +15261,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "Ensimmäisen ${ BRAND_NAME } -tuotteen käyttökuukautesi aikana"
       ],
-      "Email subscriptions": [
-        "Sähköpostitilaukset"
+      "Email communications": [
+        "Sähköpostiviestintä"
       ],
       "In-app notifications": [
         "Sovelluksensisäiset ilmoitukset"
@@ -21787,6 +21836,9 @@
       ],
       "Snooze:": [
         "Torkutus:"
+      ],
+      "Something went wrong": [
+        "Jotain meni pieleen"
       ],
       "Sort folders alphabetically": [
         "Jätjestä kansiot aakkosellisesti"
