@@ -10,7 +10,7 @@ import { createRectsFromDOMRange } from '../../Utils/createRectsFromDOMRange'
 
 export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalEditor; cancelAddComment: () => void }) {
   const textContentRef = useRef('')
-  const { controller, setThreadToFocus, setCurrentCommentDraft } = useCommentsContext()
+  const { createCommentThread, setThreadToFocus, setCurrentCommentDraft } = useCommentsContext()
 
   const boxRef = useRef<HTMLDivElement>(null)
   const selectionState = useMemo(
@@ -109,7 +109,7 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
   const onSubmit = useCallback(
     async (content: string) => {
       if (selectionRef.current) {
-        const success = await controller.createCommentThread(content).then((thread) => {
+        const success = await createCommentThread(content).then((thread) => {
           if (thread) {
             setThreadToFocus(thread.id)
           }
@@ -127,7 +127,7 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
       }
       return false
     },
-    [cancelAddComment, controller, setThreadToFocus, setCurrentCommentDraft],
+    [createCommentThread, setThreadToFocus, cancelAddComment, setCurrentCommentDraft],
   )
 
   const onTextChange = useCallback(

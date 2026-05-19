@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import type { InitialConfigType } from '@lexical/react/LexicalComposer'
 import DocumentEditorTheme from '../../Theme/Theme'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
@@ -17,7 +17,7 @@ interface CommentViewerProps {
 }
 
 export const CommentViewer: React.FC<CommentViewerProps> = ({ content, className }) => {
-  const { controller } = useCommentsContext()
+  const { openLink } = useCommentsContext()
 
   const initialConfig: InitialConfigType = {
     namespace: 'CommentViewer',
@@ -29,13 +29,6 @@ export const CommentViewer: React.FC<CommentViewerProps> = ({ content, className
     editorState: sanitizeLexicalState(content),
     editable: false,
   }
-
-  const openLink = useCallback(
-    (url: string) => {
-      void controller.openLink(url).catch(reportErrorToSentry)
-    },
-    [controller],
-  )
 
   return (
     <SafeLexicalComposer initialConfig={initialConfig}>
