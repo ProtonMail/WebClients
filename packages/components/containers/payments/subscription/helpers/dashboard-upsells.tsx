@@ -152,7 +152,11 @@ export interface UpsellWithPlan {
     title: string;
     description: string;
     isRecommended?: boolean;
+    recommendedLabel?: string;
     highlightPrice?: boolean;
+    icon?: ReactNode;
+    /** Top fade (e.g. `rgba(109, 74, 255, 0.15)`) — same pattern as VPN dashboard `PlanCard`. */
+    gradientColor?: string;
     features: UpsellFeature[];
     price: Price;
     onUpgrade: (cycle?: Cycle) => void;
