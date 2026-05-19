@@ -1,7 +1,6 @@
 import type { MutableRefObject } from 'react';
 
-import { tabbable } from 'tabbable';
-
+import { tabbable } from '../components/focus/tabbableWrapper';
 import type { HotkeyTuple } from './useHotkeys';
 
 interface Context {
