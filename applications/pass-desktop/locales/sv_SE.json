@@ -774,6 +774,9 @@
       "Via secure link": [
         "Via säker länk"
       ],
+      "View agent activity": [
+        "Visa agentaktivitet"
+      ],
       "View details": [
         "Visa detaljer"
       ],
@@ -1641,6 +1644,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Åtkomst till ${ PASS_APP_NAME } kommer kräva ditt fingeravtryck eller enhetens PIN-kod."
       ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Åtkomsttoken “${ action.token.Name }“ kommer att sluta fungera omedelbart. Denna åtgärd kan inte ångras."
+      ],
       "Add your custom email address to monitor:": [
         "Lägg till din anpassade e-postadress att övervaka:"
       ],
@@ -1781,6 +1787,9 @@
       ],
       "Coupon successfully applied!": [
         "Kupong tillämpad!"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Skapa en token för att integrera ${ PASS_APP_NAME } med dina skript och verktyg."
       ],
       "Create contact illustration": [
         "Skapa kontaktillustration"
@@ -2335,6 +2344,9 @@
       "Press Enter to copy": [
         "Tryck på Enter för att kopiera"
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Skyddad av ${ PROTON_SENTINEL_LINK }, vårt avancerade kontoskyddsprogram"
+      ],
       "Read item": [
         "Läs objekt"
       ],
@@ -2388,6 +2400,9 @@
       ],
       "Select destination vault": [
         "Välj målvalv"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Välj valvet som “${ token.Name }“ kan läsa."
       ],
       "Select vault to share": [
         "Välj valv att dela"
