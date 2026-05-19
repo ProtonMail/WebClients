@@ -2713,6 +2713,15 @@
       ],
       "Select the vaults \"${ token.Name }\" can read.": [
         "Välj valvet som “${ token.Name }“ kan läsa."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Kopiera denna token nu. Av säkerhetsskäl kommer den inte att visas igen."
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Ladda ner pass-cli från ${ passCliLink }."
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Uppgradera till ${ PASS_APP_NAME } Plus för att skapa åtkomsttoken och använda ${ PASS_APP_NAME } programmatiskt."
       ]
     },
     "Keyboard key": {
