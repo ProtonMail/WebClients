@@ -1,7 +1,7 @@
 import { ADDON_NAMES } from '@proton/payments/core/constants';
 import type { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 
-import type { CustomiserMode } from './ProtonPlanCustomizer';
+import type { CustomiserMode } from './addonCustomizerHelpers';
 
 export function shouldShowDomainAddon({
     addonName,
