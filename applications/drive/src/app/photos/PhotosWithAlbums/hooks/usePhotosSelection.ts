@@ -2,10 +2,14 @@ import { useCallback, useMemo } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
+import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
+
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../../zustand/photos/layout.store';
 import { usePhotoSelectionStore } from '../../../zustand/photos/selection.store';
 import type { PhotoItem } from '../../usePhotos.store';
-import type { PhotosLayoutOutletContext } from '../layout/PhotosLayout';
+import { usePhotosStore } from '../../usePhotos.store';
+import { isPhotoGroup } from '../../utils/isPhotoGroup';
+import { sortWithCategories } from '../../utils/sortWithCategories';
 
 type HandleSelectionArgs = {
     isSelected: boolean;
@@ -13,30 +17,54 @@ type HandleSelectionArgs = {
 };
 
 export const usePhotosSelection = ({
-    photos,
-    photoNodeUidToIndexMap,
-    albumPhotos,
-    albumPhotosNodeUidToIndexMap,
-}: Pick<
-    PhotosLayoutOutletContext,
-    'photos' | 'photoNodeUidToIndexMap' | 'albumPhotos' | 'albumPhotosNodeUidToIndexMap'
->) => {
+    photoTimelineUids,
+    albumPhotoTimelineUids,
+    selectedTags,
+}: {
+    photoTimelineUids: Set<string>;
+    albumPhotoTimelineUids: Set<string> | undefined;
+    selectedTags?: number[];
+}) => {
     const { currentPageType } = usePhotoLayoutStore(
         useShallow((state) => ({
             currentPageType: state.currentPageType,
         }))
     );
 
-    const map = useMemo(
-        () =>
-            currentPageType === AlbumsPageTypes.ALBUMSGALLERY ? albumPhotosNodeUidToIndexMap : photoNodeUidToIndexMap,
-        [currentPageType, albumPhotosNodeUidToIndexMap, photoNodeUidToIndexMap]
-    );
+    const photoItems = usePhotosStore((state) => state.photoItems);
 
-    const data = useMemo(
-        () => (currentPageType === AlbumsPageTypes.ALBUMSGALLERY ? albumPhotos : photos),
-        [currentPageType, albumPhotos, photos]
-    );
+    const { data, map } = useMemo(() => {
+        const baseUids = Array.from(
+            currentPageType === AlbumsPageTypes.ALBUMSGALLERY
+                ? (albumPhotoTimelineUids ?? new Set<string>())
+                : photoTimelineUids
+        );
+
+        const filteredUids =
+            selectedTags && !selectedTags.includes(PhotoTag.All)
+                ? baseUids.filter((uid) => {
+                      const tags = photoItems.get(uid)?.tags ?? [];
+                      return selectedTags.some((tag) => tags.includes(tag));
+                  })
+                : baseUids;
+
+        const { photoItems: allPhotoItems } = usePhotosStore.getState();
+        const items = filteredUids.flatMap((uid) => {
+            const item = allPhotoItems.get(uid);
+            return item ? [item] : [];
+        });
+
+        const grouped = sortWithCategories(items);
+
+        const indexMap: Record<string, number> = {};
+        grouped.forEach((item, index) => {
+            if (!isPhotoGroup(item)) {
+                indexMap[(item as PhotoItem).nodeUid] = index;
+            }
+        });
+
+        return { data: grouped, map: indexMap };
+    }, [currentPageType, albumPhotoTimelineUids, photoTimelineUids, selectedTags, photoItems]);
 
     const { setSelected, clearSelection, isGroupSelected, isItemSelected, getSelectedItems } = usePhotoSelectionStore();
 

@@ -6,8 +6,7 @@ import { c } from 'ttag';
 import { useElementRect } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import type { PhotoGridItem } from '../../store';
-import { isPhotoGroup } from '../../store/_photos';
+import { usePhotosStore } from '../usePhotos.store';
 
 import './FastScrollBar.scss';
 
@@ -16,7 +15,7 @@ const DOT_MIN_HEIGHT = 4;
 const MINIMUM_ITEMS_FOR_FAST_SCROLL = 50; // Below 50 items, we do not show fast scroll
 
 export interface FastScrollBarProps {
-    data: PhotoGridItem[];
+    uids: string[];
     containerHeight: number;
     containerRef: React.RefObject<HTMLDivElement>;
     containerRect: DOMRect;
@@ -39,26 +38,27 @@ interface ScrollElement {
 
 const dateCache = new Map<number, { year: number; month: number } | null>();
 
-export const getYearAndMonthFromCaptureTime = (captureTime?: number): { year: number; month: number } | null => {
+export const getYearAndMonthFromCaptureTime = (captureTime?: Date): { year: number; month: number } | null => {
     if (!captureTime) {
         return null;
     }
 
-    if (dateCache.has(captureTime)) {
-        return dateCache.get(captureTime)!;
+    const timestamp = captureTime.getTime();
+
+    if (dateCache.has(timestamp)) {
+        return dateCache.get(timestamp) ?? null;
     }
 
-    const date = new Date(captureTime * 1000);
-    if (isNaN(date.getTime())) {
-        dateCache.set(captureTime, null);
+    if (isNaN(timestamp)) {
+        dateCache.set(timestamp, null);
         return null;
     }
 
     const result = {
-        year: date.getFullYear(),
-        month: date.getMonth(),
+        year: captureTime.getFullYear(),
+        month: captureTime.getMonth(),
     };
-    dateCache.set(captureTime, result);
+    dateCache.set(timestamp, result);
     return result;
 };
 
@@ -93,7 +93,7 @@ export const getMonthName = (month: number): string => {
 };
 
 export const FastScrollBar: FC<FastScrollBarProps> = ({
-    data,
+    uids,
     containerRef,
     containerRect,
     containerHeight,
@@ -110,7 +110,7 @@ export const FastScrollBar: FC<FastScrollBarProps> = ({
     const elementRefsCache = useRef<Map<string, HTMLButtonElement>>(new Map());
 
     const scrollElements = useMemo<ScrollElement[]>(() => {
-        if (!containerHeight || data.length === 0) {
+        if (!containerHeight || uids.length === 0) {
             return [];
         }
 
@@ -118,15 +118,16 @@ export const FastScrollBar: FC<FastScrollBarProps> = ({
         const itemWidth = innerStyle.itemWidth;
         const itemsPerRow = Math.max(1, Math.floor(containerWidth / itemWidth));
 
+        const { photoItems } = usePhotosStore.getState();
         const itemCountByYearMonth = new Map<number, Map<number, number>>();
 
-        for (let i = 0; i < data.length; i++) {
-            const item = data[i];
-            if (isPhotoGroup(item)) {
+        for (const uid of uids) {
+            const item = photoItems.get(uid);
+            if (!item) {
                 continue;
             }
 
-            const ym = getYearAndMonthFromCaptureTime(item.activeRevision?.photo?.captureTime);
+            const ym = getYearAndMonthFromCaptureTime(item.captureTime);
             if (!ym) {
                 continue;
             }
@@ -146,11 +147,14 @@ export const FastScrollBar: FC<FastScrollBarProps> = ({
         const sortedYears = Array.from(itemCountByYearMonth.keys()).sort((a, b) => a - b);
 
         for (const year of sortedYears) {
-            const monthMap = itemCountByYearMonth.get(year)!;
+            const monthMap = itemCountByYearMonth.get(year);
+            if (!monthMap) {
+                continue;
+            }
             const sortedMonths = Array.from(monthMap.keys()).sort((a, b) => a - b);
 
             for (const month of sortedMonths) {
-                const count = monthMap.get(month)!;
+                const count = monthMap.get(month) ?? 0;
                 entries.push({
                     year,
                     month: month + 1,
@@ -186,7 +190,7 @@ export const FastScrollBar: FC<FastScrollBarProps> = ({
         }
 
         return elements;
-    }, [containerHeight, containerRect.width, innerStyle.itemWidth, data]);
+    }, [containerHeight, containerRect.width, innerStyle.itemWidth, uids]);
 
     const handleElementClick = useCallback(
         (element: ScrollElement, behavior: ScrollBehavior = 'smooth') => {
@@ -232,7 +236,7 @@ export const FastScrollBar: FC<FastScrollBarProps> = ({
         [density, scrollElements.length]
     );
 
-    if (data.length < MINIMUM_ITEMS_FOR_FAST_SCROLL) {
+    if (uids.length < MINIMUM_ITEMS_FOR_FAST_SCROLL) {
         return null;
     }
 
@@ -244,6 +248,7 @@ export const FastScrollBar: FC<FastScrollBarProps> = ({
                 ref={scrollBarRef}
             >
                 {scrollElements.map((el, i) => (
+                    // eslint-disable-next-line jsx-a11y/no-aria-hidden-on-focusable
                     <button
                         key={el.dataKey}
                         ref={(node) => {

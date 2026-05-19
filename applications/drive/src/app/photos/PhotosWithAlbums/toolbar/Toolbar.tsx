@@ -1,68 +1,56 @@
 import type { ModalStateReturnObj } from '@proton/components';
 
-import type { OnFileSkippedSuccessCallbackData, OnFileUploadSuccessCallbackData, PhotoGridItem } from '../../../store';
 import { AlbumsPageTypes } from '../../../zustand/photos/layout.store';
 import type { PhotoItem } from '../../usePhotos.store';
 import { PhotosAddAlbumPhotosToolbar } from './PhotosAddAlbumPhotosToolbar';
 import { PhotosWithAlbumsToolbar } from './PhotosWithAlbumsToolbar';
 
 interface ToolbarProps {
-    volumeId: string;
     currentPageType: AlbumsPageTypes;
-    previewShareId: string;
-    uploadLinkId: string;
-    rootLinkId?: string;
+    rootNodeUid?: string;
     selectedCount: number;
     uploadDisabled: boolean;
     canRemoveSelectedPhotos: boolean;
 
-    albumsUid: string[];
+    albumsUids: string[];
     albumUid: string | undefined;
-    albumPhotos: PhotoGridItem[];
-    photos: PhotoGridItem[];
+    uids: string[];
     selectedItems: PhotoItem[];
 
     createAlbumModal: ModalStateReturnObj;
     requestDownload: (photosUids: string[]) => Promise<void>;
     onAddAlbumPhotos: () => Promise<void>;
+    onUploadStart?: () => void;
     openAddPhotosToAlbumModal: () => void;
     openSharePhotosIntoAnAlbumModal: () => void;
     openSharePhotoModal: () => void;
-    onFileUpload: ((file: OnFileUploadSuccessCallbackData) => void) | undefined;
-    onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
     onPreview: () => void;
     onSelectCover: () => Promise<void>;
     onDeleteAlbum: () => void;
     onLeaveAlbum: () => void;
     onShowDetails: () => void;
     onRemoveAlbumPhotos: () => Promise<void>;
-    onStartUpload: () => void;
     onSavePhotos?: () => Promise<void>;
     isAlbumPhotosLoading?: boolean;
 }
 
 export const Toolbar = ({
-    volumeId,
     currentPageType,
-    previewShareId,
-    uploadLinkId,
-    rootLinkId,
+    rootNodeUid,
     selectedCount,
     uploadDisabled,
     canRemoveSelectedPhotos,
-    albumsUid,
+    albumsUids,
     albumUid,
-    albumPhotos,
-    photos,
+    uids,
     selectedItems,
     createAlbumModal,
     requestDownload,
     onAddAlbumPhotos,
+    onUploadStart,
     openAddPhotosToAlbumModal,
     openSharePhotosIntoAnAlbumModal,
     openSharePhotoModal,
-    onFileUpload,
-    onFileSkipped,
     onPreview,
     onSelectCover,
     onDeleteAlbum,
@@ -70,18 +58,15 @@ export const Toolbar = ({
     onShowDetails,
     onRemoveAlbumPhotos,
     onSavePhotos,
-    onStartUpload,
     isAlbumPhotosLoading,
 }: ToolbarProps) => {
     switch (currentPageType) {
         case AlbumsPageTypes.ALBUMS:
             return (
                 <PhotosWithAlbumsToolbar
-                    volumeId={volumeId}
-                    shareId={previewShareId}
-                    linkId={uploadLinkId}
-                    data={albumsUid}
+                    uids={albumsUids}
                     selectedItems={[]}
+                    albumNodeUid={albumUid}
                     requestDownload={requestDownload}
                     uploadDisabled={true}
                     tabSelection={AlbumsPageTypes.ALBUMS}
@@ -91,31 +76,23 @@ export const Toolbar = ({
         case AlbumsPageTypes.ALBUMSADDPHOTOS:
             return (
                 <PhotosAddAlbumPhotosToolbar
-                    volumeId={volumeId}
-                    shareId={previewShareId}
-                    linkId={uploadLinkId}
                     selectedCount={selectedCount}
                     onAddAlbumPhotos={onAddAlbumPhotos}
-                    onStartUpload={onStartUpload}
-                    onFileUpload={onFileUpload}
-                    onFileSkipped={onFileSkipped}
+                    onUploadStart={onUploadStart}
+                    albumNodeUid={albumUid}
                 />
             );
         default:
             return (
                 <PhotosWithAlbumsToolbar
-                    volumeId={volumeId}
-                    shareId={previewShareId}
-                    linkId={uploadLinkId}
-                    nodeUid={albumUid}
+                    albumNodeUid={albumUid}
                     selectedItems={selectedItems}
                     onPreview={onPreview}
                     requestDownload={requestDownload}
-                    data={AlbumsPageTypes.ALBUMSGALLERY ? albumPhotos : photos}
+                    uids={uids}
                     uploadDisabled={uploadDisabled}
                     tabSelection={currentPageType}
                     createAlbumModal={createAlbumModal}
-                    onFileUpload={onFileUpload}
                     removeAlbumPhotos={canRemoveSelectedPhotos ? onRemoveAlbumPhotos : undefined}
                     onSelectCover={onSelectCover}
                     onDeleteAlbum={onDeleteAlbum}
@@ -126,7 +103,7 @@ export const Toolbar = ({
                     openSharePhotosIntoAnAlbumModal={openSharePhotosIntoAnAlbumModal}
                     openSharePhotoModal={openSharePhotoModal}
                     onSavePhotos={onSavePhotos}
-                    rootLinkId={rootLinkId}
+                    rootNodeUid={rootNodeUid}
                     isAlbumPhotosLoading={isAlbumPhotosLoading}
                 />
             );
