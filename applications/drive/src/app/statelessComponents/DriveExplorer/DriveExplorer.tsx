@@ -337,9 +337,6 @@ const DriveExplorer = ({
                 selection.selectionMethods.clearSelections();
                 event.preventDefault();
             }
-            if (event.key === ' ' || event.key === 'Enter') {
-                event.preventDefault();
-            }
         },
         [selection]
     );
