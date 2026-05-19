@@ -233,6 +233,7 @@ export enum TelemetryUpgradePageEvents {
 
 export enum TelemetryRecoverySettingsEvents {
     page_load = 'page_load',
+    account_safety_review_click = 'account_safety_review_click',
     setting_enabled = 'setting_enabled',
 }
 

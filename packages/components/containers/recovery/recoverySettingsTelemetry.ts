@@ -41,6 +41,16 @@ export const useRecoverySettingsTelemetry = () => {
         void telemetryReportsBatchQueue.flush();
     }, [api, appName, variant]);
 
+    const sendAccountSafetyReviewClick = useCallback(() => {
+        void sendTelemetryReport({
+            ...commonProps,
+            dimensions: { ...commonDimensions },
+            event: TelemetryRecoverySettingsEvents.account_safety_review_click,
+        });
+
+        void telemetryReportsBatchQueue.flush();
+    }, [api, appName, variant]);
+
     const sendRecoverySettingEnabled = useCallback(
         ({
             setting,
@@ -67,5 +77,5 @@ export const useRecoverySettingsTelemetry = () => {
         [api, appName, variant]
     );
 
-    return { sendRecoveryPageLoad, sendRecoverySettingEnabled };
+    return { sendRecoveryPageLoad, sendAccountSafetyReviewClick, sendRecoverySettingEnabled };
 };
