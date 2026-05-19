@@ -5,7 +5,6 @@ import { isSafari, textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { usePhotosWithAlbums } from '../../photos/PhotosStore/PhotosWithAlbumsProvider';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { getEllipsedName } from '../../utils/intl/getEllipsedName';
@@ -42,7 +41,6 @@ export default function useActions() {
     const shareUrl = useShareUrl();
     const shareActions = useShareActions();
     const devicesActions = useDevicesActions();
-    const { removePhotosFromCache } = usePhotosWithAlbums();
 
     const createFolder = async (
         abortSignal: AbortSignal,
@@ -195,10 +193,6 @@ export default function useActions() {
             silence: true,
         });
 
-        // This is a bit ugly, but the photo linkId cache is not connected
-        // very well to the rest of our state.
-        removePhotosFromCache(result.successes);
-
         const undoAction = async () => {
             const linkIdsPerParentId = Object.entries(result.originalParentIds).reduce(
                 (acc, [linkId, originalParentId]) => {
@@ -244,10 +238,6 @@ export default function useActions() {
                 volumeId,
             }))
         );
-
-        // This is a bit ugly, but the photo linkId cache is not connected
-        // very well to the rest of our state.
-        removePhotosFromCache(result.successes);
 
         if (notify) {
             const undoAction = async () => {

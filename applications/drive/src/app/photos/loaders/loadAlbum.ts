@@ -52,6 +52,8 @@ export const refreshAlbumMetadata = async (albumNodeUid: string) => {
         isOwner: !Boolean(node.membership),
         hasSignatureIssues: !getSignatureIssues(maybeAlbumNode).ok,
         ownedBy: node.ownedBy.email,
+        parentNodeUid: node.parentUid,
+        treeEventScopeId: node.treeEventScopeId,
         members,
         deprecatedShareId: rootNodeSharedId,
     };
@@ -62,11 +64,12 @@ export const refreshAlbumMetadata = async (albumNodeUid: string) => {
 export const loadCurrentAlbum = async (albumNodeUid: string, abortSignal?: AbortSignal) => {
     const drive = getDriveForPhotos();
     const albumsStore = useAlbumsStore.getState();
+    albumsStore.setCurrentAlbumNodeUid(albumNodeUid);
     albumsStore.setLoading(true);
     try {
         const album = await refreshAlbumMetadata(albumNodeUid);
         if (album) {
-            albumsStore.setCurrentAlbum(album);
+            albumsStore.upsertAlbum(album);
         }
 
         const collectedUids: string[] = [];

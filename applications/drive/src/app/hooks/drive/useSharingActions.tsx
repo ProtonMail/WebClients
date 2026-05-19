@@ -45,11 +45,13 @@ export const useSharingActions = () => {
     const removeMe = (
         showConfirmModal: ReturnType<typeof useConfirmActionModal>[1],
         drive: Pick<ProtonDriveClient, 'leaveSharedNode' | 'getNode'>,
-        uid: string
+        uid: string,
+        onSuccess?: () => void
     ) => {
         const onSubmit = async () => {
             try {
                 await drive.leaveSharedNode(uid);
+                onSuccess?.();
                 getNotificationsManager().createNotification({
                     text: c('Notification').t`File removed`,
                 });

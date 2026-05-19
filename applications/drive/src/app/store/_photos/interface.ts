@@ -1,6 +1,5 @@
 import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
-import type { Album, DecryptedAlbum } from '../../photos/PhotosStore/PhotosWithAlbumsProvider';
 import type { DecryptedLink } from '../_links/interface';
 import type { DriveFileRevisionPhoto } from '../_revisions';
 
@@ -67,19 +66,3 @@ export type PhotoLink =
           };
           photoProperties?: DecryptedLink['photoProperties'];
       };
-
-export type AlbumLink =
-    | DecryptedAlbum
-    | {
-          // These properties are always present, even on incomplete links
-          linkId: string;
-          rootShareId: string;
-          parentLinkId: string;
-          isFile: boolean;
-          activeRevision: {
-              album: Album;
-          };
-      };
-
-export type PhotoGroup = string;
-export type PhotoGridItem = PhotoLink | PhotoGroup;
