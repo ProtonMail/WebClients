@@ -1709,6 +1709,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Prístup k ${ PASS_APP_NAME } bude vyžadovať váš odtlačok prsta alebo PIN zariadenia."
       ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Platnosť prístupového tokenu „${ action.token.Name }“ už uplynula. Ak ho odstránite, už sa nebude zobrazovať."
+      ],
       "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
         "Prístupový token „${ action.token.Name }“ prestane okamžite fungovať. Táto akcia sa nedá vrátiť späť."
       ],
@@ -2275,6 +2278,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online prístup k ${ PASS_APP_NAME } bude vyžadovať PIN kód. Po troch neúspešných pokusoch dôjde k odhláseniu."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Zobrazujú sa len tokeny, ktorých platnosť uplynula v posledných 30 dňoch. Staršie tokeny sa automaticky mažú."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Otvorte nastavenia rozšírenia v prehliadači Safari a skontrolujte, či sú povolenia pre domény ${ BRAND_NAME } povolené."
@@ -3347,6 +3353,9 @@
       ],
       "Expired": [
         "Vypršal"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Exspirované tokeny (${ expired.length })"
       ],
       "Expires in (minutes)": [
         "Vyprší o (minúty)"

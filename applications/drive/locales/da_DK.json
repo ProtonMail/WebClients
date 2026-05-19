@@ -7062,6 +7062,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } brugernavn"
       ],
+      "${ downloads } downloads": [
+        "${ downloads } downloads"
+      ],
       "${ n } month": [
         "${ n } måned",
         "${ n } måneder"
@@ -7248,6 +7251,9 @@
       "Created": [
         "Oprettet"
       ],
+      "Created ${ created }": [
+        "Oprettet ${ created }"
+      ],
       "Credits": [
         "Kreditter"
       ],
@@ -7267,11 +7273,20 @@
       "Deleted": [
         "Slettet"
       ],
+      "Deleted ${ deleted }": [
+        "Slettet ${ deleted }"
+      ],
       "Device": [
         "Enhed"
       ],
+      "Device #${ position }": [
+        "Enhed #${ position }"
+      ],
       "Device name": [
         "Enhedsnavn"
+      ],
+      "Device: ${ name }": [
+        "Enhed: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Deaktiver dette link på en bestemt dato"
@@ -7330,8 +7345,14 @@
       "Expired": [
         "Udløbet"
       ],
+      "Expired on ${ formatted }": [
+        "Udløb den ${ formatted }"
+      ],
       "Expires": [
         "Udløber"
+      ],
+      "Expires ${ formatted }": [
+        "Udløber ${ formatted }"
       ],
       "Expiry": [
         "Udløb"
@@ -7405,6 +7426,9 @@
       "Integrated 2FA authenticator": [
         "Integreret 2FA-godkendelsesværktøj"
       ],
+      "Item #${ position }": [
+        "Element #${ position }"
+      ],
       "Keep both": [
         "Behold begge"
       ],
@@ -7435,6 +7459,9 @@
       "Location": [
         "Placering"
       ],
+      "Location: ${ item.location }": [
+        "Placering: ${ item.location }"
+      ],
       "Log in or sign up ": [
         "Log ind eller opret dig "
       ],
@@ -7456,6 +7483,9 @@
       "Modified": [
         "Ændret"
       ],
+      "Modified ${ modified }": [
+        "Ændret ${ modified }"
+      ],
       "Move to Archive": [
         "Flyt til arkiv"
       ],
@@ -7476,6 +7506,9 @@
       ],
       "Never": [
         "Aldrig"
+      ],
+      "Never expires": [
+        "Udløber aldrig"
       ],
       "New password": [
         "Ny adgangskode"
@@ -7521,6 +7554,9 @@
       ],
       "Payment method": [
         "Betalingsmetode"
+      ],
+      "Pending invitation": [
+        "Afventende invitation"
       ],
       "PGP scheme": [
         "PGP-metode"
@@ -7600,8 +7636,17 @@
       "Shared by": [
         "Delt af"
       ],
+      "Shared by ${ sharedBy }": [
+        "Delt af ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Delt gennem Offentligt link"
+      ],
       "Shared on": [
         "Delt"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Delt den ${ sharedOn }"
       ],
       "Shared with me": [
         "Delt med mig"
@@ -8494,6 +8539,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Access all countries": [
+        "Få adgang til alle lande"
+      ],
       "Ad-blocker and malware protection": [
         "Annonceblokering og beskyttelse mod malware"
       ],
@@ -8652,6 +8700,9 @@
       "Multiple admin roles": [
         "Flere administratorroller"
       ],
+      "No streaming support": [
+        "Understøtter ikke streaming"
+      ],
       "Online document editor": [
         "Online dokumenteditor"
       ],
@@ -8801,6 +8852,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ubegrænset mængde/båndbredde"
+      ],
+      "Unlock streaming": [
+        "Lås op for streaming"
       ],
       "Up to ${ n } user": [
         "Op til ${ n } bruger",
@@ -9204,6 +9258,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } land",
+        "${ n } lande"
+      ],
       "Access advanced VPN features": [
         "Få adgang til avancerede VPN-funktioner"
       ],

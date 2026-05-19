@@ -219,6 +219,9 @@
       "Back to sign in": [
         "返回登录"
       ],
+      "Back to sign-in": [
+        "返回登录"
+      ],
       "Block": [
         "屏蔽"
       ],
@@ -1495,7 +1498,7 @@
         "设为默认"
       ],
       "Set as default mail application": [
-        "设为默认邮件应用程序"
+        "设置为默认邮箱应用"
       ],
       "Set catch-all": [
         "设置通配邮箱"
@@ -5207,7 +5210,7 @@
         "${ DRIVE_APP_NAME } 中的 ${ DOCS_SHORT_APP_NAME } 允许您在安全、加密的环境中与他人协同办公。"
       ],
       "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } 并非您的默认邮件应用程序！"
+        "${ MAIL_APP_NAME } 不是您的默认邮箱应用！"
       ],
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } 是您的默认邮箱应用"
@@ -5359,9 +5362,6 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "在 ${ MAIL_APP_NAME } 中阅读、回复并随时处理 Gmail 邮件"
       ],
-      "Send a code to your recovery email or phone": [
-        "向您的密保邮箱或手机发送验证码"
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "为所有用户建立账户并邀请他们加入 ${ BRAND_NAME }。"
       ],
@@ -5409,6 +5409,9 @@
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "升级后，除现有邮箱地址外，还可以获得一个更短、更易记的 ${ activatePmUser } 邮箱地址。"
+      ],
+      "Use a recovery method to reset your password": [
+        "使用恢复方法重置密码"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "使用本指南，让您的组织迅速受益于 ${ BRAND_NAME } 行业领先的加密和隐私生态系统。"
@@ -8831,6 +8834,9 @@
       ],
       "Group address:": [
         "群组地址："
+      ],
+      "Roles and permission:": [
+        "角色与权限："
       ]
     },
     "Group member count": {
@@ -8887,6 +8893,14 @@
       ],
       "Group membership": [
         "群组成员"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "常规"
+      ],
+      "Roles and permissions": [
+        "角色与权限"
       ]
     },
     "Header": {
@@ -9523,6 +9537,9 @@
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "${ BRAND_NAME } 企业套餐为您的团队提供所有所需的协作工具，使其在工作中高效且有条理，同时保护您的业务安全。"
       ],
+      "${ BRAND_NAME } Free": [
+        "${ BRAND_NAME } Free"
+      ],
       "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
         "${ BRAND_NAME } 独立运营且无广告收入。\n以下示例说明了如何在实际中运用这种独立性。"
       ],
@@ -9621,6 +9638,9 @@
       ],
       "${ name } for Windows": [
         "${ name } Windows 版"
+      ],
+      "${ name } is not available": [
+        "${ name } 不可用"
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }：不隔离也不拒收未经授权的电子邮件，通常只用于调试。"
@@ -9765,6 +9785,9 @@
       ],
       "(formerly Twitter)": [
         "（原 Twitter）"
+      ],
+      "**${ appName }** is not available for your account.": [
+        "您的账户无法使用 **${ appName }**。"
       ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "您的组织 **${ organizationName }** 不支持 **${ appName }**。"
@@ -10204,6 +10227,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "使用新地址收发邮件前，您需要先为其创建密钥。"
       ],
+      "BEST FOR TV": [
+        "最适合电视"
+      ],
       "Beta": [
         "测试版"
       ],
@@ -10339,6 +10365,9 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "继续将此实体与您的 ${ BRAND_NAME } 组织连接起来。"
       ],
+      "Continue with ${ BRAND_NAME } Free": [
+        "使用 ${ BRAND_NAME } Free 继续"
+      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "继续操作将把您的 ${ BRAND_NAME } 账户与 ${ name } 连接。"
       ],
@@ -10395,6 +10424,9 @@
       ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "创建网关服务器：${ serverNumber } / ${ total }"
+      ],
+      "Creating gateway with ${ total } server": [
+        "正在创建包含 ${ total } 台服务器的网关"
       ],
       "Creating your account": [
         "创建账户"
@@ -10890,6 +10922,9 @@
       ],
       "Get visibility into account access": [
         "获取账户访问可见性"
+      ],
+      "Get VPN Plus": [
+        "开通 VPN Plus"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "为令牌指定一个描述性名称（例如您计划使用该令牌的服务），然后选择您的一个有效自定义域名地址。只有该地址才能使用此令牌发送邮件。"
@@ -11977,6 +12012,12 @@
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "在邮件列表中显示发件人的头像，无头像则显示发件人名称首字母。"
       ],
+      "Show fewer benefits": [
+        "显示更少权益"
+      ],
+      "Show more benefits": [
+        "显示更多权益"
+      ],
       "Show original message": [
         "显示原始邮件"
       ],
@@ -12505,6 +12546,9 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "除非您手动登出账户或更改密码，账户将保持登录状态，直到 60 天无操作后自动登出。"
       ],
+      "Unlock streaming with VPN Plus.": [
+        "开通 VPN Plus 解锁流媒体。"
+      ],
       "Unsaved changes": [
         "更改未保存"
       ],
@@ -12652,6 +12696,9 @@
       "Visa Secure logo": [
         "Visa Secure 图标"
       ],
+      "VPN Plus": [
+        "VPN Plus"
+      ],
       "VPN with dedicated servers and IP addresses": [
         "具有专用服务器和 IP 地址的 VPN"
       ],
@@ -12770,7 +12817,7 @@
         "禁用后，可在您不知情时阻止远程图片加载。"
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "启用后，我们将检查 ${ MAIL_APP_NAME } 是否是您的默认邮件应用，并在非默认时通知您。"
+        "启用后，我们将检查 ${ MAIL_APP_NAME } 是否是您的默认邮箱应用，并在非默认时通知您。"
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "在身份提供商中为 ${ appName } 启用 SAML 时，系统可能会提示您使用回调 (ACS) URL 和颁发者 ID。只需将以下数据复制粘贴到您的身份提供商字段中即可。"
@@ -16839,6 +16886,9 @@
       "99.95% SLA": [
         "保障 99.95% 正常运行时间"
       ],
+      "Access all countries": [
+        "解锁所有国家/地区"
+      ],
       "Activity logs and policy": [
         "活动日志与策略"
       ],
@@ -17019,6 +17069,9 @@
       "Multiple admin roles": [
         "多管理员机制"
       ],
+      "No streaming support": [
+        "不支持流媒体"
+      ],
       "No-logs policy": [
         "无日志原则"
       ],
@@ -17183,6 +17236,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "流量与带宽不限"
+      ],
+      "Unlock streaming": [
+        "解锁流媒体"
       ],
       "Up to ${ n } user": [
         "最多 ${ n } 位用户"
@@ -17650,6 +17706,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } 个国家/地区"
+      ],
       "Access advanced VPN features": [
         "解锁高级 VPN 功能"
       ],
@@ -17709,7 +17768,7 @@
       "${ app } product updates": [
         "${ app } 产品资讯"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
+      "${ BRAND_NAME } for Business communications": [
         "${ BRAND_NAME } 商业通讯"
       ],
       "${ BRAND_NAME } important announcements": [
@@ -17763,8 +17822,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "在您使用 ${ BRAND_NAME } 产品的第一个月里"
       ],
-      "Email subscriptions": [
-        "邮件订阅"
+      "Email communications": [
+        "邮件通讯"
       ],
       "In-app notifications": [
         "应用内通知"
@@ -21204,6 +21263,9 @@
       ]
     },
     "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "为确保您账户的最高安全性，请禁用通过邮件和短信恢复！"
+      ],
       "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
         "为确保您始终可以访问您的 ${ BRAND_NAME } 账户，请下载您的恢复短语！"
       ],
@@ -24302,7 +24364,7 @@
         "修改二级密码"
       ],
       "Check your default mail application": [
-        "检查您的默认邮件应用"
+        "检查默认邮箱应用"
       ],
       "Choose a provider": [
         "请选择提供商"
@@ -24480,6 +24542,9 @@
       ],
       "Data recovery": [
         "数据恢复"
+      ],
+      "Data recovery contacts": [
+        "数据恢复联系人"
       ],
       "Data recovery options": [
         "数据恢复选项"
@@ -24837,6 +24902,9 @@
       ],
       "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
         "使用 ${ planName } 为您的文件、照片和文档获取 ${ planMaxSpace } 存储空间。${ upgradeButton }"
+      ],
+      "Get ${ VPN_APP_NAME } on your TV": [
+        "在电视上获取 ${ VPN_APP_NAME }"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "开通 ${ vpnPlus }，任意选择服务器"
@@ -25491,6 +25559,9 @@
       ],
       "Some of your encrypted data is locked": [
         "您的部分加密数据已被锁定"
+      ],
+      "Something went wrong": [
+        "出了些问题"
       ],
       "Sort folders alphabetically": [
         "按名称排列文件夹"

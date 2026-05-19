@@ -128,6 +128,9 @@
       "Back to sign in": [
         "返回登录"
       ],
+      "Back to sign-in": [
+        "返回登录"
+      ],
       "Block": [
         "屏蔽"
       ],
@@ -3806,7 +3809,7 @@
         "创建可通过单一地址发送电子邮件的群组。"
       ],
       "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "创建新账户或通过 SSO（单点登录）SCIM 配置导入用户。"
+        "创建新账户或通过单点登录 (SSO) SCIM 配置导入用户。"
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "创建策略，决定谁可以连接到每个国家/地区的共享服务器。"
@@ -5956,11 +5959,22 @@
       ],
       "Group address:": [
         "群组地址："
+      ],
+      "Roles and permission:": [
+        "角色与权限："
       ]
     },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } 位成员"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "常规"
+      ],
+      "Roles and permissions": [
+        "角色与权限"
       ]
     },
     "Header": {
@@ -7066,6 +7080,9 @@
       ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "创建网关服务器：${ serverNumber } / ${ total }"
+      ],
+      "Creating gateway with ${ total } server": [
+        "正在创建包含 ${ total } 台服务器的网关"
       ],
       "Creating your account": [
         "创建账户"
@@ -11293,6 +11310,9 @@
       "99.95% SLA": [
         "保障 99.95% 正常运行时间"
       ],
+      "Access all countries": [
+        "解锁所有国家/地区"
+      ],
       "Activity logs and policy": [
         "活动日志与策略"
       ],
@@ -11467,6 +11487,9 @@
       "Multiple admin roles": [
         "多管理员机制"
       ],
+      "No streaming support": [
+        "不支持流媒体"
+      ],
       "No-logs policy": [
         "无日志原则"
       ],
@@ -11628,6 +11651,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "流量与带宽不限"
+      ],
+      "Unlock streaming": [
+        "解锁流媒体"
       ],
       "Up to ${ n } user": [
         "最多 ${ n } 位用户"
@@ -12074,6 +12100,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } 个国家/地区"
+      ],
       "Access advanced VPN features": [
         "解锁高级 VPN 功能"
       ],
@@ -12130,7 +12159,7 @@
       "${ app } product updates": [
         "${ app } 产品资讯"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
+      "${ BRAND_NAME } for Business communications": [
         "${ BRAND_NAME } 商业通讯"
       ],
       "${ BRAND_NAME } important announcements": [
@@ -12184,8 +12213,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "在您使用 ${ BRAND_NAME } 产品的第一个月里"
       ],
-      "Email subscriptions": [
-        "邮件订阅"
+      "Email communications": [
+        "邮件通讯"
       ],
       "In-app notifications": [
         "应用内通知"
@@ -17061,6 +17090,9 @@
       ],
       "Single-sign on (SSO)": [
         "单点登录 (SSO)"
+      ],
+      "Something went wrong": [
+        "出了些问题"
       ],
       "Spam, block, and allow lists": [
         "垃圾邮件与黑白名单"

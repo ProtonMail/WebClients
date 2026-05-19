@@ -193,6 +193,9 @@
       "Copy forwarding address": [
         "Kopier videresendelsesadresse"
       ],
+      "Copy instructions": [
+        "Kopiér instruktioner"
+      ],
       "Copy link": [
         "Kopiér link"
       ],
@@ -210,6 +213,9 @@
       ],
       "Copy to clipboard": [
         "Kopiér til udklipsholder"
+      ],
+      "Copy token": [
+        "Kopiér token"
       ],
       "Copy username": [
         "Kopiér brugernavn"
@@ -246,6 +252,9 @@
       ],
       "Create note": [
         "Opret note"
+      ],
+      "Create token": [
+        "Opret token"
       ],
       "Create vault": [
         "Opret boks"
@@ -451,6 +460,9 @@
       "Manage access": [
         "Administrer adgang"
       ],
+      "Manage vault access": [
+        "Håndter adgang til boksen"
+      ],
       "Manually sync your data": [
         "Synkronisér data manuelt"
       ],
@@ -486,6 +498,9 @@
       ],
       "Multiple select": [
         "Markér flere"
+      ],
+      "New token": [
+        "Ny token"
       ],
       "Next month": [
         "Næste måned"
@@ -750,6 +765,9 @@
       "Via secure link": [
         "Via sikkert link"
       ],
+      "View agent activity": [
+        "Se agent-aktivitet"
+      ],
       "View app logs": [
         "Se app-logs"
       ],
@@ -776,6 +794,26 @@
       ],
       "Your password manager is not here? Request it.": [
         "Er din adgangskodeadministrator her ikke? Anmod om den."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Aktivitet"
+      ],
+      "Activity details could not be loaded.": [
+        "Aktivitetsdetaljer kunne ikke indlæses"
+      ],
+      "Folder": [
+        "Mappe"
+      ],
+      "Item": [
+        "Element"
+      ],
+      "Reason": [
+        "Årsag"
+      ],
+      "Vault": [
+        "Boks"
       ]
     },
     "Browser": {
@@ -1003,6 +1041,9 @@
       "Could not validate addresses at the moment.": [
         "Kan ikke validere adresser i øjeblikket."
       ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Kunne ikke indlæse instruktionerne til opsætning af agent. Kopiér den token vist nedenfor, den vil ikke blive vist igen."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV-fil mangler forventede overskrifter: ${ missingHeaders }"
       ],
@@ -1046,6 +1087,9 @@
       "Error reporting problem": [
         "Problem med fejlrapportering"
       ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "Udløb skal være mellem 60 minutter og 1 år"
+      ],
       "Failed loading group members": [
         "Kunne ikke indlæse gruppemedlemmer"
       ],
@@ -1067,6 +1111,9 @@
       "Failed to change mailbox": [
         "Kunne ikke ændre postkasse"
       ],
+      "Failed to create access token": [
+        "Kunne ikke oprette adgangstoken"
+      ],
       "Failed to create domain": [
         "Kunne ikke oprette domæne"
       ],
@@ -1075,6 +1122,9 @@
       ],
       "Failed to create the contact": [
         "Kunne ikke oprette kontakten"
+      ],
+      "Failed to delete access token": [
+        "Kunne ikke slette adgangstoken"
       ],
       "Failed to delete domain": [
         "Kunne ikke slette domæne"
@@ -1094,6 +1144,9 @@
       "Failed to edit user's access.": [
         "Kunne ikke redigere brugerens adgang."
       ],
+      "Failed to load access tokens": [
+        "Kunne ikke indlæse adgangstokens"
+      ],
       "Failed to load breaches for this address": [
         "Kunne ikke indlæse databrud for denne adresse"
       ],
@@ -1105,6 +1158,9 @@
       ],
       "Failed to load item history": [
         "Kunne ikke indlæse elementhistorik"
+      ],
+      "Failed to load token actions": [
+        "Kunne ikke indlæse token-handlinger"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Kunne ikke flytte alle elementer fra \"${ payload.content.name }\""
@@ -1162,6 +1218,9 @@
       ],
       "Failed to update random prefix generation setting.": [
         "Kunne ikke opdatere indstillingen for generering af tilfældigt præfiks."
+      ],
+      "Failed to update vault access": [
+        "Kunne ikke opdatere adgang til boksen"
       ],
       "Failed to verify domain": [
         "Kunne ikke bekræfte domæne"
@@ -1228,6 +1287,9 @@
       ],
       "Name is required": [
         "Navn er påkrævet"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Navn skal være på 191 tegn eller færre"
       ],
       "Network error": [
         "Netværksfejl"
@@ -1569,6 +1631,9 @@
         "${ row.breachCount } databrud registreret",
         "${ row.breachCount } databrud registreret"
       ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } valgt"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag tilbage",
         "${ trialDaysLeft } dage tilbage"
@@ -1612,6 +1677,15 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Brug af ${ PASS_APP_NAME } kræver dit fingeraftryk eller enhedens pinkode."
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Adgangstoken \"${ action.token.Name }\" er allerede udløbet. Den vil ikke længere vises, hvis den er slettet."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Adgangstoken \"${ action.token.Name }\" vil øjeblikkeligt stoppe med at virke. Denne handling kan ikke fortrydes."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Adgangstokens, sammen med ${ passCliLink }, giver dig mulighed for at automatisere CI/CD eller give din AI-agent begrænset adgang til det den skal bruge for at køre sit job."
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Tilgå dine adgangskoder på farten med vores mobil-apps."
@@ -1703,6 +1777,9 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Før eksport af dine data i dette format, bør du gå ind i Safari- indstillingerne -> fanen \"Generelt\" -> slå indstillingen \"Åbn sikre filer efter overførsel\" fra. Dette vil forhindre Safari i at udpakke den eksporterede fil forkert."
       ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Mellem 60 (1 time) og 525600 (1 år)"
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Biometrisk lås er blevet registreret. Brug den til at oplåse ${ PASS_APP_NAME }."
       ],
@@ -1772,14 +1849,29 @@
       "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
         "Kopieret til udklipsholder (udløber om ${ timeoutDurationHumanReadable })"
       ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Kopiér markdown-indholdet nedenfor og send det til dine AI-agenter. Dette er den eneste tidspunkt at denne token vil blive vist."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Kopiér denne token nu. Af sikkerhedsmæssige årsager bliver den ikke vist igen."
+      ],
       "Coupon successfully applied!": [
         "Kupon anvendt!"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Opret en token for at integrere ${ PASS_APP_NAME } med dine scripts og værktøjer."
       ],
       "Create contact illustration": [
         "Opret illustration af kontakt"
       ],
+      "Created ${ createdDate }": [
+        "Oprettet ${ createdDate }"
+      ],
       "Created ${ time }.": [
         "Oprettet ${ time }."
+      ],
+      "Created item": [
+        "Oprettede element"
       ],
       "Creating alias...": [
         "Opretter alias..."
@@ -1795,6 +1887,9 @@
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "Standardvisningsnavn for aliasser oprettet med ${ domainDisplay }, medmindre det overskrives af aliasvisningsnavnet."
+      ],
+      "Deleted item": [
+        "Slettet element"
       ],
       "Deleted items will be moved here first": [
         "Slettede elementer vil blive flytte hertil først"
@@ -1819,6 +1914,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domæne: ${ domainPath } eller @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Download pass-cli fra ${ passCliLink }."
       ],
       "Drop file here to upload": [
         "Træk fil hertil for at uploade"
@@ -1898,14 +1996,28 @@
       "Enter your PIN code": [
         "Indtast din pinkode"
       ],
+      "Every action this agent token has performed, newest first.": [
+        "Hver eneste handling, som denne agent har udført, nyeste først."
+      ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Hver gang dit alias modtager en e-mail fra nogen, oprettes der automatisk en ny kontakt."
+      ],
+      "Expired ${ abs } hour ago": [
+        "Udløb for ${ abs } time siden",
+        "Udløb for ${ abs } timer siden"
       ],
       "Expires in": [
         "Udløber om"
       ],
+      "Expires in ${ hours } hour": [
+        "Udløber om ${ hours } time",
+        "Udløber om ${ hours } timer"
+      ],
       "Expires in ${ remainingTime }": [
         "Udløber om ${ remainingTime }"
+      ],
+      "Expires in less than an hour": [
+        "Udløber om mindre end en time"
       ],
       "Exporting your data...": [
         "Eksporterer dine data..."
@@ -2063,6 +2175,9 @@
       "Loading...": [
         "Indlæser..."
       ],
+      "Log out of any existing session:": [
+        "Log ud af enhver eksisterende session:"
+      ],
       "Logging you out...": [
         "Logger dig ud..."
       ],
@@ -2090,6 +2205,9 @@
       "Move ${ count } item": [
         "Flyt ${ count } element",
         "Flyt ${ count } elementer"
+      ],
+      "Moved item to trash": [
+        "Flyttede element til papirkurven"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
@@ -2122,6 +2240,9 @@
       "New": [
         "Ny"
       ],
+      "No activity recorded yet.": [
+        "Ingen aktivitet registreret endnu."
+      ],
       "No breaches detected": [
         "Ingen databrud registreret"
       ],
@@ -2137,8 +2258,14 @@
       "No network connection": [
         "Ingen internetforbindelse"
       ],
+      "No vaults available.": [
+        "Ingen tilgængelige bokse."
+      ],
       "None": [
         "Ingen"
+      ],
+      "None selected": [
+        "Ingen valgte"
       ],
       "Not configured": [
         "Ikke konfigureret"
@@ -2154,6 +2281,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online adgang til ${ PASS_APP_NAME } kræver en pinkode. Du bliver logget ud efter 3 mislykkede forsøg."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Kun tokens som udløb i de seneste 30 dage er vist. Ældre tokens slettes automatisk."
       ],
       "Open ${ PASS_APP_NAME } in a larger window": [
         "Åbn ${ PASS_APP_NAME } i et større vindue"
@@ -2354,6 +2484,9 @@
       "Quickly autofill your saved credentials.": [
         "Autofyld hurtigt dine gemte legitimationsoplysninger."
       ],
+      "Read item": [
+        "Læs element"
+      ],
       "Reconnect": [
         "Genopret forbindelse"
       ],
@@ -2387,6 +2520,9 @@
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
         "Nulstilling af historik sletter alle tidligere elementversioner permanent og kan ikke fortrydes."
       ],
+      "Restored item from trash": [
+        "Gendannede element fra papirkurven"
+      ],
       "Restoring items from trash": [
         "Gendanner elementer fra papirkurven"
       ],
@@ -2413,6 +2549,9 @@
       ],
       "Select destination vault": [
         "Vælg destinationsboks"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Vælg de bokse, som \"${ token.Name }\" kan læse."
       ],
       "Select where you want your imported vaults to be saved.": [
         "Vælg, hvor du vil gemme dine importerede bokse."
@@ -2486,8 +2625,14 @@
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "Tryk på ikonet ${ gearIcon } for at tilpasse aliasset, som du vil have det."
       ],
+      "Test the token by logging in and listing vaults:": [
+        "Test denne token ved at logge ind og vise alle bokse:"
+      ],
       "Thank you, the problem has been reported": [
         "Tak, problemet er blevet rapporteret"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Agenten vil skulle begrunde hver eneste handling den udfører, og hver handling vil blive optaget i en log, som du kan se igennem. Efter at have oprettet din adgangstoken, vil du få instruktioner, som du kan copy-paste til din AI-agent."
       ],
       "The display name when sending an email from this alias.": [
         "Visningsnavnet, når man sender en e-mail fra dette alias."
@@ -2519,6 +2664,9 @@
       ],
       "The user did not accept the invitation yet.": [
         "Brugeren har ikke accepteret invitationen endnu."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Så kan du gå til ${ url } for at kopiere de instruktioner, der skal sendes til din AI-agent."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denne eksport vil ikke være krypteret, og hvem som helst med adgang til den eksporterede fil vil kunne se dine adgangskoder. For en sikkerheds skyld bedes du slette den, når du er færdig med at bruge den."
@@ -2552,6 +2700,9 @@
       ],
       "This setting is enforced by your organization": [
         "Denne indstilling håndhæves af din organisation"
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Denne token får skrivebeskyttet adgang til de bokse du vælger. Den kan læse elementer, men kan ikke redigere i dem, dele bokse eller invitere andre. Du kan ændre dette senere."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Denne boks deles i øjeblikket ikke med nogen. Inviter folk for at dele den med andre."
@@ -2625,6 +2776,9 @@
       "Update login": [
         "Opdatér login"
       ],
+      "Updated item": [
+        "Opdaterede element"
+      ],
       "Updating vault organization...": [
         "Opdaterer boks-organisering..."
       ],
@@ -2633,6 +2787,9 @@
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Opgradér nu for at låse op for premium-funktioner"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Opgrader til ${ PASS_APP_NAME } Plus for at oprette adgangstokens og bruge ${ PASS_APP_NAME } programmatisk."
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Opgrader til et betalt abonnement for at oprette flere bokse."
@@ -2657,6 +2814,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed.": [
         "Boksen \"${ share.content.name }\" blev fjernet."
+      ],
+      "Vault access granted": [
+        "Adgang til boks(e) blev givet"
       ],
       "Vault organization successfully updated": [
         "Boks-organisering opdateret"
@@ -2938,6 +3098,9 @@
       "A-Z": [
         "A-Z"
       ],
+      "Access tokens": [
+        "Adgangstokens"
+      ],
       "Account": [
         "Konto"
       ],
@@ -3210,6 +3373,12 @@
       ],
       "Expired": [
         "Udløbet"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Udløbede tokens (${ expired.length })"
+      ],
+      "Expires in (minutes)": [
+        "Udløber om (minutter)"
       ],
       "Expiry Date": [
         "Udløbsdato"
@@ -3883,6 +4052,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Brug ${ PASS_APP_NAME } som din browsers standard adgangskodeadministrator"
       ],
+      "Use for AI agent": [
+        "Brug til en AI-agent"
+      ],
       "Used in": [
         "Anvendt i"
       ],
@@ -3897,6 +4069,9 @@
       ],
       "Value:": [
         "Værdi:"
+      ],
+      "Vault access": [
+        "Adgang til boksen"
       ],
       "Vault ID": [
         "Boks-ID"
@@ -4002,6 +4177,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } er blevet aktiveret"
+      ],
+      "Access token deleted": [
+        "Adgangstoken slettet"
       ]
     },
     "Onboarding": {
@@ -4185,6 +4363,9 @@
       "Coupon": [
         "Kupon"
       ],
+      "e.g. 60": [
+        "f.eks. 60"
+      ],
       "e.g. My automation script": [
         "f.eks. mit automatiseringsscript"
       ],
@@ -4345,6 +4526,20 @@
         "Ukendt"
       ]
     },
+    "Status": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Agent": [
+        "Agent"
+      ],
+      "Expired": [
+        "Udløbet"
+      ],
+      "Expiring soon": [
+        "Udløber snart"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Synkronisering af aliasser er aktiveret. SimpleLogin-alias kan tage lidt tid at synkronisere"
@@ -4439,6 +4634,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Adgangstokens kræver ${ PASS_APP_NAME } Plus"
+      ],
       "Account protection": [
         "Kontobeskyttelse"
       ],
@@ -4448,11 +4646,17 @@
       "Activity": [
         "Aktivitet"
       ],
+      "Activity for \"${ token.Name }\"": [
+        "Aktivitet for \"${ token.Name }\""
+      ],
       "Add custom domain": [
         "Tilføj brugerdomæne"
       ],
       "Add mailbox": [
         "Tilføj postkasse"
+      ],
+      "Agent setup instructions": [
+        "Instruktioner til opsætning af agent"
       ],
       "Alias contacts": [
         "Alias-kontakter"
@@ -4511,6 +4715,9 @@
       "Create contact": [
         "Opret kontakt"
       ],
+      "Create new access token": [
+        "Opret ny adgangstoken"
+      ],
       "Create PIN code": [
         "Opret pinkode"
       ],
@@ -4541,6 +4748,9 @@
       "Delete ${ deletedItemsCount } item?": [
         "Slet ${ deletedItemsCount } element?",
         "Slet ${ deletedItemsCount } elementer?"
+      ],
+      "Delete access token?": [
+        "Slet adgangstoken?"
       ],
       "Delete domain": [
         "Slet domæne"
@@ -4674,6 +4884,9 @@
       "Mailbox": [
         "Postkasse"
       ],
+      "Manage vault access": [
+        "Håndter adgang til boksen"
+      ],
       "Mark as resolved?": [
         "Markér som løst?"
       ],
@@ -4708,6 +4921,9 @@
       ],
       "Next": [
         "Næste"
+      ],
+      "No access tokens yet": [
+        "Ingen adgangstokens endnu"
       ],
       "No excluded items": [
         "Ingen ekskluderede elementer"
@@ -4930,6 +5146,9 @@
       "Your exposed information": [
         "Dine blotlagte oplysninger"
       ],
+      "Your new access token": [
+        "Din nye adgangstoken"
+      ],
       "Your vault is empty": [
         "Din boks er tom"
       ],
@@ -5089,6 +5308,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Ekstra adgangskode skal have mindst 8 tegn"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Autoindtastning mislykkedes. Vær sikker på at ${ PASS_APP_NAME } har de nødvendige tilladelser og prøv igen (${ error })."
       ],
       "Failed to load breaches.": [
         "Kunne ikke indlæse databrud."

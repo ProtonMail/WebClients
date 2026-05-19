@@ -128,6 +128,9 @@
       "Back to sign in": [
         "Terug naar inloggen"
       ],
+      "Back to sign-in": [
+        "Terug naar aanmelden"
+      ],
       "Block": [
         "Blokkeer"
       ],
@@ -7050,6 +7053,10 @@
         "Gatewayserver wordt opgezet: ${ serverNumber } / ${ total }",
         "Gatewayservers worden opgezet: ${ serverNumber } / ${ total }"
       ],
+      "Creating gateway with ${ total } server": [
+        "Gateway aanmaken met ${ total } server",
+        "Gateway aanmaken met ${ total } servers"
+      ],
       "Creating your account": [
         "Account aan het aanmaken"
       ],
@@ -12153,8 +12160,8 @@
       "${ app } product updates": [
         "${ app } productupdates"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } voor Bedrijven-nieuwsbrief"
+      "${ BRAND_NAME } for Business communications": [
+        "${ BRAND_NAME } voor zakelijke communicatie"
       ],
       "${ BRAND_NAME } important announcements": [
         "${ BRAND_NAME } belangrijke aankondigingen"
@@ -12207,8 +12214,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "Gedurende de eerste maand gebruik van een ${ BRAND_NAME } product"
       ],
-      "Email subscriptions": [
-        "Nieuwsbrieven"
+      "Email communications": [
+        "Communicatie per e-mail"
       ],
       "In-app notifications": [
         "In-app-notificaties"
@@ -17256,6 +17263,9 @@
       ],
       "Single-sign on (SSO)": [
         "Single sign-on (SSO)"
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan."
       ],
       "Spam, block, and allow lists": [
         "Spam, blokkeer en accepteer lijsten"

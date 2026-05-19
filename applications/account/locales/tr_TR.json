@@ -219,6 +219,9 @@
       "Back to sign in": [
         "Oturum açmaya dön"
       ],
+      "Back to sign-in": [
+        "Oturum açmaya dön"
+      ],
       "Block": [
         "Engelle"
       ],
@@ -772,7 +775,7 @@
         "Süzgeçler uygulanıyor. Bu işlem bir kaç dakika alabilir."
       ],
       "Finish": [
-        "Bitir"
+        "Tamamla"
       ],
       "Fit to window": [
         "Pencereye sığdır"
@@ -2107,7 +2110,7 @@
         "Yeni: Bireysel kullanıcılar için yönetici erişimi denetimi"
       ],
       "New: Control admin access for many users at once": [
-        "Yeni: Birden fazla kullanıcının yönetici erişimini aynı anda kontrol edin"
+        "Yeni: Birden fazla kullanıcının yönetici erişimini aynı anda denetleyin"
       ],
       "Organization admin:": [
         "Kuruluş yöneticisi:"
@@ -2886,13 +2889,13 @@
         "${ migratedCount } / ${ providerUsers.length }"
       ],
       "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
-        "**p=yok**: yetkisiz e-postaları karantinaya almayın veya reddetmeyin. Bu kural genellikle sorun giderme veya test amaçlı kullanılır."
+        "**p=none**: Yetkisiz e-postaları karantinaya almaz veya reddetmez. İnsanlar genellikle bu ilkeyi yalnızca sorun gidermek veya denemeler yapmak için kullanılır."
       ],
       "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "**p=karantina**: Alıcı platformlardan yetkisiz e-postaları istenmeyen olarak işaretlemelerini veya karantinaya almalarını ister."
       ],
       "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
-        "**p=reddet**: alıcı platformlardan yetkisiz e-postaları reddetmelerini ister."
+        "**p=reject**: Alıcı platformlardan yetkisiz e-postaları reddetmelerini ister."
       ],
       "Account connected": [
         "Hesap bağlantısı kuruldu"
@@ -2904,10 +2907,10 @@
         "Etkinleştirildi"
       ],
       "Activation link": [
-        "Aktivasyon bağlantısı"
+        "Etkinleştirme bağlantısı"
       ],
       "Activation link copied to clipboard": [
-        "Aktivasyon bağlantısı panoya kopyalandı"
+        "Etkinleştirme bağlantısı panoya kopyalandı"
       ],
       "Add a domain": [
         "Bir etki alanı ekleyin"
@@ -2922,19 +2925,19 @@
         "Kullanıcıları ekleyin ve e-posta gönderip almak için etki alanınızı el ile yapılandırın. Sıfırdan başlayan küçük ekipler için idealdir."
       ],
       "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Bu adres kuruluşunuz dışındaki bir kullanıcı tarafından halihazırda kullanılıyor. Bu sorunu çözmek için lütfen müşteri desteğiyle iletişime geçin"
+        "Bu adres kuruluşunuz dışındaki bir kullanıcı tarafından kullanılıyor. Bu sorunu çözmek için lütfen müşteri destek ekibimiz ile görüşün"
       ],
       "All": [
         "Tümü"
       ],
       "An unknown error occurred": [
-        "Bilinmeyen bir hata oluştu"
+        "Bilinmeyen bir sorun çıktı"
       ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Devam etmek istediğinizden emin misiniz? Aktarım işlemi tamamlanmadan önce hesaplarını doğrulamamış olan kullanıcıların ${ BRAND_NAME } kuruluş yöneticisinden parola sıfırlama talebinde bulunmaları gerekecek."
+        "İlerlemek istediğinize emin misiniz? Aktarım işlemi tamamlanmadan önce hesaplarını doğrulamamış olan kullanıcıların ${ BRAND_NAME } kuruluş yöneticisinden parola sıfırlama isteğinde bulunmaları gerekecek."
       ],
       "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
-        "Hesaplar oluşturulur oluşturulmaz kullanıcıların ${ BRAND_NAME } hesaplarını alabilmeleri için etkinleştirme bağlantısını paylaşabilirsiniz."
+        "Hesaplar açıldığı anda kullanıcıların ${ BRAND_NAME } hesaplarını kullanabilmeleri için etkinleştirme bağlantısını paylaşabilirsiniz."
       ],
       "Authenticate": [
         "Kimliği doğrulayın"
@@ -2955,7 +2958,7 @@
         "Ekibinizi ve e-posta ayarlarınızı ${ BRAND_NAME } üzerine nasıl aktarmak istediğinizi seçin."
       ],
       "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
-        "aktarılacak öğeleri seçin. Seçiminiz tüm kullanıcılar için geçerli olacak. Hangi kullanıcıların kopyalanacağına karar verdikten sonra taşıma işlemi başlayacak."
+        "Aktarılacak ögeleri seçin. Seçiminiz tüm kullanıcılar için geçerli olacak. Hangi kullanıcıların kopyalanacağına karar verdikten sonra aktarım işlemi başlayacak."
       ],
       "Completed": [
         "Tamamlandı"
@@ -2964,7 +2967,7 @@
         "Yapılandırma"
       ],
       "Configure domain": [
-        "Etki alanını yapılandır"
+        "Etki alanını yapılandırın"
       ],
       "Configure migration": [
         "Aktarımı yapılandırın"
@@ -2988,7 +2991,7 @@
         "Aşağıdaki kodu kopyalayıp etki alanı barındırıcınızın DNS bölümüne yapıştırın. Bir örnek ve bazı yararlı ipuçlarını ${ hereHref } adresinde bulabilirsiniz."
       ],
       "Creating accounts": [
-        "Hesap oluşturuluyor"
+        "Hesaplar oluşturuluyor"
       ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM her e-postaya bir dijital imza ekler. Böylece alıcılar iletinin gerçekten sizin etki alanınızdan geldiğini ve aktarım sırasında değiştirilmediğini doğrulayabilir. Bu imza olmadan iletiler daha az güvenilir olarak değerlendirilebilir."
@@ -3009,7 +3012,7 @@
         "Etki alanı bağlandı"
       ],
       "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "E-postalarınızın istenmeyen klasörüne değil gelen kutusuna ulaşmasını sağlayın. SPF'yi güncellemek geçiş süreci boyunca kullanıcıların hem ${ BRAND_NAME } hem de Google adreslerinden e-posta gönderebilmesini sağlayacak."
+        "E-postalarınızın istenmeyen klasörüne değil gelen kutusuna ulaşmasını sağlayın. SPF verisini güncellemek aktarım sürecinde kullanıcıların hem ${ BRAND_NAME } hem de Google adreslerinden e-posta gönderebilmesini sağlar."
       ],
       "Errors": [
         "Hatalar"
@@ -3021,16 +3024,16 @@
         "OAuth yüklenemedi"
       ],
       "Finalize migration": [
-        "Taşıma işlemini tamamla"
+        "Aktarım işlemini tamamla"
       ],
       "Finalize your migration": [
-        "Taşıma işlemini tamamlayın"
+        "Aktarım işlemini tamamlayın"
       ],
       "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
-        "Aktarımın tamamlanması tüm e-postalarınızın doğrudan ${ BRAND_NAME } adresine yönlendirileceği anlamına gelir. Kullanıcılar artık Google hesaplarına e-posta almayacak ve ${ BRAND_NAME } ile Google arasında veri senkronizasyonu yapılmayacaktır."
+        "Aktarım tamamlandığında tüm e-postalarınız doğrudan ${ BRAND_NAME } adresine yönlendirilir. Kullanıcılar artık Google hesaplarına e-posta almayacak ve veriler ${ BRAND_NAME } ile Google arasında eşitlenmeyecek."
       ],
       "Find out what can be migrated.": [
-        "Nelerin taşınabileceğini öğrenin."
+        "Nelerin aktarılabileceğini öğrenin."
       ],
       "Finish setting up your business account": [
         "Kuruluş hesabınızın kurulumunu tamamlayın"
@@ -3045,7 +3048,7 @@
         "Google Workspace hesabı"
       ],
       "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
-        "Biraz sabırlı olun, kullanıcı hesaplarını oluşturuyoruz ve kısa süre içinde kullanıcı verilerini aktarmaya başlayacağız."
+        "Biraz bekleyin. Kullanıcı hesapları oluşturuluyor ve kısa süre içinde kullanıcı verileri aktarılmaya başlanacak."
       ],
       "Has errors": [
         "Sorunlar çıktı"
@@ -3103,16 +3106,16 @@
         "Kuruluşun kişisel anahtarı eksik"
       ],
       "Missing organization public key": [
-        "Kuruluşun açık anahtarı bulunamadı"
+        "Kuruluşun herkese açık anahtarı bulunamadı"
       ],
       "More details": [
         "Daha fazla bilgi"
       ],
       "Move your users, emails, and settings from Google Workspace automatically. We’ll guide you through connecting your account, verifying your domain, and migrating users securely.": [
-        "Kullanıcılarınızı, e-postalarınızı ve ayarlarınızı Google Workspace'ten otomatik olarak taşıyın. Hesabınızı bağlama, alan adınızı doğrulama ve kullanıcıları güvenli bir şekilde taşıma süreçlerinde size rehberlik edeceğiz."
+        "Kullanıcılarınızı, e-postaları ve ayarları Google Workspace üzerinden otomatik olarak aktarın. Hesabınızı bağlamanız, etki alanınızı doğrulamanız ve kullanıcıları güvenli bir şekilde aktarmanız için size yol göstereceğiz."
       ],
       "No error details available. Please contact customer support for more information": [
-        "Hata ayrıntıları mevcut değil. Daha fazla bilgi için lütfen müşteri desteğiyle iletişime geçin"
+        "Herhangi bir hata bilgisi yok. Ayrıntılı bilgi almak için müşteri destek ekibimizle görüşün"
       ],
       "No users to display": [
         "Görüntülenebilecek bir kullanıcı yok"
@@ -3124,7 +3127,7 @@
         "Onaylanmamış"
       ],
       "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
-        "Kullanıcılar ${ BRAND_NAME } hesaplarını aldıktan sonra geçiş işlemini tamamlayın."
+        "Kullanıcılar ${ BRAND_NAME } hesaplarını aldığında aktarım işlemini tamamlayın."
       ],
       "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
         "E-postaların ${ BRAND_NAME } adresine yönlendirildiğini doğruladığımızda aktarım tamamlanmış olacak. Bundan sonra size bilgi veren bir onay e-postası alacaksınız. Bu işlemin tamamlanması 24 saat kadar sürebilir."
@@ -3145,7 +3148,7 @@
         "Tüm kullanıcılar oluşturulana kadar bu pencereyi açık bırakın."
       ],
       "Please select at least one product to migrate": [
-        "Lütfen arktarılacak en az bir ürün seçin"
+        "Lütfen aktarılacak en az bir ürün seçin"
       ],
       "Refresh": [
         "Yenile"
@@ -3172,10 +3175,10 @@
         "El ile kurulum"
       ],
       "Set up secure sending (DKIM)": [
-        "Güvenli gönderimi (DKIM) ayarla"
+        "Güvenli gönderimi (DKIM) ayarlayın"
       ],
       "Set up secure sending (DMARC)": [
-        "Güvenli gönderimi (DMARC) ayarla"
+        "Güvenli gönderimi (DMARC) ayarlayın"
       ],
       "Set up secure sending (SPF)": [
         "Güvenli gönderimi (SPF) ayarla"
@@ -3223,19 +3226,19 @@
         "Kuruluşunuzun verilerini aktarmak için Google Workspace Marketplace üzerinden ${ BRAND_NAME } Migration Assistant uygulamasını kurmalısınız. Bu işlem ${ BRAND_NAME } ile verilerinizi kopyalama izni verecek. Kurduktan sonra buraya dönerek ilerleyin."
       ],
       "Update records for receiving": [
-        "Alınan kayıtlarını güncelle"
+        "Almak için kayıtları güncelleyin"
       ],
       "User": [
         "Kullanıcı"
       ],
       "User needs to activate their account through the activation link shown above": [
-        "Kullanıcının hesabını yukarıda gösterilen aktivasyon bağlantısı üzerinden etkinleştirmesi gerekiyor"
+        "Kullanıcının hesabını yukarıdaki etkinleştirme bağlantısı ile etkinleştirmesi gerekiyor"
       ],
       "User status": [
         "Kullanıcı durumu"
       ],
       "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
-        "Kullanıcılar aktarım süreci boyunca ${ BRAND_NAME } ile Google'ı aynı anda kullanabilirler."
+        "Kullanıcılar aktarım süreci boyunca aynı anda ${ BRAND_NAME } ve Google kullanabilir."
       ],
       "Users migrated": [
         "Kullanıcılar aktarıldı"
@@ -5242,7 +5245,7 @@
         "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız değil."
       ],
       "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız."
+        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanızdır."
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } kurumsal verilerinizi güvende tutar ve herkese şifrelenmiş e-postalar göndermenizi sağlar."
@@ -5391,9 +5394,6 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } üzerinden Gmail e-postalarını okuyun, yanıtlayın ve güncel kalın"
       ],
-      "Send a code to your recovery email or phone": [
-        "Kurtarma e-posta adresinize veya telefonunuza bir kod gönderin"
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Tüm kullanıcı hesaplarını ayarlayın ve onları ${ BRAND_NAME } kullanmaya davet edin."
       ],
@@ -5442,6 +5442,9 @@
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Var olan e-posta adresinize ek olarak, daha kısa ve hatırlaması kolay ${ activatePmUser } e-posta adresini edinmek için tarifenizi yükseltin."
+      ],
+      "Use a recovery method to reset your password": [
+        "Parolanızı sıfırlamak için bir kurtarma yöntemi kullanın"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Kuruluşunuzun, ${ BRAND_NAME } sektör lideri şifreleme ve gizlilik ekosisteminden hemen yararlanmasını sağlamak için bu rehberi kullanın."
@@ -7243,7 +7246,7 @@
         "Davet bağlantısı geçersiz"
       ],
       "Invalid joining link. Please contact your administrator.": [
-        "Geçersiz katılım bağlantısı. Lütfen yöneticinizle iletişime geçin."
+        "Katılma bağlantısı geçersiz. Lütfen yöneticiniz ile görüşün."
       ],
       "Invalid name": [
         "Ad geçersiz"
@@ -8898,6 +8901,9 @@
       ],
       "Group address:": [
         "Grup adresi:"
+      ],
+      "Roles and permission:": [
+        "Roller ve izinler:"
       ]
     },
     "Group member count": {
@@ -8955,6 +8961,14 @@
       ],
       "Group membership": [
         "Grup üyeliği"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "Genel"
+      ],
+      "Roles and permissions": [
+        "Roller ve izinler"
       ]
     },
     "Header": {
@@ -9600,6 +9614,9 @@
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "${ BRAND_NAME } for Business tarifeleri ekibinize işlerinde verimli ve düzenli olmaları için gereken tüm iş birliği araçlarını sağlarken kuruluşunuzu da korur."
       ],
+      "${ BRAND_NAME } Free": [
+        "${ BRAND_NAME } Free"
+      ],
       "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
         "${ BRAND_NAME } bağımsız olarak finanse edilir ve reklamsız çalışır.\nAşağıda, bu bağımsızlığın pratikte nasıl kullanıldığı ile ilgili örnekleri görebilirsiniz."
       ],
@@ -9705,6 +9722,9 @@
       ],
       "${ name } for Windows": [
         "Windows için ${ name }"
+      ],
+      "${ name } is not available": [
+        "${ name } kullanılamıyor"
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: Yetkisiz e-postaları karantinaya almaz veya reddetmez. Genellikle insanlar bu ilkeyi yalnızca sorun gidermek veya denemeler yapmak için kullanır."
@@ -9866,6 +9886,9 @@
       ],
       "(formerly Twitter)": [
         "(eski adıyla Twitter)"
+      ],
+      "**${ appName }** is not available for your account.": [
+        "**${ appName }** hesabınız için kullanılamıyor."
       ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ organizationName }** kuruluşunuzda **${ appName }** desteklenmiyor."
@@ -10314,6 +10337,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Yeni adreslerinizden e-posta gönderip almaya başlamadan önce, adresler için şifreleme anahtarlarını oluşturmalısınız."
       ],
+      "BEST FOR TV": [
+        "TV İÇİN EN İYİSİ"
+      ],
       "Beta": [
         "Beta"
       ],
@@ -10448,6 +10474,9 @@
       ],
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "${ BRAND_NAME } kuruluşunuzla bu varlığın bağlantısı kurun."
+      ],
+      "Continue with ${ BRAND_NAME } Free": [
+        "${ BRAND_NAME } Free ile devam et"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "İlerlerseniz ${ BRAND_NAME } hesabınız ${ name } ile bağlanacak."
@@ -11009,6 +11038,9 @@
       ],
       "Get visibility into account access": [
         "Hesap erişiminde görünür olun"
+      ],
+      "Get VPN Plus": [
+        "VPN Plus edin"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Kod için, kullanmayı düşündüğünüz hizmet gibi açıklayıcı bir ad yazın ve etkin özel etki alanı adreslerinizden birini seçin. Bu kod ile yalnızca bu adres e-posta gönderebilir."
@@ -12104,6 +12136,12 @@
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "İleti listesinde her göndericinin görseli görüntülenir. Göndericinin görseli yoksa adı ve soyadının baş harfleri görüntülenir."
       ],
+      "Show fewer benefits": [
+        "Daha az avantaj göster"
+      ],
+      "Show more benefits": [
+        "Daha fazla avantajı göster"
+      ],
       "Show original message": [
         "Özgün iletiyi görüntüle"
       ],
@@ -12637,6 +12675,9 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Hesap oturumunuzu kapatmadığınız ya da parolanızı değiştirmediğiniz sürece oturumunuz açık kalır. 60 gün boyunca herhangi bir etkinlik görülmeyen oturumlar kapatılır."
       ],
+      "Unlock streaming with VPN Plus.": [
+        "VPN Plus ile yayın akışı hizmetlerinin kilidini açın."
+      ],
       "Unsaved changes": [
         "Kaydedilmemiş değişiklikler"
       ],
@@ -12784,6 +12825,9 @@
       "Visa Secure logo": [
         "Visa Secure logosu"
       ],
+      "VPN Plus": [
+        "VPN Plus"
+      ],
       "VPN with dedicated servers and IP addresses": [
         "Size ayrılmış sunucular ve IP adresleri ile VPN"
       ],
@@ -12902,7 +12946,7 @@
         "Kapatıldığında, uzak görsellerin bilginiz olmadan yüklenmesi engellenir."
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "${ MAIL_APP_NAME } uygulamasının varsayılan e-posta uygulamanız olup olmadığını denetler ve değilse sizi bilgilendirir."
+        "Etkinleştirildiğinde ${ MAIL_APP_NAME } uygulamasının varsayılan e-posta uygulamanız olup olmadığını kontrol ederiz ve değilse sizi bilgilendiririz."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Kimlik hizmeti sağlayıcınızda ${ appName } için SAML özelliğini etkinleştirirken geri çağırma (ACS) adresini ve yayıncı kimliğini kullanmanız istenebilir. Aşağıdaki verileri kopyalayıp kimlik hizmeti sağlayıcı alanlarına yapıştırmanız yeterlidir."
@@ -14723,7 +14767,7 @@
         "En yüksek VPN hızı"
       ],
       "Host name": [
-        "Ana bilgisayar adı"
+        "Sunucu adı"
       ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Bu e-posta adresini kalıcı olarak kaybetmemek için bu adresi şu anda başka bir hesaba eklemem gerektiğini anladım."
@@ -17027,6 +17071,9 @@
       "99.95% SLA": [
         "%99.95 hizmet sürekliliği"
       ],
+      "Access all countries": [
+        "Tüm ülkelere erişin"
+      ],
       "Activity logs and policy": [
         "Etkinlik günlükleri ve ilke"
       ],
@@ -17209,6 +17256,9 @@
       "Multiple admin roles": [
         "Birden çok yönetici rolü"
       ],
+      "No streaming support": [
+        "Yayın akışı desteği yok"
+      ],
       "No-logs policy": [
         "Kayıt tutmama ilkesi"
       ],
@@ -17374,6 +17424,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Sınırsız trafik/bant genişliği"
+      ],
+      "Unlock streaming": [
+        "Yayın akışı hizmetlerinin engelini kaldırın"
       ],
       "Up to ${ n } user": [
         "${ n } kullanıcıya kadar",
@@ -17849,6 +17902,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } ülke",
+        "${ n } ülke"
+      ],
       "Access advanced VPN features": [
         "Gelişmiş VPN özelliklerine erişin"
       ],
@@ -17910,8 +17967,8 @@
       "${ app } product updates": [
         "${ app } ürün güncellemeleri"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } for Business bülteni"
+      "${ BRAND_NAME } for Business communications": [
+        "${ BRAND_NAME } for Business iletişimleri"
       ],
       "${ BRAND_NAME } important announcements": [
         "Önemli ${ BRAND_NAME } duyuruları"
@@ -17964,8 +18021,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "Bir ${ BRAND_NAME } ürünü kullandığınız ilk ay boyunca"
       ],
-      "Email subscriptions": [
-        "E-posta abonelikleri"
+      "Email communications": [
+        "E-posta iletişimleri"
       ],
       "In-app notifications": [
         "Uygulama içi bildirimler"
@@ -20336,7 +20393,7 @@
         "Kurtarma dosyasını indirin"
       ],
       "Email recovery enabled": [
-        "E-posta kurtarma etkinleştirildi"
+        "E-posta adresi ile kurtarma açıldı"
       ],
       "Emergency contacts added": [
         "Acil durum kişileri eklendi"
@@ -20845,7 +20902,7 @@
         "${ size } indir"
       ],
       "Download your recovery phrase": [
-        "Kurtarma ifadesini indir"
+        "Kurtarma ifadenizi indirin"
       ],
       "Email address": [
         "E-posta adresi"
@@ -20869,7 +20926,7 @@
         "${ BRAND_NAME } parolanızı unutursanız ve sıfırlamanız gerekirse, yeni parolanızı bu aygıtta kullanarak oturum açtığınızda ${ BRAND_NAME } hesabınıza yeniden tam erişim sağlayabilirsiniz."
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
-        "${ BRAND_NAME } hesabınıza erişemez hale gelirseniz kurtarma ifadesi sayesinde oturum açabilir ve verilerinizi geri alabilirsiniz."
+        "${ BRAND_NAME } hesabınıza erişiminizi kaybederseniz, kurtarma ifadeniz oturum açmanızı ve verilerinizi kurtarmanızı sağlar."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Oturum açma bilgilerinizi kaybederseniz ve hesabınızı sıfırlamanız gerekirse, hem **hesap kurtarma hem de veri kurtarma yöntemlerini** kullanıyor olmanız **zorunludur**. Yoksa e-postalarınıza, kişilerinize, dosyalarınıza veya parolalarınıza erişemeyebilirsiniz."
@@ -20914,7 +20971,7 @@
         "Hesabınızı korumak için önlem alın"
       ],
       "There was an error generating your recovery phrase": [
-        "Kurtarma ifadeniz oluşturulurken bir hata oluştu"
+        "Kurtarma ifadeniz oluşturulurken bir sorun çıktı"
       ],
       "There was an error verifying your email": [
         "E-postanız doğrulanırken bir sorun çıktı"
@@ -21001,7 +21058,7 @@
         "Parolanızı unutursanız hesabınıza yeniden erişebilmek için telefon ile kurtarmayı kullanabilirsiniz."
       ],
       "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
-        "Daha önce bir kurtarma ifadesi indirmişsiniz. Yeni ifade indirirseniz **eski ifade devre dışı kalır**."
+        "Daha önce bir kurtarma ifadesi indirmişsiniz. Yeni bir ifade indirirseniz **eski ifade kullanımdan kaldırılır**."
       ],
       "You have recommended actions to safeguard your account further.": [
         "Hesabınızın güvenliğini artırmak için yapabileceğiniz işlemler var."
@@ -21129,7 +21186,7 @@
         "Kurtarma e-posta adresi ekle"
       ],
       "Add recovery phone": [
-        "Kurtarma telefonu ekle"
+        "Kurtarma telefon numarası ekle"
       ],
       "Added emergency contacts": [
         "Acil durum kişileri eklendi"
@@ -21189,7 +21246,7 @@
         "Acil durum kişileri kullanıma alındı"
       ],
       "Enable device recovery": [
-        "Aygıt kurtarmayı etkinleştir"
+        "Aygıt ile kurtarmayı aç"
       ],
       "Enable email recovery": [
         "E-posta ile kurtarmayı aç"
@@ -21198,7 +21255,7 @@
         "Acil durum kişileri özelliğini aç"
       ],
       "Enable password reset from settings": [
-        "Ayarlardan parola sıfırlamayı etkinleştir"
+        "Ayarlarda parola sıfırlama özelliğini açın"
       ],
       "Enable phone recovery": [
         "Telefon numarası ile kurtarmayı aç"
@@ -21210,7 +21267,7 @@
         "Aygıt ile kurtarma açıldı"
       ],
       "Enabled email recovery": [
-        "E-posta kurtarma etkinleştirildi"
+        "E-posta adresi ile kurtarma açıldı"
       ],
       "Enabled password reset from settings": [
         "Ayarlarda parola sıfırlama özelliği açıldı"
@@ -21228,7 +21285,7 @@
         "Hesap güvenliğinizi şu şekilde artırdınız:"
       ],
       "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
-        "Parolanızı unutursanız karekod kullanarak oturum açabilirsiniz. Bunun için tek yapmanız gereken başka bir cihazda ${ BRAND_NAME } hizmetinde oturum açmış olmanızdır."
+        "Parolanızı unutursanız kare kod ile oturum açabilirsiniz. Bunun için başka bir aygıtta ${ BRAND_NAME } hizmetinde oturumunuzun açık olması yeterlidir."
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
         "${ BRAND_NAME } hesabınıza erişemediğinizde bu kodla oturum açabilir ve verilerinizi kurtarabilirsiniz. Her şeyi anında geri yüklemenin tek yolu budur. Bu nedenle bu kodu güvenli bir yerde sakladığınızdan emin olun."
@@ -21237,7 +21294,7 @@
         "Daha sonra"
       ],
       "Protect your legacy with Emergency Access": [
-        "Acil Erişim ile mirasınızı koruyun"
+        "Acil erişim ile mirasınızı koruyun"
       ],
       "Save recovery phrase": [
         "Kurtarma ifadesini kaydet"
@@ -21267,10 +21324,10 @@
         "Telefon numarasının size ait olduğundan emin olmak için ${ boldPhoneNumber } numarasına gönderilen doğrulama kodunu yazın."
       ],
       "To make sure this address is really yours, we’ll send an email with a verification link.": [
-        "Bu adresin gerçekten size ait olduğundan emin olmak için size doğrulama bağlantısı içeren bir e-posta göndereceğiz."
+        "Bu adresin gerçekten size ait olduğundan emin olmak için size doğrulama bağlantısı bulunan bir e-posta göndereceğiz."
       ],
       "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
-        "Hesabınızda Acil Erişim özelliğini etkinleştirmek için tarifenizi yükseltin. Böylece parolanızı sizin adınıza sıfırlayabilecek 1 ila 5 kişi belirleyebilirsiniz."
+        "Hesabınızda acil erişim özelliğini açmak için tarifenizi yükseltin. Böylece parolanızı sizin adınıza sıfırlayabilecek 1 - 5 kişi belirleyebilirsiniz."
       ],
       "Verified password": [
         "Parola doğrulanmış"
@@ -21303,19 +21360,19 @@
         "Bu aygıta bir veri yedeği kaydedebilirsiniz. Böylece parolanızı sıfırladıktan sonra bu aygıtta oturum açarak hesabınızdaki e-postalara, kişilere, dosyalara, parolalara ve diğer tüm şifrelenmiş verilere yeniden erişebilirsiniz."
       ],
       "You can use email verification to regain access to your account if you forget your password.": [
-        "Parolanızı unutursanız e-posta doğrulama yoluyla hesabınıza yeniden erişim sağlayabilirsiniz."
+        "Parolanızı unutursanız e-posta adresi ile doğrulamayı kullanarak hesabınıza yeniden erişebilirsiniz."
       ],
       "You can use SMS verification to regain access to your account if you forget your password.": [
         "Parolanızı unutursanız hesabınıza yeniden erişebilmek için SMS doğrulaması kullanabilirsiniz."
       ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
-        "Parolanızı unutursanız kurtarma e-postanızı kullanarak hesabınıza yeniden erişim sağlayabilirsiniz."
+        "Parolanızı unutursanız kurtarma e-posta adresinizi kullanarak hesabınıza yeniden erişebilirsiniz."
       ],
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "Parolanızı unutursanız hesabınıza yeniden erişebilmek için telefon numarası ile kurtarmayı kullanabilirsiniz."
       ],
       "You don’t need to open or read the file—just download it and store it somewhere safe.": [
-        "Dosyayı açmanıza veya okumanıza gerek yok. Sadece indirin ve güvenli bir yere kaydedin."
+        "Dosyayı açmanız veya okumanız gerekmez. Yalnızca indirin ve güvenli bir yere kaydedin."
       ],
       "Your recovery checklist": [
         "Kurtarma kontrol listeniz"
@@ -21529,7 +21586,7 @@
     },
     "Sentinel banner": {
       "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
-        "Hesabınızın mümkün olan en yüksek güvenliğini sağlamak için e-posta ve SMS yoluyla kurtarmayı devre dışı bırakın."
+        "Hesabınıza olabilecek en yüksek güvenliği sağlamak için e-posta adresi ve SMS ile kurtarma özelliklerini kapatın."
       ],
       "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
         "${ BRAND_NAME } hesabınıza her zaman erişebilmek için kurtarma ifadenizi indirin."
@@ -21873,7 +21930,7 @@
         "Fotoğraflar bölümünü aç"
       ],
       "Get updates about comments via email": [
-        "Yorumlarla ilgili güncellemeleri e-posta ile al"
+        "Yorum güncellemeleri e-posta ile bildirilsin"
       ],
       "Include document name in email notifications": [
         "E-posta bildirimlerine belge adı eklensin"
@@ -22742,7 +22799,7 @@
     },
     "Spotlight": {
       "Assign delegated roles": [
-        "Devredilen rol atama"
+        "Verilmiş roller atanıyor"
       ],
       "Assign roles": [
         "Rolleri atayın"
@@ -22766,10 +22823,10 @@
         "Tam yönetici erişimi olmadan belirli izinleri vermek için bu sekmeyi açın."
       ],
       "User roles available": [
-        "Kullanılabilir kullanıcı rolleri"
+        "Kullanılabilecek kullanıcı rolleri"
       ],
       "You can now assign roles to individual users from this tab.": [
-        "Artık bu sekmeden kullanıcılara tek tek rol atayabilirsiniz."
+        "Artık bu sekmeden kullanıcılara bireysel roller atayabilirsiniz."
       ]
     },
     "sso": {
@@ -23854,7 +23911,7 @@
         "Hesap silindi. Oturum kapatılıyor..."
       ],
       "Activation link copied to clipboard": [
-        "Aktivasyon bağlantısı panoya kopyalandı"
+        "Etkinleştirme bağlantısı panoya kopyalandı"
       ],
       "Address added": [
         "Adres eklendi"
@@ -24805,7 +24862,7 @@
         "Yeni ağ geçidi ekle"
       ],
       "Create a new password": [
-        "Yeni parola oluştur"
+        "Yeni bir parola oluşturun"
       ],
       "Create Gateway": [
         "Ağ geçidi ekle"
@@ -25250,6 +25307,9 @@
       "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
         "${ planName } ile dosyalarınız, fotoğraflarınız ve belgeleriniz için ${ planMaxSpace } depolama alanı edinin. ${ upgradeButton }"
       ],
+      "Get ${ VPN_APP_NAME } on your TV": [
+        "${ VPN_APP_NAME } uygulamasını TV'nizde edinin"
+      ],
       "Get ${ vpnPlus } to access all servers": [
         "Tüm sunuculara erişmek için ${ vpnPlus } edinin"
       ],
@@ -25684,7 +25744,7 @@
         "Etki alanını kaldır"
       ],
       "Remove email": [
-        "E-postayı kaldır"
+        "E-postayı kaldırın"
       ],
       "Remove forwarding address": [
         "İletme adresini kaldır"
@@ -25904,6 +25964,9 @@
       ],
       "Some of your encrypted data is locked": [
         "Şifrelenmiş verilerinizin bir kısmı kilitlenmiş"
+      ],
+      "Something went wrong": [
+        "Bir sorun çıktı"
       ],
       "Sort folders alphabetically": [
         "Klasörler alfabetik olarak sıralansın"
@@ -26183,7 +26246,7 @@
         "${ planTitle } aboneliğiniz başladı"
       ],
       "Your admin at ${ orgName } is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
-        "${ orgName } bünyesindeki yöneticiniz sizi yeni ve güvenli ${ BRAND_NAME } hesabınızı etkinleştirmeye ve parolanızı güncellemeye davet ediyor."
+        "${ orgName } kuruluşundaki yöneticiniz sizi yeni ve güvenli ${ BRAND_NAME } hesabınızı etkinleştirmeye ve parolanızı güncellemeye davet ediyor."
       ],
       "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
         "Yöneticiniz sizi yeni ve güvenli ${ BRAND_NAME } hesabınızı etkinleştirmeye ve parolanızı güncellemeye davet ediyor."
@@ -26967,10 +27030,10 @@
     },
     "user_modal": {
       "(via ${ groupName })": [
-        "(vasıtasıyla ${ groupName })"
+        "(${ groupName } üzerinden)"
       ],
       "(via group)": [
-        "(grup aracılığıyla)"
+        "(gruptan)"
       ],
       "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
         "Bir kullanıcıya devredilen roller ekleyerek ona yalnızca gerek duyduğu izinleri verin. Böylece tam yönetici yetkilerini ayrı tutun ve ortamınızın güvenliğini sağlayın."
@@ -27363,7 +27426,7 @@
         "Bildirim e-posta adresinizi kaldırmak istediğinize emin misiniz?"
       ],
       "Are you sure you want to remove your recovery email?": [
-        "Kurtarma e-postanızı kaldırmak istediğinizden emin misiniz?"
+        "Kurtarma e-posta adresinizi kaldırmak istediğinize emin misiniz?"
       ],
       "Are you sure you want to remove your recovery phone number?": [
         "Kurtarma telefon numaranızı kaldırmak istediğinize emin misiniz?"

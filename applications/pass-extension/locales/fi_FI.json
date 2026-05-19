@@ -1536,6 +1536,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME }:n käyttäminen vaatii sormenjälkesi tai laitteen PIN-koodin"
       ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Käyttötunnus \"${ action.token.Name }\" on jo vanhentunut. Jos se poistetaan, sitä ei enää näytetä."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Mobiilisovelluksillamme tavoitat salasanasi myös liikkeellä ollessasi."
       ],
@@ -2056,6 +2059,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME }in käyttäminen yhdistettynä vaatii PIN-koodin. Kolmen epäonnistuneen yrityksen jälkeen sinut kirjataan ulos."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Näkyvissä ovat vain viimeisten 30 päivän aikana vanhentuneet tunnukset. Vanhemmat tunnukset poistetaan automaattisesti."
       ],
       "Open ${ PASS_APP_NAME } in a larger window": [
         "Avaa ${ PASS_APP_NAME } suuremmassa ikkunassa"
@@ -3049,6 +3055,9 @@
       ],
       "Expired": [
         "Erääntynyt"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Vanhentuneet tunnukset (${ expired.length })"
       ],
       "Expiry Date": [
         "Voimassaoloaika"

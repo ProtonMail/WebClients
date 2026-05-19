@@ -7062,6 +7062,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
       ],
+      "${ downloads } downloads": [
+        "${ downloads } downloads"
+      ],
       "${ n } month": [
         "${ n } maand",
         "${ n } maanden"
@@ -7248,6 +7251,9 @@
       "Created": [
         "Aangemaakt"
       ],
+      "Created ${ created }": [
+        "Gemaakt op ${ created }"
+      ],
       "Credits": [
         "Tegoed"
       ],
@@ -7267,11 +7273,20 @@
       "Deleted": [
         "Verwijderd"
       ],
+      "Deleted ${ deleted }": [
+        "${ deleted } verwijderd"
+      ],
       "Device": [
         "Apparaat"
       ],
+      "Device #${ position }": [
+        "Apparaat #${ position }"
+      ],
       "Device name": [
         "Apparaatnaam"
+      ],
+      "Device: ${ name }": [
+        "Apparaat: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Schakel deze koppeling uit op een specifieke datum"
@@ -7330,8 +7345,14 @@
       "Expired": [
         "Verlopen"
       ],
+      "Expired on ${ formatted }": [
+        "Verlopen op ${ formatted }"
+      ],
       "Expires": [
         "Verloopt"
+      ],
+      "Expires ${ formatted }": [
+        "Verloopt op ${ formatted }"
       ],
       "Expiry": [
         "Vervaldatum"
@@ -7405,6 +7426,9 @@
       "Integrated 2FA authenticator": [
         "Geïntegreerde tweestapsverificatie"
       ],
+      "Item #${ position }": [
+        "Apparaat #${ position }"
+      ],
       "Keep both": [
         "Beide behouden"
       ],
@@ -7435,6 +7459,9 @@
       "Location": [
         "Locatie"
       ],
+      "Location: ${ item.location }": [
+        "Locatie: ${ item.location }"
+      ],
       "Log in or sign up ": [
         "Inloggen of registreren "
       ],
@@ -7456,6 +7483,9 @@
       "Modified": [
         "Gewijzigd"
       ],
+      "Modified ${ modified }": [
+        "Gewijzigd op ${ modified }"
+      ],
       "Move to Archive": [
         "Verplaats naar Archief"
       ],
@@ -7476,6 +7506,9 @@
       ],
       "Never": [
         "Nooit"
+      ],
+      "Never expires": [
+        "Vervalt nooit"
       ],
       "New password": [
         "Nieuw wachtwoord"
@@ -7521,6 +7554,9 @@
       ],
       "Payment method": [
         "Betalingsmethode"
+      ],
+      "Pending invitation": [
+        "Uitnodiging in behandeling"
       ],
       "PGP scheme": [
         "PGP-schema"
@@ -7600,8 +7636,17 @@
       "Shared by": [
         "Gedeeld door"
       ],
+      "Shared by ${ sharedBy }": [
+        "Gedeeld door ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Gedeeld via een openbare link"
+      ],
       "Shared on": [
         "Gedeeld op"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Gedeeld op ${ sharedOn }"
       ],
       "Shared with me": [
         "Gedeeld met mij"

@@ -1348,22 +1348,22 @@
     },
     "collider_2025: Error (file processing)": {
       "Error processing file: ${ file.name }": [
-        "Dosya işlenirken hata oluştu: ${ file.name }"
+        "Dosya işlenirken sorun çıktı: ${ file.name }"
       ]
     },
     "collider_2025: Error (local processing)": {
       "Error processing file: ${ file.name }": [
-        "Dosya işlenirken hata oluştu: ${ file.name }"
+        "Dosya işlenirken sorun çıktı: ${ file.name }"
       ]
     },
     "collider_2025: Error (processing)": {
       "File format not supported: ${ result.fileName }": [
-        "Dosya formatı desteklenmiyor: ${ result.fileName }"
+        "Dosya biçimi desteklenmiyor: ${ result.fileName }"
       ]
     },
     "collider_2025: Error (validation)": {
       "File format not supported: ${ file.name }": [
-        "Dosya formatı desteklenmiyor: ${ file.name }"
+        "Dosya biçimi desteklenmiyor: ${ file.name }"
       ]
     },
     "collider_2025: Error Message": {
@@ -6520,6 +6520,9 @@
       "99.95% SLA": [
         "%99.95 hizmet sürekliliği"
       ],
+      "Access all countries": [
+        "Tüm ülkelere erişin"
+      ],
       "Ad-blocker and malware protection": [
         "Reklam engelleyici ve kötü amaçlı yazılım koruması"
       ],
@@ -6669,6 +6672,9 @@
       "Multiple admin roles": [
         "Birden çok yönetici rolü"
       ],
+      "No streaming support": [
+        "Yayın akışı desteği yok"
+      ],
       "Online document editor": [
         "Çevrim içi belge düzenleyici"
       ],
@@ -6800,6 +6806,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Sınırsız trafik/bant genişliği"
+      ],
+      "Unlock streaming": [
+        "Yayın akışı hizmetlerinin engelini kaldırın"
       ],
       "Up to ${ n } user": [
         "${ n } kullanıcıya kadar",
@@ -7181,6 +7190,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } ülke",
+        "${ n } ülke"
+      ],
       "Access advanced VPN features": [
         "Gelişmiş VPN özelliklerine erişin"
       ],

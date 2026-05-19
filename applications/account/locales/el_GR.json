@@ -219,6 +219,9 @@
       "Back to sign in": [
         "Επιστροφή στη σύνδεση"
       ],
+      "Back to sign-in": [
+        "Επιστροφή στη σύνδεση"
+      ],
       "Block": [
         "Αποκλεισμός"
       ],
@@ -1493,9 +1496,6 @@
       ],
       "Set as default": [
         "Ορισμός ως προεπιλογή"
-      ],
-      "Set as default mail application": [
-        "Ορίστε ως προεπιλεγμένη εφαρμογή αλληλογραφίας"
       ],
       "Set catch-all": [
         "Ορίστε catch-all"
@@ -5238,12 +5238,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "Το ${ DOCS_SHORT_APP_NAME } στο ${ DRIVE_APP_NAME } σάς επιτρέπει να συνεργάζεστε με άλλους σε ένα ασφαλές, κρυπτογραφημένο περιβάλλον."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "Το ${ MAIL_APP_NAME } δεν είναι η προεπιλεγμένη εφαρμογή αλληλογραφίας σας."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "Το ${ MAIL_APP_NAME } είναι η προεπιλεγμένη εφαρμογή αλληλογραφίας σας."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "Το ${ MAIL_APP_NAME } διατηρεί τα δεδομένα της επιχείρησής σας ασφαλή και σας επιτρέπει να στέλνετε κρυπτογραφημένα μηνύματα ηλεκτρονικού ταχυδρομείου σε οποιονδήποτε."
       ],
@@ -5391,9 +5385,6 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Διαβάστε, απαντήστε και μείνετε ενημερωμένοι στο Gmail μέσα από το ${ MAIL_APP_NAME }"
       ],
-      "Send a code to your recovery email or phone": [
-        "Αποστολή κωδικού στη διεύθυνση ηλεκτρονικού ταχυδρομείου ή στο τηλέφωνο ανάκτησης σας"
-      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Ρυθμίστε λογαριασμούς για όλους τους χρήστες και προσκαλέστε τους να συμμετάσχουν στο ${ BRAND_NAME }."
       ],
@@ -5442,6 +5433,9 @@
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Αναβαθμίστε για να λάβετε ${ activatePmUser } για μια συντομότερη, εύκολη στην απομνημόνευση διεύθυνση ηλεκτρονικού ταχυδρομείου εκτός από την τρέχουσα."
+      ],
+      "Use a recovery method to reset your password": [
+        "Χρησιμοποιήστε μια μέθοδο ανάκτησης για να επαναφέρετε τον κωδικό πρόσβασής σας"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Χρησιμοποιήστε αυτόν τον οδηγό για να επωφεληθεί άμεσα ο οργανισμός σας από το κορυφαίο οικοσύστημα κρυπτογράφησης και προστασίας προσωπικών δεδομένων του ${ BRAND_NAME }."
@@ -8898,6 +8892,9 @@
       ],
       "Group address:": [
         "Διεύθυνση ομάδας:"
+      ],
+      "Roles and permission:": [
+        "Ρόλοι και δικαιώματα:"
       ]
     },
     "Group member count": {
@@ -8955,6 +8952,14 @@
       ],
       "Group membership": [
         "Συμμετοχή σε ομάδες"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "Γενικά"
+      ],
+      "Roles and permissions": [
+        "Ρόλοι και δικαιώματα"
       ]
     },
     "Header": {
@@ -9600,6 +9605,9 @@
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "Τα ${ BRAND_NAME } Business πλάνα παρέχουν στην ομάδα σας όλα τα εργαλεία συνεργασίας που χρειάζονται για να είναι παραγωγικοί και οργανωμένοι στη δουλειά τους, ενώ ταυτόχρονα προστατεύουν την επιχείρησή σας."
       ],
+      "${ BRAND_NAME } Free": [
+        "${ BRAND_NAME } Free"
+      ],
       "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
         "${ BRAND_NAME } χρηματοδοτείται ανεξάρτητα και λειτουργεί χωρίς διαφημίσεις.\nΠαρακάτω παρατίθενται παραδείγματα για το πώς αυτή η ανεξαρτησία έχει χρησιμοποιηθεί στην πράξη."
       ],
@@ -9705,6 +9713,9 @@
       ],
       "${ name } for Windows": [
         "${ name } για Windows"
+      ],
+      "${ name } is not available": [
+        "${ name } δεν είναι διαθέσιμο"
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: μη βάζετε σε καραντίνα ή απορρίπτετε μη εξουσιοδοτημένα μηνύματα ηλεκτρονικού ταχυδρομείου. Συνήθως, οι χρήστες χρησιμοποιούν αυτήν την πολιτική μόνο για την αντιμετώπιση προβλημάτων ή τη δοκιμή."
@@ -9866,6 +9877,9 @@
       ],
       "(formerly Twitter)": [
         "(πρώην Twitter)"
+      ],
+      "**${ appName }** is not available for your account.": [
+        "**${ appName }** δεν είναι διαθέσιμο για τον λογαριασμό σας."
       ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "Το **${ appName }** δεν υποστηρίζεται στον οργανισμό σας **${ organizationName }**."
@@ -10314,6 +10328,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Προτού αρχίσετε να στέλνετε και να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου από τις νέες διευθύνσεις σας, πρέπει πρώτα να δημιουργήσετε κλειδιά κρυπτογράφησης για αυτά."
       ],
+      "BEST FOR TV": [
+        "ΚΑΛΥΤΕΡΟ ΓΙΑ ΤΗΛΕΟΡΑΣΗ"
+      ],
       "Beta": [
         "Beta (Δοκιμαστική)"
       ],
@@ -10449,6 +10466,9 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Συνεχίστε για να συνδέσετε αυτήν την οντότητα με τον ${ BRAND_NAME } οργανισμό σας."
       ],
+      "Continue with ${ BRAND_NAME } Free": [
+        "Συνεχίστε με το ${ BRAND_NAME } Free"
+      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Συνεχίζοντας θα συνδέσετε τον ${ BRAND_NAME } Λογαριασμό σας με το ${ name }."
       ],
@@ -10508,6 +10528,10 @@
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Δημιουργία διακομιστή πύλης: ${ serverNumber } / ${ total }",
         "Δημιουργία διακομιστών πύλης: ${ serverNumber } / ${ total }"
+      ],
+      "Creating gateway with ${ total } server": [
+        "Δημιουργία πύλης με ${ total } διακομιστή",
+        "Δημιουργία πύλης με ${ total } διακομιστές"
       ],
       "Creating your account": [
         "Δημιουργία του λογαριασμού σας"
@@ -11005,6 +11029,9 @@
       ],
       "Get visibility into account access": [
         "Αποκτήστε ορατότητα στην πρόσβαση λογαριασμού"
+      ],
+      "Get VPN Plus": [
+        "Αποκτήστε το VPN Plus"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Δώστε στο διακριτικό ένα περιγραφικό όνομα, όπως την υπηρεσία με την οποία σκοπεύετε να το χρησιμοποιήσετε και επιλέξτε μία από τις ενεργές προσαρμοσμένες διευθύνσεις τομέα σας. Μόνο αυτή η διεύθυνση θα μπορεί να στέλνει μηνύματα ηλ. ταχυδρομείου με αυτό το διακριτικό."
@@ -12100,6 +12127,12 @@
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Να εμφανίζεται η εικόνα κάθε αποστολέα στη λίστα μηνυμάτων. Τα αρχικά του αποστολέα θα εμφανίζονται εάν μια φωτογραφία δεν είναι διαθέσιμη."
       ],
+      "Show fewer benefits": [
+        "Εμφάνιση λιγότερων προνομίων"
+      ],
+      "Show more benefits": [
+        "Εμφάνιση περισσότερων προνομίων"
+      ],
       "Show original message": [
         "Προβολή αρχικού μηνύματος"
       ],
@@ -12633,6 +12666,9 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Εφόσον δεν εξέλθετε του λογαριασμού σας, ούτε αλλάξετε τον κωδικό πρόσβασής σας, η συνεδρία σας θα παραμείνει ενεργή. Οι συνεδρίες λήγουν μετά από 60 ημέρες αδράνειας."
       ],
+      "Unlock streaming with VPN Plus.": [
+        "Ξεκλειδώστε τη ροή με το VPN Plus."
+      ],
       "Unsaved changes": [
         "Μη αποθηκευμένες αλλαγές"
       ],
@@ -12780,6 +12816,9 @@
       "Visa Secure logo": [
         "λογότυπο Visa Secure"
       ],
+      "VPN Plus": [
+        "VPN Plus"
+      ],
       "VPN with dedicated servers and IP addresses": [
         "VPN με αποκλειστικούς διακομιστές και διευθύνσεις IP"
       ],
@@ -12896,9 +12935,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Όταν είναι απενεργοποιημένο, αυτό εμποδίζει την φόρτωση απομακρυσμένων εικόνων εν αγνοία σας."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Όταν είναι ενεργοποιημένο, θα ελέγχουμε αν το ${ MAIL_APP_NAME } είναι η προεπιλεγμένη εφαρμογή αλληλογραφίας και θα σας ειδοποιούμε αν δεν είναι."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Όταν ενεργοποιείτε το SAML για ${ appName } στην υπηρεσία παροχής ταυτότητας, ενδέχεται να σας ζητηθεί να χρησιμοποιήσετε τη διεύθυνση URL επιστροφής κλήσης (ACS) και το αναγνωριστικό εκδότη. Απλώς αντιγράψτε-επικολλήστε τα παρακάτω δεδομένα στα πεδία της υπηρεσίας παροχής ταυτότητάς σας."
@@ -17023,6 +17059,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Access all countries": [
+        "Πρόσβαση σε όλες τις χώρες"
+      ],
       "Activity logs and policy": [
         "Αρχεία καταγραφής δραστηριότητας και πολιτική"
       ],
@@ -17205,6 +17244,9 @@
       "Multiple admin roles": [
         "Πολλαπλοί ρόλοι διαχειριστή"
       ],
+      "No streaming support": [
+        "Δεν υπάρχει υποστήριξη ροής"
+      ],
       "No-logs policy": [
         "Πολιτική μη διατήρησης αρχείων καταγραφής"
       ],
@@ -17370,6 +17412,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Απεριόριστος όγκος / εύρος ζώνης"
+      ],
+      "Unlock streaming": [
+        "Ξεκλειδώστε τη ροή"
       ],
       "Up to ${ n } user": [
         "Μέχρι και ${ n } χρήστη",
@@ -17845,6 +17890,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } χώρα",
+        "${ n } χώρες"
+      ],
       "Access advanced VPN features": [
         "Πρόσβαση σε προηγμένα χαρακτηριστικά VPN"
       ],
@@ -17906,8 +17955,8 @@
       "${ app } product updates": [
         "Ενημερώσεις προϊόντος ${ app }"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Ενημερωτικό δελτίο ${ BRAND_NAME } για επιχειρήσεις"
+      "${ BRAND_NAME } for Business communications": [
+        "${ BRAND_NAME } για Επιχειρησιακές επικοινωνίες"
       ],
       "${ BRAND_NAME } important announcements": [
         "Σημαντικές ανακοινώσεις του ${ BRAND_NAME }"
@@ -17960,8 +18009,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "Κατά τη διάρκεια του πρώτου μήνα χρήσης ενός προϊόντος ${ BRAND_NAME }"
       ],
-      "Email subscriptions": [
-        "Συνδρομές Email"
+      "Email communications": [
+        "Επικοινωνίες μέσω email"
       ],
       "In-app notifications": [
         "Ειδοποιήσεις εντός εφαρμογής"
@@ -21428,6 +21477,9 @@
       ]
     },
     "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την ανάκτηση μέσω ηλεκτρονικής διεύθυνσης ανάκτησης και SMS."
+      ],
       "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
         "Για να βεβαιωθείτε ότι έχετε πάντα πρόσβαση στον λογαριασμό σας ${ BRAND_NAME }, κατεβάστε τη φράση ανάκτησης."
       ],
@@ -24604,9 +24656,6 @@
       "Change second password": [
         "Αλλαγή δεύτερου κωδικού πρόσβασης"
       ],
-      "Check your default mail application": [
-        "Ελέγξτε την προεπιλεγμένη εφαρμογή αλληλογραφίας σας."
-      ],
       "Choose a provider": [
         "Επιλέξτε έναν πάροχο"
       ],
@@ -24784,6 +24833,9 @@
       ],
       "Data recovery": [
         "Ανάκτηση δεδομένων"
+      ],
+      "Data recovery contacts": [
+        "Επαφές ανάκτησης δεδομένων"
       ],
       "Data recovery options": [
         "Επιλογές ανάκτησης δεδομένων"
@@ -25143,6 +25195,9 @@
       ],
       "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
         "Αποκτήστε ${ planMaxSpace } αποθηκευτικό χώρο για τα αρχεία, τις φωτογραφίες και τα έγγραφά σας με το ${ planName }. ${ upgradeButton }"
+      ],
+      "Get ${ VPN_APP_NAME } on your TV": [
+        "Αποκτήστε το ${ VPN_APP_NAME } στην τηλεόρασή σας"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Για πρόσβαση σε όλους τους διακομιστές, αποκτήστε το ${ vpnPlus }"
@@ -25798,6 +25853,9 @@
       ],
       "Some of your encrypted data is locked": [
         "Ορισμένα από τα κρυπτογραφημένα δεδομένα σας είναι κλειδωμένα"
+      ],
+      "Something went wrong": [
+        "Κάτι πήγε στραβά"
       ],
       "Sort folders alphabetically": [
         "Ταξινόμηση φακέλων αλφαβητικά"
