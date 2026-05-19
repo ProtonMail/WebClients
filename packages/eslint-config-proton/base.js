@@ -17,10 +17,8 @@ export default defineConfig(
         plugins: {
             '@typescript-eslint': plugin,
             import: importPlugin,
-            // @ts-expect-error -- Temporary types incompatibility pending flat config support
             'monorepo-cop': monorepoCop,
             'no-only-tests': noOnlyTests,
-            // @ts-expect-error -- Temporary types incompatibility pending flat config support
             lodash,
             '@protontech/enforce-uint8array-arraybuffer': protontechEnforceUint8ArrayArraybuffer,
             testingLibrary,
