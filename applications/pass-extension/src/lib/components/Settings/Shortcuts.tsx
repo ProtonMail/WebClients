@@ -55,7 +55,7 @@ export const Shortcuts: FC = () => {
 
     useEffect(() => {
         browser.commands
-            .getAll()
+            ?.getAll()
             .then((commands) =>
                 setShortcuts(
                     resolveShortcuts(commands, {
@@ -66,6 +66,10 @@ export const Shortcuts: FC = () => {
             )
             .catch(noop);
     }, []);
+
+    /* See worker/index.ts: `browser.commands` may be undefined transiently
+     * after the 1.37.0 update. Render nothing in that case. */
+    if (!browser.commands) return null;
 
     const openShortcutsPage =
         BUILD_TARGET !== 'firefox'
