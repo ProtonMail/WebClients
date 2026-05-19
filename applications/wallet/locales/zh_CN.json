@@ -2645,7 +2645,7 @@
         "我已阅读并同意免责声明"
       ],
       "Not now": [
-        "现在不要"
+        "以后再说"
       ],
       "You are now leaving ${ WALLET_APP_NAME } for ${ providerName } (${ websiteLink }).\nServices related to card payments, bank transfers, and any other fiat transactions are provided by ${ providerName },\na separate third-party platform. By proceeding and procuring services from ${ providerName },\nyou acknowledge that you have read and agreed to ${ providerName }'s Terms of Service (${ termOfUseLink })\nand Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }).\nFor any questions related to ${ providerName }'s services, please contact ${ providerName } at ${ supportEmailLink }": [
         "您正在离开 ${ WALLET_APP_NAME } ，前往 ${ providerName }（${ websiteLink }）。\n与银行卡支付、银行转账和任何其他法币交易相关的服务由 ${ providerName }（一个独立的第三方平台）提供。通过继续使用 ${ providerName } 提供的服务，您确认已阅读并同意 ${ providerName } 的服务条款（${ termOfUseLink }）和隐私与 Cookies 政策（${ privacyAndCookiesPolicyLink }）。\n如对 ${ providerName } 的服务有任何疑问，请联系 ${ providerName } ，支持邮件 ${ supportEmailLink } 。"
@@ -3798,6 +3798,9 @@
       "99.95% SLA": [
         "保障 99.95% 正常运行时间"
       ],
+      "Access all countries": [
+        "解锁所有国家/地区"
+      ],
       "Ad-blocker and malware protection": [
         "广告拦截与恶意软件防护"
       ],
@@ -3945,6 +3948,9 @@
       "Multiple admin roles": [
         "多管理员机制"
       ],
+      "No streaming support": [
+        "不支持流媒体"
+      ],
       "Online document editor": [
         "在线文档编辑器"
       ],
@@ -4076,6 +4082,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "流量与带宽不限"
+      ],
+      "Unlock streaming": [
+        "解锁流媒体"
       ],
       "Up to ${ n } user": [
         "最多 ${ n } 位用户"
@@ -4449,6 +4458,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } 个国家/地区"
+      ],
       "Access advanced VPN features": [
         "解锁高级 VPN 功能"
       ],
@@ -6015,7 +6027,7 @@
         "邀请"
       ],
       "Not now": [
-        "现在不要"
+        "以后再说"
       ],
       "Please let them know to check their email and follow the instruction to set up their ${ WALLET_APP_NAME } with Bitcoin via Email.": [
         "请让他们检查电子邮件并按照说明通过电子邮件使用比特币设置他们的${ WALLET_APP_NAME }。"
@@ -6123,7 +6135,7 @@
         "名称"
       ],
       "Not now": [
-        "暂不"
+        "以后再说"
       ],
       "Show public key (XPUB)": [
         "显示公钥 (XPUB)"
