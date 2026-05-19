@@ -1607,6 +1607,9 @@
         "${ row.breachCount } violação detectada",
         "${ row.breachCount } violações detectadas"
       ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } selecionado"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dia restante",
         "${ trialDaysLeft } dias restantes"
@@ -1741,6 +1744,9 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Antes de exportar seus dados com esse formato, abra as configurações do Safari -> guia “Geral” -> desative a opção “Abrir arquivos seguros após o download”. Isso evitará que o Safari extraia incorretamente o arquivo exportado."
       ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Entre 60 (1 hora) e 525600 (1 ano)"
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Bloqueio biométrico registrado. Use-a para desbloquear o ${ PASS_APP_NAME }"
       ],
@@ -1869,6 +1875,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domínio: ${ domainPath } ou @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Baixar pass-cli de ${ passCliLink }."
       ],
       "Drop file here to upload": [
         "Solte o arquivo aqui para enviar"
@@ -3293,6 +3302,9 @@
       "Expired": [
         "Expirado"
       ],
+      "Expired tokens (${ expired.length })": [
+        "Tokens expirados (${ expired.length })"
+      ],
       "Expires in (minutes)": [
         "Expira em (minutos)"
       ],
@@ -3968,6 +3980,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Use o ${ PASS_APP_NAME } como seu gerenciador de senhas padrão do seu navegador"
       ],
+      "Use for AI agent": [
+        "Uso para agente de IA"
+      ],
       "Used in": [
         "Usada em"
       ],
@@ -4090,6 +4105,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } foi ativado"
+      ],
+      "Access token deleted": [
+        "Token de acesso excluído"
       ]
     },
     "Onboarding": {
@@ -4562,6 +4580,9 @@
       "Add mailbox": [
         "Adicionar caixa de correio"
       ],
+      "Agent setup instructions": [
+        "Intruções de confirmação de agente"
+      ],
       "Alias contacts": [
         "Contatos de alias"
       ],
@@ -4618,6 +4639,9 @@
       ],
       "Create contact": [
         "Criar contato"
+      ],
+      "Create new access token": [
+        "Criar novo token de acesso"
       ],
       "Create PIN code": [
         "Criar código PIN"
@@ -4784,6 +4808,9 @@
       ],
       "Mailbox": [
         "Caixa de correio"
+      ],
+      "Manage vault access": [
+        "Gerenciar acesso ao cofre"
       ],
       "Mark as resolved?": [
         "Marcar como resolvido?"
@@ -5041,6 +5068,9 @@
       "Your exposed information": [
         "Sua informação exposta"
       ],
+      "Your new access token": [
+        "Seu novo token de acesso"
+      ],
       "Your vault is empty": [
         "Seu cofre está vazio"
       ],
@@ -5200,6 +5230,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Senha adicional deve ter pelo menos 8 caracteres"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Falha ao preencher automaticamente. Certifique-se de que ${ PASS_APP_NAME } tem as permissões necessárias e tente novamente (${ error })."
       ],
       "Failed to load breaches.": [
         "Falha ao carregar violações."

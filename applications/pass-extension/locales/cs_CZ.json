@@ -958,13 +958,13 @@
         "Biometrické ověření selhalo."
       ],
       "Biometric lock credentials do not match.": [
-        "Biometrické údaje pro odemknutí se neshodují."
+        "Biometrické přihlašovací údaje pro odemknutí se neshodují."
       ],
       "Biometric lock credentials not found.": [
-        "Nebyly nalezeny přihlašovací údaje pro biometrický zámek."
+        "Biometrické přihlašovací údaje pro odemknutí nenalezeny."
       ],
       "Biometric lock is not configured.": [
-        "Biometrický zámek nebyl nastaven."
+        "Biometrický zámek není nastaven."
       ],
       "Biometric lock setup failed.": [
         "Nastavení biometrického zámku selhalo."
@@ -1297,7 +1297,7 @@
         "Desktopová aplikace ${ PASS_APP_NAME } neodpověděla včas."
       ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
-        "Aplikace ${ PASS_APP_NAME } pro stolní počítače je uzamčena, je třeba ji odemknout."
+        "Desktopová aplikace ${ PASS_APP_NAME } je uzamčena, je třeba ji odemknout."
       ],
       "The ${ PASS_APP_NAME } desktop app is not installed.": [
         "Desktopová aplikace ${ PASS_APP_NAME } není nainstalována."
@@ -1306,7 +1306,7 @@
         "Desktopová aplikace ${ PASS_APP_NAME } nereaguje. Je spuštěná?"
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
-        "Aplikace pro stolní počítače ${ PASS_APP_NAME } je přihlášena pod jiným účtem."
+        "Desktopová aplikace ${ PASS_APP_NAME } je přihlášena pod jiným účtem."
       ],
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "V desktopové aplikaci ${ PASS_APP_NAME } byste měli být přihlášeni."
@@ -1531,7 +1531,7 @@
         "${ inviterEmail } chce sdílet položku se skupinou, kterou spravujete."
       ],
       "${ inviterEmail } wants to share an item with the group ${ name }.": [
-        "${ inviterEmail } si přeje sdílet položku se skupinou ${ name }."
+        "${ inviterEmail } chce sdílet položku se skupinou ${ name }."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } chce s vámi sdílet položku."
@@ -1918,7 +1918,7 @@
         "Povolování zamykání biometrií selhalo"
       ],
       "Enabling desktop auto-lock": [
-        "Zapnutí automatického zamykání plochy"
+        "Zapínání automatického zamykání"
       ],
       "Enabling offline mode...": [
         "Povolování režimu offline..."
@@ -2044,7 +2044,7 @@
         "Pozvánka byla úspěšně odeslána"
       ],
       "invites the group ${ name } to access items in": [
-        "pozve skupinu ${ name } k přístupu k položkám v"
+        "zve skupinu ${ name } k přístupu k položkám v"
       ],
       "invites you to access items in": [
         "vás zve k přístupu k položkám v"
@@ -2197,7 +2197,7 @@
         "Nic"
       ],
       "Not configured": [
-        "Není konfigurováno"
+        "Není nastaveno"
       ],
       "Not recommended": [
         "Nedoporučeno"
@@ -2212,7 +2212,7 @@
         "Online přístup k ${ PASS_APP_NAME } bude vyžadovat PIN kód. Budete odhlášeni po 3 neúspěšných pokusech."
       ],
       "Open ${ PASS_APP_NAME } in a larger window": [
-        "Otevřít ${ PASS_APP_NAME } ve větším okně"
+        "Otevřete ${ PASS_APP_NAME } ve větším okně"
       ],
       "Open the ${ PASS_APP_NAME } popup": [
         "Otevřít vyskakovací okno ${ PASS_APP_NAME }"
@@ -2620,7 +2620,7 @@
         "Tím zamítnete zařízení **${ name }**, které se **${ date }** pokusilo přihlásit k vašemu účtu ${ BRAND_NAME }."
       ],
       "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
-        "Chcete-li nastavit klávesové zkratky, přejděte ve Firefoxu na stránku about:addons a vyberte možnost „Spravovat klávesové zkratky rozšíření“"
+        "Pro nastavení klávesových zkratek přejděte ve Firefoxu na about:addons a vyberte z nabídky \"Správa klávesových zkratek pro rozšíření\""
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Chcete-li nadále přijímat e-maily, přeneste tyto aliasy do jiné e-mailové schránky:"
@@ -2647,10 +2647,10 @@
         "Neomezený počet aliasů hide-my-email a jejich pokročilá správa"
       ],
       "Unlock ${ PASS_APP_NAME } to access your passkeys": [
-        "Odemkněte aplikaci ${ PASS_APP_NAME } a získejte přístup ke svým přístupovým klíčům"
+        "Odemkněte ${ PASS_APP_NAME } a získejte přístup ke svým přístupovým klíčům"
       ],
       "Unlock ${ PASS_APP_NAME } to save this passkey": [
-        "Odemkněte aplikaci ${ PASS_APP_NAME } a uložte si tento přístupový klíč"
+        "Odemkněte ${ PASS_APP_NAME } a uložte si tento přístupový klíč"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Odemkněte ${ PASS_SHORT_APP_NAME } pomocí biometrie"
@@ -2767,10 +2767,10 @@
         "Nyní můžete pomocí záložního hesla přistupovat k aplikaci ${ PASS_SHORT_APP_NAME } v režimu offline"
       ],
       "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "Nyní můžete pomocí svého dodatečného hesla přistupovat k aplikaci ${ PASS_SHORT_APP_NAME } v režimu offline"
+        "Nyní můžete pomocí svého dodatečného hesla přistupovat k ${ PASS_SHORT_APP_NAME } v režimu offline"
       ],
       "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "Nyní můžete pomocí svého druhého hesla přistupovat k aplikaci ${ PASS_SHORT_APP_NAME } v režimu offline"
+        "Nyní můžete pomocí svého druhého hesla přistupovat k ${ PASS_SHORT_APP_NAME } v režimu offline"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Nemůžete měnit e-mailové schránky tohoto aliasu."
@@ -5207,6 +5207,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Dodatečné heslo by mělo mít alespoň 8 znaků"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Automatické vyplnění selhalo. Ujistěte se, prosím, že ${ PASS_APP_NAME } má potřebná oprávnění a zkuste to znovu (${ error })."
       ],
       "Failed to load breaches.": [
         "Nelze načíst úniky informací."

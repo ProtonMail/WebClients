@@ -1678,6 +1678,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "L'accès à ${ PASS_APP_NAME } nécessitera votre empreinte digitale ou le code PIN de votre appareil."
       ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Le jeton d'accès « ${ action.token.Name } » a déjà expiré. Une fois supprimé, il n'apparaîtra plus."
+      ],
       "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
         "Le jeton d'accès « ${ action.token.Name } » cessera de fonctionner immédiatement. Cette action est irréversible."
       ],
@@ -2278,6 +2281,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "L'accès en ligne à ${ PASS_APP_NAME } nécessitera un code PIN. Vous serez déconnecté après 3 tentatives n'ayant pas abouti."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Seuls les jetons expirés depuis moins de 30 jours sont affichés. Les jetons plus anciens sont automatiquement supprimés."
       ],
       "Open ${ PASS_APP_NAME } in a larger window": [
         "Ouvrez ${ PASS_APP_NAME } dans une fenêtre plus grande"
@@ -3367,6 +3373,9 @@
       ],
       "Expired": [
         "Expiré"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Jetons expirés (${ expired.length })"
       ],
       "Expires in (minutes)": [
         "Expire dans (minutes)"
@@ -5299,6 +5308,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Le mot de passe supplémentaire doit comporter au moins 8 caractères."
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "La saisie automatique n'a pas abouti. Veuillez vous assurer que ${ PASS_APP_NAME } dispose des autorisations nécessaires et réessayez (${ error })."
       ],
       "Failed to load breaches.": [
         "Les fuites de données n'ont pas pu être chargées."
