@@ -1,8 +1,14 @@
 import type { MainThreadBridge } from '../mainThread/MainThreadBridge';
 import type { SearchDB } from '../shared/SearchDB';
+import type { SearchMetrics } from '../shared/searchMetrics';
 import type { IndexRegistry } from '../worker/index/IndexRegistry';
 import type { TreeSubscriptionRegistry } from '../worker/indexer/TreeSubscriptionRegistry';
 import type { TaskContext } from '../worker/indexer/tasks/BaseTask';
+
+// All `mark*` methods are no-ops.
+const noopSearchMetrics = new Proxy({} as SearchMetrics, {
+    get: () => () => {},
+});
 
 /**
  * Creates a TaskContext with all fields pre-populated as jest mocks/stubs.
@@ -22,6 +28,7 @@ export function makeTaskContext(overrides?: Partial<TaskContext>): TaskContext {
             startIncrementalUpdateScheduling: jest.fn(),
         } as unknown as TreeSubscriptionRegistry,
         signal: new AbortController().signal,
+        searchMetrics: noopSearchMetrics,
         markIndexing: jest.fn(),
         markInitialIndexing: jest.fn(),
         enqueueOnce: jest.fn(),

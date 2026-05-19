@@ -1,5 +1,6 @@
 import type { MainThreadBridge } from '../../../mainThread/MainThreadBridge';
 import type { SearchDB } from '../../../shared/SearchDB';
+import type { SearchMetrics } from '../../../shared/searchMetrics';
 import type { IndexerTaskKind } from '../../../shared/types';
 import type { IndexRegistry } from '../../index/IndexRegistry';
 import type { TreeSubscriptionRegistry } from '../TreeSubscriptionRegistry';
@@ -18,6 +19,8 @@ export interface TaskContext {
     readonly indexRegistry: IndexRegistry;
     readonly treeSubscriptionRegistry: TreeSubscriptionRegistry;
     readonly signal: AbortSignal;
+    /** Bridged metrics: every `mark*` call is forwarded to the main thread. */
+    readonly searchMetrics: SearchMetrics;
     /** Set isIndexing to true (sticky — stays true until queue empties). */
     readonly markIndexing: () => void;
     /** Set isInitialIndexing to true (sticky — stays true until queue empties). */
