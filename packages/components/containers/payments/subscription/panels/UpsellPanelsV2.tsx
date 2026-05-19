@@ -56,8 +56,11 @@ const UpsellPanelsV2 = ({ upsells, subscription }: Props) => {
                         title={upsell.title}
                         features={upsell.features}
                         isRecommended={upsell.isRecommended}
+                        recommendedLabel={upsell.recommendedLabel}
                         ctas={ctas}
                         plan={upsell.plan}
+                        icon={upsell.icon}
+                        gradientColor={upsell.gradientColor}
                         saveLabel={
                             <SaveLabel plan={upsell.plan} cycle={upsell.customCycle} currency={upsell.price.currency} />
                         }
@@ -77,7 +80,7 @@ const UpsellPanelsV2 = ({ upsells, subscription }: Props) => {
                             </>
                         ) : (
                             <div className="">
-                                {upsell.description}
+                                <div>{upsell.description}</div>
                                 <UpsellPrice upsell={upsell} />
                             </div>
                         )}
