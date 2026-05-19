@@ -128,6 +128,9 @@
       "Back to sign in": [
         "Retour à la connexion"
       ],
+      "Back to sign-in": [
+        "Retour à la connexion"
+      ],
       "Block": [
         "Bloquer"
       ],
@@ -6007,12 +6010,23 @@
       ],
       "Group address:": [
         "Adresse du groupe :"
+      ],
+      "Roles and permission:": [
+        "Rôles et permissions :"
       ]
     },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } membre",
         "${ memberCount } membres"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "Général"
+      ],
+      "Roles and permissions": [
+        "Rôles et permissions"
       ]
     },
     "Header": {
@@ -11457,6 +11471,9 @@
       "99.95% SLA": [
         "SLA/uptime : 99,95 % de disponibilité du service"
       ],
+      "Access all countries": [
+        "Accédez à tous les pays"
+      ],
       "Activity logs and policy": [
         "Journaux d'activité et politique"
       ],
@@ -11633,6 +11650,9 @@
       "Multiple admin roles": [
         "Plusieurs rôles d'administrateur"
       ],
+      "No streaming support": [
+        "Pas de prise en charge du streaming"
+      ],
       "No-logs policy": [
         "Politique de non-journalisation (no log)"
       ],
@@ -11795,6 +11815,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Volume et bande passante illimités"
+      ],
+      "Unlock streaming": [
+        "Débloquez le streaming"
       ],
       "Up to ${ n } user": [
         "Jusqu'à ${ n } utilisateur",
@@ -12249,6 +12272,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } pays",
+        "${ n } pays"
+      ],
       "Access advanced VPN features": [
         "Accédez à des fonctionnalités VPN avancées."
       ],
@@ -12307,8 +12334,8 @@
       "${ app } product updates": [
         "Nouveautés sur le produit ${ app }"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Newsletter ${ BRAND_NAME } for Business"
+      "${ BRAND_NAME } for Business communications": [
+        "Communications ${ BRAND_NAME } for Business"
       ],
       "${ BRAND_NAME } important announcements": [
         "Annonces importantes de ${ BRAND_NAME }"
@@ -12361,8 +12388,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "Pendant votre premier mois d'utilisation d'un produit ${ BRAND_NAME }"
       ],
-      "Email subscriptions": [
-        "Newsletters"
+      "Email communications": [
+        "Communications par e-mail"
       ],
       "In-app notifications": [
         "Notifications dans l'application"
@@ -17416,6 +17443,9 @@
       ],
       "Single-sign on (SSO)": [
         "Authentification unique (SSO)"
+      ],
+      "Something went wrong": [
+        "Une erreur s'est produite."
       ],
       "Spam, block, and allow lists": [
         "Indésirables/spam, adresses bloquées et autorisées"

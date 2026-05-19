@@ -128,6 +128,9 @@
       "Back to sign in": [
         "Tillbaka till inloggning"
       ],
+      "Back to sign-in": [
+        "Tillbaka till inloggning"
+      ],
       "Block": [
         "Blockera"
       ],
@@ -1994,6 +1997,9 @@
       ],
       "An unknown error occurred": [
         "Ett okänt fel uppstod"
+      ],
+      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
+        "Så snart kontona har skapats kan du dela aktiveringslänken så att användarna kan göra anspråk på sitt ${ BRAND_NAME }-konto."
       ],
       "Authenticate": [
         "Autentisera"
@@ -5877,12 +5883,23 @@
       ],
       "Group address:": [
         "Gruppadress:"
+      ],
+      "Roles and permission:": [
+        "Roller och behörigheter:"
       ]
     },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } medlem",
         "${ memberCount } medlemmar"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "Allmänt"
+      ],
+      "Roles and permissions": [
+        "Roller och behörigheter"
       ]
     },
     "Header": {
@@ -6994,6 +7011,10 @@
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Skapar gatewayserver: ${ serverNumber }/${ total }",
         "Skapar gatewayservrar: ${ serverNumber }/${ total }"
+      ],
+      "Creating gateway with ${ total } server": [
+        "Skapar gateway med ${ total } server",
+        "Skapar gateway med ${ total } servrar"
       ],
       "Creating your account": [
         "Skapar ditt konto"
@@ -10164,6 +10185,9 @@
       "Why would you like to cancel?": [
         "Vad vill du avbryta?"
       ],
+      "Yearly": [
+        "Årligen"
+      ],
       "Yearly free storage bonus": [
         "Årlig bonus med gratis lagringsutrymme"
       ],
@@ -11171,6 +11195,9 @@
       "99.95% SLA": [
         "99.95 % SLA"
       ],
+      "Access all countries": [
+        "Åtkomst till alla länder"
+      ],
       "Activity logs and policy": [
         "Aktivitetsloggar och policy"
       ],
@@ -11950,6 +11977,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } land",
+        "${ n } länder"
+      ],
       "Access advanced VPN features": [
         "Få tillgång till avancerade VPN-funktioner"
       ],
@@ -12008,9 +12039,6 @@
       "${ app } product updates": [
         "Produktuppdateringar för ${ app }"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } för Business-nyhetsbrev"
-      ],
       "${ BRAND_NAME } important announcements": [
         "Viktiga meddelanden från ${ BRAND_NAME }"
       ],
@@ -12062,8 +12090,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "Under din första månad med användning av en ${ BRAND_NAME }-produkt"
       ],
-      "Email subscriptions": [
-        "E-postprenumerationer"
+      "Email communications": [
+        "E-postkommunikationer"
       ],
       "In-app notifications": [
         "Aviseringar i app"
@@ -17079,6 +17107,9 @@
       ],
       "Single sign-on": [
         "Enkel inloggning"
+      ],
+      "Something went wrong": [
+        "Något gick fel"
       ],
       "Spam, block, and allow lists": [
         "Listor för skräppost, blockera och tillåt"
