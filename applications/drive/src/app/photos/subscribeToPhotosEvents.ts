@@ -1,142 +1,219 @@
-import { getDriveForPhotos } from '@proton/drive';
+import { NodeType, getDriveForPhotos } from '@proton/drive';
+import type { MaybeNode } from '@proton/drive';
+import type { BusDriverClient } from '@proton/drive/internal/BusDriver';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { Logging } from '@proton/drive/modules/logging';
 
 import { handleSdkError } from '../utils/errorHandling/handleSdkError';
-import { getNodeEntity } from '../utils/sdk/getNodeEntity';
-import { refreshAlbumMetadata } from './loaders/loadAlbum';
+import { getNodeEntity, isPhotoNode } from '../utils/sdk/getNodeEntity';
+import { getSignatureIssues } from '../utils/sdk/getSignatureIssues';
+import { mapNodeToPhotoItem } from './PhotosWithAlbums/loaders/mapNodeToAdditionalInfo';
+import { loadCurrentAlbum } from './loaders/loadAlbum';
+import type { AlbumItem } from './useAlbums.store';
 import { useAlbumsStore } from './useAlbums.store';
 import { usePhotosStore } from './usePhotos.store';
-import { createPhotoItemsFromNode } from './utils/createPhotoItemsFromNode';
 
-export const subscribeToPhotosEvents = () => {
-    const handleCreatedOrRestoredNodes = async (event: { items: { uid: string; parentUid?: string }[] }) => {
-        const photosRootFolder = await getDriveForPhotos().getMyPhotosRootFolder();
-        if (!photosRootFolder.ok) {
-            return;
-        }
-        const photosRootUid = photosRootFolder.value.uid;
+const logging = new Logging({ sentryComponent: 'drive-web-log' });
+const logger = logging.getLogger('subscribe-to-photos-events');
 
-        const photosStore = usePhotosStore.getState();
-        const albumStore = useAlbumsStore.getState();
-        const currentAlbumNodeUid = albumStore.currentAlbumNodeUid;
-        const currentAlbum = albumStore.getCurrentAlbum();
-
-        const timelineNodeUids: string[] = [];
-        const albumNodeUids: string[] = [];
-
-        for (const item of event.items) {
-            const isNewTimelinePhoto = item.parentUid === photosRootUid && !photosStore.photoTimelineUids.has(item.uid);
-            const isNewAlbumPhoto =
-                currentAlbumNodeUid &&
-                item.parentUid === currentAlbumNodeUid &&
-                !currentAlbum?.photoNodeUids?.has(item.uid);
-
-            if (isNewTimelinePhoto) {
-                timelineNodeUids.push(item.uid);
-            } else if (isNewAlbumPhoto) {
-                albumNodeUids.push(item.uid);
-            }
-        }
-
-        const [timelineItems, albumItems] = await Promise.all([
-            timelineNodeUids.length ? createPhotoItemsFromNode(timelineNodeUids) : null,
-            albumNodeUids.length ? createPhotoItemsFromNode(albumNodeUids) : null,
-        ]);
-
-        if (timelineItems) {
-            photosStore.setPhotoItems(timelineItems);
-        }
-        if (albumItems && currentAlbumNodeUid) {
-            for (const item of albumItems) {
-                photosStore.setPhotoItemWithoutTimeline(item);
-            }
-            albumStore.addPhotoNodeUids(albumNodeUids);
-            void refreshAlbumMetadata(currentAlbumNodeUid);
-        }
+const nodeToAlbumItem = (maybeNode: MaybeNode, item: { isShared?: boolean }): AlbumItem => {
+    const { node, albumAttributes } = getNodeEntity(maybeNode);
+    if (!albumAttributes) {
+        throw new Error('nodeToAlbumItem called on non-album node');
+    }
+    return {
+        nodeUid: node.uid,
+        parentNodeUid: node.parentUid,
+        coverNodeUid: albumAttributes.coverPhotoNodeUid,
+        photoCount: albumAttributes.photoCount,
+        lastActivityTime: albumAttributes.lastActivityTime,
+        name: node.name,
+        createTime: node.creationTime,
+        isShared: Boolean(item.isShared),
+        directRole: node.directRole,
+        isOwner: !Boolean(node.membership),
+        hasSignatureIssues: !getSignatureIssues(maybeNode).ok,
+        ownedBy: node.ownedBy.email,
+        treeEventScopeId: node.treeEventScopeId,
+        deprecatedShareId: node.deprecatedShareId,
     };
+};
 
-    const createdSubscription = getBusDriver().subscribe(
-        BusDriverEventName.CREATED_NODES,
-        handleCreatedOrRestoredNodes
-    );
-
-    const restoredSubscription = getBusDriver().subscribe(
-        BusDriverEventName.RESTORED_NODES,
-        handleCreatedOrRestoredNodes
-    );
-
-    const updatedSubscription = getBusDriver().subscribe(BusDriverEventName.UPDATED_NODES, async (event) => {
-        const photosStore = usePhotosStore.getState();
-        const albumStore = useAlbumsStore.getState();
-        const timelineUids: string[] = [];
-        const albumOnlyUids: string[] = [];
+const onCreatedOrRestoredNodes =
+    (photosRootNodeUid: string | undefined) =>
+    async (
+        event: { items: { uid: string; parentUid?: string; isTrashed?: boolean; isShared?: boolean }[] },
+        driveClient: BusDriverClient
+    ) => {
         for (const item of event.items) {
-            const currentAlbum = albumStore.getCurrentAlbum();
-            const inAlbum = currentAlbum?.photoNodeUids?.has(item.uid) ?? false;
-            const isCurrentlyOpenAlbum = albumStore.currentAlbumNodeUid === item.uid;
-            // TODO: Update that as we probably can do it differently instead of loading the root
-            const getIsInTimeline = async () =>
-                photosStore.photoTimelineUids.has(item.uid) ||
-                getNodeEntity(await getDriveForPhotos().getMyPhotosRootFolder()).node.uid === item.parentUid;
-            if (!inAlbum && !isCurrentlyOpenAlbum && !(await getIsInTimeline())) {
-                continue;
-            }
-            if (item.isTrashed) {
-                photosStore.removePhotoItem(item.uid);
-                if (inAlbum) {
-                    albumStore.removePhotoNodeUids([item.uid]);
+            try {
+                if (item.isTrashed) {
+                    continue;
                 }
-                continue;
+                const isMyPhotos = item.parentUid === photosRootNodeUid;
+                // Skip events not related to my photos or with a known non-photos parent
+                if (!isMyPhotos && item.parentUid !== undefined) {
+                    continue;
+                }
+                const maybeNode = await driveClient.getNode(item.uid);
+                const { node, photoAttributes, albumAttributes } = getNodeEntity(maybeNode);
+                if (isPhotoNode(node) && !photoAttributes && !albumAttributes) {
+                    logger.warn(
+                        `[subscribeToPhotosEvents] A photo/album element doesn't have photo/album attributes: ${JSON.stringify(item)}`
+                    );
+                    continue;
+                }
+                if (node.type === NodeType.Photo && photoAttributes) {
+                    if (isMyPhotos) {
+                        if (photoAttributes.mainPhotoNodeUid) {
+                            usePhotosStore
+                                .getState()
+                                .addRelatedPhotoNodeUid(photoAttributes.mainPhotoNodeUid, node.uid);
+                        } else {
+                            usePhotosStore.getState().setPhotoItem({
+                                nodeUid: node.uid,
+                                captureTime: photoAttributes.captureTime,
+                                tags: photoAttributes.tags,
+                                relatedPhotoNodeUids: photoAttributes.relatedPhotoNodeUids,
+                            });
+                        }
+                    }
+                    // Sync album membership using node data
+                    const currentAlbumUids = new Set(photoAttributes.albums.map((a) => a.nodeUid));
+                    for (const [albumUid] of useAlbumsStore.getState().albums) {
+                        if (currentAlbumUids.has(albumUid)) {
+                            useAlbumsStore.getState().addPhotoNodeUid(albumUid, node.uid);
+                        }
+                    }
+                } else if (node.type === NodeType.Album && albumAttributes) {
+                    useAlbumsStore.getState().upsertAlbum(nodeToAlbumItem(maybeNode, item));
+                }
+            } catch (e) {
+                handleSdkError(e);
             }
-            if (inAlbum) {
-                albumOnlyUids.push(item.uid);
-            } else if (isCurrentlyOpenAlbum) {
-                void refreshAlbumMetadata(item.uid);
-            } else {
-                timelineUids.push(item.uid);
-            }
-        }
-
-        const [timelineItems, albumOnlyItems] = await Promise.all([
-            timelineUids.length ? createPhotoItemsFromNode(timelineUids) : null,
-            albumOnlyUids.length ? createPhotoItemsFromNode(albumOnlyUids) : null,
-        ]);
-        if (timelineItems) {
-            photosStore.setPhotoItems(timelineItems);
-        }
-        if (albumOnlyItems) {
-            for (const item of albumOnlyItems) {
-                photosStore.setPhotoItemWithoutTimeline(item);
-            }
-            if (albumStore.currentAlbumNodeUid) {
-                void refreshAlbumMetadata(albumStore.currentAlbumNodeUid);
-            }
-        }
-    });
-
-    const handleRemovedNodes = async (event: { uids: string[] }) => {
-        const photosStore = usePhotosStore.getState();
-        for (const uid of event.uids) {
-            photosStore.removePhotoItem(uid);
         }
     };
 
-    const deletedSubscription = getBusDriver().subscribe(BusDriverEventName.DELETED_NODES, handleRemovedNodes);
-    const trashedSubscription = getBusDriver().subscribe(BusDriverEventName.TRASHED_NODES, handleRemovedNodes);
+const onUpdatedNodes =
+    (photosRootNodeUid: string | undefined) =>
+    async (
+        event: { items: { uid: string; parentUid?: string; isTrashed?: boolean; isShared?: boolean }[] },
+        driveClient: BusDriverClient
+    ) => {
+        for (const item of event.items) {
+            const isMyPhotos = item.parentUid === photosRootNodeUid;
+            const isCurrentAlbum = useAlbumsStore.getState().currentAlbumNodeUid === item.uid;
+            // Skip events not related to my photos or with a known non-photos parent
+            if (!isMyPhotos && item.parentUid !== undefined && !isCurrentAlbum) {
+                continue;
+            }
 
-    const acceptedInvitationsSubscription = getBusDriver().subscribe(
-        BusDriverEventName.ACCEPT_INVITATIONS,
-        async (event) => {
-            await Promise.all(event.uids.map((uid) => refreshAlbumMetadata(uid).catch((e) => handleSdkError(e))));
+            try {
+                if (item.isTrashed) {
+                    if (isMyPhotos) {
+                        usePhotosStore.getState().removePhotoItem(item.uid);
+                    }
+                    // Remove from all albums that contain this photo
+                    for (const [albumUid, album] of useAlbumsStore.getState().albums) {
+                        if (album.photoNodeUids?.has(item.uid)) {
+                            useAlbumsStore.getState().removePhotoNodeUids(albumUid, [item.uid]);
+                        }
+                    }
+                    continue;
+                }
+                const maybeNode = await driveClient.getNode(item.uid);
+                const { node, photoAttributes, albumAttributes } = getNodeEntity(maybeNode);
+                if (isPhotoNode(node) && !photoAttributes && !albumAttributes) {
+                    logger.warn(
+                        `[subscribeToPhotosEvents] A photo/album element doesn't have photo/album attributes: ${JSON.stringify(item)}`
+                    );
+                    continue;
+                }
+                if (node.type === NodeType.Photo && photoAttributes) {
+                    if (isMyPhotos) {
+                        if (photoAttributes.mainPhotoNodeUid) {
+                            usePhotosStore
+                                .getState()
+                                .addRelatedPhotoNodeUid(photoAttributes.mainPhotoNodeUid, node.uid);
+                        } else {
+                            const existing = usePhotosStore.getState().getPhotoItem(node.uid);
+                            const mapped = mapNodeToPhotoItem(maybeNode);
+                            usePhotosStore.getState().setPhotoItem({
+                                nodeUid: node.uid,
+                                captureTime: photoAttributes.captureTime,
+                                tags: photoAttributes.tags,
+                                relatedPhotoNodeUids: photoAttributes.relatedPhotoNodeUids,
+                                additionalInfo: mapped?.additionalInfo ?? existing?.additionalInfo,
+                            });
+                        }
+                    }
+                    // Sync album membership for all known albums using node data
+                    const currentAlbumUids = new Set(photoAttributes.albums.map((a) => a.nodeUid));
+                    for (const [albumUid, album] of useAlbumsStore.getState().albums) {
+                        if (currentAlbumUids.has(albumUid)) {
+                            useAlbumsStore.getState().addPhotoNodeUid(albumUid, node.uid);
+                        } else if (album.photoNodeUids?.has(node.uid)) {
+                            useAlbumsStore.getState().removePhotoNodeUids(albumUid, [node.uid]);
+                        }
+                    }
+                } else if (node.type === NodeType.Album && albumAttributes) {
+                    useAlbumsStore.getState().upsertAlbum(nodeToAlbumItem(maybeNode, item));
+                    if (!isMyPhotos || isCurrentAlbum) {
+                        await loadCurrentAlbum(item.uid);
+                    }
+                }
+            } catch (e) {
+                handleSdkError(e);
+            }
         }
-    );
+    };
+
+const onDeletedOrTrashedNodes = async (event: { uids: string[] }) => {
+    const photosStore = usePhotosStore.getState();
+    const albumStore = useAlbumsStore.getState();
+    for (const uid of event.uids) {
+        photosStore.removePhotoItem(uid);
+        albumStore.removeAlbum(uid);
+        for (const [albumUid, album] of albumStore.albums) {
+            if (album.photoNodeUids?.has(uid)) {
+                albumStore.removePhotoNodeUids(albumUid, [uid]);
+            }
+        }
+    }
+};
+
+const onInvitationAccepted = async (event: { uids: string[] }, driveClient: BusDriverClient) => {
+    for (const uid of event.uids) {
+        try {
+            const maybeNode = await driveClient.getNode(uid);
+            const { node, albumAttributes } = getNodeEntity(maybeNode);
+            if (node.type === NodeType.Album && albumAttributes) {
+                useAlbumsStore.getState().upsertAlbum(nodeToAlbumItem(maybeNode, { isShared: true }));
+            }
+        } catch (e) {
+            handleSdkError(e);
+        }
+    }
+};
+
+export const subscribeToPhotosEvents = async () => {
+    const rootFolder = await getDriveForPhotos().getMyPhotosRootFolder();
+    const photosRootNodeUid = rootFolder.ok ? rootFolder.value.uid : undefined;
+
+    const createdOrRestoredHandler = onCreatedOrRestoredNodes(photosRootNodeUid);
+    const unsubCreated = getBusDriver().subscribe(BusDriverEventName.CREATED_NODES, createdOrRestoredHandler);
+    const unsubRestored = getBusDriver().subscribe(BusDriverEventName.RESTORED_NODES, createdOrRestoredHandler);
+    const unsubUpdated = getBusDriver().subscribe(BusDriverEventName.UPDATED_NODES, onUpdatedNodes(photosRootNodeUid));
+    const unsubDeleted = getBusDriver().subscribe(BusDriverEventName.DELETED_NODES, onDeletedOrTrashedNodes);
+    const unsubTrashed = getBusDriver().subscribe(BusDriverEventName.TRASHED_NODES, onDeletedOrTrashedNodes);
+    const unsubInvitation = getBusDriver().subscribe(BusDriverEventName.ACCEPT_INVITATIONS, onInvitationAccepted);
 
     return () => {
-        createdSubscription();
-        restoredSubscription();
-        updatedSubscription();
-        deletedSubscription();
-        trashedSubscription();
-        acceptedInvitationsSubscription();
+        unsubCreated();
+        unsubRestored();
+        unsubUpdated();
+        unsubDeleted();
+        unsubTrashed();
+        unsubInvitation();
     };
 };

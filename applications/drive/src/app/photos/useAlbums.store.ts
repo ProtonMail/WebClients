@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
 import type { Member, MemberRole } from '@proton/drive';
+import { getBusDriver } from '@proton/drive/internal/BusDriver';
 
 export interface AlbumItem {
     nodeUid: string;
@@ -17,6 +18,8 @@ export interface AlbumItem {
     photoNodeUids?: Set<string>;
     hasSignatureIssues: boolean;
     ownedBy: string | undefined;
+    parentNodeUid: string | undefined;
+    treeEventScopeId: string;
     /** @deprecated Only used internally for legacy URL routing. */
     deprecatedShareId: string | undefined;
 }
@@ -36,20 +39,23 @@ interface AlbumsStore {
     upsertAlbums: (albums: AlbumItem[]) => void;
     upsertAlbum: (album: AlbumItem) => void;
     removeAlbum: (nodeUid: string) => void;
+    cleanupStaleAlbums: (fetchedUids: Set<string>, isOwner?: boolean) => void;
     setLoadingList: (loading: boolean) => void;
 
-    setCurrentAlbum: (album: AlbumItem) => void;
+    setCurrentAlbumNodeUid: (nodeUid: string) => void;
     setCoverNodeUid: (coverNodeUid: string) => void;
     clearCurrentAlbum: () => void;
 
     setPhotoNodeUids: (uids: string[]) => void;
-    addPhotoNodeUids: (uids: string[]) => void;
-    addPhotoNodeUid: (uid: string) => void;
-    removePhotoNodeUids: (uids: string[]) => void;
+    addPhotoNodeUids: (albumUid: string, uids: string[]) => void;
+    addPhotoNodeUid: (albumUid: string, uid: string) => void;
+    removePhotoNodeUids: (albumUid: string, uids: string[]) => void;
 
     setLoading: (loading: boolean) => void;
     setHasEverLoaded: () => void;
     checkAndSetHasEverLoaded: () => void;
+
+    subscribeToAlbumEvents: (treeEventScopeId: string, context: string) => Promise<() => Promise<void>>;
 }
 
 const sortAlbumUidsByLastActivity = (uids: string[], albums: Map<string, AlbumItem>): string[] =>
@@ -110,20 +116,31 @@ export const useAlbumsStore = create<AlbumsStore>()(
             });
         },
 
+        cleanupStaleAlbums: (fetchedUids, isOwner) => {
+            set((state) => {
+                const albums = new Map(state.albums);
+                for (const [uid, album] of albums) {
+                    if (fetchedUids.has(uid)) {
+                        continue;
+                    }
+                    if (isOwner === undefined || album.isOwner === isOwner) {
+                        albums.delete(uid);
+                    }
+                }
+                return { albums, albumsUids: state.albumsUids.filter((uid) => albums.has(uid)) };
+            });
+        },
+
         setLoadingList: (loading) => {
             set({ isLoadingList: loading });
         },
 
-        setCurrentAlbum: (album) => {
+        setCurrentAlbumNodeUid: (nodeUid) => {
             set((state) => {
-                const existing = state.albums.get(album.nodeUid);
-                const newAlbums = new Map(state.albums);
-                newAlbums.set(album.nodeUid, {
-                    ...album,
-                    photoNodeUids:
-                        state.currentAlbumNodeUid === album.nodeUid ? existing?.photoNodeUids : new Set<string>(),
-                });
-                return { albums: newAlbums, currentAlbumNodeUid: album.nodeUid };
+                if (state.currentAlbumNodeUid === nodeUid) {
+                    return state;
+                }
+                return { currentAlbumNodeUid: nodeUid, isLoading: false, hasEverLoaded: false };
             });
         },
 
@@ -155,6 +172,14 @@ export const useAlbumsStore = create<AlbumsStore>()(
                 if (!existing) {
                     return state;
                 }
+                const existingUids = existing.photoNodeUids;
+                const isSameSet =
+                    existingUids !== undefined &&
+                    existingUids.size === uids.length &&
+                    uids.every((uid) => existingUids.has(uid));
+                if (isSameSet) {
+                    return state;
+                }
                 albums.set(state.currentAlbumNodeUid, {
                     ...existing,
                     photoNodeUids: new Set(uids),
@@ -164,13 +189,13 @@ export const useAlbumsStore = create<AlbumsStore>()(
             });
         },
 
-        addPhotoNodeUids: (uids: string[]) => {
+        addPhotoNodeUids: (albumUid: string, uids: string[]) => {
             set((state) => {
-                if (!state.currentAlbumNodeUid) {
+                if (!albumUid) {
                     return state;
                 }
                 const albums = new Map(state.albums);
-                const existing = albums.get(state.currentAlbumNodeUid);
+                const existing = albums.get(albumUid);
                 if (!existing) {
                     return state;
                 }
@@ -179,7 +204,7 @@ export const useAlbumsStore = create<AlbumsStore>()(
                 for (const uid of newUids) {
                     newPhotoNodeUids.add(uid);
                 }
-                albums.set(state.currentAlbumNodeUid, {
+                albums.set(albumUid, {
                     ...existing,
                     photoNodeUids: newPhotoNodeUids,
                     photoCount: (existing.photoCount ?? 0) + newUids.length,
@@ -188,37 +213,14 @@ export const useAlbumsStore = create<AlbumsStore>()(
             });
         },
 
-        addPhotoNodeUid: (uid: string) => {
-            set((state) => {
-                if (!state.currentAlbumNodeUid) {
-                    return state;
-                }
-                const albums = new Map(state.albums);
-                const existing = albums.get(state.currentAlbumNodeUid);
-                if (!existing) {
-                    return state;
-                }
-                if (existing.photoNodeUids?.has(uid)) {
-                    return state;
-                }
-                const newPhotoNodeUids = new Set(existing.photoNodeUids);
-                newPhotoNodeUids.add(uid);
-                albums.set(state.currentAlbumNodeUid, {
-                    ...existing,
-                    photoNodeUids: newPhotoNodeUids,
-                    photoCount: (existing.photoCount ?? 0) + 1,
-                });
-                return { albums };
-            });
+        addPhotoNodeUid: (albumUid: string, uid: string) => {
+            get().addPhotoNodeUids(albumUid, [uid]);
         },
 
-        removePhotoNodeUids: (uids: string[]) => {
+        removePhotoNodeUids: (albumUid: string, uids: string[]) => {
             set((state) => {
-                if (!state.currentAlbumNodeUid) {
-                    return state;
-                }
                 const albums = new Map(state.albums);
-                const existing = albums.get(state.currentAlbumNodeUid);
+                const existing = albums.get(albumUid);
                 if (!existing) {
                     return state;
                 }
@@ -226,7 +228,7 @@ export const useAlbumsStore = create<AlbumsStore>()(
                 for (const uid of uids) {
                     newPhotoNodeUids.delete(uid);
                 }
-                albums.set(state.currentAlbumNodeUid, {
+                albums.set(albumUid, {
                     ...existing,
                     photoNodeUids: newPhotoNodeUids,
                     photoCount: Math.max(0, (existing.photoCount ?? 0) - uids.length),
@@ -247,6 +249,11 @@ export const useAlbumsStore = create<AlbumsStore>()(
             if (!state.isLoading && !state.hasEverLoaded) {
                 state.setHasEverLoaded();
             }
+        },
+
+        subscribeToAlbumEvents: async (treeEventScopeId: string, context: string) => {
+            await getBusDriver().subscribePhotosEventsScope(treeEventScopeId, context);
+            return () => getBusDriver().unsubscribeSdkEventsScope(treeEventScopeId, context, 'photos');
         },
     }))
 );
