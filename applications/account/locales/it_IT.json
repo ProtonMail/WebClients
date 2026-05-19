@@ -1398,9 +1398,6 @@
       "Set as default": [
         "Imposta come predefinito"
       ],
-      "Set as default mail application": [
-        "Imposta come applicazione mail predefinita"
-      ],
       "Set catch-all": [
         "Imposta catch-all"
       ],
@@ -4657,12 +4654,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } ti consente di lavorare insieme ad altri in un ambiente sicuro e crittografato."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } non è la tua applicazione mail predefinita."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } è la tua applicazione mail predefinita."
-      ],
       "A checked box means the feature is disabled.": [
         "Una casella selezionata significa che la funzione è disabilitata."
       ],
@@ -4782,9 +4773,6 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Leggi, rispondi e gestisci Gmail da ${ MAIL_APP_NAME }"
-      ],
-      "Send a code to your recovery email or phone": [
-        "Manda un codice alla tua email o telefono di recupero"
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Configura gli account per tutti gli user e invitali a partecipare a ${ BRAND_NAME }."
@@ -8333,9 +8321,6 @@
       "Contact us": [
         "Contattaci"
       ],
-      "Downloads": [
-        "Download"
-      ],
       "Enjoying ${ planName }?": [
         "Ti piace ${ planName }?"
       ],
@@ -11718,9 +11703,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Quando disattivato, impedisce il caricamento di immagini remote senza che tu ne sia a conoscenza."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Se abilitata, verificheremo se ${ MAIL_APP_NAME } è la tua applicazione mail predefinita e ti informeremo se non lo è."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Quando abiliti SAML per ${ appName } nel tuo fornitore di identità, ti potrebbe essere chiesto di usare l'issuer ID e l'URL (ACS) di callback. Copia e incolla i dati seguenti nei campi del tuo fornitore di identità."
@@ -16369,9 +16351,6 @@
       "${ app } product updates": [
         "Aggiornamenti sul prodotto ${ app }"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Newsletter di ${ BRAND_NAME } for Business"
-      ],
       "${ BRAND_NAME } important announcements": [
         "Annunci importanti di ${ BRAND_NAME }"
       ],
@@ -16419,9 +16398,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Durante il primo mese di utilizzo di un prodotto ${ BRAND_NAME }"
-      ],
-      "Email subscriptions": [
-        "Iscrizioni email"
       ],
       "In-app notifications": [
         "Notifiche in-app"
@@ -22359,9 +22335,6 @@
       "Change second password": [
         "Cambia la seconda password"
       ],
-      "Check your default mail application": [
-        "Controlla la tua applicazione mail predefinita"
-      ],
       "Choose a provider": [
         "Scegli un fornitore"
       ],
@@ -23448,6 +23421,9 @@
       ],
       "Snooze:": [
         "Posticipazione:"
+      ],
+      "Something went wrong": [
+        "Qualcosa è andato storto"
       ],
       "Sort folders alphabetically": [
         "Ordina cartelle alfabeticamente"
