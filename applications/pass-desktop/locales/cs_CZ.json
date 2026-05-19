@@ -978,13 +978,13 @@
         "Biometrické ověření selhalo."
       ],
       "Biometric lock credentials do not match.": [
-        "Biometrické údaje pro odemknutí se neshodují."
+        "Biometrické přihlašovací údaje pro odemknutí se neshodují."
       ],
       "Biometric lock credentials not found.": [
-        "Nebyly nalezeny přihlašovací údaje pro biometrický zámek."
+        "Biometrické přihlašovací údaje pro odemknutí nenalezeny."
       ],
       "Biometric lock is not configured.": [
-        "Biometrický zámek nebyl nastaven."
+        "Biometrický zámek není nastaven."
       ],
       "Biometric lock setup failed.": [
         "Nastavení biometrického zámku selhalo."
@@ -1293,7 +1293,7 @@
         "Desktopová aplikace ${ PASS_APP_NAME } neodpověděla včas."
       ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
-        "Aplikace ${ PASS_APP_NAME } pro stolní počítače je uzamčena, je třeba ji odemknout."
+        "Desktopová aplikace ${ PASS_APP_NAME } je uzamčena, je třeba ji odemknout."
       ],
       "The ${ PASS_APP_NAME } desktop app is not installed.": [
         "Desktopová aplikace ${ PASS_APP_NAME } není nainstalována."
@@ -1302,7 +1302,7 @@
         "Desktopová aplikace ${ PASS_APP_NAME } nereaguje. Je spuštěná?"
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
-        "Aplikace pro stolní počítače ${ PASS_APP_NAME } je přihlášena pod jiným účtem."
+        "Desktopová aplikace ${ PASS_APP_NAME } je přihlášena pod jiným účtem."
       ],
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "V desktopové aplikaci ${ PASS_APP_NAME } byste měli být přihlášeni."
@@ -1546,7 +1546,7 @@
         "${ inviterEmail } chce sdílet položku se skupinou, kterou spravujete."
       ],
       "${ inviterEmail } wants to share an item with the group ${ name }.": [
-        "${ inviterEmail } si přeje sdílet položku se skupinou ${ name }."
+        "${ inviterEmail } chce sdílet položku se skupinou ${ name }."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } chce s vámi sdílet položku."
@@ -1867,7 +1867,7 @@
         "Povolování zamykání biometrií selhalo"
       ],
       "Enabling desktop auto-lock": [
-        "Zapnutí automatického zamykání plochy"
+        "Zapínání automatického zamykání"
       ],
       "Enabling offline mode...": [
         "Povolování režimu offline..."
@@ -1996,7 +1996,7 @@
         "Pozvánka byla úspěšně odeslána"
       ],
       "invites the group ${ name } to access items in": [
-        "pozve skupinu ${ name } k přístupu k položkám v"
+        "zve skupinu ${ name } k přístupu k položkám v"
       ],
       "invites you to access items in": [
         "vás zve k přístupu k položkám v"
@@ -2650,10 +2650,10 @@
         "Nyní můžete pomocí záložního hesla přistupovat k aplikaci ${ PASS_SHORT_APP_NAME } v režimu offline"
       ],
       "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "Nyní můžete pomocí svého dodatečného hesla přistupovat k aplikaci ${ PASS_SHORT_APP_NAME } v režimu offline"
+        "Nyní můžete pomocí svého dodatečného hesla přistupovat k ${ PASS_SHORT_APP_NAME } v režimu offline"
       ],
       "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "Nyní můžete pomocí svého druhého hesla přistupovat k aplikaci ${ PASS_SHORT_APP_NAME } v režimu offline"
+        "Nyní můžete pomocí svého druhého hesla přistupovat k ${ PASS_SHORT_APP_NAME } v režimu offline"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Nemůžete měnit e-mailové schránky tohoto aliasu."
