@@ -1,54 +1,57 @@
 import type { FC } from 'react';
+import { useRef } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { DropdownMenuButton, ToolbarButton, useActiveBreakpoint } from '@proton/components';
+import { uploadManager } from '@proton/drive/modules/upload';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 import { PHOTOS_ACCEPTED_INPUT } from '@proton/shared/lib/drive/constants';
 import clsx from '@proton/utils/clsx';
 
-import {
-    type OnFileSkippedSuccessCallbackData,
-    type OnFileUploadSuccessCallbackData,
-    useFileUploadInput,
-} from '../../../store';
+import { useAlbumPhotoUploadSDKStore } from '../../PhotosStore/useAlbumPhotoUploadSDK.store';
 
 interface PhotosUploadButtonProps {
-    volumeId: string;
-    shareId: string;
-    linkId: string;
-    onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
-    onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
-    onStartUpload?: () => void;
     type?: 'toolbar' | 'norm' | 'dropdown';
-    isAddAlbumPhotosView?: boolean;
-    isAlbumUpload?: boolean;
+    albumNodeUid: string | undefined;
+    onUploadStart?: () => void;
+    label?: string;
 }
+
 export const PhotosUploadButton: FC<PhotosUploadButtonProps> = ({
-    volumeId,
-    shareId,
-    linkId,
-    onFileUpload,
-    onFileSkipped,
-    onStartUpload,
     type = 'toolbar',
-    isAddAlbumPhotosView,
-    isAlbumUpload,
+    albumNodeUid,
+    onUploadStart,
+    label,
 }) => {
-    const { inputRef: fileInput, handleClick, handleChange } = useFileUploadInput(volumeId, shareId, linkId, true);
-
+    const fileInput = useRef<HTMLInputElement>(null);
     const { viewportWidth } = useActiveBreakpoint();
+    const isAlbumUpload = Boolean(albumNodeUid);
 
-    let uploadLabel;
-    if (isAddAlbumPhotosView) {
-        uploadLabel = c('Action').t`Upload from computer`;
-    } else if (isAlbumUpload) {
-        uploadLabel = c('Action').t`Add photos`;
-    } else {
-        uploadLabel = c('Action').t`Upload photos`;
-    }
+    const handleClick = () => {
+        if (fileInput.current) {
+            fileInput.current.value = '';
+            fileInput.current.click();
+        }
+    };
+
+    const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { files } = e.target;
+        if (!files) {
+            return;
+        }
+        onUploadStart?.();
+        const queuedUploadIds = await uploadManager.uploadPhotos(files);
+        if (albumNodeUid && queuedUploadIds.length > 0) {
+            queuedUploadIds.forEach((uploadId) => {
+                useAlbumPhotoUploadSDKStore.getState().setContext(uploadId, albumNodeUid);
+            });
+        }
+    };
+
+    const uploadLabel = label ?? (isAlbumUpload ? c('Action').t`Add photos` : c('Action').t`Upload photos`);
 
     return (
         <>
@@ -57,10 +60,7 @@ export const PhotosUploadButton: FC<PhotosUploadButtonProps> = ({
                 type="file"
                 ref={fileInput}
                 className="hidden"
-                onChange={(e) => {
-                    onStartUpload?.();
-                    void handleChange(e, onFileUpload, onFileSkipped);
-                }}
+                onChange={handleChange}
                 accept={PHOTOS_ACCEPTED_INPUT}
             />
             {type === 'toolbar' && (
@@ -92,9 +92,9 @@ export const PhotosUploadButton: FC<PhotosUploadButtonProps> = ({
                 <Button
                     onClick={handleClick}
                     data-testid="norm-photos-upload"
-                    color={isAddAlbumPhotosView ? 'weak' : 'norm'}
-                    shape={isAddAlbumPhotosView ? 'ghost' : 'solid'}
-                    size={isAddAlbumPhotosView ? 'medium' : 'small'}
+                    color="norm"
+                    shape="solid"
+                    size="small"
                     icon={viewportWidth.xsmall}
                     title={uploadLabel}
                     className="inline-flex flex-row flex-nowrap items-center"

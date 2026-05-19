@@ -91,7 +91,7 @@ export const PhotosCard: FC<Props> = ({
         } else {
             onRenderLoadedLink(nodeUid, photoInfo.activeRevisionUid, ref);
         }
-    }, [nodeUid, onRender, onRenderLoadedLink, photoInfo]);
+    }, [nodeUid, onRender, onRenderLoadedLink, photoInfo?.activeRevisionUid]);
 
     const thumbnail = useThumbnail(photoInfo?.activeRevisionUid);
     const thumbnailUrl = thumbnail?.hdUrl || thumbnail?.sdUrl;

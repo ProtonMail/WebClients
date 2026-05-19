@@ -1,19 +1,15 @@
 import type { FC } from 'react';
 import { useCallback, useState } from 'react';
-import { useOutletContext } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { Loader, useAppTitle, useModalStateObject, useNotifications } from '@proton/components';
-import { getDriveForPhotos, splitNodeUid } from '@proton/drive';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { getDriveForPhotos } from '@proton/drive';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import useNavigate from '../../hooks/drive/useNavigate';
 import { getNotificationsManager } from '../../modules/notifications';
-import { AlbumTag } from '../../store';
-import { useLinksActions } from '../../store/_links';
-import { sendErrorReport } from '../../utils/errorHandling';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { usePhotoLayoutStore } from '../../zustand/photos/layout.store';
 import { RenameAlbumModal } from '../PhotosModals/RenameAlbumModal';
@@ -24,7 +20,7 @@ import { AlbumsInvitations } from './AlbumsInvitations';
 import { EmptyAlbums } from './EmptyAlbums';
 import { EmptyTagView } from './EmptyTagView';
 import { AlbumsTags, type AlbumsTagsProps } from './components/Tags';
-import type { PhotosLayoutOutletContext } from './layout/PhotosLayout';
+import { AlbumTag } from './types';
 
 import './BannerInvite.scss';
 
@@ -43,7 +39,6 @@ const filterAlbums = (albums: AlbumItem[], tag: AlbumTag): AlbumItem[] => {
 
 export const AlbumsView: FC = () => {
     useAppTitle(c('Title').t`Albums`);
-    const { volumeId, shareId, linkId, deleteAlbum } = useOutletContext<PhotosLayoutOutletContext>();
 
     const { modals } = usePhotoLayoutStore(
         useShallow((state) => ({
@@ -52,7 +47,6 @@ export const AlbumsView: FC = () => {
     );
     const renameAlbumModal = useModalStateObject();
     const [renameAlbumNodeUid, setRenameAlbumNodeUid] = useState<string>('');
-    const { transferPhotoLinks } = useLinksActions();
     const { createNotification } = useNotifications();
 
     const { albumsUids, albumsMap, isAlbumsLoading } = useAlbumsStore(
@@ -90,75 +84,43 @@ export const AlbumsView: FC = () => {
     );
 
     const handleDeleteAlbum = useCallback(
-        async (
-            abortSignal: AbortSignal,
-            album: AlbumItem,
-            { missingPhotosIds, force }: { missingPhotosIds?: string[]; force: boolean }
-        ) => {
-            if (!linkId || !volumeId || !shareId) {
+        async (albumNodeUid: string, { saveToTimeline, force }: { saveToTimeline: boolean; force: boolean }) => {
+            const album = useAlbumsStore.getState().albums.get(albumNodeUid);
+            if (!album) {
                 return;
             }
-            try {
-                if (missingPhotosIds?.length && !force) {
-                    await transferPhotoLinks(
-                        abortSignal,
-                        volumeId,
-                        {
-                            // TODO: DRVWEB-4974 - use album rootShareId once available in AlbumItem
-                            shareId,
-                            linkIds: missingPhotosIds,
-                            newShareId: shareId,
-                            newParentLinkId: linkId,
-                        },
-                        'delete_album'
-                    );
-                }
-                await deleteAlbum(abortSignal, splitNodeUid(album.nodeUid).nodeId, force);
-                const albumName = album.name;
-                createNotification({
-                    text: c('Info').t`${albumName} has been successfully deleted`,
-                    preWrap: true,
-                });
-            } catch (e) {
-                const error = e as {
-                    data?: {
-                        Code?: number;
-                        Details?: {
-                            ChildLinkIDs?: string[];
-                        };
-                    };
-                };
-                // Error will be catch by the DeleteAlbumModal to show save and delete modal
-                if (
-                    error.data?.Code === API_CUSTOM_ERROR_CODES.ALBUM_DATA_LOSS &&
-                    error.data.Details?.ChildLinkIDs?.length
-                ) {
-                    throw e;
-                }
-                if (e instanceof Error && e.message) {
-                    createNotification({ text: e.message, type: 'error' });
-                }
-                sendErrorReport(e);
-            }
+            await getDriveForPhotos().deleteAlbum(albumNodeUid, {
+                saveToTimeline,
+                force,
+            });
+            await getBusDriver().emit(
+                { type: BusDriverEventName.DELETED_NODES, uids: [albumNodeUid] },
+                getDriveForPhotos()
+            );
+
+            const albumName = album.name;
+            createNotification({
+                text: c('Info').t`${albumName} has been successfully deleted`,
+                preWrap: true,
+            });
         },
-        [linkId, createNotification, deleteAlbum, transferPhotoLinks, shareId, volumeId]
+        [createNotification]
     );
 
     // For delete album we do the happy path and just compare with photos you have in cache.
     // In most cases, if user have all the photos in his library will mean there are no direct children inside the album
     // There is a fallback in the modal in case BE detect that some items are direct children of the album
     const onDeleteAlbum = useCallback(
-        async (nodeUid: string) => {
-            const album = useAlbumsStore.getState().albums.get(nodeUid);
+        async (albumNodeUid: string) => {
+            const album = useAlbumsStore.getState().albums.get(albumNodeUid);
             if (!album) {
                 return;
             }
-            const abortSignal = new AbortController().signal;
             void modals.deleteAlbum?.({
                 name: album.name,
-                deleteAlbum: (force, childLinkIds) =>
+                deleteAlbum: ({ saveToTimeline, force }) =>
                     // childLinkIds are from BE, so this is a better source of truth compare to missingPhotosIds
-                    handleDeleteAlbum(abortSignal, album, { missingPhotosIds: childLinkIds, force }),
+                    handleDeleteAlbum(albumNodeUid, { saveToTimeline, force }),
                 onDeleted: () => {
                     navigateToAlbums();
                 },
@@ -176,7 +138,7 @@ export const AlbumsView: FC = () => {
         [AlbumTag.Shared]: filterAlbums(albums, AlbumTag.Shared).length,
         [AlbumTag.SharedWithMe]: filterAlbums(albums, AlbumTag.SharedWithMe).length,
     };
-    if (!volumeId || !shareId || !linkId || (isAlbumsLoading && albums.length === 0)) {
+    if (isAlbumsLoading && albums.length === 0) {
         return <Loader />;
     }
 

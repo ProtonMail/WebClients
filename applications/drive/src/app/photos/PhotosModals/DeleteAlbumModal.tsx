@@ -11,12 +11,14 @@ import {
     ModalTwoHeader,
     useModalTwoStatic,
 } from '@proton/components';
+import { ValidationError } from '@proton/drive';
 import useLoading from '@proton/hooks/useLoading';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 
 export type DeleteAlbumModalProps = {
     name: string;
-    deleteAlbum: (force: boolean, childLinkIds?: string[]) => Promise<void>;
+    deleteAlbum: ({ saveToTimeline, force }: { saveToTimeline: boolean; force: boolean }) => Promise<void>;
     onDeleted?: () => void;
 };
 
@@ -28,33 +30,18 @@ export const DeleteAlbumModal = ({
 }: DeleteAlbumModalProps & ModalStateProps) => {
     const [isDeleteWithSaveLoading, withDeleteWithSaveLoading] = useLoading(false);
     const [isDeleteLoading, withDeleteLoading] = useLoading(false);
-    const [childLinkIds, setChildLinkIds] = useState<string[] | undefined>(undefined);
+    const [saveToTimeline, setSaveToTimeline] = useState(false);
 
-    // This whole case will happend if some photos in Album are direct children of it
-    // BE will send us an error code with list of linkIds.
-    // In that case we show the with save / without save modal to the user
     const handleSubmit = async (force: boolean) => {
         try {
-            await deleteAlbum(force, childLinkIds);
+            await deleteAlbum({ saveToTimeline, force });
             onDeleted?.();
             modalProps.onClose();
-        } catch (e: unknown) {
-            const error = e as {
-                data?: {
-                    Code?: number;
-                    Details?: {
-                        ChildLinkIDs?: string[];
-                    };
-                };
-            };
-            if (
-                error.data?.Code === API_CUSTOM_ERROR_CODES.ALBUM_DATA_LOSS &&
-                error.data.Details?.ChildLinkIDs?.length
-            ) {
-                setChildLinkIds(error.data.Details?.ChildLinkIDs);
+        } catch (e) {
+            if (e instanceof ValidationError) {
+                setSaveToTimeline(true);
             } else {
-                modalProps.onClose();
-                throw e;
+                handleSdkError(e);
             }
         }
     };
@@ -67,7 +54,7 @@ export const DeleteAlbumModal = ({
     // translator: ${name} is for a folder/file/album name.
     const title = c('Title').t`Delete ${name}?`;
 
-    if (!childLinkIds?.length) {
+    if (!saveToTimeline) {
         return (
             <ModalTwo
                 {...modalProps}

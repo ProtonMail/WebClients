@@ -4,43 +4,30 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Icon, Toolbar } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 
-import type { OnFileSkippedSuccessCallbackData, OnFileUploadSuccessCallbackData } from '../../../store';
 import { PhotosUploadButton } from './PhotosUploadButton';
 
 export interface PhotosAddAlbumPhotosToolbarProps {
-    volumeId: string;
-    shareId: string;
-    linkId: string;
     selectedCount: number;
     onAddAlbumPhotos: () => Promise<void>;
-    onStartUpload: () => void;
-    onFileUpload: ((file: OnFileUploadSuccessCallbackData) => void) | undefined;
-    onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
+    onUploadStart?: () => void;
+    albumNodeUid?: string;
 }
 
 export const PhotosAddAlbumPhotosToolbar = ({
-    volumeId,
-    shareId,
-    linkId,
     selectedCount,
     onAddAlbumPhotos,
-    onStartUpload,
-    onFileUpload,
-    onFileSkipped,
+    onUploadStart,
+    albumNodeUid,
 }: PhotosAddAlbumPhotosToolbarProps) => {
     const [isLoading, withLoading] = useLoading();
     return (
         <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container toolbar--no-bg">
             <div className="gap-2 flex items-center">
                 <PhotosUploadButton
-                    onStartUpload={onStartUpload}
-                    onFileUpload={onFileUpload}
-                    onFileSkipped={onFileSkipped}
-                    volumeId={volumeId}
-                    shareId={shareId}
-                    linkId={linkId}
                     type="toolbar"
-                    isAddAlbumPhotosView
+                    onUploadStart={onUploadStart}
+                    albumNodeUid={albumNodeUid}
+                    label={c('Action').t`Upload from computer`}
                 />
                 <Button
                     className="flex items-center"

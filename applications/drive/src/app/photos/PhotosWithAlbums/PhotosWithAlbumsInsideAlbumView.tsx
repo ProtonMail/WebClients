@@ -1,13 +1,12 @@
 import type { FC } from 'react';
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useMemo } from 'react';
 import { useOutletContext, useParams, useSearchParams } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { Loader, useAppTitle, useConfig } from '@proton/components';
-import { getDriveForPhotos, splitNodeUid } from '@proton/drive/index';
-import { getBusDriver } from '@proton/drive/internal/BusDriver';
+import { getDriveForPhotos } from '@proton/drive/index';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 
@@ -63,22 +62,14 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         }))
     );
 
-    const {
-        linkId,
-
-        albumPhotos,
-
-        albumPhotosNodeUidToIndexMap,
-        photoNodeUidToIndexMap,
-        photos,
-    } = useOutletContext<PhotosLayoutOutletContext>();
+    const { albumPhotoTimelineUids, photoTimelineUids } = useOutletContext<PhotosLayoutOutletContext>();
 
     const { selectedItems, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection({
-        photos,
-        albumPhotos,
-        albumPhotosNodeUidToIndexMap,
-        photoNodeUidToIndexMap,
+        photoTimelineUids,
+        albumPhotoTimelineUids,
     });
+
+    const albumUids = useMemo(() => Array.from(albumPhotoTimelineUids ?? new Set<string>()), [albumPhotoTimelineUids]);
 
     const isShiftPressed = useShiftKey();
 
@@ -128,21 +119,22 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         }
     }, [albumShareId, album, searchParams, setSearchParams, modals]);
 
-    const albumVolumeIdRef = useRef<string | undefined>(undefined);
     useEffect(() => {
-        if (!album?.nodeUid) {
+        if (!album?.treeEventScopeId) {
             return;
         }
-
-        const { volumeId: albumVolumeId } = splitNodeUid(album.nodeUid);
-        albumVolumeIdRef.current = albumVolumeId;
-
-        const context = `album-photos`;
-        getBusDriver().subscribePhotosEventsScope(albumVolumeId, context);
+        const context = 'album-photos';
+        let unsub: (() => Promise<void>) | undefined;
+        void useAlbumsStore
+            .getState()
+            .subscribeToAlbumEvents(album.treeEventScopeId, context)
+            .then((fn) => {
+                unsub = fn;
+            });
         return () => {
-            void getBusDriver().unsubscribeSdkEventsScope(albumVolumeId, context, 'photos');
+            void unsub?.();
         };
-    }, [album?.nodeUid]);
+    }, [album?.treeEventScopeId]);
 
     useEffect(() => {
         return () => {
@@ -150,7 +142,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         };
     }, []);
 
-    if (isLoading || !linkId || !album) {
+    if (isLoading || !album) {
         return <Loader />;
     }
 
@@ -170,20 +162,18 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 </div>
             ) : (
                 <PhotosInsideAlbumsGrid
-                    data={albumPhotos}
+                    uids={albumUids}
                     onItemRender={handleItemRender}
                     onItemRenderLoadedLink={handleItemRenderLoadedLink}
                     isLoading={isLoading}
                     onItemClick={setPreviewNodeUid}
-                    //TODO: Remove that any
-                    selectedItems={selectedItems as any}
+                    selectedCount={selectedItems.length}
                     onSelectChange={(i, isSelected) =>
                         handleSelection(i, { isSelected, isMultiSelect: isShiftPressed() })
                     }
                     isGroupSelected={isGroupSelected}
                     isItemSelected={isItemSelected}
                     onFavorite={toggleFavorite}
-                    rootLinkId={linkId}
                 >
                     <AlbumCoverHeader
                         nodeUid={album.nodeUid}

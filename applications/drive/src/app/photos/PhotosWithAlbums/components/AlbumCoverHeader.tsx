@@ -20,6 +20,8 @@ import { getContactNameAndEmail } from '../getContactNameAndEmail';
 import { PhotosAddAlbumPhotosButton } from '../toolbar/PhotosAddAlbumPhotosButton';
 import { AlbumMembers } from './AlbumMembers';
 
+import './AlbumCoverHeader.scss';
+
 interface AlbumCoverHeaderProps {
     nodeUid: string;
     onShare: () => void;
@@ -30,9 +32,17 @@ interface AlbumCoverHeaderProps {
 export const AlbumCoverHeader = ({ nodeUid, photoCount, onShare, onAddAlbumPhotos }: AlbumCoverHeaderProps) => {
     const album = useAlbumsStore((state) => state.albums.get(nodeUid));
     const [coverPhoto, setCoverPhoto] = useState<{ activeRevisionUid: string; isTrashed: boolean } | undefined>();
+    const [imageReady, setImageReady] = useState(false);
 
     const thumbnail = useThumbnail(coverPhoto?.activeRevisionUid);
     const thumbnailUrl = coverPhoto?.isTrashed ? undefined : thumbnail?.hdUrl || thumbnail?.sdUrl;
+    const isThumbnailLoading = Boolean(
+        album?.coverNodeUid &&
+        (!coverPhoto ||
+            (coverPhoto.activeRevisionUid && thumbnail === undefined) ||
+            thumbnail?.sdStatus === 'loading' ||
+            (thumbnail?.sdStatus === 'loaded' && thumbnailUrl && !imageReady))
+    );
 
     useEffect(() => {
         if (!album?.coverNodeUid) {
@@ -70,6 +80,16 @@ export const AlbumCoverHeader = ({ nodeUid, photoCount, onShare, onAddAlbumPhoto
         });
     }, [album?.coverNodeUid, coverPhoto?.activeRevisionUid]);
 
+    useEffect(() => {
+        if (thumbnailUrl) {
+            const image = new Image();
+            image.src = thumbnailUrl;
+            image.onload = () => {
+                setImageReady(true);
+            };
+        }
+    }, [thumbnailUrl]);
+
     const formattedDate = new Intl.DateTimeFormat(dateLocale.code, {
         dateStyle: 'long',
     }).format(album?.lastActivityTime);
@@ -91,7 +111,17 @@ export const AlbumCoverHeader = ({ nodeUid, photoCount, onShare, onAddAlbumPhoto
             className="flex shrink-0 flex-row gap-4 md:flex-nowrap items-center"
             data-testid="album-gallery-cover-section"
         >
-            {thumbnailUrl ? (
+            {isThumbnailLoading && (
+                <span
+                    className="rounded w-full md:w-1/3 flex h-custom lg:max-w-custom album-cover-header--loading"
+                    style={{
+                        '--h-custom': '14rem',
+                        '--lg-max-w-custom': 'min(32rem, 25vw)',
+                    }}
+                    data-testid="cover-image-loading"
+                />
+            )}
+            {!isThumbnailLoading && thumbnailUrl ? (
                 <img
                     loading="eager"
                     src={thumbnailUrl}
@@ -100,22 +130,23 @@ export const AlbumCoverHeader = ({ nodeUid, photoCount, onShare, onAddAlbumPhoto
                     style={{
                         '--h-custom': '14rem',
                         '--lg-max-w-custom': 'min(32rem, 25vw)',
-                        // min between 512px and 1/4 of viewport width: okay for global and text zooms, also for super large viewports
                     }}
                     data-testid="cover-image"
                     data-node-uid={album?.coverNodeUid}
                 />
             ) : (
-                <span
-                    className="bg-weak rounded w-full md:w-1/3 flex h-custom object-cover lg:max-w-custom"
-                    style={{
-                        '--h-custom': '14rem',
-                        '--lg-max-w-custom': 'min(32rem, 25vw)',
-                    }}
-                    data-testid="cover-image"
-                >
-                    <img src={folderImages} alt="" className="m-auto" />
-                </span>
+                !isThumbnailLoading && (
+                    <span
+                        className="bg-weak rounded w-full md:w-1/3 flex h-custom object-cover lg:max-w-custom"
+                        style={{
+                            '--h-custom': '14rem',
+                            '--lg-max-w-custom': 'min(32rem, 25vw)',
+                        }}
+                        data-testid="cover-image"
+                    >
+                        <img src={folderImages} alt="" className="m-auto" />
+                    </span>
+                )
             )}
 
             <div className="flex flex-column flex-nowrap mx-auto shrink-0 flex-1" data-testid="cover-info">
