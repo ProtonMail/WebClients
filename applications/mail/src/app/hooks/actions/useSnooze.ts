@@ -19,6 +19,8 @@ import type { Element } from '../../models/element';
 import { backendActionFinished, backendActionStarted } from '../../store/elements/elementsActions';
 import { params } from '../../store/elements/elementsSelectors';
 import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels';
+import { MOVE_BACK_ACTION_TYPES } from './moveBackAction/interfaces';
+import { useMoveBackAction } from './moveBackAction/useMoveBackAction';
 
 type SnoozeProps = {
     elements: Element[];
@@ -43,6 +45,8 @@ const useSnooze = () => {
 
     const { sendSimpleActionReport } = useListTelemetry();
 
+    const handleOnBackMoveAction = useMoveBackAction();
+
     const proceedSnoozeUnsnooze = async (
         elements: Element[],
         snooze: boolean,
@@ -57,6 +61,12 @@ const useSnooze = () => {
             actionLocation: sourceAction,
             numberMessage: numberSelectionElements(elements.length),
             destination: snooze ? 'SNOOZE' : undefined,
+        });
+
+        handleOnBackMoveAction({
+            type: MOVE_BACK_ACTION_TYPES.MOVE,
+            destinationLabelID: snooze ? MAILBOX_LABEL_IDS.SNOOZED : MAILBOX_LABEL_IDS.INBOX,
+            elements: elements,
         });
 
         let rollback = () => {};
