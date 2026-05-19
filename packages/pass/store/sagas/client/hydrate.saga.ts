@@ -16,8 +16,7 @@ import type { OrganizationState } from '@proton/pass/store/reducers/organization
 import type { SettingsState } from '@proton/pass/store/reducers/settings';
 import { selectUserState } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
-import type { MaybeNull } from '@proton/pass/types';
-import { type Maybe, PlanType } from '@proton/pass/types';
+import { type Maybe, type MaybeNull, PlanType } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
 import { logger } from '@proton/pass/utils/logger';
 import { partialMerge } from '@proton/pass/utils/object/merge';
@@ -69,9 +68,11 @@ export function* hydrate(
         const user = userState.user;
         const addresses = Object.values(userState.addresses);
 
-        /** Request #2: Fetch organization data for business users if not cached.
+        /** Request #2: Fetch organization data for B2B users if not cached.
+         * Pass Essentials is currently considered as Plus and not B2B.
          * Graceful fallback to null on network failure to avoid blocking hydration. */
-        const organization: MaybeNull<OrganizationState> = yield userState.plan.Type === PlanType.BUSINESS
+        const isB2BPlan = userState.plan.Type === PlanType.BUSINESS || userState.plan.InternalName === 'passpro2024';
+        const organization: MaybeNull<OrganizationState> = yield isB2BPlan
             ? (cachedState?.organization ?? getOrganization().catch(() => null))
             : null;
 
