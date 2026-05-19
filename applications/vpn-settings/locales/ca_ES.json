@@ -128,6 +128,9 @@
       "Back to sign in": [
         "Torneu a l'inici de sessió"
       ],
+      "Back to sign-in": [
+        "Tornar a l'inici de sessió"
+      ],
       "Block": [
         "Bloqueja"
       ],
@@ -6007,12 +6010,23 @@
       ],
       "Group address:": [
         "Adreça del grup:"
+      ],
+      "Roles and permission:": [
+        "Rols i permisos:"
       ]
     },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } membre",
         "${ memberCount } membres"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "General"
+      ],
+      "Roles and permissions": [
+        "Rols i permisos"
       ]
     },
     "Header": {
@@ -11454,6 +11468,9 @@
       "99.95% SLA": [
         "SLA del 99,5%"
       ],
+      "Access all countries": [
+        "Accediu a tots els països"
+      ],
       "Activity logs and policy": [
         "Registres d'activitat i política"
       ],
@@ -11630,6 +11647,9 @@
       "Multiple admin roles": [
         "Múltiples rols d'administració"
       ],
+      "No streaming support": [
+        "No hi ha suport per la reproducció en continu"
+      ],
       "No-logs policy": [
         "Política de no registres"
       ],
@@ -11792,6 +11812,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Sense límit de volum / amplada de banda"
+      ],
+      "Unlock streaming": [
+        "Desbloquegeu la reproducció en continu"
       ],
       "Up to ${ n } user": [
         "Fins a ${ n } usuari",
@@ -12246,6 +12269,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } país",
+        "${ n } països"
+      ],
       "Access advanced VPN features": [
         "Accediu a característiques de VPN avançades"
       ],
@@ -12304,8 +12331,8 @@
       "${ app } product updates": [
         "Actualitzacions de producte per a ${ app }"
       ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Butlletí de ${ BRAND_NAME } for Business"
+      "${ BRAND_NAME } for Business communications": [
+        "${ BRAND_NAME } per a comunicacions d'empresa"
       ],
       "${ BRAND_NAME } important announcements": [
         "Anuncis importants de ${ BRAND_NAME }"
@@ -12358,8 +12385,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "Durant el primer mes d'ús d'un producte de ${ BRAND_NAME }"
       ],
-      "Email subscriptions": [
-        "Subscripcions per correu electrònic"
+      "Email communications": [
+        "Comunicacions per correu electrònic"
       ],
       "In-app notifications": [
         "Notificacions dins l'aplicació"
@@ -17317,6 +17344,9 @@
       ],
       "Single-sign on (SSO)": [
         "Inici de sessió únic (SSO)"
+      ],
+      "Something went wrong": [
+        "S'ha produït un error."
       ],
       "Spam, block, and allow lists": [
         "Llistes de correu brossa, bloquejats i permesos"

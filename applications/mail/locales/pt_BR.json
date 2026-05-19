@@ -1514,8 +1514,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -4074,6 +4073,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Classifique automaticamente as mensagens recebidas antes que elas cheguem à sua caixa de entrada."
       ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Bloqueie a capacidade do Google de criar um perfil seu. O Gmail não pode ver o que você faz no ${ MAIL_APP_NAME }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configure isso primeiro para ativar sua organização e personalizar seu endereço de e-mail."
       ],
@@ -4156,6 +4158,9 @@
       "No labels": [
         "Nenhum marcador"
       ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Envie e receba mensagens do Gmail diretamente no ${ MAIL_APP_NAME }. Conecte seus endereços em ${ addressesSettingsLink }."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separe diferentes aspectos da sua vida com vários endereços de e-mail e desbloqueie mais recursos premium ao atualizar."
       ],
@@ -4170,6 +4175,9 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Facilite a sincronização e o agendamento com calendários compartilhados."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Para conectar um endereço Gmail diferente, remova os endereços extras do Gmail que estão sendo encaminhados para ${ BRAND_NAME }."
       ],
       "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
         "Para conectar até ${ MAX_SYNC_PAID_USER } endereço do Gmail, faça o upgrade para o plano ${ planName }.",
@@ -4220,6 +4228,9 @@
       "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
         "Inciamos a importação de seus últimos 180 dias de e-mail do Gmail. Avisaremos quando estiver pronto."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Lamentamos sua saída. Se tiver um momento, gostaríamos muito de saber o motivo do cancelamento. Seu feedback nos ajuda a fazer a ${ BRAND_NAME } ainda melhor para todos."
+      ],
       "When do you want your message to be sent?": [
         "Quando você deseja que sua mensagem seja enviada?"
       ],
@@ -4229,6 +4240,9 @@
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
         "Com o adiamento personalizado, você pode ocultar e-mails e configurá-los para reaparecer em um momento melhor."
       ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Você já possui um endereço do Gmail encaminhando para o ${ MAIL_APP_NAME }. Conecte-o abaixo para enviar e receber mensagens diretamente no ${ MAIL_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Você pode importar eventos no formato iCal (arquivo ICS). O arquivo deve ter o tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu arquivo for maior, divida-o em arquivos menores."
       ],
@@ -4237,6 +4251,21 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Você agora pode enviar e-mails da ${ BRAND_NAME } usando este endereço."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Você está encaminhando ${ numAddressesOrSync } endereço do Gmail para o ${ MAIL_APP_NAME }.",
+        "Você está encaminhando ${ numAddressesOrSync } endereços do Gmail para o ${ MAIL_APP_NAME }."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Você está encaminhando mensagens de ${ forwardingCount } endereço do Gmail. Ao conectá-lo, você poderá receber e responder no ${ MAIL_APP_NAME }",
+        "Você está encaminhando mensagens de ${ forwardingCount } endereços do Gmail. Ao conectá-los, você poderá receber e responder no ${ MAIL_APP_NAME }"
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Você conectou ${ MAX_SYNC_PAID_USER } endereço do Gmail. Para adicionar outro, primeiro desconecte uma das contas já conectadas.",
+        "Você conectou ${ MAX_SYNC_PAID_USER } endereços do Gmail. Para adicionar outro, primeiro desconecte uma das contas já conectadas."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Você conectou um endereço de conta externa no ${ MAIL_APP_NAME }."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Sua conta e métodos de recuperação de dados estão definidos, e a A2F está ativada."
@@ -4393,6 +4422,11 @@
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Compartilhe os benefícios do seu plano com ${ BRAND_NAME } Duo"
+      ]
+    },
+    "Easy switch": {
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Você está encaminhando e-mails de uma conta externa para ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -7542,7 +7576,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -8856,6 +8891,9 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Você escreveu \"${ attachmentsFoundKeyword }\", mas nenhum anexo foi adicionado. Quer enviar a mensagem assim mesmo?"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Você receberá a recompensa em créditos 1 mês após seu amigo(a) assinar um plano anual e 2 meses após ele (ela) assinar um plano mensal."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Você então será cobrado a cada ${ renewCycle } mês em ${ renewAmountStr }. Você pode cancelar a qualquer momento.",
@@ -15724,6 +15762,9 @@
       ],
       "Request new code": [
         "Solicitar um novo código"
+      ],
+      "Reverse charge not supported": [
+        "Carregamento reverso não suportado"
       ],
       "Same inbox, shorter email address": [
         "Mesma caixa de entrada, endereço de e-mail mais curto"
