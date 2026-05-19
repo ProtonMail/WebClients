@@ -1,6 +1,6 @@
 import { type BaseMeetingUrls, VIDEO_CONF_SERVICES } from '../constants';
 
-const ZOOM_REGEX_LOCATION =
+export const ZOOM_REGEX_LOCATION =
     /(https:\/\/)?(?:[a-zA-Z0-9.-]+\.)?zoom\.us\/(?:my|j)\/([a-zA-Z0-9._-]+)(?:\?pwd=([a-zA-Z0-9._-]+))?/;
 const ZOOM_REGEX_PASSCODE = /passcode: (\w+)/i;
 const ZOOM_REGEX_JOINING_INSTRUCTIONS =
