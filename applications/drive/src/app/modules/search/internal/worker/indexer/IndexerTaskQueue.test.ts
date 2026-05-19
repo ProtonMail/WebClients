@@ -21,6 +21,7 @@ import { FakeMainThreadBridge } from '../../testing/FakeMainThreadBridge';
 import { findDocuments } from '../../testing/indexHelpers';
 import { setupRealSearchLibraryWasm } from '../../testing/setupRealSearchLibraryWasm';
 import { IndexKind, IndexRegistry } from '../index/IndexRegistry';
+import { createBridgedSearchMetrics } from '../workerSearchMetrics';
 import type { IndexerState } from './IndexerTaskQueue';
 import { IndexerTaskQueue } from './IndexerTaskQueue';
 import { TreeSubscriptionRegistry } from './TreeSubscriptionRegistry';
@@ -166,8 +167,18 @@ describe('IndexerTaskQueue', () => {
         treeSubRegistry = await TreeSubscriptionRegistry.create(bridge.asBridge(), db);
     });
 
+    // Use the real bridged proxy so `markIndexerError` propagates to main-thread
+    // `searchMetrics`, which in turn drives the Sentry-report classification that
+    // several tests below assert against.
     const createQueue = () =>
-        new IndexerTaskQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+        new IndexerTaskQueue(
+            'test-user' as UserId,
+            indexRegistry,
+            bridge.asBridge(),
+            db,
+            treeSubRegistry,
+            createBridgedSearchMetrics(bridge.asBridge())
+        );
 
     it('bootstrap: transitions through expected states', async () => {
         const queue = createQueue();
@@ -340,7 +351,14 @@ describe('IndexerTaskQueue', () => {
             }
         }
 
-        const queue = new TestableQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+        const queue = new TestableQueue(
+            'test-user' as UserId,
+            indexRegistry,
+            bridge.asBridge(),
+            db,
+            treeSubRegistry,
+            createBridgedSearchMetrics(bridge.asBridge())
+        );
         const state = new IndexerStateStream(queue);
         queue.start().catch(() => {});
 
@@ -428,7 +446,14 @@ describe('IndexerTaskQueue', () => {
             }
         }
 
-        const queue = new TestableQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+        const queue = new TestableQueue(
+            'test-user' as UserId,
+            indexRegistry,
+            bridge.asBridge(),
+            db,
+            treeSubRegistry,
+            createBridgedSearchMetrics(bridge.asBridge())
+        );
         const state = new IndexerStateStream(queue);
         queue.start().catch(() => {});
 
@@ -528,7 +553,14 @@ describe('IndexerTaskQueue', () => {
             }
         }
 
-        const queue = new TestableQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+        const queue = new TestableQueue(
+            'test-user' as UserId,
+            indexRegistry,
+            bridge.asBridge(),
+            db,
+            treeSubRegistry,
+            createBridgedSearchMetrics(bridge.asBridge())
+        );
         const state = new IndexerStateStream(queue);
         queue.start().catch(() => {});
 
@@ -566,7 +598,14 @@ describe('IndexerTaskQueue', () => {
             }
         }
 
-        const queue = new TestableQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+        const queue = new TestableQueue(
+            'test-user' as UserId,
+            indexRegistry,
+            bridge.asBridge(),
+            db,
+            treeSubRegistry,
+            createBridgedSearchMetrics(bridge.asBridge())
+        );
         queue.start().catch(() => {});
 
         // Wait until the populator has retried AND completed (state.done = true). callCount=2 only
@@ -607,7 +646,14 @@ describe('IndexerTaskQueue', () => {
             }
         }
 
-        const queue = new TestableQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+        const queue = new TestableQueue(
+            'test-user' as UserId,
+            indexRegistry,
+            bridge.asBridge(),
+            db,
+            treeSubRegistry,
+            createBridgedSearchMetrics(bridge.asBridge())
+        );
         const state = new IndexerStateStream(queue);
         queue.start().catch(() => {});
 
@@ -646,7 +692,14 @@ describe('IndexerTaskQueue', () => {
             }
         }
 
-        const queue = new TestableQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+        const queue = new TestableQueue(
+            'test-user' as UserId,
+            indexRegistry,
+            bridge.asBridge(),
+            db,
+            treeSubRegistry,
+            createBridgedSearchMetrics(bridge.asBridge())
+        );
         queue.start().catch(() => {});
 
         const pending = (queue as unknown as { pendingTimeouts: Set<unknown> }).pendingTimeouts;
@@ -679,7 +732,14 @@ describe('IndexerTaskQueue', () => {
                 };
             }
         }
-        return new TestableQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+        return new TestableQueue(
+            'test-user' as UserId,
+            indexRegistry,
+            bridge.asBridge(),
+            db,
+            treeSubRegistry,
+            createBridgedSearchMetrics(bridge.asBridge())
+        );
     }
 
     it('permanent error: corrupted_db (DOMException VersionError)', async () => {
@@ -738,7 +798,14 @@ describe('IndexerTaskQueue', () => {
         jest.useFakeTimers();
         let queue: IndexerTaskQueue | null = null;
         try {
-            queue = new TestableQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+            queue = new TestableQueue(
+                'test-user' as UserId,
+                indexRegistry,
+                bridge.asBridge(),
+                db,
+                treeSubRegistry,
+                createBridgedSearchMetrics(bridge.asBridge())
+            );
             queue.start().catch(() => {});
 
             // Drain microtasks so the first failure registers and a retry is scheduled.
@@ -788,7 +855,14 @@ describe('IndexerTaskQueue', () => {
         jest.useFakeTimers();
         let queue: IndexerTaskQueue | null = null;
         try {
-            queue = new TestableQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+            queue = new TestableQueue(
+                'test-user' as UserId,
+                indexRegistry,
+                bridge.asBridge(),
+                db,
+                treeSubRegistry,
+                createBridgedSearchMetrics(bridge.asBridge())
+            );
             queue.start().catch(() => {});
 
             // Backoff schedule (no jitter): 1s, 2s, 5s, 10s, 30s, 60s, 60s, ...
@@ -849,7 +923,14 @@ describe('IndexerTaskQueue', () => {
             }
         }
 
-        const queue = new TestableQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+        const queue = new TestableQueue(
+            'test-user' as UserId,
+            indexRegistry,
+            bridge.asBridge(),
+            db,
+            treeSubRegistry,
+            createBridgedSearchMetrics(bridge.asBridge())
+        );
         queue.start().catch(() => {});
 
         await waitForCondition(() => followUpRan);

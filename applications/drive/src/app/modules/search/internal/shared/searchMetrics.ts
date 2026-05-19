@@ -218,22 +218,17 @@ export const searchMetrics = {
             Value: sizeMb,
         });
     },
-
-    /**
-     * Convenience: returns a function that yields elapsed seconds on call.
-     * Use with `mark*Succeeded({ durationInSeconds })` methods, e.g.
-     *
-     *   const stop = searchMetrics.startTimer();
-     *   await doWork();
-     *   searchMetrics.markSearchQuerySucceeded({ durationInSeconds: stop() });
-     */
-    startTimer(): () => number {
-        const start = performance.now();
-        return () => (performance.now() - start) / 1000;
-    },
 };
 
 export type SearchMetrics = typeof searchMetrics;
+
+/**
+ * Returns a function that yields elapsed seconds on call.
+ */
+export function startSearchTimer(): () => number {
+    const start = performance.now();
+    return () => (performance.now() - start) / 1000;
+}
 
 /**
  * Test-only: clear the in-module transient-error throttle state so tests don't

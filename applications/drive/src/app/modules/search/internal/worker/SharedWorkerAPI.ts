@@ -1,10 +1,9 @@
-import metrics from '@proton/metrics';
 import type { Entry } from '@proton/proton-foundation-search';
 
 import type { MainThreadBridge } from '../mainThread/MainThreadBridge';
 import { Logger } from '../shared/Logger';
 import { SearchDB } from '../shared/SearchDB';
-import { searchMetrics } from '../shared/searchMetrics';
+import { type SearchMetrics, startSearchTimer } from '../shared/searchMetrics';
 import type { SearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
 import { createSearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
 import type {
@@ -26,32 +25,25 @@ import type { IndexerState } from './indexer/IndexerTaskQueue';
 import { DEFAULT_INDEXER_STATE, IndexerTaskQueue } from './indexer/IndexerTaskQueue';
 import { TreeSubscriptionRegistry } from './indexer/TreeSubscriptionRegistry';
 import { SearchQueryExecutor } from './searcher/SearchQueryExecutor';
+import { createBridgedSearchMetrics } from './workerSearchMetrics';
 
 /**
  * SharedWorker API exposed via Comlink.
  * Manages a single IndexerTaskQueue (no orchestrator). Coordinates clients across tabs.
  */
 export class SharedWorkerAPI {
-    private clientsCoordinator = new ClientCoordinator();
+    // Bound late: ClientCoordinator emits metrics through whichever bridge is currently
+    // active (set in `onClientAvailable`). When no client is connected, metrics are dropped.
+    private clientsCoordinator = new ClientCoordinator(() => this.searchMetrics);
     private indexRegistry: IndexRegistry | null = null;
     private db: SearchDB | null = null;
     private indexer: IndexerTaskQueue | null = null;
     private searcher: SearchQueryExecutor | null = null;
     private stateChannel: SearchModuleStateUpdateChannel | null = null;
+    private searchMetrics: SearchMetrics | null = null;
 
     constructor() {
         this.clientsCoordinator.subscribeClientChanged(this.handleActiveClientChanged.bind(this));
-    }
-
-    /**
-     * Configure the worker's @proton/metrics singleton so emitted metrics reach the backend.
-     * The SharedWorker runs in its own JS realm with a separate metrics singleton that the
-     * main-thread bootstrap never reaches; without these headers every POST is unauthenticated
-     * and the request queue jails itself after a few failures.
-     */
-    setMetricsHeaders({ uid, clientID, appVersion }: { uid: string; clientID: string; appVersion: string }): void {
-        metrics.setAuthHeaders(uid);
-        metrics.setVersionHeaders(clientID, appVersion);
     }
 
     private async getDb(userId: string) {
@@ -141,10 +133,10 @@ export class SharedWorkerAPI {
     }
 
     async search(query: SearchQuery, onEvent?: (event: WorkerSearchResultEvent) => void): Promise<void> {
-        const stopTimer = searchMetrics.startTimer();
+        const stopTimer = startSearchTimer();
 
         if (!this.searcher) {
-            searchMetrics.markSearchQueryFailed({
+            this.searchMetrics?.markSearchQueryFailed({
                 error: new Error('No searcher available'),
             });
             onEvent?.({ type: 'done' });
@@ -154,9 +146,9 @@ export class SharedWorkerAPI {
             for await (const item of this.searcher.performSearch(query)) {
                 onEvent?.({ type: 'item', ...item });
             }
-            searchMetrics.markSearchQuerySucceeded({ durationInSeconds: stopTimer() });
+            this.searchMetrics?.markSearchQuerySucceeded({ durationInSeconds: stopTimer() });
         } catch (error) {
-            searchMetrics.markSearchQueryFailed({ error });
+            this.searchMetrics?.markSearchQueryFailed({ error });
             throw error;
         } finally {
             onEvent?.({ type: 'done' });
@@ -219,6 +211,7 @@ export class SharedWorkerAPI {
         this.stateChannel = null;
         this.indexRegistry?.disposeAll();
         this.indexRegistry = null;
+        this.searchMetrics = null;
     }
 
     /**
@@ -242,6 +235,11 @@ export class SharedWorkerAPI {
             const db = await this.getDb(clientContext.userId);
             const indexRegistry = await this.getRegistry(db, clientContext.bridge);
 
+            // Build a metrics proxy bound to the active tab's bridge. Forwards every mark*
+            // call to the main thread so metrics flow through the bootstrap-initialized
+            // `@proton/metrics` singleton (with current auth + version headers).
+            this.searchMetrics = createBridgedSearchMetrics(clientContext.bridge);
+
             const treeSubscriptionRegistry = await TreeSubscriptionRegistry.create(clientContext.bridge, db);
             this.searcher = new SearchQueryExecutor(indexRegistry, db);
             this.indexer = new IndexerTaskQueue(
@@ -249,7 +247,8 @@ export class SharedWorkerAPI {
                 indexRegistry,
                 clientContext.bridge,
                 db,
-                treeSubscriptionRegistry
+                treeSubscriptionRegistry,
+                this.searchMetrics
             );
 
             this.stateChannel = createSearchModuleStateUpdateChannel(clientContext.userId);
