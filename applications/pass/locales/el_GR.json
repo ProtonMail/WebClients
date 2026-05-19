@@ -247,6 +247,9 @@
       "Create note": [
         "Δημιουργία σημείωσης"
       ],
+      "Create token": [
+        "Δημιουργία διακριτικού"
+      ],
       "Create vault": [
         "Δημιουργία κρύπτης"
       ],
@@ -447,6 +450,9 @@
       ],
       "Manage access": [
         "Διαχείριση πρόσβασης"
+      ],
+      "Manage vault access": [
+        "Διαχείριση πρόσβασης κρύπτης"
       ],
       "Manually sync your data": [
         "Μη αυτόματος συγχρονισμός των δεδομένων σας"
@@ -744,6 +750,9 @@
       "Via secure link": [
         "Μέσω ασφαλούς συνδέσμου"
       ],
+      "View agent activity": [
+        "Προβολή δραστηριότητας πράκτορα"
+      ],
       "View details": [
         "Προβολή λεπτομερειών"
       ],
@@ -772,6 +781,9 @@
     "Activity": {
       "Activity": [
         "Δραστηριότητα"
+      ],
+      "Activity details could not be loaded.": [
+        "Δεν ήταν δυνατή η φόρτωση των λεπτομερειών της δραστηριότητας."
       ],
       "Folder": [
         "Φάκελος"
@@ -1048,6 +1060,9 @@
       "Error reporting problem": [
         "Πρόβλημα αναφοράς σφαλμάτων"
       ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "Η λήξη πρέπει να είναι μεταξύ 60 λεπτών και 1 έτους"
+      ],
       "Failed loading group members": [
         "Αποτυχία φόρτωσης μελών ομάδας"
       ],
@@ -1069,6 +1084,9 @@
       "Failed to change mailbox": [
         "Αποτυχία αλλαγής γραμματοκιβωτίου"
       ],
+      "Failed to create access token": [
+        "Αποτυχία δημιουργίας διακριτικού πρόσβασης"
+      ],
       "Failed to create domain": [
         "Αποτυχία δημιουργίας τομέα"
       ],
@@ -1077,6 +1095,9 @@
       ],
       "Failed to create the contact": [
         "Αποτυχία δημιουργίας της επαφής"
+      ],
+      "Failed to delete access token": [
+        "Αποτυχία κατάργησης διακριτικού πρόσβασης"
       ],
       "Failed to delete domain": [
         "Αποτυχία διαγραφής τομέα"
@@ -1096,6 +1117,9 @@
       "Failed to edit user's access.": [
         "Απέτυχε η επεξεργασία της πρόσβασης του χρήστη."
       ],
+      "Failed to load access tokens": [
+        "Αποτυχία φόρτωσης των διακριτικών πρόσβασης"
+      ],
       "Failed to load breaches for this address": [
         "Αποτυχία φόρτωσης παραβιάσεων για αυτή τη διεύθυνση"
       ],
@@ -1107,6 +1131,9 @@
       ],
       "Failed to load item history": [
         "Αποτυχία φόρτωσης ιστορικού στοιχείων"
+      ],
+      "Failed to load token actions": [
+        "Αποτυχία φόρτωσης ενεργειών διακριτικού"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Αποτυχία μετακίνησης όλων των στοιχείων από το \"${ payload.content.name }\""
@@ -1165,6 +1192,9 @@
       "Failed to update random prefix generation setting.": [
         "Αποτυχία ενημέρωσης της ρύθμισης δημιουργίας τυχαίων προθεμάτων."
       ],
+      "Failed to update vault access": [
+        "Αποτυχία ενημέρωσης πρόσβασης κρύπτης"
+      ],
       "Failed to verify domain": [
         "Αποτυχία επαλήθευσης τομέα"
       ],
@@ -1218,6 +1248,9 @@
       ],
       "Name is required": [
         "Απαιτείται όνομα"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Το όνομα πρέπει να έχει 191 χαρακτήρες ή λιγότερους"
       ],
       "Network error": [
         "Σφάλμα δικτύου"
@@ -1560,6 +1593,15 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει το δακτυλικό αποτύπωμα σας ή το PIN της συσκευής σας."
       ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Το διακριτικό πρόσβασης \"${ action.token.Name }\" έχει ήδη λήξει. Εάν διαγραφεί, δε θα εμφανίζεται πλέον."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Το διακριτικό πρόσβασης \"${ action.token.Name }\" θα σταματήσει να λειτουργεί αμέσως. Αυτή η ενέργεια δεν μπορεί να αναιρεθεί."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Τα διακριτικά πρόσβασης, που χρησιμοποιούνται μαζί με το ${ passCliLink }, σας επιτρέπουν να αυτοματοποιήσετε CI/CD ή να δώσετε στον AI πράκτορά σας περιορισμένη πρόσβαση σε ότι χρειάζεται για να εκτελέσει την εργασία του."
+      ],
       "Add your custom email address to monitor:": [
         "Προσθέστε την προσαρμοσμένη διεύθυνση ηλεκτρονικού ταχυδρομείου σας για παρακολούθηση:"
       ],
@@ -1635,6 +1677,9 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Πριν εξαγάγετε τα δεδομένα σας με αυτήν τη μορφή, ανοίξτε τις ρυθμίσεις Safari -> καρτέλα \"Γενικά\" -> απενεργοποιήστε την επιλογή \"Άνοιγμα ασφαλών αρχείων μετά τη λήψη\". Αυτό θα αποτρέψει το Safari από την εσφαλμένη εξαγωγή του εξαγόμενου αρχείου."
       ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Μεταξύ 60 (1 ώρα) και 525600 (1 χρόνο)"
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Το κλείδωμα βιομετρικών στοιχείων καταχωρήθηκε επιτυχώς. Χρησιμοποιήστε το για να ξεκλειδώσετε το ${ PASS_APP_NAME }"
       ],
@@ -1698,6 +1743,12 @@
       "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
         "Αντιγράφηκε στο πρόχειρο (λήγει σε ${ timeoutDurationHumanReadable })"
       ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Αντιγράψτε το παρακάτω markdown και στείλτε το στον πράκτορά ΤΝ σας. Αυτή είναι η μοναδική φορά που θα εμφανιστεί το διακριτικό."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Αντιγράψτε αυτό το διακριτικό τώρα. Για λόγους ασφαλείας, δε θα εμφανιστεί ξανά."
+      ],
       "Coupon successfully applied!": [
         "Το κουπόνι εφαρμόστηκε με επιτυχία!"
       ],
@@ -1706,6 +1757,9 @@
       ],
       "Create contact illustration": [
         "Απεικόνιση δημιουργίας επαφών"
+      ],
+      "Created ${ createdDate }": [
+        "Δημιουργήθηκε ${ createdDate }"
       ],
       "Created ${ time }.": [
         "Δημιουργήθηκε ${ time }."
@@ -1724,6 +1778,9 @@
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "Το προεπιλεγμένο εμφανιζόμενο όνομα για ψευδώνυμα που δημιουργήθηκαν με ${ domainDisplay }, εκτός εάν αντικατασταθούν από το ψευδώνυμο εμφανιζόμενο όνομα."
+      ],
+      "Deleted item": [
+        "Διαγραμμένο στοιχείο"
       ],
       "Deleted items will be moved here first": [
         "Τα διαγραμμένα στοιχεία θα μετακινηθούν πρώτα εδώ"
@@ -1745,6 +1802,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Τομέας: ${ domainPath } ή @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Κατεβάστε το pass-cli από το ${ passCliLink }."
       ],
       "Drop file here to upload": [
         "Σύρετε ένα αρχείο εδώ για μεταφόρτωση"
@@ -1821,6 +1881,9 @@
       "Enter your PIN code": [
         "Εισαγωγή κωδικού ΡΙΝ"
       ],
+      "Every action this agent token has performed, newest first.": [
+        "Κάθε ενέργεια που έχει εκτελέσει αυτό το διακριτικό πράκτορα, η πιο πρόσφατη πρώτη."
+      ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Κάθε φορά που το ψευδώνυμό σας λαμβάνει ένα μήνυμα ηλεκτρονικού ταχυδρομείου από κάποιον, μια νέα επαφή δημιουργείται αυτόματα."
       ],
@@ -1837,6 +1900,9 @@
       ],
       "Expires in ${ remainingTime }": [
         "Λήγει σε ${ remainingTime }"
+      ],
+      "Expires in less than an hour": [
+        "Λήγει σε λιγότερο από μία ώρα"
       ],
       "Exporting your data...": [
         "Γίνεται εξαγωγή των δεδομένων σας..."
@@ -1991,6 +2057,9 @@
       "Loading ${ PASS_APP_NAME }": [
         "Φόρτωση ${ PASS_APP_NAME }"
       ],
+      "Log out of any existing session:": [
+        "Αποσυνδεθείτε από οποιαδήποτε υπάρχουσα συνεδρία:"
+      ],
       "Logging you out...": [
         "Αποσύνδεση..."
       ],
@@ -2019,12 +2088,11 @@
         "Μετακίνηση ${ count } στοιχείου",
         "Μετακίνηση ${ count } στοιχείων"
       ],
+      "Moved item to trash": [
+        "Μεταφέρθηκε αντικείμενο στα διαγραμμένα"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
-        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -2047,14 +2115,23 @@
       "New": [
         "Νέο"
       ],
+      "No activity recorded yet.": [
+        "Δεν έχει καταγραφεί καμία δραστηριότητα ακόμα."
+      ],
       "No breaches detected": [
         "Δεν εντοπίστηκαν παραβιάσεις"
       ],
       "No network connection": [
         "Δεν υπάρχει σύνδεση δικτύου"
       ],
+      "No vaults available.": [
+        "Δεν υπάρχουν διαθέσιμες κρύπτες."
+      ],
       "None": [
         "Κανένα"
+      ],
+      "None selected": [
+        "Κανένα επιλεγμένο"
       ],
       "Not recommended": [
         "Δεν συνιστάται"
@@ -2067,6 +2144,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Η ηλεκτρονική πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει έναν κωδικό PIN. Θα αποσυνδεθείτε μετά από 3 αποτυχημένες προσπάθειες."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Εμφανίζονται μόνο τα διακριτικά που έληξαν τις τελευταίες 30 ημέρες. Τα παλαιότερα διακριτικά διαγράφονται αυτόματα."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Ανοίξτε τις ρυθμίσεις του Safari για την προέκταση και βεβαιωθείτε ότι τα δικαιώματα πρόσβασης στον ιστότοπο είναι ενεργοποιημένα για τους τομείς ${ BRAND_NAME }."
@@ -2240,6 +2320,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Προστατεύεται από ${ PROTON_SENTINEL_LINK }, το προηγμένο πρόγραμμα προστασίας λογαριασμού μας"
       ],
+      "Read item": [
+        "Διαβασμένο στοιχείο"
+      ],
       "Reconnect": [
         "Επανασύνδεση"
       ],
@@ -2273,6 +2356,9 @@
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
         "Η επαναφορά ιστορικού θα διαγράψει οριστικά όλες τις παλαιότερες εκδόσεις του στοιχείου και δεν είναι δυνατό να αναιρεθεί."
       ],
+      "Restored item from trash": [
+        "Αποκαταστάθηκε αντικείμενο από τα διαγραμμένα"
+      ],
       "Restoring items from trash": [
         "Επαναφορά στοιχείων από τα διαγραμμένα"
       ],
@@ -2287,6 +2373,9 @@
       ],
       "Select destination vault": [
         "Επιλογή κρύπτης προορισμού"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Επιλέξτε τις κρύπτες που μπορεί να διαβάσει το \"${ token.Name }\"."
       ],
       "Select vault to share": [
         "Επιλογή κρύπτης για κοινή χρήση"
@@ -2363,8 +2452,14 @@
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "Πατήστε το εικονίδιο ${ gearIcon } για να προσαρμόσετε το ψευδώνυμο με τον τρόπο που θέλετε."
       ],
+      "Test the token by logging in and listing vaults:": [
+        "Δοκιμάστε το διακριτικό συνδεόμενοι και καταγράφοντας τις κρύπτες:"
+      ],
       "Thank you, the problem has been reported": [
         "Σας ευχαριστώ, το πρόβλημα έχει αναφερθεί"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Ο πράκτορας θα πρέπει να παρέχει έναν λόγο για κάθε ενέργεια που εκτελεί, και κάθε ενέργεια θα καταγράφεται σε ένα αρχείο ελέγχου που μπορείτε να εξετάσετε. Μετά τη δημιουργία του διακριτικού, θα λάβετε οδηγίες για αντιγραφή-επικόλληση στον πράκτορά ΤΝ σας."
       ],
       "The display name when sending an email from this alias.": [
         "Το εμφανιζόμενο όνομα κατά την αποστολή ενός μηνύματος ηλεκτρονικού ταχυδρομείου από αυτό το ψευδώνυμο."
@@ -2396,6 +2491,9 @@
       ],
       "The user did not accept the invitation yet.": [
         "Ο χρήστης δεν αποδέχτηκε ακόμα την πρόσκληση."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Στη συνέχεια μπορείτε να μεταβείτε στο ${ url } για να αντιγράψετε τις οδηγίες που θα στείλετε στον πράκτορα ΤΝ σας."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Αυτή η εξαγωγή θα είναι μην κρυπτογραφημένη και οποιοσδήποτε έχει πρόσβαση στο εξαγόμενο αρχείο σας θα μπορεί να δει τους κωδικούς πρόσβασής σας. Για λόγους ασφαλείας, διαγράψτε το αφού ολοκληρώσετε τη χρήση του."
@@ -2429,6 +2527,9 @@
       ],
       "This setting is enforced by your organization": [
         "Αυτή η ρύθμιση επιβάλλεται από τον οργανισμό σας"
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Αυτό το διακριτικό αποκτά πρόσβαση μόνο για ανάγνωση στις κρύπτες που επιλέγετε. Μπορεί να διαβάζει στοιχεία, αλλά δεν μπορεί να τα επεξεργαστεί, να κοινοποιήσει κρύπτες ή να προσκαλέσει άλλους. Μπορείτε να το αλλάξετε αργότερα."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Αυτή η κρύπτη δεν είναι προς το παρόν κοινόχρηστη με κανέναν. Προσκαλέστε άτομα να τη μοιράστε με άλλους."
@@ -2528,6 +2629,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed.": [
         "Η κρύπτη \"${ share.content.name }\" καταργήθηκε."
+      ],
+      "Vault access granted": [
+        "Η πρόσβαση στην κρύπτη χορηγήθηκε"
       ],
       "Vault organization successfully updated": [
         "Η οργάνωση της κρύπτης ενημερώθηκε με επιτυχία"
@@ -2797,6 +2901,9 @@
       "A-Z": [
         "Α-Ω"
       ],
+      "Access tokens": [
+        "Διακριτικά πρόσβασης"
+      ],
       "Account": [
         "Λογαριασμός"
       ],
@@ -3054,6 +3161,12 @@
       ],
       "Expired": [
         "Έχει λήξει"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Ληγμένα διακριτικά (${ expired.length })"
+      ],
+      "Expires in (minutes)": [
+        "Λήγει σε (λεπτά)"
       ],
       "Expiry Date": [
         "Ημερομηνία Λήξης"
@@ -3760,6 +3873,9 @@
       "Update": [
         "Αναβάθμιση"
       ],
+      "Use for AI agent": [
+        "Χρήση για πράκτορα ΤΝ"
+      ],
       "Used in": [
         "Χρησιμοποιείται σε"
       ],
@@ -3771,6 +3887,9 @@
       ],
       "Value:": [
         "Τιμή:"
+      ],
+      "Vault access": [
+        "Πρόσβαση κρύπτης"
       ],
       "Vault ID": [
         "Αναγνωριστικό κρύπτης"
@@ -4079,6 +4198,9 @@
       "Coupon": [
         "Κουπόνι"
       ],
+      "e.g. 60": [
+        "π.χ. 60"
+      ],
       "e.g. My automation script": [
         "π.χ. Το σενάριο αυτοματοποίησής μου"
       ],
@@ -4341,6 +4463,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Τα διακριτικά πρόσβασης απαιτούν ${ PASS_APP_NAME } Plus"
+      ],
       "Account protection": [
         "Προστασία λογαριασμού"
       ],
@@ -4350,11 +4475,17 @@
       "Activity": [
         "Δραστηριότητα"
       ],
+      "Activity for \"${ token.Name }\"": [
+        "Δραστηριότητα για το \"${ token.Name }\""
+      ],
       "Add custom domain": [
         "Προσθήκη προσαρμοσμένου τομέα"
       ],
       "Add mailbox": [
         "Προσθήκη γραμματοκιβωτίου"
+      ],
+      "Agent setup instructions": [
+        "Οδηγίες ρύθμισης πράκτορα"
       ],
       "Alias contacts": [
         "Ψευδώνυμες επαφές"
@@ -4412,6 +4543,9 @@
       ],
       "Create contact": [
         "Δημιουργία επαφής"
+      ],
+      "Create new access token": [
+        "Δημιουργία νέου διακριτικού πρόσβασης"
       ],
       "Create PIN code": [
         "Δημιουργία κωδικού PIN"
@@ -4598,6 +4732,9 @@
       ],
       "Next": [
         "Επόμενο"
+      ],
+      "No access tokens yet": [
+        "Δεν υπάρχουν ακόμη διακριτικά πρόσβασης"
       ],
       "No excluded items": [
         "Δεν υπάρχουν εξαιρούμενα στοιχεία"
@@ -4816,6 +4953,9 @@
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
+      ],
+      "Your new access token": [
+        "Το νέο σας διακριτικό πρόσβασης σας"
       ],
       "Your vault is empty": [
         "Η κρύπτη σας είναι άδεια"

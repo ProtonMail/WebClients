@@ -208,6 +208,9 @@
       "Copy to clipboard": [
         "Скапіяваць у буфер абмену"
       ],
+      "Copy token": [
+        "Скапіяваць токен"
+      ],
       "Copy username": [
         "Скапіяваць імя карыстальніка"
       ],
@@ -243,6 +246,9 @@
       ],
       "Create note": [
         "Стварыць нататку"
+      ],
+      "Create token": [
+        "Стварыць токен"
       ],
       "Create vault": [
         "Стварыць сховішча"
@@ -445,6 +451,9 @@
       "Manage access": [
         "Кіраваць доступам"
       ],
+      "Manage vault access": [
+        "Кіраванне доступам да сховішча"
+      ],
       "Manually sync your data": [
         "Сінхранізацыя даных уручную"
       ],
@@ -480,6 +489,9 @@
       ],
       "Multiple select": [
         "Выбар некалькіх элементаў"
+      ],
+      "New token": [
+        "Новы токен"
       ],
       "Next month": [
         "Наступны месяц"
@@ -742,6 +754,9 @@
       "Via secure link": [
         "Праз бяспечную спасылку"
       ],
+      "View agent activity": [
+        "Паглядзець актыўнасць агента"
+      ],
       "View details": [
         "Паглядзець падрабязнасці"
       ],
@@ -765,6 +780,26 @@
       ],
       "Your password manager is not here? Request it.": [
         "Адсутнічае ваш менеджар пароляў? Запытайце яго."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Актыўнасць"
+      ],
+      "Activity details could not be loaded.": [
+        "Не ўдалося загрузіць падрабязнасці актыўнасці."
+      ],
+      "Folder": [
+        "Папка"
+      ],
+      "Item": [
+        "Элемент"
+      ],
+      "Reason": [
+        "Прычына"
+      ],
+      "Vault": [
+        "Сховішча"
       ]
     },
     "Browser": {
@@ -987,6 +1022,9 @@
       "Could not validate addresses at the moment.": [
         "У дадзены момант не ўдаецца праверыць адрасы."
       ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Немагчыма загрузіць інструкцыі па наладцы агента. Скапіюйце токен ніжэй, бо ён больш не будзе паказаны."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Файл CSV не змяшчае неабходных загалоўкаў: ${ missingHeaders }"
       ],
@@ -1032,6 +1070,9 @@
       "Error reporting problem": [
         "Памылка адпраўкі справаздачы аб праблеме"
       ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "Тэрмін дзеянне павінен быць у інтэрвале паміж 60 хвілінамі і 1 годам"
+      ],
       "Failed loading group members": [
         "Збой загрузкі ўдзельнікаў групы"
       ],
@@ -1053,6 +1094,9 @@
       "Failed to change mailbox": [
         "Не ўдалося змяніць паштовую скрыню"
       ],
+      "Failed to create access token": [
+        "Не ўдалося стварыць токен доступу"
+      ],
       "Failed to create domain": [
         "Не ўдалося стварыць дамен"
       ],
@@ -1061,6 +1105,9 @@
       ],
       "Failed to create the contact": [
         "Не ўдалося стварыць кантакт"
+      ],
+      "Failed to delete access token": [
+        "Не ўдалося выдаліць токен доступу"
       ],
       "Failed to delete domain": [
         "Не ўдалося выдаліць дамен"
@@ -1080,6 +1127,9 @@
       "Failed to edit user's access.": [
         "Збой рэдагавання доступу карыстальніка."
       ],
+      "Failed to load access tokens": [
+        "Не ўдалося загрузіць токены доступу"
+      ],
       "Failed to load breaches for this address": [
         "Не ўдалося загрузіць парушэнні для гэтага адраса"
       ],
@@ -1091,6 +1141,9 @@
       ],
       "Failed to load item history": [
         "Не ўдалося загрузіць элементы гісторыі"
+      ],
+      "Failed to load token actions": [
+        "Не ўдалося загрузіць дзеянні токена"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Не ўдалося перамясціць усе элементы з \"${ payload.content.name }\""
@@ -1149,6 +1202,9 @@
       "Failed to update random prefix generation setting.": [
         "Не ўдалося абнавіць налады генерацыі выпадковага прэфікса"
       ],
+      "Failed to update vault access": [
+        "Не ўдалося абнавіць доступ да сховішча"
+      ],
       "Failed to verify domain": [
         "Не ўдалося спраўдзіць дамен"
       ],
@@ -1202,6 +1258,9 @@
       ],
       "Name is required": [
         "Патрабуецца назва"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Назва павінна быць не больш за 191 сімвал"
       ],
       "Network error": [
         "Памылка сеткі"
@@ -1578,6 +1637,15 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Для доступу да ${ PASS_APP_NAME } спатрэбіцца ваш адбітак пальца або PIN-код прылады."
       ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Токен доступу \"${ action.token.Name }\" ужо пратэрмінаваны. Ён больш не будзе паказаны, калі выдалены."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Токен доступу \"${ action.token.Name }\" неадкадладна спыніць сваю працу. Гэта дзеянне нельга будзе адрабіць."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Токены доступу, якія выкарыстоўваюцца разам з ${ passCliLink }, дазваляюць аўтаматызаваць CI/CD або даць вашаму агенту ШІ абмежаваны доступ да рэсурсаў, якія яму неабходны для выканання яго задач."
+      ],
       "Add your custom email address to monitor:": [
         "Дадайце карыстальніцкі адрас электроннай пошты для назірання:"
       ],
@@ -1653,6 +1721,9 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Адкрыйце налады Safari -> укладка \"Агульныя (General)\" -> адключыце параметр \"Адкрываць бяспечныя файлы пасля спампоўвання (Open safe files after downloading)\" перад тым, як экспартаваць свае даныя ў гэты фармат."
       ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Паміж 60 (1 гадзіна) і 525600 (1 год)"
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Блакіроўка біяметрыяй паспяхова зарэгістравана. Вы можаце выкарыстоўваць яе, каб разблакіраваць ${ PASS_APP_NAME }"
       ],
@@ -1716,11 +1787,23 @@
       "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
         "Скапіявана ў буфер абмену (міне праз ${ timeoutDurationHumanReadable })"
       ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Скапіюйце ніжэй у фармаце Markdown і адпраўце яго свайму агенту ШІ. Токен будзе паказаны толькі адзін раз."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Скапіюйце гэты токен цяпер. У мэтах бяспекі, ён больш не будзе паказаны."
+      ],
       "Coupon successfully applied!": [
         "Купон паспяхова ўжыты!"
       ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Стварыце токен, каб інтэграваць ${ PASS_APP_NAME } у свае сцэнарыі і інструменты."
+      ],
       "Create contact illustration": [
         "Стварыце ілюстрацыю кантакту"
+      ],
+      "Created ${ createdDate }": [
+        "Створана ${ createdDate }"
       ],
       "Created ${ time }.": [
         "Створана ${ time }."
@@ -1739,6 +1822,9 @@
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "Прадвызначанае бачнае імя для псеўданімаў, якое створана з дапамогай ${ domainDisplay } пры ўмове, што яно не перазапісана бачным іменем псеўданіма."
+      ],
+      "Deleted item": [
+        "Выдалены элемент"
       ],
       "Deleted items will be moved here first": [
         "Выдаленыя элементы першапачаткова трапяць сюды"
@@ -1760,6 +1846,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Дамен: ${ domainPath } або @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Спампаваць pass-cli з ${ passCliLink }."
       ],
       "Drop file here to upload": [
         "Перацягніце файл сюды, каб запампаваць"
@@ -1839,11 +1928,26 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Новы кантакт ствараецца аўтаматычна. Гэта адбываецца кожны раз, калі ваш псеўданім атрымлівае ліст ад каго-небудзь."
       ],
+      "Expired ${ abs } hour ago": [
+        "Мінуў ${ abs } гадзіну таму",
+        "Мінуў ${ abs } гадзіны таму",
+        "Мінуў ${ abs } гадзін таму",
+        "Мінуў ${ abs } гадзін таму"
+      ],
       "Expires in": [
         "Тэрмін дзеяння міне"
       ],
+      "Expires in ${ hours } hour": [
+        "Міне праз ${ hours } хвіліну",
+        "Міне праз ${ hours } хвіліны",
+        "Міне праз ${ hours } хвілін",
+        "Міне праз ${ hours } хвілін"
+      ],
       "Expires in ${ remainingTime }": [
         "Тэрмін дзеяння міне праз ${ remainingTime }"
+      ],
+      "Expires in less than an hour": [
+        "Тэрмін дзеяння міне менш чым праз гадзіну"
       ],
       "Exporting your data...": [
         "Экспартаванне вашых даных..."
@@ -2004,6 +2108,9 @@
       "Loading ${ PASS_APP_NAME }": [
         "Загрузка ${ PASS_APP_NAME }"
       ],
+      "Log out of any existing session:": [
+        "Выйсці з усіх актыўных сеансаў:"
+      ],
       "Logging you out...": [
         "Адбываецца выхад..."
       ],
@@ -2040,12 +2147,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
-      ],
       "Moving items": [
         "Перамяшчэнне элементаў"
       ],
@@ -2067,14 +2168,23 @@
       "New": [
         "Новы"
       ],
+      "No activity recorded yet.": [
+        "Пакуль ніякай актыўнасці не выяўлена."
+      ],
       "No breaches detected": [
         "Парушэнні не выяўлены"
       ],
       "No network connection": [
         "Адсутнічае падключэнне да сеткі"
       ],
+      "No vaults available.": [
+        "Няма даступных сховішчаў."
+      ],
       "None": [
         "Адсутнічае"
+      ],
+      "None selected": [
+        "Нічога не выбрана"
       ],
       "Not recommended": [
         "Не рэкамендавана"
@@ -2087,6 +2197,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Для доступу праз інтэрнэт да ${ PASS_APP_NAME } вам спатрэбіцца PIN-код. Вы выйдзеце з сістэмы пасля 3 няўдалых спроб."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Паказаны толькі токены, якія пратэрмінаваны за апошнія 30 дзён. Больш старыя токены аўтаматычна выдалены."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Адкрыйце свае налады Safari для пашырэння і пераканайцеся, што дазволы вэб-сайта ўключаны для даменаў ${ BRAND_NAME }"
@@ -2262,6 +2375,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Абаронена з дапамогай ${ PROTON_SENTINEL_LINK }, якая з'яўляецца нашай перадавой праграмай абароны ўліковых запісаў"
       ],
+      "Read item": [
+        "Прачытаць элемент"
+      ],
       "Reconnect": [
         "Перападключыцца"
       ],
@@ -2295,6 +2411,9 @@
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
         "Скіданне гісторыі прывядзе да незваротнага выдалення ўсіх мінулых версій элемента і гэту аперацыю немагчыма будзе адрабіць."
       ],
+      "Restored item from trash": [
+        "Элемент адноўлены са сметніцы"
+      ],
       "Restoring items from trash": [
         "Аднаўленне элементаў са сметніцы"
       ],
@@ -2309,6 +2428,9 @@
       ],
       "Select destination vault": [
         "Выберыце мэтавае сховішча"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Выберыце сховішчы, якія можа прачытаць \"${ token.Name }\"."
       ],
       "Select vault to share": [
         "Выберыце сховішча для абагулення"
@@ -2385,8 +2507,14 @@
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "Націсніце значок ${ gearIcon }, каб наладзіць псеўданім пад свае патрабаванні."
       ],
+      "Test the token by logging in and listing vaults:": [
+        "Пратэсціруйце токены і паглядзіце спіс сховішчаў:"
+      ],
       "Thank you, the problem has been reported": [
         "Дзякуй, што паведамілі аб праблеме"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Агент павінен будзе тлумачыць прычыну кожнага выкананага дзеяння, і кожнае яго дзеянне будзе запісана ў журнале аўдыту, які вы зможаце паглядзець. Пасля стварэння токена вы атрымаеце інструкцыі па капіяванні і ўстаўцы яго ў свой агент ШІ."
       ],
       "The display name when sending an email from this alias.": [
         "Бачнае імя пры адпраўцы ліста з гэтага псеўданіма."
@@ -2421,6 +2549,9 @@
       "The user did not accept the invitation yet.": [
         "Карыстальнік пакуль не прыняў запрашэнне."
       ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Цяпер вы можаце перайсці па наступнай спасылцы ${ url }, каб скапіяваць інструкцыі для адпраўкі ў свой агент ШІ."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Гэта экспартаванне будзе незашыфравана, і кожны ў каго ёсць доступ да файла экспартаванага файла зможа ўбачыць вашы паролі. Для вашай бяспекі, мы раім адразу выдаліць яго пасля таго, як вы скарысталіся ім."
       ],
@@ -2453,6 +2584,9 @@
       ],
       "This setting is enforced by your organization": [
         "Гэта налада ўжываецца прымусова вашай арганізацыяй"
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Гэты токен дае доступ толькі на чытанне для сховішчаў, якія вы выбралі. Ён можа чытаць элементы, але не можа рэдагаваць іх, абагульваць сховішчы або запрашаць іншых. Гэта можна змяніць пазней."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Сховішча пакуль не з'яўляецца агульнадаступным. Запрасіце карыстальнікаў, каб абагуліць яго з іншымі."
@@ -2526,6 +2660,9 @@
       "Upgrade Now to Unlock Premium Features": [
         "Палепшыце свой тарыфны план, каб разблакіраваць прэміяльныя функцыі"
       ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Палепшыць да ${ PASS_APP_NAME } Plus, каб стварыць токены доступу і выкарыстоўваць ${ PASS_APP_NAME } праграмна."
+      ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Перайдзіце на платны тарыфны план, каб стварыць некалькі сховішчаў."
       ],
@@ -2549,6 +2686,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed.": [
         "Сховішча \"${ share.content.name }\" было выдалена."
+      ],
+      "Vault access granted": [
+        "Доступ да сховішча прадстаўлены"
       ],
       "Vault organization successfully updated": [
         "Арганізацыя сховішча паспяхова абноўлена"
@@ -2854,6 +2994,9 @@
       "A-Z": [
         "А-Я"
       ],
+      "Access tokens": [
+        "Токены доступу"
+      ],
       "Account": [
         "Уліковы запіс"
       ],
@@ -3111,6 +3254,12 @@
       ],
       "Expired": [
         "Пратэрмінавана"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Пратэрмінаваныя токены (${ expired.length })"
+      ],
+      "Expires in (minutes)": [
+        "Міне праз (хвілін)"
       ],
       "Expiry Date": [
         "Тэрмін дзеяння"
@@ -3817,6 +3966,9 @@
       "Update": [
         "Абнавіць"
       ],
+      "Use for AI agent": [
+        "Выкарыстоўваць для агента ШІ"
+      ],
       "Used in": [
         "Выкарыстоўвалася ў"
       ],
@@ -3828,6 +3980,9 @@
       ],
       "Value:": [
         "Значэнне:"
+      ],
+      "Vault access": [
+        "Доступ да сховішча"
       ],
       "Vault ID": [
         "Ідэнтыфікатар сховішча"
@@ -3957,6 +4112,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } было ўключана"
+      ],
+      "Access token deleted": [
+        "Токен доступу выдалены"
       ]
     },
     "Option": {
@@ -4139,6 +4297,9 @@
       "Coupon": [
         "Купон"
       ],
+      "e.g. 60": [
+        "напрыклад, 60"
+      ],
       "e.g. My automation script": [
         "напрыклад, мой сцэнарый аўтаматызацыі"
       ],
@@ -4300,8 +4461,17 @@
       ]
     },
     "Status": {
+      "Active": [
+        "Актыўны"
+      ],
       "Agent": [
         "Агент"
+      ],
+      "Expired": [
+        "Пратэрмінаваны"
+      ],
+      "Expiring soon": [
+        "Неўзабаве міне"
       ]
     },
     "Success": {
@@ -4396,6 +4566,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Токены доступу патрабуюць ${ PASS_APP_NAME } Plus"
+      ],
       "Account protection": [
         "Абарона ўліковага запісу"
       ],
@@ -4405,11 +4578,17 @@
       "Activity": [
         "Актыўнасць"
       ],
+      "Activity for \"${ token.Name }\"": [
+        "Актыўнасць для \"${ token.Name }\""
+      ],
       "Add custom domain": [
         "Дадаць карыстальніцкі дамен"
       ],
       "Add mailbox": [
         "Дадаць паштовую скрыню"
+      ],
+      "Agent setup instructions": [
+        "Інструкцыі па наладцы агента"
       ],
       "Alias contacts": [
         "Кантакты псеўданіма"
@@ -4468,6 +4647,9 @@
       "Create contact": [
         "Стварэнне кантакту"
       ],
+      "Create new access token": [
+        "Стварыць новы токен доступу"
+      ],
       "Create PIN code": [
         "Стварыць PIN-код"
       ],
@@ -4500,6 +4682,9 @@
         "Выдаліць ${ deletedItemsCount } элементы?",
         "Выдаліць ${ deletedItemsCount } элементаў?",
         "Выдаліць ${ deletedItemsCount } элементаў?"
+      ],
+      "Delete access token?": [
+        "Выдаліць токен доступу?"
       ],
       "Delete domain": [
         "Выдаліць дамен"
@@ -4615,6 +4800,9 @@
       "Mailbox": [
         "Паштовая скрыня"
       ],
+      "Manage vault access": [
+        "Кіраванне доступам да сховішча"
+      ],
       "Mark as resolved?": [
         "Пазначыць як вырашанае?"
       ],
@@ -4653,6 +4841,9 @@
       ],
       "Next": [
         "Далей"
+      ],
+      "No access tokens yet": [
+        "Пакуль няма токена доступу"
       ],
       "No excluded items": [
         "Няма выключаных элементаў"
@@ -4875,6 +5066,9 @@
       ],
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"
+      ],
+      "Your new access token": [
+        "Ваш новы токен доступу"
       ],
       "Your vault is empty": [
         "Ваша сховішча нічога не змяшчае"
