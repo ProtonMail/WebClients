@@ -1,9 +1,16 @@
 import { getVideoConferencingData } from '@proton/calendar/videoConferencing/helpers';
+import { PROTON_MEET_REGEX_LOCATION, getProtonMeetData } from '@proton/calendar/videoConferencing/protonMeetHelpers';
 import { removeVideoConfInfoFromDescription } from '@proton/calendar/videoConferencing/videoConfHelpers';
+import { ZOOM_REGEX_LOCATION, getZoomFromDescription } from '@proton/calendar/videoConferencing/zoomHelpers';
 import { EVENT_VERIFICATION_STATUS, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getDtendProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import { getVeventStatus } from '@proton/shared/lib/calendar/vcalHelper';
-import type { EventModelView, SelfAddressData, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import {
+    type EventModelView,
+    type SelfAddressData,
+    VIDEO_CONFERENCE_PROVIDER,
+    type VcalVeventComponent,
+} from '@proton/shared/lib/interfaces/calendar';
 import truncate from '@proton/utils/truncate';
 
 import { propertiesToAttendeeModel } from './propertiesToAttendeeModel';
@@ -48,7 +55,24 @@ export const propertiesToModel = ({
 
     const { start, end } = propertiesToDateTimeModel(dtstart, getDtendProperty(veventComponent), isAllDay, tzid);
     const { selfAttendeeIndex, selfAddress } = selfAddressData || {};
-    const { meetingId, meetingUrl, password, meetingHost, meetingProvider } = getVideoConferencingData(veventComponent);
+    let { meetingId, meetingUrl, password, meetingHost, meetingProvider } = getVideoConferencingData(veventComponent);
+
+    // Fallback: when x-pm-conference-* properties are absent but the description contains an embedded Proton Meet link
+    if (!meetingUrl && description?.value?.match(PROTON_MEET_REGEX_LOCATION)) {
+        const protonMeetData = getProtonMeetData(description.value);
+        meetingUrl = protonMeetData.meetingUrl;
+        meetingId = protonMeetData.meetingId;
+        meetingProvider = VIDEO_CONFERENCE_PROVIDER.PROTON_MEET;
+    }
+
+    // Fallback: when x-pm-conference-* properties are absent but the description contains an embedded Zoom link
+    if (!meetingUrl && description?.value?.match(ZOOM_REGEX_LOCATION)) {
+        const zoomMeetingData = getZoomFromDescription(description.value);
+        meetingUrl = zoomMeetingData.meetingUrl;
+        meetingId = zoomMeetingData.meetingId;
+        password = zoomMeetingData.password;
+        meetingProvider = VIDEO_CONFERENCE_PROVIDER.ZOOM;
+    }
 
     const cleanDescription = removeVideoConfInfoFromDescription(description?.value ?? '');
 
