@@ -1,8 +1,6 @@
 import type { ElementType, ForwardedRef, ReactNode, Ref } from 'react';
 import React, { forwardRef, useContext, useRef, useState } from 'react';
 
-import { isFocusable } from 'tabbable';
-
 import { Input } from '@proton/atoms/Input/Input';
 import { Tooltip, TooltipTypeEnum } from '@proton/atoms/Tooltip/Tooltip';
 import { FormContext } from '@proton/components/components/form/Form';
@@ -11,6 +9,8 @@ import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCirc
 import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
+
+import { isFocusable } from '../../focus/tabbableWrapper';
 
 export type NodeOrBoolean = ReactNode | boolean;
 
