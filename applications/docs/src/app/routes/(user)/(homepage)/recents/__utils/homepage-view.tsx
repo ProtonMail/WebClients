@@ -304,15 +304,15 @@ function useQueryState<T extends string | undefined>(name: string, defaultValue:
   return [resolvedValue, setParam] as const
 }
 
-function useRecentsSort() {
+export function useRecentsSort() {
   return useQueryState<RecentsSort>('sort', DEFAULT_RECENTS_SORT, ALLOWED_SORT_VALUES)
 }
 
-function useSearch() {
+export function useSearch() {
   return useQueryState<string | undefined>('q', undefined)
 }
 
-function useType() {
+export function useType() {
   return useQueryState<ProtonDocumentType | undefined>('type', undefined)
 }
 
@@ -488,7 +488,7 @@ export function splitIntoSectionsByTime(
   return sections
 }
 
-function splitIntoSectionsByName(
+export function splitIntoSectionsByName(
   items: RecentDocumentsItem[],
   { isSearchResults = false }: { isSearchResults?: boolean } = {},
 ): ItemsSection[] {
@@ -497,7 +497,7 @@ function splitIntoSectionsByName(
   ]
 }
 
-function splitIntoSectionsByOwner(items: RecentDocumentsItem[], contactEmails?: ContactEmail[]): ItemsSection[] {
+export function splitIntoSectionsByOwner(items: RecentDocumentsItem[], contactEmails?: ContactEmail[]): ItemsSection[] {
   return [
     {
       id: 'name',
@@ -519,7 +519,7 @@ function splitIntoSectionsByOwner(items: RecentDocumentsItem[], contactEmails?: 
   ]
 }
 
-function splitIntoSectionsByLocation(items: RecentDocumentsItem[]): ItemsSection[] {
+export function splitIntoSectionsByLocation(items: RecentDocumentsItem[]): ItemsSection[] {
   return [
     {
       id: 'name',
