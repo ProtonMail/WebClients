@@ -393,7 +393,6 @@ const AccountStepPayment = ({
                         <ProtonPlanCustomizer
                             separator
                             mode="signup"
-                            loading={false}
                             currency={options.currency}
                             cycle={options.cycle}
                             plansMap={model.plansMap}
@@ -402,13 +401,13 @@ const AccountStepPayment = ({
                             audience={isB2BPlan ? Audience.B2B : Audience.B2C}
                             showUsersTooltip
                             isTrialMode={signupParameters.trial}
-                            lumoAddonEnabled={showLumoCustomizer}
-                            meetAddonEnabled={showMeetCustomizer}
-                            scribeAddonEnabled={
+                            addonFlags={{
                                 // To avoid convoluted signup UI, we don't show Scribe and Lumo customizers together.
                                 // Remember: Lumo already includes Scribe.
-                                !showLumoCustomizer
-                            }
+                                scribeAddonEnabled: !showLumoCustomizer,
+                                lumoAddonEnabled: showLumoCustomizer,
+                                meetAddonEnabled: showMeetCustomizer,
+                            }}
                             telemetryContext={telemetryContext}
                         />
                     );

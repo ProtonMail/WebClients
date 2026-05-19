@@ -30,7 +30,7 @@ import type { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useNotifications from '../../../hooks/useNotifications';
-import { forceAddonsMinMaxConstraints } from '../planCustomizer/ProtonPlanCustomizer';
+import { forceAddonsMinMaxConstraints } from '../planCustomizer/helpers';
 import type { Model } from './SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from './constants';
 import { reportPlanIDsIfChangedTelemetry } from './helpers/subscriptionTelemetry';
