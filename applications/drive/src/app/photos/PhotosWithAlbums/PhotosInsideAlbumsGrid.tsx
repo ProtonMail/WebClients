@@ -2,49 +2,46 @@ import type { FC, ReactNode } from 'react';
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 
 import { Loader, useElementRect } from '@proton/components';
-import { generateNodeUid } from '@proton/drive';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
-import type { PhotoGridItem } from '../../store';
-import { isPhotoGroup } from '../../store/_photos';
+import { usePhotosStore } from '../usePhotos.store';
+import { isPhotoGroup } from '../utils/isPhotoGroup';
+import { sortWithCategories } from '../utils/sortWithCategories';
 import { PhotosCard } from './grid/PhotosCard';
 import { PhotosGroup } from './grid/PhotosGroup';
 
 type Props = {
-    data: PhotoGridItem[];
+    uids: string[];
     onItemRender: (nodeUid: string, domRef: React.MutableRefObject<unknown>) => void;
     onItemRenderLoadedLink: (
         nodeUid: string,
         activeRevisionUid: string,
         domRef: React.MutableRefObject<unknown>
     ) => void;
-    selectedItems: PhotoGridItem[];
+    selectedCount: number;
     isLoading: boolean;
-    onItemClick: (linkId: string) => void;
+    onItemClick: (nodeUid: string) => void;
     onSelectChange: (index: number, isSelected: boolean) => void;
     isGroupSelected: (groupIndex: number) => boolean | 'some';
-    isItemSelected: (linkId: string) => boolean;
-    categoryLoading?: string;
+    isItemSelected: (nodeUid: string) => boolean;
     children: ReactNode;
     onFavorite?: (nodeUid: string) => void;
-    rootLinkId: string;
 };
 
 export const PhotosInsideAlbumsGrid: FC<Props> = ({
-    data,
+    uids,
     onItemRender,
     onItemRenderLoadedLink,
     isLoading,
     onItemClick,
     onSelectChange,
-    selectedItems,
+    selectedCount,
     isGroupSelected,
     isItemSelected,
     children,
     onFavorite,
-    rootLinkId,
 }) => {
-    const hasSelection = selectedItems.length > 0;
+    const hasSelection = selectedCount > 0;
     const containerRef = useRef<HTMLDivElement>(null);
     const containerRect = useElementRect(containerRef);
 
@@ -58,6 +55,15 @@ export const PhotosInsideAlbumsGrid: FC<Props> = ({
             setScrollPosition(containerRef.current.scrollTop);
         });
     }, [containerRef, setScrollPosition]);
+
+    const data = useMemo(() => {
+        const { photoItems } = usePhotosStore.getState();
+        const items = uids.flatMap((uid) => {
+            const item = photoItems.get(uid);
+            return item ? [item] : [];
+        });
+        return sortWithCategories(items);
+    }, [uids]);
 
     const emRatio = rootFontSize();
     const dimensions = useMemo(() => {
@@ -75,16 +81,13 @@ export const PhotosInsideAlbumsGrid: FC<Props> = ({
 
         // Gap between items (never scaled)
         const gap = 0.25 * emRatio;
-
         // Height of group (never scaled)
         const groupHeight = 2.75 * emRatio;
 
         // Amount of items per row (to calculate repsonsive scaling)
         const itemsPerLine = Math.max(2, Math.floor((containerWidth + gap) / (width + gap)));
-
         // Multiplicative scaling to apply to final values
         const scaling = (containerWidth - (itemsPerLine - 1) * gap) / (itemsPerLine * width);
-
         // Item dimensions (scaled)
         const itemHeight = height * scaling;
         const itemWidth = width * scaling;
@@ -115,7 +118,6 @@ export const PhotosInsideAlbumsGrid: FC<Props> = ({
 
         let currentX = 0;
         let currentY = 0;
-
         let lastY = 0;
 
         // Attempt to make the animation a bit more dynamic
@@ -160,20 +162,19 @@ export const PhotosInsideAlbumsGrid: FC<Props> = ({
                 const y = currentY;
                 lastY = y;
 
-                const nodeUid = generateNodeUid(item.volumeId, item.linkId);
-                const isSelected = isItemSelected(nodeUid);
+                const isSelected = isItemSelected(item.nodeUid);
                 if (itemShouldRender(y, scrollPosition)) {
                     items.push(
                         <PhotosCard
-                            key={nodeUid}
-                            nodeUid={nodeUid}
+                            key={item.nodeUid}
+                            nodeUid={item.nodeUid}
                             onRender={onItemRender}
                             onRenderLoadedLink={onItemRenderLoadedLink}
                             onClick={() => {
                                 if (hasSelection) {
                                     onSelectChange(i, !isSelected);
                                 } else {
-                                    onItemClick(nodeUid);
+                                    onItemClick(item.nodeUid);
                                 }
                             }}
                             onSelect={(isSelected) => {
@@ -191,11 +192,12 @@ export const PhotosInsideAlbumsGrid: FC<Props> = ({
                                 }s`,
                             }}
                             hasSelection={hasSelection}
-                            isOwnedByCurrentUser={item.parentLinkId === rootLinkId}
+                            // TODO: migrate isOwnedByCurrentUser to nodeUid-based check
+                            isOwnedByCurrentUser={false}
                             onFavorite={
                                 onFavorite
                                     ? () => {
-                                          onFavorite(generateNodeUid(item.volumeId, item.linkId));
+                                          onFavorite(item.nodeUid);
                                       }
                                     : undefined
                             }
@@ -227,7 +229,6 @@ export const PhotosInsideAlbumsGrid: FC<Props> = ({
         onItemRender,
         onItemRenderLoadedLink,
         hasSelection,
-        rootLinkId,
         onFavorite,
         onItemClick,
     ]);

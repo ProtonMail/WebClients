@@ -1,40 +1,29 @@
-import { useMemo } from 'react';
-import { useParams } from 'react-router-dom-v5-compat';
-
 import { c, msgid } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { getDriveForPhotos, splitNodeUid } from '@proton/drive/index';
+import { getDriveForPhotos } from '@proton/drive/index';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { getEllipsedName } from '../../../utils/intl/getEllipsedName';
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../../zustand/photos/layout.store';
+import { useAlbumsStore } from '../../useAlbums.store';
 import { PhotosClearSelectionButton } from '../components/PhotosClearSelectionButton';
 import { usePhotosSelection } from '../hooks/usePhotosSelection';
-import type { PhotosLayoutOutletContext } from '../layout/PhotosLayout';
 import { ToolbarLeftActionsAlbumsGallery, ToolbarLeftActionsGallery } from './PhotosWithAlbumsToolbar';
 
 export const TitleArea = ({
     isAlbumsLoading,
     isPhotosLoading,
-    albums,
-    photos,
-    photoNodeUidToIndexMap,
-    albumPhotos,
-    albumPhotosNodeUidToIndexMap,
-}: Pick<
-    PhotosLayoutOutletContext,
-    | 'isAlbumsLoading'
-    | 'isPhotosLoading'
-    | 'albums'
-    | 'photos'
-    | 'photoNodeUidToIndexMap'
-    | 'albumPhotos'
-    | 'albumPhotosNodeUidToIndexMap'
->) => {
-    const { albumLinkId } = useParams<{ albumLinkId: string; albumShareId: string }>();
+    photoTimelineUids,
+    albumPhotoTimelineUids,
+}: {
+    isAlbumsLoading: boolean;
+    isPhotosLoading: boolean;
+    photoTimelineUids: Set<string>;
+    albumPhotoTimelineUids: Set<string> | undefined;
+}) => {
     const { currentPageType } = usePhotoLayoutStore(
         useShallow((state) => ({
             currentPageType: state.currentPageType,
@@ -43,18 +32,15 @@ export const TitleArea = ({
     const { navigateToAlbums, navigateToNodeUid, navigateToPhotos } = useNavigate();
 
     const { selectedItems, clearSelection } = usePhotosSelection({
-        photos,
-        photoNodeUidToIndexMap,
-        albumPhotos,
-        albumPhotosNodeUidToIndexMap,
+        photoTimelineUids,
+        albumPhotoTimelineUids,
     });
 
-    const album = useMemo(() => {
-        if (!albumLinkId) {
-            return undefined;
-        }
-        return albums.find((album) => splitNodeUid(album.nodeUid).nodeId === albumLinkId);
-    }, [albums, albumLinkId]);
+    const album = useAlbumsStore(
+        useShallow((state) => {
+            return state.currentAlbumNodeUid ? state.albums.get(state.currentAlbumNodeUid) : undefined;
+        })
+    );
 
     const selectedCount = selectedItems.length;
     const albumName = album?.name;
@@ -134,7 +120,7 @@ export const TitleArea = ({
                         }}
                     >
                         <IcArrowLeft className="mr-2 shrink-0" />{' '}
-                        {c('Action').t`Go back to album “${ellipsedAlbumName}“`}
+                        {c('Action').t`Go back to album "${ellipsedAlbumName}"`}
                     </Button>
                 ) : (
                     <ToolbarLeftActionsGallery

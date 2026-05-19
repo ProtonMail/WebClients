@@ -13,7 +13,7 @@ import {
     usePopperAnchor,
     useTheme,
 } from '@proton/components';
-import { getDriveForPhotos, splitNodeUid } from '@proton/drive/index';
+import { getDriveForPhotos } from '@proton/drive/index';
 import { loadThumbnail, useThumbnail } from '@proton/drive/modules/thumbnails';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
@@ -114,21 +114,19 @@ export const AlbumsCard: FC<Props> = ({ style, nodeUid, onClick, onShare, onRena
 
     const theme = useTheme();
 
-    const { photoCount, coverNodeUid, name, isShared, isOwner, hasSignatureIssues, decprecatedShareId } =
-        useAlbumsStore(
-            useShallow((state) => {
-                const item = state.albums.get(nodeUid);
-                return {
-                    photoCount: item?.photoCount ?? 0,
-                    coverNodeUid: item?.coverNodeUid,
-                    name: item?.name,
-                    isShared: item?.isShared,
-                    isOwner: item?.isOwner,
-                    hasSignatureIssues: item?.hasSignatureIssues,
-                    decprecatedShareId: item?.deprecatedShareId,
-                };
-            })
-        );
+    const { photoCount, coverNodeUid, name, isShared, isOwner, hasSignatureIssues } = useAlbumsStore(
+        useShallow((state) => {
+            const item = state.albums.get(nodeUid);
+            return {
+                photoCount: item?.photoCount ?? 0,
+                coverNodeUid: item?.coverNodeUid,
+                name: item?.name,
+                isShared: item?.isShared,
+                isOwner: item?.isOwner,
+                hasSignatureIssues: item?.hasSignatureIssues,
+            };
+        })
+    );
     const albumSharedLabel = isShared && isOwner ? c('Info').t`Shared` : c('Info').t`Shared with you`;
     const coverPhoto = usePhotosStore(
         useShallow((state) => {
@@ -257,13 +255,9 @@ export const AlbumsCard: FC<Props> = ({ style, nodeUid, onClick, onShare, onRena
                             <AlbumDropdownButton onShare={onShare} onRename={onRename} onDelete={onDelete} />
                         </div>
                     )}
-                    {!isOwner && decprecatedShareId && (
+                    {!isOwner && (
                         <div className="shrink-0 mb-2">
-                            <SharedAlbumDropdownButton
-                                volumeId={splitNodeUid(nodeUid).volumeId}
-                                shareId={decprecatedShareId}
-                                linkId={splitNodeUid(nodeUid).nodeId}
-                            />
+                            <SharedAlbumDropdownButton nodeUid={nodeUid} />
                         </div>
                     )}
                 </div>

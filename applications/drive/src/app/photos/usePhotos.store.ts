@@ -38,6 +38,7 @@ interface PhotosStore {
 
     eventSubscription: (() => void) | null;
     activeContexts: Set<string>;
+    pendingSubscribePromise: Promise<void> | null;
 
     setPhotoItem: (photo: PhotoItem) => void;
     setPhotoItems: (photos: PhotoItem[]) => void;
@@ -66,6 +67,7 @@ export const usePhotosStore = create<PhotosStore>()(
 
         eventSubscription: null,
         activeContexts: new Set<string>(),
+        pendingSubscribePromise: null,
 
         setPhotoItem: (photo: PhotoItem) => {
             set((state) => {
@@ -178,16 +180,25 @@ export const usePhotosStore = create<PhotosStore>()(
             newActiveContexts.add(context);
             set({ activeContexts: newActiveContexts });
 
-            await getBusDriver().subscribePhotosEventsMyUpdates(context);
-
-            if (eventSubscription) {
-                eventSubscription();
-            }
-            const unsubscribeFromEvents = subscribeToPhotosEvents();
-            set({ eventSubscription: unsubscribeFromEvents });
+            const pending = getBusDriver()
+                .subscribePhotosEventsMyUpdates(context)
+                .then(async () => {
+                    if (eventSubscription) {
+                        eventSubscription();
+                    }
+                    const unsubscribeFromEvents = await subscribeToPhotosEvents();
+                    set({ eventSubscription: unsubscribeFromEvents, pendingSubscribePromise: null });
+                });
+            set({ pendingSubscribePromise: pending });
+            await pending;
         },
 
         unsubscribeFromEvents: async (context: string) => {
+            const { pendingSubscribePromise } = get();
+            if (pendingSubscribePromise) {
+                await pendingSubscribePromise;
+            }
+
             await getBusDriver().unsubscribePhotosEventsMyUpdates(context);
 
             const { activeContexts, eventSubscription } = get();

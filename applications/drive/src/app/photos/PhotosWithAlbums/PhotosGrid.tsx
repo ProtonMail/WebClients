@@ -6,10 +6,9 @@ import { splitNodeUid } from '@proton/drive/index';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
-import type { PhotoGridItem as LegacyPhotoGridItem } from '../../store';
-import { isPhotoGroup } from '../../store/_photos';
-import { dateToLegacyTimestamp } from '../../utils/sdk/legacyTime';
-import type { PhotoGridItem } from '../usePhotos.store';
+import { usePhotosStore } from '../usePhotos.store';
+import { isPhotoGroup } from '../utils/isPhotoGroup';
+import { sortWithCategories } from '../utils/sortWithCategories';
 import { FastScrollBar, getYearAndMonthFromCaptureTime } from './FastScrollBar';
 import { PhotosCard } from './grid/PhotosCard';
 import { PhotosGroup } from './grid/PhotosGroup';
@@ -19,7 +18,7 @@ import './PhotosGrid.scss';
 const SCROLLBAR_CONTAINER_WIDTH = 48;
 
 type PhotosGridProps = {
-    data: PhotoGridItem[];
+    uids: string[];
     onItemRender: (nodeUid: string, domRef: React.MutableRefObject<unknown>) => void;
     onItemRenderLoadedLink: (
         nodeUid: string,
@@ -39,7 +38,7 @@ type PhotosGridProps = {
 };
 
 export const PhotosGrid: FC<PhotosGridProps> = ({
-    data,
+    uids,
     onItemRender,
     onItemRenderLoadedLink,
     isLoading,
@@ -52,6 +51,15 @@ export const PhotosGrid: FC<PhotosGridProps> = ({
     rootLinkId,
     hasSelection,
 }) => {
+    const data = useMemo(() => {
+        const { photoItems } = usePhotosStore.getState();
+        const items = uids.flatMap((uid) => {
+            const item = photoItems.get(uid);
+            return item ? [item] : [];
+        });
+        return sortWithCategories(items);
+    }, [uids]);
+
     const containerRef = useRef<HTMLDivElement>(null);
     const containerRect = useElementRect(containerRef);
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -182,8 +190,8 @@ export const PhotosGrid: FC<PhotosGridProps> = ({
                 let groupYear: number | undefined = undefined;
                 let groupMonth: number | undefined = undefined;
 
-                if (isPhotoGroup(nextItem) === false) {
-                    const ym = getYearAndMonthFromCaptureTime(dateToLegacyTimestamp(nextItem.captureTime));
+                if (!isPhotoGroup(nextItem)) {
+                    const ym = getYearAndMonthFromCaptureTime(nextItem.captureTime);
                     if (ym) {
                         const { year, month } = ym;
                         groupYear = year;
@@ -325,7 +333,7 @@ export const PhotosGrid: FC<PhotosGridProps> = ({
             </div>
             {containerRect && innerStyle && (
                 <FastScrollBar
-                    data={data as unknown as LegacyPhotoGridItem[]}
+                    uids={uids}
                     containerRef={containerRef}
                     containerRect={containerRect}
                     containerHeight={visibleHeight - 24}
