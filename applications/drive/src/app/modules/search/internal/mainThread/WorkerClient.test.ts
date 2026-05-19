@@ -11,7 +11,6 @@ const fakeApi = {
     queryIndexerState: jest.fn(),
     search: jest.fn(),
     reset: jest.fn(),
-    setMetricsHeaders: jest.fn(),
 };
 
 jest.mock('comlink', () => ({
@@ -43,7 +42,6 @@ let createdWorkers: { name: string | undefined }[] = [];
 const USER_ID = 'user-1' as UserId;
 const CLIENT_ID = 'client-1' as ClientId;
 const BRIDGE = {} as MainThreadBridge;
-const METRICS_HEADERS = { uid: 'session-uid', clientID: 'web-drive' };
 
 describe('WorkerClient', () => {
     beforeEach(() => {
@@ -57,38 +55,28 @@ describe('WorkerClient', () => {
     });
 
     it('does not call registerClient on construction', () => {
-        new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE, METRICS_HEADERS);
+        new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
         expect(fakeApi.registerClient).not.toHaveBeenCalled();
     });
 
     it('calls registerClient on first start()', () => {
-        const client = new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE, METRICS_HEADERS);
+        const client = new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
         client.start();
         expect(fakeApi.registerClient).toHaveBeenCalledTimes(1);
     });
 
     it('calling start() multiple times only registers once', () => {
-        const client = new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE, METRICS_HEADERS);
+        const client = new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
         client.start();
         client.start();
         client.start();
         expect(fakeApi.registerClient).toHaveBeenCalledTimes(1);
     });
 
-    it('forwards metrics headers to the worker on construction', () => {
-        new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE, METRICS_HEADERS);
-        expect(fakeApi.setMetricsHeaders).toHaveBeenCalledTimes(1);
-        expect(fakeApi.setMetricsHeaders).toHaveBeenCalledWith({
-            uid: METRICS_HEADERS.uid,
-            clientID: METRICS_HEADERS.clientID,
-            appVersion: '1.0.0',
-        });
-    });
-
     it('creates a SharedWorker with a name scoped to userId and appVersion', () => {
-        new WorkerClient('user-a' as UserId, '2.0.0', CLIENT_ID, BRIDGE, METRICS_HEADERS);
-        new WorkerClient('user-b' as UserId, '2.0.0', CLIENT_ID, BRIDGE, METRICS_HEADERS);
-        new WorkerClient('user-a' as UserId, '3.0.0', CLIENT_ID, BRIDGE, METRICS_HEADERS);
+        new WorkerClient('user-a' as UserId, '2.0.0', CLIENT_ID, BRIDGE);
+        new WorkerClient('user-b' as UserId, '2.0.0', CLIENT_ID, BRIDGE);
+        new WorkerClient('user-a' as UserId, '3.0.0', CLIENT_ID, BRIDGE);
 
         expect(createdWorkers[0].name).toBe('drive-search-worker/2.0.0/user-a');
         expect(createdWorkers[1].name).toBe('drive-search-worker/2.0.0/user-b');
@@ -101,7 +89,7 @@ describe('WorkerClient', () => {
 
     describe('reverse heartbeat', () => {
         it('sends heartbeat every 3 seconds', () => {
-            new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE, METRICS_HEADERS);
+            new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
 
             expect(fakeApi.heartbeatClient).not.toHaveBeenCalled();
 
@@ -116,7 +104,7 @@ describe('WorkerClient', () => {
         it('reconnects when heartbeat times out', async () => {
             fakeApi.heartbeatClient.mockReturnValue(new Promise(() => {})); // never resolves
 
-            const client = new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE, METRICS_HEADERS);
+            const client = new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
             client.start();
             jest.clearAllMocks();
             createdWorkers = [];
@@ -130,14 +118,12 @@ describe('WorkerClient', () => {
 
             // Re-registers because it was running
             expect(fakeApi.registerClient).toHaveBeenCalledTimes(1);
-            // Re-forwards metrics headers on the new worker instance.
-            expect(fakeApi.setMetricsHeaders).toHaveBeenCalledTimes(1);
         });
 
         it('does not re-register on reconnect if not started', async () => {
             fakeApi.heartbeatClient.mockReturnValue(new Promise(() => {}));
 
-            new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE, METRICS_HEADERS);
+            new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
             jest.clearAllMocks();
             createdWorkers = [];
 
@@ -155,7 +141,7 @@ describe('WorkerClient', () => {
             fakeApi.search.mockReturnValue(new Promise(() => {}));
             fakeApi.heartbeatClient.mockReturnValue(new Promise(() => {}));
 
-            const client = new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE, METRICS_HEADERS);
+            const client = new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
             client.start();
 
             // Collect all yielded items and the final error
@@ -179,7 +165,7 @@ describe('WorkerClient', () => {
         });
 
         it('stops heartbeat on dispose', () => {
-            const client = new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE, METRICS_HEADERS);
+            const client = new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
             client.dispose();
 
             jest.advanceTimersByTime(10_000);
