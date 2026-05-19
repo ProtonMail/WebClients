@@ -5386,6 +5386,9 @@
       ],
       "Offline": [
         "Offline"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Misslyckades att skriva automatiskt. Se till att ${ PASS_APP_NAME } har nödvändiga behörigheter och försök igen (${ error })."
       ]
     },
     "Activity": {

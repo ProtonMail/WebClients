@@ -5417,6 +5417,9 @@
       ],
       "Offline": [
         "无网络连接"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "自动填充失败，请确保 ${ PASS_APP_NAME } 具有必要的权限并重试 (${ error })。"
       ]
     },
     "Activity": {
