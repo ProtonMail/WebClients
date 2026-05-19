@@ -73,7 +73,7 @@ const PassScopeModal = ({ onSuccess, onClose, onCancel, ...rest }: PassScopeModa
                 password,
             };
             const srp = await getSrp(authInfo, credentials, Version);
-            await api<{ ServerProof: string }>({
+            const { ServerProof } = await api<{ ServerProof: string }>({
                 url: 'pass/v1/user/srp/auth',
                 method: 'post',
                 silence: true,
@@ -83,6 +83,9 @@ const PassScopeModal = ({ onSuccess, onClose, onCancel, ...rest }: PassScopeModa
                     SrpSessionID: SrpSessionID,
                 },
             });
+            if (ServerProof !== srp.expectedServerProof) {
+                throw new Error('Unexpected server proof');
+            }
             // We want to just keep the modal open until the consumer's promise is finished. Not interested in errors.
             await onSuccess?.()?.catch(noop);
             onClose?.();
