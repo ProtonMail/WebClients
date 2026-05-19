@@ -221,12 +221,14 @@ export const createAuthService = ({
             const session = authStore.getSession();
             const loggedIn = await auth.resumeSession(localID, options);
 
+            const offlineSession = !connectivity.online && authStore.hasSession();
+            if (offlineSession) return loggedIn;
+
             const locked = authStore.getLocked();
             const validSession = authStore.validSession(session) && session.LocalID === localID;
             const autoFork = !loggedIn && !locked && pathLocalID !== undefined && !validSession;
 
-            if (!connectivity.online && authStore.hasSession()) app.setStatus(AppStatus.ERROR);
-            else if (autoFork) {
+            if (autoFork) {
                 /* If the session could not be resumed from the LocalID from path,
                  * we are likely dealing with an app-switch request from another app.
                  * In this case, redirect to account through a fork request. On
