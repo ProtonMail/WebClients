@@ -1665,6 +1665,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "L'accès à ${ PASS_APP_NAME } nécessitera votre empreinte digitale ou le code PIN de votre appareil."
       ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Le jeton d'accès « ${ action.token.Name } » a déjà expiré. Une fois supprimé, il n'apparaîtra plus."
+      ],
       "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
         "Le jeton d'accès « ${ action.token.Name } » cessera de fonctionner immédiatement. Cette action est irréversible."
       ],
@@ -2222,6 +2225,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "L'accès en ligne à ${ PASS_APP_NAME } nécessitera un code PIN. Vous serez déconnecté après 3 tentatives n'ayant pas abouti."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Seuls les jetons expirés depuis moins de 30 jours sont affichés. Les jetons plus anciens sont automatiquement supprimés."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Ouvrez les paramètres Safari pour l'extension et vérifiez que les autorisations du site sont activées pour les domaines ${ BRAND_NAME }."
@@ -3254,6 +3260,9 @@
       ],
       "Expired": [
         "Expiré"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Jetons expirés (${ expired.length })"
       ],
       "Expires in (minutes)": [
         "Expire dans (minutes)"
