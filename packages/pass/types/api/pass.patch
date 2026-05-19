@@ -32,6 +32,8 @@ export type PublicLinkGetContentResponse = {
   ExpirationTime: number;
   /* If the link key is being encrypted with the item key */
   LinkKeyEncryptedWithItemKey?: boolean;
+  /* Bitmask of flags for the secure link. Bit 0: LinkKeyEncryptedWithItemKey (1), Bit 1: LinkAuthorIsB2BCustomer (2). Multiple flags can be combined. */
+  Flags?: number;
 };
 
 export type PublicLinkGetResponse = {
@@ -57,6 +59,8 @@ export type PublicLinkGetResponse = {
   Active: boolean;
   /* If the link key is being encrypted with the item key */
   LinkKeyEncryptedWithItemKey?: boolean;
+  /* Bitmask of flags for the secure link. Bit 0: LinkKeyEncryptedWithItemKey (1), Bit 1: LinkAuthorIsB2BCustomer (2). Multiple flags can be combined. */
+  Flags?: number;
 };
 
 export type ItemRevisionContentsResponse = {
