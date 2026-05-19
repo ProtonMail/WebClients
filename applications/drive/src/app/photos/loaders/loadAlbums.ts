@@ -26,8 +26,9 @@ async function* batchUidsToNodes(iterator: AsyncIterable<string>, drive: ReturnT
     }
 }
 
-const loadAlbumsFromIterator = async (iterator: AsyncIterable<MaybeMissingNode>) => {
+const loadAlbumsFromIterator = async (iterator: AsyncIterable<MaybeMissingNode>): Promise<Set<string>> => {
     const drive = getDriveForPhotos();
+    const fetchedUids = new Set<string>();
     const { push, drain } = createDebouncedBuffer<AlbumItem>((albums) =>
         useAlbumsStore.getState().upsertAlbums(albums)
     );
@@ -47,6 +48,7 @@ const loadAlbumsFromIterator = async (iterator: AsyncIterable<MaybeMissingNode>)
         }
 
         const rootNodeSharedId = ancestry.value[0].value.deprecatedShareId;
+        fetchedUids.add(albumNode.uid);
         push({
             nodeUid: albumNode.uid,
             coverNodeUid: albumAttributes.coverPhotoNodeUid,
@@ -60,17 +62,23 @@ const loadAlbumsFromIterator = async (iterator: AsyncIterable<MaybeMissingNode>)
             // TODO: Check if it it's bulletproof
             isOwner: !Boolean(albumNode.membership),
             ownedBy: albumNode.ownedBy.email,
+            parentNodeUid: albumNode.parentUid,
+            treeEventScopeId: albumNode.treeEventScopeId,
             deprecatedShareId: rootNodeSharedId,
         });
     }
     drain();
+    return fetchedUids;
 };
 
 export const loadAlbums = async (abortSignal?: AbortSignal) => {
     const drive = getDriveForPhotos();
     useAlbumsStore.getState().setLoadingList(true);
     try {
-        await loadAlbumsFromIterator(batchUidsToNodes(drive.experimental.iterateAlbumUids(abortSignal), drive));
+        const fetchedUids = await loadAlbumsFromIterator(
+            batchUidsToNodes(drive.experimental.iterateAlbumUids(abortSignal), drive)
+        );
+        useAlbumsStore.getState().cleanupStaleAlbums(fetchedUids, true);
     } catch (e) {
         handleSdkError(e);
     } finally {
@@ -82,7 +90,8 @@ export const loadSharedWithMeAlbums = async (abortSignal?: AbortSignal) => {
     const drive = getDriveForPhotos();
     useAlbumsStore.getState().setLoadingList(true);
     try {
-        await loadAlbumsFromIterator(drive.iterateSharedNodesWithMe(abortSignal));
+        const fetchedUids = await loadAlbumsFromIterator(drive.iterateSharedNodesWithMe(abortSignal));
+        useAlbumsStore.getState().cleanupStaleAlbums(fetchedUids, false);
     } catch (e) {
         handleSdkError(e);
     } finally {
@@ -94,10 +103,12 @@ export const loadAllAlbums = async (abortSignal?: AbortSignal) => {
     const drive = getDriveForPhotos();
     try {
         useAlbumsStore.getState().setLoadingList(true);
-        await Promise.all([
+        const [ownedSeenUids, sharedSeenUids] = await Promise.all([
             loadAlbumsFromIterator(batchUidsToNodes(drive.experimental.iterateAlbumUids(abortSignal), drive)),
             loadAlbumsFromIterator(drive.iterateSharedNodesWithMe(abortSignal)),
         ]);
+        const fetchedUids = new Set([...ownedSeenUids, ...sharedSeenUids]);
+        useAlbumsStore.getState().cleanupStaleAlbums(fetchedUids);
     } catch (e) {
         handleSdkError(e);
     } finally {

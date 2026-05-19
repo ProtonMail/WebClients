@@ -10,51 +10,38 @@ import {
     useConfirmActionModal,
     usePopperAnchor,
 } from '@proton/components';
-import { generateNodeUid, getDriveForPhotos } from '@proton/drive';
+import { getDriveForPhotos } from '@proton/drive';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
+import { useSharingActions } from '../../../hooks/drive/useSharingActions';
 import { useDetailsModal } from '../../../modals/DetailsModal';
-import { useSharedWithMeActions } from '../../../store';
-import { useAlbumsStore } from '../../useAlbums.store';
 
 import './AlbumsCard.scss';
 
 interface SharedAlbumDropdownButtonProps {
-    volumeId: string;
-    linkId: string;
-    shareId: string;
+    nodeUid: string;
 }
 
-export const SharedAlbumDropdownButton = ({ volumeId, linkId, shareId }: SharedAlbumDropdownButtonProps) => {
+export const SharedAlbumDropdownButton = ({ nodeUid }: SharedAlbumDropdownButtonProps) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const { detailsModal, showDetailsModal } = useDetailsModal();
     const onShowDetails = useCallback(() => {
-        if (!shareId) {
-            return;
-        }
         showDetailsModal({
             drive: getDriveForPhotos(),
-            nodeUid: generateNodeUid(volumeId, linkId),
+            nodeUid,
         });
-    }, [linkId, shareId]);
+    }, [nodeUid, showDetailsModal]);
 
-    const { removeMe } = useSharedWithMeActions();
+    const { removeMe } = useSharingActions();
     const { navigateToAlbums } = useNavigate();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
-    const onLeaveAlbum = useCallback(async () => {
-        if (!shareId) {
-            return;
-        }
-        const abortSignal = new AbortController().signal;
-        removeMe(abortSignal, showConfirmModal, shareId, async () => {
-            useAlbumsStore.getState().removeAlbum(generateNodeUid(volumeId, linkId));
-            navigateToAlbums();
-        });
-    }, [linkId, navigateToAlbums, removeMe, shareId, showConfirmModal, volumeId]);
+    const onLeaveAlbum = useCallback(() => {
+        removeMe(showConfirmModal, getDriveForPhotos(), nodeUid, navigateToAlbums);
+    }, [navigateToAlbums, nodeUid, removeMe, showConfirmModal]);
 
     return (
         <>
@@ -89,7 +76,7 @@ export const SharedAlbumDropdownButton = ({ volumeId, linkId, shareId }: SharedA
                     <DropdownMenuButton
                         onClick={(e) => {
                             e.stopPropagation();
-                            void onLeaveAlbum();
+                            onLeaveAlbum();
                         }}
                         className="text-left flex items-center flex-nowrap"
                     >

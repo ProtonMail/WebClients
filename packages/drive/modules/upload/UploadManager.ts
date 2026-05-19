@@ -139,15 +139,17 @@ export class UploadManager {
      *   await uploadManager.uploadPhotos(e.dataTransfer);
      * };
      */
-    async uploadPhotos(filesOrDataTransfer: File[] | FileList | DataTransfer): Promise<void> {
-        await this.processUpload(filesOrDataTransfer, undefined, true);
+    // TODO: returning list of uploadIds is a temporary way to follow upload lifecycle in clients
+    // We need to think of an optimal way of handling that
+    async uploadPhotos(filesOrDataTransfer: File[] | FileList | DataTransfer): Promise<string[]> {
+        return this.processUpload(filesOrDataTransfer, undefined, true);
     }
 
     private async processUpload(
         filesOrDataTransfer: File[] | FileList | DataTransfer,
         parentUid: string | undefined,
         isForPhotos: boolean
-    ): Promise<void> {
+    ): Promise<string[]> {
         const queueStore = useUploadQueueStore.getState();
         const batchId = generateUID();
 
@@ -156,11 +158,11 @@ export class UploadManager {
             : Array.from(filesOrDataTransfer);
 
         const hasStructure = hasFolderStructure(filesArray);
-
+        const queuedUploadIds = [];
         if (isForPhotos) {
-            const abortControllers = filesArray.map(() => new AbortController());
-            const uploadIds = queueStore.addItems(
-                filesArray.map((file) => ({
+            for (const file of filesArray) {
+                const abortController = new AbortController();
+                const uploadId = queueStore.addItem({
                     type: NodeType.Photo,
                     file,
                     name: file.name,
@@ -169,18 +171,19 @@ export class UploadManager {
                     status: UploadStatus.Pending,
                     batchId,
                     isForPhotos,
-                }))
-            );
-            uploadIds.forEach((uploadId, i) => this.orchestrator.emitFileQueued(uploadId, true, abortControllers[i]));
+                });
+                this.orchestrator.emitFileQueued(uploadId, true, abortController);
+                queuedUploadIds.push(uploadId);
+            }
         } else {
             if (!parentUid) {
                 // Should never happen
                 throw new Error('parentUid is mendatory for non-photos upload, you probably called wrong endpoint');
             }
             if (!hasStructure) {
-                const abortControllers = filesArray.map(() => new AbortController());
-                const uploadIds = queueStore.addItems(
-                    filesArray.map((file) => ({
+                for (const file of filesArray) {
+                    const abortController = new AbortController();
+                    const uploadId = queueStore.addItem({
                         type: NodeType.File,
                         file,
                         parentUid,
@@ -189,17 +192,16 @@ export class UploadManager {
                         clearTextExpectedSize: file.size,
                         status: UploadStatus.Pending,
                         batchId,
-                    }))
-                );
-                uploadIds.forEach((uploadId, i) =>
-                    this.orchestrator.emitFileQueued(uploadId, false, abortControllers[i])
-                );
+                    });
+                    this.orchestrator.emitFileQueued(uploadId, false, abortController);
+                    queuedUploadIds.push(uploadId);
+                }
             } else {
                 const { filesWithStructure, standaloneFiles } = this.separateFilesAndFolders(filesArray);
 
-                const standaloneAbortControllers = standaloneFiles.map(() => new AbortController());
-                const standaloneUploadIds = queueStore.addItems(
-                    standaloneFiles.map((file) => ({
+                for (const file of standaloneFiles) {
+                    const abortController = new AbortController();
+                    const uploadId = queueStore.addItem({
                         type: NodeType.File,
                         file,
                         parentUid,
@@ -208,11 +210,10 @@ export class UploadManager {
                         clearTextExpectedSize: file.size,
                         status: UploadStatus.Pending,
                         batchId,
-                    }))
-                );
-                standaloneUploadIds.forEach((uploadId, i) =>
-                    this.orchestrator.emitFileQueued(uploadId, false, standaloneAbortControllers[i])
-                );
+                    });
+                    this.orchestrator.emitFileQueued(uploadId, false, abortController);
+                    queuedUploadIds.push(uploadId);
+                }
 
                 const rootFolders = this.groupFilesByRootFolder(filesWithStructure);
                 for (const rootFiles of rootFolders.values()) {
@@ -222,7 +223,8 @@ export class UploadManager {
             }
         }
 
-        await this.orchestrator.start();
+        void this.orchestrator.start();
+        return queuedUploadIds;
     }
 
     async cancelUpload(uploadId: string): Promise<void> {
