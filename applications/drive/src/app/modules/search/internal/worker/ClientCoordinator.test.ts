@@ -1,5 +1,6 @@
 import type { MainThreadBridge } from '../mainThread/MainThreadBridge';
 import { sendErrorReportForSearch } from '../shared/errors';
+import { searchMetrics } from '../shared/searchMetrics';
 import type { ClientId, UserId } from '../shared/types';
 import { ClientCoordinator } from './ClientCoordinator';
 
@@ -20,7 +21,7 @@ describe('ClientCoordinator', () => {
 
     beforeEach(() => {
         jest.useFakeTimers();
-        coordinator = new ClientCoordinator();
+        coordinator = new ClientCoordinator(() => searchMetrics);
     });
 
     afterEach(() => {

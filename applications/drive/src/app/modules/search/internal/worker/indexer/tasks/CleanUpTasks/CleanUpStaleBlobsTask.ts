@@ -3,7 +3,6 @@ import { CleanupEventKind } from '@proton/proton-foundation-search';
 
 import { Logger } from '../../../../shared/Logger';
 import { sendErrorReportForSearch } from '../../../../shared/errors';
-import { searchMetrics } from '../../../../shared/searchMetrics';
 import type { IndexBlobStore } from '../../../index/IndexBlobStore';
 import type { IndexInstance, IndexKind } from '../../../index/IndexRegistry';
 import type { IndexerTaskKind, TaskContext } from '../BaseTask';
@@ -63,7 +62,7 @@ export class CleanUpStaleBlobsTask extends BaseTask {
             cleanup.free();
         }
 
-        searchMetrics.markBlobsCleanup({ removedBlobsCount: releasedCount + orphanCount });
+        ctx.searchMetrics.markBlobsCleanup({ removedBlobsCount: releasedCount + orphanCount });
     }
 
     private async driveCleanupIterator(
