@@ -65,7 +65,7 @@ export const propertiesToModel = ({
         meetingProvider = VIDEO_CONFERENCE_PROVIDER.PROTON_MEET;
     }
 
-    // Fallback: when x-pm-conference-* properties are absent but the description contains an embedded Zoom ling
+    // Fallback: when x-pm-conference-* properties are absent but the description contains an embedded Zoom link
     if (!meetingUrl && description?.value?.match(ZOOM_REGEX_LOCATION)) {
         const zoomMeetingData = getZoomFromDescription(description.value);
         meetingUrl = zoomMeetingData.meetingUrl;
