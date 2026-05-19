@@ -1,5 +1,5 @@
 import { Logger } from '../../../../shared/Logger';
-import { searchMetrics } from '../../../../shared/searchMetrics';
+import { startSearchTimer } from '../../../../shared/searchMetrics';
 import type { IndexPopulator } from '../../indexPopulators/IndexPopulator';
 import type { IndexerTaskKind, TaskContext } from '../BaseTask';
 import { BaseTask } from '../BaseTask';
@@ -55,7 +55,7 @@ export class IndexPopulatorTask extends BaseTask {
             ctx.markInitialIndexing();
         }
 
-        const stopTimer = searchMetrics.startTimer();
+        const stopTimer = startSearchTimer();
 
         const { indexWriter } = await ctx.indexRegistry.get(populator.indexKind, ctx.db);
         const session = indexWriter.startWriteSession();
@@ -73,6 +73,6 @@ export class IndexPopulatorTask extends BaseTask {
         // Mark done in DB and keep the populator's in-memory mirror in sync.
         await populator.markAsDone(ctx.db);
 
-        searchMetrics.markInitialIndexingSucceeded({ durationInSeconds: stopTimer() });
+        ctx.searchMetrics.markInitialIndexingSucceeded({ durationInSeconds: stopTimer() });
     }
 }
