@@ -186,6 +186,18 @@ export function mimeTypeToOpenInDocsType(mimeType?: string, isODSImportEnabled?:
     return undefined;
 }
 
+export function mimeTypeToProtonDocumentType(mimeType?: string): ProtonDocumentType | undefined {
+    if (!mimeType) {
+        return;
+    }
+    if (isProtonDocsDocument(mimeType)) {
+        return 'document';
+    }
+    if (isProtonDocsSpreadsheet(mimeType)) {
+        return 'spreadsheet';
+    }
+}
+
 export const isSTLFile = (mimeType: string) => mimeType === 'model/stl';
 export const isCompatibleSTL = (mimeType: string, filename: string) => isSTLFile(mimeType) && filename.endsWith('stl'); // browser mime type detection is not great for STL so we need to also check end of file name
 

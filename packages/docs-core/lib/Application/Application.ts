@@ -21,6 +21,7 @@ import { UserState } from '../State/UserState'
 import type { DocumentState, PublicDocumentState } from '../State/DocumentState'
 import type { DriveCompat, PublicDriveCompat } from '@proton/drive-store/lib'
 import type { APP_NAMES } from '@proton/shared/lib/constants'
+import type { DocsApi } from '../Api/DocsApi'
 
 declare const window: CustomWindow
 
@@ -126,6 +127,10 @@ export class Application implements ApplicationInterface {
 
   public get recentDocumentsService(): RecentDocumentsInterface {
     return this.deps.get<RecentDocumentsInterface>(App_TYPES.RecentDocumentsService)
+  }
+
+  public get docsApi(): DocsApi {
+    return this.deps.get<DocsApi>(App_TYPES.DocsApi)
   }
 
   public get isRunningInNativeMobileWeb(): boolean {
