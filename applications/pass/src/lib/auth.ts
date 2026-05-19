@@ -150,7 +150,7 @@ export const createAuthService = ({
             if (!validLocalID) authStore.clear();
 
             /** Clear auth store if active localID was garbage collected */
-            if (activeLocalID && garbagedLocalIDs?.includes(activeLocalID)) authStore.clear();
+            if (activeLocalID !== undefined && garbagedLocalIDs?.includes(activeLocalID)) authStore.clear();
 
             /** Force lock unless: matching localID + valid session + online.
              * Allows bypassing locks on page refresh when localID is preserved */
@@ -221,12 +221,14 @@ export const createAuthService = ({
             const session = authStore.getSession();
             const loggedIn = await auth.resumeSession(localID, options);
 
+            const offlineSession = !connectivity.online && authStore.hasSession();
+            if (offlineSession) return loggedIn;
+
             const locked = authStore.getLocked();
             const validSession = authStore.validSession(session) && session.LocalID === localID;
             const autoFork = !loggedIn && !locked && pathLocalID !== undefined && !validSession;
 
-            if (!connectivity.online && authStore.hasSession()) app.setStatus(AppStatus.ERROR);
-            else if (autoFork) {
+            if (autoFork) {
                 /* If the session could not be resumed from the LocalID from path,
                  * we are likely dealing with an app-switch request from another app.
                  * In this case, redirect to account through a fork request. On
@@ -627,7 +629,7 @@ export const createAuthService = ({
             if (clientOffline(app.getState().status) && connectivity.online) {
                 if (throttle && scheduler.isThrottled()) return;
                 const localID = authStore.getLocalID();
-                if (localID) store.dispatch(offlineResume.intent({ localID, silence: true }));
+                if (localID !== undefined) store.dispatch(offlineResume.intent({ localID, silence: true }));
             }
         };
 
