@@ -1514,8 +1514,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -7562,7 +7561,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -10940,6 +10940,9 @@
       "99.95% SLA": [
         "99.95 % SLA"
       ],
+      "Access all countries": [
+        "Åtkomst till alla länder"
+      ],
       "Ad-blocker and malware protection": [
         "Annonsblockerare och skydd mot skadlig kod"
       ],
@@ -11645,6 +11648,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } land",
+        "${ n } länder"
+      ],
       "Access advanced VPN features": [
         "Få tillgång till avancerade VPN-funktioner"
       ],

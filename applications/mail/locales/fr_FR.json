@@ -1514,8 +1514,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Faire confiance à cette clé",
-        "Faire confiance à ces clés"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -7604,7 +7603,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -11030,6 +11030,9 @@
       "99.95% SLA": [
         "SLA/uptime : 99,95 % de disponibilité du service"
       ],
+      "Access all countries": [
+        "Accédez à tous les pays"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueur de publicités et protection contre les logiciels malveillants"
       ],
@@ -11188,6 +11191,9 @@
       "Multiple admin roles": [
         "Plusieurs rôles d'administrateur"
       ],
+      "No streaming support": [
+        "Pas de prise en charge du streaming"
+      ],
       "Online document editor": [
         "Éditeur de documents en ligne"
       ],
@@ -11337,6 +11343,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Volume et bande passante illimités"
+      ],
+      "Unlock streaming": [
+        "Débloquez le streaming"
       ],
       "Up to ${ n } user": [
         "Jusqu'à ${ n } utilisateur",
@@ -11745,6 +11754,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } pays",
+        "${ n } pays"
+      ],
       "Access advanced VPN features": [
         "Accédez à des fonctionnalités VPN avancées."
       ],
