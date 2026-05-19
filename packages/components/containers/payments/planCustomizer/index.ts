@@ -1,2 +1,2 @@
 export * from './ProtonPlanCustomizer';
-export { getHasPlanCustomizer } from './helpers';
+export { getHasPlanCustomizer, forceAddonsMinMaxConstraints } from './helpers';
