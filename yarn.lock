@@ -11532,6 +11532,7 @@ __metadata:
     "@protontech/timezone-support": "npm:^2.1.0"
     "@scure/base": "npm:^2.2.0"
     "@sentry/browser": "npm:^7.120.4"
+    "@types/file-saver": "npm:^2.0.5"
     "@types/jasmine": "npm:^5.1.15"
     "@types/karma-junit-reporter": "npm:^2.0.4"
     "@types/node": "npm:^24.12.4"
@@ -16051,6 +16052,13 @@ __metadata:
     "@types/qs": "npm:*"
     "@types/serve-static": "npm:^1"
   checksum: 10/c309fdb79fb8569b5d8d8f11268d0160b271f8b38f0a82c20a0733e526baf033eb7a921cd51d54fe4333c616de9e31caf7d4f3ef73baaf212d61f23f460b0369
+  languageName: node
+  linkType: hard
+
+"@types/file-saver@npm:^2.0.5":
+  version: 2.0.7
+  resolution: "@types/file-saver@npm:2.0.7"
+  checksum: 10/c3d1cd80eab1214767922cabac97681f3fb688e82b74890450d70deaca49537949bbc96d80d363d91e8f0a4752c7164909cc8902d9721c5c4809baafc42a3801
   languageName: node
   linkType: hard
 
