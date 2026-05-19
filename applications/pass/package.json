@@ -6,7 +6,7 @@
     "main": "index.ts",
     "scripts": {
         "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso --noLogicalScss",
-        "check-types": "tsc",
+        "check-types": "tsgo",
         "i18n:extract:web": "proton-i18n extract",
         "i18n:getlatest": "proton-i18n upgrade",
         "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin -u --verbose",
@@ -36,6 +36,7 @@
         "@proton/pack": "workspace:^",
         "@proton/testing": "workspace:^",
         "@proton/types": "workspace:^",
+        "@typescript/native-preview": "^7.0.0-0",
         "core-js": "^3.49.0",
         "cross-env": "^10.1.0",
         "eslint": "^9.39.4",
