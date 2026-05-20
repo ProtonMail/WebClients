@@ -16,6 +16,7 @@ import { authStore } from '@proton/pass/lib/auth/store';
 import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import browser from '@proton/pass/lib/globals/browser';
 import { createMonitorReport } from '@proton/pass/lib/monitor/monitor.report';
+import { settingsEditIntent } from '@proton/pass/store/actions/creators/settings';
 import { isActionWithSender } from '@proton/pass/store/actions/enhancers/endpoint';
 import { sagaEvents } from '@proton/pass/store/events';
 import { cacheGuard } from '@proton/pass/store/migrate';
@@ -23,7 +24,7 @@ import reducer from '@proton/pass/store/reducers';
 import { requestMiddlewareFactory } from '@proton/pass/store/request/middleware';
 import { rootSagaFactory } from '@proton/pass/store/sagas';
 import { EXTENSION_SAGAS } from '@proton/pass/store/sagas/extension';
-import { selectLocale } from '@proton/pass/store/selectors/settings';
+import { selectLocale, selectOfflineEnabled } from '@proton/pass/store/selectors/settings';
 import { selectFeatureFlag, selectUserSettings } from '@proton/pass/store/selectors/user';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { LocalStoreData } from '@proton/pass/types';
@@ -152,7 +153,14 @@ export const options: RootSagaOptions = {
         }
     }),
 
-    onFeatureFlags: withContext((ctx, features) => ctx.service.featureFlags.sync(features)),
+    onFeatureFlags: withContext((ctx, data) => {
+        const offlineFlag = data.features.PassExtensionOfflineV1 ?? false;
+        const offlineEnabled = selectOfflineEnabled(store.getState());
+        const autoEnableOffline = !offlineEnabled && offlineFlag && authStore.hasOfflinePassword();
+        if (autoEnableOffline) store.dispatch(settingsEditIntent('offline', { offlineEnabled: true }, true));
+
+        ctx.service.featureFlags.sync(data);
+    }),
 
     onItemsUpdated: withContext((ctx, options) => {
         /* Update the extension's badge count on every item state change */
