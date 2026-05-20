@@ -6,7 +6,6 @@ import { c } from 'ttag';
 
 import { AppsDropdown, useModalStateObject } from '@proton/components';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 
 import { SearchModal } from '../../components/Modals/SearchModal/SearchModal';
@@ -100,13 +99,16 @@ const LumoSidebarContent = () => {
                         <GallerySidebarButton showText={showText} onItemClick={closeOnItemClick} />
                     </div>
                 )}
+                <div className="sidebar-section">
+                    <Suspense fallback={null}>
+                        <ProjectsSidebarSection
+                            showText={showText}
+                            onItemClick={closeOnItemClick}
+                            isSmallScreen={isSmallScreen}
+                        />
+                    </Suspense>
+                </div>
                 <div className={clsx('sidebar-main-content', isCollapsed && 'flex-shrink')}>
-                    <div className="sidebar-section">
-                        <Suspense fallback={null}>
-                            <ProjectsSidebarSection showText={showText} onItemClick={closeOnItemClick} />
-                        </Suspense>
-                    </div>
-
                     <FavoritesSidebarSection showText={showText} onItemClick={closeOnItemClick} />
 
                     <ChatHistorySection searchValue={searchValue} showText={showText} />
@@ -122,13 +124,6 @@ const LumoSidebarContent = () => {
 
                 <div className="sidebar-section sidebar-bottom">
                     <LumoSidebarUpsell collapsed={isCollapsed} />
-
-                    <SidebarItem
-                        icon="question-circle"
-                        label={c('collider_2025:Button').t`Help and support`}
-                        onClick={() => window.open(getKnowledgeBaseUrl('/lumo'), '_blank')}
-                        showText={showText}
-                    />
 
                     {apiKeyManagement && (
                         <SidebarItem
