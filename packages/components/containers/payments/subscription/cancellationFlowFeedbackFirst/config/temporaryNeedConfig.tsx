@@ -711,7 +711,14 @@ export const getTemporaryNeedConfig = (plan: Plan, freePlan: FreePlanDefault): T
         } else if (planName === PLANS.DRIVE || planName === PLANS.DRIVE_1TB) {
             logo = <DriveLogo variant="glyph-only" size={7} />;
         } else {
-            logo = <CustomLogo className="rounded" planName={planName} size={28} />;
+            logo = (
+                <span
+                    className="rounded overflow-hidden shrink-0 inline-flex h-custom w-custom"
+                    style={{ '--w-custom': '1.75rem', '--h-custom': '1.75rem' }}
+                >
+                    <CustomLogo planName={planName} size={28} />
+                </span>
+            );
         }
 
         return (
