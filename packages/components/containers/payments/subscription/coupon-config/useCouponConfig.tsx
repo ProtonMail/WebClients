@@ -14,9 +14,17 @@ import {
     isCouponConfigRequiredProps,
 } from './interface';
 import { monthlyNudgeConfig } from './monthlyNudge';
+import { summerSale2026Config } from './summerSale2026';
+import { summerSale2026BundleConfig } from './summerSale2026bundle';
 import { vpn15mConfig } from './vpn15m';
 
-const defaultCouponConfigs: CouponConfig[] = [monthlyNudgeConfig, vpn15mConfig, cancellationFlow];
+const defaultCouponConfigs: CouponConfig[] = [
+    monthlyNudgeConfig,
+    vpn15mConfig,
+    cancellationFlow,
+    summerSale2026Config,
+    summerSale2026BundleConfig,
+];
 
 export type CouponConfigRendered = Omit<CouponConfig, 'amountDueMessage' | 'cyclePriceCompare' | 'cycleTitle'> & {
     renderAmountDueMessage?: () => ReactNode;
