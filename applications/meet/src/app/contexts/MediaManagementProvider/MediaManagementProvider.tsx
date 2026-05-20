@@ -38,6 +38,7 @@ import { useStableCallback } from '../../hooks/useStableCallback';
 import { preloadBackgroundProcessorAssets } from '../../processors/background-processor/createBackgroundProcessor';
 import type { SwitchActiveDevice } from '../../types';
 import { supportsSetSinkId } from '../../utils/browser';
+import { isRNNoiseFilterSupported, preloadRNNoiseWorkletAsset } from '../../utils/rnnoiseProcessor';
 import { MediaManagementContext } from './MediaManagementContext';
 import { PermissionsModal } from './PermissionsModal/PermissionsModal';
 import { useAudioToggle } from './mediaToggle/useAudioToggle';
@@ -107,7 +108,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
             const toSave = isSystemDefaultDevice ? null : deviceId;
             dispatch(setPreferredDevice({ kind: deviceType, deviceId: toSave }));
         },
-        [activeAudioOutputDeviceId, activeCameraDeviceId, activeMicrophoneDeviceId, room, dispatch]
+        [activeAudioOutputDeviceId, activeCameraDeviceId, activeMicrophoneDeviceId, room, dispatch, reportMeetError]
     );
 
     const {
@@ -359,6 +360,9 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         cameraState.systemDefault?.deviceId,
         microphoneState.systemDefault?.deviceId,
         speakerState.systemDefault?.deviceId,
+        cameraState.useSystemDefault,
+        microphoneState.useSystemDefault,
+        speakerState.useSystemDefault,
     ]);
 
     const cleanupPreviews = useStableCallback(async () => {
@@ -431,10 +435,13 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
 
             void handleCleanup(true);
         };
-    }, []);
+    }, [cleanupPreviews, room]);
 
     useEffect(() => {
         void preloadBackgroundProcessorAssets();
+        if (isRNNoiseFilterSupported()) {
+            preloadRNNoiseWorkletAsset();
+        }
     }, []);
 
     return (
