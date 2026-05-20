@@ -4,9 +4,11 @@ import { useFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { CategoriesHeader } from './CategoriesHeader';
-import { CategoriesSettings } from './CategoriesSettings';
-import { CategoriesToggle } from './CategoriesToggle';
+import { CategoriesHeader } from '../components/CategoryView/CategoriesHeader';
+import { CategoriesSettings } from '../components/CategoryView/CategoriesSettings';
+import { CategoriesToggle } from '../components/CategoryView/CategoriesToggle';
+
+import './MobileSettings.scss';
 
 interface CategoryViewProps {
     layout: (children: React.ReactNode, props?: any) => React.ReactNode;
