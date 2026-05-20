@@ -344,6 +344,7 @@ const getVisionaryFeatures = ({ planMaxSpaceBytes, freeMaxBaseSpaceBytes }: Plan
             label: c('Label').t`Early access`,
             leftValue: yes(),
             rightValue: <Dash />,
+            tooltip: c('Tooltip').t`Early access to new apps and features.`,
         },
         {
             icon: <IcShield />,
