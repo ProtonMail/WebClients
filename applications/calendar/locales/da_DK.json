@@ -6590,6 +6590,10 @@
       ],
       "RECOMMENDED": [
         "FORSLÅET"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Opret en sikker sky til ${ memberCount } medlem",
+        "Opret en sikker sky til ${ memberCount } medlemmer"
       ]
     },
     "info": {
@@ -8436,6 +8440,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
+      ],
+      "Access all countries": [
+        "Få adgang til alle lande"
+      ],
+      "No streaming support": [
+        "Understøtter ikke streaming"
+      ],
+      "Unlock streaming": [
+        "Lås op for streaming"
       ]
     },
     "new_plans: feature highlight": {
@@ -8855,6 +8868,10 @@
       "Support for ${ n } custom email domain": [
         "Mulighed for ${ n } brugerdefineret e-mail-domæne",
         "Mulighed for ${ n } brugerdefinerede e-mail-domæner"
+      ],
+      "${ n } country": [
+        "${ n } land",
+        "${ n } lande"
       ]
     },
     "Note": {

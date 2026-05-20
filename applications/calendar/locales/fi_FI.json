@@ -6402,6 +6402,16 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Olet saavuttanut varausaikojen enimmäismäärän (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Luo suojattu pilvi ${ memberCount } jäsenelle",
+        "Luo suojattu pilvi ${ memberCount } jäsenelle"
+      ],
+      "Enter code": [
+        "Syötä koodi"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Jos et voi käyttää tunnistautumissovellustasi, voit käyttää yhtä kuudestatoista varmuuspalautuskoodistasi, jotka sait lisätessäsi kaksivaiheisen tunnistautumisen. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -7114,6 +7124,9 @@
       ],
       "Zoom meeting": [
         "Zoom-kokous"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Jaa turvallisesti osia aikataulustasi kenelle tahansa lähetettävän buukkaussivun kautta."
       ]
     },
     "label": {
