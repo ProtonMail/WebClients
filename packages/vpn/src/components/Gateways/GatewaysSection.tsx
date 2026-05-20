@@ -31,6 +31,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import {
     addIpInVPNGateway,
+    addIpsInVPNGateway,
     createVPNGateway,
     createVPNGatewayWithMultipleIps,
     deleteVPNGateway,
@@ -68,6 +69,7 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
 
     const api = useApi();
     const isMultiIpEndpointEnabled = useFlag('VpnOrganizationLogRelayGatewayCreationMultiIp');
+    const isMultiIpAddEndpointEnabled = useFlag('VpnOrganizationLogRelayGatewayUpdateMultiIp');
     const [createModal, showCreateModal] = useModalTwoStatic(GatewayModal);
     const [renameModal, showRenameModal] = useModalTwoStatic(GatewayRenameModal);
     const [usersModal, showUsersModal] = useModalTwoStatic(GatewayUsersModal);
@@ -370,6 +372,43 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
         }
     };
 
+    const addServersInOneRequest = async (
+        gateway: Gateway,
+        addedQuantities: Record<string, number>,
+        notificationKey: string
+    ): Promise<void> => {
+        const locations: GatewayLocation[] = Object.entries(addedQuantities).flatMap(([locationId, count]) =>
+            Array.from({ length: count }, () => getLocationFromId(locationId))
+        );
+
+        const total = locations.length;
+
+        if (total === 0) {
+            return;
+        }
+
+        createNotification({
+            key: notificationKey,
+            text: c('Info').ngettext(msgid`Adding ${total} gateway server`, `Adding ${total} gateway servers`, total),
+            type: 'info',
+        });
+
+        try {
+            await api(
+                addIpsInVPNGateway({
+                    Name: gateway.Name,
+                    Locations: locations,
+                })
+            );
+        } catch (error) {
+            createNotification({
+                key: notificationKey,
+                text: getNonEmptyErrorMessage(error),
+                type: 'warning',
+            });
+        }
+    };
+
     const buildGateway = async (data: GatewayModel): Promise<Gateway | undefined> => {
         if (data.Quantities) {
             if (isMultiIpEndpointEnabled) {
@@ -469,26 +508,30 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
                 }
 
                 if (addedServerCount) {
-                    await createServersSequentially(
-                        {
-                            Name: gateway.Name,
-                            Features: gateway.Logicals[0]?.Features,
-                            UserIds: gateway.Logicals[0]?.Users,
-                            Quantities: addedQuantities,
-                            GroupIds: gateway.GroupIds,
-                        },
-                        gateway,
-                        'gateway-servers-editions',
-                        (serverNumber: number, total: number) =>
-                            /*
-                            translator: "Creating gateway servers" refers to the whole operation, so pluralization uses ${total}, not ${serverNumber}, "Creating gateway servers: 1 / 3" is plural in English because we are creating a gateway of 3 servers
-                            translator: This message appears when starting to creating a gateway that will contain ${total} server in the end (total is always an integer and at least 2, so for any language with "One" form < 2, don't care much about singular)
-                            */ c('Info').ngettext(
-                                msgid`Adding gateway server: ${serverNumber} / ${total}`,
-                                `Adding gateway servers: ${serverNumber} / ${total}`,
-                                total
-                            )
-                    );
+                    if (isMultiIpAddEndpointEnabled) {
+                        await addServersInOneRequest(gateway, addedQuantities, 'gateway-servers-editions');
+                    } else {
+                        await createServersSequentially(
+                            {
+                                Name: gateway.Name,
+                                Features: gateway.Logicals[0]?.Features,
+                                UserIds: gateway.Logicals[0]?.Users,
+                                Quantities: addedQuantities,
+                                GroupIds: gateway.GroupIds,
+                            },
+                            gateway,
+                            'gateway-servers-editions',
+                            (serverNumber: number, total: number) =>
+                                /*
+                                translator: "Creating gateway servers" refers to the whole operation, so pluralization uses ${total}, not ${serverNumber}, "Creating gateway servers: 1 / 3" is plural in English because we are creating a gateway of 3 servers
+                                translator: This message appears when starting to creating a gateway that will contain ${total} server in the end (total is always an integer and at least 2, so for any language with "One" form < 2, don't care much about singular)
+                                */ c('Info').ngettext(
+                                    msgid`Adding gateway server: ${serverNumber} / ${total}`,
+                                    `Adding gateway servers: ${serverNumber} / ${total}`,
+                                    total
+                                )
+                        );
+                    }
                 }
 
                 await refreshList();
