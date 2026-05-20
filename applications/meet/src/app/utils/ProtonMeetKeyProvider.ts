@@ -21,7 +21,7 @@ export class ProtonMeetKeyProvider extends BaseKeyProvider {
         super({
             sharedKey: true,
             ratchetWindowSize: 0,
-            failureTolerance: 10,
+            failureTolerance: -1,
             keyringSize: 256,
         });
     }
