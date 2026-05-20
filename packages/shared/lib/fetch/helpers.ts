@@ -51,3 +51,16 @@ export const getDateHeader = (headers?: Headers) => {
 
     return getValidDate(customDateHeader) ?? getValidDate(standardDateHeader);
 };
+
+export const getStandardAndCustomDateHeader = (headers?: Headers) => {
+    const customDateHeader = headers?.get?.('x-pm-date');
+    const standardDateHeader = headers?.get?.('date');
+
+    const standardDate = getValidDate(standardDateHeader);
+    const customDate = getValidDate(customDateHeader);
+
+    return {
+        standardDateHeader: standardDate && standardDate.toISOString(),
+        customDateHeader: customDate && customDate.toISOString(),
+    };
+};
