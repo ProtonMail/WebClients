@@ -8,6 +8,7 @@ import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
 import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Href } from '@proton/atoms/Href/Href';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -26,6 +27,7 @@ import { useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hoo
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -278,11 +280,10 @@ const PostQuantumOptInModal = ({ resumeKeyGenerationStep, withLoadingWhileInProg
                                     {getBoldFormattedText(
                                         c('PQC compatibility warning')
                                             .t`**You must update all ${BRAND_NAME} apps**: your new keys won't work on older app versions.`
-                                    )}
-                                    {/* {' '}
-                                    <Link key="see-how" to={'todo'}>
-                                        {c('Force upgrade safety review').t`See how`}
-                                    </Link> */}
+                                    )}{' '}
+                                    <Href key="learn-more" href={getKnowledgeBaseUrl('/mail-post-quantum-protection')}>
+                                        {c('Force upgrade safety review').t`Learn more`}
+                                    </Href>
                                 </p>
                             </div>
                             <div className="flex flex-row items-start">
