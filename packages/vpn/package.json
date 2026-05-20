@@ -7,13 +7,14 @@
     "type": "module",
     "exports": {
         "./constants/tvUserTier.ts": "./constants/tvUserTier.ts",
+        "./components/Gateways": "./src/components/Gateways/GatewaysSection.tsx",
+        "./components/Onboarding": "./src/components/Onboarding/index.tsx",
+        "./components/Sidebar": "./src/components/Sidebar/index.tsx",
+        "./components/tv": "./src/components/tv/index.ts",
         "./components/VPNDownloadSection": "./src/components/VPNDownloadSection/DownloadAndInfoSection.tsx",
         "./components/VPNClientsSection": "./src/components/VPNClientsSection/index.tsx",
-        "./components/Sidebar": "./src/components/Sidebar/index.tsx",
-        "./components/Gateways": "./src/components/Gateways/GatewaysSection.tsx",
         "./definitions/routes": "./src/definitions/routes.ts",
-        "./hooks/useB2BAdminSidebarFeature": "./src/hooks/useB2BAdminSidebarFeature.ts",
-        "./components/tv": "./src/components/tv/index.ts"
+        "./hooks/useB2BAdminSidebarFeature": "./src/hooks/useB2BAdminSidebarFeature.ts"
     },
     "main": "./src/index.ts",
     "scripts": {
@@ -33,6 +34,8 @@
         "@proton/nav": "workspace:^",
         "@proton/payments": "workspace:^",
         "@proton/react-polymorphic-types": "workspace:^",
+        "@proton/redux-shared-store": "workspace:^",
+        "@proton/redux-utilities": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/styles": "workspace:^",
         "@proton/testing": "workspace:^",
@@ -61,10 +64,10 @@
         "eslint": "^9.39.4",
         "jest": "^30.4.2",
         "jest-environment-jsdom": "^30.4.1",
+        "jest-mock": "^30.4.1",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "ts-jest": "^29.4.9",
-        "typescript": "^6.0.2",
-        "vitest": "^4.1.6"
+        "typescript": "^6.0.2"
     }
 }

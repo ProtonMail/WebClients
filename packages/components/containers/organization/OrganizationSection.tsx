@@ -9,7 +9,7 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import ButtonGroup from '@proton/components/components/button/ButtonGroup';
+import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
 import Row from '@proton/components/components/container/Row';
 import Icon from '@proton/components/components/icon/Icon';
 import Label from '@proton/components/components/label/Label';
@@ -44,7 +44,6 @@ import EditOrganizationIdentityModal from './EditOrganizationIdentityModal';
 import OrganizationNameModal from './OrganizationNameModal';
 import OrganizationSectionUpsell from './OrganizationSectionUpsell';
 import SetupOrganizationModal from './SetupOrganizationModal';
-import SetupOrganizationNameModal from './SetupOrganizationNameModal';
 import OrganizationLogoModal from './logoUpload/OrganizationLogoModal';
 import OrganizationLogoRemovalModal from './logoUpload/OrganizationLogoRemovalModal';
 import OrganizationLogoTipsModal from './logoUpload/OrganizationLogoTipsModal';
@@ -67,8 +66,6 @@ const OrganizationSection = ({ app, organization }: Props) => {
     const [editOrganizationIdentityProps, setEditOrganizationIdentityModal, renderEditOrganizationIdentityModal] =
         useModalState();
     const [editOrganizationNameProps, setEditOrganizationNameModal, renderEditOrganizationNameModal] = useModalState();
-    const [setupOrganizationNameProps /* setSetupOrganizationNameModal */, , renderSetupOrganizationNameModal] = // TODO enable where needed
-        useModalState();
     const [setupOrganizationModalProps, setSetupOrganizationModal, renderSetupOrganizationModal] = useModalState();
     const errorHandler = useErrorHandler();
 
@@ -140,9 +137,6 @@ const OrganizationSection = ({ app, organization }: Props) => {
             )}
             {renderEditOrganizationNameModal && (
                 <OrganizationNameModal organization={organization} {...editOrganizationNameProps} />
-            )}
-            {renderSetupOrganizationNameModal && (
-                <SetupOrganizationNameModal organization={organization} {...setupOrganizationNameProps} />
             )}
             {renderEditOrganizationIdentityModal && (
                 <EditOrganizationIdentityModal
