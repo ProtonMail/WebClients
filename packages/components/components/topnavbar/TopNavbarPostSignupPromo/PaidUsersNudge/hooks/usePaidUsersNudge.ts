@@ -6,7 +6,7 @@ import { domIsBusy } from '@proton/shared/lib/busy';
 import type { OfferHookReturnValue } from '../../common/helpers/interface';
 import type { SupportedPlans } from '../helpers/interface';
 import { shouldOpenReminder } from '../helpers/paidUserNudgeHelper';
-import { paidConfig } from '../montlyPaidUserNudgeConfig';
+import { paidConfig } from '../monthlyPaidUserNudgeConfig';
 import { useMonthlyUpsellEligibility } from './useMonthlyUpsellEligibility';
 
 interface Props {

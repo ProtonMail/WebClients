@@ -40,7 +40,7 @@ export const fetchDealPrices = async (
                   )
                 : withoutCouponPromise;
 
-            // There are plans without montly price. The frontend shouldn't fetch them.
+            // There are plans without monthly price. The frontend shouldn't fetch them.
             const hasMonthlyCycle = hasCycle(plan, CYCLE.MONTHLY);
             const monthlyPromise = hasMonthlyCycle
                 ? getOptimisticCheckResult({
