@@ -59,7 +59,6 @@ import {
     ThemesSection,
     ThirdPartySection,
     TopBanners,
-    TopNavbarGetStartedButton,
     TopNavbarUpsell,
     TwoFactorSection,
     UnAuthenticated,
@@ -95,6 +94,7 @@ import { APPS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { useFlag } from '@proton/unleash/useFlag';
+import { GetStartedOnboarding } from '@proton/vpn/components/Onboarding';
 import { VPNClientsSection } from '@proton/vpn/components/VPNClientsSection';
 import { VPNDownloadAndInfoSection } from '@proton/vpn/components/VPNDownloadSection';
 import { TVContainer } from '@proton/vpn/components/tv';
@@ -240,7 +240,7 @@ const MainContainer: FunctionComponent = () => {
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isSmallViewport={viewportWidth['<=small']}
-            onBoardingButton={<TopNavbarGetStartedButton />}
+            onBoardingButton={<GetStartedOnboarding />}
         />
     );
 

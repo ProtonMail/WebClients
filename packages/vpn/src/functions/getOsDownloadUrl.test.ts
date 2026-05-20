@@ -1,4 +1,4 @@
-import type { Mock } from 'vitest';
+import type { Mock } from 'jest-mock';
 
 import { isAndroid, isIos } from '@proton/shared/lib/helpers/browser';
 

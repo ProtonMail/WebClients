@@ -3,24 +3,18 @@ import { useMemo } from 'react';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Icon from '@proton/components/components/icon/Icon';
-import AppLink from '@proton/components/components/link/AppLink';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
-import TopNavbarListItemButton, {
-    type TopNavbarListItemButtonProps,
-} from '@proton/components/components/topnavbar/TopNavbarListItemButton';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useToggle from '@proton/components/hooks/useToggle';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import type { IconName } from '@proton/icons/types';
-import clsx from '@proton/utils/clsx';
 
-import ButtonGroup from '../button/ButtonGroup';
 import Dropdown from '../dropdown/Dropdown';
 import DropdownMenu from '../dropdown/DropdownMenu';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';
+import SettingsLink from '../link/SettingsLink';
 import usePopperAnchor from '../popper/usePopperAnchor';
+import { GetStartedButton } from './GetStartedButton';
 
 export type DisplayItem = DropdownDisplayItem | LinkDisplayItem;
 
@@ -58,23 +52,20 @@ const DropdownItem = ({ item, onClick }: { item: DropdownDisplayItem; onClick: (
                         <br />
                         {item.description}
                     </div>
-                    <IcThreeDotsVertical
-                        ref={anchorRef as any}
-                        size={6}
-                        className="p-0.5 self-center shrink-0"
-                    />
+                    <IcThreeDotsVertical size={6} className="p-0.5 self-center shrink-0" />
+                    <div ref={anchorRef as React.RefObject<HTMLDivElement>} />
                 </div>
             </Button>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-end">
                 <DropdownMenu>
                     {item.dropdownLinks?.map(({ label, icon, href }) => {
                         return (
-                            <AppLink to={href} className="text-no-decoration" onClick={onClick} key={label}>
+                            <SettingsLink path={href} className="text-no-decoration" onClick={onClick} key={label}>
                                 <DropdownMenuButton className="text-left flex gap-2 items-center">
                                     <Icon name={icon} size={4} />
                                     {label}
                                 </DropdownMenuButton>
-                            </AppLink>
+                            </SettingsLink>
                         );
                     })}
                 </DropdownMenu>
@@ -85,32 +76,21 @@ const DropdownItem = ({ item, onClick }: { item: DropdownDisplayItem; onClick: (
 
 interface SpotlightMenuButtonProps {
     initiallyOpen?: boolean;
-    buttonIcon: TopNavbarListItemButtonProps<'button'>['icon'];
-    buttonText: TopNavbarListItemButtonProps<'button'>['text'];
     items: DisplayItem[];
     header?: React.ReactNode;
-    footer?: React.ReactNode;
     /** Toggles the Spotlight popover. */
     onToggle?: () => void;
     /** Called when clicking on the [x] companion button. */
     onDismiss?: () => void;
-    /** The hover text for the dismiss button. */
-    dismissTitle?: string;
 }
 
 export const SpotlightMenuButton = ({
     initiallyOpen: initiallyOpen_ = false,
     items: displayItems,
-    buttonText,
-    buttonIcon,
     header,
-    footer,
     onToggle: onToggle,
     onDismiss: onDismiss_,
-    dismissTitle = 'Dismiss',
 }: SpotlightMenuButtonProps) => {
-    const { viewportWidth } = useActiveBreakpoint();
-
     const initiallyOpen = useMemo(() => initiallyOpen_, []);
 
     const { state: renderSpotlight, toggle: toggleSpotlight, set: setSpotlight } = useToggle(initiallyOpen);
@@ -150,8 +130,8 @@ export const SpotlightMenuButton = ({
                         return (
                             <ButtonLike
                                 key={item.title}
-                                as={AppLink}
-                                to={item.linkHref!}
+                                as={SettingsLink}
+                                path={item.linkHref!}
                                 onClick={closeSpotlight}
                                 shape="ghost"
                                 color="weak"
@@ -170,34 +150,10 @@ export const SpotlightMenuButton = ({
                             </ButtonLike>
                         );
                     })}
-
-                    {footer}
                 </>
             }
         >
-            <ButtonGroup className="mx-3">
-                <TopNavbarListItemButton
-                    as="button"
-                    shape="outline"
-                    color="weak"
-                    type="button"
-                    title={buttonText}
-                    className={clsx('topnav-org-setup', viewportWidth['<=medium'] && 'button-for-icon')}
-                    onClick={onToggleSpotlight}
-                    icon={buttonIcon}
-                    text={buttonText}
-                />
-                <TopNavbarListItemButton
-                    as="button"
-                    shape="outline"
-                    color="weak"
-                    type="button"
-                    title={dismissTitle}
-                    className={clsx({ 'button-for-icon': viewportWidth['<=medium'] })}
-                    onClick={onDismiss}
-                    icon={<IcCross className='m-0' />}
-                />
-            </ButtonGroup>
+            <GetStartedButton onGetStarted={onToggleSpotlight} onDismiss={onDismiss} />
         </Spotlight>
     );
 };
