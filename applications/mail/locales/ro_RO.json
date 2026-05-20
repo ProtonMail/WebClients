@@ -9198,6 +9198,11 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate."
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Creați un cont în cloud securizat pentru ${ memberCount } membru",
+        "Creați un cont cloud securizat pentru ${ memberCount } membri",
+        "Creați un cont cloud securizat pentru ${ memberCount } de membri"
       ]
     },
     "info": {
@@ -11574,6 +11579,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
+      ],
+      "Access all countries": [
+        "Accesați toate țările"
+      ],
+      "No streaming support": [
+        "Fără suport transmisii în flux"
+      ],
+      "Unlock streaming": [
+        "Deblocare transmisii în flux"
       ]
     },
     "new_plans: feature highlight": {
@@ -11998,6 +12012,11 @@
         "Domenii de e-mail personal acceptate: ${ n }",
         "Domenii de e-mail personal acceptate: ${ n }",
         "Domenii de e-mail personal acceptate: ${ n }"
+      ],
+      "${ n } country": [
+        "${ n } țară",
+        "${ n } țări",
+        "${ n } de țări"
       ]
     },
     "Notification": {
