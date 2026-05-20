@@ -71,6 +71,11 @@ export interface GatewayMultiIpModel {
     GroupIds?: readonly string[] | null;
 }
 
+export interface GatewayIpMultiIpModel {
+    Name: string;
+    Locations: GatewayLocation[];
+}
+
 export interface GatewayGroup {
     GroupID: string;
     Name: string;
