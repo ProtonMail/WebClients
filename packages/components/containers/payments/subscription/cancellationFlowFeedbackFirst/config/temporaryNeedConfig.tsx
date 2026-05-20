@@ -7,7 +7,6 @@ import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
 import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
 import FreeLogo from '@proton/components/containers/payments/subscription/FreeLogo/FreeLogo';
-import CustomLogo from '@proton/components/containers/payments/subscription/YourPlanSectionV2/CustomLogo';
 import type { CustomLogoPlanName } from '@proton/components/containers/payments/subscription/YourPlanSectionV2/CustomLogo';
 import { IcAt } from '@proton/icons/icons/IcAt';
 import { IcCalendarCheckmark } from '@proton/icons/icons/IcCalendarCheckmark';
@@ -46,6 +45,7 @@ import type { SizeUnits } from '@proton/shared/lib/helpers/humanSize';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import type { ComparisonFeatureRow } from '../components/ComparisonTable';
+import { CustomLogoHeader } from '../components/CustomLogoHeader';
 
 const DRIVE_PLUS_NAME = 'Drive Plus';
 
@@ -711,14 +711,7 @@ export const getTemporaryNeedConfig = (plan: Plan, freePlan: FreePlanDefault): T
         } else if (planName === PLANS.DRIVE || planName === PLANS.DRIVE_1TB) {
             logo = <DriveLogo variant="glyph-only" size={7} />;
         } else {
-            logo = (
-                <span
-                    className="rounded overflow-hidden shrink-0 inline-flex h-custom w-custom"
-                    style={{ '--w-custom': '1.75rem', '--h-custom': '1.75rem' }}
-                >
-                    <CustomLogo planName={planName} size={28} />
-                </span>
-            );
+            logo = <CustomLogoHeader planName={planName} />;
         }
 
         return (
