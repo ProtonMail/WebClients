@@ -54,7 +54,7 @@ function getLocation(path: string[], isSharedWithMe: boolean) {
   return { type: 'root' } as const
 }
 
-function getNodeName(sdkData: NodeEntity | DegradedNode) {
+export function getNodeName(sdkData: NodeEntity | DegradedNode) {
   if (typeof sdkData.name === 'string') {
     return sdkData.name
   }
@@ -63,7 +63,7 @@ function getNodeName(sdkData: NodeEntity | DegradedNode) {
   }
 }
 
-function getAuthorName(sdkData: NodeEntity | DegradedNode) {
+export function getAuthorName(sdkData: NodeEntity | DegradedNode) {
   if (sdkData.keyAuthor.ok) {
     return sdkData.keyAuthor.value ?? undefined
   }
