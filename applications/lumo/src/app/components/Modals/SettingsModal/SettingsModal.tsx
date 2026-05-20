@@ -8,13 +8,11 @@ import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import type { ModalOwnProps } from '@proton/components/index';
-import { Icon, ModalTwo, ModalTwoContent, SettingsLink, Toggle, useConfig } from '@proton/components/index';
+import { Icon, ModalTwo, ModalTwoContent, SettingsLink, Toggle } from '@proton/components/index';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import type { IconName } from '@proton/icons/types';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import { format } from '@proton/shared/lib/date-fns-utc';
-import { dateLocale } from '@proton/shared/lib/i18n';
 import lumoAvatarNeutral from '@proton/styles/assets/img/lumo/lumo-avatar-neutral.svg';
 
 import { useLumoUserSettings } from '../../../hooks';
@@ -38,62 +36,14 @@ import { IndexingStatusBanner } from '../../Files/DriveBrowser/IndexingStatusBan
 import { CreateFreeAccountLink } from '../../Guest/CreateFreeAccountLink/CreateFreeAccountLink';
 import { SignInButton } from '../../Guest/SignInLink';
 import { LumoLogoThemeAware } from '../../Icons/LumoLogoThemeAware';
+import AboutPanel from './AboutPanel';
 import DeleteAllButton from './DeleteAllButton';
 import { PaidSubscriptionPanel } from './PaidSubscriptionPanel';
 import PersonalizationPanel from './PersonalizationPanel';
 import { SearchIndexManagement } from './SearchIndex/SearchIndexManagement';
+import { SettingsSectionItem } from './SettingsSectionItem';
 
 import './SettingsModal.scss';
-
-const SettingsSectionItem = ({
-    icon,
-    text,
-    subtext,
-    button,
-    useEllipsisOnContent,
-}: {
-    icon: IconName;
-    text: string | React.ReactNode;
-    subtext?: string | React.ReactNode;
-    button?: React.ReactNode;
-    useEllipsisOnContent?: boolean;
-}) => {
-    const subTextContent =
-        typeof subtext === 'string' ? (
-            <span
-                className={clsx('color-weak', useEllipsisOnContent && 'text-ellipsis')}
-                title={useEllipsisOnContent ? subtext : undefined}
-            >
-                {subtext}
-            </span>
-        ) : (
-            subtext
-        );
-
-    return (
-        <div className="flex flex-row flex-nowrap gap-4 items-start p-2">
-            <Avatar color="weak" className="settings-section-icon">
-                <Icon className="shrink-0 color-weak" name={icon} size={5} />
-            </Avatar>
-            <div className="flex-1 flex flex-column *:min-size-auto sm:flex-row flex-nowrap gap-2">
-                <div className="flex flex-column flex-nowrap flex-1 min-w-0">
-                    {typeof text === 'string' ? (
-                        <span
-                            className={clsx('text-semibold', useEllipsisOnContent && 'text-ellipsis')}
-                            title={useEllipsisOnContent ? text : undefined}
-                        >
-                            {text}
-                        </span>
-                    ) : (
-                        text
-                    )}
-                    {subtext ? subTextContent : null}
-                </div>
-                <div className="shrink-0 my-auto">{button}</div>
-            </div>
-        </div>
-    );
-};
 
 interface SettingsItem {
     id: string;
@@ -116,6 +66,7 @@ const BASE_SETTINGS_ITEMS: SettingsItem[] = [
         guest: true,
     },
     { id: 'general', icon: 'cog-wheel', getText: () => c('collider_2025: Settings Item').t`General`, guest: true },
+    { id: 'about', icon: 'info-circle', getText: () => c('collider_2025: Settings Item').t`About`, guest: true },
 ];
 
 const LumoSettingsSidebar = ({
@@ -167,9 +118,7 @@ const LumoSettingsSidebar = ({
 
 /** Guest-safe General settings panel - only shows theme and about */
 const GeneralSettingsPanelGuest = () => {
-    const { DATE_VERSION } = useConfig();
     const { isDarkLumoTheme } = useLumoTheme();
-    const formattedDate = DATE_VERSION ? `${format(new Date(DATE_VERSION), 'PPpp', { locale: dateLocale })} UTC` : '';
 
     return (
         <div className="flex flex-column flex-nowrap *:min-size-auto gap-4">
@@ -181,19 +130,12 @@ const GeneralSettingsPanelGuest = () => {
                 />
                 <LumoThemeButton />
             </div>
-
-            <SettingsSectionItem
-                icon="info-circle"
-                text={c('collider_2025: Title').t`About ${LUMO_SHORT_APP_NAME}`}
-                subtext={c('collider_2025: Description').jt`Last updated on ${formattedDate}`}
-            />
         </div>
     );
 };
 
 /** Full General settings panel for authenticated users */
 const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
-    const { DATE_VERSION } = useConfig();
     const { isDarkLumoTheme } = useLumoTheme();
     const { externalTools: isLumoToolingEnabled } = useLumoFlags();
     const [user] = useUser();
@@ -276,7 +218,6 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
         }
     }, [conversations, messages, isIndexing, isDriveIndexing, userId, rehydrateFolders, spaceMap, attachments]);
 
-    const formattedDate = DATE_VERSION ? `${format(new Date(DATE_VERSION), 'PPpp', { locale: dateLocale })} UTC` : '';
     const showIndexingProgress = isDriveIndexing && driveIndexingStatus;
     const hasError = indexError || messageIndexingStatus.error;
 
@@ -361,11 +302,6 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                 subtext={c('collider_2025: Description')
                     .t`Permanently delete your project and chats. This is irreversible.`}
                 button={<DeleteAllButton onClose={onClose} />}
-            />
-            <SettingsSectionItem
-                icon="info-circle"
-                text={c('collider_2025: Title').t`About ${LUMO_SHORT_APP_NAME}`}
-                subtext={c('collider_2025: Description').jt`Last updated on ${formattedDate}`}
             />
         </div>
     );
@@ -528,6 +464,7 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                                     ) : (
                                         <GeneralSettingsPanelAuth onClose={closeModal} />
                                     ))}
+                                {activePanel === 'about' && <AboutPanel />}
                             </div>
                         </div>
                     </div>

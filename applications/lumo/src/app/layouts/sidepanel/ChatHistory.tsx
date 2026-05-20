@@ -100,13 +100,15 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
             )}
             {noSearchMatch && !noConversationAtAll && (
                 <>
-                    <p className="block color-weak text-sm mt-3 mb-2 mx-4">{c('collider_2025:Title').t`No result.`}</p>
+                    <p className="color-weak text-sm mt-3 mb-2 mx-4 hidden md:block">{c('collider_2025:Title')
+                        .t`No result.`}</p>
                 </>
             )}
             <div className="chat-history-list ml-5">
                 {today.length > 0 && (
                     <>
-                        <h4 className="block color-weak text-sm my-2 ml-3">{c('collider_2025:Title').t`Today`}</h4>
+                        <h4 className="color-weak text-sm my-2 ml-3 hidden md:block">{c('collider_2025:Title')
+                            .t`Today`}</h4>
                         <RecentChatsList
                             conversations={today}
                             selectedConversationId={conversationId}
