@@ -7,7 +7,7 @@ import { VaultMenuTrash } from '@proton/pass/components/Menu/Vault/VaultMenuTras
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
-import { isShareManageable, isShareVisible } from '@proton/pass/lib/shares/share.predicates';
+import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectActiveSharedWithMeCount, selectShare, selectVisibleVaultsWithCount } from '@proton/pass/store/selectors';
 import type { ShareType } from '@proton/pass/types';
@@ -42,7 +42,7 @@ export const VaultMenu: FC<Props> = ({ render, onAction = noop }) => {
             <>
                 <VaultMenuAll count={totalItems} selected={scope === 'share' && !selectedShareId} onAction={onAction} />
 
-                {vaults.filter(isShareVisible).map((vault) => (
+                {vaults.map((vault) => (
                     <VaultMenuItem
                         key={vault.shareId}
                         vault={vault}
