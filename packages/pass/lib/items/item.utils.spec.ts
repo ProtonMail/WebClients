@@ -18,6 +18,7 @@ import {
     getItemEntityID,
     getItemKey,
     getItemRevisionKey,
+    getItemTOTPUri,
     getSanitizedUserIdentifiers,
     interpolateRecentItems,
     intoAutofillableCCItem,
@@ -554,6 +555,40 @@ describe('Item utils', () => {
             const result = intoAutofillableCCItem(ccItem, autofilled, false);
             expect(result.number).toBeUndefined();
             expect(result.verificationNumber).toBeUndefined();
+        });
+    });
+
+    describe('getItemTOTPUri', () => {
+        test('should return undefined when item has no TOTP URI and no extra TOTP fields', () => {
+            const login = itemBuilder('login');
+            const item = createTestItem('login', { data: login.data });
+            expect(getItemTOTPUri(item)).toBeUndefined();
+        });
+
+        test('should return top-level TOTP URI when it is set', () => {
+            const totpUri = 'otpauth://totp/Example?secret=AAAA&issuer=Example';
+            const login = itemBuilder('login');
+            login.get('content').set('totpUri', totpUri);
+            const item = createTestItem('login', { data: login.data });
+            expect(getItemTOTPUri(item)).toBe(totpUri);
+        });
+
+        test('should return extra field TOTP URI when top-level TOTP URI is empty', () => {
+            const totpUri = 'otpauth://totp/Example?secret=AAAA&issuer=Example';
+            const login = itemBuilder('login');
+            login.set('extraFields', [{ fieldName: '2FA', type: 'totp', data: { totpUri } }]);
+            const item = createTestItem('login', { data: login.data });
+            expect(getItemTOTPUri(item)).toBe(totpUri);
+        });
+
+        test('should prefer top-level TOTP URI over extra field TOTP URI when both exist', () => {
+            const topLevelTotpUri = 'otpauth://totp/TopLevel?secret=AAAA';
+            const extraFieldTotpUri = 'otpauth://totp/ExtraField?secret=BBBB';
+            const login = itemBuilder('login');
+            login.get('content').set('totpUri', topLevelTotpUri);
+            login.set('extraFields', [{ fieldName: '2FA', type: 'totp', data: { totpUri: extraFieldTotpUri } }]);
+            const item = createTestItem('login', { data: login.data });
+            expect(getItemTOTPUri(item)).toBe(topLevelTotpUri);
         });
     });
 });
