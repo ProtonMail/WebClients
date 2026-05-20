@@ -94,7 +94,7 @@ const stringToInt = (string: string | undefined): number | undefined => {
 
 export const sortToString = (sort: Sort): string | undefined => {
     if (sort.sort === 'SnoozeTime' || sort.sort === 'Time') {
-        return sort.sort === 'Time' && !sort.desc ? 'date' : undefined;
+        return !sort.desc ? 'date' : undefined;
     }
     return sort.desc ? '-size' : 'size';
 };
