@@ -65,11 +65,11 @@ export const CategoriesVisionaryOnboardingModal = () => {
                     .t`Not now`}</Button>,
             ]}
         >
+            <p>{c('Description').t`You’re among the first to try email categories.`}</p>
+            <p>{c('Description').t`It’s still learning and we need your help to improve categorization.`}</p>
+            <p>{c('Description').t`If you find an email in the wrong category, simply move it to the correct one.`}</p>
             <p>{c('Description')
-                .t`Thank you for opting in. As a Visionary user, you’re among the first to try email categories.`}</p>
-            <p>{c('Description').t`To send feedback, simply correct any email that landed in the wrong category.`}</p>
-            <p>{c('Description')
-                .t`You might notice a few quirks and inaccuracies while the feature is still evolving, but every correction you make counts.`}</p>
+                .t`Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!`}</p>
         </Prompt>
     ) : null;
 };
