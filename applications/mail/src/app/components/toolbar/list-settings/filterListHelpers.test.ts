@@ -77,7 +77,7 @@ describe('getActiveState', () => {
 
         it('should treat SnoozeTime asc as non-default sort', () => {
             const result = getActiveState({}, { sort: 'SnoozeTime', desc: false }, MAILBOX_LABEL_IDS.INBOX);
-            const expected = getState({ dropdownActiveCount: 1 });
+            const expected = getState({ dropdownActiveCount: 1, isOldestFirstActive: true });
             expect(result).toEqual(expected);
         });
 
