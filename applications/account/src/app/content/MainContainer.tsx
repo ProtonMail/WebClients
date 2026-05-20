@@ -64,6 +64,7 @@ import type { UserModel } from '@proton/shared/lib/interfaces';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
+import { GetStartedOnboarding } from '@proton/vpn/components/Onboarding';
 import { TVContainer, TvContainerSignedIn } from '@proton/vpn/components/tv';
 
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
@@ -382,6 +383,7 @@ const MainContainer = () => {
             isSmallViewport={viewportWidth['<=small']}
             actionArea={viewportWidth['>=large'] && <SettingsSearch routes={routes} path={pathPrefix} app={app} />}
             app={app}
+            onBoardingButton={app === APPS.PROTONVPN_SETTINGS && <GetStartedOnboarding />}
         />
     );
 
