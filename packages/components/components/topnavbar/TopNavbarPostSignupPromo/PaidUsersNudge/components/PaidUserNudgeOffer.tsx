@@ -20,7 +20,7 @@ import { defaultOfferUpsellConfig, getPlanCopy } from '../helpers/offerConfigHel
 import { getSubscriptionAge, isLastDayOfWindow } from '../helpers/paidUserNudgeHelper';
 import { useGetPlanPriceWithCoupon } from '../hooks/useGetPlanPriceWithCoupon';
 import { usePaidUsersNudgeTelemetry } from '../hooks/usePaidUsersNudgeTelemetry';
-import type { PaidUserConfig } from '../montlyPaidUserNudgeConfig';
+import type { PaidUserConfig } from '../monthlyPaidUserNudgeConfig';
 import { NudgeOfferContent } from './internal/NudgeOfferContent';
 import { NudgeOfferPromoChild } from './internal/NudgeOfferPromoChild';
 import { NudgeOfferSpotlight } from './internal/NudgeOfferSpotlight';
