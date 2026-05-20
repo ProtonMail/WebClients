@@ -4,6 +4,7 @@ import { StandardErrorPage } from '@proton/components';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import AccountSettings from './actions/AccountSettings';
+import { CategoriesLiteView } from './actions/CategoriesLiteView';
 import DeleteAccount from './actions/DeleteAccount';
 import EmailSettings from './actions/EmailSettings';
 import LabelsSettings from './actions/LabelsSettings';
@@ -13,7 +14,6 @@ import SpamFiltersSettings from './actions/SpamFiltersSettings';
 import SubscribeAccount from './actions/SubscribeAccount';
 import VPNLite from './actions/VPNLite';
 import WalletSettings from './actions/WalletSettings';
-import { CategoriesLiteView } from './components/CategoryView/CategoriesLiteView';
 import { SupportedActions } from './helper';
 
 interface Props {
