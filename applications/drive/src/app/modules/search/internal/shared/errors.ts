@@ -30,10 +30,7 @@ type WorkerErrorMessage = {
 };
 
 /**
- * Logs a search error and reports it to Sentry.
- *
- * Automatically calls Logger.error() with the provided message, so callers
- * don't need to log separately.
+ * Reports a search error to Sentry with search metadata.
  *
  * In the SharedWorker, errors are forwarded to the main thread via BroadcastChannel
  * because Sentry is only initialized on the main thread.
@@ -50,8 +47,6 @@ export function sendErrorReportForSearch(
     if (getIsOfflineError(error)) {
         return;
     }
-
-    Logger.error(message, error);
 
     // Normalize into a proper Error and build a shared Sentry context
     // so both the worker (BroadcastChannel) and main-thread paths report identical metadata.
