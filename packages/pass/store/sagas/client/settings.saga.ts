@@ -22,7 +22,7 @@ function* setLocaleSetting(locale: string) {
 }
 
 function* settingsEditWorker(
-    { onLocaleUpdated, onBetaUpdated, onSettingsUpdated }: RootSagaOptions,
+    { onLocaleUpdated, onBetaUpdated }: RootSagaOptions,
     { meta, payload }: WithSenderAction<ReturnType<typeof settingsEditIntent>>
 ) {
     try {
@@ -30,15 +30,13 @@ function* settingsEditWorker(
         if ('disallowedDomains' in payload) prev.disallowedDomains = {};
         const next = merge(prev, payload);
 
-        yield onSettingsUpdated?.(next);
-
         if (payload.locale) {
             yield fork(setLocaleSetting, payload.locale);
             onLocaleUpdated?.(payload.locale);
         }
 
-        if ('beta' in payload) yield onBetaUpdated?.(payload.beta ?? false);
         yield put(settingsEditSuccess(meta.request.id, next, meta.silent, meta.sender?.endpoint));
+        if ('beta' in payload) yield onBetaUpdated?.(payload.beta ?? false);
     } catch (e) {
         yield put(settingsEditFailure(meta.request.id, e, meta.sender?.endpoint));
     }
