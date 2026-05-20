@@ -1281,6 +1281,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Agregar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Regresar al álbum «${ ellipsedAlbumName }»"
       ]
     },
     "Action: Docs": {
@@ -7190,6 +7193,22 @@
       ],
       "File flagged as potentially malicious": [
         "Archivo marcado como potencialmente malicioso"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crear una nube segura para ${ memberCount } miembro",
+        "Crear una nube segura para ${ memberCount } miembros"
+      ],
+      "Photo saved to your Drive": [
+        "Foto guardada en su Drive",
+        "Fotos guardadas en su Drive"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "No pudimos guardar esta foto en su Drive",
+        "No pudimos guardar múltiples fotos en su Drive"
+      ],
+      "We were not able to add this photo to your album": [
+        "No pdimos agregar esta foto en su álbum",
+        "No pudimos agregar algunas fotos en su álbum"
       ]
     },
     "info": {
@@ -9163,6 +9182,15 @@
       ],
       "Dedicated servers optimized for speed": [
         "Servidores dedicados optimizados para velocidad"
+      ],
+      "Access all countries": [
+        "Acceso a todos los países disponibles"
+      ],
+      "No streaming support": [
+        "Sin soporte de streaming"
+      ],
+      "Unlock streaming": [
+        "Desbloquear streaming"
       ]
     },
     "new_plans: feature highlight": {
@@ -9577,6 +9605,10 @@
       "Support for ${ n } custom email domain": [
         "Soporte para ${ n } dominio de correo electrónico personalizado",
         "Soporte para ${ n } dominios de correo personalizados"
+      ],
+      "${ n } country": [
+        "${ n } pais",
+        "${ n } países"
       ]
     },
     "Notification": {
@@ -9976,6 +10008,14 @@
       ],
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "Copia de «${ ellipsedName }» movida a la papelera"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } foto fue añadida a «${ albumName }»",
+        "${ addedUids.length } fotos fueron añadidas a «${ albumName }»"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } foto fue eliminada de «${ albumName }»",
+        "${ removed } fotos fueron eliminadas de «${ albumName }»"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

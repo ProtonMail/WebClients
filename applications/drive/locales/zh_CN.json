@@ -1274,6 +1274,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "返回相册“${ ellipsedAlbumName }”"
       ]
     },
     "Action: Docs": {
@@ -5103,7 +5106,7 @@
         "VPN 会加密您的网络连接并隐藏真实 IP 地址，使第三方极难追踪或监控您的在线活动。"
       ],
       "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "Proton 旗下的 VPN 服务会隐藏您的真实 IP 地址，并对浏览行为进行端到端加密，使网站、广告商和网络服务提供商无法通过长期追踪建立您的数字画像。\n"
+        "VPN 会隐藏您的 IP 地址并加密浏览活动，从而让网站、广告商和 ISP 更难长期追踪您。"
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN 是您的设备与互联网之间的安全加密通道。它能隐藏您的位置和在线活动，避免被互联网服务提供商（ISP）及您访问的网站追踪。"
@@ -7069,6 +7072,18 @@
       ],
       "RECOMMENDED": [
         "推荐"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "为 ${ memberCount } 位成员创建安全云空间"
+      ],
+      "Photo saved to your Drive": [
+        "照片已保存到您的云端硬盘"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "无法将多张照片保存到您的云端硬盘"
+      ],
+      "We were not able to add this photo to your album": [
+        "无法将部分照片添加到您的相册"
       ]
     },
     "info": {
@@ -9729,6 +9744,12 @@
       ],
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "“${ ellipsedName }”的副本已移至回收站"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } 张照片已添加到“${ albumName }”"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } 张照片已从“${ albumName }”中移除"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

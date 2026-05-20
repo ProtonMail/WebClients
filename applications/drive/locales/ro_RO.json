@@ -1288,6 +1288,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Adăugați ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Înapoi la albumul „${ ellipsedAlbumName }”"
       ]
     },
     "Action: Docs": {
@@ -7299,6 +7302,26 @@
       ],
       "RECOMMENDED": [
         "RECOMANDAT"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Creați un cont în cloud securizat pentru ${ memberCount } membru",
+        "Creați un cont cloud securizat pentru ${ memberCount } membri",
+        "Creați un cont cloud securizat pentru ${ memberCount } de membri"
+      ],
+      "Photo saved to your Drive": [
+        "Fotografia a fost salvată în Drive.",
+        "Fotografiile au fost salvate în Drive.",
+        "Fotografiile au fost salvate în Drive."
+      ],
+      "We couldn't save this photo to your Drive": [
+        "Fotografia nu a putut fi salvată în Drive.",
+        "Câteva fotografii nu au putut fi salvate în Drive.",
+        "Câteva fotografii nu au putut fi salvate în Drive."
+      ],
+      "We were not able to add this photo to your album": [
+        "Această fotografie nu a putut fi adăugată în album.",
+        "Câteva fotografii nu au putut fi adăugate în album.",
+        "Câteva fotografii nu au putut fi adăugate în album."
       ]
     },
     "info": {
@@ -10114,6 +10137,16 @@
       ],
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "Copia lui „${ ellipsedName }” a fost mutată în gunoi."
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "Fotografii adăugate în albumul „${ albumName }”: ${ addedUids.length }",
+        "Fotografii adăugate în albumul „${ albumName }”: ${ addedUids.length }",
+        "Fotografii adăugate în albumul „${ albumName }”: ${ addedUids.length }"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "Fotografii eliminate din albumul „${ albumName }”: ${ removed }",
+        "Fotografii eliminate din albumul „${ albumName }”: ${ removed }",
+        "Fotografii eliminate din albumul „${ albumName }”: ${ removed }"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

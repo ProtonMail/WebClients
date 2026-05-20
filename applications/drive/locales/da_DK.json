@@ -1281,6 +1281,9 @@
       ],
       "Search is unavailable": [
         "Søgning utilgængelig"
+      ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Gå tilbage til albummet “${ ellipsedAlbumName }\""
       ]
     },
     "Action: Docs": {
@@ -7177,6 +7180,22 @@
       ],
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
         "Din browser løb tør for plads under indekseringen af filer til søgning. Frigør lagerplads, og opret derefter indekset igen."
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Opret en sikker sky til ${ memberCount } medlem",
+        "Opret en sikker sky til ${ memberCount } medlemmer"
+      ],
+      "Photo saved to your Drive": [
+        "Foto gemt til dit drev",
+        "Fotos gemt til dit drev"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "Vi kunne ikke gemme dette foto til dit drev",
+        "Vi kunne ikke gemme flere forskellige fotos til dit drev"
+      ],
+      "We were not able to add this photo to your album": [
+        "Vi kunne ikke tilføje dette foto til dit album",
+        "Vi kunne ikke tilføje nogle billeder til dit album"
       ]
     },
     "info": {
@@ -9916,6 +9935,14 @@
       ],
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "Kopi af \"${ ellipsedName }\" flyttet til papirkurv"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } foto er blevet tilføjet til \"${ albumName }\"",
+        "${ addedUids.length } fotos er blevet tilføjet til \"${ albumName }\""
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } foto er blevet fjernet fra \"${ albumName }\"",
+        "${ removed } fotos er blevet fjernet fra \"${ albumName }\""
       ]
     },
     "Notification for duplicate filenames in the current upload": {

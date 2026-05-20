@@ -1281,6 +1281,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Torneu a l'àlbum \"${ ellipsedAlbumName }\""
       ]
     },
     "Action: Docs": {
@@ -7190,6 +7193,22 @@
       ],
       "RECOMMENDED": [
         "RECOMANAT"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crea un núvol segur per a ${ memberCount } membre",
+        "Crea un núvol segur per a ${ memberCount } membres"
+      ],
+      "Photo saved to your Drive": [
+        "S'ha desat la foto al Drive",
+        "S'han desat les foto al Drive"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "No s'ha pogut desar aquesta foto al Drive",
+        "No s'han pogut desar aquestes fotos al Drive"
+      ],
+      "We were not able to add this photo to your album": [
+        "No s'ha pogut afegir aquesta foto a l'àlbum",
+        "No s'han pogut afegir algunes fotos a l'àlbum"
       ]
     },
     "info": {
@@ -9989,6 +10008,14 @@
       ],
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "La còpia de \"${ ellipsedName }\" s'ha mogut a la paperera"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "S'ha afegit ${ addedUids.length } foto a \"${ albumName }\"",
+        "S'han afegit ${ addedUids.length } fotos a \"${ albumName }\""
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "S'ha esborrat ${ removed } foto de \"${ albumName }\"",
+        "S'han esborrat ${ removed } fotos de \"${ albumName }\""
       ]
     },
     "Notification for duplicate filenames in the current upload": {
