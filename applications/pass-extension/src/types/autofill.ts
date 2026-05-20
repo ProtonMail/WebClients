@@ -12,7 +12,7 @@ export type WithAutofillOrigin<T> = T &
     };
 
 export type AutofillActionType = 'creditCard' | 'login' | 'identity' | 'email' | 'password';
-export type AutofillItem = WithAutofillOrigin<SelectedItem>;
+export type AutofillItem = WithAutofillOrigin<SelectedItem & { notification?: string }>;
 export type AutofillValue = WithAutofillOrigin<{ value: string }>;
 
 export type AbstractAutofillDTO<T extends Record<AutofillActionType, any>> = {
@@ -40,7 +40,7 @@ export type AutofillStatus = AutofillSequence['status'];
 export type AutofillRequest<T extends AutofillStatus = AutofillStatus> = Extract<
     AutofillSequence<
         AbstractAutofillDTO<{
-            login: SelectedItem & { credentials: FormCredentials; field: FrameField };
+            login: SelectedItem & { credentials: FormCredentials; field: FrameField; notification?: string };
             identity: SelectedItem & { identity: ItemContent<'identity'>; field: FrameField };
             /** Credit card autofill request payload. The data field is partial to support
              * cross-origin autofill scenarios where sensitive fields (number, CVV) must be

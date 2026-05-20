@@ -19,14 +19,16 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Marks from '@proton/components/components/text/Marks';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { matchChunks } from '@proton/pass/lib/search/match-chunks';
+import type { UniqueItem } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
 import type { AutofillLoginResult } from '@proton/pass/types/worker/autofill';
 import { partOf, truthy } from '@proton/pass/utils/fp/predicates';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -37,6 +39,7 @@ type Props = Extract<DropdownActions, { action: DropdownAction.AUTOFILL_LOGIN }>
 export const AutofillLogin: FC<Props> = ({ startsWith, action, ...payload }) => {
     const { settings, visible } = useIFrameAppState();
     const controller = useIFrameAppController();
+    const { writeToClipboard } = usePassCore();
 
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_AUTOFILL });
 
@@ -79,6 +82,31 @@ export const AutofillLogin: FC<Props> = ({ startsWith, action, ...payload }) => 
         }
     }, [visible]);
 
+    const handleAutofill = async ({ shareId, itemId }: UniqueItem) => {
+        let notification: Maybe<string>;
+
+        if (settings.autofill?.twofaCopy) {
+            const otpRes = await sendMessage(
+                contentScriptMessage({
+                    type: WorkerMessageType.OTP_CODE_GENERATE,
+                    payload: { type: 'item', item: { shareId, itemId } },
+                })
+            );
+
+            if (otpRes.type === 'success' && otpRes.token) {
+                await writeToClipboard(otpRes.token, undefined);
+                notification = c('Info').t`2FA code copied to clipboard`;
+            }
+        }
+
+        controller.forwardMessage({
+            type: InlinePortMessageType.AUTOFILL_ACTION,
+            payload: { ...payload, type: 'login', itemId, shareId, notification },
+        });
+
+        controller.close({ userAction: true });
+    };
+
     const dropdownItems = useMemo(
         () =>
             state
@@ -111,13 +139,7 @@ export const AutofillLogin: FC<Props> = ({ startsWith, action, ...payload }) => 
                                       icon: 'user',
                                       url: settings.loadDomainImages ? url : undefined,
                                   }}
-                                  onClick={() => {
-                                      controller.forwardMessage({
-                                          type: InlinePortMessageType.AUTOFILL_ACTION,
-                                          payload: { ...payload, type: 'login', itemId, shareId },
-                                      });
-                                      controller.close({ userAction: true });
-                                  }}
+                                  onClick={() => handleAutofill({ shareId, itemId })}
                               />
                           );
                       }),
