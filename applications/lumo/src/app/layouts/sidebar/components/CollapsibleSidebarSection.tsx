@@ -54,7 +54,13 @@ export const CollapsibleSidebarSection = ({
                     <span className="collapsible-section--title overflow-hidden text-ellipsis">{label}</span>
                     {labelExtra}
                     {isHovered && (
-                        <Icon name={isExpanded ? 'chevron-down' : 'chevron-right'} size={3} className="shrink-0" />
+                        <>
+                            {isExpanded ? (
+                                <IcChevronDown size={3} className="shrink-0" />
+                            ) : (
+                                <IcChevronRight size={3} className="shrink-0" />
+                            )}
+                        </>
                     )}
                 </span>
                 {!isSmallScreen && actionButton}
