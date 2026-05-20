@@ -12,8 +12,10 @@ import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
 import { changeCreateLoadingState } from '@proton/activation/src/logic/sync/sync.actions';
 import { Button } from '@proton/atoms/Button/Button';
 import { useModalState } from '@proton/components';
+import useNotifications from '@proton/components/hooks/useNotifications.tsx';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import useBYOEAddressesCounts from '../../hooks/useBYOEAddressesCounts';
 import BYOEConversionModal from '../Modals/BYOEConversionModal/BYOEConversionModal';
@@ -36,7 +38,9 @@ const ConnectGmailButton = ({
     buttonText = c('Action').t`Set up auto-forwarding from Gmail`,
     onComplete,
 }: Props) => {
+    const { createNotification } = useNotifications();
     const easySwitchDispatch = useEasySwitchDispatch();
+    const createBYOEDisabled = useFlag('CreateInboxBringYourOwnEmailDisabled');
 
     const [user, loadingUser] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
@@ -82,6 +86,15 @@ const ConnectGmailButton = ({
         if (!addresses) {
             return;
         }
+
+        if (hasAccessToBYOE && createBYOEDisabled) {
+            createNotification({
+                type: 'info',
+                text: c('Info').t`Temporarily unavailable due to high demand. Please try again later.`,
+            });
+            return;
+        }
+
         // Users should see a limit or upsell modal if reaching the maximum of BYOE addresses included in their plan.
         if (!hasPaidMail(user) && activeBYOEAddresses.length >= MAX_SYNC_FREE_USER) {
             setUpsellForwardingModalOpen(true);

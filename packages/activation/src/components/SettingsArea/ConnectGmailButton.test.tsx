@@ -50,6 +50,14 @@ jest.mock('../../hooks/useBYOEFeatureStatus', () => ({
     },
 }));
 
+jest.mock('@proton/unleash/useFlag', () => ({
+    useFlag: jest.fn(),
+}));
+
+jest.mock('@proton/components/hooks/useNotifications', () => () => ({
+    createNotification: jest.fn(),
+}));
+
 describe('ConnectGmailButton', () => {
     beforeEach(() => {
         mockUseUser.mockReturnValue([{}, false]);
