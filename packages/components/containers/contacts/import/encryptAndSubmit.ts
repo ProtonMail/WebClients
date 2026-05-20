@@ -9,7 +9,6 @@ import { IMPORT_CONTACT_ERROR_TYPE, ImportContactError } from '@proton/shared/li
 import { extractContactImportCategories, getContactId, splitErrors } from '@proton/shared/lib/contacts/helpers/import';
 import { getContactCategories, getContactEmails } from '@proton/shared/lib/contacts/properties';
 import { prepareForSaving } from '@proton/shared/lib/contacts/surgery';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Api, KeyPair, Label, SimpleMap } from '@proton/shared/lib/interfaces';
 import type { ImportCategories, ImportedContact } from '@proton/shared/lib/interfaces/contacts';
 import { IMPORT_GROUPS_ACTION } from '@proton/shared/lib/interfaces/contacts';
@@ -25,6 +24,10 @@ import uniqueBy from '@proton/utils/uniqueBy';
 
 const { SINGLE_SUCCESS } = API_CODES;
 const BATCH_SIZE = 10;
+// API limit is 100 calls per 10 seconds. We'll make batches of 10 requests (10 contacts per request),
+// targeting a limit of 9req/s maximum to avoid the rate limit
+const SUBMIT_CONCURRENCY = 10;
+const MIN_GROUP_INTERVAL_MS = Math.ceil((SUBMIT_CONCURRENCY / 9) * 1000);
 
 const encryptContact = async (contact: VCardContact, { privateKey, publicKey }: KeyPair) => {
     try {
@@ -118,37 +121,41 @@ export const processContactsInBatches = async ({
     onProgress,
 }: ProcessData) => {
     const batches = chunk(contacts, BATCH_SIZE);
-    const promises = [];
+    const batchGroups = chunk(batches, SUBMIT_CONCURRENCY);
     const imported: ImportedContact[][] = [];
 
-    for (let i = 0; i < batches.length; i++) {
-        // The API requests limit for the submit route are 100 calls per 10 seconds
-        // We play it safe by enforcing a 100ms minimum wait between API calls. During this wait we encrypt the contacts
+    // To avoid the rate limit from the api (which is 100 requests in 10s), make batches of 10 requests.
+    // In case the api is super fast, wait for the remaining time to prevent passing over this limit
+    for (const batchGroup of batchGroups) {
         if (signal.aborted) {
             return [];
         }
-        const batchedContacts = batches[i];
-        const [result] = await Promise.all([
-            Promise.all(batchedContacts.map((contacts) => encryptContact(contacts, keyPair))),
-            wait(100),
-        ]);
-        const { errors, rest: encrypted } = splitErrors(result);
-        if (signal.aborted) {
-            return [];
-        }
-        onProgress(encrypted, [], errors);
-        if (encrypted.length) {
-            const promise = submitContacts({ contacts: encrypted, labels, overwrite, isImport, api }).then(
-                (result: (ImportedContact | ImportContactError)[]) => {
-                    const { errors, rest: importedSuccess } = splitErrors(result);
-                    imported.push(importedSuccess);
-                    onProgress([], importedSuccess, errors);
+
+        const results = await Promise.all(
+            batchGroup.map(async (batch) => {
+                const encryptedContacts = await Promise.all(batch.map((contact) => encryptContact(contact, keyPair)));
+
+                const { errors: encryptErrors, rest: encrypted } = splitErrors(encryptedContacts);
+                onProgress(encrypted, [], encryptErrors);
+
+                if (!encrypted.length || signal.aborted) {
+                    return [];
                 }
-            );
-            promises.push(promise);
-        }
+
+                const submitResults = await submitContacts({ contacts: encrypted, labels, overwrite, isImport, api });
+                const { errors: submitErrors, rest: importedSuccess } = splitErrors(submitResults);
+                onProgress([], importedSuccess, submitErrors);
+                return importedSuccess;
+            })
+        );
+
+        imported.push(...results);
+
+        // Always wait MIN_GROUP_INTERVAL_MS between groups regardless of how long the group took.
+        // This prevents slow groups from consuming the timing buffer and causing the next group
+        // to fire immediately, which would create back-to-back bursts that trigger 429s.
+        await new Promise<void>((resolve) => setTimeout(resolve, MIN_GROUP_INTERVAL_MS));
     }
-    await Promise.all(promises);
 
     return imported.flat();
 };
