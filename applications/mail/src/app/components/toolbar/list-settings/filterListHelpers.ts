@@ -14,16 +14,17 @@ export const getActiveState = (filter: Filter, sort: Sort, labelID: string) => {
     const isScheduledLabel = labelID === MAILBOX_LABEL_IDS.SCHEDULED;
     const isInboxOrSnooze = labelID === MAILBOX_LABEL_IDS.INBOX || labelID === MAILBOX_LABEL_IDS.SNOOZED;
 
-    let isNewestFirstActive =
-        (sort.sort === 'Time' || (isInboxOrSnooze && sort.sort === 'SnoozeTime')) && sort.desc === true;
-    let isOldestFirstActive = sort.sort === 'Time' && sort.desc === false;
+    const timeSort = sort.sort === 'Time' || (isInboxOrSnooze && sort.sort === 'SnoozeTime');
+
+    let isNewestFirstActive = timeSort && sort.desc === true;
+    let isOldestFirstActive = timeSort && sort.desc === false;
     let isNonDefaultSort = !isNewestFirstActive;
     let dropdownActiveCount = (isDropdownFilterActive ? 1 : 0) + (isNonDefaultSort ? 1 : 0);
 
     // In scheduled, desc=false means "soonest to send" (newest first)
     if (isScheduledLabel) {
-        isNewestFirstActive = sort.sort === 'Time' && sort.desc === false;
-        isOldestFirstActive = sort.sort === 'Time' && sort.desc === true;
+        isNewestFirstActive = timeSort && sort.desc === false;
+        isOldestFirstActive = timeSort && sort.desc === true;
         isNonDefaultSort = !isNewestFirstActive;
         dropdownActiveCount = (isDropdownFilterActive ? 1 : 0) + (isNonDefaultSort ? 1 : 0);
     }

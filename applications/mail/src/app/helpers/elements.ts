@@ -149,7 +149,7 @@ export const sort = (elements: Element[], sort: Sort, labelID: string) => {
     const compare = (a: Element, b: Element) => {
         let valueA = getValue(a, labelID);
         let valueB = getValue(b, labelID);
-        if (valueA === valueB && sort.sort === 'Time') {
+        if (valueA === valueB && (sort.sort === 'Time' || sort.sort === 'SnoozeTime')) {
             valueA = a.Order || 0;
             valueB = b.Order || 0;
         }
