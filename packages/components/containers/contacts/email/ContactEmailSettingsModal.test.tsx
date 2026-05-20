@@ -1,7 +1,7 @@
+import { CryptoProxy } from '@protontech/crypto';
 import { fireEvent, screen, waitFor, within } from '@testing-library/react';
 
 import { useUserSettings } from '@proton/account';
-import { CryptoProxy } from '@protontech/crypto';
 import { API_CODES, API_KEY_SOURCE, CONTACT_CARD_TYPE, KEY_FLAG } from '@proton/shared/lib/constants';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import type { RequireSome, UserSettings } from '@proton/shared/lib/interfaces';
@@ -619,7 +619,11 @@ END:VCARD`;
                     Keys: [
                         {
                             PublicKey: 'mocked armored key',
-                            Flags: KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT | KEY_FLAG.FLAG_NOT_COMPROMISED,
+                            Flags:
+                                KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT |
+                                KEY_FLAG.FLAG_NOT_COMPROMISED |
+                                KEY_FLAG.FLAG_NOT_OBSOLETE,
+                            Primary: 1,
                         },
                     ],
                 },
@@ -665,6 +669,16 @@ END:VCARD`;
         fireEvent.click(dropdownButton);
         const trustKeyButton = screen.getByText('Trust');
         fireEvent.click(trustKeyButton);
+
+        const table = await screen.findByTestId('contact-keys-table');
+        const rows = await within(table).findAllByRole('row');
+        expect(rows.length).toBe(1);
+        const expectedRowPrimaryKey = rows[0];
+        // no primary label with e2ee disabled
+        expect(within(expectedRowPrimaryKey).queryByTestId('primary-key-label')).toBeNull();
+        // active signer label should be shown even if e2ee is disabled
+        const activeSignerLabel = await within(expectedRowPrimaryKey).findByTestId('active-signer-key-label');
+        expect(activeSignerLabel).toBeVisible();
 
         const saveButton = screen.getByText('Save');
         fireEvent.click(saveButton);
@@ -913,8 +927,8 @@ END:VCARD`;
                 const rows = await within(table).findAllByRole('row');
                 expect(rows.length).toBe(2);
 
-                const expectedRowPrimaryKeyV6 = rows[withV6Support ? 0 : 1];
-                const expectedRowPrimaryKeyV4 = rows[withV6Support ? 1 : 0];
+                const expectedRowPrimaryKeyV6 = rows[0];
+                const expectedRowPrimaryKeyV4 = rows[1];
 
                 const v6KeyFingerprint = await within(expectedRowPrimaryKeyV6).findByText(
                     'internally mocked armored key v6'
@@ -926,12 +940,19 @@ END:VCARD`;
                     const primaryLabel = await within(expectedRowPrimaryKeyV6).findByTestId('primary-key-label');
                     expect(primaryLabel).toBeVisible();
                     expect(within(expectedRowPrimaryKeyV4).queryByTestId('primary-key-label')).toBeNull();
+                    // fallback label should not be displayed when v6 support is enabled
+                    expect(within(expectedRowPrimaryKeyV6).queryByTestId('fallback-key-label')).toBeNull();
+                    expect(within(expectedRowPrimaryKeyV4).queryByTestId('fallback-key-label')).toBeNull();
                     // the v6 can only be trusted if user settings declare support for it
                     expect(within(rows[0]).getByTitle('Open actions dropdown')).toBeVisible();
                 } else {
-                    const primaryLabel = await within(expectedRowPrimaryKeyV4).findByTestId('primary-key-label');
+                    const primaryLabel = await within(expectedRowPrimaryKeyV6).findByTestId('primary-key-label');
                     expect(primaryLabel).toBeVisible();
-                    expect(within(expectedRowPrimaryKeyV6).queryByTestId('primary-key-label')).toBeNull();
+                    expect(within(expectedRowPrimaryKeyV4).queryByTestId('primary-key-label')).toBeNull();
+                    // the fallback label should be present when v6 support is not enabled
+                    const fallbackLabel = await within(expectedRowPrimaryKeyV4).findByTestId('fallback-key-label');
+                    expect(fallbackLabel).toBeVisible();
+                    expect(within(expectedRowPrimaryKeyV6).queryByTestId('fallback-key-label')).toBeNull();
 
                     expect(within(expectedRowPrimaryKeyV6).queryByTitle('Open actions dropdown')).toBeNull();
                 }
@@ -940,7 +961,20 @@ END:VCARD`;
                     'internally mocked armored key v4'
                 );
                 expect(v4KeyFingerprint).toBeVisible();
-                expect(within(expectedRowPrimaryKeyV4).getByTitle('Open actions dropdown')).toBeVisible(); // can trust a v4 key
+                // the active signer label should not be displayed without pinned keys
+                expect(within(expectedRowPrimaryKeyV6).queryByTestId('active-signer-key-label')).toBeNull();
+                expect(within(expectedRowPrimaryKeyV4).queryByTestId('active-signer-key-label')).toBeNull();
+
+                const dropdownButton = within(expectedRowPrimaryKeyV4).getByTitle('Open actions dropdown');
+                expect(dropdownButton).toBeVisible(); // can trust a v4 key
+                fireEvent.click(dropdownButton);
+                const trustKeyButton = screen.getByText('Trust');
+                fireEvent.click(trustKeyButton);
+                // active signer label should be shown for the v4 key only
+                const activeSignerLabel = await within(expectedRowPrimaryKeyV4).findByTestId('active-signer-key-label');
+                expect(activeSignerLabel).toBeVisible();
+                expect(within(expectedRowPrimaryKeyV6).queryByTestId('active-signer-key-label')).toBeNull();
+                // no need to save contact changes for this test
 
                 unmount();
             };

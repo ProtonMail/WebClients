@@ -1,5 +1,6 @@
-import type { ChangeEvent, Dispatch, SetStateAction } from 'react';
+import { type ChangeEvent, type Dispatch, type SetStateAction, useState } from 'react';
 
+import { CryptoProxy, KeyCompatibilityLevel } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
@@ -10,7 +11,6 @@ import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { CryptoProxy, KeyCompatibilityLevel } from '@protontech/crypto';
 import type { CONTACT_PGP_SCHEMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -19,7 +19,7 @@ import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import { getIsValidForSending, getKeyEncryptionCapableStatus } from '@proton/shared/lib/keys/publicKeys';
 
 import SelectKeyFiles from '../../keys/shared/SelectKeyFiles';
-import ContactKeysTable from './ContactKeysTable';
+import ContactKeysTable, { activeSignerText } from './ContactKeysTable';
 import ContactSchemeSelect from './ContactSchemeSelect';
 import SignEmailsSelect from './SignEmailsSelect';
 
@@ -32,6 +32,7 @@ interface Props {
 
 const ContactPGPSettings = ({ model, setModel, mailSettings, supportV6Keys }: Props) => {
     const { createNotification } = useNotifications();
+    const [warnActiveSignerNotPinned, setWarnActiveSignerNotPinned] = useState(false);
 
     const hasApiKeys = !!model.publicKeys.apiKeys.length; // internal or WKD keys
     const hasPinnedKeys = !!model.publicKeys.pinnedKeys.length;
@@ -163,6 +164,11 @@ const ContactPGPSettings = ({ model, setModel, mailSettings, supportV6Keys }: Pr
                     </div>
                 </Alert>
             )}
+            {warnActiveSignerNotPinned && (
+                <Alert className="mb-4" type="warning">
+                    {c('Info').t`Trust the "${activeSignerText}" key to verify new messages from this contact.`}
+                </Alert>
+            )}
             {model.isPGPExternal && (
                 <>
                     <Row>
@@ -253,7 +259,12 @@ const ContactPGPSettings = ({ model, setModel, mailSettings, supportV6Keys }: Pr
                 </Row>
             )}
             {(hasApiKeys || hasPinnedKeys) && (
-                <ContactKeysTable model={model} setModel={setModel} supportV6Keys={supportV6Keys} />
+                <ContactKeysTable
+                    model={model}
+                    setModel={setModel}
+                    setWarnActiveSignerNotPinned={setWarnActiveSignerNotPinned}
+                    supportV6Keys={supportV6Keys}
+                />
             )}
         </>
     );
