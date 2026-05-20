@@ -49,6 +49,7 @@ import { WebRtcUnsupportedModal } from '../../components/WebRtcUnsupportedModal/
 import { MEETING_LOCKED_ERROR_CODE } from '../../constants';
 import { MLSContext } from '../../contexts/MLSContext';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
+import { MeetingRecorderProvider } from '../../contexts/MeetingRecorderContext';
 import { useWasmApp } from '../../contexts/WasmContext';
 import { useIsRecordingInProgressReceiver } from '../../hooks/bridges/useIsRecordingInProgressReceiver';
 import type { SRPHandshakeInfo } from '../../hooks/srp/useMeetSrp';
@@ -1175,38 +1176,40 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
                 )}
                 {isMeetingLockedModalOpen && <MeetingLockedModal onClose={() => setIsMeetingLockedModalOpen(false)} />}
                 {(joinedRoom || isReconnecting || reconnectionFailed) && room && displayName ? (
-                    <MeetContainer
-                        displayName={displayName}
-                        handleLeave={handleLeave}
-                        handleEndMeeting={handleEndMeeting}
-                        handleMeetingExpired={handleMeetingExpired}
-                        shareLink={shareLink}
-                        roomName={meetingDetails.meetingName as string}
-                        passphrase={password}
-                        handleMeetingLockToggle={handleMeetingLockToggle}
-                        isDisconnected={isReconnecting || reconnectionFailed}
-                        startPiP={startPiP}
-                        stopPiP={stopPiP}
-                        pictureInPictureWarmup={pictureInPictureWarmup}
-                        pipCleanup={pipCleanup}
-                        preparePictureInPicture={preparePictureInPicture}
-                        locked={meetingDetails.locked}
-                        maxDuration={meetingDetails.maxDuration}
-                        maxParticipants={meetingDetails.maxParticipants}
-                        instantMeeting={instantMeetingRef.current}
-                        assignHost={assignHost}
-                        getKeychainIndexInformation={getKeychainIndexInformation}
-                        expirationTime={meetingDetails.expirationTime}
-                        isGuestAdmin={isGuestAdminRef.current}
-                        isUsingTurnRelay={isUsingTurnRelay}
-                        liveKitConnectionState={liveKitConnectionState}
-                        showReconnectedMessage={showReconnectedMessage}
-                        setShowReconnectedMessage={setShowReconnectedMessage}
-                        setLiveKitConnectionState={setLiveKitConnectionState}
-                        isReconnecting={isReconnecting}
-                        mlsRetrying={mlsRetrying}
-                        onSimulateReconnection={() => setReconnectionFailed(true)}
-                    />
+                    <MeetingRecorderProvider>
+                        <MeetContainer
+                            displayName={displayName}
+                            handleLeave={handleLeave}
+                            handleEndMeeting={handleEndMeeting}
+                            handleMeetingExpired={handleMeetingExpired}
+                            shareLink={shareLink}
+                            roomName={meetingDetails.meetingName as string}
+                            passphrase={password}
+                            handleMeetingLockToggle={handleMeetingLockToggle}
+                            isDisconnected={isReconnecting || reconnectionFailed}
+                            startPiP={startPiP}
+                            stopPiP={stopPiP}
+                            pictureInPictureWarmup={pictureInPictureWarmup}
+                            pipCleanup={pipCleanup}
+                            preparePictureInPicture={preparePictureInPicture}
+                            locked={meetingDetails.locked}
+                            maxDuration={meetingDetails.maxDuration}
+                            maxParticipants={meetingDetails.maxParticipants}
+                            instantMeeting={instantMeetingRef.current}
+                            assignHost={assignHost}
+                            getKeychainIndexInformation={getKeychainIndexInformation}
+                            expirationTime={meetingDetails.expirationTime}
+                            isGuestAdmin={isGuestAdminRef.current}
+                            isUsingTurnRelay={isUsingTurnRelay}
+                            liveKitConnectionState={liveKitConnectionState}
+                            showReconnectedMessage={showReconnectedMessage}
+                            setShowReconnectedMessage={setShowReconnectedMessage}
+                            setLiveKitConnectionState={setLiveKitConnectionState}
+                            isReconnecting={isReconnecting}
+                            mlsRetrying={mlsRetrying}
+                            onSimulateReconnection={() => setReconnectionFailed(true)}
+                        />
+                    </MeetingRecorderProvider>
                 ) : (
                     <PrejoinContainer
                         handleJoin={instantMeetingRef.current ? joinInstantMeeting : joinMeeting}
