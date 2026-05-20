@@ -31,7 +31,7 @@ const MailSearchInput = ({ value, onOpen, onClearSearch, loading, adaptWidth }: 
     };
 
     return (
-        <div className={clsx('searchbox flex pl-1', adaptWidth && 'searchbox--adaptWidth')} role="search">
+        <div className={clsx('searchbox flex pl-3 ml-0.5', adaptWidth && 'searchbox--adaptWidth')} role="search">
             <div ref={ref} className="w-full m-auto">
                 <Input
                     ref={inputRef}
