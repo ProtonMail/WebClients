@@ -10,8 +10,13 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import { FeatureCode, useFeatures } from '@proton/features';
+import { getCategoryData } from '@proton/mail/features/categoriesView/categoriesHelpers';
+import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
+import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
+import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
@@ -30,6 +35,8 @@ import SpyTrackerIcon from '../../list/spy-tracker/SpyTrackerIcon';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import RecipientItem from '../recipients/RecipientItem';
 import RecipientsDetails from '../recipients/RecipientsDetails';
+
+import '../../categoryView/categoriesTabs/CategoriesTabs.scss';
 
 interface Props extends ModalProps {
     labelID: string;
@@ -53,6 +60,8 @@ const MessageDetailsModal = ({
 }: Props) => {
     const { getFeature } = useFeatures([FeatureCode.NumAttachmentsWithoutEmbedded]);
     const { feature: numAttachmentsWithoutEmbeddedFeature } = getFeature(FeatureCode.NumAttachmentsWithoutEmbedded);
+
+    const { categoryViewAccess } = useCategoriesData();
 
     const { onClose } = rest;
 
@@ -104,6 +113,11 @@ const MessageDetailsModal = ({
         : attachmentsText;
 
     const sender = message.data?.Sender;
+
+    const categoryLabels = message.data?.LabelIDs.filter((label) => isCategoryLabel(label)) || [];
+    const categoryID = categoryLabels.length > 1 ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT : categoryLabels[0];
+    const categoryLabel = getLabelFromCategoryId(categoryID);
+    const category = getCategoryData(categoryID);
 
     return (
         <ModalTwo data-testid="message-details:modal" {...rest}>
@@ -184,6 +198,24 @@ const MessageDetailsModal = ({
                             {locationText}
                         </span>
                     </div>
+                    {/* Only show category when the user is viewing a message in the inbox */}
+                    {categoryViewAccess && labelID === MAILBOX_LABEL_IDS.INBOX && (
+                        <div className="mb-2 flex flex-nowrap">
+                            <span className="mr-2 flex">
+                                <span className="m-auto flex">
+                                    <Icon
+                                        alt={c('Label').t`Category:`}
+                                        className="mail-category-color"
+                                        name={category.outlinedIcon}
+                                        data-color={category.colorShade}
+                                    />
+                                </span>
+                            </span>
+                            <span className="pl-1 flex-1 text-ellipsis" title={categoryLabel}>
+                                {categoryLabel}
+                            </span>
+                        </div>
+                    )}
                     <div className="mb-2 flex flex-nowrap" data-testid="message-details:size">
                         <span className="mr-2 flex">
                             <Icon name="filing-cabinet" className="m-auto" alt={c('Label').t`Size:`} />
