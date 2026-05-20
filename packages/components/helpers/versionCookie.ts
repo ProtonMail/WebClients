@@ -18,7 +18,7 @@ export const getTargetEnvironment = (
         return;
     }
 
-    return earlyAccessScope.Value;
+    return earlyAccessScope.Value ?? earlyAccessScope.DefaultValue;
 };
 
 export const updateVersionCookieHelper = (
