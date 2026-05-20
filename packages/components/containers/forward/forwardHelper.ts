@@ -37,3 +37,18 @@ export const getIsLastOutgoingNonE2EEForwarding = (
     );
     return nonE2EEForwardings.length <= 1;
 };
+
+export const getIsLastOutgoingE2EEForwarding = (
+    outgoingForwardingConfig: OutgoingAddressForwarding,
+    allOutgoingForwardingConfigs: OutgoingAddressForwarding[]
+): boolean => {
+    if (outgoingForwardingConfig.Type === ForwardingType.ExternalUnencrypted) {
+        return false;
+    }
+    const E2EEForwardings = allOutgoingForwardingConfigs.filter(
+        (f) =>
+            (f.Type === ForwardingType.ExternalEncrypted || f.Type === ForwardingType.InternalEncrypted) &&
+            f.ForwarderAddressID === outgoingForwardingConfig.ForwarderAddressID
+    );
+    return E2EEForwardings.length <= 1;
+};

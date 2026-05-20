@@ -11,7 +11,7 @@ import type { Address, OutgoingAddressForwarding, UserModel } from '@proton/shar
 import ForwardStatus from './ForwardStatus';
 import OutgoingForwardActions from './OutgoingForwardActions';
 import WarningChainedForwarding from './WarningChainedForwarding';
-import { getIsLastOutgoingNonE2EEForwarding } from './forwardHelper';
+import { getIsLastOutgoingE2EEForwarding, getIsLastOutgoingNonE2EEForwarding } from './forwardHelper';
 
 interface Props {
     addresses: Address[];
@@ -75,6 +75,10 @@ const OutgoingForwardTable = ({ addresses, loading, outgoingAddressForwardings, 
                                     user={user}
                                     existingForwardingConfig={forwardingConfig}
                                     isLastOutgoingNonE2EEForwarding={getIsLastOutgoingNonE2EEForwarding(
+                                        forwardingConfig,
+                                        outgoingAddressForwardings
+                                    )}
+                                    isLastOutgoingE2EEForwarding={getIsLastOutgoingE2EEForwarding(
                                         forwardingConfig,
                                         outgoingAddressForwardings
                                     )}
