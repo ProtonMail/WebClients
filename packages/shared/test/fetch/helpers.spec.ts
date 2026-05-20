@@ -50,5 +50,15 @@ describe('fetch helpers', () => {
             const headers = new Headers({ date: 'invalid-date' });
             expect(getDateHeader(headers)).toBeUndefined();
         });
+
+        it('should return the Date from the custom date header if present', () => {
+            const headers = new Headers({
+                date: 'Wed, 26 Jun 2024 12:00:00 GMT',
+                'x-pm-date': 'Thu, 1 Jan 2026 12:00:00 GMT',
+            });
+            const result = getDateHeader(headers);
+            expect(result).toBeInstanceOf(Date);
+            expect(result?.toISOString()).toBe('2026-01-01T12:00:00.000Z');
+        });
     });
 });
