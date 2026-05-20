@@ -100,7 +100,8 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
     );
 
     useEffect(() => {
-        /** Rely on `BreachesUpdate` when `SyncStrategy.USER_EVENTS` */
+        /** Rely on `BreachesUpdate` when `SyncStrategy.USER_EVENTS`.
+         * NOTE: `syncStrategy` is set/updated ONLY during boot. */
         if (syncStrategy === SyncStrategy.LEGACY) loadBreaches.dispatch();
     }, []);
 
