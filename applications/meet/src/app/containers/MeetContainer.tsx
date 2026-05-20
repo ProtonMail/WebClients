@@ -12,10 +12,9 @@ import { DebugOverlay, useDebugOverlay } from '../components/DebugOverlay/DebugO
 // eslint-disable-next-line import/no-cycle
 import { MeetingBody } from '../components/MeetingBody/MeetingBody';
 import { MeetContext } from '../contexts/MeetContext';
-import { MeetingRecorderContext } from '../contexts/MeetingRecorderContext';
+import { useMeetingRecorderContext } from '../contexts/MeetingRecorderContext';
 import { useMeetingTelemetry } from '../hooks/telemetry/useMeetingTelemetry';
 import { useCurrentScreenShare } from '../hooks/useCurrentScreenShare';
-import { useMeetingRecorder } from '../hooks/useMeetingRecorder/useMeetingRecorder';
 import { useStableCallback } from '../hooks/useStableCallback';
 
 // Debug overlay context for mobile menu access
@@ -139,7 +138,7 @@ export const MeetContainer = ({
 
     const totalParticipantCount = useMeetSelector(selectTotalParticipantCount);
 
-    const { startRecording, downloadRecording } = useMeetingRecorder();
+    const { downloadRecording } = useMeetingRecorderContext();
 
     const leaveWithStopRecording = useStableCallback(async () => {
         await downloadRecording();
@@ -194,41 +193,31 @@ export const MeetContainer = ({
         ]
     );
 
-    const meetingRecorderContextValue = useMemo(
-        () => ({
-            startRecording,
-            downloadRecording,
-        }),
-        [startRecording, downloadRecording]
-    );
-
     return (
         <DebugOverlayContext.Provider value={{ isEnabled: debugOverlay.isEnabled, open: debugOverlay.open }}>
             <div className="w-full h-full flex flex-col flex-nowrap items-center justify-center">
-                <MeetingRecorderContext.Provider value={meetingRecorderContextValue}>
-                    <MeetContext.Provider value={meetContextValue}>
-                        {debugOverlay.isOpen && (
-                            <DebugOverlay
-                                isOpen={debugOverlay.isOpen}
-                                onClose={debugOverlay.close}
-                                onSimulateReconnection={onSimulateReconnection}
-                            />
-                        )}
-                        <MeetingBody
-                            screenShareTrack={screenShareTrack}
-                            screenShareParticipant={screenShareParticipant}
-                            isUsingTurnRelay={isUsingTurnRelay}
-                            liveKitConnectionState={liveKitConnectionState}
-                            showReconnectedMessage={showReconnectedMessage}
-                            setShowReconnectedMessage={setShowReconnectedMessage}
-                            setLiveKitConnectionState={setLiveKitConnectionState}
-                            isDisconnected={isDisconnected}
-                            isReconnecting={isReconnecting}
-                            mlsRetrying={mlsRetrying}
+                <MeetContext.Provider value={meetContextValue}>
+                    {debugOverlay.isOpen && (
+                        <DebugOverlay
+                            isOpen={debugOverlay.isOpen}
+                            onClose={debugOverlay.close}
+                            onSimulateReconnection={onSimulateReconnection}
                         />
-                    </MeetContext.Provider>
-                    <AutoCloseMeetingModal participantCount={totalParticipantCount} onLeave={handleLeave} />
-                </MeetingRecorderContext.Provider>
+                    )}
+                    <MeetingBody
+                        screenShareTrack={screenShareTrack}
+                        screenShareParticipant={screenShareParticipant}
+                        isUsingTurnRelay={isUsingTurnRelay}
+                        liveKitConnectionState={liveKitConnectionState}
+                        showReconnectedMessage={showReconnectedMessage}
+                        setShowReconnectedMessage={setShowReconnectedMessage}
+                        setLiveKitConnectionState={setLiveKitConnectionState}
+                        isDisconnected={isDisconnected}
+                        isReconnecting={isReconnecting}
+                        mlsRetrying={mlsRetrying}
+                    />
+                </MeetContext.Provider>
+                <AutoCloseMeetingModal participantCount={totalParticipantCount} onLeave={handleLeave} />
             </div>
         </DebugOverlayContext.Provider>
     );
