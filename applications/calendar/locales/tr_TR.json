@@ -6590,6 +6590,10 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Rezervasyon aralığı sayısı sınırına ulaştınız (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "${ memberCount } üye için güvenli bir bulut oluşturun",
+        "${ memberCount } üye için güvenli bir bulut oluşturun"
       ]
     },
     "info": {
@@ -8436,6 +8440,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
+      ],
+      "Access all countries": [
+        "Tüm ülkelere erişin"
+      ],
+      "No streaming support": [
+        "Yayın akışı desteği yok"
+      ],
+      "Unlock streaming": [
+        "Yayın akışı hizmetlerine erişin"
       ]
     },
     "new_plans: feature highlight": {
@@ -8855,6 +8868,10 @@
       "Support for ${ n } custom email domain": [
         "${ n } özel e-posta etki alanı desteği",
         "${ n } özel e-posta etki alanı desteği"
+      ],
+      "${ n } country": [
+        "${ n } ülke",
+        "${ n } ülke"
       ]
     },
     "Note": {
