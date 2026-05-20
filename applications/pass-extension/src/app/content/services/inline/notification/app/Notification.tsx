@@ -17,6 +17,7 @@ import { AutofillOTP } from './views/AutofillOTP';
 import { Autosave } from './views/Autosave';
 import { PasskeyCreate } from './views/PasskeyCreate';
 import { PasskeyGet } from './views/PasskeyGet';
+import { Toast } from './views/Toast';
 
 import './Notification.scss';
 
@@ -55,6 +56,8 @@ export const Notification: FC<Props> = ({ initial = null }) => {
                                 return <PasskeyCreate {...state} />;
                             case NotificationAction.PASSKEY_GET:
                                 return <PasskeyGet {...state} />;
+                            case NotificationAction.TOAST:
+                                return <Toast {...state} />;
                         }
                     })()}
 

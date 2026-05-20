@@ -269,6 +269,14 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
                         const field = resolveField(payload.field);
                         await autofillLogin(field.getFormHandle(), payload.credentials);
                         field.focus({ preventAction: true });
+
+                        if (payload.notification) {
+                            ctx?.service.inline.notification.open({
+                                action: NotificationAction.TOAST,
+                                message: payload.notification,
+                            });
+                        }
+
                         return { ok: true, type: payload.type };
                     }
 
