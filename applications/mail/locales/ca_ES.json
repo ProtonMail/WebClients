@@ -1514,7 +1514,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -7603,8 +7604,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -9045,6 +9045,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sou tot just a uns quants clics d'una safata d'entrada ordenada"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crea un núvol segur per a ${ memberCount } membre",
+        "Crea un núvol segur per a ${ memberCount } membres"
       ]
     },
     "info": {
@@ -11375,6 +11379,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
+      ],
+      "Access all countries": [
+        "Accediu a tots els països"
+      ],
+      "No streaming support": [
+        "No hi ha suport per la reproducció en continu"
+      ],
+      "Unlock streaming": [
+        "Desbloquegeu la reproducció en continu"
       ]
     },
     "new_plans: feature highlight": {
@@ -11794,6 +11807,10 @@
       "Support for ${ n } custom email domain": [
         "Suport per a ${ n } domini de correu electrònic personalitzat",
         "Suport per a ${ n } dominis de correu electrònic personalitzats"
+      ],
+      "${ n } country": [
+        "${ n } país",
+        "${ n } països"
       ]
     },
     "Notification": {

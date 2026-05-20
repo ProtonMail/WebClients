@@ -1514,7 +1514,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -7603,8 +7604,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -9045,6 +9045,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Δημιουργήστε ένα ασφαλές cloud για ${ memberCount } μέλος",
+        "Δημιουργήστε ένα ασφαλές cloud για ${ memberCount } μέλη"
       ]
     },
     "info": {
@@ -11375,6 +11379,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
+      ],
+      "Access all countries": [
+        "Πρόσβαση σε όλες τις χώρες"
+      ],
+      "No streaming support": [
+        "Δεν υπάρχει υποστήριξη ροής"
+      ],
+      "Unlock streaming": [
+        "Ξεκλειδώστε τη ροή"
       ]
     },
     "new_plans: feature highlight": {
@@ -11794,6 +11807,10 @@
       "Support for ${ n } custom email domain": [
         "Υποστήριξη για ${ n } παραμετροποιημένο τομέα ηλεκτρονικού ταχυδρομείου",
         "Υποστήριξη για ${ n } παραμετροποιημένους τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ n } country": [
+        "${ n } χώρα",
+        "${ n } χώρες"
       ]
     },
     "Notification": {

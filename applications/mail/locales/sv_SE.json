@@ -1514,7 +1514,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -7561,8 +7562,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8977,6 +8977,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Skapa ett säkert moln för ${ memberCount } medlem",
+        "Skapa ett säkert moln för ${ memberCount } medlemmar"
       ]
     },
     "info": {
@@ -11275,6 +11279,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skannar den mörka webben för att kontrollera om dina ${ BRAND_NAME }-adresser eller alias har läckt och varnar dig omedelbart om vi hittar något."
+      ],
+      "Access all countries": [
+        "Åtkomst till alla länder"
+      ],
+      "No streaming support": [
+        "Inget stöd för streaming"
+      ],
+      "Unlock streaming": [
+        "Lås upp streaming"
       ]
     },
     "new_plans: feature highlight": {
@@ -11694,6 +11707,10 @@
       "Support for ${ n } custom email domain": [
         "Stöd för ${ n } anpassad e-postdomän",
         "Stöd för ${ n } anpassade e-postdomäner"
+      ],
+      "${ n } country": [
+        "${ n } land",
+        "${ n } länder"
       ]
     },
     "Notification": {

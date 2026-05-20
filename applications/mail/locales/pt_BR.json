@@ -1514,7 +1514,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -4253,6 +4254,42 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Bloqueie a capacidade do Google de criar um perfil seu. O Gmail não pode ver o que você faz no ${ MAIL_APP_NAME }"
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Envie e receba mensagens do Gmail diretamente no ${ MAIL_APP_NAME }. Conecte seus endereços em ${ addressesSettingsLink }."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Para conectar um endereço Gmail diferente, remova os endereços extras do Gmail que estão sendo encaminhados para ${ BRAND_NAME }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Para continuar recebendo e enviando mensagens do Gmail na ${ BRAND_NAME }, reconecte sua conta."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Para continuar recebendo e enviando mensagens do Gmail na ${ BRAND_NAME }, reconecte suas contas."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Lamentamos sua saída. Se tiver um momento, gostaríamos muito de saber o motivo do cancelamento. Seu feedback nos ajuda a fazer a ${ BRAND_NAME } ainda melhor para todos."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Você já possui um endereço do Gmail encaminhando para o ${ MAIL_APP_NAME }. Conecte-o abaixo para enviar e receber mensagens diretamente no ${ MAIL_APP_NAME }."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Você está encaminhando ${ numAddressesOrSync } endereço do Gmail para o ${ MAIL_APP_NAME }.",
+        "Você está encaminhando ${ numAddressesOrSync } endereços do Gmail para o ${ MAIL_APP_NAME }."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Você está encaminhando mensagens de ${ forwardingCount } endereço do Gmail. Ao conectá-lo, você poderá receber e responder no ${ MAIL_APP_NAME }",
+        "Você está encaminhando mensagens de ${ forwardingCount } endereços do Gmail. Ao conectá-los, você poderá receber e responder no ${ MAIL_APP_NAME }"
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Você conectou ${ MAX_SYNC_PAID_USER } endereço do Gmail. Para adicionar outro, primeiro desconecte uma das contas já conectadas.",
+        "Você conectou ${ MAX_SYNC_PAID_USER } endereços do Gmail. Para adicionar outro, primeiro desconecte uma das contas já conectadas."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Você conectou um endereço de conta externa no ${ MAIL_APP_NAME }."
       ]
     },
     "description": {
@@ -7541,8 +7578,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -8977,6 +9013,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Você está a alguns cliques de distância de ter uma caixa de entrada organizada"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } oculta seu tráfego. ${ PASS_SHORT_APP_NAME } oculta sua identidade\n— aliases **hide-my-email ilimitados** e **alertas da dark-web** se seus dados foram vazados."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Você receberá a recompensa em créditos 1 mês após seu amigo(a) assinar um plano anual e 2 meses após ele (ela) assinar um plano mensal."
       ]
     },
     "info": {
@@ -11307,6 +11349,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
+      ],
+      "Access all countries": [
+        "Acesso a todos os países"
+      ],
+      "Unlock streaming": [
+        "Desbloquear streaming"
       ]
     },
     "new_plans: feature highlight": {
@@ -11726,6 +11774,10 @@
       "Support for ${ n } custom email domain": [
         "Suporte para ${ n } domínio de e-mail personalizado",
         "Suporte para ${ n } domínios de e-mail personalizados"
+      ],
+      "${ n } country": [
+        "${ n } país",
+        "${ n } países"
       ]
     },
     "Notification": {
@@ -16008,6 +16060,9 @@
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
+      ],
+      "Reverse charge not supported": [
+        "Carregamento reverso não suportado"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16585,6 +16640,14 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Para encaminhar e-mails de até ${ MAX_SYNC_PAID_USER } contas, faça o upgrade para ${ planName }."
+      ],
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Você está encaminhando e-mails de uma conta externa para ${ MAIL_APP_NAME }."
       ]
     }
   }

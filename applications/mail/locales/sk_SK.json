@@ -1522,7 +1522,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -7859,10 +7862,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -9351,6 +9351,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Vytvoriť bezpečný cloud pre ${ memberCount } člena",
+        "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
+        "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
+        "Vytvoriť bezpečný cloud pre ${ memberCount } členov"
       ]
     },
     "info": {
@@ -11773,6 +11779,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme dark web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
+      ],
+      "Access all countries": [
+        "Prístup ku všetkým krajinám"
+      ],
+      "No streaming support": [
+        "Žiadna podpora zabezpečeného streamovania"
+      ],
+      "Unlock streaming": [
+        "Odomknite streamovanie"
       ]
     },
     "new_plans: feature highlight": {
@@ -12202,6 +12217,12 @@
         "Podpora pre ${ n } vlastné emailové domény",
         "Podpora pre ${ n } vlastných emailových domén",
         "Podpora pre ${ n } vlastných emailových domén"
+      ],
+      "${ n } country": [
+        "${ n } krajina",
+        "${ n } krajiny",
+        "${ n } krajín",
+        "${ n } krajín"
       ]
     },
     "Notification": {

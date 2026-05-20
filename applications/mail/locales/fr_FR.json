@@ -1514,7 +1514,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -7603,8 +7604,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -9045,6 +9045,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Créer un cloud sécurisé pour ${ memberCount } membre",
+        "Créer un cloud sécurisé pour ${ memberCount } membres"
       ]
     },
     "info": {
@@ -11375,6 +11379,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
+      ],
+      "Access all countries": [
+        "Accédez à tous les pays"
+      ],
+      "No streaming support": [
+        "Pas de prise en charge du streaming"
+      ],
+      "Unlock streaming": [
+        "Débloquez le streaming"
       ]
     },
     "new_plans: feature highlight": {
@@ -11794,6 +11807,10 @@
       "Support for ${ n } custom email domain": [
         "Prise en charge pour ${ n } domaine de messagerie personnalisé",
         "Prise en charge pour ${ n } domaines de messagerie personnalisés"
+      ],
+      "${ n } country": [
+        "${ n } pays",
+        "${ n } pays"
       ]
     },
     "Notification": {
