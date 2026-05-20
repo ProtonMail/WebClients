@@ -59,7 +59,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
         );
 
     return (
-        <div className="flex flex-nowrap shrink-0 select-all-wrapper rounded p-1 m-auto">
+        <div className="flex flex-nowrap shrink-0 select-all-wrapper rounded pl-1.5 p-1 m-auto">
             <Tooltip
                 title={checked ? c('Action').t`Deselect all messages` : c('Action').t`Select all messages`}
                 originalPlacement="bottom-start"
