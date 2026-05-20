@@ -1,4 +1,4 @@
-import type { GatewayIpModel, GatewayModel, GatewayMultiIpModel } from '../types/Gateway';
+import type { GatewayIpModel, GatewayIpMultiIpModel, GatewayModel, GatewayMultiIpModel } from '../types/Gateway';
 
 export const queryVPNGateways = () => ({
     url: 'vpn/v1/business/gateways',
@@ -19,6 +19,12 @@ export const createVPNGatewayWithMultipleIps = (data: GatewayMultiIpModel) => ({
 
 export const addIpInVPNGateway = (data: GatewayIpModel) => ({
     url: 'vpn/v1/business/gateways/ip',
+    method: 'post',
+    data,
+});
+
+export const addIpsInVPNGateway = (data: GatewayIpMultiIpModel) => ({
+    url: 'vpn/v1/business/gateways/ip/multi-ip',
     method: 'post',
     data,
 });
