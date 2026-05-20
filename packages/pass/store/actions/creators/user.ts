@@ -1,11 +1,13 @@
 import { createAction } from '@reduxjs/toolkit';
 
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
+import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
 import { userAccessRequest, userFeaturesRequest } from '@proton/pass/store/actions/requests';
 import type { FeatureFlagState, FeatureFlagVariants, HydratedAccessState } from '@proton/pass/store/reducers';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { MaybeNull } from '@proton/pass/types';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import identity from '@proton/utils/identity';
