@@ -54,19 +54,18 @@ export const CategoriesVisionaryOnboardingModal = () => {
     return renderModal ? (
         <Prompt
             {...modalProps}
-            title={c('Title').t`Early access: Email Categories`}
+            title={c('Title').t`Early access to email categories`}
             buttons={[
-                <Button onClick={handleEnableCategories} color="norm">{c('Action').t`Enable categories`}</Button>,
+                <Button onClick={handleEnableCategories} color="norm">{c('Action').t`Start testing`}</Button>,
                 <Button onClick={() => withLoading(handleSkipForNow)} loading={loading}>{c('Action')
-                    .t`Skip for now`}</Button>,
+                    .t`Not now`}</Button>,
             ]}
         >
-            <p>As a Visionary, you get first dibs on new features, even the ones still in the oven. 🔥</p>
-            <p>
-                Email categories automatically organizes your inbox into smart groups. Try it out and tell us what you
-                think.
-            </p>
-            <p>Heads up: This feature is still in beta, you might run into a rough edge or two!</p>
+            <p>{c('Description')
+                .t`Thank you for opting in. As a Visionary user, you’re among the first to try email categories.`}</p>
+            <p>{c('Description').t`To send feedback, simply correct any email that landed in the wrong category.`}</p>
+            <p>{c('Description')
+                .t`You might notice a few quirks and inaccuracies while the feature is still evolving, but every correction you make counts.`}</p>
         </Prompt>
     ) : null;
 };
