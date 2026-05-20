@@ -37,7 +37,7 @@ im.$media-expressions: $media-expressions;
 
 	@include im.media('<=small') {
 		background-color: var(--background-composer-mobile);
-		gap: 4px;
+		gap: 0;
 	}
 
 	// Remove list styling from Lumo Plus button
@@ -82,6 +82,10 @@ im.$media-expressions: $media-expressions;
 	min-block-size: 0;
 	overflow: hidden auto;
 	gap: 8px;
+
+	@include im.media('<=small') {
+		gap: 0;
+	}
 }
 
 .sidebar-section {
@@ -227,6 +231,11 @@ im.$media-expressions: $media-expressions;
 	max-block-size: 30vh;
 	overflow: hidden hidden;
 	animation: sidebar-fade-in 0.25s ease-in-out;
+
+	@include im.media('<=small') {
+		max-block-size: 12vh;
+		overflow: auto;
+	}
 }
 
 // Chat history sidebar section - structured like projects
@@ -454,7 +463,7 @@ im.$media-expressions: $media-expressions;
 
 	// Larger touch targets and spacing for mobile sidebar items
 	.sidebar-item {
-		block-size: 44px;
+		block-size: 40px;
 	}
 }
 
