@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
-import type { KrispNoiseFilterProcessor } from '@livekit/krisp-noise-filter';
 import { KrispNoiseFilter, isKrispNoiseFilterSupported } from '@livekit/krisp-noise-filter';
-import type { LocalTrack, Room } from 'livekit-client';
+import type { KrispNoiseFilterProcessor } from '@livekit/krisp-noise-filter';
+import type { AudioProcessorOptions, LocalTrack, Room, TrackProcessor } from 'livekit-client';
 import { Track } from 'livekit-client';
 
 import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';
@@ -24,8 +24,15 @@ import { useStableCallback } from '../../../hooks/useStableCallback';
 import { audioQuality } from '../../../qualityConstants';
 import type { SwitchActiveDevice } from '../../../types';
 import { getPersistedNoiseFilter, persistNoiseFilter } from '../../../utils/noiseFilterPersistence';
+import {
+    RNNoiseFilter,
+    isRNNoiseFilterSupported,
+    preloadRNNoiseWorklet,
+    waitForRNNoiseWorklet,
+} from '../../../utils/rnnoiseProcessor';
 
 const isKrispNoiseFilterBrowserSupported = isKrispNoiseFilterSupported();
+const isRNNoiseFilterBrowserSupported = isRNNoiseFilterSupported();
 const TOGGLE_TIMEOUT_MS = 8000;
 const NOISE_FILTER_ATTACH_TIMEOUT_MS = 3000;
 /** Delay before attaching noise filter after a mute/unmute toggle */
@@ -80,12 +87,17 @@ const isRoomInLivekitCloud = (room: Room) => {
 };
 
 /**
- * Manages microphone toggle (mute/unmute), device switching, and Krisp noise filter lifecycle.
+ * Manages microphone toggle (mute/unmute), device switching, and noise filter lifecycle.
  *
- * Noise filter architecture:
- * - The AudioContext is created once and reused across device switches (Krisp needs it for AudioWorkletNode).
- * - A new KrispNoiseFilter processor is created per track (processors can't be reused across tracks
- *   because LiveKit calls processor.destroy() when a track is stopped).
+ * Noise filter hierarchy:
+ * - Krisp: used when the room is LiveKit Cloud and the browser supports it.
+ * - RNNoise (WASM): fallback when Krisp is unavailable but AudioWorklet is supported.
+ * - Native noiseSuppression constraint: last resort for very old browsers.
+ *
+ * Shared architecture:
+ * - The AudioContext is created once and reused across device switches (needed for AudioWorkletNode).
+ * - A new processor is created per track (processors can't be reused across tracks because LiveKit
+ *   calls processor.destroy() when a track is stopped).
  * - On device change, LiveKit internally calls processor.restart() on the existing track — we do NOT
  *   destroy the processor/AudioContext during device switches to avoid breaking that restart.
  * - On track ended (device unplug), we abandon the processor refs and auto-recover to the system
@@ -105,7 +117,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
     });
     const { isMicrophoneEnabled, localParticipant } = useLocalParticipant();
 
-    const noiseFilterProcessor = useRef<KrispNoiseFilterProcessor | null>(null);
+    const noiseFilterProcessor = useRef<TrackProcessor<Track.Kind.Audio, AudioProcessorOptions> | null>(null);
     /** Persistent AudioContext reused across device switches — only closed on unmount */
     const audioContext = useRef<AudioContext | null>(null);
     /** Track ID the processor is currently attached to, used to detect track replacement */
@@ -148,10 +160,16 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         if (audioContext.current && audioContext.current.state !== 'closed') {
             return audioContext.current;
         }
+        // RNNoise's model is trained on 48 kHz audio — request it explicitly. Some browsers
+        // (older iOS Safari, some Android configs) silently ignore the option, hence the readback below.
         // @ts-ignore - webkitAudioContext is not available in all browsers
-        const ctx = new (window.AudioContext || window.webkitAudioContext)() as AudioContext;
+        const Ctor = (window.AudioContext || window.webkitAudioContext) as typeof AudioContext;
+        const ctx = new Ctor({ sampleRate: 48000 });
         audioContext.current = ctx;
-        debugLog('noiseFilter:audio-context-created');
+        debugLog('noiseFilter:audio-context-created', { sampleRate: ctx.sampleRate });
+        if (isRNNoiseFilterBrowserSupported && ctx.sampleRate === 48000) {
+            preloadRNNoiseWorklet(ctx);
+        }
         return ctx;
     };
 
@@ -277,7 +295,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
     };
 
     /**
-     * Creates a new KrispNoiseFilter processor and attaches it to the current audio track.
+     * Creates a new noise filter processor (Krisp or RNNoise) and attaches it to the current audio track.
      * Reuses the persistent AudioContext. Guards against stale attach via generation counter —
      * if abandonNoiseFilter() is called while setProcessor is in flight, the result is discarded.
      * On failure, detaches the AudioContext from the track so audio still flows directly.
@@ -286,10 +304,12 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         const publication = getCurrentPublication();
         const currentAudioTrack = publication?.audioTrack;
 
-        if (!currentAudioTrack || !isAdvancedNoiseFilterSupported) {
+        const isAnyProcessorSupported = isAdvancedNoiseFilterSupported || isRNNoiseFilterBrowserSupported;
+        if (!currentAudioTrack || !isAnyProcessorSupported) {
             debugLog('noiseFilter:attach-skip', {
                 hasTrack: !!currentAudioTrack,
-                supported: isAdvancedNoiseFilterSupported,
+                krisp: isAdvancedNoiseFilterSupported,
+                rnnoise: isRNNoiseFilterBrowserSupported,
             });
             return;
         }
@@ -302,13 +322,10 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         }
 
         if (attachedTrackId.current === currentAudioTrack.id && noiseFilterProcessor.current) {
-            if (!noiseFilterProcessor.current.isEnabled()) {
+            const proc = noiseFilterProcessor.current as KrispNoiseFilterProcessor;
+            if (typeof proc.isEnabled === 'function' && !proc.isEnabled()) {
                 debugLog('noiseFilter:re-enable-existing');
-                await withTimeout(
-                    noiseFilterProcessor.current.setEnabled(true),
-                    'Re-enable noise filter',
-                    NOISE_FILTER_ATTACH_TIMEOUT_MS
-                );
+                await withTimeout(proc.setEnabled(true), 'Re-enable noise filter', NOISE_FILTER_ATTACH_TIMEOUT_MS);
             }
             return;
         }
@@ -321,9 +338,26 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
 
         debugLog('noiseFilter:attach-start', { trackId: currentAudioTrack.id, generation: gen });
 
-        const processor = KrispNoiseFilter({
-            debugLogs: isKrispDebugEnabled,
-        });
+        // RNNoise requires 48 kHz; if the browser ignored our sampleRate request, skip it
+        // (the model would produce garbage at any other rate).
+        const wouldUseRNNoise = !isAdvancedNoiseFilterSupported && isRNNoiseFilterBrowserSupported;
+        if (wouldUseRNNoise && ctx.sampleRate !== 48000) {
+            debugLog('noiseFilter:attach-skip-non-48k', { sampleRate: ctx.sampleRate });
+            return;
+        }
+
+        if (wouldUseRNNoise) {
+            await withTimeout(waitForRNNoiseWorklet(ctx), 'rnnoise-worklet-load', TOGGLE_TIMEOUT_MS);
+        }
+
+        if (noiseFilterGeneration.current !== gen) {
+            debugLog('noiseFilter:attach-aborted-stale-pre-processor', { generation: gen });
+            return;
+        }
+
+        const processor = isAdvancedNoiseFilterSupported
+            ? KrispNoiseFilter({ debugLogs: isKrispDebugEnabled })
+            : RNNoiseFilter();
 
         try {
             currentAudioTrack.setAudioContext(ctx);
@@ -496,7 +530,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
             ...(useIOSWorkaround ? {} : { deviceId: { exact: deviceId as string } }),
             echoCancellation: { ideal: true },
             autoGainControl: { ideal: true },
-            noiseSuppression: isAdvancedNoiseFilterSupported ? false : noiseFilter,
+            noiseSuppression: isAdvancedNoiseFilterSupported || isRNNoiseFilterBrowserSupported ? false : noiseFilter,
             channelCount: { ideal: 1 },
             dtx: false,
         };
@@ -611,7 +645,12 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
             // After toggle success, determine noise filter state:
             // - If the track ID matches our ref, LiveKit restarted the processor internally → nothing to do.
             // - If the track changed (new ID), the old processor is on a dead track → abandon and re-attach.
-            if (isEnabled && isAdvancedNoiseFilterSupported && noiseFilter && !skipNoiseFilter) {
+            if (
+                isEnabled &&
+                (isAdvancedNoiseFilterSupported || isRNNoiseFilterBrowserSupported) &&
+                noiseFilter &&
+                !skipNoiseFilter
+            ) {
                 const currentTrack = getCurrentPublication()?.audioTrack;
                 const processorStillAttached =
                     noiseFilterProcessor.current &&
@@ -704,16 +743,16 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
 
         if (isMicrophoneEnabled) {
             try {
-                if (isAdvancedNoiseFilterSupported) {
+                if (isAdvancedNoiseFilterSupported || isRNNoiseFilterBrowserSupported) {
                     if (newValue) {
                         await attachNoiseFilter();
                     } else {
                         await detachNoiseFilter();
                     }
                 } else {
-                    // Krisp unavailable — recreate the mic track with the new
-                    // native `noiseSuppression` constraint. `applyConstraints` is a no-op for
-                    // this constraint once the track is published in an RTCPeerConnection.
+                    // Neither Krisp nor RNNoise available — recreate the mic track with the native
+                    // `noiseSuppression` constraint as a last resort. `applyConstraints` is a no-op
+                    // for this constraint once the track is published in an RTCPeerConnection.
                     await recreateMicrophoneWithNoiseSuppression(newValue);
                 }
                 debugLog('toggleNoiseFilter:applied', { newValue });
