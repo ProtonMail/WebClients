@@ -8,7 +8,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { HIDE_OFFER } from '../helpers/interface';
-import { paidConfig } from '../montlyPaidUserNudgeConfig';
+import { paidConfig } from '../monthlyPaidUserNudgeConfig';
 import { useMonthlyUpsellEligibility } from './useMonthlyUpsellEligibility';
 
 jest.mock('@proton/account/subscription/hooks');
