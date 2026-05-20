@@ -1,7 +1,7 @@
 import { PaidUserNudgeOffer } from './components/PaidUserNudgeOffer';
 import type { SupportedPlans } from './helpers/interface';
 import { usePaidUsersNudge } from './hooks/usePaidUsersNudge';
-import { paidConfig } from './montlyPaidUserNudgeConfig';
+import { paidConfig } from './monthlyPaidUserNudgeConfig';
 
 interface Props {
     plan: SupportedPlans;
