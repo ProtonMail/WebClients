@@ -1281,6 +1281,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Ajouter ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Retourner à l’album « ${ ellipsedAlbumName } »"
       ]
     },
     "Action: Docs": {
@@ -7182,6 +7185,22 @@
       ],
       "RECOMMENDED": [
         "RECOMMANDÉ"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Créer un cloud sécurisé pour ${ memberCount } membre",
+        "Créer un cloud sécurisé pour ${ memberCount } membres"
+      ],
+      "Photo saved to your Drive": [
+        "La photo a été enregistrée dans votre Drive.",
+        "Les photos ont été enregistrées dans votre Drive."
+      ],
+      "We couldn't save this photo to your Drive": [
+        "Une photo n'a pas été enregistrée dans votre Drive.",
+        "Plusieurs photos n'ont pas été enregistrées dans votre Drive."
+      ],
+      "We were not able to add this photo to your album": [
+        "Cette photo n'a pas pu être ajoutée à votre album.",
+        "Ces photos n'ont pas pu être ajoutées à votre album."
       ]
     },
     "info": {
@@ -9981,6 +10000,14 @@
       ],
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "La copie de « ${ ellipsedName } » a été déplacée dans la Corbeille"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } photo a été ajoutée à « ${ albumName } ».",
+        "${ addedUids.length } photos ont étés ajoutés à « ${ albumName } »."
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } photo a été retirée de « ${ albumName } ».",
+        "${ removed } photos ont étés retirés de « ${ albumName } »."
       ]
     },
     "Notification for duplicate filenames in the current upload": {

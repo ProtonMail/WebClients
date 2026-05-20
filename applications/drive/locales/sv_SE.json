@@ -7093,6 +7093,22 @@
       ],
       "File flagged as potentially malicious": [
         "Fil flaggad som potentiellt skadlig"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Skapa ett säkert moln för ${ memberCount } medlem",
+        "Skapa ett säkert moln för ${ memberCount } medlemmar"
+      ],
+      "Photo saved to your Drive": [
+        "Foto sparat till din Drive",
+        "Foton sparade till din Drive"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "Vi kunde inte spara detta foto till din Drive",
+        "Vi kunde inte spara flera foton till din Drive"
+      ],
+      "We were not able to add this photo to your album": [
+        "Vi kunde inte lägga till detta foto till ditt album",
+        "Vi kunde inte lägga till några foton till ditt album"
       ]
     },
     "info": {
@@ -9044,6 +9060,12 @@
       ],
       "Access all countries": [
         "Åtkomst till alla länder"
+      ],
+      "No streaming support": [
+        "Inget stöd för streaming"
+      ],
+      "Unlock streaming": [
+        "Lås upp streaming"
       ]
     },
     "new_plans: feature highlight": {
@@ -9861,6 +9883,14 @@
       ],
       "\"${ ellipsedName }\" failed to be created": [
         "“${ ellipsedName }“ misslyckades att skapas"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } foto har lagts till i “${ albumName }“",
+        "${ addedUids.length } foton har lagts till i “${ albumName }“"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } foto har tagits bort från “${ albumName }“",
+        "${ removed } foton har tagits bort från “${ albumName }“"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

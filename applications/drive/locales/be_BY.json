@@ -1295,6 +1295,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Дадаць ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Вярнуцца ў альбом “${ ellipsedAlbumName }\""
       ]
     },
     "Action: Docs": {
@@ -7408,6 +7411,30 @@
       ],
       "RECOMMENDED": [
         "РЭКАМЕНДАВАНЫ"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельніка",
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў"
+      ],
+      "Photo saved to your Drive": [
+        "Фатаграфія захавана ў ваш Drive",
+        "Фатаграфіі захаваны ў ваш Drive",
+        "Фатаграфіі захаваны ў ваш Drive",
+        "Фатаграфіі захаваны ў ваш Drive"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "Немагчыма захаваць гэту фатаграфію на вашым Drive",
+        "Немагчыма захаваць некалькі фатаграфій на вашым Drive",
+        "Немагчыма захаваць некалькі фатаграфій на вашым Drive",
+        "Немагчыма захаваць некалькі фатаграфій на вашым Drive"
+      ],
+      "We were not able to add this photo to your album": [
+        "Не ўдалося дадаць гэту фатаграфію ў ваш альбом",
+        "Не ўдалося дадаць некаторыя фатаграфіі ў ваш альбом",
+        "Не ўдалося дадаць некаторыя фатаграфіі ў ваш альбом",
+        "Не ўдалося дадаць некаторыя фатаграфіі ў ваш альбом"
       ]
     },
     "info": {
@@ -9883,6 +9910,12 @@
         "Падтрымка для ${ n } карыстальніцкіх даменаў электроннай пошты",
         "Падтрымка для ${ n } карыстальніцкіх даменаў электроннай пошты",
         "Падтрымка для ${ n } карыстальніцкіх даменаў электроннай пошты"
+      ],
+      "${ n } country": [
+        "${ n } краіна",
+        "${ n } краіны",
+        "${ n } краін",
+        "${ n } краін"
       ]
     },
     "Notification": {
@@ -10344,6 +10377,18 @@
       ],
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "Копія \"${ ellipsedName }\" перамешчана ў сметніцу"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } фатаграфія была дададзена ў \"${ albumName }\"",
+        "${ addedUids.length } фатаграфіі былі дададзены ў \"${ albumName }\"",
+        "${ addedUids.length } фатаграфіі былі дададзены ў \"${ albumName }\"",
+        "${ addedUids.length } фатаграфіі былі дададзены ў \"${ albumName }\""
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } фатаграфія была выдалена з \"${ albumName }\"",
+        "${ removed } фатаграфіі было выдалена з \"${ albumName }\"",
+        "${ removed } фатаграфій было выдалена з \"${ albumName }\"",
+        "${ removed } фатаграфій было выдалена з \"${ albumName }\""
       ]
     },
     "Notification for duplicate filenames in the current upload": {
