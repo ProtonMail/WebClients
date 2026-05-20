@@ -5,7 +5,7 @@ import { getClientID } from '../apps/helper';
 import { API_CUSTOM_ERROR_CODES } from '../errors';
 import { protonFetch } from '../fetch/fetch';
 import { withLocaleHeaders } from '../fetch/headers';
-import { getDateHeader } from '../fetch/helpers';
+import { getDateHeader, getStandardAndCustomDateHeader } from '../fetch/helpers';
 import { localeCode } from '../i18n';
 import type { Api } from '../interfaces';
 import type { ApiRateLimiter } from './apiRateLimiter';
@@ -31,7 +31,10 @@ const getSilenced = ({ silence }: SilenceConfig = {}, code: number) => {
 
 export type ServerTimeEvent = {
     type: 'server-time';
-    payload: Date;
+    payload: {
+        value: Date;
+        extra: { standardDateHeader: string | undefined; customDateHeader: string | undefined };
+    };
 };
 export type ApiStatusEvent = {
     type: 'status';
@@ -213,7 +216,10 @@ const createApi = ({
 
                 notify({
                     type: 'server-time',
-                    payload: updateServerTime(serverTime),
+                    payload: {
+                        value: updateServerTime(serverTime),
+                        extra: getStandardAndCustomDateHeader(response.headers),
+                    },
                 });
                 notify({
                     type: 'status',
@@ -234,7 +240,10 @@ const createApi = ({
                 if (serverTime) {
                     notify({
                         type: 'server-time',
-                        payload: updateServerTime(serverTime),
+                        payload: {
+                            value: updateServerTime(serverTime),
+                            extra: getStandardAndCustomDateHeader(e.response?.headers),
+                        },
                     });
                 }
 
