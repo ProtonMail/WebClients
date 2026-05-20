@@ -8,7 +8,7 @@
 	.tab-container {
 		border-width: rem(3) 0;
 		padding-block: rem(10);
-		padding-inline: rem(8);
+		padding-inline: rem(14);
 
 		&:focus-visible {
 			outline: $focus-ring-size solid var(--cat-border);
@@ -79,8 +79,6 @@
 		}
 
 		.tab-container {
-			padding-inline: rem(16);
-
 			.tag-label,
 			.tag-count {
 				display: block;
