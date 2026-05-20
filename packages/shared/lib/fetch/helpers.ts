@@ -34,8 +34,7 @@ export const createUrl = (urlString: string, params: { [key: string]: any } = {}
     return url;
 };
 
-export const getDateHeader = (headers?: Headers) => {
-    const dateHeader = headers?.get?.('date');
+const getValidDate = (dateHeader: string | null | undefined) => {
     if (!dateHeader) {
         return;
     }
@@ -44,4 +43,11 @@ export const getDateHeader = (headers?: Headers) => {
         return;
     }
     return newServerTime;
+};
+
+export const getDateHeader = (headers?: Headers) => {
+    const customDateHeader = headers?.get?.('x-pm-date');
+    const standardDateHeader = headers?.get?.('date');
+
+    return getValidDate(customDateHeader) ?? getValidDate(standardDateHeader);
 };
