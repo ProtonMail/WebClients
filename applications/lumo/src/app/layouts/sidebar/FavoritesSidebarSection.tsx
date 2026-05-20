@@ -13,7 +13,7 @@ interface FavoritesSidebarSectionProps {
     onItemClick?: () => void;
 }
 
-export const FavoritesSidebarSection = ({ showText, onItemClick }: FavoritesSidebarSectionProps) => {
+export const FavoritesSidebarSection = ({ onItemClick }: FavoritesSidebarSectionProps) => {
     const favorites = useLumoSelector(selectStarredConversationsSorted, shallowEqual);
     const { conversationId } = useConversation();
     const isGuest = useIsGuest();
