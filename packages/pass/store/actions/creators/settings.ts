@@ -37,6 +37,7 @@ export const settingsEditSuccess = createAction(
     withRequestSuccess((payload: ProxiedSettings, silent?: boolean, endpoint?: ClientEndpoint) =>
         pipe(
             withCache,
+            withSettings,
             silent
                 ? identity
                 : withNotification({
