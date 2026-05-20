@@ -4,14 +4,13 @@ import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/m
 import { parseSender } from 'proton-pass-extension/lib/utils/sender';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { isExtraOTPField } from '@proton/pass/lib/items/item.predicates';
-import { intoLoginItemPreview } from '@proton/pass/lib/items/item.utils';
+import { getItemTOTPUri, intoLoginItemPreview } from '@proton/pass/lib/items/item.utils';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { selectOTPCandidate } from '@proton/pass/store/selectors/autofill';
 import { selectItem } from '@proton/pass/store/selectors/items';
 import type { Maybe } from '@proton/pass/types/utils/index';
 import { logger } from '@proton/pass/utils/logger';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 /* Although clients should store a complete OTP URI in the `totpUri` field.
  * We take this with a grain of salt to account from possible faulty imports.
@@ -30,13 +29,7 @@ export const createOTPService = () => {
                         const { shareId, itemId } = payload.item;
                         const state = ctx.service.store.getState();
                         const item = selectItem<'login'>(shareId, itemId)(state);
-
-                        /** First check if we have a top-level totp URI */
-                        if (item?.data.content.totpUri.v.length) return deobfuscate(item.data.content.totpUri);
-
-                        /** Check if any extra fields are of type TOTP */
-                        const extraOTPs = item?.data.extraFields.filter(isExtraOTPField);
-                        if (extraOTPs && extraOTPs.length > 0) return deobfuscate(extraOTPs[0].data.totpUri);
+                        if (item) return getItemTOTPUri(item);
                     }
                 })();
 
@@ -62,11 +55,22 @@ export const createOTPService = () => {
             const submission = ctx.service.formTracker.get(tabId, url);
             const state = ctx.service.store.getState();
             const match = selectOTPCandidate({ ...url, submission })(state);
-            return match ? { shouldPrompt: true, ...intoLoginItemPreview(match) } : { shouldPrompt: false };
+
+            if (match) {
+                const { autofill } = await ctx.service.settings.resolve();
+                /* Don't prompt if `twofaCopy` setting is enabled
+                 * and code was copied from autofill <30s ago */
+                const recentlyCopied =
+                    Boolean(autofill.twofaCopy) && match.lastUseTime && match.lastUseTime > getEpoch() - 30;
+                if (recentlyCopied) return { shouldPrompt: false };
+                return { shouldPrompt: true, ...intoLoginItemPreview(match) };
+            } else {
+                return { shouldPrompt: false };
+            }
         })
     );
 
-    return {};
+    return { generateTOTPCode };
 };
 
 export type OTPService = ReturnType<typeof createOTPService>;

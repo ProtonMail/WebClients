@@ -13,6 +13,7 @@ export enum NotificationAction {
     OTP = 'OTP',
     PASSKEY_CREATE = 'PASSKEY::CREATE',
     PASSKEY_GET = 'PASSKEY::GET',
+    TOAST = 'TOAST',
 }
 
 export enum DropdownAction {

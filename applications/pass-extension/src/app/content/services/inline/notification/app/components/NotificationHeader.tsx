@@ -7,25 +7,32 @@ import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import { PassIcon } from '@proton/pass/components/Layout/Icon/PassIcon';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
+import clsx from '@proton/utils/clsx';
 
 type Props = {
     discardOnClose?: boolean;
     extra?: ReactElement;
+    wrapText?: boolean;
     title: ReactNode;
     onClose?: () => void;
 };
 
 const NotificationHeaderRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
-    { discardOnClose, extra, title, onClose },
+    { wrapText, discardOnClose, extra, title, onClose },
     ref
 ) => {
     const controller = useIFrameAppController();
 
     return (
         <div className="flex flex-nowrap shrink-0 items-center justify-space-between gap-2" ref={ref}>
-            <h3 className="flex flex-nowrap text-bold text-lg items-center gap-2 w-full">
+            <h3
+                className={clsx(
+                    'flex flex-nowrap text-bold items-center gap-2 w-full ',
+                    wrapText ? 'text-rg' : 'text-lg '
+                )}
+            >
                 <PassIcon status={PassIconStatus.ACTIVE} size={5.5} className="shrink-0" />
-                <span className="text-ellipsis">{title}</span>
+                <span className={clsx(!wrapText && 'text-ellipsis')}>{title}</span>
             </h3>
 
             <div className="flex shrink-0 gap-1">
