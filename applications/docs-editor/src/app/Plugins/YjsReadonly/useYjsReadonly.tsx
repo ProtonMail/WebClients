@@ -126,7 +126,7 @@ export function useYjsReadonly(
 
     initLocalState(provider, '', '', document.activeElement === editor.getRootElement(), {})
 
-    // This updates the local editor state when we recieve updates from other clients
+    // This updates the local editor state when we receive updates from other clients
     root.getSharedType().observeDeep(onYjsTreeChanges)
 
     const removeListener = editor.registerUpdateListener(

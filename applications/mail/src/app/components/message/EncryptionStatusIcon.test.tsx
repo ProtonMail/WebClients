@@ -25,37 +25,34 @@ describe('EncryptionStatusIcon', () => {
 
     describe('when there is a href', () => {
         it('should render inside <a> tag and tooltip', () => {
-            render(
-                <EncryptionStatusIcon
-                    isEncrypted={false}
-                    fill={2}
-                    text="This email adress is invalid"
-                    loading={false}
-                    shouldHaveHref={true}
-                />
-            );
+            const props = {
+                isEncrypted: false,
+                fill: 2,
+                loading: false,
+                text: 'This email address is invalid',
+            };
+            render(<EncryptionStatusIcon {...props} />);
             const tooltip = screen.getByTestId('encryption-icon-tooltip');
             // workaround to be able to get by tag
             const href = within(tooltip).getByText((_, el) => el?.tagName.toLowerCase() === 'a');
-            within(href).getByText('This email adress is invalid');
+            within(href).getByText('This email address is invalid');
             within(href).getByTestId('encryption-icon');
         });
     });
 
     describe('when shouldHaveHref is false', () => {
         it('should render only inside tooltip', () => {
-            render(
-                <EncryptionStatusIcon
-                    isEncrypted={false}
-                    fill={2}
-                    loading={false}
-                    text="This email adress is invalid"
-                    shouldHaveHref={false}
-                />
-            );
+            const props = {
+                isEncrypted: false,
+                fill: 2,
+                loading: false,
+                text: 'This email address is invalid',
+                shouldHaveHref: false,
+            };
+            render(<EncryptionStatusIcon {...props} />);
 
             const tooltip = screen.getByTestId('encryption-icon-tooltip');
-            within(tooltip).getByText('This email adress is invalid');
+            within(tooltip).getByText('This email address is invalid');
             within(tooltip).getByTestId('encryption-icon');
 
             expect(within(tooltip).queryByText((_, el) => el?.tagName.toLowerCase() === 'a')).toBeNull();

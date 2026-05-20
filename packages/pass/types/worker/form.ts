@@ -19,9 +19,9 @@ export type FormSubmission = {
     action?: string;
     /** the intercepted form submission data */
     data: FormCredentials;
-    /** wether the form can be considered as loading */
+    /** whether the form can be considered as loading */
     loading?: boolean;
-    /** wether the form was submitted */
+    /** whether the form was submitted */
     submit: boolean;
     /** form type for this submission */
     type: `${FormType}`;

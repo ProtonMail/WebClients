@@ -18,7 +18,7 @@ import { waitForCondition } from './pauser';
  * blocks. Encrypted buffer is feeded through generator. When there is not
  * enough uploading blocks (MAX_UPLOAD_JOBS), it takes whatever is encrypted
  * and asks API to create those blocks on backend. Once links are returned back
- * to the worker, those blocks are transfered from encrypted buffer to uploading
+ * to the worker, those blocks are transferred from encrypted buffer to uploading
  * buffer. Upload jobs can get them using also generator.
  *
  * The example of usage and the flow is as following:

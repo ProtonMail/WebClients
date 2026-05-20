@@ -38,7 +38,7 @@ interface Props {
 }
 
 /**
- * This contains alot of payments boilerplate that should/will be removed
+ * This contains a lot of payments boilerplate that should/will be removed
  */
 const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
     const signup = useSignup();

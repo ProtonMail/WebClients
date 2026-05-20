@@ -40,7 +40,7 @@ export const createImageProxyHandler = (api: Api) => async (url: string, signal?
 
     const response = api<Response>({ url, output: 'raw', signal, sideEffects: false })
         .then(async (res) => {
-            logger.debug('[Image] Caching succesfull network response', res.url);
+            logger.debug('[Image] Caching successful network response', res.url);
 
             const response = new Response(API_BODYLESS_STATUS_CODES.includes(res.status) ? null : await res.blob(), {
                 status: res.status,

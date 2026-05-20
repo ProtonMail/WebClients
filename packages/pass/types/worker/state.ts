@@ -9,7 +9,7 @@ export enum AppStatus {
     AUTHORIZING = 'AUTHORIZING' /* app is forking a session to login */,
     BOOTING = 'BOOTING' /* app is currently in the boot sequence */,
     ERROR = 'ERROR' /* app is in an error state */,
-    IDLE = 'IDLE' /* initial app state - pending initalization */,
+    IDLE = 'IDLE' /* initial app state - pending initialization */,
     OFFLINE = 'OFFLINE' /* app is unlocked for offline usage */,
     PASSWORD_LOCKED = 'PASSWORD_LOCKED' /* offline locked app */,
     BIOMETRICS_LOCKED = 'BIOMETRICS_LOCKED' /* biometrics locked app */,

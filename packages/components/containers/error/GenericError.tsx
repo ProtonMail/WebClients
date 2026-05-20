@@ -118,7 +118,7 @@ const GenericErrorWithReload = ({ children, className, big, isNetworkError }: Ge
 const GenericError = ({ children, className, big, isNetworkError }: GenericErrorProps) => {
     const isFlagAvailable = useContext(FlagContext);
 
-    // Display the generic error if Unleash is not initalized yet
+    // Display the generic error if Unleash is not initialized yet
     if (!isFlagAvailable) {
         return (
             <GenericErrorDisplay className={className} big={big} isNetworkError={isNetworkError}>

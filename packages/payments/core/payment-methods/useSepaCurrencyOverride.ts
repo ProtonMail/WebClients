@@ -38,7 +38,7 @@ export const updateCurrencyOverride = ({
             // switch from SEPA to something else.
             (!newSelectedMethod && currentSelectedMethod === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT));
 
-    // if user currently has SEPA and selects non-SEPA and currency was overriden then we need to change the
+    // if user currently has SEPA and selects non-SEPA and currency was overridden then we need to change the
     // currency back
     const shouldChangeCurrencyBack =
         getIsCurrencyOverriden({ currentCurrency, currencyBeforeOverride }) &&

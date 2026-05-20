@@ -58,7 +58,7 @@ export const createAuthStore = (store: Store) => {
          * full session resume after decrypting encrypted blob holding `offlineKD`. */
         hasOfflinePassword: () => Boolean(authStore.hasOfflineComponents() && authStore.getOfflineKD()),
 
-        /** Checks wether the session can verify a password locally */
+        /** Checks whether the session can verify a password locally */
         hasOfflineComponents: () => Boolean(authStore.getOfflineConfig() && authStore.getOfflineVerifier()),
 
         setOfflineComponents: (data: OfflineComponents) => {
@@ -106,12 +106,12 @@ export const createAuthStore = (store: Store) => {
                 (data.cookies || (data.AccessToken && data.RefreshToken))
             ),
 
-        /** Checks wether an in-memory session is sufficient for offline
+        /** Checks whether an in-memory session is sufficient for offline
          * booting. `offlineKD` should only be hydrated after unlocking. */
         validOfflineSession: (data: Partial<AuthSession>): boolean =>
             Boolean(data?.UID && data?.UserID && data?.offlineKD),
 
-        /** Checks wether a parsed persisted session object is
+        /** Checks whether a parsed persisted session object is
          * a valid `EncryptedAuthSession` in order to resume */
         validPersistedSession: (data: any): data is EncryptedAuthSession =>
             isObject(data) &&

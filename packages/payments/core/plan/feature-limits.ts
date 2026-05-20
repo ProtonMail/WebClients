@@ -6,7 +6,7 @@ import type { Plan, PlansMap } from './interface';
 
 /**
  * This mapping is meant to fill the gap of the API not returning some feature limits for some plans. The primary usage
- * of it is ensure correct addon transfering when user changes the plan and the frontend calls switchPlan() to find how
+ * of it is ensure correct addon transferring when user changes the plan and the frontend calls switchPlan() to find how
  * many addons the new plan needs to have.
  */
 const maxKeysByPlanOverrides: Partial<
