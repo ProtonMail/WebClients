@@ -13,6 +13,7 @@ import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateMailCategoryView } from '@proton/shared/lib/api/mailSettings';
+import { domIsBusy } from '@proton/shared/lib/busy/busy';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 
 export const CategoriesVisionaryOnboardingModal = () => {
@@ -30,7 +31,8 @@ export const CategoriesVisionaryOnboardingModal = () => {
     const hasSeenOnboarding = visionaryOnboardingFlag.feature?.Value;
 
     useEffect(() => {
-        if (hasSeenOnboarding || mailSettingsLoading || !hasBetaFlag) {
+        const isDomBusy = domIsBusy();
+        if (hasSeenOnboarding || mailSettingsLoading || !hasBetaFlag || isDomBusy) {
             return;
         }
 
@@ -54,6 +56,8 @@ export const CategoriesVisionaryOnboardingModal = () => {
     return renderModal ? (
         <Prompt
             {...modalProps}
+            disableCloseOnEscape
+            disableCloseWhenClickOutside
             title={c('Title').t`Early access to email categories`}
             buttons={[
                 <Button onClick={handleEnableCategories} color="norm">{c('Action').t`Start testing`}</Button>,
