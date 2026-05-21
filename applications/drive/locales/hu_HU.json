@@ -3112,9 +3112,6 @@
       "Failed to resend invitation": [
         "Nem sikerült újraküldeni a meghívást"
       ],
-      "Failed to save some photos to your Drive": [
-        "Nem sikerült menteni néhány fényképet az Ön Drive-jába"
-      ],
       "Failed to unshare node": [
         "Csomópont megosztásának megszüntetése sikertelen"
       ],
@@ -3431,9 +3428,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Nem sikerült betölteni a VPN vezérlőpultot. Ellenőrizze a kapcsolatot és próbálkozzon újra."
-      ],
-      "Unable to set photo as cover": [
-        "Nem lehet beállítani a fényképet borítóként"
       ],
       "Unexpected error, we can't import the contacts": [
         "Váratlan hiba történt, a névjegyek importálása nem sikerült"
@@ -4752,10 +4746,6 @@
       "Create a new contact group": [
         "Új névjegy csoport"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Hozzon létre biztonságos felhőárhelyet ${ value } tagnak",
-        "Hozzon létre biztonságos felhőárhelyet ${ value } tagnak"
-      ],
       "Create in": [
         "Létrehozás itt"
       ],
@@ -5320,9 +5310,6 @@
       ],
       "Photo was copied to stream and marked favorite there.": [
         "A fotó át lett másolva a videózásba és ott kedvencként lett megjelölve."
-      ],
-      "Photo(s) saved to your Drive": [
-        "A meghajtóra mentett fénykép(ek)"
       ],
       "Photos have been successfully recovered.": [
         "A fényképek sikeresen helyreállítva."
@@ -8233,22 +8220,6 @@
         "${ count } elem visszafejtése nem sikerült",
         "${ count } elem visszafejtése nem sikerült"
       ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "${ nbFailures } fényképet nem lehet eltávolítani innen: \"${ albumLink.name }\"",
-        "${ nbFailures } fényképet nem lehet eltávolítani innen: \"${ albumLink.name }\""
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "${ nbMainPhotosError } fényképet nem lehet hozzáadni ehhez: \"${ albumName }\"",
-        "${ nbMainPhotosError } fényképet nem lehet hozzáadni ehhez: \"${ albumName }\""
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "${ nbMainPhotosSuccess } fénykép hozzá lett adva ide: \"${ albumName }\"",
-        "${ nbMainPhotosSuccess } fénykép hozzá lett adva ide: \"${ albumName }\""
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "${ nbSuccesses } fénykép el lett távolítva innen: \"${ albumLink.name }\"",
-        "${ nbSuccesses } fénykép el lett távolítva innen: \"${ albumLink.name }\""
-      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } elem törölve",
         "${ numberOfItems } elem törölve"
@@ -8410,9 +8381,6 @@
       "Selected items were successfully removed from your list": [
         "A kiválasztott elemek sikeresen el lettek távolítva a listából.",
         "A kiválasztott elemek sikeresen el lettek távolítva a listából."
-      ],
-      "Selected photo(s) already in \"${ albumName }\"": [
-        "A kiválasztott fénykép(ek) már a(z) „${ albumName }” albumban vannak"
       ],
       "Share invitation accepted successfully": [
         "A megosztási meghívó elfogadása megtörtént"

@@ -530,9 +530,6 @@
       "Go back": [
         "Voltar"
       ],
-      "Go back to album “${ ellipsedAlbumName }“": [
-        "Voltar para o álbum \"${ ellipsedAlbumName }\""
-      ],
       "Go to ${ planOrAppName }": [
         "Acesse o ${ planOrAppName }"
       ],
@@ -2981,6 +2978,12 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Facilite a sincronização e o agendamento com calendários compartilhados."
       ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Para continuar recebendo e enviando mensagens do Gmail na ${ BRAND_NAME }, reconecte sua conta."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Para continuar recebendo e enviando mensagens do Gmail na ${ BRAND_NAME }, reconecte suas contas."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Para assegurar a máxima proteção de sua conta, defina uma frase de recuperação."
       ],
@@ -3483,9 +3486,6 @@
       "Failed to resend invitation": [
         "Erro ao reenviar o convite"
       ],
-      "Failed to save some photos to your Drive": [
-        "Falha ao salvar algumas fotos no seu Drive"
-      ],
       "Failed to unshare node": [
         "Erro ao deixar de compartilhar o nó"
       ],
@@ -3847,9 +3847,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Não foi possível carregar o painel de controle da VPN. Verifique sua conexão e tente novamente."
-      ],
-      "Unable to set photo as cover": [
-        "Não é possível definir a foto como capa"
       ],
       "Unexpected error, we can't import the contacts": [
         "Erro inesperado, não podemos importar os contatos"
@@ -5007,6 +5004,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } está mascarando seu endereço IP, então os sites não conseguem identificá-lo."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } oculta seu tráfego. ${ PASS_SHORT_APP_NAME } oculta sua identidade\n— aliases **hide-my-email ilimitados** e **alertas da dark-web** se seus dados foram vazados."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } membro)",
         "(${ memberCount } membros)"
@@ -5325,9 +5325,9 @@
       "Create a new contact group": [
         "Criar um grupo de contatos"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Criar uma nuvem segura para ${ value } membro",
-        "Criar uma nuvem segura para ${ value } membros"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Criar uma nuvem segura para ${ memberCount } membro",
+        "Criar uma nuvem segura para ${ memberCount } membros"
       ],
       "Create in": [
         "Criar em"
@@ -5989,9 +5989,6 @@
       ],
       "Photo was copied to stream and marked favorite there.": [
         "A foto foi copiada para o fluxo e marcada como favorita lá."
-      ],
-      "Photo(s) saved to your Drive": [
-        "Fotos salvas no seu Drive"
       ],
       "Photos have been successfully recovered.": [
         "As fotos foram recuperadas com sucesso."
@@ -8548,6 +8545,9 @@
       "99.95% SLA": [
         "SLA de 99,95%"
       ],
+      "Access all countries": [
+        "Acesso a todos os países"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueio de anuncios e proteção contra malware"
       ],
@@ -8855,6 +8855,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Volume/largura de banda ilimitados"
+      ],
+      "Unlock streaming": [
+        "Desbloquear streaming"
       ],
       "Up to ${ n } user": [
         "Até ${ n } usuário",
@@ -9258,6 +9261,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } país",
+        "${ n } países"
+      ],
       "Access advanced VPN features": [
         "Acesse recursos avançados de VPN"
       ],
@@ -9385,22 +9392,6 @@
       "${ errors.length } item failed to be trashed": [
         "Erro ao carregar ${ errors.length } item para a lixeira",
         "Erro ao carregar ${ errors.length } itens para a lixeira"
-      ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "${ nbFailures } foto não pôde ser removida de «${ albumLink.name }»",
-        "${ nbFailures } fotos não puderam ser removidas de «${ albumLink.name }»"
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "${ nbMainPhotosError } foto não pôde ser adicionada a «${ albumName }»",
-        "${ nbMainPhotosError } fotos não puderam ser adicionadas a «${ albumName }»"
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "${ nbMainPhotosSuccess } foto foi adicionada a «${ albumName }»",
-        "${ nbMainPhotosSuccess } fotos foram adicionadas a «${ albumName }»"
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "${ nbSuccesses } foto foi removida de «${ albumLink.name }»",
-        "${ nbSuccesses } fotos foram removidas de ${ albumLink.name }\""
       ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } item copiado para a lixeira",
@@ -9586,9 +9577,6 @@
       "Selected items were successfully removed from your list": [
         "Os itens selecionados foram removidos da sua lista com êxito.",
         "Os itens selecionados foram removidos da sua lista com êxito."
-      ],
-      "Selected photo(s) already in \"${ albumName }\"": [
-        "As fotos selecionadas já estão em «${ albumName }»."
       ],
       "Setting updated. Editors can change permissions and share.": [
         "Configuração atualizada. Editores podem alterar permissões e compartilhar."

@@ -530,7 +530,7 @@
       "Go back": [
         "Regresar"
       ],
-      "Go back to album “${ ellipsedAlbumName }“": [
+      "Go back to album \"${ ellipsedAlbumName }\"": [
         "Regresar al álbum «${ ellipsedAlbumName }»"
       ],
       "Go to ${ planOrAppName }": [
@@ -3492,9 +3492,6 @@
       "Failed to resend invitation": [
         "Error al reenviar la invitación"
       ],
-      "Failed to save some photos to your Drive": [
-        "No se pudieron guardar algunas fotos en su Drive"
-      ],
       "Failed to unshare node": [
         "Error al dejar de compartir el nodo"
       ],
@@ -3862,9 +3859,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "No se puede cargar el panel de control de la VPN. Revise su conexión e intente de nuevo."
-      ],
-      "Unable to set photo as cover": [
-        "No se puede establecer la foto como portada."
       ],
       "Unexpected error, we can't import the contacts": [
         "Error inesperado, no podemos importar los contactos"
@@ -5346,9 +5340,9 @@
       "Create a new contact group": [
         "Crear un grupo de contactos nuevo"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Crear una nube segura para ${ value } miembro",
-        "Crear una nube segura para ${ value } miembros"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crear una nube segura para ${ memberCount } miembro",
+        "Crear una nube segura para ${ memberCount } miembros"
       ],
       "Create in": [
         "Crear en"
@@ -6017,11 +6011,12 @@
       "Photo is set as album cover": [
         "La foto se ha establecido como portada de álbum"
       ],
+      "Photo saved to your Drive": [
+        "Foto guardada en su Drive",
+        "Fotos guardadas en su Drive"
+      ],
       "Photo was copied to stream and marked favorite there.": [
         "La foto se copió al flujo y se marcó como favorita allí."
-      ],
-      "Photo(s) saved to your Drive": [
-        "Fotos guardadas en su Drive"
       ],
       "Photos have been successfully recovered.": [
         "Se recuperaron las fotos."
@@ -6650,6 +6645,10 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "¡Bien hecho, ha incrementado el almacenamiento a 5 GB!"
       ],
+      "We couldn't save this photo to your Drive": [
+        "No pudimos guardar esta foto en su Drive",
+        "No pudimos guardar múltiples fotos en su Drive"
+      ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "No pudimos verificar que ${ nameAuthor } haya cargado ${ node.name }. Es posible que los elementos hayan sido manipulados. Abra el archivo solo si confía en él."
       ],
@@ -6670,6 +6669,10 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Se usa 3-D Secure para proteger sus pagos."
+      ],
+      "We were not able to add this photo to your album": [
+        "No pdimos agregar esta foto en su álbum",
+        "No pudimos agregar algunas fotos en su álbum"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Le redirigiremos a PayPal en una pestaña nueva del navegador para completar esta transacción. Si usa cualquier bloqueador emergente, desactívelo para continuar."
@@ -8599,6 +8602,9 @@
       "99.95% SLA": [
         "SLA del 99,95%"
       ],
+      "Access all countries": [
+        "Acceso a todos los países disponibles"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anuncios y protección contra malware"
       ],
@@ -8757,6 +8763,9 @@
       "Multiple admin roles": [
         "Distintos roles de administración"
       ],
+      "No streaming support": [
+        "Sin soporte de streaming"
+      ],
       "Online document editor": [
         "Editor de documentos en línea"
       ],
@@ -8906,6 +8915,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ancho de banda/volumen ilimitado"
+      ],
+      "Unlock streaming": [
+        "Desbloquear streaming"
       ],
       "Up to ${ n } user": [
         "Hasta ${ n } usuario",
@@ -9309,6 +9321,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } pais",
+        "${ n } países"
+      ],
       "Access advanced VPN features": [
         "Acceso a funciones VPN avanzadas"
       ],
@@ -9421,6 +9437,10 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" renombrado"
       ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } foto fue añadida a «${ albumName }»",
+        "${ addedUids.length } fotos fueron añadidas a «${ albumName }»"
+      ],
       "${ count } item failed to be decrypted": [
         "Error al descifrar ${ count } elemento",
         "Error al descifrar ${ count } elementos"
@@ -9436,22 +9456,6 @@
       "${ errors.length } item failed to be trashed": [
         "Error al mover ${ errors.length } elemento a la papelera",
         "Error al mover ${ errors.length } elementos a la papelera"
-      ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "No se pudo borrar ${ nbFailures } foto de «${ albumLink.name }»",
-        "No se pudieron borrar ${ nbFailures } fotos de «${ albumLink.name }»"
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "No se pudo añadir ${ nbMainPhotosError } foto a « ${ albumName }»",
-        "No se pudieron añadir ${ nbMainPhotosError } fotos a «${ albumName }»"
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "${ nbMainPhotosSuccess } foto fue añadida a «${ albumName }»",
-        "${ nbMainPhotosSuccess } fotos fueron añadidas a «${ albumName }»"
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "${ nbSuccesses } foto fue eliminada de «${ albumLink.name }»",
-        "${ nbSuccesses } fotos fueron eliminadas de «${ albumLink.name }»"
       ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } elemento copiado movido a la papelera",
@@ -9510,6 +9514,10 @@
       ],
       "${ reason } has been enabled": [
         "Se ha activado ${ reason }."
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } foto fue eliminada de «${ albumName }»",
+        "${ removed } fotos fueron eliminadas de «${ albumName }»"
       ],
       "Access for the member removed": [
         "Se eliminó el acceso para el miembro."
@@ -9637,9 +9645,6 @@
       "Selected items were successfully removed from your list": [
         "Los elementos seleccionados se eliminaron correctamente de su lista",
         "Los elementos seleccionados se eliminaron correctamente de su lista"
-      ],
-      "Selected photo(s) already in \"${ albumName }\"": [
-        "Las fotos seleccionadas ya están en «${ albumName }»."
       ],
       "Setting updated. Editors can change permissions and share.": [
         "Configuración actualizada. Los editores pueden compartir y cambiar permisos."

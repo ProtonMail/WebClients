@@ -537,9 +537,6 @@
       "Go back": [
         "Zpět"
       ],
-      "Go back to album “${ ellipsedAlbumName }“": [
-        "Zpět do alba “${ ellipsedAlbumName }“"
-      ],
       "Go to ${ planOrAppName }": [
         "Jít do ${ planOrAppName }"
       ],
@@ -3533,9 +3530,6 @@
       "Failed to resend invitation": [
         "Pozvánku se nepodařilo znovu odeslat"
       ],
-      "Failed to save some photos to your Drive": [
-        "Uložení některých fotek na váš Proton Drive selhalo"
-      ],
       "Failed to unshare node": [
         "Nepodařilo se zrušit sdílení uzlu"
       ],
@@ -3910,9 +3904,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Nelze načíst ovládací panel VPN. Zkontrolujte prosím své připojení a zkuste to znovu."
-      ],
-      "Unable to set photo as cover": [
-        "Nelze nastavit fotku jako obálku"
       ],
       "Unexpected error, we can't import the contacts": [
         "Neočekávaná chyba, kontakty nelze importovat"
@@ -5480,12 +5471,6 @@
       "Create a new contact group": [
         "Vytvořit novou skupinu kontaktů"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Vytvořte bezpečný cloud pro ${ value } člena",
-        "Vytvořte bezpečný cloud pro ${ value } členy",
-        "Vytvořte bezpečný cloud pro ${ value } členů",
-        "Vytvořte bezpečný cloud pro ${ value } členů"
-      ],
       "Create in": [
         "Vytvořit v"
       ],
@@ -6154,9 +6139,6 @@
       ],
       "Photo was copied to stream and marked favorite there.": [
         "Fotka byla zkopírována do streamu a tam označena jako oblíbená."
-      ],
-      "Photo(s) saved to your Drive": [
-        "Fotka(y) uložena(y) na váš Proton Drive"
       ],
       "Photos have been successfully recovered.": [
         "Fotky byly úspěšně obnoveny."
@@ -9560,30 +9542,6 @@
         "${ errors.length } položek se nepodařilo přesunout do koše",
         "${ errors.length } položek se nepodařilo přesunout do koše"
       ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "${ nbFailures } fotku se nepodařilo odebrat z ${ albumLink.name }\"",
-        "${ nbFailures } fotky se nepodařilo odebrat z ${ albumLink.name }\"",
-        "${ nbFailures } fotek se nepodařilo odebrat z ${ albumLink.name }\"",
-        "${ nbFailures } fotek se nepodařilo odebrat z ${ albumLink.name }\""
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "${ nbMainPhotosError } fotku se nepodařilo přidat do \"${ albumName }\"",
-        "${ nbMainPhotosError } fotky se nepodařilo přidat do \"${ albumName }\"",
-        "${ nbMainPhotosError } fotek se nepodařilo přidat do \"${ albumName }\"",
-        "${ nbMainPhotosError } fotek se nepodařilo přidat do \"${ albumName }\""
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "${ nbMainPhotosSuccess } fotka byla přidána do \"${ albumName }\"",
-        "${ nbMainPhotosSuccess } fotky byly přidány do \"${ albumName }\"",
-        "${ nbMainPhotosSuccess } fotek bylo přidáno do \"${ albumName }\"",
-        "${ nbMainPhotosSuccess } fotek bylo přidáno do \"${ albumName }\""
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "${ nbSuccesses } fotka byla odebrána z \"${ albumLink.name }\"",
-        "${ nbSuccesses } fotky byly odebrány z \"${ albumLink.name }\"",
-        "${ nbSuccesses } fotek bylo odebráno z \"${ albumLink.name }\"",
-        "${ nbSuccesses } fotek bylo odebráno z \"${ albumLink.name }\""
-      ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } zkopírovaná položka přesunuta do koše",
         "${ numberOfItems } zkopírované položky přesunuty do koše",
@@ -9808,9 +9766,6 @@
         "Vybrané položky byly úspěšně odebrány z vašeho seznamu",
         "Vybrané položky byly úspěšně odebrány z vašeho seznamu",
         "Vybrané položky byly úspěšně odebrány z vašeho seznamu"
-      ],
-      "Selected photo(s) already in \"${ albumName }\"": [
-        "Vybrané fotky jsou již v albu \"${ albumName }\""
       ],
       "Setting updated. Editors can change permissions and share.": [
         "Nastavení aktualizováno. Editoři mohou měnit oprávnění a sdílet."

@@ -530,8 +530,8 @@
       "Go back": [
         "Επιστροφή"
       ],
-      "Go back to album “${ ellipsedAlbumName }“": [
-        "Επιστροφή στο άλμπουμ “${ ellipsedAlbumName }“"
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Επιστροφή στο άλμπουμ \"${ ellipsedAlbumName }\""
       ],
       "Go to ${ planOrAppName }": [
         "Πηγαίνετε στο ${ planOrAppName }"
@@ -3492,9 +3492,6 @@
       "Failed to resend invitation": [
         "Αποτυχία επαναποστολής πρόσκλησης"
       ],
-      "Failed to save some photos to your Drive": [
-        "Αποτυχία αποθήκευσης ορισμένων φωτογραφιών στο Drive σας"
-      ],
       "Failed to unshare node": [
         "Αποτυχία κατάργησης κοινοχρησίας κόμβου"
       ],
@@ -3862,9 +3859,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Δεν είναι δυνατή η φόρτωση του πίνακα ελέγχου VPN. Παρακαλούμε ελέγξτε τη σύνδεσή σας και προσπαθήστε ξανά."
-      ],
-      "Unable to set photo as cover": [
-        "Δεν είναι δυνατός ο ορισμός αυτής της φωτογραφίας ως εξωφύλλου"
       ],
       "Unexpected error, we can't import the contacts": [
         "Μη αναμενόμενο σφάλμα, δεν είναι δυνατή η εισαγωγή των επαφών"
@@ -5346,9 +5340,9 @@
       "Create a new contact group": [
         "Δημιουργία νέας ομάδας επαφών"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλος",
-        "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλη"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Δημιουργήστε ένα ασφαλές cloud για ${ memberCount } μέλος",
+        "Δημιουργήστε ένα ασφαλές cloud για ${ memberCount } μέλη"
       ],
       "Create in": [
         "Δημιουργία σε"
@@ -6017,11 +6011,12 @@
       "Photo is set as album cover": [
         "Η φωτογραφία έχει οριστεί ως εξώφυλλο άλμπουμ"
       ],
+      "Photo saved to your Drive": [
+        "Η φωτογραφία αποθηκεύτηκε στο Drive σας",
+        "Η φωτογραφίες αποθηκεύτηκαν στο Drive σας"
+      ],
       "Photo was copied to stream and marked favorite there.": [
         "Η φωτογραφία αντιγράφηκε στη ροή και σημειώθηκε ως αγαπημένη εκεί."
-      ],
-      "Photo(s) saved to your Drive": [
-        "Οι φωτογραφίες αποθηκεύτηκαν στο Drive σας"
       ],
       "Photos have been successfully recovered.": [
         "Οι φωτογραφίες έχουν ανακτηθεί με επιτυχία."
@@ -6650,6 +6645,10 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "Συγχαρητήρια, μόλις αυξήσατε τον αποθηκευτικό σας χώρο στα 5 GB!"
       ],
+      "We couldn't save this photo to your Drive": [
+        "Δεν μπορέσαμε να αποθηκεύσουμε αυτή τη φωτογραφία στο Drive σας",
+        "Δεν μπορέσαμε να αποθηκεύσουμε αυτές τις φωτογραφίες στο Drive σας"
+      ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Δεν μπορέσαμε να επαληθεύσουμε ότι ο/η ${ nameAuthor } ανέβασε το ${ node.name }. Το ακόλουθο ενδέχεται να έχει παραποιηθεί: σειρά δεδομένων αρχείου. Ανοίξτε το μόνο αν το εμπιστεύεστε."
       ],
@@ -6670,6 +6669,10 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Χρησιμοποιούμε ασφάλεια 3-D για να προστατεύσουμε τις πληρωμές σας"
+      ],
+      "We were not able to add this photo to your album": [
+        "Δεν καταφέραμε να προσθέσουμε αυτή τη φωτογραφία στο άλμπουμ σας",
+        "Δεν καταφέραμε να προσθέσουμε αυτές τις φωτογραφίες στο άλμπουμ σας"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Θα σας ανακατευθύνουμε στο PayPal, σε μια νέα καρτέλα προγράμματος περιήγησης, για να ολοκληρώσετε αυτήν τη συναλλαγή. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
@@ -9374,6 +9377,10 @@
       "\"${ newName }\" renamed successfully": [
         "Επιτυχής μετονομασία σε \"${ newName }\""
       ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } φωτογραφία έχει προστεθεί στο \"${ albumName }\"",
+        "${ addedUids.length } φωτογραφίες έχουν προστεθεί στο \"${ albumName }\""
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } αντικείμενο απέτυχε να αποκρυπτογραφηθεί",
         "${ count } αντικείμενα απέτυχαν να αποκρυπτογραφηθούν"
@@ -9389,22 +9396,6 @@
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } στοιχείο απέτυχε να μετακινηθεί στον κάδο απορριμμάτων",
         "${ errors.length } στοιχεία απέτυχαν να μετακινηθούν στον κάδο απορριμμάτων"
-      ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "${ nbFailures } φωτογραφία δεν μπορεί να καταργηθεί από το \"${ albumLink.name }\"",
-        "${ nbFailures } φωτογραφία δεν μπορούν να καταργηθούν από το \"${ albumLink.name }\""
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "${ nbMainPhotosError } φωτογραφία δεν μπορεί να προστεθεί στο \"${ albumName }\"",
-        "${ nbMainPhotosError } φωτογραφίες δεν μπορούν να προστεθούν στο \"${ albumName }\""
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "${ nbMainPhotosSuccess } φωτογραφία έχει προστεθεί στο \"${ albumName }\"",
-        "${ nbMainPhotosSuccess } φωτογραφίες έχουν προστεθεί στο \"${ albumName }\""
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "${ nbSuccesses } φωτογραφία έχει αφαιρεθεί από το \"${ albumLink.name }\"",
-        "${ nbSuccesses } φωτογραφίες έχουν αφαιρεθεί από το \"${ albumLink.name }\""
       ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } αντιγραμμένο στοιχείο μετακινήθηκε στον κάδο απορριμμάτων",
@@ -9463,6 +9454,10 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } έχει ενεργοποιηθεί"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } φωτογραφία έχει αφαιρεθεί από το \"${ albumName }\"",
+        "${ removed } φωτογραφίες έχουν αφαιρεθεί από το \"${ albumName }\""
       ],
       "Access for the member removed": [
         "Η πρόσβαση για το μέλος καταργήθηκε"
@@ -9590,9 +9585,6 @@
       "Selected items were successfully removed from your list": [
         "Το επιλεγμένο στοιχείο αφαιρέθηκε επιτυχώς από τη λίστα σας",
         "Τα επιλεγμένα στοιχεία αφαιρέθηκαν επιτυχώς από τη λίστα σας"
-      ],
-      "Selected photo(s) already in \"${ albumName }\"": [
-        "Οι επιλεγμένες φωτογραφίες υπάρχουν ήδη στο \"${ albumName }\""
       ],
       "Setting updated. Editors can change permissions and share.": [
         "Η ρύθμιση ενημερώθηκε. Οι συντάκτες μπορούν να αλλάξουν τα δικαιώματα και να κοινοποιήσουν."
