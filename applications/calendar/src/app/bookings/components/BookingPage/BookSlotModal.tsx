@@ -91,9 +91,9 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
                 <span aria-hidden="true" className="pointer-events-none mx-2">
                     •
                 </span>
-                {format(timeslot.tzDate, 'HH:mm', { locale: dateLocale })}
+                {format(timeslot.tzDate, 'p', { locale: dateLocale })}
                 {' - '}
-                {format(addMinutes(timeslot.tzDate, bookingDetails?.duration || 0), 'HH:mm', { locale: dateLocale })}
+                {format(addMinutes(timeslot.tzDate, bookingDetails?.duration || 0), 'p', { locale: dateLocale })}
             </div>
             <div className="color-weak">{getTimezoneAndOffset(selectedTimezone, timeslot.tzDate)}</div>
         </>
