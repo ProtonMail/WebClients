@@ -63,7 +63,7 @@ const SettingsNavItem = (props: Props) => {
             {'to' in props && props.to !== undefined ? (
                 <Link to={props.to} className={rowClassName}>
                     {inner}
-                    <IcChevronRight size={5} className="shrink-0 color-disabled ml-auto" />
+                    <IcChevronRight size={5} className="shrink-0 color-disabled ml-auto rtl:mirror" />
                 </Link>
             ) : (
                 <button type="button" className={rowClassName} onClick={props.onClick}>
