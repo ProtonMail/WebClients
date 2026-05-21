@@ -380,21 +380,20 @@ im.$media-expressions: $media-expressions;
 }
 
 .gallery-grid {
-	display: grid;
-	grid-template-columns: repeat(6, 1fr);
-	gap: 4px;
+	column-count: 4;
+	column-gap: 12px;
 
 	@include im.media('<=large') {
-		grid-template-columns: repeat(4, 1fr);
+		column-count: 3;
 	}
 
 	@include im.media('<=medium') {
-		grid-template-columns: repeat(3, 1fr);
+		column-count: 2;
+		column-gap: 10px;
 	}
 
 	@include im.media('<=small') {
-		grid-template-columns: repeat(2, 1fr);
-		gap: 6px;
+		column-count: 1;
 	}
 }
 
@@ -407,13 +406,15 @@ im.$media-expressions: $media-expressions;
 // ── Image card ────────────────────────────────────────────────────────────────
 
 .gallery-card {
+	display: block;
+	break-inside: avoid;
 	position: relative;
-	aspect-ratio: 1;
 	border-radius: 10px;
 	overflow: hidden;
 	cursor: pointer;
 	background-color: var(--background-strong);
 	border: 1px solid var(--border-weak);
+	margin-block-end: 12px;
 	transition:
 		transform 0.15s ease,
 		box-shadow 0.15s ease;
@@ -434,6 +435,7 @@ im.$media-expressions: $media-expressions;
 		align-items: center;
 		justify-content: center;
 		cursor: default;
+		min-block-size: 160px;
 
 		&:hover {
 			transform: none;
@@ -444,8 +446,7 @@ im.$media-expressions: $media-expressions;
 
 .gallery-card__image {
 	inline-size: 100%;
-	block-size: 100%;
-	object-fit: cover;
+	block-size: auto;
 	display: block;
 }
 
