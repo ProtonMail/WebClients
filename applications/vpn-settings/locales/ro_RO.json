@@ -3746,6 +3746,9 @@
       "/month": [
         "/lună"
       ],
+      "/user /month": [
+        "/utilizator/lună"
+      ],
       "/user per month": [
         "/utilizator pe lună"
       ]
@@ -5026,6 +5029,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Aveți prea multe foldere în contul extern. Modificați opțiunile de importare pentru a șterge unele foldere."
+      ],
+      "There was an error, please try again.": [
+        "A apărut o eroare. Reîncercați."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Acest câmp depășește maximul de ${ maximumLength } de caractere."
@@ -7256,10 +7262,10 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Creați o etichetă pentru mesajele importate, intervalul de timp de importat și etichetele care trebuie importate."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Creați un cont în cloud securizat pentru ${ value } membru",
-        "Creați un cont cloud securizat pentru ${ value } membri",
-        "Creați un cont cloud securizat pentru ${ value } de membri"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Creați un cont în cloud securizat pentru ${ memberCount } membru",
+        "Creați un cont cloud securizat pentru ${ memberCount } membri",
+        "Creați un cont cloud securizat pentru ${ memberCount } de membri"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Creați și gestionați conturi subordonate și atribuiți-le adrese de e-mail cu domeniului personal."
@@ -8571,6 +8577,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro l-a recomandat cu o evaluare de 4,2 din 5 stele"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Temporar indisponibil din cauza solicitărilor mari. Reîncercați mai târziu."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporar indisponibil. Reveniți mai târziu."
@@ -11178,11 +11187,26 @@
       "Built-in chat": [
         "Sistem de conversații integrat"
       ],
+      "Cloud storage and file sharing": [
+        "Stocare în cloud și partajare fișiere"
+      ],
+      "Data retention policies": [
+        "Politici de păstrare a datelor"
+      ],
+      "Document and spreadsheet editor": [
+        "Editor de documente și registre de lucru"
+      ],
+      "Email writing assistant": [
+        "Asistent de scriere pentru e-mail"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Partajare ecran cu criptare bilaterală și conversații temporare pe durata apelului"
       ],
       "Hosts can record meetings locally on their computers": [
         "Gazdele pot înregistra întâlnirile local pe computerele lor"
+      ],
+      "Includes Meet Professional": [
+        "Include Meet Professional"
       ],
       "Meeting recording": [
         "Înregistrare conferință"
@@ -11190,8 +11214,17 @@
       "One active meeting at a time": [
         "O conferință activă simultan"
       ],
+      "Password manager with team vaults": [
+        "Manager de parole cu seifuri pentru echipe"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Conversații private cu IA (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Partajare ecran"
+      ],
+      "Secure mail and calendar": [
+        "Mail și calendar securitate"
       ],
       "Unlimited meetings per day": [
         "Conferințe nelimitate pe zi"
@@ -11210,6 +11243,9 @@
         "Conferințe video, ${ n } participant",
         "Conferințe video, ${ n } participanți",
         "Conferințe video, ${ n } de participanți"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN cu blocare reclame și protecție împotriva programelor malițioase"
       ]
     },
     "meet_2025: Info": {
@@ -16348,9 +16384,6 @@
       "Organization logo updated": [
         "S-a actualizat sigla organizației"
       ],
-      "Organization name set": [
-        "Nume organizație setat"
-      ],
       "Organization name updated": [
         "S-a actualizat numele organizației"
       ],
@@ -16513,6 +16546,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "Pentru uz personal"
+      ],
+      "For professional use": [
+        "Pentru uz profesional"
       ]
     },
     "Tab in domain modal": {
