@@ -519,6 +519,7 @@ export const handleSetupUser = async ({
                 Account: emailAddress,
                 Provider: OAUTH_PROVIDER.GOOGLE,
                 AutomaticImport: true,
+                QuotaThresholdRatio: 0.2,
             })
         );
     }
