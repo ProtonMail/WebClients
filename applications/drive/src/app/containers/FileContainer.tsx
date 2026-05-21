@@ -13,7 +13,7 @@ import { useLegacyContextShareHandler } from '../hooks/drive/useLegacyContextSha
 import useDriveNavigation from '../hooks/drive/useNavigate';
 import { EnrichedError } from '../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../utils/errorHandling/handleSdkError';
-import PreviewContainer from './PreviewContainer';
+import { PreviewContainer } from './PreviewContainer';
 
 type DriveSectionRouteProps = { shareId?: string; type?: LinkURLType; linkId?: string };
 
