@@ -826,7 +826,7 @@
         "Başka bir yöntem deneyin"
       ],
       "Try Workspace": [
-        "Workspace'i dene"
+        "Workspace tarifesini deneyin"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"
@@ -2965,6 +2965,12 @@
       "Failed to fetch sharing info": [
         "Paylaşım bilgileri alınamadı"
       ],
+      "Failed to load document details": [
+        "Belge ayrıntıları yüklenemedi"
+      ],
+      "Failed to load recent documents": [
+        "Son çalışılan belgeler yüklenemedi"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Abonelik verileri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
       ],
@@ -4675,7 +4681,7 @@
         "Coğrafi engelleme"
       ],
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
-        "${ BRAND_NAME } Workspace ile profesyonel bir @sirketiniz.com e-postasına, kullanıcı başına 1 TB güvenli depolama alanına, daha uzun görüntülü görüşmelere ve daha fazlasına sahip olun."
+        "${ BRAND_NAME } Workspace ile profesyonel bir @kurulusunuz.com e-posta adresini, kullanıcı başına 1 TB güvenli depolama alanını, daha uzun görüntülü görüşmeleri ve diğer şeyleri edinin."
       ],
       "Get email updates for comments and suggestions added to your documents.": [
         "Belgelerinize eklenen yorumlar ve öneriler için e-posta bildirimleri alın."
@@ -7109,7 +7115,7 @@
         "Sınırsız trafik/bant genişliği"
       ],
       "Unlock streaming": [
-        "Yayın akışı hizmetlerinin engelini kaldırın"
+        "Yayın akışı hizmetlerine erişin"
       ],
       "Up to ${ n } user": [
         "${ n } kullanıcıya kadar",
