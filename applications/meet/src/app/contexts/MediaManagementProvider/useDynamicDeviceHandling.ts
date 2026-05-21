@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
 import { ConnectionState, type LocalTrack, Room, RoomEvent, Track } from 'livekit-client';
@@ -84,11 +84,13 @@ interface UseDynamicDeviceHandlingParams {
         videoDeviceId,
         forceUpdate,
         preserveCache,
+        updateUserIntent,
     }: {
         isEnabled?: boolean;
         videoDeviceId?: string;
         forceUpdate?: boolean;
         preserveCache?: boolean;
+        updateUserIntent?: boolean;
     }) => Promise<boolean | undefined>;
     toggleAudio: ({
         isEnabled,
@@ -261,6 +263,7 @@ export const useDynamicDeviceHandling = ({
                                 videoDeviceId: newDeviceId,
                                 forceUpdate: true,
                                 preserveCache: true,
+                                updateUserIntent: false,
                             });
                         } else {
                             void switchActiveDevice({
@@ -306,8 +309,8 @@ export const useDynamicDeviceHandling = ({
         }
     });
 
-    const debouncedHandleDeviceChange = useCallback(
-        debounce(handleDeviceChange, 200, { leading: false, trailing: true }),
+    const debouncedHandleDeviceChange = useMemo(
+        () => debounce(handleDeviceChange, 200, { leading: false, trailing: true }),
         [handleDeviceChange]
     );
 

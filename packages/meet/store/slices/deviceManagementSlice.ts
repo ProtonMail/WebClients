@@ -5,9 +5,15 @@ import { c } from 'ttag';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { isLinux, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
-import { type SerializableDeviceInfo, getDefaultDevice, isDefaultDevice } from '../../utils/deviceUtils';
+import {
+    type SerializableDeviceInfo,
+    getDefaultDevice,
+    isDefaultDevice,
+    toSerializableDevice,
+} from '../../utils/deviceUtils';
 import { isAudioSessionAvailable, setAudioSessionType } from '../../utils/iosAudioSession';
 import type { MeetState } from '../rootReducer';
+import type { MeetStore } from '../store';
 
 export enum PermissionsModalType {
     NONE = 'none',
@@ -19,21 +25,35 @@ export enum PermissionsModalType {
 }
 
 export interface DeviceManagementState {
+    // Permissions
     permissions: {
         camera: PermissionState;
         microphone: PermissionState;
     };
+
+    // Devices lists
     cameras: SerializableDeviceInfo[];
     microphones: SerializableDeviceInfo[];
     speakers: SerializableDeviceInfo[];
+
+    // Preferred devices
     preferredCameraId: string | null;
     preferredMicrophoneId: string | null;
     preferredSpeakerId: string | null;
+
+    // Active devices
     activeCameraId: string;
     activeMicrophoneId: string;
     activeAudioOutputId: string;
+
+    // Initial states
     initialCameraState: boolean;
     initialAudioState: boolean;
+
+    // User intent, used to store the user's intent when the camera is toggled manually
+    userCameraIntent: boolean | null;
+
+    // UI
     uiModals: {
         permissionsModal: PermissionsModalType;
     };
@@ -55,6 +75,7 @@ export const deviceManagementInitialState: DeviceManagementState = {
     activeAudioOutputId: '',
     initialCameraState: false,
     initialAudioState: false,
+    userCameraIntent: null,
     uiModals: {
         permissionsModal: PermissionsModalType.NONE,
     },
@@ -121,6 +142,9 @@ const slice = createSlice({
         },
         setInitialAudioState: (state, action: PayloadAction<boolean>) => {
             state.initialAudioState = action.payload;
+        },
+        setUserCameraIntent: (state, action: PayloadAction<boolean | null>) => {
+            state.userCameraIntent = action.payload;
         },
         dismissPermissionsModal: (state) => {
             state.uiModals.permissionsModal = PermissionsModalType.NONE;
@@ -224,6 +248,28 @@ export const selectCameras = (state: MeetState) => state.deviceManagement.camera
 export const selectMicrophones = (state: MeetState) => state.deviceManagement.microphones;
 export const selectSpeakers = (state: MeetState) => state.deviceManagement.speakers;
 
+// Get the devices from the media devices API, fallback to the store if the API is not supported
+// Prevent us to use stale devices when plugging/unplugging them, array is not memoized
+export const selectRealtimeDevices = async (store: MeetStore, kind: 'audioinput' | 'audiooutput' | 'videoinput') => {
+    try {
+        return (await navigator.mediaDevices.enumerateDevices())
+            .filter((d) => d.kind === kind && d.deviceId !== '')
+            .map(toSerializableDevice);
+    } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error('[selectRealtimeDevices] error getting realtime devices, falling back to redux store', error);
+
+        switch (kind) {
+            case 'audioinput':
+                return store.getState().deviceManagement.microphones;
+            case 'audiooutput':
+                return store.getState().deviceManagement.speakers;
+            case 'videoinput':
+                return store.getState().deviceManagement.cameras;
+        }
+    }
+};
+
 export const selectPreferredCameraId = (state: MeetState) => state.deviceManagement.preferredCameraId;
 export const selectPreferredMicrophoneId = (state: MeetState) => state.deviceManagement.preferredMicrophoneId;
 export const selectPreferredSpeakerId = (state: MeetState) => state.deviceManagement.preferredSpeakerId;
@@ -234,6 +280,7 @@ export const selectActiveAudioOutputId = (state: MeetState) => state.deviceManag
 
 export const selectInitialCameraState = (state: MeetState) => state.deviceManagement.initialCameraState;
 export const selectInitialAudioState = (state: MeetState) => state.deviceManagement.initialAudioState;
+export const selectUserCameraIntent = (state: MeetState) => state.deviceManagement.userCameraIntent;
 
 export const selectPermissionsModals = (state: MeetState) => state.deviceManagement.uiModals;
 
@@ -329,6 +376,7 @@ export const {
     setActiveDevice,
     setInitialCameraState,
     setInitialAudioState,
+    setUserCameraIntent,
     dismissPermissionsModal,
     showPermissionsModal,
     resetDeviceManagement,

@@ -8,13 +8,14 @@ import { Track } from 'livekit-client';
 
 import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
-import { useMeetSelector } from '@proton/meet/store/hooks';
+import { useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import { selectKrispDebug } from '@proton/meet/store/slices/devToolsSlice';
 import {
     selectActiveMicrophoneId,
     selectInitialAudioState,
     selectMicrophoneState,
     selectMicrophones,
+    selectRealtimeDevices,
 } from '@proton/meet/store/slices/deviceManagementSlice';
 import { isAudioSessionAvailable, setAudioSessionType } from '@proton/meet/utils/iosAudioSession';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
@@ -110,6 +111,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
     const microphones = useMeetSelector(selectMicrophones);
     const microphoneState = useMeetSelector(selectMicrophoneState);
     const isKrispDebugEnabled = useMeetSelector(selectKrispDebug);
+    const store = useMeetStore();
 
     const [noiseFilter, setNoiseFilter] = useState(() => {
         const persisted = getPersistedNoiseFilter();
@@ -473,10 +475,12 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
             skipNoiseFilter = false,
         } = params;
 
+        const realtimeMicrophones = await selectRealtimeDevices(store, 'audioinput');
+
         const requestedDeviceId =
             audioDeviceId === DEFAULT_DEVICE_ID ? microphoneState.systemDefault?.deviceId : audioDeviceId;
-        const availableDeviceIds = new Set(microphones.map((mic) => mic.deviceId).filter(Boolean));
-        const fallbackDeviceId = microphones[0]?.deviceId || microphoneState.systemDefault?.deviceId || null;
+        const availableDeviceIds = new Set(realtimeMicrophones.map((mic) => mic.deviceId).filter(Boolean));
+        const fallbackDeviceId = realtimeMicrophones[0]?.deviceId || microphoneState.systemDefault?.deviceId || null;
         const deviceId =
             requestedDeviceId && availableDeviceIds.has(requestedDeviceId) ? requestedDeviceId : fallbackDeviceId;
 
