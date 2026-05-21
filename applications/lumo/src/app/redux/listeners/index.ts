@@ -8,6 +8,7 @@ import {selectPersistModel} from '@proton/redux-utilities/creator';
 
 import type {AppStartListening, LumoListener, LumoState} from '../store';
 import type {LumoThunkArguments} from '../thunk';
+import {lumoEventLoopListener} from '../eventLoop/listener';
 import {startFeatureFlagsListeners} from './featureFlagsListener';
 import {startLumoUserSettingsListeners} from './lumoUserSettingsListener';
 import {startPersonalizationListeners} from './personalizationListener';
@@ -29,6 +30,7 @@ export const start = (startListening: AppStartListening) => {
     startSharedListening(startListening);
     startPersistListener(startListening, getLumoPersistedState);
     startAccountSessionsListener(startListening);
+    lumoEventLoopListener(startListening);
     startPersonalizationListeners(startListening);
     startFeatureFlagsListeners(startListening);
     startLumoUserSettingsListeners(startListening);
