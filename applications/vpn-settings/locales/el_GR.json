@@ -3721,6 +3721,9 @@
       "/month": [
         "/μήνα"
       ],
+      "/user /month": [
+        "/χρήστη /μήνα"
+      ],
       "/user per month": [
         "/χρήστη ανά μήνα"
       ]
@@ -4991,6 +4994,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Υπερβολικός αριθμός φακέλων στον εξωτερικό λογαριασμό σας. Παρακαλούμε προσαρμόστε την εισαγωγή, προς διαγραφή μερικών φακέλων."
+      ],
+      "There was an error, please try again.": [
+        "Παρουσιάστηκε σφάλμα, παρακαλούμε προσπαθήστε ξανά."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
@@ -7161,9 +7167,9 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Δημιουργήστε μια ετικέτα για τα εισαγόμενα μηνύματα, ένα χρονικό εύρος για αυτήν την εισαγωγή, και τις ετικέτες που θα θέλατε να εισάγετε."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλος",
-        "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλη"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Δημιουργήστε ένα ασφαλές cloud για ${ memberCount } μέλος",
+        "Δημιουργήστε ένα ασφαλές cloud για ${ memberCount } μέλη"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Δημιουργήστε και διαχειριστείτε τους δευτερεύοντες λογαριασμούς και αντιστοιχίστε τις διευθύνσεις ηλεκτρονικού ταχυδρομείου στον προσαρμοσμένο τομέα σας."
@@ -8463,6 +8469,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Το TechRadar Pro το συνιστά με βαθμολογία 4,2 στα 5 αστέρια"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Προσωρινά μη διαθέσιμο λόγω υψηλής ζήτησης. Παρακαλούμε δοκιμάστε ξανά αργότερα."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
@@ -11037,11 +11046,26 @@
       "Built-in chat": [
         "Ενσωματωμένη συνομιλία"
       ],
+      "Cloud storage and file sharing": [
+        "Αποθήκευση στο cloud και κοινοποίηση αρχείων"
+      ],
+      "Data retention policies": [
+        "Πολιτικές διατήρησης δεδομένων"
+      ],
+      "Document and spreadsheet editor": [
+        "Επεξεργαστής εγγράφων και υπολογιστικών φύλλων"
+      ],
+      "Email writing assistant": [
+        "Βοηθός σύνταξης ηλεκτρονικού ταχυδρομείου"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Κρυπτογραφημένη κοινή χρήση οθόνης διατερματικά και εφήμερη συνομιλία κατά τη διάρκεια της κλήσης"
       ],
       "Hosts can record meetings locally on their computers": [
         "Οι οικοδεσπότες μπορούν να καταγράφουν τις συσκέψεις τοπικά στους υπολογιστές τους"
+      ],
+      "Includes Meet Professional": [
+        "Συμπεριλαμβάνει το Meet Professional"
       ],
       "Meeting recording": [
         "Ηχογράφηση σύσκεψης"
@@ -11049,8 +11073,17 @@
       "One active meeting at a time": [
         "Μία ενεργή σύσκεψη τη φορά"
       ],
+      "Password manager with team vaults": [
+        "Διαχειριστής κωδικών πρόσβασης με ομαδικές κρύπτες"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Ιδιωτική συνομιλία με τεχνητή νοημοσύνη (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Κοινή χρήση οθόνης"
+      ],
+      "Secure mail and calendar": [
+        "Ασφαλής αλληλογραφία και ημερολόγιο"
       ],
       "Unlimited meetings per day": [
         "Απεριόριστες συσκέψεις ανά ημέρα"
@@ -11066,6 +11099,9 @@
       "Video meetings, ${ n } participant": [
         "Βιντεοκλήσεις, ${ n } συμμετέχων",
         "Βιντεοκλήσεις, ${ n } συμμετέχοντες"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN με αποκλεισμός διαφημίσεων και προστασία από κακόβουλο λογισμικό"
       ]
     },
     "meet_2025: Info": {
@@ -16009,9 +16045,6 @@
       "Organization logo updated": [
         "Το λογότυπο του οργανισμού ενημερώθηκε"
       ],
-      "Organization name set": [
-        "Τέθηκε το όνομα το οργανισμού"
-      ],
       "Organization name updated": [
         "Το όνομα του οργανισμού ενημερώθηκε"
       ],
@@ -16174,6 +16207,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει ιστορικό εκδόσεων, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "Για προσωπική χρήση"
+      ],
+      "For professional use": [
+        "Για επαγγελματική χρήση"
       ]
     },
     "Tab in domain modal": {
