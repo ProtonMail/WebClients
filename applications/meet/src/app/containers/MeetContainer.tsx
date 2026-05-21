@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useLayoutEffect, useMemo } from 'react';
+import { useEffect, useLayoutEffect, useMemo } from 'react';
 
 import type { ConnectionState } from 'livekit-client';
 
@@ -9,26 +9,13 @@ import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { AutoCloseMeetingModal } from '../components/AutoCloseMeetingModal/AutoCloseMeetingModal';
 import { DebugOverlay, useDebugOverlay } from '../components/DebugOverlay/DebugOverlay';
-// eslint-disable-next-line import/no-cycle
 import { MeetingBody } from '../components/MeetingBody/MeetingBody';
+import { DebugOverlayContext } from '../contexts/DebugOverlayContext';
 import { MeetContext } from '../contexts/MeetContext';
 import { useMeetingRecorderContext } from '../contexts/MeetingRecorderContext';
 import { useMeetingTelemetry } from '../hooks/telemetry/useMeetingTelemetry';
 import { useCurrentScreenShare } from '../hooks/useCurrentScreenShare';
 import { useStableCallback } from '../hooks/useStableCallback';
-
-// Debug overlay context for mobile menu access
-interface DebugOverlayContextType {
-    isEnabled: boolean;
-    open: () => void;
-}
-
-const DebugOverlayContext = createContext<DebugOverlayContextType>({
-    isEnabled: false,
-    open: () => {},
-});
-
-export const useDebugOverlayContext = () => useContext(DebugOverlayContext);
 
 interface MeetContainerProps {
     locked: boolean;
