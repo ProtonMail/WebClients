@@ -1,3 +1,10 @@
+### Version 1.37.0
+
+- Support unlocking chromium extension with biometrics using Mac desktop app
+- Strengthened safeguards against memory dump attacks
+- Support access tokens (in settings page)
+- Update how public keys are retrieved for group vault access
+
 ### Version 1.36.1
 
 - Fix group share manager actions
