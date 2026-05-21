@@ -5443,9 +5443,9 @@
       "Create a new contact group": [
         "Crear un grupo de contactos nuevo"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Crear una nube segura para ${ value } miembro",
-        "Crear una nube segura para ${ value } miembros"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crear una nube segura para ${ memberCount } miembro",
+        "Crear una nube segura para ${ memberCount } miembros"
       ],
       "Create in": [
         "Crear en"
@@ -8091,6 +8091,9 @@
       "99.95% SLA": [
         "SLA del 99,95%"
       ],
+      "Access all countries": [
+        "Acceso a todos los países disponibles"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anuncios y protección contra malware"
       ],
@@ -8249,6 +8252,9 @@
       "Multiple admin roles": [
         "Distintos roles de administración"
       ],
+      "No streaming support": [
+        "Sin soporte de streaming"
+      ],
       "Online document editor": [
         "Editor de documentos en línea"
       ],
@@ -8398,6 +8404,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ancho de banda/volumen ilimitado"
+      ],
+      "Unlock streaming": [
+        "Desbloquear streaming"
       ],
       "Up to ${ n } user": [
         "Hasta ${ n } usuario",
@@ -8806,6 +8815,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } pais",
+        "${ n } países"
+      ],
       "Access advanced VPN features": [
         "Acceso a funciones VPN avanzadas"
       ],

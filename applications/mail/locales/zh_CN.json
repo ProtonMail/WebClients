@@ -6722,7 +6722,7 @@
         "VPN 会加密您的网络连接并隐藏真实 IP 地址，使第三方极难追踪或监控您的在线活动。"
       ],
       "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "Proton 旗下的 VPN 服务会隐藏您的真实 IP 地址，并对浏览行为进行端到端加密，使网站、广告商和网络服务提供商无法通过长期追踪建立您的数字画像。\n"
+        "VPN 会隐藏您的 IP 地址并加密浏览活动，从而让网站、广告商和 ISP 更难长期追踪您。"
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN 是您的设备与互联网之间的安全加密通道。它能隐藏您的位置和在线活动，避免被互联网服务提供商（ISP）及您访问的网站追踪。"
@@ -7042,8 +7042,8 @@
       "Create a new contact group": [
         "创建联系人群组"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "为 ${ value } 成员创建一个安全云端"
+      "Create a secure cloud for ${ memberCount } member": [
+        "为 ${ memberCount } 位成员创建安全云空间"
       ],
       "Create in": [
         "创建于"
@@ -8140,6 +8140,9 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "使用 ${ DRIVE_APP_NAME } 应用程序同步和管理文件。在 ${ DOCS_APP_NAME } 中创建和共享文档，并安全存储。一切尽在 ${ ios }、${ android } 和 ${ desktop }。"
       ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "由于需求过高暂时不可用，请稍后重试。"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "暂时不可用。请稍后再试。"
       ],
@@ -9162,10 +9165,10 @@
     },
     "Label": {
       " and ": [
-        "、"
+        "和"
       ],
       " and ${ l }": [
-        "、${ l }"
+        "和 ${ l }"
       ],
       "${ boldActive } Mark all messages as read": [
         "${ boldActive } 标记所有邮件为已读"
@@ -9316,6 +9319,9 @@
       ],
       "Category": [
         "类别"
+      ],
+      "Category:": [
+        "类别："
       ],
       "CC": [
         "抄送"

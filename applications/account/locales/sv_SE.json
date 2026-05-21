@@ -2091,6 +2091,9 @@
       "New: Control admin access for individual users": [
         "Nytt: Kontrollera administratörsåtkomst för enskilda användare"
       ],
+      "New: Control admin access for many users at once": [
+        "Nytt: Kontrollera administratörsåtkomst för många användare samtidigt"
+      ],
       "Organization admin:": [
         "Organisationsadministratör:"
       ],
@@ -3120,6 +3123,9 @@
       "Status": [
         "Status"
       ],
+      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
+        "Standardinställningen är ingen. För att förbättra din säkerhet rekommenderar vi dock att du ställer in detta värde till p=quarantine."
+      ],
       "This migration has been completed": [
         "Denna migrering har slutförts"
       ],
@@ -3131,6 +3137,9 @@
       ],
       "User status": [
         "Användarstatus"
+      ],
+      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
+        "Användare kan använda ${ BRAND_NAME } eller Google samtidigt under migreringens gång."
       ],
       "Users migrated": [
         "Användare migrerade"
@@ -3280,11 +3289,17 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Lägg till användare manuellt"
+      ],
       "Cancel": [
         "Avbryt"
       ],
       "Close": [
         "Stäng"
+      ],
+      "Configure your network": [
+        "Konfigurera ditt nätverk"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsätt använda ${ MAIL_APP_NAME }."
@@ -3307,6 +3322,12 @@
       "Got it": [
         "Jag förstår"
       ],
+      "Invite your team": [
+        "Bjud in ditt team"
+      ],
+      "Manage global VPN permissions": [
+        "Hantera globala VPN-behörigheter"
+      ],
       "Maybe later": [
         "Kanske senare"
       ],
@@ -3316,11 +3337,17 @@
       "Remind me later": [
         "Påminn mig senare"
       ],
+      "Secure your organization": [
+        "Säkra din organisation"
+      ],
       "Send": [
         "Skicka"
       ],
       "Set up other features": [
         "Ställ in andra funktioner"
+      ],
+      "Set up SSO": [
+        "Ställ in SSO"
       ],
       "Sign in": [
         "Logga in"
@@ -4942,6 +4969,9 @@
       "/month": [
         "/månad"
       ],
+      "/user /month": [
+        "/användare/månad"
+      ],
       "/user per month": [
         "/användare per månad"
       ]
@@ -5111,6 +5141,12 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } låter dig arbeta tillsammans med andra i en säker, krypterad miljö."
       ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } är inte din standardapplikation för e-post."
+      ],
+      "${ MAIL_APP_NAME } is your default mail application.": [
+        "${ MAIL_APP_NAME } är din standardapplikation för e-post."
+      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } håller din företagsdata säker och låter dig skicka krypterad e-post till vem som helst."
       ],
@@ -5150,6 +5186,9 @@
       "Connect your CRM, website, printers, and more.": [
         "Anslut din CRM, webbplats, skrivare och mer."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Skapa en gateway för att ge dina användare åtkomst till dina IT-resurser genom dedikerade servrar."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Skapa ett Zoom-möte och lägg till anslutningsdetaljer till ditt evenemang med ett klick."
       ],
@@ -5161,6 +5200,9 @@
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Skapa policyer för att bestämma vem som kan ansluta till delade servrar i varje land."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Bestäm vilka användare som kan ansluta till var och en av våra 120+ delade serverplatser."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Enkel åtkomst till din e-post och kalender på stationär dator och mobil."
@@ -5218,6 +5260,9 @@
       ],
       "How you unlock your encrypted data if you lose your password.": [
         "Hur du låser upp dina krypterade data om du tappar bort ditt lösenord."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Om du inte redan har gjort det, aktivera några återställningsmetoder för att säkerställa att du aldrig förlorar åtkomst till ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det verkar som kontaktlistan du importerar innehåller några grupper. Granska hur dessa grupper ska importeras."
@@ -6541,6 +6586,9 @@
       "Enable auto-renew": [
         "Aktivera automatisk förnyelse"
       ],
+      "Enter your extra password": [
+        "Ange ditt extra lösenord"
+      ],
       "Explore plans": [
         "Utforska paket"
       ],
@@ -6573,9 +6621,6 @@
       ],
       "Less than a minute left": [
         "Mindre än en minut kvar"
-      ],
-      "None": [
-        "Ingen"
       ],
       "Only ": [
         "Endast "
@@ -6723,6 +6768,9 @@
       ],
       "Unable to recover data": [
         "Kan inte återställa data"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Lås upp ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "Uppgradera"
@@ -6942,17 +6990,11 @@
       "Email address is required": [
         "E-postadress är obligatoriskt"
       ],
-      "Email is not valid": [
-        "E-post är inte giltig"
-      ],
       "Empty condition": [
         "Tomt villkor"
       ],
       "Enter 6 digits": [
         "Ange 6 siffror"
-      ],
-      "Enter your username without the domain (@example.com)": [
-        "Ange ditt användarnamn utan domänen (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fel vid anslutning till Bitcoin API."
@@ -7040,9 +7082,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Felaktigt andra lösenord. Försök igen."
-      ],
-      "Incorrect username": [
-        "Felaktigt användarnamn"
       ],
       "Intended recipient does not support calendar sharing": [
         "Avsedd mottagare stöder inte kalenderdelning"
@@ -7150,9 +7189,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Inte ett ${ BRAND_NAME }-konto"
       ],
-      "Not a valid number": [
-        "Inte ett giltigt nummer"
-      ],
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
       ],
@@ -7164,9 +7200,6 @@
       ],
       "Password is required": [
         "Lösenord är obligatoriskt"
-      ],
-      "Passwords do not match": [
-        "Lösenorden matchar inte"
       ],
       "Payment process canceled": [
         "Betalningsprocess avbruten"
@@ -7344,9 +7377,6 @@
       "The amount due has changed. Please try again.": [
         "Det förfallna beloppet har ändrats. Försök igen."
       ],
-      "The email addresses do not match": [
-        "E-postadresserna matchar inte"
-      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Filen är för stor, största storlek är ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -7389,17 +7419,14 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Det finns för många mappar i ditt externa konto. Anpassa importen för att ta bort vissa mappar."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Detta fält överskrider det maximala antalet ${ maximumLength } tecken."
+      "There was an error, please try again.": [
+        "Det var ett fel, försök igen."
       ],
       "This field is invalid": [
         "Detta fält är ogiltigt"
       ],
       "This field is required": [
         "Detta fält är obligatoriskt"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Detta fält kräver minst ${ minimumLength } tecken."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Detta mappnamn är inte tillgängligt. Välj ett annat namn."
@@ -7425,9 +7452,6 @@
       "Try again later": [
         "Försök igen senare"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Prova använda endast bokstäver, siffror och _.-"
-      ],
       "Unable to upload file": [
         "Kan inte ladda upp fil"
       ],
@@ -7445,12 +7469,6 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Uppladdade filer är inte giltiga privata nycklar. Verifiera och försök igen."
-      ],
-      "Username must begin with a letter or digit": [
-        "Användarnamn måste börja med en bokstav eller siffra"
-      ],
-      "Username must end with a letter or digit": [
-        "Användarnamn måste sluta med en bokstav eller siffra"
       ],
       "Validation error": [
         "Verifieringsfel"
@@ -8615,6 +8633,11 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
+        "Jag förstår att jag inte längre kommer att kunna logga in på äldre versioner av ${ BRAND_NAME }-appar."
+      ]
+    },
     "Form heading": {
       "Enter your email address": [
         "Ange din e-postadress"
@@ -9419,6 +9442,9 @@
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Du kommer att förlora åtkomst till alla nuvarande krypterade data på ditt konto om du fortsätter."
+      ],
+      "${ BRAND_NAME } Free": [
+        "${ BRAND_NAME } Free"
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } är integritet du kan lita på, säkerställt av stark kryptering, öppen källkod och schweiziska integritetslagar. Vi anser att ingen ska kunna utnyttja din data, punkt. Vår teknologi och verksamhet är baserad på denna fundamentalt starkare definition av integritet."
@@ -10233,6 +10259,9 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Fortsätt för att ansluta denna entitet till din ${ BRAND_NAME }-organisation."
       ],
+      "Continue with ${ BRAND_NAME } Free": [
+        "Fortsätt med ${ BRAND_NAME } Free"
+      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Om du fortsätter kommer ditt ${ BRAND_NAME }-konto anslutas till ${ name }."
       ],
@@ -10270,9 +10299,9 @@
       "Create a new code on your TV and try again.": [
         "Skapa en ny kod på din TV och försök igen."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Skapa ett säkert moln för ${ value } medlem",
-        "Skapa ett säkert moln för ${ value } medlemmar"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Skapa ett säkert moln för ${ memberCount } medlem",
+        "Skapa ett säkert moln för ${ memberCount } medlemmar"
       ],
       "Create an account": [
         "Skapa ett konto"
@@ -10775,6 +10804,9 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Bli aviserad om ditt lösenord eller annan personlig data har läckt. ${ learnMoreLinkNoBreach }"
+      ],
+      "Get started": [
+        "Kom igång"
       ],
       "Get started with the referral link above.": [
         "Kom igång med hänvisningslänken ovan."
@@ -11803,6 +11835,9 @@
       "Set up your organization": [
         "Ställ in din organisation"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Ställ in din organisation och börja skydda dina data i några enkla steg."
+      ],
       "Setting successfully saved": [
         "Inställning sparad"
       ],
@@ -12163,6 +12198,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Denna verifiering kan ta upp till en timme. Efter lyckad verifiering, ta inte bort TXT-posten eftersom den behövs för att bekräfta att du fortsätter att äga domänen."
       ],
+      "This will allow the TV to access your ${ BRAND_NAME } account.": [
+        "Detta kommer tillåta TV:n kan komma åt ditt ${ BRAND_NAME }-konto."
+      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Detta kommer ta bort alla tidigare versioner av dina filer äldre än ${ rententionLabel }."
       ],
@@ -12354,6 +12392,9 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Om du inte loggar ut från ditt konto eller ändrar ditt lösenord kommer din session att förbli aktiv. Sessioner löper ut efter 60 dagars inaktivitet."
+      ],
+      "Unlock streaming with VPN Plus.": [
+        "Lås upp streaming med VPN Plus."
       ],
       "Unsaved changes": [
         "Osparade ändringar"
@@ -15961,11 +16002,20 @@
       "Built-in chat": [
         "Inbyggd chatt"
       ],
+      "Cloud storage and file sharing": [
+        "Molnlagring och fildelning"
+      ],
+      "Document and spreadsheet editor": [
+        "Dokument- och kalkylbladsredigerare"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end-krypterad skärmdelning och kortvarig chatt i samtal"
       ],
       "Hosts can record meetings locally on their computers": [
         "Värdar kan spela in möten lokalt på sina datorer"
+      ],
+      "Includes Meet Professional": [
+        "Inkluderar Meet Professional"
       ],
       "Meeting recording": [
         "Mötesinspelning"
@@ -15973,8 +16023,17 @@
       "One active meeting at a time": [
         "Ett aktivt möte åt gången"
       ],
+      "Password manager with team vaults": [
+        "Lösenordshanterare med valv för team"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Privat AI-chatt (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Skärmdelning"
+      ],
+      "Secure mail and calendar": [
+        "Säker e-post och kalender"
       ],
       "Unlimited meetings per day": [
         "Obegränsat antal möten per dag"
@@ -15990,6 +16049,9 @@
       "Video meetings, ${ n } participant": [
         "Videomöten, ${ n } deltagare",
         "Videomöten, ${ n } deltagare"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN med annonsblockerare och skydd mot skadlig kod"
       ]
     },
     "meet_2025: Info": {
@@ -16824,6 +16886,9 @@
       "Multiple admin roles": [
         "Flera administratörsroller"
       ],
+      "No streaming support": [
+        "Inget stöd för streaming"
+      ],
       "No-logs policy": [
         "Ingen loggpolicy"
       ],
@@ -16989,6 +17054,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Obegränsad bandbredd"
+      ],
+      "Unlock streaming": [
+        "Lås upp streaming"
       ],
       "Up to ${ n } user": [
         "Upp till ${ n } användare",
@@ -21416,9 +21484,6 @@
       ],
       "Get updates about comments via email": [
         "Få uppdateringar om kommentarer via e-post"
-      ],
-      "Include document name in email notifications": [
-        "Inkludera dokumentnamn i e-postaviseringar"
       ]
     },
     "Settings description": {
@@ -23512,9 +23577,6 @@
       "Organization logo updated": [
         "Organisationens logga uppdaterad"
       ],
-      "Organization name set": [
-        "Organisationsnamn inställt"
-      ],
       "Organization name updated": [
         "Organisationsnamn uppdaterad"
       ],
@@ -23734,6 +23796,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar versionshistorik, krypterad fildelning och mer."
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "För personligt bruk"
+      ],
+      "For professional use": [
+        "För professionellt bruk"
       ]
     },
     "Tab in domain modal": {
@@ -24242,6 +24312,9 @@
       ],
       "Change second password": [
         "Ändra andra lösenord"
+      ],
+      "Check your default mail application": [
+        "Kontrollera din standardapplikation för e-post"
       ],
       "Choose a provider": [
         "Välj en leverantör"
@@ -24803,6 +24876,9 @@
       ],
       "Get more from your VPN": [
         "Få ut mer av din VPN"
+      ],
+      "Get started": [
+        "Kom igång"
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Skaffa appen på alla dina enheter och njut av säker, sömlös åtkomst var som helst."
@@ -25871,6 +25947,9 @@
       "Allow resetting your password from the account settings": [
         "Tillåt återställning av ditt lösenord från kontoinställningarna"
       ],
+      "Allow scanning a QR code from a ${ BRAND_NAME } mobile app to sign in": [
+        "Tillåt skanning av en QR-kod från en mobilapp för ${ BRAND_NAME } för att logga in"
+      ],
       "Allow trusted contacts to request access to your account": [
         "Tillåt betrodda kontakter att begära åtkomst till ditt konto"
       ],
@@ -26578,16 +26657,6 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Lösenord måste innehålla minst ${ MIN_PASSWORD_LENGTH } tecken",
-        "Lösenord måste innehålla minst ${ MIN_PASSWORD_LENGTH } tecken"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Prova ett kortare användarnamn (max ${ n } antal tecken)",
-        "Prova ett kortare användarnamn (max ${ n } antal tecken)"
       ]
     },
     "Video control": {

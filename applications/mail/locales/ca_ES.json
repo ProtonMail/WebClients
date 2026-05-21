@@ -7160,9 +7160,9 @@
       "Create a new contact group": [
         "Crear un nou grup de contactes"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Crea un núvol segur per a ${ value } membre",
-        "Crea un núvol segur per a ${ value } membres"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crea un núvol segur per a ${ memberCount } membre",
+        "Crea un núvol segur per a ${ memberCount } membres"
       ],
       "Create in": [
         "Crear a"
@@ -8271,6 +8271,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronitzeu i gestioneu fitxers amb l'aplicació ${ DRIVE_APP_NAME }. Creeu i compartiu documents a ${ DOCS_APP_NAME } i deseu-los de manera segura. Tot disponible a ${ ios }, ${ android } i ${ desktop }."
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Temporalment no disponible a causa de l'alta demanda. Torneu-ho a provar més tard."
       ],
       "Temporarily unavailable. Please check back later.": [
         "No està disponible temporalment. Comproveu-ho de nou més tard."
@@ -9477,6 +9480,9 @@
       ],
       "Category": [
         "Categoria"
+      ],
+      "Category:": [
+        "Categoria:"
       ],
       "CC": [
         "Còpia"

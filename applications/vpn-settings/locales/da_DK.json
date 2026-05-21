@@ -3595,6 +3595,9 @@
       "/month": [
         "/måned"
       ],
+      "/user /month": [
+        "/pr. bruger /pr. måned"
+      ],
       "/user per month": [
         "/bruger pr. måned"
       ]
@@ -4865,6 +4868,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Der er for mange mapper i din eksterne konto. Rediger venligst importen for at slette nogle mapper."
+      ],
+      "There was an error, please try again.": [
+        "Der opstod en fejl, prøv igen."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
@@ -7035,9 +7041,9 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Opret en etikette til de importerede beskeder, et tidsinterval for denne import og de etiketter, du gerne vil importere."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Opret en sikker sky til ${ value } medlem",
-        "Opret en sikker sky til ${ value } medlemmer"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Opret en sikker sky til ${ memberCount } medlem",
+        "Opret en sikker sky til ${ memberCount } medlemmer"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Opret og administrer underkonti og tildel dem e-mailadresser på dit brugerdomæne."
@@ -8337,6 +8343,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro anbefalet - bedømt til 4,2 ud af 5 stjerner"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Midlertidigt utilgængelig på grund af høj efterspørgsel. Prøv igen senere."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidigt utilgængelig. Tjek igen senere."
@@ -10902,11 +10911,26 @@
       "Built-in chat": [
         "Indbygget chat"
       ],
+      "Cloud storage and file sharing": [
+        "Cloudlager og fildeling"
+      ],
+      "Data retention policies": [
+        "Databevaringspolitikker"
+      ],
+      "Document and spreadsheet editor": [
+        "Dokument- og regnearkseditor"
+      ],
+      "Email writing assistant": [
+        "E-mail skriveassistent"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end-krypteret skærmdeling og midlertidig chat under opkald"
       ],
       "Hosts can record meetings locally on their computers": [
         "Mødeværter kan optage møder lokalt på deres computere"
+      ],
+      "Includes Meet Professional": [
+        "Inkluderer Meet Professional"
       ],
       "Meeting recording": [
         "Møde-optagelse"
@@ -10914,8 +10938,17 @@
       "One active meeting at a time": [
         "Ét aktivt møde ad gangen"
       ],
+      "Password manager with team vaults": [
+        "Adgangskodeadministrator med team-bokse"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Privat AI-chat (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Deling af skærm"
+      ],
+      "Secure mail and calendar": [
+        "Sikker mail og kalender"
       ],
       "Unlimited meetings per day": [
         "Ubegrænset antal møder om dagen"
@@ -10931,6 +10964,9 @@
       "Video meetings, ${ n } participant": [
         "Videomøder, ${ n } deltager",
         "Videomøde, ${ n } deltagere"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN med annonceblokering og beskyttelse mod malware"
       ]
     },
     "meet_2025: Info": {
@@ -15967,9 +16003,6 @@
       "Organization logo updated": [
         "Organisationens logo opdateret"
       ],
-      "Organization name set": [
-        "Organisationsnavn angivet"
-      ],
       "Organization name updated": [
         "Organisationens navn opdateret"
       ],
@@ -16132,6 +16165,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer versionshistorik, krypteret fildeling og meget mere."
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "Til personligt brug"
+      ],
+      "For professional use": [
+        "Til professionelt brug"
       ]
     },
     "Tab in domain modal": {
