@@ -27,7 +27,7 @@ import { useFlag } from '@proton/unleash/useFlag'
 import clsx from '@proton/utils/clsx'
 import { useIsSheetsEditorEnabled, useSharingModalDriveSdkEnabled } from '~/utils/flags'
 import { getDocsReportContextLines } from '~/utils/report-context'
-import { useSharingModal } from '@proton/drive/modules/sharingModal'
+import { useSharingModal } from '@proton/drive/public/sharingModal'
 import { generateNodeUid, getDrive } from '@proton/drive'
 import { WorkspacePromoBanner } from '../../DocumentViewer/WorkspacePromoBanner'
 
