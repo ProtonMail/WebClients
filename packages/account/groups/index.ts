@@ -50,6 +50,27 @@ const getGroupFromState = (state: ModelState<EnhancedGroup[]>, target: Pick<Grou
     return state.value?.find((group) => group.ID === target.ID);
 };
 
+const applyGroupUpdate = (state: ModelState<EnhancedGroup[]>, group: Group) => {
+    if (!state.value) {
+        state.value = [];
+    }
+    const index = state.value.findIndex((g) => g.ID === group.ID);
+    if (index === -1) {
+        return;
+    }
+    const previous = state.value[index];
+    const previousRoleState = previous.GroupOrganizationRoles
+        ? {
+              roleState: 'stale' as const,
+              GroupOrganizationRoles: previous.GroupOrganizationRoles,
+          }
+        : {};
+    state.value[index] = {
+        ...group,
+        ...previousRoleState,
+    };
+};
+
 const canFetch = (user: UserModel, organization: Organization, memberships: GroupMembershipReturn[]): boolean => {
     if (user.isAdmin && organization?.ID) {
         return true; // org admin
@@ -110,23 +131,10 @@ const slice = createSlice({
             state.value.push(action.payload);
         },
         updateGroup: (state, action: PayloadAction<Group>) => {
-            if (!state.value) {
-                state.value = [];
-            }
-            const index = state.value.findIndex((group) => group.ID === action.payload.ID);
-            if (index !== -1) {
-                const previous = state.value[index];
-                const previousRoleState = previous.GroupOrganizationRoles
-                    ? {
-                          roleState: 'stale' as const,
-                          GroupOrganizationRoles: previous.GroupOrganizationRoles,
-                      }
-                    : {};
-                state.value[index] = {
-                    ...action.payload,
-                    ...previousRoleState,
-                };
-            }
+            applyGroupUpdate(state, action.payload);
+        },
+        updateGroups: (state, action: PayloadAction<Group[]>) => {
+            action.payload.forEach((group) => applyGroupUpdate(state, group));
         },
         groupRoleFetchPending: (state, action: PayloadAction<{ group: Pick<Group, 'ID'> }>) => {
             const group = getGroupFromState(state, action.payload.group);
@@ -214,7 +222,7 @@ const slice = createSlice({
         });
     },
 });
-export const { addGroup, updateGroup, removeGroup, setNoEncryptFlag } = slice.actions;
+export const { addGroup, updateGroup, updateGroups, removeGroup, setNoEncryptFlag } = slice.actions;
 export const groupsReducer = { [name]: slice.reducer };
 export const groupsActions = slice.actions;
 export const groupThunk = modelThunk.thunk;
