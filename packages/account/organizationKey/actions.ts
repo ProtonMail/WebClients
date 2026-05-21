@@ -699,6 +699,7 @@ export const updateGroupsWithNewAddressKeyTokens = ({
 }): ThunkAction<Promise<void>, RotateOrganizationKeysState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
         const groups = await dispatch(groupThunk());
+        const tokensByKeyId = new Map(GroupAddressKeyTokens.map((token) => [token.ID, token]));
 
         const updatedGroups = groups
             .map((group) => {
@@ -707,7 +708,7 @@ export const updateGroupsWithNewAddressKeyTokens = ({
                 if (!primaryAddressKey) {
                     return;
                 }
-                const groupAddressKeyToken = GroupAddressKeyTokens.find(({ ID }) => ID === primaryAddressKey.ID);
+                const groupAddressKeyToken = tokensByKeyId.get(primaryAddressKey.ID);
                 if (!groupAddressKeyToken) {
                     return;
                 }
@@ -793,15 +794,10 @@ export const rotateOrganizationKeys = ({
                 })
             );
 
-            // Sync the new key to storage.
-            const result = await dispatch(organizationKeyThunk({ cache: CacheType.None }));
-
-            // Sync the new tokens to the group keys.
-            await dispatch(
-                updateGroupsWithNewAddressKeyTokens({
-                    GroupAddressKeyTokens,
-                })
-            );
+            const [result] = await Promise.all([
+                dispatch(organizationKeyThunk({ cache: CacheType.None })),
+                dispatch(updateGroupsWithNewAddressKeyTokens({ GroupAddressKeyTokens })),
+            ]);
 
             return result;
         }
@@ -907,14 +903,12 @@ export const createPasswordlessOrganizationKeys = ({
                 GroupAddressKeyTokens,
             })
         );
-        await dispatch(
-            updateGroupsWithNewAddressKeyTokens({
-                GroupAddressKeyTokens,
-            })
-        );
-
-        await dispatch(organizationActions.update({ Organization: { HasKeys: 1 } }));
-        return dispatch(organizationKeyThunk({ cache: CacheType.None }));
+        dispatch(organizationActions.update({ Organization: { HasKeys: 1 } }));
+        const [result] = await Promise.all([
+            dispatch(organizationKeyThunk({ cache: CacheType.None })),
+            dispatch(updateGroupsWithNewAddressKeyTokens({ GroupAddressKeyTokens })),
+        ]);
+        return result;
     };
 };
 
@@ -988,13 +982,10 @@ export const rotatePasswordlessOrganizationKeys = ({
             })
         );
 
-        const result = await dispatch(organizationKeyThunk({ cache: CacheType.None }));
-
-        await dispatch(
-            updateGroupsWithNewAddressKeyTokens({
-                GroupAddressKeyTokens,
-            })
-        );
+        const [result] = await Promise.all([
+            dispatch(organizationKeyThunk({ cache: CacheType.None })),
+            dispatch(updateGroupsWithNewAddressKeyTokens({ GroupAddressKeyTokens })),
+        ]);
 
         return result;
     };
