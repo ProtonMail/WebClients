@@ -69,15 +69,20 @@ describe('ClientCoordinator', () => {
 
             // Heartbeat just before timeout
             jest.advanceTimersByTime(HEARTBEAT_TIMEOUT - 1000);
-            coordinator.heartbeat(CLIENT_1);
+            coordinator.heartbeat(CLIENT_1, false);
 
             // Advance past original timeout
             jest.advanceTimersByTime(CLEANUP_PERIOD_MS + 1000);
             expect(coordinator.getActiveClientId()).toBe(CLIENT_1);
         });
 
-        it('is a no-op for unknown client', () => {
-            expect(() => coordinator.heartbeat('unknown' as ClientId)).not.toThrow();
+        it('reports isClientRegistered=true for a known client', () => {
+            coordinator.register(USER_1, CLIENT_1, BRIDGE);
+            expect(coordinator.heartbeat(CLIENT_1, false)).toEqual({ isClientRegistered: true });
+        });
+
+        it('reports isClientRegistered=false for an unknown client so the caller can re-register', () => {
+            expect(coordinator.heartbeat('unknown' as ClientId, false)).toEqual({ isClientRegistered: false });
         });
     });
 
@@ -109,6 +114,75 @@ describe('ClientCoordinator', () => {
         });
     });
 
+    describe('election strategy', () => {
+        const CLIENT_3 = 'client-3' as ClientId;
+
+        it('prefers the last-foreground client over the freshest', () => {
+            coordinator.register(USER_1, CLIENT_1, BRIDGE); // becomes active
+            coordinator.register(USER_1, CLIENT_2, BRIDGE);
+            coordinator.register(USER_1, CLIENT_3, BRIDGE);
+
+            // CLIENT_2 was focused at some point; CLIENT_3 keeps heartbeating but in background.
+            coordinator.heartbeat(CLIENT_2, true);
+            jest.advanceTimersByTime(1000);
+            coordinator.heartbeat(CLIENT_3, false);
+
+            coordinator.disconnect(CLIENT_1);
+
+            expect(coordinator.getActiveClientId()).toBe(CLIENT_2);
+        });
+
+        it('falls back to the freshest client when no foreground was ever recorded', () => {
+            coordinator.register(USER_1, CLIENT_1, BRIDGE); // becomes active
+            coordinator.register(USER_1, CLIENT_2, BRIDGE);
+            coordinator.register(USER_1, CLIENT_3, BRIDGE);
+
+            // No isForeground=true heartbeat ever. CLIENT_3 is the most recent to ping.
+            jest.advanceTimersByTime(1000);
+            coordinator.heartbeat(CLIENT_2, false);
+            jest.advanceTimersByTime(1000);
+            coordinator.heartbeat(CLIENT_3, false);
+
+            coordinator.disconnect(CLIENT_1);
+
+            expect(coordinator.getActiveClientId()).toBe(CLIENT_3);
+        });
+
+        it('falls back to freshest when the last-foreground client itself disconnected', () => {
+            coordinator.register(USER_1, CLIENT_1, BRIDGE); // becomes active
+            coordinator.register(USER_1, CLIENT_2, BRIDGE);
+            coordinator.register(USER_1, CLIENT_3, BRIDGE);
+
+            // CLIENT_2 was the foreground, but it leaves before the active does.
+            coordinator.heartbeat(CLIENT_2, true);
+            jest.advanceTimersByTime(1000);
+            coordinator.heartbeat(CLIENT_3, false);
+            coordinator.disconnect(CLIENT_2);
+
+            coordinator.disconnect(CLIENT_1);
+
+            // CLIENT_3 wins as the freshest remaining client.
+            expect(coordinator.getActiveClientId()).toBe(CLIENT_3);
+        });
+
+        it('keeps the foreground preference sticky across a background flip', () => {
+            coordinator.register(USER_1, CLIENT_1, BRIDGE); // becomes active
+            coordinator.register(USER_1, CLIENT_2, BRIDGE);
+            coordinator.register(USER_1, CLIENT_3, BRIDGE);
+
+            // CLIENT_2 was focused, then user tabbed away — but it remains our best guess.
+            coordinator.heartbeat(CLIENT_2, true);
+            jest.advanceTimersByTime(1000);
+            coordinator.heartbeat(CLIENT_2, false);
+            jest.advanceTimersByTime(1000);
+            coordinator.heartbeat(CLIENT_3, false);
+
+            coordinator.disconnect(CLIENT_1);
+
+            expect(coordinator.getActiveClientId()).toBe(CLIENT_2);
+        });
+    });
+
     describe('subscribeClientChanged', () => {
         it('unsubscribe stops notifications', () => {
             const listener = jest.fn();
@@ -121,25 +195,28 @@ describe('ClientCoordinator', () => {
     });
 
     describe('dead client cleanup', () => {
-        it('disconnects client after heartbeat timeout', () => {
+        it('does not disconnect the active client even past the heartbeat timeout', () => {
+            // The active client owns the searcher and is exempt from cleanup.
             coordinator.register(USER_1, CLIENT_1, BRIDGE);
 
             jest.advanceTimersByTime(HEARTBEAT_TIMEOUT + CLEANUP_PERIOD_MS + 1);
-            expect(coordinator.getActiveClientId()).toBeNull();
-            expect(sendErrorReportForSearch).toHaveBeenCalled();
+
+            expect(coordinator.getActiveClientId()).toBe(CLIENT_1);
+            expect(sendErrorReportForSearch).not.toHaveBeenCalled();
         });
 
-        it('elects next client when dead client was active', () => {
-            coordinator.register(USER_1, CLIENT_1, BRIDGE);
-            coordinator.register(USER_1, CLIENT_2, BRIDGE);
+        it('disconnects an inactive client after heartbeat timeout', () => {
+            coordinator.register(USER_1, CLIENT_1, BRIDGE); // becomes active
+            coordinator.register(USER_1, CLIENT_2, BRIDGE); // passive
 
-            // Keep CLIENT_2 alive
+            // Keep the active client fresh; let CLIENT_2 fall stale.
             jest.advanceTimersByTime(HEARTBEAT_TIMEOUT - 1000);
-            coordinator.heartbeat(CLIENT_2);
+            coordinator.heartbeat(CLIENT_1, false);
 
-            // CLIENT_1 times out
             jest.advanceTimersByTime(CLEANUP_PERIOD_MS + 1000);
-            expect(coordinator.getActiveClientId()).toBe(CLIENT_2);
+
+            expect(coordinator.getActiveClientId()).toBe(CLIENT_1);
+            expect(sendErrorReportForSearch).toHaveBeenCalled();
         });
     });
 });

@@ -9,16 +9,15 @@ const CLEANUP_PERIOD_MS = 3000;
 export type ClientContext = {
     userId: UserId;
     clientId: ClientId;
-    lastSeen: number;
+    lastHeartbeatAt: number;
     bridge: MainThreadBridge;
 };
 
 // TODO: Rename to TabCoordinator - it's less correct technically but clearer.
-// TODO: Use page visiblity API to improve the disconnection logic (e.g. increase the
-// heartbeat timeout or ping the heartbeat when page becomes visible again)
 export class ClientCoordinator {
     private clients = new Map<ClientId, ClientContext>();
     private activeClientId: ClientId | null = null;
+    private lastForegroundClientId: ClientId | null = null;
     private cleanupInterval: number | undefined;
     private subscribers = new Set<(context: ClientContext | null) => void>();
 
@@ -45,7 +44,12 @@ export class ClientCoordinator {
      * Idempotent — safe to call again to update the bridge reference.
      */
     register(userId: UserId, clientId: ClientId, bridge: MainThreadBridge) {
-        const clientContext = { userId, clientId, lastSeen: Date.now(), bridge };
+        const clientContext: ClientContext = {
+            userId,
+            clientId,
+            lastHeartbeatAt: Date.now(),
+            bridge,
+        };
         this.clients.set(clientId, clientContext);
         if (!this.activeClientId) {
             this.setActiveClient(clientContext);
@@ -55,15 +59,32 @@ export class ClientCoordinator {
         }
     }
 
-    heartbeat(clientId: ClientId) {
+    /**
+     * Mark `clientId` as alive and update foreground tracking if it claims foreground.
+     * Returns `isClientRegistered: false` when the coordinator has no record of this
+     * client (e.g. evicted by cleanUpDeadClients while the tab was throttled), so the
+     * caller can re-register itself instead of going silent.
+     */
+    heartbeat(clientId: ClientId, isForeground: boolean): { isClientRegistered: boolean } {
         const client = this.clients.get(clientId);
-        if (client) {
-            client.lastSeen = Date.now();
+        if (!client) {
+            return { isClientRegistered: false };
         }
+        client.lastHeartbeatAt = Date.now();
+        if (isForeground) {
+            // Last write wins: whichever tab most recently claimed foreground owns the slot.
+            // Sticky: a heartbeat with isForeground=false does NOT clear the slot, so the
+            // most recently focused tab remains our best guess if no other tab takes over.
+            this.lastForegroundClientId = clientId;
+        }
+        return { isClientRegistered: true };
     }
 
     disconnect(clientId: ClientId) {
         this.clients.delete(clientId);
+        if (clientId === this.lastForegroundClientId) {
+            this.lastForegroundClientId = null;
+        }
         if (clientId === this.activeClientId) {
             this.electNextClient();
         }
@@ -88,29 +109,34 @@ export class ClientCoordinator {
     }
 
     private electNextClient() {
-        const [nextId] = this.clients.keys();
-        if (!nextId) {
-            this.setActiveClient(null);
+        // Preferred: the most recently focused (foreground) tab still connected.
+        // Fallback: the freshest heartbeat, as a proxy for "still alive and most responsive".
+        const foreground = this.lastForegroundClientId ? this.clients.get(this.lastForegroundClientId) : null;
+        if (foreground) {
+            this.setActiveClient(foreground);
             return;
         }
-        const nextClientContext = this.clients.get(nextId);
-        if (!nextClientContext) {
-            this.setActiveClient(null);
-            return;
+        let freshest: ClientContext | null = null;
+        for (const client of this.clients.values()) {
+            if (!freshest || client.lastHeartbeatAt > freshest.lastHeartbeatAt) {
+                freshest = client;
+            }
         }
-        this.setActiveClient(nextClientContext);
+        this.setActiveClient(freshest);
     }
 
-    // Remove dead clients that did not beforeunload/disconnect properly.
+    // Remove dead inactive clients that did not beforeunload/disconnect properly.
     private cleanUpDeadClients() {
         const now = Date.now();
-        for (const [clientId, { lastSeen }] of this.clients) {
-            if (now - lastSeen > HEARTBEAT_TIMEOUT) {
+        for (const [clientId, { lastHeartbeatAt }] of this.clients) {
+            const isInactiveClient = clientId !== this.activeClientId;
+            const isAboveTimeout = now - lastHeartbeatAt > HEARTBEAT_TIMEOUT;
+            if (isInactiveClient && isAboveTimeout) {
                 this.disconnect(clientId);
                 // Clients normally disconnect via beforeunload in WorkerClient.
-                // Heartbeat timeout is a fallback — report so we can track how often it happens.
+                // Heartbeat timeout is a fallback - report so we can track how often it happens.
                 this.getSearchMetrics()?.markClientDisconnectTimeout({
-                    staleness: now - lastSeen,
+                    staleness: now - lastHeartbeatAt,
                     remainingClients: this.clients.size,
                 });
             }
