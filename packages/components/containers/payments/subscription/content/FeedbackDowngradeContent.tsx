@@ -17,7 +17,6 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useConfig from '@proton/components/hooks/useConfig';
-import type { FeedbackDowngradeData } from '@proton/payments/core/api/api';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
@@ -29,6 +28,7 @@ import shuffle from '@proton/utils/shuffle';
 
 import useCancellationTelemetry from '../cancellationFlow/useCancellationTelemetry';
 import { useFeedbackFirstEligibility } from '../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstEligibility';
+import type { FeedbackDowngradeFormData, FeedbackDowngradeResult, KeepSubscription } from './interface';
 
 export enum SUBSCRIPTION_CANCELLATION_REASONS {
     DIFFERENT_ACCOUNT = 'DIFFERENT_ACCOUNT',
@@ -53,20 +53,33 @@ interface ReasonDetail {
     content: ReactNode;
 }
 
-export type KeepSubscription = {
-    status: 'kept';
-};
-
 export function isKeepSubscription(data: FeedbackDowngradeResult): data is KeepSubscription {
     return (data as KeepSubscription)?.status === 'kept';
 }
-
-export type FeedbackDowngradeResult = FeedbackDowngradeData | KeepSubscription;
 
 type FeedbackDowngradeContentProps = {
     user: UserModel;
     onResolve: ModalTwoPromiseHandlers<FeedbackDowngradeResult>['onResolve'];
     onClose?: () => void;
+};
+
+const InputLimit = ({ maxLength, value }: { maxLength: number; value: string }) => {
+    let colorClass = 'text-weak';
+
+    if (value.length >= maxLength) {
+        colorClass = 'color-danger';
+    } else if (value.length >= maxLength * 0.9) {
+        colorClass = 'color-warning';
+    }
+
+    return (
+        <span className={`text-sm ${colorClass}`}>
+            {
+                // translator: Character count hint showing current length and maximum allowed length for rule title. Example: '25/191 characters'
+                c('Label').t`${value.length}/${maxLength} characters`
+            }
+        </span>
+    );
 };
 
 const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngradeContentProps) => {
@@ -84,7 +97,7 @@ const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngrad
     const isVpnApp =
         APP_NAME === APPS.PROTONVPN_SETTINGS || getAppFromPathnameSafe(location.pathname) === APPS.PROTONVPN_SETTINGS;
 
-    const [model, setModel] = useState<FeedbackDowngradeData>({
+    const [model, setModel] = useState<FeedbackDowngradeFormData>({
         Reason: '',
         Feedback: '',
         ReasonDetails: '',
@@ -189,6 +202,7 @@ const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngrad
         onValue: (value: string) => setModel((model) => ({ ...model, ReasonDetails: value })),
         assistContainerClassName: 'mb-2',
     };
+
     const reasonDetails: ReasonDetail[] = [
         {
             forReason: SUBSCRIPTION_CANCELLATION_REASONS.MISSING_FEATURE,
@@ -200,9 +214,10 @@ const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngrad
                     label={c('Label').t`Could you please specify?`}
                     error={validator(
                         model.Reason === SUBSCRIPTION_CANCELLATION_REASONS.MISSING_FEATURE
-                            ? [requiredValidator(model.ReasonDetails)]
+                            ? [requiredValidator(model.ReasonDetails), maxLengthValidator(model.ReasonDetails, 200)]
                             : []
                     )}
+                    hint={<InputLimit maxLength={200} value={model.ReasonDetails} />}
                     {...sharedReasonDetailsProps}
                 />
             ),
@@ -218,9 +233,10 @@ const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngrad
                     label={c('Label').t`Could you please specify?`}
                     error={validator(
                         model.Reason === SUBSCRIPTION_CANCELLATION_REASONS.QUALITY_ISSUE
-                            ? [requiredValidator(model.ReasonDetails)]
+                            ? [requiredValidator(model.ReasonDetails), maxLengthValidator(model.ReasonDetails, 200)]
                             : []
                     )}
+                    hint={<InputLimit maxLength={200} value={model.ReasonDetails} />}
                     {...sharedReasonDetailsProps}
                 />
             ),
@@ -308,7 +324,7 @@ const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngrad
 
         const shouldSendReasonDetails = reasonDetails.some(({ forReason }) => model.Reason === forReason);
 
-        const data: FeedbackDowngradeData = {
+        const data: FeedbackDowngradeFormData = {
             ...model,
             ReasonDetails: shouldSendReasonDetails ? model.ReasonDetails : '',
         };
@@ -387,30 +403,33 @@ const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngrad
                 })}
 
                 <div className="mb-4">
-                    <div className="flex items-start justify-start gap-2 mb-4">
-                        <CircledNumber className="mx-0" number={2} />
-                        <label htmlFor="feedback" className="text-semibold">{c('Label').t`Additional comments`}</label>
-                        <span className="ml-auto color-weak text-sm">{c('Label').t`Optional`}</span>
-                    </div>
-                    <div className="pl-6">
-                        <InputFieldTwo
-                            id="feedback"
-                            as={TextAreaTwo}
-                            rootClassName="mt-2"
-                            rows={10}
-                            placeholder={c('Placeholder').t`Anything you'd like us to know`}
-                            value={model.Feedback}
-                            onValue={(value: string) => setModel((old) => ({ ...old, Feedback: value }))}
-                            className="border-weak rounded-lg"
-                        />
-                    </div>
+                    <InputFieldTwo
+                        id="feedback"
+                        as={TextAreaTwo}
+                        rootClassName="mt-2"
+                        rows={10}
+                        inputContainerClassName="pl-6"
+                        placeholder={c('Placeholder').t`Anything you'd like us to know`}
+                        value={model.Feedback}
+                        label={
+                            <div className="flex items-center gap-2">
+                                <CircledNumber className="mx-0" number={2} />
+                                <label htmlFor="feedback" className="text-semibold">{c('Label')
+                                    .t`Additional comments`}</label>
+                                <span className="color-weak text-sm">{c('Label').t`Optional`}</span>
+                            </div>
+                        }
+                        hint={<InputLimit maxLength={1000} value={model.Feedback} />}
+                        error={validator([maxLengthValidator(model.Feedback, 1000)])}
+                        onValue={(value: string) => setModel((old) => ({ ...old, Feedback: value }))}
+                        className="border-weak rounded-lg mt-4"
+                    />
                 </div>
             </ModalContent>
             <ModalFooter className={clsx('gap-2', isEligibleForFeedbackFirst && 'justify-end')}>
                 <Button
                     data-testid="cancelFeedback"
                     onClick={isEligibleForFeedbackFirst ? handleSkipFeedback : handleKeepSubscription}
-                    size="large"
                     className="rounded-lg"
                 >
                     {isEligibleForFeedbackFirst ? skipFeedbackText : cancelFeedbackText}
@@ -419,7 +438,6 @@ const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngrad
                     data-testid="submitFeedback"
                     onClick={handleSubmit}
                     color={isEligibleForFeedbackFirst ? 'danger' : submitFeedbackColor}
-                    size="large"
                     className="rounded-lg"
                 >
                     {isEligibleForFeedbackFirst ? continueCancellingText : submitFeedbackText}

@@ -65,7 +65,7 @@ export const TemporaryNeedContent = ({ onKeepPlan, onContinueCancelling }: Props
                 )}
                 {hasB2CAccess && (
                     <>
-                        <p>
+                        <p className="mt-12">
                             {c('Paragraph')
                                 .t`${BRAND_NAME} is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.`}
                         </p>
