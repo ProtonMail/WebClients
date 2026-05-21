@@ -1,23 +1,23 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
+import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { addDomain } from '@proton/shared/lib/api/domains';
-import { createGroup as createGroupCall, editGroup as editGroupCall } from '@proton/shared/lib/api/groups';
+import {
+    createGroup as createGroupCall,
+    deleteGroup as deleteGroupCall,
+    editGroup as editGroupCall,
+} from '@proton/shared/lib/api/groups';
 import { USER_ROLES } from '@proton/shared/lib/constants';
-import type {
-    Api,
-    Domain,
-    Group,
-    GroupFlags,
-    GroupPermissions,
-    KeyTransparencyVerify,
-} from '@proton/shared/lib/interfaces';
+import type { Api, Domain, EnhancedGroup, Group, GroupFlags, GroupPermissions } from '@proton/shared/lib/interfaces';
 import { createGroupAddressKey } from '@proton/shared/lib/keys/groupKeys';
 
 import { domainsThunk } from '../domains';
+import type { KtState } from '../kt';
+import { getKTActivation } from '../kt/actions';
 import { organizationKeyThunk } from '../organizationKey';
 import { userThunk } from '../user';
-import type { GroupsState } from './index';
+import { type GroupsState, addGroup, removeGroup, updateGroup } from './index';
 
 interface SaveGroupPayload {
     id: string | undefined;
@@ -40,14 +40,12 @@ const saveGroup =
     ({ editMode = false }: { editMode: boolean }) =>
     ({
         group: groupPayload,
-        keyTransparencyVerify,
         api,
     }: {
         group: SaveGroupPayload;
-        keyTransparencyVerify: KeyTransparencyVerify;
         api: Api;
-    }): ThunkAction<Promise<Group>, GroupsState, ProtonThunkArguments, UnknownAction> => {
-        return async (dispatch) => {
+    }): ThunkAction<Promise<Group>, GroupsState & KtState, ProtonThunkArguments, UnknownAction> => {
+        return async (dispatch, _, extra) => {
             const [domains, user] = await Promise.all([dispatch(domainsThunk()), dispatch(userThunk())]);
 
             const isGroupDomain = GROUPS_DOMAIN_REGEX.test(groupPayload.domain);
@@ -85,12 +83,26 @@ const saveGroup =
                     throw new Error('Missing organization private key');
                 }
 
+                // TODO: Check if group keys are not commited?
+                const { keyTransparencyVerify /*, keyTransparencyCommit*/ } = createKTVerifier({
+                    ktActivation: dispatch(getKTActivation()),
+                    api,
+                    config: extra.config,
+                });
+
                 group.Address.Keys = await createGroupAddressKey({
                     api,
                     organizationKey: cachedOrganizationKey,
                     address: group.Address,
                     keyTransparencyVerify,
                 });
+                group.Address.HasKeys = 1;
+            }
+
+            if (editMode) {
+                dispatch(updateGroup(group));
+            } else {
+                dispatch(addGroup(group));
             }
 
             return group;
@@ -99,3 +111,12 @@ const saveGroup =
 
 export const createGroup = saveGroup({ editMode: false });
 export const editGroup = saveGroup({ editMode: true });
+
+export const deleteGroup = (
+    group: EnhancedGroup
+): ThunkAction<Promise<void>, GroupsState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, _, extra) => {
+        await extra.api(deleteGroupCall(group.ID));
+        dispatch(removeGroup(group.ID));
+    };
+};
