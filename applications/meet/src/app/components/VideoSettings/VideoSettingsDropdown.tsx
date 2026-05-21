@@ -7,10 +7,9 @@ import { useActiveBreakpoint } from '@proton/components';
 import type { PopperPosition } from '@proton/components/components/popper/interface';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';
 import type { SliceDeviceState } from '@proton/meet/store/slices/deviceManagementSlice';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
-import { shouldShowDeviceCheckmark, shouldShowSystemDefaultCheckmark } from '@proton/meet/utils/deviceUtils';
+import { shouldShowDeviceCheckmark } from '@proton/meet/utils/deviceUtils';
 
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
@@ -60,22 +59,6 @@ const VideoSettingsDropdownComponent = ({
                     <div className="color-weak meet-font-weight text-uppercase text-sm">
                         {noCameraDetected ? c('Info').t`No camera detected` : c('Info').t`Select a camera`}
                     </div>
-                    {cameraState.systemDefault && (
-                        <OptionButton
-                            key={DEFAULT_DEVICE_ID}
-                            showIcon={shouldShowSystemDefaultCheckmark(cameraState)}
-                            label={cameraState.systemDefaultLabel}
-                            onClick={() => {
-                                const isAlreadySelected = shouldShowSystemDefaultCheckmark(cameraState);
-                                if (isAlreadySelected) {
-                                    return;
-                                }
-                                void withCameraLoading(DEFAULT_DEVICE_ID, () => handleCameraChange(DEFAULT_DEVICE_ID));
-                            }}
-                            loading={isCameraLoading(DEFAULT_DEVICE_ID)}
-                            Icon={IcCheckmark}
-                        />
-                    )}
                     {cameras.map((camera) => (
                         <OptionButton
                             key={camera.deviceId}
