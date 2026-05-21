@@ -7,12 +7,14 @@ import debounce from 'lodash/debounce';
 
 import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
-import { useMeetSelector } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import {
     selectActiveCameraId,
     selectCameraState,
-    selectCameras,
     selectInitialCameraState,
+    selectRealtimeDevices,
+    selectUserCameraIntent,
+    setUserCameraIntent,
 } from '@proton/meet/store/slices/deviceManagementSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
@@ -34,10 +36,14 @@ const getVideoTrackPublications = (localParticipant: LocalParticipant) => {
 
 export const useVideoToggle = (switchActiveDevice: SwitchActiveDevice) => {
     const { reportMeetError: reportError } = useMeetErrorReporting();
+
+    const dispatch = useMeetDispatch();
     const activeCameraDeviceId = useMeetSelector(selectActiveCameraId);
     const initialCameraState = useMeetSelector(selectInitialCameraState);
-    const cameras = useMeetSelector(selectCameras);
+    const userCameraIntent = useMeetSelector(selectUserCameraIntent);
     const cameraState = useMeetSelector(selectCameraState);
+    const store = useMeetStore();
+
     const room = useRoomContext();
     const { isCameraEnabled, localParticipant } = useLocalParticipant();
 
@@ -48,7 +54,6 @@ export const useVideoToggle = (switchActiveDevice: SwitchActiveDevice) => {
     const blurToggleInProgress = useRef(false);
     const processorAttachInProgress = useRef(false);
 
-    const prevEnabled = useRef<boolean | null>(null);
     const preventAutoApplyingBlur = useRef(false);
 
     const backgroundBlurProcessorInstanceRef = useRef<BackgroundBlurProcessor | null>(null);
@@ -84,16 +89,18 @@ export const useVideoToggle = (switchActiveDevice: SwitchActiveDevice) => {
                 facingMode?: 'environment' | 'user';
                 preserveCache?: boolean;
                 recoveringFromError?: boolean;
+                updateUserIntent?: boolean;
             } = {}
         ) => {
             let toggleResult = false;
 
             const {
-                isEnabled = prevEnabled.current ?? initialCameraState,
+                isEnabled = userCameraIntent ?? initialCameraState,
                 videoDeviceId = activeCameraDeviceId,
                 facingMode: customFacingMode,
                 preserveCache,
                 recoveringFromError = false,
+                updateUserIntent = true,
             } = params;
 
             const deviceId = videoDeviceId === DEFAULT_DEVICE_ID ? cameraState.systemDefault?.deviceId : videoDeviceId;
@@ -103,7 +110,9 @@ export const useVideoToggle = (switchActiveDevice: SwitchActiveDevice) => {
             }
 
             // In case of unplugging a device LiveKit sets the enabled status to false, but we want to keep the previous state
-            prevEnabled.current = isEnabled;
+            if (updateUserIntent) {
+                dispatch(setUserCameraIntent(isEnabled));
+            }
 
             toggleInProgress.current = true;
 
@@ -159,6 +168,8 @@ export const useVideoToggle = (switchActiveDevice: SwitchActiveDevice) => {
                 // eslint-disable-next-line no-console
                 console.error(error);
 
+                const updatedCameras = await selectRealtimeDevices(store, 'videoinput');
+
                 const isPotentialStaleDeviceState = ERRORS_SIGNALING_POTENTIAL_STALE_DEVICE_STATE.includes(
                     (error as Error)?.name
                 );
@@ -167,14 +178,14 @@ export const useVideoToggle = (switchActiveDevice: SwitchActiveDevice) => {
                 if (
                     !recoveringFromError &&
                     isPotentialStaleDeviceState &&
-                    cameras.length > 0 &&
-                    cameras[0].deviceId !== deviceId
+                    updatedCameras.length > 0 &&
+                    updatedCameras[0].deviceId !== deviceId
                 ) {
                     toggleInProgress.current = false;
 
                     const recoveryResult = (await toggleVideo({
                         isEnabled,
-                        videoDeviceId: cameras[0].deviceId,
+                        videoDeviceId: updatedCameras[0].deviceId,
                         recoveringFromError: true,
                         preserveCache: false,
                     })) as boolean;
@@ -198,6 +209,7 @@ export const useVideoToggle = (switchActiveDevice: SwitchActiveDevice) => {
                 facingMode: newFacingMode,
             });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [facingMode, toggleVideo]);
 
     const toggleBackgroundBlur = useStableCallback(async () => {
@@ -248,6 +260,7 @@ export const useVideoToggle = (switchActiveDevice: SwitchActiveDevice) => {
             room.off(ConnectionState.Connected, preventApplyingBlur);
             room.off(ConnectionState.Disconnected, handleDisconnected);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [initialCameraState]);
 
     useEffect(() => {
@@ -269,6 +282,7 @@ export const useVideoToggle = (switchActiveDevice: SwitchActiveDevice) => {
         return () => {
             localParticipant.off(RoomEvent.LocalTrackPublished, handleTrackPublished);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [localParticipant, backgroundBlur]);
 
     useEffect(() => {
