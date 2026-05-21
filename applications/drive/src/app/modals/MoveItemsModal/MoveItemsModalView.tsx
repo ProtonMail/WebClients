@@ -16,8 +16,8 @@ import {
 import { NodeType, getDrive } from '@proton/drive/index';
 import { useLoading } from '@proton/hooks';
 
-import ModalContentLoader from '../../components/modals/ModalContentLoader';
-import { selectMessageForItemList } from '../../components/sections/helpers';
+import ModalContentLoader from '../../legacy/components/modals/ModalContentLoader';
+import { selectMessageForItemList } from '../../legacy/components/sections/helpers';
 import type { DirectoryTreeItem } from '../../statelessComponents/DirectoryTree/DirectoryTree';
 import { DirectoryTreeRoot } from '../../statelessComponents/DirectoryTree/DirectoryTree';
 import { getMovedFiles } from '../../utils/moveTexts';

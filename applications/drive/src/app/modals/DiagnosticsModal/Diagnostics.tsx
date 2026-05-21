@@ -11,8 +11,8 @@ import type { MaybeNode } from '@proton/drive';
 import type { ExpectedTreeNode } from '@proton/drive/diagnostic';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 
-import ModalContentLoader from '../../components/modals/ModalContentLoader';
-import { withHoc } from '../../hooks/withHoc';
+import ModalContentLoader from '../../legacy/components/modals/ModalContentLoader';
+import { withHoc } from '../../legacy/hooks/withHoc';
 import type { Results } from './useDiagnosticsState';
 import { State, useDiagnosticsState } from './useDiagnosticsState';
 

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { FileIcon, FileNameDisplay, Loader, SidebarListItem, SidebarListItemContent } from '@proton/components';
 import { splitNodeUid } from '@proton/drive/index';
 
-import SidebarListItemLink from '../../../components/layout/sidebar/SidebarListItemLink';
+import SidebarListItemLink from '../../../legacy/components/layout/sidebar/SidebarListItemLink';
 import type { TreeItemWithChildren } from '../../../modules/directoryTree';
 import { useSidebarStore } from '../hooks/useSidebar.store';
 import { generateSidebarItemStyle } from '../utils';

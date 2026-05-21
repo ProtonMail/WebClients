@@ -1,6 +1,6 @@
 import { Toolbar } from '@proton/components';
 
-import { LayoutButton } from '../../../components/sections/ToolbarButtons';
+import { LayoutButton } from '../../../legacy/components/sections/ToolbarButtons';
 import { useSelectionStore } from '../../../modules/selection';
 import { RemoveButton } from '../statelessComponents/RemoveButton';
 import { RenameButton } from '../statelessComponents/RenameButton';

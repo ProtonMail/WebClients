@@ -26,6 +26,7 @@ import { FlagProvider } from '@proton/unleash/proxy';
 import noop from '@proton/utils/noop';
 
 import config from './config';
+import { unleashVanillaStore } from './legacy/zustand/unleash/unleash.store';
 import locales from './locales';
 import { driveMetrics } from './modules/metrics';
 import { NotificationsBridge } from './modules/notifications';
@@ -35,7 +36,6 @@ import { extraThunkArguments } from './redux-store/thunk';
 import { PublicPage } from './sections/publicPage/PublicPage';
 import { Features, measureFeaturePerformance } from './utils/telemetry';
 import { loadStreamsPolyfill } from './utils/webStreamsPolyfill';
-import { unleashVanillaStore } from './zustand/unleash/unleash.store';
 
 const bootstrapApp = async () => {
     const authentication = bootstrap.createAuthentication({ initialAuth: false });

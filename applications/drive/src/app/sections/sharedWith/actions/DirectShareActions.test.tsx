@@ -2,7 +2,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 
 import { NodeType, getDrivePerNodeType } from '@proton/drive';
 
-import useShare from '../../../store/_shares/useShare';
+import useShare from '../../../legacy/store/_shares/useShare';
 import { ItemType } from '../types';
 import { DirectShareActions } from './DirectShareActions';
 
@@ -13,7 +13,7 @@ jest.mock('@proton/drive', () => ({
     getDrivePerNodeType: jest.fn(),
 }));
 
-jest.mock('../../../store/_volumes/useVolumesState', () => ({
+jest.mock('../../../legacy/store/_volumes/useVolumesState', () => ({
     __esModule: true,
     default: jest.fn(() => ({
         findVolumeId: jest.fn(),
@@ -23,10 +23,10 @@ jest.mock('../../../store/_volumes/useVolumesState', () => ({
     })),
 }));
 
-jest.mock('../../../store/_shares/useShare');
+jest.mock('../../../legacy/store/_shares/useShare');
 
-jest.mock('../../../store/_documents/useOpenDocument', () => ({
-    ...jest.requireActual('../../../store/_documents/useOpenDocument'),
+jest.mock('../../../legacy/store/_documents/useOpenDocument', () => ({
+    ...jest.requireActual('../../../legacy/store/_documents/useOpenDocument'),
     useOpenDocument: jest.fn(() => ({
         openDocumentWindow: jest.fn(),
     })),

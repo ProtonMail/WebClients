@@ -18,25 +18,31 @@ import { useLoading } from '@proton/hooks';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { FloatingElements } from '../components/FloatingElements/FloatingElements';
-import DriveWindow from '../components/layout/DriveWindow';
-import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import config from '../config';
-import { useRunningFreeUploadTimer } from '../hooks/drive/freeUpload/useRunningFreeUploadTimer';
-import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
-import { useSearchModule } from '../hooks/search/useSearchModule';
-import { useUserSettings } from '../hooks/user';
-import { useReactRouterNavigationLog } from '../hooks/util/useReactRouterNavigationLog';
-import { useRedirectToPublicPage } from '../hooks/util/useRedirectToPublicPage';
+import { FloatingElements } from '../legacy/components/FloatingElements/FloatingElements';
+import DriveWindow from '../legacy/components/layout/DriveWindow';
+import GiftFloatingButton from '../legacy/components/onboarding/GiftFloatingButton';
+import { useRunningFreeUploadTimer } from '../legacy/hooks/drive/freeUpload/useRunningFreeUploadTimer';
+import { ActiveShareProvider } from '../legacy/hooks/drive/useActiveShare';
+import { useSearchModule } from '../legacy/hooks/search/useSearchModule';
+import { useUserSettings } from '../legacy/hooks/user';
+import { useReactRouterNavigationLog } from '../legacy/hooks/util/useReactRouterNavigationLog';
+import { useRedirectToPublicPage } from '../legacy/hooks/util/useRedirectToPublicPage';
+import {
+    DriveProvider,
+    useActivePing,
+    useBookmarksActions,
+    useDriveEventManager,
+    useSearchControl,
+} from '../legacy/store';
+import { useSanitization } from '../legacy/store/_sanitization/useSanitization';
+import { useDriveSharingFlags, useShareActions } from '../legacy/store/_shares';
+import { useShareBackgroundActions } from '../legacy/store/_views/useShareBackgroundActions';
+import { useVolumesState } from '../legacy/store/_volumes';
 import { logging } from '../modules/logging';
 import { driveMetrics } from '../modules/metrics';
 import { PhotosWithAlbumsContainer } from '../photos/PhotosWithAlbumsContainer';
 import { TransferManager } from '../sections/transferManager/TransferManager';
-import { DriveProvider, useActivePing, useBookmarksActions, useDriveEventManager, useSearchControl } from '../store';
-import { useSanitization } from '../store/_sanitization/useSanitization';
-import { useDriveSharingFlags, useShareActions } from '../store/_shares';
-import { useShareBackgroundActions } from '../store/_views/useShareBackgroundActions';
-import { useVolumesState } from '../store/_volumes';
 import { setPublicRedirectSpotlightToPending } from '../utils/publicRedirectSpotlight';
 import { getNodeEntity } from '../utils/sdk/getNodeEntity';
 import { dateToLegacyTimestamp } from '../utils/sdk/legacyTime';

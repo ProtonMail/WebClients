@@ -4,7 +4,7 @@ import type { useConfirmActionModal } from '@proton/components';
 import { ToolbarButton } from '@proton/components';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 
-import { ContextMenuButton } from '../../../components/sections/ContextMenu';
+import { ContextMenuButton } from '../../../legacy/components/sections/ContextMenu';
 import { useBookmarksActions } from '../hooks/useBookmarksActions';
 
 interface BaseProps {

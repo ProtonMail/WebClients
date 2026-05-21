@@ -10,8 +10,8 @@ import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 
 import { useFlagsDriveSDKPreview } from '../../flags/useFlagsDriveSDKPreview';
-import useDriveNavigation from '../../hooks/drive/useNavigate';
-import { useUserSettings } from '../../hooks/user';
+import useDriveNavigation from '../../legacy/hooks/drive/useNavigate';
+import { useUserSettings } from '../../legacy/hooks/user';
 import { useDrivePreviewModal } from '../../modals/preview';
 import { useContextMenuStore } from '../../modules/contextMenu';
 import { useSelectionStore } from '../../modules/selection';

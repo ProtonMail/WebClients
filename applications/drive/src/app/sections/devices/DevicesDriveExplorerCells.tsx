@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { IcTv } from '@proton/icons/icons/IcTv';
 
-import { FileName } from '../../components/FileName';
-import { getDeviceIconText } from '../../components/sections/FileBrowser/utils';
+import { FileName } from '../../legacy/components/FileName';
+import { getDeviceIconText } from '../../legacy/components/sections/FileBrowser/utils';
 import type { CellDefinition, GridDefinition } from '../../statelessComponents/DriveExplorer/types';
 import { useDevicesStore } from './useDevices.store';
 

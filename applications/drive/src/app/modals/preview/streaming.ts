@@ -8,7 +8,7 @@ import metrics from '@proton/metrics/index';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 
 import { logging } from '../../modules/logging';
-import { initDownloadSW } from '../../store/_downloads/fileSaver/download';
+import { initDownloadSW } from '../../legacy/store/_downloads/fileSaver/download';
 import { errorToString, sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 

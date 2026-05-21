@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { NotificationButton, useNotifications } from '@proton/components';
 
-import { useErrorHandler } from '../store/_utils';
+import { useErrorHandler } from '../legacy/store/_utils';
 
 const SuccessNotificationContent = ({ message, undoAction }: { message: string; undoAction?: () => Promise<void> }) => {
     const [undoClicked, setUndoClicked] = useState(false);

@@ -19,8 +19,8 @@ import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-filled.svg';
 import clsx from '@proton/utils/clsx';
 
-import { SignatureIcon } from '../../../components/SignatureIcon';
-import { getMimeTypeDescription } from '../../../components/sections/helpers';
+import { SignatureIcon } from '../../../legacy/components/SignatureIcon';
+import { getMimeTypeDescription } from '../../../legacy/components/sections/helpers';
 import { stopPropagation } from '../../../utils/stopPropagation';
 import { usePhotosStore } from '../../usePhotos.store';
 import { formatVideoDuration } from './formatVideoDuration';

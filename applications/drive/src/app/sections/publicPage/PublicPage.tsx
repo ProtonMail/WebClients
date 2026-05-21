@@ -7,7 +7,7 @@ import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
 import config from '../../config';
 import LocationErrorBoundary from '../../containers/LocationErrorBoundary';
-import { usePartialPublicView } from '../../hooks/util/usePartialPublicView';
+import { usePartialPublicView } from '../../legacy/hooks/util/usePartialPublicView';
 import { logging } from '../../modules/logging';
 import { TransferManager } from '../../sections/transferManager/TransferManager';
 import { deleteStoredUrlPassword } from '../../utils/url/password';

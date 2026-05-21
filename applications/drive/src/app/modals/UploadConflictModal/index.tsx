@@ -1,6 +1,6 @@
 import { useModalTwoStatic } from '@proton/components';
 
-import { withHoc } from '../../hooks/withHoc';
+import { withHoc } from '../../legacy/hooks/withHoc';
 import { UploadConflictModalView, type UploadConflictModalViewProps } from './UploadConflictModalView';
 import { type UseUploadConflictModalProps, useUploadConflictModalState } from './useUploadConflictModalState';
 

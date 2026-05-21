@@ -8,13 +8,13 @@ import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriv
 import { queryDeletePhotosShare } from '@proton/shared/lib/api/drive/photos';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
-import type { DecryptedLink } from '../../../store/_links';
-import { useLinksActions, useLinksListing } from '../../../store/_links';
-import type { Share, ShareWithKey } from '../../../store/_shares';
-import { waitFor } from '../../../store/_utils';
+import type { DecryptedLink } from '../../../legacy/store/_links';
+import { useLinksActions, useLinksListing } from '../../../legacy/store/_links';
+import type { Share, ShareWithKey } from '../../../legacy/store/_shares';
+import { waitFor } from '../../../legacy/store/_utils';
+import { useSharesStore } from '../../../legacy/zustand/share/shares.store';
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
-import { useSharesStore } from '../../../zustand/share/shares.store';
 
 export type RECOVERY_STATE =
     | 'READY'

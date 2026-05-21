@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import type { ProtonDriveClient, Result } from '@proton/drive/index';
 
-import useDriveNavigation from '../../../hooks/drive/useNavigate';
+import useDriveNavigation from '../../../legacy/hooks/drive/useNavigate';
 import type { CrumbDefinition } from '../../../statelessComponents/Breadcrumbs/types';
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';

@@ -23,7 +23,7 @@ import noop from '@proton/utils/noop';
 
 import { bootstrapApp } from './bootstrap';
 import config from './config';
-import { useUserSettingsStore } from './hooks/user';
+import { useUserSettingsStore } from './legacy/hooks/user';
 import { driveMetrics } from './modules/metrics';
 import { NotificationsBridge } from './modules/notifications';
 import type { DriveStore } from './redux-store/store';

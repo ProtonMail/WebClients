@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { getDrive } from '@proton/drive';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import { useDocumentActions } from '../../../hooks/docs/useDocumentActions';
+import { ContextMenuButton } from '../../../legacy/components/sections/ContextMenu';
+import { useDocumentActions } from '../../../legacy/hooks/docs/useDocumentActions';
 import type { useRevisionsModal } from '../../../modals/RevisionsModal';
 
 interface Props {
