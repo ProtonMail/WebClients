@@ -39,6 +39,7 @@ import { extraThunkArguments } from './redux/thunk';
 import { LumoApi } from './remote/api';
 import { LUMO_ELIGIBILITY } from './types';
 import { initializeConsoleOverride } from './util/logging';
+import { lumoEventLoop } from './redux/eventLoop';
 import { type UserAndAddressKeys, initializeLumoBackground, initializeLumoCritical } from './util/lumoBootstrap';
 import { lumoTelemetryConfig } from './util/telemetryConfig';
 
@@ -175,6 +176,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const userPromise = loadUser();
         const cryptoPromise = bootstrap.loadCrypto({ appName, unleashClient });
         const eventManager = bootstrap.eventManager({ api: silentApi });
+        const lumoEventManager = bootstrap.lumoEventManager({ api: silentApi });
         bootstrap.unleashReady({ unleashClient }).catch(noop);
 
         const loadLumo = async () => {
@@ -232,15 +234,23 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         // Needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
 
-        extendStore({ eventManager });
+        extendStore({ eventManager, lumoEventManager });
         const unsubscribeEventManager = eventManager.subscribe((event) => {
             dispatch(serverEvent(event));
         });
+        const unsubscribeLumoEventManager = lumoEventManager.subscribe(async (event) => {
+            const promises: Promise<void>[] = [];
+            dispatch(lumoEventLoop({ event, promises }));
+            await Promise.all(promises);
+        });
         eventManager.start();
+        lumoEventManager.start();
 
         bootstrap.onAbort(signal, () => {
             unsubscribeEventManager();
+            unsubscribeLumoEventManager();
             eventManager.reset();
+            lumoEventManager.reset();
             unleashClient.stop();
             store.unsubscribe();
         });
@@ -248,6 +258,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         return {
             ...userData,
             eventManager,
+            lumoEventManager,
             unleashClient,
             history,
             store,

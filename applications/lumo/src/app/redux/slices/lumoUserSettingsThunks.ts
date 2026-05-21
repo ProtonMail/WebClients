@@ -89,28 +89,10 @@ export const loadLumoUserSettingsFromRemote = createAsyncThunk<
             console.log('LumoUserSettingsThunks: Deserialization completed, result:', userSettings);
 
             if (userSettings) {
-                console.log('LumoUserSettingsThunks: Unencrypted payload loaded from API:', userSettings);
-
-                // Display the decrypted payload in a more readable format
-                console.log('=== DECRYPTED LUMO USER SETTINGS PAYLOAD ===');
-                console.log('Full object:', JSON.stringify(userSettings, null, 2));
-                console.log('Personalization data:', userSettings.personalization);
-                console.log('Theme:', userSettings.theme);
-                console.log('All keys:', Object.keys(userSettings));
-                console.log('Type of userSettings:', typeof userSettings);
-                console.log('Is userSettings an object:', userSettings && typeof userSettings === 'object');
-                console.log('==========================================');
-
-                // Check if this is core Proton user settings (has Email, Phone, etc.) or Lumo user settings (has theme, personalization)
                 const isCoreProtonSettings = 'Email' in userSettings && 'Phone' in userSettings;
                 const isLumoSettings = 'theme' in userSettings && 'personalization' in userSettings;
 
-                console.log('LumoUserSettingsThunks: Is core Proton settings:', isCoreProtonSettings);
-                console.log('LumoUserSettingsThunks: Is Lumo settings:', isLumoSettings);
-
                 if (isCoreProtonSettings) {
-                    console.log('LumoUserSettingsThunks: WARNING - Got core Proton settings instead of Lumo settings!');
-                    console.log('LumoUserSettingsThunks: This means we encrypted the wrong data. Returning null.');
                     return null;
                 } else if (isLumoSettings) {
                     console.log('LumoUserSettingsThunks: Got correct Lumo settings, returning as-is');

@@ -215,6 +215,15 @@ export async function setupTestEnvironment({
     authentication.setPersistent(false);
     const history = createMemoryHistory();
     const eventManager = {} as EventManager<any>;
+    const lumoEventManager = {
+        subscribe: () => () => {},
+        start: () => {},
+        stop: () => {},
+        reset: () => {},
+        setEventID: () => {},
+        getEventID: () => undefined,
+        call: async () => {},
+    } as EventManager<any>;
     const unleashClient = createUnleash({ api });
 
     const lumoApi = new LumoApi(USER_TEST_UID);
@@ -229,6 +238,7 @@ export async function setupTestEnvironment({
         authentication,
         history,
         eventManager,
+        lumoEventManager,
         unleashClient,
         dbApi,
         lumoApi,
