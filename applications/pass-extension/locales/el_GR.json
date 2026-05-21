@@ -1645,6 +1645,9 @@
       "(Empty)": [
         "(Άδειο)"
       ],
+      "2FA code copied to clipboard": [
+        "Ο κωδικός 2FA αντιγράφηκε στο πρόχειρο"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 ημέρες για να δοκιμάσετε δωρεάν premium δυνατότητες. Μόνο κατά την πρώτη εβδομάδα χρησιμοποιώντας το ${ BRAND_NAME }."
       ],
@@ -1695,6 +1698,9 @@
       ],
       "Admin": [
         "Διαχειριστής"
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "Μετά την αυτόματη συμπλήρωση μιας σύνδεσης, ο κωδικός 2FA αντιγράφεται στο πρόχειρο."
       ],
       "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
         "Μετά την επιβεβαίωση, θα πρέπει να αποδεχτείτε ένα μήνυμα αίτησης άδειας για το ${ PASS_APP_NAME }."
@@ -2311,9 +2317,6 @@
       ],
       "password": [
         "κωδικός πρόσβασης"
-      ],
-      "Password copied": [
-        "Ο κωδικός πρόσβασης αντιγράφηκε"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Το κλείδωμα με κωδικό πρόσβασης καταχωρήθηκε με επιτυχία. Χρησιμοποιήστε το για να ξεκλειδώσετε το ${ PASS_APP_NAME }"
@@ -3160,6 +3163,9 @@
       ],
       "Authenticate with passkeys": [
         "Έλεγχος ταυτότητας με κλειδιά πρόσβασης"
+      ],
+      "Auto-copy 2FA code": [
+        "Αυτόματη αντιγραφή κωδικού 2FA"
       ],
       "Auto-lock after": [
         "Αυτόματο-κλείδωμα μετά"

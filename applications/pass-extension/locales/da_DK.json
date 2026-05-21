@@ -1645,6 +1645,9 @@
       "(Empty)": [
         "(Tom)"
       ],
+      "2FA code copied to clipboard": [
+        "2FA-kode kopieret til udklipsholder"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dage til at prøve premium-funktioner gratis. Kun i din første uge med ${ BRAND_NAME }."
       ],
@@ -1695,6 +1698,9 @@
       ],
       "Admin": [
         "Admin"
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "Efter at have autofyldt et login, bliver dens 2FA-kode kopieret til udklipsholderen."
       ],
       "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
         "Efter bekræftelse skal du acceptere en tilladelsesanmodning for ${ PASS_APP_NAME }."
@@ -2311,9 +2317,6 @@
       ],
       "password": [
         "adgangskode"
-      ],
-      "Password copied": [
-        "Adgangskode kopieret"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Adgangskodelås er blevet registreret. Brug den til at oplåse ${ PASS_APP_NAME }."
@@ -3160,6 +3163,9 @@
       ],
       "Authenticate with passkeys": [
         "Autentificer med adgangsnøgler"
+      ],
+      "Auto-copy 2FA code": [
+        "Auto-kopiér 2FA-kode"
       ],
       "Auto-lock after": [
         "Lås automatisk efter"
