@@ -22,6 +22,8 @@ export const WEB_REQUEST_PERMISSIONS = ((): Permission[] => {
 
 export const CLIPBOARD_PERMISSIONS: Permission[] = BUILD_TARGET === 'safari' ? [] : ['clipboardRead', 'clipboardWrite'];
 
+export const NATIVE_MESSAGING_PERMISSIONS: Permission[] = ['nativeMessaging'];
+
 const MANIFEST = browser?.runtime.getManifest() ?? {};
 const HOST_PERMISSIONS = MANIFEST.host_permissions ?? [];
 
