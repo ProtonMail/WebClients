@@ -1225,11 +1225,17 @@
       "Last updated on ${ formattedDate }": [
         "Última actualización el ${ formattedDate }"
       ],
+      "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
+        "Más información sobre cómo usar ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Permanently delete your project and chats. This is irreversible.": [
         "Elimina permanentemente su proyecto y sus chats. Esto es irreversible."
       ],
       "Quick responses": [
         "Respuestas rápidas"
+      ],
+      "Report a bug or feature request": [
+        "Reportar un error o solicitar una función"
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Inicie sesión para acceder a su cuenta y desbloquear más funciones. ¿No tiene una? ${ createLink }"
@@ -2202,6 +2208,9 @@
       ]
     },
     "collider_2025: Settings Item": {
+      "About": [
+        "Acerca de"
+      ],
       "Account": [
         "Cuenta"
       ],
@@ -2324,6 +2333,9 @@
       "Guest": [
         "Invitado"
       ],
+      "Help and support": [
+        "Ayuda y soporte"
+      ],
       "Invalid Link": [
         "Enlace no válido"
       ],
@@ -2350,6 +2362,9 @@
       ],
       "Raw response": [
         "Respuesta sin procesar"
+      ],
+      "Report a bug": [
+        "Reportar un error"
       ],
       "Required headers": [
         "Encabezados obligatorios"
@@ -2815,9 +2830,6 @@
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Obtener ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
-      "Help and support": [
-        "Ayuda y soporte"
       ],
       "Hide sidebar": [
         "Ocultar la barra lateral"
@@ -5235,9 +5247,9 @@
       "Country code": [
         "Código de país"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Crear una nube segura para ${ value } miembro",
-        "Crear una nube segura para ${ value } miembros"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crear una nube segura para ${ memberCount } miembro",
+        "Crear una nube segura para ${ memberCount } miembros"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no usada de la suscripción al plan anterior"
@@ -6520,6 +6532,9 @@
       "99.95% SLA": [
         "SLA del 99,95%"
       ],
+      "Access all countries": [
+        "Acceso a todos los países disponibles"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anuncios y protección contra malware"
       ],
@@ -6669,6 +6684,9 @@
       "Multiple admin roles": [
         "Distintos roles de administración"
       ],
+      "No streaming support": [
+        "Sin soporte de streaming"
+      ],
       "Online document editor": [
         "Editor de documentos en línea"
       ],
@@ -6800,6 +6818,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ancho de banda/volumen ilimitado"
+      ],
+      "Unlock streaming": [
+        "Desbloquear streaming"
       ],
       "Up to ${ n } user": [
         "Hasta ${ n } usuario",
@@ -7181,6 +7202,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } pais",
+        "${ n } países"
+      ],
       "Access advanced VPN features": [
         "Acceso a funciones VPN avanzadas"
       ],
