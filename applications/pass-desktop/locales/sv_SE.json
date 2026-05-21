@@ -1785,6 +1785,9 @@
       "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
         "Kopierat till urklipp (löper ut om ${ timeoutDurationHumanReadable })"
       ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Kopiera denna token nu. Av säkerhetsskäl kommer den inte att visas igen."
+      ],
       "Coupon successfully applied!": [
         "Kupong tillämpad!"
       ],
@@ -1838,6 +1841,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domän: ${ domainPath } eller @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Ladda ner pass-cli från ${ passCliLink }."
       ],
       "Drop file here to upload": [
         "Släpp fil här för att ladda upp"
@@ -2614,6 +2620,9 @@
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Uppgradera nu för att låsa upp premiumfunktioner"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Uppgradera till ${ PASS_APP_NAME } Plus för att skapa åtkomsttoken och använda ${ PASS_APP_NAME } programmatiskt."
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Uppgradera till ett betalt paket för att skapa flera valv."
