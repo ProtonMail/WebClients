@@ -2,8 +2,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useSearchModule } from '../../../../hooks/search/useSearchModule';
-import { useUrlSearchParams } from '../../../../hooks/search/useUrlSearchParam';
+import { useSearchModule } from '../../../../legacy/hooks/search/useSearchModule';
+import { useUrlSearchParams } from '../../../../legacy/hooks/search/useUrlSearchParam';
 import { getNotificationsManager } from '../../../../modules/notifications';
 import { type SearchResultItem, tryCatchWithNotification } from '../../../../modules/search';
 import { sendErrorReportForSearch } from '../../../../modules/search/internal/shared/errors';

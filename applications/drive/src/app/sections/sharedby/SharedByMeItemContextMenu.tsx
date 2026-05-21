@@ -4,7 +4,7 @@ import { useShallow } from 'zustand/react/shallow';
 
 import isTruthy from '@proton/utils/isTruthy';
 
-import { ItemContextMenu } from '../../components/sections/ContextMenu/ItemContextMenu';
+import { ItemContextMenu } from '../../legacy/components/sections/ContextMenu/ItemContextMenu';
 import { useContextMenuStore } from '../../modules/contextMenu';
 import { useSelectionStore } from '../../modules/selection';
 import { SharedByMeActions } from './actions/SharedByMeActions';

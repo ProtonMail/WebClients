@@ -7,7 +7,7 @@ import { useFormErrors } from '@proton/components';
 import { generateNodeUid } from '@proton/drive';
 import { uploadManager } from '@proton/drive/modules/upload';
 
-import { useActiveShare } from '../../hooks/drive/useActiveShare';
+import { useActiveShare } from '../../legacy/hooks/drive/useActiveShare';
 import { validateLinkNameField } from '../../utils/validation/validation';
 
 export type UseCreateFileModalStateProps = ModalStateProps;

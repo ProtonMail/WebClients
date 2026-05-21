@@ -14,10 +14,10 @@ import { generateNodeUid } from '@proton/drive/index';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
-import { useActiveShare } from '../../../hooks/drive/useActiveShare';
+import { useActiveShare } from '../../../legacy/hooks/drive/useActiveShare';
+import { useFileUploadInput, useFolderUploadInput } from '../../../legacy/store';
+import { useDocumentActions, useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../../legacy/store/_documents';
 import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
-import { useFileUploadInput, useFolderUploadInput } from '../../../store';
-import { useDocumentActions, useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../../store/_documents';
 import { CreateDocumentButton, CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ActionMenuButtons';
 import { CreateSheetButton } from './ActionMenuButtons/CreateSheetButton';
 

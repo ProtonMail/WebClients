@@ -4,8 +4,8 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
-import { AlbumsPageTypes, usePhotoLayoutStore } from '../../../zustand/photos/layout.store';
-import { usePhotoSelectionStore } from '../../../zustand/photos/selection.store';
+import { AlbumsPageTypes, usePhotoLayoutStore } from '../../../legacy/zustand/photos/layout.store';
+import { usePhotoSelectionStore } from '../../../legacy/zustand/photos/selection.store';
 import type { PhotoItem } from '../../usePhotos.store';
 import { usePhotosStore } from '../../usePhotos.store';
 import { isPhotoGroup } from '../../utils/isPhotoGroup';

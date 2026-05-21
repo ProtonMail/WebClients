@@ -10,9 +10,9 @@ import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { toMinutesAndSeconds } from '@proton/shared/lib/helpers/time';
 import clsx from '@proton/utils/clsx';
 
-import { useActiveShare } from '../../../hooks/drive/useActiveShare';
-import { useFileUploadInput, useFolderUploadInput } from '../../../store';
-import { useFreeUploadStore } from '../../../zustand/freeUpload/freeUpload.store';
+import { useActiveShare } from '../../../legacy/hooks/drive/useActiveShare';
+import { useFileUploadInput, useFolderUploadInput } from '../../../legacy/store';
+import { useFreeUploadStore } from '../../../legacy/zustand/freeUpload/freeUpload.store';
 
 export function DriveEmptyViewFreeUpload() {
     const { viewportWidth } = useActiveBreakpoint();

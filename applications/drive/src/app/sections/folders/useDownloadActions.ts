@@ -1,7 +1,7 @@
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
-import { useDocumentActions } from '../../hooks/docs/useDocumentActions';
-import { DownloadManager } from '../../managers/download/DownloadManager';
+import { useDocumentActions } from '../../legacy/hooks/docs/useDocumentActions';
+import { DownloadManager } from '../../modules/download/DownloadManager';
 
 type Props = {
     selectedItems: {

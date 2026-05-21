@@ -1,16 +1,16 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 
-import { DownloadManager } from '../../../managers/download/DownloadManager';
-import { AbuseCategoryType } from '../../../modals/ReportAbuseModal';
 import {
     type DownloadItem,
     DownloadStatus,
     useDownloadManagerStore,
-} from '../../../zustand/download/downloadManager.store';
+} from '../../../legacy/zustand/download/downloadManager.store';
+import { AbuseCategoryType } from '../../../modals/ReportAbuseModal';
+import { DownloadManager } from '../../../modules/download/DownloadManager';
 import type { TransferManagerEntry } from '../useTransferManagerState';
 import { TransferItem } from './TransferItem';
 
-jest.mock('../../../managers/download/DownloadManager', () => ({
+jest.mock('../../../modules/download/DownloadManager', () => ({
     DownloadManager: {
         getInstance: jest.fn(),
     },

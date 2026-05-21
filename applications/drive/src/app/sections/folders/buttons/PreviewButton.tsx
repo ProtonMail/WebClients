@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import { hasFoldersSelected, isMultiSelect } from '../../../components/sections/ToolbarButtons/utils';
+import { ContextMenuButton } from '../../../legacy/components/sections/ContextMenu';
+import { hasFoldersSelected, isMultiSelect } from '../../../legacy/components/sections/ToolbarButtons/utils';
 import type { ActionButtonProps } from '../../buttons/types';
 
 type Item = {

@@ -1,8 +1,8 @@
 import { useConfirmActionModal } from '@proton/components';
 import { useSharingModal } from '@proton/drive/modules/sharingModal';
 
-import type { ContextMenuProps } from '../../components/FileBrowser';
-import { ItemContextMenu } from '../../components/sections/ContextMenu/ItemContextMenu';
+import type { ContextMenuProps } from '../../legacy/components/FileBrowser';
+import { ItemContextMenu } from '../../legacy/components/sections/ContextMenu/ItemContextMenu';
 import { useCopyItemsModal } from '../../modals/CopyItemsModal';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';

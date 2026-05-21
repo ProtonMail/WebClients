@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { useAppTitle } from '@proton/components';
 
-import { getDevicesSectionName } from '../../components/sections/Devices/constants';
+import { getDevicesSectionName } from '../../legacy/components/sections/Devices/constants';
 import { ToolbarRow } from '../../statelessComponents/ToolbarRow/ToolbarRow';
 import { DevicesBrowser } from './DevicesBrowser';
 import { useDevicesActions } from './actions/useDevicesActions';

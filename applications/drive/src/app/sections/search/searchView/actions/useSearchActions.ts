@@ -2,13 +2,13 @@ import { getDrive, getDrivePerNodeType } from '@proton/drive';
 import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import isTruthy from '@proton/utils/isTruthy';
 
-import useDriveNavigation from '../../../../hooks/drive/useNavigate';
-import { downloadManager } from '../../../../managers/download/DownloadManager';
+import useDriveNavigation from '../../../../legacy/hooks/drive/useNavigate';
 import { useDetailsModal } from '../../../../modals/DetailsModal';
 import { useMoveItemsModal } from '../../../../modals/MoveItemsModal';
 import { useRenameModal } from '../../../../modals/RenameModal';
 import { useRevisionsModal } from '../../../../modals/RevisionsModal';
 import { useDrivePreviewModal } from '../../../../modals/preview';
+import { downloadManager } from '../../../../modules/download/DownloadManager';
 import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../../utils/docs/openInDocs';
 import { sendErrorReport } from '../../../../utils/errorHandling';
 import { isPreviewOrFallbackAvailable } from '../../../../utils/isPreviewOrFallbackAvailable';

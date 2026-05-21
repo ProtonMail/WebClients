@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import type { ModalProps } from '@proton/components';
 
-import useDriveNavigation from '../../hooks/drive/useNavigate';
+import useDriveNavigation from '../../legacy/hooks/drive/useNavigate';
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
 import type { AlbumOnboardingModalViewProps } from './AlbumOnboardingModalView';
 

@@ -45,7 +45,7 @@ jest.mock('@proton/components', () => ({
     useNotifications: jest.fn(() => ({ createNotification: mockCreateNotification })),
 }));
 
-jest.mock('../../hooks/sdk/useMoveNodes', () => ({
+jest.mock('../../legacy/hooks/sdk/useMoveNodes', () => ({
     useMoveNodes: jest.fn(() => ({ moveNodes: mockMoveNodes, isLoading: false })),
 }));
 

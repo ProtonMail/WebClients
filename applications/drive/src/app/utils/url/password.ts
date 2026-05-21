@@ -1,7 +1,7 @@
 import localStorageWithExpiry from '@proton/shared/lib/api/helpers/localStorageWithExpiry';
 import { SharedURLFlags } from '@proton/shared/lib/interfaces/drive/sharing';
 
-import { splitGeneratedAndCustomPassword } from '../../store/_shares';
+import { splitGeneratedAndCustomPassword } from '../../legacy/store/_shares';
 
 export const PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY = 'public-share-redirect-password';
 

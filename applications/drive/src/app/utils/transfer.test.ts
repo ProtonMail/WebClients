@@ -1,6 +1,6 @@
-import { ProgressBarStatus } from '../components/TransferManager/ProgressBar';
-import type { Transfer, TransfersStats } from '../components/TransferManager/transfer';
-import { TransferState } from '../components/TransferManager/transfer';
+import { ProgressBarStatus } from '../legacy/components/TransferManager/ProgressBar';
+import type { Transfer, TransfersStats } from '../legacy/components/TransferManager/transfer';
+import { TransferState } from '../legacy/components/TransferManager/transfer';
 import {
     calculateProgress,
     getProgressBarStatus,

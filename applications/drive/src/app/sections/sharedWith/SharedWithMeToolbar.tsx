@@ -5,7 +5,7 @@ import { Toolbar, useConfirmActionModal } from '@proton/components';
 import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { LayoutButton } from '../../components/sections/ToolbarButtons';
+import { LayoutButton } from '../../legacy/components/sections/ToolbarButtons';
 import { useCopyItemsModal } from '../../modals/CopyItemsModal';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';

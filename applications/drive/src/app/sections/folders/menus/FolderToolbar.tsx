@@ -4,8 +4,8 @@ import { Vr } from '@proton/atoms/Vr/Vr';
 import { Toolbar, useActiveBreakpoint } from '@proton/components';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 
-import { isMultiSelect, noSelection } from '../../../components/sections/ToolbarButtons/utils';
-import useIsEditEnabled from '../../../components/sections/useIsEditEnabled';
+import { isMultiSelect, noSelection } from '../../../legacy/components/sections/ToolbarButtons/utils';
+import useIsEditEnabled from '../../../legacy/components/sections/useIsEditEnabled';
 import { useSelectionStore } from '../../../modules/selection';
 import { RenameActionButton } from '../../buttons/RenameActionButton';
 import { ActionsDropdown } from '../buttons/ActionsDropdown';

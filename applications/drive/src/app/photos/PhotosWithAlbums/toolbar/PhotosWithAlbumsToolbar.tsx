@@ -29,8 +29,8 @@ import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import { AlbumsPageTypes } from '../../../legacy/zustand/photos/layout.store';
 import { ShareButton } from '../../../sections/commonButtons/ShareButton';
-import { AlbumsPageTypes } from '../../../zustand/photos/layout.store';
 import { useAlbumsStore } from '../../useAlbums.store';
 import { type PhotoItem, usePhotosStore } from '../../usePhotos.store';
 import { PhotosAddAlbumPhotosButton } from './PhotosAddAlbumPhotosButton';

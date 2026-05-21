@@ -7,7 +7,7 @@ import { NodeType } from '@proton/drive';
 import { isCompatibleCBZ } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
 
-import { getLinkIconText } from '../../../../components/sections/FileBrowser/utils';
+import { getLinkIconText } from '../../../../legacy/components/sections/FileBrowser/utils';
 
 export interface GridItemContentProps {
     type: NodeType;

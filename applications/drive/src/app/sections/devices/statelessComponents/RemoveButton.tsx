@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { ToolbarButton } from '@proton/components';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 
-import { ContextMenuButton } from '../../../components/sections/ContextMenu';
+import { ContextMenuButton } from '../../../legacy/components/sections/ContextMenu';
 import type { CommonButtonProps } from '../../commonButtons/types';
 
 type Props = CommonButtonProps;

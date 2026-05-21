@@ -11,7 +11,7 @@ import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import { useUploadInput } from '../../hooks/drive/useUploadInput';
+import { useUploadInput } from '../../legacy/hooks/drive/useUploadInput';
 import { useContextMenuStore } from '../../modules/contextMenu';
 import { useSelectionStore } from '../../modules/selection';
 import type { SortConfig, SortField } from '../../modules/sorting';

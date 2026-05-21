@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
 
-import { ContextMenuButton } from '../../../components/sections/ContextMenu';
+import { ContextMenuButton } from '../../../legacy/components/sections/ContextMenu';
 import type { ActionButtonProps } from '../../buttons/types';
 
 export const CopyButton = ({ type, onClick, close }: ActionButtonProps) => {

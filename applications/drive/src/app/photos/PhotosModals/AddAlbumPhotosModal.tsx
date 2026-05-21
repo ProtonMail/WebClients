@@ -16,7 +16,7 @@ import { loadThumbnail, useThumbnail } from '@proton/drive/modules/thumbnails';
 import { IcAlbumFolder } from '@proton/icons/icons/IcAlbumFolder';
 import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 
-import { useAlbumProgressStore } from '../../zustand/photos/addToAlbumProgress.store';
+import { useAlbumProgressStore } from '../../legacy/zustand/photos/addToAlbumProgress.store';
 import { enqueueAdditionalInfo } from '../PhotosWithAlbums/loaders/loadAdditionalInfo';
 import { loadAllAlbums } from '../loaders/loadAlbums';
 import { useAlbumsStore } from '../useAlbums.store';

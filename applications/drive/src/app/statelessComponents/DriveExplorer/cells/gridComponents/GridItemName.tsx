@@ -1,7 +1,7 @@
 import { NodeType } from '@proton/drive/index';
 
-import { FileName } from '../../../../components/FileName';
-import { SignatureIcon } from '../../../../components/SignatureIcon';
+import { FileName } from '../../../../legacy/components/FileName';
+import { SignatureIcon } from '../../../../legacy/components/SignatureIcon';
 
 export interface GridItemNameProps {
     name: string;

@@ -8,10 +8,10 @@ import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import type { DriveFolder } from '../../../hooks/drive/useActiveShare';
-import useDriveNavigation from '../../../hooks/drive/useNavigate';
-import { useMoveNodes } from '../../../hooks/sdk/useMoveNodes';
-import type { MoveNodesItemMap } from '../../../hooks/sdk/useMoveNodes';
+import type { DriveFolder } from '../../../legacy/hooks/drive/useActiveShare';
+import useDriveNavigation from '../../../legacy/hooks/drive/useNavigate';
+import { useMoveNodes } from '../../../legacy/hooks/sdk/useMoveNodes';
+import type { MoveNodesItemMap } from '../../../legacy/hooks/sdk/useMoveNodes';
 import { useContextMenuStore } from '../../../modules/contextMenu';
 import { useSelectionStore } from '../../../modules/selection';
 import { useDriveDragMove } from '../../../modules/selection/useDriveDragMove';

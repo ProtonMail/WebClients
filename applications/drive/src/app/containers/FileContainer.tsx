@@ -9,8 +9,8 @@ import useLoading from '@proton/hooks/useLoading';
 import type { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
-import { useLegacyContextShareHandler } from '../hooks/drive/useLegacyContextShareHandler';
-import useDriveNavigation from '../hooks/drive/useNavigate';
+import { useLegacyContextShareHandler } from '../legacy/hooks/drive/useLegacyContextShareHandler';
+import useDriveNavigation from '../legacy/hooks/drive/useNavigate';
 import { EnrichedError } from '../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../utils/errorHandling/handleSdkError';
 import { PreviewContainer } from './PreviewContainer';
