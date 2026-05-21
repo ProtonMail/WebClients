@@ -22,7 +22,6 @@ export const BookingDetails = () => {
                 duration: state.bookingDetails.duration,
                 withProtonMeetLink: state.bookingDetails.withProtonMeetLink,
                 inviterDisplayName: state.bookingDetails.inviterDisplayName,
-                inviterEmail: state.bookingDetails.inviterEmail,
             };
         })
     );
@@ -56,19 +55,16 @@ export const BookingDetails = () => {
                         <IcUserCircle className="booking-color-title" size={6} />
                     </div>
 
-                    <div className="flex-1">
-                        <span className="flex flex-nowrap gap-2 items-center">
-                            <h3 className="text-rg m-0 booking-color-title text-semibold">{c('Info').t`Host`}</h3>
-                        </span>
-                        {bookingDetails.inviterDisplayName && (
+                    {bookingDetails.inviterDisplayName && (
+                        <div className="flex-1">
+                            <span className="flex flex-nowrap gap-2 items-center">
+                                <h3 className="text-rg m-0 booking-color-title text-semibold">{c('Info').t`Host`}</h3>
+                            </span>
                             <div className="text-ellipsis" title={bookingDetails.inviterDisplayName}>
                                 {bookingDetails.inviterDisplayName}
                             </div>
-                        )}
-                        <div className="text-ellipsis" title={bookingDetails.inviterEmail}>
-                            {bookingDetails.inviterEmail}
                         </div>
-                    </div>
+                    )}
                 </div>
                 <div className="flex flex-nowrap flex-row gap-3 items-start">
                     <div className="bg-weak shrink-0 rounded-full p-2">
