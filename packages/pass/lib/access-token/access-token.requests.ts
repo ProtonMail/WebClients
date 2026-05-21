@@ -1,4 +1,4 @@
-import { AGENT_INSTRUCTIONS_URL } from '@proton/pass/constants';
+import { AGENT_INSTRUCTIONS_URL } from '@proton/pass/constants.runtime';
 import { PAT_PRODUCT, decodePatRecord } from '@proton/pass/lib/access-token/access-token.utils';
 import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto';
