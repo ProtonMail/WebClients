@@ -46,7 +46,7 @@ const ConversationListItem = memo(
                     )}
                     onClick={onItemClick}
                 >
-                    <span className="text-ellipsis flex-1" title={label}>
+                    <span className="sidebar-nav-list--label text-ellipsis flex-1" title={label}>
                         {label}
                     </span>
                 </LumoLink>
