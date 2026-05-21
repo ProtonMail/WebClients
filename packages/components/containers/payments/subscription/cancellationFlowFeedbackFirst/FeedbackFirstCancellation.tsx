@@ -5,14 +5,13 @@ import { useUser } from '@proton/account/user/hooks';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import { PLANS, getPlanName } from '@proton/payments';
-import type { FeedbackDowngradeData } from '@proton/payments/core/api/api';
 
 import { useCancelRenewal } from '../cancelSubscription/useCancelRenewal';
-import type { FeedbackDowngradeResult } from '../content/FeedbackDowngradeContent';
 import FeedbackDowngradeContent, {
     SUBSCRIPTION_CANCELLATION_REASONS,
     isKeepSubscription,
 } from '../content/FeedbackDowngradeContent';
+import type { FeedbackDowngradeFormData, FeedbackDowngradeResult } from '../content/interface';
 import { BugOrQualityIssueContent } from './content/BugOrQualityIssueContent';
 import { ConfirmCancellationContent } from './content/ConfirmCancellationContent';
 import { DifferentAccountContent } from './content/DifferentAccountContent';
@@ -41,7 +40,7 @@ interface Props extends ModalProps {
 export const FeedbackFirstCancellation = ({ onCancelled, ...modalProps }: Props) => {
     const [step, setStep] = useState(CANCELLATION_STEPS.FEEDBACK);
     const [user] = useUser();
-    const [feedback, setFeedback] = useState<FeedbackDowngradeData | undefined>();
+    const [feedback, setFeedback] = useState<FeedbackDowngradeFormData | undefined>();
     const [subscription] = useSubscription();
     const offerData = useCancellationOffer();
     const { cancelSubscriptionRenewal } = useCancelRenewal();

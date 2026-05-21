@@ -5,8 +5,8 @@ import { c, msgid } from 'ttag';
 import AppsLogos from '@proton/components/components/appsLogos/AppsLogos';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
+import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
 import FreeLogo from '@proton/components/containers/payments/subscription/FreeLogo/FreeLogo';
-import CustomLogo from '@proton/components/containers/payments/subscription/YourPlanSectionV2/CustomLogo';
 import type { CustomLogoPlanName } from '@proton/components/containers/payments/subscription/YourPlanSectionV2/CustomLogo';
 import { IcAt } from '@proton/icons/icons/IcAt';
 import { IcCalendarCheckmark } from '@proton/icons/icons/IcCalendarCheckmark';
@@ -28,9 +28,11 @@ import { IcTag } from '@proton/icons/icons/IcTag';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import type { FreePlanDefault, Plan } from '@proton/payments';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import {
     APPS,
     BRAND_NAME,
+    DRIVE_SHORT_APP_NAME,
     DUO_MAX_USERS,
     FAMILY_MAX_USERS,
     MAIL_APP_NAME,
@@ -44,8 +46,9 @@ import type { SizeUnits } from '@proton/shared/lib/helpers/humanSize';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import type { ComparisonFeatureRow } from '../components/ComparisonTable';
+import { CustomLogoHeader } from '../components/CustomLogoHeader';
 
-const DRIVE_PLUS_NAME = 'Drive Plus';
+const DRIVE_PLUS_NAME = `${DRIVE_SHORT_APP_NAME} Plus`;
 
 const getPremiumFeaturesIncludedB2CTooltip = () => {
     return c('Tooltip')
@@ -342,6 +345,7 @@ const getVisionaryFeatures = ({ planMaxSpaceBytes, freeMaxBaseSpaceBytes }: Plan
             label: c('Label').t`Early access`,
             leftValue: yes(),
             rightValue: <Dash />,
+            tooltip: c('Tooltip').t`Early access to new apps and features.`,
         },
         {
             icon: <IcShield />,
@@ -656,6 +660,25 @@ const getWorkspaceSubtitle = (planTitle: string) => {
         .t`${planTitle} gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.`;
 };
 
+const FreePlanHeader = ({ app }: { app?: APP_NAMES }) => {
+    if (!app) {
+        return (
+            <>
+                <ProtonLogo variant="glyph-only" size={7} />
+                <span className="text-semibold">{c('Label').t`Free`}</span>
+            </>
+        );
+    }
+
+    const logo = FreeLogo({ app, size: 28 });
+    return (
+        <>
+            {logo === null ? <ProtonLogo variant="glyph-only" size={7} /> : logo}
+            <span className="text-semibold">{c('Label').t`Free`}</span>
+        </>
+    );
+};
+
 export const getTemporaryNeedConfig = (plan: Plan, freePlan: FreePlanDefault): TemporaryNeedPlanConfig | undefined => {
     const planTitle = plan.Title;
     let planDisplayName = PLAN_NAMES[plan.Name as PLANS] ?? planTitle;
@@ -675,17 +698,12 @@ export const getTemporaryNeedConfig = (plan: Plan, freePlan: FreePlanDefault): T
         freeMaxCalendars: freePlan.MaxCalendars,
     };
 
-    const makeFreePlanHeader = (app: APP_NAMES) => {
-        return (
-            <>
-                <FreeLogo app={app} size={28} />
-                <span className="text-semibold">{c('Label').t`Free`}</span>
-            </>
-        );
-    };
+    const mailFreePlanHeader = <FreePlanHeader app={APPS.PROTONMAIL} />;
+    const driveFreePlanHeader = <FreePlanHeader app={APPS.PROTONDRIVE} />;
 
-    const mailFreePlanHeader = makeFreePlanHeader(APPS.PROTONMAIL);
-    const driveFreePlanHeader = makeFreePlanHeader(APPS.PROTONDRIVE);
+    // The bundle free plan header will adapt the product logo based on the current app
+    const currentApp = getAppFromPathnameSafe(location.pathname);
+    const bundleFreePlanHeader = <FreePlanHeader app={currentApp} />;
 
     const makePlanHeader = (planName: CustomLogoPlanName) => {
         let logo;
@@ -695,7 +713,7 @@ export const getTemporaryNeedConfig = (plan: Plan, freePlan: FreePlanDefault): T
         } else if (planName === PLANS.DRIVE || planName === PLANS.DRIVE_1TB) {
             logo = <DriveLogo variant="glyph-only" size={7} />;
         } else {
-            logo = <CustomLogo className="rounded" planName={planName} size={28} />;
+            logo = <CustomLogoHeader planName={planName} />;
         }
 
         return (
@@ -715,7 +733,7 @@ export const getTemporaryNeedConfig = (plan: Plan, freePlan: FreePlanDefault): T
         },
         [PLANS.BUNDLE]: {
             currentPlanHeader: makePlanHeader(PLANS.BUNDLE),
-            freePlanHeader: mailFreePlanHeader,
+            freePlanHeader: bundleFreePlanHeader,
             subtitle: getBundleSubtitle(planTitle),
             features: getBundleFeatures(values),
         },
@@ -733,19 +751,19 @@ export const getTemporaryNeedConfig = (plan: Plan, freePlan: FreePlanDefault): T
         },
         [PLANS.DUO]: {
             currentPlanHeader: makePlanHeader(PLANS.DUO),
-            freePlanHeader: mailFreePlanHeader,
+            freePlanHeader: bundleFreePlanHeader,
             subtitle: getDuoSubtitle(planTitle),
             features: getDuoFeatures(values),
         },
         [PLANS.FAMILY]: {
             currentPlanHeader: makePlanHeader(PLANS.FAMILY),
-            freePlanHeader: mailFreePlanHeader,
+            freePlanHeader: bundleFreePlanHeader,
             subtitle: getFamilySubtitle(planTitle),
             features: getFamilyFeatures(values),
         },
         [PLANS.VISIONARY]: {
             currentPlanHeader: makePlanHeader(PLANS.VISIONARY),
-            freePlanHeader: mailFreePlanHeader,
+            freePlanHeader: bundleFreePlanHeader,
             subtitle: getVisionarySubtitle(planTitle),
             features: getVisionaryFeatures(values),
         },
@@ -763,19 +781,19 @@ export const getTemporaryNeedConfig = (plan: Plan, freePlan: FreePlanDefault): T
         },
         [PLANS.BUNDLE_PRO]: {
             currentPlanHeader: makePlanHeader(PLANS.BUNDLE_PRO_2024), // CustomLogo has no specific icon defined for BUNDLE_PRO
-            freePlanHeader: mailFreePlanHeader,
+            freePlanHeader: bundleFreePlanHeader,
             subtitle: getBusinessSubtitle(planTitle),
             features: getBundleProFeatures(values),
         },
         [PLANS.BUNDLE_PRO_2024]: {
             currentPlanHeader: makePlanHeader(PLANS.BUNDLE_BIZ_2025), // CustomLogo has a different logo for BUNDLE_PRO_2024, we want BUNDLE_BIZ_2025 in this case
-            freePlanHeader: mailFreePlanHeader,
+            freePlanHeader: bundleFreePlanHeader,
             subtitle: getWorkspaceSubtitle(planTitle),
             features: getWorkspaceFeatures(values),
         },
         [PLANS.BUNDLE_BIZ_2025]: {
             currentPlanHeader: makePlanHeader(PLANS.BUNDLE_BIZ_2025),
-            freePlanHeader: mailFreePlanHeader,
+            freePlanHeader: bundleFreePlanHeader,
             subtitle: getWorkspaceSubtitle(planTitle),
             features: getWorkspaceFeatures(values),
         },

@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { getPlanNameFromIDs } from '@proton/payments';
 
+import { cancellationFlow } from './cancellation-flow';
 import { hasAlikeCoupon } from './helpers';
 import {
     type CouponConfig,
@@ -15,7 +16,7 @@ import {
 import { monthlyNudgeConfig } from './monthlyNudge';
 import { vpn15mConfig } from './vpn15m';
 
-const defaultCouponConfigs: CouponConfig[] = [monthlyNudgeConfig, vpn15mConfig];
+const defaultCouponConfigs: CouponConfig[] = [monthlyNudgeConfig, vpn15mConfig, cancellationFlow];
 
 export type CouponConfigRendered = Omit<CouponConfig, 'amountDueMessage' | 'cyclePriceCompare' | 'cycleTitle'> & {
     renderAmountDueMessage?: () => ReactNode;
