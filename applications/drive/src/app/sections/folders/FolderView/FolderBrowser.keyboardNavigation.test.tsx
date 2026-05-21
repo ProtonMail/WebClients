@@ -5,9 +5,9 @@ import { MemberRole, NodeType } from '@proton/drive';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
+import { unleashVanillaStore } from '../../../legacy/zustand/unleash/unleash.store';
 import { useContextMenuStore } from '../../../modules/contextMenu';
 import { useSelectionStore } from '../../../modules/selection';
-import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import type { FolderViewItem } from '../useFolder.store';
 import { useFolderStore } from '../useFolder.store';
 import { FolderBrowser } from './FolderBrowser';
@@ -33,28 +33,28 @@ jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
 
 const mockNavigateToLink = jest.fn();
 const mockNavigateToRoot = jest.fn();
-jest.mock('../../../hooks/drive/useNavigate', () => ({
+jest.mock('../../../legacy/hooks/drive/useNavigate', () => ({
     __esModule: true,
     default: () => ({ navigateToLink: mockNavigateToLink, navigateToRoot: mockNavigateToRoot }),
 }));
 
-jest.mock('../../../store/_documents', () => ({
+jest.mock('../../../legacy/store/_documents', () => ({
     useOpenInDocs: () => ({ canOpen: false }),
 }));
 
-jest.mock('../../../hooks/user', () => ({
+jest.mock('../../../legacy/hooks/user', () => ({
     useUserSettings: () => ({
         layout: 0,
         changeLayout: jest.fn(),
     }),
 }));
 
-jest.mock('../../../components/sections/useIsEditEnabled', () => ({
+jest.mock('../../../legacy/components/sections/useIsEditEnabled', () => ({
     __esModule: true,
     default: () => false,
 }));
 
-jest.mock('../../../hooks/drive/useActiveShare', () => ({
+jest.mock('../../../legacy/hooks/drive/useActiveShare', () => ({
     useActiveShare: () => ({
         activeFolder: { shareId: 'share-1', linkId: 'link-1', volumeId: 'vol-1' },
     }),

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { useDrive } from '@proton/drive/index';
 
-import useDriveNavigation from '../../../hooks/drive/useNavigate';
+import useDriveNavigation from '../../../legacy/hooks/drive/useNavigate';
 import { Breadcrumbs } from '../../../statelessComponents/Breadcrumbs/Breadcrumbs';
 import { useFolderViewBreadcrumbs } from './useFolderViewBreadcrumbs';
 

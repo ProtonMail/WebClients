@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import noContentSvg from '@proton/styles/assets/img/illustrations/empty-trash.svg';
 
-import { DriveEmptyView } from '../../../components/layout/DriveEmptyView';
+import { DriveEmptyView } from '../../../legacy/components/layout/DriveEmptyView';
 
 export const EmptyTrash: FC = () => {
     return (

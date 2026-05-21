@@ -2,7 +2,7 @@ import { generateNodeUid, getDrive, useDrive } from '@proton/drive';
 import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import { uploadManager } from '@proton/drive/modules/upload';
 
-import { useUploadInput } from '../../hooks/drive/useUploadInput';
+import { useUploadInput } from '../../legacy/hooks/drive/useUploadInput';
 import { useCopyItemsModal } from '../../modals/CopyItemsModal';
 import { useCreateFileModal } from '../../modals/CreateFileModal';
 import { useCreateFolderModal } from '../../modals/CreateFolderModal';

@@ -14,7 +14,7 @@ import {
 } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-import ModalContentLoader from '../../components/modals/ModalContentLoader';
+import ModalContentLoader from '../../legacy/components/modals/ModalContentLoader';
 
 export type FilesDetailsModalViewProps = ModalStateProps & {
     isLoading: boolean;

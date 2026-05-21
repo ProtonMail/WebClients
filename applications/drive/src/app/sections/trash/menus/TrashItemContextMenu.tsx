@@ -1,10 +1,10 @@
 import { NodeType, getDrivePerNodeType } from '@proton/drive';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import { ItemContextMenu } from '../../../components/sections/ContextMenu/ItemContextMenu';
-import { DownloadManager } from '../../../managers/download/DownloadManager';
+import { ItemContextMenu } from '../../../legacy/components/sections/ContextMenu/ItemContextMenu';
 import type { Drive } from '../../../modals/preview/interface';
 import type { ContextMenuPosition } from '../../../modules/contextMenu';
+import { DownloadManager } from '../../../modules/download/DownloadManager';
 import { DetailsButton } from '../../commonButtons/DetailsButton';
 import { DownloadButton } from '../../commonButtons/DownloadButton';
 import { PreviewButton } from '../../commonButtons/PreviewButton';

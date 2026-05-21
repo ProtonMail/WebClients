@@ -17,7 +17,7 @@ import {
 } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { IssueStatus } from '../../zustand/download/downloadManager.store';
+import { IssueStatus } from '../../legacy/zustand/download/downloadManager.store';
 
 type SignatureIssueModalProps = {
     message: string;

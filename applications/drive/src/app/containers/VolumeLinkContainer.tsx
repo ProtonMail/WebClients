@@ -10,10 +10,10 @@ import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriv
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
-import useDriveNavigation from '../hooks/drive/useNavigate';
+import useDriveNavigation from '../legacy/hooks/drive/useNavigate';
+import { useDocumentActions } from '../legacy/store/_documents';
+import { useVolumeLinkView } from '../legacy/store/_views/useVolumeLinkView';
 import { getNotificationsManager } from '../modules/notifications';
-import { useDocumentActions } from '../store/_documents';
-import { useVolumeLinkView } from '../store/_views/useVolumeLinkView';
 import { handleSdkError } from '../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../utils/sdk/getNodeEntity';
 

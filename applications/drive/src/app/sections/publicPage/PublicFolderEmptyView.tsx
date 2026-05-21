@@ -5,8 +5,8 @@ import Icon from '@proton/components/components/icon/Icon';
 import emptySvg from '@proton/styles/assets/img/illustrations/empty-my-files.svg';
 import clsx from '@proton/utils/clsx';
 
-import { DriveEmptyView } from '../../components/layout/DriveEmptyView';
-import { useUploadInput } from '../../hooks/drive/useUploadInput';
+import { DriveEmptyView } from '../../legacy/components/layout/DriveEmptyView';
+import { useUploadInput } from '../../legacy/hooks/drive/useUploadInput';
 
 interface PublicFolderEmptyViewProps {
     onUpload: (files: FileList) => void;

@@ -1,8 +1,8 @@
 import { ContextSeparator } from '@proton/components';
 import type { Revision } from '@proton/drive';
 
-import type { ContextMenuProps } from '../../../components/FileBrowser';
-import { ItemContextMenu } from '../../../components/sections/ContextMenu/ItemContextMenu';
+import type { ContextMenuProps } from '../../../legacy/components/FileBrowser';
+import { ItemContextMenu } from '../../../legacy/components/sections/ContextMenu/ItemContextMenu';
 import type { RevisionsProviderState } from '../useRevisionsModalState';
 import { RevisionDeleteButton } from './ContextMenuButtons/RevisionDeleteButton';
 import { RevisionDetailsButton } from './ContextMenuButtons/RevisionDetailsButton';

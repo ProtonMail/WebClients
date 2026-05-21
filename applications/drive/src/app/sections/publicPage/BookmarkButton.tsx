@@ -7,7 +7,7 @@ import { Spotlight } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import { useSignupFlowModal } from '../../components/modals/SignupFlowModal/SignupFlowModal';
+import { useSignupFlowModal } from '../../legacy/components/modals/SignupFlowModal/SignupFlowModal';
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
 import { usePublicAuthStore } from './usePublicAuth.store';
 import { usePublicBookmark } from './usePublicBookmark';

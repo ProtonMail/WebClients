@@ -1,4 +1,4 @@
-import { SearchViewLegacy } from '../components/sections/Search/SearchViewLegacy';
+import { SearchViewLegacy } from '../legacy/components/sections/Search/SearchViewLegacy';
 import { useFlagsDriveFoundationSearch } from '../flags/useFlagsDriveFoundationSearch';
 import { SearchView } from '../sections/search/searchView';
 

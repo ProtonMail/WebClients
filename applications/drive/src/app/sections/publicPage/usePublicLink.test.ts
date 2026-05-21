@@ -40,11 +40,11 @@ jest.mock('@proton/shared/lib/helpers/mimetype', () => ({
     isNativeProtonDocsAppFile: jest.fn(() => false),
 }));
 
-jest.mock('../../managers/download/DownloadManager', () => ({
+jest.mock('../../modules/download/DownloadManager', () => ({
     downloadManager: { setDriveClient: jest.fn() },
 }));
 
-jest.mock('../../store/_user/getMetricsUserPlan', () => ({
+jest.mock('../../legacy/store/_user/getMetricsUserPlan', () => ({
     getMetricsUserPlan: jest.fn(() => 'anonymous'),
 }));
 

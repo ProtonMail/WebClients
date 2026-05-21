@@ -3,8 +3,8 @@ import { Toolbar } from '@proton/components';
 import { NodeType, getDrivePerNodeType } from '@proton/drive';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import { DownloadManager } from '../../../managers/download/DownloadManager';
 import type { Drive } from '../../../modals/preview/interface';
+import { DownloadManager } from '../../../modules/download/DownloadManager';
 import { useSelectionStore } from '../../../modules/selection';
 import { DetailsButton } from '../../commonButtons/DetailsButton';
 import { DownloadButton } from '../../commonButtons/DownloadButton';
