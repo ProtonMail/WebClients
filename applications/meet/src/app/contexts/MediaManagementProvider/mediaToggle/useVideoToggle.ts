@@ -5,12 +5,10 @@ import type { LocalParticipant, LocalTrackPublication, LocalVideoTrack } from 'l
 import { ConnectionState, RoomEvent, Track } from 'livekit-client';
 import debounce from 'lodash/debounce';
 
-import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import {
     selectActiveCameraId,
-    selectCameraState,
     selectInitialCameraState,
     selectRealtimeDevices,
     selectUserCameraIntent,
@@ -41,7 +39,6 @@ export const useVideoToggle = (switchActiveDevice: SwitchActiveDevice) => {
     const activeCameraDeviceId = useMeetSelector(selectActiveCameraId);
     const initialCameraState = useMeetSelector(selectInitialCameraState);
     const userCameraIntent = useMeetSelector(selectUserCameraIntent);
-    const cameraState = useMeetSelector(selectCameraState);
     const store = useMeetStore();
 
     const room = useRoomContext();
@@ -103,7 +100,7 @@ export const useVideoToggle = (switchActiveDevice: SwitchActiveDevice) => {
                 updateUserIntent = true,
             } = params;
 
-            const deviceId = videoDeviceId === DEFAULT_DEVICE_ID ? cameraState.systemDefault?.deviceId : videoDeviceId;
+            const deviceId = videoDeviceId;
 
             if (toggleInProgress.current || !deviceId) {
                 return;
@@ -141,7 +138,7 @@ export const useVideoToggle = (switchActiveDevice: SwitchActiveDevice) => {
                 await switchActiveDevice({
                     deviceType: 'videoinput',
                     deviceId: deviceId as string,
-                    isSystemDefaultDevice: videoDeviceId === DEFAULT_DEVICE_ID,
+                    isSystemDefaultDevice: false,
                     preserveDefaultDevice: !!preserveCache,
                 });
 

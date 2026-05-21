@@ -31,6 +31,7 @@ export const filterDevices = <T extends SerializableDeviceInfo>(devices: T[]): T
 export interface CheckmarkDeviceState {
     useSystemDefault: boolean;
     preferredAvailable: boolean;
+    hasDefaultOption: boolean;
 }
 
 export const shouldShowDeviceCheckmark = (
@@ -38,11 +39,13 @@ export const shouldShowDeviceCheckmark = (
     activeDeviceId: string,
     deviceState: CheckmarkDeviceState
 ): boolean => {
-    const isCurrentlyActiveDevice = deviceId === activeDeviceId;
-    const isUsingSpecificDevice = !deviceState.useSystemDefault;
-    const isPreferredDeviceAvailable = deviceState.preferredAvailable;
-
-    return isCurrentlyActiveDevice && isUsingSpecificDevice && isPreferredDeviceAvailable;
+    if (deviceId !== activeDeviceId || deviceState.useSystemDefault) {
+        return false;
+    }
+    if (deviceState.preferredAvailable) {
+        return true;
+    }
+    return !deviceState.hasDefaultOption;
 };
 
 export const shouldShowSystemDefaultCheckmark = (deviceState: CheckmarkDeviceState): boolean => {
@@ -67,6 +70,12 @@ export const getDefaultDevice = <T extends SerializableDeviceInfo>(devices: T[])
         }
         return duplicated ?? filterDevices(devices)[0] ?? devices[0] ?? null;
     }
+
+    // There is no default device for videoinput, return null
+    if (devices[0]?.kind === 'videoinput') {
+        return null;
+    }
+
     // Firefox (and other browsers without a synthetic "default" entry) return devices
     // from enumerateDevices() in system-preference order, so the first one is the actual
     // OS default. Preserve that order here instead of using filterDevices, which sorts

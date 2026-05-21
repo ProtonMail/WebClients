@@ -23,6 +23,7 @@ import {
     selectMicrophones,
     selectSpeakerState,
     selectSpeakers,
+    setLastUsedCameraId,
     showPermissionsModal,
 } from '@proton/meet/store/slices/deviceManagementSlice';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
@@ -53,7 +54,7 @@ interface DeviceSettingsProps {
     selectedCameraId: string;
     selectedMicrophoneId: string;
     selectedAudioOutputDeviceId: string;
-    onCameraChange: (camera: SerializableDeviceInfo, isDefaultDevice: boolean) => Promise<void>;
+    onCameraChange: (camera: SerializableDeviceInfo) => Promise<void>;
     onMicrophoneChange: (microphone: SerializableDeviceInfo, isDefaultDevice: boolean) => Promise<void>;
     onAudioOutputDeviceChange: (speaker: SerializableDeviceInfo, isDefaultDevice: boolean) => Promise<void>;
     displayName: string;
@@ -134,10 +135,11 @@ export const DeviceSettings = ({
     };
 
     const handleCameraChange = async (deviceId: string) => {
-        await onCameraChange(
-            resolveDevice(deviceId, filteredCameras, cameraState.systemDefault!),
-            isDefaultDevice(deviceId)
-        );
+        const camera = filteredCameras.find((c) => c.deviceId === deviceId);
+        if (camera) {
+            await onCameraChange(camera);
+            setLastUsedCameraId(deviceId);
+        }
     };
 
     const handleMicrophoneToggle = async () => {
@@ -200,10 +202,7 @@ export const DeviceSettings = ({
         cameraLabel = c('Info').t`No camera detected.`;
     } else {
         const selectedCamera = cameras.find((camera) => camera.deviceId === selectedCameraId);
-        cameraLabel =
-            cameraState.useSystemDefault || !cameraState.preferredAvailable
-                ? cameraState.systemDefaultLabel
-                : (selectedCamera?.label ?? cameraState.systemDefaultLabel);
+        cameraLabel = selectedCamera?.label ?? c('Info').t`Loading…`;
     }
 
     const getInitalsCircleSize = () => {

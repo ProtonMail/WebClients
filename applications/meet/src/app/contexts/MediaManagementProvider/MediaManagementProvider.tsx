@@ -13,9 +13,9 @@ import {
     selectActiveCameraId,
     selectActiveMicrophoneId,
     selectCameraPermission,
-    selectCameraState,
     selectInitialAudioState,
     selectInitialCameraState,
+    selectLastUsedCameraId,
     selectMicrophonePermission,
     selectMicrophoneState,
     selectPreferredCameraId,
@@ -68,7 +68,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     const selectedMicrophoneId = useMeetSelector(selectSelectedMicrophoneId);
     const selectedAudioOutputDeviceId = useMeetSelector(selectSelectedAudioOutputId);
 
-    const cameraState = useMeetSelector(selectCameraState);
+    const lastUsedCameraId = useMeetSelector(selectLastUsedCameraId);
     const microphoneState = useMeetSelector(selectMicrophoneState);
     const speakerState = useMeetSelector(selectSpeakerState);
 
@@ -327,12 +327,12 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     });
 
     useEffect(() => {
-        const cameraInitDeviceId = preferredCameraId ?? cameraState.systemDefault?.deviceId;
+        const cameraInitDeviceId = preferredCameraId ?? lastUsedCameraId;
         if (!initializedDevices.current.video && cameraInitDeviceId) {
             void switchActiveDevice({
                 deviceType: 'videoinput',
                 deviceId: cameraInitDeviceId,
-                isSystemDefaultDevice: cameraState.useSystemDefault,
+                isSystemDefaultDevice: false,
             });
             initializedDevices.current.video = true;
         }
@@ -361,10 +361,9 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         preferredCameraId,
         preferredMicrophoneId,
         preferredSpeakerId,
-        cameraState.systemDefault?.deviceId,
+        lastUsedCameraId,
         microphoneState.systemDefault?.deviceId,
         speakerState.systemDefault?.deviceId,
-        cameraState.useSystemDefault,
         microphoneState.useSystemDefault,
         speakerState.useSystemDefault,
     ]);
