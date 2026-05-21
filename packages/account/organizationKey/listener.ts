@@ -1,4 +1,5 @@
 import { CryptoProxy } from '@protontech/crypto';
+
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -125,6 +126,8 @@ export const organizationKeysManagementListener = (startListening: SharedStartLi
             ) {
                 try {
                     await listenerApi.dispatch(changeOrganizationSignature({ address: primaryEligibleAddress }));
+                    // Subscribe again to manage updates when the organization key is updated.
+                    listenerApi.subscribe();
                 } catch (e) {
                     const error = getSentryError(e);
                     if (error) {
