@@ -474,12 +474,9 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
             isDeleted,
             onSubmitDone: async (deletedLogicalIds: readonly string[], addedQuantities: Record<string, number>) => {
                 const deletedServerCount = deletedLogicalIds.length;
-                const addedServerCount = Object.entries(addedQuantities).reduce(
-                    (total, [, quantity]) => total + quantity,
-                    0
-                );
+                const total = Object.entries(addedQuantities).reduce((total, [, quantity]) => total + quantity, 0);
 
-                if (deletedServerCount && addedServerCount) {
+                if (deletedServerCount && total) {
                     createNotification({
                         key: 'gateway-servers-editions',
                         text: c('Info').ngettext(
@@ -495,19 +492,19 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
                     await api(deleteVPNGateway(deletedLogicalIds));
                 }
 
-                if (deletedServerCount && addedServerCount) {
+                if (deletedServerCount && total) {
                     createNotification({
                         key: 'gateway-servers-editions',
                         text: c('Info').ngettext(
-                            msgid`Adding ${addedServerCount} gateway server`,
-                            `Adding ${addedServerCount} gateway servers`,
-                            addedServerCount
+                            msgid`Adding ${total} gateway server`,
+                            `Adding ${total} gateway servers`,
+                            total
                         ),
                         type: 'info',
                     });
                 }
 
-                if (addedServerCount) {
+                if (total) {
                     if (isMultiIpAddEndpointEnabled) {
                         await addServersInOneRequest(gateway, addedQuantities, 'gateway-servers-editions');
                     } else {
