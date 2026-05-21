@@ -5,7 +5,7 @@ import { MemberRole, getDrive } from '@proton/drive';
 import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import { useThumbnail } from '@proton/drive/modules/thumbnails';
 
-import { ShareIcon } from '../../components/sections/FileBrowser/ShareIcon';
+import { ShareIcon } from '../../legacy/components/sections/FileBrowser/ShareIcon';
 import { GridItemContent } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemContent';
 import { GridItemName } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemName';
 import type { CellDefinition, GridDefinition } from '../../statelessComponents/DriveExplorer/types';

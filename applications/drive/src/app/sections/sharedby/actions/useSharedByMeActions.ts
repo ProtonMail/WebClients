@@ -3,11 +3,11 @@ import { NodeType, getDrivePerNodeType } from '@proton/drive';
 import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
-import { useSharingActions } from '../../../hooks/drive/useSharingActions';
-import { downloadManager } from '../../../managers/download/DownloadManager';
+import { useSharingActions } from '../../../legacy/hooks/drive/useSharingActions';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
 import { useDrivePreviewModal } from '../../../modals/preview';
+import { downloadManager } from '../../../modules/download/DownloadManager';
 import { openDocsOrSheetsDocument } from '../../../utils/docs/openInDocs';
 import { useSharedByMeStore } from '../useSharedByMe.store';
 

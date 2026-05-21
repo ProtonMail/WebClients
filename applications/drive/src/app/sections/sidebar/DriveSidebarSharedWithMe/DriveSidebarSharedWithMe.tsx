@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
-import { useInvitationCountStore } from '../../../zustand/share/invitationCount.store';
+import { useInvitationCountStore } from '../../../legacy/zustand/share/invitationCount.store';
 import { loadInvitations } from '../../sharedWith/loaders/loadInvitations';
 import { useSharedWithMeStore } from '../../sharedWith/useSharedWithMe.store';
 import { DriveSidebarListItem } from '../DriveSidebarListItem';

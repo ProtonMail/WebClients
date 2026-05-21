@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { ToolbarButton } from '@proton/components';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 
-import { ContextMenuButton } from '../../../components/sections/ContextMenu';
+import { ContextMenuButton } from '../../../legacy/components/sections/ContextMenu';
 import type { CommonButtonProps } from '../../commonButtons/types';
 
 export const DeletePermanentlyButton = ({ buttonType, onClick, close }: CommonButtonProps) => {

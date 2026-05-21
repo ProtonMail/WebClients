@@ -13,7 +13,7 @@ import {
     ModalTwoHeader,
 } from '@proton/components';
 
-import ModalContentLoader from '../../components/modals/ModalContentLoader';
+import ModalContentLoader from '../../legacy/components/modals/ModalContentLoader';
 import type { DirectoryTreeItem } from '../../statelessComponents/DirectoryTree/DirectoryTree';
 import { DirectoryTreeRoot } from '../../statelessComponents/DirectoryTree/DirectoryTree';
 

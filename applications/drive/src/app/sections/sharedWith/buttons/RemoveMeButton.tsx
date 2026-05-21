@@ -5,8 +5,8 @@ import { ToolbarButton } from '@proton/components';
 import { type NodeType, getDrivePerNodeType } from '@proton/drive';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 
-import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import { useSharingActions } from '../../../hooks/drive/useSharingActions';
+import { ContextMenuButton } from '../../../legacy/components/sections/ContextMenu';
+import { useSharingActions } from '../../../legacy/hooks/drive/useSharingActions';
 
 interface BaseProps {
     nodeUid: string;

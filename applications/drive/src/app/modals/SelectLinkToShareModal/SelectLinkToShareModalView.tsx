@@ -7,7 +7,7 @@ import type { ModalProps } from '@proton/components';
 import { Alert, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 
-import ModalContentLoader from '../../components/modals/ModalContentLoader';
+import ModalContentLoader from '../../legacy/components/modals/ModalContentLoader';
 import type { DirectoryTreeItem } from '../../statelessComponents/DirectoryTree/DirectoryTree';
 import { DirectoryTreeRoot } from '../../statelessComponents/DirectoryTree/DirectoryTree';
 

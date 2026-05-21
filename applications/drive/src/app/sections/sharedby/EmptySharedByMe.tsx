@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import noLinksSvg from '@proton/styles/assets/img/illustrations/empty-shared.svg';
 
-import { DriveEmptyView } from '../../components/layout/DriveEmptyView';
+import { DriveEmptyView } from '../../legacy/components/layout/DriveEmptyView';
 import { useFileSharingModal } from '../../modals/SelectLinkToShareModal';
 
 export const EmptySharedByMe: FC = () => {

@@ -6,8 +6,8 @@ import { useShallow } from 'zustand/react/shallow';
 import { getDriveForPhotos } from '@proton/drive/index';
 import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
-import { DownloadManager } from '../../managers/download/DownloadManager';
-import { AlbumsPageTypes, usePhotoLayoutStore } from '../../zustand/photos/layout.store';
+import { AlbumsPageTypes, usePhotoLayoutStore } from '../../legacy/zustand/photos/layout.store';
+import { DownloadManager } from '../../modules/download/DownloadManager';
 import { loadCurrentAlbum } from '../loaders/loadAlbum';
 import { loadAllAlbums } from '../loaders/loadAlbums';
 import { loadTimelinePhotos } from '../loaders/loadPhotos';

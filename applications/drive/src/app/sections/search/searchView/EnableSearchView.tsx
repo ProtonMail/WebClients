@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import noResultSearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';
 
-import { DriveEmptyView } from '../../../components/layout/DriveEmptyView';
+import { DriveEmptyView } from '../../../legacy/components/layout/DriveEmptyView';
 import type { IndexingProgress } from '../../../modules/search';
 import { formatIndexingProgress, hasIndexedAnything } from '../formatIndexingProgress';
 

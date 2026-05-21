@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { ToolbarButton } from '@proton/components';
 import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
 
-import { ContextMenuButton } from '../../components/sections/ContextMenu';
+import { ContextMenuButton } from '../../legacy/components/sections/ContextMenu';
 
 interface BaseProps {
     onClick: () => void;

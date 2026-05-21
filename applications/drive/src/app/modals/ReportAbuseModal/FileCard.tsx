@@ -5,7 +5,7 @@ import { NodeType } from '@proton/drive';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import clsx from '@proton/utils/clsx';
 
-import { FileName } from '../../components/FileName';
+import { FileName } from '../../legacy/components/FileName';
 
 interface Props {
     type: NodeType;

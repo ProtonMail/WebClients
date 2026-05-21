@@ -6,7 +6,7 @@ import type { BreadcrumbInfo } from '@proton/components/index';
 import { CollapsingBreadcrumbs, Loader, useNotifications } from '@proton/components/index';
 import truncate from '@proton/utils/truncate';
 
-import { SignatureIcon } from '../../components/SignatureIcon';
+import { SignatureIcon } from '../../legacy/components/SignatureIcon';
 import type { BreadcrumbsEvents, CrumbDefinition } from './types';
 
 export interface BreadcrumbsProps {

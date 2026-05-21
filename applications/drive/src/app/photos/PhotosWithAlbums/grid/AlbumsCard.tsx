@@ -24,7 +24,7 @@ import folderImagesDark from '@proton/styles/assets/img/drive/empty-image-album-
 import folderImages from '@proton/styles/assets/img/drive/empty-image-album.webp';
 import clsx from '@proton/utils/clsx';
 
-import { SignatureIcon } from '../../../components/SignatureIcon';
+import { SignatureIcon } from '../../../legacy/components/SignatureIcon';
 import { useAlbumsStore } from '../../useAlbums.store';
 import { usePhotosStore } from '../../usePhotos.store';
 import { enqueueAdditionalInfo } from '../loaders/loadAdditionalInfo';

@@ -3,9 +3,9 @@ import { useShallow } from 'zustand/react/shallow';
 import { ContextSeparator } from '@proton/components';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import { ItemContextMenu } from '../../../components/sections/ContextMenu/ItemContextMenu';
+import { ItemContextMenu } from '../../../legacy/components/sections/ContextMenu/ItemContextMenu';
 import type { ContextMenuPosition } from '../../../modules/contextMenu';
-import { useOpenInDocs } from '../../../store/_documents';
+import { useOpenInDocs } from '../../../legacy/store/_documents';
 import { RenameActionButton } from '../../buttons/RenameActionButton';
 import { CopyButton } from '../buttons/CopyButton';
 import { CopyLinkContextButton } from '../buttons/CopyLinkContextButton';

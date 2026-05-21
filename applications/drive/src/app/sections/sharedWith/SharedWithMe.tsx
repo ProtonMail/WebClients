@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { ContactEmailsProvider, useActiveBreakpoint, useConfirmActionModal } from '@proton/components';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 
-import { useItemContextMenu } from '../../components/FileBrowser';
+import { useItemContextMenu } from '../../legacy/components/FileBrowser';
 import { DriveExplorer } from '../../statelessComponents/DriveExplorer/DriveExplorer';
 import type {
     DriveExplorerA11y,

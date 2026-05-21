@@ -1,6 +1,6 @@
-import { ProgressBarStatus } from '../components/TransferManager/ProgressBar';
-import type { Transfer, TransferSummary, TransfersStats } from '../components/TransferManager/transfer';
-import { TransferState } from '../components/TransferManager/transfer';
+import { ProgressBarStatus } from '../legacy/components/TransferManager/ProgressBar';
+import type { Transfer, TransferSummary, TransfersStats } from '../legacy/components/TransferManager/transfer';
+import { TransferState } from '../legacy/components/TransferManager/transfer';
 
 export class TransferCancel extends Error {
     constructor(options: { id: string } | { message: string }) {

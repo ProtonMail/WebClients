@@ -6,8 +6,8 @@ import { UploadStatus } from '@proton/drive/modules/upload';
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import clsx from '@proton/utils/clsx';
 
-import { ProgressBarStatus } from '../../../components/TransferManager/ProgressBar';
-import { BaseTransferStatus } from '../../../zustand/download/downloadManager.store';
+import { ProgressBarStatus } from '../../../legacy/components/TransferManager/ProgressBar';
+import { BaseTransferStatus } from '../../../legacy/zustand/download/downloadManager.store';
 import { CloseButton } from '../statelessComponents/CloseButton';
 import { MinimizeButton } from '../statelessComponents/MinimizeButton';
 import { isRetryable } from '../transferStatus';

@@ -7,7 +7,7 @@ import { TimeIntl } from '@proton/components';
 import type { Revision } from '@proton/drive';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 
-import { useContextMenuControls } from '../../../components/FileBrowser';
+import { useContextMenuControls } from '../../../legacy/components/FileBrowser';
 import type { RevisionsProviderState } from '../useRevisionsModalState';
 import { RevisionsItemContextMenu } from './RevisionsItemContextMenu';
 

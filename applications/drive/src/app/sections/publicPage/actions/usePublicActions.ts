@@ -8,12 +8,12 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { type OpenInDocsType, isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { downloadManager } from '../../../managers/download/DownloadManager';
 import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
 import { type AbuseReportPrefill, useReportAbuseModal } from '../../../modals/ReportAbuseModal';
 import { useDrivePublicPreviewModal } from '../../../modals/preview';
+import { downloadManager } from '../../../modules/download/DownloadManager';
 import {
     downloadPublicDocument,
     getOpenInDocsInfo,

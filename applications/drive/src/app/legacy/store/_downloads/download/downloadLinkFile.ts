@@ -1,0 +1,170 @@
+import { readToEnd, toStream } from '@openpgp/web-stream-tools';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
+
+import type { SharedFileScan } from '@proton/shared/lib/interfaces/drive/sharing';
+import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
+
+import { sendErrorReport } from '../../../../utils/errorHandling';
+import { EnrichedError } from '../../../../utils/errorHandling/EnrichedError';
+import { decryptExtendedAttributes } from '../../_links/extendedAttributes';
+import type {
+    DecryptFileKeys,
+    DownloadCallbacks,
+    DownloadStreamControls,
+    LinkDownload,
+    LogCallback,
+} from '../interface';
+import { markErrorAsCrypto } from '../markErrorAsCrypto';
+import initDownloadBlocks from './downloadBlocks';
+
+/**
+ * initDownloadLinkFile prepares controls to download the provided file.
+ * This epxects only file blocks, not thumbnail block, thus detached
+ * signature is required. To download thumbnail, use thumbnail helper.
+ */
+export default function initDownloadLinkFile(
+    link: LinkDownload,
+    callbacks: DownloadCallbacks,
+    logCallback: LogCallback,
+    options?: { virusScan?: boolean }
+): DownloadStreamControls {
+    let keysPromise: Promise<DecryptFileKeys> | undefined;
+    let scanResult: (SharedFileScan & { Hash: string }) | undefined;
+
+    const log = (message: string) => logCallback(`file ${link.linkId}: ${message}`);
+
+    const transformBlockStream = async (abortSignal: AbortSignal, stream: ReadableStream<Uint8Array<ArrayBuffer>>) => {
+        if (!keysPromise) {
+            keysPromise = callbacks.getKeys(abortSignal, link);
+        }
+
+        const keys = await keysPromise;
+
+        const binaryMessage = await readToEnd<Uint8Array<ArrayBuffer>>(stream);
+        const hash = (await generateContentHash(binaryMessage)).BlockHash;
+
+        try {
+            const { data } = await markErrorAsCrypto<{
+                data: Uint8Array<ArrayBuffer>;
+                verificationStatus: VERIFICATION_STATUS;
+            }>(async () => {
+                const { data, verificationStatus } = await CryptoProxy.decryptMessage({
+                    binaryMessage,
+                    sessionKeys: keys.sessionKeys,
+                    format: 'binary',
+                });
+                return { data, verificationStatus };
+            });
+
+            return {
+                hash,
+                data: toStream(data) as ReadableStream<Uint8Array<ArrayBuffer>>,
+            };
+        } catch (e: unknown) {
+            await callbacks.onDecryptionIssue?.(link, e);
+            throw e;
+        }
+    };
+
+    const checkManifestSignature = async (
+        abortSignal: AbortSignal,
+        hash: Uint8Array<ArrayBuffer>,
+        signature: string
+    ) => {
+        if (!keysPromise) {
+            keysPromise = callbacks.getKeys(abortSignal, link);
+        }
+        const keys = await keysPromise;
+        const verificationKeys = link.isAnonymous ? [keys.privateKey] : keys.addressPublicKeys;
+        const { verificationStatus } = await CryptoProxy.verifyMessage({
+            binaryData: hash,
+            verificationKeys: verificationKeys || [],
+            armoredSignature: signature,
+        });
+        if (verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+            await callbacks.onSignatureIssue?.(abortSignal, link, { manifest: verificationStatus });
+        }
+    };
+
+    const scanHash = async (abortSignal: AbortSignal, Hash: string) => {
+        const response = await callbacks.scanFilesHash?.(abortSignal, [Hash]);
+        if (response?.Code === 1000) {
+            if ((response?.Errors.length > 0 || response?.Results[0]?.Safe === false) && callbacks?.onScanIssue) {
+                await callbacks.onScanIssue(
+                    abortSignal,
+                    response.Errors[0] && new Error(response.Errors[0]?.Error),
+                    response?.Results[0]
+                );
+            }
+            scanResult = { ...response, Hash };
+        }
+    };
+
+    const scanForVirus = async (abortSignal: AbortSignal, encryptedXAttr: string) => {
+        if (!keysPromise) {
+            keysPromise = callbacks.getKeys(abortSignal, link);
+        }
+
+        const keys = await keysPromise;
+
+        const { xattrs } = await decryptExtendedAttributes(
+            encryptedXAttr,
+            keys.privateKey,
+            keys.addressPublicKeys || []
+        );
+        const xAttrHash = xattrs?.Common?.Digests?.SHA1;
+        if (xAttrHash) {
+            await scanHash(abortSignal, xAttrHash);
+        }
+    };
+
+    const checkFileHash = async (abortSignal: AbortSignal, Hash: string) => {
+        if (scanResult?.Hash === Hash) {
+            return;
+        }
+
+        // If we have hash from xAttributes which doesn't match computed hash, lets report to Sentry.
+        // Revision is immutable so if hash suddenly differ, there is either some bug we should care about,
+        // or someone messing with our API, maybe 3rd party client.
+        if (!!scanResult?.Hash && scanResult?.Hash !== Hash) {
+            const { shareId, linkId } = link;
+            log('Computed hash does not match XAttr');
+            sendErrorReport(
+                new EnrichedError('Computed hash does not match XAttr', {
+                    tags: { shareId, linkId },
+                })
+            );
+        }
+        await scanHash(abortSignal, Hash);
+    };
+
+    const controls = initDownloadBlocks(
+        link.name,
+        {
+            ...callbacks,
+            getBlocks: (abortSignal, pagination) =>
+                callbacks.getBlocks(abortSignal, link.shareId, link.linkId, pagination, link.revisionId),
+            scanForVirus: options?.virusScan ? scanForVirus : undefined,
+            checkFileHash: options?.virusScan ? checkFileHash : undefined,
+            transformBlockStream,
+            checkManifestSignature,
+            onProgress: (bytes: number) => {
+                callbacks.onProgress?.([link.linkId], bytes);
+            },
+            onFinish: () => {
+                log(`blocks download finished`);
+                callbacks.onFinish?.();
+            },
+        },
+        log
+    );
+    return {
+        ...controls,
+        start: (doNotCheckManifestSignatureOnlyForVideoStreaming?: boolean) => {
+            const linkSizes = Object.fromEntries([[link.linkId, link.size]]);
+            log(`starting ${link.linkId}, size: ${link.size}`);
+            callbacks.onInit?.(link.size, linkSizes);
+            return controls.start(doNotCheckManifestSignatureOnlyForVideoStreaming);
+        },
+    };
+}

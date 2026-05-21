@@ -5,9 +5,9 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { splitNodeUid } from '@proton/drive/index';
 
-import EmptyDevices from '../../components/sections/Devices/EmptyDevices';
-import useDriveNavigation from '../../hooks/drive/useNavigate';
-import { useUserSettings } from '../../hooks/user';
+import EmptyDevices from '../../legacy/components/sections/Devices/EmptyDevices';
+import useDriveNavigation from '../../legacy/hooks/drive/useNavigate';
+import { useUserSettings } from '../../legacy/hooks/user';
 import { useContextMenuStore } from '../../modules/contextMenu';
 import { useSelectionStore } from '../../modules/selection';
 import { SortField } from '../../modules/sorting';

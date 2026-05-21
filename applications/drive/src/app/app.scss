@@ -1,6 +1,6 @@
 @use '~@proton/styles/scss/proton-drive';
 @use '~@proton/styles/scss/specifics/placeholder-loading';
 
-@use './components/FileBrowser/FileBrowser';
-@use './components/layout/sidebar/DriveSidebar/DriveSidebar';
-@use './components/sections/sections';
+@use './legacy/components/FileBrowser/FileBrowser';
+@use './legacy/components/layout/sidebar/DriveSidebar/DriveSidebar';
+@use './legacy/components/sections/sections';

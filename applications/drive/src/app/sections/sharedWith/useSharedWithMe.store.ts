@@ -4,11 +4,11 @@ import { devtools } from 'zustand/middleware';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
+import { useInvitationCountStore } from '../../legacy/zustand/share/invitationCount.store';
 import { type SortConfig, SortField, sortItems } from '../../modules/sorting';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
-import { useInvitationCountStore } from '../../zustand/share/invitationCount.store';
 import { getSharedWithMeSortValue } from './sharedWithMe.sorting';
 import { type BookmarkItem, type DirectShareItem, type InvitationItem, ItemType, type SharedWithMeItem } from './types';
 

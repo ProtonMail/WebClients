@@ -2,8 +2,8 @@ import { MemberRole } from '@proton/drive';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
+import { unleashVanillaStore } from '../../../legacy/zustand/unleash/unleash.store';
 import { getOpenInDocsInfo } from '../../../utils/docs/openInDocs';
-import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import { NODE_EDIT_EXPIRACY } from '../constants';
 import { usePublicAuthStore } from '../usePublicAuth.store';
 import type { PublicFolderItem } from '../usePublicFolder.store';

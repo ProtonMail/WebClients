@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import type { ModalStateReturnObj } from '@proton/components';
 import emptyPhotosSvg from '@proton/styles/assets/img/illustrations/empty-photos.svg';
 
-import { DriveEmptyView } from '../../components/layout/DriveEmptyView';
+import { DriveEmptyView } from '../../legacy/components/layout/DriveEmptyView';
 
 interface EmptyAlbumsProps {
     createAlbumModal?: ModalStateReturnObj;
