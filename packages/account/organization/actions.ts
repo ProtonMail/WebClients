@@ -57,9 +57,7 @@ export const setKeys = (): ThunkAction<
                 ignorePasswordlessValidation: true,
             })
         );
-
-        await extra.api(await dispatch(createPasswordlessOrganizationKeys(result)));
-        await dispatch(organizationActions.update({ Organization: { HasKeys: 1 } }));
+        await dispatch(createPasswordlessOrganizationKeys(result));
     };
 };
 
