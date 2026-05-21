@@ -1,7 +1,7 @@
+import type { PublicKeyReference } from '@protontech/crypto';
 import { isSameDay, startOfDay } from 'date-fns';
 import { create } from 'zustand';
 
-import type { PublicKeyReference } from '@protontech/crypto';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import uniqueBy from '@proton/utils/uniqueBy';
 
