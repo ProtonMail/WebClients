@@ -3162,6 +3162,12 @@
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "Isso pode demorar alguns minutos. Enquanto isso, você pode continuar usando o ${ CALENDAR_APP_NAME } normalmente."
       ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Para continuar recebendo e enviando mensagens do Gmail na ${ BRAND_NAME }, reconecte sua conta."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Para continuar recebendo e enviando mensagens do Gmail na ${ BRAND_NAME }, reconecte suas contas."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Para assegurar a máxima proteção de sua conta, defina uma frase de recuperação."
       ],
@@ -5152,6 +5158,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } está mascarando seu endereço IP, então os sites não conseguem identificá-lo."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } oculta seu tráfego. ${ PASS_SHORT_APP_NAME } oculta sua identidade\n— aliases **hide-my-email ilimitados** e **alertas da dark-web** se seus dados foram vazados."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } membro)",
         "(${ memberCount } membros)"
@@ -5428,9 +5437,9 @@
       "Create a new contact group": [
         "Criar um grupo de contatos"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Criar uma nuvem segura para ${ value } membro",
-        "Criar uma nuvem segura para ${ value } membros"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Criar uma nuvem segura para ${ memberCount } membro",
+        "Criar uma nuvem segura para ${ memberCount } membros"
       ],
       "Create in": [
         "Criar em"
@@ -8073,6 +8082,9 @@
       "99.95% SLA": [
         "SLA de 99,95%"
       ],
+      "Access all countries": [
+        "Acesso a todos os países"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueio de anuncios e proteção contra malware"
       ],
@@ -8380,6 +8392,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Volume/largura de banda ilimitados"
+      ],
+      "Unlock streaming": [
+        "Desbloquear streaming"
       ],
       "Up to ${ n } user": [
         "Até ${ n } usuário",
@@ -8788,6 +8803,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } país",
+        "${ n } países"
+      ],
       "Access advanced VPN features": [
         "Acesse recursos avançados de VPN"
       ],
