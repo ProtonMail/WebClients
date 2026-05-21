@@ -94,4 +94,5 @@ export interface MailSettings {
     RemoveImageMetadata: boolean;
     KT: KEY_TRANSPARENCY_SETTING;
     MailCategoryView: boolean;
+    MailCategoryViewCountersEnabled: boolean;
 }
