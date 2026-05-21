@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import Commander from '@proton/components/components/commander/Commander';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { useFolders } from '@proton/mail/store/labels/hooks';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CategoriesTabs } from 'proton-mail/components/categoryView/categoriesTabs/CategoriesTabs';
@@ -84,7 +84,7 @@ export const RouterLabelContainer = ({
     } = useMailboxLayoutProvider();
 
     const composersCount = useMailSelector(selectComposersCount);
-    const isRefreshedToolbarUIDisabled = useFlag('RefreshedToolbarUIDisabled');
+    const { shouldSeeWideToolbars } = useCategoriesData();
 
     const categoryViewControl = useCategoriesView();
     useCategoryFlagWatcher();
@@ -201,7 +201,7 @@ export const RouterLabelContainer = ({
                     actions={actions}
                     elementsData={elementsData}
                     toolbar={
-                        isRefreshedToolbarUIDisabled ? (
+                        shouldSeeWideToolbars ? null : (
                             <>
                                 <MailboxToolbar
                                     params={params}
@@ -211,7 +211,7 @@ export const RouterLabelContainer = ({
                                 />
                                 {categoryViewControl.shouldShowTabs && <CategoriesTabs />}
                             </>
-                        ) : null
+                        )
                     }
                     listRef={listRef}
                     scrollContainerRef={scrollContainerRef}
@@ -259,12 +259,12 @@ export const RouterLabelContainer = ({
     );
 
     // This can be removed once the refreshed toolbar UI is fully implemented and validated
-    return isRefreshedToolbarUIDisabled ? (
-        content
-    ) : (
+    return shouldSeeWideToolbars ? (
         <div className="flex flex-column flex-1 flex-nowrap">
             <MailToolbar placement="list" actions={{ ...actions, handleMove }} elementsData={elementsData} />
             {content}
         </div>
+    ) : (
+        content
     );
 };
