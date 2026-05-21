@@ -2966,6 +2966,12 @@
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Kun tokens som udløb i de seneste 30 dage er vist. Ældre tokens slettes automatisk."
+      ],
+      "2FA code copied to clipboard": [
+        "2FA-kode kopieret til udklipsholder"
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "Efter at have autofyldt et login, bliver dens 2FA-kode kopieret til udklipsholderen."
       ]
     },
     "Keyboard key": {
@@ -4127,6 +4133,9 @@
       ],
       "Expired tokens (${ expired.length })": [
         "Udløbede tokens (${ expired.length })"
+      ],
+      "Auto-copy 2FA code": [
+        "Auto-kopiér 2FA-kode"
       ]
     },
     "Link": {

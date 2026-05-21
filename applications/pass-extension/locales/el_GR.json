@@ -2978,6 +2978,12 @@
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Εμφανίζονται μόνο τα διακριτικά που έληξαν τις τελευταίες 30 ημέρες. Τα παλαιότερα διακριτικά διαγράφονται αυτόματα."
+      ],
+      "2FA code copied to clipboard": [
+        "Ο κωδικός 2FA αντιγράφηκε στο πρόχειρο"
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "Μετά την αυτόματη συμπλήρωση μιας σύνδεσης, ο κωδικός 2FA αντιγράφεται στο πρόχειρο."
       ]
     },
     "Keyboard key": {
@@ -4139,6 +4145,9 @@
       ],
       "Expired tokens (${ expired.length })": [
         "Ληγμένα διακριτικά (${ expired.length })"
+      ],
+      "Auto-copy 2FA code": [
+        "Αυτόματη αντιγραφή κωδικού 2FA"
       ]
     },
     "Link": {

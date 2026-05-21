@@ -2978,6 +2978,12 @@
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Només es mostren els testimonis que han caducat en els darrers 30 dies. Els més antics s'eliminen automàticament."
+      ],
+      "2FA code copied to clipboard": [
+        "El codi 2FA s'ha copiat al porta-retalls."
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "Després d'emplenar automàticament un inici de sessió, el codi 2FA es copiarà al porta-retalls."
       ]
     },
     "Keyboard key": {
@@ -4139,6 +4145,9 @@
       ],
       "Expired tokens (${ expired.length })": [
         "Testimonis caducats (${ expired.length })"
+      ],
+      "Auto-copy 2FA code": [
+        "Copiar automàticament el codi 2FA"
       ]
     },
     "Link": {

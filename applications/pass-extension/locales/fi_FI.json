@@ -2683,6 +2683,12 @@
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Näkyvissä ovat vain viimeisten 30 päivän aikana vanhentuneet tunnukset. Vanhemmat tunnukset poistetaan automaattisesti."
+      ],
+      "2FA code copied to clipboard": [
+        "Kaksivaiheisen todennuksen koodi kopioitiin leikepöydälle"
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "Kun kirjautumistiedot on täytetty automaattisesti, kaksivaiheisen todennuksen koodi kopioidaan leikepöydälle."
       ]
     },
     "Keyboard key": {
@@ -3808,6 +3814,9 @@
       ],
       "Expired tokens (${ expired.length })": [
         "Vanhentuneet tunnukset (${ expired.length })"
+      ],
+      "Auto-copy 2FA code": [
+        "Kopioi kaksivaiheisen todennuksen koodi automaattisesti"
       ]
     },
     "Link": {
