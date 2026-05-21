@@ -56,6 +56,7 @@ export const Tab = ({ category, tabState }: Props) => {
 
     const navigateTo = setCategoryInUrl(category.id);
     const unreadCount = count > 999 ? '999+' : count;
+    const shouldShowCount = mailSettings.MailCategoryViewCountersEnabled || tabState === TabState.ACTIVE;
 
     return (
         <NavLink
@@ -100,10 +101,8 @@ export const Tab = ({ category, tabState }: Props) => {
                             : c('Label').ngettext(msgid`${count} unread message`, `${count} unread messages`, count)
                     }
                     className={clsx(
-                        'tag-count shrink-0 px-1.5 py-0.5 text-sm',
-                        tabState === TabState.ACTIVE
-                            ? 'mail-category-color mail-category-count-bg'
-                            : 'bg-weak color-weak'
+                        'tag-count px-1.5 py-0.5 text-sm mail-category-color mail-category-count-bg',
+                        shouldShowCount ? undefined : 'opacity-0'
                     )}
                 >
                     {unreadCount}

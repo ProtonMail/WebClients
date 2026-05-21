@@ -11,6 +11,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import { CategoriesUnreadCountToggle } from './CategoriesUnreadCountToggle';
 import { CategorySettingsItem } from './CategorySettingsItem';
 import { CategoryViewToggle } from './CategoryViewToggle';
 import { PromptDisableCategories } from './PromptDisableCategories';
@@ -59,6 +60,7 @@ export const CategoriesViewSections = () => {
         <>
             <div className="categories-section">
                 <CategoryViewToggle />
+                {mailSettings.MailCategoryView && <CategoriesUnreadCountToggle />}
                 <div
                     className={clsx(
                         'border border-weak rounded-xl',
