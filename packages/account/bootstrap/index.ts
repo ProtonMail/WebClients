@@ -24,6 +24,7 @@ import {
     getMailEventsV6,
 } from '@proton/shared/lib/api/events';
 import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getLatestLumoEventID, getLumoEvents } from '@proton/shared/lib/api/lumo';
 import { getLatestMeetEventID, getMeetEvents } from '@proton/shared/lib/api/meet';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
@@ -66,6 +67,7 @@ import { loadLocales as loadLocalesI18n } from '@proton/shared/lib/i18n/loadLoca
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import type { Api, Environment, ProtonConfig, Unwrap, UserSettings } from '@proton/shared/lib/interfaces';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import type { LumoEventResponse } from '@proton/shared/lib/interfaces/Lumo';
 import type { MeetEventResponse } from '@proton/shared/lib/interfaces/Meet';
 import initLogicalProperties from '@proton/shared/lib/logical/logical';
 import { telemetry } from '@proton/shared/lib/telemetry';
@@ -460,6 +462,18 @@ export const meetEventManager = ({ api }: { api: Api }) => {
             }>({ ...getLatestMeetEventID(), ...options }).then(({ EventID }) => EventID),
         getEvents: ({ eventID, ...rest }) => {
             return api<MeetEventResponse>({ ...getMeetEvents(eventID), ...rest });
+        },
+    });
+};
+
+export const lumoEventManager = ({ api }: { api: Api }) => {
+    return createEventManager<LumoEventResponse>({
+        getLatestEventID: (options) =>
+            api<{
+                EventID: string;
+            }>({ ...getLatestLumoEventID(), ...options }).then(({ EventID }) => EventID),
+        getEvents: ({ eventID, ...rest }) => {
+            return api<LumoEventResponse>({ ...getLumoEvents(eventID), ...rest });
         },
     });
 };
