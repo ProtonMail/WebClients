@@ -1054,6 +1054,9 @@
       "Error reporting problem": [
         "Erro ao relatar o problema"
       ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "O prazo de expiração deve ser entre 60 minutos e 1 ano"
+      ],
       "Failed loading group members": [
         "Falha ao carregar membros do grupo"
       ],
@@ -2311,6 +2314,9 @@
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
         "A redefinição do histórico excluirá permanentemente todas as versões anteriores dos itens e não poderá ser desfeita."
       ],
+      "Restored item from trash": [
+        "Item restaurado da lixeira"
+      ],
       "Restoring items from trash": [
         "Restaurando itens da lixeira"
       ],
@@ -2325,6 +2331,9 @@
       ],
       "Select destination vault": [
         "Selecione o cofre de destino"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Selecione os cofres que \"${ token.Name }\" pode ler."
       ],
       "Select vault to share": [
         "Selecione cofre para compartilhar"
@@ -2540,6 +2549,9 @@
       "Upgrade Now to Unlock Premium Features": [
         "Faça upgrade agora para desbloquear recursos premium"
       ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Faça o upgrade para o ${ PASS_APP_NAME } Plus para criar tokens de acesso e usar o ${ PASS_APP_NAME } programaticamente."
+      ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Faça upgrade para um plano pago para criar múltiplos cofres."
       ],
@@ -2563,6 +2575,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed.": [
         "O cofre \"${ share.content.name }\" foi removido."
+      ],
+      "Vault access granted": [
+        "Acesso ao cofre concedido"
       ],
       "Vault organization successfully updated": [
         "Cofre da organização atualizado com sucesso"
@@ -4394,6 +4409,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Os tokens de acesso exigem o ${ PASS_APP_NAME } Plus"
+      ],
       "Account protection": [
         "Proteção de conta"
       ],
@@ -4660,6 +4678,9 @@
       ],
       "Next": [
         "Próximo"
+      ],
+      "No access tokens yet": [
+        "Ainda não há tokens de acesso"
       ],
       "No excluded items": [
         "Sem itens excluídos"
