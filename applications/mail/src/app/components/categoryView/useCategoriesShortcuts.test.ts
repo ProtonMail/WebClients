@@ -18,6 +18,7 @@ describe('useCategoriesShortcuts', () => {
                 categoriesStore: [],
                 activeCategoriesTabs: [],
                 categoryViewAccess: false,
+                shouldSeeWideToolbars: false,
                 shouldShowTabs: false,
             });
 
@@ -40,6 +41,7 @@ describe('useCategoriesShortcuts', () => {
                 categoriesStore: [],
                 activeCategoriesTabs: [],
                 categoryViewAccess: true,
+                shouldSeeWideToolbars: false,
                 shouldShowTabs: true,
             });
 
@@ -62,6 +64,7 @@ describe('useCategoriesShortcuts', () => {
                 categoriesStore: mockCategoriesStore,
                 activeCategoriesTabs: mockActiveCategoriesData,
                 categoryViewAccess: false,
+                shouldSeeWideToolbars: false,
                 shouldShowTabs: false,
             });
 
@@ -77,6 +80,7 @@ describe('useCategoriesShortcuts', () => {
                 categoriesStore: mockCategoriesStore,
                 activeCategoriesTabs: mockActiveCategoriesData,
                 categoryViewAccess: true,
+                shouldSeeWideToolbars: false,
                 shouldShowTabs: true,
             });
 
@@ -94,6 +98,7 @@ describe('useCategoriesShortcuts', () => {
                     mockActiveCategoriesData[2],
                 ],
                 categoryViewAccess: true,
+                shouldSeeWideToolbars: false,
                 shouldShowTabs: true,
             });
 
