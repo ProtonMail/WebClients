@@ -1528,6 +1528,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Zugang zu ${ PASS_APP_NAME } wird deinen Fingerabdruck oder Geräte-PIN-Code benötigen."
       ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Zugangstoken \"${ action.token.Name }\" ist bereits abgelaufen. Wenn gelöscht, wird es nicht länger angezeigt."
+      ],
       "Add your custom email address to monitor:": [
         "Füge deine eigene E-Mail-Adresse zur Überwachung hinzu:"
       ],
@@ -2017,6 +2020,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online-Zugang zu ${ PASS_APP_NAME } wird einen PIN-Code benötigen. Du wirst nach 3 falschen Versuchen abgemeldet werden."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Nur Token, die in den letzten 30 Tagen abgelaufen sind, werden angezeigt. Ältere Token wurden automatisch gelöscht."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Öffne deine Safari-Einstellungen für die Erweiterung und überprüfe, ob die Seitenberechtigungen für ${ BRAND_NAME }-Domains aktiviert sind."
@@ -2998,6 +3004,9 @@
       ],
       "Expired": [
         "Abgelaufen"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Abgelaufene Token (${ expired.length })"
       ],
       "Expiry Date": [
         "Ablaufdatum"
