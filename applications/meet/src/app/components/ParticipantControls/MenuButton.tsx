@@ -21,7 +21,7 @@ import {
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
-import { useDebugOverlayContext } from '../../containers/MeetContainer';
+import { useDebugOverlayContext } from '../../contexts/DebugOverlayContext';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { SlideClosable } from '../SlideClosable/SlideClosable';
 
