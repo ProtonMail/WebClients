@@ -45,7 +45,6 @@ im.$media-expressions: $media-expressions;
 .projects-content {
 	flex: 1;
 	overflow: hidden;
-	padding: 32px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -54,7 +53,6 @@ im.$media-expressions: $media-expressions;
 	min-block-size: 0;
 
 	@include im.media('<=small') {
-		padding: 20px;
 		gap: 24px;
 	}
 }
@@ -87,7 +85,7 @@ im.$media-expressions: $media-expressions;
 	gap: 12px;
 	max-inline-size: 900px;
 
-	@include im.media ('<=small') {
+	@include im.media('<=small') {
 		display: flex;
 		overflow-x: auto;
 		scroll-snap-type: x mandatory;
