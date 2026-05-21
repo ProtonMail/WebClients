@@ -5806,9 +5806,6 @@
       "Less than a minute left": [
         "Còn chưa đầy một phút"
       ],
-      "None": [
-        "Không"
-      ],
       "Only ": [
         "Chỉ "
       ],
@@ -6128,9 +6125,6 @@
       "Email address is required": [
         "Địa chỉ email là bắt buộc"
       ],
-      "Email is not valid": [
-        "Email không hợp lệ"
-      ],
       "Empty condition": [
         "Điều kiện trống"
       ],
@@ -6211,9 +6205,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Mật khẩu thứ hai không chính xác. Hãy thử lại."
-      ],
-      "Incorrect username": [
-        "Sai tên người dùng"
       ],
       "Intended recipient does not support calendar sharing": [
         "Người nhận dự kiến không hỗ trợ chia sẻ lịch"
@@ -6314,9 +6305,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Không phải tài khoản ${ BRAND_NAME }"
       ],
-      "Not a valid number": [
-        "Số không hợp lệ"
-      ],
       "Organization key is not decrypted": [
         "Khóa tổ chức không được giải mã"
       ],
@@ -6328,9 +6316,6 @@
       ],
       "Password is required": [
         "Xin vui lòng nhập mật khẩu"
-      ],
-      "Passwords do not match": [
-        "Mật khẩu không khớp"
       ],
       "Payment process canceled": [
         "Đã hủy thanh toán"
@@ -6494,9 +6479,6 @@
       "The amount due has changed. Please try again.": [
         "Số tiền phải trả đã thay đổi. Vui lòng thử lại"
       ],
-      "The email addresses do not match": [
-        "Địa chỉ email không giống nhau"
-      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Tập tin quá to, kích thước tối đa là ${ MAX_FILE_DIMENSIONS } x ${ MAX_FILE_DIMENSIONS }"
       ],
@@ -6536,14 +6518,8 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Tài khoản bên ngoài có quá nhiều thư mục. Vui lòng tùy chỉnh để xóa một số thư mục."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Trường này vượt quá giới hạn ${ maximumLength } kí tự"
-      ],
       "This field is required": [
         "Trường này là bắt buộc"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Trường này yêu cầu tối thiểu ${ minimumLength } ký tự."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Tên thư mục này không khả dụng. Vui lòng chọn tên khác."
@@ -6569,9 +6545,6 @@
       "Try again later": [
         "Thử lại sau"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Hãy thử chỉ sử dụng chữ cái, số và _.-"
-      ],
       "Unable to upload file": [
         "Không thể tải lên tệp"
       ],
@@ -6589,12 +6562,6 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Các tập tin tải lên không phải mã hóa riêng hợp lệ. Hãy xác nhận và thử lại."
-      ],
-      "Username must begin with a letter or digit": [
-        "Tên người dùng phải bắt đầu bằng chữ hoặc số"
-      ],
-      "Username must end with a letter or digit": [
-        "Tên người dùng phải kết thúc bằng chữ hoặc số"
       ],
       "Validation error": [
         "Lỗi xác thực"
@@ -9116,9 +9083,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Tạo nhãn cho thư đã nhập, phạm vi thời gian cho lần nhập này và các nhãn muốn nhập."
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "Tạo đám mây bảo mật cho ${ value } thành viên"
       ],
       "Create an account": [
         "Tạo tài khoản"
@@ -20745,9 +20709,6 @@
       "Organization logo updated": [
         "Đã cập nhật logo tổ chức"
       ],
-      "Organization name set": [
-        "Đã đặt tên tổ chức"
-      ],
       "Organization name updated": [
         "Đã cập nhật tên tổ chức"
       ],
@@ -23507,14 +23468,6 @@
       ],
       "Writing assistant": [
         "Trợ lý soạn thảo"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Mật khẩu phải có ít nhất ${ MIN_PASSWORD_LENGTH } ký tự"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Hãy thử đặt một tên người dùng ngắn hơn (tối đa${ n } ký tự)"
       ]
     },
     "Video control": {

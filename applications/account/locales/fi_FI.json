@@ -5457,9 +5457,6 @@
       "Less than a minute left": [
         "Alle minuutti jäljellä"
       ],
-      "None": [
-        "Ei määritetty"
-      ],
       "Only ": [
         "Vain "
       ],
@@ -5676,17 +5673,11 @@
       "Email address is required": [
         "Sähköpostiosoite vaaditaan"
       ],
-      "Email is not valid": [
-        "Virheellinen sähköpostiosoite"
-      ],
       "Empty condition": [
         "Tyhjä ehto"
       ],
       "Enter 6 digits": [
         "Syötä 6-numeroa"
-      ],
-      "Enter your username without the domain (@example.com)": [
-        "Syötä käyttäjätunnuksesi ilman verkkotunnusta (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Virhe yhdistettäessä Bitcoin API:in."
@@ -5768,9 +5759,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Väärä toine salasana. Yritä uudelleen."
-      ],
-      "Incorrect username": [
-        "Virheellinen käyttäjätunnus"
       ],
       "Intended recipient does not support calendar sharing": [
         "Tarkoitettu vastaanottaja ei tue kalenterin jakamista"
@@ -5875,9 +5863,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Tämä ei ole ${ BRAND_NAME }-tili"
       ],
-      "Not a valid number": [
-        "Virheellinen numero"
-      ],
       "Organization key is not decrypted": [
         "Organisaatioavaimen salausta ei ole purettu"
       ],
@@ -5889,9 +5874,6 @@
       ],
       "Password is required": [
         "Salasana vaaditaan"
-      ],
-      "Passwords do not match": [
-        "Salasanat eivät täsmää"
       ],
       "Payment process canceled": [
         "Maksutapahtuma peruttiin"
@@ -6069,9 +6051,6 @@
       "The amount due has changed. Please try again.": [
         "Erääntyvä summa on muuttunut. Yritä uudelleen."
       ],
-      "The email addresses do not match": [
-        "Sähköpostiosoitteet eivät täsmää"
-      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Kuva on liian suuri. Enimmäiskoko on ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }."
       ],
@@ -6114,17 +6093,14 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Ulkoisella tililläsi on liian monta kansiota. Muokkaa tuontia tai poista joitakin kansioita."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Kenttä ylittää ${ maximumLength }-merkin enimmäismäärän."
+      "There was an error, please try again.": [
+        "Tapahtui virhe, yritä uudelleen."
       ],
       "This field is invalid": [
         "Tämän kentän arvo on virheellinen"
       ],
       "This field is required": [
         "Tämä kenttä vaaditaan"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Kenttä edellyttää vähintään ${ minimumLength } merkkiä."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Kansion nimi ei ole käytettävissä. Valitse eri nimi."
@@ -6150,9 +6126,6 @@
       "Try again later": [
         "Kokeile myöhemmin uudelleen"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Kokeile vain kirjaimia, numeroita ja merkkejä _.-"
-      ],
       "Unable to upload file": [
         "Tiedoston lähetys ei onnistu"
       ],
@@ -6170,12 +6143,6 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Ladatut tiedostot eivät ole kelvollisia yksityisiä avaimia. Tarkista ja yritä uudelleen."
-      ],
-      "Username must begin with a letter or digit": [
-        "Käyttäjätunnuksen on alettava kirjaimella tai numerolla"
-      ],
-      "Username must end with a letter or digit": [
-        "Käyttäjätunnuksen on päätyttävä kirjaimella tai numerolla"
       ],
       "Validation error": [
         "Vahvistusvirhe"
@@ -8718,9 +8685,9 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Luo tuoduille viesteille tunniste, ajanjakso tälle tuonnille ja tunnisteet, jotka haluat tuoda."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Luo suojattu pilvi ${ value } jäsenelle",
-        "Luo suojattu pilvi ${ value } jäsenelle"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Luo suojattu pilvi ${ memberCount } jäsenelle",
+        "Luo suojattu pilvi ${ memberCount } jäsenelle"
       ],
       "Create an account": [
         "Luo tili"
@@ -9001,6 +8968,9 @@
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Varmistu täysin yksityisestä ja salatusta viestinnästä. Hanki ilmainen ${ BRAND_NAME } -sähköpostiosoitteesi nyt."
+      ],
+      "Enter code": [
+        "Syötä koodi"
       ],
       "Enter key manually instead": [
         "Syötä avain sen sijaan manuaalisesti"
@@ -18364,12 +18334,6 @@
     "Setting": {
       "Enable Photos section": [
         "Ota Kuvat-osio käyttöön"
-      ],
-      "Get updates about comments via email": [
-        "Saat päivityksiä kommenteista sähköpostitse"
-      ],
-      "Include document name in email notifications": [
-        "Sisällytä dokumentin nimi sähköposti-ilmoituksiin"
       ]
     },
     "Settings description": {
@@ -20173,9 +20137,6 @@
       ],
       "Organization logo updated": [
         "Organisaation logo päivitettiin"
-      ],
-      "Organization name set": [
-        "Organisaation nimi asetettiin"
       ],
       "Organization name updated": [
         "Organisaation nimi päivitettiin"
@@ -22763,16 +22724,6 @@
       ],
       "Writing assistant": [
         "Kirjoitusavustaja"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Salasanan täytyy sisältää ainakin ${ MIN_PASSWORD_LENGTH } merkki",
-        "Salasanan täytyy sisältää vähintään ${ MIN_PASSWORD_LENGTH }-merkkiä"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkki)",
-        "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkkiä)"
       ]
     },
     "Video control": {
