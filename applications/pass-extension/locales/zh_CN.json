@@ -1622,6 +1622,9 @@
       "(Empty)": [
         "（空）"
       ],
+      "2FA code copied to clipboard": [
+        "2FA 代码已复制到剪贴板"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 天免费试用高级功能。仅在您使用 ${ BRAND_NAME } 的第一个星期。"
       ],
@@ -1672,6 +1675,9 @@
       ],
       "Admin": [
         "管理员"
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "自动填充登录信息后，其 2FA 代码会复制到剪贴板"
       ],
       "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
         "确认后，您需要为 ${ PASS_APP_NAME } 接受一个权限提示"
@@ -2281,9 +2287,6 @@
       ],
       "password": [
         "密码"
-      ],
-      "Password copied": [
-        "密码已复制"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "密码锁已成功注册，该密码可用于解锁 ${ PASS_APP_NAME }"
@@ -3110,6 +3113,9 @@
       ],
       "Authenticate with passkeys": [
         "使用密钥验证"
+      ],
+      "Auto-copy 2FA code": [
+        "自动复制 2FA 代码"
       ],
       "Auto-lock after": [
         "自动锁定时间"

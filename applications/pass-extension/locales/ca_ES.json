@@ -1645,6 +1645,9 @@
       "(Empty)": [
         "(Buit)"
       ],
+      "2FA code copied to clipboard": [
+        "El codi 2FA s'ha copiat al porta-retalls."
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dies per a provar característiques prèmium de forma gratuïta. Només durant la primera setmana de ${ BRAND_NAME }."
       ],
@@ -1695,6 +1698,9 @@
       ],
       "Admin": [
         "Administrador"
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "Després d'emplenar automàticament un inici de sessió, el codi 2FA es copiarà al porta-retalls."
       ],
       "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
         "Un cop ho hagueu confirmat, haureu d'acceptar una petició de permís per a ${ PASS_APP_NAME }."
@@ -2311,9 +2317,6 @@
       ],
       "password": [
         "contrasenya"
-      ],
-      "Password copied": [
-        "S'ha copiat la contrasenya."
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "S'ha registrat el bloqueig de la contrasenya. Utilitzeu-lo per desbloquejar ${ PASS_APP_NAME }."
@@ -3160,6 +3163,9 @@
       ],
       "Authenticate with passkeys": [
         "Autenticació amb claus d'accés"
+      ],
+      "Auto-copy 2FA code": [
+        "Copiar automàticament el codi 2FA"
       ],
       "Auto-lock after": [
         "Bloqueig automàtic després de"
