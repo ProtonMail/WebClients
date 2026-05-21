@@ -2113,7 +2113,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移至其他保险库会清除其安全链接。"
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2930,6 +2930,12 @@
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "仅显示过去 30 天内过期的令牌，更早的令牌将被自动删除。"
+      ],
+      "2FA code copied to clipboard": [
+        "2FA 代码已复制到剪贴板"
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "自动填充登录信息后，其 2FA 代码会复制到剪贴板"
       ]
     },
     "Keyboard key": {
@@ -4074,6 +4080,9 @@
       ],
       "Expired tokens (${ expired.length })": [
         "已过期的令牌（${ expired.length } 个）"
+      ],
+      "Auto-copy 2FA code": [
+        "自动复制 2FA 代码"
       ]
     },
     "Link": {

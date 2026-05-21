@@ -3050,6 +3050,12 @@
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Zobrazujú sa len tokeny, ktorých platnosť uplynula v posledných 30 dňoch. Staršie tokeny sa automaticky mažú."
+      ],
+      "2FA code copied to clipboard": [
+        "2FA kód skopírovaný do schránky"
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "Po automatickom vyplnení prihlasovacích údajov sa 2FA kód skopíruje do schránky."
       ]
     },
     "Keyboard key": {
@@ -4239,6 +4245,9 @@
       ],
       "Expired tokens (${ expired.length })": [
         "Exspirované tokeny (${ expired.length })"
+      ],
+      "Auto-copy 2FA code": [
+        "Automatické kopírovanie 2FA kódu"
       ]
     },
     "Link": {

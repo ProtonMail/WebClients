@@ -3014,6 +3014,12 @@
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Sunt afișate doar codurile de acces care au expirat în ultimele 30 de zile. Cele mai vechi sunt șterse automat."
+      ],
+      "2FA code copied to clipboard": [
+        "Codul de A2F s-a copiat în memorie."
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "După completarea automată a unei autentificări, codul de A2F al acesteia este copiat în memorie."
       ]
     },
     "Keyboard key": {
@@ -4189,6 +4195,9 @@
       ],
       "Expired tokens (${ expired.length })": [
         "Coduri de acces expirate (${ expired.length })"
+      ],
+      "Auto-copy 2FA code": [
+        "Autocopiere cod A2F"
       ]
     },
     "Link": {

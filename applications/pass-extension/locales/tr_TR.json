@@ -2978,6 +2978,12 @@
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Yalnızca son 30 gün içinde süresi dolan kodlar görüntülenir. Daha eski kodlar otomatik olarak silinir."
+      ],
+      "2FA code copied to clipboard": [
+        "İki adımlı doğrulama kodu panoya kopyalandı"
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "Oturum açma bilgileri otomatik doldurulduktan sonra iki adımlı doğrulama kodu panoya kopyalandı."
       ]
     },
     "Keyboard key": {
@@ -4139,6 +4145,9 @@
       ],
       "Expired tokens (${ expired.length })": [
         "Süresi dolmuş kodlar (${ expired.length })"
+      ],
+      "Auto-copy 2FA code": [
+        "İki adımlı doğrulama kodu otomatik kopyalansın"
       ]
     },
     "Link": {

@@ -2978,6 +2978,12 @@
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Seuls les jetons expirés depuis moins de 30 jours sont affichés. Les jetons plus anciens sont automatiquement supprimés."
+      ],
+      "2FA code copied to clipboard": [
+        "Le code A2F a été copié dans le presse-papiers."
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "Après remplissage des identifiants, le code A2F associé est copié dans le presse-papiers."
       ]
     },
     "Keyboard key": {
@@ -4139,6 +4145,9 @@
       ],
       "Expired tokens (${ expired.length })": [
         "Jetons expirés (${ expired.length })"
+      ],
+      "Auto-copy 2FA code": [
+        "Copier automatiquement le code A2F"
       ]
     },
     "Link": {
