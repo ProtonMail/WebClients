@@ -1,18 +1,17 @@
 import type { UnknownAction } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
+import { editMember, resetSelfVpnConnectionsHelper } from '@proton/account/members/actions.ts';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
-import { updateVPN } from '@proton/shared/lib/api/members';
 import {
     leaveOrganisation as leaveOrganisationConfig,
     updateOrganizationName as updateOrganizationNameConfig,
 } from '@proton/shared/lib/api/organization';
-import { VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import type { MemberState } from '../member';
-import { type MembersState, membersThunk } from '../members';
+import { membersThunk } from '../members';
 import { type OrganizationState, organizationActions, organizationThunk } from '../organization/index';
 import {
     type RotateOrganizationKeysState,
@@ -22,21 +21,42 @@ import {
 import { type SubscriptionState, subscriptionThunk } from '../subscription';
 import { userThunk } from '../user';
 
-export const setupAdminVpnConnections = (): ThunkAction<
+export const resetSelfVpnConnections = (): ThunkAction<
     Promise<void>,
-    MembersState,
+    RotateOrganizationKeysState,
     ProtonThunkArguments,
     UnknownAction
 > => {
     return async (dispatch, _, extra) => {
-        const [user, members] = await Promise.all([dispatch(userThunk()), dispatch(membersThunk())]);
+        const [organization, members] = await Promise.all([dispatch(organizationThunk()), dispatch(membersThunk())]);
+        await resetSelfVpnConnectionsHelper({ api: extra.api, members, organization }).catch(noop);
+    };
+};
+
+export const setSelfQuota = (
+    quota: number
+): ThunkAction<
+    Promise<void>,
+    OrganizationState & MemberState & RotateOrganizationKeysState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
+    return async (dispatch, _, extra) => {
+        const members = await dispatch(membersThunk());
         const selfMember = members.find(({ Self }) => !!Self);
         if (!selfMember?.ID) {
-            throw new Error('Missing member id');
+            throw new Error('Missing self member id');
         }
-        if (user.hasPaidVpn && selfMember.MaxVPN !== VPN_CONNECTIONS) {
-            await extra.api(updateVPN(selfMember.ID, VPN_CONNECTIONS)).catch(noop);
-        }
+        await dispatch(
+            editMember({
+                member: selfMember,
+                memberDiff: {
+                    storage: quota,
+                },
+                memberKeyPacketPayload: null,
+                api: extra.api,
+            })
+        );
     };
 };
 
@@ -69,7 +89,7 @@ export const updateOrganizationName = ({
 }): ThunkAction<Promise<void>, OrganizationState & MemberState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
         const { Organization } = await extra.api(updateOrganizationNameConfig(name));
-        await dispatch(organizationActions.update({ Organization }));
+        dispatch(organizationActions.update({ Organization }));
     };
 };
 
@@ -84,6 +104,7 @@ export const initOrganization = ({
     UnknownAction
 > => {
     return async (dispatch) => {
+        await dispatch(resetSelfVpnConnections());
         await dispatch(updateOrganizationName({ name }));
         await dispatch(setKeys());
     };
