@@ -6594,6 +6594,9 @@
       "Create a secure cloud for ${ memberCount } member": [
         "${ memberCount } üye için güvenli bir bulut oluşturun",
         "${ memberCount } üye için güvenli bir bulut oluşturun"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Bu kişiden gelen yeni iletileri doğrulamak için \"${ activeSignerText }\" anahtarına güven."
       ]
     },
     "info": {
@@ -6717,6 +6720,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktif İmza Sahibi"
+      ],
+      "Fallback": [
+        "Geri dönüş"
       ]
     },
     "Keyboard shortcut name": {
@@ -9765,6 +9774,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Bu anahtara \"güvenmemeniz\" önerilir."
+      ],
+      "This contact currently signs messages with this key": [
+        "Bu kişi şu anda iletileri bu anahtarla imzalıyor"
+      ],
+      "This key is used for message verification": [
+        "Bu anahtar ileti doğrulama için kullanılır"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Bu anahtar eski uygulamalarda bu kişiyle olan iletileri şifrelemek için kullanılır"
       ]
     },
     "PGP key warning": {

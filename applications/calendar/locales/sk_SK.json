@@ -6778,6 +6778,9 @@
         "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
         "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
         "Vytvoriť bezpečný cloud pre ${ memberCount } členov"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Dôverovať kľúču „${ activeSignerText }“ pri overovaní nových správ od tohto kontaktu."
       ]
     },
     "info": {
@@ -6909,6 +6912,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktívny signatár"
+      ],
+      "Fallback": [
+        "záložný"
       ]
     },
     "Keyboard shortcut name": {
@@ -10113,6 +10122,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Odporúčame, aby ste pri tomto kľúči zvolili \"Nedôverovať\"."
+      ],
+      "This contact currently signs messages with this key": [
+        "Tento kontakt v súčasnosti podpisuje správy týmto kľúčom"
+      ],
+      "This key is used for message verification": [
+        "Tento kľúč slúži na overenie správy"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Tento kľúč sa používa na šifrovanie správ tomuto kontaktu v starších aplikáciách"
       ]
     },
     "PGP key warning": {

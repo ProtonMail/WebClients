@@ -6594,6 +6594,9 @@
       "Create a secure cloud for ${ memberCount } member": [
         "Crea un núvol segur per a ${ memberCount } membre",
         "Crea un núvol segur per a ${ memberCount } membres"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Confieu en la clau \"${ activeSignerText }\" per verificar els missatges nous d'aquest contacte."
       ]
     },
     "info": {
@@ -6717,6 +6720,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Signant actiu"
+      ],
+      "Fallback": [
+        "Recursos alternatius"
       ]
     },
     "Keyboard shortcut name": {
@@ -9765,6 +9774,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Us recomanem que marqueu la clau com a \"no confiable\"."
+      ],
+      "This contact currently signs messages with this key": [
+        "Aquest contacte actualment signa els missatges amb aquesta clau"
+      ],
+      "This key is used for message verification": [
+        "Aquesta clau s'utilitza per la verificació de missatges"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Aquesta clau s'utilitza per xifrar missatges per aquest contacte en aplicacions antigues"
       ]
     },
     "PGP key warning": {

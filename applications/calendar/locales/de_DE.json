@@ -6590,6 +6590,10 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du hast das Limit für Buchungsplätze erreicht (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Erstelle eine sichere Cloud für ${ memberCount } Mitglied",
+        "Erstelle eine sichere Cloud für ${ memberCount } Mitglieder"
       ]
     },
     "info": {
@@ -8436,6 +8440,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden, und benachrichtigen dich sofort, wenn wir etwas finden."
+      ],
+      "Access all countries": [
+        "Zugriff auf alle Länder"
+      ],
+      "No streaming support": [
+        "Keine Unterstützung für Streaming"
+      ],
+      "Unlock streaming": [
+        "Streaming entsperren"
       ]
     },
     "new_plans: feature highlight": {
@@ -8855,6 +8868,10 @@
       "Support for ${ n } custom email domain": [
         "Support für ${ n } benutzerdefinierte E-Mail-Domain",
         "Support für ${ n } benutzerdefinierte E-Mail-Domains"
+      ],
+      "${ n } country": [
+        "${ n } Land",
+        "${ n } Länder"
       ]
     },
     "Note": {

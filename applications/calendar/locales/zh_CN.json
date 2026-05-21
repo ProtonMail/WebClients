@@ -6502,6 +6502,9 @@
       ],
       "Create a secure cloud for ${ memberCount } member": [
         "为 ${ memberCount } 位成员创建安全云空间"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "信任“${ activeSignerText }”密钥以验证来自此联系人的新消息"
       ]
     },
     "info": {
@@ -6621,6 +6624,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "活动签名人"
+      ],
+      "Fallback": [
+        "回退"
       ]
     },
     "Keyboard shortcut name": {
@@ -9591,6 +9600,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "建议您不再信任此密钥。"
+      ],
+      "This contact currently signs messages with this key": [
+        "该联系人当前使用此密钥对消息进行签名"
+      ],
+      "This key is used for message verification": [
+        "此密钥用于消息验证"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "此密钥用于在旧版应用中加密发送给此联系人的消息"
       ]
     },
     "PGP key warning": {
