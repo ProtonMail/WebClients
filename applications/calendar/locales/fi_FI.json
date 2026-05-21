@@ -5318,9 +5318,9 @@
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Luo suojattu pilvi ${ value } jäsenelle",
-        "Luo suojattu pilvi ${ value } jäsenelle"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Luo suojattu pilvi ${ memberCount } jäsenelle",
+        "Luo suojattu pilvi ${ memberCount } jäsenelle"
       ],
       "Create in": [
         "Luo kalenteriin"
@@ -5424,6 +5424,9 @@
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Varmistu täysin yksityisestä ja salatusta viestinnästä. Hanki ilmainen ${ BRAND_NAME } -sähköpostiosoitteesi nyt."
+      ],
+      "Enter code": [
+        "Syötä koodi"
       ],
       "Enter the code from your authenticator app": [
         "Syötä koodi todennussovelluksestasi"
