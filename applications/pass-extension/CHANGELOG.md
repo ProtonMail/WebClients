@@ -1,3 +1,18 @@
+### Version 1.37.1
+
+- Make `nativeMessaging` permission optional (used for biometrics unlock via desktop app)
+
+### Version 1.37.0
+
+- Support offline mode on extension
+- Support unlocking chromium extension with biometrics using Mac desktop app
+- Strengthened safeguards against memory dump attacks
+- Support access tokens (in settings page)
+- Update how public keys are retrieved for group vault access
+- Fix extension icon injection `nextElementSibling` conflict
+- Add keyboard shortcut to open the extension popup in a large screen on chromium and firefox
+- Open extension large screen in new tab instead of a new window
+
 ### Version 1.36.1
 
 - Fix autofill from non-writable vaults for free users
