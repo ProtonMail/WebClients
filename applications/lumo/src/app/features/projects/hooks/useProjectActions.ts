@@ -106,14 +106,14 @@ export const useProjectActions = () => {
         [dispatch, history, removeIndexedFoldersBySpace, searchService]
     );
 
-    // const navigateToAllProjects = useCallback(() => {
-    //     history.push('/projects');
-    // }, [history]);
+    const navigateToAllProjects = useCallback(() => {
+        history.push('/projects');
+    }, [history]);
 
     return {
         createProject,
         createConversationInProject,
         deleteProject,
-        // navigateToAllProjects,
+        navigateToAllProjects,
     };
 };
