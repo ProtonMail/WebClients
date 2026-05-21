@@ -2857,11 +2857,11 @@
       "Country code": [
         "Код краіны"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Стварыць бяспечнае воблака для ${ value } удзельніка",
-        "Стварыць бяспечнае воблака для ${ value } удзельнікаў",
-        "Стварыць бяспечнае воблака для ${ value } удзельнікаў",
-        "Стварыць бяспечнае воблака для ${ value } удзельнікаў"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельніка",
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Крэдыты для нявыкарыстанай часткі вашага папярэдняга плана падпіскі"
@@ -4641,6 +4641,12 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } краіна",
+        "${ n } краіны",
+        "${ n } краін",
+        "${ n } краін"
+      ],
       "Access advanced VPN features": [
         "Доступ да пашыраных функцый VPN"
       ],

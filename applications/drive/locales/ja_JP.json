@@ -3425,9 +3425,6 @@
       "Failed to resend invitation": [
         "招待の再送に失敗しました"
       ],
-      "Failed to save some photos to your Drive": [
-        "一部の写真をドライブに保存できませんでした"
-      ],
       "Failed to unshare node": [
         "ノードの共有解除に失敗しました"
       ],
@@ -3775,9 +3772,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "VPNのダッシュボードの読み込みに失敗しました。接続状況を確認してもう一度お試しください。"
-      ],
-      "Unable to set photo as cover": [
-        "写真をカバーとして設定できません"
       ],
       "Unexpected error, we can't import the contacts": [
         "予期しないエラーにより、連絡先をインポートできません"
@@ -5169,9 +5163,6 @@
       "Create a new contact group": [
         "新しい連絡先グループを作成"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "${ value } 人のメンバーのために安全なクラウドを作成します"
-      ],
       "Create in": [
         "作成日時"
       ],
@@ -5777,9 +5768,6 @@
       ],
       "Photo was copied to stream and marked favorite there.": [
         "写真はストリームにコピーされ、そこでお気に入りにマークされました。"
-      ],
-      "Photo(s) saved to your Drive": [
-        "写真がドライブに保存されました"
       ],
       "Photos have been successfully recovered.": [
         "写真は正常に復元されました。"
@@ -8919,18 +8907,6 @@
       "${ errors.length } item failed to be trashed": [
         "${ errors.length }個のアイテムのごみ箱への移動に失敗しました"
       ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "${ nbFailures } 枚の写真を「${ albumLink.name }」から削除できませんでした"
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "${ nbMainPhotosError } 枚の写真を「${ albumName }」に追加できませんでした"
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "${ nbMainPhotosSuccess } 枚の写真が 「${ albumName }」 に追加されました"
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "${ nbSuccesses } 枚の写真が「${ albumLink.name }」から削除されました"
-      ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } 個のコピーされたアイテムがごみ箱に移動されました"
       ],
@@ -9086,9 +9062,6 @@
       ],
       "Selected items were successfully removed from your list": [
         "選択したアイテムをリストから正常に削除しました"
-      ],
-      "Selected photo(s) already in \"${ albumName }\"": [
-        "選択された写真はすでに「${ albumName }」にあります"
       ],
       "Setting updated. Editors can change permissions and share.": [
         "設定を更新しました。編集者は共有・権限の変更ができます。"

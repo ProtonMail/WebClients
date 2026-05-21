@@ -3266,11 +3266,17 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Tilføj brugere manuelt"
+      ],
       "Cancel": [
         "Annuller"
       ],
       "Close": [
         "Luk"
+      ],
+      "Configure your network": [
+        "Konfigurer dit netværk"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
@@ -3293,6 +3299,12 @@
       "Got it": [
         "Forstået"
       ],
+      "Invite your team": [
+        "Inviter dit team"
+      ],
+      "Manage global VPN permissions": [
+        "Administrer globale VPN-tilladelser"
+      ],
       "Maybe later": [
         "Måske senere"
       ],
@@ -3302,11 +3314,17 @@
       "Remind me later": [
         "Påmind mig senere"
       ],
+      "Secure your organization": [
+        "Beskyt din organisation"
+      ],
       "Send": [
         "Send"
       ],
       "Set up other features": [
         "Konfigurer andre funktioner"
+      ],
+      "Set up SSO": [
+        "Konfigurer SSO"
       ],
       "Sign in": [
         "Log ind"
@@ -4943,6 +4961,9 @@
       "/month": [
         "/måned"
       ],
+      "/user /month": [
+        "/pr. bruger /pr. måned"
+      ],
       "/user per month": [
         "/bruger pr. måned"
       ]
@@ -5163,6 +5184,9 @@
       "Connect your CRM, website, printers, and more.": [
         "Forbind din CRM, dit websted, dine printere og mere."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Opret en gateway for at give dine brugere adgang til dine IT-ressourcer via dedikerede servere."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Opret et Zoom-møde, og tilføj deltageroplysninger til din begivenhed med et enkelt klik."
       ],
@@ -5172,8 +5196,14 @@
       "Create groups you can email with a single address.": [
         "Opret grupper, som du kan sende e-mails til med én enkelt adresse."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Opret nye brugerkonti eller importér brugere med SSO (single sign-on) SCIM-provisionering."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Opret politikker for at afgøre, hvem der kan forbinde til delte servere i hvert land."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Bestem hvilke brugere der kan forbinde til hver af vores 120+ delte serverplaceringer."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Tilgå nemt din e-mail og kalender på desktop og mobil."
@@ -5234,6 +5264,9 @@
       ],
       "How you unlock your encrypted data if you lose your password.": [
         "Sådan låser du op for din krypterede data hvis du mister din adgangskode."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Hvis du ikke allerede har gjort det kan du aktivere nogle gendannelsesmetoder for at sikre, at du aldrig mister adgangen til ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
@@ -6575,6 +6608,9 @@
       "Enable auto-renew": [
         "Aktivér automatisk fornyelse"
       ],
+      "Enter your extra password": [
+        "Indtast din ekstra adgangskode"
+      ],
       "Explore plans": [
         "Udforsk abonnementer"
       ],
@@ -6611,9 +6647,6 @@
       "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
         "Det maksimale antal på ${ limit } kontakt nået. Fjern en kontakt eller tilføj en ny for at ændre det.",
         "Det maksimale antal på ${ limit } kontakter nået. Fjern en kontakt eller tilføj en ny for at ændre det."
-      ],
-      "None": [
-        "Ingen"
       ],
       "Only ": [
         "Kun "
@@ -6765,6 +6798,9 @@
       ],
       "Unable to recover data": [
         "Kan ikke gendanne data"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Lås op for ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "Opgradér"
@@ -6987,17 +7023,11 @@
       "Email address is required": [
         "E-mailadresse er påkrævet."
       ],
-      "Email is not valid": [
-        "E-mail er ikke gyldig"
-      ],
       "Empty condition": [
         "Betingelse er tom"
       ],
       "Enter 6 digits": [
         "Indtast 6 cifre"
-      ],
-      "Enter your username without the domain (@example.com)": [
-        "Indtast dit brugernavn uden domænet (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fejl under oprettelse af forbindelse til Bitcoin-API."
@@ -7085,9 +7115,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Forkert anden adgangskode. Prøv igen."
-      ],
-      "Incorrect username": [
-        "Forkert brugernavn"
       ],
       "Intended recipient does not support calendar sharing": [
         "Den tiltænkte modtager understøtter ikke kalenderdeling"
@@ -7198,9 +7225,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Ikke en ${ BRAND_NAME }-konto"
       ],
-      "Not a valid number": [
-        "Ikke et gyldigt nummer"
-      ],
       "Organization key is not decrypted": [
         "Organisationsnøgle er ikke dekrypteret"
       ],
@@ -7212,9 +7236,6 @@
       ],
       "Password is required": [
         "Adgangskode er påkrævet."
-      ],
-      "Passwords do not match": [
-        "Adgangskoder stemmer ikke overens"
       ],
       "Payment process canceled": [
         "Betalingproces annulleret"
@@ -7398,9 +7419,6 @@
       "The amount due has changed. Please try again.": [
         "Det skyldige beløb er ændret. Prøv venligst igen."
       ],
-      "The email addresses do not match": [
-        "E-mailadresserne stemmer ikke overens"
-      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Filen er for stor, maksimumsstørrelsen er ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -7443,17 +7461,14 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Der er for mange mapper i din eksterne konto. Rediger venligst importen for at slette nogle mapper."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
+      "There was an error, please try again.": [
+        "Der opstod en fejl, prøv igen."
       ],
       "This field is invalid": [
         "Dette felt er ugyldigt"
       ],
       "This field is required": [
         "Feltet er påkrævet"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Dette felt kræver minimum ${ minimumLength } tegn."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Dette mappenavn er ikke tilgængeligt. Vælg venligst et andet navn."
@@ -7479,9 +7494,6 @@
       "Try again later": [
         "Prøv igen senere"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Prøv kun at bruge bogstaver, tal og _.-"
-      ],
       "Unable to upload file": [
         "Filen kan ikke uploades"
       ],
@@ -7499,12 +7511,6 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Uploadede filer er ikke gyldige private nøgle. Kontrollér og prøv igen."
-      ],
-      "Username must begin with a letter or digit": [
-        "Brugernavn skal begynde med et bogstav eller et tal"
-      ],
-      "Username must end with a letter or digit": [
-        "Brugernavn skal ende på et bogstav eller et tal"
       ],
       "Validation error": [
         "Bekræftelsesfejl"
@@ -10395,9 +10401,9 @@
       "Create a new code on your TV and try again.": [
         "Opret en ny kode på dit tv, og prøv igen."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Opret en sikker sky til ${ value } medlem",
-        "Opret en sikker sky til ${ value } medlemmer"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Opret en sikker sky til ${ memberCount } medlem",
+        "Opret en sikker sky til ${ memberCount } medlemmer"
       ],
       "Create an account": [
         "Opret en konto"
@@ -10909,6 +10915,9 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Få besked, hvis din adgangskode eller øvrige personlige data er blevet lækket. ${ learnMoreLinkNoBreach }"
+      ],
+      "Get started": [
+        "Kom i gang"
       ],
       "Get started with the referral link above.": [
         "Kom i gang med henvisningslinket ovenfor."
@@ -11976,6 +11985,9 @@
       "Set up your organization": [
         "Konfigurer din organisation"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Konfigurer din organisation, og begynd at beskytte dine data med få enkle trin."
+      ],
       "Setting successfully saved": [
         "Indstillingen er gemt"
       ],
@@ -12152,6 +12164,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro anbefalet - bedømt til 4,2 ud af 5 stjerner"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Midlertidigt utilgængelig på grund af høj efterspørgsel. Prøv igen senere."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidigt utilgængelig. Tjek igen senere."
@@ -16241,11 +16256,26 @@
       "Built-in chat": [
         "Indbygget chat"
       ],
+      "Cloud storage and file sharing": [
+        "Cloudlager og fildeling"
+      ],
+      "Data retention policies": [
+        "Databevaringspolitikker"
+      ],
+      "Document and spreadsheet editor": [
+        "Dokument- og regnearkseditor"
+      ],
+      "Email writing assistant": [
+        "E-mail skriveassistent"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end-krypteret skærmdeling og midlertidig chat under opkald"
       ],
       "Hosts can record meetings locally on their computers": [
         "Mødeværter kan optage møder lokalt på deres computere"
+      ],
+      "Includes Meet Professional": [
+        "Inkluderer Meet Professional"
       ],
       "Meeting recording": [
         "Møde-optagelse"
@@ -16253,8 +16283,17 @@
       "One active meeting at a time": [
         "Ét aktivt møde ad gangen"
       ],
+      "Password manager with team vaults": [
+        "Adgangskodeadministrator med team-bokse"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Privat AI-chat (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Deling af skærm"
+      ],
+      "Secure mail and calendar": [
+        "Sikker mail og kalender"
       ],
       "Unlimited meetings per day": [
         "Ubegrænset antal møder om dagen"
@@ -16270,6 +16309,9 @@
       "Video meetings, ${ n } participant": [
         "Videomøder, ${ n } deltager",
         "Videomøde, ${ n } deltagere"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN med annonceblokering og beskyttelse mod malware"
       ]
     },
     "meet_2025: Info": {
@@ -23898,9 +23940,6 @@
       "Organization logo updated": [
         "Organisationens logo opdateret"
       ],
-      "Organization name set": [
-        "Organisationsnavn angivet"
-      ],
       "Organization name updated": [
         "Organisationens navn opdateret"
       ],
@@ -24120,6 +24159,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer versionshistorik, krypteret fildeling og meget mere."
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "Til personligt brug"
+      ],
+      "For professional use": [
+        "Til professionelt brug"
       ]
     },
     "Tab in domain modal": {
@@ -24925,6 +24972,9 @@
       "Disconnected from Gmail": [
         "Forbindelsen til Gmail er afbrudt"
       ],
+      "Dismiss setup checklist": [
+        "Skjul konfigurationstjekliste"
+      ],
       "Display name and signature": [
         "Visningsnavn og signatur"
       ],
@@ -25201,6 +25251,9 @@
       ],
       "Get more from your VPN": [
         "Få mere ud af deres VPN"
+      ],
+      "Get started": [
+        "Kom i gang"
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Få appen på alle dine enheder, og nyd sikker, problemfri adgang overalt."
@@ -27009,16 +27062,6 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn",
-        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Prøv et kortere brugernavn (maks. ${ n } tegn)",
-        "Prøv et kortere brugernavn (maks. ${ n } tegn)"
       ]
     },
     "Video control": {

@@ -3411,11 +3411,17 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Adăugați utilizatori manual"
+      ],
       "Cancel": [
         "Anulare"
       ],
       "Close": [
         "Închidere"
+      ],
+      "Configure your network": [
+        "Configurați-vă rețeaua"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuare utilizare ${ MAIL_APP_NAME }."
@@ -3438,6 +3444,12 @@
       "Got it": [
         "Am înțeles"
       ],
+      "Invite your team": [
+        "Invitați-vă echipa"
+      ],
+      "Manage global VPN permissions": [
+        "Gestionare permisiuni globale VPN"
+      ],
       "Maybe later": [
         "Poate mai târziu"
       ],
@@ -3447,11 +3459,17 @@
       "Remind me later": [
         "Amintește-mi mai târziu"
       ],
+      "Secure your organization": [
+        "Securizați-vă organizația"
+      ],
       "Send": [
         "Trimitere"
       ],
       "Set up other features": [
         "Setare alte funcții"
+      ],
+      "Set up SSO": [
+        "Configurare SSO"
       ],
       "Sign in": [
         "Conectare"
@@ -5097,6 +5115,9 @@
       "/month": [
         "/lună"
       ],
+      "/user /month": [
+        "/utilizator/lună"
+      ],
       "/user per month": [
         "/utilizator pe lună"
       ]
@@ -5321,6 +5342,9 @@
       "Connect your CRM, website, printers, and more.": [
         "Conectați-vă CRM-ul, site-ul web, imprimantele și altele."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Creați o poartă de acces pentru a oferi utilizatorilor acces la resursele IT prin intermediul serverelor dedicate."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Creați o întâlnire pe Zoom și adăugați detaliile de conectare la evenimentul dvs. cu un singur clic."
       ],
@@ -5330,8 +5354,14 @@
       "Create groups you can email with a single address.": [
         "Creați grupuri cărora le puteți trimite mesaje cu o singură adresă."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Creați conturi noi de utilizator sau importați utilizatori cu furnizarea SCIM SSO (autentificare unică)."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Creați reguli pentru a decide cine se poate conecta la serverele partajate din fiecare țară."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Decideți care utilizatori se pot conecta la fiecare dintre cele peste 120 de locuri cu servere partajate."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Accesați-vă cu ușurință adresa de e-mail și calendarul pe desktop și mobil."
@@ -5392,6 +5422,9 @@
       ],
       "How you unlock your encrypted data if you lose your password.": [
         "Cum deblocați datele criptate dacă vă pierdeți parola."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Dacă nu ați făcut-o deja, activați unele metode de recuperare pentru a vă asigura că nu pierdeți niciodată accesul la ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
@@ -6742,6 +6775,9 @@
       "Enable auto-renew": [
         "Activare reînnoire automată"
       ],
+      "Enter your extra password": [
+        "Introduceți parola suplimentară"
+      ],
       "Explore plans": [
         "Explorare planuri"
       ],
@@ -6779,9 +6815,6 @@
         "S-a atins limita maximă de ${ limit } contact. Pentru modificare, eliminați un contact și adăugați altul.",
         "S-a atins limita maximă de ${ limit } contacte. Pentru modificare, eliminați un contact și adăugați altul.",
         "S-a atins limita maximă de ${ limit } de contacte. Pentru modificare, eliminați un contact și adăugați altul."
-      ],
-      "None": [
-        "Niciuna"
       ],
       "Only ": [
         "Doar "
@@ -6934,6 +6967,9 @@
       ],
       "Unable to recover data": [
         "Datele nu se pot recupera"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Deblocare ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "Modernizare"
@@ -7160,17 +7196,11 @@
       "Email address is required": [
         "Adresa de e-mail este obligatorie"
       ],
-      "Email is not valid": [
-        "E-mailul nu este valid"
-      ],
       "Empty condition": [
         "Condiție goală"
       ],
       "Enter 6 digits": [
         "Introduceți 6 cifre"
-      ],
-      "Enter your username without the domain (@example.com)": [
-        "Introduceți numele de utilizator fără domeniu (@exemplu.com)."
       ],
       "Error connecting to the Bitcoin API.": [
         "Eroare de conectare la Bitcoin API."
@@ -7258,9 +7288,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Parolă secundară incorectă. Încercați din nou."
-      ],
-      "Incorrect username": [
-        "Nume de utilizator incorect."
       ],
       "Intended recipient does not support calendar sharing": [
         "Destinatarul vizat nu are suport pentru partajare de calendare."
@@ -7372,9 +7399,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Nu este un cont ${ BRAND_NAME }."
       ],
-      "Not a valid number": [
-        "Nu este un număr valid"
-      ],
       "Organization key is not decrypted": [
         "Cheia organizației nu este decriptată."
       ],
@@ -7386,9 +7410,6 @@
       ],
       "Password is required": [
         "Parola este obligatorie"
-      ],
-      "Passwords do not match": [
-        "Parolele nu coincid"
       ],
       "Payment process canceled": [
         "Procesarea plății a fost anulată."
@@ -7574,9 +7595,6 @@
       "The amount due has changed. Please try again.": [
         "Suma datorată s-a schimbat. Mai încercați."
       ],
-      "The email addresses do not match": [
-        "Adresele de e-mail nu se potrivesc."
-      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Imaginea este prea mare. Dimensiunea maximă este ${ MAX_FILE_DIMENSIONS } x ${ MAX_FILE_DIMENSIONS }."
       ],
@@ -7619,17 +7637,14 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Aveți prea multe foldere în contul extern. Modificați opțiunile de importare pentru a șterge unele foldere."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Acest câmp depășește maximul de ${ maximumLength } de caractere."
+      "There was an error, please try again.": [
+        "A apărut o eroare. Reîncercați."
       ],
       "This field is invalid": [
         "Acest câmp nu este valid."
       ],
       "This field is required": [
         "Acest câmp este obligatoriu"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Acest câmp necesită un minimum de ${ minimumLength } caractere."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Acest nume de folder nu este disponibil. Alegeți un nume diferit."
@@ -7655,9 +7670,6 @@
       "Try again later": [
         "Reîncercați mai târziu"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Folosiți doar litere, cifre și _ . -"
-      ],
       "Unable to upload file": [
         "Fișierul nu se poate încărca."
       ],
@@ -7675,12 +7687,6 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Fișierele încărcate nu sunt chei private valide. Verificați și reîncercați."
-      ],
-      "Username must begin with a letter or digit": [
-        "Numele de utilizator trebuie să înceapă cu o literă sau cifră."
-      ],
-      "Username must end with a letter or digit": [
-        "Numele de utilizator trebuie să se termine cu o literă sau cifră."
       ],
       "Validation error": [
         "Eroare validare."
@@ -10629,10 +10635,10 @@
       "Create a new code on your TV and try again.": [
         "Creați un cod nou pe televizorul și reîncercați."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Creați un cont în cloud securizat pentru ${ value } membru",
-        "Creați un cont cloud securizat pentru ${ value } membri",
-        "Creați un cont cloud securizat pentru ${ value } de membri"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Creați un cont în cloud securizat pentru ${ memberCount } membru",
+        "Creați un cont cloud securizat pentru ${ memberCount } membri",
+        "Creați un cont cloud securizat pentru ${ memberCount } de membri"
       ],
       "Create an account": [
         "Creați un cont"
@@ -11148,6 +11154,9 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Primiți notificări dacă parola sau alte date personale v-au fost divulgate. ${ learnMoreLinkNoBreach }"
+      ],
+      "Get started": [
+        "Să începem"
       ],
       "Get started with the referral link above.": [
         "Începeți cu legătura web de recomandate de mai sus."
@@ -12222,6 +12231,9 @@
       "Set up your organization": [
         "Setați organizația"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Configurați-vă organizația și începeți să vă protejați datele în câțiva pași simpli."
+      ],
       "Setting successfully saved": [
         "Setările au fost salvate."
       ],
@@ -12401,6 +12413,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro l-a recomandat cu o evaluare de 4,2 din 5 stele"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Temporar indisponibil din cauza solicitărilor mari. Reîncercați mai târziu."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporar indisponibil. Reveniți mai târziu."
@@ -16535,11 +16550,26 @@
       "Built-in chat": [
         "Sistem de conversații integrat"
       ],
+      "Cloud storage and file sharing": [
+        "Stocare în cloud și partajare fișiere"
+      ],
+      "Data retention policies": [
+        "Politici de păstrare a datelor"
+      ],
+      "Document and spreadsheet editor": [
+        "Editor de documente și registre de lucru"
+      ],
+      "Email writing assistant": [
+        "Asistent de scriere pentru e-mail"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Partajare ecran cu criptare bilaterală și conversații temporare pe durata apelului"
       ],
       "Hosts can record meetings locally on their computers": [
         "Gazdele pot înregistra întâlnirile local pe computerele lor"
+      ],
+      "Includes Meet Professional": [
+        "Include Meet Professional"
       ],
       "Meeting recording": [
         "Înregistrare conferință"
@@ -16547,8 +16577,17 @@
       "One active meeting at a time": [
         "O conferință activă simultan"
       ],
+      "Password manager with team vaults": [
+        "Manager de parole cu seifuri pentru echipe"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Conversații private cu IA (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Partajare ecran"
+      ],
+      "Secure mail and calendar": [
+        "Mail și calendar securitate"
       ],
       "Unlimited meetings per day": [
         "Conferințe nelimitate pe zi"
@@ -16567,6 +16606,9 @@
         "Conferințe video, ${ n } participant",
         "Conferințe video, ${ n } participanți",
         "Conferințe video, ${ n } de participanți"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN cu blocare reclame și protecție împotriva programelor malițioase"
       ]
     },
     "meet_2025: Info": {
@@ -24325,9 +24367,6 @@
       "Organization logo updated": [
         "S-a actualizat sigla organizației"
       ],
-      "Organization name set": [
-        "Nume organizație setat"
-      ],
       "Organization name updated": [
         "S-a actualizat numele organizației"
       ],
@@ -24547,6 +24586,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "Pentru uz personal"
+      ],
+      "For professional use": [
+        "Pentru uz profesional"
       ]
     },
     "Tab in domain modal": {
@@ -25367,6 +25414,9 @@
       "Disconnected from Gmail": [
         "Deconectat de la Gmail"
       ],
+      "Dismiss setup checklist": [
+        "Ignorare listă de verificare configurare"
+      ],
       "Display name and signature": [
         "Numele afișat și semnătura"
       ],
@@ -25644,6 +25694,9 @@
       ],
       "Get more from your VPN": [
         "Obțineți mai mult de la VPN"
+      ],
+      "Get started": [
+        "Să începem"
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Obțineți aplicația pe toate dispozitivele și bucurați-vă de o accesare sigură, fără întreruperi oriunde."
@@ -27456,18 +27509,6 @@
       ],
       "Writing assistant": [
         "Asistent de scriere"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caracter",
-        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caractere",
-        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } de caractere"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
-        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
-        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)"
       ]
     },
     "Video control": {

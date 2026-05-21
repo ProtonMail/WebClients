@@ -3133,11 +3133,17 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Přidejte uživatele ručně"
+      ],
       "Cancel": [
         "Zrušit"
       ],
       "Close": [
         "Zavřít"
+      ],
+      "Configure your network": [
+        "Nastavte svou síť"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovat s ${ MAIL_APP_NAME }."
@@ -3160,6 +3166,12 @@
       "Got it": [
         "Rozumím"
       ],
+      "Invite your team": [
+        "Pozvěte svůj tým"
+      ],
+      "Manage global VPN permissions": [
+        "Správa globálních oprávnění VPN"
+      ],
       "Maybe later": [
         "Možná později"
       ],
@@ -3169,11 +3181,17 @@
       "Remind me later": [
         "Připomenout později"
       ],
+      "Secure your organization": [
+        "Zabezpečte svou organizaci"
+      ],
       "Send": [
         "Odeslat"
       ],
       "Set up other features": [
         "Nastavit další funkce"
+      ],
+      "Set up SSO": [
+        "Nastavit SSO"
       ],
       "Sign in": [
         "Přihlásit se"
@@ -5050,6 +5068,9 @@
       "Connect your CRM, website, printers, and more.": [
         "Propojte svůj CRM, webové stránky, tiskárny a další."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Vytvořte bránu, která vašim uživatelům umožní přístup k vašim IT zdrojům prostřednictvím dedikovaných serverů."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Vytvořte schůzku na Zoomu a jedním kliknutím přidejte podrobnosti o připojení k události."
       ],
@@ -5059,8 +5080,14 @@
       "Create groups you can email with a single address.": [
         "Vytvářejte skupiny, kterým můžete posílat e-maily pomocí jediné adresy."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Vytvářejte nové uživatelské účty nebo importujte uživatele pomocí SSO (jednotného přihlášení) a zajištění SCIM."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Vytvořte zásady, které určují, kdo se může připojit ke sdíleným serverům v jednotlivých zemích."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Rozhodněte, kteří uživatelé se mohou připojit ke každému z našich více než 120 umístění sdílených serverů."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Snadný přístup k e-mailu a kalendáři na počítači i v mobilu."
@@ -5121,6 +5148,9 @@
       ],
       "How you unlock your encrypted data if you lose your password.": [
         "Jak odemknout zašifrovaná data v případě ztráty hesla."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Pokud jste tak ještě neučinili, povolte některé metody obnovení, abyste se ujistili, že nikdy neztratíte přístup k ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
@@ -6496,9 +6526,6 @@
         "Dosaženo maximálního počtu ${ limit } kontaktů. Chcete-li počet změnit, odstraňte jeden kontakt a přidejte nový.",
         "Dosaženo maximálního počtu ${ limit } kontaktů. Chcete-li počet změnit, odstraňte jeden kontakt a přidejte nový."
       ],
-      "None": [
-        "Neomezeně"
-      ],
       "Only ": [
         "Pouze "
       ],
@@ -6872,17 +6899,11 @@
       "Email address is required": [
         "Je vyžadována e-mailová adresa"
       ],
-      "Email is not valid": [
-        "E-mailová adresa není platná"
-      ],
       "Empty condition": [
         "Prázdná podmínka"
       ],
       "Enter 6 digits": [
         "Zadejte 6 číslic"
-      ],
-      "Enter your username without the domain (@example.com)": [
-        "Zadejte své uživatelské jméno bez domény (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Chyba při připojování k Bitcoin API."
@@ -6970,9 +6991,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Nesprávné druhé heslo. Zkuste to prosím znovu."
-      ],
-      "Incorrect username": [
-        "Nesprávné uživatelské jméno"
       ],
       "Intended recipient does not support calendar sharing": [
         "Zamýšlený příjemce nepodporuje sdílení kalendáře"
@@ -7085,9 +7103,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Nejde o ${ BRAND_NAME } účet"
       ],
-      "Not a valid number": [
-        "Neplatné číslo"
-      ],
       "Organization key is not decrypted": [
         "Klíč organizace není dešifrován"
       ],
@@ -7099,9 +7114,6 @@
       ],
       "Password is required": [
         "Heslo je povinná položka"
-      ],
-      "Passwords do not match": [
-        "Hesla se neshodují"
       ],
       "Payment process canceled": [
         "Platba byla zrušena"
@@ -7289,9 +7301,6 @@
       "The amount due has changed. Please try again.": [
         "Částka k zaplacení se změnila. Zkuste to prosím znovu."
       ],
-      "The email addresses do not match": [
-        "E-mailové adresy se neshodují"
-      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Soubor je příliš velký, maximální velikost je ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -7334,17 +7343,11 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Na vašem externím účtu je příliš mnoho složek. Upravte prosím import pro odstranění některých složek."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Toto pole přesahuje maximální délku ${ maximumLength } znaků."
-      ],
       "This field is invalid": [
         "Toto pole je neplatné"
       ],
       "This field is required": [
         "Toto pole je povinné"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Toto pole musí obsahovat minimálně ${ minimumLength } znaků."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Tento název složky není k dispozici. Zvolte prosím jiný název."
@@ -7370,9 +7373,6 @@
       "Try again later": [
         "Zkuste to znovu později"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Zkuste používat pouze písmena, číslice a _.-"
-      ],
       "Unable to upload file": [
         "Soubor nelze nahrát"
       ],
@@ -7390,12 +7390,6 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Nahrané soubory nejsou platnými soukromými klíči. Prosím ověřte a zkuste to znovu."
-      ],
-      "Username must begin with a letter or digit": [
-        "Uživatelské jméno musí začínat písmenem nebo číslicí"
-      ],
-      "Username must end with a letter or digit": [
-        "Uživatelské jméno musí končit písmenem nebo číslicí"
       ],
       "Validation error": [
         "Chyba ověření"
@@ -10362,12 +10356,6 @@
       "Create a new code on your TV and try again.": [
         "Vytvořte na televizoru nový kód a zkuste to znovu."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Vytvořte bezpečný cloud pro ${ value } člena",
-        "Vytvořte bezpečný cloud pro ${ value } členy",
-        "Vytvořte bezpečný cloud pro ${ value } členů",
-        "Vytvořte bezpečný cloud pro ${ value } členů"
-      ],
       "Create an account": [
         "Vytvořit účet"
       ],
@@ -10874,6 +10862,9 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Dostanete upozornění, pokud došlo k úniku vašeho hesla nebo jiných osobních údajů. ${ learnMoreLinkNoBreach }"
+      ],
+      "Get started": [
+        "Začněme"
       ],
       "Get started with the referral link above.": [
         "Začněte s doporučujícím odkazem výše."
@@ -11948,6 +11939,9 @@
       ],
       "Set up your organization": [
         "Nastavte svou organizaci"
+      ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Nastavte svou organizaci a začněte chránit svá data v několika snadných krocích."
       ],
       "Setting successfully saved": [
         "Nastavení úspěšně uloženo"
@@ -21668,12 +21662,6 @@
     "Setting": {
       "Enable Photos section": [
         "Povolit sekci Fotky"
-      ],
-      "Get updates about comments via email": [
-        "Dostávat e-mailem upozornění na komentáře"
-      ],
-      "Include document name in email notifications": [
-        "Zahrnout název dokumentu do e-mailových upozornění"
       ]
     },
     "Settings description": {
@@ -23855,9 +23843,6 @@
       "Organization logo updated": [
         "Logo organizace aktualizováno"
       ],
-      "Organization name set": [
-        "Název organizace nastaven"
-      ],
       "Organization name updated": [
         "Název organizace aktualizován"
       ],
@@ -24906,6 +24891,9 @@
       "Disconnected from Gmail": [
         "Odpojeno od služby Gmail"
       ],
+      "Dismiss setup checklist": [
+        "Odmítnout kontrolní seznam nastavení"
+      ],
       "Display name and signature": [
         "Zobrazované jméno a podpis"
       ],
@@ -25181,6 +25169,9 @@
       ],
       "Get more from your VPN": [
         "Získejte více ze své VPN"
+      ],
+      "Get started": [
+        "Začněme"
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Získejte aplikaci pro všechna svá zařízení a užívejte si bezpečný a snadný přístup odkudkoli."
@@ -26988,20 +26979,6 @@
       ],
       "Writing assistant": [
         "Asistent psaní"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znak",
-        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaky",
-        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků",
-        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znak)",
-        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaky)",
-        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)",
-        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)"
       ]
     },
     "Video control": {

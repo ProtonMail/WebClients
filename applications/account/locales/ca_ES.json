@@ -3392,11 +3392,17 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Afegiu usuaris manualment"
+      ],
       "Cancel": [
         "Cancel·leu-ho"
       ],
       "Close": [
         "Tanca"
+      ],
+      "Configure your network": [
+        "Configureu la vostra xarxa"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua utilitzant ${ MAIL_APP_NAME }."
@@ -3419,6 +3425,12 @@
       "Got it": [
         "Entesos"
       ],
+      "Invite your team": [
+        "Convideu el vostre equip"
+      ],
+      "Manage global VPN permissions": [
+        "Gestioneu els permisos de la VPN global"
+      ],
       "Maybe later": [
         "Potser més tard"
       ],
@@ -3428,11 +3440,17 @@
       "Remind me later": [
         "Recorda-m'ho més tard"
       ],
+      "Secure your organization": [
+        "Protegiu la vostra organització"
+      ],
       "Send": [
         "Enviar"
       ],
       "Set up other features": [
         "Configureu altres característiques"
+      ],
+      "Set up SSO": [
+        "Configureu l'SSO"
       ],
       "Sign in": [
         "Inicieu sessió"
@@ -5069,6 +5087,9 @@
       "/month": [
         "/mes"
       ],
+      "/user /month": [
+        "/usuari /mes"
+      ],
       "/user per month": [
         "/usuari per mes"
       ]
@@ -5289,6 +5310,9 @@
       "Connect your CRM, website, printers, and more.": [
         "Connecteu el CRM, lloc web, impressores i molt més."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Creeu una passarel·la per donar accés als usuaris als vostres recursos de TI mitjançant servidors dedicats."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Creeu una reunió a Zoom i afegiu els detalls de participació a l'esdeveniment en un clic."
       ],
@@ -5298,8 +5322,14 @@
       "Create groups you can email with a single address.": [
         "Creeu grups als quals podeu enviar correus amb una única adreça."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Creeu nous comptes d'usuari o importeu usuaris amb l'aprovisionament SCIM d'SSO (inici de sessió únic)."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Creeu polítiques per a decidir qui es pot connectar als servidors compartits de cada país."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Decidiu quins usuaris es poden connectar a cadascuna de les nostres més de 120 ubicacions de servidors compartits."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Accediu fàcilment al vostre correu i calendari a l'escriptori i al mòbil."
@@ -5360,6 +5390,9 @@
       ],
       "How you unlock your encrypted data if you lose your password.": [
         "Com desbloquejar les vostres dades xifrades si perdeu la contrasenya."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Si encara no ho heu fet, habiliteu alguns mètodes de recuperació per assegurar-vos que mai no perdreu l'accés a ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
@@ -6701,6 +6734,9 @@
       "Enable auto-renew": [
         "Habilita la renovació automàtica"
       ],
+      "Enter your extra password": [
+        "Introduïu la contrasenya addicional"
+      ],
       "Explore plans": [
         "Exploreu els plans"
       ],
@@ -6737,9 +6773,6 @@
       "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
         "S'ha arribat al màxim d'${ limit } contacte. Per canviar-ho, esborreu un contacte i afegiu-ne un de nou.",
         "S'ha arribat al màxim de ${ limit } contactes. Per canviar-ho, esborreu un contacte i afegiu-ne un de nou."
-      ],
-      "None": [
-        "Cap"
       ],
       "Only ": [
         "Només "
@@ -6891,6 +6924,9 @@
       ],
       "Unable to recover data": [
         "No s'han pogut recuperar les dades"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Desbloquejar ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "Millora"
@@ -7113,17 +7149,11 @@
       "Email address is required": [
         "L'adreça de correu electrònic és obligatòria."
       ],
-      "Email is not valid": [
-        "El correu electrònic no és vàlid"
-      ],
       "Empty condition": [
         "Condició buida"
       ],
       "Enter 6 digits": [
         "Introduïu 6 dígits"
-      ],
-      "Enter your username without the domain (@example.com)": [
-        "Introduïu el vostre nom d'usuari sense el domini (@example.cat)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Error al connectar a l'API de Bitcoin."
@@ -7211,9 +7241,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "La segona contrasenya no és correcta. Torneu-ho a intentar."
-      ],
-      "Incorrect username": [
-        "Nom d'usuari incorrecte"
       ],
       "Intended recipient does not support calendar sharing": [
         "El destinatari escollit no admet la compartició de calendari."
@@ -7324,9 +7351,6 @@
       "Not a ${ BRAND_NAME } account": [
         "No és un compte de ${ BRAND_NAME }"
       ],
-      "Not a valid number": [
-        "Número no vàlid"
-      ],
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
       ],
@@ -7338,9 +7362,6 @@
       ],
       "Password is required": [
         "La contrasenya és obligatòria"
-      ],
-      "Passwords do not match": [
-        "Les contrasenyes no coincideixen."
       ],
       "Payment process canceled": [
         "S'ha cancel·lat el procés de pagament"
@@ -7524,9 +7545,6 @@
       "The amount due has changed. Please try again.": [
         "L'import que cal pagar ha canviat. Torneu-ho a provar."
       ],
-      "The email addresses do not match": [
-        "Les adreces de correu electrònic no coincideixen."
-      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "El fitxer és massa gran, la mida màxima és ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -7569,17 +7587,14 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hi ha massa carpetes al vostre compte extern. Personalitzeu la importació per eliminar algunes carpetes."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
+      "There was an error, please try again.": [
+        "Hi ha hagut un error, torneu-ho a provar."
       ],
       "This field is invalid": [
         "Aquest camp no és vàlid"
       ],
       "This field is required": [
         "Aquest camp és obligatori."
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Aquest nom de carpeta no està disponible. Trieu-ne un altre."
@@ -7605,9 +7620,6 @@
       "Try again later": [
         "Torneu-ho a provar més tard"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Intenteu utilitzar només lletres, numerals i _.-"
-      ],
       "Unable to upload file": [
         "No es pot carregar el fitxer."
       ],
@@ -7625,12 +7637,6 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Els fitxers carregats no són claus privades vàlides. Verifiqueu-les i torneu-ho a provar."
-      ],
-      "Username must begin with a letter or digit": [
-        "El nom d'usuari ha de començar amb una lletra o un dígit."
-      ],
-      "Username must end with a letter or digit": [
-        "El nom d'usuari ha d'acabar amb una lletra o un dígit."
       ],
       "Validation error": [
         "S'ha produït un error de validació"
@@ -10515,9 +10521,9 @@
       "Create a new code on your TV and try again.": [
         "Creeu un codi nou al vostre televisor i torneu-ho a provar."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Crea un núvol segur per a ${ value } membre",
-        "Crea un núvol segur per a ${ value } membres"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crea un núvol segur per a ${ memberCount } membre",
+        "Crea un núvol segur per a ${ memberCount } membres"
       ],
       "Create an account": [
         "Creeu un compte"
@@ -11029,6 +11035,9 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Rebeu una notificació si la vostra contrasenya o altres dades personals han estat filtrades. ${ learnMoreLinkNoBreach }"
+      ],
+      "Get started": [
+        "Primers passos"
       ],
       "Get started with the referral link above.": [
         "Comenceu amb l'enllaç de recomanació anterior."
@@ -12096,6 +12105,9 @@
       "Set up your organization": [
         "Configuració de la vostra organització"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Configureu la vostra organització i comenceu a protegir les vostres dades en pocs passos senzills."
+      ],
       "Setting successfully saved": [
         "S'ha desat la configuració correctament"
       ],
@@ -12272,6 +12284,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Recomanat per TechRadar Pro amb una puntuació de 4,2 sobre 5 estrelles"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Temporalment no disponible a causa de l'alta demanda. Torneu-ho a provar més tard."
       ],
       "Temporarily unavailable. Please check back later.": [
         "No està disponible temporalment. Comproveu-ho de nou més tard."
@@ -16370,11 +16385,26 @@
       "Built-in chat": [
         "Xat integrat"
       ],
+      "Cloud storage and file sharing": [
+        "Emmagatzematge al núvol i compartició d'arxius"
+      ],
+      "Data retention policies": [
+        "Polítiques de conservació de dades"
+      ],
+      "Document and spreadsheet editor": [
+        "Editor de documents i de fulls de càlcul"
+      ],
+      "Email writing assistant": [
+        "Assistent d'escriptura de correus electrònics"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Compartició de pantalla xifrada d’extrem a extrem i xat efímer durant la trucada"
       ],
       "Hosts can record meetings locally on their computers": [
         "Els amfitrions poden gravar reunions localment als seus ordinadors"
+      ],
+      "Includes Meet Professional": [
+        "Inclou Meet Professional"
       ],
       "Meeting recording": [
         "Enregistrament de la reunió"
@@ -16382,8 +16412,17 @@
       "One active meeting at a time": [
         "Una reunió activa alhora"
       ],
+      "Password manager with team vaults": [
+        "Gestor de contrasenyes amb caixes fortes d'equip"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Xat d'IA privat (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Compartir pantalla"
+      ],
+      "Secure mail and calendar": [
+        "Correu i calendari segurs"
       ],
       "Unlimited meetings per day": [
         "Reunions il·limitades per dia"
@@ -16399,6 +16438,9 @@
       "Video meetings, ${ n } participant": [
         "Videoconferències, ${ n } participant",
         "Videoconferències, ${ n } participants"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN amb bloqueig d’anuncis i protecció contra programari maliciós"
       ]
     },
     "meet_2025: Info": {
@@ -21834,10 +21876,10 @@
         "Habilitar la secció de fotos"
       ],
       "Get updates about comments via email": [
-        "Rebeu actualitzacions sobre els comentaris per correu electrònic"
+        "Rebeu actualitzacions per correu electrònic sobre els comentaris"
       ],
       "Include document name in email notifications": [
-        "Incloeu el nom del document a les notificacions per correu electrònic"
+        "Incloure el nom del document a les notificacions per correu electrònic"
       ]
     },
     "Settings description": {
@@ -23940,9 +23982,6 @@
       "Organization logo updated": [
         "S'ha actualitzat el logo de l'organització."
       ],
-      "Organization name set": [
-        "S'ha establert el nom de l'organització"
-      ],
       "Organization name updated": [
         "S'ha actualitzat el nom de l'organització."
       ],
@@ -24162,6 +24201,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou, entre d'altres, historial de versions i compartició de fitxers xifrats."
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "Per a ús personal"
+      ],
+      "For professional use": [
+        "Per a ús professional"
       ]
     },
     "Tab in domain modal": {
@@ -24967,6 +25014,9 @@
       "Disconnected from Gmail": [
         "Esteu desconnectat de Gmail"
       ],
+      "Dismiss setup checklist": [
+        "Descartar la llista de verificació de configuració"
+      ],
       "Display name and signature": [
         "Nom per a mostrar i signatura"
       ],
@@ -25243,6 +25293,9 @@
       ],
       "Get more from your VPN": [
         "Obteniu més de la vostra VPN"
+      ],
+      "Get started": [
+        "Primers passos"
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Obtingueu l'aplicació a tots els vostres dispositius i gaudiu d'un accés segur i fluid des de qualsevol lloc."
@@ -27051,16 +27104,6 @@
       ],
       "Writing assistant": [
         "Assistent d'escriptura"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcter",
-        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
-        "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"
       ]
     },
     "Video control": {

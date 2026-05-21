@@ -7160,9 +7160,9 @@
       "Create a new contact group": [
         "Créer un nouveau groupe de contacts"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Créer un cloud sécurisé pour ${ value } membre",
-        "Créer un cloud sécurisé pour ${ value } membres"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Créer un cloud sécurisé pour ${ memberCount } membre",
+        "Créer un cloud sécurisé pour ${ memberCount } membres"
       ],
       "Create in": [
         "Créer dans"
@@ -8271,6 +8271,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synchronisez et gérez vos fichiers avec l'application ${ DRIVE_APP_NAME }. Créez et partagez des documents dans ${ DOCS_APP_NAME } et stockez-les en toute sécurité. Le tout sur ${ ios }, ${ android } et ${ desktop }."
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Temporairement indisponible à cause d'une forte demande. Veuillez réessayer ultérieurement."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporairement indisponible. Nous vous invitons à vérifier plus tard."
@@ -9477,6 +9480,9 @@
       ],
       "Category": [
         "Catégorie"
+      ],
+      "Category:": [
+        "Catégorie :"
       ],
       "CC": [
         "Cc"

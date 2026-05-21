@@ -3721,6 +3721,9 @@
       "/month": [
         "/mes"
       ],
+      "/user /month": [
+        "/usuari /mes"
+      ],
       "/user per month": [
         "/usuari per mes"
       ]
@@ -4991,6 +4994,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hi ha massa carpetes al vostre compte extern. Personalitzeu la importació per eliminar algunes carpetes."
+      ],
+      "There was an error, please try again.": [
+        "Hi ha hagut un error, torneu-ho a provar."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
@@ -7158,9 +7164,9 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Creeu una etiqueta per als missatges importats, un interval de temps per a aquesta importació, i les etiquetes que vulgueu importar."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Crea un núvol segur per a ${ value } membre",
-        "Crea un núvol segur per a ${ value } membres"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crea un núvol segur per a ${ memberCount } membre",
+        "Crea un núvol segur per a ${ memberCount } membres"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crear i gestionar subcomptes i assignar-los adreces de correu en el vostre domini personalitzat."
@@ -8460,6 +8466,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Recomanat per TechRadar Pro amb una puntuació de 4,2 sobre 5 estrelles"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Temporalment no disponible a causa de l'alta demanda. Torneu-ho a provar més tard."
       ],
       "Temporarily unavailable. Please check back later.": [
         "No està disponible temporalment. Comproveu-ho de nou més tard."
@@ -11034,11 +11043,26 @@
       "Built-in chat": [
         "Xat integrat"
       ],
+      "Cloud storage and file sharing": [
+        "Emmagatzematge al núvol i compartició d'arxius"
+      ],
+      "Data retention policies": [
+        "Polítiques de conservació de dades"
+      ],
+      "Document and spreadsheet editor": [
+        "Editor de documents i de fulls de càlcul"
+      ],
+      "Email writing assistant": [
+        "Assistent d'escriptura de correus electrònics"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Compartició de pantalla xifrada d’extrem a extrem i xat efímer durant la trucada"
       ],
       "Hosts can record meetings locally on their computers": [
         "Els amfitrions poden gravar reunions localment als seus ordinadors"
+      ],
+      "Includes Meet Professional": [
+        "Inclou Meet Professional"
       ],
       "Meeting recording": [
         "Enregistrament de la reunió"
@@ -11046,8 +11070,17 @@
       "One active meeting at a time": [
         "Una reunió activa alhora"
       ],
+      "Password manager with team vaults": [
+        "Gestor de contrasenyes amb caixes fortes d'equip"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Xat d'IA privat (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Compartir pantalla"
+      ],
+      "Secure mail and calendar": [
+        "Correu i calendari segurs"
       ],
       "Unlimited meetings per day": [
         "Reunions il·limitades per dia"
@@ -11063,6 +11096,9 @@
       "Video meetings, ${ n } participant": [
         "Videoconferències, ${ n } participant",
         "Videoconferències, ${ n } participants"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN amb bloqueig d’anuncis i protecció contra programari maliciós"
       ]
     },
     "meet_2025: Info": {
@@ -16009,9 +16045,6 @@
       "Organization logo updated": [
         "S'ha actualitzat el logo de l'organització."
       ],
-      "Organization name set": [
-        "S'ha establert el nom de l'organització"
-      ],
       "Organization name updated": [
         "S'ha actualitzat el nom de l'organització."
       ],
@@ -16174,6 +16207,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou, entre d'altres, historial de versions i compartició de fitxers xifrats."
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "Per a ús personal"
+      ],
+      "For professional use": [
+        "Per a ús professional"
       ]
     },
     "Tab in domain modal": {

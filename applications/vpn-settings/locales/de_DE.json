@@ -128,6 +128,9 @@
       "Back to sign in": [
         "Zurück zur Anmeldung"
       ],
+      "Back to sign-in": [
+        "Zurück zur Anmeldung"
+      ],
       "Block": [
         "Sperren"
       ],
@@ -3486,6 +3489,9 @@
       "/month": [
         "/Monat"
       ],
+      "/user /month": [
+        "/Benutzer/Monat"
+      ],
       "/user per month": [
         "/Benutzer pro Monat"
       ]
@@ -4752,6 +4758,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Es gibt zu viele Ordner in deinem externen Konto. Bitte passe den Import an, um einige Ordner zu löschen."
       ],
+      "There was an error, please try again.": [
+        "Es ist ein Fehler aufgetreten. Bitte versuche es erneut."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
       ],
@@ -5770,12 +5779,23 @@
       ],
       "Group address:": [
         "E-Mail-Adresse der Gruppe:"
+      ],
+      "Roles and permission:": [
+        "Rollen und Rechte:"
       ]
     },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } Mitglied",
         "${ memberCount } Mitglieder"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "Allgemein"
+      ],
+      "Roles and permissions": [
+        "Rollen und Rechte"
       ]
     },
     "Header": {
@@ -6910,9 +6930,9 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Erstelle eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Kategorien (Labels), die du importieren möchtest."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Erstelle eine sichere Cloud für ${ value } Mitglied",
-        "Erstelle eine sichere Cloud für ${ value } Mitglieder"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Erstelle eine sichere Cloud für ${ memberCount } Mitglied",
+        "Erstelle eine sichere Cloud für ${ memberCount } Mitglieder"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Erstelle und verwalte Unterkonten und weise ihnen E-Mail-Adressen in deiner eigenen Domain zu."
@@ -6926,6 +6946,10 @@
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Gateway-Server wird erstellt: ${ serverNumber } / ${ total }",
         "Gateway-Server werden erstellt: ${ serverNumber } / ${ total }"
+      ],
+      "Creating gateway with ${ total } server": [
+        "Gateway mit ${ total } Server wird erstellt",
+        "Gateway mit ${ total } Servern wird erstellt"
       ],
       "Creating your account": [
         "Dein Konto wird erstellt"
@@ -8208,6 +8232,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Empfohlen von TechRadar Pro mit einer Bewertung von 4,2 von 5 Sternen"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Vorübergehend wegen hoher Nachfrage nicht verfügbar. Bitte versuche es später nochmals."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei."
@@ -10747,11 +10774,26 @@
       "Built-in chat": [
         "Eingebauter Chat"
       ],
+      "Cloud storage and file sharing": [
+        "Cloud-Speicher und Dateifreigabe"
+      ],
+      "Data retention policies": [
+        "Aufbewahrungsrichtlinien für Daten"
+      ],
+      "Document and spreadsheet editor": [
+        "Dokumenten- und Tabellenkalkulationseditor"
+      ],
+      "Email writing assistant": [
+        "E-Mail-Schreibassistent"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Ende-zu-Ende-verschlüsselte Bildschirmfreigabe und temporärer Chat während des Anrufs"
       ],
       "Hosts can record meetings locally on their computers": [
         "Organisatoren können Besprechungen lokal auf ihren Computern aufzeichnen"
+      ],
+      "Includes Meet Professional": [
+        "Beinhaltet Meet Professional"
       ],
       "Meeting recording": [
         "Meeting wird aufgezeichnet"
@@ -10759,8 +10801,17 @@
       "One active meeting at a time": [
         "Ein aktives Meeting gleichzeitig"
       ],
+      "Password manager with team vaults": [
+        "Passwort-Manager mit Team-Tresoren"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Privater KI-Chat (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Bildschirmfreigabe"
+      ],
+      "Secure mail and calendar": [
+        "Sichere E-Mail und Kalender"
       ],
       "Unlimited meetings per day": [
         "Unbegrenzte Meetings pro Tag"
@@ -10776,6 +10827,9 @@
       "Video meetings, ${ n } participant": [
         "Video-Meetings, ${ n } Teilnehmer",
         "Video-Meetings, ${ n } Teilnehmer"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN mit Werbeblocker und Malware-Schutz"
       ]
     },
     "meet_2025: Info": {
@@ -11181,6 +11235,9 @@
       "99.95% SLA": [
         "Dienstleistungsvereinbarung über 99,95 % Verfügbarkeit"
       ],
+      "Access all countries": [
+        "Zugriff auf alle Länder"
+      ],
       "Activity logs and policy": [
         "Aktivitätsprotokolle und Richtlinie"
       ],
@@ -11357,6 +11414,9 @@
       "Multiple admin roles": [
         "Mehrere Administratorrollen"
       ],
+      "No streaming support": [
+        "Keine Unterstützung für Streaming"
+      ],
       "No-logs policy": [
         "No-Logs-Richtlinie"
       ],
@@ -11519,6 +11579,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Volumen/Bandbreite unbegrenzt"
+      ],
+      "Unlock streaming": [
+        "Streaming entsperren"
       ],
       "Up to ${ n } user": [
         "Bis zu ${ n } Benutzer",
@@ -11973,6 +12036,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } Land",
+        "${ n } Länder"
+      ],
       "Access advanced VPN features": [
         "Profitiere von erweiterten VPN-Funktionen"
       ],
@@ -12031,6 +12098,9 @@
       "${ app } product updates": [
         "${ app }-Produktaktualisierungen"
       ],
+      "${ BRAND_NAME } for Business communications": [
+        "${ BRAND_NAME } für die Geschäftskommunikation"
+      ],
       "${ BRAND_NAME } important announcements": [
         "Wichtige Ankündigungen von ${ BRAND_NAME }"
       ],
@@ -12081,6 +12151,9 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Während des ersten Monats, in dem das Produkt ${ BRAND_NAME } verwendet wird"
+      ],
+      "Email communications": [
+        "E-Mail-Kommunikation"
       ],
       "In-app notifications": [
         "Benachrichtigungen in der App"
@@ -15787,9 +15860,6 @@
       "Organization logo updated": [
         "Organisationslogo aktualisiert"
       ],
-      "Organization name set": [
-        "Name der Organisation festgelegt"
-      ],
       "Organization name updated": [
         "Organisationsname aktualisiert"
       ],
@@ -15952,6 +16022,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet Versionsverlauf, verschlüsselte Dateifreigabe und mehr."
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "Für die private Nutzung"
+      ],
+      "For professional use": [
+        "Für die berufliche Nutzung"
       ]
     },
     "Tab in domain modal": {

@@ -7160,9 +7160,9 @@
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Opret en sikker sky til ${ value } medlem",
-        "Opret en sikker sky til ${ value } medlemmer"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Opret en sikker sky til ${ memberCount } medlem",
+        "Opret en sikker sky til ${ memberCount } medlemmer"
       ],
       "Create in": [
         "Opret i"
@@ -8271,6 +8271,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synkroniser og administrer filer med ${ DRIVE_APP_NAME }-appen. Opret og del dokumenter i ${ DOCS_APP_NAME } og opbevar dem sikkert. Alt sammen på ${ ios }, ${ android } og ${ desktop }."
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Midlertidigt utilgængelig på grund af høj efterspørgsel. Prøv igen senere."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidigt utilgængelig. Tjek igen senere."
@@ -9477,6 +9480,9 @@
       ],
       "Category": [
         "Kategori"
+      ],
+      "Category:": [
+        "Kategori:"
       ],
       "CC": [
         "CC"

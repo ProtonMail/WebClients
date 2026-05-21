@@ -5748,9 +5748,6 @@
       "Less than a minute left": [
         "Wala pang isang minuto ang natitira"
       ],
-      "None": [
-        "Wala"
-      ],
       "Only ": [
         "Tanging "
       ],
@@ -5996,9 +5993,6 @@
       "Email address is required": [
         "Kailangan ang email address"
       ],
-      "Email is not valid": [
-        "Hindi valid ang email"
-      ],
       "Empty condition": [
         "Walang laman na kondisyon"
       ],
@@ -6079,9 +6073,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Mali ang pangalawang password. Pakisubukang muli."
-      ],
-      "Incorrect username": [
-        "Maling username"
       ],
       "Intended recipient does not support calendar sharing": [
         "Hindi sumusuporta sa pag-share ng kalendaryo ang nakatakdang tatanggap"
@@ -6180,9 +6171,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Hindi ${ BRAND_NAME } account"
       ],
-      "Not a valid number": [
-        "Hindi valid na numero"
-      ],
       "Organization key is not decrypted": [
         "Hindi naka-decrypt ang key ng organisasyon"
       ],
@@ -6194,9 +6182,6 @@
       ],
       "Password is required": [
         "Kailangan ang password"
-      ],
-      "Passwords do not match": [
-        "Hindi magkatugma ang mga password"
       ],
       "Payment process canceled": [
         "Kinansela ang proseso ng pagbabayad"
@@ -6362,9 +6347,6 @@
       "The amount due has changed. Please try again.": [
         "Nagbago ang halagang babayaran. Pakisubukang muli."
       ],
-      "The email addresses do not match": [
-        "Hindi magkatugma ang mga email address"
-      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Masyadong malaki ang file, ang maximum na laki ay ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -6404,14 +6386,8 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Masyadong maraming folder sa external account. Paki-customize ang import para i-delete ang ilang folder."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Lumalagpas ang field na ito sa maximum na ${ maximumLength } na character."
-      ],
       "This field is required": [
         "Kailangan ang field na ito"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Kailangan ng field na ito ng minimum na ${ minimumLength } na character."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Hindi available ang pangalan ng folder na ito. Pumili ng ibang pangalan."
@@ -6437,9 +6413,6 @@
       "Try again later": [
         "Subukang muli mamaya"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Subukan gamit ang mga letra, numero, at _.-"
-      ],
       "Unable to upload file": [
         "Hindi ma-upload ang file"
       ],
@@ -6457,12 +6430,6 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Ang mga na-upload na file ay hindi valid na mga pribadong key. Paki-verify at subukang muli."
-      ],
-      "Username must begin with a letter or digit": [
-        "Dapat magsimula ang username sa titik o numero"
-      ],
-      "Username must end with a letter or digit": [
-        "Dapat magtapos ang username sa titik o numero"
       ],
       "Validation error": [
         "Error sa pagpapatunay"
@@ -9025,10 +8992,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Gumawa ng label para sa mga na-import na mensahe, hanay ng oras para sa import na ito, at mga label na gustong i-import."
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "Gumawa ng secure na cloud para sa ${ value } miyembro",
-        "Gumawa ng secure na cloud para sa ${ value } na miyembro"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Gumawa at pamahalaan ang mga sub-account at bigyan sila ng mga email address sa iyong custom na domain."
@@ -20647,9 +20610,6 @@
       "Organization logo updated": [
         "Na-update ang logo ng organisasyon"
       ],
-      "Organization name set": [
-        "Naitakda na ang pangalan ng organisasyon"
-      ],
       "Organization name updated": [
         "Na-update ang pangalan ng organisasyon"
       ],
@@ -23392,16 +23352,6 @@
       ],
       "Writing assistant": [
         "Writing assistant"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Dapat maglaman ang password ng hindi bababa sa ${ MIN_PASSWORD_LENGTH } character",
-        "Dapat maglaman ang password ng hindi bababa sa ${ MIN_PASSWORD_LENGTH } na character"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Sumubok ng mas maikling username (${ n } character max)",
-        "Sumubok ng mas maikling username (${ n } na character max)"
       ]
     },
     "Video control": {

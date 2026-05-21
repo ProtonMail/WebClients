@@ -530,7 +530,7 @@
       "Go back": [
         "Torna enrere"
       ],
-      "Go back to album “${ ellipsedAlbumName }“": [
+      "Go back to album \"${ ellipsedAlbumName }\"": [
         "Torneu a l'àlbum \"${ ellipsedAlbumName }\""
       ],
       "Go to ${ planOrAppName }": [
@@ -3492,9 +3492,6 @@
       "Failed to resend invitation": [
         "No s'ha pogut tornar a enviar la invitació"
       ],
-      "Failed to save some photos to your Drive": [
-        "No s'han pogut desar algunes fotos al vostre Drive"
-      ],
       "Failed to unshare node": [
         "No s'ha pogut deixar de compartir el node"
       ],
@@ -3862,9 +3859,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "No es pot carregar el tauler de control de VPN. Comproveu la vostra connexió i torneu-ho a provar."
-      ],
-      "Unable to set photo as cover": [
-        "No es pot establir la foto com a portada."
       ],
       "Unexpected error, we can't import the contacts": [
         "S'ha produït un error inesperat. No es poden importar els contactes"
@@ -5346,9 +5340,9 @@
       "Create a new contact group": [
         "Crear un nou grup de contactes"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Crea un núvol segur per a ${ value } membre",
-        "Crea un núvol segur per a ${ value } membres"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crea un núvol segur per a ${ memberCount } membre",
+        "Crea un núvol segur per a ${ memberCount } membres"
       ],
       "Create in": [
         "Crear a"
@@ -6017,11 +6011,12 @@
       "Photo is set as album cover": [
         "La foto s'ha establert com a portada de l'àlbum."
       ],
+      "Photo saved to your Drive": [
+        "S'ha desat la foto al Drive",
+        "S'han desat les foto al Drive"
+      ],
       "Photo was copied to stream and marked favorite there.": [
         "La foto s’ha copiat al flux i s’hi ha marcat com a preferida."
-      ],
-      "Photo(s) saved to your Drive": [
-        "S'han desat les fotos al vostre Drive"
       ],
       "Photos have been successfully recovered.": [
         "S'han recuperat les fotos."
@@ -6650,6 +6645,10 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "Heu augmentat l'emmagatzematge a 5 GB!"
       ],
+      "We couldn't save this photo to your Drive": [
+        "No s'ha pogut desar aquesta foto al Drive",
+        "No s'han pogut desar aquestes fotos al Drive"
+      ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "No hem pogut verificar que ${ nameAuthor } hagi pujat ${ node.name }. És possible que s'hagi manipulat el següent: l'ordre de les dades del fitxer. Obriu-lo només si hi confieu. "
       ],
@@ -6670,6 +6669,10 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Utilitzem 3-D Secure per protegir els vostres pagaments."
+      ],
+      "We were not able to add this photo to your album": [
+        "No s'ha pogut afegir aquesta foto a l'àlbum",
+        "No s'han pogut afegir algunes fotos a l'àlbum"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Us redireccionarem a PayPal en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu bloquejadors emergents, inhabiliteu-los per continuar."
@@ -9434,6 +9437,10 @@
       "\"${ newName }\" renamed successfully": [
         "S'ha canviat el nom de \"${ newName }\""
       ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "S'ha afegit ${ addedUids.length } foto a \"${ albumName }\"",
+        "S'han afegit ${ addedUids.length } fotos a \"${ albumName }\""
+      ],
       "${ count } item failed to be decrypted": [
         "No s'ha pogut desxifrar ${ count } element.",
         "No s'han pogut desxifrar ${ count } elements."
@@ -9449,22 +9456,6 @@
       "${ errors.length } item failed to be trashed": [
         "No s'ha pogut moure ${ errors.length } element a la paperera",
         "No s'han pogut moure ${ errors.length } element a la paperera"
-      ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "No s'ha pogut eliminar ${ nbFailures } foto de «${ albumLink.name }»",
-        "No s'han pogut eliminar ${ nbFailures } fotos de «${ albumLink.name }»"
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "No s'ha pogut afegir ${ nbMainPhotosError } foto a «${ albumName }»",
-        "No s'han pogut afegir ${ nbMainPhotosError } fotos a «${ albumName }»"
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "S'ha afegit la foto ${ nbMainPhotosSuccess } a «${ albumName }»",
-        "S'han afegit ${ nbMainPhotosSuccess } fotos a «${ albumName }»"
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "S'ha esborrat ${ nbSuccesses } foto de \"${ albumLink.name }\"",
-        "S'han esborrat ${ nbSuccesses } fotos de \"${ albumLink.name }\""
       ],
       "${ numberOfItems } copied item moved to trash": [
         "S'ha mogut ${ numberOfItems } element copiat a la paperera",
@@ -9523,6 +9514,10 @@
       ],
       "${ reason } has been enabled": [
         "S'ha activat ${ reason } "
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "S'ha esborrat ${ removed } foto de \"${ albumName }\"",
+        "S'han esborrat ${ removed } fotos de \"${ albumName }\""
       ],
       "Access for the member removed": [
         "S'ha esborrat l'accés per al membre"
@@ -9650,9 +9645,6 @@
       "Selected items were successfully removed from your list": [
         "L'element seleccionat s'ha esborrat correctament de la llista",
         "Els elements seleccionats s'han esborrat correctament de la llista"
-      ],
-      "Selected photo(s) already in \"${ albumName }\"": [
-        "Les fotos seleccionades ja són a «${ albumName }»."
       ],
       "Setting updated. Editors can change permissions and share.": [
         "S'han actualitzat les referències. Els editors poden canviar els permisos i compartir-los."

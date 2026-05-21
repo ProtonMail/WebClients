@@ -1497,6 +1497,9 @@
       "Set as default": [
         "Nastaviť ako predvolený"
       ],
+      "Set as default mail application": [
+        "Nastaviť ako predvolenú poštovú aplikáciu"
+      ],
       "Set catch-all": [
         "Nastavenie doménového koša"
       ],
@@ -3427,11 +3430,17 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Pridať používateľov manuálne"
+      ],
       "Cancel": [
         "Zrušiť"
       ],
       "Close": [
         "Zavrieť"
+      ],
+      "Configure your network": [
+        "Nakonfigurujte svoju sieť"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovať s ${ MAIL_APP_NAME }."
@@ -3454,6 +3463,12 @@
       "Got it": [
         "Rozumiem"
       ],
+      "Invite your team": [
+        "Pozvite váš tím"
+      ],
+      "Manage global VPN permissions": [
+        "Správa globálnych oprávnení VPN"
+      ],
       "Maybe later": [
         "Možno neskôr"
       ],
@@ -3463,11 +3478,17 @@
       "Remind me later": [
         "Pripomenúť neskôr"
       ],
+      "Secure your organization": [
+        "Zabezpečte svoju organizáciu"
+      ],
       "Send": [
         "Odoslať"
       ],
       "Set up other features": [
         "Nastaviť ďalšie funkcie"
+      ],
+      "Set up SSO": [
+        "Nastaviť SSO"
       ],
       "Sign in": [
         "Prihlásiť sa"
@@ -5122,6 +5143,9 @@
       "/month": [
         "/mesiac"
       ],
+      "/user /month": [
+        "/používateľ /mesiac"
+      ],
       "/user per month": [
         "/používateľ mesačne"
       ]
@@ -5302,6 +5326,12 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vám umožňuje spolupracovať s ostatnými v zabezpečenom, šifrovanom prostredí."
       ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } nie je vašou predvolenou poštovou aplikáciou."
+      ],
+      "${ MAIL_APP_NAME } is your default mail application.": [
+        "${ MAIL_APP_NAME } je vašou predvolenou poštovou aplikáciou."
+      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } uchováva vaše obchodné údaje v bezpečí a umožňuje posielať šifrované emaily komukoľvek."
       ],
@@ -5344,6 +5374,9 @@
       "Connect your CRM, website, printers, and more.": [
         "Pripojte svoj CRM, webovú stránku, tlačiarne a ďalšie."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Vytvorte bránu, aby vaši používatelia mali prístup k vašim IT zdrojom prostredníctvom vyhradených serverov."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Vytvorte Zoom stretnutie a jedným kliknutím pridajte podrobnosti o pripojení k udalosti."
       ],
@@ -5353,8 +5386,14 @@
       "Create groups you can email with a single address.": [
         "Vytvorte skupiny, ktorým môžete posielať emaily pomocou jednej adresy."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Vytvorte nové používateľské účty alebo importujte používateľov pomocou SSO (jednotného prihlásenia) SCIM provisioningu."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Vytvorte pravidlá na určenie toho, kto sa môže pripojiť k zdieľaným serverom v jednotlivých krajinách."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Rozhodnite, ktorí používatelia sa môžu pripojiť ku každej z našich viac ako 120 zdieľaných serverových lokalít."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Získajte jednoduchý prístup k svojmu emailu a kalendáru v počítači aj v mobile."
@@ -5415,6 +5454,9 @@
       ],
       "How you unlock your encrypted data if you lose your password.": [
         "Ako odomknúť zašifrované údaje v prípade straty hesla."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Ak ste tak ešte neurobili, povoľte niektoré metódy obnovy, aby ste sa uistili, že nikdy nestratíte prístup k ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá sa, že zoznam kontaktov ktorý importujete, zahŕňa nejaké skupiny. Prosím, skontrolujte ako by tieto skupiny mali byť importované."
@@ -6774,6 +6816,9 @@
       "Enable auto-renew": [
         "Zapnúť automatickú obnovu"
       ],
+      "Enter your extra password": [
+        "Zadajte vaše dodatočné heslo"
+      ],
       "Explore plans": [
         "Preskúmať plány"
       ],
@@ -6812,9 +6857,6 @@
         "Bol dosiahnutý maximálny počet ${ limit } kontaktov. Ak chcete tento počet zmeniť, odstráňte jeden kontakt a pridajte nový.",
         "Bol dosiahnutý maximálny počet ${ limit } kontaktov. Ak chcete tento počet zmeniť, odstráňte jeden kontakt a pridajte nový.",
         "Bol dosiahnutý maximálny počet ${ limit } kontaktov. Ak chcete tento počet zmeniť, odstráňte jeden kontakt a pridajte nový."
-      ],
-      "None": [
-        "Žiadny"
       ],
       "Only ": [
         "Iba "
@@ -6968,6 +7010,9 @@
       ],
       "Unable to recover data": [
         "Dáta nie je možné obnoviť"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Odomknúť ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "Zvýšiť úroveň"
@@ -7198,17 +7243,11 @@
       "Email address is required": [
         "Emailová adresa je požadovaná"
       ],
-      "Email is not valid": [
-        "Emailová adresa nie je platná"
-      ],
       "Empty condition": [
         "Prázdna podmienka"
       ],
       "Enter 6 digits": [
         "Zadajte 6 číslic"
-      ],
-      "Enter your username without the domain (@example.com)": [
-        "Zadajte používateľské meno bez domény (@príklad.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Chyba pri pripojovaní k Bitcoin API."
@@ -7296,9 +7335,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Nesprávne druhé heslo. Skúste to znova, prosím."
-      ],
-      "Incorrect username": [
-        "Nesprávne používateľské meno"
       ],
       "Intended recipient does not support calendar sharing": [
         "Zamýšľaný príjemca nepodporuje zdieľanie kalendára"
@@ -7411,9 +7447,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Nie je ${ BRAND_NAME } účet"
       ],
-      "Not a valid number": [
-        "Neplatné číslo"
-      ],
       "Organization key is not decrypted": [
         "Kľúč organizácie nie je dešifrovaný"
       ],
@@ -7425,9 +7458,6 @@
       ],
       "Password is required": [
         "Heslo je požadované"
-      ],
-      "Passwords do not match": [
-        "Heslá sa nezhodujú"
       ],
       "Payment process canceled": [
         "Proces platby zrušený"
@@ -7615,9 +7645,6 @@
       "The amount due has changed. Please try again.": [
         "Čiastka na zaplatenie sa zmenila. Skúste to znova, prosím."
       ],
-      "The email addresses do not match": [
-        "Emailové adresy sa nezhodujú"
-      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Súbor je príliš veľký, maximálna veľkosť je ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -7660,17 +7687,14 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Na vašom externom účte je príliš veľa priečinkov. Upravte import na zmazanie niektorých priečinkov, prosím."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Toto pole presahuje maximálny počet znakov ${ maximumLength }."
+      "There was an error, please try again.": [
+        "Vyskytla sa chyba, skúste to znova, prosím."
       ],
       "This field is invalid": [
         "Toto pole je neplatné"
       ],
       "This field is required": [
         "Povinné pole"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Toto pole musí obsahovať minimálne ${ minimumLength } znakov."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Tento názov priečinka nie je k dispozícii. Zvoľte prosím iný názov."
@@ -7696,9 +7720,6 @@
       "Try again later": [
         "Skúste to znova neskôr"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Skúste používať iba písmená, číslice a _.-"
-      ],
       "Unable to upload file": [
         "Nepodarilo sa nahrať súbor"
       ],
@@ -7716,12 +7737,6 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Nahraté súbory nie sú platné súkromné kľúče. Skontrolujte a skúste to znovu."
-      ],
-      "Username must begin with a letter or digit": [
-        "Používateľské meno musí začínať písmenom alebo číslom"
-      ],
-      "Username must end with a letter or digit": [
-        "Používateľské meno musí končiť písmenom alebo číslom"
       ],
       "Validation error": [
         "Chyba overenia"
@@ -9026,6 +9041,9 @@
       ],
       "Group address:": [
         "Skupinová adresa:"
+      ],
+      "Roles and permission:": [
+        "Pozície a oprávnenia:"
       ]
     },
     "Group member count": {
@@ -9085,6 +9103,14 @@
       ],
       "Group membership": [
         "Členstvo v skupine"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "Všeobecné"
+      ],
+      "Roles and permissions": [
+        "Pozície a oprávnenia"
       ]
     },
     "Header": {
@@ -9748,6 +9774,9 @@
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "${ BRAND_NAME } plán Business poskytuje vášmu tímu všetky nástroje na spoluprácu, ktoré potrebuje na produktívnu a organizovanú prácu, a zároveň chráni vašu firmu."
       ],
+      "${ BRAND_NAME } Free": [
+        "${ BRAND_NAME } Free"
+      ],
       "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
         "${ BRAND_NAME } je nezávisle financovaný a funguje bez reklamy.\nNižšie uvádzame príklady toho, ako sa táto nezávislosť uplatňuje v praxi."
       ],
@@ -9867,6 +9896,9 @@
       ],
       "${ name } for Windows": [
         "${ name } pre Windows"
+      ],
+      "${ name } is not available": [
+        "${ name } nie je k dispozícii"
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: neumiestňovať do karantény ani neodmietať neautorizované emaily. Obvykle túto zásadu ľudia používajú zvyčajne na diagnostiku a odstraňovanie problémov alebo na testovanie."
@@ -10062,6 +10094,9 @@
       ],
       "(formerly Twitter)": [
         "(bývalý Twitter)"
+      ],
+      "**${ appName }** is not available for your account.": [
+        "**${ appName }** nie je pre váš účet k dispozícii."
       ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** nie je vo vašej organizácii **${ organizationName }** podporovaný."
@@ -10528,6 +10563,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Pred zahájením odosielania a prijímania emailov z vašich nových adries je potrebné pre ne vytvoriť šifrovacie kľúče."
       ],
+      "BEST FOR TV": [
+        "NAJLEPŠIE PRE TV"
+      ],
       "Beta": [
         "Beta"
       ],
@@ -10663,6 +10701,9 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Pokračujte v pripojení tohto subjektu k vašej organizácii ${ BRAND_NAME }."
       ],
+      "Continue with ${ BRAND_NAME } Free": [
+        "Pokračovať s ${ BRAND_NAME } Free"
+      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Ak budete pokračovať, váš účet ${ BRAND_NAME } sa prepojí s ${ name }."
       ],
@@ -10705,11 +10746,11 @@
       "Create a new code on your TV and try again.": [
         "Vytvorte nový kód na televízore a skúste to znova."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Vytvoriť bezpečný cloud pre ${ value } člena",
-        "Vytvoriť bezpečný cloud pre ${ value } členov",
-        "Vytvoriť bezpečný cloud pre ${ value } členov",
-        "Vytvoriť bezpečný cloud pre ${ value } členov"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Vytvoriť bezpečný cloud pre ${ memberCount } člena",
+        "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
+        "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
+        "Vytvoriť bezpečný cloud pre ${ memberCount } členov"
       ],
       "Create an account": [
         "Vytvoriť účet"
@@ -11230,11 +11271,17 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Nechajte sa upozorniť, ak dôjde k úniku vášho hesla alebo iných osobných údajov. ${ learnMoreLinkNoBreach }"
       ],
+      "Get started": [
+        "Začíname"
+      ],
       "Get started with the referral link above.": [
         "Začnite s odporúčacím odkazom vyššie."
       ],
       "Get visibility into account access": [
         "Získajte prehľad o prístupe k účtu"
+      ],
+      "Get VPN Plus": [
+        "Získajte VPN Plus"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Dajte tokenu popisný názov, napríklad službu, s ktorou ho plánujete používať a vyberte jednu z vašich aktívnych adries vlastnej domény. Iba táto adresa bude môcť odosielať emaily s týmto tokenom."
@@ -12307,6 +12354,9 @@
       "Set up your organization": [
         "Nastavte svoju organizáciu"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Nastavte svoju organizáciu a začnite chrániť svoje údaje v niekoľkých jednoduchých krokoch."
+      ],
       "Setting successfully saved": [
         "Nastavenie bolo úspešne uložené"
       ],
@@ -12345,6 +12395,12 @@
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Zobrazí obrázok každého odosielateľa v zozname správ. Ak nie je k dispozícii obrázok, zobrazia sa iniciály odosielateľa."
+      ],
+      "Show fewer benefits": [
+        "Zobraziť menej výhod"
+      ],
+      "Show more benefits": [
+        "Zobraziť ďalšie výhody"
       ],
       "Show original message": [
         "Zobraziť pôvodnú správu"
@@ -12483,6 +12539,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro odporúča s hodnotením 4,2 z 5 hviezdičiek"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "V súčasnosti nie je k dispozícii kvôli veľkému záujmu. Skúste to neskôr, prosím."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasne nedostupné. Skúste to neskôr."
@@ -12889,6 +12948,9 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Kým sa neodhlásite z vášho účtu alebo nezmeníte heslo, vaša relácia zostane aktívna. Relácia vyprší po 60 dňoch nečinnosti."
       ],
+      "Unlock streaming with VPN Plus.": [
+        "Odomknite streamovanie s VPN Plus."
+      ],
       "Unsaved changes": [
         "Neuložené zmeny"
       ],
@@ -13036,6 +13098,9 @@
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
+      "VPN Plus": [
+        "VPN Plus"
+      ],
       "VPN with dedicated servers and IP addresses": [
         "VPN s vyhradenými servermi a IP adresami"
       ],
@@ -13152,6 +13217,9 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Pokiaľ je vypnuté, zabraňuje sa načítaniu vzdialených obrázkov bez vášho vedomia."
+      ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "Ak je táto funkcia povolená, skontrolujeme, či je ${ MAIL_APP_NAME } vašou predvolenou poštovou aplikáciou a upozorníme vás, ak nie je."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Pri povolení SAML pre ${ appName } u poskytovateľa identity sa môže zobraziť výzva na použitie URL adresy spätného volania (ACS) a ID vydavateľa. Stačí skopírovať a vložiť nižšie uvedené údaje do polí poskytovateľa identity."
@@ -16644,11 +16712,26 @@
       "Built-in chat": [
         "Vstavaný chat"
       ],
+      "Cloud storage and file sharing": [
+        "Cloudové úložisko a zdieľanie súborov"
+      ],
+      "Data retention policies": [
+        "Zásady uchovávania údajov"
+      ],
+      "Document and spreadsheet editor": [
+        "Editor dokumentov a tabuliek"
+      ],
+      "Email writing assistant": [
+        "Asistent písania emailov"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end šifrované zdieľanie obrazovky a dočasný chat počas hovoru"
       ],
       "Hosts can record meetings locally on their computers": [
         "Moderátori môžu nahrávať stretnutia vo svojich počítačoch"
+      ],
+      "Includes Meet Professional": [
+        "Vrátane Meet Professional"
       ],
       "Meeting recording": [
         "Nahrávanie schôdze"
@@ -16656,8 +16739,17 @@
       "One active meeting at a time": [
         "Len jedna aktívna schôdza naraz"
       ],
+      "Password manager with team vaults": [
+        "Správca hesiel s tímovými trezormi"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Súkromný AI chat (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Zdieľanie obrazovky"
+      ],
+      "Secure mail and calendar": [
+        "Bezpečná pošta a kalendár"
       ],
       "Unlimited meetings per day": [
         "Neobmedzený počet schôdzok denne"
@@ -16679,6 +16771,9 @@
         "Videokonferencie, ${ n } účastníci",
         "Videokonferencie, ${ n } účastníkov",
         "Videokonferencie, ${ n } účastníkov"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN s blokovaním reklám a ochranou pred malvérom"
       ]
     },
     "meet_2025: Info": {
@@ -17388,6 +17483,9 @@
       "99.95% SLA": [
         "99,95 % SLA"
       ],
+      "Access all countries": [
+        "Prístup ku všetkým krajinám"
+      ],
       "Activity logs and policy": [
         "Záznamy aktivít a pravidlá"
       ],
@@ -17574,6 +17672,9 @@
       "Multiple admin roles": [
         "Viacero správcovských rolí"
       ],
+      "No streaming support": [
+        "Žiadna podpora zabezpečeného streamovania"
+      ],
       "No-logs policy": [
         "Politika žiadnych logov"
       ],
@@ -17741,6 +17842,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Neobmedzený objem / šírka pásma"
+      ],
+      "Unlock streaming": [
+        "Odomknite streamovanie"
       ],
       "Up to ${ n } user": [
         "Až ${ n } užívateľ",
@@ -18232,6 +18336,12 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } krajina",
+        "${ n } krajiny",
+        "${ n } krajín",
+        "${ n } krajín"
+      ],
       "Access advanced VPN features": [
         "Získajte prístup k pokročilým VPN funkciám"
       ],
@@ -24450,9 +24560,6 @@
       "Organization logo updated": [
         "Logo organizácie aktualizované"
       ],
-      "Organization name set": [
-        "Názov organizácie nastavený"
-      ],
       "Organization name updated": [
         "Názov organizácie aktualizovaný"
       ],
@@ -24672,6 +24779,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa históriu verzií, zdieľanie šifrovaných súborov a ďalšie."
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "Pre osobné použitie"
+      ],
+      "For professional use": [
+        "Na profesionálne použitie"
       ]
     },
     "Tab in domain modal": {
@@ -25204,6 +25319,9 @@
       "Change second password": [
         "Zmeniť druhé heslo"
       ],
+      "Check your default mail application": [
+        "Skontrolovať predvolenú poštovú aplikáciu"
+      ],
       "Choose a provider": [
         "Vyberte poskytovateľa"
       ],
@@ -25504,6 +25622,9 @@
       "Disconnected from Gmail": [
         "Odpojené od Gmailu"
       ],
+      "Dismiss setup checklist": [
+        "Zrušiť kontrolný zoznam nastavení"
+      ],
       "Display name and signature": [
         "Zobrazované meno a podpis"
       ],
@@ -25750,6 +25871,9 @@
       "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
         "Získajte ${ planMaxSpace } úložného priestoru pre svoje súbory, fotografie a dokumenty s ${ planName }. ${ upgradeButton }"
       ],
+      "Get ${ VPN_APP_NAME } on your TV": [
+        "Získajte ${ VPN_APP_NAME } do svojej TV"
+      ],
       "Get ${ vpnPlus } to access all servers": [
         "Získajte ${ vpnPlus } pre prístup ku všetkým serverom"
       ],
@@ -25779,6 +25903,9 @@
       ],
       "Get more from your VPN": [
         "Získajte zo svojej VPN viac"
+      ],
+      "Get started": [
+        "Začíname"
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Stiahnite si aplikáciu na všetky svoje zariadenia a využívajte bezpečný a plynulý prístup kdekoľvek."
@@ -27595,20 +27722,6 @@
       ],
       "Writing assistant": [
         "Asistent písania"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znak",
-        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znaky",
-        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov",
-        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Skúste kratšie používateľské meno (max. ${ n } znak)",
-        "Skúste kratšie používateľské meno (max. ${ n } znaky)",
-        "Skúste kratšie používateľské meno (max. ${ n } znakov)",
-        "Skúste kratšie používateľské meno (max. ${ n } znakov)"
       ]
     },
     "Video control": {

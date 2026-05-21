@@ -1691,6 +1691,9 @@
       "(Empty)": [
         "(Prázdne)"
       ],
+      "2FA code copied to clipboard": [
+        "2FA kód skopírovaný do schránky"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dní na bezplatné vyskúšanie prémiových funkcií. Len počas vášho prvého týždňa s ${ BRAND_NAME }."
       ],
@@ -1741,6 +1744,9 @@
       ],
       "Admin": [
         "Správca"
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "Po automatickom vyplnení prihlasovacích údajov sa 2FA kód skopíruje do schránky."
       ],
       "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
         "Po potvrdení budete musieť prijať výzvu na povolenie pre aplikáciu ${ PASS_APP_NAME }."
@@ -2371,9 +2377,6 @@
       ],
       "password": [
         "heslo"
-      ],
-      "Password copied": [
-        "Heslo skopírované"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Heslo na uzamknutie bolo úspešne zaregistrované. Použite ho na odomknutie ${ PASS_APP_NAME }"
@@ -3260,6 +3263,9 @@
       ],
       "Authenticate with passkeys": [
         "Overiť pomocou prístupových kľúčov"
+      ],
+      "Auto-copy 2FA code": [
+        "Automatické kopírovanie 2FA kódu"
       ],
       "Auto-lock after": [
         "Automatické uzamknutie po"

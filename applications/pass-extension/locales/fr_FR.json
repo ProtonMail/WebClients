@@ -1645,6 +1645,9 @@
       "(Empty)": [
         "(Vide)"
       ],
+      "2FA code copied to clipboard": [
+        "Le code A2F a été copié dans le presse-papiers."
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 jours pour essayer gratuitement les fonctionnalités premium, lors de votre première semaine d'utilisation de ${ BRAND_NAME }."
       ],
@@ -1695,6 +1698,9 @@
       ],
       "Admin": [
         "Administrateur"
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "Après remplissage des identifiants, le code A2F associé est copié dans le presse-papiers."
       ],
       "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
         "Après confirmation, vous devrez accepter une demande d'autorisation pour ${ PASS_APP_NAME }."
@@ -2311,9 +2317,6 @@
       ],
       "password": [
         "mot de passe"
-      ],
-      "Password copied": [
-        "Le mot de passe a été copié."
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Le verrouillage par mot de passe a été enregistré. Utilisez-le pour débloquer ${ PASS_APP_NAME }."
@@ -3160,6 +3163,9 @@
       ],
       "Authenticate with passkeys": [
         "Authentification à l'aide de clés d'accès"
+      ],
+      "Auto-copy 2FA code": [
+        "Copier automatiquement le code A2F"
       ],
       "Auto-lock after": [
         "Verrouillage automatique après"

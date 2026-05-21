@@ -1319,6 +1319,11 @@
         "Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para bate-papos ilimitados, histórico estendido, acesso a modelos de IA avançados e muito mais."
       ]
     },
+    "collider_2025: Error (file processing)": {
+      "Error processing file: ${ file.name }": [
+        "Erro ao processar arquivo: ${ file.name }"
+      ]
+    },
     "collider_2025: Error Message": {
       "If retrying doesn’t work, check back later or consider upgrading to ${ LUMO_SHORT_APP_NAME } Plus to jump to the front of the line during peak times.": [
         "Se tentar novamente não funcionar, volte mais tarde ou considere fazer upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para ter prioridade durante os horários de pico."
@@ -2687,9 +2692,6 @@
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Obtenha o ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
-      "Help and support": [
-        "Ajuda e suporte"
       ],
       "Hide sidebar": [
         "Ocultar barra lateral"
@@ -4999,6 +5001,9 @@
       "${ storage } storage": [
         "${ storage } de armazenamento"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } oculta seu tráfego. ${ PASS_SHORT_APP_NAME } oculta sua identidade\n— aliases **hide-my-email ilimitados** e **alertas da dark-web** se seus dados foram vazados."
+      ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/mês)"
       ],
@@ -5084,9 +5089,9 @@
       "Country code": [
         "Código do país"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Criar uma nuvem segura para ${ value } membro",
-        "Criar uma nuvem segura para ${ value } membros"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Criar uma nuvem segura para ${ memberCount } membro",
+        "Criar uma nuvem segura para ${ memberCount } membros"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não usada no plano anterior da sua assinatura"
@@ -6321,6 +6326,9 @@
       "99.95% SLA": [
         "SLA de 99,95%"
       ],
+      "Access all countries": [
+        "Acesso a todos os países"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueio de anuncios e proteção contra malware"
       ],
@@ -6601,6 +6609,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Volume/largura de banda ilimitados"
+      ],
+      "Unlock streaming": [
+        "Desbloquear streaming"
       ],
       "Up to ${ n } user": [
         "Até ${ n } usuário",
@@ -6982,6 +6993,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } país",
+        "${ n } países"
+      ],
       "Access advanced VPN features": [
         "Acesse recursos avançados de VPN"
       ],

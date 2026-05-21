@@ -1509,6 +1509,9 @@
       "(Empty)": [
         "(Tyhjä)"
       ],
+      "2FA code copied to clipboard": [
+        "Kaksivaiheisen todennuksen koodi kopioitiin leikepöydälle"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 päivää aikaa kokeilla premium-ominaisuuksia ilmaiseksi. Voimassa vain ensimmäisen ${ BRAND_NAME } -viikkosi ajan."
       ],
@@ -1547,6 +1550,9 @@
       ],
       "Admin": [
         "Ylläpito"
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "Kun kirjautumistiedot on täytetty automaattisesti, kaksivaiheisen todennuksen koodi kopioidaan leikepöydälle."
       ],
       "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
         "Vahvistuksen jälkeen sinun on hyväksyttävä lupapyyntö ${ PASS_APP_NAME } sovellukselle."
@@ -2086,9 +2092,6 @@
       ],
       "password": [
         "salasana"
-      ],
-      "Password copied": [
-        "Salasana kopioitiin"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Salasanalukitus on aktivoitu ja voit nyt avata ${ PASS_APP_NAME }in salasanallasi."
@@ -2845,6 +2848,9 @@
       ],
       "Authenticate with passkeys": [
         "Tunnistaudu pääsyavaimilla"
+      ],
+      "Auto-copy 2FA code": [
+        "Kopioi kaksivaiheisen todennuksen koodi automaattisesti"
       ],
       "Auto-lock after": [
         "Lukitse automaattisesti"
