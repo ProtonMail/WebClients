@@ -1,9 +1,6 @@
 @use '~@proton/styles/scss/proton-drive';
 @use '~@proton/styles/scss/specifics/placeholder-loading';
 
-@use './components/sections/Trash/EmptyTrashNotification/EmptyTrashNotification';
 @use './components/FileBrowser/FileBrowser';
-@use './components/FolderTree/FolderTree';
-@use './components/FolderTree/FloatingEllipsis';
 @use './components/layout/sidebar/DriveSidebar/DriveSidebar';
 @use './components/sections/sections';
