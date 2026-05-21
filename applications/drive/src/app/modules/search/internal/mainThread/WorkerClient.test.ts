@@ -95,7 +95,8 @@ describe('WorkerClient', () => {
 
             jest.advanceTimersByTime(3000);
             expect(fakeApi.heartbeatClient).toHaveBeenCalledTimes(1);
-            expect(fakeApi.heartbeatClient).toHaveBeenCalledWith(CLIENT_ID);
+            // jsdom default visibilityState is 'visible'
+            expect(fakeApi.heartbeatClient).toHaveBeenCalledWith(CLIENT_ID, true);
 
             jest.advanceTimersByTime(3000);
             expect(fakeApi.heartbeatClient).toHaveBeenCalledTimes(2);
@@ -162,6 +163,40 @@ describe('WorkerClient', () => {
             const error = await done;
             expect(error).toBeInstanceOf(SearchWorkerDisconnectedError);
             expect(results).toHaveLength(0);
+        });
+
+        it('re-registers when the worker reports the client is no longer registered', async () => {
+            fakeApi.heartbeatClient.mockResolvedValue({ isClientRegistered: false });
+
+            const client = new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
+            client.start();
+            expect(fakeApi.registerClient).toHaveBeenCalledTimes(1);
+
+            await jest.advanceTimersByTimeAsync(3000);
+
+            expect(fakeApi.registerClient).toHaveBeenCalledTimes(2);
+        });
+
+        it('does not re-register while heartbeat reports we are still registered', async () => {
+            fakeApi.heartbeatClient.mockResolvedValue({ isClientRegistered: true });
+
+            const client = new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
+            client.start();
+            expect(fakeApi.registerClient).toHaveBeenCalledTimes(1);
+
+            await jest.advanceTimersByTimeAsync(3000);
+
+            expect(fakeApi.registerClient).toHaveBeenCalledTimes(1);
+        });
+
+        it('does not auto-register on isClientRegistered=false if start() was never called', async () => {
+            fakeApi.heartbeatClient.mockResolvedValue({ isClientRegistered: false });
+
+            new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
+
+            await jest.advanceTimersByTimeAsync(3000);
+
+            expect(fakeApi.registerClient).not.toHaveBeenCalled();
         });
 
         it('stops heartbeat on dispose', () => {
