@@ -2,8 +2,8 @@ import type { ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { isColumnMode } from 'proton-mail/helpers/mailSettings';
 import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
@@ -23,7 +23,7 @@ interface Props {
 export const MailHeaderActionArea = ({ elementsData, actions, toolbar }: Props) => {
     const location = useLocation();
 
-    const isRefreshedToolbarUIDisabled = useFlag('RefreshedToolbarUIDisabled');
+    const { shouldSeeWideToolbars } = useCategoriesData();
 
     const labelID = useMailSelector(selectLabelID);
     const elementID = useMailSelector(selectElementID);
@@ -35,20 +35,20 @@ export const MailHeaderActionArea = ({ elementsData, actions, toolbar }: Props) 
     /** Search is displayed everytime except when we are on message view with row mode */
     const displaySearch = !(!isColumn && elementID);
 
-    if (isRefreshedToolbarUIDisabled) {
-        return breakpoints.viewportWidth['<=small'] ||
-            breakpoints.viewportWidth.medium ||
-            (breakpoints.viewportWidth.large && elementID) ? (
-            <div className="flex-1 flex flex-nowrap justify-space-between">
-                {toolbar}
-                {!elementID && <MailSearch labelID={labelID} location={location} columnMode={isColumn} />}
-            </div>
-        ) : displaySearch ? (
-            <MailSearch labelID={labelID} location={location} columnMode={isColumn} />
-        ) : (
-            <>{toolbar}</>
-        );
+    if (shouldSeeWideToolbars) {
+        return <MailToolbar placement="header" actions={actions} elementsData={elementsData} />;
     }
 
-    return <MailToolbar placement="header" actions={actions} elementsData={elementsData} />;
+    return breakpoints.viewportWidth['<=small'] ||
+        breakpoints.viewportWidth.medium ||
+        (breakpoints.viewportWidth.large && elementID) ? (
+        <div className="flex-1 flex flex-nowrap justify-space-between">
+            {toolbar}
+            {!elementID && <MailSearch labelID={labelID} location={location} columnMode={isColumn} />}
+        </div>
+    ) : displaySearch ? (
+        <MailSearch labelID={labelID} location={location} columnMode={isColumn} />
+    ) : (
+        <>{toolbar}</>
+    );
 };
