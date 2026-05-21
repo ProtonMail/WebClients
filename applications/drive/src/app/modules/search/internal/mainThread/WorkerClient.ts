@@ -81,12 +81,18 @@ export class WorkerClient {
     //   browser-managed singleton, and re-registering the client is a noop (covered by tests).
     private async heartbeatWithCheck() {
         try {
-            await Promise.race([
-                this.api.heartbeatClient(this.clientId),
+            const isForeground = document.visibilityState === 'visible';
+            const { isClientRegistered } = await Promise.race([
+                this.api.heartbeatClient(this.clientId, isForeground),
                 new Promise<never>((_, reject) =>
                     setTimeout(() => reject(new SharedWorkerHeartbeatTimeout()), HEARTBEAT_TIMEOUT)
                 ),
             ]);
+            if (!isClientRegistered && this.running) {
+                // Worker evicted the client (e.g. inactive tab cleaned up while throttled). Re-register.
+                this.running = false;
+                this.start();
+            }
         } catch (error) {
             if (error instanceof SharedWorkerHeartbeatTimeout) {
                 searchMetrics.markWorkerHealthError({ kind: 'heartbeat-timeout', error });
