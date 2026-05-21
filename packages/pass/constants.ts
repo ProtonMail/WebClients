@@ -51,10 +51,6 @@ export const PASS_HOWTO_URL = 'https://proton.me/support/pass/using-proton-pass'
 export const PRIVATE_DOMAINS_URL = 'https://proton.me/download/pass/auto-detection/public_suffix_list.dat';
 export const WEBSITE_RULES_URL = 'https://proton.me/download/pass/auto-detection/rules.json';
 export const WEBSITE_RULES_EXPERIMENTAL_URL = 'https://proton.me/download/pass/auto-detection/rules.experimental.json';
-export const AGENT_INSTRUCTIONS_URL =
-    EXTENSION_BUILD || DESKTOP_BUILD
-        ? 'https://proton.me/download/pass/agent-data/agent-instructions.md'
-        : '/assets/agent-instructions.md'; // HOTFIX CSP
 
 export const ITEM_COUNT_RATING_PROMPT = 10;
 

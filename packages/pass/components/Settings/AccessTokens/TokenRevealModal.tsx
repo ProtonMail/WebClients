@@ -11,7 +11,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
-import { AGENT_INSTRUCTIONS_URL } from '@proton/pass/constants';
+import { AGENT_INSTRUCTIONS_URL } from '@proton/pass/constants.runtime';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { getAgentInstructions } from '@proton/pass/store/actions';
 import type { MaybeNull } from '@proton/pass/types';
