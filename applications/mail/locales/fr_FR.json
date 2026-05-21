@@ -4302,6 +4302,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Nous suspendrons les importations lorsque le taux de remplissage atteindra 80 % afin de réserver de l'espace pour les nouveaux messages."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Nous avons commencé à importer vos e-mails depuis Gmail. Nous vous préviendrons lorsque l'opération sera terminée."
       ]
     },
     "description": {
@@ -9049,6 +9055,12 @@
       "Create a secure cloud for ${ memberCount } member": [
         "Créer un cloud sécurisé pour ${ memberCount } membre",
         "Créer un cloud sécurisé pour ${ memberCount } membres"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Temporairement indisponible à cause d'une forte demande. Veuillez réessayer ultérieurement."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Faire confiance à la clé « ${ activeSignerText } » pour vérifier les nouveaux messages provenant de ce contact."
       ]
     },
     "info": {
@@ -9115,6 +9127,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Signataire actif"
+      ],
+      "Fallback": [
+        "Solution de secours"
       ]
     },
     "Key pinning": {
@@ -10114,6 +10132,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Category:": [
+        "Catégorie :"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12677,6 +12698,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Nous vous recommandons de ne plus faire confiance à cette clé."
+      ],
+      "This contact currently signs messages with this key": [
+        "Ce contact signe actuellement les messages avec cette clé."
+      ],
+      "This key is used for message verification": [
+        "Cette clé est utilisée pour la vérification des messages."
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Cette clé permet de chiffrer les messages de ce contact sur les applications plus anciennes."
       ]
     },
     "PGP key warning": {

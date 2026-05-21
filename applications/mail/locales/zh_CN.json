@@ -4269,6 +4269,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "存储空间使用量达到 80% 时，我们会暂停导入，为接收新消息预留空间。"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "我们已开始从 Gmail 导入您的邮件，导入完成后将通知您。"
       ]
     },
     "description": {
@@ -8895,6 +8901,12 @@
       ],
       "Create a secure cloud for ${ memberCount } member": [
         "为 ${ memberCount } 位成员创建安全云空间"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "由于需求过高暂时不可用，请稍后重试。"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "信任“${ activeSignerText }”密钥以验证来自此联系人的新消息"
       ]
     },
     "info": {
@@ -8958,6 +8970,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "活动签名人"
+      ],
+      "Fallback": [
+        "回退"
       ]
     },
     "Key pinning": {
@@ -9952,6 +9970,9 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Category:": [
+        "类别："
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12464,6 +12485,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "建议您不再信任此密钥。"
+      ],
+      "This contact currently signs messages with this key": [
+        "该联系人当前使用此密钥对消息进行签名"
+      ],
+      "This key is used for message verification": [
+        "此密钥用于消息验证"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "此密钥用于在旧版应用中加密发送给此联系人的消息"
       ]
     },
     "PGP key warning": {

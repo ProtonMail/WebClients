@@ -4302,6 +4302,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Yeni iletilere yer ayırmak için depolama alanı %80'e ulaştığında içe aktarma işlemlerini duraklatacağız."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Gmail'deki e-postalarınızı içe aktarmaya başladık. İşlem tamamlandığında size haber vereceğiz."
       ]
     },
     "description": {
@@ -9049,6 +9055,12 @@
       "Create a secure cloud for ${ memberCount } member": [
         "${ memberCount } üye için güvenli bir bulut oluşturun",
         "${ memberCount } üye için güvenli bir bulut oluşturun"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Yoğun istek nedeniyle geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Bu kişiden gelen yeni iletileri doğrulamak için \"${ activeSignerText }\" anahtarına güven."
       ]
     },
     "info": {
@@ -9115,6 +9127,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktif İmza Sahibi"
+      ],
+      "Fallback": [
+        "Geri dönüş"
       ]
     },
     "Key pinning": {
@@ -10114,6 +10132,9 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Category:": [
+        "Kategori:"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12677,6 +12698,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Bu anahtara \"güvenmemeniz\" önerilir."
+      ],
+      "This contact currently signs messages with this key": [
+        "Bu kişi şu anda iletileri bu anahtarla imzalıyor"
+      ],
+      "This key is used for message verification": [
+        "Bu anahtar ileti doğrulama için kullanılır"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Bu anahtar eski uygulamalarda bu kişiyle olan iletileri şifrelemek için kullanılır"
       ]
     },
     "PGP key warning": {

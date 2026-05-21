@@ -4368,6 +4368,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Keď sa úložisko zaplní na 80 %, pozastavíme import, aby sme uvoľnili miesto pre nové správy."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Začali sme importovať vaše emaily z Gmailu. Dáme vám vedieť, keď bude import hotový."
       ]
     },
     "description": {
@@ -9357,6 +9363,12 @@
         "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
         "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
         "Vytvoriť bezpečný cloud pre ${ memberCount } členov"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "V súčasnosti nie je k dispozícii kvôli veľkému záujmu. Skúste to neskôr, prosím."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Dôverovať kľúču „${ activeSignerText }“ pri overovaní nových správ od tohto kontaktu."
       ]
     },
     "info": {
@@ -9429,6 +9441,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktívny signatár"
+      ],
+      "Fallback": [
+        "záložný"
       ]
     },
     "Key pinning": {
@@ -10438,6 +10456,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Category:": [
+        "Kategória:"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13103,6 +13124,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Odporúčame, aby ste pri tomto kľúči zvolili \"Nedôverovať\"."
+      ],
+      "This contact currently signs messages with this key": [
+        "Tento kontakt v súčasnosti podpisuje správy týmto kľúčom"
+      ],
+      "This key is used for message verification": [
+        "Tento kľúč slúži na overenie správy"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Tento kľúč sa používa na šifrovanie správ tomuto kontaktu v starších aplikáciách"
       ]
     },
     "PGP key warning": {
