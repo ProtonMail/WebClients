@@ -1,4 +1,5 @@
 @use '~@proton/pass/styles/common' as *;
+@use '~@proton/styles/scss/lib/em' as *;
 @use '~@proton/pass/styles/extension' as *;
 
 body {
@@ -7,6 +8,6 @@ body {
 
 .item-icon {
 	background-color: var(--field-norm);
-	padding: em(4);
+	padding: #{em(4)};
 	border-radius: var(--border-radius-md);
 }
