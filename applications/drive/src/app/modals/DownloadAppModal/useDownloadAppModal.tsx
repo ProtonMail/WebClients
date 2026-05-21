@@ -26,7 +26,7 @@ import macLaptop from '@proton/styles/assets/img/onboarding/drive-download-previ
 import windowsLaptop from '@proton/styles/assets/img/onboarding/drive-download-preview-windows.webp';
 import noop from '@proton/utils/noop';
 
-import { useDesktopDownloads } from '../../hooks/drive/useDesktopDownloads';
+import { useDesktopDownloads } from '../../legacy/hooks/drive/useDesktopDownloads';
 import androidLogo from './android.webp';
 import iosLogo from './ios.webp';
 

@@ -15,13 +15,13 @@ import type { UserSettingsResponse } from '@proton/shared/lib/interfaces/drive/u
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
 
+import { unleashVanillaStore } from './legacy/zustand/unleash/unleash.store';
 import locales from './locales';
 import { driveMetrics } from './modules/metrics';
 import { type DriveState, extendStore, setupStore } from './redux-store/store';
 import { clearOPFS } from './utils/opfs';
 import { Features, measureFeaturePerformance } from './utils/telemetry';
 import { loadStreamsPolyfill } from './utils/webStreamsPolyfill';
-import { unleashVanillaStore } from './zustand/unleash/unleash.store';
 
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
     setMetricsEnabled(true);

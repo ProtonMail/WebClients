@@ -9,10 +9,10 @@ import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import { uploadManager, useUploadQueueStore } from '@proton/drive/modules/upload';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
-import { useDownloadContainsDocumentsModal } from '../../components/modals/DownloadContainsDocumentsModal';
-import { DownloadManager } from '../../managers/download/DownloadManager';
+import { useDownloadContainsDocumentsModal } from '../../legacy/components/modals/DownloadContainsDocumentsModal';
+import { IssueStatus, useDownloadManagerStore } from '../../legacy/zustand/download/downloadManager.store';
 import { useSignatureIssueModal } from '../../modals/SignatureIssueModal';
-import { IssueStatus, useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
+import { DownloadManager } from '../../modules/download/DownloadManager';
 import { isCancellable, isRetryable } from './transferStatus';
 import type { TransferManagerEntry } from './useTransferManagerState';
 

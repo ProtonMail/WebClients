@@ -6,7 +6,7 @@ import { getDrive, useDrive } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { PROTON_LOCAL_DOMAIN } from '@proton/shared/lib/localDev';
 
-import { partialPublicViewKey } from '../../../hooks/util/usePartialPublicView';
+import { partialPublicViewKey } from '../../../legacy/hooks/util/usePartialPublicView';
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { replaceLocalURL } from '../../../utils/replaceLocalURL';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';

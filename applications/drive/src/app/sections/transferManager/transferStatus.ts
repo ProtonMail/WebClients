@@ -1,7 +1,7 @@
 import { MemberRole } from '@proton/drive/index';
 import { UploadStatus } from '@proton/drive/modules/upload';
 
-import { BaseTransferStatus } from '../../zustand/download/downloadManager.store';
+import { BaseTransferStatus } from '../../legacy/zustand/download/downloadManager.store';
 import { useTransferManagerStore } from './transferManager.store';
 import type { TransferManagerEntry } from './useTransferManagerState';
 

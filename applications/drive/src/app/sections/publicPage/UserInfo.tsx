@@ -5,7 +5,7 @@ import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { getUrlWithReturnUrl } from '@proton/shared/lib/helpers/url';
 
-import { RedirectionReason, drivePublicRedirectionReasonKey } from '../../hooks/util/useRedirectToPublicPage';
+import { RedirectionReason, drivePublicRedirectionReasonKey } from '../../legacy/hooks/util/useRedirectToPublicPage';
 import { saveUrlPasswordForRedirection } from '../../utils/url/password';
 import type { UserAddress } from './usePublicAuth.store';
 import { getPublicTokenAndPassword } from './utils/getPublicTokenAndPassword';

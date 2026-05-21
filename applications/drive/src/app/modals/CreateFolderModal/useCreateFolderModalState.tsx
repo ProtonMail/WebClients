@@ -8,7 +8,7 @@ import { type ModalStateProps, useFormErrors, useNotifications } from '@proton/c
 import { type ProtonDriveClient, getDrive, splitNodeUid } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
-import { formatLinkName, useDriveEventManager, validateLinkNameField } from '../../store';
+import { formatLinkName, useDriveEventManager, validateLinkNameField } from '../../legacy/store';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getEllipsedName } from '../../utils/intl/getEllipsedName';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';

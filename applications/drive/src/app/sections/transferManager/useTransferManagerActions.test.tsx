@@ -4,8 +4,8 @@ import { useConfirmActionModal } from '@proton/components';
 import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import { uploadManager } from '@proton/drive/modules/upload';
 
-import { DownloadManager } from '../../managers/download/DownloadManager';
-import { BaseTransferStatus } from '../../zustand/download/downloadManager.store';
+import { BaseTransferStatus } from '../../legacy/zustand/download/downloadManager.store';
+import { DownloadManager } from '../../modules/download/DownloadManager';
 import { useTransferManagerActions } from './useTransferManagerActions';
 import type { TransferManagerEntry } from './useTransferManagerState';
 
@@ -15,7 +15,7 @@ jest.mock('@proton/components', () => {
     };
 });
 
-jest.mock('../../managers/download/DownloadManager', () => {
+jest.mock('../../modules/download/DownloadManager', () => {
     return {
         DownloadManager: {
             getInstance: jest.fn(),
@@ -46,7 +46,7 @@ jest.mock('@proton/drive/modules/sharingModal', () => {
     };
 });
 
-jest.mock('../../components/modals/DownloadContainsDocumentsModal', () => {
+jest.mock('../../legacy/components/modals/DownloadContainsDocumentsModal', () => {
     return {
         useDownloadContainsDocumentsModal: jest.fn().mockReturnValue([null, jest.fn()]),
     };
@@ -60,9 +60,9 @@ jest.mock('../../modals/SignatureIssueModal', () => {
     };
 });
 
-jest.mock('../../zustand/download/downloadManager.store', () => {
+jest.mock('../../legacy/zustand/download/downloadManager.store', () => {
     return {
-        ...jest.requireActual('../../zustand/download/downloadManager.store'),
+        ...jest.requireActual('../../legacy/zustand/download/downloadManager.store'),
         useDownloadManagerStore: jest.fn((selector) => {
             return selector({
                 clearQueue: jest.fn(),

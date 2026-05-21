@@ -1,7 +1,7 @@
 import { Row, TimeIntl } from '@proton/components';
 import humanSize, { bytesSize } from '@proton/shared/lib/helpers/humanSize';
 
-import { FileName } from '../../components/FileName';
+import { FileName } from '../../legacy/components/FileName';
 
 export function FileNameRow({ label, name }: { label: string; name: string }) {
     return (

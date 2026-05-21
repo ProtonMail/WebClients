@@ -9,9 +9,9 @@ import { getDriveForPhotos } from '@proton/drive';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
-import { useUserSettings } from '../../hooks/user';
-import { useShiftKey } from '../../hooks/util/useShiftKey';
-import { AlbumsPageTypes, usePhotoLayoutStore } from '../../zustand/photos/layout.store';
+import { useUserSettings } from '../../legacy/hooks/user';
+import { useShiftKey } from '../../legacy/hooks/util/useShiftKey';
+import { AlbumsPageTypes, usePhotoLayoutStore } from '../../legacy/zustand/photos/layout.store';
 import { toggleFavorite } from '../PhotosActions/Albums';
 import { usePhotosStore } from '../usePhotos.store';
 import { EmptyPhotos } from './EmptyPhotos';

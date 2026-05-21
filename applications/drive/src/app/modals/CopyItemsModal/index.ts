@@ -1,6 +1,6 @@
 import { useModalTwoStatic } from '@proton/components/index';
 
-import { withHoc } from '../../hooks/withHoc';
+import { withHoc } from '../../legacy/hooks/withHoc';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { CopyItemsModalView, type CopyItemsModalViewProps } from './CopyItemsModalView';
 import type { CopyModalItem } from './useCopyItemsModalState';

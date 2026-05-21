@@ -13,7 +13,7 @@ import {
     useFormErrors,
 } from '@proton/components';
 
-import { validateLinkNameField } from '../../store';
+import { validateLinkNameField } from '../../legacy/store';
 
 export const CreateAlbumModal = ({
     createAlbumModal,

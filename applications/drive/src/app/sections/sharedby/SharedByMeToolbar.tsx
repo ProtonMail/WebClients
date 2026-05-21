@@ -4,7 +4,7 @@ import { Vr } from '@proton/atoms/Vr/Vr';
 import { Toolbar } from '@proton/components';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { LayoutButton, ShareButton } from '../../components/sections/ToolbarButtons';
+import { LayoutButton, ShareButton } from '../../legacy/components/sections/ToolbarButtons';
 import { useSelectionStore } from '../../modules/selection';
 import { SharedByMeActions } from './actions/SharedByMeActions';
 import { createItemChecker } from './actions/actionsItemsChecker';

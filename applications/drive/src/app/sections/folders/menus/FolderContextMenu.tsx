@@ -5,9 +5,9 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { ContextMenu, ContextSeparator } from '@proton/components';
 
-import { ShareFileButton, ShareLinkButton } from '../../../components/sections/ContextMenu';
-import useIsEditEnabled from '../../../components/sections/useIsEditEnabled';
-import { useActiveShare } from '../../../hooks/drive/useActiveShare';
+import { ShareFileButton, ShareLinkButton } from '../../../legacy/components/sections/ContextMenu';
+import useIsEditEnabled from '../../../legacy/components/sections/useIsEditEnabled';
+import { useActiveShare } from '../../../legacy/hooks/drive/useActiveShare';
 import type { ContextMenuPosition } from '../../../modules/contextMenu';
 import { CreateNewDocumentButton } from '../buttons/CreateNewDocumentButton';
 import { CreateNewFileButton } from '../buttons/CreateNewFileButton';

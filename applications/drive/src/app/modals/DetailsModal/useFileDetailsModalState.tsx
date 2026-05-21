@@ -7,7 +7,7 @@ import type { ProtonDriveClient, Revision } from '@proton/drive';
 import { type Author, type MaybeNode, MemberRole, NodeType, getDrive } from '@proton/drive';
 import { useLoading } from '@proton/hooks';
 
-import { getMimeTypeDescription } from '../../components/sections/helpers';
+import { getMimeTypeDescription } from '../../legacy/components/sections/helpers';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getFormattedNodeLocation } from '../../utils/sdk/getNodeLocation';
 import { getNodeName } from '../../utils/sdk/getNodeName';

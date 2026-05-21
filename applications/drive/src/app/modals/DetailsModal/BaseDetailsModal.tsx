@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 
-import ModalContentLoader from '../../components/modals/ModalContentLoader';
+import ModalContentLoader from '../../legacy/components/modals/ModalContentLoader';
 
 export type BaseDetailsModalProps<T> = {
     isLoading: boolean;

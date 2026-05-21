@@ -15,8 +15,8 @@ import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 
-import useNavigate from '../../../hooks/drive/useNavigate';
-import { useSharingActions } from '../../../hooks/drive/useSharingActions';
+import useNavigate from '../../../legacy/hooks/drive/useNavigate';
+import { useSharingActions } from '../../../legacy/hooks/drive/useSharingActions';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 
 import './AlbumsCard.scss';

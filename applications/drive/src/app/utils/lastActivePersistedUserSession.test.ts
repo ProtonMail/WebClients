@@ -1,6 +1,6 @@
 import { STORAGE_PREFIX } from '@proton/shared/lib/authentication/persistedSessionStorage';
 
-import { LAST_ACTIVE_PING } from '../store/_user/useActivePing';
+import { LAST_ACTIVE_PING } from '../legacy/store/_user/useActivePing';
 import { sendErrorReport } from './errorHandling';
 import { getLastActivePersistedUserSession } from './lastActivePersistedUserSession';
 

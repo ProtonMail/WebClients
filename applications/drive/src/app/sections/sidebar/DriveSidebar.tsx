@@ -29,16 +29,16 @@ import {
 import { getCanAddStorage } from '@proton/shared/lib/user/storage';
 import clsx from '@proton/utils/clsx';
 
-import { FreeUploadCounter } from '../../components/layout/sidebar/DriveSidebar/FreeUploadCounter';
-import SidebarStorageUpsell from '../../components/layout/sidebar/SidebarStorageUpsell';
-import { useIsFreeUploadInProgress } from '../../hooks/drive/freeUpload/useIsFreeUploadInProgress';
-import { useActiveShare } from '../../hooks/drive/useActiveShare';
-import { useDebug } from '../../hooks/drive/useDebug';
+import { FreeUploadCounter } from '../../legacy/components/layout/sidebar/DriveSidebar/FreeUploadCounter';
+import SidebarStorageUpsell from '../../legacy/components/layout/sidebar/SidebarStorageUpsell';
+import { useIsFreeUploadInProgress } from '../../legacy/hooks/drive/freeUpload/useIsFreeUploadInProgress';
+import { useActiveShare } from '../../legacy/hooks/drive/useActiveShare';
+import { useDebug } from '../../legacy/hooks/drive/useDebug';
+import type { ShareWithKey } from '../../legacy/store';
+import { useCreateDevice } from '../../legacy/store/_shares/useCreateDevice';
+import { useCreatePhotos } from '../../legacy/store/_shares/useCreatePhotos';
+import { useDefaultShare } from '../../legacy/store/_shares/useDefaultShare';
 import { directoryTreeFactory } from '../../modules/directoryTree';
-import type { ShareWithKey } from '../../store';
-import { useCreateDevice } from '../../store/_shares/useCreateDevice';
-import { useCreatePhotos } from '../../store/_shares/useCreatePhotos';
-import { useDefaultShare } from '../../store/_shares/useDefaultShare';
 import { ActionMenuButton } from './ActionMenu/ActionMenuButton';
 import { DriveSidebarFooter } from './DriveSidebarFooter';
 import { DriveSidebarList } from './DriveSidebarList';

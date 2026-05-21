@@ -5,10 +5,10 @@ import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
-import { useLinksActions, useLinksListing } from '../../../store/_links';
-import type { DecryptedLink } from '../../../store/_links';
-import { ShareState, ShareType } from '../../../store/_shares';
-import { useSharesStore } from '../../../zustand/share/shares.store';
+import { useLinksActions, useLinksListing } from '../../../legacy/store/_links';
+import type { DecryptedLink } from '../../../legacy/store/_links';
+import { ShareState, ShareType } from '../../../legacy/store/_shares';
+import { useSharesStore } from '../../../legacy/zustand/share/shares.store';
 import { usePhotosRecovery } from './usePhotosRecovery';
 
 function generateDecryptedLink(linkId = 'linkId'): DecryptedLink {
@@ -48,7 +48,7 @@ function generateDecryptedLink(linkId = 'linkId'): DecryptedLink {
     };
 }
 
-jest.mock('../../../store/_links', () => {
+jest.mock('../../../legacy/store/_links', () => {
     const useLinksActions = jest.fn();
     const useLinksListing = jest.fn();
     return { useLinksActions, useLinksListing };
@@ -77,7 +77,7 @@ jest.mock('../../../utils/sdk/getNodeEntity', () => ({
     })),
 }));
 
-jest.mock('../../../store/_utils', () => ({
+jest.mock('../../../legacy/store/_utils', () => ({
     waitFor: jest.fn().mockImplementation(async (callback) => {
         callback();
     }),

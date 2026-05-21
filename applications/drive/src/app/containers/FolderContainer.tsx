@@ -9,10 +9,10 @@ import useLoading from '@proton/hooks/useLoading';
 import type { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
-import { DriveStartupModals } from '../components/modals/DriveStartupModals';
-import { useActiveShare } from '../hooks/drive/useActiveShare';
-import { useLegacyContextShareHandler } from '../hooks/drive/useLegacyContextShareHandler';
-import useDriveNavigation from '../hooks/drive/useNavigate';
+import { DriveStartupModals } from '../legacy/components/modals/DriveStartupModals';
+import { useActiveShare } from '../legacy/hooks/drive/useActiveShare';
+import { useLegacyContextShareHandler } from '../legacy/hooks/drive/useLegacyContextShareHandler';
+import useDriveNavigation from '../legacy/hooks/drive/useNavigate';
 import { FolderView } from '../sections/folders/FolderView/FolderView';
 import { subscribeToFolderEvents } from '../sections/folders/subscribeToFolderEvents';
 import { useFolderStore } from '../sections/folders/useFolder.store';

@@ -4,8 +4,8 @@ import { FileIcon } from '@proton/components';
 import { NodeType } from '@proton/drive';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { FileName } from '../../components/FileName';
-import { SignatureIcon } from '../../components/SignatureIcon';
+import { FileName } from '../../legacy/components/FileName';
+import { SignatureIcon } from '../../legacy/components/SignatureIcon';
 import { nodeTypeComparator, stringComparator } from '../../modules/sorting/comparators';
 import { SortField } from '../../modules/sorting/types';
 import type { CellDefinitionConfig } from '../../statelessComponents/DriveExplorer/types';

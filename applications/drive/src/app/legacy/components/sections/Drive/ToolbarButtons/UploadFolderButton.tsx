@@ -1,0 +1,30 @@
+import { c } from 'ttag';
+
+import { ToolbarButton } from '@proton/components';
+import { IcFolderArrowUp } from '@proton/icons/icons/IcFolderArrowUp';
+
+import { useActiveShare } from '../../../../../legacy/hooks/drive/useActiveShare';
+import { useFolderUploadInput } from '../../../../../legacy/store';
+
+const UploadFolderButton = () => {
+    const { activeFolder } = useActiveShare();
+    const {
+        inputRef: fileInput,
+        handleClick: handleUploadFolder,
+        handleChange,
+    } = useFolderUploadInput(activeFolder.volumeId, activeFolder.shareId, activeFolder.linkId);
+
+    return (
+        <>
+            <input type="file" ref={fileInput} className="hidden" onChange={handleChange} />
+            <ToolbarButton
+                data-testid="toolbar-upload-folder"
+                icon={<IcFolderArrowUp alt={c('Action').t`Upload folder`} />}
+                title={c('Action').t`Upload folder`}
+                onClick={handleUploadFolder}
+            />
+        </>
+    );
+};
+
+export default UploadFolderButton;

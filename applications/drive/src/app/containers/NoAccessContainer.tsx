@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom-v5-compat';
 
-import { NoAccessView } from '../components/sections/Drive/NoAccessView';
+import { NoAccessView } from '../legacy/components/sections/Drive/NoAccessView';
 
 const NoAccessContainer = () => {
     return (
