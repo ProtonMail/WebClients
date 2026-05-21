@@ -1,9 +1,10 @@
 import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@protontech/crypto';
-import type { ThunkAction, ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
+import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import type { GroupsState } from '@proton/account/groups';
-import { groupThunk, updateGroup } from '@proton/account/groups';
+import { groupThunk, updateGroups } from '@proton/account/groups';
+import { organizationActions } from '@proton/account/organization';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -689,58 +690,55 @@ const getReEncryptedGroupAddressKeyTokens = async ({
     ).then((groupAddressKeyTokens) => groupAddressKeyTokens.filter(isTruthy));
 };
 
-const updateGroups = ({
-    groups,
-    GroupAddressKeyTokens,
-    dispatch,
-}: {
-    groups: Group[];
-    GroupAddressKeyTokens: GroupAddressKeyToken[];
-    dispatch: ThunkDispatch<RotateOrganizationKeysState, ProtonThunkArguments, UnknownAction>;
-}) => {
-    for (const group of groups) {
-        const address = group.Address;
-        const primaryAddressKey = address.Keys[0];
-        if (!primaryAddressKey) {
-            continue;
-        }
-        const groupAddressKeyToken = GroupAddressKeyTokens.find(({ ID }) => ID === primaryAddressKey.ID);
-        if (!groupAddressKeyToken) {
-            continue;
-        }
-        dispatch(
-            updateGroup({
-                ...group,
-                Address: {
-                    ...address,
-                    Keys: address.Keys.map((key) => {
-                        if (key.ID === primaryAddressKey.ID) {
-                            return {
-                                ...key,
-                                Token: groupAddressKeyToken.Token,
-                                Signature: groupAddressKeyToken.OrgSignature,
-                            };
-                        }
-                        return key;
-                    }),
-                },
-            })
-        );
-    }
-};
-
 export interface RotateOrganizationKeysState extends KtState, OrganizationKeyState, GroupsState {}
+
+export const updateGroupsWithNewAddressKeyTokens = ({
+    GroupAddressKeyTokens,
+}: {
+    GroupAddressKeyTokens: GroupAddressKeyToken[];
+}): ThunkAction<Promise<void>, RotateOrganizationKeysState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        const groups = await dispatch(groupThunk());
+
+        const updatedGroups = groups
+            .map((group) => {
+                const address = group.Address;
+                const primaryAddressKey = address.Keys[0];
+                if (!primaryAddressKey) {
+                    return;
+                }
+                const groupAddressKeyToken = GroupAddressKeyTokens.find(({ ID }) => ID === primaryAddressKey.ID);
+                if (!groupAddressKeyToken) {
+                    return;
+                }
+                return {
+                    ...group,
+                    Address: {
+                        ...address,
+                        Keys: address.Keys.map((key) => {
+                            if (key.ID === primaryAddressKey.ID) {
+                                return {
+                                    ...key,
+                                    Token: groupAddressKeyToken.Token,
+                                    Signature: groupAddressKeyToken.OrgSignature,
+                                };
+                            }
+                            return key;
+                        }),
+                    },
+                };
+            })
+            .filter(isTruthy);
+
+        dispatch(updateGroups(updatedGroups));
+    };
+};
 
 export const rotateOrganizationKeys = ({
     password: newPassword,
 }: {
     password: string;
-}): ThunkAction<
-    Promise<ReturnType<typeof updateOrganizationKeysV2> | ReturnType<typeof updateOrganizationKeysLegacy>>,
-    RotateOrganizationKeysState,
-    ProtonThunkArguments,
-    UnknownAction
-> => {
+}): ThunkAction<Promise<CachedOrganizationKey>, RotateOrganizationKeysState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, getState, extra) => {
         const organizationKey = await dispatch(organizationKeyThunk());
 
@@ -758,6 +756,7 @@ export const rotateOrganizationKeys = ({
             });
 
         const publicKey = await CryptoProxy.importPublicKey({ armoredKey: privateKeyArmored });
+        const silentApi = getSilentApi(extra.api);
 
         if (getHasMigratedAddressKeys(addresses)) {
             let members: Parameters<typeof updateOrganizationKeysV2>[0]['Members'] = [];
@@ -784,19 +783,25 @@ export const rotateOrganizationKeys = ({
                 });
             }
 
-            const result = updateOrganizationKeysV2({
-                PrivateKey: privateKeyArmored,
-                BackupPrivateKey: backupArmoredPrivateKey,
-                BackupKeySalt: backupKeySalt,
-                Members: members,
-                GroupAddressKeyTokens,
-            });
+            await silentApi(
+                updateOrganizationKeysV2({
+                    PrivateKey: privateKeyArmored,
+                    BackupPrivateKey: backupArmoredPrivateKey,
+                    BackupKeySalt: backupKeySalt,
+                    Members: members,
+                    GroupAddressKeyTokens,
+                })
+            );
 
-            updateGroups({
-                groups,
-                GroupAddressKeyTokens,
-                dispatch,
-            });
+            // Sync the new key to storage.
+            const result = await dispatch(organizationKeyThunk({ cache: CacheType.None }));
+
+            // Sync the new tokens to the group keys.
+            await dispatch(
+                updateGroupsWithNewAddressKeyTokens({
+                    GroupAddressKeyTokens,
+                })
+            );
 
             return result;
         }
@@ -819,13 +824,16 @@ export const rotateOrganizationKeys = ({
         // Should this happen, the user can contact us and we can look into it
         const GroupAddressKeyTokens: GroupAddressKeyToken[] = [];
 
-        return updateOrganizationKeysLegacy({
-            PrivateKey: privateKeyArmored,
-            BackupPrivateKey: backupArmoredPrivateKey,
-            BackupKeySalt: backupKeySalt,
-            Tokens: tokens,
-            GroupAddressKeyTokens,
-        });
+        await silentApi(
+            updateOrganizationKeysLegacy({
+                PrivateKey: privateKeyArmored,
+                BackupPrivateKey: backupArmoredPrivateKey,
+                BackupKeySalt: backupKeySalt,
+                Tokens: tokens,
+                GroupAddressKeyTokens,
+            })
+        );
+        return dispatch(organizationKeyThunk({ cache: CacheType.None }));
     };
 };
 
@@ -834,12 +842,12 @@ export const createPasswordlessOrganizationKeys = ({
     memberKeyPayloads,
     groups,
 }: OrganizationKeyRotationPayload): ThunkAction<
-    Promise<ReturnType<typeof createPasswordlessOrganizationKeysConfig>>,
+    Promise<CachedOrganizationKey>,
     RotateOrganizationKeysState,
     ProtonThunkArguments,
     UnknownAction
 > => {
-    return async (dispatch) => {
+    return async (dispatch, _, extra) => {
         const userKeys = await dispatch(userKeysThunk());
         const organizationKey = await dispatch(organizationKeyThunk());
         if (!organizationKey) {
@@ -887,23 +895,26 @@ export const createPasswordlessOrganizationKeys = ({
             newOrganizationKey: privateKey,
         });
 
-        const result = createPasswordlessOrganizationKeysConfig({
-            Token: encryptedToken,
-            Signature: signature,
-            PrivateKey: privateKeyArmored,
-            Members: memberTokens,
-            AdminActivations: publicAdminActivations,
-            AdminInvitations: privateAdminInvitations,
-            GroupAddressKeyTokens,
-        });
+        const silentApi = getSilentApi(extra.api);
+        await silentApi(
+            createPasswordlessOrganizationKeysConfig({
+                Token: encryptedToken,
+                Signature: signature,
+                PrivateKey: privateKeyArmored,
+                Members: memberTokens,
+                AdminActivations: publicAdminActivations,
+                AdminInvitations: privateAdminInvitations,
+                GroupAddressKeyTokens,
+            })
+        );
+        await dispatch(
+            updateGroupsWithNewAddressKeyTokens({
+                GroupAddressKeyTokens,
+            })
+        );
 
-        updateGroups({
-            groups,
-            GroupAddressKeyTokens,
-            dispatch,
-        });
-
-        return result;
+        await dispatch(organizationActions.update({ Organization: { HasKeys: 1 } }));
+        return dispatch(organizationKeyThunk({ cache: CacheType.None }));
     };
 };
 
@@ -912,12 +923,12 @@ export const rotatePasswordlessOrganizationKeys = ({
     memberKeyPayloads,
     groups,
 }: OrganizationKeyRotationPayload): ThunkAction<
-    Promise<ReturnType<typeof updatePasswordlessOrganizationKeysConfig>>,
+    Promise<CachedOrganizationKey>,
     RotateOrganizationKeysState,
     ProtonThunkArguments,
     UnknownAction
 > => {
-    return async (dispatch) => {
+    return async (dispatch, _, extra) => {
         const userKeys = await dispatch(userKeysThunk());
         const organizationKey = await dispatch(organizationKeyThunk());
         if (!getIsPasswordless(organizationKey?.Key)) {
@@ -964,21 +975,26 @@ export const rotatePasswordlessOrganizationKeys = ({
             newOrganizationKey: privateKey,
         });
 
-        const result = updatePasswordlessOrganizationKeysConfig({
-            PrivateKey: privateKeyArmored,
-            Signature: signature,
-            Token: encryptedToken,
-            Members: memberTokens,
-            AdminActivations: publicAdminActivations,
-            AdminInvitations: privateAdminInvitations,
-            GroupAddressKeyTokens,
-        });
+        const silentApi = getSilentApi(extra.api);
+        await silentApi(
+            updatePasswordlessOrganizationKeysConfig({
+                PrivateKey: privateKeyArmored,
+                Signature: signature,
+                Token: encryptedToken,
+                Members: memberTokens,
+                AdminActivations: publicAdminActivations,
+                AdminInvitations: privateAdminInvitations,
+                GroupAddressKeyTokens,
+            })
+        );
 
-        updateGroups({
-            groups,
-            GroupAddressKeyTokens,
-            dispatch,
-        });
+        const result = await dispatch(organizationKeyThunk({ cache: CacheType.None }));
+
+        await dispatch(
+            updateGroupsWithNewAddressKeyTokens({
+                GroupAddressKeyTokens,
+            })
+        );
 
         return result;
     };

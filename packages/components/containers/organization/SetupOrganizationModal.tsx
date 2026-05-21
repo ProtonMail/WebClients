@@ -138,7 +138,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
             setStep(STEPS.KEY);
             return;
         }
-        await silentApi(await dispatch(createPasswordlessOrganizationKeys(result)));
+        await dispatch(createPasswordlessOrganizationKeys(result));
         setOrgKeyCreated(true);
         return handlePreStorageStep();
     };
@@ -204,7 +204,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                 ),
                 async onSubmit() {
                     if (!orgKeyCreated && keyRotationPayload) {
-                        await silentApi(await dispatch(createPasswordlessOrganizationKeys(keyRotationPayload)));
+                        await dispatch(createPasswordlessOrganizationKeys(keyRotationPayload));
                         setOrgKeyCreated(true);
                     }
                     await handlePreStorageStep();
