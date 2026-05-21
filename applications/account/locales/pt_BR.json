@@ -3280,11 +3280,17 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Adicionar usuários manualmente"
+      ],
       "Cancel": [
         "Cancelar"
       ],
       "Close": [
         "Fechar"
+      ],
+      "Configure your network": [
+        "Configurar sua rede"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar usando ${ MAIL_APP_NAME }."
@@ -3307,6 +3313,12 @@
       "Got it": [
         "Entendi"
       ],
+      "Invite your team": [
+        "Convidar sua equipe"
+      ],
+      "Manage global VPN permissions": [
+        "Gerenciar permissões globais da VPN"
+      ],
       "Maybe later": [
         "Talvez mais tarde"
       ],
@@ -3316,11 +3328,17 @@
       "Remind me later": [
         "Lembre-me mais tarde"
       ],
+      "Secure your organization": [
+        "Proteja sua organização"
+      ],
       "Send": [
         "Enviar"
       ],
       "Set up other features": [
         "Configure outros recursos"
+      ],
+      "Set up SSO": [
+        "Configurar SSO"
       ],
       "Sign in": [
         "Iniciar sessão"
@@ -4951,6 +4969,9 @@
       "/month": [
         "/mês"
       ],
+      "/user /month": [
+        "/usuário /mês"
+      ],
       "/user per month": [
         "/usuário por mês"
       ]
@@ -5120,6 +5141,9 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } em ${ DRIVE_APP_NAME } permite que você colabore com outras pessoas em um ambiente seguro e criptografado."
       ],
+      "${ MAIL_APP_NAME } is your default mail application.": [
+        "${ MAIL_APP_NAME } é seu aplicativo padrão de e-mail."
+      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } mantém os dados do seu negócio seguros e permite que você envie e-mails criptografados a qualquer um."
       ],
@@ -5159,6 +5183,9 @@
       "Connect your CRM, website, printers, and more.": [
         "\"Conecte seu CRM, site, impressoras e outros dispositivos."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Crie um Gateway para dar aos seus usuários acesso aos seus recursos de TI através de servidores dedicados."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Crie uma reunião no Zoom e adicione detalhes de participação ao seu evento com um clique."
       ],
@@ -5168,8 +5195,14 @@
       "Create groups you can email with a single address.": [
         "Crie grupos que podem ser contatados por meio de um único endereço de e-mail."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Criar novas contas de usuário ou importar usuários com provisionamento SCIM de SSO (autenticação única)."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Crie políticas para decidir quem pode se conectar a servidores compartilhados em cada país."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Decida quais usuários podem conectar a cada uma das nossas mais de 120 localizações de servidor compartilhadas."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Tenha acesso facilitado ao seu e-mail e calendário, tanto no computador quanto em dispositivos móveis."
@@ -5228,6 +5261,9 @@
       "How we supported local activists when privacy and free speech were threatened.": [
         "Como apoiamos ativistas locais quando a privacidade e a liberdade de expressão foram ameaçadas."
       ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Se você ainda não tiver feito isso, ative alguns métodos de recuperação para garantir que você nunca perca acesso ao ${ VPN_APP_NAME }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contatos que você está importando contém alguns grupos. Verifique como esses grupos devem ser importados."
       ],
@@ -5270,6 +5306,12 @@
       "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
         "Para conectar até ${ MAX_SYNC_PAID_USER } endereço do Gmail, faça o upgrade para o plano ${ planName }.",
         "Para conectar até ${ MAX_SYNC_PAID_USER } endereços do Gmail, faça o upgrade para o plano ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Para continuar recebendo e enviando mensagens do Gmail na ${ BRAND_NAME }, reconecte sua conta."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Para continuar recebendo e enviando mensagens do Gmail na ${ BRAND_NAME }, reconecte suas contas."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Para importar por meio de um arquivo CSV e VCF, certifique-se de que o arquivo não exceda ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ maxContactString } contatos. Se o seu arquivo for maior, divida-o em arquivos menores. ${ learnMoreLink }."
@@ -5787,6 +5829,9 @@
       ]
     },
     "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Para encaminhar e-mails de até ${ MAX_SYNC_PAID_USER } contas, faça o upgrade para ${ planName }."
+      ],
       "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
         "Você está encaminhando e-mails de uma conta externa para ${ MAIL_APP_NAME }."
       ]
@@ -6551,9 +6596,6 @@
       "Less than a minute left": [
         "Menos de um minuto restante"
       ],
-      "None": [
-        "Nenhum"
-      ],
       "Only ": [
         "Somente "
       ],
@@ -6690,6 +6732,9 @@
       "Time required before automatically granting them access": [
         "Tempo necessário antes de garantir acesso automaticamente a eles"
       ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Para adicionar contatos de recuperação, é necessário ter um endereço de e-mail ou um número de telefone para recuperação."
+      ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Para desativar este método de recuperação, remova todos os seus contatos de recuperação."
       ],
@@ -6698,6 +6743,9 @@
       ],
       "Unable to recover data": [
         "Não foi possível recuperar os dados"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Desbloquear ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "Fazer upgrade"
@@ -6917,17 +6965,11 @@
       "Email address is required": [
         "O endereço de e-mail é obrigatório"
       ],
-      "Email is not valid": [
-        "O e-mail não é válido."
-      ],
       "Empty condition": [
         "Condição vazia"
       ],
       "Enter 6 digits": [
         "Insira 6 dígitos"
-      ],
-      "Enter your username without the domain (@example.com)": [
-        "Insira seu nome de usuário sem o domínio (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Erro ao conectar com a API do Bitcoin."
@@ -7015,9 +7057,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Segunda senha incorreta. Tente novamente."
-      ],
-      "Incorrect username": [
-        "Nome de usuário incorreto"
       ],
       "Intended recipient does not support calendar sharing": [
         "O destinatário pretendido não oferece suporte ao compartilhamento de calendário"
@@ -7125,9 +7164,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Não é uma conta da ${ BRAND_NAME }"
       ],
-      "Not a valid number": [
-        "Não é um número válido"
-      ],
       "Organization key is not decrypted": [
         "A chave de organização não está descriptografada"
       ],
@@ -7139,9 +7175,6 @@
       ],
       "Password is required": [
         "A senha é obrigatória"
-      ],
-      "Passwords do not match": [
-        "As senhas não correspondem"
       ],
       "Payment process canceled": [
         "Processo de pagamento cancelado"
@@ -7322,9 +7355,6 @@
       "The amount due has changed. Please try again.": [
         "O valor devido foi alterado. Tente novamente."
       ],
-      "The email addresses do not match": [
-        "Os endereços de e-mail não correspondem."
-      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "O arquivo é muito grande, o tamanho máximo é ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -7367,17 +7397,11 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Existem muitas pastas em sua conta externa. Personalize a importação para excluir algumas pastas."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Este campo excede o máximo de ${ maximumLength } caracteres."
-      ],
       "This field is invalid": [
         "Este campo é inválido"
       ],
       "This field is required": [
         "Este campo é obrigatório"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Este campo exige um mínimo de ${ minimumLength } caracteres."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Este nome para a pasta não está disponível. Escolha outro nome."
@@ -7403,9 +7427,6 @@
       "Try again later": [
         "Tente novamente mais tarde"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Tente usar apenas letras, números e _.-"
-      ],
       "Unable to upload file": [
         "Não foi possível fazer o upload do arquivo"
       ],
@@ -7423,12 +7444,6 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "O arquivo enviado não é uma chave privada válida. Verifique e tente novamente."
-      ],
-      "Username must begin with a letter or digit": [
-        "O nome de usuário deve começar com uma letra ou dígito"
-      ],
-      "Username must end with a letter or digit": [
-        "O nome de usuário deve terminar com uma letra ou dígito"
       ],
       "Validation error": [
         "Erro de validação"
@@ -8754,6 +8769,9 @@
       ]
     },
     "group_modal": {
+      "General": [
+        "Geral"
+      ],
       "Roles and permissions": [
         "Funções e permissões"
       ]
@@ -9398,6 +9416,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Você perderá o acesso a todos os dados criptografados atuais em sua conta se continuar."
       ],
+      "${ BRAND_NAME } Free": [
+        "${ BRAND_NAME } Free"
+      ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } é a privacidade em que você pode confiar, garantida por criptografia forte, código-fonte aberto e leis suíças de privacidade. Acreditamos que ninguém deve ser capaz de explorar seus dados, e ponto final. Nossas tecnologias e negócios são baseados e fundamentatos na mais forte definição de privacidade."
       ],
@@ -9618,6 +9639,9 @@
       ],
       "${ vaultLink } updated": [
         "${ vaultLink } atualizado"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } oculta seu tráfego. ${ PASS_SHORT_APP_NAME } oculta sua identidade\n— aliases **hide-my-email ilimitados** e **alertas da dark-web** se seus dados foram vazados."
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } necessária para conexão em nível de país."
@@ -10085,6 +10109,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de começar a enviar e receber e-mails de seus novos endereços, você precisa criar chaves de criptografia para eles."
       ],
+      "BEST FOR TV": [
+        "MELHOR PARA TV"
+      ],
       "Beta": [
         "Beta"
       ],
@@ -10165,6 +10192,9 @@
       ],
       "Click 'Trouble signing in?' on your TV to follow the alternative steps.": [
         "Clique em 'Problemas para iniciar sessão?' na sua TV para seguir as etapas alternativas."
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "Clique em **Solicitar redefinição de senha** e siga as instruções."
       ],
       "Click the icon to open it anytime.": [
         "Clique no ícone para abri-lo a qualquer momento."
@@ -10257,9 +10287,9 @@
       "Create a new code on your TV and try again.": [
         "Crie um novo código na sua TV e tente novamente."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Criar uma nuvem segura para ${ value } membro",
-        "Criar uma nuvem segura para ${ value } membros"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Criar uma nuvem segura para ${ memberCount } membro",
+        "Criar uma nuvem segura para ${ memberCount } membros"
       ],
       "Create an account": [
         "Criar uma conta"
@@ -10746,6 +10776,9 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Seja notificado se a sua senha ou outros dados pessoais foram vazados. ${ learnMoreLinkNoBreach }"
+      ],
+      "Get started": [
+        "Começar"
       ],
       "Get started with the referral link above.": [
         "Comece com o link de referência acima."
@@ -11776,6 +11809,9 @@
       "Set up your organization": [
         "Configure a sua organização"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Configure sua organização e comece a proteger seus dados em poucos passos simples."
+      ],
       "Setting successfully saved": [
         "A configuração foi salva"
       ],
@@ -11812,6 +11848,12 @@
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Mostrar a imagem de cada remetente na lista de mensagens. As iniciais do remetente serão mostradas se uma foto não estiver disponível."
+      ],
+      "Show fewer benefits": [
+        "Mostrar menos benefícios"
+      ],
+      "Show more benefits": [
+        "Mostrar mais benefícios"
       ],
       "Show original message": [
         "Exibir mensagem original"
@@ -12471,6 +12513,9 @@
       ],
       "Visa Secure logo": [
         "Logotipo do Visa Secure"
+      ],
+      "VPN Plus": [
+        "VPN Plus"
       ],
       "VPN with dedicated servers and IP addresses": [
         "VPN com servidores e endereço de IP dedicados"
@@ -15981,11 +16026,23 @@
       "Built-in chat": [
         "Bate-papo integrado"
       ],
+      "Data retention policies": [
+        "Políticas de retenção de dados"
+      ],
+      "Document and spreadsheet editor": [
+        "Editor de documento e planilha"
+      ],
+      "Email writing assistant": [
+        "Assistente de escrita de e-mail"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Compartilhamento de tela com criptografia de ponta a ponta e chat efêmero durante a chamada"
       ],
       "Hosts can record meetings locally on their computers": [
         "Os anfitriões podem gravar reuniões localmente em seus computadores"
+      ],
+      "Includes Meet Professional": [
+        "Inclui o Meet Professional"
       ],
       "Meeting recording": [
         "Gravação da reunião"
@@ -15995,6 +16052,9 @@
       ],
       "Screen-sharing": [
         "Compartilhamento de tela"
+      ],
+      "Secure mail and calendar": [
+        "E-mail e calendário seguro"
       ],
       "Unlimited meetings per day": [
         "Reuniões ilimitadas por dia"
@@ -16679,6 +16739,9 @@
       "99.95% SLA": [
         "SLA de 99,95%"
       ],
+      "Access all countries": [
+        "Acesso a todos os países"
+      ],
       "Activity logs and policy": [
         "Registros de atividade e política"
       ],
@@ -17026,6 +17089,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Volume/largura de banda ilimitados"
+      ],
+      "Unlock streaming": [
+        "Desbloquear streaming"
       ],
       "Up to ${ n } user": [
         "Até ${ n } usuário",
@@ -17501,6 +17567,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } país",
+        "${ n } países"
+      ],
       "Access advanced VPN features": [
         "Acesse recursos avançados de VPN"
       ],
@@ -20492,6 +20562,9 @@
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Se você esquecer sua senha ${ BRAND_NAME } e precisar redefini-la, na próxima vez que entrar neste dispositivo usando a nova senha, o acesso total à sua conta ${ BRAND_NAME } será restaurado."
       ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
+        "Se você não conseguir entrar na sua conta da ${ BRAND_NAME }, o sua frase de recuperação permitirá que você faça login e recupere seus dados."
+      ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Se você perder seus detalhes de login e precisar redefinir sua conta, é **imprescindível** que você tenha um **método de recuperação de conta e de recuperação de dados** em vigor, caso contrário, talvez não consiga acessar nenhum de seus e-mails, contatos, arquivos ou senhas."
       ],
@@ -21423,9 +21496,6 @@
       ],
       "Get updates about comments via email": [
         "Receba atualizações sobre comentários por e-mail"
-      ],
-      "Include document name in email notifications": [
-        "Incluir o nome do documento nas notificações por e-mail"
       ]
     },
     "Settings description": {
@@ -23510,9 +23580,6 @@
       "Organization logo updated": [
         "Logotipo da organização atualizado"
       ],
-      "Organization name set": [
-        "Nome da organização definido"
-      ],
       "Organization name updated": [
         "Nome da organização atualizado"
       ],
@@ -23732,6 +23799,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui histórico de versões, compartilhamento de arquivo criptografado e muito mais."
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "Para uso pessoal"
       ]
     },
     "Tab in domain modal": {
@@ -24241,6 +24313,9 @@
       "Change second password": [
         "Alterar segunda senha"
       ],
+      "Check your default mail application": [
+        "Verifique seu aplicativo de e-mail padrão"
+      ],
       "Choose a provider": [
         "Selecione um provedor"
       ],
@@ -24537,6 +24612,9 @@
       "Disconnected from Gmail": [
         "Desconectado do Gmail"
       ],
+      "Dismiss setup checklist": [
+        "Dispensar lista de verificação de configuração"
+      ],
       "Display name and signature": [
         "Nome de exibição e assinatura"
       ],
@@ -24810,6 +24888,9 @@
       ],
       "Get more from your VPN": [
         "Obter mais da sua VPN"
+      ],
+      "Get started": [
+        "Começar"
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Obtenha o aplicativo em todos os seus dispositivos e desfrute de acesso seguro e contínuo em qualquer lugar."
@@ -25875,6 +25956,9 @@
       "Allow recovering your account with a one-time code sent to your recovery email": [
         "Permite recuperar sua conta com um código de uso único enviado no seu e-mail de recuperação"
       ],
+      "Allow resetting your password from the account settings": [
+        "Permite redefinir sua senha a partir das configurações da conta"
+      ],
       "Allow scanning a QR code from a ${ BRAND_NAME } mobile app to sign in": [
         "Permite escanear um código QR a partir do aplicativo mover da ${ BRAND_NAME } para iniciar sessão"
       ],
@@ -26591,16 +26675,6 @@
       ],
       "Writing assistant": [
         "Assistente de escrita"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "A senha deve conter ao menos ${ MIN_PASSWORD_LENGTH } caractere",
-        "A senha deve conter ao menos ${ MIN_PASSWORD_LENGTH } caracteres"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Tente um nome de usuário mais curto (máximo de ${ n } caractere)",
-        "Tente um nome de usuário mais curto (máximo de ${ n } caracteres)"
       ]
     },
     "Video control": {

@@ -530,7 +530,7 @@
       "Go back": [
         "Gå tillbaka"
       ],
-      "Go back to album “${ ellipsedAlbumName }“": [
+      "Go back to album \"${ ellipsedAlbumName }\"": [
         "Gå tillbaka till album “${ ellipsedAlbumName }“"
       ],
       "Go to ${ planOrAppName }": [
@@ -3480,9 +3480,6 @@
       "Failed to resend invitation": [
         "Misslyckades att skicka inbjudan igen"
       ],
-      "Failed to save some photos to your Drive": [
-        "Misslyckades att spara några foton till din Drive"
-      ],
       "Failed to unshare node": [
         "Misslyckades att sluta dela nod"
       ],
@@ -3835,9 +3832,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Kan inte ladda VPN-adminpanel. Kontrollera din anslutning och försök igen."
-      ],
-      "Unable to set photo as cover": [
-        "Kan inte ställa in foto som omslag"
       ],
       "Unexpected error, we can't import the contacts": [
         "Oväntat fel, vi kan inte importera kontakterna"
@@ -5295,9 +5289,9 @@
       "Create a new contact group": [
         "Skapa en ny kontaktgrupp"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Skapa ett säkert moln för ${ value } medlem",
-        "Skapa ett säkert moln för ${ value } medlemmar"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Skapa ett säkert moln för ${ memberCount } medlem",
+        "Skapa ett säkert moln för ${ memberCount } medlemmar"
       ],
       "Create in": [
         "Skapa i"
@@ -5954,11 +5948,12 @@
       "Photo is set as album cover": [
         "Foto är inställt som albumomslag"
       ],
+      "Photo saved to your Drive": [
+        "Foto sparat till din Drive",
+        "Foton sparade till din Drive"
+      ],
       "Photo was copied to stream and marked favorite there.": [
         "Fotot kopierades till streamen och markerades som favorit där."
-      ],
-      "Photo(s) saved to your Drive": [
-        "Foton sparade till din Drive"
       ],
       "Photos have been successfully recovered.": [
         "Foton har återställts."
@@ -6584,6 +6579,10 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "Du har just ökat ditt lagringsutrymme till 5 GB!"
       ],
+      "We couldn't save this photo to your Drive": [
+        "Vi kunde inte spara detta foto till din Drive",
+        "Vi kunde inte spara flera foton till din Drive"
+      ],
       "We couldn’t process your payment.": [
         "Vi kunde inte behandla din betalning."
       ],
@@ -6601,6 +6600,10 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi använder 3-D Secure för att skydda dina betalningar"
+      ],
+      "We were not able to add this photo to your album": [
+        "Vi kunde inte lägga till detta foto till ditt album",
+        "Vi kunde inte lägga till några foton till ditt album"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vi kommer att omdirigera dig till PayPal i en ny webbläsarflik för att slutföra denna transaktion. Om du använder några popup-blockerare, inaktivera dem för att fortsätta."
@@ -8631,6 +8634,9 @@
       "Multiple admin roles": [
         "Flera administratörsroller"
       ],
+      "No streaming support": [
+        "Inget stöd för streaming"
+      ],
       "Online document editor": [
         "Dokumentredigerare online"
       ],
@@ -8780,6 +8786,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Obegränsad bandbredd"
+      ],
+      "Unlock streaming": [
+        "Lås upp streaming"
       ],
       "Up to ${ n } user": [
         "Upp till ${ n } användare",
@@ -9299,6 +9308,10 @@
       "\"${ newName }\" renamed successfully": [
         "“${ newName }“ namnändrades utan problem"
       ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } foto har lagts till i “${ albumName }“",
+        "${ addedUids.length } foton har lagts till i “${ albumName }“"
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } objekt kunde inte dekrypteras",
         "${ count } objekt kunde inte dekrypteras"
@@ -9314,22 +9327,6 @@
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } objekt misslyckades att flyttas till papperskorg",
         "${ errors.length } objekt misslyckades att flyttas till papperskorg"
-      ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "${ nbFailures } foto kunde inte tas bort från “${ albumLink.name }“",
-        "${ nbFailures } foton kunde inte tas bort från “${ albumLink.name }“"
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "${ nbMainPhotosError } foto kunde inte läggas till i “${ albumName }“",
-        "${ nbMainPhotosError } foton kunde inte läggas till i “${ albumName }“"
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "${ nbMainPhotosSuccess } foto har lagts till i “${ albumName }“",
-        "${ nbMainPhotosSuccess } foton har lagts till i “${ albumName }“"
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "${ nbSuccesses } foto har tagits bort från “${ albumLink.name }“",
-        "${ nbSuccesses } foton har tagits bort från “${ albumLink.name }“"
       ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } kopierat objekt flyttades till papperskorg",
@@ -9388,6 +9385,10 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } har aktiverats"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } foto har tagits bort från “${ albumName }“",
+        "${ removed } foton har tagits bort från “${ albumName }“"
       ],
       "Access for the member removed": [
         "Åtkomst för medlemmen borttaget"
@@ -9515,9 +9516,6 @@
       "Selected items were successfully removed from your list": [
         "Valda objekt togs bort från din lista",
         "Valda objekt togs bort från din lista"
-      ],
-      "Selected photo(s) already in \"${ albumName }\"": [
-        "Valda foton finns redan i ”${ albumName }”"
       ],
       "Setting updated. Editors can change permissions and share.": [
         "Inställning uppdaterad. Redaktörer kan ändra behörigheter och dela."
