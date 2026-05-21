@@ -7160,9 +7160,9 @@
       "Create a new contact group": [
         "Yeni bir kişi grubu ekle"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "${ value } üye için güvenli bir bulut oluşturun",
-        "${ value } üye için güvenli bir bulut oluşturun"
+      "Create a secure cloud for ${ memberCount } member": [
+        "${ memberCount } üye için güvenli bir bulut oluşturun",
+        "${ memberCount } üye için güvenli bir bulut oluşturun"
       ],
       "Create in": [
         "Şuraya ekle"
@@ -8271,6 +8271,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Dosyalarınızı ${ DRIVE_APP_NAME } uygulamasıyla eşitleyin ve yönetin. ${ DOCS_APP_NAME } ile belgeler oluşturun, paylaşın ve güvenle saklayın. Tüm bunları ${ ios }, ${ android } ve ${ desktop } üzerinde yapın."
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Yoğun istek nedeniyle geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
@@ -9477,6 +9480,9 @@
       ],
       "Category": [
         "Kategori"
+      ],
+      "Category:": [
+        "Kategori:"
       ],
       "CC": [
         "Kopya"
@@ -11345,7 +11351,7 @@
         "Sınırsız trafik/bant genişliği"
       ],
       "Unlock streaming": [
-        "Yayın akışı hizmetlerinin engelini kaldırın"
+        "Yayın akışı hizmetlerine erişin"
       ],
       "Up to ${ n } user": [
         "${ n } kullanıcıya kadar",
