@@ -163,3 +163,18 @@ export const getHashCode = (str: string) => {
     }
     return hash;
 };
+
+/**
+ *  Matches `\s` plus invisible characters (zero-width spaces, bidi marks, Braille blank).
+ * See https://www.namecheap.com/visual/font-generator/whitespace/
+ * Do not export: `/g` makes `.test()`/`.exec()` stateful via `lastIndex`, causing alternating results across calls.
+ */
+const whitespacePattern = /[\s\u200B\u200C\u200D\uFEFF\u200E\u200F\u202A-\u202E\u2800]/g;
+
+/**
+ * Removes all whitespace from a string using `whitespacePattern` - covers `\s`
+ * plus invisible characters (zero-width spaces, bidi marks, Braille blank).
+ */
+export const stripWhitespace = (value: string) => {
+    return value.replace(whitespacePattern, '');
+};

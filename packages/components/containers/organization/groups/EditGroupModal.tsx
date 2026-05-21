@@ -1,3 +1,4 @@
+import type { KeyboardEvent } from 'react';
 import { useEffect, useState } from 'react';
 
 import { Form, FormikProvider } from 'formik';
@@ -22,6 +23,7 @@ import RolesAndPermissionsTab from '@proton/components/containers/members/rolesA
 import { useLoading } from '@proton/hooks';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { stripWhitespace } from '@proton/shared/lib/helpers/string';
 import type { EnhancedGroup } from '@proton/shared/lib/interfaces';
 import { GroupPermissions } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
@@ -170,7 +172,12 @@ const EditGroupModal = ({ groupsManagement, groupData }: Props) => {
                                             ? formValues.address
                                             : formValues.address.substring(0, formValues.address.indexOf('@'))
                                     }
-                                    onValue={(address: string) => setFieldValue('address', address)}
+                                    onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
+                                        if (event.key === ' ') {
+                                            event.preventDefault();
+                                        }
+                                    }}
+                                    onValue={(address: string) => setFieldValue('address', stripWhitespace(address))}
                                     error={errors.address}
                                     disabled={uiState === 'edit'} // disable until BE supports address change
                                     suffix={(() => {
