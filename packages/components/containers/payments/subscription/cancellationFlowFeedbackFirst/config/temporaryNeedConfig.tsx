@@ -32,6 +32,7 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import {
     APPS,
     BRAND_NAME,
+    DRIVE_SHORT_APP_NAME,
     DUO_MAX_USERS,
     FAMILY_MAX_USERS,
     MAIL_APP_NAME,
@@ -47,7 +48,7 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { ComparisonFeatureRow } from '../components/ComparisonTable';
 import { CustomLogoHeader } from '../components/CustomLogoHeader';
 
-const DRIVE_PLUS_NAME = 'Drive Plus';
+const DRIVE_PLUS_NAME = `${DRIVE_SHORT_APP_NAME} Plus`;
 
 const getPremiumFeaturesIncludedB2CTooltip = () => {
     return c('Tooltip')
