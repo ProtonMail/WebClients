@@ -498,9 +498,6 @@
       "Go back": [
         "倒退"
       ],
-      "Go back to album “${ ellipsedAlbumName }“": [
-        "回到相簿 \"${ ellipsedAlbumName }\""
-      ],
       "Go to ${ planOrAppName }": [
         "前往 ${ planOrAppName }"
       ],
@@ -3345,9 +3342,6 @@
       "Failed to resend invitation": [
         "失敗重新傳送邀請"
       ],
-      "Failed to save some photos to your Drive": [
-        "儲存部分照片至磁碟失敗"
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "由於“${ error }”錯誤，檔案“${ item.name }”無法上載"
       ],
@@ -5032,9 +5026,6 @@
       "Create a new contact group": [
         "創建新聯絡人群組"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "替成員創建一個安全${ value }雲端"
-      ],
       "Create in": [
         "創建在"
       ],
@@ -5643,9 +5634,6 @@
       ],
       "Photo is set as album cover": [
         "照片已設為相簿封面"
-      ],
-      "Photo(s) saved to your Drive": [
-        "照片已儲存至您的磁碟"
       ],
       "Photos have been successfully recovered.": [
         "照片已成功復原。"
@@ -8733,18 +8721,6 @@
       ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } 個項目刪除失敗"
-      ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "無法從「${ albumLink.name }」中移除 ${ nbFailures } 張照片"
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "無法新增 ${ nbMainPhotosError } 張相片至「${ albumName }」"
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "已新增 ${ nbMainPhotosSuccess } 張照片至「${ albumName }」"
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "已成功從「${ albumLink.name }」中移除 ${ nbSuccesses } 張照片"
       ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } 個複製項目已移動到垃圾桶"

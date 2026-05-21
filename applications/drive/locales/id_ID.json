@@ -3270,9 +3270,6 @@
       "Failed to resend invitation": [
         "Gagal mengirim ulang undangan"
       ],
-      "Failed to save some photos to your Drive": [
-        "Sebagian foto gagal disimpan ke Drive Anda"
-      ],
       "Failed to unshare node": [
         "Gagal membatalkan berbagi node"
       ],
@@ -3605,9 +3602,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Dasbor VPN tidak dapat dimuat. Silakan periksa koneksi Anda dan coba lagi."
-      ],
-      "Unable to set photo as cover": [
-        "Foto tidak dapat dipasang sebagai sampul"
       ],
       "Unexpected error, we can't import the contacts": [
         "Terjadi kesalahan tak terduga, kami tidak dapat mengimpor kontak"
@@ -4943,9 +4937,6 @@
       "Create a new contact group": [
         "Buat grup kontak baru"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Buat cloud yang aman untuk ${ value } anggota"
-      ],
       "Create in": [
         "Buat di"
       ],
@@ -5536,9 +5527,6 @@
       ],
       "Photo was copied to stream and marked favorite there.": [
         "Foto telah disalin ke aliran dan ditandai favorit di sana."
-      ],
-      "Photo(s) saved to your Drive": [
-        "Foto disimpan ke Drive Anda"
       ],
       "Photos have been successfully recovered.": [
         "Foto telah berhasil dipulihkan."
@@ -8602,18 +8590,6 @@
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } item gagal dihapus"
       ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "${ nbFailures } foto tidak dapat dihapus dari \"${ albumLink.name }\""
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "${ nbMainPhotosError } foto tidak dapat ditambahkan ke \"${ albumName }\""
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "${ nbMainPhotosSuccess } telah ditambahkan ke \"${ albumName }\""
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "${ nbSuccesses } telah dihapus dari \"${ albumLink.name }\""
-      ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } item yang disalin dipindahkan ke sampah"
       ],
@@ -8766,9 +8742,6 @@
       ],
       "Selected items were successfully removed from your list": [
         "Item yang dipilih berhasil dihapus dari daftar Anda"
-      ],
-      "Selected photo(s) already in \"${ albumName }\"": [
-        "Foto yang dipilih sudah ada di \"${ albumName }\""
       ],
       "Share invitation accepted successfully": [
         "Undangan pembagian berhasil diterima"
