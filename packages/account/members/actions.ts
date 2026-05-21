@@ -362,7 +362,7 @@ interface CreateMemberPayload {
 }
 
 // This resets the VPN connections of the admin to the default value, since this gets reset by the API when changing subscriptions etc
-export const resetAdminVPN = async ({
+export const resetSelfVpnConnectionsHelper = async ({
     api,
     members,
     organization,
@@ -406,7 +406,7 @@ export const editMember = ({
                     dispatch(membersThunk()),
                     dispatch(organizationThunk()),
                 ]);
-                await resetAdminVPN({ api, members, organization }).catch(noop);
+                await resetSelfVpnConnectionsHelper({ api, members, organization }).catch(noop);
             }
             await api(updateVPN(member.ID, memberDiff.vpn ? VPN_CONNECTIONS : 0));
         }
@@ -514,7 +514,7 @@ export const createMember = ({
         }
 
         if (model.vpn) {
-            await resetAdminVPN({ api, members, organization }).catch(noop);
+            await resetSelfVpnConnectionsHelper({ api, members, organization }).catch(noop);
         }
 
         const error = validateAddUser({
@@ -862,12 +862,14 @@ export const createInvite = ({
             inviteMember({
                 email,
                 maxSpace: storage,
+                // eslint-disable-next-line no-nested-ternary
                 maxAI: numAI === undefined ? undefined : numAI ? 1 : 0,
+                // eslint-disable-next-line no-nested-ternary
                 maxLumo: lumo === undefined ? undefined : lumo ? 1 : 0,
             })
         );
         dispatch(upsertMember({ member: Member }));
-        dispatch(organizationThunk({ cache: CacheType.None }));
+        dispatch(organizationThunk({ cache: CacheType.None })).catch(noop);
     };
 };
 

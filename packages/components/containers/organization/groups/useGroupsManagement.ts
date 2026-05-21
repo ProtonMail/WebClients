@@ -4,23 +4,20 @@ import type { FormikErrors } from 'formik';
 import { useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { addGroup, removeGroup, updateGroup } from '@proton/account';
 import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useGroupMembers } from '@proton/account/groupMembers/hooks';
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
-import { createGroup, editGroup } from '@proton/account/groups/actions';
+import { createGroup, deleteGroup, editGroup } from '@proton/account/groups/actions';
 import { addGroupMembersThunk } from '@proton/account/groups/addGroupMember';
 import { useGroups } from '@proton/account/groups/hooks';
 import { useGroupRoles } from '@proton/account/groups/useGroupRoles';
 import { useMembers } from '@proton/account/members/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import useGroupKeys from '@proton/components/containers/organization/groups/useGroupKeys';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { deleteGroup } from '@proton/shared/lib/api/groups';
 import { checkMemberAddressAvailability } from '@proton/shared/lib/api/members';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { EnhancedMember, Group, GroupMember, Organization } from '@proton/shared/lib/interfaces';
@@ -170,8 +167,6 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         setSelectedDomain(suggestedAddressDomainPart);
     }, [suggestedAddressDomainPart]);
 
-    const createKTVerifier = useKTVerifier();
-
     const [groupMembers, loadingGroupMembers] = useGroupMembers(selectedGroup?.ID);
 
     const transformedGroupMembers: GroupMember[] | undefined =
@@ -253,8 +248,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         }
 
         try {
-            await api(deleteGroup(selectedGroup.ID));
-            dispatch(removeGroup(selectedGroup.ID));
+            await dispatch(deleteGroup(selectedGroup));
             createNotification({ type: 'success', text: c('Info').t`Group deleted` });
             resetForm();
             setSelectedGroupId(undefined);
@@ -288,22 +282,8 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
             }
         }
 
-        const apiEndpoint = isNewGroup ? createGroup : editGroup;
-
-        const { keyTransparencyVerify } = await createKTVerifier();
-        const Group = await dispatch(
-            apiEndpoint({
-                api: api,
-                group: payload,
-                keyTransparencyVerify,
-            })
-        );
-
-        if (isNewGroup) {
-            dispatch(addGroup(Group));
-        } else {
-            dispatch(updateGroup(Group));
-        }
+        const thunkAction = isNewGroup ? createGroup : editGroup;
+        const Group = await dispatch(thunkAction({ api: api, group: payload }));
 
         setUiState('view');
 

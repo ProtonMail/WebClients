@@ -1,5 +1,4 @@
-import type { ReactNode } from 'react';
-import { useRef } from 'react';
+import { type ReactNode, useRef, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import OLESSettingsArea from '@proton/activation/src/oles/components/SettingsArea';
@@ -26,6 +25,7 @@ import {
     VPNEvents,
 } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import { SetupOrganizationSection } from '@proton/components/containers/organization/SetupOrganizationSection';
 import AccessControlSettingsSection from '@proton/components/containers/organization/accessControl/AccessControlSettingsSection';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -56,6 +56,9 @@ const OrganizationSettingsRouter = ({
     onOpenChat?: () => void;
 }) => {
     const onceRef = useRef(false);
+    // The setup organization route becomes unavailable post organization setup.
+    // Keep this state while the setup modal is open to allow the user to stay on the route to prevent a bad UX redirect.
+    const [setupState, setSetupState] = useState(false);
 
     const {
         routes: {
@@ -82,6 +85,8 @@ const OrganizationSettingsRouter = ({
         return <>{redirect}</>;
     }
 
+    const isSetupAvailable = getIsSectionAvailable(setup) || setupState;
+
     return (
         <Switch>
             {getIsSectionAvailable(migrationAssistant) && (
@@ -103,16 +108,16 @@ const OrganizationSettingsRouter = ({
                     </PrivateMainSettingsArea>
                 </Route>
             )}
-            {getIsSectionAvailable(setup) && (
+            {isSetupAvailable && (
                 <Route path={getSectionPath(path, setup)}>
                     <PrivateMainSettingsArea config={setup}>
                         <OrganizationScheduleCallSection onOpenChat={onOpenChat} />
-                        <OrganizationSection organization={organization} app={app} />
+                        <SetupOrganizationSection organization={organization} app={app} onSetup={setSetupState} />
                     </PrivateMainSettingsArea>
                 </Route>
             )}
             {/* After the org is setup, and the setup route becomes unavailable, we redirect to the users route */}
-            {!getIsSectionAvailable(setup) && getIsSectionAvailable(users) && (
+            {!isSetupAvailable && getIsSectionAvailable(users) && (
                 <Route path={getSectionPath(path, setup)}>
                     <Redirect to={getSectionPath(path, users)} />
                 </Route>

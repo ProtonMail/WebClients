@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,18 +7,14 @@ import {
     type OrganizationKeyRotationPayload,
     createPasswordlessOrganizationKeys,
     getKeyRotationPayload,
-    membersThunk,
-    organizationKeyThunk,
-    organizationThunk,
 } from '@proton/account';
 import { useMembers } from '@proton/account/members/hooks';
+import { resetSelfVpnConnections, setSelfQuota, updateOrganizationName } from '@proton/account/organization/actions';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { getInitialStorage, getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
-import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
@@ -28,16 +24,11 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { disableStorageSelection } from '@proton/components/containers/members/helper';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
 import { getHasExternalMemberCapableB2BPlan, hasPassFamily } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities/interface';
-import { updateQuota, updateVPN } from '@proton/shared/lib/api/members';
-import { updateOrganizationName } from '@proton/shared/lib/api/organization';
-import { VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
@@ -56,17 +47,14 @@ enum STEPS {
 const storageSizeUnit = sizeUnits.GB;
 
 const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
-    const eventManager = useEventManager();
     const silentApi = useSilentApi();
     const { createNotification } = useNotifications();
-    const goToSettings = useSettingsLink();
 
     const dispatch = useDispatch();
     const [members = [], loadingMembers] = useMembers();
-    const [loading, withLoading] = useLoading();
     const [organization] = useOrganization();
+    const [loading, withLoading] = useLoading();
     const [step, setStep] = useState<STEPS>(STEPS.NAME);
-    const [{ hasPaidVpn }] = useUser();
     const [subscription] = useSubscription();
     const [orgKeyCreated, setOrgKeyCreated] = useState(false);
     const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
@@ -86,36 +74,18 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
         return (value: any) => setModel({ ...model, [key]: value });
     };
 
-    const selfMemberID = selfMember?.ID;
     const initialStorage = getInitialStorage(organization, storageRange);
     // Storage can be undefined in the beginning because org is undefined. So we keep it floating until it's set.
     const storageValue =
         model.storage === -1 ? clamp(initialStorage, storageRange.min, storageRange.max) : model.storage;
 
     const finalizeOrganizationCreation = async () => {
-        await Promise.all([
-            dispatch(organizationThunk({ cache: CacheType.None })),
-            dispatch(organizationKeyThunk({ cache: CacheType.None })),
-            dispatch(membersThunk({ cache: CacheType.None })),
-        ]);
         createNotification({ text: c('Success').t`Organization activated` });
         onClose?.();
-        goToSettings('/users-addresses');
     };
 
     const [keyRotationPayload, setKeyRotationPayload] = useState<null | OrganizationKeyRotationPayload>(null);
     const errorHandler = useErrorHandler();
-
-    useEffect(() => {
-        // There is a race condition in which after the user has performed the first step to setup the organization
-        // The app handles that state by showing a different route. In doing so, it closes this modal before the storage
-        // step can be completed.
-        // To get around that race condition, we stop the event loop to prevent updates.
-        eventManager.stop();
-        return () => {
-            eventManager.start();
-        };
-    }, []);
 
     const handlePreStorageStep = async () => {
         // If user setting up organization for VPN B2B or Pass Family plan then the storage step must be skipped.
@@ -138,7 +108,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
             setStep(STEPS.KEY);
             return;
         }
-        await silentApi(await dispatch(createPasswordlessOrganizationKeys(result)));
+        await dispatch(createPasswordlessOrganizationKeys(result));
         setOrgKeyCreated(true);
         return handlePreStorageStep();
     };
@@ -169,15 +139,8 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                     />
                 ),
                 async onSubmit() {
-                    if (!selfMemberID) {
-                        throw new Error('Missing member id');
-                    }
-                    // NOTE: By default the admin gets allocated all of the VPN connections. Here we artificially set the admin to the default value
-                    // So that other users can get connections allocated.
-                    if (hasPaidVpn && selfMember.MaxVPN !== VPN_CONNECTIONS) {
-                        await silentApi(updateVPN(selfMemberID, VPN_CONNECTIONS)).catch(noop);
-                    }
-                    await silentApi(updateOrganizationName(model.name));
+                    await dispatch(resetSelfVpnConnections());
+                    await dispatch(updateOrganizationName({ name: model.name }));
 
                     if (organization?.RequiresKey && !orgKeyCreated) {
                         await handleOrgKeyCreation();
@@ -204,7 +167,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                 ),
                 async onSubmit() {
                     if (!orgKeyCreated && keyRotationPayload) {
-                        await silentApi(await dispatch(createPasswordlessOrganizationKeys(keyRotationPayload)));
+                        await dispatch(createPasswordlessOrganizationKeys(keyRotationPayload));
                         setOrgKeyCreated(true);
                     }
                     await handlePreStorageStep();
@@ -233,11 +196,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                     </>
                 ),
                 async onSubmit() {
-                    if (!selfMemberID) {
-                        throw new Error('Missing member id');
-                    }
-                    await silentApi(updateQuota(selfMemberID, storageValue));
-
+                    await dispatch(setSelfQuota(storageValue));
                     await finalizeOrganizationCreation();
                 },
             };
