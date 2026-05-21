@@ -2648,6 +2648,12 @@
       ],
       "New": [
         "Neu"
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Zugangstoken \"${ action.token.Name }\" ist bereits abgelaufen. Wenn gelöscht, wird es nicht länger angezeigt."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Nur Token, die in den letzten 30 Tagen abgelaufen sind, werden angezeigt. Ältere Token wurden automatisch gelöscht."
       ]
     },
     "Keyboard key": {
@@ -3827,6 +3833,9 @@
       ],
       "Token name": [
         "Name des Tokens"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Abgelaufene Token (${ expired.length })"
       ]
     },
     "Link": {
