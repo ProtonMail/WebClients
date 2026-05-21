@@ -4,6 +4,7 @@ import { useLocalParticipant } from '@livekit/components-react';
 import { c } from 'ttag';
 
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useLoading from '@proton/hooks/useLoading';
 import { IcMeetCamera } from '@proton/icons/icons/IcMeetCamera';
 import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetMicrophone } from '@proton/icons/icons/IcMeetMicrophone';
@@ -62,6 +63,7 @@ export const ParticipantControls = () => {
     const dispatch = useMeetDispatch();
     const isGuest = useMeetSelector(selectIsGuest);
     const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
+    const [isCameraToggleLoading, withCameraToggleLoading] = useLoading();
     const isScreenShare = useMeetSelector(selectIsScreenShare);
     const page = useMeetSelector(selectPage);
     const isLargerThanMd = useIsLargerThanMd();
@@ -99,7 +101,7 @@ export const ParticipantControls = () => {
         if (
             cameraPermission !== 'granted' &&
             cameraPermission !== prevDevicePermissionsRef.current.camera &&
-            popupState[PopUpControls.Camera]
+            popupState.Camera
         ) {
             dispatch(togglePopupState(PopUpControls.Camera));
         }
@@ -107,13 +109,13 @@ export const ParticipantControls = () => {
         if (
             microphonePermission !== 'granted' &&
             microphonePermission !== prevDevicePermissionsRef.current.microphone &&
-            popupState[PopUpControls.Microphone]
+            popupState.Microphone
         ) {
             dispatch(togglePopupState(PopUpControls.Microphone));
         }
 
         prevDevicePermissionsRef.current = { camera: cameraPermission, microphone: microphonePermission };
-    }, [cameraPermission, microphonePermission]);
+    }, [cameraPermission, dispatch, microphonePermission, popupState.Camera, popupState.Microphone]);
 
     const microphoneHasWarning = !hasMicrophonePermission || microphones.length === 0;
 
@@ -208,6 +210,7 @@ export const ParticipantControls = () => {
                                 OnIconComponent={IcMeetCamera}
                                 OffIconComponent={IcMeetCameraOff}
                                 isOn={cameras.length === 0 ? false : isCameraEnabled}
+                                loading={isCameraToggleLoading}
                                 onClick={() => {
                                     if (!hasCameraPermission) {
                                         dispatch(setPermissionPromptStatus(PermissionPromptStatus.CAMERA));
@@ -219,11 +222,13 @@ export const ParticipantControls = () => {
                                     }
 
                                     if (videoDeviceId) {
-                                        void toggleVideo({
-                                            isEnabled: !isCameraEnabled,
-                                            videoDeviceId,
-                                            preserveCache: true,
-                                        });
+                                        void withCameraToggleLoading(
+                                            toggleVideo({
+                                                isEnabled: !isCameraEnabled,
+                                                videoDeviceId,
+                                                preserveCache: true,
+                                            })
+                                        );
                                     }
                                 }}
                                 Content={VideoSettings}
