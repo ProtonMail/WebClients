@@ -1275,6 +1275,9 @@
       ],
       "Search is unavailable": [
         "Suche ist nicht verfügbar"
+      ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Zurück zum Album „${ ellipsedAlbumName }\""
       ]
     },
     "Action: Docs": {
@@ -7172,6 +7175,22 @@
       ],
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
         "Deinem Browser ist beim Indexieren der Dateien für die Suche der Speicherplatz ausgegangen. Schaffe Speicherplatz und erstelle den Index anschließend neu."
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Erstelle eine sichere Cloud für ${ memberCount } Mitglied",
+        "Erstelle eine sichere Cloud für ${ memberCount } Mitglieder"
+      ],
+      "Photo saved to your Drive": [
+        "Foto in deinem Drive gespeichert",
+        "Fotos in deinem Drive gespeichert"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "Wir konnten dieses Foto nicht in deinem Drive speichern",
+        "Wir konnten diese Fotos nicht in deinem Drive speichern"
+      ],
+      "We were not able to add this photo to your album": [
+        "Wir konnten dieses Foto nicht in deinem Album hinzufügen",
+        "Wir konnten diese Fotos nicht in deinem Album hinzufügen"
       ]
     },
     "info": {
@@ -9142,6 +9161,15 @@
       ],
       "Dedicated servers optimized for speed": [
         "Dedizierte Server, optimiert für hohe Geschwindigkeit"
+      ],
+      "Access all countries": [
+        "Zugriff auf alle Länder"
+      ],
+      "No streaming support": [
+        "Keine Unterstützung für Streaming"
+      ],
+      "Unlock streaming": [
+        "Streaming entsperren"
       ]
     },
     "new_plans: feature highlight": {
@@ -9556,6 +9584,10 @@
       "Support for ${ n } custom email domain": [
         "Support für ${ n } benutzerdefinierte E-Mail-Domain",
         "Support für ${ n } benutzerdefinierte E-Mail-Domains"
+      ],
+      "${ n } country": [
+        "${ n } Land",
+        "${ n } Länder"
       ]
     },
     "Notification": {
@@ -9955,6 +9987,14 @@
       ],
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "Kopie von \"${ ellipsedName }\" in den Papierkorb verschoben"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } Foto wurde zu \"${ albumName }\" hinzugefügt",
+        "${ addedUids.length } Fotos wurden zu \"${ albumName }\" hinzugefügt"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } Foto wurde aus \"${ albumName }\" entfernt",
+        "${ removed } Fotos wurden aus \"${ albumName }\" entfernt"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
