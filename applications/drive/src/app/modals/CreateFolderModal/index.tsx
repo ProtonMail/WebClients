@@ -1,6 +1,6 @@
 import { useModalTwoStatic } from '@proton/components';
 
-import { withHoc } from '../../hooks/withHoc';
+import { withHoc } from '../../legacy/hooks/withHoc';
 import { CreateFolderModalView, type CreateFolderModalViewProps } from './CreateFolderModalView';
 import { type UseCreateFolderModalStateProps, useCreateFolderModalState } from './useCreateFolderModalState';
 

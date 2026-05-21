@@ -1,5 +1,5 @@
-import type { ContextMenuProps } from '../../components/FileBrowser';
-import { ItemContextMenu } from '../../components/sections/ContextMenu/ItemContextMenu';
+import type { ContextMenuProps } from '../../legacy/components/FileBrowser';
+import { ItemContextMenu } from '../../legacy/components/sections/ContextMenu/ItemContextMenu';
 import { PublicFolderActions } from './actions/PublicFolderActions';
 import { usePublicActions } from './actions/usePublicActions';
 

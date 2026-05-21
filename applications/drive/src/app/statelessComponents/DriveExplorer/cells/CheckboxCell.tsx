@@ -3,7 +3,7 @@ import { type MouseEvent, useCallback } from 'react';
 import { Checkbox } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import { SelectionState } from '../../../components/FileBrowser/hooks/useSelectionControls';
+import { SelectionState } from '../../../legacy/components/FileBrowser/hooks/useSelectionControls';
 import type { SelectionMethods } from '../types';
 
 export interface CheckboxCellProps {

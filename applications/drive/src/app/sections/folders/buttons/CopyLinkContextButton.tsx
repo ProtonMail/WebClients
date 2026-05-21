@@ -5,7 +5,7 @@ import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
-import { ContextMenuButton } from '../../../components/sections/ContextMenu';
+import { ContextMenuButton } from '../../../legacy/components/sections/ContextMenu';
 
 interface Props {
     getPublicLinkInfo: () => Promise<{ url?: string; isExpired?: boolean } | undefined>;

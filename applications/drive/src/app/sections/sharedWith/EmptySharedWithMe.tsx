@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import noLinksSvg from '@proton/styles/assets/img/illustrations/empty-shared-with-me.svg';
 
-import { DriveEmptyView } from '../../components/layout/DriveEmptyView';
+import { DriveEmptyView } from '../../legacy/components/layout/DriveEmptyView';
 
 const EmptyShared = () => {
     return (

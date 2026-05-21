@@ -8,10 +8,10 @@ import { Loader, useAppTitle, useModalStateObject, useNotifications } from '@pro
 import { getDriveForPhotos } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
-import useNavigate from '../../hooks/drive/useNavigate';
+import useNavigate from '../../legacy/hooks/drive/useNavigate';
+import { usePhotoLayoutStore } from '../../legacy/zustand/photos/layout.store';
 import { getNotificationsManager } from '../../modules/notifications';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
-import { usePhotoLayoutStore } from '../../zustand/photos/layout.store';
 import { RenameAlbumModal } from '../PhotosModals/RenameAlbumModal';
 import { refreshAlbumMetadata } from '../loaders/loadAlbum';
 import { type AlbumItem, useAlbumsStore } from '../useAlbums.store';

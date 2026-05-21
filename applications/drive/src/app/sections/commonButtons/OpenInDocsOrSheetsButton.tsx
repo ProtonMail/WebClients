@@ -6,7 +6,7 @@ import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import { DOCS_APP_NAME, SHEETS_APP_NAME } from '@proton/shared/lib/constants';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
-import { ContextMenuButton } from '../../components/sections/ContextMenu';
+import { ContextMenuButton } from '../../legacy/components/sections/ContextMenu';
 
 interface BaseProps extends OpenInDocsType {
     onClick: () => void;

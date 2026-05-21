@@ -1,6 +1,6 @@
 import { useModalTwoStatic } from '@proton/components/index';
 
-import { withHoc } from '../../hooks/withHoc';
+import { withHoc } from '../../legacy/hooks/withHoc';
 import { FilesDetailsModalView, type FilesDetailsModalViewProps } from './FilesDetailsModalView';
 import { type UseFilesDetailsModalProps, useFilesDetailsModalState } from './useFilesDetailsModalState';
 

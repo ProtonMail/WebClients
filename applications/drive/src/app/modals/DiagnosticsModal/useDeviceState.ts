@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 
-import { useApi } from '@proton/components';
 import { serverTime } from '@protontech/crypto';
+
+import { useApi } from '@proton/components';
 import { useDriveDiagnostics } from '@proton/drive/diagnostic';
 import { queryUserSettings } from '@proton/shared/lib/api/drive/user';
 
 import config from '../../config';
-import { useSearchLibrary } from '../../store';
+import { useSearchLibrary } from '../../legacy/store';
 
 export type DeviceState = {
     versions: {
@@ -52,7 +53,7 @@ export const useDeviceState = (): DeviceState => {
     const [apiStatusDrive, setApiStatusDrive] = useState<string | undefined>(undefined);
 
     useEffect(() => {
-        navigator.storage?.estimate().then((estimate) => {
+        void navigator.storage?.estimate().then((estimate) => {
             setOpfs({
                 quota: estimate.quota,
                 usage: estimate.usage,

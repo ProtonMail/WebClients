@@ -14,7 +14,7 @@ import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import emptyPhotosSvg from '@proton/styles/assets/img/illustrations/empty-photos.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';
 
-import { DriveEmptyView } from '../../components/layout/DriveEmptyView';
+import { DriveEmptyView } from '../../legacy/components/layout/DriveEmptyView';
 
 export const EmptyPhotos: FC = () => {
     const fileInput = useRef<HTMLInputElement>(null);

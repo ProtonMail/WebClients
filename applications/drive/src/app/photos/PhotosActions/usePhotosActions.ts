@@ -8,8 +8,8 @@ import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriv
 import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
-import useNavigate from '../../hooks/drive/useNavigate';
-import { useSharingActions } from '../../hooks/drive/useSharingActions';
+import useNavigate from '../../legacy/hooks/drive/useNavigate';
+import { useSharingActions } from '../../legacy/hooks/drive/useSharingActions';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { getNotificationsManager } from '../../modules/notifications';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';

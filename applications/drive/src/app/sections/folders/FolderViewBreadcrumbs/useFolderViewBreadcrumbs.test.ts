@@ -28,7 +28,7 @@ jest.mock('@proton/components', () => ({
     })),
 }));
 
-jest.mock('../../../hooks/drive/useNavigate', () => {
+jest.mock('../../../legacy/hooks/drive/useNavigate', () => {
     return jest.fn().mockImplementation(() => ({
         navigateToLink: jest.fn(),
     }));

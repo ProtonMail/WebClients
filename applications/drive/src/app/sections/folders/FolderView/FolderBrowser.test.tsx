@@ -18,28 +18,28 @@ jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
     }),
 }));
 
-jest.mock('../../../hooks/drive/useNavigate', () => ({
+jest.mock('../../../legacy/hooks/drive/useNavigate', () => ({
     __esModule: true,
     default: () => ({ navigateToLink: jest.fn(), navigateToRoot: jest.fn() }),
 }));
 
-jest.mock('../../../store/_documents', () => ({
+jest.mock('../../../legacy/store/_documents', () => ({
     useOpenInDocs: () => ({ canOpen: false }),
 }));
 
-jest.mock('../../../hooks/user', () => ({
+jest.mock('../../../legacy/hooks/user', () => ({
     useUserSettings: () => ({
         layout: 0,
         changeLayout: jest.fn(),
     }),
 }));
 
-jest.mock('../../../components/sections/useIsEditEnabled', () => ({
+jest.mock('../../../legacy/components/sections/useIsEditEnabled', () => ({
     __esModule: true,
     default: () => false,
 }));
 
-jest.mock('../../../hooks/drive/useActiveShare', () => ({
+jest.mock('../../../legacy/hooks/drive/useActiveShare', () => ({
     useActiveShare: () => ({
         activeFolder: { shareId: 'share-1', linkId: 'link-1', volumeId: 'vol-1' },
     }),
