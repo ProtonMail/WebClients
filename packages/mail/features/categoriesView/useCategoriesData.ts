@@ -20,9 +20,13 @@ export const useCategoriesData = () => {
     const settingAccess = organization?.Settings?.MailCategoryViewEnabled ? !!mailSettings.MailCategoryView : false;
     const categoryViewAccess = (categoryViewFlag || hasBetaAccess) && settingAccess;
 
+    const isRefreshedToolbarUIDisabled = useFlag('RefreshedToolbarUIDisabled');
+    const shouldSeeWideToolbars = !isRefreshedToolbarUIDisabled || hasBetaAccess;
+
     return {
         categoriesStore,
         activeCategoriesTabs: categoryViewAccess ? activeCategoriesTabs : [],
         categoryViewAccess,
+        shouldSeeWideToolbars,
     };
 };
