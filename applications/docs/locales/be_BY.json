@@ -3006,6 +3006,12 @@
       "Failed to fetch sharing info": [
         "Не ўдалося атрымаць зветкі абагульвання"
       ],
+      "Failed to load document details": [
+        "Не ўдалося загрузіць падрабязнасці дакументу"
+      ],
+      "Failed to load recent documents": [
+        "Не ўдалося загрузіць нядаўнія дакументы"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Не ўдалося загрузіць даныя падпіскі. Паспрабуйце яшчэ раз пазней."
       ],
@@ -4804,6 +4810,9 @@
       ],
       "Geoblocking": [
         "Геаблакіроўка"
+      ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Атрымайце прафесійную электронную пошту @vasha-kampaniya.com, 1 ТБ у бяспечным сховішчы на карыстальніка, пашыраны час для відэазванкоў і іншыя функцыі з ${ BRAND_NAME } Workspace."
       ],
       "Get email updates for comments and suggestions added to your documents.": [
         "Атрымлівайце лісты на электронную пошту аб каментарыях і прапановах, якія дадаюцца ў вашы дакументы."
@@ -7777,6 +7786,12 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } краіна",
+        "${ n } краіны",
+        "${ n } краін",
+        "${ n } краін"
+      ],
       "Access advanced VPN features": [
         "Доступ да пашыраных функцый VPN"
       ],
