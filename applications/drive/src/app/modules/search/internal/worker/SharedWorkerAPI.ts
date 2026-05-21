@@ -57,8 +57,8 @@ export class SharedWorkerAPI {
         this.clientsCoordinator.register(userId, clientId, bridge);
     }
 
-    heartbeatClient(clientId: ClientId): void {
-        this.clientsCoordinator.heartbeat(clientId);
+    heartbeatClient(clientId: ClientId, isForeground: boolean): { isClientRegistered: boolean } {
+        return this.clientsCoordinator.heartbeat(clientId, isForeground);
     }
 
     disconnectClient(clientId: ClientId): void {
