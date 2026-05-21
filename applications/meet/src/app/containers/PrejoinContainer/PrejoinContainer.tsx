@@ -5,9 +5,9 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms/Href/Href';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
-    selectCameraState,
     selectInitialAudioState,
     selectInitialCameraState,
+    selectLastUsedCameraId,
     selectMicrophoneState,
     selectSelectedAudioOutputId,
     selectSelectedCameraId,
@@ -78,7 +78,7 @@ export const PrejoinContainer = ({
     // check if a custom display name is already stored for the user
     const hasStoredDisplayName = getItem(getDisplayNameStorageKey(isGuest, userId)) != null;
 
-    const cameraState = useMeetSelector(selectCameraState);
+    const lastUsedCameraId = useMeetSelector(selectLastUsedCameraId);
     const microphoneState = useMeetSelector(selectMicrophoneState);
     const speakerState = useMeetSelector(selectSpeakerState);
     const activeCameraDeviceId = useMeetSelector(selectSelectedCameraId);
@@ -94,7 +94,7 @@ export const PrejoinContainer = ({
         dispatch(setLocalParticipantColorIndex(participantColorIndex.current));
     }, []);
 
-    const currentSelectedCamera = activeCameraDeviceId || cameraState.systemDefault?.deviceId || '';
+    const currentSelectedCamera = activeCameraDeviceId || lastUsedCameraId || '';
     const currentSelectedMicrophone = activeMicrophoneDeviceId || microphoneState.systemDefault?.deviceId || '';
     const currentSelectedAudioOutputDevice = activeAudioOutputDeviceId || speakerState.systemDefault?.deviceId || '';
 
@@ -110,11 +110,11 @@ export const PrejoinContainer = ({
         handleJoin(displayName);
     };
 
-    const handleCameraChange = async (camera: SerializableDeviceInfo, isDefaultDevice: boolean) => {
+    const handleCameraChange = async (camera: SerializableDeviceInfo) => {
         await switchActiveDevice({
             deviceType: 'videoinput',
             deviceId: camera.deviceId,
-            isSystemDefaultDevice: isDefaultDevice,
+            isSystemDefaultDevice: false,
         });
     };
 

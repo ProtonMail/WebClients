@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { isLinux, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
+import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import {
     type SerializableDeviceInfo,
@@ -23,6 +24,8 @@ export enum PermissionsModalType {
     PERMISSIONS_BLOCKED_MICROPHONE_MODAL = 'permissionsBlockedMicrophoneModal',
     PERMISSIONS_BLOCKED_SCREEN_SHARE_MODAL = 'permissionsBlockedScreenShareModal',
 }
+
+const LAST_USED_CAMERA_ID_KEY = 'lastUsedCameraId';
 
 export interface DeviceManagementState {
     // Permissions
@@ -156,6 +159,10 @@ const slice = createSlice({
     },
 });
 
+export const setLastUsedCameraId = (deviceId: string) => {
+    setItem(LAST_USED_CAMERA_ID_KEY, deviceId);
+};
+
 export class PermissionBlockedError extends Error {}
 
 const AUTOREJECT_THRESHOLD_MS = 300;
@@ -281,6 +288,13 @@ export const selectActiveAudioOutputId = (state: MeetState) => state.deviceManag
 export const selectInitialCameraState = (state: MeetState) => state.deviceManagement.initialCameraState;
 export const selectInitialAudioState = (state: MeetState) => state.deviceManagement.initialAudioState;
 export const selectUserCameraIntent = (state: MeetState) => state.deviceManagement.userCameraIntent;
+
+// Check local storage for the last used camera id, fallback to the first camera if not found
+export const selectLastUsedCameraId = createSelector(selectCameras, (cameras) => {
+    const lastUsedCameraId = getItem(LAST_USED_CAMERA_ID_KEY);
+
+    return cameras.find((camera) => camera.deviceId === lastUsedCameraId)?.deviceId ?? cameras[0]?.deviceId;
+});
 
 export const selectPermissionsModals = (state: MeetState) => state.deviceManagement.uiModals;
 
