@@ -1497,6 +1497,9 @@
       "Set as default": [
         "Ορισμός ως προεπιλογή"
       ],
+      "Set as default mail application": [
+        "Ορίστε ως προεπιλεγμένη εφαρμογή αλληλογραφίας"
+      ],
       "Set catch-all": [
         "Ορίστε catch-all"
       ],
@@ -3389,11 +3392,17 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Προσθήκη χρηστών χειροκίνητα"
+      ],
       "Cancel": [
         "Ακύρωση"
       ],
       "Close": [
         "Κλείσιμο"
+      ],
+      "Configure your network": [
+        "Διαμορφώστε το δίκτυό σας"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Συνεχίστε να χρησιμοποιείτε ${ MAIL_APP_NAME }."
@@ -3416,6 +3425,12 @@
       "Got it": [
         "Το κατάλαβα"
       ],
+      "Invite your team": [
+        "Προσκαλέστε την ομάδα σας"
+      ],
+      "Manage global VPN permissions": [
+        "Διαχείριση παγκόσμιων δικαιωμάτων VPN"
+      ],
       "Maybe later": [
         "Ίσως αργότερα"
       ],
@@ -3425,11 +3440,17 @@
       "Remind me later": [
         "Υπενθύμιση αργότερα"
       ],
+      "Secure your organization": [
+        "Ασφαλίστε τον οργανισμό σας"
+      ],
       "Send": [
         "Αποστολή"
       ],
       "Set up other features": [
         "Ρύθμιση άλλων δυνατοτήτων"
+      ],
+      "Set up SSO": [
+        "Ρύθμιση SSO"
       ],
       "Sign in": [
         "Σύνδεση"
@@ -5066,6 +5087,9 @@
       "/month": [
         "/μήνα"
       ],
+      "/user /month": [
+        "/χρήστη /μήνα"
+      ],
       "/user per month": [
         "/χρήστη ανά μήνα"
       ]
@@ -5238,6 +5262,12 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "Το ${ DOCS_SHORT_APP_NAME } στο ${ DRIVE_APP_NAME } σάς επιτρέπει να συνεργάζεστε με άλλους σε ένα ασφαλές, κρυπτογραφημένο περιβάλλον."
       ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "Το ${ MAIL_APP_NAME } δεν είναι η προεπιλεγμένη εφαρμογή αλληλογραφίας σας."
+      ],
+      "${ MAIL_APP_NAME } is your default mail application.": [
+        "Το ${ MAIL_APP_NAME } είναι η προεπιλεγμένη εφαρμογή αλληλογραφίας σας."
+      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "Το ${ MAIL_APP_NAME } διατηρεί τα δεδομένα της επιχείρησής σας ασφαλή και σας επιτρέπει να στέλνετε κρυπτογραφημένα μηνύματα ηλεκτρονικού ταχυδρομείου σε οποιονδήποτε."
       ],
@@ -5280,6 +5310,9 @@
       "Connect your CRM, website, printers, and more.": [
         "Συνδέστε το CRM, την ιστοσελίδα, τους εκτυπωτές σας και άλλα."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Δημιουργήστε μια Πύλη για να παρέχετε στους χρήστες σας πρόσβαση στους πόρους τεχνολογίας πληροφοριών μέσω αποκλειστικών διακομιστών."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Δημιουργήστε μια σύσκεψη Zoom και προσθέστε λεπτομέρειες συμμετοχής στην εκδήλωσή σας με ένα κλικ."
       ],
@@ -5289,8 +5322,14 @@
       "Create groups you can email with a single address.": [
         "Δημιουργήστε ομάδες στις οποίες μπορείτε να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου με μία μόνο ηλεκτρονική διεύθυνση."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Δημιουργήστε νέους λογαριασμούς χρηστών ή εισαγάγετε χρήστες με SSO (ενιαία σύνδεση) προμήθεια SCIM."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Δημιουργήστε πολιτικές ώστε να ορίσετε ποιος μπορεί να συνδεθεί στους κοινόχρηστους διακομιστές κάθε χώρας."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Αποφασίστε ποιοι χρήστες μπορούν να συνδεθούν σε καθεμία από τις 120+ τοποθεσίες των κοινόχρηστων διακομιστών μας."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Αποκτήστε εύκολα πρόσβαση στην ηλεκτρονική σας διεύθυνση και το ημερολόγιό σας σε υπολογιστή και κινητό."
@@ -5351,6 +5390,9 @@
       ],
       "How you unlock your encrypted data if you lose your password.": [
         "Πώς ξεκλειδώνετε τα κρυπτογραφημένα δεδομένα σας αν χάσετε τον κωδικό σας."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Εάν δεν το έχετε κάνει ήδη, ενεργοποιήστε μερικές μεθόδους ανάκτησης για να βεβαιωθείτε ότι δε θα χάσετε ποτέ την πρόσβαση στο ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Φαίνεται ότι η λίστα επαφών που εισάγετε περιέχει κάποιες ομάδες. Παρακαλούμε εξετάστε τον τρόπο εισαγωγής αυτών των ομάδων."
@@ -6692,6 +6734,9 @@
       "Enable auto-renew": [
         "Ενεργοποίηση αυτόματης ανανέωσης"
       ],
+      "Enter your extra password": [
+        "Εισαγάγετε τον επιπλέον κωδικό πρόσβασής σας"
+      ],
       "Explore plans": [
         "Εξερευνήστε τα πλάνα"
       ],
@@ -6728,9 +6773,6 @@
       "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
         "Έχετε φτάσει στο μέγιστο της ${ limit } επαφής. Για να αλλάξετε, αφαιρέστε μια επαφή και προσθέστε μια νέα.",
         "Έχετε φτάσει στο μέγιστο των ${ limit } επαφών. Για να αλλάξετε, αφαιρέστε μια επαφή και προσθέστε μια νέα."
-      ],
-      "None": [
-        "Κανένας"
       ],
       "Only ": [
         "Μόνο "
@@ -6882,6 +6924,9 @@
       ],
       "Unable to recover data": [
         "Δεν είναι δυνατή η ανάκτηση των δεδομένων"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Ξεκλειδώστε το ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -7104,17 +7149,11 @@
       "Email address is required": [
         "Η διεύθυνση email είναι υποχρεωτική"
       ],
-      "Email is not valid": [
-        "Η διεύθυνση email δεν είναι έγκυρη"
-      ],
       "Empty condition": [
         "Κενή συνθήκη"
       ],
       "Enter 6 digits": [
         "Εισάγετε 6 ψηφία"
-      ],
-      "Enter your username without the domain (@example.com)": [
-        "Εισάγετε το όνομα χρήστη σας χωρίς τον τομέα (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Πρόβλημα σύνδεσης με το Bitcoin API."
@@ -7202,9 +7241,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Λανθασμένος δεύτερος κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
-      ],
-      "Incorrect username": [
-        "Εσφαλμένο όνομα χρήστη"
       ],
       "Intended recipient does not support calendar sharing": [
         "Ο προβλεπόμενος παραλήπτης δεν υποστηρίζει την κοινή χρήση ημερολογίου"
@@ -7315,9 +7351,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Δεν είναι λογαριασμός ${ BRAND_NAME }"
       ],
-      "Not a valid number": [
-        "Μη έγκυρος αριθμός"
-      ],
       "Organization key is not decrypted": [
         "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
       ],
@@ -7329,9 +7362,6 @@
       ],
       "Password is required": [
         "Απαιτείται κωδικός πρόσβασης"
-      ],
-      "Passwords do not match": [
-        "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
       ],
       "Payment process canceled": [
         "Η διαδικασία πληρωμής ακυρώθηκε"
@@ -7515,9 +7545,6 @@
       "The amount due has changed. Please try again.": [
         "Το οφειλόμενο ποσό έχει αλλάξει. Παρακαλούμε προσπαθήστε ξανά."
       ],
-      "The email addresses do not match": [
-        "Οι διευθύνσεις email δεν ταιριάζουν."
-      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Το αρχείο είναι πολύ μεγάλο, το μέγιστο μέγεθος είναι ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -7560,17 +7587,14 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Υπερβολικός αριθμός φακέλων στον εξωτερικό λογαριασμό σας. Παρακαλούμε προσαρμόστε την εισαγωγή, προς διαγραφή μερικών φακέλων."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
+      "There was an error, please try again.": [
+        "Παρουσιάστηκε σφάλμα, παρακαλούμε προσπαθήστε ξανά."
       ],
       "This field is invalid": [
         "Αυτό το πεδίο δεν είναι έγκυρο"
       ],
       "This field is required": [
         "Αυτό το πεδίο είναι υποχρεωτικό"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Μη διαθέσιμο όνομα φακέλου. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
@@ -7596,9 +7620,6 @@
       "Try again later": [
         "Δοκιμάστε ξανά αργότερα"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Δοκιμάστε να χρησιμοποιήσετε μόνο γράμματα, αριθμούς και _.-"
-      ],
       "Unable to upload file": [
         "Αδυναμία μεταφόρτωσης αρχείου"
       ],
@@ -7616,12 +7637,6 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Τα ανεβασμένα αρχεία δεν είναι έγκυρα ιδιωτικά κλειδιά. Παρακαλούμε βεβαιωθείτε και δοκιμάστε ξανά."
-      ],
-      "Username must begin with a letter or digit": [
-        "Το όνομα χρήστη πρέπει να ξεκινά με ένα γράμμα ή ένα ψηφίο"
-      ],
-      "Username must end with a letter or digit": [
-        "Το όνομα χρήστη πρέπει να τελειώνει με γράμμα ή ψηφίο"
       ],
       "Validation error": [
         "Σφάλμα επικύρωσης"
@@ -10509,9 +10524,9 @@
       "Create a new code on your TV and try again.": [
         "Δημιουργήστε έναν νέο κωδικό στην τηλεόρασή σας και δοκιμάστε ξανά."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλος",
-        "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλη"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Δημιουργήστε ένα ασφαλές cloud για ${ memberCount } μέλος",
+        "Δημιουργήστε ένα ασφαλές cloud για ${ memberCount } μέλη"
       ],
       "Create an account": [
         "Δημιουργία λογαριασμού"
@@ -11023,6 +11038,9 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα προσωπικά δεδομένα έχουν διαρρεύσει. ${ learnMoreLinkNoBreach }"
+      ],
+      "Get started": [
+        "Ας ξεκινήσουμε"
       ],
       "Get started with the referral link above.": [
         "Ξεκινήστε με τον σύνδεσμο παραπομπής παραπάνω."
@@ -12090,6 +12108,9 @@
       "Set up your organization": [
         "Ρυθμίστε τον οργανισμό σας"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Ρυθμίστε την οργάνωσή σας και ξεκινήστε να προστατεύετε τα δεδομένα σας με μερικά απλά βήματα."
+      ],
       "Setting successfully saved": [
         "Η ρύθμιση αποθηκεύτηκε με επιτυχία"
       ],
@@ -12266,6 +12287,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Το TechRadar Pro το συνιστά με βαθμολογία 4,2 στα 5 αστέρια"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Προσωρινά μη διαθέσιμο λόγω υψηλής ζήτησης. Παρακαλούμε δοκιμάστε ξανά αργότερα."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
@@ -12935,6 +12959,9 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Όταν είναι απενεργοποιημένο, αυτό εμποδίζει την φόρτωση απομακρυσμένων εικόνων εν αγνοία σας."
+      ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "Όταν είναι ενεργοποιημένο, θα ελέγχουμε αν το ${ MAIL_APP_NAME } είναι η προεπιλεγμένη εφαρμογή αλληλογραφίας και θα σας ειδοποιούμε αν δεν είναι."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Όταν ενεργοποιείτε το SAML για ${ appName } στην υπηρεσία παροχής ταυτότητας, ενδέχεται να σας ζητηθεί να χρησιμοποιήσετε τη διεύθυνση URL επιστροφής κλήσης (ACS) και το αναγνωριστικό εκδότη. Απλώς αντιγράψτε-επικολλήστε τα παρακάτω δεδομένα στα πεδία της υπηρεσίας παροχής ταυτότητάς σας."
@@ -16361,11 +16388,26 @@
       "Built-in chat": [
         "Ενσωματωμένη συνομιλία"
       ],
+      "Cloud storage and file sharing": [
+        "Αποθήκευση στο cloud και κοινοποίηση αρχείων"
+      ],
+      "Data retention policies": [
+        "Πολιτικές διατήρησης δεδομένων"
+      ],
+      "Document and spreadsheet editor": [
+        "Επεξεργαστής εγγράφων και υπολογιστικών φύλλων"
+      ],
+      "Email writing assistant": [
+        "Βοηθός σύνταξης ηλεκτρονικού ταχυδρομείου"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Κρυπτογραφημένη κοινή χρήση οθόνης διατερματικά και εφήμερη συνομιλία κατά τη διάρκεια της κλήσης"
       ],
       "Hosts can record meetings locally on their computers": [
         "Οι οικοδεσπότες μπορούν να καταγράφουν τις συσκέψεις τοπικά στους υπολογιστές τους"
+      ],
+      "Includes Meet Professional": [
+        "Συμπεριλαμβάνει το Meet Professional"
       ],
       "Meeting recording": [
         "Ηχογράφηση σύσκεψης"
@@ -16373,8 +16415,17 @@
       "One active meeting at a time": [
         "Μία ενεργή σύσκεψη τη φορά"
       ],
+      "Password manager with team vaults": [
+        "Διαχειριστής κωδικών πρόσβασης με ομαδικές κρύπτες"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Ιδιωτική συνομιλία με τεχνητή νοημοσύνη (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Κοινή χρήση οθόνης"
+      ],
+      "Secure mail and calendar": [
+        "Ασφαλής αλληλογραφία και ημερολόγιο"
       ],
       "Unlimited meetings per day": [
         "Απεριόριστες συσκέψεις ανά ημέρα"
@@ -16390,6 +16441,9 @@
       "Video meetings, ${ n } participant": [
         "Βιντεοκλήσεις, ${ n } συμμετέχων",
         "Βιντεοκλήσεις, ${ n } συμμετέχοντες"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN με αποκλεισμός διαφημίσεων και προστασία από κακόβουλο λογισμικό"
       ]
     },
     "meet_2025: Info": {
@@ -23928,9 +23982,6 @@
       "Organization logo updated": [
         "Το λογότυπο του οργανισμού ενημερώθηκε"
       ],
-      "Organization name set": [
-        "Τέθηκε το όνομα το οργανισμού"
-      ],
       "Organization name updated": [
         "Το όνομα του οργανισμού ενημερώθηκε"
       ],
@@ -24150,6 +24201,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει ιστορικό εκδόσεων, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "Για προσωπική χρήση"
+      ],
+      "For professional use": [
+        "Για επαγγελματική χρήση"
       ]
     },
     "Tab in domain modal": {
@@ -24656,6 +24715,9 @@
       "Change second password": [
         "Αλλαγή δεύτερου κωδικού πρόσβασης"
       ],
+      "Check your default mail application": [
+        "Ελέγξτε την προεπιλεγμένη εφαρμογή αλληλογραφίας σας."
+      ],
       "Choose a provider": [
         "Επιλέξτε έναν πάροχο"
       ],
@@ -24952,6 +25014,9 @@
       "Disconnected from Gmail": [
         "Αποσυνδεδεμένο από το Gmail"
       ],
+      "Dismiss setup checklist": [
+        "Απόρριψη λίστας ελέγχου εγκατάστασης"
+      ],
       "Display name and signature": [
         "Εμφανιζόμενο όνομα και υπογραφή"
       ],
@@ -25228,6 +25293,9 @@
       ],
       "Get more from your VPN": [
         "Αποκτήστε περισσότερα από το VPN σας."
+      ],
+      "Get started": [
+        "Ας ξεκινήσουμε"
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Αποκτήστε την εφαρμογή σε όλες τις συσκευές σας και απολαύστε ασφαλή, απρόσκοπτη πρόσβαση οπουδήποτε."
@@ -27036,16 +27104,6 @@
       ],
       "Writing assistant": [
         "Βοηθός γραφής"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρα",
-        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρες"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρα)",
-        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρες)"
       ]
     },
     "Video control": {

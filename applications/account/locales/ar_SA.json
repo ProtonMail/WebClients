@@ -5346,9 +5346,6 @@
       "Less than a minute left": [
         "أقل من دقيقة متبقية"
       ],
-      "None": [
-        "لا شيء"
-      ],
       "Only ": [
         "فقط "
       ],
@@ -5706,9 +5703,6 @@
       "Email address is required": [
         "عنوان البريد الإلكتروني مطلوب"
       ],
-      "Email is not valid": [
-        "البريد الإلكتروني غير صحيح"
-      ],
       "Empty condition": [
         "وضع فارغ"
       ],
@@ -5792,9 +5786,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "كلمة المرور الثانية غير صحيحة. يُرجى المحاولة مرة أخرى."
-      ],
-      "Incorrect username": [
-        "اسم مستخدم غير صحيح"
       ],
       "Intended recipient does not support calendar sharing": [
         "المستلم المقصود لا يدعم مشاركة التقويم"
@@ -5903,9 +5894,6 @@
       "Not a ${ BRAND_NAME } account": [
         "ليس حساب ${ BRAND_NAME }"
       ],
-      "Not a valid number": [
-        "رقم غير صحيح"
-      ],
       "Organization key is not decrypted": [
         "لم يتم فك تشفير مفتاح المنظمة"
       ],
@@ -5917,9 +5905,6 @@
       ],
       "Password is required": [
         "كلمة المرور مطلوبة"
-      ],
-      "Passwords do not match": [
-        "كلمتا المرور غير متطابقتين"
       ],
       "Payment process canceled": [
         "تم إلغاء عملية الدفع"
@@ -6099,9 +6084,6 @@
       "The amount due has changed. Please try again.": [
         "لقد تغير المبلغ المستحق. يُرجى المحاولة مرة أخرى."
       ],
-      "The email addresses do not match": [
-        "عناوين البريد الإلكتروني غير متطابقة"
-      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "الملف كبير جدًا، الحد الأقصى للحجم هو ${ MAX_FILE_DIMENSIONS }×${ MAX_FILE_DIMENSIONS }"
       ],
@@ -6144,17 +6126,11 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "هناك الكثير من المجلدات في حسابك الخارجي. الرجاء تخصيص الاستيراد لحذف بعض المجلدات."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "يتجاوز هذا الحقل الحد الأقصى البالغ ${ maximumLength } حرفًا."
-      ],
       "This field is invalid": [
         "هذا الحقل غير صالح"
       ],
       "This field is required": [
         "هذه الخانة مطلوبه"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "يتطلب هذا الحقل على الأقل ${ minimumLength } حرفا."
       ],
       "This folder name is not available. Please choose a different name.": [
         "اسم المجلد هذا غير متاح. يرجى اختيار اسم مختلف."
@@ -6180,9 +6156,6 @@
       "Try again later": [
         "حاول مرة أخرى لاحقًا"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "حاول استخدام الأحرف والأرقام و_.- فقط"
-      ],
       "Unable to upload file": [
         "تعذر تحميل الملف"
       ],
@@ -6200,12 +6173,6 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "الملفات التي تم رفعها مفاتيح غير صالحه وغير خاصة. يرجى التحقق والمحاولة مرة أخرى."
-      ],
-      "Username must begin with a letter or digit": [
-        "يجب أن يبدأ اسم المستخدم بحرف أو رقم"
-      ],
-      "Username must end with a letter or digit": [
-        "يجب أن ينتهي اسم المستخدم بحرف أو رقم"
       ],
       "Validation error": [
         "خطأ في التحقق"
@@ -8858,14 +8825,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "أنشئ تسمية للرسائل المستوردة، ونطاقًا زمنيًا لهذا الاستيراد، والتسميات التي ترغب في استيرادها."
-      ],
-      "Create a secure cloud for ${ value } members": [
-        "أنشئ سحابة آمنة لأعضاء ${ value }.",
-        "أنشئ سحابة آمنة لعضو واحد (${ value })",
-        "أنشئ سحابة آمنة لأعضاء ${ value }.",
-        "أنشئ سحابة آمنة لأعضاء ${ value }.",
-        "أنشئ سحابة آمنة لأعضاء ${ value }.",
-        "أنشئ سحابة آمنة لأعضاء ${ value }."
       ],
       "Create an account": [
         "إنشاء حساب"
@@ -18131,6 +18090,11 @@
         "لم يعثر على أي نتائج"
       ]
     },
+    "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "لضمان أعلى مستوى ممكن من الأمان لحسابك، عطّل الاسترداد عبر البريد الإلكتروني والرسائل النصية القصيرة."
+      ]
+    },
     "Server-Info": {
       "active": [
         "نشط"
@@ -18484,6 +18448,14 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "طلب إعادة تعيين كلمة المرور"
+      ]
+    },
+    "Setting": {
+      "Get updates about comments via email": [
+        "احصل على تحديثات حول التعليقات عبر البريد الإلكتروني"
+      ],
+      "Include document name in email notifications": [
+        "تضمين اسم المستند في إشعارات البريد الإلكتروني"
       ]
     },
     "Settings description": {
@@ -20512,9 +20484,6 @@
       "Organization logo updated": [
         "تم تحديث شعار المؤسسة"
       ],
-      "Organization name set": [
-        "تم تعيين اسم المؤسسة"
-      ],
       "Organization name updated": [
         "تم تحديث اسم المؤسسة"
       ],
@@ -21345,6 +21314,9 @@
       ],
       "Data recovery": [
         "استرداد البيانات"
+      ],
+      "Data recovery contacts": [
+        "جهات استرداد البيانات"
       ],
       "Data retention": [
         "الاحتفاظ بالبيانات"
@@ -23149,16 +23121,6 @@
       ],
       "Writing assistant": [
         "مساعد الكتابة"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } characters": [
-        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
-        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
-        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
-        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
-        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
-        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل"
       ]
     },
     "Video control": {
