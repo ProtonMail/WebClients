@@ -5443,9 +5443,9 @@
       "Create a new contact group": [
         "Yeni bir kişi grubu ekle"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "${ value } üye için güvenli bir bulut oluşturun",
-        "${ value } üye için güvenli bir bulut oluşturun"
+      "Create a secure cloud for ${ memberCount } member": [
+        "${ memberCount } üye için güvenli bir bulut oluşturun",
+        "${ memberCount } üye için güvenli bir bulut oluşturun"
       ],
       "Create in": [
         "Şuraya ekle"
@@ -8406,7 +8406,7 @@
         "Sınırsız trafik/bant genişliği"
       ],
       "Unlock streaming": [
-        "Yayın akışı hizmetlerinin engelini kaldırın"
+        "Yayın akışı hizmetlerine erişin"
       ],
       "Up to ${ n } user": [
         "${ n } kullanıcıya kadar",
