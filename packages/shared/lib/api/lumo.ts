@@ -18,3 +18,13 @@ export const sendLumoInvitation = (data: LumoInvitationBody) => ({
     url: `lumo/v1/invitation`,
     data,
 });
+
+export const getLatestLumoEventID = () => ({
+    method: 'get',
+    url: `lumo/v1/events/latest`,
+});
+
+export const getLumoEvents = (eventID: string) => ({
+    method: 'get',
+    url: `lumo/v1/events/${eventID}`,
+});

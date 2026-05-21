@@ -1,5 +1,8 @@
 import { HttpResponse, http } from 'msw';
 
+import { ActionEventV6 } from '@proton/shared/lib/api/events';
+import type { LumoEventResponse } from '@proton/shared/lib/interfaces/Lumo';
+
 import { computeSha256AsBase64 } from '../../crypto';
 import type { Base64 } from '../../types';
 
@@ -166,6 +169,72 @@ export class MockDatabase {
     private nextMessageId = 1;
     private nextAssetId = 1;
     private conflictErrors: Map<string, number> = new Map(); // { localId => nbErrors }
+    private lumoEventId = 0;
+    private lumoEventLog: LumoEventResponse[] = [];
+
+    getLatestLumoEventId(): string {
+        return String(this.lumoEventId);
+    }
+
+    getLumoEventsAfter(eventId: string): LumoEventResponse {
+        const from = Number(eventId);
+        if (Number.isNaN(from) || from >= this.lumoEventId) {
+            return this.emptyLumoEventResponse();
+        }
+
+        const event = this.lumoEventLog[from];
+        return {
+            ...event,
+            More: from + 1 < this.lumoEventId,
+        };
+    }
+
+    enqueueLumoEvent(
+        event: Partial<
+            Pick<
+                LumoEventResponse,
+                'LumoSpaces' | 'LumoConversations' | 'LumoMessages' | 'LumoAssets' | 'LumoUserSettings' | 'Refresh'
+            >
+        >
+    ): void {
+        this.lumoEventId += 1;
+        this.lumoEventLog.push({
+            More: false,
+            Refresh: false,
+            EventID: String(this.lumoEventId),
+            LumoSpaces: null,
+            LumoConversations: null,
+            LumoMessages: null,
+            LumoAssets: null,
+            LumoUserSettings: null,
+            ...event,
+        });
+    }
+
+    recordLumoSpaceEvent(id: string, action: ActionEventV6): void {
+        this.enqueueLumoEvent({ LumoSpaces: [{ ID: id, Action: action }] });
+    }
+
+    recordLumoConversationEvent(id: string, action: ActionEventV6): void {
+        this.enqueueLumoEvent({ LumoConversations: [{ ID: id, Action: action }] });
+    }
+
+    recordLumoUserSettingsEvent(id: string, action: ActionEventV6): void {
+        this.enqueueLumoEvent({ LumoUserSettings: [{ ID: id, Action: action }] });
+    }
+
+    private emptyLumoEventResponse(): LumoEventResponse {
+        return {
+            More: false,
+            Refresh: false,
+            EventID: String(this.lumoEventId),
+            LumoSpaces: null,
+            LumoConversations: null,
+            LumoMessages: null,
+            LumoAssets: null,
+            LumoUserSettings: null,
+        };
+    }
 
     // Space operations
     addSpace(space: MockDbSpace): void {
@@ -448,6 +517,7 @@ export function createHandlers(mockDb: MockDatabase, errorHandler?: MockErrorHan
                 console.log(`mock server: about to add space:`, space);
 
                 mockDb.addSpace(space);
+                mockDb.recordLumoSpaceEvent(space.ID, ActionEventV6.Create);
                 console.log(`mock server: space added successfully`);
 
                 const response = { Code: 1000, Space: { ID: space.ID } };
@@ -586,6 +656,7 @@ export function createHandlers(mockDb: MockDatabase, errorHandler?: MockErrorHan
             if (!success) {
                 return new HttpResponse(null, { status: 404 });
             }
+            mockDb.recordLumoSpaceEvent(id, ActionEventV6.Delete);
             return HttpResponse.json({
                 Code: 1000,
             });
@@ -623,6 +694,7 @@ export function createHandlers(mockDb: MockDatabase, errorHandler?: MockErrorHan
             }
 
             mockDb.updateSpace(space);
+            mockDb.recordLumoSpaceEvent(spaceId, ActionEventV6.Update);
             const response = { Code: 1000 };
             console.log(`mock server: http put /api/lumo/v1/spaces/${spaceId} ->`, response);
             return HttpResponse.json(response);
@@ -659,6 +731,7 @@ export function createHandlers(mockDb: MockDatabase, errorHandler?: MockErrorHan
                 ConversationTag: body.ConversationTag,
             };
             mockDb.addConversation(conversation);
+            mockDb.recordLumoConversationEvent(conversation.ID, ActionEventV6.Create);
             const response = { Code: 1000, Conversation: { ID: conversation.ID } };
             console.log(`mock server: http post /api/lumo/v1/spaces/${spaceId}/conversations ->`, response);
             return HttpResponse.json(response);
@@ -769,6 +842,7 @@ export function createHandlers(mockDb: MockDatabase, errorHandler?: MockErrorHan
                 conversation.Encrypted = body.Encrypted;
             }
             mockDb.addConversation(conversation);
+            mockDb.recordLumoConversationEvent(conversationId, ActionEventV6.Update);
 
             const messages = mockDb.getMessagesByConversationId(conversationId);
             const shallowMessages = messages.map(({ Encrypted, ...rest }) => rest);
@@ -780,6 +854,30 @@ export function createHandlers(mockDb: MockDatabase, errorHandler?: MockErrorHan
                 },
             };
             console.log(`mock server: http put /api/lumo/v1/conversations/${conversationId} ->`, response);
+            return HttpResponse.json(response);
+        }),
+
+        http.get('/api/lumo/v1/events/latest', ({ request }) => {
+            const errorResponse = checkForError('/api/lumo/v1/events/latest', 'GET');
+            if (errorResponse) return errorResponse;
+
+            checkForUndefinedParams(request, {});
+
+            const eventId = mockDb.getLatestLumoEventId();
+            console.log(`mock server: http get /api/lumo/v1/events/latest ->`, { EventID: eventId });
+            return HttpResponse.json({ EventID: eventId });
+        }),
+
+        http.get('/api/lumo/v1/events/:eventId', ({ params, request }) => {
+            const eventId = params.eventId as string;
+
+            const errorResponse = checkForError(`/api/lumo/v1/events/${eventId}`, 'GET');
+            if (errorResponse) return errorResponse;
+
+            checkForUndefinedParams(request, params);
+
+            const response = mockDb.getLumoEventsAfter(eventId);
+            console.log(`mock server: http get /api/lumo/v1/events/${eventId} ->`, response);
             return HttpResponse.json(response);
         }),
 
