@@ -40,7 +40,7 @@ const PrivateMainSubSettingsArea = ({
             variant={variant}
             backButton={
                 <ButtonLike as={Link} to={backTo} shape="ghost" color="weak" size="small" icon>
-                    <IcArrowLeft title={backLabel} />
+                    <IcArrowLeft title={backLabel} alt={backLabel} className="rtl:mirror" />
                 </ButtonLike>
             }
         >
