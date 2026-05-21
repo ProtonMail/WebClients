@@ -525,8 +525,8 @@
       "Go back": [
         "返回"
       ],
-      "Go back to album “${ ellipsedAlbumName }“": [
-        "返回专辑“${ ellipsedAlbumName }”"
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "返回相册“${ ellipsedAlbumName }”"
       ],
       "Go to ${ planOrAppName }": [
         "前往 ${ planOrAppName }"
@@ -3467,9 +3467,6 @@
       "Failed to resend invitation": [
         "重新发送邀请失败"
       ],
-      "Failed to save some photos to your Drive": [
-        "未能将某些照片保存至 Proton Drive"
-      ],
       "Failed to unshare node": [
         "无法取消共享节点"
       ],
@@ -3832,9 +3829,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "无法加载 VPN 控制面板！请检查您的网络连接，然后重试。"
-      ],
-      "Unable to set photo as cover": [
-        "无法将照片设为封面"
       ],
       "Unexpected error, we can't import the contacts": [
         "意外错误，无法导入联系人"
@@ -5013,7 +5007,7 @@
         "VPN 会加密您的网络连接并隐藏真实 IP 地址，使第三方极难追踪或监控您的在线活动。"
       ],
       "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "Proton 旗下的 VPN 服务会隐藏您的真实 IP 地址，并对浏览行为进行端到端加密，使网站、广告商和网络服务提供商无法通过长期追踪建立您的数字画像。\n"
+        "VPN 会隐藏您的 IP 地址并加密浏览活动，从而让网站、广告商和 ISP 更难长期追踪您。"
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN 是您的设备与互联网之间的安全加密通道。它能隐藏您的位置和在线活动，避免被互联网服务提供商（ISP）及您访问的网站追踪。"
@@ -5267,8 +5261,8 @@
       "Create a new contact group": [
         "创建联系人群组"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "为 ${ value } 成员创建一个安全云端"
+      "Create a secure cloud for ${ memberCount } member": [
+        "为 ${ memberCount } 位成员创建安全云空间"
       ],
       "Create in": [
         "创建于"
@@ -5930,11 +5924,11 @@
       "Photo is set as album cover": [
         "照片被设为相册封面"
       ],
+      "Photo saved to your Drive": [
+        "照片已保存到您的云端硬盘"
+      ],
       "Photo was copied to stream and marked favorite there.": [
         "照片被复制到流中并被标记为收藏。"
-      ],
-      "Photo(s) saved to your Drive": [
-        "照片已保存至 Proton Drive"
       ],
       "Photos have been successfully recovered.": [
         "照片已成功恢复。"
@@ -6560,6 +6554,9 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "太棒了，您刚刚将存储空间增加到 5 GB！"
       ],
+      "We couldn't save this photo to your Drive": [
+        "无法将多张照片保存到您的云端硬盘"
+      ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "我们无法验证 ${ nameAuthor } 上传了 ${ node.name }。以下内容可能已被篡改：文件数据顺序。请仅在信任的情况下打开。"
       ],
@@ -6580,6 +6577,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "我们使用 3-D Secure 来保护您的付款"
+      ],
+      "We were not able to add this photo to your album": [
+        "无法将部分照片添加到您的相册"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "我们将在新标签页中为您打开 PayPal 完成支付，如果您使用了弹窗屏蔽插件，请将其关闭后再继续。"
@@ -9227,6 +9227,9 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName } 重命名成功"
       ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } 张照片已添加到“${ albumName }”"
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } 个项目解密失败"
       ],
@@ -9238,18 +9241,6 @@
       ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } 个项目移至回收站失败"
-      ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "${ nbFailures } 张照片无法从 \"${ albumLink.name }\" 相册中移除"
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "${ nbMainPhotosError } 张照片未能添加到 \"${ albumName }\" 相册中"
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "${ nbMainPhotosSuccess } 张照片已添加到 \"${ albumName }\" 相册中"
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "${ nbSuccesses } 张照片已从 \"${ albumLink.name }\" 移除"
       ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } 个已复制的项目已移至回收站"
@@ -9295,6 +9286,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } 已启用"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } 张照片已从“${ albumName }”中移除"
       ],
       "Access for the member removed": [
         "已删除成员的访问权限"
@@ -9415,9 +9409,6 @@
       ],
       "Selected items were successfully removed from your list": [
         "所选项目已成功从您的列表中移除"
-      ],
-      "Selected photo(s) already in \"${ albumName }\"": [
-        "所选照片已在“${ albumName }”中"
       ],
       "Setting updated. Editors can change permissions and share.": [
         "设置已更新，编辑者可以更改权限和共享。"

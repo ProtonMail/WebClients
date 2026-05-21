@@ -530,9 +530,6 @@
       "Go back": [
         "Ga terug"
       ],
-      "Go back to album “${ ellipsedAlbumName }“": [
-        "Ga terug naar album “${ ellipsedAlbumName }“"
-      ],
       "Go to ${ planOrAppName }": [
         "Ga naar ${ planOrAppName }"
       ],
@@ -3492,9 +3489,6 @@
       "Failed to resend invitation": [
         "Opnieuw verzenden van de uitnodiging is mislukt"
       ],
-      "Failed to save some photos to your Drive": [
-        "Kan sommige foto's niet opslaan in uw Drive"
-      ],
       "Failed to unshare node": [
         "Deling van de node kon niet ongedaan worden gemaakt."
       ],
@@ -3862,9 +3856,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Kan VPN-dashboard niet laden. Controleer uw verbinding en probeer het opnieuw."
-      ],
-      "Unable to set photo as cover": [
-        "Kan foto niet als cover instellen"
       ],
       "Unexpected error, we can't import the contacts": [
         "Onverwachte fout, we kunnen de contacten niet importeren"
@@ -5346,10 +5337,6 @@
       "Create a new contact group": [
         "Maak een nieuwe contactengroep"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Maak een beveiligde cloud voor ${ value } lid",
-        "Maak een beveiligde cloud voor ${ value } leden"
-      ],
       "Create in": [
         "Maak in"
       ],
@@ -6019,9 +6006,6 @@
       ],
       "Photo was copied to stream and marked favorite there.": [
         "Foto is gekopieerd naar de stream en daar als favoriet gemarkeerd."
-      ],
-      "Photo(s) saved to your Drive": [
-        "Foto('s) opgeslagen in uw Drive"
       ],
       "Photos have been successfully recovered.": [
         "Foto's zijn succesvol hersteld."
@@ -9377,22 +9361,6 @@
         "${ errors.length } item kon niet in de prullenbak worden geplaatst",
         "${ errors.length } items konden niet naar de prullenbak worden verplaatst"
       ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "${ nbFailures } foto kon niet verwijderd worden uit \"${ albumLink.name }\"",
-        "${ nbFailures } foto's konden niet worden verwijderd uit \"${ albumLink.name }\""
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "${ nbMainPhotosError } foto kon niet toegevoegd worden aan \"${ albumName }\"",
-        "${ nbMainPhotosError } foto's konden niet worden toegevoegd aan \"${ albumName }\""
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "${ nbMainPhotosSuccess } foto is toegevoegd aan \"${ albumName }\"",
-        "${ nbMainPhotosSuccess } foto's zijn toegevoegd aan \"${ albumName }\""
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "${ nbSuccesses } foto is verwijderd uit \"${ albumLink.name }\"",
-        "${ nbSuccesses } foto's zijn verwijderd uit \"${ albumLink.name }\""
-      ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } gekopieerd item verplaatst naar de prullenbak",
         "${ numberOfItems } gekopieerde items verplaatst naar de prullenbak"
@@ -9577,9 +9545,6 @@
       "Selected items were successfully removed from your list": [
         "Geselecteerde item is met succes verwijderd uit uw lijst",
         "Geselecteerde items zijn met succes verwijderd uit uw lijst"
-      ],
-      "Selected photo(s) already in \"${ albumName }\"": [
-        "Geselecteerde foto('s) al in \"${ albumName }\""
       ],
       "Setting updated. Editors can change permissions and share.": [
         "Instelling bijgewerkt. Bewerkers kunnen machtigingen wijzigen en delen."

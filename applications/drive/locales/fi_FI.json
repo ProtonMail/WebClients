@@ -527,9 +527,6 @@
       "Go back": [
         "Takaisin"
       ],
-      "Go back to album “${ ellipsedAlbumName }“": [
-        "Palaa albumiin \"${ ellipsedAlbumName }\""
-      ],
       "Go to ${ planOrAppName }": [
         "Avaa ${ planOrAppName }"
       ],
@@ -3367,9 +3364,6 @@
       "Failed to resend invitation": [
         "Kutsun uudelleenlähettäminen epäonnistui"
       ],
-      "Failed to save some photos to your Drive": [
-        "Joidenkin kuvien tallentaminen Driveesi epäonnistui"
-      ],
       "Failed to unshare node": [
         "Solmun jaon poistaminen epäonnistui"
       ],
@@ -3731,9 +3725,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "VPN-hallintapaneelia ei voi ladata. Tarkista yhteytesi ja yritä uudelleen."
-      ],
-      "Unable to set photo as cover": [
-        "Kuvaa ei voitu asettaa kansikuvaksi"
       ],
       "Unexpected error, we can't import the contacts": [
         "Odottamaton virhe, yhteystietojen tuonti ei onnistu"
@@ -5154,9 +5145,9 @@
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Luo suojattu pilvi ${ value } jäsenelle",
-        "Luo suojattu pilvi ${ value } jäsenelle"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Luo suojattu pilvi ${ memberCount } jäsenelle",
+        "Luo suojattu pilvi ${ memberCount } jäsenelle"
       ],
       "Create in": [
         "Luo kalenteriin"
@@ -5296,6 +5287,9 @@
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Varmistu täysin yksityisestä ja salatusta viestinnästä. Hanki ilmainen ${ BRAND_NAME } -sähköpostiosoitteesi nyt."
+      ],
+      "Enter code": [
+        "Syötä koodi"
       ],
       "Enter password": [
         "Syötä salasana"
@@ -5770,9 +5764,6 @@
       ],
       "Photo is set as album cover": [
         "Kuva on asetettu albumin kansikuvaksi"
-      ],
-      "Photo(s) saved to your Drive": [
-        "Kuva(t) tallennettiin Driveesi"
       ],
       "Photos have been successfully recovered.": [
         "Kuvat on palautettu."
@@ -8954,22 +8945,6 @@
         "${ errors.length } kohteen poisto epäonnistui",
         "${ errors.length } kohteen poisto epäonnistui"
       ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "${ nbFailures } valokuvaa ei voitu poistaa albumista \"${ albumLink.name }\"",
-        "${ nbFailures } valokuvaa ei voitu poistaa albumista \"${ albumLink.name }\""
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "${ nbMainPhotosError } valokuvaa ei voitu lisätä albumiin \"${ albumName }\"",
-        "${ nbMainPhotosError } kuvaa ei voitu lisätä albumiin \"${ albumName }\""
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "${ nbMainPhotosSuccess } valokuva on lisätty albumiin \"${ albumName }\"",
-        "${ nbMainPhotosSuccess } valokuvaa on lisätty albumiin \"${ albumName }\""
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "${ nbSuccesses } valokuva poistettiin albumista \"${ albumLink.name }\"",
-        "${ nbSuccesses } valokuvaa poistettiin albumista \"${ albumLink.name }\""
-      ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } kopioitu kohde siirrettiin roskakoriin",
         "${ numberOfItems } kopioidut kohteet siirrettiin roskakoriin"
@@ -9151,9 +9126,6 @@
       "Selected items were successfully removed from your list": [
         "Valittu kohde poistettiin onnistuneesti listaltasi.",
         "Valitut kohteet poistettiin onnistuneesti listaltasi"
-      ],
-      "Selected photo(s) already in \"${ albumName }\"": [
-        "Valitut kuvat ovat jo albumissa \"${ albumName }\""
       ],
       "Setting updated. Editors can change permissions and share.": [
         "Asetus päivitetty. Muokkaajat voivat muuttaa käyttöoikeuksia ja jakaa sisältöä"

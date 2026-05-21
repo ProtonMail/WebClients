@@ -540,8 +540,8 @@
       "Go back": [
         "Späť"
       ],
-      "Go back to album “${ ellipsedAlbumName }“": [
-        "Späť na album „${ ellipsedAlbumName }“"
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Späť na album „${ ellipsedAlbumName }\""
       ],
       "Go to ${ planOrAppName }": [
         "Prejsť do ${ planOrAppName }"
@@ -3542,9 +3542,6 @@
       "Failed to resend invitation": [
         "Opätovné odoslanie pozvánky zlyhalo"
       ],
-      "Failed to save some photos to your Drive": [
-        "Nepodarilo sa uložiť niektoré fotografie do vášho Drive"
-      ],
       "Failed to unshare node": [
         "Nepodarilo sa zrušiť zdieľanie uzla"
       ],
@@ -3922,9 +3919,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Nie je možné načítať VPN nástenku. Skontrolujte vaše pripojenie a skúste to znova, prosím."
-      ],
-      "Unable to set photo as cover": [
-        "Nie je možné nastaviť fotografiu ako obálku"
       ],
       "Unexpected error, we can't import the contacts": [
         "Neočakávaná chyba, nemôžeme importovať kontakty"
@@ -5504,11 +5498,11 @@
       "Create a new contact group": [
         "Vytvoriť novú skupinu kontaktov"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Vytvoriť bezpečný cloud pre ${ value } člena",
-        "Vytvoriť bezpečný cloud pre ${ value } členov",
-        "Vytvoriť bezpečný cloud pre ${ value } členov",
-        "Vytvoriť bezpečný cloud pre ${ value } členov"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Vytvoriť bezpečný cloud pre ${ memberCount } člena",
+        "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
+        "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
+        "Vytvoriť bezpečný cloud pre ${ memberCount } členov"
       ],
       "Create in": [
         "Vytvoriť v"
@@ -6191,11 +6185,14 @@
       "Photo is set as album cover": [
         "Fotografia je nastavená ako obálka albumu"
       ],
+      "Photo saved to your Drive": [
+        "Fotografia uložená na vašom Drive",
+        "Fotografie uložené na vašom Drive",
+        "Fotografie uložené na vašom Drive",
+        "Fotografie uložené na vašom Drive"
+      ],
       "Photo was copied to stream and marked favorite there.": [
         "Fotka bola skopírovaná do streamu a tam označená ako obľúbená."
-      ],
-      "Photo(s) saved to your Drive": [
-        "Fotografia(e) uložená(é) do vášho Drive"
       ],
       "Photos have been successfully recovered.": [
         "Fotografie boli úspešne obnovené."
@@ -6830,6 +6827,12 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "Výborne, práve ste zväčšili svoje úložisko na 5 GB!"
       ],
+      "We couldn't save this photo to your Drive": [
+        "Túto fotografiu sme nemohli uložiť do vášho Drive",
+        "Tieto fotografie sme nemohli uložiť do vášho Disku",
+        "Tieto fotografie sme nemohli uložiť do vášho Disku",
+        "Tieto fotografie sme nemohli uložiť do vášho Disku"
+      ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Nepodarilo sa nám overiť, či ${ nameAuthor } nahral ${ node.name }. Mohlo dôjsť k manipulácii s nasledujúcimi údajmi: poradie údajov v súbore. Otvorte len v prípade, ak mu dôverujete."
       ],
@@ -6850,6 +6853,12 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Na ochranu vašich platieb používame 3-D Secure"
+      ],
+      "We were not able to add this photo to your album": [
+        "Túto fotografiu sme nemohli uložiť do vášho albumu",
+        "Tieto fotografie sme nemohli uložiť do vášho albumu",
+        "Tieto fotografie sme nemohli uložiť do vášho albumu",
+        "Tieto fotografie sme nemohli uložiť do vášho albumu"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Na dokončenie tejto transakcie vás presmerujeme na PayPal v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
@@ -8801,6 +8810,9 @@
       "99.95% SLA": [
         "99,95 % SLA"
       ],
+      "Access all countries": [
+        "Prístup ku všetkým krajinám"
+      ],
       "Ad-blocker and malware protection": [
         "Blokovanie reklám a ochrana pred škodlivým softvérom"
       ],
@@ -8963,6 +8975,9 @@
       "Multiple admin roles": [
         "Viacero správcovských rolí"
       ],
+      "No streaming support": [
+        "Žiadna podpora zabezpečeného streamovania"
+      ],
       "Online document editor": [
         "Online editor dokumentov"
       ],
@@ -9112,6 +9127,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Neobmedzený objem / šírka pásma"
+      ],
+      "Unlock streaming": [
+        "Odomknite streamovanie"
       ],
       "Up to ${ n } user": [
         "Až ${ n } užívateľ",
@@ -9531,6 +9549,12 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } krajina",
+        "${ n } krajiny",
+        "${ n } krajín",
+        "${ n } krajín"
+      ],
       "Access advanced VPN features": [
         "Získajte prístup k pokročilým VPN funkciám"
       ],
@@ -9647,6 +9671,12 @@
       "\"${ newName }\" renamed successfully": [
         "Premenovanie „${ newName }“ úspešné"
       ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } fotografia bola pridaná do \"${ albumName }\"",
+        "${ addedUids.length } fotografie boli pridané do \"${ albumName }\"",
+        "${ addedUids.length } fotografií bolo pridaných do \"${ albumName }\"",
+        "${ addedUids.length } fotografií bolo pridaných do \"${ albumName }\""
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } položku sa nepodarilo dešifrovať",
         "${ count } položky sa nepodarilo dešifrovať",
@@ -9670,30 +9700,6 @@
         "${ errors.length } položky sa nepodarilo odstrániť",
         "${ errors.length } položiek sa nepodarilo odstrániť",
         "${ errors.length } položiek sa nepodarilo odstrániť"
-      ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "${ nbFailures } fotografia nemôže byť odstráná z \"${ albumLink.name }\"",
-        "${ nbFailures } fotografie nemôžu byť odstráné z \"${ albumLink.name }\"",
-        "${ nbFailures } fotografií nemôže byť odstránených z \"${ albumLink.name }\"",
-        "${ nbFailures } fotografií nemôže byť odstránených z \"${ albumLink.name }\""
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "${ nbMainPhotosError } fotografiu nebolo možné pridať do \"${ albumName }\"",
-        "${ nbMainPhotosError } fotografie nebolo možné pridať do \"${ albumName }\"",
-        "${ nbMainPhotosError } fotografií nebolo možné pridať do \"${ albumName }\"",
-        "${ nbMainPhotosError } fotografií nebolo možné pridať do \"${ albumName }\""
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "${ nbMainPhotosSuccess } fotografia bola pridaná do \"${ albumName }\"",
-        "${ nbMainPhotosSuccess } fotografie boli pridané do \"${ albumName }\"",
-        "${ nbMainPhotosSuccess } fotografií bolo pridaných do \"${ albumName }\"",
-        "${ nbMainPhotosSuccess } fotografií bolo pridaných do \"${ albumName }\""
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "${ nbSuccesses } fotografia bola odstránená z \"${ albumLink.name }\"",
-        "${ nbSuccesses } fotografie boli odstránené z \"${ albumLink.name }\"",
-        "${ nbSuccesses } fotografií bolo odstránených z \"${ albumLink.name }\"",
-        "${ nbSuccesses } fotografií bolo odstránených z \"${ albumLink.name }\""
       ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } skopírovaná položka presunutá do koša",
@@ -9778,6 +9784,12 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } bol povolený"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } fotografia bola odstránená z \"${ albumName }\"",
+        "${ removed } fotografie boli odstránené z \"${ albumName }\"",
+        "${ removed } fotografií bolo odstránených z \"${ albumName }\"",
+        "${ removed } fotografií bolo odstránených z \"${ albumName }\""
       ],
       "Access for the member removed": [
         "Prístup pre člena odstránený"
@@ -9919,9 +9931,6 @@
         "Vybrané položky boli z vášho zoznamu úspešne odstránené",
         "Vybrané položky boli z vášho zoznamu úspešne odstránené",
         "Vybrané položky boli z vášho zoznamu úspešne odstránené"
-      ],
-      "Selected photo(s) already in \"${ albumName }\"": [
-        "Vybrané fotografie sa už nachádzajú v \"${ albumName }\""
       ],
       "Setting updated. Editors can change permissions and share.": [
         "Nastavenie aktualizované. Editori môžu meniť oprávnenia a zdieľať."

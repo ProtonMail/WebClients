@@ -535,8 +535,8 @@
       "Go back": [
         "Înapoi"
       ],
-      "Go back to album “${ ellipsedAlbumName }“": [
-        "Înapoi la albumul „${ ellipsedAlbumName }“"
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Înapoi la albumul „${ ellipsedAlbumName }”"
       ],
       "Go to ${ planOrAppName }": [
         "Accesare ${ planOrAppName }"
@@ -3517,9 +3517,6 @@
       "Failed to resend invitation": [
         "Eșuare retrimitere invitație."
       ],
-      "Failed to save some photos to your Drive": [
-        "Nu s-au putut salva unele fotografii în Drive."
-      ],
       "Failed to unshare node": [
         "Eșuare anulare partajare nod."
       ],
@@ -3892,9 +3889,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Nu se poate încărca panoul de control VPN. Verificați conexiunea și reîncercați."
-      ],
-      "Unable to set photo as cover": [
-        "Fotografia nu poate fi stabilită ca și copertă."
       ],
       "Unexpected error, we can't import the contacts": [
         "Eroare neașteptată. Nu se pot importa contactele."
@@ -5425,10 +5419,10 @@
       "Create a new contact group": [
         "Creare grup de contacte"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Creați un cont în cloud securizat pentru ${ value } membru",
-        "Creați un cont cloud securizat pentru ${ value } membri",
-        "Creați un cont cloud securizat pentru ${ value } de membri"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Creați un cont în cloud securizat pentru ${ memberCount } membru",
+        "Creați un cont cloud securizat pentru ${ memberCount } membri",
+        "Creați un cont cloud securizat pentru ${ memberCount } de membri"
       ],
       "Create in": [
         "Creare în"
@@ -6104,11 +6098,13 @@
       "Photo is set as album cover": [
         "Fotografia este setată ca și copertă de album"
       ],
+      "Photo saved to your Drive": [
+        "Fotografia a fost salvată în Drive.",
+        "Fotografiile au fost salvate în Drive.",
+        "Fotografiile au fost salvate în Drive."
+      ],
       "Photo was copied to stream and marked favorite there.": [
         "Fotografia a fost copiată în fluxul foto și marcată ca favorită acolo."
-      ],
-      "Photo(s) saved to your Drive": [
-        "Fotografiile s-a salvat în unitatea Drive."
       ],
       "Photos have been successfully recovered.": [
         "Fotografiile au fost recuperate."
@@ -6740,6 +6736,11 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "Bun, tocmai v-ați mărit spațiul de stocare la 5 GiB!"
       ],
+      "We couldn't save this photo to your Drive": [
+        "Fotografia nu a putut fi salvată în Drive.",
+        "Câteva fotografii nu au putut fi salvate în Drive.",
+        "Câteva fotografii nu au putut fi salvate în Drive."
+      ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Nu s-a putut verifica dacă ${ nameAuthor } a încărcat ${ node.name }. Următoarele ar fi putut fi falsificate: ordinea datelor fișierului. Deschideți doar dacă aveți încredere."
       ],
@@ -6760,6 +6761,11 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Folosim 3-D Secure pentru a proteja plățile"
+      ],
+      "We were not able to add this photo to your album": [
+        "Această fotografie nu a putut fi adăugată în album.",
+        "Câteva fotografii nu au putut fi adăugate în album.",
+        "Câteva fotografii nu au putut fi adăugate în album."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pentru finalizarea tranzacției prin PayPal se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
@@ -9518,6 +9524,11 @@
       "\"${ newName }\" renamed successfully": [
         "„${ newName }” a fost redenumit."
       ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "Fotografii adăugate în albumul „${ albumName }”: ${ addedUids.length }",
+        "Fotografii adăugate în albumul „${ albumName }”: ${ addedUids.length }",
+        "Fotografii adăugate în albumul „${ albumName }”: ${ addedUids.length }"
+      ],
       "${ count } item failed to be decrypted": [
         "Nu s-a putut decripta un articol.",
         "Nu s-au putut decripta ${ count } articole.",
@@ -9537,26 +9548,6 @@
         "Articole care nu s-au putut șterge: ${ errors.length }",
         "Articole care nu s-au putut șterge: ${ errors.length }",
         "Articole care nu s-au putut șterge: ${ errors.length }"
-      ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "Fotografii care nu s-au putut elimina din albumul „${ albumLink.name }”: ${ nbFailures }",
-        "Fotografii care nu s-au putut elimina din albumul „${ albumLink.name }”: ${ nbFailures }",
-        "Fotografii care nu s-au putut elimina din albumul „${ albumLink.name }”: ${ nbFailures }"
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "Fotografii care nu s-au putut adăuga în albumul „${ albumName }”: ${ nbMainPhotosError }",
-        "Fotografii care nu s-au putut adăuga în albumul „${ albumName }”: ${ nbMainPhotosError }",
-        "Fotografii care nu s-au putut adăuga în albumul „${ albumName }”: ${ nbMainPhotosError }"
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "Fotografii adăugate în albumul „${ albumName }”: ${ nbMainPhotosSuccess }",
-        "Fotografii adăugate în albumul „${ albumName }”: ${ nbMainPhotosSuccess }",
-        "Fotografii adăugate în albumul „${ albumName }”: ${ nbMainPhotosSuccess }"
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "Fotografii eliminate din albumul „${ albumLink.name }”: ${ nbSuccesses }",
-        "Fotografii eliminate din albumul „${ albumLink.name }”: ${ nbSuccesses }",
-        "Fotografii eliminate din albumul „${ albumLink.name }”: ${ nbSuccesses }"
       ],
       "${ numberOfItems } copied item moved to trash": [
         "Articole copiate mutate în gunoi: ${ numberOfItems }",
@@ -9628,6 +9619,11 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } a fost activat"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "Fotografii eliminate din albumul „${ albumName }”: ${ removed }",
+        "Fotografii eliminate din albumul „${ albumName }”: ${ removed }",
+        "Fotografii eliminate din albumul „${ albumName }”: ${ removed }"
       ],
       "Access for the member removed": [
         "Accesul pentru membru s-a anulat."
@@ -9762,9 +9758,6 @@
         "Articolul selectat a fost eliminat din listă.",
         "Articolele selectate au fost eliminate din listă.",
         "Articolele selectate au fost eliminate din listă."
-      ],
-      "Selected photo(s) already in \"${ albumName }\"": [
-        "Pozele selectate sunt deja salvate în „${ albumName }”."
       ],
       "Setting updated. Editors can change permissions and share.": [
         "Setare actualizată. Editorii pot schimba permisiunile și partaja."

@@ -2949,9 +2949,6 @@
       "Failed to resend invitation": [
         "Erro ao reenviar o convite"
       ],
-      "Failed to save some photos to your Drive": [
-        "Erro ao guardar algumas fotos no seu Drive"
-      ],
       "Failed to unshare node": [
         "Erro ao deixar de partilhar o nó"
       ],
@@ -3280,9 +3277,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Não foi possível carregar o painel de controlo VPN. Verifique a sua ligação e tente novamente."
-      ],
-      "Unable to set photo as cover": [
-        "Não é possível definir a foto como capa."
       ],
       "Unexpected error, we can't import the contacts": [
         "Erro inesperado, não podemos importar os contactos"
@@ -4530,10 +4524,6 @@
       "Create a new contact group": [
         "Criar um grupo de contactos"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Criar uma nuvem segura para ${ value } membro",
-        "Criar uma nuvem segura para ${ value } membros"
-      ],
       "Create in": [
         "Criar em"
       ],
@@ -5089,9 +5079,6 @@
       ],
       "Photo was copied to stream and marked favorite there.": [
         "A foto foi copiada para o fluxo e marcada como favorita lá."
-      ],
-      "Photo(s) saved to your Drive": [
-        "Fotos guardadas no seu Drive"
       ],
       "Photos have been successfully recovered.": [
         "As fotos foram recuperadas."
@@ -7971,22 +7958,6 @@
         "Erro ao desencriptar ${ count } item",
         "Erro ao desencriptar ${ count } itens"
       ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "${ nbFailures } fotos não pôde ser removida de «${ albumLink.name }»",
-        "${ nbFailures } fotos não puderam ser removidas de «${ albumLink.name }»"
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "${ nbMainPhotosError } não foi possível adicionar a foto a «${ albumName }»",
-        "${ nbMainPhotosError } fotos não puderam ser adicionadas a «${ albumName }»"
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "${ nbMainPhotosSuccess } a foto foi adicionada a «${ albumName }»",
-        "${ nbMainPhotosSuccess } as fotos foram adicionadas a «${ albumName }»"
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "${ nbSuccesses } a foto foi removida de «${ albumLink.name }»",
-        "${ nbSuccesses } as fotos foram removidas de «${ albumLink.name }»"
-      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } item eliminado",
         "${ numberOfItems } itens eliminados"
@@ -8137,9 +8108,6 @@
       ],
       "Public link access updated": [
         "O acesso à ligação pública foi atualizada."
-      ],
-      "Selected photo(s) already in \"${ albumName }\"": [
-        "As fotos selecionadas já estão em «${ albumName }»."
       ],
       "Share invitation accepted successfully": [
         "O convite de partilha foi aceite."
