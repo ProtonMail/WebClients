@@ -2,7 +2,7 @@ import type { Author, MaybeNode, NodeEntity, Revision } from '@proton/drive';
 import { MemberRole, NodeType, RevisionState } from '@proton/drive';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
-import { ShareState, ShareType, type ShareWithKey } from '../../store';
+import { ShareState, ShareType, type ShareWithKey } from '../../legacy/store';
 import { getNodeEntity } from './getNodeEntity';
 import { mapNodeToLegacyItem } from './mapNodeToLegacyItem';
 

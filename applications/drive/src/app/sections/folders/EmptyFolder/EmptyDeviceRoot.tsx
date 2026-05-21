@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import emptySvg from '@proton/styles/assets/img/illustrations/empty-device-root.svg';
 
-import { DriveEmptyView } from '../../../components/layout/DriveEmptyView';
+import { DriveEmptyView } from '../../../legacy/components/layout/DriveEmptyView';
 
 type Props = {};
 

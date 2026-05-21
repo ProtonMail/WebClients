@@ -11,14 +11,14 @@ import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import useNavigate from '../../../hooks/drive/useNavigate';
+import useNavigate from '../../../legacy/hooks/drive/useNavigate';
+import { AlbumsPageTypes, usePhotoLayoutStore } from '../../../legacy/zustand/photos/layout.store';
 import { usePhotosPreviewModal } from '../../../modals/preview';
 import { ToolbarRow } from '../../../statelessComponents/ToolbarRow/ToolbarRow';
 import { UploadDragDrop } from '../../../statelessComponents/UploadDragDrop/UploadDragDrop';
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { dateToLegacyTimestamp } from '../../../utils/sdk/legacyTime';
-import { AlbumsPageTypes, usePhotoLayoutStore } from '../../../zustand/photos/layout.store';
 import { toggleFavorite } from '../../PhotosActions/Albums';
 import { usePhotosActions } from '../../PhotosActions/usePhotosActions';
 import { AddAlbumPhotosModal } from '../../PhotosModals/AddAlbumPhotosModal';

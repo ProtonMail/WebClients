@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { QuickSettingsButton, type useConfirmActionModal } from '@proton/components';
 
-import { useSearchModule } from '../../../hooks/search/useSearchModule';
+import { useSearchModule } from '../../../legacy/hooks/search/useSearchModule';
 import { tryCatchWithNotification } from '../../../modules/search';
 
 interface Props {

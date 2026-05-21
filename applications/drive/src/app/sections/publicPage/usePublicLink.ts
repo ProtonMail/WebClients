@@ -18,8 +18,8 @@ import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 
-import { downloadManager } from '../../managers/download/DownloadManager';
-import { getMetricsUserPlan } from '../../store/_user/getMetricsUserPlan';
+import { downloadManager } from '../../modules/download/DownloadManager';
+import { getMetricsUserPlan } from '../../legacy/store/_user/getMetricsUserPlan';
 import {
     getOpenInDocsInfo,
     openDocsOrSheetsDocument,

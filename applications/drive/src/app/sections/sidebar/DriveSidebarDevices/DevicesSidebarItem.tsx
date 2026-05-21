@@ -1,8 +1,8 @@
 import { splitNodeUid } from '@proton/drive';
 
-import DriveExpandButton from '../../../components/layout/sidebar/DriveSidebar/DriveSidebarFolders/DriveExpandButton';
-import DriveSidebarListItem from '../../../components/layout/sidebar/DriveSidebar/DriveSidebarListItem';
-import { generateSidebarItemStyle } from '../../../components/layout/sidebar/DriveSidebar/utils';
+import DriveExpandButton from '../../../legacy/components/layout/sidebar/DriveSidebar/DriveSidebarFolders/DriveExpandButton';
+import DriveSidebarListItem from '../../../legacy/components/layout/sidebar/DriveSidebar/DriveSidebarListItem';
+import { generateSidebarItemStyle } from '../../../legacy/components/layout/sidebar/DriveSidebar/utils';
 import type { TreeItemWithChildren } from '../../../modules/directoryTree';
 import { DriveSidebarSubfolders } from '../../sidebar/DriveSidebarFolders/DriveSidebarSubfolders';
 

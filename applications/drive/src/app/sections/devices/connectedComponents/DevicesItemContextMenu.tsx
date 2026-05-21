@@ -1,4 +1,4 @@
-import { ItemContextMenu } from '../../../components/sections/ContextMenu/ItemContextMenu';
+import { ItemContextMenu } from '../../../legacy/components/sections/ContextMenu/ItemContextMenu';
 import type { ContextMenuPosition } from '../../../modules/contextMenu';
 import { RemoveButton } from '../statelessComponents/RemoveButton';
 import { RenameButton } from '../statelessComponents/RenameButton';

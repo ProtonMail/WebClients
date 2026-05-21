@@ -20,7 +20,7 @@ jest.mock('@proton/components/index', () => {
     };
 });
 
-jest.mock('../../components/SignatureIcon', () => ({
+jest.mock('../../legacy/components/SignatureIcon', () => ({
     SignatureIcon: () => null,
 }));
 

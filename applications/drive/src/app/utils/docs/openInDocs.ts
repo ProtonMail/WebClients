@@ -6,10 +6,10 @@ import type { OpenInDocsType, ProtonDocumentType } from '@proton/shared/lib/help
 import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { getCurrentTab, getNewWindow } from '@proton/shared/lib/helpers/window';
 
-import type { DocumentType, RedirectAction } from '../../hooks/docs/useOpenDocument';
-import { tmpConvertNewDocTypeToOld } from '../../hooks/docs/useOpenDocument';
+import type { DocumentType, RedirectAction } from '../../legacy/hooks/docs/useOpenDocument';
+import { tmpConvertNewDocTypeToOld } from '../../legacy/hooks/docs/useOpenDocument';
+import { unleashVanillaStore } from '../../legacy/zustand/unleash/unleash.store';
 import { extraThunkArguments } from '../../redux-store/thunk';
-import { unleashVanillaStore } from '../../zustand/unleash/unleash.store';
 
 export const getOpenInDocsInfo = (mediaType: string): OpenInDocsType | undefined => {
     const isODSImportEnabled = unleashVanillaStore.getState().isEnabled('SheetsODSImportEnabled');
