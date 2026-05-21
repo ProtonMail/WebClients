@@ -1645,6 +1645,9 @@
       "(Empty)": [
         "(Vacío)"
       ],
+      "2FA code copied to clipboard": [
+        "Código 2FA copiado al portapapeles"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Pruebe gratis las funciones premium durante 7 días, solo durante la primera semana en ${ BRAND_NAME }."
       ],
@@ -1695,6 +1698,9 @@
       ],
       "Admin": [
         "Administrador"
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "Después de autorrellenar un inicio de sesión, se copia el código 2FA al portapapeles."
       ],
       "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
         "Después de confirmar, deberá aceptar una solicitud de permiso para ${ PASS_APP_NAME }."
@@ -2311,9 +2317,6 @@
       ],
       "password": [
         "contraseña"
-      ],
-      "Password copied": [
-        "La contraseña ha sido copiada."
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Se registró el bloqueo por contraseña. Úsela para desbloquear ${ PASS_APP_NAME }"
@@ -3160,6 +3163,9 @@
       ],
       "Authenticate with passkeys": [
         "Autenticación con claves de acceso"
+      ],
+      "Auto-copy 2FA code": [
+        "Copiar código 2FA automáticamente"
       ],
       "Auto-lock after": [
         "Bloqueo automático después de"
