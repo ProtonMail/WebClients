@@ -3721,6 +3721,9 @@
       "/month": [
         "/ay"
       ],
+      "/user /month": [
+        "/ kullanıcı /ay"
+      ],
       "/user per month": [
         "/kullanıcı aylık"
       ]
@@ -4991,6 +4994,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Dış hesabınızda çok fazla klasör var. Lütfen bazı klasörleri silmek için içe aktarma işlemini özelleştirin."
+      ],
+      "There was an error, please try again.": [
+        "Bir sorun çıktı. Lütfen yeniden deneyin."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
@@ -7161,9 +7167,9 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "İçe aktarılan iletiler için bir etiket, bu içe aktarma için bir zaman aralığı ve içe aktarmak istediğiniz etiketler oluşturun."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "${ value } üye için güvenli bir bulut oluşturun",
-        "${ value } üye için güvenli bir bulut oluşturun"
+      "Create a secure cloud for ${ memberCount } member": [
+        "${ memberCount } üye için güvenli bir bulut oluşturun",
+        "${ memberCount } üye için güvenli bir bulut oluşturun"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Alt hesaplar ekleyin ve yönetin. Özel etki alanınızda e-posta adresleri atayın."
@@ -8463,6 +8469,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Tech Radar Pro tarafından 5 üzerinden 4,2 puanla önerildi"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Yoğun istek nedeniyle geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
@@ -11037,11 +11046,26 @@
       "Built-in chat": [
         "Hazır sohbet"
       ],
+      "Cloud storage and file sharing": [
+        "Bulut depolama alanı ve dosya paylaşımı"
+      ],
+      "Data retention policies": [
+        "Verileri tutma ilkeleri"
+      ],
+      "Document and spreadsheet editor": [
+        "Belge ve elektronik tablo düzenleyici"
+      ],
+      "Email writing assistant": [
+        "E-posta yazma yardımcısı"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
       ],
       "Hosts can record meetings locally on their computers": [
         "Oturum sahipleri görüşmeleri kendi bilgisayarlarına yerel olarak kaydedebilir"
+      ],
+      "Includes Meet Professional": [
+        "Meet Professional ile"
       ],
       "Meeting recording": [
         "Görüşme kaydı"
@@ -11049,8 +11073,17 @@
       "One active meeting at a time": [
         "Aynı anda bir etkin görüşme"
       ],
+      "Password manager with team vaults": [
+        "Ekip kasaları ile parola yöneticisi"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Gizliliği koruyan yapay zeka sohbeti (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Ekran paylaşımı"
+      ],
+      "Secure mail and calendar": [
+        "Güvenli e-posta ve takvim"
       ],
       "Unlimited meetings per day": [
         "Günlük sınırsız görüşme"
@@ -11066,6 +11099,9 @@
       "Video meetings, ${ n } participant": [
         "Görüntülü görüşmeler, ${ n } katılımcı",
         "Görüntülü görüşmeler, ${ n } katılımcı"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "Reklam engelleyici ve kötü amaçlı yazılım koruması ile VPN"
       ]
     },
     "meet_2025: Info": {
@@ -11817,7 +11853,7 @@
         "Sınırsız trafik/bant genişliği"
       ],
       "Unlock streaming": [
-        "Yayın akışı hizmetlerinin engelini kaldırın"
+        "Yayın akışı hizmetlerine erişin"
       ],
       "Up to ${ n } user": [
         "${ n } kullanıcıya kadar",
@@ -16105,9 +16141,6 @@
       "Organization logo updated": [
         "Kuruluş logosu güncellendi"
       ],
-      "Organization name set": [
-        "Kuruluş adı ayarlandı"
-      ],
       "Organization name updated": [
         "Kuruluş adı güncellendi"
       ],
@@ -16270,6 +16303,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "Kişisel kullanım için"
+      ],
+      "For professional use": [
+        "Ticari kullanım için"
       ]
     },
     "Tab in domain modal": {

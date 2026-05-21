@@ -3696,6 +3696,9 @@
       "/month": [
         "/月"
       ],
+      "/user /month": [
+        "/用户/月"
+      ],
       "/user per month": [
         "/用户每月"
       ]
@@ -4956,6 +4959,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "待导入账户的文件夹过多，请自定义导入内容并删除部分文件夹。"
+      ],
+      "There was an error, please try again.": [
+        "出现错误，请重试。"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "此项超过了 ${ maximumLength } 个字符的长度限制。"
@@ -7066,8 +7072,8 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "给导入的邮件加标签，指定导入的时间范围，并选择要导入的标签。"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "为 ${ value } 成员创建一个安全云端"
+      "Create a secure cloud for ${ memberCount } member": [
+        "为 ${ memberCount } 位成员创建安全云空间"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "使用您自己的域名创建并管理邮箱子账户。"
@@ -8355,6 +8361,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro 推荐，评分 4.2 星（满分 5 星）"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "由于需求过高暂时不可用，请稍后重试。"
       ],
       "Temporarily unavailable. Please check back later.": [
         "暂时不可用。请稍后再试。"
@@ -10896,11 +10905,26 @@
       "Built-in chat": [
         "内置聊天"
       ],
+      "Cloud storage and file sharing": [
+        "云存储与文件共享"
+      ],
+      "Data retention policies": [
+        "数据保留策略"
+      ],
+      "Document and spreadsheet editor": [
+        "文档和电子表格编辑器"
+      ],
+      "Email writing assistant": [
+        "邮件写作助手"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "端到端加密的屏幕共享和临时会议内聊天"
       ],
       "Hosts can record meetings locally on their computers": [
         "主持人可以在本地计算机上录制会议"
+      ],
+      "Includes Meet Professional": [
+        "包含 Meet 专业版"
       ],
       "Meeting recording": [
         "会议录制"
@@ -10908,8 +10932,17 @@
       "One active meeting at a time": [
         "同时只能进行一场活跃会议"
       ],
+      "Password manager with team vaults": [
+        "具备团队保险库的密码管理器"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "私人 AI 聊天 (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "屏幕共享"
+      ],
+      "Secure mail and calendar": [
+        "安全邮箱与日历"
       ],
       "Unlimited meetings per day": [
         "每日不限会议次数"
@@ -10922,6 +10955,9 @@
       ],
       "Video meetings, ${ n } participant": [
         "视频会议，${ n } 位参与者"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "具备广告拦截与恶意软件防护功能的 VPN"
       ]
     },
     "meet_2025: Info": {
@@ -15766,9 +15802,6 @@
       "Organization logo updated": [
         "组织徽标已更新"
       ],
-      "Organization name set": [
-        "组织名称已设置"
-      ],
       "Organization name updated": [
         "组织名称已更新"
       ],
@@ -15931,6 +15964,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。包括版本历史记录、加密文件共享等。"
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "适用于个人用途"
+      ],
+      "For professional use": [
+        "适用于专业用途"
       ]
     },
     "Tab in domain modal": {
