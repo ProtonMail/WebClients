@@ -95,6 +95,7 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal, onComplete }: Props) => {
                         Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
                         Account: token.Account,
                         AutomaticImport: !isConversionFlow,
+                        QuotaThresholdRatio: 0.2,
                     })
                 );
             } catch (e) {
