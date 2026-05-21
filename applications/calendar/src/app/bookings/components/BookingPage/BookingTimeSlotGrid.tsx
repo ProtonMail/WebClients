@@ -83,7 +83,7 @@ export const BookingTimeSlotGrid = () => {
                                 {canShowSlots &&
                                     slotsArray[i].map((slot, j) => {
                                         if (slot) {
-                                            const timeString = format(slot.tzDate, 'HH:mm', {
+                                            const timeString = format(slot.tzDate, 'p', {
                                                 locale: dateLocale,
                                             });
 
