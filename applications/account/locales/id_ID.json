@@ -5804,9 +5804,6 @@
       "Less than a minute left": [
         "Kurang dari satu menit"
       ],
-      "None": [
-        "Tidak ada"
-      ],
       "Only ": [
         "Hanya "
       ],
@@ -6057,9 +6054,6 @@
       "Email address is required": [
         "Alamat email wajib diisi"
       ],
-      "Email is not valid": [
-        "Email tidak valid"
-      ],
       "Empty condition": [
         "Kondisi kosong"
       ],
@@ -6140,9 +6134,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Kata sandi kedua salah. Silakan coba lagi."
-      ],
-      "Incorrect username": [
-        "Nama pengguna salah"
       ],
       "Intended recipient does not support calendar sharing": [
         "Penerima yang dituju tidak mendukung berbagi kalender"
@@ -6240,9 +6231,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Bukan akun ${ BRAND_NAME }"
       ],
-      "Not a valid number": [
-        "Nomor telepon tidak valid"
-      ],
       "Organization key is not decrypted": [
         "Kunci organisasi tidak didekripsi"
       ],
@@ -6254,9 +6242,6 @@
       ],
       "Password is required": [
         "Kata sandi wajib diisi"
-      ],
-      "Passwords do not match": [
-        "Kata sandi tidak sesuai"
       ],
       "Payment process canceled": [
         "Proses pembayaran dibatalkan"
@@ -6420,9 +6405,6 @@
       "The amount due has changed. Please try again.": [
         "Biaya yang tertagih telah berubah. Silakan coba lagi."
       ],
-      "The email addresses do not match": [
-        "Alamat email tidak sesuai"
-      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "File terlalu besar. Ukuran maksimum file ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -6462,14 +6444,8 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Ada terlalu banyak folder di dalam akun eksternal Anda. Mohon sesuaikan parameter impor Anda agar sebagian folder dapat terhapus."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Isi kolom ini melebihi panjang maksimal ${ maximumLength } karakter."
-      ],
       "This field is required": [
         "Kolom ini wajib diisi"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Kolom ini harus diisi dengan minimal ${ minimumLength } karakter."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Nama folder ini tidak dapat digunakan. Mohon pilih nama lain."
@@ -6495,9 +6471,6 @@
       "Try again later": [
         "Coba lagi nanti"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
-      ],
       "Unable to upload file": [
         "File tidak dapat diunggah"
       ],
@@ -6515,12 +6488,6 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "File yang diunggah bukan kunci privat yang valid. Silakan verifikasi dan coba lagi."
-      ],
-      "Username must begin with a letter or digit": [
-        "Nama pengguna harus dimulai dengan huruf atau angka"
-      ],
-      "Username must end with a letter or digit": [
-        "Nama pengguna harus diakhiri dengan huruf atau angka"
       ],
       "Validation error": [
         "Kesalahan validasi"
@@ -9054,9 +9021,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Buat label untuk menandai pesan yang diimpor, rentang waktu impor yang bersangkutan, serta label yang ingin Anda impor."
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "Buat cloud yang aman untuk ${ value } anggota"
       ],
       "Create an account": [
         "Buat akun"
@@ -20688,9 +20652,6 @@
       "Organization logo updated": [
         "Logo organisasi diperbarui"
       ],
-      "Organization name set": [
-        "Nama organisasi diatur"
-      ],
       "Organization name updated": [
         "Nama organisasi diperbarui"
       ],
@@ -23441,14 +23402,6 @@
       ],
       "Writing assistant": [
         "Asisten penulisan"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Kata sandi harus mengandung setidaknya ${ MIN_PASSWORD_LENGTH } karakter"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Cobalah nama pengguna yang lebih pendek (maksimal ${ n } karakter)"
       ]
     },
     "Video control": {

@@ -5721,9 +5721,6 @@
       "Less than a minute left": [
         "เหลือเวลาน้อยกว่าหนึ่งนาที"
       ],
-      "None": [
-        "ไม่มี"
-      ],
       "Only ": [
         "เพียง "
       ],
@@ -5968,9 +5965,6 @@
       "Email address is required": [
         "ต้องระบุที่อยู่อีเมล"
       ],
-      "Email is not valid": [
-        "อีเมลไม่ถูกต้อง"
-      ],
       "Empty condition": [
         "เงื่อนไขทีว่างเปล่า"
       ],
@@ -6051,9 +6045,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "รหัสผ่านที่สองไม่ถูกต้อง โปรดลองใหม่อีกครั้ง"
-      ],
-      "Incorrect username": [
-        "ชื่อผู้ใช้ไม่ถูกต้อง"
       ],
       "Intended recipient does not support calendar sharing": [
         "ผู้รับที่ระบุไม่รองรับการแชร์ปฏิทิน"
@@ -6151,9 +6142,6 @@
       "Not a ${ BRAND_NAME } account": [
         "ไม่ใช่บัญชี ${ BRAND_NAME }"
       ],
-      "Not a valid number": [
-        "หมายเลขไม่ถูกต้อง"
-      ],
       "Organization key is not decrypted": [
         "คีย์องค์กรไม่ได้ถูกถอดรหัส"
       ],
@@ -6165,9 +6153,6 @@
       ],
       "Password is required": [
         "ต้องระบุรหัสผ่าน"
-      ],
-      "Passwords do not match": [
-        "รหัสผ่านไม่ตรงกัน"
       ],
       "Payment process canceled": [
         "ยกเลิกกระบวนการชำระเงินแล้ว"
@@ -6331,9 +6316,6 @@
       "The amount due has changed. Please try again.": [
         "ยอดเงินที่ต้องชำระมีการเปลี่ยนแปลง โปรดลองอีกครั้ง"
       ],
-      "The email addresses do not match": [
-        "ที่อยู่อีเมลไม่ตรงกัน"
-      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "ไฟล์มีขนาดใหญ่เกินไป ขนาดสูงสุดคือ ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -6373,14 +6355,8 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "มีโฟลเดอร์มากเกินไปในบัญชีภายนอกของคุณ โปรดปรับแก้การนำเข้าเพื่อลบบางโฟลเดอร์"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "ช่องกรอกนี้เกินขนาดสูงสุด ${ maximumLength } ตัวอักษรแล้ว"
-      ],
       "This field is required": [
         "ต้องระบุข้อมูลในช่องนี้"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "ต้องใส่อักษรอย่างน้อย ${ minimumLength } ตัวอักษรซึ่งเป็นจำนวนที่กำหนดไว้ในช่องนี้"
       ],
       "This folder name is not available. Please choose a different name.": [
         "ไม่มีชื่อโฟลเดอร์นี้ โปรดเลือกชื่ออื่น"
@@ -6406,9 +6382,6 @@
       "Try again later": [
         "ลองอีกครั้งในภายหลัง"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "ลองใหม่ให้ใช้ตัวอักษร ตัวเลข และ _ - เท่านั้น"
-      ],
       "Unable to upload file": [
         "ไม่สามารถอัปโหลดไฟล์"
       ],
@@ -6426,12 +6399,6 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "ไฟล์ที่อัปโหลดไม่ใช่รหัสส่วนตัวที่ถูกต้อง กรุณาตรวจสอบและลองอีกครั้ง"
-      ],
-      "Username must begin with a letter or digit": [
-        "ชื่อผู้ใช้ต้องขึ้นต้นด้วยตัวอักษรหรือตัวเลข"
-      ],
-      "Username must end with a letter or digit": [
-        "ชื่อผู้ใช้ต้องลงท้ายด้วยตัวอักษรหรือตัวเลข"
       ],
       "Validation error": [
         "ข้อผิดพลาดในการตรวจสอบความถูกต้อง"
@@ -8947,9 +8914,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "สร้างป้ายกำกับสำหรับข้อความที่นำเข้า ช่วงเวลาสำหรับการนำเข้านี้ และป้ายกำกับที่ต้องการนำเข้า"
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "สร้างคลาวด์ที่ปลอดภัยสำหรับสมาชิก ${ value } คน"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "สร้างและจัดการบัญชีย่อยและกำหนดที่อยู่อีเมลของบัญชีย่อยบนโดเมนที่กำหนดเองของคุณ"
@@ -20490,9 +20454,6 @@
       "Organization logo updated": [
         "อัปเดตโลโก้องค์กรแล้ว"
       ],
-      "Organization name set": [
-        "ตั้งชื่อองค์กรแล้ว"
-      ],
       "Organization name updated": [
         "อัปเดตชื่อองค์กรแล้ว"
       ],
@@ -23219,14 +23180,6 @@
       ],
       "Writing assistant": [
         "ผู้ช่วยการเขียน"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "รหัสต้องมีอักขระอย่างน้อย ${ MIN_PASSWORD_LENGTH } อักษร"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "ลองใช้ชื่อผู้ใช้ที่สั้นกว่านี้ (สูงสุด ${ n } อักขระ)"
       ]
     },
     "Video control": {

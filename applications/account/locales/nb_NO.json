@@ -3214,7 +3214,7 @@
         "Standardinnstillingen er ingen. For å forbedre sikkerheten anbefaler vi imidlertid at du setter denne verdien til p=quarantine."
       ],
       "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
-        "Verdien «p=\" angir handlingen som skal utføres for e-poster som ikke lykkes med DMARC. Her er de tilgjengelige handlingene:"
+        "Verdien \"p=\" angir handlingen som skal utføres for e-poster som ikke lykkes med DMARC. Her er de tilgjengelige handlingene:"
       ],
       "This migration has been completed": [
         "Migreringen er fullført"
@@ -3389,11 +3389,17 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Legg til brukere manuelt"
+      ],
       "Cancel": [
         "Avbryt"
       ],
       "Close": [
         "Lukk"
+      ],
+      "Configure your network": [
+        "Konfigurer nettverket ditt"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsett å bruke ${ MAIL_APP_NAME }."
@@ -3416,6 +3422,12 @@
       "Got it": [
         "Skjønner"
       ],
+      "Invite your team": [
+        "Inviter teamet ditt"
+      ],
+      "Manage global VPN permissions": [
+        "Administrer globale VPN-tillatelser"
+      ],
       "Maybe later": [
         "Kanskje senere"
       ],
@@ -3425,11 +3437,17 @@
       "Remind me later": [
         "Påminn meg senere"
       ],
+      "Secure your organization": [
+        "Sikre organisasjonen din"
+      ],
       "Send": [
         "Send"
       ],
       "Set up other features": [
         "Konfigurer andre funksjoner"
+      ],
+      "Set up SSO": [
+        "Konfigurer SSO"
       ],
       "Sign in": [
         "Logg på"
@@ -5280,6 +5298,9 @@
       "Connect your CRM, website, printers, and more.": [
         "Koble til CRM-en, nettstedet, skriverne dine og mer."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Opprett en gateway for å gi brukerne dine tilgang til IT-ressurser via dedikerte servere."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Opprett et Zoom-møte og legg til deltakelsesdetaljer til hendelsen din med ett klikk."
       ],
@@ -5289,8 +5310,14 @@
       "Create groups you can email with a single address.": [
         "Opprett grupper du kan sende e-post til med én enkelt adresse."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Opprett nye brukerkontoer eller importer brukere med SSO (enkeltpålogging) SCIM-klargjøring."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Opprett retningslinjer for å bestemme hvem som kan koble til delte tjenere i hvert land."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Bestem hvilke brukere som kan koble til hver av våre 120+ delte serverplasseringer."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Få enkel tilgang til e-posten og kalenderen din på datamaskin og mobil."
@@ -5351,6 +5378,9 @@
       ],
       "How you unlock your encrypted data if you lose your password.": [
         "Slik låser du opp krypterte data hvis du mister passordet ditt."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Hvis du ikke allerede har gjort det, aktiver noen gjenopprettingsmetoder for å forsikre deg om at du aldri mister tilgang til ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ut til at kontaktlisten du importerer, inneholder noen grupper. Se gjennom hvordan disse gruppene skal importeres."
@@ -6729,9 +6759,6 @@
         "Maksimum antall kontakter på ${ limit } er nådd. For å endre, fjern en kontakt og legg til en ny.",
         "Maksimum antall kontakter på ${ limit } er nådd. For å endre, fjern en kontakt og legg til en ny."
       ],
-      "None": [
-        "Ingen"
-      ],
       "Only ": [
         "Kun "
       ],
@@ -7104,17 +7131,11 @@
       "Email address is required": [
         "E-postadresse kreves"
       ],
-      "Email is not valid": [
-        "E-post er ikke gyldig"
-      ],
       "Empty condition": [
         "Tom betingelse"
       ],
       "Enter 6 digits": [
         "Skriv inn 6 sifre"
-      ],
-      "Enter your username without the domain (@example.com)": [
-        "Skriv inn brukernavnet ditt uten domenet (@eksempel.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Feil ved tilkobling til Bitcoin API."
@@ -7202,9 +7223,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Feil andre passord. Prøv på nytt."
-      ],
-      "Incorrect username": [
-        "Uriktig brukernavn"
       ],
       "Intended recipient does not support calendar sharing": [
         "Tiltenkt mottaker støtter ikke kalenderdeling"
@@ -7315,9 +7333,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Ikke en ${ BRAND_NAME }-konto"
       ],
-      "Not a valid number": [
-        "Ikke et gyldig tall"
-      ],
       "Organization key is not decrypted": [
         "Organisasjonsnøkkel er ikke dekryptert"
       ],
@@ -7329,9 +7344,6 @@
       ],
       "Password is required": [
         "Passord kreves"
-      ],
-      "Passwords do not match": [
-        "Passordene samsvarer ikke"
       ],
       "Payment process canceled": [
         "Betalingsprosessen ble avbrutt"
@@ -7515,9 +7527,6 @@
       "The amount due has changed. Please try again.": [
         "Det forfalte beløpet er endret. Prøv igjen."
       ],
-      "The email addresses do not match": [
-        "E-postadressene samsvarer ikke"
-      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Filen er for stor, maksimal størrelse er ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -7560,17 +7569,11 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Det er for mange mapper i din eksterne konto. Tilpass importen for å slette noen mapper."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Dette feltet overskrider maksimalt tillatt ${ maximumLength } tegn."
-      ],
       "This field is invalid": [
         "Dette feltet er ugyldig"
       ],
       "This field is required": [
         "Dette feltet er obligatorisk"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Dette feltet krever minimum ${ minimumLength } tegn."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Dette mappenavnet er ikke tilgjengelig. Velg et annet navn."
@@ -7596,9 +7599,6 @@
       "Try again later": [
         "Prøv igjen senere"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Prøv å bruke bare bokstaver, tall og _.-"
-      ],
       "Unable to upload file": [
         "Kan ikke laste opp fil"
       ],
@@ -7616,12 +7616,6 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Opplastede filer er ikke gyldige private nøkler. Verifiser og prøv på nytt."
-      ],
-      "Username must begin with a letter or digit": [
-        "Brukernavn må begynne med en bokstav eller ett tall"
-      ],
-      "Username must end with a letter or digit": [
-        "Brukernavn må ende med en bokstav eller ett tall"
       ],
       "Validation error": [
         "Valideringsfeil"
@@ -10500,10 +10494,6 @@
       "Create a new code on your TV and try again.": [
         "Opprett en ny kode på TV-en og prøv igjen."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Opprett en sikker sky for ${ value } medlem",
-        "Opprett en sikker sky for ${ value } medlemmer"
-      ],
       "Create an account": [
         "Opprett en konto"
       ],
@@ -11014,6 +11004,9 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Bli varslet hvis passordet ditt eller andre personlige data ble lekket. ${ learnMoreLinkNoBreach }."
+      ],
+      "Get started": [
+        "Kom i gang"
       ],
       "Get started with the referral link above.": [
         "Kom i gang med vervekoblingen ovenfor."
@@ -12077,6 +12070,9 @@
       ],
       "Set up your organization": [
         "Konfigurer organisasjonen din"
+      ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Konfigurer organisasjonen og begynn å beskytte dataene i noen få enkle trinn."
       ],
       "Setting successfully saved": [
         "Innstilling lagret"
@@ -20973,7 +20969,7 @@
         "Verifiser telefonnummeret for gjenoppretting"
       ],
       "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
-        "Det oppsto en feil under genereringen av gjenopprettingsfrasen din. Prøv på nytt senere, eller kontakt brukerstøtte hvis problemet vedvarer."
+        "Det oppstod en feil under genereringen av gjenopprettingsfrasen din. Prøv på nytt senere, eller kontakt brukerstøtte hvis problemet vedvarer."
       ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "Vi oppdaget en feil under bekreftelsen av e-posten din. Prøv igjen senere, eller kontakt brukerstøtte hvis problemet vedvarer."
@@ -21879,12 +21875,6 @@
     "Setting": {
       "Enable Photos section": [
         "Aktiver Bilder-seksjonen"
-      ],
-      "Get updates about comments via email": [
-        "Få oppdateringer om kommentarer via e-post"
-      ],
-      "Include document name in email notifications": [
-        "Inkluder dokumentnavn i e-postvarsler"
       ]
     },
     "Settings description": {
@@ -23987,9 +23977,6 @@
       "Organization logo updated": [
         "Organisasjonslogo oppdatert"
       ],
-      "Organization name set": [
-        "Organisasjonsnavn angitt"
-      ],
       "Organization name updated": [
         "Organisasjonsnavn oppdatert"
       ],
@@ -25011,6 +24998,9 @@
       "Disconnected from Gmail": [
         "Frakoblet fra Gmail"
       ],
+      "Dismiss setup checklist": [
+        "Avvis sjekkliste for oppsett"
+      ],
       "Display name and signature": [
         "Visningsnavn og signatur"
       ],
@@ -25284,6 +25274,9 @@
       ],
       "Get more from your VPN": [
         "Får mer ut av ditt VPN"
+      ],
+      "Get started": [
+        "Kom i gang"
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Skaff deg appen på alle enhetene dine, og sett pris på sikker og sømløs tilgang hvor som helst."
@@ -27092,16 +27085,6 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn",
-        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Prøv et kortere brukernavn (maks ${ n } tegn)",
-        "Prøv et kortere brukernavn (maks ${ n } tegn)"
       ]
     },
     "Video control": {

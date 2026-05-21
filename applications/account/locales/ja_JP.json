@@ -5985,9 +5985,6 @@
       "Less than a minute left": [
         "残り一分未満です"
       ],
-      "None": [
-        "なし"
-      ],
       "Only ": [
         "のみ "
       ],
@@ -6286,9 +6283,6 @@
       "Email address is required": [
         "メールアドレスは必須です"
       ],
-      "Email is not valid": [
-        "メールアドレスが無効です"
-      ],
       "Empty condition": [
         "条件が空です"
       ],
@@ -6372,9 +6366,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "セカンドパスワードが正しくありません。もう一度お試しください。"
-      ],
-      "Incorrect username": [
-        "ユーザー名に間違いがあります。"
       ],
       "Intended recipient does not support calendar sharing": [
         "対象の受信者はカレンダーの共有をサポートしていません"
@@ -6481,9 +6472,6 @@
       "Not a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } アカウントではありません"
       ],
-      "Not a valid number": [
-        "無効な番号です"
-      ],
       "Organization key is not decrypted": [
         "組織の鍵が復号されていません"
       ],
@@ -6495,9 +6483,6 @@
       ],
       "Password is required": [
         "パスワードは必須です"
-      ],
-      "Passwords do not match": [
-        "パスワードが一致しません"
       ],
       "Payment process canceled": [
         "支払い処理がキャンセルされました"
@@ -6667,9 +6652,6 @@
       "The amount due has changed. Please try again.": [
         "金額が変更されました。もう一度やり直してください。"
       ],
-      "The email addresses do not match": [
-        "メールアドレスが一致しません"
-      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "ファイルが大きすぎます。最大サイズは ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS } です"
       ],
@@ -6712,17 +6694,11 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "外部アカウントのフォルダが多すぎます。インポートをカスタマイズしてフォルダをいくつか削除してください。"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "このフィールドは${ maximumLength }文字の最大値を超えています。"
-      ],
       "This field is invalid": [
         "このフィールドは無効です"
       ],
       "This field is required": [
         "この項目の入力は必須です"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "このフィールドには ${ minimumLength } 文字以上の入力が必要です。"
       ],
       "This folder name is not available. Please choose a different name.": [
         "このフォルダー名は利用できません。別の名前を選択してください。"
@@ -6748,9 +6724,6 @@
       "Try again later": [
         "後ほどお試しください"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "文字、数字、_.- のみを使用してみてください。"
-      ],
       "Unable to upload file": [
         "ファイルをアップロードできません"
       ],
@@ -6768,12 +6741,6 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "アップロードされたファイルは有効な秘密鍵ではありません。確認して再度お試しください。"
-      ],
-      "Username must begin with a letter or digit": [
-        "ユーザー名は英字か数字で始めなければいけません"
-      ],
-      "Username must end with a letter or digit": [
-        "ユーザー名の最後は英字か数字でなければいけません"
       ],
       "Validation error": [
         "検証エラー"
@@ -9342,9 +9309,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "インポートされたメッセージのラベル、インポートする期間、およびインポート先のラベルを設定します。"
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "${ value } 人のメンバーのために安全なクラウドを作成します"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "サブアカウントを作成・管理し、独自ドメインのメール アドレスを割り当ててください。"
@@ -21389,9 +21353,6 @@
       "Organization logo updated": [
         "組織ロゴの更新"
       ],
-      "Organization name set": [
-        "組織名が設定されました"
-      ],
       "Organization name updated": [
         "組織名が更新されました"
       ],
@@ -24181,14 +24142,6 @@
       ],
       "Writing assistant": [
         "執筆アシスタント"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "パスワードは ${ MIN_PASSWORD_LENGTH } 文字以上必要です"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "もっと短いユーザ名にしてください (${ n } 文字以内)"
       ]
     },
     "Video control": {
