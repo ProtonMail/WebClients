@@ -10,7 +10,7 @@ import { Logger } from '../shared/Logger';
 type BroadcastChannelConstructor = new (name: string) => BroadcastChannel;
 
 // Bump this version on any major changes.
-export const CURRENT_SEARCH_VERSION = 1;
+export const CURRENT_SEARCH_VERSION = 2;
 
 export class AppVersionGuard {
     private channel: BroadcastChannel;
