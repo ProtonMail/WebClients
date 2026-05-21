@@ -2,6 +2,7 @@ import type { RefObject } from 'react';
 import { useRef } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { IconProps } from '@proton/components/components/icon/Icon';
 import type { PopperPosition } from '@proton/components/components/popper/interface';
@@ -30,6 +31,7 @@ interface ToggleButtonProps {
     secondaryAriaLabel?: string;
     hasWarning?: boolean;
     tooltipTitle?: string;
+    loading?: boolean;
 }
 
 export const ToggleButton = ({
@@ -44,6 +46,7 @@ export const ToggleButton = ({
     secondaryAriaLabel,
     hasWarning,
     tooltipTitle,
+    loading = false,
 }: ToggleButtonProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
@@ -51,6 +54,25 @@ export const ToggleButton = ({
     const rect = containerRef.current?.getBoundingClientRect() ?? { top: 0, left: 0 };
 
     const { viewportWidth } = useActiveBreakpoint();
+
+    const getToggleIcon = () => {
+        if (loading) {
+            return (
+                <CircleLoader
+                    className="w-custom h-custom"
+                    style={{ '--w-custom': '1.5rem', '--h-custom': '1.5rem', '--stroke-width': 1.3 }}
+                />
+            );
+        }
+
+        const iconSize = viewportWidth.xsmall ? 5 : 6;
+
+        if (isOn) {
+            return <OnIconComponent size={iconSize} />;
+        }
+
+        return <OffIconComponent size={iconSize} />;
+    };
 
     return (
         <div className="relative" ref={containerRef}>
@@ -79,12 +101,9 @@ export const ToggleButton = ({
                     onClick={onClick}
                     onMouseUp={(e) => (e.currentTarget as HTMLButtonElement).blur()}
                     aria-label={ariaLabel}
+                    disabled={loading}
                 >
-                    {isOn ? (
-                        <OnIconComponent size={viewportWidth.xsmall ? 5 : 6} />
-                    ) : (
-                        <OffIconComponent size={viewportWidth.xsmall ? 5 : 6} />
-                    )}
+                    {getToggleIcon()}
                 </button>
             </Tooltip>
 
