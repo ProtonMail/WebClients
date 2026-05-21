@@ -11,7 +11,7 @@ import { useLoading } from '@proton/hooks';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { DownloadManager } from '../../managers/download/DownloadManager';
+import { DownloadManager } from '../../modules/download/DownloadManager';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getNodeNameFallback } from '../../utils/sdk/getNodeName';

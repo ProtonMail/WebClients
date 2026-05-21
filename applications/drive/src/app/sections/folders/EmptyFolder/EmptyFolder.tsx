@@ -6,8 +6,8 @@ import { useShallow } from 'zustand/react/shallow';
 import { usePopperAnchor } from '@proton/components';
 import emptySvg from '@proton/styles/assets/img/illustrations/empty-my-files.svg';
 
-import { DriveEmptyView } from '../../../components/layout/DriveEmptyView';
-import { useIsFreeUploadInProgress } from '../../../hooks/drive/freeUpload/useIsFreeUploadInProgress';
+import { DriveEmptyView } from '../../../legacy/components/layout/DriveEmptyView';
+import { useIsFreeUploadInProgress } from '../../../legacy/hooks/drive/freeUpload/useIsFreeUploadInProgress';
 import { FolderContextMenu } from '../menus/FolderContextMenu';
 import { useFolderStore } from '../useFolder.store';
 import type { FolderActions, FolderUploadFile, FolderUploadFolder } from '../useFolderActions';

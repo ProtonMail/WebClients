@@ -23,8 +23,8 @@ import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { SORT_DIRECTION as SORT } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-import type { UseSearchModuleReturn } from '../../hooks/search/useSearchModule';
-import { useSearchModule } from '../../hooks/search/useSearchModule';
+import type { UseSearchModuleReturn } from '../../legacy/hooks/search/useSearchModule';
+import { useSearchModule } from '../../legacy/hooks/search/useSearchModule';
 import type { SerializedIndexEntry } from '../../modules/search';
 import { IndexKind } from '../../modules/search';
 import type { IndexPopulatorState } from '../../modules/search/internal/shared/SearchDB';

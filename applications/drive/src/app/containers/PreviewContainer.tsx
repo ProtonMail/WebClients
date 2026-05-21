@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom-v5-compat';
 import { Loader } from '@proton/components';
 import { getDrive, splitNodeUid } from '@proton/drive';
 
-import useDriveNavigation from '../hooks/drive/useNavigate';
+import useDriveNavigation from '../legacy/hooks/drive/useNavigate';
 import { Preview } from '../modals/preview';
 
 interface PreviewContainerProps {

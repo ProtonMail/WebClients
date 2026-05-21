@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import type { MaybeNode } from '@proton/drive';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { SignatureIcon } from '../../components/SignatureIcon';
+import { SignatureIcon } from '../../legacy/components/SignatureIcon';
 
 /**
  * The method provides a label displayed to a user when there is a signature

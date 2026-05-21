@@ -8,7 +8,7 @@ import { TopBanner } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 // TODO: Migrate recovery functionality to SDK equivalents
-import { usePhotosRecovery } from '../../../../store';
+import { usePhotosRecovery } from '../../../../legacy/store';
 import type { RECOVERY_STATE } from '../../legacy/usePhotosRecovery';
 
 const getPhotosRecoveryProgressText = (

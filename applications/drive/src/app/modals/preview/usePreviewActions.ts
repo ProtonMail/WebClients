@@ -8,8 +8,8 @@ import {
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useFlagsDriveSheetODSImport } from '../../flags/useFlagsDriveSheetODSImport';
-import { useDocumentActions } from '../../hooks/docs/useDocumentActions';
-import { downloadManager } from '../../managers/download/DownloadManager';
+import { useDocumentActions } from '../../legacy/hooks/docs/useDocumentActions';
+import { downloadManager } from '../../modules/download/DownloadManager';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { bufferToStream } from '../../utils/stream';
 import type { Drive } from './interface';
@@ -106,7 +106,11 @@ export default function usePreviewActions({
     };
 
     const saveFileEnabled =
-        role !== MemberRole.Viewer && isTextFileEditEnabled && mimeType && isSupportedText(mimeType) && drive.getFileRevisionUploader;
+        role !== MemberRole.Viewer &&
+        isTextFileEditEnabled &&
+        mimeType &&
+        isSupportedText(mimeType) &&
+        drive.getFileRevisionUploader;
 
     return {
         downloadFile,

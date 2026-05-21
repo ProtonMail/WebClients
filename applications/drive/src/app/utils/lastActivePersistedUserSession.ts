@@ -1,7 +1,7 @@
 import type { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
 import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
 
-import { LAST_ACTIVE_PING } from '../store/_user/useActivePing';
+import { LAST_ACTIVE_PING } from '../legacy/store/_user/useActivePing';
 import { sendErrorReport } from './errorHandling';
 import { EnrichedError } from './errorHandling/EnrichedError';
 

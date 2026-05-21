@@ -7,7 +7,7 @@ import { splitNodeUid } from '@proton/drive/index';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
 import clsx from '@proton/utils/clsx';
 
-import FileRecoveryIcon from '../../../components/ResolveLockedVolumes/FileRecovery/FileRecoveryIcon';
+import FileRecoveryIcon from '../../../legacy/components/ResolveLockedVolumes/FileRecovery/FileRecoveryIcon';
 import type { TreeItemWithChildren } from '../../../modules/directoryTree';
 import { DriveSidebarListItem } from '../DriveSidebarListItem';
 import { DriveExpandButton } from './DriveExpandButton';

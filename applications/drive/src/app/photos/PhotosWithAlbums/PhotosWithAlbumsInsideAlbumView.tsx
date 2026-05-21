@@ -10,9 +10,9 @@ import { getDriveForPhotos } from '@proton/drive/index';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 
-import useNavigate from '../../hooks/drive/useNavigate';
-import { useShiftKey } from '../../hooks/util/useShiftKey';
-import { usePhotoLayoutStore } from '../../zustand/photos/layout.store';
+import useNavigate from '../../legacy/hooks/drive/useNavigate';
+import { useShiftKey } from '../../legacy/hooks/util/useShiftKey';
+import { usePhotoLayoutStore } from '../../legacy/zustand/photos/layout.store';
 import { toggleFavorite } from '../PhotosActions/Albums';
 import { useAlbumsStore } from '../useAlbums.store';
 import { PhotosInsideAlbumsGrid } from './PhotosInsideAlbumsGrid';

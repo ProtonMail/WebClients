@@ -7,9 +7,9 @@ import type { IconName } from '@proton/icons/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import clsx from '@proton/utils/clsx';
 
-import SidebarListItemLink from '../../components/layout/sidebar/SidebarListItemLink';
-import { useDriveEventManager } from '../../store';
-import { useVolumesState } from '../../store/_volumes';
+import SidebarListItemLink from '../../legacy/components/layout/sidebar/SidebarListItemLink';
+import { useDriveEventManager } from '../../legacy/store';
+import { useVolumesState } from '../../legacy/store/_volumes';
 
 interface DriveSidebarListItemProps {
     children: React.ReactNode;

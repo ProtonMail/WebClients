@@ -6,7 +6,7 @@ import type { IconName } from '@proton/icons/types';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import clsx from '@proton/utils/clsx';
 
-import { AlbumTag, type Tag } from '../../../store';
+import { AlbumTag, type Tag } from '../../../legacy/store';
 
 export interface TagsProps<T extends Tag> {
     selectedTags: T[];

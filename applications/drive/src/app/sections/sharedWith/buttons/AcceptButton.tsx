@@ -4,7 +4,7 @@ import { ToolbarButton } from '@proton/components';
 import type { NodeType } from '@proton/drive';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 
-import { ContextMenuButton } from '../../../components/sections/ContextMenu';
+import { ContextMenuButton } from '../../../legacy/components/sections/ContextMenu';
 import { useInvitationsActions } from '../hooks/useInvitationsActions';
 
 interface BaseProps {
