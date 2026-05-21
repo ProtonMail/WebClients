@@ -1499,6 +1499,9 @@
       "New: Control admin access for individual users": [
         "Nytt: Kontrollera administratörsåtkomst för enskilda användare"
       ],
+      "New: Control admin access for many users at once": [
+        "Nytt: Kontrollera administratörsåtkomst för många användare samtidigt"
+      ],
       "Organization admin:": [
         "Organisationsadministratör:"
       ],
@@ -2203,6 +2206,9 @@
       "Status": [
         "Status"
       ],
+      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
+        "Standardinställningen är ingen. För att förbättra din säkerhet rekommenderar vi dock att du ställer in detta värde till p=quarantine."
+      ],
       "This migration has been completed": [
         "Denna migrering har slutförts"
       ],
@@ -2214,6 +2220,9 @@
       ],
       "User status": [
         "Användarstatus"
+      ],
+      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
+        "Användare kan använda ${ BRAND_NAME } eller Google samtidigt under migreringens gång."
       ],
       "Users migrated": [
         "Användare migrerade"
@@ -3627,6 +3636,9 @@
       "/month": [
         "/månad"
       ],
+      "/user /month": [
+        "/användare/månad"
+      ],
       "/user per month": [
         "/användare per månad"
       ]
@@ -4870,6 +4882,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Det finns för många mappar i ditt externa konto. Anpassa importen för att ta bort vissa mappar."
+      ],
+      "There was an error, please try again.": [
+        "Det var ett fel, försök igen."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Detta fält överskrider det maximala antalet ${ maximumLength } tecken."
@@ -6995,9 +7010,9 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Skapa en etikett för de importerade meddelandena, ett tidsintervall för den här importeringen och etiketterna som du skulle vilja importera."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Skapa ett säkert moln för ${ value } medlem",
-        "Skapa ett säkert moln för ${ value } medlemmar"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Skapa ett säkert moln för ${ memberCount } medlem",
+        "Skapa ett säkert moln för ${ memberCount } medlemmar"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Skapa och hantera underkonton och tilldela dem e-postadresser på din anpassade domän."
@@ -10773,11 +10788,20 @@
       "Built-in chat": [
         "Inbyggd chatt"
       ],
+      "Cloud storage and file sharing": [
+        "Molnlagring och fildelning"
+      ],
+      "Document and spreadsheet editor": [
+        "Dokument- och kalkylbladsredigerare"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end-krypterad skärmdelning och kortvarig chatt i samtal"
       ],
       "Hosts can record meetings locally on their computers": [
         "Värdar kan spela in möten lokalt på sina datorer"
+      ],
+      "Includes Meet Professional": [
+        "Inkluderar Meet Professional"
       ],
       "Meeting recording": [
         "Mötesinspelning"
@@ -10785,8 +10809,17 @@
       "One active meeting at a time": [
         "Ett aktivt möte åt gången"
       ],
+      "Password manager with team vaults": [
+        "Lösenordshanterare med valv för team"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Privat AI-chatt (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Skärmdelning"
+      ],
+      "Secure mail and calendar": [
+        "Säker e-post och kalender"
       ],
       "Unlimited meetings per day": [
         "Obegränsat antal möten per dag"
@@ -10802,6 +10835,9 @@
       "Video meetings, ${ n } participant": [
         "Videomöten, ${ n } deltagare",
         "Videomöten, ${ n } deltagare"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN med annonsblockerare och skydd mot skadlig kod"
       ]
     },
     "Meet_launch": {
@@ -11361,6 +11397,9 @@
       "Multiple admin roles": [
         "Flera administratörsroller"
       ],
+      "No streaming support": [
+        "Inget stöd för streaming"
+      ],
       "No-logs policy": [
         "Ingen loggpolicy"
       ],
@@ -11523,6 +11562,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Obegränsad bandbredd"
+      ],
+      "Unlock streaming": [
+        "Lås upp streaming"
       ],
       "Up to ${ n } user": [
         "Upp till ${ n } användare",
@@ -15784,9 +15826,6 @@
       "Organization logo updated": [
         "Organisationens logga uppdaterad"
       ],
-      "Organization name set": [
-        "Organisationsnamn inställt"
-      ],
       "Organization name updated": [
         "Organisationsnamn uppdaterad"
       ],
@@ -15949,6 +15988,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar versionshistorik, krypterad fildelning och mer."
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "För personligt bruk"
+      ],
+      "For professional use": [
+        "För professionellt bruk"
       ]
     },
     "Tab in domain modal": {

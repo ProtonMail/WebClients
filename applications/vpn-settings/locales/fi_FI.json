@@ -4317,6 +4317,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Ulkoisella tililläsi on liian monta kansiota. Muokkaa tuontia tai poista joitakin kansioita."
       ],
+      "There was an error, please try again.": [
+        "Tapahtui virhe, yritä uudelleen."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Kenttä ylittää ${ maximumLength }-merkin enimmäismäärän."
       ],
@@ -6316,9 +6319,9 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Luo tuoduille viesteille tunniste, ajanjakso tälle tuonnille ja tunnisteet, jotka haluat tuoda."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Luo suojattu pilvi ${ value } jäsenelle",
-        "Luo suojattu pilvi ${ value } jäsenelle"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Luo suojattu pilvi ${ memberCount } jäsenelle",
+        "Luo suojattu pilvi ${ memberCount } jäsenelle"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Luo ja hallinnoi alitilejä ja määritä niille omaa verkkotunnustasi käyttävät sähköpostiosoitteet."
@@ -6542,6 +6545,9 @@
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Varmistu täysin yksityisestä ja salatusta viestinnästä. Hanki ilmainen ${ BRAND_NAME } -sähköpostiosoitteesi nyt."
+      ],
+      "Enter code": [
+        "Syötä koodi"
       ],
       "Enter key manually instead": [
         "Syötä avain sen sijaan manuaalisesti"
@@ -14408,9 +14414,6 @@
       ],
       "Organization logo updated": [
         "Organisaation logo päivitettiin"
-      ],
-      "Organization name set": [
-        "Organisaation nimi asetettiin"
       ],
       "Organization name updated": [
         "Organisaation nimi päivitettiin"
