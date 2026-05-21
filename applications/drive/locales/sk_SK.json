@@ -1295,6 +1295,9 @@
       ],
       "Search is unavailable": [
         "Vyhľadávanie je nedostupné"
+      ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Späť na album „${ ellipsedAlbumName }\""
       ]
     },
     "Action: Docs": {
@@ -7408,6 +7411,24 @@
         "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
         "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
         "Vytvoriť bezpečný cloud pre ${ memberCount } členov"
+      ],
+      "Photo saved to your Drive": [
+        "Fotografia uložená na vašom Drive",
+        "Fotografie uložené na vašom Drive",
+        "Fotografie uložené na vašom Drive",
+        "Fotografie uložené na vašom Drive"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "Túto fotografiu sme nemohli uložiť do vášho Drive",
+        "Tieto fotografie sme nemohli uložiť do vášho Disku",
+        "Tieto fotografie sme nemohli uložiť do vášho Disku",
+        "Tieto fotografie sme nemohli uložiť do vášho Disku"
+      ],
+      "We were not able to add this photo to your album": [
+        "Túto fotografiu sme nemohli uložiť do vášho albumu",
+        "Tieto fotografie sme nemohli uložiť do vášho albumu",
+        "Tieto fotografie sme nemohli uložiť do vášho albumu",
+        "Tieto fotografie sme nemohli uložiť do vášho albumu"
       ]
     },
     "info": {
@@ -10299,6 +10320,18 @@
       ],
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "Kópia „${ ellipsedName }“ presunutá do koša"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } fotografia bola pridaná do \"${ albumName }\"",
+        "${ addedUids.length } fotografie boli pridané do \"${ albumName }\"",
+        "${ addedUids.length } fotografií bolo pridaných do \"${ albumName }\"",
+        "${ addedUids.length } fotografií bolo pridaných do \"${ albumName }\""
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } fotografia bola odstránená z \"${ albumName }\"",
+        "${ removed } fotografie boli odstránené z \"${ albumName }\"",
+        "${ removed } fotografií bolo odstránených z \"${ albumName }\"",
+        "${ removed } fotografií bolo odstránených z \"${ albumName }\""
       ]
     },
     "Notification for duplicate filenames in the current upload": {

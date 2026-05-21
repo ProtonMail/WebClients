@@ -1283,7 +1283,7 @@
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } ekle"
       ],
       "Go back to album \"${ ellipsedAlbumName }\"": [
-        "\"${ ellipsedAlbumName }\" albümüne geri dön"
+        "\"${ ellipsedAlbumName }\" albümüne dön"
       ]
     },
     "Action: Docs": {
@@ -7199,16 +7199,16 @@
         "${ memberCount } üye için güvenli bir bulut oluşturun"
       ],
       "Photo saved to your Drive": [
-        "Fotoğraf Drive'ınıza kaydedildi",
-        "Fotoğraflar Drive'ınıza kaydedildi"
+        "Fotoğraf Drive depolama alanınıza kaydedildi",
+        "Fotoğraflar Drive depolama alanınıza kaydedildi"
       ],
       "We couldn't save this photo to your Drive": [
-        "Bu fotoğrafı Drive'ınıza kaydedemedik",
-        "Drive'ınıza birden fazla fotoğrafı kaydedemedik"
+        "Bu fotoğraf Drive depolama alanınıza kaydedilemedi",
+        "Bazı fotoğraflar Drive depolama alanınıza kaydedilemedi"
       ],
       "We were not able to add this photo to your album": [
-        "Bu fotoğrafı albümünüze ekleyemedik",
-        "Bazı fotoğrafları albümünüze ekleyemedik"
+        "Bu fotoğraf albümünüze eklenemedi",
+        "Bazı fotoğraflar albümünüze eklenemedi"
       ]
     },
     "info": {
@@ -9950,8 +9950,8 @@
         "\"${ ellipsedName }\" kopyası çöpe atıldı"
       ],
       "${ addedUids.length } photo have been added to \"${ albumName }\"": [
-        "\"${ albumName }\" albümüne ${ addedUids.length } fotoğraf eklendi",
-        "\"${ albumName }\" albümüne ${ addedUids.length } fotoğraf eklendi"
+        "${ addedUids.length } fotoğraf \"${ albumName }\" albümüne eklendi",
+        "${ addedUids.length } fotoğraf \"${ albumName }\" albümüne eklendi"
       ],
       "${ removed } photo have been removed from \"${ albumName }\"": [
         "${ removed } fotoğraf \"${ albumName }\" albümünden kaldırıldı",
