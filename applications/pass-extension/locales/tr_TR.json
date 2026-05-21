@@ -1645,6 +1645,9 @@
       "(Empty)": [
         "(Boş)"
       ],
+      "2FA code copied to clipboard": [
+        "İki adımlı doğrulama kodu panoya kopyalandı"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 gün boyunca ücretli özellikleri ücretsiz olarak deneyin. Yalnızca ${ BRAND_NAME } ile ilk haftanızda."
       ],
@@ -1695,6 +1698,9 @@
       ],
       "Admin": [
         "Yönetici"
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "Oturum açma bilgileri otomatik doldurulduktan sonra iki adımlı doğrulama kodu panoya kopyalandı."
       ],
       "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
         "Onayladıktan sonra ${ PASS_APP_NAME } için bir izin istemini kabul etmeniz gerekecektir."
@@ -2311,9 +2317,6 @@
       ],
       "password": [
         "parola"
-      ],
-      "Password copied": [
-        "Parola kopyalandı"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Parola ile kilitleme kullanıma alındı. ${ PASS_APP_NAME } uygulamasının kilidini açmak için kullanabilirsiniz"
@@ -3160,6 +3163,9 @@
       ],
       "Authenticate with passkeys": [
         "Geçiş anahtarları ile kimlik doğrulama"
+      ],
+      "Auto-copy 2FA code": [
+        "İki adımlı doğrulama kodu otomatik kopyalansın"
       ],
       "Auto-lock after": [
         "Otomatik kilitleme süresi"

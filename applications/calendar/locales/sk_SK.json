@@ -5603,11 +5603,11 @@
       "Create a new contact group": [
         "Vytvoriť novú skupinu kontaktov"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Vytvoriť bezpečný cloud pre ${ value } člena",
-        "Vytvoriť bezpečný cloud pre ${ value } členov",
-        "Vytvoriť bezpečný cloud pre ${ value } členov",
-        "Vytvoriť bezpečný cloud pre ${ value } členov"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Vytvoriť bezpečný cloud pre ${ memberCount } člena",
+        "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
+        "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
+        "Vytvoriť bezpečný cloud pre ${ memberCount } členov"
       ],
       "Create in": [
         "Vytvoriť v"
@@ -8347,6 +8347,9 @@
       "99.95% SLA": [
         "99,95 % SLA"
       ],
+      "Access all countries": [
+        "Prístup ku všetkým krajinám"
+      ],
       "Ad-blocker and malware protection": [
         "Blokovanie reklám a ochrana pred škodlivým softvérom"
       ],
@@ -8509,6 +8512,9 @@
       "Multiple admin roles": [
         "Viacero správcovských rolí"
       ],
+      "No streaming support": [
+        "Žiadna podpora zabezpečeného streamovania"
+      ],
       "Online document editor": [
         "Online editor dokumentov"
       ],
@@ -8658,6 +8664,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Neobmedzený objem / šírka pásma"
+      ],
+      "Unlock streaming": [
+        "Odomknite streamovanie"
       ],
       "Up to ${ n } user": [
         "Až ${ n } užívateľ",
@@ -9082,6 +9091,12 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } krajina",
+        "${ n } krajiny",
+        "${ n } krajín",
+        "${ n } krajín"
+      ],
       "Access advanced VPN features": [
         "Získajte prístup k pokročilým VPN funkciám"
       ],

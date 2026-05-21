@@ -1216,11 +1216,17 @@
       "Last updated on ${ formattedDate }": [
         "Zuletzt aktualisiert am ${ formattedDate }"
       ],
+      "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
+        "Mehr erfahren, wie ${ LUMO_SHORT_APP_NAME } eingesetzt werden kann"
+      ],
       "Permanently delete your project and chats. This is irreversible.": [
         "Lösche dein Projekt und deine Chats dauerhaft. Das ist unwiderruflich."
       ],
       "Quick responses": [
         "Schnelle Antworten"
+      ],
+      "Report a bug or feature request": [
+        "Fehler melden oder Funktion vorschlagen"
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Melde dich an, um auf dein Konto zuzugreifen und weitere Funktionen freizuschalten. Hast du keins? ${ createLink }"
@@ -1320,6 +1326,26 @@
       ],
       "You've reached the maximum of ${ limit } files in this chat. Remove some files before uploading new ones.": [
         "Du hast die maximale Anzahl von ${ limit } Dateien in diesem Chat erreicht. Lösche einige Dateien, bevor du neue hochlädst."
+      ]
+    },
+    "collider_2025: Error (file processing)": {
+      "Error processing file: ${ file.name }": [
+        "Fehler beim Verarbeiten der Datei: ${ file.name }"
+      ]
+    },
+    "collider_2025: Error (local processing)": {
+      "Error processing file: ${ file.name }": [
+        "Fehler beim Verarbeiten der Datei: ${ file.name }"
+      ]
+    },
+    "collider_2025: Error (processing)": {
+      "File format not supported: ${ result.fileName }": [
+        "Dateiformat nicht unterstützt: ${ result.fileName }"
+      ]
+    },
+    "collider_2025: Error (validation)": {
+      "File format not supported: ${ file.name }": [
+        "Dateiformat nicht unterstützt: ${ file.name }"
       ]
     },
     "collider_2025: Error Message": {
@@ -2117,6 +2143,9 @@
       ]
     },
     "collider_2025: Settings Item": {
+      "About": [
+        "Über"
+      ],
       "Account": [
         "Konto"
       ],
@@ -2239,6 +2268,9 @@
       "Guest": [
         "Gast"
       ],
+      "Help and support": [
+        "Hilfe und Support"
+      ],
       "Invalid Link": [
         "Ungültiger Link"
       ],
@@ -2265,6 +2297,9 @@
       ],
       "Raw response": [
         "Unbearbeitete Antwort"
+      ],
+      "Report a bug": [
+        "Fehler melden"
       ],
       "Required headers": [
         "Erforderliche Kopfzeilen"
@@ -2683,9 +2718,6 @@
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Hol dir ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
-      "Help and support": [
-        "Hilfe und Support"
       ],
       "Hide sidebar": [
         "Seitenleiste ausblenden"
@@ -4954,9 +4986,9 @@
       "Country code": [
         "Ländercode"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Erstelle eine sichere Cloud für ${ value } Mitglied",
-        "Erstelle eine sichere Cloud für ${ value } Mitglieder"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Erstelle eine sichere Cloud für ${ memberCount } Mitglied",
+        "Erstelle eine sichere Cloud für ${ memberCount } Mitglieder"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Gutschrift für den ungenutzten Teil deines vorherigen Abonnements"
@@ -6182,6 +6214,9 @@
       "99.95% SLA": [
         "Dienstleistungsvereinbarung über 99,95 % Verfügbarkeit"
       ],
+      "Access all countries": [
+        "Zugriff auf alle Länder"
+      ],
       "Ad-blocker and malware protection": [
         "Werbeblocker & Malware-Schutz"
       ],
@@ -6331,6 +6366,9 @@
       "Multiple admin roles": [
         "Mehrere Administratorrollen"
       ],
+      "No streaming support": [
+        "Keine Unterstützung für Streaming"
+      ],
       "Online document editor": [
         "Editor für Onlinedokumente"
       ],
@@ -6462,6 +6500,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Volumen/Bandbreite unbegrenzt"
+      ],
+      "Unlock streaming": [
+        "Streaming entsperren"
       ],
       "Up to ${ n } user": [
         "Bis zu ${ n } Benutzer",
@@ -6843,6 +6884,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } Land",
+        "${ n } Länder"
+      ],
       "Access advanced VPN features": [
         "Profitiere von erweiterten VPN-Funktionen"
       ],

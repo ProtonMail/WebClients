@@ -1225,11 +1225,17 @@
       "Last updated on ${ formattedDate }": [
         "Dernière mise à jour le ${ formattedDate }"
       ],
+      "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
+        "Découvrir comment utiliser ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Permanently delete your project and chats. This is irreversible.": [
         "Supprimez définitivement votre projet et vos discussions. Cette action est irréversible."
       ],
       "Quick responses": [
         "Réponses rapides"
+      ],
+      "Report a bug or feature request": [
+        "Signaler un bug ou demander une fonctionnalité"
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Connectez-vous pour accéder à votre compte et débloquer plus de fonctionnalités. Vous n'en avez pas ? ${ createLink }"
@@ -2202,6 +2208,9 @@
       ]
     },
     "collider_2025: Settings Item": {
+      "About": [
+        "À propos"
+      ],
       "Account": [
         "Compte"
       ],
@@ -2324,6 +2333,9 @@
       "Guest": [
         "Invité"
       ],
+      "Help and support": [
+        "Aide et support"
+      ],
       "Invalid Link": [
         "Le lien n'est pas valide."
       ],
@@ -2350,6 +2362,9 @@
       ],
       "Raw response": [
         "Réponse brute"
+      ],
+      "Report a bug": [
+        "Signaler un bug"
       ],
       "Required headers": [
         "En-têtes obligatoire"
@@ -2815,9 +2830,6 @@
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Profitez de ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
-      "Help and support": [
-        "Aide et support"
       ],
       "Hide sidebar": [
         "Masquer la barre latérale"
@@ -5235,9 +5247,9 @@
       "Country code": [
         "Indicatif du pays"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Créer un cloud sécurisé pour ${ value } membre",
-        "Créer un cloud sécurisé pour ${ value } membres"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Créer un cloud sécurisé pour ${ memberCount } membre",
+        "Créer un cloud sécurisé pour ${ memberCount } membres"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédit pour la période non utilisée de votre abonnement précédent"

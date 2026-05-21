@@ -825,6 +825,9 @@
       "Try another method": [
         "Eine andere Methode ausprobieren"
       ],
+      "Try Workspace": [
+        "Workspace ausprobieren"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } aktivieren"
       ],
@@ -2962,6 +2965,12 @@
       "Failed to fetch sharing info": [
         "Fehler beim Abrufen der Freigabeinformationen"
       ],
+      "Failed to load document details": [
+        "Dokumentdetails konnten nicht geladen werden"
+      ],
+      "Failed to load recent documents": [
+        "Neuste Dokumente konnten nicht geladen werden"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Abonnementsdaten konnten nicht geladen werden. Bitte versuche es später nochmals."
       ],
@@ -4670,6 +4679,9 @@
       ],
       "Geoblocking": [
         "Geoblockierung"
+      ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Mit ${ BRAND_NAME } Workspace erhältst du eine professionelle E-Mail-Adresse mit der Endung @deine-firma.com, 1 TB sicheren Speicherplatz pro Benutzer, längere Videoanrufe und vieles mehr."
       ],
       "Get email updates for comments and suggestions added to your documents.": [
         "E-Mail-Benachrichtigungen für Kommentare und Vorschläge erhalten, die zu deinen Dokumenten hinzugefügt wurden."
@@ -6845,6 +6857,9 @@
       "99.95% SLA": [
         "Dienstleistungsvereinbarung über 99,95 % Verfügbarkeit"
       ],
+      "Access all countries": [
+        "Zugriff auf alle Länder"
+      ],
       "Ad-blocker and malware protection": [
         "Werbeblocker & Malware-Schutz"
       ],
@@ -7003,6 +7018,9 @@
       "Multiple admin roles": [
         "Mehrere Administratorrollen"
       ],
+      "No streaming support": [
+        "Keine Unterstützung für Streaming"
+      ],
       "Online document editor": [
         "Editor für Onlinedokumente"
       ],
@@ -7152,6 +7170,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Volumen/Bandbreite unbegrenzt"
+      ],
+      "Unlock streaming": [
+        "Streaming entsperren"
       ],
       "Up to ${ n } user": [
         "Bis zu ${ n } Benutzer",
@@ -7546,6 +7567,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } Land",
+        "${ n } Länder"
+      ],
       "Access advanced VPN features": [
         "Profitiere von erweiterten VPN-Funktionen"
       ],

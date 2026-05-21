@@ -6033,9 +6033,6 @@
       "Less than a minute left": [
         "Meno di un minuto rimanente"
       ],
-      "None": [
-        "Nessuna azione"
-      ],
       "Only ": [
         "Solo "
       ],
@@ -6366,17 +6363,11 @@
       "Email address is required": [
         "L'indirizzo email è obbligatorio"
       ],
-      "Email is not valid": [
-        "Indirizzo email non valido"
-      ],
       "Empty condition": [
         "Condizione vuota"
       ],
       "Enter 6 digits": [
         "Inserisci il codice a 6 cifre"
-      ],
-      "Enter your username without the domain (@example.com)": [
-        "Inserisci il tuo nome utente senza il dominio (@esempio.it)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Errore di connessione alle API di Bitcoin."
@@ -6458,9 +6449,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Password secondaria errata. Riprova."
-      ],
-      "Incorrect username": [
-        "Username non corretto"
       ],
       "Intended recipient does not support calendar sharing": [
         "Il destinatario non supporta la condivisione dei calendari"
@@ -6562,9 +6550,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Non è un account ${ BRAND_NAME }"
       ],
-      "Not a valid number": [
-        "Numero non valido"
-      ],
       "Organization key is not decrypted": [
         "La chiave dell'organizzazione non è decriptata"
       ],
@@ -6576,9 +6561,6 @@
       ],
       "Password is required": [
         "Password necessaria"
-      ],
-      "Passwords do not match": [
-        "Le password non corrispondono"
       ],
       "Payment process canceled": [
         "Processo di pagamento annullato"
@@ -6753,9 +6735,6 @@
       "The amount due has changed. Please try again.": [
         "L'importo dovuto è cambiato. Per favore riprova."
       ],
-      "The email addresses do not match": [
-        "Gli indirizzi email non corrispondono."
-      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Il file è troppo grande, la dimensione massima è ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -6795,17 +6774,11 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Ci sono troppe cartelle nel tuo account esterno. Personalizza l'importazione per eliminare alcune cartelle."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
-      ],
       "This field is invalid": [
         "Questo campo non è valido"
       ],
       "This field is required": [
         "Campo necessario"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Questo campo richiede un minimo di ${ minimumLength } caratteri."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Questo nome della cartella non è disponibile. Scegli un nome diverso."
@@ -6831,9 +6804,6 @@
       "Try again later": [
         "Riprova più tardi"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Prova ad usare solo lettere, numeri e _.-"
-      ],
       "Unable to upload file": [
         "Impossibile caricare il file"
       ],
@@ -6851,12 +6821,6 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "I file caricati non sono chiavi private valide. Verifica e riprova."
-      ],
-      "Username must begin with a letter or digit": [
-        "Il nome utente deve iniziare con una lettera o un numero."
-      ],
-      "Username must end with a letter or digit": [
-        "Il nome utente deve terminare con una lettera o un numero/"
       ],
       "Validation error": [
         "Errore nella convalida"
@@ -9509,10 +9473,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Crea un'etichetta per i messaggi importati, il periodo di tempo dell'importazione e le etichette che desideri importare."
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "Crea un cloud sicuro per ${ value } membro",
-        "Crea un cloud sicuro per ${ value } membri"
       ],
       "Create an account": [
         "Crea un account"
@@ -21639,9 +21599,6 @@
       "Organization logo updated": [
         "Logo dell'organizzazione aggiornato"
       ],
-      "Organization name set": [
-        "Nome dell'organizzazione impostato"
-      ],
       "Organization name updated": [
         "Nome dell'organizzazione aggiornata"
       ],
@@ -24523,16 +24480,6 @@
       ],
       "Writing assistant": [
         "Assistente alla scrittura"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } carattere",
-        "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } caratteri"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Prova un nome utente più corto (massimo ${ n } carattere)",
-        "Prova un nome utente più corto (massimo ${ n } caratteri)"
       ]
     },
     "Video control": {

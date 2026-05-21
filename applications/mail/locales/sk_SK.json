@@ -7396,11 +7396,11 @@
       "Create a new contact group": [
         "Vytvoriť novú skupinu kontaktov"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Vytvoriť bezpečný cloud pre ${ value } člena",
-        "Vytvoriť bezpečný cloud pre ${ value } členov",
-        "Vytvoriť bezpečný cloud pre ${ value } členov",
-        "Vytvoriť bezpečný cloud pre ${ value } členov"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Vytvoriť bezpečný cloud pre ${ memberCount } člena",
+        "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
+        "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
+        "Vytvoriť bezpečný cloud pre ${ memberCount } členov"
       ],
       "Create in": [
         "Vytvoriť v"
@@ -8535,6 +8535,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synchronizujte a spravujte súbory pomocou aplikácie ${ DRIVE_APP_NAME }. Vytvárajte a zdieľajte dokumenty v aplikácii ${ DOCS_APP_NAME } a bezpečne ich ukladajte. Všetko v aplikáciách pre ${ ios }, ${ android } a ${ desktop }."
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "V súčasnosti nie je k dispozícii kvôli veľkému záujmu. Skúste to neskôr, prosím."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasne nedostupné. Skúste to neskôr."
@@ -9799,6 +9802,9 @@
       ],
       "Category": [
         "Kategória"
+      ],
+      "Category:": [
+        "Kategória:"
       ],
       "CC": [
         "Kópia (CC)"
@@ -11414,6 +11420,9 @@
       "99.95% SLA": [
         "99,95 % SLA"
       ],
+      "Access all countries": [
+        "Prístup ku všetkým krajinám"
+      ],
       "Ad-blocker and malware protection": [
         "Blokovanie reklám a ochrana pred škodlivým softvérom"
       ],
@@ -11576,6 +11585,9 @@
       "Multiple admin roles": [
         "Viacero správcovských rolí"
       ],
+      "No streaming support": [
+        "Žiadna podpora zabezpečeného streamovania"
+      ],
       "Online document editor": [
         "Online editor dokumentov"
       ],
@@ -11725,6 +11737,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Neobmedzený objem / šírka pásma"
+      ],
+      "Unlock streaming": [
+        "Odomknite streamovanie"
       ],
       "Up to ${ n } user": [
         "Až ${ n } užívateľ",
@@ -12149,6 +12164,12 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } krajina",
+        "${ n } krajiny",
+        "${ n } krajín",
+        "${ n } krajín"
+      ],
       "Access advanced VPN features": [
         "Získajte prístup k pokročilým VPN funkciám"
       ],

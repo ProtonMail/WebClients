@@ -3326,9 +3326,6 @@
       "Less than a minute left": [
         "Još manje od minute"
       ],
-      "None": [
-        "Ništa"
-      ],
       "Only ": [
         "Samo "
       ],
@@ -3459,9 +3456,6 @@
       "Email address is not available": [
         "Adresa e-pošte nije dostupna"
       ],
-      "Email is not valid": [
-        "Adresa e-pošte nije važeća"
-      ],
       "Empty condition": [
         "Prazan uvjet"
       ],
@@ -3564,9 +3558,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Nije ${ BRAND_NAME } račun"
       ],
-      "Not a valid number": [
-        "Broj telefona nije važeći"
-      ],
       "Organization key is not decrypted": [
         "Organizacijski ključ nije dešifriran"
       ],
@@ -3575,9 +3566,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Ključ organizacije mora biti aktivan kako bi se kreirali neprivatni korisnici"
-      ],
-      "Passwords do not match": [
-        "Lozinke se ne poklapaju"
       ],
       "Payment process consumed": [
         "Proces plaćanja je konzumiran"
@@ -3677,9 +3665,6 @@
       "This field is required": [
         "Ovo polje je obavezno"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Ovo polje zahtjeva najmanje ${ minimumLength } znakova."
-      ],
       "This folder name is not available. Please choose a different name.": [
         "Naziv mape nije dostupan. Odaberite drugi naziv."
       ],
@@ -3703,12 +3688,6 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Učitana datoteka nije valjani privatni ključ. Molimo, provjerite i pokušajte ponovno."
-      ],
-      "Username must begin with a letter or digit": [
-        "Korisničko ime mora započinjati slovom ili brojkom"
-      ],
-      "Username must end with a letter or digit": [
-        "Korisničko ime mora završavati slovom ili brojkom"
       ],
       "Validation error": [
         "Pogreška provjere valjanosti"
@@ -13024,18 +13003,6 @@
       ],
       "Writing assistant": [
         "Pomoćnik za pisanje"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znak",
-        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova",
-        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Pokušajte s kraćim korisničkim imenom (maksimalno ${ n } znak)",
-        "Pokušajte s kraćim korisničkim imenom (maksimalno ${ n } znaka)",
-        "Pokušajte s kraćim korisničkim imenom (maksimalno ${ n } znakova)"
       ]
     },
     "Video control": {

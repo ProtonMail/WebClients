@@ -3721,6 +3721,9 @@
       "/month": [
         "/mes"
       ],
+      "/user /month": [
+        "/usuario /al mes"
+      ],
       "/user per month": [
         "/usuario al mes"
       ]
@@ -4992,6 +4995,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hay demasiadas carpetas en la cuenta externa. Personalice la importación para eliminar algunas carpetas."
       ],
+      "There was an error, please try again.": [
+        "Ocurrió un error, intente de nuevo."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
@@ -6010,12 +6016,23 @@
       ],
       "Group address:": [
         "Dirección del grupo:"
+      ],
+      "Roles and permission:": [
+        "Roles y permisos:"
       ]
     },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } miembro",
         "${ memberCount } miembros"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "General"
+      ],
+      "Roles and permissions": [
+        "Roles y permisos"
       ]
     },
     "Header": {
@@ -7150,9 +7167,9 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Cree una etiqueta para los mensajes importados, un intervalo de tiempo para esta importación y las etiquetas que le gustaría importar."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Crear una nube segura para ${ value } miembro",
-        "Crear una nube segura para ${ value } miembros"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crear una nube segura para ${ memberCount } miembro",
+        "Crear una nube segura para ${ memberCount } miembros"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Cree y administre subcuentas y asígneles direcciones de correo en el dominio personalizado."
@@ -8452,6 +8469,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Recomendado por TechRadar Pro con una calificación de 4,2 sobre 5 estrellas"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Temporalmente no disponible por alta demanda. Intente más tarde."
       ],
       "Temporarily unavailable. Please check back later.": [
         "No disponible temporalmente. Compruebe más tarde."
@@ -11026,11 +11046,26 @@
       "Built-in chat": [
         "Chat integrado"
       ],
+      "Cloud storage and file sharing": [
+        "Almacenamiento en la nube e intercambio de archivos"
+      ],
+      "Data retention policies": [
+        "Políticas de retención de datos"
+      ],
+      "Document and spreadsheet editor": [
+        "Editor de documentos y hojas de cálculo"
+      ],
+      "Email writing assistant": [
+        "Asistente de redacción de correos"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Pantalla compartida con cifrado de extremo a extremo y chat efímero en la llamada"
       ],
       "Hosts can record meetings locally on their computers": [
         "Los anfitriones pueden grabar reuniones localmente en sus computadoras"
+      ],
+      "Includes Meet Professional": [
+        "Incluye Meet Professional"
       ],
       "Meeting recording": [
         "Grabación de la reunión"
@@ -11038,8 +11073,17 @@
       "One active meeting at a time": [
         "Una reunión activa a la vez"
       ],
+      "Password manager with team vaults": [
+        "Gestor de contraseñas con bóvedas compartidas"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Chat de IA privado (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Compartir pantalla"
+      ],
+      "Secure mail and calendar": [
+        "Calendario y correo electrónico seguro"
       ],
       "Unlimited meetings per day": [
         "Reuniones ilimitadas al día"
@@ -11055,6 +11099,9 @@
       "Video meetings, ${ n } participant": [
         "Videollamadas, ${ n } participante",
         "Videollamadas, ${ n } participantes"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN con bloqueador de publicidad y protección contra malware"
       ]
     },
     "meet_2025: Info": {
@@ -11460,6 +11507,9 @@
       "99.95% SLA": [
         "SLA del 99,95%"
       ],
+      "Access all countries": [
+        "Acceso a todos los países disponibles"
+      ],
       "Activity logs and policy": [
         "Registros de actividad y política"
       ],
@@ -11636,6 +11686,9 @@
       "Multiple admin roles": [
         "Distintos roles de administración"
       ],
+      "No streaming support": [
+        "Sin soporte de streaming"
+      ],
       "No-logs policy": [
         "Política de cero registros"
       ],
@@ -11798,6 +11851,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ancho de banda/volumen ilimitado"
+      ],
+      "Unlock streaming": [
+        "Desbloquear streaming"
       ],
       "Up to ${ n } user": [
         "Hasta ${ n } usuario",
@@ -12252,6 +12308,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } pais",
+        "${ n } países"
+      ],
       "Access advanced VPN features": [
         "Acceso a funciones VPN avanzadas"
       ],
@@ -16081,9 +16141,6 @@
       "Organization logo updated": [
         "Logo de la organización actualizado"
       ],
-      "Organization name set": [
-        "Nombre de la organización establecido"
-      ],
       "Organization name updated": [
         "Nombre de la organización actualizado"
       ],
@@ -16246,6 +16303,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Asegure los archivos con almacenamiento en la nube cifrado. Se incluyen el historial de versiones, el intercambio de archivos cifrado y más."
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "Para uso personal"
+      ],
+      "For professional use": [
+        "Para uso profesional"
       ]
     },
     "Tab in domain modal": {

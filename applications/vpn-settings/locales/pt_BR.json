@@ -3615,6 +3615,9 @@
       "/month": [
         "/mês"
       ],
+      "/user /month": [
+        "/usuário /mês"
+      ],
       "/user per month": [
         "/usuário por mês"
       ]
@@ -3826,6 +3829,12 @@
       "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
         "Para conectar até ${ MAX_SYNC_PAID_USER } endereço do Gmail, faça o upgrade para o plano ${ planName }.",
         "Para conectar até ${ MAX_SYNC_PAID_USER } endereços do Gmail, faça o upgrade para o plano ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Para continuar recebendo e enviando mensagens do Gmail na ${ BRAND_NAME }, reconecte sua conta."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Para continuar recebendo e enviando mensagens do Gmail na ${ BRAND_NAME }, reconecte suas contas."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Para importar por meio de um arquivo CSV e VCF, certifique-se de que o arquivo não exceda ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ maxContactString } contatos. Se o seu arquivo for maior, divida-o em arquivos menores. ${ learnMoreLink }."
@@ -4168,6 +4177,9 @@
       ]
     },
     "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Para encaminhar e-mails de até ${ MAX_SYNC_PAID_USER } contas, faça o upgrade para ${ planName }."
+      ],
       "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
         "Você está encaminhando e-mails de uma conta externa para ${ MAIL_APP_NAME }."
       ]
@@ -5866,6 +5878,9 @@
       ]
     },
     "group_modal": {
+      "General": [
+        "Geral"
+      ],
       "Roles and permissions": [
         "Funções e permissões"
       ]
@@ -6535,6 +6550,9 @@
       "${ vaultLink } updated": [
         "${ vaultLink } atualizado"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } oculta seu tráfego. ${ PASS_SHORT_APP_NAME } oculta sua identidade\n— aliases **hide-my-email ilimitados** e **alertas da dark-web** se seus dados foram vazados."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } necessária para conexão em nível de país."
       ],
@@ -6908,6 +6926,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
       ],
+      "Click **Request password reset** and follow the prompts.": [
+        "Clique em **Solicitar redefinição de senha** e siga as instruções."
+      ],
       "Close this screen to exit.": [
         "Feche esta tela para sair."
       ],
@@ -6978,9 +6999,9 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Criar um marcador para as mensagens importadas, um período de tempo para esta importação, e os marcadores que deseja importar."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Criar uma nuvem segura para ${ value } membro",
-        "Criar uma nuvem segura para ${ value } membros"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Criar uma nuvem segura para ${ memberCount } membro",
+        "Criar uma nuvem segura para ${ memberCount } membros"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Criar e gerenciar subcontas além de atribuir a elas endereços de e-mail em seu domínio personalizado."
@@ -10802,11 +10823,23 @@
       "Built-in chat": [
         "Bate-papo integrado"
       ],
+      "Data retention policies": [
+        "Políticas de retenção de dados"
+      ],
+      "Document and spreadsheet editor": [
+        "Editor de documento e planilha"
+      ],
+      "Email writing assistant": [
+        "Assistente de escrita de e-mail"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Compartilhamento de tela com criptografia de ponta a ponta e chat efêmero durante a chamada"
       ],
       "Hosts can record meetings locally on their computers": [
         "Os anfitriões podem gravar reuniões localmente em seus computadores"
+      ],
+      "Includes Meet Professional": [
+        "Inclui o Meet Professional"
       ],
       "Meeting recording": [
         "Gravação da reunião"
@@ -10816,6 +10849,9 @@
       ],
       "Screen-sharing": [
         "Compartilhamento de tela"
+      ],
+      "Secure mail and calendar": [
+        "E-mail e calendário seguro"
       ],
       "Unlimited meetings per day": [
         "Reuniões ilimitadas por dia"
@@ -11233,6 +11269,9 @@
       "99.95% SLA": [
         "SLA de 99,95%"
       ],
+      "Access all countries": [
+        "Acesso a todos os países"
+      ],
       "Activity logs and policy": [
         "Registros de atividade e política"
       ],
@@ -11571,6 +11610,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Volume/largura de banda ilimitados"
+      ],
+      "Unlock streaming": [
+        "Desbloquear streaming"
       ],
       "Up to ${ n } user": [
         "Até ${ n } usuário",
@@ -12025,6 +12067,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } país",
+        "${ n } países"
+      ],
       "Access advanced VPN features": [
         "Acesse recursos avançados de VPN"
       ],
@@ -15831,9 +15877,6 @@
       "Organization logo updated": [
         "Logotipo da organização atualizado"
       ],
-      "Organization name set": [
-        "Nome da organização definido"
-      ],
       "Organization name updated": [
         "Nome da organização atualizado"
       ],
@@ -15996,6 +16039,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui histórico de versões, compartilhamento de arquivo criptografado e muito mais."
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "Para uso pessoal"
       ]
     },
     "Tab in domain modal": {

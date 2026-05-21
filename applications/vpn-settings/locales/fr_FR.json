@@ -3721,6 +3721,9 @@
       "/month": [
         "/mois"
       ],
+      "/user /month": [
+        "/utilisateur /mois"
+      ],
       "/user per month": [
         "par utilisateur et par mois"
       ]
@@ -4991,6 +4994,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Il y a trop de dossiers dans votre compte externe. Nous vous invitons à personnaliser l'importation pour supprimer certains dossiers."
+      ],
+      "There was an error, please try again.": [
+        "Une erreur s’est produite, veuillez réessayer."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Ce champ dépasse le maximum de ${ maximumLength } caractères."
@@ -7161,9 +7167,9 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Choisissez un label pour les messages importés, une plage de temps pour cette importation et les dossiers que vous voulez importer."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Créer un cloud sécurisé pour ${ value } membre",
-        "Créer un cloud sécurisé pour ${ value } membres"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Créer un cloud sécurisé pour ${ memberCount } membre",
+        "Créer un cloud sécurisé pour ${ memberCount } membres"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Créez et gérez des comptes secondaires et attribuez-leur des adresses e-mail sur votre domaine personnalisé."
@@ -8463,6 +8469,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Recommandé par TechRadar Pro avec une note de 4,2 sur 5 étoiles"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Temporairement indisponible à cause d'une forte demande. Veuillez réessayer ultérieurement."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporairement indisponible. Nous vous invitons à vérifier plus tard."
@@ -11037,11 +11046,26 @@
       "Built-in chat": [
         "Chat intégré"
       ],
+      "Cloud storage and file sharing": [
+        "Stockage cloud et partage de fichiers"
+      ],
+      "Data retention policies": [
+        "Politiques de conservation des données"
+      ],
+      "Document and spreadsheet editor": [
+        "Éditeur de documents et de feuilles de calcul"
+      ],
+      "Email writing assistant": [
+        "Assistant d’aide à la rédaction de message"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Partage d'écran chiffré de bout en bout et chat éphémère pendant les appels"
       ],
       "Hosts can record meetings locally on their computers": [
         "Les hôtes peuvent enregistrer les réunions localement sur leur ordinateur"
+      ],
+      "Includes Meet Professional": [
+        "Inclut Meet Professionnal"
       ],
       "Meeting recording": [
         "Enregistrement de la réunion"
@@ -11049,8 +11073,17 @@
       "One active meeting at a time": [
         "Une réunion active à la fois"
       ],
+      "Password manager with team vaults": [
+        "Gestionnaire de mots de passe avec des coffres-forts d'équipe"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Chat IA privé (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Partage d'écran"
+      ],
+      "Secure mail and calendar": [
+        "Messagerie et calendrier sécurisés"
       ],
       "Unlimited meetings per day": [
         "Réunions illimitées par jour"
@@ -11066,6 +11099,9 @@
       "Video meetings, ${ n } participant": [
         "Vidéoconférences, ${ n } participant",
         "Vidéoconférences, ${ n } participants"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN avec bloqueur de publicité et protection contre les logiciels malveillants"
       ]
     },
     "meet_2025: Info": {
@@ -16108,9 +16144,6 @@
       "Organization logo updated": [
         "Le logo de l'organisation a été mis à jour."
       ],
-      "Organization name set": [
-        "Nom de l'organisation"
-      ],
       "Organization name updated": [
         "Le nom de l'organisation a été mis à jour."
       ],
@@ -16273,6 +16306,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Comprend l'historique des versions, le partage de fichiers chiffrés et de bien d'autres fonctionnalités."
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "Pour un usage personnel"
+      ],
+      "For professional use": [
+        "Pour un usage professionnel"
       ]
     },
     "Tab in domain modal": {

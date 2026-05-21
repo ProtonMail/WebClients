@@ -3771,6 +3771,9 @@
       "/month": [
         "/месяц"
       ],
+      "/user /month": [
+        "/карыстальніка /месяц"
+      ],
       "/user per month": [
         "/карыстальніка ў месяц"
       ]
@@ -7351,11 +7354,11 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Стварыць метку для імпартаваных паведамленняў, прамежак часу для гэтага імпартавання і тыя меткі, якія вы хочаце імпартаваць."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Стварыць бяспечнае воблака для ${ value } удзельніка",
-        "Стварыць бяспечнае воблака для ${ value } удзельнікаў",
-        "Стварыць бяспечнае воблака для ${ value } удзельнікаў",
-        "Стварыць бяспечнае воблака для ${ value } удзельнікаў"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельніка",
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Стварайце і кіруйце падпарадкаванымі ўліковымі запісамі, а таксама прызначайце іх паштовым адрасам у вашым карыстальніцкім дамене."
@@ -11319,11 +11322,26 @@
       "Built-in chat": [
         "Убудаваны чат"
       ],
+      "Cloud storage and file sharing": [
+        "Воблачнае сховішча і абагуленне файлаў"
+      ],
+      "Data retention policies": [
+        "Палітыка захоўвання даных"
+      ],
+      "Document and spreadsheet editor": [
+        "Рэдактар дакументаў і электронных табліц"
+      ],
+      "Email writing assistant": [
+        "Памочнік у напісанні лістоў"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Дэманстрацыя экрана са скразным шыфраваннем і эфемерны чат пры званках"
       ],
       "Hosts can record meetings locally on their computers": [
         "Арганізатары могуць запісваць сустрэчы лакальна на сваіх камп'ютарах"
+      ],
+      "Includes Meet Professional": [
+        "Уключае Meet Professional"
       ],
       "Meeting recording": [
         "Запіс сустрэчы"
@@ -11331,8 +11349,17 @@
       "One active meeting at a time": [
         "Адна актыўная сустрэча адначасова"
       ],
+      "Password manager with team vaults": [
+        "Менеджар пароляў са сховішчам для каманд"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Прыватны чат з ШІ (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Абагулены экран"
+      ],
+      "Secure mail and calendar": [
+        "Бяспечная пошта і каляндар"
       ],
       "Unlimited meetings per day": [
         "Неабмежаваная колькасць сустрэч у дзень"
@@ -11354,6 +11381,9 @@
         "Відэасустрэчы, ${ n } удзельнікі",
         "Відэасустрэчы, ${ n } удзельнікаў",
         "Відэасустрэчы, ${ n } удзельнікаў"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN з блакіроўшчыкам рэкламы і абаронай ад шкодных праграм"
       ]
     },
     "meet_2025: Info": {
@@ -12616,6 +12646,12 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } краіна",
+        "${ n } краіны",
+        "${ n } краін",
+        "${ n } краін"
+      ],
       "Access advanced VPN features": [
         "Доступ да пашыраных функцый VPN"
       ],
@@ -16489,9 +16525,6 @@
       "Organization logo updated": [
         "Лагатып арганізацыі абноўлены"
       ],
-      "Organization name set": [
-        "Назва арганізацыі зададзена"
-      ],
       "Organization name updated": [
         "Назва арганізацыі абноўлена"
       ],
@@ -16654,6 +16687,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій, абагульванне зашыфраваных файлаў і іншыя функцыі."
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "Для асабістага карыстання"
+      ],
+      "For professional use": [
+        "Для прафесійнага карыстання"
       ]
     },
     "Tab in domain modal": {

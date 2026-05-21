@@ -3771,6 +3771,9 @@
       "/month": [
         "/mesiac"
       ],
+      "/user /month": [
+        "/používateľ /mesiac"
+      ],
       "/user per month": [
         "/používateľ mesačne"
       ]
@@ -5062,6 +5065,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Na vašom externom účte je príliš veľa priečinkov. Upravte import na zmazanie niektorých priečinkov, prosím."
       ],
+      "There was an error, please try again.": [
+        "Vyskytla sa chyba, skúste to znova, prosím."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Toto pole presahuje maximálny počet znakov ${ maximumLength }."
       ],
@@ -6112,6 +6118,9 @@
       ],
       "Group address:": [
         "Skupinová adresa:"
+      ],
+      "Roles and permission:": [
+        "Pozície a oprávnenia:"
       ]
     },
     "Group member count": {
@@ -6120,6 +6129,14 @@
         "${ memberCount } členovia",
         "${ memberCount } členov",
         "${ memberCount } členov"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "Všeobecné"
+      ],
+      "Roles and permissions": [
+        "Pozície a oprávnenia"
       ]
     },
     "Header": {
@@ -7340,11 +7357,11 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Vytvorte štítok pre importované správy, časový rozsah pre tento import a štítky, ktoré chcete importovať."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Vytvoriť bezpečný cloud pre ${ value } člena",
-        "Vytvoriť bezpečný cloud pre ${ value } členov",
-        "Vytvoriť bezpečný cloud pre ${ value } členov",
-        "Vytvoriť bezpečný cloud pre ${ value } členov"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Vytvoriť bezpečný cloud pre ${ memberCount } člena",
+        "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
+        "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
+        "Vytvoriť bezpečný cloud pre ${ memberCount } členov"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Vytvorte a spravujte podúčty a priraďte im emailové adresy vo vlastnej doméne."
@@ -8668,6 +8685,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro odporúča s hodnotením 4,2 z 5 hviezdičiek"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "V súčasnosti nie je k dispozícii kvôli veľkému záujmu. Skúste to neskôr, prosím."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasne nedostupné. Skúste to neskôr."
@@ -11308,11 +11328,26 @@
       "Built-in chat": [
         "Vstavaný chat"
       ],
+      "Cloud storage and file sharing": [
+        "Cloudové úložisko a zdieľanie súborov"
+      ],
+      "Data retention policies": [
+        "Zásady uchovávania údajov"
+      ],
+      "Document and spreadsheet editor": [
+        "Editor dokumentov a tabuliek"
+      ],
+      "Email writing assistant": [
+        "Asistent písania emailov"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end šifrované zdieľanie obrazovky a dočasný chat počas hovoru"
       ],
       "Hosts can record meetings locally on their computers": [
         "Moderátori môžu nahrávať stretnutia vo svojich počítačoch"
+      ],
+      "Includes Meet Professional": [
+        "Vrátane Meet Professional"
       ],
       "Meeting recording": [
         "Nahrávanie schôdze"
@@ -11320,8 +11355,17 @@
       "One active meeting at a time": [
         "Len jedna aktívna schôdza naraz"
       ],
+      "Password manager with team vaults": [
+        "Správca hesiel s tímovými trezormi"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Súkromný AI chat (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Zdieľanie obrazovky"
+      ],
+      "Secure mail and calendar": [
+        "Bezpečná pošta a kalendár"
       ],
       "Unlimited meetings per day": [
         "Neobmedzený počet schôdzok denne"
@@ -11343,6 +11387,9 @@
         "Videokonferencie, ${ n } účastníci",
         "Videokonferencie, ${ n } účastníkov",
         "Videokonferencie, ${ n } účastníkov"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN s blokovaním reklám a ochranou pred malvérom"
       ]
     },
     "meet_2025: Info": {
@@ -11782,6 +11829,9 @@
       "99.95% SLA": [
         "99,95 % SLA"
       ],
+      "Access all countries": [
+        "Prístup ku všetkým krajinám"
+      ],
       "Activity logs and policy": [
         "Záznamy aktivít a pravidlá"
       ],
@@ -11962,6 +12012,9 @@
       "Multiple admin roles": [
         "Viacero správcovských rolí"
       ],
+      "No streaming support": [
+        "Žiadna podpora zabezpečeného streamovania"
+      ],
       "No-logs policy": [
         "Politika žiadnych logov"
       ],
@@ -12126,6 +12179,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Neobmedzený objem / šírka pásma"
+      ],
+      "Unlock streaming": [
+        "Odomknite streamovanie"
       ],
       "Up to ${ n } user": [
         "Až ${ n } užívateľ",
@@ -12596,6 +12652,12 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } krajina",
+        "${ n } krajiny",
+        "${ n } krajín",
+        "${ n } krajín"
+      ],
       "Access advanced VPN features": [
         "Získajte prístup k pokročilým VPN funkciám"
       ],
@@ -16469,9 +16531,6 @@
       "Organization logo updated": [
         "Logo organizácie aktualizované"
       ],
-      "Organization name set": [
-        "Názov organizácie nastavený"
-      ],
       "Organization name updated": [
         "Názov organizácie aktualizovaný"
       ],
@@ -16634,6 +16693,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa históriu verzií, zdieľanie šifrovaných súborov a ďalšie."
+      ]
+    },
+    "Tab": {
+      "For personal use": [
+        "Pre osobné použitie"
+      ],
+      "For professional use": [
+        "Na profesionálne použitie"
       ]
     },
     "Tab in domain modal": {

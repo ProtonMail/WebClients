@@ -540,8 +540,8 @@
       "Go back": [
         "Вярнуцца"
       ],
-      "Go back to album “${ ellipsedAlbumName }“": [
-        "Вярнуцца ў альбом “${ ellipsedAlbumName }“"
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Вярнуцца ў альбом “${ ellipsedAlbumName }\""
       ],
       "Go to ${ planOrAppName }": [
         "Перайсці ў ${ planOrAppName }"
@@ -3542,9 +3542,6 @@
       "Failed to resend invitation": [
         "Не ўдалося паўторна адправіць запрашэнне"
       ],
-      "Failed to save some photos to your Drive": [
-        "Не ўдалося захаваць некаторыя фатаграфіі ў ваш Drive"
-      ],
       "Failed to unshare node": [
         "Не ўдалося скасаваць абаагульванне вузла"
       ],
@@ -3922,9 +3919,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Немагчыма загрузіць панэль кіравання VPN. Праверце падключэнне і паўтарыце спробу."
-      ],
-      "Unable to set photo as cover": [
-        "Немагчыма задаць фатаграфію ў якасці вокладкі"
       ],
       "Unexpected error, we can't import the contacts": [
         "Нечаканая памылка. Немагчыма імпартаваць кантакты."
@@ -5504,11 +5498,11 @@
       "Create a new contact group": [
         "Стварыць новую групу кантактаў"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Стварыць бяспечнае воблака для ${ value } удзельніка",
-        "Стварыць бяспечнае воблака для ${ value } удзельнікаў",
-        "Стварыць бяспечнае воблака для ${ value } удзельнікаў",
-        "Стварыць бяспечнае воблака для ${ value } удзельнікаў"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельніка",
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў"
       ],
       "Create in": [
         "Стварыць у"
@@ -6191,11 +6185,14 @@
       "Photo is set as album cover": [
         "Фатаграфія зададзена ў якасці вокладкі альбома"
       ],
+      "Photo saved to your Drive": [
+        "Фатаграфія захавана ў ваш Drive",
+        "Фатаграфіі захаваны ў ваш Drive",
+        "Фатаграфіі захаваны ў ваш Drive",
+        "Фатаграфіі захаваны ў ваш Drive"
+      ],
       "Photo was copied to stream and marked favorite there.": [
         "Фатаграфія была скапіявана ў плынь і пазначана ў якасці абранай."
-      ],
-      "Photo(s) saved to your Drive": [
-        "Фатаграфіі захаваны ў ваш Drive"
       ],
       "Photos have been successfully recovered.": [
         "Фатаграфіі былі паспяхова адноўлены."
@@ -6830,6 +6827,12 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "Так трымаць! Мы толькі што павялічылі ваша сховішча да 5 ГБ!"
       ],
+      "We couldn't save this photo to your Drive": [
+        "Немагчыма захаваць гэту фатаграфію на вашым Drive",
+        "Немагчыма захаваць некалькі фатаграфій на вашым Drive",
+        "Немагчыма захаваць некалькі фатаграфій на вашым Drive",
+        "Немагчыма захаваць некалькі фатаграфій на вашым Drive"
+      ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Немагчыма спраўдзіць, што ${ nameAuthor } запампаваў ${ node.name }. Наступныя элементы могуць быць падробленымі: парадак даных файла. Адкрывайце іх толькі тады, калі давяраеце гэтаму змесціву."
       ],
@@ -6850,6 +6853,12 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Выкарыстоўваецца 3-D Secure для абароны вашых плацяжоў"
+      ],
+      "We were not able to add this photo to your album": [
+        "Не ўдалося дадаць гэту фатаграфію ў ваш альбом",
+        "Не ўдалося дадаць некаторыя фатаграфіі ў ваш альбом",
+        "Не ўдалося дадаць некаторыя фатаграфіі ў ваш альбом",
+        "Не ўдалося дадаць некаторыя фатаграфіі ў ваш альбом"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
@@ -9591,6 +9600,12 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } краіна",
+        "${ n } краіны",
+        "${ n } краін",
+        "${ n } краін"
+      ],
       "Access advanced VPN features": [
         "Доступ да пашыраных функцый VPN"
       ],
@@ -9707,6 +9722,12 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" паспяхова перайменаваны"
       ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } фатаграфія была дададзена ў \"${ albumName }\"",
+        "${ addedUids.length } фатаграфіі былі дададзены ў \"${ albumName }\"",
+        "${ addedUids.length } фатаграфіі былі дададзены ў \"${ albumName }\"",
+        "${ addedUids.length } фатаграфіі былі дададзены ў \"${ albumName }\""
+      ],
       "${ count } item failed to be decrypted": [
         "Не ўдалося расшыфраваць ${ count } элемент",
         "Не ўдалося расшыфраваць ${ count } элементы",
@@ -9730,30 +9751,6 @@
         "Не ўдалося выдаліць ${ errors.length } элементы",
         "Не ўдалося выдаліць ${ errors.length } элементаў",
         "Не ўдалося выдаліць ${ errors.length } элементаў"
-      ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "${ nbFailures } фатаграфію не ўдалося выдаліць з \"${ albumLink.name }\"",
-        "${ nbFailures } фатаграфіі не ўдалося выдаліць з \"${ albumLink.name }\"",
-        "${ nbFailures } фатаграфій не ўдалося выдаліць з \"${ albumLink.name }\"",
-        "${ nbFailures } фатаграфій не ўдалося выдаліць з \"${ albumLink.name }\""
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "${ nbMainPhotosError } фатаграфію не ўдалося дадаць у \"${ albumName }\"",
-        "${ nbMainPhotosError } фатаграфіі не ўдалося дадаць у \"${ albumName }\"",
-        "${ nbMainPhotosError } фатаграфій не ўдалося дадаць у \"${ albumName }\"",
-        "${ nbMainPhotosError } фатаграфій не ўдалося дадаць у \"${ albumName }\""
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "${ nbMainPhotosSuccess } фатаграфія была дададзена ў ${ albumName }\"",
-        "${ nbMainPhotosSuccess } фатаграфіі былі дададзены ў ${ albumName }\"",
-        "${ nbMainPhotosSuccess } фатаграфій былі дададзены ў ${ albumName }\"",
-        "${ nbMainPhotosSuccess } фатаграфій былі дададзены ў ${ albumName }\""
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "${ nbSuccesses } фатаграфія была выдалена з ${ albumLink.name }\"",
-        "${ nbSuccesses } фатаграфіі былі выдалены з ${ albumLink.name }\"",
-        "${ nbSuccesses } фатаграфій былі выдалены з ${ albumLink.name }\"",
-        "${ nbSuccesses } фатаграфій былі выдалены з ${ albumLink.name }\""
       ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } скапіяваны элемент перанесены ў сметніцу",
@@ -9838,6 +9835,12 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } было ўключана"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } фатаграфія была выдалена з \"${ albumName }\"",
+        "${ removed } фатаграфіі было выдалена з \"${ albumName }\"",
+        "${ removed } фатаграфій было выдалена з \"${ albumName }\"",
+        "${ removed } фатаграфій было выдалена з \"${ albumName }\""
       ],
       "Access for the member removed": [
         "Доступ для ўдзельніка выдалены"
@@ -9979,9 +9982,6 @@
         "Выбраныя элементы былі паспяхова выдалены з вашага спіса",
         "Выбраныя элементы былі паспяхова выдалены з вашага спіса",
         "Выбраныя элементы былі паспяхова выдалены з вашага спіса"
-      ],
-      "Selected photo(s) already in \"${ albumName }\"": [
-        "Выбраныя фатаграфіі ўжо знаходзяцца ў \"${ albumName }\""
       ],
       "Setting updated. Editors can change permissions and share.": [
         "Налады абноўлены. Рэдактары могуць змяняць дазволы і абагульваць."

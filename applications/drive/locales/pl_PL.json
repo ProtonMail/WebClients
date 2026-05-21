@@ -3107,9 +3107,6 @@
       "Failed to resend invitation": [
         "Nie udało się ponownie wysłać zaproszenia"
       ],
-      "Failed to save some photos to your Drive": [
-        "Nie udało się zapisać niektórych zdjęć na dysku"
-      ],
       "Failed to unshare node": [
         "Nie udało się usunąć udostępniania węzła"
       ],
@@ -3448,9 +3445,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Nie można załadować pulpitu VPN. Sprawdź połączenie i spróbuj ponownie."
-      ],
-      "Unable to set photo as cover": [
-        "Nie można ustawić zdjęcia jako okładki"
       ],
       "Unexpected error, we can't import the contacts": [
         "Wystąpił nieoczekiwany błąd. Nie możemy zaimportować kontaktów"
@@ -4854,12 +4848,6 @@
       ],
       "Create a new contact group": [
         "Utwórz nową grupę kontaktów"
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "Utwórz bezpieczną chmurę dla ${ value } użytkownika",
-        "Utwórz bezpieczną chmurę dla ${ value } użytkowników",
-        "Utwórz bezpieczną chmurę dla ${ value } użytkowników",
-        "Utwórz bezpieczną chmurę dla ${ value } użytkowników"
       ],
       "Create in": [
         "Utwórz w"
@@ -8517,30 +8505,6 @@
         "Odszyfrowanie ${ count } elementów nie powiodło się",
         "Odszyfrowanie ${ count } elementów nie powiodło się"
       ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "Nie można usunąć ${ nbFailures } zdjęcia z albumu \"${ albumLink.name }\"",
-        "Nie można usunąć ${ nbFailures } zdjęć z albumu \"${ albumLink.name }\"",
-        "Nie można usunąć ${ nbFailures } zdjęć z albumu \"${ albumLink.name }\"",
-        "Nie można usunąć ${ nbFailures } zdjęć z albumu \"${ albumLink.name }\""
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "Nie można dodać ${ nbMainPhotosError } zdjęcia do albumu \"${ albumName }\"",
-        "Nie można dodać ${ nbMainPhotosError } zdjęć do albumu \"${ albumName }\"",
-        "Nie można dodać ${ nbMainPhotosError } zdjęć do albumu \"${ albumName }\"",
-        "Nie można dodać ${ nbMainPhotosError } zdjęcia do albumu \"${ albumName }\""
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "Dodano ${ nbMainPhotosSuccess } zdjęcie do albumu \"${ albumName }\"",
-        "Dodano ${ nbMainPhotosSuccess } zdjęcia do albumu \"${ albumName }\"",
-        "Dodano ${ nbMainPhotosSuccess } zdjęć do albumu \"${ albumName }\"",
-        "Dodano ${ nbMainPhotosSuccess } zdjęcia do albumu \"${ albumName }\""
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "Usunięto ${ nbSuccesses } zdjęcie z albumu \"${ albumLink.name }\"",
-        "Usunięto ${ nbSuccesses } zdjęcia z albumu \"${ albumLink.name }\"",
-        "Usunięto ${ nbSuccesses } zdjęć z albumu \"${ albumLink.name }\"",
-        "Usunięto ${ nbSuccesses } zdjęcia z albumu \"${ albumLink.name }\""
-      ],
       "${ numberOfItems } item deleted": [
         "Usunięto ${ numberOfItems } element",
         "Usunięto ${ numberOfItems } elementy",
@@ -8732,9 +8696,6 @@
         "Elementy zostały usunięte z listy",
         "Elementy zostały usunięte z listy",
         "Elementy zostały usunięte z listy"
-      ],
-      "Selected photo(s) already in \"${ albumName }\"": [
-        "Wybrane zdjęcia znajdują się już w albumie \"${ albumName }\""
       ],
       "Share invitation accepted successfully": [
         "Zaproszenie zostało zaakceptowane"

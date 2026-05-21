@@ -5862,9 +5862,6 @@
       "Less than a minute left": [
         "დარჩა წუთზე ნაკლები"
       ],
-      "None": [
-        "არცერთი"
-      ],
       "Only ": [
         "მხოლოდ "
       ],
@@ -6173,9 +6170,6 @@
       "Email address is required": [
         "ელფოსტის მისამართი აუცილებელია"
       ],
-      "Email is not valid": [
-        "ელფოსტა არასწორია"
-      ],
       "Empty condition": [
         "ცარიელი პირობა"
       ],
@@ -6259,9 +6253,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "არასწორი მეორე პაროლი. თავიდან სცადეთ."
-      ],
-      "Incorrect username": [
-        "მომხმარებლის სახელი არასწორია"
       ],
       "Intended recipient does not support calendar sharing": [
         "სამიზნე მიმღებს კალენდრის გაზიარების მხარდაჭერა არ გააჩნია"
@@ -6369,9 +6360,6 @@
       "Not a ${ BRAND_NAME } account": [
         "არა-${ BRAND_NAME }-ის ანგარიში"
       ],
-      "Not a valid number": [
-        "არასწორი ნომერი"
-      ],
       "Organization key is not decrypted": [
         "ორგანიზაციის გასაღები გაშიფრული არაა"
       ],
@@ -6383,9 +6371,6 @@
       ],
       "Password is required": [
         "პაროლი აუცილებელია"
-      ],
-      "Passwords do not match": [
-        "პაროლები არ ემთხვევა"
       ],
       "Payment process canceled": [
         "გადახდის პროცესი გაუქმდა"
@@ -6551,9 +6536,6 @@
       "The amount due has changed. Please try again.": [
         "გადასახდელი თანხა შეიცვალა. თავიდან სცადეთ."
       ],
-      "The email addresses do not match": [
-        "ელფოსტის მისამართები არ ემთხვევა"
-      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "ეს ფაილი მეისმეტად დიდია. მაქსიმალური ზომაა ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -6593,17 +6575,11 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "თქვენს გარე ანგარიშზე, მეტისმეტად, ბევრი საქაღალდეა. გთხოვთ, ხელით მიუთითოთ შემოსატანი საქაღალდეები."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "ველი ${ maximumLength } დაშვებულ სიმბოლოს აჭარბებს."
-      ],
       "This field is invalid": [
         "ეს ველი არასწორია"
       ],
       "This field is required": [
         "ეს ველი აუცილებელია"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "ეს ველი მოითხოვს, მინიმუმ, ${ minimumLength } სიმბოლოს."
       ],
       "This folder name is not available. Please choose a different name.": [
         "საქაღალდის სახელი მიუწვდომელია. აირჩიეთ სხვა სახელი."
@@ -6629,9 +6605,6 @@
       "Try again later": [
         "მოგვიანებით სცადეთ"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "სცადეთ გამოიყენოთ, მხოლოდ, ანბანის სიმბოლოები, ციფრები და _.-"
-      ],
       "Unable to upload file": [
         "ფაილის ატვრთვის შეცდომა"
       ],
@@ -6649,12 +6622,6 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "ატვირთული ფაილი სწორ პირად გასაღებს არ წარმოადგენს. გადაამოწმეთ და თავიდან სცადეთ."
-      ],
-      "Username must begin with a letter or digit": [
-        "მომხმარებლის სახელი ასოთი ან ციფრით უნდა იწყებოდეს"
-      ],
-      "Username must end with a letter or digit": [
-        "მომხმარებლის სახელი ასოთი ან ციფრით უნდა მთავრდებოდეს"
       ],
       "Validation error": [
         "გადამოწმების შეცდომა"
@@ -9238,10 +9205,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "შემოტანილი შეტყობინებების ჭდის შექმნა. შემოტანის დროის დიაპაზონი და ჭდეები, რომლის შემოტანაც გნებავთ."
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "დაცული ღრუბლის შექმნა ${ value } წევრისთვის",
-        "დაცული ღრუბლის შექმნა ${ value } წევრისთვის"
       ],
       "Create an account": [
         "ანგარიშის შექმნა"
@@ -21012,9 +20975,6 @@
       "Organization logo updated": [
         "ორგანიზაციის ლოგო განახლდა"
       ],
-      "Organization name set": [
-        "ორგანიზაციის სახელი დაყენებულია"
-      ],
       "Organization name updated": [
         "ორგანიზაციის სახელი განახლდა"
       ],
@@ -23777,16 +23737,6 @@
       ],
       "Writing assistant": [
         "წერაში დამხმარე"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს",
-        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)",
-        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)"
       ]
     },
     "Video control": {

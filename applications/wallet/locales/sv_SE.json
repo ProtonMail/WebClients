@@ -2782,9 +2782,9 @@
       "Country code": [
         "Landskod"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Skapa ett säkert moln för ${ value } medlem",
-        "Skapa ett säkert moln för ${ value } medlemmar"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Skapa ett säkert moln för ${ memberCount } medlem",
+        "Skapa ett säkert moln för ${ memberCount } medlemmar"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit för den oanvända delen av din tidigare paketprenumeration"
@@ -3926,6 +3926,9 @@
       "Multiple admin roles": [
         "Flera administratörsroller"
       ],
+      "No streaming support": [
+        "Inget stöd för streaming"
+      ],
       "Online document editor": [
         "Dokumentredigerare online"
       ],
@@ -4057,6 +4060,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Obegränsad bandbredd"
+      ],
+      "Unlock streaming": [
+        "Lås upp streaming"
       ],
       "Up to ${ n } user": [
         "Upp till ${ n } användare",

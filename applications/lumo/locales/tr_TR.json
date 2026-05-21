@@ -1225,11 +1225,17 @@
       "Last updated on ${ formattedDate }": [
         "Son güncelleme: ${ formattedDate }"
       ],
+      "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } uygulamasının nasıl kullanılacağı ile ilgili ayrıntılı bilgi alın"
+      ],
       "Permanently delete your project and chats. This is irreversible.": [
         "Projenizi ve sohbetlerinizi kalıcı olarak silin. Bu işlem geri alınamaz."
       ],
       "Quick responses": [
         "Hızlı yanıtlar"
+      ],
+      "Report a bug or feature request": [
+        "Bir hata ya da özellik isteği bildirin"
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Hesabınıza erişmek ve daha fazla özelliğe erişmek için oturum açın. Bir hesabınız yok mu? ${ createLink }"
@@ -2202,6 +2208,9 @@
       ]
     },
     "collider_2025: Settings Item": {
+      "About": [
+        "Hakkında"
+      ],
       "Account": [
         "Hesap"
       ],
@@ -2324,6 +2333,9 @@
       "Guest": [
         "Konuk"
       ],
+      "Help and support": [
+        "Yardım ve destek"
+      ],
       "Invalid Link": [
         "Bağlantı geçersiz"
       ],
@@ -2350,6 +2362,9 @@
       ],
       "Raw response": [
         "Ham yanıt"
+      ],
+      "Report a bug": [
+        "Bir hata bildireceğim"
       ],
       "Required headers": [
         "Gerekli üst bilgiler"
@@ -2815,9 +2830,6 @@
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "${ LUMO_SHORT_APP_NAME } Plus edinin"
-      ],
-      "Help and support": [
-        "Yardım ve destek"
       ],
       "Hide sidebar": [
         "Kenar çubuğunu gizle"
@@ -5235,9 +5247,9 @@
       "Country code": [
         "Ülke kodu"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "${ value } üye için güvenli bir bulut oluşturun",
-        "${ value } üye için güvenli bir bulut oluşturun"
+      "Create a secure cloud for ${ memberCount } member": [
+        "${ memberCount } üye için güvenli bir bulut oluşturun",
+        "${ memberCount } üye için güvenli bir bulut oluşturun"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
@@ -6808,7 +6820,7 @@
         "Sınırsız trafik/bant genişliği"
       ],
       "Unlock streaming": [
-        "Yayın akışı hizmetlerinin engelini kaldırın"
+        "Yayın akışı hizmetlerine erişin"
       ],
       "Up to ${ n } user": [
         "${ n } kullanıcıya kadar",

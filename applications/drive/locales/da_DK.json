@@ -530,8 +530,8 @@
       "Go back": [
         "Gå tilbage"
       ],
-      "Go back to album “${ ellipsedAlbumName }“": [
-        "Gå tilbage til albummet “${ ellipsedAlbumName }“"
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Gå tilbage til albummet “${ ellipsedAlbumName }\""
       ],
       "Go to ${ planOrAppName }": [
         "Gå til ${ planOrAppName }"
@@ -3492,9 +3492,6 @@
       "Failed to resend invitation": [
         "Kunne ikke gensende invitation"
       ],
-      "Failed to save some photos to your Drive": [
-        "Kunne ikke gemme nogle billeder på dit drev"
-      ],
       "Failed to unshare node": [
         "Kunne ikke fjerne deling af knude"
       ],
@@ -3862,9 +3859,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Kunne ikke indlæse VPN-kontrolpanel. Kontrollér din forbindelse, og forsøg igen."
-      ],
-      "Unable to set photo as cover": [
-        "Kan ikke indstille foto som cover"
       ],
       "Unexpected error, we can't import the contacts": [
         "Uventet fejl, vi kan ikke importere kontakterne"
@@ -5346,9 +5340,9 @@
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Opret en sikker sky til ${ value } medlem",
-        "Opret en sikker sky til ${ value } medlemmer"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Opret en sikker sky til ${ memberCount } medlem",
+        "Opret en sikker sky til ${ memberCount } medlemmer"
       ],
       "Create in": [
         "Opret i"
@@ -6017,11 +6011,12 @@
       "Photo is set as album cover": [
         "Fotoet er indstillet som albumcover"
       ],
+      "Photo saved to your Drive": [
+        "Foto gemt til dit drev",
+        "Fotos gemt til dit drev"
+      ],
       "Photo was copied to stream and marked favorite there.": [
         "Fotoet blev kopieret til stream og markeret som favorit der."
-      ],
-      "Photo(s) saved to your Drive": [
-        "Foto(s) gemt til dit Drive"
       ],
       "Photos have been successfully recovered.": [
         "Fotos er blevet gendannet."
@@ -6650,6 +6645,10 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "Du har lige øget din lagringsplads til 5 GB!"
       ],
+      "We couldn't save this photo to your Drive": [
+        "Vi kunne ikke gemme dette foto til dit drev",
+        "Vi kunne ikke gemme flere forskellige fotos til dit drev"
+      ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Vi kunne ikke verificere, at ${ nameAuthor } uploadede ${ node.name }. Der kan være blevet manipuleret med fildataenes rækkefølge. Åbn kun, hvis du stoler på den."
       ],
@@ -6670,6 +6669,10 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi bruger 3-D Secure til at sikre dine betalinger"
+      ],
+      "We were not able to add this photo to your album": [
+        "Vi kunne ikke tilføje dette foto til dit album",
+        "Vi kunne ikke tilføje nogle billeder til dit album"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til PayPal i en ny browserfane for at gennemføre denne transaktion. Benytter du evt. pop-up blockere, så deaktivér venligst disse for at fortsætte."
@@ -9374,6 +9377,10 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" omdøbt"
       ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } foto er blevet tilføjet til \"${ albumName }\"",
+        "${ addedUids.length } fotos er blevet tilføjet til \"${ albumName }\""
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } element kunne ikke dekrypteres",
         "${ count } elementer kunne ikke dekrypteres"
@@ -9389,22 +9396,6 @@
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } element kunne ikke flyttes til papirkurven",
         "${ errors.length } elementer kunne ikke flyttes til papirkurven"
-      ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "${ nbFailures } foto kunne ikke fjernes fra \"${ albumLink.name }\"",
-        "${ nbFailures } fotos kunne ikke fjernes fra \"${ albumLink.name }\""
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "${ nbMainPhotosError } foto kunne ikke tilføjes til \"${ albumName }\"",
-        "${ nbMainPhotosError } fotos kunne ikke tilføjes til \"${ albumName }\""
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "${ nbMainPhotosSuccess } foto er blevet tilføjet til \"${ albumName }\"",
-        "${ nbMainPhotosSuccess } fotos er blevet tilføjet til \"${ albumName }\""
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "${ nbSuccesses } foto er blevet fjernet fra \"${ albumLink.name }\"",
-        "${ nbSuccesses } fotos er blevet fjernet fra \"${ albumLink.name }\""
       ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } kopieret element flyttet til papirkurven",
@@ -9463,6 +9454,10 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } er blevet aktiveret"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } foto er blevet fjernet fra \"${ albumName }\"",
+        "${ removed } fotos er blevet fjernet fra \"${ albumName }\""
       ],
       "Access for the member removed": [
         "Adgang for medlemmet fjernet"
@@ -9590,9 +9585,6 @@
       "Selected items were successfully removed from your list": [
         "Det valgte element blev succesfuldt fjernet fra din liste",
         "De valgte elementer blev succesfuldt fjernet fra din liste"
-      ],
-      "Selected photo(s) already in \"${ albumName }\"": [
-        "Valgte foto(s) er allerede i \"${ albumName }\""
       ],
       "Setting updated. Editors can change permissions and share.": [
         "Indstilling opdateret. Redaktører kan ændre tilladelser og dele."

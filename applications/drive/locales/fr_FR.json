@@ -530,7 +530,7 @@
       "Go back": [
         "Retour"
       ],
-      "Go back to album “${ ellipsedAlbumName }“": [
+      "Go back to album \"${ ellipsedAlbumName }\"": [
         "Retourner à l’album « ${ ellipsedAlbumName } »"
       ],
       "Go to ${ planOrAppName }": [
@@ -3492,9 +3492,6 @@
       "Failed to resend invitation": [
         "Le renvoi de l'invitation n'a pas abouti."
       ],
-      "Failed to save some photos to your Drive": [
-        "L'enregistrement de certaines photos dans votre Drive n'a pas abouti."
-      ],
       "Failed to unshare node": [
         "La désactivation du partage du nœud n'a pas abouti."
       ],
@@ -3862,9 +3859,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Le chargement du tableau de bord VPN n'a pas abouti. Veuillez vérifier votre connexion et réessayer."
-      ],
-      "Unable to set photo as cover": [
-        "La photo n'a pas pu être définie comme couverture."
       ],
       "Unexpected error, we can't import the contacts": [
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
@@ -5346,9 +5340,9 @@
       "Create a new contact group": [
         "Créer un nouveau groupe de contacts"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Créer un cloud sécurisé pour ${ value } membre",
-        "Créer un cloud sécurisé pour ${ value } membres"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Créer un cloud sécurisé pour ${ memberCount } membre",
+        "Créer un cloud sécurisé pour ${ memberCount } membres"
       ],
       "Create in": [
         "Créer dans"
@@ -6017,11 +6011,12 @@
       "Photo is set as album cover": [
         "La photo est définie en tant que couverture d'album."
       ],
+      "Photo saved to your Drive": [
+        "La photo a été enregistrée dans votre Drive.",
+        "Les photos ont été enregistrées dans votre Drive."
+      ],
       "Photo was copied to stream and marked favorite there.": [
         "La photo a été copiée dans le flux et marquée comme favorite."
-      ],
-      "Photo(s) saved to your Drive": [
-        "Photos enregistrées dans votre Drive"
       ],
       "Photos have been successfully recovered.": [
         "Les photos ont été récupérées."
@@ -6650,6 +6645,10 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "Bien joué ! Vous venez d'augmenter votre espace de stockage à 5 Go."
       ],
+      "We couldn't save this photo to your Drive": [
+        "Une photo n'a pas été enregistrée dans votre Drive.",
+        "Plusieurs photos n'ont pas été enregistrées dans votre Drive."
+      ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Nous n'avons pas pu vérifier que ${ nameAuthor } a importé ${ node.name }. Les éléments suivants pourraient avoir été falsifiés : ordre des données du fichier. Ouvrez uniquement si vous faites confiance à ce fichier."
       ],
@@ -6670,6 +6669,10 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Nous utilisons 3-D Secure pour protéger vos paiements."
+      ],
+      "We were not able to add this photo to your album": [
+        "Cette photo n'a pas pu être ajoutée à votre album.",
+        "Ces photos n'ont pas pu être ajoutées à votre album."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
@@ -9434,6 +9437,10 @@
       "\"${ newName }\" renamed successfully": [
         "« ${ newName } » a été renommé."
       ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } photo a été ajoutée à « ${ albumName } ».",
+        "${ addedUids.length } photos ont étés ajoutés à « ${ albumName } »."
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } élément n'a pas pu être déchiffré.",
         "${ count } éléments n'ont pas pu être déchiffrés."
@@ -9449,22 +9456,6 @@
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } élément n'a pas pu être mis à la corbeille",
         "${ errors.length } éléments n'ont pas pu être mis à la corbeille"
-      ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "Le retrait de ${ nbFailures } photo à « ${ albumLink.name } » n'a pas abouti.",
-        "Le retrait de ${ nbFailures } photos à « ${ albumLink.name } » n'ont pas abouti."
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "L'ajout de ${ nbMainPhotosError } photo à « ${ albumName } » n'a pas abouti.",
-        "L'ajout de ${ nbMainPhotosError } photos à « ${ albumName } » n'ont pas abouti."
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "${ nbMainPhotosSuccess } photo a été ajoutée à « ${ albumName } »",
-        "${ nbMainPhotosSuccess } photos ont étés ajoutés à « ${ albumName } »"
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "${ nbSuccesses } photo a été retirée de « ${ albumLink.name } »",
-        "${ nbSuccesses } photos ont étés retirés de « ${ albumLink.name } »"
       ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } élément copié a été déplacé dans la corbeille",
@@ -9523,6 +9514,10 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } a été activé."
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } photo a été retirée de « ${ albumName } ».",
+        "${ removed } photos ont étés retirés de « ${ albumName } »."
       ],
       "Access for the member removed": [
         "L'accès pour le membre a été retiré."
@@ -9650,9 +9645,6 @@
       "Selected items were successfully removed from your list": [
         "La suppression des éléments sélectionnés de votre liste ont été prises en charge",
         "La suppression des éléments sélectionnés de votre liste ont été prises en charge"
-      ],
-      "Selected photo(s) already in \"${ albumName }\"": [
-        "Les photos sélectionnées sont déjà dans « ${ albumName } »."
       ],
       "Setting updated. Editors can change permissions and share.": [
         "Les paramètres ont été mis à jour. Les éditeurs peuvent modifier les autorisations et partager."
