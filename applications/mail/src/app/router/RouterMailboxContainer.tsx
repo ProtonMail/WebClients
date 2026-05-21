@@ -8,6 +8,7 @@ import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerV
 import InboxQuickSettingsAppButton from '@proton/components/components/drawer/drawerAppButtons/InboxQuickSettingsAppButton';
 import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
@@ -15,7 +16,6 @@ import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, LABEL_IDS_TO_HUMAN } from '@proton/s
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 import { isAdminOrLoginAsAdmin } from '@proton/shared/lib/user/helpers';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import MailHeader from 'proton-mail/components/header/MailHeader';
@@ -58,7 +58,7 @@ export const RouterMailboxContainer = () => {
 
     const [isResizing, setIsResizing] = useState(false);
 
-    const isRefreshedToolbarUIDisabled = useFlag('RefreshedToolbarUIDisabled');
+    const { shouldSeeWideToolbars } = useCategoriesData();
 
     /**
      * Temporary: Router mailbox side effects
@@ -129,7 +129,7 @@ export const RouterMailboxContainer = () => {
                 settingsButton={<InboxQuickSettingsAppButton />}
                 toolbar={
                     // Show toolbar in header when in row layout and an email is selected
-                    isRefreshedToolbarUIDisabled && ((!isColumnModeActive && elementID) || viewPortIsNarrow) ? (
+                    !shouldSeeWideToolbars && ((!isColumnModeActive && elementID) || viewPortIsNarrow) ? (
                         <MailboxToolbar
                             inHeader
                             params={params}
