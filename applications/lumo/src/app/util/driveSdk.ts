@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { InvalidNameError, MaybeNode, NodeEntity } from '@proton/drive';
-import { Logging } from '@proton/drive/modules/logging';
+import { Logging } from '@proton/drive/public/logging';
 
 export type GetNodeEntityType = {
     node: NodeEntity;
@@ -64,4 +64,3 @@ export const getNodeEntity = (maybeNode: MaybeNode): GetNodeEntityType => {
  * ```
  */
 export const logging = new Logging();
-

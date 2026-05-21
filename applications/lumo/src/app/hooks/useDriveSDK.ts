@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { NodeType, useDrive } from '@proton/drive';
-import { generateThumbnail } from '@proton/drive/modules/thumbnails';
+import { generateThumbnail } from '@proton/drive/public/thumbnails';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import config from '../config';
@@ -551,7 +551,7 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized
                     userPlan,
                     logging,
                 });
-            } catch (e) {
+            } catch {
                 // Drive SDK may already be configured (e.g. after HMR) — not fatal
                 setState((prev) => ({ ...prev, isLoading: false }));
             }

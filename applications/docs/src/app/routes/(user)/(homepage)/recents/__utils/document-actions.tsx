@@ -8,7 +8,7 @@ import { useApplication } from '~/utils/application-context'
 import { useSharingModalDriveSdkEnabled } from '~/utils/flags'
 import { useEvent } from '~/utils/misc'
 import { getDrive, generateNodeUid } from '@proton/drive'
-import { useSharingModal } from '@proton/drive/modules/sharingModal'
+import { useSharingModal } from '@proton/drive/public/sharingModal'
 
 export type DocumentActionsContextValue = {
   open: (document: RecentDocumentsItem, type?: 'normal' | 'trash') => void
