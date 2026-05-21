@@ -7275,10 +7275,10 @@
       "Create a new contact group": [
         "Creare grup de contacte"
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Creați un cont în cloud securizat pentru ${ value } membru",
-        "Creați un cont cloud securizat pentru ${ value } membri",
-        "Creați un cont cloud securizat pentru ${ value } de membri"
+      "Create a secure cloud for ${ memberCount } member": [
+        "Creați un cont în cloud securizat pentru ${ memberCount } membru",
+        "Creați un cont cloud securizat pentru ${ memberCount } membri",
+        "Creați un cont cloud securizat pentru ${ memberCount } de membri"
       ],
       "Create in": [
         "Creare în"
@@ -8400,6 +8400,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronizați și gestionați mesajele cu aplicația ${ DRIVE_APP_NAME }. Creați și partajați documente în ${ DOCS_APP_NAME } și stocați-le în siguranță. Disponibile pe ${ ios }, ${ android } și ${ desktop }."
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Temporar indisponibil din cauza solicitărilor mari. Reîncercați mai târziu."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporar indisponibil. Reveniți mai târziu."
@@ -9635,6 +9638,9 @@
       ],
       "Category": [
         "Categoria"
+      ],
+      "Category:": [
+        "Categoria:"
       ],
       "CC": [
         "C"
