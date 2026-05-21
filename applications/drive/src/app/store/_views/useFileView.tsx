@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { generateNodeUid } from '@proton/drive/index';
 import { useLoading } from '@proton/hooks';
-import metrics from '@proton/metrics';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import {
@@ -22,16 +21,13 @@ import { DownloadManager } from '../../managers/download/DownloadManager';
 import { isIgnoredError } from '../../utils/errorHandling';
 import { streamToBuffer } from '../../utils/stream';
 import { unleashVanillaStore } from '../../zustand/unleash/unleash.store';
-import { usePublicSession } from '../_api';
 import { useDocumentActions } from '../_documents';
 import { useDownload, useDownloadProvider } from '../_downloads';
 import type { UseDownloadProps } from '../_downloads/useDownload';
 import type { DecryptedLink } from '../_links';
-import { useLink, useLinksListing, usePublicLinksListing } from '../_links';
+import { useLink, useLinksListing } from '../_links';
 import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
-import { useFileViewNavigation, usePublicFileViewNavigation } from './useFileNavigation';
-import { DEFAULT_SORT } from './usePublicFolderView';
-import type { SortParams } from './utils/useSorting';
+import { useFileViewNavigation } from './useFileNavigation';
 
 /**
  * useFileView provides data for file preview.
@@ -96,41 +92,6 @@ export default function useFileView(
 
             await downloadFile();
         },
-        videoStreaming,
-    };
-}
-
-export function usePublicFileView(
-    shareId: string,
-    linkId: string,
-    useNavigation = false,
-    sortParams: SortParams = DEFAULT_SORT
-) {
-    const { getCachedChildren, loadChildren } = usePublicLinksListing();
-    const { request } = usePublicSession();
-    const { isLinkLoading, isContentLoading, error, link, contents, contentsMimeType, downloadFile, videoStreaming } =
-        useFileViewBase(shareId, linkId, { getCachedChildren, loadChildren, customDebouncedRequest: request });
-    const navigation = usePublicFileViewNavigation(useNavigation, shareId, sortParams, link?.parentLinkId, linkId);
-
-    useEffect(() => {
-        if (error) {
-            metrics.drive_file_preview_errors_total.increment({
-                // eslint-disable-next-line no-nested-ternary
-                type: !link ? 'unknown' : link.isFile ? 'file' : 'folder',
-            });
-        }
-    }, [error]);
-
-    return {
-        permissions: SHARE_MEMBER_PERMISSIONS.VIEWER,
-        navigation,
-        isLinkLoading,
-        isContentLoading,
-        error,
-        link,
-        contents,
-        contentsMimeType,
-        downloadFile,
         videoStreaming,
     };
 }
