@@ -44,6 +44,7 @@ import { PermissionsModal } from './PermissionsModal/PermissionsModal';
 import { useAudioToggle } from './mediaToggle/useAudioToggle';
 import { useVideoToggle } from './mediaToggle/useVideoToggle';
 import { useCameraPreview } from './useCameraPreview';
+import { useDeviceListSync } from './useDeviceListSync';
 import { useDevicePermissionChangeListener } from './useDevicePermissionChangeListener';
 import { useDynamicDeviceHandling } from './useDynamicDeviceHandling';
 import { useMicrophoneVolumeAnalysis } from './useMicrophoneVolumeAnalysis';
@@ -53,6 +54,8 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     const { createNotification } = useNotifications();
     const { reportMeetError } = useMeetErrorReporting();
     const dispatch = useMeetDispatch();
+
+    useDeviceListSync();
 
     const initialCameraState = useMeetSelector(selectInitialCameraState);
     const initialAudioState = useMeetSelector(selectInitialAudioState);
@@ -164,6 +167,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                 videoDeviceId: selectedCameraId,
                 isEnabled: true,
                 preserveCache: true,
+                updateUserIntent: false,
             });
 
             if (!result) {
