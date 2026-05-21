@@ -3308,6 +3308,9 @@
       "Close": [
         "Sluiten"
       ],
+      "Configure your network": [
+        "Configureer uw netwerk"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Blijf ${ MAIL_APP_NAME } gebruiken."
       ],
@@ -3329,6 +3332,12 @@
       "Got it": [
         "Begrepen"
       ],
+      "Invite your team": [
+        "Nodig uw team uit"
+      ],
+      "Manage global VPN permissions": [
+        "Globale VPN-machtigingen beheren"
+      ],
       "Maybe later": [
         "Misschien later"
       ],
@@ -3343,6 +3352,9 @@
       ],
       "Set up other features": [
         "Andere functies instellen"
+      ],
+      "Set up SSO": [
+        "SSO instellen"
       ],
       "Sign in": [
         "Inloggen"
@@ -5193,6 +5205,9 @@
       "Connect your CRM, website, printers, and more.": [
         "Verbind uw CRM, website, printers en meer."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Maak een Gateway aan om uw gebruikers toegang te geven tot uw IT-middelen via toegewijde servers."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Maak een Zoom vergadering en voeg aansluitgegevens met één klik toe aan uw evenement."
       ],
@@ -5202,8 +5217,14 @@
       "Create groups you can email with a single address.": [
         "Maak groepen aan die u een e-mail kunt sturen met één enkel adres."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Nieuwe gebruikersaccounts aanmaken of gebruikers importeren met SSO (single sign-on) SCIM-provisioning."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Maak policies aan om te bepalen wie in elk land kan verbinden met de gedeelde servers."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Bepaal welke gebruikers verbinding kunnen maken met elk van onze meer dan 120 gedeelde serverlocaties."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Krijg eenvoudig toegang tot uw e-mail en agenda op desktop en mobiel."
@@ -5261,6 +5282,9 @@
       ],
       "How you unlock your encrypted data if you lose your password.": [
         "Hoe u uw versleutelde gegevens kunt ontgrendelen als u uw wachtwoord kwijt bent."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Als u dat nog niet hebt gedaan, schakel dan enkele herstelmethoden in om ervoor te zorgen dat u nooit de toegang tot ${ VPN_APP_NAME } verliest."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Het lijkt erop dat de contactenlijst die u importeert enkele groepen bevat. Bekijk hoe deze groepen moeten worden geïmporteerd."
@@ -6639,9 +6663,6 @@
         "Maximum van ${ limit } contact werd bereikt. Om dit te wijzigen, verwijdert u een contactpersoon en voegt u een nieuwe toe.",
         "Maximum van ${ limit } contacten werd bereikt. Om dit te wijzigen, verwijdert u een contactpersoon en voegt u een nieuwe toe."
       ],
-      "None": [
-        "Geen"
-      ],
       "Only ": [
         "Slechts "
       ],
@@ -7014,17 +7035,11 @@
       "Email address is required": [
         "E-mailadres is vereist"
       ],
-      "Email is not valid": [
-        "E-mailadres is ongeldig"
-      ],
       "Empty condition": [
         "Lege voorwaarde"
       ],
       "Enter 6 digits": [
         "Voer 6 cijfers in"
-      ],
-      "Enter your username without the domain (@example.com)": [
-        "Voer uw gebruikersnaam in zonder het domein (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin API."
@@ -7112,9 +7127,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Onjuist tweede wachtwoord. Probeer het opnieuw."
-      ],
-      "Incorrect username": [
-        "Onjuiste gebruikersnaam"
       ],
       "Intended recipient does not support calendar sharing": [
         "De bedoelde ontvangen heeft geen ondersteuning voor het delen van een agenda."
@@ -7225,9 +7237,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Geen ${ BRAND_NAME }-account"
       ],
-      "Not a valid number": [
-        "Geen geldig getal"
-      ],
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
       ],
@@ -7239,9 +7248,6 @@
       ],
       "Password is required": [
         "Wachtwoord is vereist"
-      ],
-      "Passwords do not match": [
-        "Wachtwoorden komen niet overeen"
       ],
       "Payment process canceled": [
         "Betalingsverzoek geannuleerd"
@@ -7425,9 +7431,6 @@
       "The amount due has changed. Please try again.": [
         "Het verschuldigde bedrag is gewijzigd. Probeer het opnieuw."
       ],
-      "The email addresses do not match": [
-        "De e-mailadressen komen niet overeen"
-      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Het bestand is te groot, de maximale grootte is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -7470,17 +7473,11 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Er zijn te veel mappen op uw externe account. Pas de import aan om enkele mappen te verwijderen."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
-      ],
       "This field is invalid": [
         "Dit veld is ongeldig"
       ],
       "This field is required": [
         "Dit veld is vereist"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Dit veld vereist een minimum van ${ minimumLength } tekens."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Deze mapnaam is niet beschikbaar. Kies een andere naam."
@@ -7506,9 +7503,6 @@
       "Try again later": [
         "Probeer het later opnieuw"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Probeer enkel letters, nummers en _.- te gebruiken"
-      ],
       "Unable to upload file": [
         "Kan het bestand niet uploaden"
       ],
@@ -7526,12 +7520,6 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Geüploadde files zijn geen geldige geheime sleutels. Controleer en probeer opnieuw."
-      ],
-      "Username must begin with a letter or digit": [
-        "Gebruikersnaam moet met een letter of cijfer beginnen"
-      ],
-      "Username must end with a letter or digit": [
-        "Gebruikersnaam moet met een letter of cijfer eindigen"
       ],
       "Validation error": [
         "Validatiefout"
@@ -10375,10 +10363,6 @@
       "Create a new code on your TV and try again.": [
         "Maak een nieuwe code aan op uw tv en probeer het opnieuw."
       ],
-      "Create a secure cloud for ${ value } member": [
-        "Maak een beveiligde cloud voor ${ value } lid",
-        "Maak een beveiligde cloud voor ${ value } leden"
-      ],
       "Create an account": [
         "Maak een account aan"
       ],
@@ -10886,6 +10870,9 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Ontvang een melding als uw wachtwoord of andere persoonlijke gegevens gelekt zijn. ${ learnMoreLinkNoBreach }"
+      ],
+      "Get started": [
+        "Aan de slag"
       ],
       "Get started with the referral link above.": [
         "Ga aan de slag met de verwijzingskoppeling hierboven."
@@ -11946,6 +11933,9 @@
       ],
       "Set up your organization": [
         "Stel uw organisatie in"
+      ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Richt uw organisatie in en begin in een paar eenvoudige stappen met het beschermen van uw gegevens."
       ],
       "Setting successfully saved": [
         "Instellingen succesvol bijgewerkt"
@@ -21715,12 +21705,6 @@
     "Setting": {
       "Enable Photos section": [
         "Sectie voor foto's inschakelen"
-      ],
-      "Get updates about comments via email": [
-        "Ontvang updates over reacties via e-mail."
-      ],
-      "Include document name in email notifications": [
-        "Documentnaam opnemen in e-mailnotificaties."
       ]
     },
     "Settings description": {
@@ -23823,9 +23807,6 @@
       "Organization logo updated": [
         "Organisatielogo bijgewerkt"
       ],
-      "Organization name set": [
-        "Organisatienaam ingesteld"
-      ],
       "Organization name updated": [
         "Organisatienaam bijgewerkt"
       ],
@@ -24844,6 +24825,9 @@
       "Disconnected from Gmail": [
         "Ontkoppeld van Gmail"
       ],
+      "Dismiss setup checklist": [
+        "Setup-checklist negeren"
+      ],
       "Display name and signature": [
         "Weergavenaam en handtekening"
       ],
@@ -25117,6 +25101,9 @@
       ],
       "Get more from your VPN": [
         "Haal meer uit uw VPN"
+      ],
+      "Get started": [
+        "Aan de slag"
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Installeer de app op al uw apparaten en geniet overal van veilige, naadloze toegang."
@@ -26922,16 +26909,6 @@
       ],
       "Writing assistant": [
         "Schrijfassistent"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
-        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } tekens bevatten"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
-        "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
       ]
     },
     "Video control": {

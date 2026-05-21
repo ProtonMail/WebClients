@@ -4338,9 +4338,6 @@
       "Give immediate access?": [
         "Azonnali hozzáférést biztosít?"
       ],
-      "None": [
-        "Nincs"
-      ],
       "Only ": [
         "Csak "
       ],
@@ -4467,9 +4464,6 @@
       "Email address is required": [
         "E-mail cím megadása szükséges"
       ],
-      "Email is not valid": [
-        "Érvénytelen e-mail cím"
-      ],
       "Empty condition": [
         "Üres feltétel"
       ],
@@ -4544,9 +4538,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Hibás második jelszó. Próbálja meg újra."
-      ],
-      "Incorrect username": [
-        "Helytelen felhasználónév"
       ],
       "Intended recipient does not support calendar sharing": [
         "A kívánt címzett nem támogatja a naptármegosztást"
@@ -4636,9 +4627,6 @@
       "Not a ${ BRAND_NAME } account": [
         "Nem egy ${ BRAND_NAME } fiók"
       ],
-      "Not a valid number": [
-        "Érvénytelen szám"
-      ],
       "Organization key is not decrypted": [
         "A szervezeti kulcs nincs visszafejtve"
       ],
@@ -4650,9 +4638,6 @@
       ],
       "Password is required": [
         "Jelszó megadása szükséges"
-      ],
-      "Passwords do not match": [
-        "A jelszavak nem egyeznek"
       ],
       "Payment process canceled": [
         "A fizetés folyamata megszakítva"
@@ -4794,9 +4779,6 @@
       "The amount due has changed. Please try again.": [
         "A befizetendő összeg megváltozott. Kérjük próbálja meg újra."
       ],
-      "The email addresses do not match": [
-        "Az e-mail címek nem egyeznek"
-      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "A kép túl nagy. Legfeljebb ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS } méret lehetséges"
       ],
@@ -4836,14 +4818,8 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Túl sok mappa van a külső e-mail fiókban. Módosítsa az importálás beállításait, hogy néhány mappát töröljön."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "A mező tartalma hosszabb a megengedett maximum ${ maximumLength } karakternél."
-      ],
       "This field is required": [
         "A mező kitöltése kötelező"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Legalább ${ minimumLength } karakter szükséges ebben a mezőben."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Ez a mappanév nem érhető el. Adjon meg egy másik nevet."
@@ -4863,9 +4839,6 @@
       "Try again later": [
         "Próbálja meg később"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "Próbáljon csak betűket, számokat és _.-t használni"
-      ],
       "Unable to upload file": [
         "Nem sikerült feltölteni fájlt"
       ],
@@ -4883,12 +4856,6 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "A feltöltött fájlok nem érvényes titkos kulcsok. Ellenőrizze és próbálja újra."
-      ],
-      "Username must begin with a letter or digit": [
-        "Felhasználónévnek betűvel vagy számmal kell kezdődnie"
-      ],
-      "Username must end with a letter or digit": [
-        "Felhasználónévnek betűvel vagy számmal kell végződnie"
       ],
       "Validation error": [
         "Érvényesítési hiba"
@@ -7133,10 +7100,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Hozzon létre egy címkét az importált levelekhez, válassza ki a kívánt idő intervallumot és adja meg az importálandó címkéket."
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "Hozzon létre biztonságos felhőárhelyet ${ value } tagnak",
-        "Hozzon létre biztonságos felhőárhelyet ${ value } tagnak"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Hozzon létre és kezeljen al-fiókokat és rendeljen hozzájuk e-mail címeket a saját domain nevén."
@@ -19081,16 +19044,6 @@
       ],
       "Writing assistant": [
         "Írássegéd"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia",
-        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)",
-        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)"
       ]
     },
     "Video control": {

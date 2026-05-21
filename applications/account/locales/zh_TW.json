@@ -4444,9 +4444,6 @@
       "Less than a minute left": [
         "剩不到一分鐘"
       ],
-      "None": [
-        "無"
-      ],
       "Time required before automatically giving you access": [
         "自動授予您存取權限前所需的時間"
       ],
@@ -4577,9 +4574,6 @@
       "Email address is required": [
         "電郵位址為必填"
       ],
-      "Email is not valid": [
-        "電郵無效"
-      ],
       "Empty condition": [
         "條件空白"
       ],
@@ -4651,9 +4645,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "第二密碼錯誤。請重新再試。"
-      ],
-      "Incorrect username": [
-        "錯誤的使用者名稱"
       ],
       "Intended recipient does not support calendar sharing": [
         "擬收件人不支援行事曆共享"
@@ -4748,9 +4739,6 @@
       "Not a ${ BRAND_NAME } account": [
         "不是 ${ BRAND_NAME } 帳號"
       ],
-      "Not a valid number": [
-        "號碼無效"
-      ],
       "Organization key is not decrypted": [
         "組織金鑰未解密"
       ],
@@ -4762,9 +4750,6 @@
       ],
       "Password is required": [
         "密碼為必填"
-      ],
-      "Passwords do not match": [
-        "密碼不一致"
       ],
       "Payment process canceled": [
         "付款過程已取消"
@@ -4910,9 +4895,6 @@
       "The amount due has changed. Please try again.": [
         "應付金額已變更。請再試一次。"
       ],
-      "The email addresses do not match": [
-        "電子郵件位址不相符"
-      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "這個檔案太大了，最大為 ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -4955,17 +4937,11 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "待匯入的外部帳號裡資料夾過多，請自訂匯入內容並刪除部份資料夾。"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "此欄位還剩下 ${ maximumLength } 個字元。"
-      ],
       "This field is invalid": [
         "此欄位無效"
       ],
       "This field is required": [
         "此欄位必填"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "此欄位至少須有 ${ minimumLength } 個字元。"
       ],
       "This folder name is not available. Please choose a different name.": [
         "此資料夾名稱不適用。請選擇其它名稱。"
@@ -4985,9 +4961,6 @@
       "Try again later": [
         "請稍後再試"
       ],
-      "Try using only letters, numerals, and _.-": [
-        "嘗試僅使用字母、數字與 _.-"
-      ],
       "Unable to upload file": [
         "無法上傳文件"
       ],
@@ -5005,12 +4978,6 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "上傳的檔案不是有效的私鑰。請確認後再試一次。"
-      ],
-      "Username must begin with a letter or digit": [
-        "使用者名稱的開頭必須為字母或數字"
-      ],
-      "Username must end with a letter or digit": [
-        "使用者名稱的結尾必須為字母或數字"
       ],
       "Validation error": [
         "驗證錯誤"
@@ -7152,9 +7119,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "為匯入的郵件創建標籤、設定這次匯入的時間範圍以及要匯入的標籤。"
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "替成員創建一個安全${ value }雲端"
       ],
       "Create an account": [
         "創建帳戶"
@@ -18669,14 +18633,6 @@
       ],
       "Writing assistant": [
         "撰寫幫手"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "密碼至少必須包含 ${ MIN_PASSWORD_LENGTH } 個字元"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "請輸入一個更短的使用者名稱 (${ n } characters max)"
       ]
     },
     "Video control": {
