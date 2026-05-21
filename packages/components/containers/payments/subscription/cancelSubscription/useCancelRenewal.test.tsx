@@ -5,10 +5,11 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { Renew } from '@proton/payments';
-import { type FeedbackDowngradeData, changeRenewState } from '@proton/payments/core/api/api';
+import { changeRenewState } from '@proton/payments/core/api/api';
 import { useIsB2BTrial } from '@proton/payments/ui';
 
 import { OPEN_TRIAL_CANCELED_MODAL } from '../../../topBanners/constants';
+import type { FeedbackDowngradeFormData } from '../content/interface';
 import { useCancelRenewal } from './useCancelRenewal';
 
 jest.mock('@proton/components/hooks/useApi');
@@ -33,7 +34,7 @@ jest.mocked(useSubscription).mockReturnValue([{} as any, false]);
 jest.mocked(useOrganization).mockReturnValue([{} as any, false]);
 jest.mocked(useIsB2BTrial).mockReturnValue(false);
 
-const feedback: FeedbackDowngradeData = {
+const feedback: FeedbackDowngradeFormData = {
     Reason: 'DIFFERENT_ACCOUNT',
     Feedback: '',
     ReasonDetails: '',
@@ -53,7 +54,12 @@ describe('useCancelRenewal', () => {
         expect(mockApi).toHaveBeenCalledWith(
             changeRenewState({
                 RenewalState: Renew.Disabled,
-                CancellationFeedback: feedback,
+                CancellationFeedback: {
+                    Reason: 'DIFFERENT_ACCOUNT',
+                    Feedback: null,
+                    ReasonDetails: null,
+                    Context: 'mail',
+                },
             })
         );
     });

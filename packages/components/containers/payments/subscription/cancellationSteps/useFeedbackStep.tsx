@@ -1,10 +1,9 @@
 import { useUser } from '@proton/account/user/hooks';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
-import type { FeedbackDowngradeData } from '@proton/payments/core/api/api';
 
-import type { FeedbackDowngradeResult } from '../content/FeedbackDowngradeContent';
 import FeedbackDowngradeContent, { isKeepSubscription } from '../content/FeedbackDowngradeContent';
+import type { FeedbackDowngradeFormData, FeedbackDowngradeResult } from '../content/interface';
 import type { CancellationStep, CancellationStepConfig } from './types';
 
 interface FeedbackStepKept {
@@ -13,7 +12,7 @@ interface FeedbackStepKept {
 
 interface FeedbackStepCollected {
     status: 'feedback';
-    feedback: FeedbackDowngradeData;
+    feedback: FeedbackDowngradeFormData;
 }
 
 export type FeedbackStepResult = FeedbackStepKept | FeedbackStepCollected;

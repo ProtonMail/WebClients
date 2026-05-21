@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import alias from '@proton/styles/assets/img/cancellation-flow/testimonial_alias.png';
-import darkWeb from '@proton/styles/assets/img/cancellation-flow/testimonial_dark_web.png';
-import netShield from '@proton/styles/assets/img/cancellation-flow/testimonial_net_shield.png';
+import iran from '@proton/styles/assets/img/cancellation-flow/testimonial_alias.png';
+import russia from '@proton/styles/assets/img/cancellation-flow/testimonial_dark_web.png';
+import hongKong from '@proton/styles/assets/img/cancellation-flow/testimonial_net_shield.png';
 
 import StoryCard from './StoryCard';
 
@@ -11,7 +11,7 @@ export const B2CStoryCards = () => {
     return (
         <div className="flex gap-6 pt-4">
             <StoryCard
-                image={alias}
+                image={russia}
                 title={c('Title').t`Our fight against censorship in Russia`}
                 subtitle={c('Description')
                     .t`How we fought back when ${BRAND_NAME} was blocked in an aggressive campaign.`}
@@ -19,7 +19,7 @@ export const B2CStoryCards = () => {
                 url="https://www.nytimes.com/2022/12/06/technology/russia-internet-proton-vpn.html"
             />
             <StoryCard
-                image={darkWeb}
+                image={hongKong}
                 title={c('Title').t`Helping activists in Hong Kong`}
                 subtitle={c('Description')
                     .t`How we supported local activists when privacy and free speech were threatened.`}
@@ -27,7 +27,7 @@ export const B2CStoryCards = () => {
                 url="https://www.youtube.com/watch?v=QmFTporQpM8"
             />
             <StoryCard
-                image={netShield}
+                image={iran}
                 title={c('Title').t`Unblocking internet access in Iran`}
                 subtitle={c('Description')
                     .t`How our customer support team got our VPN app directly into people's hands.`}

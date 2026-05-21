@@ -3,7 +3,6 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import MailLogo from '@proton/components/components/logo/MailLogo';
-import CustomLogo from '@proton/components/containers/payments/subscription/YourPlanSectionV2/CustomLogo';
 import { PLANS } from '@proton/payments';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import gmail from '@proton/styles/assets/img/illustrations/gmail-logo.svg';
@@ -14,6 +13,7 @@ import yahoo from '@proton/styles/assets/img/import/providers/yahoo_short.svg';
 import clsx from '@proton/utils/clsx';
 
 import type { ComparisonFeatureRow } from '../components/ComparisonTable';
+import { CustomLogoHeader } from '../components/CustomLogoHeader';
 
 export interface Competitor {
     name: string;
@@ -139,7 +139,7 @@ export const getDifferentProviderB2BConfig = (): DifferentProviderConfig => {
     return {
         protonHeader: (
             <>
-                <CustomLogo className="rounded" planName={PLANS.BUNDLE_PRO_2024} size={26} />
+                <CustomLogoHeader planName={PLANS.BUNDLE_PRO_2024} />
                 <span className="text-semibold">{c('Label').t`${BRAND_NAME} for Business`}</span>
             </>
         ),

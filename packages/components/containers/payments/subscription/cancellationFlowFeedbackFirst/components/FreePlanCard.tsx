@@ -17,7 +17,7 @@ interface Props {
 
 const FreePlanCard = ({ features, currency, onSwitchToFree }: Props) => {
     return (
-        <div className="border rounded-xl p-6 h-full flex flex-column flex-1">
+        <div className="border rounded-xl p-6 flex flex-column flex-1">
             <h2 className="text-2xl text-semibold mb-6">{c('Title').t`Free plan`}</h2>
             <div className="mb-10" style={{ fontSize: '2.75rem' }}>
                 <Price
