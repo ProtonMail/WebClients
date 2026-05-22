@@ -1,13 +1,19 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { useRecoverySettingsTelemetry } from './recoverySettingsTelemetry';
 
 const RecoveryPageTelemetry = () => {
-    const { sendRecoveryPageLoad } = useRecoverySettingsTelemetry();
+    const { sendRecoveryPageLoad, loading } = useRecoverySettingsTelemetry();
+    const hasSentPageLoadRef = useRef(false);
 
     useEffect(() => {
+        if (loading || hasSentPageLoadRef.current) {
+            return;
+        }
+
         sendRecoveryPageLoad();
-    }, [sendRecoveryPageLoad]);
+        hasSentPageLoadRef.current = true;
+    }, [loading, sendRecoveryPageLoad]);
 
     return null;
 };
