@@ -4,6 +4,7 @@ import {
     generateDeferredMnemonicData,
 } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
 import { startEasySwitchSignupImportTask } from '@proton/activation/src/api';
+import { BYOE_QUOTA_THRESHOLD_RATIO } from '@proton/activation/src/constants';
 import { EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import type { AppIntent } from '@proton/components/containers/login/interface';
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
@@ -519,7 +520,7 @@ export const handleSetupUser = async ({
                 Account: emailAddress,
                 Provider: OAUTH_PROVIDER.GOOGLE,
                 AutomaticImport: true,
-                QuotaThresholdRatio: 0.2,
+                QuotaThresholdRatio: BYOE_QUOTA_THRESHOLD_RATIO,
             })
         );
     }
