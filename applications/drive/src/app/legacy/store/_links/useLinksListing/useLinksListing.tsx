@@ -12,7 +12,6 @@ import { waitFor } from '../../_utils';
 import type { DecryptedLink, EncryptedLink } from './../interface';
 import useLinksState, { isLinkDecrypted } from './../useLinksState';
 import type { FetchLoadLinksMeta, FetchLoadLinksMetaByVolume } from './interface';
-import { useBookmarksLinksListing } from './useBookmarksLinksListing';
 import type { FetchMeta, FetchResponse, SortParams } from './useLinksListingHelpers';
 import { PAGE_SIZE, sortParamsToServerSortArgs, useLinksListingHelpers } from './useLinksListingHelpers';
 import { useSharedLinksListing } from './useSharedLinksListing';
@@ -67,7 +66,6 @@ export function useLinksListingProvider() {
     const linksState = useLinksState();
     const trashedLinksListing = useTrashedLinksListing();
     const sharedLinksListing = useSharedLinksListing();
-    const bookmarksLinksListing = useBookmarksLinksListing();
     const sharedWithMeLinksListingByVolume = useSharedWithMeLinksListingByVolume();
 
     const { cacheLoadedLinks, fetchNextPageWithSortingHelper, loadFullListing, getDecryptedLinksAndDecryptRest } =
@@ -447,9 +445,6 @@ export function useLinksListingProvider() {
         loadLinksSharedWithMeLink: async (signal: AbortSignal) => {
             return sharedWithMeLinksListingByVolume.loadSharedWithMeLinks(signal, loadLinksMetaByVolume);
         },
-        loadLinksBookmarks: async (signal: AbortSignal, shareId: string) => {
-            return bookmarksLinksListing.loadLinksBookmarks(signal, shareId);
-        },
         loadLinksMeta,
         clearCacheForQuery,
         getCachedChildren,
@@ -457,15 +452,11 @@ export function useLinksListingProvider() {
         getCachedTrashed: trashedLinksListing.getCachedTrashed,
         getCachedSharedByLink: sharedLinksListing.getCachedSharedLinks,
         getCachedSharedWithMeLink: sharedWithMeLinksListingByVolume.getCachedSharedWithMeLinks,
-        getCachedBookmarksLinks: bookmarksLinksListing.getCachedBookmarksLinks,
-        getCachedBookmarkDetails: bookmarksLinksListing.getCachedBookmarkDetails,
         getCachedLinks,
         getCachedLinksWithoutMeta,
 
         // TODO: Remove this with Invitation section refactor
         setShareIdsState: sharedWithMeLinksListingByVolume.setShareIdsState,
-        // TODO: remove when we will have events for bookmarks
-        removeCachedBookmarkLink: bookmarksLinksListing.removeCachedBookmarkLink,
     };
 }
 
