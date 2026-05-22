@@ -73,7 +73,7 @@ const App = () => {
                                 <Router history={extraThunkArguments.history}>
                                     <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
                                         <ApiProvider api={extraThunkArguments.api}>
-                                            <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
+                                            <DrawerProvider defaultShowDrawerSidebar={state.showDrawerSidebar}>
                                                 <CalendarModelEventManagerProvider
                                                     calendarModelEventManager={
                                                         extraThunkArguments.calendarModelEventManager
