@@ -3,6 +3,7 @@ import { HashRouter as Router } from 'react-router-dom';
 
 import { ExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
 import { ExtensionError } from 'proton-pass-extension/lib/components/Extension/ExtensionError';
+import { ExtensionPermissions } from 'proton-pass-extension/lib/components/Extension/ExtensionPermissions';
 import { ExtensionStore } from 'proton-pass-extension/lib/components/Extension/ExtensionStore';
 import { useExtensionNotificationEnhancer } from 'proton-pass-extension/lib/hooks/useExtensionNotificationEnhancer';
 import { hasClipboardPermissions } from 'proton-pass-extension/lib/utils/permissions';
@@ -42,9 +43,11 @@ export const Popup = () => {
                             <NavigationProvider>
                                 <PopupProvider ready={ready}>
                                     <Localized>
-                                        <ClipboardProvider checkPermissions={hasClipboardPermissions}>
-                                            <AppGuard />
-                                        </ClipboardProvider>
+                                        <ExtensionPermissions>
+                                            <ClipboardProvider checkPermissions={hasClipboardPermissions}>
+                                                <AppGuard />
+                                            </ClipboardProvider>
+                                        </ExtensionPermissions>
                                     </Localized>
                                 </PopupProvider>
                             </NavigationProvider>
