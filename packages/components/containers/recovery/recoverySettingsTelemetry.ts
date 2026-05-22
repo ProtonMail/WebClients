@@ -1,7 +1,11 @@
 import { createContext, useCallback, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import { selectRecoveryState } from '@proton/account/safetyReview/recoveryState/recoveryState';
+import { selectSecurityCheckup } from '@proton/account/securityCheckup/slice';
+import useSecurityCheckup from '@proton/components/hooks/securityCheckup/useSecurityCheckup';
 import useApi from '@proton/components/hooks/useApi';
+import { useSelector, useStore } from '@proton/redux-shared-store/sharedProvider';
 import { TelemetryMeasurementGroups, TelemetryRecoverySettingsEvents } from '@proton/shared/lib/api/telemetry';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { sendTelemetryReport, telemetryReportsBatchQueue } from '@proton/shared/lib/helpers/metrics';
@@ -16,6 +20,9 @@ export const RecoverySettingsTelemetryVariantProvider = RecoverySettingsTelemetr
 export const useRecoverySettingsTelemetry = () => {
     const api = useApi();
     const variant = useContext(RecoverySettingsTelemetryVariantContext);
+    const store = useStore();
+    const { loading: recoveryStateLoading } = useSelector(selectRecoveryState);
+    const { loading: securityCheckupLoading } = useSecurityCheckup();
 
     const location = useLocation();
     const appName = getAppFromPathnameSafe(location.pathname);
@@ -30,26 +37,40 @@ export const useRecoverySettingsTelemetry = () => {
         variant,
         app_name: appName,
     };
+    const loading = recoveryStateLoading || securityCheckupLoading;
+
+    const getCurrentRecoveryTelemetryDimensions = useCallback(() => {
+        const state = store.getState();
+        const {
+            recoveryScore: { score },
+        } = selectRecoveryState(state);
+        const { cohort } = selectSecurityCheckup(state);
+
+        return {
+            cohort: cohort,
+            score: String(score),
+        };
+    }, [store]);
 
     const sendRecoveryPageLoad = useCallback(() => {
         void sendTelemetryReport({
             ...commonProps,
-            dimensions: { ...commonDimensions },
+            dimensions: { ...getCurrentRecoveryTelemetryDimensions(), ...commonDimensions },
             event: TelemetryRecoverySettingsEvents.page_load,
         });
 
         void telemetryReportsBatchQueue.flush();
-    }, [api, appName, variant]);
+    }, [api, appName, variant, getCurrentRecoveryTelemetryDimensions]);
 
     const sendAccountSafetyReviewClick = useCallback(() => {
         void sendTelemetryReport({
             ...commonProps,
-            dimensions: { ...commonDimensions },
+            dimensions: { ...getCurrentRecoveryTelemetryDimensions(), ...commonDimensions },
             event: TelemetryRecoverySettingsEvents.account_safety_review_click,
         });
 
         void telemetryReportsBatchQueue.flush();
-    }, [api, appName, variant]);
+    }, [api, appName, variant, getCurrentRecoveryTelemetryDimensions]);
 
     const sendRecoverySettingEnabled = useCallback(
         ({
@@ -69,13 +90,17 @@ export const useRecoverySettingsTelemetry = () => {
             void sendTelemetryReport({
                 ...commonProps,
                 event: TelemetryRecoverySettingsEvents.setting_enabled,
-                dimensions: { setting, ...commonDimensions },
+                dimensions: {
+                    setting,
+                    ...getCurrentRecoveryTelemetryDimensions(),
+                    ...commonDimensions,
+                },
             });
 
             void telemetryReportsBatchQueue.flush();
         },
-        [api, appName, variant]
+        [api, appName, variant, getCurrentRecoveryTelemetryDimensions]
     );
 
-    return { sendRecoveryPageLoad, sendAccountSafetyReviewClick, sendRecoverySettingEnabled };
+    return { sendRecoveryPageLoad, sendAccountSafetyReviewClick, sendRecoverySettingEnabled, loading };
 };
