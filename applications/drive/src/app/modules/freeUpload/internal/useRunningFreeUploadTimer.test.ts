@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { useFreeUploadStore } from '../../../../legacy/zustand/freeUpload/freeUpload.store';
-import { sendErrorReport } from '../../../../utils/errorHandling';
+import { useFreeUploadStore } from '../../../legacy/zustand/freeUpload/freeUpload.store';
+import { sendErrorReport } from '../../../utils/errorHandling';
 import { useFreeUploadApi } from './useFreeUploadApi';
 import { useFreeUploadFeature } from './useFreeUploadFeature';
 import { useIsFreeUploadInProgress } from './useIsFreeUploadInProgress';
@@ -10,8 +10,8 @@ import { useRunningFreeUploadTimer } from './useRunningFreeUploadTimer';
 jest.mock('./useFreeUploadFeature');
 jest.mock('./useFreeUploadApi');
 jest.mock('./useIsFreeUploadInProgress');
-jest.mock('../../../../utils/errorHandling');
-jest.mock('../../../../modals/FreeUploadOverModal/useFreeUploadOverModal', () => ({
+jest.mock('../../../utils/errorHandling');
+jest.mock('../../../modals/FreeUploadOverModal/useFreeUploadOverModal', () => ({
     useFreeUploadOverModal: jest.fn(() => [null, jest.fn()]),
 }));
 jest.mock('@proton/components/hooks/useErrorHandler', () => ({

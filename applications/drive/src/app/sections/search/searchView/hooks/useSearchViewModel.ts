@@ -2,10 +2,13 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useSearchModule } from '../../../../legacy/hooks/search/useSearchModule';
-import { useUrlSearchParams } from '../../../../legacy/hooks/search/useUrlSearchParam';
 import { getNotificationsManager } from '../../../../modules/notifications';
-import { type SearchResultItem, tryCatchWithNotification } from '../../../../modules/search';
+import {
+    type SearchResultItem,
+    tryCatchWithNotification,
+    useSearchModule,
+    useUrlSearchParams,
+} from '../../../../modules/search';
 import { sendErrorReportForSearch } from '../../../../modules/search/internal/shared/errors';
 import type { SearchViewModelAdapter } from '../type';
 

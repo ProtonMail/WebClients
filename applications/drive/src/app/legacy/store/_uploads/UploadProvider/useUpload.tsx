@@ -15,7 +15,7 @@ import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 import { TransferCancel, TransferSkipped, TransferState } from '../../../../legacy/components/TransferManager/transfer';
 import type { FileThresholdModalType } from '../../../../legacy/components/modals/FileThresholdModal';
 import { useFileThresholdModal } from '../../../../legacy/components/modals/FileThresholdModal';
-import { useIsFreeUploadInProgress } from '../../../../legacy/hooks/drive/freeUpload/useIsFreeUploadInProgress';
+import { useIsFreeUploadInProgress } from '../../../../modules/freeUpload';
 import { sendErrorReport } from '../../../../utils/errorHandling';
 import { handleSdkError } from '../../../../utils/errorHandling/handleSdkError';
 import { getIsPublicContext } from '../../../../utils/getIsPublicContext';

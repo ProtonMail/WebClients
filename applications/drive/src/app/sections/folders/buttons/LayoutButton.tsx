@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton, useNotifications } from '@proton/components';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import { useUserSettings } from '../../../legacy/hooks/user';
+import { useUserSettings } from '../../../modules/userSettings';
 
 export const LayoutToolbarButton = () => {
     const { createNotification } = useNotifications();

@@ -26,11 +26,11 @@ import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import spotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 import clsx from '@proton/utils/clsx';
 
-import { useIsFreeUploadInProgress } from '../../../legacy/hooks/drive/freeUpload/useIsFreeUploadInProgress';
 import { useActiveShare } from '../../../legacy/hooks/drive/useActiveShare';
 import { useIsTransferManagerVisible } from '../../../legacy/hooks/drive/useIsTransferManagerVisible';
 import { useFileUploadInput } from '../../../legacy/store';
 import { useFileSharingModal } from '../../../modals/SelectLinkToShareModal';
+import { useIsFreeUploadInProgress } from '../../../modules/freeUpload';
 import useChecklist from './useChecklist';
 
 import './GiftFloatingButton.scss';
