@@ -6875,6 +6875,39 @@
       ],
       "Zero keys reactivated": [
         "Chiavi zero riattivate"
+      ],
+      "Email is not valid": [
+        "Indirizzo email non valido"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Inserisci il tuo nome utente senza il dominio (@esempio.it)"
+      ],
+      "Incorrect username": [
+        "Username non corretto"
+      ],
+      "Not a valid number": [
+        "Numero non valido"
+      ],
+      "Passwords do not match": [
+        "Le password non corrispondono"
+      ],
+      "The email addresses do not match": [
+        "Gli indirizzi email non corrispondono."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Questo campo richiede un minimo di ${ minimumLength } caratteri."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Prova ad usare solo lettere, numeri e _.-"
+      ],
+      "Username must begin with a letter or digit": [
+        "Il nome utente deve iniziare con una lettera o un numero."
+      ],
+      "Username must end with a letter or digit": [
+        "Il nome utente deve terminare con una lettera o un numero/"
       ]
     },
     "error": {
@@ -25074,6 +25107,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Ogni anno, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } carattere",
+        "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } caratteri"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prova un nome utente più corto (massimo ${ n } carattere)",
+        "Prova un nome utente più corto (massimo ${ n } caratteri)"
       ]
     }
   }

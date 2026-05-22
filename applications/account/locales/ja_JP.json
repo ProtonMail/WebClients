@@ -6798,6 +6798,36 @@
       ],
       "Zero keys reactivated": [
         "ゼロキーが再有効化されました"
+      ],
+      "Email is not valid": [
+        "メールアドレスが無効です"
+      ],
+      "Incorrect username": [
+        "ユーザー名に間違いがあります。"
+      ],
+      "Not a valid number": [
+        "無効な番号です"
+      ],
+      "Passwords do not match": [
+        "パスワードが一致しません"
+      ],
+      "The email addresses do not match": [
+        "メールアドレスが一致しません"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "このフィールドは${ maximumLength }文字の最大値を超えています。"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "このフィールドには ${ minimumLength } 文字以上の入力が必要です。"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "文字、数字、_.- のみを使用してみてください。"
+      ],
+      "Username must begin with a letter or digit": [
+        "ユーザー名は英字か数字で始めなければいけません"
+      ],
+      "Username must end with a letter or digit": [
+        "ユーザー名の最後は英字か数字でなければいけません"
       ]
     },
     "error": {
@@ -24695,6 +24725,14 @@
       ],
       "Yearly, ${ untilString }": [
         "毎年、${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "パスワードは ${ MIN_PASSWORD_LENGTH } 文字以上必要です"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "もっと短いユーザ名にしてください (${ n } 文字以内)"
       ]
     }
   }

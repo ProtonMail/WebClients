@@ -1844,6 +1844,9 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Generate missing keys": [
+        "Genereu les claus que falten"
       ]
     },
     "action": {
@@ -5542,6 +5545,12 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "El vostre pla admet un total de ${ MAX_SYNC_PAID_USER } adreça de Gmail",
         "El vostre pla admet un total de ${ MAX_SYNC_PAID_USER } adreces de Gmail"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Aturarem les importacions al 80% de l'emmagatzematge per reservar espai per missatges nous."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Hem començat a importar els vostres correus electrònics des de Gmail. Us avisarem quan hagi acabat."
       ]
     },
     "description": {
@@ -7694,6 +7703,39 @@
       ],
       "Zero keys reactivated": [
         "Cap clau s'ha reactivat"
+      ],
+      "Email is not valid": [
+        "El correu electrònic no és vàlid"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduïu el vostre nom d'usuari sense el domini (@example.cat)"
+      ],
+      "Incorrect username": [
+        "Nom d'usuari incorrecte"
+      ],
+      "Not a valid number": [
+        "Número no vàlid"
+      ],
+      "Passwords do not match": [
+        "Les contrasenyes no coincideixen."
+      ],
+      "The email addresses do not match": [
+        "Les adreces de correu electrònic no coincideixen."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Intenteu utilitzar només lletres, numerals i _.-"
+      ],
+      "Username must begin with a letter or digit": [
+        "El nom d'usuari ha de començar amb una lletra o un dígit."
+      ],
+      "Username must end with a letter or digit": [
+        "El nom d'usuari ha d'acabar amb una lletra o un dígit."
       ]
     },
     "error": {
@@ -8807,6 +8849,9 @@
     "Force upgrade safety review": {
       "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
         "Entenc que ja no podré iniciar sessió en versions antigues de les aplicacions de ${ BRAND_NAME }."
+      ],
+      "Learn more": [
+        "Per saber-ne més"
       ]
     },
     "Form heading": {
@@ -13433,6 +13478,16 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } es finança de manera independent i funciona sense publicitat. A continuació es mostren exemples de com s'ha aplicat aquesta independència en la pràctica."
+      ],
+      "Adding ${ total } gateway server": [
+        "S'està afegint ${ total } servidor de passarel·la",
+        "S'estan afegint ${ total } servidors de passarel·la"
+      ],
+      "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
+        "Per habilitar la protecció postquàntica haureu d'acabar de generar les noves claus de xifratge postquàntic."
       ]
     },
     "info": {
@@ -15615,6 +15670,9 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caràcters"
       ]
     },
     "label": {
@@ -20029,11 +20087,17 @@
     "PQC account key generation": {
       "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
         "No s'han pogut generar les claus. Per activar la protecció postquàntica, haureu de generar les vostres noves claus de xifratge manualment.\n\n${ settingsLink } i seleccioneu \"Genera clau\" per al vostre compte i per a cada adreça."
+      ],
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "No s'han pogut generar les claus. Per activar la protecció postquàntica, haureu d'acabar de generar les noves claus de xifratge postquàntic.\n\n${ goToSettingsLink } i seleccioneu \"Generar les claus que falten\"."
       ]
     },
     "PQC adress key generation": {
       "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
         "No s'han pogut generar les claus d'adreça. Per activar la protecció postquàntica, haureu de generar les noves claus de xifratge manualment.\\n\\nAneu a ${ settingsLink } i seleccioneu 'Generar clau' per a cada adreça."
+      ],
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys for each address.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "No s'han pogut generar les claus d'adreça. Per activar la protecció postquàntica, haureu d'acabar de generar les vostres noves claus de xifratge postquàntic per cada adreça.\n\n${ goToSettingsLink } i seleccioneu \"Genera les claus que falten\"."
       ]
     },
     "PQC compatibility warning": {
@@ -26633,6 +26697,12 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "És possible que el vostre compte extern hagi assolit el límit d'amplada de banda de 24 hores. ${ BRAND_NAME } intentarà reprendre la importació al més aviat possible."
+      ],
+      "Early access to new apps and features.": [
+        "Accés anticipat a noves aplicacions i característiques."
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
+        "Aquesta és la clau predeterminada que utilitzen altres usuaris de ${ MAIL_APP_NAME } en aplicacions antigues per xifrar les dades que us envien"
       ]
     },
     "tooltip": {
@@ -27725,6 +27795,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada any, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcter",
+        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
+        "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"
       ]
     }
   }

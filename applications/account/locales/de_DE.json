@@ -7432,6 +7432,39 @@
       ],
       "Zero keys reactivated": [
         "Kein Schüssel wiederhergestellt"
+      ],
+      "Email is not valid": [
+        "E-Mail-Adresse ungültig"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Deinen Benutzernamen ohne die Domain (@example.com) eingeben"
+      ],
+      "Incorrect username": [
+        "Falscher Benutzername"
+      ],
+      "Not a valid number": [
+        "Keine gültige Zahl"
+      ],
+      "Passwords do not match": [
+        "Die Passwörter stimmen nicht überein"
+      ],
+      "The email addresses do not match": [
+        "Die E-Mail-Adressen stimmen nicht überein"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "In dieses Feld müssen mindestens ${ minimumLength } Zeichen eingegeben werden."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Bitte nur Buchstaben, Ziffern und die Zeichen _ . - verwenden"
+      ],
+      "Username must begin with a letter or digit": [
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer beginnen."
+      ],
+      "Username must end with a letter or digit": [
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden."
       ]
     },
     "error": {
@@ -13117,6 +13150,9 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } ist unabhängig finanziert und arbeitet ohne Werbung. Im Folgenden findest du Beispiele dafür, wie diese Unabhängigkeit in der Praxis zum Tragen kommt."
       ]
     },
     "info": {
@@ -15278,6 +15314,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } Zeichen"
       ]
     },
     "label": {
@@ -25988,6 +26027,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Dein externes Konto könnte sein 24-Stunden-Bandbreitenlimit erreicht haben. ${ BRAND_NAME } wird versuchen, den Import so bald wie möglich fortzusetzen."
+      ],
+      "Early access to new apps and features.": [
+        "Früher Zugang zu neuen Anwendungen und Funktionen."
       ]
     },
     "tooltip": {
@@ -27080,6 +27122,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Jährlich, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Das Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten.",
+        "Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)",
+        "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)"
       ]
     }
   }

@@ -6613,6 +6613,36 @@
       ],
       "Zero keys reactivated": [
         "Không có khóa kích hoạt lại"
+      ],
+      "Email is not valid": [
+        "Email không hợp lệ"
+      ],
+      "Incorrect username": [
+        "Sai tên người dùng"
+      ],
+      "Not a valid number": [
+        "Số không hợp lệ"
+      ],
+      "Passwords do not match": [
+        "Mật khẩu không khớp"
+      ],
+      "The email addresses do not match": [
+        "Địa chỉ email không giống nhau"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Trường này vượt quá giới hạn ${ maximumLength } kí tự"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Trường này yêu cầu tối thiểu ${ minimumLength } ký tự."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Hãy thử chỉ sử dụng chữ cái, số và _.-"
+      ],
+      "Username must begin with a letter or digit": [
+        "Tên người dùng phải bắt đầu bằng chữ hoặc số"
+      ],
+      "Username must end with a letter or digit": [
+        "Tên người dùng phải kết thúc bằng chữ hoặc số"
       ]
     },
     "error": {
@@ -24018,6 +24048,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Hàng năm, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Mật khẩu phải có ít nhất ${ MIN_PASSWORD_LENGTH } ký tự"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Hãy thử đặt một tên người dùng ngắn hơn (tối đa${ n } ký tự)"
       ]
     }
   }

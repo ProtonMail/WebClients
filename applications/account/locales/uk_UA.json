@@ -4367,6 +4367,36 @@
       ],
       "Zero keys reactivated": [
         "Нуль ключів повторно активовано"
+      ],
+      "Email is not valid": [
+        "Е-пошта недійсна"
+      ],
+      "Incorrect username": [
+        "Неправильне ім'я користувача"
+      ],
+      "Not a valid number": [
+        "Номер недійсний"
+      ],
+      "Passwords do not match": [
+        "Паролі відрізняються"
+      ],
+      "The email addresses do not match": [
+        "Електронні адреси відрізняються"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "У цьому полі перевищено обмеження ${ maximumLength } символів."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "В цьому полі повинно бути не менше ${ minimumLength } символів."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Спробуйте використовувати лише літери, цифри та символи _.-"
+      ],
+      "Username must begin with a letter or digit": [
+        "Ім'я користувача повинно починатися з літери або цифри"
+      ],
+      "Username must end with a letter or digit": [
+        "Ім'я користувача повинно закінчуватися літерою або цифрою"
       ]
     },
     "Error importing calendar": {
@@ -18210,6 +18240,20 @@
       ],
       "Yearly, ${ untilString }": [
         "Щороку, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символ",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символи",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Спробуйте коротше ім'я користувача (до ${ n } символу)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)"
       ]
     }
   }

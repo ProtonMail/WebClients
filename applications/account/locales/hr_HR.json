@@ -3724,6 +3724,24 @@
       ],
       "Your import will not be processed.": [
         "Vaš uvoz nije moguće obraditi."
+      ],
+      "Email is not valid": [
+        "Adresa e-pošte nije važeća"
+      ],
+      "Not a valid number": [
+        "Broj telefona nije važeći"
+      ],
+      "Passwords do not match": [
+        "Lozinke se ne poklapaju"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Ovo polje zahtjeva najmanje ${ minimumLength } znakova."
+      ],
+      "Username must begin with a letter or digit": [
+        "Korisničko ime mora započinjati slovom ili brojkom"
+      ],
+      "Username must end with a letter or digit": [
+        "Korisničko ime mora završavati slovom ili brojkom"
       ]
     },
     "Error importing calendar": {
@@ -13456,6 +13474,18 @@
       ],
       "Yearly, ${ untilString }": [
         "Godišnje, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znak",
+        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova",
+        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Pokušajte s kraćim korisničkim imenom (maksimalno ${ n } znak)",
+        "Pokušajte s kraćim korisničkim imenom (maksimalno ${ n } znaka)",
+        "Pokušajte s kraćim korisničkim imenom (maksimalno ${ n } znakova)"
       ]
     }
   }

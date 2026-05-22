@@ -6481,6 +6481,36 @@
       ],
       "Zero keys reactivated": [
         "Walang key na na-reactivate"
+      ],
+      "Email is not valid": [
+        "Hindi valid ang email"
+      ],
+      "Incorrect username": [
+        "Maling username"
+      ],
+      "Not a valid number": [
+        "Hindi valid na numero"
+      ],
+      "Passwords do not match": [
+        "Hindi magkatugma ang mga password"
+      ],
+      "The email addresses do not match": [
+        "Hindi magkatugma ang mga email address"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Lumalagpas ang field na ito sa maximum na ${ maximumLength } na character."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Kailangan ng field na ito ng minimum na ${ minimumLength } na character."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Subukan gamit ang mga letra, numero, at _.-"
+      ],
+      "Username must begin with a letter or digit": [
+        "Dapat magsimula ang username sa titik o numero"
+      ],
+      "Username must end with a letter or digit": [
+        "Dapat magtapos ang username sa titik o numero"
       ]
     },
     "error": {
@@ -23939,6 +23969,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Taunan, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Dapat maglaman ang password ng hindi bababa sa ${ MIN_PASSWORD_LENGTH } character",
+        "Dapat maglaman ang password ng hindi bababa sa ${ MIN_PASSWORD_LENGTH } na character"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Sumubok ng mas maikling username (${ n } character max)",
+        "Sumubok ng mas maikling username (${ n } na character max)"
       ]
     }
   }

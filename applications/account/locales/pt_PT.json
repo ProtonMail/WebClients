@@ -4809,6 +4809,36 @@
       ],
       "Zero keys reactivated": [
         "Zero chaves reativadas"
+      ],
+      "Email is not valid": [
+        "O e-mail não é válido."
+      ],
+      "Incorrect username": [
+        "Nome de utilizador incorreto"
+      ],
+      "Not a valid number": [
+        "O número não é válido."
+      ],
+      "Passwords do not match": [
+        "As palavras-passe não correspondem."
+      ],
+      "The email addresses do not match": [
+        "Os endereços de e-mail não correspondem."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Este campo excede o máximo de ${ maximumLength } caracteres."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Este campo requer um mínimo de ${ minimumLength } carateres."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Tente utilizar apenas letras, números e _.-"
+      ],
+      "Username must begin with a letter or digit": [
+        "O nome de utilizador deve começar com uma letra ou um algarismo"
+      ],
+      "Username must end with a letter or digit": [
+        "O nome de utilizador deve acabar com uma letra ou algarismo"
       ]
     },
     "Error importing calendar": {
@@ -19576,6 +19606,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Anualmente, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A palavra-passe deve conter pelo menos ${ MIN_PASSWORD_LENGTH } caráter.",
+        "A palavra-passe deve conter pelo menos ${ MIN_PASSWORD_LENGTH } carateres."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Tente um nome de utilizador mais pequeno (máximo de ${ n } caráter)",
+        "Tente um nome de utilizador mais pequeno (máximo de carateres ${ n })"
       ]
     }
   }

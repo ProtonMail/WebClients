@@ -6539,6 +6539,36 @@
       ],
       "Zero keys reactivated": [
         "Kunci Zero berhasil diaktifkan kembali"
+      ],
+      "Email is not valid": [
+        "Email tidak valid"
+      ],
+      "Incorrect username": [
+        "Nama pengguna salah"
+      ],
+      "Not a valid number": [
+        "Nomor telepon tidak valid"
+      ],
+      "Passwords do not match": [
+        "Kata sandi tidak sesuai"
+      ],
+      "The email addresses do not match": [
+        "Alamat email tidak sesuai"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Isi kolom ini melebihi panjang maksimal ${ maximumLength } karakter."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Kolom ini harus diisi dengan minimal ${ minimumLength } karakter."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
+      ],
+      "Username must begin with a letter or digit": [
+        "Nama pengguna harus dimulai dengan huruf atau angka"
+      ],
+      "Username must end with a letter or digit": [
+        "Nama pengguna harus diakhiri dengan huruf atau angka"
       ]
     },
     "error": {
@@ -23955,6 +23985,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Tahunan, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Kata sandi harus mengandung setidaknya ${ MIN_PASSWORD_LENGTH } karakter"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Cobalah nama pengguna yang lebih pendek (maksimal ${ n } karakter)"
       ]
     }
   }

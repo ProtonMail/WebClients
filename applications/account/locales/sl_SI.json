@@ -5552,6 +5552,39 @@
       ],
       "Zero keys reactivated": [
         "Nič ključev ponovno aktiviranih"
+      ],
+      "Email is not valid": [
+        "E-pošta ni veljavna"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Vnesite svoje uporabniško ime brez domene (@primer.com)"
+      ],
+      "Incorrect username": [
+        "Nepravilno uporabniško ime"
+      ],
+      "Not a valid number": [
+        "Ni veljavna številka"
+      ],
+      "Passwords do not match": [
+        "Gesli se ne ujemata"
+      ],
+      "The email addresses do not match": [
+        "E-poštna naslova se ne ujemata"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "To polje presega število dovoljenih znakov - ${ maximumLength }."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "To polje zahteva vsaj ${ minimumLength } znakov."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Poskusite uporabiti samo črke, števke in _.-"
+      ],
+      "Username must begin with a letter or digit": [
+        "Uporabniško ime se mora začeti s črko ali številko"
+      ],
+      "Username must end with a letter or digit": [
+        "Uporabniško ime se mora končati s črko ali številko"
       ]
     },
     "error": {
@@ -20713,6 +20746,20 @@
       ],
       "Yearly, ${ untilString }": [
         "Letno, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znak",
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov",
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov",
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znak)",
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znaka)",
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znaki)",
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znakov)"
       ]
     }
   }

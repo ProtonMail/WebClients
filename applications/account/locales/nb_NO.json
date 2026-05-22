@@ -7673,6 +7673,39 @@
       ],
       "Zero keys reactivated": [
         "Null nøkler aktivert på nytt"
+      ],
+      "Email is not valid": [
+        "E-post er ikke gyldig"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Skriv inn brukernavnet ditt uten domenet (@eksempel.com)"
+      ],
+      "Incorrect username": [
+        "Uriktig brukernavn"
+      ],
+      "Not a valid number": [
+        "Ikke et gyldig tall"
+      ],
+      "Passwords do not match": [
+        "Passordene samsvarer ikke"
+      ],
+      "The email addresses do not match": [
+        "E-postadressene samsvarer ikke"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Dette feltet overskrider maksimalt tillatt ${ maximumLength } tegn."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dette feltet krever minimum ${ minimumLength } tegn."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Prøv å bruke bare bokstaver, tall og _.-"
+      ],
+      "Username must begin with a letter or digit": [
+        "Brukernavn må begynne med en bokstav eller ett tall"
+      ],
+      "Username must end with a letter or digit": [
+        "Brukernavn må ende med en bokstav eller ett tall"
       ]
     },
     "error": {
@@ -27706,6 +27739,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Årlig, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn",
+        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prøv et kortere brukernavn (maks ${ n } tegn)",
+        "Prøv et kortere brukernavn (maks ${ n } tegn)"
       ]
     }
   }

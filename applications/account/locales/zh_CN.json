@@ -1844,6 +1844,9 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Generate missing keys": [
+        "生成缺失的密钥"
       ]
     },
     "action": {
@@ -5505,6 +5508,12 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "您的套餐总共支持 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "存储空间使用量达到 80% 时，我们会暂停导入，为接收新消息预留空间。"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "我们已开始从 Gmail 导入您的邮件，导入完成后将通知您。"
       ]
     },
     "description": {
@@ -7644,6 +7653,39 @@
       ],
       "Zero keys reactivated": [
         "未重新激活任何密钥"
+      ],
+      "Email is not valid": [
+        "无效邮箱"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "请输入您的用户名（不含 @example.com 域名）"
+      ],
+      "Incorrect username": [
+        "用户名不正确"
+      ],
+      "Not a valid number": [
+        "无效号码"
+      ],
+      "Passwords do not match": [
+        "密码不匹配"
+      ],
+      "The email addresses do not match": [
+        "邮箱地址不一致"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "此项超过了 ${ maximumLength } 个字符的长度限制。"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "该字段至少需要 ${ minimumLength } 个字符。"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "请使用英文字母、阿拉伯数字或 _ . - 符号"
+      ],
+      "Username must begin with a letter or digit": [
+        "用户名必须以字母或数字开头"
+      ],
+      "Username must end with a letter or digit": [
+        "用户名必须以字母或数字结尾"
       ]
     },
     "error": {
@@ -8740,6 +8782,9 @@
     "Force upgrade safety review": {
       "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
         "我理解我将无法再登录旧版本的 ${ BRAND_NAME } 应用。"
+      ],
+      "Learn more": [
+        "了解详情"
       ]
     },
     "Form heading": {
@@ -13295,6 +13340,15 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } 由独立资金支持，且运营不含广告。以下是这种独立性在实际中的运用示例。"
+      ],
+      "Adding ${ total } gateway server": [
+        "正在添加 ${ total } 台网关服务器"
+      ],
+      "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
+        "若要启用后量子保护，您需要完成新后量子加密密钥的生成。"
       ]
     },
     "info": {
@@ -15468,6 +15522,9 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } 个字符"
       ]
     },
     "label": {
@@ -19815,11 +19872,17 @@
     "PQC account key generation": {
       "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
         "无法生成密钥。要激活后量子保护，您需要手动生成新的加密密钥。\n\n请访问 ${ settingsLink } 并为您的账户及每个地址选择“生成密钥”。"
+      ],
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "无法生成密钥！若要激活后量子保护，您需要完成新后量子加密密钥的生成。\n\n${ goToSettingsLink }，然后选择“生成缺失的密钥”。"
       ]
     },
     "PQC adress key generation": {
       "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
         "无法生成地址密钥！要激活后量子保护，您需要手动生成新的加密密钥。\n\n请前往 ${ settingsLink } 并为每个地址选择“生成密钥”。"
+      ],
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys for each address.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "无法生成地址密钥！若要激活后量子保护，您需要为每个地址完成新后量子加密密钥的生成。\n\n${ goToSettingsLink }，然后选择“生成缺失的密钥”。"
       ]
     },
     "PQC compatibility warning": {
@@ -26323,6 +26386,12 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "您的第三方账户可能已超过 24 小时内的带宽上限，${ BRAND_NAME } 将尽快继续导入过程。"
+      ],
+      "Early access to new apps and features.": [
+        "抢先访问新应用和功能."
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
+        "这是其他 ${ MAIL_APP_NAME } 用户在旧版应用中用于加密发送给您数据的默认密钥"
       ]
     },
     "tooltip": {
@@ -27369,6 +27438,14 @@
       ],
       "Yearly, ${ untilString }": [
         "每一年，${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "密码必须至少包含 ${ MIN_PASSWORD_LENGTH } 个字符"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "请缩短用户名（最长 ${ n } 个字符）"
       ]
     }
   }

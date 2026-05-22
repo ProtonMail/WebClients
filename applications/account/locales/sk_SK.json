@@ -1844,6 +1844,9 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Generate missing keys": [
+        "Vygenerovať chýbajúce kľúče"
       ]
     },
     "action": {
@@ -5616,6 +5619,12 @@
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailové adresy",
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries",
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Keď sa úložisko zaplní na 80 %, pozastavíme import, aby sme uvoľnili miesto pre nové správy."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Začali sme importovať vaše emaily z Gmailu. Dáme vám vedieť, keď bude import hotový."
       ]
     },
     "description": {
@@ -7794,6 +7803,39 @@
       ],
       "Zero keys reactivated": [
         "Žiadne kľúče neboli znovu aktivované"
+      ],
+      "Email is not valid": [
+        "Emailová adresa nie je platná"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Zadajte používateľské meno bez domény (@príklad.com)"
+      ],
+      "Incorrect username": [
+        "Nesprávne používateľské meno"
+      ],
+      "Not a valid number": [
+        "Neplatné číslo"
+      ],
+      "Passwords do not match": [
+        "Heslá sa nezhodujú"
+      ],
+      "The email addresses do not match": [
+        "Emailové adresy sa nezhodujú"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Toto pole presahuje maximálny počet znakov ${ maximumLength }."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Toto pole musí obsahovať minimálne ${ minimumLength } znakov."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Skúste používať iba písmená, číslice a _.-"
+      ],
+      "Username must begin with a letter or digit": [
+        "Používateľské meno musí začínať písmenom alebo číslom"
+      ],
+      "Username must end with a letter or digit": [
+        "Používateľské meno musí končiť písmenom alebo číslom"
       ]
     },
     "error": {
@@ -8941,6 +8983,9 @@
     "Force upgrade safety review": {
       "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
         "Rozumiem, že sa už nebudem môcť prihlásiť do starších verzií ${ BRAND_NAME } aplikácií."
+      ],
+      "Learn more": [
+        "Zistiť viac"
       ]
     },
     "Form heading": {
@@ -9316,7 +9361,7 @@
         "Kontaktujte nás"
       ],
       "Downloads": [
-        "Stiahnuté"
+        "Na stiahnutie"
       ],
       "Enjoying ${ planName }?": [
         "Páči sa vám ${ planName }?"
@@ -13718,6 +13763,18 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } je nezávisle financovaný a funguje bez reklamy. Nižšie uvádzame príklady toho, ako sa táto nezávislosť uplatňuje v praxi."
+      ],
+      "Adding ${ total } gateway server": [
+        "Pridávanie ${ total } servera brány",
+        "Pridávanie ${ total } serverov brány",
+        "Pridávanie ${ total } serverov brány",
+        "Pridávanie ${ total } serverov brány"
+      ],
+      "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
+        "Ak chcete povoliť postkvantovú ochranu, musíte najskôr dokončiť generovanie nových postkvantových šifrovacích kľúčov."
       ]
     },
     "info": {
@@ -15918,6 +15975,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } znakov"
       ]
     },
     "label": {
@@ -20466,11 +20526,17 @@
     "PQC account key generation": {
       "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
         "Kľúče sa nepodarilo vygenerovať. Ak chcete aktivovať postkvantovú ochranu, budete musieť nové šifrovacie kľúče vygenerovať ručne.\n\n${ settingsLink } a vyberte možnosť „Vygenerovať kľúč“ pre svoj účet a pre každú adresu."
+      ],
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Kľúče sa nepodarilo vygenerovať. Ak chcete aktivovať postkvantovú ochranu, musíte dokončiť generovanie nových postkvantových šifrovacích kľúčov.\n\nKliknite na ${ goToSettingsLink } a vyberte možnosť „Vygenerovať chýbajúce kľúče“."
       ]
     },
     "PQC adress key generation": {
       "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
         "Nepodarilo sa vygenerovať klúče adresy. Ak chcete aktivovať postkvantovú ochranu, budete musieť nové šifrovacie kľúče vygenerovať ručne.\n\nPrejdite na ${ settingsLink } a pre každú adresu vyberte možnosť „Vygenerovať kľúč“."
+      ],
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys for each address.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Nepodarilo sa vygenerovať adresné kľúče. Ak chcete aktivovať postkvantovú ochranu, musíte dokončiť generovanie nových postkvantových šifrovacích kľúčov pre každú adresu.\n\nKliknite na ${ goToSettingsLink } a vyberte možnosť „Vygenerovať chýbajúce kľúče“."
       ]
     },
     "PQC compatibility warning": {
@@ -27247,6 +27313,12 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Váš externý účet mohol dosiahnuť 24-hodinový limit prenosovej kapacity. ${ BRAND_NAME } sa pokúsi obnoviť import hneď, ako to bude možné"
+      ],
+      "Early access to new apps and features.": [
+        "Skorší prístup k novým aplikáciám a funkciám."
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
+        "Toto je predvolený kľúč, ktorý používajú ostatní používatelia ${ MAIL_APP_NAME } v starších aplikáciách na šifrovanie údajov, ktoré vám posielajú."
       ]
     },
     "tooltip": {
@@ -28425,6 +28497,20 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročne, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znak",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znaky",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Skúste kratšie používateľské meno (max. ${ n } znak)",
+        "Skúste kratšie používateľské meno (max. ${ n } znaky)",
+        "Skúste kratšie používateľské meno (max. ${ n } znakov)",
+        "Skúste kratšie používateľské meno (max. ${ n } znakov)"
       ]
     }
   }

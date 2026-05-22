@@ -3238,6 +3238,24 @@
       ],
       "Zero keys reactivated": [
         "Ilem n tsura remdent"
+      ],
+      "Email is not valid": [
+        "Imayl mačči d ameɣtu"
+      ],
+      "Not a valid number": [
+        "Mačči d uṭṭun ameɣtu"
+      ],
+      "Passwords do not match": [
+        "Awalen uffiren ur menṭaḍen ara"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Urti-a isra ma drus ${ minimumLength } n yizamulen."
+      ],
+      "Username must begin with a letter or digit": [
+        "Isem n useqdac ilaq ad yebdu s usekkil neɣ s umḍan"
+      ],
+      "Username must end with a letter or digit": [
+        "Isem n useqdac ilaq ad yekfu s usekkil neɣ s umḍan"
       ]
     },
     "Error importing calendar": {
@@ -11110,6 +11128,12 @@
       ],
       "Yearly, ${ untilString }": [
         "S useggas, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n usekkil",
+        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n yisekkilen"
       ]
     }
   }

@@ -1844,6 +1844,9 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Generate missing keys": [
+        "Générer les clés manquantes"
       ]
     },
     "action": {
@@ -5542,6 +5545,12 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresse Gmail",
         "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresses Gmail"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Nous suspendrons les importations lorsque le taux de remplissage atteindra 80 % afin de réserver de l'espace pour les nouveaux messages."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Nous avons commencé à importer vos messages depuis Gmail. Nous vous préviendrons lorsque l'opération sera terminée."
       ]
     },
     "description": {
@@ -7694,6 +7703,39 @@
       ],
       "Zero keys reactivated": [
         "Aucune clé n'est réactivée."
+      ],
+      "Email is not valid": [
+        "L'adresse e-mail n'est pas valide."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Saisissez votre nom d'utilisateur sans le domaine (@example.com)"
+      ],
+      "Incorrect username": [
+        "Le nom d'utilisateur n'est pas correct."
+      ],
+      "Not a valid number": [
+        "Le numéro n'est pas valide."
+      ],
+      "Passwords do not match": [
+        "Les mots de passe ne correspondent pas."
+      ],
+      "The email addresses do not match": [
+        "Les adresses e-mail ne correspondent pas."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Ce champ dépasse le maximum de ${ maximumLength } caractères."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Ce champ nécessite un minimum de ${ minimumLength } caractères."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes : _ . -"
+      ],
+      "Username must begin with a letter or digit": [
+        "Le nom d'utilisateur doit commencer par une lettre ou un chiffre."
+      ],
+      "Username must end with a letter or digit": [
+        "Le nom d'utilisateur doit se terminer par une lettre ou un chiffre."
       ]
     },
     "error": {
@@ -8810,6 +8852,9 @@
     "Force upgrade safety review": {
       "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
         "Je comprends que je ne pourrai plus me connecter sur des anciennes versions des applications mobiles ${ BRAND_NAME }."
+      ],
+      "Learn more": [
+        "En savoir plus"
       ]
     },
     "Form heading": {
@@ -13439,6 +13484,16 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } est financé de manière indépendante et opère sans publicité. Ci-dessous se trouvent des exemples pratiques de l'utilisation de cette indépendance."
+      ],
+      "Adding ${ total } gateway server": [
+        "Ajout de ${ total } serveur de passerelle",
+        "Ajout de ${ total } serveurs de passerelle"
+      ],
+      "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
+        "Pour activer la protection post-quantique, vous devez terminer la génération de vos nouvelles clés de chiffrement post-quantiques."
       ]
     },
     "info": {
@@ -15621,6 +15676,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caractères"
       ]
     },
     "label": {
@@ -26735,6 +26793,12 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Votre compte externe a peut-être atteint sa limite de bande passante pour 24 heures. ${ BRAND_NAME } tentera de reprendre l'importation dès que possible."
+      ],
+      "Early access to new apps and features.": [
+        "Accès en avant-première aux nouvelles fonctionnalités et applications."
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
+        "Il s'agit de la clé par défaut utilisée par les autres utilisateurs de ${ MAIL_APP_NAME } sur les anciennes applications pour chiffrer les données qu'ils vous envoient."
       ]
     },
     "tooltip": {
@@ -27827,6 +27891,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Chaque année, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Le mot de passe doit comporter au moins ${ MIN_PASSWORD_LENGTH } caractère.",
+        "Le mot de passe doit comporter au moins ${ MIN_PASSWORD_LENGTH } caractères."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractère maximum).",
+        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractères maximum)."
       ]
     }
   }

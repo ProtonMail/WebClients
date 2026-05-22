@@ -7694,6 +7694,39 @@
       ],
       "Zero keys reactivated": [
         "Ninguna clave reactivada"
+      ],
+      "Email is not valid": [
+        "Correo no válido"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Ingrese su nombre de usuario sin el dominio (@ejemplo.com)"
+      ],
+      "Incorrect username": [
+        "Nombre de usuario incorrecto"
+      ],
+      "Not a valid number": [
+        "Número no válido"
+      ],
+      "Passwords do not match": [
+        "Las contraseñas no coinciden"
+      ],
+      "The email addresses do not match": [
+        "Las direcciónes de correo electrónico no son las mismas"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Este campo excede el máximo de ${ maximumLength } caracteres."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Este campo requiere un mínimo de ${ minimumLength } caracteres."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Intente usando solo letras, números y _.-"
+      ],
+      "Username must begin with a letter or digit": [
+        "El nombre de usuario debe comenzar con una letra o dígito"
+      ],
+      "Username must end with a letter or digit": [
+        "El nombre de usuario debe terminar con una letra o dígito"
       ]
     },
     "error": {
@@ -27824,6 +27857,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracter",
+        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Intente con un nombre de usuario corto (${ n } caracter máx.)",
+        "Intente con un nombre de usuario corto (${ n } caracteres máx.)"
       ]
     }
   }

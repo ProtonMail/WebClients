@@ -7007,6 +7007,39 @@
       ],
       "Zero keys reactivated": [
         "제로 키 재활성화됨"
+      ],
+      "Email is not valid": [
+        "유효하지 않은 이메일"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "도메인 없이 (@example.co.kr) 사용자 이름을 입력해 주세요."
+      ],
+      "Incorrect username": [
+        "잘못된 사용자 이름"
+      ],
+      "Not a valid number": [
+        "유효하지 않은 번호"
+      ],
+      "Passwords do not match": [
+        "비밀번호가 일치하지 않습니다"
+      ],
+      "The email addresses do not match": [
+        "이메일 주소가 일치하지 않습니다."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "이 필드가 최대 ${ maximumLength } 글자를 초과합니다."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "이 필드에는 ${ minimumLength }자 이상이 필요합니다."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "문자, 숫자 및 _.- 만 사용하십시오"
+      ],
+      "Username must begin with a letter or digit": [
+        "사용자명은 문자로 시작해야 합니다"
+      ],
+      "Username must end with a letter or digit": [
+        "사용자 이름은 문자로 시작하여야 합니다."
       ]
     },
     "error": {
@@ -25236,6 +25269,14 @@
       ],
       "Yearly, ${ untilString }": [
         "연간, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "비밀번호는 최소 ${ MIN_PASSWORD_LENGTH }자 이상이어야 합니다"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "더 짧은 이름을 사용하세요 (최대 ${ n }글자)"
       ]
     }
   }

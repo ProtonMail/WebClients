@@ -1844,6 +1844,9 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Generate missing keys": [
+        "Δημιουργία των κλειδιών που λείπουν"
       ]
     },
     "action": {
@@ -5542,6 +5545,12 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διεύθυνση Gmail",
         "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διευθύνσεις Gmail"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Θα σταματήσουμε τις εισαγωγές στο 80% του αποθηκευτικού χώρου για να κρατήσουμε χώρο για νέα μηνύματα."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Ξεκινήσαμε την εισαγωγή των ηλεκτρονικών μηνυμάτων σας από το Gmail. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
       ]
     },
     "description": {
@@ -7694,6 +7703,39 @@
       ],
       "Zero keys reactivated": [
         "Τα Μηδενικά κλειδιά ενεργοποιήθηκαν ξανά"
+      ],
+      "Email is not valid": [
+        "Η διεύθυνση email δεν είναι έγκυρη"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Εισάγετε το όνομα χρήστη σας χωρίς τον τομέα (@example.com)"
+      ],
+      "Incorrect username": [
+        "Εσφαλμένο όνομα χρήστη"
+      ],
+      "Not a valid number": [
+        "Μη έγκυρος αριθμός"
+      ],
+      "Passwords do not match": [
+        "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
+      ],
+      "The email addresses do not match": [
+        "Οι διευθύνσεις email δεν ταιριάζουν."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Δοκιμάστε να χρησιμοποιήσετε μόνο γράμματα, αριθμούς και _.-"
+      ],
+      "Username must begin with a letter or digit": [
+        "Το όνομα χρήστη πρέπει να ξεκινά με ένα γράμμα ή ένα ψηφίο"
+      ],
+      "Username must end with a letter or digit": [
+        "Το όνομα χρήστη πρέπει να τελειώνει με γράμμα ή ψηφίο"
       ]
     },
     "error": {
@@ -8807,6 +8849,9 @@
     "Force upgrade safety review": {
       "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
         "Κατανοώ ότι δε θα μπορώ πλέον να συνδεθώ σε παλαιότερες εκδόσεις των εφαρμογών ${ BRAND_NAME }."
+      ],
+      "Learn more": [
+        "Μάθετε περισσότερα"
       ]
     },
     "Form heading": {
@@ -13436,6 +13481,16 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } χρηματοδοτείται ανεξάρτητα και λειτουργεί χωρίς διαφημίσεις. Παρακάτω παρατίθενται παραδείγματα για το πώς αυτή η ανεξαρτησία έχει χρησιμοποιηθεί στην πράξη."
+      ],
+      "Adding ${ total } gateway server": [
+        "Προσθήκη ${ total } διακομιστή πύλης",
+        "Προσθήκη ${ total } διακομιστών πύλης"
+      ],
+      "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
+        "Για να ενεργοποιήσετε τη μετα-κβαντική προστασία, θα πρέπει να ολοκληρώσετε τη δημιουργία των νέων κλειδιών κρυπτογράφησης μετά την κβαντική."
       ]
     },
     "info": {
@@ -15618,6 +15673,9 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } χαρακτήρες"
       ]
     },
     "label": {
@@ -20032,11 +20090,17 @@
     "PQC account key generation": {
       "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
         "Δεν ήταν δυνατή η δημιουργία κλειδιών. Για να ενεργοποιήσετε την προστασία μετά την κβαντική εποχή, θα πρέπει να δημιουργήσετε τα νέα κλειδιά κρυπτογράφησης χειροκίνητα.\n\n${ settingsLink } και επιλέξτε 'Δημιουργία κλειδιού' για τον λογαριασμό σας και για κάθε διεύθυνση."
+      ],
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Δεν ήταν δυνατή η δημιουργία κλειδιών. Για να ενεργοποιήσετε την προστασία μετά την κβαντική εποχή, θα πρέπει να ολοκληρώσετε τη δημιουργία των νέων κλειδιών κρυπτογράφησης μετά-κβαντικής εποχής.\n\n${ goToSettingsLink } και επιλέξτε «Δημιουργία κλειδιών που λείπουν»."
       ]
     },
     "PQC adress key generation": {
       "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
         "Δεν ήταν δυνατή η δημιουργία κλειδιών διεύθυνσης. Για να ενεργοποιήσετε την προστασία μετά την κβαντική εποχή, θα πρέπει να δημιουργήσετε τα νέα κλειδιά κρυπτογράφησης χειροκίνητα.\n\nΜεταβείτε στο ${ settingsLink } και επιλέξτε 'Δημιουργία κλειδιού' για κάθε διεύθυνση."
+      ],
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys for each address.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Δεν ήταν δυνατή η δημιουργία κλειδιών διεύθυνσης. Για να ενεργοποιήσετε την προστασία μετά την κβαντική εποχή, θα πρέπει να ολοκληρώσετε τη δημιουργία των νέων κλειδιών κρυπτογράφησης μετά-κβαντικής εποχής για κάθε διεύθυνση.\n\n${ goToSettingsLink } και επιλέξτε «Δημιουργία κλειδιών που λείπουν»."
       ]
     },
     "PQC compatibility warning": {
@@ -26633,6 +26697,12 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Ίσως ο εξωτερικός λογαριασμός σας έχει εξαντλήσει το όριό του στη μετάδοση ανά 24ωρο. Το ${ BRAND_NAME } θα δοκιμάσει να συνεχίσει την εισαγωγή το συντομότερο δυνατό."
+      ],
+      "Early access to new apps and features.": [
+        "Πρώιμη πρόσβαση σε νέες εφαρμογές και δυνατότητες."
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
+        "Αυτό είναι το προεπιλεγμένο κλειδί που χρησιμοποιείται από άλλους ${ MAIL_APP_NAME } χρήστες σε παλαιότερες εφαρμογές για την κρυπτογράφηση δεδομένων που σας στέλνουν"
       ]
     },
     "tooltip": {
@@ -27725,6 +27795,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Ετησίως, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρα",
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρες"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρα)",
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρες)"
       ]
     }
   }

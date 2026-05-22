@@ -6734,6 +6734,39 @@
       ],
       "Zero keys reactivated": [
         "Ninguna clave reactivada"
+      ],
+      "Email is not valid": [
+        "El correo no es válido."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduce tu nombre de usuario sin el dominio (@ejemplo.com)"
+      ],
+      "Incorrect username": [
+        "El nombre de usuario no es correcto."
+      ],
+      "Not a valid number": [
+        "No es un número válido."
+      ],
+      "Passwords do not match": [
+        "Las contraseñas no coinciden."
+      ],
+      "The email addresses do not match": [
+        "Las direcciones de correo electrónico no coinciden"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Este campo excede el máximo de ${ maximumLength } caracteres."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Este campo requiere un mínimo de ${ minimumLength } caracteres."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Utiliza solo letras, números y _.-"
+      ],
+      "Username must begin with a letter or digit": [
+        "El nombre de usuario debe comenzar con una letra o un número."
+      ],
+      "Username must end with a letter or digit": [
+        "El nombre de usuario debe terminar con una letra o un número."
       ]
     },
     "error": {
@@ -24726,6 +24759,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La contraseña debe contener al menos ${ MIN_PASSWORD_LENGTH } carácter.",
+        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prueba con un nombre de usuario más corto (máx. ${ n } carácter)",
+        "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)"
       ]
     }
   }

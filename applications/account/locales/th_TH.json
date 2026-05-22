@@ -6450,6 +6450,36 @@
       ],
       "Zero keys reactivated": [
         "คีย์ว่างเปล่าถูกเปิดใช้งาน"
+      ],
+      "Email is not valid": [
+        "อีเมลไม่ถูกต้อง"
+      ],
+      "Incorrect username": [
+        "ชื่อผู้ใช้ไม่ถูกต้อง"
+      ],
+      "Not a valid number": [
+        "หมายเลขไม่ถูกต้อง"
+      ],
+      "Passwords do not match": [
+        "รหัสผ่านไม่ตรงกัน"
+      ],
+      "The email addresses do not match": [
+        "ที่อยู่อีเมลไม่ตรงกัน"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "ช่องกรอกนี้เกินขนาดสูงสุด ${ maximumLength } ตัวอักษรแล้ว"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "ต้องใส่อักษรอย่างน้อย ${ minimumLength } ตัวอักษรซึ่งเป็นจำนวนที่กำหนดไว้ในช่องนี้"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "ลองใหม่ให้ใช้ตัวอักษร ตัวเลข และ _ - เท่านั้น"
+      ],
+      "Username must begin with a letter or digit": [
+        "ชื่อผู้ใช้ต้องขึ้นต้นด้วยตัวอักษรหรือตัวเลข"
+      ],
+      "Username must end with a letter or digit": [
+        "ชื่อผู้ใช้ต้องลงท้ายด้วยตัวอักษรหรือตัวเลข"
       ]
     },
     "error": {
@@ -23730,6 +23760,14 @@
       ],
       "Yearly, ${ untilString }": [
         "ทุกๆ ปี ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "รหัสต้องมีอักขระอย่างน้อย ${ MIN_PASSWORD_LENGTH } อักษร"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "ลองใช้ชื่อผู้ใช้ที่สั้นกว่านี้ (สูงสุด ${ n } อักขระ)"
       ]
     }
   }

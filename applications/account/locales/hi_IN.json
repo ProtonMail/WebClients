@@ -4113,6 +4113,36 @@
       ],
       "Zero keys reactivated": [
         "शून्य कुंजियाँ पुन: सक्रिय"
+      ],
+      "Email is not valid": [
+        "ईमेल मान्य नहीं है"
+      ],
+      "Incorrect username": [
+        "गलत यूज़रनेम"
+      ],
+      "Not a valid number": [
+        "मान्य संख्या नहीं है"
+      ],
+      "Passwords do not match": [
+        "पासवर्ड्स समान नहीं हैं"
+      ],
+      "The email addresses do not match": [
+        "ईमेल पते मेल नहीं खाते"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "ये फील्ड ${ maximumLength } अक्षर की सीमा पार करता है।"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "इस फ़ील्ड के लिए कम से कम ${ minimumLength } वर्णों की आवश्यकता है।"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "सिर्फ अक्षर, नंबर, और _ के इस्तेमाल की कोशिश करें।-"
+      ],
+      "Username must begin with a letter or digit": [
+        "यूज़रनेम अक्षर या अंकसे शुरु होना चाहिए"
+      ],
+      "Username must end with a letter or digit": [
+        "यूज़रनेम के अंत में अक्षर या अंक होना चाहिए"
       ]
     },
     "Error importing calendar": {
@@ -16713,6 +16743,16 @@
       ],
       "Yearly, ${ untilString }": [
         "वार्षिक, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होना चाहिए",
+        "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होने चाहिए"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)",
+        "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)"
       ]
     }
   }

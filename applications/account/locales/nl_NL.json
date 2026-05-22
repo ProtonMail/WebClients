@@ -7577,6 +7577,39 @@
       ],
       "Zero keys reactivated": [
         "Nul sleutels gereactiveerd"
+      ],
+      "Email is not valid": [
+        "E-mailadres is ongeldig"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Voer uw gebruikersnaam in zonder het domein (@example.com)"
+      ],
+      "Incorrect username": [
+        "Onjuiste gebruikersnaam"
+      ],
+      "Not a valid number": [
+        "Geen geldig getal"
+      ],
+      "Passwords do not match": [
+        "Wachtwoorden komen niet overeen"
+      ],
+      "The email addresses do not match": [
+        "De e-mailadressen komen niet overeen"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dit veld vereist een minimum van ${ minimumLength } tekens."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Probeer enkel letters, nummers en _.- te gebruiken"
+      ],
+      "Username must begin with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer beginnen"
+      ],
+      "Username must end with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer eindigen"
       ]
     },
     "error": {
@@ -27530,6 +27563,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Jaarlijks ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } tekens bevatten"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
+        "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
       ]
     }
   }

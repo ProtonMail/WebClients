@@ -4914,6 +4914,39 @@
       ],
       "Zero keys reactivated": [
         "Ноль ключей активировано повторно"
+      ],
+      "Email is not valid": [
+        "Эл. почта недействительна"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Введите ваше имя пользователя без домена (@example.com)"
+      ],
+      "Incorrect username": [
+        "Некорректное имя пользователя"
+      ],
+      "Not a valid number": [
+        "Номер недействителен"
+      ],
+      "Passwords do not match": [
+        "Пароли не совпадают"
+      ],
+      "The email addresses do not match": [
+        "Адреса электронной почты не совпадают"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Длина этого поля превысила максимальные ${ maximumLength } символов."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Минимальная длина для этого поля ${ minimumLength } символов."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Попробуйте, используя только буквы, цифры и _.-"
+      ],
+      "Username must begin with a letter or digit": [
+        "Имя пользователя должно начинаться с буквы или цифры"
+      ],
+      "Username must end with a letter or digit": [
+        "Имя пользователя должно заканчиваться буквой или цифрой"
       ]
     },
     "Error importing calendar": {
@@ -19729,6 +19762,20 @@
       ],
       "Yearly, ${ untilString }": [
         "Ежегодно ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль должен включать по меньшей мере ${ MIN_PASSWORD_LENGTH } символ",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знак)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знака)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)"
       ]
     }
   }

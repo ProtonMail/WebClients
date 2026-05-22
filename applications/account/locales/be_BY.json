@@ -5616,6 +5616,12 @@
         "Ваш тарыфны план агулам падтрымлівае ${ MAX_SYNC_PAID_USER } адрасы Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Імпартаванне будзе прыпынена, калі сховішча будзе запоўнена на 80%. Гэта дазволіць зарэзерваваць астатняе месца для новых паведамленняў."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Пачалося імпартаванне вашых лістоў з Gmail. Вы будзеце апавешчаны, калі працэс будзе завершаны."
       ]
     },
     "description": {
@@ -7791,6 +7797,39 @@
       ],
       "Zero keys reactivated": [
         "Нуль ключоў паўторна актывавана"
+      ],
+      "Email is not valid": [
+        "Несапраўдная электронная пошта"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Увядзіце сваё імя карыстальніка без дамена (@example.com)"
+      ],
+      "Incorrect username": [
+        "Няправільнае імя карыстальніка"
+      ],
+      "Not a valid number": [
+        "Несапраўдны нумар"
+      ],
+      "Passwords do not match": [
+        "Паролі не супадаюць"
+      ],
+      "The email addresses do not match": [
+        "Адрасы электроннай пошты не супадаюць"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Гэта поле перавышае максімальную колькасць сімвалаў (дазволена: ${ maximumLength })."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Поле павінна змяшчаць як мінімум ${ minimumLength } сімвалаў."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
+      ],
+      "Username must begin with a letter or digit": [
+        "Імя карыстальніка павінна пачынацца з літары або лічбы"
+      ],
+      "Username must end with a letter or digit": [
+        "Імя карыстальніка павінна заканчвацца літарай або лічбай"
       ]
     },
     "error": {
@@ -13712,6 +13751,15 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "Adding ${ total } gateway server": [
+        "Дадаванне ${ total } сервера шлюза",
+        "Дадаванне ${ total } сервераў шлюза",
+        "Дадаванне ${ total } сервераў шлюза",
+        "Дадаванне ${ total } сервераў шлюза"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Часова недаступна з-за высокага попыту. Паспрабуйце яшчэ раз пазней."
       ]
     },
     "info": {
@@ -15912,6 +15960,9 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "Сімвалаў: ${ value.length }/${ maxLength }"
       ]
     },
     "label": {
@@ -20465,6 +20516,9 @@
     "PQC adress key generation": {
       "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
         "Не ўдалося згенерыраваць ключы. Вам спатрэбіцца згенерыраваць новыя ключы шыфравання ўручную, каб актываваць постквантавую абарону.\n\nПерайдзіце ў ${ settingsLink } і выберыце \"Згенерыраваць ключ\" для вашага кожнага адраса."
+      ],
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys for each address.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Немагчыма згенерыраваць адрасныя ключы. Вам неабходна завяршыць генерацыю вашых новых постквантавых ключоў для кожнага адраса, каб актываваць постквантавую абарону.\n\n${ goToSettingsLink } і выберыце \"Генерыраваць адсутныя ключы\"."
       ]
     },
     "PQC compatibility warning": {
@@ -28407,6 +28461,20 @@
       ],
       "Yearly, ${ untilString }": [
         "Штогод, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвал",
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалы",
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалаў",
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалаў"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвал)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)"
       ]
     }
   }

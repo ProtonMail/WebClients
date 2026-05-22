@@ -3909,6 +3909,9 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "您的帳號支援最多 ${ MAX_SYNC_PAID_USER } Gmail 位址"
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "您已有個 Gmail 位址轉寄至 ${ MAIL_APP_NAME }。於下方連接至它以直接於 ${ MAIL_APP_NAME } 傳送和接收電子郵件。"
       ]
     },
     "description": {
@@ -5026,6 +5029,36 @@
       ],
       "Zero keys reactivated": [
         "重新啟動 0 把金鑰"
+      ],
+      "Email is not valid": [
+        "電郵無效"
+      ],
+      "Incorrect username": [
+        "錯誤的使用者名稱"
+      ],
+      "Not a valid number": [
+        "號碼無效"
+      ],
+      "Passwords do not match": [
+        "密碼不一致"
+      ],
+      "The email addresses do not match": [
+        "電子郵件位址不相符"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "此欄位還剩下 ${ maximumLength } 個字元。"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "此欄位至少須有 ${ minimumLength } 個字元。"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "嘗試僅使用字母、數字與 _.-"
+      ],
+      "Username must begin with a letter or digit": [
+        "使用者名稱的開頭必須為字母或數字"
+      ],
+      "Username must end with a letter or digit": [
+        "使用者名稱的結尾必須為字母或數字"
       ]
     },
     "error": {
@@ -9204,6 +9237,15 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "替成員創建一個安全 ${ memberCount } 雲端"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "因為過量請求暫時不可用。請稍後在試。"
       ]
     },
     "info": {
@@ -12115,6 +12157,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "Access all countries": [
+        "存取所有國家"
+      ],
+      "Unlock streaming": [
+        "解鎖串流"
       ]
     },
     "new_plans: feature highlight": {
@@ -12572,6 +12620,9 @@
       ],
       "Support for ${ n } custom email domain": [
         "支援 ${ n } 組自訂電子郵件網域"
+      ],
+      "${ n } country": [
+        "${ n } 個國家"
       ]
     },
     "news": {
@@ -13785,6 +13836,9 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "續訂價格取決於計費區域和 VAT 號碼。"
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "續訂價格取決於計費區域和商務號碼。"
       ]
     },
     "Payments.Saved payment method details": {
@@ -19113,6 +19167,14 @@
       ],
       "Yearly, ${ untilString }": [
         "每年，${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "密碼至少必須包含 ${ MIN_PASSWORD_LENGTH } 個字元"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "請輸入一個更短的使用者名稱 (${ n } characters max)"
       ]
     }
   }

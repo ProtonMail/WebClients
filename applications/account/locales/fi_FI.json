@@ -6197,6 +6197,39 @@
       ],
       "Zero keys reactivated": [
         "Yhtään avainta ei aktivoitu uudelleen"
+      ],
+      "Email is not valid": [
+        "Virheellinen sähköpostiosoite"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Syötä käyttäjätunnuksesi ilman verkkotunnusta (@example.com)"
+      ],
+      "Incorrect username": [
+        "Virheellinen käyttäjätunnus"
+      ],
+      "Not a valid number": [
+        "Virheellinen numero"
+      ],
+      "Passwords do not match": [
+        "Salasanat eivät täsmää"
+      ],
+      "The email addresses do not match": [
+        "Sähköpostiosoitteet eivät täsmää"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Kenttä ylittää ${ maximumLength }-merkin enimmäismäärän."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Kenttä edellyttää vähintään ${ minimumLength } merkkiä."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Kokeile vain kirjaimia, numeroita ja merkkejä _.-"
+      ],
+      "Username must begin with a letter or digit": [
+        "Käyttäjätunnuksen on alettava kirjaimella tai numerolla"
+      ],
+      "Username must end with a letter or digit": [
+        "Käyttäjätunnuksen on päätyttävä kirjaimella tai numerolla"
       ]
     },
     "error": {
@@ -23304,6 +23337,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Vuosittain, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Salasanan täytyy sisältää ainakin ${ MIN_PASSWORD_LENGTH } merkki",
+        "Salasanan täytyy sisältää vähintään ${ MIN_PASSWORD_LENGTH }-merkkiä"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkki)",
+        "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkkiä)"
       ]
     }
   }

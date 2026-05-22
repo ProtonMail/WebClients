@@ -1844,6 +1844,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Generate missing keys": [
+        "Eksik anahtarları oluştur"
       ]
     },
     "action": {
@@ -5542,6 +5545,12 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor",
         "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Yeni iletilere yer ayırmak için depolama alanı %80'e ulaştığında içe aktarma işlemlerini duraklatacağız."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Gmail'deki e-postalarınızı içe aktarmaya başladık. İşlem tamamlandığında size haber vereceğiz."
       ]
     },
     "description": {
@@ -7694,6 +7703,39 @@
       ],
       "Zero keys reactivated": [
         "Hiç bir anahtar yeniden kullanıma alınmadı"
+      ],
+      "Email is not valid": [
+        "E-posta geçersiz"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Kullanıcı adınızı etki alanı (@example.com) olmadan yazın"
+      ],
+      "Incorrect username": [
+        "Kullanıcı adı yanlış"
+      ],
+      "Not a valid number": [
+        "Numara geçerli değil"
+      ],
+      "Passwords do not match": [
+        "Parola ile onayı aynı değil"
+      ],
+      "The email addresses do not match": [
+        "E-posta adresleri eşleşmiyor"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
+      ],
+      "Username must begin with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile başlamalı"
+      ],
+      "Username must end with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile bitmeli"
       ]
     },
     "error": {
@@ -8807,6 +8849,9 @@
     "Force upgrade safety review": {
       "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
         "${ BRAND_NAME } uygulamalarının eski sürümlerinde artık oturum açamayacağımı anlıyorum."
+      ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
       ]
     },
     "Form heading": {
@@ -13436,6 +13481,16 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } bağımsız olarak finanse edilmektedir ve reklam almadan faaliyet göstermektedir. Aşağıda bu bağımsızlığın pratikte nasıl kullanıldığına dair örnekler yer almaktadır."
+      ],
+      "Adding ${ total } gateway server": [
+        "${ total } ağ geçidi sunucusu ekleniyor",
+        "${ total } ağ geçidi sunucusu ekleniyor"
+      ],
+      "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
+        "Kuantum sonrası korumayı etkinleştirmek için yeni kuantum sonrası şifreleme anahtarlarınızı oluşturma işlemini tamamlamanız gerekecek."
       ]
     },
     "info": {
@@ -15618,6 +15673,9 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } karakter"
       ]
     },
     "label": {
@@ -20032,11 +20090,17 @@
     "PQC account key generation": {
       "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
         "Anahtarlar oluşturulamadı. Kuantum sonrası korumasını açmak için yeni şifreleme anahtarlarınızı el ile oluşturmanız gerekir.\n\n${ settingsLink } bağlantısıdan hesabınızdaki her adres için 'Anahtar oluştur' seçeneğini kullanın."
+      ],
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Anahtarlar oluşturulamadı. Kuantum sonrası korumayı etkinleştirmek için yeni kuantum sonrası şifreleme anahtarlarınızın oluşturulma işlemini tamamlamanız gerekiyor.\n\n${ goToSettingsLink } kısmına gidin ve 'Eksik anahtarları oluştur' seçeneğini seçin."
       ]
     },
     "PQC adress key generation": {
       "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
         "Adres anahtarları oluşturulamadı. Kuantum sonrası korumasını açmak için yeni şifreleme anahtarlarınızı el ile oluşturmanız gerekir.\n\n${ settingsLink } bağlantısından her adres için 'Anahtar oluştur' seçeneğini kullanın."
+      ],
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys for each address.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Adres anahtarları oluşturulamadı. Kuantum sonrası korumayı etkinleştirmek için her bir adres için yeni kuantum sonrası şifreleme anahtarlarınızın oluşturulma işlemini tamamlamanız gerekecek.\n\n${ goToSettingsLink } kısmına gidin ve 'Eksik anahtarları oluştur' seçeneğini seçin."
       ]
     },
     "PQC compatibility warning": {
@@ -26729,6 +26793,12 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Dış hesabınız 24 saatlik bant genişliği sınırına ulaşmış olabilir. ${ BRAND_NAME }, olabilecek en kısa sürede içe aktarma işlemini sürdürmeye çalışacak."
+      ],
+      "Early access to new apps and features.": [
+        "Yeni uygulama ve özelliklere erken erişim."
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
+        "Bu anahtar diğer ${ MAIL_APP_NAME } kullanıcılarının size gönderdikleri verileri şifrelemek için eski uygulamalarda kullandıkları varsayılan anahtardır."
       ]
     },
     "tooltip": {
@@ -27821,6 +27891,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Yılda bir, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır",
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
       ]
     }
   }

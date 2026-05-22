@@ -1841,6 +1841,9 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Generate missing keys": [
+        "Generér manglende nøgler"
       ]
     },
     "action": {
@@ -5416,6 +5419,12 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Vi sætter importer på pause ved 80% lagerplads for at reservere plads til nye beskeder."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Vi er begyndt at importere din e-mails fra Gmail. Vi giver dig besked når det er færdigt."
       ]
     },
     "description": {
@@ -7568,6 +7577,39 @@
       ],
       "Zero keys reactivated": [
         "Nul nøgler genaktiveret"
+      ],
+      "Email is not valid": [
+        "E-mail er ikke gyldig"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Indtast dit brugernavn uden domænet (@example.com)"
+      ],
+      "Incorrect username": [
+        "Forkert brugernavn"
+      ],
+      "Not a valid number": [
+        "Ikke et gyldigt nummer"
+      ],
+      "Passwords do not match": [
+        "Adgangskoder stemmer ikke overens"
+      ],
+      "The email addresses do not match": [
+        "E-mailadresserne stemmer ikke overens"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dette felt kræver minimum ${ minimumLength } tegn."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Prøv kun at bruge bogstaver, tal og _.-"
+      ],
+      "Username must begin with a letter or digit": [
+        "Brugernavn skal begynde med et bogstav eller et tal"
+      ],
+      "Username must end with a letter or digit": [
+        "Brugernavn skal ende på et bogstav eller et tal"
       ]
     },
     "error": {
@@ -8684,6 +8726,9 @@
     "Force upgrade safety review": {
       "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
         "Jeg forstår, at jeg ikke længere vil kunne logge ind fra ældre versioner af ${ BRAND_NAME }-apps."
+      ],
+      "Learn more": [
+        "Få mere at vide"
       ]
     },
     "Form heading": {
@@ -13313,6 +13358,16 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } er uafhængigt finansieret og drives uden nogen markedsføring. Nedenfor er nogle eksempler på hvordan denne uafhængighed er blevet brugt i praksis."
+      ],
+      "Adding ${ total } gateway server": [
+        "Tilføjer ${ total } gateway-server",
+        "Tilføjer ${ total } gateway-servere"
+      ],
+      "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
+        "For at aktivere post-kvantebeskyttelse skal du afslutte genereringen af dine nye post-kvante krypteringsnøgler."
       ]
     },
     "info": {
@@ -15492,6 +15547,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tegn"
       ]
     },
     "label": {
@@ -19900,11 +19958,17 @@
     "PQC account key generation": {
       "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
         "Nye nøgler kunne ikke genereres. For at aktivere post-kvante-beskyttelse skal du generere dine nye krypteringsnøgler manuelt.\n\n${ settingsLink } og vælg \"Generer nøgle\" for Deres konto og for hver adresse."
+      ],
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Nøgler kunne ikke genereres. For at aktivere post-kvantebeskyttelse skal du afslutte genereringen af dine nye post-kvante krypteringsnøgler.\n\n${ goToSettingsLink } og vælg \"Generér manglende nøgler\"."
       ]
     },
     "PQC adress key generation": {
       "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
         "Adressenøgler kunne ikke genereres. For at aktivere post-kvantum-beskyttelse skal du generere dine nye krypteringsnøgler manuelt.\n\nGå til ${ settingsLink } og vælg \"Generér nøgle\" for hver adresse."
+      ],
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys for each address.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Adressenøgler kunne ikke genereres. For at aktivere post-kvantebeskyttelse skal du afslutte genereringen af dine nye post-kvante krypteringsnøgler for hver adresse.\n\n${ goToSettingsLink } og vælg \"Generér manglende nøgler\"."
       ]
     },
     "PQC compatibility warning": {
@@ -26591,6 +26655,12 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Din eksterne konto har muligvis nået sin 24-timers båndbreddegrænse. ${ BRAND_NAME } vil forsøge at genoptage importen så hurtig som muligt."
+      ],
+      "Early access to new apps and features.": [
+        "Forhåndsadgang til nye apps og funktioner."
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
+        "Dette er standardnøglen, der bruges af andre ${ MAIL_APP_NAME }-brugere på ældre mobilapps til at kryptere de data, som de sender til dig"
       ]
     },
     "tooltip": {
@@ -27683,6 +27753,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligt, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn",
+        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prøv et kortere brugernavn (maks. ${ n } tegn)",
+        "Prøv et kortere brugernavn (maks. ${ n } tegn)"
       ]
     }
   }

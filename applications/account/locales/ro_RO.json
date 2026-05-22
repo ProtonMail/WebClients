@@ -1844,6 +1844,9 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Generate missing keys": [
+        "Generare chei lipsă"
       ]
     },
     "action": {
@@ -5579,6 +5582,12 @@
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adresă Gmail",
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adrese Gmail",
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } de adrese Gmail"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Importarea se va opri la 80% din spațiul de stocare pentru a rezerva spațiu pentru mesajele noi."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "S-a început importarea mesajelor de pe Gmail. Vă vom anunța când va fi gata."
       ]
     },
     "description": {
@@ -7744,6 +7753,39 @@
       ],
       "Zero keys reactivated": [
         "Zero taste reactivate."
+      ],
+      "Email is not valid": [
+        "E-mailul nu este valid"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduceți numele de utilizator fără domeniu (@exemplu.com)."
+      ],
+      "Incorrect username": [
+        "Nume de utilizator incorect."
+      ],
+      "Not a valid number": [
+        "Nu este un număr valid"
+      ],
+      "Passwords do not match": [
+        "Parolele nu coincid"
+      ],
+      "The email addresses do not match": [
+        "Adresele de e-mail nu se potrivesc."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Acest câmp depășește maximul de ${ maximumLength } de caractere."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Acest câmp necesită un minimum de ${ minimumLength } caractere."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Folosiți doar litere, cifre și _ . -"
+      ],
+      "Username must begin with a letter or digit": [
+        "Numele de utilizator trebuie să înceapă cu o literă sau cifră."
+      ],
+      "Username must end with a letter or digit": [
+        "Numele de utilizator trebuie să se termine cu o literă sau cifră."
       ]
     },
     "error": {
@@ -8874,6 +8916,9 @@
     "Force upgrade safety review": {
       "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
         "Înțeleg că nu mă voi mai putea conecta în versiunile mai vechi ale aplicațiilor ${ BRAND_NAME }."
+      ],
+      "Learn more": [
+        "Detalii"
       ]
     },
     "Form heading": {
@@ -13577,6 +13622,17 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } este finanțat independent și operează fără publicitate. Mai jos sunt exemple despre cum a fost folosită această independență în practică."
+      ],
+      "Adding ${ total } gateway server": [
+        "Se adaugă porți de acces servere: ${ total }",
+        "Se adaugă porți de acces servere: ${ total }",
+        "Se adaugă porți de acces servere: ${ total }"
+      ],
+      "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
+        "Pentru a activa protecția post-cuantică, va trebui să finalizați generarea noilor chei de criptare post-cuantice."
       ]
     },
     "info": {
@@ -15768,6 +15824,9 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } de caractere"
       ]
     },
     "label": {
@@ -20249,11 +20308,17 @@
     "PQC account key generation": {
       "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
         "Nu s-au putut genera cheile. Pentru a activa protecția post-cuantică, va trebui să generați manual noile chei de criptare.\n\n${ settingsLink } și selectați „Generare cheie” pentru cont și pentru fiecare adresă."
+      ],
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Nu s-au putut genera cheile. Pentru a activa protecția post-cuantică, va trebui să finalizați generarea noilor chei de criptare post-cuantică pentru fiecare adresă.\n\n${ goToSettingsLink } și selectați „Generare chei lipsă”."
       ]
     },
     "PQC adress key generation": {
       "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
         "Nu s-au putut genera cheile. Pentru a activa protecția post-cuantică, va trebui să generați manual noile chei de criptare.\n\nAccesați ${ settingsLink } și selectați „Generare cheie” pentru cont și pentru fiecare adresă."
+      ],
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys for each address.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Nu s-au putut genera chei de adresă. Pentru a activa protecția post-cuantică, va trebui să finalizați generarea noilor chei de criptare post-cuantică pentru fiecare adresă.\n\n${ goToSettingsLink } și selectați „Generare chei lipsă”."
       ]
     },
     "PQC compatibility warning": {
@@ -27036,6 +27101,12 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Contul extern ar putea să fi atins limita lățimii de bandă pentru 24 de ore. ${ BRAND_NAME } va încerca să reia importarea cât mai curând posibil."
+      ],
+      "Early access to new apps and features.": [
+        "Acces timpuriu la aplicațiile și funcțiile noi."
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
+        "Aceasta este cheia implicită folosită de alți utilizatori ai ${ MAIL_APP_NAME } din aplicațiile mai vechi pentru a cripta datele pe care vi le trimit."
       ]
     },
     "tooltip": {
@@ -28171,6 +28242,18 @@
       ],
       "Yearly, ${ untilString }": [
         "Anual, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caracter",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caractere",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } de caractere"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)"
       ]
     }
   }

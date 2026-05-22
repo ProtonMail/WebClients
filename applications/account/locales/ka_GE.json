@@ -6676,6 +6676,36 @@
       ],
       "Zero keys reactivated": [
         "თავიდან გააქტიურდა 0 გასაღები"
+      ],
+      "Email is not valid": [
+        "ელფოსტა არასწორია"
+      ],
+      "Incorrect username": [
+        "მომხმარებლის სახელი არასწორია"
+      ],
+      "Not a valid number": [
+        "არასწორი ნომერი"
+      ],
+      "Passwords do not match": [
+        "პაროლები არ ემთხვევა"
+      ],
+      "The email addresses do not match": [
+        "ელფოსტის მისამართები არ ემთხვევა"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "ველი ${ maximumLength } დაშვებულ სიმბოლოს აჭარბებს."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "ეს ველი მოითხოვს, მინიმუმ, ${ minimumLength } სიმბოლოს."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "სცადეთ გამოიყენოთ, მხოლოდ, ანბანის სიმბოლოები, ციფრები და _.-"
+      ],
+      "Username must begin with a letter or digit": [
+        "მომხმარებლის სახელი ასოთი ან ციფრით უნდა იწყებოდეს"
+      ],
+      "Username must end with a letter or digit": [
+        "მომხმარებლის სახელი ასოთი ან ციფრით უნდა მთავრდებოდეს"
       ]
     },
     "error": {
@@ -24320,6 +24350,16 @@
       ],
       "Yearly, ${ untilString }": [
         "ყოველწლიურად, ${ untilString }-მდე"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს",
+        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)",
+        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)"
       ]
     }
   }

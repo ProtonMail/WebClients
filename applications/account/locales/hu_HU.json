@@ -4904,6 +4904,36 @@
       ],
       "Zero keys reactivated": [
         "Nulla kulcs újraaktiválva"
+      ],
+      "Email is not valid": [
+        "Érvénytelen e-mail cím"
+      ],
+      "Incorrect username": [
+        "Helytelen felhasználónév"
+      ],
+      "Not a valid number": [
+        "Érvénytelen szám"
+      ],
+      "Passwords do not match": [
+        "A jelszavak nem egyeznek"
+      ],
+      "The email addresses do not match": [
+        "Az e-mail címek nem egyeznek"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "A mező tartalma hosszabb a megengedett maximum ${ maximumLength } karakternél."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Legalább ${ minimumLength } karakter szükséges ebben a mezőben."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Próbáljon csak betűket, számokat és _.-t használni"
+      ],
+      "Username must begin with a letter or digit": [
+        "Felhasználónévnek betűvel vagy számmal kell kezdődnie"
+      ],
+      "Username must end with a letter or digit": [
+        "Felhasználónévnek betűvel vagy számmal kell végződnie"
       ]
     },
     "error": {
@@ -19579,6 +19609,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Évente, ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia",
+        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)",
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)"
       ]
     }
   }

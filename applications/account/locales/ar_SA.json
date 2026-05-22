@@ -6224,6 +6224,36 @@
       ],
       "Zero keys reactivated": [
         "صفر من المفاتيح تم اعادة تفعليه"
+      ],
+      "Email is not valid": [
+        "البريد الإلكتروني غير صحيح"
+      ],
+      "Incorrect username": [
+        "اسم مستخدم غير صحيح"
+      ],
+      "Not a valid number": [
+        "رقم غير صحيح"
+      ],
+      "Passwords do not match": [
+        "كلمتا المرور غير متطابقتين"
+      ],
+      "The email addresses do not match": [
+        "عناوين البريد الإلكتروني غير متطابقة"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "يتجاوز هذا الحقل الحد الأقصى البالغ ${ maximumLength } حرفًا."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "يتطلب هذا الحقل على الأقل ${ minimumLength } حرفا."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "حاول استخدام الأحرف والأرقام و_.- فقط"
+      ],
+      "Username must begin with a letter or digit": [
+        "يجب أن يبدأ اسم المستخدم بحرف أو رقم"
+      ],
+      "Username must end with a letter or digit": [
+        "يجب أن ينتهي اسم المستخدم بحرف أو رقم"
       ]
     },
     "error": {
@@ -7574,6 +7604,9 @@
       ],
       "Your plan": [
         "خطة اشتراكك"
+      ],
+      "Downloads": [
+        "التنزيلات"
       ]
     },
     "Hint": {
@@ -23812,6 +23845,16 @@
       ],
       "Yearly, ${ untilString }": [
         "سنويًا، ${ untilString }"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
+        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
+        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
+        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
+        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
+        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل"
       ]
     }
   }
