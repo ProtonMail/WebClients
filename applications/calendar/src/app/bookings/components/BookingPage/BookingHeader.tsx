@@ -112,7 +112,9 @@ export const BookingHeader = ({ gridSize, availabilityState }: Props) => {
                         size={viewportWidth['<=small'] ? 'medium' : 'large'}
                     >
                         <IconHeroCalendar className="booking-button-minicalendar-icon" />
-                        <span className="text-ellipsis">{format(selectedDate, 'MMMM Y', { locale: dateLocale })}</span>
+                        <span className="text-ellipsis">
+                            {format(selectedDate, 'MMMM yyyy', { locale: dateLocale })}
+                        </span>
                         {isOpen ? <IcChevronUp className="shrink-0" /> : <IcChevronDown className="shrink-0" />}
                     </Button>
                     <Dropdown

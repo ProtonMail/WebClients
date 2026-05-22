@@ -87,7 +87,7 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
     const subtitle = (
         <>
             <div className="booking-color-title text-xl booking-color-title ">
-                {format(timeslot.tzDate, 'EEEE d MMMM yyyy', { locale: dateLocale })}
+                {format(timeslot.tzDate, 'PPPP', { locale: dateLocale })}
                 <span aria-hidden="true" className="pointer-events-none mx-2">
                     •
                 </span>

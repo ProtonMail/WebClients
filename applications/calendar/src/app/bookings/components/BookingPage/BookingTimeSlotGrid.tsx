@@ -54,7 +54,7 @@ export const BookingTimeSlotGrid = () => {
             <div className="flex flex-row flex-nowrap gap-2 w-full booking-time-slot-grid">
                 {range.map((date, i) => {
                     const dateHeaderShortString = format(date, 'EEE', { locale: dateLocale });
-                    const dateHeaderLongString = format(date, 'EEEE d MMMM yyyy', { locale: dateLocale });
+                    const dateHeaderLongString = format(date, 'PPPP', { locale: dateLocale });
                     const dateNumberString = format(date, 'd', { locale: dateLocale });
 
                     return (
