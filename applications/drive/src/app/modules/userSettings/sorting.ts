@@ -1,14 +1,14 @@
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { SortSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import { SortField } from '../../../legacy/store/_views/utils/useSorting';
+import { SortField } from './type';
 
 export interface UserSortParams {
     sortField: SortField.fileModifyTime | SortField.name | SortField.size;
     sortOrder: SORT_DIRECTION;
 }
 
-export const settingsToSortParams: { [key in SortSetting]: UserSortParams } = {
+const settingsToSortParams: { [key in SortSetting]: UserSortParams } = {
     [SortSetting.ModifiedAsc]: { sortField: SortField.fileModifyTime, sortOrder: SORT_DIRECTION.ASC },
     [SortSetting.ModifiedDesc]: { sortField: SortField.fileModifyTime, sortOrder: SORT_DIRECTION.DESC },
     [SortSetting.NameAsc]: { sortField: SortField.name, sortOrder: SORT_DIRECTION.ASC },
