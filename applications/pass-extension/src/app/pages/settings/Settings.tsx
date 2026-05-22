@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import { useCallback } from 'react';
 
 import { ExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
+import { ExtensionPermissions } from 'proton-pass-extension/lib/components/Extension/ExtensionPermissions';
 import { ExtensionStore } from 'proton-pass-extension/lib/components/Extension/ExtensionStore';
 import { useExtensionNotificationEnhancer } from 'proton-pass-extension/lib/hooks/useExtensionNotificationEnhancer';
 import { hasClipboardPermissions } from 'proton-pass-extension/lib/utils/permissions';
@@ -35,9 +36,11 @@ export const Settings: FC = () => {
                 <ExtensionClient onWorkerMessage={handleWorkerMessage}>
                     {(ready) => (
                         <Localized>
-                            <ClipboardProvider checkPermissions={hasClipboardPermissions}>
-                                <SettingsRouter ready={ready} />
-                            </ClipboardProvider>
+                            <ExtensionPermissions>
+                                <ClipboardProvider checkPermissions={hasClipboardPermissions}>
+                                    <SettingsRouter ready={ready} />
+                                </ClipboardProvider>
+                            </ExtensionPermissions>
                         </Localized>
                     )}
                 </ExtensionClient>
