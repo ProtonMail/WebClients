@@ -3819,6 +3819,12 @@
       ],
       "⚠️ Undecryptable device": [
         "⚠️無法解密的裝置"
+      ],
+      "Organization key must be activated to create invited users": [
+        "需啟用組織金鑰才能建立邀請使用者"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "需啟用組織金鑰才能建立非私人使用者"
       ]
     },
     "error": {
@@ -6647,6 +6653,12 @@
       ],
       "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "您將拒絕此加入至 ${ invitationName } 資料夾的邀請。若您繼續，您將無法存取至它除非擁有者再次邀請您。您確定要繼續嗎?"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "替成員創建一個安全 ${ memberCount } 雲端"
       ]
     },
     "info": {
@@ -8443,6 +8455,12 @@
       ],
       "Dedicated servers optimized for speed": [
         "針對速度的獨立伺服器"
+      ],
+      "Access all countries": [
+        "存取所有國家"
+      ],
+      "Unlock streaming": [
+        "解鎖串流"
       ]
     },
     "new_plans: feature highlight": {
@@ -8834,6 +8852,9 @@
       ],
       "Support for ${ n } custom email domain": [
         "支援 ${ n } 組自訂電子郵件網域"
+      ],
+      "${ n } country": [
+        "${ n } 個國家"
       ]
     },
     "Notification": {
@@ -12771,6 +12792,9 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "續訂價格取決於計費區域和 VAT 號碼。"
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "續訂價格取決於計費區域和商務號碼。"
       ]
     },
     "Provider option": {

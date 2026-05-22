@@ -4047,6 +4047,12 @@
       ],
       "Folder not found": [
         "Ο φάκελος δεν βρέθηκε"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για τη δημιουργία προσκεκλημένων χρηστών"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για τη δημιουργία μη ιδιωτικών χρηστών"
       ]
     },
     "error": {
@@ -7209,6 +7215,9 @@
       "We were not able to add this photo to your album": [
         "Δεν καταφέραμε να προσθέσουμε αυτή τη φωτογραφία στο άλμπουμ σας",
         "Δεν καταφέραμε να προσθέσουμε αυτές τις φωτογραφίες στο άλμπουμ σας"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Εμπιστευτείτε το κλειδί \"${ activeSignerText }\" για να επαληθεύσετε νέα μηνύματα από αυτήν την επαφή."
       ]
     },
     "info": {
@@ -7297,6 +7306,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Ενεργός Υπογράφων"
+      ],
+      "Fallback": [
+        "Εφεδρικό"
       ]
     },
     "Label": {
@@ -8047,6 +8062,9 @@
       ],
       "Shared on ${ sharedOn }": [
         "Κοινοποιήθηκε στις ${ sharedOn }"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } χαρακτήρες"
       ]
     },
     "Label for contact group color": {
@@ -10758,6 +10776,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Συνιστάται να \"μην εμπιστεύεστε\" αυτό το κλειδί."
+      ],
+      "This contact currently signs messages with this key": [
+        "Αυτή η επαφή υπογράφει μηνύματα με αυτό το κλειδί"
+      ],
+      "This key is used for message verification": [
+        "Αυτό το κλειδί χρησιμοποιείται για την επαλήθευση μηνυμάτων"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Αυτό το κλειδί χρησιμοποιείται για την κρυπτογράφηση μηνυμάτων σε αυτήν την επαφή σε παλαιότερες εφαρμογές"
       ]
     },
     "PGP key warning": {
@@ -13636,6 +13663,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Οι διαχειριστές δεν μπορούν να έχουν πρόσβαση στα δεδομένα των ιδιωτών χρηστών και δεν μπορούν να επαναφέρουν τον κωδικό πρόσβασής τους."
+      ],
+      "Member activation incomplete": [
+        "Μη ολοκληρωμένη ενεργοποίηση μέλους"
+      ],
+      "Organization key must be activated to request data access": [
+        "Το κλειδί οργανισμού πρέπει να είναι ενεργοποιημένο για να ζητήσετε πρόσβαση σε δεδομένα"
+      ],
+      "The user must have an address to request data access": [
+        "Ο χρήστης πρέπει να έχει μια διεύθυνση για να ζητήσει πρόσβαση στα δεδομένα"
       ]
     },
     "Upsell": {

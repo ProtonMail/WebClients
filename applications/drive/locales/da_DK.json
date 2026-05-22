@@ -4047,6 +4047,12 @@
       ],
       "Folder not found": [
         "Mappe ikke fundet"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisationsnøglen skal aktiveres for at oprette inviterede brugere"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisationsnøgle skal være aktiveret for at oprette ikke private brugere"
       ]
     },
     "error": {
@@ -7196,6 +7202,9 @@
       "We were not able to add this photo to your album": [
         "Vi kunne ikke tilføje dette foto til dit album",
         "Vi kunne ikke tilføje nogle billeder til dit album"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Stol på \"${ activeSignerText }\"-nøglen for at verificere nye beskeder fra denne kontakt."
       ]
     },
     "info": {
@@ -7284,6 +7293,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktiv signerende part"
+      ],
+      "Fallback": [
+        "Reserve"
       ]
     },
     "Label": {
@@ -8034,6 +8049,9 @@
       ],
       "Shared on ${ sharedOn }": [
         "Delt den ${ sharedOn }"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tegn"
       ]
     },
     "Label for contact group color": {
@@ -10745,6 +10763,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi anbefaler, at du ikke længere har tillid til denne nøgle."
+      ],
+      "This contact currently signs messages with this key": [
+        "På nuværende tidspunkt signerer denne kontakt beskeder med denne nøgle"
+      ],
+      "This key is used for message verification": [
+        "Denne nøgle bruges til at verificere beskeder"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Denne nøgle bruges til at kryptere beskeder til denne kontakt på ældre apps"
       ]
     },
     "PGP key warning": {
@@ -13719,6 +13746,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorer kan ikke tilgå private brugeres data eller nulstille deres adgangskode."
+      ],
+      "Member activation incomplete": [
+        "Medlemsaktivering ufuldstændig"
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisationsnøglen skal aktiveres for at anmode om dataadgang"
+      ],
+      "The user must have an address to request data access": [
+        "Brugeren skal have en adresse for at anmode om dataadgang"
       ]
     },
     "Upsell": {

@@ -4047,6 +4047,12 @@
       ],
       "Folder not found": [
         "Klasör bulunamadı"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Davet edilen kullanıcılar oluşturmak için kuruluş anahtarı etkinleştirilmelidir"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Korunmayan kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
       ]
     },
     "error": {
@@ -7209,6 +7215,9 @@
       "We were not able to add this photo to your album": [
         "Bu fotoğraf albümünüze eklenemedi",
         "Bazı fotoğraflar albümünüze eklenemedi"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Bu kişiden gelen yeni iletileri doğrulamak için \"${ activeSignerText }\" anahtarına güven."
       ]
     },
     "info": {
@@ -7297,6 +7306,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktif İmza Sahibi"
+      ],
+      "Fallback": [
+        "Geri dönüş"
       ]
     },
     "Label": {
@@ -8047,6 +8062,9 @@
       ],
       "Shared on ${ sharedOn }": [
         "${ sharedOn } zamanında paylaşıldı"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } karakter"
       ]
     },
     "Label for contact group color": {
@@ -10758,6 +10776,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Bu anahtara \"güvenmemeniz\" önerilir."
+      ],
+      "This contact currently signs messages with this key": [
+        "Bu kişi şu anda iletileri bu anahtarla imzalıyor"
+      ],
+      "This key is used for message verification": [
+        "Bu anahtar ileti doğrulama için kullanılır"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Bu anahtar eski uygulamalarda bu kişiyle olan iletileri şifrelemek için kullanılır"
       ]
     },
     "PGP key warning": {
@@ -13732,6 +13759,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Yöneticiler gizli kullanıcıların verilerine erişemez ve parolalarını sıfırlayamaz."
+      ],
+      "Member activation incomplete": [
+        "Üye etkinleştirilmemiş"
+      ],
+      "Organization key must be activated to request data access": [
+        "Verilere erişme isteğinde bulunmak için kuruluş anahtarı etkinleştirilmelidir"
+      ],
+      "The user must have an address to request data access": [
+        "Veri isteğinde bulunabilmek için kullanıcının bir e-posta adresi olmalıdır"
       ]
     },
     "Upsell": {
