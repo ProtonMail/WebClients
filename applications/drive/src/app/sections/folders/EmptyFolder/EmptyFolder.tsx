@@ -7,7 +7,7 @@ import { usePopperAnchor } from '@proton/components';
 import emptySvg from '@proton/styles/assets/img/illustrations/empty-my-files.svg';
 
 import { DriveEmptyView } from '../../../legacy/components/layout/DriveEmptyView';
-import { useIsFreeUploadInProgress } from '../../../legacy/hooks/drive/freeUpload/useIsFreeUploadInProgress';
+import { useIsFreeUploadInProgress } from '../../../modules/freeUpload';
 import { FolderContextMenu } from '../menus/FolderContextMenu';
 import { useFolderStore } from '../useFolder.store';
 import type { FolderActions, FolderUploadFile, FolderUploadFolder } from '../useFolderActions';

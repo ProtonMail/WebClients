@@ -10,9 +10,9 @@ import type { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSett
 
 import type { DriveFolder } from '../../../legacy/hooks/drive/useActiveShare';
 import useDriveNavigation from '../../../legacy/hooks/drive/useNavigate';
-import { useMoveNodes } from '../../../legacy/hooks/sdk/useMoveNodes';
-import type { MoveNodesItemMap } from '../../../legacy/hooks/sdk/useMoveNodes';
 import { useContextMenuStore } from '../../../modules/contextMenu';
+import { useMoveNodes } from '../../../modules/moveNodes';
+import type { MoveNodesItemMap } from '../../../modules/moveNodes';
 import { useSelectionStore } from '../../../modules/selection';
 import { useDriveDragMove } from '../../../modules/selection/useDriveDragMove';
 import type { SortConfig, SortField } from '../../../modules/sorting';

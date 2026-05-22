@@ -2,9 +2,9 @@ import { c, msgid } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
-import { getEllipsedName } from '../../utils/intl/getEllipsedName';
-import { useListNotifications } from '../../utils/useListNotifications';
+import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
+import { getEllipsedName } from '../../../utils/intl/getEllipsedName';
+import { useListNotifications } from '../../../utils/useListNotifications';
 
 export const useMovedItemsNotification = () => {
     const { createSuccessMessage } = useListNotifications();
