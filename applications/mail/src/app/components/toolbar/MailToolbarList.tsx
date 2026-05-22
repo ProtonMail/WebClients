@@ -9,7 +9,6 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 
 import { getLabelName, isLabelIDNewsletterSubscription } from 'proton-mail/helpers/labels';
-import { isColumnMode } from 'proton-mail/helpers/mailSettings';
 import { pageFromUrl, setFilterInUrl, setPageInUrl, setSortInUrl } from 'proton-mail/helpers/mailboxUrl';
 import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
@@ -59,11 +58,10 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
     const conversationMode = useMailSelector(selectConversationMode);
 
     const { selectAll: isSelectAll } = useSelectAll({ labelID });
-    const { labelDropdownToggleRef, moveDropdownToggleRef } = useMailboxLayoutProvider();
+    const { labelDropdownToggleRef, moveDropdownToggleRef, isColumnModeActive } = useMailboxLayoutProvider();
 
     const { shouldShowTabs } = useCategoriesView();
     const [mailSettings] = useMailSettings();
-    const isColumn = isColumnMode(mailSettings);
     const isInDeletedFolder = labelID === MAILBOX_LABEL_IDS.SOFT_DELETED;
 
     const [labels] = useLabels();
@@ -135,7 +133,7 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
         );
     }
 
-    const actionsInHeader = !isColumn && elementID;
+    const actionsInHeader = !isColumnModeActive && elementID;
     if (actionsInHeader) {
         return null;
     }
