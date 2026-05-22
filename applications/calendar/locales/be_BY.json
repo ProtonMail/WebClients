@@ -4172,6 +4172,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Ваша падключэнне па Zoom пратэрмінавана. Перападключыцеся, каб працягнуць."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Ключ арганізацыі павінен быць актываваны, каб ствараць запрошаных карыстальнікаў"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Ключ арганізацыі павінен быць актываваны, каб ствараць непрыватных карыстальнікаў"
       ]
     },
     "error": {
@@ -6772,6 +6778,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Вы дасягнулі абмежавання па прамежках браніравання (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Давяраць ключу \"${ activeSignerText }\", каб спраўдзіць новыя паведамленні ад гэтага кантакту."
       ]
     },
     "info": {
@@ -6903,6 +6912,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Актыўны падпісант"
+      ],
+      "Fallback": [
+        "Запасны"
       ]
     },
     "Keyboard shortcut name": {
@@ -7520,6 +7535,9 @@
       ],
       "Zoom meeting": [
         "Сустрэча па Zoom"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "Сімвалаў: ${ value.length }/${ maxLength }"
       ]
     },
     "label": {
@@ -10107,6 +10125,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Мы рэкамендуем вам \"не давяраць\" гэтаму ключу."
+      ],
+      "This contact currently signs messages with this key": [
+        "Гэты кантакт у цяперашні час падпісвае паведамленні з гэтым ключом"
+      ],
+      "This key is used for message verification": [
+        "Гэты ключ выкарыстоўваецца для спраўджання паведамлення"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Гэты ключ выкарыстоўваецца для шыфравання паведамленняў гэтаму кантакту ў старых праграмах"
       ]
     },
     "PGP key warning": {
@@ -12963,6 +12990,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Адміністратары не могуць атрымліваць доступ да даных прыватных карыстальнікаў, а таксама аднаўляць іх паролі."
+      ],
+      "Member activation incomplete": [
+        "Актывацыя ўдзельніка незавершана"
+      ],
+      "Organization key must be activated to request data access": [
+        "Ключ арганізацыі павінен быць актываваны, каб запытаць доступ да даных"
+      ],
+      "The user must have an address to request data access": [
+        "Карыстальнік павінен мець адрас, каб запытаць доступ да даных"
       ]
     },
     "Validation": {

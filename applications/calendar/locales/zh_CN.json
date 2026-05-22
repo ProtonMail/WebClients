@@ -4052,6 +4052,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "您的 Zoom 连接已过期，请重新连接以继续。"
+      ],
+      "Organization key must be activated to create invited users": [
+        "必须激活组织密钥才能创建受邀用户"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "组织密钥必须激活才能创建非私人用户"
       ]
     },
     "error": {
@@ -6499,6 +6505,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "您已达到预约时段数量上限 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "信任“${ activeSignerText }”密钥以验证来自此联系人的新消息"
       ]
     },
     "info": {
@@ -6618,6 +6627,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "活动签名人"
+      ],
+      "Fallback": [
+        "回退"
       ]
     },
     "Keyboard shortcut name": {
@@ -7229,6 +7244,9 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } 个字符"
       ]
     },
     "label": {
@@ -9588,6 +9606,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "建议您不再信任此密钥。"
+      ],
+      "This contact currently signs messages with this key": [
+        "该联系人当前使用此密钥对消息进行签名"
+      ],
+      "This key is used for message verification": [
+        "此密钥用于消息验证"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "此密钥用于在旧版应用中加密发送给此联系人的消息"
       ]
     },
     "PGP key warning": {
@@ -12276,6 +12303,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "管理员无法访问私人用户的数据，也无法重置他们的密码。"
+      ],
+      "Member activation incomplete": [
+        "成员激活未完成"
+      ],
+      "Organization key must be activated to request data access": [
+        "必须激活组织密钥才能申请数据访问权限"
+      ],
+      "The user must have an address to request data access": [
+        "用户必须有地址才能申请访问数据"
       ]
     },
     "Validation": {

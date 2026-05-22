@@ -3988,6 +3988,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom-yhteytesi on vanhentunut. Ole hyvä ja yhdistä uudelleen jatkaaksesi."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisaatioavain on aktivoitava kutsuttujen käyttäjien luomiseksi"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisaatioavain on aktivoitava ei-yksityisten käyttäjien luomiseksi"
       ]
     },
     "error": {
@@ -12207,6 +12213,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Ylläpitäjillä ei ole pääsyä yksityisten käyttäjien tietoihin, eivätkä he voi nollata heidän salasanojaan."
+      ],
+      "Member activation incomplete": [
+        "Jäsenen aktivointi on kesken"
+      ],
+      "Organization key must be activated to request data access": [
+        "Tietojen käyttöoikeuspyyntö vaatii organisaatioavaimen aktivoinnin"
+      ],
+      "The user must have an address to request data access": [
+        "Käyttäjällä on oltava osoite tietojen käyttöoikeuden anomiseksi"
       ]
     },
     "Validation": {

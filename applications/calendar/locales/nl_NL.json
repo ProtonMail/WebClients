@@ -4092,6 +4092,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Uw Zoom-verbinding is verlopen. Verbind opnieuw om door te gaan."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisatiesleutel moet geactiveerd zijn om uitgenodigde gebruikers aan te maken."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisatiesleutel moet worden geactiveerd om niet-privé gebruikers te maken"
       ]
     },
     "error": {
@@ -12584,6 +12590,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Beheerders hebben geen toegang tot de gegevens van privégebruikers en kunnen hun wachtwoord niet resetten."
+      ],
+      "Member activation incomplete": [
+        "Gebruikersactivatie onvolledig"
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisatiesleutel moet worden geactiveerd om gegevenstoegang te vragen"
+      ],
+      "The user must have an address to request data access": [
+        "De gebruiker moet een adres hebben om gegevenstoegang aan te vragen"
       ]
     },
     "Validation": {

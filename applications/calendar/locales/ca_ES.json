@@ -4092,6 +4092,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "La vostra connexió de Zoom ha caducat. Torneu a connectar-vos per continuar."
+      ],
+      "Organization key must be activated to create invited users": [
+        "S'ha d'activar la clau de l'organització per a crear usuaris convidats"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "S'ha d'activar la clau d'organització per a crear usuaris no privats"
       ]
     },
     "error": {
@@ -6590,6 +6596,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Heu arribat al límit de reserves (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Confieu en la clau \"${ activeSignerText }\" per verificar els missatges nous d'aquest contacte."
       ]
     },
     "info": {
@@ -6713,6 +6722,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Signant actiu"
+      ],
+      "Fallback": [
+        "Recursos alternatius"
       ]
     },
     "Keyboard shortcut name": {
@@ -7326,6 +7341,9 @@
       ],
       "Zoom meeting": [
         "Reunió per Zoom"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caràcters"
       ]
     },
     "label": {
@@ -9761,6 +9779,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Us recomanem que marqueu la clau com a \"no confiable\"."
+      ],
+      "This contact currently signs messages with this key": [
+        "Aquest contacte actualment signa els missatges amb aquesta clau"
+      ],
+      "This key is used for message verification": [
+        "Aquesta clau s'utilitza per la verificació de missatges"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Aquesta clau s'utilitza per xifrar missatges per aquest contacte en aplicacions antigues"
       ]
     },
     "PGP key warning": {
@@ -12505,6 +12532,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Els administradors no poden accedir a les dades dels usuaris privats i no poden restablir la seva contrasenya."
+      ],
+      "Member activation incomplete": [
+        "L'activació del membre no s'ha completat."
+      ],
+      "Organization key must be activated to request data access": [
+        "La clau d'organització ha d'estar activada per sol·licitar accés a les dades."
+      ],
+      "The user must have an address to request data access": [
+        "L'usuari ha de tenir una adreça per sol·licitar l'accés a les dades."
       ]
     },
     "Validation": {

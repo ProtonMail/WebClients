@@ -4132,6 +4132,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Conexiunea la Zoom a expirat. Reconectați-vă pentru a continua."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Cheia organizației trebuie activată pentru a crea utilizatori invitați."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Cheia organizației trebuie activată pentru a crea utilizatori neprivați."
       ]
     },
     "error": {
@@ -6681,6 +6687,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ați atins limita locurilor de rezervare (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Cheia „${ activeSignerText }” este aprobată pentru a verifica mesajele noi de la acest contact."
       ]
     },
     "info": {
@@ -6808,6 +6817,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Semnatar activ"
+      ],
+      "Fallback": [
+        "Alternativă"
       ]
     },
     "Keyboard shortcut name": {
@@ -7423,6 +7438,9 @@
       ],
       "Zoom meeting": [
         "Conferință pe Zoom"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } de caractere"
       ]
     },
     "label": {
@@ -9934,6 +9952,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vă recomandăm să „nu aprobați” această cheie."
+      ],
+      "This contact currently signs messages with this key": [
+        "Acest contact semnează în prezent mesajele cu această cheie."
+      ],
+      "This key is used for message verification": [
+        "Această cheie este utilizată pentru verificarea mesajelor."
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Această cheie este folosită pentru a cripta mesajele către acest contact în aplicațiile mai vechi."
       ]
     },
     "PGP key warning": {
@@ -12830,6 +12857,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorii nu pot accesa datele utilizatorilor privați și nu le pot reseta parola."
+      ],
+      "Member activation incomplete": [
+        "Activarea membrului nu este completă"
+      ],
+      "Organization key must be activated to request data access": [
+        "Cheia organizației trebuie activată pentru a solicita accesul la date."
+      ],
+      "The user must have an address to request data access": [
+        "Utilizatorul trebuie să aibă o adresă pentru a solicita acces la date."
       ]
     },
     "Validation": {

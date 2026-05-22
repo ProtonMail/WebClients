@@ -4172,6 +4172,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Vaše pripojenie k Zoom vypršalo. Pripojte sa znova pre pokračovanie, prosím."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Na vytvorenie pozvaných používateľov musí byť aktivovaný kľúč organizácie"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Na vytvorenie nesúkromných používateľov musí byť aktivovaný kľúč organizácie"
       ]
     },
     "error": {
@@ -6772,6 +6778,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Dosiahli ste limit rezervačných slotov (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Dôverovať kľúču „${ activeSignerText }“ pri overovaní nových správ od tohto kontaktu."
       ]
     },
     "info": {
@@ -6903,6 +6912,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktívny signatár"
+      ],
+      "Fallback": [
+        "záložný"
       ]
     },
     "Keyboard shortcut name": {
@@ -7520,6 +7535,9 @@
       ],
       "Zoom meeting": [
         "Zoom schôdzka"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } znakov"
       ]
     },
     "label": {
@@ -10107,6 +10125,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Odporúčame, aby ste pri tomto kľúči zvolili \"Nedôverovať\"."
+      ],
+      "This contact currently signs messages with this key": [
+        "Tento kontakt v súčasnosti podpisuje správy týmto kľúčom"
+      ],
+      "This key is used for message verification": [
+        "Tento kľúč slúži na overenie správy"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Tento kľúč sa používa na šifrovanie správ tomuto kontaktu v starších aplikáciách"
       ]
     },
     "PGP key warning": {
@@ -12963,6 +12990,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Správcovia nemajú prístup k dátam súkromných používateľov a nemôžu resetovať ich heslo."
+      ],
+      "Member activation incomplete": [
+        "Aktivácia člena nie je dokončená"
+      ],
+      "Organization key must be activated to request data access": [
+        "Kľúč organizácie musí byť aktivovaný, aby bolo možné požiadať o prístup k údajom"
+      ],
+      "The user must have an address to request data access": [
+        "Používateľ musí mať adresu, aby mohol požiadať o prístup k údajom"
       ]
     },
     "Validation": {
