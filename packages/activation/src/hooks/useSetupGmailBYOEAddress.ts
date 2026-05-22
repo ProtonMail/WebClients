@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { createBYOEAddress } from '@proton/account/addresses/actions';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { startEasySwitchSignupImportTask } from '@proton/activation/src/api';
+import { BYOE_QUOTA_THRESHOLD_RATIO } from '@proton/activation/src/constants';
 import { EASY_SWITCH_SOURCES, type ImportToken, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { loadImporters } from '@proton/activation/src/logic/importers/importers.actions';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
@@ -95,7 +96,7 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal, onComplete }: Props) => {
                         Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
                         Account: token.Account,
                         AutomaticImport: !isConversionFlow,
-                        QuotaThresholdRatio: 0.2,
+                        QuotaThresholdRatio: BYOE_QUOTA_THRESHOLD_RATIO,
                     })
                 );
             } catch (e) {
