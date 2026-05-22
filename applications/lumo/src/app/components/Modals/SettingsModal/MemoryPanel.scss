@@ -1,0 +1,70 @@
+.memory-panel-info {
+    cursor: help;
+    border-radius: 999px;
+
+    &:hover,
+    &:focus-visible {
+        color: var(--text-norm);
+    }
+}
+
+.memory-panel-list-item {
+    border-block-end: 1px solid var(--border-weak);
+
+    &:last-child {
+        border-block-end: none;
+    }
+}
+
+.memory-panel-source-pill {
+    display: inline-flex;
+    align-items: center;
+    padding-inline: 0.375rem;
+    padding-block: 0.0625rem;
+    border-radius: 999px;
+    font-size: 0.6875rem;
+    background-color: var(--interaction-weak);
+    color: var(--text-norm);
+
+    &.is-generated {
+        background-color: var(--interaction-norm-minor-2);
+        color: var(--interaction-norm);
+    }
+}
+
+.memory-panel-empty-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 2.5rem;
+    block-size: 2.5rem;
+    border-radius: 999px;
+    background-color: var(--background-norm);
+    color: var(--text-weak);
+}
+
+.memory-panel-empty-hint {
+    max-inline-size: 22rem;
+}
+
+// Flatten the field-two appearance for inline memory edits — minimal border, no focus ring,
+// matching font size — so the textarea reads as inline-editable text, not a form input.
+.memory-panel-edit-field {
+    inline-size: 100%;
+    border-color: var(--border-weak);
+    font-size: 0.875rem;
+    line-height: 1.4;
+    padding: 0.375rem 0.5rem;
+    resize: vertical;
+    min-block-size: 2.5rem;
+    box-shadow: none;
+
+    &:hover,
+    &:focus,
+    &:focus-visible,
+    &:focus-within,
+    &.focus {
+        border: none;
+        box-shadow: none;
+    }
+}
