@@ -9,12 +9,7 @@ import { resolveMessageFactory, sendMessage } from 'proton-pass-extension/lib/me
 import { createConnectivityProxy } from 'proton-pass-extension/lib/services/connectivity.proxy';
 import { createCoreServiceBridge } from 'proton-pass-extension/lib/services/core.bridge';
 import { createMonitorBridge } from 'proton-pass-extension/lib/services/monitor.bridge';
-import {
-    CLIPBOARD_PERMISSIONS,
-    NATIVE_MESSAGING_PERMISSIONS,
-    hasPermissions,
-    requestPermissions,
-} from 'proton-pass-extension/lib/utils/permissions';
+import { CLIPBOARD_PERMISSIONS, requestPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { createPopupController } from 'proton-pass-extension/lib/utils/popup';
 import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 import { sendSafariMessage } from 'proton-pass-extension/lib/utils/safari';
@@ -28,7 +23,6 @@ import type { ExtensionClientState, PassCoreProviderProps } from '@proton/pass/c
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { createPassThemeManager } from '@proton/pass/components/Layout/Theme/ThemeService';
 import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
-import { NativeMessagingPromptProvider } from '@proton/pass/components/Lock/NativeMessagingPromptProvider';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import { MODEL_VERSION } from '@proton/pass/constants';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
@@ -248,9 +242,6 @@ const getPassCoreProviderProps = (
                 if (res.type === 'error') throw new Error(res.error);
                 return res.secret;
             }),
-
-        hasNativeMessagingPermission: () => hasPermissions(NATIVE_MESSAGING_PERMISSIONS),
-        requestNativeMessagingPermission: () => requestPermissions(NATIVE_MESSAGING_PERMISSIONS),
     };
 };
 
@@ -278,9 +269,7 @@ export const ExtensionCore: FC<PropsWithChildren<ExtensionCoreProps>> = ({ child
         >
             <ConnectivityProvider service={coreProps.connectivity}>
                 <AuthStoreProvider store={authStore}>
-                    <UnlockProvider unlock={unlock}>
-                        <NativeMessagingPromptProvider>{children}</NativeMessagingPromptProvider>
-                    </UnlockProvider>
+                    <UnlockProvider unlock={unlock}>{children}</UnlockProvider>
                 </AuthStoreProvider>
             </ConnectivityProvider>
         </PassCoreProvider>
