@@ -10,7 +10,7 @@ import { isPopupPort } from 'proton-pass-extension/lib/utils/port';
 import { isVivaldiBrowser } from 'proton-pass-extension/lib/utils/vivaldi';
 import type { ClientInitMessage, WorkerMessageWithSender } from 'proton-pass-extension/types/messages';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-import type { Runtime } from 'webextension-polyfill';
+import type { Permissions, Runtime } from 'webextension-polyfill';
 
 import { MIN_CACHE_VERSION, RUNTIME_RELOAD_THROTTLE } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
@@ -162,20 +162,6 @@ export const createActivationService = () => {
             }
         }
     });
-
-    /** Checks host permissions required for Pass to function properly.
-     * Broadcasts permission status to all connected clients via PERMISSIONS_UPDATE. */
-    const checkPermissionsUpdate = async () => {
-        state.permissionsGranted = await hasHostPermissions();
-        if (!state.permissionsGranted) logger.info(`[Activation] missing permissions`);
-
-        WorkerMessageBroker.ports.broadcast(
-            backgroundMessage({
-                type: WorkerMessageType.PERMISSIONS_UPDATE,
-                payload: { granted: state.permissionsGranted },
-            })
-        );
-    };
 
     /* Vivaldi browser does not support setting the extension badge text
      * color and does not infer it correctly through background color.
@@ -366,6 +352,24 @@ export const createActivationService = () => {
         return resolveEndpointContext(tab, frameId);
     };
 
+    /** Checks host permissions required for Pass to function properly.
+     * Broadcasts permission status to all connected clients via PERMISSIONS_UPDATE. */
+    const checkPermissionsUpdate = async ({ permissions }: Permissions.Permissions) => {
+        /** Reload the worker after a `nativeMessaging` grant if the native
+         * messaging have not been binded yet to the browser API */
+        if (permissions?.includes('nativeMessaging') && !browser.runtime.connectNative) void reload();
+
+        state.permissionsGranted = await hasHostPermissions();
+        if (!state.permissionsGranted) logger.info(`[Activation] missing permissions`);
+
+        WorkerMessageBroker.ports.broadcast(
+            backgroundMessage({
+                type: WorkerMessageType.PERMISSIONS_UPDATE,
+                payload: { granted: state.permissionsGranted },
+            })
+        );
+    };
+
     browser.permissions.onAdded.addListener(checkPermissionsUpdate);
     browser.permissions.onRemoved.addListener(checkPermissionsUpdate);
     browser.alarms.onAlarm.addListener(({ name }) => name === UPDATE_ALARM_NAME && checkAvailableUpdate());
@@ -378,7 +382,7 @@ export const createActivationService = () => {
     WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_EXTENSION_KEY, () => ({ key: EXTENSION_KEY }));
 
     void checkAvailableUpdate();
-    void checkPermissionsUpdate();
+    void checkPermissionsUpdate({});
     void setupExtensionBadge();
 
     return {
