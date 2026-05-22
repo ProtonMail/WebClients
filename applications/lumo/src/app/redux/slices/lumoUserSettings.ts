@@ -3,7 +3,11 @@ import { createAction, createReducer } from '@reduxjs/toolkit';
 import { getDefaultSettings, getLumoSettings } from '../../providers';
 import { localSettingsToUserSettings } from '../../providers';
 import type { FeatureFlag } from './featureFlags';
-import { loadLumoUserSettingsFromRemote, saveLumoUserSettingsToRemote } from './lumoUserSettingsThunks';
+import {
+    appendGeneratedMemoriesThunk,
+    loadLumoUserSettingsFromRemote,
+    saveLumoUserSettingsToRemote,
+} from './lumoUserSettingsThunks';
 import type { PersonalizationSettings } from './personalization';
 
 export interface IndexedDriveFolder {
@@ -18,6 +22,16 @@ export interface IndexedDriveFolder {
     treeEventScopeId?: string;
 }
 
+/** `user` = written in settings; `generated` = from chats (bootstrap, refresh, or future auto-save). */
+export type MemorySource = 'user' | 'generated';
+
+export interface Memory {
+    id: string;
+    content: string;
+    createdAt: number;
+    source?: MemorySource;
+}
+
 export interface LumoUserSettings {
     theme: 'light' | 'dark' | 'auto';
     personalization: PersonalizationSettings;
@@ -26,6 +40,11 @@ export interface LumoUserSettings {
     showProjectConversationsInHistory?: boolean;
     automaticWebSearch?: boolean;
     showGallerySuggestions: boolean;
+    memories?: Memory[];
+    isMemoryEnabled?: boolean;
+    isMemoryAutoSaveEnabled?: boolean;
+    /** General-chat user prompts since the last background memory update. */
+    memoryPromptsSinceAutoSave?: number;
 }
 
 const getInitialThemeFromLocalStorage = (): 'light' | 'dark' | 'auto' => {
@@ -56,6 +75,10 @@ export const initialLumoUserSettings: LumoUserSettings = {
     indexedDriveFolders: [],
     automaticWebSearch: true, // Default to enabled (automatic)
     showGallerySuggestions: true,
+    memories: [],
+    isMemoryEnabled: true,
+    isMemoryAutoSaveEnabled: true,
+    memoryPromptsSinceAutoSave: 0,
 };
 
 // Actions
@@ -98,4 +121,4 @@ const lumoUserSettingsReducer = createReducer(initialLumoUserSettings, (builder)
 export default lumoUserSettingsReducer;
 
 // Export thunks
-export { loadLumoUserSettingsFromRemote, saveLumoUserSettingsToRemote };
+export { appendGeneratedMemoriesThunk, loadLumoUserSettingsFromRemote, saveLumoUserSettingsToRemote };
