@@ -44,3 +44,21 @@ export const getExceedTierErrorMessage = (userType: LUMO_USER_TYPE) => {
 export const getExceededTierErrorTitle = () => {
     return c('collider_2025: Error Title').t`You've reached your weekly chat limit`;
 };
+
+export const getGenerationRejectedErrorMessage = (userType: LUMO_USER_TYPE) => {
+    if (userType === LUMO_USER_TYPE.GUEST || userType === LUMO_USER_TYPE.FREE) {
+        return c('collider_2025: Error Message')
+            .t`If retrying doesn't work, check back later or consider upgrading to ${LUMO_SHORT_APP_NAME} Plus to jump to the front of the line during peak times.`;
+    }
+    return c('collider_2025: Error Message')
+        .t`If retrying doesn't work, check back in a few minutes. In the meantime, we are doing our best to ensure your experience goes smoothly.`;
+};
+
+export const getHighDemandErrorMessage = (userType: LUMO_USER_TYPE) => {
+    if (userType === LUMO_USER_TYPE.GUEST || userType === LUMO_USER_TYPE.FREE) {
+        return c('collider_2025: Error Message')
+            .t`We're experiencing unusually high demand. If retrying doesn't work, check back in a few minutes or upgrade for priority access to ${LUMO_SHORT_APP_NAME}.`;
+    }
+    return c('collider_2025: Error Message')
+        .t`If retrying doesn't work, check back in a few minutes. In the meantime, we are doing our best to ensure your experience goes smoothly.`;
+};
