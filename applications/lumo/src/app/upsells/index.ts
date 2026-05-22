@@ -11,7 +11,6 @@ export { LumoChatHistoryUpsell } from './composed/LumoChatHistoryUpsell';
 export { LumoSettingsPanelUpsell } from './composed/LumoSettingsPanelUpsell';
 export { LumoSidebarUpsell } from './composed/LumoSidebarUpsell';
 export { default as LumoNavbarUpsell } from './composed/LumoNavbarUpsell';
-// export { default as LumoComposerToggleUpsell } from './composed/LumoComposerToggleUpsell';
 export { default as LumoTierErrorUpsell } from './composed/LumoTierErrorUpsellButtons';
 
 // Primitives (export if needed by consumers)
