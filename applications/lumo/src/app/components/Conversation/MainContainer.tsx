@@ -1,8 +1,6 @@
 import { useCallback, useRef, useState } from 'react';
 
-import { Button } from '@proton/atoms/Button/Button';
 import { useModalStateObject } from '@proton/components';
-import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
@@ -135,7 +133,7 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                             handleOpenFiles={handleOpenFiles}
                             onShowDriveBrowser={handleShowDriveBrowser}
                             onOpenFilePreview={handleOpenFilePreview}
-                        canShowLegalDisclaimer={isGuest && isSmallScreen}
+                            canShowLegalDisclaimer={isGuest && isSmallScreen}
                             canShowLumoUpsellToggle={true}
                             initialQuery={promptSuggestion || initialQuery}
                             prefillQuery={prefillQuery}
@@ -147,9 +145,9 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                     <WhatsNew />
                 </div>
                 {filePreviewModal.render && previewAttachment && (
-                <FilePreviewModal attachment={previewAttachment} {...filePreviewModal.modalProps} />
-            )}
-            {openPanel.type === 'files' && (
+                    <FilePreviewModal attachment={previewAttachment} {...filePreviewModal.modalProps} />
+                )}
+                {openPanel.type === 'files' && (
                     <FilesManagementView
                         messageChain={[]}
                         filesContainerRef={filesContainerRef}
