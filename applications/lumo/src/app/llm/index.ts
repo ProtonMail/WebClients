@@ -90,7 +90,8 @@ export function prepareTurns(
     linearChain: Message[],
     personalization: PersonalizationSettings,
     projectInstructions?: string,
-    c?: ConversationContext
+    c?: ConversationContext,
+    memories?: string
 ): Turn[] {
     // Step 1: Transform messages to turns by iterating over blocks
     let turns: TurnInProgress[] = [];
@@ -151,16 +152,18 @@ export function prepareTurns(
     // via proper attachment turns created in Step 1 above (expandAttachmentsIntoTurns), which emit
     // user-role turns with the file content in the `content` field that the API does read.
 
-    // Step 4: Add personalization and project instructions to the last user message
+    // Step 4: Add personalization, memories and project instructions to the last user message
     // These are per-request instructions that should apply to the current question
     const personalizationPrompt = formatPersonalization(personalization);
-    if (personalizationPrompt || projectInstructions) {
+    if (personalizationPrompt || projectInstructions || memories) {
         const instructionParts: string[] = [];
         if (personalizationPrompt) {
             instructionParts.push(`[Personal context: ${personalizationPrompt}]`);
         }
         if (projectInstructions) {
             instructionParts.push(`[Project instructions: ${projectInstructions}]`);
+        } else if (memories) {
+            instructionParts.push(`[Memories:\n${memories}]`);
         }
         // Prepend instructions to the turns as a system message
         const instructionText = instructionParts.join('\n\n');
