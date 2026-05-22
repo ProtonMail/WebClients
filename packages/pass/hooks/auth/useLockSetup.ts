@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { useNativeMessagingPermissionPrompt } from '@proton/pass/components/Lock/NativeMessagingPromptProvider';
 import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { usePinUnlock } from '@proton/pass/components/Lock/PinUnlockProvider';
 import { useUnlock } from '@proton/pass/components/Lock/UnlockProvider';
@@ -70,7 +71,8 @@ interface LockSetup {
 }
 
 export const useLockSetup = (): LockSetup => {
-    const { getBiometricsKey, requestNativeMessagingPermission, supportsBiometrics } = usePassCore();
+    const { getBiometricsKey, hasNativeMessagingPermission, supportsBiometrics } = usePassCore();
+    const promptNativeMessagingPermission = useNativeMessagingPermissionPrompt();
     const { createNotification } = useNotifications();
 
     const confirmPin = usePinUnlock();
@@ -266,7 +268,10 @@ export const useLockSetup = (): LockSetup => {
             }
 
             case LockMode.DESKTOP:
-                if ((await requestNativeMessagingPermission?.()) === false) return;
+                if ((await hasNativeMessagingPermission?.()) === false) {
+                    promptNativeMessagingPermission();
+                    return;
+                }
                 /** FIXME: for offline support using `LockMode.DESKTOP` we should
                  * go through the same password confirm flow as `LockMode.BIOMETRICS` */
                 return createLock.dispatch({ mode, secret: '', ttl, current });

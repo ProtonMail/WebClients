@@ -102,6 +102,9 @@ export type PassCoreContextValue = {
     popup?: PopupController;
     /** Request desktop unlock secret, only relevant for extension */
     getDesktopUnlockSecret?: () => Promise<string>;
+    /** Resolves `true` if the `nativeMessaging` permission was granted.
+     * Only relevant for extension. */
+    hasNativeMessagingPermission?: () => Promise<boolean>;
     /** Prompts the user to grant the `nativeMessaging` optional permission.
      * Resolves `true` when the permission is granted (or not required by the
      * current build target). `false` if permission not granted.
