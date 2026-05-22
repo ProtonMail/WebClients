@@ -200,10 +200,6 @@ const ConversationPageComponentInner = () => {
                             isProcessingAttachment={isProcessingAttachment}
                             prefillQuery={prefillQuery || undefined}
                         />
-                        {/* <TestGalleryView
-                            isProcessingAttachment={isProcessingAttachment}
-                            prefillQuery={prefillQuery || undefined}
-                        /> */}
                     </Suspense>
                 )}
                 {!curConversationId && !isGalleryRoute && (
