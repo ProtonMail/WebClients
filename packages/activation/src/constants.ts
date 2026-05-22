@@ -108,3 +108,5 @@ export const providerMap = {
         height: 16,
     },
 };
+
+export const BYOE_QUOTA_THRESHOLD_RATIO = 0.2;
