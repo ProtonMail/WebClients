@@ -4047,6 +4047,12 @@
       ],
       "Folder not found": [
         "No s'ha trobat la carpeta"
+      ],
+      "Organization key must be activated to create invited users": [
+        "S'ha d'activar la clau de l'organització per a crear usuaris convidats"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "S'ha d'activar la clau d'organització per a crear usuaris no privats"
       ]
     },
     "error": {
@@ -7209,6 +7215,9 @@
       "We were not able to add this photo to your album": [
         "No s'ha pogut afegir aquesta foto a l'àlbum",
         "No s'han pogut afegir algunes fotos a l'àlbum"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Confieu en la clau \"${ activeSignerText }\" per verificar els missatges nous d'aquest contacte."
       ]
     },
     "info": {
@@ -7297,6 +7306,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Signant actiu"
+      ],
+      "Fallback": [
+        "Recursos alternatius"
       ]
     },
     "Label": {
@@ -8050,6 +8065,9 @@
       ],
       "Shared on ${ sharedOn }": [
         "Compartit el ${ sharedOn }"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caràcters"
       ]
     },
     "Label for contact group color": {
@@ -10818,6 +10836,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Us recomanem que marqueu la clau com a \"no confiable\"."
+      ],
+      "This contact currently signs messages with this key": [
+        "Aquest contacte actualment signa els missatges amb aquesta clau"
+      ],
+      "This key is used for message verification": [
+        "Aquesta clau s'utilitza per la verificació de missatges"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Aquesta clau s'utilitza per xifrar missatges per aquest contacte en aplicacions antigues"
       ]
     },
     "PGP key warning": {
@@ -13696,6 +13723,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Els administradors no poden accedir a les dades dels usuaris privats i no poden restablir la seva contrasenya."
+      ],
+      "Member activation incomplete": [
+        "L'activació del membre no s'ha completat."
+      ],
+      "Organization key must be activated to request data access": [
+        "La clau d'organització ha d'estar activada per sol·licitar accés a les dades."
+      ],
+      "The user must have an address to request data access": [
+        "L'usuari ha de tenir una adreça per sol·licitar l'accés a les dades."
       ]
     },
     "Upsell": {

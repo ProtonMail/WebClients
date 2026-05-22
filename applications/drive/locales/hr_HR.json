@@ -2470,6 +2470,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Naziv koji se ne može dešifrirati"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Ključ organizacije mora biti aktiviran kako bi se kreirali pozvani korisnici"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Ključ organizacije mora biti aktivan kako bi se kreirali neprivatni korisnici"
       ]
     },
     "Error importing calendar": {
@@ -7363,6 +7369,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaše probno razdoblje završava ${ textDate }. Nećemo Vam ništa naplatiti, ako otkažete prije ${ textDate }. ${ action }"
+      ]
+    },
+    "unprivatization": {
+      "The user must have an address to request data access": [
+        "Korisnik mora imati adresu za traženje pristupa podacima"
       ]
     }
   }

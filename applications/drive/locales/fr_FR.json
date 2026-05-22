@@ -4047,6 +4047,12 @@
       ],
       "Folder not found": [
         "Le dossier n'a pas été trouvé."
+      ],
+      "Organization key must be activated to create invited users": [
+        "La clé de l'organisation doit être activée pour créer des utilisateurs invités."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "La clé de l'organisation doit être activée pour créer des utilisateurs non privés."
       ]
     },
     "error": {
@@ -7201,6 +7207,9 @@
       "We were not able to add this photo to your album": [
         "Cette photo n'a pas pu être ajoutée à votre album.",
         "Ces photos n'ont pas pu être ajoutées à votre album."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Faire confiance à la clé « ${ activeSignerText } » pour vérifier les nouveaux messages provenant de ce contact."
       ]
     },
     "info": {
@@ -7289,6 +7298,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Signataire actif"
+      ],
+      "Fallback": [
+        "Solution de secours"
       ]
     },
     "Label": {
@@ -8042,6 +8057,9 @@
       ],
       "Shared on ${ sharedOn }": [
         "Partagé sur ${ sharedOn }"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caractères"
       ]
     },
     "Label for contact group color": {
@@ -10810,6 +10828,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Nous vous recommandons de ne plus faire confiance à cette clé."
+      ],
+      "This contact currently signs messages with this key": [
+        "Ce contact signe actuellement les messages avec cette clé."
+      ],
+      "This key is used for message verification": [
+        "Cette clé est utilisée pour la vérification des messages."
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Cette clé permet de chiffrer les messages de ce contact sur les applications plus anciennes."
       ]
     },
     "PGP key warning": {
@@ -13784,6 +13811,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés et ne peuvent pas réinitialiser leur mot de passe."
+      ],
+      "Member activation incomplete": [
+        "L'activation du membre est incomplète."
+      ],
+      "Organization key must be activated to request data access": [
+        "La clé de l'organisation doit être activée pour demander l'accès aux données."
+      ],
+      "The user must have an address to request data access": [
+        "L'utilisateur doit disposer d'une adresse pour demander l'accès aux données."
       ]
     },
     "Upsell": {
