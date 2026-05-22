@@ -4,12 +4,16 @@ import type { useConfirmActionModal } from '@proton/components';
 import { useNotifications } from '@proton/components';
 import { getDrive, useDrive } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
 import { PROTON_LOCAL_DOMAIN } from '@proton/shared/lib/localDev';
 
 import { partialPublicViewKey } from '../../../legacy/hooks/util/usePartialPublicView';
 import { sendErrorReport } from '../../../utils/errorHandling';
+import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { replaceLocalURL } from '../../../utils/replaceLocalURL';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
+import { getUrlPassword, getUrlPasswordWithCustomPassword } from '../../../utils/url/password';
 
 export const useBookmarksActions = () => {
     const { createNotification } = useNotifications();
@@ -102,7 +106,43 @@ export const useBookmarksActions = () => {
     const handleDeleteBookmark = async (showConfirmModal: ReturnType<typeof useConfirmActionModal>[1], uid: string) =>
         handleDeleteBookmarks(showConfirmModal, [uid]);
 
+    const handleAddBookmarkFromPrivateApp = async (
+        abortSignal: AbortSignal,
+        { token, hideNotifications = false }: { token: string; hideNotifications?: boolean }
+    ) => {
+        const fullPassword = getUrlPassword({ readOnly: true });
+        if (!fullPassword) {
+            return;
+        }
+
+        const generatedPassword = getUrlPasswordWithCustomPassword(fullPassword);
+        const customPassword =
+            fullPassword.length > generatedPassword.length
+                ? fullPassword.substring(generatedPassword.length)
+                : undefined;
+        const url = `${getAppHref(`/urls/${token}`, APPS.PROTONDRIVE)}#${generatedPassword}`;
+
+        try {
+            await drive.createBookmark(url, customPassword);
+            if (!hideNotifications) {
+                createNotification({
+                    type: 'success',
+                    text: c('Notification').t`The item was successfully added to your drive`,
+                });
+            }
+        } catch (e) {
+            if (!hideNotifications) {
+                createNotification({
+                    type: 'error',
+                    text: c('Notification').t`The item was not added to your drive`,
+                });
+            }
+            handleSdkError(e, { showNotification: false });
+        }
+    };
+
     return {
+        addBookmarkFromPrivateApp: handleAddBookmarkFromPrivateApp,
         openBookmark: handleOpenBookmark,
         deleteBookmark: handleDeleteBookmark,
         deleteBookmarks: handleDeleteBookmarks,
