@@ -8,11 +8,11 @@ import type { useSharingModal } from '@proton/drive/modules/sharingModal';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
+import { useOpenInDocs } from '../../../legacy/store/_documents';
 import type { useDetailsModal } from '../../../modals/DetailsModal';
 import type { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
 import type { useDrivePreviewModal } from '../../../modals/preview';
 import { downloadManager } from '../../../modules/download/DownloadManager';
-import { useOpenInDocs } from '../../../legacy/store/_documents';
 import { downloadDocument, openDocsOrSheetsDocument } from '../../../utils/docs/openInDocs';
 import { isPreviewOrFallbackAvailable } from '../../../utils/isPreviewOrFallbackAvailable';
 import { getNodeEffectiveRole } from '../../../utils/sdk/getNodeEffectiveRole';
@@ -77,7 +77,7 @@ export const DirectShareActions = ({
                 return;
             } else if (isProtonDocsSpreadsheet(singleItem.mediaType)) {
                 void downloadDocument({
-                    type: 'doc',
+                    type: 'sheet',
                     openBehavior: 'redirect',
                     uid: item.nodeUid,
                 });
