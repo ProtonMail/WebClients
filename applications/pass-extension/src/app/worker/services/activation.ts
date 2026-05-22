@@ -369,6 +369,10 @@ export const createActivationService = () => {
     browser.permissions.onAdded.addListener(checkPermissionsUpdate);
     browser.permissions.onRemoved.addListener(checkPermissionsUpdate);
     browser.alarms.onAlarm.addListener(({ name }) => name === UPDATE_ALARM_NAME && checkAvailableUpdate());
+    /** Reload the worker after a `nativeMessaging` grant */
+    browser.permissions.onAdded.addListener((permissions) => {
+        if (permissions.permissions?.includes('nativeMessaging')) void reload();
+    });
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.CLIENT_INIT, handleClientInit);
     WorkerMessageBroker.registerMessage(WorkerMessageType.POPUP_INIT, handlePopupInit);
