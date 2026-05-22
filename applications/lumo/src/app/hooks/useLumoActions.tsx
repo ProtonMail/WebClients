@@ -87,6 +87,7 @@ export const useLumoActions = ({
         smoothRendering: ffSmoothRendering,
         externalTools: ffExternalTools,
         imageTools: ffImageTools,
+        memory: ffMemory,
     } = useLumoFlags();
     const contextFilters = useLumoSelector(selectContextFilters);
     const allAttachments = useLumoSelector(selectAttachments);
@@ -270,6 +271,7 @@ export const useLumoActions = ({
                 },
                 settingsContext: {
                     personalization,
+                    isMemoryFeatureEnabled: ffMemory,
                 },
             })
         );

@@ -25,9 +25,11 @@ import {
 } from '../../redux/slices/core/messages';
 import { addSpace, newSpaceId, pushSpaceRequest } from '../../redux/slices/core/spaces';
 import { PERSONALITY_OPTIONS, type PersonalizationSettings } from '../../redux/slices/personalization';
-import type { LumoDispatch as AppDispatch, LumoDispatch } from '../../redux/store';
+import type { Memory } from '../../redux/slices/lumoUserSettings';
+import type { LumoDispatch as AppDispatch, LumoDispatch, LumoState } from '../../redux/store';
 import { onComposerError } from '../../remote/nativeComposerBridgeHelpers';
 import { createGenerationError, getErrorTypeFromMessage } from '../../services/errors/errorHandling';
+import { maybeAutoSaveMemoriesFromChats } from '../../services/memoryAutoSave';
 import type { MessageId, ShallowAttachment } from '../../types';
 import {
     type Attachment,
@@ -89,6 +91,7 @@ export type UiContext = {
 
 export type SettingsContext = {
     personalization?: PersonalizationSettings;
+    isMemoryFeatureEnabled?: boolean;
 };
 
 const DEFAULT_PERSONALIZATION: PersonalizationSettings = {
@@ -227,6 +230,10 @@ export function sendMessage({
         const generateTitle = c.messageChain.length === 0;
         const linearChain = newMessageChain;
 
+        if (!isProject && s.isMemoryFeatureEnabled) {
+            maybeAutoSaveMemoriesFromChats({ api: a.api, dispatch, getState });
+        }
+
         // Call the LLM.
         try {
             // Extract the user's query from the last user message for RAG retrieval
@@ -318,11 +325,19 @@ export function sendMessage({
                   }
                 : c;
 
+            // Memories are user-level personalization for general chats only; project chats
+            // get their own explicit instructions and should not be influenced by global memory.
+            const memories =
+                !isProject && state.lumoUserSettings?.isMemoryEnabled
+                    ? formatMemories(state.lumoUserSettings?.memories)
+                    : '';
+
             const turns = prepareTurns(
                 updatedLinearChain,
                 s.personalization ?? DEFAULT_PERSONALIZATION,
                 projectInstructions,
-                updatedC
+                updatedC,
+                memories
             );
 
             await dispatch(
@@ -483,11 +498,17 @@ export function regenerateMessage({
                     : c.allConversationAttachments,
             };
 
+            const memories =
+                !isProject && state.lumoUserSettings?.isMemoryEnabled
+                    ? formatMemories(state.lumoUserSettings?.memories)
+                    : '';
+
             const turns = prepareTurns(
                 updatedMessagesWithContext,
                 s.personalization ?? DEFAULT_PERSONALIZATION,
                 projectInstructions,
-                c
+                c,
+                memories
             );
 
             // Add retry instructions if provided
@@ -544,7 +565,7 @@ export function retrySendMessage({
     settingsContext: SettingsContext;
     retryData: RetryData;
 }) {
-    return async (dispatch: LumoDispatch) => {
+    return async (dispatch: LumoDispatch, getState: () => LumoState) => {
         const date = createDate();
 
         // Update conversation status to generating
@@ -665,11 +686,18 @@ export function retrySendMessage({
                 : c.allConversationAttachments,
         };
 
+        const state = getState();
+        const memories =
+            !p.isProject && state.lumoUserSettings?.isMemoryEnabled
+                ? formatMemories(state.lumoUserSettings?.memories)
+                : '';
+
         const turns = prepareTurns(
             updatedLinearChain,
             s.personalization ?? DEFAULT_PERSONALIZATION,
             p.projectInstructions,
-            c2
+            c2,
+            memories
         );
 
         // Call the LLM
@@ -885,4 +913,12 @@ export function formatPersonalization(personalization: PersonalizationSettings |
     }
 
     return parts.join('\n');
+}
+
+export function formatMemories(memories: Memory[] | undefined): string {
+    if (!memories || memories.length === 0) {
+        return '';
+    }
+
+    return memories.map((m) => `- ${m.content}`).join('\n');
 }

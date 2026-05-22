@@ -18,6 +18,7 @@ import { useFlag } from '@proton/unleash/useFlag';
  * - lumoSurveyFreeUsers: Survey flag for free users
  * - lumoSurveyPaidUsers: Survey flag for paid users
  * - lumoSurveyGuestUsers: Survey flag for guest users
+ * - memory: Enable the memory feature (saved memories used to personalize general chats)
  */
 export const useLumoFlags = () => {
     const imageTools = useFlag('LumoImageTools');
@@ -32,8 +33,10 @@ export const useLumoFlags = () => {
     const nativeComposerModelSelection = useFlag('LumoNativeComposerModelSelection');
     const apiKeyManagement = useFlag('LumoAPIKeyManagement');
     const lumoSurvey = useFlag('LumoSurveys');
+    const memory = useFlag('LumoMeowmory');
 
     return {
+        memory,
         imageTools,
         smoothRendering,
         externalTools,
