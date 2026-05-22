@@ -1,6 +1,9 @@
+import { useEffect, useRef } from 'react';
+
 import { c } from 'ttag';
 
 import ProviderCard from '@proton/activation/src/components/SettingsArea/ProviderCards/ProviderCard';
+import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms/Button/Button';
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
@@ -13,7 +16,21 @@ interface Props {
 }
 
 export const UserOnboardingImporters = ({ goToNextStep }: Props) => {
-    const { markItemsAsDone } = useGetStartedChecklist();
+    const { markItemsAsDone, setByoeFlowInProgress } = useGetStartedChecklist();
+    const stepModal = useEasySwitchSelector((state) => state.byoeFlow.stepModal);
+    const prevStepModalRef = useRef(stepModal);
+
+    useEffect(() => {
+        const prev = prevStepModalRef.current;
+        prevStepModalRef.current = stepModal;
+
+        if (prev === 'success' && stepModal === null) {
+            setByoeFlowInProgress(false);
+            void markItemsAsDone(ChecklistKey.Import);
+            goToNextStep();
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- intentional: effect watches stepModal transitions only
+    }, [stepModal]);
 
     return (
         <>
@@ -39,6 +56,7 @@ export const UserOnboardingImporters = ({ goToNextStep }: Props) => {
                         <span className="text-sm color-weak">{c('Onboarding List Placeholder')
                             .t`Choose a provider`}</span>
                     }
+                    onBYOEFlowStart={() => setByoeFlowInProgress(true)}
                     onComplete={async () => {
                         await markItemsAsDone(ChecklistKey.Import);
                         goToNextStep();

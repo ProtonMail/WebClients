@@ -10,6 +10,7 @@ import type { NotificationsManager } from '@proton/components/containers/notific
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import type { Api } from '@proton/shared/lib/interfaces';
 
+import byoeFlow from './byoeFlow/byoeFlow.slice';
 import imapDraft from './draft/imapDraft/imapDraft.slice';
 import oauthDraft from './draft/oauthDraft/oauthDraft.slice';
 import importers from './importers/importers.slice';
@@ -25,7 +26,7 @@ export const useGenerateEasySwitchStore = () => {
     const store = useMemo(() => {
         return configureStore({
             devTools: process.env.NODE_ENV !== 'production',
-            reducer: { reports, importers, sync, oauthDraft, imapDraft },
+            reducer: { reports, importers, sync, oauthDraft, imapDraft, byoeFlow },
             middleware: (getDefaultMiddleware) =>
                 getDefaultMiddleware({
                     thunk: { extraArgument: { api, notificationManager, eventManager } },

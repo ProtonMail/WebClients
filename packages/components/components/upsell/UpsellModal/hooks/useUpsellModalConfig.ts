@@ -4,7 +4,7 @@ import { paymentStatusThunk } from '@proton/account/paymentStatus';
 import { plansThunk } from '@proton/account/plans';
 import { subscriptionThunk } from '@proton/account/subscription';
 import { userThunk } from '@proton/account/user';
-import { useOptionalSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { useOptionalSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import type { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
@@ -43,7 +43,7 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
     const { APP_NAME } = useConfig();
     const [config, setConfig] = useState<UpsellModalConfig | null>(null);
     const { paymentsApi } = usePaymentsApi();
-    const [openSubscriptionModal] = useOptionalSubscriptionModal();
+    const openSubscriptionModal = useOptionalSubscriptionModalRaw();
     const dispatch = useDispatch();
     const getFlag = useGetFlag();
     const { getPreferredCurrency } = useCurrencies();
@@ -104,16 +104,17 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
                 // Get user currency
                 // - If user currency is a main currency (USD, EUR, CHF) we use plans prices
                 // - If user currency is not a main currency we fetch the prices in the user currency
-                const { cycle, coupon, planIDs, configOverride, footerText, submitText } = await getMailUpsellConfig({
-                    dispatch,
-                    currency,
-                    getFlag,
-                    paymentsApi,
-                    plans,
-                    subscription,
-                    upsellRef,
-                    user,
-                });
+                const { cycle, coupon, planIDs, configOverride, footerText, offerPrice, submitText } =
+                    await getMailUpsellConfig({
+                        dispatch,
+                        currency,
+                        getFlag,
+                        paymentsApi,
+                        plans,
+                        subscription,
+                        upsellRef,
+                        user,
+                    });
 
                 // Get upsell `path` and `onUpgrade` functions to display payment modal with appropriate props´´
                 const { upgradePath, onUpgrade } = getUpsellConfig({
@@ -139,6 +140,7 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
                     coupon,
                     cycle,
                     footerText,
+                    offerPrice,
                     onUpgrade,
                     planIDs,
                     submitText,
