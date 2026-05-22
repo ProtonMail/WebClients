@@ -7,7 +7,12 @@ import type { LumoDispatch } from '../../redux/store';
 import { onComposerError } from '../../remote/nativeComposerBridgeHelpers';
 import { type ConversationId, type GenerationError, LUMO_API_ERRORS, type LUMO_USER_TYPE } from '../../types';
 import type { GenerationResponseMessage } from '../../types-api';
-import { getExceedTierErrorMessage, getExceededTierErrorTitle } from '../../util/errorMessages';
+import {
+    getExceedTierErrorMessage,
+    getExceededTierErrorTitle,
+    getGenerationRejectedErrorMessage,
+    getHighDemandErrorMessage,
+} from '../../util/errorMessages';
 
 export const createGenerationError = (
     type: LUMO_API_ERRORS,
@@ -34,7 +39,7 @@ export const getErrorTypeFromMessage = (messageType: GenerationResponseMessage['
     }
 };
 
-export const handleGenerationError = (error: GenerationError) => (dispatch: LumoDispatch) => {
+export const handleGenerationError = (error: GenerationError, userType: LUMO_USER_TYPE) => (dispatch: LumoDispatch) => {
     // Log the error for analytics/debugging
     console.error('Generation Error:', {
         type: error.type,
@@ -61,8 +66,7 @@ export const handleGenerationError = (error: GenerationError) => (dispatch: Lumo
                 addConversationError({
                     conversationId: error.conversationId,
                     errorTitle: c('collider_2025: Error Title').t`${LUMO_SHORT_APP_NAME}'s a busy cat`,
-                    errorMessage: c('collider_2025: Error Message')
-                        .t`We're experiencing unusually high demand. If retrying doesn't work, check back in a few minutes or upgrade for priority access to ${LUMO_SHORT_APP_NAME}.`,
+                    errorMessage: getHighDemandErrorMessage(userType),
                     errorType: error.type,
                     actionParams: error.actionParams,
                 })
@@ -74,8 +78,7 @@ export const handleGenerationError = (error: GenerationError) => (dispatch: Lumo
                 addConversationError({
                     conversationId: error.conversationId,
                     errorTitle: c('collider_2025: Error Title').t`Looks like there's a lot of traffic`,
-                    errorMessage: c('collider_2025: Error Message')
-                        .t`If retrying doesn’t work, check back later or consider upgrading to ${LUMO_SHORT_APP_NAME} Plus to jump to the front of the line during peak times.`,
+                    errorMessage: getGenerationRejectedErrorMessage(userType),
                     errorType: error.type,
                     actionParams: error.actionParams,
                 })

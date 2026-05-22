@@ -6,6 +6,7 @@ import {
     MAX_MESSAGES_PER_CONVERSATION,
     MAX_SPACES_PER_USER,
 } from '../../constants/limits';
+import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import type { DebugLimitOverride } from '../../redux/slices/meta/errors';
 import {
@@ -15,7 +16,9 @@ import {
     setDebugLimitOverride,
 } from '../../redux/slices/meta/errors';
 import { isNativeComposerBridgeAvailable, onLimitReachedError } from '../../remote/nativeComposerBridgeHelpers';
+import { handleGenerationError } from '../../services/errors/errorHandling';
 import type { ConversationId, SpaceId } from '../../types';
+import { LUMO_API_ERRORS } from '../../types';
 
 const overrideLabel = (override: DebugLimitOverride) => {
     if (override === 'approaching') return 'APPROACHING';
@@ -33,6 +36,7 @@ interface NotificationsTabProps {
 export const NotificationsTab = ({ currentConversationId, currentSpaceId }: NotificationsTabProps) => {
     const dispatch = useLumoDispatch();
     const debugOverrides = useLumoSelector(selectAllDebugLimitOverrides);
+    const { lumoUserType } = useLumoPlan();
 
     const triggerLimitError = (resource: Resource, limit: number) => {
         dispatch(
@@ -68,6 +72,28 @@ export const NotificationsTab = ({ currentConversationId, currentSpaceId }: Noti
                 conversationId: resource === 'messages' ? currentConversationId : undefined,
                 spaceId: resource === 'assets' ? currentSpaceId : undefined,
             })
+        );
+    };
+
+    const triggerGenerationError = (errorType: LUMO_API_ERRORS) => {
+        if (!currentConversationId) {
+            console.warn('[DebugView] No current conversation ID available for generation error');
+            return;
+        }
+
+        dispatch(
+            handleGenerationError(
+                {
+                    type: errorType,
+                    conversationId: currentConversationId,
+                    originalMessage: { type: 'error' } as any,
+                    actionParams: {
+                        actionType: 'send',
+                        isWebSearchButtonToggled: false,
+                    } as any,
+                },
+                lumoUserType
+            )
         );
     };
 
@@ -172,6 +198,47 @@ export const NotificationsTab = ({ currentConversationId, currentSpaceId }: Noti
                 <div className="debug-view-hint">
                     {c('lumo: Debug View')
                         .t`Forces the inline composer banner into "approaching" or "at limit" state so you can preview it in any context.`}
+                </div>
+            </div>
+
+            <div className="debug-view-header" style={{ marginTop: '12px' }}>
+                <span className="debug-view-header-icon">⚠️</span>
+                {c('lumo: Debug View').t`Generation errors`}
+            </div>
+            <div className="debug-view-actions">
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() => triggerGenerationError(LUMO_API_ERRORS.GENERATION_REJECTED)}
+                    disabled={!currentConversationId}
+                >
+                    🚦 {c('lumo: Debug View').t`Trigger generation rejected`}
+                </button>
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() => triggerGenerationError(LUMO_API_ERRORS.HIGH_DEMAND)}
+                    disabled={!currentConversationId}
+                >
+                    🚌 {c('lumo: Debug View').t`Trigger high demand`}
+                </button>
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() => triggerGenerationError(LUMO_API_ERRORS.HARMFUL_CONTENT)}
+                    disabled={!currentConversationId}
+                >
+                    🛡️ {c('lumo: Debug View').t`Trigger harmful content`}
+                </button>
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() => triggerGenerationError(LUMO_API_ERRORS.STREAM_DISCONNECTED)}
+                    disabled={!currentConversationId}
+                >
+                    🔌 {c('lumo: Debug View').t`Trigger stream disconnected`}
+                </button>
+                <div className="debug-view-hint">
+                    {currentConversationId
+                        ? c('lumo: Debug View')
+                              .t`Triggers generation error messages with tier-specific messaging. User type: ${lumoUserType}`
+                        : c('lumo: Debug View').t`Open a conversation to enable generation error testing.`}
                 </div>
             </div>
         </div>
