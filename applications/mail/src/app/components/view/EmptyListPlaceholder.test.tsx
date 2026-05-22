@@ -24,6 +24,10 @@ const mockedReturn = useGetStartedChecklist as jest.MockedFunction<typeof useGet
 
 jest.mock('@proton/activation/src/components/SettingsArea/ProviderCards/ProviderCard', () => () => null);
 
+jest.mock('@proton/activation/src/logic/store', () => ({
+    useEasySwitchSelector: jest.fn(() => null),
+}));
+
 jest.mock('proton-mail/store/hooks');
 jest.mocked(useMailSelector).mockReturnValue(undefined);
 
