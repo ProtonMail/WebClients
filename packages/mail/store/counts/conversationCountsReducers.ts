@@ -589,6 +589,15 @@ export const labelConversationsPending = (
 
                 // Remove the conversation messages from all locations (except the destination)
                 if (destinationLabelID !== label.ID) {
+                    // Category counters reflect conversations visible in the inbox category tabs (inbox + category label).
+                    // If the conversation has no INBOX messages, it's not in any category tab yet — don't decrease.
+                    if (
+                        isCategoryLabel(label.ID) &&
+                        getContextNumMessages(conversation, MAILBOX_LABEL_IDS.INBOX) === 0
+                    ) {
+                        return;
+                    }
+
                     conversationCountState.Total = safeDecreaseCount(conversationCountState?.Total, 1);
                     if (hasUnreadInLabel) {
                         conversationCountState.Unread = safeDecreaseCount(conversationCountState?.Unread, 1);
