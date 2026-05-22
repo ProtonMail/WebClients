@@ -826,6 +826,7 @@ export enum SHARED_UPSELL_PATHS {
     TOP_NAVIGATION_BAR = 'top-navigation-bar',
     PUBLIC_SHARING_PERMISSIONS_MENU = 'public-sharing-permissions-menu',
     EASY_SWITCH_BYOE = 'easy-switch-byoe',
+    EASY_SWITCH_BYOE_MORE_STORAGE = 'easy-switch-byoe-more-storage',
 }
 
 export enum DASHBOARD_UPSELL_PATHS {
