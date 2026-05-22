@@ -75,6 +75,11 @@ import { quitTracker } from "./utils/log/quitTracker";
     // Config initialization
     saveAppID();
 
+    //Check if the user has disabled hardware acceleration
+    if (getSettings().disableHardwareAcceleration) {
+        app.disableHardwareAcceleration();
+    }
+
     // Chromium logs, one-shot, auto-disabled for next session and log is overwritten
     if (getSettings().chromiumLoggingEnabled) {
         updateSettings({ chromiumLoggingEnabled: false });
