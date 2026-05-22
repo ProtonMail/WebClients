@@ -27,10 +27,10 @@ import spotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-sta
 import clsx from '@proton/utils/clsx';
 
 import { useActiveShare } from '../../../legacy/hooks/drive/useActiveShare';
-import { useIsTransferManagerVisible } from '../../../legacy/hooks/drive/useIsTransferManagerVisible';
 import { useFileUploadInput } from '../../../legacy/store';
 import { useFileSharingModal } from '../../../modals/SelectLinkToShareModal';
 import { useIsFreeUploadInProgress } from '../../../modules/freeUpload';
+import { useTransferManagerState } from '../../../sections/transferManager/useTransferManagerState';
 import useChecklist from './useChecklist';
 
 import './GiftFloatingButton.scss';
@@ -39,7 +39,7 @@ export default function GiftFloatingButton() {
     const checklist = useChecklist();
     const { viewportWidth } = useActiveBreakpoint();
     const isFreeUploadInProgress = useIsFreeUploadInProgress();
-    const isTransferManagerVisible = useIsTransferManagerVisible();
+    const { isVisible: isTransferManagerVisible } = useTransferManagerState();
     const { pathname } = useLocation();
     const hasPhotosTimeline = stripLocalBasenameFromPathname(pathname) === '/photos';
 
