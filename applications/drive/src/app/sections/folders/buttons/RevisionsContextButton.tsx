@@ -4,8 +4,8 @@ import { getDrive } from '@proton/drive';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import { ContextMenuButton } from '../../../legacy/components/sections/ContextMenu';
-import { useDocumentActions } from '../../../legacy/hooks/docs/useDocumentActions';
 import type { useRevisionsModal } from '../../../modals/RevisionsModal';
+import { openDocumentHistory } from '../../../utils/docs/openInDocs';
 
 interface Props {
     nodeUid: string;
@@ -16,7 +16,6 @@ interface Props {
 }
 
 export const RevisionsContextButton = ({ nodeUid, mediaType, showRevisionsModal, close }: Props) => {
-    const { openDocumentHistory } = useDocumentActions();
     return (
         <ContextMenuButton
             name={c('Action').t`See version history`}

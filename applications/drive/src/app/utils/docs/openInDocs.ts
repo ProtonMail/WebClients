@@ -6,10 +6,23 @@ import type { OpenInDocsType, ProtonDocumentType } from '@proton/shared/lib/help
 import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { getCurrentTab, getNewWindow } from '@proton/shared/lib/helpers/window';
 
-import type { DocumentType, RedirectAction } from '../../legacy/hooks/docs/useOpenDocument';
-import { tmpConvertNewDocTypeToOld } from '../../legacy/hooks/docs/useOpenDocument';
 import { unleashVanillaStore } from '../../legacy/zustand/unleash/unleash.store';
 import { extraThunkArguments } from '../../redux-store/thunk';
+import { tmpConvertNewDocTypeToOld } from './tmpConvertNewDocTypeToOld';
+
+export type DocumentType = 'doc' | 'sheet';
+
+/**
+ * When coming back from the account sign up or sign in, we are usually coming back after the user initiated the auth
+ * by pressing Bookmark or Make Copy button. The `action` param in the URL will tell us where to pick back up once
+ * we're back in Docs.
+ *
+ * DRIVE-DEVS: Do not remove export. Used by drive-store.
+ */
+export enum RedirectAction {
+    Bookmark = 'bookmark',
+    MakeCopy = 'make-copy',
+}
 
 export const getOpenInDocsInfo = (mediaType: string): OpenInDocsType | undefined => {
     const isODSImportEnabled = unleashVanillaStore.getState().isEnabled('SheetsODSImportEnabled');
@@ -266,6 +279,24 @@ const convertDocument = async ({ uid, type }: { uid: string; type: DocumentType 
         openDocumentWindow({
             type,
             mode: 'convert',
+            windowHandle: w.handle,
+            volumeId,
+            linkId: nodeId,
+        });
+    } catch (e) {
+        w.close();
+        throw e;
+    }
+};
+
+export const openDocumentHistory = async ({ uid, type }: { uid: string; type: DocumentType | ProtonDocumentType }) => {
+    const w = getNewWindow();
+    const { volumeId, nodeId } = splitNodeUid(uid);
+
+    try {
+        openDocumentWindow({
+            type,
+            mode: 'history',
             windowHandle: w.handle,
             volumeId,
             linkId: nodeId,
