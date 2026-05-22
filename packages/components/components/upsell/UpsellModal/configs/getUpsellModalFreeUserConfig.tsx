@@ -33,6 +33,12 @@ export const getUpsellModalFreeUserConfig: UpsellModalConfigCase = async (props)
         ? ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE
         : offerMonthlyPrice.couponPrice;
 
+    const offerPrice = (
+        <Price currency={currency} key="offerPrice">
+            {couponMonthlyPrice}
+        </Price>
+    );
+
     const footerText = (() => {
         const priceLine = (
             <Price
@@ -76,6 +82,7 @@ export const getUpsellModalFreeUserConfig: UpsellModalConfigCase = async (props)
         cycle,
         coupon,
         footerText,
+        offerPrice,
         submitText,
     };
 };

@@ -50,6 +50,13 @@ export interface OnboardingChecklistContext {
     markItemsAsDone: (item: ChecklistKeyType) => Promise<void>;
     canDisplayChecklist: boolean;
     itemsToComplete: ChecklistKeyType[];
+    /**
+     * When true, prevents the checklist from auto-collapsing while a BYOE flow is in progress.
+     * The checklist would normally collapse when the inbox fills up (>= 5 messages), but during
+     * a BYOE setup the import starts immediately, and we want to display success modals
+     */
+    byoeFlowInProgress: boolean;
+    setByoeFlowInProgress: (value: boolean) => void;
 }
 
 const GetStartedChecklistContext = createContext<OnboardingChecklistContext | undefined>(undefined);
@@ -74,6 +81,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     // This is used in the checklist to make optimistic UI updates. It marks the checklist item as done or store the display state
     const [doneItems, setDoneItems] = useState<ChecklistKeyType[]>([]);
     const [displayState, setDisplayState] = useState<CHECKLIST_DISPLAY_TYPE>(CHECKLIST_DISPLAY_TYPE.HIDDEN);
+    const [byoeFlowInProgress, setByoeFlowInProgress] = useState(false);
 
     const { checklist, loading, checklistType } = useChecklist();
 
@@ -98,8 +106,12 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
         }
 
         setDoneItems(checklist.Items ?? []);
-        setDisplayState(checklist.Display);
-    }, [checklist, submitting]);
+        // Don't update display state while BYOE flow is in progress to prevent
+        // unmounting ConnectGmailButton and losing its local state mid-flow.
+        if (!byoeFlowInProgress) {
+            setDisplayState(checklist.Display);
+        }
+    }, [checklist, submitting, byoeFlowInProgress]);
 
     const markItemsAsDone = async (item: ChecklistKeyType) => {
         setDoneItems((state) => [...state, item]);
@@ -171,6 +183,8 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
         markItemsAsDone,
         userWasRewarded: checklist.UserWasRewarded,
         itemsToComplete,
+        byoeFlowInProgress,
+        setByoeFlowInProgress,
     };
 
     return <GetStartedChecklistContext.Provider value={context}>{children}</GetStartedChecklistContext.Provider>;

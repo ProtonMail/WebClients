@@ -2,8 +2,6 @@ import type { FunctionComponent } from 'react';
 import { useState } from 'react';
 import { Router } from 'react-router-dom';
 
-import EasySwitchStoreInitializer from '@proton/activation/src/logic/EasySwitchStoreInitializer';
-import EasySwitchStoreProvider from '@proton/activation/src/logic/StoreProvider';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import LoaderPage from '@proton/components/containers/app/LoaderPage';
@@ -79,16 +77,12 @@ const App = () => {
                                         >
                                             <ApiProvider api={extraThunkArguments.api}>
                                                 <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
-                                                    <EasySwitchStoreProvider>
-                                                        <EasySwitchStoreInitializer>
-                                                            <ErrorBoundary component={<StandardErrorPage big />}>
-                                                                <StandardPrivateApp noModals>
-                                                                    <NotificationManagerInjector />
-                                                                    <state.MainContainer />
-                                                                </StandardPrivateApp>
-                                                            </ErrorBoundary>
-                                                        </EasySwitchStoreInitializer>
-                                                    </EasySwitchStoreProvider>
+                                                    <ErrorBoundary component={<StandardErrorPage big />}>
+                                                        <StandardPrivateApp noModals>
+                                                            <NotificationManagerInjector />
+                                                            <state.MainContainer />
+                                                        </StandardPrivateApp>
+                                                    </ErrorBoundary>
                                                 </DrawerProvider>
                                             </ApiProvider>
                                         </CalendarModelEventManagerProvider>

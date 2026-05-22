@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { useEventManagerV6 } from '@proton/components/containers/eventManager/EventManagerV6Provider';
 import useEventManager from '@proton/components/hooks/useEventManager';
 
+import BYOEFlowModals from '../components/Modals/BYOEFlowModals';
 import MainModal from '../components/Modals/MainModal';
 import SyncLostListener from './SyncLostListener';
 import { event, eventLoopV6 } from './actions';
@@ -44,10 +45,12 @@ const EasySwitchEventListener = ({ children }: Props) => {
 
 const EasySwitchStoreProvider = ({ children }: Props) => {
     const easySwitchStore = useGenerateEasySwitchStore();
+
     return (
         <Provider store={easySwitchStore}>
             <EasySwitchEventListener>{children}</EasySwitchEventListener>
             <MainModal />
+            <BYOEFlowModals />
         </Provider>
     );
 };

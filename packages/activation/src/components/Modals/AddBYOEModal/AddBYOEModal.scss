@@ -31,6 +31,7 @@ im.$media-expressions: $media-expressions;
 			position: absolute;
 			inset: 0;
 			border-radius: inherit;
+			pointer-events: none;
 		}
 
 		@include im.media('<=small') {
