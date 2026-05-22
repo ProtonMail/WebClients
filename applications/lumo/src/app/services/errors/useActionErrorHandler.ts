@@ -36,24 +36,30 @@ export const useActionErrorHandler = () => {
                         dispatch(handleTierError(lumoUserType));
                     } else if (analyzed.lumoErrorType) {
                         dispatch(
-                            handleGenerationError({
-                                type: analyzed.lumoErrorType,
-                                conversationId,
-                                originalMessage: { type: 'error' } as any,
-                                actionParams: context.actionParams,
-                            })
+                            handleGenerationError(
+                                {
+                                    type: analyzed.lumoErrorType,
+                                    conversationId,
+                                    originalMessage: { type: 'error' } as any,
+                                    actionParams: context.actionParams,
+                                },
+                                lumoUserType
+                            )
                         );
                     }
                     break;
 
                 case 'network':
                     dispatch(
-                        handleGenerationError({
-                            type: LUMO_API_ERRORS.STREAM_DISCONNECTED,
-                            conversationId,
-                            originalMessage: { type: 'error' } as any,
-                            actionParams: context.actionParams,
-                        })
+                        handleGenerationError(
+                            {
+                                type: LUMO_API_ERRORS.STREAM_DISCONNECTED,
+                                conversationId,
+                                originalMessage: { type: 'error' } as any,
+                                actionParams: context.actionParams,
+                            },
+                            lumoUserType
+                        )
                     );
                     break;
 
