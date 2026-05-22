@@ -35,9 +35,6 @@ import MainContainer from './MainContainer';
 import './Conversation.scss';
 
 const GalleryView = lazy(() => import('../../features/gallery/GalleryView').then((m) => ({ default: m.GalleryView })));
-// const TestGalleryView = lazy(() =>
-//     import('../../features/gallery/TestGalleryView').then((m) => ({ default: m.GalleryView }))
-// );
 
 const ConversationPageComponentInner = () => {
     // ** Hooks **
@@ -210,11 +207,6 @@ const ConversationPageComponentInner = () => {
                         initialQuery={initialQuery || undefined}
                         prefillQuery={prefillQuery || undefined}
                     />
-                    // <TestMainContainer
-                    //     isProcessingAttachment={isProcessingAttachment}
-                    //     initialQuery={initialQuery || undefined}
-                    //     prefillQuery={prefillQuery || undefined}
-                    // />
                 )}
                 {curConversationId && isLoading && <ConversationSkeleton />}
                 {curConversationId && !isLoading && (
@@ -226,14 +218,6 @@ const ConversationPageComponentInner = () => {
                         initialQuery={initialQuery || undefined}
                         prefillQuery={pendingPrefill || undefined}
                     />
-                    // <TestConversationComponent
-                    //     key={curConversationId}
-                    //     conversation={conversation}
-                    //     isGenerating={isGenerating}
-                    //     isProcessingAttachment={isProcessingAttachment}
-                    //     initialQuery={initialQuery || undefined}
-                    //     prefillQuery={pendingPrefill || undefined}
-                    // />
                 )}
             </div>
         </ConversationActionsProvider>
