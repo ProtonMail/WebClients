@@ -47,6 +47,12 @@ const UPSELL_PATH_TO_FLOW_NAME_MAP = {
 } as const;
 
 /**
+ * Upsell paths that have their own post-subscription flow and should skip the generic one.
+ * These flows show their own success/next-step modal after subscription completes.
+ */
+const UPSELL_PATHS_WITH_OWN_POST_SUBSCRIPTION_FLOW = [SHARED_UPSELL_PATHS.EASY_SWITCH_BYOE_MORE_STORAGE];
+
+/**
  * Determines the post-subscription flow name based on upsell ref or plan ID
  * @param upsellRef - The upsell reference string to check against eligible upsells
  * @param planIDs - The plan IDs to validate against eligible plans
@@ -56,6 +62,12 @@ const getPostSubscriptionFlowName = (
     upsellRef: string | undefined,
     planIDs: PlanIDs
 ): PostSubscriptionFlowName | undefined => {
+    // Some upsell flows have their own post-subscription UI (e.g. a success modal).
+    // Skip the generic post-subscription modal for those to avoid two modals stacking.
+    if (UPSELL_PATHS_WITH_OWN_POST_SUBSCRIPTION_FLOW.some((path) => upsellRef?.includes(path))) {
+        return undefined;
+    }
+
     const upsellRefMatch = (
         Object.keys(UPSELL_PATH_TO_FLOW_NAME_MAP) as (keyof typeof UPSELL_PATH_TO_FLOW_NAME_MAP)[]
     ).find((key) => upsellRef?.includes(key));

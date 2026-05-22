@@ -62,7 +62,7 @@ const MailboxListItems = ({
         elementID,
         isSearch,
     } = useMailboxListContext();
-    const { displayState, changeChecklistDisplay, canDisplayChecklist } = useGetStartedChecklist();
+    const { displayState, changeChecklistDisplay, canDisplayChecklist, byoeFlowInProgress } = useGetStartedChecklist();
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     const [mailSettings] = useMailSettings();
     const { contentIndexingDone, esEnabled } = esStatus;
@@ -74,11 +74,14 @@ const MailboxListItems = ({
     const { isColumnModeActive } = useMailboxLayoutProvider();
 
     useEffect(() => {
-        if (elements.length >= 5 && displayState === CHECKLIST_DISPLAY_TYPE.FULL) {
+        // When we show more than 5 elements in the list, the onboarding should be collapsed.
+        // However, if the user is in the middle of the BYOE flow, we want to keep the checklist expanded
+        // in case the import started but the user is going through the upgrade flow.
+        if (elements.length >= 5 && displayState === CHECKLIST_DISPLAY_TYPE.FULL && !byoeFlowInProgress) {
             changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.REDUCED);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A1D418
-    }, [elements]);
+    }, [elements, byoeFlowInProgress]);
 
     if (elements.length === 0) {
         if (noPlaceholder) {
@@ -102,7 +105,10 @@ const MailboxListItems = ({
     }
 
     const showUserOnboarding =
-        !mailboxListLoading && !(total > 1) && canDisplayChecklist && displayState === CHECKLIST_DISPLAY_TYPE.FULL;
+        !mailboxListLoading &&
+        (!(total > 1) || byoeFlowInProgress) &&
+        canDisplayChecklist &&
+        (displayState === CHECKLIST_DISPLAY_TYPE.FULL || byoeFlowInProgress);
 
     return (
         <div className="overflow-auto h-full" ref={scrollContainerRef}>
