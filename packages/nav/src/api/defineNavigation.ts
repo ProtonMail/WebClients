@@ -1,76 +1,34 @@
-import { DuplicateNavIdError } from '../errors';
+import { compute } from '../compute';
 import type { NavContext } from '../types/models';
-import type { NavArgs, NavItemDefinition, NavItemResolved, NavItemResolverActions, NavResolved } from '../types/nav';
-import { unwrap } from '../unwrap';
+import type { NavArgs, NavItemDefinition, NavItemResolved, NavResolved } from '../types/nav';
+import { assertUniqueIds } from './assertUniqueIds';
 
-function collectIds(items: NavItemDefinition<any>[], seen: Set<string>): void {
-    for (const item of items) {
-        if (seen.has(item.id)) {
-            throw new DuplicateNavIdError(item.id);
-        }
-        seen.add(item.id);
-        if (item.children && item.children.length > 0) {
-            collectIds(item.children, seen);
-        }
-    }
-}
-
-const actions: NavItemResolverActions = {
-    keep: () => ({ _action: 'keep' }),
-    remove: () => ({ _action: 'remove' }),
-    update: (patch) => ({ _action: 'update', patch }),
-};
+const isNotPruned = (item: NavItemResolved | null): item is NavItemResolved => item !== null;
 
 function resolveItem<TContext extends NavContext>(
     definition: NavItemDefinition<TContext>,
     context: TContext
 ): NavItemResolved | null {
-    const resolvedChildren: NavItemResolved[] = [];
-
-    if (definition.children && definition.children.length > 0) {
-        for (const child of definition.children) {
-            const resolvedChild = resolveItem(child, context);
-            if (resolvedChild !== null) {
-                resolvedChildren.push(resolvedChild);
-            }
-        }
+    if (definition.isVisible && !definition.isVisible({ context })) {
+        return null;
     }
 
-    let resolved: NavItemResolved = {
+    const children = definition.children ?? [];
+    const resolvedChildren = children.map((item) => resolveItem(item, context)).filter(isNotPruned);
+
+    const to = compute(definition.to, context);
+    if (!to && resolvedChildren.length === 0) {
+        return null;
+    }
+
+    return {
         id: definition.id,
-        label: unwrap(definition.label),
-        icon: definition.icon,
-        to: context?.prefix && definition.to ? `${context.prefix}${definition.to}` : definition.to,
+        label: compute(definition.label, context),
+        to,
+        icon: compute(definition.icon, context),
+        meta: compute(definition.meta, context) ?? {},
         children: resolvedChildren.length ? resolvedChildren : undefined,
-        meta: definition.meta ?? {},
     };
-
-    if (definition.resolver) {
-        const action = definition.resolver({ ...actions, item: resolved, context });
-        switch (action._action) {
-            case 'remove':
-                return null;
-            case 'update': {
-                const { meta: patchMeta, ...patchRest } = action.patch;
-                const isToPatched = 'to' in patchRest;
-                const prefixedTo = context.prefix ? `${context.prefix}${patchRest.to}` : patchRest.to;
-                const patchedTo = isToPatched ? prefixedTo : resolved.to;
-                resolved = {
-                    ...resolved,
-                    ...patchRest,
-                    to: patchedTo,
-                    ...(patchMeta !== undefined && {
-                        meta: { ...resolved.meta, ...patchMeta },
-                    }),
-                };
-                break;
-            }
-            case 'keep':
-                break;
-        }
-    }
-
-    return resolved;
 }
 
 /**
@@ -79,28 +37,23 @@ function resolveItem<TContext extends NavContext>(
  * The `definition` argument should be declared with `as const satisfies NavDefinition<YourContext>`
  * to preserve literal types for use with `defineSearchOptions`.
  *
- * @example
- * const definition = {
- *     items: [...],
- * } as const satisfies NavDefinition<AppContext>;
- * @example
- * const nav = defineNavigation<AppContext>({ definition, context });
- * @returns {NavResolved} NavResolved
- * @throws {DuplicateNavIdError} DuplicateNavIdError if any two items share the same `id`
- * anywhere in the definition tree
+ * Each item field (`label`, `to`, `icon`, `meta`) may be provided statically or as
+ * a function of the context. The optional `isVisible` predicate gates the item — if
+ * it returns `false` the item and its subtree are pruned. Items with no resolved `to`
+ * and no surviving children are also pruned, cascading up so containers whose
+ * entire subtree disappeared are removed too.
+ *
+ * To prepend a route prefix to every resolved `to`, pipe the result through `applyPrefix`.
+ *
+ * @throws {DuplicateNavIdError} if any ids are duplicated anywhere in the tree
+ * (the error lists every duplicate, not just the first one found).
  */
-export function defineNavigation<TContext extends NavContext = NavContext>(args: NavArgs<TContext>): NavResolved {
-    const { definition, context } = args;
+export function defineNavigation<TContext extends NavContext = NavContext>({
+    definition,
+    context,
+}: NavArgs<TContext>): NavResolved {
+    assertUniqueIds(definition.items);
 
-    collectIds(definition.items, new Set());
-
-    const items: NavItemResolved[] = [];
-    for (const item of definition.items) {
-        const resolved = resolveItem(item, context);
-        if (resolved !== null) {
-            items.push(resolved);
-        }
-    }
-
+    const items = definition.items.map((item) => resolveItem(item, context)).filter(isNotPruned);
     return { items };
 }
