@@ -4,62 +4,43 @@ import type { NavContext } from './models';
 
 type Meta = Record<string, unknown>;
 
+/**
+ * A value that may be provided statically or computed from the runtime context.
+ *
+ * @example to: '/dashboard'
+ * @example to: ({ context }) => context.flags.includes('v2') ? '/dashboard-v2' : '/dashboard'
+ */
+export type Computed<T, TContext extends NavContext = NavContext> = T | ((args: { context: TContext }) => T);
+
+export interface NavItemDefinition<TContext extends NavContext = NavContext> {
+    id: string;
+    label: Computed<string, TContext>;
+    to?: Computed<string | undefined, TContext>;
+    icon?: Computed<IconName | undefined, TContext>;
+    meta?: Computed<Meta, TContext>;
+    children?: NavItemDefinition<TContext>[];
+    /**
+     * Predicate gate. If it returns `false`, the item and its entire subtree are
+     * pruned from the resolved tree. Defaults to "always include."
+     */
+    isVisible?: (args: { context: TContext }) => boolean;
+}
+
 export interface NavItemResolved {
     id: string;
     label: string;
     to: string | undefined;
-    children: NavItemResolved[] | undefined;
     icon: IconName | undefined;
     meta: Meta;
-}
-
-export interface NavResolved {
-    items: NavItemResolved[];
-}
-
-type NavItemResolverAction =
-    | { _action: 'keep' }
-    | { _action: 'remove' }
-    | { _action: 'update'; patch: Partial<NavItemResolved> };
-
-/**
- * The three actions available inside a resolver.
- * Passed as the third argument to every resolver function.
- *
- * - `keep()`   — include the item unchanged
- * - `remove()` — exclude the item from the tree
- * - `update()` — merge a partial patch onto the item
- */
-export interface NavItemResolverActions {
-    /** Include the item with no changes. */
-    keep: () => NavItemResolverAction;
-    /** Exclude the item from the resolved tree. */
-    remove: () => NavItemResolverAction;
-    /**
-     * Merge a partial patch onto the item.
-     *
-     * @example
-     * update({ to: isFlag ? '/route-B' : 'route-A' })
-     */
-    update: (patch: Partial<NavItemResolved>) => NavItemResolverAction;
-}
-
-export type NavItemResolver<TContext extends NavContext = NavContext> = (
-    _: { item: NavItemResolved; context: TContext } & NavItemResolverActions
-) => NavItemResolverAction;
-
-export interface NavItemDefinition<TContext extends NavContext = NavContext> {
-    id: string;
-    label: string | (() => string);
-    to?: string;
-    children?: NavItemDefinition<TContext>[];
-    icon?: IconName;
-    meta?: Meta;
-    resolver?: NavItemResolver<TContext>;
+    children: NavItemResolved[] | undefined;
 }
 
 export interface NavDefinition<TContext extends NavContext = NavContext> {
     items: NavItemDefinition<TContext>[];
+}
+
+export interface NavResolved {
+    items: NavItemResolved[];
 }
 
 export interface NavArgs<TContext extends NavContext = NavContext> {
