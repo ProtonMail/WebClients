@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
@@ -38,6 +38,7 @@ import { SignInButton } from '../../Guest/SignInLink';
 import { LumoLogoThemeAware } from '../../Icons/LumoLogoThemeAware';
 import AboutPanel from './AboutPanel';
 import DeleteAllButton from './DeleteAllButton';
+import MemoryPanel from './MemoryPanel';
 import { PaidSubscriptionPanel } from './PaidSubscriptionPanel';
 import PersonalizationPanel from './PersonalizationPanel';
 import { SearchIndexManagement } from './SearchIndex/SearchIndexManagement';
@@ -64,6 +65,12 @@ const BASE_SETTINGS_ITEMS: SettingsItem[] = [
         icon: 'sliders',
         getText: () => c('collider_2025: Settings Item').t`Personalization`,
         guest: true,
+    },
+    {
+        id: 'memory',
+        icon: 'archive-box',
+        getText: () => c('collider_2025: Settings Item').t`Memory`,
+        guest: false,
     },
     { id: 'general', icon: 'cog-wheel', getText: () => c('collider_2025: Settings Item').t`General`, guest: true },
     { id: 'about', icon: 'info-circle', getText: () => c('collider_2025: Settings Item').t`About`, guest: true },
@@ -376,10 +383,16 @@ interface SettingsModalProps extends ModalOwnProps {
 }
 
 const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModalProps) => {
-    const [activePanel, setActivePanel] = useState(initialPanel);
+    const { memory: isMemoryFeatureEnabled } = useLumoFlags();
+    const [activePanel, setActivePanel] = useState(
+        initialPanel === 'memory' && !isMemoryFeatureEnabled ? 'account' : initialPanel
+    );
     const isGuest = useIsGuest();
     const closeModal = modalProps.onClose;
-    const SettingsItems = BASE_SETTINGS_ITEMS;
+    const SettingsItems = useMemo(
+        () => (isMemoryFeatureEnabled ? BASE_SETTINGS_ITEMS : BASE_SETTINGS_ITEMS.filter((item) => item.id !== 'memory')),
+        [isMemoryFeatureEnabled]
+    );
 
     useNativeComposerVisibilityApi({ isBlocking: true });
 
@@ -452,12 +465,18 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
 
                             {/* Panel content — rendered exactly once */}
                             <div
-                                className="flex flex-column gap-4 flex-1 overflow-y-auto mb-10 w-full min-w-0"
+                                className={clsx(
+                                    'flex flex-column gap-4 flex-1 mb-10 w-full min-w-0',
+                                    activePanel === 'memory' ? 'overflow-hidden min-h-0' : 'overflow-y-auto'
+                                )}
                                 style={{ minHeight: 0 }}
                             >
                                 {activePanel === 'account' &&
                                     (isGuest ? <AccountSettingsPanelGuest /> : <AccountSettingsPanel />)}
                                 {activePanel === 'personalization' && <PersonalizationPanel />}
+                                {activePanel === 'memory' && isMemoryFeatureEnabled && (
+                                    <MemoryPanel onClose={closeModal} />
+                                )}
                                 {activePanel === 'general' &&
                                     (isGuest ? (
                                         <GeneralSettingsPanelGuest />
