@@ -36,9 +36,17 @@ interface Props {
     header?: ReactNode;
     showAdvancedImport?: boolean;
     onComplete?: () => Promise<void>;
+    onBYOEFlowStart?: () => void;
 }
 
-const ProviderCard = ({ app, header, hasBorders = true, showAdvancedImport = true, onComplete }: Props) => {
+const ProviderCard = ({
+    app,
+    header,
+    hasBorders = true,
+    showAdvancedImport = true,
+    onComplete,
+    onBYOEFlowStart,
+}: Props) => {
     const [, loadingCalendars] = useCalendars();
 
     const [selectedProvider, setSelectedProvider] = useState<ImportProvider>(ImportProvider.GOOGLE);
@@ -68,6 +76,7 @@ const ProviderCard = ({ app, header, hasBorders = true, showAdvancedImport = tru
                         showIcon
                         buttonText={c('Action').t`Google`}
                         onComplete={onComplete}
+                        onBYOEFlowStart={onBYOEFlowStart}
                     />
                 ) : (
                     <ProviderButton

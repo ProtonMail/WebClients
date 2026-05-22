@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -35,6 +35,14 @@ const UserOnboardingMessageListPlaceholder = ({ location }: Props) => {
             ? ListPlaceholderStep.Importers
             : ListPlaceholderStep.AccountsSwitcher
     );
+
+    // Advance the step when the import is marked as done (optimistic update from markItemsAsDone),
+    // so we don't rely on a goToNextStep call that may be stale if the component remounted.
+    useEffect(() => {
+        if (hasCompletedImport) {
+            setStep(ListPlaceholderStep.AccountsSwitcher);
+        }
+    }, [hasCompletedImport]);
 
     if (hidden) {
         return null;
