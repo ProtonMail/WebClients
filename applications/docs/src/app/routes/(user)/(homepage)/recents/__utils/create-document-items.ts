@@ -68,3 +68,46 @@ export function getAuthorName(sdkData: NodeEntity | DegradedNode) {
     return sdkData.keyAuthor.value ?? undefined
   }
 }
+
+export function nodeToTrashedItemValue(node: NodeEntity | DegradedNode): RecentDocumentsItemValue {
+  const { volumeId, nodeId: linkId } = splitNodeUid(node.uid)
+  const { nodeId: parentLinkId } = node.parentUid ? splitNodeUid(node.parentUid) : {}
+  return {
+    name: getNodeName(node) ?? '',
+    type: mimeTypeToProtonDocumentType(node.mediaType) ?? 'document',
+    linkId,
+    parentLinkId,
+    volumeId,
+    // In case trashTime is missing it will use Sept 2001, but that's HIGHLY unlikely
+    lastViewed: new ServerTime(node.trashTime?.getTime() ?? 1000000000),
+    lastModified: new ServerTime(node.trashTime?.getTime() ?? 1000000000),
+    createdBy: getAuthorName(node),
+    // Properties below are irrelevant for trashed items
+    isSharedWithMe: false,
+    shareId: '',
+    location: { type: 'root' },
+  }
+}
+
+export function nodeToRecentItemValue(
+  node: NodeEntity | DegradedNode,
+  isSharedWithMe: boolean,
+  path: string[],
+  shareId: string = '',
+): RecentDocumentsItemValue {
+  const { volumeId, nodeId: linkId } = splitNodeUid(node.uid)
+  const { nodeId: parentLinkId } = node.parentUid ? splitNodeUid(node.parentUid) : {}
+  return {
+    name: getNodeName(node) ?? '',
+    type: mimeTypeToProtonDocumentType(node.mediaType) ?? 'document',
+    linkId,
+    parentLinkId,
+    volumeId,
+    lastViewed: new ServerTime(node.creationTime.getTime()),
+    lastModified: new ServerTime(node.creationTime.getTime()),
+    createdBy: getAuthorName(node),
+    isSharedWithMe,
+    location: getLocation(path, isSharedWithMe),
+    shareId,
+  }
+}
