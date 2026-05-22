@@ -70,7 +70,7 @@ interface LockSetup {
 }
 
 export const useLockSetup = (): LockSetup => {
-    const { getBiometricsKey, supportsBiometrics } = usePassCore();
+    const { getBiometricsKey, requestNativeMessagingPermission, supportsBiometrics } = usePassCore();
     const { createNotification } = useNotifications();
 
     const confirmPin = usePinUnlock();
@@ -266,6 +266,7 @@ export const useLockSetup = (): LockSetup => {
             }
 
             case LockMode.DESKTOP:
+                if ((await requestNativeMessagingPermission?.()) === false) return;
                 /** FIXME: for offline support using `LockMode.DESKTOP` we should
                  * go through the same password confirm flow as `LockMode.BIOMETRICS` */
                 return createLock.dispatch({ mode, secret: '', ttl, current });
