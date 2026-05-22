@@ -60,7 +60,7 @@ export const ProjectTitleSection = ({
     };
 
     return (
-        <div className="project-detail-title-section flex items-center flex-nowrap w-full p-2">
+        <div className="project-detail-title-section flex items-center flex-nowrap w-full p-2 pt-0">
             <Icon name={categoryIcon as any} size={6} className="project-detail-title-icon shrink-0" />
             {isEditingTitle ? (
                 <input
