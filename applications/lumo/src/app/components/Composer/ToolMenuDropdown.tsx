@@ -63,7 +63,7 @@ export const ToolMenuDropdown = ({
             isOpen={isOpen}
             anchorRef={anchorRef}
             onClose={onClose}
-            className="tool-menu-dropdown rounded-xl"
+            className="tool-menu-dropdown"
             width="200px"
         >
             {visibleToolMenuItems.map((item) => (
@@ -76,7 +76,7 @@ export const ToolMenuDropdown = ({
 
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
             <div
-                className="flex flex-nowrap items-center justify-space-between px-4 py-2 w-full"
+                className="flex flex-row flex-nowrap items-center justify-space-between px-4 py-2 w-full gap-4"
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className="flex items-center gap-3">
