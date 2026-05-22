@@ -1,6 +1,6 @@
 import { useModalTwoStatic } from '@proton/components';
 
-import { withHoc } from '../../legacy/hooks/withHoc';
+import { withHoc } from '../modalUtils/withHoc';
 import { RemoveDeviceModalView, type RemoveDeviceModalViewProps } from './RemoveDeviceModalView';
 import { type UseRemoveDeviceModalProps, useRemoveDeviceModalState } from './useRemoveDeviceModalState';
 

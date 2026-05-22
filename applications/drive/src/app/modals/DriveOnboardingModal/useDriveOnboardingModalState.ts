@@ -8,8 +8,8 @@ import { isMobile } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useOnboarding } from '../../legacy/components/onboarding/useOnboarding';
-import { useInitializeFreeUploadTimer } from '../../legacy/hooks/drive/freeUpload/useInitializeFreeUploadTimer';
 import { useDesktopDownloads } from '../../legacy/hooks/drive/useDesktopDownloads';
+import { useInitializeFreeUploadTimer } from '../../modules/freeUpload';
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
 import type { DriveOnboardingModalViewProps } from './DriveOnboardingModalView';
 import { B2BInviteStep, B2BInviteStepButtons } from './steps/B2BInviteStep';

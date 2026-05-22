@@ -7,7 +7,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import type { UserSortParams } from './sorting';
 import { getSetting, parseSetting } from './sorting';
-import { useUserSettingsStore } from './userSettings.store';
+import { useUserSettingsStore } from './store';
 
 export function useUserSettings() {
     const userSettings = useUserSettingsStore((state) => state.userSettings);

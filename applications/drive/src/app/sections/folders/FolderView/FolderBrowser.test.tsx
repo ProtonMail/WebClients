@@ -27,7 +27,7 @@ jest.mock('../../../legacy/store/_documents', () => ({
     useOpenInDocs: () => ({ canOpen: false }),
 }));
 
-jest.mock('../../../legacy/hooks/user', () => ({
+jest.mock('../../../modules/userSettings', () => ({
     useUserSettings: () => ({
         layout: 0,
         changeLayout: jest.fn(),

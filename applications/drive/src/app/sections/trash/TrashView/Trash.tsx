@@ -9,11 +9,11 @@ import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 
-import { useUserSettings } from '../../../legacy/hooks/user';
 import type { Drive } from '../../../modals/preview/interface';
 import { useContextMenuStore } from '../../../modules/contextMenu';
 import { useSelectionStore } from '../../../modules/selection';
 import type { SortConfig, SortField } from '../../../modules/sorting';
+import { useUserSettings } from '../../../modules/userSettings';
 import { DriveExplorer } from '../../../statelessComponents/DriveExplorer/DriveExplorer';
 import type {
     DriveExplorerA11y,

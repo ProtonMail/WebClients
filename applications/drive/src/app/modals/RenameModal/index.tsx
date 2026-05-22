@@ -1,6 +1,6 @@
 import { useModalTwoStatic } from '@proton/components';
 
-import { withHoc } from '../../legacy/hooks/withHoc';
+import { withHoc } from '../modalUtils/withHoc';
 import { RenameModalView, type RenameModalViewProps } from './RenameModalView';
 import { type UseRenameModalProps, useRenameModalState } from './useRenameModalState';
 
