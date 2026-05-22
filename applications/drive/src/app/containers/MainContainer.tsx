@@ -25,13 +25,7 @@ import GiftFloatingButton from '../legacy/components/onboarding/GiftFloatingButt
 import { ActiveShareProvider } from '../legacy/hooks/drive/useActiveShare';
 import { useReactRouterNavigationLog } from '../legacy/hooks/util/useReactRouterNavigationLog';
 import { useRedirectToPublicPage } from '../legacy/hooks/util/useRedirectToPublicPage';
-import {
-    DriveProvider,
-    useActivePing,
-    useBookmarksActions,
-    useDriveEventManager,
-    useSearchControl,
-} from '../legacy/store';
+import { DriveProvider, useActivePing, useDriveEventManager, useSearchControl } from '../legacy/store';
 import { useSanitization } from '../legacy/store/_sanitization/useSanitization';
 import { useDriveSharingFlags, useShareActions } from '../legacy/store/_shares';
 import { useShareBackgroundActions } from '../legacy/store/_views/useShareBackgroundActions';
@@ -42,6 +36,7 @@ import { driveMetrics } from '../modules/metrics';
 import { useSearchModule } from '../modules/search';
 import { useUserSettings } from '../modules/userSettings';
 import { PhotosWithAlbumsContainer } from '../photos/PhotosWithAlbumsContainer';
+import { useBookmarksActions } from '../sections/sharedWith/hooks/useBookmarksActions';
 import { TransferManager } from '../sections/transferManager/TransferManager';
 import { setPublicRedirectSpotlightToPending } from '../utils/publicRedirectSpotlight';
 import { getNodeEntity } from '../utils/sdk/getNodeEntity';
@@ -85,6 +80,7 @@ function InitContainer() {
     const driveEventManager = useDriveEventManager();
     const { isDirectSharingDisabled } = useDriveSharingFlags();
     const { convertExternalInvitationsFromEvents } = useShareBackgroundActions();
+    // TODO: Remove this and migrate to SDK
     const { addBookmarkFromPrivateApp } = useBookmarksActions();
     const { redirectionReason, redirectToPublicPage, cleanupUrl } = useRedirectToPublicPage();
     const { photosEnabled } = useUserSettings();
@@ -105,16 +101,20 @@ function InitContainer() {
                 // So we don't even load the app.
                 // See useSharedWithMeView.tsx for Sign-up logic
                 const token = getTokenFromSearchParams();
-                if (token && redirectionReason) {
-                    // In case of account switch we need to pass by the private app to set the latest active session
+                if (token) {
                     if (redirectionReason === 'signin') {
                         await addBookmarkFromPrivateApp(abortController.signal, {
                             token,
                             hideNotifications: true,
                         });
                         setPublicRedirectSpotlightToPending();
+                        redirectToPublicPage(token);
+                    } else if (redirectionReason === 'accountSwitch') {
+                        redirectToPublicPage(token);
+                    } else {
+                        await addBookmarkFromPrivateApp(abortController.signal, { token });
+                        cleanupUrl();
                     }
-                    redirectToPublicPage(token);
                 }
 
                 const drive = getDrive();

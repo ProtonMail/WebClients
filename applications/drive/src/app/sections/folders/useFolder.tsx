@@ -21,7 +21,6 @@ export function useFolder() {
     const { drive } = useDrive();
     const isDriveDocsDisabled = useFlag('DriveDocsDisabled');
     const isSheetsEnabled = useFlagsDriveSheet();
-    const copyFeatureEnabled = useFlag('DriveWebSDKCopy');
     const { createNotification } = useNotifications();
     const handleFolderError = useCallback(
         (error?: Error) => {
@@ -95,7 +94,7 @@ export function useFolder() {
                     canOpenInDocs: canEdit,
                     canShareNode: isAdmin && !isDeviceRoot && !isRoot,
                     canMove: canEdit,
-                    canCopy: copyFeatureEnabled,
+                    canCopy: true,
                     canRename: canEdit,
                     canTrash,
                 });
@@ -158,7 +157,7 @@ export function useFolder() {
                 setIsLoading(false);
             }
         },
-        [copyFeatureEnabled, createNotification, drive, handleFolderError, isDriveDocsDisabled, isSheetsEnabled]
+        [createNotification, drive, handleFolderError, isDriveDocsDisabled, isSheetsEnabled]
     );
 
     return {

@@ -1,14 +1,11 @@
 import { useCallback, useEffect } from 'react';
 
-import { c } from 'ttag';
-
-import { useNotifications, useOnline, usePreventLeave } from '@proton/components';
+import { useOnline, usePreventLeave } from '@proton/components';
 import { generateNodeUid } from '@proton/drive/index';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import type { ScanResultItem } from '@proton/shared/lib/interfaces/drive/file';
 
-import { useFlagsDriveSDKTransfer } from '../../../../flags/useFlagsDriveSDKTransfer';
 import { TransferState } from '../../../../legacy/components/TransferManager/transfer';
 import { hasValidAnonymousSignature } from '../../../../legacy/components/hasValidAnonymousSignature';
 import { useDownloadIsTooBigModal } from '../../../../legacy/components/modals/useDownloadIsTooBigModal';
@@ -48,7 +45,6 @@ type Item = {
 
 export default function useDownloadProvider(user: UserModel | undefined, initDownload: InitDownloadCallback) {
     const onlineStatus = useOnline();
-    const { createNotification } = useNotifications();
     const { observe } = useDownloadMetrics('download', user);
     const { preventLeave } = usePreventLeave();
     const [downloadIsTooBigModal, showDownloadIsTooBigModal] = useDownloadIsTooBigModal();
@@ -76,27 +72,9 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
      * to the queue.
      */
     const dm = DownloadManager.getInstance();
-    const isSDKTransferEnabled = useFlagsDriveSDKTransfer({ isForPhotos: true });
-    const download = async (links: Item[], options?: { virusScan?: boolean; zipName?: string }): Promise<void> => {
-        if (isSDKTransferEnabled) {
-            await dm.download(links.map((link) => generateNodeUid(link.volumeId, link.linkId)));
-            return;
-        }
-
-        await queue.add(links, options).catch((err: any) => {
-            if ((err as Error).name === 'DownloadUserError') {
-                createNotification({
-                    text: err.message,
-                    type: 'error',
-                });
-            } else {
-                createNotification({
-                    text: c('Notification').t`Failed to download files: ${err}`,
-                    type: 'error',
-                });
-                console.error(err);
-            }
-        });
+    const download = async (links: Item[], _?: { virusScan?: boolean; zipName?: string }): Promise<void> => {
+        await dm.download(links.map((link) => generateNodeUid(link.volumeId, link.linkId)));
+        return;
     };
 
     const restartDownloads = useCallback(
@@ -105,7 +83,7 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
                 retry: true,
             });
         },
-        [queue.downloads, queue.updateState]
+        [queue]
     );
 
     // Effect to start next download if there is enough capacity to do so.
