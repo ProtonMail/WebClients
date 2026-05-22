@@ -17,7 +17,7 @@ import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { IcTextTitle } from '@proton/icons/icons/IcTextTitle';
 import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
-import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
+import { getBookingEventDurationOptions } from '@proton/shared/lib/calendar/eventDefaults';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
@@ -53,7 +53,7 @@ export const Form = () => {
 
     const canUseMeetLocation = isMeetVideoConferenceEnabled && hasMeetProductAccess;
 
-    const scheduleOptions = getCalendarEventDefaultDuration({ shortLabels: true, include15Minutes: true });
+    const scheduleOptions = getBookingEventDurationOptions();
     const locationOptions = getBookingLocationOption(canUseMeetLocation);
 
     const { formData, updateFormData } = useBookings();
