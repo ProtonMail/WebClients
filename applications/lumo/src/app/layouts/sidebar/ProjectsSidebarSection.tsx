@@ -87,7 +87,7 @@ export const ProjectsSidebarSection = ({ onItemClick, isSmallScreen }: ProjectsS
     if (isSmallScreen) {
         return (
             <SidebarItem
-                icon="folder-open"
+                icon={IcFolderOpen}
                 label={c('collider_2025:Button').t`Projects`}
                 onClick={handleProjectsHeaderClick}
             />
