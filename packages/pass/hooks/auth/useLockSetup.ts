@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { usePermissionsProvider } from '@proton/pass/components/Core/PermissionsProvider';
 import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { usePinUnlock } from '@proton/pass/components/Lock/PinUnlockProvider';
 import { useUnlock } from '@proton/pass/components/Lock/UnlockProvider';
@@ -70,8 +71,10 @@ interface LockSetup {
 }
 
 export const useLockSetup = (): LockSetup => {
-    const { getBiometricsKey, requestNativeMessagingPermission, supportsBiometrics } = usePassCore();
+    const { getBiometricsKey, supportsBiometrics } = usePassCore();
     const { createNotification } = useNotifications();
+
+    const permissions = usePermissionsProvider();
 
     const confirmPin = usePinUnlock();
     const confirmPassword = usePasswordUnlock();
@@ -265,11 +268,23 @@ export const useLockSetup = (): LockSetup => {
                 });
             }
 
-            case LockMode.DESKTOP:
-                if ((await requestNativeMessagingPermission?.()) === false) return;
+            case LockMode.DESKTOP: {
+                if (!EXTENSION_BUILD || !permissions) throw new Error('Unsupported lock mode');
+                const needsPermission = !(await permissions.hasPermission(['nativeMessaging']));
+
+                if (needsPermission) {
+                    await permissions.requestPermission(['nativeMessaging'], {
+                        title: c('Title').t`Browser permission required`,
+                        message: c('Info')
+                            .t`To set up biometrics unlock, ${PASS_APP_NAME} requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.`,
+                    });
+                    return;
+                }
+
                 /** FIXME: for offline support using `LockMode.DESKTOP` we should
                  * go through the same password confirm flow as `LockMode.BIOMETRICS` */
                 return createLock.dispatch({ mode, secret: '', ttl, current });
+            }
 
             case LockMode.NONE:
                 return createLock.dispatch({ mode, ttl, current });

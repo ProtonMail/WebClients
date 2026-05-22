@@ -9,18 +9,12 @@ import { resolveMessageFactory, sendMessage } from 'proton-pass-extension/lib/me
 import { createConnectivityProxy } from 'proton-pass-extension/lib/services/connectivity.proxy';
 import { createCoreServiceBridge } from 'proton-pass-extension/lib/services/core.bridge';
 import { createMonitorBridge } from 'proton-pass-extension/lib/services/monitor.bridge';
-import {
-    CLIPBOARD_PERMISSIONS,
-    NATIVE_MESSAGING_PERMISSIONS,
-    hasPermissions,
-    requestPermissions,
-} from 'proton-pass-extension/lib/utils/permissions';
+import { CLIPBOARD_PERMISSIONS, requestPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { createPopupController } from 'proton-pass-extension/lib/utils/popup';
 import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 import { sendSafariMessage } from 'proton-pass-extension/lib/utils/safari';
 import { assertTabsAPIAvailable } from 'proton-pass-extension/lib/utils/tabs';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-import { c } from 'ttag';
 
 import useInstance from '@proton/hooks/useInstance';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
@@ -48,7 +42,6 @@ import type { ClientEndpoint } from '@proton/pass/types/worker/runtime';
 import type { LocalStoreData } from '@proton/pass/types/worker/state';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { createMemoryStore } from '@proton/pass/utils/store';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 export type ExtensionCoreProps = {
@@ -249,23 +242,6 @@ const getPassCoreProviderProps = (
                 if (res.type === 'error') throw new Error(res.error);
                 return res.secret;
             }),
-
-        requestNativeMessagingPermission: async () => {
-            if (await hasPermissions(NATIVE_MESSAGING_PERMISSIONS)) return true;
-
-            /** Browser quirk: need to reload the extension after accepting the permission */
-            const proceed = window.confirm(
-                c('Info')
-                    .t`To set up biometrics unlock, ${PASS_APP_NAME} requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterward.`
-            );
-            if (!proceed) return false;
-
-            const granted = await requestPermissions(NATIVE_MESSAGING_PERMISSIONS);
-            if (!granted) return false;
-
-            void reloadManager.runtimeReload({ immediate: true }).catch(noop);
-            return false;
-        },
     };
 };
 
