@@ -10,14 +10,10 @@ import {
 import { FREE_SUBSCRIPTION, type FreeSubscription, type Subscription } from '@proton/payments';
 import { getSubscription } from '@proton/payments/core/api/api';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import type { CacheType } from '@proton/redux-utilities/interface';
-import {
-    cacheHelper,
-    createPromiseStore,
-} from '@proton/redux-utilities/promiseStore';
-import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
 import { previousSelector } from '@proton/redux-utilities/creator';
-import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';
+import type { CacheType } from '@proton/redux-utilities/interface';
+import { cacheHelper, createPromiseStore } from '@proton/redux-utilities/promiseStore';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
 import type { User } from '@proton/shared/lib/interfaces';
 import formatSubscription from '@proton/shared/lib/subscription/format';
@@ -179,10 +175,10 @@ const modelThunk = (options?: {
                     type: ValueType.complete,
                 };
             } catch (e: any) {
-                if (getIsMissingScopeError(e)) {
-                    return defaultValue;
-                }
-                throw e;
+                // We'll be doing this for all failures, 4xx, 5xx, offline. We think that's ok because there are several
+                // other routes that will fail in hard-failure scenarios. We're primarily interested in making
+                // subscription reads survive since there are several places in the app where this is being used.
+                return defaultValue;
             }
         };
         const cb = async () => {
