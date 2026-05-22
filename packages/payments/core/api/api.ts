@@ -568,6 +568,7 @@ export const getSubscription = async (api: Api, user: User | undefined) => {
     }>({
         url: `payments/v5/subscription`,
         method: 'get',
+        silence: true,
     });
 
     const secondarySubscriptionsPromise =
