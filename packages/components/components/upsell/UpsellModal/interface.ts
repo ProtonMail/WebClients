@@ -23,6 +23,8 @@ export interface UpsellModalConfig {
     couponCode?: COUPON_CODES;
     footerText: ReactNode;
     submitText: ReactNode | ((closeModal: () => void) => ReactNode);
+    /** Formatted offer price (e.g. for use in description text) */
+    offerPrice?: ReactNode;
     planIDs: PlanIDs;
     upgradePath: string;
     onUpgrade?: () => void;
@@ -47,7 +49,7 @@ export interface UpsellModalConfigParams {
  */
 export interface UpsellModalConfigResult extends Pick<
     UpsellModalConfig,
-    'cycle' | 'footerText' | 'planIDs' | 'submitText'
+    'cycle' | 'footerText' | 'offerPrice' | 'planIDs' | 'submitText'
 > {
     configOverride?: (config: OpenCallbackProps) => void;
     coupon?: COUPON_CODES;
