@@ -1,118 +1,108 @@
 import { describe, expect, it, vi } from 'vitest';
 
-import { DuplicateNavIdError, NavError } from '../errors';
+import { DuplicateNavIdError } from '../errors';
 import type { NavContext } from '../types/models';
-import type { NavDefinition, NavItemResolver } from '../types/nav';
+import type { NavDefinition, NavItemDefinition } from '../types/nav';
 import type { TestUserModel } from '../types/test.models';
 import { defineNavigation } from './defineNavigation';
 
-const makeContext = (user: TestUserModel, prefix?: string): NavContext => ({ user, prefix }) as unknown as NavContext;
+const makeContext = (extras: Record<string, unknown> = {}): NavContext =>
+    ({ user: { id: 'u1', email: 'u@example.com' } satisfies TestUserModel, ...extras }) as unknown as NavContext;
 
-const baseContext = makeContext({ id: 'u1', email: 'user@example.com' });
+const baseContext = makeContext();
 
-const flatConfig: NavDefinition = {
-    items: [
-        { id: 'home', label: 'Home', to: '/' },
-        { id: 'about', label: 'About', to: '/about' },
-    ],
-};
+const resolve = <TContext extends NavContext = NavContext>(
+    items: NavItemDefinition<TContext>[],
+    context: TContext = baseContext as TContext
+) => defineNavigation<TContext>({ definition: { items }, context }).items;
 
 describe('defineNavigation', () => {
-    it('returns an object with an items array', () => {
-        const nav = defineNavigation({ definition: flatConfig, context: baseContext });
-        expect(nav).toHaveProperty('items');
-        expect(Array.isArray(nav.items)).toBe(true);
+    describe('resolved item shape', () => {
+        it('mirrors every static field from the definition onto the resolved item', () => {
+            const [item] = resolve([{ id: 'home', label: 'Home', to: '/', icon: 'house', meta: { badge: 'new' } }]);
+            expect(item).toEqual({
+                id: 'home',
+                label: 'Home',
+                to: '/',
+                icon: 'house',
+                meta: { badge: 'new' },
+                children: undefined,
+            });
+        });
+
+        it('defaults meta to an empty object when the definition omits it', () => {
+            const [item] = resolve([{ id: 'home', label: 'Home', to: '/' }]);
+            expect(item.meta).toEqual({});
+        });
+
+        it('preserves the order in which items were declared', () => {
+            const items = resolve([
+                { id: 'first', label: 'First', to: '/1' },
+                { id: 'second', label: 'Second', to: '/2' },
+                { id: 'third', label: 'Third', to: '/3' },
+            ]);
+            expect(items.map((i) => i.id)).toEqual(['first', 'second', 'third']);
+        });
     });
 
-    it('preserves item order from the definition', () => {
-        const nav = defineNavigation({ definition: flatConfig, context: baseContext });
-        expect(nav.items.map((i) => i.id)).toEqual(['home', 'about']);
-    });
-
-    it('maps id, label and to onto each resolved item', () => {
-        const nav = defineNavigation({ definition: flatConfig, context: baseContext });
-        expect(nav.items[0]).toMatchObject({ id: 'home', label: 'Home', to: '/' });
-    });
-
-    it('omits to when not provided in the definition', () => {
-        const definition: NavDefinition = {
-            items: [{ id: 'group', label: 'Group' }],
-        };
-        const nav = defineNavigation({ definition, context: baseContext });
-        expect(nav.items[0].to).toBeUndefined();
-    });
-
-    it('sets meta to an empty object when not provided in the definition', () => {
-        const nav = defineNavigation({ definition: flatConfig, context: baseContext });
-        expect(nav.items[0].meta).toEqual({});
-    });
-
-    it('preserves meta when provided in the definition', () => {
-        const definition: NavDefinition = {
-            items: [{ id: 'home', label: 'Home', meta: { badge: 'new' } }],
-        };
-        const nav = defineNavigation({ definition, context: baseContext });
-        expect(nav.items[0].meta).toEqual({ badge: 'new' });
-    });
-
-    it('resolves a label defined as a function', () => {
-        const definition: NavDefinition = {
-            items: [{ id: 'home', label: () => 'Computed Home' }],
-        };
-        const nav = defineNavigation({ definition, context: baseContext });
-        expect(nav.items[0].label).toBe('Computed Home');
-    });
-
-    it('leaves icon undefined when not provided', () => {
-        const nav = defineNavigation({ definition: flatConfig, context: baseContext });
-        expect(nav.items[0].icon).toBeUndefined();
-    });
-});
-
-describe('defineNavigation — prefix', () => {
-    it('prepends prefix to `to` when context.prefix is set', () => {
-        const context = makeContext({ id: 'u1', email: 'user@example.com' }, '/app');
-        const definition: NavDefinition = {
-            items: [{ id: 'home', label: 'Home', to: '/' }],
-        };
-        const nav = defineNavigation({ definition, context });
-        expect(nav.items[0].to).toBe('/app/');
-    });
-
-    it('does not modify `to` when context.prefix is undefined', () => {
-        const nav = defineNavigation({ definition: flatConfig, context: baseContext });
-        expect(nav.items[0].to).toBe('/');
-    });
-
-    it('does not modify `to` when item has no `to`', () => {
-        const context = makeContext({ id: 'u1', email: 'user@example.com' }, '/app');
-        const definition: NavDefinition = {
-            items: [{ id: 'group', label: 'Group' }],
-        };
-        const nav = defineNavigation({ definition, context });
-        expect(nav.items[0].to).toBeUndefined();
-    });
-
-    it('applies prefix to nested children', () => {
-        const context = makeContext({ id: 'u1', email: 'user@example.com' }, '/app');
-        const definition: NavDefinition = {
-            items: [
+    describe('computed fields', () => {
+        it.each`
+            field      | resolved
+            ${'label'} | ${'Computed Label'}
+            ${'to'}    | ${'/computed-to'}
+            ${'icon'}  | ${'compass'}
+        `('runs $field as a function and uses its return value', ({ field, resolved }) => {
+            const [item] = resolve([
                 {
-                    id: 'account',
-                    label: 'Account',
-                    children: [{ id: 'account.settings', label: 'Settings', to: '/account/settings' }],
-                },
-            ],
-        };
-        const nav = defineNavigation({ definition, context });
-        expect(nav.items[0]?.children?.[0]?.to).toBe('/app/account/settings');
-    });
-});
+                    id: 'leaf',
+                    label: 'Static',
+                    to: '/leaf',
+                    [field]: () => resolved,
+                } as NavItemDefinition,
+            ]);
+            expect(item).toMatchObject({ [field]: resolved });
+        });
 
-describe('defineNavigation — nested children', () => {
-    it('resolves children and attaches them to the parent', () => {
-        const definition: NavDefinition = {
-            items: [
+        it('runs meta as a function and uses its return value', () => {
+            type Ctx = NavContext & { notifications: number };
+            const [item] = resolve<Ctx>(
+                [
+                    {
+                        id: 'inbox',
+                        label: 'Inbox',
+                        to: '/inbox',
+                        meta: ({ context }) => ({ count: context.notifications }),
+                    },
+                ],
+                makeContext({ notifications: 7 }) as Ctx
+            );
+            expect(item.meta).toEqual({ count: 7 });
+        });
+
+        it('passes the same runtime context to every computed field', () => {
+            type Ctx = NavContext & { plan: 'free' | 'pro' };
+            const [item] = resolve<Ctx>(
+                [
+                    {
+                        id: 'home',
+                        label: ({ context }) => `Home (${context.plan})`,
+                        to: ({ context }) => `/${context.plan}`,
+                        meta: ({ context }) => ({ plan: context.plan }),
+                    },
+                ],
+                makeContext({ plan: 'pro' }) as Ctx
+            );
+            expect(item).toMatchObject({
+                label: 'Home (pro)',
+                to: '/pro',
+                meta: { plan: 'pro' },
+            });
+        });
+    });
+
+    describe('nesting', () => {
+        it('attaches resolved children to their parent in declaration order', () => {
+            const [parent] = resolve([
                 {
                     id: 'account',
                     label: 'Account',
@@ -121,390 +111,143 @@ describe('defineNavigation — nested children', () => {
                         { id: 'account.security', label: 'Security', to: '/account/security' },
                     ],
                 },
-            ],
-        };
-        const nav = defineNavigation({ definition, context: baseContext });
-        expect(nav.items[0]?.children).toHaveLength(2);
-        expect(nav.items[0]?.children?.[0]?.id).toBe('account.settings');
-    });
-
-    it('omits children from the resolved item when the definition has none', () => {
-        const nav = defineNavigation({ definition: flatConfig, context: baseContext });
-        expect(nav.items[0].children).toBeUndefined();
-    });
-
-    it('omits children from the resolved item when all children are removed by resolvers', () => {
-        const definition: NavDefinition = {
-            items: [
-                {
-                    id: 'account',
-                    label: 'Account',
-                    children: [{ id: 'account.settings', label: 'Settings', resolver: ({ remove }) => remove() }],
-                },
-            ],
-        };
-        const nav = defineNavigation({ definition, context: baseContext });
-        expect(nav.items[0].children).toBeUndefined();
-    });
-
-    it('preserves prefix after resolver updates `to`', () => {
-        const definition: NavDefinition = {
-            items: [
-                {
-                    id: 'account',
-                    label: 'Account',
-                    to: '/account',
-                    resolver: ({ update }) => update({ to: '/new-account' }),
-                },
-            ],
-        };
-        const nav = defineNavigation({
-            definition,
-            context: makeContext({ id: 'u1', email: 'user@example.com' }, '/prefix'),
+            ]);
+            expect(parent.children?.map((c) => c.id)).toEqual(['account.settings', 'account.security']);
         });
-        expect(nav.items[0].to).toBe('/prefix/new-account');
-    });
 
-    it('resolves very deep nesting', () => {
-        const definition: NavDefinition = {
-            items: [
+        it('leaves children undefined when the definition has none', () => {
+            const [item] = resolve([{ id: 'home', label: 'Home', to: '/' }]);
+            expect(item.children).toBeUndefined();
+        });
+
+        it('walks arbitrary depth, resolving children of children of children', () => {
+            const [l1] = resolve([
                 {
                     id: 'l1',
-                    label: 'Level 1',
+                    label: 'L1',
                     children: [
                         {
                             id: 'l2',
-                            label: 'Level 2',
-                            children: [{ id: 'l3', label: 'Level 3', to: '/deep' }],
+                            label: 'L2',
+                            children: [{ id: 'l3', label: 'L3', to: '/deep' }],
                         },
                     ],
                 },
-            ],
-        };
-        const nav = defineNavigation({ definition, context: baseContext });
-        expect(nav.items[0]?.children?.[0]?.children?.[0]?.id).toBe('l3');
+            ]);
+            expect(l1.children?.[0].children?.[0].id).toBe('l3');
+        });
     });
-});
 
-describe('defineNavigation — keep', () => {
-    it('includes the item unchanged', () => {
-        const definition: NavDefinition = {
-            items: [
+    describe('isVisible gating', () => {
+        it('keeps the item when isVisible is omitted (default visible)', () => {
+            const items = resolve([{ id: 'home', label: 'Home', to: '/' }]);
+            expect(items).toHaveLength(1);
+        });
+
+        it('keeps the item when isVisible returns true', () => {
+            const items = resolve([{ id: 'home', label: 'Home', to: '/', isVisible: () => true }]);
+            expect(items).toHaveLength(1);
+        });
+
+        it('prunes the item and its entire subtree when isVisible returns false', () => {
+            const items = resolve([
                 {
-                    id: 'home',
-                    label: 'Home',
-                    to: '/',
-                    resolver: ({ keep }) => keep(),
+                    id: 'admin',
+                    label: 'Admin',
+                    to: '/admin',
+                    isVisible: () => false,
+                    children: [{ id: 'admin.audit', label: 'Audit', to: '/admin/audit' }],
                 },
-            ],
-        };
-        const nav = defineNavigation({ definition, context: baseContext });
-        expect(nav.items).toHaveLength(1);
-        expect(nav.items[0]).toMatchObject({ id: 'home', label: 'Home', to: '/' });
-    });
-});
+            ]);
+            expect(items).toHaveLength(0);
+        });
 
-describe('defineNavigation — remove', () => {
-    it('excludes the item from the resolved tree', () => {
-        const definition: NavDefinition = {
-            items: [
-                { id: 'home', label: 'Home', to: '/' },
-                { id: 'admin', label: 'Admin', to: '/admin', resolver: ({ remove }) => remove() },
-            ],
-        };
-        const nav = defineNavigation({ definition, context: baseContext });
-        expect(nav.items.map((i) => i.id)).toEqual(['home']);
-    });
-
-    it('excludes a child item without affecting the parent or sibling', () => {
-        const definition: NavDefinition = {
-            items: [
+        it('short-circuits — children are not resolved when isVisible returns false', () => {
+            const childLabel = vi.fn(() => 'Audit');
+            resolve([
                 {
-                    id: 'account',
-                    label: 'Account',
+                    id: 'admin',
+                    label: 'Admin',
+                    to: '/admin',
+                    isVisible: () => false,
+                    children: [{ id: 'admin.audit', label: childLabel, to: '/admin/audit' }],
+                },
+            ]);
+            expect(childLabel).not.toHaveBeenCalled();
+        });
+
+        it('passes the runtime context to the predicate', () => {
+            type Ctx = NavContext & { plan: 'free' | 'pro' };
+            const def: NavItemDefinition<Ctx>[] = [
+                { id: 'billing', label: 'Billing', to: '/billing', isVisible: ({ context }) => context.plan === 'pro' },
+            ];
+            expect(resolve<Ctx>(def, makeContext({ plan: 'pro' }) as Ctx)).toHaveLength(1);
+            expect(resolve<Ctx>(def, makeContext({ plan: 'free' }) as Ctx)).toHaveLength(0);
+        });
+    });
+
+    describe('pruning rules', () => {
+        it.each`
+            scenario                                          | item
+            ${'a leaf with no `to` and no children'}          | ${{ id: 'group', label: 'Group' }}
+            ${'a leaf whose computed `to` returns undefined'} | ${{ id: 'home', label: 'Home', to: () => undefined }}
+            ${'an item gated off by isVisible'}               | ${{ id: 'home', label: 'Home', to: '/', isVisible: () => false }}
+        `('prunes $scenario', ({ item }) => {
+            expect(resolve([item])).toHaveLength(0);
+        });
+
+        it('cascades — a container whose subtree is entirely pruned is pruned itself', () => {
+            const items = resolve([
+                {
+                    id: 'a',
+                    label: 'A',
+                    children: [{ id: 'a.b', label: 'B', children: [{ id: 'a.b.c', label: 'C' }] }],
+                },
+            ]);
+            expect(items).toHaveLength(0);
+        });
+
+        it('keeps a container as long as one descendant survives', () => {
+            const items = resolve([
+                {
+                    id: 'group',
+                    label: 'Group',
                     children: [
-                        { id: 'account.settings', label: 'Settings', to: '/account/settings' },
-                        { id: 'account.danger', label: 'Danger Zone', resolver: ({ remove }) => remove() },
+                        { id: 'group.pruned', label: 'Pruned' },
+                        { id: 'group.kept', label: 'Kept', to: '/kept' },
                     ],
                 },
-            ],
-        };
-        const nav = defineNavigation({ definition, context: baseContext });
-        expect(nav.items[0]?.children?.map((c) => c.id)).toEqual(['account.settings']);
-    });
+            ]);
+            expect(items).toHaveLength(1);
+            expect(items[0].children?.map((c) => c.id)).toEqual(['group.kept']);
+        });
 
-    it('resolvers run bottom-up — children are resolved before their parent', () => {
-        const order: string[] = [];
-        const definition: NavDefinition = {
-            items: [
+        it('still prunes a container that passes isVisible if no child survives', () => {
+            const items = resolve([
                 {
-                    id: 'parent',
-                    label: 'Parent',
-                    resolver: ({ item, keep, remove }) => {
-                        order.push(item.id);
-                        return item.children?.length ? keep() : remove();
-                    },
-                    children: [
-                        {
-                            id: 'child',
-                            label: 'Child',
-                            resolver: ({ item, keep }) => {
-                                order.push(item.id);
-                                return keep();
-                            },
-                        },
-                    ],
+                    id: 'group',
+                    label: 'Group',
+                    isVisible: () => true,
+                    children: [{ id: 'group.dead', label: 'Dead' }],
                 },
-            ],
-        };
-        defineNavigation({ definition, context: baseContext });
-        expect(order).toEqual(['child', 'parent']);
+            ]);
+            expect(items).toHaveLength(0);
+        });
     });
 
-    it('parent removes itself when all children are removed', () => {
-        const definition: NavDefinition = {
-            items: [
-                {
-                    id: 'account',
-                    label: 'Account',
-                    resolver: ({ remove }) => remove(),
-                    children: [{ id: 'account.hidden', label: 'Hidden', resolver: ({ remove }) => remove() }],
-                },
-            ],
-        };
-        const nav = defineNavigation({ definition, context: baseContext });
-        expect(nav.items).toHaveLength(0);
-    });
-});
-
-describe('defineNavigation — update', () => {
-    it('merges the patch onto the item', () => {
-        const definition: NavDefinition = {
-            items: [
-                {
-                    id: 'home',
-                    label: 'Home',
-                    to: '/',
-                    resolver: ({ update }) => update({ label: 'Dashboard' }),
-                },
-            ],
-        };
-        const nav = defineNavigation({ definition, context: baseContext });
-        expect(nav.items[0]?.label).toBe('Dashboard');
-        expect(nav.items[0]?.to).toBe('/');
-    });
-
-    it('updates `to` based on a context flag', () => {
-        type AppContext = NavContext & { flags: string[] };
-
-        const makeAppContext = (flags: string[]): AppContext =>
-            ({ user: { id: 'u1', email: 'user@example.com' }, prefix: undefined, flags }) as unknown as AppContext;
-
-        const definition: NavDefinition<AppContext> = {
-            items: [
-                {
-                    id: 'settings',
-                    label: 'Settings',
-                    to: '/settings',
-                    resolver: ({ context, update }) =>
-                        update({ to: context.flags.includes('settings-v2') ? '/settings-v2' : '/settings' }),
-                },
-            ],
-        };
-
-        const withFlag = defineNavigation<AppContext>({ definition, context: makeAppContext(['settings-v2']) });
-        expect(withFlag.items[0]?.to).toBe('/settings-v2');
-
-        const withoutFlag = defineNavigation<AppContext>({ definition, context: makeAppContext([]) });
-        expect(withoutFlag.items[0]?.to).toBe('/settings');
-    });
-
-    it('shallowly merges meta when the patch includes a meta key', () => {
-        const definition: NavDefinition = {
-            items: [
-                {
-                    id: 'home',
-                    label: 'Home',
-                    meta: { badge: 'old', count: 1 },
-                    resolver: ({ update }) => update({ meta: { badge: 'new' } }),
-                },
-            ],
-        };
-        const nav = defineNavigation({ definition, context: baseContext });
-        expect(nav.items[0]?.meta).toEqual({ badge: 'new', count: 1 });
-    });
-
-    it('does not affect meta when patch does not include meta', () => {
-        const definition: NavDefinition = {
-            items: [
-                {
-                    id: 'home',
-                    label: 'Home',
-                    meta: { badge: 'kept' },
-                    resolver: ({ update }) => update({ label: 'Updated' }),
-                },
-            ],
-        };
-        const nav = defineNavigation({ definition, context: baseContext });
-        expect(nav.items[0]?.meta).toEqual({ badge: 'kept' });
-    });
-});
-
-describe('defineNavigation — resolver context', () => {
-    type AppContext = NavContext & {
-        tenant: { plan: 'free' | 'pro' };
-        flags: string[];
-    };
-
-    const makeAppContext = (plan: 'free' | 'pro', flags: string[] = []): AppContext =>
-        ({
-            user: { id: 'u1', email: 'user@example.com' },
-            prefix: undefined,
-            tenant: { plan },
-            flags,
-        }) as unknown as AppContext;
-
-    const proContext = makeAppContext('pro', ['beta']);
-    const freeContext = makeAppContext('free');
-
-    it('resolver receives the full context at runtime', () => {
-        const definition: NavDefinition<AppContext> = {
-            items: [
-                {
-                    id: 'billing',
-                    label: 'Billing',
-                    resolver: ({ context, keep, remove }) => (context.tenant.plan === 'pro' ? keep() : remove()),
-                },
-            ],
-        };
-        expect(defineNavigation<AppContext>({ definition, context: proContext }).items).toHaveLength(1);
-        expect(defineNavigation<AppContext>({ definition, context: freeContext }).items).toHaveLength(0);
-    });
-
-    it('a resolver typed to a context slice is assignable into NavDefinition<AppContext>', () => {
-        const billingResolver: NavItemResolver<NavContext & { tenant: { plan: 'free' | 'pro' } }> = ({
-            context,
-            keep,
-            remove,
-        }) => (context.tenant.plan === 'pro' ? keep() : remove());
-
-        const definition: NavDefinition<AppContext> = {
-            items: [{ id: 'billing', label: 'Billing', resolver: billingResolver }],
-        };
-
-        expect(defineNavigation<AppContext>({ definition, context: proContext }).items).toHaveLength(1);
-    });
-
-    it('resolver can update fields based on context values', () => {
-        const definition: NavDefinition<AppContext> = {
-            items: [
-                {
-                    id: 'home',
-                    label: 'Home',
-                    resolver: ({ context, update }) =>
-                        update({ label: context.flags.includes('beta') ? 'Home (Beta)' : 'Home' }),
-                },
-            ],
-        };
-        const nav = defineNavigation<AppContext>({ definition, context: proContext });
-        expect(nav.items[0]?.label).toBe('Home (Beta)');
-    });
-
-    it('resolver receives the already-resolved children on the item', () => {
-        const definition: NavDefinition = {
-            items: [
-                {
-                    id: 'parent',
-                    label: 'Parent',
-                    resolver: ({ item, keep, remove }) => (item.children?.length ? keep() : remove()),
-                    children: [{ id: 'child', label: 'Child' }],
-                },
-            ],
-        };
-        const nav = defineNavigation({ definition, context: baseContext });
-        expect(nav.items).toHaveLength(1);
-        expect(nav.items[0].children?.[0].id).toBe('child');
-    });
-});
-
-describe('defineNavigation — duplicate ids', () => {
-    it('throws DuplicateNavIdError when two top-level items share an id', () => {
-        const definition: NavDefinition = {
-            items: [
-                { id: 'home', label: 'Home' },
-                { id: 'home', label: 'Home Duplicate' },
-            ],
-        };
-        expect(() => defineNavigation({ definition, context: baseContext })).toThrow(DuplicateNavIdError);
-    });
-
-    it('throws DuplicateNavIdError when a child shares an id with a top-level item', () => {
-        const definition: NavDefinition = {
-            items: [
-                { id: 'home', label: 'Home' },
-                {
-                    id: 'account',
-                    label: 'Account',
-                    children: [{ id: 'home', label: 'Duplicate' }],
-                },
-            ],
-        };
-        expect(() => defineNavigation({ definition, context: baseContext })).toThrow(DuplicateNavIdError);
-    });
-
-    it('throws DuplicateNavIdError when two children of the same parent share an id', () => {
-        const definition: NavDefinition = {
-            items: [
-                {
-                    id: 'account',
-                    label: 'Account',
-                    children: [
-                        { id: 'settings', label: 'Settings' },
-                        { id: 'settings', label: 'Settings Duplicate' },
-                    ],
-                },
-            ],
-        };
-        expect(() => defineNavigation({ definition, context: baseContext })).toThrow(DuplicateNavIdError);
-    });
-
-    it('exposes the duplicate id on the error', () => {
-        const definition: NavDefinition = {
-            items: [
-                { id: 'home', label: 'Home' },
-                { id: 'home', label: 'Duplicate' },
-            ],
-        };
-        expect(() => defineNavigation({ definition, context: baseContext })).toThrow(
-            expect.objectContaining({ id: 'home' })
-        );
-    });
-
-    it('is catchable as the base NavError type', () => {
-        const definition: NavDefinition = {
-            items: [
-                { id: 'home', label: 'Home' },
-                { id: 'home', label: 'Duplicate' },
-            ],
-        };
-        try {
-            defineNavigation({ definition, context: baseContext });
-            expect.fail('should have thrown');
-        } catch (err) {
-            expect(err).toBeInstanceOf(NavError);
-            expect((err as NavError).code).toBe('DUPLICATE_NAV_ID');
-        }
-    });
-
-    it('validates the full tree before any resolver runs', () => {
-        const resolverSpy = vi.fn(({ keep }: any) => keep());
-        const definition: NavDefinition = {
-            items: [
-                { id: 'home', label: 'Home', resolver: resolverSpy },
-                { id: 'home', label: 'Duplicate' },
-            ],
-        };
-        expect(() => defineNavigation({ definition, context: baseContext })).toThrow(DuplicateNavIdError);
-        expect(resolverSpy).not.toHaveBeenCalled();
+    describe('id validation is wired into the pipeline', () => {
+        it('runs id validation before any computed field or predicate executes', () => {
+            const labelSpy = vi.fn(() => 'Home');
+            const visibilitySpy = vi.fn(() => true);
+            const definition: NavDefinition = {
+                items: [
+                    { id: 'home', label: labelSpy, to: '/', isVisible: visibilitySpy },
+                    { id: 'home', label: 'Dup', to: '/d' },
+                ],
+            };
+            expect(() => defineNavigation({ definition, context: baseContext })).toThrow(DuplicateNavIdError);
+            expect(labelSpy).not.toHaveBeenCalled();
+            expect(visibilitySpy).not.toHaveBeenCalled();
+        });
     });
 });
