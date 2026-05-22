@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Row } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-import { withHoc } from '../../legacy/hooks/withHoc';
+import { withHoc } from '../modalUtils/withHoc';
 import { type DeviceState, useDeviceState } from './useDeviceState';
 
 export const Device = withHoc<{}, DeviceState>(useDeviceState, DeviceView);

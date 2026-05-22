@@ -1,6 +1,6 @@
 import { useModalTwoStatic } from '@proton/components';
 
-import { withHoc } from '../../legacy/hooks/withHoc';
+import { withHoc } from '../modalUtils/withHoc';
 import { ReportAbuseModalView, type ReportAbuseModalViewProps } from './ReportAbuseModalView';
 import { AbuseCategoryType, type AbuseReportPrefill } from './types';
 import { type UseReportAbuseModalProps, useReportAbuseModalState } from './useReportAbuseModalState';
