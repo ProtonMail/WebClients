@@ -7,7 +7,6 @@ import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useFlagsDriveSDKPreview } from '../../../../flags/useFlagsDriveSDKPreview';
 import useDriveNavigation from '../../../../legacy/hooks/drive/useNavigate';
 import { useDrivePreviewModal } from '../../../../modals/preview';
 import { useSelectionStore } from '../../../../modules/selection';
@@ -82,7 +81,6 @@ export const useSearchResultItems = () => {
     const selectedItems = Array.from(selectedItemIds)
         .map((uid) => useSearchViewStore.getState().getSearchResultItem(uid))
         .filter(isTruthy);
-    const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
 
     const handleOpenItem = useCallback(
         async (uid: string) => {
@@ -116,7 +114,7 @@ export const useSearchResultItems = () => {
                 return;
             }
 
-            if ((item.type === NodeType.File || item.type === NodeType.Photo) && isSDKPreviewEnabled) {
+            if (item.type === NodeType.File || item.type === NodeType.Photo) {
                 showPreviewModal({
                     drive: getDrivePerNodeType(item.type),
                     deprecatedContextShareId: deprecatedShareId,
@@ -125,9 +123,9 @@ export const useSearchResultItems = () => {
                 return;
             }
 
-            navigateToLink(deprecatedShareId, nodeId, item.type === NodeType.File);
+            navigateToLink(deprecatedShareId, nodeId, false);
         },
-        [isSDKPreviewEnabled, navigateToAlbum, navigateToLink, showPreviewModal]
+        [navigateToAlbum, navigateToLink, showPreviewModal]
     );
 
     const sortParams = useMemo(() => ({ sortField, sortOrder: direction }), [direction, sortField]);

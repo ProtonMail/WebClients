@@ -8,7 +8,6 @@ import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
 import useDriveNavigation from '../../../legacy/hooks/drive/useNavigate';
 import { useDrivePreviewModal } from '../../../modals/preview';
 import { useSelectionStore } from '../../../modules/selection';
@@ -75,7 +74,6 @@ export const useSharedWithMeItems = () => {
         clearItemsWithInvitationPosition();
     }, [clearItemsWithInvitationPosition]);
 
-    const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
     const { previewModal, showPreviewModal } = useDrivePreviewModal();
 
     useEffect(() => {
@@ -139,7 +137,7 @@ export const useSharedWithMeItems = () => {
                 }
             }
 
-            if ((item.type === NodeType.File || item.type === NodeType.Photo) && isSDKPreviewEnabled) {
+            if (item.type === NodeType.File || item.type === NodeType.Photo) {
                 showPreviewModal({
                     drive: getDrivePerNodeType(item.type),
                     deprecatedContextShareId: '',
@@ -150,7 +148,7 @@ export const useSharedWithMeItems = () => {
 
             await navigateToNodeUid(item.nodeUid, getDrivePerNodeType(item.type));
         },
-        [navigateToNodeUid, openBookmark, getSharedWithMeStoreItem, isSDKPreviewEnabled, showPreviewModal]
+        [navigateToNodeUid, openBookmark, getSharedWithMeStoreItem, showPreviewModal]
     );
 
     const isEmpty = hasEverLoaded && !isLoading && itemUidsSize === 0;
