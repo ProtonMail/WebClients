@@ -187,14 +187,6 @@ enum DriveFeatureFlag {
     // Video Streaming
     // TODO: Convert to Kill-Switch once launched and tested
     DriveWebVideoStreaming = 'DriveWebVideoStreaming',
-    // SDK Migration
-    DriveWebSDKSharedWithMe = 'DriveWebSDKSharedWithMe',
-    DriveWebSDKSidebar = 'DriveWebSDKSidebar',
-    DriveWebSDKTransfer = 'DriveWebSDKTransfer',
-    DriveWebSDKPhotosTransfer = 'DriveWebSDKPhotosTransfer',
-    DriveWebSDKCopy = 'DriveWebSDKCopy',
-    DriveWebSDKPreview = 'DriveWebSDKPreview',
-    DriveWebSDKPublic = 'DriveWebSDKPublic',
     // Video Preview
     DriveWebVideoAutoPlay = 'DriveWebVideoAutoPlay',
     // Thumbnail Generation

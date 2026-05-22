@@ -9,7 +9,6 @@ import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 
-import { useFlagsDriveSDKPreview } from '../../flags/useFlagsDriveSDKPreview';
 import useDriveNavigation from '../../legacy/hooks/drive/useNavigate';
 import { useDrivePreviewModal } from '../../modals/preview';
 import { useContextMenuStore } from '../../modules/contextMenu';
@@ -37,7 +36,6 @@ export const SharedByMe = () => {
 
     const { layout } = useUserSettings();
     const { navigateToNodeUid } = useDriveNavigation();
-    const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
     const { previewModal, showPreviewModal } = useDrivePreviewModal();
 
     const { sortedItemUids, isLoading, hasEverLoaded, sortField, direction } = useSharedByMeStore(
@@ -106,7 +104,7 @@ export const SharedByMe = () => {
             }
         }
 
-        if ((storeItem.type === NodeType.File || storeItem.type === NodeType.Photo) && isSDKPreviewEnabled) {
+        if (storeItem.type === NodeType.File || storeItem.type === NodeType.Photo) {
             showPreviewModal({
                 drive: getDrivePerNodeType(storeItem.type),
                 deprecatedContextShareId: '',

@@ -5,9 +5,7 @@ import { getDrive } from '@proton/drive';
 import { IcEye } from '@proton/icons/icons/IcEye';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import { useFlagsDriveSDKPreview } from '../../../../flags/useFlagsDriveSDKPreview';
 import { useDrivePreviewModal } from '../../../../modals/preview';
-import useOpenPreview from '../../useOpenPreview';
 import { hasFoldersSelected, isMultiSelect } from './utils';
 
 interface Props {
@@ -26,10 +24,7 @@ interface Props {
 }
 
 const PreviewButton = ({ selectedBrowserItems }: Props) => {
-    const openLegacyPreview = useOpenPreview();
     const { previewModal, showPreviewModal } = useDrivePreviewModal();
-
-    const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
 
     const disabled =
         isMultiSelect(selectedBrowserItems) ||
@@ -48,15 +43,13 @@ const PreviewButton = ({ selectedBrowserItems }: Props) => {
                 onClick={() => {
                     if (selectedBrowserItems.length) {
                         const nodeUid = selectedBrowserItems[0].nodeUid || selectedBrowserItems[0].uid;
-                        if (isSDKPreviewEnabled && nodeUid) {
+                        if (nodeUid) {
                             showPreviewModal({
                                 deprecatedContextShareId: selectedBrowserItems[0].rootShareId,
                                 nodeUid,
                                 // Force getDrive as it's legacy
                                 drive: getDrive(),
                             });
-                        } else {
-                            openLegacyPreview(selectedBrowserItems[0].rootShareId, selectedBrowserItems[0].linkId);
                         }
                     }
                 }}
