@@ -53,7 +53,7 @@ export const Form = () => {
 
     const canUseMeetLocation = isMeetVideoConferenceEnabled && hasMeetProductAccess;
 
-    const scheduleOptions = getCalendarEventDefaultDuration({ shortLabels: true });
+    const scheduleOptions = getCalendarEventDefaultDuration({ shortLabels: true, include15Minutes: true });
     const locationOptions = getBookingLocationOption(canUseMeetLocation);
 
     const { formData, updateFormData } = useBookings();
