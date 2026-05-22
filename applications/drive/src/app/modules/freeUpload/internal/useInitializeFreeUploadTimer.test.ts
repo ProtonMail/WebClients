@@ -1,14 +1,14 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useFreeUploadStore } from '../../../../legacy/zustand/freeUpload/freeUpload.store';
-import { sendErrorReport } from '../../../../utils/errorHandling';
+import { useFreeUploadStore } from '../../../legacy/zustand/freeUpload/freeUpload.store';
+import { sendErrorReport } from '../../../utils/errorHandling';
 import { useFreeUploadApi } from './useFreeUploadApi';
 import { useFreeUploadFeature } from './useFreeUploadFeature';
 import { useInitializeFreeUploadTimer } from './useInitializeFreeUploadTimer';
 
 jest.mock('./useFreeUploadFeature');
 jest.mock('./useFreeUploadApi');
-jest.mock('../../../../utils/errorHandling');
+jest.mock('../../../utils/errorHandling');
 
 const mockCreateNotification = jest.fn();
 jest.mock('@proton/components/hooks/useNotifications', () => ({

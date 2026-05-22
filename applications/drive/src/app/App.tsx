@@ -23,9 +23,9 @@ import noop from '@proton/utils/noop';
 
 import { bootstrapApp } from './bootstrap';
 import config from './config';
-import { useUserSettingsStore } from './legacy/hooks/user';
 import { driveMetrics } from './modules/metrics';
 import { NotificationsBridge } from './modules/notifications';
+import { useUserSettingsStore } from './modules/userSettings';
 import type { DriveStore } from './redux-store/store';
 import { extraThunkArguments } from './redux-store/thunk';
 import { sendErrorReport } from './utils/errorHandling';

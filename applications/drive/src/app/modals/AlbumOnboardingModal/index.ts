@@ -7,9 +7,9 @@ import useLocalState from '@proton/components/hooks/useLocalState';
 import { useLoading } from '@proton/hooks';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { withHoc } from '../../legacy/hooks/withHoc';
 import { loadAllAlbums } from '../../photos/loaders/loadAlbums';
 import { useAlbumsStore } from '../../photos/useAlbums.store';
+import { withHoc } from '../modalUtils/withHoc';
 import { AlbumOnboardingModalView, type AlbumOnboardingModalViewProps } from './AlbumOnboardingModalView';
 import { useAlbumOnboardingModalState } from './useAlbumOnboardingModalState';
 

@@ -13,7 +13,7 @@ import { useSelection } from '../../../legacy/components/FileBrowser';
 import type { DragMoveControls } from '../../../legacy/components/FileBrowser/interface';
 import type { DriveItem } from '../../../legacy/components/sections/interface';
 import type { LinkInfo } from '../../../legacy/store/_actions/interface';
-import { type MoveNodesItemMap, useMoveNodes } from '../sdk/useMoveNodes';
+import { type MoveNodesItemMap, useMoveNodes } from '../../../modules/moveNodes';
 
 type DragAndDropItem = DriveItem;
 

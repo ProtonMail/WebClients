@@ -2,8 +2,8 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
-import { SearchModule } from '../../../modules/search/internal/mainThread/SearchModule';
-import { FakeBroadcastChannel } from '../../../modules/search/internal/testing/FakeBroadcastChannel';
+import { SearchModule } from '../mainThread/SearchModule';
+import { FakeBroadcastChannel } from '../testing/FakeBroadcastChannel';
 import { useSearchModule } from './useSearchModule';
 
 // --- Infrastructure mocks (browser APIs not available in jsdom) ---
@@ -14,7 +14,7 @@ const mockWorkerStart = jest.fn();
 
 const mockQueryIndexerState = jest.fn().mockResolvedValue({});
 
-jest.mock('../../../modules/search/internal/mainThread/WorkerClient', () => ({
+jest.mock('../mainThread/WorkerClient', () => ({
     WorkerClient: jest.fn().mockImplementation(() => ({
         start: mockWorkerStart,
         queryIndexerState: mockQueryIndexerState,
@@ -23,16 +23,16 @@ jest.mock('../../../modules/search/internal/mainThread/WorkerClient', () => ({
     })),
 }));
 
-jest.mock('../../../modules/search/internal/mainThread/AppVersionGuard', () => ({
+jest.mock('../mainThread/AppVersionGuard', () => ({
     AppVersionGuard: jest.fn(),
 }));
 
-jest.mock('../../../modules/search/internal/shared/errors', () => {
-    const actual = jest.requireActual('../../../modules/search/internal/shared/errors');
+jest.mock('../shared/errors', () => {
+    const actual = jest.requireActual('../shared/errors');
     return { ...actual, sendErrorReportForSearch: jest.fn(), listenForWorkerErrors: jest.fn() };
 });
 
-jest.mock('../../../modules/search/internal/shared/Logger', () => ({
+jest.mock('../shared/Logger', () => ({
     Logger: { info: jest.fn(), error: jest.fn(), listenForWorkerLogs: jest.fn() },
 }));
 
@@ -62,9 +62,9 @@ jest.mock('@proton/shared/lib/api/drive/volume', () => ({
     queryLatestVolumeEvent: jest.fn(),
 }));
 
-jest.mock('../../../flags/useFlagsDriveFoundationSearch');
+jest.mock('../../../../flags/useFlagsDriveFoundationSearch');
 
-const { useFlagsDriveFoundationSearch } = require('../../../flags/useFlagsDriveFoundationSearch');
+const { useFlagsDriveFoundationSearch } = require('../../../../flags/useFlagsDriveFoundationSearch');
 
 function setFeatureFlag(enabled: boolean) {
     (useFlagsDriveFoundationSearch as jest.Mock).mockReturnValue(enabled);

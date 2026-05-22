@@ -4,8 +4,8 @@ import { getDrive, splitNodeUid, useDrive } from '@proton/drive';
 import { BusDriverEventName, type NodeEventMeta, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { useDriveEventManager } from '../../../legacy/store';
-import { useMovedItemsNotification } from '../../../modals/MoveItemsModal/useMovedItemsNotification';
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
+import { useMovedItemsNotification } from './useMovedItemsNotification';
 
 export type MoveNodeItem = {
     name: string;

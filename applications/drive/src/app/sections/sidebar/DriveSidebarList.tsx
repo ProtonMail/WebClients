@@ -6,10 +6,10 @@ import { useShallow } from 'zustand/react/shallow';
 import { Loader, SidebarList } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import { useUserSettings } from '../../legacy/hooks/user';
 import { useDriveSharingFlags } from '../../legacy/store';
 import type { directoryTreeFactory } from '../../modules/directoryTree';
 import { DirectoryTreeRootType } from '../../modules/directoryTree/types';
+import { useUserSettings } from '../../modules/userSettings';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { DevicesSidebar } from './DriveSidebarDevices/DevicesSidebar';
 import { DriveSidebarFolders } from './DriveSidebarFolders/DriveSidebarFolders';

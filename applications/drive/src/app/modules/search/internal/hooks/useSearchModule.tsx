@@ -8,20 +8,21 @@ import { useApi, useConfig } from '@proton/components';
 import { useDrive } from '@proton/drive';
 import { queryLatestVolumeEvent } from '@proton/shared/lib/api/drive/volume';
 
-import { useFlagsDriveFoundationSearch } from '../../../flags/useFlagsDriveFoundationSearch';
-import { getNotificationsManager } from '../../../modules/notifications';
+import { useFlagsDriveFoundationSearch } from '../../../../flags/useFlagsDriveFoundationSearch';
+import { getNotificationsManager } from '../../../notifications';
+import { SearchModule } from '../mainThread/SearchModule';
+import type { PermanentErrorKind } from '../shared/errors';
+import { sendErrorReportForSearch } from '../shared/errors';
 import type {
     IndexKind,
     IndexPopulatorStatus,
     IndexingProgress,
+    SearchModuleState,
     SearchQuery,
     SearchResultItem,
     SerializedIndexEntry,
-} from '../../../modules/search';
-import { SearchModule, type SearchModuleState } from '../../../modules/search';
-import type { PermanentErrorKind } from '../../../modules/search/internal/shared/errors';
-import { sendErrorReportForSearch } from '../../../modules/search/internal/shared/errors';
-import { brandSearchUserId } from '../../../modules/search/internal/shared/types';
+} from '../shared/types';
+import { brandSearchUserId } from '../shared/types';
 
 const IDLE_TIMEOUT_MS = 10_000;
 
