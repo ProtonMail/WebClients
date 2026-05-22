@@ -3495,6 +3495,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vaša pretraga je pronašla previše rezultata. Ograničite pretragu i pokušajte ponovno."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Ključ organizacije mora biti aktiviran kako bi se kreirali pozvani korisnici"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Ključ organizacije mora biti aktivan kako bi se kreirali neprivatni korisnici"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -10277,6 +10283,11 @@
     "Zoom Meeting": {
       "Meeting ID:": [
         "ID sastanka:"
+      ]
+    },
+    "unprivatization": {
+      "The user must have an address to request data access": [
+        "Korisnik mora imati adresu za traženje pristupa podacima"
       ]
     }
   }

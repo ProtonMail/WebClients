@@ -1708,6 +1708,9 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Start testing": [
+        "Inicieu la prova"
       ]
     },
     "action": {
@@ -4301,6 +4304,24 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
+      ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Si trobeu un correu electrònic en una categoria incorrecta, només cal que el moveu a la correcta."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Encara està aprenent i necessitem la vostra ajuda per millorar la categorització."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Aturarem les importacions al 80% de l'emmagatzematge per reservar espai per missatges nous."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Hem començat a importar els vostres correus electrònics des de Gmail. Us avisarem quan hagi acabat."
+      ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "Les vostres correccions ajudaran a definir l'experiència predeterminada per a tothom; en el moment del llançament, també es recordaran les vostres preferències de cara al futur!"
+      ],
+      "You’re among the first to try email categories.": [
+        "Sou de les primeres persones a provar les categories de correu electrònic."
       ]
     },
     "description": {
@@ -5259,6 +5280,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La vostra cerca coincideix amb massa resultats. Limiteu-la i torneu-ho a provar."
+      ],
+      "Organization key must be activated to create invited users": [
+        "S'ha d'activar la clau de l'organització per a crear usuaris convidats"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "S'ha d'activar la clau d'organització per a crear usuaris no privats"
       ]
     },
     "error": {
@@ -9048,6 +9075,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sou tot just a uns quants clics d'una safata d'entrada ordenada"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Confieu en la clau \"${ activeSignerText }\" per verificar els missatges nous d'aquest contacte."
       ]
     },
     "info": {
@@ -9114,6 +9144,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Signant actiu"
+      ],
+      "Fallback": [
+        "Recursos alternatius"
       ]
     },
     "Key pinning": {
@@ -10116,6 +10152,9 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caràcters"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12679,6 +12718,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Us recomanem que marqueu la clau com a \"no confiable\"."
+      ],
+      "This contact currently signs messages with this key": [
+        "Aquest contacte actualment signa els missatges amb aquesta clau"
+      ],
+      "This key is used for message verification": [
+        "Aquesta clau s'utilitza per la verificació de missatges"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Aquesta clau s'utilitza per xifrar missatges per aquest contacte en aplicacions antigues"
       ]
     },
     "PGP key warning": {
@@ -15999,6 +16047,9 @@
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
+      ],
+      "Early access to email categories": [
+        "Accés anticipat a les categories de correu electrònic"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16122,6 +16173,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Els administradors no poden accedir a les dades dels usuaris privats i no poden restablir la seva contrasenya."
+      ],
+      "Member activation incomplete": [
+        "L'activació del membre no s'ha completat."
+      ],
+      "Organization key must be activated to request data access": [
+        "La clau d'organització ha d'estar activada per sol·licitar accés a les dades."
+      ],
+      "The user must have an address to request data access": [
+        "L'usuari ha de tenir una adreça per sol·licitar l'accés a les dades."
       ]
     },
     "Update font modal": {

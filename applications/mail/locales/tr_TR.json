@@ -4301,6 +4301,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Yeni iletilere yer ayırmak için depolama alanı %80'e ulaştığında içe aktarma işlemlerini duraklatacağız."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Gmail'deki e-postalarınızı içe aktarmaya başladık. İşlem tamamlandığında size haber vereceğiz."
       ]
     },
     "description": {
@@ -5259,6 +5265,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Davet edilen kullanıcılar oluşturmak için kuruluş anahtarı etkinleştirilmelidir"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Korunmayan kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
       ]
     },
     "error": {
@@ -9048,6 +9060,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Bu kişiden gelen yeni iletileri doğrulamak için \"${ activeSignerText }\" anahtarına güven."
       ]
     },
     "info": {
@@ -9114,6 +9129,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktif İmza Sahibi"
+      ],
+      "Fallback": [
+        "Geri dönüş"
       ]
     },
     "Key pinning": {
@@ -10116,6 +10137,9 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } karakter"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12679,6 +12703,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Bu anahtara \"güvenmemeniz\" önerilir."
+      ],
+      "This contact currently signs messages with this key": [
+        "Bu kişi şu anda iletileri bu anahtarla imzalıyor"
+      ],
+      "This key is used for message verification": [
+        "Bu anahtar ileti doğrulama için kullanılır"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Bu anahtar eski uygulamalarda bu kişiyle olan iletileri şifrelemek için kullanılır"
       ]
     },
     "PGP key warning": {
@@ -16218,6 +16251,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Yöneticiler gizli kullanıcıların verilerine erişemez ve parolalarını sıfırlayamaz."
+      ],
+      "Member activation incomplete": [
+        "Üye etkinleştirilmemiş"
+      ],
+      "Organization key must be activated to request data access": [
+        "Verilere erişme isteğinde bulunmak için kuruluş anahtarı etkinleştirilmelidir"
+      ],
+      "The user must have an address to request data access": [
+        "Veri isteğinde bulunabilmek için kullanıcının bir e-posta adresi olmalıdır"
       ]
     },
     "Update font modal": {

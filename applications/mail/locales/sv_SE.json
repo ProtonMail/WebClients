@@ -5235,6 +5235,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din sökning matchade för många resultat. Begränsa din sökning och försök igen."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisationsnyckel måste vara aktiverad för att skapa inbjudna användare"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisationsnyckeln måste aktiveras för att skapa icke-privata användare"
       ]
     },
     "error": {
@@ -9043,6 +9049,9 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Fallback": [
+        "Reserv"
       ]
     },
     "Key pinning": {
@@ -10036,6 +10045,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Category:": [
+        "Kategori:"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16103,6 +16115,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratörer kan inte komma åt privata användares data och kan inte återställa deras lösenord."
+      ],
+      "Member activation incomplete": [
+        "Medlemsaktivering ofullständig"
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisationsnyckel måste vara aktiverad för att begära dataåtkomst"
+      ],
+      "The user must have an address to request data access": [
+        "Användaren måste ha en adress för att begära dataåtkomst"
       ]
     },
     "Update font modal": {

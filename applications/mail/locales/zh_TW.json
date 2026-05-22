@@ -1667,6 +1667,9 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Move to category...": [
+        "移動至類別..."
       ]
     },
     "action": {
@@ -4170,6 +4173,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "您已有個 Gmail 位址轉寄至 ${ MAIL_APP_NAME }。於下方連接至它以直接於 ${ MAIL_APP_NAME } 傳送和接收電子郵件。"
       ]
     },
     "description": {
@@ -5083,6 +5089,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜尋結果過多。請縮小您的搜尋範圍並重新試試。"
+      ],
+      "Organization key must be activated to create invited users": [
+        "需啟用組織金鑰才能建立邀請使用者"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "需啟用組織金鑰才能建立非私人使用者"
       ]
     },
     "error": {
@@ -8672,6 +8684,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "輕點幾下滑鼠，即可擁有整潔的收件匣"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "替成員創建一個安全 ${ memberCount } 雲端"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "因為過量請求暫時不可用。請稍後在試。"
       ]
     },
     "info": {
@@ -9798,6 +9819,9 @@
       ],
       "You don't have any newsletters or mailing list subscriptions.": [
         "您沒有來自任何電子報和訂閱郵件清單的內容。"
+      ],
+      "Loading your newsletter subscriptions...": [
+        "載入您的電子報訂閱..."
       ]
     },
     "Landmarks": {
@@ -10929,6 +10953,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "Access all countries": [
+        "存取所有國家"
+      ],
+      "Unlock streaming": [
+        "解鎖串流"
       ]
     },
     "new_plans: feature highlight": {
@@ -11325,6 +11355,9 @@
       ],
       "Support for ${ n } custom email domain": [
         "支援 ${ n } 組自訂電子郵件網域"
+      ],
+      "${ n } country": [
+        "${ n } 個國家"
       ]
     },
     "Notification": {
@@ -12072,6 +12105,9 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "續訂價格取決於計費區域和 VAT 號碼。"
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "續訂價格取決於計費區域和商務號碼。"
       ]
     },
     "Payments.Saved payment method details": {
@@ -15350,6 +15386,12 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Keep this banner hidden?": [
+        "保持隱藏此橫幅？"
+      ],
+      "Mailing list": [
+        "郵寄清單"
       ]
     },
     "Today icon tooltip in mini calendar": {

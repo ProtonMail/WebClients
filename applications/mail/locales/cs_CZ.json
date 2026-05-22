@@ -5343,6 +5343,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhledávání našlo příliš mnoho výsledků. Upřesněte hledání a zkuste to prosím znovu."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Pro vytvoření pozvaných uživatelů musí být aktivován klíč organizace"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Pro vytvoření nesoukromých uživatelů musí být aktivován klíč organizace"
       ]
     },
     "error": {
@@ -16760,6 +16766,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Správci nemají přístup k datům soukromých uživatelů a nemohou resetovat jejich heslo."
+      ],
+      "Member activation incomplete": [
+        "Nekompletní aktivace člena"
+      ],
+      "Organization key must be activated to request data access": [
+        "Pro žádost o přístup k datům musíte aktivovat klíč organizace"
+      ],
+      "The user must have an address to request data access": [
+        "Uživatel musí mít adresu, aby mohlo být požádáno o přístup k datům"
       ]
     },
     "Update font modal": {

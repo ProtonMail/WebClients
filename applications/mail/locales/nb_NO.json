@@ -5256,6 +5256,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Søket samsvarte med for mange resultater. Begrens søket, og prøv på nytt."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisasjonsnøkkelen må aktiveres for å opprette inviterte brukere"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisasjonsnøkkelen må være aktivert for å opprette ikke-private brukere"
       ]
     },
     "error": {
@@ -16192,6 +16198,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorer har ikke tilgang til dataene til private brukere og kan ikke tilbakestille passordet deres."
+      ],
+      "Member activation incomplete": [
+        "Medlemsaktivering ufullstendig"
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisasjonsnøkkel må være aktivert for å be om datatilgang"
+      ],
+      "The user must have an address to request data access": [
+        "Brukeren må ha en adresse for å be om datatilgang"
       ]
     },
     "Update font modal": {

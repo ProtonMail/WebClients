@@ -1708,6 +1708,9 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Start testing": [
+        "Commencer à tester"
       ]
     },
     "action": {
@@ -4301,6 +4304,24 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Si vous trouvez un e-mail dans la mauvaise catégorie, vous pouvez simplement le déplacer vers la bonne."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Le système est encore en phase d'apprentissage et nous avons besoin de votre aide pour améliorer la catégorisation."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Nous suspendrons les importations lorsque le taux de remplissage atteindra 80 % afin de réserver de l'espace pour les nouveaux messages."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Nous avons commencé à importer vos messages depuis Gmail. Nous vous préviendrons lorsque l'opération sera terminée."
+      ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "Vos corrections permettront de façonner l'expérience par défaut pour tous. Dès le lancement, le système mémorisera également vos préférences."
+      ],
+      "You’re among the first to try email categories.": [
+        "Vous faites partie des premiers à essayer les catégories de messages."
       ]
     },
     "description": {
@@ -5259,6 +5280,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
+      ],
+      "Organization key must be activated to create invited users": [
+        "La clé de l'organisation doit être activée pour créer des utilisateurs invités."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "La clé de l'organisation doit être activée pour créer des utilisateurs non privés."
       ]
     },
     "error": {
@@ -9048,6 +9075,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Faire confiance à la clé « ${ activeSignerText } » pour vérifier les nouveaux messages provenant de ce contact."
       ]
     },
     "info": {
@@ -9114,6 +9144,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Signataire actif"
+      ],
+      "Fallback": [
+        "Solution de secours"
       ]
     },
     "Key pinning": {
@@ -10116,6 +10152,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caractères"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12679,6 +12718,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Nous vous recommandons de ne plus faire confiance à cette clé."
+      ],
+      "This contact currently signs messages with this key": [
+        "Ce contact signe actuellement les messages avec cette clé."
+      ],
+      "This key is used for message verification": [
+        "Cette clé est utilisée pour la vérification des messages."
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Cette clé permet de chiffrer les messages de ce contact sur les applications plus anciennes."
       ]
     },
     "PGP key warning": {
@@ -16095,6 +16143,9 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Early access to email categories": [
+        "Accès anticipité aux catégories de messages."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16218,6 +16269,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés et ne peuvent pas réinitialiser leur mot de passe."
+      ],
+      "Member activation incomplete": [
+        "L'activation du membre est incomplète."
+      ],
+      "Organization key must be activated to request data access": [
+        "La clé de l'organisation doit être activée pour demander l'accès aux données."
+      ],
+      "The user must have an address to request data access": [
+        "L'utilisateur doit disposer d'une adresse pour demander l'accès aux données."
       ]
     },
     "Update font modal": {

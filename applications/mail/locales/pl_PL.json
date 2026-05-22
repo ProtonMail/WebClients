@@ -4845,6 +4845,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Wyszukiwanie pasuje do zbyt wielu wyników. Sprecyzuj wyszukiwanie i spróbuj ponownie."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Musisz aktywować klucz organizacji, aby utworzyć zaproszonych użytkowników"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Musisz aktywować klucz organizacji, aby utworzyć służbowych użytkowników"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -15300,6 +15306,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorzy nie mają dostępu do danych prywatnych użytkowników i nie mogą zresetować ich haseł."
+      ],
+      "Member activation incomplete": [
+        "Aktywacja użytkowników nie została zakończona"
+      ],
+      "Organization key must be activated to request data access": [
+        "Musisz aktywować klucz organizacji, aby uzyskać dostęp do danych"
+      ],
+      "The user must have an address to request data access": [
+        "Użytkownik musi mieć adres, aby żądać dostępu do danych"
       ]
     },
     "Update font modal": {
