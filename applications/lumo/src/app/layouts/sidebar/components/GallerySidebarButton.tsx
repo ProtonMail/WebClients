@@ -3,6 +3,8 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { IcImage } from '@proton/icons/icons/IcImage';
+
 import { SidebarItem } from './SidebarItem';
 
 interface Props {
@@ -20,7 +22,7 @@ export const GallerySidebarButton = ({ onItemClick }: Props) => {
 
     return (
         <SidebarItem
-            icon="image"
+            icon={IcImage}
             label={c('collider_2025:Button').t`Gallery`}
             onClick={handleClick}
             className={isActive ? 'sidebar-item--active' : undefined}
