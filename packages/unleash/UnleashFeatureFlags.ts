@@ -361,6 +361,7 @@ enum LumoFeatureFlag {
     LumoShowNextPromptSuggestions = 'LumoShowNextPromptSuggestions',
     LumoSurveys = 'LumoSurveys',
     LumoNewMarketingLinks = 'LumoNewMarketingLinks',
+    LumoMeowmory = 'LumoMeowmory',
 }
 
 export type FeatureFlag =

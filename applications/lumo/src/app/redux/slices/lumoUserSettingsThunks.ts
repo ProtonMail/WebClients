@@ -2,9 +2,37 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { base64ToMasterKey } from '../../crypto';
 import { deserializeUserSettings, serializeUserSettings } from '../../serialization';
+import { mergeAppendedGeneratedMemories, normalizeMemories } from '../../util/memoryHelpers';
 import { safeLogger } from '../../util/safeLogger';
+import type { LumoDispatch, LumoState } from '../store';
 import type { LumoThunkArguments } from '../thunk';
-import type { LumoUserSettings } from './lumoUserSettings';
+import { updateLumoUserSettingsWithAutoSave } from './lumoUserSettings';
+import type { LumoUserSettings, Memory } from './lumoUserSettings';
+
+/**
+ * Atomically merges `generated` into the latest persisted memories, resetting the
+ * "prompts since last update" counter. Reading state inside the thunk avoids the race
+ * where memories added or edited during a long-running generation get clobbered when the
+ * caller persists a stale snapshot.
+ *
+ * Returns the number of newly added memories.
+ */
+export const appendGeneratedMemoriesThunk =
+    (generated: Memory[]) =>
+    (dispatch: LumoDispatch, getState: () => LumoState): number => {
+        const current = normalizeMemories(getState().lumoUserSettings.memories);
+        const merged = mergeAppendedGeneratedMemories(current, generated);
+        const added = merged.length - current.length;
+
+        dispatch(
+            updateLumoUserSettingsWithAutoSave({
+                memories: merged,
+                memoryPromptsSinceAutoSave: 0,
+            })
+        );
+
+        return added;
+    };
 
 // Thunk to save Lumo user settings to remote API
 export const saveLumoUserSettingsToRemote = createAsyncThunk<void, LumoUserSettings, { extra: LumoThunkArguments }>(
@@ -14,14 +42,6 @@ export const saveLumoUserSettingsToRemote = createAsyncThunk<void, LumoUserSetti
         const state = getState() as any;
         const masterKey = state.credentials?.masterKey;
 
-        console.log('LumoUserSettingsThunks: About to save Lumo user settings:', lumoUserSettings);
-        console.log('LumoUserSettingsThunks: Lumo user settings keys:', Object.keys(lumoUserSettings || {}));
-        console.log('LumoUserSettingsThunks: Has theme field:', 'theme' in (lumoUserSettings || {}));
-        console.log(
-            'LumoUserSettingsThunks: Has personalization field:',
-            'personalization' in (lumoUserSettings || {})
-        );
-
         if (!masterKey) {
             throw new Error('Master key not available');
         }
@@ -30,7 +50,6 @@ export const saveLumoUserSettingsToRemote = createAsyncThunk<void, LumoUserSetti
             // Convert base64 master key to CryptoKey
             const masterKeyCrypto = await base64ToMasterKey(masterKey);
             const userSettingsToApi = await serializeUserSettings(lumoUserSettings, masterKeyCrypto);
-            console.log('LumoUserSettingsThunks: Encrypted payload being sent to API:', userSettingsToApi);
 
             // Check if user settings already exist to determine whether to POST or PUT
             try {
@@ -76,17 +95,11 @@ export const loadLumoUserSettingsFromRemote = createAsyncThunk<
         const serializedUserSettings = await lumoApi.getUserSettings();
         console.log('LumoUserSettingsThunks: Raw encrypted payload received from API:', serializedUserSettings);
         if (serializedUserSettings) {
-            console.log(
-                'LumoUserSettingsThunks: About to decrypt with master key:',
-                masterKey.substring(0, 20) + '...'
-            );
 
             // Convert base64 master key to CryptoKey
             const masterKeyCrypto = await base64ToMasterKey(masterKey);
-            console.log('LumoUserSettingsThunks: Master key converted to CryptoKey');
 
             const userSettings = await deserializeUserSettings(serializedUserSettings, masterKeyCrypto);
-            console.log('LumoUserSettingsThunks: Deserialization completed, result:', userSettings);
 
             if (userSettings) {
                 const isCoreProtonSettings = 'Email' in userSettings && 'Phone' in userSettings;
