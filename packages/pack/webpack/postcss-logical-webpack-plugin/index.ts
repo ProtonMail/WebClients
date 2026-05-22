@@ -46,7 +46,15 @@ export default class PostCssLogicalWebpackPlugin {
                                 );
                             })
                             .map(async ([path, asset]) => {
-                                const result = await processor.process(asset.source(), {
+                                const cssSource = asset.source().toString();
+                                // Skip CSS assets that contain no actual rules (e.g. webpack deduplication
+                                // leaves chunks with only a sourceMappingURL comment). Processing these
+                                // produces an empty .ltr.css which fails the build validation.
+                                const hasRules = cssSource.replace(/\/\*[\s\S]*?\*\//g, '').trim().length > 0;
+                                if (!hasRules) {
+                                    return;
+                                }
+                                const result = await processor.process(cssSource, {
                                     map: false,
                                     from: undefined,
                                     to: undefined,
