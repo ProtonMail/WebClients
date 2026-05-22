@@ -1469,8 +1469,7 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Kulcs megjelölése megbízhatóként",
-        "Kulcsok megjelölése megbízhatóként"
+        "Megbízható kulcs"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -4852,6 +4851,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A keresés túl sok találatot eredményezett. Korlátozza a keresést majd próbálja meg újra."
+      ],
+      "Organization key must be activated to create invited users": [
+        "A szervezeti kulcsot aktiválni kell, meghívott felhasználók létrehozásához"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "A szervezeti kulcsot aktiválni kell, nem-privát felhasználók létrehozásához"
       ]
     },
     "error": {
@@ -7079,6 +7084,7 @@
         "Inicializálás…"
       ],
       "Insert image": [
+        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -15015,6 +15021,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "A rendszergazdák nem férhetnek hozzá a privát felhasználók adataihoz, és nem állíthatják vissza jelszavukat."
+      ],
+      "Member activation incomplete": [
+        "A tag aktiválása nem teljes"
+      ],
+      "Organization key must be activated to request data access": [
+        "A szervezeti kulcsot aktiválni kell az adathozzáférés igényléséhez"
+      ],
+      "The user must have an address to request data access": [
+        "A felhasználónak rendelkeznie kell egy címmel az adathozzáférés igényléséhez."
       ]
     },
     "Update font modal": {

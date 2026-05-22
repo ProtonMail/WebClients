@@ -1459,10 +1459,7 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Ključ zaupanja",
-        "Ključa zaupanja",
-        "Ključi zaupanja",
-        "Ključev zaupanja"
+        "Zaupaj ključu"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -5031,6 +5028,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vašemu iskanju ustreza preveč rezultatov. Omejite iskanje in poskusite znova."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Za ustvarjanje povabljenih uporabnikov mora biti ključ organizacije aktiviran."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Za ustvarjanje nezasebnih uporabnikov mora biti ključ organizacije aktiviran."
       ]
     },
     "error": {
@@ -7424,7 +7427,10 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko"
+        "Vstavi sliko",
+        "Vstavi sliki",
+        "Vstavi slike",
+        "Vstavi slik"
       ],
       "Insert link": [
         "Vstavi povezavo"

@@ -1514,8 +1514,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1709,6 +1708,9 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Start testing": [
+        "Inicieu la prova"
       ]
     },
     "action": {
@@ -4308,6 +4310,18 @@
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Hem començat a importar els vostres correus electrònics des de Gmail. Us avisarem quan hagi acabat."
+      ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Si trobeu un correu electrònic en una categoria incorrecta, només cal que el moveu a la correcta."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Encara està aprenent i necessitem la vostra ajuda per millorar la categorització."
+      ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "Les vostres correccions ajudaran a definir l'experiència predeterminada per a tothom; en el moment del llançament, també es recordaran les vostres preferències de cara al futur!"
+      ],
+      "You’re among the first to try email categories.": [
+        "Sou de les primeres persones a provar les categories de correu electrònic."
       ]
     },
     "description": {
@@ -5266,6 +5280,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La vostra cerca coincideix amb massa resultats. Limiteu-la i torneu-ho a provar."
+      ],
+      "Organization key must be activated to create invited users": [
+        "S'ha d'activar la clau de l'organització per a crear usuaris convidats"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "S'ha d'activar la clau d'organització per a crear usuaris no privats"
       ]
     },
     "error": {
@@ -7610,7 +7630,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -10135,6 +10156,9 @@
       ],
       "Category:": [
         "Categoria:"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caràcters"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16027,6 +16051,9 @@
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
+      ],
+      "Early access to email categories": [
+        "Accés anticipat a les categories de correu electrònic"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16150,6 +16177,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Els administradors no poden accedir a les dades dels usuaris privats i no poden restablir la seva contrasenya."
+      ],
+      "Member activation incomplete": [
+        "L'activació del membre no s'ha completat."
+      ],
+      "Organization key must be activated to request data access": [
+        "La clau d'organització ha d'estar activada per sol·licitar accés a les dades."
+      ],
+      "The user must have an address to request data access": [
+        "L'usuari ha de tenir una adreça per sol·licitar l'accés a les dades."
       ]
     },
     "Update font modal": {

@@ -1399,10 +1399,7 @@
         "Доверять"
       ],
       "Trust key": [
-        "Доверенный ключ",
-        "Доверенных ключа",
-        "Доверенных ключей",
-        "Доверенных ключей"
+        "Доверять ключу"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -4710,6 +4707,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш поиск дал слишком много результатов. Пожалуйста, ограничьте поиск и повторите попытку."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Ключ организации должен быть активирован для создания приглашенных пользователей"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Ключ организации должен быть активирован для создания нечастных пользователей"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6983,7 +6986,10 @@
         "Инициализация…"
       ],
       "Insert image": [
-        "Вставить изображение"
+        "Вставить изображение",
+        "Вставить изображения",
+        "Вставить изображения",
+        "Вставить изображения"
       ],
       "Insert link": [
         "Вставить ссылку"
@@ -14768,6 +14774,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Администраторы не могут получить доступ к данным частных пользователей и не могут сбросить их пароль."
+      ],
+      "Member activation incomplete": [
+        "Активация участника не завершена"
+      ],
+      "Organization key must be activated to request data access": [
+        "Для запроса доступа к данным необходимо активировать ключ организации"
+      ],
+      "The user must have an address to request data access": [
+        "Пользователь должен иметь адрес, чтобы запросить доступ к данным"
       ]
     },
     "Update font modal": {

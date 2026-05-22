@@ -1522,10 +1522,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -1721,6 +1718,9 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Start testing": [
+        "Začať testovanie"
       ]
     },
     "action": {
@@ -4374,6 +4374,18 @@
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Začali sme importovať vaše emaily z Gmailu. Dáme vám vedieť, keď bude import hotový."
+      ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Ak nájdete email v nesprávnej kategórii, jednoducho ho presuňte do tej správnej."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Systém sa stále učí a potrebujeme vašu pomoc, aby sme vylepšili kategorizáciu."
+      ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "Vaše opravy ovplyvnia štandardné nastavenie pre všetkých používateľov a po spustení si systém bude pamätať vaše preferencie aj v budúcnosti!"
+      ],
+      "You’re among the first to try email categories.": [
+        "Patríte medzi prvých, ktorí vyskúšajú kategórie emailov."
       ]
     },
     "description": {
@@ -5358,6 +5370,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhľadávanie našlo príliš veľa výsledkov. Upresnite hľadanie a skúste to prosím znova."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Na vytvorenie pozvaných používateľov musí byť aktivovaný kľúč organizácie"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Na vytvorenie nesúkromných používateľov musí byť aktivovaný kľúč organizácie"
       ]
     },
     "error": {
@@ -7868,7 +7886,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -10459,6 +10480,9 @@
       ],
       "Category:": [
         "Kategória:"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } znakov"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16643,6 +16667,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Early access to email categories": [
+        "Predčasný prístup k emailovým kategóriám"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16766,6 +16793,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Správcovia nemajú prístup k dátam súkromných používateľov a nemôžu resetovať ich heslo."
+      ],
+      "Member activation incomplete": [
+        "Aktivácia člena nie je dokončená"
+      ],
+      "Organization key must be activated to request data access": [
+        "Kľúč organizácie musí byť aktivovaný, aby bolo možné požiadať o prístup k údajom"
+      ],
+      "The user must have an address to request data access": [
+        "Používateľ musí mať adresu, aby mohol požiadať o prístup k údajom"
       ]
     },
     "Update font modal": {

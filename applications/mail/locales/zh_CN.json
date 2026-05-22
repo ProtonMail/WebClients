@@ -1703,6 +1703,9 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Start testing": [
+        "开始测试"
       ]
     },
     "action": {
@@ -4275,6 +4278,18 @@
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "我们已开始从 Gmail 导入您的邮件，导入完成后将通知您。"
+      ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "如果您发现某封邮件归类错误，只需将其移动到正确的类别即可。"
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "它仍在学习，我们需要您的帮助来改进分类。"
+      ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "您的更正将塑造每个人的默认体验，上线后它还会记住您今后的偏好！"
+      ],
+      "You’re among the first to try email categories.": [
+        "您是首批试用邮件分类的用户之一！"
       ]
     },
     "description": {
@@ -5220,6 +5235,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜索结果过多，请缩小搜索范围后再试。"
+      ],
+      "Organization key must be activated to create invited users": [
+        "必须激活组织密钥才能创建受邀用户"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "组织密钥必须激活才能创建非私人用户"
       ]
     },
     "error": {
@@ -7481,7 +7502,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert link": [
         "插入链接"
@@ -9973,6 +9994,9 @@
       ],
       "Category:": [
         "类别："
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } 个字符"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15719,6 +15743,9 @@
       ],
       "Your shorter address is now ready": [
         "您的较短地址现已准备就绪"
+      ],
+      "Early access to email categories": [
+        "抢先体验邮件分类"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15842,6 +15869,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "管理员无法访问私人用户的数据，也无法重置他们的密码。"
+      ],
+      "Member activation incomplete": [
+        "成员激活未完成"
+      ],
+      "Organization key must be activated to request data access": [
+        "必须激活组织密钥才能申请数据访问权限"
+      ],
+      "The user must have an address to request data access": [
+        "用户必须有地址才能申请访问数据"
       ]
     },
     "Update font modal": {

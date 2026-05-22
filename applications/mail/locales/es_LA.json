@@ -1514,8 +1514,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
+        "Confiar clave"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -5260,6 +5259,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La búsqueda coincidió con muchos resultados. Limite la búsqueda e inténtelo de nuevo."
+      ],
+      "Organization key must be activated to create invited users": [
+        "La clave de la organización debe activarse para crear usuarios invitados"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "La clave de la organización debe activarse para crear usuarios no privados"
       ]
     },
     "error": {
@@ -7604,7 +7609,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -16222,6 +16228,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Los administradores no pueden acceder a los datos de usuarios privados y no pueden restablecer sus contraseñas."
+      ],
+      "Member activation incomplete": [
+        "La activación del miembro está incompleta."
+      ],
+      "Organization key must be activated to request data access": [
+        "La clave de la organización debe activarse para solicitar acceso a los datos"
+      ],
+      "The user must have an address to request data access": [
+        "El usuario debe tener una dirección para solicitar acceso a los datos"
       ]
     },
     "Update font modal": {

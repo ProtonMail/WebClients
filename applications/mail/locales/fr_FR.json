@@ -1514,8 +1514,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Faire confiance à cette clé",
-        "Faire confiance à ces clés"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1709,6 +1708,9 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Start testing": [
+        "Commencer à tester"
       ]
     },
     "action": {
@@ -4307,7 +4309,19 @@
         "Nous suspendrons les importations lorsque le taux de remplissage atteindra 80 % afin de réserver de l'espace pour les nouveaux messages."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
-        "Nous avons commencé à importer vos e-mails depuis Gmail. Nous vous préviendrons lorsque l'opération sera terminée."
+        "Nous avons commencé à importer vos messages depuis Gmail. Nous vous préviendrons lorsque l'opération sera terminée."
+      ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Si vous trouvez un e-mail dans la mauvaise catégorie, vous pouvez simplement le déplacer vers la bonne."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Le système est encore en phase d'apprentissage et nous avons besoin de votre aide pour améliorer la catégorisation."
+      ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "Vos corrections permettront de façonner l'expérience par défaut pour tous. Dès le lancement, le système mémorisera également vos préférences."
+      ],
+      "You’re among the first to try email categories.": [
+        "Vous faites partie des premiers à essayer les catégories de messages."
       ]
     },
     "description": {
@@ -5266,6 +5280,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
+      ],
+      "Organization key must be activated to create invited users": [
+        "La clé de l'organisation doit être activée pour créer des utilisateurs invités."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "La clé de l'organisation doit être activée pour créer des utilisateurs non privés."
       ]
     },
     "error": {
@@ -7610,7 +7630,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -10135,6 +10156,9 @@
       ],
       "Category:": [
         "Catégorie :"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caractères"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16123,6 +16147,9 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Early access to email categories": [
+        "Accès anticipité aux catégories de messages."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16246,6 +16273,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés et ne peuvent pas réinitialiser leur mot de passe."
+      ],
+      "Member activation incomplete": [
+        "L'activation du membre est incomplète."
+      ],
+      "Organization key must be activated to request data access": [
+        "La clé de l'organisation doit être activée pour demander l'accès aux données."
+      ],
+      "The user must have an address to request data access": [
+        "L'utilisateur doit disposer d'une adresse pour demander l'accès aux données."
       ]
     },
     "Update font modal": {

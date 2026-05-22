@@ -4335,6 +4335,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Importarea se va opri la 80% din spațiul de stocare pentru a rezerva spațiu pentru mesajele noi."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "S-a început importarea mesajelor de pe Gmail. Vă vom anunța când va fi gata."
       ]
     },
     "description": {
@@ -5306,6 +5312,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Căutarea a găsit prea multe rezultate. Vă rugăm să limitați căutarea și să reîncercați."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Cheia organizației trebuie activată pentru a crea utilizatori invitați."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Cheia organizației trebuie activată pentru a crea utilizatori neprivați."
       ]
     },
     "error": {
@@ -7733,7 +7745,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -9206,6 +9220,9 @@
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Temporar indisponibil din cauza solicitărilor mari. Reîncercați mai târziu."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Cheia „${ activeSignerText }” este aprobată pentru a verifica mesajele noi de la acest contact."
       ]
     },
     "info": {
@@ -9275,6 +9292,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Semnatar activ"
+      ],
+      "Fallback": [
+        "Alternativă"
       ]
     },
     "Key pinning": {
@@ -10282,6 +10305,9 @@
       ],
       "Category:": [
         "Categoria:"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } de caractere"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12896,6 +12922,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vă recomandăm să „nu aprobați” această cheie."
+      ],
+      "This contact currently signs messages with this key": [
+        "Acest contact semnează în prezent mesajele cu această cheie."
+      ],
+      "This key is used for message verification": [
+        "Această cheie este utilizată pentru verificarea mesajelor."
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Această cheie este folosită pentru a cripta mesajele către acest contact în aplicațiile mai vechi."
       ]
     },
     "PGP key warning": {
@@ -16530,6 +16565,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorii nu pot accesa datele utilizatorilor privați și nu le pot reseta parola."
+      ],
+      "Member activation incomplete": [
+        "Activarea membrului nu este completă"
+      ],
+      "Organization key must be activated to request data access": [
+        "Cheia organizației trebuie activată pentru a solicita accesul la date."
+      ],
+      "The user must have an address to request data access": [
+        "Utilizatorul trebuie să aibă o adresă pentru a solicita acces la date."
       ]
     },
     "Update font modal": {

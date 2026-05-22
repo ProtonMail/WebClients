@@ -1522,10 +1522,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -4368,6 +4365,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Імпартаванне будзе прыпынена, калі сховішча будзе запоўнена на 80%. Гэта дазволіць зарэзерваваць астатняе месца для новых паведамленняў."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Пачалося імпартаванне вашых лістоў з Gmail. Вы будзеце апавешчаны, калі працэс будзе завершаны."
       ]
     },
     "description": {
@@ -5352,6 +5355,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш пошук вярнуў занадта шмат вынікаў. Абмяжуйце вобласць пошуку і паспрабуйце яшчэ раз."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Ключ арганізацыі павінен быць актываваны, каб ствараць запрошаных карыстальнікаў"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Ключ арганізацыі павінен быць актываваны, каб ствараць непрыватных карыстальнікаў"
       ]
     },
     "error": {
@@ -7862,7 +7871,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -9357,6 +9369,12 @@
         "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў",
         "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў",
         "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Часова недаступна з-за высокага попыту. Паспрабуйце яшчэ раз пазней."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Давяраць ключу \"${ activeSignerText }\", каб спраўдзіць новыя паведамленні ад гэтага кантакту."
       ]
     },
     "info": {
@@ -9429,6 +9447,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Актыўны падпісант"
+      ],
+      "Fallback": [
+        "Запасны"
       ]
     },
     "Key pinning": {
@@ -10438,6 +10462,12 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "Сімвалаў: ${ value.length }/${ maxLength }"
+      ],
+      "Category:": [
+        "Катэгорыя:"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13103,6 +13133,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Мы рэкамендуем вам \"не давяраць\" гэтаму ключу."
+      ],
+      "This contact currently signs messages with this key": [
+        "Гэты кантакт у цяперашні час падпісвае паведамленні з гэтым ключом"
+      ],
+      "This key is used for message verification": [
+        "Гэты ключ выкарыстоўваецца для спраўджання паведамлення"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Гэты ключ выкарыстоўваецца для шыфравання паведамленняў гэтаму кантакту ў старых праграмах"
       ]
     },
     "PGP key warning": {
@@ -16736,6 +16775,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Адміністратары не могуць атрымліваць доступ да даных прыватных карыстальнікаў, а таксама аднаўляць іх паролі."
+      ],
+      "Member activation incomplete": [
+        "Актывацыя ўдзельніка незавершана"
+      ],
+      "Organization key must be activated to request data access": [
+        "Ключ арганізацыі павінен быць актываваны, каб запытаць доступ да даных"
+      ],
+      "The user must have an address to request data access": [
+        "Карыстальнік павінен мець адрас, каб запытаць доступ да даных"
       ]
     },
     "Update font modal": {

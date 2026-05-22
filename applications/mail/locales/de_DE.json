@@ -1511,8 +1511,7 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -5257,6 +5256,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Deine Suche ergab zu viele Treffer. Schränke deine Suche ein und versuche es erneut."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisationsschlüssel muss aktiviert sein, um eingeladene Benutzer anzulegen"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisationsschlüssel muss aktiviert sein, um nicht-private Benutzer anzulegen"
       ]
     },
     "error": {
@@ -7601,7 +7606,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -10117,6 +10123,9 @@
       ],
       "Category:": [
         "Kategorie:"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } Zeichen"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16219,6 +16228,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Admins haben keinen Zugriff auf die Daten privater Nutzer und können deren Passwort nicht zurücksetzen."
+      ],
+      "Member activation incomplete": [
+        "Mitgliederaktivierung unvollständig"
+      ],
+      "Organization key must be activated to request data access": [
+        "Der Organisationsschlüssel muss aktiviert werden, um den Datenzugang zu beantragen"
+      ],
+      "The user must have an address to request data access": [
+        "Der Nutzer muss über eine Adresse verfügen, um den Datenzugang zu beantragen"
       ]
     },
     "Update font modal": {

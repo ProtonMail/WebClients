@@ -1514,8 +1514,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -4302,6 +4301,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Θα σταματήσουμε τις εισαγωγές στο 80% του αποθηκευτικού χώρου για να κρατήσουμε χώρο για νέα μηνύματα."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Ξεκινήσαμε την εισαγωγή των ηλεκτρονικών μηνυμάτων σας από το Gmail. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
       ]
     },
     "description": {
@@ -5260,6 +5265,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Η αναζήτησή σας ταίριαξε με υπερβολικό αριθμό αποτελεσμάτων. Παρακαλούμε περιορίστε την αναζήτησή σας και δοκιμάστε ξανά."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για τη δημιουργία προσκεκλημένων χρηστών"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για τη δημιουργία μη ιδιωτικών χρηστών"
       ]
     },
     "error": {
@@ -7604,7 +7615,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -9052,6 +9064,9 @@
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Προσωρινά μη διαθέσιμο λόγω υψηλής ζήτησης. Παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Εμπιστευτείτε το κλειδί \"${ activeSignerText }\" για να επαληθεύσετε νέα μηνύματα από αυτήν την επαφή."
       ]
     },
     "info": {
@@ -9118,6 +9133,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Ενεργός Υπογράφων"
+      ],
+      "Fallback": [
+        "Εφεδρικό"
       ]
     },
     "Key pinning": {
@@ -10120,6 +10141,9 @@
       ],
       "Category:": [
         "Κατηγορία:"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } χαρακτήρες"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12683,6 +12707,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Συνιστάται να \"μην εμπιστεύεστε\" αυτό το κλειδί."
+      ],
+      "This contact currently signs messages with this key": [
+        "Αυτή η επαφή υπογράφει μηνύματα με αυτό το κλειδί"
+      ],
+      "This key is used for message verification": [
+        "Αυτό το κλειδί χρησιμοποιείται για την επαλήθευση μηνυμάτων"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Αυτό το κλειδί χρησιμοποιείται για την κρυπτογράφηση μηνυμάτων σε αυτήν την επαφή σε παλαιότερες εφαρμογές"
       ]
     },
     "PGP key warning": {
@@ -16126,6 +16159,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Οι διαχειριστές δεν μπορούν να έχουν πρόσβαση στα δεδομένα των ιδιωτών χρηστών και δεν μπορούν να επαναφέρουν τον κωδικό πρόσβασής τους."
+      ],
+      "Member activation incomplete": [
+        "Μη ολοκληρωμένη ενεργοποίηση μέλους"
+      ],
+      "Organization key must be activated to request data access": [
+        "Το κλειδί οργανισμού πρέπει να είναι ενεργοποιημένο για να ζητήσετε πρόσβαση σε δεδομένα"
+      ],
+      "The user must have an address to request data access": [
+        "Ο χρήστης πρέπει να έχει μια διεύθυνση για να ζητήσει πρόσβαση στα δεδομένα"
       ]
     },
     "Update font modal": {

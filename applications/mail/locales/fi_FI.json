@@ -5156,6 +5156,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Haullasi löytyi liikaa tuloksia. Rajoita hakua ja yritä uudelleen."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisaatioavain on aktivoitava kutsuttujen käyttäjien luomiseksi"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisaatioavain on aktivoitava ei-yksityisten käyttäjien luomiseksi"
       ]
     },
     "error": {
@@ -7467,7 +7473,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -15852,6 +15859,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Ylläpitäjillä ei ole pääsyä yksityisten käyttäjien tietoihin, eivätkä he voi nollata heidän salasanojaan."
+      ],
+      "Member activation incomplete": [
+        "Jäsenen aktivointi on kesken"
+      ],
+      "Organization key must be activated to request data access": [
+        "Tietojen käyttöoikeuspyyntö vaatii organisaatioavaimen aktivoinnin"
+      ],
+      "The user must have an address to request data access": [
+        "Käyttäjällä on oltava osoite tietojen käyttöoikeuden anomiseksi"
       ]
     },
     "Update font modal": {
