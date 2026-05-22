@@ -51,6 +51,8 @@ import useShowDashboard from '@proton/components/hooks/accounts/useShowDashboard
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import { getHasPassB2BPlan, hasAIAssistant, hasAllProductsB2CPlan } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
@@ -189,9 +191,12 @@ const MainContainer = () => {
     const isMeetAvailable = useFlag('PMVC2025');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isOLESEnabled = useFlag('OlesM1');
-    const isCategoryViewEnabled = useFlag('CategoryView');
     const isRolesAndPermissionsEnabled = useFlag('AdminRoleMVP');
     const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
+
+    const categoryViewFlag = useFlag('CategoryView');
+    const betaFlag = useFeature<boolean>(FeatureCode.CategoryViewBeta);
+    const hasBetaAccess = betaFlag.feature?.Value ?? false;
 
     const [referralInfo] = useReferralInfo();
 
@@ -295,7 +300,7 @@ const MainContainer = () => {
         hasPendingInvitations,
         isGroupOwner,
         isOLESEnabled,
-        isCategoryViewEnabled,
+        isCategoryViewEnabled: categoryViewFlag || hasBetaAccess,
         isRolesAndPermissionsEnabled,
         isRecoverySettingsRedesignEnabled,
     });

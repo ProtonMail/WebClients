@@ -76,8 +76,7 @@ export const getMailAppRoutes = ({
                     {
                         text: c('Title').t`Email categories`,
                         id: 'categories',
-                        available:
-                            isCategoryViewEnabled && organization && organization?.Settings.MailCategoryViewEnabled,
+                        available: isCategoryViewEnabled,
                     },
                     {
                         text: c('Title').t`Layout`,
