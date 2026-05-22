@@ -14,10 +14,14 @@ import { createPortal } from 'react-dom'
 
 import { FloatingQuickActions } from './FloatingQuickActions'
 import CommentsPanel from './CommentsPanel'
-import type { CommentMarkNodeChangeData, CommentThreadInterface } from '@proton/docs-shared'
-import { CommentThreadState, CommentsEvent } from '@proton/docs-shared'
+import type {
+  CommentMarkNodeChangeData,
+  CommentThreadInterface,
+  EditorRequiresClientMethods,
+  LiveCommentsTypeStatusChangeData,
+} from '@proton/docs-shared'
+import { CommentThreadState, CommentsEvent, LiveCommentsEvent } from '@proton/docs-shared'
 import { INSERT_INLINE_COMMENT_COMMAND, SHOW_ALL_COMMENTS_COMMAND } from '../../Commands'
-import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { useApplication } from '../../Containers/ApplicationProvider'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { reportErrorToSentry } from '../../Utils/errorMessage'
@@ -29,6 +33,9 @@ import { useMarkNodesContext } from '../MarkNodesContext'
 import { useConfirmActionModal } from '@proton/components'
 import { nonUndoableUpdate } from '../Collaboration/useYjsHistory'
 import { useCustomCollaborationContext } from '../Collaboration/CustomCollaborationContext'
+import { useSyncedState } from '../../Hooks/useSyncedState'
+import { useContactEmails } from '../../Hooks/useContactEmails'
+import { TYPING_STATUS_CHANGE_EVENT_COMMAND } from './CommentsPanelListThread'
 
 export default function CommentPlugin({
   controller,
@@ -341,18 +348,39 @@ export default function CommentPlugin({
         const { markID } = data
         unresolveMarkNode(markID)
       }, CommentsEvent.UnresolveMarkNode),
+      application.eventBus.addEventCallback((data: LiveCommentsTypeStatusChangeData) => {
+        const { threadId } = data
+        editor.dispatchCommand(TYPING_STATUS_CHANGE_EVENT_COMMAND, { threadId })
+      }, LiveCommentsEvent.TypingStatusChange),
     )
-  }, [controller, application, createMarkNodeForCurrentSelection, removeMarkNode, resolveMarkNode, unresolveMarkNode])
+  }, [
+    controller,
+    application,
+    createMarkNodeForCurrentSelection,
+    removeMarkNode,
+    resolveMarkNode,
+    unresolveMarkNode,
+    editor,
+  ])
 
   const containerElement = editor.getRootElement()?.parentElement
 
   const [confirmModal, showConfirmModal] = useConfirmActionModal()
 
+  const { userName, suggestionsEnabled } = useSyncedState()
+  const { displayNameForEmail } = useContactEmails()
+
+  const openLink = useCallback(
+    (url: string) => {
+      void controller.openLink(url).catch(reportErrorToSentry)
+    },
+    [controller],
+  )
+
   return (
     <CommentsProvider
       value={{
         userAddress,
-        controller,
         removeMarkNode,
         activeIDs,
         markNodeMap,
@@ -364,6 +392,27 @@ export default function CommentPlugin({
         commentInputSelection,
         cancelAddComment,
         setCurrentCommentDraft,
+        createCommentThread: controller.createCommentThread.bind(controller),
+        canEdit: application.getRole().canEdit(),
+        canComment: application.getRole().canComment(),
+        languageCode: application.languageCode,
+        logger: application.logger,
+        userName,
+        suggestionsEnabled,
+        getDisplayNameForEmail: displayNameForEmail,
+        openLink,
+        acceptSuggestion: controller.acceptSuggestion.bind(controller),
+        rejectSuggestion: controller.rejectSuggestion.bind(controller),
+        deleteThread: controller.deleteThread.bind(controller),
+        editComment: controller.editComment.bind(controller),
+        deleteComment: controller.deleteComment.bind(controller),
+        resolveThread: controller.resolveThread.bind(controller),
+        unresolveThread: controller.unresolveThread.bind(controller),
+        beganTypingInThread: controller.beganTypingInThread.bind(controller),
+        stoppedTypingInThread: controller.stoppedTypingInThread.bind(controller),
+        markThreadAsRead: controller.markThreadAsRead.bind(controller),
+        getTypersExcludingSelf: controller.getTypersExcludingSelf.bind(controller),
+        createComment: controller.createComment.bind(controller),
       }}
     >
       {confirmModal}
