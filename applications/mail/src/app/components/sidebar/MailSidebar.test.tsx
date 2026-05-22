@@ -14,6 +14,7 @@ import { CHECKLIST_DISPLAY_TYPE, ChecklistKey, type Label } from '@proton/shared
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { buildUser } from '@proton/testing/builders';
 import { useFlag } from '@proton/unleash/useFlag';
+import noop from '@proton/utils/noop.ts';
 import range from '@proton/utils/range';
 
 import type { OnboardingChecklistContext } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
@@ -628,6 +629,8 @@ describe('Sidebar checklist display', () => {
                 ChecklistKey.ProtectInbox,
                 ChecklistKey.MobileApp,
             ],
+            setByoeFlowInProgress: noop,
+            byoeFlowInProgress: false,
         } as OnboardingChecklistContext);
 
         await mailTestRender(<MailSidebar />);

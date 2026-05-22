@@ -2,6 +2,8 @@ import type { FunctionComponent } from 'react';
 import { useEffect, useRef } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import EasySwitchStoreInitializer from '@proton/activation/src/logic/EasySwitchStoreInitializer';
+import EasySwitchStoreProvider from '@proton/activation/src/logic/StoreProvider';
 import ApiModalsHVUpsell from '@proton/components/containers/api/ApiModalsHVUpsell';
 import KeyTransparencyManager from '@proton/components/containers/keyTransparency/KeyTransparencyManager';
 import ModalsChildren from '@proton/components/containers/modals/Children';
@@ -57,19 +59,23 @@ const MainContainer: FunctionComponent = () => {
                             <EncryptedSearchProvider>
                                 <MailContentRefProvider mailContentRef={mailContentRef}>
                                     <SubscriptionModalProvider app={APP_NAME}>
-                                        <ComposerContainer>
-                                            <CheckAllRefProvider>
-                                                <ModalsChildren />
-                                                <ApiModalsHVUpsell api={extraThunkArguments.api} />
+                                        <EasySwitchStoreProvider>
+                                            <EasySwitchStoreInitializer>
+                                                <ComposerContainer>
+                                                    <CheckAllRefProvider>
+                                                        <ModalsChildren />
+                                                        <ApiModalsHVUpsell api={extraThunkArguments.api} />
 
-                                                <Switch>
-                                                    <Route
-                                                        path={ROUTE_MAIN}
-                                                        render={() => <MailAppShell ref={mailContentRef} />}
-                                                    />
-                                                </Switch>
-                                            </CheckAllRefProvider>
-                                        </ComposerContainer>
+                                                        <Switch>
+                                                            <Route
+                                                                path={ROUTE_MAIN}
+                                                                render={() => <MailAppShell ref={mailContentRef} />}
+                                                            />
+                                                        </Switch>
+                                                    </CheckAllRefProvider>
+                                                </ComposerContainer>
+                                            </EasySwitchStoreInitializer>
+                                        </EasySwitchStoreProvider>
                                     </SubscriptionModalProvider>
                                 </MailContentRefProvider>
                             </EncryptedSearchProvider>

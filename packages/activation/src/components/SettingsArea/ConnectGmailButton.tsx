@@ -4,10 +4,10 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { BYOESetupSuccessModal } from '@proton/activation/src/components/Modals/BYOESetupSuccessModal/BYOESetupSuccessModal';
 import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '@proton/activation/src/constants';
 import useSetupGmailBYOEAddress from '@proton/activation/src/hooks/useSetupGmailBYOEAddress';
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
+import { setBYOEFlowResult } from '@proton/activation/src/logic/byoeFlow/byoeFlow.slice';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
 import { changeCreateLoadingState } from '@proton/activation/src/logic/sync/sync.actions';
 import { Button } from '@proton/atoms/Button/Button';
@@ -30,6 +30,7 @@ interface Props {
     className?: string;
     buttonText?: string;
     onComplete?: () => Promise<void>;
+    onBYOEFlowStart?: () => void;
 }
 
 const ConnectGmailButton = ({
@@ -37,6 +38,7 @@ const ConnectGmailButton = ({
     className,
     buttonText = c('Action').t`Set up auto-forwarding from Gmail`,
     onComplete,
+    onBYOEFlowStart,
 }: Props) => {
     const { createNotification } = useNotifications();
     const easySwitchDispatch = useEasySwitchDispatch();
@@ -44,10 +46,6 @@ const ConnectGmailButton = ({
 
     const [user, loadingUser] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
-
-    const [connectedAddress, setConnectedAddress] = useState<string | undefined>(undefined);
-
-    const [byoeSetupSuccessModal, setBYOESetupSuccessModal, renderBYOESetupSuccessModal] = useModalState();
 
     const { activeBYOEAddresses, forwardingList, isLoadingAddressesCount } = useBYOEAddressesCounts();
 
@@ -64,8 +62,13 @@ const ConnectGmailButton = ({
 
     const { hasAccessToBYOE, isInMaintenance, handleBYOEWithImportCallback } = useSetupGmailBYOEAddress({
         showSuccessModal: (connectedAddress: string) => {
-            setConnectedAddress(connectedAddress);
-            setBYOESetupSuccessModal(true);
+            easySwitchDispatch(
+                setBYOEFlowResult({
+                    connectedAddress,
+                    isPaid: hasPaidMail(user),
+                    isConversionFlow,
+                })
+            );
         },
         onComplete: () => {
             easySwitchDispatch(changeCreateLoadingState('idle'));
@@ -101,6 +104,7 @@ const ConnectGmailButton = ({
         } else if (activeBYOEAddresses.length >= MAX_SYNC_PAID_USER) {
             setReachedLimitForwardingModalOpen(true);
         } else {
+            onBYOEFlowStart?.();
             if (forwardingList.length > 0 && hasAccessToBYOE) {
                 setConversionModalOpen(true);
             } else {
@@ -160,18 +164,6 @@ const ConnectGmailButton = ({
                 <UpsellForwardingModal hasAccessToBYOE={hasAccessToBYOE} modalProps={upsellForwardingModalProps} />
             )}
             {renderRemoveForwardingModal && <RemoveForwardingModal {...removeForwardingModalProps} />}
-            {renderBYOESetupSuccessModal && connectedAddress && (
-                <BYOESetupSuccessModal
-                    connectedAddress={connectedAddress}
-                    onComplete={onComplete}
-                    isConversionFlow={isConversionFlow}
-                    {...byoeSetupSuccessModal}
-                    onClose={() => {
-                        setIsConversionFlow(false);
-                        byoeSetupSuccessModal.onClose();
-                    }}
-                />
-            )}
         </>
     );
 };
