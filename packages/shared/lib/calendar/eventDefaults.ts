@@ -5,9 +5,16 @@ export interface DurationOption {
     value: number;
 }
 
-export const getCalendarEventDefaultDuration = (options?: { shortLabels?: boolean }): DurationOption[] => {
+export const getCalendarEventDefaultDuration = (options?: {
+    shortLabels?: boolean;
+    include15Minutes?: boolean;
+}): DurationOption[] => {
     const durations: DurationOption[] = [];
-    const { shortLabels = false } = options || {};
+    const { shortLabels = false, include15Minutes = false } = options || {};
+
+    if (include15Minutes) {
+        durations.push({ text: shortLabels ? c('Duration').t`15m` : c('Duration').t`15 minutes`, value: 15 });
+    }
 
     durations.push(
         { text: shortLabels ? c('Duration').t`30m` : c('Duration').t`30 minutes`, value: 30 },
