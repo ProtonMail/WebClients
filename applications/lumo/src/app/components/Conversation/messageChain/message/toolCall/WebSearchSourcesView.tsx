@@ -9,7 +9,6 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import type { Message } from '../../../../../types';
 import { useNativeComposerVisibilityApi } from '../../../../Composer/hooks/useNativeComposerVisibilityApi';
 import LinkWarningModal from '../../../../Modals/LinkWarningModal';
-import { RightDrawer } from '../../../../RightDrawer';
 import { ToolCallInfo } from './ToolCallInfo';
 
 interface WebSearchSourcesViewProps {
