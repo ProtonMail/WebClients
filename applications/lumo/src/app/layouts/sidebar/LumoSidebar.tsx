@@ -90,7 +90,7 @@ const LumoSidebarContent = () => {
 
                 <div className="sidebar-main-content flex flex-column flex-nowrap flex-1 gap-2">
                     <Suspense fallback={null}>
-                        <ProjectsSidebarSection onItemClick={closeOnItemClick} />
+                        <ProjectsSidebarSection onItemClick={closeOnItemClick} isSmallScreen={isSmallScreen} />
                     </Suspense>
                     <FavoritesSidebarSection onItemClick={closeOnItemClick} />
                     <ChatHistorySection />
