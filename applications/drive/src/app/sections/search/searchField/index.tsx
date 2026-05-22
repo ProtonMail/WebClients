@@ -9,9 +9,12 @@ import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 
 import { useSpotlight } from '../../../legacy/components/useSpotlight';
 import useDriveNavigation from '../../../legacy/hooks/drive/useNavigate';
-import { type UseSearchModuleReturn, useSearchModule } from '../../../legacy/hooks/search/useSearchModule';
-import { useUrlSearchParams } from '../../../legacy/hooks/search/useUrlSearchParam';
-import { tryCatchWithNotification } from '../../../modules/search';
+import {
+    type UseSearchModuleReturn,
+    tryCatchWithNotification,
+    useSearchModule,
+    useUrlSearchParams,
+} from '../../../modules/search';
 import { SearchDropdown } from './SearchDropdown';
 
 type SearchFieldInnerProps = {

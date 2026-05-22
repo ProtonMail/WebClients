@@ -14,7 +14,7 @@ import {
 import { APPS } from '@proton/shared/lib/constants';
 import type { RevisionRetentionDaysSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import { useUserSettings } from '../../legacy/hooks/user';
+import { useUserSettings } from '../../modules/userSettings';
 import { RevisionList } from './revisions/RevisionList';
 import type { RevisionsModalContentViewProps, RevisionsProviderState } from './useRevisionsModalState';
 

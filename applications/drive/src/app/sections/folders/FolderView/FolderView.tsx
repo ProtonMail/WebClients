@@ -7,12 +7,12 @@ import { splitNodeUid } from '@proton/drive/index';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import UploadDragDrop from '../../../legacy/components/uploads/UploadDragDrop/UploadDragDrop';
-import { type MoveNodesItemMap, useMoveNodes } from '../../../legacy/hooks/sdk/useMoveNodes';
 import { useUserSettings } from '../../../legacy/store';
-import { SortField as StoredSortField } from '../../../legacy/store/_views/utils/useSorting';
 import { useAlbumOnboardingModal } from '../../../modals/AlbumOnboardingModal';
+import { type MoveNodesItemMap, useMoveNodes } from '../../../modules/moveNodes';
 import { useDriveDragMove } from '../../../modules/selection/useDriveDragMove';
 import { SortField } from '../../../modules/sorting/types';
+import { SortField as StoredSortField } from '../../../modules/userSettings/type';
 import { FolderViewBreadcrumbs } from '../FolderViewBreadcrumbs';
 import { getFolderSortConfig } from '../folder.sorting';
 import { useFolder } from '../useFolder';

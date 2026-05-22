@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 
-import { useFreeUploadStore } from '../../../../legacy/zustand/freeUpload/freeUpload.store';
-import { sendErrorReport } from '../../../../utils/errorHandling';
+import { useFreeUploadStore } from '../../../legacy/zustand/freeUpload/freeUpload.store';
+import { sendErrorReport } from '../../../utils/errorHandling';
 import { useFreeUploadApi } from './useFreeUploadApi';
 import { useFreeUploadFeature } from './useFreeUploadFeature';
 

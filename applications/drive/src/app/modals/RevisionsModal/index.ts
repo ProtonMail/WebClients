@@ -1,6 +1,6 @@
 import { useModalTwoStatic } from '@proton/components';
 
-import { withHoc } from '../../legacy/hooks/withHoc';
+import { withHoc } from '../modalUtils/withHoc';
 import { RevisionsModalView } from './RevisionsModalView';
 import type { RevisionsModalContentViewProps } from './useRevisionsModalState';
 import { type UseRevisionsModalStateProps, useRevisionsModalState } from './useRevisionsModalState';

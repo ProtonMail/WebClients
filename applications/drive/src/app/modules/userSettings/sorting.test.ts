@@ -1,7 +1,7 @@
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { SortField } from '../../../legacy/store/_views/utils/useSorting';
 import * as sorting from './sorting';
+import { SortField } from './type';
 
 describe('sorting', () => {
     it('should return SortSetting identifier given SortParams', () => {
