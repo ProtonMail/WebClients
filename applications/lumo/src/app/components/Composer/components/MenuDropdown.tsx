@@ -2,7 +2,7 @@ import React from 'react';
 
 import Dropdown, { type DropdownProps } from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import type { Unit } from '@proton/components/components/dropdown/utils';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Icon from '@proton/components/components/icon/Icon';
 import type { IconName } from '@proton/icons/types';
 
@@ -63,7 +63,7 @@ export const MenuDropdown = ({
     anchorRef,
     onClose,
     className = '',
-    width = '200px',
+    // width = '200px',
     placement = 'bottom-start',
     children,
 }: MenuDropdownProps) => {
@@ -73,10 +73,11 @@ export const MenuDropdown = ({
             anchorRef={anchorRef}
             onClose={onClose}
             originalPlacement={placement}
-            size={{
-                width: width as Unit,
-            }}
             className={className}
+            size={{
+                width: DropdownSizeUnit.Dynamic,
+                height: DropdownSizeUnit.Dynamic,
+            }}
         >
             {children}
         </Dropdown>
