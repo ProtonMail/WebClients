@@ -3,6 +3,8 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
+
 import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { SidebarItem } from './SidebarItem';
 
@@ -20,7 +22,7 @@ export const NewGhostChatButton = () => {
 
     return (
         <SidebarItem
-            icon="cross-circle"
+            icon={IcCrossCircle}
             label={c('collider_2025: Action').t`New ghost chat`}
             onClick={handleNewGhostChat}
             disabled={isGhostChatMode}
