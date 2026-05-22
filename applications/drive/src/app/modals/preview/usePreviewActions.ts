@@ -1,15 +1,9 @@
 import { type MaybeNode, MemberRole } from '@proton/drive';
-import {
-    isProtonDocsDocument,
-    isProtonDocsSpreadsheet,
-    isSupportedText,
-    mimeTypeToOpenInDocsType,
-} from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocsDocument, isProtonDocsSpreadsheet, isSupportedText } from '@proton/shared/lib/helpers/mimetype';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useFlagsDriveSheetODSImport } from '../../flags/useFlagsDriveSheetODSImport';
-import { useDocumentActions } from '../../legacy/hooks/docs/useDocumentActions';
 import { downloadManager } from '../../modules/download/DownloadManager';
+import { downloadDocument, getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../utils/docs/openInDocs';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { bufferToStream } from '../../utils/stream';
 import type { Drive } from './interface';
@@ -28,8 +22,6 @@ export default function usePreviewActions({
     nodeData?: Uint8Array<ArrayBuffer>[];
     role?: MemberRole;
 }) {
-    // TODO: Do not use legacy document actions - convert to new document actions.
-    const { openDocument, convertDocument, downloadDocument } = useDocumentActions();
     const isTextFileEditEnabled = useFlag('DriveWebTextFileEdit');
     const mimeType = getNodeMimeType(node);
 
@@ -78,31 +70,19 @@ export default function usePreviewActions({
         await uploadController.completion();
     };
 
-    const isODSImportEnabled = useFlagsDriveSheetODSImport();
-    const openInDocsType = node ? mimeTypeToOpenInDocsType(mimeType, isODSImportEnabled) : undefined;
+    const openInDocsType = mimeType ? getOpenInDocsInfo(mimeType) : undefined;
 
     const openInDocs = () => {
         if (!openInDocsType) {
             return;
         }
 
-        const type: 'doc' | 'sheet' = {
-            document: 'doc' as const,
-            spreadsheet: 'sheet' as const,
-        }[openInDocsType.type];
-
-        if (openInDocsType.isNative) {
-            void openDocument({
-                type,
-                uid: nodeUid,
-                openBehavior: 'tab',
-            });
-        } else {
-            void convertDocument({
-                type,
-                uid: nodeUid,
-            });
-        }
+        void openDocsOrSheetsDocument({
+            type: openInDocsType.type,
+            isNative: openInDocsType.isNative,
+            uid: nodeUid,
+            openBehavior: 'tab',
+        });
     };
 
     const saveFileEnabled =
