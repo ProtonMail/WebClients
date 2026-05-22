@@ -117,7 +117,7 @@ export const BookingSuccess = () => {
         return <NoMatch reason={Reason.notFound} />;
     }
 
-    const timeData = `${format(selectedBookingSlot.tzDate, 'HH:mm', { locale: dateLocale })} - ${format(addMinutes(selectedBookingSlot.tzDate, bookingDetails.duration || 0), 'HH:mm', { locale: dateLocale })}`;
+    const timeData = `${format(selectedBookingSlot.tzDate, 'p', { locale: dateLocale })} - ${format(addMinutes(selectedBookingSlot.tzDate, bookingDetails.duration || 0), 'p', { locale: dateLocale })}`;
 
     const hasLocation = !!bookingDetails.location.trim() || bookingDetails.withProtonMeetLink;
 
@@ -158,7 +158,7 @@ export const BookingSuccess = () => {
                     <BookingSuccessItem
                         title={c('Title').t`Date`}
                         icon={<IcCalendarGrid size={6} />}
-                        data={format(selectedBookingSlot.tzDate, 'MMMM d, yyyy', { locale: dateLocale })}
+                        data={format(selectedBookingSlot.tzDate, 'PP', { locale: dateLocale })}
                     />
                     {hasLocation && (
                         <BookingSuccessItem
