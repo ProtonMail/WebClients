@@ -12,6 +12,7 @@ export enum SupportedActions {
     LabelsSettings = 'labels-settings', // ET
     SpamFiltersSettings = 'spam-filters-settings', // ET
     PrivacySecuritySettings = 'privacy-security-settings', // ET
+    CategoryView = 'category-view', // ET
     VPNLite = 'vpn-lite',
 }
 

@@ -4,6 +4,7 @@ import { StandardErrorPage } from '@proton/components';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import AccountSettings from './actions/AccountSettings';
+import { CategoriesLiteView } from './actions/CategoriesLiteView';
 import DeleteAccount from './actions/DeleteAccount';
 import EmailSettings from './actions/EmailSettings';
 import LabelsSettings from './actions/LabelsSettings';
@@ -35,6 +36,7 @@ const MainContainer = ({ action, redirect, app, searchParams, loader, layout }: 
             {action === SupportedActions.AccountSettings && <AccountSettings layout={layout} loader={loader} />}
             {action === SupportedActions.EmailSignatures && <SignatureSettings layout={layout} loader={loader} />}
             {action === SupportedActions.EmailSettings && <EmailSettings layout={layout} loader={loader} />}
+            {action === SupportedActions.CategoryView && <CategoriesLiteView layout={layout} loader={loader} />}
             {action === SupportedActions.LabelsSettings && <LabelsSettings layout={layout} />}
             {action === SupportedActions.SpamFiltersSettings && <SpamFiltersSettings layout={layout} />}
             {action === SupportedActions.PrivacySecuritySettings && (

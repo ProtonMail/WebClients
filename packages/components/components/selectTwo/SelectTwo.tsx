@@ -48,6 +48,7 @@ export interface SelectTwoProps<V> extends SelectProps<V> {
     offset?: number;
     fullWidth?: boolean;
     dropdownHeading?: ReactNode;
+    adaptiveForTouchScreens?: boolean;
 }
 
 const defaultSize = { width: DropdownSizeUnit.Anchor, maxWidth: DropdownSizeUnit.Viewport } as const;
@@ -77,6 +78,7 @@ const SelectTwo = <V extends any>({
     offset = 4,
     fullWidth,
     dropdownHeading,
+    adaptiveForTouchScreens,
     ...rest
 }: SelectTwoProps<V>) => {
     const anchorRef = useRef<HTMLButtonElement | null>(null);
@@ -228,6 +230,7 @@ const SelectTwo = <V extends any>({
                 originalPlacement={originalPlacement}
                 availablePlacements={availablePlacements}
                 disableDefaultArrowNavigation
+                adaptiveForTouchScreens={adaptiveForTouchScreens}
                 className={clsx([
                     'select-dropdown',
                     dropdownClassName,
