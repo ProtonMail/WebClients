@@ -10,6 +10,8 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch, useStore } from '@proton/redux-shared-store/sharedProvider';
 import type { ApiListenerCallback, ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { handleInvalidSession } from '@proton/shared/lib/authentication/logout';
+import { APPS } from '@proton/shared/lib/constants';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import ApiModals from './ApiModals';
 import ApiContext from './apiContext';
@@ -36,7 +38,25 @@ const ApiProvider = ({ api, children }: { api: ApiWithListener; children: ReactN
             }
 
             if (event.type === 'server-time') {
-                setApiServerTime(event.payload);
+                setApiServerTime(event.payload.value);
+                // temporary log to understand if disruption of the standard date header is common
+                const { customDateHeader, standardDateHeader } = event.payload.extra;
+                const mismatchingDateHeader =
+                    !!customDateHeader &&
+                    !!standardDateHeader &&
+                    customDateHeader !== standardDateHeader &&
+                    // ignore mismatches below 1 second (unclear why these happen)
+                    Math.abs(+new Date(customDateHeader) - +new Date(standardDateHeader)) > 1000;
+                if (APP_NAME === APPS.PROTONMAIL && !reportedMismatchingDateHeader && mismatchingDateHeader) {
+                    captureMessage('Mismatching standard and custom Date header', {
+                        level: 'info',
+                        extra: {
+                            customDateHeader,
+                            standardDateHeader,
+                        },
+                    });
+                    reportedMismatchingDateHeader = true;
+                }
                 return true;
             }
 
