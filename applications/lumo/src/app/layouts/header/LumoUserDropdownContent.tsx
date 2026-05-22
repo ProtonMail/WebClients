@@ -95,6 +95,7 @@ const LumoUserDropdownContent = () => {
                     width: '17.25rem',
                     maxWidth: '20rem',
                 }}
+                noCaret={false}
             >
                 <div className="flex flex-column">
                     {/* {hasAppLinks && <AppSwitcher app={app} hasBorder={accountSessions.hasList} />} */}
