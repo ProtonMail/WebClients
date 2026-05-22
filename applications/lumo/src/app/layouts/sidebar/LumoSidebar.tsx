@@ -6,6 +6,8 @@ import { c } from 'ttag';
 
 import { AppsDropdown, useModalStateObject } from '@proton/components';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
+import { IcCode } from '@proton/icons/icons/IcCode';
+import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 
 import { SearchModal } from '../../components/Modals/SearchModal/SearchModal';
@@ -78,7 +80,7 @@ const LumoSidebarContent = () => {
                     {showGallery && <GallerySidebarButton onItemClick={closeOnItemClick} />}
                     {apiKeyManagement && (
                         <SidebarItem
-                            icon="code"
+                            icon={IcCode}
                             label={c('collider_2025:Button').t`API`}
                             onClick={() => {
                                 history.push('/docs/api');
@@ -107,7 +109,7 @@ const LumoSidebarContent = () => {
 
                     {isGuest && (
                         <SidebarItem
-                            icon="cog-wheel"
+                            icon={IcCogWheel}
                             label={c('collider_2025:Button').t`Settings`}
                             onClick={() => settingsModal.openModal(true)}
                         />
