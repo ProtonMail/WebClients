@@ -189,13 +189,7 @@ const ConversationHeaderComponent = ({ conversation, messageChain }: Props) => {
             <>
                 <header className="w-full max-w-full flex flex-nowrap items-center justify-end mx-auto p-3 header-lumo">
                     {/* <NewChatButtonHeader /> */}
-                    {!isGuest && (
-                        <ChatDropdownMenu
-                            conversation={conversation}
-                            visibleOnHover
-                            additionalOptions={additionalOptions}
-                        />
-                    )}
+                    {!isGuest && <ChatDropdownMenu conversation={conversation} additionalOptions={additionalOptions} />}
                 </header>
                 {/* <HeaderWrapper>
                     <div className="flex flex-row items-center gap-1">
@@ -314,7 +308,7 @@ const ConversationHeaderComponent = ({ conversation, messageChain }: Props) => {
             <div className="flex flex-row justify-space-between items-center pt-3 pb-2 px-3">
                 <div className="inline-flex flex-row flex-nowrap items-center justify-start">
                     <RenderTitle isEditing={isEditing} />
-                    {!isGuest && <ChatDropdownMenu conversation={conversation} visibleOnHover />}
+                    {!isGuest && <ChatDropdownMenu conversation={conversation} />}
                 </div>
 
                 {/* <div className="flex flex-row items-center gap-1">
