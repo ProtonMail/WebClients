@@ -3,21 +3,33 @@ import { useEffect, useMemo, useState } from 'react'
 import clsx from '@proton/utils/clsx'
 import { CommentsPanelListComment } from './CommentsPanelListComment'
 import { CommentsComposer } from './CommentsComposer'
-import type { CommentInterface, CommentThreadInterface, LiveCommentsTypeStatusChangeData } from '@proton/docs-shared'
-import { CommentThreadState, CommentThreadType, CommentType, LiveCommentsEvent } from '@proton/docs-shared'
+import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
+import { CommentThreadState, CommentThreadType, CommentType } from '@proton/docs-shared'
 import { Icon, ToolbarButton } from '@proton/components'
-import { useApplication } from '../../Containers/ApplicationProvider'
 import { c, msgid } from 'ttag'
 import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { $getNodeByKey, $getSelection, $isRangeSelection } from 'lexical'
+import { $getNodeByKey, $getSelection, $isRangeSelection, COMMAND_PRIORITY_NORMAL, createCommand } from 'lexical'
+
+export const TYPING_STATUS_CHANGE_EVENT_COMMAND = createCommand<{
+  threadId: string
+}>('TYPING_STATUS_CHANGE_EVENT_COMMAND')
 
 export function CommentsPanelListThread({ thread, className }: { thread: CommentThreadInterface; className?: string }) {
   const [editor] = useLexicalComposerContext()
-  const { controller, getMarkNodes, activeIDs } = useCommentsContext()
+  const {
+    getMarkNodes,
+    activeIDs,
+    canComment,
+    createComment,
+    beganTypingInThread,
+    stoppedTypingInThread,
+    getTypersExcludingSelf,
+    markThreadAsRead,
+    unresolveThread,
+  } = useCommentsContext()
 
-  const { application } = useApplication()
   const [isDeleting, setIsDeleting] = useState(false)
 
   const [typers, setTypers] = useState<string[]>([])
@@ -61,15 +73,19 @@ export function CommentsPanelListThread({ thread, className }: { thread: Comment
   }, [element])
 
   useEffect(() => {
-    controller.getTypersExcludingSelf(thread.id).then(setTypers).catch(reportErrorToSentry)
-    return application.eventBus.addEventCallback((data) => {
-      const eventData = data as LiveCommentsTypeStatusChangeData
-      const { threadId } = eventData
-      if (threadId === thread.id) {
-        controller.getTypersExcludingSelf(thread.id).then(setTypers).catch(reportErrorToSentry)
-      }
-    }, LiveCommentsEvent.TypingStatusChange)
-  }, [controller, application, thread.id])
+    getTypersExcludingSelf(thread.id).then(setTypers).catch(reportErrorToSentry)
+    return editor.registerCommand(
+      TYPING_STATUS_CHANGE_EVENT_COMMAND,
+      (data) => {
+        const { threadId } = data
+        if (threadId === thread.id) {
+          getTypersExcludingSelf(thread.id).then(setTypers).catch(reportErrorToSentry)
+        }
+        return false
+      },
+      COMMAND_PRIORITY_NORMAL,
+    )
+  }, [editor, getTypersExcludingSelf, thread.id])
 
   const quote = useMemo(() => {
     if (isSuggestionThread) {
@@ -132,7 +148,7 @@ export function CommentsPanelListThread({ thread, className }: { thread: Comment
   }
 
   const handleClickThread: MouseEventHandler = (event) => {
-    controller.markThreadAsRead(thread.id).catch(reportErrorToSentry)
+    markThreadAsRead(thread.id).catch(reportErrorToSentry)
 
     const target = event.target
     if (!(target instanceof Element)) {
@@ -181,8 +197,7 @@ export function CommentsPanelListThread({ thread, className }: { thread: Comment
   const isSuggestionClosed =
     thread.state === CommentThreadState.Accepted || thread.state === CommentThreadState.Rejected
 
-  const canShowReplyBox =
-    application.getRole().canComment() && !thread.isPlaceholder && !isDeleting && !isResolved && !isSuggestionClosed
+  const canShowReplyBox = canComment && !thread.isPlaceholder && !isDeleting && !isResolved && !isSuggestionClosed
 
   const [suggestionSummaryComment, regularComments] = useMemo((): [
     CommentInterface | undefined,
@@ -263,18 +278,18 @@ export function CommentsPanelListThread({ thread, className }: { thread: Comment
             placeholder={c('Placeholder').t`Reply...`}
             data-testid="reply-in-thread-input"
             onSubmit={async (content) => {
-              const comment = await controller.createComment(content, thread.id)
+              const comment = await createComment(content, thread.id)
               return !!comment
             }}
             onTextContentChange={(textContent) => {
               if (textContent.length > 0) {
-                void controller.beganTypingInThread(thread.id)
+                void beganTypingInThread(thread.id)
               } else {
-                void controller.stoppedTypingInThread(thread.id)
+                void stoppedTypingInThread(thread.id)
               }
             }}
             onBlur={() => {
-              void controller.stoppedTypingInThread(thread.id)
+              void stoppedTypingInThread(thread.id)
             }}
             buttons={(canSubmit, submitComment) => {
               if (!canSubmit) {
@@ -299,7 +314,7 @@ export function CommentsPanelListThread({ thread, className }: { thread: Comment
           <button
             className="rounded border border-[--border-weak] px-2.5 py-1.5 text-sm hover:bg-[--background-weak] disabled:opacity-50"
             onClick={() => {
-              controller.unresolveThread(thread.id).catch(reportErrorToSentry)
+              unresolveThread(thread.id).catch(reportErrorToSentry)
             }}
             data-testid="reopen-thread-button"
           >
