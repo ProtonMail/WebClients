@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { UserDropdown, useConfig } from '@proton/components';
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 
 import LumoUserDropdown from '../../../components/LumoUserDropdown/LumoUserDropdown';
 import { useLumoAuthAction } from '../../../hooks/useLumoAuthAction';
@@ -13,7 +14,7 @@ const CollapseToggle = ({ className }: { className?: string }) => {
     const { toggle } = useSidebar();
     return (
         <SidebarItem
-            icon="chevron-left"
+            icon={IcChevronLeft}
             label={c('collider_2025:Button').t`Hide sidebar`}
             onClick={toggle}
             className={className}

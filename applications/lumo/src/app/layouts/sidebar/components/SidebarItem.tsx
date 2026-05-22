@@ -1,10 +1,12 @@
+import type { ComponentType } from 'react';
+
 import { clsx } from 'clsx';
 
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
-import { Icon } from '@proton/components';
+import type { IconSize } from '@proton/icons/types';
 
 export interface SidebarItemProps {
-    icon: string;
+    icon: ComponentType<{ size?: IconSize; className?: string }>;
     label: string;
     onClick: () => void;
     className?: string;
@@ -14,7 +16,7 @@ export interface SidebarItemProps {
 }
 
 export const SidebarItem = ({
-    icon,
+    icon: IconComponent,
     label,
     onClick,
     className,
@@ -33,7 +35,7 @@ export const SidebarItem = ({
         disabled={disabled}
     >
         <div className="sidebar-item-icon flex items-center justify-center shrink-0 mr-1.5">
-            <Icon name={icon as any} size={4} className="rtl:mirror" />
+            <IconComponent size={4} className="rtl:mirror" />
         </div>
         <span className="sidebar-item-text flex-1 flex items-center justify-space-between text-nowrap overflow-hidden gap-2">
             <span className="sidebar-item-label">{label}</span>
