@@ -11,11 +11,11 @@ import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 
 import { useFlagsDriveSDKPreview } from '../../flags/useFlagsDriveSDKPreview';
 import useDriveNavigation from '../../legacy/hooks/drive/useNavigate';
-import { useUserSettings } from '../../legacy/hooks/user';
 import { useDrivePreviewModal } from '../../modals/preview';
 import { useContextMenuStore } from '../../modules/contextMenu';
 import { useSelectionStore } from '../../modules/selection';
 import type { SortConfig, SortField } from '../../modules/sorting/types';
+import { useUserSettings } from '../../modules/userSettings';
 import { DriveExplorer } from '../../statelessComponents/DriveExplorer/DriveExplorer';
 import type {
     DriveExplorerA11y,

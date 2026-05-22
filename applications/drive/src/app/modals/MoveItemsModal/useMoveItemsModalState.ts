@@ -7,9 +7,9 @@ import type { MaybeNode, ProtonDriveClient, Result } from '@proton/drive';
 import { NodeType, getDrive } from '@proton/drive';
 import shallowEqual from '@proton/utils/shallowEqual';
 
-import { type MoveNodesItemMap, useMoveNodes } from '../../legacy/hooks/sdk/useMoveNodes';
 import { directoryTreeFactory } from '../../modules/directoryTree';
 import { getNodeUidFromTreeItemId, makeTreeItemId } from '../../modules/directoryTree/helpers';
+import { type MoveNodesItemMap, useMoveNodes } from '../../modules/moveNodes';
 import type { DirectoryTreeItem } from '../../statelessComponents/DirectoryTree/DirectoryTree';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';

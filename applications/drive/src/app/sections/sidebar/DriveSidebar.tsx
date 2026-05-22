@@ -31,7 +31,6 @@ import clsx from '@proton/utils/clsx';
 
 import { FreeUploadCounter } from '../../legacy/components/layout/sidebar/DriveSidebar/FreeUploadCounter';
 import SidebarStorageUpsell from '../../legacy/components/layout/sidebar/SidebarStorageUpsell';
-import { useIsFreeUploadInProgress } from '../../legacy/hooks/drive/freeUpload/useIsFreeUploadInProgress';
 import { useActiveShare } from '../../legacy/hooks/drive/useActiveShare';
 import { useDebug } from '../../legacy/hooks/drive/useDebug';
 import type { ShareWithKey } from '../../legacy/store';
@@ -39,6 +38,7 @@ import { useCreateDevice } from '../../legacy/store/_shares/useCreateDevice';
 import { useCreatePhotos } from '../../legacy/store/_shares/useCreatePhotos';
 import { useDefaultShare } from '../../legacy/store/_shares/useDefaultShare';
 import { directoryTreeFactory } from '../../modules/directoryTree';
+import { useIsFreeUploadInProgress } from '../../modules/freeUpload';
 import { ActionMenuButton } from './ActionMenu/ActionMenuButton';
 import { DriveSidebarFooter } from './DriveSidebarFooter';
 import { DriveSidebarList } from './DriveSidebarList';

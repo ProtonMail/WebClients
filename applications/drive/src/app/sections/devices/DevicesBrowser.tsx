@@ -7,10 +7,10 @@ import { splitNodeUid } from '@proton/drive/index';
 
 import EmptyDevices from '../../legacy/components/sections/Devices/EmptyDevices';
 import useDriveNavigation from '../../legacy/hooks/drive/useNavigate';
-import { useUserSettings } from '../../legacy/hooks/user';
 import { useContextMenuStore } from '../../modules/contextMenu';
 import { useSelectionStore } from '../../modules/selection';
 import { SortField } from '../../modules/sorting';
+import { useUserSettings } from '../../modules/userSettings';
 import { DriveExplorer } from '../../statelessComponents/DriveExplorer/DriveExplorer';
 import type {
     DriveExplorerA11y,
