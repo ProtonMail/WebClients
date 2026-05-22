@@ -1,7 +1,7 @@
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
-import { useDocumentActions } from '../../legacy/hooks/docs/useDocumentActions';
 import { DownloadManager } from '../../modules/download/DownloadManager';
+import { downloadDocument } from '../../utils/docs/openInDocs';
 
 type Props = {
     selectedItems: {
@@ -11,7 +11,6 @@ type Props = {
 };
 
 export const useDownloadActions = ({ selectedItems }: Props) => {
-    const { downloadDocument } = useDocumentActions();
     const dm = DownloadManager.getInstance();
 
     const downloadItems = async () => {
