@@ -51,7 +51,7 @@ export const MailToolbarHeader = ({ elementsData, actions }: Props) => {
     const isSearching = useMailSelector(selectisSearching);
 
     const { selectAll: isSelectAll } = useSelectAll({ labelID });
-    const { labelDropdownToggleRef, moveDropdownToggleRef } = useMailboxLayoutProvider();
+    const { labelDropdownToggleRef, moveDropdownToggleRef, isColumnModeActive } = useMailboxLayoutProvider();
 
     const [mailSettings] = useMailSettings();
     const isColumn = isColumnMode(mailSettings);
@@ -140,7 +140,7 @@ export const MailToolbarHeader = ({ elementsData, actions }: Props) => {
         );
     }
 
-    const actionsInHeader = !isColumn && elementID;
+    const actionsInHeader = !isColumnModeActive && elementID;
     return actionsInHeader ? (
         <nav
             className="toolbar toolbar--heavy flex flex-nowrap shrink-0 items-center gap-2 no-print flex-auto toolbar--in-container"
