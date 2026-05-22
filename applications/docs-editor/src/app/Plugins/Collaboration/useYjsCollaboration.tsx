@@ -1,5 +1,6 @@
 import type { Binding, Provider } from '@lexical/yjs'
-import type { LexicalEditor } from 'lexical'
+import type { EditorState, LexicalEditor } from 'lexical'
+import { $getRoot } from 'lexical'
 
 import { createBinding, initLocalState, syncLexicalUpdateToYjs, syncYjsChangesToLexical } from '@lexical/yjs'
 import { useEffect, useMemo, useRef, useState } from 'react'
@@ -29,6 +30,7 @@ export function useYjsCollaboration(
   const [doc] = useState(() => docMap.get(id))
   const didPostReadyEvent = useRef(false)
   const didInitializeEditor = useRef(false)
+  const shouldSkipNextUndoRedoEmptyRootRepair = useRef(false)
 
   const binding = useMemo(() => createBinding(editor, provider, id, doc, docMap), [editor, provider, id, docMap, doc])
 
@@ -42,13 +44,16 @@ export function useYjsCollaboration(
 
     const onYjsTreeChanges = (
       // The below `any` type is taken directly from the vendor types for YJS.
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
       events: YEvent<any>[],
       transaction: Transaction,
     ) => {
       const origin = transaction.origin
       if (origin !== binding) {
         const isFromUndoManger = origin instanceof UndoManager
+        if (isFromUndoManger) {
+          shouldSkipNextUndoRedoEmptyRootRepair.current = true
+        }
         syncYjsChangesToLexical(binding, provider, events, isFromUndoManger, syncCursorPositions)
       }
     }
@@ -66,6 +71,18 @@ export function useYjsCollaboration(
 
     const removeListener = editor.registerUpdateListener(
       ({ prevEditorState, editorState, dirtyLeaves, dirtyElements, normalizedNodes, tags }) => {
+        if (shouldSkipNextUndoRedoEmptyRootRepair.current && isEmptyRootRepairUpdate(prevEditorState, editorState)) {
+          shouldSkipNextUndoRedoEmptyRootRepair.current = false
+          return
+        }
+
+        if (
+          shouldSkipNextUndoRedoEmptyRootRepair.current &&
+          (tags.has('historic') === false || editorState.read(() => $getRoot().getChildrenSize() > 0))
+        ) {
+          shouldSkipNextUndoRedoEmptyRootRepair.current = false
+        }
+
         if (tags.has('skip-collab') === false) {
           syncLexicalUpdateToYjs(
             binding,
@@ -109,4 +126,18 @@ export function useYjsCollaboration(
   binding.cursorsContainer = cursorsContainer
 
   return binding
+}
+
+function isEmptyRootRepairUpdate(prevEditorState: EditorState, editorState: EditorState): boolean {
+  const previousRootHadNoChildren = prevEditorState.read(() => $getRoot().getChildrenSize() === 0)
+
+  if (!previousRootHadNoChildren) {
+    return false
+  }
+
+  return editorState.read(() => {
+    const root = $getRoot()
+
+    return root.getChildrenSize() === 1 && root.getTextContent() === ''
+  })
 }
