@@ -3,6 +3,7 @@ import type { Draft } from '@reduxjs/toolkit';
 import type { ModelState } from '@proton/account/interface';
 import { labelConversationsPending } from '@proton/mail/store/counts/conversationCountsReducers';
 import {
+    CUSTOM_FOLDER_ID1,
     CUSTOM_LABEL_ID1,
     checkUpdatedCounters,
     createDefaultCounters,
@@ -679,9 +680,9 @@ describe('conversation counts - label messages', () => {
             const inboxCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.INBOX);
             expect(inboxCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 6, Total: 11 });
 
-            // CATEGORY_SOCIAL: decreased in label loop (-1) and increased in INBOX destination logic (+1), net = 0
+            // CATEGORY_SOCIAL: conversation enters INBOX from outside, so the category tab gains one entry (+1)
             const categorySocialCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
-            expect(categorySocialCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, Unread: 1, Total: 2 });
+            expect(categorySocialCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, Unread: 2, Total: 3 });
 
             const trashCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.TRASH);
             expect(trashCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.TRASH, Unread: 0, Total: 4 });
@@ -691,7 +692,12 @@ describe('conversation counts - label messages', () => {
 
             checkUpdatedCounters({
                 updatedCounters,
-                skippedLabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.TRASH, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
+                skippedLabelIDs: [
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.TRASH,
+                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                ],
             });
         });
 
@@ -768,6 +774,138 @@ describe('conversation counts - label messages', () => {
                     MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
                     MAILBOX_LABEL_IDS.ALL_MAIL,
                 ],
+            });
+        });
+    });
+
+    describe('Move from custom folder to INBOX with category', () => {
+        it('should increase INBOX and category counters when moving from a custom folder to INBOX', () => {
+            // Conversation was previously in INBOX (has CATEGORY_SOCIAL), then moved to a custom folder.
+            // When moved back to INBOX, the category tab gains one entry.
+            const conversation = {
+                ID: 'conversationID',
+                Labels: [
+                    {
+                        ID: CUSTOM_FOLDER_ID1,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                ],
+                NumMessages: 1,
+                NumUnread: 1,
+                NumAttachments: 0,
+            } as Conversation;
+
+            labelConversationsPending(state, {
+                type: 'mailbox/labelMessages',
+                payload: {
+                    conversations: [conversation],
+                    sourceLabelID: CUSTOM_FOLDER_ID1,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    labels: customLabels,
+                    folders: customFolders,
+                },
+            });
+
+            const updatedCounters = state.value as LabelCount[];
+
+            const inboxCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.INBOX);
+            expect(inboxCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 6, Total: 11 });
+
+            // Category counter must increase: conversation enters the category tab in INBOX
+            const categorySocialCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(categorySocialCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, Unread: 2, Total: 3 });
+
+            // Custom folder counter decreases
+            const customFolderCount = updatedCounters.find((c) => c.LabelID === CUSTOM_FOLDER_ID1);
+            expect(customFolderCount).toEqual({ LabelID: CUSTOM_FOLDER_ID1, Unread: 0, Total: 1 });
+
+            checkUpdatedCounters({
+                updatedCounters,
+                skippedLabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, CUSTOM_FOLDER_ID1],
+            });
+        });
+
+        it('should increase INBOX counter but not category counter when moving a read conversation from custom folder to INBOX', () => {
+            const conversation = {
+                ID: 'conversationID',
+                Labels: [
+                    {
+                        ID: CUSTOM_FOLDER_ID1,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 0,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 0,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 0,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 0,
+                        ContextNumAttachments: 0,
+                    },
+                ],
+                NumMessages: 1,
+                NumUnread: 0,
+                NumAttachments: 0,
+            } as Conversation;
+
+            labelConversationsPending(state, {
+                type: 'mailbox/labelMessages',
+                payload: {
+                    conversations: [conversation],
+                    sourceLabelID: CUSTOM_FOLDER_ID1,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    labels: customLabels,
+                    folders: customFolders,
+                },
+            });
+
+            const updatedCounters = state.value as LabelCount[];
+
+            const inboxCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.INBOX);
+            expect(inboxCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 5, Total: 11 });
+
+            // Category Total increases; Unread stays the same (conversation is read)
+            const categorySocialCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(categorySocialCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, Unread: 1, Total: 3 });
+
+            // Conversation is read (ContextNumUnread: 0), so custom folder Unread does not decrease
+            const customFolderCount = updatedCounters.find((c) => c.LabelID === CUSTOM_FOLDER_ID1);
+            expect(customFolderCount).toEqual({ LabelID: CUSTOM_FOLDER_ID1, Unread: 1, Total: 1 });
+
+            checkUpdatedCounters({
+                updatedCounters,
+                skippedLabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, CUSTOM_FOLDER_ID1],
             });
         });
     });
