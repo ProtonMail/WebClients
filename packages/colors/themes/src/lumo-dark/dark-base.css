@@ -102,6 +102,12 @@
     --settings-modal-upsell-background: var(--backdrop-norm);
     --settings-modal-upsell-text: var(--text-norm);
 
-        /* lumo logo */
-        --lumo-plus-logo-plus-sign-text:#F7F5FF;
+    /* lumo logo */
+    --lumo-plus-logo-plus-sign-text:#F7F5FF;
+
+    /* background particle  */
+    --surface-foreground: #141414;
+
+     /* welcome text */
+    --lumo-welcome-text: white;
 }
