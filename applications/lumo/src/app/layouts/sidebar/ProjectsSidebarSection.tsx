@@ -3,6 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button/Button';
 import { useModalStateObject } from '@proton/components';
 import { IcFolderOpen } from '@proton/icons/icons/IcFolderOpen';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
@@ -101,14 +102,24 @@ export const ProjectsSidebarSection = ({ onItemClick, isSmallScreen }: ProjectsS
                 onHeaderClick={handleProjectsHeaderClick}
                 labelExtra={<DismissedFeaturePill featureId="projects" versionFlag="WhatsNewV1p3" />}
                 actionButton={
-                    <button
-                        className="projects-create-button --lumo-background"
+                    <Button
+                        icon
                         onClick={handleCreateProject}
                         aria-label={c('collider_2025:Button').t`Create project`}
                         title={c('collider_2025:Button').t`Create project`}
+                        size="small"
+                        shape="solid"
                     >
                         <IcPlus size={3} />
-                    </button>
+                    </Button>
+                    // <button
+                    //     className="projects-create-button --lumo-background"
+                    //     onClick={handleCreateProject}
+                    //     aria-label={c('collider_2025:Button').t`Create project`}
+                    //     title={c('collider_2025:Button').t`Create project`}
+                    // >
+                    //     <IcPlus size={3} />
+                    // </button>
                 }
                 className="projects-sidebar-section"
             >
