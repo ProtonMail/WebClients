@@ -73,7 +73,7 @@
 
     --reinforce-norm: #372580;
     --reinforce-hover: #2F1E6F;
-    --reinforce-active: #27185F;
+    --reinforce-active: #27185F; 
 
     --link-norm: var(--primary);
     --link-hover: var(--interaction-norm-hover);
@@ -104,6 +104,12 @@
 
     /* lumo logo */
     --lumo-plus-logo-plus-sign-text:#5325A2;
+
+    /* background particle  */
+    --surface-foreground: #f5f6fe;
+
+    /* background particle  */
+    --lumo-welcome-text: #311e71;
 
 
 }
