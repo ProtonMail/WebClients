@@ -1284,6 +1284,12 @@
       ],
       "Go back to album \"${ ellipsedAlbumName }\"": [
         "\"${ ellipsedAlbumName }\" albümüne dön"
+      ],
+      "Continue with Free": [
+        "Ücretsiz Devam Et"
+      ],
+      "Manage addresses": [
+        "Adres yönetimi"
       ]
     },
     "Action: Docs": {
@@ -3104,6 +3110,33 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Artık ${ boldEmails } adresine erişemiyoruz."
+      ],
+      "Available storage: ${ storageText }": [
+        "Kullanılabilir depolama alanı: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "${ connectedAddressText } adresine gönderilen e-postalar artık ${ MAIL_APP_NAME } üzerinde görünecek."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Yıllarca birikecek e-postalar, ek dosyalar ve daha fazlası için yeterli alan."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Sadece ${ config.offerPrice } karşılığında 15 GB depolama alanının kilidini açın."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Yeni iletilere yer ayırmak için depolama alanı %80'e ulaştığında içe aktarma işlemlerini duraklatacağız."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Gmail'deki e-postalarınızı içe aktarmaya başladık. İşlem tamamlandığında size haber vereceğiz."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Artık bu adresi kullanarak ${ BRAND_NAME } üzerinden e-posta gönderebilirsiniz."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ücretsiz ${ MAIL_APP_NAME } hesabınız sınırlı depolama alanıyla sunulduğundan en güncel Gmail iletilerinizin yalnızca ${ newUserStorageText } kadarlık kısmını içe aktaracağız."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ücretsiz ${ MAIL_APP_NAME } hesabınız sınırlı depolama alanıyla sunulduğu için yalnızca en son Gmail e-postalarınız içe aktarılacak."
       ]
     },
     "description": {
@@ -4447,6 +4480,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Sınırsız sayıda hide-my-email takma adı"
+      ],
+      "10+ premium features": [
+        "10+ premium özellik"
+      ],
+      "Custom email domain": [
+        "Özel e-posta etki alanı"
+      ],
+      "Email addresses": [
+        "E-posta adresleri"
+      ],
+      "Storage": [
+        "Depolama alanı"
       ]
     },
     "Features": {
@@ -7218,6 +7263,15 @@
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Bu kişiden gelen yeni iletileri doğrulamak için \"${ activeSignerText }\" anahtarına güven."
+      ],
+      "Included": [
+        "Dahil"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Geri kalanını getirmek için istediğiniz zaman yükseltin"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Geri kalanları aktarmak için istediğiniz zaman yükseltme yapın veya yer açın"
       ]
     },
     "info": {
@@ -13633,6 +13687,15 @@
       ],
       "Index populators": [
         "Dizin doldurucuları"
+      ],
+      "Continue with free storage": [
+        "Ücretsiz depolama alanı ile devam et"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "${ MAIL_APP_NAME } Plus ile daha fazla depolama alanına sahip olun"
+      ],
+      "You are all set": [
+        "Artık hazırsınız"
       ]
     },
     "Today icon tooltip in mini calendar": {

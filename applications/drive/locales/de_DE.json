@@ -1278,6 +1278,9 @@
       ],
       "Go back to album \"${ ellipsedAlbumName }\"": [
         "Zurück zum Album „${ ellipsedAlbumName }\""
+      ],
+      "Manage addresses": [
+        "E-Mail-Adressen verwalten"
       ]
     },
     "Action: Docs": {
@@ -3098,6 +3101,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Wir können nicht mehr auf ${ boldEmails } zugreifen."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-Mails, die an ${ connectedAddressText } gesendet werden, werden jetzt in ${ MAIL_APP_NAME } angezeigt."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Du kannst jetzt E-Mails von ${ BRAND_NAME } unter dieser Adresse senden."
       ]
     },
     "description": {
@@ -13654,6 +13663,9 @@
       ],
       "Index populators": [
         "Index-Generatoren"
+      ],
+      "You are all set": [
+        "Du bist startklar"
       ]
     },
     "Today icon tooltip in mini calendar": {

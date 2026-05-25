@@ -1298,6 +1298,12 @@
       ],
       "Go back to album \"${ ellipsedAlbumName }\"": [
         "Вярнуцца ў альбом “${ ellipsedAlbumName }\""
+      ],
+      "Continue with Free": [
+        "Працягнуць з тарыфным планам Free"
+      ],
+      "Manage addresses": [
+        "Кіраванне адрасамі"
       ]
     },
     "Action: Docs": {
@@ -3150,6 +3156,33 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Больш не ўдаецца атрымаць доступ да ${ boldEmails }."
+      ],
+      "Available storage: ${ storageText }": [
+        "Даступна ў сховішчы: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Лісты, якія адпраўленыя на ${ connectedAddressText }, цяпер будуць паказвацца ў ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Дастаткова месца ў сховішчы, якога хопіць на доўгія гады для захоўвання лістоў, далучэнняў і іншай інфармацыі."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Разблакіруйце 15 ГБ сховішча ўсяго за ${ config.offerPrice }"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Імпартаванне будзе прыпынена, калі сховішча будзе запоўнена на 80%. Гэта дазволіць зарэзерваваць астатняе месца для новых паведамленняў."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Пачалося імпартаванне вашых лістоў з Gmail. Вы будзеце апавешчаны, калі працэс будзе завершаны."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Цяпер можна адпраўляць лісты з ${ BRAND_NAME } выкарыстоўваючы гэты адрас."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "У вашага бясплатнага ўліковага запісу ${ MAIL_APP_NAME } абмежаваная ёмістасць сховішча і таму, удалося імпартаваць толькі ${ newUserStorageText } вашых апошніх паведамленняў з паштовай скрыні Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "У вашага бясплатнага ўліковага запісу ${ MAIL_APP_NAME } абмежаваная ёмістасць сховішча і таму, удалося імпартаваць толькі самыя апошнія вашы лісты з Gmail."
       ]
     },
     "description": {
@@ -4517,6 +4550,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Неабмежаваная колькасць псеўданімаў hide-my-email"
+      ],
+      "10+ premium features": [
+        "Больш за 10 прэміяльных функцый"
+      ],
+      "Custom email domain": [
+        "Карыстальніцкі дамен электроннай пошты"
+      ],
+      "Email addresses": [
+        "Адрасы электроннай пошты"
+      ],
+      "Storage": [
+        "Сховішча"
       ]
     },
     "Features": {
@@ -5024,7 +5069,7 @@
         "Пашыраны імпарт"
       ],
       "More import options": [
-        "Больш параметраў імпарту"
+        "Больш параметраў імпартавання"
       ]
     },
     "Import warning": {
@@ -6480,7 +6525,7 @@
         "Выбар элемента"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць як прадвызначаны для адпраўкі лістоў на гэты адрас электроннай пошты."
+        "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць прадвызначана пры адпраўцы лістоў на гэты адрас электроннай пошты."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
@@ -6741,7 +6786,7 @@
         "Гэта правядзе да выхаду з усіх уліковых запісаў у якіх вы ў цяперашні час аўтарызаваныя."
       ],
       "This will upload a new version of the file": [
-        "Гэта прывядзе да запампоўвання новай версіі файла"
+        "Гэта дзеянне прывядзе да запампоўвання новай версіі файла"
       ],
       "This will upload a new version of the folder": [
         "Гэта запампуе новую версію папкі"
@@ -7257,7 +7302,7 @@
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
-        "Калі вы выдаліце сябе, то вы страціце доступ да \"${ fileName }\" і не зможаце адкрыць яго зноў. Толькі ўладальнік можа абагуліць яго з вамі."
+        "Калі вы выдаліце сябе, то вы страціце доступ да \"${ fileName }\" і не зможаце адкрыць яго зноў. Толькі ўладальнік зможа абагуліць яго з вамі зноў."
       ],
       "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
         "Вы не зможаце абагуліць \"${ fileName }\" пасля змены доступу на праглядальніка. Толькі ўладальнік можа змяніць ваш доступ зноў."
@@ -7401,7 +7446,7 @@
         "Усё гатова для пошуку. Вашы фалы праіндэксаваны."
       ],
       "The search engine encountered an internal error. Rebuild the index to recover.": [
-        "У рухавіку пошуку адбылася ўнутраная памылка. Паспрабуйце аднавіць індэкс."
+        "У пошукавым рухавіку адбылася ўнутраная памылка. Паспрабуйце аднавіць індэкс."
       ],
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
         "У вашым браўзеры скончылася месца пры індэксацыі файлаў для пошуку. Паспрабуйце аднавіць індэкс."
@@ -7444,6 +7489,12 @@
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Давяраць ключу \"${ activeSignerText }\", каб спраўдзіць новыя паведамленні ад гэтага кантакту."
+      ],
+      "Included": [
+        "Уключае"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Палепшыце ў любы час, каб перанесці астатняе"
       ]
     },
     "info": {
@@ -7633,7 +7684,7 @@
         "Прымяніць да ўсіх дублікатаў папак"
       ],
       "Apply to all unverified items": [
-        "Прымяніць да ўсіх неправераных элементаў"
+        "Прымяніць да ўсіх няспраўджаных элементаў"
       ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
@@ -10399,8 +10450,8 @@
       "${ addedUids.length } photo have been added to \"${ albumName }\"": [
         "${ addedUids.length } фатаграфія была дададзена ў \"${ albumName }\"",
         "${ addedUids.length } фатаграфіі былі дададзены ў \"${ albumName }\"",
-        "${ addedUids.length } фатаграфіі былі дададзены ў \"${ albumName }\"",
-        "${ addedUids.length } фатаграфіі былі дададзены ў \"${ albumName }\""
+        "${ addedUids.length } фатаграфій былі дададзены ў \"${ albumName }\"",
+        "${ addedUids.length } фатаграфій былі дададзены ў \"${ albumName }\""
       ],
       "${ removed } photo have been removed from \"${ albumName }\"": [
         "${ removed } фатаграфія была выдалена з \"${ albumName }\"",
@@ -14098,6 +14149,15 @@
       ],
       "Index populators": [
         "Індэкс папулятараў"
+      ],
+      "Continue with free storage": [
+        "Працягнуць карыстацца бясплатным сховішчам"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Атрымайце больш сховішча з ${ MAIL_APP_NAME } Plus"
+      ],
+      "You are all set": [
+        "Усё гатова"
       ]
     },
     "Today icon tooltip in mini calendar": {

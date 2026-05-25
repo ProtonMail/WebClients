@@ -1284,6 +1284,12 @@
       ],
       "Go back to album \"${ ellipsedAlbumName }\"": [
         "Regresar al álbum «${ ellipsedAlbumName }»"
+      ],
+      "Continue with Free": [
+        "Seguir con el plan gratuito"
+      ],
+      "Manage addresses": [
+        "Gestionar direcciones"
       ]
     },
     "Action: Docs": {
@@ -3104,6 +3110,33 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Ya no podemos acceder a ${ boldEmails }."
+      ],
+      "Available storage: ${ storageText }": [
+        "Almacenamiento disponible: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Los correos electrónicos enviados a ${ connectedAddressText } ahora aparecerán en ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Suficiente espacio para años de correos electrónicos, archivos adjuntos y más."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Desbloquee 15 GB de almacenamiento por solo ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Pausaremos la importación al 80% de almacenamiento para reservar espacio para nuevos mensajes"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Estamos importando sus correos electrónicos de Gmail. Le avisaremos cuando finalicemos."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Ahora puede enviar correos electrónicos desde ${ BRAND_NAME } usando esta dirección."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Su cuenta gratuita de ${ MAIL_APP_NAME } incluye almacenamiento limitado, así que solo importaremos ${ newUserStorageText } de sus mensajes de Gmail más recientes."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Su cuenta gratuita de ${ MAIL_APP_NAME } incluye almacenamiento limitado, así que solo importaremos sus correos electrónicos de Gmail más recientes."
       ]
     },
     "description": {
@@ -4447,6 +4480,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Alias hide-my-email ilimitados"
+      ],
+      "10+ premium features": [
+        "Más de 10 funciones premium"
+      ],
+      "Custom email domain": [
+        "Dominio de correo personalizado"
+      ],
+      "Email addresses": [
+        "Direcciones de correo electrónico"
+      ],
+      "Storage": [
+        "Almacenamiento"
       ]
     },
     "Features": {
@@ -7215,6 +7260,18 @@
       "We were not able to add this photo to your album": [
         "No pudimos agregar esta foto en su álbum",
         "No pudimos agregar algunas fotos en su álbum"
+      ],
+      "Included": [
+        "Incluido"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Confíe la clave «${ activeSignerText }» para verificar los mensajes nuevos de este contacto."
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Actualice en cualquier momento para importar el resto"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Actualice o libere espacio en cualquier momento para importar el resto"
       ]
     },
     "info": {
@@ -7303,6 +7360,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Firmante activo"
+      ],
+      "Fallback": [
+        "Alternativa"
       ]
     },
     "Label": {
@@ -8056,6 +8119,9 @@
       ],
       "Shared on ${ sharedOn }": [
         "Compartido en ${ sharedOn }"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caracteres"
       ]
     },
     "Label for contact group color": {
@@ -10824,6 +10890,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Recomendamos que \"desconfíe\" de estas claves."
+      ],
+      "This contact currently signs messages with this key": [
+        "Este contacto actualmente firma los mensajes con esta clave"
+      ],
+      "This key is used for message verification": [
+        "Esta clave se utiliza para la verificación de mensajes"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Esta clave es usada para cifrar los mensajes a este contacto en aplicación antiguas"
       ]
     },
     "PGP key warning": {
@@ -13672,6 +13747,15 @@
       ],
       "Index populators": [
         "Generadores de índices"
+      ],
+      "Continue with free storage": [
+        "Continuar con el almacenamiento gratuito"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Obtenga más almacenamiento con ${ MAIL_APP_NAME } Plus"
+      ],
+      "You are all set": [
+        "Ya está todo listo"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1284,6 +1284,12 @@
       ],
       "Go back to album \"${ ellipsedAlbumName }\"": [
         "Επιστροφή στο άλμπουμ \"${ ellipsedAlbumName }\""
+      ],
+      "Continue with Free": [
+        "Συνέχεια με Free"
+      ],
+      "Manage addresses": [
+        "Διαχείριση διευθύνσεων"
       ]
     },
     "Action: Docs": {
@@ -3104,6 +3110,33 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Δεν μπορούμε πια να έχουμε πρόσβαση στα ${ boldEmails }."
+      ],
+      "Available storage: ${ storageText }": [
+        "Διαθέσιμος χώρος αποθήκευσης: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Τα μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στο ${ connectedAddressText } θα εμφανίζονται πλέον στο ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Αρκετός χώρος για χρόνια από μηνύματα ηλεκτρονικού ταχυδρομείου , συνημμένα και άλλα."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Ξεκλειδώστε 15 GB αποθηκευτικού χώρου μόνο με ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Θα σταματήσουμε τις εισαγωγές στο 80% του αποθηκευτικού χώρου για να κρατήσουμε χώρο για νέα μηνύματα."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Ξεκινήσαμε την εισαγωγή των ηλεκτρονικών μηνυμάτων σας από το Gmail. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Τώρα μπορείτε να στέλνετε μηνύματα ηλεκτρονικού ταχυδρομείου από το ${ BRAND_NAME } χρησιμοποιώντας αυτή τη διεύθυνση."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ο δωρεάν λογαριασμός σας ${ MAIL_APP_NAME } διαθέτει περιορισμένο αποθηκευτικό χώρο, επομένως θα εισάγουμε μόνο ${ newUserStorageText } από τα πιο πρόσφατα μηνύματά σας στο Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ο δωρεάν λογαριασμός σας ${ MAIL_APP_NAME } διαθέτει περιορισμένο αποθηκευτικό χώρο, επομένως θα εισάγουμε μόνο τα πιο πρόσφατα email σας στο Gmail."
       ]
     },
     "description": {
@@ -4447,6 +4480,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Απεριόριστα hide-my-email ψευδώνυμα"
+      ],
+      "10+ premium features": [
+        "10+ premium χαρακτηριστικά"
+      ],
+      "Custom email domain": [
+        "Προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Email addresses": [
+        "Διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Storage": [
+        "Αποθηκευτικός χώρος"
       ]
     },
     "Features": {
@@ -7218,6 +7263,15 @@
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Εμπιστευτείτε το κλειδί \"${ activeSignerText }\" για να επαληθεύσετε νέα μηνύματα από αυτήν την επαφή."
+      ],
+      "Included": [
+        "Περιλαμβάνονται"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Αναβαθμίστε οποιαδήποτε στιγμή για να φέρετε τα υπόλοιπα"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Αναβαθμίστε ή εκκενώστε χώρο οποιαδήποτε στιγμή για να φέρετε τα υπόλοιπα"
       ]
     },
     "info": {
@@ -13537,6 +13591,15 @@
       ],
       "Index populators": [
         "Δημιουργοί ευρετηρίου"
+      ],
+      "Continue with free storage": [
+        "Συνέχεια με δωρεάν αποθηκευτικό χώρο"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Αποκτήστε περισσότερο χώρο αποθήκευσης με το ${ MAIL_APP_NAME } Plus"
+      ],
+      "You are all set": [
+        "Είστε έτοιμοι"
       ]
     },
     "Today icon tooltip in mini calendar": {

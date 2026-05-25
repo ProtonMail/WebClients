@@ -1284,6 +1284,9 @@
       ],
       "Go back to album \"${ ellipsedAlbumName }\"": [
         "Gå tillbaka till album “${ ellipsedAlbumName }“"
+      ],
+      "Manage addresses": [
+        "Hantera adresser"
       ]
     },
     "Action: Docs": {
@@ -3092,6 +3095,24 @@
       ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
         "Om du vill fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut dina konton."
+      ],
+      "Available storage: ${ storageText }": [
+        "Tillgängligt lagringsutrymme: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-post skickat till ${ connectedAddressText } kommer nu visas i ${ MAIL_APP_NAME }."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Lås upp 15 GB lagringsutrymme för endast ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Vi kommer pausa importerna vid 80 % lagringsutrymme för att reservera utrymme för nya meddelanden."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Vi har börjat importera din e-post från Gmail. Vi meddelar dig när det är klart."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Du kan nu skicka e-post från ${ BRAND_NAME } med denna adress."
       ]
     },
     "description": {
@@ -4411,6 +4432,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Obegränsat antal hide-my-email-alias"
+      ],
+      "10+ premium features": [
+        "10+ premiumfunktioner"
+      ],
+      "Custom email domain": [
+        "Anpassad e-postdomän"
+      ],
+      "Email addresses": [
+        "E-postadresser"
+      ],
+      "Storage": [
+        "Lagringsutrymme"
       ]
     },
     "Features": {
@@ -7118,6 +7151,18 @@
       "We were not able to add this photo to your album": [
         "Vi kunde inte lägga till detta foto till ditt album",
         "Vi kunde inte lägga till några foton till ditt album"
+      ],
+      "Included": [
+        "Inkluderad"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Lita på nyckeln “${ activeSignerText }“ för att verifiera nya meddelanden från denna kontakt."
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Uppgradera när som helst för att flytta över resten"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Uppgradera eller frigör utrymme när som helst för att flytta över resten"
       ]
     },
     "info": {
@@ -7950,6 +7995,12 @@
       ],
       "Shared on ${ sharedOn }": [
         "Delad på ${ sharedOn }"
+      ],
+      "${ downloads } downloads": [
+        "${ downloads } nedladdningar"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tecken"
       ]
     },
     "Label for contact group color": {
@@ -10696,6 +10747,12 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi rekommenderar att du “Sluta lita på“ denna nyckel."
+      ],
+      "This contact currently signs messages with this key": [
+        "Denna kontakt signerar för närvarande meddelanden med denna nyckel"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Denna nyckel används för att kryptera meddelanden till denna kontakt i äldre appar"
       ]
     },
     "PGP key warning": {
@@ -13532,6 +13589,15 @@
       ],
       "Disconnected from Gmail": [
         "Koppla från Gmail"
+      ],
+      "Continue with free storage": [
+        "Fortsätt med gratis lagringsutrymme"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Skaffa mer lagringsutrymme med ${ MAIL_APP_NAME } Plus"
+      ],
+      "You are all set": [
+        "Du är klar"
       ]
     },
     "Today icon tooltip in mini calendar": {

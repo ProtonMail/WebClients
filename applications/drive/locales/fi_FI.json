@@ -1266,6 +1266,9 @@
       ],
       "Download for macOS": [
         "Lataa macOS:lle"
+      ],
+      "Manage addresses": [
+        "Hallitse osoitteita"
       ]
     },
     "Action: Docs": {
@@ -3004,6 +3007,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Emme voi enää käyttää ${ boldEmails } -osoitteita."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Osoitteeseen ${ connectedAddressText } lähetetyt sähköpostit näkyvät nyt ${ MAIL_APP_NAME }ssa."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Voit nyt lähettää sähköposteja ${ BRAND_NAME }:sta tällä osoitteella."
       ]
     },
     "description": {
@@ -12982,6 +12991,9 @@
       ],
       "Index populators": [
         "Indeksin täyttäjät"
+      ],
+      "You are all set": [
+        "Kaikki on valmista"
       ]
     },
     "Today icon tooltip in mini calendar": {

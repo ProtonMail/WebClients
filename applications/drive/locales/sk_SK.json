@@ -1298,6 +1298,9 @@
       ],
       "Go back to album \"${ ellipsedAlbumName }\"": [
         "Späť na album „${ ellipsedAlbumName }\""
+      ],
+      "Manage addresses": [
+        "Spravovať adresy"
       ]
     },
     "Action: Docs": {
@@ -3150,6 +3153,18 @@
       ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
         "Ak chcete aj naďalej dostávať a odosielať správy Gmail v službe ${ BRAND_NAME }, pripojte svoje účty znova, prosím."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Emaily odoslané na adresu ${ connectedAddressText } sa teraz zobrazia v ${ MAIL_APP_NAME }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Keď sa úložisko zaplní na 80 %, pozastavíme import, aby sme uvoľnili miesto pre nové správy."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Začali sme importovať vaše emaily z Gmailu. Dáme vám vedieť, keď bude import hotový."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Teraz môžete posielať emaily z ${ BRAND_NAME } pomocou tejto adresy."
       ]
     },
     "description": {
@@ -14041,6 +14056,9 @@
       ],
       "Index populators": [
         "Indexovať populátory"
+      ],
+      "You are all set": [
+        "Všetko je nastavené"
       ]
     },
     "Today icon tooltip in mini calendar": {

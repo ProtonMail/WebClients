@@ -1284,6 +1284,12 @@
       ],
       "Go back to album \"${ ellipsedAlbumName }\"": [
         "Gå tilbage til albummet “${ ellipsedAlbumName }\""
+      ],
+      "Continue with Free": [
+        "Fortsæt med Free"
+      ],
+      "Manage addresses": [
+        "Administrer adresser"
       ]
     },
     "Action: Docs": {
@@ -3104,6 +3110,33 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Vi kan ikke længere få adgang til ${ boldEmails }."
+      ],
+      "Available storage: ${ storageText }": [
+        "Tilgængelig lagerplads: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-mails der er sendt til ${ connectedAddressText } vil nu blive vist i ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Nok plads til flere år værd af e-mails, vedhæftninger og mere."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Lås op for 15 GB lagerplads til kun ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Vi sætter importer på pause ved 80% lagerplads for at reservere plads til nye beskeder."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Vi er begyndt at importere din e-mails fra Gmail. Vi giver dig besked når det er færdigt."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Du kan nu sende e-mails fra ${ BRAND_NAME } med denne adresse."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrænset lagerplads, så vi importerer kun ${ newUserStorageText } af dine seneste Gmail-beskeder"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrænset lagerplads, så vi importerer kun dine seneste Gmail-beskeder."
       ]
     },
     "description": {
@@ -4447,6 +4480,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Ubegrænsede hide-my-email-aliasser"
+      ],
+      "10+ premium features": [
+        "10+ premium-funktioner"
+      ],
+      "Custom email domain": [
+        "Brugerdefineret e-maildomæne"
+      ],
+      "Email addresses": [
+        "E-mailadresser"
+      ],
+      "Storage": [
+        "Lagerplads"
       ]
     },
     "Features": {
@@ -7205,6 +7250,15 @@
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Stol på \"${ activeSignerText }\"-nøglen for at verificere nye beskeder fra denne kontakt."
+      ],
+      "Included": [
+        "Inkluderet"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Opgrader når som helst for at overføre resten"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Opgrader eller frigør lagerplads når som helst for at overføre resten"
       ]
     },
     "info": {
@@ -13620,6 +13674,15 @@
       ],
       "Index populators": [
         "Index populators"
+      ],
+      "Continue with free storage": [
+        "Fortsæt med gratis lagerplads"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Få mere lagerplads med ${ MAIL_APP_NAME } Plus"
+      ],
+      "You are all set": [
+        "Så er du klar"
       ]
     },
     "Today icon tooltip in mini calendar": {

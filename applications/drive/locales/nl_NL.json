@@ -1281,6 +1281,9 @@
       ],
       "Search is unavailable": [
         "Zoeken is niet beschikbaar"
+      ],
+      "Manage addresses": [
+        "Adressen beheren"
       ]
     },
     "Action: Docs": {
@@ -3101,6 +3104,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "We hebben geen toegang meer tot ${ boldEmails }."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-mails die naar ${ connectedAddressText } worden verzonden, verschijnen nu in ${ MAIL_APP_NAME }."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "U kunt nu e-mails versturen vanuit ${ BRAND_NAME } via dit adres."
       ]
     },
     "description": {
@@ -13561,6 +13570,9 @@
       ],
       "Disconnected from Gmail": [
         "Ontkoppeld van Gmail"
+      ],
+      "You are all set": [
+        "U bent helemaal klaar"
       ]
     },
     "Today icon tooltip in mini calendar": {

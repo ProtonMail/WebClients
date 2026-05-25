@@ -1281,6 +1281,15 @@
       ],
       "Search is unavailable": [
         "Søk er ikke tilgjengelig"
+      ],
+      "Continue with Free": [
+        "Fortsett med gratis"
+      ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Gå tilbake til albumet \"${ ellipsedAlbumName }\""
+      ],
+      "Manage addresses": [
+        "Administrer adresser"
       ]
     },
     "Action: Docs": {
@@ -3101,6 +3110,33 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Vi får ikke lenger tilgang til ${ boldEmails }."
+      ],
+      "Available storage: ${ storageText }": [
+        "Tilgjengelig lagringsplass: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-poster sendt til ${ connectedAddressText } vil nå vises i ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Nok plass til årevis med e-poster, vedlegg og mer."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Lås opp 15 GB lagringsplass for kun ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Vi setter importene på pause ved 80 % lagringsplass for å reservere plass til nye meldinger."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Vi har begynt å importere e-postene dine fra Gmail. Vi gir deg beskjed når det er ferdig."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Du kan nå sende e-poster fra ${ BRAND_NAME } ved å bruke denne adressen."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrenset lagringsplass, så vi importerer bare ${ newUserStorageText } av de nyeste Gmail-meldingene dine."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrenset lagringsplass, så vi importerer bare de nyeste Gmail-e-postene dine."
       ]
     },
     "description": {
@@ -4438,6 +4474,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Ubegrenset antall hide-my-email-aliaser"
+      ],
+      "10+ premium features": [
+        "10+ premiumfunksjoner"
+      ],
+      "Custom email domain": [
+        "Egendefinert e-postdomene"
+      ],
+      "Email addresses": [
+        "E-postadresser"
+      ],
+      "Storage": [
+        "Lagring"
       ]
     },
     "Features": {
@@ -7184,6 +7232,34 @@
       ],
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
         "Nettleseren gikk tom for plass mens den indekserte filer for søk. Frigjør lagringsplass, og bygg deretter opp indeksen på nytt."
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Opprett en sikker sky for ${ memberCount } medlem",
+        "Opprett en sikker sky for ${ memberCount } medlemmer"
+      ],
+      "Included": [
+        "Inkludert"
+      ],
+      "Photo saved to your Drive": [
+        "Bilde lagret på din Drive",
+        "Bilder lagret på din Drive"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Stol på \"${ activeSignerText }\"-nøkkelen for å bekrefte nye meldinger fra denne kontakten."
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Oppgrader når som helst for å få med deg resten"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Oppgrader eller frigjør plass når som helst for å ta med resten"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "Vi kunne ikke lagre dette bildet på din Drive",
+        "Vi kunne ikke lagre flere bilder på din Drive"
+      ],
+      "We were not able to add this photo to your album": [
+        "Vi kunne ikke legge til dette bildet i albumet ditt",
+        "Vi kunne ikke legge til enkelte bilder i albumet ditt"
       ]
     },
     "info": {
@@ -7272,6 +7348,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktiv underskriver"
+      ],
+      "Fallback": [
+        "Reserve"
       ]
     },
     "Label": {
@@ -8022,6 +8104,9 @@
       ],
       "Shared on ${ sharedOn }": [
         "Delt på ${ sharedOn }"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tegn"
       ]
     },
     "Label for contact group color": {
@@ -9154,6 +9239,15 @@
       ],
       "Dedicated servers optimized for speed": [
         "Dedikerte servere optimalisert for hastighet"
+      ],
+      "Access all countries": [
+        "Få tilgang til alle land"
+      ],
+      "No streaming support": [
+        "Ingen strømmestøtte"
+      ],
+      "Unlock streaming": [
+        "Lås opp strømming"
       ]
     },
     "new_plans: feature highlight": {
@@ -9568,6 +9662,10 @@
       "Support for ${ n } custom email domain": [
         "Støtte for ${ n } egendefinert e-postdomene",
         "Støtte for ${ n } egendefinerte e-postdomener"
+      ],
+      "${ n } country": [
+        "${ n } land",
+        "${ n } land"
       ]
     },
     "Notification": {
@@ -9967,6 +10065,14 @@
       ],
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "Kopi av \"${ ellipsedName }\" flyttet til papirkurven"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } bilde har blitt lagt til i \"${ albumName }\"",
+        "${ addedUids.length } bilder har blitt lagt til i \"${ albumName }\""
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } bilde er fjernet fra ${ albumName }\"",
+        "${ removed } bilder er fjernet fra ${ albumName }\""
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10769,6 +10875,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi anbefaler at du \"ikke stoler på\" denne nøkkelen."
+      ],
+      "This contact currently signs messages with this key": [
+        "Denne kontakten signerer for øyeblikket meldinger med denne nøkkelen"
+      ],
+      "This key is used for message verification": [
+        "Denne nøkkelen brukes til meldingsverifisering"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Denne nøkkelen brukes til å kryptere meldinger til denne kontakten i eldre apper"
       ]
     },
     "PGP key warning": {
@@ -13617,6 +13732,15 @@
       ],
       "Index populators": [
         "Indekseringsprosesser"
+      ],
+      "Continue with free storage": [
+        "Fortsett med gratis lagring"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Skaff deg mer lagringsplass med ${ MAIL_APP_NAME } Plus"
+      ],
+      "You are all set": [
+        "Du er klar"
       ]
     },
     "Today icon tooltip in mini calendar": {
