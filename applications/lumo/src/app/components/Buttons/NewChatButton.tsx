@@ -154,7 +154,7 @@ export const NewChatButtonHeader = ({ iconSize = 5 }: { iconSize?: IconSize }) =
                 shape: 'solid',
                 size: 'medium',
                 icon: true,
-                className: 'shrink-0',
+                className: 'shrink-0 block md:hidden',
             }}
             toolTipPlacement="left"
         >
