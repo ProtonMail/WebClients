@@ -1,3 +1,5 @@
+import { clsx } from 'clsx';
+
 import { Header } from '../components/Conversation/Header';
 import { RightPanelSlot, RightPanelSlotWithHeader } from '../components/RightPanelSlot';
 import { useDragArea } from '../providers/DragAreaProvider';
@@ -31,6 +33,7 @@ interface LumoLayoutWithDrawerProps {
     drawerTitle?: string;
     drawerActionButton?: React.ReactNode;
     showNewChatButton?: boolean;
+    solidBackground?: boolean;
 }
 
 export const LumoLayoutWithDrawer = ({
@@ -42,9 +45,15 @@ export const LumoLayoutWithDrawer = ({
     drawerTitle,
     drawerActionButton,
     showNewChatButton = false,
+    solidBackground = true,
 }: LumoLayoutWithDrawerProps) => {
     return (
-        <div className="relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto rounded-xl bg-norm">
+        <div
+            className={clsx(
+                'lumo-layout-container relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto rounded-xl',
+                solidBackground && 'bg-norm'
+            )}
+        >
             <Header
                 withoutDrawerToggle={withoutDrawerToggle}
                 leftHeaderButton={leftHeaderButton}
