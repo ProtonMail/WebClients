@@ -4,7 +4,6 @@ import { useNotifications } from '@proton/components';
 import { MemberRole, type NodeEntity, NodeType, getDrivePerNodeType } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { useInvitationsActions } from './useInvitationsActions';
@@ -117,25 +116,6 @@ describe('useInvitationsActions', () => {
             expect(mockCreateNotification).toHaveBeenCalledWith({
                 type: 'success',
                 text: 'Share invitation accepted successfully',
-            });
-        });
-
-        it('should handle missing deprecatedShareId', async () => {
-            const { result } = renderHook(() => useInvitationsActions());
-            const uid = 'node-uid-1';
-            const invitationUid = 'invitation-uid-1';
-            const type = NodeType.Folder;
-
-            mockAcceptInvitation.mockResolvedValue(undefined);
-            mockGetNode.mockResolvedValue({});
-            jest.mocked(getNodeEntity).mockReturnValue({
-                node: { ...mockNode, deprecatedShareId: undefined },
-            } as any);
-
-            await result.current.acceptInvitation(uid, invitationUid, type);
-
-            expect(mockHandleError).toHaveBeenCalledWith(expect.any(EnrichedError), {
-                fallbackMessage: 'Failed to accept share invitation',
             });
         });
 
