@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { InputFieldTwo, Prompt, Toggle, useModalStateObject, useNotifications } from '@proton/components/index';
@@ -125,7 +126,7 @@ const MemoryEducation = ({ onEnable }: { onEnable?: () => void }) => {
             {onEnable && (
                 <div className="flex flex-column flex-nowrap items-center gap-2">
                     <Button shape="solid" color="norm" onClick={onEnable}>
-                        {c('collider_2025: Action').t`Enable memory`}
+                        {c('collider_2025: Action').t`Turn on memory`}
                     </Button>
                     <span className="text-sm color-weak text-center">
                         {c('collider_2025: Hint').t`You can turn it off again at any time.`}
@@ -294,7 +295,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
         [memories]
     );
 
-    const isMemoryEnabled = lumoUserSettings.isMemoryEnabled ?? true;
+    const isMemoryEnabled = lumoUserSettings.isMemoryEnabled ?? false;
     const isMemoryAutoSaveEnabled = lumoUserSettings.isMemoryAutoSaveEnabled ?? true;
     const newPromptsSinceLastUpdate = lumoUserSettings.memoryPromptsSinceAutoSave ?? 0;
     const promptsUntilAutoSave = Math.max(0, MEMORY_AUTO_SAVE_PROMPT_THRESHOLD - newPromptsSinceLastUpdate);
@@ -383,6 +384,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
             // a clear-all followed immediately by a click could still produce a stale closure
             // (and an incorrectly "incremental" prompt instead of a fresh bootstrap).
             const latestMemories = normalizeMemories(store.getState().lumoUserSettings.memories);
+            console.log(latestMemories);
             const generated = await generateFromChats(latestMemories);
             if (generated.length === 0) {
                 updateSettings({ memoryPromptsSinceAutoSave: 0, _autoSave: true });
@@ -417,8 +419,8 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
         }
     };
 
-    const enableMemoryTooltip = c('collider_2025: Tooltip')
-        .t`${LUMO_SHORT_APP_NAME} uses saved memories to personalize general chats. Memories are not used in project chats.`;
+    const disableMemoryText = c('collider_2025: DisableMemory')
+        .t`Turn off ${LUMO_SHORT_APP_NAME} Memory at any time.`;
 
     const autoUpdateTooltip = isMemoryAutoSaveEnabled
         ? promptsUntilAutoSave === 0
@@ -447,14 +449,17 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
         <div className="flex flex-column flex-nowrap h-full min-h-0 min-w-0 overflow-hidden">
             <div className="flex flex-column flex-nowrap flex-1 gap-4 min-h-0 overflow-hidden pb-1">
                 {isMemoryEnabled && (
-                    <div className="flex flex-column flex-nowrap">
-                        <ToggleRow
-                            id="memory-enabled-toggle"
-                            label={c('collider_2025: Title').t`Enable memory`}
-                            tooltip={enableMemoryTooltip}
-                            checked={isMemoryEnabled}
-                            onChange={handleToggleEnableMemory}
-                        />
+                    <div className="flex flex-column flex-nowrap gap-2 pt-2">
+                        <Banner
+                            variant="norm-outline"
+                            action={
+                                <Button onClick={handleToggleEnableMemory}>
+                                    {c('collider_2025: Action').t`Turn off`}
+                                </Button>
+                            }
+                        >
+                            <span className="text-sm">{disableMemoryText}</span>
+                        </Banner>
                         <ToggleRow
                             id="memory-autosave-toggle"
                             label={c('collider_2025: Title').t`Auto update memory`}
@@ -633,7 +638,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
             >
                 <p className="m-0">
                     {c('collider_2025: Description')
-                        .t`Turning off memory will permanently delete all ${memories.length} saved memories. You can re-enable memory later, but the deleted memories cannot be recovered.`}
+                        .t`Turning off memory will permanently delete all ${memories.length} saved memories. You can turn on memory later, but the deleted memories cannot be recovered.`}
                 </p>
             </Prompt>
 
