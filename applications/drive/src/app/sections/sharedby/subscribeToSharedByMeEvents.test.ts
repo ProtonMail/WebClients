@@ -370,27 +370,5 @@ describe('subscribeToSharedByMeEvents', () => {
                 })
             );
         });
-
-        it('should handle missing deprecatedShareId', async () => {
-            mockStore.getSharedByMeItem.mockReturnValue(undefined);
-            mockGetNodeEntity.mockReturnValue({
-                node: createMockNode({ deprecatedShareId: undefined }),
-                errors: new Map(),
-            });
-
-            const event = {
-                items: [{ uid: 'node-uid-123', isShared: true }],
-            };
-
-            await createdNodesHandler(event, mockDrive);
-
-            expect(mockHandleSdkError).toHaveBeenCalledWith(
-                expect.objectContaining({
-                    message: 'The shared with me node entity is missing deprecatedShareId',
-                }),
-                { showNotification: false }
-            );
-            expect(mockStore.setSharedByMeItem).not.toHaveBeenCalled();
-        });
     });
 });

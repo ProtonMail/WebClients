@@ -435,15 +435,17 @@ export const useSharedWithMeStore = create<SharedWithMeStore>()(
                             const maybeNode = await drive.getNode(uid);
                             const { node } = getNodeEntity(maybeNode);
                             const signatureResult = getSignatureIssues(maybeNode);
+                            // User can open via public link, then be invited directly, and that direct share
+                            // might be removed again before user clicks accept. User then still has access to
+                            // the node via the public session, but without any memberhsip.
+                            // Simply ignoring such an event is ok as if user is removed after accepting, it
+                            // would also just disappear from the list.
+                            if (!node.membership) {
+                                continue;
+                            }
                             if (!node.deprecatedShareId) {
                                 handleSdkError(new Error('The shared with me node has missing deprecatedShareId'), {
                                     showNotification: false,
-                                    extra: { nodeUid: node.uid },
-                                });
-                                continue;
-                            }
-                            if (!node.membership) {
-                                handleSdkError(new Error('Shared with me node has missing membership'), {
                                     extra: { nodeUid: node.uid },
                                 });
                                 continue;
