@@ -35,15 +35,15 @@ export const loadSharedWithMeNodes = async (abortSignal: AbortSignal) => {
             for await (const sharedWithMeMaybeNode of getDrive().iterateSharedNodesWithMe(abortSignal)) {
                 const { node } = getNodeEntity(sharedWithMeMaybeNode);
                 const signatureResult = getSignatureIssues(sharedWithMeMaybeNode);
-                if (!node.deprecatedShareId) {
-                    handleSdkError(new Error('The shared with me node has missing deprecatedShareId'), {
-                        showNotification: false,
-                        extra: { nodeUid: node.uid },
-                    });
+                // User can open via public link, then be invited directly, and that direct share
+                // might be removed again. User then still has access to the node via the public
+                // session, but without any memberhsip.
+                // Simply skipping such an itme is ok as it is not shared directly anymore.
+                if (!node.membership) {
                     continue;
                 }
-                if (!node.membership) {
-                    handleSdkError(new Error('Shared with me node has missing membership'), {
+                if (!node.deprecatedShareId) {
+                    handleSdkError(new Error('The shared with me node has missing deprecatedShareId'), {
                         showNotification: false,
                         extra: { nodeUid: node.uid },
                     });
@@ -88,25 +88,18 @@ export const loadSharedWithMeNodes = async (abortSignal: AbortSignal) => {
             for await (const sharedWithMeMaybeNode of getDriveForPhotos().iterateSharedNodesWithMe(abortSignal)) {
                 const { node } = getNodeEntity(sharedWithMeMaybeNode);
                 const signatureResult = getSignatureIssues(sharedWithMeMaybeNode);
+                // User can open via public link, then be invited directly, and that direct share
+                // might be removed again. User then still has access to the node via the public
+                // session, but without any memberhsip.
+                // Simply skipping such an itme is ok as it is not shared directly anymore.
+                if (!node.membership) {
+                    continue;
+                }
                 if (!node.deprecatedShareId) {
                     handleSdkError(
                         new EnrichedError('The shared with me node entity is missing deprecatedShareId', {
                             tags: { component: 'drive-sdk' },
                             extra: { uid: node.uid },
-                        }),
-                        { showNotification: false }
-                    );
-                    continue;
-                }
-                if (!node.membership) {
-                    handleSdkError(
-                        new EnrichedError('Shared with me node have missing membership', {
-                            tags: { component: 'drive-sdk' },
-                            extra: {
-                                uid: node.uid,
-                                message:
-                                    'The shared with me node entity is missing membershif info. It could be race condition and means it is probably not shared anymore.',
-                            },
                         }),
                         { showNotification: false }
                     );
