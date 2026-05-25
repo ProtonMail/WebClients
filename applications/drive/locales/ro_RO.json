@@ -1291,6 +1291,9 @@
       ],
       "Go back to album \"${ ellipsedAlbumName }\"": [
         "Înapoi la albumul „${ ellipsedAlbumName }”"
+      ],
+      "Manage addresses": [
+        "Gestionare adrese"
       ]
     },
     "Action: Docs": {
@@ -3127,6 +3130,18 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Nu mai putem accesa ${ boldEmails }."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Mesajele trimise către ${ connectedAddressText } vor apărea acum în ${ MAIL_APP_NAME }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Importarea se va opri la 80% din spațiul de stocare pentru a rezerva spațiu pentru mesajele noi."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "S-a început importarea mesajelor de pe Gmail. Vă vom anunța când va fi gata."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Puteți trimite acum mesaje de pe ${ BRAND_NAME } folosind această adresă."
       ]
     },
     "description": {
@@ -7328,6 +7343,9 @@
         "Această fotografie nu a putut fi adăugată în album.",
         "Câteva fotografii nu au putut fi adăugate în album.",
         "Câteva fotografii nu au putut fi adăugate în album."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Cheia „${ activeSignerText }” este aprobată pentru a verifica mesajele noi de la acest contact."
       ]
     },
     "info": {
@@ -7418,6 +7436,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Semnatar activ"
+      ],
+      "Fallback": [
+        "Alternativă"
       ]
     },
     "Label": {
@@ -8172,6 +8196,9 @@
       ],
       "Shared on ${ sharedOn }": [
         "Partajat la ${ sharedOn }"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } de caractere"
       ]
     },
     "Label for contact group color": {
@@ -10965,6 +10992,12 @@
       ],
       "This key is used for message verification": [
         "Această cheie este utilizată pentru verificarea mesajelor."
+      ],
+      "This contact currently signs messages with this key": [
+        "Acest contact semnează în prezent mesajele cu această cheie."
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Această cheie este folosită pentru a cripta mesajele către acest contact în aplicațiile mai vechi."
       ]
     },
     "PGP key warning": {
@@ -13870,6 +13903,9 @@
       ],
       "Index populators": [
         "Generatori de index"
+      ],
+      "You are all set": [
+        "Totul este pregătit"
       ]
     },
     "Today icon tooltip in mini calendar": {
