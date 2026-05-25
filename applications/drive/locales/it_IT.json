@@ -1241,6 +1241,9 @@
       ],
       "Download for macOS": [
         "Scarica per macOS"
+      ],
+      "Manage addresses": [
+        "Gestisci indirizzi"
       ]
     },
     "Action: Docs": {
@@ -3005,6 +3008,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Non possiamo più accedere a ${ boldEmails }."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Le email inviate a ${ connectedAddressText } appariranno ora in ${ MAIL_APP_NAME }."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Ora puoi inviare email da ${ BRAND_NAME } utilizzando questo indirizzo."
       ]
     },
     "description": {
@@ -13085,6 +13094,9 @@
       "Found ${ resultCount } result": [
         "Trovato ${ resultCount } risultato",
         "Trovati ${ resultCount } risultati"
+      ],
+      "You are all set": [
+        "Tutto pronto"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1253,6 +1253,9 @@
       ],
       "Download for macOS": [
         "macOS용 다운로드"
+      ],
+      "Manage addresses": [
+        "주소 관리"
       ]
     },
     "Action: Docs": {
@@ -3057,6 +3060,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "${ boldEmails }에 더 이상 접근할 수 없습니다."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "${ connectedAddressText }로 보내진 이메일은 이제 ${ MAIL_APP_NAME }에서 보여집니다."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "이제 이 주소를 이용해 ${ BRAND_NAME }로부터 이메일을 보낼 수 있습니다."
       ]
     },
     "description": {
@@ -13081,6 +13090,9 @@
       ],
       "Disconnected from Gmail": [
         "Gmail 연결 해제됨"
+      ],
+      "You are all set": [
+        "모든 준비가 완료되었어요"
       ]
     },
     "Today icon tooltip in mini calendar": {
