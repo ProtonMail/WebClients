@@ -5,7 +5,7 @@
 .main-text {
 	font-family: Syne, Inter, system-ui, sans-serif;
 	font-size: rem(36);
-	color: #311e71;
+	color: var(--lumo-welcome-text);
 
 	&-onboarded {
 		font-size: rem(48);
