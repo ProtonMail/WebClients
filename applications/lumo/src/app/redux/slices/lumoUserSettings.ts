@@ -76,7 +76,7 @@ export const initialLumoUserSettings: LumoUserSettings = {
     automaticWebSearch: true, // Default to enabled (automatic)
     showGallerySuggestions: true,
     memories: [],
-    isMemoryEnabled: true,
+    isMemoryEnabled: false,
     isMemoryAutoSaveEnabled: true,
     memoryPromptsSinceAutoSave: 0,
 };
