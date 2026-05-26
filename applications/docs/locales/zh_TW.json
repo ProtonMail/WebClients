@@ -441,6 +441,9 @@
       "Load image": [
         "載入圖像"
       ],
+      "Manage addresses": [
+        "管理電郵位址"
+      ],
       "Manage advanced account protections": [
         "管理進階帳戶保護"
       ],
@@ -2373,8 +2376,14 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在刪除聯絡人…該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "電子郵件傳送至 ${ connectedAddressText } 將顯示於 ${ MAIL_APP_NAME }。"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "足夠超過年的電子郵件、附件和更多"
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "確保安全存取組織資料，即使您的團隊是遠端工作或使用公共 WiFi。"
@@ -2433,6 +2442,9 @@
       "To start, give your organization a name.": [
         "若要開始，為貴組織取個名稱。"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "只要 ${ config.offerPrice } 解鎖 15 GB 的儲存空間"
+      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "升級至 ${ planName } 以保持共享有編輯權限的檔案"
       ],
@@ -2450,6 +2462,9 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以把既不合併也不保留的聯絡人標記為刪除。唯有在點擊「合併」按鈕時，才會執行刪除"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "您可透過 ${ BRAND_NAME } 用此位址傳送電子郵件。"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "您的帳戶資料復原方法已就緒、雙重驗證已啟用。"
@@ -2924,6 +2939,12 @@
       ],
       "Organization key is not decrypted": [
         "組織金鑰未解密"
+      ],
+      "Organization key must be activated to create invited users": [
+        "需啟用組織金鑰才能建立邀請使用者"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "需啟用組織金鑰才能建立非私人使用者"
       ],
       "Password is required": [
         "密碼為必填"
@@ -3503,11 +3524,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10 + 頂級質子版功能"
+      ],
+      "Custom email domain": [
+        "自訂電子郵件網域"
+      ],
+      "Email addresses": [
+        "電子郵件地址"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "給予檔案、照片和文件的加密雲端儲存"
       ],
       "More premium features": [
         "多項的頂級功能"
+      ],
+      "Storage": [
+        "儲存空間"
       ],
       "Unlimited hide-my-email aliases": [
         "無限制的 hide-my-email 別名"
@@ -4427,6 +4460,9 @@
       ],
       "In restrictive countries": [
         "在受限制的國家"
+      ],
+      "Included": [
+        "包含"
       ],
       "Inherited from parent folder": [
         "繼承自上層資料夾"
@@ -6307,6 +6343,9 @@
       "99.95% SLA": [
         "99.95% 服務層級協議"
       ],
+      "Access all countries": [
+        "存取所有國家"
+      ],
       "Ad-blocker and malware protection": [
         "廣告攔截器及惡意軟體防護"
       ],
@@ -6609,6 +6648,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "無限流量/頻寬"
+      ],
+      "Unlock streaming": [
+        "解鎖串流"
       ],
       "Up to ${ n } user": [
         "多達 ${ n } 位使用者"
@@ -6977,6 +7019,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } 個國家"
+      ],
       "Access advanced VPN features": [
         "存取進階 VPN 功能"
       ],
@@ -7595,6 +7640,9 @@
       ],
       "External key automatically fetched via WKD.": [
         "自動由 WKD 取得了外部金鑰。"
+      ],
+      "This key is used for message verification": [
+        "此金鑰用於訊息驗證"
       ],
       "This key is used to encrypt messages to this contact": [
         "此金鑰是用於加密通訊錄"
@@ -9116,6 +9164,9 @@
       "Get more from your VPN": [
         "從您的VPN取得更多"
       ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "透過 ${ MAIL_APP_NAME } 取得更多儲存空間"
+      ],
       "Get the apps": [
         "取得應用程式"
       ],
@@ -9412,6 +9463,9 @@
       ],
       "When is it most important to use a VPN?": [
         "何時最適合使用 VPN？"
+      ],
+      "You are all set": [
+        "你已就緒"
       ],
       "You have no folders yet": [
         "您尚未創建任何資料夾"
