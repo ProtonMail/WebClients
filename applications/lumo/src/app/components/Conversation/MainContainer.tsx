@@ -87,20 +87,22 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
     return (
         <>
             <LumoLayoutWithDrawer
-                solidBackground={false}
-                headerComponent={isGuest ? <PublicHeader /> : null}
-                drawerContentComponent={
-                    <div className="flex flex-column  items-center gap-2 justify-center items-center flex-1 main-container-lumo-layout">
-                        <FilesManagementView
-                            messageChain={[]}
-                            filesContainerRef={filesContainerRef}
-                            onClose={handleCloseFiles}
-                            filterMessage={openPanel.filterMessage}
-                            onClearFilter={handleClearFilter}
-                            initialShowDriveBrowser={false}
-                        />
-                    </div>
-                }
+                appearance={{ solidBackground: false }}
+                header={{ component: isGuest ? <PublicHeader /> : null }}
+                drawer={{
+                    content: (
+                        <div className="flex flex-column  items-center gap-2 justify-center items-center flex-1 main-container-lumo-layout">
+                            <FilesManagementView
+                                messageChain={[]}
+                                filesContainerRef={filesContainerRef}
+                                onClose={handleCloseFiles}
+                                filterMessage={openPanel.filterMessage}
+                                onClearFilter={handleClearFilter}
+                                initialShowDriveBrowser={false}
+                            />
+                        </div>
+                    ),
+                }}
             >
                 <div className="main-container-component rounded-xl flex flex-column flex-nowrap flex-1">
                     <div
