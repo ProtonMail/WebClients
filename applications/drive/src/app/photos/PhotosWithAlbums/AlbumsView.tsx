@@ -9,10 +9,10 @@ import { getDriveForPhotos } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import useNavigate from '../../legacy/hooks/drive/useNavigate';
-import { usePhotoLayoutStore } from '../../legacy/zustand/photos/layout.store';
 import { getNotificationsManager } from '../../modules/notifications';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { RenameAlbumModal } from '../PhotosModals/RenameAlbumModal';
+import { usePhotoLayoutStore } from '../layout.store';
 import { refreshAlbumMetadata } from '../loaders/loadAlbum';
 import { type AlbumItem, useAlbumsStore } from '../useAlbums.store';
 import { AlbumsGrid } from './AlbumsGrid';

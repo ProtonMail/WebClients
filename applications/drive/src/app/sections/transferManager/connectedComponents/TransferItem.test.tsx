@@ -1,12 +1,12 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 
+import { AbuseCategoryType } from '../../../modals/ReportAbuseModal';
+import { DownloadManager } from '../../../modules/download/DownloadManager';
 import {
     type DownloadItem,
     DownloadStatus,
     useDownloadManagerStore,
-} from '../../../legacy/zustand/download/downloadManager.store';
-import { AbuseCategoryType } from '../../../modals/ReportAbuseModal';
-import { DownloadManager } from '../../../modules/download/DownloadManager';
+} from '../../../modules/download/downloadManager.store';
 import type { TransferManagerEntry } from '../useTransferManagerState';
 import { TransferItem } from './TransferItem';
 

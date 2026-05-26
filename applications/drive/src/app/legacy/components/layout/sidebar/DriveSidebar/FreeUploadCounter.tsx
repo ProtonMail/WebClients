@@ -4,7 +4,7 @@ import { useShallow } from 'zustand/react/shallow';
 import { VintageClock } from '@proton/components/components/vintageClock/VintageClock';
 import { toMinutesAndSeconds } from '@proton/shared/lib/helpers/time';
 
-import { useFreeUploadStore } from '../../../../../legacy/zustand/freeUpload/freeUpload.store';
+import { useFreeUploadStore } from '../../../../../modules/freeUpload/internal/freeUpload.store';
 
 export function FreeUploadCounter() {
     const { bigCounterVisible, secondsLeft } = useFreeUploadStore(

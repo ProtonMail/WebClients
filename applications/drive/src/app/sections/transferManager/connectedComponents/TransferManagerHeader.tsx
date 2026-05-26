@@ -7,7 +7,7 @@ import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import clsx from '@proton/utils/clsx';
 
 import { ProgressBarStatus } from '../../../legacy/components/TransferManager/ProgressBar';
-import { BaseTransferStatus } from '../../../legacy/zustand/download/downloadManager.store';
+import { BaseTransferStatus } from '../../../modules/download/downloadManager.store';
 import { CloseButton } from '../statelessComponents/CloseButton';
 import { MinimizeButton } from '../statelessComponents/MinimizeButton';
 import { isRetryable } from '../transferStatus';
