@@ -13,7 +13,7 @@ import { useEncryptedSearch } from '@proton/encrypted-search/useEncryptedSearch'
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
-import { useFlagsDriveFoundationSearch } from '../../../flags/useFlagsDriveFoundationSearch';
+import { useFlagsDriveFoundationSearch } from '../../../modules/featureFlag';
 import { legacySearchMetrics } from '../../../modules/search';
 import isSearchFeatureEnabled from '../../../utils/isSearchFeatureEnabled';
 import { useDriveEventManager } from '../_events';

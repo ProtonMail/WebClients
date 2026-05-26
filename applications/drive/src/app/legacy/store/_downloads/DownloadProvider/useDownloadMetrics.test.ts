@@ -4,7 +4,7 @@ import metrics from '@proton/metrics';
 import type { UnleashClient } from '@proton/unleash/UnleashClient';
 
 import { TransferState } from '../../../../legacy/components/TransferManager/transfer';
-import { unleashVanillaStore } from '../../../../legacy/zustand/unleash/unleash.store';
+import { featureFlagStore } from '../../../../modules/featureFlag';
 import { ShareType } from '../../_shares';
 import type { Download } from './interface';
 import { getErrorCategory, useDownloadMetrics } from './useDownloadMetrics';
@@ -50,7 +50,7 @@ jest.mock('../../../../legacy/zustand/share/shares.store', () => {
     };
 });
 
-unleashVanillaStore.getState().setClient({
+featureFlagStore.getState().setClient({
     isEnabled: jest.fn().mockReturnValue(false),
     getVariant: jest.fn().mockReturnValue('disabled'),
 } as unknown as UnleashClient);

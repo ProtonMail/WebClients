@@ -6,7 +6,8 @@ type InvitationCountStore = {
     setInvitationCount: (count: number) => void;
 };
 
-// TODO: Migrate to a specific invitation module
+// A global store used to share invitations between multiple page components (sidebar
+// and shared with me sections).
 export const useInvitationCountStore = create<InvitationCountStore>()(
     devtools(
         (set) => ({

@@ -2,7 +2,7 @@ import { MemberRole } from '@proton/drive';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import { unleashVanillaStore } from '../../../legacy/zustand/unleash/unleash.store';
+import { featureFlagStore } from '../../../modules/featureFlag';
 import { getOpenInDocsInfo } from '../../../utils/docs/openInDocs';
 import { NODE_EDIT_EXPIRACY } from '../constants';
 import { usePublicAuthStore } from '../usePublicAuth.store';
@@ -44,7 +44,7 @@ export const createActionsItemChecker = (items: PublicFolderItem[]): PublicItemC
     const canEdit = items.length > 0 && publicRole === MemberRole.Editor && items.every(getIsOwnedByUser);
     const openInDocsInfo = firstItem?.mediaType ? getOpenInDocsInfo(firstItem.mediaType) : undefined;
 
-    const scanDisabled = unleashVanillaStore.getState().isEnabled('DriveDownloadScanDisabled');
+    const scanDisabled = featureFlagStore.getState().isEnabled('DriveDownloadScanDisabled');
     return {
         hasPreviewAvailable,
         canEdit,

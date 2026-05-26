@@ -1,1 +1,1 @@
-export { useFlagsDriveSheet as useIsSheetsEnabled } from '../../../flags/useFlagsDriveSheet';
+export { useFlagsDriveSheet as useIsSheetsEnabled } from '../../../modules/featureFlag';
