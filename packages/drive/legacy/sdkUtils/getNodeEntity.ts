@@ -6,9 +6,9 @@ import {
     NodeType,
     type PhotoAttributes,
     type PhotoNode,
-} from '@proton/drive';
+} from '@protontech/drive-sdk';
 
-import { getNodeName } from './getNodeName';
+import { getNodeName } from '../../internal/sdkUtils/getNodeName';
 
 export type GetNodeEntityType = {
     node: NodeEntity;
@@ -17,10 +17,12 @@ export type GetNodeEntityType = {
     albumAttributes?: AlbumAttributes;
 };
 
-export const isPhotoNode = (node: NodeEntity): node is PhotoNode => {
+// TODO: Consider moving to a modules/nodes package.
+const isPhotoNode = (node: NodeEntity): node is PhotoNode => {
     return [NodeType.Photo, NodeType.Album].includes(node.type);
 };
 
+// TODO: Do not use. Just use the plain MaybeNode and NodeEntity SDK types.
 export const getNodeEntity = (maybeNode: MaybeNode): GetNodeEntityType => {
     let node: NodeEntity;
     const errors = new Map();

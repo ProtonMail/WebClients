@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 
 import { type NodeEntity, getDrive, getDriveForPhotos } from '@proton/drive/index';
-import { getNodeEntityFromMaybeNode } from '@proton/drive/modules/upload/utils/getNodeEntityFromMaybeNode';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import { getFormattedNodeLocation } from '../../utils/sdk/getNodeLocation';
 import { useTrashStore } from './useTrash.store';
@@ -18,8 +18,8 @@ jest.mock('../../utils/sdk/getNodeLocation', () => ({
     getFormattedNodeLocation: jest.fn(),
 }));
 
-jest.mock('@proton/drive/modules/upload/utils/getNodeEntityFromMaybeNode', () => ({
-    getNodeEntityFromMaybeNode: jest.fn(),
+jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity', () => ({
+    getNodeEntity: jest.fn(),
 }));
 
 jest.mock('../../utils/sdk/getSignatureIssues', () => ({
@@ -37,7 +37,7 @@ jest.mock('./useTrash.store', () => {
 
 const mockGetDrive = jest.mocked(getDrive);
 const mockGetDriveForPhotos = jest.mocked(getDriveForPhotos);
-const mockGetNodeEntityFromMaybeNode = jest.mocked(getNodeEntityFromMaybeNode);
+const mockGetNodeEntity = jest.mocked(getNodeEntity);
 const mockGetFormattedNodeLocation = jest.mocked(getFormattedNodeLocation);
 const mockUseTrashStore = useTrashStore as jest.MockedFunction<typeof useTrashStore> & { getState: jest.Mock };
 
@@ -78,7 +78,7 @@ describe('useTrashNodes', () => {
             iterateTrashedNodes: iterateTrashedPhotoNodes,
         } as any);
 
-        mockGetNodeEntityFromMaybeNode.mockImplementation((trashNode: any) => ({
+        mockGetNodeEntity.mockImplementation((trashNode: any) => ({
             node: trashNode.node,
             errors: new Map(),
         }));

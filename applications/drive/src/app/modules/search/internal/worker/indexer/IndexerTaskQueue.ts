@@ -1,6 +1,6 @@
 import { RateLimitedError as SdkRateLimitedError } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
-import { getNodeEntity } from '../../../../../utils/sdk/getNodeEntity';
 import type { MainThreadBridge } from '../../mainThread/MainThreadBridge';
 import { Logger } from '../../shared/Logger';
 import type { SearchDB } from '../../shared/SearchDB';

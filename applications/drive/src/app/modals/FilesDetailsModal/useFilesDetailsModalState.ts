@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 import type { ModalStateProps } from '@proton/components';
 import { getDrive } from '@proton/drive/index';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import useLoading from '@proton/hooks/useLoading';
 
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getNodeStorageSize } from '../../utils/sdk/getNodeStorageSize';
 
 export type UseFilesDetailsModalProps = ModalStateProps & {

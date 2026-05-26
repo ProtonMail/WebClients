@@ -1,8 +1,8 @@
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { getNodeEffectiveRole } from '@proton/drive/internal/sdkUtils/getNodeEffectiveRole';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { uploadManager } from '@proton/drive/modules/upload';
 
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { useTransferManagerStore } from './transferManager.store';
 
 export const subscribeToUploadEvents = (): (() => void) => {
