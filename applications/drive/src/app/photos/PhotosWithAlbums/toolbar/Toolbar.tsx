@@ -1,6 +1,6 @@
 import type { ModalStateReturnObj } from '@proton/components';
 
-import { AlbumsPageTypes } from '../../../legacy/zustand/photos/layout.store';
+import { AlbumsPageTypes } from '../../layout.store';
 import type { PhotoItem } from '../../usePhotos.store';
 import { PhotosAddAlbumPhotosToolbar } from './PhotosAddAlbumPhotosToolbar';
 import { PhotosWithAlbumsToolbar } from './PhotosWithAlbumsToolbar';

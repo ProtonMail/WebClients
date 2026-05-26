@@ -1,6 +1,6 @@
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useFreeUploadStore } from '../../../legacy/zustand/freeUpload/freeUpload.store';
+import { useFreeUploadStore } from './freeUpload.store';
 
 // Use this hook instead of store directly because of the kill switch
 export function useIsFreeUploadInProgress() {

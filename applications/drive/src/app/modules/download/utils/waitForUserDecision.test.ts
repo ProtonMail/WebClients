@@ -6,7 +6,7 @@ import {
     IssueStatus,
     type SignatureIssue,
     useDownloadManagerStore,
-} from '../../../legacy/zustand/download/downloadManager.store';
+} from '../downloadManager.store';
 import { waitForSignatureIssueDecision, waitForUnsupportedFileDecision } from './waitForUserDecision';
 
 const DECISION_TIMEOUT = 1500;

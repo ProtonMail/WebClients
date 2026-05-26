@@ -4,8 +4,8 @@ import { useConfirmActionModal } from '@proton/components';
 import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import { uploadManager } from '@proton/drive/modules/upload';
 
-import { BaseTransferStatus } from '../../legacy/zustand/download/downloadManager.store';
 import { DownloadManager } from '../../modules/download/DownloadManager';
+import { BaseTransferStatus } from '../../modules/download/downloadManager.store';
 import { useTransferManagerActions } from './useTransferManagerActions';
 import type { TransferManagerEntry } from './useTransferManagerState';
 
@@ -60,9 +60,9 @@ jest.mock('../../modals/SignatureIssueModal', () => {
     };
 });
 
-jest.mock('../../legacy/zustand/download/downloadManager.store', () => {
+jest.mock('../../modules/download/downloadManager.store', () => {
     return {
-        ...jest.requireActual('../../legacy/zustand/download/downloadManager.store'),
+        ...jest.requireActual('../../modules/download/downloadManager.store'),
         useDownloadManagerStore: jest.fn((selector) => {
             return selector({
                 clearQueue: jest.fn(),

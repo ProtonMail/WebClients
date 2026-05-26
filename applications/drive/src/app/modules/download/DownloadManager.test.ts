@@ -59,8 +59,8 @@ jest.mock('../../utils/webStreamsPolyfill', () => ({
     loadCreateReadableStreamWrapper: loadCreateReadableStreamWrapperMock,
 }));
 
-jest.mock('../../legacy/zustand/download/downloadManager.store', () => {
-    const actual = jest.requireActual('../../legacy/zustand/download/downloadManager.store');
+jest.mock('./downloadManager.store', () => {
+    const actual = jest.requireActual('./downloadManager.store');
     const mockState = {
         addDownloadItem: jest.fn(),
         updateDownloadItem: jest.fn(),
@@ -185,13 +185,8 @@ jest.mock('./DownloadDriveClientRegistry', () => {
 });
 
 const { DownloadManager } = jest.requireActual('./DownloadManager');
-const { DownloadStatus, MalwareDownloadResolution, IssueStatus } = jest.requireActual(
-    '../../legacy/zustand/download/downloadManager.store'
-);
-const {
-    useDownloadManagerStore,
-    mockStoreState: storeMockState,
-} = require('../../legacy/zustand/download/downloadManager.store');
+const { DownloadStatus, MalwareDownloadResolution, IssueStatus } = jest.requireActual('./downloadManager.store');
+const { useDownloadManagerStore, mockStoreState: storeMockState } = require('./downloadManager.store');
 const sdkMock = require('@proton/drive') as {
     AbortError: typeof Error;
     SDKEvent: { TransfersPaused: string; TransfersResumed: string };

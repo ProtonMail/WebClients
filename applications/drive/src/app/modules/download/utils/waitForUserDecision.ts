@@ -1,4 +1,4 @@
-import { IssueStatus, useDownloadManagerStore } from '../../../legacy/zustand/download/downloadManager.store';
+import { IssueStatus, useDownloadManagerStore } from '../downloadManager.store';
 import { downloadLogDebug } from './downloadLogger';
 
 const USER_DECISION_CHECK_TIMEOUT = 500;

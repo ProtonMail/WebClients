@@ -1,10 +1,10 @@
 import type { NodeEntity } from '@proton/drive/index';
 import { AbortError, NodeType } from '@proton/drive/index';
 
-import { useDownloadManagerStore } from '../../legacy/zustand/download/downloadManager.store';
 import { createAsyncQueue } from '../../utils/asyncQueue';
 import { getNodeStorageSize } from '../../utils/sdk/getNodeStorageSize';
 import type { DownloadController } from './DownloadManager';
+import { useDownloadManagerStore } from './downloadManager.store';
 import type { ArchiveItem, ArchiveTracker, DownloadQueueTask, DownloadScheduler } from './downloadTypes';
 import type { MalwareDetection } from './malwareDetection/malwareDetection';
 import { createFileDownloadStream } from './utils/createFileDownloadStream';

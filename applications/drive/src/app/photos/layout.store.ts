@@ -2,7 +2,7 @@ import { create } from 'zustand';
 
 import type { ModalStateReturnObj } from '@proton/components';
 
-import type { DeleteAlbumModalProps } from '../../../photos/PhotosModals/DeleteAlbumModal';
+import type { DeleteAlbumModalProps } from './PhotosModals/DeleteAlbumModal';
 
 export enum AlbumsPageTypes {
     GALLERY = 'GALLERY',
