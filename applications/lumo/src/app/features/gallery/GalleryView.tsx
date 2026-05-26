@@ -171,27 +171,29 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
 
     return (
         <LumoLayoutWithDrawer
-            withoutDrawerToggle={true}
-            headerComponent={
-                <div className="gallery-tab-bar">
-                    <div className="gallery-tab-toggle">
-                        <button
-                            className={`gallery-tab-toggle__btn${activeTab === 'inspiration' ? ' gallery-tab-toggle__btn--active' : ''}`}
-                            onClick={() => setActiveTab('inspiration')}
-                            type="button"
-                        >
-                            {c('collider_2025:Tab').t`Create`}
-                        </button>
-                        <button
-                            className={`gallery-tab-toggle__btn${activeTab === 'gallery' ? ' gallery-tab-toggle__btn--active' : ''}`}
-                            onClick={() => setActiveTab('gallery')}
-                            type="button"
-                        >
-                            {c('collider_2025:Tab').t`Gallery`}
-                        </button>
+            drawer={{ disabled: true }}
+            header={{
+                component: (
+                    <div className="gallery-tab-bar">
+                        <div className="gallery-tab-toggle">
+                            <button
+                                className={`gallery-tab-toggle__btn${activeTab === 'inspiration' ? ' gallery-tab-toggle__btn--active' : ''}`}
+                                onClick={() => setActiveTab('inspiration')}
+                                type="button"
+                            >
+                                {c('collider_2025:Tab').t`Create`}
+                            </button>
+                            <button
+                                className={`gallery-tab-toggle__btn${activeTab === 'gallery' ? ' gallery-tab-toggle__btn--active' : ''}`}
+                                onClick={() => setActiveTab('gallery')}
+                                type="button"
+                            >
+                                {c('collider_2025:Tab').t`Gallery`}
+                            </button>
+                        </div>
                     </div>
-                </div>
-            }
+                ),
+            }}
         >
             <div className="gallery-view">
                 <input
