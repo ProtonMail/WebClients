@@ -2383,6 +2383,12 @@
       "Organization key is not decrypted": [
         "Ключ арганізацыі не расшыфраваны"
       ],
+      "Organization key must be activated to create invited users": [
+        "Ключ арганізацыі павінен быць актываваны, каб ствараць запрошаных карыстальнікаў"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Ключ арганізацыі павінен быць актываваны, каб ствараць непрыватных карыстальнікаў"
+      ],
       "Passwords do not match": [
         "Паролі не супадаюць"
       ],
@@ -3314,6 +3320,9 @@
         "${ n } месяцы",
         "${ n } месяцаў",
         "${ n } месяцаў"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "Сімвалаў: ${ value.length }/${ maxLength }"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Бяспечна атрымлівайце доступ да ${ PASS_APP_NAME } з тэрмінала. Ідэальна пасуе для напісання сцэнарыяў, аўтаматызацыі і працоўных працэсаў распрацоўкі."
@@ -6009,6 +6018,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Адміністратары не могуць атрымліваць доступ да даных прыватных карыстальнікаў, а таксама аднаўляць іх паролі."
+      ],
+      "Member activation incomplete": [
+        "Актывацыя ўдзельніка незавершана"
+      ],
+      "Organization key must be activated to request data access": [
+        "Ключ арганізацыі павінен быць актываваны, каб запытаць доступ да даных"
+      ],
+      "The user must have an address to request data access": [
+        "Карыстальнік павінен мець адрас, каб запытаць доступ да даных"
       ]
     },
     "Validation": {

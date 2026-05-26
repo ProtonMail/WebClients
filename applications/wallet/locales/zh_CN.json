@@ -2344,6 +2344,12 @@
       "Organization key is not decrypted": [
         "机构密钥尚未解密"
       ],
+      "Organization key must be activated to create invited users": [
+        "必须激活组织密钥才能创建受邀用户"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "组织密钥必须激活才能创建非私人用户"
+      ],
       "Passwords do not match": [
         "密码不匹配"
       ],
@@ -3230,6 +3236,9 @@
       ],
       "${ n } month": [
         "${ n } 个月"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } 个字符"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "通过终端安全访问 ${ PASS_APP_NAME }，是脚本、自动化和开发工作流程的理想选择"
@@ -5763,6 +5772,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "管理员无法访问私人用户的数据，也无法重置他们的密码。"
+      ],
+      "Member activation incomplete": [
+        "成员激活未完成"
+      ],
+      "Organization key must be activated to request data access": [
+        "必须激活组织密钥才能申请数据访问权限"
+      ],
+      "The user must have an address to request data access": [
+        "用户必须有地址才能申请访问数据"
       ]
     },
     "Validation": {
