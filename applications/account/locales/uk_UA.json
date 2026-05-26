@@ -3918,6 +3918,9 @@
       "Email address is required": [
         "Адреса е-пошти обов'язкова"
       ],
+      "Email is not valid": [
+        "Е-пошта недійсна"
+      ],
       "Empty condition": [
         "Порожня умова"
       ],
@@ -3986,6 +3989,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Неправильний другий пароль. Спробуйте ще раз."
+      ],
+      "Incorrect username": [
+        "Неправильне ім'я користувача"
       ],
       "Intended recipient does not support calendar sharing": [
         "У призначеного отримувача функція поширення календаря не підтримується"
@@ -4077,6 +4083,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Обліковий запис поза ${ BRAND_NAME }"
       ],
+      "Not a valid number": [
+        "Номер недійсний"
+      ],
       "Organization key is not decrypted": [
         "Ключ організації не розшифровано"
       ],
@@ -4088,6 +4097,9 @@
       ],
       "Password is required": [
         "Пароль обов'язковий"
+      ],
+      "Passwords do not match": [
+        "Паролі відрізняються"
       ],
       "Payment process canceled": [
         "Обробку платежу скасовано"
@@ -4154,9 +4166,6 @@
       ],
       "Please try again in a few moments.": [
         "Будь ласка, спробуйте знову за хвильку."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Для підтримки декількох користувачів, перейдіть на тарифний план для бізнесу"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Для керування декількома користувачами, перейдіть на тарифний план для бізнесу."
@@ -4242,6 +4251,9 @@
       "The amount due has changed. Please try again.": [
         "Сума до оплати змінилася. Спробуйте ще раз."
       ],
+      "The email addresses do not match": [
+        "Електронні адреси відрізняються"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Зображення завелике. Максимальний розмір – ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -4278,8 +4290,14 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "У вашому зовнішньому обліковому записі надто багато тек. Будь ласка, налаштуйте імпорт для видалення деяких тек."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "У цьому полі перевищено обмеження ${ maximumLength } символів."
+      ],
       "This field is required": [
         "Це поле є обов'язковим"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "В цьому полі повинно бути не менше ${ minimumLength } символів."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Назва теки недоступна. Оберіть іншу назву."
@@ -4305,6 +4323,9 @@
       "Try again later": [
         "Повторіть спробу пізніше"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Спробуйте використовувати лише літери, цифри та символи _.-"
+      ],
       "Unable to upload file": [
         "Не вдається вивантажити файл"
       ],
@@ -4322,6 +4343,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Вивантажені файли не є чинними приватними ключами. Перевірте його та повторіть спробу."
+      ],
+      "Username must begin with a letter or digit": [
+        "Ім'я користувача повинно починатися з літери або цифри"
+      ],
+      "Username must end with a letter or digit": [
+        "Ім'я користувача повинно закінчуватися літерою або цифрою"
       ],
       "Validation error": [
         "Помилка перевірки"
@@ -6262,12 +6289,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Додайте назву і логотип, щоб створити особливе враження для вашої організації."
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Додавання ${ addedServerCount } шлюзового сервера",
-        "Додавання ${ addedServerCount } шлюзових серверів",
-        "Додавання ${ addedServerCount } шлюзових серверів",
-        "Додавання ${ addedServerCount } шлюзових серверів"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Додавання зовнішньої адреси електронної пошти вимкне наскрізне шифрування для всіх повідомлень електронної пошти в цій групі. Ви хочете продовжити?"
@@ -17619,6 +17640,20 @@
       ],
       "Writing assistant": [
         "Помічник з написання"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символ",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символи",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Спробуйте коротше ім'я користувача (до ${ n } символу)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)"
       ]
     },
     "Video control": {
