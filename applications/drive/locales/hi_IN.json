@@ -467,6 +467,9 @@
       "Make a copy": [
         "एक प्रति बनाएं"
       ],
+      "Manage addresses": [
+        "पते प्रबंधित करें"
+      ],
       "Manage folders": [
         "फोल्डर संभाले"
       ],
@@ -2381,9 +2384,6 @@
       "External invitations are temporarily disabled. Please try again later": [
         "बाहरी आमंत्रण फिलहाल अक्षम हैं। कृपया बाद में फिर से कोशिश करें"
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "फाइल \"${ item.name }\" \"${ error }\" त्रुटि के कारण अपलोड नहीं किया जा सकता है"
-      ],
       "File \"${ name }\" is already downloading": [
         "फाइल \"${ name }\" पहले से डाउनलोड हो रहा है"
       ],
@@ -2486,6 +2486,12 @@
       "Organization key is not decrypted": [
         "संगठन कुंजी को डिक्रिप्ट नहीं किया गया है"
       ],
+      "Organization key must be activated to create invited users": [
+        "संगठन कुंजी को सक्रिय किया जाना चाहिए ताकि निमंत्रित उपयोगकर्ता बनाए जा सकें"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "संगठन कुंजी को सक्रिय करना आवश्यक है ताकि गैर-निजी उपयोगकर्ता बनाए जा सकें"
+      ],
       "Password is required": [
         "पासवर्ड चाहिए"
       ],
@@ -2550,9 +2556,6 @@
       ],
       "Some contacts could not be deleted": [
         "कुछ संपर्क हटाए नहीं जा सके"
-      ],
-      "Some files were ignored because they are not supported in Photos": [
-        "कुछ फ़ाइलें असमर्थित हैं इसलिए वे तस्वीरें में नहीं शामिल किए गए"
       ],
       "Some groups could not be deleted": [
         "कुछ समूहों को हटाया नहीं जा सका"
@@ -2680,9 +2683,6 @@
       ],
       "You must set a name": [
         "आपको एक नाम सेट करना होगा"
-      ],
-      "Your browser does not support uploading folders": [
-        "आपका ब्राउज़र फोल्डर अपलोड नहीं कर सकता है"
       ],
       "Your import will not be processed.": [
         "आपका आयात संसाधित नहीं किया जाएगा।"
@@ -4537,9 +4537,6 @@
       ],
       "Unknown date": [
         "अज्ञात तारीख"
-      ],
-      "Unknown error": [
-        "अनजान गलती"
       ],
       "Unlock drive to recover files": [
         "फ़ाइलें पुनर्प्राप्त करने के लिए ड्राइव को अनलॉक करें"
@@ -6618,9 +6615,6 @@
       ],
       "Failed to convert external invitation": [
         "बाहरी आमंत्रण को रूपांतरित करने में असफल"
-      ],
-      "Failed to download files: ${ err }": [
-        "फाइलें डाउनलोड करने में असफल: ${ err }"
       ],
       "Failed to move, please try again": [
         "ले जाने में असफल, कृपया वापिस कोशिश करें"
@@ -8817,6 +8811,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "एडमिन निजी उपयोगकर्ताओं के डाटा तक पहुंच नहीं सकते और उनके पासवर्ड रीसेट नहीं कर सकते।"
+      ],
+      "Member activation incomplete": [
+        "सदस्य सक्रियण अधूरा है"
+      ],
+      "Organization key must be activated to request data access": [
+        "डाटा एक्सेस का अनुरोध करने के लिए संगठन कुंजी को सक्रिय करना आवश्यक है"
+      ],
+      "The user must have an address to request data access": [
+        "डाटा एक्सेस का अनुरोध करने के लिए उपयोगकर्ता के पास एक पता होना चाहिए"
       ]
     },
     "Validation": {

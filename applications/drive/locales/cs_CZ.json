@@ -639,6 +639,9 @@
       "Make a copy": [
         "Vytvořit kopii"
       ],
+      "Manage addresses": [
+        "Spravovat adresy"
+      ],
       "Manage advanced account protections": [
         "Spravovat pokročilé ochrany účtu"
       ],
@@ -2968,6 +2971,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Snadno synchronizujte soubory do cloudu z počítače a přistupujte k nim z mobilního zařízení."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-maily odeslané na ${ connectedAddressText } se nyní budou zobrazovat v ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Podporujte používání dvoufázového ověření ve vaší organizaci pro zvýšení bezpečnosti."
       ],
@@ -3057,6 +3063,9 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Kontakty, které nechcete sloučit ani zachovat, označte pro smazání. Ke smazání dojde po kliknutí na tlačítko pro sloučení"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Nyní můžete odesílat e-maily z ${ BRAND_NAME } pomocí této adresy."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Váš účet a metody obnovy dat jsou nastaveny a 2FA je povoleno."
@@ -3539,9 +3548,6 @@
       "Failed to update public share node": [
         "Nepodařilo se aktualizovat veřejný uzel sdílení"
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "Soubor „${ item.name }“ nelze nahrát kvůli chybě „${ error }“"
-      ],
       "File \"${ name }\" is already downloading": [
         "Soubor \"${ name }\" se již stahuje"
       ],
@@ -3674,6 +3680,12 @@
       "Organization key is not decrypted": [
         "Klíč organizace není dešifrován"
       ],
+      "Organization key must be activated to create invited users": [
+        "Pro vytvoření pozvaných uživatelů musí být aktivován klíč organizace"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Pro vytvoření nesoukromých uživatelů musí být aktivován klíč organizace"
+      ],
       "Password is required": [
         "Heslo je povinná položka"
       ],
@@ -3772,9 +3784,6 @@
       ],
       "Some contacts could not be deleted": [
         "Některé kontakty nelze smazat"
-      ],
-      "Some files were ignored because they are not supported in Photos": [
-        "Některé soubory byly ignorovány, protože nejsou podporovány ve Fotkách"
       ],
       "Some groups could not be deleted": [
         "Některé skupiny není možné odstranit"
@@ -3988,9 +3997,6 @@
       ],
       "You must set a name": [
         "Musíte nastavit jméno"
-      ],
-      "Your browser does not support uploading folders": [
-        "Váš prohlížeč nepodporuje nahrávání složek"
       ],
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
@@ -6658,9 +6664,6 @@
       ],
       "Unknown date": [
         "Neznámé datum"
-      ],
-      "Unknown error": [
-        "Neznámá chyba"
       ],
       "Unlock drive to recover files": [
         "Odemknutí disku pro obnovení souborů"
@@ -9680,9 +9683,6 @@
       "Failed to convert external invitation": [
         "Nepodařilo se převést externí pozvánku"
       ],
-      "Failed to download files: ${ err }": [
-        "Nepodařilo se stáhnout soubory: ${ err }"
-      ],
       "Failed to move, please try again": [
         "Přesun selhal, zkuste to prosím znovu"
       ],
@@ -9756,12 +9756,6 @@
         "Vybrané položky se nepodařilo odebrat ze seznamu"
       ],
       "Selected item was successfully removed from your list": [
-        "Vybraná položka byla úspěšně odebrána z vašeho seznamu",
-        "Vybrané položky byly úspěšně odebrány z vašeho seznamu",
-        "Vybrané položky byly úspěšně odebrány z vašeho seznamu",
-        "Vybrané položky byly úspěšně odebrány z vašeho seznamu"
-      ],
-      "Selected items were successfully removed from your list": [
         "Vybraná položka byla úspěšně odebrána z vašeho seznamu",
         "Vybrané položky byly úspěšně odebrány z vašeho seznamu",
         "Vybrané položky byly úspěšně odebrány z vašeho seznamu",
@@ -13493,6 +13487,9 @@
       "When is it most important to use a VPN?": [
         "Kdy je nejdůležitější používat VPN?"
       ],
+      "You are all set": [
+        "Vše je nastaveno"
+      ],
       "You can now create unlimited folders and labels": [
         "Nyní můžete vytvořit neomezený počet složek a štítků"
       ],
@@ -13657,6 +13654,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Správci nemají přístup k datům soukromých uživatelů a nemohou resetovat jejich heslo."
+      ],
+      "Member activation incomplete": [
+        "Nekompletní aktivace člena"
+      ],
+      "Organization key must be activated to request data access": [
+        "Pro žádost o přístup k datům musíte aktivovat klíč organizace"
+      ],
+      "The user must have an address to request data access": [
+        "Uživatel musí mít adresu, aby mohlo být požádáno o přístup k datům"
       ]
     },
     "Upsell": {

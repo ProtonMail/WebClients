@@ -255,6 +255,9 @@
       "Continue transfers": [
         "Continuer les transferts"
       ],
+      "Continue with Free": [
+        "Continuer avec Free"
+      ],
       "Continue with Google": [
         "Continuer avec Google"
       ],
@@ -634,6 +637,9 @@
       ],
       "Make a copy": [
         "Faire une copie"
+      ],
+      "Manage addresses": [
+        "Gérer les adresses"
       ],
       "Manage advanced account protections": [
         "Gérer les protections avancées du compte"
@@ -2915,6 +2921,9 @@
       "Automatically forward incoming email to another email address.": [
         "Transférez automatiquement les messages entrants vers une autre adresse e-mail."
       ],
+      "Available storage: ${ storageText }": [
+        "Espace de stockage disponible : ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configurez d'abord cette option pour activer votre organisation et personnaliser votre adresse e-mail."
       ],
@@ -2936,11 +2945,17 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synchronisez facilement les fichiers sur le cloud depuis votre ordinateur et accédez-y depuis votre appareil mobile."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Les e-mails envoyés à ${ connectedAddressText } apparaîtront désormais dans ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Encouragez l'utilisation de l'authentification à deux facteurs dans votre organisation pour une sécurité accrue."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Chiffrement et importation des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Assez d'espace pour stocker des années d'e-mails, de pièces jointes et bien plus encore."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Assurez un accès sécurisé aux données de l’organisation, même si votre équipe est à distance ou utilise le wifi public."
@@ -3002,6 +3017,9 @@
       "To start, give your organization a name.": [
         "Pour commencer, donnez un nom à votre organisation."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Bénéficiez de 15 Go de stockage pour seulement ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Passez à l'abonnement ${ planName } pour continuer à partager des fichiers avec droits d'écriture."
       ],
@@ -3013,6 +3031,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Nous ne pouvons plus accéder à ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Nous suspendrons les importations lorsque le taux de remplissage atteindra 80 % afin de réserver de l'espace pour les nouveaux messages."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Nous avons commencé à importer vos messages depuis Gmail. Nous vous préviendrons lorsque l'opération sera terminée."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Nous regrettons de vous voir partir. Si vous avez un moment, nous aimerions beaucoup savoir pourquoi vous souhaitez résilier votre abonnement. Vos commentaires nous aident à améliorer ${ BRAND_NAME } pour le bénéfice de tous."
@@ -3026,11 +3050,20 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Vous pouvez marquer pour suppression les contacts que vous ne voulez ni fusionner ni conserver. Leur suppression n'aura lieu qu'après avoir cliqué sur le bouton de fusion."
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Vous pouvez désormais envoyer des e-mails depuis ${ BRAND_NAME } en utilisant cette adresse."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Vos méthodes de récupération de compte et de données sont définies et l'authentification A2F est activée."
       ],
       "Your account and data recovery methods are set.": [
         "Vos méthodes de récupération de compte et de données sont définies."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Votre compte ${ MAIL_APP_NAME } gratuit dispose d'un espace de stockage limité, nous n'importerons donc que ${ newUserStorageText } de vos messages Gmail les plus récents."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Votre compte gratuit sur ${ MAIL_APP_NAME } dispose d'un espace de stockage limité, nous n'importerons donc que vos e-mails Gmail les plus récents."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
@@ -3501,9 +3534,6 @@
       "Failed to update public share node": [
         "La mise à jour du nœud de partage public n'a pas abouti."
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "Le fichier « ${ item.name } » ne peut pas être chargé en raison de l'erreur « ${ error } »."
-      ],
       "File \"${ name }\" is already downloading": [
         "Le fichier « ${ name } » est déjà en cours de téléchargement."
       ],
@@ -3633,6 +3663,12 @@
       "Organization key is not decrypted": [
         "La clé de l'organisation n'est pas déchiffrée."
       ],
+      "Organization key must be activated to create invited users": [
+        "La clé de l'organisation doit être activée pour créer des utilisateurs invités."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "La clé de l'organisation doit être activée pour créer des utilisateurs non privés."
+      ],
       "Password is required": [
         "Le mot de passe est nécessaire."
       ],
@@ -3727,9 +3763,6 @@
       ],
       "Some contacts could not be deleted": [
         "Certains contacts n’ont pas pu être supprimés."
-      ],
-      "Some files were ignored because they are not supported in Photos": [
-        "Certains fichiers n'ont pas été pris en compte parce qu'ils ne sont pas compatibles avec Photos."
       ],
       "Some groups could not be deleted": [
         "Certains groupes n'ont pas pu être supprimés."
@@ -3941,9 +3974,6 @@
       ],
       "You must set a name": [
         "Vous devez définir un nom."
-      ],
-      "Your browser does not support uploading folders": [
-        "Votre navigateur ne prend pas en charge le chargement de dossiers."
       ],
       "Your import will not be processed.": [
         "Votre importation ne sera pas traitée."
@@ -4339,11 +4369,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "Plus de 10 fonctionnalités premium"
+      ],
+      "Custom email domain": [
+        "Domaine de messagerie personnalisé"
+      ],
+      "Email addresses": [
+        "Adresses e-mail"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Stockage cloud chiffré pour vos fichiers, photos et documents"
       ],
       "More premium features": [
         " Fonctionnalités premium en plus"
+      ],
+      "Storage": [
+        "Espace de stockage"
       ],
       "Unlimited hide-my-email aliases": [
         "Nombre illimité d'alias « hide-my-email »"
@@ -5680,6 +5722,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "À l'étape suivante, vous pourrez effectuer un versement à l'aide d'une adresse Bitcoin."
       ],
+      "Included": [
+        "Inclus"
+      ],
       "Index is empty.": [
         "L'index est vide."
       ],
@@ -6540,6 +6585,9 @@
       "Trash is empty": [
         "Le dossier Corbeille est vide."
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Faire confiance à la clé « ${ activeSignerText } » pour vérifier les nouveaux messages provenant de ce contact."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Testez les nouveaux produits, mises à jour et fonctionnalités de ${ BRAND_NAME } avant qu'ils ne soient accessibles au public. Cela rechargera l'application."
       ],
@@ -6554,9 +6602,6 @@
       ],
       "Unknown date": [
         "Date inconnue"
-      ],
-      "Unknown error": [
-        "Erreur inconnue"
       ],
       "Unlock drive to recover files": [
         "Déverrouillez le disque pour récupérer des fichiers"
@@ -6576,8 +6621,14 @@
       "Updating drive search...": [
         "Actualisation de la recherche dans Drive en cours"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Changer d'abonnement à tout moment pour transférer le reste"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Changer d'abonnement ou libérer de l'espace à tout moment pour transférer le reste"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Passez à la version supérieure pour conserver vos avantages de ${ planTitle }."
@@ -7030,11 +7081,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Signataire actif"
+      ],
       "Compromised": [
         "Compromise"
       ],
       "Expired": [
         "Expirée"
+      ],
+      "Fallback": [
+        "Solution de secours"
       ],
       "KOO": [
         "KOO"
@@ -7079,6 +7136,9 @@
       "${ nbYear } year": [
         "${ nbYear } an",
         "${ nbYear } ans"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caractères"
       ],
       "(Expired)": [
         "(expiré)"
@@ -9573,9 +9633,6 @@
       "Failed to convert external invitation": [
         "L'invitation externe n'a pas pu être convertie."
       ],
-      "Failed to download files: ${ err }": [
-        "Les fichiers n'ont pas pu être téléchargés : ${ err }"
-      ],
       "Failed to move, please try again": [
         "Le déplacement n'a pas abouti, réessayez."
       ],
@@ -9641,10 +9698,6 @@
       "Selected item was successfully removed from your list": [
         "L'élément sélectionné a été retiré de votre liste",
         "Les éléments sélectionnés ont été retirés de votre liste"
-      ],
-      "Selected items were successfully removed from your list": [
-        "La suppression des éléments sélectionnés de votre liste ont été prises en charge",
-        "La suppression des éléments sélectionnés de votre liste ont été prises en charge"
       ],
       "Setting updated. Editors can change permissions and share.": [
         "Les paramètres ont été mis à jour. Les éditeurs peuvent modifier les autorisations et partager."
@@ -10489,8 +10542,17 @@
       "External key automatically fetched via WKD.": [
         "La clé externe est récupérée automatiquement via WKD."
       ],
+      "This contact currently signs messages with this key": [
+        "Ce contact signe actuellement les messages avec cette clé."
+      ],
+      "This key is used for message verification": [
+        "Cette clé est utilisée pour la vérification des messages."
+      ],
       "This key is used to encrypt messages to this contact": [
         "Cette clé permet de chiffrer les messages de ce contact."
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Cette clé permet de chiffrer les messages de ce contact sur les applications plus anciennes."
       ],
       "We recommend that you \"untrust\" this key.": [
         "Nous vous recommandons de ne plus faire confiance à cette clé."
@@ -12446,6 +12508,9 @@
       "Contacts": [
         "Contacts"
       ],
+      "Continue with free storage": [
+        "Continuer avec l'espace de stockage gratuit"
+      ],
       "Continue with partial import?": [
         "Continuer l'importation partielle ?"
       ],
@@ -12680,6 +12745,9 @@
       ],
       "Get more from your VPN": [
         "Tirez le meilleur parti de votre VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Obtenez plus d'espace de stockage avec ${ MAIL_APP_NAME } Plus"
       ],
       "Get started with 10 minutes of free uploads, on the house.": [
         "Bénéficiez de 10 minutes d'importations gratuites, offertes."
@@ -13250,6 +13318,9 @@
       "When is it most important to use a VPN?": [
         "Quand est-il le plus important d’utiliser un VPN ?"
       ],
+      "You are all set": [
+        "Vous êtes paré"
+      ],
       "You can now create unlimited folders and labels": [
         "Vous pouvez maintenant créer un nombre illimité de labels et de dossiers."
       ],
@@ -13414,6 +13485,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés et ne peuvent pas réinitialiser leur mot de passe."
+      ],
+      "Member activation incomplete": [
+        "L'activation du membre est incomplète."
+      ],
+      "Organization key must be activated to request data access": [
+        "La clé de l'organisation doit être activée pour demander l'accès aux données."
+      ],
+      "The user must have an address to request data access": [
+        "L'utilisateur doit disposer d'une adresse pour demander l'accès aux données."
       ]
     },
     "Upsell": {

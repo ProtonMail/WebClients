@@ -258,6 +258,9 @@
       "Continue transfers": [
         "Continuare transferuri"
       ],
+      "Continue with Free": [
+        "Continuare cu Free"
+      ],
       "Continue with Google": [
         "Continuare cu Google"
       ],
@@ -639,6 +642,9 @@
       ],
       "Make a copy": [
         "Creare copie"
+      ],
+      "Manage addresses": [
+        "Gestionare adrese"
       ],
       "Manage advanced account protections": [
         "Gestionați protecții avansate cont"
@@ -2937,6 +2943,9 @@
       "Automatically forward incoming email to another email address.": [
         "Transferați automat mesajele primite către o altă adresă de e-mail."
       ],
+      "Available storage: ${ storageText }": [
+        "Spațiu disponibil: ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configurați mai întâi aceasta pentru a vă activa organizația și a vă personaliza adresa de e-mail."
       ],
@@ -2958,11 +2967,17 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronizați ușor fișierele în cloud de pe desktop și accesați-le de pe dispozitivul mobil."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Mesajele trimise către ${ connectedAddressText } vor apărea acum în ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Încurajați utilizarea autentificării cu doi factori în organizație pentru un plus de securitate."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Se criptează și se importă contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Spațiu suficient pentru ani mulți de mesaje, atașamente și altele."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Asigurați accesarea securizată la datele organizației, chiar dacă echipa este la distanță sau utilizează o rețea Wi-Fi publică."
@@ -3024,6 +3039,9 @@
       "To start, give your organization a name.": [
         "Pentru a începe, dați un nume organizației."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Deblocați 15 GiB de spațiu pentru doar ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Treceți la ${ planName } pentru a putea continua să partajați fișiere cu drept de editare."
       ],
@@ -3035,6 +3053,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Nu mai putem accesa ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Importarea se va opri la 80% din spațiul de stocare pentru a rezerva spațiu pentru mesajele noi."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "S-a început importarea mesajelor de pe Gmail. Vă vom anunța când va fi gata."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ne pare rău să vă vedem plecând. Dacă aveți un moment, am aprecia foarte mult să aflăm de ce doriți să anulați. Feedback-ul dvs. ne ajută să facem ${ BRAND_NAME } mai bun pentru toată lumea."
@@ -3048,11 +3072,20 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Puteți marca pentru ștergere contactele pe care nu doriți nici să le îmbinați, nici să le păstrați. Ștergerea va fi efectuată doar după apăsarea butonului de îmbinare."
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Puteți trimite acum mesaje de pe ${ BRAND_NAME } folosind această adresă."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Metodele de recuperare a contului și datelor sunt setate și A2F este activată."
       ],
       "Your account and data recovery methods are set.": [
         "Metodele de recuperare a contului și datelor sunt setate."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Contul gratuit ${ MAIL_APP_NAME } are un spațiu de stocare limitat, așa că se vor importa doar ${ newUserStorageText } dintre cele mai recente mesaje din Gmail."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Contul gratuit ${ MAIL_APP_NAME } are un spațiu de stocare limitat, așa că se vor importa doar cele mai recente mesaje din Gmail."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
@@ -3526,9 +3559,6 @@
       "Failed to update public share node": [
         "Nu s-a putut actualiza nodul de partajare publică."
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "Fișierul „${ item.name }” nu poate fi încărcat din cauza erorii „${ error }”."
-      ],
       "File \"${ name }\" is already downloading": [
         "Fișierul „${ name }” se descarcă deja"
       ],
@@ -3661,6 +3691,12 @@
       "Organization key is not decrypted": [
         "Cheia organizației nu este decriptată."
       ],
+      "Organization key must be activated to create invited users": [
+        "Cheia organizației trebuie activată pentru a crea utilizatori invitați."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Cheia organizației trebuie activată pentru a crea utilizatori neprivați."
+      ],
       "Password is required": [
         "Parola este obligatorie"
       ],
@@ -3757,9 +3793,6 @@
       ],
       "Some contacts could not be deleted": [
         "Unele contacte nu s-au putut șterge."
-      ],
-      "Some files were ignored because they are not supported in Photos": [
-        "Unele fișiere au fost ignorate deoarece nu sunt suportate în fotografii."
       ],
       "Some groups could not be deleted": [
         "Unele grupuri nu s-au putut șterge."
@@ -3972,9 +4005,6 @@
       ],
       "You must set a name": [
         "Trebuie specificat un nume"
-      ],
-      "Your browser does not support uploading folders": [
-        "Navigatorul curent nu acceptă încărcarea de foldere."
       ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
@@ -4373,11 +4403,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "Peste 10 funcții premium"
+      ],
+      "Custom email domain": [
+        "Domeniu personal de e-mail"
+      ],
+      "Email addresses": [
+        "Adrese de e-mail"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Stocare în cloud criptată pentru fișiere, fotografii și documente."
       ],
       "More premium features": [
         "Mai multe funcții premium"
+      ],
+      "Storage": [
+        "Spațiu de stocare"
       ],
       "Unlimited hide-my-email aliases": [
         "Aliasuri hide-my-email nelimitate"
@@ -5763,6 +5805,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "În pasul următor, veți putea trimite o depunere folosind o adresă de Bitcoin."
       ],
+      "Included": [
+        "Inclus"
+      ],
       "Index is empty.": [
         "Indexul este gol."
       ],
@@ -6631,6 +6676,9 @@
       "Trash is empty": [
         "Coșul de gunoi este gol"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Cheia „${ activeSignerText }” este aprobată pentru a verifica mesajele noi de la acest contact."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Încercați noile funcții, actualizări și produse ${ BRAND_NAME } înainte ca acestea să fie lansate publicului. Aceasta va reporni aplicația."
       ],
@@ -6645,9 +6693,6 @@
       ],
       "Unknown date": [
         "Dată necunoscută"
-      ],
-      "Unknown error": [
-        "Eroare necunoscută."
       ],
       "Unlock drive to recover files": [
         "Deblocare unitate pentru recuperarea fișierelor"
@@ -6667,8 +6712,14 @@
       "Updating drive search...": [
         "Actualizare căutare în unitate..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Modificați oricând abonamentul pentru a obține și restul"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Modificați abonamentul sau goliți spațiul de stocare pentru a le aduce și pe restul."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Îmbunătățiți contul pentru a vă menține beneficiile din ${ planTitle }."
@@ -7132,11 +7183,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Semnatar activ"
+      ],
       "Compromised": [
         "Compromisă"
       ],
       "Expired": [
         "Expirată"
+      ],
+      "Fallback": [
+        "Alternativă"
       ],
       "KOO": [
         "KOO"
@@ -7184,6 +7241,9 @@
         "${ nbYear } an",
         "${ nbYear } ani",
         "${ nbYear } de ani"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } de caractere"
       ],
       "(Expired)": [
         "(Expirat)"
@@ -9679,9 +9739,6 @@
       "Failed to convert external invitation": [
         "Nu s-a putut converti invitația externă."
       ],
-      "Failed to download files: ${ err }": [
-        "Nu s-a reușit descărcarea fișierelor: ${ err }"
-      ],
       "Failed to move, please try again": [
         "Mutarea a eșuat. Reîncercați."
       ],
@@ -9750,11 +9807,6 @@
         "Articolele selectate nu au fost eliminate din listă."
       ],
       "Selected item was successfully removed from your list": [
-        "Articolul selectat a fost eliminat din listă.",
-        "Articolele selectate au fost eliminate din listă.",
-        "Articolele selectate au fost eliminate din listă."
-      ],
-      "Selected items were successfully removed from your list": [
         "Articolul selectat a fost eliminat din listă.",
         "Articolele selectate au fost eliminate din listă.",
         "Articolele selectate au fost eliminate din listă."
@@ -10609,8 +10661,17 @@
       "External key automatically fetched via WKD.": [
         "Cheia externă este preluată automat via WKD."
       ],
+      "This contact currently signs messages with this key": [
+        "Acest contact semnează în prezent mesajele cu această cheie."
+      ],
+      "This key is used for message verification": [
+        "Această cheie este utilizată pentru verificarea mesajelor."
+      ],
       "This key is used to encrypt messages to this contact": [
         "Cheia este folosită pentru a cripta mesaje pentru acest contact."
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Această cheie este folosită pentru a cripta mesajele către acest contact în aplicațiile mai vechi."
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vă recomandăm să „nu aprobați” această cheie."
@@ -12614,6 +12675,9 @@
       "Contacts": [
         "Contacte"
       ],
+      "Continue with free storage": [
+        "Continuare cu spațiu gratuit"
+      ],
       "Continue with partial import?": [
         "Continuați cu importarea parțială?"
       ],
@@ -12852,6 +12916,9 @@
       ],
       "Get more from your VPN": [
         "Obțineți mai mult de la VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Obțineți mai mult spațiu cu ${ MAIL_APP_NAME } Plus"
       ],
       "Get started with 10 minutes of free uploads, on the house.": [
         "Începeți cu 10 minute de încărcări gratuite, din partea noastră."
@@ -13424,6 +13491,9 @@
       "When is it most important to use a VPN?": [
         "Când este cel mai important să folosiți un VPN?"
       ],
+      "You are all set": [
+        "Totul este pregătit"
+      ],
       "You can now create unlimited folders and labels": [
         "Acum puteți crea foldere și fișiere nelimitate"
       ],
@@ -13588,6 +13658,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorii nu pot accesa datele utilizatorilor privați și nu le pot reseta parola."
+      ],
+      "Member activation incomplete": [
+        "Activarea membrului nu este completă"
+      ],
+      "Organization key must be activated to request data access": [
+        "Cheia organizației trebuie activată pentru a solicita accesul la date."
+      ],
+      "The user must have an address to request data access": [
+        "Utilizatorul trebuie să aibă o adresă pentru a solicita acces la date."
       ]
     },
     "Upsell": {

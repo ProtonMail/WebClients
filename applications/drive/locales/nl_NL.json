@@ -632,6 +632,9 @@
       "Make a copy": [
         "Een kopie maken"
       ],
+      "Manage addresses": [
+        "Adressen beheren"
+      ],
       "Manage advanced account protections": [
         "Geavanceerde accountbeveiligingen beheren"
       ],
@@ -2933,6 +2936,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synchroniseer eenvoudig bestanden naar de cloud vanaf uw computer en open ze vanaf uw mobiele apparaat."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-mails die naar ${ connectedAddressText } worden verzonden, verschijnen nu in ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Moedig het gebruik van tweestapsverificatie in uw organisatie aan voor extra beveiliging."
       ],
@@ -3022,6 +3028,9 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "U kunt contactpersonen markeren die u niet wilt samenvoegen of behouden. Ze worden pas verwijderd na het klikken op 'samenvoegen'"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "U kunt nu e-mails versturen vanuit ${ BRAND_NAME } via dit adres."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Uw account en dataherstelmethoden zijn ingesteld en 2FA is ingeschakeld."
@@ -3498,9 +3507,6 @@
       "Failed to update public share node": [
         "Bijwerken van openbaar gedeeld knooppunt is mislukt"
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "Bestand \"${ item.name }\" kan niet worden geüpload vanwege \"${ error }\" fout"
-      ],
       "File \"${ name }\" is already downloading": [
         "Bestand \"${ name }\" wordt reeds gedownload"
       ],
@@ -3630,6 +3636,12 @@
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
       ],
+      "Organization key must be activated to create invited users": [
+        "Organisatiesleutel moet geactiveerd zijn om uitgenodigde gebruikers aan te maken."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisatiesleutel moet worden geactiveerd om niet-privé gebruikers te maken"
+      ],
       "Password is required": [
         "Wachtwoord is vereist"
       ],
@@ -3724,9 +3736,6 @@
       ],
       "Some contacts could not be deleted": [
         "Enkele contacten konden niet verwijderd worden"
-      ],
-      "Some files were ignored because they are not supported in Photos": [
-        "Sommige bestanden werden genegeerd omdat ze niet ondersteund worden in Photos"
       ],
       "Some groups could not be deleted": [
         "Sommige groepen konden niet worden verwijderd"
@@ -3938,9 +3947,6 @@
       ],
       "You must set a name": [
         "U moet een naam instellen"
-      ],
-      "Your browser does not support uploading folders": [
-        "Uw browser heeft geen ondersteuning voor het uploaden van mappen"
       ],
       "Your import will not be processed.": [
         "Uw import zal niet worden verwerkt."
@@ -6543,9 +6549,6 @@
       ],
       "Unknown date": [
         "Onbekende datum"
-      ],
-      "Unknown error": [
-        "Onbekende fout"
       ],
       "Unlock drive to recover files": [
         "Ontgrendel schijf om bestanden te herstellen"
@@ -9473,9 +9476,6 @@
       "Failed to convert external invitation": [
         "Omzetten van externe uitnodiging mislukt"
       ],
-      "Failed to download files: ${ err }": [
-        "Bestanden downloaden mislukt: ${ err }"
-      ],
       "Failed to move, please try again": [
         "Verplaatsen mislukt, probeer het opnieuw"
       ],
@@ -9540,10 +9540,6 @@
       ],
       "Selected item was successfully removed from your list": [
         "Geselecteerd item is met succes uit uw lijst verwijderd",
-        "Geselecteerde items zijn met succes verwijderd uit uw lijst"
-      ],
-      "Selected items were successfully removed from your list": [
-        "Geselecteerde item is met succes verwijderd uit uw lijst",
         "Geselecteerde items zijn met succes verwijderd uit uw lijst"
       ],
       "Setting updated. Editors can change permissions and share.": [
@@ -13150,6 +13146,9 @@
       "When is it most important to use a VPN?": [
         "Wanneer is het erg belangrijk om een VPN te gebruiken?"
       ],
+      "You are all set": [
+        "U bent helemaal klaar"
+      ],
       "You can now create unlimited folders and labels": [
         "U kunt nu onbeperkt mappen en labels maken"
       ],
@@ -13314,6 +13313,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Beheerders hebben geen toegang tot de gegevens van privégebruikers en kunnen hun wachtwoord niet resetten."
+      ],
+      "Member activation incomplete": [
+        "Gebruikersactivatie onvolledig"
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisatiesleutel moet worden geactiveerd om gegevenstoegang te vragen"
+      ],
+      "The user must have an address to request data access": [
+        "De gebruiker moet een adres hebben om gegevenstoegang aan te vragen"
       ]
     },
     "Upsell": {

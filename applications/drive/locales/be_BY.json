@@ -261,6 +261,9 @@
       "Continue transfers": [
         "Працягнуць перадачы"
       ],
+      "Continue with Free": [
+        "Працягнуць з тарыфным планам Free"
+      ],
       "Continue with Google": [
         "Працягнуць з Google"
       ],
@@ -644,6 +647,9 @@
       ],
       "Make a copy": [
         "Зрабіць копію"
+      ],
+      "Manage addresses": [
+        "Кіраванне адрасамі"
       ],
       "Manage advanced account protections": [
         "Кіраваць пашыранай абаронай уліковага запісу"
@@ -2959,6 +2965,9 @@
       "Automatically forward incoming email to another email address.": [
         "Аўтаматычна перасылайце ўваходныя лісты на іншы адрас электроннай пошты."
       ],
+      "Available storage: ${ storageText }": [
+        "Даступна ў сховішчы: ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Спачатку сканфігурыруйце гэтыя функцыі для актывацыі сваёй арганізацыі, а потым наладзьце адрас сваёй электроннай пошты."
       ],
@@ -2980,11 +2989,17 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Лёгка сінхранізуйце файлы ў воблака са свайго камп’ютара і атрымлівайце доступ да іх на сваёй мабільнай прыладзе."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Лісты, якія адпраўленыя на ${ connectedAddressText }, цяпер будуць паказвацца ў ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Заахвочвайце выкарыстанне двухфактарнай аўтэнтыфікацыі ў сваёй арганізацыі для дадатковай бяспекі."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шыфраванне і імпартаванне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Дастаткова месца ў сховішчы, якога хопіць на доўгія гады для захоўвання лістоў, далучэнняў і іншай інфармацыі."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Забяспечце бяспечны доступ да даных арганізацыі, нават калі ваша каманда працуе аддалена або выкарыстоўвае публічны Wi-Fi."
@@ -3046,6 +3061,9 @@
       "To start, give your organization a name.": [
         "Спачатку дайце назву сваёй арганізацыі."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Разблакіруйце 15 ГБ сховішча ўсяго за ${ config.offerPrice }"
+      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Палепшыце да ${ planName }, каб працягваць абагульваць файлы з доступам да рэдагавання"
       ],
@@ -3057,6 +3075,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Больш не ўдаецца атрымаць доступ да ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Імпартаванне будзе прыпынена, калі сховішча будзе запоўнена на 80%. Гэта дазволіць зарэзерваваць астатняе месца для новых паведамленняў."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Пачалося імпартаванне вашых лістоў з Gmail. Вы будзеце апавешчаны, калі працэс будзе завершаны."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Нам шкада, што вы пакідаеце нас. Мы будзем вам вельмі ўдзячныя, калі вы знойдзеце крыху часу паведаміць аб прычынах скасавання сваёй падпіскі. Вашы водгукі дапамагаюць зрабіць ${ BRAND_NAME } яшчэ лепш для кожнага карыстальніка."
@@ -3070,11 +3094,20 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Вы можаце пазначыць для выдалення кантакты, якія вы не хочаце ні аб'ядноўваць, ні захоўваць. Выдаленне адбываецца толькі пасля націску кнопкі аб'яднання"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Цяпер можна адпраўляць лісты з ${ BRAND_NAME } выкарыстоўваючы гэты адрас."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Спосабы аднаўлення вашага ўліковага запісу і даных зададзены, а 2ФА уключаны."
       ],
       "Your account and data recovery methods are set.": [
         "Спосабы аднаўлення вашага ўліковага запісу зададзены."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "У вашага бясплатнага ўліковага запісу ${ MAIL_APP_NAME } абмежаваная ёмістасць сховішча і таму, удалося імпартаваць толькі ${ newUserStorageText } вашых апошніх паведамленняў з паштовай скрыні Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "У вашага бясплатнага ўліковага запісу ${ MAIL_APP_NAME } абмежаваная ёмістасць сховішча і таму, удалося імпартаваць толькі самыя апошнія вашы лісты з Gmail."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
@@ -3551,9 +3584,6 @@
       "Failed to update public share node": [
         "Не ўдалося абнавіць публічны вузел абагульвання"
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "Файл \"${ item.name }\" немагчыма запампаваць з прычыны памылкі \"${ error }\""
-      ],
       "File \"${ name }\" is already downloading": [
         "Файл \"${ name }\" ужо спампоўваецца"
       ],
@@ -3689,6 +3719,12 @@
       "Organization key is not decrypted": [
         "Ключ арганізацыі не расшыфраваны"
       ],
+      "Organization key must be activated to create invited users": [
+        "Ключ арганізацыі павінен быць актываваны, каб ствараць запрошаных карыстальнікаў"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Ключ арганізацыі павінен быць актываваны, каб ствараць непрыватных карыстальнікаў"
+      ],
       "Password is required": [
         "Патрабуецца ўвесці пароль"
       ],
@@ -3787,9 +3823,6 @@
       ],
       "Some contacts could not be deleted": [
         "Не ўдалося выдаліць некаторыя кантакты"
-      ],
-      "Some files were ignored because they are not supported in Photos": [
-        "Некаторыя файлы былі праігнараваны, бо яны не падтрымліваюцца ў Фатаграфіях."
       ],
       "Some groups could not be deleted": [
         "Не ўдалося выдаліць некаторыя групы"
@@ -4003,9 +4036,6 @@
       ],
       "You must set a name": [
         "Вы павінны задаць назву"
-      ],
-      "Your browser does not support uploading folders": [
-        "Ваш браўзер не падтрымлівае запампоўванне папак"
       ],
       "Your import will not be processed.": [
         "Ваша імпартаванне не будзе апрацавана."
@@ -4407,11 +4437,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "Больш за 10 прэміяльных функцый"
+      ],
+      "Custom email domain": [
+        "Карыстальніцкі дамен электроннай пошты"
+      ],
+      "Email addresses": [
+        "Адрасы электроннай пошты"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Зашыфраванае воблачнае сховішча для файлаў, фатаграфій і дакументаў"
       ],
       "More premium features": [
         "Больш прэміяльных функцый"
+      ],
+      "Storage": [
+        "Сховішча"
       ],
       "Unlimited hide-my-email aliases": [
         "Неабмежаваная колькасць псеўданімаў hide-my-email"
@@ -4919,7 +4961,7 @@
     },
     "Import provider": {
       "More import options": [
-        "Больш параметраў імпарту"
+        "Больш параметраў імпартавання"
       ]
     },
     "Import warning": {
@@ -5814,7 +5856,7 @@
         "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ VPN_APP_NAME }."
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
-        "Калі вы выдаліце сябе, то вы страціце доступ да \"${ fileName }\" і не зможаце адкрыць яго зноў. Толькі ўладальнік можа абагуліць яго з вамі."
+        "Калі вы выдаліце сябе, то вы страціце доступ да \"${ fileName }\" і не зможаце адкрыць яго зноў. Толькі ўладальнік зможа абагуліць яго з вамі зноў."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Імпартаванне ${ calendarCount } календара з ${ totalCalendarsCount }",
@@ -5845,6 +5887,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "На наступным кроку вы можаце адправіць дэпазіт з выкарыстаннем адраса Bitcoin."
+      ],
+      "Included": [
+        "Уключае"
       ],
       "Index is empty.": [
         "Індэкс адсутнічае."
@@ -6402,7 +6447,7 @@
         "Выбар элемента"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць як прадвызначаны для адпраўкі лістоў на гэты адрас электроннай пошты."
+        "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць прадвызначана пры адпраўцы лістоў на гэты адрас электроннай пошты."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
@@ -6546,7 +6591,7 @@
         "Уладальнік гэтага адраса адключыў скразное шыфраванне. Яму неабходна паўторна ўключыць яго, каб мець магчымасць адпраўляць зашыфраваныя лісты на гэты адрас."
       ],
       "The search engine encountered an internal error. Rebuild the index to recover.": [
-        "У рухавіку пошуку адбылася ўнутраная памылка. Паспрабуйце аднавіць індэкс."
+        "У пошукавым рухавіку адбылася ўнутраная памылка. Паспрабуйце аднавіць індэкс."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Працэс праверкі адкрые новую ўкладку браўзера. Адключыце ўсе блакіроўшчыкі ўсплывальных вокнаў."
@@ -6645,7 +6690,7 @@
         "Гэта правядзе да выхаду з усіх уліковых запісаў у якіх вы ў цяперашні час аўтарызаваныя."
       ],
       "This will upload a new version of the file": [
-        "Гэта прывядзе да запампоўвання новай версіі файла"
+        "Гэта дзеянне прывядзе да запампоўвання новай версіі файла"
       ],
       "This will upload a new version of the folder": [
         "Гэта запампуе новую версію папкі"
@@ -6722,6 +6767,9 @@
       "Trash is empty": [
         "Сметніца пустая"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Давяраць ключу \"${ activeSignerText }\", каб спраўдзіць новыя паведамленні ад гэтага кантакту."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Паспрабуйце новыя функцыі, абнаўленні і прадукты ${ BRAND_NAME } перад тым, як яны будуць выпушчаны для шырокага кола карыстальнікаў. Гэта прывядзе да перазапуску праграмы"
       ],
@@ -6736,9 +6784,6 @@
       ],
       "Unknown date": [
         "Невядомая дата"
-      ],
-      "Unknown error": [
-        "Невядомая памылка"
       ],
       "Unlock drive to recover files": [
         "Разблакіраваць дыск для аднаўлення файлаў"
@@ -6758,8 +6803,14 @@
       "Updating drive search...": [
         "Абнаўленне пошуку на дыску..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Палепшыце ў любы час, каб перанесці астатняе"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Палепшыце свой тарыфны план зараз, каб атрымаць прэміяльныя функцыі, прадукты, а таксама палепшыць сховішча па спецыяльнай цане"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Палепшыце свой тарыфны план або вызваліце месца ў сховішчы, каб перанесці астатняе"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Палепшыць тарыфны план, каб захаваць перавагі ${ planTitle }."
@@ -7234,11 +7285,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Актыўны падпісант"
+      ],
       "Compromised": [
         "Скампраметаваны"
       ],
       "Expired": [
         "Пратэрмінаваны"
+      ],
+      "Fallback": [
+        "Запасны"
       ],
       "KOO": [
         "KOO"
@@ -7289,6 +7346,9 @@
         "${ nbYear } гады",
         "${ nbYear } гадоў",
         "${ nbYear } гадоў"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "Сімвалаў: ${ value.length }/${ maxLength }"
       ],
       "(Expired)": [
         "(Пратэрмінавана)"
@@ -7354,7 +7414,7 @@
         "Прымяніць да ўсіх дублікатаў папак"
       ],
       "Apply to all unverified items": [
-        "Прымяніць да ўсіх неправераных элементаў"
+        "Прымяніць да ўсіх няспраўджаных элементаў"
       ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
@@ -9725,8 +9785,8 @@
       "${ addedUids.length } photo have been added to \"${ albumName }\"": [
         "${ addedUids.length } фатаграфія была дададзена ў \"${ albumName }\"",
         "${ addedUids.length } фатаграфіі былі дададзены ў \"${ albumName }\"",
-        "${ addedUids.length } фатаграфіі былі дададзены ў \"${ albumName }\"",
-        "${ addedUids.length } фатаграфіі былі дададзены ў \"${ albumName }\""
+        "${ addedUids.length } фатаграфій былі дададзены ў \"${ albumName }\"",
+        "${ addedUids.length } фатаграфій былі дададзены ў \"${ albumName }\""
       ],
       "${ count } item failed to be decrypted": [
         "Не ўдалося расшыфраваць ${ count } элемент",
@@ -9896,9 +9956,6 @@
       "Failed to convert external invitation": [
         "Не ўдалося пераўтварыць знешняе запрашэнне"
       ],
-      "Failed to download files: ${ err }": [
-        "Не ўдалося спампаваць файлы: ${ err }"
-      ],
       "Failed to move, please try again": [
         "Не ўдалося перамясціць. Паспрабуйце яшчэ раз"
       ],
@@ -9976,12 +10033,6 @@
         "Выбраныя элементы паспяхова выдалены з вашага спіса",
         "Выбраныя элементы паспяхова выдалены з вашага спіса",
         "Выбраныя элементы паспяхова выдалены з вашага спіса"
-      ],
-      "Selected items were successfully removed from your list": [
-        "Выбраны элемент быў паспяхова выдалены з вашага спіса",
-        "Выбраныя элементы былі паспяхова выдалены з вашага спіса",
-        "Выбраныя элементы былі паспяхова выдалены з вашага спіса",
-        "Выбраныя элементы былі паспяхова выдалены з вашага спіса"
       ],
       "Setting updated. Editors can change permissions and share.": [
         "Налады абноўлены. Рэдактары могуць змяняць дазволы і абагульваць."
@@ -10840,8 +10891,17 @@
       "External key automatically fetched via WKD.": [
         "Знешні ключ аўтаматычна атрыманы праз WKD."
       ],
+      "This contact currently signs messages with this key": [
+        "Гэты кантакт у цяперашні час падпісвае паведамленні з гэтым ключом"
+      ],
+      "This key is used for message verification": [
+        "Гэты ключ выкарыстоўваецца для спраўджання паведамлення"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Гэты ключ выкарыстоўваецца для шыфравання паведамленняў гэтаму кантакту"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Гэты ключ выкарыстоўваецца для шыфравання паведамленняў гэтаму кантакту ў старых праграмах"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Мы рэкамендуем вам \"не давяраць\" гэтаму ключу."
@@ -12797,6 +12857,9 @@
       "Contacts": [
         "Кантакты"
       ],
+      "Continue with free storage": [
+        "Працягнуць карыстацца бясплатным сховішчам"
+      ],
       "Continue with partial import?": [
         "Працягнуць частковае імпартаванне?"
       ],
@@ -13039,6 +13102,9 @@
       ],
       "Get more from your VPN": [
         "Атрымайце больш ад свайго VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Атрымайце больш сховішча з ${ MAIL_APP_NAME } Plus"
       ],
       "Get started with 10 minutes of free uploads, on the house.": [
         "Пачніце з 10 хвілін бясплатнага запампоўвання за наш кошт."
@@ -13613,6 +13679,9 @@
       "When is it most important to use a VPN?": [
         "У якіх выпадках варта выкарыстоўваць VPN?"
       ],
+      "You are all set": [
+        "Усё гатова"
+      ],
       "You can now create unlimited folders and labels": [
         "Цяпер вы можаце ствараць неабмежаваную колькасць папак і метак"
       ],
@@ -13777,6 +13846,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Адміністратары не могуць атрымліваць доступ да даных прыватных карыстальнікаў, а таксама аднаўляць іх паролі."
+      ],
+      "Member activation incomplete": [
+        "Актывацыя ўдзельніка незавершана"
+      ],
+      "Organization key must be activated to request data access": [
+        "Ключ арганізацыі павінен быць актываваны, каб запытаць доступ да даных"
+      ],
+      "The user must have an address to request data access": [
+        "Карыстальнік павінен мець адрас, каб запытаць доступ да даных"
       ]
     },
     "Upsell": {
