@@ -95,6 +95,7 @@ import DiscountBanner from '../single-signup-v2/DiscountBanner';
 import { getFreeSubscriptionData, getSubscriptionMapping } from '../single-signup-v2/helper';
 import type { OptimisticOptions } from '../single-signup-v2/interface';
 import { getPaymentMethod } from '../single-signup-v2/measure';
+import { type CheckTrialPriceResult, checkTrialPriceCommon } from '../single-signup-v2/modals/Trial2024UpsellModal';
 import { useFlowRef } from '../useFlowRef';
 import Box from './Box';
 import CycleSelector from './CycleSelector';
@@ -215,6 +216,8 @@ const Step1 = ({
     } = signupParameters;
 
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
+    const [checkTrialResult, setCheckTrialResult] = useState<CheckTrialPriceResult | undefined>();
+    const [checkingTrial, withCheckingTrial] = useLoading();
     const silentApi = useSilentApi();
     const { getPaymentsApi } = usePaymentsApi();
     const [toggleUpsell, setToggleUpsell] = useState<{ from: CYCLE; to: CYCLE } | undefined>(undefined);
@@ -615,6 +618,20 @@ const Step1 = ({
         reportEstimationChange('coupon_changed', {
             selectedCoupon: coupon,
         });
+    };
+
+    const fetchTrialPrice = async () => {
+        const resultPromise = checkTrialPriceCommon({
+            paymentsApi: getPaymentsApi(silentApi),
+            plansMap: model.plansMap,
+            currency: options.currency,
+            planName: PLANS.VPN2024,
+            cycle: CYCLE.MONTHLY,
+            coupon: COUPON_CODES.VPN_PLUS_FREE_2024,
+        });
+        withCheckingTrial(resultPromise).catch(noop);
+        const result = await resultPromise;
+        setCheckTrialResult(result);
     };
 
     const billingAddressHook = useBillingAddress({
@@ -1281,12 +1298,20 @@ const Step1 = ({
                                         {c('Action').t`Or`}{' '}
                                         <InlineLinkButton
                                             className="color-weak"
-                                            onClick={() => {
+                                            disabled={checkingTrial}
+                                            onClick={async () => {
                                                 void measure({
                                                     event: TelemetryAccountSignupEvents.planSelect,
                                                     dimensions: { plan: PLANS.FREE },
                                                 });
-                                                setUpsellModal(true);
+                                                try {
+                                                    await fetchTrialPrice();
+                                                    setUpsellModal(true);
+                                                } catch {
+                                                    // If the check call fails, fall back to free signup
+                                                    // rather than showing a broken offer.
+                                                    void handleChangePlanIds({}, PLANS.FREE);
+                                                }
                                             }}
                                         >
                                             {c('Action').t`sign up for free`}
@@ -1579,10 +1604,11 @@ const Step1 = ({
                     </Box>
                 )}
             </div>
-            {renderUpsellModal && (
+            {renderUpsellModal && checkTrialResult && (
                 <DollarOfferModal
+                    checkTrialResult={checkTrialResult}
+                    priceWithoutDiscountPerMonth={checkoutMappingPlanIDs?.[options.cycle]?.withoutDiscountPerMonth}
                     img={upsellImg}
-                    currency={options.currency}
                     measure={measure}
                     onGetDeal={() => {
                         const params = new URLSearchParams({
