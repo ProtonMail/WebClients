@@ -1673,6 +1673,9 @@
       ],
       "Move to category...": [
         "移動至類別..."
+      ],
+      "Start testing": [
+        "開始測試"
       ]
     },
     "action": {
@@ -4179,6 +4182,15 @@
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "您已有個 Gmail 位址轉寄至 ${ MAIL_APP_NAME }。於下方連接至它以直接於 ${ MAIL_APP_NAME } 傳送和接收電子郵件。"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "足夠超過年的電子郵件、附件和更多"
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "只要 ${ config.offerPrice } 解鎖 15 GB 的儲存空間"
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "您已連線一個外部帳號位址至 ${ MAIL_APP_NAME }。"
       ]
     },
     "description": {
@@ -5525,6 +5537,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "無限制的 hide-my-email 別名"
+      ],
+      "10+ premium features": [
+        "10 + 頂級質子版功能"
+      ],
+      "Custom email domain": [
+        "自訂電子郵件網域"
+      ],
+      "Email addresses": [
+        "電子郵件地址"
+      ],
+      "Storage": [
+        "儲存空間"
       ]
     },
     "fido2: Error": {
@@ -7303,7 +7327,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -8699,6 +8723,9 @@
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "因為過量請求暫時不可用。請稍後在試。"
+      ],
+      "Included": [
+        "包含"
       ]
     },
     "info": {
@@ -9741,6 +9768,12 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Category:": [
+        "類別："
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "個人和工作電子郵件，和重要更新及通知"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12184,6 +12217,9 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "我們建議您「取消信任」此金鑰。"
+      ],
+      "This key is used for message verification": [
+        "此金鑰用於訊息驗證"
       ]
     },
     "PGP key warning": {
@@ -15398,6 +15434,9 @@
       ],
       "Mailing list": [
         "郵寄清單"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "透過 ${ MAIL_APP_NAME } 取得更多儲存空間"
       ]
     },
     "Today icon tooltip in mini calendar": {

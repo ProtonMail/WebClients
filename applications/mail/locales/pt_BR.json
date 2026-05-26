@@ -1514,7 +1514,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1708,6 +1709,12 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Continue with Free": [
+        "Continuar com Free"
+      ],
+      "Start testing": [
+        "Iniciar teste"
       ]
     },
     "action": {
@@ -4289,6 +4296,21 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Você conectou um endereço de conta externa no ${ MAIL_APP_NAME }."
+      ],
+      "Available storage: ${ storageText }": [
+        "Armazenamento disponível: ${ storageText }"
+      ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Se você encontrar um e-mail na categoria errada, basta movê-lo para a categoria correta."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Ainda está aprendendo e precisamos da sua ajuda para melhorar a categorização."
+      ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "Suas correções definirão a experiência padrão para todos; no lançamento, o sistema também lembrará suas preferências daqui para frente!"
+      ],
+      "You’re among the first to try email categories.": [
+        "Você está entre os primeiros a experimentar as categorias de e-mail."
       ]
     },
     "description": {
@@ -5672,6 +5694,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Aliases do Hide-my-email ilimitados"
+      ],
+      "10+ premium features": [
+        "10+ recursos premium"
+      ],
+      "Custom email domain": [
+        "Domínio de e-mail personalizado"
+      ],
+      "Email addresses": [
+        "Endereços de e-mail"
+      ],
+      "Storage": [
+        "Armazenamento"
       ]
     },
     "Features": {
@@ -7583,8 +7617,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -9029,6 +9062,9 @@
       "Create a secure cloud for ${ memberCount } member": [
         "Criar uma nuvem segura para ${ memberCount } membro",
         "Criar uma nuvem segura para ${ memberCount } membros"
+      ],
+      "Included": [
+        "Incluso"
       ]
     },
     "info": {
@@ -16076,6 +16112,15 @@
       ],
       "Reverse charge not supported": [
         "Carregamento reverso não suportado"
+      ],
+      "Continue with free storage": [
+        "Continuar com armazenamento grátis"
+      ],
+      "Early access to email categories": [
+        "Acesso antecipado para as categorias de e-mail"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Obtenha mais armazenamento com ${ MAIL_APP_NAME } Plus"
       ]
     },
     "Today icon tooltip in mini calendar": {

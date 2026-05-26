@@ -1511,7 +1511,8 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen"
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -1705,6 +1706,12 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Continue with Free": [
+        "Weiter mit Free"
+      ],
+      "Start testing": [
+        "Test starten"
       ]
     },
     "action": {
@@ -4298,6 +4305,39 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ],
+      "Available storage: ${ storageText }": [
+        "Verfügbarer Speicherplatz: ${ storageText }"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Für Jahre genügend Platz für E-Mails, Anhänge und mehr."
+      ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Wenn du eine E-Mail in der falschen Kategorie findest, verschiebe sie einfach in die richtige."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Das System befindet sich noch in der Lernphase, und wir brauchen deine Hilfe, um die Kategorisierung zu verbessern."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "15 GB Speicherplatz für nur ${ config.offerPrice } freischalten."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Wir werden die Importe bei 80 % der Speicherplatzbelegung anhalten, damit genügend Platz für neue Nachrichten bleibt."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Wir haben mit dem Import deiner E-Mails von Gmail begonnen. Wir benachrichtigen dich, wenn der Vorgang abgeschlossen ist."
+      ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "Deine Korrekturen werden das Standarderlebnis für alle Nutzer prägen, und ab dem offiziellen Start bleiben deine Einstellungen erhalten."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Dein kostenloses ${ MAIL_APP_NAME }-Konto enthält begrenzten Speicherplatz, darum können wir nur ${ newUserStorageText } deiner aktuellsten Gmail-Nachrichten importieren."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Dein kostenloses ${ MAIL_APP_NAME }-Konto enthält begrenzten Speicherplatz, darum können wir nur deine aktuellsten Gmail-Nachrichten importieren."
+      ],
+      "You’re among the first to try email categories.": [
+        "Du gehörst zu den Ersten, die die E-Mail-Kategorien ausprobieren."
       ]
     },
     "description": {
@@ -5692,6 +5732,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Unbegrenzte hide-my-email-Aliasse"
+      ],
+      "10+ premium features": [
+        "Mehr als 10 Premium-Funktionen"
+      ],
+      "Custom email domain": [
+        "Eigene E-Mail-Domain"
+      ],
+      "Email addresses": [
+        "E-Mail-Adressen"
+      ],
+      "Storage": [
+        "Speicher"
       ]
     },
     "Features": {
@@ -7606,8 +7658,7 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
+        "Bild einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -9055,6 +9106,18 @@
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Vorübergehend wegen hoher Nachfrage nicht verfügbar. Bitte versuche es später nochmals."
+      ],
+      "Included": [
+        "Enthalten"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Dem \"${ activeSignerText }\" Schlüssel vertrauen, um neue Nachrichten dieses Kontakts zu überprüfen."
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Jederzeit upgraden, um den Rest zu übertragen"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Jederzeit upgraden oder Speicherplatz freigeben, um den Rest zu übertragen"
       ]
     },
     "info": {
@@ -9121,6 +9184,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktiver Signierer"
+      ],
+      "Fallback": [
+        "Zurückstellen"
       ]
     },
     "Key pinning": {
@@ -12689,6 +12758,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Wir empfehlen dir, diesen Schlüssel als „nicht vertrauenswürdig“ einzustufen."
+      ],
+      "This contact currently signs messages with this key": [
+        "Dieser Kontakt signiert derzeit Nachrichten mit diesem Schlüssel"
+      ],
+      "This key is used for message verification": [
+        "Dieser Schlüssel wird für die Nachrichtenüberprüfung verwendet"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Dieser Schlüssel wird für die Verschlüsselung von Nachrichten dieses Kontakts in älteren Apps verwendet."
       ]
     },
     "PGP key warning": {
@@ -16105,6 +16183,15 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Continue with free storage": [
+        "Mit dem kostenlosen Speicherplatz fortfahren"
+      ],
+      "Early access to email categories": [
+        "Vorabzugang zu E-Mail-Kategorien"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Mehr Speicherplatz mit ${ MAIL_APP_NAME } Plus erhalten"
       ]
     },
     "Today icon tooltip in mini calendar": {

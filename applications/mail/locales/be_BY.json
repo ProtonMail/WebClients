@@ -1522,7 +1522,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -1718,6 +1721,12 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Continue with Free": [
+        "Працягнуць з тарыфным планам Free"
+      ],
+      "Start testing": [
+        "Пачаць тэсціраванне"
       ]
     },
     "action": {
@@ -4371,6 +4380,30 @@
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Пачалося імпартаванне вашых лістоў з Gmail. Вы будзеце апавешчаны, калі працэс будзе завершаны."
+      ],
+      "Available storage: ${ storageText }": [
+        "Даступна ў сховішчы: ${ storageText }"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Дастаткова месца ў сховішчы, якога хопіць на доўгія гады для захоўвання лістоў, далучэнняў і іншай інфармацыі."
+      ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Калі вы знойдзеце ліст у няправільнай катэгорыі, то проста перамясціце яго ў неабходную."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Навучанне сістэмы працягваецца і нам неабходна ваша дапамога ў паляпшэнні катэгарызацыі."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Разблакіруйце 15 ГБ сховішча ўсяго за ${ config.offerPrice }"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "У вашага бясплатнага ўліковага запісу ${ MAIL_APP_NAME } абмежаваная ёмістасць сховішча і таму, удалося імпартаваць толькі ${ newUserStorageText } вашых апошніх паведамленняў з паштовай скрыні Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "У вашага бясплатнага ўліковага запісу ${ MAIL_APP_NAME } абмежаваная ёмістасць сховішча і таму, удалося імпартаваць толькі самыя апошнія вашы лісты з Gmail."
+      ],
+      "You’re among the first to try email categories.": [
+        "Вы сярод першых, хто спрабуе катэгорыі лістоў."
       ]
     },
     "description": {
@@ -5797,6 +5830,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Неабмежаваная колькасць псеўданімаў hide-my-email"
+      ],
+      "10+ premium features": [
+        "Больш за 10 прэміяльных функцый"
+      ],
+      "Custom email domain": [
+        "Карыстальніцкі дамен электроннай пошты"
+      ],
+      "Email addresses": [
+        "Адрасы электроннай пошты"
+      ],
+      "Storage": [
+        "Сховішча"
       ]
     },
     "Features": {
@@ -6162,7 +6207,7 @@
         "Абарона ад праграм сачэння"
       ],
       "Review import options": [
-        "Паглядзець параметры імпарту"
+        "Паглядзець параметры імпартавання"
       ],
       "Sign in to the mobile app to complete this step": [
         "Увайдзіце ў мабільную праграму, каб завяршыць гэты крок"
@@ -6631,7 +6676,7 @@
         "Імпартаваць з ${ providerName }"
       ],
       "More import options": [
-        "Больш параметраў імпарту"
+        "Больш параметраў імпартавання"
       ]
     },
     "Import warning": {
@@ -7871,10 +7916,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -8402,7 +8444,7 @@
         "Выберыце ўсе ${ elementsCount } у ${ location }"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць як прадвызначаны для адпраўкі лістоў на гэты адрас электроннай пошты."
+        "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць прадвызначана пры адпраўцы лістоў на гэты адрас электроннай пошты."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
@@ -9375,6 +9417,15 @@
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Давяраць ключу \"${ activeSignerText }\", каб спраўдзіць новыя паведамленні ад гэтага кантакту."
+      ],
+      "Included": [
+        "Уключае"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Палепшыце ў любы час, каб перанесці астатняе"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Палепшыце свой тарыфны план або вызваліце месца ў сховішчы, каб перанесці астатняе"
       ]
     },
     "info": {
@@ -16652,6 +16703,15 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
+      ],
+      "Continue with free storage": [
+        "Працягнуць карыстацца бясплатным сховішчам"
+      ],
+      "Early access to email categories": [
+        "Ранні доступ да катэгорый лістоў"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Атрымайце больш сховішча з ${ MAIL_APP_NAME } Plus"
       ]
     },
     "Today icon tooltip in mini calendar": {

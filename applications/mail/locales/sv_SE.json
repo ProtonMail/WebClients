@@ -1514,7 +1514,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1708,6 +1709,9 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Start testing": [
+        "Börja testa"
       ]
     },
     "action": {
@@ -4286,6 +4290,24 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ],
+      "Available storage: ${ storageText }": [
+        "Tillgängligt lagringsutrymme: ${ storageText }"
+      ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Om du hittar en e-post i fel kategori, flytta det helt enkelt till det rätta."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Lås upp 15 GB lagringsutrymme för endast ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Vi kommer pausa importerna vid 80 % lagringsutrymme för att reservera utrymme för nya meddelanden."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Vi har börjat importera din e-post från Gmail. Vi meddelar dig när det är klart."
+      ],
+      "You’re among the first to try email categories.": [
+        "Du är bland de första att prova e-postkategorier."
       ]
     },
     "description": {
@@ -5671,6 +5693,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Obegränsat antal hide-my-email-alias"
+      ],
+      "10+ premium features": [
+        "10+ premiumfunktioner"
+      ],
+      "Custom email domain": [
+        "Anpassad e-postdomän"
+      ],
+      "Email addresses": [
+        "E-postadresser"
+      ],
+      "Storage": [
+        "Lagringsutrymme"
       ]
     },
     "Features": {
@@ -7567,8 +7601,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8987,6 +9020,21 @@
       "Create a secure cloud for ${ memberCount } member": [
         "Skapa ett säkert moln för ${ memberCount } medlem",
         "Skapa ett säkert moln för ${ memberCount } medlemmar"
+      ],
+      "Included": [
+        "Inkluderad"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Tillfälligt otillgänglig på grund av hög efterfrågan. Försök igen senare."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Lita på nyckeln “${ activeSignerText }“ för att verifiera nya meddelanden från denna kontakt."
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Uppgradera när som helst för att flytta över resten"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Uppgradera eller frigör utrymme när som helst för att flytta över resten"
       ]
     },
     "info": {
@@ -10052,6 +10100,9 @@
       ],
       "Category:": [
         "Kategori:"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tecken"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12586,6 +12637,12 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi rekommenderar att du “Sluta lita på“ denna nyckel."
+      ],
+      "This contact currently signs messages with this key": [
+        "Denna kontakt signerar för närvarande meddelanden med denna nyckel"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Denna nyckel används för att kryptera meddelanden till denna kontakt i äldre appar"
       ]
     },
     "PGP key warning": {
@@ -15996,6 +16053,15 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "Continue with free storage": [
+        "Fortsätt med gratis lagringsutrymme"
+      ],
+      "Early access to email categories": [
+        "Förhandstillgång till e-postkategorier"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Skaffa mer lagringsutrymme med ${ MAIL_APP_NAME } Plus"
       ]
     },
     "Today icon tooltip in mini calendar": {

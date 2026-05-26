@@ -1514,7 +1514,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -1708,6 +1709,12 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Continue with Free": [
+        "Συνέχεια με Free"
+      ],
+      "Start testing": [
+        "Ξεκίνημα δοκιμής"
       ]
     },
     "action": {
@@ -4307,6 +4314,33 @@
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Ξεκινήσαμε την εισαγωγή των ηλεκτρονικών μηνυμάτων σας από το Gmail. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
+      ],
+      "Available storage: ${ storageText }": [
+        "Διαθέσιμος χώρος αποθήκευσης: ${ storageText }"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Αρκετός χώρος για χρόνια από μηνύματα ηλεκτρονικού ταχυδρομείου , συνημμένα και άλλα."
+      ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Αν βρείτε ένα μήνυμα σε λάθος κατηγορία, απλώς μετακινήστε το στη σωστή."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Ακόμα μαθαίνει και χρειαζόμαστε τη βοήθειά σας για να βελτιώσουμε την κατηγοριοποίηση."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Ξεκλειδώστε 15 GB αποθηκευτικού χώρου μόνο με ${ config.offerPrice }."
+      ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "Οι διορθώσεις σας θα διαμορφώσουν την προεπιλεγμένη εμπειρία για όλους, και κατά την έκδοση θα θυμάται επίσης τις προτιμήσεις σας στο μέλλον!"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ο δωρεάν λογαριασμός σας ${ MAIL_APP_NAME } διαθέτει περιορισμένο αποθηκευτικό χώρο, επομένως θα εισάγουμε μόνο ${ newUserStorageText } από τα πιο πρόσφατα μηνύματά σας στο Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ο δωρεάν λογαριασμός σας ${ MAIL_APP_NAME } διαθέτει περιορισμένο αποθηκευτικό χώρο, επομένως θα εισάγουμε μόνο τα πιο πρόσφατα email σας στο Gmail."
+      ],
+      "You’re among the first to try email categories.": [
+        "Είστε από τους πρώτους που δοκιμάζουν κατηγορίες ηλεκτρονικών μηνυμάτων."
       ]
     },
     "description": {
@@ -5701,6 +5735,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Απεριόριστα hide-my-email ψευδώνυμα"
+      ],
+      "10+ premium features": [
+        "10+ premium χαρακτηριστικά"
+      ],
+      "Custom email domain": [
+        "Προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Email addresses": [
+        "Διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Storage": [
+        "Αποθηκευτικός χώρος"
       ]
     },
     "Features": {
@@ -7615,8 +7661,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -9067,6 +9112,15 @@
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Εμπιστευτείτε το κλειδί \"${ activeSignerText }\" για να επαληθεύσετε νέα μηνύματα από αυτήν την επαφή."
+      ],
+      "Included": [
+        "Περιλαμβάνονται"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Αναβαθμίστε οποιαδήποτε στιγμή για να φέρετε τα υπόλοιπα"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Αναβαθμίστε ή εκκενώστε χώρο οποιαδήποτε στιγμή για να φέρετε τα υπόλοιπα"
       ]
     },
     "info": {
@@ -16036,6 +16090,15 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "Continue with free storage": [
+        "Συνέχεια με δωρεάν αποθηκευτικό χώρο"
+      ],
+      "Early access to email categories": [
+        "Πρώιμη πρόσβαση σε κατηγορίες ηλεκτρονικών μηνυμάτων"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Αποκτήστε περισσότερο χώρο αποθήκευσης με το ${ MAIL_APP_NAME } Plus"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1514,7 +1514,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -1708,6 +1709,12 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Continue with Free": [
+        "Fortsæt med Free"
+      ],
+      "Start testing": [
+        "Begynd at teste"
       ]
     },
     "action": {
@@ -4307,6 +4314,33 @@
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Vi er begyndt at importere din e-mails fra Gmail. Vi giver dig besked når det er færdigt."
+      ],
+      "Available storage: ${ storageText }": [
+        "Tilgængelig lagerplads: ${ storageText }"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Nok plads til flere år værd af e-mails, vedhæftninger og mere."
+      ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Hvis du ser en e-mail i den forkerte kategori, så ryk den bare til den rigtige."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Den er stadig ved at lære, og vi har brug for din hjælp til at forbedre kategorisering."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Lås op for 15 GB lagerplads til kun ${ config.offerPrice }."
+      ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "Dine rettelser hjælper med at forbedre oplevelsen for alle andre, og fremadrettet husker den også dine præferencer ved opstart!"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrænset lagerplads, så vi importerer kun ${ newUserStorageText } af dine seneste Gmail-beskeder"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrænset lagerplads, så vi importerer kun dine seneste Gmail-beskeder."
+      ],
+      "You’re among the first to try email categories.": [
+        "Du er en af de første til at prøve e-mailkategorier."
       ]
     },
     "description": {
@@ -5701,6 +5735,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Ubegrænsede hide-my-email-aliasser"
+      ],
+      "10+ premium features": [
+        "10+ premium-funktioner"
+      ],
+      "Custom email domain": [
+        "Brugerdefineret e-maildomæne"
+      ],
+      "Email addresses": [
+        "E-mailadresser"
+      ],
+      "Storage": [
+        "Lagerplads"
       ]
     },
     "Features": {
@@ -7615,8 +7661,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -9067,6 +9112,15 @@
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Stol på \"${ activeSignerText }\"-nøglen for at verificere nye beskeder fra denne kontakt."
+      ],
+      "Included": [
+        "Inkluderet"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Opgrader når som helst for at overføre resten"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Opgrader eller frigør lagerplads når som helst for at overføre resten"
       ]
     },
     "info": {
@@ -16132,6 +16186,15 @@
       ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
+      ],
+      "Continue with free storage": [
+        "Fortsæt med gratis lagerplads"
+      ],
+      "Early access to email categories": [
+        "Tidlig adgang til e-mailkategorier"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Få mere lagerplads med ${ MAIL_APP_NAME } Plus"
       ]
     },
     "Today icon tooltip in mini calendar": {

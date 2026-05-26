@@ -5338,6 +5338,27 @@
     "Filter": {
       "Show": [
         "Pokaż"
+      ],
+      "Filter": [
+        "Filtruj"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Filtruj (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "Filtruj i sortuj wiadomości"
+      ],
+      "Has attachments": [
+        "Zawiera załącznik"
+      ],
+      "Read": [
+        "Przeczytane"
+      ],
+      "Reset": [
+        "Resetuj"
+      ],
+      "Unread": [
+        "Nieprzeczytane"
       ]
     },
     "Filter Actions": {
@@ -7198,10 +7219,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -12855,6 +12873,9 @@
       ],
       "Smallest first": [
         "Od najmniejszych"
+      ],
+      "Sort by": [
+        "Sortuj"
       ]
     },
     "specialoffer: Action": {

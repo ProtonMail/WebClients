@@ -1715,6 +1715,12 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Continue with Free": [
+        "Continuare cu Free"
+      ],
+      "Start testing": [
+        "Începeți testarea"
       ]
     },
     "action": {
@@ -4341,6 +4347,33 @@
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "S-a început importarea mesajelor de pe Gmail. Vă vom anunța când va fi gata."
+      ],
+      "Available storage: ${ storageText }": [
+        "Spațiu disponibil: ${ storageText }"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Spațiu suficient pentru ani mulți de mesaje, atașamente și altele."
+      ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Dacă găsești un mesaj în categoria greșită, mutați-l pur și simplu în categoria corectă."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Încă este în curs de învățare și avem nevoie de ajutorul dvs. pentru a îmbunătăți clasificarea."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Deblocați 15 GiB de spațiu pentru doar ${ config.offerPrice }."
+      ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "Corecțiile pe care le faceți vor modela experiența implicită pentru toată lumea, iar după lansare va reține și ce preferați de acum înainte!"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Contul gratuit ${ MAIL_APP_NAME } are un spațiu de stocare limitat, așa că se vor importa doar ${ newUserStorageText } dintre cele mai recente mesaje din Gmail."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Contul gratuit ${ MAIL_APP_NAME } are un spațiu de stocare limitat, așa că se vor importa doar cele mai recente mesaje din Gmail."
+      ],
+      "You’re among the first to try email categories.": [
+        "Sunteți printre primii utilizatori care testează categoriile de mesaje."
       ]
     },
     "description": {
@@ -5751,6 +5784,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Aliasuri hide-my-email nelimitate"
+      ],
+      "10+ premium features": [
+        "Peste 10 funcții premium"
+      ],
+      "Custom email domain": [
+        "Domeniu personal de e-mail"
+      ],
+      "Email addresses": [
+        "Adrese de e-mail"
+      ],
+      "Storage": [
+        "Spațiu de stocare"
       ]
     },
     "Features": {
@@ -7745,9 +7790,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -9223,6 +9266,15 @@
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Cheia „${ activeSignerText }” este aprobată pentru a verifica mesajele noi de la acest contact."
+      ],
+      "Included": [
+        "Inclus"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Modificați oricând abonamentul pentru a obține și restul"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Modificați abonamentul sau goliți spațiul de stocare pentru a le aduce și pe restul."
       ]
     },
     "info": {
@@ -15856,7 +15908,7 @@
         "Inserare contacte"
       ],
       "Introducing email categories": [
-        "Vă prezentăm categoriile de e-mail"
+        "Vă prezentăm categoriile de mesaje"
       ],
       "Invalid verification code": [
         "Cod de verificare nevalid"
@@ -16442,6 +16494,15 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Continue with free storage": [
+        "Continuare cu spațiu gratuit"
+      ],
+      "Early access to email categories": [
+        "Acces timpuriu la categoriile de mesaje"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Obțineți mai mult spațiu cu ${ MAIL_APP_NAME } Plus"
       ]
     },
     "Today icon tooltip in mini calendar": {

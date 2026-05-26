@@ -1514,7 +1514,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1711,6 +1712,9 @@
       ],
       "Start testing": [
         "Commencer à tester"
+      ],
+      "Continue with Free": [
+        "Continuer avec Free"
       ]
     },
     "action": {
@@ -4322,6 +4326,21 @@
       ],
       "You’re among the first to try email categories.": [
         "Vous faites partie des premiers à essayer les catégories de messages."
+      ],
+      "Available storage: ${ storageText }": [
+        "Espace de stockage disponible : ${ storageText }"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Assez d'espace pour stocker des années d'e-mails, de pièces jointes et bien plus encore."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Bénéficiez de 15 Go de stockage pour seulement ${ config.offerPrice }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Votre compte ${ MAIL_APP_NAME } gratuit dispose d'un espace de stockage limité, nous n'importerons donc que ${ newUserStorageText } de vos messages Gmail les plus récents."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Votre compte gratuit sur ${ MAIL_APP_NAME } dispose d'un espace de stockage limité, nous n'importerons donc que vos e-mails Gmail les plus récents."
       ]
     },
     "description": {
@@ -5716,6 +5735,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Nombre illimité d'alias « hide-my-email »"
+      ],
+      "10+ premium features": [
+        "Plus de 10 fonctionnalités premium"
+      ],
+      "Custom email domain": [
+        "Domaine de messagerie personnalisé"
+      ],
+      "Email addresses": [
+        "Adresses e-mail"
+      ],
+      "Storage": [
+        "Espace de stockage"
       ]
     },
     "Features": {
@@ -7630,8 +7661,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -9082,6 +9112,15 @@
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Faire confiance à la clé « ${ activeSignerText } » pour vérifier les nouveaux messages provenant de ce contact."
+      ],
+      "Included": [
+        "Inclus"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Changer d'abonnement à tout moment pour transférer le reste"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Changer d'abonnement ou libérer de l'espace à tout moment pour transférer le reste"
       ]
     },
     "info": {
@@ -16149,7 +16188,13 @@
         "Votre adresse au format plus court est maintenant prête."
       ],
       "Early access to email categories": [
-        "Accès anticipité aux catégories de messages."
+        "Accès en avant-première aux catégories de messages."
+      ],
+      "Continue with free storage": [
+        "Continuer avec l'espace de stockage gratuit"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Obtenez plus d'espace de stockage avec ${ MAIL_APP_NAME } Plus"
       ]
     },
     "Today icon tooltip in mini calendar": {
