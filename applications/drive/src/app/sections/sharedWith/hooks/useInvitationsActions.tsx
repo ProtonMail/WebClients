@@ -7,7 +7,6 @@ import type { useConfirmActionModal } from '@proton/components';
 import { NodeType, getDrivePerNodeType } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { useSharedWithMeStore } from '../useSharedWithMe.store';
@@ -24,12 +23,6 @@ export const useInvitationsActions = () => {
                 await drive.acceptInvitation(invitationUid);
                 const maybeNode = await drive.getNode(uid);
                 const { node } = getNodeEntity(maybeNode);
-                const shareId = node.deprecatedShareId;
-                if (!shareId) {
-                    throw new EnrichedError('The shared with me node entity is missing deprecatedShareId', {
-                        extra: { uid: node.uid },
-                    });
-                }
 
                 await getBusDriver().emit(
                     {

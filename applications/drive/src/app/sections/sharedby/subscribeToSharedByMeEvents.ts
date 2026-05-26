@@ -1,7 +1,6 @@
 import type { ProtonDriveClient } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
-import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getFormattedNodeLocation } from '../../utils/sdk/getNodeLocation';
@@ -16,17 +15,6 @@ const createSharedByMeItemFromNode = async (nodeUid: string, drive: Drive): Prom
         const sharedByMeMaybeNode = await drive.getNode(nodeUid);
         const signatureResult = getSignatureIssues(sharedByMeMaybeNode);
         const { node } = getNodeEntity(sharedByMeMaybeNode);
-
-        if (!node.deprecatedShareId) {
-            handleSdkError(
-                new EnrichedError('The shared with me node entity is missing deprecatedShareId', {
-                    tags: { component: 'drive-sdk' },
-                    extra: { uid: node.uid },
-                }),
-                { showNotification: false }
-            );
-            return null;
-        }
 
         const location = await getFormattedNodeLocation(drive, sharedByMeMaybeNode);
         const shareResult = await drive.getSharingInfo(node.uid);
