@@ -39,7 +39,7 @@ async selectMechanismForDownload(size?: number) {
 }
 ```
 
-- Feature flags (via `unleashVanillaStore`) tune `getMemoryLimit()` to lower thresholds on mobile or raise them for high-memory cohorts.
+- Feature flags (via `featureFlagStore`) tune `getMemoryLimit()` to lower thresholds on mobile or raise them for high-memory cohorts.
 - QA can force a specific path with the `DriveE2EDownloadMechanism` cookie.
 - When no advanced mechanism is available, we trigger the `memory_fallback` path and stream into a Blob.
 

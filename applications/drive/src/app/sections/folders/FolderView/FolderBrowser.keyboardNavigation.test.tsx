@@ -5,8 +5,8 @@ import { MemberRole, NodeType } from '@proton/drive';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
-import { unleashVanillaStore } from '../../../legacy/zustand/unleash/unleash.store';
 import { useContextMenuStore } from '../../../modules/contextMenu';
+import { featureFlagStore } from '../../../modules/featureFlag';
 import { useSelectionStore } from '../../../modules/selection';
 import type { FolderViewItem } from '../useFolder.store';
 import { useFolderStore } from '../useFolder.store';
@@ -182,7 +182,7 @@ const resetStores = () => {
 describe('FolderBrowser keyboard a11y (cell content)', () => {
     beforeAll(() => {
         Element.prototype.scrollIntoView = jest.fn();
-        unleashVanillaStore.setState({ isEnabled: () => false });
+        featureFlagStore.setState({ isEnabled: () => false });
         Object.defineProperty(HTMLElement.prototype, 'offsetHeight', { configurable: true, value: 800 });
         Object.defineProperty(HTMLElement.prototype, 'offsetWidth', { configurable: true, value: 1024 });
     });
