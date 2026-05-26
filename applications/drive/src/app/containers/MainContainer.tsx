@@ -14,6 +14,7 @@ import {
 } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { getDrive, getDriveForPhotos, splitNodeUid, useDrive } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { useLoading } from '@proton/hooks';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -39,7 +40,6 @@ import { PhotosWithAlbumsContainer } from '../photos/PhotosWithAlbumsContainer';
 import { useBookmarksActions } from '../sections/sharedWith/hooks/useBookmarksActions';
 import { TransferManager } from '../sections/transferManager/TransferManager';
 import { setPublicRedirectSpotlightToPending } from '../utils/publicRedirectSpotlight';
-import { getNodeEntity } from '../utils/sdk/getNodeEntity';
 import { dateToLegacyTimestamp } from '../utils/sdk/legacyTime';
 import { Features, measureFeaturePerformance } from '../utils/telemetry';
 import { getTokenFromSearchParams } from '../utils/url/token';

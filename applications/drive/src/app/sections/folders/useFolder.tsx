@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { MemberRole, useDrive } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -12,7 +13,6 @@ import { driveMetrics } from '../../modules/metrics';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { useDevicesStore } from '../devices/useDevices.store';
 import { mapNodeToFolderViewItem } from './mapNodeToFolderViewItem';
 import { type FolderViewItem, useFolderStore } from './useFolder.store';

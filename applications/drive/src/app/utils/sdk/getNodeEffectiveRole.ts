@@ -1,15 +1,15 @@
 import {
+    type DegradedNode,
     MemberRole,
     type NodeEntity,
-    type DegradedNode,
     NodeType,
     type ProtonDriveClient,
     ProtonDrivePhotosClient,
 } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import { sendErrorReport } from '../errorHandling';
 import { EnrichedError } from '../errorHandling/EnrichedError';
-import { getNodeEntity } from './getNodeEntity';
 
 const MemberHierarchy = {
     [MemberRole.Inherited]: 0,
@@ -58,7 +58,10 @@ export async function getNodeEffectiveRole(
     return role;
 }
 
-async function getHighestAlbumRole(node: NodeEntity | DegradedNode, drive: ProtonDrivePhotosClient): Promise<MemberRole> {
+async function getHighestAlbumRole(
+    node: NodeEntity | DegradedNode,
+    drive: ProtonDrivePhotosClient
+): Promise<MemberRole> {
     let role = MemberRole.Inherited;
 
     const maybeNode = await drive.getNode(node.uid);
