@@ -86,7 +86,7 @@ const PaymentMethodDetailsPaypal = ({ details }: { details: PayPalDetails }) => 
             </div>
             <div className="flex flex-wrap items-center">
                 <label className="shrink-0 mr-4" htmlFor="paypal-payer">{c('Label').t`Payer`}</label>
-                <code id="paypal-payer" className="block text-xl mb-0 mb-4 text-ellipsis" title={Payer}>
+                <code id="paypal-payer" className="block text-xl mb-0 text-ellipsis" title={Payer}>
                     {Payer}
                 </code>
             </div>
