@@ -2357,6 +2357,12 @@
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
       ],
+      "Organization key must be activated to create invited users": [
+        "S'ha d'activar la clau de l'organització per a crear usuaris convidats"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "S'ha d'activar la clau d'organització per a crear usuaris no privats"
+      ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen."
       ],
@@ -3258,6 +3264,9 @@
       "${ n } month": [
         "${ n } mes",
         "${ n } mesos"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caràcters"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Accediu a ${ PASS_APP_NAME } de manera segura des del terminal, és ideal per scripts, automatització i fluxos de treball de desenvolupament."
@@ -5845,6 +5854,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Els administradors no poden accedir a les dades dels usuaris privats i no poden restablir la seva contrasenya."
+      ],
+      "Member activation incomplete": [
+        "L'activació del membre no s'ha completat."
+      ],
+      "Organization key must be activated to request data access": [
+        "La clau d'organització ha d'estar activada per sol·licitar accés a les dades."
+      ],
+      "The user must have an address to request data access": [
+        "L'usuari ha de tenir una adreça per sol·licitar l'accés a les dades."
       ]
     },
     "Validation": {
