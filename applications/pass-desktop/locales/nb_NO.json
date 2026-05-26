@@ -1666,7 +1666,7 @@
         "Tilgang til ${ PASS_APP_NAME } krever fingeravtrykk eller PIN-kode for enheten."
       ],
       "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
-        "Tilgangstoken \"${ action.token.Name }\" er allerede utløpt. Hvis det slettes, vil det ikke lenger vises."
+        "Tilgangstokenet \"${ action.token.Name }\" er allerede utløpt. Hvis det slettes, vil det ikke lenger vises."
       ],
       "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
         "Tilgangstokenet \"${ action.token.Name }\" vil slutte å virke umiddelbart. Denne handlingen kan ikke angres."
@@ -2633,6 +2633,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "For å se gjennom de importerte dataene dine, klikk på ${ PASS_APP_NAME }-ikonet i nettleserens verktøylinje."
       ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "For å konfigurere biometrisk opplåsing krever ${ PASS_APP_NAME } en ny nettlesertillatelse. Etter at du har godtatt den, lastes utvidelsen inn på nytt. Åpne denne siden på nytt etterpå."
+      ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Klarert av over 50 000 forretningsbrukere og 100 millioner kontoer rundt om i verden."
       ],
@@ -2670,7 +2673,7 @@
         "Uverifisert"
       ],
       "Updated item": [
-        "Oppdaterte element"
+        "Oppdatert element"
       ],
       "Updating vault organization...": [
         "Oppdaterer hvelvorganisasjonen..."
@@ -4659,6 +4662,9 @@
       ],
       "Breaches detected for": [
         "Brudd oppdaget for"
+      ],
+      "Browser permission required": [
+        "Nettlesertillatelse kreves"
       ],
       "Cancel changing your email?": [
         "Vil du avbryte endringen av e-post?"
