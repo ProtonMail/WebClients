@@ -35,6 +35,7 @@ im.$media-expressions: $media-expressions;
 	@include im.media('<=small') {
 		background-color: var(--background-composer-mobile);
 		gap: #{rem(4)};
+
 		// gap: 0;
 	}
 
@@ -227,6 +228,7 @@ im.$media-expressions: $media-expressions;
 	.user-initials {
 		background-color: #baf8e6;
 		border: none;
+		color: var(--text-dark);
 	}
 }
 
@@ -275,8 +277,8 @@ im.$media-expressions: $media-expressions;
 	// Larger touch targets and spacing for mobile sidebar items
 	.sidebar-item {
 		block-size: 40px;
-		// block-size: #{rem(44)};
 
+		// block-size: #{rem(44)};
 	}
 }
 
