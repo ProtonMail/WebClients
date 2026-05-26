@@ -67,7 +67,7 @@ export function useAnimatedBackground() {
         }
         const instance = createWebglShaderBackground(canvas, SHADER_CONFIG, {
             mount: 'content',
-            baseCssVar: '--background-norm',
+            baseCssVar: '--background-main-canvas',
         });
         return () => {
             instance.destroy();
