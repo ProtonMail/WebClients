@@ -925,6 +925,9 @@
       ]
     },
     "collider_2025: Action": {
+      "Add": [
+        "Ekle"
+      ],
       "Add ${ selectedCount } sheet": [
         "${ selectedCount } çalışma sayfası ekle",
         "${ selectedCount } çalışma sayfası ekle"
@@ -944,6 +947,18 @@
       "Cancel": [
         "İptal"
       ],
+      "Cancel (Esc)": [
+        "İptal (Esc)"
+      ],
+      "Clear": [
+        "Temizle"
+      ],
+      "Clear all": [
+        "Tümünü temizle"
+      ],
+      "Clear auto-generated": [
+        "Otomatik oluşturulanları temizle"
+      ],
       "Close": [
         "Kapat"
       ],
@@ -959,6 +974,9 @@
       "Dark": [
         "Koyu"
       ],
+      "Delete memory": [
+        "Belleği sil"
+      ],
       "Disable ghost mode": [
         "Hayalet kipini kapat"
       ],
@@ -968,8 +986,14 @@
       "Edit": [
         "Düzenle"
       ],
+      "Edit memory": [
+        "Belleği düzenle"
+      ],
       "Enable ghost mode": [
         "Hayalet kipini aç"
+      ],
+      "Generate from chats": [
+        "Sohbetlerden oluştur"
       ],
       "Generate workflow": [
         "İş akışı oluştur"
@@ -1010,6 +1034,9 @@
       "Save": [
         "Kaydet"
       ],
+      "Save (⌘+Enter)": [
+        "Kaydet (⌘+Enter)"
+      ],
       "Select all": [
         "Tümünü seç"
       ],
@@ -1036,6 +1063,22 @@
       ],
       "Try again": [
         "Yeniden dene"
+      ],
+      "Turn off": [
+        "Kapat"
+      ],
+      "Turn off and delete": [
+        "Kapat ve sil"
+      ],
+      "Turn on memory": [
+        "Belleği aç"
+      ],
+      "Update from chats": [
+        "Sohbetlerden güncelle"
+      ],
+      "Update from chats (${ newPromptsSinceLastUpdate } new)": [
+        "Sohbetlerden güncelleme (${ newPromptsSinceLastUpdate } yeni)",
+        "Sohbetlerden güncelleme (${ newPromptsSinceLastUpdate } yeni)"
       ],
       "Upload file to Drive": [
         "Dosyayı Drive üzerine yükle"
@@ -1194,9 +1237,23 @@
         "Gücümü kafein ve varoluşsal kaygıdan alıyorum"
       ]
     },
+    "collider_2025: Date": {
+      "Today": [
+        "Bugün"
+      ],
+      "Yesterday": [
+        "Dün"
+      ]
+    },
     "collider_2025: Description": {
       "${ BRAND_NAME } is conducting a paid research study about AI assistants. Interested? It takes 2 minutes. If selected, you'll earn £80.": [
         "${ BRAND_NAME } yapay zeka yardımcıları ile ilgili ücretli bir araştırma yürütüyor. İlgilenir misiniz? Yalnızca 2 dakikanızı alır. Seçilirseniz £80 kazanacaksınız."
+      ],
+      "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
+        "${ LUMO_SHORT_APP_NAME } yanıtları, iletişim tarzı, uzmanlık, yinelenen araçlar ve uzun süreli projelere göre uyarlamak için kayıtlı belleklerinize başvurur."
+      ],
+      "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
+        "Kendi belleklerinizi ekleyin. Otomatik olarak oluşturulan herhangi bir kaydı düzenleyin veya istediğiniz zaman her şeyi temizleyin. Düzenlediğiniz oluşturulmuş bellekler size ait belleklere dönüştürülür."
       ],
       "Always enable web search for new conversations": [
         "Yeni yazışmalarda internet araması her zaman açık olsun"
@@ -1228,8 +1285,17 @@
       "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } uygulamasının nasıl kullanılacağı ile ilgili ayrıntılı bilgi alın"
       ],
+      "Memories are stored encrypted.": [
+        "Bellekler şifrelenmiş olarak saklanır."
+      ],
+      "Memory lets ${ LUMO_SHORT_APP_NAME } remember stable preferences and context across general chats so you don't have to repeat yourself.": [
+        "Bellek ${ LUMO_SHORT_APP_NAME } uygulamasının genel sohbetlerdeki kalıcı seçimleri ve bağlamı hatırlamasını sağlar. Böylece kendinizi tekrarlamak zorunda kalmazsınız."
+      ],
       "Permanently delete your project and chats. This is irreversible.": [
         "Projenizi ve sohbetlerinizi kalıcı olarak silin. Bu işlem geri alınamaz."
+      ],
+      "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
+        "Proje sohbetleri tamamen izole tutulur. Kendi talimatlarına ve dosyalarına güvenirler ve genel belleklerinizi tamamen görmezden gelirler."
       ],
       "Quick responses": [
         "Hızlı yanıtlar"
@@ -1245,6 +1311,20 @@
       ],
       "Switch between light and dark mode": [
         "Açık ve koyu kip arasında geçiş yap"
+      ],
+      "This removes memories generated from your chats. Memories you added yourself will be kept.": [
+        "Bu işlem sohbetlerinizden oluşturulan bellekleri siler. Kendi eklediğiniz bellekler ise korunur."
+      ],
+      "This will permanently remove all saved memories. ${ LUMO_SHORT_APP_NAME } will no longer use them in future chats.": [
+        "Bu işlem kaydedilen tüm bellekleri kalıcı olarak siler. ${ LUMO_SHORT_APP_NAME } bunları gelecekteki sohbetlerde kullanmayacak."
+      ],
+      "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
+        "Belleği kapatmak kaydedilmiş olan tüm ${ memories.length } bellekleri kalıcı olarak siler. Belleği daha sonra yeniden açabilirsiniz ancak silinen bellekler geri getirilemez."
+      ]
+    },
+    "collider_2025: DisableMemory": {
+      "Turn off ${ LUMO_SHORT_APP_NAME } Memory at any time.": [
+        "${ LUMO_SHORT_APP_NAME } belleğini istediğiniz zaman kapatabilirsiniz."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1321,6 +1401,9 @@
       "Sign up for free to continue chatting and unlock access to chat history, starred chats, and more features.": [
         "Sohbeti sürdürmek ve sohbet geçmişine, yıldızlı sohbetlere ve daha fazla özelliğe erişmek için ücretsiz hesap açın."
       ],
+      "Something went wrong. Please try again.": [
+        "Bir sorun çıktı. Lütfen yeniden deneyin."
+      ],
       "The provided URL is invalid.": [
         "Belirtilen adres geçersiz."
       ],
@@ -1373,7 +1456,10 @@
       ]
     },
     "collider_2025: Error Message": {
-      "If retrying doesn’t work, check back later or consider upgrading to ${ LUMO_SHORT_APP_NAME } Plus to jump to the front of the line during peak times.": [
+      "If retrying doesn't work, check back in a few minutes. In the meantime, we are doing our best to ensure your experience goes smoothly.": [
+        "Yeniden denemek işe yaramazsa birkaç dakika içinde yeniden bakın. Bu sırada deneyiminizin sorunsuz kalmasını sağlamak için elimizden geleni yapıyoruz."
+      ],
+      "If retrying doesn't work, check back later or consider upgrading to ${ LUMO_SHORT_APP_NAME } Plus to jump to the front of the line during peak times.": [
         "Yeniden denemek işe yaramazsa, bir süre sonra yeniden bakın veya yoğun zamanlarda sıranın önüne geçmek için ${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltmeyi değerlendirin."
       ],
       "Please try asking a different question or making a different request.": [
@@ -1504,6 +1590,14 @@
       ],
       "Tell us more": [
         "Bize daha fazla bilgi verin"
+      ]
+    },
+    "collider_2025: Hint": {
+      "Memory is only used in general chats — never inside projects. Stored end-to-end encrypted.": [
+        "Bellek yalnızca genel sohbetlerde kullanılır. Projelerde asla kullanılmaz. Uçtan uca şifrelenir."
+      ],
+      "You can turn it off again at any time.": [
+        "İstediğiniz zaman yeniden kapatabilirsiniz."
       ]
     },
     "collider_2025: Info": {
@@ -1690,6 +1784,9 @@
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Şu hedef için bir iş akışı çizelgesi ve uygulama kodu oluştur. Kod için hedef dil:"
       ],
+      "Generate them from your recent chats, or add your own below.": [
+        "Son sohbetlerinizden oluşturun veya aşağıya kendinizinkileri ekleyin."
+      ],
       "Generating…": [
         "Oluşturuluyor…"
       ],
@@ -1749,6 +1846,9 @@
       ],
       "No files available": [
         "Kullanılabilecek bir dosya yok"
+      ],
+      "No new memories were found in your recent chats.": [
+        "Son sohbetlerinizde yeni bellek bulunamadı."
       ],
       "No nodes in this workflow.": [
         "Bu iş akışında herhangi bir düğüm yok."
@@ -1893,6 +1993,9 @@
       ],
       "You are about to visit an external website:": [
         "Bir dış siteyi ziyaret etmek üzeresiniz:"
+      ],
+      "Your memories are already up to date.": [
+        "Bellekleriniz zaten güncel."
       ]
     },
     "collider_2025: Job": {
@@ -1986,6 +2089,9 @@
       "File upload": [
         "Dosya yükleme"
       ],
+      "From chats": [
+        "Sohbetlerden"
+      ],
       "Loop": [
         "Döngü"
       ],
@@ -2054,6 +2160,9 @@
       ],
       "Unsafe or problematic": [
         "Güvenli değil ya da sorunlu"
+      ],
+      "You": [
+        "Siz"
       ],
       "Your workflow": [
         "İş akışınız"
@@ -2200,6 +2309,9 @@
       ]
     },
     "collider_2025: Placeholder": {
+      "e.g. I prefer concise, bullet-point answers": [
+        "örneğin, az ve öz madde imli yanıtları yeğlerim"
+      ],
       "New chat": [
         "Yeni sohbet"
       ],
@@ -2216,6 +2328,9 @@
       ],
       "General": [
         "Genel"
+      ],
+      "Memory": [
+        "Bellek"
       ],
       "Personalization": [
         "Kişiselleştirme"
@@ -2242,6 +2357,10 @@
       ]
     },
     "collider_2025: Success": {
+      "Added ${ added } memory from your chats": [
+        "Sohbetlerinizden ${ added } bellek eklendi",
+        "Sohbetlerinizden ${ added } bellek eklendi"
+      ],
       "All chats deleted successfully": [
         "Tüm sohbetler silindi"
       ],
@@ -2275,6 +2394,20 @@
         "İş akışı oluşturucu"
       ]
     },
+    "collider_2025: Tip": {
+      "Avoid passwords, tokens, or sensitive personal identifiers.": [
+        "Parolalardan, kodlardan veya önemli kişisel tanımlayıcılardan kaçının."
+      ],
+      "Include how you like to communicate (tone, format, language).": [
+        "Nasıl iletişim kurmak istediğinizi (üslup, tarz, dil) ekleyin."
+      ],
+      "Keep each memory short - one preference or fact per line.": [
+        "Her belleği kısa tutun - her satıra bir tercih veya gerçek bilgi yazın."
+      ],
+      "Write stable facts, not one-off questions.": [
+        "Tek seferlik sorular değil, kalıcı gerçekler yazın."
+      ]
+    },
     "collider_2025: Title": {
       "${ LUMO_SHORT_APP_NAME } API · ${ spec.versionLabel }": [
         "${ LUMO_SHORT_APP_NAME } API · ${ spec.versionLabel }"
@@ -2287,6 +2420,9 @@
       ],
       "About ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } hakkında"
+      ],
+      "Add your own memory": [
+        "Kendi belleğinizi ekleyin"
       ],
       "API calls per day": [
         "Günlük API çağrıları"
@@ -2303,6 +2439,9 @@
       "Authentication": [
         "Kimlik doğrulama"
       ],
+      "Auto update memory": [
+        "Bellek otomatik olarak güncellensin"
+      ],
       "Automatic web search": [
         "Otomatik internet araması"
       ],
@@ -2311,6 +2450,12 @@
       ],
       "Chat": [
         "Sohbet"
+      ],
+      "Clear all memories?": [
+        "Tüm bellekler temizlensin mi?"
+      ],
+      "Clear chat-based memories?": [
+        "Sohbet temelli bellekler temizlensin mi?"
       ],
       "Conversational AI": [
         "Yazışılan yapay zeka"
@@ -2326,6 +2471,9 @@
       ],
       "Don't lose the thread": [
         "Konudan uzaklaşmayın"
+      ],
+      "End-to-end encrypted": [
+        "Uçtan uca şifrelenmiş"
       ],
       "Generated code": [
         "Oluşturulan kod"
@@ -2345,14 +2493,23 @@
       "Models": [
         "Modeller"
       ],
+      "Never used inside projects": [
+        "Projelerde hiç kullanılmadı"
+      ],
       "No API keys yet": [
         "Henüz API anahtarı yok"
+      ],
+      "No memories yet": [
+        "Henüz bir bellek yok"
       ],
       "Opening External Link": [
         "Dış bağlantı açılıyor"
       ],
       "Parameters": [
         "Parametreler"
+      ],
+      "Personalizes general chats": [
+        "Genel sohbetleri kişiselleştirir"
       ],
       "Prerequisites": [
         "Ön koşullar"
@@ -2372,6 +2529,9 @@
       "Save your favorites": [
         "Beğendiklerinizi kaydedin"
       ],
+      "Saved memories": [
+        "Kaydedilmiş bellekler"
+      ],
       "Search Index": [
         "Arama dizini"
       ],
@@ -2389,6 +2549,9 @@
       ],
       "Tokens per day": [
         "Günlük kodlar"
+      ],
+      "Turn off memory?": [
+        "Bellek kapatılsın mı?"
       ],
       "Upload files": [
         "Dosya yükle"
@@ -2417,13 +2580,26 @@
       "Workflow output": [
         "İş akışı çıktısı"
       ],
+      "You stay in control": [
+        "Kontrol sizde kalır"
+      ],
       "Your new API key": [
         "Yeni API anahtarınız"
       ]
     },
     "collider_2025: Tooltip": {
+      "${ LUMO_SHORT_APP_NAME } updates chat-based memories every ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages. ${ promptsUntilAutoSave } message left until the next update.": [
+        "${ LUMO_SHORT_APP_NAME } sohbet temelli bellekler her ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } iletide bir güncellenir. Bir sonraki güncellemeye ${ promptsUntilAutoSave } ileti kaldı.",
+        "${ LUMO_SHORT_APP_NAME } sohbet temelli bellekler her ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } iletide bir güncellenir. Bir sonraki güncellemeye ${ promptsUntilAutoSave } ileti kaldı."
+      ],
       "Contact your admin to upgrade": [
         "Tarifenizi yükseltmesi için yöneticiniz ile görüşün"
+      ],
+      "Every ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages in general chats, ${ LUMO_SHORT_APP_NAME } extracts short excerpts and adds new chat-based memories in the background.": [
+        "${ LUMO_SHORT_APP_NAME }, genel sohbetlerde her ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } iletide bir alıntı çıkarır ve arka planda sohbet temelli yeni bellekler ekler."
+      ],
+      "When enabled, ${ LUMO_SHORT_APP_NAME } updates chat-based memories every ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages in general chats. Only short excerpts are sent.": [
+        "Açıldığında, ${ LUMO_SHORT_APP_NAME } genel sohbetlerdeki her ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } ileti bir sohbet temelli bellekleri günceller. Yalnızca alıntılar gönderilir."
       ]
     },
     "collider_2025: Top nav link": {
@@ -4799,6 +4975,12 @@
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
       ],
+      "Organization key must be activated to create invited users": [
+        "Davet edilen kullanıcılar oluşturmak için kuruluş anahtarı etkinleştirilmelidir"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Korunmayan kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
+      ],
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
       ],
@@ -5742,6 +5924,9 @@
         "${ n } ay",
         "${ n } ay"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } karakter"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "${ PASS_APP_NAME } uygulamasına uç birimden güvenli olarak erişebilirsiniz. Betik kullanımı, otomasyon ve geliştirme iş akışları için idealdir."
       ],
@@ -6126,6 +6311,9 @@
       "FPS": [
         "kare/sn"
       ],
+      "Generation errors": [
+        "Oluşturma hatası"
+      ],
       "Idle": [
         "Boşta"
       ],
@@ -6158,6 +6346,9 @@
       ],
       "Notifications": [
         "Bildirimler"
+      ],
+      "Open a conversation to enable generation error testing.": [
+        "Oluşturma hatası testini etkinleştirmek için bir konuşma açın."
       ],
       "Performance": [
         "Başarım"
@@ -6243,11 +6434,26 @@
       "Trigger conversations limit": [
         "Konuşma sayısı sınırını tetikle"
       ],
+      "Trigger generation rejected": [
+        "Tetikleyicinin oluşturulması reddedildi"
+      ],
+      "Trigger harmful content": [
+        "Zararlı içerikle tetiklensin"
+      ],
+      "Trigger high demand": [
+        "Fazla istekte tetiklensin"
+      ],
       "Trigger messages limit": [
         "Tetikleyici ileticileri sınırı"
       ],
       "Trigger spaces limit": [
         "Tetikleyici alanları sınırı"
+      ],
+      "Trigger stream disconnected": [
+        "Tetikleyici akış bağlantısı kesildi"
+      ],
+      "Triggers generation error messages with tier-specific messaging. User type: ${ lumoUserType }": [
+        "Katmana özgü iletilerde hata iletilerinin oluşturulmasını tetikler. Kullanıcı türü: ${ lumoUserType }"
       ],
       "Unsynced conversations": [
         "Eşitlenmemiş yazışmalar"
@@ -8699,6 +8905,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Yöneticiler gizli kullanıcıların verilerine erişemez ve parolalarını sıfırlayamaz."
+      ],
+      "Member activation incomplete": [
+        "Üye etkinleştirilmemiş"
+      ],
+      "Organization key must be activated to request data access": [
+        "Verilere erişme isteğinde bulunmak için kuruluş anahtarı etkinleştirilmelidir"
+      ],
+      "The user must have an address to request data access": [
+        "Veri isteğinde bulunabilmek için kullanıcının bir e-posta adresi olmalıdır"
       ]
     },
     "Validation": {
