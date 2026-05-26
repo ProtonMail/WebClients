@@ -4,7 +4,7 @@ import { devtools } from 'zustand/middleware';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { useInvitationCountStore } from '../../legacy/zustand/share/invitationCount.store';
+import { useInvitationCountStore } from '../../modules/invitations';
 import { type SortConfig, SortField, sortItems } from '../../modules/sorting';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';

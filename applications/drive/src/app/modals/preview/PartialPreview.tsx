@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { FilePreviewContent } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import { useFlagsDriveSheet } from '../../flags/useFlagsDriveSheet';
+import { useFlagsDriveSheet } from '../../modules/featureFlag';
 import type { ContentPreviewMethod } from './content';
 import type { Drive } from './interface';
 import { SignatureInformation } from './signatures';
