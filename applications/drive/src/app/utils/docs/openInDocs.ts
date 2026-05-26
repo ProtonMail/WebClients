@@ -6,7 +6,7 @@ import type { OpenInDocsType, ProtonDocumentType } from '@proton/shared/lib/help
 import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { getCurrentTab, getNewWindow } from '@proton/shared/lib/helpers/window';
 
-import { unleashVanillaStore } from '../../legacy/zustand/unleash/unleash.store';
+import { featureFlagStore } from '../../modules/featureFlag';
 import { extraThunkArguments } from '../../redux-store/thunk';
 import { tmpConvertNewDocTypeToOld } from './tmpConvertNewDocTypeToOld';
 
@@ -25,9 +25,9 @@ export enum RedirectAction {
 }
 
 export const getOpenInDocsInfo = (mediaType: string): OpenInDocsType | undefined => {
-    const isODSImportEnabled = unleashVanillaStore.getState().isEnabled('SheetsODSImportEnabled');
-    const isSheetsDisabled = unleashVanillaStore.getState().isEnabled('DocsSheetsDisabled');
-    const isDocsDisabled = unleashVanillaStore.getState().isEnabled('DriveDocsDisabled');
+    const isODSImportEnabled = featureFlagStore.getState().isEnabled('SheetsODSImportEnabled');
+    const isSheetsDisabled = featureFlagStore.getState().isEnabled('DocsSheetsDisabled');
+    const isDocsDisabled = featureFlagStore.getState().isEnabled('DriveDocsDisabled');
 
     const openInDocsType = mimeTypeToOpenInDocsType(mediaType, isODSImportEnabled);
 

@@ -3,8 +3,8 @@ import { useRef } from 'react';
 import { FilePreview, NavigationControl } from '@proton/components';
 import { useSharingModal } from '@proton/drive/modules/sharingModal';
 
-import { useFlagsDriveSheet } from '../../flags/useFlagsDriveSheet';
 import { useDetailsModal } from '../../modals/DetailsModal';
+import { useFlagsDriveSheet } from '../../modules/featureFlag';
 import type { Drive } from './interface';
 import { isDriveWithSharing } from './interface';
 import { SignatureInformation, SignatureStatus } from './signatures';
