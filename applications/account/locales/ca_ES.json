@@ -381,6 +381,9 @@
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Continua amb ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
+      "Continue with Free": [
+        "Continuar amb el pla gratuït"
+      ],
       "Continue with Google": [
         "Continua amb Google"
       ],
@@ -573,6 +576,9 @@
       "Disable categories": [
         "Desactiveu les categories"
       ],
+      "Disable category": [
+        "Desactivar la categoria"
+      ],
       "Disable recovery phrase": [
         "Desactivar la frase de recuperació"
       ],
@@ -723,6 +729,9 @@
       "Enable ${ darkWebMonitoring }": [
         "Activa ${ darkWebMonitoring }"
       ],
+      "Enable category": [
+        "Habilitar la categoria"
+      ],
       "enable desktop notifications": [
         "activa les notificacions d'escriptori"
       ],
@@ -794,6 +803,9 @@
       ],
       "Generate key": [
         "Genereu la clau"
+      ],
+      "Generate missing keys": [
+        "Genereu les claus que falten"
       ],
       "Generate new phrase": [
         "Genereu una frase nova"
@@ -5292,6 +5304,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Ordeneu automàticament els missatges entrants abans que arribin a la safata d'entrada."
       ],
+      "Available storage: ${ storageText }": [
+        "Emmagatzematge disponible: ${ storageText }"
+      ],
       "Available with ${ title }": [
         "Està disponible amb ${ title }"
       ],
@@ -5354,6 +5369,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Xifrar i importar contactes... És possible que passi uns quants minuts. Quan el procés s'hagi completat, podeu tancar aquesta modalitat."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Espai suficient per anys de correus electrònics, fitxers adjunts i més."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Assegureu un accés segur a les dades de l'organització, fins i tot si el vostre equip està remot o utilitza una WiFi pública."
@@ -5427,6 +5445,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Llegiu, responeu i estigueu al dia de Gmail des de ${ MAIL_APP_NAME }"
       ],
+      "Select which categories you want to add and if you want to receive push notifications for each category.": [
+        "Seleccioneu quines categories voleu afegir i si voleu rebre notificacions automàtiques per cada categoria."
+      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Configureu comptes per a tots els usuaris i convideu-los a unir-se a ${ BRAND_NAME }."
       ],
@@ -5470,6 +5491,9 @@
       "Track the status and activity of your referrals": [
         "Feu un seguiment de l'estat i l'activitat de les vostres referències"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Desbloquegeu 15 GB d'emmagatzematge per només ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Milloreu a ${ planName } per connectar fins a ${ MAX_SYNC_PAID_USER } comptes"
       ],
@@ -5485,14 +5509,20 @@
       "We can't access ${ boldEmails } anymore.": [
         "Ja no podem accedir a ${ boldEmails }."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Aturarem les importacions al 80% de l'emmagatzematge per reservar espai per missatges nous."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Importarem els vostres correus antics i connectarem el vostre Gmail a ${ MAIL_APP_NAME } perquè els missatges nous apareguin automàticament"
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Hem començat a importar els vostres correus electrònics dels darrers 180 dies des de Gmail. Us avisarem quan hagi acabat."
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Hem començat a importar els vostres correus electrònics des de Gmail. Us avisarem quan hagi acabat."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ens sap greu que marxeu. Si teniu un moment, us agrairíem molt que ens diguéssiu per què voleu cancel·lar la subscripció. Els vostres comentaris ens ajuden a fer que ${ BRAND_NAME } sigui millor per a tothom."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Amb les noves categories de correu electrònic, només els missatges importants arriben a la vostra safata d'entrada principal. Les categories funcionen exactament com els filtres de correu brossa. ${ MAIL_APP_NAME } mai no llegeix els vostres correus electrònics ni comparteix les vostres dades."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Ja teniu una adreça de Gmail que es reenvia a ${ MAIL_APP_NAME }. Connecteu-la a continuació per enviar i rebre correus electrònics directament des de ${ MAIL_APP_NAME }."
@@ -5534,6 +5564,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Heu connectat una adreça d'un compte extern a ${ MAIL_APP_NAME }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "El vostre compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem ${ newUserStorageText } dels vostres missatges més recents de Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "El vostre compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem els vostres correus electrònics més recents de Gmail."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "El vostre pla admet ${ MAX_SYNC_FREE_USER } adreça de Gmail.",
@@ -7149,11 +7185,17 @@
       "Email address is required": [
         "L'adreça de correu electrònic és obligatòria."
       ],
+      "Email is not valid": [
+        "El correu electrònic no és vàlid"
+      ],
       "Empty condition": [
         "Condició buida"
       ],
       "Enter 6 digits": [
         "Introduïu 6 dígits"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduïu el vostre nom d'usuari sense el domini (@example.cat)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Error al connectar a l'API de Bitcoin."
@@ -7241,6 +7283,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "La segona contrasenya no és correcta. Torneu-ho a intentar."
+      ],
+      "Incorrect username": [
+        "Nom d'usuari incorrecte"
       ],
       "Intended recipient does not support calendar sharing": [
         "El destinatari escollit no admet la compartició de calendari."
@@ -7351,6 +7396,9 @@
       "Not a ${ BRAND_NAME } account": [
         "No és un compte de ${ BRAND_NAME }"
       ],
+      "Not a valid number": [
+        "Número no vàlid"
+      ],
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
       ],
@@ -7362,6 +7410,9 @@
       ],
       "Password is required": [
         "La contrasenya és obligatòria"
+      ],
+      "Passwords do not match": [
+        "Les contrasenyes no coincideixen."
       ],
       "Payment process canceled": [
         "S'ha cancel·lat el procés de pagament"
@@ -7444,9 +7495,6 @@
       ],
       "Please try again in a few moments.": [
         "Torneu-ho a provar d'aquí a uns moments."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Milloreu a un pla per a empreses amb més d'un usuari per a obtenir suport multiusuari."
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Milloreu a un pla per a empreses amb més d'un usuari per a gestionar múltiples usuaris."
@@ -7545,6 +7593,9 @@
       "The amount due has changed. Please try again.": [
         "L'import que cal pagar ha canviat. Torneu-ho a provar."
       ],
+      "The email addresses do not match": [
+        "Les adreces de correu electrònic no coincideixen."
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "El fitxer és massa gran, la mida màxima és ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -7590,11 +7641,17 @@
       "There was an error, please try again.": [
         "Hi ha hagut un error, torneu-ho a provar."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
+      ],
       "This field is invalid": [
         "Aquest camp no és vàlid"
       ],
       "This field is required": [
         "Aquest camp és obligatori."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Aquest nom de carpeta no està disponible. Trieu-ne un altre."
@@ -7620,6 +7677,9 @@
       "Try again later": [
         "Torneu-ho a provar més tard"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Intenteu utilitzar només lletres, numerals i _.-"
+      ],
       "Unable to upload file": [
         "No es pot carregar el fitxer."
       ],
@@ -7637,6 +7697,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Els fitxers carregats no són claus privades vàlides. Verifiqueu-les i torneu-ho a provar."
+      ],
+      "Username must begin with a letter or digit": [
+        "El nom d'usuari ha de començar amb una lletra o un dígit."
+      ],
+      "Username must end with a letter or digit": [
+        "El nom d'usuari ha d'acabar amb una lletra o un dígit."
       ],
       "Validation error": [
         "S'ha produït un error de validació"
@@ -8375,6 +8441,9 @@
       "${ PROTON_SENTINEL_NAME } account protection": [
         "Protecció de comptes de ${ PROTON_SENTINEL_NAME }"
       ],
+      "10+ premium features": [
+        "Més de 10 característiques prèmium"
+      ],
       "15 GB storage": [
         "15 GB d'emmagatzematge"
       ],
@@ -8410,6 +8479,12 @@
       "Continue": [
         "Continua"
       ],
+      "Custom email domain": [
+        "Domini de correu electrònic personalitzat"
+      ],
+      "Email addresses": [
+        "Adreces de correu electrònic"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Emmagatzematge xifrat al núvol per a fitxers, fotos i documents"
       ],
@@ -8439,6 +8514,9 @@
       ],
       "Short domain @pm.me": [
         "Domini curt @pm.me"
+      ],
+      "Storage": [
+        "Emmagatzematge"
       ],
       "Torrenting support (P2P)": [
         "Suport torrent (P2P)"
@@ -8807,6 +8885,9 @@
     "Force upgrade safety review": {
       "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
         "Entenc que ja no podré iniciar sessió en versions antigues de les aplicacions de ${ BRAND_NAME }."
+      ],
+      "Learn more": [
+        "Per saber-ne més"
       ]
     },
     "Form heading": {
@@ -9623,8 +9704,8 @@
       "${ BRAND_NAME } Free": [
         "${ BRAND_NAME } gratuït"
       ],
-      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
-        "${ BRAND_NAME } es finança de manera independent i funciona sense publicitat.\nA continuació teniu exemples de com s'ha aplicat aquesta independència a la pràctica."
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } es finança de manera independent i funciona sense publicitat. A continuació es mostren exemples de com s'ha aplicat aquesta independència en la pràctica."
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } és privacitat en la qual podeu confiar, garantida per un xifratge fort, de codi obert, i lleis de privacitat suïsses. Creiem que ningú hauria de poder explotar les vostres dades i punt. La nostra tecnologia i el nostre negoci estan basats en aquesta definició fonamentalment més forta de la privacitat."
@@ -10061,9 +10142,9 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Afegiu el vostre nom i logo per a crear una experiència més personalitzada per a la vostra organització."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "S'està afegint ${ addedServerCount } servidor de passarel·la",
-        "S'estan afegint ${ addedServerCount } servidors de passarel·la"
+      "Adding ${ total } gateway server": [
+        "S'està afegint ${ total } servidor de passarel·la",
+        "S'estan afegint ${ total } servidors de passarel·la"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Si afegiu una adreça de correu electrònic externa, es desactivarà el xifratge d'extrem a extrem per a totes les comunicacions de correu electrònic dins d'aquest grup. Voleu continuar?"
@@ -11253,6 +11334,9 @@
       ],
       "Include device, location, and IP details": [
         "Inclou detalls del dispositiu, la ubicació i l'IP"
+      ],
+      "Included": [
+        "Inclòs"
       ],
       "Increase your account security by verifying your email address.": [
         "Augmenteu la seguretat del vostre compte verificant la vostra adreça electrònica."
@@ -12582,6 +12666,9 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Per a desxifrar i veure les dades bloquejades després d'un restabliment de contrasenya, seleccioneu un mètode de recuperació."
       ],
+      "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
+        "Per habilitar la protecció postquàntica haureu d'acabar de generar les noves claus de xifratge postquàntic."
+      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Per garantir la màxima seguretat possible del vostre compte, desactiveu **Recuperació mitjançant correu electrònic de recuperació**."
       ],
@@ -12705,8 +12792,14 @@
       "Unverified email address.": [
         "No s'ha verificat l'adreça de correu electrònic."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Milloreu el pla en qualsevol moment per portar la resta"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Milloreu de pla o allibereu espai en qualsevol moment per portar la resta"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Milloreu de pla per afegir al vostre compte una adreça @pm.me més curta que sigui més fàcil de compartir. Vol dir \"${ MAIL_APP_NAME } me\" o \"Private Message me\"."
@@ -14033,6 +14126,9 @@
       "${ PROTON_SENTINEL_NAME } protection": [
         "Protecció de ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caràcters"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
       ],
@@ -14630,6 +14726,9 @@
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
         "Habiliteu ${ DARK_WEB_MONITORING_NAME } per a ${ domain.DomainName }"
+      ],
+      "Enable categories": [
+        "Habilitar les categories"
       ],
       "Enabled": [
         "Habilitat"
@@ -18652,6 +18751,9 @@
       "Plain text": [
         "Text sense format"
       ],
+      "Push notifications": [
+        "Notificacions automàtiques"
+      ],
       "Receive from all": [
         "Rep de tots"
       ],
@@ -20027,13 +20129,13 @@
       ]
     },
     "PQC account key generation": {
-      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
-        "No s'han pogut generar les claus. Per activar la protecció postquàntica, haureu de generar les vostres noves claus de xifratge manualment.\n\n${ settingsLink } i seleccioneu \"Genera clau\" per al vostre compte i per a cada adreça."
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "No s'han pogut generar les claus. Per activar la protecció postquàntica, haureu d'acabar de generar les noves claus de xifratge postquàntic.\n\n${ goToSettingsLink } i seleccioneu \"Generar les claus que falten\"."
       ]
     },
     "PQC adress key generation": {
-      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
-        "No s'han pogut generar les claus d'adreça. Per activar la protecció postquàntica, haureu de generar les noves claus de xifratge manualment.\\n\\nAneu a ${ settingsLink } i seleccioneu 'Generar clau' per a cada adreça."
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys for each address.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "No s'han pogut generar les claus d'adreça. Per activar la protecció postquàntica, haureu d'acabar de generar les vostres noves claus de xifratge postquàntic per cada adreça.\n\n${ goToSettingsLink } i seleccioneu \"Genera les claus que falten\"."
       ]
     },
     "PQC compatibility warning": {
@@ -24520,6 +24622,9 @@
       "Add another notification to remind you of this event": [
         "Afegeix una altra notificació per recordar-vos aquest esdeveniment"
       ],
+      "Add categories": [
+        "Afegiu categories"
+      ],
       "Add contact group name": [
         "Afegeix el nom del grup de contactes"
       ],
@@ -24694,6 +24799,9 @@
       "Catch-all address": [
         "Adreça d'arreplega"
       ],
+      "Categories": [
+        "Categories"
+      ],
       "Change login password": [
         "Canvia la contrasenya d'inici de sessió"
       ],
@@ -24786,6 +24894,9 @@
       ],
       "Contact us": [
         "Contacteu amb nosaltres"
+      ],
+      "Continue with free storage": [
+        "Continueu amb l'emmagatzematge gratuït"
       ],
       "Continue with partial import?": [
         "Continuar amb la importació parcial?"
@@ -25195,6 +25306,9 @@
       "Feature access": [
         "Accés a les característiques"
       ],
+      "Fewer distractions, more focus": [
+        "Menys distraccions, més concentració"
+      ],
       "Filter for more focus": [
         "Filtreu els vostres missatges per a una millor concentració"
       ],
@@ -25293,6 +25407,9 @@
       ],
       "Get more from your VPN": [
         "Obteniu més de la vostra VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Aconseguiu més emmagatzematge amb ${ MAIL_APP_NAME } Plus"
       ],
       "Get started": [
         "Primers passos"
@@ -26415,6 +26532,9 @@
       "Each imported email will have this label": [
         "Tots els correus electrònics importats tindran aquesta etiqueta"
       ],
+      "Early access to new apps and features.": [
+        "Accés anticipat a noves aplicacions i característiques."
+      ],
       "Edit folder names": [
         "Edita el nom de les carpetes"
       ],
@@ -26571,8 +26691,8 @@
       "This feature is only available on Beta": [
         "Aquesta característica només està disponible en la versió beta."
       ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "Aquesta és la clau per defecte que fan servir altres usuaris de ${ MAIL_APP_NAME } a les aplicacions mòbils antigues per xifrar les dades que us envien."
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
+        "Aquesta és la clau predeterminada que utilitzen altres usuaris de ${ MAIL_APP_NAME } en aplicacions antigues per xifrar les dades que us envien"
       ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
         "Aquesta és la clau per defecte que utilitzen altres usuaris de ${ MAIL_APP_NAME } per xifrar les dades que us envien"
@@ -27104,6 +27224,16 @@
       ],
       "Writing assistant": [
         "Assistent d'escriptura"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcter",
+        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
+        "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"
       ]
     },
     "Video control": {

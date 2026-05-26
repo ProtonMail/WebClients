@@ -4354,6 +4354,9 @@
       "Email address is required": [
         "O endereço de e-mail é obrigatório."
       ],
+      "Email is not valid": [
+        "O e-mail não é válido."
+      ],
       "Empty condition": [
         "Condição vazia"
       ],
@@ -4428,6 +4431,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "A secunda palavra-passe não é correta. Tente novamente."
+      ],
+      "Incorrect username": [
+        "Nome de utilizador incorreto"
       ],
       "Intended recipient does not support calendar sharing": [
         "O destinatário pretendido não suporta a partilha de calendário."
@@ -4517,6 +4523,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Não é uma conta do ${ BRAND_NAME }."
       ],
+      "Not a valid number": [
+        "O número não é válido."
+      ],
       "Organization key is not decrypted": [
         "A chave da organização não está encriptada."
       ],
@@ -4528,6 +4537,9 @@
       ],
       "Password is required": [
         "A palavra-passe é obrigatória."
+      ],
+      "Passwords do not match": [
+        "As palavras-passe não correspondem."
       ],
       "Payment process canceled": [
         "Processo de pagamento cancelado"
@@ -4601,9 +4613,6 @@
       ],
       "Please try again in a few moments.": [
         "Tente novamente dentro de alguns momentos."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Subscreva um plano empresarial com mais de 1 utilizador para obter suporte multiutilizador."
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Subscreva um plano empresarial com mais de 1 utilizador para gerir vários utilizadores."
@@ -4684,6 +4693,9 @@
       "The amount due has changed. Please try again.": [
         "O montante devido foi alterado. Tente novamente."
       ],
+      "The email addresses do not match": [
+        "Os endereços de e-mail não correspondem."
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "O ficheiro é muito grande. O tamanho máximo é ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }."
       ],
@@ -4723,8 +4735,14 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Há pastas demais na sua conta externa. Personalize a importação para excluir algumas pastas."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Este campo excede o máximo de ${ maximumLength } caracteres."
+      ],
       "This field is required": [
         "Este campo é obrigatório"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Este campo requer um mínimo de ${ minimumLength } carateres."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Este nome de pasta não está disponível. Escolha um nome diferente."
@@ -4744,6 +4762,9 @@
       "Try again later": [
         "Tente novamente mais tarde"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Tente utilizar apenas letras, números e _.-"
+      ],
       "Unable to upload file": [
         "Não é possível enviar o ficheiro."
       ],
@@ -4761,6 +4782,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Os ficheiros enviados não são chaves privadas válidas. Verifique e tente novamente."
+      ],
+      "Username must begin with a letter or digit": [
+        "O nome de utilizador deve começar com uma letra ou um algarismo"
+      ],
+      "Username must end with a letter or digit": [
+        "O nome de utilizador deve acabar com uma letra ou algarismo"
       ],
       "Validation error": [
         "Erro de validação"
@@ -6671,10 +6698,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Adicione o seu nome e logo para criar uma experiência mais personalizada para a sua organização."
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "A adicionar ${ addedServerCount } servidor de porta de entrada",
-        "A adicionar ${ addedServerCount } servidores de porta de entrada"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Adicionar um endereço de e-mail externo desativará a encriptação de ponta a ponta para todas as comunicações de e-mail dentro deste grupo. Deseja continuar?"
@@ -19037,6 +19060,16 @@
       ],
       "Writing assistant": [
         "Assistente de escrita"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A palavra-passe deve conter pelo menos ${ MIN_PASSWORD_LENGTH } caráter.",
+        "A palavra-passe deve conter pelo menos ${ MIN_PASSWORD_LENGTH } carateres."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Tente um nome de utilizador mais pequeno (máximo de ${ n } caráter)",
+        "Tente um nome de utilizador mais pequeno (máximo de carateres ${ n })"
       ]
     },
     "Video control": {

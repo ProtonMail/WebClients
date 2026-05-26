@@ -4761,9 +4761,6 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Usa esta guía para que tu organización se beneficie rápidamente del cifrado y el ecosistema de privacidad líderes del sector de ${ BRAND_NAME }."
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Se ha iniciado la importación de tus correos de los últimos 180 días desde Gmail. Te avisamos en cuanto termine."
-      ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Lamentamos que te vayas. Si tienes un momento, te agradeceríamos mucho que nos contaras por qué quieres cancelar. Tus comentarios nos ayudan a mejorar ${ BRAND_NAME } para todo el mundo."
       ],
@@ -6213,11 +6210,17 @@
       "Email address is required": [
         "Dirección de correo electrónico requerida"
       ],
+      "Email is not valid": [
+        "El correo no es válido."
+      ],
       "Empty condition": [
         "Condición vacía"
       ],
       "Enter 6 digits": [
         "Introduce 6 dígitos."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduce tu nombre de usuario sin el dominio (@ejemplo.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Se ha producido un error al conectar a la API de Bitcoin."
@@ -6299,6 +6302,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "La segunda contraseña no es correcta. Inténtalo de nuevo."
+      ],
+      "Incorrect username": [
+        "El nombre de usuario no es correcto."
       ],
       "Intended recipient does not support calendar sharing": [
         "El destinatario previsto no admite compartir calendarios."
@@ -6400,6 +6406,9 @@
       "Not a ${ BRAND_NAME } account": [
         "No es una cuenta de ${ BRAND_NAME }."
       ],
+      "Not a valid number": [
+        "No es un número válido."
+      ],
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada."
       ],
@@ -6411,6 +6420,9 @@
       ],
       "Password is required": [
         "Contraseña requerida"
+      ],
+      "Passwords do not match": [
+        "Las contraseñas no coinciden."
       ],
       "Payment process canceled": [
         "Se ha cancelado el proceso de pago"
@@ -6493,9 +6505,6 @@
       ],
       "Please try again in a few moments.": [
         "Vuelve a intentarlo en un momento."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Pasa a un plan para empresa con más de 1 usuario para un soporte multiusuario."
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Pasa a un plan para empresa con más de 1 usuario para administrar varios usuarios."
@@ -6588,6 +6597,9 @@
       "The amount due has changed. Please try again.": [
         "El importe a pagar ha cambiado. Inténtalo de nuevo."
       ],
+      "The email addresses do not match": [
+        "Las direcciones de correo electrónico no coinciden"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "El archivo es demasiado grande. El tamaño máximo es ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }."
       ],
@@ -6630,11 +6642,17 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hay demasiadas carpetas en tu cuenta externa. Personaliza la importación para eliminar algunas carpetas."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Este campo excede el máximo de ${ maximumLength } caracteres."
+      ],
       "This field is invalid": [
         "Este campo no es válido"
       ],
       "This field is required": [
         "Este campo es obligatorio."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Este nombre de carpeta no está disponible. Elige un nombre diferente."
@@ -6660,6 +6678,9 @@
       "Try again later": [
         "Vuelve a intentarlo más tarde"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Utiliza solo letras, números y _.-"
+      ],
       "Unable to upload file": [
         "No se puede cargar el archivo."
       ],
@@ -6677,6 +6698,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Los archivo cargados no son claves privadas válidas. Verifícalo e inténtalo de nuevo."
+      ],
+      "Username must begin with a letter or digit": [
+        "El nombre de usuario debe comenzar con una letra o un número."
+      ],
+      "Username must end with a letter or digit": [
+        "El nombre de usuario debe terminar con una letra o un número."
       ],
       "Validation error": [
         "Error de validación"
@@ -8106,9 +8133,6 @@
       "Contact us": [
         "Contáctanos"
       ],
-      "Downloads": [
-        "Descargas"
-      ],
       "Enjoying ${ planName }?": [
         "¿Disfrutando de ${ planName }?"
       ],
@@ -8914,10 +8938,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Añade tu nombre y logo para crear una experiencia más personalizada para tu organización."
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Añadiendo ${ addedServerCount } servidor de puerta de enlace",
-        "Añadiendo ${ addedServerCount } servidores de puerta de enlace"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Al añadir una dirección de correo electrónico externa, se desactivará el cifrado de extremo a extremo para todas las comunicaciones por correo electrónico dentro de este grupo. ¿Deseas continuar?"
@@ -17930,16 +17950,6 @@
         "Mejorar a ${ upsellPlanTitle }"
       ]
     },
-    "PQC account key generation": {
-      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
-        "No se han podido generar las claves. Para activar la protección poscuántica, deberás generar tus nuevas claves de cifrado manualmente.\n\n${ settingsLink } y selecciona «Generar clave» tanto para tu cuenta como para cada dirección."
-      ]
-    },
-    "PQC adress key generation": {
-      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
-        "No se han podido generar las claves de las direcciones. Para activar la protección poscuántica, deberás crear tus nuevas claves de cifrado manualmente.\n\nVe a ${ settingsLink } y selecciona «Generar clave» para cada dirección."
-      ]
-    },
     "PQC key generation": {
       "This will generate new quantum-resistant encryption keys for your account.": [
         "Esto generará nuevas claves de cifrado resistentes al análisis cuántico para tu cuenta."
@@ -22473,6 +22483,9 @@
       "Feature access": [
         "Acceso a funciones"
       ],
+      "Fewer distractions, more focus": [
+        "Menos distracciones, más concentración"
+      ],
       "Filter for more focus": [
         "Filtra tus mensajes para una mejor concentración"
       ],
@@ -24117,6 +24130,16 @@
       ],
       "Writing assistant": [
         "Asistente de escritura"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La contraseña debe contener al menos ${ MIN_PASSWORD_LENGTH } carácter.",
+        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prueba con un nombre de usuario más corto (máx. ${ n } carácter)",
+        "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)"
       ]
     },
     "Video control": {

@@ -5245,9 +5245,6 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Načteme vaše staré e-maily a propojíme váš účet Gmail s aplikací ${ MAIL_APP_NAME }, aby se nové zprávy zobrazovaly automaticky"
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Zahájili jsme import vašich e-mailů za posledních 180 dnů z Gmailu. Po dokončení vám dáme vědět."
-      ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Je nám líto, že odcházíte. Pokud máte chvilku, oceníme, pokud nám sdělíte důvod zrušení. Vaše zpětná vazba pomáhá vylepšovat ${ BRAND_NAME } pro všechny."
       ],
@@ -6899,11 +6896,17 @@
       "Email address is required": [
         "Je vyžadována e-mailová adresa"
       ],
+      "Email is not valid": [
+        "E-mailová adresa není platná"
+      ],
       "Empty condition": [
         "Prázdná podmínka"
       ],
       "Enter 6 digits": [
         "Zadejte 6 číslic"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Zadejte své uživatelské jméno bez domény (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Chyba při připojování k Bitcoin API."
@@ -6991,6 +6994,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Nesprávné druhé heslo. Zkuste to prosím znovu."
+      ],
+      "Incorrect username": [
+        "Nesprávné uživatelské jméno"
       ],
       "Intended recipient does not support calendar sharing": [
         "Zamýšlený příjemce nepodporuje sdílení kalendáře"
@@ -7103,6 +7109,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Nejde o ${ BRAND_NAME } účet"
       ],
+      "Not a valid number": [
+        "Neplatné číslo"
+      ],
       "Organization key is not decrypted": [
         "Klíč organizace není dešifrován"
       ],
@@ -7114,6 +7123,9 @@
       ],
       "Password is required": [
         "Heslo je povinná položka"
+      ],
+      "Passwords do not match": [
+        "Hesla se neshodují"
       ],
       "Payment process canceled": [
         "Platba byla zrušena"
@@ -7198,9 +7210,6 @@
       ],
       "Please try again in a few moments.": [
         "Zkuste to prosím za chvíli znovu."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Chcete-li získat podporu pro více uživatelů, přejděte na firemní tarif"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Chcete-li spravovat více uživatelů, přejděte na firemní tarif."
@@ -7301,6 +7310,9 @@
       "The amount due has changed. Please try again.": [
         "Částka k zaplacení se změnila. Zkuste to prosím znovu."
       ],
+      "The email addresses do not match": [
+        "E-mailové adresy se neshodují"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Soubor je příliš velký, maximální velikost je ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -7343,11 +7355,17 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Na vašem externím účtu je příliš mnoho složek. Upravte prosím import pro odstranění některých složek."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Toto pole přesahuje maximální délku ${ maximumLength } znaků."
+      ],
       "This field is invalid": [
         "Toto pole je neplatné"
       ],
       "This field is required": [
         "Toto pole je povinné"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Toto pole musí obsahovat minimálně ${ minimumLength } znaků."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Tento název složky není k dispozici. Zvolte prosím jiný název."
@@ -7373,6 +7391,9 @@
       "Try again later": [
         "Zkuste to znovu později"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Zkuste používat pouze písmena, číslice a _.-"
+      ],
       "Unable to upload file": [
         "Soubor nelze nahrát"
       ],
@@ -7390,6 +7411,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Nahrané soubory nejsou platnými soukromými klíči. Prosím ověřte a zkuste to znovu."
+      ],
+      "Username must begin with a letter or digit": [
+        "Uživatelské jméno musí začínat písmenem nebo číslicí"
+      ],
+      "Username must end with a letter or digit": [
+        "Uživatelské jméno musí končit písmenem nebo číslicí"
       ],
       "Validation error": [
         "Chyba ověření"
@@ -9408,9 +9435,6 @@
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "Tarify ${ BRAND_NAME } Business poskytují vašemu týmu všechny nástroje pro spolupráci, které potřebuje k produktivní a organizované práci, a zároveň chrání vaši firmu."
       ],
-      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
-        "${ BRAND_NAME } je nezávisle financován a funguje bez reklamy.\nNíže uvádíme příklady toho, jak se tato nezávislost uplatňuje v praxi."
-      ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } je soukromí, kterému můžete důvěřovat, zajištěné silným šifrováním, otevřeným zdrojovým kódem a švýcarskými zákony o ochraně osobních údajů. Věříme, že nikdo by neměl mít možnost zneužít vaše data, tečka. Naše technologie a podnikání jsou založeny na takto vysoké definici soukromí."
       ],
@@ -9887,12 +9911,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Přidejte své jméno a logo a vytvořte pro svou organizaci personalizované prostředí."
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Přidávání ${ addedServerCount } serveru brány",
-        "Přidávání ${ addedServerCount } serverů brány",
-        "Přidávání ${ addedServerCount } serverů brány",
-        "Přidávání ${ addedServerCount } serverů brány"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Přidáním externí e-mailové adresy se deaktivuje koncové šifrování pro veškerou e-mailovou komunikaci v rámci této skupiny. Chcete pokračovat?"
@@ -19939,16 +19957,6 @@
         "Navýšit na ${ upsellPlanTitle }"
       ]
     },
-    "PQC account key generation": {
-      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
-        "Nepodařilo se vygenerovat klíče. Pro aktivaci postkvantové ochrany budete muset vygenerovat své nové šifrovací klíče ručně.\n\n${ settingsLink } a vyberte 'Generovat klíč' pro svůj účet a pro každou adresu."
-      ]
-    },
-    "PQC adress key generation": {
-      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
-        "Nepodařilo se vygenerovat klíče adres. Pro aktivaci postkvantové ochrany budete muset vygenerovat své nové šifrovací klíče ručně.\n\nPřejděte do ${ settingsLink } a vyberte 'Generovat klíč' pro každou adresu."
-      ]
-    },
     "PQC key generation": {
       "This will generate new quantum-resistant encryption keys for your account.": [
         "Tím se vygenerují nové kvantově odolné šifrovací klíče pro váš účet."
@@ -25074,6 +25082,9 @@
       "Feature access": [
         "Přístup k funkcím"
       ],
+      "Fewer distractions, more focus": [
+        "Méně rozptylování, více soustředění"
+      ],
       "Filter for more focus": [
         "Filtrace pošty pro větší zaměření"
       ],
@@ -26451,9 +26462,6 @@
       "This feature is only available on Beta": [
         "Tato funkce je k dispozici pouze ve verzi Beta"
       ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "Toto je výchozí klíč, který používají ostatní uživatelé ${ MAIL_APP_NAME } ve starších mobilních aplikacích k šifrování dat, která vám posílají"
-      ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
         "Toto je výchozí klíč, který používají ostatní uživatelé ${ MAIL_APP_NAME } k šifrování dat, která vám posílají"
       ],
@@ -26979,6 +26987,20 @@
       ],
       "Writing assistant": [
         "Asistent psaní"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znak",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaky",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znak)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaky)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)"
       ]
     },
     "Video control": {

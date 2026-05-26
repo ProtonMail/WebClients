@@ -3715,6 +3715,9 @@
       "Email address is required": [
         "ईमेल पता चाहिए"
       ],
+      "Email is not valid": [
+        "ईमेल मान्य नहीं है"
+      ],
       "Empty condition": [
         "खाली हालत"
       ],
@@ -3780,6 +3783,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "गलत दूसरा पासवर्ड। कृपया फिर से प्रयास करें।"
+      ],
+      "Incorrect username": [
+        "गलत यूज़रनेम"
       ],
       "Intended recipient does not support calendar sharing": [
         "इस प्राप्तकर्ता के साथ कैलेंडर साझा नहीं किया जा सकता"
@@ -3863,6 +3869,9 @@
       "Not a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } खाता नहीं"
       ],
+      "Not a valid number": [
+        "मान्य संख्या नहीं है"
+      ],
       "Organization key is not decrypted": [
         "संगठन कुंजी को डिक्रिप्ट नहीं किया गया है"
       ],
@@ -3874,6 +3883,9 @@
       ],
       "Password is required": [
         "पासवर्ड चाहिए"
+      ],
+      "Passwords do not match": [
+        "पासवर्ड्स समान नहीं हैं"
       ],
       "Payment process canceled": [
         "भुगतान प्रॉसेस रद्द"
@@ -3923,9 +3935,6 @@
       ],
       "Please try again in a few moments.": [
         "कृपया कुछ क्षणों में फिर कोशिश करें।"
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "एकाधिक उपयोगकर्ता समर्थन पाने के लिए 1 से अधिक उपयोगकर्ता वाली व्यावसायिक योजना में अपग्रेड करें"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "कई-यूज़र संभालने के लिए कृपया 1 से ज़्यादा यूज़र वाले बिज़नेस प्लान पे अपग्रेड करें।"
@@ -4000,6 +4009,9 @@
       "The address might be misspelled": [
         "पता शायद गलत है"
       ],
+      "The email addresses do not match": [
+        "ईमेल पते मेल नहीं खाते"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "फ़ाइल बहुत बड़ी है, अधिकतम आकार ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS } होना चाहिए"
       ],
@@ -4039,8 +4051,14 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "आपके बाहरी खाते में बहुत सारे फ़ोल्डर हैं। कृपया कुछ फ़ोल्डरों को हटाने के लिए आयात को अनुकूलित करें।"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "ये फील्ड ${ maximumLength } अक्षर की सीमा पार करता है।"
+      ],
       "This field is required": [
         "यह जानकारी आवश्यक है"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "इस फ़ील्ड के लिए कम से कम ${ minimumLength } वर्णों की आवश्यकता है।"
       ],
       "This folder name is not available. Please choose a different name.": [
         "यह फ़ोल्डर नाम उपलब्ध नहीं है। कृपया कोई दूसरा नाम चुनें |"
@@ -4060,6 +4078,9 @@
       "Try again later": [
         "बाद में पुन: प्रयास करें"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "सिर्फ अक्षर, नंबर, और _ के इस्तेमाल की कोशिश करें।-"
+      ],
       "Unable to upload file": [
         "फाइल अपलोड करने में असमर्थ"
       ],
@@ -4074,6 +4095,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "अपलोड की गई फ़ाइलें मान्य निजी कुंजी नहीं हैं। कृपया सत्यापित करें और पुनः प्रयास करें।"
+      ],
+      "Username must begin with a letter or digit": [
+        "यूज़रनेम अक्षर या अंकसे शुरु होना चाहिए"
+      ],
+      "Username must end with a letter or digit": [
+        "यूज़रनेम के अंत में अक्षर या अंक होना चाहिए"
       ],
       "Validation error": [
         "मान्यता त्रुटि"
@@ -5834,10 +5861,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "अपने संगठन के लिए व्यक्तिगत अनुभव बनाने के लिए अपना नाम और चिन्ह जोड़ें।"
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "${ addedServerCount } गेटवे सर्वर जोड़ा जा रहा है",
-        "${ addedServerCount } गेटवे सर्वर जोड़ें जा रहें हैं"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "किसी बाहरी ईमेल पते को जोड़ने से उस समूह के भीतर सभी ईमेल संचार के लिए शुरू-से-अंत तक एन्क्रिप्शन अक्षम हो जाएगा। क्या आप आगे बढ़ना चाहते हैं?"
@@ -16220,6 +16243,16 @@
       ],
       "Writing assistant": [
         "लेखन सहायक"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होना चाहिए",
+        "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होने चाहिए"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)",
+        "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)"
       ]
     },
     "Video control": {

@@ -5965,6 +5965,9 @@
       "Email address is required": [
         "ต้องระบุที่อยู่อีเมล"
       ],
+      "Email is not valid": [
+        "อีเมลไม่ถูกต้อง"
+      ],
       "Empty condition": [
         "เงื่อนไขทีว่างเปล่า"
       ],
@@ -6045,6 +6048,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "รหัสผ่านที่สองไม่ถูกต้อง โปรดลองใหม่อีกครั้ง"
+      ],
+      "Incorrect username": [
+        "ชื่อผู้ใช้ไม่ถูกต้อง"
       ],
       "Intended recipient does not support calendar sharing": [
         "ผู้รับที่ระบุไม่รองรับการแชร์ปฏิทิน"
@@ -6142,6 +6148,9 @@
       "Not a ${ BRAND_NAME } account": [
         "ไม่ใช่บัญชี ${ BRAND_NAME }"
       ],
+      "Not a valid number": [
+        "หมายเลขไม่ถูกต้อง"
+      ],
       "Organization key is not decrypted": [
         "คีย์องค์กรไม่ได้ถูกถอดรหัส"
       ],
@@ -6153,6 +6162,9 @@
       ],
       "Password is required": [
         "ต้องระบุรหัสผ่าน"
+      ],
+      "Passwords do not match": [
+        "รหัสผ่านไม่ตรงกัน"
       ],
       "Payment process canceled": [
         "ยกเลิกกระบวนการชำระเงินแล้ว"
@@ -6231,9 +6243,6 @@
       ],
       "Please try again in a few moments.": [
         "โปรดลองใหม่อีกครั้งในอีกสักครู่"
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "โปรดอัปเกรดเป็นแผนธุรกิจที่มีผู้ใช้มากกว่า 1 คนเพื่อใช้งานการรับรองผู้ใช้หลายคน"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "โปรดอัปเกรดเป็นแผนธุรกิจที่มีผู้ใช้มากกว่า 1 คนเพื่อจัดการผู้ใช้หลายคน"
@@ -6316,6 +6325,9 @@
       "The amount due has changed. Please try again.": [
         "ยอดเงินที่ต้องชำระมีการเปลี่ยนแปลง โปรดลองอีกครั้ง"
       ],
+      "The email addresses do not match": [
+        "ที่อยู่อีเมลไม่ตรงกัน"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "ไฟล์มีขนาดใหญ่เกินไป ขนาดสูงสุดคือ ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -6355,8 +6367,14 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "มีโฟลเดอร์มากเกินไปในบัญชีภายนอกของคุณ โปรดปรับแก้การนำเข้าเพื่อลบบางโฟลเดอร์"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "ช่องกรอกนี้เกินขนาดสูงสุด ${ maximumLength } ตัวอักษรแล้ว"
+      ],
       "This field is required": [
         "ต้องระบุข้อมูลในช่องนี้"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "ต้องใส่อักษรอย่างน้อย ${ minimumLength } ตัวอักษรซึ่งเป็นจำนวนที่กำหนดไว้ในช่องนี้"
       ],
       "This folder name is not available. Please choose a different name.": [
         "ไม่มีชื่อโฟลเดอร์นี้ โปรดเลือกชื่ออื่น"
@@ -6382,6 +6400,9 @@
       "Try again later": [
         "ลองอีกครั้งในภายหลัง"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "ลองใหม่ให้ใช้ตัวอักษร ตัวเลข และ _ - เท่านั้น"
+      ],
       "Unable to upload file": [
         "ไม่สามารถอัปโหลดไฟล์"
       ],
@@ -6399,6 +6420,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "ไฟล์ที่อัปโหลดไม่ใช่รหัสส่วนตัวที่ถูกต้อง กรุณาตรวจสอบและลองอีกครั้ง"
+      ],
+      "Username must begin with a letter or digit": [
+        "ชื่อผู้ใช้ต้องขึ้นต้นด้วยตัวอักษรหรือตัวเลข"
+      ],
+      "Username must end with a letter or digit": [
+        "ชื่อผู้ใช้ต้องลงท้ายด้วยตัวอักษรหรือตัวเลข"
       ],
       "Validation error": [
         "ข้อผิดพลาดในการตรวจสอบความถูกต้อง"
@@ -8551,9 +8578,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "เพิ่มชื่อและโลโก้เพื่อสร้างประสบการณ์ที่เป็นส่วนตัวยิ่งขึ้นสำหรับองค์กร"
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "กำลังเพิ่มเซิร์ฟเวอร์เกตเวย์ ${ addedServerCount } เครื่อง"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "การเพิ่มที่อยู่อีเมลภายนอกจะปิดใช้งานการเข้ารหัสลับจากต้นทางถึงปลายทางสำหรับการสื่อสารทางอีเมลทั้งหมดภายในกลุ่มนั้น ต้องการดำเนินการต่อหรือไม่?"
@@ -17288,16 +17312,6 @@
         "อัปเกรดเป็น ${ upsellPlanTitle }"
       ]
     },
-    "PQC account key generation": {
-      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
-        "ไม่สามารถสร้างคีย์ได้ หากต้องการเปิดใช้งานการป้องกันแบบโพสต์ควอนตัม คุณจะต้องสร้างคีย์การเข้ารหัสลับใหม่ด้วยตนเอง\n\n${ settingsLink } และเลือก 'สร้างคีย์' สำหรับบัญชีของคุณและสำหรับแต่ละที่อยู่"
-      ]
-    },
-    "PQC adress key generation": {
-      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
-        "ไม่สามารถสร้างคีย์ที่อยู่ได้ หากต้องการเปิดใช้งานการป้องกันแบบโพสต์ควอนตัม คุณจะต้องสร้างคีย์การเข้ารหัสลับใหม่ด้วยตนเอง\n\nไปที่ ${ settingsLink } แล้วเลือก 'สร้างคีย์' สำหรับแต่ละที่อยู่"
-      ]
-    },
     "PQC key generation": {
       "This will generate new quantum-resistant encryption keys for your account.": [
         "การดำเนินการนี้จะสร้างคีย์การเข้ารหัสลับใหม่ที่ต้านทานควอนตัมสำหรับบัญชีของคุณ"
@@ -21500,6 +21514,9 @@
       "Feature access": [
         "การเข้าถึงคุณสมบัติ"
       ],
+      "Fewer distractions, more focus": [
+        "สิ่งรบกวนน้อยลง โฟกัสได้มากขึ้น"
+      ],
       "Filter for more focus": [
         "ตัวกรองเพื่อการโฟกัสที่ดียิ่งขึ้น"
       ],
@@ -22682,9 +22699,6 @@
       "This feature is only available on Beta": [
         "คุณสมบัตินี้ใช้งานได้เฉพาะในเวอร์ชันเบต้าเท่านั้น"
       ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "นี่คือคีย์เริ่มต้นที่ผู้ใช้ ${ MAIL_APP_NAME } คนอื่นใช้บนแอปมือถือรุ่นเก่าเพื่อเข้ารหัสข้อมูลที่ส่งถึงคุณ"
-      ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
         "นี่คือคีย์ค่าเริ่มต้นที่ผู้ใช้ ${ MAIL_APP_NAME } รายอื่นใช้เพื่อเข้ารหัสข้อมูลที่ส่งถึงคุณ"
       ],
@@ -23180,6 +23194,14 @@
       ],
       "Writing assistant": [
         "ผู้ช่วยการเขียน"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "รหัสต้องมีอักขระอย่างน้อย ${ MIN_PASSWORD_LENGTH } อักษร"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "ลองใช้ชื่อผู้ใช้ที่สั้นกว่านี้ (สูงสุด ${ n } อักขระ)"
       ]
     },
     "Video control": {

@@ -6170,6 +6170,9 @@
       "Email address is required": [
         "ელფოსტის მისამართი აუცილებელია"
       ],
+      "Email is not valid": [
+        "ელფოსტა არასწორია"
+      ],
       "Empty condition": [
         "ცარიელი პირობა"
       ],
@@ -6253,6 +6256,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "არასწორი მეორე პაროლი. თავიდან სცადეთ."
+      ],
+      "Incorrect username": [
+        "მომხმარებლის სახელი არასწორია"
       ],
       "Intended recipient does not support calendar sharing": [
         "სამიზნე მიმღებს კალენდრის გაზიარების მხარდაჭერა არ გააჩნია"
@@ -6360,6 +6366,9 @@
       "Not a ${ BRAND_NAME } account": [
         "არა-${ BRAND_NAME }-ის ანგარიში"
       ],
+      "Not a valid number": [
+        "არასწორი ნომერი"
+      ],
       "Organization key is not decrypted": [
         "ორგანიზაციის გასაღები გაშიფრული არაა"
       ],
@@ -6371,6 +6380,9 @@
       ],
       "Password is required": [
         "პაროლი აუცილებელია"
+      ],
+      "Passwords do not match": [
+        "პაროლები არ ემთხვევა"
       ],
       "Payment process canceled": [
         "გადახდის პროცესი გაუქმდა"
@@ -6450,9 +6462,6 @@
       ],
       "Please try again in a few moments.": [
         "გთხოვთ, ხელახლა სცადოთ რამდენიმე წამში."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "მრავალმომხმარებლიანობის მისაღებად შეიძინეთ სატარიფო გეგმა, რომელიც 1-ზე მეტ მომხმარებელს შეიცავს"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "ბევრი მომხმარებლის სამართავად შეიძინეთ სატარიფო გეგმა, რომელიც 1-ზე მეტ მომხმარებელს შეიცავს."
@@ -6536,6 +6545,9 @@
       "The amount due has changed. Please try again.": [
         "გადასახდელი თანხა შეიცვალა. თავიდან სცადეთ."
       ],
+      "The email addresses do not match": [
+        "ელფოსტის მისამართები არ ემთხვევა"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "ეს ფაილი მეისმეტად დიდია. მაქსიმალური ზომაა ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -6575,11 +6587,17 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "თქვენს გარე ანგარიშზე, მეტისმეტად, ბევრი საქაღალდეა. გთხოვთ, ხელით მიუთითოთ შემოსატანი საქაღალდეები."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "ველი ${ maximumLength } დაშვებულ სიმბოლოს აჭარბებს."
+      ],
       "This field is invalid": [
         "ეს ველი არასწორია"
       ],
       "This field is required": [
         "ეს ველი აუცილებელია"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "ეს ველი მოითხოვს, მინიმუმ, ${ minimumLength } სიმბოლოს."
       ],
       "This folder name is not available. Please choose a different name.": [
         "საქაღალდის სახელი მიუწვდომელია. აირჩიეთ სხვა სახელი."
@@ -6605,6 +6623,9 @@
       "Try again later": [
         "მოგვიანებით სცადეთ"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "სცადეთ გამოიყენოთ, მხოლოდ, ანბანის სიმბოლოები, ციფრები და _.-"
+      ],
       "Unable to upload file": [
         "ფაილის ატვრთვის შეცდომა"
       ],
@@ -6622,6 +6643,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "ატვირთული ფაილი სწორ პირად გასაღებს არ წარმოადგენს. გადაამოწმეთ და თავიდან სცადეთ."
+      ],
+      "Username must begin with a letter or digit": [
+        "მომხმარებლის სახელი ასოთი ან ციფრით უნდა იწყებოდეს"
+      ],
+      "Username must end with a letter or digit": [
+        "მომხმარებლის სახელი ასოთი ან ციფრით უნდა მთავრდებოდეს"
       ],
       "Validation error": [
         "გადამოწმების შეცდომა"
@@ -8838,10 +8865,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "დაამატეთ თქვენი სახელი და ლოგო, რომ თქვენი ორგანიზაციისთვის უფრო მორგებული გარემო შეიქმნათ."
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "${ addedServerCount } რაუტერი სერვერის დამატება",
-        "${ addedServerCount } რაუტერი სერვერის დამატება"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "გარეთ ელფოსტის დამატება გამჭოლ დაშიფვრას გათიშავს ამ ჯგუფში. გნებავთ, გააგრძელოთ?"
@@ -22076,6 +22099,9 @@
       "Feature access": [
         "წვდომა ფუნქციასთან"
       ],
+      "Fewer distractions, more focus": [
+        "ნაკლები ყურადღების გადატანა, მეტი ფოკუსი"
+      ],
       "Filter for more focus": [
         "ფილტრი მეტი კონცენტრაციისთვის"
       ],
@@ -23737,6 +23763,16 @@
       ],
       "Writing assistant": [
         "წერაში დამხმარე"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს",
+        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)",
+        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)"
       ]
     },
     "Video control": {
