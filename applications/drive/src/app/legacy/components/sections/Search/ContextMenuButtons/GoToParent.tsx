@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import useDriveNavigation from '../../../../../legacy/hooks/drive/useNavigate';
-import { ContextMenuButton } from '../../ContextMenu';
+import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';
 
 interface Props {
     shareId: string;
