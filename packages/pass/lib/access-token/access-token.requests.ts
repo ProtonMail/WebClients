@@ -25,7 +25,7 @@ export const listPersonalAccessTokens = async (): Promise<PersonalAccessToken[]>
     const response = await api<ListPersonalAccessTokensResponse>({
         url: PAT_BASE_URL,
         method: 'get',
-        params: { IncludeExpired: 1 },
+        params: { IncludeExpired: 1, Product: PAT_PRODUCT },
     });
     return response.PersonalAccessTokens.PersonalAccessTokens ?? [];
 };
