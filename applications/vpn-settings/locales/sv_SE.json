@@ -3727,6 +3727,9 @@
       "Automatically forward incoming email to another email address.": [
         "Vidarebefordra automatiskt inkommande e-post till annan e-postadress."
       ],
+      "Available storage: ${ storageText }": [
+        "Tillgängligt lagringsutrymme: ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Blocka Googles möjlighet att profilera dig. Gmail kan inte se vad du gör i ${ MAIL_APP_NAME }."
       ],
@@ -3872,6 +3875,9 @@
       "Track the status and activity of your referrals": [
         "Spåra statusen och aktiviteten för dina hänvisningar"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Lås upp 15 GB lagringsutrymme för endast ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Uppgradera till ${ planName } för att ansluta upp till ${ MAX_SYNC_PAID_USER } konton"
       ],
@@ -3881,8 +3887,14 @@
       "We can't access ${ boldEmails } anymore.": [
         "Vi kan inte komma åt ${ boldEmails } längre."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Vi kommer pausa importerna vid 80 % lagringsutrymme för att reservera utrymme för nya meddelanden."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Vi importerar din gamla e-post och ansluter din Gmail till ${ MAIL_APP_NAME } så nya meddelanden visas automatiskt"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Vi har börjat importera din e-post från Gmail. Vi meddelar dig när det är klart."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Du har redan en Gmail-adress som vidarebefordras till ${ MAIL_APP_NAME }. Anslut den nedan för att skicka och ta emot e-post direkt från ${ MAIL_APP_NAME }."
@@ -4769,9 +4781,6 @@
       "Please try again in a few moments.": [
         "Försök igen om en stund."
       ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Uppgradera till ett företagspaket med mer än 1 användare för att få support för flera användare"
-      ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Uppgradera till ett företagspaket med mer än 1 användare för att hantera flera användare."
       ],
@@ -5511,6 +5520,9 @@
         "${ MaxVPN } VPN-anslutning",
         "${ MaxVPN } VPN-anslutningar"
       ],
+      "10+ premium features": [
+        "10+ premiumfunktioner"
+      ],
       "15 GB storage": [
         "15 GB lagringsutrymme"
       ],
@@ -5546,6 +5558,12 @@
       "Continue": [
         "Fortsätt"
       ],
+      "Custom email domain": [
+        "Anpassad e-postdomän"
+      ],
+      "Email addresses": [
+        "E-postadresser"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Krypterad molnlagring för filer, foton och dokument"
       ],
@@ -5575,6 +5593,9 @@
       ],
       "Short domain @pm.me": [
         "Kort domän @pm.me"
+      ],
+      "Storage": [
+        "Lagringsutrymme"
       ],
       "Torrenting support (P2P)": [
         "Stöd för Torrenting (P2P)"
@@ -6724,9 +6745,9 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Lägg till ditt namn och din logga för att skapa en mer personifierad upplevelse för din organisation."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Lägger till ${ addedServerCount } gatewayserver",
-        "Lägger till ${ addedServerCount } gatewayservrar"
+      "Adding ${ total } gateway server": [
+        "Lägger till ${ total } gatewayserver",
+        "Lägger till ${ total } gatewayservrar"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Att lägga till en extern e-postadress kommer inaktivera end-to-end-kryptering för all e-postkommunikation inom denna grupp. Vill du fortsätta?"
@@ -7508,6 +7529,9 @@
       "Include device, location, and IP details": [
         "Inkludera enhet, plats och IP-detaljer"
       ],
+      "Included": [
+        "Inkluderad"
+      ],
       "Increase your account security by verifying your email address.": [
         "Öka ditt kontosäkerhet genom att verifiera din e-postadress."
       ],
@@ -8286,6 +8310,9 @@
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro rekommenderar med ett betyg på 4,2 av 5 stjärnor"
       ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Tillfälligt otillgänglig på grund av hög efterfrågan. Försök igen senare."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Tillfälligt otillgänglig. Återkom senare."
       ],
@@ -8589,8 +8616,14 @@
       "Unverified email address.": [
         "Overifierad e-postadress."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Uppgradera när som helst för att flytta över resten"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Uppgradera eller frigör utrymme när som helst för att flytta över resten"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Uppgradera för att behålla dina ${ planTitle }-förmåner."
@@ -9324,6 +9357,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME }-skydd"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tecken"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tillfälligt otillgänglig. Återkom senare.)"
@@ -16428,6 +16464,9 @@
       "Contact us": [
         "Kontakta oss"
       ],
+      "Continue with free storage": [
+        "Fortsätt med gratis lagringsutrymme"
+      ],
       "Continue with partial import?": [
         "Fortsätta med delimport?"
       ],
@@ -16736,6 +16775,9 @@
       ],
       "Get more from your VPN": [
         "Få ut mer av din VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Skaffa mer lagringsutrymme med ${ MAIL_APP_NAME } Plus"
       ],
       "Get started": [
         "Kom igång"
