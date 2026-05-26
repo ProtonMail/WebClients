@@ -1514,7 +1514,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1711,6 +1712,9 @@
       ],
       "Start testing": [
         "Inicieu la prova"
+      ],
+      "Continue with Free": [
+        "Continuar amb el pla gratuït"
       ]
     },
     "action": {
@@ -4318,10 +4322,25 @@
         "Hem començat a importar els vostres correus electrònics des de Gmail. Us avisarem quan hagi acabat."
       ],
       "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
-        "Les vostres correccions ajudaran a definir l'experiència predeterminada per a tothom; en el moment del llançament, també es recordaran les vostres preferències de cara al futur!"
+        "Les correccions que feu definiran l'experiència per defecte per tothom i en el llançament també es recordaran les vostres preferències de cara al futur!"
       ],
       "You’re among the first to try email categories.": [
         "Sou de les primeres persones a provar les categories de correu electrònic."
+      ],
+      "Available storage: ${ storageText }": [
+        "Emmagatzematge disponible: ${ storageText }"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Espai suficient per anys de correus electrònics, fitxers adjunts i més."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Desbloquegeu 15 GB d'emmagatzematge per només ${ config.offerPrice }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "El vostre compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem ${ newUserStorageText } dels vostres missatges més recents de Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "El vostre compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem els vostres correus electrònics més recents de Gmail."
       ]
     },
     "description": {
@@ -5716,6 +5735,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Nombre il·limitat d'àlies hide-my-email"
+      ],
+      "10+ premium features": [
+        "Més de 10 característiques prèmium"
+      ],
+      "Custom email domain": [
+        "Domini de correu electrònic personalitzat"
+      ],
+      "Email addresses": [
+        "Adreces de correu electrònic"
+      ],
+      "Storage": [
+        "Emmagatzematge"
       ]
     },
     "Features": {
@@ -7630,8 +7661,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -9078,6 +9108,15 @@
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Confieu en la clau \"${ activeSignerText }\" per verificar els missatges nous d'aquest contacte."
+      ],
+      "Included": [
+        "Inclòs"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Milloreu el pla en qualsevol moment per portar la resta"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Milloreu de pla o allibereu espai en qualsevol moment per portar la resta"
       ]
     },
     "info": {
@@ -16050,6 +16089,12 @@
       ],
       "Early access to email categories": [
         "Accés anticipat a les categories de correu electrònic"
+      ],
+      "Continue with free storage": [
+        "Continueu amb l'emmagatzematge gratuït"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Aconseguiu més emmagatzematge amb ${ MAIL_APP_NAME } Plus"
       ]
     },
     "Today icon tooltip in mini calendar": {

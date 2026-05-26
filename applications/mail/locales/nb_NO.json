@@ -1705,6 +1705,16 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Continue with Free": [
+        "Fortsett med gratis"
+      ],
+      "Start testing": [
+        "Begynn å teste"
+      ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ]
     },
     "action": {
@@ -4298,6 +4308,39 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
+      ],
+      "Available storage: ${ storageText }": [
+        "Tilgjengelig lagringsplass: ${ storageText }"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Nok plass til årevis med e-poster, vedlegg og mer."
+      ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Hvis du finner en e-post i feil kategori, flytter du den bare til riktig kategori."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Det er fortsatt læring, og vi trenger din hjelp til å forbedre kategoriseringen."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Lås opp 15 GB lagringsplass for kun ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Vi setter importene på pause ved 80 % lagringsplass for å reservere plass til nye meldinger."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Vi har begynt å importere e-postene dine fra Gmail. Vi gir deg beskjed når det er ferdig."
+      ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "Rettelsene dine vil forme standardopplevelsen for alle, og ved lansering vil den også huske preferansene dine fremover!"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrenset lagringsplass, så vi importerer bare ${ newUserStorageText } av de nyeste Gmail-meldingene dine."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrenset lagringsplass, så vi importerer bare de nyeste Gmail-e-postene dine."
+      ],
+      "You’re among the first to try email categories.": [
+        "Du er blant de første som prøver e-postkategorier."
       ]
     },
     "description": {
@@ -5692,6 +5735,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Ubegrenset antall hide-my-email-aliaser"
+      ],
+      "10+ premium features": [
+        "10+ premiumfunksjoner"
+      ],
+      "Custom email domain": [
+        "Egendefinert e-postdomene"
+      ],
+      "Email addresses": [
+        "E-postadresser"
+      ],
+      "Storage": [
+        "Lagring"
       ]
     },
     "Features": {
@@ -7602,8 +7657,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -9044,6 +9098,25 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Opprett en sikker sky for ${ memberCount } medlem",
+        "Opprett en sikker sky for ${ memberCount } medlemmer"
+      ],
+      "Included": [
+        "Inkludert"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Midlertidig utilgjengelig på grunn av høy etterspørsel. Prøv igjen senere."
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Stol på \"${ activeSignerText }\"-nøkkelen for å bekrefte nye meldinger fra denne kontakten."
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Oppgrader når som helst for å få med deg resten"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Oppgrader eller frigjør plass når som helst for å ta med resten"
       ]
     },
     "info": {
@@ -9110,6 +9183,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktiv underskriver"
+      ],
+      "Fallback": [
+        "Reserve"
       ]
     },
     "Key pinning": {
@@ -10109,6 +10188,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tegn"
+      ],
+      "Category:": [
+        "Kategori:"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11374,6 +11459,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
+      ],
+      "Access all countries": [
+        "Få tilgang til alle land"
+      ],
+      "No streaming support": [
+        "Ingen strømmestøtte"
+      ],
+      "Unlock streaming": [
+        "Lås opp strømming"
       ]
     },
     "new_plans: feature highlight": {
@@ -11793,6 +11887,10 @@
       "Support for ${ n } custom email domain": [
         "Støtte for ${ n } egendefinert e-postdomene",
         "Støtte for ${ n } egendefinerte e-postdomener"
+      ],
+      "${ n } country": [
+        "${ n } land",
+        "${ n } land"
       ]
     },
     "Notification": {
@@ -12659,6 +12757,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi anbefaler at du \"ikke stoler på\" denne nøkkelen."
+      ],
+      "This contact currently signs messages with this key": [
+        "Denne kontakten signerer for øyeblikket meldinger med denne nøkkelen"
+      ],
+      "This key is used for message verification": [
+        "Denne nøkkelen brukes til meldingsverifisering"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Denne nøkkelen brukes til å kryptere meldinger til denne kontakten i eldre apper"
       ]
     },
     "PGP key warning": {
@@ -16075,6 +16182,15 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
+      ],
+      "Continue with free storage": [
+        "Fortsett med gratis lagring"
+      ],
+      "Early access to email categories": [
+        "Tidlig tilgang til e-postkategorier"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Skaff deg mer lagringsplass med ${ MAIL_APP_NAME } Plus"
       ]
     },
     "Today icon tooltip in mini calendar": {

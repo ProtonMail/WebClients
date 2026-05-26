@@ -1514,7 +1514,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1708,6 +1709,12 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Continue with Free": [
+        "Free kullanmayı sürdür"
+      ],
+      "Start testing": [
+        "Denemeyi başlat"
       ]
     },
     "action": {
@@ -4303,10 +4310,37 @@
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
-        "Yeni iletilere yer ayırmak için depolama alanı %80'e ulaştığında içe aktarma işlemlerini duraklatacağız."
+        "Yeni iletilere yer açmak için depolama alanı %80 doluluğa ulaştığında içe aktarma işlemini duraklatacağız."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
-        "Gmail'deki e-postalarınızı içe aktarmaya başladık. İşlem tamamlandığında size haber vereceğiz."
+        "Gmail üzerindeki e-postalarınızı içe aktarmaya başladık. Tamamlandığında sizi bilgilendireceğiz."
+      ],
+      "Available storage: ${ storageText }": [
+        "Kullanılabilecek depolama alanı: ${ storageText }"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Yıllarca birikecek e-postalar, ek dosyalar ve diğer şeyler için yeterli alan."
+      ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Yanlış kategoride bir e-posta bulursanız onu doğru kategoriye taşımanız yeterlidir."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Henüz öğreniyoruz ve kategorilere ayırmayı iyileştirmek için yardımınız gerekiyor."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Yalnızca ${ config.offerPrice } ile 15 GB depolama alanı edinin."
+      ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "Düzeltmeleriniz herkes için varsayılan deneyimi şekillendirecek. Ayrıca ürünün sunulması ile ilerleyen süreçte sistem tercihlerinizi de anımsayacak!"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ücretsiz ${ MAIL_APP_NAME } hesabınız sınırlı depolama alanıyla sunulduğundan güncel Gmail iletilerinizin yalnızca ${ newUserStorageText } kadarını içe aktaracağız."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ücretsiz ${ MAIL_APP_NAME } hesabınız sınırlı depolama alanıyla sunulduğu için yalnızca son Gmail e-postalarınız içe aktarılacak."
+      ],
+      "You’re among the first to try email categories.": [
+        "E-posta kategorilerini ilk deneyenler arasındasınız."
       ]
     },
     "description": {
@@ -5701,6 +5735,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Sınırsız sayıda hide-my-email takma adı"
+      ],
+      "10+ premium features": [
+        "10+ ücretli özellik"
+      ],
+      "Custom email domain": [
+        "Özel e-posta etki alanı"
+      ],
+      "Email addresses": [
+        "E-posta adresleri"
+      ],
+      "Storage": [
+        "Depolama alanı"
       ]
     },
     "Features": {
@@ -7615,8 +7661,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9062,7 +9107,16 @@
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
-        "Bu kişiden gelen yeni iletileri doğrulamak için \"${ activeSignerText }\" anahtarına güven."
+        "Bu kişiden gelen yeni iletileri doğrulamak için \"${ activeSignerText }\" anahtarına güvenin."
+      ],
+      "Included": [
+        "İçindekiler"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Geri kalanını getirmek için istediğiniz zaman tarifenizi yükseltebilirsiniz"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Geri kalanları aktarmak için istediğiniz zaman tarifenizi yükseltin ya da yer açın"
       ]
     },
     "info": {
@@ -9131,10 +9185,10 @@
         "WKD"
       ],
       "Active Signer": [
-        "Aktif İmza Sahibi"
+        "Etkin imzalayan"
       ],
       "Fallback": [
-        "Geri dönüş"
+        "Varsayılan"
       ]
     },
     "Key pinning": {
@@ -12708,10 +12762,10 @@
         "Bu kişi şu anda iletileri bu anahtarla imzalıyor"
       ],
       "This key is used for message verification": [
-        "Bu anahtar ileti doğrulama için kullanılır"
+        "Bu anahtar ileti doğrulaması için kullanılır"
       ],
       "This key is used to encrypt messages to this contact on older apps": [
-        "Bu anahtar eski uygulamalarda bu kişiyle olan iletileri şifrelemek için kullanılır"
+        "Bu anahtar daha eski uygulamalarda bu kişiye gönderilen iletileri şifrelemek için kullanılır"
       ]
     },
     "PGP key warning": {
@@ -16128,6 +16182,15 @@
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
+      ],
+      "Continue with free storage": [
+        "Ücretsiz depolama alanını kullanmayı sürdür"
+      ],
+      "Early access to email categories": [
+        "E-posta kategorilerine erken erişim"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "${ MAIL_APP_NAME } Plus ile daha fazla depolama alanı edinin"
       ]
     },
     "Today icon tooltip in mini calendar": {

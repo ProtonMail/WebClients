@@ -1706,6 +1706,9 @@
       ],
       "Start testing": [
         "开始测试"
+      ],
+      "Continue with Free": [
+        "注册免费账户"
       ]
     },
     "action": {
@@ -4290,6 +4293,21 @@
       ],
       "You’re among the first to try email categories.": [
         "您是首批试用邮件分类的用户之一！"
+      ],
+      "Available storage: ${ storageText }": [
+        "可用空间：${ storageText }"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "拥有足够空间存储多年的邮件、附件等"
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "仅需 ${ config.offerPrice } 即可解锁 15 GB 存储空间"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "您的免费 ${ MAIL_APP_NAME } 账户存储空间有限，因此我们仅导入 ${ newUserStorageText } 的最近 Gmail 邮件"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "您的免费 ${ MAIL_APP_NAME } 账户存储空间有限，因此我们仅导入您最近的 Gmail 邮件"
       ]
     },
     "description": {
@@ -5668,6 +5686,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "无限制地 hide-my-email"
+      ],
+      "10+ premium features": [
+        "10+ 高级功能"
+      ],
+      "Custom email domain": [
+        "自定义邮箱域名"
+      ],
+      "Email addresses": [
+        "邮箱地址"
+      ],
+      "Storage": [
+        "存储空间"
       ]
     },
     "Features": {
@@ -7502,7 +7532,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图像"
+        "插入图片"
       ],
       "Insert link": [
         "插入链接"
@@ -8925,6 +8955,15 @@
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "信任“${ activeSignerText }”密钥以验证来自此联系人的新消息"
+      ],
+      "Included": [
+        "已包含"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "随时升级以迁移剩余内容"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "随时升级或清理空间以迁移剩余内容"
       ]
     },
     "info": {
@@ -15743,6 +15782,12 @@
       ],
       "Early access to email categories": [
         "抢先体验邮件分类"
+      ],
+      "Continue with free storage": [
+        "继续使用免费存储空间"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "使用 ${ MAIL_APP_NAME } Plus 获取更多存储空间"
       ]
     },
     "Today icon tooltip in mini calendar": {

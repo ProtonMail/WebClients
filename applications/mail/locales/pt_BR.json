@@ -1514,7 +1514,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1708,6 +1709,12 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Continue with Free": [
+        "Continuar com Free"
+      ],
+      "Start testing": [
+        "Iniciar teste"
       ]
     },
     "action": {
@@ -4289,6 +4296,21 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
+      ],
+      "Available storage: ${ storageText }": [
+        "Armazenamento disponível: ${ storageText }"
+      ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Se você encontrar um e-mail na categoria errada, basta movê-lo para a categoria correta."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Ainda está aprendendo e precisamos da sua ajuda para melhorar a categorização."
+      ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "Suas correções definirão a experiência padrão para todos; no lançamento, o sistema também lembrará suas preferências daqui para frente!"
+      ],
+      "You’re among the first to try email categories.": [
+        "Você está entre os primeiros a experimentar as categorias de e-mail."
       ]
     },
     "description": {
@@ -5680,6 +5702,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Aliases do Hide-my-email ilimitados"
+      ],
+      "10+ premium features": [
+        "10+ recursos premium"
+      ],
+      "Custom email domain": [
+        "Domínio de e-mail personalizado"
+      ],
+      "Email addresses": [
+        "Endereços de e-mail"
+      ],
+      "Storage": [
+        "Armazenamento"
       ]
     },
     "Features": {
@@ -7594,8 +7628,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -9033,6 +9066,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Você está a alguns cliques de distância de ter uma caixa de entrada organizada"
+      ],
+      "Included": [
+        "Incluso"
       ]
     },
     "info": {
@@ -16080,6 +16116,15 @@
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
+      ],
+      "Continue with free storage": [
+        "Continuar com armazenamento grátis"
+      ],
+      "Early access to email categories": [
+        "Acesso antecipado para as categorias de e-mail"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Obtenha mais armazenamento com ${ MAIL_APP_NAME } Plus"
       ]
     },
     "Today icon tooltip in mini calendar": {
