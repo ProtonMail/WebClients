@@ -13,6 +13,7 @@ const REGEXP_URL_ATTR = new RegExp(`${CSS_URL}|${CSS_IMPORT_STRING}`, 'gi');
 
 const REGEXP_HEIGHT_PERCENTAGE = /((?:min-|max-|line-)?height)\s*:\s*([\d.,]+%)/gi;
 const REGEXP_POSITION_ABSOLUTE = /position\s*:\s*absolute/gi;
+const REGEXP_POSITION_OVERLAY = /position\s*:\s*(?:fixed|sticky|-webkit-sticky)/gi;
 const REGEXP_MEDIA_DARK_STYLE_2 = /Color-scheme/gi;
 
 const HTML_ESCAPES: [search: string, replace: string][] = [
@@ -153,6 +154,7 @@ export const escapeURLinStyle = (style: string) => {
 export const escapeForbiddenStyle = (style: string): string => {
     const parsedStyle = style
         .replaceAll(REGEXP_POSITION_ABSOLUTE, 'position: relative')
+        .replaceAll(REGEXP_POSITION_OVERLAY, 'position: inherit')
         .replaceAll(REGEXP_HEIGHT_PERCENTAGE, (rule, prop) => {
             // Replace nothing in this case.
             if (['line-height', 'max-height'].includes(prop)) {
