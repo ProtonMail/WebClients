@@ -66,6 +66,7 @@
   --text-markdown: #24292e;
   --text-strong: rgb(186 186 247 / 0.3);
   --text-secondary: #707070;
+  --text-dark: var(--text-norm);
   --field-norm: #adaba8;
   --field-hover: #8f8d8a;
   --field-disabled: #d1cfcd;
