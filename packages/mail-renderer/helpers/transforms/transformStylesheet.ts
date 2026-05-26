@@ -29,20 +29,20 @@ const replaceMinHeightWith100vh = (styleTag: HTMLStyleElement) => {
 };
 
 /**
- * Because fixed position breaks some email layout it's safer to
- * replace it with inherit.
+ * Because fixed and sticky positions break some email layout it's safer to
+ * replace them with inherit.
  *
- * Replace `fixed` position by `inherit` in the content
+ * Replace `fixed` and `sticky` positions by `inherit` in the content
  * of every style tags.
  *
  * https://www.caniemail.com/search/?s=fixed
  */
-const replaceFixedPositionWithInherit = (styleTag: HTMLStyleElement) => {
-    const fixedPositionRegex = /position[\s]*\:[\s]*fixed/gim;
+const replaceOverlayPositionWithInherit = (styleTag: HTMLStyleElement) => {
+    const overlayPositionRegex = /position[\s]*\:[\s]*(fixed|sticky)/gim;
     const styleContent = styleTag.textContent;
 
-    if (styleContent && fixedPositionRegex.test(styleContent)) {
-        styleTag.textContent = styleContent.replaceAll(fixedPositionRegex, 'position: inherit !important');
+    if (styleContent && overlayPositionRegex.test(styleContent)) {
+        styleTag.textContent = styleContent.replaceAll(overlayPositionRegex, 'position: inherit !important');
     }
 };
 
@@ -98,7 +98,7 @@ export const transformStylesheet = (document: Element) => {
 
     const styleTags = document.querySelectorAll('style');
     styleTags.forEach((styleTag) => {
-        replaceFixedPositionWithInherit(styleTag);
+        replaceOverlayPositionWithInherit(styleTag);
         replaceHeightDependentMediaQueries(styleTag);
         replaceMinHeightWith100vh(styleTag);
     });

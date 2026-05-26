@@ -211,11 +211,23 @@ describe('transformStyleAttributes', () => {
         });
     });
 
-    describe('replaceFixedPositionWithInherit', () => {
+    describe('replaceOverlayPositionWithInherit', () => {
         it('should replace fixed position with inherit', () => {
             const document = setup();
             document.body.innerHTML = `
                 <div id="a" style="position : fixed;">
+                </div>
+            `;
+            transformStyleAttributes(document.body as unknown as Element);
+
+            const a = document.getElementById('a');
+            expect(a?.style.position).toBe('inherit');
+        });
+
+        it('should replace sticky position with inherit', () => {
+            const document = setup();
+            document.body.innerHTML = `
+                <div id="a" style="position : sticky;">
                 </div>
             `;
             transformStyleAttributes(document.body as unknown as Element);
