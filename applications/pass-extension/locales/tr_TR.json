@@ -2219,8 +2219,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2730,6 +2729,9 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "İçe aktarılan verilerinizi gözden geçirmek için tarayıcınızın araç çubuğundaki ${ PASS_APP_NAME } simgesine tıklayın."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "Biyometri ile kilit açmak için ${ PASS_APP_NAME } uygulamasına yeni bir tarayıcı izni verilmesi gerekiyor. İzni verdikten sonra eklenti yeniden yüklenecek. Ardından bu sayfayı yeniden açın."
       ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Eklentiyi yeniden yüklemeyi ya da yeniden kurmayı deneyin ve tarayıcınızın ve ${ PASS_SHORT_APP_NAME } uygulamasının güncel olduğundan emin olun."
@@ -4690,6 +4692,9 @@
       ],
       "Breaches detected for": [
         "Şunun için veri sızıntıları bulundu"
+      ],
+      "Browser permission required": [
+        "Tarayıcı izni verilmesi gerekiyor"
       ],
       "Cancel changing your email?": [
         "E-posta adresi değişikliği iptal edilsin mi?"
