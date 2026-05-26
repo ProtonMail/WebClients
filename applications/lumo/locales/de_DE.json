@@ -1034,6 +1034,12 @@
       "Try again": [
         "Erneut versuchen"
       ],
+      "Turn off": [
+        "Ausschalten"
+      ],
+      "Turn on memory": [
+        "Speicherfunktion einschalten"
+      ],
       "Upload file to Drive": [
         "Datei auf Drive hochladen"
       ],
@@ -1236,6 +1242,14 @@
       ],
       "Switch between light and dark mode": [
         "Wechseln Sie zwischen Hell- und Dunkelmodus"
+      ],
+      "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
+        "Wenn du die Speicherfunktion ausschaltest, werden alle ${ memories.length } gespeicherten Erinnerungen endgültig gelöscht. Du kannst die Speicherfunktion später wieder einschalten, die gelöschten Erinnerungen lassen sich jedoch nicht wiederherstellen."
+      ]
+    },
+    "collider_2025: DisableMemory": {
+      "Turn off ${ LUMO_SHORT_APP_NAME } Memory at any time.": [
+        "${ LUMO_SHORT_APP_NAME } Speicherfunktion jederzeit ausschalten"
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1349,9 +1363,6 @@
       ]
     },
     "collider_2025: Error Message": {
-      "If retrying doesn’t work, check back later or consider upgrading to ${ LUMO_SHORT_APP_NAME } Plus to jump to the front of the line during peak times.": [
-        "Wenn ein erneuter Versuch nicht funktioniert, schau später noch einmal vorbei oder erwäge ein Upgrade auf ${ LUMO_SHORT_APP_NAME } Plus, um in Spitzenzeiten Priorität zu genießen."
-      ],
       "Please try asking a different question or making a different request.": [
         "Versuche bitte, eine andere Frage zu stellen oder eine andere Anfrage zu formulieren."
       ],
@@ -4543,6 +4554,12 @@
       "Organization key is not decrypted": [
         "Organisationsschlüssel ist nicht entschlüsselt"
       ],
+      "Organization key must be activated to create invited users": [
+        "Organisationsschlüssel muss aktiviert sein, um eingeladene Benutzer anzulegen"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisationsschlüssel muss aktiviert sein, um nicht-private Benutzer anzulegen"
+      ],
       "Passwords do not match": [
         "Die Passwörter stimmen nicht überein"
       ],
@@ -5480,6 +5497,9 @@
       "${ n } month": [
         "${ n } Monat",
         "${ n } Monate"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } Zeichen"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Greife sicher vom Terminal auf ${ PASS_APP_NAME } zu, ideal für Skripterstellung, Automatisierung und Entwicklungs-Workflows."
@@ -8381,6 +8401,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Admins haben keinen Zugriff auf die Daten privater Nutzer und können deren Passwort nicht zurücksetzen."
+      ],
+      "Member activation incomplete": [
+        "Mitgliederaktivierung unvollständig"
+      ],
+      "Organization key must be activated to request data access": [
+        "Der Organisationsschlüssel muss aktiviert werden, um den Datenzugang zu beantragen"
+      ],
+      "The user must have an address to request data access": [
+        "Der Nutzer muss über eine Adresse verfügen, um den Datenzugang zu beantragen"
       ]
     },
     "Validation": {

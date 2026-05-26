@@ -5993,6 +5993,9 @@
       "Email address is required": [
         "Kailangan ang email address"
       ],
+      "Email is not valid": [
+        "Hindi valid ang email"
+      ],
       "Empty condition": [
         "Walang laman na kondisyon"
       ],
@@ -6073,6 +6076,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Mali ang pangalawang password. Pakisubukang muli."
+      ],
+      "Incorrect username": [
+        "Maling username"
       ],
       "Intended recipient does not support calendar sharing": [
         "Hindi sumusuporta sa pag-share ng kalendaryo ang nakatakdang tatanggap"
@@ -6171,6 +6177,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Hindi ${ BRAND_NAME } account"
       ],
+      "Not a valid number": [
+        "Hindi valid na numero"
+      ],
       "Organization key is not decrypted": [
         "Hindi naka-decrypt ang key ng organisasyon"
       ],
@@ -6182,6 +6191,9 @@
       ],
       "Password is required": [
         "Kailangan ang password"
+      ],
+      "Passwords do not match": [
+        "Hindi magkatugma ang mga password"
       ],
       "Payment process canceled": [
         "Kinansela ang proseso ng pagbabayad"
@@ -6261,9 +6273,6 @@
       ],
       "Please try again in a few moments.": [
         "Pakisubukang muli sa ilang sandali."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Mangyaring mag-upgrade sa business plan na may mahigit sa 1 user para makakuha ng suporta sa multi-user"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Mangyaring mag-upgrade sa business plan na may mahigit sa 1 user para pamahalaan ang maraming user."
@@ -6347,6 +6356,9 @@
       "The amount due has changed. Please try again.": [
         "Nagbago ang halagang babayaran. Pakisubukang muli."
       ],
+      "The email addresses do not match": [
+        "Hindi magkatugma ang mga email address"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Masyadong malaki ang file, ang maximum na laki ay ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -6386,8 +6398,14 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Masyadong maraming folder sa external account. Paki-customize ang import para i-delete ang ilang folder."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Lumalagpas ang field na ito sa maximum na ${ maximumLength } na character."
+      ],
       "This field is required": [
         "Kailangan ang field na ito"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Kailangan ng field na ito ng minimum na ${ minimumLength } na character."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Hindi available ang pangalan ng folder na ito. Pumili ng ibang pangalan."
@@ -6413,6 +6431,9 @@
       "Try again later": [
         "Subukang muli mamaya"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Subukan gamit ang mga letra, numero, at _.-"
+      ],
       "Unable to upload file": [
         "Hindi ma-upload ang file"
       ],
@@ -6430,6 +6451,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Ang mga na-upload na file ay hindi valid na mga pribadong key. Paki-verify at subukang muli."
+      ],
+      "Username must begin with a letter or digit": [
+        "Dapat magsimula ang username sa titik o numero"
+      ],
+      "Username must end with a letter or digit": [
+        "Dapat magtapos ang username sa titik o numero"
       ],
       "Validation error": [
         "Error sa pagpapatunay"
@@ -8623,10 +8650,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Idagdag ang pangalan at logo upang lumikha ng mas personalized na karanasan para sa organisasyon."
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Nagdadagdag ng ${ addedServerCount } gateway server",
-        "Nagdadagdag ng ${ addedServerCount } na gateway server"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Ang pagdaragdag ng external na email address ay hindi magpapagana sa end-to-end na encryption para sa lahat ng komunikasyon sa email sa loob ng pangkat na iyon. Gusto mo bang magpatuloy?"
@@ -17432,16 +17455,6 @@
         "I-upgrade sa ${ upsellPlanTitle }"
       ]
     },
-    "PQC account key generation": {
-      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
-        "Hindi makapag-generate ng mga key. Upang i-activate ang post-quantum protection, kakailanganin mong manu-manong mag-generate ng iyong mga bagong encryption key.\n\n${ settingsLink } at piliin ang 'Generate key' para sa iyong account at para sa bawat address."
-      ]
-    },
-    "PQC adress key generation": {
-      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
-        "Hindi makabuo ng mga address key. Upang i-activate ang post-quantum protection, kakailanganin mong manu-manong mag-generate ng iyong mga bagong encryption key.\n\nPumunta sa ${ settingsLink } at piliin ang 'Generate key' para sa bawat address."
-      ]
-    },
     "PQC key generation": {
       "This will generate new quantum-resistant encryption keys for your account.": [
         "Mag-ge-generate ito ng mga bagong quantum-resistant na encryption key para sa iyong account."
@@ -21672,6 +21685,9 @@
       "Feature access": [
         "Access sa feature"
       ],
+      "Fewer distractions, more focus": [
+        "Mas kaunting abala, mas maraming focus"
+      ],
       "Filter for more focus": [
         "Mag-filter para mas makapag-focus"
       ],
@@ -22856,9 +22872,6 @@
       "This feature is only available on Beta": [
         "Available lang ang feature na ito sa Beta"
       ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "Ito ang default na key na ginagamit ng ibang user ng ${ MAIL_APP_NAME } sa mga lumang mobile app upang i-encrypt ang data na ipinapadala nila sa iyo"
-      ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
         "Ito ang default na key na ginagamit ng ibang mga user ng ${ MAIL_APP_NAME } para i-encrypt ang data na ipinapadala nila sa iyo"
       ],
@@ -23352,6 +23365,16 @@
       ],
       "Writing assistant": [
         "Writing assistant"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Dapat maglaman ang password ng hindi bababa sa ${ MIN_PASSWORD_LENGTH } character",
+        "Dapat maglaman ang password ng hindi bababa sa ${ MIN_PASSWORD_LENGTH } na character"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Sumubok ng mas maikling username (${ n } character max)",
+        "Sumubok ng mas maikling username (${ n } na character max)"
       ]
     },
     "Video control": {

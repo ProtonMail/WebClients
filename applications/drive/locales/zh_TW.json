@@ -594,6 +594,9 @@
       "Load image": [
         "載入圖像"
       ],
+      "Manage addresses": [
+        "管理電郵位址"
+      ],
       "Manage advanced account protections": [
         "管理進階帳戶保護"
       ],
@@ -2836,8 +2839,14 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在刪除聯絡人…該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "電子郵件傳送至 ${ connectedAddressText } 將顯示於 ${ MAIL_APP_NAME }。"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "足夠超過年的電子郵件、附件和更多"
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "確保安全存取組織資料，即使您的團隊是遠端工作或使用公共 WiFi。"
@@ -2896,6 +2905,9 @@
       "To start, give your organization a name.": [
         "若要開始，為貴組織取個名稱。"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "只要 ${ config.offerPrice } 解鎖 15 GB 的儲存空間"
+      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "升級至 ${ planName } 以保持共享有編輯權限的檔案"
       ],
@@ -2913,6 +2925,9 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以把既不合併也不保留的聯絡人標記為刪除。唯有在點擊「合併」按鈕時，才會執行刪除"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "您可透過 ${ BRAND_NAME } 用此位址傳送電子郵件。"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "您的帳戶資料復原方法已就緒、雙重驗證已啟用。"
@@ -3342,9 +3357,6 @@
       "Failed to resend invitation": [
         "失敗重新傳送邀請"
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "由於“${ error }”錯誤，檔案“${ item.name }”無法上載"
-      ],
       "File \"${ name }\" is already downloading": [
         "檔案 「${ name } 」已在下載中"
       ],
@@ -3471,6 +3483,12 @@
       "Organization key is not decrypted": [
         "組織金鑰未解密"
       ],
+      "Organization key must be activated to create invited users": [
+        "需啟用組織金鑰才能建立邀請使用者"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "需啟用組織金鑰才能建立非私人使用者"
+      ],
       "Password is required": [
         "密碼為必填"
       ],
@@ -3560,9 +3578,6 @@
       ],
       "Some contacts could not be deleted": [
         "某些聯絡名片無法刪除"
-      ],
-      "Some files were ignored because they are not supported in Photos": [
-        "已忽略部份檔案，因「照片」並不支援"
       ],
       "Some groups could not be deleted": [
         "部分聯絡人群組無法刪除"
@@ -3740,9 +3755,6 @@
       ],
       "You must set a name": [
         "您必須設定名稱"
-      ],
-      "Your browser does not support uploading folders": [
-        "您的瀏覽器不支援上載資料夾"
       ],
       "Your import will not be processed.": [
         "將不會處理您的匯入。"
@@ -4135,11 +4147,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10 + 頂級質子版功能"
+      ],
+      "Custom email domain": [
+        "自訂電子郵件網域"
+      ],
+      "Email addresses": [
+        "電子郵件地址"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "給予檔案、照片和文件的加密雲端儲存"
       ],
       "More premium features": [
         "多項的頂級功能"
+      ],
+      "Storage": [
+        "儲存空間"
       ],
       "Unlimited hide-my-email aliases": [
         "無限制的 hide-my-email 別名"
@@ -4810,6 +4834,9 @@
       "Ad targeting": [
         "廣告目標鎖定"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "新增 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
@@ -5025,6 +5052,9 @@
       ],
       "Create a new contact group": [
         "創建新聯絡人群組"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "替成員創建一個安全 ${ memberCount } 雲端"
       ],
       "Create in": [
         "創建在"
@@ -5328,6 +5358,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "在下一步驟裡，您將可以使用比特幣數位錢包，提交單筆存款。"
+      ],
+      "Included": [
+        "包含"
       ],
       "Index is empty.": [
         "此索引是空的"
@@ -6108,9 +6141,6 @@
       ],
       "Unknown date": [
         "日期未知"
-      ],
-      "Unknown error": [
-        "未知錯誤"
       ],
       "Unlock drive to recover files": [
         "解鎖雲端硬碟以恢復文件"
@@ -7936,6 +7966,9 @@
       "99.95% SLA": [
         "99.95% 服務層級協議"
       ],
+      "Access all countries": [
+        "存取所有國家"
+      ],
       "Ad-blocker and malware protection": [
         "廣告攔截器及惡意軟體防護"
       ],
@@ -8238,6 +8271,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "無限流量/頻寬"
+      ],
+      "Unlock streaming": [
+        "解鎖串流"
       ],
       "Up to ${ n } user": [
         "多達 ${ n } 位使用者"
@@ -8615,6 +8651,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } 個國家"
+      ],
       "Access advanced VPN features": [
         "存取進階 VPN 功能"
       ],
@@ -8815,9 +8854,6 @@
       "Failed to convert external invitation": [
         "轉換內部邀請函失敗"
       ],
-      "Failed to download files: ${ err }": [
-        "無法下載檔案： ${ err }"
-      ],
       "Failed to move, please try again": [
         "移動失敗，請再試一次"
       ],
@@ -8874,9 +8910,6 @@
       ],
       "Selected item was not removed from your list": [
         "選取項目未被從清單上移除"
-      ],
-      "Selected items were successfully removed from your list": [
-        "選取項目已成功從清單移除"
       ],
       "Share invitation accepted successfully": [
         "共享邀請函成功同意"
@@ -9584,6 +9617,9 @@
       "Renewal price is dependent on the billing region and ABN.": [
         "續訂價格取決於計費區域和 EIN。"
       ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "續訂價格取決於計費區域和商務號碼。"
+      ],
       "Renewal price is dependent on the billing region and EIN.": [
         "續訂價格取決於計費區域和 EIN。"
       ],
@@ -9653,6 +9689,9 @@
       ],
       "External key automatically fetched via WKD.": [
         "自動由 WKD 取得了外部金鑰。"
+      ],
+      "This key is used for message verification": [
+        "此金鑰用於訊息驗證"
       ],
       "This key is used to encrypt messages to this contact": [
         "此金鑰是用於加密通訊錄"
@@ -11678,6 +11717,9 @@
       "Get more from your VPN": [
         "從您的VPN取得更多"
       ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "透過 ${ MAIL_APP_NAME } 取得更多儲存空間"
+      ],
       "Get the apps": [
         "取得應用程式"
       ],
@@ -12169,6 +12211,9 @@
       ],
       "When is it most important to use a VPN?": [
         "何時最適合使用 VPN？"
+      ],
+      "You are all set": [
+        "你已就緒"
       ],
       "You can now create unlimited folders and labels": [
         "您現在可創建無上限標籤和資料夾"

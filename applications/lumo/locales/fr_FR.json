@@ -925,6 +925,9 @@
       ]
     },
     "collider_2025: Action": {
+      "Add": [
+        "Ajouter"
+      ],
       "Add ${ selectedCount } sheet": [
         "Ajouter ${ selectedCount } feuille",
         "Ajouter ${ selectedCount } feuilles"
@@ -944,6 +947,18 @@
       "Cancel": [
         "Annuler"
       ],
+      "Cancel (Esc)": [
+        "Annuler (Echap)"
+      ],
+      "Clear": [
+        "Effacer"
+      ],
+      "Clear all": [
+        "Tout effacer"
+      ],
+      "Clear auto-generated": [
+        "Effacer le contenu généré automatiquement"
+      ],
       "Close": [
         "Fermer"
       ],
@@ -959,6 +974,9 @@
       "Dark": [
         "Sombre"
       ],
+      "Delete memory": [
+        "Supprimer la mémoire"
+      ],
       "Disable ghost mode": [
         "Désactiver le mode fantôme"
       ],
@@ -968,8 +986,14 @@
       "Edit": [
         "Modifier"
       ],
+      "Edit memory": [
+        "Modifier la mémoire"
+      ],
       "Enable ghost mode": [
         "Activer le mode fantôme"
+      ],
+      "Generate from chats": [
+        "Générer depuis les chats"
       ],
       "Generate workflow": [
         "Générer le workflow"
@@ -1010,6 +1034,9 @@
       "Save": [
         "Enregistrer"
       ],
+      "Save (⌘+Enter)": [
+        "Enregistrer (⌘+Entrer)"
+      ],
       "Select all": [
         "Tout sélectionner"
       ],
@@ -1036,6 +1063,22 @@
       ],
       "Try again": [
         "Essayer à nouveau"
+      ],
+      "Turn off": [
+        "Désactiver"
+      ],
+      "Turn off and delete": [
+        "Désactiver et supprimer"
+      ],
+      "Turn on memory": [
+        "Activer la mémoire"
+      ],
+      "Update from chats": [
+        "Mettre à jour depuis les chats"
+      ],
+      "Update from chats (${ newPromptsSinceLastUpdate } new)": [
+        "Mise à jour des chats (${ newPromptsSinceLastUpdate } nouveau)",
+        "Mise à jour des chats (${ newPromptsSinceLastUpdate } nouveaux)"
       ],
       "Upload file to Drive": [
         "Ajouter le fichier sur Drive"
@@ -1194,9 +1237,23 @@
         "Je suis alimenté par la caféine et l'angoisse existentielle"
       ]
     },
+    "collider_2025: Date": {
+      "Today": [
+        "Aujourd'hui"
+      ],
+      "Yesterday": [
+        "Hier"
+      ]
+    },
     "collider_2025: Description": {
       "${ BRAND_NAME } is conducting a paid research study about AI assistants. Interested? It takes 2 minutes. If selected, you'll earn £80.": [
         "${ BRAND_NAME } mène actuellement une étude rémunérée sur les assistants IA. Ça vous intéresse ? Ça ne prend que 2 minutes. Si votre profil est sélectionné, vous gagnerez 80 £."
+      ],
+      "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
+        "${ LUMO_SHORT_APP_NAME } se base sur vos souvenirs enregistrés pour personnaliser ses réponses : style de communication, expertise, outils fréquemment utilisés et projets à long terme."
+      ],
+      "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
+        "Ajoutez vos propres souvenirs, modifiez les entrées générées automatiquement ou effacer tout à n'importe quel moment. Si vous modifiez un souvenir généré, il deviendra le vôtre."
       ],
       "Always enable web search for new conversations": [
         "Toujours activer la recherche web pour les nouvelles conversations"
@@ -1228,8 +1285,17 @@
       "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
         "Découvrir comment utiliser ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Memories are stored encrypted.": [
+        "Les souvenirs sont stockés de manière chiffrée."
+      ],
+      "Memory lets ${ LUMO_SHORT_APP_NAME } remember stable preferences and context across general chats so you don't have to repeat yourself.": [
+        "La mémoire permet à ${ LUMO_SHORT_APP_NAME } de se souvenir de vos préférences et du contexte dans toutes les discussions, pour que vous n'ayez pas à vous répéter."
+      ],
       "Permanently delete your project and chats. This is irreversible.": [
         "Supprimez définitivement votre projet et vos discussions. Cette action est irréversible."
+      ],
+      "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
+        "Les discussions de projet sont totalement isolées. Elles utilisent leurs propres instructions et fichiers, et ne tiennent absolument pas compte de votre mémoire globale."
       ],
       "Quick responses": [
         "Réponses rapides"
@@ -1245,6 +1311,20 @@
       ],
       "Switch between light and dark mode": [
         "Basculer entre le mode clair et le mode sombre"
+      ],
+      "This removes memories generated from your chats. Memories you added yourself will be kept.": [
+        "Cela retire les souvenirs générés depuis vos chats. Les souvenirs que vous avez ajoutés seront conservés."
+      ],
+      "This will permanently remove all saved memories. ${ LUMO_SHORT_APP_NAME } will no longer use them in future chats.": [
+        "Cela retirera définitivement tous les souvenirs enregistrés. ${ LUMO_SHORT_APP_NAME } ne les utilisera plus dans les prochaines discussions."
+      ],
+      "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
+        "Désactiver la mémoire entraînera la suppression définitive des ${ memories.length } souvenirs enregistrés. Vous pourrez réactiver la mémoire plus tard, mais les souvenirs supprimés ne seront pas restaurés."
+      ]
+    },
+    "collider_2025: DisableMemory": {
+      "Turn off ${ LUMO_SHORT_APP_NAME } Memory at any time.": [
+        "Désactivez la mémoire de ${ LUMO_SHORT_APP_NAME } à tout moment"
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1321,6 +1401,9 @@
       "Sign up for free to continue chatting and unlock access to chat history, starred chats, and more features.": [
         "Inscrivez-vous gratuitement pour continuer à discuter et débloquer l'accès à l'historique des chats, aux chats favoris et à d'autres fonctionnalités."
       ],
+      "Something went wrong. Please try again.": [
+        "Une erreur s'est produite. Nous vous invitons à réessayer."
+      ],
       "The provided URL is invalid.": [
         "L'URL spécifiée n'est pas valide."
       ],
@@ -1373,7 +1456,10 @@
       ]
     },
     "collider_2025: Error Message": {
-      "If retrying doesn’t work, check back later or consider upgrading to ${ LUMO_SHORT_APP_NAME } Plus to jump to the front of the line during peak times.": [
+      "If retrying doesn't work, check back in a few minutes. In the meantime, we are doing our best to ensure your experience goes smoothly.": [
+        "Si vous avez ressayé sans succès, veuillez réessayer dans quelques minutes. Nous faisons tout notre possible pour vous assurer une expérience fluide."
+      ],
+      "If retrying doesn't work, check back later or consider upgrading to ${ LUMO_SHORT_APP_NAME } Plus to jump to the front of the line during peak times.": [
         "Si le problème persiste après avoir réessayé, revenez plus tard ou optez pour ${ LUMO_SHORT_APP_NAME } Plus pour bénéficier d’un accès prioritaire pendant les périodes de forte affluence."
       ],
       "Please try asking a different question or making a different request.": [
@@ -1504,6 +1590,14 @@
       ],
       "Tell us more": [
         "Dites-nous-en plus"
+      ]
+    },
+    "collider_2025: Hint": {
+      "Memory is only used in general chats — never inside projects. Stored end-to-end encrypted.": [
+        "La mémoire est uniquement utilisée dans les discussions générales, jamais au sein des projets. Elle est chiffrée de bout en bout."
+      ],
+      "You can turn it off again at any time.": [
+        "Vous pouvez l'activer ou le désactiver à tout moment."
       ]
     },
     "collider_2025: Info": {
@@ -1690,6 +1784,9 @@
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Générez un graphique de flux de travail et du code d'implémentation pour l'objectif suivant. Langage cible pour le code :"
       ],
+      "Generate them from your recent chats, or add your own below.": [
+        "Générez-les à partir de vos conversations récentes ou ajoutez les vôtres ci-dessous."
+      ],
       "Generating…": [
         "En cours de génération…"
       ],
@@ -1749,6 +1846,9 @@
       ],
       "No files available": [
         "Aucun fichier disponible"
+      ],
+      "No new memories were found in your recent chats.": [
+        "Aucune nouvelle mémoire n'a été trouvée dans vos discussions récentes."
       ],
       "No nodes in this workflow.": [
         "Aucun nœud dans ce workflow."
@@ -1893,6 +1993,9 @@
       ],
       "You are about to visit an external website:": [
         "Vous êtes sur le point de consulter un site web externe :"
+      ],
+      "Your memories are already up to date.": [
+        "Vos souvenirs sont déjà à jour."
       ]
     },
     "collider_2025: Job": {
@@ -1986,6 +2089,9 @@
       "File upload": [
         "Importer un fichier"
       ],
+      "From chats": [
+        "Issu de chats"
+      ],
       "Loop": [
         "Boucle"
       ],
@@ -2054,6 +2160,9 @@
       ],
       "Unsafe or problematic": [
         "Dangereux ou problématique"
+      ],
+      "You": [
+        "Vous"
       ],
       "Your workflow": [
         "Votre workflow"
@@ -2200,6 +2309,9 @@
       ]
     },
     "collider_2025: Placeholder": {
+      "e.g. I prefer concise, bullet-point answers": [
+        "par exemple. Je préfère des réponses concises et sous forme de listes"
+      ],
       "New chat": [
         "Nouvelle session de chat"
       ],
@@ -2216,6 +2328,9 @@
       ],
       "General": [
         "Général"
+      ],
+      "Memory": [
+        "Mémoire"
       ],
       "Personalization": [
         "Personnalisation"
@@ -2242,6 +2357,10 @@
       ]
     },
     "collider_2025: Success": {
+      "Added ${ added } memory from your chats": [
+        "${ added } souvenir a été ajouté depuis vos chats",
+        "${ added } souvenirs ont été ajoutés depuis vos chats"
+      ],
       "All chats deleted successfully": [
         "Toutes les conversations ont été supprimées."
       ],
@@ -2275,6 +2394,20 @@
         "Constructeur de Workflow"
       ]
     },
+    "collider_2025: Tip": {
+      "Avoid passwords, tokens, or sensitive personal identifiers.": [
+        "Évitez les mots de passe, jetons et autres identifiants personnels sensibles."
+      ],
+      "Include how you like to communicate (tone, format, language).": [
+        "Indiquez comment vous voulez communiquer (ton, format, langue)."
+      ],
+      "Keep each memory short - one preference or fact per line.": [
+        "Faites en sorte que chaque note soit brève : une préférence ou une information par ligne."
+      ],
+      "Write stable facts, not one-off questions.": [
+        "Rédigez des faits concrets, pas des questions ponctuelles."
+      ]
+    },
     "collider_2025: Title": {
       "${ LUMO_SHORT_APP_NAME } API · ${ spec.versionLabel }": [
         "API ${ LUMO_SHORT_APP_NAME } · ${ spec.versionLabel }"
@@ -2287,6 +2420,9 @@
       ],
       "About ${ LUMO_SHORT_APP_NAME }": [
         "À propos de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Add your own memory": [
+        "Ajoutez vos propres souvenirs"
       ],
       "API calls per day": [
         "Appels d'API par jour"
@@ -2303,6 +2439,9 @@
       "Authentication": [
         "Authentification"
       ],
+      "Auto update memory": [
+        "Mise à jour automatique de la mémoire"
+      ],
       "Automatic web search": [
         "Recherche web automatique"
       ],
@@ -2311,6 +2450,12 @@
       ],
       "Chat": [
         "Chat"
+      ],
+      "Clear all memories?": [
+        "Effacer tous les souvenirs ?"
+      ],
+      "Clear chat-based memories?": [
+        "Effacer les souvenirs issus des chats ?"
       ],
       "Conversational AI": [
         "IA Conversationnelle"
@@ -2326,6 +2471,9 @@
       ],
       "Don't lose the thread": [
         "Ne perdez pas le fil"
+      ],
+      "End-to-end encrypted": [
+        "Chiffré de bout en bout"
       ],
       "Generated code": [
         "Code généré"
@@ -2345,14 +2493,23 @@
       "Models": [
         "Modèles"
       ],
+      "Never used inside projects": [
+        "Jamais utilisé au sein des projets"
+      ],
       "No API keys yet": [
         "Aucune clé API pour l'instant"
+      ],
+      "No memories yet": [
+        "Aucun souvenir pour le moment"
       ],
       "Opening External Link": [
         "Ouverture du lien externe"
       ],
       "Parameters": [
         "Paramètres"
+      ],
+      "Personalizes general chats": [
+        "Personnalise les discussions générales"
       ],
       "Prerequisites": [
         "Prérequis"
@@ -2372,6 +2529,9 @@
       "Save your favorites": [
         "Enregistrez vos favoris"
       ],
+      "Saved memories": [
+        "Souvenirs enregistrés"
+      ],
       "Search Index": [
         "Index de recherche"
       ],
@@ -2389,6 +2549,9 @@
       ],
       "Tokens per day": [
         "Jetons par jour"
+      ],
+      "Turn off memory?": [
+        "Désactiver la mémoire ?"
       ],
       "Upload files": [
         "Importer des fichiers"
@@ -2417,13 +2580,26 @@
       "Workflow output": [
         "Résultat du workflow"
       ],
+      "You stay in control": [
+        "Vous gardez le contrôle"
+      ],
       "Your new API key": [
         "Votre nouvelle clé API"
       ]
     },
     "collider_2025: Tooltip": {
+      "${ LUMO_SHORT_APP_NAME } updates chat-based memories every ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages. ${ promptsUntilAutoSave } message left until the next update.": [
+        "${ LUMO_SHORT_APP_NAME } met à jour les souvenirs depuis les chats tous les ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages. Il reste ${ promptsUntilAutoSave } message avant la prochaine mise à jour.",
+        "${ LUMO_SHORT_APP_NAME } met à jour les souvenirs depuis les chats tous les ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages. Il reste ${ promptsUntilAutoSave } messages avant la prochaine mise à jour."
+      ],
       "Contact your admin to upgrade": [
         "Contactez votre administrateur pour changer votre abonnement."
+      ],
+      "Every ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages in general chats, ${ LUMO_SHORT_APP_NAME } extracts short excerpts and adds new chat-based memories in the background.": [
+        "Tous les ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages dans les discussions générales, ${ LUMO_SHORT_APP_NAME } extrait des courts passages et ajoute des souvenirs du chat en arrière-plan."
+      ],
+      "When enabled, ${ LUMO_SHORT_APP_NAME } updates chat-based memories every ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages in general chats. Only short excerpts are sent.": [
+        "Si elle est activée, ${ LUMO_SHORT_APP_NAME } met à jour les souvenirs depuis les chats tous les ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages dans des discussions générales. Seuls des courts extraits sont envoyés."
       ]
     },
     "collider_2025: Top nav link": {
@@ -4799,6 +4975,12 @@
       "Organization key is not decrypted": [
         "La clé de l'organisation n'est pas déchiffrée."
       ],
+      "Organization key must be activated to create invited users": [
+        "La clé de l'organisation doit être activée pour créer des utilisateurs invités."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "La clé de l'organisation doit être activée pour créer des utilisateurs non privés."
+      ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas."
       ],
@@ -5742,6 +5924,9 @@
         "${ n } mois",
         "${ n } mois"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caractères"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Accédez à ${ PASS_APP_NAME } en toute sécurité depuis le terminal, idéal pour les scripts, l'automatisation et les flux de travail de développement."
       ],
@@ -6126,6 +6311,9 @@
       "FPS": [
         "FPS"
       ],
+      "Generation errors": [
+        "Erreurs de génération"
+      ],
       "Idle": [
         "Inactif"
       ],
@@ -6158,6 +6346,9 @@
       ],
       "Notifications": [
         "Notifications"
+      ],
+      "Open a conversation to enable generation error testing.": [
+        "Ouvrez une conversation pour activer les tests de génération d'erreurs."
       ],
       "Performance": [
         "Performance"
@@ -6243,11 +6434,26 @@
       "Trigger conversations limit": [
         "Déclencher la limite de conversations"
       ],
+      "Trigger generation rejected": [
+        "Déclencher Génération rejetée"
+      ],
+      "Trigger harmful content": [
+        "Déclencher Contenu dangereux"
+      ],
+      "Trigger high demand": [
+        "Déclencher Forte demande"
+      ],
       "Trigger messages limit": [
         "Déclencher la limite de messages"
       ],
       "Trigger spaces limit": [
         "Déclencher la limite d'espaces"
+      ],
+      "Trigger stream disconnected": [
+        "Flux de déclenchement déconnecté"
+      ],
+      "Triggers generation error messages with tier-specific messaging. User type: ${ lumoUserType }": [
+        "Génère des messages d'erreur avec des messages spécifiques par niveau. Type d'utilisateur : ${ lumoUserType }"
       ],
       "Unsynced conversations": [
         "Conversations non synchronisées"
@@ -8699,6 +8905,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés et ne peuvent pas réinitialiser leur mot de passe."
+      ],
+      "Member activation incomplete": [
+        "L'activation du membre est incomplète."
+      ],
+      "Organization key must be activated to request data access": [
+        "La clé de l'organisation doit être activée pour demander l'accès aux données."
+      ],
+      "The user must have an address to request data access": [
+        "L'utilisateur doit disposer d'une adresse pour demander l'accès aux données."
       ]
     },
     "Validation": {

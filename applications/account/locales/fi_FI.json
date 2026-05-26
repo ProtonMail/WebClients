@@ -4474,9 +4474,6 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Tuomme vanhat sähköpostisi ja yhdistämme Gmail-tilisi ${ MAIL_APP_NAME } -sovellukseen, jotta uudet viestit näkyvät automaattisesti"
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Olemme aloittaneet viimeisten 180 päivän viestiesi tuonnin Gmailista. Ilmoitamme sinulle, kun tuonti on valmis."
-      ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Sinulla on jo Gmail-osoite, joka ohjataan ${ MAIL_APP_NAME } -sovellukseen. Yhdistä se alla, jotta voit lähettää ja vastaanottaa sähköposteja suoraan ${ MAIL_APP_NAME } -sovelluksesta."
       ],
@@ -5673,11 +5670,17 @@
       "Email address is required": [
         "Sähköpostiosoite vaaditaan"
       ],
+      "Email is not valid": [
+        "Virheellinen sähköpostiosoite"
+      ],
       "Empty condition": [
         "Tyhjä ehto"
       ],
       "Enter 6 digits": [
         "Syötä 6-numeroa"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Syötä käyttäjätunnuksesi ilman verkkotunnusta (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Virhe yhdistettäessä Bitcoin API:in."
@@ -5759,6 +5762,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Väärä toine salasana. Yritä uudelleen."
+      ],
+      "Incorrect username": [
+        "Virheellinen käyttäjätunnus"
       ],
       "Intended recipient does not support calendar sharing": [
         "Tarkoitettu vastaanottaja ei tue kalenterin jakamista"
@@ -5863,6 +5869,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Tämä ei ole ${ BRAND_NAME }-tili"
       ],
+      "Not a valid number": [
+        "Virheellinen numero"
+      ],
       "Organization key is not decrypted": [
         "Organisaatioavaimen salausta ei ole purettu"
       ],
@@ -5874,6 +5883,9 @@
       ],
       "Password is required": [
         "Salasana vaaditaan"
+      ],
+      "Passwords do not match": [
+        "Salasanat eivät täsmää"
       ],
       "Payment process canceled": [
         "Maksutapahtuma peruttiin"
@@ -5950,9 +5962,6 @@
       ],
       "Please try again in a few moments.": [
         "Yritä hetken kuluttua uudelleen."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Saadaksesi usean käyttäjän tuen, päivitä yritystilaukseen, joka sisältää enemmän kuin yhden käyttäjän."
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Hallitaksesi useita käyttäjiä, päivitä yritystilaukseen, joka sisältää enemmän kuin yhden käyttäjän."
@@ -6051,6 +6060,9 @@
       "The amount due has changed. Please try again.": [
         "Erääntyvä summa on muuttunut. Yritä uudelleen."
       ],
+      "The email addresses do not match": [
+        "Sähköpostiosoitteet eivät täsmää"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Kuva on liian suuri. Enimmäiskoko on ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }."
       ],
@@ -6096,11 +6108,17 @@
       "There was an error, please try again.": [
         "Tapahtui virhe, yritä uudelleen."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Kenttä ylittää ${ maximumLength }-merkin enimmäismäärän."
+      ],
       "This field is invalid": [
         "Tämän kentän arvo on virheellinen"
       ],
       "This field is required": [
         "Tämä kenttä vaaditaan"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Kenttä edellyttää vähintään ${ minimumLength } merkkiä."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Kansion nimi ei ole käytettävissä. Valitse eri nimi."
@@ -6126,6 +6144,9 @@
       "Try again later": [
         "Kokeile myöhemmin uudelleen"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Kokeile vain kirjaimia, numeroita ja merkkejä _.-"
+      ],
       "Unable to upload file": [
         "Tiedoston lähetys ei onnistu"
       ],
@@ -6143,6 +6164,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Ladatut tiedostot eivät ole kelvollisia yksityisiä avaimia. Tarkista ja yritä uudelleen."
+      ],
+      "Username must begin with a letter or digit": [
+        "Käyttäjätunnuksen on alettava kirjaimella tai numerolla"
+      ],
+      "Username must end with a letter or digit": [
+        "Käyttäjätunnuksen on päätyttävä kirjaimella tai numerolla"
       ],
       "Validation error": [
         "Vahvistusvirhe"
@@ -7539,9 +7566,6 @@
       "Contact us": [
         "Ota yhteyttä"
       ],
-      "Downloads": [
-        "Lataukset"
-      ],
       "Enjoying ${ planName }?": [
         "Nautitko ${ planName }ista?"
       ],
@@ -8320,10 +8344,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Yksilöi organisaatiotasi lisäämällä nimi ja logo."
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Lisätään ${ addedServerCount } yhdyskäytäväpalvelinta",
-        "Lisätään ${ addedServerCount } yhdyskäytäväpalvelinta"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Ulkoisen sähköpostiosoitteen lisääminen poistaa päästä päähän -salauksen käytöstä kaikelta kyseisen ryhmän sähköpostiviestinnältä. Haluatko jatkaa?"
@@ -16995,16 +17015,6 @@
         "Päivitä ${ upsellPlanTitle } -tilaukseen"
       ]
     },
-    "PQC account key generation": {
-      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
-        "Avaimia ei voitu luoda. Aktivoidaksesi post-kvanttisuojauksen, sinun on luotava uudet salausavaimet manuaalisesti.\n\n${ settingsLink } ja valitse ”Luo avain” tilillesi ja jokaiselle osoitteelle."
-      ]
-    },
-    "PQC adress key generation": {
-      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
-        "Osoiteavaimia ei voitu luoda. Aktivoidaksesi post-kvanttisuojauksen, sinun on luotava uudet salausavaimet manuaalisesti.\n\nMene ${ settingsLink } ja valitse ”Luo avain” jokaiselle osoitteelle."
-      ]
-    },
     "PQC key generation": {
       "This will generate new quantum-resistant encryption keys for your account.": [
         "Tämä luo uusia kvanttikestävät salausavaimet tilillesi."
@@ -21185,6 +21195,9 @@
         "${ failedUsers.length } käyttäjätilin luonti epäonnistui.",
         "${ failedUsers.length } käyttäjätilin luonti epäonnistui."
       ],
+      "Fewer distractions, more focus": [
+        "Vähemmän häiriötekijöitä, enemmän keskittymistä"
+      ],
       "Filter for more focus": [
         "Suodattimet parantamaan keskittymistäsi"
       ],
@@ -22724,6 +22737,16 @@
       ],
       "Writing assistant": [
         "Kirjoitusavustaja"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Salasanan täytyy sisältää ainakin ${ MIN_PASSWORD_LENGTH } merkki",
+        "Salasanan täytyy sisältää vähintään ${ MIN_PASSWORD_LENGTH }-merkkiä"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkki)",
+        "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkkiä)"
       ]
     },
     "Video control": {

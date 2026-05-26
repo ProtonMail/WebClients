@@ -222,6 +222,9 @@
       "Continue to ${ planOrAppName }": [
         "Continuar amb ${ planOrAppName }"
       ],
+      "Continue with Free": [
+        "Continuar amb el pla gratuït"
+      ],
       "Continue with Google": [
         "Continua amb Google"
       ],
@@ -3084,6 +3087,9 @@
       "Availability unknown": [
         "Se'n desconeix la disponibilitat"
       ],
+      "Available storage: ${ storageText }": [
+        "Emmagatzematge disponible: ${ storageText }"
+      ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Codifiqueu els esdeveniments per colors per a facilitar l'organització diària, controlar el temps i la priorització de tasques."
       ],
@@ -3111,11 +3117,17 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronitzeu fàcilment els fitxers al núvol des de l'ordinador i accediu-hi des del dispositiu mòbil."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Els correus enviats a ${ connectedAddressText } apareixeran ara a ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Fomenteu l'ús de l'autenticació de doble factor a la vostra organització per obtenir més seguretat."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Xifrar i importar contactes... És possible que passi uns quants minuts. Quan el procés s'hagi completat, podeu tancar aquesta modalitat."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Espai suficient per anys de correus electrònics, fitxers adjunts i més."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Assegureu un accés segur a les dades de l'organització, fins i tot si el vostre equip està remot o utilitza una WiFi pública."
@@ -3183,6 +3195,9 @@
       "To start, give your organization a name.": [
         "Per començar, assigneu un nom a la vostra organització."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Desbloquegeu 15 GB d'emmagatzematge per només ${ config.offerPrice }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arrossegueu i solteu per a classificar la prioritat de combinació entre els contactes. Desmarqueu els contactes que no vulgueu combinar."
       ],
@@ -3191,6 +3206,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Ja no podem accedir a ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Aturarem les importacions al 80% de l'emmagatzematge per reservar espai per missatges nous."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Hem començat a importar els vostres correus electrònics des de Gmail. Us avisarem quan hagi acabat."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ens sap greu que marxeu. Si teniu un moment, us agrairíem molt que ens diguéssiu per què voleu cancel·lar la subscripció. Els vostres comentaris ens ajuden a fer que ${ BRAND_NAME } sigui millor per a tothom."
@@ -3204,11 +3225,20 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Podeu marcar per suprimir els contactes que no voleu ni fusionar ni conservar.\nLa supressió només es farà un cop es faci clic al botó de combinació"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Ara ja podeu enviar correus electrònics des de ${ BRAND_NAME } utilitzant aquesta adreça."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "El compte i els mètodes de recuperació de dades estan definits i el 2FA està activat."
       ],
       "Your account and data recovery methods are set.": [
         "El compte i els mètodes de recuperació de dades estan definits."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "El vostre compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem ${ newUserStorageText } dels vostres missatges més recents de Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "El vostre compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem els vostres correus electrònics més recents de Gmail."
       ],
       "You’ll get a secure email with the details shortly.": [
         "Aviat rebreu un correu segur amb els detalls."
@@ -3843,6 +3873,12 @@
       ],
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
+      ],
+      "Organization key must be activated to create invited users": [
+        "S'ha d'activar la clau de l'organització per a crear usuaris convidats"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "S'ha d'activar la clau d'organització per a crear usuaris no privats"
       ],
       "Passphrase unavailable": [
         "La frase de contrasenya no està disponible"
@@ -4536,11 +4572,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "Més de 10 característiques prèmium"
+      ],
+      "Custom email domain": [
+        "Domini de correu electrònic personalitzat"
+      ],
+      "Email addresses": [
+        "Adreces de correu electrònic"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Emmagatzematge xifrat al núvol per a fitxers, fotos i documents"
       ],
       "More premium features": [
         "Més característiques prèmium"
+      ],
+      "Storage": [
+        "Emmagatzematge"
       ],
       "Unlimited hide-my-email aliases": [
         "Nombre il·limitat d'àlies hide-my-email"
@@ -5705,6 +5753,9 @@
       "In which calendar should bookings appear?": [
         "En quin calendari han d'aparèixer les reserves?"
       ],
+      "Included": [
+        "Inclòs"
+      ],
       "Indexing events: ${ current }/${ total }": [
         "S'estan indexant esdeveniments: ${ current }/${ total }"
       ],
@@ -6245,11 +6296,20 @@
       "Tracking": [
         "Seguiment"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Confieu en la clau \"${ activeSignerText }\" per verificar els missatges nous d'aquest contacte."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Es tornarà a carregar l'aplicació."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Milloreu el pla en qualsevol moment per portar la resta"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Milloreu de pla o allibereu espai en qualsevol moment per portar la resta"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Actualitzeu el pla per conservar els vostres avantatges de ${ planTitle }."
@@ -6690,11 +6750,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Signant actiu"
+      ],
       "Compromised": [
         "Compromesa"
       ],
       "Expired": [
         "Caducada"
+      ],
+      "Fallback": [
+        "Recursos alternatius"
       ],
       "KOO": [
         "KOO"
@@ -6767,6 +6833,9 @@
       "${ n } month": [
         "${ n } mes",
         "${ n } mesos"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caràcters"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
@@ -9756,8 +9825,17 @@
       "External key automatically fetched via WKD.": [
         "Clau externa obtinguda automàticament mitjançant WKD."
       ],
+      "This contact currently signs messages with this key": [
+        "Aquest contacte actualment signa els missatges amb aquesta clau"
+      ],
+      "This key is used for message verification": [
+        "Aquesta clau s'utilitza per la verificació de missatges"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Aquesta clau s'utilitza per xifrar missatges per a aquest contacte"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Aquesta clau s'utilitza per xifrar missatges per aquest contacte en aplicacions antigues"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Us recomanem que marqueu la clau com a \"no confiable\"."
@@ -11777,6 +11855,9 @@
       "Contacts": [
         "Contactes"
       ],
+      "Continue with free storage": [
+        "Continueu amb l'emmagatzematge gratuït"
+      ],
       "Continue with partial import?": [
         "Continuar amb la importació parcial?"
       ],
@@ -11937,6 +12018,9 @@
       ],
       "Get more from your VPN": [
         "Obteniu més de la vostra VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Aconseguiu més emmagatzematge amb ${ MAIL_APP_NAME } Plus"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Obteniu les aplicacions ${ appName[APP_NAME] }"
@@ -12341,6 +12425,9 @@
       "When is it most important to use a VPN?": [
         "Quan és més important utilitzar una VPN?"
       ],
+      "You are all set": [
+        "Ja esteu a punt"
+      ],
       "You can now create unlimited folders and labels": [
         "Ara podeu crear carpetes i etiquetes il·limitades."
       ],
@@ -12505,6 +12592,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Els administradors no poden accedir a les dades dels usuaris privats i no poden restablir la seva contrasenya."
+      ],
+      "Member activation incomplete": [
+        "L'activació del membre no s'ha completat."
+      ],
+      "Organization key must be activated to request data access": [
+        "La clau d'organització ha d'estar activada per sol·licitar accés a les dades."
+      ],
+      "The user must have an address to request data access": [
+        "L'usuari ha de tenir una adreça per sol·licitar l'accés a les dades."
       ]
     },
     "Validation": {

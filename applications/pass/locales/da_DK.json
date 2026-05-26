@@ -2555,6 +2555,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "For at gennemgå dine importerede data skal du klikke på ${ PASS_APP_NAME } i din browsers værktøjslinje."
       ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "${ PASS_APP_NAME } kræver en ny browsertilladelse for at aktivere adgang med biometri. Efter du har accepteret den genindlæser browserudvidelsen. Åbn denne side igen bagefter."
+      ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Betroet af over 50.000 erhvervsbrugere og 100 millioner konti over hele verden."
       ],
@@ -4510,6 +4513,9 @@
       ],
       "Breaches detected for": [
         "Databrud registreret for"
+      ],
+      "Browser permission required": [
+        "Browsertilladelse påkrævet"
       ],
       "Cancel changing your email?": [
         "Annuller ændring af din e-mail?"

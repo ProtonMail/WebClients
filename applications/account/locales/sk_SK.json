@@ -795,6 +795,9 @@
       "Generate key": [
         "Vygenerovať kľúč"
       ],
+      "Generate missing keys": [
+        "Vygenerovať chýbajúce kľúče"
+      ],
       "Generate new phrase": [
         "Generovať novú frázu"
       ],
@@ -5551,11 +5554,14 @@
       "We can't access ${ boldEmails } anymore.": [
         "Už nemáme prístup k ${ boldEmails }."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Keď sa úložisko zaplní na 80 %, pozastavíme import, aby sme uvoľnili miesto pre nové správy."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Načítame vaše staré emaily a prepojíme váš Gmail s aplikáciou ${ MAIL_APP_NAME }, aby sa nové správy zobrazovali automaticky"
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Začali sme importovať vaše emaily z Gmailu z posledných 180 dní. Dáme vám vedieť, keď bude import hotový."
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Začali sme importovať vaše emaily z Gmailu. Dáme vám vedieť, keď bude import hotový."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Je nám ľúto, že odchádzate. Ak máte chvíľku, veľmi by sme ocenili, keby ste nám povedali, prečo chcete zrušiť odber. Vaša spätná väzba nám pomáha vylepšovať ${ BRAND_NAME } pre všetkých."
@@ -7243,11 +7249,17 @@
       "Email address is required": [
         "Emailová adresa je požadovaná"
       ],
+      "Email is not valid": [
+        "Emailová adresa nie je platná"
+      ],
       "Empty condition": [
         "Prázdna podmienka"
       ],
       "Enter 6 digits": [
         "Zadajte 6 číslic"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Zadajte používateľské meno bez domény (@príklad.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Chyba pri pripojovaní k Bitcoin API."
@@ -7335,6 +7347,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Nesprávne druhé heslo. Skúste to znova, prosím."
+      ],
+      "Incorrect username": [
+        "Nesprávne používateľské meno"
       ],
       "Intended recipient does not support calendar sharing": [
         "Zamýšľaný príjemca nepodporuje zdieľanie kalendára"
@@ -7447,6 +7462,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Nie je ${ BRAND_NAME } účet"
       ],
+      "Not a valid number": [
+        "Neplatné číslo"
+      ],
       "Organization key is not decrypted": [
         "Kľúč organizácie nie je dešifrovaný"
       ],
@@ -7458,6 +7476,9 @@
       ],
       "Password is required": [
         "Heslo je požadované"
+      ],
+      "Passwords do not match": [
+        "Heslá sa nezhodujú"
       ],
       "Payment process canceled": [
         "Proces platby zrušený"
@@ -7542,9 +7563,6 @@
       ],
       "Please try again in a few moments.": [
         "Skúste to znova o chvíľu, prosím."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Ak chcete získať podporu pre viacerých používateľov, inovujte na obchodný plán s viac ako 1 používateľom"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Ak chcete spravovať viacerých používateľov, prejdite na obchodný plán s viac ako 1 používateľom."
@@ -7645,6 +7663,9 @@
       "The amount due has changed. Please try again.": [
         "Čiastka na zaplatenie sa zmenila. Skúste to znova, prosím."
       ],
+      "The email addresses do not match": [
+        "Emailové adresy sa nezhodujú"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Súbor je príliš veľký, maximálna veľkosť je ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -7690,11 +7711,17 @@
       "There was an error, please try again.": [
         "Vyskytla sa chyba, skúste to znova, prosím."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Toto pole presahuje maximálny počet znakov ${ maximumLength }."
+      ],
       "This field is invalid": [
         "Toto pole je neplatné"
       ],
       "This field is required": [
         "Povinné pole"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Toto pole musí obsahovať minimálne ${ minimumLength } znakov."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Tento názov priečinka nie je k dispozícii. Zvoľte prosím iný názov."
@@ -7720,6 +7747,9 @@
       "Try again later": [
         "Skúste to znova neskôr"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Skúste používať iba písmená, číslice a _.-"
+      ],
       "Unable to upload file": [
         "Nepodarilo sa nahrať súbor"
       ],
@@ -7737,6 +7767,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Nahraté súbory nie sú platné súkromné kľúče. Skontrolujte a skúste to znovu."
+      ],
+      "Username must begin with a letter or digit": [
+        "Používateľské meno musí začínať písmenom alebo číslom"
+      ],
+      "Username must end with a letter or digit": [
+        "Používateľské meno musí končiť písmenom alebo číslom"
       ],
       "Validation error": [
         "Chyba overenia"
@@ -8941,6 +8977,9 @@
     "Force upgrade safety review": {
       "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
         "Rozumiem, že sa už nebudem môcť prihlásiť do starších verzií ${ BRAND_NAME } aplikácií."
+      ],
+      "Learn more": [
+        "Zistiť viac"
       ]
     },
     "Form heading": {
@@ -9316,7 +9355,7 @@
         "Kontaktujte nás"
       ],
       "Downloads": [
-        "Stiahnuté"
+        "Na stiahnutie"
       ],
       "Enjoying ${ planName }?": [
         "Páči sa vám ${ planName }?"
@@ -9777,8 +9816,8 @@
       "${ BRAND_NAME } Free": [
         "${ BRAND_NAME } Free"
       ],
-      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
-        "${ BRAND_NAME } je nezávisle financovaný a funguje bez reklamy.\nNižšie uvádzame príklady toho, ako sa táto nezávislosť uplatňuje v praxi."
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } je nezávisle financovaný a funguje bez reklamy. Nižšie uvádzame príklady toho, ako sa táto nezávislosť uplatňuje v praxi."
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } je súkromie, ktorému môžete dôverovať, zabezpečené silným šifrovaním, open-source kódom a švajčiarskymi zákonmi o súkromí. Veríme, že by nikto nemal byť schopný zneužiť vaše údaje, bodka. Naša technológia a obchodné aktivity sú založené na tejto zásadne silnejšej definícií súkromia."
@@ -10269,11 +10308,11 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Pridajte vlastný názov a logo, aby ste vytvorili osobnejší zážitok pre vašu organizáciu."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Pridávanie ${ addedServerCount } servera brány",
-        "Pridávanie ${ addedServerCount } serverov brány",
-        "Pridávanie ${ addedServerCount } serverov brány",
-        "Pridávanie ${ addedServerCount } serverov brány"
+      "Adding ${ total } gateway server": [
+        "Pridávanie ${ total } servera brány",
+        "Pridávanie ${ total } serverov brány",
+        "Pridávanie ${ total } serverov brány",
+        "Pridávanie ${ total } serverov brány"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Pridaním externej emailovej adresy sa vypne end-to-end šifrovanie pre všetku emailovú komunikáciu v rámci tejto skupiny. Chcete pokračovať?"
@@ -12843,6 +12882,9 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Ak chcete dešifrovať a prezerať uzamknuté údaje po obnovení hesla, vyberte spôsob obnovenia."
       ],
+      "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
+        "Ak chcete povoliť postkvantovú ochranu, musíte najskôr dokončiť generovanie nových postkvantových šifrovacích kľúčov."
+      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Obnovenie prostredníctvom emailu na obnovenie**."
       ],
@@ -14331,6 +14373,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "Ochrana ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } znakov"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasne nedostupné. Skúste to neskôr.)"
@@ -20464,13 +20509,13 @@
       ]
     },
     "PQC account key generation": {
-      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
-        "Kľúče sa nepodarilo vygenerovať. Ak chcete aktivovať postkvantovú ochranu, budete musieť nové šifrovacie kľúče vygenerovať ručne.\n\n${ settingsLink } a vyberte možnosť „Vygenerovať kľúč“ pre svoj účet a pre každú adresu."
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Kľúče sa nepodarilo vygenerovať. Ak chcete aktivovať postkvantovú ochranu, musíte dokončiť generovanie nových postkvantových šifrovacích kľúčov.\n\nKliknite na ${ goToSettingsLink } a vyberte možnosť „Vygenerovať chýbajúce kľúče“."
       ]
     },
     "PQC adress key generation": {
-      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
-        "Nepodarilo sa vygenerovať klúče adresy. Ak chcete aktivovať postkvantovú ochranu, budete musieť nové šifrovacie kľúče vygenerovať ručne.\n\nPrejdite na ${ settingsLink } a pre každú adresu vyberte možnosť „Vygenerovať kľúč“."
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys for each address.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Nepodarilo sa vygenerovať adresné kľúče. Ak chcete aktivovať postkvantovú ochranu, musíte dokončiť generovanie nových postkvantových šifrovacích kľúčov pre každú adresu.\n\nKliknite na ${ goToSettingsLink } a vyberte možnosť „Vygenerovať chýbajúce kľúče“."
       ]
     },
     "PQC compatibility warning": {
@@ -25805,6 +25850,9 @@
       "Feature access": [
         "Prístup k funkciám"
       ],
+      "Fewer distractions, more focus": [
+        "Menej rozptýlenia, viac sústredenia"
+      ],
       "Filter for more focus": [
         "Filtre pre lepšie sústredenie"
       ],
@@ -27029,6 +27077,9 @@
       "Each imported email will have this label": [
         "Každý importovaný email bude mať tento štítok"
       ],
+      "Early access to new apps and features.": [
+        "Skorší prístup k novým aplikáciám a funkciám."
+      ],
       "Edit folder names": [
         "Upraviť názvy priečinkov"
       ],
@@ -27185,8 +27236,8 @@
       "This feature is only available on Beta": [
         "Táto funkcia je dostupná len v Beta verzii"
       ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "Toto je predvolený kľúč, ktorý používajú ostatní používatelia ${ MAIL_APP_NAME } v starších mobilných aplikáciách na šifrovanie údajov, ktoré vám posielajú."
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
+        "Toto je predvolený kľúč, ktorý používajú ostatní používatelia ${ MAIL_APP_NAME } v starších aplikáciách na šifrovanie údajov, ktoré vám posielajú."
       ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
         "Toto je predvolený kľúč, ktorý používajú ostatní používatelia ${ MAIL_APP_NAME } na šifrovanie údajov, ktoré vám posielajú."
@@ -27722,6 +27773,20 @@
       ],
       "Writing assistant": [
         "Asistent písania"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znak",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znaky",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Skúste kratšie používateľské meno (max. ${ n } znak)",
+        "Skúste kratšie používateľské meno (max. ${ n } znaky)",
+        "Skúste kratšie používateľské meno (max. ${ n } znakov)",
+        "Skúste kratšie používateľské meno (max. ${ n } znakov)"
       ]
     },
     "Video control": {

@@ -468,6 +468,9 @@
       "Make a copy": [
         "Naredi kopijo"
       ],
+      "Manage addresses": [
+        "Upravljanje naslovov"
+      ],
       "Manage advanced account protections": [
         "Upravljajte z naprednimi zaščitami računa"
       ],
@@ -2959,6 +2962,12 @@
       ],
       "Organization key is not decrypted": [
         "Ključ organizacije ni dešifriran."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Za ustvarjanje povabljenih uporabnikov mora biti ključ organizacije aktiviran."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Za ustvarjanje nezasebnih uporabnikov mora biti ključ organizacije aktiviran."
       ],
       "Password is required": [
         "Zahtevano je geslo"
@@ -9851,6 +9860,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Kdaj je uporaba VPN najbolj pomembna?"
+      ],
+      "You are all set": [
+        "Vse je nastavljeno"
       ],
       "You have no folders yet": [
         "Nimate še map"

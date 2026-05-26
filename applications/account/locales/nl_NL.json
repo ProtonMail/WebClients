@@ -5380,9 +5380,6 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "We halen uw oude e-mails op en koppelen uw Gmail-account aan ${ MAIL_APP_NAME }, zodat nieuwe berichten automatisch worden weergegeven"
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "We zijn begonnen met het importeren van uw e-mails van de afgelopen 180 dagen vanuit Gmail. We laten uw weten wanneer het klaar is."
-      ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Het spijt ons u te moeten zien vertrekken. Als u even tijd heeft, zouden we het zeer op prijs stellen te horen waarom u wilt annuleren. Uw feedback helpt ons ${ BRAND_NAME } beter te maken voor iedereen."
       ],
@@ -7035,11 +7032,17 @@
       "Email address is required": [
         "E-mailadres is vereist"
       ],
+      "Email is not valid": [
+        "E-mailadres is ongeldig"
+      ],
       "Empty condition": [
         "Lege voorwaarde"
       ],
       "Enter 6 digits": [
         "Voer 6 cijfers in"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Voer uw gebruikersnaam in zonder het domein (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin API."
@@ -7127,6 +7130,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Onjuist tweede wachtwoord. Probeer het opnieuw."
+      ],
+      "Incorrect username": [
+        "Onjuiste gebruikersnaam"
       ],
       "Intended recipient does not support calendar sharing": [
         "De bedoelde ontvangen heeft geen ondersteuning voor het delen van een agenda."
@@ -7237,6 +7243,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Geen ${ BRAND_NAME }-account"
       ],
+      "Not a valid number": [
+        "Geen geldig getal"
+      ],
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
       ],
@@ -7248,6 +7257,9 @@
       ],
       "Password is required": [
         "Wachtwoord is vereist"
+      ],
+      "Passwords do not match": [
+        "Wachtwoorden komen niet overeen"
       ],
       "Payment process canceled": [
         "Betalingsverzoek geannuleerd"
@@ -7330,9 +7342,6 @@
       ],
       "Please try again in a few moments.": [
         "Probeer het opnieuw in enkele ogenblikken."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Upgrade naar een zakelijk abonnement met meer dan 1 gebruiker om multi-gebruiker ondersteuning te ontvangen"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Upgrade naar een zakelijk abonnement met meer dan 1 gebruiker om meerdere gebruikers te beheren."
@@ -7431,6 +7440,9 @@
       "The amount due has changed. Please try again.": [
         "Het verschuldigde bedrag is gewijzigd. Probeer het opnieuw."
       ],
+      "The email addresses do not match": [
+        "De e-mailadressen komen niet overeen"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Het bestand is te groot, de maximale grootte is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -7473,11 +7485,17 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Er zijn te veel mappen op uw externe account. Pas de import aan om enkele mappen te verwijderen."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
+      ],
       "This field is invalid": [
         "Dit veld is ongeldig"
       ],
       "This field is required": [
         "Dit veld is vereist"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dit veld vereist een minimum van ${ minimumLength } tekens."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Deze mapnaam is niet beschikbaar. Kies een andere naam."
@@ -7503,6 +7521,9 @@
       "Try again later": [
         "Probeer het later opnieuw"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Probeer enkel letters, nummers en _.- te gebruiken"
+      ],
       "Unable to upload file": [
         "Kan het bestand niet uploaden"
       ],
@@ -7520,6 +7541,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Geüploadde files zijn geen geldige geheime sleutels. Controleer en probeer opnieuw."
+      ],
+      "Username must begin with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer beginnen"
+      ],
+      "Username must end with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer eindigen"
       ],
       "Validation error": [
         "Validatiefout"
@@ -9045,9 +9072,6 @@
       "Contact us": [
         "Contacteer ons"
       ],
-      "Downloads": [
-        "Downloads"
-      ],
       "Enjoying ${ planName }?": [
         "Tevreden met ${ planName }?"
       ],
@@ -9483,9 +9507,6 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } U verliest de toegang tot alle huidige versleutelde gegevens in uw account als u doorgaat."
       ],
-      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
-        "${ BRAND_NAME } wordt onafhankelijk gefinancierd en opereert zonder reclame. Hieronder volgen voorbeelden van hoe deze onafhankelijkheid in de praktijk is toegepast."
-      ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } is privacy waarop u kunt vertrouwen, gegarandeerd door sterke versleuteling, open sourcecode en Zwitserse privacywetten. Wij zijn van mening dat niemand uw gegevens mag misbruiken, punt uit. Onze technologie en ons bedrijf zijn gebaseerd op deze fundamenteel sterkere definitie van privacy."
       ],
@@ -9914,10 +9935,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Voeg uw naam en logo toe om een gepersonaliseerde ervaring voor uw organisatie te maken."
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "${ addedServerCount } gatewayserver wordt toegevoegd",
-        "${ addedServerCount } gatewayservers worden toegevoegd"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Het toevoegen van een extern e-mailadres zal end-to-end versleuteling voor alle e-mailcommunicatie binnen die groep uitschakelen. Wilt u doorgaan?"
@@ -19767,16 +19784,6 @@
         "Upgraden naar ${ upsellPlanTitle }"
       ]
     },
-    "PQC account key generation": {
-      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
-        "Sleutels konden niet worden gegenereerd. Om post-kwantumbescherming te activeren, dient u uw nieuwe encryptiesleutels handmatig te genereren.\\n\\n${ settingsLink } en selecteer 'Sleutel genereren' voor uw account en voor elk adres."
-      ]
-    },
-    "PQC adress key generation": {
-      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
-        "Kon geen adressleutels genereren. Om post-kwantumbescherming te activeren, dient u uw nieuwe encryptiesleutels handmatig te genereren.\n\nGa naar ${ settingsLink } en selecteer 'Sleutel genereren' voor elk adres."
-      ]
-    },
     "PQC compatibility warning": {
       "**You must update all ${ BRAND_NAME } apps**: your new keys won't work on older app versions.": [
         "**U moet alle apps van ${ BRAND_NAME } updaten**: uw nieuwe sleutels werken niet in oudere app-versies."
@@ -25006,6 +25013,9 @@
       "Feature access": [
         "Functietoegang"
       ],
+      "Fewer distractions, more focus": [
+        "Minder afleidingen, meer focus"
+      ],
       "Filter for more focus": [
         "Filter voor meer focus"
       ],
@@ -26376,9 +26386,6 @@
       "This feature is only available on Beta": [
         "Deze functionaliteit is allen beschikbaar in Beta"
       ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "Dit is de standaard sleutel die door andere ${ MAIL_APP_NAME } gebruikers op oudere mobiele apps wordt gebruikt om gegevens te versleutelen die ze naar u verzenden"
-      ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
         "Dit is de standaardsleutel die door andere ${ MAIL_APP_NAME }-gebruikers wordt gebruikt om gegevens te versleutelen die zij u verzenden."
       ],
@@ -26909,6 +26916,16 @@
       ],
       "Writing assistant": [
         "Schrijfassistent"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } tekens bevatten"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
+        "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
       ]
     },
     "Video control": {

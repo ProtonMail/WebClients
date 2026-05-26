@@ -6125,6 +6125,9 @@
       "Email address is required": [
         "Địa chỉ email là bắt buộc"
       ],
+      "Email is not valid": [
+        "Email không hợp lệ"
+      ],
       "Empty condition": [
         "Điều kiện trống"
       ],
@@ -6205,6 +6208,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Mật khẩu thứ hai không chính xác. Hãy thử lại."
+      ],
+      "Incorrect username": [
+        "Sai tên người dùng"
       ],
       "Intended recipient does not support calendar sharing": [
         "Người nhận dự kiến không hỗ trợ chia sẻ lịch"
@@ -6305,6 +6311,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Không phải tài khoản ${ BRAND_NAME }"
       ],
+      "Not a valid number": [
+        "Số không hợp lệ"
+      ],
       "Organization key is not decrypted": [
         "Khóa tổ chức không được giải mã"
       ],
@@ -6316,6 +6325,9 @@
       ],
       "Password is required": [
         "Xin vui lòng nhập mật khẩu"
+      ],
+      "Passwords do not match": [
+        "Mật khẩu không khớp"
       ],
       "Payment process canceled": [
         "Đã hủy thanh toán"
@@ -6394,9 +6406,6 @@
       ],
       "Please try again in a few moments.": [
         "Vui lòng thử lại sau ít phút."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Vui lòng nâng cấp lên gói đăng ký doanh nghiệp trên 1 người dùng để được hỗ trợ sử dụng đa người dùng"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Vui lòng nâng cấp lên gói đăng ký doanh nghiệp trên 1 người dùng để quản lý nhiều người dùng."
@@ -6479,6 +6488,9 @@
       "The amount due has changed. Please try again.": [
         "Số tiền phải trả đã thay đổi. Vui lòng thử lại"
       ],
+      "The email addresses do not match": [
+        "Địa chỉ email không giống nhau"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Tập tin quá to, kích thước tối đa là ${ MAX_FILE_DIMENSIONS } x ${ MAX_FILE_DIMENSIONS }"
       ],
@@ -6518,8 +6530,14 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Tài khoản bên ngoài có quá nhiều thư mục. Vui lòng tùy chỉnh để xóa một số thư mục."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Trường này vượt quá giới hạn ${ maximumLength } kí tự"
+      ],
       "This field is required": [
         "Trường này là bắt buộc"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Trường này yêu cầu tối thiểu ${ minimumLength } ký tự."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Tên thư mục này không khả dụng. Vui lòng chọn tên khác."
@@ -6545,6 +6563,9 @@
       "Try again later": [
         "Thử lại sau"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Hãy thử chỉ sử dụng chữ cái, số và _.-"
+      ],
       "Unable to upload file": [
         "Không thể tải lên tệp"
       ],
@@ -6562,6 +6583,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Các tập tin tải lên không phải mã hóa riêng hợp lệ. Hãy xác nhận và thử lại."
+      ],
+      "Username must begin with a letter or digit": [
+        "Tên người dùng phải bắt đầu bằng chữ hoặc số"
+      ],
+      "Username must end with a letter or digit": [
+        "Tên người dùng phải kết thúc bằng chữ hoặc số"
       ],
       "Validation error": [
         "Lỗi xác thực"
@@ -8717,9 +8744,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Thêm tên và logo để tạo trải nghiệm cá nhân hóa hơn cho tổ chức."
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Đang thêm ${ addedServerCount } máy chủ kết nối"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Thêm địa chỉ email bên ngoài sẽ vô hiệu hóa mã hóa đầu cuối cho tất cả liên lạc qua email trong nhóm đó. Bạn có muốn tiếp tục không?"
@@ -17529,16 +17553,6 @@
         "Nâng cấp lên ${ upsellPlanTitle }"
       ]
     },
-    "PQC account key generation": {
-      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
-        "Không thể tạo khóa. Để kích hoạt bảo vệ hậu lượng tử, cần tạo thủ công khóa mã hóa mới.\n\n${ settingsLink } và chọn 'Tạo khóa' cho tài khoản và cho từng địa chỉ."
-      ]
-    },
-    "PQC adress key generation": {
-      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
-        "Không thể tạo khóa địa chỉ. Để kích hoạt bảo vệ hậu lượng tử, cần tạo thủ công khóa mã hóa mới.\n\nĐi tới ${ settingsLink } và chọn 'Tạo khóa' cho từng địa chỉ."
-      ]
-    },
     "PQC key generation": {
       "This will generate new quantum-resistant encryption keys for your account.": [
         "Thao tác này sẽ tạo khóa mã hóa kháng lượng tử mới cho tài khoản."
@@ -21773,6 +21787,9 @@
       "Feature access": [
         "Truy cập tính năng"
       ],
+      "Fewer distractions, more focus": [
+        "Ít xao nhãng hơn, tập trung hơn"
+      ],
       "Filter for more focus": [
         "Lọc để tập trung hơn"
       ],
@@ -22964,9 +22981,6 @@
       "This feature is only available on Beta": [
         "Tính năng này chỉ có sẵn trên bản Beta"
       ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "Đây là khóa mặc định được những người dùng ${ MAIL_APP_NAME } khác sử dụng trên các ứng dụng di động cũ hơn để mã hóa dữ liệu họ gửi cho bạn"
-      ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
         "Đây là khóa mặc định được người dùng ${ MAIL_APP_NAME } khác sử dụng để mã hóa dữ liệu gửi cho bạn"
       ],
@@ -23468,6 +23482,14 @@
       ],
       "Writing assistant": [
         "Trợ lý soạn thảo"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Mật khẩu phải có ít nhất ${ MIN_PASSWORD_LENGTH } ký tự"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Hãy thử đặt một tên người dùng ngắn hơn (tối đa${ n } ký tự)"
       ]
     },
     "Video control": {

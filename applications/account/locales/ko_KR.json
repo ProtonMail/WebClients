@@ -6474,11 +6474,17 @@
       "Email address is required": [
         "이메일 주소가 필요함"
       ],
+      "Email is not valid": [
+        "유효하지 않은 이메일"
+      ],
       "Empty condition": [
         "빈 조건"
       ],
       "Enter 6 digits": [
         "6자리 숫자를 입력해 주세요"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "도메인 없이 (@example.co.kr) 사용자 이름을 입력해 주세요."
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API와 통신하던 중 오류가 발생했습니다."
@@ -6563,6 +6569,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "2차 비밀번호가 틀렸습니다. 다시 시도해 주세요."
+      ],
+      "Incorrect username": [
+        "잘못된 사용자 이름"
       ],
       "Intended recipient does not support calendar sharing": [
         "지정한 수신자가 캘린더 공유를 지원하지 않습니다."
@@ -6669,6 +6678,9 @@
       "Not a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } 계정이 아님"
       ],
+      "Not a valid number": [
+        "유효하지 않은 번호"
+      ],
       "Organization key is not decrypted": [
         "조직 키는 해독되지 않았습니다"
       ],
@@ -6680,6 +6692,9 @@
       ],
       "Password is required": [
         "비밀번호가 필요함"
+      ],
+      "Passwords do not match": [
+        "비밀번호가 일치하지 않습니다"
       ],
       "Payment process canceled": [
         "결제 과정 취소됨"
@@ -6761,9 +6776,6 @@
       ],
       "Please try again in a few moments.": [
         "잠시 후 다시 시도하십시오."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "다중 사용자 지원을 이용하시려면 2명 이상의 사용자를 지원하는 비즈니스 플랜으로 업그레이드하세요"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "1명 보다 더 많은 다중 사용자를 관리하려면 비즈니스 플랜으로 업그레이드 하세요."
@@ -6861,6 +6873,9 @@
       "The amount due has changed. Please try again.": [
         "결제 예정 가격이 변경되었습니다. 다시 시도해 주세요."
       ],
+      "The email addresses do not match": [
+        "이메일 주소가 일치하지 않습니다."
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "파일이 너무 큽니다. 최대 크기는 ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS } 입니다."
       ],
@@ -6903,11 +6918,17 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "외부 계정에 너무 많은 폴더가 있습니다. 일부 폴더를 삭제하려면 사용자 지정 가져오기를 설정하세요."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "이 필드가 최대 ${ maximumLength } 글자를 초과합니다."
+      ],
       "This field is invalid": [
         "이 필드는 유효하지 않습니다"
       ],
       "This field is required": [
         "필수 기재 항목입니다"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "이 필드에는 ${ minimumLength }자 이상이 필요합니다."
       ],
       "This folder name is not available. Please choose a different name.": [
         "이 폴더 이름을 사용할 수 없어요. 다른 이름을 선택하세요."
@@ -6933,6 +6954,9 @@
       "Try again later": [
         "나중에 다시 시도하세요"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "문자, 숫자 및 _.- 만 사용하십시오"
+      ],
       "Unable to upload file": [
         "업로드 파일 불가"
       ],
@@ -6950,6 +6974,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "업로드된 파일이 유효하지 않은 비공개 키입니다. 인증 후 다시 시도하세요."
+      ],
+      "Username must begin with a letter or digit": [
+        "사용자명은 문자로 시작해야 합니다"
+      ],
+      "Username must end with a letter or digit": [
+        "사용자 이름은 문자로 시작하여야 합니다."
       ],
       "Validation error": [
         "검증 오류"
@@ -9182,9 +9212,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "더 개인화된 경험을 위해 사용자의 조직에 맞는 이름 및 로고를 추가하세요."
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "${ addedServerCount }개 게이트웨이 서버 생성 중"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "외부 이메일 주소를 추가하면 저 그룹에서 모든 이메일 통신의 종단간 암호화가 비활성화 됩니다. 정말로 진행하시겠습니까?"
@@ -18441,16 +18468,6 @@
         "${ upsellPlanTitle }(으)로 업그레이드"
       ]
     },
-    "PQC account key generation": {
-      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
-        "키 생성 실패. 양자 내성 보호를 활성화하기 위해, 새 암호화 키의 수동 생성이 필요합니다.\n\n${ settingsLink }한 뒤 사용자의 계정 및 각 주소에 대한 '키 생성'을 선택하십시오."
-      ]
-    },
-    "PQC adress key generation": {
-      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
-        "주소 키를 생성할 수 없습니다. 양자 내성 암호화를 활성화하려면, 신규 암호화 키를 수동으로 생성해야 합니다.\n\n${ settingsLink }(으)로 이동한 뒤 각 주소에 대한 '키 생성'을 선택하십시오."
-      ]
-    },
     "PQC key generation": {
       "This will generate new quantum-resistant encryption keys for your account.": [
         "이 작업은 사용자의 계정에 새로운 양자 내성 암호화 키를 생성합니다."
@@ -22937,6 +22954,9 @@
       "Feature access": [
         "기능 접근"
       ],
+      "Fewer distractions, more focus": [
+        "방해 요소는 줄이고, 집중력은 높이고."
+      ],
       "Filter for more focus": [
         "더 집중하기 위한 필터"
       ],
@@ -24158,9 +24178,6 @@
       "This feature is only available on Beta": [
         "이 기능은 베타에서만 사용할 수 있습니다."
       ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "이전 버전의 모바일 앱에서 다른 ${ MAIL_APP_NAME } 사용자가 보낸 데이터를 암호화하기 위해 사용하는 기본 키입니다."
-      ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
         "다른 ${ MAIL_APP_NAME } 사용자가 보낸 데이터를 암호화하기 위해 사용하는 기본 키입니다."
       ],
@@ -24668,6 +24685,14 @@
       ],
       "Writing assistant": [
         "글쓰기 도우미"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "비밀번호는 최소 ${ MIN_PASSWORD_LENGTH }자 이상이어야 합니다"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "더 짧은 이름을 사용하세요 (최대 ${ n }글자)"
       ]
     },
     "Video control": {

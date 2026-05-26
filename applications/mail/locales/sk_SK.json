@@ -1449,6 +1449,9 @@
       "Start setup": [
         "Spustiť nastavenie"
       ],
+      "Start testing": [
+        "Začať testovanie"
+      ],
       "Stay": [
         "Zostať"
       ],
@@ -1522,7 +1525,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -4183,8 +4189,14 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Pomôžte svojmu tímu bezpečne ukladať heslá k citlivým obchodným a klientskym informáciám."
       ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Ak nájdete email v nesprávnej kategórii, jednoducho ho presuňte do tej správnej."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá sa, že zoznam kontaktov ktorý importujete, zahŕňa nejaké skupiny. Prosím, skontrolujte ako by tieto skupiny mali byť importované."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Systém sa stále učí a potrebujeme vašu pomoc, aby sme vylepšili kategorizáciu."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Umožňuje okamžite pridávať odkazy na schôdze do vašich pozvánok na udalosti."
@@ -4291,11 +4303,14 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "V tomto emaily sme nenašli žiadne známe sledovače ani sledovacie URL adresy."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Keď sa úložisko zaplní na 80 %, pozastavíme import, aby sme uvoľnili miesto pre nové správy."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Načítame vaše staré emaily a prepojíme váš Gmail s aplikáciou ${ MAIL_APP_NAME }, aby sa nové správy zobrazovali automaticky"
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Začali sme importovať vaše emaily z Gmailu z posledných 180 dní. Dáme vám vedieť, keď bude import hotový."
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Začali sme importovať vaše emaily z Gmailu. Dáme vám vedieť, keď bude import hotový."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Je nám ľúto, že odchádzate. Ak máte chvíľku, veľmi by sme ocenili, keby ste nám povedali, prečo chcete zrušiť odber. Vaša spätná väzba nám pomáha vylepšovať ${ BRAND_NAME } pre všetkých."
@@ -4351,6 +4366,9 @@
       "Your account and data recovery methods are set.": [
         "Váš účet a metódy obnovy údajov sú nastavené."
       ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "Vaše opravy ovplyvnia štandardné nastavenie pre všetkých používateľov a po spustení si systém bude pamätať vaše preferencie aj v budúcnosti!"
+      ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Váš plán podporuje ${ MAX_SYNC_FREE_USER } Gmailovú adresu.",
         "Váš plán podporuje ${ MAX_SYNC_FREE_USER } Gmailové adresy.",
@@ -4362,6 +4380,9 @@
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailové adresy",
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries",
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries"
+      ],
+      "You’re among the first to try email categories.": [
+        "Patríte medzi prvých, ktorí vyskúšajú kategórie emailov."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
@@ -5001,6 +5022,12 @@
       ],
       "Organization key is not decrypted": [
         "Kľúč organizácie nie je dešifrovaný"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Na vytvorenie pozvaných používateľov musí byť aktivovaný kľúč organizácie"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Na vytvorenie nesúkromných používateľov musí byť aktivovaný kľúč organizácie"
       ],
       "Passphrase unavailable": [
         "Prístupová fráza nedostupná"
@@ -7859,10 +7886,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -8824,6 +8848,9 @@
       "Trash existing messages": [
         "Presunúť existujúce správy do Koša"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Dôverovať kľúču „${ activeSignerText }“ pri overovaní nových správ od tohto kontaktu."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyskúšajte nové ${ BRAND_NAME } funkcie, aktualizácie a produkty pred ich zverejnením. Týmto sa obnoví aplikácia"
       ],
@@ -9403,11 +9430,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Aktívny signatár"
+      ],
       "Compromised": [
         "Kompromitovaný"
       ],
       "Expired": [
         "Vypršaný"
+      ],
+      "Fallback": [
+        "záložný"
       ],
       "KOO": [
         "KOO"
@@ -9670,6 +9703,9 @@
         "${ n } mesiace",
         "${ n } mesiacov",
         "${ n } mesiacov"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } znakov"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasne nedostupné. Skúste to neskôr.)"
@@ -13098,8 +13134,17 @@
       "External key automatically fetched via WKD.": [
         "Externý kľúč automaticky načítaný prostredníctvom WKD."
       ],
+      "This contact currently signs messages with this key": [
+        "Tento kontakt v súčasnosti podpisuje správy týmto kľúčom"
+      ],
+      "This key is used for message verification": [
+        "Tento kľúč slúži na overenie správy"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Tento kľúč sa používa na šifrovanie správ tomuto kontaktu"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Tento kľúč sa používa na šifrovanie správ tomuto kontaktu v starších aplikáciách"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Odporúčame, aby ste pri tomto kľúči zvolili \"Nedôverovať\"."
@@ -15861,6 +15906,9 @@
       "Download the app": [
         "Stiahnuť aplikáciu"
       ],
+      "Early access to email categories": [
+        "Predčasný prístup k emailovým kategóriám"
+      ],
       "Edit billing address": [
         "Upraviť fakturačnú adresu"
       ],
@@ -16736,6 +16784,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Správcovia nemajú prístup k dátam súkromných používateľov a nemôžu resetovať ich heslo."
+      ],
+      "Member activation incomplete": [
+        "Aktivácia člena nie je dokončená"
+      ],
+      "Organization key must be activated to request data access": [
+        "Kľúč organizácie musí byť aktivovaný, aby bolo možné požiadať o prístup k údajom"
+      ],
+      "The user must have an address to request data access": [
+        "Používateľ musí mať adresu, aby mohol požiadať o prístup k údajom"
       ]
     },
     "Update font modal": {

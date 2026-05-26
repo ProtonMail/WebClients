@@ -2488,6 +2488,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Klicke auf das ${ PASS_APP_NAME }-Symbol in der Symbolleiste deines Browsers, um deine importierten Daten zu überprüfen."
       ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "Um die biometrische Entsperrung einzurichten, benötigt ${ PASS_APP_NAME } eine neue Browser-Berechtigung. Nachdem du diese akzeptiert hast, wird die Erweiterung neu geladen. Bitte öffne diese Seite anschließend erneut."
+      ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Vertrauenswürdig für über 50'000 Geschäftsbenutzern und 100 Millionen Konten weltweit."
       ],
@@ -4464,6 +4467,9 @@
       ],
       "Breaches detected for": [
         "Datenlecks entdeckt für"
+      ],
+      "Browser permission required": [
+        "Browser-Berechtigung erforderlich"
       ],
       "Cancel changing your email?": [
         "Änderung deiner E-Mail abbrechen?"

@@ -381,6 +381,9 @@
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "${ nameToDisplay } ${ maybeEmailInBrackets } ile ilerle"
       ],
+      "Continue with Free": [
+        "Free kullanmayı sürdür"
+      ],
       "Continue with Google": [
         "Google ile ilerle"
       ],
@@ -573,6 +576,9 @@
       "Disable categories": [
         "Kategorileri kullanımdan kaldır"
       ],
+      "Disable category": [
+        "Kategoriyi kullanımdan kaldır"
+      ],
       "Disable recovery phrase": [
         "Kurtarma ifadesini kapat"
       ],
@@ -723,6 +729,9 @@
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring } özelliğini aç"
       ],
+      "Enable category": [
+        "Kategoriyi kullanıma al"
+      ],
       "enable desktop notifications": [
         "bilgisayar bildirimlerini açmak"
       ],
@@ -794,6 +803,9 @@
       ],
       "Generate key": [
         "Anahtar oluştur"
+      ],
+      "Generate missing keys": [
+        "Eksik anahtarları oluştur"
       ],
       "Generate new phrase": [
         "Yeni ifade oluştur"
@@ -5292,6 +5304,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Gelen iletilerinizi gelen kutunuza ulaşmadan önce otomatik olarak sıralayın."
       ],
+      "Available storage: ${ storageText }": [
+        "Kullanılabilecek depolama alanı: ${ storageText }"
+      ],
       "Available with ${ title }": [
         "${ title } ile kullanılabilir"
       ],
@@ -5354,6 +5369,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Yıllarca birikecek e-postalar, ek dosyalar ve diğer şeyler için yeterli alan."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Ekibiniz uzaktan çalışıyor veya herkese açık Wi-Fi bağlantıları kullanıyor olsa bile, kuruluş verilerine güvenli erişim sağlayın."
@@ -5427,6 +5445,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } üzerinden Gmail e-postalarını okuyun, yanıtlayın ve güncel kalın"
       ],
+      "Select which categories you want to add and if you want to receive push notifications for each category.": [
+        "Eklemek istediğiniz kategorileri ve her bir kategori için anlık bildirim almak isteyip istemediğinizi seçin."
+      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Tüm kullanıcı hesaplarını ayarlayın ve onları ${ BRAND_NAME } kullanmaya davet edin."
       ],
@@ -5470,6 +5491,9 @@
       "Track the status and activity of your referrals": [
         "Önerilerinizin etkinliklerini ve durumunu izleyin"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Yalnızca ${ config.offerPrice } ile 15 GB depolama alanı edinin."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "${ planName } tarifesine geçerek ${ MAX_SYNC_PAID_USER } taneye kadar hesap bağlayın"
       ],
@@ -5485,14 +5509,20 @@
       "We can't access ${ boldEmails } anymore.": [
         "Artık ${ boldEmails } adresine erişemiyoruz."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Yeni iletilere yer açmak için depolama alanı %80 doluluğa ulaştığında içe aktarma işlemini duraklatacağız."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Eski e-postalarınızı aktaracağız ve ${ MAIL_APP_NAME } ile Gmail hesabınızı bağlayacağız. Böylece yeni iletiler otomatik olarak görünecek"
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Gmail üzerinde son 180 gündeki e-postalarınızı içe aktarmaya başladık. Tamamlandığında bilgi vereceğiz."
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Gmail üzerindeki e-postalarınızı içe aktarmaya başladık. Tamamlandığında sizi bilgilendireceğiz."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Aramızdan ayrıldığınız için üzgünüz. Vakit ayırıp iptal etme nedeninizi paylaşırsanız çok seviniriz. Geri bildiriminiz ${ BRAND_NAME } hizmetlerini herkes için daha iyi yapmamıza yardımcı olur."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Yeni e-posta kategorileri ile yalnızca önemli iletiler birincil gelen kutunuza düşer. Kategoriler istenmeyen ileti süzgeçleri gibi çalışır. ${ MAIL_APP_NAME } e-postalarınızı asla okumaz ve verilerinizi paylaşmaz."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } üzerine iletilen bir Gmail adresiniz zaten var. E-postaları doğrudan ${ MAIL_APP_NAME } üzerinden göndermek ve almak için aşağıdan bağlantı kurun."
@@ -5534,6 +5564,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } uygulamasına bir dış hesap adresi bağladınız."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ücretsiz ${ MAIL_APP_NAME } hesabınız sınırlı depolama alanıyla sunulduğundan güncel Gmail iletilerinizin yalnızca ${ newUserStorageText } kadarını içe aktaracağız."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ücretsiz ${ MAIL_APP_NAME } hesabınız sınırlı depolama alanıyla sunulduğu için yalnızca son Gmail e-postalarınız içe aktarılacak."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Tarifenizde ${ MAX_SYNC_FREE_USER } Gmail adresi destekleniyor.",
@@ -7149,11 +7185,17 @@
       "Email address is required": [
         "E-posta adresinin yazılması zorunludur"
       ],
+      "Email is not valid": [
+        "E-posta geçersiz"
+      ],
       "Empty condition": [
         "Boş koşul"
       ],
       "Enter 6 digits": [
         "6 rakam yazın"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Kullanıcı adınızı etki alanı (@example.com) olmadan yazın"
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
@@ -7241,6 +7283,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "İkinci parola yanlış. Lütfen yeniden deneyin."
+      ],
+      "Incorrect username": [
+        "Kullanıcı adı yanlış"
       ],
       "Intended recipient does not support calendar sharing": [
         "İstenilen alıcı takvim paylaşımını desteklemiyor"
@@ -7351,6 +7396,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Bir ${ BRAND_NAME } hesabı değil"
       ],
+      "Not a valid number": [
+        "Numara geçerli değil"
+      ],
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
       ],
@@ -7362,6 +7410,9 @@
       ],
       "Password is required": [
         "Parolanın yazılması zorunludur"
+      ],
+      "Passwords do not match": [
+        "Parola ile onayı aynı değil"
       ],
       "Payment process canceled": [
         "Ödeme işlemi iptal edildi"
@@ -7444,9 +7495,6 @@
       ],
       "Please try again in a few moments.": [
         "Lütfen biraz sonra yeniden deneyin."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Çok kullanıcı desteği almak için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye geçin"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Birden çok kullanıcıyı yönetmek için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye geçin."
@@ -7545,6 +7593,9 @@
       "The amount due has changed. Please try again.": [
         "Ödenecek tutar değişti. Lütfen yeniden deneyin."
       ],
+      "The email addresses do not match": [
+        "E-posta adresleri eşleşmiyor"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Dosya çok büyük. En fazla boyut ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -7590,11 +7641,17 @@
       "There was an error, please try again.": [
         "Bir sorun çıktı. Lütfen yeniden deneyin."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
+      ],
       "This field is invalid": [
         "Bu alan geçersiz"
       ],
       "This field is required": [
         "Bu alanın doldurulması zorunludur"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Bu klasör adı kullanılamaz. Lütfen farklı bir ad seçin."
@@ -7620,6 +7677,9 @@
       "Try again later": [
         "Bir süre sonra yeniden deneyin"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
+      ],
       "Unable to upload file": [
         "Dosya yüklenemedi"
       ],
@@ -7637,6 +7697,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Yüklenen dosyalar geçerli kişisel anahtarlar değil. Lütfen doğrulayıp yeniden deneyin."
+      ],
+      "Username must begin with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile başlamalı"
+      ],
+      "Username must end with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile bitmeli"
       ],
       "Validation error": [
         "Doğrulama sorunu"
@@ -8375,6 +8441,9 @@
       "${ PROTON_SENTINEL_NAME } account protection": [
         "${ PROTON_SENTINEL_NAME } hesap koruması"
       ],
+      "10+ premium features": [
+        "10+ ücretli özellik"
+      ],
       "15 GB storage": [
         "15 GB depolama alanı"
       ],
@@ -8410,6 +8479,12 @@
       "Continue": [
         "İlerle"
       ],
+      "Custom email domain": [
+        "Özel e-posta etki alanı"
+      ],
+      "Email addresses": [
+        "E-posta adresleri"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Dosyalar, fotoğraflar ve belgeler için şifrelenmiş bulut depolama alanı"
       ],
@@ -8439,6 +8514,9 @@
       ],
       "Short domain @pm.me": [
         "Kısa etki alanı @pm.me"
+      ],
+      "Storage": [
+        "Depolama alanı"
       ],
       "Torrenting support (P2P)": [
         "Torrent desteği (P2P)"
@@ -8807,6 +8885,9 @@
     "Force upgrade safety review": {
       "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
         "${ BRAND_NAME } uygulamalarının eski sürümlerinde artık oturum açamayacağımı anlıyorum."
+      ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
       ]
     },
     "Form heading": {
@@ -9180,7 +9261,7 @@
         "Bize ulaşın"
       ],
       "Downloads": [
-        "İndirmeler"
+        "İndirilenler"
       ],
       "Enjoying ${ planName }?": [
         "${ planName } hoşunuza gitti mi?"
@@ -9623,8 +9704,8 @@
       "${ BRAND_NAME } Free": [
         "${ BRAND_NAME } Free"
       ],
-      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
-        "${ BRAND_NAME } bağımsız olarak finanse edilir ve reklamsız çalışır.\nAşağıda, bu bağımsızlığın pratikte nasıl kullanıldığı ile ilgili örnekleri görebilirsiniz."
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } bağımsız olarak finanse edilir ve reklamsız çalışır. Aşağıda, bu bağımsızlığın pratikte nasıl kullanıldığı ile ilgili örnekleri görebilirsiniz."
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME }, güçlü şifreleme, açık kaynak kodu ve İsviçre gizlilik yasaları tarafından sağlanan, güvenebileceğiniz bir gizlilik sunar. Kimsenin verilerinizden yarar sağlamaması gerektiğine inanıyoruz, nokta. Teknolojimiz ve işimiz, gizliliğin temelden daha güçlü olan bu tanımına dayanıyor."
@@ -10061,9 +10142,9 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Kuruluşunuz için daha kişiselleştirilmiş bir deneyim oluşturmak için adınızı ve logonuzu ekleyin."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "${ addedServerCount } ağ geçidi sunucusu ekleniyor",
-        "${ addedServerCount } ağ geçidi sunucusu ekleniyor"
+      "Adding ${ total } gateway server": [
+        "${ total } ağ geçidi sunucusu ekleniyor",
+        "${ total } ağ geçidi sunucusu ekleniyor"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Bir dış e-posta adresi eklendiğinde, o grup içindeki tüm e-posta yazışmaları için uçtan uca şifreleme kapatılır. İlerlemek istiyor musunuz?"
@@ -11256,6 +11337,9 @@
       ],
       "Include device, location, and IP details": [
         "Aygıt, konum ve IP adresi ayrıntıları katılsın"
+      ],
+      "Included": [
+        "İçindekiler"
       ],
       "Increase your account security by verifying your email address.": [
         "E-posta adresinizi doğrulayarak hesap güvenliğinizi artırın."
@@ -12585,6 +12669,9 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Parola sıfırlandıktan sonra erişilmesi engellenen verilerinizin şifresini çözmek ve bunları görüntülemek için bir kurtarma yöntemi belirleyin."
       ],
+      "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
+        "Kuantum sonrası korumayı etkinleştirmek için yeni kuantum sonrası şifreleme anahtarlarınızı oluşturmanız gerekecek."
+      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Hesabınızda olabilecek en yüksek güvenliği sağlamak için **E-posta adresi ile kurtarma** seçeneğini kapatın."
       ],
@@ -12708,8 +12795,14 @@
       "Unverified email address.": [
         "E-posta adresi doğrulanmamış."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Geri kalanını getirmek için istediğiniz zaman tarifenizi yükseltebilirsiniz"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Geri kalanları aktarmak için istediğiniz zaman tarifenizi yükseltin ya da yer açın"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Hesabınızı paylaşması daha kolay ve daha kısa @pm.me adresi ile kullanmak için tarifenizi yükseltin. İngilizce olarak \"${ MAIL_APP_NAME } ben\" ya da \"Bana özel ileti\" anlamına gelir."
@@ -14036,6 +14129,9 @@
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME } koruması"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } karakter"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
       ],
@@ -14633,6 +14729,9 @@
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
         "${ domain.DomainName } için ${ DARK_WEB_MONITORING_NAME } özelliğini aç"
+      ],
+      "Enable categories": [
+        "Kategorileri kullanıma al"
       ],
       "Enabled": [
         "Kullanılıyor"
@@ -18655,6 +18754,9 @@
       "Plain text": [
         "Düz yazı"
       ],
+      "Push notifications": [
+        "Anlık bildirimler"
+      ],
       "Receive from all": [
         "Tümünden al"
       ],
@@ -20030,13 +20132,13 @@
       ]
     },
     "PQC account key generation": {
-      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
-        "Anahtarlar oluşturulamadı. Kuantum sonrası korumasını açmak için yeni şifreleme anahtarlarınızı el ile oluşturmanız gerekir.\n\n${ settingsLink } bağlantısıdan hesabınızdaki her adres için 'Anahtar oluştur' seçeneğini kullanın."
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Anahtarlar oluşturulamadı. Kuantum sonrası korumayı etkinleştirmek için yeni kuantum sonrası şifreleme anahtarlarını oluşturulmanız gerekiyor.\n\n${ goToSettingsLink } kısmına gidin ve 'Eksik anahtarları oluştur' seçeneğini seçin."
       ]
     },
     "PQC adress key generation": {
-      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
-        "Adres anahtarları oluşturulamadı. Kuantum sonrası korumasını açmak için yeni şifreleme anahtarlarınızı el ile oluşturmanız gerekir.\n\n${ settingsLink } bağlantısından her adres için 'Anahtar oluştur' seçeneğini kullanın."
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys for each address.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Adres anahtarları oluşturulamadı. Kuantum sonrası korumayı etkinleştirmek için her bir adrese özel yeni kuantum sonrası şifreleme anahtarlarınızı oluşturmanız gerekecek.\n\n${ goToSettingsLink } bağlantısından ve 'Eksik anahtarları oluştur' seçeneğini kullanın."
       ]
     },
     "PQC compatibility warning": {
@@ -24616,6 +24718,9 @@
       "Add another notification to remind you of this event": [
         "Bu etkinliği hatırlatacak başka bir bildirim ekleyin"
       ],
+      "Add categories": [
+        "Kategori ekle"
+      ],
       "Add contact group name": [
         "Kişi grubu adı ekle"
       ],
@@ -24790,6 +24895,9 @@
       "Catch-all address": [
         "Tümünü toplama adresi"
       ],
+      "Categories": [
+        "Kategoriler"
+      ],
       "Change login password": [
         "Oturum açma parolasını değiştir"
       ],
@@ -24882,6 +24990,9 @@
       ],
       "Contact us": [
         "Bize ulaşın"
+      ],
+      "Continue with free storage": [
+        "Ücretsiz depolama alanını kullanmayı sürdür"
       ],
       "Continue with partial import?": [
         "Kısmi içe aktarmay ile ilerlensin mi?"
@@ -25291,6 +25402,9 @@
       "Feature access": [
         "Özellik erişimi"
       ],
+      "Fewer distractions, more focus": [
+        "Daha az dikkat dağınıklığı, daha iyi odaklanma"
+      ],
       "Filter for more focus": [
         "Daha iyi odaklanmak için süzün"
       ],
@@ -25389,6 +25503,9 @@
       ],
       "Get more from your VPN": [
         "VPN hizmetinizden fazlasını alın"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "${ MAIL_APP_NAME } Plus ile daha fazla depolama alanı edinin"
       ],
       "Get started": [
         "Başlayalım"
@@ -26511,6 +26628,9 @@
       "Each imported email will have this label": [
         "İçe aktarılan her e-postaya bu etiket atanacak"
       ],
+      "Early access to new apps and features.": [
+        "Yeni uygulama ve özelliklere erken erişim."
+      ],
       "Edit folder names": [
         "Klasör adlarını düzenle"
       ],
@@ -26667,8 +26787,8 @@
       "This feature is only available on Beta": [
         "Bu özelliği yalnızca Beta sürümü kullanıcıları kullanabilir"
       ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "Bu, diğer ${ MAIL_APP_NAME } kullanıcılarının size gönderdikleri verileri şifrelemek için daha eski mobil uygulamalarda kullandığı varsayılan anahtardır"
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
+        "Bu anahtar diğer ${ MAIL_APP_NAME } kullanıcılarının size gönderdiği verileri şifrelemek için eski uygulamalarda kullandığı varsayılan anahtardır."
       ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
         "Bu, diğer ${ MAIL_APP_NAME } kullanıcılarının size gönderdiği verileri şifrelemek için kullandığı varsayılan anahtardır"
@@ -27200,6 +27320,16 @@
       ],
       "Writing assistant": [
         "Yazma yardımcısı"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır",
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
       ]
     },
     "Video control": {
