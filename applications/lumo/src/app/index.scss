@@ -38,7 +38,7 @@ im.$media-expressions: $media-expressions;
 	font-feature-settings: 'ss04';
 
 	@include im.media('<=medium') {
-		font-size: rem(30);
+		font-size: rem(36);
 	}
 
 	@container maintext (width < 16rem) {
