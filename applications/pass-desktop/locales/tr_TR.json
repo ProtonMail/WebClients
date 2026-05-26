@@ -2636,6 +2636,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "İçe aktarılan verilerinizi gözden geçirmek için tarayıcınızın araç çubuğundaki ${ PASS_APP_NAME } simgesine tıklayın."
       ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "Biyometri ile kilit açmak için ${ PASS_APP_NAME } uygulamasına yeni bir tarayıcı izni verilmesi gerekiyor. İzni verdikten sonra eklenti yeniden yüklenecek. Ardından bu sayfayı yeniden açın."
+      ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Dünya çapında 50.000 üzerinde kurumsal kullanıcı ve 100 milyon hesap tarafından güveniliyor."
       ],
@@ -4662,6 +4665,9 @@
       ],
       "Breaches detected for": [
         "Şunun için veri sızıntıları bulundu"
+      ],
+      "Browser permission required": [
+        "Tarayıcı izni verilmesi gerekiyor"
       ],
       "Cancel changing your email?": [
         "E-posta adresi değişikliği iptal edilsin mi?"
