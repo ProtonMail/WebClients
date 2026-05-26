@@ -5,12 +5,12 @@ import { c } from 'ttag';
 import { type ModalStateProps, useNotifications } from '@proton/components';
 import type { MaybeNode, ProtonDriveClient, Result } from '@proton/drive';
 import { NodeType, getDrive } from '@proton/drive';
+import type { DirectoryTreeItem } from '@proton/drive/components/DirectoryTree/DirectoryTree';
 import shallowEqual from '@proton/utils/shallowEqual';
 
 import { directoryTreeFactory } from '../../modules/directoryTree';
 import { getNodeUidFromTreeItemId, makeTreeItemId } from '../../modules/directoryTree/helpers';
 import { type MoveNodesItemMap, useMoveNodes } from '../../modules/moveNodes';
-import type { DirectoryTreeItem } from '../../statelessComponents/DirectoryTree/DirectoryTree';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
