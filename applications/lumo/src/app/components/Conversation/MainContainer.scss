@@ -13,21 +13,6 @@
 	overflow: hidden;
 }
 
-.animated-bg-canvas {
-	position: absolute;
-	inset: 0;
-	pointer-events: none;
-	border-radius: inherit;
-}
-
-.animated-bg-shader {
-	z-index: 0;
-}
-
-.animated-bg-particles {
-	z-index: 1;
-}
-
 .main-container-content {
 	position: relative;
 	z-index: 2;
