@@ -40,7 +40,11 @@ code {
 
 /* Forbidden property on almost ALL clients IE add a space :) */
 [style*='position:absolute'],
-[style*='position: absolute'] {
+[style*='position: absolute'],
+[style*='position:fixed'],
+[style*='position: fixed'],
+[style*='position:sticky'],
+[style*='position: sticky'] {
 	position: relative !important;
 }
 
