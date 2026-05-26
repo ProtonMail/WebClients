@@ -70,6 +70,9 @@
 
     /* For lumo solid weak button background color */
     --interaction-solid-weak-custom: #292929;
+    --interaction-solid-weak-custom-contrast: #292929;
+    --interaction-solid-weak-custom-active: #525252;
+    --interaction-solid-weak-custom-hover: #3f3f3f;
 
     --reinforce-norm: #5C3BE7;
     --reinforce-hover: #6D4AFF;
