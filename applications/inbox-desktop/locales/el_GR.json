@@ -38,11 +38,23 @@
       "Delete": [
         "Διαγραφή"
       ],
+      "Disable": [
+        "Απενεργοποίηση"
+      ],
+      "Disable Hardware Acceleration": [
+        "Απενεργοποίηση Επιτάχυνσης Υλικού"
+      ],
+      "Enable": [
+        "Ενεργοποίηση"
+      ],
       "Enable diagnostic logs": [
         "Ενεργοποίηση αρχείων καταγραφής διαγνωστικού ελέγχου"
       ],
       "Enable diagnostic logs from the Chromium engine.": [
         "Ενεργοποιήστε τα διαγνωστικά αρχεία από τη μηχανή Chromium."
+      ],
+      "Enable Hardware Acceleration": [
+        "Ενεργοποίηση Επιτάχυνσης Υλικού"
       ],
       "Force Reload": [
         "Αναγκαστική Επαναφόρτωση"
@@ -122,6 +134,12 @@
       "Uninstall ${ MAIL_APP_NAME }": [
         "Απεγκατάσταση ${ MAIL_APP_NAME }"
       ],
+      "When hardware acceleration is disabled, the app falls back to software rendering. This can cause choppy animations, dropped frames, slower video playback, higher CPU usage, and reduced graphics performance.": [
+        "Όταν η επιτάχυνση υλικού είναι απενεργοποιημένη, η εφαρμογή επιστρέφει στην απόδοση λογισμικού. Αυτό μπορεί να προκαλέσει διακοπές στην κίνηση, απώλεια καρέ, πιο αργή αναπαραγωγή βίντεο, υψηλότερη χρήση CPU και μειωμένη απόδοση γραφικών."
+      ],
+      "When hardware acceleration is enabled, the app uses your device’s dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "Όταν είναι ενεργοποιημένη η επιτάχυνση υλικού, η εφαρμογή χρησιμοποιεί το αποκλειστικό υλικό γραφικών της συσκευής σας για απόδοση. Αυτό μπορεί να προκαλέσει προβλήματα συμβατότητας σε ορισμένα συστήματα."
+      ],
       "Zoom": [
         "Μεγέθυνση"
       ],
@@ -133,6 +151,12 @@
       ]
     },
     "App Menu": {
+      "Disable Hardware Acceleration": [
+        "Απενεργοποίηση Επιτάχυνσης Υλικού"
+      ],
+      "Enable Hardware Acceleration": [
+        "Enable Hardware Acceleration"
+      ],
       "Services": [
         "Υπηρεσίες"
       ]
