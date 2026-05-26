@@ -4,7 +4,7 @@ import { ToolbarButton } from '@proton/components';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import clsx from '@proton/utils/clsx';
 
-import { ContextMenuButton } from '../../legacy/components/sections/ContextMenu';
+import { ContextMenuButton } from '../../statelessComponents/ContextMenu';
 import type { CommonButtonProps } from './types';
 
 interface ContextMenuProps {

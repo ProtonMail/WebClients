@@ -293,7 +293,7 @@ export type CommonButtonProps<T = {}> =
 ```typescript
 import { ToolbarButton } from '@proton/components';
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
-import { ContextMenuButton } from '../../components/sections/ContextMenu';
+import { ContextMenuButton } from '../../statelessComponents/ContextMenu';
 import type { CommonButtonProps } from './types';
 
 type Props = CommonButtonProps;

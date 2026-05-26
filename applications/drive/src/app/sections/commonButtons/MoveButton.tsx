@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { ToolbarButton } from '@proton/components';
 import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross';
 
-import { ContextMenuButton } from '../../legacy/components/sections/ContextMenu';
+import { ContextMenuButton } from '../../statelessComponents/ContextMenu';
 
 interface BaseProps {
     onClick: () => void;
