@@ -2,9 +2,9 @@ import { jest } from '@jest/globals';
 
 import { NodeType } from '@proton/drive/index';
 
-import { DownloadStatus, useDownloadManagerStore } from '../../legacy/zustand/download/downloadManager.store';
 import { createMockNodeEntity } from '../../utils/test/nodeEntity';
 import type { ArchiveStreamGenerator as ArchiveStreamGeneratorClass } from './ArchiveStreamGenerator';
+import { DownloadStatus, useDownloadManagerStore } from './downloadManager.store';
 import type { DownloadQueueTask } from './downloadTypes';
 import type { MalwareDetection } from './malwareDetection/malwareDetection';
 import { createDeferred, flushAsync, trackInstances } from './testUtils';

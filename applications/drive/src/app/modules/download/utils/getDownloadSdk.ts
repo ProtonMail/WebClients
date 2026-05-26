@@ -1,5 +1,5 @@
-import { useDownloadManagerStore } from '../../../legacy/zustand/download/downloadManager.store';
 import { DownloadDriveClientRegistry } from '../DownloadDriveClientRegistry';
+import { useDownloadManagerStore } from '../downloadManager.store';
 
 export const getDownloadSdk = (downloadId: string) => {
     const { getQueueItem } = useDownloadManagerStore.getState();

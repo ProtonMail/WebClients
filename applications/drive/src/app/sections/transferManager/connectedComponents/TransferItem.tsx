@@ -13,13 +13,13 @@ import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 
+import { AbuseCategoryType, type AbuseReportPrefill } from '../../../modals/ReportAbuseModal';
+import { DownloadManager } from '../../../modules/download/DownloadManager';
 import {
     BaseTransferStatus,
     IssueStatus,
     useDownloadManagerStore,
-} from '../../../legacy/zustand/download/downloadManager.store';
-import { AbuseCategoryType, type AbuseReportPrefill } from '../../../modals/ReportAbuseModal';
-import { DownloadManager } from '../../../modules/download/DownloadManager';
+} from '../../../modules/download/downloadManager.store';
 import { isCancellable, isRetryable, isShareable } from '../transferStatus';
 import { type TransferManagerEntry, isMalwareIssue } from '../useTransferManagerState';
 

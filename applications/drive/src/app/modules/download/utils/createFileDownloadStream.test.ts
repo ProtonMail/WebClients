@@ -3,12 +3,12 @@ import { bytesToHex } from '@noble/hashes/utils';
 
 import type { DownloadController, NodeEntity } from '@proton/drive';
 
-import { useDownloadManagerStore } from '../../../legacy/zustand/download/downloadManager.store';
+import { useDownloadManagerStore } from '../downloadManager.store';
 import type { MalwareDetection } from '../malwareDetection/malwareDetection';
 import { createFileDownloadStream } from './createFileDownloadStream';
 import { getDownloadSdk } from './getDownloadSdk';
 
-jest.mock('../../../legacy/zustand/download/downloadManager.store', () => ({
+jest.mock('../downloadManager.store', () => ({
     useDownloadManagerStore: { getState: jest.fn() },
 }));
 jest.mock('./getDownloadSdk', () => ({ getDownloadSdk: jest.fn() }));

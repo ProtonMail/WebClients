@@ -5,9 +5,9 @@ import { useShallow } from 'zustand/react/shallow';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 
-import { useFreeUploadStore } from '../../../legacy/zustand/freeUpload/freeUpload.store';
 import { useFreeUploadOverModal } from '../../../modals/FreeUploadOverModal/useFreeUploadOverModal';
 import { sendErrorReport } from '../../../utils/errorHandling';
+import { useFreeUploadStore } from './freeUpload.store';
 import { useFreeUploadApi } from './useFreeUploadApi';
 import { useFreeUploadFeature } from './useFreeUploadFeature';
 import { useIsFreeUploadInProgress } from './useIsFreeUploadInProgress';

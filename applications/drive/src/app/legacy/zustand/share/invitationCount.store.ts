@@ -6,6 +6,7 @@ type InvitationCountStore = {
     setInvitationCount: (count: number) => void;
 };
 
+// TODO: Migrate to a specific invitation module
 export const useInvitationCountStore = create<InvitationCountStore>()(
     devtools(
         (set) => ({
