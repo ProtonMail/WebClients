@@ -184,40 +184,44 @@ const ConversationComponent = ({
     return (
         <HtmlPreviewContext.Provider value={{ onPreviewHtml: handleOpenHtmlPreview }}>
             <LumoLayoutWithDrawer
-                showNewChatButton={true}
-                headerComponent={
-                    conversation && <ConversationHeader conversation={conversation} messageChain={messageChain} />
-                }
-                drawerContentComponent={
-                    <>
-                        {openPanel.type === 'sources' && openPanel.message && (
-                            <WebSearchSourcesView
-                                message={openPanel.message}
-                                sourcesContainerRef={sourcesContainerRef}
-                                onClose={handleClosePanel}
-                            />
-                        )}
-                        {openPanel.type === 'files' && (
-                            <FilesManagementView
-                                messageChain={messageChain}
-                                filesContainerRef={filesContainerRef}
-                                onClose={handleClosePanel}
-                                filterMessage={openPanel.filterMessage}
-                                onClearFilter={handleClearFilter}
-                                initialShowDriveBrowser={openPanel.autoShowDriveBrowser}
-                                spaceId={conversation?.spaceId}
-                            />
-                        )}
-                        {openPanel.type === 'file-preview' && openPanel.attachment && (
-                            <FilePreviewPanel
-                                attachment={openPanel.attachment}
-                                onBack={() => handleOpenFiles()}
-                                onClose={handleClosePanel}
-                            />
-                        )}
-                    </>
-                }
-                drawerTitle={getDrawerTitle()}
+                header={{
+                    showNewChatButton: true,
+                    component: conversation && (
+                        <ConversationHeader conversation={conversation} messageChain={messageChain} />
+                    ),
+                }}
+                drawer={{
+                    content: (
+                        <>
+                            {openPanel.type === 'sources' && openPanel.message && (
+                                <WebSearchSourcesView
+                                    message={openPanel.message}
+                                    sourcesContainerRef={sourcesContainerRef}
+                                    onClose={handleClosePanel}
+                                />
+                            )}
+                            {openPanel.type === 'files' && (
+                                <FilesManagementView
+                                    messageChain={messageChain}
+                                    filesContainerRef={filesContainerRef}
+                                    onClose={handleClosePanel}
+                                    filterMessage={openPanel.filterMessage}
+                                    onClearFilter={handleClearFilter}
+                                    initialShowDriveBrowser={openPanel.autoShowDriveBrowser}
+                                    spaceId={conversation?.spaceId}
+                                />
+                            )}
+                            {openPanel.type === 'file-preview' && openPanel.attachment && (
+                                <FilePreviewPanel
+                                    attachment={openPanel.attachment}
+                                    onBack={() => handleOpenFiles()}
+                                    onClose={handleClosePanel}
+                                />
+                            )}
+                        </>
+                    ),
+                    title: getDrawerTitle(),
+                }}
             >
                 <>
                     <div className="lumo-chat-container flex flex-row flex-nowrap flex-1 relative reset4print overflow-hidden gap-2">
