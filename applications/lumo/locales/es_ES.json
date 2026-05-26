@@ -1199,9 +1199,6 @@
       ]
     },
     "collider_2025: Error Message": {
-      "If retrying doesn’t work, check back later or consider upgrading to ${ LUMO_SHORT_APP_NAME } Plus to jump to the front of the line during peak times.": [
-        "Si reintentarlo no funciona, vuelve más tarde o considera la opción de contratar ${ LUMO_SHORT_APP_NAME } Plus para pasar al principio de la cola en horas punta."
-      ],
       "Please try asking a different question or making a different request.": [
         "Intenta hacer una pregunta diferente o una solicitud diferente."
       ],
@@ -3630,6 +3627,12 @@
       ],
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada."
+      ],
+      "Organization key must be activated to create invited users": [
+        "La clave de la organización debe activarse para crear usuarios invitados."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "La clave de la organización debe activarse para crear usuarios no privados."
       ],
       "Passwords do not match": [
         "Las contraseñas no coinciden."
@@ -7262,6 +7265,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Los administradores no pueden acceder a los datos de usuarios privados y no pueden restablecer sus contraseñas."
+      ],
+      "Member activation incomplete": [
+        "La activación del miembro está incompleta."
+      ],
+      "Organization key must be activated to request data access": [
+        "La clave de la organización debe activarse para solicitar acceso a los datos."
+      ],
+      "The user must have an address to request data access": [
+        "El usuario debe tener una dirección para solicitar acceso a los datos"
       ]
     },
     "Validation": {

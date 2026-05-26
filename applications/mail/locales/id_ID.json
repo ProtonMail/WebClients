@@ -4670,6 +4670,12 @@
       "Organization key is not decrypted": [
         "Kunci organisasi tidak didekripsi"
       ],
+      "Organization key must be activated to create invited users": [
+        "Kunci organisasi harus diaktifkan untuk membuat pengguna yang diundang"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Kunci organisasi harus diaktifkan untuk membuat pengguna non-privat"
+      ],
       "Passphrase unavailable": [
         "Frasa sandi tidak tersedia"
       ],
@@ -15189,6 +15195,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Admin tidak dapat mengakses data pengguna pribadi dan tidak dapat mengatur ulang kata sandinya."
+      ],
+      "Member activation incomplete": [
+        "Aktivasi anggota belum rampung"
+      ],
+      "Organization key must be activated to request data access": [
+        "Kunci organisasi harus diaktifkan untuk meminta pengaksesan data"
+      ],
+      "The user must have an address to request data access": [
+        "Pengguna harus memiliki alamat untuk meminta pengaksesan data"
       ]
     },
     "Update font modal": {

@@ -222,6 +222,9 @@
       "Continue to ${ planOrAppName }": [
         "Fortsæt til ${ planOrAppName }"
       ],
+      "Continue with Free": [
+        "Fortsæt med Free"
+      ],
       "Continue with Google": [
         "Fortsæt med Google"
       ],
@@ -3084,6 +3087,9 @@
       "Availability unknown": [
         "Tilgængelighed ukendt"
       ],
+      "Available storage: ${ storageText }": [
+        "Tilgængelig lagerplads: ${ storageText }"
+      ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Farvekod begivenheder for at gøre det lettere at organisere din dag, holde styr på din tid og prioritere opgaver."
       ],
@@ -3111,11 +3117,17 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkroniser nemt filer til skyen fra din computer og få adgang til dem fra din mobilenhed."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-mails der er sendt til ${ connectedAddressText } vil nu blive vist i ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Tilskynd til brug af to-faktor-godkendelse i din organisation for ekstra sikkerhed."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Nok plads til flere år værd af e-mails, vedhæftninger og mere."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Sikr sikker adgang til organisationens data, selv hvis jeres team er fjernbaseret eller bruger offentligt WiFi."
@@ -3183,6 +3195,9 @@
       "To start, give your organization a name.": [
         "Start med at give deres organisation et navn."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Lås op for 15 GB lagerplads til kun ${ config.offerPrice }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Benyt Træk og Slip for at rangordne fletningsprioritet mellem kontakter. Afmarkér de kontakter du ikke vil sammenflette."
       ],
@@ -3191,6 +3206,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Vi kan ikke længere få adgang til ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Vi sætter importer på pause ved 80% lagerplads for at reservere plads til nye beskeder."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Vi er begyndt at importere din e-mails fra Gmail. Vi giver dig besked når det er færdigt."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Vi er kede af at du forlader os. Hvis du har et øjeblik, så ville vi sætte stor pris på at høre hvorfor du annullerer. Din feedback hjælper os med at gøre ${ BRAND_NAME } bedre for alle."
@@ -3204,11 +3225,20 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Du kan markere de kontakter til sletning, som du hverken ønsker at flette eller beholde.\nSletning vil kun ske, når der er klikket på fletningsknappen"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Du kan nu sende e-mails fra ${ BRAND_NAME } med denne adresse."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Dine konto- og datagendannelsesmetoder er indstillet, og 2FA er aktiveret."
       ],
       "Your account and data recovery methods are set.": [
         "Dine konto- og datagendannelsesmetoder er indstillet."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrænset lagerplads, så vi importerer kun ${ newUserStorageText } af dine seneste Gmail-beskeder"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrænset lagerplads, så vi importerer kun dine seneste Gmail-beskeder."
       ],
       "You’ll get a secure email with the details shortly.": [
         "Du modtager snart en sikker e-mail med detaljerne."
@@ -3843,6 +3873,12 @@
       ],
       "Organization key is not decrypted": [
         "Organisationsnøgle er ikke dekrypteret"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisationsnøglen skal aktiveres for at oprette inviterede brugere"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisationsnøgle skal være aktiveret for at oprette ikke private brugere"
       ],
       "Passphrase unavailable": [
         "Adgangssætning ikke tilgængelig"
@@ -4536,11 +4572,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ premium-funktioner"
+      ],
+      "Custom email domain": [
+        "Brugerdefineret e-maildomæne"
+      ],
+      "Email addresses": [
+        "E-mailadresser"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Krypteret sky-lagring til filer, billeder og dokumenter"
       ],
       "More premium features": [
         "Flere premium-funktioner"
+      ],
+      "Storage": [
+        "Lagerplads"
       ],
       "Unlimited hide-my-email aliases": [
         "Ubegrænsede hide-my-email-aliasser"
@@ -5705,6 +5753,9 @@
       "In which calendar should bookings appear?": [
         "I hvilken kalender skal bookinger vises?"
       ],
+      "Included": [
+        "Inkluderet"
+      ],
       "Indexing events: ${ current }/${ total }": [
         "Indekserer begivenheder: ${ current }/${ total }"
       ],
@@ -6245,11 +6296,20 @@
       "Tracking": [
         "Sporing"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Stol på \"${ activeSignerText }\"-nøglen for at verificere nye beskeder fra denne kontakt."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prøv nye ${ BRAND_NAME } funktioner, opdateringer og produkter, før de bliver frigivet til offentligheden. Dette vil genindlæse applikationen"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Opgrader når som helst for at overføre resten"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Opgrader nu for at få premium-funktioner, produkter og lagerplads til en speciel pris"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Opgrader eller frigør lagerplads når som helst for at overføre resten"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Opgradér for at beholde dine ${ planTitle }-fordele."
@@ -6690,11 +6750,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Aktiv signerende part"
+      ],
       "Compromised": [
         "Kompromitteret"
       ],
       "Expired": [
         "Udløbet"
+      ],
+      "Fallback": [
+        "Reserve"
       ],
       "KOO": [
         "KOO"
@@ -6767,6 +6833,9 @@
       "${ n } month": [
         "${ n } måned",
         "${ n } måneder"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tegn"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidigt utilgængelig. Tjek igen senere.)"
@@ -9756,8 +9825,17 @@
       "External key automatically fetched via WKD.": [
         "Ekstern nøgle hentes automatisk via WKD."
       ],
+      "This contact currently signs messages with this key": [
+        "På nuværende tidspunkt signerer denne kontakt beskeder med denne nøgle"
+      ],
+      "This key is used for message verification": [
+        "Denne nøgle bruges til at verificere beskeder"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Denne nøgle bruges til at kryptere beskeder til denne kontakt."
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Denne nøgle bruges til at kryptere beskeder til denne kontakt på ældre apps"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi anbefaler, at du ikke længere har tillid til denne nøgle."
@@ -11873,6 +11951,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Continue with free storage": [
+        "Fortsæt med gratis lagerplads"
+      ],
       "Continue with partial import?": [
         "Fortsæt med delvis import?"
       ],
@@ -12033,6 +12114,9 @@
       ],
       "Get more from your VPN": [
         "Få mere ud af deres VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Få mere lagerplads med ${ MAIL_APP_NAME } Plus"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Hent ${ appName[APP_NAME] } apps"
@@ -12437,6 +12521,9 @@
       "When is it most important to use a VPN?": [
         "Hvornår er det vigtigst at bruge en VPN?"
       ],
+      "You are all set": [
+        "Så er du klar"
+      ],
       "You can now create unlimited folders and labels": [
         "Du kan nu oprette ubegrænsede mængder af mapper og etiketter"
       ],
@@ -12601,6 +12688,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorer kan ikke tilgå private brugeres data eller nulstille deres adgangskode."
+      ],
+      "Member activation incomplete": [
+        "Medlemsaktivering ufuldstændig"
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisationsnøglen skal aktiveres for at anmode om dataadgang"
+      ],
+      "The user must have an address to request data access": [
+        "Brugeren skal have en adresse for at anmode om dataadgang"
       ]
     },
     "Validation": {

@@ -610,6 +610,9 @@
       "Make a copy": [
         "Fare una copia"
       ],
+      "Manage addresses": [
+        "Gestisci indirizzi"
+      ],
       "Manage advanced account protections": [
         "Gestisci le protezioni avanzate dell'account"
       ],
@@ -2840,6 +2843,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronizza facilmente i file sul cloud dal tuo desktop e accedi dal tuo dispositivo mobile."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Le email inviate a ${ connectedAddressText } appariranno ora in ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Incoraggia l'uso dell'autenticazione a due fattori nella tua organizzazione per una maggiore sicurezza."
       ],
@@ -2926,6 +2932,9 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Puoi selezionare i contatti che non vuoi unire né mantenere per l'eliminazione.\nLa cancellazione avverrà solo dopo aver fatto clic sul pulsante Unisci"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Ora puoi inviare email da ${ BRAND_NAME } utilizzando questo indirizzo."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Il tuoi metodi di recupero dell'account e dei dati sono impostati e 2FA è abilitato."
@@ -3384,9 +3393,6 @@
       "Failed to update public share node": [
         "Impossibile aggiornare il nodo di condivisione pubblico"
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "Impossibile caricare il file \"${ item.name }\" a causa dell'errore \"${ error }\""
-      ],
       "File \"${ name }\" is already downloading": [
         "Il file \"${ name }\" è già in fase di download"
       ],
@@ -3510,6 +3516,12 @@
       "Organization key is not decrypted": [
         "La chiave dell'organizzazione non è decriptata"
       ],
+      "Organization key must be activated to create invited users": [
+        "Devi attivare la chiave dell'organizzazione per poter invitare gli utenti"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "La chiave dell'organizzazione deve essere attivata per creare utenti non privati"
+      ],
       "Password is required": [
         "Password necessaria"
       ],
@@ -3601,9 +3613,6 @@
       ],
       "Some contacts could not be deleted": [
         "Impossibile eliminare alcuni contatti"
-      ],
-      "Some files were ignored because they are not supported in Photos": [
-        "Alcuni file sono stati ignorati perché non sono supportati in Foto."
       ],
       "Some groups could not be deleted": [
         "Impossibile eliminare alcuni gruppi"
@@ -3806,9 +3815,6 @@
       ],
       "You must set a name": [
         "È necessario impostare un nome"
-      ],
-      "Your browser does not support uploading folders": [
-        "Il tuo browser non supporta il caricamento di cartelle"
       ],
       "Your import will not be processed.": [
         "La tua importazione non verrà elaborata."
@@ -6252,9 +6258,6 @@
       ],
       "Unknown date": [
         "Data sconosciuta"
-      ],
-      "Unknown error": [
-        "Errore sconosciuto"
       ],
       "Unlock drive to recover files": [
         "Sblocca lo spazio per recuperare i file"
@@ -9092,9 +9095,6 @@
       "Failed to convert external invitation": [
         "Impossibile convertire l'invito esterno"
       ],
-      "Failed to download files: ${ err }": [
-        "Scaricamento dei file non riuscito: ${ err }"
-      ],
       "Failed to move, please try again": [
         "Spostamento non riuscito. Per favore riprova"
       ],
@@ -9160,10 +9160,6 @@
       "Selected item was successfully removed from your list": [
         "È stato rimosso con successo un elemento selezionato dalla tua lista",
         "Sono stati eliminati con successo gli elementi dalla tua lista"
-      ],
-      "Selected items were successfully removed from your list": [
-        "Gli elementi selezionati sono stati rimossi con successo dal tuo elenco",
-        "Gli elementi selezionati sono stati rimossi con successo dal tuo elenco"
       ],
       "Share invitation accepted successfully": [
         "Invito alla condivisione accettato con successo"
@@ -12644,6 +12640,9 @@
       "When is it most important to use a VPN?": [
         "Quando è più importante utilizzare una VPN?"
       ],
+      "You are all set": [
+        "Tutto pronto"
+      ],
       "You can now create unlimited folders and labels": [
         "Adesso puoi creare cartelle ed etichette illimitate"
       ],
@@ -12805,6 +12804,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Gli amministratori non possono accedere ai dati degli utenti privati ​​e non possono reimpostare la loro password."
+      ],
+      "Member activation incomplete": [
+        "Attivazione membro incompleta"
+      ],
+      "Organization key must be activated to request data access": [
+        "La chiave dell'organizzazione deve essere attivata per richiedere l'accesso ai dati"
+      ],
+      "The user must have an address to request data access": [
+        "L'utente deve avere un indirizzo per richiedere l'accesso ai dati"
       ]
     },
     "Upsell": {

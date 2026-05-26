@@ -621,6 +621,9 @@
       "Make a copy": [
         "복사본 만들기"
       ],
+      "Manage addresses": [
+        "주소 관리"
+      ],
       "Manage advanced account protections": [
         "향상된 계정 보호 관리"
       ],
@@ -2893,6 +2896,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "데스크톱에서 클라우드에 파일을 쉽게 동기화하고 휴대 기기에서 접근할 수 있습니다."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "${ connectedAddressText }로 보내진 이메일은 이제 ${ MAIL_APP_NAME }에서 보여집니다."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "보한 강화를 위해 조직에서 2단계 인증 사용을 권장하도록 설정해 보세요."
       ],
@@ -2982,6 +2988,9 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "병합하거나 유지하고 싶지 않은 연락처를 삭제하도록 표시할 수 있습니다. 삭제는 병합 버튼을 클릭한 후에만 이루어집니다."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "이제 이 주소를 이용해 ${ BRAND_NAME }로부터 이메일을 보낼 수 있습니다."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "사용자의 계정과 데이터 복구 방법이 설정되어 있으며, 2단계 인증이 활성화 상태입니다."
@@ -3449,9 +3458,6 @@
       "Failed to update public share node": [
         "공개 공유 노드 업데이트 실패"
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "\"${ item.name }\" 파일을  \"${ error }\" 오류로 인해 업로드할 수 없습니다."
-      ],
       "File \"${ name }\" is already downloading": [
         "\"${ name }\" 파일은 이미 다운로드 중입니다"
       ],
@@ -3575,6 +3581,12 @@
       "Organization key is not decrypted": [
         "조직 키는 해독되지 않았습니다"
       ],
+      "Organization key must be activated to create invited users": [
+        "초대한 사용자를 생성하려면 조직 키를 활성화해야만 합니다."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "개인이 아닌 사용자를 생성하려면 조직 키는 활성화 상태여야 합니다."
+      ],
       "Password is required": [
         "비밀번호가 필요함"
       ],
@@ -3667,9 +3679,6 @@
       ],
       "Some contacts could not be deleted": [
         "일부 연락처를 삭제할 수 없습니다"
-      ],
-      "Some files were ignored because they are not supported in Photos": [
-        "Photos에서 지원하지 않는 일부 파일이 무시되었습니다."
       ],
       "Some groups could not be deleted": [
         "일부 그룹은 삭제할 수 없었습니다."
@@ -3880,9 +3889,6 @@
       ],
       "You must set a name": [
         "이름을 반드시 설정해야 합니다"
-      ],
-      "Your browser does not support uploading folders": [
-        "브라우저가 파일 업로드를 지원하지 않습니다"
       ],
       "Your import will not be processed.": [
         "가져오기가 처리되지 않았습니다."
@@ -6340,9 +6346,6 @@
       ],
       "Unknown date": [
         "알 수 없는 날짜"
-      ],
-      "Unknown error": [
-        "알 수 없는 오류"
       ],
       "Unlock drive to recover files": [
         "복구 파일로 드라이브 잠금 해제"
@@ -9095,9 +9098,6 @@
       "Failed to convert external invitation": [
         "외부 초대 변환 실패"
       ],
-      "Failed to download files: ${ err }": [
-        "파일 다운로드 실패: ${ err }"
-      ],
       "Failed to move, please try again": [
         "이동을 실패했습니다, 나중에 다시 시도해주세요."
       ],
@@ -9157,9 +9157,6 @@
       ],
       "Selected item was successfully removed from your list": [
         "선택한 항목이 목록에서 성공적으로 삭제되었습니다."
-      ],
-      "Selected items were successfully removed from your list": [
-        "선택된 항목이 목록에서 성공적으로 삭제되었습니다"
       ],
       "Setting updated. Editors can change permissions and share.": [
         "설정이 업데이트되었습니다. 편집자가 권한이나 공유 사항을 변경할 수 있습니다."
@@ -12684,6 +12681,9 @@
       "When is it most important to use a VPN?": [
         "VPN을 사용해야 하는 가장 중요한 순간은 언제인가요?"
       ],
+      "You are all set": [
+        "모든 준비가 완료되었어요"
+      ],
       "You can now create unlimited folders and labels": [
         "무제한 폴더 및 라벨을 생성할 수 있습니다."
       ],
@@ -12848,6 +12848,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "관리자가 비공개 사용자의 데이터 접근이 불가하며 비밀번호 또한 재설정이 불가합니다."
+      ],
+      "Member activation incomplete": [
+        "구성원 활성화 미완료"
+      ],
+      "Organization key must be activated to request data access": [
+        "데이터 접근을 요청하려면 조직 키가 반드시 활성화되어야 합니다."
+      ],
+      "The user must have an address to request data access": [
+        "데이터 접근을 요청하려면 사용자가 주소를 소유해야 합니다."
       ]
     },
     "Upsell": {

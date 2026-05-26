@@ -4840,6 +4840,12 @@
       "Organization key is not decrypted": [
         "조직 키는 해독되지 않았습니다"
       ],
+      "Organization key must be activated to create invited users": [
+        "초대한 사용자를 생성하려면 조직 키를 활성화해야만 합니다."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "개인이 아닌 사용자를 생성하려면 조직 키는 활성화 상태여야 합니다."
+      ],
       "Passphrase unavailable": [
         "암호 문구 사용 불가"
       ],
@@ -15749,6 +15755,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "관리자가 비공개 사용자의 데이터 접근이 불가하며 비밀번호 또한 재설정이 불가합니다."
+      ],
+      "Member activation incomplete": [
+        "구성원 활성화 미완료"
+      ],
+      "Organization key must be activated to request data access": [
+        "데이터 접근을 요청하려면 조직 키가 반드시 활성화되어야 합니다."
+      ],
+      "The user must have an address to request data access": [
+        "데이터 접근을 요청하려면 사용자가 주소를 소유해야 합니다."
       ]
     },
     "Update font modal": {

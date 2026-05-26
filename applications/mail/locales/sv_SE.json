@@ -1441,6 +1441,9 @@
       "Start setup": [
         "Starta inställning"
       ],
+      "Start testing": [
+        "Börja testa"
+      ],
       "Stay": [
         "Stanna"
       ],
@@ -1514,7 +1517,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -4064,6 +4068,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sortera automatiskt dina inkommande meddelanden innan de når din inkorg."
       ],
+      "Available storage: ${ storageText }": [
+        "Tillgängligt lagringsutrymme: ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Blocka Googles möjlighet att profilera dig. Gmail kan inte se vad du gör i ${ MAIL_APP_NAME }."
       ],
@@ -4123,6 +4130,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Hjälp ditt team att säkert lagra lösenord till känslig företags- och klientinformation."
+      ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Om du hittar en e-post i fel kategori, flytta det helt enkelt till det rätta."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det verkar som kontaktlistan du importerar innehåller några grupper. Granska hur dessa grupper ska importeras."
@@ -4207,6 +4217,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Slå på skydd för e-postspårning för att förhindra annonsörer och andra från att spåra din plats och onlineaktivitet."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Lås upp 15 GB lagringsutrymme för endast ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Uppgradera till ${ planName } för att ansluta upp till ${ MAX_SYNC_PAID_USER } konton"
       ],
@@ -4228,8 +4241,14 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Vi hittade inga kända spårare och spårnings-URL:er i detta e-postmeddelande."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Vi kommer pausa importerna vid 80 % lagringsutrymme för att reservera utrymme för nya meddelanden."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Vi importerar din gamla e-post och ansluter din Gmail till ${ MAIL_APP_NAME } så nya meddelanden visas automatiskt"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Vi har börjat importera din e-post från Gmail. Vi meddelar dig när det är klart."
       ],
       "When do you want your message to be sent?": [
         "När vill du att ditt meddelande ska skickas?"
@@ -4283,6 +4302,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Ditt paket stöder totalt ${ MAX_SYNC_PAID_USER } Gmail-adress",
         "Ditt paket stöder ett totalt antal av ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "You’re among the first to try email categories.": [
+        "Du är bland de första att prova e-postkategorier."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
@@ -4903,6 +4925,12 @@
       ],
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisationsnyckel måste vara aktiverad för att skapa inbjudna användare"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisationsnyckeln måste aktiveras för att skapa icke-privata användare"
       ],
       "Passphrase unavailable": [
         "Lösenfras otillgänglig"
@@ -5657,11 +5685,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ premiumfunktioner"
+      ],
+      "Custom email domain": [
+        "Anpassad e-postdomän"
+      ],
+      "Email addresses": [
+        "E-postadresser"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Krypterad molnlagring för filer, foton och dokument"
       ],
       "More premium features": [
         "Fler premiumfunktioner"
+      ],
+      "Storage": [
+        "Lagringsutrymme"
       ],
       "Unlimited hide-my-email aliases": [
         "Obegränsat antal hide-my-email-alias"
@@ -7533,6 +7573,9 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Inkludera din prompt och svaret för att hjälpa oss förbättra noggrannhet."
       ],
+      "Included": [
+        "Inkluderad"
+      ],
       "Included for free with your plan": [
         "Inkluderat gratis med ditt paket"
       ],
@@ -7561,8 +7604,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8227,6 +8269,9 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synkronisera och hantera filer med ${ DRIVE_APP_NAME }-appen. Skapa och dela dokument i ${ DOCS_APP_NAME } och lagra dem säkert. Allt på ${ ios }, ${ android } och ${ desktop }."
       ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Tillfälligt otillgänglig på grund av hög efterfrågan. Försök igen senare."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Tillfälligt otillgänglig. Återkom senare."
       ],
@@ -8500,6 +8545,9 @@
       "Trash existing messages": [
         "Kasta befintliga meddelanden"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Lita på nyckeln “${ activeSignerText }“ för att verifiera nya meddelanden från denna kontakt."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten. Detta kommer ladda om applikationen"
       ],
@@ -8533,8 +8581,14 @@
       "Updating message content search...": [
         "Uppdaterar sökning av meddelandeinnehåll …"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Uppgradera när som helst för att flytta över resten"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Uppgradera eller frigör utrymme när som helst för att flytta över resten"
       ],
       "Upgrade to ${ plan } to unlock": [
         "Uppgradera till ${ plan } för att låsa upp"
@@ -9026,6 +9080,9 @@
       "Expired": [
         "Löpt ut"
       ],
+      "Fallback": [
+        "Reserv"
+      ],
       "KOO": [
         "KOO"
       ],
@@ -9278,6 +9335,9 @@
         "${ n } månad",
         "${ n } månader"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tecken"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tillfälligt otillgänglig. Återkom senare.)"
       ],
@@ -9409,6 +9469,9 @@
       ],
       "Category": [
         "Kategori"
+      ],
+      "Category:": [
+        "Kategori:"
       ],
       "CC": [
         "Kopia"
@@ -12565,8 +12628,14 @@
       "External key automatically fetched via WKD.": [
         "Extern nyckel automatiskt hämtad via WKD."
       ],
+      "This contact currently signs messages with this key": [
+        "Denna kontakt signerar för närvarande meddelanden med denna nyckel"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Denna nyckel används för att kryptera meddelanden till denna kontakt"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Denna nyckel används för att kryptera meddelanden till denna kontakt i äldre appar"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi rekommenderar att du “Sluta lita på“ denna nyckel."
@@ -15117,6 +15186,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Continue with free storage": [
+        "Fortsätt med gratis lagringsutrymme"
+      ],
       "Continue with partial import?": [
         "Fortsätta med delimport?"
       ],
@@ -15239,6 +15311,9 @@
       "Download the app": [
         "Ladda ner appen"
       ],
+      "Early access to email categories": [
+        "Förhandstillgång till e-postkategorier"
+      ],
       "Edit billing address": [
         "Redigera faktureringsadress"
       ],
@@ -15322,6 +15397,9 @@
       ],
       "Get more from your VPN": [
         "Få ut mer av din VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Skaffa mer lagringsutrymme med ${ MAIL_APP_NAME } Plus"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Skaffa ${ appName[APP_NAME] }-apparna"
@@ -16103,6 +16181,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratörer kan inte komma åt privata användares data och kan inte återställa deras lösenord."
+      ],
+      "Member activation incomplete": [
+        "Medlemsaktivering ofullständig"
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisationsnyckel måste vara aktiverad för att begära dataåtkomst"
+      ],
+      "The user must have an address to request data access": [
+        "Användaren måste ha en adress för att begära dataåtkomst"
       ]
     },
     "Update font modal": {

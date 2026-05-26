@@ -222,6 +222,9 @@
       "Continue to ${ planOrAppName }": [
         "Weiter zu ${ planOrAppName }"
       ],
+      "Continue with Free": [
+        "Weiter mit Free"
+      ],
       "Continue with Google": [
         "Mit Google anmelden"
       ],
@@ -3084,6 +3087,9 @@
       "Availability unknown": [
         "Verfügbarkeit unbekannt"
       ],
+      "Available storage: ${ storageText }": [
+        "Verfügbarer Speicherplatz: ${ storageText }"
+      ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Farbcodierung von Terminen, um die Organisation des Tages, die Zeiterfassung und die Priorisierung von Aufgaben zu erleichtern."
       ],
@@ -3111,11 +3117,17 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synchronisiere Dateien einfach von deinem Desktop mit der Cloud und greife von deinem Mobilgerät darauf zu."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-Mails, die an ${ connectedAddressText } gesendet werden, werden jetzt in ${ MAIL_APP_NAME } angezeigt."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Ermutige die Verwendung der Zwei-Faktor-Authentifizierung in deiner Organisation für zusätzliche Sicherheit."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden verschlüsselt und importiert… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du diese Meldung schließen."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Für Jahre genügend Platz für E-Mails, Anhänge und mehr."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Gewährleiste einen sicheren Zugriff auf Organisationsdaten, selbst wenn dein Team von auswärts arbeitet oder öffentliches WLAN nutzt."
@@ -3183,6 +3195,9 @@
       "To start, give your organization a name.": [
         "Gib deiner Organisation zunächst einen Namen."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "15 GB Speicherplatz für nur ${ config.offerPrice } freischalten."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Durch Ziehen kannst du die Zusammenführungspriorität zwischen den Kontakten festlegen. Deaktiviere die Kontakte, die du nicht zusammenführen möchtest."
       ],
@@ -3191,6 +3206,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Wir können nicht mehr auf ${ boldEmails } zugreifen."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Wir werden die Importe bei 80 % der Speicherplatzbelegung anhalten, damit genügend Platz für neue Nachrichten bleibt."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Wir haben mit dem Import deiner E-Mails von Gmail begonnen. Wir benachrichtigen dich, wenn der Vorgang abgeschlossen ist."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Wir bedauern, dass du gehst. Wenn du einen Moment Zeit hast, würden wir uns sehr freuen zu erfahren, warum du kündigen möchtest. Dein Feedback hilft uns, ${ BRAND_NAME } für alle besser zu machen."
@@ -3204,11 +3225,20 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Du kannst Kontakte, die du weder zusammenführen noch behalten willst, zum Löschen vormerken. Das Löschen erfolgt erst, wenn du auf die Schaltfläche „Zusammenführen“ klickst."
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Du kannst jetzt E-Mails von ${ BRAND_NAME } unter dieser Adresse senden."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Deine Konto- und Datenwiederherstellungsmethoden sind festgelegt und 2FA ist aktiviert."
       ],
       "Your account and data recovery methods are set.": [
         "Dein Konto und die Methoden zur Datenwiederherstellung sind festgelegt."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Dein kostenloses ${ MAIL_APP_NAME }-Konto enthält begrenzten Speicherplatz, darum können wir nur ${ newUserStorageText } deiner aktuellsten Gmail-Nachrichten importieren."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Dein kostenloses ${ MAIL_APP_NAME }-Konto enthält begrenzten Speicherplatz, darum können wir nur deine aktuellsten Gmail-Nachrichten importieren."
       ],
       "You’ll get a secure email with the details shortly.": [
         "Du erhältst in Kürze eine sichere E-Mail mit den Details."
@@ -3843,6 +3873,12 @@
       ],
       "Organization key is not decrypted": [
         "Organisationsschlüssel ist nicht entschlüsselt"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisationsschlüssel muss aktiviert sein, um eingeladene Benutzer anzulegen"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisationsschlüssel muss aktiviert sein, um nicht-private Benutzer anzulegen"
       ],
       "Passphrase unavailable": [
         "Passphrase nicht verfügbar"
@@ -4536,11 +4572,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "Mehr als 10 Premium-Funktionen"
+      ],
+      "Custom email domain": [
+        "Eigene E-Mail-Domain"
+      ],
+      "Email addresses": [
+        "E-Mail-Adressen"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Verschlüsselter Cloud-Speicher für Dateien, Fotos und Dokumente"
       ],
       "More premium features": [
         "Weitere Premium-Funktionen"
+      ],
+      "Storage": [
+        "Speicher"
       ],
       "Unlimited hide-my-email aliases": [
         "Unbegrenzte hide-my-email-Aliasse"
@@ -5705,6 +5753,9 @@
       "In which calendar should bookings appear?": [
         "In welchem Kalender sollen Buchungen erscheinen?"
       ],
+      "Included": [
+        "Enthalten"
+      ],
       "Indexing events: ${ current }/${ total }": [
         "Indiziere Termine: ${ current }/${ total }"
       ],
@@ -6245,11 +6296,20 @@
       "Tracking": [
         "Tracking"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Dem \"${ activeSignerText }\" Schlüssel vertrauen, um neue Nachrichten dieses Kontakts zu überprüfen."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Teste neue Funktionen, Updates und Produkte von ${ BRAND_NAME }, bevor sie für die Öffentlichkeit freigegeben werden. Dadurch wird die Seite neu geladen."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Jederzeit upgraden, um den Rest zu übertragen"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Jederzeit upgraden oder Speicherplatz freigeben, um den Rest zu übertragen"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Upgrade, um deine ${ planTitle }-Vorteile zu behalten."
@@ -6690,11 +6750,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Aktiver Signierer"
+      ],
       "Compromised": [
         "Kompromittiert"
       ],
       "Expired": [
         "Abgelaufen"
+      ],
+      "Fallback": [
+        "Zurückstellen"
       ],
       "KOO": [
         "KOO"
@@ -6767,6 +6833,9 @@
       "${ n } month": [
         "${ n } Monat",
         "${ n } Monate"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } Zeichen"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
@@ -9756,8 +9825,17 @@
       "External key automatically fetched via WKD.": [
         "Externer Schlüssel wurde automatisch über WKD abgerufen."
       ],
+      "This contact currently signs messages with this key": [
+        "Dieser Kontakt signiert derzeit Nachrichten mit diesem Schlüssel"
+      ],
+      "This key is used for message verification": [
+        "Dieser Schlüssel wird für die Nachrichtenüberprüfung verwendet"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Dieser Schlüssel wird verwendet, um Nachrichten an diesen Kontakt zu verschlüsseln"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Dieser Schlüssel wird für die Verschlüsselung von Nachrichten dieses Kontakts in älteren Apps verwendet."
       ],
       "We recommend that you \"untrust\" this key.": [
         "Wir empfehlen dir, diesen Schlüssel als „nicht vertrauenswürdig“ einzustufen."
@@ -11873,6 +11951,9 @@
       "Contacts": [
         "Kontakte"
       ],
+      "Continue with free storage": [
+        "Mit dem kostenlosen Speicherplatz fortfahren"
+      ],
       "Continue with partial import?": [
         "Mit Teilimport fortfahren?"
       ],
@@ -12033,6 +12114,9 @@
       ],
       "Get more from your VPN": [
         "Hole mehr aus deinem VPN heraus"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Mehr Speicherplatz mit ${ MAIL_APP_NAME } Plus erhalten"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "${ appName[APP_NAME] }-Apps herunterladen"
@@ -12437,6 +12521,9 @@
       "When is it most important to use a VPN?": [
         "Wann ist es am wichtigsten, ein VPN zu verwenden?"
       ],
+      "You are all set": [
+        "Du bist startklar"
+      ],
       "You can now create unlimited folders and labels": [
         "Du kannst jetzt unbegrenzt viele Ordner und Kategorien erstellen"
       ],
@@ -12601,6 +12688,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Admins haben keinen Zugriff auf die Daten privater Nutzer und können deren Passwort nicht zurücksetzen."
+      ],
+      "Member activation incomplete": [
+        "Mitgliederaktivierung unvollständig"
+      ],
+      "Organization key must be activated to request data access": [
+        "Der Organisationsschlüssel muss aktiviert werden, um den Datenzugang zu beantragen"
+      ],
+      "The user must have an address to request data access": [
+        "Der Nutzer muss über eine Adresse verfügen, um den Datenzugang zu beantragen"
       ]
     },
     "Validation": {

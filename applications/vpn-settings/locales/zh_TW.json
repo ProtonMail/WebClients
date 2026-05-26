@@ -3020,6 +3020,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "足夠超過年的電子郵件、附件和更多"
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "確保安全存取組織資料，即使您的團隊是遠端工作或使用公共 WiFi。"
       ],
@@ -3089,6 +3092,9 @@
       "Track the status and activity of your referrals": [
         "追蹤您推薦邀請的狀態和進度"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "只要 ${ config.offerPrice } 解鎖 15 GB 的儲存空間"
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "升級至 ${ planName } 已連線到至多 ${ MAX_SYNC_PAID_USER } 個帳號"
       ],
@@ -3097,6 +3103,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "我們將帶入您舊的電子郵件便連線您的 Gmail 至 ${ MAIL_APP_NAME } 已讓新訊息自動顯示。"
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "您已有個 Gmail 位址轉寄至 ${ MAIL_APP_NAME }。於下方連接至它以直接於 ${ MAIL_APP_NAME } 傳送和接收電子郵件。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
@@ -3109,6 +3118,9 @@
       ],
       "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
         "您將連線至 ${ MAX_SYNC_PAID_USER } Gmail 位址。若要添加另一個，請先停用您連線的帳號。"
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "您已連線一個外部帳號位址至 ${ MAIL_APP_NAME }。"
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "您的帳號支援 ${ MAX_SYNC_FREE_USER } Gmail 位址。"
@@ -3779,9 +3791,6 @@
       ],
       "Please try again in a few moments.": [
         "請稍候再試."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "請升級至選用多於 1 位使用者的企業方案，以便享用多使用者支援"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "請升級至選用多於 1 位使用者的企業方案，以便管理多位使用者。"
@@ -4461,6 +4470,9 @@
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } 個 VPN 連線"
       ],
+      "10+ premium features": [
+        "10 + 頂級質子版功能"
+      ],
       "Access to all countries": [
         "所有國家任選"
       ],
@@ -4475,6 +4487,12 @@
       ],
       "Continue": [
         "下一步"
+      ],
+      "Custom email domain": [
+        "自訂電子郵件網域"
+      ],
+      "Email addresses": [
+        "電子郵件地址"
       ],
       "Encrypted cloud storage for files, photos and documents": [
         "給予檔案、照片和文件的加密雲端儲存"
@@ -4493,6 +4511,9 @@
       ],
       "Secure streaming support": [
         "安全串流支援"
+      ],
+      "Storage": [
+        "儲存空間"
       ],
       "Torrenting support (P2P)": [
         "Torrenting 支援 (P2P)"
@@ -5446,6 +5467,9 @@
       "active": [
         "啟用"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "新增 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
@@ -5466,9 +5490,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "添加您的名稱及標誌以替貴組織創建更個人化的體驗。"
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "正在新增 ${ addedServerCount } 台閘道伺服器"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "添加外部電子郵件地址將關閉於該群組的電子郵件端對端加密。確認要繼續嗎?"
@@ -5673,6 +5694,9 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "為匯入的郵件創建標籤、設定這次匯入的時間範圍以及要匯入的標籤。"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "替成員創建一個安全 ${ memberCount } 雲端"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "創建並管理子帳號，並為其指派在您的自訂網域下的電郵位址。"
@@ -6060,6 +6084,9 @@
       ],
       "inactive": [
         "未使用"
+      ],
+      "Included": [
+        "包含"
       ],
       "Increase your account security by verifying your email address.": [
         "透過驗證您的電子郵件位址來增加您帳號的安全性。"
@@ -6705,6 +6732,9 @@
       ],
       "Symbols (#$&)": [
         "符號(#$&)"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "因為過量請求暫時不可用。請稍後在試。"
       ],
       "Temporarily unavailable. Please check back later.": [
         "暫時無法使用，請稍後再試。"
@@ -9030,6 +9060,9 @@
       "99.95% SLA": [
         "99.95% 服務層級協議"
       ],
+      "Access all countries": [
+        "存取所有國家"
+      ],
       "Ad-blocker and malware protection": [
         "廣告攔截器及惡意軟體防護"
       ],
@@ -9350,6 +9383,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "無限流量/頻寬"
+      ],
+      "Unlock streaming": [
+        "解鎖串流"
       ],
       "Up to ${ n } user": [
         "多達 ${ n } 位使用者"
@@ -9775,6 +9811,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } 個國家"
+      ],
       "Access advanced VPN features": [
         "存取進階 VPN 功能"
       ],
@@ -10694,6 +10733,9 @@
     "Payments.Renewal price dependent on VAT number": {
       "Renewal price is dependent on the billing region and ABN.": [
         "續訂價格取決於計費區域和 EIN。"
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "續訂價格取決於計費區域和商務號碼。"
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "續訂價格取決於計費區域和 EIN。"
@@ -13607,6 +13649,9 @@
       ],
       "Get more from your VPN": [
         "從您的VPN取得更多"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "透過 ${ MAIL_APP_NAME } 取得更多儲存空間"
       ],
       "Get the apps": [
         "取得應用程式"

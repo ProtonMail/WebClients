@@ -381,6 +381,9 @@
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Fortsæt med ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
+      "Continue with Free": [
+        "Fortsæt med Free"
+      ],
       "Continue with Google": [
         "Fortsæt med Google"
       ],
@@ -573,6 +576,9 @@
       "Disable categories": [
         "Deaktiver kategorier"
       ],
+      "Disable category": [
+        "Deaktiver kategori"
+      ],
       "Disable recovery phrase": [
         "Deaktiver gendannelsessætning"
       ],
@@ -723,6 +729,9 @@
       "Enable ${ darkWebMonitoring }": [
         "Aktiver ${ darkWebMonitoring }"
       ],
+      "Enable category": [
+        "Aktivér kategori"
+      ],
       "enable desktop notifications": [
         "at aktivere skrivebordsmeddelelser"
       ],
@@ -794,6 +803,9 @@
       ],
       "Generate key": [
         "Generér nøgle"
+      ],
+      "Generate missing keys": [
+        "Generér manglende nøgler"
       ],
       "Generate new phrase": [
         "Generer ny sætning"
@@ -1379,6 +1391,9 @@
       ],
       "Save": [
         "Gem"
+      ],
+      "Save & exit": [
+        "Gem og afslut"
       ],
       "Save address": [
         "Gem adresse"
@@ -2882,23 +2897,59 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME } Migreringsassistent"
       ],
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } af ${ providerUsers.length }"
+      ],
+      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "**p=none**: sæt hverken uautoriserede e-mails i karantæne eller afvis dem. Normalt bruger folk kun denne politik til fejlfinding eller test."
+      ],
       "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "**p=quarantine**: beder modtagerplatformene om at markere de uautoriserede e-mails som spam eller sætte dem i karantæne."
+      ],
+      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
+        "**p=reject**: beder modtagerplatformene om at afvise de uautoriserede e-mails."
       ],
       "Account connected": [
         "Konto forbundet"
       ],
+      "Account disconnected": [
+        "Kontoen er afbrudt"
+      ],
       "Activated": [
         "Aktiveret"
+      ],
+      "Activation link": [
+        "Aktiveringslink"
+      ],
+      "Activation link copied to clipboard": [
+        "Aktiveringslink kopieret til udklipsholder"
       ],
       "Add a domain": [
         "Tilføj et domæne"
       ],
+      "Add domain": [
+        "Tilføj domæne"
+      ],
+      "Add users": [
+        "Tilføj brugere"
+      ],
       "Add users and configure your domain manually for sending and receiving mail. Ideal for small teams starting from a clean slate.": [
         "Tilføj brugere og konfigurer dit domæne manuelt til at sende og modtage mail. Idealt til mindre teams og for at starte på en frisk."
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adressen bruges allerede af en bruger uden for din organisation. Kontakt kundesupport for at løse dette"
+      ],
       "All": [
         "Alle"
+      ],
+      "An unknown error occurred": [
+        "Der opstod en ukendt fejl"
+      ],
+      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Er du sikker på, at du vil fortsætte? Brugere, som ikke har indløst deres konto før migrationen er færdiggjort, vil skulle anmode om at nulstille adgangskoden fra deres ${ BRAND_NAME } organisationsadministrator."
+      ],
+      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
+        "Så snart kontiene er tilføjet, kan du dele aktiveringslinket, så brugerne kan indløse deres ${ BRAND_NAME }-konto."
       ],
       "Authenticate": [
         "Godkend"
@@ -2918,11 +2969,17 @@
       "Choose how you want to bring your team and email setup to ${ BRAND_NAME }.": [
         "Vælg hvordan du vil overføre dit team- og e-mail-setup til ${ BRAND_NAME }."
       ],
+      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
+        "Vælg hvad der skal migreres. Dit valg vil gælde alle brugere. Migrationen starter efter du vælger hvilke brugere der skal kopieres."
+      ],
       "Completed": [
         "Fuldført"
       ],
       "Configure": [
         "Opsæt"
+      ],
+      "Configure domain": [
+        "Konfigurer domæne"
       ],
       "Configure migration": [
         "Konfigurer migrering"
@@ -2936,14 +2993,23 @@
       "Continue migration": [
         "Fortsæt migration"
       ],
+      "Copy activation link": [
+        "Kopiér aktiveringslink"
+      ],
       "Copy activation link to clipboard": [
         "Kopiér aktiveringslink til udklipsholder"
       ],
       "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
         "Kopiér den nedenstående kode og indsæt det i DNS-sektionen hos din domænevært. Du kan se et eksempel og nogle tips ${ hereHref }."
       ],
+      "Creating accounts": [
+        "Kontioprettelse"
+      ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM tilføjer en digital signatur til hver e-mail, så modtagerne kan verificere at beskeden virkelig kom fra dit domæne, og ikke blev ændret undervejs. Beskeder kan blive betragtet som mindre troværdige uden den."
+      ],
+      "DKIM records": [
+        "DKIM-records"
       ],
       "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
         "DMARC bygger på SPF og DKIM ved at fortælle modtagerservere hvordan de skal håndtere beskeder der fejler disse tjek. Det hjælper med at beskytte dit domæne fra falske beskeder der udgiver sig for at være fra dit, og gør generelt levering mere pålidelig."
@@ -2951,8 +3017,17 @@
       "DMARC records": [
         "DMARC-records"
       ],
+      "Domain added": [
+        "Domæne tilføjet"
+      ],
       "Domain connected": [
         "Domæne forbundet"
+      ],
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
+        "Sørg for at dine e-mails når indbakken, og ikke spammappen. Ved at opdatere SPF kan brugere sende e-mails fra ${ BRAND_NAME } og Google på samme tid under hele migrationen."
+      ],
+      "Errors": [
+        "Fejl"
       ],
       "Estimated size": [
         "Anslået størrelse"
@@ -2960,8 +3035,17 @@
       "Failed to load OAuth": [
         "Kunne ikke indlæse OAuth"
       ],
+      "Finalize migration": [
+        "Færdiggør migrationen"
+      ],
       "Finalize your migration": [
         "Færdiggør din migration"
+      ],
+      "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
+        "Ved at færdiggøre migrationen bliver alle e-mails sendt direkte til ${ BRAND_NAME }. Brugerne vil ikke længere modtage e-mails på deres Google-konti, og data synkroniseres ikke mellem ${ BRAND_NAME } og Google længere."
+      ],
+      "Find out what can be migrated.": [
+        "Find ud af hvad der kan migreres."
       ],
       "Finish setting up your business account": [
         "Færdiggør konfigurationen af din virksomhedskonto"
@@ -2975,8 +3059,14 @@
       "Google Workspace account": [
         "Google Workspace konto"
       ],
+      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
+        "Hæng på, vi sætter brugerkontiene op, og vil begynde at importere brugerdata snart."
+      ],
       "Has errors": [
         "Fejlbehæftet"
+      ],
+      "Import errors for ${ user.AdminSetName }": [
+        "Fejl ved import for ${ user.AdminSetName }"
       ],
       "In progress": [
         "I gang"
@@ -2989,6 +3079,9 @@
       ],
       "Install Migration assistant": [
         "Installer migrationsassistenten"
+      ],
+      "Loading your organization data": [
+        "Indlæser din organisationsdata"
       ],
       "Mail": [
         "Mail"
@@ -3007,6 +3100,9 @@
       ],
       "Migrate users to ${ BRAND_NAME }": [
         "Migrer brugere til ${ BRAND_NAME }"
+      ],
+      "Migrated": [
+        "Migreret"
       ],
       "Migration includes": [
         "Migreringen omfatter"
@@ -3030,6 +3126,9 @@
       "Move your users, emails, and settings from Google Workspace automatically. We’ll guide you through connecting your account, verifying your domain, and migrating users securely.": [
         "Flyt dine brugere, e-mails og indstillinger fra Google Workspace automatisk. Vi vejleder dig igennem at tilslutte din konto, bekræfte dine domæner og sikkert migrere brugere."
       ],
+      "No error details available. Please contact customer support for more information": [
+        "Ingen tilgængelige fejloplysninger. Kontakt kundesupport for mere information"
+      ],
       "No users to display": [
         "Ingen brugere at vise"
       ],
@@ -3038,6 +3137,9 @@
       ],
       "Not confirmed": [
         "Ikke bekræftet"
+      ],
+      "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
+        "Færdiggør migrationen når brugerne har indløst deres ${ BRAND_NAME }-konto."
       ],
       "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
         "Når vi har bekræftet at e-mails bliver dirigeret til ${ BRAND_NAME }, så færdiggøres migrationen. Du vil modtage en bekræftelse på e-mail der fortæller dig hvornår dette sker. Processen kan tage op til 24 timer."
@@ -3056,6 +3158,12 @@
       ],
       "Please leave this window open until we're done creating all the users.": [
         "Lad dette vindue være åbent indtil vi er færdige med at oprette alle brugerne."
+      ],
+      "Please select at least one product to migrate": [
+        "Vælg venligst mindst ét produkt der skal migreres"
+      ],
+      "Refresh": [
+        "Opdater"
       ],
       "Required": [
         "Påkrævet"
@@ -3078,6 +3186,15 @@
       "Set up manually": [
         "Konfigurer manuelt"
       ],
+      "Set up secure sending (DKIM)": [
+        "Konfigurer sikker afsendelse (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Konfigurer sikker afsendelse (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Konfigurer sikker afsendelse (SPF)"
+      ],
       "Set up two-factor authentication": [
         "Opsæt to-faktor-godkendelse"
       ],
@@ -3092,6 +3209,9 @@
       ],
       "Size": [
         "Størrelse"
+      ],
+      "Some accounts are not claimed": [
+        "Nogle konti er ikke indløst"
       ],
       "SPF records": [
         "SPF-records"
@@ -3117,8 +3237,20 @@
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "For at migrere din organisations data skal du installere appen ${ BRAND_NAME } Migration Assistant fra Google Workspace Marketplace. Dette giver ${ BRAND_NAME } tilladelse til at kopiere dine data. Når du har installeret den, så vend tilbage hertil for at fortsætte."
       ],
+      "Update records for receiving": [
+        "Opdater records for modtagelse"
+      ],
       "User": [
         "Bruger"
+      ],
+      "User needs to activate their account through the activation link shown above": [
+        "Brugeren skal aktivere deres konto gennem aktiveringslinket vist ovenfor"
+      ],
+      "User status": [
+        "Brugerstatus"
+      ],
+      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
+        "Brugerne kan bruge ${ BRAND_NAME } eller Google på samme tid under hele migrationen."
       ],
       "Users migrated": [
         "Brugere migreret"
@@ -3144,11 +3276,17 @@
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Vi kunne ikke verificere installationen. Kontrollér, at du har installeret den i din Google Workspace-konto, og prøv igen."
       ],
+      "We're still checking the MX records with your domain provider.": [
+        "Vi er stadig i gang med at tjekke dine MX-records med din domæneudbyder."
+      ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Vi har bemærket at nogle brugere ikke har oprettet deres ${ BRAND_NAME }-konti."
       ],
       "What are you migrating?": [
         "Hvad migrerer du?"
+      ],
+      "You": [
+        "Dig"
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Du skal give tilladelse til, at ${ BRAND_NAME } kan kopiere dine data. Når du har accepteret tilladelserne, så vend tilbage hertil for at fortsætte."
@@ -5166,6 +5304,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sorter automatisk dine indgående beskeder, før de når din indbakke."
       ],
+      "Available storage: ${ storageText }": [
+        "Tilgængelig lagerplads: ${ storageText }"
+      ],
       "Available with ${ title }": [
         "Tilgængelig med ${ title }"
       ],
@@ -5228,6 +5369,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Nok plads til flere år værd af e-mails, vedhæftninger og mere."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Sikr sikker adgang til organisationens data, selv hvis jeres team er fjernbaseret eller bruger offentligt WiFi."
@@ -5301,6 +5445,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Læs, svar og hold styr på Gmail direkte fra ${ MAIL_APP_NAME }"
       ],
+      "Select which categories you want to add and if you want to receive push notifications for each category.": [
+        "Vælg de kategorier, du gerne vil tilføje, og om du vil modtage push-notifikationer for hver kategori."
+      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Konfigurer konti for alle brugere, og inviter dem til at tilmelde sig ${ BRAND_NAME }."
       ],
@@ -5344,6 +5491,9 @@
       "Track the status and activity of your referrals": [
         "Følg status og aktivitet for dine henvisninger"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Lås op for 15 GB lagerplads til kun ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Opgrader til ${ planName } for at forbinde op til ${ MAX_SYNC_PAID_USER } konti"
       ],
@@ -5359,14 +5509,20 @@
       "We can't access ${ boldEmails } anymore.": [
         "Vi kan ikke længere få adgang til ${ boldEmails }."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Vi sætter importer på pause ved 80% lagerplads for at reservere plads til nye beskeder."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Vi importerer dine gamle e-mails og forbinder din Gmail til ${ MAIL_APP_NAME }, så nye beskeder vises automatisk"
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Vi er begyndt at importere de sidste 180 dages e-mails fra Gmail. Vi giver dig besked når det er færdigt."
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Vi er begyndt at importere din e-mails fra Gmail. Vi giver dig besked når det er færdigt."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Vi er kede af at du forlader os. Hvis du har et øjeblik, så ville vi sætte stor pris på at høre hvorfor du annullerer. Din feedback hjælper os med at gøre ${ BRAND_NAME } bedre for alle."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Med nye e-mailkategorier er det kun vigtige beskeder der lander i din primære indbakke. Kategorier fungerer nøjagtig ligesom spamfiltre. ${ MAIL_APP_NAME } læser aldrig dine e-mails eller deler din data."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Du har allerede en Gmail-adresse, der videresender til ${ MAIL_APP_NAME }. Forbind til den nedenfor for at sende og modtage e-mails direkte fra ${ MAIL_APP_NAME }."
@@ -5408,6 +5564,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Du har forbundet én ekstern kontoadresse til ${ MAIL_APP_NAME }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrænset lagerplads, så vi importerer kun ${ newUserStorageText } af dine seneste Gmail-beskeder"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrænset lagerplads, så vi importerer kun dine seneste Gmail-beskeder."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Dit abonnement understøtter ${ MAX_SYNC_FREE_USER } Gmail-adresse.",
@@ -7023,11 +7185,17 @@
       "Email address is required": [
         "E-mailadresse er påkrævet."
       ],
+      "Email is not valid": [
+        "E-mail er ikke gyldig"
+      ],
       "Empty condition": [
         "Betingelse er tom"
       ],
       "Enter 6 digits": [
         "Indtast 6 cifre"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Indtast dit brugernavn uden domænet (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fejl under oprettelse af forbindelse til Bitcoin-API."
@@ -7115,6 +7283,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Forkert anden adgangskode. Prøv igen."
+      ],
+      "Incorrect username": [
+        "Forkert brugernavn"
       ],
       "Intended recipient does not support calendar sharing": [
         "Den tiltænkte modtager understøtter ikke kalenderdeling"
@@ -7225,6 +7396,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Ikke en ${ BRAND_NAME }-konto"
       ],
+      "Not a valid number": [
+        "Ikke et gyldigt nummer"
+      ],
       "Organization key is not decrypted": [
         "Organisationsnøgle er ikke dekrypteret"
       ],
@@ -7236,6 +7410,9 @@
       ],
       "Password is required": [
         "Adgangskode er påkrævet."
+      ],
+      "Passwords do not match": [
+        "Adgangskoder stemmer ikke overens"
       ],
       "Payment process canceled": [
         "Betalingproces annulleret"
@@ -7318,9 +7495,6 @@
       ],
       "Please try again in a few moments.": [
         "Prøv venligst igen om et øjeblik."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Opgrader venligst til et erhversabonnement med mere end 1 bruger for at få support til flere brugere"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Opgradér venligst til et erhvervsabonnement med mere end 1 bruger for at administrere flere brugere."
@@ -7419,6 +7593,9 @@
       "The amount due has changed. Please try again.": [
         "Det skyldige beløb er ændret. Prøv venligst igen."
       ],
+      "The email addresses do not match": [
+        "E-mailadresserne stemmer ikke overens"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Filen er for stor, maksimumsstørrelsen er ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -7464,11 +7641,17 @@
       "There was an error, please try again.": [
         "Der opstod en fejl, prøv igen."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
+      ],
       "This field is invalid": [
         "Dette felt er ugyldigt"
       ],
       "This field is required": [
         "Feltet er påkrævet"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dette felt kræver minimum ${ minimumLength } tegn."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Dette mappenavn er ikke tilgængeligt. Vælg venligst et andet navn."
@@ -7494,6 +7677,9 @@
       "Try again later": [
         "Prøv igen senere"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Prøv kun at bruge bogstaver, tal og _.-"
+      ],
       "Unable to upload file": [
         "Filen kan ikke uploades"
       ],
@@ -7511,6 +7697,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Uploadede filer er ikke gyldige private nøgle. Kontrollér og prøv igen."
+      ],
+      "Username must begin with a letter or digit": [
+        "Brugernavn skal begynde med et bogstav eller et tal"
+      ],
+      "Username must end with a letter or digit": [
+        "Brugernavn skal ende på et bogstav eller et tal"
       ],
       "Validation error": [
         "Bekræftelsesfejl"
@@ -8252,6 +8444,9 @@
       "${ PROTON_SENTINEL_NAME } account protection": [
         "${ PROTON_SENTINEL_NAME }-kontobeskyttelse"
       ],
+      "10+ premium features": [
+        "10+ premium-funktioner"
+      ],
       "15 GB storage": [
         "15 GB lagerplads"
       ],
@@ -8287,6 +8482,12 @@
       "Continue": [
         "Fortsæt"
       ],
+      "Custom email domain": [
+        "Brugerdefineret e-maildomæne"
+      ],
+      "Email addresses": [
+        "E-mailadresser"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Krypteret sky-lagring til filer, billeder og dokumenter"
       ],
@@ -8316,6 +8517,9 @@
       ],
       "Short domain @pm.me": [
         "Kort domæne @pm.me"
+      ],
+      "Storage": [
+        "Lagerplads"
       ],
       "Torrenting support (P2P)": [
         "Understøttelse af torrenting (P2P)"
@@ -8684,6 +8888,9 @@
     "Force upgrade safety review": {
       "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
         "Jeg forstår, at jeg ikke længere vil kunne logge ind fra ældre versioner af ${ BRAND_NAME }-apps."
+      ],
+      "Learn more": [
+        "Få mere at vide"
       ]
     },
     "Form heading": {
@@ -9500,8 +9707,8 @@
       "${ BRAND_NAME } Free": [
         "${ BRAND_NAME } Free"
       ],
-      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
-        "${ BRAND_NAME } er uafhængigt finansieret og drives uden nogen markedsføring. \nNedenfor er nogle eksempler på hvordan denne uafhængighed er blevet brugt i praksis."
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } er uafhængigt finansieret og drives uden nogen markedsføring. Nedenfor er nogle eksempler på hvordan denne uafhængighed er blevet brugt i praksis."
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } er privatlivsbeskyttelse du kan stole på, sikret af stærk kryptering, open-source kildekode og schweiziske love om privatlivsbeskyttelse. Vi mener ikke, at nogen skal kunne udnytte dine data, punktum. Vores teknologi og virksomhed er baseret på denne fundamentalt stærkere definition af privatlivsbeskyttelse."
@@ -9938,9 +10145,9 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Tilføj dit navn og logo for at gøre oplevelsen mere personlig for din organisation."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Tilføjer ${ addedServerCount } gateway-server",
-        "Tilføjer ${ addedServerCount } gateway-servere"
+      "Adding ${ total } gateway server": [
+        "Tilføjer ${ total } gateway-server",
+        "Tilføjer ${ total } gateway-servere"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Tilføjelse af en ekstern e-mailadresse vil deaktivere end-to-end-kryptering for al e-mail-kommunikation inden for den pågældende gruppe. Vil du fortsætte?"
@@ -11133,6 +11340,9 @@
       ],
       "Include device, location, and IP details": [
         "Inkludér detaljer om enhed, placering og IP-adresse."
+      ],
+      "Included": [
+        "Inkluderet"
       ],
       "Increase your account security by verifying your email address.": [
         "Forøg din kontosikkerhed, ved at verificere din e-mailadresse"
@@ -12462,6 +12672,9 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Vælg en gendannelsesmetode for at dekryptere eller se dine låste data efter en adgangskodenulstilling."
       ],
+      "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
+        "For at aktivere post-kvantebeskyttelse skal du afslutte genereringen af dine nye post-kvante krypteringsnøgler."
+      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Opnå størst mulig sikkerhed på din konto ved at slå **Gendannelse via e-mail** fra."
       ],
@@ -12585,8 +12798,14 @@
       "Unverified email address.": [
         "Uverificeret e-mailadresse."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Opgrader når som helst for at overføre resten"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Opgrader nu for at få premium-funktioner, produkter og lagerplads til en speciel pris"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Opgrader eller frigør lagerplads når som helst for at overføre resten"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Opgradér for at tilføje en kortere @pm.me adresse til din konto, som er nemmere at dele. Det står for \"${ MAIL_APP_NAME } me\" eller \"Private Message me\"."
@@ -13913,6 +14132,9 @@
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME }-beskyttelse"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tegn"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidigt utilgængelig. Tjek igen senere.)"
       ],
@@ -14511,6 +14733,9 @@
       "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
         "Aktivér ${ DARK_WEB_MONITORING_NAME } til ${ domain.DomainName }"
       ],
+      "Enable categories": [
+        "Aktivér kategorier"
+      ],
       "Enabled": [
         "Aktiveret"
       ],
@@ -14657,6 +14882,9 @@
       ],
       "Highest VPN speed": [
         "Højeste VPN-hastighed"
+      ],
+      "Host name": [
+        "Værtsnavn"
       ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Jeg forstår, at jeg straks skal tilføje denne e-mailadresse til den anden konto for at undgå at miste denne adresse permanent."
@@ -15560,8 +15788,14 @@
       "Invalid ${ group.name } record found": [
         "Ugyldigt ${ group.name }-record fundet"
       ],
+      "Type": [
+        "Type"
+      ],
       "Use default value": [
         "Brug standardværdi"
+      ],
+      "Valid ${ group.name } record found": [
+        "Gyldigt ${ group.name }-record fundet"
       ]
     },
     "Label for new member": {
@@ -18523,6 +18757,9 @@
       "Plain text": [
         "Almindelig tekst"
       ],
+      "Push notifications": [
+        "Push-notifikationer"
+      ],
       "Receive from all": [
         "Modtag fra alle"
       ],
@@ -19898,13 +20135,13 @@
       ]
     },
     "PQC account key generation": {
-      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
-        "Nye nøgler kunne ikke genereres. For at aktivere post-kvante-beskyttelse skal du generere dine nye krypteringsnøgler manuelt.\n\n${ settingsLink } og vælg \"Generer nøgle\" for Deres konto og for hver adresse."
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Nøgler kunne ikke genereres. For at aktivere post-kvantebeskyttelse skal du afslutte genereringen af dine nye post-kvante krypteringsnøgler.\n\n${ goToSettingsLink } og vælg \"Generér manglende nøgler\"."
       ]
     },
     "PQC adress key generation": {
-      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
-        "Adressenøgler kunne ikke genereres. For at aktivere post-kvantum-beskyttelse skal du generere dine nye krypteringsnøgler manuelt.\n\nGå til ${ settingsLink } og vælg \"Generér nøgle\" for hver adresse."
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys for each address.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Adressenøgler kunne ikke genereres. For at aktivere post-kvantebeskyttelse skal du afslutte genereringen af dine nye post-kvante krypteringsnøgler for hver adresse.\n\n${ goToSettingsLink } og vælg \"Generér manglende nøgler\"."
       ]
     },
     "PQC compatibility warning": {
@@ -20954,6 +21191,9 @@
       ],
       "You can disable this at any time.": [
         "Du kan slå det fra når som helst."
+      ],
+      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "Du kan bruge gendannelsessætningen til at gendanne din konto helt, når du nulstiller din adgangskode, så husk at opbevare den et sikkert sted."
       ],
       "You can use your email to regain access to your account if you forget your password.": [
         "Du kan bruge din e-mail til at tilgå din konto igen, hvis du glemmer din adgangskode."
@@ -23817,6 +24057,9 @@
       "Account deleted. Signing out...": [
         "Konto slettet, logger ud..."
       ],
+      "Activation link copied to clipboard": [
+        "Aktiveringslink kopieret til udklipsholder"
+      ],
       "Address added": [
         "Adresse tilføjet"
       ],
@@ -24478,6 +24721,9 @@
       "Add another notification to remind you of this event": [
         "Tilføj endnu en notifikation for at minde dig om denne begivenhed"
       ],
+      "Add categories": [
+        "Tilføj kategorier"
+      ],
       "Add contact group name": [
         "Tilføj kontaktgruppenavn"
       ],
@@ -24652,6 +24898,9 @@
       "Catch-all address": [
         "Catch-all-adresse"
       ],
+      "Categories": [
+        "Kategorier"
+      ],
       "Change login password": [
         "Skift login-adgangskode"
       ],
@@ -24744,6 +24993,9 @@
       ],
       "Contact us": [
         "Kontakt os"
+      ],
+      "Continue with free storage": [
+        "Fortsæt med gratis lagerplads"
       ],
       "Continue with partial import?": [
         "Fortsæt med delvis import?"
@@ -25153,6 +25405,9 @@
       "Feature access": [
         "Funktionsadgang"
       ],
+      "Fewer distractions, more focus": [
+        "Færre forstyrrelser, mere fokus"
+      ],
       "Filter for more focus": [
         "Filtrér for mere fokus"
       ],
@@ -25251,6 +25506,9 @@
       ],
       "Get more from your VPN": [
         "Få mere ud af deres VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Få mere lagerplads med ${ MAIL_APP_NAME } Plus"
       ],
       "Get started": [
         "Kom i gang"
@@ -26373,6 +26631,9 @@
       "Each imported email will have this label": [
         "Hver importeret e-mail vil have denne etiket"
       ],
+      "Early access to new apps and features.": [
+        "Forhåndsadgang til nye apps og funktioner."
+      ],
       "Edit folder names": [
         "Rediger mappenavne"
       ],
@@ -26529,7 +26790,7 @@
       "This feature is only available on Beta": [
         "Denne funktion er kun tilgængelig på Beta"
       ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
         "Dette er standardnøglen, der bruges af andre ${ MAIL_APP_NAME }-brugere på ældre mobilapps til at kryptere de data, som de sender til dig"
       ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
@@ -27062,6 +27323,16 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn",
+        "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prøv et kortere brugernavn (maks. ${ n } tegn)",
+        "Prøv et kortere brugernavn (maks. ${ n } tegn)"
       ]
     },
     "Video control": {
