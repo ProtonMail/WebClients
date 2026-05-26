@@ -2219,8 +2219,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2730,6 +2729,9 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Per revisar les dades importades, feu clic a la icona del ${ PASS_APP_NAME } de la barra d'eines del navegador."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "Per configurar el desbloqueig biomètric, ${ PASS_APP_NAME } requereix un nou permís del navegador. Un cop l'hàgiu acceptat, l'extensió es tornarà a carregar. Torneu a obrir aquesta pàgina després."
       ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Proveu de tornar a carregar o reinstal·lar l'extensió i assegureu-vos que el vostre navegador i ${ PASS_SHORT_APP_NAME } estiguin actualitzats."
@@ -4690,6 +4692,9 @@
       ],
       "Breaches detected for": [
         "Infraccions detectades per"
+      ],
+      "Browser permission required": [
+        "Es requereix permís del navegador"
       ],
       "Cancel changing your email?": [
         "Voleu cancel·lar el canvi de correu electrònic?"

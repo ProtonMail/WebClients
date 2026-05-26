@@ -2219,8 +2219,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -2730,6 +2729,9 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Para verificar los datos importados, pulse el ícono de ${ PASS_APP_NAME } en la barra de herramientas del navegador."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "Para configurar el desbloqueo biométrico, ${ PASS_APP_NAME } requiere un permiso de navegador nuevo. Después de aceptarlo, la extensión se recargará. Luego abra esta página."
       ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Intente recargar o reinstalar la extensión y asegúrese de que el navegador y ${ PASS_SHORT_APP_NAME } estén actualizados."
@@ -4690,6 +4692,9 @@
       ],
       "Breaches detected for": [
         "Vulneraciones detectadas para"
+      ],
+      "Browser permission required": [
+        "Se requiere permiso de navegador"
       ],
       "Cancel changing your email?": [
         "¿Cancelar el cambio de correo electrónico?"

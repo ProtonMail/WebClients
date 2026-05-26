@@ -2190,7 +2190,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2698,6 +2698,9 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "要查看您导入到数据，请点击浏览器工具栏中的 ${ PASS_APP_NAME } 图标。"
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "若要设置生物识别解锁，${ PASS_APP_NAME } 需要一个新的浏览器权限。接受后，扩展程序将重新加载。请之后重新打开此页面。"
       ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "尝试重新加载或重新安装扩展，并确保您的浏览器和 ${ PASS_SHORT_APP_NAME } 是最新的。"
@@ -4632,6 +4635,9 @@
       ],
       "Breaches detected for": [
         "检测到的泄露信息"
+      ],
+      "Browser permission required": [
+        "需要浏览器权限"
       ],
       "Cancel changing your email?": [
         "取消更改您的邮箱？"
