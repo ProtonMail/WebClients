@@ -3033,6 +3033,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkronoi tiedostot helposti pilveen työpöydältäsi ja käytä niitä mobiililaitteellasi."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Osoitteeseen ${ connectedAddressText } lähetetyt sähköpostit näkyvät nyt ${ MAIL_APP_NAME }ssa."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Kannusta kaksivaiheisen tunnistautumisen käyttöä organisaatiossasi turvallisuuden parantamiseksi."
       ],
@@ -3116,6 +3119,9 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Voit merkitä yhteystiedot, joita et haluat yhdistää tai säilyttää, poistettaviksi. Poisto suoritetaan vasta Yhdistä-painiketta painettaessa."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Voit nyt lähettää sähköposteja ${ BRAND_NAME }:sta tällä osoitteella."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Tilisi ja tietojesi palautustavat on määritetty ja kaksivaiheinen tunnistautuminen on käytössä."
@@ -3742,6 +3748,12 @@
       ],
       "Organization key is not decrypted": [
         "Organisaatioavaimen salausta ei ole purettu"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisaatioavain on aktivoitava kutsuttujen käyttäjien luomiseksi"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisaatioavain on aktivoitava ei-yksityisten käyttäjien luomiseksi"
       ],
       "Passphrase unavailable": [
         "Salalause ei ole käytettävissä"
@@ -12043,6 +12055,9 @@
       "When is it most important to use a VPN?": [
         "Milloin VPN:n käyttäminen on tärkeintä?"
       ],
+      "You are all set": [
+        "Kaikki on valmista"
+      ],
       "You can now create unlimited folders and labels": [
         "Voit nyt luoda rajattomasti kansioita ja tunnisteita"
       ],
@@ -12207,6 +12222,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Ylläpitäjillä ei ole pääsyä yksityisten käyttäjien tietoihin, eivätkä he voi nollata heidän salasanojaan."
+      ],
+      "Member activation incomplete": [
+        "Jäsenen aktivointi on kesken"
+      ],
+      "Organization key must be activated to request data access": [
+        "Tietojen käyttöoikeuspyyntö vaatii organisaatioavaimen aktivoinnin"
+      ],
+      "The user must have an address to request data access": [
+        "Käyttäjällä on oltava osoite tietojen käyttöoikeuden anomiseksi"
       ]
     },
     "Validation": {
