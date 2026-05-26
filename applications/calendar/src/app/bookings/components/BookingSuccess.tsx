@@ -120,19 +120,7 @@ export const BookingSuccess = () => {
     const timeData = `${format(selectedBookingSlot.tzDate, 'p', { locale: dateLocale })} - ${format(addMinutes(selectedBookingSlot.tzDate, bookingDetails.duration || 0), 'p', { locale: dateLocale })}`;
 
     const hasLocation = !!bookingDetails.location.trim() || bookingDetails.withProtonMeetLink;
-
-    const hostInformation = (
-        <>
-            {bookingDetails.inviterDisplayName && (
-                <div className="text-ellipsis" title={bookingDetails.inviterDisplayName}>
-                    {bookingDetails.inviterDisplayName}
-                </div>
-            )}
-            <div className="text-ellipsis" title={bookingDetails.inviterEmail}>
-                {bookingDetails.inviterEmail}
-            </div>
-        </>
-    );
+    const hasHostDetails = !!bookingDetails.inviterDisplayName?.trim() || !!bookingDetails.inviterDisplayName;
 
     return (
         <div className="container">
@@ -150,11 +138,17 @@ export const BookingSuccess = () => {
                 </div>
                 <hr className="bg-weak mb-6" />
                 <div className="booking-success-grid gap-4 items-start max-w-full">
-                    <BookingSuccessItem
-                        title={c('Title').t`Host`}
-                        icon={<IcUserCircle size={6} />}
-                        data={hostInformation}
-                    />
+                    {hasHostDetails && (
+                        <BookingSuccessItem
+                            title={c('Title').t`Host`}
+                            icon={<IcUserCircle size={6} />}
+                            data={
+                                <div className="text-ellipsis" title={bookingDetails.inviterDisplayName}>
+                                    {bookingDetails.inviterDisplayName}
+                                </div>
+                            }
+                        />
+                    )}
                     <BookingSuccessItem
                         title={c('Title').t`Date`}
                         icon={<IcCalendarGrid size={6} />}
