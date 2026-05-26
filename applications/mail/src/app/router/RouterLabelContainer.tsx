@@ -177,13 +177,8 @@ export const RouterLabelContainer = ({
         [selectedIDs, elementID, labelID, folders, handleBack, selectAll]
     );
 
-    const content = (
-        <div
-            ref={elementRef}
-            tabIndex={-1}
-            className="flex flex-1 flex-nowrap outline-none relative"
-            data-testid="mailbox"
-        >
+    const mailboxColumns = (
+        <>
             <ResizableWrapper
                 resizeHandlePosition={ResizeHandlePosition.RIGHT}
                 containerRef={elementRef}
@@ -246,6 +241,25 @@ export const RouterLabelContainer = ({
                     />
                 </Switch>
             </section>
+        </>
+    );
+
+    // This can be removed once the refreshed toolbar UI is fully implemented and validated
+    // elementRef must include the toolbar so that hotkeys remain active when focus is on toolbar elements (e.g. SelectAll checkbox)
+    return (
+        <div
+            ref={elementRef}
+            tabIndex={-1}
+            className={clsx(
+                'outline-none relative',
+                shouldSeeWideToolbars ? 'flex flex-column flex-1 flex-nowrap' : 'flex flex-1 flex-nowrap'
+            )}
+            data-testid="mailbox"
+        >
+            {shouldSeeWideToolbars && (
+                <MailToolbar placement="list" actions={{ ...actions, handleMove }} elementsData={elementsData} />
+            )}
+            {shouldSeeWideToolbars ? <div className="flex flex-1 flex-nowrap">{mailboxColumns}</div> : mailboxColumns}
             {commanderRender ? <Commander list={commanderList} {...commanderModalProps} /> : null}
             {deleteAllModal}
             {selectAllMoveModal}
@@ -256,15 +270,5 @@ export const RouterLabelContainer = ({
             {hotkeyDeleteAllShortcutModal}
             {hotkeyDeleteSelectionShortcutModal}
         </div>
-    );
-
-    // This can be removed once the refreshed toolbar UI is fully implemented and validated
-    return shouldSeeWideToolbars ? (
-        <div className="flex flex-column flex-1 flex-nowrap">
-            <MailToolbar placement="list" actions={{ ...actions, handleMove }} elementsData={elementsData} />
-            {content}
-        </div>
-    ) : (
-        content
     );
 };
