@@ -64,6 +64,7 @@ export type Flags = {
     isRecoveryContactsEnabled?: boolean;
     isRolesAndPermissionsEnabled?: boolean;
     isRecoverySettingsRedesignEnabled?: boolean;
+    isMspEnabled?: boolean;
     isMnemonicAvailable?: boolean;
     isRecoveryFileAvailable?: boolean;
 };

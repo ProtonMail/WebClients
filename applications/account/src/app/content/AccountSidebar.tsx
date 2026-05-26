@@ -107,6 +107,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
                         <SidebarListWrapper prefix={prefix} {...routes.authenticator} />
                     )}
                     {routes.organization.available && <SidebarListWrapper prefix={prefix} {...routes.organization} />}
+                    {routes.msp.available && <SidebarListWrapper prefix={prefix} {...routes.msp} />}
                 </SidebarList>
             </SidebarNav>
         </Sidebar>

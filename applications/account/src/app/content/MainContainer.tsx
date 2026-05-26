@@ -72,6 +72,7 @@ import { TVContainer, TvContainerSignedIn } from '@proton/vpn/components/tv';
 
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
 import { recoveryIds } from '../containers/account/recoveryIds';
+import MspSettingsRouter from '../containers/msp/MspSettingsRouter';
 import OrganizationSettingsRouter from '../containers/organization/OrganizationSettingsRouter';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
@@ -195,6 +196,7 @@ const MainContainer = () => {
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isOLESEnabled = useFlag('OlesM1');
     const isRolesAndPermissionsEnabled = useFlag('AdminRoleMVP');
+    const isMspEnabled = useFlag('MspEnabled');
     const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
 
     const categoryViewFlag = useFlag('CategoryView');
@@ -305,6 +307,7 @@ const MainContainer = () => {
         isOLESEnabled,
         isCategoryViewEnabled: categoryViewFlag || hasBetaAccess,
         isRolesAndPermissionsEnabled,
+        isMspEnabled,
         isRecoverySettingsRedesignEnabled,
         isMnemonicAvailable,
         isRecoveryFileAvailable,
@@ -416,6 +419,7 @@ const MainContainer = () => {
             return !(section === routes.organization.routes.domains && !getIsSectionAvailable(section));
         })
     );
+    const anyMspAppRoute = getRoutePaths(pathPrefix, Object.values(routes.msp.routes));
 
     const redirect = (() => {
         if (
@@ -527,6 +531,9 @@ const MainContainer = () => {
                             organization={organization}
                             subscription={subscription}
                         />
+                    </Route>
+                    <Route path={anyMspAppRoute}>
+                        <MspSettingsRouter path={pathPrefix} mspAppRoutes={routes.msp} redirect={redirect} />
                     </Route>
                     <Route path={`/${appSlug}${CANCEL_ROUTE}`}>
                         <CancellationReminderSection app={app} />
