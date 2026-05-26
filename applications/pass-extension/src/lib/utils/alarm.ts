@@ -2,6 +2,7 @@ import type { Alarms } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe } from '@proton/pass/types';
+import { safeAsyncCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
 import type { AlarmFactory } from '@proton/pass/utils/time/alarm';
 import { createTimeoutAlarm } from '@proton/pass/utils/time/alarm';
@@ -23,10 +24,11 @@ export interface BrowserAlarm extends ExtensionAlarm {
  * For shorter delays, use `createTimeoutAlarm` instead. */
 export const createBrowserAlarm = (alarmName: string): BrowserAlarm => {
     return {
-        reset: () => browser.alarms.clear(alarmName).catch(() => false),
-        when: async () => (await browser.alarms.get(alarmName).catch(noop))?.scheduledTime,
-        set: (when) => browser.alarms.create(alarmName, { when }).catch(noop),
+        reset: safeAsyncCall(async () => (await browser.alarms.clear(alarmName)) ?? false, false),
+        when: safeAsyncCall(async () => (await browser.alarms.get(alarmName))?.scheduledTime),
+        set: safeAsyncCall(async (when) => browser.alarms.create(alarmName, { when })),
         listen: (handler) => {
+            if (!browser.alarms?.onAlarm) return noop;
             const listener = ({ name }: Alarms.Alarm) => name === alarmName && handler();
             browser.alarms.onAlarm.addListener(listener);
             return () => browser.alarms.onAlarm.removeListener(listener);
