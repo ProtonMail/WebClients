@@ -1,11 +1,11 @@
 import * as Ariakit from '@ariakit/react'
 import * as Atoms from '../atoms'
-import { useCompositeOverflowStore } from '@ariakit/react-core/composite/composite-overflow-store'
-import { CompositeOverflow } from '@ariakit/react-core/composite/composite-overflow'
+import { useCompositeOverflowStore } from '@ariakit/react-components/composite/composite-overflow-store'
+import { CompositeOverflow } from '@ariakit/react-components/composite/composite-overflow'
 import {
   CompositeOverflowDisclosure,
   type CompositeOverflowDisclosureProps,
-} from '@ariakit/react-core/composite/composite-overflow-disclosure'
+} from '@ariakit/react-components/composite/composite-overflow-disclosure'
 import type { IconName } from '@proton/icons/types'
 import clsx from '@proton/utils/clsx'
 import {
