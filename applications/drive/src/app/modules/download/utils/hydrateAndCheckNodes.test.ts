@@ -1,15 +1,15 @@
 import type { NodeEntity } from '@proton/drive/index';
 import { getDrive } from '@proton/drive/index';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
-import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { hydrateAndCheckNodes } from './hydrateAndCheckNodes';
 
 jest.mock('@proton/drive/index', () => ({
     getDrive: jest.fn(),
 }));
 
-jest.mock('../../../utils/sdk/getNodeEntity', () => ({
+jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity', () => ({
     getNodeEntity: jest.fn(),
 }));
 

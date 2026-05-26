@@ -1,9 +1,9 @@
 import type { ProtonDriveClient } from '@proton/drive';
 import { type MaybeNode, type NodeEntity, NodeType, splitNodeUid } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import { getNodeDisplaySize } from '../../utils/sdk/getNodeDisplaySize';
 import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 import { getLegacyModifiedTime, getLegacyTrashedTime, legacyTimestampToDate } from '../../utils/sdk/legacyTime';
 import { getRootNode } from '../../utils/sdk/mapNodeToLegacyItem';

@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import type { MaybeNode, NodeEntity } from '@proton/drive/index';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
-import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { DownloadDriveClientRegistry } from '../DownloadDriveClientRegistry';
 
 export const checkUnsupportedNode = (node: NodeEntity) => {

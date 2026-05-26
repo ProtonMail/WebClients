@@ -70,7 +70,7 @@ jest.mock('@proton/drive/internal/BusDriver', () => ({
     getBusDriver: jest.fn(() => ({ emit: jest.fn().mockResolvedValue(undefined) })),
 }));
 
-jest.mock('../../../utils/sdk/getNodeEntity', () => ({
+jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity', () => ({
     getNodeEntity: jest.fn(() => ({
         node: { uid: 'volumeId~rootLinkId', deprecatedShareId: 'shareId' },
         errors: new Map(),

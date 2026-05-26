@@ -4,11 +4,11 @@ import { c } from 'ttag';
 
 import type { MaybeNode } from '@proton/drive';
 import { AbortError, MemberRole, ProtonDriveError } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { loadThumbnail, useThumbnail } from '@proton/drive/modules/thumbnails';
 import useLoading from '@proton/hooks/useLoading';
 
 import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { ContentPreviewMethod, downloadContent, getContentPreviewMethod } from './content';
 import type { Drive } from './interface';
 import { getNavigation } from './navigation';
