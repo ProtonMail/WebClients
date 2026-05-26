@@ -6,8 +6,8 @@ import { getDriveForPhotos } from '@proton/drive/index';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 
 import useNavigate from '../../../legacy/hooks/drive/useNavigate';
-import { AlbumsPageTypes, usePhotoLayoutStore } from '../../../legacy/zustand/photos/layout.store';
 import { getEllipsedName } from '../../../utils/intl/getEllipsedName';
+import { AlbumsPageTypes, usePhotoLayoutStore } from '../../layout.store';
 import { useAlbumsStore } from '../../useAlbums.store';
 import { PhotosClearSelectionButton } from '../components/PhotosClearSelectionButton';
 import { usePhotosSelection } from '../hooks/usePhotosSelection';

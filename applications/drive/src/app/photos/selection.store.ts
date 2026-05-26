@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
-import type { PhotoGroup } from '../../../photos/usePhotos.store';
-import { isPhotoGroup } from '../../../photos/utils/isPhotoGroup';
+import type { PhotoGroup } from './usePhotos.store';
+import { isPhotoGroup } from './utils/isPhotoGroup';
 
 export interface HandleSelectionArgs {
     isSelected: boolean;

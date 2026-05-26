@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useFreeUploadStore } from '../../../legacy/zustand/freeUpload/freeUpload.store';
 import { sendErrorReport } from '../../../utils/errorHandling';
+import { useFreeUploadStore } from './freeUpload.store';
 import { useFreeUploadApi } from './useFreeUploadApi';
 import { useFreeUploadFeature } from './useFreeUploadFeature';
 import { useInitializeFreeUploadTimer } from './useInitializeFreeUploadTimer';
