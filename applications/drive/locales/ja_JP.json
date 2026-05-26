@@ -621,6 +621,9 @@
       "Make a copy": [
         "複製"
       ],
+      "Manage addresses": [
+        "アドレスの管理"
+      ],
       "Manage advanced account protections": [
         "高度なアカウント保護を管理"
       ],
@@ -2974,6 +2977,9 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "結合または保持する必要のない連絡先を削除するためにマークすることができます。 削除はマージボタンがクリックされた後にのみ行われます"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "${ BRAND_NAME } から、このアドレスを使用してメールを送信できるようになりました。"
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "アカウントとデータの回復手段が設定され、2要素認証が有効になっています。"
       ],
@@ -3434,9 +3440,6 @@
       "Failed to update public share node": [
         "公開共有ノードの更新に失敗しました"
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "エラー「${ error }」のためファイル「${ item.name }」はアップロードできませんでした。"
-      ],
       "File \"${ name }\" is already downloading": [
         "ファイル「${ name }」はすでにダウンロード中です"
       ],
@@ -3560,6 +3563,12 @@
       "Organization key is not decrypted": [
         "組織の鍵が復号されていません"
       ],
+      "Organization key must be activated to create invited users": [
+        "招待ユーザーを作成するには、組織の鍵を有効にする必要があります"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "非プライベートユーザーを作成するには、組織の鍵を有効にする必要があります"
+      ],
       "Password is required": [
         "パスワードは必須です"
       ],
@@ -3649,9 +3658,6 @@
       ],
       "Some contacts could not be deleted": [
         "一部の連絡先を削除できませんでした"
-      ],
-      "Some files were ignored because they are not supported in Photos": [
-        "一部のファイルは、Photosでサポートされていないため、無視されました。"
       ],
       "Some groups could not be deleted": [
         "一部のグループは削除できませんでした"
@@ -3853,9 +3859,6 @@
       ],
       "You must set a name": [
         "名前を設定してください"
-      ],
-      "Your browser does not support uploading folders": [
-        "お使いのブラウザーはフォルダーのアップロードに対応しておりません"
       ],
       "Your import will not be processed.": [
         "インポートできませんでした。"
@@ -6278,9 +6281,6 @@
       ],
       "Unknown date": [
         "日付不明"
-      ],
-      "Unknown error": [
-        "不明なエラー"
       ],
       "Unlock drive to recover files": [
         "回復用ファイルを使ってドライブを開く"
@@ -8997,9 +8997,6 @@
       "Failed to convert external invitation": [
         "外部の招待の変換に失敗しました"
       ],
-      "Failed to download files: ${ err }": [
-        "ファイルのダウンロードに失敗しました: ${ err }"
-      ],
       "Failed to move, please try again": [
         "移動に失敗しました。再度お試しください。"
       ],
@@ -9059,9 +9056,6 @@
       ],
       "Selected item was successfully removed from your list": [
         "選択したアイテムをリストから正常に削除しました。"
-      ],
-      "Selected items were successfully removed from your list": [
-        "選択したアイテムをリストから正常に削除しました"
       ],
       "Setting updated. Editors can change permissions and share.": [
         "設定を更新しました。編集者は共有・権限の変更ができます。"
@@ -12732,6 +12726,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "管理者はプライベートユーザーのデータにアクセスすることやパスワードをリセットすることはできません。"
+      ],
+      "Member activation incomplete": [
+        "メンバーの有効化が未完了です"
+      ],
+      "Organization key must be activated to request data access": [
+        "データアクセスをリクエストするには、組織の鍵を有効にする必要があります"
+      ],
+      "The user must have an address to request data access": [
+        "ユーザーはデータアクセスを要求するためにアドレスが必要です。"
       ]
     },
     "Upsell": {
