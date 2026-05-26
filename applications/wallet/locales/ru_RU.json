@@ -2155,6 +2155,12 @@
       "Organization key is not decrypted": [
         "Ключ организации не расшифрован"
       ],
+      "Organization key must be activated to create invited users": [
+        "Ключ организации должен быть активирован для создания приглашенных пользователей"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Ключ организации должен быть активирован для создания нечастных пользователей"
+      ],
       "Passwords do not match": [
         "Пароли не совпадают"
       ],
@@ -5169,6 +5175,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Администраторы не могут получить доступ к данным частных пользователей и не могут сбросить их пароль."
+      ],
+      "Member activation incomplete": [
+        "Активация участника не завершена"
+      ],
+      "Organization key must be activated to request data access": [
+        "Для запроса доступа к данным необходимо активировать ключ организации"
+      ],
+      "The user must have an address to request data access": [
+        "Пользователь должен иметь адрес, чтобы запросить доступ к данным"
       ]
     },
     "Validation": {

@@ -2318,6 +2318,12 @@
       "Organization key is not decrypted": [
         "La chiave dell'organizzazione non è decriptata"
       ],
+      "Organization key must be activated to create invited users": [
+        "Devi attivare la chiave dell'organizzazione per poter invitare gli utenti"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "La chiave dell'organizzazione deve essere attivata per creare utenti non privati"
+      ],
       "Passwords do not match": [
         "Le password non corrispondono"
       ],
@@ -5624,6 +5630,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Gli amministratori non possono accedere ai dati degli utenti privati ​​e non possono reimpostare la loro password."
+      ],
+      "Member activation incomplete": [
+        "Attivazione membro incompleta"
+      ],
+      "Organization key must be activated to request data access": [
+        "La chiave dell'organizzazione deve essere attivata per richiedere l'accesso ai dati"
+      ],
+      "The user must have an address to request data access": [
+        "L'utente deve avere un indirizzo per richiedere l'accesso ai dati"
       ]
     },
     "Validation": {

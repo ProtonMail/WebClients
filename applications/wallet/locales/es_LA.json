@@ -2357,6 +2357,12 @@
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada"
       ],
+      "Organization key must be activated to create invited users": [
+        "La clave de la organización debe activarse para crear usuarios invitados"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "La clave de la organización debe activarse para crear usuarios no privados"
+      ],
       "Passwords do not match": [
         "Las contraseñas no coinciden"
       ],
@@ -3258,6 +3264,9 @@
       "${ n } month": [
         "${ n } mes",
         "${ n } meses"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caracteres"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Acceda a ${ PASS_APP_NAME } de forma segura desde el terminal; ideal para scripts, automatización y flujos de trabajo de desarrollo."
@@ -5845,6 +5854,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Los administradores no pueden acceder a los datos de usuarios privados y no pueden restablecer sus contraseñas."
+      ],
+      "Member activation incomplete": [
+        "La activación del miembro está incompleta."
+      ],
+      "Organization key must be activated to request data access": [
+        "La clave de la organización debe activarse para solicitar acceso a los datos"
+      ],
+      "The user must have an address to request data access": [
+        "El usuario debe tener una dirección para solicitar acceso a los datos"
       ]
     },
     "Validation": {

@@ -2357,6 +2357,12 @@
       "Organization key is not decrypted": [
         "Organisasjonsnøkkel er ikke dekryptert"
       ],
+      "Organization key must be activated to create invited users": [
+        "Organisasjonsnøkkelen må aktiveres for å opprette inviterte brukere"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisasjonsnøkkelen må være aktivert for å opprette ikke-private brukere"
+      ],
       "Passwords do not match": [
         "Passordene samsvarer ikke"
       ],
@@ -2815,6 +2821,10 @@
       "Country code": [
         "Landskode"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Opprett en sikker sky for ${ memberCount } medlem",
+        "Opprett en sikker sky for ${ memberCount } medlemmer"
+      ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kreditt for den ubrukte delen av ditt forrige planabonnement"
       ],
@@ -3254,6 +3264,9 @@
       "${ n } month": [
         "${ n } måned",
         "${ n } måneder"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tegn"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Få tilgang til ${ PASS_APP_NAME } sikkert fra terminalen, ideelt for skripting, automatisering og utviklingsarbeidsflyter."
@@ -3845,6 +3858,9 @@
       "99.95% SLA": [
         "99,95% SLA"
       ],
+      "Access all countries": [
+        "Få tilgang til alle land"
+      ],
       "Ad-blocker and malware protection": [
         "Annonseblokkering og skadevarebeskyttelse"
       ],
@@ -3994,6 +4010,9 @@
       "Multiple admin roles": [
         "Flere administratorroller"
       ],
+      "No streaming support": [
+        "Ingen strømmestøtte"
+      ],
       "Online document editor": [
         "Dokumentredigering på nett"
       ],
@@ -4125,6 +4144,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ubegrenset volum/båndbredde"
+      ],
+      "Unlock streaming": [
+        "Lås opp strømming"
       ],
       "Up to ${ n } user": [
         "Opptil ${ n } bruker",
@@ -4506,6 +4528,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } land",
+        "${ n } land"
+      ],
       "Access advanced VPN features": [
         "Få tilgang til avanserte VPN-funksjoner"
       ],
@@ -5828,6 +5854,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorer har ikke tilgang til dataene til private brukere og kan ikke tilbakestille passordet deres."
+      ],
+      "Member activation incomplete": [
+        "Medlemsaktivering ufullstendig"
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisasjonsnøkkel må være aktivert for å be om datatilgang"
+      ],
+      "The user must have an address to request data access": [
+        "Brukeren må ha en adresse for å be om datatilgang"
       ]
     },
     "Validation": {
