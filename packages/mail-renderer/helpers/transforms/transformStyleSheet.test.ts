@@ -14,6 +14,13 @@ describe('transformStylesheet', () => {
         expect(styleTag?.textContent).toContain('div { position: inherit !important; }');
     });
 
+    it('should replace sticky position with inherit in style tags', () => {
+        element.innerHTML = '<style>div { position: sticky; }</style>';
+        transformStylesheet(element);
+        const styleTag = element.querySelector('style');
+        expect(styleTag?.textContent).toContain('div { position: inherit !important; }');
+    });
+
     it('should not change style content if there is no fixed position', () => {
         element.innerHTML = '<style>div { position: absolute; }</style>';
         transformStylesheet(element);
