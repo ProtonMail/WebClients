@@ -10,9 +10,9 @@ import { uploadManager, useUploadQueueStore } from '@proton/drive/modules/upload
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useDownloadContainsDocumentsModal } from '../../legacy/components/modals/DownloadContainsDocumentsModal';
-import { IssueStatus, useDownloadManagerStore } from '../../legacy/zustand/download/downloadManager.store';
 import { useSignatureIssueModal } from '../../modals/SignatureIssueModal';
 import { DownloadManager } from '../../modules/download/DownloadManager';
+import { IssueStatus, useDownloadManagerStore } from '../../modules/download/downloadManager.store';
 import { isCancellable, isRetryable } from './transferStatus';
 import type { TransferManagerEntry } from './useTransferManagerState';
 
