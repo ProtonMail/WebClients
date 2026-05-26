@@ -8,7 +8,7 @@ import { useApi, useConfig } from '@proton/components';
 import { useDrive } from '@proton/drive';
 import { queryLatestVolumeEvent } from '@proton/shared/lib/api/drive/volume';
 
-import { useFlagsDriveFoundationSearch } from '../../../../flags/useFlagsDriveFoundationSearch';
+import { useFlagsDriveFoundationSearch } from '../../../../modules/featureFlag';
 import { getNotificationsManager } from '../../../notifications';
 import { SearchModule } from '../mainThread/SearchModule';
 import type { PermanentErrorKind } from '../shared/errors';
