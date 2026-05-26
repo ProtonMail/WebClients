@@ -2077,6 +2077,12 @@
       "Organization key is not decrypted": [
         "組織金鑰未解密"
       ],
+      "Organization key must be activated to create invited users": [
+        "需啟用組織金鑰才能建立邀請使用者"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "需啟用組織金鑰才能建立非私人使用者"
+      ],
       "Passwords do not match": [
         "密碼不一致"
       ],
@@ -2433,6 +2439,9 @@
       "Account successfully updated": [
         "帳號已成功更新"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "新增 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
@@ -2477,6 +2486,9 @@
       ],
       "Country code": [
         "國家代碼"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "替成員創建一個安全 ${ memberCount } 雲端"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "您之前訂購授權方案裡未使用部分的餘額"
@@ -3440,6 +3452,9 @@
       "99.95% SLA": [
         "99.95% 服務層級協議"
       ],
+      "Access all countries": [
+        "存取所有國家"
+      ],
       "Ad-blocker and malware protection": [
         "廣告攔截器及惡意軟體防護"
       ],
@@ -3715,6 +3730,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "無限流量/頻寬"
+      ],
+      "Unlock streaming": [
+        "解鎖串流"
       ],
       "Up to ${ n } user": [
         "多達 ${ n } 位使用者"
@@ -4070,6 +4088,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } 個國家"
+      ],
       "Access advanced VPN features": [
         "存取進階 VPN 功能"
       ],
@@ -4428,6 +4449,9 @@
     "Payments.Renewal price dependent on VAT number": {
       "Renewal price is dependent on the billing region and ABN.": [
         "續訂價格取決於計費區域和 EIN。"
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "續訂價格取決於計費區域和商務號碼。"
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "續訂價格取決於計費區域和 EIN。"
