@@ -4,11 +4,11 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { FileNameDisplay } from '@proton/components/index';
 import { MemberRole, type NodeEntity } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import { ContentPreviewMethod, PartialPreview } from '../../modals/preview';
 import { downloadManager } from '../../modules/download/DownloadManager';
 import { getOpenInDocsInfo } from '../../utils/docs/openInDocs';
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { PublicHeader } from './PublicHeader';
 import { usePublicActions } from './actions/usePublicActions';
 import { getPublicLinkClient } from './publicLinkClient';

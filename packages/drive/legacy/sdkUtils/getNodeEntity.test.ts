@@ -1,7 +1,7 @@
-import type { Author, MaybeNode, NodeEntity, Revision } from '@proton/drive';
-import { MemberRole, NodeType, RevisionState } from '@proton/drive';
+import type { Author, MaybeNode, NodeEntity, Revision } from '@protontech/drive-sdk';
+import { MemberRole, NodeType, RevisionState } from '@protontech/drive-sdk';
 
-import { getNodeEntity, isPhotoNode } from './getNodeEntity';
+import { getNodeEntity } from './getNodeEntity';
 
 describe('getNodeEntity', () => {
     const mockAuthor: Author = {
@@ -248,24 +248,6 @@ describe('getNodeEntity', () => {
 
             expect(result.photoAttributes).toBeUndefined();
             expect(result.albumAttributes).toBeUndefined();
-        });
-    });
-
-    describe('isPhotoNode', () => {
-        it('should return true for Photo type nodes', () => {
-            expect(isPhotoNode({ ...mockNodeEntity, type: NodeType.Photo } as NodeEntity)).toBe(true);
-        });
-
-        it('should return false for File type nodes', () => {
-            expect(isPhotoNode({ ...mockNodeEntity, type: NodeType.File } as NodeEntity)).toBe(false);
-        });
-
-        it('should return true for Album type nodes', () => {
-            expect(isPhotoNode({ ...mockNodeEntity, type: NodeType.Album } as NodeEntity)).toBe(true);
-        });
-
-        it('should return false for Folder type nodes', () => {
-            expect(isPhotoNode({ ...mockNodeEntity, type: NodeType.Folder } as NodeEntity)).toBe(false);
         });
     });
 

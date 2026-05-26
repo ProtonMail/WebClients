@@ -1,11 +1,11 @@
 import { MemberRole } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { ComponentTag, EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeDisplaySize } from '../../utils/sdk/getNodeDisplaySize';
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 import { getPublicLinkClient } from './publicLinkClient';
 import { usePublicAuthStore } from './usePublicAuth.store';

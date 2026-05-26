@@ -1,7 +1,7 @@
 import { NodeType, getDrive } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
-import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getDeviceName } from '../../../utils/sdk/getNodeName';
 import { directoryTreeStoreFactory } from '../directoryTreeStoreFactory';
 import { DEVICES_ROOT_ID, SHARED_WITH_ME_ROOT_ID, makeTreeItemId } from '../helpers';
@@ -19,7 +19,7 @@ jest.mock('@proton/drive/internal/BusDriver', () => ({
     getBusDriver: jest.fn(),
 }));
 
-jest.mock('../../../utils/sdk/getNodeEntity');
+jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity');
 jest.mock('../../../utils/sdk/getNodeName');
 
 const mockedGetBusDriver = jest.mocked(getBusDriver);

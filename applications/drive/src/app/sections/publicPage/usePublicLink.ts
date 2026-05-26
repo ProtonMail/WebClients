@@ -12,14 +12,15 @@ import {
     getDrive,
     splitNodeUid,
 } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { uploadManager } from '@proton/drive/modules/upload';
 import metrics from '@proton/metrics';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 
-import { downloadManager } from '../../modules/download/DownloadManager';
 import { getMetricsUserPlan } from '../../legacy/store/_user/getMetricsUserPlan';
+import { downloadManager } from '../../modules/download/DownloadManager';
 import {
     getOpenInDocsInfo,
     openDocsOrSheetsDocument,
@@ -27,7 +28,6 @@ import {
 } from '../../utils/docs/openInDocs';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { is4xx, is5xx } from '../../utils/errorHandling/apiErrors';
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
 import { setPublicLinkClient } from './publicLinkClient';
 import { usePublicAuthStore } from './usePublicAuth.store';

@@ -3,12 +3,12 @@ import { useLocation, useNavigate } from 'react-router-dom-v5-compat';
 
 import type { MaybeNode } from '@proton/drive/index';
 import { NodeType, splitNodeUid } from '@proton/drive/index';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import generateUID from '@proton/utils/generateUID';
 
 import { toLinkURLType } from '../../../legacy/components/sections/helpers';
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { getNodeAncestry } from '../../../utils/sdk/getNodeAncestry';
-import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 
 interface NavigationEvenListener {
     id: string;

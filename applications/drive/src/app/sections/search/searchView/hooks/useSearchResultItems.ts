@@ -3,6 +3,7 @@ import { useCallback, useMemo } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 
 import { NodeType, getDrive, getDrivePerNodeType, splitNodeUid } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
@@ -13,7 +14,6 @@ import { useSelectionStore } from '../../../../modules/selection';
 import type { SortConfig, SortField } from '../../../../modules/sorting/types';
 import { useUserSettings } from '../../../../modules/userSettings';
 import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../../utils/docs/openInDocs';
-import { getNodeEntity } from '../../../../utils/sdk/getNodeEntity';
 import { getRootNode } from '../../../../utils/sdk/mapNodeToLegacyItem';
 import { useSearchViewStore } from '../../searchView/store';
 

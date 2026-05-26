@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { MemberRole, type ProtonDriveClient } from '@proton/drive/index';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
 import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 
 type SelectedItemsConfig = {
     nodeUid: string;
