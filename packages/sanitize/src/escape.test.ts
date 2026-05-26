@@ -6,6 +6,12 @@ describe('Escape', () => {
             expect(escapeForbiddenStyle('position: absolute')).toBe('position: relative');
         });
 
+        it('Should replace fixed and sticky styles by inherit', () => {
+            expect(escapeForbiddenStyle('position: fixed')).toBe('position: inherit');
+            expect(escapeForbiddenStyle('position: sticky')).toBe('position: inherit');
+            expect(escapeForbiddenStyle('position:-webkit-sticky')).toBe('position: inherit');
+        });
+
         it('Should replace percentage height by unset', () => {
             expect(escapeForbiddenStyle('height: 100%; min-height: 30% ; max-height:  50%;')).toBe(
                 'height: unset; min-height: unset ; max-height:  50%;'
