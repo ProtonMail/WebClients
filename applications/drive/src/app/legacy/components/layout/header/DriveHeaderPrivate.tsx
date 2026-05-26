@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { PrivateHeader, UserDropdown, useActiveBreakpoint } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { useFlagsDriveFoundationSearch } from '../../../../flags/useFlagsDriveFoundationSearch';
+import { useFlagsDriveFoundationSearch } from '../../../../modules/featureFlag';
 import { SearchField } from '../../../../sections/search/searchField';
 import isSearchFeatureEnabled from '../../../../utils/isSearchFeatureEnabled';
 import { SearchField as LegacySearchField } from '../search/SearchField';
