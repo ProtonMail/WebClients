@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import { useActions } from '../../../../../legacy/store';
+import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';
 import type { useRenameModalDeprecated } from '../../../modals/RenameModal';
-import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
     link: {

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { ToolbarButton } from '@proton/components';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 
-import { ContextMenuButton } from '../../../legacy/components/sections/ContextMenu';
+import { ContextMenuButton } from '../../../statelessComponents/ContextMenu';
 import { useBookmarksActions } from '../hooks/useBookmarksActions';
 
 interface BaseProps {

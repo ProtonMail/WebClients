@@ -2,8 +2,8 @@ import { MimeIcon, ToolbarButton } from '@proton/components';
 import { getOpenInDocsMimeIconName, getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
-import { ContextMenuButton } from '../../../legacy/components/sections/ContextMenu';
 import { hasFoldersSelected, isMultiSelect } from '../../../legacy/components/sections/ToolbarButtons/utils';
+import { ContextMenuButton } from '../../../statelessComponents/ContextMenu';
 import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../utils/docs/openInDocs';
 import type { ActionButtonProps } from '../../buttons/types';
 

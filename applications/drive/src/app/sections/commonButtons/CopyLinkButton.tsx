@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
 
-import { ContextMenuButton } from '../../legacy/components/sections/ContextMenu';
+import { ContextMenuButton } from '../../statelessComponents/ContextMenu';
 
 interface BaseProps {
     onClick: () => void | Promise<void>;

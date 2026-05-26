@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { Revision } from '@proton/drive';
 
-import { ContextMenuButton } from '../../../../legacy/components/sections/ContextMenu';
+import { ContextMenuButton } from '../../../../statelessComponents/ContextMenu';
 import type { RevisionsProviderState } from '../../useRevisionsModalState';
 
 interface Props {
