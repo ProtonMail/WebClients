@@ -9,6 +9,7 @@
 		border-width: rem(3) 0;
 		padding-block: rem(10);
 		padding-inline: rem(14);
+		padding-inline-start: rem(16);
 
 		&:focus-visible {
 			outline: $focus-ring-size solid var(--cat-border);
