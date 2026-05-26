@@ -3184,6 +3184,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "${ connectedAddressText }로 보내진 이메일은 이제 ${ MAIL_APP_NAME }에서 보여집니다."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "이제 이 주소를 이용해 ${ BRAND_NAME }로부터 이메일을 보낼 수 있습니다."
       ]
     },
     "description": {
@@ -4046,6 +4052,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom 연결이 만료되었습니다. 계속하려면 재연결하십시오."
+      ],
+      "Organization key must be activated to create invited users": [
+        "초대한 사용자를 생성하려면 조직 키를 활성화해야만 합니다."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "개인이 아닌 사용자를 생성하려면 조직 키는 활성화 상태여야 합니다."
       ]
     },
     "error": {
@@ -12183,6 +12195,9 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "You are all set": [
+        "모든 준비가 완료되었어요"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12312,6 +12327,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "관리자가 비공개 사용자의 데이터 접근이 불가하며 비밀번호 또한 재설정이 불가합니다."
+      ],
+      "Member activation incomplete": [
+        "구성원 활성화 미완료"
+      ],
+      "Organization key must be activated to request data access": [
+        "데이터 접근을 요청하려면 조직 키가 반드시 활성화되어야 합니다."
+      ],
+      "The user must have an address to request data access": [
+        "데이터 접근을 요청하려면 사용자가 주소를 소유해야 합니다."
       ]
     },
     "Validation": {

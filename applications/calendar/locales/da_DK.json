@@ -1034,6 +1034,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
+      ],
+      "Continue with Free": [
+        "Fortsæt med Free"
       ]
     },
     "action": {
@@ -3215,6 +3218,33 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
+      ],
+      "Available storage: ${ storageText }": [
+        "Tilgængelig lagerplads: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-mails der er sendt til ${ connectedAddressText } vil nu blive vist i ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Nok plads til flere år værd af e-mails, vedhæftninger og mere."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Lås op for 15 GB lagerplads til kun ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Vi sætter importer på pause ved 80% lagerplads for at reservere plads til nye beskeder."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Vi er begyndt at importere din e-mails fra Gmail. Vi giver dig besked når det er færdigt."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Du kan nu sende e-mails fra ${ BRAND_NAME } med denne adresse."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrænset lagerplads, så vi importerer kun ${ newUserStorageText } af dine seneste Gmail-beskeder"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrænset lagerplads, så vi importerer kun dine seneste Gmail-beskeder."
       ]
     },
     "description": {
@@ -4092,6 +4122,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Din Zoom-forbindelse er udløbet. Tilslut igen for at fortsætte."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisationsnøglen skal aktiveres for at oprette inviterede brugere"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisationsnøgle skal være aktiveret for at oprette ikke private brugere"
       ]
     },
     "error": {
@@ -4544,6 +4580,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Ubegrænsede hide-my-email-aliasser"
+      ],
+      "10+ premium features": [
+        "10+ premium-funktioner"
+      ],
+      "Custom email domain": [
+        "Brugerdefineret e-maildomæne"
+      ],
+      "Email addresses": [
+        "E-mailadresser"
+      ],
+      "Storage": [
+        "Lagerplads"
       ]
     },
     "Features": {
@@ -6594,6 +6642,18 @@
       "Create a secure cloud for ${ memberCount } member": [
         "Opret en sikker sky til ${ memberCount } medlem",
         "Opret en sikker sky til ${ memberCount } medlemmer"
+      ],
+      "Included": [
+        "Inkluderet"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Stol på \"${ activeSignerText }\"-nøglen for at verificere nye beskeder fra denne kontakt."
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Opgrader når som helst for at overføre resten"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Opgrader eller frigør lagerplads når som helst for at overføre resten"
       ]
     },
     "info": {
@@ -6717,6 +6777,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktiv signerende part"
+      ],
+      "Fallback": [
+        "Reserve"
       ]
     },
     "Keyboard shortcut name": {
@@ -7330,6 +7396,9 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tegn"
       ]
     },
     "label": {
@@ -9765,6 +9834,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi anbefaler, at du ikke længere har tillid til denne nøgle."
+      ],
+      "This contact currently signs messages with this key": [
+        "På nuværende tidspunkt signerer denne kontakt beskeder med denne nøgle"
+      ],
+      "This key is used for message verification": [
+        "Denne nøgle bruges til at verificere beskeder"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Denne nøgle bruges til at kryptere beskeder til denne kontakt på ældre apps"
       ]
     },
     "PGP key warning": {
@@ -12476,6 +12554,15 @@
       ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
+      ],
+      "Continue with free storage": [
+        "Fortsæt med gratis lagerplads"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Få mere lagerplads med ${ MAIL_APP_NAME } Plus"
+      ],
+      "You are all set": [
+        "Så er du klar"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12605,6 +12692,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorer kan ikke tilgå private brugeres data eller nulstille deres adgangskode."
+      ],
+      "Member activation incomplete": [
+        "Medlemsaktivering ufuldstændig"
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisationsnøglen skal aktiveres for at anmode om dataadgang"
+      ],
+      "The user must have an address to request data access": [
+        "Brugeren skal have en adresse for at anmode om dataadgang"
       ]
     },
     "Validation": {

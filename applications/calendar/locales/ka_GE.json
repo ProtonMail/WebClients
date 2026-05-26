@@ -3978,6 +3978,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "თქვენი Zoom-ის კავშირის ვადა ამოიწურა. გასაგრძელებლად, დაუკავშირდით თავიდან."
+      ],
+      "Organization key must be activated to create invited users": [
+        "მოწვეული მომხმარებლების შესაქმნელად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "არაკონფიდენციალური მომხმარებლების შესაქმნელად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
       ]
     },
     "error": {
@@ -12031,6 +12037,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "ადმინებს კონფიდენციალური მომხმარებლების მონაცემებთაან წვდომა არ აქვთ და ვერც მათ პაროლს ჩამოყრიან."
+      ],
+      "Member activation incomplete": [
+        "წევრის გააქტიურება დასრულებული არაა"
+      ],
+      "Organization key must be activated to request data access": [
+        "მონაცემებთან წვდომის გამოსათხოვად ორგანიზაციის გასაღები აქტიური უნდა იყოს"
+      ],
+      "The user must have an address to request data access": [
+        "მომხმარებელს მონაცემებზე წვდომის მოსათხოვად მისამართი უნდა გააჩნდეს"
       ]
     },
     "Validation": {

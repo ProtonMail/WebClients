@@ -2947,6 +2947,12 @@
       ],
       "Your import will not be processed.": [
         "आपका आयात संसाधित नहीं किया जाएगा।"
+      ],
+      "Organization key must be activated to create invited users": [
+        "संगठन कुंजी को सक्रिय किया जाना चाहिए ताकि निमंत्रित उपयोगकर्ता बनाए जा सकें"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "संगठन कुंजी को सक्रिय करना आवश्यक है ताकि गैर-निजी उपयोगकर्ता बनाए जा सकें"
       ]
     },
     "Error accepting calendar invitation": {
@@ -8765,6 +8771,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "एडमिन निजी उपयोगकर्ताओं के डाटा तक पहुंच नहीं सकते और उनके पासवर्ड रीसेट नहीं कर सकते।"
+      ],
+      "Member activation incomplete": [
+        "सदस्य सक्रियण अधूरा है"
+      ],
+      "Organization key must be activated to request data access": [
+        "डाटा एक्सेस का अनुरोध करने के लिए संगठन कुंजी को सक्रिय करना आवश्यक है"
+      ],
+      "The user must have an address to request data access": [
+        "डाटा एक्सेस का अनुरोध करने के लिए उपयोगकर्ता के पास एक पता होना चाहिए"
       ]
     },
     "Validation": {

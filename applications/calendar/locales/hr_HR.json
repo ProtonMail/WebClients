@@ -2659,6 +2659,12 @@
       ],
       "Your import will not be processed.": [
         "Vaš uvoz nije moguće obraditi."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Ključ organizacije mora biti aktiviran kako bi se kreirali pozvani korisnici"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Ključ organizacije mora biti aktivan kako bi se kreirali neprivatni korisnici"
       ]
     },
     "Error accepting calendar invitation": {
@@ -7675,6 +7681,11 @@
     "Zoom Meeting": {
       "Meeting ID:": [
         "ID sastanka:"
+      ]
+    },
+    "unprivatization": {
+      "The user must have an address to request data access": [
+        "Korisnik mora imati adresu za traženje pristupa podacima"
       ]
     }
   }
