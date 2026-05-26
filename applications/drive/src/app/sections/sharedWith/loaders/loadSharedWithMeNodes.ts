@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
 import { getDrive, getDriveForPhotos, splitNodeUid } from '@proton/drive/index';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import { driveMetrics } from '../../../modules/metrics';
 import { getNotificationsManager } from '../../../modules/notifications';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
-import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
 import { defaultSharedOnCellConfig } from '../driveExplorerCells/SharedOnCell';
 import { ItemType, useSharedWithMeStore } from '../useSharedWithMe.store';

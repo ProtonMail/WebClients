@@ -4,10 +4,10 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { MemberRole } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeDisplaySize } from '../../utils/sdk/getNodeDisplaySize';
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 import { getPublicLinkClient } from './publicLinkClient';
 import { usePublicAuthStore } from './usePublicAuth.store';

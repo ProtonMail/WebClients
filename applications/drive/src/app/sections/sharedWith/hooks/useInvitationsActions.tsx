@@ -6,9 +6,9 @@ import { useNotifications } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components';
 import { NodeType, getDrivePerNodeType } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
-import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { useSharedWithMeStore } from '../useSharedWithMe.store';
 
 export const useInvitationsActions = () => {

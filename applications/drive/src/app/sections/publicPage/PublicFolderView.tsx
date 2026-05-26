@@ -5,6 +5,7 @@ import { useShallow } from 'zustand/react/shallow';
 import { useActiveBreakpoint } from '@proton/components';
 import type { NodeEntity, ProtonDrivePublicLinkClient } from '@proton/drive';
 import { MemberRole, NodeType } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import { uploadManager } from '@proton/drive/modules/upload';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
@@ -28,7 +29,6 @@ import { UploadDragDrop } from '../../statelessComponents/UploadDragDrop/UploadD
 import { getOpenInDocsInfo } from '../../utils/docs/openInDocs';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getPublicFolderCells } from './PublicFolderDriveExplorerCells';
 import { PublicFolderEmptyView } from './PublicFolderEmptyView';
 import { PublicFolderItemContextMenu } from './PublicFolderItemContextMenu';

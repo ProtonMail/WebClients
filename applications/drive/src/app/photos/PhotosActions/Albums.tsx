@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { type NodeEntity, PhotoTag, getDriveForPhotos } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import { getNotificationsManager } from '../../modules/notifications';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getEllipsedName } from '../../utils/intl/getEllipsedName';
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { usePhotosStore } from '../usePhotos.store';
 
 export const createAlbum = async (name: string): Promise<NodeEntity | undefined> => {
