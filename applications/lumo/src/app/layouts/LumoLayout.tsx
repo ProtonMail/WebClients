@@ -1,8 +1,11 @@
+import { useEffect } from 'react';
+
 import { clsx } from 'clsx';
 
 import { Header } from '../components/Conversation/Header';
 import { RightPanelSlot, RightPanelSlotWithHeader } from '../components/RightPanelSlot';
 import { useDragArea } from '../providers/DragAreaProvider';
+import { useRightPanel } from '../providers/RightPanelProvider';
 
 export const DragAreaContainer = ({ children }: { children: React.ReactNode }) => {
     const { onDrop, onDragLeave, onDragEnter, onDragOver } = useDragArea();
@@ -47,6 +50,15 @@ export const LumoLayoutWithDrawer = ({
     showNewChatButton = false,
     solidBackground = true,
 }: LumoLayoutWithDrawerProps) => {
+    const { close, isOpen } = useRightPanel();
+
+    // Automatically close panel if this layout doesn't support panels
+    useEffect(() => {
+        // If drawer toggle is disabled AND there's no drawer content, close any open panel
+        if (withoutDrawerToggle && !drawerContentComponent && isOpen) {
+            close();
+        }
+    }, [withoutDrawerToggle, drawerContentComponent, close, isOpen]);
     return (
         <div
             className={clsx(
