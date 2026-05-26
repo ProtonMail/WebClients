@@ -12,7 +12,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useActiveShare } from '../../../legacy/hooks/drive/useActiveShare';
 import { useFileUploadInput, useFolderUploadInput } from '../../../legacy/store';
-import { useFreeUploadStore } from '../../../legacy/zustand/freeUpload/freeUpload.store';
+import { useFreeUploadStore } from '../../../modules/freeUpload/internal/freeUpload.store';
 
 export function DriveEmptyViewFreeUpload() {
     const { viewportWidth } = useActiveBreakpoint();

@@ -9,7 +9,6 @@ import type { ScanResultItem } from '@proton/shared/lib/interfaces/drive/file';
 import { TransferState } from '../../../../legacy/components/TransferManager/transfer';
 import { hasValidAnonymousSignature } from '../../../../legacy/components/hasValidAnonymousSignature';
 import { useDownloadIsTooBigModal } from '../../../../legacy/components/modals/useDownloadIsTooBigModal';
-import { usePublicShareStore } from '../../../../legacy/zustand/public/public-share.store';
 import { DownloadManager } from '../../../../modules/download/DownloadManager';
 import { errorToString, logError, sendErrorReport } from '../../../../utils/errorHandling';
 import { bufferToStream } from '../../../../utils/stream';
@@ -60,8 +59,6 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
     );
     const { handleContainsDocument, containsDocumentModal } = useDownloadContainsDocument(control.cancelDownloads);
     const { handleDecryptionIssue } = useDownloadDecryptionIssue();
-
-    const { viewOnly } = usePublicShareStore((state) => ({ viewOnly: state.viewOnly }));
 
     const { handleScanIssue } = useDownloadScanIssue(queue.updateWithData, control.cancelDownloads);
 
@@ -169,7 +166,6 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
                     // Disable signature error if anonymous view of the public page
                     if (
                         !user ||
-                        viewOnly ||
                         (link.isAnonymous &&
                             hasValidAnonymousSignature(signatureIssues, {
                                 mimeType: link.mimeType,

@@ -4,9 +4,9 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { NodeType } from '@proton/drive/index';
 
-import { IssueStatus, useDownloadManagerStore } from '../../../legacy/zustand/download/downloadManager.store';
 import type { useSignatureIssueModal } from '../../../modals/SignatureIssueModal';
 import { DownloadManager } from '../../../modules/download/DownloadManager';
+import { IssueStatus, useDownloadManagerStore } from '../../../modules/download/downloadManager.store';
 import type { TransferManagerEntry } from '../useTransferManagerState';
 
 type Props = {

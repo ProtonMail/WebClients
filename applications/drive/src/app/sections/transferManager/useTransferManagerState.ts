@@ -9,7 +9,7 @@ import {
     BaseTransferStatus,
     type DownloadItem,
     useDownloadManagerStore,
-} from '../../legacy/zustand/download/downloadManager.store';
+} from '../../modules/download/downloadManager.store';
 
 type TransferType = 'empty' | 'downloading' | 'uploading' | 'both';
 

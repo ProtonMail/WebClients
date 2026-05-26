@@ -2,17 +2,14 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/components';
 import { queryFileRevision, queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
-import { querySharedURLFileRevision, querySharedURLSecurity } from '@proton/shared/lib/api/drive/sharing';
 import type {
     DriveFileBlock,
     DriveFileRevisionResult,
     DriveFileRevisionThumbnailResult,
 } from '@proton/shared/lib/interfaces/drive/file';
-import type { SharedFileScan } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { TransferState } from '../../../legacy/components/TransferManager/transfer';
 import { getCacheKey, useThumbnailCacheStore } from '../../../legacy/zustand/download/thumbnail.store';
-import { usePublicShareStore } from '../../../legacy/zustand/public/public-share.store';
 import { logError } from '../../../utils/errorHandling';
 import { streamToBuffer } from '../../../utils/stream';
 import { useDebouncedRequest } from '../_api';
@@ -72,11 +69,6 @@ export default function useDownload({ customDebouncedRequest, loadChildren, getC
     const { report } = useDownloadMetrics('preview');
     const { handleDecryptionIssue } = useDownloadDecryptionIssue();
     const { getThumbnail, addThumbnail } = useThumbnailCacheStore();
-    const { publicShare, viewOnly } = usePublicShareStore((state) => ({
-        publicShare: state.publicShare,
-        viewOnly: state.viewOnly,
-    }));
-    const isPublicContext = !!publicShare;
 
     const api = useApi();
 
@@ -95,29 +87,19 @@ export default function useDownload({ customDebouncedRequest, loadChildren, getC
         pagination: Pagination,
         revisionId?: string
     ): Promise<{ blocks: DriveFileBlock[]; thumbnailHashes: string[]; manifestSignature: string; xAttr: string }> => {
-        let Revision: DriveFileRevisionResult['Revision'];
-        if (isPublicContext) {
-            Revision = (
-                await debouncedRequest<DriveFileRevisionResult>(
-                    querySharedURLFileRevision(shareId, linkId, pagination),
-                    abortSignal
-                )
-            ).Revision;
-        } else {
-            const link = await getLink(abortSignal, shareId, linkId);
+        const link = await getLink(abortSignal, shareId, linkId);
 
-            revisionId ||= link.activeRevision?.id;
-            if (!revisionId) {
-                throw new Error(`Invalid link metadata, expected file`);
-            }
-
-            Revision = (
-                await debouncedRequest<DriveFileRevisionResult>(
-                    queryFileRevision(shareId, linkId, revisionId, pagination),
-                    abortSignal
-                )
-            ).Revision;
+        revisionId ||= link.activeRevision?.id;
+        if (!revisionId) {
+            throw new Error(`Invalid link metadata, expected file`);
         }
+        const Revision = (
+            await debouncedRequest<DriveFileRevisionResult>(
+                queryFileRevision(shareId, linkId, revisionId, pagination),
+                abortSignal
+            )
+        ).Revision;
+
         return {
             blocks: Revision.Blocks,
             // We sort hashes to have the Type 1 always at first place. This is necessary for signature verification.
@@ -138,16 +120,6 @@ export default function useDownload({ customDebouncedRequest, loadChildren, getC
             getLinkSessionKey(abortSignal, shareId, linkId),
         ]);
 
-        // If we are in viewOnly mode on public page we ignore signature as we can't check
-        if (viewOnly) {
-            return [
-                {
-                    privateKey: privateKey,
-                    sessionKeys: sessionKey,
-                },
-            ];
-        }
-
         // Getting keys above might find signature issue. Lets get fresh link
         // after that (not in parallel) to have fresh signature issues on it.
         const link = await getLink(abortSignal, shareId, linkId);
@@ -157,9 +129,7 @@ export default function useDownload({ customDebouncedRequest, loadChildren, getC
         const revisionSignatureAddress =
             revisionId && revisionId !== link.activeRevision?.id
                 ? await debouncedRequest<DriveFileRevisionResult>(
-                      isPublicContext
-                          ? querySharedURLFileRevision(shareId, linkId)
-                          : queryFileRevision(shareId, linkId, revisionId),
+                      queryFileRevision(shareId, linkId, revisionId),
                       abortSignal
                   ).then(({ Revision }) => Revision.SignatureAddress)
                 : link.activeRevision?.signatureEmail;
@@ -204,19 +174,6 @@ export default function useDownload({ customDebouncedRequest, loadChildren, getC
         };
     };
 
-    const scanFilesHash = async (
-        abortSignal: AbortSignal,
-        { hashes }: { hashes: string[] }
-    ): Promise<SharedFileScan | undefined> => {
-        const token = publicShare?.sharedUrlInfo.token;
-        if (!token) {
-            return undefined;
-        }
-        const checkResult = await debouncedRequest<SharedFileScan>(querySharedURLSecurity(token, hashes), abortSignal);
-
-        return checkResult;
-    };
-
     const initDownload = (
         name: string,
         list: LinkDownload[],
@@ -236,7 +193,6 @@ export default function useDownload({ customDebouncedRequest, loadChildren, getC
                     await setSignatureIssues(abortSignal, link.shareId, link.linkId, signatureIssues);
                     return eventCallbacks.onSignatureIssue?.(abortSignal, link, signatureIssues);
                 },
-                scanFilesHash: (abortSignal, hashes) => scanFilesHash(abortSignal, { hashes }),
             },
             log,
             api,
@@ -267,7 +223,6 @@ export default function useDownload({ customDebouncedRequest, loadChildren, getC
                 onFinish: () => {
                     report(link.shareId, TransferState.Done, link.size);
                 },
-                scanFilesHash: (abortSignal, hashes) => scanFilesHash(abortSignal, { hashes }),
             },
             api
         );

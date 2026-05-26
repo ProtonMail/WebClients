@@ -1,6 +1,6 @@
 import type { NodeEntity } from '@proton/drive';
 
-import { IssueStatus } from '../../../legacy/zustand/download/downloadManager.store';
+import { IssueStatus } from '../downloadManager.store';
 import {
     addAndWaitForManifestIssueDecision,
     addAndWaitForMetadataIssueDecision,
