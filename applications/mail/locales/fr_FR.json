@@ -313,6 +313,9 @@
       "Continue with categories": [
         "Continuer avec les catégories"
       ],
+      "Continue with Free": [
+        "Continuer avec Free"
+      ],
       "Continue with Google": [
         "Continuer avec Google"
       ],
@@ -1441,6 +1444,9 @@
       "Start setup": [
         "Démarrer la configuration"
       ],
+      "Start testing": [
+        "Commencer à tester"
+      ],
       "Stay": [
         "Rester"
       ],
@@ -1514,7 +1520,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -4073,6 +4080,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Triez automatiquement vos messages entrants avant qu'ils n'arrivent dans votre boite de réception."
       ],
+      "Available storage: ${ storageText }": [
+        "Espace de stockage disponible : ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Empêchez Google de vous profiler. Gmail ne peut pas voir ce que vous faites dans ${ MAIL_APP_NAME }."
       ],
@@ -4112,6 +4122,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Chiffrement et importation des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "Assez d'espace pour stocker des années d'e-mails, de pièces jointes et bien plus encore."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Assurez un accès sécurisé aux données de l’organisation, même si votre équipe est à distance ou utilise le wifi public."
       ],
@@ -4133,8 +4146,14 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Aidez votre équipe à stocker en toute sécurité les mots de passe relatifs aux informations sensibles de l’entreprise et des clients."
       ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Si vous trouvez un e-mail dans la mauvaise catégorie, vous pouvez simplement le déplacer vers la bonne."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Il semble que la liste de contacts que vous importez contienne des groupes. Nous vous invitons à vérifier comment ces groupes doivent être importés."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Le système est encore en phase d'apprentissage et nous avons besoin de votre aide pour améliorer la catégorisation."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Vous permet d’ajouter instantanément des liens de réunion aux invitations de vos événements."
@@ -4216,6 +4235,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Activez la protection contre le suivi dans les messages pour empêcher les annonceurs et toute autre personne de suivre votre localisation et vos activités en ligne."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Bénéficiez de 15 Go de stockage pour seulement ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Passez à ${ planName } pour connecter jusqu'à ${ MAX_SYNC_PAID_USER } comptes."
       ],
@@ -4237,11 +4259,14 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Nous n'avons trouvé aucun traqueur connu ou URL de suivi dans ce message."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Nous suspendrons les importations lorsque le taux de remplissage atteindra 80 % afin de réserver de l'espace pour les nouveaux messages."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Nous apporterons vos anciens messages et connecterons votre Gmail à ${ MAIL_APP_NAME } afin que les nouveaux messages apparaissent automatiquement"
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Nous avons commencé à importer vos e-mails des 180 derniers jours depuis Gmail. Nous vous préviendrons lorsque l'opération sera terminée."
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Nous avons commencé à importer vos messages depuis Gmail. Nous vous préviendrons lorsque l'opération sera terminée."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Nous regrettons de vous voir partir. Si vous avez un moment, nous aimerions beaucoup savoir pourquoi vous souhaitez résilier votre abonnement. Vos commentaires nous aident à améliorer ${ BRAND_NAME } pour le bénéfice de tous."
@@ -4291,6 +4316,15 @@
       "Your account and data recovery methods are set.": [
         "Vos méthodes de récupération de compte et de données sont définies."
       ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "Vos corrections permettront de façonner l'expérience par défaut pour tous. Dès le lancement, le système mémorisera également vos préférences."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Votre compte ${ MAIL_APP_NAME } gratuit dispose d'un espace de stockage limité, nous n'importerons donc que ${ newUserStorageText } de vos messages Gmail les plus récents."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Votre compte gratuit sur ${ MAIL_APP_NAME } dispose d'un espace de stockage limité, nous n'importerons donc que vos e-mails Gmail les plus récents."
+      ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Votre abonnement prend en charge ${ MAX_SYNC_FREE_USER } adresse Gmail.",
         "Votre abonnement prend en charge ${ MAX_SYNC_FREE_USER } adresses Gmail."
@@ -4298,6 +4332,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresse Gmail",
         "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresses Gmail"
+      ],
+      "You’re among the first to try email categories.": [
+        "Vous faites partie des premiers à essayer les catégories de messages."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
@@ -4921,6 +4958,12 @@
       ],
       "Organization key is not decrypted": [
         "La clé de l'organisation n'est pas déchiffrée."
+      ],
+      "Organization key must be activated to create invited users": [
+        "La clé de l'organisation doit être activée pour créer des utilisateurs invités."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "La clé de l'organisation doit être activée pour créer des utilisateurs non privés."
       ],
       "Passphrase unavailable": [
         "La phrase secrète n'est pas disponible"
@@ -5681,11 +5724,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "Plus de 10 fonctionnalités premium"
+      ],
+      "Custom email domain": [
+        "Domaine de messagerie personnalisé"
+      ],
+      "Email addresses": [
+        "Adresses e-mail"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Stockage cloud chiffré pour vos fichiers, photos et documents"
       ],
       "More premium features": [
         " Fonctionnalités premium en plus"
+      ],
+      "Storage": [
+        "Espace de stockage"
       ],
       "Unlimited hide-my-email aliases": [
         "Nombre illimité d'alias « hide-my-email »"
@@ -7575,6 +7630,9 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Ajoutez votre prompt et la réponse pour nous aider à améliorer la précision."
       ],
+      "Included": [
+        "Inclus"
+      ],
       "Included for free with your plan": [
         "Inclus gratuitement dans votre abonnement"
       ],
@@ -7603,8 +7661,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8554,6 +8611,9 @@
       "Trash existing messages": [
         "Mettre les messages existants à la Corbeille"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Faire confiance à la clé « ${ activeSignerText } » pour vérifier les nouveaux messages provenant de ce contact."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Testez les nouveaux produits, mises à jour et fonctionnalités de ${ BRAND_NAME } avant qu'ils ne soient accessibles au public. Cela rechargera l'application."
       ],
@@ -8587,8 +8647,14 @@
       "Updating message content search...": [
         "Mise à jour de la recherche dans le contenu des messages en cours"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Changer d'abonnement à tout moment pour transférer le reste"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Changer d'abonnement ou libérer de l'espace à tout moment pour transférer le reste"
       ],
       "Upgrade to ${ plan } to unlock": [
         "Passez à ${ plan } pour déverrouiller."
@@ -9091,11 +9157,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Signataire actif"
+      ],
       "Compromised": [
         "Compromise"
       ],
       "Expired": [
         "Expirée"
+      ],
+      "Fallback": [
+        "Solution de secours"
       ],
       "KOO": [
         "KOO"
@@ -9348,6 +9420,9 @@
       "${ n } month": [
         "${ n } mois",
         "${ n } mois"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caractères"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible, nous vous invitons à vérifier plus tard)"
@@ -12674,8 +12749,17 @@
       "External key automatically fetched via WKD.": [
         "La clé externe est récupérée automatiquement via WKD."
       ],
+      "This contact currently signs messages with this key": [
+        "Ce contact signe actuellement les messages avec cette clé."
+      ],
+      "This key is used for message verification": [
+        "Cette clé est utilisée pour la vérification des messages."
+      ],
       "This key is used to encrypt messages to this contact": [
         "Cette clé permet de chiffrer les messages de ce contact."
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Cette clé permet de chiffrer les messages de ce contact sur les applications plus anciennes."
       ],
       "We recommend that you \"untrust\" this key.": [
         "Nous vous recommandons de ne plus faire confiance à cette clé."
@@ -15229,6 +15313,9 @@
       "Contacts": [
         "Contacts"
       ],
+      "Continue with free storage": [
+        "Continuer avec l'espace de stockage gratuit"
+      ],
       "Continue with partial import?": [
         "Continuer l'importation partielle ?"
       ],
@@ -15351,6 +15438,9 @@
       "Download the app": [
         "Télécharger l'application"
       ],
+      "Early access to email categories": [
+        "Accès en avant-première aux catégories de messages."
+      ],
       "Edit billing address": [
         "Modifier l'adresse de facturation"
       ],
@@ -15434,6 +15524,9 @@
       ],
       "Get more from your VPN": [
         "Tirez le meilleur parti de votre VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Obtenez plus d'espace de stockage avec ${ MAIL_APP_NAME } Plus"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Télécharger les applications ${ appName[APP_NAME] }"
@@ -16218,6 +16311,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés et ne peuvent pas réinitialiser leur mot de passe."
+      ],
+      "Member activation incomplete": [
+        "L'activation du membre est incomplète."
+      ],
+      "Organization key must be activated to request data access": [
+        "La clé de l'organisation doit être activée pour demander l'accès aux données."
+      ],
+      "The user must have an address to request data access": [
+        "L'utilisateur doit disposer d'une adresse pour demander l'accès aux données."
       ]
     },
     "Update font modal": {
