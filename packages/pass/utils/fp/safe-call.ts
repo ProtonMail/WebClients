@@ -9,10 +9,13 @@ export const safeCall =
     };
 
 export const safeAsyncCall =
-    <T extends (...args: any[]) => Promise<any>>(fn?: T) =>
-    async (...args: Parameters<T>): Promise<Maybe<Awaited<ReturnType<T>>>> => {
+    <T extends (...args: any[]) => Promise<any>, R = undefined>(fn?: T, fallback?: R) =>
+    async (...args: Parameters<T>): Promise<Awaited<ReturnType<T>> | R> => {
         try {
+            if (!fn) return fallback as R;
             const res = await fn?.(...args);
             return res;
-        } catch {}
+        } catch {
+            return fallback as R;
+        }
     };
