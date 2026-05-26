@@ -160,6 +160,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ariakit/components@npm:0.1.1":
+  version: 0.1.1
+  resolution: "@ariakit/components@npm:0.1.1"
+  dependencies:
+    "@ariakit/store": "npm:0.1.1"
+    "@ariakit/utils": "npm:0.1.1"
+  checksum: 10/0d5c5c49624ab8ea9a117fe3796907c69ed818ca2e60b8eab0e32fc08a94a2fad6a7da39a17b1a0053bd13dca2f323d2091d6893fb5d5cf043b699603bd1cfcb
+  languageName: node
+  linkType: hard
+
 "@ariakit/core@npm:0.4.20":
   version: 0.4.20
   resolution: "@ariakit/core@npm:0.4.20"
@@ -167,7 +177,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ariakit/react-core@npm:0.4.26, @ariakit/react-core@npm:^0.4.26":
+"@ariakit/react-components@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@ariakit/react-components@npm:0.1.1"
+  dependencies:
+    "@ariakit/components": "npm:0.1.1"
+    "@ariakit/react-store": "npm:0.1.1"
+    "@ariakit/react-utils": "npm:0.1.1"
+    "@ariakit/store": "npm:0.1.1"
+    "@ariakit/utils": "npm:0.1.1"
+    "@floating-ui/dom": "npm:^1.0.0"
+  peerDependencies:
+    react: ^17.0.0 || ^18.0.0 || ^19.0.0
+    react-dom: ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: 10/6961b9ac251802114c495c3045ba84c3f5a4f0710daabbb0fbdb1ae20680d0b2890c170eb8a83e117ab8bc70a657753bf3b26179ccfccf8b1382af3451d3192e
+  languageName: node
+  linkType: hard
+
+"@ariakit/react-core@npm:0.4.26":
   version: 0.4.26
   resolution: "@ariakit/react-core@npm:0.4.26"
   dependencies:
@@ -181,6 +208,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ariakit/react-store@npm:0.1.1":
+  version: 0.1.1
+  resolution: "@ariakit/react-store@npm:0.1.1"
+  dependencies:
+    "@ariakit/react-utils": "npm:0.1.1"
+    "@ariakit/store": "npm:0.1.1"
+    "@ariakit/utils": "npm:0.1.1"
+    use-sync-external-store: "npm:^1.6.0"
+  peerDependencies:
+    react: ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: 10/fa0bc22025b5a2a0824430cd1daa7ea7601e9064f140e73679562da6913442c7df5a748b693fe421323fb4557fe11f2ce7103fab30208750e8d97e6c3ea966b8
+  languageName: node
+  linkType: hard
+
+"@ariakit/react-utils@npm:0.1.1":
+  version: 0.1.1
+  resolution: "@ariakit/react-utils@npm:0.1.1"
+  dependencies:
+    "@ariakit/store": "npm:0.1.1"
+    "@ariakit/utils": "npm:0.1.1"
+  peerDependencies:
+    react: ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: 10/9005ef23f7fa3b9e302b9df5efcbc83c582e684e069f727dbef3a46a4a06f38252f217a2280d9768bb4c2068b5a05854f91d309a8755d70ed3898aceafed155e
+  languageName: node
+  linkType: hard
+
 "@ariakit/react@npm:^0.4.26":
   version: 0.4.26
   resolution: "@ariakit/react@npm:0.4.26"
@@ -190,6 +243,22 @@ __metadata:
     react: ^17.0.0 || ^18.0.0 || ^19.0.0
     react-dom: ^17.0.0 || ^18.0.0 || ^19.0.0
   checksum: 10/55d27f349287aaa0484507c1d953e8c22cd13eb9f88c6d26ae196fe8e8ef4309c4bc2ea5f7af70e02fabf5c220b6542562bf4e5b1b397d7a6f7058a75f5a05ab
+  languageName: node
+  linkType: hard
+
+"@ariakit/store@npm:0.1.1":
+  version: 0.1.1
+  resolution: "@ariakit/store@npm:0.1.1"
+  dependencies:
+    "@ariakit/utils": "npm:0.1.1"
+  checksum: 10/312729b4e013a210de56c35875504e630b26bd1632928c952dd55848ae55b581d5722a661de876fb2ac0a1c2e2169ccc9ff9813718c2c50cf638a29d383120c9
+  languageName: node
+  linkType: hard
+
+"@ariakit/utils@npm:0.1.1":
+  version: 0.1.1
+  resolution: "@ariakit/utils@npm:0.1.1"
+  checksum: 10/a43540c97e7db083b432f21048f76a349e48ab0a8dc653a2465fd697353f9b208fda33e98311c5aaee322d78d66d03454d230eacd17d643bd57bde9221c9186f
   languageName: node
   linkType: hard
 
@@ -41632,7 +41701,7 @@ __metadata:
   resolution: "proton-docs-editor@workspace:applications/docs-editor"
   dependencies:
     "@ariakit/react": "npm:^0.4.26"
-    "@ariakit/react-core": "npm:^0.4.26"
+    "@ariakit/react-components": "npm:^0.1.1"
     "@babel/preset-typescript": "npm:^7.28.5"
     "@dnd-kit/abstract": "npm:^0.4.0"
     "@dnd-kit/collision": "npm:^0.4.0"
