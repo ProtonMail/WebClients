@@ -38,11 +38,23 @@
       "Delete": [
         "Supprimer"
       ],
+      "Disable": [
+        "Désactiver"
+      ],
+      "Disable Hardware Acceleration": [
+        "Désactiver l'accélération matérielle"
+      ],
+      "Enable": [
+        "Activer"
+      ],
       "Enable diagnostic logs": [
         "Activer les journaux de diagnostic"
       ],
       "Enable diagnostic logs from the Chromium engine.": [
         "Activer les journaux de diagnostic du moteur Chromium."
+      ],
+      "Enable Hardware Acceleration": [
+        "Activer l'accélération matérielle"
       ],
       "Force Reload": [
         "Forcer le rechargement"
@@ -122,6 +134,12 @@
       "Uninstall ${ MAIL_APP_NAME }": [
         "Désinstaller ${ MAIL_APP_NAME }"
       ],
+      "When hardware acceleration is disabled, the app falls back to software rendering. This can cause choppy animations, dropped frames, slower video playback, higher CPU usage, and reduced graphics performance.": [
+        "Lorsque l'accélération matérielle est désactivée, l'application passe en mode de rendu logiciel. Cela peut entraîner des animations saccadées, des pertes d'images, un ralentissement de la lecture vidéo, une augmentation de l'utilisation du processeur et une baisse des performances graphiques."
+      ],
+      "When hardware acceleration is enabled, the app uses your device’s dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "Lorsque l'accélération matérielle est activée, l'application utilise la carte graphique dédiée de votre appareil pour le rendu. Cela peut entraîner des problèmes de compatibilité sur certains systèmes."
+      ],
       "Zoom": [
         "Zoomer"
       ],
@@ -133,6 +151,12 @@
       ]
     },
     "App Menu": {
+      "Disable Hardware Acceleration": [
+        "Désactiver l'accélération matérielle"
+      ],
+      "Enable Hardware Acceleration": [
+        "Activer l'accélération matérielle"
+      ],
       "Services": [
         "Services"
       ]
