@@ -328,6 +328,7 @@ const ProjectDetailViewInner = () => {
                     />
                 ),
                 title: c('collider_2025:Title').t`Project knowledge`,
+                defaultOpened: true,
             }}
         >
             <div className="project-detail-view flex flex-column">

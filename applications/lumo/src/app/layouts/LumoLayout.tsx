@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
 
 import { clsx } from 'clsx';
 
@@ -23,6 +23,7 @@ interface DrawerConfig {
     title?: string;
     actionButton?: React.ReactNode;
     disabled?: boolean;
+    defaultOpened?: boolean;
 }
 
 /**
@@ -43,7 +44,7 @@ interface LumoLayoutWithDrawerProps {
 }
 
 export const LumoLayoutWithDrawer = ({ children, header, drawer, appearance }: LumoLayoutWithDrawerProps) => {
-    const { close, isOpen } = useRightPanel();
+    const { close, open, isOpen } = useRightPanel();
 
     // Extract configurations with defaults
     const headerConfig = header || {};
@@ -57,6 +58,7 @@ export const LumoLayoutWithDrawer = ({ children, header, drawer, appearance }: L
         title: drawerTitle,
         actionButton: drawerActionButton,
         disabled: withoutDrawerToggle = false,
+        defaultOpened = false,
     } = drawerConfig;
 
     const { solidBackground = true } = appearanceConfig;
@@ -68,6 +70,14 @@ export const LumoLayoutWithDrawer = ({ children, header, drawer, appearance }: L
             close();
         }
     }, [withoutDrawerToggle, drawerContentComponent, close, isOpen]);
+
+    // Automatically open panel if defaultOpened is true and drawer is enabled with content
+    useLayoutEffect(() => {
+        // Open panel synchronously before browser paint to avoid visual flicker
+        if (!withoutDrawerToggle && drawerContentComponent && defaultOpened) {
+            open();
+        }
+    }, [defaultOpened, open]);
 
     return (
         <div
