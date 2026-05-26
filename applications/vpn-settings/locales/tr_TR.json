@@ -254,6 +254,9 @@
       "Continue to sign in": [
         "Oturum açmaya geçin"
       ],
+      "Continue with Free": [
+        "Free kullanmayı sürdür"
+      ],
       "Continue with this password": [
         "Bu parolayı kullanmayı sürdür"
       ],
@@ -3815,6 +3818,9 @@
       "Automatically forward incoming email to another email address.": [
         "Gelen e-postaları otomatik olarak başka bir e-posta adresine iletin."
       ],
+      "Available storage: ${ storageText }": [
+        "Kullanılabilecek depolama alanı: ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Google tarafından profilinizin çıkarılmasını engelleyin. Gmail ${ MAIL_APP_NAME } üzerinde yaptıklarınızı göremez"
       ],
@@ -3868,6 +3874,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Yıllarca birikecek e-postalar, ek dosyalar ve diğer şeyler için yeterli alan."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Ekibiniz uzaktan çalışıyor veya herkese açık Wi-Fi bağlantıları kullanıyor olsa bile, kuruluş verilerine güvenli erişim sağlayın."
@@ -3966,6 +3975,9 @@
       "Track the status and activity of your referrals": [
         "Önerilerinizin etkinliklerini ve durumunu izleyin"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Yalnızca ${ config.offerPrice } ile 15 GB depolama alanı edinin."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "${ planName } tarifesine geçerek ${ MAX_SYNC_PAID_USER } taneye kadar hesap bağlayın"
       ],
@@ -3975,11 +3987,14 @@
       "We can't access ${ boldEmails } anymore.": [
         "Artık ${ boldEmails } adresine erişemiyoruz."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Yeni iletilere yer açmak için depolama alanı %80 doluluğa ulaştığında içe aktarma işlemini duraklatacağız."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Eski e-postalarınızı aktaracağız ve ${ MAIL_APP_NAME } ile Gmail hesabınızı bağlayacağız. Böylece yeni iletiler otomatik olarak görünecek"
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Gmail üzerinde son 180 gündeki e-postalarınızı içe aktarmaya başladık. Tamamlandığında bilgi vereceğiz."
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Gmail üzerindeki e-postalarınızı içe aktarmaya başladık. Tamamlandığında sizi bilgilendireceğiz."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Aramızdan ayrıldığınız için üzgünüz. Vakit ayırıp iptal etme nedeninizi paylaşırsanız çok seviniriz. Geri bildiriminiz ${ BRAND_NAME } hizmetlerini herkes için daha iyi yapmamıza yardımcı olur."
@@ -4018,6 +4033,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } uygulamasına bir dış hesap adresi bağladınız."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ücretsiz ${ MAIL_APP_NAME } hesabınız sınırlı depolama alanıyla sunulduğundan güncel Gmail iletilerinizin yalnızca ${ newUserStorageText } kadarını içe aktaracağız."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ücretsiz ${ MAIL_APP_NAME } hesabınız sınırlı depolama alanıyla sunulduğu için yalnızca son Gmail e-postalarınız içe aktarılacak."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Tarifenizde ${ MAX_SYNC_FREE_USER } Gmail adresi destekleniyor.",
@@ -4878,9 +4899,6 @@
       "Please try again in a few moments.": [
         "Lütfen biraz sonra yeniden deneyin."
       ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Çok kullanıcı desteği almak için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye geçin"
-      ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Birden çok kullanıcıyı yönetmek için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye geçin."
       ],
@@ -5629,6 +5647,9 @@
       "${ PROTON_SENTINEL_NAME } account protection": [
         "${ PROTON_SENTINEL_NAME } hesap koruması"
       ],
+      "10+ premium features": [
+        "10+ ücretli özellik"
+      ],
       "15 GB storage": [
         "15 GB depolama alanı"
       ],
@@ -5664,6 +5685,12 @@
       "Continue": [
         "İlerle"
       ],
+      "Custom email domain": [
+        "Özel e-posta etki alanı"
+      ],
+      "Email addresses": [
+        "E-posta adresleri"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Dosyalar, fotoğraflar ve belgeler için şifrelenmiş bulut depolama alanı"
       ],
@@ -5693,6 +5720,9 @@
       ],
       "Short domain @pm.me": [
         "Kısa etki alanı @pm.me"
+      ],
+      "Storage": [
+        "Depolama alanı"
       ],
       "Torrenting support (P2P)": [
         "Torrent desteği (P2P)"
@@ -6524,8 +6554,8 @@
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "${ BRAND_NAME } for Business tarifeleri ekibinize işlerinde verimli ve düzenli olmaları için gereken tüm iş birliği araçlarını sağlarken kuruluşunuzu da korur."
       ],
-      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
-        "${ BRAND_NAME } bağımsız olarak finanse edilir ve reklamsız çalışır.\nAşağıda, bu bağımsızlığın pratikte nasıl kullanıldığı ile ilgili örnekleri görebilirsiniz."
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } bağımsız olarak finanse edilir ve reklamsız çalışır. Aşağıda, bu bağımsızlığın pratikte nasıl kullanıldığı ile ilgili örnekleri görebilirsiniz."
       ],
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } bilgilerinizi asla üçüncü taraflarla paylaşmaz. Veriler ${ BRAND_NAME } iç incelemeleri ve Constella Intelligence kuruluşundan gelmektedir."
@@ -6866,9 +6896,9 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Kuruluşunuz için daha kişiselleştirilmiş bir deneyim oluşturmak için adınızı ve logonuzu ekleyin."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "${ addedServerCount } ağ geçidi sunucusu ekleniyor",
-        "${ addedServerCount } ağ geçidi sunucusu ekleniyor"
+      "Adding ${ total } gateway server": [
+        "${ total } ağ geçidi sunucusu ekleniyor",
+        "${ total } ağ geçidi sunucusu ekleniyor"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Bir dış e-posta adresi eklendiğinde, o grup içindeki tüm e-posta yazışmaları için uçtan uca şifreleme kapatılır. İlerlemek istiyor musunuz?"
@@ -7679,6 +7709,9 @@
       ],
       "Include device, location, and IP details": [
         "Aygıt, konum ve IP adresi ayrıntıları katılsın"
+      ],
+      "Included": [
+        "İçindekiler"
       ],
       "Increase your account security by verifying your email address.": [
         "E-posta adresinizi doğrulayarak hesap güvenliğinizi artırın."
@@ -8782,8 +8815,14 @@
       "Unverified email address.": [
         "E-posta adresi doğrulanmamış."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Geri kalanını getirmek için istediğiniz zaman tarifenizi yükseltebilirsiniz"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Geri kalanları aktarmak için istediğiniz zaman tarifenizi yükseltin ya da yer açın"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } avantajlarınızı korumak için tarifenizi yükseltin."
@@ -9552,6 +9591,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME } koruması"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } karakter"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
@@ -16743,6 +16785,9 @@
       "Contact us": [
         "Bize ulaşın"
       ],
+      "Continue with free storage": [
+        "Ücretsiz depolama alanını kullanmayı sürdür"
+      ],
       "Continue with partial import?": [
         "Kısmi içe aktarmay ile ilerlensin mi?"
       ],
@@ -17057,6 +17102,9 @@
       ],
       "Get more from your VPN": [
         "VPN hizmetinizden fazlasını alın"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "${ MAIL_APP_NAME } Plus ile daha fazla depolama alanı edinin"
       ],
       "Get started": [
         "Başlayalım"
@@ -17817,6 +17865,9 @@
       ],
       "Each imported email will have this label": [
         "İçe aktarılan her e-postaya bu etiket atanacak"
+      ],
+      "Early access to new apps and features.": [
+        "Yeni uygulama ve özelliklere erken erişim."
       ],
       "Edit folder names": [
         "Klasör adlarını düzenle"

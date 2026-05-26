@@ -254,6 +254,9 @@
       "Continue to sign in": [
         "Continuare autentificare"
       ],
+      "Continue with Free": [
+        "Continuare cu Free"
+      ],
       "Continue with this password": [
         "Continuare cu această parolă"
       ],
@@ -3840,6 +3843,9 @@
       "Automatically forward incoming email to another email address.": [
         "Transferați automat mesajele primite către o altă adresă de e-mail."
       ],
+      "Available storage: ${ storageText }": [
+        "Spațiu disponibil: ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Blocați capacitatea Google de a vă analiza profilul. Gmail nu poate vedea ce faceți în ${ MAIL_APP_NAME }."
       ],
@@ -3893,6 +3899,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Se criptează și se importă contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Spațiu suficient pentru ani mulți de mesaje, atașamente și altele."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Asigurați accesarea securizată la datele organizației, chiar dacă echipa este la distanță sau utilizează o rețea Wi-Fi publică."
@@ -3992,6 +4001,9 @@
       "Track the status and activity of your referrals": [
         "Urmăriți starea și activitatea celor recomandați."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Deblocați 15 GiB de spațiu pentru doar ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Treceți la ${ planName } pentru a conecta până la ${ MAX_SYNC_PAID_USER } conturi."
       ],
@@ -4001,11 +4013,14 @@
       "We can't access ${ boldEmails } anymore.": [
         "Nu mai putem accesa ${ boldEmails }."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Importarea se va opri la 80% din spațiul de stocare pentru a rezerva spațiu pentru mesajele noi."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Se vor importa mesajele vechi și se va conecta contul Gmail la ${ MAIL_APP_NAME }, astfel încât mesajele noi să apară automat."
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "S-a început importarea mesajelor din ultimele 180 de zile din Gmail. Vă vom anunța când va fi gata."
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "S-a început importarea mesajelor de pe Gmail. Vă vom anunța când va fi gata."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ne pare rău să vă vedem plecând. Dacă aveți un moment, am aprecia foarte mult să aflăm de ce doriți să anulați. Feedback-ul dvs. ne ajută să facem ${ BRAND_NAME } mai bun pentru toată lumea."
@@ -4046,6 +4061,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Ați conectat o adresă de cont externă la ${ MAIL_APP_NAME }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Contul gratuit ${ MAIL_APP_NAME } are un spațiu de stocare limitat, așa că se vor importa doar ${ newUserStorageText } dintre cele mai recente mesaje din Gmail."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Contul gratuit ${ MAIL_APP_NAME } are un spațiu de stocare limitat, așa că se vor importa doar cele mai recente mesaje din Gmail."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Planul actual permite ${ MAX_SYNC_FREE_USER } adresă Gmail.",
@@ -4913,9 +4934,6 @@
       "Please try again in a few moments.": [
         "Mai încercați peste câteva momente."
       ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Treceți la un plan de afaceri cu mai mult de un utilizator pentru a folosi mai mulți utilizatori."
-      ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Migrați la un plan de afaceri cu mai mult de un utilizator pentru a destiona mai mulți utilizatori."
       ],
@@ -5671,6 +5689,9 @@
       "${ PROTON_SENTINEL_NAME } account protection": [
         "Protecție cont cu ${ PROTON_SENTINEL_NAME }"
       ],
+      "10+ premium features": [
+        "Peste 10 funcții premium"
+      ],
       "15 GB storage": [
         "15 GiB spațiu de stocare"
       ],
@@ -5708,6 +5729,12 @@
       "Continue": [
         "Continuare"
       ],
+      "Custom email domain": [
+        "Domeniu personal de e-mail"
+      ],
+      "Email addresses": [
+        "Adrese de e-mail"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Stocare în cloud criptată pentru fișiere, fotografii și documente."
       ],
@@ -5737,6 +5764,9 @@
       ],
       "Short domain @pm.me": [
         "Domeniu scurt @pm.me"
+      ],
+      "Storage": [
+        "Spațiu de stocare"
       ],
       "Torrenting support (P2P)": [
         "Suport torente (P2P)"
@@ -6585,7 +6615,7 @@
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "Planurile ${ BRAND_NAME } Business vă oferă echipei toate instrumentele de colaborare de care are nevoie pentru a fi productivă și organizată în activitatea sa, protejându-vă în același timp afacerea."
       ],
-      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
         "${ BRAND_NAME } este finanțat independent și operează fără publicitate. Mai jos sunt exemple despre cum a fost folosită această independență în practică."
       ],
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
@@ -6954,10 +6984,10 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Adăugați-vă numele sau logoul pentru a crea o experiență mai personalizată pentru organizație."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Servere poartă de acces care se adaugă: ${ addedServerCount }",
-        "Servere poartă de acces care se adaugă: ${ addedServerCount }",
-        "Servere poartă de acces care se adaugă: ${ addedServerCount }"
+      "Adding ${ total } gateway server": [
+        "Se adaugă porți de acces servere: ${ total }",
+        "Se adaugă porți de acces servere: ${ total }",
+        "Se adaugă porți de acces servere: ${ total }"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Adăugarea unei adrese de e-mail externe va dezactiva criptarea bilaterală pentru toate mesajele prin e-mail în cadrul acestui grup. Doriți să continuați?"
@@ -7780,6 +7810,9 @@
       ],
       "Include device, location, and IP details": [
         "Includere dispozitiv, loc și detalii IP"
+      ],
+      "Included": [
+        "Inclus"
       ],
       "Increase your account security by verifying your email address.": [
         "Măriți securitatea contului prin verificarea adresei de e-mail."
@@ -8893,8 +8926,14 @@
       "Unverified email address.": [
         "Adresă de e-mail neverificată."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Modificați oricând abonamentul pentru a obține și restul"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Modificați abonamentul sau goliți spațiul de stocare pentru a le aduce și pe restul."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Îmbunătățiți contul pentru a vă menține beneficiile din ${ planTitle }."
@@ -9119,7 +9158,7 @@
         "Cu o adresă criptată ${ BRAND_NAME }, puteți utiliza toate serviciile ${ BRAND_NAME }."
       ],
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
-        "Cu categoriile de e-mail, mesajele importante ajung în folderul de mesaje primite. Restul sunt organizate pe categorii."
+        "Cu categoriile de mesaje, mesajele importante ajung în folderul de mesaje primite. Restul sunt organizate pe categorii."
       ],
       "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
         "Cu grupuri, puteți implementa politicile de securitate ale companiei pentru controlul accesului și puteți reduce riscul accesării neautorizate a datelor."
@@ -9681,6 +9720,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "Protecție cu ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } de caractere"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Reveniți mai târziu.)"
@@ -16993,6 +17035,9 @@
       "Contact us": [
         "Contactați-ne"
       ],
+      "Continue with free storage": [
+        "Continuare cu spațiu gratuit"
+      ],
       "Continue with partial import?": [
         "Continuați cu importarea parțială?"
       ],
@@ -17226,7 +17271,7 @@
         "E-mail"
       ],
       "Email categories": [
-        "Categorii de e-mail"
+        "Categorii de mesaje"
       ],
       "Email subscriptions": [
         "Abonamente pe e-mail"
@@ -17310,6 +17355,9 @@
       ],
       "Get more from your VPN": [
         "Obțineți mai mult de la VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Obțineți mai mult spațiu cu ${ MAIL_APP_NAME } Plus"
       ],
       "Get started": [
         "Să începem"
@@ -18072,6 +18120,9 @@
       ],
       "Each imported email will have this label": [
         "Fiecare e-mail importat va avea această etichetă."
+      ],
+      "Early access to new apps and features.": [
+        "Acces timpuriu la aplicațiile și funcțiile noi."
       ],
       "Edit folder names": [
         "Editare nume foldere"

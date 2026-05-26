@@ -254,6 +254,9 @@
       "Continue to sign in": [
         "Συνέχεια στη σύνδεση"
       ],
+      "Continue with Free": [
+        "Συνέχεια με Free"
+      ],
       "Continue with this password": [
         "Συνεχίστε με αυτόν τον κωδικό πρόσβασης"
       ],
@@ -3815,6 +3818,9 @@
       "Automatically forward incoming email to another email address.": [
         "Αυτόματα προωθήστε εισερχόμενα μηνύματα ηλεκτρονικού ταχυδρομείου σε άλλη ηλεκτρονική διεύθυνση."
       ],
+      "Available storage: ${ storageText }": [
+        "Διαθέσιμος χώρος αποθήκευσης: ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Αποκλείστε την ικανότητα της Google να δημιουργήσει το προφίλ σας. Το Gmail δεν μπορεί να δει τι κάνετε στο ${ MAIL_APP_NAME }"
       ],
@@ -3868,6 +3874,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται κρυπτογράφηση και εισαγωγή επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Αρκετός χώρος για χρόνια από μηνύματα ηλεκτρονικού ταχυδρομείου , συνημμένα και άλλα."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Εξασφαλίστε ασφαλή πρόσβαση στα δεδομένα του οργανισμού, ακόμα και αν η ομάδα σας είναι απομακρυσμένη ή χρησιμοποιεί δημόσιο WiFi."
@@ -3966,6 +3975,9 @@
       "Track the status and activity of your referrals": [
         "Παρακολουθήστε την κατάσταση και τη δραστηριότητα των παραπομπών σας"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Ξεκλειδώστε 15 GB αποθηκευτικού χώρου μόνο με ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Αναβαθμίστε στο ${ planName } για να συνδέσετε έως και ${ MAX_SYNC_PAID_USER } λογαριασμούς"
       ],
@@ -3975,11 +3987,14 @@
       "We can't access ${ boldEmails } anymore.": [
         "Δεν μπορούμε πια να έχουμε πρόσβαση στα ${ boldEmails }."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Θα σταματήσουμε τις εισαγωγές στο 80% του αποθηκευτικού χώρου για να κρατήσουμε χώρο για νέα μηνύματα."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Θα εισαγάγουμε τα παλιά σας μηνύματα ηλεκτρονικού ταχυδρομείου και θα συνδέσουμε το Gmail σας με το ${ MAIL_APP_NAME } ώστε τα νέα μηνύματα να εμφανίζονται αυτόματα"
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Ξεκινήσαμε την εισαγωγή των μηνυμάτων ηλεκτρονικού ταχυδρομείου των τελευταίων 180 ημερών από το Gmail. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Ξεκινήσαμε την εισαγωγή των ηλεκτρονικών μηνυμάτων σας από το Gmail. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Λυπόμαστε που φεύγετε. Αν έχετε λίγο χρόνο, θα εκτιμούσαμε πραγματικά να μας πείτε γιατί θέλετε να ακυρώσετε. Τα σχόλιά σας μας βοηθούν να κάνουμε το ${ BRAND_NAME } καλύτερο για όλους."
@@ -4018,6 +4033,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Έχετε συνδέσει μία διεύθυνση εξωτερικού λογαριασμού στο ${ MAIL_APP_NAME }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ο δωρεάν λογαριασμός σας ${ MAIL_APP_NAME } διαθέτει περιορισμένο αποθηκευτικό χώρο, επομένως θα εισάγουμε μόνο ${ newUserStorageText } από τα πιο πρόσφατα μηνύματά σας στο Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ο δωρεάν λογαριασμός σας ${ MAIL_APP_NAME } διαθέτει περιορισμένο αποθηκευτικό χώρο, επομένως θα εισάγουμε μόνο τα πιο πρόσφατα email σας στο Gmail."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Το πλάνο σας υποστηρίζει ${ MAX_SYNC_FREE_USER } διεύθυνση Gmail.",
@@ -4878,9 +4899,6 @@
       "Please try again in a few moments.": [
         "Παρακαλούμε δοκιμάστε ξανά σε λίγο."
       ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Παρακαλώ αναβαθμίστε σε επιχειρηματικό πλάνο με περισσότερους από 1 χρήστες ώστε να λάβετε υποστήριξη πολλαπλών χρηστών"
-      ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Παρακαλώ αναβαθμίστε σε επιχειρηματικό πλάνο με περισσότερους από 1 χρήστες ώστε να διαχειριστείτε πολλαπλούς χρήστες."
       ],
@@ -5629,6 +5647,9 @@
       "${ PROTON_SENTINEL_NAME } account protection": [
         "${ PROTON_SENTINEL_NAME } προστασία λογαριασμού"
       ],
+      "10+ premium features": [
+        "10+ premium χαρακτηριστικά"
+      ],
       "15 GB storage": [
         "15 GB αποθηκευτικός χώρος"
       ],
@@ -5664,6 +5685,12 @@
       "Continue": [
         "Συνέχεια"
       ],
+      "Custom email domain": [
+        "Προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Email addresses": [
+        "Διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Κρυπτογραφημένος χώρος αποθήκευσης στο cloud για αρχεία, φωτογραφίες και έγγραφα"
       ],
@@ -5693,6 +5720,9 @@
       ],
       "Short domain @pm.me": [
         "Σύντομος τομέας @pm.me"
+      ],
+      "Storage": [
+        "Αποθηκευτικός χώρος"
       ],
       "Torrenting support (P2P)": [
         "Υποστήριξη Torrenting (P2P)"
@@ -6524,8 +6554,8 @@
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "Τα ${ BRAND_NAME } Business πλάνα παρέχουν στην ομάδα σας όλα τα εργαλεία συνεργασίας που χρειάζονται για να είναι παραγωγικοί και οργανωμένοι στη δουλειά τους, ενώ ταυτόχρονα προστατεύουν την επιχείρησή σας."
       ],
-      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
-        "${ BRAND_NAME } χρηματοδοτείται ανεξάρτητα και λειτουργεί χωρίς διαφημίσεις.\nΠαρακάτω παρατίθενται παραδείγματα για το πώς αυτή η ανεξαρτησία έχει χρησιμοποιηθεί στην πράξη."
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } χρηματοδοτείται ανεξάρτητα και λειτουργεί χωρίς διαφημίσεις. Παρακάτω παρατίθενται παραδείγματα για το πώς αυτή η ανεξαρτησία έχει χρησιμοποιηθεί στην πράξη."
       ],
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "Το ${ BRAND_NAME } δε μοιράζεται ποτέ τις πληροφορίες σας με τρίτους. Τα δεδομένα προέρχονται από τις αναλύσεις του ίδιου του ${ BRAND_NAME } και της Constella Intelligence."
@@ -6866,9 +6896,9 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Προσθέστε το όνομα και το λογότυπό σας για να δημιουργήσετε μια πιο εξατομικευμένη εμπειρία για τον οργανισμό σας."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Προσθήκη ${ addedServerCount } διακομιστή πύλης",
-        "Προσθήκη ${ addedServerCount } διακομιστών πύλης"
+      "Adding ${ total } gateway server": [
+        "Προσθήκη ${ total } διακομιστή πύλης",
+        "Προσθήκη ${ total } διακομιστών πύλης"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Η προσθήκη μιας εξωτερικής διεύθυνσης ηλεκτρονικού ταχυδρομείου θα απενεργοποιήσει την κρυπτογράφηση από άκρο σε άκρο για όλες τις επικοινωνίες ηλεκτρονικού ταχυδρομείου εντός αυτής της ομάδας. Θέλετε να προχωρήσετε;"
@@ -7679,6 +7709,9 @@
       ],
       "Include device, location, and IP details": [
         "Περίληψη στοιχεία συσκευής, τοποθεσίας και IP"
+      ],
+      "Included": [
+        "Περιλαμβάνονται"
       ],
       "Increase your account security by verifying your email address.": [
         "Αυξήστε την ασφάλεια του λογαριασμού σας επαληθεύοντας τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
@@ -8782,8 +8815,14 @@
       "Unverified email address.": [
         "Μη επαληθευμένη διεύθυνση ηλεκτρονικού ταχυδρομείου."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Αναβαθμίστε οποιαδήποτε στιγμή για να φέρετε τα υπόλοιπα"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Αναβαθμίστε ή εκκενώστε χώρο οποιαδήποτε στιγμή για να φέρετε τα υπόλοιπα"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Αναβαθμίστε για να διατηρήσετε τα ${ planTitle } προνόμιά σας."
@@ -9552,6 +9591,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME } προστασία"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } χαρακτήρες"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
@@ -16647,6 +16689,9 @@
       "Contact us": [
         "Επικοινωνήστε μαζί μας"
       ],
+      "Continue with free storage": [
+        "Συνέχεια με δωρεάν αποθηκευτικό χώρο"
+      ],
       "Continue with partial import?": [
         "Συνέχιση με μερική εισαγωγή;"
       ],
@@ -16961,6 +17006,9 @@
       ],
       "Get more from your VPN": [
         "Αποκτήστε περισσότερα από το VPN σας."
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Αποκτήστε περισσότερο χώρο αποθήκευσης με το ${ MAIL_APP_NAME } Plus"
       ],
       "Get started": [
         "Ας ξεκινήσουμε"
@@ -17721,6 +17769,9 @@
       ],
       "Each imported email will have this label": [
         "Κάθε εισαγόμενο μήνυμα ηλεκτρονικού ταχυδρομείου θα έχει αυτήν την ετικέτα"
+      ],
+      "Early access to new apps and features.": [
+        "Πρώιμη πρόσβαση σε νέες εφαρμογές και δυνατότητες."
       ],
       "Edit folder names": [
         "Επεξεργασία ονομάτων φακέλων"

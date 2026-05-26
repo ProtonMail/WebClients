@@ -254,6 +254,9 @@
       "Continue to sign in": [
         "Continuar para iniciar sessão"
       ],
+      "Continue with Free": [
+        "Continuar com Free"
+      ],
       "Continue with this password": [
         "Continuar com essa senha"
       ],
@@ -2119,6 +2122,9 @@
       "Migration status": [
         "Status da migração"
       ],
+      "Missing organization public key": [
+        "Falta a chave pública da organização"
+      ],
       "More details": [
         "Mais detalhes"
       ],
@@ -3706,6 +3712,9 @@
       "Automatically forward incoming email to another email address.": [
         "Encaminhe automaticamente os e-mails recebidos para outro endereço de e-mail."
       ],
+      "Available storage: ${ storageText }": [
+        "Armazenamento disponível: ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Bloqueie a capacidade do Google de criar um perfil seu. O Gmail não pode ver o que você faz no ${ MAIL_APP_NAME }"
       ],
@@ -3856,9 +3865,6 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Não podemos mais acessar o ${ boldEmails }."
-      ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Inciamos a importação de seus últimos 180 dias de e-mail do Gmail. Avisaremos quando estiver pronto."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Lamentamos sua saída. Se tiver um momento, gostaríamos muito de saber o motivo do cancelamento. Seu feedback nos ajuda a fazer a ${ BRAND_NAME } ainda melhor para todos."
@@ -4740,9 +4746,6 @@
       "Please try again in a few moments.": [
         "Tente novamente em alguns instantes."
       ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Atualize para um plano de negócios com mais de 1 usuário para obter suporte multiusuário"
-      ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Atualize para um plano de negócios com mais de 1 usuário para gerenciar vários usuários."
       ],
@@ -5485,6 +5488,9 @@
       "${ PROTON_SENTINEL_NAME } account protection": [
         "Proteção de conta com ${ PROTON_SENTINEL_NAME }"
       ],
+      "10+ premium features": [
+        "10+ recursos premium"
+      ],
       "15 GB storage": [
         "15 GB de armazenamento"
       ],
@@ -5520,6 +5526,12 @@
       "Continue": [
         "Continuar"
       ],
+      "Custom email domain": [
+        "Domínio de e-mail personalizado"
+      ],
+      "Email addresses": [
+        "Endereços de e-mail"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Armazenamento em nuvem criptografado para arquivos, fotos e documentos"
       ],
@@ -5549,6 +5561,9 @@
       ],
       "Short domain @pm.me": [
         "Domínio curto @pm.me"
+      ],
+      "Storage": [
+        "Armazenamento"
       ],
       "Torrenting support (P2P)": [
         "Suporte para torrents (P2P)"
@@ -5869,6 +5884,9 @@
       ],
       "Group address:": [
         "Endereço do grupo:"
+      ],
+      "Roles and permission:": [
+        "Funções e permissões"
       ]
     },
     "Group member count": {
@@ -6704,10 +6722,6 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Adicione o nome e logotipo para criar uma experiência mais personalizada para sua organização."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Adicionando ${ addedServerCount } servidor gateway",
-        "Adicionando ${ addedServerCount } servidores gateway"
-      ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Adicionar um endereço de e-mail externo desativará a criptografia de ponta a ponta para toda a comunicação por e-mail dentro desse grupo. Você deseja continuar?"
       ],
@@ -7489,6 +7503,9 @@
       ],
       "Include device, location, and IP details": [
         "Incluir detalhes de dispositivo, localização e IP"
+      ],
+      "Included": [
+        "Incluso"
       ],
       "Increase your account security by verifying your email address.": [
         "Melhore a sua segurança da conta ao verificar seu endereço de e-mail."
@@ -12129,6 +12146,9 @@
       "${ app } product updates": [
         "Atualizações de produto do ${ app }"
       ],
+      "${ BRAND_NAME } for Business communications": [
+        "Comunicações da ${ BRAND_NAME } for Business"
+      ],
       "${ BRAND_NAME } important announcements": [
         "Comunicados importantes da ${ BRAND_NAME }"
       ],
@@ -16044,6 +16064,9 @@
     "Tab": {
       "For personal use": [
         "Para uso pessoal"
+      ],
+      "For professional use": [
+        "Para uso profissional"
       ]
     },
     "Tab in domain modal": {
@@ -16476,6 +16499,9 @@
       "Contact us": [
         "Fale conosco"
       ],
+      "Continue with free storage": [
+        "Continuar com armazenamento grátis"
+      ],
       "Continue with partial import?": [
         "Continue com uma importação parcial?"
       ],
@@ -16790,6 +16816,9 @@
       ],
       "Get more from your VPN": [
         "Obter mais da sua VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Obtenha mais armazenamento com ${ MAIL_APP_NAME } Plus"
       ],
       "Get started": [
         "Começar"

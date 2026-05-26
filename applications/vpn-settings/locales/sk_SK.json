@@ -4027,11 +4027,14 @@
       "We can't access ${ boldEmails } anymore.": [
         "Už nemáme prístup k ${ boldEmails }."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Keď sa úložisko zaplní na 80 %, pozastavíme import, aby sme uvoľnili miesto pre nové správy."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Načítame vaše staré emaily a prepojíme váš Gmail s aplikáciou ${ MAIL_APP_NAME }, aby sa nové správy zobrazovali automaticky"
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Začali sme importovať vaše emaily z Gmailu z posledných 180 dní. Dáme vám vedieť, keď bude import hotový."
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Začali sme importovať vaše emaily z Gmailu. Dáme vám vedieť, keď bude import hotový."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Je nám ľúto, že odchádzate. Ak máte chvíľku, veľmi by sme ocenili, keby ste nám povedali, prečo chcete zrušiť odber. Vaša spätná väzba nám pomáha vylepšovať ${ BRAND_NAME } pre všetkých."
@@ -4947,9 +4950,6 @@
       ],
       "Please try again in a few moments.": [
         "Skúste to znova o chvíľu, prosím."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Ak chcete získať podporu pre viacerých používateľov, inovujte na obchodný plán s viac ako 1 používateľom"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Ak chcete spravovať viacerých používateľov, prejdite na obchodný plán s viac ako 1 používateľom."
@@ -6646,8 +6646,8 @@
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "${ BRAND_NAME } plán Business poskytuje vášmu tímu všetky nástroje na spoluprácu, ktoré potrebuje na produktívnu a organizovanú prácu, a zároveň chráni vašu firmu."
       ],
-      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
-        "${ BRAND_NAME } je nezávisle financovaný a funguje bez reklamy.\nNižšie uvádzame príklady toho, ako sa táto nezávislosť uplatňuje v praxi."
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } je nezávisle financovaný a funguje bez reklamy. Nižšie uvádzame príklady toho, ako sa táto nezávislosť uplatňuje v praxi."
       ],
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } nikdy nezdieľa vaše informácie s tretími stranami. Údaje pochádzajú z vlastných analýz spoločnosti ${ BRAND_NAME } a spoločnosti Constella Intelligence."
@@ -7042,11 +7042,11 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Pridajte vlastný názov a logo, aby ste vytvorili osobnejší zážitok pre vašu organizáciu."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Pridávanie ${ addedServerCount } servera brány",
-        "Pridávanie ${ addedServerCount } serverov brány",
-        "Pridávanie ${ addedServerCount } serverov brány",
-        "Pridávanie ${ addedServerCount } serverov brány"
+      "Adding ${ total } gateway server": [
+        "Pridávanie ${ total } servera brány",
+        "Pridávanie ${ total } serverov brány",
+        "Pridávanie ${ total } serverov brány",
+        "Pridávanie ${ total } serverov brány"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Pridaním externej emailovej adresy sa vypne end-to-end šifrovanie pre všetku emailovú komunikáciu v rámci tejto skupiny. Chcete pokračovať?"
@@ -9810,6 +9810,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "Ochrana ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } znakov"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasne nedostupné. Skúste to neskôr.)"
@@ -18231,6 +18234,9 @@
       ],
       "Each imported email will have this label": [
         "Každý importovaný email bude mať tento štítok"
+      ],
+      "Early access to new apps and features.": [
+        "Skorší prístup k novým aplikáciám a funkciám."
       ],
       "Edit folder names": [
         "Upraviť názvy priečinkov"

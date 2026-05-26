@@ -254,6 +254,9 @@
       "Continue to sign in": [
         "Poursuivre vers la connexion"
       ],
+      "Continue with Free": [
+        "Continuer avec Free"
+      ],
       "Continue with this password": [
         "Continuer avec ce mot de passe"
       ],
@@ -3815,6 +3818,9 @@
       "Automatically forward incoming email to another email address.": [
         "Transférez automatiquement les messages entrants vers une autre adresse e-mail."
       ],
+      "Available storage: ${ storageText }": [
+        "Espace de stockage disponible : ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Empêchez Google de vous profiler. Gmail ne peut pas voir ce que vous faites dans ${ MAIL_APP_NAME }."
       ],
@@ -3868,6 +3874,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Chiffrement et importation des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Assez d'espace pour stocker des années d'e-mails, de pièces jointes et bien plus encore."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Assurez un accès sécurisé aux données de l’organisation, même si votre équipe est à distance ou utilise le wifi public."
@@ -3966,6 +3975,9 @@
       "Track the status and activity of your referrals": [
         "Suivez l'état et l'activité de vos parrainages"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Bénéficiez de 15 Go de stockage pour seulement ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Passez à ${ planName } pour connecter jusqu'à ${ MAX_SYNC_PAID_USER } comptes."
       ],
@@ -3975,11 +3987,14 @@
       "We can't access ${ boldEmails } anymore.": [
         "Nous ne pouvons plus accéder à ${ boldEmails }."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Nous suspendrons les importations lorsque le taux de remplissage atteindra 80 % afin de réserver de l'espace pour les nouveaux messages."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Nous apporterons vos anciens messages et connecterons votre Gmail à ${ MAIL_APP_NAME } afin que les nouveaux messages apparaissent automatiquement"
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Nous avons commencé à importer vos e-mails des 180 derniers jours depuis Gmail. Nous vous préviendrons lorsque l'opération sera terminée."
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Nous avons commencé à importer vos messages depuis Gmail. Nous vous préviendrons lorsque l'opération sera terminée."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Nous regrettons de vous voir partir. Si vous avez un moment, nous aimerions beaucoup savoir pourquoi vous souhaitez résilier votre abonnement. Vos commentaires nous aident à améliorer ${ BRAND_NAME } pour le bénéfice de tous."
@@ -4018,6 +4033,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Vous avez connecté une adresse de compte externe à ${ MAIL_APP_NAME }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Votre compte ${ MAIL_APP_NAME } gratuit dispose d'un espace de stockage limité, nous n'importerons donc que ${ newUserStorageText } de vos messages Gmail les plus récents."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Votre compte gratuit sur ${ MAIL_APP_NAME } dispose d'un espace de stockage limité, nous n'importerons donc que vos e-mails Gmail les plus récents."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Votre abonnement prend en charge ${ MAX_SYNC_FREE_USER } adresse Gmail.",
@@ -4878,9 +4899,6 @@
       "Please try again in a few moments.": [
         "Veuillez réessayer dans quelques instants."
       ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Nous vous invitons à passer à un abonnement entreprise, avec plus d'un utilisateur, pour bénéficier de la prise en charge de plusieurs utilisateurs."
-      ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Nous vous invitons à passer à un abonnement entreprise avec plus d'un utilisateur pour gérer plusieurs utilisateurs."
       ],
@@ -5629,6 +5647,9 @@
       "${ PROTON_SENTINEL_NAME } account protection": [
         "Protection de compte ${ PROTON_SENTINEL_NAME }"
       ],
+      "10+ premium features": [
+        "Plus de 10 fonctionnalités premium"
+      ],
       "15 GB storage": [
         "15 Go de stockage"
       ],
@@ -5664,6 +5685,12 @@
       "Continue": [
         "Continuer"
       ],
+      "Custom email domain": [
+        "Domaine de messagerie personnalisé"
+      ],
+      "Email addresses": [
+        "Adresses e-mail"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Stockage cloud chiffré pour vos fichiers, photos et documents"
       ],
@@ -5693,6 +5720,9 @@
       ],
       "Short domain @pm.me": [
         "Domaine court @pm.me"
+      ],
+      "Storage": [
+        "Espace de stockage"
       ],
       "Torrenting support (P2P)": [
         "Prise en charge des torrents (P2P)"
@@ -6524,8 +6554,8 @@
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "Les abonnements ${ BRAND_NAME } Business offrent à votre équipe tous les outils dont elle a besoin pour être productive et organisée dans son travail, tout en protégeant votre entreprise."
       ],
-      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
-        "${ BRAND_NAME } est financé de manière indépendante et opère sans publicité.\nCi-dessous se trouvent des exemples pratique de l'utilisation de cette indépendance."
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } est financé de manière indépendante et opère sans publicité. Ci-dessous se trouvent des exemples pratiques de l'utilisation de cette indépendance."
       ],
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } ne partage jamais vos informations avec des tiers. Les données proviennent de la propre analyse de ${ BRAND_NAME } et de Constella Intelligence."
@@ -6866,9 +6896,9 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Ajoutez votre nom et votre logo pour créer une expérience plus personnalisée pour votre organisation."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Ajout de ${ addedServerCount } serveur de passerelle",
-        "Ajout de ${ addedServerCount } serveurs de passerelle"
+      "Adding ${ total } gateway server": [
+        "Ajout de ${ total } serveur de passerelle",
+        "Ajout de ${ total } serveurs de passerelle"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "L'ajout d'une adresse e-mail externe désactivera le chiffrement de bout en bout pour toutes les communications par e-mail au sein de ce groupe. Voulez-vous continuer ?"
@@ -7679,6 +7709,9 @@
       ],
       "Include device, location, and IP details": [
         "Inclure les informations sur l'appareil, l'emplacement et l'adresse IP"
+      ],
+      "Included": [
+        "Inclus"
       ],
       "Increase your account security by verifying your email address.": [
         "Renforcez la sécurité de votre compte en vérifiant votre adresse e-mail."
@@ -8782,8 +8815,14 @@
       "Unverified email address.": [
         "L'adresse e-mail n'a pas été vérifiée."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Changer d'abonnement à tout moment pour transférer le reste"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Changer d'abonnement ou libérer de l'espace à tout moment pour transférer le reste"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Passez à la version supérieure pour conserver vos avantages de ${ planTitle }."
@@ -9552,6 +9591,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "Protection ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caractères"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible, nous vous invitons à vérifier plus tard)"
@@ -16746,6 +16788,9 @@
       "Contact us": [
         "Nous contacter"
       ],
+      "Continue with free storage": [
+        "Continuer avec l'espace de stockage gratuit"
+      ],
       "Continue with partial import?": [
         "Continuer l'importation partielle ?"
       ],
@@ -17060,6 +17105,9 @@
       ],
       "Get more from your VPN": [
         "Tirez le meilleur parti de votre VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Obtenez plus d'espace de stockage avec ${ MAIL_APP_NAME } Plus"
       ],
       "Get started": [
         "Commencez"
@@ -17820,6 +17868,9 @@
       ],
       "Each imported email will have this label": [
         "Chaque message importé aura ce label."
+      ],
+      "Early access to new apps and features.": [
+        "Accès en avant-première aux nouvelles fonctionnalités et applications."
       ],
       "Edit folder names": [
         "Modifiez les noms des dossiers."
