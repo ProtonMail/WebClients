@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { ToolbarButton } from '@proton/components';
 import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 
-import { ContextMenuButton } from '../../../legacy/components/sections/ContextMenu';
+import { ContextMenuButton } from '../../../statelessComponents/ContextMenu';
 import type { ActionButtonProps } from '../../buttons/types';
 
 export const CreateNewFolderButton = ({ type, close, onClick }: ActionButtonProps) => {

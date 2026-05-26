@@ -4,7 +4,7 @@ import { generateNodeUid } from '@proton/drive/index';
 
 import type { useDetailsModal } from '../../../../../modals/DetailsModal/';
 import type { useFilesDetailsModal } from '../../../../../modals/FilesDetailsModal';
-import ContextMenuButton from '../ContextMenuButton';
+import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';
 
 interface Props {
     selectedBrowserItems: { volumeId: string; rootShareId: string; linkId: string }[];

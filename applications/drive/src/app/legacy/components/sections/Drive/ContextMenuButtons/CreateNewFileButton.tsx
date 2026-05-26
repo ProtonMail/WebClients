@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ContextMenuButton } from '../../ContextMenu';
+import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';
 
 interface Props {
     action: () => void;
