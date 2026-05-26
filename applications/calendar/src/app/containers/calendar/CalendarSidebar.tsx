@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import SidebarDrawerItems from '@proton/components/components/drawer/SidebarDrawerItems';
-import Icon from '@proton/components/components/icon/Icon';
 import Sidebar from '@proton/components/components/sidebar/Sidebar';
 import SidebarLogo from '@proton/components/components/sidebar/SidebarLogo';
 import SidebarNav from '@proton/components/components/sidebar/SidebarNav';
@@ -17,6 +16,8 @@ import useApi from '@proton/components/hooks/useApi';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
+import { IcChevronsLeft } from '@proton/icons/icons/IcChevronsLeft';
+import { IcChevronsRight } from '@proton/icons/icons/IcChevronsRight';
 import { groupCalendarsByTaxonomy, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { APPS } from '@proton/shared/lib/constants';
 import {
@@ -192,10 +193,11 @@ const CalendarSidebar = ({
                                 onClick={() => onClickExpandNav?.(SOURCE_EVENT.BUTTON_SIDEBAR)}
                                 aria-pressed={showSideBar}
                             >
-                                <Icon
-                                    name={showSideBar ? 'chevrons-left' : 'chevrons-right'}
-                                    alt={c('Action').t`Show navigation bar`}
-                                />
+                                {showSideBar ? (
+                                    <IcChevronsLeft className="rtl:mirror" alt={c('Action').t`Show navigation bar`} />
+                                ) : (
+                                    <IcChevronsRight className="rtl:mirror" alt={c('Action').t`Show navigation bar`} />
+                                )}
                             </button>
                         </Tooltip>
                     </span>
