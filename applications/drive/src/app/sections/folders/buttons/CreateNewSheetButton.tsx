@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { MimeIcon, ToolbarButton } from '@proton/components';
 
-import { ContextMenuButton } from '../../../legacy/components/sections/ContextMenu';
+import { ContextMenuButton } from '../../../statelessComponents/ContextMenu';
 import type { ActionButtonProps } from '../../buttons/types';
 
 export const CreateNewSheetButton = ({ type, close, onClick }: ActionButtonProps) => {

@@ -12,7 +12,16 @@ interface Props {
     close: () => void;
 }
 
-const ContextMenuButton = ({ name, icon, testId, action, loading, close, children }: PropsWithChildren<Props>) => {
+// A button meant to be contained inside a contextual menu.
+export const ContextMenuButton = ({
+    name,
+    icon,
+    testId,
+    action,
+    loading,
+    close,
+    children,
+}: PropsWithChildren<Props>) => {
     return (
         <DropdownMenuButton
             key={name}
@@ -34,5 +43,3 @@ const ContextMenuButton = ({ name, icon, testId, action, loading, close, childre
         </DropdownMenuButton>
     );
 };
-
-export default ContextMenuButton;

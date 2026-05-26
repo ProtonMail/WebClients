@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { generateNodeUid } from '@proton/drive/index';
 
-import type { useMoveItemsModal } from '../../../../../modals/MoveItemsModal';
 import type { DecryptedLink } from '../../../../../legacy/store';
-import { ContextMenuButton } from '../../ContextMenu';
+import type { useMoveItemsModal } from '../../../../../modals/MoveItemsModal';
+import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';
 
 interface Props {
     selectedLinks: DecryptedLink[];
