@@ -294,37 +294,41 @@ const ProjectDetailViewInner = () => {
 
     return (
         <LumoLayoutWithDrawer
-            // leftHeaderButton={
-            //     <Button
-            //         onClick={() => history.push('/projects')}
-            //         icon
-            //         shape="ghost"
-            //         color="weak"
-            //         size="small"
-            //         className="shrink-0"
-            //     >
-            //         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            //             <rect width="40" height="40" rx="12" fill="#F5F6FE" />
-            //         </svg>
-            //     </Button>
-            // }
-            headerComponent={
-                <ProjectTitleSection
-                    projectName={projectName}
-                    categoryIcon={category.icon}
-                    onSaveTitle={handleSaveTitle}
-                    onDeleteProject={() => deleteModal.openModal(true)}
-                />
-            }
-            drawerContentComponent={
-                <ProjectFilesPanel
-                    key={projectId}
-                    projectId={projectId}
-                    instructions={projectInstructions}
-                    onEditInstructions={() => instructionsModal.openModal(true)}
-                />
-            }
-            drawerTitle={c('collider_2025:Title').t`Project knowledge`}
+            header={{
+                // leftButton: (
+                //     <Button
+                //         onClick={() => history.push('/projects')}
+                //         icon
+                //         shape="ghost"
+                //         color="weak"
+                //         size="small"
+                //         className="shrink-0"
+                //     >
+                //         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                //             <rect width="40" height="40" rx="12" fill="#F5F6FE" />
+                //         </svg>
+                //     </Button>
+                // ),
+                component: (
+                    <ProjectTitleSection
+                        projectName={projectName}
+                        categoryIcon={category.icon}
+                        onSaveTitle={handleSaveTitle}
+                        onDeleteProject={() => deleteModal.openModal(true)}
+                    />
+                ),
+            }}
+            drawer={{
+                content: (
+                    <ProjectFilesPanel
+                        key={projectId}
+                        projectId={projectId}
+                        instructions={projectInstructions}
+                        onEditInstructions={() => instructionsModal.openModal(true)}
+                    />
+                ),
+                title: c('collider_2025:Title').t`Project knowledge`,
+            }}
         >
             <div className="project-detail-view flex flex-column">
                 {/* {isMobileViewport && (
