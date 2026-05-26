@@ -193,9 +193,10 @@ const replaceWhiteSpacePre = (element: HTMLElement) => {
     }
 };
 
-const replaceFixedPositionWithInherit = (element: HTMLElement) => {
-    const position = element.style.position;
-    if (position === 'fixed') {
+const OVERLAY_POSITIONS = new Set(['fixed', 'sticky']);
+
+const replaceOverlayPositionWithInherit = (element: HTMLElement) => {
+    if (OVERLAY_POSITIONS.has(element.style.position)) {
         element.style.position = 'inherit';
     }
 };
@@ -227,7 +228,7 @@ export const transformStyleAttributes = (document: Element) => {
 
         replaceWhiteSpacePre(element);
 
-        replaceFixedPositionWithInherit(element);
+        replaceOverlayPositionWithInherit(element);
 
         replaceMinHeightWith100vh(element);
 
