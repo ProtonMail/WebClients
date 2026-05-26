@@ -4,7 +4,6 @@ import { useModalStateObject } from '@proton/components';
 
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
-import { useAnimatedBackground } from '../../lib/webgl/useAnimatedBackground';
 import { useConversationActions } from '../../providers/ConversationActionsProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
@@ -30,7 +29,6 @@ interface MainContainerProps {
 
 const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: MainContainerProps) => {
     const { handleSendMessage } = useConversationActions();
-    const { shaderCanvasRef, particleCanvasRef } = useAnimatedBackground();
     // const { isOnboardingCompleted } = useOnboardingContext();
     const { isSmallScreen } = useIsLumoSmallScreen();
     const filesContainerRef = useRef<HTMLDivElement>(null);
@@ -88,10 +86,6 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
 
     return (
         <>
-            {/* eslint-disable-next-line jsx-a11y/no-aria-hidden-on-focusable */}
-            <canvas ref={shaderCanvasRef} className="animated-bg-canvas animated-bg-shader" aria-hidden="true" />
-            {/* eslint-disable-next-line jsx-a11y/no-aria-hidden-on-focusable */}
-            <canvas ref={particleCanvasRef} className="animated-bg-canvas animated-bg-particles" aria-hidden="true" />
             <LumoLayoutWithDrawer
                 solidBackground={false}
                 headerComponent={isGuest ? <PublicHeader /> : null}
