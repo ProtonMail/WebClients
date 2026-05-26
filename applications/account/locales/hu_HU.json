@@ -4464,6 +4464,9 @@
       "Email address is required": [
         "E-mail cím megadása szükséges"
       ],
+      "Email is not valid": [
+        "Érvénytelen e-mail cím"
+      ],
       "Empty condition": [
         "Üres feltétel"
       ],
@@ -4538,6 +4541,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Hibás második jelszó. Próbálja meg újra."
+      ],
+      "Incorrect username": [
+        "Helytelen felhasználónév"
       ],
       "Intended recipient does not support calendar sharing": [
         "A kívánt címzett nem támogatja a naptármegosztást"
@@ -4627,6 +4633,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Nem egy ${ BRAND_NAME } fiók"
       ],
+      "Not a valid number": [
+        "Érvénytelen szám"
+      ],
       "Organization key is not decrypted": [
         "A szervezeti kulcs nincs visszafejtve"
       ],
@@ -4638,6 +4647,9 @@
       ],
       "Password is required": [
         "Jelszó megadása szükséges"
+      ],
+      "Passwords do not match": [
+        "A jelszavak nem egyeznek"
       ],
       "Payment process canceled": [
         "A fizetés folyamata megszakítva"
@@ -4696,9 +4708,6 @@
       ],
       "Please try again in a few moments.": [
         "Néhány perc múlva próbálja meg újra."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Váltson nagyobb üzleti csomagra, egynél több felhasználval, a többfelhasználós lehetőségekhez"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Váltson egy üzleti csomagra, egynél több felhasználval, hogy több felhasználót kezelhessen."
@@ -4779,6 +4788,9 @@
       "The amount due has changed. Please try again.": [
         "A befizetendő összeg megváltozott. Kérjük próbálja meg újra."
       ],
+      "The email addresses do not match": [
+        "Az e-mail címek nem egyeznek"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "A kép túl nagy. Legfeljebb ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS } méret lehetséges"
       ],
@@ -4818,8 +4830,14 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Túl sok mappa van a külső e-mail fiókban. Módosítsa az importálás beállításait, hogy néhány mappát töröljön."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "A mező tartalma hosszabb a megengedett maximum ${ maximumLength } karakternél."
+      ],
       "This field is required": [
         "A mező kitöltése kötelező"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Legalább ${ minimumLength } karakter szükséges ebben a mezőben."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Ez a mappanév nem érhető el. Adjon meg egy másik nevet."
@@ -4839,6 +4857,9 @@
       "Try again later": [
         "Próbálja meg később"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Próbáljon csak betűket, számokat és _.-t használni"
+      ],
       "Unable to upload file": [
         "Nem sikerült feltölteni fájlt"
       ],
@@ -4856,6 +4877,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "A feltöltött fájlok nem érvényes titkos kulcsok. Ellenőrizze és próbálja újra."
+      ],
+      "Username must begin with a letter or digit": [
+        "Felhasználónévnek betűvel vagy számmal kell kezdődnie"
+      ],
+      "Username must end with a letter or digit": [
+        "Felhasználónévnek betűvel vagy számmal kell végződnie"
       ],
       "Validation error": [
         "Érvényesítési hiba"
@@ -6800,10 +6827,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Állítsa be a szervezet nevét és logóját, hogy személyesebb élményt nyújtson a szervezet számára."
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "${ addedServerCount } átjárószerver hozzáadása",
-        "${ addedServerCount } átjárószerver hozzáadása"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Egy külső e-mail cím hozzáadása kikapcsolja a végponttól-végpontig titkosítást az adott csoporton belüli összes e-mail kommunikációban. Szeretné folytatni?"
@@ -17698,6 +17721,9 @@
         "${ failedUsers.length } felhasználói fiók létrehozása sikertelen.",
         "${ failedUsers.length } felhasználói fiók létrehozása sikertelen."
       ],
+      "Fewer distractions, more focus": [
+        "Kevesebb zavaró tényező, nagyobb összpontosítás"
+      ],
       "Filter for more focus": [
         "Szűrés a nagyobb összpontosításért"
       ],
@@ -19044,6 +19070,16 @@
       ],
       "Writing assistant": [
         "Írássegéd"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia",
+        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)",
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)"
       ]
     },
     "Video control": {

@@ -4874,11 +4874,17 @@
       "Email address is required": [
         "Adres e-mail jest wymagany"
       ],
+      "Email is not valid": [
+        "Adres e-mail nie jest prawidłowy"
+      ],
       "Empty condition": [
         "Warunek jest pusty"
       ],
       "Enter 6 digits": [
         "Wpisz 6 cyfr"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Wpisz swoją nazwę użytkownika bez domeny (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Wystąpił błąd podczas łączenia z interfejsem API Bitcoina."
@@ -4948,6 +4954,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Drugie hasło jest nieprawidłowe. Spróbuj ponownie."
+      ],
+      "Incorrect username": [
+        "Nazwa użytkownika jest nieprawidłowa"
       ],
       "Intended recipient does not support calendar sharing": [
         "Odbiorca nie obsługuje udostępniania kalendarza"
@@ -5042,6 +5051,9 @@
       "Not a ${ BRAND_NAME } account": [
         "To nie jest konto ${ BRAND_NAME }"
       ],
+      "Not a valid number": [
+        "Numer telefonu nie jest prawidłowy"
+      ],
       "Organization key is not decrypted": [
         "Klucz organizacji nie został odszyfrowany"
       ],
@@ -5053,6 +5065,9 @@
       ],
       "Password is required": [
         "Hasło jest wymagane"
+      ],
+      "Passwords do not match": [
+        "Hasła nie pasują do siebie"
       ],
       "Payment process canceled": [
         "Przetwarzanie płatności zostało anulowane"
@@ -5128,9 +5143,6 @@
       ],
       "Please try again in a few moments.": [
         "Spróbuj ponownie za kilka chwil."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Ulepsz do planu biznesowego z więcej niż 1 użytkownikiem, aby uzyskać obsługę wielu użytkowników"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Ulepsz do planu biznesowego z więcej niż 1 użytkownikiem, aby zarządzać wieloma użytkownikami."
@@ -5213,6 +5225,9 @@
       "The amount due has changed. Please try again.": [
         "Kwota do spłaty uległa zmianie. Spróbuj ponownie."
       ],
+      "The email addresses do not match": [
+        "Adresy e-mail nie pasują do siebie"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Plik jest zbyt duży. Maksymalna rozdzielczość logo to ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -5252,8 +5267,14 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Posiadasz zbyt wiele folderów na swoim koncie zewnętrznym. Dostosuj proces importowania, aby usunąć niektóre foldery."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Pole przekracza maksymalną liczbą ${ maximumLength } znaków."
+      ],
       "This field is required": [
         "Pole jest wymagane"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Pole musi zawierać co najmniej ${ minimumLength } znaków."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Nazwa folderu nie jest dostępna. Wpisz inną nazwę."
@@ -5273,6 +5294,9 @@
       "Try again later": [
         "Spróbuj ponownie później"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Użyj tylko liter, cyfr i znaków _.-"
+      ],
       "Unable to upload file": [
         "Nie można przesłać pliku"
       ],
@@ -5290,6 +5314,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Przesłane pliki nie są prawidłowymi kluczami prywatnymi. Zweryfikuj pliki i spróbuj ponownie."
+      ],
+      "Username must begin with a letter or digit": [
+        "Nazwa użytkownika musi zaczynać się literą lub cyfrą"
+      ],
+      "Username must end with a letter or digit": [
+        "Nazwa użytkownika musi kończyć się literą lub cyfrą"
       ],
       "Validation error": [
         "Błąd weryfikacji"
@@ -7391,12 +7421,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Dodaj nazwę i logo, aby spersonalizować organizację."
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Dodawanie ${ addedServerCount } serwera bramy",
-        "Dodawanie ${ addedServerCount } serwerów bramy",
-        "Dodawanie ${ addedServerCount } serwerów bramy",
-        "Dodawanie ${ addedServerCount } serwerów bramy"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Dodanie zewnętrznego adresu e-mail spowoduje wyłączenie szyfrowania end-to-end wiadomości w całej grupie. Czy chcesz kontynuować?"
@@ -20353,9 +20377,6 @@
       "This feature is only available for paid users": [
         "Ta funkcja jest dostępna tylko dla użytkowników płatnego planu"
       ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "To jest domyślny klucz używany przez innych użytkowników ${ MAIL_APP_NAME } na starszych aplikacjach mobilnych do szyfrowania danych wysyłanych do Ciebie"
-      ],
       "This key cannot be used for encryption": [
         "Klucz nie może zostać użyty do szyfrowania"
       ],
@@ -20781,6 +20802,20 @@
       ],
       "Writing assistant": [
         "Asystent pisania"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znak",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaki",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znak)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaki)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)"
       ]
     },
     "Video control": {

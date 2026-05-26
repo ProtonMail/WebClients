@@ -6054,6 +6054,9 @@
       "Email address is required": [
         "Alamat email wajib diisi"
       ],
+      "Email is not valid": [
+        "Email tidak valid"
+      ],
       "Empty condition": [
         "Kondisi kosong"
       ],
@@ -6134,6 +6137,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Kata sandi kedua salah. Silakan coba lagi."
+      ],
+      "Incorrect username": [
+        "Nama pengguna salah"
       ],
       "Intended recipient does not support calendar sharing": [
         "Penerima yang dituju tidak mendukung berbagi kalender"
@@ -6231,6 +6237,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Bukan akun ${ BRAND_NAME }"
       ],
+      "Not a valid number": [
+        "Nomor telepon tidak valid"
+      ],
       "Organization key is not decrypted": [
         "Kunci organisasi tidak didekripsi"
       ],
@@ -6242,6 +6251,9 @@
       ],
       "Password is required": [
         "Kata sandi wajib diisi"
+      ],
+      "Passwords do not match": [
+        "Kata sandi tidak sesuai"
       ],
       "Payment process canceled": [
         "Proses pembayaran dibatalkan"
@@ -6320,9 +6332,6 @@
       ],
       "Please try again in a few moments.": [
         "Silakan coba lagi dalam beberapa saat."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Harap tingkatkan jenis akun Anda ke paket bisnis dengan lebih dari 1 pengguna untuk dapat menggunakan fitur dukungan multi-pengguna"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Harap tingkatkan jenis akun Anda ke paket bisnis dengan lebih dari 1 pengguna untuk dapat mengelola banyak pengguna sekaligus."
@@ -6405,6 +6414,9 @@
       "The amount due has changed. Please try again.": [
         "Biaya yang tertagih telah berubah. Silakan coba lagi."
       ],
+      "The email addresses do not match": [
+        "Alamat email tidak sesuai"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "File terlalu besar. Ukuran maksimum file ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -6444,8 +6456,14 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Ada terlalu banyak folder di dalam akun eksternal Anda. Mohon sesuaikan parameter impor Anda agar sebagian folder dapat terhapus."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Isi kolom ini melebihi panjang maksimal ${ maximumLength } karakter."
+      ],
       "This field is required": [
         "Kolom ini wajib diisi"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Kolom ini harus diisi dengan minimal ${ minimumLength } karakter."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Nama folder ini tidak dapat digunakan. Mohon pilih nama lain."
@@ -6471,6 +6489,9 @@
       "Try again later": [
         "Coba lagi nanti"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
+      ],
       "Unable to upload file": [
         "File tidak dapat diunggah"
       ],
@@ -6488,6 +6509,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "File yang diunggah bukan kunci privat yang valid. Silakan verifikasi dan coba lagi."
+      ],
+      "Username must begin with a letter or digit": [
+        "Nama pengguna harus dimulai dengan huruf atau angka"
+      ],
+      "Username must end with a letter or digit": [
+        "Nama pengguna harus diakhiri dengan huruf atau angka"
       ],
       "Validation error": [
         "Kesalahan validasi"
@@ -8652,9 +8679,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Tambahkan nama dan logo Anda untuk menghasilkan pengalaman yang lebih personal bagi organisasi Anda."
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Menambahkan ${ addedServerCount } server gateway"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Menambahkan alamat emal eksternal ke grup ini akan menonaktifkan enkripsi end-to-end untuk seluruh komunikasi email di dalam grup. Apakah Anda ingin melanjutkan?"
@@ -17467,16 +17491,6 @@
         "Tingkatkan ke ${ upsellPlanTitle }"
       ]
     },
-    "PQC account key generation": {
-      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
-        "Tidak dapat membuat kunci. Untuk mengaktifkan perlindungan pasca-kuantum, Anda perlu membuat kunci enkripsi baru secara manual.\n\nBuka ${ settingsLink } lalu pilih “Buat kunci” untuk akun Anda dan untuk setiap alamat."
-      ]
-    },
-    "PQC adress key generation": {
-      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
-        "Tidak dapat membuat kunci alamat. Untuk mengaktifkan perlindungan pasca-kuantum, Anda perlu membuat kunci enkripsi baru secara manual.\n\nBuka ${ settingsLink } lalu pilih “Buat kunci” untuk setiap alamat."
-      ]
-    },
     "PQC key generation": {
       "This will generate new quantum-resistant encryption keys for your account.": [
         "Ini akan menghasilkan kunci enkripsi tahan kuantum baru untuk akun Anda."
@@ -21710,6 +21724,9 @@
       "Feature access": [
         "Akses fitur"
       ],
+      "Fewer distractions, more focus": [
+        "Lebih sedikit gangguan, lebih banyak fokus"
+      ],
       "Filter for more focus": [
         "Filter untuk fokus yang lebih"
       ],
@@ -22904,9 +22921,6 @@
       "This feature is only available on Beta": [
         "Fitur ini hanya tersedia pada versi Beta"
       ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "Kunci ini merupakan kunci bawaan yang digunakan oleh pengguna ${ MAIL_APP_NAME } lainnya di aplikasi seluler versi lawas untuk mengenkripsi data yang mereka kirim kepada Anda"
-      ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
         "Kunci ini merupakan kunci bawaan yang digunakan oleh pengguna ${ MAIL_APP_NAME } lainnya untuk mengenkripsi data yang mereka kirim kepada Anda"
       ],
@@ -23402,6 +23416,14 @@
       ],
       "Writing assistant": [
         "Asisten penulisan"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Kata sandi harus mengandung setidaknya ${ MIN_PASSWORD_LENGTH } karakter"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Cobalah nama pengguna yang lebih pendek (maksimal ${ n } karakter)"
       ]
     },
     "Video control": {

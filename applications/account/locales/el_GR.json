@@ -381,6 +381,9 @@
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Συνεχίστε με ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
+      "Continue with Free": [
+        "Συνέχεια με Free"
+      ],
       "Continue with Google": [
         "Συνεχίστε με Google"
       ],
@@ -573,6 +576,9 @@
       "Disable categories": [
         "Απενεργοποίηση κατηγοριών"
       ],
+      "Disable category": [
+        "Απενεργοποίηση κατηγορίας"
+      ],
       "Disable recovery phrase": [
         "Απενεργοποίηση φράσης ανάκτησης"
       ],
@@ -723,6 +729,9 @@
       "Enable ${ darkWebMonitoring }": [
         "Ενεργοποίηση ${ darkWebMonitoring }"
       ],
+      "Enable category": [
+        "Ενεργοποίηση κατηγορίας"
+      ],
       "enable desktop notifications": [
         "ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας"
       ],
@@ -794,6 +803,9 @@
       ],
       "Generate key": [
         "Παραγωγή κλειδιού"
+      ],
+      "Generate missing keys": [
+        "Δημιουργία των κλειδιών που λείπουν"
       ],
       "Generate new phrase": [
         "Δημιουργία νέας φράσης"
@@ -5292,6 +5304,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Ταξινομήστε αυτόματα τα εισερχόμενα μηνύματά σας πριν φτάσουν στα εισερχόμενά σας."
       ],
+      "Available storage: ${ storageText }": [
+        "Διαθέσιμος χώρος αποθήκευσης: ${ storageText }"
+      ],
       "Available with ${ title }": [
         "Διατίθεται με το ${ title }"
       ],
@@ -5354,6 +5369,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται κρυπτογράφηση και εισαγωγή επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Αρκετός χώρος για χρόνια από μηνύματα ηλεκτρονικού ταχυδρομείου , συνημμένα και άλλα."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Εξασφαλίστε ασφαλή πρόσβαση στα δεδομένα του οργανισμού, ακόμα και αν η ομάδα σας είναι απομακρυσμένη ή χρησιμοποιεί δημόσιο WiFi."
@@ -5427,6 +5445,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Διαβάστε, απαντήστε και μείνετε ενημερωμένοι στο Gmail μέσα από το ${ MAIL_APP_NAME }"
       ],
+      "Select which categories you want to add and if you want to receive push notifications for each category.": [
+        "Επιλέξτε ποιες κατηγορίες θέλετε να προσθέσετε και αν θέλετε να λαμβάνετε ειδοποιήσεις push για κάθε κατηγορία."
+      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Ρυθμίστε λογαριασμούς για όλους τους χρήστες και προσκαλέστε τους να συμμετάσχουν στο ${ BRAND_NAME }."
       ],
@@ -5470,6 +5491,9 @@
       "Track the status and activity of your referrals": [
         "Παρακολουθήστε την κατάσταση και τη δραστηριότητα των παραπομπών σας"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Ξεκλειδώστε 15 GB αποθηκευτικού χώρου μόνο με ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Αναβαθμίστε στο ${ planName } για να συνδέσετε έως και ${ MAX_SYNC_PAID_USER } λογαριασμούς"
       ],
@@ -5485,14 +5509,20 @@
       "We can't access ${ boldEmails } anymore.": [
         "Δεν μπορούμε πια να έχουμε πρόσβαση στα ${ boldEmails }."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Θα σταματήσουμε τις εισαγωγές στο 80% του αποθηκευτικού χώρου για να κρατήσουμε χώρο για νέα μηνύματα."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Θα εισαγάγουμε τα παλιά σας μηνύματα ηλεκτρονικού ταχυδρομείου και θα συνδέσουμε το Gmail σας με το ${ MAIL_APP_NAME } ώστε τα νέα μηνύματα να εμφανίζονται αυτόματα"
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Ξεκινήσαμε την εισαγωγή των μηνυμάτων ηλεκτρονικού ταχυδρομείου των τελευταίων 180 ημερών από το Gmail. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Ξεκινήσαμε την εισαγωγή των ηλεκτρονικών μηνυμάτων σας από το Gmail. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Λυπόμαστε που φεύγετε. Αν έχετε λίγο χρόνο, θα εκτιμούσαμε πραγματικά να μας πείτε γιατί θέλετε να ακυρώσετε. Τα σχόλιά σας μας βοηθούν να κάνουμε το ${ BRAND_NAME } καλύτερο για όλους."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Με τις νέες κατηγορίες ηλεκτρονικού ταχυδρομείου, μόνο τα σημαντικά μηνύματα προσγειώνονται στο κύριο γραμματοκιβώτιό σας. Οι κατηγορίες λειτουργούν ακριβώς όπως τα φίλτρα ανεπιθύμητης αλληλογραφίας. Το ${ MAIL_APP_NAME } ποτέ δε διαβάζει τα μηνύματα ηλεκτρονικού ταχυδρομείου σας ούτε μοιράζεται τα δεδομένα σας."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Έχετε ήδη μια διεύθυνση Gmail που προωθείται στο ${ MAIL_APP_NAME }. Συνδέστε τη παρακάτω για να στείλετε και να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου απευθείας από το ${ MAIL_APP_NAME }."
@@ -5534,6 +5564,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Έχετε συνδέσει μία διεύθυνση εξωτερικού λογαριασμού στο ${ MAIL_APP_NAME }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ο δωρεάν λογαριασμός σας ${ MAIL_APP_NAME } διαθέτει περιορισμένο αποθηκευτικό χώρο, επομένως θα εισάγουμε μόνο ${ newUserStorageText } από τα πιο πρόσφατα μηνύματά σας στο Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ο δωρεάν λογαριασμός σας ${ MAIL_APP_NAME } διαθέτει περιορισμένο αποθηκευτικό χώρο, επομένως θα εισάγουμε μόνο τα πιο πρόσφατα email σας στο Gmail."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Το πλάνο σας υποστηρίζει ${ MAX_SYNC_FREE_USER } διεύθυνση Gmail.",
@@ -7149,11 +7185,17 @@
       "Email address is required": [
         "Η διεύθυνση email είναι υποχρεωτική"
       ],
+      "Email is not valid": [
+        "Η διεύθυνση email δεν είναι έγκυρη"
+      ],
       "Empty condition": [
         "Κενή συνθήκη"
       ],
       "Enter 6 digits": [
         "Εισάγετε 6 ψηφία"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Εισάγετε το όνομα χρήστη σας χωρίς τον τομέα (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Πρόβλημα σύνδεσης με το Bitcoin API."
@@ -7241,6 +7283,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Λανθασμένος δεύτερος κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "Incorrect username": [
+        "Εσφαλμένο όνομα χρήστη"
       ],
       "Intended recipient does not support calendar sharing": [
         "Ο προβλεπόμενος παραλήπτης δεν υποστηρίζει την κοινή χρήση ημερολογίου"
@@ -7351,6 +7396,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Δεν είναι λογαριασμός ${ BRAND_NAME }"
       ],
+      "Not a valid number": [
+        "Μη έγκυρος αριθμός"
+      ],
       "Organization key is not decrypted": [
         "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
       ],
@@ -7362,6 +7410,9 @@
       ],
       "Password is required": [
         "Απαιτείται κωδικός πρόσβασης"
+      ],
+      "Passwords do not match": [
+        "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
       ],
       "Payment process canceled": [
         "Η διαδικασία πληρωμής ακυρώθηκε"
@@ -7444,9 +7495,6 @@
       ],
       "Please try again in a few moments.": [
         "Παρακαλούμε δοκιμάστε ξανά σε λίγο."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Παρακαλώ αναβαθμίστε σε επιχειρηματικό πλάνο με περισσότερους από 1 χρήστες ώστε να λάβετε υποστήριξη πολλαπλών χρηστών"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Παρακαλώ αναβαθμίστε σε επιχειρηματικό πλάνο με περισσότερους από 1 χρήστες ώστε να διαχειριστείτε πολλαπλούς χρήστες."
@@ -7545,6 +7593,9 @@
       "The amount due has changed. Please try again.": [
         "Το οφειλόμενο ποσό έχει αλλάξει. Παρακαλούμε προσπαθήστε ξανά."
       ],
+      "The email addresses do not match": [
+        "Οι διευθύνσεις email δεν ταιριάζουν."
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Το αρχείο είναι πολύ μεγάλο, το μέγιστο μέγεθος είναι ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -7590,11 +7641,17 @@
       "There was an error, please try again.": [
         "Παρουσιάστηκε σφάλμα, παρακαλούμε προσπαθήστε ξανά."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
+      ],
       "This field is invalid": [
         "Αυτό το πεδίο δεν είναι έγκυρο"
       ],
       "This field is required": [
         "Αυτό το πεδίο είναι υποχρεωτικό"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Μη διαθέσιμο όνομα φακέλου. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
@@ -7620,6 +7677,9 @@
       "Try again later": [
         "Δοκιμάστε ξανά αργότερα"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Δοκιμάστε να χρησιμοποιήσετε μόνο γράμματα, αριθμούς και _.-"
+      ],
       "Unable to upload file": [
         "Αδυναμία μεταφόρτωσης αρχείου"
       ],
@@ -7637,6 +7697,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Τα ανεβασμένα αρχεία δεν είναι έγκυρα ιδιωτικά κλειδιά. Παρακαλούμε βεβαιωθείτε και δοκιμάστε ξανά."
+      ],
+      "Username must begin with a letter or digit": [
+        "Το όνομα χρήστη πρέπει να ξεκινά με ένα γράμμα ή ένα ψηφίο"
+      ],
+      "Username must end with a letter or digit": [
+        "Το όνομα χρήστη πρέπει να τελειώνει με γράμμα ή ψηφίο"
       ],
       "Validation error": [
         "Σφάλμα επικύρωσης"
@@ -8375,6 +8441,9 @@
       "${ PROTON_SENTINEL_NAME } account protection": [
         "${ PROTON_SENTINEL_NAME } προστασία λογαριασμού"
       ],
+      "10+ premium features": [
+        "10+ premium χαρακτηριστικά"
+      ],
       "15 GB storage": [
         "15 GB αποθηκευτικός χώρος"
       ],
@@ -8410,6 +8479,12 @@
       "Continue": [
         "Συνέχεια"
       ],
+      "Custom email domain": [
+        "Προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Email addresses": [
+        "Διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Κρυπτογραφημένος χώρος αποθήκευσης στο cloud για αρχεία, φωτογραφίες και έγγραφα"
       ],
@@ -8439,6 +8514,9 @@
       ],
       "Short domain @pm.me": [
         "Σύντομος τομέας @pm.me"
+      ],
+      "Storage": [
+        "Αποθηκευτικός χώρος"
       ],
       "Torrenting support (P2P)": [
         "Υποστήριξη Torrenting (P2P)"
@@ -8807,6 +8885,9 @@
     "Force upgrade safety review": {
       "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
         "Κατανοώ ότι δε θα μπορώ πλέον να συνδεθώ σε παλαιότερες εκδόσεις των εφαρμογών ${ BRAND_NAME }."
+      ],
+      "Learn more": [
+        "Μάθετε περισσότερα"
       ]
     },
     "Form heading": {
@@ -9623,8 +9704,8 @@
       "${ BRAND_NAME } Free": [
         "${ BRAND_NAME } Free"
       ],
-      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
-        "${ BRAND_NAME } χρηματοδοτείται ανεξάρτητα και λειτουργεί χωρίς διαφημίσεις.\nΠαρακάτω παρατίθενται παραδείγματα για το πώς αυτή η ανεξαρτησία έχει χρησιμοποιηθεί στην πράξη."
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } χρηματοδοτείται ανεξάρτητα και λειτουργεί χωρίς διαφημίσεις. Παρακάτω παρατίθενται παραδείγματα για το πώς αυτή η ανεξαρτησία έχει χρησιμοποιηθεί στην πράξη."
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "Το ${ BRAND_NAME } είναι απόρρητο που μπορείτε να εμπιστευτείτε, το οποίο διασφαλίζεται από ισχυρή κρυπτογράφηση, κώδικα ανοιχτού κώδικα και Ελβετικούς νόμους περί απορρήτου. Πιστεύουμε ότι κανείς δεν πρέπει να μπορεί να εκμεταλλευτεί τα δεδομένα σας, τελεία και παύλα. Η τεχνολογία και η επιχείρησή μας βασίζονται σε αυτόν τον θεμελιωδώς ισχυρότερο ορισμό της ιδιωτικής ζωής."
@@ -10061,9 +10142,9 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Προσθέστε το όνομα και το λογότυπό σας για να δημιουργήσετε μια πιο εξατομικευμένη εμπειρία για τον οργανισμό σας."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Προσθήκη ${ addedServerCount } διακομιστή πύλης",
-        "Προσθήκη ${ addedServerCount } διακομιστών πύλης"
+      "Adding ${ total } gateway server": [
+        "Προσθήκη ${ total } διακομιστή πύλης",
+        "Προσθήκη ${ total } διακομιστών πύλης"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Η προσθήκη μιας εξωτερικής διεύθυνσης ηλεκτρονικού ταχυδρομείου θα απενεργοποιήσει την κρυπτογράφηση από άκρο σε άκρο για όλες τις επικοινωνίες ηλεκτρονικού ταχυδρομείου εντός αυτής της ομάδας. Θέλετε να προχωρήσετε;"
@@ -11256,6 +11337,9 @@
       ],
       "Include device, location, and IP details": [
         "Περίληψη στοιχεία συσκευής, τοποθεσίας και IP"
+      ],
+      "Included": [
+        "Περιλαμβάνονται"
       ],
       "Increase your account security by verifying your email address.": [
         "Αυξήστε την ασφάλεια του λογαριασμού σας επαληθεύοντας τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
@@ -12585,6 +12669,9 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Για αποκρυπτογράφηση και προβολή των κλειδωμένων δεδομένων σας μετά από επαναφορά κωδικού πρόσβασης, επιλέξτε μια μέθοδο ανάκτησης."
       ],
+      "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
+        "Για να ενεργοποιήσετε τη μετα-κβαντική προστασία, θα πρέπει να ολοκληρώσετε τη δημιουργία των νέων κλειδιών κρυπτογράφησης μετά την κβαντική."
+      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την **Ανάκτηση μέσω ηλεκτρονικής διεύθυνσης ανάκτησης**."
       ],
@@ -12708,8 +12795,14 @@
       "Unverified email address.": [
         "Μη επαληθευμένη διεύθυνση ηλεκτρονικού ταχυδρομείου."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Αναβαθμίστε οποιαδήποτε στιγμή για να φέρετε τα υπόλοιπα"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Αναβαθμίστε ή εκκενώστε χώρο οποιαδήποτε στιγμή για να φέρετε τα υπόλοιπα"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Κάντε αναβάθμιση για να προσθέσετε μια συντομότερη διεύθυνση @pm.me στον λογαριασμό σας, η οποία θα είναι πιο εύκολη στην κοινή χρήση. Σημαίνει \"${ MAIL_APP_NAME } me\" ή \"Private Message me\". (Στείλε μου Προσωπικό Μήνυμα)"
@@ -14036,6 +14129,9 @@
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME } προστασία"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } χαρακτήρες"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
       ],
@@ -14633,6 +14729,9 @@
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
         "Ενεργοποίηση ${ DARK_WEB_MONITORING_NAME } για ${ domain.DomainName }"
+      ],
+      "Enable categories": [
+        "Ενεργοποίηση κατηγοριών"
       ],
       "Enabled": [
         "Ενεργοποιημένο"
@@ -18655,6 +18754,9 @@
       "Plain text": [
         "Ακατέργαστο κείμενο"
       ],
+      "Push notifications": [
+        "Προώθηση ειδοποιήσεων"
+      ],
       "Receive from all": [
         "Λήψη από όλους"
       ],
@@ -20030,13 +20132,13 @@
       ]
     },
     "PQC account key generation": {
-      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
-        "Δεν ήταν δυνατή η δημιουργία κλειδιών. Για να ενεργοποιήσετε την προστασία μετά την κβαντική εποχή, θα πρέπει να δημιουργήσετε τα νέα κλειδιά κρυπτογράφησης χειροκίνητα.\n\n${ settingsLink } και επιλέξτε 'Δημιουργία κλειδιού' για τον λογαριασμό σας και για κάθε διεύθυνση."
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Δεν ήταν δυνατή η δημιουργία κλειδιών. Για να ενεργοποιήσετε την προστασία μετά την κβαντική εποχή, θα πρέπει να ολοκληρώσετε τη δημιουργία των νέων κλειδιών κρυπτογράφησης μετά-κβαντικής εποχής.\n\n${ goToSettingsLink } και επιλέξτε «Δημιουργία κλειδιών που λείπουν»."
       ]
     },
     "PQC adress key generation": {
-      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
-        "Δεν ήταν δυνατή η δημιουργία κλειδιών διεύθυνσης. Για να ενεργοποιήσετε την προστασία μετά την κβαντική εποχή, θα πρέπει να δημιουργήσετε τα νέα κλειδιά κρυπτογράφησης χειροκίνητα.\n\nΜεταβείτε στο ${ settingsLink } και επιλέξτε 'Δημιουργία κλειδιού' για κάθε διεύθυνση."
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys for each address.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Δεν ήταν δυνατή η δημιουργία κλειδιών διεύθυνσης. Για να ενεργοποιήσετε την προστασία μετά την κβαντική εποχή, θα πρέπει να ολοκληρώσετε τη δημιουργία των νέων κλειδιών κρυπτογράφησης μετά-κβαντικής εποχής για κάθε διεύθυνση.\n\n${ goToSettingsLink } και επιλέξτε «Δημιουργία κλειδιών που λείπουν»."
       ]
     },
     "PQC compatibility warning": {
@@ -24520,6 +24622,9 @@
       "Add another notification to remind you of this event": [
         "Προσθέστε μια άλλη ειδοποίηση για να σας υπενθυμίσει αυτήν την εκδήλωση"
       ],
+      "Add categories": [
+        "Προσθέστε κατηγορίες"
+      ],
       "Add contact group name": [
         "Προσθήκη ονόματος ομάδας επαφών"
       ],
@@ -24694,6 +24799,9 @@
       "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
+      "Categories": [
+        "Κατηγορίες"
+      ],
       "Change login password": [
         "Αλλαγή κωδικού σύνδεσης"
       ],
@@ -24786,6 +24894,9 @@
       ],
       "Contact us": [
         "Επικοινωνήστε μαζί μας"
+      ],
+      "Continue with free storage": [
+        "Συνέχεια με δωρεάν αποθηκευτικό χώρο"
       ],
       "Continue with partial import?": [
         "Συνέχιση με μερική εισαγωγή;"
@@ -25195,6 +25306,9 @@
       "Feature access": [
         "Πρόσβαση σε λειτουργίες"
       ],
+      "Fewer distractions, more focus": [
+        "Λιγότερες περισπασμοί, περισσότερη συγκέντρωση"
+      ],
       "Filter for more focus": [
         "Φιλτράρισμα για περισσότερη εστίαση"
       ],
@@ -25293,6 +25407,9 @@
       ],
       "Get more from your VPN": [
         "Αποκτήστε περισσότερα από το VPN σας."
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Αποκτήστε περισσότερο χώρο αποθήκευσης με το ${ MAIL_APP_NAME } Plus"
       ],
       "Get started": [
         "Ας ξεκινήσουμε"
@@ -26415,6 +26532,9 @@
       "Each imported email will have this label": [
         "Κάθε εισαγόμενο μήνυμα ηλεκτρονικού ταχυδρομείου θα έχει αυτήν την ετικέτα"
       ],
+      "Early access to new apps and features.": [
+        "Πρώιμη πρόσβαση σε νέες εφαρμογές και δυνατότητες."
+      ],
       "Edit folder names": [
         "Επεξεργασία ονομάτων φακέλων"
       ],
@@ -26571,8 +26691,8 @@
       "This feature is only available on Beta": [
         "Αυτή η δυνατότητα είναι διαθέσιμη μόνο στην έκδοση Beta"
       ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "Αυτό είναι το προεπιλεγμένο κλειδί που χρησιμοποιείται από άλλους ${ MAIL_APP_NAME } χρήστες σε παλαιότερες εφαρμογές για κινητά για την κρυπτογράφηση δεδομένων που σας στέλνουν"
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
+        "Αυτό είναι το προεπιλεγμένο κλειδί που χρησιμοποιείται από άλλους ${ MAIL_APP_NAME } χρήστες σε παλαιότερες εφαρμογές για την κρυπτογράφηση δεδομένων που σας στέλνουν"
       ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
         "Αυτό είναι το προεπιλεγμένο κλειδί που χρησιμοποιείται από άλλους ${ MAIL_APP_NAME } χρήστες για την κρυπτογράφηση δεδομένων που σας στέλνουν"
@@ -27104,6 +27224,16 @@
       ],
       "Writing assistant": [
         "Βοηθός γραφής"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρα",
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρες"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρα)",
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρες)"
       ]
     },
     "Video control": {

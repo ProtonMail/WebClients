@@ -2938,6 +2938,9 @@
       "Email address is required": [
         "Tansa imayl mačči yettwasra"
       ],
+      "Email is not valid": [
+        "Imayl mačči d ameɣtu"
+      ],
       "Empty condition": [
         "Tawtilt d tilemt"
       ],
@@ -3055,11 +3058,17 @@
       "Not a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } mačči d amiḍan"
       ],
+      "Not a valid number": [
+        "Mačči d uṭṭun ameɣtu"
+      ],
       "Organization key is not decrypted": [
         "Tasarut n tuddsa ur s-yekkis ara uwgelhen"
       ],
       "Password is required": [
         "Awal uffir yettwasra"
+      ],
+      "Passwords do not match": [
+        "Awalen uffiren ur menṭaḍen ara"
       ],
       "Payment process canceled": [
         "Akala n uxelleṣ yettwasefsex"
@@ -3176,6 +3185,9 @@
       "This field is required": [
         "Urti-agi ilaq"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Urti-a isra ma drus ${ minimumLength } n yizamulen."
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Isem n ukaram-a ulac-it. Ttxil-k·m fren isem-nniḍen."
       ],
@@ -3202,6 +3214,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Yifuyla i d-yulin mačči d tisura tusligin tiɣellsanin. Ttxil-k·m selken syen ɛreḍ tikkelt niḍen."
+      ],
+      "Username must begin with a letter or digit": [
+        "Isem n useqdac ilaq ad yebdu s usekkil neɣ s umḍan"
+      ],
+      "Username must end with a letter or digit": [
+        "Isem n useqdac ilaq ad yekfu s usekkil neɣ s umḍan"
       ],
       "Validation error": [
         "Tuccḍa n usentem"
@@ -10690,6 +10708,12 @@
       ],
       "SSO": [
         "SSO"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n usekkil",
+        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n yisekkilen"
       ]
     },
     "Video control": {

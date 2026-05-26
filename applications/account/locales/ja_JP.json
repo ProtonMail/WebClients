@@ -6283,6 +6283,9 @@
       "Email address is required": [
         "メールアドレスは必須です"
       ],
+      "Email is not valid": [
+        "メールアドレスが無効です"
+      ],
       "Empty condition": [
         "条件が空です"
       ],
@@ -6366,6 +6369,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "セカンドパスワードが正しくありません。もう一度お試しください。"
+      ],
+      "Incorrect username": [
+        "ユーザー名に間違いがあります。"
       ],
       "Intended recipient does not support calendar sharing": [
         "対象の受信者はカレンダーの共有をサポートしていません"
@@ -6472,6 +6478,9 @@
       "Not a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } アカウントではありません"
       ],
+      "Not a valid number": [
+        "無効な番号です"
+      ],
       "Organization key is not decrypted": [
         "組織の鍵が復号されていません"
       ],
@@ -6483,6 +6492,9 @@
       ],
       "Password is required": [
         "パスワードは必須です"
+      ],
+      "Passwords do not match": [
+        "パスワードが一致しません"
       ],
       "Payment process canceled": [
         "支払い処理がキャンセルされました"
@@ -6564,9 +6576,6 @@
       ],
       "Please try again in a few moments.": [
         "しばらくしてからもう一度お試しください."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "マルチユーザーサポートを受けるには、複数のユーザーを含むビジネスプランにアップグレードしてください"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "複数のユーザーを管理するには、複数のユーザーを含むビジネスプランにアップグレードしてください。"
@@ -6652,6 +6661,9 @@
       "The amount due has changed. Please try again.": [
         "金額が変更されました。もう一度やり直してください。"
       ],
+      "The email addresses do not match": [
+        "メールアドレスが一致しません"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "ファイルが大きすぎます。最大サイズは ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS } です"
       ],
@@ -6694,11 +6706,17 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "外部アカウントのフォルダが多すぎます。インポートをカスタマイズしてフォルダをいくつか削除してください。"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "このフィールドは${ maximumLength }文字の最大値を超えています。"
+      ],
       "This field is invalid": [
         "このフィールドは無効です"
       ],
       "This field is required": [
         "この項目の入力は必須です"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "このフィールドには ${ minimumLength } 文字以上の入力が必要です。"
       ],
       "This folder name is not available. Please choose a different name.": [
         "このフォルダー名は利用できません。別の名前を選択してください。"
@@ -6724,6 +6742,9 @@
       "Try again later": [
         "後ほどお試しください"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "文字、数字、_.- のみを使用してみてください。"
+      ],
       "Unable to upload file": [
         "ファイルをアップロードできません"
       ],
@@ -6741,6 +6762,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "アップロードされたファイルは有効な秘密鍵ではありません。確認して再度お試しください。"
+      ],
+      "Username must begin with a letter or digit": [
+        "ユーザー名は英字か数字で始めなければいけません"
+      ],
+      "Username must end with a letter or digit": [
+        "ユーザー名の最後は英字か数字でなければいけません"
       ],
       "Validation error": [
         "検証エラー"
@@ -8928,9 +8955,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "名前とロゴを追加して、組織にとってよりパーソナライズされたエクスペリエンスを作成します。"
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "${ addedServerCount } ゲートウェイ サーバーを追加しています"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "他のメールアドレスを追加すると、そのグループ内の全てのメールでエンドツーエンドの暗号化が無効になります。続行しますか？"
@@ -17987,16 +18011,6 @@
         "${ upsellPlanTitle }にアップグレード"
       ]
     },
-    "PQC account key generation": {
-      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
-        "キーを生成することができませんでした。ポスト量子保護を有効にするには、手動で新しい暗号キーを生成する必要があります。\n\n${ settingsLink }で、アカウントとそれぞれのアドレスに対して「キーを生成する」を選択してください。"
-      ]
-    },
-    "PQC adress key generation": {
-      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
-        "アドレスキーを生成できませんでした。ポスト量子保護を有効にするには、手動で新しい暗号キーを生成する必要があります。\n\n${ settingsLink }に行き、それぞれのアドレスに対して「キーを生成する」を選択してください。"
-      ]
-    },
     "PQC key generation": {
       "This will generate new quantum-resistant encryption keys for your account.": [
         "これによりアカウントに新しい耐量子暗号キーが生成されます。"
@@ -22426,6 +22440,9 @@
       "Feature access": [
         "機能アクセス"
       ],
+      "Fewer distractions, more focus": [
+        "気を散らすものを減らし、集中力を高める"
+      ],
       "Filter for more focus": [
         "より集中するためのフィルター"
       ],
@@ -23635,9 +23652,6 @@
       "This feature is only available on Beta": [
         "この機能はベータ版でのみ利用可能です"
       ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "これは、他の ${ MAIL_APP_NAME } ユーザーが古いモバイル版アプリで送信するデータを暗号化するために使用するデフォルトのキーです"
-      ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
         "これは、他の ${ MAIL_APP_NAME } ユーザーが送信するデータを暗号化するために使用するデフォルトのキーです"
       ],
@@ -24142,6 +24156,14 @@
       ],
       "Writing assistant": [
         "執筆アシスタント"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "パスワードは ${ MIN_PASSWORD_LENGTH } 文字以上必要です"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "もっと短いユーザ名にしてください (${ n } 文字以内)"
       ]
     },
     "Video control": {
