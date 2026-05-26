@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { generateNodeUid, getDrive } from '@proton/drive';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import type { useRevisionsModal } from '../../../../../modals/RevisionsModal';
 import { useDocumentActions } from '../../../../../legacy/store/_documents';
-import ContextMenuButton from '../ContextMenuButton';
+import type { useRevisionsModal } from '../../../../../modals/RevisionsModal';
+import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';
 
 type RevisionItem = {
     mimeType: string;

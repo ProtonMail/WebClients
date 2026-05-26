@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { DecryptedLink } from '../../../../../legacy/store';
 import { useActions } from '../../../../../legacy/store';
-import { ContextMenuButton } from '../../ContextMenu';
+import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';
 
 interface Props {
     selectedLinks: DecryptedLink[];

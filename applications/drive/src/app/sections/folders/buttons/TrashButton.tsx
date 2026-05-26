@@ -4,8 +4,8 @@ import { Icon, ToolbarButton } from '@proton/components';
 import { type NodeType, getDrivePerNodeType } from '@proton/drive';
 import { useLoading } from '@proton/hooks';
 
-import { ContextMenuButton } from '../../../legacy/components/sections/ContextMenu';
 import { noSelection } from '../../../legacy/components/sections/ToolbarButtons/utils';
+import { ContextMenuButton } from '../../../statelessComponents/ContextMenu';
 import type { ActionButtonProps } from '../../buttons/types';
 import { useTrashActions } from '../../commonActions/useTrashActions';
 

@@ -3,10 +3,10 @@ import { c } from 'ttag';
 import { generateNodeUid } from '@proton/drive';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
-import { DownloadManager } from '../../../../../modules/download/DownloadManager';
 import type { LinkDownload } from '../../../../../legacy/store';
 import { useDocumentActions } from '../../../../../legacy/store/_documents';
-import ContextMenuButton from '../ContextMenuButton';
+import { DownloadManager } from '../../../../../modules/download/DownloadManager';
+import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';
 
 interface SelectedBrowserItem extends Omit<LinkDownload, 'shareId'> {
     rootShareId: string;
