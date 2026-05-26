@@ -3,7 +3,7 @@ import { bytesToHex } from '@noble/hashes/utils';
 
 import type { DownloadController, NodeEntity } from '@proton/drive';
 
-import { useDownloadManagerStore } from '../../../legacy/zustand/download/downloadManager.store';
+import { useDownloadManagerStore } from '../downloadManager.store';
 import type { MalwareDetection } from '../malwareDetection/malwareDetection';
 import { downloadLogDebug } from './downloadLogger';
 import { getDownloadSdk } from './getDownloadSdk';

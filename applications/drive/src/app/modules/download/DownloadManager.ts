@@ -3,13 +3,6 @@ import { AbortError, NodeType, SDKEvent } from '@proton/drive';
 import { TransferSpeedMetrics } from '@proton/drive/internal/performance/transferSpeedMetrics';
 import metrics from '@proton/metrics';
 
-import type { DownloadItem } from '../../legacy/zustand/download/downloadManager.store';
-import {
-    DownloadStatus,
-    IssueStatus,
-    MalwareDownloadResolution,
-    useDownloadManagerStore,
-} from '../../legacy/zustand/download/downloadManager.store';
 import { fileSaver } from '../../modules/fileSaver/fileSaver';
 import { getNodeStorageSize } from '../../utils/sdk/getNodeStorageSize';
 import { bufferToStream } from '../../utils/stream';
@@ -18,6 +11,13 @@ import ArchiveGenerator from './ArchiveGenerator';
 import { ArchiveStreamGenerator } from './ArchiveStreamGenerator';
 import { DownloadDriveClientRegistry } from './DownloadDriveClientRegistry';
 import { DownloadScheduler } from './DownloadScheduler';
+import type { DownloadItem } from './downloadManager.store';
+import {
+    DownloadStatus,
+    IssueStatus,
+    MalwareDownloadResolution,
+    useDownloadManagerStore,
+} from './downloadManager.store';
 import type { DownloadOptions } from './downloadTypes';
 import { MalwareDetection } from './malwareDetection/malwareDetection';
 import { createFileDownloadStream } from './utils/createFileDownloadStream';

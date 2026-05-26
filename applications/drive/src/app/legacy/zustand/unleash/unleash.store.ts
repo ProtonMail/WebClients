@@ -11,6 +11,7 @@ interface UnleashState {
     setClient: (client: UnleashClient) => void;
 }
 
+// TODO: Move to a FeatureFlag module
 export const unleashVanillaStore = createStore<UnleashState>()((set, get) => ({
     client: null,
 

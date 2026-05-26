@@ -12,8 +12,8 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 
 import useNavigate from '../../legacy/hooks/drive/useNavigate';
 import { useShiftKey } from '../../legacy/hooks/util/useShiftKey';
-import { usePhotoLayoutStore } from '../../legacy/zustand/photos/layout.store';
 import { toggleFavorite } from '../PhotosActions/Albums';
+import { usePhotoLayoutStore } from '../layout.store';
 import { useAlbumsStore } from '../useAlbums.store';
 import { PhotosInsideAlbumsGrid } from './PhotosInsideAlbumsGrid';
 import { AlbumCoverHeader } from './components/AlbumCoverHeader';

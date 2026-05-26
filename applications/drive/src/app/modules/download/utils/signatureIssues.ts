@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import type { NodeEntity } from '@proton/drive/index';
 
-import { IssueStatus, useDownloadManagerStore } from '../../../legacy/zustand/download/downloadManager.store';
+import { IssueStatus, useDownloadManagerStore } from '../downloadManager.store';
 import type { UserDecision } from './waitForUserDecision';
 import { waitForSignatureIssueDecision } from './waitForUserDecision';
 

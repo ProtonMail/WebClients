@@ -3,11 +3,11 @@ import { c } from 'ttag';
 import type { NodeEntity } from '@proton/drive/index';
 import { getFileExtension } from '@proton/shared/lib/helpers/mimetype';
 
-import { DownloadStatus, useDownloadManagerStore } from '../../../legacy/zustand/download/downloadManager.store';
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { getNodeStorageSize } from '../../../utils/sdk/getNodeStorageSize';
 import { isTransferCancelError } from '../../../utils/transfer';
+import { DownloadStatus, useDownloadManagerStore } from '../downloadManager.store';
 import { downloadLogDebug } from './downloadLogger';
 
 function trackError(error: unknown, downloadId: string, nodes: NodeEntity[]) {
