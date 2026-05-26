@@ -45,8 +45,6 @@ import type {
 import type { UploadModalContainer } from './UploadModalContainer';
 import type { UploadProviderState } from './UploadProviderState';
 import type { ConflictStrategyHandler, UpdateFilter } from './interface';
-import usePublicUploadFile from './usePublicUploadFile';
-import usePublicUploadFolder from './usePublicUploadFolder';
 import useUploadConflict from './useUploadConflict';
 import useUploadControl from './useUploadControl';
 import useUploadFile from './useUploadFile';
@@ -437,13 +435,6 @@ function useBaseUpload(
             conflictModal,
         },
     ];
-}
-
-export function usePublicUpload(): [UploadProviderState, UploadModalContainer] {
-    const { initPublicFileUpload } = usePublicUploadFile();
-    const { initPublicFolderUpload } = usePublicUploadFolder();
-    const useUploadReturn = useBaseUpload(initPublicFileUpload, initPublicFolderUpload);
-    return useUploadReturn;
 }
 
 export function useUpload(): [UploadProviderState, UploadModalContainer] {

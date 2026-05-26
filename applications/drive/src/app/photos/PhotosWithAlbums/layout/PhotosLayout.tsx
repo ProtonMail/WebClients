@@ -12,7 +12,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import useNavigate from '../../../legacy/hooks/drive/useNavigate';
-import { AlbumsPageTypes, usePhotoLayoutStore } from '../../../legacy/zustand/photos/layout.store';
 import { usePhotosPreviewModal } from '../../../modals/preview';
 import { ToolbarRow } from '../../../statelessComponents/ToolbarRow/ToolbarRow';
 import { UploadDragDrop } from '../../../statelessComponents/UploadDragDrop/UploadDragDrop';
@@ -25,6 +24,7 @@ import { AddAlbumPhotosModal } from '../../PhotosModals/AddAlbumPhotosModal';
 import { CreateAlbumModal } from '../../PhotosModals/CreateAlbumModal';
 import { useAlbumPhotoUploadSDKStore } from '../../PhotosStore/useAlbumPhotoUploadSDK.store';
 import { usePhotosWithAlbumsView } from '../../PhotosStore/usePhotosWithAlbumView';
+import { AlbumsPageTypes, usePhotoLayoutStore } from '../../layout.store';
 import { loadAlbumInvitations } from '../../loaders/loadAlbumInvitations';
 import { loadSharedWithMeAlbums } from '../../loaders/loadAlbums';
 import { useAlbumsStore } from '../../useAlbums.store';

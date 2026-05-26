@@ -8,7 +8,7 @@ import {
     type DownloadItem,
     DownloadStatus,
     useDownloadManagerStore,
-} from '../../legacy/zustand/download/downloadManager.store';
+} from '../../modules/download/downloadManager.store';
 import { TransferManagerStatus, useTransferManagerState } from './useTransferManagerState';
 
 const resetStores = () => {
