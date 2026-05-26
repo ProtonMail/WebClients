@@ -3111,6 +3111,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synchroniseer eenvoudig bestanden naar de cloud vanaf uw computer en open ze vanaf uw mobiele apparaat."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-mails die naar ${ connectedAddressText } worden verzonden, verschijnen nu in ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Moedig het gebruik van tweestapsverificatie in uw organisatie aan voor extra beveiliging."
       ],
@@ -3203,6 +3206,9 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "U kunt contactpersonen markeren die u niet wilt samenvoegen of behouden. Ze worden pas verwijderd na het klikken op 'samenvoegen'"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "U kunt nu e-mails versturen vanuit ${ BRAND_NAME } via dit adres."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Uw account en dataherstelmethoden zijn ingesteld en 2FA is ingeschakeld."
@@ -3843,6 +3849,12 @@
       ],
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisatiesleutel moet geactiveerd zijn om uitgenodigde gebruikers aan te maken."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisatiesleutel moet worden geactiveerd om niet-privé gebruikers te maken"
       ],
       "Passphrase unavailable": [
         "Wachtwoordzin niet beschikbaar"
@@ -12420,6 +12432,9 @@
       "When is it most important to use a VPN?": [
         "Wanneer is het erg belangrijk om een VPN te gebruiken?"
       ],
+      "You are all set": [
+        "U bent helemaal klaar"
+      ],
       "You can now create unlimited folders and labels": [
         "U kunt nu onbeperkt mappen en labels maken"
       ],
@@ -12584,6 +12599,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Beheerders hebben geen toegang tot de gegevens van privégebruikers en kunnen hun wachtwoord niet resetten."
+      ],
+      "Member activation incomplete": [
+        "Gebruikersactivatie onvolledig"
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisatiesleutel moet worden geactiveerd om gegevenstoegang te vragen"
+      ],
+      "The user must have an address to request data access": [
+        "De gebruiker moet een adres hebben om gegevenstoegang aan te vragen"
       ]
     },
     "Validation": {
