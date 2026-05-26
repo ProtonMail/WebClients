@@ -1,6 +1,6 @@
 import { type ProtonDocumentType, mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
-import { useFlagsDriveSheetODSImport } from '../../../flags/useFlagsDriveSheetODSImport';
+import { useFlagsDriveSheetODSImport } from '../../../modules/featureFlag';
 import type { DecryptedLink } from '../_links';
 import { useDocumentActions } from './useDocumentActions';
 import { useDriveDocsFeatureFlag } from './useDriveDocsFeatureFlag';

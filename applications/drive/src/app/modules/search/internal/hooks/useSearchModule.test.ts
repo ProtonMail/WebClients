@@ -62,9 +62,11 @@ jest.mock('@proton/shared/lib/api/drive/volume', () => ({
     queryLatestVolumeEvent: jest.fn(),
 }));
 
-jest.mock('../../../../flags/useFlagsDriveFoundationSearch');
+jest.mock('../../../../modules/featureFlag', () => ({
+    useFlagsDriveFoundationSearch: jest.fn(),
+}));
 
-const { useFlagsDriveFoundationSearch } = require('../../../../flags/useFlagsDriveFoundationSearch');
+const { useFlagsDriveFoundationSearch } = require('../../../../modules/featureFlag');
 
 function setFeatureFlag(enabled: boolean) {
     (useFlagsDriveFoundationSearch as jest.Mock).mockReturnValue(enabled);

@@ -1,5 +1,5 @@
 import { SearchViewLegacy } from '../legacy/components/sections/Search/SearchViewLegacy';
-import { useFlagsDriveFoundationSearch } from '../flags/useFlagsDriveFoundationSearch';
+import { useFlagsDriveFoundationSearch } from '../modules/featureFlag';
 import { SearchView } from '../sections/search/searchView';
 
 export const SearchContainer = () => {

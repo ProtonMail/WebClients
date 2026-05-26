@@ -11,9 +11,9 @@ import DefaultQuickSettings from '@proton/components/components/drawer/views/qui
 import DrawerAllSettingsView from '@proton/components/components/drawer/views/quickSettings/DrawerAllSettingsView';
 import { useDrive } from '@proton/drive';
 
-import { useFlagsDriveFoundationSearch } from '../../../flags/useFlagsDriveFoundationSearch';
 import { useDebug } from '../../../legacy/hooks/drive/useDebug';
 import { useDiagnosticsModal } from '../../../modals/DiagnosticsModal';
+import { useFlagsDriveFoundationSearch } from '../../../modules/featureFlag';
 import { ClearSearchDataButton } from '../../../sections/search/clearSearchDataButton';
 import { downloadLogs } from '../../../utils/downloadLogs';
 import LegacyClearSearchDataButton from '../layout/search/ClearSearchDataButton';

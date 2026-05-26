@@ -26,8 +26,8 @@ import { FlagProvider } from '@proton/unleash/proxy';
 import noop from '@proton/utils/noop';
 
 import config from './config';
-import { unleashVanillaStore } from './legacy/zustand/unleash/unleash.store';
 import locales from './locales';
+import { featureFlagStore } from './modules/featureFlag';
 import { driveMetrics } from './modules/metrics';
 import { NotificationsBridge } from './modules/notifications';
 import type { DriveStore } from './redux-store/store';
@@ -51,7 +51,7 @@ const bootstrapApp = async () => {
     const history = createBrowserHistory();
     const unleashClient = bootstrap.createUnleash({ api: getSilentApi(api) });
     extendStore({ config, api, authentication, history, unleashClient });
-    unleashVanillaStore.getState().setClient(unleashClient);
+    featureFlagStore.getState().setClient(unleashClient);
     const unleashFeature = measureFeaturePerformance(api, Features.globalBootstrapAppUnleash);
     unleashFeature.start();
     const unleashPromise = bootstrap

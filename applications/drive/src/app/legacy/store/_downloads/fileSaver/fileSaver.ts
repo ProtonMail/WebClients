@@ -6,7 +6,7 @@ import { promiseWithTimeout } from '@proton/shared/lib/helpers/promise';
 
 import type { TransferMeta } from '../../../../legacy/components/TransferManager/transfer';
 import { TransferCancel } from '../../../../legacy/components/TransferManager/transfer';
-import { unleashVanillaStore } from '../../../../legacy/zustand/unleash/unleash.store';
+import { featureFlagStore } from '../../../../modules/featureFlag';
 import { sendErrorReport } from '../../../../utils/errorHandling';
 import { EnrichedError } from '../../../../utils/errorHandling/EnrichedError';
 import { isValidationError } from '../../../../utils/errorHandling/ValidationError';
@@ -18,7 +18,7 @@ import { initDownloadSW, isOPFSSupported, isServiceWorkersSupported, openDownloa
 const DOWNLOAD_SW_INIT_TIMEOUT = 15 * 1000;
 const MB = 1024 * 1024;
 const getMemoryLimit = () => {
-    const treatment = unleashVanillaStore.getState().getVariant('DriveWebDownloadMechanismParameters');
+    const treatment = featureFlagStore.getState().getVariant('DriveWebDownloadMechanismParameters');
     if (treatment.enabled) {
         if (treatment.name === 'low-memory') {
             return (isMobile() ? 100 : 250) * MB;

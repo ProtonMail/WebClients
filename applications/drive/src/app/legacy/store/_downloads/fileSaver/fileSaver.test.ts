@@ -4,7 +4,7 @@ import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { UnleashClient } from '@proton/unleash/UnleashClient';
 
-import { unleashVanillaStore } from '../../../../legacy/zustand/unleash/unleash.store';
+import { featureFlagStore } from '../../../../modules/featureFlag';
 import { streamToBuffer } from '../../../../utils/stream';
 import { initDownloadSW, isOPFSSupported, isServiceWorkersSupported, openDownloadStream } from './download';
 import { FileSaver } from './fileSaver';
@@ -46,7 +46,7 @@ const mockUnleashStore = {
         name: 'base-memory',
     }),
 };
-unleashVanillaStore.getState().setClient(mockUnleashStore as unknown as UnleashClient);
+featureFlagStore.getState().setClient(mockUnleashStore as unknown as UnleashClient);
 const getCookieMock = jest.mocked(getCookie);
 const isServiceWorkersSupportedMock = jest.mocked(isServiceWorkersSupported);
 const isOPFSSupportedMock = jest.mocked(isOPFSSupported);

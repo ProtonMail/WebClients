@@ -15,8 +15,8 @@ import type { UserSettingsResponse } from '@proton/shared/lib/interfaces/drive/u
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
 
-import { unleashVanillaStore } from './legacy/zustand/unleash/unleash.store';
 import locales from './locales';
+import { featureFlagStore } from './modules/featureFlag';
 import { driveMetrics } from './modules/metrics';
 import { type DriveState, extendStore, setupStore } from './redux-store/store';
 import { clearOPFS } from './utils/opfs';
@@ -55,7 +55,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const user = sessionResult.session?.User;
         driveMetrics.init({ user });
         extendStore({ config, api, authentication, unleashClient, history });
-        unleashVanillaStore.getState().setClient(unleashClient);
+        featureFlagStore.getState().setClient(unleashClient);
 
         const appCacheFeature = measureFeaturePerformance(api, Features.globalBootstrapAppCache);
         const persistedState = await getDecryptedPersistedState<Partial<DriveState>>({
