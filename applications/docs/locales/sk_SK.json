@@ -492,6 +492,9 @@
       "Make a copy": [
         "Vytvoriť kópiu"
       ],
+      "Manage addresses": [
+        "Spravovať adresy"
+      ],
       "Manage advanced account protections": [
         "Spravovať pokročilé ochrany účtu"
       ],
@@ -2526,6 +2529,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Jednoducho synchronizujte súbory do cloudu z počítača a pristupujte k nim z mobilného zariadenia."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Emaily odoslané na adresu ${ connectedAddressText } sa teraz zobrazia v ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Podporujte používanie dvojstupňového overenia vo vašej organizácii pre vyššiu bezpečnosť."
       ],
@@ -2604,6 +2610,12 @@
       "We can't access ${ boldEmails } anymore.": [
         "Už nemáme prístup k ${ boldEmails }."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Keď sa úložisko zaplní na 80 %, pozastavíme import, aby sme uvoľnili miesto pre nové správy."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Začali sme importovať vaše emaily z Gmailu. Dáme vám vedieť, keď bude import hotový."
+      ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Je nám ľúto, že odchádzate. Ak máte chvíľku, veľmi by sme ocenili, keby ste nám povedali, prečo chcete zrušiť odber. Vaša spätná väzba nám pomáha vylepšovať ${ BRAND_NAME } pre všetkých."
       ],
@@ -2615,6 +2627,9 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Kontakty, ktoré nechcete zlúčiť ani zachovať, označte pre zmazanie. K zmazaniu dôjde po kliknutí na tlačidlo pre zlúčenie"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Teraz môžete posielať emaily z ${ BRAND_NAME } pomocou tejto adresy."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Váš účet a metódy obnovy údajov sú nastavené a funkcia 2FA je povolená."
@@ -3138,6 +3153,12 @@
       "Organization key is not decrypted": [
         "Kľúč organizácie nie je dešifrovaný"
       ],
+      "Organization key must be activated to create invited users": [
+        "Na vytvorenie pozvaných používateľov musí byť aktivovaný kľúč organizácie"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Na vytvorenie nesúkromných používateľov musí byť aktivovaný kľúč organizácie"
+      ],
       "Password is required": [
         "Heslo je požadované"
       ],
@@ -3224,6 +3245,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Niektoré z vašich názvov štítkov prekračujú maximálny limit znakov pre ${ MAIL_APP_NAME }. Prispôsobte import na úpravu týchto názvov."
+      ],
+      "Some trashed documents could not be loaded": [
+        "Niektoré odstránené dokumenty sa nepodarilo načítať"
       ],
       "Something went wrong while fetching available domains": [
         "Pri načítavaní dostupných domén sa vyskytla chyba"
@@ -5408,6 +5432,9 @@
       "Trash": [
         "Kôš"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Dôverovať kľúču „${ activeSignerText }“ pri overovaní nových správ od tohto kontaktu."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyskúšajte nové ${ BRAND_NAME } funkcie, aktualizácie a produkty pred ich zverejnením. Týmto sa obnoví aplikácia"
       ],
@@ -5753,11 +5780,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Aktívny signatár"
+      ],
       "Compromised": [
         "Kompromitovaný"
       ],
       "Expired": [
         "Vypršaný"
+      ],
+      "Fallback": [
+        "záložný"
       ],
       "KOO": [
         "KOO"
@@ -5781,6 +5814,9 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "Používateľské meno ${ BRAND_NAME }"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } znakov"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasne nedostupné. Skúste to neskôr.)"
@@ -8471,8 +8507,17 @@
       "External key automatically fetched via WKD.": [
         "Externý kľúč automaticky načítaný prostredníctvom WKD."
       ],
+      "This contact currently signs messages with this key": [
+        "Tento kontakt v súčasnosti podpisuje správy týmto kľúčom"
+      ],
+      "This key is used for message verification": [
+        "Tento kľúč slúži na overenie správy"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Tento kľúč sa používa na šifrovanie správ tomuto kontaktu"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Tento kľúč sa používa na šifrovanie správ tomuto kontaktu v starších aplikáciách"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Odporúčame, aby ste pri tomto kľúči zvolili \"Nedôverovať\"."
@@ -10491,6 +10536,9 @@
       "When is it most important to use a VPN?": [
         "Kedy je najdôležitejšie používať VPN?"
       ],
+      "You are all set": [
+        "Všetko je nastavené"
+      ],
       "You have no folders yet": [
         "Zatiaľ nemáte žiadne priečinky"
       ],
@@ -10614,6 +10662,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Správcovia nemajú prístup k dátam súkromných používateľov a nemôžu resetovať ich heslo."
+      ],
+      "Member activation incomplete": [
+        "Aktivácia člena nie je dokončená"
+      ],
+      "Organization key must be activated to request data access": [
+        "Kľúč organizácie musí byť aktivovaný, aby bolo možné požiadať o prístup k údajom"
+      ],
+      "The user must have an address to request data access": [
+        "Používateľ musí mať adresu, aby mohol požiadať o prístup k údajom"
       ]
     },
     "Validation": {
