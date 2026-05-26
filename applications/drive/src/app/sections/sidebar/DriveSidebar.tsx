@@ -8,7 +8,6 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
-    Icon,
     Sidebar,
     SidebarDrawerItems,
     SidebarLogo,
@@ -19,6 +18,8 @@ import {
 } from '@proton/components';
 import AppsDropdown from '@proton/components/containers/app/AppsDropdown';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
+import { IcChevronsLeft } from '@proton/icons/icons/IcChevronsLeft';
+import { IcChevronsRight } from '@proton/icons/icons/IcChevronsRight';
 import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import {
     COLLAPSE_EVENTS,
@@ -180,10 +181,11 @@ export const DriveSidebar = ({ isNewUploadDisabled, isHeaderExpanded, toggleHead
                                 onClick={() => onClickExpandNav()}
                                 aria-pressed={showSideBar}
                             >
-                                <Icon
-                                    name={showSideBar ? 'chevrons-left' : 'chevrons-right'}
-                                    alt={c('Action').t`Show navigation bar`}
-                                />
+                                {showSideBar ? (
+                                    <IcChevronsLeft className="rtl:mirror" alt={c('Action').t`Show navigation bar`} />
+                                ) : (
+                                    <IcChevronsRight className="rtl:mirror" alt={c('Action').t`Show navigation bar`} />
+                                )}
                             </button>
                         </Tooltip>
                     )}
