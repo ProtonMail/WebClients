@@ -925,6 +925,9 @@
       ]
     },
     "collider_2025: Action": {
+      "Add": [
+        "Adicionar"
+      ],
       "Add ${ selectedCount } sheet": [
         "Adicionar ${ selectedCount } planilha",
         "Adicionar ${ selectedCount } planilhas"
@@ -944,6 +947,15 @@
       "Cancel": [
         "Cancelar"
       ],
+      "Cancel (Esc)": [
+        "Cancelar (Esc)"
+      ],
+      "Clear": [
+        "Limpar"
+      ],
+      "Clear all": [
+        "Limpar tudo"
+      ],
       "Close": [
         "Fechar"
       ],
@@ -959,6 +971,9 @@
       "Dark": [
         "Escuro"
       ],
+      "Delete memory": [
+        "Excluir memória"
+      ],
       "Disable ghost mode": [
         "Desativar modo fantasma"
       ],
@@ -967,6 +982,9 @@
       ],
       "Edit": [
         "Editar"
+      ],
+      "Edit memory": [
+        "Editar memória"
       ],
       "Enable ghost mode": [
         "Ativar modo fantasma"
@@ -1010,6 +1028,9 @@
       "Save": [
         "Salvar"
       ],
+      "Save (⌘+Enter)": [
+        "Salvar (⌘+Enter)"
+      ],
       "Select all": [
         "Selecionar tudo"
       ],
@@ -1036,6 +1057,9 @@
       ],
       "Try again": [
         "Tentar novamente"
+      ],
+      "Turn off and delete": [
+        "Desativar e excluir"
       ],
       "Upload file to Drive": [
         "Enviar arquivo para o Drive"
@@ -1194,6 +1218,14 @@
         "Sou movido a cafeína e angústia existencial"
       ]
     },
+    "collider_2025: Date": {
+      "Today": [
+        "Hoje"
+      ],
+      "Yesterday": [
+        "Ontem"
+      ]
+    },
     "collider_2025: Description": {
       "${ BRAND_NAME } is conducting a paid research study about AI assistants. Interested? It takes 2 minutes. If selected, you'll earn £80.": [
         "A ${ BRAND_NAME } está realizando uma pesquisa remunerada sobre assistentes de IA. Está interessado? Leva apenas 2 minutos. Se for selecionado, você receberá £80."
@@ -1225,11 +1257,17 @@
       "Last updated on ${ formattedDate }": [
         "Última atualização em ${ formattedDate }"
       ],
+      "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
+        "Saiba mais sobre como usar o ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Permanently delete your project and chats. This is irreversible.": [
         "Exclua permanentemente seu projeto e bate-papos. Isso é irreversível."
       ],
       "Quick responses": [
         "Respostas rápidas"
+      ],
+      "Report a bug or feature request": [
+        "Reporte um erro ou solicitação de recurso"
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Inicie uma sessão para acessar sua conta e desbloquear mais recursos. Ainda não tem uma conta? ${ createLink }"
@@ -1324,8 +1362,13 @@
         "Erro ao processar arquivo: ${ file.name }"
       ]
     },
+    "collider_2025: Error (processing)": {
+      "File format not supported: ${ result.fileName }": [
+        "Formato de arquivo não suportado: ${ result.fileName }"
+      ]
+    },
     "collider_2025: Error Message": {
-      "If retrying doesn’t work, check back later or consider upgrading to ${ LUMO_SHORT_APP_NAME } Plus to jump to the front of the line during peak times.": [
+      "If retrying doesn't work, check back later or consider upgrading to ${ LUMO_SHORT_APP_NAME } Plus to jump to the front of the line during peak times.": [
         "Se tentar novamente não funcionar, volte mais tarde ou considere fazer upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para ter prioridade durante os horários de pico."
       ],
       "Please try asking a different question or making a different request.": [
@@ -1956,6 +1999,9 @@
       "Unsafe or problematic": [
         "Inseguro ou problemático"
       ],
+      "You": [
+        "Você"
+      ],
       "Your workflow": [
         "Seu fluxo de trabalho"
       ]
@@ -2109,11 +2155,17 @@
       ]
     },
     "collider_2025: Settings Item": {
+      "About": [
+        "Sobre"
+      ],
       "Account": [
         "Conta"
       ],
       "General": [
         "Geral"
+      ],
+      "Memory": [
+        "Memória"
       ],
       "Personalization": [
         "Personalização"
@@ -2210,6 +2262,9 @@
       "Chat": [
         "Bate-papo"
       ],
+      "Clear all memories?": [
+        "Limpar todas as memórias?"
+      ],
       "Conversational AI": [
         "IA de conversação"
       ],
@@ -2225,11 +2280,17 @@
       "Don't lose the thread": [
         "Não perca o fio"
       ],
+      "End-to-end encrypted": [
+        "Criptografado de ponta a ponta"
+      ],
       "Generated code": [
         "Código gerado"
       ],
       "Guest": [
         "Convidado"
+      ],
+      "Help and support": [
+        "Ajuda e suporte"
       ],
       "Invalid Link": [
         "Link inválido"
@@ -2242,6 +2303,9 @@
       ],
       "No API keys yet": [
         "Ainda não há chaves de API"
+      ],
+      "No memories yet": [
+        "Sem memórias ainda"
       ],
       "Opening External Link": [
         "Abrindo link externo"
@@ -2258,11 +2322,17 @@
       "Raw response": [
         "Resposta sem processar"
       ],
+      "Report a bug": [
+        "Reportar um erro"
+      ],
       "Required headers": [
         "Cabeçalhos obrigatórios"
       ],
       "Save your favorites": [
         "Salve seus favoritos"
+      ],
+      "Saved memories": [
+        "Memórias salvas"
       ],
       "Search Index": [
         "Pesquisar índice"
@@ -2281,6 +2351,9 @@
       ],
       "Tokens per day": [
         "Tokens por dia"
+      ],
+      "Turn off memory?": [
+        "Desativar memórias?"
       ],
       "Upload files": [
         "Enviar arquivos"
@@ -4643,6 +4716,12 @@
       ],
       "Organization key is not decrypted": [
         "A chave de organização não está descriptografada"
+      ],
+      "Organization key must be activated to create invited users": [
+        "A chave da organização deve ser ativada para criar usuários convidados"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "A chave da organização deve ser ativada para criar usuários não privados"
       ],
       "Passwords do not match": [
         "As senhas não correspondem"
@@ -8493,6 +8572,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Os administradores não podem acessar os dados de usuários privados e não podem redefinir suas senhas."
+      ],
+      "Member activation incomplete": [
+        "Ativação de membro incompleta"
+      ],
+      "Organization key must be activated to request data access": [
+        "A chave da organização precisa ser ativada para solicitar o acesso aos dados"
+      ],
+      "The user must have an address to request data access": [
+        "O usuário deve ter um endereço para solicitar o acesso aos dados"
       ]
     },
     "Validation": {
