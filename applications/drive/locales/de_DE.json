@@ -1281,6 +1281,9 @@
       ],
       "Manage addresses": [
         "E-Mail-Adressen verwalten"
+      ],
+      "Continue with Free": [
+        "Weiter mit Free"
       ]
     },
     "Action: Docs": {
@@ -3107,6 +3110,27 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Du kannst jetzt E-Mails von ${ BRAND_NAME } unter dieser Adresse senden."
+      ],
+      "Available storage: ${ storageText }": [
+        "Verfügbarer Speicherplatz: ${ storageText }"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Für Jahre genügend Platz für E-Mails, Anhänge und mehr."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "15 GB Speicherplatz für nur ${ config.offerPrice } freischalten."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Wir werden die Importe bei 80 % der Speicherplatzbelegung anhalten, damit genügend Platz für neue Nachrichten bleibt."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Wir haben mit dem Import deiner E-Mails von Gmail begonnen. Wir benachrichtigen dich, wenn der Vorgang abgeschlossen ist."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Dein kostenloses ${ MAIL_APP_NAME }-Konto enthält begrenzten Speicherplatz, darum können wir nur ${ newUserStorageText } deiner aktuellsten Gmail-Nachrichten importieren."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Dein kostenloses ${ MAIL_APP_NAME }-Konto enthält begrenzten Speicherplatz, darum können wir nur deine aktuellsten Gmail-Nachrichten importieren."
       ]
     },
     "description": {
@@ -4447,6 +4471,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Unbegrenzte hide-my-email-Aliasse"
+      ],
+      "10+ premium features": [
+        "Mehr als 10 Premium-Funktionen"
+      ],
+      "Custom email domain": [
+        "Eigene E-Mail-Domain"
+      ],
+      "Email addresses": [
+        "E-Mail-Adressen"
+      ],
+      "Storage": [
+        "Speicher"
       ]
     },
     "Features": {
@@ -7206,6 +7242,18 @@
       "We were not able to add this photo to your album": [
         "Wir konnten dieses Foto nicht in deinem Album hinzufügen",
         "Wir konnten diese Fotos nicht in deinem Album hinzufügen"
+      ],
+      "Included": [
+        "Enthalten"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Dem \"${ activeSignerText }\" Schlüssel vertrauen, um neue Nachrichten dieses Kontakts zu überprüfen."
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Jederzeit upgraden, um den Rest zu übertragen"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Jederzeit upgraden oder Speicherplatz freigeben, um den Rest zu übertragen"
       ]
     },
     "info": {
@@ -7294,6 +7342,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Aktiver Signierer"
+      ],
+      "Fallback": [
+        "Zurückstellen"
       ]
     },
     "Label": {
@@ -10815,6 +10869,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Wir empfehlen dir, diesen Schlüssel als „nicht vertrauenswürdig“ einzustufen."
+      ],
+      "This contact currently signs messages with this key": [
+        "Dieser Kontakt signiert derzeit Nachrichten mit diesem Schlüssel"
+      ],
+      "This key is used for message verification": [
+        "Dieser Schlüssel wird für die Nachrichtenüberprüfung verwendet"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Dieser Schlüssel wird für die Verschlüsselung von Nachrichten dieses Kontakts in älteren Apps verwendet."
       ]
     },
     "PGP key warning": {
@@ -13666,6 +13729,12 @@
       ],
       "You are all set": [
         "Du bist startklar"
+      ],
+      "Continue with free storage": [
+        "Mit dem kostenlosen Speicherplatz fortfahren"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Mehr Speicherplatz mit ${ MAIL_APP_NAME } Plus erhalten"
       ]
     },
     "Today icon tooltip in mini calendar": {
