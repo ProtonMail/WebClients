@@ -312,6 +312,9 @@
       "Continue with categories": [
         "继续使用分类"
       ],
+      "Continue with Free": [
+        "注册免费账户"
+      ],
       "Continue with Google": [
         "通过 Google 继续"
       ],
@@ -1436,6 +1439,9 @@
       ],
       "Start setup": [
         "开始设置"
+      ],
+      "Start testing": [
+        "开始测试"
       ],
       "Stay": [
         "留在此页"
@@ -4048,6 +4054,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "在邮件到达收件箱前自动分类。"
       ],
+      "Available storage: ${ storageText }": [
+        "可用空间：${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "阻止 Google 对您进行用户画像分析。Gmail 无法查看您在 ${ MAIL_APP_NAME } 中的操作"
       ],
@@ -4087,6 +4096,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密并导入联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了。"
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "拥有足够空间存储多年的邮件、附件等"
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "确保对组织数据的安全访问，即使您的团队在远程或使用公共 WiFi 时也是如此。"
       ],
@@ -4108,8 +4120,14 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "帮助您的团队安全存储敏感业务和客户信息的密码。"
       ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "如果您发现某封邮件归类错误，只需将其移动到正确的类别即可。"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在导入的联系人列表似乎包含一些群组，请查看并选择应如何导入这些群组。"
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "它仍在学习，我们需要您的帮助来改进分类。"
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "让您即时在活动邀请中添加会议链接。"
@@ -4189,6 +4207,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "开启邮件跟踪防护，避免广告商等第三方监视您的地理位置和网络轨迹。"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "仅需 ${ config.offerPrice } 即可解锁 15 GB 存储空间"
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "升级到 ${ planName } 最多可连接 ${ MAX_SYNC_PAID_USER } 个账户"
       ],
@@ -4210,11 +4231,14 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "我们未在此邮件中发现任何跟踪器与跟踪链接。"
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "存储空间使用量达到 80% 时，我们会暂停导入，为接收新消息预留空间。"
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "我们将导入您的旧电子邮件并将 Gmail 连接到 ${ MAIL_APP_NAME }，以便新邮件自动显示。"
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "我们已开始导入您过去 180 天的 Gmail 邮件，导入完成后将会通知您。"
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "我们已开始从 Gmail 导入您的邮件，导入完成后将通知您。"
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
@@ -4261,11 +4285,23 @@
       "Your account and data recovery methods are set.": [
         "您的账户恢复方式已设置。"
       ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "您的更正将塑造每个人的默认体验，上线后它还会记住您今后的偏好！"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "您的免费 ${ MAIL_APP_NAME } 账户存储空间有限，因此我们仅导入 ${ newUserStorageText } 的最近 Gmail 邮件"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "您的免费 ${ MAIL_APP_NAME } 账户存储空间有限，因此我们仅导入您最近的 Gmail 邮件"
+      ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "您的套餐支持 ${ MAX_SYNC_FREE_USER } 个 Gmail 地址。"
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "您的套餐总共支持 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址"
+      ],
+      "You’re among the first to try email categories.": [
+        "您是首批试用邮件分类的用户之一！"
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
@@ -4881,6 +4917,12 @@
       ],
       "Organization key is not decrypted": [
         "机构密钥尚未解密"
+      ],
+      "Organization key must be activated to create invited users": [
+        "必须激活组织密钥才能创建受邀用户"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "组织密钥必须激活才能创建非私人用户"
       ],
       "Passphrase unavailable": [
         "密码短语不可用"
@@ -5633,11 +5675,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ 高级功能"
+      ],
+      "Custom email domain": [
+        "自定义邮箱域名"
+      ],
+      "Email addresses": [
+        "邮箱地址"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "用于文件、照片和文档的加密云存储空间"
       ],
       "More premium features": [
         "更多高级功能"
+      ],
+      "Storage": [
+        "存储空间"
       ],
       "Unlimited hide-my-email aliases": [
         "无限制地 hide-my-email"
@@ -7447,6 +7501,9 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "请提供您的提示词和回复内容以帮助我们提高准确性。"
       ],
+      "Included": [
+        "已包含"
+      ],
       "Included for free with your plan": [
         "免费包含在您的方案中"
       ],
@@ -7475,7 +7532,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图像"
+        "插入图片"
       ],
       "Insert link": [
         "插入链接"
@@ -8419,6 +8476,9 @@
       "Trash existing messages": [
         "清空现有邮件"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "信任“${ activeSignerText }”密钥以验证来自此联系人的新消息"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "抢先体验尚未开放的 ${ BRAND_NAME } 新功能、新特性和新产品。此操作将导致页面重新载入。"
       ],
@@ -8452,8 +8512,14 @@
       "Updating message content search...": [
         "正在更新邮件内容..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "随时升级以迁移剩余内容"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "随时升级或清理空间以迁移剩余内容"
       ],
       "Upgrade to ${ plan } to unlock": [
         "升级到 ${ plan } 以解锁"
@@ -8935,11 +9001,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "活动签名人"
+      ],
       "Compromised": [
         "已泄露"
       ],
       "Expired": [
         "已过期"
+      ],
+      "Fallback": [
+        "回退"
       ],
       "KOO": [
         "KOO"
@@ -9187,6 +9259,9 @@
       ],
       "${ n } month": [
         "${ n } 个月"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } 个字符"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
@@ -12462,8 +12537,17 @@
       "External key automatically fetched via WKD.": [
         "从 WKD 自动获取的外部密钥。"
       ],
+      "This contact currently signs messages with this key": [
+        "该联系人当前使用此密钥对消息进行签名"
+      ],
+      "This key is used for message verification": [
+        "此密钥用于消息验证"
+      ],
       "This key is used to encrypt messages to this contact": [
         "该密钥用于加密发往此联系人的邮件"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "此密钥用于在旧版应用中加密发送给此联系人的消息"
       ],
       "We recommend that you \"untrust\" this key.": [
         "建议您不再信任此密钥。"
@@ -14835,6 +14919,9 @@
       "Contacts": [
         "通讯录"
       ],
+      "Continue with free storage": [
+        "继续使用免费存储空间"
+      ],
       "Continue with partial import?": [
         "继续以部分导入进行吗？"
       ],
@@ -14952,6 +15039,9 @@
       "Download the app": [
         "下载 APP"
       ],
+      "Early access to email categories": [
+        "抢先体验邮件分类"
+      ],
       "Edit billing address": [
         "编辑账单地址"
       ],
@@ -15035,6 +15125,9 @@
       ],
       "Get more from your VPN": [
         "从您的 VPN 获取更多信息"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "使用 ${ MAIL_APP_NAME } Plus 获取更多存储空间"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "下载 ${ appName[APP_NAME] } 应用"
@@ -15815,6 +15908,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "管理员无法访问私人用户的数据，也无法重置他们的密码。"
+      ],
+      "Member activation incomplete": [
+        "成员激活未完成"
+      ],
+      "Organization key must be activated to request data access": [
+        "必须激活组织密钥才能申请数据访问权限"
+      ],
+      "The user must have an address to request data access": [
+        "用户必须有地址才能申请访问数据"
       ]
     },
     "Update font modal": {

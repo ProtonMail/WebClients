@@ -314,6 +314,9 @@
       "Continue with categories": [
         "Continuare cu categorii"
       ],
+      "Continue with Free": [
+        "Continuare cu Free"
+      ],
       "Continue with Google": [
         "Continuare cu Google"
       ],
@@ -1445,6 +1448,9 @@
       "Start setup": [
         "Pornire configurare"
       ],
+      "Start testing": [
+        "Începeți testarea"
+      ],
       "Stay": [
         "Nu închide"
       ],
@@ -1516,6 +1522,11 @@
       ],
       "Trust": [
         "Aprobare"
+      ],
+      "Trust key": [
+        "Aprobare cheie",
+        "Aprobare cheie",
+        "Aprobare cheie"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -4095,6 +4106,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sortați automat mesajele primite înainte ca acestea să vă ajungă în contul de e-mail."
       ],
+      "Available storage: ${ storageText }": [
+        "Spațiu disponibil: ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Blocați capacitatea Google de a vă analiza profilul. Gmail nu poate vedea ce faceți în ${ MAIL_APP_NAME }."
       ],
@@ -4134,6 +4148,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Se criptează și se importă contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "Spațiu suficient pentru ani mulți de mesaje, atașamente și altele."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Asigurați accesarea securizată la datele organizației, chiar dacă echipa este la distanță sau utilizează o rețea Wi-Fi publică."
       ],
@@ -4155,8 +4172,14 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ajutați-vă echipa să stocheze în siguranță parolele pentru informațiile private despre afaceri și clienți."
       ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Dacă găsești un mesaj în categoria greșită, mutați-l pur și simplu în categoria corectă."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Încă este în curs de învățare și avem nevoie de ajutorul dvs. pentru a îmbunătăți clasificarea."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Vă permite să adăugați imediat legături web de întâlnire în invitațiile la evenimente."
@@ -4240,6 +4263,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Activați protecția împotriva monitorizării prin e-mail pentru a împiedica agenții de publicitate și alții să vă urmărească unde vă aflați și activitatea online."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Deblocați 15 GiB de spațiu pentru doar ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Treceți la ${ planName } pentru a conecta până la ${ MAX_SYNC_PAID_USER } conturi."
       ],
@@ -4261,11 +4287,14 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Nu am găsit instrumente de urmărire și adrese URL cunoscute în acest e-mail."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Importarea se va opri la 80% din spațiul de stocare pentru a rezerva spațiu pentru mesajele noi."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Se vor importa mesajele vechi și se va conecta contul Gmail la ${ MAIL_APP_NAME }, astfel încât mesajele noi să apară automat."
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "S-a început importarea mesajelor din ultimele 180 de zile din Gmail. Vă vom anunța când va fi gata."
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "S-a început importarea mesajelor de pe Gmail. Vă vom anunța când va fi gata."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ne pare rău să vă vedem plecând. Dacă aveți un moment, am aprecia foarte mult să aflăm de ce doriți să anulați. Feedback-ul dvs. ne ajută să facem ${ BRAND_NAME } mai bun pentru toată lumea."
@@ -4318,6 +4347,15 @@
       "Your account and data recovery methods are set.": [
         "Metodele de recuperare a contului și datelor sunt setate."
       ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "Corecțiile pe care le faceți vor modela experiența implicită pentru toată lumea, iar după lansare va reține și ce preferați de acum înainte!"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Contul gratuit ${ MAIL_APP_NAME } are un spațiu de stocare limitat, așa că se vor importa doar ${ newUserStorageText } dintre cele mai recente mesaje din Gmail."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Contul gratuit ${ MAIL_APP_NAME } are un spațiu de stocare limitat, așa că se vor importa doar cele mai recente mesaje din Gmail."
+      ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Planul actual permite ${ MAX_SYNC_FREE_USER } adresă Gmail.",
         "Planul actual permite ${ MAX_SYNC_FREE_USER } adrese Gmail.",
@@ -4327,6 +4365,9 @@
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adresă Gmail",
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adrese Gmail",
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } de adrese Gmail"
+      ],
+      "You’re among the first to try email categories.": [
+        "Sunteți printre primii utilizatori care testează categoriile de mesaje."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
@@ -4958,6 +4999,12 @@
       ],
       "Organization key is not decrypted": [
         "Cheia organizației nu este decriptată."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Cheia organizației trebuie activată pentru a crea utilizatori invitați."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Cheia organizației trebuie activată pentru a crea utilizatori neprivați."
       ],
       "Passphrase unavailable": [
         "Frază de acces indisponibilă"
@@ -5726,11 +5773,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "Peste 10 funcții premium"
+      ],
+      "Custom email domain": [
+        "Domeniu personal de e-mail"
+      ],
+      "Email addresses": [
+        "Adrese de e-mail"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Stocare în cloud criptată pentru fișiere, fotografii și documente."
       ],
       "More premium features": [
         "Mai multe funcții premium"
+      ],
+      "Storage": [
+        "Spațiu de stocare"
       ],
       "Unlimited hide-my-email aliases": [
         "Aliasuri hide-my-email nelimitate"
@@ -7700,6 +7759,9 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Includeți solicitarea dvs. și răspunsul pentru a ne ajuta să îmbunătățim acuratețea."
       ],
+      "Included": [
+        "Inclus"
+      ],
       "Included for free with your plan": [
         "Inclus gratuit cu planul actual"
       ],
@@ -7728,9 +7790,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8686,6 +8746,9 @@
       "Trash existing messages": [
         "Golire mesaje din gunoi"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Cheia „${ activeSignerText }” este aprobată pentru a verifica mesajele noi de la acest contact."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Încercați noile funcții, actualizări și produse ${ BRAND_NAME } înainte ca acestea să fie lansate publicului. Aceasta va reporni aplicația."
       ],
@@ -8719,8 +8782,14 @@
       "Updating message content search...": [
         "Se actualizează căutarea în conținutul mesajelor..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Modificați oricând abonamentul pentru a obține și restul"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Modificați abonamentul sau goliți spațiul de stocare pentru a le aduce și pe restul."
       ],
       "Upgrade to ${ plan } to unlock": [
         "Treceți la ${ plan } pentru a debloca"
@@ -9244,11 +9313,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Semnatar activ"
+      ],
       "Compromised": [
         "Compromisă"
       ],
       "Expired": [
         "Expirată"
+      ],
+      "Fallback": [
+        "Alternativă"
       ],
       "KOO": [
         "KOO"
@@ -9506,6 +9581,9 @@
         "O lună",
         "${ n } luni",
         "${ n } de luni"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } de caractere"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Reveniți mai târziu.)"
@@ -12883,8 +12961,17 @@
       "External key automatically fetched via WKD.": [
         "Cheia externă este preluată automat via WKD."
       ],
+      "This contact currently signs messages with this key": [
+        "Acest contact semnează în prezent mesajele cu această cheie."
+      ],
+      "This key is used for message verification": [
+        "Această cheie este utilizată pentru verificarea mesajelor."
+      ],
       "This key is used to encrypt messages to this contact": [
         "Cheia este folosită pentru a cripta mesaje pentru acest contact."
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Această cheie este folosită pentru a cripta mesajele către acest contact în aplicațiile mai vechi."
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vă recomandăm să „nu aprobați” această cheie."
@@ -15524,6 +15611,9 @@
       "Contacts": [
         "Contacte"
       ],
+      "Continue with free storage": [
+        "Continuare cu spațiu gratuit"
+      ],
       "Continue with partial import?": [
         "Continuați cu importarea parțială?"
       ],
@@ -15651,6 +15741,9 @@
       "Download the app": [
         "Descărcați aplicația"
       ],
+      "Early access to email categories": [
+        "Acces timpuriu la categoriile de mesaje"
+      ],
       "Edit billing address": [
         "Editare adresă de facturare"
       ],
@@ -15735,6 +15828,9 @@
       "Get more from your VPN": [
         "Obțineți mai mult de la VPN"
       ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Obțineți mai mult spațiu cu ${ MAIL_APP_NAME } Plus"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Obțineți aplicația ${ appName[APP_NAME] }"
       ],
@@ -15813,7 +15909,7 @@
         "Inserare contacte"
       ],
       "Introducing email categories": [
-        "Vă prezentăm categoriile de e-mail"
+        "Vă prezentăm categoriile de mesaje"
       ],
       "Invalid verification code": [
         "Cod de verificare nevalid"
@@ -16522,6 +16618,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorii nu pot accesa datele utilizatorilor privați și nu le pot reseta parola."
+      ],
+      "Member activation incomplete": [
+        "Activarea membrului nu este completă"
+      ],
+      "Organization key must be activated to request data access": [
+        "Cheia organizației trebuie activată pentru a solicita accesul la date."
+      ],
+      "The user must have an address to request data access": [
+        "Utilizatorul trebuie să aibă o adresă pentru a solicita acces la date."
       ]
     },
     "Update font modal": {

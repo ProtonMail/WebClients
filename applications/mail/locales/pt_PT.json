@@ -1430,7 +1430,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar na chave"
+        "Confiar na chave",
+        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -4384,6 +4385,12 @@
       "Organization key is not decrypted": [
         "A chave da organização não está encriptada."
       ],
+      "Organization key must be activated to create invited users": [
+        "A chave da organização deve ser ativada para criar utilizadores convidados."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "A chave da organização deve ser ativada para criar utilizadores não privados."
+      ],
       "Password is required": [
         "A palavra-passe é obrigatória."
       ],
@@ -6819,8 +6826,7 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir uma imagem"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -14580,6 +14586,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Os administradores não podem aceder aos dados de utilizadores privados e não podem redefinir a sua palavra-passe."
+      ],
+      "Member activation incomplete": [
+        "A ativação do membro é incompleta."
+      ],
+      "Organization key must be activated to request data access": [
+        "A chave da organização deve ser ativada para solicitar acesso aos dados."
+      ],
+      "The user must have an address to request data access": [
+        "O utilizador deve ter um endereço para solicitar acesso aos dados."
       ]
     },
     "Update font modal": {
