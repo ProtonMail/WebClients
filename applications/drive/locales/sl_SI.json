@@ -576,6 +576,9 @@
       "Make a copy": [
         "Naredi kopijo"
       ],
+      "Manage addresses": [
+        "Upravljanje naslovov"
+      ],
       "Manage advanced account protections": [
         "Upravljajte z naprednimi zaščitami računa"
       ],
@@ -3275,9 +3278,6 @@
       "Failed to update public share node": [
         "Ni uspelo posodobiti vozlišča javne povezave"
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "Datoteke »${ item.name }« ni mogoče naložiti zaradi napake »${ error }«."
-      ],
       "File \"${ name }\" is already downloading": [
         "Izbrana datoteka \"${ name }\" se že prenaša"
       ],
@@ -3410,6 +3410,12 @@
       "Organization key is not decrypted": [
         "Ključ organizacije ni dešifriran."
       ],
+      "Organization key must be activated to create invited users": [
+        "Za ustvarjanje povabljenih uporabnikov mora biti ključ organizacije aktiviran."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Za ustvarjanje nezasebnih uporabnikov mora biti ključ organizacije aktiviran."
+      ],
       "Password is required": [
         "Zahtevano je geslo"
       ],
@@ -3499,9 +3505,6 @@
       ],
       "Some contacts could not be deleted": [
         "Nekaterih stikov ni bilo mogoče izbrisati"
-      ],
-      "Some files were ignored because they are not supported in Photos": [
-        "Nekatere datoteke so bile prezrte, ker niso podprte v aplikaciji Fotografije"
       ],
       "Some groups could not be deleted": [
         "Nekaterih skupin ni bilo mogoče izbrisati"
@@ -3694,9 +3697,6 @@
       ],
       "You must set a name": [
         "Vnesti morate ime"
-      ],
-      "Your browser does not support uploading folders": [
-        "Vaš brskalnik ne podpira nalaganja map"
       ],
       "Your import will not be processed.": [
         "Vaš uvoz ne bo obdelan."
@@ -6176,9 +6176,6 @@
       ],
       "Unknown date": [
         "Datum neznan"
-      ],
-      "Unknown error": [
-        "Neznana napaka"
       ],
       "Unlock drive to recover files": [
         "Odklenite pogon za obnovitev datotek"
@@ -8941,9 +8938,6 @@
       ],
       "Failed to convert external invitation": [
         "Zunanjega vabila ni bilo mogoče pretvoriti."
-      ],
-      "Failed to download files: ${ err }": [
-        "Prenos datotek ni uspel: ${ err }"
       ],
       "Failed to move, please try again": [
         "Napaka pri premikanju, prosimo poskusite znova"
@@ -12221,6 +12215,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Kdaj je uporaba VPN najbolj pomembna?"
+      ],
+      "You are all set": [
+        "Vse je nastavljeno"
       ],
       "You can now create unlimited folders and labels": [
         "Zdaj lahko ustvarite neomejeno število map in oznak"

@@ -574,6 +574,9 @@
       "Make a copy": [
         "Másolat létrehozása"
       ],
+      "Manage addresses": [
+        "Címek kezelése"
+      ],
       "Manage advanced account protections": [
         "A speciális fiókvédelmek kezelése"
       ],
@@ -3121,9 +3124,6 @@
       "Failed to update public share node": [
         "Nem sikerült frissíteni a nyilvános megosztási csomópontot"
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "A fájl: \"${ item.name }\", hiba miatt nem tölthető fel: \"${ error }\""
-      ],
       "File \"${ name }\" is already downloading": [
         "A fájl: \"${ name }\" már töltődik lefelé"
       ],
@@ -3238,6 +3238,12 @@
       "Organization key is not decrypted": [
         "A szervezeti kulcs nincs visszafejtve"
       ],
+      "Organization key must be activated to create invited users": [
+        "A szervezeti kulcsot aktiválni kell, meghívott felhasználók létrehozásához"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "A szervezeti kulcsot aktiválni kell, nem-privát felhasználók létrehozásához"
+      ],
       "Password is required": [
         "Jelszó megadása szükséges"
       ],
@@ -3314,9 +3320,6 @@
       ],
       "Some contacts could not be deleted": [
         "Néhány névjegy törlése nem sikerült"
-      ],
-      "Some files were ignored because they are not supported in Photos": [
-        "Egyes fájlokat figyelmen kívül hagyott, mert azokat a Fotók nem támogatja"
       ],
       "Some groups could not be deleted": [
         "Néhány csoport törlése nem sikerült"
@@ -3480,9 +3483,6 @@
       ],
       "You must set a name": [
         "Meg kell adnia egy nevet"
-      ],
-      "Your browser does not support uploading folders": [
-        "A böngészője nem támogatja mappák feltöltését"
       ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
@@ -5769,9 +5769,6 @@
       ],
       "Unknown date": [
         "Ismeretlen dátum"
-      ],
-      "Unknown error": [
-        "Ismeretlen hiba"
       ],
       "Unlock drive to recover files": [
         "A tárhelyek feloldása a fájlok helyreállításához"
@@ -8313,9 +8310,6 @@
       "Failed to convert external invitation": [
         "Nem sikerült konvertálni a külső meghívást"
       ],
-      "Failed to download files: ${ err }": [
-        "Fájlok letöltése nem sikerült: ${ err }"
-      ],
       "Failed to move, please try again": [
         "Nem sikerült áthelyezni, próbálja meg újra"
       ],
@@ -8377,10 +8371,6 @@
       "Selected item was not removed from your list": [
         "A kiválasztott elem nem lett eltávolítva a listáról.",
         "A kiválasztott elemeket nem sikerült eltávolítani a listáról."
-      ],
-      "Selected items were successfully removed from your list": [
-        "A kiválasztott elemek sikeresen el lettek távolítva a listából.",
-        "A kiválasztott elemek sikeresen el lettek távolítva a listából."
       ],
       "Share invitation accepted successfully": [
         "A megosztási meghívó elfogadása megtörtént"
@@ -11661,6 +11651,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "A rendszergazdák nem férhetnek hozzá a privát felhasználók adataihoz, és nem állíthatják vissza jelszavukat."
+      ],
+      "Member activation incomplete": [
+        "A tag aktiválása nem teljes"
+      ],
+      "Organization key must be activated to request data access": [
+        "A szervezeti kulcsot aktiválni kell az adathozzáférés igényléséhez"
+      ],
+      "The user must have an address to request data access": [
+        "A felhasználónak rendelkeznie kell egy címmel az adathozzáférés igényléséhez."
       ]
     },
     "Validation": {

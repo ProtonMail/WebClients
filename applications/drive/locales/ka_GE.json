@@ -622,6 +622,9 @@
       "Make a copy": [
         "ასლის შექმნა"
       ],
+      "Manage addresses": [
+        "მისამართების მართვა"
+      ],
       "Manage advanced account protections": [
         "ანგარიშის დამატებითი დაცვის მართვა"
       ],
@@ -3373,9 +3376,6 @@
       "Failed to update public share node": [
         "საჯარო ზიარის კვანძის განახლება ჩავარდა"
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "ფაილი \"${ item.name }\" ვერ აიტვირთა შეცდომის გამო: ${ error }"
-      ],
       "File \"${ name }\" is already downloading": [
         "ფაილის ${ name } გადმოწერა უკვე მიმდინარეობს"
       ],
@@ -3502,6 +3502,12 @@
       "Organization key is not decrypted": [
         "ორგანიზაციის გასაღები გაშიფრული არაა"
       ],
+      "Organization key must be activated to create invited users": [
+        "მოწვეული მომხმარებლების შესაქმნელად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "არაკონფიდენციალური მომხმარებლების შესაქმნელად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
+      ],
       "Password is required": [
         "პაროლი აუცილებელია"
       ],
@@ -3590,9 +3596,6 @@
       ],
       "Some contacts could not be deleted": [
         "ზოგიერთი კონტაქტი ვერ წაიშალა"
-      ],
-      "Some files were ignored because they are not supported in Photos": [
-        "ზოგიერთი ფაილი გამოტოვებულია, რადგან ისინი ფოტოებში მხარდაჭერილი არაა"
       ],
       "Some groups could not be deleted": [
         "ზოგიერთი ჯგუფი ვერ წაიშალა"
@@ -3789,9 +3792,6 @@
       ],
       "You must set a name": [
         "სახელის დაყენება აუცილებელია"
-      ],
-      "Your browser does not support uploading folders": [
-        "თქვენს ბრაუზერს არ აქვს საქაღალდეების ატვირთვის მხარდაჭერა"
       ],
       "Your import will not be processed.": [
         "თქვენი შემოტანა არ დამუშავდება."
@@ -6153,9 +6153,6 @@
       ],
       "Unknown date": [
         "უცნობი თარიღი"
-      ],
-      "Unknown error": [
-        "უცნობი შეცდომა"
       ],
       "Unlock drive to recover files": [
         "ფაილების აღსადგენად განბლოკეთ დისკი"
@@ -8851,9 +8848,6 @@
       "Failed to convert external invitation": [
         "გარე მოსაწვევის გადაყვანა ჩავარდა"
       ],
-      "Failed to download files: ${ err }": [
-        "ფაილების გადმოწერის შეცდომა: ${ err }"
-      ],
       "Failed to move, please try again": [
         "გადატანის შეცდომა. თავიდან სცადეთ"
       ],
@@ -8915,10 +8909,6 @@
       "Selected item was not removed from your list": [
         "მონიშნული ელემენტი თქვენი სიიდან არ წაშლილა",
         "მონიშნული ელემენტები თქვენი სიიდან არ წაშლილა"
-      ],
-      "Selected items were successfully removed from your list": [
-        "მონიშნული ელემენტი წარმატებით წაიშალა თქვენი სიიდან",
-        "მონიშნული ელემენტები წარმატებით წაიშალა თქვენი სიიდან"
       ],
       "Share invitation accepted successfully": [
         "ზიარის მოსაწვევზე დათანხმება წარმატებულია"
@@ -12414,6 +12404,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "ადმინებს კონფიდენციალური მომხმარებლების მონაცემებთაან წვდომა არ აქვთ და ვერც მათ პაროლს ჩამოყრიან."
+      ],
+      "Member activation incomplete": [
+        "წევრის გააქტიურება დასრულებული არაა"
+      ],
+      "Organization key must be activated to request data access": [
+        "მონაცემებთან წვდომის გამოსათხოვად ორგანიზაციის გასაღები აქტიური უნდა იყოს"
+      ],
+      "The user must have an address to request data access": [
+        "მომხმარებელს მონაცემებზე წვდომის მოსათხოვად მისამართი უნდა გააჩნდეს"
       ]
     },
     "Upsell": {
