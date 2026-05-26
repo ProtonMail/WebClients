@@ -60,6 +60,7 @@ const dynamicDeviceUpdate = ({
     // Handle case where user unplugs device
     if (!currentDevice && deviceList.length > 0 && !isDefaultDevice(deviceId)) {
         if (!systemDefaultDevice?.deviceId) {
+            updateFunction(deviceList[0].deviceId);
             return;
         }
 
@@ -130,20 +131,15 @@ export const useDynamicDeviceHandling = ({
     // Track previous system default device IDs to detect OS default device changes
     const previousSystemDefaultsRef = useRef<{
         microphone: string | null;
-        camera: string | null;
         speaker: string | null;
     }>({
         microphone: null,
-        camera: null,
         speaker: null,
     });
 
     // Initialize the previous system default device IDs because initial values are not available in the first render
     if (previousSystemDefaultsRef.current.microphone === null && microphoneState.systemDefault?.deviceId) {
         previousSystemDefaultsRef.current.microphone = microphoneState.systemDefault.deviceId;
-    }
-    if (previousSystemDefaultsRef.current.camera === null && cameraState.systemDefault?.deviceId) {
-        previousSystemDefaultsRef.current.camera = cameraState.systemDefault.deviceId;
     }
     if (previousSystemDefaultsRef.current.speaker === null && speakerState.systemDefault?.deviceId) {
         previousSystemDefaultsRef.current.speaker = speakerState.systemDefault.deviceId;
@@ -190,7 +186,6 @@ export const useDynamicDeviceHandling = ({
             ) as { [K in keyof DeviceIdSets]: boolean };
 
             const currentMicrophoneSystemDefault = getDefaultDevice(microphones);
-            const currentCameraSystemDefault = getDefaultDevice(cameras);
             const currentSpeakerSystemDefault = getDefaultDevice(speakers);
 
             // Special check for system default that always have the same 'default' label
@@ -198,9 +193,6 @@ export const useDynamicDeviceHandling = ({
                 microphones:
                     previousSystemDefaultsRef.current.microphone !== null &&
                     currentMicrophoneSystemDefault?.deviceId !== previousSystemDefaultsRef.current.microphone,
-                cameras:
-                    previousSystemDefaultsRef.current.camera !== null &&
-                    currentCameraSystemDefault?.deviceId !== previousSystemDefaultsRef.current.camera,
                 speakers:
                     previousSystemDefaultsRef.current.speaker !== null &&
                     currentSpeakerSystemDefault?.deviceId !== previousSystemDefaultsRef.current.speaker,
@@ -243,13 +235,13 @@ export const useDynamicDeviceHandling = ({
                         }
                     },
                 },
-                (!areDeviceIdSetsEqual.cameras || hasSystemDefaultChanged.cameras) && {
+                !areDeviceIdSetsEqual.cameras && {
                     deviceList: camerasAfterDeviceChange,
                     deviceId: activeCameraDeviceId,
                     preferredDeviceId: cameraState.preferredDeviceId,
-                    systemDefaultDevice: currentCameraSystemDefault,
-                    previousSystemDefaultDeviceId: previousSystemDefaultsRef.current.camera,
-                    useSystemDefault: cameraState.useSystemDefault,
+                    systemDefaultDevice: null,
+                    previousSystemDefaultDeviceId: null,
+                    useSystemDefault: false,
                     updateFunction: async (newDeviceId: string) => {
                         if (room.state === ConnectionState.Connected) {
                             const cameraTrack = room.localParticipant.getTrackPublication(Track.Source.Camera)?.track;
@@ -300,7 +292,6 @@ export const useDynamicDeviceHandling = ({
             // Update the ref with current system default device IDs for next change detection
             previousSystemDefaultsRef.current = {
                 microphone: currentMicrophoneSystemDefault?.deviceId ?? null,
-                camera: currentCameraSystemDefault?.deviceId ?? null,
                 speaker: currentSpeakerSystemDefault?.deviceId ?? null,
             };
         } catch (error) {
