@@ -4,7 +4,7 @@ import { getItem } from '@proton/shared/lib/helpers/storage';
 
 import config from '../../../config';
 import { TransferCancel } from '../../../legacy/components/TransferManager/transfer';
-import { unleashVanillaStore } from '../../../legacy/zustand/unleash/unleash.store';
+import { featureFlagStore } from '../../../modules/featureFlag';
 import { sendErrorReport } from '../../../utils/errorHandling';
 import type {
     FileKeys,
@@ -59,7 +59,7 @@ export function initUploadFileWorker(
     const abortController = new AbortController();
     let workerApi: UploadWorkerController;
 
-    const useNewThumbnailGeneration = unleashVanillaStore.getState().isEnabled('DriveWebNewThumbnailGeneration');
+    const useNewThumbnailGeneration = featureFlagStore.getState().isEnabled('DriveWebNewThumbnailGeneration');
 
     // Start detecting mime type right away to have this information once the
     // upload starts, so we can generate thumbnail as fast as possible without
