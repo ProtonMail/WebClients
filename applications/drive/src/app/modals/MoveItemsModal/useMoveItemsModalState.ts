@@ -6,6 +6,7 @@ import { type ModalStateProps, useNotifications } from '@proton/components';
 import type { MaybeNode, ProtonDriveClient, Result } from '@proton/drive';
 import { NodeType, getDrive } from '@proton/drive';
 import type { DirectoryTreeItem } from '@proton/drive/components/DirectoryTree/DirectoryTree';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import shallowEqual from '@proton/utils/shallowEqual';
 
 import { directoryTreeFactory } from '../../modules/directoryTree';
@@ -14,7 +15,6 @@ import { type MoveNodesItemMap, useMoveNodes } from '../../modules/moveNodes';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getMissingUid, isMissingNode } from '../../utils/sdk/node';
 import { useCreateFolderModal } from '../CreateFolderModal';
 

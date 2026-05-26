@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 import { useConfirmActionModal, useModalStateObject, useNotifications } from '@proton/components';
 import { ServerError, getDriveForPhotos } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
@@ -13,7 +14,6 @@ import { useSharingActions } from '../../legacy/hooks/drive/useSharingActions';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { getNotificationsManager } from '../../modules/notifications';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { useDeleteAlbumModal } from '../PhotosModals/DeleteAlbumModal';
 import { useRemoveAlbumPhotosModal } from '../PhotosModals/RemoveAlbumPhotosModal';
 import { useAlbumsStore } from '../useAlbums.store';

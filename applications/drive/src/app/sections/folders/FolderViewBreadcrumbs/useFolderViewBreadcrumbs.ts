@@ -3,13 +3,13 @@ import { useCallback, useState } from 'react';
 import { c } from 'ttag';
 
 import type { ProtonDriveClient, Result } from '@proton/drive/index';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import useDriveNavigation from '../../../legacy/hooks/drive/useNavigate';
 import type { CrumbDefinition } from '../../../statelessComponents/Breadcrumbs/types';
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getNodeAncestry } from '../../../utils/sdk/getNodeAncestry';
-import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { NodeLocation, getNodeLocation } from '../../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
 

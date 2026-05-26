@@ -1,8 +1,8 @@
 import { NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
 
+import { getNodeEntity } from '../../../legacy/sdkUtils/getNodeEntity';
 import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import type { FolderCreationTask } from '../types';
-import { getNodeEntityFromMaybeNode } from '../utils/getNodeEntityFromMaybeNode';
 import { TaskExecutor } from './TaskExecutor';
 
 /**
@@ -15,9 +15,9 @@ export class FolderCreationExecutor extends TaskExecutor<FolderCreationTask> {
 
         try {
             const folder = await drive.createFolder(task.parentUid, task.name, task.modificationTime);
-            const { node } = getNodeEntityFromMaybeNode(folder);
+            const { node } = getNodeEntity(folder);
 
-            this.eventCallback?.({
+            void this.eventCallback?.({
                 type: 'folder:complete',
                 uploadId: task.uploadId,
                 nodeUid: node.uid,
@@ -25,13 +25,13 @@ export class FolderCreationExecutor extends TaskExecutor<FolderCreationTask> {
             });
         } catch (error) {
             if (error instanceof NodeWithSameNameExistsValidationError) {
-                this.eventCallback?.({
+                void this.eventCallback?.({
                     type: 'folder:conflict',
                     uploadId: task.uploadId,
                     error,
                 });
             } else {
-                this.eventCallback?.({
+                void this.eventCallback?.({
                     type: 'folder:error',
                     uploadId: task.uploadId,
                     error: error instanceof Error ? error : new Error('Folder creation failed'),

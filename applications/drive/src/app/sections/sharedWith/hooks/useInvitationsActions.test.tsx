@@ -3,9 +3,9 @@ import { renderHook } from '@testing-library/react';
 import { useNotifications } from '@proton/components';
 import { MemberRole, type NodeEntity, NodeType, getDrivePerNodeType } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
-import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { useInvitationsActions } from './useInvitationsActions';
 
 jest.mock('@proton/components', () => ({
@@ -33,7 +33,7 @@ jest.mock('../../../utils/errorHandling/handleSdkError', () => ({
     handleSdkError: jest.fn(),
 }));
 
-jest.mock('../../../utils/sdk/getNodeEntity', () => ({
+jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity', () => ({
     getNodeEntity: jest.fn(),
 }));
 

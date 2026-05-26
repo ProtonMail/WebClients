@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
 import { getDrive, getDriveForPhotos } from '@proton/drive/index';
-import { getNodeEntityFromMaybeNode } from '@proton/drive/modules/upload/utils/getNodeEntityFromMaybeNode';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import { driveMetrics } from '../../modules/metrics';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
@@ -21,7 +21,7 @@ export const useTrashNodes = () => {
             for await (const trashNode of drive.iterateTrashedNodes(abortSignal)) {
                 try {
                     const location = await getFormattedNodeLocation(drive, trashNode);
-                    const { node } = getNodeEntityFromMaybeNode(trashNode);
+                    const { node } = getNodeEntity(trashNode);
                     const haveSignatureIssues = !getSignatureIssues(trashNode).ok;
                     setItem(await createTrashItem(node, location, drive, haveSignatureIssues));
                     onItemsLoadedToState(1);
@@ -47,7 +47,7 @@ export const useTrashNodes = () => {
             for await (const trashNode of drive.iterateTrashedNodes(abortSignal)) {
                 try {
                     const location = await getFormattedNodeLocation(drive, trashNode);
-                    const { node } = getNodeEntityFromMaybeNode(trashNode);
+                    const { node } = getNodeEntity(trashNode);
                     const haveSignatureIssues = !getSignatureIssues(trashNode).ok;
                     setItem(await createTrashItem(node, location, drive, haveSignatureIssues));
                 } catch (e) {

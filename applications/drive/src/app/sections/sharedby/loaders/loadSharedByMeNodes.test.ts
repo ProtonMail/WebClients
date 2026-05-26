@@ -1,7 +1,7 @@
 import { MemberRole, NodeType, getDrive, getDriveForPhotos } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
-import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
 import { getRootNode } from '../../../utils/sdk/mapNodeToLegacyItem';
 import { useSharedByMeStore } from '../useSharedByMe.store';
@@ -9,7 +9,7 @@ import { loadSharedByMeNodes } from './loadSharedByMeNodes';
 
 jest.mock('@proton/drive');
 jest.mock('../../../utils/errorHandling/handleSdkError');
-jest.mock('../../../utils/sdk/getNodeEntity');
+jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity');
 jest.mock('../../../utils/sdk/getSignatureIssues');
 jest.mock('../../../utils/sdk/mapNodeToLegacyItem');
 jest.mock('../useSharedByMe.store');

@@ -1,11 +1,11 @@
+import type { MaybeNode, NodeEntity, PhotoNode } from '@proton/drive';
 import { NodeType, getDriveForPhotos } from '@proton/drive';
-import type { MaybeNode } from '@proton/drive';
 import type { BusDriverClient } from '@proton/drive/internal/BusDriver';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { Logging } from '@proton/drive/modules/logging';
 
 import { handleSdkError } from '../utils/errorHandling/handleSdkError';
-import { getNodeEntity, isPhotoNode } from '../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../utils/sdk/getSignatureIssues';
 import { mapNodeToPhotoItem } from './PhotosWithAlbums/loaders/mapNodeToAdditionalInfo';
 import { loadCurrentAlbum } from './loaders/loadAlbum';
@@ -15,6 +15,10 @@ import { usePhotosStore } from './usePhotos.store';
 
 const logging = new Logging({ sentryComponent: 'drive-web-log' });
 const logger = logging.getLogger('subscribe-to-photos-events');
+
+const isPhotoNode = (node: NodeEntity): node is PhotoNode => {
+    return [NodeType.Photo, NodeType.Album].includes(node.type);
+};
 
 const nodeToAlbumItem = (maybeNode: MaybeNode, item: { isShared?: boolean }): AlbumItem => {
     const { node, albumAttributes } = getNodeEntity(maybeNode);

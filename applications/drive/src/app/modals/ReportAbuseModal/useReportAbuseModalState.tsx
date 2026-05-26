@@ -4,11 +4,11 @@ import { c } from 'ttag';
 
 import { type ModalStateProps, useApi, useNotifications } from '@proton/components';
 import type { NodeType, ProtonDrivePublicLinkClient } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { querySubmitAbuseReport } from '@proton/shared/lib/api/drive/sharing';
 
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeDisplaySize } from '../../utils/sdk/getNodeDisplaySize';
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import type { ReportAbuseModalViewProps } from './ReportAbuseModalView';
 import { AbuseCategoryType, type AbuseReportPrefill } from './types';
 
