@@ -104,11 +104,13 @@ const MailboxListItems = ({
         return <EmptyListPlaceholder labelID={labelID} isSearch={isSearch} isUnread={false} />;
     }
 
-    const showUserOnboarding =
-        !mailboxListLoading &&
-        (!(total > 1) || byoeFlowInProgress) &&
-        canDisplayChecklist &&
-        (displayState === CHECKLIST_DISPLAY_TYPE.FULL || byoeFlowInProgress);
+    const shouldShowUserOnboarding = () => {
+        if (mailboxListLoading || !canDisplayChecklist) {
+            return false;
+        }
+
+        return byoeFlowInProgress || (total <= 1 && displayState === CHECKLIST_DISPLAY_TYPE.FULL);
+    };
 
     return (
         <div className="overflow-auto h-full" ref={scrollContainerRef}>
@@ -154,7 +156,7 @@ const MailboxListItems = ({
                     );
                 })}
 
-                {showUserOnboarding && <UserOnboardingMessageListPlaceholder location="list" />}
+                {shouldShowUserOnboarding() && <UserOnboardingMessageListPlaceholder location="list" />}
 
                 {useLoadingElement && loadingElement}
             </div>
