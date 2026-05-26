@@ -1,7 +1,7 @@
 import type { MaybeNode } from '@proton/drive';
 import { parseAdditionalMetadata } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
-import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
 import type { PhotoItem } from '../../usePhotos.store';
 

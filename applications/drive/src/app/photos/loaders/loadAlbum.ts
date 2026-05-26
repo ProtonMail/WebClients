@@ -1,9 +1,9 @@
 import { MemberRole, getDriveForPhotos } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 import { useAlbumsStore } from '../useAlbums.store';
 import { usePhotosStore } from '../usePhotos.store';

@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { type Device, type MaybeNode, NodeType, type Result } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import { handleSdkError } from '../errorHandling/handleSdkError';
 import { getNodeAncestry } from './getNodeAncestry';
-import { getNodeEntity } from './getNodeEntity';
 import { getNodeName } from './getNodeName';
 
 export enum NodeLocation {

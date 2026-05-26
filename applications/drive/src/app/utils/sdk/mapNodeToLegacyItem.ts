@@ -8,11 +8,11 @@ import {
     splitNodeRevisionUid,
     splitNodeUid,
 } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import type { FileBrowserBaseItem } from '../../legacy/components/FileBrowser';
 import type { EncryptedLink, LinkShareUrl } from '../../legacy/store';
 import { getNodeDisplaySize } from './getNodeDisplaySize';
-import { getNodeEntity } from './getNodeEntity';
 import { getSignatureIssues } from './getSignatureIssues';
 import { dateToLegacyTimestamp, getLegacyModifiedTime, getLegacyTrashedTime } from './legacyTime';
 
