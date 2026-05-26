@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
 
-import { ContextMenuButton } from '../../../legacy/components/sections/ContextMenu';
 import { hasFoldersSelected, noSelection } from '../../../legacy/components/sections/ToolbarButtons/utils';
+import { ContextMenuButton } from '../../../statelessComponents/ContextMenu';
 import type { ActionButtonProps } from '../../buttons/types';
 
 type Item = {

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { ToolbarButton } from '@proton/components';
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 
-import { ContextMenuButton } from '../../../legacy/components/sections/ContextMenu';
+import { ContextMenuButton } from '../../../statelessComponents/ContextMenu';
 import type { CommonButtonProps } from '../../commonButtons/types';
 
 export const RestoreButton = ({ buttonType, onClick, close }: CommonButtonProps) => {

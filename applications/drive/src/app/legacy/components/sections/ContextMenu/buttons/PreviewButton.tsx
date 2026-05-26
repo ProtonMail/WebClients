@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { getDrive } from '@proton/drive';
 
 import type { useDrivePreviewModal } from '../../../../../modals/preview';
-import ContextMenuButton from '../ContextMenuButton';
+import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';
 
 interface Props {
     shareId: string;

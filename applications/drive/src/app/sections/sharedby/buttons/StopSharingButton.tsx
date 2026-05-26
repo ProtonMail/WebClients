@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { ToolbarButton } from '@proton/components';
 import { IcLinkSlash } from '@proton/icons/icons/IcLinkSlash';
 
-import { ContextMenuButton } from '../../../legacy/components/sections/ContextMenu';
+import { ContextMenuButton } from '../../../statelessComponents/ContextMenu';
 import type { CommonButtonProps } from '../../commonButtons/types';
 
 export const StopSharingButton = ({ onClick, close, buttonType }: CommonButtonProps) => {
