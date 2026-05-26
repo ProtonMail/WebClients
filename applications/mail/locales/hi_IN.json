@@ -1167,6 +1167,10 @@
       "Trust": [
         "भरोसा करें"
       ],
+      "Trust key": [
+        "ट्रस्ट की",
+        "ट्रस्ट कीज़"
+      ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
       ],
@@ -3613,6 +3617,12 @@
       "Organization key is not decrypted": [
         "संगठन कुंजी को डिक्रिप्ट नहीं किया गया है"
       ],
+      "Organization key must be activated to create invited users": [
+        "संगठन कुंजी को सक्रिय किया जाना चाहिए ताकि निमंत्रित उपयोगकर्ता बनाए जा सकें"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "संगठन कुंजी को सक्रिय करना आवश्यक है ताकि गैर-निजी उपयोगकर्ता बनाए जा सकें"
+      ],
       "Passphrase unavailable": [
         "पासफ्रेज़ अनुपलब्ध"
       ],
@@ -5454,6 +5464,9 @@
       ],
       "Inherited from parent folder": [
         "मूल फ़ोल्डर से इनहेरिट की गई"
+      ],
+      "Insert image": [
+        "तस्वीर डालें"
       ],
       "Insert link": [
         "लिंक डालें"
@@ -11012,6 +11025,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "एडमिन निजी उपयोगकर्ताओं के डाटा तक पहुंच नहीं सकते और उनके पासवर्ड रीसेट नहीं कर सकते।"
+      ],
+      "Member activation incomplete": [
+        "सदस्य सक्रियण अधूरा है"
+      ],
+      "Organization key must be activated to request data access": [
+        "डाटा एक्सेस का अनुरोध करने के लिए संगठन कुंजी को सक्रिय करना आवश्यक है"
+      ],
+      "The user must have an address to request data access": [
+        "डाटा एक्सेस का अनुरोध करने के लिए उपयोगकर्ता के पास एक पता होना चाहिए"
       ]
     },
     "Update font modal": {
