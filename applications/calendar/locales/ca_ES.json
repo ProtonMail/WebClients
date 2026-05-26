@@ -1034,6 +1034,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Continue with Free": [
+        "Continuar amb el pla gratuït"
       ]
     },
     "action": {
@@ -3215,6 +3218,33 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
+      ],
+      "Available storage: ${ storageText }": [
+        "Emmagatzematge disponible: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Els correus enviats a ${ connectedAddressText } apareixeran ara a ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Espai suficient per anys de correus electrònics, fitxers adjunts i més."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Desbloquegeu 15 GB d'emmagatzematge per només ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Aturarem les importacions al 80% de l'emmagatzematge per reservar espai per missatges nous."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Hem començat a importar els vostres correus electrònics des de Gmail. Us avisarem quan hagi acabat."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Ara ja podeu enviar correus electrònics des de ${ BRAND_NAME } utilitzant aquesta adreça."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "El vostre compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem ${ newUserStorageText } dels vostres missatges més recents de Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "El vostre compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem els vostres correus electrònics més recents de Gmail."
       ]
     },
     "description": {
@@ -4550,6 +4580,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Nombre il·limitat d'àlies hide-my-email"
+      ],
+      "10+ premium features": [
+        "Més de 10 característiques prèmium"
+      ],
+      "Custom email domain": [
+        "Domini de correu electrònic personalitzat"
+      ],
+      "Email addresses": [
+        "Adreces de correu electrònic"
+      ],
+      "Storage": [
+        "Emmagatzematge"
       ]
     },
     "Features": {
@@ -6599,6 +6641,15 @@
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Confieu en la clau \"${ activeSignerText }\" per verificar els missatges nous d'aquest contacte."
+      ],
+      "Included": [
+        "Inclòs"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Milloreu el pla en qualsevol moment per portar la resta"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Milloreu de pla o allibereu espai en qualsevol moment per portar la resta"
       ]
     },
     "info": {
@@ -12403,6 +12454,15 @@
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
+      ],
+      "Continue with free storage": [
+        "Continueu amb l'emmagatzematge gratuït"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Aconseguiu més emmagatzematge amb ${ MAIL_APP_NAME } Plus"
+      ],
+      "You are all set": [
+        "Ja esteu a punt"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

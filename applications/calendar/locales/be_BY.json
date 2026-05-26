@@ -1042,6 +1042,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ваш бясплатны пробны перыяд праграмы для камп'ютара завершыцца ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Continue with Free": [
+        "Працягнуць з тарыфным планам Free"
       ]
     },
     "action": {
@@ -3271,6 +3274,33 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ],
+      "Available storage: ${ storageText }": [
+        "Даступна ў сховішчы: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Лісты, якія адпраўленыя на ${ connectedAddressText }, цяпер будуць паказвацца ў ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Дастаткова месца ў сховішчы, якога хопіць на доўгія гады для захоўвання лістоў, далучэнняў і іншай інфармацыі."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Разблакіруйце 15 ГБ сховішча ўсяго за ${ config.offerPrice }"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Імпартаванне будзе прыпынена, калі сховішча будзе запоўнена на 80%. Гэта дазволіць зарэзерваваць астатняе месца для новых паведамленняў."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Пачалося імпартаванне вашых лістоў з Gmail. Вы будзеце апавешчаны, калі працэс будзе завершаны."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Цяпер можна адпраўляць лісты з ${ BRAND_NAME } выкарыстоўваючы гэты адрас."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "У вашага бясплатнага ўліковага запісу ${ MAIL_APP_NAME } абмежаваная ёмістасць сховішча і таму, удалося імпартаваць толькі ${ newUserStorageText } вашых апошніх паведамленняў з паштовай скрыні Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "У вашага бясплатнага ўліковага запісу ${ MAIL_APP_NAME } абмежаваная ёмістасць сховішча і таму, удалося імпартаваць толькі самыя апошнія вашы лісты з Gmail."
       ]
     },
     "description": {
@@ -4638,6 +4668,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Неабмежаваная колькасць псеўданімаў hide-my-email"
+      ],
+      "10+ premium features": [
+        "Больш за 10 прэміяльных функцый"
+      ],
+      "Custom email domain": [
+        "Карыстальніцкі дамен электроннай пошты"
+      ],
+      "Email addresses": [
+        "Адрасы электроннай пошты"
+      ],
+      "Storage": [
+        "Сховішча"
       ]
     },
     "Features": {
@@ -5144,7 +5186,7 @@
     },
     "Import provider": {
       "More import options": [
-        "Больш параметраў імпарту"
+        "Больш параметраў імпартавання"
       ]
     },
     "Import warning": {
@@ -6219,7 +6261,7 @@
         "Адсканіруйце QR-код з дапамогай мабільнай прылады"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць як прадвызначаны для адпраўкі лістоў на гэты адрас электроннай пошты."
+        "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць прадвызначана пры адпраўцы лістоў на гэты адрас электроннай пошты."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
@@ -6781,6 +6823,15 @@
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Давяраць ключу \"${ activeSignerText }\", каб спраўдзіць новыя паведамленні ад гэтага кантакту."
+      ],
+      "Included": [
+        "Уключае"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Палепшыце ў любы час, каб перанесці астатняе"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Палепшыце свой тарыфны план або вызваліце месца ў сховішчы, каб перанесці астатняе"
       ]
     },
     "info": {
@@ -11139,7 +11190,7 @@
         "Бесперабойнае стварэнне і дадаванне спасылак з відэасустрэчамі ў вашы падзеі."
       ],
       "Video conferencing is here!": [
-        "Відэаканферэнцыі ўжо тут!"
+        "Сустракайце відэаканферэнцыі!"
       ]
     },
     "sso": {
@@ -12861,6 +12912,15 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
+      ],
+      "Continue with free storage": [
+        "Працягнуць карыстацца бясплатным сховішчам"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Атрымайце больш сховішча з ${ MAIL_APP_NAME } Plus"
+      ],
+      "You are all set": [
+        "Усё гатова"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

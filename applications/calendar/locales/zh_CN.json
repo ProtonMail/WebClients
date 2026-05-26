@@ -1030,6 +1030,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "您的桌面应用免费试用将在 ${ formattedEndDate }结束。 ${ upgradeButton }"
+      ],
+      "Continue with Free": [
+        "注册免费账户"
       ]
     },
     "action": {
@@ -3187,6 +3190,33 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
+      ],
+      "Available storage: ${ storageText }": [
+        "可用空间：${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "发送到 ${ connectedAddressText } 的电子邮件现在将显示在 ${ MAIL_APP_NAME } 中。"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "拥有足够空间存储多年的邮件、附件等"
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "仅需 ${ config.offerPrice } 即可解锁 15 GB 存储空间"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "存储空间使用量达到 80% 时，我们会暂停导入，为接收新消息预留空间。"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "我们已开始从 Gmail 导入您的邮件，导入完成后将通知您。"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "您现在可以使用此地址从 ${ BRAND_NAME } 发送电子邮件。"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "您的免费 ${ MAIL_APP_NAME } 账户存储空间有限，因此我们仅导入 ${ newUserStorageText } 的最近 Gmail 邮件"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "您的免费 ${ MAIL_APP_NAME } 账户存储空间有限，因此我们仅导入您最近的 Gmail 邮件"
       ]
     },
     "description": {
@@ -4506,6 +4536,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "无限制地 hide-my-email"
+      ],
+      "10+ premium features": [
+        "10+ 高级功能"
+      ],
+      "Custom email domain": [
+        "自定义邮箱域名"
+      ],
+      "Email addresses": [
+        "邮箱地址"
+      ],
+      "Storage": [
+        "存储空间"
       ]
     },
     "Features": {
@@ -6508,6 +6550,15 @@
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "信任“${ activeSignerText }”密钥以验证来自此联系人的新消息"
+      ],
+      "Included": [
+        "已包含"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "随时升级以迁移剩余内容"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "随时升级或清理空间以迁移剩余内容"
       ]
     },
     "info": {
@@ -12174,6 +12225,15 @@
       ],
       "Your shorter address is now ready": [
         "您的较短地址现已准备就绪"
+      ],
+      "Continue with free storage": [
+        "继续使用免费存储空间"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "使用 ${ MAIL_APP_NAME } Plus 获取更多存储空间"
+      ],
+      "You are all set": [
+        "一切就绪"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

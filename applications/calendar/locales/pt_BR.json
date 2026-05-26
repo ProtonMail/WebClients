@@ -1034,6 +1034,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Continue with Free": [
+        "Continuar com Free"
       ]
     },
     "action": {
@@ -3212,6 +3215,15 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
+      ],
+      "Available storage: ${ storageText }": [
+        "Armazenamento disponível: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-mails enviados para ${ connectedAddressText } agora serão exibidos em ${ MAIL_APP_NAME }."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Você agora pode enviar e-mails da ${ BRAND_NAME } usando este endereço."
       ]
     },
     "description": {
@@ -4544,6 +4556,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Aliases do Hide-my-email ilimitados"
+      ],
+      "10+ premium features": [
+        "10+ recursos premium"
+      ],
+      "Custom email domain": [
+        "Domínio de e-mail personalizado"
+      ],
+      "Email addresses": [
+        "Endereços de e-mail"
+      ],
+      "Storage": [
+        "Armazenamento"
       ]
     },
     "Features": {
@@ -6587,6 +6611,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Você atingiu o limite de agendamentos (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Included": [
+        "Incluso"
       ]
     },
     "info": {
@@ -12469,6 +12496,15 @@
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
+      ],
+      "Continue with free storage": [
+        "Continuar com armazenamento grátis"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Obtenha mais armazenamento com ${ MAIL_APP_NAME } Plus"
+      ],
+      "You are all set": [
+        "Tudo pronto"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

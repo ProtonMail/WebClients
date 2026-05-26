@@ -3121,6 +3121,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "電子郵件傳送至 ${ connectedAddressText } 將顯示於 ${ MAIL_APP_NAME }。"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "足夠超過年的電子郵件、附件和更多"
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "只要 ${ config.offerPrice } 解鎖 15 GB 的儲存空間"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "您可透過 ${ BRAND_NAME } 用此位址傳送電子郵件。"
       ]
     },
     "description": {
@@ -4408,6 +4420,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "無限制的 hide-my-email 別名"
+      ],
+      "10+ premium features": [
+        "10 + 頂級質子版功能"
+      ],
+      "Custom email domain": [
+        "自訂電子郵件網域"
+      ],
+      "Email addresses": [
+        "電子郵件地址"
+      ],
+      "Storage": [
+        "儲存空間"
       ]
     },
     "fido2: Error": {
@@ -6309,6 +6333,9 @@
       ],
       "Create a secure cloud for ${ memberCount } member": [
         "替成員創建一個安全 ${ memberCount } 雲端"
+      ],
+      "Included": [
+        "包含"
       ]
     },
     "info": {
@@ -9317,6 +9344,9 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "我們建議您「取消信任」此金鑰。"
+      ],
+      "This key is used for message verification": [
+        "此金鑰用於訊息驗證"
       ]
     },
     "PGP key warning": {
@@ -11868,6 +11898,12 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "透過 ${ MAIL_APP_NAME } 取得更多儲存空間"
+      ],
+      "You are all set": [
+        "你已就緒"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

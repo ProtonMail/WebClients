@@ -1038,6 +1038,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Continue with Free": [
+        "Continuare cu Free"
       ]
     },
     "action": {
@@ -3243,6 +3246,33 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
+      ],
+      "Available storage: ${ storageText }": [
+        "Spațiu disponibil: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Mesajele trimise către ${ connectedAddressText } vor apărea acum în ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Spațiu suficient pentru ani mulți de mesaje, atașamente și altele."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Deblocați 15 GiB de spațiu pentru doar ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Importarea se va opri la 80% din spațiul de stocare pentru a rezerva spațiu pentru mesajele noi."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "S-a început importarea mesajelor de pe Gmail. Vă vom anunța când va fi gata."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Puteți trimite acum mesaje de pe ${ BRAND_NAME } folosind această adresă."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Contul gratuit ${ MAIL_APP_NAME } are un spațiu de stocare limitat, așa că se vor importa doar ${ newUserStorageText } dintre cele mai recente mesaje din Gmail."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Contul gratuit ${ MAIL_APP_NAME } are un spațiu de stocare limitat, așa că se vor importa doar cele mai recente mesaje din Gmail."
       ]
     },
     "description": {
@@ -4594,6 +4624,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Aliasuri hide-my-email nelimitate"
+      ],
+      "10+ premium features": [
+        "Peste 10 funcții premium"
+      ],
+      "Custom email domain": [
+        "Domeniu personal de e-mail"
+      ],
+      "Email addresses": [
+        "Adrese de e-mail"
+      ],
+      "Storage": [
+        "Spațiu de stocare"
       ]
     },
     "Features": {
@@ -6690,6 +6732,15 @@
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Cheia „${ activeSignerText }” este aprobată pentru a verifica mesajele noi de la acest contact."
+      ],
+      "Included": [
+        "Inclus"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Modificați oricând abonamentul pentru a obține și restul"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Modificați abonamentul sau goliți spațiul de stocare pentru a le aduce și pe restul."
       ]
     },
     "info": {
@@ -12728,6 +12779,15 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Continue with free storage": [
+        "Continuare cu spațiu gratuit"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Obțineți mai mult spațiu cu ${ MAIL_APP_NAME } Plus"
+      ],
+      "You are all set": [
+        "Totul este pregătit"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -3197,6 +3197,24 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ],
+      "Available storage: ${ storageText }": [
+        "Tillgängligt lagringsutrymme: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-post skickat till ${ connectedAddressText } kommer nu visas i ${ MAIL_APP_NAME }."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Lås upp 15 GB lagringsutrymme för endast ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Vi kommer pausa importerna vid 80 % lagringsutrymme för att reservera utrymme för nya meddelanden."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Vi har börjat importera din e-post från Gmail. Vi meddelar dig när det är klart."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Du kan nu skicka e-post från ${ BRAND_NAME } med denna adress."
       ]
     },
     "description": {
@@ -4520,6 +4538,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Obegränsat antal hide-my-email-alias"
+      ],
+      "10+ premium features": [
+        "10+ premiumfunktioner"
+      ],
+      "Custom email domain": [
+        "Anpassad e-postdomän"
+      ],
+      "Email addresses": [
+        "E-postadresser"
+      ],
+      "Storage": [
+        "Lagringsutrymme"
       ]
     },
     "Features": {
@@ -6517,6 +6547,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "Included": [
+        "Inkluderad"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Lita på nyckeln “${ activeSignerText }“ för att verifiera nya meddelanden från denna kontakt."
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Uppgradera när som helst för att flytta över resten"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Uppgradera eller frigör utrymme när som helst för att flytta över resten"
       ]
     },
     "info": {
@@ -7253,6 +7295,9 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tecken"
       ]
     },
     "label": {
@@ -9653,6 +9698,12 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi rekommenderar att du “Sluta lita på“ denna nyckel."
+      ],
+      "This contact currently signs messages with this key": [
+        "Denna kontakt signerar för närvarande meddelanden med denna nyckel"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Denna nyckel används för att kryptera meddelanden till denna kontakt i äldre appar"
       ]
     },
     "PGP key warning": {
@@ -12355,6 +12406,15 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "Continue with free storage": [
+        "Fortsätt med gratis lagringsutrymme"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Skaffa mer lagringsutrymme med ${ MAIL_APP_NAME } Plus"
+      ],
+      "You are all set": [
+        "Du är klar"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
