@@ -5,11 +5,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components';
 import { Alert, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import type { DirectoryTreeItem } from '@proton/drive/components/DirectoryTree/DirectoryTree';
+import { DirectoryTreeRoot } from '@proton/drive/components/DirectoryTree/DirectoryTree';
 import { useLoading } from '@proton/hooks';
 
 import ModalContentLoader from '../../legacy/components/modals/ModalContentLoader';
-import type { DirectoryTreeItem } from '../../statelessComponents/DirectoryTree/DirectoryTree';
-import { DirectoryTreeRoot } from '../../statelessComponents/DirectoryTree/DirectoryTree';
 
 export type SelectLinkToShareModalViewProps =
     | ({ loaded: true } & LoadedSelectLinkToShareModalViewProps)
