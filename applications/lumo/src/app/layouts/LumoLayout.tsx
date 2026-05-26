@@ -4,53 +4,62 @@ import { clsx } from 'clsx';
 
 import { Header } from '../components/Conversation/Header';
 import { RightPanelSlot, RightPanelSlotWithHeader } from '../components/RightPanelSlot';
-import { useDragArea } from '../providers/DragAreaProvider';
 import { useRightPanel } from '../providers/RightPanelProvider';
 
-export const DragAreaContainer = ({ children }: { children: React.ReactNode }) => {
-    const { onDrop, onDragLeave, onDragEnter, onDragOver } = useDragArea();
-
-    return (
-        <div
-            className="relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto rounded-xl bg-norm"
-            style={{
-                border: '1px solid blue',
-            }}
-            onDrop={onDrop}
-            onDragLeave={onDragLeave}
-            onDragEnter={onDragEnter}
-            onDragOver={onDragOver}
-        >
-            {children}
-        </div>
-    );
-};
-
-// TODO: clean up and improve props, etc
-interface LumoLayoutWithDrawerProps {
-    children: React.ReactNode;
-    headerComponent?: React.ReactNode;
-    drawerContentComponent?: React.ReactNode;
-    withoutDrawerToggle?: boolean;
-    leftHeaderButton?: React.ReactNode;
-    drawerTitle?: string;
-    drawerActionButton?: React.ReactNode;
+/**
+ * Configuration for the header section of the layout
+ */
+interface HeaderConfig {
+    component?: React.ReactNode;
+    leftButton?: React.ReactNode;
     showNewChatButton?: boolean;
+}
+
+/**
+ * Configuration for the drawer/right panel section of the layout
+ */
+interface DrawerConfig {
+    content?: React.ReactNode;
+    title?: string;
+    actionButton?: React.ReactNode;
+    disabled?: boolean;
+}
+
+/**
+ * Configuration for the visual appearance of the layout
+ */
+interface AppearanceConfig {
     solidBackground?: boolean;
 }
 
-export const LumoLayoutWithDrawer = ({
-    children,
-    headerComponent,
-    drawerContentComponent,
-    withoutDrawerToggle = false,
-    leftHeaderButton,
-    drawerTitle,
-    drawerActionButton,
-    showNewChatButton = false,
-    solidBackground = true,
-}: LumoLayoutWithDrawerProps) => {
+/**
+ * Props interface for the LumoLayoutWithDrawer component
+ */
+interface LumoLayoutWithDrawerProps {
+    children: React.ReactNode;
+    header?: HeaderConfig;
+    drawer?: DrawerConfig;
+    appearance?: AppearanceConfig;
+}
+
+export const LumoLayoutWithDrawer = ({ children, header, drawer, appearance }: LumoLayoutWithDrawerProps) => {
     const { close, isOpen } = useRightPanel();
+
+    // Extract configurations with defaults
+    const headerConfig = header || {};
+    const drawerConfig = drawer || {};
+    const appearanceConfig = appearance || {};
+
+    const { component: headerComponent, leftButton: leftHeaderButton, showNewChatButton = false } = headerConfig;
+
+    const {
+        content: drawerContentComponent,
+        title: drawerTitle,
+        actionButton: drawerActionButton,
+        disabled: withoutDrawerToggle = false,
+    } = drawerConfig;
+
+    const { solidBackground = true } = appearanceConfig;
 
     // Automatically close panel if this layout doesn't support panels
     useEffect(() => {
@@ -59,6 +68,7 @@ export const LumoLayoutWithDrawer = ({
             close();
         }
     }, [withoutDrawerToggle, drawerContentComponent, close, isOpen]);
+
     return (
         <div
             className={clsx(

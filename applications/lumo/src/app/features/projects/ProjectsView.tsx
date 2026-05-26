@@ -136,7 +136,7 @@ export const ProjectsView = () => {
 
     return (
         <>
-            <LumoLayoutWithDrawer withoutDrawerToggle={true}>
+            <LumoLayoutWithDrawer drawer={{ disabled: true }}>
                 <div className="px-4 md:px-10">
                     <div
                         className="flex flex-row flex-nowrap justify-space-between w-full my-4 mx-auto max-w-custom"
