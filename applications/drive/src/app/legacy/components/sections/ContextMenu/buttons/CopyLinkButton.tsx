@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useActions } from '../../../../../legacy/store';
-import ContextMenuButton from '../ContextMenuButton';
+import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';
 
 interface Props {
     shareId: string;
