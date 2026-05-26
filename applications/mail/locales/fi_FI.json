@@ -1501,6 +1501,10 @@
       "Trust": [
         "Luota"
       ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
+      ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
       ],
@@ -4153,9 +4157,6 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Tuomme vanhat sähköpostisi ja yhdistämme Gmail-tilisi ${ MAIL_APP_NAME } -sovellukseen, jotta uudet viestit näkyvät automaattisesti"
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Olemme aloittaneet viimeisten 180 päivän viestiesi tuonnin Gmailista. Ilmoitamme sinulle, kun tuonti on valmis."
-      ],
       "When do you want your message to be sent?": [
         "Milloin haluat viestin lähtevän?"
       ],
@@ -4826,6 +4827,12 @@
       ],
       "Organization key is not decrypted": [
         "Organisaatioavaimen salausta ei ole purettu"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisaatioavain on aktivoitava kutsuttujen käyttäjien luomiseksi"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisaatioavain on aktivoitava ei-yksityisten käyttäjien luomiseksi"
       ],
       "Passphrase unavailable": [
         "Salalause ei ole käytettävissä"
@@ -7469,8 +7476,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -15845,6 +15851,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Ylläpitäjillä ei ole pääsyä yksityisten käyttäjien tietoihin, eivätkä he voi nollata heidän salasanojaan."
+      ],
+      "Member activation incomplete": [
+        "Jäsenen aktivointi on kesken"
+      ],
+      "Organization key must be activated to request data access": [
+        "Tietojen käyttöoikeuspyyntö vaatii organisaatioavaimen aktivoinnin"
+      ],
+      "The user must have an address to request data access": [
+        "Käyttäjällä on oltava osoite tietojen käyttöoikeuden anomiseksi"
       ]
     },
     "Update font modal": {

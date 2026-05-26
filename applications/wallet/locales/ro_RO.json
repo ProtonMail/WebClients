@@ -2370,6 +2370,12 @@
       "Organization key is not decrypted": [
         "Cheia organizației nu este decriptată."
       ],
+      "Organization key must be activated to create invited users": [
+        "Cheia organizației trebuie activată pentru a crea utilizatori invitați."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Cheia organizației trebuie activată pentru a crea utilizatori neprivați."
+      ],
       "Passwords do not match": [
         "Parolele nu coincid"
       ],
@@ -3286,6 +3292,9 @@
         "O lună",
         "${ n } luni",
         "${ n } de luni"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } de caractere"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Accesați ${ PASS_APP_NAME } în siguranță de la terminal, ideal pentru editare comenzi, automatizare și fluxuri de lucru de dezvoltare."
@@ -5927,6 +5936,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorii nu pot accesa datele utilizatorilor privați și nu le pot reseta parola."
+      ],
+      "Member activation incomplete": [
+        "Activarea membrului nu este completă"
+      ],
+      "Organization key must be activated to request data access": [
+        "Cheia organizației trebuie activată pentru a solicita accesul la date."
+      ],
+      "The user must have an address to request data access": [
+        "Utilizatorul trebuie să aibă o adresă pentru a solicita acces la date."
       ]
     },
     "Validation": {

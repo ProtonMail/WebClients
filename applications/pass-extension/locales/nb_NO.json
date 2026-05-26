@@ -1645,6 +1645,9 @@
       "(Empty)": [
         "(Tom)"
       ],
+      "2FA code copied to clipboard": [
+        "2FA-kode kopiert til utklippstavlen"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dager for å prøve premiumfunksjoner gratis. Bare i løpet av den første uken med ${ BRAND_NAME }."
       ],
@@ -1679,7 +1682,7 @@
         "Tilgang til ${ PASS_APP_NAME } krever fingeravtrykk eller PIN-kode for enheten."
       ],
       "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
-        "Tilgangstoken \"${ action.token.Name }\" er allerede utløpt. Hvis det slettes, vil det ikke lenger vises."
+        "Tilgangstokenet \"${ action.token.Name }\" er allerede utløpt. Hvis det slettes, vil det ikke lenger vises."
       ],
       "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
         "Tilgangstokenet \"${ action.token.Name }\" vil slutte å virke umiddelbart. Denne handlingen kan ikke angres."
@@ -1695,6 +1698,9 @@
       ],
       "Admin": [
         "Administrator"
+      ],
+      "After autofilling a login, its 2FA code is copied to the clipboard.": [
+        "Etter at en pålogging er automatisk utfylt, kopieres 2FA-koden til utklippstavlen."
       ],
       "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
         "Etter bekreftelse må du godta en tillatelsesforespørsel for ${ PASS_APP_NAME }."
@@ -2212,10 +2218,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
-      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2725,6 +2727,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "For å se gjennom de importerte dataene dine, klikk på ${ PASS_APP_NAME }-ikonet i nettleserens verktøylinje."
       ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "For å konfigurere biometrisk opplåsing krever ${ PASS_APP_NAME } en ny nettlesertillatelse. Etter at du har godtatt den, lastes utvidelsen inn på nytt. Åpne denne siden på nytt etterpå."
+      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Prøv å laste inn eller installere utvidelsen på nytt, og sørg for at nettleseren og ${ PASS_SHORT_APP_NAME } er oppdatert."
       ],
@@ -2774,7 +2779,7 @@
         "Oppdater pålogging"
       ],
       "Updated item": [
-        "Oppdaterte element"
+        "Oppdatert element"
       ],
       "Updating vault organization...": [
         "Oppdaterer hvelvorganisasjonen..."
@@ -3157,6 +3162,9 @@
       ],
       "Authenticate with passkeys": [
         "Autentiser med tilgangsnøkler"
+      ],
+      "Auto-copy 2FA code": [
+        "Kopier 2FA-kode automatisk"
       ],
       "Auto-lock after": [
         "Autolås etter"
@@ -4681,6 +4689,9 @@
       ],
       "Breaches detected for": [
         "Brudd oppdaget for"
+      ],
+      "Browser permission required": [
+        "Nettlesertillatelse kreves"
       ],
       "Cancel changing your email?": [
         "Vil du avbryte endringen av e-post?"

@@ -2219,8 +2219,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2730,6 +2729,9 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Pour consulter les données importées, cliquez sur l'icône ${ PASS_APP_NAME } dans la barre d'outils de votre navigateur."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "Afin de configurer le déverrouillage biométrique, ${ PASS_APP_NAME } a besoin d'une nouvelle autorisation de navigateur. Une fois acceptée, l'extension sera rechargée. Veuillez rouvrir cette page après l'opération."
       ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Essayez de recharger ou de réinstaller l'extension et assurez-vous que votre navigateur et ${ PASS_SHORT_APP_NAME } sont à jour."
@@ -4690,6 +4692,9 @@
       ],
       "Breaches detected for": [
         "Des fuites de données ont été détectées pour"
+      ],
+      "Browser permission required": [
+        "Autorisation du navigateur nécessaire"
       ],
       "Cancel changing your email?": [
         "Annuler le changement d'e-mail en cours ?"

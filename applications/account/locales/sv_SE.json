@@ -570,6 +570,9 @@
       "Disable categories": [
         "Inaktivera kategorier"
       ],
+      "Disable category": [
+        "Inaktivera kategori"
+      ],
       "Disable recovery phrase": [
         "Inaktivera återställningsfras"
       ],
@@ -720,6 +723,9 @@
       "Enable ${ darkWebMonitoring }": [
         "Aktivera ${ darkWebMonitoring }"
       ],
+      "Enable category": [
+        "Aktivera kategori"
+      ],
       "enable desktop notifications": [
         "aktivera aviseringar för stationär dator"
       ],
@@ -791,6 +797,9 @@
       ],
       "Generate key": [
         "Generera nyckel"
+      ],
+      "Generate missing keys": [
+        "Generera saknade nycklar"
       ],
       "Generate new phrase": [
         "Generera ny fras"
@@ -5168,6 +5177,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sortera automatiskt dina inkommande meddelanden innan de når din inkorg."
       ],
+      "Available storage: ${ storageText }": [
+        "Tillgängligt lagringsutrymme: ${ storageText }"
+      ],
       "Available with ${ title }": [
         "Tillgänglig med ${ title }"
       ],
@@ -5340,6 +5352,9 @@
       "Track the status and activity of your referrals": [
         "Spåra statusen och aktiviteten för dina hänvisningar"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Lås upp 15 GB lagringsutrymme för endast ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Uppgradera till ${ planName } för att ansluta upp till ${ MAX_SYNC_PAID_USER } konton"
       ],
@@ -5355,8 +5370,14 @@
       "We can't access ${ boldEmails } anymore.": [
         "Vi kan inte komma åt ${ boldEmails } längre."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Vi kommer pausa importerna vid 80 % lagringsutrymme för att reservera utrymme för nya meddelanden."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Vi importerar din gamla e-post och ansluter din Gmail till ${ MAIL_APP_NAME } så nya meddelanden visas automatiskt"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Vi har börjat importera din e-post från Gmail. Vi meddelar dig när det är klart."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Du har redan en Gmail-adress som vidarebefordras till ${ MAIL_APP_NAME }. Anslut den nedan för att skicka och ta emot e-post direkt från ${ MAIL_APP_NAME }."
@@ -6990,11 +7011,17 @@
       "Email address is required": [
         "E-postadress är obligatoriskt"
       ],
+      "Email is not valid": [
+        "E-post är inte giltig"
+      ],
       "Empty condition": [
         "Tomt villkor"
       ],
       "Enter 6 digits": [
         "Ange 6 siffror"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Ange ditt användarnamn utan domänen (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fel vid anslutning till Bitcoin API."
@@ -7082,6 +7109,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Felaktigt andra lösenord. Försök igen."
+      ],
+      "Incorrect username": [
+        "Felaktigt användarnamn"
       ],
       "Intended recipient does not support calendar sharing": [
         "Avsedd mottagare stöder inte kalenderdelning"
@@ -7189,6 +7219,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Inte ett ${ BRAND_NAME }-konto"
       ],
+      "Not a valid number": [
+        "Inte ett giltigt nummer"
+      ],
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
       ],
@@ -7200,6 +7233,9 @@
       ],
       "Password is required": [
         "Lösenord är obligatoriskt"
+      ],
+      "Passwords do not match": [
+        "Lösenorden matchar inte"
       ],
       "Payment process canceled": [
         "Betalningsprocess avbruten"
@@ -7279,9 +7315,6 @@
       ],
       "Please try again in a few moments.": [
         "Försök igen om en stund."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Uppgradera till ett företagspaket med mer än 1 användare för att få support för flera användare"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Uppgradera till ett företagspaket med mer än 1 användare för att hantera flera användare."
@@ -7377,6 +7410,9 @@
       "The amount due has changed. Please try again.": [
         "Det förfallna beloppet har ändrats. Försök igen."
       ],
+      "The email addresses do not match": [
+        "E-postadresserna matchar inte"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Filen är för stor, största storlek är ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -7422,11 +7458,17 @@
       "There was an error, please try again.": [
         "Det var ett fel, försök igen."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Detta fält överskrider det maximala antalet ${ maximumLength } tecken."
+      ],
       "This field is invalid": [
         "Detta fält är ogiltigt"
       ],
       "This field is required": [
         "Detta fält är obligatoriskt"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Detta fält kräver minst ${ minimumLength } tecken."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Detta mappnamn är inte tillgängligt. Välj ett annat namn."
@@ -7452,6 +7494,9 @@
       "Try again later": [
         "Försök igen senare"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Prova använda endast bokstäver, siffror och _.-"
+      ],
       "Unable to upload file": [
         "Kan inte ladda upp fil"
       ],
@@ -7469,6 +7514,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Uppladdade filer är inte giltiga privata nycklar. Verifiera och försök igen."
+      ],
+      "Username must begin with a letter or digit": [
+        "Användarnamn måste börja med en bokstav eller siffra"
+      ],
+      "Username must end with a letter or digit": [
+        "Användarnamn måste sluta med en bokstav eller siffra"
       ],
       "Validation error": [
         "Verifieringsfel"
@@ -8204,6 +8255,9 @@
         "${ MaxVPN } VPN-anslutning",
         "${ MaxVPN } VPN-anslutningar"
       ],
+      "10+ premium features": [
+        "10+ premiumfunktioner"
+      ],
       "15 GB storage": [
         "15 GB lagringsutrymme"
       ],
@@ -8239,6 +8293,12 @@
       "Continue": [
         "Fortsätt"
       ],
+      "Custom email domain": [
+        "Anpassad e-postdomän"
+      ],
+      "Email addresses": [
+        "E-postadresser"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Krypterad molnlagring för filer, foton och dokument"
       ],
@@ -8268,6 +8328,9 @@
       ],
       "Short domain @pm.me": [
         "Kort domän @pm.me"
+      ],
+      "Storage": [
+        "Lagringsutrymme"
       ],
       "Torrenting support (P2P)": [
         "Stöd för Torrenting (P2P)"
@@ -8636,6 +8699,9 @@
     "Force upgrade safety review": {
       "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
         "Jag förstår att jag inte längre kommer att kunna logga in på äldre versioner av ${ BRAND_NAME }-appar."
+      ],
+      "Learn more": [
+        "Lär dig mer"
       ]
     },
     "Form heading": {
@@ -9860,9 +9926,9 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Lägg till ditt namn och din logga för att skapa en mer personifierad upplevelse för din organisation."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Lägger till ${ addedServerCount } gatewayserver",
-        "Lägger till ${ addedServerCount } gatewayservrar"
+      "Adding ${ total } gateway server": [
+        "Lägger till ${ total } gatewayserver",
+        "Lägger till ${ total } gatewayservrar"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Att lägga till en extern e-postadress kommer inaktivera end-to-end-kryptering för all e-postkommunikation inom denna grupp. Vill du fortsätta?"
@@ -10999,6 +11065,9 @@
       "Include device, location, and IP details": [
         "Inkludera enhet, plats och IP-detaljer"
       ],
+      "Included": [
+        "Inkluderad"
+      ],
       "Increase your account security by verifying your email address.": [
         "Öka ditt kontosäkerhet genom att verifiera din e-postadress."
       ],
@@ -12012,6 +12081,9 @@
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro rekommenderar med ett betyg på 4,2 av 5 stjärnor"
       ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Tillfälligt otillgänglig på grund av hög efterfrågan. Försök igen senare."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Tillfälligt otillgänglig. Återkom senare."
       ],
@@ -12411,8 +12483,14 @@
       "Unverified email address.": [
         "Overifierad e-postadress."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Uppgradera när som helst för att flytta över resten"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Uppgradera eller frigör utrymme när som helst för att flytta över resten"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Uppgradera för att lägga till en kortare @pm.me-adress till ditt konto som är lättare att dela. Det står för “${ MAIL_APP_NAME } me“ eller “Private Message me“."
@@ -13689,6 +13767,9 @@
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME }-skydd"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tecken"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tillfälligt otillgänglig. Återkom senare.)"
       ],
@@ -14280,6 +14361,9 @@
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
         "Aktivera ${ DARK_WEB_MONITORING_NAME } för ${ domain.DomainName }"
+      ],
+      "Enable categories": [
+        "Aktivera kategorier"
       ],
       "Enabled": [
         "Aktiverat"
@@ -21484,6 +21568,9 @@
       ],
       "Get updates about comments via email": [
         "Få uppdateringar om kommentarer via e-post"
+      ],
+      "Include document name in email notifications": [
+        "Inkludera dokumentnamn i e-postaviseringar"
       ]
     },
     "Settings description": {
@@ -24118,6 +24205,9 @@
       "Add another notification to remind you of this event": [
         "Lägg till ytterligare en avisering för att påminna dig om denna händelse"
       ],
+      "Add categories": [
+        "Lägg till kategorier"
+      ],
       "Add contact group name": [
         "Lägg till kontaktgruppens namn"
       ],
@@ -24292,6 +24382,9 @@
       "Catch-all address": [
         "Catch all-adress"
       ],
+      "Categories": [
+        "Kategorier"
+      ],
       "Change login password": [
         "Ändra lösenord för inloggning"
       ],
@@ -24384,6 +24477,9 @@
       ],
       "Contact us": [
         "Kontakta oss"
+      ],
+      "Continue with free storage": [
+        "Fortsätt med gratis lagringsutrymme"
       ],
       "Continue with partial import?": [
         "Fortsätta med delimport?"
@@ -24781,6 +24877,9 @@
       "Feature access": [
         "Funktionsåtkomst"
       ],
+      "Fewer distractions, more focus": [
+        "Färre distraktioner, mer fokus"
+      ],
       "Filter for more focus": [
         "Filter för mer fokus"
       ],
@@ -24876,6 +24975,9 @@
       ],
       "Get more from your VPN": [
         "Få ut mer av din VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Skaffa mer lagringsutrymme med ${ MAIL_APP_NAME } Plus"
       ],
       "Get started": [
         "Kom igång"
@@ -26127,9 +26229,6 @@
       "This feature is only available on Beta": [
         "Denna funktion är endast tillgänglig på Beta"
       ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "Detta är standardnyckeln som används av andra ${ MAIL_APP_NAME }-användare på äldre mobilappar för att kryptera data de skickar till dig."
-      ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
         "Detta är standardnyckeln som används av andra ${ MAIL_APP_NAME }-användare för att kryptera data de skickar till dig"
       ],
@@ -26657,6 +26756,16 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Lösenord måste innehålla minst ${ MIN_PASSWORD_LENGTH } tecken",
+        "Lösenord måste innehålla minst ${ MIN_PASSWORD_LENGTH } tecken"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prova ett kortare användarnamn (max ${ n } antal tecken)",
+        "Prova ett kortare användarnamn (max ${ n } antal tecken)"
       ]
     },
     "Video control": {

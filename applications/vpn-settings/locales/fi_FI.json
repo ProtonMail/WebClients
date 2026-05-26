@@ -3373,9 +3373,6 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Tuomme vanhat sähköpostisi ja yhdistämme Gmail-tilisi ${ MAIL_APP_NAME } -sovellukseen, jotta uudet viestit näkyvät automaattisesti"
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Olemme aloittaneet viimeisten 180 päivän viestiesi tuonnin Gmailista. Ilmoitamme sinulle, kun tuonti on valmis."
-      ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Sinulla on jo Gmail-osoite, joka ohjataan ${ MAIL_APP_NAME } -sovellukseen. Yhdistä se alla, jotta voit lähettää ja vastaanottaa sähköposteja suoraan ${ MAIL_APP_NAME } -sovelluksesta."
       ],
@@ -4199,9 +4196,6 @@
       ],
       "Please try again in a few moments.": [
         "Yritä hetken kuluttua uudelleen."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Saadaksesi usean käyttäjän tuen, päivitä yritystilaukseen, joka sisältää enemmän kuin yhden käyttäjän."
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Hallitaksesi useita käyttäjiä, päivitä yritystilaukseen, joka sisältää enemmän kuin yhden käyttäjän."
@@ -6047,10 +6041,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Yksilöi organisaatiotasi lisäämällä nimi ja logo."
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Lisätään ${ addedServerCount } yhdyskäytäväpalvelinta",
-        "Lisätään ${ addedServerCount } yhdyskäytäväpalvelinta"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Ulkoisen sähköpostiosoitteen lisääminen poistaa päästä päähän -salauksen käytöstä kaikelta kyseisen ryhmän sähköpostiviestinnältä. Haluatko jatkaa?"

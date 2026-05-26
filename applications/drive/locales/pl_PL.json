@@ -588,6 +588,9 @@
       "Make a copy": [
         "Utwórz kopię"
       ],
+      "Manage addresses": [
+        "Zarządzaj adresami"
+      ],
       "Manage advanced account protections": [
         "Zarządzaj zaawansowanymi zabezpieczeniami konta"
       ],
@@ -3116,9 +3119,6 @@
       "Failed to update public share node": [
         "Nie udało się zaktualizować publicznego węzła udostępniania"
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "Plik \"${ item.name }\" nie może zostać przesłany z powodu błędu: ${ error }"
-      ],
       "File \"${ name }\" is already downloading": [
         "Pobieranie pliku \"${ name }\""
       ],
@@ -3239,6 +3239,12 @@
       "Organization key is not decrypted": [
         "Klucz organizacji nie został odszyfrowany"
       ],
+      "Organization key must be activated to create invited users": [
+        "Musisz aktywować klucz organizacji, aby utworzyć zaproszonych użytkowników"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Musisz aktywować klucz organizacji, aby utworzyć służbowych użytkowników"
+      ],
       "Password is required": [
         "Hasło jest wymagane"
       ],
@@ -3331,9 +3337,6 @@
       ],
       "Some contacts could not be deleted": [
         "Niektóre kontakty nie mogły zostać usunięte"
-      ],
-      "Some files were ignored because they are not supported in Photos": [
-        "Niektóre pliki zostały zignorowane, ponieważ nie są obsługiwane jako zdjęcia"
       ],
       "Some groups could not be deleted": [
         "Niektóre grupy nie mogły zostać usunięte"
@@ -3505,9 +3508,6 @@
       ],
       "You must set a name": [
         "Musisz wpisać nazwę"
-      ],
-      "Your browser does not support uploading folders": [
-        "Twoja przeglądarka nie obsługuje przesyłania folderów"
       ],
       "Your import will not be processed.": [
         "Twój import nie zostanie przetworzony."
@@ -5904,9 +5904,6 @@
       ],
       "Unknown date": [
         "Nieznana data"
-      ],
-      "Unknown error": [
-        "Wystąpił nieznany błąd"
       ],
       "Unlock drive to recover files": [
         "Odblokuj dysk, aby odzyskać pliki"
@@ -8616,9 +8613,6 @@
       "Failed to convert external invitation": [
         "Nie udało się przekształcić zewnętrznego zaproszenia"
       ],
-      "Failed to download files: ${ err }": [
-        "Nie udało się pobrać plików: ${ err }"
-      ],
       "Failed to move, please try again": [
         "Przenoszenie nie powiodło się. Spróbuj ponownie"
       ],
@@ -8690,12 +8684,6 @@
         "Elementy nie zostały usunięte z listy",
         "Elementy nie zostały usunięte z listy",
         "Elementy nie zostały usunięte z listy"
-      ],
-      "Selected items were successfully removed from your list": [
-        "Element został usunięty z listy",
-        "Elementy zostały usunięte z listy",
-        "Elementy zostały usunięte z listy",
-        "Elementy zostały usunięte z listy"
       ],
       "Share invitation accepted successfully": [
         "Zaproszenie zostało zaakceptowane"
@@ -12122,6 +12110,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorzy nie mają dostępu do danych prywatnych użytkowników i nie mogą zresetować ich haseł."
+      ],
+      "Member activation incomplete": [
+        "Aktywacja użytkowników nie została zakończona"
+      ],
+      "Organization key must be activated to request data access": [
+        "Musisz aktywować klucz organizacji, aby uzyskać dostęp do danych"
+      ],
+      "The user must have an address to request data access": [
+        "Użytkownik musi mieć adres, aby żądać dostępu do danych"
       ]
     },
     "Validation": {

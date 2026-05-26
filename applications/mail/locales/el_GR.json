@@ -313,6 +313,9 @@
       "Continue with categories": [
         "Συνεχίστε με κατηγορίες"
       ],
+      "Continue with Free": [
+        "Συνέχεια με Free"
+      ],
       "Continue with Google": [
         "Συνεχίστε με Google"
       ],
@@ -1441,6 +1444,9 @@
       "Start setup": [
         "Έναρξη ρύθμισης"
       ],
+      "Start testing": [
+        "Ξεκίνημα δοκιμής"
+      ],
       "Stay": [
         "Παραμονή"
       ],
@@ -1514,7 +1520,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -4073,6 +4080,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Ταξινομήστε αυτόματα τα εισερχόμενα μηνύματά σας πριν φτάσουν στα εισερχόμενά σας."
       ],
+      "Available storage: ${ storageText }": [
+        "Διαθέσιμος χώρος αποθήκευσης: ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Αποκλείστε την ικανότητα της Google να δημιουργήσει το προφίλ σας. Το Gmail δεν μπορεί να δει τι κάνετε στο ${ MAIL_APP_NAME }"
       ],
@@ -4112,6 +4122,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται κρυπτογράφηση και εισαγωγή επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "Αρκετός χώρος για χρόνια από μηνύματα ηλεκτρονικού ταχυδρομείου , συνημμένα και άλλα."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Εξασφαλίστε ασφαλή πρόσβαση στα δεδομένα του οργανισμού, ακόμα και αν η ομάδα σας είναι απομακρυσμένη ή χρησιμοποιεί δημόσιο WiFi."
       ],
@@ -4133,8 +4146,14 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Βοηθήστε την ομάδα σας να αποθηκεύει με ασφάλεια κωδικούς πρόσβασης σε ευαίσθητες επιχειρηματικές και πελατειακές πληροφορίες."
       ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Αν βρείτε ένα μήνυμα σε λάθος κατηγορία, απλώς μετακινήστε το στη σωστή."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Φαίνεται ότι η λίστα επαφών που εισάγετε περιέχει κάποιες ομάδες. Παρακαλούμε εξετάστε τον τρόπο εισαγωγής αυτών των ομάδων."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Ακόμα μαθαίνει και χρειαζόμαστε τη βοήθειά σας για να βελτιώσουμε την κατηγοριοποίηση."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Σας επιτρέπει να προσθέτετε άμεσα συνδέσμους συσκέψεων στις προσκλήσεις εκδηλώσεων."
@@ -4216,6 +4235,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Ενεργοποιήστε την προστασία παρακολούθησης ηλεκτρονικού ταχυδρομείου για να αποτρέψετε διαφημιστές και άλλους χρήστες από την παρακολούθηση της τοποθεσίας και της δραστηριότητάς σας στο διαδίκτυο."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Ξεκλειδώστε 15 GB αποθηκευτικού χώρου μόνο με ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Αναβαθμίστε στο ${ planName } για να συνδέσετε έως και ${ MAX_SYNC_PAID_USER } λογαριασμούς"
       ],
@@ -4237,11 +4259,14 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Δε βρήκαμε γνωστούς ιχνηλάτες και διευθύνσεις URL παρακολούθησης σε αυτό το μήνυμα ηλεκτρονικού ταχυδρομείου."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Θα σταματήσουμε τις εισαγωγές στο 80% του αποθηκευτικού χώρου για να κρατήσουμε χώρο για νέα μηνύματα."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Θα εισαγάγουμε τα παλιά σας μηνύματα ηλεκτρονικού ταχυδρομείου και θα συνδέσουμε το Gmail σας με το ${ MAIL_APP_NAME } ώστε τα νέα μηνύματα να εμφανίζονται αυτόματα"
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Ξεκινήσαμε την εισαγωγή των μηνυμάτων ηλεκτρονικού ταχυδρομείου των τελευταίων 180 ημερών από το Gmail. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Ξεκινήσαμε την εισαγωγή των ηλεκτρονικών μηνυμάτων σας από το Gmail. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Λυπόμαστε που φεύγετε. Αν έχετε λίγο χρόνο, θα εκτιμούσαμε πραγματικά να μας πείτε γιατί θέλετε να ακυρώσετε. Τα σχόλιά σας μας βοηθούν να κάνουμε το ${ BRAND_NAME } καλύτερο για όλους."
@@ -4291,6 +4316,15 @@
       "Your account and data recovery methods are set.": [
         "Οι μέθοδοι ανάκτησης του λογαριασμού και των δεδομένων σας έχουν οριστεί."
       ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "Οι διορθώσεις σας θα διαμορφώσουν την προεπιλεγμένη εμπειρία για όλους, και κατά την έκδοση θα θυμάται επίσης τις προτιμήσεις σας στο μέλλον!"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ο δωρεάν λογαριασμός σας ${ MAIL_APP_NAME } διαθέτει περιορισμένο αποθηκευτικό χώρο, επομένως θα εισάγουμε μόνο ${ newUserStorageText } από τα πιο πρόσφατα μηνύματά σας στο Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ο δωρεάν λογαριασμός σας ${ MAIL_APP_NAME } διαθέτει περιορισμένο αποθηκευτικό χώρο, επομένως θα εισάγουμε μόνο τα πιο πρόσφατα email σας στο Gmail."
+      ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Το πλάνο σας υποστηρίζει ${ MAX_SYNC_FREE_USER } διεύθυνση Gmail.",
         "Το πλάνο σας υποστηρίζει ${ MAX_SYNC_FREE_USER } διευθύνσεις Gmail."
@@ -4298,6 +4332,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διεύθυνση Gmail",
         "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διευθύνσεις Gmail"
+      ],
+      "You’re among the first to try email categories.": [
+        "Είστε από τους πρώτους που δοκιμάζουν κατηγορίες ηλεκτρονικών μηνυμάτων."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
@@ -4921,6 +4958,12 @@
       ],
       "Organization key is not decrypted": [
         "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για τη δημιουργία προσκεκλημένων χρηστών"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για τη δημιουργία μη ιδιωτικών χρηστών"
       ],
       "Passphrase unavailable": [
         "Η φράση πρόσβασης δεν είναι διαθέσιμη"
@@ -5681,11 +5724,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ premium χαρακτηριστικά"
+      ],
+      "Custom email domain": [
+        "Προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Email addresses": [
+        "Διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Κρυπτογραφημένος χώρος αποθήκευσης στο cloud για αρχεία, φωτογραφίες και έγγραφα"
       ],
       "More premium features": [
         "Περισσότερες premium δυνατότητες"
+      ],
+      "Storage": [
+        "Αποθηκευτικός χώρος"
       ],
       "Unlimited hide-my-email aliases": [
         "Απεριόριστα hide-my-email ψευδώνυμα"
@@ -7575,6 +7630,9 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Συμπεριλάβετε την προτροπή σας και την απάντησή σας για να μας βοηθήσετε να βελτιώσουμε την ακρίβεια."
       ],
+      "Included": [
+        "Περιλαμβάνονται"
+      ],
       "Included for free with your plan": [
         "Συμπεριλαμβάνεται δωρεάν με το πλάνο σας"
       ],
@@ -7603,8 +7661,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8554,6 +8611,9 @@
       "Trash existing messages": [
         "Διαγράψτε υπάρχοντα μηνύματα"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Εμπιστευτείτε το κλειδί \"${ activeSignerText }\" για να επαληθεύσετε νέα μηνύματα από αυτήν την επαφή."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Δοκιμάστε νέες δυνατότητες, ενημερώσεις και προϊόντα ${ BRAND_NAME } πριν κυκλοφορήσουν στο κοινό. Αυτό θα φορτώσει ξανά την εφαρμογή"
       ],
@@ -8587,8 +8647,14 @@
       "Updating message content search...": [
         "Γίνεται ενημέρωση αναζήτησης εντός περιεχομένου μηνυμάτων..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Αναβαθμίστε οποιαδήποτε στιγμή για να φέρετε τα υπόλοιπα"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Αναβαθμίστε ή εκκενώστε χώρο οποιαδήποτε στιγμή για να φέρετε τα υπόλοιπα"
       ],
       "Upgrade to ${ plan } to unlock": [
         "Αναβάθμιση σε ${ plan } για ξεκλείδωμα"
@@ -9091,11 +9157,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Ενεργός Υπογράφων"
+      ],
       "Compromised": [
         "Εκτεθειμένο"
       ],
       "Expired": [
         "Έχει λήξει"
+      ],
+      "Fallback": [
+        "Εφεδρικό"
       ],
       "KOO": [
         "KOO"
@@ -9348,6 +9420,9 @@
       "${ n } month": [
         "${ n } μήνας",
         "${ n } μήνες"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } χαρακτήρες"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
@@ -12674,8 +12749,17 @@
       "External key automatically fetched via WKD.": [
         "Εξωτερικό κλειδί που λαμβάνεται αυτόματα μέσω WKD."
       ],
+      "This contact currently signs messages with this key": [
+        "Αυτή η επαφή υπογράφει μηνύματα με αυτό το κλειδί"
+      ],
+      "This key is used for message verification": [
+        "Αυτό το κλειδί χρησιμοποιείται για την επαλήθευση μηνυμάτων"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Αυτό το κλειδί χρησιμοποιείται για την κρυπτογράφηση μηνυμάτων σε αυτήν την επαφή"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Αυτό το κλειδί χρησιμοποιείται για την κρυπτογράφηση μηνυμάτων σε αυτήν την επαφή σε παλαιότερες εφαρμογές"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Συνιστάται να \"μην εμπιστεύεστε\" αυτό το κλειδί."
@@ -15133,6 +15217,9 @@
       "Contacts": [
         "Επαφές"
       ],
+      "Continue with free storage": [
+        "Συνέχεια με δωρεάν αποθηκευτικό χώρο"
+      ],
       "Continue with partial import?": [
         "Συνέχιση με μερική εισαγωγή;"
       ],
@@ -15255,6 +15342,9 @@
       "Download the app": [
         "Λήψη της εφαρμογής"
       ],
+      "Early access to email categories": [
+        "Πρώιμη πρόσβαση σε κατηγορίες ηλεκτρονικών μηνυμάτων"
+      ],
       "Edit billing address": [
         "Επεξεργασία διεύθυνσης χρέωσης"
       ],
@@ -15338,6 +15428,9 @@
       ],
       "Get more from your VPN": [
         "Αποκτήστε περισσότερα από το VPN σας."
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Αποκτήστε περισσότερο χώρο αποθήκευσης με το ${ MAIL_APP_NAME } Plus"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Λήψη των ${ appName[APP_NAME] } εφαρμογών"
@@ -16122,6 +16215,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Οι διαχειριστές δεν μπορούν να έχουν πρόσβαση στα δεδομένα των ιδιωτών χρηστών και δεν μπορούν να επαναφέρουν τον κωδικό πρόσβασής τους."
+      ],
+      "Member activation incomplete": [
+        "Μη ολοκληρωμένη ενεργοποίηση μέλους"
+      ],
+      "Organization key must be activated to request data access": [
+        "Το κλειδί οργανισμού πρέπει να είναι ενεργοποιημένο για να ζητήσετε πρόσβαση σε δεδομένα"
+      ],
+      "The user must have an address to request data access": [
+        "Ο χρήστης πρέπει να έχει μια διεύθυνση για να ζητήσει πρόσβαση στα δεδομένα"
       ]
     },
     "Update font modal": {

@@ -254,6 +254,9 @@
       "Continue to sign in": [
         "Fortsett til pålogging"
       ],
+      "Continue with Free": [
+        "Fortsett med gratis"
+      ],
       "Continue with this password": [
         "Fortsett med dette passordet"
       ],
@@ -3721,6 +3724,9 @@
       "/month": [
         "/måned"
       ],
+      "/user /month": [
+        "/bruker /måned"
+      ],
       "/user per month": [
         "/bruker per måned"
       ]
@@ -3812,6 +3818,9 @@
       "Automatically forward incoming email to another email address.": [
         "Videresend automatisk innkommende e-post til en annen e-postadresse."
       ],
+      "Available storage: ${ storageText }": [
+        "Tilgjengelig lagringsplass: ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Blokker Googles mulighet til å profilere deg. Gmail kan ikke se hva du gjør i ${ MAIL_APP_NAME }"
       ],
@@ -3865,6 +3874,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan ta noen minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Nok plass til årevis med e-poster, vedlegg og mer."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Sørg for sikker tilgang til organisasjonsdata, selv om teamet ditt er eksternt eller bruker offentlig WiFi."
@@ -3963,6 +3975,9 @@
       "Track the status and activity of your referrals": [
         "Spor statusen og aktiviteten til vervingene dine"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Lås opp 15 GB lagringsplass for kun ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Oppgrader til ${ planName } for å koble til opptil ${ MAX_SYNC_PAID_USER } kontoer"
       ],
@@ -3972,11 +3987,14 @@
       "We can't access ${ boldEmails } anymore.": [
         "Vi får ikke lenger tilgang til ${ boldEmails }."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Vi setter importene på pause ved 80 % lagringsplass for å reservere plass til nye meldinger."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Vi henter inn de gamle e-postene og kobler Gmail-kontoen din til ${ MAIL_APP_NAME }, slik at nye meldinger vises automatisk."
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Vi har begynt å importere e-postene dine fra Gmail fra de siste 180 dagene. Vi gir deg beskjed når det er ferdig."
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Vi har begynt å importere e-postene dine fra Gmail. Vi gir deg beskjed når det er ferdig."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Vi beklager at du forlater oss. Hvis du har et øyeblikk, setter vi stor pris på å høre hvorfor du ønsker å avbryte abonnementet. Tilbakemeldingen din hjelper oss med å gjøre ${ BRAND_NAME } bedre for alle."
@@ -4015,6 +4033,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Du har koblet én ekstern kontoadresse til ${ MAIL_APP_NAME }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrenset lagringsplass, så vi importerer bare ${ newUserStorageText } av de nyeste Gmail-meldingene dine."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrenset lagringsplass, så vi importerer bare de nyeste Gmail-e-postene dine."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Planen din støtter ${ MAX_SYNC_FREE_USER } Gmail-adresse.",
@@ -4875,9 +4899,6 @@
       "Please try again in a few moments.": [
         "Prøv igjen om noen øyeblikk."
       ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Oppgrader til en forretningsplan med mer enn 1 bruker for å få støtte for flere brukere"
-      ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Oppgrader til en forretningsplan med mer enn 1 bruker for å administrere flere brukere."
       ],
@@ -4991,6 +5012,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Det er for mange mapper i din eksterne konto. Tilpass importen for å slette noen mapper."
+      ],
+      "There was an error, please try again.": [
+        "Det oppstod en feil. Prøv igjen."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette feltet overskrider maksimalt tillatt ${ maximumLength } tegn."
@@ -5623,6 +5647,9 @@
       "${ PROTON_SENTINEL_NAME } account protection": [
         "${ PROTON_SENTINEL_NAME }-kontobeskyttelse"
       ],
+      "10+ premium features": [
+        "10+ premiumfunksjoner"
+      ],
       "15 GB storage": [
         "15 GB lagringsplass"
       ],
@@ -5658,6 +5685,12 @@
       "Continue": [
         "Fortsett"
       ],
+      "Custom email domain": [
+        "Egendefinert e-postdomene"
+      ],
+      "Email addresses": [
+        "E-postadresser"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Kryptert skylagring for filer, bilder og dokumenter"
       ],
@@ -5687,6 +5720,9 @@
       ],
       "Short domain @pm.me": [
         "Kort domene @pm.me"
+      ],
+      "Storage": [
+        "Lagring"
       ],
       "Torrenting support (P2P)": [
         "Torrent-støtte (P2P)"
@@ -6518,8 +6554,8 @@
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "${ BRAND_NAME } Business gir teamet ditt alle samarbeidsverktøyene de trenger for å være produktive og organiserte i arbeidet sitt, samtidig som det beskytter virksomheten din."
       ],
-      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
-        "${ BRAND_NAME } er uavhengig finansiert og opererer uten reklame.\nNedenfor finner du eksempler på hvordan denne uavhengigheten har blitt brukt i praksis."
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } er uavhengig finansiert og opererer uten reklame. Nedenfor finner du eksempler på hvordan denne uavhengigheten har blitt brukt i praksis."
       ],
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } deler aldri informasjonen din med tredjeparter. Data kommer fra ${ BRAND_NAME }s egne analyser og Constella Etterretning."
@@ -6860,9 +6896,9 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Legg til navn og logo for å opprette en mer personlig opplevelse for organisasjonen."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Legger til ${ addedServerCount } gateway-tjener",
-        "Legger til ${ addedServerCount } gateway-tjenere"
+      "Adding ${ total } gateway server": [
+        "Legger til ${ total } gateway-server",
+        "Legger til ${ total } gateway-servere"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Å legge til en ekstern e-postadresse vil deaktivere ende-til-ende-kryptering for all e-postkommunikasjon innenfor den gruppen. Vil du fortsette?"
@@ -7160,6 +7196,10 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Opprett en etikett for de importerte meldingene, et tidsintervall for denne importen og etikettene du vil importere."
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Opprett en sikker sky for ${ memberCount } medlem",
+        "Opprett en sikker sky for ${ memberCount } medlemmer"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Opprette og administrere underkontoer og tilordne dem e-postadresser på ditt egendefinerte domene."
@@ -7669,6 +7709,9 @@
       ],
       "Include device, location, and IP details": [
         "Inkluder enhet, plassering og IP-detaljer"
+      ],
+      "Included": [
+        "Inkludert"
       ],
       "Increase your account security by verifying your email address.": [
         "Øk kontosikkerheten ved å verifisere e-postadressen din."
@@ -8460,6 +8503,9 @@
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Anbefales av TechRadar Pro med en vurdering på 4.2 av 5 stjerner"
       ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Midlertidig utilgjengelig på grunn av høy etterspørsel. Prøv igjen senere."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidig utilgjengelig. Kom tilbake senere."
       ],
@@ -8769,8 +8815,14 @@
       "Unverified email address.": [
         "Ikke verifisert e-postadresse."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Oppgrader når som helst for å få med deg resten"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Oppgrader nå for å få premiumfunksjoner, produkter og lagringsplass til spesialpris."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Oppgrader eller frigjør plass når som helst for å ta med resten"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Oppgrader for å beholde ${ planTitle } fordelene dine."
@@ -9539,6 +9591,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME }-beskyttelse"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tegn"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig. Kom tilbake senere)."
@@ -11033,11 +11088,26 @@
       "Built-in chat": [
         "Innebygd chat"
       ],
+      "Cloud storage and file sharing": [
+        "Skylagring og fildeling"
+      ],
+      "Data retention policies": [
+        "Retningslinjer for dataoppbevaring"
+      ],
+      "Document and spreadsheet editor": [
+        "Dokument- og regnearkredigering"
+      ],
+      "Email writing assistant": [
+        "Assistent for e-postskriving"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Ende-til-ende-kryptert skjermdeling og kortvarig chat under samtaler"
       ],
       "Hosts can record meetings locally on their computers": [
         "Verter kan ta opp møter lokalt på datamaskinene sine"
+      ],
+      "Includes Meet Professional": [
+        "Inkluderer Meet Professional"
       ],
       "Meeting recording": [
         "Opptak av møte"
@@ -11045,8 +11115,17 @@
       "One active meeting at a time": [
         "Ett aktivt møte om gangen"
       ],
+      "Password manager with team vaults": [
+        "Passordbehandler med teamhvelv"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Privat KI-chat (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Skjermdeling"
+      ],
+      "Secure mail and calendar": [
+        "Sikker e-post og kalender"
       ],
       "Unlimited meetings per day": [
         "Ubegrenset antall møter per dag"
@@ -11062,6 +11141,9 @@
       "Video meetings, ${ n } participant": [
         "Videomøter, ${ n } deltaker",
         "Videomøter, ${ n } deltakere"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN med annonseblokkering og skadevarebeskyttelse"
       ]
     },
     "meet_2025: Info": {
@@ -11467,6 +11549,9 @@
       "99.95% SLA": [
         "99,95% SLA"
       ],
+      "Access all countries": [
+        "Få tilgang til alle land"
+      ],
       "Activity logs and policy": [
         "Aktivitetslogger og retningslinjer"
       ],
@@ -11643,6 +11728,9 @@
       "Multiple admin roles": [
         "Flere administratorroller"
       ],
+      "No streaming support": [
+        "Ingen strømmestøtte"
+      ],
       "No-logs policy": [
         "Retningslinjer mot loggføring"
       ],
@@ -11805,6 +11893,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ubegrenset volum/båndbredde"
+      ],
+      "Unlock streaming": [
+        "Lås opp strømming"
       ],
       "Up to ${ n } user": [
         "Opptil ${ n } bruker",
@@ -12259,6 +12350,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } land",
+        "${ n } land"
+      ],
       "Access advanced VPN features": [
         "Få tilgang til avanserte VPN-funksjoner"
       ],
@@ -15047,7 +15142,7 @@
         "Klikk på Rediger for å tilordne roller til denne gruppen og administrere medlemstilgang automatisk."
       ],
       "New: Roles and permissions tab": [
-        "Nytt: roller og tillatelser-fanen"
+        "Nytt: fanen for roller og tillatelser"
       ],
       "Open this tab to grant specific permissions without full admin access.": [
         "Åpne denne fanen for å gi spesifikke tillatelser uten full administratortilgang."
@@ -16252,6 +16347,14 @@
         "Sikre filene dine med kryptert skylagring. Inkluderer versjonshistorikk, kryptert fildeling og mer."
       ]
     },
+    "Tab": {
+      "For personal use": [
+        "Til personlig bruk"
+      ],
+      "For professional use": [
+        "For profesjonell bruk"
+      ]
+    },
     "Tab in domain modal": {
       "Addresses": [
         "Adresser"
@@ -16682,6 +16785,9 @@
       "Contact us": [
         "Kontakt oss"
       ],
+      "Continue with free storage": [
+        "Fortsett med gratis lagring"
+      ],
       "Continue with partial import?": [
         "Fortsette med delvis import?"
       ],
@@ -16996,6 +17102,9 @@
       ],
       "Get more from your VPN": [
         "Får mer ut av ditt VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Skaff deg mer lagringsplass med ${ MAIL_APP_NAME } Plus"
       ],
       "Get started": [
         "Kom i gang"
@@ -17756,6 +17865,9 @@
       ],
       "Each imported email will have this label": [
         "Hver importert e-post vil ha denne etiketten"
+      ],
+      "Early access to new apps and features.": [
+        "Tidlig tilgang til nye apper og funksjoner."
       ],
       "Edit folder names": [
         "Rediger mappenavn"

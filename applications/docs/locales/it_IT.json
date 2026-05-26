@@ -468,6 +468,9 @@
       "Make a copy": [
         "Fare una copia"
       ],
+      "Manage addresses": [
+        "Gestisci indirizzi"
+      ],
       "Manage advanced account protections": [
         "Gestisci le protezioni avanzate dell'account"
       ],
@@ -2412,6 +2415,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronizza facilmente i file sul cloud dal tuo desktop e accedi dal tuo dispositivo mobile."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Le email inviate a ${ connectedAddressText } appariranno ora in ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Incoraggia l'uso dell'autenticazione a due fattori nella tua organizzazione per una maggiore sicurezza."
       ],
@@ -2498,6 +2504,9 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Puoi selezionare i contatti che non vuoi unire né mantenere per l'eliminazione.\nLa cancellazione avverrà solo dopo aver fatto clic sul pulsante Unisci"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Ora puoi inviare email da ${ BRAND_NAME } utilizzando questo indirizzo."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Il tuoi metodi di recupero dell'account e dei dati sono impostati e 2FA è abilitato."
@@ -2998,6 +3007,12 @@
       ],
       "Organization key is not decrypted": [
         "La chiave dell'organizzazione non è decriptata"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Devi attivare la chiave dell'organizzazione per poter invitare gli utenti"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "La chiave dell'organizzazione deve essere attivata per creare utenti non privati"
       ],
       "Password is required": [
         "Password necessaria"
@@ -9871,6 +9886,9 @@
       "When is it most important to use a VPN?": [
         "Quando è più importante utilizzare una VPN?"
       ],
+      "You are all set": [
+        "Tutto pronto"
+      ],
       "You have no folders yet": [
         "Non ci sono ancora cartelle"
       ],
@@ -9991,6 +10009,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Gli amministratori non possono accedere ai dati degli utenti privati ​​e non possono reimpostare la loro password."
+      ],
+      "Member activation incomplete": [
+        "Attivazione membro incompleta"
+      ],
+      "Organization key must be activated to request data access": [
+        "La chiave dell'organizzazione deve essere attivata per richiedere l'accesso ai dati"
+      ],
+      "The user must have an address to request data access": [
+        "L'utente deve avere un indirizzo per richiedere l'accesso ai dati"
       ]
     },
     "Validation": {

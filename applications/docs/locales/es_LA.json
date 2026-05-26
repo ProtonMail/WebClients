@@ -214,6 +214,9 @@
       "Continue to ${ planOrAppName }": [
         "Continuar con ${ planOrAppName }"
       ],
+      "Continue with Free": [
+        "Seguir con el plan gratuito"
+      ],
       "Continue with Google": [
         "Continuar con Google"
       ],
@@ -485,6 +488,9 @@
       ],
       "Make a copy": [
         "Hacer una copia"
+      ],
+      "Manage addresses": [
+        "Gestionar direcciones"
       ],
       "Manage advanced account protections": [
         "Gestionar protecciones avanzadas de la cuenta"
@@ -2474,6 +2480,9 @@
       "Automatically forward incoming email to another email address.": [
         "Reenvíe automáticamente el correo electrónico entrante a otra dirección de correo electrónico."
       ],
+      "Available storage: ${ storageText }": [
+        "Almacenamiento disponible: ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configure esto primero para activar su organización y personalizar su dirección de correo electrónico."
       ],
@@ -2495,11 +2504,17 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronice fácilmente los archivos a la nube desde su escritorio y acceda a ellos desde su dispositivo móvil."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Los correos electrónicos enviados a ${ connectedAddressText } ahora aparecerán en ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Para mayor seguridad, promueva el uso de la autenticación de dos factores en su organización."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Suficiente espacio para años de correos electrónicos, archivos adjuntos y más."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Asegúrese de tener un acceso seguro a los datos de la organización, incluso si su equipo está de forma remota o utiliza un Wi-Fi público."
@@ -2561,6 +2576,9 @@
       "To start, give your organization a name.": [
         "Para comenzar, asigne un nombre a su organización."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Desbloquee 15 GB de almacenamiento por solo ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Mejore a ${ planName } para seguir compartiendo archivos con acceso de edición"
       ],
@@ -2572,6 +2590,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Ya no podemos acceder a ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Pausaremos la importación al 80% de almacenamiento para reservar espacio para nuevos mensajes"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Estamos importando sus correos electrónicos de Gmail. Le avisaremos cuando finalicemos."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Lamentamos que se vaya. Si tiene un momento, agradeceríamos mucho saber por qué desea cancelar. Sus comentarios nos ayudan a mejorar ${ BRAND_NAME } para todos."
@@ -2585,11 +2609,20 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Puede marcar para eliminar los contactos que no quiere ni combinar ni mantener. La eliminación sólo tendrá lugar después de que el botón de combinar sea pulsado."
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Ahora puede enviar correos electrónicos desde ${ BRAND_NAME } usando esta dirección."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Su cuenta y los métodos de recuperación de datos están configurados y la 2FA está activada."
       ],
       "Your account and data recovery methods are set.": [
         "Se han establecido los métodos de recuperación de cuenta y de datos."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Su cuenta gratuita de ${ MAIL_APP_NAME } incluye almacenamiento limitado, así que solo importaremos ${ newUserStorageText } de sus mensajes de Gmail más recientes."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Su cuenta gratuita de ${ MAIL_APP_NAME } incluye almacenamiento limitado, así que solo importaremos sus correos electrónicos de Gmail más recientes."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
@@ -3097,6 +3130,12 @@
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada"
       ],
+      "Organization key must be activated to create invited users": [
+        "La clave de la organización debe activarse para crear usuarios invitados"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "La clave de la organización debe activarse para crear usuarios no privados"
+      ],
       "Password is required": [
         "Contraseña requerida"
       ],
@@ -3179,6 +3218,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Algunos nombres de etiquetas exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación y edite estos nombres."
+      ],
+      "Some trashed documents could not be loaded": [
+        "No se pudieron cargar algunos documentos de la papelera"
       ],
       "Something went wrong while fetching available domains": [
         "Ocurrió un error al obtener los dominios disponibles"
@@ -3701,11 +3743,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "Más de 10 funciones premium"
+      ],
+      "Custom email domain": [
+        "Dominio de correo personalizado"
+      ],
+      "Email addresses": [
+        "Direcciones de correo electrónico"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Almacenamiento en la nube cifrado para archivos, fotos y documentos"
       ],
       "More premium features": [
         "Más funciones premium"
+      ],
+      "Storage": [
+        "Almacenamiento"
       ],
       "Unlimited hide-my-email aliases": [
         "Alias hide-my-email ilimitados"
@@ -4684,7 +4738,7 @@
         "Bloqueo geográfico"
       ],
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
-        "Obtenga un correo electrónico profesional @your-company.com, 1TB de almacenamiento seguro por usuario, videollamadas más largas, y más con ${ BRAND_NAME } Workspace."
+        "Obtenga un correo electrónico profesional @su-negocio.com, 1TB de almacenamiento seguro por usuario, videollamadas más largas, y más con ${ BRAND_NAME } Workspace."
       ],
       "Get email updates for comments and suggestions added to your documents.": [
         "Obtenga actualizaciones por correo electrónico sobre sugerencias y comentarios agregados a sus documentos."
@@ -4752,6 +4806,9 @@
       ],
       "In restrictive countries": [
         "En países con restricciones"
+      ],
+      "Included": [
+        "Incluido"
       ],
       "Inherited from parent folder": [
         "Heredada de la carpeta padre"
@@ -5275,6 +5332,9 @@
       "Trash": [
         "Papelera"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Confíe la clave «${ activeSignerText }» para verificar los mensajes nuevos de este contacto."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Pruebe las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
       ],
@@ -5287,8 +5347,14 @@
       "Update recent documents": [
         "Actualizar documentos recientes"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Actualice en cualquier momento para importar el resto"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualice ahora para obtener funciones premium, productos y almacenamiento a un precio especial"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Actualice o libere espacio en cualquier momento para importar el resto"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Mejore para mantener sus beneficios de ${ planTitle }."
@@ -5608,11 +5674,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Firmante activo"
+      ],
       "Compromised": [
         "Comprometida"
       ],
       "Expired": [
         "Expirada"
+      ],
+      "Fallback": [
+        "Alternativa"
       ],
       "KOO": [
         "KOO"
@@ -5636,6 +5708,9 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caracteres"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Compruebe más tarde.)"
@@ -8257,8 +8332,17 @@
       "External key automatically fetched via WKD.": [
         "Clave externa obtenida automáticamente con WKD."
       ],
+      "This contact currently signs messages with this key": [
+        "Este contacto actualmente firma los mensajes con esta clave"
+      ],
+      "This key is used for message verification": [
+        "Esta clave se utiliza para la verificación de mensajes"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Esta clave es usada para cifrar los mensajes a este contacto"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Esta clave es usada para cifrar los mensajes a este contacto en aplicación antiguas"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Recomendamos que \"desconfíe\" de estas claves."
@@ -9792,6 +9876,9 @@
       "Contacts": [
         "Contactos"
       ],
+      "Continue with free storage": [
+        "Continuar con el almacenamiento gratuito"
+      ],
       "Continue with partial import?": [
         "¿Continuar con una importación parcial?"
       ],
@@ -9955,6 +10042,9 @@
       ],
       "Get more from your VPN": [
         "Obtenga más de su VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Obtenga más almacenamiento con ${ MAIL_APP_NAME } Plus"
       ],
       "Get the apps": [
         "Obtener las aplicaciones"
@@ -10275,6 +10365,9 @@
       "When is it most important to use a VPN?": [
         "¿Cuándo es más importante utilizar una VPN?"
       ],
+      "You are all set": [
+        "Ya está todo listo"
+      ],
       "You have no folders yet": [
         "Aún no tiene carpetas"
       ],
@@ -10398,6 +10491,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Los administradores no pueden acceder a los datos de usuarios privados y no pueden restablecer sus contraseñas."
+      ],
+      "Member activation incomplete": [
+        "La activación del miembro está incompleta."
+      ],
+      "Organization key must be activated to request data access": [
+        "La clave de la organización debe activarse para solicitar acceso a los datos"
+      ],
+      "The user must have an address to request data access": [
+        "El usuario debe tener una dirección para solicitar acceso a los datos"
       ]
     },
     "Validation": {
