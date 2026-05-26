@@ -4471,11 +4471,17 @@
       "Email address is required": [
         "Нужно указать адрес электронной почты"
       ],
+      "Email is not valid": [
+        "Эл. почта недействительна"
+      ],
       "Empty condition": [
         "Пустое условие"
       ],
       "Enter 6 digits": [
         "Введите 6 цифр"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Введите ваше имя пользователя без домена (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Ошибка при подключении к API Биткоин."
@@ -4542,6 +4548,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Неверный второй пароль. Попробуйте еще раз."
+      ],
+      "Incorrect username": [
+        "Некорректное имя пользователя"
       ],
       "Intended recipient does not support calendar sharing": [
         "Предполагаемый получатель не поддерживает совместное использование календаря"
@@ -4633,6 +4642,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Не аккаунт ${ BRAND_NAME }"
       ],
+      "Not a valid number": [
+        "Номер недействителен"
+      ],
       "Organization key is not decrypted": [
         "Ключ организации не расшифрован"
       ],
@@ -4644,6 +4656,9 @@
       ],
       "Password is required": [
         "Нужно ввести пароль"
+      ],
+      "Passwords do not match": [
+        "Пароли не совпадают"
       ],
       "Payment process canceled": [
         "Процесс оплаты отменён"
@@ -4704,9 +4719,6 @@
       ],
       "Please try again in a few moments.": [
         "Пожалуйста, попробуйте еще раз чуть позже."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Пожалуйста, перейдите на бизнес-план с более чем 1 пользователем, чтобы получить многопользовательскую поддержку"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Чтобы управлять несколькими пользователями, перейдите на бизнес-план с более чем 1 пользователем."
@@ -4789,6 +4801,9 @@
       "The amount due has changed. Please try again.": [
         "Сумма оплаты изменилась. Пожалуйста, попробуйте еще раз."
       ],
+      "The email addresses do not match": [
+        "Адреса электронной почты не совпадают"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Файл слишком большой, максимальный размер должен составлять ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -4828,8 +4843,14 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "В вашей внешнем аккаунте слишком много папок. Пожалуйста, настройте импорт, чтобы удалить некоторые папки."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Длина этого поля превысила максимальные ${ maximumLength } символов."
+      ],
       "This field is required": [
         "Это обязательное поле"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Минимальная длина для этого поля ${ minimumLength } символов."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Это имя папки недоступно. Пожалуйста, выберите другое имя."
@@ -4849,6 +4870,9 @@
       "Try again later": [
         "Повторите попытку позже"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Попробуйте, используя только буквы, цифры и _.-"
+      ],
       "Unable to upload file": [
         "Невозможно загрузить файл"
       ],
@@ -4866,6 +4890,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Загруженные файлы не являются действительными закрытыми ключами. Пожалуйста, проверьте и повторите попытку."
+      ],
+      "Username must begin with a letter or digit": [
+        "Имя пользователя должно начинаться с буквы или цифры"
+      ],
+      "Username must end with a letter or digit": [
+        "Имя пользователя должно заканчиваться буквой или цифрой"
       ],
       "Validation error": [
         "Ошибка проверки"
@@ -6869,12 +6899,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Добавьте свое имя и логотип, чтобы создать более персонализированный интерфейс для вашей организации."
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Добавление ${ addedServerCount } шлюзового сервера",
-        "Добавление ${ addedServerCount } шлюзовых серверов",
-        "Добавление ${ addedServerCount } шлюзовых серверов",
-        "Добавление ${ addedServerCount } шлюзовых серверов"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Добавление внешнего адреса электронной почты отключит сквозное шифрование для всех сообщений по электронной почте внутри этой группы. Вы хотите продолжить?"
@@ -19110,6 +19134,20 @@
       ],
       "Writing assistant": [
         "Помощник по написанию"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль должен включать по меньшей мере ${ MIN_PASSWORD_LENGTH } символ",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знак)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знака)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)"
       ]
     },
     "Video control": {

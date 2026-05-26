@@ -381,6 +381,9 @@
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Fortsett med ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
+      "Continue with Free": [
+        "Fortsett med gratis"
+      ],
       "Continue with Google": [
         "Fortsett med Google"
       ],
@@ -573,6 +576,9 @@
       "Disable categories": [
         "Deaktiver kategorier"
       ],
+      "Disable category": [
+        "Deaktiver kategori"
+      ],
       "Disable recovery phrase": [
         "Deaktiver gjenopprettingsfrase"
       ],
@@ -723,6 +729,9 @@
       "Enable ${ darkWebMonitoring }": [
         "Aktiver ${ darkWebMonitoring }"
       ],
+      "Enable category": [
+        "Aktiver kategori"
+      ],
       "enable desktop notifications": [
         "aktivere skrivebordsvarsler"
       ],
@@ -794,6 +803,9 @@
       ],
       "Generate key": [
         "Generer nøkkel"
+      ],
+      "Generate missing keys": [
+        "Generer manglende nøkler"
       ],
       "Generate new phrase": [
         "Generer ny frase"
@@ -1496,6 +1508,9 @@
       ],
       "Set as default": [
         "Angi som standard"
+      ],
+      "Set as default mail application": [
+        "Angi som standard e-postapplikasjon"
       ],
       "Set catch-all": [
         "Konfigurer catch-all"
@@ -5084,6 +5099,9 @@
       "/month": [
         "/måned"
       ],
+      "/user /month": [
+        "/bruker /måned"
+      ],
       "/user per month": [
         "/bruker per måned"
       ]
@@ -5256,6 +5274,12 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } lar deg samarbeide med andre i et sikkert og kryptert miljø."
       ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } er ikke din standard e-postapplikasjon."
+      ],
+      "${ MAIL_APP_NAME } is your default mail application.": [
+        "${ MAIL_APP_NAME } er din standard e-postapplikasjon."
+      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } holder forretningsdataene dine sikre og lar deg sende krypterte e-postmeldinger til hvem som helst."
       ],
@@ -5279,6 +5303,9 @@
       ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sorter innkommende meldinger automatisk før de når innboksen din."
+      ],
+      "Available storage: ${ storageText }": [
+        "Tilgjengelig lagringsplass: ${ storageText }"
       ],
       "Available with ${ title }": [
         "Tilgjengelig med ${ title }"
@@ -5342,6 +5369,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan ta noen minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Nok plass til årevis med e-poster, vedlegg og mer."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Sørg for sikker tilgang til organisasjonsdata, selv om teamet ditt er eksternt eller bruker offentlig WiFi."
@@ -5415,6 +5445,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Les, svar og hold deg oppdatert på Gmail fra ${ MAIL_APP_NAME }"
       ],
+      "Select which categories you want to add and if you want to receive push notifications for each category.": [
+        "Velg hvilke kategorier du vil legge til, og om du vil motta push-varsler for hver kategori."
+      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Konfigurer kontoer for alle brukere og inviter dem til å bli med i ${ BRAND_NAME }."
       ],
@@ -5458,6 +5491,9 @@
       "Track the status and activity of your referrals": [
         "Spor statusen og aktiviteten til vervingene dine"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Lås opp 15 GB lagringsplass for kun ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Oppgrader til ${ planName } for å koble til opptil ${ MAX_SYNC_PAID_USER } kontoer"
       ],
@@ -5473,14 +5509,20 @@
       "We can't access ${ boldEmails } anymore.": [
         "Vi får ikke lenger tilgang til ${ boldEmails }."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Vi setter importene på pause ved 80 % lagringsplass for å reservere plass til nye meldinger."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Vi henter inn de gamle e-postene og kobler Gmail-kontoen din til ${ MAIL_APP_NAME }, slik at nye meldinger vises automatisk."
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Vi har begynt å importere e-postene dine fra Gmail fra de siste 180 dagene. Vi gir deg beskjed når det er ferdig."
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Vi har begynt å importere e-postene dine fra Gmail. Vi gir deg beskjed når det er ferdig."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Vi beklager at du forlater oss. Hvis du har et øyeblikk, setter vi stor pris på å høre hvorfor du ønsker å avbryte abonnementet. Tilbakemeldingen din hjelper oss med å gjøre ${ BRAND_NAME } bedre for alle."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Med nye e-postkategorier havner bare viktige meldinger i den primære innboksen din. Kategorier fungerer akkurat som spamfiltre. ${ MAIL_APP_NAME } leser aldri e-postene eller deler dataene dine."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Du har allerede en Gmail-adresse som videresender til ${ MAIL_APP_NAME }. Koble den til nedenfor for å sende og motta e-poster direkte fra ${ MAIL_APP_NAME }."
@@ -5522,6 +5564,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Du har koblet én ekstern kontoadresse til ${ MAIL_APP_NAME }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrenset lagringsplass, så vi importerer bare ${ newUserStorageText } av de nyeste Gmail-meldingene dine."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrenset lagringsplass, så vi importerer bare de nyeste Gmail-e-postene dine."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Planen din støtter ${ MAX_SYNC_FREE_USER } Gmail-adresse.",
@@ -6722,6 +6770,9 @@
       "Enable auto-renew": [
         "Aktiver automatisk fornyelse"
       ],
+      "Enter your extra password": [
+        "Angi det ekstra passordet ditt"
+      ],
       "Explore plans": [
         "Utforsk planer"
       ],
@@ -6909,6 +6960,9 @@
       ],
       "Unable to recover data": [
         "Kan ikke gjenopprette data"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Lås opp ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "Oppgrader"
@@ -7131,11 +7185,17 @@
       "Email address is required": [
         "E-postadresse kreves"
       ],
+      "Email is not valid": [
+        "E-post er ikke gyldig"
+      ],
       "Empty condition": [
         "Tom betingelse"
       ],
       "Enter 6 digits": [
         "Skriv inn 6 sifre"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Skriv inn brukernavnet ditt uten domenet (@eksempel.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Feil ved tilkobling til Bitcoin API."
@@ -7223,6 +7283,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Feil andre passord. Prøv på nytt."
+      ],
+      "Incorrect username": [
+        "Uriktig brukernavn"
       ],
       "Intended recipient does not support calendar sharing": [
         "Tiltenkt mottaker støtter ikke kalenderdeling"
@@ -7333,6 +7396,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Ikke en ${ BRAND_NAME }-konto"
       ],
+      "Not a valid number": [
+        "Ikke et gyldig tall"
+      ],
       "Organization key is not decrypted": [
         "Organisasjonsnøkkel er ikke dekryptert"
       ],
@@ -7344,6 +7410,9 @@
       ],
       "Password is required": [
         "Passord kreves"
+      ],
+      "Passwords do not match": [
+        "Passordene samsvarer ikke"
       ],
       "Payment process canceled": [
         "Betalingsprosessen ble avbrutt"
@@ -7426,9 +7495,6 @@
       ],
       "Please try again in a few moments.": [
         "Prøv igjen om noen øyeblikk."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Oppgrader til en forretningsplan med mer enn 1 bruker for å få støtte for flere brukere"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Oppgrader til en forretningsplan med mer enn 1 bruker for å administrere flere brukere."
@@ -7527,6 +7593,9 @@
       "The amount due has changed. Please try again.": [
         "Det forfalte beløpet er endret. Prøv igjen."
       ],
+      "The email addresses do not match": [
+        "E-postadressene samsvarer ikke"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Filen er for stor, maksimal størrelse er ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -7569,11 +7638,20 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Det er for mange mapper i din eksterne konto. Tilpass importen for å slette noen mapper."
       ],
+      "There was an error, please try again.": [
+        "Det oppstod en feil. Prøv igjen."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Dette feltet overskrider maksimalt tillatt ${ maximumLength } tegn."
+      ],
       "This field is invalid": [
         "Dette feltet er ugyldig"
       ],
       "This field is required": [
         "Dette feltet er obligatorisk"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dette feltet krever minimum ${ minimumLength } tegn."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Dette mappenavnet er ikke tilgjengelig. Velg et annet navn."
@@ -7599,6 +7677,9 @@
       "Try again later": [
         "Prøv igjen senere"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Prøv å bruke bare bokstaver, tall og _.-"
+      ],
       "Unable to upload file": [
         "Kan ikke laste opp fil"
       ],
@@ -7616,6 +7697,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Opplastede filer er ikke gyldige private nøkler. Verifiser og prøv på nytt."
+      ],
+      "Username must begin with a letter or digit": [
+        "Brukernavn må begynne med en bokstav eller ett tall"
+      ],
+      "Username must end with a letter or digit": [
+        "Brukernavn må ende med en bokstav eller ett tall"
       ],
       "Validation error": [
         "Valideringsfeil"
@@ -8354,6 +8441,9 @@
       "${ PROTON_SENTINEL_NAME } account protection": [
         "${ PROTON_SENTINEL_NAME }-kontobeskyttelse"
       ],
+      "10+ premium features": [
+        "10+ premiumfunksjoner"
+      ],
       "15 GB storage": [
         "15 GB lagringsplass"
       ],
@@ -8389,6 +8479,12 @@
       "Continue": [
         "Fortsett"
       ],
+      "Custom email domain": [
+        "Egendefinert e-postdomene"
+      ],
+      "Email addresses": [
+        "E-postadresser"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Kryptert skylagring for filer, bilder og dokumenter"
       ],
@@ -8418,6 +8514,9 @@
       ],
       "Short domain @pm.me": [
         "Kort domene @pm.me"
+      ],
+      "Storage": [
+        "Lagring"
       ],
       "Torrenting support (P2P)": [
         "Torrent-støtte (P2P)"
@@ -8786,6 +8885,9 @@
     "Force upgrade safety review": {
       "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
         "Jeg forstår at jeg ikke lenger vil kunne logge på fra eldre versjoner av appene til ${ BRAND_NAME }."
+      ],
+      "Learn more": [
+        "Lær mer"
       ]
     },
     "Form heading": {
@@ -9599,8 +9701,11 @@
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "${ BRAND_NAME } Business gir teamet ditt alle samarbeidsverktøyene de trenger for å være produktive og organiserte i arbeidet sitt, samtidig som det beskytter virksomheten din."
       ],
-      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
-        "${ BRAND_NAME } er uavhengig finansiert og opererer uten reklame.\nNedenfor finner du eksempler på hvordan denne uavhengigheten har blitt brukt i praksis."
+      "${ BRAND_NAME } Free": [
+        "${ BRAND_NAME } Free"
+      ],
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } er uavhengig finansiert og opererer uten reklame. Nedenfor finner du eksempler på hvordan denne uavhengigheten har blitt brukt i praksis."
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } er personvern du kan klarére, sikret av sterk kryptering, åpen kildekode og sveitsiske personvernlover. Vi mener at ingen skal kunne utnytte dataene dine, punktum. Vår teknologi og virksomhet er basert på denne fundamentalt sterkere definisjonen av personvern."
@@ -10037,9 +10142,9 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Legg til navn og logo for å opprette en mer personlig opplevelse for organisasjonen."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Legger til ${ addedServerCount } gateway-tjener",
-        "Legger til ${ addedServerCount } gateway-tjenere"
+      "Adding ${ total } gateway server": [
+        "Legger til ${ total } gateway-server",
+        "Legger til ${ total } gateway-servere"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Å legge til en ekstern e-postadresse vil deaktivere ende-til-ende-kryptering for all e-postkommunikasjon innenfor den gruppen. Vil du fortsette?"
@@ -10319,6 +10424,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Før du kan starte med å sende og motta e-poster fra dine nye adresser må du opprette krypteringsnøkler for dem."
       ],
+      "BEST FOR TV": [
+        "BEST FOR TV"
+      ],
       "Beta": [
         "Beta"
       ],
@@ -10454,6 +10562,9 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Fortsett for å koble denne enheten til ${ BRAND_NAME }-organisasjonen din."
       ],
+      "Continue with ${ BRAND_NAME } Free": [
+        "Fortsett med ${ BRAND_NAME } Free"
+      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Hvis du fortsetter, kobles ${ BRAND_NAME }-kontoen din til ${ name }."
       ],
@@ -10493,6 +10604,10 @@
       ],
       "Create a new code on your TV and try again.": [
         "Opprett en ny kode på TV-en og prøv igjen."
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Opprett en sikker sky for ${ memberCount } medlem",
+        "Opprett en sikker sky for ${ memberCount } medlemmer"
       ],
       "Create an account": [
         "Opprett en konto"
@@ -11014,6 +11129,9 @@
       "Get visibility into account access": [
         "Få innsikt i kontotilgang"
       ],
+      "Get VPN Plus": [
+        "Skaff deg VPN Plus"
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Gi tokenet et beskrivende navn, slik som tjenesten du planlegger å bruke det med, og velg en av dine aktive egendefinerte domeneadresser. Kun denne adressen vil være i stand til å sende e-poster med dette tokenet."
       ],
@@ -11219,6 +11337,9 @@
       ],
       "Include device, location, and IP details": [
         "Inkluder enhet, plassering og IP-detaljer"
+      ],
+      "Included": [
+        "Inkludert"
       ],
       "Increase your account security by verifying your email address.": [
         "Øk kontosikkerheten ved å verifisere e-postadressen din."
@@ -12111,6 +12232,12 @@
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Vis bildet av hver avsender i meldingslisten. Avsenderens initialer vises hvis et bilde ikke er tilgjengelig."
       ],
+      "Show fewer benefits": [
+        "Vis færre fordeler"
+      ],
+      "Show more benefits": [
+        "Vis flere fordeler"
+      ],
       "Show original message": [
         "Vis opprinnelig melding"
       ],
@@ -12244,6 +12371,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Anbefales av TechRadar Pro med en vurdering på 4.2 av 5 stjerner"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Midlertidig utilgjengelig på grunn av høy etterspørsel. Prøv igjen senere."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidig utilgjengelig. Kom tilbake senere."
@@ -12539,6 +12669,9 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "For å dekryptere og se låst data etter en tilbakestilling av passord, velg en gjenopprettingsmetode."
       ],
+      "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
+        "For å aktivere post-kvantebeskyttelse må du fullføre genereringen av de nye post-kvantekrypteringsnøklene dine."
+      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "For å sikre best mulig sikkerhet for kontoen din, deaktiver **Gjenoppretting via gjenopprettings-e-postadresse**."
       ],
@@ -12644,6 +12777,9 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Med mindre du logger av kontoen din eller endrer passordet ditt, vil økten din forbli aktiv. Økter utløper etter 60 dager med inaktivitet."
       ],
+      "Unlock streaming with VPN Plus.": [
+        "Lås opp strømming med VPN Plus"
+      ],
       "Unsaved changes": [
         "Endringer som ikke er lagret"
       ],
@@ -12659,8 +12795,14 @@
       "Unverified email address.": [
         "Ikke verifisert e-postadresse."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Oppgrader når som helst for å få med deg resten"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Oppgrader nå for å få premiumfunksjoner, produkter og lagringsplass til spesialpris."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Oppgrader eller frigjør plass når som helst for å ta med resten"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Oppgrader for å legge til en kortere @pm.me-adresse til din konto som er enklere å dele. Den står for \"${ MAIL_APP_NAME } meg\" eller \"send meg privat melding\"."
@@ -12791,6 +12933,9 @@
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
+      "VPN Plus": [
+        "VPN Plus"
+      ],
       "VPN with dedicated servers and IP addresses": [
         "VPN med dedikerte tjenere og IP-adresser"
       ],
@@ -12907,6 +13052,9 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Når deaktivert, forhindrer dette eksterne bilder fra å lastes inn uten din viten."
+      ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "Når aktivert, vil vi sjekke om ${ MAIL_APP_NAME } er standard e-postapplikasjon og varsle deg hvis den ikke er det."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Når du aktiverer SAML for ${ appName } i identitetsleverandøren, kan du bli bedt om å bruke URL-adressen for tilbakeringing (ACS) og utsteder-ID. Bare kopier og lim inn dataene nedenfor i identitetsleverandørfeltene dine."
@@ -13981,6 +14129,9 @@
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME }-beskyttelse"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tegn"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig. Kom tilbake senere)."
       ],
@@ -14578,6 +14729,9 @@
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
         "Aktiver ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }"
+      ],
+      "Enable categories": [
+        "Aktiver kategorier"
       ],
       "Enabled": [
         "Aktivert"
@@ -16333,11 +16487,26 @@
       "Built-in chat": [
         "Innebygd chat"
       ],
+      "Cloud storage and file sharing": [
+        "Skylagring og fildeling"
+      ],
+      "Data retention policies": [
+        "Retningslinjer for dataoppbevaring"
+      ],
+      "Document and spreadsheet editor": [
+        "Dokument- og regnearkredigering"
+      ],
+      "Email writing assistant": [
+        "Assistent for e-postskriving"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Ende-til-ende-kryptert skjermdeling og kortvarig chat under samtaler"
       ],
       "Hosts can record meetings locally on their computers": [
         "Verter kan ta opp møter lokalt på datamaskinene sine"
+      ],
+      "Includes Meet Professional": [
+        "Inkluderer Meet Professional"
       ],
       "Meeting recording": [
         "Opptak av møte"
@@ -16345,8 +16514,17 @@
       "One active meeting at a time": [
         "Ett aktivt møte om gangen"
       ],
+      "Password manager with team vaults": [
+        "Passordbehandler med teamhvelv"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Privat KI-chat (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Skjermdeling"
+      ],
+      "Secure mail and calendar": [
+        "Sikker e-post og kalender"
       ],
       "Unlimited meetings per day": [
         "Ubegrenset antall møter per dag"
@@ -16362,6 +16540,9 @@
       "Video meetings, ${ n } participant": [
         "Videomøter, ${ n } deltaker",
         "Videomøter, ${ n } deltakere"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN med annonseblokkering og skadevarebeskyttelse"
       ]
     },
     "meet_2025: Info": {
@@ -17031,6 +17212,9 @@
       "99.95% SLA": [
         "99,95% SLA"
       ],
+      "Access all countries": [
+        "Få tilgang til alle land"
+      ],
       "Activity logs and policy": [
         "Aktivitetslogger og retningslinjer"
       ],
@@ -17213,6 +17397,9 @@
       "Multiple admin roles": [
         "Flere administratorroller"
       ],
+      "No streaming support": [
+        "Ingen strømmestøtte"
+      ],
       "No-logs policy": [
         "Retningslinjer mot loggføring"
       ],
@@ -17378,6 +17565,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ubegrenset volum/båndbredde"
+      ],
+      "Unlock streaming": [
+        "Lås opp strømming"
       ],
       "Up to ${ n } user": [
         "Opptil ${ n } bruker",
@@ -17853,6 +18043,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } land",
+        "${ n } land"
+      ],
       "Access advanced VPN features": [
         "Få tilgang til avanserte VPN-funksjoner"
       ],
@@ -18559,6 +18753,9 @@
       ],
       "Plain text": [
         "Ren tekst"
+      ],
+      "Push notifications": [
+        "Push-varslinger"
       ],
       "Receive from all": [
         "Motta fra alle"
@@ -19935,13 +20132,13 @@
       ]
     },
     "PQC account key generation": {
-      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
-        "Kunne ikke generere nøkler. For å aktivere postkvantebeskyttelse, må du generere dine nye krypteringsnøkler manuelt.\n\n${ settingsLink } og velge 'Generer nøkkel' for din konto og for hver adresse."
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Kunne ikke generere nøkler. For å aktivere post-kvantebeskyttelse må du fullføre genereringen av de nye post-kvantekrypteringsnøklene.\n\n${ goToSettingsLink } og velg \"generer manglende nøkler\"."
       ]
     },
     "PQC adress key generation": {
-      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
-        "Kunne ikke generere adressenøkler. For å aktivere postkvantebeskyttelse, må du generere de nye krypteringsnøklene manuelt.\n\nGå til ${ settingsLink } og velg 'Generer nøkkel' for hver adresse."
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys for each address.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Kunne ikke generere adressenøkler. For å aktivere post-kvantebeskyttelse må du fullføre genereringen av de nye post-kvantekrypteringsnøklene for hver adresse.\n\n${ goToSettingsLink } og velg \"generer manglende nøkler\"."
       ]
     },
     "PQC compatibility warning": {
@@ -21214,7 +21411,7 @@
         "Aktivert enhetsgjenoppretting"
       ],
       "Enabled email recovery": [
-        "Aktivert e-postgjenoppretting"
+        "E-postgjenoppretting aktivert"
       ],
       "Enabled password reset from settings": [
         "Aktiverte tilbakestilling av passord fra innstillingene"
@@ -21875,6 +22072,12 @@
     "Setting": {
       "Enable Photos section": [
         "Aktiver Bilder-seksjonen"
+      ],
+      "Get updates about comments via email": [
+        "Få oppdateringer om kommentarer via e-post"
+      ],
+      "Include document name in email notifications": [
+        "Inkluder dokumentnavn i e-postvarsler"
       ]
     },
     "Settings description": {
@@ -22758,7 +22961,7 @@
         "Få kreditter når personen du inviterer abonnerer på en ${ BRAND_NAME }-plan."
       ],
       "New: Roles and permissions tab": [
-        "Nytt: roller og tillatelser-fanen"
+        "Nytt: fanen for roller og tillatelser"
       ],
       "Open this tab to grant specific permissions without full admin access.": [
         "Åpne denne fanen for å gi spesifikke tillatelser uten full administratortilgang."
@@ -24198,6 +24401,14 @@
         "Sikre filene dine med kryptert skylagring. Inkluderer versjonshistorikk, kryptert fildeling og mer."
       ]
     },
+    "Tab": {
+      "For personal use": [
+        "Til personlig bruk"
+      ],
+      "For professional use": [
+        "For profesjonell bruk"
+      ]
+    },
     "Tab in domain modal": {
       "Addresses": [
         "Adresser"
@@ -24507,6 +24718,9 @@
       "Add another notification to remind you of this event": [
         "Legg til en ny varsling for å minne deg om denne hendelsen"
       ],
+      "Add categories": [
+        "Legg til kategorier"
+      ],
       "Add contact group name": [
         "Legg til navn på kontaktgruppen"
       ],
@@ -24681,6 +24895,9 @@
       "Catch-all address": [
         "Catch-all-adresse"
       ],
+      "Categories": [
+        "Kategorier"
+      ],
       "Change login password": [
         "Endre påloggingspassord"
       ],
@@ -24701,6 +24918,9 @@
       ],
       "Change second password": [
         "Endre andre passord"
+      ],
+      "Check your default mail application": [
+        "Sjekk standard e-postapplikasjon"
       ],
       "Choose a provider": [
         "Velg en leverandør"
@@ -24770,6 +24990,9 @@
       ],
       "Contact us": [
         "Kontakt oss"
+      ],
+      "Continue with free storage": [
+        "Fortsett med gratis lagring"
       ],
       "Continue with partial import?": [
         "Fortsette med delvis import?"
@@ -25179,6 +25402,9 @@
       "Feature access": [
         "Funksjonstilgang"
       ],
+      "Fewer distractions, more focus": [
+        "Færre forstyrrelser, mer fokus"
+      ],
       "Filter for more focus": [
         "Filtrer for mer fokus"
       ],
@@ -25245,6 +25471,9 @@
       "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
         "Skaff deg ${ planMaxSpace } lagringsplass for filene, bildene og dokumentene dine med ${ planName }. ${ upgradeButton }"
       ],
+      "Get ${ VPN_APP_NAME } on your TV": [
+        "Skaff deg ${ VPN_APP_NAME } på TV-en din"
+      ],
       "Get ${ vpnPlus } to access all servers": [
         "Skaff deg ${ vpnPlus } for å få tilgang til alle tjenere"
       ],
@@ -25274,6 +25503,9 @@
       ],
       "Get more from your VPN": [
         "Får mer ut av ditt VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Skaff deg mer lagringsplass med ${ MAIL_APP_NAME } Plus"
       ],
       "Get started": [
         "Kom i gang"
@@ -26184,7 +26416,7 @@
         "Abonnementet ditt på ${ planTitle } har startet"
       ],
       "Your admin at ${ orgName } is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
-        "Administratoren din hos ${ orgName } inviterer deg til å aktivere den nye, sikre ${ BRAND_NAME }-kontoen din og oppdatere passordet ditt."
+        "Administratoren din hos ${ orgName } inviterer deg til å aktivere den nye, sikre ${ BRAND_NAME }-kontoen og oppdatere passordet ditt."
       ],
       "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
         "Administratoren din inviterer deg til å aktivere den nye, sikre ${ BRAND_NAME }-kontoen din og oppdatere passordet ditt."
@@ -26396,6 +26628,9 @@
       "Each imported email will have this label": [
         "Hver importert e-post vil ha denne etiketten"
       ],
+      "Early access to new apps and features.": [
+        "Tidlig tilgang til nye apper og funksjoner."
+      ],
       "Edit folder names": [
         "Rediger mappenavn"
       ],
@@ -26552,8 +26787,8 @@
       "This feature is only available on Beta": [
         "Denne funksjonen er kun tilgjengelig på Beta"
       ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "Dette er standardnøkkelen som brukes av andre ${ MAIL_APP_NAME }-brukere på eldre mobilapper til å kryptere data de sender til deg"
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
+        "Dette er standardnøkkelen som brukes av andre ${ MAIL_APP_NAME }-brukere på eldre apper til å kryptere data de sender til deg"
       ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
         "Dette er standardnøkkelen som brukes av andre ${ MAIL_APP_NAME }-brukere for å kryptere data de sender til deg"
@@ -27085,6 +27320,16 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn",
+        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prøv et kortere brukernavn (maks ${ n } tegn)",
+        "Prøv et kortere brukernavn (maks ${ n } tegn)"
       ]
     },
     "Video control": {

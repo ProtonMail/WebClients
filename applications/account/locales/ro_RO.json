@@ -381,6 +381,9 @@
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Continuare cu ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
+      "Continue with Free": [
+        "Continuare cu Free"
+      ],
       "Continue with Google": [
         "Continuare cu Google"
       ],
@@ -573,6 +576,9 @@
       "Disable categories": [
         "Dezactivare categorii"
       ],
+      "Disable category": [
+        "Dezactivare categorie"
+      ],
       "Disable recovery phrase": [
         "Dezactivare fraze de recuperare"
       ],
@@ -723,6 +729,9 @@
       "Enable ${ darkWebMonitoring }": [
         "Activare ${ darkWebMonitoring }"
       ],
+      "Enable category": [
+        "Activare categorie"
+      ],
       "enable desktop notifications": [
         "activare notificări pe desktop"
       ],
@@ -794,6 +803,9 @@
       ],
       "Generate key": [
         "Generare cheie"
+      ],
+      "Generate missing keys": [
+        "Generare chei lipsă"
       ],
       "Generate new phrase": [
         "Generare frază nouă"
@@ -5324,6 +5336,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sortați automat mesajele primite înainte ca acestea să vă ajungă în contul de e-mail."
       ],
+      "Available storage: ${ storageText }": [
+        "Spațiu disponibil: ${ storageText }"
+      ],
       "Available with ${ title }": [
         "Disponibil cu ${ title }"
       ],
@@ -5386,6 +5401,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Se criptează și se importă contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Spațiu suficient pentru ani mulți de mesaje, atașamente și altele."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Asigurați accesarea securizată la datele organizației, chiar dacă echipa este la distanță sau utilizează o rețea Wi-Fi publică."
@@ -5459,6 +5477,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Citiți, răspundeți și rămâneți deasupra lui Gmail direct din ${ MAIL_APP_NAME }"
       ],
+      "Select which categories you want to add and if you want to receive push notifications for each category.": [
+        "Selectați categoriile pe care doriți să le adăugați și dacă doriți să primiți notificări instante pentru fiecare categorie."
+      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Configurați conturi pentru toți utilizatorii și invitați-i să se alăture la ${ BRAND_NAME }."
       ],
@@ -5503,6 +5524,9 @@
       "Track the status and activity of your referrals": [
         "Urmăriți starea și activitatea celor recomandați."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Deblocați 15 GiB de spațiu pentru doar ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Treceți la ${ planName } pentru a conecta până la ${ MAX_SYNC_PAID_USER } conturi."
       ],
@@ -5518,14 +5542,20 @@
       "We can't access ${ boldEmails } anymore.": [
         "Nu mai putem accesa ${ boldEmails }."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Importarea se va opri la 80% din spațiul de stocare pentru a rezerva spațiu pentru mesajele noi."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Se vor importa mesajele vechi și se va conecta contul Gmail la ${ MAIL_APP_NAME }, astfel încât mesajele noi să apară automat."
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "S-a început importarea mesajelor din ultimele 180 de zile din Gmail. Vă vom anunța când va fi gata."
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "S-a început importarea mesajelor de pe Gmail. Vă vom anunța când va fi gata."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ne pare rău să vă vedem plecând. Dacă aveți un moment, am aprecia foarte mult să aflăm de ce doriți să anulați. Feedback-ul dvs. ne ajută să facem ${ BRAND_NAME } mai bun pentru toată lumea."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Cu noile categorii de mesaje, doar mesajele importante ajung în folderul de mesaje primite. Categoriile funcționează exact ca filtrele de mesaje nedorite. ${ MAIL_APP_NAME } nu vă citește niciodată mesajele și nu vă partajează datele."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Aveți deja o adresă Gmail care transferă mesajele către ${ MAIL_APP_NAME }. Conectați-o mai jos pentru a trimite și primi mesaje direct din ${ MAIL_APP_NAME }."
@@ -5569,6 +5599,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Ați conectat o adresă de cont externă la ${ MAIL_APP_NAME }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Contul gratuit ${ MAIL_APP_NAME } are un spațiu de stocare limitat, așa că se vor importa doar ${ newUserStorageText } dintre cele mai recente mesaje din Gmail."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Contul gratuit ${ MAIL_APP_NAME } are un spațiu de stocare limitat, așa că se vor importa doar cele mai recente mesaje din Gmail."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Planul actual permite ${ MAX_SYNC_FREE_USER } adresă Gmail.",
@@ -7196,11 +7232,17 @@
       "Email address is required": [
         "Adresa de e-mail este obligatorie"
       ],
+      "Email is not valid": [
+        "E-mailul nu este valid"
+      ],
       "Empty condition": [
         "Condiție goală"
       ],
       "Enter 6 digits": [
         "Introduceți 6 cifre"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduceți numele de utilizator fără domeniu (@exemplu.com)."
       ],
       "Error connecting to the Bitcoin API.": [
         "Eroare de conectare la Bitcoin API."
@@ -7288,6 +7330,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Parolă secundară incorectă. Încercați din nou."
+      ],
+      "Incorrect username": [
+        "Nume de utilizator incorect."
       ],
       "Intended recipient does not support calendar sharing": [
         "Destinatarul vizat nu are suport pentru partajare de calendare."
@@ -7399,6 +7444,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Nu este un cont ${ BRAND_NAME }."
       ],
+      "Not a valid number": [
+        "Nu este un număr valid"
+      ],
       "Organization key is not decrypted": [
         "Cheia organizației nu este decriptată."
       ],
@@ -7410,6 +7458,9 @@
       ],
       "Password is required": [
         "Parola este obligatorie"
+      ],
+      "Passwords do not match": [
+        "Parolele nu coincid"
       ],
       "Payment process canceled": [
         "Procesarea plății a fost anulată."
@@ -7493,9 +7544,6 @@
       ],
       "Please try again in a few moments.": [
         "Mai încercați peste câteva momente."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Treceți la un plan de afaceri cu mai mult de un utilizator pentru a folosi mai mulți utilizatori."
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Migrați la un plan de afaceri cu mai mult de un utilizator pentru a destiona mai mulți utilizatori."
@@ -7595,6 +7643,9 @@
       "The amount due has changed. Please try again.": [
         "Suma datorată s-a schimbat. Mai încercați."
       ],
+      "The email addresses do not match": [
+        "Adresele de e-mail nu se potrivesc."
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Imaginea este prea mare. Dimensiunea maximă este ${ MAX_FILE_DIMENSIONS } x ${ MAX_FILE_DIMENSIONS }."
       ],
@@ -7640,11 +7691,17 @@
       "There was an error, please try again.": [
         "A apărut o eroare. Reîncercați."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Acest câmp depășește maximul de ${ maximumLength } de caractere."
+      ],
       "This field is invalid": [
         "Acest câmp nu este valid."
       ],
       "This field is required": [
         "Acest câmp este obligatoriu"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Acest câmp necesită un minimum de ${ minimumLength } caractere."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Acest nume de folder nu este disponibil. Alegeți un nume diferit."
@@ -7670,6 +7727,9 @@
       "Try again later": [
         "Reîncercați mai târziu"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Folosiți doar litere, cifre și _ . -"
+      ],
       "Unable to upload file": [
         "Fișierul nu se poate încărca."
       ],
@@ -7687,6 +7747,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Fișierele încărcate nu sunt chei private valide. Verificați și reîncercați."
+      ],
+      "Username must begin with a letter or digit": [
+        "Numele de utilizator trebuie să înceapă cu o literă sau cifră."
+      ],
+      "Username must end with a letter or digit": [
+        "Numele de utilizator trebuie să se termine cu o literă sau cifră."
       ],
       "Validation error": [
         "Eroare validare."
@@ -8433,6 +8499,9 @@
       "${ PROTON_SENTINEL_NAME } account protection": [
         "Protecție cont cu ${ PROTON_SENTINEL_NAME }"
       ],
+      "10+ premium features": [
+        "Peste 10 funcții premium"
+      ],
       "15 GB storage": [
         "15 GiB spațiu de stocare"
       ],
@@ -8470,6 +8539,12 @@
       "Continue": [
         "Continuare"
       ],
+      "Custom email domain": [
+        "Domeniu personal de e-mail"
+      ],
+      "Email addresses": [
+        "Adrese de e-mail"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Stocare în cloud criptată pentru fișiere, fotografii și documente."
       ],
@@ -8499,6 +8574,9 @@
       ],
       "Short domain @pm.me": [
         "Domeniu scurt @pm.me"
+      ],
+      "Storage": [
+        "Spațiu de stocare"
       ],
       "Torrenting support (P2P)": [
         "Suport torente (P2P)"
@@ -8874,6 +8952,9 @@
     "Force upgrade safety review": {
       "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
         "Înțeleg că nu mă voi mai putea conecta în versiunile mai vechi ale aplicațiilor ${ BRAND_NAME }."
+      ],
+      "Learn more": [
+        "Detalii"
       ]
     },
     "Form heading": {
@@ -9700,7 +9781,7 @@
       "${ BRAND_NAME } Free": [
         "${ BRAND_NAME } Free"
       ],
-      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
         "${ BRAND_NAME } este finanțat independent și operează fără publicitate. Mai jos sunt exemple despre cum a fost folosită această independență în practică."
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
@@ -10165,10 +10246,10 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Adăugați-vă numele sau logoul pentru a crea o experiență mai personalizată pentru organizație."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Servere poartă de acces care se adaugă: ${ addedServerCount }",
-        "Servere poartă de acces care se adaugă: ${ addedServerCount }",
-        "Servere poartă de acces care se adaugă: ${ addedServerCount }"
+      "Adding ${ total } gateway server": [
+        "Se adaugă porți de acces servere: ${ total }",
+        "Se adaugă porți de acces servere: ${ total }",
+        "Se adaugă porți de acces servere: ${ total }"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Adăugarea unei adrese de e-mail externe va dezactiva criptarea bilaterală pentru toate mesajele prin e-mail în cadrul acestui grup. Doriți să continuați?"
@@ -11374,6 +11455,9 @@
       ],
       "Include device, location, and IP details": [
         "Includere dispozitiv, loc și detalii IP"
+      ],
+      "Included": [
+        "Inclus"
       ],
       "Increase your account security by verifying your email address.": [
         "Măriți securitatea contului prin verificarea adresei de e-mail."
@@ -12714,6 +12798,9 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Pentru a decripta și vedea datele blocate după resetarea parolei, selectați o metodă de recuperare."
       ],
+      "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
+        "Pentru a activa protecția post-cuantică, va trebui să finalizați generarea noilor chei de criptare post-cuantice."
+      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Pentru a asigura cea mai înaltă securitate posibilă a contului, dezactivați **Recuperarea prin adresa de e-mail de recuperare**."
       ],
@@ -12837,8 +12924,14 @@
       "Unverified email address.": [
         "Adresă de e-mail neverificată."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Modificați oricând abonamentul pentru a obține și restul"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Modificați abonamentul sau goliți spațiul de stocare pentru a le aduce și pe restul."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Modificați contul pentru a adăuga o adresă @pm.me mai scurtă în cont, care este mai ușor de partajat. Înseamnă „${ MAIL_APP_NAME }-ul meu” sau „Mesaj privat mie”."
@@ -13135,7 +13228,7 @@
         "Cu o adresă criptată ${ BRAND_NAME }, puteți utiliza toate serviciile ${ BRAND_NAME }."
       ],
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
-        "Cu categoriile de e-mail, mesajele importante ajung în folderul de mesaje primite. Restul sunt organizate pe categorii."
+        "Cu categoriile de mesaje, mesajele importante ajung în folderul de mesaje primite. Restul sunt organizate pe categorii."
       ],
       "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
         "Cu grupuri, puteți implementa politicile de securitate ale companiei pentru controlul accesului și puteți reduce riscul accesării neautorizate a datelor."
@@ -14184,6 +14277,9 @@
       "${ PROTON_SENTINEL_NAME } protection": [
         "Protecție cu ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } de caractere"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Reveniți mai târziu.)"
       ],
@@ -14782,6 +14878,9 @@
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
         "Activare ${ DARK_WEB_MONITORING_NAME } pentru ${ domain.DomainName }"
+      ],
+      "Enable categories": [
+        "Activare categorii"
       ],
       "Enabled": [
         "Activă"
@@ -18859,6 +18958,9 @@
       "Plain text": [
         "Text simplu"
       ],
+      "Push notifications": [
+        "Notificări instante"
+      ],
       "Receive from all": [
         "Primire de la toți"
       ],
@@ -20247,13 +20349,13 @@
       ]
     },
     "PQC account key generation": {
-      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
-        "Nu s-au putut genera cheile. Pentru a activa protecția post-cuantică, va trebui să generați manual noile chei de criptare.\n\n${ settingsLink } și selectați „Generare cheie” pentru cont și pentru fiecare adresă."
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Nu s-au putut genera cheile. Pentru a activa protecția post-cuantică, va trebui să finalizați generarea noilor chei de criptare post-cuantică pentru fiecare adresă.\n\n${ goToSettingsLink } și selectați „Generare chei lipsă”."
       ]
     },
     "PQC adress key generation": {
-      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
-        "Nu s-au putut genera cheile. Pentru a activa protecția post-cuantică, va trebui să generați manual noile chei de criptare.\n\nAccesați ${ settingsLink } și selectați „Generare cheie” pentru cont și pentru fiecare adresă."
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys for each address.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Nu s-au putut genera chei de adresă. Pentru a activa protecția post-cuantică, va trebui să finalizați generarea noilor chei de criptare post-cuantică pentru fiecare adresă.\n\n${ goToSettingsLink } și selectați „Generare chei lipsă”."
       ]
     },
     "PQC compatibility warning": {
@@ -24918,6 +25020,9 @@
       "Add another notification to remind you of this event": [
         "Adăugare altă notificare pentru reamintirea acestui eveniment"
       ],
+      "Add categories": [
+        "Adăugare categorii"
+      ],
       "Add contact group name": [
         "Adăugare nume grup contacte"
       ],
@@ -25092,6 +25197,9 @@
       "Catch-all address": [
         "Adresă de agregare"
       ],
+      "Categories": [
+        "Categorii"
+      ],
       "Change login password": [
         "Modificare parolă conectare"
       ],
@@ -25184,6 +25292,9 @@
       ],
       "Contact us": [
         "Contactați-ne"
+      ],
+      "Continue with free storage": [
+        "Continuare cu spațiu gratuit"
       ],
       "Continue with partial import?": [
         "Continuați cu importarea parțială?"
@@ -25520,7 +25631,7 @@
         "Breșe adrese de e-mail"
       ],
       "Email categories": [
-        "Categorii de e-mail"
+        "Categorii de mesaje"
       ],
       "Email composer": [
         "Editor mesaj e-mail"
@@ -25595,6 +25706,9 @@
       ],
       "Feature access": [
         "Accesare funcție"
+      ],
+      "Fewer distractions, more focus": [
+        "Mai puține distrageri, mai multă concentrare"
       ],
       "Filter for more focus": [
         "Filtru pentru concentrare mai bună"
@@ -25694,6 +25808,9 @@
       ],
       "Get more from your VPN": [
         "Obțineți mai mult de la VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Obțineți mai mult spațiu cu ${ MAIL_APP_NAME } Plus"
       ],
       "Get started": [
         "Să începem"
@@ -26818,6 +26935,9 @@
       "Each imported email will have this label": [
         "Fiecare e-mail importat va avea această etichetă."
       ],
+      "Early access to new apps and features.": [
+        "Acces timpuriu la aplicațiile și funcțiile noi."
+      ],
       "Edit folder names": [
         "Editare nume foldere"
       ],
@@ -26974,8 +27094,8 @@
       "This feature is only available on Beta": [
         "Această funcție este disponibilă doar în versiunea beta."
       ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "Aceasta este cheia implicită folosită de alți utilizatori ${ MAIL_APP_NAME } din aplicațiile mobile mai vechi pentru a cripta datele pe care vi le trimit."
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
+        "Aceasta este cheia implicită folosită de alți utilizatori ai ${ MAIL_APP_NAME } din aplicațiile mai vechi pentru a cripta datele pe care vi le trimit."
       ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
         "Aceasta este cheia implicită folosită de alți utilizatori ${ MAIL_APP_NAME } pentru a cripta datele pe care vi le trimit."
@@ -27509,6 +27629,18 @@
       ],
       "Writing assistant": [
         "Asistent de scriere"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caracter",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caractere",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } de caractere"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)"
       ]
     },
     "Video control": {
