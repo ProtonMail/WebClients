@@ -1,8 +1,7 @@
 import type { NodeEntity } from '@proton/drive/index';
 import { getDrive } from '@proton/drive/index';
 import { sendErrorReport } from '@proton/drive/internal/BusDriver/errorHandling';
-
-import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 export async function iterateSharedWithMeNodes(abortSignal?: AbortSignal) {
     const result: { node: NodeEntity }[] = [];

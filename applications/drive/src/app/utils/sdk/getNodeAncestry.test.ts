@@ -1,8 +1,8 @@
 import type { NodeEntity, ProtonDriveClient, Result } from '@proton/drive/index';
 import { MemberRole, NodeType } from '@proton/drive/index';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import { getNodeAncestry } from './getNodeAncestry';
-import { getNodeEntity } from './getNodeEntity';
 
 describe('getNodeAncestry', () => {
     let mockDrive: jest.Mocked<ProtonDriveClient>;

@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import type { MaybeNode, NodeEntity, ProtonDriveClient } from '@proton/drive/index';
 import { getDrive } from '@proton/drive/index';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import { getNotificationsManager } from '../../../../modules/notifications';
 import { handleSdkError, shouldTrackError } from '../../../../utils/errorHandling/handleSdkError';
 import { getNodeEffectiveRole } from '../../../../utils/sdk/getNodeEffectiveRole';
-import { getNodeEntity } from '../../../../utils/sdk/getNodeEntity';
 import { getFormattedNodeLocation } from '../../../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../../../utils/sdk/getSignatureIssues';
 import { isMissingNode } from '../../../../utils/sdk/node';

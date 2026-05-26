@@ -1,12 +1,12 @@
 import { NodeType, NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
 
+import { getNodeEntity } from '../../../legacy/sdkUtils/getNodeEntity';
 import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import type { EventCallback, UploadTask } from '../types';
-import { getNodeEntityFromMaybeNode } from '../utils/getNodeEntityFromMaybeNode';
 import { FolderCreationExecutor } from './FolderCreationExecutor';
 
 jest.mock('../UploadDriveClientRegistry');
-jest.mock('../utils/getNodeEntityFromMaybeNode');
+jest.mock('../../../legacy/sdkUtils/getNodeEntity');
 
 describe('FolderCreationExecutor', () => {
     let executor: FolderCreationExecutor;
@@ -23,7 +23,7 @@ describe('FolderCreationExecutor', () => {
             createFolder: mockCreateFolder,
         } as any);
 
-        jest.mocked(getNodeEntityFromMaybeNode).mockReturnValue({
+        jest.mocked(getNodeEntity).mockReturnValue({
             node: {
                 uid: 'created-folder-123',
                 name: 'MyFolder',
@@ -119,7 +119,7 @@ describe('FolderCreationExecutor', () => {
 
             await executor.execute(task);
 
-            expect(getNodeEntityFromMaybeNode).toHaveBeenCalledWith(folderResult);
+            expect(getNodeEntity).toHaveBeenCalledWith(folderResult);
             expect(mockEventCallback).toHaveBeenCalledWith({
                 type: 'folder:complete',
                 uploadId: 'task123',

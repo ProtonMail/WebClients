@@ -1,4 +1,5 @@
-import { getNodeEntity } from '../../../../../../utils/sdk/getNodeEntity';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+
 import type { TreeEventScopeId } from '../../../shared/types';
 import { IndexKind } from '../../index/IndexRegistry';
 import type { IndexEntry } from '../indexEntry';

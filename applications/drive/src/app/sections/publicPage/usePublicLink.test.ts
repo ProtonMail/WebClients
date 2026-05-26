@@ -2,9 +2,9 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { useAuthentication, useNotifications } from '@proton/components';
 import { NodeType, getDrive } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { setPublicLinkClient } from './publicLinkClient';
 import { usePublicLink } from './usePublicLink';
 import { shouldRedirectToPrivateApp } from './utils/shouldRedirectToPrivateApp';
@@ -63,7 +63,7 @@ jest.mock('../../utils/errorHandling/apiErrors', () => ({
     is5xx: jest.fn(),
 }));
 
-jest.mock('../../utils/sdk/getNodeEntity', () => ({
+jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity', () => ({
     getNodeEntity: jest.fn(),
 }));
 

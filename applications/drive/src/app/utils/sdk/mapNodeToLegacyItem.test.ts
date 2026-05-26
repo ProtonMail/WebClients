@@ -1,12 +1,12 @@
 import type { Author, MaybeNode, NodeEntity, Revision } from '@proton/drive';
 import { MemberRole, NodeType, RevisionState } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { ShareState, ShareType, type ShareWithKey } from '../../legacy/store';
-import { getNodeEntity } from './getNodeEntity';
 import { mapNodeToLegacyItem } from './mapNodeToLegacyItem';
 
-jest.mock('./getNodeEntity');
+jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity');
 
 const mockGetNodeEntity = jest.mocked(getNodeEntity);
 
@@ -94,7 +94,9 @@ describe('mapNodeToLegacyItem', () => {
 
     beforeEach(() => {
         jest.clearAllMocks();
-        mockGetNodeEntity.mockImplementation(jest.requireActual('./getNodeEntity').getNodeEntity);
+        mockGetNodeEntity.mockImplementation(
+            jest.requireActual('@proton/drive/legacy/sdkUtils/getNodeEntity').getNodeEntity
+        );
         mockDrive.getNode.mockResolvedValue({
             ok: true,
             value: {

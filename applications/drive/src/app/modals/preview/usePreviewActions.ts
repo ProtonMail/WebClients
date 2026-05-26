@@ -1,10 +1,10 @@
 import { type MaybeNode, MemberRole } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet, isSupportedText } from '@proton/shared/lib/helpers/mimetype';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { downloadManager } from '../../modules/download/DownloadManager';
 import { downloadDocument, getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../utils/docs/openInDocs';
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { bufferToStream } from '../../utils/stream';
 import type { Drive } from './interface';
 import { getNodeMimeType } from './nodeUtils';

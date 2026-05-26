@@ -2,9 +2,9 @@ import type { DriveEvent, MaybeNode, NodeEvent } from '@protontech/drive-sdk';
 
 import type { NodeEntity } from '@proton/drive';
 import { NodeType } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { Expression, Func, TermValue } from '@proton/proton-foundation-search';
 
-import { getNodeEntity } from '../../../../../../utils/sdk/getNodeEntity';
 import { Logger } from '../../../shared/Logger';
 import type { IndexPopulatorState, SearchDB } from '../../../shared/SearchDB';
 import { SearchLibraryError } from '../../../shared/errors';

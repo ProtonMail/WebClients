@@ -7,13 +7,13 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { UserAvatar } from '@proton/atoms/UserAvatar/UserAvatar';
 import { MemberRole, getDriveForPhotos } from '@proton/drive';
+import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { loadThumbnail, useThumbnail } from '@proton/drive/modules/thumbnails';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import folderImages from '@proton/styles/assets/img/drive/folder-images.svg';
 
-import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { useAlbumsStore } from '../../useAlbums.store';
 import { usePhotosStore } from '../../usePhotos.store';
 import { getContactNameAndEmail } from '../getContactNameAndEmail';
