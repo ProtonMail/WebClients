@@ -474,6 +474,9 @@
       "Make a copy": [
         "Зробити копію"
       ],
+      "Manage addresses": [
+        "Керувати адресами"
+      ],
       "Manage folders": [
         "Керувати теками"
       ],
@@ -2675,9 +2678,6 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Зовнішні запрошення тимчасово вимкнені. Спробуйте ще раз пізніше"
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "Не вдалося вивантажити файл \"${ item.name }\" через помилку \"${ error }\""
-      ],
       "File \"${ name }\" is already downloading": [
         "Файл \"${ name }\" вже завантажується"
       ],
@@ -2798,6 +2798,12 @@
       "Organization key is not decrypted": [
         "Ключ організації не розшифровано"
       ],
+      "Organization key must be activated to create invited users": [
+        "Необхідно активувати ключ організації, щоб створити запрошених користувачів"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Щоб створити неприватних користувачів, необхідно активувати ключ організації"
+      ],
       "Password is required": [
         "Пароль обов'язковий"
       ],
@@ -2890,9 +2896,6 @@
       ],
       "Some contacts could not be deleted": [
         "Не вдалося видалити деякі контакти"
-      ],
-      "Some files were ignored because they are not supported in Photos": [
-        "Деякі файли проігноровано, оскільки вони не підтримуються у Фото."
       ],
       "Some groups could not be deleted": [
         "Не вдається видалити деякі групи"
@@ -3037,9 +3040,6 @@
       ],
       "You must set a name": [
         "Ви повинні вказати назву"
-      ],
-      "Your browser does not support uploading folders": [
-        "Ваш браузер не підтримує вивантаження тек"
       ],
       "Your import will not be processed.": [
         "Ваш імпорт не буде оброблений."
@@ -5075,9 +5075,6 @@
       ],
       "Unknown date": [
         "Невідома дата"
-      ],
-      "Unknown error": [
-        "Невідома помилка"
       ],
       "Unlock drive to recover files": [
         "Розблокувати сховище, щоб відновити файли"
@@ -7494,9 +7491,6 @@
       ],
       "Failed to convert external invitation": [
         "Не вдалося перетворити зовнішнє запрошення"
-      ],
-      "Failed to download files: ${ err }": [
-        "Не вдалося завантажити файли: ${ err }"
       ],
       "Failed to move, please try again": [
         "Не вдалося перемістити, повторіть спробу"
@@ -10262,6 +10256,12 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Адміністратори не мають доступу до даних приватних користувачів і не можуть скинути їхній пароль."
+      ],
+      "Organization key must be activated to request data access": [
+        "Ключ організації має бути активований для запиту доступу до даних"
+      ],
+      "The user must have an address to request data access": [
+        "Користувач повинен мати адресу для запиту доступу до даних"
       ]
     },
     "Validation": {

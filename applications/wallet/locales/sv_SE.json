@@ -2342,6 +2342,12 @@
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
       ],
+      "Organization key must be activated to create invited users": [
+        "Organisationsnyckel måste vara aktiverad för att skapa inbjudna användare"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisationsnyckeln måste aktiveras för att skapa icke-privata användare"
+      ],
       "Passwords do not match": [
         "Lösenorden matchar inte"
       ],
@@ -3212,6 +3218,9 @@
       "${ n } month": [
         "${ n } månad",
         "${ n } månader"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tecken"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Kom åt ${ PASS_APP_NAME } säkert från terminalen, perfekt för skript, automatisering och utvecklingsarbetsflöden."
@@ -5764,6 +5773,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratörer kan inte komma åt privata användares data och kan inte återställa deras lösenord."
+      ],
+      "Member activation incomplete": [
+        "Medlemsaktivering ofullständig"
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisationsnyckel måste vara aktiverad för att begära dataåtkomst"
+      ],
+      "The user must have an address to request data access": [
+        "Användaren måste ha en adress för att begära dataåtkomst"
       ]
     },
     "Validation": {

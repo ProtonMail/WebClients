@@ -313,6 +313,9 @@
       "Continue with categories": [
         "Continuar com categorias"
       ],
+      "Continue with Free": [
+        "Continuar com Free"
+      ],
       "Continue with Google": [
         "Continuar com o Google"
       ],
@@ -1441,6 +1444,9 @@
       "Start setup": [
         "Iniciar configuração"
       ],
+      "Start testing": [
+        "Iniciar teste"
+      ],
       "Stay": [
         "Permanecer"
       ],
@@ -1514,7 +1520,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -4073,6 +4080,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Classifique automaticamente as mensagens recebidas antes que elas cheguem à sua caixa de entrada."
       ],
+      "Available storage: ${ storageText }": [
+        "Armazenamento disponível: ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Bloqueie a capacidade do Google de criar um perfil seu. O Gmail não pode ver o que você faz no ${ MAIL_APP_NAME }"
       ],
@@ -4133,8 +4143,14 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Auxilie sua equipe a armazenar de forma segura as senhas relacionadas a informações sensíveis da empresa e dos clientes."
       ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Se você encontrar um e-mail na categoria errada, basta movê-lo para a categoria correta."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contatos que você está importando contém alguns grupos. Verifique como esses grupos devem ser importados."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Ainda está aprendendo e precisamos da sua ajuda para melhorar a categorização."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Permite que você adicione instantaneamente links de reunião aos convites dos seus eventos."
@@ -4231,9 +4247,6 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Não encontramos nenhum rasteador conhecido e URLs de rastreamentro nesse e-mail."
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Inciamos a importação de seus últimos 180 dias de e-mail do Gmail. Avisaremos quando estiver pronto."
-      ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Lamentamos sua saída. Se tiver um momento, gostaríamos muito de saber o motivo do cancelamento. Seu feedback nos ajuda a fazer a ${ BRAND_NAME } ainda melhor para todos."
       ],
@@ -4279,6 +4292,9 @@
       "Your account and data recovery methods are set.": [
         "Sua conta e métodos de recuperação de dados estão definidos."
       ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "Suas correções definirão a experiência padrão para todos; no lançamento, o sistema também lembrará suas preferências daqui para frente!"
+      ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Seu plano suporta ${ MAX_SYNC_FREE_USER } endereço do Gmail.",
         "Seu plano suporta ${ MAX_SYNC_FREE_USER } endereços do Gmail."
@@ -4286,6 +4302,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereço do Gmail",
         "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereços do Gmail"
+      ],
+      "You’re among the first to try email categories.": [
+        "Você está entre os primeiros a experimentar as categorias de e-mail."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
@@ -4909,6 +4928,12 @@
       ],
       "Organization key is not decrypted": [
         "A chave de organização não está descriptografada"
+      ],
+      "Organization key must be activated to create invited users": [
+        "A chave da organização deve ser ativada para criar usuários convidados"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "A chave da organização deve ser ativada para criar usuários não privados"
       ],
       "Passphrase unavailable": [
         "Frase secreta indisponível"
@@ -5666,11 +5691,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ recursos premium"
+      ],
+      "Custom email domain": [
+        "Domínio de e-mail personalizado"
+      ],
+      "Email addresses": [
+        "Endereços de e-mail"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Armazenamento em nuvem criptografado para arquivos, fotos e documentos"
       ],
       "More premium features": [
         "Recursos premium adicionais"
+      ],
+      "Storage": [
+        "Armazenamento"
       ],
       "Unlimited hide-my-email aliases": [
         "Aliases do Hide-my-email ilimitados"
@@ -7560,6 +7597,9 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Inclua seu prompt e a resposta para nos ajudar a melhorar a precisão."
       ],
+      "Included": [
+        "Incluso"
+      ],
       "Included for free with your plan": [
         "Incluído gratuitamente no seu plano"
       ],
@@ -7588,8 +7628,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -15208,6 +15247,9 @@
       "Contacts": [
         "Contatos"
       ],
+      "Continue with free storage": [
+        "Continuar com armazenamento grátis"
+      ],
       "Continue with partial import?": [
         "Continue com uma importação parcial?"
       ],
@@ -15330,6 +15372,9 @@
       "Download the app": [
         "Baixar aplicativo"
       ],
+      "Early access to email categories": [
+        "Acesso antecipado para as categorias de e-mail"
+      ],
       "Edit billing address": [
         "Editar o endereço de cobrança"
       ],
@@ -15413,6 +15458,9 @@
       ],
       "Get more from your VPN": [
         "Obter mais da sua VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Obtenha mais armazenamento com ${ MAIL_APP_NAME } Plus"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Obtenha os aplicativos do ${ appName[APP_NAME] }"
@@ -16197,6 +16245,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Os administradores não podem acessar os dados de usuários privados e não podem redefinir suas senhas."
+      ],
+      "Member activation incomplete": [
+        "Ativação de membro incompleta"
+      ],
+      "Organization key must be activated to request data access": [
+        "A chave da organização precisa ser ativada para solicitar o acesso aos dados"
+      ],
+      "The user must have an address to request data access": [
+        "O usuário deve ter um endereço para solicitar o acesso aos dados"
       ]
     },
     "Update font modal": {

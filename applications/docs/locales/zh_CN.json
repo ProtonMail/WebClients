@@ -213,6 +213,9 @@
       "Continue to ${ planOrAppName }": [
         "继续使用 ${ planOrAppName }"
       ],
+      "Continue with Free": [
+        "注册免费账户"
+      ],
       "Continue with Google": [
         "通过 Google 继续"
       ],
@@ -482,6 +485,9 @@
       ],
       "Make a copy": [
         "创建副本"
+      ],
+      "Manage addresses": [
+        "管理邮箱地址"
       ],
       "Manage advanced account protections": [
         "管理高级账户保护"
@@ -2454,6 +2460,9 @@
       "Automatically forward incoming email to another email address.": [
         "自动将收到的电子邮件转发到另一个邮箱地址。"
       ],
+      "Available storage: ${ storageText }": [
+        "可用空间：${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "首先进行配置，以激活您的组织并自定义您的邮箱地址。"
       ],
@@ -2475,11 +2484,17 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "轻松地将文件从桌面同步到云端，并从移动设备访问它们。"
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "发送到 ${ connectedAddressText } 的电子邮件现在将显示在 ${ MAIL_APP_NAME } 中。"
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "建议在组织内使用双因素身份验证以提高安全性。"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密并导入联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了。"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "拥有足够空间存储多年的邮件、附件等"
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "确保对组织数据的安全访问，即使您的团队在远程或使用公共 WiFi 时也是如此。"
@@ -2541,6 +2556,9 @@
       "To start, give your organization a name.": [
         "首先，请为您的组织命名。"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "仅需 ${ config.offerPrice } 即可解锁 15 GB 存储空间"
+      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "升级至 ${ planName } 套餐，继续共享文件并保留编辑权限"
       ],
@@ -2552,6 +2570,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "我们无法再访问 ${ boldEmails }。"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "存储空间使用量达到 80% 时，我们会暂停导入，为接收新消息预留空间。"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "我们已开始从 Gmail 导入您的邮件，导入完成后将通知您。"
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
@@ -2565,11 +2589,20 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以选择稍后删除既不想合并也不想保留的联系人，点击合并按钮后他们就会被删除"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "您现在可以使用此地址从 ${ BRAND_NAME } 发送电子邮件。"
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "您的账户和数据恢复方法均已设置，并且已启用 2FA。"
       ],
       "Your account and data recovery methods are set.": [
         "您的账户恢复方式已设置。"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "您的免费 ${ MAIL_APP_NAME } 账户存储空间有限，因此我们仅导入 ${ newUserStorageText } 的最近 Gmail 邮件"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "您的免费 ${ MAIL_APP_NAME } 账户存储空间有限，因此我们仅导入您最近的 Gmail 邮件"
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
@@ -3072,6 +3105,12 @@
       "Organization key is not decrypted": [
         "机构密钥尚未解密"
       ],
+      "Organization key must be activated to create invited users": [
+        "必须激活组织密钥才能创建受邀用户"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "组织密钥必须激活才能创建非私人用户"
+      ],
       "Password is required": [
         "密码必须填写"
       ],
@@ -3152,6 +3191,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
+      ],
+      "Some trashed documents could not be loaded": [
+        "部分已删除的文档无法加载"
       ],
       "Something went wrong while fetching available domains": [
         "获取可用域名时出错"
@@ -3671,11 +3713,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ 高级功能"
+      ],
+      "Custom email domain": [
+        "自定义邮箱域名"
+      ],
+      "Email addresses": [
+        "邮箱地址"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "用于文件、照片和文档的加密云存储空间"
       ],
       "More premium features": [
         "更多高级功能"
+      ],
+      "Storage": [
+        "存储空间"
       ],
       "Unlimited hide-my-email aliases": [
         "无限制地 hide-my-email"
@@ -4685,6 +4739,9 @@
       "In restrictive countries": [
         "在网络受限的国家"
       ],
+      "Included": [
+        "已包含"
+      ],
       "Inherited from parent folder": [
         "与上层文件夹一致"
       ],
@@ -5204,6 +5261,9 @@
       "Trash": [
         "回收站"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "信任“${ activeSignerText }”密钥以验证来自此联系人的新消息"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "抢先体验尚未开放的 ${ BRAND_NAME } 新功能、新特性和新产品。此操作将导致页面重新载入。"
       ],
@@ -5216,8 +5276,14 @@
       "Update recent documents": [
         "更新最近文档"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "随时升级以迁移剩余内容"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "随时升级或清理空间以迁移剩余内容"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "升级以保留您的 ${ planTitle } 权益。"
@@ -5531,11 +5597,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "活动签名人"
+      ],
       "Compromised": [
         "已泄露"
       ],
       "Expired": [
         "已过期"
+      ],
+      "Fallback": [
+        "回退"
       ],
       "KOO": [
         "KOO"
@@ -5559,6 +5631,9 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 用户名"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } 个字符"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
@@ -8060,8 +8135,17 @@
       "External key automatically fetched via WKD.": [
         "从 WKD 自动获取的外部密钥。"
       ],
+      "This contact currently signs messages with this key": [
+        "该联系人当前使用此密钥对消息进行签名"
+      ],
+      "This key is used for message verification": [
+        "此密钥用于消息验证"
+      ],
       "This key is used to encrypt messages to this contact": [
         "该密钥用于加密发往此联系人的邮件"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "此密钥用于在旧版应用中加密发送给此联系人的消息"
       ],
       "We recommend that you \"untrust\" this key.": [
         "建议您不再信任此密钥。"
@@ -9453,6 +9537,9 @@
       "Contacts": [
         "通讯录"
       ],
+      "Continue with free storage": [
+        "继续使用免费存储空间"
+      ],
       "Continue with partial import?": [
         "继续以部分导入进行吗？"
       ],
@@ -9614,6 +9701,9 @@
       ],
       "Get more from your VPN": [
         "从您的 VPN 获取更多信息"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "使用 ${ MAIL_APP_NAME } Plus 获取更多存储空间"
       ],
       "Get the apps": [
         "下载应用"
@@ -9933,6 +10023,9 @@
       "When is it most important to use a VPN?": [
         "什么时候最需要使用 VPN 呢？"
       ],
+      "You are all set": [
+        "一切就绪"
+      ],
       "You have no folders yet": [
         "您尚未添加文件夹"
       ],
@@ -10056,6 +10149,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "管理员无法访问私人用户的数据，也无法重置他们的密码。"
+      ],
+      "Member activation incomplete": [
+        "成员激活未完成"
+      ],
+      "Organization key must be activated to request data access": [
+        "必须激活组织密钥才能申请数据访问权限"
+      ],
+      "The user must have an address to request data access": [
+        "用户必须有地址才能申请访问数据"
       ]
     },
     "Validation": {

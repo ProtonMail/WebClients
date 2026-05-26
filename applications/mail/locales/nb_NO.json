@@ -313,6 +313,9 @@
       "Continue with categories": [
         "Fortsett med kategorier"
       ],
+      "Continue with Free": [
+        "Fortsett med gratis"
+      ],
       "Continue with Google": [
         "Fortsett med Google"
       ],
@@ -1441,6 +1444,9 @@
       "Start setup": [
         "Start oppsettet"
       ],
+      "Start testing": [
+        "Begynn å teste"
+      ],
       "Stay": [
         "Bli"
       ],
@@ -1512,6 +1518,10 @@
       ],
       "Trust": [
         "Klarér"
+      ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -4070,6 +4080,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sorter innkommende meldinger automatisk før de når innboksen din."
       ],
+      "Available storage: ${ storageText }": [
+        "Tilgjengelig lagringsplass: ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Blokker Googles mulighet til å profilere deg. Gmail kan ikke se hva du gjør i ${ MAIL_APP_NAME }"
       ],
@@ -4109,6 +4122,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan ta noen minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "Nok plass til årevis med e-poster, vedlegg og mer."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Sørg for sikker tilgang til organisasjonsdata, selv om teamet ditt er eksternt eller bruker offentlig WiFi."
       ],
@@ -4130,8 +4146,14 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Hjelp teamet ditt med å lagre passord til sensitiv forretnings- og klientinformasjon på en sikker måte."
       ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Hvis du finner en e-post i feil kategori, flytter du den bare til riktig kategori."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ut til at kontaktlisten du importerer, inneholder noen grupper. Se gjennom hvordan disse gruppene skal importeres."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Det er fortsatt læring, og vi trenger din hjelp til å forbedre kategoriseringen."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Lar deg umiddelbart legge til møtekoblinger i hendelsesinvitasjonene dine."
@@ -4213,6 +4235,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Slå på beskyttelse mot e-postsporere for å forhindre at annonsører og andre sporer din plassering og pålogget aktivitet."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Lås opp 15 GB lagringsplass for kun ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Oppgrader til ${ planName } for å koble til opptil ${ MAX_SYNC_PAID_USER } kontoer"
       ],
@@ -4234,11 +4259,14 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Vi fant ingen kjente sporere og sporingsnettadresser i denne e-posten."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Vi setter importene på pause ved 80 % lagringsplass for å reservere plass til nye meldinger."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Vi henter inn de gamle e-postene og kobler Gmail-kontoen din til ${ MAIL_APP_NAME }, slik at nye meldinger vises automatisk."
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Vi har begynt å importere e-postene dine fra Gmail fra de siste 180 dagene. Vi gir deg beskjed når det er ferdig."
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Vi har begynt å importere e-postene dine fra Gmail. Vi gir deg beskjed når det er ferdig."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Vi beklager at du forlater oss. Hvis du har et øyeblikk, setter vi stor pris på å høre hvorfor du ønsker å avbryte abonnementet. Tilbakemeldingen din hjelper oss med å gjøre ${ BRAND_NAME } bedre for alle."
@@ -4288,6 +4316,15 @@
       "Your account and data recovery methods are set.": [
         "Dine konto- og datagjenopprettingsmetoder er angitt."
       ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "Rettelsene dine vil forme standardopplevelsen for alle, og ved lansering vil den også huske preferansene dine fremover!"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrenset lagringsplass, så vi importerer bare ${ newUserStorageText } av de nyeste Gmail-meldingene dine."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Din gratis ${ MAIL_APP_NAME }-konto har begrenset lagringsplass, så vi importerer bare de nyeste Gmail-e-postene dine."
+      ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Planen din støtter ${ MAX_SYNC_FREE_USER } Gmail-adresse.",
         "Planen din støtter ${ MAX_SYNC_FREE_USER } Gmail-adresser."
@@ -4295,6 +4332,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Planen din støtter totalt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
         "Planen din støtter totalt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "You’re among the first to try email categories.": [
+        "Du er blant de første som prøver e-postkategorier."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
@@ -4918,6 +4958,12 @@
       ],
       "Organization key is not decrypted": [
         "Organisasjonsnøkkel er ikke dekryptert"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisasjonsnøkkelen må aktiveres for å opprette inviterte brukere"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisasjonsnøkkelen må være aktivert for å opprette ikke-private brukere"
       ],
       "Passphrase unavailable": [
         "Passfrase utilgjengelig"
@@ -5678,11 +5724,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ premiumfunksjoner"
+      ],
+      "Custom email domain": [
+        "Egendefinert e-postdomene"
+      ],
+      "Email addresses": [
+        "E-postadresser"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Kryptert skylagring for filer, bilder og dokumenter"
       ],
       "More premium features": [
         "Flere premiumfunksjoner"
+      ],
+      "Storage": [
+        "Lagring"
       ],
       "Unlimited hide-my-email aliases": [
         "Ubegrenset antall hide-my-email-aliaser"
@@ -7157,6 +7215,10 @@
       "Create a new contact group": [
         "Opprett en ny kontaktgruppe"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Opprett en sikker sky for ${ memberCount } medlem",
+        "Opprett en sikker sky for ${ memberCount } medlemmer"
+      ],
       "Create in": [
         "Opprett i"
       ],
@@ -7568,6 +7630,9 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Ta med forespørselen og svaret ditt for å hjelpe oss med å forbedre nøyaktigheten."
       ],
+      "Included": [
+        "Inkludert"
+      ],
       "Included for free with your plan": [
         "Inkludert gratis i planen din"
       ],
@@ -7596,8 +7661,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8265,6 +8329,9 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synkroniser og administrer filer med ${ DRIVE_APP_NAME }-appen. Opprett og del dokumenter i ${ DOCS_APP_NAME } og oppbevar dem sikkert. Alt på ${ ios }, ${ android } og ${ desktop }."
       ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Midlertidig utilgjengelig på grunn av høy etterspørsel. Prøv igjen senere."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidig utilgjengelig. Kom tilbake senere."
       ],
@@ -8544,6 +8611,9 @@
       "Trash existing messages": [
         "Slett eksisterende meldinger"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Stol på \"${ activeSignerText }\"-nøkkelen for å bekrefte nye meldinger fra denne kontakten."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prøv nye ${ BRAND_NAME }-funksjoner, oppdateringer og produkter før de er utgitt til offentligheten. Dette vil laste inn applikasjonen på nytt."
       ],
@@ -8577,8 +8647,14 @@
       "Updating message content search...": [
         "Oppdaterer meldingsinnholdssøk..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Oppgrader når som helst for å få med deg resten"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Oppgrader nå for å få premiumfunksjoner, produkter og lagringsplass til spesialpris."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Oppgrader eller frigjør plass når som helst for å ta med resten"
       ],
       "Upgrade to ${ plan } to unlock": [
         "Oppgrader til ${ plan } for å låse opp"
@@ -9081,11 +9157,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Aktiv underskriver"
+      ],
       "Compromised": [
         "Kompromittert"
       ],
       "Expired": [
         "Utløpt"
+      ],
+      "Fallback": [
+        "Reserve"
       ],
       "KOO": [
         "KOO"
@@ -9339,6 +9421,9 @@
         "${ n } måned",
         "${ n } måneder"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tegn"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig. Kom tilbake senere)."
       ],
@@ -9470,6 +9555,9 @@
       ],
       "Category": [
         "Kategori"
+      ],
+      "Category:": [
+        "Kategori:"
       ],
       "CC": [
         "Kopi"
@@ -11023,6 +11111,9 @@
       "99.95% SLA": [
         "99,95% SLA"
       ],
+      "Access all countries": [
+        "Få tilgang til alle land"
+      ],
       "Ad-blocker and malware protection": [
         "Annonseblokkering og skadevarebeskyttelse"
       ],
@@ -11181,6 +11272,9 @@
       "Multiple admin roles": [
         "Flere administratorroller"
       ],
+      "No streaming support": [
+        "Ingen strømmestøtte"
+      ],
       "Online document editor": [
         "Dokumentredigering på nett"
       ],
@@ -11330,6 +11424,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ubegrenset volum/båndbredde"
+      ],
+      "Unlock streaming": [
+        "Lås opp strømming"
       ],
       "Up to ${ n } user": [
         "Opptil ${ n } bruker",
@@ -11738,6 +11835,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } land",
+        "${ n } land"
+      ],
       "Access advanced VPN features": [
         "Få tilgang til avanserte VPN-funksjoner"
       ],
@@ -12648,8 +12749,17 @@
       "External key automatically fetched via WKD.": [
         "Ekstern nøkkel hentet automatisk via WKD."
       ],
+      "This contact currently signs messages with this key": [
+        "Denne kontakten signerer for øyeblikket meldinger med denne nøkkelen"
+      ],
+      "This key is used for message verification": [
+        "Denne nøkkelen brukes til meldingsverifisering"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Denne nøkkelen brukes til å kryptere meldinger til denne kontakten."
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Denne nøkkelen brukes til å kryptere meldinger til denne kontakten i eldre apper"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi anbefaler at du \"ikke stoler på\" denne nøkkelen."
@@ -15203,6 +15313,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Continue with free storage": [
+        "Fortsett med gratis lagring"
+      ],
       "Continue with partial import?": [
         "Fortsette med delvis import?"
       ],
@@ -15325,6 +15438,9 @@
       "Download the app": [
         "Last ned appen"
       ],
+      "Early access to email categories": [
+        "Tidlig tilgang til e-postkategorier"
+      ],
       "Edit billing address": [
         "Rediger faktureringsadresse"
       ],
@@ -15408,6 +15524,9 @@
       ],
       "Get more from your VPN": [
         "Får mer ut av ditt VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Skaff deg mer lagringsplass med ${ MAIL_APP_NAME } Plus"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Skaff deg ${ appName[APP_NAME] }-appene"
@@ -16192,6 +16311,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorer har ikke tilgang til dataene til private brukere og kan ikke tilbakestille passordet deres."
+      ],
+      "Member activation incomplete": [
+        "Medlemsaktivering ufullstendig"
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisasjonsnøkkel må være aktivert for å be om datatilgang"
+      ],
+      "The user must have an address to request data access": [
+        "Brukeren må ha en adresse for å be om datatilgang"
       ]
     },
     "Update font modal": {

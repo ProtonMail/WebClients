@@ -381,6 +381,9 @@
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Continuer avec ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
+      "Continue with Free": [
+        "Continuer avec Free"
+      ],
       "Continue with Google": [
         "Continuer avec Google"
       ],
@@ -573,6 +576,9 @@
       "Disable categories": [
         "Désactiver les catégories"
       ],
+      "Disable category": [
+        "Désactiver la catégorie"
+      ],
       "Disable recovery phrase": [
         "Désactiver la phrase de récupération"
       ],
@@ -723,6 +729,9 @@
       "Enable ${ darkWebMonitoring }": [
         "Activez ${ darkWebMonitoring }"
       ],
+      "Enable category": [
+        "Activer la catégorie"
+      ],
       "enable desktop notifications": [
         "activer les notifications de bureau"
       ],
@@ -794,6 +803,9 @@
       ],
       "Generate key": [
         "Générer la clé"
+      ],
+      "Generate missing keys": [
+        "Générer les clés manquantes"
       ],
       "Generate new phrase": [
         "Générer une nouvelle phrase"
@@ -5292,6 +5304,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Triez automatiquement vos messages entrants avant qu'ils n'arrivent dans votre boite de réception."
       ],
+      "Available storage: ${ storageText }": [
+        "Espace de stockage disponible : ${ storageText }"
+      ],
       "Available with ${ title }": [
         "Disponible avec ${ title }"
       ],
@@ -5354,6 +5369,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Chiffrement et importation des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Assez d'espace pour stocker des années d'e-mails, de pièces jointes et bien plus encore."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Assurez un accès sécurisé aux données de l’organisation, même si votre équipe est à distance ou utilise le wifi public."
@@ -5427,6 +5445,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lisez, répondez et restez au courant de Gmail depuis ${ MAIL_APP_NAME }"
       ],
+      "Select which categories you want to add and if you want to receive push notifications for each category.": [
+        "Sélectionnez les catégories que vous voulez ajouter et si vous souhaitez recevoir des notifications push pour chacune d'elles."
+      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Configurez les comptes pour tous les utilisateurs et invitez-les à rejoindre ${ BRAND_NAME }."
       ],
@@ -5470,6 +5491,9 @@
       "Track the status and activity of your referrals": [
         "Suivez l'état et l'activité de vos parrainages"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Bénéficiez de 15 Go de stockage pour seulement ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Passez à ${ planName } pour connecter jusqu'à ${ MAX_SYNC_PAID_USER } comptes."
       ],
@@ -5485,14 +5509,20 @@
       "We can't access ${ boldEmails } anymore.": [
         "Nous ne pouvons plus accéder à ${ boldEmails }."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Nous suspendrons les importations lorsque le taux de remplissage atteindra 80 % afin de réserver de l'espace pour les nouveaux messages."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Nous apporterons vos anciens messages et connecterons votre Gmail à ${ MAIL_APP_NAME } afin que les nouveaux messages apparaissent automatiquement"
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Nous avons commencé à importer vos e-mails des 180 derniers jours depuis Gmail. Nous vous préviendrons lorsque l'opération sera terminée."
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Nous avons commencé à importer vos messages depuis Gmail. Nous vous préviendrons lorsque l'opération sera terminée."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Nous regrettons de vous voir partir. Si vous avez un moment, nous aimerions beaucoup savoir pourquoi vous souhaitez résilier votre abonnement. Vos commentaires nous aident à améliorer ${ BRAND_NAME } pour le bénéfice de tous."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Grâce aux nouvelles catégories de messages, seuls les messages importants arrivent sur votre boîte de réception principale. Les catégories fonctionnent comme des filtres à messages indésirables. ${ MAIL_APP_NAME } ne lit jamais vos e-mails ni ne partage vos données."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Vous avez déjà une adresse Gmail transférée vers ${ MAIL_APP_NAME }. Connectez-la ci-dessous pour envoyer et recevoir des e-mails directement depuis ${ MAIL_APP_NAME }."
@@ -5534,6 +5564,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Vous avez connecté une adresse de compte externe à ${ MAIL_APP_NAME }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Votre compte ${ MAIL_APP_NAME } gratuit dispose d'un espace de stockage limité, nous n'importerons donc que ${ newUserStorageText } de vos messages Gmail les plus récents."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Votre compte gratuit sur ${ MAIL_APP_NAME } dispose d'un espace de stockage limité, nous n'importerons donc que vos e-mails Gmail les plus récents."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Votre abonnement prend en charge ${ MAX_SYNC_FREE_USER } adresse Gmail.",
@@ -7149,11 +7185,17 @@
       "Email address is required": [
         "L'adresse e-mail est nécessaire."
       ],
+      "Email is not valid": [
+        "L'adresse e-mail n'est pas valide."
+      ],
       "Empty condition": [
         "La condition est vide."
       ],
       "Enter 6 digits": [
         "Saisissez 6 chiffres."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Saisissez votre nom d'utilisateur sans le domaine (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Une erreur s'est produite lors de la connexion à l'API Bitcoin."
@@ -7241,6 +7283,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Le second mot de passe n'est pas correct. Veuillez réessayer."
+      ],
+      "Incorrect username": [
+        "Le nom d'utilisateur n'est pas correct."
       ],
       "Intended recipient does not support calendar sharing": [
         "Votre destinataire ne prend pas en charge le partage de calendrier."
@@ -7351,6 +7396,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Ce n'est pas un compte ${ BRAND_NAME }."
       ],
+      "Not a valid number": [
+        "Le numéro n'est pas valide."
+      ],
       "Organization key is not decrypted": [
         "La clé de l'organisation n'est pas déchiffrée."
       ],
@@ -7362,6 +7410,9 @@
       ],
       "Password is required": [
         "Le mot de passe est nécessaire."
+      ],
+      "Passwords do not match": [
+        "Les mots de passe ne correspondent pas."
       ],
       "Payment process canceled": [
         "Le traitement du paiement a été annulé."
@@ -7444,9 +7495,6 @@
       ],
       "Please try again in a few moments.": [
         "Veuillez réessayer dans quelques instants."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Nous vous invitons à passer à un abonnement entreprise, avec plus d'un utilisateur, pour bénéficier de la prise en charge de plusieurs utilisateurs."
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Nous vous invitons à passer à un abonnement entreprise avec plus d'un utilisateur pour gérer plusieurs utilisateurs."
@@ -7545,6 +7593,9 @@
       "The amount due has changed. Please try again.": [
         "Le montant a changé. Nous vous invitons à réessayer."
       ],
+      "The email addresses do not match": [
+        "Les adresses e-mail ne correspondent pas."
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "L'image est trop grande, la taille maximale peut être de ${ MAX_FILE_DIMENSIONS } x ${ MAX_FILE_DIMENSIONS }."
       ],
@@ -7590,11 +7641,17 @@
       "There was an error, please try again.": [
         "Une erreur s’est produite, veuillez réessayer."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Ce champ dépasse le maximum de ${ maximumLength } caractères."
+      ],
       "This field is invalid": [
         "Ce champ n'est pas valide."
       ],
       "This field is required": [
         "Ce champ est nécessaire."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Ce champ nécessite un minimum de ${ minimumLength } caractères."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Ce nom de dossier n'est pas disponible, veuillez en choisir un autre."
@@ -7620,6 +7677,9 @@
       "Try again later": [
         "Veuillez réessayer plus tard."
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes : _ . -"
+      ],
       "Unable to upload file": [
         "Impossible de charger le fichier"
       ],
@@ -7637,6 +7697,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Les fichiers chargés ne sont pas des clés privées valides. Nous vous invitons à vérifier et réessayer."
+      ],
+      "Username must begin with a letter or digit": [
+        "Le nom d'utilisateur doit commencer par une lettre ou un chiffre."
+      ],
+      "Username must end with a letter or digit": [
+        "Le nom d'utilisateur doit se terminer par une lettre ou un chiffre."
       ],
       "Validation error": [
         "Une erreur de validation s'est produite."
@@ -8378,6 +8444,9 @@
       "${ PROTON_SENTINEL_NAME } account protection": [
         "Protection de compte ${ PROTON_SENTINEL_NAME }"
       ],
+      "10+ premium features": [
+        "Plus de 10 fonctionnalités premium"
+      ],
       "15 GB storage": [
         "15 Go de stockage"
       ],
@@ -8413,6 +8482,12 @@
       "Continue": [
         "Continuer"
       ],
+      "Custom email domain": [
+        "Domaine de messagerie personnalisé"
+      ],
+      "Email addresses": [
+        "Adresses e-mail"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Stockage cloud chiffré pour vos fichiers, photos et documents"
       ],
@@ -8442,6 +8517,9 @@
       ],
       "Short domain @pm.me": [
         "Domaine court @pm.me"
+      ],
+      "Storage": [
+        "Espace de stockage"
       ],
       "Torrenting support (P2P)": [
         "Prise en charge des torrents (P2P)"
@@ -8810,6 +8888,9 @@
     "Force upgrade safety review": {
       "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
         "Je comprends que je ne pourrai plus me connecter sur des anciennes versions des applications mobiles ${ BRAND_NAME }."
+      ],
+      "Learn more": [
+        "En savoir plus"
       ]
     },
     "Form heading": {
@@ -9626,8 +9707,8 @@
       "${ BRAND_NAME } Free": [
         "${ BRAND_NAME } Free"
       ],
-      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
-        "${ BRAND_NAME } est financé de manière indépendante et opère sans publicité.\nCi-dessous se trouvent des exemples pratique de l'utilisation de cette indépendance."
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } est financé de manière indépendante et opère sans publicité. Ci-dessous se trouvent des exemples pratiques de l'utilisation de cette indépendance."
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "Vous pouvez faire confiance à ${ BRAND_NAME } pour protéger votre vie privée, grâce à un chiffrement fort, un code open source et la législation suisse en matière de protection des données. Nous pensons que personne ne devrait pouvoir exploiter vos données. Notre technologie et notre activité reposent sur cette définition fondamentalement plus forte de la protection de la vie privée"
@@ -10064,9 +10145,9 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Ajoutez votre nom et votre logo pour créer une expérience plus personnalisée pour votre organisation."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Ajout de ${ addedServerCount } serveur de passerelle",
-        "Ajout de ${ addedServerCount } serveurs de passerelle"
+      "Adding ${ total } gateway server": [
+        "Ajout de ${ total } serveur de passerelle",
+        "Ajout de ${ total } serveurs de passerelle"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "L'ajout d'une adresse e-mail externe désactivera le chiffrement de bout en bout pour toutes les communications par e-mail au sein de ce groupe. Voulez-vous continuer ?"
@@ -11259,6 +11340,9 @@
       ],
       "Include device, location, and IP details": [
         "Inclure les informations sur l'appareil, l'emplacement et l'adresse IP"
+      ],
+      "Included": [
+        "Inclus"
       ],
       "Increase your account security by verifying your email address.": [
         "Renforcez la sécurité de votre compte en vérifiant votre adresse e-mail."
@@ -12588,6 +12672,9 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Pour déchiffrer et afficher vos données verrouillées après une réinitialisation du mot de passe, sélectionnez une méthode de récupération."
       ],
+      "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
+        "Pour activer la protection post-quantique, vous devez terminer la génération de vos nouvelles clés de chiffrement post-quantiques."
+      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Pour garantir la sécurité maximale de votre compte, désactivez la **Récupération par e-mail**."
       ],
@@ -12711,8 +12798,14 @@
       "Unverified email address.": [
         "L'adresse e-mail n'a pas été vérifiée."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Changer d'abonnement à tout moment pour transférer le reste"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Changer d'abonnement ou libérer de l'espace à tout moment pour transférer le reste"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Changez d'abonnement pour ajouter une adresse plus courte @pm.me à votre compte, plus facile à partager et qui signifie « ${ MAIL_APP_NAME } me » ou « Private Message me » (envoyez-moi un message privé)."
@@ -14039,6 +14132,9 @@
       "${ PROTON_SENTINEL_NAME } protection": [
         "Protection ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caractères"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible, nous vous invitons à vérifier plus tard)"
       ],
@@ -14636,6 +14732,9 @@
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
         "Activez ${ DARK_WEB_MONITORING_NAME } pour ${ domain.DomainName }"
+      ],
+      "Enable categories": [
+        "Activer les catégories"
       ],
       "Enabled": [
         "Activé"
@@ -18658,6 +18757,9 @@
       "Plain text": [
         "Texte brut"
       ],
+      "Push notifications": [
+        "Notifications push"
+      ],
       "Receive from all": [
         "Recevoir de tous"
       ],
@@ -20033,13 +20135,13 @@
       ]
     },
     "PQC account key generation": {
-      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
-        "Impossible de générer les clés. Pour activer la protection post-quantique, vous devrez générer manuellement vos nouvelles clés de chiffrement.\n\n${ settingsLink } et sélectionnez « Générer une clé » pour votre compte et pour chaque adresse."
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Impossible de générer les clés. Pour activer la protection post-quantique, vous devez terminer la génération de vos nouvelles clés de chiffrement post-quantiques.\n\n\n${ goToSettingsLink } puis sélectionnez « Générer les clés manquantes »."
       ]
     },
     "PQC adress key generation": {
-      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
-        "Impossible de générer les clés d'adresse. Pour activer la protection post-quantique, vous devrez générer manuellement vos nouvelles clés de chiffrement.\n\nAllez à ${ settingsLink } et sélectionnez « Générer une clé » pour chaque adresse."
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys for each address.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Impossible de générer les clés d'adresse. Pour activer la protection post-quantique, vous devez terminer la génération de vos nouvelles clés de chiffrement post-quantiques pour chaque adresse.\n\n\n${ goToSettingsLink } puis sélectionnez « Générer les clés manquantes »."
       ]
     },
     "PQC compatibility warning": {
@@ -24622,6 +24724,9 @@
       "Add another notification to remind you of this event": [
         "Ajoutez une autre notification pour vous rappeler cet événement."
       ],
+      "Add categories": [
+        "Ajouter les catégories"
+      ],
       "Add contact group name": [
         "Ajouter le nom du groupe de contacts"
       ],
@@ -24796,6 +24901,9 @@
       "Catch-all address": [
         "Adresse catch-all"
       ],
+      "Categories": [
+        "Catégories"
+      ],
       "Change login password": [
         "Changer le mot de passe de connexion"
       ],
@@ -24888,6 +24996,9 @@
       ],
       "Contact us": [
         "Nous contacter"
+      ],
+      "Continue with free storage": [
+        "Continuer avec l'espace de stockage gratuit"
       ],
       "Continue with partial import?": [
         "Continuer l'importation partielle ?"
@@ -25297,6 +25408,9 @@
       "Feature access": [
         "Accès aux fonctionnalités"
       ],
+      "Fewer distractions, more focus": [
+        "Moins de distractions, plus de concentration"
+      ],
       "Filter for more focus": [
         "Filtrez vos messages pour une meilleure concentration"
       ],
@@ -25395,6 +25509,9 @@
       ],
       "Get more from your VPN": [
         "Tirez le meilleur parti de votre VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Obtenez plus d'espace de stockage avec ${ MAIL_APP_NAME } Plus"
       ],
       "Get started": [
         "Commencez"
@@ -26517,6 +26634,9 @@
       "Each imported email will have this label": [
         "Chaque message importé aura ce label."
       ],
+      "Early access to new apps and features.": [
+        "Accès en avant-première aux nouvelles fonctionnalités et applications."
+      ],
       "Edit folder names": [
         "Modifiez les noms des dossiers."
       ],
@@ -26673,8 +26793,8 @@
       "This feature is only available on Beta": [
         "Cette fonctionnalité n'est disponible que sur la version bêta."
       ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "Il s'agit de la clé par défaut utilisée par les autres utilisateurs de ${ MAIL_APP_NAME } sur les anciennes applications mobiles pour chiffrer les données qu'ils vous envoient."
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
+        "Il s'agit de la clé par défaut utilisée par les autres utilisateurs de ${ MAIL_APP_NAME } sur les anciennes applications pour chiffrer les données qu'ils vous envoient."
       ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
         "Il s’agit de la clé par défaut utilisée par les autres utilisateurs de ${ MAIL_APP_NAME } pour chiffrer les données qu’ils vous envoient."
@@ -27206,6 +27326,16 @@
       ],
       "Writing assistant": [
         "Assistant d'écriture"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Le mot de passe doit comporter au moins ${ MIN_PASSWORD_LENGTH } caractère.",
+        "Le mot de passe doit comporter au moins ${ MIN_PASSWORD_LENGTH } caractères."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractère maximum).",
+        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractères maximum)."
       ]
     },
     "Video control": {

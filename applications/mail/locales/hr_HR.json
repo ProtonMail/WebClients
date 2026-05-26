@@ -1124,9 +1124,6 @@
       "Trust": [
         "Vjeruj"
       ],
-      "Trust key": [
-        "Ključ povjerenja"
-      ],
       "Trust public key": [
         "Vjeruj javnom ključu"
       ],
@@ -3340,6 +3337,12 @@
       "Organization key is not decrypted": [
         "Organizacijski ključ nije dešifriran"
       ],
+      "Organization key must be activated to create invited users": [
+        "Ključ organizacije mora biti aktiviran kako bi se kreirali pozvani korisnici"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Ključ organizacije mora biti aktivan kako bi se kreirali neprivatni korisnici"
+      ],
       "Passwords do not match": [
         "Lozinke se ne poklapaju"
       ],
@@ -4956,9 +4959,7 @@
         "Inicijalizacija…"
       ],
       "Insert image": [
-        "Umetni sliku",
-        "Umetni slike",
-        "Umetni slike"
+        "Umetni sliku"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -9874,6 +9875,11 @@
       ],
       "Only": [
         "Samo"
+      ]
+    },
+    "unprivatization": {
+      "The user must have an address to request data access": [
+        "Korisnik mora imati adresu za traženje pristupa podacima"
       ]
     },
     "Update font modal": {

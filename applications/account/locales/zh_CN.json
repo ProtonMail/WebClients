@@ -381,6 +381,9 @@
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "继续使用 ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
+      "Continue with Free": [
+        "注册免费账户"
+      ],
       "Continue with Google": [
         "通过 Google 继续"
       ],
@@ -573,6 +576,9 @@
       "Disable categories": [
         "禁用分类"
       ],
+      "Disable category": [
+        "禁用分类"
+      ],
       "Disable recovery phrase": [
         "禁用恢复短语"
       ],
@@ -723,6 +729,9 @@
       "Enable ${ darkWebMonitoring }": [
         "启用 ${ darkWebMonitoring }"
       ],
+      "Enable category": [
+        "启用分类"
+      ],
       "enable desktop notifications": [
         "开启推送通知"
       ],
@@ -794,6 +803,9 @@
       ],
       "Generate key": [
         "生成密钥"
+      ],
+      "Generate missing keys": [
+        "生成缺失的密钥"
       ],
       "Generate new phrase": [
         "生成新短语"
@@ -5260,6 +5272,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "在邮件到达收件箱前自动分类。"
       ],
+      "Available storage: ${ storageText }": [
+        "可用空间：${ storageText }"
+      ],
       "Available with ${ title }": [
         "随 ${ title } 可用"
       ],
@@ -5322,6 +5337,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密并导入联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了。"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "拥有足够空间存储多年的邮件、附件等"
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "确保对组织数据的安全访问，即使您的团队在远程或使用公共 WiFi 时也是如此。"
@@ -5395,6 +5413,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "在 ${ MAIL_APP_NAME } 中阅读、回复并随时处理 Gmail 邮件"
       ],
+      "Select which categories you want to add and if you want to receive push notifications for each category.": [
+        "请选择要添加的分类，以及是否为每个分类接收推送通知。"
+      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "为所有用户建立账户并邀请他们加入 ${ BRAND_NAME }。"
       ],
@@ -5437,6 +5458,9 @@
       "Track the status and activity of your referrals": [
         "实时跟踪已发出的邀请动态"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "仅需 ${ config.offerPrice } 即可解锁 15 GB 存储空间"
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "升级到 ${ planName } 最多可连接 ${ MAX_SYNC_PAID_USER } 个账户"
       ],
@@ -5452,14 +5476,20 @@
       "We can't access ${ boldEmails } anymore.": [
         "我们无法再访问 ${ boldEmails }。"
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "存储空间使用量达到 80% 时，我们会暂停导入，为接收新消息预留空间。"
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "我们将导入您的旧电子邮件并将 Gmail 连接到 ${ MAIL_APP_NAME }，以便新邮件自动显示。"
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "我们已开始导入您过去 180 天的 Gmail 邮件，导入完成后将会通知您。"
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "我们已开始从 Gmail 导入您的邮件，导入完成后将通知您。"
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
+      ],
+      "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "借助新的邮件分类功能，只有重要邮件才会进入您的主收件箱。分类的运行方式与垃圾邮件过滤器类似。${ MAIL_APP_NAME } 绝不会读取您的邮件或分享您的数据。"
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "您已有一个 Gmail 地址转发到 ${ MAIL_APP_NAME }。请在下方连接该地址，以便直接从 ${ MAIL_APP_NAME } 收发电子邮件。"
@@ -5499,6 +5529,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "您已将 1 个外部账户地址连接到 ${ MAIL_APP_NAME }。"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "您的免费 ${ MAIL_APP_NAME } 账户存储空间有限，因此我们仅导入 ${ newUserStorageText } 的最近 Gmail 邮件"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "您的免费 ${ MAIL_APP_NAME } 账户存储空间有限，因此我们仅导入您最近的 Gmail 邮件"
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "您的套餐支持 ${ MAX_SYNC_FREE_USER } 个 Gmail 地址。"
@@ -7102,11 +7138,17 @@
       "Email address is required": [
         "邮箱地址必须填写"
       ],
+      "Email is not valid": [
+        "无效邮箱"
+      ],
       "Empty condition": [
         "条件为空"
       ],
       "Enter 6 digits": [
         "请输入 6 位验证码"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "请输入您的用户名（不含 @example.com 域名）"
       ],
       "Error connecting to the Bitcoin API.": [
         "连接比特币 API 失败。"
@@ -7194,6 +7236,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "二级密码错误，请重试。"
+      ],
+      "Incorrect username": [
+        "用户名不正确"
       ],
       "Intended recipient does not support calendar sharing": [
         "目标收件人不支持日历共享"
@@ -7303,6 +7348,9 @@
       "Not a ${ BRAND_NAME } account": [
         "不是 ${ BRAND_NAME } 账户"
       ],
+      "Not a valid number": [
+        "无效号码"
+      ],
       "Organization key is not decrypted": [
         "机构密钥尚未解密"
       ],
@@ -7314,6 +7362,9 @@
       ],
       "Password is required": [
         "密码必须填写"
+      ],
+      "Passwords do not match": [
+        "密码不匹配"
       ],
       "Payment process canceled": [
         "支付已取消"
@@ -7395,9 +7446,6 @@
       ],
       "Please try again in a few moments.": [
         "请稍后再试."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "请先升级为支持多用户的商务账户"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "请升级为支持多用户的商务账户后再执行用户管理操作。"
@@ -7495,6 +7543,9 @@
       "The amount due has changed. Please try again.": [
         "应付金额已更改，请重试。"
       ],
+      "The email addresses do not match": [
+        "邮箱地址不一致"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "图片太大，最大尺寸为 ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -7540,11 +7591,17 @@
       "There was an error, please try again.": [
         "出现错误，请重试。"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "此项超过了 ${ maximumLength } 个字符的长度限制。"
+      ],
       "This field is invalid": [
         "字段无效"
       ],
       "This field is required": [
         "此项必须填写"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "该字段至少需要 ${ minimumLength } 个字符。"
       ],
       "This folder name is not available. Please choose a different name.": [
         "文件夹名称不可用，请重新填写。"
@@ -7570,6 +7627,9 @@
       "Try again later": [
         "请稍后再试"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "请使用英文字母、阿拉伯数字或 _ . - 符号"
+      ],
       "Unable to upload file": [
         "无法上传文件"
       ],
@@ -7587,6 +7647,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "上传的文件不是有效的私钥。请验证并重试。"
+      ],
+      "Username must begin with a letter or digit": [
+        "用户名必须以字母或数字开头"
+      ],
+      "Username must end with a letter or digit": [
+        "用户名必须以字母或数字结尾"
       ],
       "Validation error": [
         "验证失败"
@@ -8317,6 +8383,9 @@
       "${ PROTON_SENTINEL_NAME } account protection": [
         "${ PROTON_SENTINEL_NAME } 账户保护"
       ],
+      "10+ premium features": [
+        "10+ 高级功能"
+      ],
       "15 GB storage": [
         "15 GB 存储空间"
       ],
@@ -8350,6 +8419,12 @@
       "Continue": [
         "继续"
       ],
+      "Custom email domain": [
+        "自定义邮箱域名"
+      ],
+      "Email addresses": [
+        "邮箱地址"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "用于文件、照片和文档的加密云存储空间"
       ],
@@ -8379,6 +8454,9 @@
       ],
       "Short domain @pm.me": [
         "短域名 @pm.me"
+      ],
+      "Storage": [
+        "存储空间"
       ],
       "Torrenting support (P2P)": [
         "支持 BT 下载 (P2P)"
@@ -8740,6 +8818,9 @@
     "Force upgrade safety review": {
       "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
         "我理解我将无法再登录旧版本的 ${ BRAND_NAME } 应用。"
+      ],
+      "Learn more": [
+        "了解详情"
       ]
     },
     "Form heading": {
@@ -9546,8 +9627,8 @@
       "${ BRAND_NAME } Free": [
         "${ BRAND_NAME } Free"
       ],
-      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
-        "${ BRAND_NAME } 独立运营且无广告收入。\n以下示例说明了如何在实际中运用这种独立性。"
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } 由独立资金支持，且运营不含广告。以下是这种独立性在实际中的运用示例。"
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } 是您可以信赖的隐私，由强大的加密、开源代码和瑞士隐私法确保。我们相信没有人能够利用您的数据。我们的技术和业务基于这种从根本上更严格的隐私定义。"
@@ -9957,8 +10038,8 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "添加您的名称和徽标来为您的组织创建更多个性化的体验。"
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "正在添加 ${ addedServerCount } 台网关服务器"
+      "Adding ${ total } gateway server": [
+        "正在添加 ${ total } 台网关服务器"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "添加外部邮箱地址将禁用该组内所有电子邮件通信的端到端加密。要继续吗？"
@@ -11138,6 +11219,9 @@
       ],
       "Include device, location, and IP details": [
         "包含设备、位置和 IP 详情"
+      ],
+      "Included": [
+        "已包含"
       ],
       "Increase your account security by verifying your email address.": [
         "验证您的邮箱地址，提升账户安全性。"
@@ -12456,6 +12540,9 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "密码重置后如需解密账户数据，请选择一种恢复方式。"
       ],
+      "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
+        "若要启用后量子保护，您需要完成新后量子加密密钥的生成。"
+      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "为确保您账户的最高安全性，请禁用**通过密保邮箱恢复**！"
       ],
@@ -12579,8 +12666,14 @@
       "Unverified email address.": [
         "邮箱地址未验证。"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "随时升级以迁移剩余内容"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "随时升级或清理空间以迁移剩余内容"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "升级账户即可增设一个简短的 @pm.me 邮箱地址，这个域名可以代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
@@ -13888,6 +13981,9 @@
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME } 保护"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } 个字符"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
       ],
@@ -14484,6 +14580,9 @@
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
         "为 ${ domain.DomainName } 启用 ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Enable categories": [
+        "启用分类"
       ],
       "Enabled": [
         "已启用"
@@ -18451,6 +18550,9 @@
       "Plain text": [
         "纯文本"
       ],
+      "Push notifications": [
+        "推送通知"
+      ],
       "Receive from all": [
         "全部接收"
       ],
@@ -19813,13 +19915,13 @@
       ]
     },
     "PQC account key generation": {
-      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
-        "无法生成密钥。要激活后量子保护，您需要手动生成新的加密密钥。\n\n请访问 ${ settingsLink } 并为您的账户及每个地址选择“生成密钥”。"
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "无法生成密钥！若要激活后量子保护，您需要完成新后量子加密密钥的生成。\n\n${ goToSettingsLink }，然后选择“生成缺失的密钥”。"
       ]
     },
     "PQC adress key generation": {
-      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
-        "无法生成地址密钥！要激活后量子保护，您需要手动生成新的加密密钥。\n\n请前往 ${ settingsLink } 并为每个地址选择“生成密钥”。"
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys for each address.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "无法生成地址密钥！若要激活后量子保护，您需要为每个地址完成新后量子加密密钥的生成。\n\n${ goToSettingsLink }，然后选择“生成缺失的密钥”。"
       ]
     },
     "PQC compatibility warning": {
@@ -24215,6 +24317,9 @@
       "Add another notification to remind you of this event": [
         "添加另一个提醒您此日程的通知"
       ],
+      "Add categories": [
+        "添加分类"
+      ],
       "Add contact group name": [
         "添加联系人群组名称"
       ],
@@ -24389,6 +24494,9 @@
       "Catch-all address": [
         "通配邮箱"
       ],
+      "Categories": [
+        "分类"
+      ],
       "Change login password": [
         "更改登录密码"
       ],
@@ -24481,6 +24589,9 @@
       ],
       "Contact us": [
         "联系我们"
+      ],
+      "Continue with free storage": [
+        "继续使用免费存储空间"
       ],
       "Continue with partial import?": [
         "继续以部分导入进行吗？"
@@ -24887,6 +24998,9 @@
       "Feature access": [
         "功能访问权限"
       ],
+      "Fewer distractions, more focus": [
+        "更少干扰，更多专注"
+      ],
       "Filter for more focus": [
         "筛选更多要点"
       ],
@@ -24985,6 +25099,9 @@
       ],
       "Get more from your VPN": [
         "从您的 VPN 获取更多信息"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "使用 ${ MAIL_APP_NAME } Plus 获取更多存储空间"
       ],
       "Get started": [
         "开始使用"
@@ -26105,6 +26222,9 @@
       "Each imported email will have this label": [
         "每一封导入的邮件都会有这个标签"
       ],
+      "Early access to new apps and features.": [
+        "抢先访问新应用和功能."
+      ],
       "Edit folder names": [
         "更改文件夹名称"
       ],
@@ -26261,8 +26381,8 @@
       "This feature is only available on Beta": [
         "此功能仅在 Beta 版中可用"
       ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "这是其他 ${ MAIL_APP_NAME } 用户在旧版移动应用上用来加密发送给您的数据的默认密钥"
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
+        "这是其他 ${ MAIL_APP_NAME } 用户在旧版应用中用于加密发送给您数据的默认密钥"
       ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
         "这是其他 ${ MAIL_APP_NAME } 用户用于加密发送给您数据的默认密钥"
@@ -26792,6 +26912,14 @@
       ],
       "Writing assistant": [
         "写作助手"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "密码必须至少包含 ${ MIN_PASSWORD_LENGTH } 个字符"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "请缩短用户名（最长 ${ n } 个字符）"
       ]
     },
     "Video control": {

@@ -606,6 +606,9 @@
       "Make a copy": [
         "Buat salinan"
       ],
+      "Manage addresses": [
+        "Kelola alamat"
+      ],
       "Manage advanced account protections": [
         "Kelola perlindungan akun lanjutan"
       ],
@@ -3279,9 +3282,6 @@
       "Failed to update public share node": [
         "Gagal memperbarui node berbagi publik"
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "File \"${ item.name }\" tidak dapat diunggah karena kesalahan \"${ error }\""
-      ],
       "File \"${ name }\" is already downloading": [
         "Proses unduhan file \"${ name }\" sedang berlangsung"
       ],
@@ -3399,6 +3399,12 @@
       "Organization key is not decrypted": [
         "Kunci organisasi tidak didekripsi"
       ],
+      "Organization key must be activated to create invited users": [
+        "Kunci organisasi harus diaktifkan untuk membuat pengguna yang diundang"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Kunci organisasi harus diaktifkan untuk membuat pengguna non-privat"
+      ],
       "Password is required": [
         "Kata sandi wajib diisi"
       ],
@@ -3485,9 +3491,6 @@
       ],
       "Some contacts could not be deleted": [
         "Sebagian kontak tidak dapat dihapus"
-      ],
-      "Some files were ignored because they are not supported in Photos": [
-        "Beberapa file tidak diproses karena tidak didukung oleh Photos"
       ],
       "Some groups could not be deleted": [
         "Sebagian grup tidak dapat dihapus"
@@ -3668,9 +3671,6 @@
       ],
       "You must set a name": [
         "Anda harus menetapkan nama"
-      ],
-      "Your browser does not support uploading folders": [
-        "Browser Anda tidak mendukung pengunggahan folder"
       ],
       "Your import will not be processed.": [
         "Impor Anda tidak akan diproses."
@@ -6010,9 +6010,6 @@
       ],
       "Unknown date": [
         "Tanggal yang tidak diketahui"
-      ],
-      "Unknown error": [
-        "Kesalahan yang tidak diketahui"
       ],
       "Unlock drive to recover files": [
         "Buka kunci drive untuk memulihkan file yang ada"
@@ -8680,9 +8677,6 @@
       "Failed to convert external invitation": [
         "Undangan eksternal gagal dikonversi"
       ],
-      "Failed to download files: ${ err }": [
-        "Gagal mengunduh file: ${ err }"
-      ],
       "Failed to move, please try again": [
         "Pemindahan gagal, silakan coba lagi"
       ],
@@ -8739,9 +8733,6 @@
       ],
       "Selected item was not removed from your list": [
         "Item yang dipilih gagal dihapus dari daftar Anda"
-      ],
-      "Selected items were successfully removed from your list": [
-        "Item yang dipilih berhasil dihapus dari daftar Anda"
       ],
       "Share invitation accepted successfully": [
         "Undangan pembagian berhasil diterima"
@@ -12186,6 +12177,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Admin tidak dapat mengakses data pengguna pribadi dan tidak dapat mengatur ulang kata sandinya."
+      ],
+      "Member activation incomplete": [
+        "Aktivasi anggota belum rampung"
+      ],
+      "Organization key must be activated to request data access": [
+        "Kunci organisasi harus diaktifkan untuk meminta pengaksesan data"
+      ],
+      "The user must have an address to request data access": [
+        "Pengguna harus memiliki alamat untuk meminta pengaksesan data"
       ]
     },
     "Upsell": {

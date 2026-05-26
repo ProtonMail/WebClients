@@ -381,6 +381,9 @@
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Працягнуць з ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
+      "Continue with Free": [
+        "Працягнуць з тарыфным планам Free"
+      ],
       "Continue with Google": [
         "Працягнуць з Google"
       ],
@@ -573,6 +576,9 @@
       "Disable categories": [
         "Адключыць катэгорыі"
       ],
+      "Disable category": [
+        "Адключыць катэгорыю"
+      ],
       "Disable recovery phrase": [
         "Адключыць фразу аднаўлення"
       ],
@@ -723,6 +729,9 @@
       "Enable ${ darkWebMonitoring }": [
         "Уключыць ${ darkWebMonitoring }"
       ],
+      "Enable category": [
+        "Уключыць катэгорыю"
+      ],
       "enable desktop notifications": [
         "ўключэнне апавяшчэнняў на працоўным стале"
       ],
@@ -794,6 +803,9 @@
       ],
       "Generate key": [
         "Згенерыраваць ключ"
+      ],
+      "Generate missing keys": [
+        "Згенерыраваць адсутныя ключы"
       ],
       "Generate new phrase": [
         "Згенерыраваць новую фразу"
@@ -5356,6 +5368,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Аўтаматычна сартуйце свае ўваходныя паведамленні перад тым, як яны трапяць у вашу паштовую скрыню."
       ],
+      "Available storage: ${ storageText }": [
+        "Даступна ў сховішчы: ${ storageText }"
+      ],
       "Available with ${ title }": [
         "Даступна з ${ title }"
       ],
@@ -5418,6 +5433,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шыфраванне і імпартаванне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Дастаткова месца ў сховішчы, якога хопіць на доўгія гады для захоўвання лістоў, далучэнняў і іншай інфармацыі."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Забяспечце бяспечны доступ да даных арганізацыі, нават калі ваша каманда працуе аддалена або выкарыстоўвае публічны Wi-Fi."
@@ -5491,6 +5509,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Чытайце, адказвайце і будзьце ў курсе таго, што адбываецца ў Gmail з дапамогай ${ MAIL_APP_NAME }"
       ],
+      "Select which categories you want to add and if you want to receive push notifications for each category.": [
+        "Выберыце, якія катэгорыі вы хочаце дадаць і ці хочаце вы атрымліваць push-апавяшчэнні для кожнай катэгорыі."
+      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Наладзьце ўліковыя запісы для ўсіх карыстальнікаў і запрасіце іх далучыцца да ${ BRAND_NAME }."
       ],
@@ -5536,6 +5557,9 @@
       "Track the status and activity of your referrals": [
         "Сачэнне за статусам і актыўнасцю вашых рэферальных спасылак"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Разблакіруйце 15 ГБ сховішча ўсяго за ${ config.offerPrice }"
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Палепшыце тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } уліковых запісаў"
       ],
@@ -5551,14 +5575,20 @@
       "We can't access ${ boldEmails } anymore.": [
         "Больш не ўдаецца атрымаць доступ да ${ boldEmails }."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Імпартаванне будзе прыпынена, калі сховішча будзе запоўнена на 80%. Гэта дазволіць зарэзерваваць астатняе месца для новых паведамленняў."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Мы перанясём вашы старыя паведамленні і падключым ваш Gmail да ${ MAIL_APP_NAME }, каб новыя паведамленні з'яўляліся ў ім аўтаматычна."
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Пачалося імпартаванне вашых лістоў з Gmail за апошнія 180 дзён. Вы будзеце апавешчаны, калі працэс будзе завершаны."
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Пачалося імпартаванне вашых лістоў з Gmail. Вы будзеце апавешчаны, калі працэс будзе завершаны."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Нам шкада, што вы пакідаеце нас. Мы будзем вам вельмі ўдзячныя, калі вы знойдзеце крыху часу паведаміць аб прычынах скасавання сваёй падпіскі. Вашы водгукі дапамагаюць зрабіць ${ BRAND_NAME } яшчэ лепш для кожнага карыстальніка."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "З новымі катэгорыямі лістоў, толькі важныя лісты будуць трапляць у вашу асноўную паштовую скрыню. Катэгорыі працуюць аналагічна фільтрам спаму. ${ MAIL_APP_NAME } ніколі не аналізуе вашы лісты і не абагульвае вашы даныя."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "У вас ужо ёсць адрас Gmail, які перасылае лісты ў ${ MAIL_APP_NAME }. Падключыце яго ніжэй, каб адпраўляць і атрымліваць лісты наўпрост з ${ MAIL_APP_NAME }."
@@ -5604,6 +5634,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Вы падключылі адзін адрас знешняга ўліковага запісу да ${ MAIL_APP_NAME }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "У вашага бясплатнага ўліковага запісу ${ MAIL_APP_NAME } абмежаваная ёмістасць сховішча і таму, удалося імпартаваць толькі ${ newUserStorageText } вашых апошніх паведамленняў з паштовай скрыні Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "У вашага бясплатнага ўліковага запісу ${ MAIL_APP_NAME } абмежаваная ёмістасць сховішча і таму, удалося імпартаваць толькі самыя апошнія вашы лісты з Gmail."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Ваш тарыфны план падтрымлівае ${ MAX_SYNC_FREE_USER } адрас Gmail.",
@@ -7243,11 +7279,17 @@
       "Email address is required": [
         "Патрабуецца ўвесці адрас электроннай пошты"
       ],
+      "Email is not valid": [
+        "Несапраўдная электронная пошта"
+      ],
       "Empty condition": [
         "Пустая ўмова"
       ],
       "Enter 6 digits": [
         "Увядзіце 6 лічбаў"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Увядзіце сваё імя карыстальніка без дамена (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Памылка падключэння да Bitcoin API."
@@ -7335,6 +7377,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Няправільны другі пароль. Паспрабуйце яшчэ раз."
+      ],
+      "Incorrect username": [
+        "Няправільнае імя карыстальніка"
       ],
       "Intended recipient does not support calendar sharing": [
         "У прызначанага атрымальніка функцыя абагулення календара не падтрымліваецца"
@@ -7447,6 +7492,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Не з'яўляецца ўліковым запісам ${ BRAND_NAME }"
       ],
+      "Not a valid number": [
+        "Несапраўдны нумар"
+      ],
       "Organization key is not decrypted": [
         "Ключ арганізацыі не расшыфраваны"
       ],
@@ -7458,6 +7506,9 @@
       ],
       "Password is required": [
         "Патрабуецца ўвесці пароль"
+      ],
+      "Passwords do not match": [
+        "Паролі не супадаюць"
       ],
       "Payment process canceled": [
         "Апрацоўка плацяжу скасавана"
@@ -7542,9 +7593,6 @@
       ],
       "Please try again in a few moments.": [
         "Паўтарыце спробу крыху пазней."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Перайдзіце на тарыфны план для бізнесу з больш чым 1 карыстальнікам, каб атрымаць падтрымку шматкарыстальніцкага рэжыму"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Перайдзіце на тарыфны план для бізнесу з больш чым 1 карыстальнікам, каб атрымаць падтрымку шматкарыстальніцкага рэжыму."
@@ -7645,6 +7693,9 @@
       "The amount due has changed. Please try again.": [
         "Сума для аплаты змянілася. Паспрабуйце яшчэ раз."
       ],
+      "The email addresses do not match": [
+        "Адрасы электроннай пошты не супадаюць"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Занадта вялікі файл. Максімальны памер: ${ MAX_FILE_DIMENSIONS }х${ MAX_FILE_DIMENSIONS }"
       ],
@@ -7687,11 +7738,20 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "У вашым знешнім уліковым запісе занадта шмат папак. Наладзьце імпартаванне, каб выдаліць некаторыя папкі."
       ],
+      "There was an error, please try again.": [
+        "Адбылася памылка. Паспрабуйце яшчэ раз."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Гэта поле перавышае максімальную колькасць сімвалаў (дазволена: ${ maximumLength })."
+      ],
       "This field is invalid": [
         "Гэта поле з'яўляецца памылковым"
       ],
       "This field is required": [
         "Абавязковае поле"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Поле павінна змяшчаць як мінімум ${ minimumLength } сімвалаў."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Гэта назва для папкі недаступна. Выберыце іншую назву."
@@ -7717,6 +7777,9 @@
       "Try again later": [
         "Паспрабуйце яшчэ раз пазней"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
+      ],
       "Unable to upload file": [
         "Немагчыма запампаваць файл"
       ],
@@ -7734,6 +7797,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Запампаваныя файлы з'яўляюцца несапраўднымі закрытымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз."
+      ],
+      "Username must begin with a letter or digit": [
+        "Імя карыстальніка павінна пачынацца з літары або лічбы"
+      ],
+      "Username must end with a letter or digit": [
+        "Імя карыстальніка павінна заканчвацца літарай або лічбай"
       ],
       "Validation error": [
         "Памылка праверкі"
@@ -8488,6 +8557,9 @@
       "${ PROTON_SENTINEL_NAME } account protection": [
         "Абарона ўліковага запісу ${ PROTON_SENTINEL_NAME }"
       ],
+      "10+ premium features": [
+        "Больш за 10 прэміяльных функцый"
+      ],
       "15 GB storage": [
         "15 ГБ сховішча"
       ],
@@ -8527,6 +8599,12 @@
       "Continue": [
         "Працягнуць"
       ],
+      "Custom email domain": [
+        "Карыстальніцкі дамен электроннай пошты"
+      ],
+      "Email addresses": [
+        "Адрасы электроннай пошты"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Зашыфраванае воблачнае сховішча для файлаў, фатаграфій і дакументаў"
       ],
@@ -8556,6 +8634,9 @@
       ],
       "Short domain @pm.me": [
         "Кароткі дамен @pm.me"
+      ],
+      "Storage": [
+        "Сховішча"
       ],
       "Torrenting support (P2P)": [
         "Падтрымка торэнтаў (P2P)"
@@ -8938,6 +9019,9 @@
     "Force upgrade safety review": {
       "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
         "Я разумею, што я больш не змагу ўвайсці са старых версій праграм ${ BRAND_NAME }."
+      ],
+      "Learn more": [
+        "Даведацца больш"
       ]
     },
     "Form heading": {
@@ -9675,7 +9759,7 @@
         "Імпартаваць з ${ providerName }"
       ],
       "More import options": [
-        "Больш параметраў імпарту"
+        "Больш параметраў імпартавання"
       ]
     },
     "Import status": {
@@ -9774,7 +9858,7 @@
       "${ BRAND_NAME } Free": [
         "${ BRAND_NAME } Free"
       ],
-      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
         "${ BRAND_NAME } атрымлівае незлаежнае фінанстванне і працуе без рэкламы. Ніжэй прыведзены прыклады таго, як гэтая незалежнасць выкарыстоўвалася на практыцы."
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
@@ -10266,11 +10350,11 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Дадайце свае назву і лагатып, каб стварыць больш персаналізаванае ўражанне для сваёй арганізацыі."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Дадаванне ${ addedServerCount } сервера шлюза",
-        "Дадаванне ${ addedServerCount } сервераў шлюза",
-        "Дадаванне ${ addedServerCount } сервераў шлюза",
-        "Дадаванне ${ addedServerCount } сервераў шлюза"
+      "Adding ${ total } gateway server": [
+        "Дадаванне ${ total } сервера шлюза",
+        "Дадаванне ${ total } сервераў шлюза",
+        "Дадаванне ${ total } сервераў шлюза",
+        "Дадаванне ${ total } сервераў шлюза"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Дадаванне знешніх адрасоў электроннай пошты адключыць скразное шыфраванне для ўсіх зносін па электроннай пошце ў рамках групы. Вы сапраўды хочаце працягнуць?"
@@ -11490,6 +11574,9 @@
       "Include device, location, and IP details": [
         "Уключыць падрабязнасці аб прыладзе, месцазнаходжанні і IP"
       ],
+      "Included": [
+        "Уключае"
+      ],
       "Increase your account security by verifying your email address.": [
         "Павялічце бяспеку свайго ўліковага запісу з дапамогай спраўджання адраса электроннай пошты."
       ],
@@ -12537,6 +12624,9 @@
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Рэкамендацыя TechRadar Pro з рэйтынгам 4,2 з 5 зорак"
       ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Часова недаступна з-за высокага попыту. Паспрабуйце яшчэ раз пазней."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступна. Паспрабуйце яшчэ раз пазней."
       ],
@@ -12837,6 +12927,9 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Выберыце спосаб аднаўлення для расшыфроўкі і прагляду вашых заблакіраваных даных пасля скідання пароля."
       ],
+      "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
+        "Спачатку неабходна завяршыць генерацыю вашых новых постквантавых ключоў шыфравання, а потым уключаць постквантавую абарону."
+      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Адключыце **Аднаўленне па электроннай пошце** для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
       ],
@@ -12960,8 +13053,14 @@
       "Unverified email address.": [
         "Неправераны адрас электроннай пошты"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Палепшыце ў любы час, каб перанесці астатняе"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Палепшыце свой тарыфны план зараз, каб атрымаць прэміяльныя функцыі, прадукты, а таксама палепшыць сховішча па спецыяльнай цане"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Палепшыце свой тарыфны план або вызваліце месца ў сховішчы, каб перанесці астатняе"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Палепшыце свой тарыфны план, каб дадаць кароткі адрас @pm да свайго ўліковага запісу, якім лёгка дзяліцца з астатнімі. Ён абазначае “${ MAIL_APP_NAME } me” або “Private Message me”."
@@ -14326,6 +14425,9 @@
       "${ PROTON_SENTINEL_NAME } protection": [
         "Абарона ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "Сімвалаў: ${ value.length }/${ maxLength }"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступна. Паспрабуйце яшчэ раз пазней.)"
       ],
@@ -14925,6 +15027,9 @@
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
         "Уключыць ${ DARK_WEB_MONITORING_NAME } для ${ domain.DomainName }"
+      ],
+      "Enable categories": [
+        "Уключыць катэгорыі"
       ],
       "Enabled": [
         "Уключана"
@@ -19057,6 +19162,9 @@
       "Plain text": [
         "Звычайны тэкст"
       ],
+      "Push notifications": [
+        "Push-апавяшчэнні"
+      ],
       "Receive from all": [
         "Атрымліваць ад усіх"
       ],
@@ -20457,14 +20565,9 @@
         "Палепшыць да ${ upsellPlanTitle }"
       ]
     },
-    "PQC account key generation": {
-      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
-        "Не ўдалося згенерыраваць ключы. Вам спатрэбіцца згенерыраваць новыя ключы шыфравання ўручную, каб актываваць постквантавую абарону.\n\n${ settingsLink } і выберыце \"Згенерыраваць ключ\" для вашага ўліковага запісу і для кожнага адраса."
-      ]
-    },
     "PQC adress key generation": {
-      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
-        "Не ўдалося згенерыраваць ключы. Вам спатрэбіцца згенерыраваць новыя ключы шыфравання ўручную, каб актываваць постквантавую абарону.\n\nПерайдзіце ў ${ settingsLink } і выберыце \"Згенерыраваць ключ\" для вашага кожнага адраса."
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys for each address.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Немагчыма згенерыраваць адрасныя ключы. Вам неабходна завяршыць генерацыю вашых новых постквантавых ключоў для кожнага адраса, каб актываваць постквантавую абарону.\n\n${ goToSettingsLink } і выберыце \"Генерыраваць адсутныя ключы\"."
       ]
     },
     "PQC compatibility warning": {
@@ -22337,6 +22440,12 @@
     "Setting": {
       "Enable Photos section": [
         "Уключыць раздзел Фатаграфіі"
+      ],
+      "Get updates about comments via email": [
+        "Атрымлівайце абнаўленні аб каментарыях праз электронную пошту"
+      ],
+      "Include document name in email notifications": [
+        "Уключаць назву дакумента ў апавяшчэнні па электроннай пошце"
       ]
     },
     "Settings description": {
@@ -25109,6 +25218,9 @@
       "Add another notification to remind you of this event": [
         "Дадаць іншае апавяшчэнне, каб нагадаць вам пра гэту падзею"
       ],
+      "Add categories": [
+        "Дадаць катэгорыі"
+      ],
       "Add contact group name": [
         "Дадаць назву групы кантактаў"
       ],
@@ -25283,6 +25395,9 @@
       "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
+      "Categories": [
+        "Катэгорыі"
+      ],
       "Change login password": [
         "Змяніць пароль уваходу"
       ],
@@ -25375,6 +25490,9 @@
       ],
       "Contact us": [
         "Звязацца з намі"
+      ],
+      "Continue with free storage": [
+        "Працягнуць карыстацца бясплатным сховішчам"
       ],
       "Continue with partial import?": [
         "Працягнуць частковае імпартаванне?"
@@ -25790,6 +25908,9 @@
       "Feature access": [
         "Доступ да функцый"
       ],
+      "Fewer distractions, more focus": [
+        "Менш фактараў, якія адцягваюць увагу і больш канцэнтрацыі"
+      ],
       "Filter for more focus": [
         "Фільтр для большай канцэнтрацыі"
       ],
@@ -25888,6 +26009,9 @@
       ],
       "Get more from your VPN": [
         "Атрымайце больш ад свайго VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Атрымайце больш сховішча з ${ MAIL_APP_NAME } Plus"
       ],
       "Get started": [
         "Пачатак працы"
@@ -27014,6 +27138,9 @@
       "Each imported email will have this label": [
         "Кожны імпартаваны ліст будзе мець гэту метку"
       ],
+      "Early access to new apps and features.": [
+        "Ранні доступ да новых праграм і функцый."
+      ],
       "Edit folder names": [
         "Рэдагаваць назвы папак"
       ],
@@ -27170,8 +27297,8 @@
       "This feature is only available on Beta": [
         "Гэта функцыя даступна толькі ў рэжыме бэта"
       ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "Гэта прадвызначаны ключ, які выкарыстоўваецца іншымі карыстальнікамі ${ MAIL_APP_NAME } у старых мабільных праграмах для шыфравання даных, якія яны вам адпраўляюць"
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
+        "Гэта прадвызначаны ключ, які выкарыстоўваецца іншымі карыстальнікамі ${ MAIL_APP_NAME } у старых праграмах для шыфравання даных, якія яны вам адпраўляюць"
       ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
         "Гэта прадвызначаны ключ, які выкарыстоўваецца іншымі карыстальнікамі ${ MAIL_APP_NAME } для шыфравання даных, якія яны вам адпраўляюць"
@@ -27707,6 +27834,20 @@
       ],
       "Writing assistant": [
         "Памочнік у напісанні"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвал",
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалы",
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалаў",
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалаў"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвал)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)"
       ]
     },
     "Video control": {

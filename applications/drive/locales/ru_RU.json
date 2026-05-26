@@ -540,6 +540,9 @@
       "Make a copy": [
         "Сделать копию"
       ],
+      "Manage addresses": [
+        "Управление адресами"
+      ],
       "Manage advanced account protections": [
         "Управление расширенной защитой аккаунта"
       ],
@@ -2972,9 +2975,6 @@
       "Failed to load the STL preview": [
         "Не удалось загрузить предварительный просмотр STL"
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "Файл \"${ item.name }\" не может быть загружен из-за \"${ error }\" ошибки"
-      ],
       "File \"${ name }\" is already downloading": [
         "Файл \"${ name }\" уже скачивается"
       ],
@@ -3095,6 +3095,12 @@
       "Organization key is not decrypted": [
         "Ключ организации не расшифрован"
       ],
+      "Organization key must be activated to create invited users": [
+        "Ключ организации должен быть активирован для создания приглашенных пользователей"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Ключ организации должен быть активирован для создания нечастных пользователей"
+      ],
       "Password is required": [
         "Нужно ввести пароль"
       ],
@@ -3175,9 +3181,6 @@
       ],
       "Some contacts could not be deleted": [
         "Некоторые контакты не могут быть удалены"
-      ],
-      "Some files were ignored because they are not supported in Photos": [
-        "Некоторые файлы были проигнорированы, поскольку они не поддерживаются в Фото"
       ],
       "Some groups could not be deleted": [
         "Некоторые группы не могут быть удалены"
@@ -3325,9 +3328,6 @@
       ],
       "You must set a name": [
         "Вы должны задать имя"
-      ],
-      "Your browser does not support uploading folders": [
-        "Ваш браузер не поддерживает загрузку папок"
       ],
       "Your import will not be processed.": [
         "Импорт не будет обработан."
@@ -5611,9 +5611,6 @@
       ],
       "Unknown date": [
         "Неизвестная дата"
-      ],
-      "Unknown error": [
-        "Неизвестная ошибка"
       ],
       "Unlock drive to recover files": [
         "Разблокировать хранилище чтобы восстановить файлы"
@@ -8170,9 +8167,6 @@
       ],
       "Failed to convert external invitation": [
         "Не удалось преобразовать внешнее приглашение"
-      ],
-      "Failed to download files: ${ err }": [
-        "Не удалось скачать файлы: ${ err }"
       ],
       "Failed to move, please try again": [
         "Не удалось переместить, попробуйте еще раз"
@@ -11358,6 +11352,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Администраторы не могут получить доступ к данным частных пользователей и не могут сбросить их пароль."
+      ],
+      "Member activation incomplete": [
+        "Активация участника не завершена"
+      ],
+      "Organization key must be activated to request data access": [
+        "Для запроса доступа к данным необходимо активировать ключ организации"
+      ],
+      "The user must have an address to request data access": [
+        "Пользователь должен иметь адрес, чтобы запросить доступ к данным"
       ]
     },
     "Validation": {

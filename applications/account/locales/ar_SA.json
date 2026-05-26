@@ -319,6 +319,9 @@
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "المتابعة مع ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
+      "Continue with Free": [
+        "تابع مجانا"
+      ],
       "Continue with Google": [
         "المتابعة باستخدام Google"
       ],
@@ -4309,6 +4312,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "فرز رسائلك الواردة تلقائيًا قبل وصولها إلى صندوق الوارد."
       ],
+      "Available storage: ${ storageText }": [
+        "التخزين المتاح: ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "قم بتكوين هذا أولاً لتفعيل مؤسستك وتخصيص عنوان بريدك الإلكتروني."
       ],
@@ -4347,6 +4353,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "يتم استيراد و تشفير جهات الاتصال... قد يستغرق ذلك بضع دقائق. عند اكتمال العملية ، يمكنك إغلاق هذا النموذج."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "مساحة تكفي لسنوات من رسائل البريد الإلكتروني والمرفقات والمزيد."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "اضمن الوصول الآمن إلى بيانات المؤسسة، حتى لو كان فريقك يعمل عن بعد أو يستخدم شبكة واي فاي (WiFi) عامة."
@@ -4408,14 +4417,14 @@
       "Track the status and activity of your referrals": [
         "تتبع حالة ونشاط إحالاتك"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "احصل على 15 غيغابايت من مساحة التخزين مقابل ${ config.offerPrice } فقط."
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "قم بالترقية للحصول على ${ activatePmUser } لعنوان بريد إلكتروني أقصر وسهل التذكر بالإضافة إلى عنوانك الحالي."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "استخدم هذا الدليل لتجعل مؤسستك تستفيد على الفور من نظام ${ BRAND_NAME } البيئي الرائد في مجال التشفير والخصوصية."
-      ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "لقد بدأنا في استيراد آخر 180 يوما من رسائل البريد الإلكتروني من Gmail. سنخبرك عندما ينتهي الأمر"
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "نأسف لرؤيتك تغادر. إذا كان لديك بعض الوقت، سنكون ممتنين لمعرفة سبب رغبتك في الإلغاء. تساعدنا ملاحظاتك على جعل ${ BRAND_NAME } أفضل للجميع."
@@ -4428,6 +4437,12 @@
       ],
       "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
         "يمكنك دمج العناوين في حساب رئيسي واحد على ${ BRAND_NAME } باستخدام دليل الدعم الخاص بنا."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "نظرًا لأن حسابك المجاني في ${ MAIL_APP_NAME } يتضمن مساحة تخزين محدودة، فسنستورد فقط ${ newUserStorageText } من أحدث رسائل Gmail لديك."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "نظرًا لأن حسابك المجاني في ${ MAIL_APP_NAME } يتضمن مساحة تخزين محدودة، فسنستورد فقط أحدث رسائل Gmail لديك."
       ]
     },
     "description": {
@@ -5703,6 +5718,9 @@
       "Email address is required": [
         "عنوان البريد الإلكتروني مطلوب"
       ],
+      "Email is not valid": [
+        "البريد الإلكتروني غير صحيح"
+      ],
       "Empty condition": [
         "وضع فارغ"
       ],
@@ -5786,6 +5804,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "كلمة المرور الثانية غير صحيحة. يُرجى المحاولة مرة أخرى."
+      ],
+      "Incorrect username": [
+        "اسم مستخدم غير صحيح"
       ],
       "Intended recipient does not support calendar sharing": [
         "المستلم المقصود لا يدعم مشاركة التقويم"
@@ -5894,6 +5915,9 @@
       "Not a ${ BRAND_NAME } account": [
         "ليس حساب ${ BRAND_NAME }"
       ],
+      "Not a valid number": [
+        "رقم غير صحيح"
+      ],
       "Organization key is not decrypted": [
         "لم يتم فك تشفير مفتاح المنظمة"
       ],
@@ -5905,6 +5929,9 @@
       ],
       "Password is required": [
         "كلمة المرور مطلوبة"
+      ],
+      "Passwords do not match": [
+        "كلمتا المرور غير متطابقتين"
       ],
       "Payment process canceled": [
         "تم إلغاء عملية الدفع"
@@ -5988,9 +6015,6 @@
       ],
       "Please try again in a few moments.": [
         "عاود المحاولة بعد بضع دقائق."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "يرجى الترقية إلى خطة أعمال بها أكثر من مستخدم واحد للحصول على دعم متعدد المستخدمين"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "يرجى الترقية إلى خطة أعمال بها أكثر من مستخدم واحد لإدارة عدة مستخدمين."
@@ -6084,6 +6108,9 @@
       "The amount due has changed. Please try again.": [
         "لقد تغير المبلغ المستحق. يُرجى المحاولة مرة أخرى."
       ],
+      "The email addresses do not match": [
+        "عناوين البريد الإلكتروني غير متطابقة"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "الملف كبير جدًا، الحد الأقصى للحجم هو ${ MAX_FILE_DIMENSIONS }×${ MAX_FILE_DIMENSIONS }"
       ],
@@ -6126,11 +6153,17 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "هناك الكثير من المجلدات في حسابك الخارجي. الرجاء تخصيص الاستيراد لحذف بعض المجلدات."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "يتجاوز هذا الحقل الحد الأقصى البالغ ${ maximumLength } حرفًا."
+      ],
       "This field is invalid": [
         "هذا الحقل غير صالح"
       ],
       "This field is required": [
         "هذه الخانة مطلوبه"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "يتطلب هذا الحقل على الأقل ${ minimumLength } حرفا."
       ],
       "This folder name is not available. Please choose a different name.": [
         "اسم المجلد هذا غير متاح. يرجى اختيار اسم مختلف."
@@ -6156,6 +6189,9 @@
       "Try again later": [
         "حاول مرة أخرى لاحقًا"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "حاول استخدام الأحرف والأرقام و_.- فقط"
+      ],
       "Unable to upload file": [
         "تعذر تحميل الملف"
       ],
@@ -6173,6 +6209,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "الملفات التي تم رفعها مفاتيح غير صالحه وغير خاصة. يرجى التحقق والمحاولة مرة أخرى."
+      ],
+      "Username must begin with a letter or digit": [
+        "يجب أن يبدأ اسم المستخدم بحرف أو رقم"
+      ],
+      "Username must end with a letter or digit": [
+        "يجب أن ينتهي اسم المستخدم بحرف أو رقم"
       ],
       "Validation error": [
         "خطأ في التحقق"
@@ -6840,6 +6882,9 @@
         "${ MaxVPN } اتصالات VPN",
         "${ MaxVPN } اتصالات VPN"
       ],
+      "10+ premium features": [
+        "أكثر من 10 ميزات متميزة"
+      ],
       "Access to all countries": [
         "الوصول إلى جميع البلدان"
       ],
@@ -6865,6 +6910,12 @@
       "Continue": [
         "استمرار"
       ],
+      "Custom email domain": [
+        "نطاق بريد إلكتروني مخصص"
+      ],
+      "Email addresses": [
+        "عناوين البريد الإلكتروني"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "تخزين سحابي مشفر للملفات والصور والمستندات"
       ],
@@ -6882,6 +6933,9 @@
       ],
       "Secure streaming support": [
         "دعم البث الآمن"
+      ],
+      "Storage": [
+        "تخزين"
       ],
       "Torrenting support (P2P)": [
         "دعم التورنت (P2P)"
@@ -7562,6 +7616,9 @@
       ],
       "Contact us": [
         "اتصل بنا"
+      ],
+      "Downloads": [
+        "التنزيلات"
       ],
       "Enjoying ${ planName }?": [
         "هل تستمتع بـ ${ planName }؟"
@@ -8439,14 +8496,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "أضف اسمك وشعارك لإنشاء تجربة أكثر تخصيصًا لمؤسستك."
-      ],
-      "Adding ${ addedServerCount } gateway servers": [
-        "جارٍ إضافة ${ addedServerCount } خادم بوابة",
-        "جارٍ إضافة ${ addedServerCount } خادم بوابة",
-        "جارٍ إضافة ${ addedServerCount } خادم بوابة",
-        "جارٍ إضافة ${ addedServerCount } خوادم بوابة",
-        "جارٍ إضافة ${ addedServerCount } خوادم بوابة",
-        "جارٍ إضافة ${ addedServerCount } خوادم بوابة"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "ستؤدي إضافة عنوان بريد إلكتروني خارجي إلى تعطيل التشفير من طرف إلى طرف لجميع اتصالات البريد الإلكتروني داخل تلك المجموعة. هل تريد المتابعة؟"
@@ -9436,6 +9485,9 @@
       ],
       "Include device, location, and IP details": [
         "تضمين تفاصيل الجهاز والموقع وعنوان IP"
+      ],
+      "Included": [
+        "متضمن"
       ],
       "Increase your account security by verifying your email address.": [
         "عزّز أمان حسابك بالتحقق من عنوان بريدك الإلكتروني."
@@ -10680,8 +10732,14 @@
       "Unverified email address.": [
         "عنوان بريد إلكتروني لم يتم التحقق منه."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "يمكنك الترقية في أي وقت لنقل بقية العناصر."
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "قم بالترقية الآن للحصول على الميزات والمنتجات ومساحة التخزين المميزة بسعر خاص"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "يمكنك الترقية أو تحرير مساحة تخزين في أي وقت لاستيراد بقية الرسائل."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "قم بالترقية للاحتفاظ بمزايا ${ planTitle } الخاصة بك."
@@ -21208,6 +21266,9 @@
       "Contact us": [
         "اتصل بنا"
       ],
+      "Continue with free storage": [
+        "تابع مع التخزين المجاني"
+      ],
       "Continue with partial import?": [
         "الاستمرار مع استيراد الجزئي؟"
       ],
@@ -21571,6 +21632,9 @@
       "Feature access": [
         "الوصول إلى الميزة"
       ],
+      "Fewer distractions, more focus": [
+        "مشتتات أقل، تركيز أكثر"
+      ],
       "Filter for more focus": [
         "رشح لمزيد من التركيز"
       ],
@@ -21654,6 +21718,9 @@
       ],
       "Get more from your VPN": [
         "احصل على المزيد من VPN الخاص بك"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "احصل على مساحة تخزين أكبر مع ${ MAIL_APP_NAME } Plus"
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "احصل على التطبيق على جميع أجهزتك واستمتع بوصول آمن وسلس في أي مكان."
@@ -23121,6 +23188,16 @@
       ],
       "Writing assistant": [
         "مساعد الكتابة"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
+        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
+        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
+        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
+        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
+        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل"
       ]
     },
     "Video control": {

@@ -254,6 +254,9 @@
       "Continue to sign in": [
         "Перайсці да ўваходу"
       ],
+      "Continue with Free": [
+        "Працягнуць з тарыфным планам Free"
+      ],
       "Continue with this password": [
         "Працягнуць з гэтым паролем"
       ],
@@ -3865,6 +3868,9 @@
       "Automatically forward incoming email to another email address.": [
         "Аўтаматычна перасылайце ўваходныя лісты на іншы адрас электроннай пошты."
       ],
+      "Available storage: ${ storageText }": [
+        "Даступна ў сховішчы: ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Не давайце магчымасці Google ствараць ваш профіль. Gmail больш не зможа бачыць, што вы робіце ў ${ MAIL_APP_NAME }"
       ],
@@ -3918,6 +3924,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шыфраванне і імпартаванне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Дастаткова месца ў сховішчы, якога хопіць на доўгія гады для захоўвання лістоў, далучэнняў і іншай інфармацыі."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Забяспечце бяспечны доступ да даных арганізацыі, нават калі ваша каманда працуе аддалена або выкарыстоўвае публічны Wi-Fi."
@@ -4018,6 +4027,9 @@
       "Track the status and activity of your referrals": [
         "Сачэнне за статусам і актыўнасцю вашых рэферальных спасылак"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Разблакіруйце 15 ГБ сховішча ўсяго за ${ config.offerPrice }"
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Палепшыце тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } уліковых запісаў"
       ],
@@ -4027,11 +4039,14 @@
       "We can't access ${ boldEmails } anymore.": [
         "Больш не ўдаецца атрымаць доступ да ${ boldEmails }."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Імпартаванне будзе прыпынена, калі сховішча будзе запоўнена на 80%. Гэта дазволіць зарэзерваваць астатняе месца для новых паведамленняў."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Мы перанясём вашы старыя паведамленні і падключым ваш Gmail да ${ MAIL_APP_NAME }, каб новыя паведамленні з'яўляліся ў ім аўтаматычна."
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Пачалося імпартаванне вашых лістоў з Gmail за апошнія 180 дзён. Вы будзеце апавешчаны, калі працэс будзе завершаны."
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Пачалося імпартаванне вашых лістоў з Gmail. Вы будзеце апавешчаны, калі працэс будзе завершаны."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Нам шкада, што вы пакідаеце нас. Мы будзем вам вельмі ўдзячныя, калі вы знойдзеце крыху часу паведаміць аб прычынах скасавання сваёй падпіскі. Вашы водгукі дапамагаюць зрабіць ${ BRAND_NAME } яшчэ лепш для кожнага карыстальніка."
@@ -4074,6 +4089,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Вы падключылі адзін адрас знешняга ўліковага запісу да ${ MAIL_APP_NAME }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "У вашага бясплатнага ўліковага запісу ${ MAIL_APP_NAME } абмежаваная ёмістасць сховішча і таму, удалося імпартаваць толькі ${ newUserStorageText } вашых апошніх паведамленняў з паштовай скрыні Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "У вашага бясплатнага ўліковага запісу ${ MAIL_APP_NAME } абмежаваная ёмістасць сховішча і таму, удалося імпартаваць толькі самыя апошнія вашы лісты з Gmail."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Ваш тарыфны план падтрымлівае ${ MAX_SYNC_FREE_USER } адрас Gmail.",
@@ -4948,9 +4969,6 @@
       "Please try again in a few moments.": [
         "Паўтарыце спробу крыху пазней."
       ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Перайдзіце на тарыфны план для бізнесу з больш чым 1 карыстальнікам, каб атрымаць падтрымку шматкарыстальніцкага рэжыму"
-      ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Перайдзіце на тарыфны план для бізнесу з больш чым 1 карыстальнікам, каб атрымаць падтрымку шматкарыстальніцкага рэжыму."
       ],
@@ -5064,6 +5082,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "У вашым знешнім уліковым запісе занадта шмат папак. Наладзьце імпартаванне, каб выдаліць некаторыя папкі."
+      ],
+      "There was an error, please try again.": [
+        "Адбылася памылка. Паспрабуйце яшчэ раз."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Гэта поле перавышае максімальную колькасць сімвалаў (дазволена: ${ maximumLength })."
@@ -5710,6 +5731,9 @@
       "${ PROTON_SENTINEL_NAME } account protection": [
         "Абарона ўліковага запісу ${ PROTON_SENTINEL_NAME }"
       ],
+      "10+ premium features": [
+        "Больш за 10 прэміяльных функцый"
+      ],
       "15 GB storage": [
         "15 ГБ сховішча"
       ],
@@ -5749,6 +5773,12 @@
       "Continue": [
         "Працягнуць"
       ],
+      "Custom email domain": [
+        "Карыстальніцкі дамен электроннай пошты"
+      ],
+      "Email addresses": [
+        "Адрасы электроннай пошты"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Зашыфраванае воблачнае сховішча для файлаў, фатаграфій і дакументаў"
       ],
@@ -5778,6 +5808,9 @@
       ],
       "Short domain @pm.me": [
         "Кароткі дамен @pm.me"
+      ],
+      "Storage": [
+        "Сховішча"
       ],
       "Torrenting support (P2P)": [
         "Падтрымка торэнтаў (P2P)"
@@ -6604,7 +6637,7 @@
     },
     "Import provider": {
       "More import options": [
-        "Больш параметраў імпарту"
+        "Больш параметраў імпартавання"
       ]
     },
     "Import warning": {
@@ -6643,7 +6676,7 @@
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "Тарыфныя планы ${ BRAND_NAME } Business даюць вашай камандзе ўсе інструменты для сумеснай працы, якія ім спатрэбяцца для прадукцыйнай і арганізаванай працы, адначасова абараняючы ваш бізнес."
       ],
-      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
         "${ BRAND_NAME } атрымлівае незлаежнае фінанстванне і працуе без рэкламы. Ніжэй прыведзены прыклады таго, як гэтая незалежнасць выкарыстоўвалася на практыцы."
       ],
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
@@ -7039,11 +7072,11 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Дадайце свае назву і лагатып, каб стварыць больш персаналізаванае ўражанне для сваёй арганізацыі."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Дадаванне ${ addedServerCount } сервера шлюза",
-        "Дадаванне ${ addedServerCount } сервераў шлюза",
-        "Дадаванне ${ addedServerCount } сервераў шлюза",
-        "Дадаванне ${ addedServerCount } сервераў шлюза"
+      "Adding ${ total } gateway server": [
+        "Дадаванне ${ total } сервера шлюза",
+        "Дадаванне ${ total } сервераў шлюза",
+        "Дадаванне ${ total } сервераў шлюза",
+        "Дадаванне ${ total } сервераў шлюза"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Дадаванне знешніх адрасоў электроннай пошты адключыць скразное шыфраванне для ўсіх зносін па электроннай пошце ў рамках групы. Вы сапраўды хочаце працягнуць?"
@@ -7879,6 +7912,9 @@
       "Include device, location, and IP details": [
         "Уключыць падрабязнасці аб прыладзе, месцазнаходжанні і IP"
       ],
+      "Included": [
+        "Уключае"
+      ],
       "Increase your account security by verifying your email address.": [
         "Павялічце бяспеку свайго ўліковага запісу з дапамогай спраўджання адраса электроннай пошты."
       ],
@@ -8683,6 +8719,9 @@
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Рэкамендацыя TechRadar Pro з рэйтынгам 4,2 з 5 зорак"
       ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Часова недаступна з-за высокага попыту. Паспрабуйце яшчэ раз пазней."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступна. Паспрабуйце яшчэ раз пазней."
       ],
@@ -8998,8 +9037,14 @@
       "Unverified email address.": [
         "Неправераны адрас электроннай пошты"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Палепшыце ў любы час, каб перанесці астатняе"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Палепшыце свой тарыфны план зараз, каб атрымаць прэміяльныя функцыі, прадукты, а таксама палепшыць сховішча па спецыяльнай цане"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Палепшыце свой тарыфны план або вызваліце месца ў сховішчы, каб перанесці астатняе"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Палепшыць тарыфны план, каб захаваць перавагі ${ planTitle }."
@@ -9804,6 +9849,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "Абарона ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "Сімвалаў: ${ value.length }/${ maxLength }"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступна. Паспрабуйце яшчэ раз пазней.)"
@@ -17141,6 +17189,9 @@
       "Contact us": [
         "Звязацца з намі"
       ],
+      "Continue with free storage": [
+        "Працягнуць карыстацца бясплатным сховішчам"
+      ],
       "Continue with partial import?": [
         "Працягнуць частковае імпартаванне?"
       ],
@@ -17461,6 +17512,9 @@
       ],
       "Get more from your VPN": [
         "Атрымайце больш ад свайго VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Атрымайце больш сховішча з ${ MAIL_APP_NAME } Plus"
       ],
       "Get started": [
         "Пачатак працы"
@@ -18225,6 +18279,9 @@
       ],
       "Each imported email will have this label": [
         "Кожны імпартаваны ліст будзе мець гэту метку"
+      ],
+      "Early access to new apps and features.": [
+        "Ранні доступ да новых праграм і функцый."
       ],
       "Edit folder names": [
         "Рэдагаваць назвы папак"

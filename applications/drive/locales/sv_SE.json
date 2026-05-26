@@ -635,6 +635,9 @@
       "Make a copy": [
         "Göra en kopia"
       ],
+      "Manage addresses": [
+        "Hantera adresser"
+      ],
       "Manage advanced account protections": [
         "Hantera avancerade kontoskydd"
       ],
@@ -2906,6 +2909,9 @@
       "Automatically forward incoming email to another email address.": [
         "Vidarebefordra automatiskt inkommande e-post till annan e-postadress."
       ],
+      "Available storage: ${ storageText }": [
+        "Tillgängligt lagringsutrymme: ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Konfigurera detta först för att aktivera din organisation och anpassa din e-postadress."
       ],
@@ -2926,6 +2932,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkronisera enkelt filer till molnet från din stationära dator och kom åt dem från din mobila enhet."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-post skickat till ${ connectedAddressText } kommer nu visas i ${ MAIL_APP_NAME }."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Uppmuntra användningen av tvåfaktorsautentisering i din organisation för extra säkerhet."
@@ -2993,6 +3002,9 @@
       "To start, give your organization a name.": [
         "Börja med att ge din organisation ett namn."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Lås upp 15 GB lagringsutrymme för endast ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Uppgradera till ${ planName } för att fortsätta dela filer med redigeringsåtkomst"
       ],
@@ -3005,6 +3017,12 @@
       "We can't access ${ boldEmails } anymore.": [
         "Vi kan inte komma åt ${ boldEmails } längre."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Vi kommer pausa importerna vid 80 % lagringsutrymme för att reservera utrymme för nya meddelanden."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Vi har börjat importera din e-post från Gmail. Vi meddelar dig när det är klart."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Med kontaktgrupper kan du skicka e-post till alla i gruppen med ett klick."
       ],
@@ -3013,6 +3031,9 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Du kan markera de kontakter som du varken vill slå ihop eller behålla för borttagning. Borttagning kommer endast ske efter att ha klickat på knappen ”Slå ihop”"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Du kan nu skicka e-post från ${ BRAND_NAME } med denna adress."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Ditt konto- och dataåterställningsmetoder är inställda och 2FA är aktiverat."
@@ -3489,9 +3510,6 @@
       "Failed to update public share node": [
         "Misslyckades att uppdatera offentlig delningsnod"
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "Filen “${ item.name }“ kan inte laddas upp på grund felet “${ error }“"
-      ],
       "File \"${ name }\" is already downloading": [
         "Filen “${ name }“ laddas redan ner"
       ],
@@ -3618,6 +3636,12 @@
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
       ],
+      "Organization key must be activated to create invited users": [
+        "Organisationsnyckel måste vara aktiverad för att skapa inbjudna användare"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisationsnyckeln måste aktiveras för att skapa icke-privata användare"
+      ],
       "Password is required": [
         "Lösenord är obligatoriskt"
       ],
@@ -3706,9 +3730,6 @@
       ],
       "Some contacts could not be deleted": [
         "Några kontakter kunde inte tas bort"
-      ],
-      "Some files were ignored because they are not supported in Photos": [
-        "Några filer ignorerades eftersom de inte stöds i foton"
       ],
       "Some groups could not be deleted": [
         "Några grupper kunde inte tas bort"
@@ -3914,9 +3935,6 @@
       ],
       "You must set a name": [
         "Du måste ange ett namn"
-      ],
-      "Your browser does not support uploading folders": [
-        "Din webbläsare stöder inte uppladdning av mappar"
       ],
       "Your import will not be processed.": [
         "Din import kommer inte att bearbetas."
@@ -4306,11 +4324,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ premiumfunktioner"
+      ],
+      "Custom email domain": [
+        "Anpassad e-postdomän"
+      ],
+      "Email addresses": [
+        "E-postadresser"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Krypterad molnlagring för filer, foton och dokument"
       ],
       "More premium features": [
         "Fler premiumfunktioner"
+      ],
+      "Storage": [
+        "Lagringsutrymme"
       ],
       "Unlimited hide-my-email aliases": [
         "Obegränsat antal hide-my-email-alias"
@@ -5623,6 +5653,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I nästa steg kommer du kunna skicka in en insättning med en Bitcoin-adress."
       ],
+      "Included": [
+        "Inkluderad"
+      ],
       "Index is empty.": [
         "Index är tom."
       ],
@@ -6474,6 +6507,9 @@
       "Trash is empty": [
         "Papperskorg är tom"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Lita på nyckeln “${ activeSignerText }“ för att verifiera nya meddelanden från denna kontakt."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten. Detta kommer ladda om applikationen"
       ],
@@ -6488,9 +6524,6 @@
       ],
       "Unknown date": [
         "Okänt datum"
-      ],
-      "Unknown error": [
-        "Okänt fel"
       ],
       "Unlock drive to recover files": [
         "Lås upp Drive för att återställa filer"
@@ -6510,8 +6543,14 @@
       "Updating drive search...": [
         "Uppdaterar Drive-sök…"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Uppgradera när som helst för att flytta över resten"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Uppgradera eller frigör utrymme när som helst för att flytta över resten"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Uppgradera för att behålla dina ${ planTitle }-förmåner."
@@ -6945,6 +6984,9 @@
       "Expired": [
         "Löpt ut"
       ],
+      "Fallback": [
+        "Reserv"
+      ],
       "KOO": [
         "KOO"
       ],
@@ -6974,6 +7016,9 @@
       "${ BRAND_NAME } username": [
         "Användarnamn för ${ BRAND_NAME }"
       ],
+      "${ downloads } downloads": [
+        "${ downloads } nedladdningar"
+      ],
       "${ n } month": [
         "${ n } månad",
         "${ n } månader"
@@ -6985,6 +7030,9 @@
       "${ nbYear } year": [
         "${ nbYear } år",
         "${ nbYear } år"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tecken"
       ],
       "(Expired)": [
         "(Löpt ut)"
@@ -9444,9 +9492,6 @@
       "Failed to convert external invitation": [
         "Misslyckades att konvertera extern inbjudan"
       ],
-      "Failed to download files: ${ err }": [
-        "Misslyckades att ladda ner filer: ${ err }"
-      ],
       "Failed to move, please try again": [
         "Misslyckades att flytta, försök igen"
       ],
@@ -9511,10 +9556,6 @@
       ],
       "Selected item was successfully removed from your list": [
         "Valt objekt togs bort från din lista",
-        "Valda objekt togs bort från din lista"
-      ],
-      "Selected items were successfully removed from your list": [
-        "Valda objekt togs bort från din lista",
         "Valda objekt togs bort från din lista"
       ],
       "Setting updated. Editors can change permissions and share.": [
@@ -10351,8 +10392,14 @@
       "External key automatically fetched via WKD.": [
         "Extern nyckel automatiskt hämtad via WKD."
       ],
+      "This contact currently signs messages with this key": [
+        "Denna kontakt signerar för närvarande meddelanden med denna nyckel"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Denna nyckel används för att kryptera meddelanden till denna kontakt"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Denna nyckel används för att kryptera meddelanden till denna kontakt i äldre appar"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi rekommenderar att du “Sluta lita på“ denna nyckel."
@@ -12302,6 +12349,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Continue with free storage": [
+        "Fortsätt med gratis lagringsutrymme"
+      ],
       "Continue with partial import?": [
         "Fortsätta med delimport?"
       ],
@@ -12536,6 +12586,9 @@
       ],
       "Get more from your VPN": [
         "Få ut mer av din VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Skaffa mer lagringsutrymme med ${ MAIL_APP_NAME } Plus"
       ],
       "Get started with 10 minutes of free uploads, on the house.": [
         "Kom igång med 10 minuters gratis uppladdningar, som vi bjuder på."
@@ -13100,6 +13153,9 @@
       "When is it most important to use a VPN?": [
         "När är det viktigast att använda en VPN?"
       ],
+      "You are all set": [
+        "Du är klar"
+      ],
       "You can now create unlimited folders and labels": [
         "Du kan nu skapa ett obegränsat antal mappar och etiketter"
       ],
@@ -13261,6 +13317,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratörer kan inte komma åt privata användares data och kan inte återställa deras lösenord."
+      ],
+      "Member activation incomplete": [
+        "Medlemsaktivering ofullständig"
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisationsnyckel måste vara aktiverad för att begära dataåtkomst"
+      ],
+      "The user must have an address to request data access": [
+        "Användaren måste ha en adress för att begära dataåtkomst"
       ]
     },
     "Upsell": {

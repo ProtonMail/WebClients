@@ -1358,9 +1358,6 @@
       ]
     },
     "collider_2025: Error Message": {
-      "If retrying doesn’t work, check back later or consider upgrading to ${ LUMO_SHORT_APP_NAME } Plus to jump to the front of the line during peak times.": [
-        "Pokud opakovaný pokus nefunguje, zkontrolujte to později nebo zvažte navýšení na ${ LUMO_SHORT_APP_NAME } Plus, abyste se ve špičce dostali na začátek fronty."
-      ],
       "Please try asking a different question or making a different request.": [
         "Zkuste prosím položit jinou otázku nebo zadat jiný požadavek."
       ],
@@ -4763,6 +4760,12 @@
       ],
       "Organization key is not decrypted": [
         "Klíč organizace není dešifrován"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Pro vytvoření pozvaných uživatelů musí být aktivován klíč organizace"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Pro vytvoření nesoukromých uživatelů musí být aktivován klíč organizace"
       ],
       "Passwords do not match": [
         "Hesla se neshodují"
@@ -8711,6 +8714,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Správci nemají přístup k datům soukromých uživatelů a nemohou resetovat jejich heslo."
+      ],
+      "Member activation incomplete": [
+        "Nekompletní aktivace člena"
+      ],
+      "Organization key must be activated to request data access": [
+        "Pro žádost o přístup k datům musíte aktivovat klíč organizace"
+      ],
+      "The user must have an address to request data access": [
+        "Uživatel musí mít adresu, aby mohlo být požádáno o přístup k datům"
       ]
     },
     "Validation": {

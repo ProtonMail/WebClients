@@ -222,6 +222,9 @@
       "Continue to ${ planOrAppName }": [
         "Continuar com ${ planOrAppName }"
       ],
+      "Continue with Free": [
+        "Continuar com Free"
+      ],
       "Continue with Google": [
         "Continuar com o Google"
       ],
@@ -3084,6 +3087,9 @@
       "Availability unknown": [
         "Disponibilidade desconhecida"
       ],
+      "Available storage: ${ storageText }": [
+        "Armazenamento disponível: ${ storageText }"
+      ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Identifique os eventos com cores para facilitar a organização do seu dia, o controle do seu tempo e a priorização de tarefas."
       ],
@@ -3110,6 +3116,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronize facilmente arquivos com a nuvem a partir do seu computador e acesse-os no seu dispositivo móvel."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-mails enviados para ${ connectedAddressText } agora serão exibidos em ${ MAIL_APP_NAME }."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Promova a adoção da autenticação de dois fatores em sua organização para garantir uma segurança adicional."
@@ -3200,6 +3209,9 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Você pode marcar para exclusão os contatos que não quer mesclar nem manter. A exclusão somente ocorrerá após o botão de mesclagem ser clicado"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Você agora pode enviar e-mails da ${ BRAND_NAME } usando este endereço."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Sua conta e métodos de recuperação de dados estão definidos, e a A2F está ativada."
@@ -3840,6 +3852,12 @@
       ],
       "Organization key is not decrypted": [
         "A chave de organização não está descriptografada"
+      ],
+      "Organization key must be activated to create invited users": [
+        "A chave da organização deve ser ativada para criar usuários convidados"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "A chave da organização deve ser ativada para criar usuários não privados"
       ],
       "Passphrase unavailable": [
         "Frase secreta indisponível"
@@ -4530,11 +4548,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ recursos premium"
+      ],
+      "Custom email domain": [
+        "Domínio de e-mail personalizado"
+      ],
+      "Email addresses": [
+        "Endereços de e-mail"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Armazenamento em nuvem criptografado para arquivos, fotos e documentos"
       ],
       "More premium features": [
         "Recursos premium adicionais"
+      ],
+      "Storage": [
+        "Armazenamento"
       ],
       "Unlimited hide-my-email aliases": [
         "Aliases do Hide-my-email ilimitados"
@@ -5698,6 +5728,9 @@
       ],
       "In which calendar should bookings appear?": [
         "Em qual calendário as agendamentos devem aparecer?"
+      ],
+      "Included": [
+        "Incluso"
       ],
       "Indexing events: ${ current }/${ total }": [
         "Indexando eventos: ${ current }/${ total }"
@@ -11864,6 +11897,9 @@
       "Contacts": [
         "Contatos"
       ],
+      "Continue with free storage": [
+        "Continuar com armazenamento grátis"
+      ],
       "Continue with partial import?": [
         "Continue com uma importação parcial?"
       ],
@@ -12024,6 +12060,9 @@
       ],
       "Get more from your VPN": [
         "Obter mais da sua VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Obtenha mais armazenamento com ${ MAIL_APP_NAME } Plus"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Obtenha os aplicativos do ${ appName[APP_NAME] }"
@@ -12428,6 +12467,9 @@
       "When is it most important to use a VPN?": [
         "Quando é mais importante usar uma VPN?"
       ],
+      "You are all set": [
+        "Tudo pronto"
+      ],
       "You can now create unlimited folders and labels": [
         "Agora você pode criar pastas e etiquetas ilimitadas."
       ],
@@ -12592,6 +12634,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Os administradores não podem acessar os dados de usuários privados e não podem redefinir suas senhas."
+      ],
+      "Member activation incomplete": [
+        "Ativação de membro incompleta"
+      ],
+      "Organization key must be activated to request data access": [
+        "A chave da organização precisa ser ativada para solicitar o acesso aos dados"
+      ],
+      "The user must have an address to request data access": [
+        "O usuário deve ter um endereço para solicitar o acesso aos dados"
       ]
     },
     "Validation": {

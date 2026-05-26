@@ -550,6 +550,9 @@
       "Make a copy": [
         "realizar uma cópia"
       ],
+      "Manage addresses": [
+        "Gerir endereços"
+      ],
       "Manage advanced account protections": [
         "Gerir as proteções avançadas da conta"
       ],
@@ -2958,9 +2961,6 @@
       "Failed to update public share node": [
         "Erro ao atualizar o nó de partilha público"
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "O ficheiro \"${ item.name }\" não pode ser enviado devido ao erro \"${ error }\"."
-      ],
       "File \"${ name }\" is already downloading": [
         "O ficheiro \"${ name }\" já está a ser transferido."
       ],
@@ -3075,6 +3075,12 @@
       "Organization key is not decrypted": [
         "A chave da organização não está encriptada."
       ],
+      "Organization key must be activated to create invited users": [
+        "A chave da organização deve ser ativada para criar utilizadores convidados."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "A chave da organização deve ser ativada para criar utilizadores não privados."
+      ],
       "Password is required": [
         "A palavra-passe é obrigatória."
       ],
@@ -3163,9 +3169,6 @@
       ],
       "Some contacts could not be deleted": [
         "Não foi possível eliminar alguns contactos"
-      ],
-      "Some files were ignored because they are not supported in Photos": [
-        "Alguns ficheiros foram ignorados por não serem suportados em Fotografias"
       ],
       "Some groups could not be deleted": [
         "Alguns grupos não puderam ser eliminados"
@@ -3311,9 +3314,6 @@
       ],
       "You must set a name": [
         "Tem de definir um nome"
-      ],
-      "Your browser does not support uploading folders": [
-        "O seu navegador não suporta o envio de pastas."
       ],
       "Your import will not be processed.": [
         "A sua importação não será processada."
@@ -5529,9 +5529,6 @@
       ],
       "Unknown date": [
         "Data desconhecida"
-      ],
-      "Unknown error": [
-        "Erro desconhecido"
       ],
       "Unlock drive to recover files": [
         "Desbloquear a unidade para recuperar os ficheiros"
@@ -8047,9 +8044,6 @@
       ],
       "Failed to convert external invitation": [
         "Erro ao converter o convite externo"
-      ],
-      "Failed to download files: ${ err }": [
-        "Erro ao transferir os ficheiros: ${ err }"
       ],
       "Failed to move, please try again": [
         "Erro ao mover. Tente novamente."
@@ -11272,6 +11266,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Os administradores não podem aceder aos dados de utilizadores privados e não podem redefinir a sua palavra-passe."
+      ],
+      "Member activation incomplete": [
+        "A ativação do membro é incompleta."
+      ],
+      "Organization key must be activated to request data access": [
+        "A chave da organização deve ser ativada para solicitar acesso aos dados."
+      ],
+      "The user must have an address to request data access": [
+        "O utilizador deve ter um endereço para solicitar acesso aos dados."
       ]
     },
     "Validation": {

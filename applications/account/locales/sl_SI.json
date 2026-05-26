@@ -5082,11 +5082,17 @@
       "Email address is required": [
         "Zahtevan je e-poštni naslov"
       ],
+      "Email is not valid": [
+        "E-pošta ni veljavna"
+      ],
       "Empty condition": [
         "Prazen pogoj"
       ],
       "Enter 6 digits": [
         "Vnesite 6 števk"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Vnesite svoje uporabniško ime brez domene (@primer.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Napaka pri vzpostavljanju povezave z Bitcoin API."
@@ -5159,6 +5165,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Nepravilno drugo geslo. Poskusite znova."
+      ],
+      "Incorrect username": [
+        "Nepravilno uporabniško ime"
       ],
       "Intended recipient does not support calendar sharing": [
         "Predvideni prejemnik ne podpira skupne rabe koledarja"
@@ -5262,6 +5271,9 @@
       "Not a ${ BRAND_NAME } account": [
         "Ni ${ BRAND_NAME } račun"
       ],
+      "Not a valid number": [
+        "Ni veljavna številka"
+      ],
       "Organization key is not decrypted": [
         "Ključ organizacije ni dešifriran."
       ],
@@ -5273,6 +5285,9 @@
       ],
       "Password is required": [
         "Zahtevano je geslo"
+      ],
+      "Passwords do not match": [
+        "Gesli se ne ujemata"
       ],
       "Payment process canceled": [
         "Postopek plačila je preklican"
@@ -5330,9 +5345,6 @@
       ],
       "Please try again in a few moments.": [
         "Poskusite znova čez nekaj trenutkov."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Prosim, nadgradite na poslovni paket z več kot enim uporabnikom, da dobite večuporabniško podporo."
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Prosim, nadgradite na poslovni paket z več kot enim uporabnikom, da boste lahko upravljali več uporabnikov."
@@ -5418,6 +5430,9 @@
       "The amount due has changed. Please try again.": [
         "Znesek, ki ga je treba plačati, se je spremenil. Poskusite znova."
       ],
+      "The email addresses do not match": [
+        "E-poštna naslova se ne ujemata"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "Datoteka je prevelika, največja velikost je ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }."
       ],
@@ -5457,11 +5472,17 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "V vašem zunanjem računu je preveč map. Prilagodite uvoz in izbrišite nekaj map."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "To polje presega število dovoljenih znakov - ${ maximumLength }."
+      ],
       "This field is invalid": [
         "To polje je neveljavno"
       ],
       "This field is required": [
         "To polje je obvezno"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "To polje zahteva vsaj ${ minimumLength } znakov."
       ],
       "This folder name is not available. Please choose a different name.": [
         "To ime mape ni na voljo. Izberite drugačno ime."
@@ -5481,6 +5502,9 @@
       "Try again later": [
         "Poskusite znova kasneje."
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Poskusite uporabiti samo črke, števke in _.-"
+      ],
       "Unable to upload file": [
         "Datoteke ni mogoče naložiti"
       ],
@@ -5498,6 +5522,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Prenesene datoteke niso veljavni zasebni ključi. Prosimo, preverite in poskusite znova."
+      ],
+      "Username must begin with a letter or digit": [
+        "Uporabniško ime se mora začeti s črko ali številko"
+      ],
+      "Username must end with a letter or digit": [
+        "Uporabniško ime se mora končati s črko ali številko"
       ],
       "Validation error": [
         "Napaka potrjevanja"
@@ -7553,12 +7583,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Dodajte svoje ime in logotip ter ustvarite bolj osebno izkušnjo za svojo organizacijo."
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Dodajam ${ addedServerCount } prehodni strežnik",
-        "Dodajam ${ addedServerCount } prehodna strežnika",
-        "Dodajam ${ addedServerCount } prehodne strežnike",
-        "Dodajam ${ addedServerCount } prehodnih strežnikov"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Dodajam prehodni strežnik: ${ serverNumber } / ${ total }",
@@ -18817,6 +18841,9 @@
         "Ustvarjanje ${ failedUsers.length } uporabniških računov ni uspelo.",
         "Ustvarjanje ${ failedUsers.length } uporabniških računov ni uspelo."
       ],
+      "Fewer distractions, more focus": [
+        "Manj motenj, več osredotočenosti"
+      ],
       "Filter for more focus": [
         "Filter za večjo osredotočenost"
       ],
@@ -20087,6 +20114,20 @@
       ],
       "Writing assistant": [
         "Pomočnik pri pisanju"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znak",
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov",
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov",
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znak)",
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znaka)",
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znaki)",
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znakov)"
       ]
     },
     "Video control": {

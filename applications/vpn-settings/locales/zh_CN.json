@@ -254,6 +254,9 @@
       "Continue to sign in": [
         "继续登录"
       ],
+      "Continue with Free": [
+        "注册免费账户"
+      ],
       "Continue with this password": [
         "使用此密码继续"
       ],
@@ -3790,6 +3793,9 @@
       "Automatically forward incoming email to another email address.": [
         "自动将收到的电子邮件转发到另一个邮箱地址。"
       ],
+      "Available storage: ${ storageText }": [
+        "可用空间：${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "阻止 Google 对您进行用户画像分析。Gmail 无法查看您在 ${ MAIL_APP_NAME } 中的操作"
       ],
@@ -3843,6 +3849,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密并导入联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了。"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "拥有足够空间存储多年的邮件、附件等"
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "确保对组织数据的安全访问，即使您的团队在远程或使用公共 WiFi 时也是如此。"
@@ -3940,6 +3949,9 @@
       "Track the status and activity of your referrals": [
         "实时跟踪已发出的邀请动态"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "仅需 ${ config.offerPrice } 即可解锁 15 GB 存储空间"
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "升级到 ${ planName } 最多可连接 ${ MAX_SYNC_PAID_USER } 个账户"
       ],
@@ -3949,11 +3961,14 @@
       "We can't access ${ boldEmails } anymore.": [
         "我们无法再访问 ${ boldEmails }。"
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "存储空间使用量达到 80% 时，我们会暂停导入，为接收新消息预留空间。"
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "我们将导入您的旧电子邮件并将 Gmail 连接到 ${ MAIL_APP_NAME }，以便新邮件自动显示。"
       ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "我们已开始导入您过去 180 天的 Gmail 邮件，导入完成后将会通知您。"
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "我们已开始从 Gmail 导入您的邮件，导入完成后将通知您。"
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
@@ -3990,6 +4005,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "您已将 1 个外部账户地址连接到 ${ MAIL_APP_NAME }。"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "您的免费 ${ MAIL_APP_NAME } 账户存储空间有限，因此我们仅导入 ${ newUserStorageText } 的最近 Gmail 邮件"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "您的免费 ${ MAIL_APP_NAME } 账户存储空间有限，因此我们仅导入您最近的 Gmail 邮件"
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "您的套餐支持 ${ MAX_SYNC_FREE_USER } 个 Gmail 地址。"
@@ -4843,9 +4864,6 @@
       "Please try again in a few moments.": [
         "请稍后再试."
       ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "请先升级为支持多用户的商务账户"
-      ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "请升级为支持多用户的商务账户后再执行用户管理操作。"
       ],
@@ -5587,6 +5605,9 @@
       "${ PROTON_SENTINEL_NAME } account protection": [
         "${ PROTON_SENTINEL_NAME } 账户保护"
       ],
+      "10+ premium features": [
+        "10+ 高级功能"
+      ],
       "15 GB storage": [
         "15 GB 存储空间"
       ],
@@ -5620,6 +5641,12 @@
       "Continue": [
         "继续"
       ],
+      "Custom email domain": [
+        "自定义邮箱域名"
+      ],
+      "Email addresses": [
+        "邮箱地址"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "用于文件、照片和文档的加密云存储空间"
       ],
@@ -5649,6 +5676,9 @@
       ],
       "Short domain @pm.me": [
         "短域名 @pm.me"
+      ],
+      "Storage": [
+        "存储空间"
       ],
       "Torrenting support (P2P)": [
         "支持 BT 下载 (P2P)"
@@ -6463,8 +6493,8 @@
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "${ BRAND_NAME } 企业套餐为您的团队提供所有所需的协作工具，使其在工作中高效且有条理，同时保护您的业务安全。"
       ],
-      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
-        "${ BRAND_NAME } 独立运营且无广告收入。\n以下示例说明了如何在实际中运用这种独立性。"
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } 由独立资金支持，且运营不含广告。以下是这种独立性在实际中的运用示例。"
       ],
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } 绝不向第三方透露您的信息。数据均来源于 ${ BRAND_NAME } 的独立分析以及 Constella Intelligence。"
@@ -6778,8 +6808,8 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "添加您的名称和徽标来为您的组织创建更多个性化的体验。"
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "正在添加 ${ addedServerCount } 台网关服务器"
+      "Adding ${ total } gateway server": [
+        "正在添加 ${ total } 台网关服务器"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "添加外部邮箱地址将禁用该组内所有电子邮件通信的端到端加密。要继续吗？"
@@ -7578,6 +7608,9 @@
       ],
       "Include device, location, and IP details": [
         "包含设备、位置和 IP 详情"
+      ],
+      "Included": [
+        "已包含"
       ],
       "Increase your account security by verifying your email address.": [
         "验证您的邮箱地址，提升账户安全性。"
@@ -8671,8 +8704,14 @@
       "Unverified email address.": [
         "邮箱地址未验证。"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "随时升级以迁移剩余内容"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "随时升级或清理空间以迁移剩余内容"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "升级以保留您的 ${ planTitle } 权益。"
@@ -9423,6 +9462,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME } 保护"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } 个字符"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
@@ -16397,6 +16439,9 @@
       "Contact us": [
         "联系我们"
       ],
+      "Continue with free storage": [
+        "继续使用免费存储空间"
+      ],
       "Continue with partial import?": [
         "继续以部分导入进行吗？"
       ],
@@ -16708,6 +16753,9 @@
       ],
       "Get more from your VPN": [
         "从您的 VPN 获取更多信息"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "使用 ${ MAIL_APP_NAME } Plus 获取更多存储空间"
       ],
       "Get started": [
         "开始使用"
@@ -17466,6 +17514,9 @@
       ],
       "Each imported email will have this label": [
         "每一封导入的邮件都会有这个标签"
+      ],
+      "Early access to new apps and features.": [
+        "抢先访问新应用和功能."
       ],
       "Edit folder names": [
         "更改文件夹名称"

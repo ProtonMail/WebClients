@@ -3811,6 +3811,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "足夠超過年的電子郵件、附件和更多"
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "確保安全存取組織資料，即使您的團隊是遠端工作或使用公共 WiFi。"
       ],
@@ -3880,6 +3883,9 @@
       "Track the status and activity of your referrals": [
         "追蹤您推薦邀請的狀態和進度"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "只要 ${ config.offerPrice } 解鎖 15 GB 的儲存空間"
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "升級至 ${ planName } 已連線到至多 ${ MAX_SYNC_PAID_USER } 個帳號"
       ],
@@ -3892,6 +3898,9 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "我們將帶入您舊的電子郵件便連線您的 Gmail 至 ${ MAIL_APP_NAME } 已讓新訊息自動顯示。"
       ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "您已有個 Gmail 位址轉寄至 ${ MAIL_APP_NAME }。於下方連接至它以直接於 ${ MAIL_APP_NAME } 傳送和接收電子郵件。"
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
       ],
@@ -3903,6 +3912,9 @@
       ],
       "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
         "您將連線至 ${ MAX_SYNC_PAID_USER } Gmail 位址。若要添加另一個，請先停用您連線的帳號。"
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "您已連線一個外部帳號位址至 ${ MAIL_APP_NAME }。"
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "您的帳號支援 ${ MAX_SYNC_FREE_USER } Gmail 位址。"
@@ -4574,6 +4586,9 @@
       "Email address is required": [
         "電郵位址為必填"
       ],
+      "Email is not valid": [
+        "電郵無效"
+      ],
       "Empty condition": [
         "條件空白"
       ],
@@ -4645,6 +4660,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "第二密碼錯誤。請重新再試。"
+      ],
+      "Incorrect username": [
+        "錯誤的使用者名稱"
       ],
       "Intended recipient does not support calendar sharing": [
         "擬收件人不支援行事曆共享"
@@ -4739,6 +4757,9 @@
       "Not a ${ BRAND_NAME } account": [
         "不是 ${ BRAND_NAME } 帳號"
       ],
+      "Not a valid number": [
+        "號碼無效"
+      ],
       "Organization key is not decrypted": [
         "組織金鑰未解密"
       ],
@@ -4750,6 +4771,9 @@
       ],
       "Password is required": [
         "密碼為必填"
+      ],
+      "Passwords do not match": [
+        "密碼不一致"
       ],
       "Payment process canceled": [
         "付款過程已取消"
@@ -4813,9 +4837,6 @@
       ],
       "Please try again in a few moments.": [
         "請稍候再試."
-      ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "請升級至選用多於 1 位使用者的企業方案，以便享用多使用者支援"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "請升級至選用多於 1 位使用者的企業方案，以便管理多位使用者。"
@@ -4895,6 +4916,9 @@
       "The amount due has changed. Please try again.": [
         "應付金額已變更。請再試一次。"
       ],
+      "The email addresses do not match": [
+        "電子郵件位址不相符"
+      ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "這個檔案太大了，最大為 ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
@@ -4937,11 +4961,17 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "待匯入的外部帳號裡資料夾過多，請自訂匯入內容並刪除部份資料夾。"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "此欄位還剩下 ${ maximumLength } 個字元。"
+      ],
       "This field is invalid": [
         "此欄位無效"
       ],
       "This field is required": [
         "此欄位必填"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "此欄位至少須有 ${ minimumLength } 個字元。"
       ],
       "This folder name is not available. Please choose a different name.": [
         "此資料夾名稱不適用。請選擇其它名稱。"
@@ -4961,6 +4991,9 @@
       "Try again later": [
         "請稍後再試"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "嘗試僅使用字母、數字與 _.-"
+      ],
       "Unable to upload file": [
         "無法上傳文件"
       ],
@@ -4978,6 +5011,12 @@
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "上傳的檔案不是有效的私鑰。請確認後再試一次。"
+      ],
+      "Username must begin with a letter or digit": [
+        "使用者名稱的開頭必須為字母或數字"
+      ],
+      "Username must end with a letter or digit": [
+        "使用者名稱的結尾必須為字母或數字"
       ],
       "Validation error": [
         "驗證錯誤"
@@ -5578,6 +5617,9 @@
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } 個 VPN 連線"
       ],
+      "10+ premium features": [
+        "10 + 頂級質子版功能"
+      ],
       "Access to all countries": [
         "所有國家任選"
       ],
@@ -5592,6 +5634,12 @@
       ],
       "Continue": [
         "下一步"
+      ],
+      "Custom email domain": [
+        "自訂電子郵件網域"
+      ],
+      "Email addresses": [
+        "電子郵件地址"
       ],
       "Encrypted cloud storage for files, photos and documents": [
         "給予檔案、照片和文件的加密雲端儲存"
@@ -5610,6 +5658,9 @@
       ],
       "Secure streaming support": [
         "安全串流支援"
+      ],
+      "Storage": [
+        "儲存空間"
       ],
       "Torrenting support (P2P)": [
         "Torrenting 支援 (P2P)"
@@ -6823,6 +6874,9 @@
       "active": [
         "啟用"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "新增 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
@@ -6846,9 +6900,6 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "添加您的名稱及標誌以替貴組織創建更個人化的體驗。"
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "正在新增 ${ addedServerCount } 台閘道伺服器"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "添加外部電子郵件地址將關閉於該群組的電子郵件端對端加密。確認要繼續嗎?"
@@ -7119,6 +7170,9 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "為匯入的郵件創建標籤、設定這次匯入的時間範圍以及要匯入的標籤。"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "替成員創建一個安全 ${ memberCount } 雲端"
       ],
       "Create an account": [
         "創建帳戶"
@@ -7605,6 +7659,9 @@
       ],
       "inactive": [
         "未使用"
+      ],
+      "Included": [
+        "包含"
       ],
       "Increase your account security by verifying your email address.": [
         "透過驗證您的電子郵件位址來增加您帳號的安全性。"
@@ -8388,6 +8445,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "使用${ DRIVE_APP_NAME }應用程式同步和管理檔案。於${ DOCS_APP_NAME }創建和共享文件，並安全存放。全部於${ ios },${ android }和${ desktop }。"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "因為過量請求暫時不可用。請稍後在試。"
       ],
       "Temporarily unavailable. Please check back later.": [
         "暫時無法使用，請稍後再試。"
@@ -10375,6 +10435,9 @@
       "Pending": [
         "擱置中"
       ],
+      "Personal and work emails, plus important updates and notifications": [
+        "個人和工作電子郵件，和重要更新及通知"
+      ],
       "Phone number": [
         "手機號碼"
       ],
@@ -11753,6 +11816,9 @@
       "99.95% SLA": [
         "99.95% 服務層級協議"
       ],
+      "Access all countries": [
+        "存取所有國家"
+      ],
       "Ad-blocker and malware protection": [
         "廣告攔截器及惡意軟體防護"
       ],
@@ -12082,6 +12148,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "無限流量/頻寬"
+      ],
+      "Unlock streaming": [
+        "解鎖串流"
       ],
       "Up to ${ n } user": [
         "多達 ${ n } 位使用者"
@@ -12525,6 +12594,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } 個國家"
+      ],
       "Access advanced VPN features": [
         "存取進階 VPN 功能"
       ],
@@ -13779,6 +13851,9 @@
     "Payments.Renewal price dependent on VAT number": {
       "Renewal price is dependent on the billing region and ABN.": [
         "續訂價格取決於計費區域和 EIN。"
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "續訂價格取決於計費區域和商務號碼。"
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "續訂價格取決於計費區域和 EIN。"
@@ -17419,6 +17494,9 @@
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "無法創建 ${ failedUsers.length } 位使用者帳號。"
       ],
+      "Fewer distractions, more focus": [
+        "減少干擾，更專注"
+      ],
       "Filter for more focus": [
         "要專注的檔案"
       ],
@@ -17490,6 +17568,9 @@
       ],
       "Get more from your VPN": [
         "從您的VPN取得更多"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "透過 ${ MAIL_APP_NAME } 取得更多儲存空間"
       ],
       "Get the apps": [
         "取得應用程式"
@@ -18633,6 +18714,14 @@
       ],
       "Writing assistant": [
         "撰寫幫手"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "密碼至少必須包含 ${ MIN_PASSWORD_LENGTH } 個字元"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "請輸入一個更短的使用者名稱 (${ n } characters max)"
       ]
     },
     "Video control": {

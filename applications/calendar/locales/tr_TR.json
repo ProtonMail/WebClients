@@ -222,6 +222,9 @@
       "Continue to ${ planOrAppName }": [
         "${ planOrAppName } ile ilerle"
       ],
+      "Continue with Free": [
+        "Free kullanmayı sürdür"
+      ],
       "Continue with Google": [
         "Google ile ilerle"
       ],
@@ -3084,6 +3087,9 @@
       "Availability unknown": [
         "Kullanılabilirlik durumu bilinmiyor"
       ],
+      "Available storage: ${ storageText }": [
+        "Kullanılabilecek depolama alanı: ${ storageText }"
+      ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Gününüzü daha kolay düzenlemek, zaman planınızı izlemek ve görevleri öncelik sırasına koymak için etkinliklere renk kodları verin."
       ],
@@ -3111,11 +3117,17 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Bilgisayarınızdaki dosyaları bulutla kolayca eşitleyin ve mobil aygıtınızdan erişin."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "${ connectedAddressText } adresine gönderilen e-postalar artık ${ MAIL_APP_NAME } üzerinde görünecek."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Ek güvenlik için kuruluşunuzda iki adımlı doğrulamanın kullanılmasını sağlayın."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Yıllarca birikecek e-postalar, ek dosyalar ve diğer şeyler için yeterli alan."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Ekibiniz uzaktan çalışıyor veya herkese açık Wi-Fi bağlantıları kullanıyor olsa bile, kuruluş verilerine güvenli erişim sağlayın."
@@ -3183,6 +3195,9 @@
       "To start, give your organization a name.": [
         "Başlamak için, kuruluşunuzun adını yazın."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Yalnızca ${ config.offerPrice } ile 15 GB depolama alanı edinin."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
       ],
@@ -3191,6 +3206,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Artık ${ boldEmails } adresine erişemiyoruz."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Yeni iletilere yer açmak için depolama alanı %80 doluluğa ulaştığında içe aktarma işlemini duraklatacağız."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Gmail üzerindeki e-postalarınızı içe aktarmaya başladık. Tamamlandığında sizi bilgilendireceğiz."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Aramızdan ayrıldığınız için üzgünüz. Vakit ayırıp iptal etme nedeninizi paylaşırsanız çok seviniriz. Geri bildiriminiz ${ BRAND_NAME } hizmetlerini herkes için daha iyi yapmamıza yardımcı olur."
@@ -3204,11 +3225,20 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Birleştirmek veya tutmak istemediğiniz kişileri silinmek üzere işaretleyebilirsiniz. Silme işlemi yalnızca birleştirme düğmesine tıkladıktan sonra yapılır"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Artık bu adresi kullanarak ${ BRAND_NAME } üzerinden e-posta gönderebilirsiniz."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Hesap ve veri kurtarma yöntemleriniz ayarlandı ve iki adımlı doğrulama açıldı."
       ],
       "Your account and data recovery methods are set.": [
         "Hesabınızı ve verilerinizi kurtarma yöntemleri ayarlandı."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ücretsiz ${ MAIL_APP_NAME } hesabınız sınırlı depolama alanıyla sunulduğundan güncel Gmail iletilerinizin yalnızca ${ newUserStorageText } kadarını içe aktaracağız."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ücretsiz ${ MAIL_APP_NAME } hesabınız sınırlı depolama alanıyla sunulduğu için yalnızca son Gmail e-postalarınız içe aktarılacak."
       ],
       "You’ll get a secure email with the details shortly.": [
         "Kısa bir süre sonra ayrıntıların bulunduğu bir güvenli e-posta alacaksınız."
@@ -3843,6 +3873,12 @@
       ],
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Davet edilen kullanıcılar oluşturmak için kuruluş anahtarı etkinleştirilmelidir"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Korunmayan kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
       ],
       "Passphrase unavailable": [
         "Parola ifadesi kullanılamıyor"
@@ -4536,11 +4572,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ ücretli özellik"
+      ],
+      "Custom email domain": [
+        "Özel e-posta etki alanı"
+      ],
+      "Email addresses": [
+        "E-posta adresleri"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Dosyalar, fotoğraflar ve belgeler için şifrelenmiş bulut depolama alanı"
       ],
       "More premium features": [
         "Diğer ücretli özellikler"
+      ],
+      "Storage": [
+        "Depolama alanı"
       ],
       "Unlimited hide-my-email aliases": [
         "Sınırsız sayıda hide-my-email takma adı"
@@ -5705,6 +5753,9 @@
       "In which calendar should bookings appear?": [
         "Rezervasyonlar hangi takvimde görünsün?"
       ],
+      "Included": [
+        "İçindekiler"
+      ],
       "Indexing events: ${ current }/${ total }": [
         "Etkinlikler dizine ekleniyor: ${ current }/${ total }"
       ],
@@ -6245,11 +6296,20 @@
       "Tracking": [
         "İzleme"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Bu kişiden gelen yeni iletileri doğrulamak için \"${ activeSignerText }\" anahtarına güvenin."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Herkese açık olarak sunulmadan önce yeni ${ BRAND_NAME } özelliklerini, güncellemelerini ve ürünlerini deneyin. Uygulama yeniden yüklenir"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Geri kalanını getirmek için istediğiniz zaman tarifenizi yükseltebilirsiniz"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Geri kalanları aktarmak için istediğiniz zaman tarifenizi yükseltin ya da yer açın"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } avantajlarınızı korumak için tarifenizi yükseltin."
@@ -6690,11 +6750,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Etkin imzalayan"
+      ],
       "Compromised": [
         "Ele geçirilmiş"
       ],
       "Expired": [
         "Geçerlilik süresi dolmuş"
+      ],
+      "Fallback": [
+        "Varsayılan"
       ],
       "KOO": [
         "KOO"
@@ -6767,6 +6833,9 @@
       "${ n } month": [
         "${ n } ay",
         "${ n } ay"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } karakter"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
@@ -9756,8 +9825,17 @@
       "External key automatically fetched via WKD.": [
         "Dış anahtar otomatik olarak WKD üzerinden alındı."
       ],
+      "This contact currently signs messages with this key": [
+        "Bu kişi şu anda iletileri bu anahtarla imzalıyor"
+      ],
+      "This key is used for message verification": [
+        "Bu anahtar ileti doğrulaması için kullanılır"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Bu anahtar, bu kişiye gönderilen iletileri şifrelemek için kullanılır"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Bu anahtar daha eski uygulamalarda bu kişiye gönderilen iletileri şifrelemek için kullanılır"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Bu anahtara \"güvenmemeniz\" önerilir."
@@ -11873,6 +11951,9 @@
       "Contacts": [
         "Kişiler"
       ],
+      "Continue with free storage": [
+        "Ücretsiz depolama alanını kullanmayı sürdür"
+      ],
       "Continue with partial import?": [
         "Kısmi içe aktarmay ile ilerlensin mi?"
       ],
@@ -12033,6 +12114,9 @@
       ],
       "Get more from your VPN": [
         "VPN hizmetinizden fazlasını alın"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "${ MAIL_APP_NAME } Plus ile daha fazla depolama alanı edinin"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "${ appName[APP_NAME] } uygulamalarını edinin"
@@ -12437,6 +12521,9 @@
       "When is it most important to use a VPN?": [
         "VPN kullanmak en çok ne zaman önemlidir?"
       ],
+      "You are all set": [
+        "Artık hazırsınız"
+      ],
       "You can now create unlimited folders and labels": [
         "Artık sınırsız sayıda klasör ve etiket oluşturabilirsiniz"
       ],
@@ -12601,6 +12688,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Yöneticiler gizli kullanıcıların verilerine erişemez ve parolalarını sıfırlayamaz."
+      ],
+      "Member activation incomplete": [
+        "Üye etkinleştirilmemiş"
+      ],
+      "Organization key must be activated to request data access": [
+        "Verilere erişme isteğinde bulunmak için kuruluş anahtarı etkinleştirilmelidir"
+      ],
+      "The user must have an address to request data access": [
+        "Veri isteğinde bulunabilmek için kullanıcının bir e-posta adresi olmalıdır"
       ]
     },
     "Validation": {

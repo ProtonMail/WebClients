@@ -1572,6 +1572,12 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "O acesso a ${ PASS_APP_NAME } exigirá sua impressão digital ou o PIN do dispositivo."
       ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "O token de acesso “${ action.token.Name }” deixará de funcionar imediatamente. Esta ação não pode ser revertida."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Os tokens de acesso, usados em conjunto com ${ passCliLink }, permitem automatizar o CI/CD ou conceder ao seu agente de IA acesso restrito ao que ele precisa para executar sua tarefa."
+      ],
       "Add your custom email address to monitor:": [
         "Adicione seu endereço de e-mail personalizado para monitoramento:"
       ],
@@ -1713,6 +1719,12 @@
       "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
         "Copiado para área de transferência (expira em ${ timeoutDurationHumanReadable })"
       ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Copie o texto em Markdown abaixo e envie-o ao seu agente de IA. Esta será a única vez que o token será exibido."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Copie este token agora. Por motivos de segurança, não será exibido novamente."
+      ],
       "Coupon successfully applied!": [
         "O cupom foi aplicado!"
       ],
@@ -1844,6 +1856,9 @@
       ],
       "Enter your PIN code": [
         "Digite seu código PIN"
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "Todas as ações realizadas por este token de agente, começando pela mais recente."
       ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Cada vez que seu alias receber um e-mail de alguém, um contato será criado automaticamente."
@@ -2017,6 +2032,9 @@
       ],
       "Loading ${ PASS_APP_NAME }": [
         "Carregando o ${ PASS_APP_NAME }"
+      ],
+      "Log out of any existing session:": [
+        "Sair de qualquer sessão ativa:"
       ],
       "Logging you out...": [
         "Desconectando você..."
@@ -2410,8 +2428,14 @@
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "Toque no ícone ${ gearIcon } para personalizar o alias que deseja."
       ],
+      "Test the token by logging in and listing vaults:": [
+        "Testar o token iniciando a sessão e listando os cofres:"
+      ],
       "Thank you, the problem has been reported": [
         "Nós lhe agradecemos. O problema foi relatado."
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "O agente deverá justificar cada ação que realizar, e todas as ações serão registradas em um registro de auditoria que você poderá consultar. Após a criação do token, você receberá instruções para copiar e colar no seu agente de IA."
       ],
       "The display name when sending an email from this alias.": [
         "O nome de exibição ao enviar um e-mail deste alias."
@@ -2476,6 +2500,9 @@
       ],
       "This setting is enforced by your organization": [
         "A configuração é imposta para a sua organização"
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Este token tem acesso somente de leitura aos cofres que você selecionar. Pode ler itens, mas não pode editá-los, compartilhar cofres nem convidar outras pessoas. Você pode alterar isso mais tarde."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Este cofre não é mais compartilhado com ninguém. Convide outras pessoas para compartilha-lo."

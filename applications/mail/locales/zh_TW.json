@@ -942,6 +942,9 @@
       "Move to Archive": [
         "移至「封存」"
       ],
+      "Move to category...": [
+        "移動至類別..."
+      ],
       "Move to folder": [
         "移至資料夾"
       ],
@@ -1413,6 +1416,9 @@
       "Start setup": [
         "開始設定"
       ],
+      "Start testing": [
+        "開始測試"
+      ],
       "Stay": [
         "停留"
       ],
@@ -1478,6 +1484,9 @@
       ],
       "Trust": [
         "信任"
+      ],
+      "Trust key": [
+        "信任金鑰"
       ],
       "Trust public key": [
         "信任公開金鑰"
@@ -4015,6 +4024,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "足夠超過年的電子郵件、附件和更多"
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "確保安全存取組織資料，即使您的團隊是遠端工作或使用公共 WiFi。"
       ],
@@ -4108,6 +4120,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "開啟電郵追蹤程式保護以避免廣告商或其他人追踪您的地點或網上活動。"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "只要 ${ config.offerPrice } 解鎖 15 GB 的儲存空間"
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "升級至 ${ planName } 已連線到至多 ${ MAX_SYNC_PAID_USER } 個帳號"
       ],
@@ -4138,6 +4153,9 @@
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
         "使用自訂延後，您可隱藏電子郵件並於更好的時間重新出現。"
       ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "您已有個 Gmail 位址轉寄至 ${ MAIL_APP_NAME }。於下方連接至它以直接於 ${ MAIL_APP_NAME } 傳送和接收電子郵件。"
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
       ],
@@ -4155,6 +4173,9 @@
       ],
       "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
         "您將連線至 ${ MAX_SYNC_PAID_USER } Gmail 位址。若要添加另一個，請先停用您連線的帳號。"
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "您已連線一個外部帳號位址至 ${ MAIL_APP_NAME }。"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "您的帳戶資料復原方法已就緒、雙重驗證已啟用。"
@@ -4765,6 +4786,12 @@
       ],
       "Organization key is not decrypted": [
         "組織金鑰未解密"
+      ],
+      "Organization key must be activated to create invited users": [
+        "需啟用組織金鑰才能建立邀請使用者"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "需啟用組織金鑰才能建立非私人使用者"
       ],
       "Passphrase unavailable": [
         "助記詞無法使用"
@@ -5502,11 +5529,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10 + 頂級質子版功能"
+      ],
+      "Custom email domain": [
+        "自訂電子郵件網域"
+      ],
+      "Email addresses": [
+        "電子郵件地址"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "給予檔案、照片和文件的加密雲端儲存"
       ],
       "More premium features": [
         "多項的頂級功能"
+      ],
+      "Storage": [
+        "儲存空間"
       ],
       "Unlimited hide-my-email aliases": [
         "無限制的 hide-my-email 別名"
@@ -6582,6 +6621,9 @@
       "Ad targeting": [
         "廣告目標鎖定"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "新增 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
@@ -6869,6 +6911,9 @@
       ],
       "Create a new contact group": [
         "創建新聯絡人群組"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "替成員創建一個安全 ${ memberCount } 雲端"
       ],
       "Create in": [
         "創建在"
@@ -7257,6 +7302,9 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "包含您的提示詞與回應將使我們變的更好"
       ],
+      "Included": [
+        "包含"
+      ],
       "Included for free with your plan": [
         "包含於您的免費方案"
       ],
@@ -7285,7 +7333,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -7937,6 +7985,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "使用${ DRIVE_APP_NAME }應用程式同步和管理檔案。於${ DOCS_APP_NAME }創建和共享文件，並安全存放。全部於${ ios },${ android }和${ desktop }。"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "因為過量請求暫時不可用。請稍後在試。"
       ],
       "Temporarily unavailable. Please check back later.": [
         "暫時無法使用，請稍後再試。"
@@ -9094,6 +9145,9 @@
       "Category": [
         "類別"
       ],
+      "Category:": [
+        "類別："
+      ],
       "CC": [
         "副本"
       ],
@@ -9490,6 +9544,9 @@
       "Payment method": [
         "付款方式"
       ],
+      "Personal and work emails, plus important updates and notifications": [
+        "個人和工作電子郵件，和重要更新及通知"
+      ],
       "PGP scheme": [
         "PGP 方案"
       ],
@@ -9790,6 +9847,9 @@
       ]
     },
     "Labels": {
+      "Loading your newsletter subscriptions...": [
+        "載入您的電子報訂閱..."
+      ],
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
         "您取消訂閱的電子報或郵寄清單將顯示於此。"
       ],
@@ -10594,6 +10654,9 @@
       "99.95% SLA": [
         "99.95% 服務層級協議"
       ],
+      "Access all countries": [
+        "存取所有國家"
+      ],
       "Ad-blocker and malware protection": [
         "廣告攔截器及惡意軟體防護"
       ],
@@ -10896,6 +10959,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "無限流量/頻寬"
+      ],
+      "Unlock streaming": [
+        "解鎖串流"
       ],
       "Up to ${ n } user": [
         "多達 ${ n } 位使用者"
@@ -11278,6 +11344,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } 個國家"
+      ],
       "Access advanced VPN features": [
         "存取進階 VPN 功能"
       ],
@@ -12067,6 +12136,9 @@
       "Renewal price is dependent on the billing region and ABN.": [
         "續訂價格取決於計費區域和 EIN。"
       ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "續訂價格取決於計費區域和商務號碼。"
+      ],
       "Renewal price is dependent on the billing region and EIN.": [
         "續訂價格取決於計費區域和 EIN。"
       ],
@@ -12136,6 +12208,9 @@
       ],
       "External key automatically fetched via WKD.": [
         "自動由 WKD 取得了外部金鑰。"
+      ],
+      "This key is used for message verification": [
+        "此金鑰用於訊息驗證"
       ],
       "This key is used to encrypt messages to this contact": [
         "此金鑰是用於加密通訊錄"
@@ -14718,6 +14793,9 @@
       "Get more from your VPN": [
         "從您的VPN取得更多"
       ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "透過 ${ MAIL_APP_NAME } 取得更多儲存空間"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "獲得 ${ appName[APP_NAME] } 應用程式"
       ],
@@ -14796,6 +14874,9 @@
       "Invalid verification code": [
         "驗證碼無效"
       ],
+      "Keep this banner hidden?": [
+        "保持隱藏此橫幅？"
+      ],
       "Label as": [
         "套用標籤"
       ],
@@ -14816,6 +14897,9 @@
       ],
       "Loading...": [
         "載入中…"
+      ],
+      "Mailing list": [
+        "郵寄清單"
       ],
       "Mark all messages as read": [
         "標記所有訊息為已讀"

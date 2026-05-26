@@ -227,6 +227,9 @@
       "Continue to ${ planOrAppName }": [
         "المتابعة إلى ${ planOrAppName }"
       ],
+      "Continue with Free": [
+        "تابع مجانا"
+      ],
       "Continue with this password": [
         "المتابعة باستخدام كلمة المرور هذه"
       ],
@@ -3278,6 +3281,9 @@
       "Automatically forward incoming email to another email address.": [
         "أعِد توجيه رسائل البريد الإلكتروني الواردة تلقائيًا إلى عنوان بريد إلكتروني آخر."
       ],
+      "Available storage: ${ storageText }": [
+        "التخزين المتاح: ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "قم بتكوين هذا أولاً لتفعيل مؤسستك وتخصيص عنوان بريدك الإلكتروني."
       ],
@@ -3313,6 +3319,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "يتم استيراد و تشفير جهات الاتصال... قد يستغرق ذلك بضع دقائق. عند اكتمال العملية ، يمكنك إغلاق هذا النموذج."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "مساحة تكفي لسنوات من رسائل البريد الإلكتروني والمرفقات والمزيد."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "اضمن الوصول الآمن إلى بيانات المؤسسة، حتى لو كان فريقك يعمل عن بعد أو يستخدم شبكة واي فاي (WiFi) عامة."
@@ -3368,11 +3377,11 @@
       "Track the status and activity of your referrals": [
         "تتبع حالة ونشاط إحالاتك"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "احصل على 15 غيغابايت من مساحة التخزين مقابل ${ config.offerPrice } فقط."
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "استخدم هذا الدليل لتجعل مؤسستك تستفيد على الفور من نظام ${ BRAND_NAME } البيئي الرائد في مجال التشفير والخصوصية."
-      ],
-      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "لقد بدأنا في استيراد آخر 180 يوما من رسائل البريد الإلكتروني من Gmail. سنخبرك عندما ينتهي الأمر"
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "نأسف لرؤيتك تغادر. إذا كان لديك بعض الوقت، سنكون ممتنين لمعرفة سبب رغبتك في الإلغاء. تساعدنا ملاحظاتك على جعل ${ BRAND_NAME } أفضل للجميع."
@@ -3385,6 +3394,12 @@
       ],
       "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
         "يمكنك دمج العناوين في حساب رئيسي واحد على ${ BRAND_NAME } باستخدام دليل الدعم الخاص بنا."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "نظرًا لأن حسابك المجاني في ${ MAIL_APP_NAME } يتضمن مساحة تخزين محدودة، فسنستورد فقط ${ newUserStorageText } من أحدث رسائل Gmail لديك."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "نظرًا لأن حسابك المجاني في ${ MAIL_APP_NAME } يتضمن مساحة تخزين محدودة، فسنستورد فقط أحدث رسائل Gmail لديك."
       ]
     },
     "description": {
@@ -4214,9 +4229,6 @@
       "Please try again in a few moments.": [
         "عاود المحاولة بعد بضع دقائق."
       ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "يرجى الترقية إلى خطة أعمال بها أكثر من مستخدم واحد للحصول على دعم متعدد المستخدمين"
-      ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "يرجى الترقية إلى خطة أعمال بها أكثر من مستخدم واحد لإدارة عدة مستخدمين."
       ],
@@ -4956,6 +4968,9 @@
         "${ MaxVPN } اتصالات VPN",
         "${ MaxVPN } اتصالات VPN"
       ],
+      "10+ premium features": [
+        "أكثر من 10 ميزات متميزة"
+      ],
       "Access to all countries": [
         "الوصول إلى جميع البلدان"
       ],
@@ -4981,6 +4996,12 @@
       "Continue": [
         "استمرار"
       ],
+      "Custom email domain": [
+        "نطاق بريد إلكتروني مخصص"
+      ],
+      "Email addresses": [
+        "عناوين البريد الإلكتروني"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "تخزين سحابي مشفر للملفات والصور والمستندات"
       ],
@@ -4998,6 +5019,9 @@
       ],
       "Secure streaming support": [
         "دعم البث الآمن"
+      ],
+      "Storage": [
+        "تخزين"
       ],
       "Torrenting support (P2P)": [
         "دعم التورنت (P2P)"
@@ -6241,14 +6265,6 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "أضف اسمك وشعارك لإنشاء تجربة أكثر تخصيصًا لمؤسستك."
       ],
-      "Adding ${ addedServerCount } gateway servers": [
-        "جارٍ إضافة ${ addedServerCount } خادم بوابة",
-        "جارٍ إضافة ${ addedServerCount } خادم بوابة",
-        "جارٍ إضافة ${ addedServerCount } خادم بوابة",
-        "جارٍ إضافة ${ addedServerCount } خوادم بوابة",
-        "جارٍ إضافة ${ addedServerCount } خوادم بوابة",
-        "جارٍ إضافة ${ addedServerCount } خوادم بوابة"
-      ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "ستؤدي إضافة عنوان بريد إلكتروني خارجي إلى تعطيل التشفير من طرف إلى طرف لجميع اتصالات البريد الإلكتروني داخل تلك المجموعة. هل تريد المتابعة؟"
       ],
@@ -7027,6 +7043,9 @@
       ],
       "Include device, location, and IP details": [
         "تضمين تفاصيل الجهاز والموقع وعنوان IP"
+      ],
+      "Included": [
+        "متضمن"
       ],
       "Increase your account security by verifying your email address.": [
         "عزّز أمان حسابك بالتحقق من عنوان بريدك الإلكتروني."
@@ -8062,8 +8081,14 @@
       "Unverified email address.": [
         "عنوان بريد إلكتروني لم يتم التحقق منه."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "يمكنك الترقية في أي وقت لنقل بقية العناصر."
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "قم بالترقية الآن للحصول على الميزات والمنتجات ومساحة التخزين المميزة بسعر خاص"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "يمكنك الترقية أو تحرير مساحة تخزين في أي وقت لاستيراد بقية الرسائل."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "قم بالترقية للاحتفاظ بمزايا ${ planTitle } الخاصة بك."
@@ -15826,6 +15851,9 @@
       "Contact us": [
         "اتصل بنا"
       ],
+      "Continue with free storage": [
+        "تابع مع التخزين المجاني"
+      ],
       "Continue with partial import?": [
         "الاستمرار مع استيراد الجزئي؟"
       ],
@@ -16125,6 +16153,9 @@
       ],
       "Get more from your VPN": [
         "احصل على المزيد من VPN الخاص بك"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "احصل على مساحة تخزين أكبر مع ${ MAIL_APP_NAME } Plus"
       ],
       "Get the apps": [
         "احصل على التطبيقات"

@@ -399,6 +399,9 @@
       "Load image": [
         "Sali-d tugniwin"
       ],
+      "Manage addresses": [
+        "Sefrek tansiwin"
+      ],
       "Manage folders": [
         "Sefrek ikaramen"
       ],
@@ -2119,9 +2122,6 @@
       "Error connecting to the Bitcoin API.": [
         "Tuccḍa di tuqqna ar API Bitcoin."
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "Afaylu \"${ item.name }\" yegguma ad d-yali, ssebba n tuccḍa \"${ error }\""
-      ],
       "File \"${ name }\" is already downloading": [
         "Afaylu \"${ name }\" yettwasader-d yakan"
       ],
@@ -2369,9 +2369,6 @@
       ],
       "You must set a name": [
         "Yessefk ad tesbaduḍ isem"
-      ],
-      "Your browser does not support uploading folders": [
-        "Iminig-ik ur issefrak ara ikaramen yettwaleqqmen"
       ],
       "Your import will not be processed.": [
         "Taktert-inek•inem ur tettwasekkar ara."
@@ -3724,9 +3721,6 @@
       ],
       "Trash is empty": [
         "Taqecwalt d tilemt"
-      ],
-      "Unknown error": [
-        "Tuccḍa tarussint"
       ],
       "Unlock drive to recover files": [
         "Kkes asekkeṛ i wakken ad d-terreḍ ifuyla"
@@ -5093,9 +5087,6 @@
       ],
       "Encrypted search activated": [
         "Anadi awgelgan yermed"
-      ],
-      "Failed to download files: ${ err }": [
-        "Yecceḍ usader n yifuyla: ${ err }"
       ],
       "Failed to move, please try again": [
         "Asmutti ur yeddi, ttxil ɛreḍ tikkelt-nniḍen"

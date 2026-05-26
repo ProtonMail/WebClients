@@ -38,11 +38,23 @@
       "Delete": [
         "Ștergere"
       ],
+      "Disable": [
+        "Dezactivare"
+      ],
+      "Disable Hardware Acceleration": [
+        "Dezactivare accelerare hardware"
+      ],
+      "Enable": [
+        "Activare"
+      ],
       "Enable diagnostic logs": [
         "Activare jurnale de diagnosticare"
       ],
       "Enable diagnostic logs from the Chromium engine.": [
         "Activare jurnale de diagnosticare din motorul Chromium."
+      ],
+      "Enable Hardware Acceleration": [
+        "Activare accelerare hardware"
       ],
       "Force Reload": [
         "Reîncărcare forțată"
@@ -122,6 +134,12 @@
       "Uninstall ${ MAIL_APP_NAME }": [
         "Dezinstalare ${ MAIL_APP_NAME }"
       ],
+      "When hardware acceleration is disabled, the app falls back to software rendering. This can cause choppy animations, dropped frames, slower video playback, higher CPU usage, and reduced graphics performance.": [
+        "Când accelerarea hardware este dezactivată, aplicația revine la randarea software. Acest lucru poate cauza animații sacadate, cadre pierdute, redare video mai lentă, utilizare mai mare a procesorului și performanță grafică redusă."
+      ],
+      "When hardware acceleration is enabled, the app uses your device’s dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "Când accelerarea hardware este activată, aplicația folosește hardware-ul grafic dedicat al dispozitivului pentru randare. Acest lucru poate cauza probleme de compatibilitate pe unele sisteme."
+      ],
       "Zoom": [
         "Scalare"
       ],
@@ -133,6 +151,12 @@
       ]
     },
     "App Menu": {
+      "Disable Hardware Acceleration": [
+        "Dezactivare accelerare hardware"
+      ],
+      "Enable Hardware Acceleration": [
+        "Activare accelerare hardware"
+      ],
       "Services": [
         "Servicii"
       ]

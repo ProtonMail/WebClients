@@ -255,6 +255,9 @@
       "Continue transfers": [
         "Συνέχιση μεταφορών"
       ],
+      "Continue with Free": [
+        "Συνέχεια με Free"
+      ],
       "Continue with Google": [
         "Συνεχίστε με Google"
       ],
@@ -634,6 +637,9 @@
       ],
       "Make a copy": [
         "Κάντε ένα αντίγραφο"
+      ],
+      "Manage addresses": [
+        "Διαχείριση διευθύνσεων"
       ],
       "Manage advanced account protections": [
         "Διαχείριση προηγμένων προστασιών λογαριασμού"
@@ -2915,6 +2921,9 @@
       "Automatically forward incoming email to another email address.": [
         "Αυτόματα προωθήστε εισερχόμενα μηνύματα ηλεκτρονικού ταχυδρομείου σε άλλη ηλεκτρονική διεύθυνση."
       ],
+      "Available storage: ${ storageText }": [
+        "Διαθέσιμος χώρος αποθήκευσης: ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Ρυθμίστε πρώτα αυτό για να ενεργοποιήσετε τον οργανισμό σας και να προσαρμόσετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
       ],
@@ -2936,11 +2945,17 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Συγχρονίστε εύκολα τα αρχεία στο cloud από τον υπολογιστή σας και αποκτήστε πρόσβαση σε αυτά από την κινητή συσκευή σας."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Τα μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στο ${ connectedAddressText } θα εμφανίζονται πλέον στο ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Ενθαρρύνετε τη χρήση της ταυτοποίησης δύο παραγόντων στην οργάνωσή σας για επιπλέον ασφάλεια."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται κρυπτογράφηση και εισαγωγή επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Αρκετός χώρος για χρόνια από μηνύματα ηλεκτρονικού ταχυδρομείου , συνημμένα και άλλα."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Εξασφαλίστε ασφαλή πρόσβαση στα δεδομένα του οργανισμού, ακόμα και αν η ομάδα σας είναι απομακρυσμένη ή χρησιμοποιεί δημόσιο WiFi."
@@ -3002,6 +3017,9 @@
       "To start, give your organization a name.": [
         "Για να ξεκινήσετε, δώστε ένα όνομα στον οργανισμό σας."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Ξεκλειδώστε 15 GB αποθηκευτικού χώρου μόνο με ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Αναβαθμίστε στο ${ planName } για να συνεχίσετε να κοινοποιείτε αρχεία με πρόσβαση επεξεργασίας"
       ],
@@ -3013,6 +3031,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Δεν μπορούμε πια να έχουμε πρόσβαση στα ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Θα σταματήσουμε τις εισαγωγές στο 80% του αποθηκευτικού χώρου για να κρατήσουμε χώρο για νέα μηνύματα."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Ξεκινήσαμε την εισαγωγή των ηλεκτρονικών μηνυμάτων σας από το Gmail. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Λυπόμαστε που φεύγετε. Αν έχετε λίγο χρόνο, θα εκτιμούσαμε πραγματικά να μας πείτε γιατί θέλετε να ακυρώσετε. Τα σχόλιά σας μας βοηθούν να κάνουμε το ${ BRAND_NAME } καλύτερο για όλους."
@@ -3026,11 +3050,20 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Μπορείτε να επισημάνετε για διαγραφή τις επαφές που δεν θέλετε να συγχωνεύσετε ούτε να διατηρήσετε. Η διαγραφή θα πραγματοποιηθεί μόνο αφού πατηθεί το κουμπί συγχώνευσης"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Τώρα μπορείτε να στέλνετε μηνύματα ηλεκτρονικού ταχυδρομείου από το ${ BRAND_NAME } χρησιμοποιώντας αυτή τη διεύθυνση."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Οι μέθοδοι ανάκτησης του λογαριασμού και των δεδομένων σας έχουν οριστεί και το 2FA είναι ενεργοποιημένο."
       ],
       "Your account and data recovery methods are set.": [
         "Οι μέθοδοι ανάκτησης του λογαριασμού και των δεδομένων σας έχουν οριστεί."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ο δωρεάν λογαριασμός σας ${ MAIL_APP_NAME } διαθέτει περιορισμένο αποθηκευτικό χώρο, επομένως θα εισάγουμε μόνο ${ newUserStorageText } από τα πιο πρόσφατα μηνύματά σας στο Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ο δωρεάν λογαριασμός σας ${ MAIL_APP_NAME } διαθέτει περιορισμένο αποθηκευτικό χώρο, επομένως θα εισάγουμε μόνο τα πιο πρόσφατα email σας στο Gmail."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
@@ -3501,9 +3534,6 @@
       "Failed to update public share node": [
         "Αποτυχία ενημέρωσης δημόσιου κόμβου κοινοποίησης"
       ],
-      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "Αδυναμία ανεβάσματος αρχείου \"${ item.name }\", λόγω σφάλματος \"${ error }\""
-      ],
       "File \"${ name }\" is already downloading": [
         "Το αρχείο \"${ name }\" κατεβαίνει ήδη"
       ],
@@ -3633,6 +3663,12 @@
       "Organization key is not decrypted": [
         "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
       ],
+      "Organization key must be activated to create invited users": [
+        "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για τη δημιουργία προσκεκλημένων χρηστών"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για τη δημιουργία μη ιδιωτικών χρηστών"
+      ],
       "Password is required": [
         "Απαιτείται κωδικός πρόσβασης"
       ],
@@ -3727,9 +3763,6 @@
       ],
       "Some contacts could not be deleted": [
         "Ορισμένες επαφές δεν μπόρεσαν να διαγραφούν"
-      ],
-      "Some files were ignored because they are not supported in Photos": [
-        "Ορισμένα αρχεία αγνοήθηκαν επειδή δεν υποστηρίζονται στις Φωτογραφίες"
       ],
       "Some groups could not be deleted": [
         "Αδυναμία διαγραφής κάποιων ομάδων"
@@ -3941,9 +3974,6 @@
       ],
       "You must set a name": [
         "Πρέπει να ορίσετε ένα όνομα"
-      ],
-      "Your browser does not support uploading folders": [
-        "Ο περιηγητής σας δεν υποστηρίζει ανέβασμα φακέλων"
       ],
       "Your import will not be processed.": [
         "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
@@ -4339,11 +4369,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ premium χαρακτηριστικά"
+      ],
+      "Custom email domain": [
+        "Προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Email addresses": [
+        "Διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Κρυπτογραφημένος χώρος αποθήκευσης στο cloud για αρχεία, φωτογραφίες και έγγραφα"
       ],
       "More premium features": [
         "Περισσότερες premium δυνατότητες"
+      ],
+      "Storage": [
+        "Αποθηκευτικός χώρος"
       ],
       "Unlimited hide-my-email aliases": [
         "Απεριόριστα hide-my-email ψευδώνυμα"
@@ -5680,6 +5722,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Στο επόμενο βήμα, θα μπορείτε να υποβάλετε μια κατάθεση χρησιμοποιώντας μια διεύθυνση Bitcoin."
       ],
+      "Included": [
+        "Περιλαμβάνονται"
+      ],
       "Index is empty.": [
         "Ο ευρετήριο είναι άδειο."
       ],
@@ -6540,6 +6585,9 @@
       "Trash is empty": [
         "Τα Διαγραμμένα είναι άδεια"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Εμπιστευτείτε το κλειδί \"${ activeSignerText }\" για να επαληθεύσετε νέα μηνύματα από αυτήν την επαφή."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Δοκιμάστε νέες δυνατότητες, ενημερώσεις και προϊόντα ${ BRAND_NAME } πριν κυκλοφορήσουν στο κοινό. Αυτό θα φορτώσει ξανά την εφαρμογή"
       ],
@@ -6554,9 +6602,6 @@
       ],
       "Unknown date": [
         "Άγνωστη ημερομηνία"
-      ],
-      "Unknown error": [
-        "Άγνωστο σφάλμα"
       ],
       "Unlock drive to recover files": [
         "Ξεκλειδώστε τον δίσκο για να ανακτήσετε αρχεία"
@@ -6576,8 +6621,14 @@
       "Updating drive search...": [
         "Ενημέρωση τοπικής αναζήτησης..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Αναβαθμίστε οποιαδήποτε στιγμή για να φέρετε τα υπόλοιπα"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Αναβαθμίστε ή εκκενώστε χώρο οποιαδήποτε στιγμή για να φέρετε τα υπόλοιπα"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Αναβαθμίστε για να διατηρήσετε τα ${ planTitle } προνόμιά σας."
@@ -7030,11 +7081,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Ενεργός Υπογράφων"
+      ],
       "Compromised": [
         "Εκτεθειμένο"
       ],
       "Expired": [
         "Έχει λήξει"
+      ],
+      "Fallback": [
+        "Εφεδρικό"
       ],
       "KOO": [
         "KOO"
@@ -7079,6 +7136,9 @@
       "${ nbYear } year": [
         "${ nbYear } έτος",
         "${ nbYear } έτη"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } χαρακτήρες"
       ],
       "(Expired)": [
         "(Ληγμένο)"
@@ -9513,9 +9573,6 @@
       "Failed to convert external invitation": [
         "Αποτυχία μετατροπής εξωτερικής πρόσκλησης"
       ],
-      "Failed to download files: ${ err }": [
-        "Αποτυχία λήψης αρχείων: ${ err }"
-      ],
       "Failed to move, please try again": [
         "Αποτυχία μετακίνησης, παρακαλούμε δοκιμάστε ξανά"
       ],
@@ -9580,10 +9637,6 @@
       ],
       "Selected item was successfully removed from your list": [
         "Το επιλεγμένο στοιχείο αφαιρέθηκε με επιτυχία από τη λίστα σας",
-        "Τα επιλεγμένα στοιχεία αφαιρέθηκαν επιτυχώς από τη λίστα σας"
-      ],
-      "Selected items were successfully removed from your list": [
-        "Το επιλεγμένο στοιχείο αφαιρέθηκε επιτυχώς από τη λίστα σας",
         "Τα επιλεγμένα στοιχεία αφαιρέθηκαν επιτυχώς από τη λίστα σας"
       ],
       "Setting updated. Editors can change permissions and share.": [
@@ -10429,8 +10482,17 @@
       "External key automatically fetched via WKD.": [
         "Εξωτερικό κλειδί που λαμβάνεται αυτόματα μέσω WKD."
       ],
+      "This contact currently signs messages with this key": [
+        "Αυτή η επαφή υπογράφει μηνύματα με αυτό το κλειδί"
+      ],
+      "This key is used for message verification": [
+        "Αυτό το κλειδί χρησιμοποιείται για την επαλήθευση μηνυμάτων"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Αυτό το κλειδί χρησιμοποιείται για την κρυπτογράφηση μηνυμάτων σε αυτήν την επαφή"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Αυτό το κλειδί χρησιμοποιείται για την κρυπτογράφηση μηνυμάτων σε αυτήν την επαφή σε παλαιότερες εφαρμογές"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Συνιστάται να \"μην εμπιστεύεστε\" αυτό το κλειδί."
@@ -12290,6 +12352,9 @@
       "Contacts": [
         "Επαφές"
       ],
+      "Continue with free storage": [
+        "Συνέχεια με δωρεάν αποθηκευτικό χώρο"
+      ],
       "Continue with partial import?": [
         "Συνέχιση με μερική εισαγωγή;"
       ],
@@ -12524,6 +12589,9 @@
       ],
       "Get more from your VPN": [
         "Αποκτήστε περισσότερα από το VPN σας."
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Αποκτήστε περισσότερο χώρο αποθήκευσης με το ${ MAIL_APP_NAME } Plus"
       ],
       "Get started with 10 minutes of free uploads, on the house.": [
         "Ξεκινήστε με 10 λεπτά δωρεάν μεταφορτώσεων, κερασμένα από εμάς."
@@ -13094,6 +13162,9 @@
       "When is it most important to use a VPN?": [
         "Πότε είναι πιο σημαντικό να χρησιμοποιήσετε ένα VPN;"
       ],
+      "You are all set": [
+        "Είστε έτοιμοι"
+      ],
       "You can now create unlimited folders and labels": [
         "Τώρα μπορείτε να δημιουργήσετε απεριόριστους φακέλους και ετικέτες"
       ],
@@ -13258,6 +13329,15 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Οι διαχειριστές δεν μπορούν να έχουν πρόσβαση στα δεδομένα των ιδιωτών χρηστών και δεν μπορούν να επαναφέρουν τον κωδικό πρόσβασής τους."
+      ],
+      "Member activation incomplete": [
+        "Μη ολοκληρωμένη ενεργοποίηση μέλους"
+      ],
+      "Organization key must be activated to request data access": [
+        "Το κλειδί οργανισμού πρέπει να είναι ενεργοποιημένο για να ζητήσετε πρόσβαση σε δεδομένα"
+      ],
+      "The user must have an address to request data access": [
+        "Ο χρήστης πρέπει να έχει μια διεύθυνση για να ζητήσει πρόσβαση στα δεδομένα"
       ]
     },
     "Upsell": {

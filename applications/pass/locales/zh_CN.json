@@ -2528,6 +2528,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "要查看您导入到数据，请点击浏览器工具栏中的 ${ PASS_APP_NAME } 图标。"
       ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "若要设置生物识别解锁，${ PASS_APP_NAME } 需要一个新的浏览器权限。接受后，扩展程序将重新加载。请之后重新打开此页面。"
+      ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "深受全球 50,000 多家企业用户和 1 亿账户的信赖。"
       ],
@@ -4457,6 +4460,9 @@
       ],
       "Breaches detected for": [
         "检测到的泄露信息"
+      ],
+      "Browser permission required": [
+        "需要浏览器权限"
       ],
       "Cancel changing your email?": [
         "取消更改您的邮箱？"
