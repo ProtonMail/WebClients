@@ -8,26 +8,35 @@ import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import type { ModalProps } from '@proton/components';
 import { ModalTwo, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import type { Currency } from '@proton/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import noop from '@proton/utils/noop';
 
+import type { CheckTrialPriceResult } from '../single-signup-v2/modals/Trial2024UpsellModal';
 import swissFlag from './flag.svg';
 import type { Measure } from './interface';
 import RatingsSection from './ratings/RatingsSection';
 
 interface DollarOfferModalProps extends ModalProps {
-    currency: Currency;
+    checkTrialResult: CheckTrialPriceResult;
+    priceWithoutDiscountPerMonth: number | undefined;
     onGetDeal: () => void;
     onContinueFree: () => void;
     img: ReactElement;
     measure: Measure;
 }
 
-const DollarOfferModal = ({ currency, onGetDeal, onContinueFree, img, measure, ...rest }: DollarOfferModalProps) => {
-    // Format prices based on currency
-    const offerPrice = getSimplePriceString(currency, 100); // CHF 1 or USD 1
-    const regularPrice = getSimplePriceString(currency, 999); // CHF 9.99 or USD 9.99
+const DollarOfferModal = ({
+    priceWithoutDiscountPerMonth,
+    checkTrialResult,
+    onGetDeal,
+    onContinueFree,
+    img,
+    measure,
+    ...rest
+}: DollarOfferModalProps) => {
+    const { currency, checkResult, fullAmount } = checkTrialResult;
+    const offerPrice = getSimplePriceString(currency, checkResult.AmountDue);
+    const regularPrice = getSimplePriceString(currency, priceWithoutDiscountPerMonth ?? fullAmount);
 
     // Track modal view on mount
     useEffect(() => {
