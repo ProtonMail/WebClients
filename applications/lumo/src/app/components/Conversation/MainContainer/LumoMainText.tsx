@@ -122,9 +122,8 @@ const LumoMainText = ({ isOnboardingCompleted, isSmallScreen, isGhostMode }: Lum
     // }
 
     return (
-        <span className="flex flex-row flex-nowrap items-center gap-2 mb-8">
-            <img src={lumoLogoNew} alt="Lumo" className="h-full relative z-10" />{' '}
-            <h1 className={textClassName}>{displayText}</h1>
+        <span className="flex flex-row flex-nowrap items-center gap-2 mb-8 relative z-10">
+            <img src={lumoLogoNew} alt="Lumo" className="h-full" /> <h1 className={textClassName}>{displayText}</h1>
         </span>
     );
 };
