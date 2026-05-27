@@ -1,6 +1,6 @@
 import type { NotificationsManager } from '@proton/components/containers/notifications/manager';
+import { setNotificationsManager } from '@proton/drive/modules/notifications';
 
-import { setNotificationsManager } from '../../modules/notifications/notifications.singleton';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { showAggregatedErrorNotification } from './errorNotifications';

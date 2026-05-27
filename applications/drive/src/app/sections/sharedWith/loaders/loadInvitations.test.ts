@@ -1,4 +1,5 @@
-import { getNotificationsManager } from '../../../modules/notifications';
+import { getNotificationsManager } from '@proton/drive/modules/notifications';
+
 import { useSharedWithMeStore } from '../useSharedWithMe.store';
 import { loadInvitations } from './loadInvitations';
 
@@ -8,7 +9,7 @@ jest.mock('@proton/drive/index', () => ({
     splitInvitationUid: jest.fn((uid: string) => ({ shareId: `share-${uid}` })),
 }));
 
-jest.mock('../../../modules/notifications', () => ({
+jest.mock('@proton/drive/modules/notifications', () => ({
     getNotificationsManager: jest.fn(),
 }));
 
