@@ -5,10 +5,12 @@ import {
     type GroupMembershipsState,
     type KtState,
     type OrganizationKeyState,
+    type PasswordReminderReduxState,
     type SecurityCheckupReduxState,
     type UserInvitationsState,
     type UserKeysState,
     type UserSettingsState,
+    type UserState,
     addressKeysListener,
     authenticationListener,
     groupMembershipsListener,
@@ -16,6 +18,7 @@ import {
     ktListener,
     organizationKeysListener,
     organizationThemeListener,
+    passwordReminderListener,
     securityCheckupListener,
     userInvitationsListener,
     userKeysListener,
@@ -31,10 +34,12 @@ interface RequiredState
     extends
         AddressKeysState,
         UserKeysState,
+        UserState,
         UserSettingsState,
         OrganizationKeyState,
         UserInvitationsState,
         SecurityCheckupReduxState,
+        PasswordReminderReduxState,
         GroupMembershipsState,
         SessionRecoverySliceReducerState,
         KtState {}
@@ -54,4 +59,5 @@ export const startSharedListening = (startListening: AppStartListening) => {
     ktListener(startListening);
     keyBackgroundManagerListener(startListening);
     sessionRecoveryListener(startListening);
+    passwordReminderListener(startListening);
 };

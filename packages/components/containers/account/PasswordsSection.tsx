@@ -15,6 +15,7 @@ import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import ChangeBackupPasswordModal from '@proton/components/containers/account/ChangeBackupPasswordModal';
+import PasswordRemindersSettings from '@proton/components/containers/account/passwordReminders/PasswordRemindersSettings';
 import useSearchParamsEffect from '@proton/components/hooks/useSearchParamsEffect';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -33,7 +34,6 @@ import PasswordResetAvailableAccountModal from './sessionRecovery/PasswordResetA
 const PasswordsSection = () => {
     const [user, loadingUser] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
-
     const { availableRecoveryMethods, hasRecoveryMethod } = useSelector(selectAvailableRecoveryMethods);
     const { isSessionRecoveryInitiationAvailable } = useSelector(selectSessionRecoveryData);
 
@@ -56,6 +56,7 @@ const PasswordsSection = () => {
 
     const { dismissCanceledState } = useSessionRecoveryLocalStorage();
     const [skipInfoStep, setSkipInfoStep] = useState(false);
+    const [recoveryModalFromAction, setRecoveryModalFromAction] = useState(false);
 
     const isOnePasswordMode = userSettings?.Password?.Mode === SETTINGS_PASSWORD_MODE.ONE_PASSWORD_MODE;
     const passwordLabel = isOnePasswordMode ? c('Title').t`Password` : c('Title').t`Main password`;
@@ -83,19 +84,19 @@ const PasswordsSection = () => {
 
             if (action === 'change-password') {
                 handleChangePassword(changePasswordMode);
-                params.delete('action');
-                return params;
             } else if (action === 'session-recovery-password-reset-available') {
                 setSkipInfoStep(false);
                 setSessionRecoveryPasswordResetModalOpen(true);
-                params.delete('action');
-                return params;
             } else if (action === 'session-recovery-reset-password') {
                 setSkipInfoStep(true);
                 setSessionRecoveryPasswordResetModalOpen(true);
-                params.delete('action');
-                return params;
+            } else if (action === 'forgot-password') {
+                setRecoveryModalFromAction(true);
+                setRecoveryModalOpen(true);
             }
+
+            params.delete('action');
+            return params;
         },
         [loading]
     );
@@ -151,17 +152,25 @@ const PasswordsSection = () => {
             {renderRecoveryModal && (
                 <ReauthUsingRecoveryModal
                     availableRecoveryMethods={availableRecoveryMethods}
-                    onBack={() => {
-                        recoveryModal.onClose();
-                        // On back, this should open the change password modal in the expected mode
-                        handleChangePassword(changePasswordMode);
-                    }}
+                    onBack={
+                        recoveryModalFromAction
+                            ? undefined
+                            : () => {
+                                  recoveryModal.onClose();
+                                  // On back, this should open the change password modal in the expected mode
+                                  handleChangePassword(changePasswordMode);
+                              }
+                    }
                     onInitiateSessionRecoveryClick={() => {
                         recoveryModal.onClose();
                         setSessionRecoveryModalOpen(true);
                     }}
                     onSuccess={() => setChangePasswordAfterReauthModalOpen(true)}
                     {...recoveryModal}
+                    onClose={() => {
+                        setRecoveryModalFromAction(false);
+                        recoveryModal.onClose();
+                    }}
                 />
             )}
             {renderChangePasswordAfterReauthModal && (
@@ -268,6 +277,7 @@ const PasswordsSection = () => {
                                 )}
                             </>
                         )}
+                        <PasswordRemindersSettings />
                     </SettingsSection>
                 );
             })()}
