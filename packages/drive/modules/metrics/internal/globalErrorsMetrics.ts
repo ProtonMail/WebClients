@@ -2,7 +2,7 @@ import type { MetricEvent } from '@proton/drive';
 import metrics from '@proton/metrics';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
-import { logging } from '../logging';
+import { logging } from '../../logging';
 import type { MetricUserPlanProvider } from './types';
 
 const logger = logging.getLogger('globalErrorsMetrics');

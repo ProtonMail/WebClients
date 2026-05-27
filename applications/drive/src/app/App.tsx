@@ -14,6 +14,7 @@ import {
     StandardLoadErrorPage,
     StandardPrivateApp,
 } from '@proton/components';
+import { driveMetrics } from '@proton/drive/modules/metrics';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
@@ -23,7 +24,6 @@ import noop from '@proton/utils/noop';
 
 import { bootstrapApp } from './bootstrap';
 import config from './config';
-import { driveMetrics } from './modules/metrics';
 import { useUserSettingsStore } from './modules/userSettings';
 import type { DriveStore } from './redux-store/store';
 import { extraThunkArguments } from './redux-store/thunk';

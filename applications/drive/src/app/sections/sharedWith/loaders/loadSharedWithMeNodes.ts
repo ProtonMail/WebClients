@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { getDrive, getDriveForPhotos, splitNodeUid } from '@proton/drive/index';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { driveMetrics } from '@proton/drive/modules/metrics';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
 
-import { driveMetrics } from '../../../modules/metrics';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
