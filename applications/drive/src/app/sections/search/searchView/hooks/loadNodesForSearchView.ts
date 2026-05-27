@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import type { MaybeNode, NodeEntity, ProtonDriveClient } from '@proton/drive/index';
 import { getDrive } from '@proton/drive/index';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { getNotificationsManager } from '@proton/drive/modules/notifications';
 
-import { getNotificationsManager } from '../../../../modules/notifications';
 import { handleSdkError, shouldTrackError } from '../../../../utils/errorHandling/handleSdkError';
 import { getNodeEffectiveRole } from '../../../../utils/sdk/getNodeEffectiveRole';
 import { getFormattedNodeLocation } from '../../../../utils/sdk/getNodeLocation';
