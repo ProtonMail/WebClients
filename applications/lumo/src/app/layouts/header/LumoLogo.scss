@@ -1,0 +1,33 @@
+@use '@proton/styles/scss/lib' as lib;
+
+// .lumo-logo-container {
+//     display: flex;
+//     align-items: center;
+//     gap: lib.rem(8);
+// }
+
+a {
+	text-decoration: none !important;
+
+	&:hover,
+	&:focus,
+	&:visited,
+	&:active {
+		text-decoration: none !important;
+	}
+}
+
+.tier-tag {
+	text-decoration: none !important;
+	display: inline-block;
+
+	&.pro {
+		background-color: var(--lumo-logo-tag-pro-background);
+		color: var(--lumo-logo-tag-pro-text);
+	}
+
+	&.plus {
+		background-color: var(--lumo-logo-tag-plus-background);
+		color: var(--lumo-logo-tag-plus-text);
+	}
+}
