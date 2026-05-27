@@ -24,6 +24,11 @@ const mockedReturn = useGetStartedChecklist as jest.MockedFunction<typeof useGet
 
 jest.mock('@proton/activation/src/components/SettingsArea/ProviderCards/ProviderCard', () => () => null);
 
+jest.mock('@proton/activation/src/hooks/useBYOEFeatureStatus', () => ({
+    __esModule: true,
+    default: () => false,
+}));
+
 jest.mock('@proton/activation/src/logic/store', () => ({
     useEasySwitchSelector: jest.fn(() => null),
 }));

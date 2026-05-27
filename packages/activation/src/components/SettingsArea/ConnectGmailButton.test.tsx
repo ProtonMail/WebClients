@@ -2,6 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { PRODUCT_BIT } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
@@ -80,7 +81,7 @@ describe('ConnectGmailButton', () => {
     });
 
     it('should render the button with default text', () => {
-        render(<ConnectGmailButton />);
+        render(<ConnectGmailButton source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />);
         expect(screen.getByTestId('ProviderButton:googleCardForward')).toHaveTextContent(
             'Set up auto-forwarding from Gmail'
         );
@@ -88,7 +89,7 @@ describe('ConnectGmailButton', () => {
 
     it('should render a disabled button if user is loading', () => {
         mockUseUser.mockReturnValue([{}, true]);
-        render(<ConnectGmailButton showIcon />);
+        render(<ConnectGmailButton showIcon source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />);
         expect(screen.getByTestId('ProviderButton:googleCardForward')).toBeDisabled();
     });
 
@@ -100,7 +101,7 @@ describe('ConnectGmailButton', () => {
             handleSyncCallback: jest.fn(),
             allSyncs: [],
         });
-        render(<ConnectGmailButton showIcon />);
+        render(<ConnectGmailButton showIcon source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />);
         expect(screen.getByTestId('ProviderButton:googleCardForward')).toBeDisabled();
     });
 
@@ -108,7 +109,7 @@ describe('ConnectGmailButton', () => {
         mockUseUser.mockReturnValue([{}, false]);
         render(
             <ModalsProvider>
-                <ConnectGmailButton showIcon />
+                <ConnectGmailButton showIcon source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />
             </ModalsProvider>
         );
         fireEvent.click(screen.getByTestId('ProviderButton:googleCardForward'));
@@ -128,7 +129,7 @@ describe('ConnectGmailButton', () => {
         });
         render(
             <ModalsProvider>
-                <ConnectGmailButton showIcon />
+                <ConnectGmailButton showIcon source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />
             </ModalsProvider>
         );
         fireEvent.click(screen.getByTestId('ProviderButton:googleCardForward'));
@@ -151,7 +152,7 @@ describe('ConnectGmailButton', () => {
         });
         render(
             <ModalsProvider>
-                <ConnectGmailButton showIcon />
+                <ConnectGmailButton showIcon source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />
             </ModalsProvider>
         );
         fireEvent.click(screen.getByTestId('ProviderButton:googleCardForward'));
@@ -175,7 +176,7 @@ describe('ConnectGmailButton', () => {
         });
         render(
             <ModalsProvider>
-                <ConnectGmailButton showIcon />
+                <ConnectGmailButton showIcon source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />
             </ModalsProvider>
         );
         fireEvent.click(screen.getByTestId('ProviderButton:googleCardForward'));
@@ -198,7 +199,7 @@ describe('ConnectGmailButton', () => {
         });
         render(
             <ModalsProvider>
-                <ConnectGmailButton showIcon />
+                <ConnectGmailButton showIcon source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />
             </ModalsProvider>
         );
         fireEvent.click(screen.getByTestId('ProviderButton:googleCardForward'));
