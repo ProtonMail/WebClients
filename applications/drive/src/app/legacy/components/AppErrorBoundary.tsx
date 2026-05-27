@@ -10,13 +10,13 @@ import {
     NotFoundError,
     PrivateMainArea,
 } from '@proton/components';
+import { driveMetrics } from '@proton/drive/modules/metrics';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import generateUID from '@proton/utils/generateUID';
 
 import { useActiveShare } from '../../legacy/hooks/drive/useActiveShare';
-import { driveMetrics } from '../../modules/metrics';
 
 interface Props {
     children: React.ReactNode;

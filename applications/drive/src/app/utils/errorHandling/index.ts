@@ -1,11 +1,11 @@
 import type { ScopeContext } from '@sentry/types';
 
+import { driveMetrics } from '@proton/drive/modules/metrics';
 import metrics from '@proton/metrics/index';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { isProduction, traceError } from '@proton/shared/lib/helpers/sentry';
 
-import { driveMetrics } from '../../modules/metrics';
 import type { EnrichedError } from './EnrichedError';
 import { isEnrichedError } from './EnrichedError';
 import { RefreshError } from './RefreshError';

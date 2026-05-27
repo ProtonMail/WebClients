@@ -1,6 +1,7 @@
 import { createContext, useContext, useRef, useState } from 'react';
 
 import { useApi, useAuthentication } from '@proton/components';
+import { driveMetrics } from '@proton/drive/modules/metrics';
 import metrics from '@proton/metrics';
 import { queryInitSRPHandshake, queryShareURLAuth } from '@proton/shared/lib/api/drive/sharing';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -12,7 +13,6 @@ import type { SRPHandshakeInfo } from '@proton/shared/lib/interfaces/drive/shari
 import { srpAuth } from '@proton/shared/lib/srp';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 
-import { driveMetrics } from '../../../modules/metrics';
 import { getLastActivePersistedUserSession } from '../../../utils/lastActivePersistedUserSession';
 import retryOnError from '../../../utils/retryOnError';
 import {

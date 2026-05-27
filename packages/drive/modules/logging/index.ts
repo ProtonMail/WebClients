@@ -1,5 +1,19 @@
 /**
  * Telemetry system for the Drive SDK and its applications.
  */
+import { Logging } from './logging';
 
-export { Logging } from './logging';
+export { Logging };
+
+/**
+ * The logging system for the Drive application.
+ *
+ * Use it to create a logger instance to log messages to the default log
+ * handlers.
+ *
+ * ```typescript
+ * const logger = logging.getLogger('my-module');
+ * logger.info('Hello, world!');
+ * ```
+ */
+export const logging = new Logging({ sentryComponent: 'drive-web-log' });

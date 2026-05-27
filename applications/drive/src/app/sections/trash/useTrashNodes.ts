@@ -2,8 +2,8 @@ import { useCallback } from 'react';
 
 import { getDrive, getDriveForPhotos } from '@proton/drive/index';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { driveMetrics } from '@proton/drive/modules/metrics';
 
-import { driveMetrics } from '../../modules/metrics';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getFormattedNodeLocation } from '../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';

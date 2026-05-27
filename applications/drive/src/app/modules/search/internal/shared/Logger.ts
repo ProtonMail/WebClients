@@ -1,4 +1,4 @@
-import { logging } from '../../../logging';
+import { logging } from '@proton/drive/modules/logging';
 
 /**
  * Unified logger for the search module — works in both main thread and SharedWorker.

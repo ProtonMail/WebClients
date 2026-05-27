@@ -1,4 +1,5 @@
-import { logging } from '../../modules/logging';
+import { logging } from '@proton/drive/modules/logging';
+
 import { downloadLogs } from '../../utils/downloadLogs';
 
 export type Log = {

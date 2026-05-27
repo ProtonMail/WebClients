@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 
+import { driveMetrics } from '@proton/drive/modules/metrics';
 import metrics from '@proton/metrics';
 import {
     getApiError,
@@ -13,7 +14,6 @@ import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { useSharesStore } from '../../../../legacy/zustand/share/shares.store';
-import { driveMetrics } from '../../../../modules/metrics';
 import { isIgnoredErrorForReporting } from '../../../../utils/errorHandling';
 import { is4xx, is5xx } from '../../../../utils/errorHandling/apiErrors';
 import { getIsPublicContext } from '../../../../utils/getIsPublicContext';
