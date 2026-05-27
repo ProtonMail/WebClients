@@ -9,11 +9,9 @@ import InboxQuickSettingsAppButton from '@proton/components/components/drawer/dr
 import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
-import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 import { isAdminOrLoginAsAdmin } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
@@ -47,7 +45,6 @@ export const RouterMailboxContainer = () => {
 
     const [user] = useUser();
     const [retentionRules] = useRetentionPolicies();
-    const [mailSettings] = useMailSettings();
     const { isColumnModeActive, messageContainerRef, mainAreaRef, scrollContainerRef } = useMailboxLayoutProvider();
 
     const { labelID, elementID } = params;
@@ -78,11 +75,8 @@ export const RouterMailboxContainer = () => {
     const location = useLocation();
     const urlPage = pageFromUrl(location);
     const searchParams = getSearchParams(location.hash);
-    const sort = useMemo<Sort>(
-        () => sortFromUrl(location, mailSettings.ViewMode === VIEW_MODE.GROUP, labelID),
-        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-649484
-        [searchParams.sort, mailSettings, labelID]
-    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-649484
+    const sort = useMemo<Sort>(() => sortFromUrl(location, labelID), [searchParams.sort, labelID]);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C5320A
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
     useScrollToTop(scrollContainerRef as RefObject<HTMLElement>, [
