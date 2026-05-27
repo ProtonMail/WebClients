@@ -6,7 +6,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '@proton/activation/src/constants';
 import useSetupGmailBYOEAddress from '@proton/activation/src/hooks/useSetupGmailBYOEAddress';
-import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
+import type { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { setBYOEFlowResult } from '@proton/activation/src/logic/byoeFlow/byoeFlow.slice';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
 import { changeCreateLoadingState } from '@proton/activation/src/logic/sync/sync.actions';
@@ -31,6 +31,7 @@ interface Props {
     buttonText?: string;
     onComplete?: () => Promise<void>;
     onBYOEFlowStart?: () => void;
+    source: EASY_SWITCH_SOURCES;
 }
 
 const ConnectGmailButton = ({
@@ -39,6 +40,7 @@ const ConnectGmailButton = ({
     buttonText = c('Action').t`Set up auto-forwarding from Gmail`,
     onComplete,
     onBYOEFlowStart,
+    source,
 }: Props) => {
     const { createNotification } = useNotifications();
     const easySwitchDispatch = useEasySwitchDispatch();
@@ -75,6 +77,7 @@ const ConnectGmailButton = ({
             setSyncModalOpen(false);
             setExpectedEmailAddress(undefined);
         },
+        source,
     });
 
     const disabled = loadingUser || loadingAddresses || isInMaintenance || isLoadingAddressesCount;
@@ -136,11 +139,7 @@ const ConnectGmailButton = ({
                     noSkip
                     onSyncCallback={handleCloseForwardingModal}
                     onBYOECallback={handleBYOEWithImportCallback}
-                    source={
-                        hasAccessToBYOE
-                            ? EASY_SWITCH_SOURCES.ACCOUNT_WEB_ADDRESSES_BYOE
-                            : EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS
-                    }
+                    source={source}
                     hasAccessToBYOE={hasAccessToBYOE}
                     expectedEmailAddress={expectedEmailAddress}
                     onCloseCallback={() => setExpectedEmailAddress(undefined)}
