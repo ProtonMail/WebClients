@@ -2,7 +2,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { getNotificationsManager } from '../../../../modules/notifications';
+import { getNotificationsManager } from '@proton/drive/modules/notifications';
+
 import {
     type SearchResultItem,
     tryCatchWithNotification,
