@@ -6,9 +6,9 @@ import type { ModalStateProps } from '@proton/components';
 import { useFormErrors } from '@proton/components';
 import { generateNodeUid } from '@proton/drive';
 import { uploadManager } from '@proton/drive/modules/upload';
+import { validateNodeName } from '@proton/drive/modules/validation';
 
 import { useActiveShare } from '../../legacy/hooks/drive/useActiveShare';
-import { validateLinkNameField } from '../../utils/validation/validation';
 
 export type UseCreateFileModalStateProps = ModalStateProps;
 const formatLinkName = (str: string) => str.trim();
@@ -17,7 +17,7 @@ export const useCreateFileModalState = ({ onClose, ...modalProps }: UseCreateFil
     const [fileName, setFileName] = useState('');
     const { validator, onFormSubmit } = useFormErrors();
 
-    const inputFieldError = validator([validateLinkNameField(fileName) || '']);
+    const inputFieldError = validator([validateNodeName(fileName) || '']);
 
     const handleBlur = ({ target }: FocusEvent<HTMLInputElement>) => {
         setFileName(formatLinkName(target.value));
