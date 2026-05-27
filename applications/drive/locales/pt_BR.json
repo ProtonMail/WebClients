@@ -8036,6 +8036,9 @@
       ],
       "Shared on ${ sharedOn }": [
         "Compartilhado em ${ sharedOn }"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caracteres"
       ]
     },
     "Label for contact group color": {
@@ -9168,6 +9171,9 @@
       ],
       "Unlock streaming": [
         "Desbloquear streaming"
+      ],
+      "No streaming support": [
+        "Sem suporte para streaming"
       ]
     },
     "new_plans: feature highlight": {
@@ -9985,6 +9991,10 @@
       ],
       "\"${ ellipsedName }\" failed to be deleted": [
         "\"${ ellipsedName }\" não foi excluído"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } foto foi adicionada a \"${ albumName }\"",
+        "${ addedUids.length } fotos foram adicionadas a \"${ albumName }\""
       ]
     },
     "Notification for duplicate filenames in the current upload": {
