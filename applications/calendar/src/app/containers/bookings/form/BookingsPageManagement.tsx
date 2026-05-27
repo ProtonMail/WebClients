@@ -17,10 +17,9 @@ import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { IcTextTitle } from '@proton/icons/icons/IcTextTitle';
 import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
-import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
+import { getBookingEventDurationOptions } from '@proton/shared/lib/calendar/eventDefaults';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
-import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useBookings } from '../bookingsProvider/BookingsProvider';
@@ -53,7 +52,7 @@ export const Form = () => {
 
     const canUseMeetLocation = isMeetVideoConferenceEnabled && hasMeetProductAccess;
 
-    const scheduleOptions = getCalendarEventDefaultDuration({ shortLabels: true });
+    const scheduleOptions = getBookingEventDurationOptions();
     const locationOptions = getBookingLocationOption(canUseMeetLocation);
 
     const { formData, updateFormData } = useBookings();
@@ -96,25 +95,14 @@ export const Form = () => {
             <FormIconRow icon={<IcClock />} title={c('Info').t`How long should an appointment last?`}>
                 <label htmlFor="duration-select" className="sr-only">{c('label')
                     .t`How long should an appointment last?`}</label>
-                <div className="flex gap-1">
+
+                <SelectTwo value={formData.duration} onChange={({ value }) => updateFormData('duration', value)}>
                     {scheduleOptions.map((option) => (
-                        <Button
-                            key={option.value}
-                            onClick={() => updateFormData('duration', option.value)}
-                            shape="outline"
-                            color={formData.duration === option.value ? 'norm' : 'weak'}
-                            aria-pressed={formData.duration === option.value}
-                            aria-describedby="duration-select"
-                            className={clsx(
-                                'booking-sidebar-duration-button',
-                                formData.duration === option.value && 'text-semibold'
-                            )}
-                            pill
-                        >
+                        <Option key={option.value} value={option.value} title={option.text}>
                             {option.text}
-                        </Button>
+                        </Option>
                     ))}
-                </div>
+                </SelectTwo>
             </FormIconRow>
 
             <FormIconRow icon={<IcCalendarDay />} title={c('Info').t`When can appointments be booked?`}>
