@@ -1034,6 +1034,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "De gratis proefperiode van uw desktop programma loopt af op ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Continue with Free": [
+        "Doorgaan met gratis"
       ]
     },
     "action": {
@@ -3221,6 +3224,27 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "U kunt nu e-mails versturen vanuit ${ BRAND_NAME } via dit adres."
+      ],
+      "Available storage: ${ storageText }": [
+        "Beschikbare opslagruimte: ${ storageText }"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Genoeg ruimte voor jarenlang e-mails, bijlagen en meer."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Ontgrendel 15 GB opslagruimte voor slechts ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "We pauzeren de import bij 80% opslagruimte om ruimte te reserveren voor nieuwe berichten."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "We zijn begonnen met het importeren van uw e-mails uit Gmail. We laten het u weten als het klaar is."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Uw gratis ${ MAIL_APP_NAME }-account wordt geleverd met beperkte opslagruimte, dus we importeren alleen ${ newUserStorageText } van uw meest recente Gmail-berichten"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Uw gratis ${ MAIL_APP_NAME }-account wordt geleverd met beperkte opslagruimte, dus we importeren alleen uw meest recente Gmail-e-mails."
       ]
     },
     "description": {
@@ -4556,6 +4580,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Onbeperkt aantal hide-my-email-aliassen"
+      ],
+      "10+ premium features": [
+        "10+ premium functies"
+      ],
+      "Custom email domain": [
+        "Aangepast e-maildomein"
+      ],
+      "Email addresses": [
+        "E-mailadressen"
+      ],
+      "Storage": [
+        "Opslagruimte"
       ]
     },
     "Features": {
@@ -6598,6 +6634,22 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "U heeft de limiet voor boekingen bereikt (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Maak een beveiligde cloud voor ${ memberCount } lid",
+        "Maak een beveiligde cloud voor ${ memberCount } leden"
+      ],
+      "Included": [
+        "inbegrepen"
+      ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Vertrouw op de sleutel \"${ activeSignerText }\" om nieuwe berichten van dit contact te verifiëren."
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Upgrade op elk gewenst moment om de rest over te brengen"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Upgrade of maak op elk gewenst moment ruimte vrij om de rest over te brengen"
       ]
     },
     "info": {
@@ -6721,6 +6773,12 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Active Signer": [
+        "Actieve ondertekenaar"
+      ],
+      "Fallback": [
+        "Terugval"
       ]
     },
     "Keyboard shortcut name": {
@@ -7334,6 +7392,9 @@
       ],
       "Zoom meeting": [
         "Zoom-vergadering"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tekens"
       ]
     },
     "label": {
@@ -8444,6 +8505,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+      ],
+      "Access all countries": [
+        "Toegang tot alle landen"
+      ],
+      "No streaming support": [
+        "Geen streaming-ondersteuning"
+      ],
+      "Unlock streaming": [
+        "Deblokkeer streaming"
       ]
     },
     "new_plans: feature highlight": {
@@ -8863,6 +8933,10 @@
       "Support for ${ n } custom email domain": [
         "Ondersteuning voor ${ n } aangepast e-maildomein",
         "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
+      ],
+      "${ n } country": [
+        "${ n } land",
+        "${ n } landen"
       ]
     },
     "Note": {
@@ -8899,7 +8973,7 @@
         "Wachtwoordzin gekopieerd naar klembord"
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
-        "Uw ${ BRAND_NAME } adres is klaar voor gebruik"
+        "Uw ${ BRAND_NAME }-adres is klaar voor gebruik"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9756,6 +9830,15 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "We adviseren u deze sleutel niet meer te vertrouwen."
+      ],
+      "This contact currently signs messages with this key": [
+        "Dit contact ondertekent momenteel berichten met deze sleutel"
+      ],
+      "This key is used for message verification": [
+        "Deze sleutel wordt gebruikt voor berichtverificatie"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Deze sleutel wordt gebruikt om berichten naar dit contact in oudere apps te coderen"
       ]
     },
     "PGP key warning": {
@@ -12470,6 +12553,12 @@
       ],
       "You are all set": [
         "U bent helemaal klaar"
+      ],
+      "Continue with free storage": [
+        "Ga door met gratis opslag"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Krijg meer opslagruimte met ${ MAIL_APP_NAME } Plus"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -1860,7 +1860,7 @@
     },
     "collider_2025: feature": {
       "Access to advanced AI models": [
-        "Gelişmiş yapay zeka modellerine erişim"
+        "Gelişmiş yapay zeka modellerine erişme"
       ],
       "Basic chat history": [
         "Temel sohbet geçmişi"
@@ -1896,7 +1896,7 @@
         "Hızlı erişim için sınırsız sayıda sık kullanılan"
       ],
       "Upload and query multiple large files": [
-        "Birden fazla büyük dosyayı yükleyip sorgulayın"
+        "Birden fazla büyük dosyayı yükleme ve sıraya alma"
       ],
       "Upload and query small files": [
         "Küçük dosyaları yükleyin ve sorgulayın"
@@ -7706,10 +7706,10 @@
         "${ n } katılımcı"
       ],
       "24 hours per meeting": [
-        "Görüşme başına 24 saat"
+        "Her görüşme için 24 saat süre"
       ],
       "60 minutes per meeting": [
-        "Görüşme başına 60 dakika"
+        "Her görüşme için 60 dakika süre"
       ],
       "Booking pages": [
         "Rezervasyon sayfaları"
@@ -8255,7 +8255,7 @@
         "DNS sızıntısı önleme"
       ],
       "Double hop": [
-        "Double hop"
+        "Çift durak"
       ],
       "Easy Switch import assistant": [
         "Easy Switch içe aktarma yardımcısı"
@@ -8376,7 +8376,7 @@
         "Hesap güvenliğinizi düzenli olarak denetleriz. Güncellenmesi gereken zayıf ya da yeniden kullanılmış parolalarınız varsa sizi uyarırız."
       ],
       "Require 2FA for organization": [
-        "Kuruluş için iki adımlı doğrulama gereksin"
+        "Kuruluş çapında iki adımlı doğrulamayı zorlama"
       ],
       "Router support": [
         "Yönlendirici desteği"
@@ -8397,13 +8397,13 @@
         "Güvenli bağlantı paylaşımı"
       ],
       "See team's availability": [
-        "Ekibin uygunluğuna bakın"
+        "Ekibin uygunluğunu görme"
       ],
       "Send & receive invitations": [
         "Davetleri alma ve gönderme"
       ],
       "Share files with no size limit": [
-        "Dosyaları boyut sınırı olmadan paylaşın"
+        "Dosyaları boyut sınırı olmadan paylaşma"
       ],
       "Short domain (@pm.me)": [
         "Kısa etki alanı (@pm.me)"
@@ -8427,7 +8427,7 @@
         "2 kullanıcıya kadar destek"
       ],
       "Sync and backup all your files across devices": [
-        "Tüm dosyalarınızı aygıtlarınız arasında eşitleyin ve yedekleyin"
+        "Tüm dosyalarınızı aygıtlarınız arasında eşitleme ve yedekleme"
       ],
       "Tor over VPN": [
         "VPN üzerinden Tor"
@@ -8460,7 +8460,7 @@
         "Her gün sınırsız sayıda ileti"
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
-        "Her kullanıcı için sınırsız paylaşılan ${ PASS_SHORT_APP_NAME } kasası"
+        "Her kullanıcı için sınırsız sayıda paylaşılan ${ PASS_SHORT_APP_NAME } kasası"
       ],
       "Unlimited shared vaults with access permissions": [
         "Erişim izinleri ile sınırsız sayıda paylaşılan kasa"
@@ -8469,7 +8469,7 @@
         "Sınırsız kasa paylaşımı"
       ],
       "Unlimited vaults": [
-        "Sınırsız kasa"
+        "Sınırsız sayıda kasa"
       ],
       "Unlimited volume/bandwidth": [
         "Sınırsız trafik/bant genişliği"
@@ -8493,13 +8493,13 @@
         "Aynı anda ${ n } aygıta kadar kullanın"
       ],
       "User credential management": [
-        "Kullanıcı kimlik doğrulama bilgileri yönetimi"
+        "Kullanıcı kimlik doğrulama bilgilerini yönetme"
       ],
       "User session management": [
-        "Kullanıcı oturumları yönetimi"
+        "Kullanıcı oturumlarını yönetme"
       ],
       "User storage management": [
-        "Kullanıcı depolama alanı yönetimi"
+        "Kullanıcı depolama alanını yönetme"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Kasa paylaşma (${ n } kişiye kadar)",
@@ -9609,7 +9609,7 @@
         "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
-        "Yenileme fiyatları ${ termsAndConditionsLink } metnine göre değişebilir."
+        "Yenileme fiyatları ${ termsAndConditionsLink } içeriğine göre değişebilir."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
@@ -11007,7 +11007,7 @@
         "En yüksek VPN hızına, 10 aygıt korumasına, yüksek hızlı yayın akışı izlemeye, reklam engelleyiciye, kötü amaçlı yazılım korumasına ve öncelikli desteğe erişiminizi kaybedeceksiniz."
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
-        "Sınırsız oturum açma kaydı ve notlara, sınırsız hide-my-email takma adına, 20 kasaya ve öncelikli desteğe erişiminizi kaydedeceksiniz."
+        "Sınırsız sayıda oturum açma kaydı ve notlara, sınırsız sayıda hide-my-email takma adına, 20 kasaya ve öncelikli desteğe erişiminizi kaydedeceksiniz."
       ]
     },
     "Subscribe to calendar modal": {
