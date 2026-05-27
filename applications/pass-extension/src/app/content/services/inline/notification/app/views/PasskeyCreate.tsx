@@ -147,33 +147,31 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username
 
             {form.values.step === 'passkey' && (
                 <>
-                    <div className="flex flex-nowrap items-center">
-                        <ItemIcon
-                            url={domain}
-                            icon="pass-passkey"
-                            size={5}
-                            alt=""
-                            className="shrink-0"
-                            loadImage={settings.loadDomainImages}
+                    <FieldsetCluster className="mt-2">
+                        <Field
+                            lengthLimiters
+                            name="name"
+                            component={TitleField}
+                            spellCheck={false}
+                            autoComplete={'off'}
+                            placeholder={c('Placeholder').t`Untitled`}
+                            maxLength={MAX_ITEM_NAME_LENGTH}
+                            className="items-center"
+                            label={c('Label').t`Title`}
+                            dense
+                            icon={
+                                <ItemIcon
+                                    url={domain}
+                                    icon="pass-passkey"
+                                    size={5}
+                                    alt=""
+                                    className="shrink-0"
+                                    loadImage={settings.loadDomainImages}
+                                />
+                            }
                         />
-                        <div className="flex-auto">
-                            <Field
-                                lengthLimiters
-                                name="name"
-                                component={TitleField}
-                                spellCheck={false}
-                                autoComplete={'off'}
-                                placeholder={c('Placeholder').t`Untitled`}
-                                maxLength={MAX_ITEM_NAME_LENGTH}
-                                className="pr-0"
-                                dense
-                            />
-                        </div>
-                    </div>
-
-                    <FieldsetCluster mode="read" as="div">
-                        <ValueControl icon={'user'} label={c('Label').t`Username`} value={username} />
-                        <ValueControl icon={'earth'} label={c('Label').t`Website`} value={domain} />
+                        <ValueControl label={c('Label').t`Username`} value={username} />
+                        <ValueControl label={c('Label').t`Website`} value={domain} />
                     </FieldsetCluster>
 
                     <div className="px-2 py-1 text-xs color-weak">{c('Info')
