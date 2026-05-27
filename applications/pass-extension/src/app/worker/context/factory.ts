@@ -160,9 +160,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
 
     /* Watch for `lockSetup` state changes. Notify all extension
      * components on update in order for clients' states to sync. */
-    registerStoreEffect(store, selectLockSetupRequired, (lockSetup) => {
-        if (lockSetup !== context.getState().lockSetup) onStateUpdate();
-    });
+    registerStoreEffect(store, selectLockSetupRequired, () => onStateUpdate());
 
     if (ENV === 'development') {
         WorkerMessageBroker.registerMessage(WorkerMessageType.DEBUG, ({ payload }) => {
