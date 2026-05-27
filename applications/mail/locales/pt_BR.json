@@ -10137,6 +10137,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caracteres"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11408,6 +11411,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
+      ],
+      "No streaming support": [
+        "Sem suporte para streaming"
       ]
     },
     "new_plans: feature highlight": {
