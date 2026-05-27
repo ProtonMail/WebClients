@@ -2,8 +2,8 @@ import { when } from 'jest-when';
 
 import type { MaybeNode, ProtonDriveClient } from '@proton/drive/index';
 import { getDrive } from '@proton/drive/index';
+import { getNotificationsManager } from '@proton/drive/modules/notifications';
 
-import { getNotificationsManager } from '../../../../modules/notifications';
 import type { EffectiveRole } from '../../../../utils/sdk/getNodeEffectiveRole';
 import { getNodeEffectiveRole } from '../../../../utils/sdk/getNodeEffectiveRole';
 import { getFormattedNodeLocation } from '../../../../utils/sdk/getNodeLocation';
@@ -16,7 +16,7 @@ jest.mock('@proton/drive/index', () => ({
     getDrive: jest.fn(),
 }));
 
-jest.mock('../../../../modules/notifications', () => ({
+jest.mock('@proton/drive/modules/notifications', () => ({
     getNotificationsManager: jest.fn(),
 }));
 

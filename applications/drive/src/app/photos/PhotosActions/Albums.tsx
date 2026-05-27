@@ -4,8 +4,8 @@ import { type NodeEntity, PhotoTag, getDriveForPhotos } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { getEllipsedName } from '@proton/drive/modules/intl';
+import { getNotificationsManager } from '@proton/drive/modules/notifications';
 
-import { getNotificationsManager } from '../../modules/notifications';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { usePhotosStore } from '../usePhotos.store';
 
