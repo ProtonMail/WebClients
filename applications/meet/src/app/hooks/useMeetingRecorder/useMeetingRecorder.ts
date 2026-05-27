@@ -1101,9 +1101,16 @@ export function useMeetingRecorder() {
         }
     };
 
+    const handleUnmount = async () => {
+        if (mediaRecorderRef.current) {
+            await downloadRecording();
+        }
+        await handleCleanup();
+    };
+
     useEffect(() => {
         return () => {
-            void handleCleanup();
+            void handleUnmount();
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
