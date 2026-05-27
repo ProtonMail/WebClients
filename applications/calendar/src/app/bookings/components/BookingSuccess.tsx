@@ -121,19 +121,6 @@ export const BookingSuccess = () => {
 
     const hasLocation = !!bookingDetails.location.trim() || bookingDetails.withProtonMeetLink;
 
-    const hostInformation = (
-        <>
-            {bookingDetails.inviterDisplayName && (
-                <div className="text-ellipsis" title={bookingDetails.inviterDisplayName}>
-                    {bookingDetails.inviterDisplayName}
-                </div>
-            )}
-            <div className="text-ellipsis" title={bookingDetails.inviterEmail}>
-                {bookingDetails.inviterEmail}
-            </div>
-        </>
-    );
-
     return (
         <div className="container">
             <div
@@ -150,11 +137,17 @@ export const BookingSuccess = () => {
                 </div>
                 <hr className="bg-weak mb-6" />
                 <div className="booking-success-grid gap-4 items-start max-w-full">
-                    <BookingSuccessItem
-                        title={c('Title').t`Host`}
-                        icon={<IcUserCircle size={6} />}
-                        data={hostInformation}
-                    />
+                    {!!bookingDetails.inviterDisplayName?.trim() && (
+                        <BookingSuccessItem
+                            title={c('Title').t`Host`}
+                            icon={<IcUserCircle size={6} />}
+                            data={
+                                <div className="text-ellipsis" title={bookingDetails.inviterDisplayName}>
+                                    {bookingDetails.inviterDisplayName}
+                                </div>
+                            }
+                        />
+                    )}
                     <BookingSuccessItem
                         title={c('Title').t`Date`}
                         icon={<IcCalendarGrid size={6} />}
