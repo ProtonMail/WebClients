@@ -4,7 +4,7 @@ import { createBYOEAddress } from '@proton/account/addresses/actions';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { startEasySwitchSignupImportTask } from '@proton/activation/src/api';
 import { BYOE_QUOTA_THRESHOLD_RATIO } from '@proton/activation/src/constants';
-import { EASY_SWITCH_SOURCES, type ImportToken, OAUTH_PROVIDER } from '@proton/activation/src/interface';
+import { type EASY_SWITCH_SOURCES, type ImportToken, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { loadImporters } from '@proton/activation/src/logic/importers/importers.actions';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { loadSyncList } from '@proton/activation/src/logic/sync/sync.actions';
@@ -22,9 +22,10 @@ import useBYOEFeatureStatus from './useBYOEFeatureStatus';
 interface Props {
     showSuccessModal: (connectedAddress: string) => void;
     onComplete?: () => void;
+    source: EASY_SWITCH_SOURCES;
 }
 
-const useSetupGmailBYOEAddress = ({ showSuccessModal, onComplete }: Props) => {
+const useSetupGmailBYOEAddress = ({ showSuccessModal, onComplete, source }: Props) => {
     const api = useApi();
     const [addresses] = useAddresses();
     const hasAccessToBYOE = useBYOEFeatureStatus();
@@ -93,7 +94,7 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal, onComplete }: Props) => {
                 await api(
                     startEasySwitchSignupImportTask({
                         Provider: OAUTH_PROVIDER.GOOGLE,
-                        Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                        Source: source,
                         Account: token.Account,
                         AutomaticImport: !isConversionFlow,
                         QuotaThresholdRatio: BYOE_QUOTA_THRESHOLD_RATIO,

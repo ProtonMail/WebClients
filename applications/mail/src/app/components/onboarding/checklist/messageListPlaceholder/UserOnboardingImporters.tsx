@@ -3,6 +3,8 @@ import { useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import ProviderCard from '@proton/activation/src/components/SettingsArea/ProviderCards/ProviderCard';
+import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
+import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms/Button/Button';
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -16,6 +18,7 @@ interface Props {
 }
 
 export const UserOnboardingImporters = ({ goToNextStep }: Props) => {
+    const hasAccessToBYOE = useBYOEFeatureStatus();
     const { markItemsAsDone, setByoeFlowInProgress } = useGetStartedChecklist();
     const stepModal = useEasySwitchSelector((state) => state.byoeFlow.stepModal);
     const prevStepModalRef = useRef(stepModal);
@@ -61,6 +64,11 @@ export const UserOnboardingImporters = ({ goToNextStep }: Props) => {
                         await markItemsAsDone(ChecklistKey.Import);
                         goToNextStep();
                     }}
+                    source={
+                        hasAccessToBYOE
+                            ? EASY_SWITCH_SOURCES.MAIL_WEB_CHECKLIST_BYOE
+                            : EASY_SWITCH_SOURCES.MAIL_WEB_CHECKLIST
+                    }
                 />
                 <div className="text-center mb-4">
                     <Button shape="underline" className="color-weak text-sm" onClick={goToNextStep}>{c(
