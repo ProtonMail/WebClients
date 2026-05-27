@@ -7,7 +7,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { headers } from '@proton/activation/msw.header';
 import useBYOEAddressesCounts from '@proton/activation/src/hooks/useBYOEAddressesCounts';
 import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
-import { ImportProvider, ImportType } from '@proton/activation/src/interface';
+import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import { ADDRESS_FLAGS, APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -146,7 +146,7 @@ describe('Provider cards process testing', () => {
 
     it('Should display the four cards on the page without user data', async () => {
         mockUseUser.mockReturnValue(defaultUseUser);
-        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />);
 
         const google = screen.getByTestId('ProviderButton:googleCardForward');
         const yahoo = screen.getByTestId('ProviderButton:yahooCard');
@@ -161,7 +161,7 @@ describe('Provider cards process testing', () => {
 
     it('Should open the advanced import modal', async () => {
         mockUseUser.mockReturnValue(defaultUseUser);
-        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />);
 
         const advancedImport = screen.getByTestId('ProviderButton:advancedImport');
         expect(advancedImport).toBeEnabled();
@@ -181,7 +181,7 @@ describe('Provider cards process testing', () => {
 
     it('Should open the Outlook modal', async () => {
         mockUseUser.mockReturnValue(defaultUseUser);
-        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />);
 
         const outlookImport = screen.getByTestId('ProviderButton:outlookCard');
         expect(outlookImport).toBeEnabled();
@@ -201,7 +201,7 @@ describe('Provider cards process testing', () => {
 
     it('Should open the Yahoo modal', async () => {
         mockUseUser.mockReturnValue(defaultUseUser);
-        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />);
 
         const yahooImport = screen.getByTestId('ProviderButton:yahooCard');
         expect(yahooImport).toBeEnabled();
@@ -221,7 +221,7 @@ describe('Provider cards process testing', () => {
 
     it('Should switch to imap import', async () => {
         mockUseUser.mockReturnValue(defaultUseUser);
-        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />);
 
         const advancedImport = screen.getByTestId('ProviderButton:advancedImport');
         expect(advancedImport).toBeEnabled();
@@ -244,7 +244,7 @@ describe('Provider cards process testing', () => {
     it('Should show BYOE modal when clicking Google with BYOE feature enabled', async () => {
         mockUseBYOEFeatureStatus.mockReturnValue(true);
         mockUseUser.mockReturnValue(defaultUseUser);
-        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />);
 
         fireEvent.click(screen.getByTestId('ProviderButton:googleCardForward'));
 
@@ -253,7 +253,7 @@ describe('Provider cards process testing', () => {
 
     it('Should show forwarding modal when clicking Google with BYOE feature disabled', async () => {
         mockUseUser.mockReturnValue(defaultUseUser);
-        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />);
 
         fireEvent.click(screen.getByTestId('ProviderButton:googleCardForward'));
 
@@ -263,7 +263,7 @@ describe('Provider cards process testing', () => {
     it('Should disable calendar checkbox in advanced import when user has no calendar', async () => {
         (useWriteableCalendars as jest.Mock).mockReturnValueOnce([[], false]);
         mockUseUser.mockReturnValue(defaultUseUser);
-        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />);
 
         fireEvent.click(screen.getByTestId('ProviderButton:advancedImport'));
         await waitFor(() => screen.getByText(`Import your data to ${BRAND_NAME}`));
@@ -274,7 +274,7 @@ describe('Provider cards process testing', () => {
     it('Should disable calendar checkbox in advanced import for BYOE-only account', async () => {
         mockUseAddresses.mockReturnValue([[{ Flags: ADDRESS_FLAGS.BYOE }], false]);
         mockUseUser.mockReturnValue(defaultUseUser);
-        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />);
 
         fireEvent.click(screen.getByTestId('ProviderButton:advancedImport'));
         await waitFor(() => screen.getByText(`Import your data to ${BRAND_NAME}`));
@@ -315,7 +315,7 @@ describe('Provider cards process testing', () => {
             })
         );
 
-        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />);
 
         const yahoo = screen.getByTestId('ProviderButton:yahooCard');
         expect(yahoo).toBeEnabled();
@@ -344,7 +344,7 @@ describe('Provider cards process testing', () => {
 
     it('Should click on imap calendar product', async () => {
         mockUseUser.mockReturnValue(defaultUseUser);
-        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />);
 
         const advancedImport = screen.getByTestId('ProviderButton:advancedImport');
         expect(advancedImport).toBeEnabled();

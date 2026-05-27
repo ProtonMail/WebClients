@@ -1,4 +1,5 @@
 import { SyncsTable } from '@proton/activation/src/components/ReportsTable/SyncsTable';
+import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import EasySwitchStoreInitializer from '@proton/activation/src/logic/EasySwitchStoreInitializer';
 import type { SettingsAreaConfig } from '@proton/components';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
@@ -22,7 +23,7 @@ const SettingsArea = ({ config, app }: Props) => {
             <EasySwitchStoreInitializer>
                 <PrivateMainSettingsArea config={config}>
                     <SettingsSectionWide data-testid="SettingsArea:forwardSection">
-                        <ProviderCard app={app} />
+                        <ProviderCard app={app} source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />
                     </SettingsSectionWide>
                     <SettingsSectionWide>
                         <ImportsTable />

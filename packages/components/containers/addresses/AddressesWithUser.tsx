@@ -10,6 +10,7 @@ import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modal
 import ConnectGmailButton from '@proton/activation/src/components/SettingsArea/ConnectGmailButton';
 import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
 import useBYOEAddressesCounts from '@proton/activation/src/hooks/useBYOEAddressesCounts';
+import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -286,7 +287,10 @@ const AddressesUser = ({
 
                     {hasAccessToBYOE && (
                         <div>
-                            <ConnectGmailButton buttonText={c('Action').t`Connect Gmail address`} />
+                            <ConnectGmailButton
+                                buttonText={c('Action').t`Connect Gmail address`}
+                                source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_ADDRESSES_BYOE}
+                            />
                             <p className="color-weak text-sm my-2">
                                 {c('Label BYOE').ngettext(
                                     msgid`${byoeAddressesAvailableCount} of ${maxBYOEAddresses} email address available`,
