@@ -1,4 +1,5 @@
-import { getNotificationsManager } from '../../modules/notifications';
+import { getNotificationsManager } from '@proton/drive/modules/notifications';
+
 import { isIgnoredError, sendErrorReport } from '../../utils/errorHandling';
 import type { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { isValidationError } from '../../utils/errorHandling/ValidationError';

@@ -1,10 +1,10 @@
 import type { NotificationsManager } from '@proton/components/containers/notifications/manager';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
 
-import { sendErrorReport } from '../../utils/errorHandling';
 import { getNotificationsManager, setNotificationsManager } from './notifications.singleton';
 
-jest.mock('../../utils/errorHandling', () => ({
-    sendErrorReport: jest.fn(),
+jest.mock('@proton/shared/lib/helpers/sentry', () => ({
+    traceError: jest.fn(),
 }));
 
 const makeMockManager = (): NotificationsManager => ({
@@ -42,7 +42,7 @@ describe('notifications singleton', () => {
 
         it('reports an error when calling createNotification', () => {
             getNotificationsManager().createNotification({ text: 'test' });
-            expect(sendErrorReport).toHaveBeenCalledWith(
+            expect(traceError).toHaveBeenCalledWith(
                 expect.objectContaining({
                     message: 'NotificationsManager not initialized',
                 })

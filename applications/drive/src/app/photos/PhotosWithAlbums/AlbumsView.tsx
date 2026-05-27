@@ -7,9 +7,9 @@ import { useShallow } from 'zustand/react/shallow';
 import { Loader, useAppTitle, useModalStateObject, useNotifications } from '@proton/components';
 import { getDriveForPhotos } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { getNotificationsManager } from '@proton/drive/modules/notifications';
 
 import useNavigate from '../../legacy/hooks/drive/useNavigate';
-import { getNotificationsManager } from '../../modules/notifications';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { RenameAlbumModal } from '../PhotosModals/RenameAlbumModal';
 import { usePhotoLayoutStore } from '../layout.store';
