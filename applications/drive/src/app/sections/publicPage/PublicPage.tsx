@@ -3,12 +3,12 @@ import { useLocation } from 'react-router-dom-v5-compat';
 
 import { useActiveBreakpoint, useAppTitle, useTheme } from '@proton/components';
 import { NodeType, useDrive } from '@proton/drive';
+import { logging } from '@proton/drive/modules/logging';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
 import config from '../../config';
 import LocationErrorBoundary from '../../containers/LocationErrorBoundary';
 import { usePartialPublicView } from '../../legacy/hooks/util/usePartialPublicView';
-import { logging } from '../../modules/logging';
 import { TransferManager } from '../../sections/transferManager/TransferManager';
 import { deleteStoredUrlPassword } from '../../utils/url/password';
 import { PublicFileView } from './PublicFileView';

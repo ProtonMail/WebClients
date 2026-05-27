@@ -15,6 +15,8 @@ import {
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { getDrive, getDriveForPhotos, splitNodeUid, useDrive } from '@proton/drive';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { logging } from '@proton/drive/modules/logging';
+import { driveMetrics } from '@proton/drive/modules/metrics';
 import { useLoading } from '@proton/hooks';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -32,8 +34,6 @@ import { useDriveSharingFlags, useShareActions } from '../legacy/store/_shares';
 import { useShareBackgroundActions } from '../legacy/store/_views/useShareBackgroundActions';
 import { useVolumesState } from '../legacy/store/_volumes';
 import { useRunningFreeUploadTimer } from '../modules/freeUpload';
-import { logging } from '../modules/logging';
-import { driveMetrics } from '../modules/metrics';
 import { useSearchModule } from '../modules/search';
 import { useUserSettings } from '../modules/userSettings';
 import { PhotosWithAlbumsContainer } from '../photos/PhotosWithAlbumsContainer';

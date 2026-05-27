@@ -1,4 +1,4 @@
-import { logging } from '../../../modules/logging';
+import { logging } from '@proton/drive/modules/logging';
 
 export const downloadLogger = logging.getLogger('download-manager');
 
