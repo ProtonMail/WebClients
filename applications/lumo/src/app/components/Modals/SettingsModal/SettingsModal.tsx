@@ -13,7 +13,6 @@ import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import type { IconName } from '@proton/icons/types';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import lumoAvatarNeutral from '@proton/styles/assets/img/lumo/lumo-avatar-neutral.svg';
 
 import { useLumoUserSettings } from '../../../hooks';
 import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
@@ -21,6 +20,7 @@ import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../../hooks/useLumoPlan';
 import { useMessageSearch } from '../../../hooks/useMessageSearch';
 import { DbApi } from '../../../indexedDb/db';
+import LumoLogoHeader from '../../../layouts/header/LumoLogo';
 import { useLumoTheme } from '../../../providers';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useLumoSelector } from '../../../redux/hooks';
@@ -35,7 +35,6 @@ import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeCo
 import { IndexingStatusBanner } from '../../Files/DriveBrowser/IndexingStatusBanner';
 import { CreateFreeAccountLink } from '../../Guest/CreateFreeAccountLink/CreateFreeAccountLink';
 import { SignInButton } from '../../Guest/SignInLink';
-import { LumoLogoThemeAware } from '../../Icons/LumoLogoThemeAware';
 import AboutPanel from './AboutPanel';
 import DeleteAllButton from './DeleteAllButton';
 import MemoryPanel from './MemoryPanel';
@@ -94,8 +93,9 @@ const LumoSettingsSidebar = ({
         >
             {/* Lumo Logo */}
             <div className="hidden md:flex gap-2">
-                <img src={lumoAvatarNeutral} alt="Lumo" height="50px" />
-                <LumoLogoThemeAware height="32px" />
+                {/* <img src={lumoAvatarNeutral} alt="Lumo" height="50px" />
+                <LumoLogoThemeAware height="32px" /> */}
+                <LumoLogoHeader />
             </div>
 
             {/* Navigation Items */}
@@ -390,7 +390,8 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
     const isGuest = useIsGuest();
     const closeModal = modalProps.onClose;
     const SettingsItems = useMemo(
-        () => (isMemoryFeatureEnabled ? BASE_SETTINGS_ITEMS : BASE_SETTINGS_ITEMS.filter((item) => item.id !== 'memory')),
+        () =>
+            isMemoryFeatureEnabled ? BASE_SETTINGS_ITEMS : BASE_SETTINGS_ITEMS.filter((item) => item.id !== 'memory'),
         [isMemoryFeatureEnabled]
     );
 

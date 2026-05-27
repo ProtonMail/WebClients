@@ -113,8 +113,14 @@
     /* background particle  */
     --surface-foreground: #f5f6fe;
 
-    /* background particle  */
+    /* welcome text  */
     --lumo-welcome-text: #311e71;
+
+    /* logo tags */
+     --lumo-logo-tag-pro-background: #1B1340;
+     --lumo-logo-tag-plus-background: #E8E9EB;
+     --lumo-logo-tag-pro-text: var(--text-invert);
+     --lumo-logo-tag-plus-text: #7A7A7A;
 
 
 }
