@@ -9,9 +9,9 @@ import {
     ServerError,
     ValidationError,
 } from '@proton/drive';
+import { getNotificationsManager } from '@proton/drive/modules/notifications';
 
 import { sendErrorReport } from '.';
-import { getNotificationsManager } from '../../modules/notifications';
 import { EnrichedError } from './EnrichedError';
 
 export const shouldTrackError = (err: Error) =>

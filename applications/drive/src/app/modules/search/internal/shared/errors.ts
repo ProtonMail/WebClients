@@ -7,6 +7,7 @@ import {
     RateLimitedError as SdkRateLimitedError,
     ServerError as SdkServerError,
 } from '@proton/drive';
+import { getNotificationsManager } from '@proton/drive/modules/notifications';
 import {
     getIsNetworkError,
     getIsOfflineError,
@@ -15,7 +16,6 @@ import {
 } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { sendErrorReport } from '../../../../utils/errorHandling';
-import { getNotificationsManager } from '../../../notifications';
 import { Logger } from './Logger';
 
 // Sentry is not installed on the sharedworker.

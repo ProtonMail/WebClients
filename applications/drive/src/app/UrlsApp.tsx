@@ -29,7 +29,6 @@ import config from './config';
 import locales from './locales';
 import { featureFlagStore } from './modules/featureFlag';
 import { driveMetrics } from './modules/metrics';
-import { NotificationsBridge } from './modules/notifications';
 import type { DriveStore } from './redux-store/store';
 import { extendStore, setupStore } from './redux-store/store';
 import { extraThunkArguments } from './redux-store/thunk';
@@ -95,7 +94,6 @@ const UrlsApp = () => {
 
     return (
         <ProtonApp config={config}>
-            <NotificationsBridge />
             {(() => {
                 if (state.error) {
                     return <StandardLoadErrorPage errorMessage={state.error} />;
