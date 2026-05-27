@@ -33,6 +33,8 @@ export const BookingDetails = () => {
     const hasLocation = !!bookingDetails.location.trim() || bookingDetails.withProtonMeetLink;
     const hasDescription = !!bookingDetails.description.trim();
 
+    const displayName = bookingDetails.inviterDisplayName || '-';
+
     return (
         <header
             className="p-8 md:p-12 flex flex-column flex-nowrap mb-8 bg-norm booking-details-header"
@@ -55,16 +57,14 @@ export const BookingDetails = () => {
                         <IcUserCircle className="booking-color-title" size={6} />
                     </div>
 
-                    {bookingDetails.inviterDisplayName && (
-                        <div className="flex-1">
-                            <span className="flex flex-nowrap gap-2 items-center">
-                                <h3 className="text-rg m-0 booking-color-title text-semibold">{c('Info').t`Host`}</h3>
-                            </span>
-                            <div className="text-ellipsis" title={bookingDetails.inviterDisplayName}>
-                                {bookingDetails.inviterDisplayName}
-                            </div>
+                    <div className="flex-1">
+                        <span className="flex flex-nowrap gap-2 items-center">
+                            <h3 className="text-rg m-0 booking-color-title text-semibold">{c('Info').t`Host`}</h3>
+                        </span>
+                        <div className="text-ellipsis" title={displayName}>
+                            {displayName}
                         </div>
-                    )}
+                    </div>
                 </div>
                 <div className="flex flex-nowrap flex-row gap-3 items-start">
                     <div className="bg-weak shrink-0 rounded-full p-2">
