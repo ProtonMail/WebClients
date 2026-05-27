@@ -12,8 +12,7 @@ import {
     ModalTwoHeader,
     useFormErrors,
 } from '@proton/components';
-
-import { validateLinkNameField } from '../../legacy/store';
+import { validateNodeName } from '@proton/drive/modules/validation';
 
 export const RenameAlbumModal = ({
     renameAlbumModal,
@@ -61,7 +60,7 @@ export const RenameAlbumModal = ({
                             value={albumName}
                             label={c('Action').t`Album name`}
                             placeholder={c('Action').t`Name your album`}
-                            error={validator([validateLinkNameField(albumName) || ''])}
+                            error={validator([validateNodeName(albumName) || ''])}
                         />
                     </ModalTwoContent>
                     <ModalTwoFooter>
