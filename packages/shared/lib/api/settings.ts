@@ -3,6 +3,7 @@ import type { NewsletterSubscriptionUpdateData } from '@proton/shared/lib/helper
 import type {
     AI_ASSISTANT_ACCESS,
     DRAWER_VISIBILITY,
+    PASSWORD_REMINDERS_VALUE,
     SETTINGS_DATE_FORMAT,
     SETTINGS_LOG_AUTH_STATE,
     SETTINGS_TIME_FORMAT,
@@ -250,7 +251,11 @@ export const updateEarlyAccess = (data: { EarlyAccess: number }) => ({
     data,
 });
 
-export const updateFlags = (data: { Welcomed?: number; EdmOptOut?: number } | { SupportPgpV6Keys: 1 }) => ({
+export const updateFlags = (
+    data:
+        | { Welcomed?: number; EdmOptOut?: number; PasswordReminderOptOut?: PASSWORD_REMINDERS_VALUE }
+        | { SupportPgpV6Keys: 1 }
+) => ({
     url: 'core/v4/settings/flags',
     method: 'put',
     data,

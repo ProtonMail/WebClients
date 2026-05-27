@@ -59,6 +59,8 @@ export * from './paymentStatus';
 export * from './subscription';
 export * from './plans';
 export * from './passwordPolicies';
+export * from './passwordReminder';
+export * from './passwordReminder/listener';
 export * from './retentionPolicies';
 export * from './previousSubscription';
 export * from './delegatedAccess';
