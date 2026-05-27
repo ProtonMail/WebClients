@@ -8,10 +8,10 @@ import { type ModalStateProps, useFormErrors, useNotifications } from '@proton/c
 import { type ProtonDriveClient, getDrive, splitNodeUid } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { getEllipsedName } from '@proton/drive/modules/intl';
+import { validateNodeName } from '@proton/drive/modules/validation';
 
-import { formatLinkName, useDriveEventManager, validateLinkNameField } from '../../legacy/store';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
-import { getEllipsedName } from '../../utils/intl/getEllipsedName';
 
 type Drive = Pick<ProtonDriveClient, 'createFolder' | 'getNode'>;
 
@@ -42,13 +42,12 @@ export const useCreateFolderModalState = ({
 }: UseCreateFolderModalStateProps) => {
     const [folderName, setFolderName] = useState('');
     const { validator, onFormSubmit } = useFormErrors();
-    const events = useDriveEventManager();
     const { createNotification } = useNotifications();
 
-    const inputFieldError = validator([validateLinkNameField(folderName) || '']);
+    const inputFieldError = validator([validateNodeName(folderName) || '']);
 
     const handleBlur = ({ target }: FocusEvent<HTMLInputElement>) => {
-        setFolderName(formatLinkName(target.value));
+        setFolderName(formatNodeName(target.value));
     };
 
     const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
@@ -62,7 +61,7 @@ export const useCreateFolderModalState = ({
             return;
         }
 
-        const name = formatLinkName(folderName);
+        const name = formatNodeName(folderName);
         setFolderName(name);
 
         if (!parentFolderUid) {
@@ -71,8 +70,6 @@ export const useCreateFolderModalState = ({
 
         try {
             const newFolder = await drive.createFolder(parentFolderUid, name);
-            const { volumeId } = splitNodeUid(parentFolderUid);
-            await events.pollEvents.volumes(volumeId);
             // Needs to pass nodeId because the same callback is called by the legacy app component
             // in public pages we don't have the ability to get the uid from the shareId
 
@@ -111,3 +108,7 @@ export const useCreateFolderModalState = ({
         ...modalProps,
     };
 };
+
+function formatNodeName(name: string) {
+    return name.trim();
+}

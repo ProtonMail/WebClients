@@ -1,8 +1,8 @@
 import { c, msgid } from 'ttag';
 
 import { NotificationButton, useNotifications } from '@proton/components';
+import { getEllipsedName } from '@proton/drive/modules/intl';
 
-import { getEllipsedName } from '../../../utils/intl/getEllipsedName';
 import { useErrorHandler } from '../_utils';
 
 type Item = { linkId: string; name?: string };
