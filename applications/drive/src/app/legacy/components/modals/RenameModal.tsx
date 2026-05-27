@@ -19,7 +19,7 @@ import {
 import { useLoading } from '@proton/hooks';
 import noop from '@proton/utils/noop';
 
-import { formatLinkName, splitLinkName, validateLinkNameField } from '../../../legacy/store';
+import { splitLinkName, validateLinkNameField } from '../../../legacy/store';
 
 interface Props {
     onClose?: () => void;
@@ -59,7 +59,7 @@ const RenameModalDeprecated = ({
     };
 
     const handleBlur = ({ target }: FocusEvent<HTMLInputElement>) => {
-        setName(formatLinkName(target.value));
+        setName(formatNodeName(target.value));
     };
 
     const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
@@ -69,7 +69,7 @@ const RenameModalDeprecated = ({
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        const formattedName = formatLinkName(name);
+        const formattedName = formatNodeName(name);
         setName(formattedName);
 
         await onSubmit?.(formattedName);
@@ -126,3 +126,7 @@ export const useRenameModalDeprecated = () => {
     const [renameModal, showRenameModal] = useModalTwoStatic(RenameModalDeprecated);
     return [renameModal, showRenameModal] as const;
 };
+
+function formatNodeName(name: string) {
+    return name.trim();
+}

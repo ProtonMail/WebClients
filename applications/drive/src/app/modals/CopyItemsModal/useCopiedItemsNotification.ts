@@ -1,7 +1,8 @@
 import { c, msgid } from 'ttag';
 
+import { getEllipsedName } from '@proton/drive/modules/intl';
+
 import { showAggregatedErrorNotification } from '../../utils/errorHandling/errorNotifications';
-import { getEllipsedName } from '../../utils/intl/getEllipsedName';
 import { useListNotifications } from '../../utils/useListNotifications';
 
 /**

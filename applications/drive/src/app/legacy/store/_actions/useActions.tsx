@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
 import { useConfirmActionModal, useNotifications } from '@proton/components';
+import { getEllipsedName } from '@proton/drive/modules/intl';
 import { isSafari, textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { ValidationError } from '../../../utils/errorHandling/ValidationError';
-import { getEllipsedName } from '../../../utils/intl/getEllipsedName';
 import useDevicesActions from '../_devices/useDevicesActions';
 import { useLinkActions, useLinksActions } from '../_links';
 import { useShareActions, useShareUrl } from '../_shares';
