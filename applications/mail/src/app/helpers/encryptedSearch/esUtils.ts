@@ -61,7 +61,7 @@ export const parseSearchParams = (location: Location, categoryIDs: CategoryLabel
                   searchParams: searchParameters,
                   labelID: getLabelID(location),
                   filter: filterFromUrl(location),
-                  sort: sortFromUrl(location, false),
+                  sort: sortFromUrl(location),
               })
             : undefined,
     };
