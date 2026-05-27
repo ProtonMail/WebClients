@@ -17,5 +17,8 @@ export const getCalendarEventDefaultDuration = (options?: { shortLabels?: boolea
 };
 
 export const getBookingEventDurationOptions = (): DurationOption[] => {
-    return [{ text: c('Duration').t`15m`, value: 15 }, ...getCalendarEventDefaultDuration({ shortLabels: true })];
+    return [
+        { text: c('Duration').t`15 minutes`, value: 15 },
+        ...getCalendarEventDefaultDuration({ shortLabels: false }),
+    ];
 };
