@@ -24,7 +24,6 @@ import noop from '@proton/utils/noop';
 import { bootstrapApp } from './bootstrap';
 import config from './config';
 import { driveMetrics } from './modules/metrics';
-import { NotificationsBridge } from './modules/notifications';
 import { useUserSettingsStore } from './modules/userSettings';
 import type { DriveStore } from './redux-store/store';
 import { extraThunkArguments } from './redux-store/thunk';
@@ -90,7 +89,6 @@ const App = () => {
 
     return (
         <ProtonApp config={config}>
-            <NotificationsBridge />
             {(() => {
                 if (state.error) {
                     return <StandardLoadErrorPage errorMessage={state.error.message} />;

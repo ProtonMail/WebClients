@@ -30,6 +30,7 @@ import { useFeatureFlagProvider } from './internal/useFeatureFlagProvider';
 import { useHttpClient } from './internal/useHttpClient';
 import { useSrpModule } from './internal/useSrpModule';
 import { Logging } from './modules/logging';
+import { useSetupNotificationManager } from './modules/notifications';
 
 export {
     /** @deprecated only for transition to sdk */
@@ -128,6 +129,8 @@ let loggingSingleton: (LogHandler & { getLogs: () => string[] }) | undefined;
  */
 export function useDrive() {
     const [appVersionHeaders, setAppVersionHeaders] = useState<[string, string][]>();
+
+    useSetupNotificationManager();
 
     const [debug] = useLocalState(false, 'proton-drive-debug');
     const httpClient = useHttpClient(appVersionHeaders);
