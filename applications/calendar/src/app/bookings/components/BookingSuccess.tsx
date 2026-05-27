@@ -120,7 +120,6 @@ export const BookingSuccess = () => {
     const timeData = `${format(selectedBookingSlot.tzDate, 'p', { locale: dateLocale })} - ${format(addMinutes(selectedBookingSlot.tzDate, bookingDetails.duration || 0), 'p', { locale: dateLocale })}`;
 
     const hasLocation = !!bookingDetails.location.trim() || bookingDetails.withProtonMeetLink;
-    const hasHostDetails = !!bookingDetails.inviterDisplayName?.trim() || !!bookingDetails.inviterDisplayName;
 
     return (
         <div className="container">
@@ -138,7 +137,7 @@ export const BookingSuccess = () => {
                 </div>
                 <hr className="bg-weak mb-6" />
                 <div className="booking-success-grid gap-4 items-start max-w-full">
-                    {hasHostDetails && (
+                    {!!bookingDetails.inviterDisplayName?.trim() && (
                         <BookingSuccessItem
                             title={c('Title').t`Host`}
                             icon={<IcUserCircle size={6} />}
