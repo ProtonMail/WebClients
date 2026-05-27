@@ -128,7 +128,7 @@ const LoginForm = ({
     onStartAuth,
     defaultUsername = '',
     signInText = c('Action').t`Sign in`,
-    remember = RememberMode.VisibleDisabled,
+    remember = RememberMode.Visible,
     productParam,
     externalSSO,
     paths,
@@ -143,8 +143,8 @@ const LoginForm = ({
     const [errorMsg, setErrorMsg] = useState<string | null>(null);
     const [maybePersistent, setPersistent] = useLocalState(false, defaultPersistentKey);
     const persistent =
-        remember === RememberMode.Enable || remember === RememberMode.HideEnable ? true : maybePersistent;
-    const showRememberCheckbox = remember === RememberMode.VisibleDisabled || remember === RememberMode.Enable;
+        remember === RememberMode.Enabled || remember === RememberMode.HiddenEnabled ? true : maybePersistent;
+    const showRememberCheckbox = remember === RememberMode.Visible || remember === RememberMode.Enabled;
     const { createNotification } = useNotifications();
 
     const usernameRef = useRef<HTMLInputElement>(null);
