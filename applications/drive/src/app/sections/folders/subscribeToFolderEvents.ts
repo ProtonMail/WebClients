@@ -1,7 +1,7 @@
 import { getDrive } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { logging } from '@proton/drive/modules/logging';
 
-import { logging } from '../../modules/logging';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { mapNodeToFolderViewItem } from './mapNodeToFolderViewItem';
 import type { FolderStore, FolderViewData } from './useFolder.store';
