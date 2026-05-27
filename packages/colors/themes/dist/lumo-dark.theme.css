@@ -124,4 +124,8 @@
   --lumo-plus-logo-plus-sign-text: #f7f5ff;
   --surface-foreground: #141414;
   --lumo-welcome-text: white;
+  --lumo-logo-tag-pro-background: rgba(255, 255, 255, 0.7);
+  --lumo-logo-tag-plus-background: var(--border-weak);
+  --lumo-logo-tag-pro-text: var(--text-dark);
+  --lumo-logo-tag-plus-text: var(--interaction-weak-active);
 }
