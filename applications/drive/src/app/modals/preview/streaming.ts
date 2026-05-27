@@ -3,11 +3,11 @@ import { type SyntheticEvent, useCallback, useEffect, useMemo, useRef, useState 
 import { v4 as uuidv4 } from 'uuid';
 
 import type { ProtonDriveClient, SeekableReadableStream } from '@proton/drive';
+import { logging } from '@proton/drive/modules/logging';
 import { canHtmlVideoPlay } from '@proton/drive/modules/thumbnails';
 import metrics from '@proton/metrics/index';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 
-import { logging } from '../../modules/logging';
 import { initDownloadSW } from '../../legacy/store/_downloads/fileSaver/download';
 import { errorToString, sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';

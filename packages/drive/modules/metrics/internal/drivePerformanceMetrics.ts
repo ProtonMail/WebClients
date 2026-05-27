@@ -1,7 +1,7 @@
 import metrics from '@proton/metrics';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
-import { logging } from '../logging';
+import { logging } from '../../logging';
 
 const logger = logging.getLogger('drivePerformanceMetrics');
 
