@@ -15,19 +15,13 @@ import clsx from '@proton/utils/clsx';
 
 import ProviderButton from './ProviderButton';
 
-const { ACCOUNT_WEB_SETTINGS, CALENDAR_WEB_SETTINGS, CONTACT_WEB_IMPORT_BUTTON } = EASY_SWITCH_SOURCES;
-
-const getEasySwitchSource = (app: APP_NAMES, location: Location) => {
+const getEasySwitchSource = (location: Location, inputSource: EASY_SWITCH_SOURCES) => {
     const source = new URLSearchParams(location.search).get('source');
     if (source && source === EASY_SWITCH_SEARCH_SOURCES.CONTACT_IMPORT) {
-        return CONTACT_WEB_IMPORT_BUTTON;
+        return EASY_SWITCH_SOURCES.CONTACT_WEB_IMPORT_BUTTON;
     }
 
-    if (app === APPS.PROTONMAIL) {
-        return ACCOUNT_WEB_SETTINGS;
-    }
-
-    return CALENDAR_WEB_SETTINGS;
+    return inputSource;
 };
 
 interface Props {
@@ -37,6 +31,7 @@ interface Props {
     showAdvancedImport?: boolean;
     onComplete?: () => Promise<void>;
     onBYOEFlowStart?: () => void;
+    source: EASY_SWITCH_SOURCES;
 }
 
 const ProviderCard = ({
@@ -46,13 +41,14 @@ const ProviderCard = ({
     showAdvancedImport = true,
     onComplete,
     onBYOEFlowStart,
+    source: inputSource,
 }: Props) => {
     const [, loadingCalendars] = useCalendars();
 
     const [selectedProvider, setSelectedProvider] = useState<ImportProvider>(ImportProvider.GOOGLE);
     const location = useLocation();
 
-    const source = getEasySwitchSource(app, location);
+    const source = getEasySwitchSource(location, inputSource);
 
     const [importModalProps, setImportModalOpen, renderImportModal] = useModalState();
 
@@ -77,6 +73,7 @@ const ProviderCard = ({
                         buttonText={c('Action').t`Google`}
                         onComplete={onComplete}
                         onBYOEFlowStart={onBYOEFlowStart}
+                        source={source}
                     />
                 ) : (
                     <ProviderButton
