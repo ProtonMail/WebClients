@@ -19,7 +19,7 @@ jest.mock('@proton/shared/lib/helpers/browser', () => ({
     isMobile: jest.fn(),
 }));
 
-jest.mock('../logging', () => ({
+jest.mock('../../logging', () => ({
     logging: {
         getLogger: () => ({ debug: jest.fn() }),
     },

@@ -1,9 +1,9 @@
 import type { useGetAddresses } from '@proton/account/addresses/hooks';
 import type { useAuthentication } from '@proton/components';
+import { driveMetrics } from '@proton/drive/modules/metrics';
 import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 
-import { driveMetrics } from '../../modules/metrics';
 import { getLastActivePersistedUserSession } from '../../utils/lastActivePersistedUserSession';
 import { usePublicAuthStore } from './usePublicAuth.store';
 

@@ -3,10 +3,10 @@
  */
 import ReactDOM from 'react-dom';
 
+import { initDriveWebVitalsReporting } from '@proton/drive/modules/metrics';
 import '@proton/polyfill';
 
 import App from './App';
-import { initDriveWebVitalsReporting } from './modules/metrics/webVitals';
 import './style';
 
 initDriveWebVitalsReporting(false);
