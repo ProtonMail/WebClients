@@ -22,7 +22,6 @@ export const BookingDetails = () => {
                 duration: state.bookingDetails.duration,
                 withProtonMeetLink: state.bookingDetails.withProtonMeetLink,
                 inviterDisplayName: state.bookingDetails.inviterDisplayName,
-                inviterEmail: state.bookingDetails.inviterEmail,
             };
         })
     );
@@ -33,6 +32,8 @@ export const BookingDetails = () => {
 
     const hasLocation = !!bookingDetails.location.trim() || bookingDetails.withProtonMeetLink;
     const hasDescription = !!bookingDetails.description.trim();
+
+    const displayName = bookingDetails.inviterDisplayName || '-';
 
     return (
         <header
@@ -60,13 +61,8 @@ export const BookingDetails = () => {
                         <span className="flex flex-nowrap gap-2 items-center">
                             <h3 className="text-rg m-0 booking-color-title text-semibold">{c('Info').t`Host`}</h3>
                         </span>
-                        {bookingDetails.inviterDisplayName && (
-                            <div className="text-ellipsis" title={bookingDetails.inviterDisplayName}>
-                                {bookingDetails.inviterDisplayName}
-                            </div>
-                        )}
-                        <div className="text-ellipsis" title={bookingDetails.inviterEmail}>
-                            {bookingDetails.inviterEmail}
+                        <div className="text-ellipsis" title={displayName}>
+                            {displayName}
                         </div>
                     </div>
                 </div>
