@@ -22,6 +22,7 @@ import { useSortedPagedParticipants } from '../../contexts/ParticipantsProvider/
 import { RecordingStatus } from '../../types';
 import { useIsLargerThanMd } from '../useIsLargerThanMd';
 import { useIsNarrowHeight } from '../useIsNarrowHeight';
+import { useStableCallback } from '../useStableCallback';
 import { useHaveRecordingPermissions } from './hooks/useHaveRecordingPermissions';
 import { useRecordedTracks } from './hooks/useRecordedTracks';
 import { useRecordingCodec } from './hooks/useRecordingCodec';
@@ -107,12 +108,6 @@ export const useMeetingRecorder = () => {
     }, [audioTracks, isLocalRecording]);
 
     useTrackPublishedSubscriber({ enabled: isLocalRecording, room });
-
-    useEffect(() => {
-        return () => {
-            void cleanupSession();
-        };
-    }, [cleanupSession]);
 
     const startRecording = useCallback(async () => {
         if (!recordingCodec) {
@@ -261,6 +256,21 @@ export const useMeetingRecorder = () => {
             await cleanupSession();
         }
     }, [isLocalRecording, recordingCodec, stopRecording, reportMeetError, createNotification, cleanupSession]);
+
+    // Cleanup the session and download the recording if the session is active
+    const handleUnmount = useStableCallback(async () => {
+        if (sessionRef.current?.isActive()) {
+            void downloadRecording();
+        } else {
+            void cleanupSession();
+        }
+    });
+
+    useEffect(() => {
+        return () => {
+            void handleUnmount();
+        };
+    }, [handleUnmount]);
 
     return {
         startRecording,
