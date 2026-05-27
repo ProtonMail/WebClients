@@ -56,6 +56,12 @@ export const checkForUpdates = async (session: Session): Promise<boolean> => {
         return false;
     }
 
+    const currentStore = getUpdateStore();
+    if (currentStore.status === UpdateStatus.UpdateReady) {
+        logger.log('[Update] Update was already downloaded, will be applied on restart.');
+        return false;
+    }
+
     checkInFlight = true;
 
     try {
