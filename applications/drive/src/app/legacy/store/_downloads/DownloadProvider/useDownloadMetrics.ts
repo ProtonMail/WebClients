@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 
+import { driveMetrics } from '@proton/drive/modules/metrics';
 import metrics from '@proton/metrics';
 import type { HttpsProtonMeDriveDownloadErrorsTotalV2SchemaJson } from '@proton/metrics/types/drive_download_errors_total_v2.schema';
 import {
@@ -13,7 +14,6 @@ import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { TransferState } from '../../../../legacy/components/TransferManager/transfer';
 import { useSharesStore } from '../../../../legacy/zustand/share/shares.store';
-import { driveMetrics } from '../../../../modules/metrics';
 import { isAbortError, isIgnoredErrorForReporting } from '../../../../utils/errorHandling';
 import { is4xx, is5xx, isCryptoEnrichedError } from '../../../../utils/errorHandling/apiErrors';
 import { getIsPublicContext } from '../../../../utils/getIsPublicContext';

@@ -11,6 +11,8 @@ export enum MetricSharePublicType {
 }
 
 export type MetricShareTypeWithPublic = MetricSharePublicType | MetricShareType;
+
+// NOTE: Only used by legacy code.
 export enum MetricUserPlan {
     Paid = 'paid',
     Free = 'free',
