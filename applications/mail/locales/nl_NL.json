@@ -1514,8 +1514,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Sleutels vertrouwen"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -4224,7 +4223,7 @@
         "Schakel e-mail tracker beveiliging in om te voorkomen dat adverteerders en anderen uw locatie en online activiteit kunnen volgen."
       ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
-        "Upgrade naar ${ planName } om te koppelen met maximaal ${ MAX_SYNC_PAID_USER } accounts"
+        "Upgrade naar ${ planName } om te koppelen met maximaal ${ MAX_SYNC_PAID_USER }-accounts"
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Upgrade om ${ activatePmUser } te krijgen voor een korter, makkelijk te onthouden e-mailadres, toegevoegd aan uw huidige adres."
@@ -4263,10 +4262,10 @@
         "Met aangepaste snooze kunt u e-mails verbergen en deze op een beter moment opnieuw laten verschijnen."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
-        "U hebt al een Gmail-adres dat wordt doorgestuurd naar ${ MAIL_APP_NAME }. Koppel het hieronder om e-mails rechtstreeks vanuit ${ MAIL_APP_NAME } te verzenden en te ontvangen."
+        "U heeft al een Gmail-adres dat wordt doorgestuurd naar ${ MAIL_APP_NAME }. Koppel het hieronder om e-mails rechtstreeks vanuit ${ MAIL_APP_NAME } te verzenden en te ontvangen."
       ],
       "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
-        "U hebt al Gmail-adressen die worden doorgestuurd naar ${ MAIL_APP_NAME }. Koppel er één hieronder om e-mails rechtstreeks vanuit ${ MAIL_APP_NAME } te verzenden en te ontvangen."
+        "U heeft al Gmail-adressen die worden doorgestuurd naar ${ MAIL_APP_NAME }. Koppel er één hieronder om e-mails rechtstreeks vanuit ${ MAIL_APP_NAME } te verzenden en te ontvangen."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "U kunt afspraken importeren in iCal formaat (. ics-bestand). Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en mag maximaal ${ MAX_IMPORT_EVENTS_STRING } afspraken bevatten. Als uw bestand groter is, splitst u het op in kleinere bestanden."
@@ -4286,11 +4285,11 @@
         "U stuurt e-mails door vanaf ${ forwardingCount } Gmail-adressen. Door deze adressen te koppelen, kunt u zowel e-mails ontvangen als beantwoorden in ${ MAIL_APP_NAME }."
       ],
       "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
-        "U hebt ${ MAX_SYNC_PAID_USER } Gmail-adres gekoppeld. Als u nog een adres wilt toevoegen, moet u eerst een van uw gekoppelde accounts ontkoppelen.",
-        "U hebt ${ MAX_SYNC_PAID_USER } Gmail-adressen gekoppeld. Als u nog een adres wilt toevoegen, moet u eerst een van uw gekoppelde accounts ontkoppelen."
+        "U heeft ${ MAX_SYNC_PAID_USER } Gmail-adres gekoppeld. Als u nog een adres wilt toevoegen, moet u eerst een van uw gekoppelde accounts ontkoppelen.",
+        "U heeft ${ MAX_SYNC_PAID_USER } Gmail-adressen gekoppeld. Als u nog een adres wilt toevoegen, moet u eerst een van uw gekoppelde accounts ontkoppelen."
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
-        "U hebt één extern e-mailadres gekoppeld aan ${ MAIL_APP_NAME }."
+        "U heeft één extern e-mailadres gekoppeld aan ${ MAIL_APP_NAME }."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Uw account en dataherstelmethoden zijn ingesteld en 2FA is ingeschakeld."
@@ -7657,7 +7656,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -11943,7 +11943,7 @@
         "Proefperiode gestart"
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
-        "Uw ${ BRAND_NAME } adres is klaar voor gebruik"
+        "Uw ${ BRAND_NAME }-adres is klaar voor gebruik"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
