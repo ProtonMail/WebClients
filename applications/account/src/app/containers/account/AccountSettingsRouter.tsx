@@ -64,7 +64,7 @@ import { RewardSection } from '@proton/components/containers/referral/rewards/Re
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { VPNDownloadAndInfoSection } from '@proton/vpn/components/VPNDownloadSection';
 
-import RecoverySettingsRouter from './RecoverySettingsRouter';
+import RecoverySettingsRouter from './recovery/RecoverySettingsRouter';
 import type { getAccountAppRoutes } from './routes';
 
 const shouldRedirectToSubscriptions = (location: Location<unknown>, path: string, dashboard: SectionConfig) => {
