@@ -24,7 +24,7 @@ const LoginModal = ({ productParam, paths, onLogin, onStartAuth, defaultUsername
                 setupVPN={true}
                 paths={paths}
                 modal
-                remember={RememberMode.Hide}
+                remember={RememberMode.Hidden}
                 onStartAuth={onStartAuth}
                 render={(data) => {
                     return (

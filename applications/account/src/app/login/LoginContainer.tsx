@@ -50,10 +50,10 @@ import SSOLogin from './sso/SSOLogin';
 import { UnauthedLost2FAContainer } from './unauth-lost-2fa/UnauthedLost2FAContainer';
 
 export enum RememberMode {
-    VisibleDisabled = 0, // default
-    Enable = 1,
-    Hide = 2,
-    HideEnable = 3,
+    Visible = 0, // default
+    Enabled = 1,
+    Hidden = 2,
+    HiddenEnabled = 3,
 }
 
 interface Props {
@@ -106,7 +106,7 @@ const LoginContainer = ({
     showContinueTo,
     productParam,
     setupVPN,
-    remember = RememberMode.VisibleDisabled,
+    remember = RememberMode.Visible,
     paths,
     modal,
     render = defaultRender,
@@ -134,7 +134,7 @@ const LoginContainer = ({
     const rememberParam = searchParams.get('remember');
     const rememberConfig = (() => {
         if (isElectronApp) {
-            return RememberMode.HideEnable;
+            return RememberMode.HiddenEnabled;
         }
         if (rememberParam) {
             const numericValue = parseInt(rememberParam, 10);
