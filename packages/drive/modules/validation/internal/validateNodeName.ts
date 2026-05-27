@@ -2,9 +2,10 @@ import { c, msgid } from 'ttag';
 
 import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 
-const composeValidators =
-    <T>(validators: ((value: T) => string | undefined)[]) =>
-    (value: T) => {
+type Validator<T> = (value: T) => string | undefined;
+
+function composeValidators<T>(validators: Validator<T>[]): Validator<T> {
+    return (value) => {
         for (const validator of validators) {
             const result = validator(value);
             if (result) {
@@ -13,8 +14,9 @@ const composeValidators =
         }
         return undefined;
     };
+}
 
-const validateNameLength = (str: string) => {
+function validateNameLength(str: string) {
     return str.length > MAX_NAME_LENGTH
         ? c('Validation Error').ngettext(
               msgid`Name must be ${MAX_NAME_LENGTH} character long at most`,
@@ -22,23 +24,17 @@ const validateNameLength = (str: string) => {
               MAX_NAME_LENGTH
           )
         : undefined;
-};
+}
 
-const validateNameEmpty = (str: string) => {
+function validateNameEmpty(str: string) {
     return !str ? c('Validation Error').t`Name must not be empty` : undefined;
-};
+}
 
-const validateNoDisallowedCharacters = (str: string) => {
+function validateNoDisallowedCharacters(str: string) {
     return str.includes('/') ? c('Validation Error').t`Name must not contain slashes (/)` : undefined;
-};
+}
 
-export const validateLinkName = composeValidators([
-    validateNameEmpty,
-    validateNameLength,
-    validateNoDisallowedCharacters,
-]);
-
-export const validateLinkNameField = composeValidators([
+export const validateNodeName = composeValidators([
     validateNameEmpty,
     validateNameLength,
     validateNoDisallowedCharacters,

@@ -1,9 +1,9 @@
 import { c, msgid } from 'ttag';
 
 import { useConfirmActionModal, useNotifications } from '@proton/components';
+import { getEllipsedName } from '@proton/drive/modules/intl';
 
 import { showAggregatedErrorNotification } from '../../utils/errorHandling/errorNotifications';
-import { getEllipsedName } from '../../utils/intl/getEllipsedName';
 import { useListNotifications } from '../../utils/useListNotifications';
 
 export const useTrashNotifications = () => {
