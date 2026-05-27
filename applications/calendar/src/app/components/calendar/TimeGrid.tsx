@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import ButtonGroup from '@proton/components/components/button/ButtonGroup';
+import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useElementRect from '@proton/components/hooks/useElementRect';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
@@ -112,7 +112,7 @@ const TimeGrid = ({
     ...rest
 }: Props) => {
     const attendeeBusySlots = useCalendarSelector(selectAttendeesBusySlots);
-    const { getRangesAsLayoutEvents, getRangeAsCalendarViewEvents, isBookingActive } = useBookings();
+    const { getRangesAsLayoutEvents, getRangeAsCalendarViewEvents, isBookingActive, formData } = useBookings();
     const containerRef = useRef<HTMLDivElement>(null);
     const timeGridRef = useRef<HTMLDivElement>(null);
     const dayGridRef = useRef<HTMLUListElement>(null);
@@ -267,12 +267,16 @@ const TimeGrid = ({
             return;
         }
 
+        // We reduce the interval to 15 minutes when creating/editing a booking range
+        // to allow more granular mouse interactions
+        const interval = isBookingActive && formData.duration === 15 ? 15 : 30;
+
         handleTimeGridMouseDown({
             e,
             onMouseDown,
             totalDays: normalizedDays.length,
             totalMinutes,
-            interval: 30,
+            interval,
             events: [...timeEvents, ...rangesEvents],
             // To observe user actions on the booking ranges, we need to merge rangesPerDay and eventsPerDay
             eventsPerDay: Object.entries(eventsPerDay).reduce(
