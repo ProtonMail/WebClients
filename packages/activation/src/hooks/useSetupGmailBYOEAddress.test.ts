@@ -4,7 +4,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
 import useSetupGmailBYOEAddress from '@proton/activation/src/hooks/useSetupGmailBYOEAddress';
 import type { ImportToken } from '@proton/activation/src/interface';
-import { OAUTH_PROVIDER } from '@proton/activation/src/interface';
+import { EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { findUserAddress } from '@proton/shared/lib/helpers/address';
 
 jest.mock('@proton/activation/src/logic/StoreProvider', () => ({
@@ -85,7 +85,12 @@ describe('useSetupGmailBYOEAddress', () => {
 
         it('should do nothing when hasError is true', async () => {
             const mockShowSuccessModal = jest.fn();
-            const { result } = renderHook(() => useSetupGmailBYOEAddress({ showSuccessModal: mockShowSuccessModal }));
+            const { result } = renderHook(() =>
+                useSetupGmailBYOEAddress({
+                    showSuccessModal: mockShowSuccessModal,
+                    source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                })
+            );
 
             await act(async () => {
                 await result.current.handleBYOEWithImportCallback(true, false, mockToken);
@@ -99,7 +104,12 @@ describe('useSetupGmailBYOEAddress', () => {
         it('should do nothing when hasAccessToBYOE is false', async () => {
             mockUseBYOEFeatureStatus.mockReturnValue(false);
             const mockShowSuccessModal = jest.fn();
-            const { result } = renderHook(() => useSetupGmailBYOEAddress({ showSuccessModal: mockShowSuccessModal }));
+            const { result } = renderHook(() =>
+                useSetupGmailBYOEAddress({
+                    showSuccessModal: mockShowSuccessModal,
+                    source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                })
+            );
 
             await act(async () => {
                 await result.current.handleBYOEWithImportCallback(false, false, mockToken);
@@ -112,7 +122,12 @@ describe('useSetupGmailBYOEAddress', () => {
 
         it('should create address, call import API and show success modal', async () => {
             const mockShowSuccessModal = jest.fn();
-            const { result } = renderHook(() => useSetupGmailBYOEAddress({ showSuccessModal: mockShowSuccessModal }));
+            const { result } = renderHook(() =>
+                useSetupGmailBYOEAddress({
+                    showSuccessModal: mockShowSuccessModal,
+                    source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                })
+            );
 
             await act(async () => {
                 await result.current.handleBYOEWithImportCallback(false, false, mockToken);
@@ -126,7 +141,12 @@ describe('useSetupGmailBYOEAddress', () => {
         it('should show error notification and not call import API when address already exists', async () => {
             mockFindUserAddress.mockReturnValue({ Email: 'test@gmail.com' } as any);
             const mockShowSuccessModal = jest.fn();
-            const { result } = renderHook(() => useSetupGmailBYOEAddress({ showSuccessModal: mockShowSuccessModal }));
+            const { result } = renderHook(() =>
+                useSetupGmailBYOEAddress({
+                    showSuccessModal: mockShowSuccessModal,
+                    source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                })
+            );
 
             await act(async () => {
                 await result.current.handleBYOEWithImportCallback(false, false, mockToken);
