@@ -12,7 +12,6 @@ import {
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
-import { useLocalState } from '@proton/components';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
@@ -38,7 +37,7 @@ import Content from '../Content';
 import Header from '../Header';
 import Layout from '../Layout';
 import Main from '../Main';
-import { defaultPersistentKey, getContinueToString } from '../helper';
+import { getContinueToString } from '../helper';
 
 interface Props {
     onLogin: OnLoginCallback;
@@ -59,7 +58,6 @@ type State =
 const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartAuth }: Props) => {
     const [result, setResult] = useState<State>(null);
     const { APP_NAME } = useConfig();
-    const [persistent] = useLocalState(false, defaultPersistentKey);
     const getKtActivation = useGetAccountKTActivation();
     const errorHandler = useErrorHandler();
     const restartRef = useRef<null | (() => Promise<void>)>(null);
@@ -92,7 +90,7 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
                 abortController,
                 config: {
                     appName: APP_NAME,
-                    persistent,
+                    persistent: true,
                     ktActivation: await getKtActivation(),
                 },
                 api: getSilentApi(api),
