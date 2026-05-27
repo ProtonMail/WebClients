@@ -1,8 +1,8 @@
 import { fromUnixTime } from 'date-fns';
 
+import { driveMetrics } from '@proton/drive/modules/metrics';
 import metrics from '@proton/metrics';
 
-import { driveMetrics } from '../../../modules/metrics';
 import type { MetricUserPlan } from '../../../utils/type/MetricTypes';
 
 const REPORT_ERROR_USERS_EVERY = 5 * 60 * 1000; // 5 minutes,
