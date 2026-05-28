@@ -1,10 +1,10 @@
-import type { WasmWordSeparator } from '@protontech/pass-rust-core/worker';
+import type { WordSeparator } from '@protontech/pass-rust-core/worker';
 
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 
 import { type GeneratePasswordConfig, SeperatorOptions } from './types';
 
-const SEPERATOR_MAP: Record<SeperatorOptions, WasmWordSeparator> = {
+const SEPERATOR_MAP: Record<SeperatorOptions, WordSeparator> = {
     [SeperatorOptions.HYPHEN]: 'Hyphens',
     [SeperatorOptions.SPACE]: 'Spaces',
     [SeperatorOptions.PERIOD]: 'Periods',
