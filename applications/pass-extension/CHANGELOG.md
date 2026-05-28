@@ -1,3 +1,8 @@
+### Version 1.37.2
+
+- Fix B2B initial onboarding lock setup blocking activity probe
+- Fix access tokens list display
+
 ### Version 1.37.1
 
 - Make `nativeMessaging` permission optional (used for biometrics unlock via desktop app)
