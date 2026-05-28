@@ -9367,6 +9367,9 @@
         "${ n } mês",
         "${ n } meses"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caracteres"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Retorne mais tarde.)"
       ],
@@ -11214,6 +11217,9 @@
       ],
       "Multiple admin roles": [
         "Múltiplas funções de administração"
+      ],
+      "No streaming support": [
+        "Sem suporte para streaming"
       ],
       "Online document editor": [
         "Editor de documentos on-line"

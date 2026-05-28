@@ -3259,6 +3259,9 @@
         "${ n } mês",
         "${ n } meses"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caracteres"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Acesse o ${ PASS_APP_NAME } com segurança pelo terminal, ideal para scripts, automação e fluxos de trabalho de desenvolvimento."
       ],
@@ -4000,6 +4003,9 @@
       ],
       "Multiple admin roles": [
         "Múltiplas funções de administração"
+      ],
+      "No streaming support": [
+        "Sem suporte para streaming"
       ],
       "Online document editor": [
         "Editor de documentos on-line"

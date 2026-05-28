@@ -804,6 +804,9 @@
       "Generate key": [
         "Gerar chave"
       ],
+      "Generate missing keys": [
+        "Gerar chaves faltantes"
+      ],
       "Generate new phrase": [
         "Gerar novo frase"
       ],
@@ -3056,6 +3059,9 @@
       ],
       "Migration status": [
         "Status da migração"
+      ],
+      "Missing organization private key": [
+        "Falta a chave privada da organização"
       ],
       "Missing organization public key": [
         "Falta a chave pública da organização"
@@ -9907,6 +9913,10 @@
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Adicione o nome e logotipo para criar uma experiência mais personalizada para sua organização."
       ],
+      "Adding ${ total } gateway server": [
+        "Adicionando ${ total } servidor gateway",
+        "Adicionando ${ total } servidores gateway"
+      ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Adicionar um endereço de e-mail externo desativará a criptografia de ponta a ponta para toda a comunicação por e-mail dentro desse grupo. Você deseja continuar?"
       ],
@@ -10376,6 +10386,10 @@
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Criando servidor gateway: ${ serverNumber } / ${ total }",
         "Criando servidores gateway: ${ serverNumber } / ${ total }"
+      ],
+      "Creating gateway with ${ total } server": [
+        "Criando gateway com ${ total } servidor",
+        "Criando gateway com ${ total } servidores"
       ],
       "Creating your account": [
         "Criando sua conta"
@@ -13762,6 +13776,9 @@
       "${ PROTON_SENTINEL_NAME } protection": [
         "Proteção com ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caracteres"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Retorne mais tarde.)"
       ],
@@ -17005,6 +17022,9 @@
       ],
       "Multiple admin roles": [
         "Múltiplas funções de administração"
+      ],
+      "No streaming support": [
+        "Sem suporte para streaming"
       ],
       "No-logs policy": [
         "Política de nenhum registro"
@@ -24955,6 +24975,9 @@
       "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
         "Obtenha ${ planMaxSpace } de armazenamento para seus arquivos, fotos e documentos com ${ planName }. ${ upgradeButton }"
       ],
+      "Get ${ VPN_APP_NAME } on your TV": [
+        "Obtenha o ${ VPN_APP_NAME } na sua TV"
+      ],
       "Get ${ vpnPlus } to access all servers": [
         "Obtenha o ${ vpnPlus } para acessar todos os servidores"
       ],
@@ -26102,6 +26125,9 @@
       ],
       "Each imported email will have this label": [
         "Cada e-mail importado terá este marcador"
+      ],
+      "Early access to new apps and features.": [
+        "Acesso antecipado a novos aplicativos e recursos."
       ],
       "Edit folder names": [
         "Editar nomes da pastas"
