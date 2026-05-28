@@ -18,6 +18,7 @@ import {
     selectRealtimeDevices,
 } from '@proton/meet/store/slices/deviceManagementSlice';
 import { isAudioSessionAvailable, setAudioSessionType } from '@proton/meet/utils/iosAudioSession';
+import { withTimeout } from '@proton/meet/utils/withTimeout';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
@@ -61,22 +62,6 @@ const getErrorReason = (error: unknown) => {
         return `${error.name}: ${error.message}`;
     }
     return String(error);
-};
-
-const withTimeout = async <T>(promise: Promise<T>, label: string, timeoutMs = TOGGLE_TIMEOUT_MS): Promise<T> => {
-    let timeout: ReturnType<typeof setTimeout> | undefined;
-    try {
-        return await Promise.race([
-            promise,
-            new Promise<never>((_, reject) => {
-                timeout = setTimeout(() => reject(new Error(`${label} timed out`)), timeoutMs);
-            }),
-        ]);
-    } finally {
-        if (timeout) {
-            clearTimeout(timeout);
-        }
-    }
 };
 
 /**
