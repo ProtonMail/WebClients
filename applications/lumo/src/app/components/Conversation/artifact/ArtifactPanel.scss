@@ -1,0 +1,228 @@
+.artifact-panel {
+	background: var(--background-norm);
+	block-size: 100%;
+}
+
+.artifact-panel-header {
+	min-block-size: 44px;
+}
+
+.artifact-type-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.25rem;
+	padding-block: 0.125rem;
+	padding-inline: 0.375rem;
+	border-radius: 0.375rem;
+	background: var(--background-strong);
+	color: var(--text-hint);
+	font-size: 0.6875rem;
+	letter-spacing: 0.04em;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+.artifact-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-inline-size: 28px;
+	min-block-size: 28px;
+	padding: 0.25rem;
+
+	&:hover {
+		color: var(--text-norm);
+	}
+}
+
+.artifact-chip {
+	background: var(--background-weak);
+	transition:
+		background 150ms ease,
+		border-color 150ms ease;
+	user-select: none;
+
+	&:hover {
+		background: var(--background-norm);
+		border-color: var(--border-norm);
+	}
+
+	&--active {
+		border-color: var(--primary);
+		background: color-mix(in srgb, var(--primary) 8%, transparent);
+	}
+
+	.artifact-type-badge {
+		background: var(--background-strong);
+		font-size: 0.625rem;
+	}
+}
+
+.artifact-code-content {
+	padding: 0;
+
+	// Pass showLineNumbers into the underlying Prism renderer
+	&.artifact-code--line-numbers {
+		// Prism applies line numbers via the `showLineNumbers` prop — this class
+		// is kept as a hook for future CSS-side line number styles if needed.
+	}
+
+	pre {
+		margin: 0;
+		border-radius: 0;
+	}
+
+	// Override Prism container to fill the panel width
+	> div > div {
+		border-radius: 0 !important;
+		margin: 0 !important;
+	}
+}
+
+.artifact-document-content {
+	line-height: 1.6;
+	color: var(--text-norm);
+
+	.artifact-markdown {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: var(--text-norm);
+			font-weight: 600;
+			margin-block: 1.25em 0.5em;
+			line-height: 1.3;
+		}
+
+		h1 {
+			font-size: 1.5rem;
+		}
+
+		h2 {
+			font-size: 1.25rem;
+		}
+
+		h3 {
+			font-size: 1.125rem;
+		}
+
+		p {
+			margin-block-end: 0.75em;
+		}
+
+		ul,
+		ol {
+			padding-inline-start: 1.5rem;
+			margin-block-end: 0.75em;
+		}
+
+		li {
+			margin-block-end: 0.25em;
+		}
+
+		code {
+			background: var(--background-strong);
+			border-radius: 0.25rem;
+			padding-block: 0.125em;
+			padding-inline: 0.375em;
+			font-size: 0.875em;
+			font-family: monospace;
+		}
+
+		pre {
+			background: var(--background-strong);
+			border-radius: 0.5rem;
+			padding: 1rem;
+			overflow: auto;
+			margin-block-end: 0.75em;
+
+			code {
+				background: none;
+				padding: 0;
+			}
+		}
+
+		blockquote {
+			border-inline-start: 3px solid var(--border-weak);
+			padding-inline-start: 1rem;
+			color: var(--text-hint);
+			margin-block: 0.75em;
+			margin-inline: 0;
+		}
+
+		a {
+			color: var(--primary);
+			text-decoration: underline;
+		}
+
+		table {
+			inline-size: 100%;
+			border-collapse: collapse;
+			margin-block-end: 0.75em;
+
+			th,
+			td {
+				border: 1px solid var(--border-weak);
+				padding-block: 0.375rem;
+				padding-inline: 0.625rem;
+				text-align: start;
+			}
+
+			th {
+				background: var(--background-weak);
+				font-weight: 600;
+			}
+		}
+
+		hr {
+			border: none;
+			border-block-start: 1px solid var(--border-weak);
+			margin-block: 1em;
+			margin-inline: 0;
+		}
+
+		strong {
+			font-weight: 600;
+		}
+	}
+}
+
+.artifact-streaming-pre {
+	line-height: 1.6;
+	font-size: 0.8125rem;
+	color: var(--text-norm);
+	word-break: break-word;
+}
+
+.artifact-fallback {
+	pre {
+		white-space: pre-wrap;
+		word-break: break-word;
+	}
+}
+
+// Draggable divider between chat and artifact panel
+.artifact-divider-handle {
+	inline-size: 8px;
+	flex-shrink: 0;
+	cursor: col-resize;
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+	user-select: none;
+
+	&::after {
+		content: '';
+		inline-size: 2px;
+		background: var(--border-weak);
+		border-radius: 1px;
+		transition: background 150ms ease;
+	}
+
+	&:hover::after,
+	&:active::after {
+		background: var(--border-norm);
+	}
+}
