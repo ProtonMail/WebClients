@@ -9,6 +9,7 @@ import { useGroupMembers } from '@proton/account/groupMembers/hooks';
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
 import { createGroup, deleteGroup, editGroup } from '@proton/account/groups/actions';
 import { addGroupMembersThunk } from '@proton/account/groups/addGroupMember';
+import { getIsSystemGroup } from '@proton/account/groups/groupFlags';
 import { useGroups } from '@proton/account/groups/hooks';
 import { useGroupRoles } from '@proton/account/groups/useGroupRoles';
 import { useMembers } from '@proton/account/members/hooks';
@@ -335,13 +336,19 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
 
     const domainData = { loadingCustomDomains, selectedDomain, customDomains, setSelectedDomain };
 
-    const filteredGroups = user.isAdmin
-        ? groups
-        : groups.filter((group) =>
-              memberships.some(
-                  ({ GroupID, Permissions }) => GroupID === group.ID && Permissions & GROUP_MEMBER_PERMISSIONS.OWNER
-              )
-          );
+    const filteredGroups = groups.filter((group) => {
+        // Filter out system groups. They should never be displayed in the UI.
+        if (getIsSystemGroup(group)) {
+            return false;
+        }
+        // Admins see all remaining groups; non-admins only see groups they own.
+        if (user.isAdmin) {
+            return true;
+        }
+        return memberships.some(
+            ({ GroupID, Permissions }) => GroupID === group.ID && Permissions & GROUP_MEMBER_PERMISSIONS.OWNER
+        );
+    });
 
     return {
         groups: filteredGroups,
