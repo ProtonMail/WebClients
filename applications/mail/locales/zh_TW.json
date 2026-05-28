@@ -51,6 +51,9 @@
       "Add": [
         "加入"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add account": [
         "加入帳號"
       ],
@@ -308,6 +311,9 @@
       ],
       "Continue with categories": [
         "繼續使用類別"
+      ],
+      "Continue with Free": [
+        "繼續使用免費方案"
       ],
       "Continue with Google": [
         "繼續以 Google 帳號登入"
@@ -2057,6 +2063,9 @@
       ],
       "Access advanced AI models": [
         "存取進階 AI 模型"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "全部的頂級質子版服 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 和 ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "攔截廣告、追蹤程式和惡意軟體"
@@ -3997,6 +4006,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "在您的來信訊息到達收件匣前會自動排列"
       ],
+      "Available storage: ${ storageText }": [
+        "可用儲存空間: ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "設置此以先啟動您的組織和自訂您的電子郵件地址。"
       ],
@@ -4135,14 +4147,23 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
       ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "使用此指南以讓貴組織快速地受益於 ${ BRAND_NAME } 的業界領先加密和隱私生態系。"
+      ],
       "We can't access ${ boldEmails } anymore.": [
         "我們無法再存取至 ${ boldEmails }"
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "我們沒有在此電郵中發現追蹤程式或追踪網址。"
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "我們將暫停匯入於 80% 的儲存空間以為新訊息保留空間。"
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "我們將帶入您舊的電子郵件便連線您的 Gmail 至 ${ MAIL_APP_NAME } 已讓新訊息自動顯示。"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "我們已匯入來自於 Gmail 的電子郵件。完成時我們將讓您知道。"
       ],
       "When do you want your message to be sent?": [
         "您想在什麼時候傳送郵件？"
@@ -4182,6 +4203,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "您的帳戶資料復原方法已就緒。"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "您免費的 ${ MAIL_APP_NAME } 帳號儲存空間有限所以我們將只匯入您最新的 Gmail 電子郵。"
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "您的帳號支援 ${ MAX_SYNC_FREE_USER } Gmail 位址。"
@@ -4957,6 +4981,9 @@
       ],
       "Thanks for the feedback!": [
         "感謝您的回饋意見！"
+      ],
+      "That action can't be performed on emails in this folder": [
+        "此操作無法進行於電子郵件的此資料夾"
       ],
       "The amount due has changed. Please try again.": [
         "應付金額已變更。請再試一次。"
@@ -6354,6 +6381,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
       ],
+      "${ boldBulkDelete }, archive, or move old emails to a folder.": [
+        "${ boldBulkDelete } 、封存、或移動舊的電子郵件至資料夾。"
+      ],
       "${ boldUnsubscribe } from them with one click.": [
         "透過單擊 ${ boldUnsubscribe }"
       ],
@@ -6449,6 +6479,9 @@
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } 亦可防護您的企業商號。"
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } 是端對端加密視訊會議的解決方案。添加至您的方案以主持安全會議。"
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } 個席次"
@@ -7428,6 +7461,9 @@
       "Low Priority": [
         "較低優先順序"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "將 ${ MAIL_APP_NAME } 設為預設電子郵件應用程式。"
+      ],
       "Manage your folders": [
         "管理您的資料夾"
       ],
@@ -8291,6 +8327,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "隨時升級或清理空間以帶入更多"
       ],
       "Upgrade to ${ plan } to unlock": [
         "升級到 ${ plan } 以解鎖"
@@ -9414,6 +9453,9 @@
       ],
       "Mail Server (IMAP)": [
         "郵件伺服器 (IMAP)"
+      ],
+      "Mailing list": [
+        "郵件列表"
       ],
       "Main": [
         "主要"
@@ -11067,6 +11109,9 @@
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "我們的 ${ visionary } 方案不再可用於新的訂閱者，這是一個給予原 ${ BRAND_NAME } 使用者的特殊方案，具有特別功能與福利。"
       ],
+      "Pay once, secure your passwords and identity forever.": [
+        "一次性付款，永久保護您的密碼和身分。"
+      ],
       "Popular": [
         "熱門"
       ],
@@ -11444,6 +11489,9 @@
       ],
       "Trial started": [
         "試用開始"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "您的 ${ BRAND_NAME } 位址已就緒"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12214,6 +12262,9 @@
       ],
       "This key is used to encrypt messages to this contact": [
         "此金鑰是用於加密通訊錄"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "此金鑰是用於舊版的應用程式以加密通訊錄"
       ],
       "We recommend that you \"untrust\" this key.": [
         "我們建議您「取消信任」此金鑰。"
@@ -13336,6 +13387,9 @@
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
         "取得包含全部的單一方案，取得 ${ BRAND_NAME } Unlimited"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "保持您的密碼安全和整齊於多個保管庫"
       ],
       "Protect your account from threats with Sentinel": [
         "使用 Sentinel 保護您的帳戶免受威脅"
@@ -14592,6 +14646,9 @@
       "Contacts": [
         "通訊錄"
       ],
+      "Continue with free storage": [
+        "繼續使用免費儲存空間"
+      ],
       "Continue with partial import?": [
         "要繼續部分匯入嗎？"
       ],
@@ -14708,6 +14765,9 @@
       ],
       "Download the app": [
         "下載應用程式"
+      ],
+      "Early access to email categories": [
+        "搶先體驗電子郵件類別"
       ],
       "Edit billing address": [
         "編輯帳單地址"
