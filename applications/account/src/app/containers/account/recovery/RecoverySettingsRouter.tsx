@@ -29,6 +29,7 @@ import SignedInReset from '@proton/components/containers/recovery/navItems/Signe
 import { RecoverySettingsTelemetryVariantProvider } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
+import type { getAccountAppRoutes } from '../routes';
 import DeviceBasedRecoverySubpage from './recoverySubpages/DeviceBasedRecoverySubpage';
 import { EmergencyContactSubpage } from './recoverySubpages/EmergencyContactSubpage';
 import { RecoveryContactSubpage } from './recoverySubpages/RecoveryContactSubpage';
@@ -39,7 +40,6 @@ import RecoveryPhraseSubpage from './recoverySubpages/RecoveryPhraseSubpage';
 import { SessionRecoverySubpage } from './recoverySubpages/SessionRecoverySubpage';
 import SignInWithAnotherDeviceSubpage from './recoverySubpages/SignInWithAnotherDeviceSubpage';
 import { PasswordResetOptionRequiredWarningInGroup } from './recoverySubpages/shared/PasswordResetOptionRequiredWarning';
-import type { getAccountAppRoutes } from './routes';
 
 interface Props {
     app: APP_NAMES;
