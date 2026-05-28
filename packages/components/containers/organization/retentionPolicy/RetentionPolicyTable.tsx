@@ -2,7 +2,9 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import SearchInput from '@proton/components/components/input/SearchInput';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
@@ -28,6 +30,10 @@ interface RetentionPolicyTableProps {
 const RetentionPolicyTable = ({ rules, loading, onEdit, onDelete, onCreateNew }: RetentionPolicyTableProps) => {
     const [searchKeyword, setSearchKeyword] = useState('');
     const { getFullScopeLabel } = useRetentionRuleScopeSuggestion();
+    const [permissions] = useOrgPermissions();
+    const canCreate = !!permissions?.['account.data_retention.create'];
+    const canUpdate = !!permissions?.['account.data_retention.update'];
+    const canDelete = !!permissions?.['account.data_retention.delete'];
 
     const filteredRules = useMemo(() => {
         if (!searchKeyword) {
@@ -65,9 +71,17 @@ const RetentionPolicyTable = ({ rules, loading, onEdit, onDelete, onCreateNew }:
     return (
         <>
             <div className="mb-4 flex items-center gap-4">
-                <Button color="norm" data-testid="retention-policies:create-policy" onClick={onCreateNew}>{c(
-                    'retention_policy_2025_Action'
-                ).t`Create retention rule`}</Button>
+                <Tooltip title={canCreate ? null : c('Label').t`You don't have permissions`} openDelay={100}>
+                    <span>
+                        <Button
+                            color="norm"
+                            data-testid="retention-policies:create-policy"
+                            onClick={onCreateNew}
+                            disabled={!canCreate}
+                        >{c('retention_policy_2025_Action').t`Create retention rule`}</Button>
+                    </span>
+                </Tooltip>
+
                 <div className="ml-0 lg:ml-auto w-full lg:w-custom" style={{ '--lg-w-custom': '24em' }}>
                     <SearchInput
                         onChange={(value: string) => setSearchKeyword(value)}
@@ -99,6 +113,8 @@ const RetentionPolicyTable = ({ rules, loading, onEdit, onDelete, onCreateNew }:
                             key={rule.ID}
                             rule={rule}
                             loading={loading}
+                            canUpdate={canUpdate}
+                            canDelete={canDelete}
                             onEdit={onEdit}
                             onDelete={onDelete}
                         />
