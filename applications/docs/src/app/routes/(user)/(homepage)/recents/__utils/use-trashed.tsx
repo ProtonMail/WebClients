@@ -2,7 +2,7 @@ import useNotifications from '@proton/components/hooks/useNotifications'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
 import { generateNodeUid, getDrive } from '@proton/drive'
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
-import type { DegradedNode, DriveEvent, NodeEntity, ProtonDriveClient } from '@protontech/drive-sdk'
+import type { DegradedNode, DriveEvent, DriveListener, NodeEntity, ProtonDriveClient } from '@protontech/drive-sdk'
 import { useCallback, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
@@ -40,7 +40,7 @@ export function useTrashed(drive: ProtonDriveClient) {
     setIsTrashLoading(false)
   }, [createNotification, drive, logger])
 
-  const handleEvent = useCallback(async (event: DriveEvent) => {
+  const trashedListener: DriveListener = useCallback(async (event: DriveEvent) => {
     const drive = getDrive()
 
     if (event.type === 'node_updated') {
@@ -52,12 +52,12 @@ export function useTrashed(drive: ProtonDriveClient) {
         }
         setTrashedDocumentItems((items) => createOrUpdateItem(items, node))
       } else {
-        setTrashedDocumentItems((items) => removeMissingItems(items, event))
+        setTrashedDocumentItems((items) => removeMissingItems(items, event.nodeUid))
       }
     }
 
     if (event.type === 'node_deleted') {
-      setTrashedDocumentItems((items) => removeMissingItems(items, event))
+      setTrashedDocumentItems((items) => removeMissingItems(items, event.nodeUid))
     }
   }, [])
 
@@ -65,7 +65,7 @@ export function useTrashed(drive: ProtonDriveClient) {
     fetchTrashed,
     isTrashLoading,
     trashedDocumentItems,
-    handleEvent,
+    trashedListener,
   }
 }
 
@@ -80,6 +80,6 @@ function createOrUpdateItem(previousItems: RecentDocumentsItemValue[], node: Nod
   }
 }
 
-function removeMissingItems(previousItems: RecentDocumentsItemValue[], event: { nodeUid: string }) {
-  return previousItems.filter((item) => event.nodeUid !== generateNodeUid(item.volumeId, item.linkId))
+function removeMissingItems(previousItems: RecentDocumentsItemValue[], trashedNodeUid: string) {
+  return previousItems.filter((item) => trashedNodeUid !== generateNodeUid(item.volumeId, item.linkId))
 }
