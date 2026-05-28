@@ -7,6 +7,7 @@ jest.mock("electron", () => ({
     app: {
         on: jest.fn(),
         getPath: jest.fn(() => "/home/potato"),
+        getAppPath: jest.fn(() => "/home/potato/app"),
     },
 }));
 
