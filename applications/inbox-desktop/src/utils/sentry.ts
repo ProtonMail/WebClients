@@ -93,9 +93,10 @@ export async function initializeSentry() {
                 // Intercepts will-quit to send session-end envelope, delaying app exit.
                 // Re-enable when release health metrics are needed.
                 "MainProcessSession",
-                // We handle uncaught exceptions in captureUncaughtErrors.ts with explicit reporting.
-                // This integration would cause double-reporting. Therefore disabled.
+                // We handle uncaught exceptions and unhandled rejections in captureUncaughtErrors.ts
+                // with explicit reporting; these would double-report.
                 "OnUncaughtException",
+                "OnUnhandledRejection",
                 // Disable injecting Sentry preload into renderer sessions. Our renderers load Proton
                 // web apps that already have their own Sentry setup, and point to the Desktop app DSN.
                 "PreloadInjection",

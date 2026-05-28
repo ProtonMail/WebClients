@@ -27,7 +27,6 @@ import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
 import { handleBeforeInput } from "./windowShortcuts";
 import { getAppURL, URLConfig } from "../../store/urlStore";
 import metrics from "../metrics";
-import { join } from "node:path";
 import { c } from "ttag";
 import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
 import { APPS, APPS_CONFIGURATION, CALENDAR_APP_NAME, MAIL_APP_NAME } from "@proton/shared/lib/constants";
@@ -41,6 +40,7 @@ import { isWindowValid } from "./windowUtils";
 import { profiler } from "../profiler/profiler";
 import { sentryReport } from "../sentryReport";
 import { isUserNetworkErrorCode, NET_ERROR_CODE } from "../netErrors";
+import { getFileResourcePath } from "../../constants/resources";
 
 type ViewID = keyof URLConfig;
 
@@ -556,9 +556,7 @@ export async function showNetworkErrorPage(viewID: ViewID): Promise<void> {
         return;
     }
 
-    const filePath = app.isPackaged
-        ? join(process.resourcesPath, "error-network.html")
-        : join(app.getAppPath(), "assets/error-network.html");
+    const filePath = getFileResourcePath("error-network.html");
 
     const themeColors = nativeTheme.shouldUseDarkColors
         ? PROTON_THEMES_MAP[ThemeTypes.Carbon]
@@ -611,9 +609,7 @@ async function showLoadingPage(title: string): Promise<void> {
 }
 
 async function renderLoadingPage(view: WebContentsView, title: string): Promise<void> {
-    const filePath = app.isPackaged
-        ? join(process.resourcesPath, "loading.html")
-        : join(app.getAppPath(), "assets/loading.html");
+    const filePath = getFileResourcePath("loading.html");
 
     const themeColors = nativeTheme.shouldUseDarkColors
         ? PROTON_THEMES_MAP[ThemeTypes.Carbon]
