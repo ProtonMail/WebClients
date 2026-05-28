@@ -17,7 +17,7 @@ import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import { getSnoozeNotificationText, getSnoozeUnixTime } from '../../helpers/snooze';
 import type { Element } from '../../models/element';
 import { backendActionFinished, backendActionStarted } from '../../store/elements/elementsActions';
-import { params } from '../../store/elements/elementsSelectors';
+import { selectParams } from '../../store/elements/elementsSelectors';
 import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels';
 import { MOVE_BACK_ACTION_TYPES } from './moveBackAction/interfaces';
 import { useMoveBackAction } from './moveBackAction/useMoveBackAction';
@@ -29,7 +29,7 @@ type SnoozeProps = {
 };
 
 const useSnooze = () => {
-    const { labelID, conversationMode } = useMailSelector(params);
+    const { labelID, conversationMode } = useMailSelector(selectParams);
 
     const api = useApi();
     const { createNotification } = useNotifications();
