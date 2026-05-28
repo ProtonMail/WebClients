@@ -25,7 +25,7 @@ import { DEFAULT_MIN_WIDTH_OF_MAILBOX_LIST } from 'proton-mail/hooks/useResizabl
 import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
 import type { MailboxActions, RouterNavigation } from 'proton-mail/router/interface';
 import { setParams } from 'proton-mail/store/elements/elementsActions';
-import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
+import { selectNewsletterSubscriptionID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import {
     allSubscriptionCount,
@@ -54,7 +54,6 @@ interface NewsletterSubscriptionViewProps {
     elementsData: ElementsStructure;
     actions: MailboxActions;
     navigation: RouterNavigation;
-    params: ElementsStateParams;
 }
 
 // This is used to avoid showing the list of items when no subscription is selected
@@ -67,13 +66,9 @@ const emptyElementsData: ElementsStructure = {
     labelID: CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].label,
 };
 
-export const NewsletterSubscriptionView = ({
-    elementsData,
-    actions,
-    navigation,
-    params,
-}: NewsletterSubscriptionViewProps) => {
+export const NewsletterSubscriptionView = ({ elementsData, actions, navigation }: NewsletterSubscriptionViewProps) => {
     const { feature } = useFeature(FeatureCode.NewsletterSubscriptionViewOnboarding);
+    const newsletterSubscriptionID = useMailSelector(selectNewsletterSubscriptionID);
 
     const { resizeAreaRef } = useMailboxLayoutProvider();
     const breakpoints = useActiveBreakpoint();
@@ -127,7 +122,7 @@ export const NewsletterSubscriptionView = ({
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A7A3D4
-    }, [activeSubscription?.ID, params.newsletterSubscriptionID]);
+    }, [activeSubscription?.ID, newsletterSubscriptionID]);
 
     // The view is not available on mobile, we want to make sure to avoid showing it to users
     if (breakpoints.viewportWidth['<=small']) {
@@ -182,7 +177,6 @@ export const NewsletterSubscriptionView = ({
                                     toolbar={
                                         overrideActions.selectedIDs.length > 0 ? (
                                             <NewsletterSubscriptionMailListToolbar
-                                                params={params}
                                                 navigation={navigation}
                                                 elementsData={elementsData}
                                                 actions={overrideActions}

@@ -2,14 +2,14 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
 import Toolbar from 'proton-mail/components/toolbar/Toolbar';
 import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
-import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
+import { params } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import type { MailboxActions, RouterNavigation } from '../interface';
 import { useMailboxLayoutProvider } from './MailboxLayoutContext';
 
 interface MailboxToolbarProps {
     inHeader?: boolean;
-    params: ElementsStateParams;
     navigation: RouterNavigation;
     elementsData: ElementsStructure;
     actions: MailboxActions;
@@ -22,13 +22,12 @@ interface MailboxToolbarProps {
 
 export const MailboxToolbar = ({
     inHeader = false,
-    params,
     navigation,
     elementsData,
     actions,
     overrideColumnMode,
 }: MailboxToolbarProps) => {
-    const { conversationMode, sort, filter, labelID, elementID, messageID, isSearching } = params;
+    const { conversationMode, sort, filter, labelID, elementID, messageID, isSearching } = useMailSelector(params);
     const { handleBack, handlePage, page, handleFilter, handleSort } = navigation;
     const { loading, total, elementIDs } = elementsData;
     const {
