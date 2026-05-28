@@ -30,6 +30,10 @@ export interface E2eeRecoveryTuning {
     noiseAudioLevelMinThreshold: number;
     /** Must hit both noise thresholds this many ticks in a row before we call it broken crypto audio. */
     noiseConsecutiveTicks: number;
+    /** Suppress video-stall detection for this many ms after an EncryptionError on a participant. */
+    missingKeyStallSuppressMs: number;
+    /** Ignore EncryptionErrors during this window after the room becomes Connected (join burst is expected). */
+    encryptionErrorGracePeriodMs: number;
 }
 
 /** Values calibrated against captured RTP traces in production-like sessions. */
@@ -41,9 +45,11 @@ export const E2EE_RECOVERY_TUNING_DEFAULT: E2eeRecoveryTuning = {
     videoPktsDeltaMin: 20,
     videoFramesDeltaMin: 2,
     recoverySuccessTicks: 3,
-    noiseEnergyPerSampleThreshold: 3e-6,
+    noiseEnergyPerSampleThreshold: 1e-5,
     noiseAudioLevelMinThreshold: 0.05,
     noiseConsecutiveTicks: 4,
+    missingKeyStallSuppressMs: 5_000,
+    encryptionErrorGracePeriodMs: 10_000,
 };
 
 /**
@@ -58,9 +64,11 @@ export const E2EE_RECOVERY_TUNING_AGGRESSIVE: E2eeRecoveryTuning = {
     videoPktsDeltaMin: 15,
     videoFramesDeltaMin: 1,
     recoverySuccessTicks: 2,
-    noiseEnergyPerSampleThreshold: 2.5e-6,
+    noiseEnergyPerSampleThreshold: 7e-6,
     noiseAudioLevelMinThreshold: 0.04,
     noiseConsecutiveTicks: 3,
+    missingKeyStallSuppressMs: 3_000,
+    encryptionErrorGracePeriodMs: 5_000,
 };
 
 export const getE2eeRecoveryTuning = (profile: E2eeRecoveryProfile): E2eeRecoveryTuning =>
