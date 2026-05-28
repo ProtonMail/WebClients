@@ -1,11 +1,10 @@
-import { getErrorString, ServerTime } from '@proton/docs-shared'
+import { getErrorString, ServerTime, BasePropertiesState } from '@proton/docs-shared'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import type { DocsApi } from './../Api/DocsApi'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { RecentDocumentAPIItem } from './../Api/Types/GetRecentsResponse'
 import type { CacheService } from './CacheService'
 import { nodeMetaUniqueId } from '@proton/drive-store/lib/NodeMeta'
-import { BasePropertiesState } from '@proton/docs-shared'
 import { isProtonDocsDocument, type ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 
 // Please remember to bump this number if you make changes to the format of
@@ -306,6 +305,8 @@ export type RecentDocumentsItemValue = {
   lastModified: ServerTime
   createdBy: string | undefined
   location: RecentDocumentsItemLocation
+  // Available (and used) only when RecentDocumentsItem is used with SDK; in order from root to direct parent
+  ancestorsNodeUids?: string[]
   isSharedWithMe: boolean
   shareId: string
 }
@@ -371,6 +372,9 @@ export class RecentDocumentsItem implements RecentDocumentsItemValue {
   }
   get location() {
     return this.#value.location
+  }
+  get ancestorsNodeUids() {
+    return this.#value.ancestorsNodeUids
   }
   get isSharedWithMe() {
     return this.#value.isSharedWithMe
