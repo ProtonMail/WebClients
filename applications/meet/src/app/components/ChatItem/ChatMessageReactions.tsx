@@ -39,7 +39,9 @@ export const ChatMessageReactions = ({ messageId, onReact }: ChatMessageReaction
                         {displayedParticipants.map((identity, index) => (
                             <span key={identity}>
                                 {index > 0 && ', '}
-                                <strong>{participantDecryptedNameMap[identity] ?? identity}</strong>
+                                <strong>
+                                    <bdi>{participantDecryptedNameMap[identity] ?? identity}</bdi>
+                                </strong>
                             </span>
                         ))}
                     </span>
