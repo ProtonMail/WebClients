@@ -1,11 +1,9 @@
 import { RecentDocumentsItem } from '@proton/docs-core'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
-import { getDrive, type ProtonDriveClient } from '@proton/drive'
+import { getDrive } from '@proton/drive'
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
-import type { LoggerInterface } from '@proton/utils/logs'
-import type { DriveListener, EventSubscription } from '@protontech/drive-sdk'
 import { useEffect, useMemo } from 'react'
 import { useRouteMatch } from 'react-router'
 import { useApplication } from '~/utils/application-context'
@@ -28,6 +26,7 @@ import {
 } from './homepage-view'
 import { useRecents } from './use-recents'
 import { useTrashed } from './use-trashed'
+import { manageEventsSubscription } from './manage-events-subscription'
 
 const subscribeToEvents = manageEventsSubscription()
 
@@ -45,12 +44,13 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
 
   const {
     recentDocuments,
+    recentDocumentsInitialized,
     isRecentsUpdating,
     updateRecentDocuments,
     updateRenamedDocumentInCache,
-    handleEvent: handleEventRecents,
+    recentsListener,
   } = useRecents(drive)
-  const { fetchTrashed, trashedDocumentItems, isTrashLoading, handleEvent: handleEventTrashed } = useTrashed(drive)
+  const { fetchTrashed, trashedDocumentItems, isTrashLoading, trashedListener } = useTrashed(drive)
 
   useEffect(
     function loadData() {
@@ -64,25 +64,32 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
   )
 
   useEffect(
-    () => subscribeToEvents(drive, logger, handleEventRecents, handleEventTrashed),
-    [drive, handleEventRecents, handleEventTrashed, logger],
+    () => subscribeToEvents(drive, logger, recentsListener, trashedListener),
+    [drive, recentsListener, trashedListener, logger],
   )
 
   const state = useMemo(() => {
     if (isTrashRoute) {
       return buildTrashState(trashedDocumentItems, isTrashLoading)
     } else if (search && search.length > 0) {
-      return buildSearchState(search, isRecentsUpdating, recentDocuments, type)
+      return buildSearchState(search, isRecentsUpdating, recentDocumentsInitialized, recentDocuments, type)
     } else {
-      return buildRecentsState(recentDocuments, isRecentsUpdating, recentsSort, contactEmails, type)
+      return buildRecentsState(
+        recentDocuments,
+        recentDocumentsInitialized,
+        isRecentsUpdating,
+        recentsSort,
+        contactEmails,
+        type,
+      )
     }
-    // TODO (future MRs) might still miss some cases from HomepageViewState
   }, [
     contactEmails,
     isRecentsUpdating,
     isTrashLoading,
     isTrashRoute,
     recentDocuments,
+    recentDocumentsInitialized,
     recentsSort,
     search,
     trashedDocumentItems,
@@ -107,11 +114,16 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
 
 function buildRecentsState(
   recentDocuments: RecentDocumentsItemValue[],
+  recentDocumentsInitialized: boolean,
   isRecentsUpdating: boolean,
   recentsSort: RecentsSort,
   contactEmails: ContactEmail[] | undefined,
   type: ProtonDocumentType | undefined,
 ): HomepageViewState {
+  if (!recentDocumentsInitialized) {
+    return { view: 'recents-initial' }
+  }
+
   if (isRecentsUpdating) {
     return { view: 'recents-loading' }
   }
@@ -152,75 +164,29 @@ function buildTrashState(trashedDocumentItems: RecentDocumentsItemValue[], isTra
 }
 
 function buildSearchState(
-  search: string,
+  query: string,
   isRecentsUpdating: boolean,
-  recentDocuments: RecentDocumentsItemValue[] | undefined,
+  recentDocumentsInitialized: boolean,
+  recentDocuments: RecentDocumentsItemValue[],
   type: ProtonDocumentType | undefined,
 ): HomepageViewState {
+  if (!recentDocumentsInitialized) {
+    return { view: 'search-initial', query }
+  }
+
   if (isRecentsUpdating) {
-    return { view: 'search-loading', query: search }
+    return { view: 'search-loading', query }
   }
 
   const recentItems = recentDocuments?.map(RecentDocumentsItem.create) ?? []
 
-  const filtered = filterDocuments(recentItems, search, type)
+  const filtered = filterDocuments(recentItems, query, type)
   if (filtered.length === 0) {
-    return { view: 'search-empty', query: search }
+    return { view: 'search-empty', query }
   }
   return {
     view: 'search',
     itemSections: splitIntoSectionsByName(filtered, { isSearchResults: true }),
-    query: search,
-  }
-}
-
-function manageEventsSubscription() {
-  let subscription: EventSubscription | undefined
-
-  function dispose() {
-    if (subscription) {
-      subscription.dispose()
-      subscription = undefined
-    }
-  }
-
-  return function subscribe(
-    drive: ProtonDriveClient,
-    logger: LoggerInterface,
-    recentsListener: DriveListener,
-    trashedListener: DriveListener,
-  ) {
-    // In case useEffect calls cleanup (onUnmount) this should prevent multiple subscriptions
-    let shouldAbort = false
-
-    drive
-      .getMyFilesRootFolder()
-      .then(async (maybeMyFiles) => {
-        if (shouldAbort) {
-          return
-        }
-
-        const myFiles = maybeMyFiles.ok ? maybeMyFiles.value : maybeMyFiles.error
-        const newSubscription = await drive.subscribeToTreeEvents(myFiles.treeEventScopeId, async (event) => {
-          try {
-            await recentsListener(event)
-            await trashedListener(event)
-          } catch (error: any) {
-            logger.error('Failed to handle SDK event', error)
-          }
-        })
-
-        if (shouldAbort) {
-          newSubscription.dispose()
-        } else {
-          subscription = newSubscription
-        }
-      })
-      .catch((error) => logger.error('Failed to subscribe to SDK events', error))
-
-    return function onUnmount() {
-      shouldAbort = true
-      dispose()
-    }
+    query,
   }
 }
