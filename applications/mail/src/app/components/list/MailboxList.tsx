@@ -48,8 +48,7 @@ export default function MailboxList({
 }: MailboxListProps) {
     const [labels = []] = useLabels();
     const location = useLocation();
-    const params = useMailSelector((state) => state.elements.params);
-    const { labelID, elementID } = params;
+    const { labelID, elementID } = useMailSelector((state) => state.elements.params);
     const { total, loading, placeholderCount } = elementsData;
     const {
         handleElement,
