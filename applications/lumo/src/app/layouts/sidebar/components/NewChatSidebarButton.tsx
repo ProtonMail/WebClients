@@ -24,10 +24,17 @@ export const NewChatSidebarButton = () => {
     const isNewChatRoute = useRouteMatch('/')?.isExact;
 
     const handleNewChat = useCallback(() => {
-        setGhostChatMode(false);
-        setNativeGhostMode(false);
+        // Only reset ghost mode if the toggle is currently off
+        // This allows the persistent ghost mode setting to take effect for new chats
+        if (!isGhostChatMode) {
+            setGhostChatMode(false);
+            setNativeGhostMode(false);
+        } else {
+            // If ghost mode is enabled via toggle, ensure native bridge is also set correctly
+            setNativeGhostMode(true);
+        }
         history.push('/');
-    }, [setGhostChatMode, history]);
+    }, [setGhostChatMode, history, isGhostChatMode]);
 
     const handleModalClose = useCallback(() => {
         handleDisclaimerClose();
