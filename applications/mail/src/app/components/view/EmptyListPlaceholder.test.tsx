@@ -26,7 +26,7 @@ jest.mock('@proton/activation/src/components/SettingsArea/ProviderCards/Provider
 
 jest.mock('@proton/activation/src/hooks/useBYOEFeatureStatus', () => ({
     __esModule: true,
-    default: () => false,
+    default: () => [false, false] as const,
 }));
 
 jest.mock('@proton/activation/src/logic/store', () => ({

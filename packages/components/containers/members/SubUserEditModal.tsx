@@ -269,7 +269,7 @@ const SubUserEditModal = ({
 
     const canRevokeAdmin = !isSelf && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN;
 
-    const hasAccessToBYOE = useBYOEFeatureStatus();
+    const [hasAccessToBYOE] = useBYOEFeatureStatus();
 
     const errorHandler = useErrorHandler();
 
