@@ -130,7 +130,7 @@ const AddressActions = ({
     const [organizationKey] = useOrganizationKey();
     const emailAddress = address.Email;
     const wrapError = useErrorWrapper();
-    const hasAccessToBYOE = useBYOEFeatureStatus();
+    const [hasAccessToBYOE] = useBYOEFeatureStatus();
     const { sync, handleGrantPermission, handleReconnect, loadingConfig } = useReconnectSync(address);
 
     // We need to show the grant permission button when the sync is not active OR when the sync does not exists anymore

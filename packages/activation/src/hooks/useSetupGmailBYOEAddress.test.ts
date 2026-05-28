@@ -76,7 +76,7 @@ describe('useSetupGmailBYOEAddress', () => {
     describe('handleBYOEWithImportCallback', () => {
         beforeEach(() => {
             jest.clearAllMocks();
-            mockUseBYOEFeatureStatus.mockReturnValue(true);
+            mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
             mockUseAddresses.mockReturnValue([[], false]);
             mockFindUserAddress.mockReturnValue(undefined);
             mockDispatch.mockResolvedValue({ Email: 'test@gmail.com', ID: 'addr-id' });
@@ -102,7 +102,7 @@ describe('useSetupGmailBYOEAddress', () => {
         });
 
         it('should do nothing when hasAccessToBYOE is false', async () => {
-            mockUseBYOEFeatureStatus.mockReturnValue(false);
+            mockUseBYOEFeatureStatus.mockReturnValue([false, false] as const);
             const mockShowSuccessModal = jest.fn();
             const { result } = renderHook(() =>
                 useSetupGmailBYOEAddress({
