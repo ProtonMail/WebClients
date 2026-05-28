@@ -17,6 +17,7 @@ import AuthDevicesSettings from '@proton/account/sso/AuthDevicesSettings';
 import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import {
     AccountRecoverySection,
@@ -93,6 +94,7 @@ import { useIsB2BTrial } from '@proton/payments/ui';
 import { APPS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { locales } from '@proton/shared/lib/i18n/locales';
+import type { Permission } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 import { GetStartedOnboarding } from '@proton/vpn/components/Onboarding';
 import { VPNClientsSection } from '@proton/vpn/components/VPNClientsSection';
@@ -106,6 +108,7 @@ const MainContainer: FunctionComponent = () => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
+    const [permissions, loadingOrgPermissions] = useOrgPermissions();
     const [userSettings] = useUserSettings();
     const history = useHistory();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
@@ -170,6 +173,7 @@ const MainContainer: FunctionComponent = () => {
         user,
         subscription,
         groups,
+        permissions: permissions ?? ({} as Record<Permission, boolean>),
         isB2BDrive: false,
         isB2BTrial,
         isGroupOwner,
@@ -262,6 +266,7 @@ const MainContainer: FunctionComponent = () => {
             loadingSubscription ||
             loadingOrganization ||
             loadingGroups ||
+            loadingOrgPermissions ||
             loadingDataRecovery ||
             loadingIsSessionRecoveryAvailable ||
             loadingIsGroupOwner

@@ -5,13 +5,13 @@ import type { SectionConfig, SidebarConfig } from '@proton/components';
 import { canUseGroups } from '@proton/components';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
 import {
+    PLANS,
     getHasExternalMemberCapableB2BPlan,
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
     getIsB2BAudienceFromPlan,
     hasAnyB2bBundle,
     hasBundleBiz2025,
-    hasBundlePro2024,
     hasVPNPassProfessional,
     hasVisionary,
     hasVpnBusiness,
@@ -29,7 +29,11 @@ import {
 } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
-import { getOrganizationDenomination, isOrganizationPassFamily } from '@proton/shared/lib/organization/helper';
+import {
+    getOrganizationDenomination,
+    isOrganizationOneOf,
+    isOrganizationPassFamily,
+} from '@proton/shared/lib/organization/helper';
 
 import type { OrganizationRouterParams } from '../../content/router-params';
 
@@ -44,6 +48,7 @@ export const getOrganizationAppRoutes = ({
     groups,
     isGroupOwner,
     flags,
+    permissions,
 }: OrganizationRouterParams): SidebarConfig => {
     const {
         canDisplayB2BLogsVPN = false,
@@ -105,12 +110,11 @@ export const getOrganizationAppRoutes = ({
                     isUserGroupsPassBusinessEnabled,
                     hasGroups,
                 })));
-
     const canShowUsersAndAddressesSection =
         // The user must have a plan that supports multi-user
         hasMemberCapablePlan &&
         // If the organization is not active (end of subscription without renewal), we allow users to access this page to delete sub users
-        (isOrgActive || (!isOrgActive && (organization?.UsedMembers ?? 0) > 1)) &&
+        (isOrgActive || (organization?.UsedMembers ?? 0) > 1) &&
         // The org must be setup to allow users to access this page
         isOrgConfigured;
 
@@ -145,11 +149,12 @@ export const getOrganizationAppRoutes = ({
 
     const canShowRetentionPolicies =
         isRetentionPoliciesEnabled &&
+        permissions['account.data_retention.read'] &&
         app !== APPS.PROTONVPN_SETTINGS &&
         // retention policies management is a B2B feature, only show if org is elligible for it
         isOrgActive &&
         isOrgConfigured &&
-        (hasBundleBiz2025(subscription) || hasVisionary(subscription) || hasBundlePro2024(subscription));
+        isOrganizationOneOf(organization, [PLANS.BUNDLE_BIZ_2025, PLANS.VISIONARY, PLANS.BUNDLE_PRO_2024]);
 
     const canShowRolesAndPermissionsSection = !!(
         isRolesAndPermissionsEnabled &&
@@ -173,267 +178,264 @@ export const getOrganizationAppRoutes = ({
 
     const showBusinessMigrationSection = Boolean(isOLESEnabled) && isOLESEligible({ user, organization, subscription });
 
-    const organizationSectionVisible = canHaveOrganization || !!isGroupOwner;
+    const routes = {
+        migrationAssistant: {
+            id: 'migration-assistant',
+            text: c('Title').t`Migration assistant`,
+            to: '/migration-assistant',
+            icon: 'arrow-down-to-square',
+            available: canHaveOrganization && showBusinessMigrationSection,
+        },
+        users: {
+            id: 'users',
+            text: hasExternalMemberCapableB2BPlan ? c('Title').t`Users` : c('Title').t`Users and addresses`,
+            to: '/users-addresses',
+            icon: 'users',
+            available: canHaveOrganization && canShowUsersAndAddressesSection,
+            subsections: [
+                {
+                    id: 'schedule-call',
+                    available: app === APPS.PROTONVPN_SETTINGS && canSchedulePhoneCalls,
+                },
+                {
+                    id: 'members',
+                },
+                {
+                    text: c('Title').t`Create multiple user accounts`,
+                    id: 'multi-user-creation',
+                    available: organization && !!organization.RequiresKey && !hasExternalMemberCapableB2BPlan,
+                },
+            ],
+        },
+        groups: {
+            id: 'groups',
+            text: c('Title').t`Groups`,
+            to: '/user-groups',
+            icon: 'pass-group',
+            noTitle: true,
+            available: (isAdmin || !!isGroupOwner) && canShowGroupsSection,
+            subsections: [
+                {
+                    id: 'groups-management',
+                },
+            ],
+        },
+        domains: {
+            id: 'domains',
+            text: c('Title').t`Domain names`,
+            to: '/domain-names',
+            icon: 'globe',
+            available: canHaveOrganization && canShowDomainNamesSection,
+            subsections: [
+                { id: 'domains' },
+                {
+                    text: c('Title').t`Catch-all address`,
+                    id: 'catch-all',
+                },
+            ],
+        },
+        orgKeys: {
+            id: 'orgKeys',
+            text: subMenuTitle,
+            to: '/organization-keys',
+            icon: 'buildings',
+            available:
+                canHaveOrganization &&
+                (isPartOfFamily
+                    ? hasActiveOrganization //Show this section once the family is setup (only requires a name)
+                    : (hasActiveOrganizationKey || hasActiveOrganization) &&
+                      organization &&
+                      !!organization.RequiresKey),
+            subsections: [
+                {
+                    id: 'schedule-call',
+                    available: canSchedulePhoneCalls,
+                },
+                {
+                    text: subSectionTitleAppearance,
+                    id: 'organization',
+                },
+                {
+                    text: c('Title').t`Organization key`,
+                    id: 'password-keys',
+                    available: hasMemberCapablePlan && hasActiveOrganizationKey,
+                },
+            ],
+        },
+        gateways: {
+            id: 'gateways',
+            text: c('Title').t`Gateways`,
+            to: '/gateways',
+            icon: 'servers',
+            available: canHaveOrganization && (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
+            subsections: [
+                {
+                    id: 'servers',
+                },
+            ],
+        },
+        sharedServers: {
+            id: 'sharedServers',
+            text: c('Title').t`Shared servers`,
+            to: '/shared-servers',
+            icon: 'earth',
+            available:
+                canHaveOrganization && isSharedServerFeatureEnabled && (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
+            subsections: [
+                {
+                    id: 'servers',
+                },
+            ],
+        },
+        connectionEvents: {
+            id: 'connectionEvents',
+            text: c('Title').t`Gateway monitor`,
+            description: c('Subtitle').t`View VPN session details for your organization.`,
+            to: '/gateway-monitor',
+            icon: 'monitor',
+            available: canShowB2BConnectionEvents,
+            subsections: [
+                {
+                    id: 'vpn-connection-events',
+                },
+            ],
+        },
+        activityMonitor: {
+            id: 'activityMonitor',
+            text: c('Title').t`Activity monitor`,
+            to: '/activity-monitor',
+            icon: 'card-identity',
+            available: canHaveOrganization && canShowB2BActivityMonitorEvents,
+            subsections: [
+                {
+                    id: 'activity-monitor-dashboard',
+                },
+            ],
+        },
+        setup: {
+            id: 'setup',
+            text: subMenuTitle,
+            to: '/multi-user-support',
+            icon: 'users',
+            available: !!(canHaveOrganization && (isPartOfFamily ? !hasActiveOrganization : !hasActiveOrganizationKey)),
+            subsections: [
+                {
+                    id: 'schedule-call',
+                    available: canSchedulePhoneCalls,
+                },
+                {
+                    text: subSectionTitle,
+                    id: 'name',
+                },
+            ],
+        },
+        filter: {
+            id: 'filter',
+            text: c('Title').t`Organization filters`,
+            to: '/organization-filters',
+            icon: 'filter',
+            available:
+                canHaveOrganization &&
+                app !== APPS.PROTONVPN_SETTINGS &&
+                !hasExternalMemberCapableB2BPlan &&
+                !isPassFamilyPlan &&
+                (hasActiveOrganizationKey || hasActiveOrganization),
+            subsections: [
+                {
+                    text: c('Title').t`Spam, block, and allow lists`,
+                    id: 'spam',
+                },
+            ],
+        },
+        retentionPolicies: {
+            id: 'retentionPolicies',
+            text: c('Title').t`Data retention`,
+            to: '/retention-policies',
+            icon: 'archive-box',
+            available: canShowRetentionPolicies,
+            subsections: [{ id: 'retention-policies' }],
+        },
+        security: {
+            id: 'security',
+            text: c('Title').t`Security`,
+            to: '/authentication-security',
+            icon: 'shield',
+            available:
+                canHaveOrganization &&
+                (hasActiveOrganizationKey || hasActiveOrganization) &&
+                organization &&
+                (organization.MaxMembers > 1 ||
+                    organization.TwoFactorRequired !== ORGANIZATION_TWOFA_SETTING.NOT_REQUIRED),
+            subsections: [
+                {
+                    text: c('Title').t`${PROTON_SENTINEL_NAME} for organizations`,
+                    id: 'sentinel',
+                    available: canShowB2BActivityMonitorEvents,
+                },
+                {
+                    text: c('Title').t`${BRAND_NAME} Account password rules`,
+                    id: 'proton-account-password-rules',
+                },
+                {
+                    text: c('Title').t`Two-factor authentication reminders`,
+                    id: 'two-factor-authentication-reminders',
+                },
+                {
+                    text: c('Title').t`Two-factor authentication enforcement`,
+                    id: 'two-factor-authentication-enforcement',
+                },
+            ],
+        },
+        sso: {
+            id: 'sso',
+            text: c('Title').t`Single sign-on`,
+            to: '/single-sign-on',
+            icon: 'key',
+            available:
+                canHaveOrganization &&
+                appSupportsSSO(app) &&
+                (planSupportsSSO(organization?.PlanName, isSsoForPbsEnabled) ||
+                    upsellPlanSSO(organization?.PlanName)) &&
+                isOrgConfigured,
+        },
+        accessControl: {
+            id: 'accessControl',
+            text: c('Title').t`Access control`,
+            to: '/access-control',
+            icon: 'sliders',
+            available: canHaveOrganization && canShowAccessControl,
+            subsections: [
+                {
+                    id: 'application-access',
+                    text: c('Title').t`Application access`,
+                },
+                {
+                    id: 'feature-access',
+                    text: c('Title').t`Feature access`,
+                    available: canShowVideoConferenceSection || canShowScribeSection,
+                },
+            ],
+        },
+        rolesAndPermissions: {
+            id: 'rolesAndPermissions',
+            text: c('Title').t`Roles and permissions`,
+            to: '/roles-and-permissions',
+            icon: 'users-plus',
+            available: canShowRolesAndPermissionsSection,
+            subsections: [
+                {
+                    id: 'roles',
+                },
+            ],
+        },
+    } satisfies Record<string, SectionConfig>;
+
+    // show the whole organization section if organization is present and at least one feature is available
+    const showOrganizationSection = !!organization && Object.values(routes).some((route) => route.available);
 
     return {
-        available: organizationSectionVisible && app !== APPS.PROTONWALLET,
+        available: showOrganizationSection,
         header: sectionTitle,
-        routes: {
-            migrationAssistant: {
-                id: 'migration-assistant',
-                text: c('Title').t`Migration assistant`,
-                to: '/migration-assistant',
-                icon: 'arrow-down-to-square',
-                available: showBusinessMigrationSection,
-            },
-            users: {
-                id: 'users',
-                text: hasExternalMemberCapableB2BPlan ? c('Title').t`Users` : c('Title').t`Users and addresses`,
-                to: '/users-addresses',
-                icon: 'users',
-                available: canHaveOrganization && canShowUsersAndAddressesSection,
-                subsections: [
-                    {
-                        id: 'schedule-call',
-                        available: app === APPS.PROTONVPN_SETTINGS && canSchedulePhoneCalls,
-                    },
-                    {
-                        id: 'members',
-                    },
-                    {
-                        text: c('Title').t`Create multiple user accounts`,
-                        id: 'multi-user-creation',
-                        available: organization && !!organization.RequiresKey && !hasExternalMemberCapableB2BPlan,
-                    },
-                ],
-            },
-            groups: {
-                id: 'groups',
-                text: c('Title').t`Groups`,
-                to: '/user-groups',
-                icon: 'pass-group',
-                noTitle: true,
-                available: organizationSectionVisible && canShowGroupsSection,
-                subsections: [
-                    {
-                        id: 'groups-management',
-                    },
-                ],
-            },
-            domains: {
-                id: 'domains',
-                text: c('Title').t`Domain names`,
-                to: '/domain-names',
-                icon: 'globe',
-                available: canHaveOrganization && canShowDomainNamesSection,
-                subsections: [
-                    { id: 'domains' },
-                    {
-                        text: c('Title').t`Catch-all address`,
-                        id: 'catch-all',
-                    },
-                ],
-            },
-            orgKeys: {
-                id: 'orgKeys',
-                text: subMenuTitle,
-                to: '/organization-keys',
-                icon: 'buildings',
-                available:
-                    canHaveOrganization &&
-                    (isPartOfFamily
-                        ? hasActiveOrganization //Show this section once the family is setup (only requires a name)
-                        : (hasActiveOrganizationKey || hasActiveOrganization) &&
-                          organization &&
-                          !!organization.RequiresKey),
-                subsections: [
-                    {
-                        id: 'schedule-call',
-                        available: canSchedulePhoneCalls,
-                    },
-                    {
-                        text: subSectionTitleAppearance,
-                        id: 'organization',
-                    },
-                    {
-                        text: c('Title').t`Organization key`,
-                        id: 'password-keys',
-                        available: hasMemberCapablePlan && hasActiveOrganizationKey,
-                    },
-                ],
-            },
-            gateways: {
-                id: 'gateways',
-                text: c('Title').t`Gateways`,
-                to: '/gateways',
-                icon: 'servers',
-                available: canHaveOrganization && (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
-                subsections: [
-                    {
-                        id: 'servers',
-                    },
-                ],
-            },
-            sharedServers: {
-                id: 'sharedServers',
-                text: c('Title').t`Shared servers`,
-                to: '/shared-servers',
-                icon: 'earth',
-                available:
-                    canHaveOrganization &&
-                    isSharedServerFeatureEnabled &&
-                    (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
-                subsections: [
-                    {
-                        id: 'servers',
-                    },
-                ],
-            },
-            connectionEvents: {
-                id: 'connectionEvents',
-                text: c('Title').t`Gateway monitor`,
-                description: c('Subtitle').t`View VPN session details for your organization.`,
-                to: '/gateway-monitor',
-                icon: 'monitor',
-                available: canHaveOrganization && canShowB2BConnectionEvents,
-                subsections: [
-                    {
-                        id: 'vpn-connection-events',
-                    },
-                ],
-            },
-            activityMonitor: {
-                id: 'activityMonitor',
-                text: c('Title').t`Activity monitor`,
-                to: '/activity-monitor',
-                icon: 'card-identity',
-                available: canHaveOrganization && canShowB2BActivityMonitorEvents,
-                subsections: [
-                    {
-                        id: 'activity-monitor-dashboard',
-                    },
-                ],
-            },
-            setup: {
-                id: 'setup',
-                text: subMenuTitle,
-                to: '/multi-user-support',
-                icon: 'users',
-                available: !!(
-                    canHaveOrganization &&
-                    (isPartOfFamily ? !hasActiveOrganization : !hasActiveOrganizationKey && canHaveOrganization)
-                ),
-                subsections: [
-                    {
-                        id: 'schedule-call',
-                        available: canSchedulePhoneCalls,
-                    },
-                    {
-                        text: subSectionTitle,
-                        id: 'name',
-                    },
-                ],
-            },
-            filter: {
-                id: 'filter',
-                text: c('Title').t`Organization filters`,
-                to: '/organization-filters',
-                icon: 'filter',
-                available:
-                    canHaveOrganization &&
-                    app !== APPS.PROTONVPN_SETTINGS &&
-                    !hasExternalMemberCapableB2BPlan &&
-                    !isPassFamilyPlan &&
-                    (hasActiveOrganizationKey || hasActiveOrganization),
-                subsections: [
-                    {
-                        text: c('Title').t`Spam, block, and allow lists`,
-                        id: 'spam',
-                    },
-                ],
-            },
-            retentionPolicies: {
-                id: 'retentionPolicies',
-                text: c('Title').t`Data retention`,
-                to: '/retention-policies',
-                icon: 'archive-box',
-                available: canHaveOrganization && canShowRetentionPolicies,
-                subsections: [{ id: 'retention-policies' }],
-            },
-            security: {
-                id: 'security',
-                text: c('Title').t`Security`,
-                to: '/authentication-security',
-                icon: 'shield',
-                available:
-                    canHaveOrganization &&
-                    (hasActiveOrganizationKey || hasActiveOrganization) &&
-                    organization &&
-                    (organization.MaxMembers > 1 ||
-                        organization.TwoFactorRequired !== ORGANIZATION_TWOFA_SETTING.NOT_REQUIRED),
-                subsections: [
-                    {
-                        text: c('Title').t`${PROTON_SENTINEL_NAME} for organizations`,
-                        id: 'sentinel',
-                        available: canShowB2BActivityMonitorEvents,
-                    },
-                    {
-                        text: c('Title').t`${BRAND_NAME} Account password rules`,
-                        id: 'proton-account-password-rules',
-                    },
-                    {
-                        text: c('Title').t`Two-factor authentication reminders`,
-                        id: 'two-factor-authentication-reminders',
-                    },
-                    {
-                        text: c('Title').t`Two-factor authentication enforcement`,
-                        id: 'two-factor-authentication-enforcement',
-                    },
-                ],
-            },
-            sso: {
-                id: 'sso',
-                text: c('Title').t`Single sign-on`,
-                to: '/single-sign-on',
-                icon: 'key',
-                available:
-                    canHaveOrganization &&
-                    appSupportsSSO(app) &&
-                    (planSupportsSSO(organization?.PlanName, isSsoForPbsEnabled) ||
-                        upsellPlanSSO(organization?.PlanName)) &&
-                    canHaveOrganization &&
-                    isOrgConfigured,
-            },
-            accessControl: {
-                id: 'accessControl',
-                text: c('Title').t`Access control`,
-                to: '/access-control',
-                icon: 'sliders',
-                available: canHaveOrganization && canShowAccessControl,
-                subsections: [
-                    {
-                        id: 'application-access',
-                        text: c('Title').t`Application access`,
-                    },
-                    {
-                        id: 'feature-access',
-                        text: c('Title').t`Feature access`,
-                        available: canShowVideoConferenceSection || canShowScribeSection,
-                    },
-                ],
-            },
-            rolesAndPermissions: {
-                id: 'rolesAndPermissions',
-                text: c('Title').t`Roles and permissions`,
-                to: '/roles-and-permissions',
-                icon: 'users-plus',
-                available: canShowRolesAndPermissionsSection,
-                subsections: [
-                    {
-                        id: 'roles',
-                    },
-                ],
-            },
-        } satisfies Record<string, SectionConfig>,
+        routes,
     };
 };
