@@ -347,11 +347,13 @@ function SpreadsheetSettings() {
   const store = useUI((ui) => ui.view.spreadsheetSettingsDialog.store)
 
   return (
-    <Ariakit.DialogDisclosure
-      store={store}
+    <UI.MenuItem
+      leadingIconSlot={<UI.Icon legacyName="cog-wheel" />}
       disabled={isReadonly}
-      render={<UI.MenuItem leadingIconSlot={<UI.Icon legacyName="cog-wheel" />}>{s('Settings')}</UI.MenuItem>}
-    />
+      onClick={() => store.show()}
+    >
+      {s('Settings')}
+    </UI.MenuItem>
   )
 }
 
