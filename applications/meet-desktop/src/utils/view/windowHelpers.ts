@@ -9,8 +9,8 @@ import { FeatureFlag } from "../flags/flags";
 
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 
-export const MINIMUM_WIDTH = 900;
-export const MINIMUM_HEIGHT = 300;
+export const MINIMUM_WIDTH = 530;
+export const MINIMUM_HEIGHT = 490;
 
 export const DEFAULT_WIDTH = 1080;
 export const DEFAULT_HEIGHT = 608; // 16:9 aspect ratio (1080 * 9/16 = 607.5, rounded to 608)
