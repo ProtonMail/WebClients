@@ -18,7 +18,7 @@ interface Props {
 }
 
 export const UserOnboardingImporters = ({ goToNextStep }: Props) => {
-    const hasAccessToBYOE = useBYOEFeatureStatus();
+    const [hasAccessToBYOE] = useBYOEFeatureStatus();
     const { markItemsAsDone, setByoeFlowInProgress } = useGetStartedChecklist();
     const stepModal = useEasySwitchSelector((state) => state.byoeFlow.stepModal);
     const prevStepModalRef = useRef(stepModal);
