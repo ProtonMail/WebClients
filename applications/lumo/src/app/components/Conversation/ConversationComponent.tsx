@@ -1,5 +1,6 @@
-import { useRef } from 'react';
+import { useCallback, useRef } from 'react';
 
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -22,6 +23,8 @@ import { FilePreviewPanel } from '../Files/Common/FilePreviewPanel';
 import { FloatingRetryPanel } from '../FloatingRetryPanel';
 import ErrorCard from '../Notifications/ErrorCard';
 import { ConversationSurvey } from '../Survey/ConversationSurvey';
+import { ArtifactProvider, useArtifactContext } from './artifact/ArtifactContext';
+import ArtifactPanel from './artifact/ArtifactPanel';
 import { ConversationHeader } from './messageChain/ConversationHeader';
 import { MessageChainComponent } from './messageChain/MessageChainComponent';
 import DesktopApprovalCards from './messageChain/message/DesktopToolApproval/DesktopApprovalCards';
@@ -37,7 +40,8 @@ export interface ConversationComponentProps {
     prefillQuery?: string;
 }
 
-const ConversationComponent = ({
+// Inner layout component — can access ArtifactContext
+const ConversationLayout = ({
     conversation,
     isGenerating,
     isProcessingAttachment,
@@ -59,6 +63,7 @@ const ConversationComponent = ({
     const filesContainerRef = useRef<HTMLDivElement>(null);
     const inputContainerRef = useRef<HTMLDivElement>(null);
     const composerContainerRef = useRef<HTMLDivElement>(null);
+    const chatContainerRef = useRef<HTMLDivElement>(null);
 
     const { isWebSearchButtonToggled } = useWebSearch();
 
@@ -90,8 +95,39 @@ const ConversationComponent = ({
     const remainingLimits = useRemainingLimits();
     const showWeeklyLimitUpsell = shouldShowWeeklyLimitUpsell(remainingLimits, tierErrors.length > 0, hasLumoPlus);
 
+    // Artifact panel split state
+    const { isPanelOpen } = useArtifactContext();
+    const [panelWidthPct, setPanelWidthPct] = useState(55);
+
+    const handleDividerMouseDown = useCallback(
+        (e: React.MouseEvent) => {
+            e.preventDefault();
+            const startX = e.clientX;
+            const startPct = panelWidthPct;
+
+            const handleMouseMove = (ev: MouseEvent) => {
+                const containerWidth = chatContainerRef.current?.clientWidth ?? window.innerWidth;
+                const dx = ev.clientX - startX;
+                // Moving divider right shrinks the panel; left expands it
+                const deltaPct = (dx / containerWidth) * 100;
+                const newPct = Math.max(25, Math.min(75, startPct - deltaPct));
+                setPanelWidthPct(newPct);
+            };
+
+            const handleMouseUp = () => {
+                document.removeEventListener('mousemove', handleMouseMove);
+                document.removeEventListener('mouseup', handleMouseUp);
+            };
+
+            document.addEventListener('mousemove', handleMouseMove);
+            document.addEventListener('mouseup', handleMouseUp);
+        },
+        [panelWidthPct]
+    );
+
     return (
         <HtmlPreviewContext.Provider value={{ onPreviewHtml: handleOpenHtmlPreview }}>
+            <div className={clsx('w-full')}>Is Generating: {isGenerating ? 'true' : 'false'}</div>
             <LumoLayoutWithDrawer
                 header={{
                     showNewChatButton: true,
@@ -134,8 +170,17 @@ const ConversationComponent = ({
                 }}
             >
                 <>
-                    <div className="lumo-chat-container flex flex-row flex-nowrap flex-1 relative reset4print overflow-hidden gap-2">
-                        <div className="outer conversation-page-component flex flex-column flex-nowrap flex-1 reset4print overflow-hidden rounded-xl">
+                    <div
+                        ref={chatContainerRef}
+                        className="lumo-chat-container flex flex-row flex-nowrap flex-1 relative reset4print overflow-hidden gap-2"
+                    >
+                        {/* Chat panel */}
+                        <div
+                            className="outer conversation-page-component flex flex-column flex-nowrap reset4print overflow-hidden rounded-xl"
+                            style={
+                                isPanelOpen ? { flex: `0 0 calc(${100 - panelWidthPct}% - 4px)` } : { flex: '1 1 auto' }
+                            }
+                        >
                             <MessageChainComponent
                                 messageChainRef={messageChainRef}
                                 messageChain={messageChain}
@@ -185,6 +230,23 @@ const ConversationComponent = ({
                                     .t`${LUMO_SHORT_APP_NAME} can make mistakes. Please double-check responses.`}
                             </p>
                         </div>
+
+                        {/* Artifact split panel (desktop only) */}
+                        {isPanelOpen && (
+                            <>
+                                {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+                                <div
+                                    className="artifact-divider-handle hidden md:flex"
+                                    onMouseDown={handleDividerMouseDown}
+                                />
+                                <div
+                                    className="artifact-panel-container hidden md:flex flex-column overflow-hidden bg-norm rounded-xl"
+                                    style={{ flex: `0 0 ${panelWidthPct}%` }}
+                                >
+                                    <ArtifactPanel />
+                                </div>
+                            </>
+                        )}
                     </div>
 
                     {/* Floating Retry Panel */}
@@ -198,6 +260,14 @@ const ConversationComponent = ({
                 </>
             </LumoLayoutWithDrawer>
         </HtmlPreviewContext.Provider>
+    );
+};
+
+const ConversationComponent = (props: ConversationComponentProps) => {
+    return (
+        <ArtifactProvider conversationId={props.conversation?.id}>
+            <ConversationLayout {...props} />
+        </ArtifactProvider>
     );
 };
 

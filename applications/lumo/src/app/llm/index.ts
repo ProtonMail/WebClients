@@ -92,6 +92,40 @@ function attachmentToWireImage(attachment: Attachment): WireImage {
     };
 }
 
+const ARTIFACT_INSTRUCTION = `When your response contains content that is more useful as a standalone artifact than as part of the conversation, output it inside an artifact tag.
+
+Use this format:
+
+<artifact type="code" language="LANGUAGE" title="TITLE">
+...content...
+</artifact>
+
+<artifact type="document" title="TITLE">
+...content...
+</artifact>
+
+Use an artifact when the content:
+- Is something the user will want to copy, save, or reuse
+- Would interrupt the conversational flow if placed inline
+- Stands alone and makes sense outside the chat context
+
+Do NOT use an artifact for:
+- Short code snippets (1-2 lines) used to illustrate a point
+- Brief structured answers (a small table, a short list)
+- Content that only makes sense as part of your explanation
+
+Tag attribute rules:
+- type: "code" or "document"
+- language: required for code; lowercase common name (python, javascript, typescript, bash, sql, etc.). Omit for document artifacts.
+- title: 2-5 words, title case, describing the content
+
+Placement rules:
+- Always write your explanation or intro first, then the artifact
+- Never open a response with an artifact tag
+- Never split an artifact across multiple tags
+- Never nest artifacts
+- If a response has multiple artifacts, output them sequentially`;
+
 export function prepareTurns(
     linearChain: Message[],
     personalization: PersonalizationSettings,
@@ -166,7 +200,14 @@ export function prepareTurns(
     // via proper attachment turns created in Step 1 above (expandAttachmentsIntoTurns), which emit
     // user-role turns with the file content in the `content` field that the API does read.
 
-    // Step 4: Add personalization, memories and project instructions to the last user message
+    // Step 4a: Always inject artifact format instructions as the first system turn
+    const artifactTurn: TurnInProgress = {
+        role: Role.System,
+        content: ARTIFACT_INSTRUCTION,
+    };
+    turns = [artifactTurn, ...turns];
+
+    // Step 4b: Add personalization, memories and project instructions to the last user message
     // These are per-request instructions that should apply to the current question
     const personalizationPrompt = formatPersonalization(personalization);
     const instructionParts: string[] = [];
