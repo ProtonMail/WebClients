@@ -867,6 +867,9 @@
       "Incorrect username": [
         "اسم مستخدم غير صحيح"
       ],
+      "Invalid verification code": [
+        "رمز التحقق خاطئ"
+      ],
       "Not a valid number": [
         "رقم غير صحيح"
       ],
@@ -1574,6 +1577,9 @@
     "Success": {
       "Code sent to ${ methodTo }": [
         "تم إرسال الرمز إلى ${ methodTo }"
+      ],
+      "Verification successful": [
+        "تم التحقق بنجاح"
       ]
     },
     "Title": {
@@ -1585,6 +1591,9 @@
       ],
       "Enter your password": [
         "أدخل كلمة مرورك"
+      ],
+      "Human verification": [
+        "التحقق البشري"
       ],
       "Invalid verification code": [
         "رمز التحقق خاطئ"
