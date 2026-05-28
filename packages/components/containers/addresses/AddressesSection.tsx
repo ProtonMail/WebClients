@@ -11,7 +11,7 @@ interface Props {
 
 const AddressesSection = ({ isOnlySelf }: Props) => {
     const [organization, loadingOrganization] = useOrganization();
-    const hasAccessToBYOE = useBYOEFeatureStatus();
+    const [hasAccessToBYOE] = useBYOEFeatureStatus();
 
     return (
         <SettingsSectionWide>

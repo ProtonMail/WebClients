@@ -47,7 +47,7 @@ jest.mock('@proton/components/components/upsell/UpsellModal/UpsellModal', () => 
 jest.mock('../../hooks/useBYOEFeatureStatus', () => ({
     __esModule: true,
     default: () => {
-        return false;
+        return [true, false] as const;
     },
 }));
 
@@ -64,7 +64,6 @@ describe('ConnectGmailButton', () => {
         mockUseUser.mockReturnValue([{}, false]);
         mockUseAddresses.mockReturnValue([[], false]);
         mockUseSetupGmailBYOEAddress.mockReturnValue({
-            hasAccessToBYOE: false,
             isInMaintenance: false,
             handleSyncCallback: jest.fn(),
             allSyncs: [],
@@ -96,7 +95,6 @@ describe('ConnectGmailButton', () => {
     it('should render a disabled button if feature is in maintenance', () => {
         mockUseUser.mockReturnValue([{}, false]);
         mockUseSetupGmailBYOEAddress.mockReturnValue({
-            hasAccessToBYOE: false,
             isInMaintenance: true,
             handleSyncCallback: jest.fn(),
             allSyncs: [],
@@ -137,9 +135,7 @@ describe('ConnectGmailButton', () => {
     });
 
     it('should open conversion modal when user is free and has a sync', () => {
-        mockUseSetupGmailBYOEAddress.mockReturnValue({
-            hasAccessToBYOE: true,
-        });
+        mockUseSetupGmailBYOEAddress.mockReturnValue({});
         mockUseUser.mockReturnValue([{}, false]);
         mockUseBYOEAddressesCount.mockReturnValue({
             isLoadingAddressesCount: false,
@@ -184,9 +180,7 @@ describe('ConnectGmailButton', () => {
     });
 
     it('should open conversion modal when paid user has reached sync limit', () => {
-        mockUseSetupGmailBYOEAddress.mockReturnValue({
-            hasAccessToBYOE: true,
-        });
+        mockUseSetupGmailBYOEAddress.mockReturnValue({});
         mockUseUser.mockReturnValue([{ Subscribed: PRODUCT_BIT.MAIL, Flags: { 'has-a-byoe-address': true } }, false]);
         mockUseBYOEAddressesCount.mockReturnValue({
             isLoadingAddressesCount: false,

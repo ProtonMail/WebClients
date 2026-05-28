@@ -117,7 +117,7 @@ jest.mock('@proton/activation/src/hooks/useBYOEFeatureStatus');
 const mockUseBYOEFeatureStatus = useBYOEFeatureStatus as jest.MockedFunction<typeof useBYOEFeatureStatus>;
 
 beforeEach(() => {
-    mockUseBYOEFeatureStatus.mockReturnValue(false);
+    mockUseBYOEFeatureStatus.mockReturnValue([false, false] as const);
     mockUseAddresses.mockReturnValue([[], false]);
 });
 
@@ -242,7 +242,7 @@ describe('Provider cards process testing', () => {
     });
 
     it('Should show BYOE modal when clicking Google with BYOE feature enabled', async () => {
-        mockUseBYOEFeatureStatus.mockReturnValue(true);
+        mockUseBYOEFeatureStatus.mockReturnValue([true, false]);
         mockUseUser.mockReturnValue(defaultUseUser);
         easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />);
 
