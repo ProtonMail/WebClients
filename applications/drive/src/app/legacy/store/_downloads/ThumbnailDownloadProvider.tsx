@@ -2,10 +2,10 @@ import React, { createContext, useContext, useEffect, useMemo, useRef } from 're
 
 import type { VERIFICATION_STATUS } from '@protontech/crypto';
 
+import { logError } from '@proton/drive/legacy/errorHandling';
 import { MAX_THREADS_PER_DOWNLOAD } from '@proton/shared/lib/drive/constants';
 
 import useDriveNavigation from '../../../legacy/hooks/drive/useNavigate';
-import { logError } from '../../../utils/errorHandling';
 import { createAsyncQueue } from '../../../utils/parallelRunners';
 import { useLink } from '../_links';
 

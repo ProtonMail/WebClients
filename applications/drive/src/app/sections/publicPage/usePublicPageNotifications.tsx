@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { showAggregatedErrorNotification } from '../../utils/errorHandling/errorNotifications';
+import { showAggregatedErrorNotification } from '@proton/drive/legacy/errorHandling';
+
 import { useListNotifications } from '../../utils/useListNotifications';
 
 export const usePublicPageNotifications = () => {

@@ -3,8 +3,8 @@ import { useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 
-import { sendErrorReport } from '../../../utils/errorHandling';
 import { useFreeUploadStore } from './freeUpload.store';
 import { useFreeUploadApi } from './useFreeUploadApi';
 import { useFreeUploadFeature } from './useFreeUploadFeature';

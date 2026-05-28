@@ -3,8 +3,8 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { getDrive } from '@proton/drive';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { useDevicesStore } from './useDevices.store';
 
 export function useLoadDevices() {

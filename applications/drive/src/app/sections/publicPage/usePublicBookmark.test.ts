@@ -1,13 +1,13 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { getDrive } from '@proton/drive';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import useLoading from '@proton/hooks/useLoading';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { needPublicRedirectSpotlight, setPublicRedirectSpotlightToPending } from '../../utils/publicRedirectSpotlight';
 import { getBookmark } from '../../utils/sdk/getBookmark';
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
@@ -29,7 +29,7 @@ jest.mock('@proton/shared/lib/helpers/browser', () => ({
     openNewTab: jest.fn(),
 }));
 
-jest.mock('../../utils/errorHandling/handleSdkError', () => ({
+jest.mock('@proton/drive/legacy/errorHandling', () => ({
     handleSdkError: jest.fn(),
 }));
 

@@ -2,14 +2,14 @@ import { renderHook, waitFor } from '@testing-library/react';
 
 import type { ProtonDriveClient } from '@proton/drive/index';
 import { MemberRole, generateNodeUid } from '@proton/drive/index';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
 import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
 import { createMockNodeEntity } from '../../utils/test/nodeEntity';
 import { useMoveEligibility } from './useMoveEligibility';
 
-jest.mock('../../utils/errorHandling/handleSdkError', () => ({
+jest.mock('@proton/drive/legacy/errorHandling', () => ({
     handleSdkError: jest.fn(),
 }));
 

@@ -5,6 +5,7 @@ import isEqual from 'lodash/isEqual';
 import { useApi } from '@proton/components';
 import { type NodeEntity, generateNodeUid, getDriveForPhotos, splitNodeUid } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { queryDeletePhotosShare } from '@proton/shared/lib/api/drive/photos';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
@@ -14,7 +15,6 @@ import { useLinksActions, useLinksListing } from '../../../legacy/store/_links';
 import type { Share, ShareWithKey } from '../../../legacy/store/_shares';
 import { waitFor } from '../../../legacy/store/_utils';
 import { useSharesStore } from '../../../legacy/zustand/share/shares.store';
-import { sendErrorReport } from '../../../utils/errorHandling';
 
 export type RECOVERY_STATE =
     | 'READY'

@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { MemberRole, type ProtonDriveClient } from '@proton/drive/index';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
 import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
 

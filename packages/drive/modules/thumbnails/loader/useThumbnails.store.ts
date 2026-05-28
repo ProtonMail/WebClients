@@ -1,7 +1,7 @@
 import { ThumbnailType } from '@protontech/drive-sdk';
 import { create } from 'zustand';
 
-import { handleDriveError } from '../../../internal/handleDriveError';
+import { handleSdkError } from '../../../legacy/errorHandling';
 import { logger } from './logger';
 import type { DriveClient, ThumbnailData, ThumbnailRequest } from './types';
 
@@ -131,7 +131,7 @@ const processBatch = async (
         }
     } catch (error) {
         logger.warn(`Batch processing failed (type: ${batch.thumbnailType}): ${error}`);
-        handleDriveError(error);
+        handleSdkError(error, { showNotification: false });
         itemsToProcess.filter(shouldProcess).forEach((item) => {
             attempted.add(attemptedKey(item.revisionUid, batch.thumbnailType));
             setThumbnailData(item.revisionUid, { [statusKey]: 'loaded' });

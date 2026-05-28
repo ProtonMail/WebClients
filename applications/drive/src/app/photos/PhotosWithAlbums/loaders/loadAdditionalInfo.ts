@@ -1,7 +1,7 @@
 import { getDriveForPhotos } from '@proton/drive';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 
 import { createDebouncedBuffer } from '../../../utils/createDebouncedBuffer';
-import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { usePhotosStore } from '../../usePhotos.store';
 import { mapNodeToPhotoItem } from './mapNodeToAdditionalInfo';
 

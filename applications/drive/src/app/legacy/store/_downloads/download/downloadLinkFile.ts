@@ -1,11 +1,10 @@
 import { readToEnd, toStream } from '@openpgp/web-stream-tools';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
+import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import type { SharedFileScan } from '@proton/shared/lib/interfaces/drive/sharing';
 import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
 
-import { sendErrorReport } from '../../../../utils/errorHandling';
-import { EnrichedError } from '../../../../utils/errorHandling/EnrichedError';
 import { decryptExtendedAttributes } from '../../_links/extendedAttributes';
 import type {
     DecryptFileKeys,

@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
 import type { NodeEntity } from '@proton/drive/index';
+import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getFileExtension } from '@proton/shared/lib/helpers/mimetype';
 
-import { sendErrorReport } from '../../../utils/errorHandling';
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { getNodeStorageSize } from '../../../utils/sdk/getNodeStorageSize';
 import { isTransferCancelError } from '../../../utils/transfer';
 import { DownloadStatus, useDownloadManagerStore } from '../downloadManager.store';

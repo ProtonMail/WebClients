@@ -89,7 +89,7 @@ jest.mock('@proton/shared/lib/helpers/storage', () => ({
     setItem: jest.fn(),
 }));
 
-jest.mock('../../../utils/errorHandling');
+jest.mock('@proton/drive/legacy/errorHandling');
 
 const mockedRemoveItem = jest.mocked(removeItem);
 const mockedGetItem = jest.mocked(getItem);

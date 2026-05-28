@@ -1,11 +1,11 @@
 import { ThumbnailType } from '@proton/drive';
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { type ThumbnailResult, generateThumbnail } from '@proton/drive/modules/thumbnails';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
 import config from '../../../config';
 import { TransferCancel } from '../../../legacy/components/TransferManager/transfer';
 import { featureFlagStore } from '../../../modules/featureFlag';
-import { sendErrorReport } from '../../../utils/errorHandling';
 import type {
     FileKeys,
     FileRequestBlock,

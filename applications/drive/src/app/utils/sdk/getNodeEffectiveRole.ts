@@ -6,10 +6,8 @@ import {
     type ProtonDriveClient,
     ProtonDrivePhotosClient,
 } from '@proton/drive';
+import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
-
-import { sendErrorReport } from '../errorHandling';
-import { EnrichedError } from '../errorHandling/EnrichedError';
 
 const MemberHierarchy = {
     [MemberRole.Inherited]: 0,

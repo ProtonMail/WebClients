@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { isIgnoredError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
+
 import { ShareType } from '../..';
 import { useActiveShare } from '../../../../legacy/hooks/drive/useActiveShare';
-import { isIgnoredError, sendErrorReport } from '../../../../utils/errorHandling';
 import type { DecryptedLink } from '../../_links';
 import { useLink } from '../../_links';
 import { useShareType } from './useShareType';

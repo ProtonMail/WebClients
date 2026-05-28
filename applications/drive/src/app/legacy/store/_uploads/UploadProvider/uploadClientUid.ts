@@ -1,8 +1,7 @@
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import * as storage from '@proton/shared/lib/helpers/storage';
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
-
-import { sendErrorReport } from '../../../../utils/errorHandling';
 
 enum UploadingState {
     // File is being uploading - do not automatically replace file.

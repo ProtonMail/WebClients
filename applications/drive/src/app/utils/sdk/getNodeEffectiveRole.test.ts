@@ -1,10 +1,11 @@
 import type { NodeEntity, ProtonDriveClient } from '@proton/drive/index';
 import { MemberRole, NodeType, ProtonDrivePhotosClient } from '@proton/drive/index';
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 
-import { sendErrorReport } from '../errorHandling';
 import { getHigherRole, getNodeEffectiveRole } from './getNodeEffectiveRole';
 
-jest.mock('../errorHandling', () => ({
+jest.mock('@proton/drive/legacy/errorHandling', () => ({
+    ...jest.requireActual('@proton/drive/legacy/errorHandling'),
     sendErrorReport: jest.fn(),
 }));
 

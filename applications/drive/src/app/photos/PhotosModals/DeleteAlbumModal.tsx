@@ -12,9 +12,8 @@ import {
     useModalTwoStatic,
 } from '@proton/components';
 import { ValidationError } from '@proton/drive';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import useLoading from '@proton/hooks/useLoading';
-
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 
 export type DeleteAlbumModalProps = {
     name: string;

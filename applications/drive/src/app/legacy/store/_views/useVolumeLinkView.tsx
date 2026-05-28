@@ -1,12 +1,11 @@
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
+import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { queryResolveContextShare } from '@proton/shared/lib/api/drive/share';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
-import { sendErrorReport } from '../../../utils/errorHandling';
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { useInvitationsActions } from '../_actions';
 import { useDebouncedRequest } from '../_api';
 import { EXTERNAL_INVITATIONS_ERROR_NAMES, useInvitations } from '../_invitations';

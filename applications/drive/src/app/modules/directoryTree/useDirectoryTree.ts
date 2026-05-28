@@ -4,10 +4,9 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { MemberRole, NodeType, useDrive } from '@proton/drive';
+import { handleSdkError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
-import { sendErrorReport } from '../../utils/errorHandling';
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getDeviceName } from '../../utils/sdk/getNodeName';
 import { directoryTreeStoreFactory } from './directoryTreeStoreFactory';
 import { iterateSharedWithMeNodes } from './events/iterateSharedWithMeNodes';

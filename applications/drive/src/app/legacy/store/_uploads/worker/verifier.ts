@@ -1,8 +1,8 @@
+import { CryptoProxy } from '@protontech/crypto';
 import type { ScopeContext } from '@sentry/types';
 
-import { CryptoProxy } from '@protontech/crypto';
+import { EnrichedError } from '@proton/drive/legacy/errorHandling';
 
-import { EnrichedError } from '../../../../utils/errorHandling/EnrichedError';
 import type { VerificationData } from '../interface';
 import type { Verifier } from './interface';
 
