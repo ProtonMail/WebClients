@@ -1,7 +1,9 @@
 import type { ScopeContext } from '@sentry/types';
+import { c } from 'ttag';
+
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import { EnrichedError } from './EnrichedError';
-import { ERROR_REQUIRE_PAGE_REFRESH } from './errorStrings';
 
 /**
  * Creates a `WebpackChunkFailedToLoad` error object with a specific message and additional information.
@@ -18,7 +20,7 @@ import { ERROR_REQUIRE_PAGE_REFRESH } from './errorStrings';
  */
 
 export const getWebpackChunkFailedToLoadError = (e: Error, chunkName: string) =>
-    new WebpackChunkFailedToLoad(ERROR_REQUIRE_PAGE_REFRESH, {
+    new WebpackChunkFailedToLoad(c('Error').t`${DRIVE_APP_NAME} has updated. Please refresh the page.`, {
         tags: {
             chunkName,
         },

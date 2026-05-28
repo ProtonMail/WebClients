@@ -2,12 +2,11 @@ import { type SyntheticEvent, useCallback, useEffect, useMemo, useRef, useState 
 
 import { v4 as uuidv4 } from 'uuid';
 
+import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import metrics from '@proton/metrics/index';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 
 import { initDownloadSW } from '../../../legacy/store/_downloads/fileSaver/download';
-import { sendErrorReport } from '../../../utils/errorHandling';
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 
 type UseVideoStreamingProps = {
     mimeType?: string;

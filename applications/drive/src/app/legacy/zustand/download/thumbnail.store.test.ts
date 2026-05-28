@@ -1,7 +1,8 @@
 import { act, renderHook } from '@testing-library/react';
 import * as idbKeyval from 'idb-keyval';
 
-import { sendErrorReport } from '../../../utils/errorHandling';
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
+
 import { useThumbnailCacheStore } from './thumbnail.store';
 
 jest.mock('idb-keyval', () => ({
@@ -11,7 +12,7 @@ jest.mock('idb-keyval', () => ({
     createStore: jest.fn(() => 'mock-store'),
 }));
 
-jest.mock('../../../utils/errorHandling', () => ({
+jest.mock('@proton/drive/legacy/errorHandling', () => ({
     sendErrorReport: jest.fn(),
 }));
 

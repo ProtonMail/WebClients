@@ -1,8 +1,8 @@
 import { type NodeEntity, getDrivePerNodeType } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getFormattedNodeLocation } from '../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 import { subscribeToSharedByMeEvents } from './subscribeToSharedByMeEvents';
@@ -14,7 +14,7 @@ jest.mock('@proton/drive/internal/BusDriver', () => ({
     ...jest.requireActual('@proton/drive/internal/BusDriver'),
     getBusDriver: jest.fn(),
 }));
-jest.mock('../../utils/errorHandling/handleSdkError');
+jest.mock('@proton/drive/legacy/errorHandling');
 jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity');
 jest.mock('../../utils/sdk/getNodeLocation');
 jest.mock('../../utils/sdk/getSignatureIssues');

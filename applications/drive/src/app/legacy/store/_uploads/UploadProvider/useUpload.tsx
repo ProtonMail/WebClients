@@ -6,6 +6,7 @@ import { useGetUser } from '@proton/account/user/hooks';
 import { useEventManager, useNotifications, useOnline, usePreventLeave } from '@proton/components';
 import { getDrive, useDrive } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { handleSdkError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { APPS } from '@proton/shared/lib/constants';
 import { MAX_SAFE_UPLOADING_FILE_COUNT, MAX_SAFE_UPLOADING_FILE_SIZE } from '@proton/shared/lib/drive/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -16,8 +17,6 @@ import { TransferCancel, TransferSkipped, TransferState } from '../../../../lega
 import type { FileThresholdModalType } from '../../../../legacy/components/modals/FileThresholdModal';
 import { useFileThresholdModal } from '../../../../legacy/components/modals/FileThresholdModal';
 import { useIsFreeUploadInProgress } from '../../../../modules/freeUpload';
-import { sendErrorReport } from '../../../../utils/errorHandling';
-import { handleSdkError } from '../../../../utils/errorHandling/handleSdkError';
 import { getIsPublicContext } from '../../../../utils/getIsPublicContext';
 import {
     isPhotosDisabledUploadError,

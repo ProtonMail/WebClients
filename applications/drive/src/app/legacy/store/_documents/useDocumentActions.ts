@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { splitNodeUid } from '@proton/drive/index';
+import { EnrichedError } from '@proton/drive/legacy/errorHandling';
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype';
 import { getCurrentTab, getNewWindow } from '@proton/shared/lib/helpers/window';
 
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 /**
  * @DRIVE-STORE: Direct import from files required by drive-store. Do not import from index.
  */

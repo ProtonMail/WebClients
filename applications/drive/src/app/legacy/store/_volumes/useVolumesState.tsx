@@ -1,6 +1,6 @@
 import { createContext, useContext, useRef } from 'react';
 
-import { sendErrorReport } from '../../../utils/errorHandling';
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 
 /**
  * volumeId -> [shareId01, shareId02]

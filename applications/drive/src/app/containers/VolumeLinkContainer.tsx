@@ -7,6 +7,7 @@ import { c } from 'ttag';
 import { Loader } from '@proton/components';
 import { generateNodeUid, getDrive, getDriveForPhotos, splitInvitationUid, splitNodeUid } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
@@ -15,7 +16,6 @@ import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import useDriveNavigation from '../legacy/hooks/drive/useNavigate';
 import { useDocumentActions } from '../legacy/store/_documents';
 import { useVolumeLinkView } from '../legacy/store/_views/useVolumeLinkView';
-import { handleSdkError } from '../utils/errorHandling/handleSdkError';
 
 export const VolumeLinkContainer: FC = () => {
     const { volumeId, linkId } = useParams<{ volumeId: string; linkId: string }>();
