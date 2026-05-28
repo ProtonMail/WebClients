@@ -22,6 +22,7 @@ describe('EventReminderText', () => {
 
     afterEach(() => {
         jest.clearAllTimers();
+        jest.useRealTimers();
     });
 
     it('displays the time remaining until event', () => {

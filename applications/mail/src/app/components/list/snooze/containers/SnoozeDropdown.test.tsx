@@ -66,6 +66,10 @@ describe('Snooze dropdown', () => {
         useUserSettingsMock.mockClear();
     });
 
+    afterEach(() => {
+        jest.useRealTimers();
+    });
+
     it('should not return anything when cannot snooze or unsnooze', async () => {
         useSnoozeMock.mockReturnValue({ ...useSnoozeProps, canSnooze: false, canUnsnooze: false });
 

@@ -32,6 +32,9 @@ describe('SnoozeDurationSelection when start of week is Monday', () => {
         useUserMock.mockReset();
         useUserSettingsMock.mockReset();
     });
+    afterEach(() => {
+        jest.useRealTimers();
+    });
 
     it('should render all Monday options', () => {
         const date = nextMonday(new Date());
@@ -146,6 +149,9 @@ describe('SnoozeDurationSelection when start of week is Saturday', () => {
         useUserMock.mockReset();
         useUserSettingsMock.mockReset();
     });
+    afterEach(() => {
+        jest.useRealTimers();
+    });
 
     it('should render all Monday options', () => {
         const date = nextMonday(new Date());
@@ -240,6 +246,9 @@ describe('SnoozeDurationSelection when start of week is Sunday', () => {
     afterAll(() => {
         useUserMock.mockReset();
         useUserSettingsMock.mockReset();
+    });
+    afterEach(() => {
+        jest.useRealTimers();
     });
 
     it('should render all Monday options', () => {
