@@ -313,6 +313,9 @@
       "Continue with categories": [
         "Ga verder met categorieën"
       ],
+      "Continue with Free": [
+        "Doorgaan met gratis"
+      ],
       "Continue with Google": [
         "Ga verder met Google"
       ],
@@ -1440,6 +1443,9 @@
       ],
       "Start setup": [
         "Installatie starten"
+      ],
+      "Start testing": [
+        "Begin met Testen"
       ],
       "Stay": [
         "Blijf"
@@ -4074,6 +4080,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sorteer automatisch inkomende berichten voordat ze uw inbox bereiken."
       ],
+      "Available storage: ${ storageText }": [
+        "Beschikbare opslagruimte: ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Voorkom dat Google een profiel van u aanmaakt. Gmail kan niet zien wat u in ${ MAIL_APP_NAME } doet."
       ],
@@ -4113,6 +4122,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Versleutelen en importeren van contacten... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "Genoeg ruimte voor jarenlang e-mails, bijlagen en meer."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Zorg voor veilige toegang tot gegevens van de organisatie, zelfs als uw team op afstand is of openbare wifi gebruikt."
       ],
@@ -4134,8 +4146,14 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Help uw team om wachtwoorden veilig op te slaan voor gevoelige bedrijfs- en klantinformatie."
       ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Als u een e-mail in de verkeerde categorie vindt, verplaatst u deze eenvoudig naar de juiste categorie."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Het lijkt erop dat de contactenlijst die u importeert enkele groepen bevat. Bekijk hoe deze groepen moeten worden geïmporteerd."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Het is nog steeds aan het leren en we hebben uw hulp nodig om de categorisering te verbeteren."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Hiermee kunt u direct vergader koppelingen toevoegen aan uw afspraak uitnodigingen."
@@ -4217,8 +4235,11 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Schakel e-mail tracker beveiliging in om te voorkomen dat adverteerders en anderen uw locatie en online activiteit kunnen volgen."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Ontgrendel 15 GB opslagruimte voor slechts ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
-        "Upgrade naar ${ planName } om te koppelen met maximaal ${ MAX_SYNC_PAID_USER } accounts"
+        "Upgrade naar ${ planName } om te koppelen met maximaal ${ MAX_SYNC_PAID_USER }-accounts"
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Upgrade om ${ activatePmUser } te krijgen voor een korter, makkelijk te onthouden e-mailadres, toegevoegd aan uw huidige adres."
@@ -4238,8 +4259,14 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "We hebben geen bekende trackers en tracking URL's in deze e-mail gevonden."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "We pauzeren de import bij 80% opslagruimte om ruimte te reserveren voor nieuwe berichten."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "We halen uw oude e-mails op en koppelen uw Gmail-account aan ${ MAIL_APP_NAME }, zodat nieuwe berichten automatisch worden weergegeven"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "We zijn begonnen met het importeren van uw e-mails uit Gmail. We laten het u weten als het klaar is."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Het spijt ons u te moeten zien vertrekken. Als u even tijd heeft, zouden we het zeer op prijs stellen te horen waarom u wilt annuleren. Uw feedback helpt ons ${ BRAND_NAME } beter te maken voor iedereen."
@@ -4254,10 +4281,10 @@
         "Met aangepaste snooze kunt u e-mails verbergen en deze op een beter moment opnieuw laten verschijnen."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
-        "U hebt al een Gmail-adres dat wordt doorgestuurd naar ${ MAIL_APP_NAME }. Koppel het hieronder om e-mails rechtstreeks vanuit ${ MAIL_APP_NAME } te verzenden en te ontvangen."
+        "U heeft al een Gmail-adres dat wordt doorgestuurd naar ${ MAIL_APP_NAME }. Koppel het hieronder om e-mails rechtstreeks vanuit ${ MAIL_APP_NAME } te verzenden en te ontvangen."
       ],
       "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
-        "U hebt al Gmail-adressen die worden doorgestuurd naar ${ MAIL_APP_NAME }. Koppel er één hieronder om e-mails rechtstreeks vanuit ${ MAIL_APP_NAME } te verzenden en te ontvangen."
+        "U heeft al Gmail-adressen die worden doorgestuurd naar ${ MAIL_APP_NAME }. Koppel er één hieronder om e-mails rechtstreeks vanuit ${ MAIL_APP_NAME } te verzenden en te ontvangen."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "U kunt afspraken importeren in iCal formaat (. ics-bestand). Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en mag maximaal ${ MAX_IMPORT_EVENTS_STRING } afspraken bevatten. Als uw bestand groter is, splitst u het op in kleinere bestanden."
@@ -4277,17 +4304,26 @@
         "U stuurt e-mails door vanaf ${ forwardingCount } Gmail-adressen. Door deze adressen te koppelen, kunt u zowel e-mails ontvangen als beantwoorden in ${ MAIL_APP_NAME }."
       ],
       "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
-        "U hebt ${ MAX_SYNC_PAID_USER } Gmail-adres gekoppeld. Als u nog een adres wilt toevoegen, moet u eerst een van uw gekoppelde accounts ontkoppelen.",
-        "U hebt ${ MAX_SYNC_PAID_USER } Gmail-adressen gekoppeld. Als u nog een adres wilt toevoegen, moet u eerst een van uw gekoppelde accounts ontkoppelen."
+        "U heeft ${ MAX_SYNC_PAID_USER } Gmail-adres gekoppeld. Als u nog een adres wilt toevoegen, moet u eerst een van uw gekoppelde accounts ontkoppelen.",
+        "U heeft ${ MAX_SYNC_PAID_USER } Gmail-adressen gekoppeld. Als u nog een adres wilt toevoegen, moet u eerst een van uw gekoppelde accounts ontkoppelen."
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
-        "U hebt één extern e-mailadres gekoppeld aan ${ MAIL_APP_NAME }."
+        "U heeft één extern e-mailadres gekoppeld aan ${ MAIL_APP_NAME }."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Uw account en dataherstelmethoden zijn ingesteld en 2FA is ingeschakeld."
       ],
       "Your account and data recovery methods are set.": [
         "Uw account en dataherstelmethodes zijn ingesteld."
+      ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "Uw correcties bepalen de standaardervaring voor iedereen, en bij de lancering worden ook uw voorkeuren onthouden!"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Uw gratis ${ MAIL_APP_NAME }-account wordt geleverd met beperkte opslagruimte, dus we importeren alleen ${ newUserStorageText } van uw meest recente Gmail-berichten"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Uw gratis ${ MAIL_APP_NAME }-account wordt geleverd met beperkte opslagruimte, dus we importeren alleen uw meest recente Gmail-e-mails."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Uw abonnement ondersteunt ${ MAX_SYNC_FREE_USER } Gmail-adres.",
@@ -4296,6 +4332,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Uw abonnement ondersteunt in totaal ${ MAX_SYNC_PAID_USER } Gmail-adres.",
         "Uw abonnement ondersteunt in totaal ${ MAX_SYNC_PAID_USER } Gmail-adressen."
+      ],
+      "You’re among the first to try email categories.": [
+        "U bent een van de eersten die e-mailcategorieën probeert."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
@@ -5685,11 +5724,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ premium functies"
+      ],
+      "Custom email domain": [
+        "Aangepast e-maildomein"
+      ],
+      "Email addresses": [
+        "E-mailadressen"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Versleutelde cloudopslag voor bestanden, foto's en documenten"
       ],
       "More premium features": [
         "Meer premium functies"
+      ],
+      "Storage": [
+        "Opslagruimte"
       ],
       "Unlimited hide-my-email aliases": [
         "Onbeperkt aantal hide-my-email-aliassen"
@@ -7164,6 +7215,10 @@
       "Create a new contact group": [
         "Maak een nieuwe contactengroep"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Maak een beveiligde cloud voor ${ memberCount } lid",
+        "Maak een beveiligde cloud voor ${ memberCount } leden"
+      ],
       "Create in": [
         "Maak in"
       ],
@@ -7574,6 +7629,9 @@
       ],
       "Include your prompt and the response to help us improve accuracy.": [
         "Voeg uw prompt en het antwoord toe om ons te helpen de nauwkeurigheid te verbeteren."
+      ],
+      "Included": [
+        "inbegrepen"
       ],
       "Included for free with your plan": [
         "Gratis inbegrepen bij uw abonnement"
@@ -8271,6 +8329,9 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synchroniseer en beheer bestanden met de ${ DRIVE_APP_NAME } app. Maak en deel documenten in ${ DOCS_APP_NAME } en sla ze veilig op. Alles op ${ ios }, ${ android } en ${ desktop }."
       ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Tijdelijk niet leverbaar wegens grote vraag. Probeer het later opnieuw."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Tijdelijk onbeschikbaar. Probeer later opnieuw."
       ],
@@ -8550,6 +8611,9 @@
       "Trash existing messages": [
         "Verwijder bestaande berichten"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Vertrouw op de sleutel \"${ activeSignerText }\" om nieuwe berichten van dit contact te verifiëren."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Probeer de nieuwe ${ BRAND_NAME } mogelijkheden, updates en producten voordat ze publiekelijk gelanceerd worden. Dit herlaadt de applicatie"
       ],
@@ -8583,8 +8647,14 @@
       "Updating message content search...": [
         "Zoeken naar berichtinhoud bijwerken..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Upgrade op elk gewenst moment om de rest over te brengen"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Upgrade of maak op elk gewenst moment ruimte vrij om de rest over te brengen"
       ],
       "Upgrade to ${ plan } to unlock": [
         "Upgrade naar ${ plan } om te ontgrendelen"
@@ -9087,11 +9157,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Actieve ondertekenaar"
+      ],
       "Compromised": [
         "Gecompromitteerd"
       ],
       "Expired": [
         "Verlopen"
+      ],
+      "Fallback": [
+        "Terugval"
       ],
       "KOO": [
         "KOO"
@@ -9345,6 +9421,9 @@
         "${ n } maand",
         "${ n } maanden"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tekens"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
       ],
@@ -9476,6 +9555,9 @@
       ],
       "Category": [
         "Categorie"
+      ],
+      "Category:": [
+        "Categorie:"
       ],
       "CC": [
         "CC"
@@ -11029,6 +11111,9 @@
       "99.95% SLA": [
         "99,95% SLA"
       ],
+      "Access all countries": [
+        "Toegang tot alle landen"
+      ],
       "Ad-blocker and malware protection": [
         "Advertentieblokkering en bescherming tegen malware"
       ],
@@ -11187,6 +11272,9 @@
       "Multiple admin roles": [
         "Meerdere beheerdersfuncties"
       ],
+      "No streaming support": [
+        "Geen streaming-ondersteuning"
+      ],
       "Online document editor": [
         "Online document editor"
       ],
@@ -11336,6 +11424,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ongelimiteerd(e) volume/bandbreedte"
+      ],
+      "Unlock streaming": [
+        "Deblokkeer streaming"
       ],
       "Up to ${ n } user": [
         "Tot ${ n } gebruiker",
@@ -11744,6 +11835,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } land",
+        "${ n } landen"
+      ],
       "Access advanced VPN features": [
         "Gebruik geavanceerde VPN-functies"
       ],
@@ -11845,7 +11940,7 @@
         "Proefperiode gestart"
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
-        "Uw ${ BRAND_NAME } adres is klaar voor gebruik"
+        "Uw ${ BRAND_NAME }-adres is klaar voor gebruik"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12654,8 +12749,17 @@
       "External key automatically fetched via WKD.": [
         "Externe sleutel wordt automatisch opgehaald via WKD."
       ],
+      "This contact currently signs messages with this key": [
+        "Dit contact ondertekent momenteel berichten met deze sleutel"
+      ],
+      "This key is used for message verification": [
+        "Deze sleutel wordt gebruikt voor berichtverificatie"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Deze sleutel wordt gebruikt om berichten naar deze contactpersoon te versleutelen"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Deze sleutel wordt gebruikt om berichten naar dit contact in oudere apps te coderen"
       ],
       "We recommend that you \"untrust\" this key.": [
         "We adviseren u deze sleutel niet meer te vertrouwen."
@@ -15209,6 +15313,9 @@
       "Contacts": [
         "Contacten"
       ],
+      "Continue with free storage": [
+        "Ga door met gratis opslag"
+      ],
       "Continue with partial import?": [
         "Doorgaan met gedeeltelijke invoer?"
       ],
@@ -15331,6 +15438,9 @@
       "Download the app": [
         "Download de app"
       ],
+      "Early access to email categories": [
+        "Vroegtijdige toegang tot e-mailcategorieën"
+      ],
       "Edit billing address": [
         "Factuuradres bewerken"
       ],
@@ -15414,6 +15524,9 @@
       ],
       "Get more from your VPN": [
         "Haal meer uit uw VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Krijg meer opslagruimte met ${ MAIL_APP_NAME } Plus"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Download de ${ appName[APP_NAME] }-apps"
