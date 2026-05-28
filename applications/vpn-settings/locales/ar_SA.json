@@ -500,6 +500,9 @@
       "Get in touch": [
         "تواصل معنا"
       ],
+      "Get limited-time offer": [
+        "الحصول على عرض لفترة محدودة"
+      ],
       "Get more": [
         "الحصول على المزيد"
       ],
@@ -538,9 +541,6 @@
       ],
       "Go to panel ${ index }": [
         "انتقل إلى لوحة ${ index }"
-      ],
-      "Google": [
-        "جوجل"
       ],
       "Got it": [
         "حصلت عليها"
@@ -673,6 +673,9 @@
       ],
       "No": [
         "لا"
+      ],
+      "No, thanks": [
+        "لاـ شكراً"
       ],
       "OK": [
         "موافق"
@@ -6482,9 +6485,6 @@
       "Choose an Entity ID to continue.": [
         "اختر معرّف المؤسسة للمتابعة."
       ],
-      "Choose your service to connect with": [
-        "اختر الخدمة التي تريد الاتصال بها"
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "انقر فوق \"طلب رمز جديد\" للحصول على رمز تحقق جديد أرسل إلى ${ strong }. إذا كان رقم الهاتف هذا غير صحيح، انقر فوق \"تعديل\" لتصحيحه."
       ],
@@ -10161,6 +10161,14 @@
       ],
       "Set up your account with your Porkbun domain.": [
         "أعِدّ حسابك باستخدام نطاق Porkbun الخاص بك."
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for your first month": [
+        "لشهرك الأول"
+      ],
+      "Get ${ planTitle } for ${ discountedPriceElement }": [
+        "احصل على ${ planTitle } مقابل ${ discountedPriceElement }"
       ]
     },
     "meet_2025: Addon": {

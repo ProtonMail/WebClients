@@ -494,6 +494,9 @@
       "Get in touch": [
         "დაგვიკავშირდით"
       ],
+      "Get limited-time offer": [
+        "მიიღეთდროში შეზღუდული შეთავაზება"
+      ],
       "Get more": [
         "მეტის მიღება"
       ],
@@ -532,9 +535,6 @@
       ],
       "Go to panel ${ index }": [
         "${ index }-ე პანელზე გადასვლა"
-      ],
-      "Google": [
-        "Google"
       ],
       "Got it": [
         "გავიგე"
@@ -667,6 +667,9 @@
       ],
       "No": [
         "არა"
+      ],
+      "No, thanks": [
+        "არა, მადლობა"
       ],
       "OK": [
         "დიახ"
@@ -5645,11 +5648,6 @@
         "კალენდრის ICS ფაილად გასატანად აირჩიეთ ${ boldExport }."
       ]
     },
-    "Import provider": {
-      "More import options": [
-        "მეტი შემოტანის პარამეტრები"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "შემოტანილი იქნება ${ totalContactsDiscarded } ${ totalContacts }-დან. დეტალებისთვის დააწკაპუნეთ"
@@ -9565,6 +9563,14 @@
       ],
       "Set up your account with your Porkbun domain.": [
         "მოირგეთ თქვენი ანგარიში Porkbun-ის დომენთან ერთად."
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for your first month": [
+        "თქვენი პირველი თვისთვის"
+      ],
+      "Get ${ planTitle } for ${ discountedPriceElement }": [
+        "დააყენეთ ${ planTitle } ${ discountedPriceElement }-სთვის"
       ]
     },
     "meet_2025: Feature": {
