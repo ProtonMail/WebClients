@@ -37,6 +37,7 @@ export function createItemValue({
     ancestorsNodeUids,
     isSharedWithMe,
     shareId: apiData.ContextShareID,
+    directRole: sdkData.directRole,
   }
 }
 
@@ -89,6 +90,7 @@ export function nodeToTrashedItemValue(node: NodeEntity | DegradedNode): RecentD
     isSharedWithMe: false,
     shareId: '',
     location: { type: 'root' },
+    directRole: node.directRole,
   }
 }
 
@@ -118,5 +120,6 @@ export function nodeToRecentItemValue(
     location: getLocation(path, isSharedWithMe),
     ancestorsNodeUids,
     shareId,
+    directRole: node.directRole,
   }
 }
