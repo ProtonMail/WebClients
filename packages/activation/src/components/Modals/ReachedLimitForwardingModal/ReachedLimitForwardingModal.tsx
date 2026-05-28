@@ -28,7 +28,7 @@ const getModalText = (hasAccessToBYOE: boolean) => {
 interface Props extends ModalStateProps {}
 
 const ReachedLimitForwardingModal = ({ ...rest }: Props) => {
-    const hasAccessToBYOE = useBYOEFeatureStatus();
+    const [hasAccessToBYOE] = useBYOEFeatureStatus();
 
     return (
         <Prompt

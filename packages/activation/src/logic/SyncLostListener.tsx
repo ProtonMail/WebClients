@@ -17,7 +17,7 @@ const SyncLostListener = () => {
     const { APP_NAME } = useConfig();
     const isBYOESyncModalOpenRef = useRef(false);
     const [byoeSyncLostModal, handleShowBYOESyncLostModal] = useModalTwo(BYOESyncLostModal);
-    const hasAccessToBYOE = useBYOEFeatureStatus();
+    const [hasAccessToBYOE] = useBYOEFeatureStatus();
 
     const openSyncLostModal = (disconnectedEmails: string[]) => {
         if (APP_NAME !== APPS.PROTONMAIL || isBYOESyncModalOpenRef.current || !hasAccessToBYOE) {
