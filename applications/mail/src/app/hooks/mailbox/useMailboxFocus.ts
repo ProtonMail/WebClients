@@ -5,14 +5,18 @@ import isEqual from 'lodash/isEqual';
 
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 
+import {
+    selectElementIDs,
+    selectFilter,
+    selectLabelID,
+    selectPage,
+    selectSort,
+} from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
+
 export interface MailboxFocusProps {
-    elementIDs: string[];
-    page: number;
-    filter: Filter;
-    sort: Sort;
     showList: boolean; // Column is visible
     listRef: MutableRefObject<HTMLElement | null>;
-    labelID: string;
     isComposerOpened: boolean;
     loading: boolean;
 }
@@ -37,17 +41,13 @@ const areArraysEqual = (arr1: any[], arr2: any[]): boolean => {
     return true;
 };
 
-export const useMailboxFocus = ({
-    elementIDs,
-    page,
-    filter,
-    sort,
-    showList,
-    listRef,
-    labelID,
-    isComposerOpened,
-    loading,
-}: MailboxFocusProps) => {
+export const useMailboxFocus = ({ showList, listRef, isComposerOpened, loading }: MailboxFocusProps) => {
+    const elementIDs = useMailSelector(selectElementIDs);
+    const page = useMailSelector(selectPage);
+    const filter = useMailSelector(selectFilter);
+    const sort = useMailSelector(selectSort);
+    const labelID = useMailSelector(selectLabelID);
+
     const previousState = useRef<MailboxFocusContext>({ elementIDs, page, filter, sort, labelID });
     const [focusID, setFocusID] = useState<string | undefined>();
 
