@@ -1,4 +1,4 @@
-import { memo, useCallback, useMemo, useRef, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
@@ -23,6 +23,14 @@ import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
 import AssistantFeedbackModal from '../../../../Modals/AssistantFeedbackModal';
 import LinkWarningModal from '../../../../Modals/LinkWarningModal';
 import SiblingSelector from '../../../../SiblingSelector';
+import { ArtifactChip, ArtifactChipLoading } from '../../../artifact/ArtifactChip';
+import { useArtifactContext } from '../../../artifact/ArtifactContext';
+import {
+    parseArtifacts,
+    parseStreamingContent,
+    stripArtifactContent,
+    stripArtifactTags,
+} from '../../../artifact/parseArtifacts';
 import LumoCopyButton from '../actionToolbar/LumoCopyButton';
 import { SourcesButton } from '../toolCall/SourcesBlock';
 import { extractSearchResults, parseToolCallBlock } from '../toolCall/toolCallUtils';
@@ -228,6 +236,68 @@ const AssistantMessage = ({
     );
     const hasContent = blocks.length > 0;
 
+    // Parse artifact state from message content.
+    // During streaming: use streaming-aware parser to detect in-progress artifacts.
+    // After completion: use full parser for clean final state.
+    const { completeArtifacts, streamingArtifact } = useMemo(() => {
+        if (!message.content) {
+            return { completeArtifacts: [], streamingArtifact: null };
+        }
+        if (isFinishedGenerating) {
+            const { artifacts } = parseArtifacts(message.content);
+            return { completeArtifacts: artifacts, streamingArtifact: null };
+        }
+        // isLastMessage guard: only parse streaming state for the actively-generating message.
+        // Older messages that happen to contain artifact tags can just render as-is.
+        if (isGenerating && isLastMessage) {
+            const { completeArtifacts: complete, streamingArtifact: streaming } = parseStreamingContent(
+                message.content
+            );
+            return { completeArtifacts: complete, streamingArtifact: streaming };
+        }
+        return { completeArtifacts: [], streamingArtifact: null };
+    }, [isFinishedGenerating, isGenerating, isLastMessage, message.content]);
+
+    const hasArtifacts = completeArtifacts.length > 0 || streamingArtifact !== null;
+
+    // Strip artifact markup from text blocks.
+    // While streaming: remove from <artifact to end-of-string (content still arriving).
+    // After completion: remove closed <artifact>...</artifact> blocks.
+    const cleanedBlocks = useMemo(() => {
+        if (!hasArtifacts) {
+            return blocks;
+        }
+        return blocks.map((block) => {
+            if (block.type === 'text') {
+                const content = isFinishedGenerating
+                    ? stripArtifactTags(block.content)
+                    : stripArtifactContent(block.content);
+                return { ...block, content };
+            }
+            return block;
+        });
+    }, [blocks, hasArtifacts, isFinishedGenerating]);
+
+    const { setSelectedArtifact, setStreamingArtifact } = useArtifactContext();
+
+    // Push the in-progress artifact into context so the panel can show a live preview.
+    // Only the actively-generating last message drives this; clear it for all other messages.
+    useEffect(() => {
+        if (isLastMessage && isGenerating && !isFinishedGenerating) {
+            setStreamingArtifact(streamingArtifact);
+        } else if (isLastMessage && !isGenerating) {
+            setStreamingArtifact(null);
+        }
+    }, [isLastMessage, isGenerating, isFinishedGenerating, streamingArtifact, setStreamingArtifact]);
+
+    // When generation completes, promote the first artifact to selectedArtifact (full rendering)
+    useEffect(() => {
+        if (isLastMessage && isFinishedGenerating && completeArtifacts.length > 0 && completeArtifacts[0]) {
+            setStreamingArtifact(null);
+            setSelectedArtifact(completeArtifacts[0]);
+        }
+    }, [isLastMessage, isFinishedGenerating, completeArtifacts, setSelectedArtifact, setStreamingArtifact]);
+
     // Extract search results for legacy sources button
     const searchResults = useMemo(() => extractSearchResults(blocks), [blocks]);
 
@@ -270,6 +340,8 @@ const AssistantMessage = ({
     const shouldShowNextPromptSuggestions =
         showNextPromptSuggestionEnabled && isLastMessage && isFinishedGenerating && !generationFailed;
 
+    console.log('💥 ASSISTANT MESSAGE: ', { message, content: message?.content });
+
     return (
         <>
             <div className="gap-2 relative w-full">
@@ -296,16 +368,28 @@ const AssistantMessage = ({
                                 <div className="w-full" style={{ minHeight: '2em' }}>
                                     {/* Always show RenderBlocks if there's reasoning, content, or tool calls */}
                                     {hasContent || doNotShowEmptyMessage || message.reasoning || hasToolCall ? (
-                                        <RenderBlocks
-                                            blocks={blocks}
-                                            message={message}
-                                            isGenerating={isGenerating}
-                                            isLastMessage={isLastMessage}
-                                            handleLinkClick={handleLinkClick}
-                                            sourcesContainerRef={sourcesContainerRef}
-                                            messageContentContainerRef={markdownContainerRef}
-                                            reasoning={message.reasoning}
-                                        />
+                                        <>
+                                            <RenderBlocks
+                                                blocks={cleanedBlocks}
+                                                message={message}
+                                                isGenerating={isGenerating}
+                                                isLastMessage={isLastMessage}
+                                                handleLinkClick={handleLinkClick}
+                                                sourcesContainerRef={sourcesContainerRef}
+                                                messageContentContainerRef={markdownContainerRef}
+                                                reasoning={message.reasoning}
+                                            />
+                                            {hasArtifacts && (
+                                                <div className="flex flex-column gap-1 mt-1">
+                                                    {completeArtifacts.map((artifact, idx) => (
+                                                        <ArtifactChip key={idx} artifact={artifact} />
+                                                    ))}
+                                                    {streamingArtifact && (
+                                                        <ArtifactChipLoading streaming={streamingArtifact} />
+                                                    )}
+                                                </div>
+                                            )}
+                                        </>
                                     ) : (
                                         <EmptyMessage />
                                     )}
