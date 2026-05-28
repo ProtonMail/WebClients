@@ -13,11 +13,20 @@ import { useRetentionRuleScopeSuggestion } from './useRetentionRuleScopeSuggesti
 interface RetentionPolicyTableRowProps {
     rule: RetentionRule;
     loading: boolean;
+    canUpdate: boolean;
+    canDelete: boolean;
     onEdit: (policy: RetentionRule) => void;
     onDelete: (policy: RetentionRule) => void;
 }
 
-const RetentionPolicyTableRow = ({ rule, loading, onEdit, onDelete }: RetentionPolicyTableRowProps) => {
+const RetentionPolicyTableRow = ({
+    rule,
+    loading,
+    canUpdate,
+    canDelete,
+    onEdit,
+    onDelete,
+}: RetentionPolicyTableRowProps) => {
     const { getFullScopeLabel } = useRetentionRuleScopeSuggestion();
 
     const renderVisibleScopeList = (scopes: RetentionRuleScope[]) => {
@@ -83,7 +92,7 @@ const RetentionPolicyTableRow = ({ rule, loading, onEdit, onDelete }: RetentionP
                             key: 'edit',
                             text: c('retention_policy_2025_Action').t`Edit`,
                             'aria-label': `${c('retention_policy_2025_Action').t`Edit`} ${rule.Name}`,
-                            disabled: loading,
+                            disabled: loading || !canUpdate,
                             onClick: () => onEdit(rule),
                         },
                         {
@@ -92,7 +101,7 @@ const RetentionPolicyTableRow = ({ rule, loading, onEdit, onDelete }: RetentionP
                             'aria-label': `${c('retention_policy_2025_Action').t`Delete`} ${rule.Name}`,
                             actionType: 'delete',
                             onClick: () => onDelete(rule),
-                            disabled: loading,
+                            disabled: loading || !canDelete,
                         },
                     ]}
                 />,
