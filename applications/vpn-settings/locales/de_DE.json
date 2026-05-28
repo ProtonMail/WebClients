@@ -533,6 +533,9 @@
       "Get in touch": [
         "Kontakt aufnehmen"
       ],
+      "Get limited-time offer": [
+        "Zeitlich begrenztes Angebot nutzen"
+      ],
       "Get more": [
         "Mehr erhalten"
       ],
@@ -571,9 +574,6 @@
       ],
       "Go to panel ${ index }": [
         "Seitenleiste ${ index } öffnen"
-      ],
-      "Google": [
-        "Google"
       ],
       "Got it": [
         "Verstanden"
@@ -724,6 +724,9 @@
       ],
       "No": [
         "Nein"
+      ],
+      "No, thanks": [
+        "Nein, danke"
       ],
       "OK": [
         "OK"
@@ -6280,11 +6283,6 @@
         "Wähle ${ boldExport }, um den Kalender als ICS-Datei zu exportieren."
       ]
     },
-    "Import provider": {
-      "More import options": [
-        "Weitere Importoptionen"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } von ${ totalContacts } Kontakten werden nicht importiert. Für Details klicken"
@@ -6880,9 +6878,6 @@
       ],
       "Choose an Entity ID to continue.": [
         "Wähle eine Entitäts-ID, um fortzufahren."
-      ],
-      "Choose your service to connect with": [
-        "Deinen Dienst zum Verbinden auswählen"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicke auf „Neuen Code anfordern“, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten“, um sie zu korrigieren."
@@ -10771,6 +10766,14 @@
       ],
       "Set up your account with your Porkbun domain.": [
         "Richte dein Konto mit deiner Porkbun-Domain ein."
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for your first month": [
+        "im ersten Monat"
+      ],
+      "Get ${ planTitle } for ${ discountedPriceElement }": [
+        "Hol dir ${ planTitle } für ${ discountedPriceElement }"
       ]
     },
     "meet_2025: Addon": {

@@ -536,6 +536,9 @@
       "Get in touch": [
         "Kontakt os"
       ],
+      "Get limited-time offer": [
+        "Få et tidsbegrænset tilbud"
+      ],
       "Get more": [
         "Få mere"
       ],
@@ -577,9 +580,6 @@
       ],
       "Go to panel ${ index }": [
         "Gå til panel ${ index }"
-      ],
-      "Google": [
-        "Google"
       ],
       "Got it": [
         "Forstået"
@@ -730,6 +730,9 @@
       ],
       "No": [
         "Nej"
+      ],
+      "No, thanks": [
+        "Nej tak"
       ],
       "OK": [
         "Ok"
@@ -6517,11 +6520,6 @@
         "Vælg ${ boldExport } for at eksportere kalenderen som en ICS-fil."
       ]
     },
-    "Import provider": {
-      "More import options": [
-        "Flere importindstillinger"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } ud af ${ totalContacts } kontakter vil ikke blive importeret. Klik for detaljer"
@@ -7117,9 +7115,6 @@
       ],
       "Choose an Entity ID to continue.": [
         "Vælg et entitets-ID for at fortsætte."
-      ],
-      "Choose your service to connect with": [
-        "Vælg tjenesten du vil forbinde til"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
@@ -11043,6 +11038,14 @@
       ],
       "Set up your account with your Porkbun domain.": [
         "Konfigurer din konto med dit Porkbun-domæne."
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for your first month": [
+        "i din første måned"
+      ],
+      "Get ${ planTitle } for ${ discountedPriceElement }": [
+        "Få ${ planTitle } til ${ discountedPriceElement }"
       ]
     },
     "meet_2025: Addon": {

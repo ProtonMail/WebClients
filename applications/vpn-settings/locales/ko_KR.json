@@ -503,6 +503,9 @@
       "Get in touch": [
         "연락하기"
       ],
+      "Get limited-time offer": [
+        "기간 한정 할인 받기"
+      ],
       "Get more": [
         "더 많이 얻기"
       ],
@@ -541,9 +544,6 @@
       ],
       "Go to panel ${ index }": [
         "패널로 가기 ${ index }"
-      ],
-      "Google": [
-        "Google"
       ],
       "Got it": [
         "확인"
@@ -676,6 +676,9 @@
       ],
       "No": [
         "아니오"
+      ],
+      "No, thanks": [
+        "아니요, 괜찮아요"
       ],
       "OK": [
         "확인"
@@ -5860,11 +5863,6 @@
         "캘린더를 ICS 파일로 내보내기 위해 ${ boldExport }를 선택하세요."
       ]
     },
-    "Import provider": {
-      "More import options": [
-        "추가 불러오기 옵션"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 연락처 중 ${ totalContactsDiscarded } 개가 불러오지 않습니다. 자세한 정보를 보려면 클릭하세요"
@@ -6368,9 +6366,6 @@
       ],
       "Choose an Entity ID to continue.": [
         "계속하려면 Entity ID를 선택하세요."
-      ],
-      "Choose your service to connect with": [
-        "연결하고자 하는 서비스 선택"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
@@ -9910,6 +9905,14 @@
       ],
       "Set up your account with your Porkbun domain.": [
         "Porkbun 도메인으로 계정을 설정하세요."
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for your first month": [
+        "첫 달 동안"
+      ],
+      "Get ${ planTitle } for ${ discountedPriceElement }": [
+        "${ planTitle }를 ${ discountedPriceElement }으로 만나다"
       ]
     },
     "meet_2025: Addon": {

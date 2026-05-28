@@ -470,9 +470,6 @@
       "Go to the next available appointment": [
         "Vá para o próximo horário disponível"
       ],
-      "Google": [
-        "Google"
-      ],
       "Got it": [
         "Entendi"
       ],
@@ -5046,11 +5043,6 @@
         "Selecione ${ boldExport } para exportar o calendário como um arquivo ICS."
       ]
     },
-    "Import provider": {
-      "More import options": [
-        "Mais opções de importação"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contatos não serão importados. Clique para detalhes"
@@ -5411,9 +5403,6 @@
       ],
       "Choose a plan that works best for you.": [
         "Escolha um plano que funcione melhor para você."
-      ],
-      "Choose your service to connect with": [
-        "Escolha seu serviço para conectar"
       ],
       "Clear data": [
         "Limpar dados"
@@ -6791,6 +6780,9 @@
       "${ n } month": [
         "${ n } mês",
         "${ n } meses"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caracteres"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Retorne mais tarde.)"
@@ -8275,6 +8267,9 @@
       ],
       "Multiple admin roles": [
         "Múltiplas funções de administração"
+      ],
+      "No streaming support": [
+        "Sem suporte para streaming"
       ],
       "Online document editor": [
         "Editor de documentos on-line"
