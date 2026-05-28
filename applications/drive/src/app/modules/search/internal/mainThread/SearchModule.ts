@@ -241,6 +241,12 @@ export class SearchModule {
     // TODO: Return a discriminated type instead of true/false to propagate the reason of uncomatibitly
     // TODO: Add some UI to explain better why search is not enabled.
     static isEnvironmentCompatible(): boolean {
+        if (isMobile()) {
+            Logger.info('Bad env: Mobile detected');
+            recordEnvironmentIncompatibilityOnce('mobile');
+            return false;
+        }
+
         // Old Safari (<17) has several issues.
         // One: it is throttling a lot. First tens of items are done fast but
         // after ~ 500 items it goes very slowly and after ~ 2500 items it
@@ -272,12 +278,6 @@ export class SearchModule {
         }
 
         // TODO: Check for indexedDB real availability by creating/deleting a real dummy DB.
-
-        if (isMobile()) {
-            Logger.info('Bad env: Mobile detected');
-            recordEnvironmentIncompatibilityOnce('mobile');
-            return false;
-        }
 
         return true;
     }
