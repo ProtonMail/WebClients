@@ -506,6 +506,9 @@
       "Get in touch": [
         "Ota yhteyttä"
       ],
+      "Get limited-time offer": [
+        "Hyödynnä rajoitetun ajan tarjous"
+      ],
       "Get more": [
         "Hanki lisää"
       ],
@@ -544,9 +547,6 @@
       ],
       "Go to panel ${ index }": [
         "Siirry paneeliin ${ index }"
-      ],
-      "Google": [
-        "Google"
       ],
       "Got it": [
         "Selvä"
@@ -685,6 +685,9 @@
       ],
       "No": [
         "En"
+      ],
+      "No, thanks": [
+        "Ei kiitos"
       ],
       "OK": [
         "OK"
@@ -5726,11 +5729,6 @@
         "Valitse ${ boldExport } viedäksesi kalenterin ICS-tiedostona."
       ]
     },
-    "Import provider": {
-      "More import options": [
-        "Lisää tuontiasetuksia"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } yhteystietoa ei tuoda. Näytä tiedot painamalla tästä."
@@ -6238,9 +6236,6 @@
       ],
       "Choose an Entity ID to continue.": [
         "Valitse entiteetti-ID jatkaaksesi."
-      ],
-      "Choose your service to connect with": [
-        "Valitse palvelu, johon haluat yhdistää"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Paina \"Pyydä uusi koodi\" saadaksesi uuden vahvistuskoodin numeroon ${ strong }. Jos numero on väärin, korjaa se painamalla \"Muokkaa\"."
@@ -9697,6 +9692,14 @@
       ],
       "Set up your account with your Porkbun domain.": [
         "Määritä tilisi Porkbun-verkkotunnuksellasi."
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for your first month": [
+        "ensimmäisen kuukautesi ajan"
+      ],
+      "Get ${ planTitle } for ${ discountedPriceElement }": [
+        "Hanki ${ planTitle } hintaan ${ discountedPriceElement }"
       ]
     },
     "meet_2025: Addon": {
