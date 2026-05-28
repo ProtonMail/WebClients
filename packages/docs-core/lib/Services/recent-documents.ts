@@ -6,6 +6,7 @@ import type { RecentDocumentAPIItem } from './../Api/Types/GetRecentsResponse'
 import type { CacheService } from './CacheService'
 import { nodeMetaUniqueId } from '@proton/drive-store/lib/NodeMeta'
 import { isProtonDocsDocument, type ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
+import type { MemberRole } from '@proton/drive'
 
 // Please remember to bump this number if you make changes to the format of
 // serialized data stored in cache (either directly or indirectly) in a way
@@ -309,6 +310,8 @@ export type RecentDocumentsItemValue = {
   ancestorsNodeUids?: string[]
   isSharedWithMe: boolean
   shareId: string
+  // Available (and used) only when RecentDocumentsItem is used with SDK
+  directRole?: MemberRole
 }
 
 export class RecentDocumentsItem implements RecentDocumentsItemValue {
@@ -381,6 +384,9 @@ export class RecentDocumentsItem implements RecentDocumentsItemValue {
   }
   get shareId() {
     return this.#value.shareId
+  }
+  get directRole() {
+    return this.#value.directRole
   }
 }
 
