@@ -21,7 +21,7 @@ import { ComposeTypes } from 'proton-mail/hooks/composer/useCompose';
 import { type ElementsStructure, useGetElementsFromIDs } from 'proton-mail/hooks/mailbox/useElements';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { useMailECRTMetric } from 'proton-mail/metrics/useMailECRTMetric';
-import { selectParams } from 'proton-mail/store/elements/elementsSelectors';
+import { selectPage, selectParams } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { convertCustomViewLabelsToAlmostAllMail } from '../../helpers/labels';
@@ -45,7 +45,7 @@ export const useElementActions = ({ navigation, elementsData }: Params) => {
 
     const { isColumnModeActive, isConversationGroupingEnabled } = useMailboxLayoutProvider();
 
-    const page = useMailSelector((state) => state.elements.page);
+    const page = useMailSelector(selectPage);
 
     const { selectAll, setSelectAll } = useSelectAll({ labelID });
     const { handleDelete: permanentDelete, deleteSelectionModal, deleteAllModal } = usePermanentDelete(labelID);
