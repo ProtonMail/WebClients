@@ -26,6 +26,12 @@ jest.mock('@proton/redux-shared-store/sharedProvider', () => ({
     useDispatch: () => jest.fn(),
 }));
 
+jest.mock('@proton/mail/features/categoriesView/useCategoriesTelemetry', () => ({
+    useCategoriesTelemetry: () => ({
+        sendReportChangeCategorySettings: jest.fn(),
+    }),
+}));
+
 describe('CategoryViewSection', () => {
     describe('setting is visible', () => {
         it('should have visible switch and checked if the setting is on', () => {
