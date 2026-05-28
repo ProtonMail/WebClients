@@ -99,19 +99,6 @@ export const useMailboxFocus = ({
         }
     }, [elementIDs, focusID]);
 
-    const focusElement = useCallback(() => {
-        if (!focusID) {
-            return;
-        }
-
-        const element = listRef.current?.querySelector(`[data-element-id="${focusID}"]`) as HTMLElement | null;
-
-        if (element && document.activeElement !== element) {
-            element.focus();
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-F2A06B
-    }, [focusID]);
-
     const saveNewState = useCallback(({ elementIDs, page, filter, sort, labelID }: MailboxFocusContext) => {
         previousState.current = { elementIDs, page, filter, sort, labelID };
     }, []);
@@ -173,9 +160,20 @@ export const useMailboxFocus = ({
         if (typeof focusID === 'undefined') {
             return;
         }
+
+        const focusElement = () => {
+            if (!focusID) {
+                return;
+            }
+
+            const element = listRef.current?.querySelector(`[data-element-id="${focusID}"]`) as HTMLElement | null;
+            if (element && document.activeElement !== element) {
+                element.focus();
+            }
+        };
+
         focusElement();
-        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-1EB736
-    }, [focusID]);
+    }, [focusID, listRef]);
 
     return {
         focusID,
