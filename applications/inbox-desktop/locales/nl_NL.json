@@ -38,11 +38,23 @@
       "Delete": [
         "Verwijderen"
       ],
+      "Disable": [
+        "Uitschakelen"
+      ],
+      "Disable Hardware Acceleration": [
+        "Schakel hardware Acceleratie uit"
+      ],
+      "Enable": [
+        "Activeer"
+      ],
       "Enable diagnostic logs": [
         "Diagnostische logs inschakelen"
       ],
       "Enable diagnostic logs from the Chromium engine.": [
         "Schakel diagnostische logboeken van de Chromium-engine in."
+      ],
+      "Enable Hardware Acceleration": [
+        "Schakel hardware Acceleratie in"
       ],
       "Force Reload": [
         "Opnieuw laden forceren"
@@ -122,6 +134,12 @@
       "Uninstall ${ MAIL_APP_NAME }": [
         "Deinstalleer ${ MAIL_APP_NAME }"
       ],
+      "When hardware acceleration is disabled, the app falls back to software rendering. This can cause choppy animations, dropped frames, slower video playback, higher CPU usage, and reduced graphics performance.": [
+        "Wanneer hardwareversnelling is uitgeschakeld, valt de app terug op softwareweergave. Dit kan schokkerige animaties, wegvallende frames, langzamere videoweergave, hoger CPU-gebruik en verminderde grafische prestaties veroorzaken."
+      ],
+      "When hardware acceleration is enabled, the app uses your device’s dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "Wanneer hardwareversnelling is ingeschakeld, gebruikt de app de gereserveerde grafische hardware van uw apparaat voor weergave. Dit kan op sommige systemen compatibiliteitsproblemen veroorzaken."
+      ],
       "Zoom": [
         "Inzoomen"
       ],
@@ -133,6 +151,12 @@
       ]
     },
     "App Menu": {
+      "Disable Hardware Acceleration": [
+        "Schakel hardware Acceleratie uit"
+      ],
+      "Enable Hardware Acceleration": [
+        "Schakel hardware Acceleratie in"
+      ],
       "Services": [
         "Diensten"
       ]

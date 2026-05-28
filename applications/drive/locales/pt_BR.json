@@ -551,9 +551,6 @@
       "Go to settings": [
         "Ir para configurações"
       ],
-      "Google": [
-        "Google"
-      ],
       "Got it": [
         "Entendi"
       ],
@@ -4834,11 +4831,6 @@
         "Selecione ${ boldExport } para exportar o calendário como um arquivo ICS."
       ]
     },
-    "Import provider": {
-      "More import options": [
-        "Mais opções de importação"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contatos não serão importados. Clique para detalhes"
@@ -5278,9 +5270,6 @@
       ],
       "Choose a plan that works best for you.": [
         "Escolha um plano que funcione melhor para você."
-      ],
-      "Choose your service to connect with": [
-        "Escolha seu serviço para conectar"
       ],
       "Clear all search data": [
         "Limpar todos os dados da pesquisa"
@@ -7060,6 +7049,9 @@
         "${ nbYear } ano",
         "${ nbYear } anos"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caracteres"
+      ],
       "(Expired)": [
         "(Expirado)"
       ],
@@ -8737,6 +8729,9 @@
       "Multiple admin roles": [
         "Múltiplas funções de administração"
       ],
+      "No streaming support": [
+        "Sem suporte para streaming"
+      ],
       "Online document editor": [
         "Editor de documentos on-line"
       ],
@@ -9407,6 +9402,10 @@
       ],
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" renomeado"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } foto foi adicionada a \"${ albumName }\"",
+        "${ addedUids.length } fotos foram adicionadas a \"${ albumName }\""
       ],
       "${ count } item failed to be decrypted": [
         "Erro ao descriptografar ${ count } item",

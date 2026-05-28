@@ -536,6 +536,9 @@
       "Get in touch": [
         "Επικοινωνήστε"
       ],
+      "Get limited-time offer": [
+        "Λάβετε προσφορά περιορισμένου χρόνου"
+      ],
       "Get more": [
         "Λήψη περισσότερων"
       ],
@@ -577,9 +580,6 @@
       ],
       "Go to panel ${ index }": [
         "Μετάβαση στο πλαίσιο ${ index }"
-      ],
-      "Google": [
-        "Google"
       ],
       "Got it": [
         "Το κατάλαβα"
@@ -730,6 +730,9 @@
       ],
       "No": [
         "Όχι"
+      ],
+      "No, thanks": [
+        "Όχι, ευχαριστώ"
       ],
       "OK": [
         "ΟΚ"
@@ -6517,11 +6520,6 @@
         "Για εξαγωγή του ημερολογίου ως αρχείου ICS, επιλέξτε ${ boldExport }."
       ]
     },
-    "Import provider": {
-      "More import options": [
-        "Περισσότερες επιλογές εισαγωγής"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } από ${ totalContacts } επαφές δεν θα εισαχθούν. Κάντε κλικ για λεπτομέρειες"
@@ -7117,9 +7115,6 @@
       ],
       "Choose an Entity ID to continue.": [
         "Επιλέξτε ένα Entity ID για να συνεχίσετε."
-      ],
-      "Choose your service to connect with": [
-        "Επιλέξτε την υπηρεσία σας για να συνδεθείτε"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
@@ -11043,6 +11038,14 @@
       ],
       "Set up your account with your Porkbun domain.": [
         "Ρυθμίστε τον λογαριασμό σας με τον τομέα Porkbun σας."
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for your first month": [
+        "για τον πρώτο μήνα σας"
+      ],
+      "Get ${ planTitle } for ${ discountedPriceElement }": [
+        "Λάβετε το ${ planTitle } για ${ discountedPriceElement }"
       ]
     },
     "meet_2025: Addon": {

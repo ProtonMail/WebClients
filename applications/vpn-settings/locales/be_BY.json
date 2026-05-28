@@ -536,6 +536,9 @@
       "Get in touch": [
         "Звязацца з намі"
       ],
+      "Get limited-time offer": [
+        "Атрымаць абмежаваную па часе прапанову"
+      ],
       "Get more": [
         "Атрымаць больш"
       ],
@@ -577,9 +580,6 @@
       ],
       "Go to panel ${ index }": [
         "Перайсці ў панэль ${ index }"
-      ],
-      "Google": [
-        "Google"
       ],
       "Got it": [
         "Зразумела"
@@ -730,6 +730,9 @@
       ],
       "No": [
         "Не"
+      ],
+      "No, thanks": [
+        "Не, дзякуй"
       ],
       "OK": [
         "OK"
@@ -6441,7 +6444,7 @@
         "Гэты файл змяшчае адказы на запрашэнне:"
       ],
       "This file contains some data that we cannot import:": [
-        "Гэты файл змяшчае некаторыя даныя, якія мы не можам імпартаваць:"
+        "Гэты файл змяшчае некаторыя даныя, якія немагчыма імпартаваць:"
       ]
     },
     "Import contact": {
@@ -6516,7 +6519,7 @@
         "У вашым уліковым запісе Yahoo уключаны IMAP."
       ],
       "Too many recent requests. Please try again in a few moments.": [
-        "Занадта шмат запытаў за апошні час. Паспрабуйце яшчэ раз праз некаторы час."
+        "Занадта шмат запытаў за апошні час. Паспрабуйце яшчэ раз пазней."
       ],
       "Two-factor authentication is enabled in your external account.": [
         "Двухфактарная аўтэнтыфікацыя ўключана ў вашым знешнім уліковым запісе."
@@ -6633,11 +6636,6 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Выберыце ${ boldExport }, каб экспартаваць каляндар як файл ICS."
-      ]
-    },
-    "Import provider": {
-      "More import options": [
-        "Больш параметраў імпартавання"
       ]
     },
     "Import warning": {
@@ -7305,9 +7303,6 @@
       ],
       "Choose an Entity ID to continue.": [
         "Выберыце Entity ID для працягу."
-      ],
-      "Choose your service to connect with": [
-        "Выберыце сэрвіс для падключэння"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы код спраўджання на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
@@ -8444,7 +8439,7 @@
         "Абаронены швейцарскімі законамі аб прыватнасці"
       ],
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Грамадскім дзеячам, журналістам і ўсім астатнім, хто можа стаць мішэнню кібератак, мы настойліва раім уключыць ${ PROTON_SENTINEL_NAME }"
+        "Грамадскім дзеячам, журналістам і ўсім астатнім, хто можа стаць мішэнню кібератак, настойліва рэкамендуецца ўключыць ${ PROTON_SENTINEL_NAME }"
       ],
       "Public link invite": [
         "Запрашэнне па публічнай спасылцы"
@@ -8780,7 +8775,7 @@
         "Няправільны фармат вашага файла CSV."
       ],
       "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
-        "Функцыя груп не падтрымліваюцца вашай бягучай падпіскай. Папярэдне створаныя групы адключаны і іх можна толькі выдалены."
+        "Функцыя груп не падтрымліваюцца на вашай бягучай падпісцы. Папярэдне створаныя групы адключаны і іх можна толькі выдаліць."
       ],
       "The most secure and private two-factor authentication app, that's free and open-source.": [
         "Адна з самых бяспечных і прыватных праграм двухфактарнай аўтэнтыфікацыі. Распаўсюджваецца бясплатна і мае адкрыты зыходны код."
@@ -11317,6 +11312,14 @@
       ],
       "Set up your account with your Porkbun domain.": [
         "Наладзьце свой уліковы запіс з дапамогай дамена Porkbun."
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for your first month": [
+        "за ваш першы месяц"
+      ],
+      "Get ${ planTitle } for ${ discountedPriceElement }": [
+        "Атрымайце ${ planTitle } за ${ discountedPriceElement }"
       ]
     },
     "meet_2025: Addon": {
