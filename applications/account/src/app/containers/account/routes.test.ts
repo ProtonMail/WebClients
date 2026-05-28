@@ -1,6 +1,7 @@
 import type { Subscription } from '@proton/payments';
 import { Renew, hasCancellablePlan, isCancellableOnlyViaSupport } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
+import { PERMISSIONS } from '@proton/shared/lib/interfaces/UserPermission';
 import { buildUser } from '@proton/testing/builders/user';
 
 import type { AccountRouterParams, Flags } from '../../content/router-params';
@@ -74,6 +75,10 @@ function buildDefaultParams({ flags: flagOverrides, ...rest }: Overrides = {}): 
         showMeetDashboard: false,
         showMeetDashboardVariant: 'disabled',
         hasPendingInvitations: false,
+        permissions: Object.fromEntries(PERMISSIONS.map((p) => [p, false])) as Record<
+            (typeof PERMISSIONS)[number],
+            boolean
+        >,
         flags: { ...defaultFlags, ...flagOverrides },
         ...rest,
     };

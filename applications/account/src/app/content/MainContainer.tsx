@@ -19,6 +19,7 @@ import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesT
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserInvitations } from '@proton/account/userInvitations/hooks';
+import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import {
     AppLink,
@@ -62,7 +63,7 @@ import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authenticatio
 import { APPS, SETUP_ADDRESS_PATH, VPN_TV_PATHS, VPN_TV_PATH_WITH_CODE } from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { Permission, UserModel } from '@proton/shared/lib/interfaces';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -167,6 +168,7 @@ const MainContainer = () => {
     const [addresses] = useAddresses();
     const [organization, loadingOrganization] = useOrganization();
     const [subscription, loadingSubscription] = useSubscription();
+    const [permissions, loadingOrgPermissions] = useOrgPermissions();
     const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { viewportWidth } = useActiveBreakpoint();
@@ -281,6 +283,7 @@ const MainContainer = () => {
         isB2BDrive,
         isB2BTrial,
         isGroupOwner,
+        permissions: permissions ?? ({} as Record<Permission, boolean>),
         memberships,
     };
 
@@ -420,6 +423,7 @@ const MainContainer = () => {
         if (
             loadingOrganization ||
             loadingSubscription ||
+            loadingOrgPermissions ||
             loadingDataRecovery ||
             loadingIsSessionRecoveryAvailable ||
             loadingGroupMembership ||
