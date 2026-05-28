@@ -1,5 +1,6 @@
 import type { ContextVerificationOptions, PublicKeyReference, SessionKey } from '@protontech/crypto';
 import { CryptoProxy, type PrivateKeyReference, toPublicKeyReference } from '@protontech/crypto';
+
 import { getDefaultKeyFlags } from '@proton/shared/lib/keys/keyFlags';
 import noop from '@proton/utils/noop';
 
@@ -12,6 +13,7 @@ import type {
     CachedOrganizationKey,
     DecryptedAddressKey,
     GetAllPublicKeysResponse,
+    Group,
     Key,
     KeyGenConfig,
     KeyTransparencyVerify,
@@ -65,7 +67,7 @@ export const createGroupAddressKey = async ({
         address,
         keyTransparencyVerify
     );
-    const { Key } = await api(
+    const { Key } = await api<{ Key: Group['Address']['Keys'][0] }>(
         createGroupAddressKeyRoute({
             AddressID: address.ID,
             PrivateKey: privateKeyArmored,

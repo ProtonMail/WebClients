@@ -9,6 +9,7 @@ import {
 } from '@proton/account';
 import { startHostAccountSessionsListener } from '@proton/account/accountSessions/hostListener';
 import { groupOwnerInvitesListener } from '@proton/account/groupOwnerInvites/groupOwnerInvitesListener';
+import { groupKeysListener } from '@proton/account/groups/groupKeysListener';
 import { deviceRecoveryListener } from '@proton/account/recovery/deviceRecovery';
 import { safetyReviewTelemetryListener } from '@proton/account/safetyReview/telemetry/safetyReviewTelemetryListener';
 import { startCalendarEventListener } from '@proton/calendar/calendars/listener';
@@ -46,6 +47,7 @@ export const start = ({
         convertAddressesListener(startListening);
         unprivatizeMembersListener(startListening);
         groupOwnerInvitesListener(startListening);
+        groupKeysListener(startListening);
         safetyReviewTelemetryListener(startListening);
     }
 
