@@ -46,48 +46,48 @@ export const useCategoriesTelemetry = () => {
 
     const sendReportCloseCategoryCard = (categoryID: CategoryLabelID) => {
         sendReport(TelemetryCategoriesOnboardingEvents.onboarding_card_close, {
-            category_id: categoryID,
+            categoryID,
         });
     };
 
-    const sendReportCategoriesNav = (source: CategoriesClickSource, categoryID: CategoryLabelID) => {
+    const sendReportCategoriesNav = (navSource: CategoriesClickSource, categoryID: CategoryLabelID) => {
         sendReport(TelemetryCategoriesOnboardingEvents.category_nav, {
-            source: source,
-            category_id: categoryID,
+            navSource,
+            categoryID,
         });
     };
 
     const sendReportChangeCategorySettings = (newValue: boolean) => {
         sendReport(TelemetryCategoriesOnboardingEvents.settings_toggle_category_view, {
-            new_value: newValue ? 'true' : 'false',
+            newValue: newValue ? 'true' : 'false',
         });
     };
 
     const sendReportToggleCategory = (categoryID: CategoryLabelID, newValue: boolean) => {
         sendReport(TelemetryCategoriesOnboardingEvents.settings_toggle_category, {
-            category_id: categoryID,
-            new_value: newValue ? 'true' : 'false',
+            categoryID,
+            newValue: newValue ? 'true' : 'false',
         });
     };
 
     const sendReportToggleNotification = (categoryID: CategoryLabelID, newValue: boolean) => {
         sendReport(TelemetryCategoriesOnboardingEvents.settings_toggle_notification, {
-            category_id: categoryID,
-            new_value: newValue ? 'true' : 'false',
+            categoryID,
+            newValue: newValue ? 'true' : 'false',
         });
     };
 
     const sendReportRecategorizeEmail = (
-        source: RecategorizeSource,
+        recategorizeSource: RecategorizeSource,
         sourceLabelID: CategoryLabelID,
         destinationLabelID: string,
         elementsNumber: number
     ) => {
         sendReport(TelemetryCategoriesOnboardingEvents.recategorize_email, {
-            source: source,
-            source_label_id: sourceLabelID,
-            destination_label_id: destinationLabelID,
-            elements_number: elementsNumber.toString(),
+            recategorizeSource,
+            sourceLabelID,
+            destinationLabelID,
+            elementsNumber: elementsNumber.toString(),
         });
     };
 
