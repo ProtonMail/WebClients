@@ -530,6 +530,9 @@
       "Get in touch": [
         "Kontakta oss"
       ],
+      "Get limited-time offer": [
+        "Skaffa tidsbegränsat erbjudande"
+      ],
       "Get more": [
         "Skaffa fler"
       ],
@@ -571,9 +574,6 @@
       ],
       "Go to panel ${ index }": [
         "Gå till panel ${ index }"
-      ],
-      "Google": [
-        "Google"
       ],
       "Got it": [
         "Förstått"
@@ -724,6 +724,9 @@
       ],
       "No": [
         "Nej"
+      ],
+      "No, thanks": [
+        "Nej tack"
       ],
       "OK": [
         "OK"
@@ -6387,11 +6390,6 @@
         "Välj ${ boldExport } för att exportera kalendern som en ICS-fil."
       ]
     },
-    "Import provider": {
-      "More import options": [
-        "Fler importalternativ"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } av ${ totalContacts } kontakter kommer inte att importeras. Klicka för detaljer"
@@ -6951,9 +6949,6 @@
       ],
       "Choose an Entity ID to continue.": [
         "Välj ett entitets-ID för att fortsätta."
-      ],
-      "Choose your service to connect with": [
-        "Välj din tjänst att ansluta med"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
@@ -10786,6 +10781,14 @@
       ],
       "Set up your account with your Porkbun domain.": [
         "Ställ in ditt konto med din Porkbun-domän."
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for your first month": [
+        "för din första månad"
+      ],
+      "Get ${ planTitle } for ${ discountedPriceElement }": [
+        "Skaffa ${ planTitle } för ${ discountedPriceElement }"
       ]
     },
     "meet_2025: Addon": {

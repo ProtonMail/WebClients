@@ -506,6 +506,9 @@
       "Get in touch": [
         "Ponte en contacto"
       ],
+      "Get limited-time offer": [
+        "Disfruta de la oferta por tiempo limitado"
+      ],
       "Get more": [
         "Obtener más"
       ],
@@ -544,9 +547,6 @@
       ],
       "Go to panel ${ index }": [
         "Ir al panel ${ index }"
-      ],
-      "Google": [
-        "Google"
       ],
       "Got it": [
         "Entendido"
@@ -682,6 +682,9 @@
       ],
       "No": [
         "No"
+      ],
+      "No, thanks": [
+        "No, gracias"
       ],
       "OK": [
         "Aceptar"
@@ -5885,11 +5888,6 @@
         "Selecciona ${ boldExport } para exportar el calendario como un archivo ICS."
       ]
     },
-    "Import provider": {
-      "More import options": [
-        "Más opciones de importación"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactos no se importarán. Haz clic para obtener más detalles."
@@ -6430,9 +6428,6 @@
       ],
       "Choose an Entity ID to continue.": [
         "Selecciona un ID de entidad para continuar."
-      ],
-      "Choose your service to connect with": [
-        "Elige tu servicio para conectar"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
@@ -10046,6 +10041,14 @@
       ],
       "Set up your account with your Porkbun domain.": [
         "Configura tu cuenta con tu dominio de Porkbun."
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for your first month": [
+        "por tu primer mes"
+      ],
+      "Get ${ planTitle } for ${ discountedPriceElement }": [
+        "Obtén ${ planTitle } por ${ discountedPriceElement }"
       ]
     },
     "meet_2025: Addon": {
