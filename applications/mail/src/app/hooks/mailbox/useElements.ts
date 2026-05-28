@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-
 import { useConversationCounts, useGetConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { useGetMessageCounts, useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
@@ -43,7 +42,6 @@ import {
     contextPages,
     contextTotal,
     dynamicTotal as dynamicTotalSelector,
-    elementIDs as elementIDsSelector,
     elementsMap as elementsMapSelector,
     elements as elementsSelector,
     expectingEmpty as expectingEmptySelector,
@@ -55,6 +53,7 @@ import {
     pendingActions as pendingActionsSelector,
     placeholderCount as placeholderCountSelector,
     selectCurrentContextIdentifier,
+    selectElementIDs,
     shouldLoadElements as shouldLoadElementsSelector,
     shouldUpdatePage as shouldUpdatePageSelector,
     stateInconsistency as stateInconsistencySelector,
@@ -170,7 +169,7 @@ export const useElements: UseElements = ({
     const pendingActions = useMailSelector(pendingActionsSelector);
     const tasksRunning = useMailSelector(taskRunning);
     const elements = useMailSelector(elementsSelector);
-    const elementIDs = useMailSelector(elementIDsSelector);
+    const elementIDs = useMailSelector(selectElementIDs);
     const pageIsConsecutive = useMailSelector((state: MailState) => pageIsConsecutiveSelector(state, { page }));
     const messagesToLoadMoreES = useMailSelector((state: MailState) =>
         messagesToLoadMoreESSelector(state, { page, search, esStatus })

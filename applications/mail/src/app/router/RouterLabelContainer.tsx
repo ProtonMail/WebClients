@@ -53,8 +53,8 @@ export const RouterLabelContainer = ({
     hasRowMode = false,
     onResizingChange,
 }: Props) => {
-    const { sort, filter, labelID, elementID, messageID } = params;
-    const { handleBack, page, handleFilter } = navigation;
+    const { labelID, elementID, messageID } = params;
+    const { handleBack, handleFilter } = navigation;
     const { elementIDs, loading } = elementsData;
     const {
         handleElement,
@@ -104,13 +104,8 @@ export const RouterLabelContainer = ({
     const { applyLocation } = useApplyLocation();
 
     const { focusID, setFocusID, focusLastID, focusFirstID, focusNextID, focusPreviousID } = useMailboxFocus({
-        elementIDs,
-        page,
-        filter,
-        sort,
         showList,
         listRef,
-        labelID,
         isComposerOpened: composersCount > 0,
         loading,
     });
