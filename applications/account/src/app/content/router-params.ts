@@ -6,6 +6,7 @@ import type {
     Group,
     GroupMembershipReturn,
     OrganizationExtended,
+    Permission,
     UserModel,
 } from '@proton/shared/lib/interfaces';
 import type {
@@ -75,6 +76,7 @@ export type OrganizationSettings = {
     isGroupOwner: boolean | null;
     memberships?: GroupMembershipReturn[];
     groups?: Group[];
+    permissions: Record<Permission, boolean>;
 };
 
 export type GeneralRouterParams = {
