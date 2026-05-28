@@ -11789,11 +11789,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/vpn@workspace:packages/vpn"
   dependencies:
-    "@babel/core": "npm:^7.28.5"
-    "@babel/plugin-transform-runtime": "npm:^7.28.5"
-    "@babel/preset-env": "npm:^7.28.5"
-    "@babel/preset-react": "npm:^7.28.5"
-    "@babel/preset-typescript": "npm:^7.28.5"
     "@proton/account": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/colors": "workspace:^"
@@ -11814,21 +11809,18 @@ __metadata:
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/user-event": "npm:^14.6.1"
-    "@types/jest": "npm:^30.0.0"
-    babel-jest: "npm:^30.2.0"
-    babel-plugin-transform-require-context: "npm:^0.1.1"
-    core-js: "npm:^3.49.0"
+    "@vitejs/plugin-react-swc": "npm:^3.11.0"
+    "@vitest/coverage-v8": "npm:3.2.4"
+    "@vitest/ui": "npm:3.2.4"
     eslint: "npm:^9.39.4"
     fast-xml-parser: "npm:^5.8.0"
-    jest: "npm:^30.4.2"
-    jest-environment-jsdom: "npm:^30.4.1"
-    jest-mock: "npm:^30.4.1"
+    happy-dom: "npm:^20.9.0"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-router-dom: "npm:^5.3.4"
-    ts-jest: "npm:^29.4.9"
     ttag: "npm:^1.8.12"
     typescript: "npm:^6.0.2"
+    vitest: "npm:^3.2.4"
   languageName: unknown
   linkType: soft
 
