@@ -214,6 +214,9 @@
       "Continue to ${ planOrAppName }": [
         "Doorgaan naar ${ planOrAppName }"
       ],
+      "Continue with Free": [
+        "Doorgaan met gratis"
+      ],
       "Continue with Google": [
         "Ga verder met Google"
       ],
@@ -416,9 +419,6 @@
       ],
       "Go to label": [
         "Ga naar label"
-      ],
-      "Google": [
-        "Google"
       ],
       "Got it": [
         "Begrepen"
@@ -827,6 +827,9 @@
       ],
       "Try another method": [
         "Andere methode proberen"
+      ],
+      "Try Workspace": [
+        "Probeer Workspace"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } inschakelen"
@@ -2471,6 +2474,9 @@
       "Automatically forward incoming email to another email address.": [
         "Inkomende e-mail automatisch doorsturen naar een ander e-mailadres."
       ],
+      "Available storage: ${ storageText }": [
+        "Beschikbare opslagruimte: ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configureer dit eerst om uw organisatie te activeren en uw e-mailadres aan te passen."
       ],
@@ -2500,6 +2506,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Versleutelen en importeren van contacten... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Genoeg ruimte voor jarenlang e-mails, bijlagen en meer."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Zorg voor veilige toegang tot gegevens van de organisatie, zelfs als uw team op afstand is of openbare wifi gebruikt."
@@ -2561,6 +2570,9 @@
       "To start, give your organization a name.": [
         "Geef uw organisatie een naam om te beginnen."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Ontgrendel 15 GB opslagruimte voor slechts ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Upgrade naar ${ planName } om bestanden te blijven delen met bewerkingsrechten"
       ],
@@ -2572,6 +2584,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "We hebben geen toegang meer tot ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "We pauzeren de import bij 80% opslagruimte om ruimte te reserveren voor nieuwe berichten."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "We zijn begonnen met het importeren van uw e-mails uit Gmail. We laten het u weten als het klaar is."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Het spijt ons u te moeten zien vertrekken. Als u even tijd heeft, zouden we het zeer op prijs stellen te horen waarom u wilt annuleren. Uw feedback helpt ons ${ BRAND_NAME } beter te maken voor iedereen."
@@ -2593,6 +2611,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Uw account en dataherstelmethodes zijn ingesteld."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Uw gratis ${ MAIL_APP_NAME }-account wordt geleverd met beperkte opslagruimte, dus we importeren alleen ${ newUserStorageText } van uw meest recente Gmail-berichten"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Uw gratis ${ MAIL_APP_NAME }-account wordt geleverd met beperkte opslagruimte, dus we importeren alleen uw meest recente Gmail-e-mails."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
@@ -2971,6 +2995,12 @@
       "Failed to fetch sharing info": [
         "Fout bij het ophalen van informatie over delen"
       ],
+      "Failed to load document details": [
+        "Kan documentdetails niet laden"
+      ],
+      "Failed to load recent documents": [
+        "Kan recente documenten niet laden"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Kon de gegevens van uw abonnement niet laden, probeer het later opnieuw."
       ],
@@ -3182,6 +3212,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
+      ],
+      "Some trashed documents could not be loaded": [
+        "Sommige in de prullenbak geplaatste documenten konden niet worden geladen"
       ],
       "Something went wrong while fetching available domains": [
         "Er is een fout opgetreden bij het ophalen van beschikbare domeinnamen"
@@ -3704,11 +3737,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ premium functies"
+      ],
+      "Custom email domain": [
+        "Aangepast e-maildomein"
+      ],
+      "Email addresses": [
+        "E-mailadressen"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Versleutelde cloudopslag voor bestanden, foto's en documenten"
       ],
       "More premium features": [
         "Meer premium functies"
+      ],
+      "Storage": [
+        "Opslagruimte"
       ],
       "Unlimited hide-my-email aliases": [
         "Onbeperkt aantal hide-my-email-aliassen"
@@ -4150,11 +4195,6 @@
         "Selecteer ${ boldExport } om de agenda te exporteren als een ICS-bestand."
       ]
     },
-    "Import provider": {
-      "More import options": [
-        "Meer importopties"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } van de ${ totalContacts } contacten worden niet geïmporteerd. Klik voor details"
@@ -4442,9 +4482,6 @@
       "Choose a plan that works best for you.": [
         "Kies een abonnement dat het beste bij u past."
       ],
-      "Choose your service to connect with": [
-        "Kies uw service om verbinding te maken"
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
@@ -4686,6 +4723,9 @@
       "Geoblocking": [
         "Geoblocking"
       ],
+      "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
+        "Ontvang een professionele @uw-bedrijf.com e-mail, 1 TB beveiligde opslag per gebruiker, langere videogesprekken en meer met ${ BRAND_NAME } Workspace."
+      ],
       "Get email updates for comments and suggestions added to your documents.": [
         "Ontvang e-mailupdates voor opmerkingen en suggesties die aan uw documenten zijn toegevoegd."
       ],
@@ -4752,6 +4792,9 @@
       ],
       "In restrictive countries": [
         "In restrictieve landen"
+      ],
+      "Included": [
+        "inbegrepen"
       ],
       "Inherited from parent folder": [
         "Overgenomen van bovenliggende map"
@@ -5275,6 +5318,9 @@
       "Trash": [
         "Prullenbak"
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Vertrouw op de sleutel \"${ activeSignerText }\" om nieuwe berichten van dit contact te verifiëren."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Probeer de nieuwe ${ BRAND_NAME } mogelijkheden, updates en producten voordat ze publiekelijk gelanceerd worden. Dit herlaadt de applicatie"
       ],
@@ -5287,8 +5333,14 @@
       "Update recent documents": [
         "Recente documenten bijwerken"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Upgrade op elk gewenst moment om de rest over te brengen"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Upgrade of maak op elk gewenst moment ruimte vrij om de rest over te brengen"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Upgraden om uw ${ planTitle } voordelen te behouden."
@@ -5608,11 +5660,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Actieve ondertekenaar"
+      ],
       "Compromised": [
         "Gecompromitteerd"
       ],
       "Expired": [
         "Verlopen"
+      ],
+      "Fallback": [
+        "Terugval"
       ],
       "KOO": [
         "KOO"
@@ -5636,6 +5694,9 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tekens"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
@@ -6803,6 +6864,9 @@
       "99.95% SLA": [
         "99,95% SLA"
       ],
+      "Access all countries": [
+        "Toegang tot alle landen"
+      ],
       "Ad-blocker and malware protection": [
         "Advertentieblokkering en bescherming tegen malware"
       ],
@@ -6961,6 +7025,9 @@
       "Multiple admin roles": [
         "Meerdere beheerdersfuncties"
       ],
+      "No streaming support": [
+        "Geen streaming-ondersteuning"
+      ],
       "Online document editor": [
         "Online document editor"
       ],
@@ -7110,6 +7177,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ongelimiteerd(e) volume/bandbreedte"
+      ],
+      "Unlock streaming": [
+        "Deblokkeer streaming"
       ],
       "Up to ${ n } user": [
         "Tot ${ n } gebruiker",
@@ -7504,6 +7574,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } land",
+        "${ n } landen"
+      ],
       "Access advanced VPN features": [
         "Gebruik geavanceerde VPN-functies"
       ],
@@ -7798,7 +7872,7 @@
         "U bent gestopt met dit item te delen"
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
-        "Uw ${ BRAND_NAME } adres is klaar voor gebruik"
+        "Uw ${ BRAND_NAME }-adres is klaar voor gebruik"
       ],
       "Your settings failed to be saved": [
         "Uw instellingen konden niet worden bewaard"
@@ -8187,8 +8261,17 @@
       "External key automatically fetched via WKD.": [
         "Externe sleutel wordt automatisch opgehaald via WKD."
       ],
+      "This contact currently signs messages with this key": [
+        "Dit contact ondertekent momenteel berichten met deze sleutel"
+      ],
+      "This key is used for message verification": [
+        "Deze sleutel wordt gebruikt voor berichtverificatie"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Deze sleutel wordt gebruikt om berichten naar deze contactpersoon te versleutelen"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Deze sleutel wordt gebruikt om berichten naar dit contact in oudere apps te coderen"
       ],
       "We recommend that you \"untrust\" this key.": [
         "We adviseren u deze sleutel niet meer te vertrouwen."
@@ -9722,6 +9805,9 @@
       "Contacts": [
         "Contacten"
       ],
+      "Continue with free storage": [
+        "Ga door met gratis opslag"
+      ],
       "Continue with partial import?": [
         "Doorgaan met gedeeltelijke invoer?"
       ],
@@ -9885,6 +9971,9 @@
       ],
       "Get more from your VPN": [
         "Haal meer uit uw VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Krijg meer opslagruimte met ${ MAIL_APP_NAME } Plus"
       ],
       "Get the apps": [
         "Verkrijg de apps"
