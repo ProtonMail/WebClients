@@ -40,7 +40,7 @@ export const RouterMailboxContainer = () => {
     // We get most of the data here to avoid unnecessary re-renders
     const params = useMailSelector(selectParams);
     const navigation = useRouterNavigation({ labelID: params.labelID });
-    const elementsParams = useGetElementParams({ params, navigation });
+    const elementsParams = useGetElementParams({ navigation });
     const elementsData = useElements(elementsParams);
     const actions = useElementActions({ navigation, elementsData });
 
