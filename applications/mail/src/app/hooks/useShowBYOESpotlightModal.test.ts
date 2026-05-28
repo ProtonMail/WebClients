@@ -97,7 +97,7 @@ describe('useShowBYOESpotlightModal', () => {
         const user = { CreateTime: Math.floor(sub(new Date(), { months: 3 }).getTime() / 1000) };
         const syncs = [sync1];
 
-        mockUseBYOEFeatureStatus.mockReturnValue(true);
+        mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
         mockUseAddresses.mockReturnValue([addresses]);
         mockUseUser.mockReturnValue([user]);
         mockGetAllSync.mockReturnValue(syncs);
@@ -115,7 +115,7 @@ describe('useShowBYOESpotlightModal', () => {
         const user = { CreateTime: Math.floor(sub(new Date(), { days: 3 }).getTime() / 1000) };
         const syncs = [sync1];
 
-        mockUseBYOEFeatureStatus.mockReturnValue(true);
+        mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
         mockUseAddresses.mockReturnValue([addresses]);
         mockUseUser.mockReturnValue([user]);
         mockGetAllSync.mockReturnValue(syncs);
@@ -132,7 +132,7 @@ describe('useShowBYOESpotlightModal', () => {
         const user = { CreateTime: Math.floor(sub(new Date(), { months: 3 }).getTime() / 1000) };
         const syncs = [sync1];
 
-        mockUseBYOEFeatureStatus.mockReturnValue(true);
+        mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
         mockUseAddresses.mockReturnValue([addresses]);
         mockUseUser.mockReturnValue([user]);
         mockGetAllSync.mockReturnValue(syncs);
@@ -149,7 +149,7 @@ describe('useShowBYOESpotlightModal', () => {
         const user = { CreateTime: Math.floor(sub(new Date(), { months: 3 }).getTime() / 1000) };
         const syncs = [sync1];
 
-        mockUseBYOEFeatureStatus.mockReturnValue(true);
+        mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
         mockUseAddresses.mockReturnValue([addresses]);
         mockUseUser.mockReturnValue([user]);
         mockGetAllSync.mockReturnValue(syncs);
@@ -166,7 +166,7 @@ describe('useShowBYOESpotlightModal', () => {
         const user = { CreateTime: Math.floor(sub(new Date(), { months: 3 }).getTime() / 1000) };
         const syncs = [sync1];
 
-        mockUseBYOEFeatureStatus.mockReturnValue(false);
+        mockUseBYOEFeatureStatus.mockReturnValue([false, false] as const);
         mockUseAddresses.mockReturnValue([addresses]);
         mockUseUser.mockReturnValue([user]);
         mockGetAllSync.mockReturnValue(syncs);
@@ -183,7 +183,7 @@ describe('useShowBYOESpotlightModal', () => {
         const user = { CreateTime: Math.floor(sub(new Date(), { months: 3 }).getTime() / 1000) };
         const syncs = [sync1];
 
-        mockUseBYOEFeatureStatus.mockReturnValue(true);
+        mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
         mockUseAddresses.mockReturnValue([addresses]);
         mockUseUser.mockReturnValue([user]);
         mockGetAllSync.mockReturnValue(syncs);

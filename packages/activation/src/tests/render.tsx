@@ -47,7 +47,7 @@ jest.mock('@proton/components/hooks/useEventManager.ts', () => {
 });
 
 jest.mock('@proton/activation/src/hooks/useBYOEFeatureStatus', () => {
-    return jest.fn(() => false);
+    return jest.fn(() => [false, false] as const);
 });
 
 const config = {

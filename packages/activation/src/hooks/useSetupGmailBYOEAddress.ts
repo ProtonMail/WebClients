@@ -28,7 +28,7 @@ interface Props {
 const useSetupGmailBYOEAddress = ({ showSuccessModal, onComplete, source }: Props) => {
     const api = useApi();
     const [addresses] = useAddresses();
-    const hasAccessToBYOE = useBYOEFeatureStatus();
+    const [hasAccessToBYOE] = useBYOEFeatureStatus();
     const isInMaintenance = useFlag('MaintenanceImporter');
     const easySwitchDispatch = useEasySwitchDispatch();
     const allSyncs = useEasySwitchSelector(getAllSync);
@@ -125,7 +125,7 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal, onComplete, source }: Prop
         }
     };
 
-    return { hasAccessToBYOE, isInMaintenance, handleBYOEWithImportCallback, allSyncs };
+    return { isInMaintenance, handleBYOEWithImportCallback, allSyncs };
 };
 
 export default useSetupGmailBYOEAddress;
