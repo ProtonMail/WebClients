@@ -51,8 +51,6 @@ export const useMailboxFocus = ({
     const previousState = useRef<MailboxFocusContext>({ elementIDs, page, filter, sort, labelID });
     const [focusID, setFocusID] = useState<string | undefined>();
 
-    const resetFocusID = () => setFocusID(undefined);
-
     const focusLastID = useCallback(() => {
         if (elementIDs.length === 0) {
             return;
@@ -99,10 +97,6 @@ export const useMailboxFocus = ({
         }
     }, [elementIDs, focusID]);
 
-    const saveNewState = useCallback(({ elementIDs, page, filter, sort, labelID }: MailboxFocusContext) => {
-        previousState.current = { elementIDs, page, filter, sort, labelID };
-    }, []);
-
     useEffect(() => {
         if (loading) {
             return;
@@ -110,7 +104,7 @@ export const useMailboxFocus = ({
 
         // Reset focus when loading, not showing the list or composer is opened
         if (!showList || isComposerOpened) {
-            resetFocusID();
+            setFocusID(undefined);
             return;
         }
 
@@ -122,15 +116,15 @@ export const useMailboxFocus = ({
             previousState.current.page !== page;
 
         if (contextChanged) {
-            resetFocusID();
-            saveNewState({ elementIDs, page, filter, sort, labelID });
+            setFocusID(undefined);
+            previousState.current = { elementIDs, page, filter, sort, labelID };
             return;
         }
 
         // Reset focus when the list is empty
         if (elementIDs.length === 0) {
-            resetFocusID();
-            saveNewState({ elementIDs, page, filter, sort, labelID });
+            setFocusID(undefined);
+            previousState.current = { elementIDs, page, filter, sort, labelID };
             return;
         }
 
@@ -142,18 +136,17 @@ export const useMailboxFocus = ({
 
                 if (index === -1) {
                     // If the focusID is not in the list, reset focus
-                    resetFocusID();
+                    setFocusID(undefined);
                 } else if (elementIDs[index]) {
                     // Focus the next element if it exists
                     setFocusID(elementIDs[index]);
                 } else {
                     // Or reset focus
-                    resetFocusID();
+                    setFocusID(undefined);
                 }
             }
-            saveNewState({ elementIDs, page, filter, sort, labelID });
+            previousState.current = { elementIDs, page, filter, sort, labelID };
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CA6255
     }, [elementIDs, page, filter, sort, showList, labelID, isComposerOpened, loading, focusID]);
 
     useEffect(() => {
