@@ -154,7 +154,7 @@ describe('E2eeRecoveryManager', () => {
         vi.clearAllMocks();
     });
 
-    it('detects video stall (pktsRx grows but framesDecoded frozen) and recovers participant', async () => {
+    it('detects video stall (pktsRx grows but framesDecoded frozen) and recovers video only', async () => {
         const videoPub = createPublication({
             trackSid: 'video-1',
             kind: 'video',
@@ -195,8 +195,8 @@ describe('E2eeRecoveryManager', () => {
         // Video gets in-place resubscribed.
         expect(videoPub.setSubscribed).toHaveBeenCalledWith(false);
         expect(videoPub.setSubscribed).toHaveBeenCalledWith(true);
-        // Audio is delegated to the audio manager.
-        expect(audioManager.recoverTrack).toHaveBeenCalledWith(audioPub, participant, 'video-stall');
+        // Audio is not touched by the video-stall path.
+        expect(audioManager.recoverTrack).not.toHaveBeenCalled();
     });
 
     it('detects persistent audio noise and triggers audio recovery via the audio manager', async () => {
@@ -212,7 +212,7 @@ describe('E2eeRecoveryManager', () => {
         room.remoteParticipants.set('p1', participant);
 
         // Calibrated to mimic the broken-cryptor signature: energyDelta/samplesDelta
-        // ≈ 1.4e-5 (well above 3e-6 threshold) with audioLevel sustained ≥ 0.4.
+        // ≈ 1.4e-5 (well above 1e-5 threshold) with audioLevel sustained ≥ 0.4.
         // Sample rate ≈ 48000 / 2s tick = 96000 samples per tick.
         // energyDelta = 96000 × 1.4e-5 = 1.344 per tick.
         let totalEnergy = 0;
@@ -227,9 +227,6 @@ describe('E2eeRecoveryManager', () => {
                     kind: 'audio',
                     trackIdentifier: audioPub.track!.mediaStreamTrack!.id,
                     packetsReceived: totalSamples / 1000,
-                    concealedSamples: 0,
-                    silentConcealedSamples: 0,
-                    concealmentEvents: 0,
                     totalSamplesReceived: totalSamples,
                     totalAudioEnergy: totalEnergy,
                     audioLevel: 0.6,
@@ -271,9 +268,6 @@ describe('E2eeRecoveryManager', () => {
                     kind: 'audio',
                     trackIdentifier: audioPub.track!.mediaStreamTrack!.id,
                     packetsReceived: totalSamples / 1000,
-                    concealedSamples: 0,
-                    silentConcealedSamples: 0,
-                    concealmentEvents: 0,
                     totalSamplesReceived: totalSamples,
                     totalAudioEnergy: totalEnergy,
                     audioLevel: 0.6,
