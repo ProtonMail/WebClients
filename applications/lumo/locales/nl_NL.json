@@ -910,6 +910,9 @@
       ]
     },
     "collider_2025: Action": {
+      "Add": [
+        "Toevoegen"
+      ],
       "Add ${ selectedCount } sheet": [
         "Voeg ${ selectedCount } werkblad toe",
         "Voeg ${ selectedCount } werkbladen toe"
@@ -929,6 +932,18 @@
       "Cancel": [
         "Annuleren"
       ],
+      "Cancel (Esc)": [
+        "Annuleren (Esc)"
+      ],
+      "Clear": [
+        "Wis"
+      ],
+      "Clear all": [
+        "Alles wissen"
+      ],
+      "Clear auto-generated": [
+        "Automatisch gegenereerd wissen"
+      ],
       "Close": [
         "Sluit"
       ],
@@ -944,6 +959,9 @@
       "Dark": [
         "Donker"
       ],
+      "Delete memory": [
+        "Geheugen verwijderen"
+      ],
       "Disable ghost mode": [
         "Spookmodus uitschakelen"
       ],
@@ -953,8 +971,14 @@
       "Edit": [
         "Wijzig"
       ],
+      "Edit memory": [
+        "Geheugen bewerken"
+      ],
       "Enable ghost mode": [
         "Spookmodus inschakelen"
+      ],
+      "Generate from chats": [
+        "Genereer vanuit chats"
       ],
       "Generate workflow": [
         "Workflow genereren"
@@ -995,6 +1019,9 @@
       "Save": [
         "Opslaan"
       ],
+      "Save (⌘+Enter)": [
+        "Bewaar (⌘+Enter)"
+      ],
       "Select all": [
         "Selecteer alles"
       ],
@@ -1021,6 +1048,22 @@
       ],
       "Try again": [
         "Probeer opnieuw"
+      ],
+      "Turn off": [
+        "Uitschakelen"
+      ],
+      "Turn off and delete": [
+        "Schakel uit en verwijder"
+      ],
+      "Turn on memory": [
+        "Schakel het geheugen in"
+      ],
+      "Update from chats": [
+        "Update vanuit chats"
+      ],
+      "Update from chats (${ newPromptsSinceLastUpdate } new)": [
+        "Update vanuit chats (${ newPromptsSinceLastUpdate } nieuw)",
+        "Update vanuit chats (${ newPromptsSinceLastUpdate } nieuw)"
       ],
       "Upload file to Drive": [
         "Bestand uploaden naar Drive"
@@ -1173,9 +1216,23 @@
         "Ik word aangedreven door cafeïne en existentiële angst"
       ]
     },
+    "collider_2025: Date": {
+      "Today": [
+        "Vandaag"
+      ],
+      "Yesterday": [
+        "Gisteren"
+      ]
+    },
     "collider_2025: Description": {
       "${ BRAND_NAME } is conducting a paid research study about AI assistants. Interested? It takes 2 minutes. If selected, you'll earn £80.": [
         "${ BRAND_NAME } voert een betaald onderzoek uit naar AI-assistenten. Interesse? Het duurt slechts 2 minuten. Als u geselecteerd wordt, verdient u £80."
+      ],
+      "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
+        "${ LUMO_SHORT_APP_NAME } verwijst naar uw opgeslagen herinneringen om reacties op maat te maken: communicatiestijl, expertise, terugkerende tools en langlopende projecten."
+      ],
+      "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
+        "Voeg uw eigen herinneringen toe, bewerk automatisch gegenereerde gegevens of wis alles op elk gewenst moment. Gegenereerde herinneringen die u bewerkt, worden gepromoveerd tot uw eigen herinneringen."
       ],
       "Always enable web search for new conversations": [
         "Schakel web zoeken altijd in voor nieuwe gesprekken"
@@ -1195,11 +1252,26 @@
       "Last updated on ${ formattedDate }": [
         "Laatst bijgewerkt op ${ formattedDate }"
       ],
+      "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
+        "Meer informatie over het gebruik van ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Memories are stored encrypted.": [
+        "Herinneringen worden gecodeerd opgeslagen."
+      ],
+      "Memory lets ${ LUMO_SHORT_APP_NAME } remember stable preferences and context across general chats so you don't have to repeat yourself.": [
+        "Dankzij het geheugen kan ${ LUMO_SHORT_APP_NAME } stabiele voorkeuren en context in algemene chats onthouden, zodat u uzelf niet hoeft te herhalen."
+      ],
       "Permanently delete your project and chats. This is irreversible.": [
         "Verwijder uw project en gesprekken permanent. Dit is onomkeerbaar."
       ],
+      "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
+        "Projectchats worden volledig geïsoleerd gehouden. Ze vertrouwen op hun eigen instructies en bestanden en negeren uw globale herinneringen volledig."
+      ],
       "Quick responses": [
         "Snelle antwoorden"
+      ],
+      "Report a bug or feature request": [
+        "Meld een bug of suggereer een nieuwe functie"
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Meld u aan om toegang te krijgen tot uw account en meer functies te ontgrendelen. Hebt u er geen? ${ createLink }"
@@ -1209,6 +1281,20 @@
       ],
       "Switch between light and dark mode": [
         "Schakel tussen lichte en donkere modus"
+      ],
+      "This removes memories generated from your chats. Memories you added yourself will be kept.": [
+        "Hiermee worden herinneringen verwijderd die uit uw chats zijn gegenereerd. Herinneringen die u zelf hebt toegevoegd, blijven bewaard."
+      ],
+      "This will permanently remove all saved memories. ${ LUMO_SHORT_APP_NAME } will no longer use them in future chats.": [
+        "Hiermee worden alle opgeslagen herinneringen permanent verwijderd. ${ LUMO_SHORT_APP_NAME } zal ze niet langer gebruiken in toekomstige chats."
+      ],
+      "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
+        "Als u het geheugen uitschakelt, worden alle ${ memories.length } opgeslagen herinneringen permanent verwijderd. U kunt het geheugen later inschakelen, maar de verwijderde herinneringen kunnen niet worden hersteld."
+      ]
+    },
+    "collider_2025: DisableMemory": {
+      "Turn off ${ LUMO_SHORT_APP_NAME } Memory at any time.": [
+        "Schakel het geheugen van ${ LUMO_SHORT_APP_NAME } op elk gewenst moment uit."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1261,6 +1347,9 @@
       "Sign up for free to continue chatting and unlock access to chat history, starred chats, and more features.": [
         "Meld u gratis aan om door te gaan met chatten en toegang te krijgen tot gespreksgeschiedenis, favoriete gesprekken en meer functies."
       ],
+      "Something went wrong. Please try again.": [
+        "Er is iets misgegaan. Probeer het opnieuw."
+      ],
       "The provided URL is invalid.": [
         "De opgegeven URL is ongeldig."
       ],
@@ -1271,22 +1360,22 @@
         "Upgrade naar ${ LUMO_SHORT_APP_NAME } Plus voor onbeperkte gesprekken, uitgebreide geschiedenis, toegang tot geavanceerde AI-modellen en meer."
       ],
       "You've reached a usage limit. Please try again later.": [
-        "U hebt uw gebruikslimiet bereikt. Probeer het later opnieuw."
+        "U heeft uw gebruikslimiet bereikt. Probeer het later opnieuw."
       ],
       "You've reached the maximum number of projects. Delete some before creating a new one.": [
-        "U hebt het maximale aantal projecten bereikt. Verwijder enkele voordat u een nieuw project aanmaakt."
+        "U heeft het maximale aantal projecten bereikt. Verwijder enkele voordat u een nieuw project aanmaakt."
       ],
       "You've reached the maximum of ${ limit } conversations in this project. Delete some to create a new one.": [
-        "U hebt het maximum aantal gesprekken van ${ limit } in dit project bereikt. Verwijder enkele voordat u nieuwe aanmaakt."
+        "U heeft het maximum aantal gesprekken van ${ limit } in dit project bereikt. Verwijder enkele voordat u nieuwe aanmaakt."
       ],
       "You've reached the maximum of ${ limit } conversations. Delete some to create a new one.": [
-        "U hebt het maximum aantal gesprekken van ${ limit }. Verwijder enkele voordat u nieuwe aanmaakt."
+        "U heeft het maximum aantal gesprekken van ${ limit }. Verwijder enkele voordat u nieuwe aanmaakt."
       ],
       "You've reached the maximum of ${ limit } files in this chat. Remove some files before uploading new ones.": [
-        "U hebt het maximum aantal bestanden van ${ limit } in dit gesprek bereikt. Verwijder enkele bestanden voordat u nieuwe uploadt."
+        "U heeft het maximum aantal bestanden van ${ limit } in dit gesprek bereikt. Verwijder enkele bestanden voordat u nieuwe uploadt."
       ],
       "You've reached the maximum of ${ limit } files in this project. Remove some files before uploading new ones.": [
-        "U hebt het maximum aantal bestanden van ${ limit } in dit project bereikt. Verwijder enkele bestanden voordat u nieuwe uploadt."
+        "U heeft het maximum aantal bestanden van ${ limit } in dit project bereikt. Verwijder enkele bestanden voordat u nieuwe uploadt."
       ],
       "You've reached the maximum of ${ limit } messages in this conversation. Start a new conversation to continue chatting with ${ LUMO_SHORT_APP_NAME }.": [
         "U hebt het maximum aantal berichten in dit gesprek bereikt ${ limit }. Start een nieuw gesprek om verder te chatten met ${ LUMO_SHORT_APP_NAME }."
@@ -1313,6 +1402,12 @@
       ]
     },
     "collider_2025: Error Message": {
+      "If retrying doesn't work, check back in a few minutes. In the meantime, we are doing our best to ensure your experience goes smoothly.": [
+        "Als het opnieuw proberen niet werkt, kom dan over een paar minuten terug. In de tussentijd doen we ons best om ervoor te zorgen dat uw ervaring soepel verloopt."
+      ],
+      "If retrying doesn't work, check back later or consider upgrading to ${ LUMO_SHORT_APP_NAME } Plus to jump to the front of the line during peak times.": [
+        "Als het opnieuw proberen niet werkt, kom dan later terug of overweeg een upgrade naar ${ LUMO_SHORT_APP_NAME } Plus om tijdens piekuren vooraan in de rij te staan."
+      ],
       "Please try asking a different question or making a different request.": [
         "Probeer een andere vraag te stellen of een ander verzoek te doen."
       ],
@@ -1441,6 +1536,14 @@
       ],
       "Tell us more": [
         "Vertel ons meer"
+      ]
+    },
+    "collider_2025: Hint": {
+      "Memory is only used in general chats — never inside projects. Stored end-to-end encrypted.": [
+        "Geheugen wordt alleen gebruikt in algemene chats, nooit binnen projecten. End-to-end gecodeerd opgeslagen."
+      ],
+      "You can turn it off again at any time.": [
+        "U kunt het op elk gewenst moment weer uitschakelen."
       ]
     },
     "collider_2025: Info": {
@@ -1597,6 +1700,9 @@
       "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
         "Genereer een workflow-grafiek en implementatiecode voor het volgende doel. Doeltaal voor code:"
       ],
+      "Generate them from your recent chats, or add your own below.": [
+        "Genereer ze uit uw recente chats, of voeg hieronder uw eigen chats toe."
+      ],
       "High-speed chats and advanced AI features.": [
         "Chats op hoge snelheid en geavanceerde AI-functies."
       ],
@@ -1641,6 +1747,9 @@
       ],
       "No files available": [
         "Geen bestanden beschikbaar"
+      ],
+      "No new memories were found in your recent chats.": [
+        "Er zijn geen nieuwe herinneringen gevonden in uw recente chats."
       ],
       "No nodes in this workflow.": [
         "Geen knooppunten in deze workflow."
@@ -1764,6 +1873,9 @@
       ],
       "You are about to visit an external website:": [
         "U staat op het punt een externe website te bezoeken:"
+      ],
+      "Your memories are already up to date.": [
+        "Uw herinneringen zijn al actueel."
       ]
     },
     "collider_2025: Job": {
@@ -1839,6 +1951,9 @@
       "File upload": [
         "Bestand opladen"
       ],
+      "From chats": [
+        "Van chats"
+      ],
       "Not factually correct": [
         "Niet feitelijk correct"
       ],
@@ -1877,6 +1992,9 @@
       ],
       "Unsafe or problematic": [
         "Onveilig of problematisch"
+      ],
+      "You": [
+        "U"
       ]
     },
     "collider_2025: Legal disclaimer": {
@@ -2000,6 +2118,9 @@
       ]
     },
     "collider_2025: Placeholder": {
+      "e.g. I prefer concise, bullet-point answers": [
+        "bijv. Ik geef de voorkeur aan beknopte, antwoorden in opsommingsvorm"
+      ],
       "New chat": [
         "Nieuwe chat"
       ],
@@ -2008,11 +2129,17 @@
       ]
     },
     "collider_2025: Settings Item": {
+      "About": [
+        "Over"
+      ],
       "Account": [
         "Account"
       ],
       "General": [
         "Algemeen"
+      ],
+      "Memory": [
+        "Herinnering"
       ],
       "Personalization": [
         "Personalisatie"
@@ -2027,6 +2154,10 @@
       ]
     },
     "collider_2025: Success": {
+      "Added ${ added } memory from your chats": [
+        "${ added } herinnering toegevoegd aan je chats",
+        "${ added } herinneringen toegevoegd aan je chats"
+      ],
       "All chats deleted successfully": [
         "Alle gesprekken zijn succesvol verwijderd."
       ],
@@ -2060,6 +2191,20 @@
         "Workflow Builder"
       ]
     },
+    "collider_2025: Tip": {
+      "Avoid passwords, tokens, or sensitive personal identifiers.": [
+        "Vermijd wachtwoorden, tokens of gevoelige persoonlijke identificatiegegevens."
+      ],
+      "Include how you like to communicate (tone, format, language).": [
+        "Geef aan hoe u graag communiceert (toon, formaat, taal)."
+      ],
+      "Keep each memory short - one preference or fact per line.": [
+        "Houd elke herinnering kort - één voorkeur of feit per regel."
+      ],
+      "Write stable facts, not one-off questions.": [
+        "Schrijf stabiele feiten, geen eenmalige vragen."
+      ]
+    },
     "collider_2025: Title": {
       "${ LUMO_SHORT_APP_NAME } API · ${ spec.versionLabel }": [
         "${ LUMO_SHORT_APP_NAME } API · ${ spec.versionLabel }"
@@ -2073,6 +2218,9 @@
       "About ${ LUMO_SHORT_APP_NAME }": [
         "Over ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Add your own memory": [
+        "Voeg uw eigen herinnering toe"
+      ],
       "API calls per day": [
         "API-aanroepen per dag"
       ],
@@ -2081,6 +2229,9 @@
       ],
       "Authentication": [
         "Authenticatie"
+      ],
+      "Auto update memory": [
+        "Geheugen automatisch bijwerken"
       ],
       "Automatic web search": [
         "Automatisch zoeken op internet"
@@ -2091,6 +2242,12 @@
       "Chat": [
         "Chat"
       ],
+      "Clear all memories?": [
+        "Alle herinneringen wissen?"
+      ],
+      "Clear chat-based memories?": [
+        "Op chat gebaseerde herinneringen wissen?"
+      ],
       "Delete everything": [
         "Alles verwijderen"
       ],
@@ -2100,8 +2257,14 @@
       "Don't lose the thread": [
         "Raak de draad niet kwijt"
       ],
+      "End-to-end encrypted": [
+        "End-to-end versleuteld"
+      ],
       "Guest": [
         "Gast"
+      ],
+      "Help and support": [
+        "Hulp en ondersteuning"
       ],
       "Invalid Link": [
         "Ongeldige link"
@@ -2112,11 +2275,20 @@
       "Models": [
         "Modellen"
       ],
+      "Never used inside projects": [
+        "Nooit gebruikt binnen projecten"
+      ],
+      "No memories yet": [
+        "Nog geen herinneringen"
+      ],
       "Opening External Link": [
         "Externe link openen"
       ],
       "Parameters": [
         "Parameters"
+      ],
+      "Personalizes general chats": [
+        "Personaliseert algemene chats"
       ],
       "Prerequisites": [
         "Vereisten"
@@ -2124,8 +2296,14 @@
       "Privacy included by default.": [
         "Privacy standaard inbegrepen."
       ],
+      "Report a bug": [
+        "Meld een bug"
+      ],
       "Save your favorites": [
         "Sla uw favorieten op"
+      ],
+      "Saved memories": [
+        "Opgeslagen herinneringen"
       ],
       "Search Index": [
         "Zoekindex"
@@ -2138,6 +2316,9 @@
       ],
       "Tokens per call (daily)": [
         "Tokens per aanroep (dagelijks)"
+      ],
+      "Turn off memory?": [
+        "Schakel het geheugen uit?"
       ],
       "Upload files": [
         "Bestanden uploaden"
@@ -2153,11 +2334,24 @@
       ],
       "Workflow graph": [
         "Workflow-grafiek"
+      ],
+      "You stay in control": [
+        "U behoudt de controle"
       ]
     },
     "collider_2025: Tooltip": {
+      "${ LUMO_SHORT_APP_NAME } updates chat-based memories every ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages. ${ promptsUntilAutoSave } message left until the next update.": [
+        "${ LUMO_SHORT_APP_NAME } werkt chatgebaseerde herinneringen bij elke ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } berichten. ${ promptsUntilAutoSave } bericht blijft staan ​​tot de volgende update.",
+        "${ LUMO_SHORT_APP_NAME } werkt chatgebaseerde herinneringen bij elke ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } berichten. ${ promptsUntilAutoSave } berichten blijven staan ​​tot de volgende update."
+      ],
       "Contact your admin to upgrade": [
         "Neem contact op met uw beheerder om te upgraden"
+      ],
+      "Every ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages in general chats, ${ LUMO_SHORT_APP_NAME } extracts short excerpts and adds new chat-based memories in the background.": [
+        "Van elk ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } bericht in algemene chats, extraheert ${ LUMO_SHORT_APP_NAME } korte fragmenten en voegt nieuwe chatgebaseerde herinneringen op de achtergrond toe."
+      ],
+      "When enabled, ${ LUMO_SHORT_APP_NAME } updates chat-based memories every ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } messages in general chats. Only short excerpts are sent.": [
+        "Indien ingeschakeld, werkt ${ LUMO_SHORT_APP_NAME } chatgebaseerde herinneringen bij elke ${ MEMORY_AUTO_SAVE_PROMPT_THRESHOLD } berichten in algemene chats. Er worden alleen korte fragmenten verzonden."
       ]
     },
     "collider_2025: Top nav link": {
@@ -2311,28 +2505,28 @@
         "We ondervinden momenteel een hoger verkeersvolume dan gebruikelijk, dus antwoorden kunnen wat trager zijn. Upgrade naar ${ LUMO_SHORT_APP_NAME } Plus voor prioriteitstoegang tijdens drukke momenten."
       ],
       "You have ${ remaining } conversations left in this project before reaching the limit.": [
-        "U hebt nog ${ remaining } gesprekken over in dit project voordat de limiet bereikt is."
+        "U heeft nog ${ remaining } gesprekken over in dit project voordat de limiet bereikt is."
       ],
       "You have ${ remaining } file uploads left in this project before reaching the limit.": [
-        "U hebt nog ${ remaining } bestand uploads over in dit project voordat de limiet bereikt is."
+        "U heeft nog ${ remaining } bestand uploads over in dit project voordat de limiet bereikt is."
       ],
       "You have ${ remaining } file uploads left in this project.": [
         "U heeft nog ${ remaining } bestandsuploads in dit project."
       ],
       "You have ${ remaining } messages left in this conversation before reaching the limit.": [
-        "U hebt nog ${ remaining } gesprekken over in deze conversatie voordat de limiet bereikt is."
+        "U heeft nog ${ remaining } gesprekken over in deze conversatie voordat de limiet bereikt is."
       ],
       "You have ${ remaining } messages left in this conversation. Start a new chat for best responses.": [
-        "U hebt nog ${ remaining } berichten over in dit gesprek. Start een nieuwe chat voor de beste reacties."
+        "U heeft nog ${ remaining } berichten over in dit gesprek. Start een nieuwe chat voor de beste reacties."
       ],
       "You have ${ remaining } projects left before reaching the limit.": [
-        "U hebt nog ${ remaining } projecten over voordat u de limiet bereikt."
+        "U heeft nog ${ remaining } projecten over voordat u de limiet bereikt."
       ],
       "You've hit the ${ assetsStatus.limit }-file limit in this project. Remove some files before uploading new ones.": [
         "U heeft de bestandslimiet van ${ assetsStatus.limit } bereikt in dit project. Verwijder enkele bestanden voordat u nieuwe uploadt."
       ],
       "You've hit the ${ messagesStatus.limit }-message limit in this conversation. Start a new chat to keep talking with ${ LUMO_SHORT_APP_NAME }.": [
-        "U hebt de limiet van ${ messagesStatus.limit } berichten bereikt in dit gesprek. Start een nieuwe chat om verder te praten met ${ LUMO_SHORT_APP_NAME }."
+        "U heeft de limiet van ${ messagesStatus.limit } berichten bereikt in dit gesprek. Start een nieuwe chat om verder te praten met ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "collider_2025: Web Search": {
@@ -4978,6 +5172,10 @@
       "Country code": [
         "Landcode"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Maak een beveiligde cloud voor ${ memberCount } lid",
+        "Maak een beveiligde cloud voor ${ memberCount } leden"
+      ],
       "Credit for the unused portion of your previous plan subscription": [
         "Tegoed voor het ongebruikte deel van uw vorig abonnement"
       ],
@@ -5469,6 +5667,9 @@
         "${ n } maand",
         "${ n } maanden"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tekens"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Krijg veilig toegang tot ${ PASS_APP_NAME } vanaf de terminal, ideaal voor scripting, automatisering en ontwikkelingworkflows."
       ],
@@ -5847,6 +6048,9 @@
       "FPS": [
         "FPS"
       ],
+      "Generation errors": [
+        "Generatiefouten"
+      ],
       "Idle": [
         "Inactief"
       ],
@@ -5872,10 +6076,13 @@
         "Native bridge: onLimitReachedError"
       ],
       "Native composer bridge not detected — calls will be logged but no-op. Open the app inside the iOS/Android wrapper to exercise the bridge.": [
-        "De native Composer-bridge is niet gedetecteerd — aanroepen worden wel geregistreerd, maar er gebeurt niets. Open de app in de iOS/Android-wrapper om de bridge te testen."
+        "De native Composer-bridge is niet gedetecteerd, verzoeken worden wel geregistreerd, maar er gebeurt niets. Open de app in de iOS/Android-wrapper om de bridge te testen."
       ],
       "Notifications": [
         "Meldingen"
+      ],
+      "Open a conversation to enable generation error testing.": [
+        "Open een gesprek om het testen van generatiefouten in te schakelen."
       ],
       "Performance": [
         "Performantie"
@@ -5961,11 +6168,26 @@
       "Trigger conversations limit": [
         "Activeer gesprekslimiet"
       ],
+      "Trigger generation rejected": [
+        "Triggergeneratie afgewezen"
+      ],
+      "Trigger harmful content": [
+        "Schadelijke inhoud activeren"
+      ],
+      "Trigger high demand": [
+        "Activeer een hoge vraag"
+      ],
       "Trigger messages limit": [
         "Limiet triggerboodschappen"
       ],
       "Trigger spaces limit": [
         "Limiet triggerruimtes"
+      ],
+      "Trigger stream disconnected": [
+        "Triggerstream losgekoppeld"
+      ],
+      "Triggers generation error messages with tier-specific messaging. User type: ${ lumoUserType }": [
+        "Activeert het genereren van foutmeldingen met laagspecifieke berichten. Gebruikerstype: ${ lumoUserType }"
       ],
       "Unsynced conversations": [
         "Niet-gesynchroniseerde gesprekken"
@@ -6250,6 +6472,9 @@
       "99.95% SLA": [
         "99,95% SLA"
       ],
+      "Access all countries": [
+        "Toegang tot alle landen"
+      ],
       "Ad-blocker and malware protection": [
         "Advertentieblokkering en bescherming tegen malware"
       ],
@@ -6399,6 +6624,9 @@
       "Multiple admin roles": [
         "Meerdere beheerdersfuncties"
       ],
+      "No streaming support": [
+        "Geen streaming-ondersteuning"
+      ],
       "Online document editor": [
         "Online document editor"
       ],
@@ -6530,6 +6758,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ongelimiteerd(e) volume/bandbreedte"
+      ],
+      "Unlock streaming": [
+        "Deblokkeer streaming"
       ],
       "Up to ${ n } user": [
         "Tot ${ n } gebruiker",
@@ -6911,6 +7142,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } land",
+        "${ n } landen"
+      ],
       "Access advanced VPN features": [
         "Gebruik geavanceerde VPN-functies"
       ],
