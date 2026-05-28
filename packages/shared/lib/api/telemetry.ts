@@ -43,7 +43,7 @@ export enum TelemetryMeasurementGroups {
     mailPostSignupOneDollar = 'mail.web.post_signup_one_dollar',
     mailPagingControls = 'mail.web.paging_controls',
     mailExpandBlockquotes = 'mail.web.expand_blockquotes',
-    categoriesView = 'mail.web.categories_view',
+    categoriesView = 'any.web.categories_view',
     passNudge = 'mail.web.pass_nudge',
     mailNewsletterSubscriptions = 'mail.web.newsletter_subscriptions',
     unlimitedOffer2025 = 'any.web.unlimited_offer_2025',
