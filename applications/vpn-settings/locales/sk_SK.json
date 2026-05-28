@@ -533,6 +533,9 @@
       "Get in touch": [
         "Skontaktovať sa"
       ],
+      "Get limited-time offer": [
+        "Získať časovo obmedzenú ponuku"
+      ],
       "Get more": [
         "Získať viac"
       ],
@@ -574,9 +577,6 @@
       ],
       "Go to panel ${ index }": [
         "Prejsť na panel ${ index }"
-      ],
-      "Google": [
-        "Google"
       ],
       "Got it": [
         "Rozumiem"
@@ -727,6 +727,9 @@
       ],
       "No": [
         "Nie"
+      ],
+      "No, thanks": [
+        "Nie, ďakujem"
       ],
       "OK": [
         "OK"
@@ -6605,11 +6608,6 @@
         "Ak chcete kalendár exportovať ako ICS súbor, vyberte ${ boldExport }."
       ]
     },
-    "Import provider": {
-      "More import options": [
-        "Ďalšie možnosti importu"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } z ${ totalContacts } kontaktov nebude importované. Kliknite pre detaily"
@@ -7275,9 +7273,6 @@
       ],
       "Choose an Entity ID to continue.": [
         "Pre pokračovanie vyberte ID subjektu."
-      ],
-      "Choose your service to connect with": [
-        "Vyberte si službu na pripojenie"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite na \"Požiadať o nový kód\" pre zaslanie nového overovacieho kódu na ${ strong }. Ak je toto telefónne číslo nesprávne, kliknite na tlačidlo \"Upraviť\" pre jeho opravu."
@@ -11278,6 +11273,14 @@
       ],
       "Set up your account with your Porkbun domain.": [
         "Nastavte si účet s doménou Porkbun."
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for your first month": [
+        "za váš prvý mesiac"
+      ],
+      "Get ${ planTitle } for ${ discountedPriceElement }": [
+        "Získajte ${ planTitle } za ${ discountedPriceElement }"
       ]
     },
     "meet_2025: Addon": {

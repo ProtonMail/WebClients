@@ -319,7 +319,7 @@
         "Bevestigen"
       ],
       "Confirm email": [
-        "Bevestig Emailadres"
+        "Bevestig e-mailadres"
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Bevestig het openen van link ${ linkToShow }"
@@ -380,6 +380,9 @@
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Doorgaan met ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
+      "Continue with Free": [
+        "Doorgaan met gratis"
       ],
       "Continue with Google": [
         "Ga verder met Google"
@@ -573,6 +576,9 @@
       "Disable categories": [
         "Categorieën uitschakelen"
       ],
+      "Disable category": [
+        "Categorieën uitschakelen"
+      ],
       "Disable recovery phrase": [
         "Herstelzin uitschakelen"
       ],
@@ -723,6 +729,9 @@
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring } activeren"
       ],
+      "Enable category": [
+        "Categorie inschakelen"
+      ],
       "enable desktop notifications": [
         "schakel desktopmeldingen in"
       ],
@@ -794,6 +803,9 @@
       ],
       "Generate key": [
         "Genereer sleutel"
+      ],
+      "Generate missing keys": [
+        "Ontbrekende sleutels genereren"
       ],
       "Generate new phrase": [
         "Genereer nieuwe zin"
@@ -1493,6 +1505,9 @@
       ],
       "Set as default": [
         "Als standaard instellen"
+      ],
+      "Set as default mail application": [
+        "Stel in als standaard e-mailapplicatie"
       ],
       "Set catch-all": [
         "Stel catch-all in"
@@ -2944,19 +2959,19 @@
         "Kopieer de activatielink naar klembord"
       ],
       "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
-        "Kopieer onderstaande code en plak ze in de DNS sectie van je domein beheerder. Je vindt voorbeelden en hulpzame tips ${ hereHref }"
+        "Kopieer onderstaande code en plak ze in de DNS-sectie van uw domein beheerder. U vindt voorbeelden en hulpzame tips ${ hereHref }"
       ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM voegt een digitale handtekening toe aan elke e-mail, zodat ontvangers kunnen controleren of het bericht daadwerkelijk van uw domein afkomstig is en niet is gewijzigd tijdens de verzending. Zonder DKIM worden berichten mogelijk als minder betrouwbaar beschouwd."
       ],
       "DKIM records": [
-        "DKIM records"
+        "DKIM-records"
       ],
       "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
         "DMARC bouwt voort op SPF en DKIM door ontvangende servers te vertellen hoe ze berichten moeten afhandelen die niet aan deze controles voldoen. Het helpt uw ​​domein te beschermen tegen namaak en verbetert de algehele betrouwbaarheid van de levering."
       ],
       "DMARC records": [
-        "DMARC records"
+        "DMARC-records"
       ],
       "Domain added": [
         "Domein toegevoegd"
@@ -3074,7 +3089,7 @@
         "In behandeling"
       ],
       "Please add the following records in your DNS console of your domain provider:": [
-        "Voeg volgende DNS records toe je het configuratiepaneel van je domein provider."
+        "Voeg volgende DNS-records toe in het configuratiepaneel van uw domein provider."
       ],
       "Please leave this window open until we're done creating all the users.": [
         "Laat dit venster open staan ​​totdat we alle gebruikers hebben aangemaakt."
@@ -3113,7 +3128,7 @@
         "Instellingen"
       ],
       "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
-        "Deel de activatielink met de gebruikers zodat ze hun ${ BRAND_NAME } account kunnen opeisen"
+        "Deel de activatielink met de gebruikers zodat ze hun ${ BRAND_NAME }-account kunnen opeisen"
       ],
       "Sign in to Google Workspace": [
         "Inloggen bij Google Workspace"
@@ -3122,7 +3137,7 @@
         "Grootte"
       ],
       "SPF records": [
-        "SPF Records"
+        "SPF-Records"
       ],
       "Start migrating": [
         "Migratie starten"
@@ -4991,6 +5006,9 @@
       "/month": [
         "/maand"
       ],
+      "/user /month": [
+        "/gebruiker/maand"
+      ],
       "/user per month": [
         "/gebruiker per maand"
       ]
@@ -5163,6 +5181,12 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "Met ${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } kunt u samenwerken met anderen in een veilige, versleutelde omgeving."
       ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } is niet uw standaard e-mailapplicatie."
+      ],
+      "${ MAIL_APP_NAME } is your default mail application.": [
+        "${ MAIL_APP_NAME } is uw standaard e-mailapplicatie."
+      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } houdt uw bedrijfsgegevens veilig en laat u versleutelde e-mails verzenden naar iedereen."
       ],
@@ -5186,6 +5210,9 @@
       ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sorteer automatisch inkomende berichten voordat ze uw inbox bereiken."
+      ],
+      "Available storage: ${ storageText }": [
+        "Beschikbare opslagruimte: ${ storageText }"
       ],
       "Available with ${ title }": [
         "Beschikbaar met ${ title }"
@@ -5249,6 +5276,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Versleutelen en importeren van contacten... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Genoeg ruimte voor jarenlang e-mails, bijlagen en meer."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Zorg voor veilige toegang tot gegevens van de organisatie, zelfs als uw team op afstand is of openbare wifi gebruikt."
@@ -5319,6 +5349,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lees, beantwoord en houd uw Gmail bij vanuit ${ MAIL_APP_NAME }"
       ],
+      "Select which categories you want to add and if you want to receive push notifications for each category.": [
+        "Selecteer welke categorieën u wilt toevoegen en of u per categorie pushmeldingen wilt ontvangen."
+      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Stel accounts in voor alle gebruikers en nodig hen uit om lid te worden van ${ BRAND_NAME }."
       ],
@@ -5362,8 +5395,11 @@
       "Track the status and activity of your referrals": [
         "Volg de status en activiteiten van uw doorverwijzingen"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Ontgrendel 15 GB opslagruimte voor slechts ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
-        "Upgrade naar ${ planName } om te koppelen met maximaal ${ MAX_SYNC_PAID_USER } accounts"
+        "Upgrade naar ${ planName } om te koppelen met maximaal ${ MAX_SYNC_PAID_USER }-accounts"
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Upgrade om ${ activatePmUser } te krijgen voor een korter, makkelijk te onthouden e-mailadres, toegevoegd aan uw huidige adres."
@@ -5377,17 +5413,26 @@
       "We can't access ${ boldEmails } anymore.": [
         "We hebben geen toegang meer tot ${ boldEmails }."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "We pauzeren de import bij 80% opslagruimte om ruimte te reserveren voor nieuwe berichten."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "We halen uw oude e-mails op en koppelen uw Gmail-account aan ${ MAIL_APP_NAME }, zodat nieuwe berichten automatisch worden weergegeven"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "We zijn begonnen met het importeren van uw e-mails uit Gmail. We laten het u weten als het klaar is."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Het spijt ons u te moeten zien vertrekken. Als u even tijd heeft, zouden we het zeer op prijs stellen te horen waarom u wilt annuleren. Uw feedback helpt ons ${ BRAND_NAME } beter te maken voor iedereen."
       ],
+      "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Met nieuwe e-mailcategorieën komen alleen belangrijke berichten in uw primaire inbox terecht. Categorieën werken net als spamfilters. ${ MAIL_APP_NAME } leest nooit uw e-mails en deelt uw gegevens nooit."
+      ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
-        "U hebt al een Gmail-adres dat wordt doorgestuurd naar ${ MAIL_APP_NAME }. Koppel het hieronder om e-mails rechtstreeks vanuit ${ MAIL_APP_NAME } te verzenden en te ontvangen."
+        "U heeft al een Gmail-adres dat wordt doorgestuurd naar ${ MAIL_APP_NAME }. Koppel het hieronder om e-mails rechtstreeks vanuit ${ MAIL_APP_NAME } te verzenden en te ontvangen."
       ],
       "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
-        "U hebt al Gmail-adressen die worden doorgestuurd naar ${ MAIL_APP_NAME }. Koppel er één hieronder om e-mails rechtstreeks vanuit ${ MAIL_APP_NAME } te verzenden en te ontvangen."
+        "U heeft al Gmail-adressen die worden doorgestuurd naar ${ MAIL_APP_NAME }. Koppel er één hieronder om e-mails rechtstreeks vanuit ${ MAIL_APP_NAME } te verzenden en te ontvangen."
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "U kunt de lijst van domeinen aanpassen waar bepaalde automatische functies in de ${ PASS_APP_NAME } browser extensie (Automatisch aanvullen, automatisch suggesties geven, automatisch opslaan) niet mogen worden uitgevoerd."
@@ -5418,11 +5463,17 @@
         "U stuurt ${ numAddressesOrSync } Gmail-adressen door naar ${ MAIL_APP_NAME }."
       ],
       "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
-        "U hebt ${ MAX_SYNC_PAID_USER } Gmail-adres gekoppeld. Als u nog een adres wilt toevoegen, moet u eerst een van uw gekoppelde accounts ontkoppelen.",
-        "U hebt ${ MAX_SYNC_PAID_USER } Gmail-adressen gekoppeld. Als u nog een adres wilt toevoegen, moet u eerst een van uw gekoppelde accounts ontkoppelen."
+        "U heeft ${ MAX_SYNC_PAID_USER } Gmail-adres gekoppeld. Als u nog een adres wilt toevoegen, moet u eerst een van uw gekoppelde accounts ontkoppelen.",
+        "U heeft ${ MAX_SYNC_PAID_USER } Gmail-adressen gekoppeld. Als u nog een adres wilt toevoegen, moet u eerst een van uw gekoppelde accounts ontkoppelen."
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
-        "U hebt één extern e-mailadres gekoppeld aan ${ MAIL_APP_NAME }."
+        "U heeft één extern e-mailadres gekoppeld aan ${ MAIL_APP_NAME }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Uw gratis ${ MAIL_APP_NAME }-account wordt geleverd met beperkte opslagruimte, dus we importeren alleen ${ newUserStorageText } van uw meest recente Gmail-berichten"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Uw gratis ${ MAIL_APP_NAME }-account wordt geleverd met beperkte opslagruimte, dus we importeren alleen uw meest recente Gmail-e-mails."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Uw abonnement ondersteunt ${ MAX_SYNC_FREE_USER } Gmail-adres.",
@@ -6623,6 +6674,9 @@
       "Enable auto-renew": [
         "Automatisch verlengen activeren"
       ],
+      "Enter your extra password": [
+        "Voer uw extra wachtwoord in"
+      ],
       "Explore plans": [
         "Verken abonnementen"
       ],
@@ -6810,6 +6864,9 @@
       ],
       "Unable to recover data": [
         "Kan gegevens niet herstellen"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Ontgrendel ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "Upgraden"
@@ -7484,6 +7541,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Er zijn te veel mappen op uw externe account. Pas de import aan om enkele mappen te verwijderen."
+      ],
+      "There was an error, please try again.": [
+        "Er is een fout opgetreden, probeert u het nog eens."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
@@ -8276,7 +8336,7 @@
     },
     "Feature": {
       "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
-        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app"
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }-desktop app"
       ],
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } VPN-verbinding",
@@ -8284,6 +8344,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } account protection": [
         "${ PROTON_SENTINEL_NAME } account bescherming"
+      ],
+      "10+ premium features": [
+        "10+ premium functies"
       ],
       "15 GB storage": [
         "15 GB opslagruimte"
@@ -8317,6 +8380,12 @@
       "Continue": [
         "Doorgaan"
       ],
+      "Custom email domain": [
+        "Aangepast e-maildomein"
+      ],
+      "Email addresses": [
+        "E-mailadressen"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Versleutelde cloudopslag voor bestanden, foto's en documenten"
       ],
@@ -8343,6 +8412,9 @@
       ],
       "Short domain @pm.me": [
         "Kort domein @pm.me"
+      ],
+      "Storage": [
+        "Opslagruimte"
       ],
       "Torrenting support (P2P)": [
         "Ondersteuning voor Torrents (P2P)"
@@ -8711,6 +8783,9 @@
     "Force upgrade safety review": {
       "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
         "Ik begrijp dat ik me niet meer kan aanmelden bij oudere versies van ${ BRAND_NAME } apps."
+      ],
+      "Learn more": [
+        "Meer informatie"
       ]
     },
     "Form heading": {
@@ -8811,6 +8886,9 @@
       ],
       "Group address:": [
         "Groepsadres:"
+      ],
+      "Roles and permission:": [
+        "Rollen en machtiging:"
       ]
     },
     "Group member count": {
@@ -8868,6 +8946,14 @@
       ],
       "Group membership": [
         "Groepslidmaatschap"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "Algemeen"
+      ],
+      "Roles and permissions": [
+        "Rollen en permissies"
       ]
     },
     "Header": {
@@ -9071,6 +9157,9 @@
       ],
       "Contact us": [
         "Contacteer ons"
+      ],
+      "Downloads": [
+        "Downloads"
       ],
       "Enjoying ${ planName }?": [
         "Tevreden met ${ planName }?"
@@ -9507,6 +9596,12 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } U verliest de toegang tot alle huidige versleutelde gegevens in uw account als u doorgaat."
       ],
+      "${ BRAND_NAME } Free": [
+        "${ BRAND_NAME } Free"
+      ],
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } wordt onafhankelijk gefinancierd en werkt zonder advertenties. Hieronder vindt u voorbeelden van hoe deze onafhankelijkheid in de praktijk is toegepast."
+      ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } is privacy waarop u kunt vertrouwen, gegarandeerd door sterke versleuteling, open sourcecode en Zwitserse privacywetten. Wij zijn van mening dat niemand uw gegevens mag misbruiken, punt uit. Onze technologie en ons bedrijf zijn gebaseerd op deze fundamenteel sterkere definitie van privacy."
       ],
@@ -9609,6 +9704,9 @@
       ],
       "${ name } for Windows": [
         "${ name } voor Windows"
+      ],
+      "${ name } is not available": [
+        "${ name } is niet beschikbaar"
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: niet quarantaine of afwijzing van ongeautoriseerde e-mails. Meestal gebruiken mensen dit beleid alleen om problemen te krijgen of te testen."
@@ -9770,6 +9868,9 @@
       ],
       "(formerly Twitter)": [
         "(voorheen Twitter)"
+      ],
+      "**${ appName }** is not available for your account.": [
+        "**${ appName }** is niet beschikbaar voor uw account."
       ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** wordt niet ondersteund in uw organisatie **${ organizationName }**."
@@ -9935,6 +10036,10 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Voeg uw naam en logo toe om een gepersonaliseerde ervaring voor uw organisatie te maken."
+      ],
+      "Adding ${ total } gateway server": [
+        "${ total } gateway server wordt toegevoegd",
+        "${ total } gateway servers worden toegevoegd"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Het toevoegen van een extern e-mailadres zal end-to-end versleuteling voor alle e-mailcommunicatie binnen die groep uitschakelen. Wilt u doorgaan?"
@@ -10214,6 +10319,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Voordat u e-mails kunt verzenden en ontvangen van uw nieuwe adressen, moet u versleutelingssleutels aanmaken."
       ],
+      "BEST FOR TV": [
+        "BESTE VOOR TV"
+      ],
       "Beta": [
         "Bèta"
       ],
@@ -10340,6 +10448,9 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Ga door om deze entiteit te verbinden met uw ${ BRAND_NAME } organisatie."
       ],
+      "Continue with ${ BRAND_NAME } Free": [
+        "Ga verder met ${ BRAND_NAME } Free"
+      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Doorgaan zal uw ${ BRAND_NAME }-account verbinden met ${ name }."
       ],
@@ -10379,6 +10490,10 @@
       ],
       "Create a new code on your TV and try again.": [
         "Maak een nieuwe code aan op uw tv en probeer het opnieuw."
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Maak een beveiligde cloud voor ${ memberCount } lid",
+        "Maak een beveiligde cloud voor ${ memberCount } leden"
       ],
       "Create an account": [
         "Maak een account aan"
@@ -10897,6 +11012,9 @@
       "Get visibility into account access": [
         "Krijg inzicht in accounttoegang"
       ],
+      "Get VPN Plus": [
+        "Neem VPN Plus"
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Geef de token een beschrijvende naam, zoals de dienst waarmee u deze gaat gebruiken, en selecteer één van de actieve aangepaste domeinadressen. Enkel dit adres zal e-mails kunnen verzenden met dit token."
       ],
@@ -11102,6 +11220,9 @@
       ],
       "Include device, location, and IP details": [
         "Inclusief apparaat-, locatie- en IP-gegevens"
+      ],
+      "Included": [
+        "inbegrepen"
       ],
       "Increase your account security by verifying your email address.": [
         "Verhoog de beveiliging van uw account door uw e-mailadres te verifiëren."
@@ -11991,6 +12112,12 @@
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Toon de afbeelding van elke afzender in deze berichtlijst. De afzenders initialen zullen worden getoond als er geen foto beschikbaar is."
       ],
+      "Show fewer benefits": [
+        "Toon minder voordelen"
+      ],
+      "Show more benefits": [
+        "Toon meer voordelen"
+      ],
       "Show original message": [
         "Toon origineel bericht"
       ],
@@ -12124,6 +12251,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Aanbevolen door TechRadar Pro met een beoordeling van 4,2 van de 5 sterren."
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Tijdelijk niet leverbaar wegens grote vraag. Probeer het later opnieuw."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tijdelijk onbeschikbaar. Probeer later opnieuw."
@@ -12303,7 +12433,7 @@
         "Dit bericht zal het supportteam niet bereiken. Als u een probleem heeft met onze dienst of als er vanuit onze kant actie ondernomen moet worden ${ supportLink }."
       ],
       "This password is used to login to your ${ BRAND_NAME } account": [
-        "Dit wachtwoord wordt gebruikt om in te loggen op uw ${ BRAND_NAME } account."
+        "Dit wachtwoord wordt gebruikt om in te loggen op uw ${ BRAND_NAME }-account."
       ],
       "This service is not available to users signing in with single sign-on.": [
         "Deze service is niet beschikbaar voor gebruikers die inloggen met Single Sign-On."
@@ -12419,6 +12549,9 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Om uw vergrendelde gegevens te decoderen en te bekijken na een wachtwoordreset, selecteert u een herstelmethode."
       ],
+      "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
+        "Om post-kwantumbeveiliging in te schakelen, moet u het genereren van uw nieuwe post-kwantumcoderingssleutels voltooien."
+      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Om de hoogst mogelijke beveiliging van uw account te garanderen, schakelt u **Herstel via herstel-e-mail** uit."
       ],
@@ -12518,6 +12651,9 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Tenzij u uitlogt of uw wachtwoord wijzigt, blijft uw sessie actief. Sessies verlopen na 60 dagen van inactiviteit."
       ],
+      "Unlock streaming with VPN Plus.": [
+        "Ontgrendel streaming met VPN Plus."
+      ],
       "Unsaved changes": [
         "Niet-opgeslagen wijzigingen"
       ],
@@ -12533,8 +12669,14 @@
       "Unverified email address.": [
         "Niet-geverifieerd e-mailadres."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Upgrade op elk gewenst moment om de rest over te brengen"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Upgrade of maak op elk gewenst moment ruimte vrij om de rest over te brengen"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Upgrade om een korter @pm.me adres aan uw account toe te voegen dat gemakkelijker te delen is. Het staat voor \"${ MAIL_APP_NAME } me\" of \"Private Message me\"."
@@ -12665,6 +12807,9 @@
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
+      "VPN Plus": [
+        "VPN Plus"
+      ],
       "VPN with dedicated servers and IP addresses": [
         "VPN met toegewijde servers en IP-adressen"
       ],
@@ -12781,6 +12926,9 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Indien uitgeschakeld, voorkomt dit dat externe afbeeldingen worden geladen zonder dat u het weet."
+      ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "Wanneer ingeschakeld, zullen we controleren of ${ MAIL_APP_NAME } uw standaard e-mail applicatie is en u informeren indien dit niet het geval is."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Wanneer u SAML inschakelt voor ${ appName } in uw identiteitsprovider, kunt u worden gevraagd om de callback (ACS) URL en uitgevende ID te gebruiken. Kopieer en plak onderstaande gegevens in de velden van uw identiteitsprovider."
@@ -13810,7 +13958,7 @@
         "${ Brand } eindigend met ${ Last4 }"
       ],
       "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } Desktop app": [
-        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } Desktop app"
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }-Desktop app"
       ],
       "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app"
@@ -13850,10 +13998,13 @@
         "${ pricePerMonthWithCurrency } / maand"
       ],
       "${ PROTON_SENTINEL_NAME } account protection": [
-        "${ PROTON_SENTINEL_NAME } account bescherming"
+        "${ PROTON_SENTINEL_NAME }-account bescherming"
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME } bescherming"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tekens"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
@@ -14138,7 +14289,7 @@
         "Boekingen, factureringen en bestellingen"
       ],
       "Brand your workspace": [
-        "Geef je werkplek een eigen uitstraling"
+        "Geef uw werkplek een eigen uitstraling"
       ],
       "Browser": [
         "Browser"
@@ -14446,6 +14597,9 @@
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
         "${ DARK_WEB_MONITORING_NAME } inschakelen voor ${ domain.DomainName }"
+      ],
+      "Enable categories": [
+        "Categorieën inschakelen"
       ],
       "Enabled": [
         "Ingeschakeld"
@@ -14862,7 +15016,7 @@
         "Alleen beschikbaar met betaalde abonnementen van ${ PASS_SHORT_APP_NAME }"
       ],
       "Open-source code": [
-        "Open-source code"
+        "Open source code"
       ],
       "OpenVPN password": [
         "OpenVPN-wachtwoord"
@@ -16183,11 +16337,26 @@
       "Built-in chat": [
         "Ingebouwde chat"
       ],
+      "Cloud storage and file sharing": [
+        "Cloudopslag en bestanden delen"
+      ],
+      "Data retention policies": [
+        "Dataretentiebeleid"
+      ],
+      "Document and spreadsheet editor": [
+        "Document en rekenblad editor"
+      ],
+      "Email writing assistant": [
+        "Schrijfassistent voor e-mail"
+      ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end versleutelde schermdeling en korte chats tijdens telefoongesprekken"
       ],
       "Hosts can record meetings locally on their computers": [
         "Hosts kunnen vergaderingen lokaal op hun computers opnemen"
+      ],
+      "Includes Meet Professional": [
+        "Inclusief Meet Professional"
       ],
       "Meeting recording": [
         "Opname van vergadering"
@@ -16195,8 +16364,17 @@
       "One active meeting at a time": [
         "Eén actieve vergadering tegelijkertijd"
       ],
+      "Password manager with team vaults": [
+        "Wachtwoordmanager met teamkluizen"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Privé AI-chat (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Scherm delen"
+      ],
+      "Secure mail and calendar": [
+        "Beveiligde e-mail en agenda"
       ],
       "Unlimited meetings per day": [
         "Onbeperkt aantal vergaderingen per dag"
@@ -16212,6 +16390,9 @@
       "Video meetings, ${ n } participant": [
         "Videovergaderingen, ${ n } deelnemer",
         "Videovergaderingen, ${ n } deelnemers"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN met advertentieblokkering en bescherming tegen malware"
       ]
     },
     "meet_2025: Info": {
@@ -16881,6 +17062,9 @@
       "99.95% SLA": [
         "99,95% SLA"
       ],
+      "Access all countries": [
+        "Toegang tot alle landen"
+      ],
       "Activity logs and policy": [
         "Activiteitenlogboek en beleid"
       ],
@@ -17063,6 +17247,9 @@
       "Multiple admin roles": [
         "Meerdere beheerdersfuncties"
       ],
+      "No streaming support": [
+        "Geen streaming-ondersteuning"
+      ],
       "No-logs policy": [
         "Beleid zonder logboeken"
       ],
@@ -17228,6 +17415,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ongelimiteerd(e) volume/bandbreedte"
+      ],
+      "Unlock streaming": [
+        "Deblokkeer streaming"
       ],
       "Up to ${ n } user": [
         "Tot ${ n } gebruiker",
@@ -17703,6 +17893,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } land",
+        "${ n } landen"
+      ],
       "Access advanced VPN features": [
         "Gebruik geavanceerde VPN-functies"
       ],
@@ -17917,7 +18111,7 @@
         "Tweestapsverificatie is niet langer vereist"
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
-        "Uw ${ BRAND_NAME } adres is klaar voor gebruik"
+        "Uw ${ BRAND_NAME }-adres is klaar voor gebruik"
       ],
       "Zoom video conferencing settings have been updated": [
         "Zoom Instellingen voor videoconferenties zijn bijgewerkt"
@@ -18409,6 +18603,9 @@
       ],
       "Plain text": [
         "Platte tekst"
+      ],
+      "Push notifications": [
+        "Pushberichten"
       ],
       "Receive from all": [
         "Ontvang van alle"
@@ -19784,6 +19981,16 @@
         "Upgraden naar ${ upsellPlanTitle }"
       ]
     },
+    "PQC account key generation": {
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Kan sleutels niet genereren. Om post-kwantumbeveiliging te activeren, moet u het genereren van uw nieuwe post-kwantumcoderingssleutels voltooien.\n\n${ goToSettingsLink } en selecteer 'Ontbrekende sleutels genereren'."
+      ]
+    },
+    "PQC adress key generation": {
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys for each address.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
+        "Kan adressleutels niet genereren. Om post-kwantumbeveiliging te activeren, moet u het genereren van uw nieuwe post-kwantumcoderingssleutels voor elk adres voltooien.\n\n${ goToSettingsLink } en selecteer 'Ontbrekende sleutels genereren'."
+      ]
+    },
     "PQC compatibility warning": {
       "**You must update all ${ BRAND_NAME } apps**: your new keys won't work on older app versions.": [
         "**U moet alle apps van ${ BRAND_NAME } updaten**: uw nieuwe sleutels werken niet in oudere app-versies."
@@ -20262,7 +20469,7 @@
         "Of ${ downloadRecoveryKitSwitchButton } in plaats."
       ],
       "Your **recovery phrase** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
-        "Uw **herstelzin** laat u uw ${ BRAND_NAME } account herstellen als u bent buitengesloten."
+        "Uw **herstelzin** laat u uw ${ BRAND_NAME }-account herstellen als u bent buitengesloten."
       ]
     },
     "RecoveryPhrase: Title": {
@@ -20937,7 +21144,7 @@
     },
     "safety_review": {
       "${ BRAND_NAME } Account email": [
-        "${ BRAND_NAME } Account e-mailadres"
+        "${ BRAND_NAME }-account e-mailadres"
       ],
       "Account protection": [
         "Account beveiliging"
@@ -21108,7 +21315,7 @@
         "Om zeker te zijn dat het uw telefoonnummer is, voer de verificatiecode in die naar ${ boldPhoneNumber } is verzonden."
       ],
       "To make sure this address is really yours, we’ll send an email with a verification link.": [
-        "Om er zeker van te zijn dat dit adres echt van jou is, sturen we een e-mail met een verificatielink."
+        "Om er zeker van te zijn dat dit adres echt van u is, sturen we een e-mail met een verificatielink."
       ],
       "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
         "Upgrade uw abonnement om noodtoegang voor uw account in te schakelen. Hiermee kunt u 1 tot 5 personen aanwijzen die uw wachtwoord voor u kunnen resetten."
@@ -21376,7 +21583,7 @@
         "Download uw herstelzin om ervoor te zorgen dat u altijd toegang heeft tot uw ${ BRAND_NAME }-account."
       ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
-        "U hebt acties aanbevolen van ${ PROTON_SENTINEL_NAME }."
+        "U heeft acties aanbevolen van ${ PROTON_SENTINEL_NAME }."
       ]
     },
     "Server-Info": {
@@ -21712,6 +21919,12 @@
     "Setting": {
       "Enable Photos section": [
         "Sectie voor foto's inschakelen"
+      ],
+      "Get updates about comments via email": [
+        "Ontvang updates over reacties via e-mail"
+      ],
+      "Include document name in email notifications": [
+        "Documentnaam opnemen in e-mailnotificaties"
       ]
     },
     "Settings description": {
@@ -24032,6 +24245,14 @@
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief versiegeschiedenis, versleuteld bestanden delen en meer."
       ]
     },
+    "Tab": {
+      "For personal use": [
+        "Voor persoonlijk gebruik"
+      ],
+      "For professional use": [
+        "Voor professioneel gebruik"
+      ]
+    },
     "Tab in domain modal": {
       "Addresses": [
         "Adressen"
@@ -24341,6 +24562,9 @@
       "Add another notification to remind you of this event": [
         "Voeg nog een melding toe om je te herinneren aan deze afspraak"
       ],
+      "Add categories": [
+        "Categorieën toevoegen"
+      ],
       "Add contact group name": [
         "Naam contactgroep toevoegen"
       ],
@@ -24515,6 +24739,9 @@
       "Catch-all address": [
         "Catch-all adres"
       ],
+      "Categories": [
+        "Categorieën"
+      ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"
       ],
@@ -24535,6 +24762,9 @@
       ],
       "Change second password": [
         "Verander tweede wachtwoord"
+      ],
+      "Check your default mail application": [
+        "Controleer uw standaard e-mailapplicatie"
       ],
       "Choose a provider": [
         "Kies een provider"
@@ -24604,6 +24834,9 @@
       ],
       "Contact us": [
         "Contacteer ons"
+      ],
+      "Continue with free storage": [
+        "Ga door met gratis opslag"
       ],
       "Continue with partial import?": [
         "Doorgaan met gedeeltelijke invoer?"
@@ -25082,6 +25315,9 @@
       "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
         "Krijg ${ planMaxSpace } opslagruimte voor uw bestanden, foto's en documenten met ${ planName }. ${ upgradeButton }"
       ],
+      "Get ${ VPN_APP_NAME } on your TV": [
+        "Ontvang ${ VPN_APP_NAME } op uw tv"
+      ],
       "Get ${ vpnPlus } to access all servers": [
         "Neem ${ vpnPlus } om toegang te krijgen tot alle servers"
       ],
@@ -25111,6 +25347,9 @@
       ],
       "Get more from your VPN": [
         "Haal meer uit uw VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Krijg meer opslagruimte met ${ MAIL_APP_NAME } Plus"
       ],
       "Get started": [
         "Aan de slag"
@@ -26233,6 +26472,9 @@
       "Each imported email will have this label": [
         "Elke geïmporteerde e-mail heeft dit label"
       ],
+      "Early access to new apps and features.": [
+        "Vroegtijdige toegang tot nieuwe applicaties en functies."
+      ],
       "Edit folder names": [
         "Mapnamen bewerken"
       ],
@@ -26385,6 +26627,9 @@
       ],
       "This feature is only available on Beta": [
         "Deze functionaliteit is allen beschikbaar in Beta"
+      ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users on older apps to encrypt data they send to you": [
+        "Dit is de standaardsleutel die door andere ${ MAIL_APP_NAME }-gebruikers in oudere apps wordt gebruikt om gegevens te versleutelen die ze naar u sturen"
       ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
         "Dit is de standaardsleutel die door andere ${ MAIL_APP_NAME }-gebruikers wordt gebruikt om gegevens te versleutelen die zij u verzenden."
