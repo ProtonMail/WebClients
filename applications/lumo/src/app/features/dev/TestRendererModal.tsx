@@ -143,6 +143,89 @@ const TEST_CONTENT_SAMPLES = {
         name: 'Image Mixed with Markdown',
         content: `# Article with Images\n\nSome **introductory** text before the image.\n\n![Header image](https://example.com/header.jpg)\n\n## Section\n\n- List item with ![icon](https://example.com/icon.png) inline\n- Another item\n\n> Blockquote with an image: ![quote](https://example.com/quote.png)\n\nFinal paragraph.`,
     },
+    artifact_panel_test: {
+        name: 'Artifact Panel & Chip Test',
+        content: `Here is a revised version. It maintains a stern, no-nonsense tone but removes the emotional language ("disappointing," "neglect") to focus strictly on the facts and the breach of the rental agreement. It is direct and leaves no room for ambiguity, yet it avoids the personal attacks that could backfire legally.
+
+<artifact type="document" title="Final Notice: Unresolved Maintenance and Rent Adjustment">
+Subject: URGENT: Unresolved Maintenance Issues and Rent Adjustment Request - [Your Address/Unit Number]
+
+Dear Mr. Big Pants,
+
+I am writing to formally notify you that the following critical issues in my unit remain unresolved despite my previous requests:
+
+1.  **Broken Window:** The window in the [specific room] is still broken. This is a security hazard and a violation of the warranty of habitability.
+2.  **Noise Nuisance:** Your dog's excessive barking continues to disturb the peace and quiet enjoyment of the property.
+3.  **Uninstalled Washer:** The washing machine provided has not been installed, rendering a promised amenity unusable.
+
+These failures constitute a material breach of the lease agreement. As a result, the current rent amount is no longer justified given the diminished condition and utility of the unit.
+
+I am hereby requesting a rent reduction of [Amount or Percentage]% effective immediately, retroactive to [Date of first report], until these issues are fully resolved. Additionally, I require that you arrange for the installation of the washing machine by [Date].
+
+Please provide written confirmation of this rent adjustment and a scheduled date for the washer installation by [Response Deadline, e.g., 5 business days]. Failure to address these matters will leave me no choice but to file a formal complaint with the local housing authority and pursue all applicable legal remedies, including rent withholding and damages.
+
+I expect a prompt response.
+
+Sincerely,
+
+[Your Name]
+[Your Phone Number]
+</artifact>
+
+**Key adjustments in this version:**
+*   **Removed Emotional Language:** Replaced "disappointing" and "neglect" with "material breach" and "failure." This sounds more legal and less personal.
+*   **Direct Tone:** Uses "I am hereby requesting" and "I require" to establish authority.
+*   **Clear Consequences:** States the next steps as a logical outcome of inaction rather than a threat.
+
+Would you like to refine the deadline date or the specific percentage before sending?`,
+    },
+    artifact_simple_test: {
+        name: 'Simple Artifact Test',
+        content: `This is a simple test to debug the artifact functionality.
+
+<artifact type="code" language="javascript" title="Hello World">
+function helloWorld() {
+    console.log("Hello, World!");
+}
+
+helloWorld();
+</artifact>
+
+This should show an artifact chip and panel.`,
+    },
+    artifact_debug_test: {
+        name: 'Artifact Debug Test (Multi)',
+        content: `Here are multiple artifacts to test the rendering:
+
+<artifact type="document" title="Sample Document">
+# Sample Document
+
+This is a **markdown** document with some content.
+
+- Item 1
+- Item 2
+- Item 3
+
+## Code Example
+
+Here's some inline code: \`console.log("test")\`
+</artifact>
+
+Some text between artifacts.
+
+<artifact type="code" language="python" title="Python Script">
+def factorial(n):
+    if n <= 1:
+        return 1
+    return n * factorial(n - 1)
+
+# Test the function
+result = factorial(5)
+print(f"5! = {result}")
+</artifact>
+
+This test should show two artifacts: one document and one code block.`,
+    },
 };
 
 interface RouteParams {
@@ -244,6 +327,7 @@ export const TestRendererModal = ({ open, onClose }: TestRendererModalProps) => 
                 content: sample.content,
                 createdAt: new Date(now.getTime() + index * 2000 + 1000).toISOString(),
                 parentId: userMessageId,
+                status: 'succeeded',
             };
 
             dispatch(addMessage(userMessage));
