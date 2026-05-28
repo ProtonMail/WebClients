@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { Input } from '@proton/atoms/Input/Input';
 import { Spotlight, usePopperAnchor } from '@proton/components';
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { useSearchTelemetry } from '@proton/encrypted-search/useSearchTelemetry';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -14,7 +15,6 @@ import esSpotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-s
 import useDriveNavigation from '../../../../legacy/hooks/drive/useNavigate';
 import { useSearchControl } from '../../../../legacy/store';
 import { useSearchResults } from '../../../../legacy/store/_search';
-import { sendErrorReport } from '../../../../utils/errorHandling';
 import { useSpotlight } from '../../useSpotlight';
 import { SearchDropdown } from './SearchDropdown';
 import { useSearchParams } from './useSearchParams';

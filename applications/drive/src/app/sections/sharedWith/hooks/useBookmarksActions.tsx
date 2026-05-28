@@ -4,13 +4,12 @@ import type { useConfirmActionModal } from '@proton/components';
 import { useNotifications } from '@proton/components';
 import { getDrive, useDrive } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { handleSdkError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { PROTON_LOCAL_DOMAIN } from '@proton/shared/lib/localDev';
 
 import { partialPublicViewKey } from '../../../legacy/hooks/util/usePartialPublicView';
-import { sendErrorReport } from '../../../utils/errorHandling';
-import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { replaceLocalURL } from '../../../utils/replaceLocalURL';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { getUrlPassword, getUrlPasswordWithCustomPassword } from '../../../utils/url/password';

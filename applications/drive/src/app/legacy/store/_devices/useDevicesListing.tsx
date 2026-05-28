@@ -3,10 +3,9 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
+import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { useLoading } from '@proton/hooks';
 
-import { sendErrorReport } from '../../../utils/errorHandling';
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { useLink } from '../_links';
 import { useVolumesState } from '../_volumes';
 import type { Device } from './interface';

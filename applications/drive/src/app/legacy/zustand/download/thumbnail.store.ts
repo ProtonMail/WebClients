@@ -2,9 +2,9 @@ import { createStore, del, get as getStore, set as setStore } from 'idb-keyval';
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { isDevOrBlack } from '@proton/utils/env';
 
-import { sendErrorReport } from '../../../utils/errorHandling';
 import { getLastActivePersistedUserSession } from '../../../utils/lastActivePersistedUserSession';
 
 interface ThumbnailMetadata {

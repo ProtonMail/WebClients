@@ -1,12 +1,11 @@
 import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
+import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { queryShareMeta } from '@proton/shared/lib/api/drive/share';
 import type { ShareMeta } from '@proton/shared/lib/interfaces/drive/share';
 
 import { useSharesStore } from '../../../legacy/zustand/share/shares.store';
-import { sendErrorReport } from '../../../utils/errorHandling';
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { getIsPublicContext } from '../../../utils/getIsPublicContext';
 import { shareMetaToShareWithKey, useDebouncedRequest } from '../_api';
 import { integrityMetrics, useDriveCrypto } from '../_crypto';

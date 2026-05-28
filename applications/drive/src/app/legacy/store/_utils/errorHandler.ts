@@ -1,10 +1,13 @@
 import type { ReactNode } from 'react';
 
 import { useNotifications } from '@proton/components';
-
-import { isIgnoredError, isIgnoredErrorForReporting, sendErrorReport } from '../../../utils/errorHandling';
-import type { ValidationError } from '../../../utils/errorHandling/ValidationError';
-import { isValidationError } from '../../../utils/errorHandling/ValidationError';
+import {
+    isIgnoredError,
+    isIgnoredErrorForReporting,
+    isValidationError,
+    sendErrorReport,
+} from '@proton/drive/legacy/errorHandling';
+import type { ValidationError } from '@proton/drive/legacy/errorHandling';
 
 /**
  * generateErrorHandler generates error handler calling callback if the error

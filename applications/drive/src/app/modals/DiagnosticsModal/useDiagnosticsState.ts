@@ -9,9 +9,9 @@ import {
     type ExpectedTreeNode,
     useDriveDiagnostics,
 } from '@proton/drive/diagnostic';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 
 import config from '../../config';
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 
 export enum State {
     LOADING = 'loading',

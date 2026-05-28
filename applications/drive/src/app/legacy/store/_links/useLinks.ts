@@ -1,8 +1,8 @@
+import { isIgnoredError } from '@proton/drive/legacy/errorHandling';
 import { MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { isIgnoredError } from '../../../utils/errorHandling';
 import type { DecryptedLink, EncryptedLink } from './interface';
 import useLink from './useLink';
 

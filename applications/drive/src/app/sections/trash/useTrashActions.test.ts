@@ -2,8 +2,8 @@ import { act, renderHook } from '@testing-library/react';
 
 import { NodeType, getDrive, getDriveForPhotos, useDrive } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { useTrashStore } from './useTrash.store';
 import { useTrashActions } from './useTrashActions';
 import { useTrashNotifications } from './useTrashNotifications';
@@ -18,7 +18,7 @@ jest.mock('@proton/drive/index', () => ({
 const mockGetDrive = jest.mocked(getDrive);
 const mockGetDriveForPhotos = jest.mocked(getDriveForPhotos);
 
-jest.mock('../../utils/errorHandling/handleSdkError');
+jest.mock('@proton/drive/legacy/errorHandling');
 
 jest.mock('./useTrash.store', () => {
     const hook = jest.fn() as jest.Mock & { getState: jest.Mock };

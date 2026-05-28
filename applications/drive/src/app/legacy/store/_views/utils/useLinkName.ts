@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { isIgnoredError, logError } from '../../../../utils/errorHandling';
+import { isIgnoredError, logError } from '@proton/drive/legacy/errorHandling';
+
 import { useLink } from '../../_links';
 
 /**

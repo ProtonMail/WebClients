@@ -4,12 +4,11 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { queryInvitationDetails, queryListPendingInvitations } from '@proton/shared/lib/api/drive/invitation';
 import type { ShareInvitationDetailsPayload } from '@proton/shared/lib/interfaces/drive/invitation';
 import type { ListDrivePendingInvitationsPayload, ShareTargetType } from '@proton/shared/lib/interfaces/drive/sharing';
 
-import { sendErrorReport } from '../../../utils/errorHandling';
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { shareInvitationDetailsPayloadToShareInvitationDetails, useDebouncedRequest } from '../_api';
 import { getOwnAddressKeysWithEmailAsync } from '../_crypto/driveCrypto';
 import {

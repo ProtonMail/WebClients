@@ -1,6 +1,6 @@
 import { NodeType, type ProtonInvitationWithNode, getDriveForPhotos } from '@proton/drive/index';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { useAlbumInvitationsStore } from '../useAlbumInvitations.store';
 
 export const loadAlbumInvitations = async (abortSignal: AbortSignal): Promise<void> => {

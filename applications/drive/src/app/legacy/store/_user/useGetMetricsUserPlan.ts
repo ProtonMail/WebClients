@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { useGetUser } from '@proton/account/user/hooks';
 import { useAuthentication } from '@proton/components';
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import type { User } from '@proton/shared/lib/interfaces';
 
-import { sendErrorReport } from '../../../utils/errorHandling';
 import { getIsPublicContext } from '../../../utils/getIsPublicContext';
 import { MetricUserPlan } from '../../../utils/type/MetricTypes';
 import { getMetricsUserPlan } from './getMetricsUserPlan';

@@ -2,10 +2,10 @@ import type { MaybeNode, NodeEntity, PhotoNode } from '@proton/drive';
 import { NodeType, getDriveForPhotos } from '@proton/drive';
 import type { BusDriverClient } from '@proton/drive/internal/BusDriver';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { Logging } from '@proton/drive/modules/logging';
 
-import { handleSdkError } from '../utils/errorHandling/handleSdkError';
 import { getSignatureIssues } from '../utils/sdk/getSignatureIssues';
 import { mapNodeToPhotoItem } from './PhotosWithAlbums/loaders/mapNodeToAdditionalInfo';
 import { loadCurrentAlbum } from './loaders/loadAlbum';

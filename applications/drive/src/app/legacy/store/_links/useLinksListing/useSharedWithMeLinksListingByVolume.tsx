@@ -1,11 +1,10 @@
 import { useCallback, useRef } from 'react';
 
+import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { querySharedWithMeLinks } from '@proton/shared/lib/api/drive/sharing';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import type { ListDriveSharedWithMeLinksPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
-import { sendErrorReport } from '../../../../utils/errorHandling';
-import { EnrichedError } from '../../../../utils/errorHandling/EnrichedError';
 import { useDebouncedRequest } from '../../_api';
 import { useDriveCrypto } from '../../_crypto';
 import { useDirectSharingInfo } from '../../_shares/useDirectSharingInfo';

@@ -3,9 +3,9 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import type { InvalidNameError } from '@proton/drive/index';
 import { type NodeEntity, NodeType } from '@proton/drive/index';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { PROTON_DOCS_DOCUMENT_MIMETYPE, PROTON_DOCS_SPREADSHEET_MIMETYPE } from '@proton/shared/lib/helpers/mimetype';
 
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import type { RenameModalViewProps } from './RenameModalView';
 import { useRenameModalState } from './useRenameModalState';
 
@@ -15,7 +15,7 @@ jest.mock('@proton/components', () => ({
     })),
 }));
 
-jest.mock('../../utils/errorHandling/handleSdkError', () => ({
+jest.mock('@proton/drive/legacy/errorHandling', () => ({
     handleSdkError: jest.fn(),
 }));
 
