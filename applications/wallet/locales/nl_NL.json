@@ -2821,6 +2821,10 @@
       "Country code": [
         "Landcode"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Maak een beveiligde cloud voor ${ memberCount } lid",
+        "Maak een beveiligde cloud voor ${ memberCount } leden"
+      ],
       "Credit for the unused portion of your previous plan subscription": [
         "Tegoed voor het ongebruikte deel van uw vorig abonnement"
       ],
@@ -3260,6 +3264,9 @@
       "${ n } month": [
         "${ n } maand",
         "${ n } maanden"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tekens"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Krijg veilig toegang tot ${ PASS_APP_NAME } vanaf de terminal, ideaal voor scripting, automatisering en ontwikkelingworkflows."
@@ -3851,6 +3858,9 @@
       "99.95% SLA": [
         "99,95% SLA"
       ],
+      "Access all countries": [
+        "Toegang tot alle landen"
+      ],
       "Ad-blocker and malware protection": [
         "Advertentieblokkering en bescherming tegen malware"
       ],
@@ -4000,6 +4010,9 @@
       "Multiple admin roles": [
         "Meerdere beheerdersfuncties"
       ],
+      "No streaming support": [
+        "Geen streaming-ondersteuning"
+      ],
       "Online document editor": [
         "Online document editor"
       ],
@@ -4131,6 +4144,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ongelimiteerd(e) volume/bandbreedte"
+      ],
+      "Unlock streaming": [
+        "Deblokkeer streaming"
       ],
       "Up to ${ n } user": [
         "Tot ${ n } gebruiker",
@@ -4512,6 +4528,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } land",
+        "${ n } landen"
+      ],
       "Access advanced VPN features": [
         "Gebruik geavanceerde VPN-functies"
       ],
