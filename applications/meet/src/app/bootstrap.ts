@@ -26,6 +26,8 @@ import {
 } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
+import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
+import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
 import type { ProtonConfig, Unwrap } from '@proton/shared/lib/interfaces';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
@@ -334,6 +336,7 @@ export const bootstrapGuestApp = async (config: ProtonConfig, notificationsManag
     const [wasmApp] = await Promise.all([
         initializeWasmApp(authentication, appVersion),
         bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient }),
+        loadLocales({ locale: getBrowserLocale(), locales, userSettings: undefined }),
     ]);
 
     const history = createBrowserHistory({ basename: '/guest' });
