@@ -12,11 +12,13 @@ export function createItemValue({
   apiData,
   isSharedWithMe,
   path,
+  ancestorsNodeUids,
 }: {
   sdkData: NodeEntity | DegradedNode
   apiData: RecentDocumentAPIItem
   isSharedWithMe: boolean
   path: string[]
+  ancestorsNodeUids: string[]
 }): RecentDocumentsItemValue {
   const { volumeId, nodeId: linkId } = splitNodeUid(sdkData.uid)
   const { nodeId: parentLinkId } = sdkData.parentUid ? splitNodeUid(sdkData.parentUid) : {}
@@ -32,6 +34,7 @@ export function createItemValue({
     lastModified: new ServerTime(apiData.LastOpenTime),
     createdBy: getAuthorName(sdkData),
     location: getLocation(path, isSharedWithMe),
+    ancestorsNodeUids,
     isSharedWithMe,
     shareId: apiData.ContextShareID,
   }
@@ -89,14 +92,19 @@ export function nodeToTrashedItemValue(node: NodeEntity | DegradedNode): RecentD
   }
 }
 
+/**
+ * Unlike createItemValue, this uses only SDK data (node argument)
+ */
 export function nodeToRecentItemValue(
   node: NodeEntity | DegradedNode,
   isSharedWithMe: boolean,
   path: string[],
+  ancestorsNodeUids: string[],
   shareId: string = '',
 ): RecentDocumentsItemValue {
   const { volumeId, nodeId: linkId } = splitNodeUid(node.uid)
   const { nodeId: parentLinkId } = node.parentUid ? splitNodeUid(node.parentUid) : {}
+
   return {
     name: getNodeName(node) ?? '',
     type: mimeTypeToProtonDocumentType(node.mediaType) ?? 'document',
@@ -108,6 +116,7 @@ export function nodeToRecentItemValue(
     createdBy: getAuthorName(node),
     isSharedWithMe,
     location: getLocation(path, isSharedWithMe),
+    ancestorsNodeUids,
     shareId,
   }
 }
