@@ -867,6 +867,9 @@
       "Incorrect username": [
         "Helytelen felhasználónév"
       ],
+      "Invalid verification code": [
+        "Érvénytelen ellenőrző kód"
+      ],
       "Not a valid number": [
         "Érvénytelen szám"
       ],
@@ -1500,6 +1503,9 @@
     "Success": {
       "Code sent to ${ methodTo }": [
         "Kód elküldve: ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Sikeres ellenőrzés"
       ]
     },
     "Title": {
@@ -1511,6 +1517,9 @@
       ],
       "Enter your password": [
         "Adja meg a jelszavát"
+      ],
+      "Human verification": [
+        "Robot ellenőrzés"
       ],
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"

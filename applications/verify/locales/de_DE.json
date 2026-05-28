@@ -873,6 +873,9 @@
       "Incorrect username": [
         "Falscher Benutzername"
       ],
+      "Invalid verification code": [
+        "Ungültiger Verifizierungscode"
+      ],
       "Not a valid number": [
         "Keine gültige Zahl"
       ],
@@ -1544,6 +1547,9 @@
     "Success": {
       "Code sent to ${ methodTo }": [
         "Code gesendet an ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Verifizierung erfolgreich"
       ]
     },
     "Title": {
@@ -1555,6 +1561,9 @@
       ],
       "Enter your password": [
         "Passwort eingeben"
+      ],
+      "Human verification": [
+        "Captcha"
       ],
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
