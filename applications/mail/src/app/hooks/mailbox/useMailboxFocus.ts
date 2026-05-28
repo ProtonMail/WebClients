@@ -5,14 +5,18 @@ import isEqual from 'lodash/isEqual';
 
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 
+import {
+    selectElementIDs,
+    selectFilter,
+    selectLabelID,
+    selectPage,
+    selectSort,
+} from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
+
 export interface MailboxFocusProps {
-    elementIDs: string[];
-    page: number;
-    filter: Filter;
-    sort: Sort;
     showList: boolean; // Column is visible
     listRef: MutableRefObject<HTMLElement | null>;
-    labelID: string;
     isComposerOpened: boolean;
     loading: boolean;
 }
@@ -37,21 +41,15 @@ const areArraysEqual = (arr1: any[], arr2: any[]): boolean => {
     return true;
 };
 
-export const useMailboxFocus = ({
-    elementIDs,
-    page,
-    filter,
-    sort,
-    showList,
-    listRef,
-    labelID,
-    isComposerOpened,
-    loading,
-}: MailboxFocusProps) => {
+export const useMailboxFocus = ({ showList, listRef, isComposerOpened, loading }: MailboxFocusProps) => {
+    const elementIDs = useMailSelector(selectElementIDs);
+    const page = useMailSelector(selectPage);
+    const filter = useMailSelector(selectFilter);
+    const sort = useMailSelector(selectSort);
+    const labelID = useMailSelector(selectLabelID);
+
     const previousState = useRef<MailboxFocusContext>({ elementIDs, page, filter, sort, labelID });
     const [focusID, setFocusID] = useState<string | undefined>();
-
-    const resetFocusID = () => setFocusID(undefined);
 
     const focusLastID = useCallback(() => {
         if (elementIDs.length === 0) {
@@ -99,23 +97,6 @@ export const useMailboxFocus = ({
         }
     }, [elementIDs, focusID]);
 
-    const focusElement = useCallback(() => {
-        if (!focusID) {
-            return;
-        }
-
-        const element = listRef.current?.querySelector(`[data-element-id="${focusID}"]`) as HTMLElement | null;
-
-        if (element && document.activeElement !== element) {
-            element.focus();
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-F2A06B
-    }, [focusID]);
-
-    const saveNewState = useCallback(({ elementIDs, page, filter, sort, labelID }: MailboxFocusContext) => {
-        previousState.current = { elementIDs, page, filter, sort, labelID };
-    }, []);
-
     useEffect(() => {
         if (loading) {
             return;
@@ -123,7 +104,7 @@ export const useMailboxFocus = ({
 
         // Reset focus when loading, not showing the list or composer is opened
         if (!showList || isComposerOpened) {
-            resetFocusID();
+            setFocusID(undefined);
             return;
         }
 
@@ -135,15 +116,15 @@ export const useMailboxFocus = ({
             previousState.current.page !== page;
 
         if (contextChanged) {
-            resetFocusID();
-            saveNewState({ elementIDs, page, filter, sort, labelID });
+            setFocusID(undefined);
+            previousState.current = { elementIDs, page, filter, sort, labelID };
             return;
         }
 
         // Reset focus when the list is empty
         if (elementIDs.length === 0) {
-            resetFocusID();
-            saveNewState({ elementIDs, page, filter, sort, labelID });
+            setFocusID(undefined);
+            previousState.current = { elementIDs, page, filter, sort, labelID };
             return;
         }
 
@@ -155,27 +136,37 @@ export const useMailboxFocus = ({
 
                 if (index === -1) {
                     // If the focusID is not in the list, reset focus
-                    resetFocusID();
+                    setFocusID(undefined);
                 } else if (elementIDs[index]) {
                     // Focus the next element if it exists
                     setFocusID(elementIDs[index]);
                 } else {
                     // Or reset focus
-                    resetFocusID();
+                    setFocusID(undefined);
                 }
             }
-            saveNewState({ elementIDs, page, filter, sort, labelID });
+            previousState.current = { elementIDs, page, filter, sort, labelID };
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CA6255
     }, [elementIDs, page, filter, sort, showList, labelID, isComposerOpened, loading, focusID]);
 
     useEffect(() => {
         if (typeof focusID === 'undefined') {
             return;
         }
+
+        const focusElement = () => {
+            if (!focusID) {
+                return;
+            }
+
+            const element = listRef.current?.querySelector(`[data-element-id="${focusID}"]`) as HTMLElement | null;
+            if (element && document.activeElement !== element) {
+                element.focus();
+            }
+        };
+
         focusElement();
-        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-1EB736
-    }, [focusID]);
+    }, [focusID, listRef]);
 
     return {
         focusID,

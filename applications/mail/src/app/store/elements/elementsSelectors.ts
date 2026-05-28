@@ -51,7 +51,7 @@ export const selectCategoryIDs = createSelector([params], (params): CategoryLabe
 
 const beforeFirstLoad = (state: MailState) => state.elements.beforeFirstLoad;
 export const elementsMap = (state: MailState) => state.elements.elements;
-const page = (state: MailState) => state.elements.page;
+export const selectPage = (state: MailState) => state.elements.page;
 export const pageSize = (state: MailSettingState) => state.mailSettings.value?.PageSize || MAIL_PAGE_SIZE.FIFTY;
 const pages = (state: MailState) => state.elements.pages;
 const bypassFilter = (state: MailState) => state.elements.bypassFilter;
@@ -134,7 +134,7 @@ export const contextTotal = createSelector([params, total], (params, total) => {
 });
 
 export const elements = createSelector(
-    [elementsMap, params, page, pageSize, contextPages, bypassFilter, addresses],
+    [elementsMap, params, selectPage, pageSize, contextPages, bypassFilter, addresses],
     (elements, params, page, pageSize, pages, bypassFilter, addresses) => {
         // Getting all params from the cache and not from scoped params
         // To prevent any de-synchronization between cache and the output of the memo
@@ -176,7 +176,7 @@ export const elements = createSelector(
     }
 );
 
-export const elementIDs = createSelector(elements, (elements): string[] =>
+export const selectElementIDs = createSelector(elements, (elements): string[] =>
     elements.map((element) => element.ID).filter(isTruthy)
 );
 
@@ -207,7 +207,7 @@ export const expiringElements = createSelector([params, elements], (params, elem
  * It doesn't rely at all on the optimistic counter logic
  */
 export const needsMoreElements = createSelector(
-    [contextTotal, page, pageSize, elementsLength, params],
+    [contextTotal, selectPage, pageSize, elementsLength, params],
     (total, page, pageSize, elementsLength, params) => {
         // There are no elements for newsletter subscriptions if there is no newsletter subscription ID
         if (params.labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS && !params.newsletterSubscriptionID) {
@@ -240,7 +240,7 @@ export const pageCached = createSelector([contextPages, currentPage], (pages, cu
 /**
  * @returns a boolean specifying whether the current page is the one set in the store or not.
  */
-export const pageChanged = createSelector([page, currentPage], (page, currentPage) => page !== currentPage);
+export const pageChanged = createSelector([selectPage, currentPage], (page, currentPage) => page !== currentPage);
 
 /**
  * @returns a boolean specifying whether the cache contains a page that is +/-1 the current page.
@@ -374,7 +374,7 @@ export const customViewDynamicPageLength = createSelector(
  * Has to be used only for non-sensitive behaviors
  */
 export const dynamicPageLength = createSelector(
-    [page, pageSize, dynamicTotal, params, bypassFilter, customViewDynamicPageLength],
+    [selectPage, pageSize, dynamicTotal, params, bypassFilter, customViewDynamicPageLength],
     (page, pageSize, dynamicTotal, params, bypassFilter, customViewLength) => {
         if (customViewLength !== undefined) {
             return customViewLength;
@@ -387,7 +387,7 @@ export const dynamicPageLength = createSelector(
 );
 
 export const placeholderCount = createSelector(
-    [page, pageSize, contextTotal, params, dynamicPageLength, bypassFilter],
+    [selectPage, pageSize, contextTotal, params, dynamicPageLength, bypassFilter],
     (page, pageSize, total, params, dynamicPageLength, bypassFilter) => {
         if (dynamicPageLength !== undefined) {
             return dynamicPageLength;

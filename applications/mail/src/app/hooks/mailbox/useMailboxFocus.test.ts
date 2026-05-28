@@ -5,22 +5,42 @@ import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 import { useMailboxFocus } from './useMailboxFocus';
 import type { MailboxFocusProps } from './useMailboxFocus';
 
-// Mock filter and sort types for the test
-const mockFilter = {} as Filter;
-const mockSort = {} as Sort;
+const mockStoreState = {
+    elementIDs: ['id1', 'id2', 'id3'] as string[],
+    page: 1,
+    filter: {} as Filter,
+    sort: {} as Sort,
+    labelID: 'label1',
+};
+
+jest.mock('proton-mail/store/hooks', () => ({
+    useMailSelector: jest.fn((selector: (state: any) => any) => selector(mockStoreState)),
+}));
+
+jest.mock('proton-mail/store/elements/elementsSelectors', () => ({
+    selectElementIDs: (state: any) => state.elementIDs,
+    selectPage: (state: any) => state.page,
+    selectFilter: (state: any) => state.filter,
+    selectSort: (state: any) => state.sort,
+    selectLabelID: (state: any) => state.labelID,
+}));
 
 describe('useMailboxFocus', () => {
-    const defaultProps = {
-        elementIDs: ['id1', 'id2', 'id3'],
-        page: 1,
-        filter: mockFilter,
-        sort: mockSort,
+    const defaultProps: MailboxFocusProps = {
         showList: true,
         listRef: { current: document.createElement('div') },
-        labelID: 'label1',
         isComposerOpened: false,
         loading: false,
     };
+
+    beforeEach(() => {
+        mockStoreState.elementIDs = ['id1', 'id2', 'id3'];
+        mockStoreState.page = 1;
+        mockStoreState.filter = {} as Filter;
+        mockStoreState.sort = {} as Sort;
+        mockStoreState.labelID = 'label1';
+    });
+
     const setup = (overrides: Partial<MailboxFocusProps> = {}) => {
         const props: MailboxFocusProps = {
             ...defaultProps,
@@ -68,17 +88,15 @@ describe('useMailboxFocus', () => {
         expect(result.current.focusID).toBe('id2');
     });
 
-    it('should reset focus when elementIDs is empty', async () => {
+    it('should reset focus when elementIDs is empty', () => {
         const { result, rerender } = setup();
 
         act(() => {
             result.current.setFocusID('id2');
         });
 
-        rerender({
-            ...defaultProps,
-            elementIDs: [],
-        });
+        mockStoreState.elementIDs = [];
+        rerender(defaultProps);
 
         expect(result.current.focusID).toBeUndefined();
     });
@@ -96,7 +114,7 @@ describe('useMailboxFocus', () => {
         expect(result.current.focusID).toBe('id1');
     });
 
-    it('should not change focus when composer is opened', () => {
+    it('should reset focus when composer is opened', () => {
         const { result, rerender } = setup();
 
         act(() => {
@@ -111,7 +129,7 @@ describe('useMailboxFocus', () => {
         expect(result.current.focusID).toBeUndefined();
     });
 
-    it('should not focus if loading is true', () => {
+    it('should not reset focus if loading is true', () => {
         const { result, rerender } = setup();
 
         act(() => {
@@ -126,7 +144,7 @@ describe('useMailboxFocus', () => {
         expect(result.current.focusID).toBe('id1');
     });
 
-    it('should not focus if list is hidden', () => {
+    it('should reset focus if list is hidden', () => {
         const { result, rerender } = setup();
         act(() => {
             result.current.focusFirstID();
@@ -141,75 +159,52 @@ describe('useMailboxFocus', () => {
     });
 
     it('should reset focus when label changes', () => {
-        const { result, rerender } = setup({
-            filter: mockFilter,
-            sort: mockSort,
-            labelID: 'label1',
-        });
+        const { result, rerender } = setup();
 
         act(() => {
             result.current.focusFirstID();
         });
 
-        rerender({
-            ...defaultProps,
-            labelID: 'label2', // Change labelID
-        });
+        mockStoreState.labelID = 'label2';
+        rerender(defaultProps);
 
         expect(result.current.focusID).toBeUndefined();
     });
 
     it('should reset focus when filter changes', () => {
-        const { result, rerender } = setup({
-            filter: mockFilter,
-            sort: mockSort,
-            labelID: 'label1',
-        });
+        const { result, rerender } = setup();
 
         act(() => {
             result.current.focusFirstID();
         });
 
-        rerender({
-            ...defaultProps,
-            filter: { a: 1 } as Filter, // Change filter
-        });
+        mockStoreState.filter = { a: 1 } as Filter;
+        rerender(defaultProps);
 
         expect(result.current.focusID).toBeUndefined();
     });
 
     it('should reset focus when sort changes', () => {
-        const { result, rerender } = setup({
-            filter: mockFilter,
-            sort: mockSort,
-            labelID: 'label1',
-        });
+        const { result, rerender } = setup();
 
         act(() => {
             result.current.focusFirstID();
         });
 
-        rerender({
-            ...defaultProps,
-            sort: {
-                sort: 'Size',
-                desc: true,
-            } as Sort, // Change sort
-        });
+        mockStoreState.sort = { sort: 'Size', desc: true } as Sort;
+        rerender(defaultProps);
 
         expect(result.current.focusID).toBeUndefined();
     });
 
-    it('should preserve focus when elementIDs change', () => {
+    it('should preserve focus when elementIDs change but focusID is still present', () => {
         const { result, rerender } = setup();
         act(() => {
             result.current.focusFirstID();
         });
 
-        rerender({
-            ...defaultProps,
-            elementIDs: ['id4', 'id1', 'id5', 'id6'],
-        });
+        mockStoreState.elementIDs = ['id4', 'id1', 'id5', 'id6'];
+        rerender(defaultProps);
 
         expect(result.current.focusID).toBe('id1');
     });
@@ -217,13 +212,11 @@ describe('useMailboxFocus', () => {
     it('should try to focus same index when elementIDs change and focusID is not in the new list', () => {
         const { result, rerender } = setup();
         act(() => {
-            result.current.focusFirstID(); // Focus id1
+            result.current.focusFirstID(); // Focus id1 (index 0)
         });
 
-        rerender({
-            ...defaultProps,
-            elementIDs: ['id4', 'id5', 'id6'],
-        });
+        mockStoreState.elementIDs = ['id4', 'id5', 'id6'];
+        rerender(defaultProps);
 
         expect(result.current.focusID).toBe('id4');
     });
