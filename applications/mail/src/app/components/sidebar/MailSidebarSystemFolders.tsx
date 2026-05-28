@@ -5,6 +5,8 @@ import { c } from 'ttag';
 
 import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
+import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
+import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -71,6 +73,7 @@ const MailSidebarSystemFolders = ({
     });
 
     const { categoryViewAccess, activeCategoriesTabs } = useCategoriesView();
+    const { sendReportCategoriesNav } = useCategoriesTelemetry();
 
     const lastDragTimeRef = useRef<number>();
     const isDragging = useRef<boolean>();
@@ -220,6 +223,12 @@ const MailSidebarSystemFolders = ({
     const mainElements: SystemFolder[] = [];
     const moreElements: SystemFolder[] = [];
 
+    const moreClickCallback = (labelID: string) => {
+        if (isCategoryLabel(labelID)) {
+            sendReportCategoriesNav('sidebar', labelID);
+        }
+    };
+
     sidebarElements.forEach((item) => {
         if (!item.visible) {
             return;
@@ -328,6 +337,7 @@ const MailSidebarSystemFolders = ({
                                   collapsed={collapsed}
                                   moveToFolder={moveToFolder}
                                   applyLabels={applyLabels}
+                                  onClickCallback={() => moreClickCallback(element.labelID)}
                               />
                           </DnDElementWrapper>
                       );

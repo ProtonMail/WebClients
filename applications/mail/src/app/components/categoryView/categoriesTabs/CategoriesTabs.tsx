@@ -1,4 +1,5 @@
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 
 import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
 import { getRawLocationCount } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter.helpers';
@@ -22,6 +23,8 @@ export const CategoriesTabsList = () => {
     const categoryIDs = useMailSelector(selectCategoryIDs);
     const selectAll = useMailSelector(selectSelectAll);
 
+    const { sendReportRecategorizeEmail } = useCategoriesTelemetry();
+
     const { counterMap } = useMailboxCounter();
     const handleCategoryDrop = (categoryId: string, itemIds: string[]) => {
         if (selectAll) {
@@ -29,6 +32,7 @@ export const CategoriesTabsList = () => {
         }
 
         void recategorizeElement(categoryId, itemIds);
+        sendReportRecategorizeEmail('drag_and_drop', categoryIDs[0], categoryId, itemIds.length);
     };
 
     const { handleDragEnd, handleDragEnter, handleDragLeave, handleDragOver, handleDrop, draggedOverCategoryId } =

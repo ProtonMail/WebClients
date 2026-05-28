@@ -6,6 +6,7 @@ import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import useLoading from '@proton/hooks/useLoading';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
+import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { updateMailCategoryView } from '@proton/shared/lib/api/mailSettings';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
@@ -22,6 +23,7 @@ export const B2COnboarding = ({ flagValue }: Props) => {
     const api = useApi();
 
     const { update } = useFeature(FeatureCode.CategoryViewB2COnboardingViewFlags);
+    const { sendEventOnboardingAccept, sendEventOnboardingDismiss } = useCategoriesTelemetry();
 
     const [loadingNoCategories, withLoadingNoCategories] = useLoading();
 
@@ -33,11 +35,13 @@ export const B2COnboarding = ({ flagValue }: Props) => {
 
         await Promise.all(promises);
 
+        sendEventOnboardingDismiss();
         window.location.replace(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`);
     };
 
     const handleKeepCategories = () => {
         void update(setBit(flagValue, CategoriesOnboardingFlags.FULL_DISPLAY));
+        sendEventOnboardingAccept();
     };
 
     const primaryCopy = getLabelFromCategoryId(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);

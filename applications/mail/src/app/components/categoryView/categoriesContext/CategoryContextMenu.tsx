@@ -5,6 +5,7 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import Icon from '@proton/components/components/icon/Icon';
 import { IcCheckmarkStrong } from '@proton/icons/icons/IcCheckmarkStrong';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
+import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
@@ -20,6 +21,7 @@ export const CategoryContextMenu = ({ onCategoryMove }: Props) => {
     const { shouldShowTabs, activeCategoriesTabs } = useCategoriesView();
 
     const currentCategories = useMailSelector(selectCategoryIDs);
+    const { sendReportRecategorizeEmail } = useCategoriesTelemetry();
 
     if (!shouldShowTabs) {
         return null;
@@ -39,6 +41,7 @@ export const CategoryContextMenu = ({ onCategoryMove }: Props) => {
                         e.stopPropagation();
                         if (currentCategory !== category.id) {
                             onCategoryMove(category.id);
+                            sendReportRecategorizeEmail('context_menu', category.id, currentCategory, 1);
                         }
                     }}
                     onContextMenu={(e) => e.stopPropagation()}

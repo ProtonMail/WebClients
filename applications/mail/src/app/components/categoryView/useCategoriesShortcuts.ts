@@ -6,6 +6,7 @@ import type { CommanderItemInterface } from '@proton/components/components/comma
 import type { Hotkey, HotkeyTuple } from '@proton/components/hooks/useHotkeys';
 import { getCategoryCommanderKeyboardShortcut } from '@proton/mail/features/categoriesView/categoriesHelpers';
 import { getLabelFromCategoryIdInCommander } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
+import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
@@ -18,12 +19,14 @@ import { useCategoriesView } from './useCategoriesView';
 export const useCategoriesShortcuts = () => {
     const history = useHistory();
     const { activeCategoriesTabs, categoryViewAccess } = useCategoriesView();
+    const { sendReportCategoriesNav } = useCategoriesTelemetry();
 
     const navigateTo = (labelID: MAILBOX_LABEL_IDS) => {
         history.push(`/${LABEL_IDS_TO_HUMAN[labelID]}`);
     };
 
-    const navigateToCategory = (categoryID: CategoryLabelID) => {
+    const navigateToCategory = (categoryID: CategoryLabelID, source: 'commander' | 'shortcuts') => {
+        sendReportCategoriesNav(source, categoryID);
         history.push(setCategoryInUrl(categoryID));
     };
 
@@ -33,7 +36,7 @@ export const useCategoriesShortcuts = () => {
                   icon: category.outlinedIcon,
                   label: getLabelFromCategoryIdInCommander(category.id),
                   value: category.id,
-                  action: () => navigateToCategory(category.id),
+                  action: () => navigateToCategory(category.id, 'commander'),
                   shortcuts: getCategoryCommanderKeyboardShortcut(category.id),
                   iconProps: {
                       iconClassName: categoryColorClassName,
@@ -61,7 +64,7 @@ export const useCategoriesShortcuts = () => {
                           if (!isBusy(e)) {
                               e.stopPropagation();
                               e.preventDefault();
-                              navigateToCategory(tab.id);
+                              navigateToCategory(tab.id, 'shortcuts');
                           }
                       },
                   ];
