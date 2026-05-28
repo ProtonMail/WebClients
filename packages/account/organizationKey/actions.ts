@@ -57,6 +57,7 @@ import {
 import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 import type { OrganizationKeyActivation, OrganizationKeyInvitation } from '@proton/shared/lib/keys/organizationKeyDto';
 import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
 
 import { addressKeysThunk } from '../addressKeys';
 import { addressesThunk } from '../addresses';
@@ -135,7 +136,6 @@ export type PublicMembersReEncryptPayload = {
 export interface OrganizationKeyRotationPayload {
     publicMembersToReEncryptPayload: PublicMembersReEncryptPayload;
     memberKeyPayloads: MemberKeyPayload[];
-    groups: Group[];
 }
 
 // Error that can be ignored when e.g. rotating org keys
@@ -494,8 +494,8 @@ export const getGroupsToReEncryptPayload = (): ThunkAction<
     UnknownAction
 > => {
     return async (dispatch) => {
-        const organizationKey = await dispatch(organizationKeyThunk());
-        const groups = await dispatch(groupThunk());
+        const [organizationKey, groups] = await Promise.all([dispatch(organizationKeyThunk()), dispatch(groupThunk())]);
+
         if (groups.length >= 1) {
             // we need the org key to be able to re-encrypt the group keys if we have any group
             if (!organizationKey?.privateKey) {
@@ -541,7 +541,7 @@ export const getKeyRotationPayload = ({
             return member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN && !member.Self;
         });
 
-        const [memberKeyPayloads, publicMembersToReEncryptPayload, groups] = await Promise.all([
+        const [memberKeyPayloads, publicMembersToReEncryptPayload] = await Promise.all([
             dispatch(
                 getMemberKeyPayloads({
                     api,
@@ -554,13 +554,11 @@ export const getKeyRotationPayload = ({
                 })
             ),
             dispatch(getPublicMembersToReEncryptPayload()),
-            dispatch(getGroupsToReEncryptPayload()),
         ]);
 
         return {
             memberKeyPayloads,
             publicMembersToReEncryptPayload,
-            groups,
         };
     };
 };
@@ -836,7 +834,6 @@ export const rotateOrganizationKeys = ({
 export const createPasswordlessOrganizationKeys = ({
     publicMembersToReEncryptPayload,
     memberKeyPayloads,
-    groups,
 }: OrganizationKeyRotationPayload): ThunkAction<
     Promise<CachedOrganizationKey>,
     RotateOrganizationKeysState,
@@ -885,6 +882,7 @@ export const createPasswordlessOrganizationKeys = ({
             newOrganizationKey: { privateKey, privateKeyArmored },
         });
 
+        const groups = await dispatch(getGroupsToReEncryptPayload());
         const GroupAddressKeyTokens = await getReEncryptedGroupAddressKeyTokens({
             groups,
             oldOrganizationKey: organizationKey,
@@ -908,6 +906,13 @@ export const createPasswordlessOrganizationKeys = ({
             dispatch(organizationKeyThunk({ cache: CacheType.None })),
             dispatch(updateGroupsWithNewAddressKeyTokens({ GroupAddressKeyTokens })),
         ]);
+        // When the organization key is created the API creates system groups in the background.
+        // This refetches all groups when that happens so that the client becomes aware of them.
+        // NOTE: It's better that this happens _after_ the parallel calls above have finished since
+        // the client attempts to generate keys for those groups in the background using the organization key.
+        if (extra.unleashClient.isEnabled('SystemGroupFlag')) {
+            dispatch(groupThunk({ cache: CacheType.None })).catch(noop);
+        }
         return result;
     };
 };
@@ -915,7 +920,6 @@ export const createPasswordlessOrganizationKeys = ({
 export const rotatePasswordlessOrganizationKeys = ({
     publicMembersToReEncryptPayload,
     memberKeyPayloads,
-    groups,
 }: OrganizationKeyRotationPayload): ThunkAction<
     Promise<CachedOrganizationKey>,
     RotateOrganizationKeysState,
@@ -963,6 +967,7 @@ export const rotatePasswordlessOrganizationKeys = ({
             newOrganizationKey: { privateKey, privateKeyArmored },
         });
 
+        const groups = await dispatch(getGroupsToReEncryptPayload());
         const GroupAddressKeyTokens = await getReEncryptedGroupAddressKeyTokens({
             groups,
             oldOrganizationKey: organizationKey,
