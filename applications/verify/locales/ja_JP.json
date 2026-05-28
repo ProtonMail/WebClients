@@ -870,6 +870,9 @@
       "Incorrect username": [
         "ユーザー名に間違いがあります。"
       ],
+      "Invalid verification code": [
+        "無効な検証コード"
+      ],
       "Not a valid number": [
         "無効な番号です"
       ],
@@ -1510,6 +1513,9 @@
     "Success": {
       "Code sent to ${ methodTo }": [
         "${ methodTo } にコードを送信しました"
+      ],
+      "Verification successful": [
+        "検証に成功しました"
       ]
     },
     "Title": {
@@ -1521,6 +1527,9 @@
       ],
       "Enter your password": [
         "パスワードを入力してください"
+      ],
+      "Human verification": [
+        "人間であることの検証"
       ],
       "Invalid verification code": [
         "無効な検証コードです"
