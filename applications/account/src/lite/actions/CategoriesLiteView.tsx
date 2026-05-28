@@ -1,8 +1,5 @@
-import { FeatureCode } from '@proton/features/interface';
-import useFeature from '@proton/features/useFeature';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { CategoriesHeader } from '../components/CategoryView/CategoriesHeader';
 import { CategoriesSettings } from '../components/CategoryView/CategoriesSettings';
@@ -20,15 +17,7 @@ export const CategoriesLiteView = ({ layout, loader }: CategoryViewProps) => {
     const [, mailSettingsLoading] = useMailSettings();
     const [, foldersLoading] = useFolders();
 
-    const categoryViewFlag = useFlag('CategoryView');
-    const betaFlag = useFeature<boolean>(FeatureCode.CategoryViewBeta);
-
-    const hasAccess = categoryViewFlag || (betaFlag.feature?.Value ?? false);
-    const loading = !!(mailSettingsLoading || foldersLoading || betaFlag.loading);
-
-    if (!hasAccess) {
-        return null;
-    }
+    const loading = !!(mailSettingsLoading || foldersLoading);
 
     if (loading) {
         return loader;
