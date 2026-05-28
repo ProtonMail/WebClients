@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { type Device, type MaybeNode, NodeType, type Result } from '@proton/drive';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
-import { handleSdkError } from '../errorHandling/handleSdkError';
 import { getNodeAncestry } from './getNodeAncestry';
 import { getNodeName } from './getNodeName';
 

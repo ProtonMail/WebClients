@@ -1,8 +1,9 @@
+import type { PrivateKeyReference } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { usePreventLeave } from '@proton/components';
-import type { PrivateKeyReference } from '@protontech/crypto';
-import { CryptoProxy } from '@protontech/crypto';
+import { EnrichedError, ValidationError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { queryCreateFolder } from '@proton/shared/lib/api/drive/folder';
 import { queryRenameLink } from '@proton/shared/lib/api/drive/share';
 import { queryCopyNodeToVolume } from '@proton/shared/lib/api/drive/volume';
@@ -17,9 +18,6 @@ import {
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import getRandomString from '@proton/utils/getRandomString';
 
-import { sendErrorReport } from '../../../utils/errorHandling';
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
-import { ValidationError } from '../../../utils/errorHandling/ValidationError';
 import { useDebouncedRequest } from '../_api';
 import { useDriveEventManager } from '../_events';
 import { useShare } from '../_shares';

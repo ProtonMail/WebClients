@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useApi } from '@proton/components';
+import { logError } from '@proton/drive/legacy/errorHandling';
 import { queryFileRevision, queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
 import type {
     DriveFileBlock,
@@ -10,7 +11,6 @@ import type {
 
 import { TransferState } from '../../../legacy/components/TransferManager/transfer';
 import { getCacheKey, useThumbnailCacheStore } from '../../../legacy/zustand/download/thumbnail.store';
-import { logError } from '../../../utils/errorHandling';
 import { streamToBuffer } from '../../../utils/stream';
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';

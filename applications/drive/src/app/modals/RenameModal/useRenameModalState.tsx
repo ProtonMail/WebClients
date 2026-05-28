@@ -5,11 +5,11 @@ import { c } from 'ttag';
 import { type ModalStateProps, useNotifications } from '@proton/components';
 import { type NodeEntity, NodeType, getDrive } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import type { RenameModalViewProps } from './RenameModalView';
 import type { Drive } from './interface';
 

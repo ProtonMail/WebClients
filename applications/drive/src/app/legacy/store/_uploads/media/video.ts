@@ -1,6 +1,6 @@
+import { logError } from '@proton/drive/legacy/errorHandling';
 import { type SupportedMimeTypes, VIDEO_THUMBNAIL_MAX_TIME_LOCATION } from '@proton/shared/lib/drive/constants';
 
-import { logError } from '../../../../utils/errorHandling';
 import { canvasToThumbnail } from './canvasUtil';
 import type { Media, ThumbnailInfo } from './interface';
 import { ThumbnailType } from './interface';

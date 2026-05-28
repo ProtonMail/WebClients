@@ -1,9 +1,9 @@
 import { c, msgid } from 'ttag';
 
 import { useNotifications } from '@proton/components';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getEllipsedName } from '@proton/drive/modules/intl';
 
-import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { useListNotifications } from '../../../utils/useListNotifications';
 
 export const useMovedItemsNotification = () => {

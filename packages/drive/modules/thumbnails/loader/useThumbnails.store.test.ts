@@ -2,8 +2,8 @@ import { loadThumbnail } from '../index';
 import type { DriveClient } from './types';
 import { useThumbnailsStore } from './useThumbnails.store';
 
-jest.mock('../../../internal/handleDriveError', () => ({
-    handleDriveError: jest.fn(),
+jest.mock('../../../legacy/errorHandling', () => ({
+    handleSdkError: jest.fn(),
 }));
 
 global.URL.createObjectURL = jest.fn(() => 'blob:mock-url');
@@ -123,8 +123,8 @@ describe('useThumbnailsStore', () => {
             expect(jest.mocked(drive.iterateThumbnails)).toHaveBeenCalledTimes(1);
         });
 
-        it('sets sdStatus to loaded and calls handleDriveError on batch error', async () => {
-            const { handleDriveError } = jest.requireMock('../../../internal/handleDriveError');
+        it('sets sdStatus to loaded and calls handleSdkError on batch error', async () => {
+            const { handleSdkError } = jest.requireMock('../../../legacy/errorHandling');
             async function* throwingGenerator(): AsyncGenerator<never> {
                 throw new Error('network error');
             }
@@ -134,7 +134,7 @@ describe('useThumbnailsStore', () => {
             loadThumbnail(drive, { nodeUid: 'node-2', revisionUid: 'rev-2' });
             await flushBatch();
 
-            expect(handleDriveError).toHaveBeenCalledTimes(1);
+            expect(handleSdkError).toHaveBeenCalledTimes(1);
             expect(useThumbnailsStore.getState().getThumbnail('rev-1')?.sdStatus).toBe('loaded');
             expect(useThumbnailsStore.getState().getThumbnail('rev-2')?.sdStatus).toBe('loaded');
 

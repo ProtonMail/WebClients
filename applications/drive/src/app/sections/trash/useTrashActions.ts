@@ -3,12 +3,12 @@ import { c } from 'ttag';
 import type { ProtonDriveClient, ProtonDrivePhotosClient } from '@proton/drive/index';
 import { NodeType, getDrive, getDriveForPhotos, getDrivePerNodeType, useDrive } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { useDrivePreviewModal } from '../../modals/preview';
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { useTrashStore } from './useTrash.store';
 import { useTrashNotifications } from './useTrashNotifications';
 

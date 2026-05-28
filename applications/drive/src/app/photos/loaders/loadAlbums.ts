@@ -1,9 +1,8 @@
 import { type MaybeMissingNode, getDriveForPhotos } from '@proton/drive';
+import { handleSdkError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 
 import { createDebouncedBuffer } from '../../utils/createDebouncedBuffer';
-import { sendErrorReport } from '../../utils/errorHandling';
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 import { isMissingNode } from '../../utils/sdk/node';

@@ -1,8 +1,8 @@
 import * as Comlink from 'comlink';
 
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { HD_THUMBNAIL_MAX_SIDE, HD_THUMBNAIL_MAX_SIZE, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
-import { sendErrorReport } from '../../../../utils/errorHandling';
 import { canvasToThumbnail } from './canvasUtil';
 import type { ThumbnailWorker, WorkerThumbnailRequest } from './image.worker';
 import type { ThumbnailInfo } from './interface';

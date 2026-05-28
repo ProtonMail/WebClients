@@ -1,6 +1,8 @@
-import { usePreventLeave } from '@proton/components';
 import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
+
+import { usePreventLeave } from '@proton/components';
+import { EnrichedError, ValidationError, is4xx, is5xx, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import metrics from '@proton/metrics';
 import type { HttpsProtonMeDrivePhotosTransferToPhotoStreamHistogramV1SchemaJson } from '@proton/metrics/types/drive_photos_transfer_to_photo_stream_histogram_v1.schema';
 import {
@@ -27,10 +29,6 @@ import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase'
 import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { sendErrorReport } from '../../../utils/errorHandling';
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
-import { ValidationError } from '../../../utils/errorHandling/ValidationError';
-import { is4xx, is5xx } from '../../../utils/errorHandling/apiErrors';
 import { useDebouncedRequest } from '../_api';
 import { useDriveEventManager } from '../_events';
 import { ShareType, useDefaultShare, useShare } from '../_shares';

@@ -3,11 +3,11 @@ import { devtools } from 'zustand/middleware';
 
 import type { NodeType } from '@proton/drive/index';
 import { MemberRole } from '@proton/drive/index';
+import type { EnrichedError } from '@proton/drive/legacy/errorHandling';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import type { SortConfig } from '../../modules/sorting';
 import { SortField } from '../../modules/sorting';
-import type { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { sortFolderItems } from './folder.sorting';
 
 export type FolderViewItem = {

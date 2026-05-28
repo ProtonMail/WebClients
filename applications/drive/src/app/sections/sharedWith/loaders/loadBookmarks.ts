@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { getDrive } from '@proton/drive/index';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 
-import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getBookmark } from '../../../utils/sdk/getBookmark';
 import { defaultSharedOnCellConfig } from '../driveExplorerCells/SharedOnCell';
 import { ItemType, useSharedWithMeStore } from '../useSharedWithMe.store';

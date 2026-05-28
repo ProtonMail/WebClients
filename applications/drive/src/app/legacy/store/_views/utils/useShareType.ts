@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
+
 import type { ShareType } from '../..';
-import { sendErrorReport } from '../../../../utils/errorHandling';
 import { useShare } from '../../_shares';
 
 /**

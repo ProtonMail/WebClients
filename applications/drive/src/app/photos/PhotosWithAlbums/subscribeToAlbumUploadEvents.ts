@@ -1,6 +1,6 @@
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { uploadManager } from '@proton/drive/modules/upload';
 
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { useAlbumPhotoUploadSDKStore } from '../PhotosStore/useAlbumPhotoUploadSDK.store';
 
 /**

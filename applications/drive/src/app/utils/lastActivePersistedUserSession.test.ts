@@ -1,10 +1,10 @@
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { STORAGE_PREFIX } from '@proton/shared/lib/authentication/persistedSessionStorage';
 
 import { LAST_ACTIVE_PING } from '../legacy/store/_user/useActivePing';
-import { sendErrorReport } from './errorHandling';
 import { getLastActivePersistedUserSession } from './lastActivePersistedUserSession';
 
-jest.mock('./errorHandling');
+jest.mock('@proton/drive/legacy/errorHandling');
 const mockedSendErrorReport = jest.mocked(sendErrorReport);
 
 describe('getLastActivePersistedUserSession', () => {

@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 import { getDrive, splitNodeUid, useDrive } from '@proton/drive';
 import { BusDriverEventName, type NodeEventMeta, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 
 import { useDriveEventManager } from '../../../legacy/store';
-import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { useMovedItemsNotification } from './useMovedItemsNotification';
 
 export type MoveNodeItem = {

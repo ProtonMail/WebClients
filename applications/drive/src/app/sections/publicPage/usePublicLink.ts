@@ -12,6 +12,7 @@ import {
     getDrive,
     splitNodeUid,
 } from '@proton/drive';
+import { is4xx, is5xx, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { uploadManager } from '@proton/drive/modules/upload';
 import metrics from '@proton/metrics';
@@ -26,8 +27,6 @@ import {
     openDocsOrSheetsDocument,
     openPublicDocsOrSheetsDocument,
 } from '../../utils/docs/openInDocs';
-import { sendErrorReport } from '../../utils/errorHandling';
-import { is4xx, is5xx } from '../../utils/errorHandling/apiErrors';
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
 import { setPublicLinkClient } from './publicLinkClient';
 import { usePublicAuthStore } from './usePublicAuth.store';

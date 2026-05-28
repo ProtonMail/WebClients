@@ -1,10 +1,10 @@
 import { c, msgid } from 'ttag';
 
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { sendErrorReport } from '../../../../utils/errorHandling';
 import { useErrorHandler } from '../../_utils';
 import type { DecryptedLink, EncryptedLink } from '../interface';
 import useLinks from '../useLinks';

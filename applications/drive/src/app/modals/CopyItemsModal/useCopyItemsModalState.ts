@@ -5,10 +5,10 @@ import { c } from 'ttag';
 import type { ModalStateProps } from '@proton/components';
 import { MemberRole, NodeType } from '@proton/drive';
 import type { DirectoryTreeItem } from '@proton/drive/components/DirectoryTree/DirectoryTree';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 
 import { directoryTreeFactory } from '../../modules/directoryTree';
 import { getNodeUidFromTreeItemId } from '../../modules/directoryTree/helpers';
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { useCreateFolderModal } from '../CreateFolderModal';
 import { useCopyItems } from './useCopyItems';
 

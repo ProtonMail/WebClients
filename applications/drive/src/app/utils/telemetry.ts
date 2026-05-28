@@ -1,7 +1,9 @@
 import { useEffect, useMemo } from 'react';
 
-import { useApi } from '@proton/components';
 import { CryptoProxy } from '@protontech/crypto';
+
+import { useApi } from '@proton/components';
+import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import createApi from '@proton/shared/lib/api/createApi';
 import localStorageWithExpiry from '@proton/shared/lib/api/helpers/localStorageWithExpiry';
 import { TelemetryDriveWebFeature, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -11,8 +13,6 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import config from '../config';
-import { sendErrorReport } from './errorHandling';
-import { EnrichedError } from './errorHandling/EnrichedError';
 import { getLastActivePersistedUserSession } from './lastActivePersistedUserSession';
 
 export enum ExperimentGroup {
@@ -305,7 +305,7 @@ export const traceTelemetry = (action: Actions, duration: number = TEN_MINUTES) 
         end: async () => {
             const data = localStorageWithExpiry.getData(`telemetry-trace-${action}`);
             if (data && data === (await getTimeBasedHash(duration))) {
-                countActionWithTelemetry(action);
+                void countActionWithTelemetry(action);
             }
             localStorageWithExpiry.deleteData(`telemetry-trace-${action}`);
         },

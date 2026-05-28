@@ -3,11 +3,11 @@ import { useCallback, useEffect, useState } from 'react';
 import type { ModalStateProps } from '@proton/components';
 import { getDrive } from '@proton/drive';
 import type { DirectoryTreeItem } from '@proton/drive/components/DirectoryTree/DirectoryTree';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import type { useSharingModal } from '@proton/drive/modules/sharingModal';
 
 import { directoryTreeFactory } from '../../modules/directoryTree';
 import { getNodeUidFromTreeItemId } from '../../modules/directoryTree/helpers';
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 
 export type SelectLinkToShareModalInnerProps = {
     showSharingModal: ReturnType<typeof useSharingModal>['showSharingModal'];
