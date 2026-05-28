@@ -1,5 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import type { Mock } from 'vitest';
 
 import { telemetry } from '@proton/shared/lib/telemetry';
 
@@ -25,36 +26,36 @@ const defaultSubscription = {
     IsTrial: false,
 };
 
-jest.mock('@proton/account/subscription/hooks', () => ({
+vi.mock('@proton/account/subscription/hooks', () => ({
     useSubscription: () => [defaultSubscription],
 }));
 
-jest.mock('@proton/shared/lib/telemetry', () => ({
+vi.mock('@proton/shared/lib/telemetry', () => ({
     telemetry: {
-        sendCustomEvent: jest.fn(),
+        sendCustomEvent: vi.fn(),
     },
 }));
 
-const telemetryCall = telemetry.sendCustomEvent as unknown as jest.Mock;
+const telemetryCall = telemetry.sendCustomEvent as unknown as Mock;
 
 describe('FeedbackSurveyModal', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
     it('should render', () => {
-        render(<FeedbackSurveyModal open onClose={jest.fn()} />);
+        render(<FeedbackSurveyModal open onClose={vi.fn()} />);
 
         expect(screen.getByText('How did you find out about us?')).toBeInTheDocument();
     });
 
     it('should have "submit" button disabled if no value is selected', () => {
-        render(<FeedbackSurveyModal open onClose={jest.fn()} />);
+        render(<FeedbackSurveyModal open onClose={vi.fn()} />);
 
         expect(screen.getByText('Submit')).toBeDisabled();
     });
 
     it('should have "submit" button disabled if value is "Other" and the input content is empty', async () => {
-        render(<FeedbackSurveyModal open onClose={jest.fn()} />);
+        render(<FeedbackSurveyModal open onClose={vi.fn()} />);
 
         await userEvent.click(screen.getByText('Other'));
 
@@ -63,7 +64,7 @@ describe('FeedbackSurveyModal', () => {
     });
 
     it('should have "submit" button enabled if value anything but "Other"', async () => {
-        render(<FeedbackSurveyModal open onClose={jest.fn()} />);
+        render(<FeedbackSurveyModal open onClose={vi.fn()} />);
 
         await userEvent.click(screen.getByText('TikTok'));
 
@@ -71,7 +72,7 @@ describe('FeedbackSurveyModal', () => {
     });
 
     it('should trigger a network request when dismiss', async () => {
-        const onClose = jest.fn();
+        const onClose = vi.fn();
 
         render(<FeedbackSurveyModal open onClose={onClose} />);
 
@@ -87,7 +88,7 @@ describe('FeedbackSurveyModal', () => {
         expect(onClose).toHaveBeenCalled();
     });
     it('should trigger a network request when submitting', async () => {
-        const onClose = jest.fn();
+        const onClose = vi.fn();
 
         render(<FeedbackSurveyModal open onClose={onClose} />);
 
