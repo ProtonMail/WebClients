@@ -19,6 +19,9 @@ export const getMemberHasAccessToOrgKey = (member: Member) =>
 
 export const getMemberHasMissingOrgKey = (member: Member) => member.AccessToOrgKey === MEMBER_ORG_KEY_STATE.Missing;
 
+export const isOrganizationOneOf = (organization: Organization | undefined, plans: PLANS[]) =>
+    !!organization && plans.includes(organization.PlanName);
+
 export const isOrganizationDuo = (organization?: Organization) => organization?.PlanName === PLANS.DUO;
 export const isOrganizationFamily = (organization?: Organization) => organization?.PlanName === PLANS.FAMILY;
 export const isOrganizationPassFamily = (organization?: Organization) => organization?.PlanName === PLANS.PASS_FAMILY;
