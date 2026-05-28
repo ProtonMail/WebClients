@@ -196,6 +196,9 @@
       "Copy forwarding address": [
         "Kopieer doorschakeladres"
       ],
+      "Copy instructions": [
+        "Instructies kopiëren"
+      ],
       "Copy link": [
         "Link kopiëren"
       ],
@@ -213,6 +216,9 @@
       ],
       "Copy to clipboard": [
         "Kopieer naar klembord"
+      ],
+      "Copy token": [
+        "Kopieer token"
       ],
       "Copy username": [
         "Kopieer gebruikersnaam"
@@ -249,6 +255,9 @@
       ],
       "Create note": [
         "Notitie aanmaken"
+      ],
+      "Create token": [
+        "Token aanmaken"
       ],
       "Create vault": [
         "Kluis aanmaken"
@@ -457,6 +466,9 @@
       "Manage access": [
         "Beheer toegang"
       ],
+      "Manage vault access": [
+        "Toegang kluis beheren"
+      ],
       "Manually sync your data": [
         "Synchroniseer uw data manueel"
       ],
@@ -492,6 +504,9 @@
       ],
       "Multiple select": [
         "Meervoudige selectie"
+      ],
+      "New token": [
+        "Nieuwe token"
       ],
       "Next": [
         "Volgende"
@@ -759,6 +774,9 @@
       "Via secure link": [
         "Via beveiligde link"
       ],
+      "View agent activity": [
+        "Bekijk agentactiviteit"
+      ],
       "View details": [
         "Details weergeven"
       ],
@@ -782,6 +800,26 @@
       ],
       "Your password manager is not here? Request it.": [
         "Uw wachtwoordbeheerder staat hier niet tussen? Vraag het aan."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Activiteit"
+      ],
+      "Activity details could not be loaded.": [
+        "Activiteitsdetails kunnen niet worden geladen."
+      ],
+      "Folder": [
+        "Map"
+      ],
+      "Item": [
+        "Item"
+      ],
+      "Reason": [
+        "Reden"
+      ],
+      "Vault": [
+        "Kluis"
       ]
     },
     "App menu": {
@@ -1023,6 +1061,9 @@
       "Could not validate addresses at the moment.": [
         "Het is momenteel niet mogelijk om de adressen te verifiëren."
       ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Kan configuratie-instructies voor de agent niet laden. Kopieer de token hieronder. Deze wordt niet meer weergegeven."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Csv-bestand mist verwachte headers: ${ missingHeaders }"
       ],
@@ -1066,6 +1107,9 @@
       "Error reporting problem": [
         "Fout bij melden van het probleem"
       ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "De vervaldatum moet tussen 60 minuten en 1 jaar liggen"
+      ],
       "Failed loading group members": [
         "Kon geen groepslid toevoegen."
       ],
@@ -1087,6 +1131,9 @@
       "Failed to change mailbox": [
         "Wijzigen mailbox mislukt"
       ],
+      "Failed to create access token": [
+        "Kan geen toegangstoken maken"
+      ],
       "Failed to create domain": [
         "Maken van domein is mislukt"
       ],
@@ -1095,6 +1142,9 @@
       ],
       "Failed to create the contact": [
         "Contact maken mislukt"
+      ],
+      "Failed to delete access token": [
+        "Kan het toegangstoken niet verwijderen"
       ],
       "Failed to delete domain": [
         "Fout bij het verwijderen domein"
@@ -1114,6 +1164,9 @@
       "Failed to edit user's access.": [
         "Het is niet gelukt om de toegang van de gebruiker aan te passen."
       ],
+      "Failed to load access tokens": [
+        "Kan toegangstokens niet laden"
+      ],
       "Failed to load breaches for this address": [
         "Fout bij het laden van inbreuken voor dit adres"
       ],
@@ -1125,6 +1178,9 @@
       ],
       "Failed to load item history": [
         "Fout bij het laden van item geschiedenis"
+      ],
+      "Failed to load token actions": [
+        "Kan tokenacties niet laden"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Het verplaatsen van alle items van \"${ payload.content.name }\" mislukt"
@@ -1183,6 +1239,9 @@
       "Failed to update random prefix generation setting.": [
         "Bijwerken van willekeurige generatie prefix mislukt."
       ],
+      "Failed to update vault access": [
+        "Kan de toegang tot de kluis niet updaten"
+      ],
       "Failed to verify domain": [
         "Controleren domein mislukt"
       ],
@@ -1236,6 +1295,9 @@
       ],
       "Name is required": [
         "Naam is verplicht"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Naam moet 191 tekens of minder bevatten"
       ],
       "Network error": [
         "Netwerkfout"
@@ -1566,6 +1628,9 @@
         "${ row.breachCount } inbreuk gedetecteerd",
         "${ row.breachCount } inbreuken gedetecteerd"
       ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } geselecteerd"
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
@@ -1602,6 +1667,12 @@
       ],
       "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
         "Het toegangstoken \"${ action.token.Name }\" is verlopen. Als het wordt verwijderd, wordt het niet meer weergegeven."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Toegangstoken \"${ action.token.Name }\" stop onmiddellijk met werken. Deze actie kan niet ongedaan worden gemaakt."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Met toegangstokens, gebruikt in combinatie met ${ passCliLink }, kunt u CI/CD automatiseren of uw AI-agent toegang geven tot wat hij nodig heeft om zijn werk uit te voeren."
       ],
       "Add your custom email address to monitor:": [
         "Voeg uw aangepast e-mailadres toe om te monitoren:"
@@ -1678,6 +1749,9 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Voordat u uw gegevens exporteert met dit formaat, open Safari instellingen -> \"Algemene\" tab -> schakel de optie \"Open veilige bestanden na het downloaden\" uit. Dit voorkomt dat Safari op een onjuiste manier het geëxporteerde bestand kan extraheren."
       ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Tussen 60 (1 uur) en 525600 (1 jaar)"
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Biometrie lock succesvol geregistreerd. Gebruik het om ${ PASS_APP_NAME } te ontgrendelen"
       ],
@@ -1741,14 +1815,29 @@
       "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
         "Gekopieerd naar klembord (verloopt over ${ timeoutDurationHumanReadable })"
       ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Kopieer de onderstaande korting en stuur deze naar uw AI-agent. Dit is de enige keer dat het token wordt getoond."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Kopieer dit token nu. Om veiligheidsredenen wordt deze niet opnieuw weergegeven."
+      ],
       "Coupon successfully applied!": [
         "Kortingscode succesvol toegepast!"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Maak een token om ${ PASS_APP_NAME } te integreren met uw scripts en tools."
       ],
       "Create contact illustration": [
         "Maak een contactafbeelding"
       ],
+      "Created ${ createdDate }": [
+        "Gemaakt op ${ createdDate }"
+      ],
       "Created ${ time }.": [
         "Gemaakt om ${ time }."
+      ],
+      "Created item": [
+        "Item aangemaakt"
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "CSV-bestand biedt een handig formaat om je gegevens te bekijken. Echter, door de eenvoud ervan worden sommige gegevens niet opgenomen (aangepaste velden, toegangssleutels. .). Voor een volledige export, raden we een ander formaat aan."
@@ -1761,6 +1850,9 @@
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "Standaardweergavenaam voor aliassen die gemaakt zijn met ${ domainDisplay }, tenzij deze overschreven wordt door de alias weergavenaam."
+      ],
+      "Deleted item": [
+        "Item verwijderd"
       ],
       "Deleted items will be moved here first": [
         "Verwijderde items worden eerst hier naartoe verplaatst"
@@ -1782,6 +1874,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domein: ${ domainPath } of @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Download pass-cli van ${ passCliLink }."
       ],
       "Drop file here to upload": [
         "Sleep bestand hier om te uploaden"
@@ -1855,14 +1950,28 @@
       "Enter your PIN code": [
         "Voer uw pincode in"
       ],
+      "Every action this agent token has performed, newest first.": [
+        "Elke actie die dit agent token heeft uitgevoerd, de nieuwste eerst."
+      ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Telkens als uw alias een e-mail van iemand ontvangt, wordt automatisch een nieuwe contactpersoon aangemaakt."
+      ],
+      "Expired ${ abs } hour ago": [
+        "${ abs } uur geleden verlopen",
+        "${ abs } uren geleden verlopen"
       ],
       "Expires in": [
         "Verloopt over"
       ],
+      "Expires in ${ hours } hour": [
+        "Verloopt over ${ hours } uur",
+        "Verloopt over ${ hours } uren"
+      ],
       "Expires in ${ remainingTime }": [
         "Verloopt over ${ remainingTime }"
+      ],
+      "Expires in less than an hour": [
+        "Verloopt over minder dan een uur"
       ],
       "Exporting your data...": [
         "Uw gegevens exporteren..."
@@ -2023,6 +2132,9 @@
       "Loading ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } laden"
       ],
+      "Log out of any existing session:": [
+        "Uitloggen bij een bestaande sessie:"
+      ],
       "Logging you out...": [
         "Afmelden..."
       ],
@@ -2050,6 +2162,9 @@
       "Move ${ count } item": [
         "Verplaats ${ count } item",
         "Verplaats ${ count } items"
+      ],
+      "Moved item to trash": [
+        "Item naar prullenbak verplaatst"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
@@ -2081,14 +2196,23 @@
       "New version ${ latestVersion } is available.": [
         "Nieuwe versie ${ latestVersion } is beschikbaar."
       ],
+      "No activity recorded yet.": [
+        "Nog geen activiteit vastgelegd."
+      ],
       "No breaches detected": [
         "Geen inbreuken gedetecteerd"
       ],
       "No network connection": [
         "Geen netwerkverbinding"
       ],
+      "No vaults available.": [
+        "Geen kluizen beschikbaar."
+      ],
       "None": [
         "Geen"
+      ],
+      "None selected": [
+        "Geen geselecteerd"
       ],
       "Not recommended": [
         "Niet aanbevolen"
@@ -2277,6 +2401,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Beschermd door ${ PROTON_SENTINEL_LINK }, ons geavanceerde accountbeveiligingsprogramma"
       ],
+      "Read item": [
+        "Item lezen"
+      ],
       "Reconnect": [
         "Opnieuw verbinden"
       ],
@@ -2310,6 +2437,9 @@
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
         "Het resetten van de historiek zal alle voorgaande versies definitief verwijderen en kan niet ongedaan worden gemaakt."
       ],
+      "Restored item from trash": [
+        "Item uit de prullenbak hersteld"
+      ],
       "Restoring items from trash": [
         "Items herstellen uit prullenbak"
       ],
@@ -2324,6 +2454,9 @@
       ],
       "Select destination vault": [
         "Kies bestemmingskluis"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Selecteer de kluizen die \"${ token.Name }\" kan lezen."
       ],
       "Select vault to share": [
         "Selecteer kluis om te delen"
@@ -2400,8 +2533,14 @@
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "Tik op het ${ gearIcon } pictogram om de e-mailalias naar wens aan te passen."
       ],
+      "Test the token by logging in and listing vaults:": [
+        "Test het token door in te loggen en kluizen weer te geven:"
+      ],
       "Thank you, the problem has been reported": [
         "Bedankt, het probleem werd gemeld"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "De agent moet een reden opgeven voor elke actie die hij uitvoert, en elke actie wordt vastgelegd in een auditlogboek dat u kunt bekijken. Nadat u de token hebt gemaakt, krijgt u instructies om deze in uw AI-agent te kopiëren en te plakken."
       ],
       "The changelog can be found ${ changelogLink }.": [
         "De changelog kan gevonden worden ${ changelogLink }."
@@ -2437,6 +2576,9 @@
       "The user did not accept the invitation yet.": [
         "De gebruiker heeft de uitnodiging nog niet geaccepteerd."
       ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Vervolgens kunt u naar ${ url } gaan om de instructies te kopiëren en naar uw AI-agent te sturen."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Deze export wordt niet versleuteld en iedereen met toegang tot uw geëxporteerde bestand kan uw wachtwoorden zien. Verwijder het voor de veiligheid nadat u klaar bent met het gebruik ervan."
       ],
@@ -2470,6 +2612,9 @@
       "This setting is enforced by your organization": [
         "Deze instelling wordt afgedwongen door uw organisatie"
       ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Dit token krijgt alleen-lezen toegang tot de kluizen die u selecteert. Het kan items lezen, maar kan ze niet bewerken, kluizen delen of anderen uitnodigen. U kunt dit later wijzigen."
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Deze kluis wordt momenteel met niet gedeeld. Nodig mensen uit om deze met anderen te delen."
       ],
@@ -2490,6 +2635,9 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Klik op het ${ PASS_APP_NAME }-pictogram in de werkbalk om uw geïmporteerde gegevens te bekijken."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "Om biometrische ontgrendeling in te stellen, heeft ${ PASS_APP_NAME } nieuwe browserrechten nodig. Nadat u deze heeft geaccepteerd, wordt de extensie opnieuw geladen. Open deze pagina daarna opnieuw."
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Vertrouwd door meer dan 50 000 zakelijke gebruikers en 100 miljoen accounts over de hele wereld."
@@ -2527,11 +2675,17 @@
       "Unverified": [
         "Niet geverifieerd"
       ],
+      "Updated item": [
+        "Item bijgewerkt"
+      ],
       "Updating vault organization...": [
         "Kluisorganisatie updaten..."
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Upgrade nu om premiumfuncties te ontgrendelen"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Upgrade naar ${ PASS_APP_NAME } Plus om toegangstokens te maken en ${ PASS_APP_NAME } programmatisch te gebruiken."
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Upgrade naar een betalend abonnement om meerdere kluizen aan te maken."
@@ -2556,6 +2710,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed.": [
         "Kluis \"${ share.content.name }\" is verwijderd."
+      ],
+      "Vault access granted": [
+        "Toegang tot de kluis verleend"
       ],
       "Vault organization successfully updated": [
         "Kluisorganisatie succesvol bijgewerkt"
@@ -2834,6 +2991,9 @@
       "A-Z": [
         "A-Z"
       ],
+      "Access tokens": [
+        "Toegangstoken tokens"
+      ],
       "Account": [
         "Account"
       ],
@@ -3106,6 +3266,9 @@
       ],
       "Expired tokens (${ expired.length })": [
         "Verlopen tokens (${ expired.length })"
+      ],
+      "Expires in (minutes)": [
+        "Verloopt over (minuten)"
       ],
       "Expiry Date": [
         "Vervaldatum"
@@ -3848,6 +4011,9 @@
       "Update": [
         "Update"
       ],
+      "Use for AI agent": [
+        "Gebruik voor AI-agent"
+      ],
       "Used in": [
         "Gebruikt in"
       ],
@@ -3862,6 +4028,9 @@
       ],
       "Value:": [
         "Waarde:"
+      ],
+      "Vault access": [
+        "Toegang tot de kluis"
       ],
       "Vault ID": [
         "Kluis ID"
@@ -4001,6 +4170,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } is aangezet"
+      ],
+      "Access token deleted": [
+        "Toegangstoken verwijderd"
       ]
     },
     "Option": {
@@ -4181,6 +4353,9 @@
       "Coupon": [
         "Kortingscode"
       ],
+      "e.g. 60": [
+        "Bijv. 60"
+      ],
       "E.g., ": [
         "Bijv., "
       ],
@@ -4338,6 +4513,20 @@
         "Onbekend"
       ]
     },
+    "Status": {
+      "Active": [
+        "Actief"
+      ],
+      "Agent": [
+        "Agent"
+      ],
+      "Expired": [
+        "Verlopen"
+      ],
+      "Expiring soon": [
+        "Vervalt binnenkort"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Synchronisatie aliassen succesvol ingeschakeld. SimpleLogin aliassen kunnen enige tijd duren om te synchroniseren"
@@ -4426,6 +4615,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Voor toegangstokens is ${ PASS_APP_NAME } Plus vereist"
+      ],
       "Account protection": [
         "Account beveiliging"
       ],
@@ -4435,11 +4627,17 @@
       "Activity": [
         "Activiteit"
       ],
+      "Activity for \"${ token.Name }\"": [
+        "Activiteit voor \"${ token.Name }\""
+      ],
       "Add custom domain": [
         "Eigen domeinnaam toevoegen"
       ],
       "Add mailbox": [
         "Postvak toevoegen"
+      ],
+      "Agent setup instructions": [
+        "Installatie-instructies voor agenten"
       ],
       "Alias contacts": [
         "Alias contacten"
@@ -4464,6 +4662,9 @@
       ],
       "Breaches detected for": [
         "Inbreuken gedetecteerd voor"
+      ],
+      "Browser permission required": [
+        "Browser machtiging vereist"
       ],
       "Cancel changing your email?": [
         "Wijzigen e-mail annuleren?"
@@ -4498,6 +4699,9 @@
       "Create contact": [
         "Contact aanmaken"
       ],
+      "Create new access token": [
+        "Maak een nieuw toegangstoken"
+      ],
       "Create PIN code": [
         "Pincode aanmaken"
       ],
@@ -4528,6 +4732,9 @@
       "Delete ${ deletedItemsCount } item?": [
         "${ deletedItemsCount } item verwijderen?",
         "${ deletedItemsCount } items verwijderen?"
+      ],
+      "Delete access token?": [
+        "Toegangstoken verwijderen?"
       ],
       "Delete domain": [
         "Domein verwijderen"
@@ -4643,6 +4850,9 @@
       "Mailbox": [
         "Mailbox"
       ],
+      "Manage vault access": [
+        "Toegang kluis beheren"
+      ],
       "Mark as resolved?": [
         "Markeren als opgelost?"
       ],
@@ -4677,6 +4887,9 @@
       ],
       "Next": [
         "Volgende"
+      ],
+      "No access tokens yet": [
+        "Nog geen toegangstokens"
       ],
       "No excluded items": [
         "Geen uitgesloten onderdelen"
@@ -4895,6 +5108,9 @@
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"
+      ],
+      "Your new access token": [
+        "Uw nieuwe toegangstoken"
       ],
       "Your vault is empty": [
         "Uw kluis is leeg."
