@@ -50,6 +50,9 @@
       "Add": [
         "加入"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add a date": [
         "新增日期"
       ],
@@ -214,6 +217,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "繼續使用 ${ planOrAppName }"
+      ],
+      "Continue with Free": [
+        "繼續使用免費方案"
       ],
       "Continue with Google": [
         "繼續以 Google 帳號登入"
@@ -451,9 +457,6 @@
       ],
       "Go to the next available appointment": [
         "至下一個可用預定"
-      ],
-      "Google": [
-        "Google"
       ],
       "Got it": [
         "了解"
@@ -1346,6 +1349,9 @@
       ],
       "Access advanced AI models": [
         "存取進階 AI 模型"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "全部的頂級質子版服 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 和 ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "攔截廣告、追蹤程式和惡意軟體"
@@ -3008,6 +3014,9 @@
       "Availability unknown": [
         "不確定是否有空"
       ],
+      "Available storage: ${ storageText }": [
+        "可用儲存空間: ${ storageText }"
+      ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "以顏色標示事件，讓您更容易安排一天、追蹤時間並優先處理任務。"
       ],
@@ -3107,8 +3116,17 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
       ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "使用此指南以讓貴組織快速地受益於 ${ BRAND_NAME } 的業界領先加密和隱私生態系。"
+      ],
       "We can't access ${ boldEmails } anymore.": [
         "我們無法再存取至 ${ boldEmails }"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "我們將暫停匯入於 80% 的儲存空間以為新訊息保留空間。"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "我們已匯入來自於 Gmail 的電子郵件。完成時我們將讓您知道。"
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "使用聯絡人群組，您可以一件寄出電子郵件給群組中的所有人。"
@@ -3127,6 +3145,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "您的帳戶資料復原方法已就緒。"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "您免費的 ${ MAIL_APP_NAME } 帳號儲存空間有限所以我們將只匯入您最新的 Gmail 電子郵。"
       ],
       "You’ll get a secure email with the details shortly.": [
         "您即將取得安全電子郵件附帶詳細資料。"
@@ -4892,11 +4913,6 @@
         "選取 ${ boldExport } 以將行事曆匯出為 ICS 檔案。"
       ]
     },
-    "Import provider": {
-      "More import options": [
-        "更多匯入選項"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 聯絡人將不會被匯入。點擊以查看詳細資料"
@@ -4962,6 +4978,9 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } 包含 ${ BRAND_NAME } Scribe 撰稿助理"
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } 是端對端加密視訊會議的解決方案。添加至您的方案以主持安全會議。"
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } 個席次"
@@ -5208,9 +5227,6 @@
       ],
       "Choose a plan that works best for you.": [
         "選擇最適合於您的方案。"
-      ],
-      "Choose your service to connect with": [
-        "選擇您的服務以連線"
       ],
       "Clear data": [
         "清除資料"
@@ -6024,6 +6040,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "隨時升級或清理空間以帶入更多"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "升級以保留您的 ${ planTitle } 權益。"
@@ -8189,6 +8208,9 @@
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "我們的 ${ visionary } 方案不再可用於新的訂閱者，這是一個給予原 ${ BRAND_NAME } 使用者的特殊方案，具有特別功能與福利。"
       ],
+      "Pay once, secure your passwords and identity forever.": [
+        "一次性付款，永久保護您的密碼和身分。"
+      ],
       "Popular": [
         "熱門"
       ],
@@ -8550,6 +8572,9 @@
       ],
       "Passphrase copied to clipboard": [
         "助記詞已複製至剪貼簿"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "您的 ${ BRAND_NAME } 位址已就緒"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9344,6 +9369,9 @@
       ],
       "This key is used to encrypt messages to this contact": [
         "此金鑰是用於加密通訊錄"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "此金鑰是用於舊版的應用程式以加密通訊錄"
       ],
       "We recommend that you \"untrust\" this key.": [
         "我們建議您「取消信任」此金鑰。"
@@ -10272,6 +10300,9 @@
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
         "取得包含全部的單一方案，取得 ${ BRAND_NAME } Unlimited"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "保持您的密碼安全和整齊於多個保管庫"
       ],
       "Protect your account from threats with Sentinel": [
         "使用 Sentinel 保護您的帳戶免受威脅"
@@ -11313,6 +11344,9 @@
       ],
       "Contacts": [
         "通訊錄"
+      ],
+      "Continue with free storage": [
+        "繼續使用免費儲存空間"
       ],
       "Continue with partial import?": [
         "要繼續部分匯入嗎？"
