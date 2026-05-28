@@ -255,6 +255,9 @@
       "Continue transfers": [
         "Overdrachten voortzetten"
       ],
+      "Continue with Free": [
+        "Doorgaan met gratis"
+      ],
       "Continue with Google": [
         "Ga verder met Google"
       ],
@@ -530,6 +533,9 @@
       "Go back": [
         "Ga terug"
       ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Ga terug naar album “${ ellipsedAlbumName }\""
+      ],
       "Go to ${ planOrAppName }": [
         "Ga naar ${ planOrAppName }"
       ],
@@ -544,9 +550,6 @@
       ],
       "Go to settings": [
         "Ga naar instellingen"
-      ],
-      "Google": [
-        "Google"
       ],
       "Got it": [
         "Begrepen"
@@ -2915,6 +2918,9 @@
       "Automatically forward incoming email to another email address.": [
         "Inkomende e-mail automatisch doorsturen naar een ander e-mailadres."
       ],
+      "Available storage: ${ storageText }": [
+        "Beschikbare opslagruimte: ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configureer dit eerst om uw organisatie te activeren en uw e-mailadres aan te passen."
       ],
@@ -2944,6 +2950,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Versleutelen en importeren van contacten... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Genoeg ruimte voor jarenlang e-mails, bijlagen en meer."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Zorg voor veilige toegang tot gegevens van de organisatie, zelfs als uw team op afstand is of openbare wifi gebruikt."
@@ -3005,6 +3014,9 @@
       "To start, give your organization a name.": [
         "Geef uw organisatie een naam om te beginnen."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Ontgrendel 15 GB opslagruimte voor slechts ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Upgrade naar ${ planName } om bestanden te blijven delen met bewerkingsrechten"
       ],
@@ -3016,6 +3028,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "We hebben geen toegang meer tot ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "We pauzeren de import bij 80% opslagruimte om ruimte te reserveren voor nieuwe berichten."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "We zijn begonnen met het importeren van uw e-mails uit Gmail. We laten het u weten als het klaar is."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Het spijt ons u te moeten zien vertrekken. Als u even tijd heeft, zouden we het zeer op prijs stellen te horen waarom u wilt annuleren. Uw feedback helpt ons ${ BRAND_NAME } beter te maken voor iedereen."
@@ -3037,6 +3055,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Uw account en dataherstelmethodes zijn ingesteld."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Uw gratis ${ MAIL_APP_NAME }-account wordt geleverd met beperkte opslagruimte, dus we importeren alleen ${ newUserStorageText } van uw meest recente Gmail-berichten"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Uw gratis ${ MAIL_APP_NAME }-account wordt geleverd met beperkte opslagruimte, dus we importeren alleen uw meest recente Gmail-e-mails."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
@@ -4342,11 +4366,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ premium functies"
+      ],
+      "Custom email domain": [
+        "Aangepast e-maildomein"
+      ],
+      "Email addresses": [
+        "E-mailadressen"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Versleutelde cloudopslag voor bestanden, foto's en documenten"
       ],
       "More premium features": [
         "Meer premium functies"
+      ],
+      "Storage": [
+        "Opslagruimte"
       ],
       "Unlimited hide-my-email aliases": [
         "Onbeperkt aantal hide-my-email-aliassen"
@@ -4822,11 +4858,6 @@
         "Selecteer ${ boldExport } om de agenda te exporteren als een ICS-bestand."
       ]
     },
-    "Import provider": {
-      "More import options": [
-        "Meer importopties"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } van de ${ totalContacts } contacten worden niet geïmporteerd. Klik voor details"
@@ -5270,9 +5301,6 @@
       "Choose a plan that works best for you.": [
         "Kies een abonnement dat het beste bij u past."
       ],
-      "Choose your service to connect with": [
-        "Kies uw service om verbinding te maken"
-      ],
       "Clear all search data": [
         "Wis alle zoekgegevens"
       ],
@@ -5342,6 +5370,10 @@
       ],
       "Create a new contact group": [
         "Maak een nieuwe contactengroep"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Maak een beveiligde cloud voor ${ memberCount } lid",
+        "Maak een beveiligde cloud voor ${ memberCount } leden"
       ],
       "Create in": [
         "Maak in"
@@ -5679,6 +5711,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "In de volgende stap kunt u een storting doen met een Bitcoin-adres."
       ],
+      "Included": [
+        "inbegrepen"
+      ],
       "Index is empty.": [
         "Index niet ingevuld."
       ],
@@ -6009,6 +6044,10 @@
       ],
       "Photo is set as album cover": [
         "Foto is ingesteld als albumhoes"
+      ],
+      "Photo saved to your Drive": [
+        "Foto opgeslagen in uw Drive",
+        "Foto's opgeslagen in uw Drive"
       ],
       "Photo was copied to stream and marked favorite there.": [
         "Foto is gekopieerd naar de stream en daar als favoriet gemarkeerd."
@@ -6535,6 +6574,9 @@
       "Trash is empty": [
         "Uw prullenbak is leeg."
       ],
+      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
+        "Vertrouw op de sleutel \"${ activeSignerText }\" om nieuwe berichten van dit contact te verifiëren."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Probeer de nieuwe ${ BRAND_NAME } mogelijkheden, updates en producten voordat ze publiekelijk gelanceerd worden. Dit herlaadt de applicatie"
       ],
@@ -6568,8 +6610,14 @@
       "Updating drive search...": [
         "Drive doorzoeken bijwerken..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Upgrade op elk gewenst moment om de rest over te brengen"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Upgrade of maak op elk gewenst moment ruimte vrij om de rest over te brengen"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Upgraden om uw ${ planTitle } voordelen te behouden."
@@ -6637,6 +6685,10 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "Hoera! U hebt zojuist uw opslagruimte verhoogd tot 5 GB!"
       ],
+      "We couldn't save this photo to your Drive": [
+        "We kunnen deze foto niet opslaan op uw Drive",
+        "We kunnen niet meerdere foto's op uw Drive opslaan"
+      ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "We konden niet verifiëren dat ${ nameAuthor } ${ node.name } heeft geüpload. Het volgende kan onrechtmatig zijn bewerkt: volgorde van de bestandsgegevens. Open alleen als u het vertrouwt."
       ],
@@ -6657,6 +6709,10 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "We gebruiken 3-D Secure om uw betalingen te beschermen"
+      ],
+      "We were not able to add this photo to your album": [
+        "We konden deze foto niet aan uw album toevoegen",
+        "We konden sommige foto's niet aan uw album toevoegen"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
@@ -7014,11 +7070,17 @@
       ]
     },
     "Key badge": {
+      "Active Signer": [
+        "Actieve ondertekenaar"
+      ],
       "Compromised": [
         "Gecompromitteerd"
       ],
       "Expired": [
         "Verlopen"
+      ],
+      "Fallback": [
+        "Terugval"
       ],
       "KOO": [
         "KOO"
@@ -7063,6 +7125,9 @@
       "${ nbYear } year": [
         "${ nbYear } jaar",
         "${ nbYear } jaren"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } tekens"
       ],
       "(Expired)": [
         "(Verlopen)"
@@ -8526,6 +8591,9 @@
       "99.95% SLA": [
         "99,95% SLA"
       ],
+      "Access all countries": [
+        "Toegang tot alle landen"
+      ],
       "Ad-blocker and malware protection": [
         "Advertentieblokkering en bescherming tegen malware"
       ],
@@ -8684,6 +8752,9 @@
       "Multiple admin roles": [
         "Meerdere beheerdersfuncties"
       ],
+      "No streaming support": [
+        "Geen streaming-ondersteuning"
+      ],
       "Online document editor": [
         "Online document editor"
       ],
@@ -8833,6 +8904,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ongelimiteerd(e) volume/bandbreedte"
+      ],
+      "Unlock streaming": [
+        "Deblokkeer streaming"
       ],
       "Up to ${ n } user": [
         "Tot ${ n } gebruiker",
@@ -9236,6 +9310,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } land",
+        "${ n } landen"
+      ],
       "Access advanced VPN features": [
         "Gebruik geavanceerde VPN-functies"
       ],
@@ -9348,6 +9426,10 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" succesvol hernoemd"
       ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } foto is toegevoegd aan \"${ albumName }\"",
+        "${ addedUids.length } foto's zijn toegevoegd aan \"${ albumName }\""
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } item kon niet worden ontsleuteld",
         "${ count } items konden niet worden ontsleuteld"
@@ -9421,6 +9503,10 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } is aangezet"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } foto is verwijderd uit \"${ albumName }\"",
+        "${ removed } foto's zijn verwijderd uit \"${ albumName }\""
       ],
       "Access for the member removed": [
         "Toegang voor het lid verwijderd"
@@ -9576,7 +9662,7 @@
         "U bent gestopt met dit item te delen"
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
-        "Uw ${ BRAND_NAME } adres is klaar voor gebruik"
+        "Uw ${ BRAND_NAME }-adres is klaar voor gebruik"
       ],
       "Your old files will be deleted in 72 hours": [
         "Uw oude bestanden worden binnen 72 uur verwijderd"
@@ -10385,8 +10471,17 @@
       "External key automatically fetched via WKD.": [
         "Externe sleutel wordt automatisch opgehaald via WKD."
       ],
+      "This contact currently signs messages with this key": [
+        "Dit contact ondertekent momenteel berichten met deze sleutel"
+      ],
+      "This key is used for message verification": [
+        "Deze sleutel wordt gebruikt voor berichtverificatie"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Deze sleutel wordt gebruikt om berichten naar deze contactpersoon te versleutelen"
+      ],
+      "This key is used to encrypt messages to this contact on older apps": [
+        "Deze sleutel wordt gebruikt om berichten naar dit contact in oudere apps te coderen"
       ],
       "We recommend that you \"untrust\" this key.": [
         "We adviseren u deze sleutel niet meer te vertrouwen."
@@ -12342,6 +12437,9 @@
       "Contacts": [
         "Contacten"
       ],
+      "Continue with free storage": [
+        "Ga door met gratis opslag"
+      ],
       "Continue with partial import?": [
         "Doorgaan met gedeeltelijke invoer?"
       ],
@@ -12576,6 +12674,9 @@
       ],
       "Get more from your VPN": [
         "Haal meer uit uw VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Krijg meer opslagruimte met ${ MAIL_APP_NAME } Plus"
       ],
       "Get started with 10 minutes of free uploads, on the house.": [
         "Ga aan de slag met 10 minuten gratis uploadtijd, van het huis."
