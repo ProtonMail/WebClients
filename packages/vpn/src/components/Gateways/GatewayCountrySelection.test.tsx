@@ -1,5 +1,6 @@
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import type { MockedFunction } from 'vitest';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -10,11 +11,11 @@ import { getInitialModel } from '../../functions/gatewayHelpers';
 import type { DeletedDedicatedIp, GatewayLocation } from '../../types/Gateway';
 import { GatewayCountrySelection } from './GatewayCountrySelection';
 
-jest.mock('@proton/account/organization/hooks');
-jest.mock('@proton/account/subscription/hooks');
-jest.mock('@proton/components/hooks/useNow');
-jest.mock('@proton/payments/ui');
-jest.mock('ttag', () => ({
+vi.mock('@proton/account/organization/hooks');
+vi.mock('@proton/account/subscription/hooks');
+vi.mock('@proton/components/hooks/useNow');
+vi.mock('@proton/payments/ui');
+vi.mock('ttag', () => ({
     c: () => ({
         t: (str: string) => str,
         ngettext: (msgid: any, str: string) => str,
@@ -22,10 +23,10 @@ jest.mock('ttag', () => ({
     msgid: (str: string) => str,
 }));
 
-const mockUseOrganization = useOrganization as jest.MockedFunction<typeof useOrganization>;
-const mockUseSubscription = useSubscription as jest.MockedFunction<typeof useSubscription>;
-const mockUseNow = useNow as jest.MockedFunction<typeof useNow>;
-const mockUseIsB2BTrial = useIsB2BTrial as jest.MockedFunction<typeof useIsB2BTrial>;
+const mockUseOrganization = useOrganization as MockedFunction<typeof useOrganization>;
+const mockUseSubscription = useSubscription as MockedFunction<typeof useSubscription>;
+const mockUseNow = useNow as MockedFunction<typeof useNow>;
+const mockUseIsB2BTrial = useIsB2BTrial as MockedFunction<typeof useIsB2BTrial>;
 
 describe('GatewayCountrySelection', () => {
     const mockLocations: GatewayLocation[] = [
@@ -59,8 +60,8 @@ describe('GatewayCountrySelection', () => {
         },
         loading: false,
         model: defaultModel,
-        onUpdateCheckedLocations: jest.fn(),
-        changeModel: jest.fn(),
+        onUpdateCheckedLocations: vi.fn(),
+        changeModel: vi.fn(),
     };
 
     const mockDeletedIps: DeletedDedicatedIp[] = [
@@ -81,7 +82,7 @@ describe('GatewayCountrySelection', () => {
     ];
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockUseOrganization.mockReturnValue([{} as any, false]);
         mockUseSubscription.mockReturnValue([{} as any, false]);
         mockUseNow.mockReturnValue(new Date('2024-01-01T00:00:00Z'));
@@ -118,7 +119,7 @@ describe('GatewayCountrySelection', () => {
         });
 
         it('should call changeModel when quantity changes', async () => {
-            const changeModel = jest.fn();
+            const changeModel = vi.fn();
             render(<GatewayCountrySelection {...defaultProps} changeModel={changeModel} />);
 
             await userEvent.click(screen.getByText('Berlin', { exact: false }));
@@ -202,8 +203,8 @@ describe('GatewayCountrySelection', () => {
         });
 
         it('should call handleUnassigningLocationChecked when checkbox is toggled', async () => {
-            const changeModel = jest.fn();
-            const onUpdateCheckedLocations = jest.fn();
+            const changeModel = vi.fn();
+            const onUpdateCheckedLocations = vi.fn();
 
             render(
                 <GatewayCountrySelection
@@ -226,8 +227,8 @@ describe('GatewayCountrySelection', () => {
         });
 
         it('should update unassignedIpQuantities when checkbox is checked', async () => {
-            const changeModel = jest.fn();
-            const onUpdateCheckedLocations = jest.fn();
+            const changeModel = vi.fn();
+            const onUpdateCheckedLocations = vi.fn();
 
             render(
                 <GatewayCountrySelection
@@ -254,7 +255,7 @@ describe('GatewayCountrySelection', () => {
         });
 
         it('should call onUpdateCheckedLocations when checkbox is toggled', async () => {
-            const onUpdateCheckedLocations = jest.fn();
+            const onUpdateCheckedLocations = vi.fn();
 
             render(
                 <GatewayCountrySelection

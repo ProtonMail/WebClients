@@ -1,5 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import type { MockedFunction } from 'vitest';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
@@ -9,59 +10,59 @@ import { useOnboarding } from '../../hooks/useOnboarding';
 import { ONBOARDING } from '../../types/Onboarding';
 import { GetStartedOnboarding } from './index';
 
-jest.mock('@proton/account/organization/hooks', () => ({
-    useOrganization: jest.fn(),
+vi.mock('@proton/account/organization/hooks', () => ({
+    useOrganization: vi.fn(),
 }));
 
-jest.mock('@proton/components/containers/organization/SetupOrganizationNameModal', () => ({
+vi.mock('@proton/components/containers/organization/SetupOrganizationNameModal', () => ({
     SetupOrganizationNameModal: ({ onSubmit, open }: { onSubmit: (name: string) => void; open: boolean }) =>
         open ? <button onClick={() => onSubmit('My Org')}>setup-org-modal</button> : null,
 }));
 
-jest.mock('@proton/components/hooks/useNotifications', () =>
-    jest.fn().mockReturnValue({
-        createNotification: jest.fn(),
-    })
-);
-
-jest.mock('@proton/components/components/link/useSettingsLink', () => jest.fn());
-
-jest.mock('../../hooks/useOnOrganizationNameSetup', () => ({
-    useOnOrganizationNameSetup: jest.fn(),
+vi.mock('@proton/components/hooks/useNotifications', () => ({
+    default: vi.fn().mockReturnValue({
+        createNotification: vi.fn(),
+    }),
 }));
 
-jest.mock('../../hooks/useOnboarding', () => ({
-    useOnboarding: jest.fn(),
+vi.mock('@proton/components/components/link/useSettingsLink', () => ({
+    default: vi.fn(),
 }));
 
-jest.mock('@proton/components/components/topnavbar/GetStartedButton', () => ({
+vi.mock('../../hooks/useOnOrganizationNameSetup', () => ({
+    useOnOrganizationNameSetup: vi.fn(),
+}));
+
+vi.mock('../../hooks/useOnboarding', () => ({
+    useOnboarding: vi.fn(),
+}));
+
+vi.mock('@proton/components/components/topnavbar/GetStartedButton', () => ({
     GetStartedButton: ({ onDismiss }: { onDismiss: () => void }) => (
         <button onClick={onDismiss}>get-started-button</button>
     ),
 }));
 
-jest.mock('./OnboardedQuickActions', () => ({
+vi.mock('./OnboardedQuickActions', () => ({
     OnboardedQuickActions: ({ onDismiss }: { onDismiss: () => void }) => (
         <button onClick={onDismiss}>onboarded-quick-actions</button>
     ),
 }));
 
-const mockUseOrganization = useOrganization as jest.MockedFunction<typeof useOrganization>;
-const mockUseSettingsLink = useSettingsLink as jest.MockedFunction<typeof useSettingsLink>;
-const mockUseOnOrganizationNameSetup = useOnOrganizationNameSetup as jest.MockedFunction<
-    typeof useOnOrganizationNameSetup
->;
-const mockUseOnboarding = useOnboarding as jest.MockedFunction<typeof useOnboarding>;
+const mockUseOrganization = useOrganization as MockedFunction<typeof useOrganization>;
+const mockUseSettingsLink = useSettingsLink as MockedFunction<typeof useSettingsLink>;
+const mockUseOnOrganizationNameSetup = useOnOrganizationNameSetup as MockedFunction<typeof useOnOrganizationNameSetup>;
+const mockUseOnboarding = useOnboarding as MockedFunction<typeof useOnboarding>;
 
 const mockOrganization = { Name: 'Test Org' } as ReturnType<typeof useOrganization>[0];
 
 describe('GetStartedOnboarding', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockUseOrganization.mockReturnValue([mockOrganization, false]);
-        mockUseSettingsLink.mockReturnValue(jest.fn());
-        mockUseOnOrganizationNameSetup.mockReturnValue(jest.fn());
-        mockUseOnboarding.mockReturnValue([ONBOARDING.Onboarded, jest.fn(), jest.fn()]);
+        mockUseSettingsLink.mockReturnValue(vi.fn());
+        mockUseOnOrganizationNameSetup.mockReturnValue(vi.fn());
+        mockUseOnboarding.mockReturnValue([ONBOARDING.Onboarded, vi.fn(), vi.fn()]);
     });
 
     it('renders nothing when there is no organization', () => {
@@ -73,7 +74,7 @@ describe('GetStartedOnboarding', () => {
     });
 
     it('renders SetupOrganizationNameModal when not onboarded', () => {
-        mockUseOnboarding.mockReturnValue([ONBOARDING.NotOnboarded, jest.fn(), jest.fn()]);
+        mockUseOnboarding.mockReturnValue([ONBOARDING.NotOnboarded, vi.fn(), vi.fn()]);
 
         render(<GetStartedOnboarding />);
 
@@ -87,7 +88,7 @@ describe('GetStartedOnboarding', () => {
     });
 
     it('renders nothing when not eligible', () => {
-        mockUseOnboarding.mockReturnValue([ONBOARDING.NotEligible, jest.fn(), jest.fn()]);
+        mockUseOnboarding.mockReturnValue([ONBOARDING.NotEligible, vi.fn(), vi.fn()]);
 
         const { container } = render(<GetStartedOnboarding />);
 
@@ -95,7 +96,7 @@ describe('GetStartedOnboarding', () => {
     });
 
     it('renders nothing when dismissed', () => {
-        mockUseOnboarding.mockReturnValue([ONBOARDING.Dismissed, jest.fn(), jest.fn()]);
+        mockUseOnboarding.mockReturnValue([ONBOARDING.Dismissed, vi.fn(), vi.fn()]);
 
         const { container } = render(<GetStartedOnboarding />);
 
@@ -103,11 +104,11 @@ describe('GetStartedOnboarding', () => {
     });
 
     it('calls onOrganizationNameSetup with submitted name, then onboarded, then navigates', async () => {
-        const mockOnboarded = jest.fn().mockResolvedValue(undefined);
-        const mockOnOrganizationNameSetup = jest.fn().mockResolvedValue(undefined);
-        const mockGoToSettings = jest.fn();
+        const mockOnboarded = vi.fn().mockResolvedValue(undefined);
+        const mockOnOrganizationNameSetup = vi.fn().mockResolvedValue(undefined);
+        const mockGoToSettings = vi.fn();
 
-        mockUseOnboarding.mockReturnValue([ONBOARDING.NotOnboarded, mockOnboarded, jest.fn()]);
+        mockUseOnboarding.mockReturnValue([ONBOARDING.NotOnboarded, mockOnboarded, vi.fn()]);
         mockUseOnOrganizationNameSetup.mockReturnValue(mockOnOrganizationNameSetup);
         mockUseSettingsLink.mockReturnValue(mockGoToSettings);
 
@@ -121,8 +122,8 @@ describe('GetStartedOnboarding', () => {
     });
 
     it('passes completed as onDismiss to OnboardedQuickActions', async () => {
-        const mockCompleted = jest.fn();
-        mockUseOnboarding.mockReturnValue([ONBOARDING.Onboarded, jest.fn(), mockCompleted]);
+        const mockCompleted = vi.fn();
+        mockUseOnboarding.mockReturnValue([ONBOARDING.Onboarded, vi.fn(), mockCompleted]);
 
         render(<GetStartedOnboarding />);
 
