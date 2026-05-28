@@ -1,10 +1,10 @@
 import { useShallow } from 'zustand/react/shallow';
 
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useSelectionStore } from '../../../../modules/selection';
-import { sendErrorReport } from '../../../../utils/errorHandling';
 import { useSearchViewStore } from '../store';
 import { EditActions } from './EditActions';
 import { createActionsItemChecker } from './actionsItemChecker';

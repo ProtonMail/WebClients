@@ -3,10 +3,10 @@ import { useEffect, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { useLoading } from '@proton/hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { sendErrorReport } from '../../../utils/errorHandling';
 import { useLinksListing } from '../_links';
 import { useSearchResults } from '../_search';
 import { useUserSettings } from '../_settings';

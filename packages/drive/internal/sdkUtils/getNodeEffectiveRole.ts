@@ -7,7 +7,7 @@ import {
 } from '@protontech/drive-sdk';
 import { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
 
-import { handleDriveError } from '../handleDriveError';
+import { handleSdkError } from '../../legacy/errorHandling';
 
 const MemberHierarchy = {
     [MemberRole.Inherited]: 0,
@@ -44,8 +44,10 @@ export async function getNodeEffectiveRole(
     }
 
     if (role === MemberRole.Inherited) {
-        handleDriveError(new Error('Node has Inherited role and no parent'), {
+        // TODO: Maybe use sendErrorReport ? or any non-UI error utility ?
+        handleSdkError(new Error('Node has Inherited role and no parent'), {
             extra: { uid: node.uid },
+            showNotification: false,
         });
         return MemberRole.Viewer;
     }

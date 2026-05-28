@@ -2,6 +2,7 @@ import { useCallback, useEffect } from 'react';
 
 import { useOnline, usePreventLeave } from '@proton/components';
 import { generateNodeUid } from '@proton/drive/index';
+import { errorToString, logError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import type { ScanResultItem } from '@proton/shared/lib/interfaces/drive/file';
@@ -10,7 +11,6 @@ import { TransferState } from '../../../../legacy/components/TransferManager/tra
 import { hasValidAnonymousSignature } from '../../../../legacy/components/hasValidAnonymousSignature';
 import { useDownloadIsTooBigModal } from '../../../../legacy/components/modals/useDownloadIsTooBigModal';
 import { DownloadManager } from '../../../../modules/download/DownloadManager';
-import { errorToString, logError, sendErrorReport } from '../../../../utils/errorHandling';
 import { bufferToStream } from '../../../../utils/stream';
 import {
     isTransferCancelError,

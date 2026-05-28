@@ -3,6 +3,7 @@ import { c, msgid } from 'ttag';
 import { useConfirmActionModal, useNotifications } from '@proton/components';
 import { MemberRole, NodeType } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
@@ -20,7 +21,6 @@ import {
     getOpenInDocsInfo,
     openPublicDocsOrSheetsDocument,
 } from '../../../utils/docs/openInDocs';
-import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { isPreviewOrFallbackAvailable } from '../../../utils/isPreviewOrFallbackAvailable';
 import { getPublicLinkClient } from '../publicLinkClient';
 import { usePublicAuthStore } from '../usePublicAuth.store';

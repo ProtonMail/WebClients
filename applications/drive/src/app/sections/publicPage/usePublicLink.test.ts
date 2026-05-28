@@ -54,11 +54,11 @@ jest.mock('../../utils/docs/openInDocs', () => ({
     openPublicDocsOrSheetsDocument: jest.fn(),
 }));
 
-jest.mock('../../utils/errorHandling', () => ({
+jest.mock('@proton/drive/legacy/errorHandling', () => ({
     sendErrorReport: jest.fn(),
 }));
 
-jest.mock('../../utils/errorHandling/apiErrors', () => ({
+jest.mock('@proton/drive/legacy/errorHandling', () => ({
     is4xx: jest.fn(),
     is5xx: jest.fn(),
 }));

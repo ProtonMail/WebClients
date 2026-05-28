@@ -14,6 +14,7 @@ import {
     StandardLoadErrorPage,
     StandardPrivateApp,
 } from '@proton/components';
+import { getWebpackChunkFailedToLoadError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { driveMetrics } from '@proton/drive/modules/metrics';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
@@ -27,8 +28,6 @@ import config from './config';
 import { useUserSettingsStore } from './modules/userSettings';
 import type { DriveStore } from './redux-store/store';
 import { extraThunkArguments } from './redux-store/thunk';
-import { sendErrorReport } from './utils/errorHandling';
-import { getWebpackChunkFailedToLoadError } from './utils/errorHandling/WebpackChunkFailedToLoadError';
 import { Features, measureFeaturePerformance } from './utils/telemetry';
 
 const MainContainerLazy = lazy(() =>

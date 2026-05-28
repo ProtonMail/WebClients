@@ -1,8 +1,7 @@
-import { getNotificationsManager } from '@proton/drive/modules/notifications';
-
-import { isIgnoredError, sendErrorReport } from '../../utils/errorHandling';
-import type { ValidationError } from '../../utils/errorHandling/ValidationError';
-import { isValidationError } from '../../utils/errorHandling/ValidationError';
+import { getNotificationsManager } from '../../modules/notifications';
+import type { ValidationError } from './ValidationError';
+import { isValidationError } from './ValidationError';
+import { isIgnoredError, sendErrorReport } from './sendErrorReport';
 
 /**
  * showAggregatedErrorNotification creates notification for set of errors

@@ -1,4 +1,4 @@
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
+import { EnrichedError } from '@proton/drive/legacy/errorHandling';
 
 export const markErrorAsCrypto = async <T>(cb: () => Promise<T>): Promise<T> => {
     try {

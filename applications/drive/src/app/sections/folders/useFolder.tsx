@@ -4,14 +4,13 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { MemberRole, useDrive } from '@proton/drive';
+import { EnrichedError, handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { driveMetrics } from '@proton/drive/modules/metrics';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useFlagsDriveSheet } from '../../modules/featureFlag';
-import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
 import { useDevicesStore } from '../devices/useDevices.store';
 import { mapNodeToFolderViewItem } from './mapNodeToFolderViewItem';
