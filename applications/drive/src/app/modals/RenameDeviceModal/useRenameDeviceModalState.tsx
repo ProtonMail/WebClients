@@ -6,10 +6,10 @@ import { type ModalStateProps, useFormErrors, useNotifications } from '@proton/c
 import type { ProtonDriveClient } from '@proton/drive';
 import { getDrive } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getDeviceByUid } from '../../utils/sdk/getDeviceByUid';
 import { getDeviceName } from '../../utils/sdk/getNodeName';
 

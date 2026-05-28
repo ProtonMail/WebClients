@@ -1,4 +1,5 @@
-import { EnrichedError } from '../../../../utils/errorHandling/EnrichedError';
+import { EnrichedError } from '@proton/drive/legacy/errorHandling';
+
 import type { ShareMembership } from '../interface';
 
 /*

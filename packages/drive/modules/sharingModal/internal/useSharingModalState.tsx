@@ -25,10 +25,10 @@ import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import { BusDriverEventName, getBusDriver } from '../../../internal/BusDriver';
 import { useFlagsDriveDocsPublicSharing } from '../../../internal/flags/useFlagsDriveDocsPublicSharing';
-import { handleDriveError } from '../../../internal/handleDriveError';
 import { getNodeAncestry } from '../../../internal/sdkUtils/getNodeAncestry';
 import { getNodeEffectiveRole } from '../../../internal/sdkUtils/getNodeEffectiveRole';
 import { getNodeName } from '../../../internal/sdkUtils/getNodeName';
+import { handleSdkError } from '../../../legacy/errorHandling';
 import { getDisplayName } from './DirectSharing/helpers/userNames';
 import type { SharingModalViewProps } from './SharingModalView';
 import { type DirectMember, MemberType } from './interfaces';
@@ -137,7 +137,11 @@ export const useSharingModalState = ({
                 );
             }
         } catch (e) {
-            handleDriveError(e, { fallbackMessage: c('Error').t`Failed to unshare node`, extra: { nodeUid } });
+            handleSdkError(e, {
+                fallbackMessage: c('Error').t`Failed to unshare node`,
+                extra: { nodeUid },
+                showNotification: true,
+            });
         }
     };
 
@@ -149,9 +153,10 @@ export const useSharingModalState = ({
             createNotification({ text: c('Notification').t`The link to your item was deleted` });
             await updateSharingState(updatedShareResult);
         } catch (e) {
-            handleDriveError(e, {
+            handleSdkError(e, {
                 fallbackMessage: c('Error').t`The link to your item failed to be deleted`,
                 extra: { nodeUid },
+                showNotification: true,
             });
         }
     };
@@ -169,9 +174,10 @@ export const useSharingModalState = ({
             if (e instanceof ValidationError) {
                 createNotification({ type: 'error', text: e.message });
             }
-            handleDriveError(e, {
+            handleSdkError(e, {
                 fallbackMessage: c('Error').t`Failed to create public share node`,
                 extra: { nodeUid },
+                showNotification: true,
             });
         }
     };
@@ -212,9 +218,10 @@ export const useSharingModalState = ({
             if (e instanceof ValidationError) {
                 createNotification({ type: 'error', text: e.message });
             }
-            handleDriveError(e, {
+            handleSdkError(e, {
                 fallbackMessage: c('Error').t`Failed to update public share node`,
                 extra: { nodeUid },
+                showNotification: true,
             });
         }
     };
@@ -234,9 +241,10 @@ export const useSharingModalState = ({
 
             await updateSharingState(updatedShareResult);
         } catch (e) {
-            handleDriveError(e, {
+            handleSdkError(e, {
                 fallbackMessage: c('Error').t`Failed to update direct share node`,
                 extra: { nodeUid },
+                showNotification: true,
             });
         }
     };
@@ -247,9 +255,10 @@ export const useSharingModalState = ({
             await updateSharingState(updatedShareResult);
             createNotification({ text: c('Notification').t`You stopped sharing this item` });
         } catch (e) {
-            handleDriveError(e, {
+            handleSdkError(e, {
                 fallbackMessage: c('Error').t`Stopping the sharing of this item has failed`,
                 extra: { nodeUid },
+                showNotification: true,
             });
         }
     };
@@ -259,9 +268,10 @@ export const useSharingModalState = ({
             await drive.resendInvitation(nodeUid, invitationUid);
             createNotification({ type: 'info', text: c('Notification').t`Invitation's email was sent again` });
         } catch (e) {
-            handleDriveError(e, {
+            handleSdkError(e, {
                 fallbackMessage: c('Error').t`Failed to resend invitation`,
                 extra: { nodeUid, invitationUid },
+                showNotification: true,
             });
         }
     };
@@ -284,15 +294,16 @@ export const useSharingModalState = ({
                                 );
                             }
                         } catch (e) {
-                            handleDriveError(e);
+                            handleSdkError(e, { showNotification: false });
                         }
                     }
                     setSharingInfo({ ...sharingResult, protonInvitations, nonProtonInvitations });
                 }
             } catch (e) {
-                handleDriveError(e, {
+                handleSdkError(e, {
                     fallbackMessage: c('Error').t`Failed to fetch sharing info`,
                     extra: { nodeUid },
+                    showNotification: false,
                 });
             }
         };
@@ -316,7 +327,11 @@ export const useSharingModalState = ({
                     setIsResharing(!isMyFile);
                 }
             } catch (e) {
-                handleDriveError(e, { fallbackMessage: c('Error').t`Failed to fetch node`, extra: { nodeUid } });
+                handleSdkError(e, {
+                    fallbackMessage: c('Error').t`Failed to fetch node`,
+                    extra: { nodeUid },
+                    showNotification: false,
+                });
             }
         };
         void withLoading(Promise.all([fetchSharingInfo(), fetchNodeInfo()]));

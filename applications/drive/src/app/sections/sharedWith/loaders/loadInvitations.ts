@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { getDrive, getDriveForPhotos, splitInvitationUid } from '@proton/drive/index';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
 
-import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { ItemType, useSharedWithMeStore } from '../useSharedWithMe.store';
 
 export const loadInvitations = async (abortSignal: AbortSignal) => {

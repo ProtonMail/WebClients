@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
 import { type SortConfig, useMultiSortedList } from '@proton/components';
+import { logError } from '@proton/drive/legacy/errorHandling';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { logError } from '../../../../utils/errorHandling';
 import type { LinkShareUrl } from '../../_links/interface';
 
 export enum SortField {

@@ -2,14 +2,14 @@ import type { NodeEntity, ProtonDriveClient } from '@protontech/drive-sdk';
 import { MemberRole, NodeType } from '@protontech/drive-sdk';
 import { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
 
-import { handleDriveError } from '../handleDriveError';
+import { handleSdkError } from '../../legacy/errorHandling';
 import { getHigherRole, getNodeEffectiveRole } from './getNodeEffectiveRole';
 
-jest.mock('../handleDriveError', () => ({
-    handleDriveError: jest.fn(),
+jest.mock('../../legacy/errorHandling', () => ({
+    handleSdkError: jest.fn(),
 }));
 
-const mockHandleDriveError = jest.mocked(handleDriveError);
+const mockHandleSdkError = jest.mocked(handleSdkError);
 
 describe('getNodeEffectiveRole', () => {
     let mockDrive: jest.Mocked<Pick<ProtonDriveClient, 'getNode'>>;
@@ -44,7 +44,7 @@ describe('getNodeEffectiveRole', () => {
         mockDrive = {
             getNode: jest.fn(),
         } as any;
-        mockHandleDriveError.mockClear();
+        mockHandleSdkError.mockClear();
     });
 
     describe('short circuit when role is Admin', () => {
@@ -152,7 +152,7 @@ describe('getNodeEffectiveRole', () => {
             expect(result).toBe(MemberRole.Viewer);
             expect(mockDrive.getNode).not.toHaveBeenCalled();
 
-            const error = mockHandleDriveError.mock.calls[0][0] as Error;
+            const error = mockHandleSdkError.mock.calls[0][0] as Error;
             expect(error).toBeInstanceOf(Error);
             expect(error.message).toBe('Node has Inherited role and no parent');
         });

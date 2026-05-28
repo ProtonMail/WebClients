@@ -1,4 +1,5 @@
 import { AbortError } from '@proton/drive';
+import { EnrichedError, isValidationError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import metrics from '@proton/metrics/index';
 import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
@@ -7,9 +8,6 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { promiseWithTimeout } from '@proton/shared/lib/helpers/promise';
 
 import { featureFlagStore } from '../../modules/featureFlag';
-import { sendErrorReport } from '../../utils/errorHandling';
-import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import { isValidationError } from '../../utils/errorHandling/ValidationError';
 import { streamToBuffer } from '../../utils/stream';
 import { isTransferCancelError } from '../../utils/transfer';
 import { initDownloadSW, isOPFSSupported, isServiceWorkersSupported, openDownloadStream } from './download';

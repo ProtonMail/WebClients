@@ -18,7 +18,7 @@ jest.mock('@proton/hooks', () => ({
     useLoading: jest.fn(),
 }));
 
-jest.mock('../../utils/errorHandling/handleSdkError');
+jest.mock('@proton/drive/legacy/errorHandling');
 
 jest.mock('../../utils/sdk/getDeviceByUid', () => ({
     getDeviceByUid: jest.fn(),
