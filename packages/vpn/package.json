@@ -20,9 +20,10 @@
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint --quiet",
-        "test": "jest",
-        "test:ci": "jest --runInBand --passWithNoTests",
-        "test:watch": "jest --watch"
+        "test": "TZ=UTC vitest",
+        "test:ci": "yarn test --coverage --run",
+        "test:ui": "yarn test --ui",
+        "test:watch": "yarn test --watch"
     },
     "dependencies": {
         "@proton/account": "workspace:^",
@@ -48,26 +49,18 @@
         "ttag": "^1.8.12"
     },
     "devDependencies": {
-        "@babel/core": "^7.28.5",
-        "@babel/plugin-transform-runtime": "^7.28.5",
-        "@babel/preset-env": "^7.28.5",
-        "@babel/preset-react": "^7.28.5",
-        "@babel/preset-typescript": "^7.28.5",
         "@proton/eslint-config-proton": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
         "@testing-library/user-event": "^14.6.1",
-        "@types/jest": "^30.0.0",
-        "babel-jest": "^30.2.0",
-        "babel-plugin-transform-require-context": "^0.1.1",
-        "core-js": "^3.49.0",
+        "@vitejs/plugin-react-swc": "^3.11.0",
+        "@vitest/coverage-v8": "3.2.4",
+        "@vitest/ui": "3.2.4",
         "eslint": "^9.39.4",
-        "jest": "^30.4.2",
-        "jest-environment-jsdom": "^30.4.1",
-        "jest-mock": "^30.4.1",
+        "happy-dom": "^20.9.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
-        "ts-jest": "^29.4.9",
-        "typescript": "^6.0.2"
+        "typescript": "^6.0.2",
+        "vitest": "^3.2.4"
     }
 }

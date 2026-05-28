@@ -1,18 +1,18 @@
-import type { Mock } from 'jest-mock';
+import type { Mock } from 'vitest';
 
 import { isAndroid, isIos } from '@proton/shared/lib/helpers/browser';
 
 import { androidMarketplaceUrl, defaultDownloadUrl, iosMarketplaceUrl } from '../../constants/downloadLinks';
 import { getOsDownloadUrl } from './getOsDownloadUrl';
 
-jest.mock('@proton/shared/lib/helpers/browser', () => ({
-    isAndroid: jest.fn(),
-    isIos: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/browser', () => ({
+    isAndroid: vi.fn(),
+    isIos: vi.fn(),
 }));
 
 describe('getOsDownloadUrl', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should return the default link when the os is not android nor iOS', () => {
