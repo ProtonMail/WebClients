@@ -89,7 +89,7 @@ export const ChatItem = ({
             <div className="flex flex-column flex-nowrap justify-start flex-1 min-w-0">
                 <div className="flex items-start text-semibold flex-nowrap">
                     <span className="text-ellipsis" title={participantName}>
-                        {participantName}
+                        <bdi>{participantName}</bdi>
                     </span>
                     {displayDate && (
                         <div className="ml-2 color-weak text-nowrap shrink-0">
