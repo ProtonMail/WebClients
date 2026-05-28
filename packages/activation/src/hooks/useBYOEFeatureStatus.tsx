@@ -1,15 +1,14 @@
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { getIsB2BAudienceFromPlan } from '@proton/payments';
+import { getCanSeeBYOE } from '@proton/activation/src/helpers/byoeAccess.ts';
 import { getIsBYOEAccount } from '@proton/shared/lib/keys';
-import { isAdmin } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 
 const useBYOEFeatureStatus = (
     authorizeBYOEOnlyAccounts = true // In Settings, for example, we want to show BYOE options to BYOE only accounts. However, in the checklist, only normal accounts can see the option
 ) => {
-    const [user] = useUser();
-    const [organization] = useOrganization();
+    const [user, loadingUser] = useUser();
+    const [organization, loadingOrganization] = useOrganization();
     const killSwitchEnabled = useFlag('InboxBringYourOwnEmail');
     const clientFeatureEnabled = useFlag('InboxBringYourOwnEmailClient');
 
@@ -35,12 +34,9 @@ const useBYOEFeatureStatus = (
 
     const BYOEFeatureEnabled = getBYOEFeatureEnabled();
 
-    // On b2b plans, only admins can add BYOE addresses
-    const isB2BUser = getIsB2BAudienceFromPlan(organization?.PlanName);
-    const isB2BAdmin = isAdmin(user) && isB2BUser;
-    const userCanSeeBYOE = isB2BUser ? isB2BAdmin : true;
+    const userCanSeeBYOE = getCanSeeBYOE(user, organization);
 
-    return BYOEFeatureEnabled && userCanSeeBYOE;
+    return [BYOEFeatureEnabled && userCanSeeBYOE, loadingOrganization || loadingUser] as const;
 };
 
 export default useBYOEFeatureStatus;

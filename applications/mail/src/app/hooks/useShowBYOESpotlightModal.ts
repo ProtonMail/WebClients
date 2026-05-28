@@ -23,7 +23,7 @@ const useShowBYOESpotlightModal = () => {
     const { feature, update } = useFeature(FeatureCode.BYOESpotlightModal);
     const { notify } = useMailGlobalModals();
 
-    const hasAccessToBYOE = useBYOEFeatureStatus(false);
+    const [hasAccessToBYOE, loadingBYOEFeatureStatus] = useBYOEFeatureStatus(false);
 
     const emailsFromAddresses = new Set(addresses.map((address) => address.Email));
     const { forwardingSyncs, byoeSyncs } = allSyncs.reduce<{ forwardingSyncs: Sync[]; byoeSyncs: Sync[] }>(
@@ -45,6 +45,7 @@ const useShowBYOESpotlightModal = () => {
     // - User never seen the modal before (old feature flag system)
     // - User is not busy
     const canShowBYOESpotlightModal =
+        !loadingBYOEFeatureStatus &&
         hasAccessToBYOE &&
         !getIsBYOEOnlyAccount(addresses) &&
         byoeSyncs.length === 0 &&
