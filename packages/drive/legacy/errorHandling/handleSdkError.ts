@@ -1,5 +1,3 @@
-import { c } from 'ttag';
-
 import {
     AbortError,
     ConnectionError,
@@ -8,11 +6,12 @@ import {
     RateLimitedError,
     ServerError,
     ValidationError,
-} from '@proton/drive';
-import { getNotificationsManager } from '@proton/drive/modules/notifications';
+} from '@protontech/drive-sdk';
+import { c } from 'ttag';
 
-import { sendErrorReport } from '.';
+import { getNotificationsManager } from '../../modules/notifications';
 import { EnrichedError } from './EnrichedError';
+import { sendErrorReport } from './sendErrorReport';
 
 export const shouldTrackError = (err: Error) =>
     !(err instanceof ValidationError) &&

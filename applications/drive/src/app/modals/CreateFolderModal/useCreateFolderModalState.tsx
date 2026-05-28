@@ -7,11 +7,10 @@ import { c } from 'ttag';
 import { type ModalStateProps, useFormErrors, useNotifications } from '@proton/components';
 import { type ProtonDriveClient, getDrive, splitNodeUid } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { getEllipsedName } from '@proton/drive/modules/intl';
 import { validateNodeName } from '@proton/drive/modules/validation';
-
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 
 type Drive = Pick<ProtonDriveClient, 'createFolder' | 'getNode'>;
 

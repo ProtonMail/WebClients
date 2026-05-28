@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 
-import { handleDriveError } from '../../../internal/handleDriveError';
+import { handleSdkError } from '../../../legacy/errorHandling';
 
 const EditorsManageAccessContext = createContext<{
     editorsManageAccess: boolean;
@@ -50,9 +50,10 @@ export function EditorsManageAccessContextProvider({
                 });
             }
         } catch (error) {
-            handleDriveError(error, {
+            handleSdkError(error, {
                 fallbackMessage: c('Error').t`Failed to change permissions settings`,
                 extra: { nodeUid },
+                showNotification: true,
             });
         }
     }

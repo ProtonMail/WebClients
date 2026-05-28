@@ -1,10 +1,16 @@
 import { useRef } from 'react';
 
+import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { fromUnixTime, isAfter } from 'date-fns';
 import { c } from 'ttag';
 
-import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
-import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
+import {
+    EnrichedError,
+    isIgnoredError,
+    isIgnoredErrorForReporting,
+    sendErrorReport,
+} from '@proton/drive/legacy/errorHandling';
 import { queryFileRevision, queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
 import { queryGetLink } from '@proton/shared/lib/api/drive/link';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
@@ -17,8 +23,6 @@ import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import type { VerificationKeysCallback } from '@proton/shared/lib/keys/drivePassphrase';
 import { decryptPassphrase, getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 
-import { isIgnoredError, isIgnoredErrorForReporting, sendErrorReport } from '../../../utils/errorHandling';
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { getIsPublicContext } from '../../../utils/getIsPublicContext';
 import type { MetricUserPlan } from '../../../utils/type/MetricTypes';
 import { tokenIsValid } from '../../../utils/url/token';

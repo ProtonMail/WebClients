@@ -13,7 +13,7 @@ jest.mock('@proton/drive/modules/notifications', () => ({
     getNotificationsManager: jest.fn(),
 }));
 
-jest.mock('../../../utils/errorHandling/handleSdkError', () => ({
+jest.mock('@proton/drive/legacy/errorHandling', () => ({
     handleSdkError: jest.fn(),
 }));
 

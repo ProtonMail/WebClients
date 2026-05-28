@@ -1,6 +1,6 @@
 import { useModalTwoStatic } from '@proton/components';
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 
-import { sendErrorReport } from '../../utils/errorHandling';
 import { withHoc } from '../modalUtils/withHoc';
 import { MoveItemsModalView, type MoveItemsModalViewProps } from './MoveItemsModalView';
 import type { MoveItemsModalInnerProps } from './useMoveItemsModalState';

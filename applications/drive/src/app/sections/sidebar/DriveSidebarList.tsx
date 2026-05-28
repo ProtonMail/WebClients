@@ -4,13 +4,13 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { Loader, SidebarList } from '@proton/components';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import clsx from '@proton/utils/clsx';
 
 import { useDriveSharingFlags } from '../../legacy/store';
 import type { directoryTreeFactory } from '../../modules/directoryTree';
 import { DirectoryTreeRootType } from '../../modules/directoryTree/types';
 import { useUserSettings } from '../../modules/userSettings';
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { DevicesSidebar } from './DriveSidebarDevices/DevicesSidebar';
 import { DriveSidebarFolders } from './DriveSidebarFolders/DriveSidebarFolders';
 import { DriveSidebarListItem } from './DriveSidebarListItem';

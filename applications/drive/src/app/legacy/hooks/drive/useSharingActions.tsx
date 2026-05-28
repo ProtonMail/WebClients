@@ -3,9 +3,8 @@ import { c } from 'ttag';
 import type { useConfirmActionModal } from '@proton/components';
 import { type ProtonDriveClient, getDrive } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
-
-import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 
 export const useSharingActions = () => {
     const stopSharing = (

@@ -3,9 +3,9 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { useFormErrors, useNotifications } from '@proton/components';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { useLoading } from '@proton/hooks';
 
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getDeviceByUid } from '../../utils/sdk/getDeviceByUid';
 import { getDeviceName } from '../../utils/sdk/getNodeName';
 import { type UseRenameDeviceModalProps, useRenameDeviceModalState } from './useRenameDeviceModalState';
@@ -20,7 +20,7 @@ jest.mock('@proton/hooks', () => ({
     useLoading: jest.fn(),
 }));
 
-jest.mock('../../utils/errorHandling/handleSdkError', () => ({
+jest.mock('@proton/drive/legacy/errorHandling', () => ({
     handleSdkError: jest.fn(),
 }));
 

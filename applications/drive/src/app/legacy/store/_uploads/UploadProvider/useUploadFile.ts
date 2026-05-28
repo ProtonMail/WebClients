@@ -2,6 +2,7 @@ import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
 import { c } from 'ttag';
 
+import { EnrichedError, ValidationError, logError } from '@proton/drive/legacy/errorHandling';
 import {
     queryCreateFile,
     queryCreateFileRevision,
@@ -21,9 +22,6 @@ import { encryptName, generateLookupHash } from '@proton/shared/lib/keys/driveKe
 
 import { TransferCancel, TransferSkipped } from '../../../../legacy/components/TransferManager/transfer';
 import useQueuedFunction from '../../../../legacy/hooks/util/useQueuedFunction';
-import { logError } from '../../../../utils/errorHandling';
-import { EnrichedError } from '../../../../utils/errorHandling/EnrichedError';
-import { ValidationError } from '../../../../utils/errorHandling/ValidationError';
 import { isErrorDueToNameConflict } from '../../../../utils/isErrorDueToNameConflict';
 import { replaceLocalURL } from '../../../../utils/replaceLocalURL';
 import retryOnError from '../../../../utils/retryOnError';

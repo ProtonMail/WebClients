@@ -1,8 +1,6 @@
-import { ERROR_REQUIRE_PAGE_REFRESH } from './errorStrings';
+import { c } from 'ttag';
 
-export const isRefreshError = (err: any): err is RefreshError => {
-    return err.name === 'RefreshError';
-};
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 /**
  * Builds a localized `RefreshError`. Useful to let the user know they should refresh the page.
@@ -13,7 +11,8 @@ export const isRefreshError = (err: any): err is RefreshError => {
  *
  * import('./module').catch(() => Promise.reject(getRefreshError()));
  */
-export const getRefreshError = () => new RefreshError(ERROR_REQUIRE_PAGE_REFRESH);
+export const getRefreshError = () =>
+    new RefreshError(c('Error').t`${DRIVE_APP_NAME} has updated. Please refresh the page.`);
 
 const REFRESH_MESSAGE = 'Please refresh the page.';
 
