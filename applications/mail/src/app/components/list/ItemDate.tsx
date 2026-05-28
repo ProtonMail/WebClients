@@ -6,7 +6,7 @@ import { formatDistanceToNow, formatFullDate, formatSimpleDate } from '../../hel
 import { getDate } from '../../helpers/elements';
 import { getSnoozeTimeFromElement, isElementReminded, isElementSnoozed } from '../../helpers/snooze';
 import type { Element } from '../../models/element';
-import { params } from '../../store/elements/elementsSelectors';
+import { selectParams } from '../../store/elements/elementsSelectors';
 import ItemDateRender from './ItemDateRender';
 import ItemDateSnoozedMessage from './ItemDateSnoozedMessage';
 
@@ -32,7 +32,7 @@ interface Props {
 const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = false, isInListView }: Props) => {
     const formatter = FORMATTERS[mode];
 
-    const { conversationMode } = useMailSelector(params);
+    const { conversationMode } = useMailSelector(selectParams);
 
     const [formattedDate, setFormattedDate] = useState(() => {
         const date = getDate(element, labelID);
