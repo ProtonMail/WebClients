@@ -99,14 +99,14 @@ export const validate = (values: FormValues) => {
 
 export const getInitialValues = (): FormValues => {
     const now = new Date();
+    const end = new Date(now.getTime() + 30 * MINUTE);
+    const pad = (n: number) => String(n).padStart(2, '0');
 
-    const startTime = new Intl.DateTimeFormat(undefined, { hour: '2-digit', minute: '2-digit', hour12: false }).format(
-        new Date()
-    );
-
-    const endTime = new Intl.DateTimeFormat(undefined, { hour: '2-digit', minute: '2-digit', hour12: false }).format(
-        new Date(now.getTime() + 30 * MINUTE)
-    );
+    // Build canonical HH:MM directly — Intl.DateTimeFormat with the system locale
+    // produces locale-specific separators (e.g. "14.30" in fi-FI) that break the
+    // downstream `time.split(':')` assumption and lead to Invalid Date.
+    const startTime = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
+    const endTime = `${pad(end.getHours())}:${pad(end.getMinutes())}`;
 
     return {
         meetingName: '',
