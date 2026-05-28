@@ -9,13 +9,13 @@ import { Copy } from '@proton/components/index';
 import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 
-import { contextTotal, elementsLength, params } from 'proton-mail/store/elements/elementsSelectors';
+import { contextTotal, elementsLength, selectParams } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 interface Props extends ModalProps {}
 
 export const DebugMailStoreContextTotal = ({ ...rest }: Props) => {
-    const storeParams = useMailSelector(params);
+    const params = useMailSelector(selectParams);
     const total = useMailSelector(contextTotal);
     const length = useMailSelector(elementsLength);
 
@@ -25,7 +25,7 @@ export const DebugMailStoreContextTotal = ({ ...rest }: Props) => {
     const { createNotification } = useNotifications();
 
     const data = {
-        params: storeParams,
+        params,
         contextTotal: total,
         elementsLength: length,
         counts: {

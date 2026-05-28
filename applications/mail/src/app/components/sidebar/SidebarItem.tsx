@@ -25,7 +25,7 @@ import { useCheckAllRef } from 'proton-mail/containers/CheckAllRefProvider';
 import { categoryIDFromUrl, setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
 import type { MoveParams } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
-import { params } from 'proton-mail/store/elements/elementsSelectors';
+import { selectParams } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { shouldDisplayTotal } from '../../helpers/labels';
@@ -107,7 +107,7 @@ const SidebarItem = ({
     const { selectAll } = useSelectAll({ labelID });
     const { checkAllRef } = useCheckAllRef();
 
-    const mailParams = useMailSelector(params);
+    const params = useMailSelector(selectParams);
 
     const [refreshing, withRefreshing] = useLoading(false);
 
@@ -151,12 +151,12 @@ const SidebarItem = ({
             return view.label.toString();
         });
         return (
-            !(labelID === mailParams.labelID) &&
+            !(labelID === params.labelID) &&
             !NO_DROP_SET.has(labelID) &&
             !customViewLabelIDs.includes(labelID) &&
             !(isCategoryLabel(labelID) && selectAll)
         );
-    }, [mailParams.labelID, labelID, selectAll]);
+    }, [params.labelID, labelID, selectAll]);
 
     const dropCallback = useCallback(
         (itemIDs: string[]) => {
@@ -166,7 +166,7 @@ const SidebarItem = ({
                 if (isFolder) {
                     void moveToFolder({
                         elements,
-                        sourceLabelID: mailParams.labelID,
+                        sourceLabelID: params.labelID,
                         destinationLabelID: labelID,
                         selectAll,
                         onCheckAll: checkAllRef?.current ? checkAllRef.current : undefined,
@@ -175,7 +175,7 @@ const SidebarItem = ({
                     void applyLabels({
                         elements,
                         changes: { [labelID]: true },
-                        labelID: mailParams.labelID,
+                        labelID: params.labelID,
                         selectAll,
                         onCheckAll: checkAllRef?.current ? checkAllRef.current : undefined,
                         destinationLabelID: labelID,
@@ -184,7 +184,7 @@ const SidebarItem = ({
             }
         },
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-1E6B59
-        [applyLabels, dragFilter, checkAllRef, mailParams.labelID, getElementsFromIDs, isFolder, labelID, selectAll]
+        [applyLabels, dragFilter, checkAllRef, params.labelID, getElementsFromIDs, isFolder, labelID, selectAll]
     );
 
     const { dragOver, dragProps, handleDrop } = useItemsDroppable(dragFilter, isFolder ? 'move' : 'link', dropCallback);

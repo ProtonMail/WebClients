@@ -30,19 +30,22 @@ import { getTotal } from './helpers/elementTotal';
 // Stable reference so that selectors returning an empty array don't cause unnecessary re-renders
 const EMPTY_ARRAY: never[] = [];
 
-export const params = (state: MailState) => state.elements.params;
+export const selectParams = (state: MailState) => state.elements.params;
 
-export const selectLabelID = createSelector([params], (params) => params.labelID);
-export const selectElementID = createSelector([params], (params) => params.elementID);
-export const selectMessageID = createSelector([params], (params) => params.messageID);
-export const selectConversationMode = createSelector([params], (params) => params.conversationMode);
-export const selectSort = createSelector([params], (params) => params.sort);
-export const selectFilter = createSelector([params], (params) => params.filter);
-export const selectSearch = createSelector([params], (params) => params.search);
-export const selectESEnabled = createSelector([params], (params) => params.esEnabled);
-export const selectisSearching = createSelector([params], (params) => params.isSearching);
-export const selectNewsletterSubscriptionID = createSelector([params], (params) => params.newsletterSubscriptionID);
-export const selectCategoryIDs = createSelector([params], (params): CategoryLabelID[] => {
+export const selectLabelID = createSelector([selectParams], (params) => params.labelID);
+export const selectElementID = createSelector([selectParams], (params) => params.elementID);
+export const selectMessageID = createSelector([selectParams], (params) => params.messageID);
+export const selectConversationMode = createSelector([selectParams], (params) => params.conversationMode);
+export const selectSort = createSelector([selectParams], (params) => params.sort);
+export const selectFilter = createSelector([selectParams], (params) => params.filter);
+export const selectSearch = createSelector([selectParams], (params) => params.search);
+export const selectESEnabled = createSelector([selectParams], (params) => params.esEnabled);
+export const selectisSearching = createSelector([selectParams], (params) => params.isSearching);
+export const selectNewsletterSubscriptionID = createSelector(
+    [selectParams],
+    (params) => params.newsletterSubscriptionID
+);
+export const selectCategoryIDs = createSelector([selectParams], (params): CategoryLabelID[] => {
     if (params.labelID === MAILBOX_LABEL_IDS.INBOX) {
         return params.categoryIDs;
     }
@@ -76,7 +79,7 @@ const currentESDBStatus = (
 const currentCounts = (_: MailState, { counts }: { counts: { counts: LabelCount[]; loading: boolean } }) => counts;
 const currentLabelID = (_: MailState, { labelID }: { labelID: string }) => labelID;
 
-export const selectCurrentContextIdentifier = createSelector([params, total], (params) => {
+export const selectCurrentContextIdentifier = createSelector([selectParams, total], (params) => {
     const contextFilter = getElementContextIdentifier({
         labelID: params.labelID,
         categoryIDs: params.categoryIDs,
@@ -95,7 +98,7 @@ export const selectCurrentContextIdentifier = createSelector([params, total], (p
     return contextFilter;
 });
 
-export const contextPages = createSelector([params, pages], (params, pages) => {
+export const contextPages = createSelector([selectParams, pages], (params, pages) => {
     const contextFilter = getElementContextIdentifier({
         labelID: params.labelID,
         categoryIDs: params.categoryIDs,
@@ -114,7 +117,7 @@ export const contextPages = createSelector([params, pages], (params, pages) => {
     return pages[contextFilter] || [];
 });
 
-export const contextTotal = createSelector([params, total], (params, total) => {
+export const contextTotal = createSelector([selectParams, total], (params, total) => {
     const contextFilter = getElementContextIdentifier({
         labelID: params.labelID,
         categoryIDs: params.categoryIDs,
@@ -134,7 +137,7 @@ export const contextTotal = createSelector([params, total], (params, total) => {
 });
 
 export const elements = createSelector(
-    [elementsMap, params, selectPage, pageSize, contextPages, bypassFilter, addresses],
+    [elementsMap, selectParams, selectPage, pageSize, contextPages, bypassFilter, addresses],
     (elements, params, page, pageSize, pages, bypassFilter, addresses) => {
         // Getting all params from the cache and not from scoped params
         // To prevent any de-synchronization between cache and the output of the memo
@@ -185,14 +188,14 @@ export const elementsLength = createSelector([elements], (elements) => {
     return elements.length;
 });
 
-export const elementsAreUnread = createSelector([params, elements], (params, elements) => {
+export const elementsAreUnread = createSelector([selectParams, elements], (params, elements) => {
     return elements.reduce<{ [elementID: string]: boolean }>((acc, element) => {
         acc[element.ID] = isUnread(element, params.labelID);
         return acc;
     }, {});
 });
 
-export const expiringElements = createSelector([params, elements], (params, elements) => {
+export const expiringElements = createSelector([selectParams, elements], (params, elements) => {
     return elements.reduce<{ [elementID: string]: boolean }>((acc, element) => {
         acc[element.ID] = !!element.ExpirationTime && element.ExpirationTime > 0;
         return acc;
@@ -207,7 +210,7 @@ export const expiringElements = createSelector([params, elements], (params, elem
  * It doesn't rely at all on the optimistic counter logic
  */
 export const needsMoreElements = createSelector(
-    [contextTotal, selectPage, pageSize, elementsLength, params],
+    [contextTotal, selectPage, pageSize, elementsLength, selectParams],
     (total, page, pageSize, elementsLength, params) => {
         // There are no elements for newsletter subscriptions if there is no newsletter subscription ID
         if (params.labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS && !params.newsletterSubscriptionID) {
@@ -255,7 +258,7 @@ export const pageIsConsecutive = createSelector([contextPages, currentPage], (pa
  * It should be true either when `shouldResetElementsState` or
  */
 export const shouldLoadElements = createSelector(
-    [pendingRequest, retry, needsMoreElements, invalidated, pageCached, params, taskRunning],
+    [pendingRequest, retry, needsMoreElements, invalidated, pageCached, selectParams, taskRunning],
     (pendingRequest, retry, needsMoreElements, invalidated, pageCached, params, taskRunning) => {
         // Prevent elements from loading in locations where a task is running
         const taskRunningInLabel = taskRunning.labelIDs.includes(params.labelID);
@@ -273,7 +276,7 @@ export const shouldLoadElements = createSelector(
  * @returns true when user is in an unpredictable context because we don't have enough conversations/message metadata infos
  */
 export const shouldInvalidateElementsState = createSelector(
-    [params, contextPages],
+    [selectParams, contextPages],
     (params, pages) => !!params.search.keyword || !pages.includes(0)
 );
 
@@ -329,7 +332,7 @@ export const messagesToLoadMoreES = createSelector(
  * We prefer using this value when present because store one is not immediately up to date when switching labels
  */
 export const dynamicTotal = createSelector(
-    [params, currentCounts, bypassFilter, taskRunning],
+    [selectParams, currentCounts, bypassFilter, taskRunning],
     (params, props, bypassFilter, taskRunning) => {
         const { counts, loading } = props;
         if (
@@ -357,7 +360,7 @@ export const dynamicTotal = createSelector(
  * Modify this selector to add other custom views only if we have the expected length of elements to load.
  */
 export const customViewDynamicPageLength = createSelector(
-    [params, pageSize, selectedSubscriptionSelector],
+    [selectParams, pageSize, selectedSubscriptionSelector],
     (params, pageSize, selectedSubscription) => {
         switch (params.labelID) {
             case CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS:
@@ -374,7 +377,7 @@ export const customViewDynamicPageLength = createSelector(
  * Has to be used only for non-sensitive behaviors
  */
 export const dynamicPageLength = createSelector(
-    [selectPage, pageSize, dynamicTotal, params, bypassFilter, customViewDynamicPageLength],
+    [selectPage, pageSize, dynamicTotal, selectParams, bypassFilter, customViewDynamicPageLength],
     (page, pageSize, dynamicTotal, params, bypassFilter, customViewLength) => {
         if (customViewLength !== undefined) {
             return customViewLength;
@@ -387,7 +390,7 @@ export const dynamicPageLength = createSelector(
 );
 
 export const placeholderCount = createSelector(
-    [selectPage, pageSize, contextTotal, params, dynamicPageLength, bypassFilter],
+    [selectPage, pageSize, contextTotal, selectParams, dynamicPageLength, bypassFilter],
     (page, pageSize, total, params, dynamicPageLength, bypassFilter) => {
         if (dynamicPageLength !== undefined) {
             return dynamicPageLength;

@@ -6,6 +6,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { isColumnMode } from 'proton-mail/helpers/mailSettings';
+import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 export interface MailboxProviderProps {
@@ -43,7 +44,7 @@ export const MailboxLayoutProvider = ({ children }: PropsWithChildren) => {
 
     const [mailSettings] = useMailSettings();
     const breakpoints = useActiveBreakpoint();
-    const currentLabelID = useMailSelector((state) => state.elements.params.labelID);
+    const currentLabelID = useMailSelector(selectLabelID);
 
     const forceRowMode =
         breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium || breakpoints.viewportWidth.large;

@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
-import { params } from 'proton-mail/store/elements/elementsSelectors';
+import { selectParams } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import type { Event } from '../../models/event';
@@ -20,13 +20,13 @@ interface Props {
  * For example, loading a conversation ID as a message ID
  */
 export const useMailSettingsViewModeEvent = ({ navigation }: Props) => {
-    const mailParams = useMailSelector(params);
+    const params = useMailSelector(selectParams);
     const location = useLocation();
 
     useSubscribeEventManager(async ({ MailSettings }: Event) => {
         if (MailSettings) {
-            const newConversationMode = isConversationMode(mailParams.labelID, MailSettings, location);
-            if (mailParams.conversationMode !== newConversationMode) {
+            const newConversationMode = isConversationMode(params.labelID, MailSettings, location);
+            if (params.conversationMode !== newConversationMode) {
                 navigation.handleBack();
             }
         }
