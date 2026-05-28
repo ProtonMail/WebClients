@@ -870,6 +870,9 @@
       "Incorrect username": [
         "Nazwa użytkownika jest nieprawidłowa"
       ],
+      "Invalid verification code": [
+        "Kod weryfikacyjny jest nieprawidłowy"
+      ],
       "Not a valid number": [
         "Numer telefonu nie jest prawidłowy"
       ],
@@ -1549,6 +1552,9 @@
     "Success": {
       "Code sent to ${ methodTo }": [
         "Kod został wysłany na ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Weryfikacja powiodła się"
       ]
     },
     "Title": {
@@ -1557,6 +1563,9 @@
       ],
       "Enter your password": [
         "Wpisz hasło"
+      ],
+      "Human verification": [
+        "Weryfikacja antyspamowa"
       ],
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
