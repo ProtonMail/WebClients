@@ -956,6 +956,9 @@
       "Clear all": [
         "Limpar tudo"
       ],
+      "Clear auto-generated": [
+        "Limpar o texto gerado automaticamente"
+      ],
       "Close": [
         "Fechar"
       ],
@@ -1060,6 +1063,9 @@
       ],
       "Turn off and delete": [
         "Desativar e excluir"
+      ],
+      "Turn on memory": [
+        "Ativar memórias"
       ],
       "Upload file to Drive": [
         "Enviar arquivo para o Drive"
@@ -1355,6 +1361,9 @@
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for unlimited chats, extended history, access to advanced AI models, and more.": [
         "Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para bate-papos ilimitados, histórico estendido, acesso a modelos de IA avançados e muito mais."
+      ],
+      "You've reached a usage limit. Please try again later.": [
+        "Você alcançou o limite de uso. Tente novamente mais tarde."
       ]
     },
     "collider_2025: Error (file processing)": {
@@ -1365,6 +1374,11 @@
     "collider_2025: Error (processing)": {
       "File format not supported: ${ result.fileName }": [
         "Formato de arquivo não suportado: ${ result.fileName }"
+      ]
+    },
+    "collider_2025: Error (validation)": {
+      "File format not supported: ${ file.name }": [
+        "Formato de arquivo não suportado: ${ file.name }"
       ]
     },
     "collider_2025: Error Message": {
@@ -1552,6 +1566,9 @@
       ],
       "All files in this chat": [
         "Todos os arquivos deste bate-papo"
+      ],
+      "An API key — generate one in ": [
+        "Uma chave de API — gere uma em "
       ],
       "An HTTP client or official SDK (Python, TypeScript, Rust)": [
         "Um cliente HTTP ou um SDK oficial (Python, TypeScript, Rust)"
@@ -1792,6 +1809,9 @@
       ],
       "The ${ LUMO_SHORT_APP_NAME } API and API keys are included with ${ LUMO_SHORT_APP_NAME }+. Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account.": [
         "A API do ${ LUMO_SHORT_APP_NAME } e as chaves de API estão incluídas no ${ LUMO_SHORT_APP_NAME }+. Peça ao administrador da sua organização para atribuir uma licença do ${ LUMO_SHORT_APP_NAME } à sua conta."
+      ],
+      "The ${ LUMO_SHORT_APP_NAME } API is a RESTful interface at ": [
+        "A API do ${ LUMO_SHORT_APP_NAME } é uma interface RESTful disponível em "
       ],
       "The ${ LUMO_SHORT_APP_NAME } API is available for ${ LUMO_SHORT_APP_NAME }+ subscribers. Upgrade to create API keys and use the API programmatically.": [
         "A API do ${ LUMO_SHORT_APP_NAME } está disponível para assinantes do ${ LUMO_SHORT_APP_NAME }+. Faça upgrade para criar chaves de API e usar a API programaticamente."
@@ -2225,6 +2245,14 @@
         "Construtor de fluxo de trabalho"
       ]
     },
+    "collider_2025: Tip": {
+      "Avoid passwords, tokens, or sensitive personal identifiers.": [
+        "Evite senhas, tokens ou identificadores pessoais confidenciais."
+      ],
+      "Write stable facts, not one-off questions.": [
+        "Escreva fatos concretos, não perguntas pontuais."
+      ]
+    },
     "collider_2025: Title": {
       "${ LUMO_SHORT_APP_NAME } API · ${ spec.versionLabel }": [
         "${ LUMO_SHORT_APP_NAME } API · ${ spec.versionLabel }"
@@ -2237,6 +2265,9 @@
       ],
       "About ${ LUMO_SHORT_APP_NAME }": [
         "Sobre o ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Add your own memory": [
+        "Adicionar sua própria lembrança"
       ],
       "API calls per day": [
         "Chamadas de API por dia"
@@ -2301,6 +2332,9 @@
       "Models": [
         "Modelos"
       ],
+      "Never used inside projects": [
+        "Nunca usado em projetos"
+      ],
       "No API keys yet": [
         "Ainda não há chaves de API"
       ],
@@ -2312,6 +2346,9 @@
       ],
       "Parameters": [
         "Parâmetros"
+      ],
+      "Personalizes general chats": [
+        "Personaliza os bate-papos gerais"
       ],
       "Prerequisites": [
         "Pré-requisitos"
@@ -2516,6 +2553,9 @@
       "${ LUMO_SHORT_APP_NAME }'s a busy cat": [
         "O ${ LUMO_SHORT_APP_NAME } é muito ocupado"
       ],
+      "Approaching file limit": [
+        "Aproximando-se do limite de arquivos"
+      ],
       "Failed to index file for search: ${ processingResult.message }": [
         "Falha ao indexar o arquivo para pesquisa: ${ processingResult.message }"
       ],
@@ -2540,6 +2580,9 @@
       ],
       "We're experiencing higher than usual traffic, so responses may be a bit slower than usual. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for priority access during peak times.": [
         "Estamos com um tráfego acima do normal, então as respostas podem ser um pouco mais lentas. Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para ter acesso prioritário durante os horários de pico."
+      ],
+      "You have ${ remaining } file uploads left in this project.": [
+        "Você ainda tem ${ remaining } envios de arquivos disponíveis neste projeto."
       ]
     },
     "collider_2025: Web Search": {
@@ -5660,6 +5703,9 @@
         "${ n } mês",
         "${ n } meses"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } caracteres"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Acesse o ${ PASS_APP_NAME } com segurança pelo terminal, ideal para scripts, automação e fluxos de trabalho de desenvolvimento."
       ],
@@ -6031,6 +6077,9 @@
       ],
       "FPS": [
         "FPS"
+      ],
+      "Generation errors": [
+        "Erros de geração"
       ],
       "Idle": [
         "Ocioso"
@@ -6556,6 +6605,9 @@
       ],
       "Multiple admin roles": [
         "Múltiplas funções de administração"
+      ],
+      "No streaming support": [
+        "Sem suporte para streaming"
       ],
       "Online document editor": [
         "Editor de documentos on-line"
@@ -8674,9 +8726,17 @@
       ]
     },
     "Warning": {
+      "(${ orphanedChunkCount } chunk)": [
+        "(${ orphanedChunkCount } segmento)",
+        "(${ orphanedChunkCount } segmentos)"
+      ],
       "Found ${ orphanedDocCount } document": [
         "Encontrado ${ orphanedDocCount } documento",
         "Encontrado ${ orphanedDocCount } documentos"
+      ],
+      "referencing ${ orphanedSpaceIds.length } missing space.": [
+        "referenciando ${ orphanedSpaceIds.length } espaço ausente.",
+        "referenciando ${ orphanedSpaceIds.length } espaços ausentes."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
