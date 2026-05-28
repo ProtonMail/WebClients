@@ -103,6 +103,10 @@ describe('MailSidebar', () => {
         mockedUseRetentionPolicies.mockReturnValue([[], false]);
     });
 
+    afterEach(() => {
+        jest.useRealTimers();
+    });
+
     const setupTest = () => {
         // open the more section otherwise it's closed by default
         setItem('item-display-more-items', 'true');
