@@ -4,6 +4,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 
@@ -30,6 +31,8 @@ export const CategoryCard = ({ categoryID, flagValue, audienceType }: Props) => 
     const featureCode = FEATURE_CODE_MAP[audienceType];
     const { update } = useFeature(featureCode);
 
+    const { sendReportCloseCategoryCard } = useCategoriesTelemetry();
+
     // We only want to show the card if the user has not seen it before
     const hasAlreadySeenCard = hasSeenCategoryCard(audienceType, categoryID, flagValue);
     const categoryDescription = getOnboardingCardCopy(audienceType, categoryID);
@@ -45,6 +48,7 @@ export const CategoryCard = ({ categoryID, flagValue, audienceType }: Props) => 
             return;
         }
 
+        sendReportCloseCategoryCard(categoryID);
         return update(setBit(flagValue, config.flag));
     };
 
