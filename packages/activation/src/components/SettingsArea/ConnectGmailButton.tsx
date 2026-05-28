@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '@proton/activation/src/constants';
+import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
 import useSetupGmailBYOEAddress from '@proton/activation/src/hooks/useSetupGmailBYOEAddress';
 import type { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { setBYOEFlowResult } from '@proton/activation/src/logic/byoeFlow/byoeFlow.slice';
@@ -43,6 +44,7 @@ const ConnectGmailButton = ({
     source,
 }: Props) => {
     const { createNotification } = useNotifications();
+    const [hasAccessToBYOE, loadingBYOEFeatureStatus] = useBYOEFeatureStatus();
     const easySwitchDispatch = useEasySwitchDispatch();
     const createBYOEDisabled = useFlag('CreateInboxBringYourOwnEmailDisabled');
 
@@ -62,7 +64,7 @@ const ConnectGmailButton = ({
     const [expectedEmailAddress, setExpectedEmailAddress] = useState<string | undefined>();
     const [isConversionFlow, setIsConversionFlow] = useState(false);
 
-    const { hasAccessToBYOE, isInMaintenance, handleBYOEWithImportCallback } = useSetupGmailBYOEAddress({
+    const { isInMaintenance, handleBYOEWithImportCallback } = useSetupGmailBYOEAddress({
         showSuccessModal: (connectedAddress: string) => {
             easySwitchDispatch(
                 setBYOEFlowResult({
@@ -80,7 +82,8 @@ const ConnectGmailButton = ({
         source,
     });
 
-    const disabled = loadingUser || loadingAddresses || isInMaintenance || isLoadingAddressesCount;
+    const disabled =
+        loadingUser || loadingAddresses || loadingBYOEFeatureStatus || isInMaintenance || isLoadingAddressesCount;
 
     const handleCloseForwardingModal = (hasError?: boolean) => {
         if (!hasError) {
