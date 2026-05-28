@@ -27,7 +27,7 @@ const EmojiPicker = (props: any) => {
 
     useEffect(() => {
         new Picker({ ...props, data, ref });
-    }, []);
+    }, [props]);
 
     return <div ref={ref} />;
 };
@@ -80,7 +80,7 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
             // Preserve last message when component is unmounted
             dispatch(setDraftMessage(currentMessage.current));
         };
-    }, []);
+    }, [dispatch, message.length]);
 
     const textareaHeight = useMemo(() => {
         if (textareaRef.current) {
@@ -175,6 +175,7 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
                     assistContainerClassName="display-none"
                     rows={1}
                     autoFocus={true}
+                    autoComplete="off"
                 />
                 <Button
                     ref={emojiAnchorRef}
