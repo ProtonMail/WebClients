@@ -8,6 +8,8 @@ import {
 } from '@livekit/track-processors';
 import * as vision from '@mediapipe/tasks-vision';
 
+import { withTimeout } from '@proton/meet/utils/withTimeout';
+
 import {
     DEFAULT_ASSET_PATH,
     DEFAULT_MODEL_PATH,
@@ -290,13 +292,6 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
         this.lastCanvasHeight = 0;
     }
 
-    private withTimeout<T>(promise: Promise<T>, timeoutMs: number, timeoutError: string): Promise<T> {
-        return Promise.race([
-            promise,
-            new Promise<T>((_, reject) => setTimeout(() => reject(new Error(timeoutError)), timeoutMs)),
-        ]);
-    }
-
     private waitForGpuSync(gl: WebGL2RenderingContext, sync: WebGLSync): void {
         const result = gl.clientWaitSync(sync, gl.SYNC_FLUSH_COMMANDS_BIT, 0);
 
@@ -355,10 +350,10 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
                             });
                         });
                         // Add timeout to prevent infinite hang if video callback never fires
-                        await this.withTimeout(
+                        await withTimeout(
                             videoFrameCallbackPromise,
-                            5000,
-                            'Video frame callback timeout on first frame'
+                            'Video frame callback timeout on first frame',
+                            5000
                         );
                     } catch {
                         // Timeout or error - continue without waiting
@@ -415,7 +410,7 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
 
             // Add timeout to prevent infinite hang if MediaPipe callback never fires
             try {
-                await this.withTimeout(segmentationPromise, 200, 'MediaPipe segmentation callback timeout');
+                await withTimeout(segmentationPromise, 'MediaPipe segmentation callback timeout', 200);
             } catch {
                 // Timeout or error - continue processing next frame
             }
