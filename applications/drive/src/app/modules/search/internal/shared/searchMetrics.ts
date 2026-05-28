@@ -1,4 +1,5 @@
 import metrics from '@proton/metrics';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import { Logger } from './Logger';
 import {
@@ -124,6 +125,12 @@ export const searchMetrics = {
      */
     markIncompatibilityEnvironment({ reason }: { reason: SearchEnvironmentIncompatibilityReason }): void {
         metrics.drive_search_environment_incompatibility_total.increment({ reason });
+
+        // NOTE: Report to sentry to analyze these incompatible user agents.
+        captureMessage('Search: incompatible env detected', {
+            level: 'debug',
+            tags: { component: 'search', reason },
+        });
     },
 
     /**
