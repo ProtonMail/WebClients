@@ -2,12 +2,12 @@ import { renderHook, waitFor } from '@testing-library/react';
 
 import { useFetchDownloadLinks } from './useFetchDownloadLinks';
 
-const mockFetch = jest.fn();
+const mockFetch = vi.fn();
 global.fetch = mockFetch;
 
-jest.mock('fast-xml-parser', () => ({
-    XMLParser: jest.fn().mockImplementation(() => ({
-        parse: jest.fn().mockReturnValue({
+vi.mock('fast-xml-parser', () => ({
+    XMLParser: vi.fn().mockImplementation(() => ({
+        parse: vi.fn().mockReturnValue({
             rss: {
                 channel: {
                     item: [
@@ -24,7 +24,7 @@ jest.mock('fast-xml-parser', () => ({
 
 describe('useFetchDownloadLinks', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('when flag is false', () => {
@@ -61,10 +61,10 @@ describe('useFetchDownloadLinks', () => {
     describe('when flag is true', () => {
         it('calls fetch for windows endpoints', async () => {
             mockFetch.mockResolvedValue({
-                json: jest.fn().mockResolvedValue({
+                json: vi.fn().mockResolvedValue({
                     Releases: [{ CategoryName: 'Stable', File: { Url: 'https://protonvpn.com/download/win.exe' } }],
                 }),
-                text: jest.fn().mockResolvedValue('<rss></rss>'),
+                text: vi.fn().mockResolvedValue('<rss></rss>'),
             });
 
             renderHook(() => useFetchDownloadLinks(true));
@@ -73,15 +73,15 @@ describe('useFetchDownloadLinks', () => {
                 expect(mockFetch).toHaveBeenCalled();
             });
 
-            const calledUrls = mockFetch.mock.calls.map(([url]: [string]) => url);
+            const calledUrls = mockFetch.mock.calls.map((args) => args[0]);
             expect(calledUrls).toContain('https://protonvpn.com/download/windows/x64/v1/version.json');
             expect(calledUrls).toContain('https://protonvpn.com/download/windows/arm64/v1/version.json');
         });
 
         it('calls fetch for mac endpoints', async () => {
             mockFetch.mockResolvedValue({
-                json: jest.fn().mockResolvedValue({ Releases: [] }),
-                text: jest.fn().mockResolvedValue('<rss></rss>'),
+                json: vi.fn().mockResolvedValue({ Releases: [] }),
+                text: vi.fn().mockResolvedValue('<rss></rss>'),
             });
 
             renderHook(() => useFetchDownloadLinks(true));
@@ -90,7 +90,7 @@ describe('useFetchDownloadLinks', () => {
                 expect(mockFetch).toHaveBeenCalled();
             });
 
-            const calledUrls = mockFetch.mock.calls.map(([url]: [string]) => url);
+            const calledUrls = mockFetch.mock.calls.map((args) => args[0]);
             expect(calledUrls).toContain('https://protonvpn.com/download/macos-update5.xml');
             expect(calledUrls).toContain('https://protonvpn.com/download/macos-update2.xml');
         });
@@ -99,7 +99,7 @@ describe('useFetchDownloadLinks', () => {
             mockFetch.mockImplementation((url: string) => {
                 if (url.includes('windows')) {
                     return Promise.resolve({
-                        json: jest.fn().mockResolvedValue({
+                        json: vi.fn().mockResolvedValue({
                             Releases: [
                                 {
                                     CategoryName: 'Stable',
@@ -110,7 +110,7 @@ describe('useFetchDownloadLinks', () => {
                     });
                 }
                 return Promise.resolve({
-                    text: jest.fn().mockResolvedValue('<rss></rss>'),
+                    text: vi.fn().mockResolvedValue('<rss></rss>'),
                 });
             });
 
