@@ -79,6 +79,9 @@
       "Add": [
         "加入"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "加入 ${ BRAND_NAME } 帳號"
       ],
@@ -309,6 +312,9 @@
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "繼續使用 ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
+      "Continue with Free": [
+        "繼續使用免費方案"
       ],
       "Continue with Google": [
         "繼續以 Google 帳號登入"
@@ -1903,6 +1909,9 @@
       ],
       "Access advanced AI models": [
         "存取進階 AI 模型"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "全部的頂級質子版服 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 和 ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "攔截廣告、追蹤程式和惡意軟體"
@@ -3778,6 +3787,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "在您的來信訊息到達收件匣前會自動排列"
       ],
+      "Available storage: ${ storageText }": [
+        "可用儲存空間: ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "設置此以先啟動您的組織和自訂您的電子郵件地址。"
       ],
@@ -3892,11 +3904,20 @@
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "升級至${ activatePmUser }以取得更短更好記的電子郵件地址並增加於現有的。"
       ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "使用此指南以讓貴組織快速地受益於 ${ BRAND_NAME } 的業界領先加密和隱私生態系。"
+      ],
       "We can't access ${ boldEmails } anymore.": [
         "我們無法再存取至 ${ boldEmails }"
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "我們將暫停匯入於 80% 的儲存空間以為新訊息保留空間。"
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "我們將帶入您舊的電子郵件便連線您的 Gmail 至 ${ MAIL_APP_NAME } 已讓新訊息自動顯示。"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "我們已匯入來自於 Gmail 的電子郵件。完成時我們將讓您知道。"
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "您已有個 Gmail 位址轉寄至 ${ MAIL_APP_NAME }。於下方連接至它以直接於 ${ MAIL_APP_NAME } 傳送和接收電子郵件。"
@@ -3915,6 +3936,9 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "您已連線一個外部帳號位址至 ${ MAIL_APP_NAME }。"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "您免費的 ${ MAIL_APP_NAME } 帳號儲存空間有限所以我們將只匯入您最新的 Gmail 電子郵。"
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "您的帳號支援 ${ MAX_SYNC_FREE_USER } Gmail 位址。"
@@ -6670,6 +6694,9 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } 也可使用單一密碼取代登入密碼和第二個密碼。如要切換為單一密碼模式，請輸入您想使用的單一密碼，然後按一下「儲存」。"
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } 是端對端加密視訊會議的解決方案。添加至您的方案以主持安全會議。"
+      ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } 個席次"
       ],
@@ -8751,6 +8778,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "隨時升級或清理空間以帶入更多"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "升級以保留您的 ${ planTitle } 權益。"
@@ -12259,6 +12289,9 @@
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "我們的 ${ visionary } 方案不再可用於新的訂閱者，這是一個給予原 ${ BRAND_NAME } 使用者的特殊方案，具有特別功能與福利。"
       ],
+      "Pay once, secure your passwords and identity forever.": [
+        "一次性付款，永久保護您的密碼和身分。"
+      ],
       "Popular": [
         "熱門"
       ],
@@ -12765,6 +12798,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "雙重身份驗證已無需繼續使用"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "您的 ${ BRAND_NAME } 位址已就緒"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15609,6 +15645,9 @@
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
         "取得包含全部的單一方案，取得 ${ BRAND_NAME } Unlimited"
       ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "保持您的密碼安全和整齊於多個保管庫"
+      ],
       "Protect your account from threats with Sentinel": [
         "使用 Sentinel 保護您的帳戶免受威脅"
       ],
@@ -17193,6 +17232,9 @@
       ],
       "Contact us": [
         "聯絡我們"
+      ],
+      "Continue with free storage": [
+        "繼續使用免費儲存空間"
       ],
       "Continue with partial import?": [
         "要繼續部分匯入嗎？"
