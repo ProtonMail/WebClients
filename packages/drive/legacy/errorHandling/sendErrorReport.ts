@@ -1,28 +1,26 @@
 import type { ScopeContext } from '@sentry/types';
 
-import { driveMetrics } from '@proton/drive/modules/metrics';
-import metrics from '@proton/metrics/index';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { isProduction, traceError } from '@proton/shared/lib/helpers/sentry';
 
+import { driveMetrics } from '../../modules/metrics';
 import type { EnrichedError } from './EnrichedError';
 import { isEnrichedError } from './EnrichedError';
-import { RefreshError } from './RefreshError';
 import { isValidationError } from './ValidationError';
 
 const IGNORED_ERRORS = ['AbortError', 'TransferCancel', 'OfflineError'];
 
-export function isIgnoredErrorForReporting(error: any) {
+export function isIgnoredErrorForReporting(error: unknown) {
     return isIgnoredError(error) || isValidationError(error) || getIsConnectionIssue(error);
 }
 
-export function isIgnoredError(error: any) {
-    return !error || IGNORED_ERRORS.includes(error.name);
+export function isIgnoredError(error: unknown) {
+    return !error || (error instanceof Error && IGNORED_ERRORS.includes(error.name));
 }
 
-export function isAbortError(error: any) {
-    return error && (error.name === 'AbortError' || error.name === 'TransferCancel');
+export function isAbortError(error: unknown) {
+    return error instanceof Error && (error.name === 'AbortError' || error.name === 'TransferCancel');
 }
 
 /**
@@ -49,16 +47,9 @@ export function sendErrorReport(error: Error | EnrichedError | unknown, addition
         return;
     }
 
-    // RefreshError is used in legacy upload when there is issue with the upload web worker.
-    // The error has no additional context and we want this to be reported to metrics for observability.
-    if (error instanceof RefreshError) {
-        metrics.drive_warnings_total.increment({ warning: 'app_outdated' });
-        return;
-    }
-
     driveMetrics.globalErrors.markOtherError();
 
-    let errorForReporting = error as Error;
+    let errorForReporting: Error = error instanceof Error ? error : new Error(String(error));
 
     if (hasSentryMessage(error)) {
         errorForReporting = new Error(error.sentryMessage);
@@ -68,6 +59,7 @@ export function sendErrorReport(error: Error | EnrichedError | unknown, addition
 
     const context = Object.assign({}, isEnrichedError(error) ? error.context || {} : {}, additionalContext || {});
 
+    // TODO: Investigate and consider removing this (maybe useless) cookie tag.
     if (typeof window !== 'undefined' && isProduction(window.location.host)) {
         const cookieTag = getCookie('Tag') || 'prod';
         if (cookieTag) {

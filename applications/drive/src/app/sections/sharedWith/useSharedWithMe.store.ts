@@ -2,12 +2,12 @@ import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { useInvitationCountStore } from '../../modules/invitations';
 import { type SortConfig, SortField, sortItems } from '../../modules/sorting';
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 import { getSharedWithMeSortValue } from './sharedWithMe.sorting';
 import { type BookmarkItem, type DirectShareItem, type InvitationItem, ItemType, type SharedWithMeItem } from './types';

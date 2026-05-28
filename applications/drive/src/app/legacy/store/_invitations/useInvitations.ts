@@ -1,9 +1,10 @@
+import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
-import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto';
-import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
+import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import {
     queryAcceptShareInvite,
     queryDeleteExternalInvitation,
@@ -30,8 +31,6 @@ import type {
 import { decryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 
-import { sendErrorReport } from '../../../utils/errorHandling';
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import {
     shareExternalInvitationPayloadToShareExternalInvitation,
     shareInvitationDetailsPayloadToShareInvitationDetails,

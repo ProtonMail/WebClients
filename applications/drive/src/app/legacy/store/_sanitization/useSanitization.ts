@@ -1,10 +1,10 @@
+import { EnrichedError } from '@proton/drive/legacy/errorHandling';
 import {
     queryListNodesWithMissingNodeHashKeys,
     querySendNodesWithNewNodeHashKeys,
 } from '@proton/shared/lib/api/drive/sanitization';
 import { generateNodeHashKey } from '@proton/shared/lib/keys/driveKeys';
 
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { useDebouncedRequest } from '../_api';
 import { useDriveEventManager } from '../_events';
 import { useLink } from '../_links';

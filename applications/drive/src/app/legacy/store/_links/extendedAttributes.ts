@@ -1,9 +1,10 @@
 import type { PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
+
+import { EnrichedError } from '@proton/drive/legacy/errorHandling';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import type { DeepPartial } from '../../../utils/type/DeepPartial';
 
 export interface ExtendedAttributes {

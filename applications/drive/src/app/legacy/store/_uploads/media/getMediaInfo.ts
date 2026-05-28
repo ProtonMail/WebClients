@@ -1,3 +1,4 @@
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import type { RawProcessorWorkerInterface } from '@proton/raw-images';
 import { createWorker } from '@proton/raw-images';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
@@ -14,7 +15,6 @@ import {
     isVideo,
 } from '@proton/shared/lib/helpers/mimetype';
 
-import { sendErrorReport } from '../../../../utils/errorHandling';
 import { Actions, countActionWithTelemetry } from '../../../../utils/telemetry';
 import { heicToBlob } from './heic';
 import { imageCannotBeLoadedError, scaleImageFile } from './image';

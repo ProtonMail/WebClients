@@ -1,4 +1,5 @@
 import { getDrive, getDrivePerNodeType } from '@proton/drive';
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -10,7 +11,6 @@ import { useRevisionsModal } from '../../../../modals/RevisionsModal';
 import { useDrivePreviewModal } from '../../../../modals/preview';
 import { downloadManager } from '../../../../modules/download/DownloadManager';
 import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../../utils/docs/openInDocs';
-import { sendErrorReport } from '../../../../utils/errorHandling';
 import { isPreviewOrFallbackAvailable } from '../../../../utils/isPreviewOrFallbackAvailable';
 import { useTrashActions } from '../../../commonActions/useTrashActions';
 import { useSearchViewStore } from '../store';

@@ -12,7 +12,7 @@ jest.mock('@proton/drive/index', () => ({
     getDriveForPhotos: jest.fn(),
 }));
 
-jest.mock('../../utils/errorHandling/handleSdkError');
+jest.mock('@proton/drive/legacy/errorHandling');
 
 jest.mock('../../utils/sdk/getNodeLocation', () => ({
     getFormattedNodeLocation: jest.fn(),

@@ -1,3 +1,4 @@
+import { EnrichedError, isValidationError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
@@ -7,9 +8,6 @@ import { promiseWithTimeout } from '@proton/shared/lib/helpers/promise';
 import type { TransferMeta } from '../../../../legacy/components/TransferManager/transfer';
 import { TransferCancel } from '../../../../legacy/components/TransferManager/transfer';
 import { featureFlagStore } from '../../../../modules/featureFlag';
-import { sendErrorReport } from '../../../../utils/errorHandling';
-import { EnrichedError } from '../../../../utils/errorHandling/EnrichedError';
-import { isValidationError } from '../../../../utils/errorHandling/ValidationError';
 import { streamToBuffer } from '../../../../utils/stream';
 import { isTransferCancelError } from '../../../../utils/transfer';
 import type { LogCallback } from '../interface';

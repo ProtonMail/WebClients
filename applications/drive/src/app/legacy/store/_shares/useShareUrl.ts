@@ -4,6 +4,7 @@ import { computeKeyPassword } from '@protontech/crypto/srp';
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 import { useApi, usePreventLeave } from '@proton/components';
+import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import {
     queryCreateSharedLink,
     queryDeleteMultipleSharedLinks,
@@ -34,8 +35,6 @@ import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
-import { sendErrorReport } from '../../../utils/errorHandling';
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { shareUrlPayloadToShareUrl, useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { useDriveEventManager } from '../_events';

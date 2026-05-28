@@ -4,11 +4,10 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components';
+import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
-import { sendErrorReport } from '../../../utils/errorHandling';
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { useInvitations } from '../_invitations';
 import { useInvitationsState } from '../_invitations/useInvitationsState';
 import { useLink, useLinksListing } from '../_links';

@@ -1,10 +1,10 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { generateNodeUid } from '@proton/drive';
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 
 import { directoryTreeFactory } from '../../modules/directoryTree';
 import { makeTreeItemId } from '../../modules/directoryTree/helpers';
-import { sendErrorReport } from '../../utils/errorHandling';
 import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
 import { createMockNodeEntity } from '../../utils/test/nodeEntity';
 import { useMoveItemsModalState } from './useMoveItemsModalState';
@@ -36,7 +36,7 @@ jest.mock('../../utils/sdk/getNodeAncestry', () => ({
     getNodeAncestry: jest.fn(),
 }));
 
-jest.mock('../../utils/errorHandling', () => ({
+jest.mock('@proton/drive/legacy/errorHandling', () => ({
     sendErrorReport: jest.fn(),
     handleSdkError: jest.fn(),
 }));

@@ -2,9 +2,8 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { MemberRole, NodeType, getDrive, useDrive } from '@proton/drive';
 import { getBusDriver } from '@proton/drive/internal/BusDriver';
+import { handleSdkError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 
-import { sendErrorReport } from '../../utils/errorHandling';
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { TreeEventManager } from './events/treeEventManager';
 import { DEVICES_ROOT_ID, SHARED_WITH_ME_ROOT_ID, makeTreeItemId } from './helpers';
 import { DirectoryTreeRootType } from './types';
@@ -17,10 +16,10 @@ jest.mock('@proton/drive', () => ({
 const mockedUseDrive = jest.mocked(useDrive);
 const mockedGetDrive = jest.mocked(getDrive);
 
-jest.mock('../../utils/errorHandling/handleSdkError');
+jest.mock('@proton/drive/legacy/errorHandling');
 const mockedHandleSdkError = jest.mocked(handleSdkError);
 
-jest.mock('../../utils/errorHandling');
+jest.mock('@proton/drive/legacy/errorHandling');
 jest.mocked(sendErrorReport);
 
 jest.mock('@proton/drive/internal/BusDriver', () => ({

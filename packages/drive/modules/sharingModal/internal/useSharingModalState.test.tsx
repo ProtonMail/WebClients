@@ -21,7 +21,7 @@ import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { getBusDriver } from '../../../internal/BusDriver';
 import { useFlagsDriveDocsPublicSharing } from '../../../internal/flags/useFlagsDriveDocsPublicSharing';
-import { handleDriveError } from '../../../internal/handleDriveError';
+import { handleSdkError } from '../../../legacy/errorHandling';
 import { type DirectMember, MemberType } from './interfaces';
 import { useSharingModalState } from './useSharingModalState';
 
@@ -115,7 +115,7 @@ jest.mock('@proton/hooks/useLoading');
 jest.mock('@proton/shared/lib/apps/helper');
 jest.mock('@proton/shared/lib/helpers/browser');
 jest.mock('../../../internal/flags/useFlagsDriveDocsPublicSharing');
-jest.mock('../../../internal/handleDriveError');
+jest.mock('../../../legacy/errorHandling');
 jest.mock('../../../internal/BusDriver');
 jest.mock('@proton/mail/store/contactEmails/hooks', () => ({
     useContactEmails: jest.fn(() => [[]]),
@@ -150,7 +150,7 @@ const expectedDirectMembers: DirectMember[] = [
 describe('useSharingModalState', () => {
     const mockBusEmit = jest.fn();
 
-    const mockHandleError = jest.mocked(handleDriveError);
+    const mockHandleError = jest.mocked(handleSdkError);
 
     beforeEach(() => {
         mockedUseUser.mockReturnValue([mockUser, false]);
@@ -700,6 +700,7 @@ describe('useSharingModalState', () => {
             expect(mockHandleError).toHaveBeenCalledWith(error, {
                 fallbackMessage: 'Failed to unshare node',
                 extra: { nodeUid: mockNodeUid },
+                showNotification: true,
             });
         });
 
@@ -726,6 +727,7 @@ describe('useSharingModalState', () => {
                 extra: {
                     nodeUid: mockNodeUid,
                 },
+                showNotification: true,
             });
         });
 
@@ -760,6 +762,7 @@ describe('useSharingModalState', () => {
                 extra: {
                     nodeUid: mockNodeUid,
                 },
+                showNotification: true,
             });
         });
 
@@ -786,6 +789,7 @@ describe('useSharingModalState', () => {
                 extra: {
                     nodeUid: mockNodeUid,
                 },
+                showNotification: true,
             });
         });
 
@@ -840,6 +844,7 @@ describe('useSharingModalState', () => {
                     nodeUid: mockNodeUid,
                     invitationUid: mockInvitationUid,
                 },
+                showNotification: true,
             });
         });
 
@@ -855,6 +860,7 @@ describe('useSharingModalState', () => {
                     extra: {
                         nodeUid: mockNodeUid,
                     },
+                    showNotification: false,
                 });
             });
         });
@@ -869,6 +875,7 @@ describe('useSharingModalState', () => {
                 expect(mockHandleError).toHaveBeenCalledWith(error, {
                     fallbackMessage: 'Failed to fetch node',
                     extra: { nodeUid: mockNodeUid },
+                    showNotification: false,
                 });
             });
         });
@@ -892,6 +899,7 @@ describe('useSharingModalState', () => {
                 extra: {
                     nodeUid: mockNodeUid,
                 },
+                showNotification: true,
             });
         });
 
@@ -914,6 +922,7 @@ describe('useSharingModalState', () => {
                 extra: {
                     nodeUid: mockNodeUid,
                 },
+                showNotification: true,
             });
         });
     });

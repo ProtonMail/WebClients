@@ -7,13 +7,13 @@ import { useConfirmActionModal, useNotifications } from '@proton/components';
 import type { ModalStateProps } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
 import type { NodeEntity, ProtonDriveClient, Revision } from '@proton/drive';
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { useLoading } from '@proton/hooks';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { DownloadManager } from '../../modules/download/DownloadManager';
-import { sendErrorReport } from '../../utils/errorHandling';
 import { getNodeNameFallback } from '../../utils/sdk/getNodeName';
 import { getRootNode } from '../../utils/sdk/mapNodeToLegacyItem';
 import { useDetailsModal } from '../DetailsModal';

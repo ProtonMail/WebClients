@@ -1,7 +1,7 @@
 import { NodeWithSameNameExistsValidationError, getDrive, useDrive } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { useCopiedItemsNotification } from './useCopiedItemsNotification';
 
 interface Item {

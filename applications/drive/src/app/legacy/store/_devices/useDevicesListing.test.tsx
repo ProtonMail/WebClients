@@ -1,6 +1,7 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { sendErrorReport } from '../../../utils/errorHandling';
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
+
 import { VolumesStateProvider } from '../_volumes/useVolumesState';
 import type { Device } from './interface';
 import { useDevicesListingProvider } from './useDevicesListing';
@@ -39,7 +40,7 @@ const DEVICE_2: Device = {
 
 const mockDevicesPayload = [DEVICE_0, DEVICE_1];
 
-jest.mock('../../../utils/errorHandling');
+jest.mock('@proton/drive/legacy/errorHandling');
 const mockedSendErrorReport = jest.mocked(sendErrorReport);
 
 const mockedCreateNotification = jest.fn();

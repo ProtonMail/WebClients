@@ -1,11 +1,12 @@
 import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
 import { CryptoProxy, serverTime, updateServerTime } from '@protontech/crypto';
+
+import { convertSafeError } from '@proton/drive/legacy/errorHandling';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import type { SafeErrorObject } from '@proton/utils/getSafeErrorObject';
 import { getSafeErrorObject } from '@proton/utils/getSafeErrorObject';
 
-import { convertSafeError } from '../../../utils/errorHandling/EnrichedError';
-import { RefreshError, getRefreshError } from '../../../utils/errorHandling/RefreshError';
+import { RefreshError, getRefreshError } from './RefreshError';
 import { HEARTBEAT_INTERVAL, HEARTBEAT_WAIT_TIME, WORKER_INIT_WAIT_TIME } from './constants';
 import type {
     EncryptedBlock,

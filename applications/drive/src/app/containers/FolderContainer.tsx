@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Loader, useNotifications } from '@proton/components';
 import { NodeType, ValidationError, getDrive, splitNodeUid } from '@proton/drive/index';
+import { EnrichedError, handleSdkError } from '@proton/drive/legacy/errorHandling';
 import useLoading from '@proton/hooks/useLoading';
 import type { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -16,8 +17,6 @@ import useDriveNavigation from '../legacy/hooks/drive/useNavigate';
 import { FolderView } from '../sections/folders/FolderView/FolderView';
 import { subscribeToFolderEvents } from '../sections/folders/subscribeToFolderEvents';
 import { useFolderStore } from '../sections/folders/useFolder.store';
-import { EnrichedError } from '../utils/errorHandling/EnrichedError';
-import { handleSdkError } from '../utils/errorHandling/handleSdkError';
 
 type DriveSectionRouteProps = { shareId?: string; type?: LinkURLType; linkId?: string };
 

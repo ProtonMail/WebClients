@@ -1,6 +1,7 @@
 import { sha1 } from '@noble/hashes/sha1';
 import { c } from 'ttag';
 
+import { ValidationError, logError } from '@proton/drive/legacy/errorHandling';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_DOWNLOAD, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
@@ -11,8 +12,6 @@ import orderBy from '@proton/utils/orderBy';
 
 import { TransferCancel } from '../../../../legacy/components/TransferManager/transfer';
 import { waitUntil } from '../../../../utils/async';
-import { logError } from '../../../../utils/errorHandling';
-import { ValidationError } from '../../../../utils/errorHandling/ValidationError';
 import { untilStreamEnd } from '../../../../utils/stream';
 import { isTransferCancelError } from '../../../../utils/transfer';
 import { MAX_DOWNLOADING_BLOCKS, MAX_RETRIES_BEFORE_FAIL, TIME_TO_RESET_RETRIES } from '../constants';
@@ -39,7 +38,11 @@ type DownloadBlocksCallbacks = Omit<
         hash: Uint8Array<ArrayBuffer>;
         data: ReadableStream<Uint8Array<ArrayBuffer>>;
     }>;
-    checkManifestSignature?: (abortSignal: AbortSignal, hash: Uint8Array<ArrayBuffer>, signature: string) => Promise<void>;
+    checkManifestSignature?: (
+        abortSignal: AbortSignal,
+        hash: Uint8Array<ArrayBuffer>,
+        signature: string
+    ) => Promise<void>;
     scanForVirus?: (abortSignal: AbortSignal, encryptedXAttr: string) => Promise<void>;
     checkFileHash?: (abortSignal: AbortSignal, Hash: string) => Promise<void>;
     onProgress?: (bytes: number, blockIndexes: number[]) => void;
@@ -122,7 +125,7 @@ export default function initDownloadBlocks(
                     );
                 }
                 if (result.thumbnailHashes) {
-                    thumbnailHashes = result.thumbnailHashes.map(hash => Uint8Array.fromBase64(hash));
+                    thumbnailHashes = result.thumbnailHashes.map((hash) => Uint8Array.fromBase64(hash));
                 }
                 manifestSignature = result.manifestSignature;
                 xAttr = result.xAttr;

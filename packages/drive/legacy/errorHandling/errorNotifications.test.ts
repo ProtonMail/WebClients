@@ -1,13 +1,13 @@
 import type { NotificationsManager } from '@proton/components/containers/notifications/manager';
-import { setNotificationsManager } from '@proton/drive/modules/notifications';
 
-import { sendErrorReport } from '../../utils/errorHandling';
-import { ValidationError } from '../../utils/errorHandling/ValidationError';
+import { setNotificationsManager } from '../../modules/notifications';
+import { ValidationError } from './ValidationError';
 import { showAggregatedErrorNotification } from './errorNotifications';
+import { sendErrorReport } from './sendErrorReport';
 
-jest.mock('../../utils/errorHandling', () => ({
+jest.mock('./sendErrorReport', () => ({
     sendErrorReport: jest.fn(),
-    isIgnoredError: jest.requireActual('../../utils/errorHandling').isIgnoredError,
+    isIgnoredError: jest.requireActual('./sendErrorReport').isIgnoredError,
 }));
 
 const makeMockManager = (): NotificationsManager => ({

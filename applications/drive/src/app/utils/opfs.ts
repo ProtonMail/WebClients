@@ -1,4 +1,4 @@
-import { sendErrorReport } from './errorHandling';
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 
 export const clearOPFS = async () => {
     try {
