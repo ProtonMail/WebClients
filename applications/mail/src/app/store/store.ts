@@ -15,23 +15,30 @@ export type { MailState };
 export const setupStore = ({ preloadedState }: { preloadedState?: Partial<MailState> } = {}) => {
     const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments });
 
+    const isTest = process.env.NODE_ENV === 'test';
+    const immutableCheck = isTest
+        ? false
+        : {
+              warnAfter: 32,
+          };
+
+    const serializableCheck = isTest
+        ? false
+        : {
+              ignoredActions,
+              ignoredPaths: [...ignoredPaths, ...mailIgnoredPaths],
+              ignoredActionPaths: mailIgnoredActionPaths,
+              warnAfter: 32,
+          };
+
     const store = configureStore({
         preloadedState,
         reducer: rootReducer,
         devTools: process.env.NODE_ENV !== 'production',
         middleware: (getDefaultMiddleware) => {
             return getDefaultMiddleware({
-                serializableCheck: {
-                    ignoredActions,
-                    ignoredPaths: [...ignoredPaths, ...mailIgnoredPaths],
-                    ignoredActionPaths: mailIgnoredActionPaths,
-                    // This is made to prevent warning in tests which polute logs
-                    warnAfter: process.env.NODE_ENV === 'production' ? 32 : 100,
-                },
-                immutableCheck: {
-                    // This is made to prevent warning in tests which polute logs
-                    warnAfter: process.env.NODE_ENV === 'production' ? 32 : 100,
-                },
+                serializableCheck,
+                immutableCheck,
                 thunk: { extraArgument: extraThunkArguments },
             })
                 .prepend(listenerMiddleware.middleware)
