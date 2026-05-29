@@ -1229,6 +1229,18 @@
       ],
       "Continue with Free": [
         "繼續使用免費方案"
+      ],
+      "Create business account": [
+        "創建商務帳號"
+      ],
+      "Diagnostics": [
+        "診斷"
+      ],
+      "Download for Mac": [
+        "下載 Mac 版"
+      ],
+      "Full data": [
+        "完整資料"
       ]
     },
     "Action: Sheets": {
@@ -3864,6 +3876,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "需啟用組織金鑰才能建立非私人使用者"
+      ],
+      "Failed to load signature details, please try again later": [
+        "無法取得簽名的詳細資料，請稍後再試。"
       ]
     },
     "error": {
@@ -6719,6 +6734,18 @@
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "隨時升級或清理空間以帶入更多"
+      ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName } 已成功刪除"
+      ],
+      "Can't move a folder into itself": [
+        "無法將資料夾移動到自身"
+      ],
+      "Invitation confirmed": [
+        "邀請函已確認"
+      ],
+      "Scan to download": [
+        "掃描以下載"
       ]
     },
     "info": {
@@ -7497,6 +7524,30 @@
       ],
       "Modified ${ modified }": [
         "修改 ${ modified }"
+      ],
+      "Anyone on the Internet with the link": [
+        "網路上的任何有連結的人"
+      ],
+      "Device #${ position }": [
+        "裝置 #${ position }"
+      ],
+      "Expired on ${ formatted }": [
+        "於 ${ formatted } 到期"
+      ],
+      "Item #${ position }": [
+        "項目 #${ position }"
+      ],
+      "Never expires": [
+        "永不過期"
+      ],
+      "Shared by ${ sharedBy }": [
+        "由 ${ sharedBy } 分享"
+      ],
+      "Shared by Public link": [
+        "透過公開網址共享"
+      ],
+      "Shared on ${ sharedOn }": [
+        "於 ${ sharedOn } 分享"
       ]
     },
     "Label for contact group color": {
@@ -9253,6 +9304,12 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "您的 ${ BRAND_NAME } 位址已就緒"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "「${ ellipsedName }」已成功創建"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "「${ ellipsedName }」 已刪除"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11399,6 +11456,9 @@
       ],
       "Your videos will appear here": [
         "您的影片將會顯示在這裡"
+      ],
+      "Albums shared with you will appear here": [
+        "與您共享的相簿將出現在此"
       ]
     },
     "Success": {
@@ -12604,6 +12664,18 @@
       ],
       "Continue with free storage": [
         "繼續使用免費儲存空間"
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "數位簽署已通過驗證。此資料夾由 <strong> ${ emailAddress } </strong> 安全地創建。"
+      ],
+      "No favorites": [
+        "沒有最愛"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "我們無法驗證此資料夾是由 <strong>${ emailAddress }</strong> 上傳"
+      ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "我們無法確認此檔案內容是由 ${ claimedContentAuthor } 上傳。原因是 ${ activeRevision.contentAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
