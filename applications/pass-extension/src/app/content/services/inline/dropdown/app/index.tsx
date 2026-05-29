@@ -5,6 +5,8 @@ import { IFrameApp } from 'proton-pass-extension/lib/components/Inline/IFrameApp
 
 import { Dropdown } from './Dropdown';
 
+if (BUILD_TARGET === 'safari') document.body.classList.add('is-safari');
+
 const container = document.getElementById('root');
 const root = createRoot(container!);
 
