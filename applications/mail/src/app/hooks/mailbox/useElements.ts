@@ -54,6 +54,7 @@ import {
     placeholderCount as placeholderCountSelector,
     selectCurrentContextIdentifier,
     selectElementIDs,
+    selectParams,
     shouldLoadElements as shouldLoadElementsSelector,
     shouldUpdatePage as shouldUpdatePageSelector,
     stateInconsistency as stateInconsistencySelector,
@@ -164,7 +165,7 @@ export const useElements: UseElements = ({
 
     const counts = { counts: countValues, loading: countsLoading };
 
-    const stateParams = useMailSelector((state) => state.elements.params);
+    const stateParams = useMailSelector(selectParams);
     const elementsMap = useMailSelector(elementsMapSelector);
     const pendingActions = useMailSelector(pendingActionsSelector);
     const tasksRunning = useMailSelector(taskRunning);
