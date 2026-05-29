@@ -12,6 +12,7 @@ import useApi from '@proton/components/hooks/useApi';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import useLoading from '@proton/hooks/useLoading';
+import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { updateMailCategoryView } from '@proton/shared/lib/api/mailSettings';
 import { MAILBOX_LABEL_IDS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
@@ -30,6 +31,8 @@ export const GlobalCategoriesB2bOnboarding = () => {
 
     const [modalProps, setOpen, shouldRender] = useModalState();
     const [b2bModalProps, setB2BModalProps] = useState<CategoriesViewB2BOnboardingModalPayload['value'] | null>(null);
+
+    const { sendEventOnboardingAccept, sendEventOnboardingDismiss } = useCategoriesTelemetry();
 
     const api = useApi();
     const { update } = useFeature(FeatureCode.CategoryViewB2BOnboardingViewFlags);
@@ -60,7 +63,10 @@ export const GlobalCategoriesB2bOnboarding = () => {
         modalProps.onClose?.();
 
         if (enableCategories) {
+            sendEventOnboardingAccept();
             window.location.replace(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`);
+        } else {
+            sendEventOnboardingDismiss();
         }
     };
 

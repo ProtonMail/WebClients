@@ -7,6 +7,12 @@ import { useCategoriesView } from './useCategoriesView';
 jest.mock('./useCategoriesView');
 const mockUseCategoriesView = useCategoriesView as jest.Mock<ReturnType<typeof useCategoriesView>>;
 
+jest.mock('@proton/mail/features/categoriesView/useCategoriesTelemetry', () => ({
+    useCategoriesTelemetry: () => ({
+        sendReportCategoriesNav: jest.fn(),
+    }),
+}));
+
 describe('useCategoriesShortcuts', () => {
     afterEach(() => {
         jest.clearAllMocks();
