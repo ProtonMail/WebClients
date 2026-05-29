@@ -21,13 +21,9 @@
         "@proton/utils": "workspace:^"
     },
     "devDependencies": {
-        "@testing-library/jest-dom": "^6.9.1",
         "@vitest/coverage-v8": "3.2.4",
         "@vitest/ui": "3.2.4",
         "eslint": "^9.39.4",
-        "jest": "^30.4.2",
-        "jest-environment-jsdom": "^30.4.1",
-        "ts-jest": "^29.4.9",
         "typescript": "^6.0.2",
         "vitest": "^3.2.4"
     }
