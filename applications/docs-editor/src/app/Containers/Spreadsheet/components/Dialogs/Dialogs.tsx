@@ -5,6 +5,7 @@ import { DeleteSheetDialog } from './DeleteSheet'
 import { ResizeDimensionEditorDialog } from './ResizeDimensionEditorDialog'
 import { SpreadsheetSettingsDialog } from './SpreadsheetSettingsDialog'
 import { CustomCurrencyFormatDialog } from './CustomCurrencyFormatDialog'
+import { CustomNumberFormatDialog } from './CustomNumberFormatDialog/CustomNumberFormatDialog'
 
 export function Dialogs() {
   return (
@@ -26,6 +27,7 @@ export function Dialogs() {
       <ResizeDimensionEditorDialog />
       <SpreadsheetSettingsDialog />
       <CustomCurrencyFormatDialog />
+      <CustomNumberFormatDialog />
     </>
   )
 }
