@@ -9,6 +9,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useToggle from '@proton/components/hooks/useToggle';
 import useLoading from '@proton/hooks/useLoading';
+import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -25,12 +26,15 @@ export const CategoryViewToggle = () => {
     const { createNotification } = useNotifications();
     const dispatch = useDispatch();
 
+    const { sendReportChangeCategorySettings } = useCategoriesTelemetry();
+
     const handleChange = async (checked: boolean) => {
         const response = await api<{ MailSettings: MailSettings }>(updateMailCategoryView(checked));
         dispatch(mailSettingsActions.updateMailSettings(response.MailSettings));
 
         createNotification({ text: c('Success').t`Preference saved` });
         toggle();
+        sendReportChangeCategorySettings(checked);
     };
 
     return (
