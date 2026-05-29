@@ -277,10 +277,20 @@ const ThemeProvider = ({
         const defaultValue = ThemeFontSizeSettingMap[ThemeFontSizeSetting.DEFAULT].value;
         const actualValue = ThemeFontSizeSettingMap[constrainedThemeSettings.FontSize]?.value;
 
-        const value = !actualValue || defaultValue === actualValue ? undefined : `${actualValue}`;
+        // Atkinson Hyperlegible reads small at the default 14px; bump to 15 when the user keeps the default size.
+        const isAtkinsonAtDefaultSize =
+            constrainedThemeSettings.FontFace === ThemeFontFaceSetting.ATKINSON &&
+            constrainedThemeSettings.FontSize === ThemeFontSizeSetting.DEFAULT;
+
+        // eslint-disable-next-line no-nested-ternary
+        const value = isAtkinsonAtDefaultSize
+            ? '15'
+            : !actualValue || defaultValue === actualValue
+              ? undefined
+              : `${actualValue}`;
 
         syncStyleToEl(htmlEl, styles.fontSize, value);
-    }, [constrainedThemeSettings.FontSize]);
+    }, [constrainedThemeSettings.FontSize, constrainedThemeSettings.FontFace]);
 
     useLayoutEffect(() => {
         const htmlEl = document.querySelector('html');
