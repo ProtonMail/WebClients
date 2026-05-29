@@ -1,7 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import { useFlag } from '@proton/unleash/useFlag';
-
 const hasUserActivation = (nav: Navigator): nav is Navigator & { userActivation: { hasBeenActive: boolean } } => {
     return 'userActivation' in nav && nav.userActivation !== undefined;
 };
@@ -29,17 +27,12 @@ const detectPriorUserInteraction = () => {
  * @returns {boolean} muted - True if no prior user interaction detected
  */
 export const useVideoAutoPlay = () => {
-    const isVideoAutoPlayEnabled = useFlag('DriveWebVideoAutoPlay');
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isTabActive, setIsTabActive] = useState(!document.hidden);
     const hasUserInteracted = detectPriorUserInteraction();
     const [hasAttemptedAutoplay, setHasAttemptedAutoplay] = useState(false);
 
     useEffect(() => {
-        if (!isVideoAutoPlayEnabled) {
-            return;
-        }
-
         const handleVisibilityChange = () => {
             setIsTabActive(!document.hidden);
         };
@@ -48,7 +41,7 @@ export const useVideoAutoPlay = () => {
         return () => {
             document.removeEventListener('visibilitychange', handleVisibilityChange);
         };
-    }, [isVideoAutoPlayEnabled]);
+    }, []);
 
     const attemptAutoplay = useCallback(async () => {
         if (!videoRef.current || !isTabActive || hasAttemptedAutoplay) {
@@ -74,14 +67,10 @@ export const useVideoAutoPlay = () => {
     }, [isTabActive, hasUserInteracted, hasAttemptedAutoplay]);
 
     const handleCanPlay = useCallback(() => {
-        if (isVideoAutoPlayEnabled && isTabActive && !hasAttemptedAutoplay) {
+        if (isTabActive && !hasAttemptedAutoplay) {
             void attemptAutoplay();
         }
-    }, [isVideoAutoPlayEnabled, isTabActive, hasAttemptedAutoplay, attemptAutoplay]);
-
-    if (!isVideoAutoPlayEnabled) {
-        return undefined;
-    }
+    }, [isTabActive, hasAttemptedAutoplay, attemptAutoplay]);
 
     return {
         videoRef,

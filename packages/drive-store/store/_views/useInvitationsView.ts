@@ -8,18 +8,16 @@ import type { SharedWithMeItem } from '../../components/sections/SharedWithMe/Sh
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useDriveEventManager } from '../_events';
 import { useInvitationsListing } from '../_invitations/useInvitationsListing';
-import { useUserSettings } from '../_settings';
 import { useMemoArrayNoMatterTheOrder } from './utils';
 
 export const useInvitationsView = () => {
     const [isLoading, withLoading] = useLoading(true);
     const { getCachedInvitations, loadInvitations } = useInvitationsListing();
     const driveEventManager = useDriveEventManager();
-    const { photosWithAlbumsEnabled } = useUserSettings();
     const cachedInvitations = getCachedInvitations();
 
     const invitations = useMemoArrayNoMatterTheOrder(
-        cachedInvitations.filter((invitation) => invitation.link.type !== LinkType.ALBUM || photosWithAlbumsEnabled)
+        cachedInvitations.filter((invitation) => invitation.link.type !== LinkType.ALBUM)
     );
 
     const invitationsBrowserItems: SharedWithMeItem[] = useMemo(

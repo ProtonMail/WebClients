@@ -183,7 +183,6 @@ const MainContainer = () => {
     const isScribeAdminSettingFeatureEnabled = useFlag('ScribeAdminSetting');
     const isZoomIntegrationDisabled = useFlag('ZoomIntegrationDisabled');
     const isProtonMeetIntegrationEnabled = useFlag('NewScheduleOption');
-    const canB2BHidePhotos = useFlag('DriveB2BPhotosUpload');
     const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
     const isCryptoPostQuantumOptInEnabled =
         (useFlag('CryptoPostQuantumOptIn') && user.isPrivate) || !!userSettings.Flags.SupportPgpV6Keys;
@@ -291,7 +290,6 @@ const MainContainer = () => {
         canDisplayB2BLogsPass,
         canDisplayB2BLogsVPN,
         canDisplayPassReports,
-        canB2BHidePhotos,
         canDisplayNonPrivateEmailPhone,
         isUserGroupsFeatureEnabled,
         isUserGroupsNoCustomDomainEnabled,
