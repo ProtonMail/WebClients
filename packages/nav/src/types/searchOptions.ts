@@ -1,16 +1,16 @@
 import type { IconName } from '@proton/icons/types';
 
-export interface Section {
-    value: string | (() => string);
-    to: string;
-    icon?: IconName;
+export const enum SettingsLayoutVariant {
+    Default = 'default',
+    Card = 'card',
 }
 
-interface SearchOption {
+export interface SearchOption {
+    id: string;
     value: string;
-    icon?: IconName;
+    icon: IconName | undefined;
     to: string;
     in: string[];
+    beta: boolean;
+    variant: SettingsLayoutVariant;
 }
-
-export type SearchOptionsResolved = SearchOption[];

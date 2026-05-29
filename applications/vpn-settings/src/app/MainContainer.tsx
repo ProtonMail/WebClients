@@ -5,6 +5,7 @@ import { Redirect, Switch, useHistory, useLocation } from 'react-router-dom';
 
 import OrganizationSettingsRouter from 'proton-account/src/app/containers/organization/OrganizationSettingsRouter';
 import { getOrganizationAppRoutes } from 'proton-account/src/app/containers/organization/routes';
+import { AutocompleteSettingsSearch } from 'proton-account/src/app/content/SettingsSearch';
 import type { Flags } from 'proton-account/src/app/content/router-params';
 import { c } from 'ttag';
 
@@ -100,6 +101,7 @@ import { GetStartedOnboarding } from '@proton/vpn/components/Onboarding';
 import { VPNClientsSection } from '@proton/vpn/components/VPNClientsSection';
 import { VPNDownloadAndInfoSection } from '@proton/vpn/components/VPNDownloadSection';
 import { TVContainer } from '@proton/vpn/components/tv';
+import { useB2BAdminSidebarFeature } from '@proton/vpn/hooks/useB2BAdminSidebarFeature';
 
 import { VPNSidebar } from './VPNSidebar';
 import { getRoutes } from './routes';
@@ -235,6 +237,8 @@ const MainContainer: FunctionComponent = () => {
           }
         : undefined;
 
+    const adminSidebarFeature = useB2BAdminSidebarFeature({ user, subscription, organization });
+
     const header = (
         <PrivateHeader
             app={app}
@@ -244,6 +248,11 @@ const MainContainer: FunctionComponent = () => {
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isSmallViewport={viewportWidth['<=small']}
+            actionArea={
+                adminSidebarFeature.enabled &&
+                adminSidebarFeature.sidebar.status &&
+                viewportWidth['>=large'] && <AutocompleteSettingsSearch options={adminSidebarFeature.settings} />
+            }
             onBoardingButton={<GetStartedOnboarding />}
         />
     );
@@ -310,6 +319,7 @@ const MainContainer: FunctionComponent = () => {
                                 organizationRoutes={organizationAppRoutes}
                                 sidebarExpanded={expanded}
                                 onSidebarToggle={onToggleExpand}
+                                adminSidebarFeature={adminSidebarFeature}
                             />
                         }
                     >

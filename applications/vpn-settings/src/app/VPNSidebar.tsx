@@ -1,9 +1,9 @@
 import { type PropsWithChildren, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import type { SectionConfig, SidebarConfig } from '@proton/components';
@@ -16,13 +16,12 @@ import SidebarNav from '@proton/components/components/sidebar/SidebarNav';
 import { Tree } from '@proton/components/components/sidebar/nav/Tree';
 import { useVisibilityTracker } from '@proton/components/components/visibility/useVisibilityTracker';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { APPS } from '@proton/shared/lib/constants';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import illustration from '@proton/styles/assets/img/illustrations/magic-wand-illustration.svg';
 import { FeedbackModal } from '@proton/vpn/components/Sidebar';
-import { useB2BAdminSidebarFeature } from '@proton/vpn/hooks/useB2BAdminSidebarFeature';
+import type { useB2BAdminSidebarFeature } from '@proton/vpn/hooks/useB2BAdminSidebarFeature';
 
 import VpnSidebarVersion from './containers/VpnSidebarVersion';
 
@@ -123,17 +122,16 @@ const SidebarToggle = ({
 
 const TrackableSidebar = ({
     organization,
-    subscription,
     sidebarExpanded,
     onSidebarToggle,
     routes,
     organizationRoutes,
+    adminSidebarFeature,
 }: {
     organization: OrganizationExtended | undefined;
-    subscription: MaybeFreeSubscription;
+    adminSidebarFeature: ReturnType<typeof useB2BAdminSidebarFeature>;
 } & Props) => {
     const [user] = useUser();
-    const adminSidebarFeature = useB2BAdminSidebarFeature({ user, subscription, organization });
     const isSidebarActive = adminSidebarFeature.enabled && adminSidebarFeature.sidebar.status;
 
     const trackingData = {
@@ -142,6 +140,8 @@ const TrackableSidebar = ({
         isEnabled: adminSidebarFeature.enabled,
         isActive: isSidebarActive,
     };
+
+    const { pathname } = useLocation();
 
     return (
         <SidebarParent
@@ -153,7 +153,7 @@ const TrackableSidebar = ({
             {isSidebarActive ? (
                 <>
                     <SidebarNav className="overflow-auto">
-                        <Tree routes={adminSidebarFeature.routes} />
+                        <Tree routes={adminSidebarFeature.routes} pathname={pathname} />
                     </SidebarNav>
                     <SidebarToggle adminSidebarFeature={adminSidebarFeature} trackingData={trackingData} />
                 </>
@@ -191,13 +191,19 @@ const TrackableSidebar = ({
 type Props = {
     routes: Record<string, SectionConfig>;
     organizationRoutes: SidebarConfig;
+    adminSidebarFeature: ReturnType<typeof useB2BAdminSidebarFeature>;
 } & CoupledParentProps;
 
-export const VPNSidebar = ({ routes, organizationRoutes, sidebarExpanded, onSidebarToggle }: Props) => {
-    const [subscription, loadingSubscription] = useSubscription();
+export const VPNSidebar = ({
+    routes,
+    organizationRoutes,
+    sidebarExpanded,
+    onSidebarToggle,
+    adminSidebarFeature,
+}: Props) => {
     const [organization, loadingOrganization] = useOrganization();
 
-    if (loadingSubscription || loadingOrganization) {
+    if (loadingOrganization || adminSidebarFeature.loading) {
         return (
             <Sidebar
                 app={APPS.PROTONVPN_SETTINGS}
@@ -218,9 +224,9 @@ export const VPNSidebar = ({ routes, organizationRoutes, sidebarExpanded, onSide
             routes={routes}
             organizationRoutes={organizationRoutes}
             organization={organization}
-            subscription={subscription}
             sidebarExpanded={sidebarExpanded}
             onSidebarToggle={onSidebarToggle}
+            adminSidebarFeature={adminSidebarFeature}
         />
     );
 };
