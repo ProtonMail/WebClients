@@ -5,13 +5,14 @@ import { applyPrefix } from './applyPrefix';
 
 const nav: NavResolved = {
     items: [
-        { id: 'home', label: 'Home', to: '/home', icon: undefined, meta: {}, children: undefined },
+        { id: 'home', label: 'Home', to: '/home', icon: undefined, meta: {}, children: undefined, sections: undefined },
         {
             id: 'account',
             label: 'Account',
             to: undefined,
             icon: undefined,
             meta: {},
+            sections: undefined,
             children: [
                 {
                     id: 'account.settings',
@@ -20,6 +21,7 @@ const nav: NavResolved = {
                     icon: undefined,
                     meta: {},
                     children: undefined,
+                    sections: undefined,
                 },
             ],
         },
