@@ -92,7 +92,12 @@ const PasswordsSection = () => {
                 setSessionRecoveryPasswordResetModalOpen(true);
             } else if (action === 'forgot-password') {
                 setRecoveryModalFromAction(true);
-                setRecoveryModalOpen(true);
+
+                if (hasRecoveryMethod) {
+                    setRecoveryModalOpen(true);
+                } else if (isSessionRecoveryInitiationAvailable) {
+                    setSessionRecoveryModalOpen(true);
+                }
             }
 
             params.delete('action');
