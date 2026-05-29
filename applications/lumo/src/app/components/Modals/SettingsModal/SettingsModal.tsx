@@ -7,6 +7,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalOwnProps } from '@proton/components/index';
 import { Icon, ModalTwo, ModalTwoContent, SettingsLink, Toggle } from '@proton/components/index';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
@@ -14,7 +15,7 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import type { IconName } from '@proton/icons/types';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import { useLumoUserSettings } from '../../../hooks';
+import { useLumoAnimatedBackground, useLumoUserSettings } from '../../../hooks';
 import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../../hooks/useLumoPlan';
@@ -148,6 +149,7 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
     const [user] = useUser();
     const userId = user?.ID;
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
+    const { isAnimatedBackgroundEnabled, isToggleDisabled, setAnimatedBackgroundEnabled } = useLumoAnimatedBackground();
     const showProjectConversationsInHistory = lumoUserSettings.showProjectConversationsInHistory ?? false;
     const automaticWebSearch = lumoUserSettings.automaticWebSearch ?? false;
 
@@ -238,6 +240,32 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                 />
                 <LumoThemeButton />
             </div>
+
+            <SettingsSectionItem
+                icon="image"
+                text={c('collider_2025: Title').t`Animated background`}
+                subtext={c('collider_2025: Description').t`Show shader and particle effects on the home screen`}
+                button={
+                    <Tooltip
+                        title={
+                            isToggleDisabled
+                                ? c('Tooltip').t`The reduce motion setting is already enabled on this device`
+                                : undefined
+                        }
+                        closeDelay={0}
+                        openDelay={0}
+                    >
+                        <Toggle
+                            id="animated-background-toggle"
+                            checked={isAnimatedBackgroundEnabled}
+                            disabled={isToggleDisabled}
+                            onChange={() => {
+                                setAnimatedBackgroundEnabled(!isAnimatedBackgroundEnabled);
+                            }}
+                        />
+                    </Tooltip>
+                }
+            />
 
             {/* Project conversations in history toggle */}
             <SettingsSectionItem

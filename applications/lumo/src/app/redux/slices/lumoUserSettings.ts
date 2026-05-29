@@ -1,7 +1,6 @@
 import { createAction, createReducer } from '@reduxjs/toolkit';
 
-import { getDefaultSettings, getLumoSettings } from '../../providers';
-import { localSettingsToUserSettings } from '../../providers';
+import { getDefaultSettings, getLumoSettings, localSettingsToUserSettings } from '../../providers';
 import type { FeatureFlag } from './featureFlags';
 import {
     appendGeneratedMemoriesThunk,
@@ -39,6 +38,7 @@ export interface LumoUserSettings {
     indexedDriveFolders?: IndexedDriveFolder[];
     showProjectConversationsInHistory?: boolean;
     automaticWebSearch?: boolean;
+    animatedBackgroundEnabled?: boolean;
     showGallerySuggestions: boolean;
     memories?: Memory[];
     isMemoryEnabled?: boolean;
