@@ -91,7 +91,8 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
         [galleryImages.sections, galleryImages.status]
     );
 
-    const [activeTab, setActiveTab] = useState<GalleryTab>(() => (hasImages ? 'gallery' : 'inspiration'));
+    // const [activeTab, setActiveTab] = useState<GalleryTab>(() => (hasImages ? 'gallery' : 'inspiration'));
+    const [activeTab, setActiveTab] = useState<GalleryTab>('gallery');
 
     const handleSketchEditExport = useCallback(
         async (imageData: string, _mode: DrawingMode, description: string) => {
