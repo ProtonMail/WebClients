@@ -120,9 +120,10 @@ export interface ComposerToolbarProps {
     onBrowseDrive: () => void;
     onDrawSketch: () => void;
     fileUploadMode: FileUploadMode;
-    // Gallery-mode only — unused in all other composer modes
-    selectedAspectRatio?: ImageAspectRatio;
-    onAspectRatioChange?: (ratio: ImageAspectRatio) => void;
+    selectedAspectRatio: ImageAspectRatio;
+    onAspectRatioChange: (ratio: ImageAspectRatio) => void;
+    isCreateImageMode: boolean;
+    onCreateImageModeChange: (enabled: boolean) => void;
     canUseAgents?: boolean;
     isAgent?: boolean;
 }
@@ -135,13 +136,14 @@ export const ComposerToolbar = ({
     fileUploadMode,
     selectedAspectRatio,
     onAspectRatioChange,
+    isCreateImageMode,
+    onCreateImageModeChange,
     canUseAgents = false,
     isAgent = false,
 }: ComposerToolbarProps) => {
     const toolsButtonRef = useRef<HTMLButtonElement>(null);
     const [showToolsMenu, setShowToolsMenu] = useState(false);
     const { imageTools: isImageToolsFlagEnabled, externalTools: isToolsFlagEnabled } = useLumoFlags();
-    const [showCreateImageButton, setShowCreateImageButton] = useState(false);
 
     useNativeComposerImageApi();
 
@@ -157,11 +159,9 @@ export const ComposerToolbar = ({
                 <div className="flex flex-row flex-nowrap items-center gap-1 pl-2">
                     <UploadMenuSection {...uploadSectionProps} buttonIcon={<GalleryUploadIcon />} />
                 </div>
-                {selectedAspectRatio && onAspectRatioChange && (
-                    <div className="flex flex-row flex-nowrap items-center mr-2">
-                        <AspectRatioDropdown selectedRatio={selectedAspectRatio} onSelect={onAspectRatioChange} />
-                    </div>
-                )}
+                <div className="flex flex-row flex-nowrap items-center mr-2">
+                    <AspectRatioDropdown selectedRatio={selectedAspectRatio} onSelect={onAspectRatioChange} />
+                </div>
             </div>
         );
     }
@@ -170,7 +170,7 @@ export const ComposerToolbar = ({
         <div className="flex flex-row flex-nowrap items-center justify-space-between w-full mt-1">
             <div className="flex flex-row flex-nowrap items-center gap-1 pl-2">
                 <UploadMenuSection {...uploadSectionProps} />
-                {isToolsFlagEnabled && !showCreateImageButton && (
+                {isToolsFlagEnabled && !isCreateImageMode && (
                     <>
                         <Button
                             ref={toolsButtonRef}
@@ -189,15 +189,15 @@ export const ComposerToolbar = ({
                             isOpen={showToolsMenu}
                             anchorRef={toolsButtonRef}
                             onClose={() => setShowToolsMenu(false)}
-                            onClickCreateImageOption={() => setShowCreateImageButton(true)}
+                            onClickCreateImageOption={() => onCreateImageModeChange(true)}
                             canUseAgents={canUseAgents}
                             isAgent={isAgent}
                         />
                     </>
                 )}
-                {showCreateImageButton && (
+                {isCreateImageMode && (
                     <Button
-                        onClick={() => setShowCreateImageButton(false)}
+                        onClick={() => onCreateImageModeChange(false)}
                         className="border-none shrink-0 flex flex-row flex-nowrap gap-2 items-center color-primary py-1.5 rounded-full group-hover-opacity-container hover:color-primary"
                         shape="ghost"
                         size="small"
@@ -223,7 +223,12 @@ export const ComposerToolbar = ({
                         <IcMicrophone size={6} />
                     </Button>
                 </div>
-                {isImageToolsFlagEnabled && !isAgent && <ModelModeDropdown />}
+                {isImageToolsFlagEnabled && !isAgent &&
+                    (isCreateImageMode ? (
+                        <AspectRatioDropdown selectedRatio={selectedAspectRatio} onSelect={onAspectRatioChange} />
+                    ) : (
+                        <ModelModeDropdown />
+                    ))}
             </div>
         </div>
     );
