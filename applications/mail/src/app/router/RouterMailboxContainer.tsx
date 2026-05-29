@@ -24,6 +24,7 @@ import { MailboxContainerContextProvider } from 'proton-mail/containers/mailbox/
 import { filterFromUrl, pageFromUrl, sortFromUrl } from 'proton-mail/helpers/mailboxUrl';
 import useMailDrawer from 'proton-mail/hooks/drawer/useMailDrawer';
 import { useElements } from 'proton-mail/hooks/mailbox/useElements';
+import { selectParams } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import { layoutActions } from 'proton-mail/store/layout/layoutSlice';
 
@@ -37,17 +38,16 @@ import { useMailboxContainerSideEffects } from './sideEffects/useMailboxContaine
 
 export const RouterMailboxContainer = () => {
     // We get most of the data here to avoid unnecessary re-renders
-    const params = useMailSelector((state) => state.elements.params);
+    const params = useMailSelector(selectParams);
     const navigation = useRouterNavigation({ labelID: params.labelID });
-    const elementsParams = useGetElementParams({ params, navigation });
+    const elementsParams = useGetElementParams({ navigation });
     const elementsData = useElements(elementsParams);
-    const actions = useElementActions({ params, navigation, elementsData });
+    const actions = useElementActions({ navigation, elementsData });
 
     const [user] = useUser();
     const [retentionRules] = useRetentionPolicies();
     const { isColumnModeActive, messageContainerRef, mainAreaRef, scrollContainerRef } = useMailboxLayoutProvider();
 
-    const { labelID, elementID } = params;
     const { drawerSidebarButtons, showDrawerSidebar } = useMailDrawer();
 
     const canShowDrawer = drawerSidebarButtons.length > 0;
@@ -66,7 +66,7 @@ export const RouterMailboxContainer = () => {
         elementsParams,
         elements: elementsData.elements,
         loading: elementsData.loading,
-        labelID,
+        labelID: params.labelID,
     });
 
     const dispatch = useMailDispatch(); // You're already using useMailSelector, so this is consistent
@@ -76,12 +76,12 @@ export const RouterMailboxContainer = () => {
     const urlPage = pageFromUrl(location);
     const searchParams = getSearchParams(location.hash);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-649484
-    const sort = useMemo<Sort>(() => sortFromUrl(location, labelID), [searchParams.sort, labelID]);
+    const sort = useMemo<Sort>(() => sortFromUrl(location, params.labelID), [searchParams.sort, params.labelID]);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C5320A
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
     useScrollToTop(scrollContainerRef as RefObject<HTMLElement>, [
         urlPage,
-        labelID,
+        params.labelID,
         sort,
         filter,
         elementsParams.search,
@@ -91,19 +91,19 @@ export const RouterMailboxContainer = () => {
     // When the labelID is updated, reset the select all value
     useEffect(() => {
         dispatch(layoutActions.setSelectAll(false));
-    }, [labelID, dispatch]);
+    }, [params.labelID, dispatch]);
 
-    if (!labelID) {
+    if (!params.labelID) {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
     // Prevent non-admin users from accessing the Deleted folder via URL
-    if (labelID === MAILBOX_LABEL_IDS.SOFT_DELETED && !isAdminOrLoginAsAdmin(user)) {
+    if (params.labelID === MAILBOX_LABEL_IDS.SOFT_DELETED && !isAdminOrLoginAsAdmin(user)) {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
     // Redirect users without retention rules from accessing the Deleted folder via URL
-    if (labelID === MAILBOX_LABEL_IDS.SOFT_DELETED && retentionRules && !retentionRules.length) {
+    if (params.labelID === MAILBOX_LABEL_IDS.SOFT_DELETED && retentionRules && !retentionRules.length) {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
@@ -112,21 +112,20 @@ export const RouterMailboxContainer = () => {
     return (
         <MailboxContainerContextProvider
             containerRef={messageContainerRef}
-            elementID={elementID}
+            elementID={params.elementID}
             isResizing={isResizing}
         >
             <MailHeader
                 elementsData={elementsData}
                 actions={actions}
-                elementID={elementID}
-                labelID={labelID}
+                elementID={params.elementID}
+                labelID={params.labelID}
                 settingsButton={<InboxQuickSettingsAppButton />}
                 toolbar={
                     // Show toolbar in header when in row layout and an email is selected
-                    !shouldSeeWideToolbars && ((!isColumnModeActive && elementID) || viewPortIsNarrow) ? (
+                    !shouldSeeWideToolbars && ((!isColumnModeActive && params.elementID) || viewPortIsNarrow) ? (
                         <MailboxToolbar
                             inHeader
-                            params={params}
                             navigation={navigation}
                             elementsData={elementsData}
                             actions={actions}
@@ -137,7 +136,7 @@ export const RouterMailboxContainer = () => {
             <PrivateMainArea
                 className={clsx([
                     'flex',
-                    !isColumnModeActive && elementID && 'row-layout-email-view full-width-email',
+                    !isColumnModeActive && params.elementID && 'row-layout-email-view full-width-email',
                     isColumnModeActive && 'column-layout-view',
                     breakpoints.viewportWidth['<=small'] && 'border-none',
                 ])}
@@ -157,7 +156,6 @@ export const RouterMailboxContainer = () => {
                                 elementsData={elementsData}
                                 actions={actions}
                                 navigation={navigation}
-                                params={params}
                             />
                         )}
                     />
@@ -165,7 +163,6 @@ export const RouterMailboxContainer = () => {
                         path={ROUTE_LABEL}
                         render={() => (
                             <RouterLabelContainer
-                                params={params}
                                 navigation={navigation}
                                 elementsData={elementsData}
                                 actions={actions}

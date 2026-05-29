@@ -6,7 +6,10 @@ import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-import { elementsAreUnread as elementsAreUnreadSelector, params } from '../../../store/elements/elementsSelectors';
+import {
+    elementsAreUnread as elementsAreUnreadSelector,
+    selectParams,
+} from '../../../store/elements/elementsSelectors';
 import ReadUnreadButtons from './ReadUnreadButtons';
 
 jest.mock('@proton/mail/store/mailSettings/hooks');
@@ -27,7 +30,7 @@ const getProps = (selectedIDs: string[] = ['id1', 'id2']) => ({
 
 const mockSelectors = (elementsAreUnread: Record<string, boolean>) => {
     mockUseMailSelector.mockImplementation((selector: any) => {
-        if (selector === params) {
+        if (selector === selectParams) {
             return { labelID: MAILBOX_LABEL_IDS.INBOX };
         }
         if (selector === elementsAreUnreadSelector) {

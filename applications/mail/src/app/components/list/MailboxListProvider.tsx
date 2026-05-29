@@ -9,7 +9,7 @@ import { useListElements } from '../../hooks/list/useListElements';
 import { useListSelection } from '../../hooks/list/useListSelection';
 import { usePaging } from '../../hooks/usePaging';
 import type { Element as MailElement } from '../../models/element';
-import { pageSize as pageSizeSelector, params } from '../../store/elements/elementsSelectors';
+import { pageSize as pageSizeSelector, selectParams } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
 import type { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 
@@ -94,7 +94,7 @@ export const MailboxListProvider = ({
     anchorRef,
     customActions = {},
 }: MailboxListProviderProps) => {
-    const { labelID, isSearching: isSearch, filter, elementID, conversationMode } = useMailSelector(params);
+    const { labelID, isSearching: isSearch, filter, elementID, conversationMode } = useMailSelector(selectParams);
 
     const elementsData = useListElements({
         inputElements,
