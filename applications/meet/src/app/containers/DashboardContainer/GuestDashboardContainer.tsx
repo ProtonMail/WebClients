@@ -12,6 +12,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMeet } from '@proton/shared/lib/helpers/desktop';
 
 import { CTAModal } from '../../components/AnonymousModal/CTAModal';
+import { InvalidMeetingLinkModal } from '../../components/InvalidMeetingLinkModal/InvalidMeetingLinkModal';
 import { JoinWithLinkModal } from '../../components/JoinWithLinkModal/JoinWithLinkModal';
 import { MeetingListStatus } from '../../hooks/useMeetingList';
 import { DashboardContainerBody } from './DashboardContainerBody';
@@ -79,6 +80,7 @@ export const GuestDashboardContainer = () => {
                 onClose={handleJoinWithLinkModalClose}
                 onJoin={(meetingId, meetingPassword) => history.push(getMeetingLink(meetingId, meetingPassword))}
             />
+            <InvalidMeetingLinkModal />
         </>
     );
 };
