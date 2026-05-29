@@ -15,7 +15,6 @@ export { useThemeParam } from './useThemeParam';
 
 // User settings hooks
 export { useLumoUserSettings } from './useLumoUserSettings';
-export { useLumoAnimatedBackground } from './useLumoAnimatedBackground';
 
 // Performance utilities
 export { startTimer, endTimer, measureExecution, measureAsyncExecution } from '../util/performance';

@@ -15,8 +15,9 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import type { IconName } from '@proton/icons/types';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import { useLumoAnimatedBackground, useLumoUserSettings } from '../../../hooks';
+import { useLumoUserSettings } from '../../../hooks';
 import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
+import { useLumoAnimatedBackground } from '../../../hooks/useLumoAnimatedBackground';
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../../hooks/useLumoPlan';
 import { useMessageSearch } from '../../../hooks/useMessageSearch';
