@@ -2,12 +2,10 @@ import { AbortError } from '@proton/drive';
 import { EnrichedError, isValidationError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import metrics from '@proton/metrics/index';
 import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
-import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { promiseWithTimeout } from '@proton/shared/lib/helpers/promise';
 
-import { featureFlagStore } from '../../modules/featureFlag';
 import { streamToBuffer } from '../../utils/stream';
 import { isTransferCancelError } from '../../utils/transfer';
 import { initDownloadSW, isOPFSSupported, isServiceWorkersSupported, openDownloadStream } from './download';
@@ -17,18 +15,6 @@ import type { SavingMechanism, TransferMeta } from './types';
 const DOWNLOAD_SW_INIT_TIMEOUT = 15 * 1000;
 const MB = 1024 * 1024;
 const getMemoryLimit = () => {
-    const treatment = featureFlagStore.getState().getVariant('DriveWebDownloadMechanismParameters');
-    if (treatment.enabled) {
-        if (treatment.name === 'low-memory') {
-            return (isMobile() ? 100 : 250) * MB;
-        }
-        if (treatment.name === 'base-memory') {
-            return (isMobile() ? 100 : 750) * MB;
-        }
-        if (treatment.name === 'high-memory') {
-            return (isMobile() ? 100 : 1000) * MB;
-        }
-    }
     // Default limit for in-memory downloads is 500MB for Desktop and 100MB on Mobile as per MEMORY_DOWNLOAD_LIMIT
     return MEMORY_DOWNLOAD_LIMIT;
 };

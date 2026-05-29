@@ -14,7 +14,6 @@ interface UserSettingsStore {
     initialize: (initialUser: UserModel, initialDriveUserSettings: UserSettingsResponse) => void;
     setSort: (sortSetting: SortSetting) => void;
     setLayout: (layout: LayoutSetting) => void;
-    setB2BPhotosEnabled: (enabled: boolean) => void;
 }
 
 export const useUserSettingsStore = create<UserSettingsStore>()((set) => ({
@@ -44,9 +43,4 @@ export const useUserSettingsStore = create<UserSettingsStore>()((set) => ({
 
     setLayout: (layout) =>
         set((state) => (state.userSettings ? { userSettings: { ...state.userSettings, Layout: layout } } : state)),
-
-    setB2BPhotosEnabled: (enabled) =>
-        set((state) =>
-            state.userSettings ? { userSettings: { ...state.userSettings, B2BPhotosEnabled: enabled } } : state
-        ),
 }));
