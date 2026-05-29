@@ -1,16 +1,10 @@
 import type { IconName } from '@proton/icons/types';
 
+import type { Computed } from './computed';
 import type { NavContext } from './models';
+import type { NavSectionDefinition, NavSectionResolved } from './section';
 
 type Meta = Record<string, unknown>;
-
-/**
- * A value that may be provided statically or computed from the runtime context.
- *
- * @example to: '/dashboard'
- * @example to: ({ context }) => context.flags.includes('v2') ? '/dashboard-v2' : '/dashboard'
- */
-export type Computed<T, TContext extends NavContext = NavContext> = T | ((args: { context: TContext }) => T);
 
 export interface NavItemDefinition<TContext extends NavContext = NavContext> {
     id: string;
@@ -24,6 +18,7 @@ export interface NavItemDefinition<TContext extends NavContext = NavContext> {
      * pruned from the resolved tree. Defaults to "always include."
      */
     isVisible?: (args: { context: TContext }) => boolean;
+    sections?: NavSectionDefinition<TContext>[];
 }
 
 export interface NavItemResolved {
@@ -33,6 +28,7 @@ export interface NavItemResolved {
     icon: IconName | undefined;
     meta: Meta;
     children: NavItemResolved[] | undefined;
+    sections: NavSectionResolved[] | undefined;
 }
 
 export interface NavDefinition<TContext extends NavContext = NavContext> {

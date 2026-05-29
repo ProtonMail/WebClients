@@ -4,12 +4,10 @@ import { MemoryRouter } from 'react-router-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import * as orgHooks from '@proton/account/organization/hooks';
-import * as subHooks from '@proton/account/subscription/hooks';
 import * as hooks from '@proton/account/user/hooks';
 import * as helper from '@proton/components/containers/layout/helper';
 import type { SectionConfig, SidebarConfig } from '@proton/components/index';
 import type { NavResolved } from '@proton/nav/types/nav';
-import * as adminHook from '@proton/vpn/hooks/useB2BAdminSidebarFeature';
 
 import { VPNSidebar } from './VPNSidebar';
 
@@ -36,9 +34,7 @@ jest.mock('@proton/components/components/sidebar/SettingsListItem', () => ({
 }));
 
 jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/account/subscription/hooks');
 jest.mock('@proton/account/organization/hooks');
-jest.mock('@proton/vpn/hooks/useB2BAdminSidebarFeature');
 jest.mock('@proton/vpn/components/Sidebar', () => ({
     FeedbackModal: () => <div data-testid="feedback-modal" />,
     Sidebar: ({ routes }: any) => <div data-testid="admin-sidebar">{JSON.stringify(routes)}</div>,
@@ -61,11 +57,16 @@ describe('VPNSidebar', () => {
         routes: { org: { id: 'org', icon: 'brand-proton', text: 'text', to: '/org' } },
     };
 
+    const disabledAdminSidebarFeature = {
+        enabled: false as const,
+        loading: false,
+        routes: undefined,
+    };
+
     beforeEach(() => {
         jest.clearAllMocks();
 
         (hooks.useUser as jest.Mock).mockReturnValue([{ id: '1' }]);
-        (subHooks.useSubscription as jest.Mock).mockReturnValue([{}, false]);
         (orgHooks.useOrganization as jest.Mock).mockReturnValue([{}, false]);
 
         (helper.getIsSectionAvailable as jest.Mock).mockReturnValue(true);
@@ -73,7 +74,7 @@ describe('VPNSidebar', () => {
     });
 
     it('shows loader when subscription or organization are loading', () => {
-        (subHooks.useSubscription as jest.Mock).mockReturnValue([{}, true]);
+        (orgHooks.useOrganization as jest.Mock).mockReturnValue([{}, true]);
 
         renderWithRouter(
             <VPNSidebar
@@ -81,6 +82,7 @@ describe('VPNSidebar', () => {
                 onSidebarToggle={() => {}}
                 routes={routesMock}
                 organizationRoutes={organizationRoutesMock}
+                adminSidebarFeature={disabledAdminSidebarFeature}
             />
         );
         expect(screen.getByRole('progressbar')).toBeInTheDocument();
@@ -88,20 +90,13 @@ describe('VPNSidebar', () => {
     });
 
     it('renders old sidebar when admin feature is disabled', () => {
-        (adminHook.useB2BAdminSidebarFeature as jest.Mock).mockReturnValue({
-            enabled: false,
-            sidebar: { status: false, toggle: jest.fn() },
-            feedback: { isOn: false, setOff: jest.fn() },
-            spotlight: { isOn: false, setOff: jest.fn() },
-            routes: {},
-        });
-
         renderWithRouter(
             <VPNSidebar
                 sidebarExpanded={false}
                 onSidebarToggle={() => {}}
                 routes={routesMock}
                 organizationRoutes={organizationRoutesMock}
+                adminSidebarFeature={disabledAdminSidebarFeature}
             />
         );
         expect(screen.getByTestId('sidebar-nav')).toBeInTheDocument();
@@ -113,16 +108,18 @@ describe('VPNSidebar', () => {
 
     it('renders new sidebar when admin feature is enabled', () => {
         const resolved: NavResolved = {
-            items: [{ id: 'admin', label: 'Admin', to: '/admin', children: undefined, icon: undefined, meta: {} }],
+            items: [
+                {
+                    id: 'admin',
+                    label: 'Admin',
+                    to: '/admin',
+                    children: undefined,
+                    icon: undefined,
+                    meta: {},
+                    sections: undefined,
+                },
+            ],
         };
-
-        (adminHook.useB2BAdminSidebarFeature as jest.Mock).mockReturnValue({
-            enabled: true,
-            sidebar: { status: true, toggle: jest.fn() },
-            feedback: { isOn: true, setOff: jest.fn() },
-            spotlight: { isOn: true, setOff: jest.fn() },
-            routes: resolved,
-        });
 
         renderWithRouter(
             <VPNSidebar
@@ -130,6 +127,14 @@ describe('VPNSidebar', () => {
                 onSidebarToggle={() => {}}
                 routes={routesMock}
                 organizationRoutes={organizationRoutesMock}
+                adminSidebarFeature={{
+                    enabled: true,
+                    loading: false,
+                    sidebar: { status: true, toggle: jest.fn() },
+                    spotlight: { isOn: true, setOff: jest.fn() },
+                    routes: resolved,
+                    settings: [],
+                }}
             />
         );
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
@@ -143,20 +148,32 @@ describe('VPNSidebar', () => {
     it('toggles new sidebar when toggle is clicked', () => {
         const toggle = jest.fn();
 
-        (adminHook.useB2BAdminSidebarFeature as jest.Mock).mockReturnValue({
-            enabled: true,
-            sidebar: { status: false, toggle },
-            feedback: { isOn: false, setOff: jest.fn() },
-            spotlight: { isOn: false, setOff: jest.fn() },
-            routes: { admin: { to: 'admin', text: 'Admin' } },
-        });
-
         renderWithRouter(
             <VPNSidebar
                 sidebarExpanded={false}
                 onSidebarToggle={() => {}}
                 routes={routesMock}
                 organizationRoutes={organizationRoutesMock}
+                adminSidebarFeature={{
+                    enabled: true,
+                    loading: false,
+                    sidebar: { status: false, toggle },
+                    spotlight: { isOn: false, setOff: jest.fn() },
+                    routes: {
+                        items: [
+                            {
+                                id: 'admin',
+                                label: 'Admin',
+                                to: '/admin',
+                                children: undefined,
+                                icon: undefined,
+                                meta: {},
+                                sections: undefined,
+                            },
+                        ],
+                    },
+                    settings: [],
+                }}
             />
         );
         const uiToggle = screen.getByRole('switch');

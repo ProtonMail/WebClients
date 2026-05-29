@@ -1,5 +1,5 @@
+import type { Computed } from './types/computed';
 import type { NavContext } from './types/models';
-import type { Computed } from './types/nav';
 
 /**
  * Resolves a `Computed<T, TContext>` value against a runtime context.

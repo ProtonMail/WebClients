@@ -22,6 +22,5 @@ export function applyPrefix(nav: NavResolved, prefix: string): NavResolved {
         return nav;
     }
 
-    const { items, ...rest } = nav;
-    return { ...rest, items: nav.items.map((item) => prefixItem(item, prefix)) };
+    return { ...nav, items: nav.items.map((item) => prefixItem(item, prefix)) };
 }

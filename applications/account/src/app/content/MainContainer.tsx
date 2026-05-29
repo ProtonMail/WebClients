@@ -387,7 +387,7 @@ const MainContainer = () => {
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isSmallViewport={viewportWidth['<=small']}
-            actionArea={viewportWidth['>=large'] && <SettingsSearch routes={routes} path={pathPrefix} app={app} />}
+            actionArea={viewportWidth['>=large'] && <SettingsSearch routes={routes} app={app} />}
             app={app}
             onBoardingButton={app === APPS.PROTONVPN_SETTINGS && <GetStartedOnboarding />}
         />
