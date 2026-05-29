@@ -35,7 +35,6 @@ import { useShareBackgroundActions } from '../legacy/store/_views/useShareBackgr
 import { useVolumesState } from '../legacy/store/_volumes';
 import { useRunningFreeUploadTimer } from '../modules/freeUpload';
 import { useSearchModule } from '../modules/search';
-import { useUserSettings } from '../modules/userSettings';
 import { PhotosWithAlbumsContainer } from '../photos/PhotosWithAlbumsContainer';
 import { useBookmarksActions } from '../sections/sharedWith/hooks/useBookmarksActions';
 import { TransferManager } from '../sections/transferManager/TransferManager';
@@ -83,7 +82,6 @@ function InitContainer() {
     // TODO: Remove this and migrate to SDK
     const { addBookmarkFromPrivateApp } = useBookmarksActions();
     const { redirectionReason, redirectToPublicPage, cleanupUrl } = useRedirectToPublicPage();
-    const { photosEnabled } = useUserSettings();
     const drawerWidth = useDrawerWidth();
     const driveWebASVEnabled = useFlag('DriveWebRecoveryASV');
 
@@ -197,7 +195,7 @@ function InitContainer() {
             <Route path="no-access/*" element={<NoAccessContainer />} />
             <Route path="shared-urls/*" element={<SharedURLsContainer />} />
             {!isDirectSharingDisabled && <Route path="shared-with-me/*" element={<SharedWithMeContainer />} />}
-            {photosEnabled && <Route path="photos/*" element={<PhotosWithAlbumsContainer />} />}
+            <Route path="photos/*" element={<PhotosWithAlbumsContainer />} />
             {searchEnabled && <Route path="search/*" element={<SearchContainer />} />}
             <Route path=":volumeId/:linkId/*" element={<VolumeLinkContainer />} />
             <Route path=":shareId/file/:linkId/*" element={<FileContainer />} />

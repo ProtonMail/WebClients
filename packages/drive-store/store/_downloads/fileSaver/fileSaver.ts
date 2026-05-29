@@ -11,7 +11,6 @@ import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { isValidationError } from '../../../utils/errorHandling/ValidationError';
 import { streamToBuffer } from '../../../utils/stream';
 import { isTransferCancelError } from '../../../utils/transfer';
-import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import type { LogCallback } from '../interface';
 import { initDownloadSW, isServiceWorkersUnsupported, openDownloadStream } from './download';
 
@@ -34,18 +33,6 @@ const isOPFSSupported = async () => {
 const DOWNLOAD_SW_INIT_TIMEOUT = 15 * 1000;
 const MB = 1024 * 1024;
 const getMemoryLimit = () => {
-    const treatment = unleashVanillaStore.getState().getVariant('DriveWebDownloadMechanismParameters');
-    if (treatment.enabled) {
-        if (treatment.name === 'low-memory') {
-            return (isMobile() ? 100 : 250) * MB;
-        }
-        if (treatment.name === 'base-memory') {
-            return (isMobile() ? 100 : 750) * MB;
-        }
-        if (treatment.name === 'high-memory') {
-            return (isMobile() ? 100 : 1000) * MB;
-        }
-    }
     // Default limit for in-memory downloads is 500MB for Desktop and 100MB on Mobile as per MEMORY_DOWNLOAD_LIMIT
     return MEMORY_DOWNLOAD_LIMIT;
 };
@@ -121,7 +108,11 @@ export class FileSaver {
     // Ideally, once we update to openpgpjs v5 with custom web workers, would
     // be great if we could merge this to the same worker (but note the
     // difference between web and service worker) to reduce data exchanges.
-    private async saveViaDownload(stream: ReadableStream<Uint8Array<ArrayBuffer>>, meta: TransferMeta, log: LogCallback) {
+    private async saveViaDownload(
+        stream: ReadableStream<Uint8Array<ArrayBuffer>>,
+        meta: TransferMeta,
+        log: LogCallback
+    ) {
         if (!this.isSWReady) {
             if (isServiceWorkersUnsupported()) {
                 this.useBlobFallback = true;
@@ -135,7 +126,7 @@ export class FileSaver {
                 } catch (error: unknown) {
                     this.useBlobFallback = true;
                     if (error instanceof Error) {
-                        console.warn('Saving file will fallback to in-memory downloads:', error.message);
+                        //console.warn('Saving file will fallback to in-memory downloads:', error.message);
                         log(`Service worker fail reason: ${error.message}`);
                     } else {
                         log(`Service worker throw not an Error: ${typeof error} ${String(error)}`);
@@ -238,7 +229,7 @@ export class FileSaver {
     }
 
     // saveViaBuffer reads the stream and downloads the file in one go.
-    // eslint-disable-next-line class-methods-use-this
+
     private async saveViaBuffer(stream: ReadableStream<Uint8Array<ArrayBuffer>>, meta: TransferMeta, log: LogCallback) {
         log('Saving via buffer');
         try {

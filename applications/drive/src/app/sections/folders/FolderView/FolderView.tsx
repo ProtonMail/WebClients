@@ -8,7 +8,6 @@ import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import UploadDragDrop from '../../../legacy/components/uploads/UploadDragDrop/UploadDragDrop';
 import { useUserSettings } from '../../../legacy/store';
-import { useAlbumOnboardingModal } from '../../../modals/AlbumOnboardingModal';
 import { type MoveNodesItemMap, useMoveNodes } from '../../../modules/moveNodes';
 import { useDriveDragMove } from '../../../modules/selection/useDriveDragMove';
 import { SortField } from '../../../modules/sorting/types';
@@ -31,7 +30,6 @@ const STORED_SORT_FIELD_TO_SORT_FIELD = {
 };
 
 export function FolderView({ shareId, nodeUid }: FolderViewProps) {
-    const { albumOnboardingModal } = useAlbumOnboardingModal();
     const { load } = useFolder();
 
     const { isRootFolder, folderName, permissions, sortedItemUids } = useFolderStore(
@@ -120,7 +118,6 @@ export function FolderView({ shareId, nodeUid }: FolderViewProps) {
 
     return (
         <>
-            {albumOnboardingModal}
             {permissions.canEdit ? (
                 <UploadDragDrop
                     shareId={shareId}
