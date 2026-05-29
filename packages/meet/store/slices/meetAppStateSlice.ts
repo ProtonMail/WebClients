@@ -7,11 +7,13 @@ import type { MeetState } from '../store';
 export interface MeetAppState {
     previousMeetingLink: string | null;
     upsellModalType: UpsellModalTypes | null;
+    invalidMeetingLinkModalOpen: boolean;
 }
 
 const initialState: MeetAppState = {
     previousMeetingLink: null,
     upsellModalType: null,
+    invalidMeetingLinkModalOpen: false,
 };
 
 const slice = createSlice({
@@ -24,10 +26,13 @@ const slice = createSlice({
         setUpsellModalType: (state, action: PayloadAction<UpsellModalTypes | null>) => {
             state.upsellModalType = action.payload;
         },
+        setInvalidMeetingLinkModalOpen: (state, action: PayloadAction<boolean>) => {
+            state.invalidMeetingLinkModalOpen = action.payload;
+        },
     },
 });
 
-export const { setPreviousMeetingLink, setUpsellModalType } = slice.actions;
+export const { setPreviousMeetingLink, setUpsellModalType, setInvalidMeetingLinkModalOpen } = slice.actions;
 
 export const selectPreviousMeetingLink = (state: MeetState) => {
     return state.meetAppState.previousMeetingLink;
@@ -35,6 +40,10 @@ export const selectPreviousMeetingLink = (state: MeetState) => {
 
 export const selectUpsellModalType = (state: MeetState) => {
     return state.meetAppState.upsellModalType;
+};
+
+export const selectInvalidMeetingLinkModalOpen = (state: MeetState) => {
+    return state.meetAppState.invalidMeetingLinkModalOpen;
 };
 
 export const meetAppStateReducer = { meetAppState: slice.reducer };
