@@ -3,14 +3,12 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 import { ConnectionState, DisconnectReason, type Room, RoomEvent, Track } from 'livekit-client';
-import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { setPreviousMeetingLink, setUpsellModalType } from '@proton/meet/store/slices';
+import { setInvalidMeetingLinkModalOpen, setPreviousMeetingLink, setUpsellModalType } from '@proton/meet/store/slices';
 import { resetChatAndReactions } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { addKeyRotationLog } from '@proton/meet/store/slices/meetingInfo';
 import { setMeetingLocked, toggleMeetingLockThunk } from '@proton/meet/store/slices/settings';
@@ -194,7 +192,7 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
     const [reconnectionFailed, setReconnectionFailed] = useState(false);
     const [mlsRetrying, setMlsRetrying] = useState(false);
     // Stable ref to break the circular dependency between useConnectionHealthCheck and performFullReconnection
-    const triggerFullReconnectionRef = useRef<(reason: RejoinReasonInfo) => void>(() => { });
+    const triggerFullReconnectionRef = useRef<(reason: RejoinReasonInfo) => void>(() => {});
     const [prejoinParticipantCount, setPrejoinParticipantCount] = useState<number | null>(null);
     const [liveKitConnectionState, setLiveKitConnectionState] = useState<ConnectionState | null>(null);
     const [showReconnectedMessage, setShowReconnectedMessage] = useState(false);
@@ -248,8 +246,6 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
         },
         [getMeetingInfo]
     );
-
-    const notifications = useNotifications();
 
     useIsRecordingInProgressReceiver(wasmApp);
 
@@ -322,10 +318,11 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
         hasAnotherAdmin,
     } = isLocalParticipantAdmin(participantsMap, room.localParticipant);
 
-    const shareLink = `${window.location.origin}${meetingDetails.meetingId && meetingDetails.meetingPassword
-        ? getMeetingLink(meetingDetails.meetingId, meetingDetails.meetingPassword)
-        : window.location.pathname
-        }`;
+    const shareLink = `${window.location.origin}${
+        meetingDetails.meetingId && meetingDetails.meetingPassword
+            ? getMeetingLink(meetingDetails.meetingId, meetingDetails.meetingPassword)
+            : window.location.pathname
+    }`;
 
     // Check if joining own personal meeting room
     const isPersonalRoom = !isGuest && personalMeeting?.MeetingLinkName === token;
@@ -424,12 +421,7 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
                 readyToDecrypt: true,
             };
         } catch {
-            notifications.createNotification({
-                type: 'error',
-                text: c('Error').t`The meeting link you are trying to access does not exist or may have been deleted.`,
-                expiration: 20000,
-            });
-
+            dispatch(setInvalidMeetingLinkModalOpen(true));
             history.push('/dashboard');
 
             return {};
