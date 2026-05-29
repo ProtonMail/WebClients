@@ -44,7 +44,7 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
   const currencyMounted = Ariakit.useStoreState(currencySubMenu, 'mounted')
   const Menu = asSubmenu ? UI.SubMenu : UI.Menu
   const customCurrencyFormatDialogStore = useUI((ui) => ui.view.customCurrencyFormatDialog.store)
-  // const customNumberFormatDialogStore = useUI((ui) => ui.view.customNumberFormatDialog.store)
+  const customNumberFormatDialogStore = useUI((ui) => ui.view.customNumberFormatDialog.store)
 
   return (
     <Menu>
@@ -169,7 +169,9 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
       <UI.MenuItem leadingIndent onClick={customCurrencyFormatDialogStore.show}>
         {s('Custom currency')}
       </UI.MenuItem>
-      {/* <UI.MenuItem onClick={customNumberFormatDialogStore.show}>{s('Custom number format')}</UI.MenuItem> */}
+      <UI.MenuItem leadingIndent onClick={customNumberFormatDialogStore.show}>
+        {s('Custom number format')}
+      </UI.MenuItem>
     </Menu>
   )
 }
