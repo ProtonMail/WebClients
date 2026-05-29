@@ -18,7 +18,6 @@ export default defineConfig({
             include: ['src/**/*.{ts}'],
             exclude: ['**/*.d.ts', '**/*.test.ts'],
         },
-        maxWorkers: 1,
     },
     resolve: {
         conditions: ['browser'],
