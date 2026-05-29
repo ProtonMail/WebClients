@@ -1,6 +1,10 @@
 .chat-item {
 	overflow: visible;
 
+	.chat-message {
+		white-space: pre-wrap;
+	}
+
 	.room-name {
 		color: var(--interaction-norm) !important;
 	}
