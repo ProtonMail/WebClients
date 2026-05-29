@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
@@ -26,6 +26,10 @@ const NewsletterSubscriptionButton = ({ hideNotificationDot, collapsed }: Sideba
 
     const [newsletterSub] = useNewsletterSubscriptions();
 
+    const title = overridenViewName
+        ? c('Title').ngettext(msgid`Mailing list`, `Mailing lists`, newsletterSub.tabs.active.totalCount)
+        : c('Title').t`Newsletters`;
+
     return (
         <Spotlight
             borderRadius="lg"
@@ -43,7 +47,7 @@ const NewsletterSubscriptionButton = ({ hideNotificationDot, collapsed }: Sideba
                     labelID={CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].label}
                     isFolder={false}
                     icon="envelope-check"
-                    text={overridenViewName ? c('Label').t`Mailing list` : c('Label').t`Newsletters`}
+                    text={title}
                     moveToFolder={noop}
                     applyLabels={noop}
                     unreadCount={hideNotificationDot ? 0 : newsletterSub.tabs.active.totalCount}
