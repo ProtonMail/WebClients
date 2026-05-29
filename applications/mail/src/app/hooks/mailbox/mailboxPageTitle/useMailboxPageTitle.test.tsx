@@ -17,7 +17,6 @@ import { useMailboxPageTitle } from './useMailboxPageTitle';
 const EMAIL = 'testing@example.com';
 const INBOX_UNREAD_COUNT = 10;
 const CATEGORY_DEFAULT_UNREAD_COUNT = 12;
-const CATEGORY_PROMOTIONS_UNREAD_COUNT = 13;
 const LABEL_NAME = 'Inbox';
 
 jest.mock('@proton/mail/store/labels/hooks');
@@ -38,7 +37,7 @@ describe('useMailboxPageTitle', () => {
         jest.mocked(useMailboxCounter).mockReturnValue({
             loading: false,
             counterMap: {},
-            getLocationCount: jest.fn(),
+            getLocationCount: jest.fn().mockReturnValue({ Unread: INBOX_UNREAD_COUNT, Total: 7 }),
             getCurrentLocationCount: jest.fn().mockReturnValue({ Unread: INBOX_UNREAD_COUNT, Total: 11 }),
         });
     });
@@ -49,34 +48,22 @@ describe('useMailboxPageTitle', () => {
     });
 
     describe('category view tests', () => {
-        jest.mocked(useMailSettings).mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, UnreadFavicon: 0 }, false]);
+        jest.mocked(useMailSettings).mockReturnValue([
+            { ...DEFAULT_MAIL_SETTINGS, UnreadFavicon: 0, MailCategoryView: true },
+            false,
+        ]);
+
+        jest.mocked(useMailSelector).mockReturnValue(MAILBOX_LABEL_IDS.INBOX);
 
         it('should return the primary label count when on default category', () => {
             jest.mocked(useMailboxCounter).mockReturnValue({
                 loading: false,
                 counterMap: {},
-                getLocationCount: jest.fn(),
-                getCurrentLocationCount: jest
-                    .fn()
-                    .mockReturnValue({ Unread: CATEGORY_DEFAULT_UNREAD_COUNT, Total: 11 }),
+                getLocationCount: jest.fn().mockReturnValue({ Unread: CATEGORY_DEFAULT_UNREAD_COUNT, Total: 7 }),
+                getCurrentLocationCount: jest.fn().mockReturnValue({ Unread: INBOX_UNREAD_COUNT, Total: 11 }),
             });
-
             renderHook(() => useMailboxPageTitle(), { wrapper });
             expect(document.title).toBe(`(${CATEGORY_DEFAULT_UNREAD_COUNT}) ${LABEL_NAME} | ${EMAIL} | Proton Mail`);
-        });
-
-        it('should return the promotion label count when on promotions category', () => {
-            jest.mocked(useMailboxCounter).mockReturnValue({
-                loading: false,
-                counterMap: {},
-                getLocationCount: jest.fn(),
-                getCurrentLocationCount: jest
-                    .fn()
-                    .mockReturnValue({ Unread: CATEGORY_PROMOTIONS_UNREAD_COUNT, Total: 11 }),
-            });
-
-            renderHook(() => useMailboxPageTitle(), { wrapper });
-            expect(document.title).toBe(`(${CATEGORY_PROMOTIONS_UNREAD_COUNT}) ${LABEL_NAME} | ${EMAIL} | Proton Mail`);
         });
     });
 
