@@ -4,7 +4,8 @@ import React, { useRef } from 'react';
 import Icon from '@proton/components/components/icon/Icon';
 import SelectButton from '@proton/components/components/selectTwo/SelectButton';
 import type { IconName } from '@proton/icons/types';
-import clsx from '@proton/utils/clsx';
+
+import { TruncatedTextWithTooltip } from '../../atoms/TruncatedTextWithTooltip/TruncatedTextWithTooltip';
 
 import './DeviceSelect.scss';
 
@@ -57,9 +58,7 @@ export const DeviceSelect = <T extends object>({
                     </div>
                     <div className="flex flex-nowrap flex-column">
                         <div className="color-weak text-sm">{title}</div>
-                        <div className={clsx('overflow-hidden text-ellipsis', 'selected-label')} title={label}>
-                            {label}
-                        </div>
+                        <TruncatedTextWithTooltip label={label} />
                     </div>
                 </div>
             </SelectButton>

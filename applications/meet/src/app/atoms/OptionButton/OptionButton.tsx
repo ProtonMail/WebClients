@@ -2,6 +2,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { IconProps } from '@proton/components/components/icon/Icon';
 
+import { TruncatedTextWithTooltip } from '../TruncatedTextWithTooltip/TruncatedTextWithTooltip';
+
 import './OptionButton.scss';
 
 interface OptionButtonProps {
@@ -31,7 +33,7 @@ export const OptionButton = ({ showIcon, label, onClick, Icon, iconSize, loading
                     showIcon && Icon && <Icon size={iconSize ?? 5} style={{ color: 'var(--text-weak)' }} />
                 )}
             </div>
-            <span className="text-ellipsis">{label}</span>
+            <TruncatedTextWithTooltip label={label} />
         </Button>
     );
 };
