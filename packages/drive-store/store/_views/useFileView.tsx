@@ -18,7 +18,6 @@ import type { VideoData } from '@proton/shared/lib/interfaces/drive/video';
 import { useVideoStreaming } from '../../hooks/util/useVideoStreaming';
 import { isIgnoredError } from '../../utils/errorHandling';
 import { streamToBuffer } from '../../utils/stream';
-import { unleashVanillaStore } from '../../zustand/unleash/unleash.store';
 import { usePublicSession } from '../_api';
 import { useDocumentActions } from '../_documents';
 import { useDownload, useDownloadProvider } from '../_downloads';
@@ -140,7 +139,6 @@ function useFileViewBase(
     const { getLink } = useLink();
     const { download } = useDownloadProvider();
     const [isContentLoading, withContentLoading] = useLoading(true);
-    const isVideoStreamingEnabled = unleashVanillaStore.getState().isEnabled('DriveWebVideoStreaming');
 
     const [error, setError] = useState<any>();
     const [link, setLink] = useState<DecryptedLink>();
@@ -163,7 +161,7 @@ function useFileViewBase(
         setContentsMimeType(link.mimeType);
 
         // These attributes are only used for Video Streaming
-        if (isVideo(link.mimeType) && isVideoStreamingEnabled) {
+        if (isVideo(link.mimeType)) {
             const { xAttr } = await getVideoData(abortSignal, shareId, linkId, {
                 PageSize: 1,
                 FromBlockIndex: 1,

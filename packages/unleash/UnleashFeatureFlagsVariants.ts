@@ -6,7 +6,6 @@ import type { FeatureFlag } from './UnleashFeatureFlags';
  * List of feature flags with a variant.
  */
 export const FLAGS_WITH_VARIANT = [
-    'DriveWebDownloadMechanismParameters',
     'VPNDashboard',
     'MailDashboard',
     'PassDashboard',
@@ -26,7 +25,6 @@ export const FLAGS_WITH_VARIANT = [
  *
  * Naming convention: `${FlagName}Variant`
  */
-export type DriveWebDownloadMechanismParametersVariant = 'low-memory' | 'base-memory' | 'high-memory';
 export type VPNDashboardVariant = 'Control' | 'A' | 'B';
 export type MailDashboardVariant = 'A' | 'B';
 export type PassDashboardVariant = 'A' | 'B';
@@ -60,7 +58,6 @@ type VariantReturnType<TVariantNameValue extends string> = Partial<
  * Register your new variant here.
  */
 type FeatureFlagVariantMap = {
-    DriveWebDownloadMechanismParameters: VariantReturnType<DriveWebDownloadMechanismParametersVariant>;
     VPNDashboard: VariantReturnType<VPNDashboardVariant>;
     MailDashboard: VariantReturnType<MailDashboardVariant>;
     PassDashboard: VariantReturnType<PassDashboardVariant>;

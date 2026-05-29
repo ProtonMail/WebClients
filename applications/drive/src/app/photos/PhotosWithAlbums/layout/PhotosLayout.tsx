@@ -10,7 +10,6 @@ import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { uploadManager } from '@proton/drive/modules/upload';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import useNavigate from '../../../legacy/hooks/drive/useNavigate';
@@ -38,7 +37,6 @@ import { Toolbar } from '../toolbar/Toolbar';
 export type PhotosLayoutOutletContext = ReturnType<typeof usePhotosWithAlbumsView>;
 
 export const PhotosLayout = () => {
-    const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');
     const { albumLinkId, albumShareId } = useParams<{ albumLinkId: string; albumShareId: string }>();
     const { pathname } = useLocation();
     const photosView = usePhotosWithAlbumsView();
@@ -106,13 +104,13 @@ export const PhotosLayout = () => {
 
     const uploadDisabled = useMemo(() => {
         if (currentPageType === AlbumsPageTypes.GALLERY || currentPageType === AlbumsPageTypes.ALBUMSADDPHOTOS) {
-            return isUploadDisabled;
+            return false;
         }
         if (currentPageType === AlbumsPageTypes.ALBUMS) {
             return true;
         }
-        return isUploadDisabled || Boolean(album && album.directRole === MemberRole.Viewer);
-    }, [currentPageType, isUploadDisabled, album]);
+        return Boolean(album && album.directRole === MemberRole.Viewer);
+    }, [currentPageType, album]);
 
     const isGalleryOrAdmin =
         currentPageType === AlbumsPageTypes.GALLERY ||

@@ -10,7 +10,6 @@ import clsx from '@proton/utils/clsx';
 import { useDriveSharingFlags } from '../../legacy/store';
 import type { directoryTreeFactory } from '../../modules/directoryTree';
 import { DirectoryTreeRootType } from '../../modules/directoryTree/types';
-import { useUserSettings } from '../../modules/userSettings';
 import { DevicesSidebar } from './DriveSidebarDevices/DevicesSidebar';
 import { DriveSidebarFolders } from './DriveSidebarFolders/DriveSidebarFolders';
 import { DriveSidebarListItem } from './DriveSidebarListItem';
@@ -36,7 +35,6 @@ export type SimpleNode = {
 };
 
 export const DriveSidebarList = ({ shareId, store }: DriveSidebarListProps) => {
-    const { photosEnabled } = useUserSettings();
     const { treeRoots, initializeTree, toggleExpand, expandedTreeIds } = store;
     const { isCollapsed, sidebarLevel } = useSidebarStore(
         useShallow((state) => ({
@@ -88,13 +86,11 @@ export const DriveSidebarList = ({ shareId, store }: DriveSidebarListProps) => {
                 />
             )}
 
-            {photosEnabled && (
-                <DriveSidebarListItem to="/photos" icon="image" collapsed={isCollapsed}>
-                    <span className={clsx('text-ellipsis', isCollapsed && 'sr-only')} title={c('Link').t`Photos`}>
-                        {c('Link').t`Photos`}
-                    </span>
-                </DriveSidebarListItem>
-            )}
+            <DriveSidebarListItem to="/photos" icon="image" collapsed={isCollapsed}>
+                <span className={clsx('text-ellipsis', isCollapsed && 'sr-only')} title={c('Link').t`Photos`}>
+                    {c('Link').t`Photos`}
+                </span>
+            </DriveSidebarListItem>
 
             <DriveSidebarListItem to="/shared-urls" icon="link" shareId={shareId} collapsed={isCollapsed}>
                 <span className={clsx('text-ellipsis', isCollapsed && 'sr-only')} title={c('Link').t`Shared`}>{c('Link')
