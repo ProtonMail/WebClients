@@ -160,46 +160,26 @@ export enum CalendarKillSwitchFlag {
 }
 
 enum DriveFeatureFlag {
-    // Photos
-    DrivePhotosUploadDisabled = 'DrivePhotosUploadDisabled',
-    // Sharing
+    // Kill switches
     DriveSharingDisabled = 'DriveSharingDisabled',
     DriveSharingEditingDisabled = 'DriveSharingEditingDisabled',
-    DriveExternalInvitationsDisabled = 'DriveSharingExternalInvitationsDisabled',
-    DriveWebSharePageUpsell = 'DriveWebSharePageUpsell',
-    DriveSharingAdminPermissions = 'DriveSharingAdminPermissions',
-    // Public sharing edit mode
-    DrivePublicShareEditMode = 'DrivePublicShareEditMode',
     DrivePublicShareEditModeDisabled = 'DrivePublicShareEditModeDisabled',
-    // Download
+    DriveExternalInvitationsDisabled = 'DriveSharingExternalInvitationsDisabled',
     DriveDownloadScanDisabled = 'DriveDownloadScanDisabled',
-    // Bookmarks
-    DriveWebShareURLSignupModal = 'DriveWebShareURLSignupModal',
-    // B2B
-    DriveB2BPhotosUpload = 'DriveB2BPhotosUpload',
-    // Experiment
-    DriveWebDownloadMechanismParameters = 'DriveWebDownloadMechanismParameters',
-    // Albums
-    DriveAlbumOnboardingModal = 'DriveAlbumOnboardingModal',
+    // Rollouts
+    DriveSharingAdminPermissions = 'DriveSharingAdminPermissions',
+    DriveWebSearchFoundation = 'DriveWebSearchFoundation',
     // Offers
     DrivePostSignupOneDollarPromo = 'DrivePostSignupOneDollarPromo',
     DriveFreeMinutesUpload = 'DriveFreeMinutesUpload',
     DriveFreeMinutesUploadDisabled = 'DriveFreeMinutesUploadDisabled',
-    // Video Streaming
-    // TODO: Convert to Kill-Switch once launched and tested
-    DriveWebVideoStreaming = 'DriveWebVideoStreaming',
-    // Video Preview
-    DriveWebVideoAutoPlay = 'DriveWebVideoAutoPlay',
-    // Thumbnail Generation
-    DriveWebNewThumbnailGeneration = 'DriveWebNewThumbnailGeneration',
+    // Promos
+    DriveWebShareURLSignupModal = 'DriveWebShareURLSignupModal',
+    DriveWebSharePageUpsell = 'DriveWebSharePageUpsell',
     // Others
     DriveWebRecoveryASV = 'DriveWebRecoveryASV',
-    // DriveWebNewFileBrowser
-    DriveWebNewFileBrowser = 'DriveWebNewFileBrowser',
-    // Foundation search libray
-    DriveWebSearchFoundation = 'DriveWebSearchFoundation',
     DriveWebSDKMismatchDetection = 'DriveWebSDKMismatchDetection',
-    // SDK — names should match @protontech/drive-sdk FeatureFlags enum, or have a manual mapping
+    // SDK rollouts — names should match @protontech/drive-sdk FeatureFlags enum, or have a manual mapping
     DriveCryptoEncryptBlocksWithPgpAead = 'DriveCryptoEncryptBlocksWithPgpAead',
     DriveSmallFileUpload = 'DriveSmallFileUpload',
 }
