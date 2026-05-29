@@ -52,7 +52,7 @@ export const RouterLabelContainer = ({
     onResizingChange,
 }: Props) => {
     const { labelID, elementID, messageID } = useMailSelector(selectParams);
-    const { handleBack, handleFilter } = navigation;
+    const { handleBack } = navigation;
     const { elementIDs, loading } = elementsData;
     const {
         handleElement,
@@ -141,7 +141,6 @@ export const RouterLabelContainer = ({
             handleCheckOnlyOne,
             handleCheckRange,
             handleElement,
-            handleFilter,
             handleCheckAll,
             setFocusID,
             showCommander,

@@ -19,7 +19,7 @@ import MoreActions from '../actions/MoreActions';
 import MoveButtons from '../actions/MoveButtons';
 import PagingControls from '../actions/PagingControls';
 import ReadUnreadButtons from '../actions/ReadUnreadButtons';
-import { ListSettings } from '../list-settings/ListSettings';
+import { FilterList } from '../filter-list/FilterList';
 import { MoreDropdown } from '../more-dropdown/MoreDropdown';
 
 interface Props extends Omit<
@@ -42,12 +42,6 @@ const ToolbarRowWide = ({
     classname,
     selectAll,
     addressesDropdown,
-    sort,
-    onSort,
-    filter,
-    onFilter,
-    conversationMode,
-    mailSettings,
     isSearch,
     labelID,
     selectedIDs,
@@ -67,7 +61,6 @@ const ToolbarRowWide = ({
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
     const { localIsTiny, localIsExtraTiny, localIsNarrow } = getToolbarResponsiveSizes(breakpoint);
-    const localIsNarrowAndMedium = localIsNarrow || breakpoint === 'medium';
     const { selectAll: isSelectAll } = useSelectAll({ labelID });
 
     const [labels] = useLabels();
@@ -126,18 +119,7 @@ const ToolbarRowWide = ({
                 </div>
 
                 <div className="flex items-center shrink-0 flex-nowrap toolbar-inner gap-2">
-                    {isLabelIDNewsletterSubscription(labelID) ? null : (
-                        <ListSettings
-                            sort={sort}
-                            onSort={onSort}
-                            onFilter={onFilter}
-                            filter={filter}
-                            conversationMode={conversationMode}
-                            mailSettings={mailSettings}
-                            labelID={labelID}
-                            filterAsDropdown={localIsNarrowAndMedium}
-                        />
-                    )}
+                    {isLabelIDNewsletterSubscription(labelID) ? null : <FilterList />}
 
                     <PagingControls loading={loading} page={page} total={total} onPage={onPage} />
                 </div>
