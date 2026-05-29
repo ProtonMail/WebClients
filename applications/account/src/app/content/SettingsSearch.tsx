@@ -25,13 +25,12 @@ type RouteParents = keyof Routes;
 
 interface Props {
     routes: Routes;
-    path: string;
     app: APP_NAMES;
 }
 
 interface SearchOption {
     value: string;
-    icon: IconName;
+    icon?: IconName;
     to: string;
     in: string[];
 }
@@ -60,7 +59,7 @@ const getAppNameFromParentKey = (parentKey: RouteParents): APP_NAMES => {
     throw new Error('Unknown route');
 };
 
-const getSearchableItems = (routes: Routes, path: string, app: APP_NAMES): SearchOption[] => {
+const getSearchableItems = (routes: Routes, app: APP_NAMES): SearchOption[] => {
     return Object.entries(routes).flatMap(([key, parentRoute]) => {
         const parentKey = key as RouteParents;
         const parentApp =
@@ -118,13 +117,11 @@ const getSearchableItems = (routes: Routes, path: string, app: APP_NAMES): Searc
 
 const getData = ({ value }: SearchOption) => value;
 
-const SettingsSearch = ({ routes, path, app }: Props) => {
+export const AutocompleteSettingsSearch = ({ options }: { options: SearchOption[] }) => {
     const [value, setValue] = useState('');
     const inputRef = useRef<HTMLInputElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const history = useHistory();
-
-    const options = getSearchableItems(routes, path, app);
 
     const filteredOptions = useAutocompleteFilter(value, options, getData, 20, 1);
 
@@ -178,9 +175,11 @@ const SettingsSearch = ({ routes, path, app }: Props) => {
                             }}
                         >
                             <div className="flex">
-                                <div className="pr-4">
-                                    <Icon name={option.icon} />
-                                </div>
+                                {option.icon ? (
+                                    <div className="pr-4">
+                                        <Icon name={option.icon} />
+                                    </div>
+                                ) : null}
                                 <div className="flex-1">
                                     <div>
                                         <Marks chunks={chunks}>{text}</Marks>
@@ -194,6 +193,12 @@ const SettingsSearch = ({ routes, path, app }: Props) => {
             </AutocompleteList>
         </>
     );
+};
+
+const SettingsSearch = ({ routes, app }: Props) => {
+    const options = getSearchableItems(routes, app);
+
+    return <AutocompleteSettingsSearch options={options} />;
 };
 
 export default SettingsSearch;

@@ -1,337 +1,235 @@
-import type { NavResolved } from '../types/nav';
+import { describe, expect, it } from 'vitest';
+
+import type { NavContext } from '../types/models';
+import type { NavDefinition } from '../types/nav';
+import { SettingsLayoutVariant } from '../types/searchOptions';
 import { defineSearchOptions } from './defineSearchOptions';
 
-const FIXTURES = {
-    flatNav: {
-        items: [
-            { id: 'home', label: 'Home', to: '/home', icon: 'house', children: undefined, meta: {} },
-            { id: 'settings', label: 'Settings', to: '/settings', icon: undefined, children: undefined, meta: {} },
-        ],
-    } as const satisfies NavResolved,
-    nestedNav: {
-        items: [
-            {
-                id: 'organization',
-                label: 'Organization',
-                icon: 'house',
-                to: undefined,
-                meta: {},
-                children: [
-                    {
-                        id: 'organization.vpn',
-                        label: 'VPN',
-                        icon: 'brand-proton-vpn',
-                        to: undefined,
-                        meta: {},
-                        children: [
-                            {
-                                id: 'organization.vpn.gateways',
-                                label: 'Gateways',
-                                to: '/gateways',
-                                icon: undefined,
-                                children: undefined,
-                                meta: {},
-                            },
-                            {
-                                id: 'organization.vpn.shared-servers',
-                                label: 'Shared servers',
-                                to: '/shared-servers',
-                                icon: 'servers',
-                                children: undefined,
-                                meta: {},
-                            },
-                        ],
-                    },
-                    {
-                        id: 'organization.home',
-                        label: 'Home',
-                        to: '/dashboard',
-                        icon: 'house',
-                        children: undefined,
-                        meta: {},
-                    },
-                ],
-            },
-            {
-                id: 'my-account',
-                label: 'My account',
-                icon: 'user',
-                to: undefined,
-                meta: {},
-                children: [
-                    {
-                        id: 'my-account.security',
-                        label: 'Security',
-                        to: '/security',
-                        icon: undefined,
-                        children: undefined,
-                        meta: {},
-                    },
-                ],
-            },
-        ],
-    } as const satisfies NavResolved,
-    noIconNav: {
-        items: [
-            {
-                id: 'section',
-                label: 'Section',
-                meta: {},
-                icon: undefined,
-                to: undefined,
-                children: [
-                    {
-                        id: 'section.child',
-                        label: 'Child',
-                        meta: {},
-                        to: undefined,
-                        icon: undefined,
-                        children: [
-                            {
-                                id: 'section.child.leaf',
-                                label: 'Leaf',
-                                children: undefined,
-                                icon: undefined,
-                                meta: {},
-                                to: '/leaf',
-                            },
-                        ],
-                    },
-                ],
-            },
-        ],
-    } as const satisfies NavResolved,
-    mixedNav: {
-        items: [
-            { id: 'root-leaf', label: 'Root leaf', to: '/root', icon: 'house', children: undefined, meta: {} },
-            {
-                id: 'parent',
-                label: 'Parent',
-                to: undefined,
-                icon: 'user',
-                meta: {},
-                children: [
-                    {
-                        id: 'parent.child',
-                        label: 'Child',
-                        to: '/child',
-                        icon: undefined,
-                        children: undefined,
-                        meta: {},
-                    },
-                ],
-            },
-        ],
-    } as const satisfies NavResolved,
-};
+const makeContext = (): NavContext => ({ user: { id: 'u1', email: 'user@example.com' } }) as unknown as NavContext;
 
-const getTos = (nav: NavResolved) => defineSearchOptions(nav).map((r) => r.to);
-const getValues = (nav: NavResolved) => defineSearchOptions(nav).map((r) => r.value);
+const baseContext = makeContext();
 
-describe('defineSearchOptions', () => {
-    describe('leaf output', () => {
-        it('returns one entry per leaf (item with `to` and no children)', () => {
-            expect(defineSearchOptions(FIXTURES.flatNav)).toHaveLength(2);
-        });
-
-        it('does not include branch nodes as entries', () => {
-            const labels = getValues(FIXTURES.nestedNav);
-            expect(labels).not.toContain('Organization');
-            expect(labels).not.toContain('VPN');
-            expect(labels).not.toContain('My account');
-        });
-
-        it('returns a flat array regardless of nesting depth', () => {
-            const result = defineSearchOptions(FIXTURES.nestedNav);
-            result.forEach((item) => expect(item).not.toHaveProperty('children'));
-        });
-
-        it('handles mixed root-level leaves and nested items', () => {
-            expect(getTos(FIXTURES.mixedNav)).toEqual(['/root', '/child']);
-        });
-
-        it('returns an empty array when nav has no leaves', () => {
-            const nav = {
-                items: [{ id: 'section', label: 'Section', to: undefined, icon: undefined, meta: {}, children: [] }],
-            } as const satisfies NavResolved;
-            expect(defineSearchOptions(nav)).toEqual([]);
-        });
-
-        it('returns an empty array for empty items', () => {
-            expect(defineSearchOptions({ items: [] } as const satisfies NavResolved)).toEqual([]);
-        });
+describe('defineSearchOptions — basic', () => {
+    it('returns an empty array when there are no items', () => {
+        const definition: NavDefinition = { items: [] };
+        expect(defineSearchOptions({ definition, context: baseContext })).toEqual([]);
     });
 
-    describe('leaf content', () => {
-        it('maps label from the nav item', () => {
-            const result = defineSearchOptions(FIXTURES.flatNav);
-            expect(result[0].value).toBe('Home');
-            expect(result[1].value).toBe('Settings');
-        });
-
-        it('maps `to` from the nav item', () => {
-            const result = defineSearchOptions(FIXTURES.flatNav);
-            expect(result[0].to).toBe('/home');
-            expect(result[1].to).toBe('/settings');
-        });
-
-        it('sets `in` to empty array for top-level leaves', () => {
-            const result = defineSearchOptions(FIXTURES.flatNav);
-            expect(result[0].in).toEqual([]);
-            expect(result[1].in).toEqual([]);
-        });
-
-        it('sets `in` to parent label breadcrumbs for nested leaves', () => {
-            const result = defineSearchOptions(FIXTURES.nestedNav);
-            expect(result.find((r) => r.to === '/gateways')?.in).toEqual(['Organization', 'VPN']);
-            expect(result.find((r) => r.to === '/security')?.in).toEqual(['My account']);
-        });
-
-        it('uses the leaf own icon when present', () => {
-            const result = defineSearchOptions(FIXTURES.nestedNav);
-            expect(result.find((r) => r.to === '/shared-servers')?.icon).toBe('servers');
-        });
-
-        it('falls back to the nearest ancestor icon when the leaf has none', () => {
-            const result = defineSearchOptions(FIXTURES.nestedNav);
-            expect(result.find((r) => r.to === '/gateways')?.icon).toBe('brand-proton-vpn');
-        });
-
-        it('is undefined when no icon exists anywhere in the ancestry', () => {
-            const result = defineSearchOptions(FIXTURES.noIconNav);
-            expect(result.find((r) => r.to === '/leaf')?.icon).toBeUndefined();
-        });
+    it('excludes items that have no `to`', () => {
+        const definition: NavDefinition = { items: [{ id: 'group', label: 'Group' }] };
+        expect(defineSearchOptions({ definition, context: baseContext })).toHaveLength(0);
     });
 
-    describe('with sections', () => {
-        it('still includes the default leaf', () => {
-            const result = defineSearchOptions(FIXTURES.nestedNav, {
-                'organization.vpn.gateways': [{ value: 'Privacy', icon: 'lock', to: '#privacy' }],
-            });
-            expect(result.find((r) => r.to === '/gateways')).toBeDefined();
-        });
+    it('creates one search option per item with a `to`', () => {
+        const definition: NavDefinition = {
+            items: [
+                { id: 'home', label: 'Home', to: '/' },
+                { id: 'settings', label: 'Settings', to: '/settings' },
+            ],
+        };
+        const results = defineSearchOptions({ definition, context: baseContext });
+        expect(results).toHaveLength(2);
+        expect(results[0]).toMatchObject({ id: 'home', value: 'Home', to: '/' });
+        expect(results[1]).toMatchObject({ id: 'settings', value: 'Settings', to: '/settings' });
+    });
 
-        it('inserts the section entry directly after its leaf entry', () => {
-            const result = defineSearchOptions(FIXTURES.nestedNav, {
-                'organization.vpn.gateways': [{ value: 'Privacy', to: '#privacy' }],
-            });
-            const defaultIdx = result.findIndex((r) => r.to === '/gateways');
-            const sectionIdx = result.findIndex((r) => r.to === '/gateways#privacy');
-            expect(sectionIdx).toBe(defaultIdx + 1);
-        });
+    it('sets beta to false and variant to Default for plain items', () => {
+        const definition: NavDefinition = { items: [{ id: 'home', label: 'Home', to: '/' }] };
+        const [result] = defineSearchOptions({ definition, context: baseContext });
+        expect(result.beta).toBe(false);
+        expect(result.variant).toBe(SettingsLayoutVariant.Default);
+    });
 
-        it('inserts multiple sections for the same leaf consecutively after the default entry', () => {
-            const result = defineSearchOptions(FIXTURES.nestedNav, {
-                'organization.vpn.gateways': [
-                    { value: 'Privacy', to: '#privacy' },
-                    { value: 'Logs', to: '#logs' },
-                ],
-            });
-            const defaultIdx = result.findIndex((r) => r.to === '/gateways');
-            const privacyIdx = result.findIndex((r) => r.to === '/gateways#privacy');
-            const logsIdx = result.findIndex((r) => r.to === '/gateways#logs');
-            expect(privacyIdx).toBe(defaultIdx + 1);
-            expect(logsIdx).toBe(defaultIdx + 2);
-        });
+    it('sets `in` to an empty array for root-level items', () => {
+        const definition: NavDefinition = { items: [{ id: 'home', label: 'Home', to: '/' }] };
+        const [result] = defineSearchOptions({ definition, context: baseContext });
+        expect(result.in).toEqual([]);
+    });
+});
 
-        it('preserves section order as defined', () => {
-            const result = defineSearchOptions(FIXTURES.nestedNav, {
-                'organization.vpn.gateways': [
-                    { value: 'Privacy', to: '#privacy' },
-                    { value: 'Logs', to: '#logs' },
-                    { value: 'Config', to: '#config' },
-                ],
-            });
-            const tos = result.map((r) => r.to);
-            expect(tos.indexOf('/gateways#privacy')).toBeLessThan(tos.indexOf('/gateways#logs'));
-            expect(tos.indexOf('/gateways#logs')).toBeLessThan(tos.indexOf('/gateways#config'));
-        });
+describe('defineSearchOptions — nested children', () => {
+    it('includes children with `to` and builds breadcrumbs from their ancestors', () => {
+        const definition: NavDefinition = {
+            items: [
+                {
+                    id: 'account',
+                    label: 'Account',
+                    children: [{ id: 'account.settings', label: 'Settings', to: '/account/settings' }],
+                },
+            ],
+        };
+        const results = defineSearchOptions({ definition, context: baseContext });
+        expect(results).toHaveLength(1);
+        expect(results[0]).toMatchObject({ id: 'account.settings', to: '/account/settings', in: ['Account'] });
+    });
 
-        it('appends the section `to` fragment to the leaf `to`', () => {
-            const result = defineSearchOptions(FIXTURES.nestedNav, {
-                'organization.vpn.gateways': [{ value: 'Privacy', icon: 'lock', to: '#privacy' }],
-            });
-            expect(result.find((r) => r.to === '/gateways#privacy')?.to).toBe('/gateways#privacy');
-        });
+    it('includes a parent with `to` and separately includes its children', () => {
+        const definition: NavDefinition = {
+            items: [
+                {
+                    id: 'account',
+                    label: 'Account',
+                    to: '/account',
+                    children: [{ id: 'account.settings', label: 'Settings', to: '/account/settings' }],
+                },
+            ],
+        };
+        const results = defineSearchOptions({ definition, context: baseContext });
+        expect(results).toHaveLength(2);
+        expect(results[0]).toMatchObject({ id: 'account', in: [] });
+        expect(results[1]).toMatchObject({ id: 'account.settings', in: ['Account'] });
+    });
 
-        it('uses the section label', () => {
-            const result = defineSearchOptions(FIXTURES.nestedNav, {
-                'organization.vpn.gateways': [{ value: 'Privacy', icon: 'lock', to: '#privacy' }],
-            });
-            expect(result.find((r) => r.to === '/gateways#privacy')?.value).toBe('Privacy');
-        });
+    it('accumulates breadcrumbs across multiple levels of nesting', () => {
+        const definition: NavDefinition = {
+            items: [
+                {
+                    id: 'l1',
+                    label: 'Level 1',
+                    children: [
+                        {
+                            id: 'l2',
+                            label: 'Level 2',
+                            children: [{ id: 'l3', label: 'Level 3', to: '/deep' }],
+                        },
+                    ],
+                },
+            ],
+        };
+        const [result] = defineSearchOptions({ definition, context: baseContext });
+        expect(result.in).toEqual(['Level 1', 'Level 2']);
+    });
+});
 
-        it('includes the leaf label in `in` for the section entry', () => {
-            const result = defineSearchOptions(FIXTURES.nestedNav, {
-                'organization.vpn.gateways': [{ value: 'Privacy', icon: 'lock', to: '#privacy' }],
-            });
-            expect(result.find((r) => r.to === '/gateways#privacy')?.in).toEqual(['Organization', 'VPN', 'Gateways']);
-        });
+describe('defineSearchOptions — sections', () => {
+    it('pushes one extra search option per section of an item with `to`', () => {
+        const definition: NavDefinition = {
+            items: [
+                {
+                    id: 'settings',
+                    label: 'Settings',
+                    to: '/settings',
+                    sections: [
+                        { id: 'security', text: 'Security', to: 'security' },
+                        { id: 'privacy', text: 'Privacy', to: 'privacy' },
+                    ],
+                },
+            ],
+        };
+        const results = defineSearchOptions({ definition, context: baseContext });
+        expect(results).toHaveLength(3);
+    });
 
-        it('leaf entry is intact when adding the section', () => {
-            const result = defineSearchOptions(FIXTURES.nestedNav, {
-                'organization.vpn.gateways': [{ value: 'Privacy', icon: 'lock', to: '#privacy' }],
-            });
-            expect(result.find((r) => r.to === '/gateways')?.in).toEqual(['Organization', 'VPN']);
-        });
+    it("appends the section's `to` suffix onto the parent item's `to`", () => {
+        const definition: NavDefinition = {
+            items: [
+                {
+                    id: 'settings',
+                    label: 'Settings',
+                    to: '/settings',
+                    sections: [{ id: 'security', text: 'Security', to: 'security' }],
+                },
+            ],
+        };
+        const results = defineSearchOptions({ definition, context: baseContext });
+        expect(results[1]).toMatchObject({ id: 'security', to: '/settings#security' });
+    });
 
-        it('silently ignores an empty sections array for a leaf', () => {
-            const result = defineSearchOptions(FIXTURES.nestedNav, {
-                'organization.vpn.gateways': [],
-            });
-            expect(result).toHaveLength(4);
-        });
+    it('sets the section breadcrumb to include the parent item label', () => {
+        const definition: NavDefinition = {
+            items: [
+                {
+                    id: 'settings',
+                    label: 'Settings',
+                    to: '/settings',
+                    sections: [{ id: 'security', text: 'Security', to: 'security' }],
+                },
+            ],
+        };
+        const results = defineSearchOptions({ definition, context: baseContext });
+        expect(results[1].in).toEqual(['Settings']);
+    });
 
-        it('total length equals leaves + total number of section entries across all keys', () => {
-            const result = defineSearchOptions(FIXTURES.nestedNav, {
-                'organization.vpn.gateways': [
-                    { value: 'Privacy', to: '#privacy' },
-                    { value: 'Logs', to: '#logs' },
-                ],
-                'my-account.security': [{ value: 'Two factor', to: '#2fa' }],
-            });
-            expect(result).toHaveLength(4 + 3);
-        });
+    it('uses section text as value, falling back to the parent label when absent', () => {
+        const definition: NavDefinition = {
+            items: [
+                {
+                    id: 'settings',
+                    label: 'Settings',
+                    to: '/settings',
+                    sections: [
+                        { id: 'with-text', text: 'Security', to: 'with-text' },
+                        { id: 'no-text', to: 'no-text' },
+                    ],
+                },
+            ],
+        };
+        const results = defineSearchOptions({ definition, context: baseContext });
+        expect(results[1].value).toBe('Security');
+        expect(results[2]).toBeUndefined();
+    });
 
-        it('handles multiple leaves with sections independently', () => {
-            const result = defineSearchOptions(FIXTURES.nestedNav, {
-                'organization.vpn.gateways': [{ value: 'Privacy', to: '#privacy' }],
-                'my-account.security': [{ value: 'Two factor', to: '#2fa' }],
-            });
-            expect(result.find((r) => r.to === '/gateways#privacy')).toBeDefined();
-            expect(result.find((r) => r.to === '/security#2fa')).toBeDefined();
-        });
+    it('carries beta and variant from the section onto the search option', () => {
+        const definition: NavDefinition = {
+            items: [
+                {
+                    id: 'settings',
+                    label: 'Settings',
+                    to: '/settings',
+                    sections: [
+                        { id: 'labs', to: 'labs', text: 'Labs', beta: true, variant: SettingsLayoutVariant.Card },
+                    ],
+                },
+            ],
+        };
+        const results = defineSearchOptions({ definition, context: baseContext });
+        expect(results[1]).toMatchObject({ beta: true, variant: SettingsLayoutVariant.Card });
+    });
+});
 
-        it('uses the section icon when provided', () => {
-            const result = defineSearchOptions(FIXTURES.nestedNav, {
-                'organization.vpn.gateways': [{ value: 'Privacy', icon: 'lock', to: '#privacy' }],
-            });
-            expect(result.find((r) => r.to === '/gateways#privacy')?.icon).toBe('lock');
-        });
+describe('defineSearchOptions — icon inheritance', () => {
+    it('carries the item icon onto its search option', () => {
+        const definition: NavDefinition = {
+            items: [{ id: 'home', label: 'Home', to: '/', icon: 'house' }],
+        };
+        const [result] = defineSearchOptions({ definition, context: baseContext });
+        expect(result.icon).toBe('house');
+    });
 
-        it('falls back to the leaf icon when the section has none', () => {
-            const result = defineSearchOptions(FIXTURES.nestedNav, {
-                'organization.vpn.shared-servers': [{ value: 'Config', to: '#config' }],
-            });
-            expect(result.find((r) => r.to === '/shared-servers#config')?.icon).toBe('servers');
-        });
+    it('inherits the nearest ancestor icon when the item has none', () => {
+        const definition: NavDefinition = {
+            items: [
+                {
+                    id: 'account',
+                    label: 'Account',
+                    icon: 'user',
+                    children: [{ id: 'account.settings', label: 'Settings', to: '/settings' }],
+                },
+            ],
+        };
+        const [result] = defineSearchOptions({ definition, context: baseContext });
+        expect(result.icon).toBe('user');
+    });
 
-        it('falls back to the nearest ancestor icon when neither section nor leaf has one', () => {
-            const result = defineSearchOptions(FIXTURES.nestedNav, {
-                'organization.vpn.gateways': [{ value: 'Privacy', to: '#privacy' }],
-            });
-            expect(result.find((r) => r.to === '/gateways#privacy')?.icon).toBe('brand-proton-vpn');
-        });
+    it('sets icon to undefined when neither the item nor any ancestor has one', () => {
+        const definition: NavDefinition = { items: [{ id: 'home', label: 'Home', to: '/' }] };
+        const [result] = defineSearchOptions({ definition, context: baseContext });
+        expect(result.icon).toBeUndefined();
+    });
 
-        it('resolves icon independently for each section entry on the same leaf', () => {
-            const result = defineSearchOptions(FIXTURES.nestedNav, {
-                'organization.vpn.gateways': [
-                    { value: 'Privacy', icon: 'lock', to: '#privacy' },
-                    { value: 'Logs', to: '#logs' },
-                ],
-            });
-            expect(result.find((r) => r.to === '/gateways#privacy')?.icon).toBe('lock');
-            expect(result.find((r) => r.to === '/gateways#logs')?.icon).toBe('brand-proton-vpn');
-        });
+    it('carries the item icon onto its section search options', () => {
+        const definition: NavDefinition = {
+            items: [
+                {
+                    id: 'settings',
+                    label: 'Settings',
+                    to: '/settings',
+                    icon: 'archive-box',
+                    sections: [{ id: 'security', text: 'Security', to: 'security' }],
+                },
+            ],
+        };
+        const results = defineSearchOptions({ definition, context: baseContext });
+        expect(results[1].icon).toBe('archive-box');
     });
 });

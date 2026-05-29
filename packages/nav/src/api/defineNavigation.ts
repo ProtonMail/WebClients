@@ -1,15 +1,41 @@
 import { compute } from '../compute';
 import type { NavContext } from '../types/models';
 import type { NavArgs, NavItemDefinition, NavItemResolved, NavResolved } from '../types/nav';
+import { SettingsLayoutVariant } from '../types/searchOptions';
+import type { NavSectionDefinition, NavSectionResolved } from '../types/section';
 import { assertUniqueIds } from './assertUniqueIds';
 
-const isNotPruned = (item: NavItemResolved | null): item is NavItemResolved => item !== null;
+const isNotPruned = <T>(item: T | null): item is T => item !== null;
+
+function isHidden<TContext extends NavContext>(
+    item: { isVisible?: (args: { context: TContext }) => boolean },
+    context: TContext
+): boolean {
+    return item.isVisible !== undefined && !item.isVisible({ context });
+}
+
+function resolveSection<TContext extends NavContext>(
+    section: NavSectionDefinition<TContext>,
+    context: TContext
+): NavSectionResolved | null {
+    if (isHidden(section, context)) {
+        return null;
+    }
+
+    return {
+        id: section.id,
+        beta: compute(section.beta, context) ?? false,
+        text: compute(section.text, context),
+        to: compute(section.to, context),
+        variant: compute(section.variant, context) ?? SettingsLayoutVariant.Default,
+    };
+}
 
 function resolveItem<TContext extends NavContext>(
     definition: NavItemDefinition<TContext>,
     context: TContext
 ): NavItemResolved | null {
-    if (definition.isVisible && !definition.isVisible({ context })) {
+    if (isHidden(definition, context)) {
         return null;
     }
 
@@ -21,6 +47,9 @@ function resolveItem<TContext extends NavContext>(
         return null;
     }
 
+    const sections = definition.sections ?? [];
+    const resolvedSections = sections.map((section) => resolveSection(section, context)).filter(isNotPruned);
+
     return {
         id: definition.id,
         label: compute(definition.label, context),
@@ -28,6 +57,7 @@ function resolveItem<TContext extends NavContext>(
         icon: compute(definition.icon, context),
         meta: compute(definition.meta, context) ?? {},
         children: resolvedChildren.length ? resolvedChildren : undefined,
+        sections: resolvedSections?.length ? resolvedSections : undefined,
     };
 }
 
