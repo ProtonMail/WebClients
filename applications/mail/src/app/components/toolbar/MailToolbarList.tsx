@@ -4,24 +4,15 @@ import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 
 import { getLabelName, isLabelIDNewsletterSubscription } from 'proton-mail/helpers/labels';
-import { pageFromUrl, setFilterInUrl, setPageInUrl, setSortInUrl } from 'proton-mail/helpers/mailboxUrl';
+import { pageFromUrl, setPageInUrl } from 'proton-mail/helpers/mailboxUrl';
 import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
 import type { MailboxActions } from 'proton-mail/router/interface';
-import {
-    selectConversationMode,
-    selectElementID,
-    selectFilter,
-    selectLabelID,
-    selectSort,
-    selectisSearching,
-} from 'proton-mail/store/elements/elementsSelectors';
+import { selectElementID, selectLabelID, selectisSearching } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { CategoriesTabs } from '../categoryView/categoriesTabs/CategoriesTabs';
@@ -35,7 +26,7 @@ import MoveButtons from './actions/MoveButtons';
 import PagingControls from './actions/PagingControls';
 import ReadUnreadButtons from './actions/ReadUnreadButtons';
 import SelectAll from './actions/SelectAll';
-import { ListSettings } from './list-settings/ListSettings';
+import { FilterList } from './filter-list/FilterList';
 import { MoreDropdown } from './more-dropdown/MoreDropdown';
 import { useMailboxToolbarBreakpoints } from './useMailToolbarResponsive';
 
@@ -48,33 +39,21 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
     const history = useHistory();
     const location = useLocation();
 
-    const { ref, isSmallScreen, isExtraTiny, isTiny, filterAsDropdown } = useMailboxToolbarBreakpoints('list');
+    const { ref, isSmallScreen, isExtraTiny, isTiny } = useMailboxToolbarBreakpoints('list');
 
-    const sort = useMailSelector(selectSort);
-    const filter = useMailSelector(selectFilter);
     const labelID = useMailSelector(selectLabelID);
     const elementID = useMailSelector(selectElementID);
     const isSearching = useMailSelector(selectisSearching);
-    const conversationMode = useMailSelector(selectConversationMode);
 
     const { selectAll: isSelectAll } = useSelectAll({ labelID });
     const { labelDropdownToggleRef, moveDropdownToggleRef, isColumnModeActive } = useMailboxLayoutProvider();
 
     const { shouldShowTabs } = useCategoriesView();
-    const [mailSettings] = useMailSettings();
     const isInDeletedFolder = labelID === MAILBOX_LABEL_IDS.SOFT_DELETED;
 
     const [labels] = useLabels();
     const [folders] = useFolders();
     const labelName = getLabelName(labelID, labels, folders);
-
-    const handleSort = (sort: Sort) => {
-        history.push(setSortInUrl(history.location, sort));
-    };
-
-    const handleFilter = (filter: Filter) => {
-        history.push(setFilterInUrl(history.location, filter));
-    };
 
     const handlePage = (pageNumber: number) => {
         history.push(setPageInUrl(history.location, pageNumber));
@@ -105,18 +84,7 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
                     </div>
 
                     <div className="flex items-center shrink-0 flex-nowrap toolbar-inner gap-2">
-                        {isLabelIDNewsletterSubscription(labelID) ? null : (
-                            <ListSettings
-                                sort={sort}
-                                onSort={handleSort}
-                                onFilter={handleFilter}
-                                filter={filter}
-                                conversationMode={conversationMode}
-                                mailSettings={mailSettings}
-                                labelID={labelID}
-                                filterAsDropdown={filterAsDropdown}
-                            />
-                        )}
+                        {isLabelIDNewsletterSubscription(labelID) ? null : <FilterList />}
 
                         <PagingControls
                             loading={elementsData.loading}
@@ -199,18 +167,7 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
                 </div>
 
                 <div className="flex items-center shrink-0 flex-nowrap toolbar-inner gap-2">
-                    {isLabelIDNewsletterSubscription(labelID) ? null : (
-                        <ListSettings
-                            sort={sort}
-                            onSort={handleSort}
-                            onFilter={handleFilter}
-                            filter={filter}
-                            conversationMode={conversationMode}
-                            mailSettings={mailSettings}
-                            labelID={labelID}
-                            filterAsDropdown={filterAsDropdown}
-                        />
-                    )}
+                    {isLabelIDNewsletterSubscription(labelID) ? null : <FilterList />}
 
                     <PagingControls
                         loading={elementsData.loading}

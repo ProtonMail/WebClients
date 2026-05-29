@@ -19,7 +19,7 @@ import MoreActions from '../actions/MoreActions';
 import MoveButtons from '../actions/MoveButtons';
 import PagingControls from '../actions/PagingControls';
 import ReadUnreadButtons from '../actions/ReadUnreadButtons';
-import { ListSettings } from '../list-settings/ListSettings';
+import { FilterList } from '../filter-list/FilterList';
 import { MoreDropdown } from '../more-dropdown/MoreDropdown';
 
 interface Props extends Omit<ToolbarProps, 'columnMode' | 'onBack' | 'onElement' | 'onCheck' | 'breakpoints'> {
@@ -38,12 +38,6 @@ const BREAKPOINTS = {
 const ToolbarColumnWide = ({
     classname,
     selectAll,
-    sort,
-    onSort,
-    filter,
-    onFilter,
-    conversationMode,
-    mailSettings,
     isSearch,
     labelID,
     selectedIDs,
@@ -132,21 +126,7 @@ const ToolbarColumnWide = ({
 
             <div className="toolbar flex gap-2 flex-nowrap justify-space-between bg-norm border-bottom border-weak pl-4 pr-2 py-1">
                 <div className="mr-auto">{selectAll}</div>
-
-                <div className="ml-auto">
-                    {isLabelIDNewsletterSubscription(labelID) ? null : (
-                        <ListSettings
-                            sort={sort}
-                            onSort={onSort}
-                            onFilter={onFilter}
-                            filter={filter}
-                            conversationMode={conversationMode}
-                            mailSettings={mailSettings}
-                            labelID={labelID}
-                            filterAsDropdown={localIsTiny}
-                        />
-                    )}
-                </div>
+                <div className="ml-auto">{isLabelIDNewsletterSubscription(labelID) ? null : <FilterList />}</div>
             </div>
         </div>
     );
