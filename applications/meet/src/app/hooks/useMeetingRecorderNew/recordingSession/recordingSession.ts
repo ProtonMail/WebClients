@@ -186,11 +186,6 @@ export class RecordingSession {
         this.audioMixer = null;
 
         if (this.storage) {
-            try {
-                await this.storage.clear();
-            } catch {
-                // Ignore cleanup errors.
-            }
             this.storage.terminate();
             this.storage = null;
         }
