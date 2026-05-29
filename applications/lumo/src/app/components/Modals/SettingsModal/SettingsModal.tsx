@@ -245,7 +245,7 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
             <SettingsSectionItem
                 icon="image"
                 text={c('collider_2025: Title').t`Animated background`}
-                subtext={c('collider_2025: Description').t`Show shader and particle effects on the home screen`}
+                subtext={c('collider_2025: Description').t`Show animated background on the home screen`}
                 button={
                     <Tooltip
                         title={
