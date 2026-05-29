@@ -3,40 +3,19 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import useElementBreakpoints from '@proton/components/hooks/useElementBreakpoints';
 import clsx from '@proton/utils/clsx';
 
 import { isLabelIDNewsletterSubscription } from '../../../helpers/labels';
-import type { ListSettingsProps } from '../list-settings/ListSettings';
-import { ListSettings } from '../list-settings/ListSettings';
+import { FilterList } from '../list-settings/FilterList';
 
-interface Props extends ListSettingsProps {
+interface Props {
     classname: string;
     labelID: string;
     selectAll: ReactElement;
 }
 
-const BREAKPOINTS = {
-    extratiny: 0,
-    tiny: 100,
-    small: 400,
-    medium: 700,
-    large: 1100,
-};
-
-const ToolbarNarrow = ({
-    classname,
-    selectAll,
-    sort,
-    onSort,
-    filter,
-    onFilter,
-    conversationMode,
-    mailSettings,
-    labelID,
-}: Props) => {
+const ToolbarNarrow = ({ classname, selectAll, labelID }: Props) => {
     const toolbarRef = useRef<HTMLDivElement>(null);
-    const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
 
     return (
         <div className="w-full">
@@ -49,18 +28,7 @@ const ToolbarNarrow = ({
                 <div className="flex items-center toolbar-inner gap-2">{selectAll}</div>
 
                 <div className="flex items-center toolbar-inner gap-2">
-                    {isLabelIDNewsletterSubscription(labelID) ? null : (
-                        <ListSettings
-                            sort={sort}
-                            onSort={onSort}
-                            onFilter={onFilter}
-                            filter={filter}
-                            conversationMode={conversationMode}
-                            mailSettings={mailSettings}
-                            labelID={labelID}
-                            filterAsDropdown={breakpoint === 'tiny'}
-                        />
-                    )}
+                    {isLabelIDNewsletterSubscription(labelID) ? null : <FilterList />}
                 </div>
             </nav>
         </div>
