@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useUser } from '@proton/account/user/hooks';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
 import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
@@ -18,9 +18,14 @@ export const useMailboxPageTitle = () => {
     const [folders] = useFolders();
     const [user] = useUser();
 
-    const { getCurrentLocationCount } = useMailboxCounter();
-    const unreadEmails = getCurrentLocationCount().Unread;
+    const { getCurrentLocationCount, getLocationCount } = useMailboxCounter();
     const unreadFavicon = mailSettings.UnreadFavicon;
+    // We want to ensure we show the primary category count for the inbox when categories enabled.
+    // The `getLocationCount` takes care of this logic
+    const unreadEmails =
+        labelID === MAILBOX_LABEL_IDS.INBOX
+            ? getLocationCount(MAILBOX_LABEL_IDS.INBOX).Unread
+            : getCurrentLocationCount().Unread;
 
     useEffect(() => {
         const unreadString = !unreadFavicon && unreadEmails > 0 ? `(${unreadEmails}) ` : '';
