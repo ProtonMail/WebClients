@@ -8,7 +8,6 @@ import { DriveEventManagerProvider } from './_events';
 import { InvitationsStateProvider } from './_invitations/useInvitationsState';
 import { LinksProvider, PublicLinksProvider } from './_links';
 import { SearchProvider } from './_search';
-import { useUserSettings } from './_settings';
 import { SharesProvider } from './_shares';
 import { UploadProvider } from './_uploads';
 import { PublicUploadProvider } from './_uploads/UploadProvider/UploadProvider';
@@ -19,8 +18,6 @@ interface DriveProviderProps {
 }
 
 export function DriveProvider({ children }: DriveProviderProps) {
-    const { photosEnabled } = useUserSettings();
-
     return (
         <DriveEventManagerProvider>
             <VolumesProvider>
@@ -30,14 +27,9 @@ export function DriveProvider({ children }: DriveProviderProps) {
                             <DownloadsProvider>
                                 <UploadProvider>
                                     <SearchProvider>
-                                        {photosEnabled && (
-                                            <PhotosWithAlbumsProvider>
-                                                <InvitationsStateProvider>{children}</InvitationsStateProvider>
-                                            </PhotosWithAlbumsProvider>
-                                        )}
-                                        {!photosEnabled && (
+                                        <PhotosWithAlbumsProvider>
                                             <InvitationsStateProvider>{children}</InvitationsStateProvider>
-                                        )}
+                                        </PhotosWithAlbumsProvider>
                                     </SearchProvider>
                                 </UploadProvider>
                             </DownloadsProvider>

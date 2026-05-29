@@ -25,7 +25,6 @@ const defaultFlags: Flags = {
     canDisplayB2BLogsPass: false,
     canDisplayB2BLogsVPN: false,
     canDisplayPassReports: false,
-    canB2BHidePhotos: false,
     canDisplayNonPrivateEmailPhone: false,
     isUserGroupsFeatureEnabled: false,
     isUserGroupsNoCustomDomainEnabled: false,

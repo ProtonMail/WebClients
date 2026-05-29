@@ -180,14 +180,12 @@ function RouterDependentContainer({
               initialDriveUserSettings={{
                 Defaults: {
                   RevisionRetentionDays: 0,
-                  B2BPhotosEnabled: false,
                   PhotoTags: [],
                 },
                 UserSettings: {
                   Sort: null,
                   Layout: null,
                   RevisionRetentionDays: null,
-                  B2BPhotosEnabled: null,
                   PhotoTags: null,
                 },
               }}
