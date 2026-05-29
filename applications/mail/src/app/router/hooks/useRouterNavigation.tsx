@@ -1,15 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import type { Filter, Sort } from '@proton/shared/lib/mail/search';
-
-import {
-    pageFromUrl,
-    setFilterInUrl,
-    setPageInUrl,
-    setParamsInLocation,
-    setSortInUrl,
-} from 'proton-mail/helpers/mailboxUrl';
+import { pageFromUrl, setPageInUrl, setParamsInLocation } from 'proton-mail/helpers/mailboxUrl';
 
 interface Props {
     labelID: string;
@@ -32,15 +24,5 @@ export const useRouterNavigation = ({ labelID }: Props) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-461938
     }, [labelID]);
 
-    const handleSort = useCallback((sort: Sort) => {
-        history.push(setSortInUrl(history.location, sort));
-        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-1A7C27
-    }, []);
-
-    const handleFilter = useCallback((filter: Filter) => {
-        history.push(setFilterInUrl(history.location, filter));
-        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-0C6A79
-    }, []);
-
-    return { page, handlePage, handleBack, handleSort, handleFilter };
+    return { page, handlePage, handleBack };
 };
