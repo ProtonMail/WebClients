@@ -47,7 +47,6 @@ export type Flags = {
     canDisplayB2BLogsPass?: boolean;
     canDisplayB2BLogsVPN?: boolean;
     canDisplayPassReports?: boolean;
-    canB2BHidePhotos?: boolean;
     canDisplayNonPrivateEmailPhone?: boolean;
     isUserGroupsFeatureEnabled?: boolean;
     isUserGroupsNoCustomDomainEnabled?: boolean;

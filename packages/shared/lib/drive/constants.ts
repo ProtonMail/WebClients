@@ -32,7 +32,6 @@ export const DEFAULT_USER_SETTINGS: UserSettings = {
     Layout: LayoutSetting.List,
     Sort: SortSetting.ModifiedDesc,
     RevisionRetentionDays: 0,
-    B2BPhotosEnabled: false,
     PhotoTags: [],
 };
 
