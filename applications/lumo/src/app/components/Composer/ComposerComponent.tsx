@@ -19,7 +19,7 @@ import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import { selectProvisionalAttachments } from '../../redux/selectors';
 import { upsertAttachment } from '../../redux/slices/core/attachments';
-import type { Attachment, ImageAspectRatio, Message } from '../../types';
+import type { Attachment, Message } from '../../types';
 import { ComposerMode } from '../../types';
 import { base64ToFile } from '../../util/imageHelpers';
 import { createAttachmentFromPastedContent, getPasteConversionMessage } from '../../util/pastedContentHelper';
@@ -34,6 +34,7 @@ import { useExcelSheetSelection } from './ExcelSheetSelectionModal';
 import { useAllRelevantAttachments } from './hooks/useAllRelevantAttachments';
 import { useEditorQuery } from './hooks/useEditorQuery';
 import { useFileHandling } from './hooks/useFileHandling';
+import { useImageGenerationMode } from './hooks/useImageGenerationMode';
 import { useNativeComposerFeatureFlagsApi } from './hooks/useNativeComposerFeatureFlagsApi';
 import { useNativeComposerFileApi } from './hooks/useNativeComposerFileApi';
 import { useNativeComposerLumoStateApi } from './hooks/useNativeComposerLumoStateApi';
@@ -129,15 +130,10 @@ const ComposerComponentInner = ({
     const { createNotification } = useNotifications();
     const isGuest = useIsGuest();
 
-    const isGalleryMode = composerMode === ComposerMode.GALLERY;
-    const [selectedAspectRatio, setSelectedAspectRatio] = useState<ImageAspectRatio>('1:1');
-    // Ref lets sendGenerateMessage capture the latest ratio without a stale closure
-    const aspectRatioRef = useRef<ImageAspectRatio>('1:1');
+    const { selectedAspectRatio, handleAspectRatioChange, isCreateImageMode, setIsCreateImageMode, getAspectRatio } =
+        useImageGenerationMode();
 
-    const handleAspectRatioChange = useCallback((ratio: ImageAspectRatio) => {
-        setSelectedAspectRatio(ratio);
-        aspectRatioRef.current = ratio;
-    }, []);
+    const isImageGenerationMode = composerMode === ComposerMode.GALLERY || isCreateImageMode;
 
     const allRelevantAttachments = useAllRelevantAttachments(messageChain, provisionalAttachments, spaceId);
 
@@ -225,12 +221,12 @@ const ComposerComponentInner = ({
                 return;
             }
             composerInput.clear();
-            const imageOptions = isGalleryMode ? { aspectRatio: aspectRatioRef.current } : undefined;
+            const imageOptions = isImageGenerationMode ? { aspectRatio: getAspectRatio() } : undefined;
             await handleSendMessage(value, isWebSearchButtonToggled, imageOptions);
         },
         // composerInput.clear is intentionally omitted from deps — it's stable but the object is created below
-        // aspectRatioRef is a ref, intentionally omitted from deps
-        [handleSendMessage, isWebSearchButtonToggled, isProcessingAttachment, isGalleryMode]
+        // getAspectRatio is stable (useCallback with no deps), intentionally omitted
+        [handleSendMessage, isWebSearchButtonToggled, isProcessingAttachment, isImageGenerationMode]
     );
 
     const composerInput = useComposerInput({
@@ -375,8 +371,10 @@ const ComposerComponentInner = ({
                             onBrowseDrive={handleBrowseDrive}
                             onDrawSketch={handleDrawSketch}
                             fileUploadMode={fileUploadMode}
-                            selectedAspectRatio={isGalleryMode ? selectedAspectRatio : undefined}
-                            onAspectRatioChange={isGalleryMode ? handleAspectRatioChange : undefined}
+                            selectedAspectRatio={selectedAspectRatio}
+                            onAspectRatioChange={handleAspectRatioChange}
+                            isCreateImageMode={isCreateImageMode}
+                            onCreateImageModeChange={setIsCreateImageMode}
                         />
                     </div>
                     {optionalElementBelowComposer}
