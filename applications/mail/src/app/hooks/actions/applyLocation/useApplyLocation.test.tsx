@@ -63,7 +63,7 @@ jest.mock('proton-mail/helpers/location/MoveEngine/useMoveEngine', () => ({
 const mockDispatch = jest.fn();
 jest.mock('proton-mail/store/hooks', () => ({
     useMailDispatch: jest.fn(() => mockDispatch),
-    useMailSelector: jest.fn().mockReturnValue(jest.fn()),
+    useMailSelector: jest.fn().mockReturnValue(undefined),
 }));
 
 jest.mock('proton-mail/hooks/actions/moveBackAction/useMoveBackAction', () => ({

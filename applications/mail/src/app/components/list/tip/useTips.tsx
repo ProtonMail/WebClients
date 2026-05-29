@@ -36,6 +36,7 @@ import useHasScheduledMessages from 'proton-mail/hooks/useHasScheduledMessages';
 import useHasSnoozedMessages from 'proton-mail/hooks/useHasSnoozedMessages';
 import type { TipData } from 'proton-mail/models/tip';
 import { TipActionType } from 'proton-mail/models/tip';
+import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import PassAliasTipCTA from './PassAliasTipCTA';
@@ -79,7 +80,7 @@ const useTips = () => {
         loadingOrganization ||
         loadingScheduledMessages;
 
-    const labelID = useMailSelector((store) => store.elements.params.labelID);
+    const labelID = useMailSelector(selectLabelID);
     const conversationMode = isConversationMode(labelID, mailSettings);
 
     const [isTipDismissed, setIsTipDismissed] = useState(false);

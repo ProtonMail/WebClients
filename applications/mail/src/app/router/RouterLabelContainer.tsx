@@ -28,7 +28,7 @@ import { useMailboxHotkeys } from 'proton-mail/hooks/mailbox/useMailboxHotkeys';
 import { useWelcomeFlag } from 'proton-mail/hooks/mailbox/useWelcomeFlag';
 import { DEFAULT_MIN_WIDTH_OF_MAILBOX_LIST } from 'proton-mail/hooks/useResizableUtils';
 import { selectComposersCount } from 'proton-mail/store/composers/composerSelectors';
-import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
+import { selectParams } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { RouterElementContainer } from './RouterElementContainer';
@@ -37,7 +37,6 @@ import { MailboxToolbar } from './components/MailboxToolbar';
 import type { MailboxActions, RouterNavigation } from './interface';
 
 interface Props {
-    params: ElementsStateParams;
     navigation: RouterNavigation;
     elementsData: ElementsStructure;
     actions: MailboxActions;
@@ -46,14 +45,13 @@ interface Props {
 }
 
 export const RouterLabelContainer = ({
-    params,
     navigation,
     elementsData,
     actions,
     hasRowMode = false,
     onResizingChange,
 }: Props) => {
-    const { labelID, elementID, messageID } = params;
+    const { labelID, elementID, messageID } = useMailSelector(selectParams);
     const { handleBack, handleFilter } = navigation;
     const { elementIDs, loading } = elementsData;
     const {
@@ -194,7 +192,6 @@ export const RouterLabelContainer = ({
                         shouldSeeWideToolbars ? null : (
                             <>
                                 <MailboxToolbar
-                                    params={params}
                                     navigation={navigation}
                                     elementsData={elementsData}
                                     actions={{ ...actions, handleMove }}
@@ -230,9 +227,7 @@ export const RouterLabelContainer = ({
                 <Switch>
                     <Route
                         path={ROUTE_ELEMENT}
-                        render={() => (
-                            <RouterElementContainer params={params} navigation={navigation} actions={actions} />
-                        )}
+                        render={() => <RouterElementContainer navigation={navigation} actions={actions} />}
                     />
                 </Switch>
             </section>

@@ -16,26 +16,25 @@ import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/in
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import { usePermanentDelete } from 'proton-mail/hooks/actions/delete/usePermanentDelete';
 import { useMarkAs } from 'proton-mail/hooks/actions/markAs/useMarkAs';
+import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 import { ComposeTypes } from 'proton-mail/hooks/composer/useCompose';
 import { type ElementsStructure, useGetElementsFromIDs } from 'proton-mail/hooks/mailbox/useElements';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { useMailECRTMetric } from 'proton-mail/metrics/useMailECRTMetric';
-import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
+import { selectPage, selectParams } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { convertCustomViewLabelsToAlmostAllMail } from '../../helpers/labels';
 import { useMailboxLayoutProvider } from '../components/MailboxLayoutContext';
 import type { RouterNavigation } from '../interface';
-import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 
 interface Params {
-    params: ElementsStateParams;
     navigation: RouterNavigation;
     elementsData: ElementsStructure;
 }
 
-export const useElementActions = ({ params, navigation, elementsData }: Params) => {
-    const { elementID, conversationMode, messageID, labelID: originalLabelID } = params;
+export const useElementActions = ({ navigation, elementsData }: Params) => {
+    const { elementID, conversationMode, messageID, labelID: originalLabelID } = useMailSelector(selectParams);
     const { handleBack } = navigation;
     const { elementIDs } = elementsData;
 
@@ -46,7 +45,7 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
 
     const { isColumnModeActive, isConversationGroupingEnabled } = useMailboxLayoutProvider();
 
-    const page = useMailSelector((state) => state.elements.page);
+    const page = useMailSelector(selectPage);
 
     const { selectAll, setSelectAll } = useSelectAll({ labelID });
     const { handleDelete: permanentDelete, deleteSelectionModal, deleteAllModal } = usePermanentDelete(labelID);
@@ -54,7 +53,7 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
     const { markAs, selectAllMarkModal } = useMarkAs();
     const getElementsFromIDs = useGetElementsFromIDs();
     const { applyLocation } = useApplyLocation();
-    const {moveAllToFolder, selectAllMoveModal} = useMoveAllToFolder();
+    const { moveAllToFolder, selectAllMoveModal } = useMoveAllToFolder();
     const onCompose = useOnCompose();
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
 
