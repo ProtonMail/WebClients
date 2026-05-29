@@ -8,6 +8,7 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
+import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
@@ -38,12 +39,16 @@ export const Tab = ({ category, count, tabState }: Props) => {
     const labelID = useMailSelector(selectLabelID);
     const { call } = useEventManager();
 
+    const { sendReportCategoriesNav } = useCategoriesTelemetry();
+
     const [refreshing, withRefreshing] = useLoading(false);
 
     const handleClick = () => {
         if (category.id === labelID && history.location.hash === '' && !refreshing) {
             void withRefreshing(Promise.all([call(), wait(1000)]));
         }
+
+        sendReportCategoriesNav('tab', category.id);
     };
 
     const navigateTo = setCategoryInUrl(category.id);

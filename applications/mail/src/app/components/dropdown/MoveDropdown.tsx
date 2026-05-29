@@ -17,6 +17,8 @@ import type { LabelModel } from '@proton/components/containers/labels/modals/Edi
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useLoading } from '@proton/hooks';
+import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
+import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
@@ -34,6 +36,8 @@ import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApp
 import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 import type { FolderItem } from 'proton-mail/hooks/useMailTreeView/interface';
 import { useMailFolderTreeView } from 'proton-mail/hooks/useMailTreeView/useMailFolderTreeView';
+import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { isElementMessage } from '../../helpers/elements';
 import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
@@ -91,7 +95,9 @@ const MoveDropdown = ({
     useEffect(() => onLock(!containFocus), [containFocus]);
 
     const { list: treeview } = useMailFolderTreeView();
+    const categoryIDs = useMailSelector(selectCategoryIDs);
     const { shouldShowTabs, activeCategoriesTabs } = useCategoriesView();
+    const { sendReportRecategorizeEmail } = useCategoriesTelemetry();
 
     /*
      * When moving an element to SPAM, we want to open an "Unsubscribe modal" when items in the selections can be unsubscribed.
@@ -168,6 +174,10 @@ const MoveDropdown = ({
                 destinationLabelID: selectedFolderID,
                 createFilters: canApplyAlways ? always : false,
             });
+
+            if (isCategoryLabel(selectedFolderID) && categoryIDs.length > 0) {
+                sendReportRecategorizeEmail('move_to_folder', selectedFolderID, categoryIDs[0], elements.length);
+            }
         }
         onClose();
     };
