@@ -6,6 +6,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
+import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
 
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
@@ -66,7 +67,7 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
     const isMounted = useIsMounted();
     const { call } = useEventManager();
     const conversationState = useMailSelector((state) => conversationByID(state, { ID: inputConversationID }));
-    const currentLabelID = useMailSelector((state) => state.elements.params.labelID);
+    const currentLabelID = useMailSelector(selectLabelID);
 
     const initStateOnly = (): ConversationStateOptional | undefined => {
         if (conversationState) {

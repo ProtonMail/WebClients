@@ -7,7 +7,6 @@ import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/u
 import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
 import { MailboxToolbar } from 'proton-mail/router/components/MailboxToolbar';
 import type { MailboxActions, RouterNavigation } from 'proton-mail/router/interface';
-import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
 
 import type { PropsWithNewsletterSubscription } from '../interface';
 
@@ -36,13 +35,12 @@ export const NewsletterSubscriptionMailListHeader = ({ subscription, numMessages
 };
 
 interface ToolbarProps {
-    params: ElementsStateParams;
     navigation: RouterNavigation;
     elementsData: ElementsStructure;
     actions: MailboxActions;
 }
 
-export const NewsletterSubscriptionMailListToolbar = ({ params, navigation, elementsData, actions }: ToolbarProps) => {
+export const NewsletterSubscriptionMailListToolbar = ({ navigation, elementsData, actions }: ToolbarProps) => {
     const overrideActions = {
         ...actions,
         // We override the handleMarkAs to prevent from moving back to the inbox when marking an email as unread
@@ -53,7 +51,6 @@ export const NewsletterSubscriptionMailListToolbar = ({ params, navigation, elem
     return (
         <section className="newsletter-subscription-list-title py-3">
             <MailboxToolbar
-                params={params}
                 navigation={navigation}
                 elementsData={elementsData}
                 actions={overrideActions}
