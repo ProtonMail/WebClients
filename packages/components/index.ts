@@ -473,7 +473,6 @@ export { default as DomainsSection } from './containers/domains/DomainsSection';
 export { default as DrawerAppFooter } from './containers/drawer/DrawerAppFooter';
 export { default as DrawerAppHeader } from './containers/drawer/DrawerAppHeader';
 export { default as DrawerAppHeaderCustomTitle } from './containers/drawer/DrawerAppHeaderCustomTitle';
-export { B2BPhotosSection } from './containers/drive/settings/B2BPhotosSection';
 export { FreeUpgradeBanner } from './containers/drive/settings/banner/FreeUpgradeBanner';
 export { RetentionDaysSection } from './containers/drive/settings/RetentionDaysSection';
 export { getRetentionLabel } from './containers/drive/settings/retentionLabels';

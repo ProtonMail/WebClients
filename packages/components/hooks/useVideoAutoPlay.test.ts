@@ -1,12 +1,8 @@
 import { act, renderHook } from '@testing-library/react';
 
-import { useFlag } from '@proton/unleash/useFlag';
-
 import { useVideoAutoPlay } from './useVideoAutoPlay';
 
 jest.mock('@proton/unleash/useFlag');
-
-const mockUseFlag = jest.mocked(useFlag);
 
 describe('useVideoAutoPlay', () => {
     let mockVideoElement: Partial<HTMLVideoElement>;
@@ -48,8 +44,6 @@ describe('useVideoAutoPlay', () => {
             writable: true,
             value: { hasBeenActive: false },
         });
-
-        mockUseFlag.mockReturnValue(true);
     });
 
     afterEach(() => {
@@ -58,15 +52,7 @@ describe('useVideoAutoPlay', () => {
         mockRemoveEventListener.mockRestore();
     });
 
-    it('returns undefined when feature flag is disabled', () => {
-        mockUseFlag.mockReturnValue(false);
-
-        const { result } = renderHook(() => useVideoAutoPlay());
-
-        expect(result.current).toBeUndefined();
-    });
-
-    it('returns video props when feature flag is enabled', () => {
+    it('returns video props', () => {
         const { result } = renderHook(() => useVideoAutoPlay());
 
         expect(result.current).toEqual({
@@ -93,18 +79,10 @@ describe('useVideoAutoPlay', () => {
         expect(result.current?.muted).toBe(true);
     });
 
-    it('sets up visibility change listener when feature flag is enabled', () => {
+    it('sets up visibility change listener', () => {
         renderHook(() => useVideoAutoPlay());
 
         expect(mockAddEventListener).toHaveBeenCalledWith('visibilitychange', expect.any(Function));
-    });
-
-    it('does not set up visibility change listener when feature flag is disabled', () => {
-        mockUseFlag.mockReturnValue(false);
-
-        renderHook(() => useVideoAutoPlay());
-
-        expect(mockAddEventListener).not.toHaveBeenCalled();
     });
 
     it('cleans up visibility change listener on unmount', () => {

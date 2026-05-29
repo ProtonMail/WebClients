@@ -5,8 +5,7 @@ import { APPS, BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { OrganizationRouterParams } from '../../content/router-params';
 
-export const getDriveAppRoutes = ({ app, isB2BDrive, flags }: OrganizationRouterParams) => {
-    const { canB2BHidePhotos = false } = flags;
+export const getDriveAppRoutes = ({ app }: OrganizationRouterParams) => {
     return <const>{
         available: app === APPS.PROTONDRIVE,
         header: DRIVE_APP_NAME,
@@ -21,19 +20,6 @@ export const getDriveAppRoutes = ({ app, isB2BDrive, flags }: OrganizationRouter
                 subsections: [
                     {
                         id: 'history',
-                    },
-                ],
-            },
-            photos: {
-                id: 'photos',
-                available: isB2BDrive && canB2BHidePhotos,
-                text: c('Title').t`Photos`,
-                to: '/photos',
-                icon: 'image',
-                description: c('Info').t`You can enable the Photos section from the interface using the toggle below.`,
-                subsections: [
-                    {
-                        id: 'photos',
                     },
                 ],
             },

@@ -1,11 +1,10 @@
 import { ThumbnailType } from '@proton/drive';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
-import { type ThumbnailResult, generateThumbnail } from '@proton/drive/modules/thumbnails';
+import { generateThumbnail } from '@proton/drive/modules/thumbnails';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
 import config from '../../../config';
 import { TransferCancel } from '../../../legacy/components/TransferManager/transfer';
-import { featureFlagStore } from '../../../modules/featureFlag';
 import type {
     FileKeys,
     FileRequestBlock,
@@ -16,8 +15,7 @@ import type {
     UploadFileControls,
     UploadFileProgressCallbacks,
 } from './interface';
-import { ThumbnailType as LegacyThumbnailType, getMediaInfo } from './media';
-import { mimeTypeFromFile } from './mimeTypeParser/mimeTypeParser';
+import { ThumbnailType as LegacyThumbnailType } from './media';
 import { UploadWorkerController } from './workerController';
 
 type LogCallback = (message: string) => void;
@@ -59,23 +57,14 @@ export function initUploadFileWorker(
     const abortController = new AbortController();
     let workerApi: UploadWorkerController;
 
-    const useNewThumbnailGeneration = featureFlagStore.getState().isEnabled('DriveWebNewThumbnailGeneration');
-
     // Start detecting mime type right away to have this information once the
     // upload starts, so we can generate thumbnail as fast as possible without
     // need to wait for creation of revision on API.
-    let mimeTypePromise: Promise<string>;
-    let thumbnailsPromise: Promise<{ ok: true; result: ThumbnailResult } | { ok: false; error: unknown }> | undefined;
-
-    if (useNewThumbnailGeneration) {
-        const thumbnailGeneration = generateThumbnail(file, file.name, file.size, {
-            debug: Boolean(getItem('proton-drive-debug', 'false')),
-        });
-        mimeTypePromise = thumbnailGeneration.mimeTypePromise;
-        thumbnailsPromise = thumbnailGeneration.thumbnailsPromise;
-    } else {
-        mimeTypePromise = mimeTypeFromFile(file);
-    }
+    const thumbnailGeneration = generateThumbnail(file, file.name, file.size, {
+        debug: Boolean(getItem('proton-drive-debug', 'false')),
+    });
+    const mimeTypePromise = thumbnailGeneration.mimeTypePromise;
+    const thumbnailsPromise = thumbnailGeneration.thumbnailsPromise;
 
     const startUpload = async ({
         onInit,
@@ -85,28 +74,23 @@ export function initUploadFileWorker(
     }: UploadFileProgressCallbacks = {}) => {
         // Worker has a slight overhead about 40 ms. Let's start generating
         // thumbnail a bit sooner.
-        const mediaInfoPromise =
-            useNewThumbnailGeneration && thumbnailsPromise
-                ? (async () => {
-                      const thumbnailResult = await thumbnailsPromise;
-
-                      if (!thumbnailResult.ok || !thumbnailResult.result) {
-                          return undefined;
-                      }
-                      const legacyThumbnails = thumbnailResult.result.thumbnails?.map(({ thumbnail, type }) => {
-                          return {
-                              thumbnailData: thumbnail,
-                              thumbnailType: mapNewThumbnailTypeToLegacy(type),
-                          };
-                      });
-                      return {
-                          width: thumbnailResult.result.width,
-                          height: thumbnailResult.result.height,
-                          duration: thumbnailResult.result.duration,
-                          thumbnails: legacyThumbnails,
-                      };
-                  })()
-                : getMediaInfo(mimeTypePromise, file);
+        const mediaInfoPromise = thumbnailsPromise.then(async (thumbnailResult) => {
+            if (!thumbnailResult.ok || !thumbnailResult.result) {
+                return undefined;
+            }
+            const legacyThumbnails = thumbnailResult.result.thumbnails?.map(({ thumbnail, type }) => {
+                return {
+                    thumbnailData: thumbnail,
+                    thumbnailType: mapNewThumbnailTypeToLegacy(type),
+                };
+            });
+            return {
+                width: thumbnailResult.result.width,
+                height: thumbnailResult.result.height,
+                duration: thumbnailResult.result.duration,
+                thumbnails: legacyThumbnails,
+            };
+        });
 
         return new Promise<OnFileUploadSuccessCallbackData>((resolve, reject) => {
             const worker = new Worker(

@@ -1,5 +1,6 @@
 import 'web-streams-polyfill/polyfill/es5';
 
+import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { UnleashClient } from '@proton/unleash/UnleashClient';
@@ -150,37 +151,16 @@ describe('FileSaver', () => {
         });
 
         describe('memory limits selection', () => {
-            it('should use base memory limit when treatment is base-memory', async () => {
-                mockUnleashStore.getVariant.mockReturnValue({
-                    enabled: true,
-                    name: 'base-memory',
-                });
-                const size = 700 * 1024 * 1024; // 700MB
+            it('should use memory when file size is below MEMORY_DOWNLOAD_LIMIT', async () => {
+                const size = MEMORY_DOWNLOAD_LIMIT - MB;
                 const result = await fileSaver.selectMechanismForDownload(size);
-                // For non-mobile, base-memory is 750MB, so this should still return 'memory'
                 expect(result).toBe('memory');
             });
 
-            it('should use low memory limit when treatment is low-memory', async () => {
-                mockUnleashStore.getVariant.mockReturnValue({
-                    enabled: true,
-                    name: 'low-memory',
-                });
-                const size = 200 * 1024 * 1024; // 200MB
+            it('should not use memory when file size is at or above MEMORY_DOWNLOAD_LIMIT', async () => {
+                const size = MEMORY_DOWNLOAD_LIMIT + MB;
                 const result = await fileSaver.selectMechanismForDownload(size);
-                // For non-mobile, low-memory is 250MB, so this should return 'memory'
-                expect(result).toBe('memory');
-            });
-
-            it('should use high memory limit when treatment is high-memory', async () => {
-                mockUnleashStore.getVariant.mockReturnValue({
-                    enabled: true,
-                    name: 'high-memory',
-                });
-                const size = 900 * 1024 * 1024; // 900MB
-                const result = await fileSaver.selectMechanismForDownload(size);
-                // For non-mobile, high-memory is 1000MB, so this should still return 'memory'
-                expect(result).toBe('memory');
+                expect(result).toBe('sw');
             });
         });
 
@@ -339,41 +319,21 @@ describe('FileSaver', () => {
     });
 
     describe('isFallbackLimitExceeded', () => {
-        beforeAll(() => {
+        beforeEach(() => {
             isServiceWorkersSupportedMock.mockReturnValue(false);
             isOPFSSupportedMock.mockResolvedValue(false);
         });
 
-        afterAll(() => {
-            jest.clearAllMocks();
+        it('should return false when file size is within MEMORY_DOWNLOAD_LIMIT', async () => {
+            await expect(fileSaver.wouldExceeedMemoryLImit(MEMORY_DOWNLOAD_LIMIT - MB)).resolves.toBe(false);
         });
 
-        it('should return false when file size is within limit', () => {
-            mockUnleashStore.getVariant.mockReturnValue({
-                enabled: true,
-                name: 'base-memory',
-            });
-
-            void expect(fileSaver.wouldExceeedMemoryLImit(500 * MB)).resolves.toBe(false);
+        it('should return true when file exceeds MEMORY_DOWNLOAD_LIMIT with memory fallback', async () => {
+            await expect(fileSaver.wouldExceeedMemoryLImit(MEMORY_DOWNLOAD_LIMIT + MB)).resolves.toBe(true);
         });
 
-        it('should return true when file is too big and useBlobFallback is true', () => {
-            mockUnleashStore.getVariant.mockReturnValue({
-                enabled: true,
-                name: 'base-memory',
-            });
-
-            void expect(fileSaver.wouldExceeedMemoryLImit(1000 * MB)).resolves.toBe(true);
-        });
-
-        it('should use correct memory limit based on variant', () => {
-            mockUnleashStore.getVariant.mockReturnValue({
-                enabled: true,
-                name: 'low-memory',
-            });
-
-            void expect(fileSaver.wouldExceeedMemoryLImit(300 * MB)).resolves.toBe(true);
-            void expect(fileSaver.wouldExceeedMemoryLImit(200 * MB)).resolves.toBe(false);
+        it('should return false at exactly MEMORY_DOWNLOAD_LIMIT without memory fallback', async () => {
+            await expect(fileSaver.wouldExceeedMemoryLImit(MEMORY_DOWNLOAD_LIMIT)).resolves.toBe(false);
         });
     });
 });

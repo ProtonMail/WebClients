@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { createContext, useCallback, useContext, useMemo, useState } from 'react';
 
-import { useApi, useDrivePlan } from '@proton/components';
+import { useApi } from '@proton/components';
 import { queryUpdateUserSettings } from '@proton/shared/lib/api/drive/user';
 import { DEFAULT_USER_SETTINGS } from '@proton/shared/lib/drive/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
@@ -12,7 +12,6 @@ import type {
     UserSettings,
     UserSettingsResponse,
 } from '@proton/shared/lib/interfaces/drive/userSettings';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import type { UserSortParams } from './sorting';
 import { getSetting, parseSetting } from './sorting';
@@ -22,11 +21,8 @@ const UserSettingsContext = createContext<{
     layout: LayoutSetting;
     revisionRetentionDays: RevisionRetentionDaysSetting;
     photoTags: PhotoTag[];
-    photosEnabled: boolean;
-    photosWithAlbumsEnabled: boolean;
     changeSort: (sortParams: UserSortParams) => Promise<void>;
     changeLayout: (Layout: LayoutSetting) => Promise<void>;
-    changeB2BPhotosEnabled: (B2BPhotosEnabled: boolean) => Promise<void>;
 } | null>(null);
 
 export function UserSettingsProvider({
@@ -38,9 +34,7 @@ export function UserSettingsProvider({
     initialUser: UserModel;
     initialDriveUserSettings: UserSettingsResponse;
 }) {
-    const { isB2B } = useDrivePlan();
     const api = useApi();
-    const driveB2BPhotosUpload = useFlag('DriveB2BPhotosUpload');
 
     const [userSettings, setUserSettings] = useState<UserSettings>(() => {
         const { UserSettings, Defaults } = initialDriveUserSettings;
@@ -87,28 +81,13 @@ export function UserSettingsProvider({
         );
     }, []);
 
-    const changeB2BPhotosEnabled = useCallback(async (B2BPhotosEnabled: boolean) => {
-        setUserSettings((settings) => ({ ...settings, B2BPhotosEnabled }));
-        await api(
-            queryUpdateUserSettings({
-                B2BPhotosEnabled,
-            })
-        );
-    }, []);
-
-    const isPhotosEnabled = !isB2B || !driveB2BPhotosUpload || (driveB2BPhotosUpload && userSettings.B2BPhotosEnabled);
-    const isPhotosWithAlbumsEnabled = isPhotosEnabled;
-
     const value = {
         sort,
         layout: userSettings.Layout,
         revisionRetentionDays: userSettings.RevisionRetentionDays,
         photoTags: userSettings.PhotoTags,
-        photosEnabled: isPhotosEnabled,
-        photosWithAlbumsEnabled: isPhotosWithAlbumsEnabled,
         changeSort,
         changeLayout,
-        changeB2BPhotosEnabled,
     };
 
     return <UserSettingsContext.Provider value={value}>{children}</UserSettingsContext.Provider>;
