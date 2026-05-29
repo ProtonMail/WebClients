@@ -43,6 +43,7 @@ export enum TelemetryMeasurementGroups {
     mailPostSignupOneDollar = 'mail.web.post_signup_one_dollar',
     mailPagingControls = 'mail.web.paging_controls',
     mailExpandBlockquotes = 'mail.web.expand_blockquotes',
+    categoriesView = 'any.web.categories_view',
     passNudge = 'mail.web.pass_nudge',
     mailNewsletterSubscriptions = 'mail.web.newsletter_subscriptions',
     unlimitedOffer2025 = 'any.web.unlimited_offer_2025',
@@ -305,6 +306,16 @@ export enum TelemetryMailComposerAssistantEvents {
     incompatible_assistant = 'incompatible_assistant',
 }
 
+export enum TelemetryCategoriesOnboardingEvents {
+    onboarding_reply = 'onboarding_reply',
+    onboarding_card_close = 'onboarding_card_close',
+    category_nav = 'category_nav',
+    recategorize_email = 'recategorize_email',
+    settings_toggle_category_view = 'settings_toggle_category_view',
+    settings_toggle_category = 'settings_toggle_category',
+    settings_toggle_notification = 'settings_toggle_notification',
+}
+
 export enum TelemetryHeartbeatEvents {
     mail_heartbeat = 'mail_heartbeat',
     calendar_heartbeat = 'calendar_heartbeat',
@@ -560,7 +571,8 @@ export type TelemetryEvents =
     | TelemetrySafetyReviewScoreDiffEvents
     | TelemetryUpgradePageEvents
     | TelemetryVpnTvEvents
-    | TelemetryPreventWasmLoading;
+    | TelemetryPreventWasmLoading
+    | TelemetryCategoriesOnboardingEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
