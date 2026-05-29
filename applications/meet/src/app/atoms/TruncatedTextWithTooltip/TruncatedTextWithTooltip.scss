@@ -1,0 +1,5 @@
+.truncated-text-with-tooltip {
+	// SelectButton applies *:pointer-events-none to all its descendants to prevent child elements
+	// from interfering with click events. This overrides that so ConditionalTooltip can detect hover.
+	pointer-events: auto !important;
+}
