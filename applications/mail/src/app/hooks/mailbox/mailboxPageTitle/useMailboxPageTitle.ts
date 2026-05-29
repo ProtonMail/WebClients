@@ -19,15 +19,12 @@ export const useMailboxPageTitle = () => {
     const [user] = useUser();
 
     const { getCurrentLocationCount } = useMailboxCounter();
+    const unreadEmails = getCurrentLocationCount().Unread;
+    const unreadFavicon = mailSettings.UnreadFavicon;
 
     useEffect(() => {
-        const unreadEmails = getCurrentLocationCount().Unread;
-        const unreadString = unreadEmails > 0 ? `(${unreadEmails}) ` : '';
-
+        const unreadString = !unreadFavicon && unreadEmails > 0 ? `(${unreadEmails}) ` : '';
         const labelName = getLabelName(labelID, labels, folders);
-        const mainTitle = `${labelName} | ${user.Email} | ${MAIL_APP_NAME}`;
-
-        // We show the unread count in the title if not present in the favicon
-        document.title = mailSettings.UnreadFavicon ? mainTitle : `${unreadString}${mainTitle}`;
-    }, [getCurrentLocationCount, labelID, mailSettings, user.Email, labels, folders]);
+        document.title = `${unreadString}${labelName} | ${user.Email} | ${MAIL_APP_NAME}`;
+    }, [unreadEmails, labelID, unreadFavicon, user.Email, labels, folders]);
 };
