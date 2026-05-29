@@ -8,12 +8,17 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useConfig from '@proton/components/hooks/useConfig';
-import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useReferralTelemetry } from '../../hooks/useReferralTelemetry';
+import {
+    getReferralMaxRewardCopy,
+    getReferralStep1Copy,
+    getReferralStep2Copy,
+    getReferralStep3Copy,
+} from '../../referralCopy';
 import step1 from './step1.svg';
 import step2 from './step2.svg';
 import step3 from './step3.svg';
@@ -28,7 +33,7 @@ interface Props {
 export const TopBarReferralSpotlight = ({ children, show, onClose, onDismiss }: Props) => {
     const { APP_NAME: currentApp } = useConfig();
     const [referralInfo] = useReferralInfo();
-    const { referrerRewardAmount, maxRewardAmount } = referralInfo.uiData;
+    const { refereeRewardAmount, referrerRewardAmount, maxRewardAmount } = referralInfo.uiData;
     const { sendTopBarSpotlightCtaClick } = useReferralTelemetry();
 
     const openInCurrentTab = currentApp === APPS.PROTONACCOUNT || currentApp === APPS.PROTONVPN_SETTINGS;
@@ -68,12 +73,7 @@ export const TopBarReferralSpotlight = ({ children, show, onClose, onDismiss }: 
                                 className="w-custom shrink-0 ratio-square"
                                 style={{ '--w-custom': '3rem' }}
                             />
-                            <div>
-                                {getBoldFormattedText(
-                                    c('Info')
-                                        .t`**Step 1:** Invite your friends to ${BRAND_NAME} with your referral link.`
-                                )}
-                            </div>
+                            <div>{getReferralStep1Copy()}</div>
                         </li>
                         <li className="flex flex-nowrap items-start gap-4">
                             <img
@@ -82,11 +82,7 @@ export const TopBarReferralSpotlight = ({ children, show, onClose, onDismiss }: 
                                 className="w-custom shrink-0 ratio-square"
                                 style={{ '--w-custom': '3rem' }}
                             />
-                            <div>
-                                {getBoldFormattedText(
-                                    c('Info').t`**Step 2:** Your friends get 2 weeks for free on their plan.`
-                                )}
-                            </div>
+                            <div>{getReferralStep2Copy(refereeRewardAmount)}</div>
                         </li>
                         <li className="flex flex-nowrap items-start gap-4">
                             <img
@@ -96,18 +92,13 @@ export const TopBarReferralSpotlight = ({ children, show, onClose, onDismiss }: 
                                 style={{ '--w-custom': '3rem' }}
                             />
                             <div>
-                                {getBoldFormattedText(
-                                    c('Info')
-                                        .t`**Step 3:** Get ${referrerRewardAmount} in credits for every person that subscribes to a plan.`
-                                )}{' '}
+                                {getReferralStep3Copy(referrerRewardAmount)}{' '}
                                 <Href href={getKnowledgeBaseUrl('/referral-program')}>{c('Link').t`Learn more`}</Href>
                             </div>
                         </li>
                     </ol>
 
-                    <p className="m-0">
-                        {getBoldFormattedText(c('Referral').t`You can get up to **${maxRewardAmount}** in credit.`)}
-                    </p>
+                    <p className="m-0">{getReferralMaxRewardCopy(maxRewardAmount)}</p>
 
                     <ButtonLike
                         as={SettingsLink}
