@@ -20,7 +20,7 @@ import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import { isStarred } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';
-import { setParamsInLocation } from '../../helpers/mailboxUrl';
+import { setFilterInUrl, setParamsInLocation } from '../../helpers/mailboxUrl';
 import type { Element } from '../../models/element';
 import { APPLY_LOCATION_TYPES } from '../actions/applyLocation/interface';
 import { useApplyLocation } from '../actions/applyLocation/useApplyLocation';
@@ -56,7 +56,6 @@ export interface MailboxHotkeysHandlers {
     handleCheckAll: (checked: boolean) => void;
     handleCheckOnlyOne: (ID: string) => void;
     handleCheckRange: (ID: string) => void;
-    handleFilter: (filter: Filter) => void;
     showCommander: (status: boolean) => void;
 }
 
@@ -87,7 +86,6 @@ export const useMailboxHotkeys = (
         handleCheckAll,
         handleCheckOnlyOne,
         handleCheckRange,
-        handleFilter,
         showCommander,
     }: MailboxHotkeysHandlers
 ) => {
@@ -141,6 +139,10 @@ export const useMailboxHotkeys = (
         } else {
             await applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements, destinationLabelID: LabelID });
         }
+    };
+
+    const handleFilter = (filter: Filter) => {
+        history.push(setFilterInUrl(history.location, filter));
     };
 
     const shortcutHandlers: HotkeyTuple[] = [
