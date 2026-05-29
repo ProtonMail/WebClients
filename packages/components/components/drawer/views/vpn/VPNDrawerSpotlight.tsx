@@ -63,6 +63,7 @@ const VPNDrawerSpotlight = ({ children }: Props) => {
     const handleClick = () => {
         spotlightIsClicked();
         toggleDrawerApp({ app: DRAWER_NATIVE_APPS.VPN })();
+        setShowSpotlight(false);
         onClose();
     };
 
