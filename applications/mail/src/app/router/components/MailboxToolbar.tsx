@@ -1,5 +1,3 @@
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-
 import Toolbar from 'proton-mail/components/toolbar/Toolbar';
 import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
 import { selectParams } from 'proton-mail/store/elements/elementsSelectors';
@@ -27,9 +25,8 @@ export const MailboxToolbar = ({
     actions,
     overrideColumnMode,
 }: MailboxToolbarProps) => {
-    const { conversationMode, sort, filter, labelID, elementID, messageID, isSearching } =
-        useMailSelector(selectParams);
-    const { handleBack, handlePage, page, handleFilter, handleSort } = navigation;
+    const { conversationMode, labelID, elementID, messageID, isSearching } = useMailSelector(selectParams);
+    const { handleBack, handlePage, page } = navigation;
     const { loading, total, elementIDs } = elementsData;
     const {
         handleElement,
@@ -43,8 +40,6 @@ export const MailboxToolbar = ({
     } = actions;
 
     const { labelDropdownToggleRef, moveDropdownToggleRef, isColumnModeActive } = useMailboxLayoutProvider();
-
-    const [mailSettings] = useMailSettings();
 
     return (
         <>
@@ -70,11 +65,6 @@ export const MailboxToolbar = ({
                 labelDropdownToggleRef={labelDropdownToggleRef}
                 moveDropdownToggleRef={moveDropdownToggleRef}
                 bordered
-                sort={sort}
-                onSort={handleSort}
-                onFilter={handleFilter}
-                filter={filter}
-                mailSettings={mailSettings!}
                 toolbarInHeader={inHeader}
                 loading={loading}
                 onCheckAll={handleCheckAll}
