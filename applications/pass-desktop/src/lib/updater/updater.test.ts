@@ -10,8 +10,8 @@ import { userAgent } from '../../lib/user-agent';
 import { store } from '../../store';
 import { isLinux, isMac, isProdEnv, isWindows } from '../../utils/platform';
 import { getUpdateStore, setUpdateStore } from './store';
-import { UPDATE_SOURCE_URL, checkForUpdates } from './updater';
 import type { RemoteManifestResponse } from './updater';
+import { UPDATE_SOURCE_URL, checkForUpdates } from './updater';
 
 jest.mock('electron', () => ({
     app: { isPackaged: true, isReady: () => true },
@@ -324,6 +324,23 @@ describe('Electron updater', () => {
             setOs('windows');
             await check([{ Version: '1.1.0', RolloutPercentage: 1.0, CategoryName: 'Stable', File: [{ Url: 'url' }] }]);
             expect(getUpdateStore().status).toBe(UpdateStatus.UpdateReady);
+        });
+
+        it('should skip check if update already downloaded', async () => {
+            // Updated downloaded but not yet installed
+            store.set('update', { status: UpdateStatus.UpdateReady });
+
+            const update = await check([
+                {
+                    Version: '1.1.0',
+                    RolloutPercentage: 1.0,
+                    CategoryName: 'Stable',
+                    File: [],
+                },
+            ]);
+
+            expect(update).toBe(false);
+            expect(autoUpdater.checkForUpdates).not.toHaveBeenCalled();
         });
     });
 });
