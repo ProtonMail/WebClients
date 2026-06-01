@@ -5,11 +5,11 @@ import { c } from 'ttag';
 
 import { useMembers } from '@proton/account/members/hooks';
 import { organizationActions } from '@proton/account/organization';
+import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import AddressesInput, { AddressesInputItem } from '@proton/components/components/addressesInput/AddressesInput';
-import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
-import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import DateInput from '@proton/components/components/input/DateInput';
 import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
@@ -24,6 +24,8 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -60,6 +62,8 @@ const AuthenticationLogs = ({
 }: Props) => {
     const api = useApi();
     const [members] = useMembers();
+    const [permissions] = useOrgPermissions();
+    const canExport = !!permissions?.['account.activity_log.export'];
     const [submitting, withSubmitting] = useLoading();
     const { createNotification } = useNotifications();
     const { page, onNext, onPrevious, onSelect, reset } = usePaginationAsync(1);
@@ -351,16 +355,25 @@ const AuthenticationLogs = ({
                                         <IcArrowRotateRight className="mr-2" />
                                         {c('Action').t`Refresh`}
                                     </Button>
-                                    <Button
-                                        shape="outline"
-                                        className="self-end"
-                                        onClick={() => withLoadingDownload(handleDownload(authLogs, organization))}
-                                        loading={loadingDownload}
-                                        title={c('Action').t`Export`}
+                                    <Tooltip
+                                        title={canExport ? null : c('Label').t`You don't have permissions`}
+                                        openDelay={100}
                                     >
-                                        <IcArrowDownLine className="mr-2" />
-                                        {c('Action').t`Export`}
-                                    </Button>
+                                        <span className="inline-flex items-center">
+                                            <Button
+                                                shape="outline"
+                                                className="self-end"
+                                                onClick={() =>
+                                                    withLoadingDownload(handleDownload(authLogs, organization))
+                                                }
+                                                loading={loadingDownload}
+                                                disabled={!canExport}
+                                            >
+                                                <IcArrowDownLine className="mr-2" />
+                                                {c('Action').t`Export`}
+                                            </Button>
+                                        </span>
+                                    </Tooltip>
                                 </div>
                             </form>
                             <div className="flex mb-4">{items.slice(0, 50)}</div>
