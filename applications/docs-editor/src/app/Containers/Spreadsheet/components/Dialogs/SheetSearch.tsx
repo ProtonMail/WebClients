@@ -4,31 +4,18 @@ import { useUI } from '../../ui-store'
 import { Icon } from '../ui'
 import { createStringifier } from '../../stringifier'
 
-export type SheetSearchProps = {
-  isActive?: boolean
-  searchQuery?: string
-  onSubmit(query: string): void
-  onReset(): void
-  onNext(): void
-  onPrevious(): void
-  disablePrevious?: boolean
-  disableNext?: boolean
-  totalResults?: number
-  currentResult?: number
-}
-
 const { s } = createStringifier(strings)
 
-export function SheetSearch({
-  onSubmit,
-  onReset,
-  onNext,
-  onPrevious,
-  searchQuery,
-  isActive,
-  totalResults = 0,
-  currentResult = 0,
-}: SheetSearchProps) {
+export function SheetSearch() {
+  const isActive = useUI((ui) => ui.legacy.searchState.isSearchActive)
+  const searchQuery = useUI((ui) => ui.legacy.searchState.searchQuery)
+  const currentResult = useUI((ui) => ui.legacy.searchState.currentResult)
+  const totalResults = useUI((ui) => ui.legacy.searchState.totalResults)
+  const onSubmit = useUI.$.legacy.searchState.onSearch
+  const onReset = useUI.$.legacy.searchState.onResetSearch
+  const onNext = useUI.$.legacy.searchState.onFocusNextResult
+  const onPrevious = useUI.$.legacy.searchState.onFocusPreviousResult
+
   const handleReset = useUI.$.withFocusGrid(onReset)
   const navigationDisabled = totalResults < 2
 
