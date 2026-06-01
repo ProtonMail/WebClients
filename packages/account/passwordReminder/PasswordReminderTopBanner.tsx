@@ -36,7 +36,10 @@ const PasswordReminderTopBanner = () => {
         <>
             {renderPasswordReminderModal && <PasswordReminderModal {...passwordReminderModalProps} />}
             <TopBanner className="bg-info" onClose={dismissReminder}>
-                {c('Info').jt`Do you remember your password? ${verifyButton}`}
+                {
+                    // Translator: Full sentence "Do you remember your password? Verify now"
+                    c('Info').jt`Do you remember your password? ${verifyButton}`
+                }
             </TopBanner>
         </>
     );
