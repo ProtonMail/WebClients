@@ -79,33 +79,35 @@ export const useAttachments = ({
 
     const { localID } = message;
 
-    const updatePendingUpload = useHandler((pendingUploads: PendingUpload[], error?: any) => {
-        const previousValue = getPendingUpload();
-        setPendingUploads(pendingUploads);
+    const updatePendingUpload = useHandler(
+        ({ pendingUploads, error }: { pendingUploads: PendingUpload[]; error?: any }) => {
+            const previousValue = getPendingUpload();
+            setPendingUploads(pendingUploads);
 
-        if (error) {
-            rejectUpload(error);
-        } else if (!pendingUploads.length && previousValue.length) {
-            resolveUpload();
+            if (error) {
+                rejectUpload(error);
+            } else if (!pendingUploads.length && previousValue.length) {
+                resolveUpload();
+            }
         }
-    });
+    );
 
-    const addPendingUploads = (pendingUploads: PendingUpload[]) => {
-        updatePendingUpload([...getPendingUpload(), ...pendingUploads]);
+    const addPendingUploads = ({ pendingUploads }: { pendingUploads: PendingUpload[] }) => {
+        updatePendingUpload({ pendingUploads: [...getPendingUpload(), ...pendingUploads] });
     };
 
-    const removePendingUpload = (pendingUpload: PendingUpload, error?: any) => {
-        updatePendingUpload(
-            getPendingUpload().filter((aPendingUpload) => aPendingUpload !== pendingUpload),
-            error
-        );
+    const removePendingUpload = ({ pendingUpload, error }: { pendingUpload: PendingUpload; error?: any }) => {
+        updatePendingUpload({
+            pendingUploads: getPendingUpload().filter((aPendingUpload) => aPendingUpload !== pendingUpload),
+            error,
+        });
     };
 
     /**
      * Wait for upload to finish, modify the message, add to embedded images if needed
      */
     const handleAddAttachmentEnd = useHandler(
-        async (action: ATTACHMENT_DISPOSITION, pendingUpload: AttachmentUpload) => {
+        async ({ action, pendingUpload }: { action: ATTACHMENT_DISPOSITION; pendingUpload: AttachmentUpload }) => {
             try {
                 const upload = await pendingUpload.upload.resultPromise;
 
@@ -142,7 +144,7 @@ export const useAttachments = ({
                     editorActionsRef?.current?.insertEmbedded(upload.attachment, upload.packets.Preview);
                 }
 
-                removePendingUpload(pendingUpload);
+                removePendingUpload({ pendingUpload });
             } catch (error: any) {
                 if (error?.message === MESSAGE_ALREADY_SENT_INTERNAL_ERROR) {
                     onMessageAlreadySent();
@@ -154,7 +156,7 @@ export const useAttachments = ({
                     });
                 }
 
-                removePendingUpload(pendingUpload, error);
+                removePendingUpload({ pendingUpload, error });
             }
         }
     );
@@ -186,7 +188,7 @@ export const useAttachments = ({
             if (!message.data?.ID) {
                 // Just before save, insert dummy uploads
                 // this provides instant visual feedback to the user
-                addPendingUploads(files.map(createDummyUpload));
+                addPendingUploads({ pendingUploads: files.map(createDummyUpload) });
                 hasDummyUploads = true;
 
                 // Then save message
@@ -219,8 +221,8 @@ export const useAttachments = ({
             const pendingUploads = strippedFiles.map<AttachmentUpload>((file, i) => ({ file, upload: uploads[i] }));
 
             // Add real pending uploads
-            addPendingUploads(pendingUploads);
-            pendingUploads.forEach((pendingUpload) => handleAddAttachmentEnd(action, pendingUpload));
+            addPendingUploads({ pendingUploads });
+            pendingUploads.forEach((pendingUpload) => handleAddAttachmentEnd({ action, pendingUpload }));
         }
     );
 
@@ -287,7 +289,7 @@ export const useAttachments = ({
         if (isAttachmentUpload(pendingUpload)) {
             pendingUpload.upload.abort();
         }
-        void removePendingUpload(pendingUpload);
+        void removePendingUpload({ pendingUpload });
     };
 
     return {
