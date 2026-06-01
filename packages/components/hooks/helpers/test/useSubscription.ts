@@ -18,7 +18,7 @@ export const subscriptionDefaultResponse: {
 };
 
 export function mockSubscriptionApi(subscription: typeof subscriptionDefaultResponse = subscriptionDefaultResponse) {
-    addApiMock('payments/v5/subscription', () => subscription);
+    addApiMock('payments/v4/subscription', () => subscription);
 }
 
 export const defaultSubscriptionCache = formatSubscription(
