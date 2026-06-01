@@ -32,7 +32,11 @@ export const UploadDragDrop = ({ children, className, disabled, onDrop }: Upload
         [overlayEnabled, overlayIsVisible]
     );
 
-    const handleDragLeave = () => {
+    const handleDragLeave = (e: React.DragEvent<HTMLDivElement>) => {
+        // Ignore dragLeave events fired when the cursor moves over a child element of the overlay
+        if (e.relatedTarget instanceof Node && e.currentTarget.contains(e.relatedTarget)) {
+            return;
+        }
         setOverlayIsVisible(false);
     };
 
