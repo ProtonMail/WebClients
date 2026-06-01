@@ -36,7 +36,6 @@ const PrivacySecuritySettings = ({
     const { createNotification } = useNotifications();
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const { ImageProxy, ConfirmLink, RemoveImageMetadata } = mailSettings;
-    const loading = loadingMailSettings;
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
     const handleRemoveImageMetadata = async (value: boolean) => {
@@ -45,6 +44,7 @@ const PrivacySecuritySettings = ({
         notifyPreferenceSaved();
     };
 
+    const loading = loadingMailSettings || '_isDefault' in mailSettings;
     if (loading) {
         return loader;
     }
