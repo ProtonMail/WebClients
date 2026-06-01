@@ -2,7 +2,8 @@ import type { Api } from '@proton/shared/lib/interfaces';
 
 import { ADDON_NAMES, PLANS } from '../constants';
 import { SubscriptionPlatform } from '../subscription/constants';
-import { fetchPreviousSubscription } from './api';
+import type { Subscription } from '../subscription/interface';
+import { fetchPreviousSubscription, getSubscription } from './api';
 
 describe('fetchPreviousSubscription', () => {
     const buildApi = (response: unknown) => jest.fn().mockResolvedValue(response) as unknown as Api;
@@ -178,5 +179,52 @@ describe('fetchPreviousSubscription', () => {
             url: 'payments/v6/subscription/latest',
             method: 'get',
         });
+    });
+});
+
+describe('getSubscription', () => {
+    const buildSub = (override: Partial<Subscription> = {}): Subscription =>
+        ({
+            ID: 'sub-1',
+            Cycle: 12,
+            Currency: 'EUR',
+            Amount: 9588,
+            Plans: [],
+            PeriodStart: 1700000000,
+            PeriodEnd: 1731622400,
+            CreateTime: 1700000000,
+            CouponCode: null,
+            ...override,
+        }) as Subscription;
+
+    const buildApi = (response: unknown) => jest.fn().mockResolvedValue(response) as unknown as Api;
+
+    it('issues GET payments/v4/subscription', async () => {
+        const sub = buildSub();
+        const api = buildApi({ Subscription: sub, UpcomingSubscription: undefined });
+
+        await getSubscription(api, undefined);
+
+        expect(api).toHaveBeenCalledWith(expect.objectContaining({ url: 'payments/v4/subscription', method: 'get' }));
+    });
+
+    it('returns subscription without upcoming when UpcomingSubscription is absent', async () => {
+        const sub = buildSub();
+        const api = buildApi({ Subscription: sub, UpcomingSubscription: undefined });
+
+        const result = await getSubscription(api, undefined);
+
+        expect(result.ID).toBe(sub.ID);
+        expect(result.UpcomingSubscription).toBeUndefined();
+    });
+
+    it('attaches UpcomingSubscription when present', async () => {
+        const sub = buildSub({ ID: 'sub-1' });
+        const upcoming = buildSub({ ID: 'sub-upcoming' });
+        const api = buildApi({ Subscription: sub, UpcomingSubscription: upcoming });
+
+        const result = await getSubscription(api, undefined);
+
+        expect(result.UpcomingSubscription?.ID).toBe('sub-upcoming');
     });
 });
