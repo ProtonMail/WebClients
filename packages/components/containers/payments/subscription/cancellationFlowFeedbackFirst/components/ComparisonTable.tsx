@@ -2,12 +2,12 @@
 import type { ReactNode } from 'react';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import clsx from '@proton/utils/clsx';
 
 const CURRENT_PLAN_COLUMN_BG = 'bg-weak';
@@ -52,7 +52,7 @@ const StackRow = ({ icon, label, value, tooltip }: StackRowProps) => {
                             <span>{label}</span>
                             {tooltip && (
                                 <Tooltip openDelay={200} title={tooltip}>
-                                    <Icon name="info-circle" className="color-primary shrink-0" />
+                                    <IcInfoCircle className="color-primary shrink-0" />
                                 </Tooltip>
                             )}
                         </div>
@@ -124,7 +124,7 @@ const SideBySideTable = ({ leftHeader, rightHeader, features, headerClassName }:
                                         <span>{label}</span>
                                         {tooltip && (
                                             <Tooltip openDelay={200} title={tooltip}>
-                                                <Icon name="info-circle" className="color-primary shrink-0" />
+                                                <IcInfoCircle className="color-primary shrink-0" />
                                             </Tooltip>
                                         )}
                                     </div>
