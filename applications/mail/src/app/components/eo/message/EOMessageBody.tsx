@@ -43,10 +43,10 @@ const EOMessageBody = ({
     const theme = useTheme();
     const plain = isPlainText(message.data);
 
-    const [content, blockquote] = useMemo(
+    const [content, blockquote, afterBlockquote] = useMemo(
         () =>
             plain
-                ? [message.messageDocument?.plainText as string, '']
+                ? ([message.messageDocument?.plainText as string, '', ''] as [string, string, string])
                 : locateBlockquote(message.messageDocument?.document),
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-6E9466
         [message.messageDocument?.document?.innerHTML, message.messageDocument?.plainText, plain]
@@ -89,6 +89,7 @@ const EOMessageBody = ({
                         iframeRef={iframeRef}
                         content={content}
                         blockquoteContent={blockquote}
+                        afterBlockquoteContent={afterBlockquote}
                         showBlockquote={originalMessageMode}
                         showBlockquoteToggle={isBlockquote}
                         onBlockquoteToggle={onBlockquoteToggle}
