@@ -61,7 +61,7 @@ jest.mock('../../../legacy/hooks/drive/useActiveShare', () => ({
 }));
 
 const mockShowSharingModal = jest.fn();
-jest.mock('@proton/drive/modules/sharingModal', () => ({
+jest.mock('@proton/drive/modals/sharingModal', () => ({
     useSharingModal: () => ({
         sharingModal: null,
         showSharingModal: mockShowSharingModal,

@@ -2,8 +2,8 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { MemberRole, NodeType } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
+import { useCreateFolderModal } from '@proton/drive/modals/createFolderModal';
 
-import { useCreateFolderModal } from '../CreateFolderModal';
 import { useCopyItems } from './useCopyItems';
 import { useCopyItemsModalState } from './useCopyItemsModalState';
 
@@ -26,7 +26,7 @@ jest.mock('../../modules/directoryTree', () => {
 
 jest.mock('./useCopyItems');
 jest.mock('@proton/drive/legacy/errorHandling');
-jest.mock('../CreateFolderModal');
+jest.mock('@proton/drive/modals/createFolderModal');
 
 const mockedUseCopyItems = jest.mocked(useCopyItems);
 const mockedUseCreateFolderModal = jest.mocked(useCreateFolderModal);

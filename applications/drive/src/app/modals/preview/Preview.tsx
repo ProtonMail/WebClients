@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
 import { FilePreview, NavigationControl } from '@proton/components';
-import { useSharingModal } from '@proton/drive/modules/sharingModal';
+import { useSharingModal } from '@proton/drive/modals/sharingModal';
 
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFlagsDriveSheet } from '../../modules/featureFlag';

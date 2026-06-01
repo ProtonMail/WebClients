@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { ToolbarButton } from '@proton/components';
 import { generateNodeUid, getDrive } from '@proton/drive';
-import { useSharingModal } from '@proton/drive/modules/sharingModal';
+import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 
 interface Props {
