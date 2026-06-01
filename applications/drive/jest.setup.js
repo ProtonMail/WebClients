@@ -74,12 +74,6 @@ jest.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
     __esModule: true,
 }));
 
-jest.mock('./src/app/legacy/store/_downloads/fileSaver/download.ts', () => {
-    return {
-        initDownloadSW: jest.fn().mockResolvedValue(true),
-    };
-});
-
 jest.mock('./src/app/legacy/store/_uploads/initUploadFileWorker.ts', () => {
     return {
         initUploadFileWorker: jest.fn(),

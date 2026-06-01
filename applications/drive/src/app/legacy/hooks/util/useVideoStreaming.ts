@@ -6,7 +6,7 @@ import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandli
 import metrics from '@proton/metrics/index';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 
-import { initDownloadSW } from '../../../legacy/store/_downloads/fileSaver/download';
+import { initDownloadSW } from '../../../modules/fileSaver/download';
 
 type UseVideoStreamingProps = {
     mimeType?: string;
