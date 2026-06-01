@@ -3,8 +3,7 @@ import { c, msgid } from 'ttag';
 import { useConfirmActionModal, useNotifications } from '@proton/components';
 import { showAggregatedErrorNotification } from '@proton/drive/legacy/errorHandling';
 import { getEllipsedName } from '@proton/drive/modules/intl';
-
-import { useListNotifications } from '../../utils/useListNotifications';
+import { useListNotifications } from '@proton/drive/modules/notifications';
 
 export const useTrashNotifications = () => {
     const { createSuccessMessage } = useListNotifications();

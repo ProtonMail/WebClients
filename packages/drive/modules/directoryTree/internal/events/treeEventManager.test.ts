@@ -1,26 +1,25 @@
-import { NodeType, getDrive } from '@proton/drive/index';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
-
-import { getDeviceName } from '../../../utils/sdk/getNodeName';
+import { NodeType, getDrive } from '../../../../index';
+import { BusDriverEventName, getBusDriver } from '../../../../internal/BusDriver';
+import { getNodeEntity } from '../../../../legacy/sdkUtils/getNodeEntity';
+import { getDeviceName } from '../../../nodes';
 import { directoryTreeStoreFactory } from '../directoryTreeStoreFactory';
 import { DEVICES_ROOT_ID, SHARED_WITH_ME_ROOT_ID, makeTreeItemId } from '../helpers';
 import type { TreeStoreItem } from '../types';
 import { DirectoryTreeRootType } from '../types';
 import { TreeEventManager } from './treeEventManager';
 
-jest.mock('@proton/drive/index', () => ({
-    ...jest.requireActual('@proton/drive/index'),
+jest.mock('../../../../index', () => ({
+    ...jest.requireActual('../../../../index'),
     getDrive: jest.fn(),
 }));
 
-jest.mock('@proton/drive/internal/BusDriver', () => ({
-    ...jest.requireActual('@proton/drive/internal/BusDriver'),
+jest.mock('../../../../internal/BusDriver', () => ({
+    ...jest.requireActual('../../../../internal/BusDriver'),
     getBusDriver: jest.fn(),
 }));
 
-jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity');
-jest.mock('../../../utils/sdk/getNodeName');
+jest.mock('../../../../legacy/sdkUtils/getNodeEntity');
+jest.mock('../../../nodes');
 
 const mockedGetBusDriver = jest.mocked(getBusDriver);
 const mockedGetDrive = jest.mocked(getDrive);

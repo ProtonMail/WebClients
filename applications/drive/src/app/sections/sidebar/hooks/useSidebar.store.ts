@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-import { getNodeUidFromTreeItemId } from '../../../modules/directoryTree/helpers';
+import { getNodeUidFromTreeItemId } from '@proton/drive/modules/directoryTree';
 
 type SidebarStore = {
     isCollapsed: boolean;

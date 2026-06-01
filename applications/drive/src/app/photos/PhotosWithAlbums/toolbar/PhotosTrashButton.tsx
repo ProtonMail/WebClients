@@ -2,12 +2,12 @@ import { c } from 'ttag';
 
 import { DropdownMenuButton, ToolbarButton } from '@proton/components';
 import { getDriveForPhotos } from '@proton/drive/index';
+import { getNodeName, getNodeNameFallback } from '@proton/drive/modules/nodes';
 import { useLoading } from '@proton/hooks';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import clsx from '@proton/utils/clsx';
 
 import { useTrashActions } from '../../../sections/commonActions/useTrashActions';
-import { getNodeName, getNodeNameFallback } from '../../../utils/sdk/getNodeName';
 import type { PhotoItem } from '../../usePhotos.store';
 
 interface Props {
