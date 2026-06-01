@@ -28,7 +28,6 @@ import type {
 } from '@proton/llm/lib/types';
 import { ASSISTANT_TYPE, ERROR_TYPE, GENERATION_SELECTION_TYPE } from '@proton/shared/lib/assistant';
 import { domIsBusy } from '@proton/shared/lib/busy';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 interface Props {
@@ -332,7 +331,7 @@ export const useAssistantLocal = ({ commonState, active }: Props): AssistantHook
                         userDownloadedModel: false,
                     }));
                 }
-            } catch {}
+            } catch { }
         })().finally(() => {
             // Reset init promise after init or when init failed so that we can
             // - Start init again if necessary
@@ -535,9 +534,6 @@ export const useAssistantLocal = ({ commonState, active }: Props): AssistantHook
 
         const id = setInterval(() => {
             if (domIsBusy()) {
-                return;
-            }
-            if (isElectronApp && document.hasFocus()) {
                 return;
             }
 
