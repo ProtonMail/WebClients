@@ -4,6 +4,7 @@ import { selectUser } from '../user';
 import { selectUserSettings } from '../userSettings';
 import { getIsPasswordReminderAvailable } from './helpers/getIsPasswordReminderAvailable';
 import { getIsPasswordReminderEnabled } from './helpers/getIsPasswordReminderEnabled';
+import { getMessageCadenceHasExpired } from './helpers/getMessageCadenceHasExpired';
 import { getShowPasswordReminders } from './helpers/getShowPasswordReminders';
 import { type PasswordReminderReduxState, passwordReminderActions } from './index';
 
@@ -37,6 +38,7 @@ export const passwordReminderListener = (startListening: SharedStartListening<Re
                 user: user.value,
             });
             const isEnabled = getIsPasswordReminderEnabled({ userSettings: userSettings.value });
+            const messageCadenceHasExpired = getMessageCadenceHasExpired({ userSettings: userSettings.value });
 
             const showReminders = getShowPasswordReminders({
                 unleashClient: extra.unleashClient,
@@ -46,6 +48,7 @@ export const passwordReminderListener = (startListening: SharedStartListening<Re
 
             dispatch(passwordReminderActions.setIsAvailable({ isAvailable }));
             dispatch(passwordReminderActions.setIsEnabled({ isEnabled }));
+            dispatch(passwordReminderActions.setMessageCadenceHasExpired({ messageCadenceHasExpired }));
             dispatch(passwordReminderActions.setShowReminders({ showReminders }));
         },
     });
