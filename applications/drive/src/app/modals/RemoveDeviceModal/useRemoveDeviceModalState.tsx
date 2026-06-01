@@ -7,11 +7,11 @@ import type { ProtonDriveClient } from '@proton/drive';
 import { getDrive } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
+import { getDeviceName } from '@proton/drive/modules/nodes';
 import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { getDeviceByUid } from '../../utils/sdk/getDeviceByUid';
-import { getDeviceName } from '../../utils/sdk/getNodeName';
 
 export const deviceNameValidator = (value: string, deviceName: string) =>
     value !== deviceName ? c('Error').t`Device name does not match` : '';

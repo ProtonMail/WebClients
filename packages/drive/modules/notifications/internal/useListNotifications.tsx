@@ -1,10 +1,14 @@
+import type { ReactNode } from 'react';
 import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { NotificationButton, useNotifications } from '@proton/components';
+import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
+import useNotifications from '@proton/components/hooks/useNotifications';
 
-import { useErrorHandler } from '../legacy/store/_utils';
+import type { ValidationError } from '../../../legacy/errorHandling/ValidationError';
+import { isValidationError } from '../../../legacy/errorHandling/ValidationError';
+import { isIgnoredError, sendErrorReport } from '../../../legacy/errorHandling/sendErrorReport';
 
 const SuccessNotificationContent = ({ message, undoAction }: { message: string; undoAction?: () => Promise<void> }) => {
     const [undoClicked, setUndoClicked] = useState(false);
@@ -28,7 +32,40 @@ const SuccessNotificationContent = ({ message, undoAction }: { message: string; 
 
 export function useListNotifications() {
     const { createNotification } = useNotifications();
-    const { showAggregatedErrorNotification } = useErrorHandler();
+
+    const showAggregatedErrorNotification = (errors: unknown[], getMessage: (errors: unknown[]) => ReactNode) => {
+        const nonIgnoredErrors = errors.filter((error) => !isIgnoredError(error));
+        if (!nonIgnoredErrors.length) {
+            return;
+        }
+
+        const validationErrors: ValidationError[] = Object.values(
+            nonIgnoredErrors.filter(isValidationError).reduce<Record<string, ValidationError>>((acc, error) => {
+                if (!acc[error.message]) {
+                    acc[error.message] = error;
+                }
+                return acc;
+            }, {})
+        );
+
+        validationErrors.forEach((error) => {
+            createNotification({
+                type: 'error',
+                text: error.message,
+            });
+        });
+
+        const unknownErrors = nonIgnoredErrors.filter((error) => !isValidationError(error));
+
+        if (unknownErrors.length !== 0) {
+            createNotification({
+                type: 'error',
+                text: getMessage(unknownErrors),
+            });
+        }
+
+        errors.forEach((e) => sendErrorReport(e));
+    };
 
     const createSuccessMessage = (
         items: { name: string; uid: string }[],

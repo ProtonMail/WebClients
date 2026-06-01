@@ -2,9 +2,8 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { generateNodeUid } from '@proton/drive';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
+import { directoryTreeFactory, makeTreeItemId } from '@proton/drive/modules/directoryTree';
 
-import { directoryTreeFactory } from '../../modules/directoryTree';
-import { makeTreeItemId } from '../../modules/directoryTree/helpers';
 import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
 import { createMockNodeEntity } from '../../utils/test/nodeEntity';
 import { useMoveItemsModalState } from './useMoveItemsModalState';
@@ -20,7 +19,8 @@ const mockIterateNodes = jest.fn();
 const mockOnClose = jest.fn();
 const mockOnExit = jest.fn();
 
-jest.mock('../../modules/directoryTree', () => ({
+jest.mock('@proton/drive/modules/directoryTree', () => ({
+    ...jest.requireActual('@proton/drive/modules/directoryTree'),
     directoryTreeFactory: jest.fn(() =>
         jest.fn(() => ({
             initializeTree: mockInitializeTree,
@@ -45,7 +45,7 @@ jest.mock('@proton/components', () => ({
     useNotifications: jest.fn(() => ({ createNotification: mockCreateNotification })),
 }));
 
-jest.mock('../../modules/moveNodes', () => ({
+jest.mock('@proton/drive/modules/moveNodes', () => ({
     useMoveNodes: jest.fn(() => ({ moveNodes: mockMoveNodes, isLoading: false })),
 }));
 

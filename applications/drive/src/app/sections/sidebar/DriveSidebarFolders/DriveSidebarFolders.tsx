@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { getDrive } from '@proton/drive/index';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import type { TreeItemWithChildren } from '@proton/drive/modules/directoryTree';
 
-import type { TreeItemWithChildren } from '../../../modules/directoryTree';
 import { DriveSidebarFoldersRoot } from './DriveSidebarFoldersRoot';
 import { DriveSidebarSubfolders } from './DriveSidebarSubfolders';
 

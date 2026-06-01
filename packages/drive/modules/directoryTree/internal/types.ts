@@ -1,5 +1,4 @@
-import type { MemberRole, NodeType } from '@proton/drive';
-
+import type { MemberRole, NodeType } from '../../../index';
 import type { directoryTreeStoreFactory } from './directoryTreeStoreFactory';
 
 export enum DirectoryTreeRootType {

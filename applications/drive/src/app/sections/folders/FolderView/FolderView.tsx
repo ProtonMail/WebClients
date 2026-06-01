@@ -4,11 +4,11 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { Loader, useAppTitle } from '@proton/components';
 import { splitNodeUid } from '@proton/drive/index';
+import { type MoveNodesItemMap, useMoveNodes } from '@proton/drive/modules/moveNodes';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import UploadDragDrop from '../../../legacy/components/uploads/UploadDragDrop/UploadDragDrop';
 import { useUserSettings } from '../../../legacy/store';
-import { type MoveNodesItemMap, useMoveNodes } from '../../../modules/moveNodes';
 import { useDriveDragMove } from '../../../modules/selection/useDriveDragMove';
 import { SortField } from '../../../modules/sorting/types';
 import { SortField as StoredSortField } from '../../../modules/userSettings/type';
