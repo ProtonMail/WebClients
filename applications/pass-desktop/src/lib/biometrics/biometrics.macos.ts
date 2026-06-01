@@ -1,6 +1,6 @@
+import { uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 import { systemPreferences } from 'electron';
 
-import { uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 import { biometric as macBiometrics } from '../../../native';
@@ -12,8 +12,8 @@ const factory: BiometricsFactory = () => {
 
     const biometrics: BiometricsPlatformHandler = {
         canCheckPresence: () => Promise.resolve(true),
-        checkPresence: (_, reason) => checkPresence(reason),
-        getSecret: async (_, key, version) => {
+        checkPresence: (reason) => checkPresence(reason),
+        getSecret: async (key, version) => {
             await checkPresence();
 
             const secretBytes = (await macBiometrics.getSecret(key)) as Uint8Array<ArrayBuffer>;
@@ -29,8 +29,8 @@ const factory: BiometricsFactory = () => {
              * any conversions to and from strings */
             return uint8ArrayToString(secretBytes);
         },
-        setSecret: (_, key, secret) => macBiometrics.setSecret(key, secret),
-        deleteSecret: (_, key) => macBiometrics.deleteSecret(key),
+        setSecret: (key, secret) => macBiometrics.setSecret(key, secret),
+        deleteSecret: (key) => macBiometrics.deleteSecret(key),
     };
     return biometrics;
 };
