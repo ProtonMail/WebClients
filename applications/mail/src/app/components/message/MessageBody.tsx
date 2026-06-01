@@ -71,10 +71,10 @@ const MessageBody = ({
         localID: message.localID,
         useProxy: !!mailSettings.ImageProxy,
     });
-    const [content, blockquote] = useMemo(
+    const [content, blockquote, afterBlockquote] = useMemo(
         () =>
             plain
-                ? [message.messageDocument?.plainText as string, '']
+                ? ([message.messageDocument?.plainText as string, '', ''] as [string, string, string])
                 : locateBlockquote(message.messageDocument?.document),
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-6B18F7
         [message.messageDocument?.document?.innerHTML, message.messageDocument?.plainText, plain]
@@ -161,6 +161,7 @@ const MessageBody = ({
                         iframeRef={iframeRef}
                         content={highlightedContent}
                         blockquoteContent={highlightedBlockquote}
+                        afterBlockquoteContent={afterBlockquote}
                         showBlockquoteToggle={showButton}
                         showBlockquote={showBlockquote || showBlockquoteResults}
                         onBlockquoteToggle={toggleOriginalMessage}

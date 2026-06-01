@@ -110,7 +110,7 @@ describe('messageBlockquote', () => {
         expect(after).not.toContain('blockquote1');
     });
 
-    it(`should display nothing in blockquote when there is text after blockquotes`, () => {
+    it(`should keep trailing text after the blockquote in afterBlockquote`, () => {
         const content = `
             Email content
             <div class="protonmail_quote">
@@ -118,15 +118,15 @@ describe('messageBlockquote', () => {
             </div>
             text after blockquote`;
 
-        const [before, after] = locateBlockquote(createDocument(content));
+        const [before, blockquote, afterBlockquote] = locateBlockquote(createDocument(content));
 
         expect(before).toContain('Email content');
-        expect(before).toContain('blockquote1');
-        expect(before).toContain('text after blockquote');
-        expect(after).toEqual('');
+        expect(before).not.toContain('blockquote1');
+        expect(blockquote).toContain('blockquote1');
+        expect(afterBlockquote).toContain('text after blockquote');
     });
 
-    it(`should display nothing in blockquote when there is an image after blockquotes`, () => {
+    it(`should keep a trailing image anchor after the blockquote in afterBlockquote`, () => {
         const content = `
             Email content
             <div class="protonmail_quote">
@@ -134,12 +134,38 @@ describe('messageBlockquote', () => {
             </div>
              <span class="proton-image-anchor" />`;
 
-        const [before, after] = locateBlockquote(createDocument(content));
+        const [before, blockquote, afterBlockquote] = locateBlockquote(createDocument(content));
 
         expect(before).toContain('Email content');
-        expect(before).toContain('blockquote1');
-        expect(before).toContain('proton-image-anchor');
-        expect(after).toEqual('');
+        expect(before).not.toContain('blockquote1');
+        expect(blockquote).toContain('blockquote1');
+        expect(afterBlockquote).toContain('proton-image-anchor');
+    });
+
+    it('should keep an AVG-style trailing footer outside WordSection1 in afterBlockquote', () => {
+        // The separator + quote live inside WordSection1, but the antivirus signature
+        // is appended as a sibling of WordSection1. Detection should still succeed and
+        // the footer should be preserved in the third return value so it can render
+        // after the collapsible blockquote.
+        const content = `
+            <div class="WordSection1">
+                <p>Original email content</p>
+                <div style="border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm">
+                    <p><b>From:</b> sender@example.com</p>
+                </div>
+                <p>Previous message body</p>
+            </div>
+            <div id="avg-signature">Sans virus. www.avg.com</div>`;
+
+        const [before, blockquote, afterBlockquote] = locateBlockquote(createDocument(content));
+
+        expect(before).toContain('Original email content');
+        expect(before).not.toContain('From:');
+        expect(before).not.toContain('Sans virus');
+        expect(blockquote).toContain('From:');
+        expect(blockquote).toContain('Previous message body');
+        expect(blockquote).not.toContain('Sans virus');
+        expect(afterBlockquote).toContain('Sans virus');
     });
 
     it('should detect Microsoft Word email border separator and wrap the following content in a blockquote', () => {
@@ -162,6 +188,153 @@ describe('messageBlockquote', () => {
         expect(after).toContain('From:');
         expect(after).toContain('Previous message content');
         expect(after).toContain('border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm');
+    });
+
+    it('should detect Microsoft Word #B5C4DF separator (Outlook 2007/2010)', () => {
+        const content = `
+            <div class="WordSection1">
+                <p>Original email content</p>
+                <div style="border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0cm 0cm 0cm">
+                    <p><b>From:</b> sender@example.com</p>
+                </div>
+                <p>Previous message content</p>
+            </div>`;
+
+        const [before, after] = locateBlockquote(createDocument(content));
+
+        expect(before).toContain('Original email content');
+        expect(after).toContain('From:');
+        expect(after).toContain('Previous message content');
+    });
+
+    it('should walk up to the wrapper div when the separator is its first child', () => {
+        // The separator is wrapped in its own <div>, and the actual previous message body
+        // sits as a sibling of that wrapper — not of the separator. Without walking up,
+        // only the headers would be captured and "Previous message body" would leak out.
+        const content = `
+            <div class="WordSection1">
+                <p>Original email content</p>
+                <p>&nbsp;</p>
+                <div>
+                    <div style="border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm">
+                        <p><b>From:</b> sender@example.com</p>
+                    </div>
+                </div>
+                <p>Previous message body</p>
+            </div>`;
+
+        const [before, after] = locateBlockquote(createDocument(content));
+
+        expect(before).toContain('Original email content');
+        expect(before).not.toContain('From:');
+        expect(before).not.toContain('Previous message body');
+        expect(after).toContain('From:');
+        expect(after).toContain('Previous message body');
+    });
+
+    it('should match French "De&nbsp;:" header (non-breaking space)', () => {
+        // French typography uses a non-breaking space before the colon.
+        // \u00A0 is the literal nbsp character that browsers produce from &nbsp;
+        const content = `
+            <div>
+                <p>My reply</p>
+                <div style="border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm">
+                    <p><b>De\u00A0:</b> sender@example.com</p>
+                </div>
+                <p>Previous message body</p>
+            </div>`;
+
+        const [before, after] = locateBlockquote(createDocument(content));
+
+        expect(before).toContain('My reply');
+        expect(before).not.toContain('Previous message body');
+        expect(after).toContain('De');
+        expect(after).toContain('Previous message body');
+    });
+
+    it('should detect Windows Mail / Outlook iOS long-form border-top style', () => {
+        // Windows Mail uses `border-top-style: solid` with separate color/width
+        // declarations instead of the Outlook 2007+ shorthand.
+        const content = `
+            <div>
+                <p>My reply</p>
+                <div style="padding-top: 5px; border-top-color: rgb(229, 229, 229); border-top-width: 1px; border-top-style: solid;">
+                    <p><b>From:</b> sender@example.com</p>
+                </div>
+                <p>Previous message body</p>
+            </div>`;
+
+        const [before, after] = locateBlockquote(createDocument(content));
+
+        expect(before).toContain('My reply');
+        expect(before).not.toContain('From:');
+        expect(before).not.toContain('Previous message body');
+        expect(after).toContain('From:');
+        expect(after).toContain('Previous message body');
+    });
+
+    it('should not wrap an Outlook-style separator that is not followed by a "From:" header', () => {
+        // Without WordSection1, processOutlookTopBorderEmail handles detection and
+        // requires a localized header to confirm the separator is a real quote marker.
+        const content = `
+            <div>
+                <p>My note about borders</p>
+                <div style="border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm">
+                    <p>Just a styled divider, not a quote</p>
+                </div>
+                <p>More of my own content</p>
+            </div>`;
+
+        const [, after] = locateBlockquote(createDocument(content));
+
+        expect(after).toEqual('');
+    });
+
+    it('should pick the inner gmail_quote, not the outer gmail_quote_container wrapper', () => {
+        // Gmail's "forward" composer wraps the entire body in
+        // `.gmail_quote.gmail_quote_container` (user note + forwarded message),
+        // with the actual forwarded message in an inner `.gmail_quote`. Only
+        // the inner one is a real quote.
+        const content = `
+            <div dir="ltr">
+                <div class="gmail_quote gmail_quote_container">
+                    <div>Hi Andy, here's the message I wanted to forward.</div>
+                    <div class="gmail_quote">
+                        <div class="gmail_attr">---------- Forwarded message ---------<br>From: Someone</div>
+                        <p>Original forwarded body</p>
+                    </div>
+                </div>
+            </div>`;
+
+        const [before, after] = locateBlockquote(createDocument(content));
+
+        expect(before).toContain('Hi Andy, here');
+        expect(before).not.toContain('Forwarded message');
+        expect(before).not.toContain('Original forwarded body');
+        expect(after).toContain('Forwarded message');
+        expect(after).toContain('Original forwarded body');
+    });
+
+    it('should not create a duplicate blockquote when one already exists', () => {
+        // If a real blockquote is already present, the Outlook fallback must bail
+        // out instead of producing a second wrapping.
+        const content = `
+            <div>
+                <p>My reply</p>
+                <blockquote type="cite">
+                    <div style="border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm">
+                        <p><b>From:</b> sender@example.com</p>
+                    </div>
+                    <p>Quoted body</p>
+                </blockquote>
+            </div>`;
+
+        const [before, after] = locateBlockquote(createDocument(content));
+
+        expect(before).toContain('My reply');
+        expect(after).toContain('Quoted body');
+        // Only one <blockquote ... type="cite"> tag should remain.
+        expect(after.match(/<blockquote/g)?.length).toBe(1);
     });
 });
 

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { ThemeContextInterface } from '@proton/components/containers/themes/ThemeProvider';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import {
+    MESSAGE_IFRAME_AFTER_BLOCKQUOTE_ID,
     MESSAGE_IFRAME_BLOCKQUOTE_ID,
     MESSAGE_IFRAME_ROOT_ID,
     MESSAGE_IFRAME_TOGGLE_ID,
@@ -51,7 +52,7 @@ const useInitIframeContent = ({
             let emailContent = content;
 
             if (!isPlainText) {
-                emailContent += `<div id='${MESSAGE_IFRAME_TOGGLE_ID}'></div><div id='${MESSAGE_IFRAME_BLOCKQUOTE_ID}'></div>`;
+                emailContent += `<div id='${MESSAGE_IFRAME_TOGGLE_ID}'></div><div id='${MESSAGE_IFRAME_BLOCKQUOTE_ID}'></div><div id='${MESSAGE_IFRAME_AFTER_BLOCKQUOTE_ID}'></div>`;
             }
 
             const doc = iframeRef.current?.contentDocument;

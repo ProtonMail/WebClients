@@ -9,8 +9,11 @@ export const BLOCKQUOTE_SELECTORS = [
     '.protonmail_quote', // Proton Mail
     // Gmail creates both div.gmail_quote and blockquote.gmail_quote. The div
     // version marks text but does not cause indentation, but both should be
-    // considered quoted text.
-    '.gmail_quote', // Gmail
+    // considered quoted text. We exclude `gmail_quote_container` — that's
+    // Gmail's compose-time wrapper for forwards which contains the user's
+    // own forward note plus the actual forwarded message; only the inner
+    // `.gmail_quote` is the real quoted content.
+    '.gmail_quote:not(.gmail_quote_container)', // Gmail
     'div.gmail_extra', // Gmail
     'div.yahoo_quoted', // Yahoo Mail
     'blockquote.iosymail', // Yahoo iOS Mail
@@ -36,12 +39,6 @@ export const BLOCKQUOTE_SELECTORS = [
 const BLOCKQUOTE_TEXT_SELECTORS = [ORIGINAL_MESSAGE];
 
 const BLOCKQUOTE_SELECTOR = BLOCKQUOTE_SELECTORS.map((selector) => `${selector}:not(:empty)`).join(',');
-
-// When we try to determine what part of the body is the blockquote,
-// We want to check that there is no text or no "important" element after the element we're testing
-const ELEMENTS_AFTER_BLOCKQUOTES = [
-    '.proton-image-anchor', // At this point we already replaced images with an anchor, but we want to keep them
-];
 
 /**
  * Returns content before and after match in the source
@@ -106,6 +103,17 @@ const moveNodesToBlockquote = (nodes: Node[], blockquote: Element): void => {
     });
 };
 
+// When the separator is the only/first child of its parent, the parent is just a wrapper
+// around the quoted message. Walking up captures the real surrounding content as siblings.
+// Mirrors mailgun/talon's `cut_microsoft_quote` adjustment.
+const walkUpIfFirstChild = (separator: Element): Element => {
+    const parent = separator.parentElement;
+    if (parent && parent.firstElementChild === separator) {
+        return parent;
+    }
+    return separator;
+};
+
 const processMicrosoftWordEmail = (inputDocument: Element): Element => {
     const wordSection = inputDocument.querySelector('div.WordSection1');
 
@@ -131,48 +139,171 @@ const processMicrosoftWordEmail = (inputDocument: Element): Element => {
 
     blockquote.setAttribute('type', 'cite');
 
-    const elementsToMove = collectSiblingNodesAfter(separatorDiv);
+    const adjustedSeparator = walkUpIfFirstChild(separatorDiv);
+    const targetParent = adjustedSeparator.parentElement ?? wordSection;
+    const elementsToMove = collectSiblingNodesAfter(adjustedSeparator);
     moveNodesToBlockquote(elementsToMove, blockquote);
 
-    wordSection.appendChild(blockquote);
+    targetParent.appendChild(blockquote);
+
+    return inputDocument;
+};
+
+const FROM_HEADER_PATTERNS = [
+    'From:', // English
+    'De :', // French
+    'De:', // Spanish / Portuguese / French (no space)
+    'Von:', // German
+    'Da:', // Italian
+    'Van:', // Dutch
+    'Od:', // Polish / Czech / Slovak
+    'От:', // Russian / Bulgarian
+    'Από:', // Greek
+    'Från:', // Swedish
+    'Fra:', // Norwegian / Danish
+    'Lähettäjä:', // Finnish
+    'Feladó:', // Hungarian
+    'Kimden:', // Turkish
+    'מאת:', // Hebrew
+    'من:', // Arabic
+    'Từ:', // Vietnamese
+    'จาก:', // Thai
+    '差出人:', // Japanese
+    '送信者:', // Japanese (alternative)
+    '发件人:', // Simplified Chinese
+    '寄件者:', // Traditional Chinese
+    '보낸 사람:', // Korean
+    '보낸사람:', // Korean (no space)
+];
+
+// Windows Mail / Outlook on iOS use long-form border-top properties instead of the shorthand
+// used by Outlook 2007+. Pattern sourced from mailgun/talon's cut_microsoft_quote().
+const WINDOWS_MAIL_SEPARATOR_PATTERNS = [
+    'border-top-color: rgb(229, 229, 229)',
+    'border-top-width: 1px',
+    'border-top-style: solid',
+] as const;
+
+const hasWindowsMailSeparatorStyle = (element: Element): boolean => {
+    const style = element.getAttribute('style') ?? '';
+    return WINDOWS_MAIL_SEPARATOR_PATTERNS.every((pattern) => style.includes(pattern));
+};
+
+// Reuses the existing Outlook 2007/2010/2013 detector (#B5C4DF / #E1E1E1) and adds the
+// Windows Mail / Outlook iOS variant, matching the same selectors used by mailgun/talon.
+const hasOutlookSeparatorStyle = (element: Element): boolean => {
+    return hasMicrosoftWordSeparatorStyle(element) || hasWindowsMailSeparatorStyle(element);
+};
+
+const startsWithFromHeader = (text: string): boolean => {
+    // Normalize non-breaking spaces (U+00A0) — French typography puts "De&nbsp;:" with
+    // a non-breaking space before the colon, which would otherwise miss "De :".
+    const normalized = text.replace(/\u00A0/g, ' ').trim();
+    return FROM_HEADER_PATTERNS.some((pattern) => normalized.startsWith(pattern));
+};
+
+const getFollowingTextContent = (element: Element): string => {
+    const ownText = element.textContent?.trim() ?? '';
+    if (ownText.length > 0) {
+        return ownText;
+    }
+
+    let nextSibling = element.nextSibling;
+    while (nextSibling) {
+        if (nextSibling.nodeType === Node.ELEMENT_NODE || nextSibling.nodeType === Node.TEXT_NODE) {
+            const text = nextSibling.textContent?.trim() ?? '';
+            if (text.length > 0) {
+                return text;
+            }
+        }
+        nextSibling = nextSibling.nextSibling;
+    }
+
+    return '';
+};
+
+/**
+ * Some clients (notably Outlook) start the previous message with a horizontal top border
+ * followed by a localized "From:" header, without wrapping it in a blockquote. When that
+ * pattern is detected, wrap the border element and its following siblings in a real
+ * blockquote so the rest of the pipeline treats it as the quoted message.
+ */
+const processOutlookTopBorderEmail = (inputDocument: Element): Element => {
+    const existingSeparator = inputDocument.querySelector(BLOCKQUOTE_SELECTOR);
+    if (existingSeparator) {
+        return inputDocument;
+    }
+
+    const candidates = Array.from(inputDocument.querySelectorAll('div'));
+    const borderElement = candidates.find((element) => {
+        if (!hasOutlookSeparatorStyle(element)) {
+            return false;
+        }
+        return startsWithFromHeader(getFollowingTextContent(element));
+    });
+
+    if (!borderElement) {
+        return inputDocument;
+    }
+
+    const blockquote = inputDocument.ownerDocument?.createElement('blockquote');
+    if (!blockquote) {
+        return inputDocument;
+    }
+
+    blockquote.setAttribute('type', 'cite');
+
+    const adjustedSeparator = walkUpIfFirstChild(borderElement);
+    const targetParent = adjustedSeparator.parentNode;
+    const elementsToMove = collectSiblingNodesAfter(adjustedSeparator);
+    moveNodesToBlockquote(elementsToMove, blockquote);
+
+    targetParent?.appendChild(blockquote);
 
     return inputDocument;
 };
 
 /**
- * Try to locate the eventual blockquote present in the document no matter the expeditor of the mail
- * Return the HTML content split at the blockquote start
+ * Try to locate the eventual blockquote present in the document no matter the expeditor of the mail.
+ * Returns three pieces of HTML split around the blockquote:
+ * - content: everything before the blockquote (the visible reply / forward note)
+ * - blockquote: the collapsible quoted message
+ * - afterBlockquote: trailing content that sat after the quote in the source (signatures
+ *   like AVG "Sans virus", proton image anchors, etc.). Rendered after the blockquote.
  */
-export const locateBlockquote = (inputDocument: Element | undefined): [content: string, blockquote: string] => {
+export const locateBlockquote = (
+    inputDocument: Element | undefined
+): [content: string, blockquote: string, afterBlockquote: string] => {
     if (!inputDocument) {
-        return ['', ''];
+        return ['', '', ''];
     }
 
     // Process Microsoft Word emails first to transform them into standard blockquote structure
-    const processedDocument = processMicrosoftWordEmail(inputDocument);
+    const wordProcessedDocument = processMicrosoftWordEmail(inputDocument);
+    // Then handle Outlook-style messages where the quote starts with a top border + "From:" header
+    const processedDocument = processOutlookTopBorderEmail(wordProcessedDocument);
     const body = processedDocument.querySelector('body');
     const tmpDocument = body || processedDocument;
 
     const parentHTML = tmpDocument.innerHTML || '';
-    let result: [string, string] | null = null;
+    let result: [string, string, string] | null = null;
 
-    const testBlockquote = (blockquote: Element) => {
+    const testBlockquote = (blockquote: Element): [string, string, string] | null => {
         const blockquoteHTML = blockquote.outerHTML || '';
         const [beforeHTML = '', afterHTML = ''] = split(parentHTML, blockquoteHTML);
-
         const after = parseStringToDOM(afterHTML);
 
-        // The "real" blockquote will be determined based on the fact:
-        // - That there is no text after the current blockquote element
-        // - That there is no "important" element after the current blockquote element
-        const hasImageAfter = after.body.querySelector(ELEMENTS_AFTER_BLOCKQUOTES.join(','));
-        const hasTextAfter = after.body?.textContent?.trim().length;
-
-        if (!hasImageAfter && !hasTextAfter) {
-            return [beforeHTML, blockquoteHTML] as [string, string];
+        // Skip the current candidate only if another matching blockquote follows — that
+        // later one takes precedence as the "real" quote (e.g. sibling protonmail_quote
+        // divs where the last one is the actual quoted message). Any other trailing
+        // content (signatures, footers, images) is preserved as `afterBlockquote` so it
+        // can be rendered after the collapsible blockquote.
+        const hasBlockquoteAfter = after.body.querySelector(BLOCKQUOTE_SELECTOR);
+        if (hasBlockquoteAfter) {
+            return null;
         }
 
-        return null;
+        return [beforeHTML, blockquoteHTML, afterHTML];
     };
 
     // Standard search with a composed query selector
@@ -197,7 +328,7 @@ export const locateBlockquote = (inputDocument: Element | undefined): [content: 
         // document.ownerDocument?.evaluate;
     }
 
-    return result || [parentHTML, ''];
+    return result || [parentHTML, '', ''];
 };
 
 export const removeSignatureFromHTMLMessage = (contentBeforeBlockquote: string): string => {
