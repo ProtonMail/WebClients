@@ -1694,6 +1694,9 @@
       "Trust key": [
         "Luota avaimeen",
         "Luota avaimiin"
+      ],
+      "Start testing": [
+        "Aloita testaus"
       ]
     },
     "action": {
@@ -4215,6 +4218,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
+      ],
+      "If you find an email in the wrong category, simply move it to the correct one.": [
+        "Jos huomaat, että sähköposti on väärässä luokassa, siirrä se vain oikeaan luokkaan."
+      ],
+      "It’s still learning and we need your help to improve categorization.": [
+        "Järjestelmä on vielä oppimisvaiheessa, ja tarvitsemme apuasi luokittelun parantamiseksi."
+      ],
+      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
+        "Korjauksesi vaikuttavat kaikkien käyttäjien oletusasetuksiin, ja palvelun käynnistyessä se tallentaa asetuksesi myös jatkossa!"
+      ],
+      "You’re among the first to try email categories.": [
+        "Olet ensimmäisten joukossa kokeilemassa sähköpostikategorioita."
       ]
     },
     "description": {
@@ -7479,7 +7494,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -8896,6 +8912,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Tilapäisesti poissa käytöstä suuren kysynnän vuoksi. Yritä myöhemmin uudelleen."
       ]
     },
     "info": {
@@ -9946,6 +9965,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } merkkiä"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15731,6 +15753,9 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "Early access to email categories": [
+        "Sähköpostiluokkien ennakkokäyttö"
       ]
     },
     "Today icon tooltip in mini calendar": {
