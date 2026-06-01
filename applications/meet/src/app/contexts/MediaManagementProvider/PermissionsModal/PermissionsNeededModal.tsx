@@ -11,8 +11,8 @@ import {
     selectMicrophonePermission,
     showPermissionsModal,
 } from '@proton/meet/store/slices/deviceManagementSlice';
-import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
-import warningIcon from '@proton/styles/assets/img/meet/warning-icon.svg';
+import { MEET_APP_NAME } from '@proton/shared/lib/constants';
+import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { ConfirmationModal } from '../../../components/ConfirmationModal/ConfirmationModal';
 
@@ -31,22 +31,25 @@ export const PermissionsNeededModal = () => {
 
     const title = () => {
         if (cameraNeeded && micNeeded) {
-            return c('Title').t`Camera and microphone access needed`;
+            return c('Title').t`Allow camera and microphone`;
         }
         if (cameraNeeded) {
-            return c('Title').t`Camera access needed`;
+            return c('Title').t`Allow camera `;
         }
-        return c('Title').t`Microphone access needed`;
+        return c('Title').t`Allow microphone`;
     };
 
     const message = () => {
         if (cameraNeeded && micNeeded) {
-            return c('Info').t`To speak and be seen in the call, allow access to your camera and microphone.`;
+            return c('Info')
+                .t`${MEET_APP_NAME} needs access so others can see and hear you during the call. You can turn your camera or microphone off at any time.`;
         }
         if (cameraNeeded) {
-            return c('Info').t`To be seen in the call, allow access to your camera.`;
+            return c('Info')
+                .t`${MEET_APP_NAME} needs camera access so others can see you during the call. You can turn it off at any time.`;
         }
-        return c('Info').t`To speak in the call, allow access to your microphone.`;
+        return c('Info')
+            .t`${MEET_APP_NAME} needs microphone access so others can hear you during the call. You can turn it off at any time.`;
     };
 
     const secondaryText = () => {
@@ -96,27 +99,9 @@ export const PermissionsNeededModal = () => {
 
     return (
         <ConfirmationModal
-            icon={
-                <img
-                    className="mx-auto w-custom h-custom"
-                    src={warningIcon}
-                    alt=""
-                    style={
-                        isMobile()
-                            ? {
-                                  '--w-custom': '3rem',
-                                  '--h-custom': '3rem',
-                              }
-                            : {
-                                  '--w-custom': '5rem',
-                                  '--h-custom': '5rem',
-                              }
-                    }
-                />
-            }
             title={title()}
             message={message()}
-            primaryText={c('Action').t`Request permissions`}
+            primaryText={c('Action').t`Allow access`}
             onPrimaryAction={handleRequestPermissions}
             secondaryText={secondaryText()}
             onSecondaryAction={handleContinueWithout}
