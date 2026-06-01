@@ -603,15 +603,6 @@ export const hasCancellablePlan = (subscription: MaybeFreeSubscription) => {
     return !isCancellableOnlyViaSupport(subscription);
 };
 
-export function hasMaximumCycle(subscription?: Subscription | FreeSubscription): boolean {
-    return (
-        subscription?.Cycle === CYCLE.TWO_YEARS ||
-        subscription?.Cycle === CYCLE.THIRTY ||
-        subscription?.UpcomingSubscription?.Cycle === CYCLE.TWO_YEARS ||
-        subscription?.UpcomingSubscription?.Cycle === CYCLE.THIRTY
-    );
-}
-
 export const getMaximumCycleForApp = (app: ProductParam, currency?: Currency) => {
     if (app === APPS.PROTONPASS || app === APPS.PROTONWALLET) {
         return CYCLE.YEARLY;
