@@ -1,4 +1,4 @@
-import { type BrowserWindow, type IpcMainInvokeEvent, ipcMain } from 'electron';
+import { type BrowserWindow, ipcMain } from 'electron';
 
 import type { MaybeNull, MaybePromise, Result } from '@proton/pass/types';
 
@@ -20,11 +20,11 @@ export const setupIpcHandler = <
     R extends IPCChannels[T]['result'],
 >(
     channel: T,
-    handler: (event: IpcMainInvokeEvent, ...args: P) => MaybePromise<R>
+    handler: (...args: P) => MaybePromise<R>
 ) =>
-    ipcMain.handle(channel, async (event, ...args: P): Promise<IPCChannelResult<R>> => {
+    ipcMain.handle(channel, async (_event, ...args: P): Promise<IPCChannelResult<R>> => {
         try {
-            const result = await handler(event, ...args);
+            const result = await handler(...args);
             return { ok: true, result };
         } catch (err: any) {
             let error = 'Unknown error';
