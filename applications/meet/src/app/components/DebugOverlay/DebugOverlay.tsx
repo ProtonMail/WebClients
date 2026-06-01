@@ -22,7 +22,7 @@ import {
     selectSelectedCameraId,
     selectSelectedMicrophoneId,
     selectSpeakers,
-} from '@proton/meet/store/slices/deviceManagementSlice';
+} from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { selectParticipantDecryptedNameMap, selectRoomName } from '@proton/meet/store/slices/meetingInfo';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 import { getBrowser, getOS } from '@proton/shared/lib/helpers/browser';

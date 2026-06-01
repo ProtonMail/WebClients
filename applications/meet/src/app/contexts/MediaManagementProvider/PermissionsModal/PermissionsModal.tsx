@@ -1,5 +1,6 @@
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { PermissionsModalType, selectPermissionsModals } from '@proton/meet/store/slices';
+import { selectPermissionsModals } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagementSlice/types';
 
 import { PermissionsBlockedCameraModal } from './PermissionsBlockedCameraModal';
 import { PermissionsBlockedMicrophoneModal } from './PermissionsBlockedMicrophoneModal';

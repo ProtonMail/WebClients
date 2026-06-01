@@ -7,13 +7,13 @@ import debounce from 'lodash/debounce';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
+import { setUserCameraIntent } from '@proton/meet/store/slices/deviceManagementSlice';
 import {
     selectActiveCameraId,
     selectInitialCameraState,
     selectRealtimeDevices,
     selectUserCameraIntent,
-    setUserCameraIntent,
-} from '@proton/meet/store/slices/deviceManagementSlice';
+} from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { useStableCallback } from '../../../hooks/useStableCallback';

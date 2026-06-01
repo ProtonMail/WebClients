@@ -4,7 +4,10 @@ import type { Room } from 'livekit-client';
 import { c } from 'ttag';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectCameraPermission, selectMicrophonePermission } from '@proton/meet/store/slices/deviceManagementSlice';
+import {
+    selectCameraPermission,
+    selectMicrophonePermission,
+} from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 
 import { checkIfUsingTurnRelay } from '../utils/checkIfUsingTurnRelay';

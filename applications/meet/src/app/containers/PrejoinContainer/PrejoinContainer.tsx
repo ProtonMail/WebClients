@@ -4,18 +4,17 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { setInitialAudioState, setInitialCameraState } from '@proton/meet/store/slices/deviceManagementSlice';
 import {
+    selectCameras,
     selectInitialAudioState,
     selectInitialCameraState,
-    selectLastUsedCameraId,
     selectMicrophoneState,
     selectSelectedAudioOutputId,
     selectSelectedCameraId,
     selectSelectedMicrophoneId,
     selectSpeakerState,
-    setInitialAudioState,
-    setInitialCameraState,
-} from '@proton/meet/store/slices/deviceManagementSlice';
+} from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { setLocalParticipantColorIndex } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
@@ -79,14 +78,17 @@ export const PrejoinContainer = ({
     // check if a custom display name is already stored for the user
     const hasStoredDisplayName = getItem(getDisplayNameStorageKey(isGuest, userId)) != null;
 
-    const lastUsedCameraId = useMeetSelector(selectLastUsedCameraId);
+    const cameras = useMeetSelector(selectCameras);
     const microphoneState = useMeetSelector(selectMicrophoneState);
     const speakerState = useMeetSelector(selectSpeakerState);
+
     const activeCameraDeviceId = useMeetSelector(selectSelectedCameraId);
     const activeMicrophoneDeviceId = useMeetSelector(selectSelectedMicrophoneId);
     const activeAudioOutputDeviceId = useMeetSelector(selectSelectedAudioOutputId);
+
     const initialCameraState = useMeetSelector(selectInitialCameraState);
     const initialAudioState = useMeetSelector(selectInitialAudioState);
+
     const { switchActiveDevice } = useMediaManagementContext();
 
     const participantColorIndex = useRef(Math.floor(6 * Math.random()));
@@ -100,7 +102,7 @@ export const PrejoinContainer = ({
         void purgeOldRecordings(RECORDING_MAX_AGE_MS);
     }, []);
 
-    const currentSelectedCamera = activeCameraDeviceId || lastUsedCameraId || '';
+    const currentSelectedCamera = activeCameraDeviceId || cameras[0]?.deviceId || '';
     const currentSelectedMicrophone = activeMicrophoneDeviceId || microphoneState.systemDefault?.deviceId || '';
     const currentSelectedAudioOutputDevice = activeAudioOutputDeviceId || speakerState.systemDefault?.deviceId || '';
 
