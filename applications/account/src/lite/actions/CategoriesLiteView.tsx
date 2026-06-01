@@ -14,10 +14,10 @@ interface CategoryViewProps {
 
 export const CategoriesLiteView = ({ layout, loader }: CategoryViewProps) => {
     // Preaload needed data for children
-    const [, mailSettingsLoading] = useMailSettings();
+    const [mailSettings, mailSettingsLoading] = useMailSettings();
     const [, foldersLoading] = useFolders();
 
-    const loading = !!(mailSettingsLoading || foldersLoading);
+    const loading = mailSettingsLoading || foldersLoading || '_isDefault' in mailSettings;
 
     if (loading) {
         return loader;
