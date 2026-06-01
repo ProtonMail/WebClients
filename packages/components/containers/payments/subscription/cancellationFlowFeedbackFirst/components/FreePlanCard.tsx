@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import Price from '@proton/components/components/price/Price';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import type { Currency } from '@proton/payments';
 
 import type { OfferFeature } from '../config/offerConfig';
@@ -34,7 +34,7 @@ const FreePlanCard = ({ features, currency, onSwitchToFree }: Props) => {
             </Button>
             <StripedList alternate="odd">
                 {features.map(({ id, icon, text, included }) => {
-                    const leftIcon = included ? icon : <Icon name="cross" className="color-danger" />;
+                    const leftIcon = included ? icon : <IcCross className="color-danger" />;
 
                     return (
                         <StripedItem key={id} left={leftIcon}>
