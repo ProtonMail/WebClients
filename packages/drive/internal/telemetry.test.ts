@@ -767,6 +767,7 @@ describe('MetricHandler', () => {
                 event: {
                     eventName: 'blockVerificationError',
                     retryHelped: true,
+                    volumeType: MetricVolumeType.OwnVolume,
                 },
             });
 
@@ -781,6 +782,7 @@ describe('MetricHandler', () => {
                 event: {
                     eventName: 'blockVerificationError',
                     retryHelped: false,
+                    volumeType: MetricVolumeType.OwnVolume,
                 },
             });
 
