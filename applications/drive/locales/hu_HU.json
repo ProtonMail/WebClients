@@ -1565,6 +1565,10 @@
       ],
       "Ultra fast and private VPN": [
         "Ultra gyors és privát VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } felhasználó",
+        "Akár ${ numberOfUsers } felhasználó"
       ]
     },
     "Checkout row": {
@@ -3915,6 +3919,10 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "A fiókja ${ usedSpace } tárhelyet foglal el, ami túllépi az önnek biztosított ${ inviteSpace } helyet. Töröljön adatokat vagy kérje meg a csomag adminisztrátorát, hogy növelje a tárhelyét."
+      ],
+      "View the invitation": [
+        "Meghívás megtekintése",
+        "Meghívások megtekintése"
       ]
     },
     "familyOffer_2023:Label": {
