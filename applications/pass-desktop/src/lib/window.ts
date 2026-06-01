@@ -12,7 +12,7 @@ declare module 'proton-pass-desktop/lib/ipc' {
 }
 
 export const setupIpcHandlers = (getWindow: () => MaybeNull<BrowserWindow>) => {
-    setupIpcHandler('window:show', async (_) => getWindow()?.show());
+    setupIpcHandler('window:show', () => getWindow()?.show());
 };
 
 export const onHideWindow = (getWindow: () => MaybeNull<BrowserWindow>) => {

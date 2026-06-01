@@ -1,4 +1,5 @@
 import { KEY_LENGTH_BYTES } from '@protontech/crypto/subtle/aesGcm.ts';
+
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 import { biometric as winBiometrics } from '../../../native';
@@ -13,8 +14,8 @@ const factory: BiometricsFactory = (getWindow) => {
 
     const biometrics: BiometricsPlatformHandler = {
         canCheckPresence: () => winBiometrics.canCheckPresence().catch(() => false),
-        checkPresence: (_, reason) => checkPresence(reason),
-        getSecret: async (_, key, version) => {
+        checkPresence: (reason) => checkPresence(reason),
+        getSecret: async (key, version) => {
             await checkPresence();
 
             const secretBytes = (await winBiometrics.getSecret(key)) as Uint8Array<ArrayBuffer>;
@@ -38,8 +39,8 @@ const factory: BiometricsFactory = (getWindow) => {
              * any conversions to and from strings */
             return uint8ArrayToString(secretBytes);
         },
-        setSecret: (_, key, secret) => winBiometrics.setSecret(key, secret),
-        deleteSecret: (_, key) => winBiometrics.deleteSecret(key),
+        setSecret: (key, secret) => winBiometrics.setSecret(key, secret),
+        deleteSecret: (key) => winBiometrics.deleteSecret(key),
     };
 
     return biometrics;

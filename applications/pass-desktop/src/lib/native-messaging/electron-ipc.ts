@@ -1,8 +1,8 @@
 import type { BrowserWindow } from 'electron';
 import { isMainWindowEntry } from 'proton-pass-desktop/utils/navigation';
 
-import { NativeMessageErrorType } from '@proton/pass/types';
 import type { MaybeNull, NativeMessagePayload, NativeMessageRequest, NativeMessageResponse } from '@proton/pass/types';
+import { NativeMessageErrorType } from '@proton/pass/types';
 
 import logger from '../../utils/logger';
 import { setupIpcHandler } from '../ipc';
@@ -45,7 +45,7 @@ export const setupElectronIpcHandlers = (getWindow: () => MaybeNull<BrowserWindo
     };
 
     // Transfer message from view to native messaging ipc sock
-    setupIpcHandler('nm:response', (_event, response) => {
+    setupIpcHandler('nm:response', (response) => {
         const sendResponse = pendingResponses.get(response.messageId);
         if (sendResponse) {
             pendingResponses.delete(response.messageId);
