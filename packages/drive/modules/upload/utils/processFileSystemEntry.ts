@@ -23,6 +23,8 @@ export async function processFileSystemEntry(entry: FileSystemEntry, path: strin
             entry.file(resolve, reject);
         });
 
+        // webkitRelativePath is read-only on File objects so defineProperty is needed to set it so
+        // drag-and-drop uploads are compatible with the same pipeline as <input webkitdirectory> uploads.
         Object.defineProperty(file, 'webkitRelativePath', {
             value: path.concat(file.name),
             writable: false,
