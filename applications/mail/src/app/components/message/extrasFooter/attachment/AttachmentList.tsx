@@ -12,11 +12,12 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import type { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
+import { isDummyattachmentUpload } from 'proton-mail/hooks/composer/useAttachements/helpers';
+import type { PendingUpload } from 'proton-mail/hooks/composer/useAttachements/interface';
 import { useHasScroll } from 'proton-mail/hooks/useHasScroll';
 
 import { getAttachmentCounts } from '../../../../helpers/message/messages';
 import { useDownload, useDownloadAll } from '../../../../hooks/attachments/useDownload';
-import { type PendingUpload, isDummyattachmentUpload } from '../../../../hooks/composer/useAttachments';
 import AttachmentItem from './AttachmentItem';
 import type { AttachmentPreviewControls } from './AttachmentPreview';
 import AttachmentPreview from './AttachmentPreview';

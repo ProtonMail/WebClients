@@ -53,7 +53,7 @@ import { useInitializeMessage } from '../message/useInitializeMessage';
 import { useGetMessage, useMessage } from '../message/useMessage';
 import { useLongLivingState } from '../useLongLivingState';
 import { useMessageSendInfo, useReloadSendInfo } from '../useSendInfo';
-import { useAttachments } from './useAttachments';
+import { useAttachments } from './useAttachements/useAttachments';
 import { useAutoSave } from './useAutoSave';
 import { useCloseHandler } from './useCloseHandler';
 import { useComposerHotkeys } from './useComposerHotkeys';
