@@ -53,7 +53,7 @@ import { useInitializeMessage } from '../message/useInitializeMessage';
 import { useGetMessage, useMessage } from '../message/useMessage';
 import { useLongLivingState } from '../useLongLivingState';
 import { useMessageSendInfo, useReloadSendInfo } from '../useSendInfo';
-import { useAttachments } from './useAttachements/useAttachments';
+import { useAttachments } from './useAttachments/useAttachments';
 import { useAutoSave } from './useAutoSave';
 import { useCloseHandler } from './useCloseHandler';
 import { useComposerHotkeys } from './useComposerHotkeys';
@@ -489,7 +489,7 @@ export const useComposerContent = (args: EditorArgs) => {
                 const files = syncedMessage.draftFlags?.initialAttachments;
                 dispatch(removeInitialAttachments(messageID));
                 await saveNow(syncedMessage);
-                await handleAddAttachmentsUpload({ action: ATTACHMENT_DISPOSITION.ATTACHMENT, files: files || [] });
+                await handleAddAttachmentsUpload({ action: ATTACHMENT_DISPOSITION.ATTACHMENT, files });
             };
             void uploadInitialAttachments();
         }
