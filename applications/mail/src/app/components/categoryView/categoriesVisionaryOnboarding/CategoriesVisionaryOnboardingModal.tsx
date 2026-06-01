@@ -20,8 +20,10 @@ export const CategoriesVisionaryOnboardingModal = () => {
     const api = useApi();
     const dispatch = useDispatch();
 
-    const [loading, withLoading] = useLoading();
-    const [, mailSettingsLoading] = useMailSettings();
+    const [loadingSkipCategories, withLoadingSkipCategories] = useLoading();
+    const [loadingEnableCategories, withLoadingEnableCategories] = useLoading();
+
+    const [mailSettings, mailSettingsLoading] = useMailSettings();
     const [modalProps, setModalState, renderModal] = useModalState();
 
     const betaFlag = useFeature<boolean>(FeatureCode.CategoryViewBeta);
@@ -39,16 +41,24 @@ export const CategoriesVisionaryOnboardingModal = () => {
         setModalState(true);
     }, [hasSeenOnboarding, hasBetaFlag, setModalState, mailSettingsLoading]);
 
-    const handleEnableCategories = () => {
+    const handleEnableCategories = async () => {
         void visionaryOnboardingFlag.update(true);
+
+        if (!mailSettings.MailCategoryView) {
+            const response = await api<{ MailSettings: MailSettings }>(updateMailCategoryView(true));
+            dispatch(mailSettingsActions.updateMailSettings(response.MailSettings));
+        }
+
         setModalState(false);
     };
 
     const handleSkipForNow = async () => {
         void visionaryOnboardingFlag.update(true);
 
-        const response = await api<{ MailSettings: MailSettings }>(updateMailCategoryView(false));
-        dispatch(mailSettingsActions.updateMailSettings(response.MailSettings));
+        if (mailSettings.MailCategoryView) {
+            const response = await api<{ MailSettings: MailSettings }>(updateMailCategoryView(false));
+            dispatch(mailSettingsActions.updateMailSettings(response.MailSettings));
+        }
 
         setModalState(false);
     };
@@ -60,9 +70,14 @@ export const CategoriesVisionaryOnboardingModal = () => {
             disableCloseWhenClickOutside
             title={c('Title').t`Early access to email categories`}
             buttons={[
-                <Button onClick={handleEnableCategories} color="norm">{c('Action').t`Start testing`}</Button>,
-                <Button onClick={() => withLoading(handleSkipForNow)} loading={loading}>{c('Action')
-                    .t`Not now`}</Button>,
+                <Button
+                    onClick={() => withLoadingEnableCategories(handleEnableCategories)}
+                    loading={loadingEnableCategories}
+                    color="norm"
+                >{c('Action').t`Start testing`}</Button>,
+                <Button onClick={() => withLoadingSkipCategories(handleSkipForNow)} loading={loadingSkipCategories}>{c(
+                    'Action'
+                ).t`Not now`}</Button>,
             ]}
         >
             <p>{c('Description').t`You’re among the first to try email categories.`}</p>
