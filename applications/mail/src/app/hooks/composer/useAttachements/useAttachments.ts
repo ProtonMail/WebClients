@@ -21,46 +21,24 @@ import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
-import type { MessageChange } from '../../components/composer/Composer';
-import type { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
-import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR, STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR } from '../../constants';
-import type { UploadResult } from '../../helpers/attachment/attachmentUploader';
-import { checkSizeAndLength, upload } from '../../helpers/attachment/attachmentUploader';
+import type { MessageChange } from '../../../components/composer/Composer';
+import type { ExternalEditorActions } from '../../../components/composer/editor/EditorWrapper';
+import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR, STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR } from '../../../constants';
+import { checkSizeAndLength, upload } from '../../../helpers/attachment/attachmentUploader';
 import {
     createEmbeddedImageFromUpload,
     isEmbeddable,
     matchSameCidOrLoc,
     readContentIDandLocation,
-} from '../../helpers/message/messageEmbeddeds';
-import { getEmbeddedImages, updateImages } from '../../helpers/message/messageImages';
-import type { Upload } from '../../helpers/upload';
-import { addAttachment } from '../../store/attachments/attachmentsActions';
-import { useGetMessageKeys } from '../message/useGetMessageKeys';
-import { useGetMessage } from '../message/useMessage';
-import { useLongLivingState } from '../useLongLivingState';
-import { usePromise } from '../usePromise';
-
-type AttachmentUpload = {
-    file: File;
-    upload: Upload<UploadResult>;
-};
-
-type DummyAttachmentUpload = {
-    file: File;
-    isDummy: boolean;
-};
-
-export type PendingUpload = AttachmentUpload | DummyAttachmentUpload;
-
-const createDummyUpload = (file: File) => ({
-    file,
-    isDummy: true,
-});
-
-export const isDummyattachmentUpload = (attachmentUpload: PendingUpload): attachmentUpload is DummyAttachmentUpload =>
-    'isDummy' in attachmentUpload;
-export const isAttachmentUpload = (attachmentUpload: PendingUpload): attachmentUpload is AttachmentUpload =>
-    !isDummyattachmentUpload(attachmentUpload);
+} from '../../../helpers/message/messageEmbeddeds';
+import { getEmbeddedImages, updateImages } from '../../../helpers/message/messageImages';
+import { addAttachment } from '../../../store/attachments/attachmentsActions';
+import { useGetMessageKeys } from '../../message/useGetMessageKeys';
+import { useGetMessage } from '../../message/useMessage';
+import { useLongLivingState } from '../../useLongLivingState';
+import { usePromise } from '../../usePromise';
+import { createDummyUpload, isAttachmentUpload, isDummyattachmentUpload } from './helpers';
+import type { AttachmentUpload, PendingUpload } from './interface';
 
 interface UseAttachmentsParameters {
     message: MessageState;
