@@ -1269,6 +1269,9 @@
       ],
       "Manage addresses": [
         "Hallitse osoitteita"
+      ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Palaa albumiin \"${ ellipsedAlbumName }\""
       ]
     },
     "Action: Docs": {
@@ -6885,6 +6888,18 @@
       ],
       "Enter code": [
         "Syötä koodi"
+      ],
+      "Photo saved to your Drive": [
+        "Kuva tallennettu Driveesi",
+        "Kuvat tallennettiin Driveesi"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "Emme voineet tallentaa tätä kuvaa Driveesi",
+        "Emme voineet tallentaa näitä kuvia Driveesi"
+      ],
+      "We were not able to add this photo to your album": [
+        "Emme voineet lisätä tätä kuvaa albumiisi",
+        "Emme voineet lisätä joitain kuviasi albumiisi"
       ]
     },
     "info": {
@@ -7657,6 +7672,9 @@
       ],
       "Selected": [
         "Valittu"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } merkkiä"
       ]
     },
     "Label for contact group color": {
@@ -9490,6 +9508,14 @@
       ],
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "Kopio tiedostosta \"${ ellipsedName }\" siirrettiin roskakoriin"
+      ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } valokuva on lisätty albumiin \"${ albumName }\"",
+        "${ addedUids.length } valokuvaa on lisätty albumiin \"${ albumName }\""
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } valokuva poistettiin albumista \"${ albumName }\"",
+        "${ removed } valokuvaa poistettiin albumista \"${ albumName }\""
       ]
     },
     "Notification for duplicate filenames in the current upload": {
