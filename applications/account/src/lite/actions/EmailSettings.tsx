@@ -56,16 +56,7 @@ const EmailSettings = ({
 
     const [user, loadingUser] = useUser();
     const [mailSettings, loadingMailSettings] = useMailSettings();
-    const {
-        AutoDeleteSpamAndTrashDays,
-        AlmostAllMail,
-        DelaySendSeconds,
-        SwipeLeft,
-        SwipeRight,
-        NextMessageOnMove,
-        ViewMode,
-    } = mailSettings;
-    const loading = loadingMailSettings || loadingUser;
+    const loading = loadingMailSettings || loadingUser || '_isDefault' in mailSettings;
 
     const { createNotification } = useNotifications();
 
@@ -121,7 +112,7 @@ const EmailSettings = ({
                     </MobileSectionLabel>
                     <ViewModeToggle
                         id="viewMode"
-                        viewMode={ViewMode}
+                        viewMode={mailSettings.ViewMode}
                         loading={loadingViewMode}
                         onToggle={(value) => withLoadingViewMode(handleChangeViewMode(value))}
                         data-testid="appearance:conversation-group-toggle"
@@ -134,7 +125,10 @@ const EmailSettings = ({
                             .t`This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.`}
                     >{c('Label').t`Undo send`}</MobileSectionLabel>
                     <div>
-                        <DelaySendSecondsSelect id="delaySendSecondsSelect" delaySendSeconds={DelaySendSeconds} />
+                        <DelaySendSecondsSelect
+                            id="delaySendSecondsSelect"
+                            delaySendSeconds={mailSettings.DelaySendSeconds}
+                        />
                     </div>
                 </MobileSectionRow>
                 <MobileSectionRow>
@@ -146,7 +140,7 @@ const EmailSettings = ({
                     <NextMessageOnMoveToggle
                         id="auto-advance"
                         loading={loadingNextMessageOnMoveToggle}
-                        nextMessageOnMove={NextMessageOnMove}
+                        nextMessageOnMove={mailSettings.NextMessageOnMove}
                         onToggle={(value) => withLoadingNextMessageOnMoveToggle(handleChangeNextMessageOnMove(value))}
                     />
                 </MobileSectionRow>
@@ -155,7 +149,7 @@ const EmailSettings = ({
                     <div>
                         <SwipeActionSelect
                             id="swipeLeftAction"
-                            value={SwipeLeft}
+                            value={mailSettings.SwipeLeft}
                             onChange={(swipeAction: SWIPE_ACTION) =>
                                 withLoadingSwipeLeft(handleChangeSwipeLeft(swipeAction))
                             }
@@ -169,7 +163,7 @@ const EmailSettings = ({
                     <div>
                         <SwipeActionSelect
                             id="swipeRightAction"
-                            value={SwipeRight}
+                            value={mailSettings.SwipeRight}
                             onChange={(swipeAction: SWIPE_ACTION) =>
                                 withLoadingSwipeRight(handleChangeSwipeRight(swipeAction))
                             }
@@ -193,7 +187,7 @@ const EmailSettings = ({
                         description={c('Info')
                             .t`Messages in the Spam or Trash folder will be excluded from the All mail location.`}
                     >{c('Label').t`Exclude Spam/Trash from All mail`}</MobileSectionLabel>
-                    <AlmostAllMailToggle id="almostAllMail" showAlmostAllMail={AlmostAllMail} />
+                    <AlmostAllMailToggle id="almostAllMail" showAlmostAllMail={mailSettings.AlmostAllMail} />
                 </MobileSectionRow>
                 {user.hasPaidMail ? (
                     <MobileSectionRow>
@@ -205,7 +199,7 @@ const EmailSettings = ({
                         <AutoDeleteSpamAndTrashDaysToggle
                             id="autoDelete"
                             loading={loadingAutoDeleteSpamAndTrashDays}
-                            autoDeleteSpamAndTrashDays={AutoDeleteSpamAndTrashDays}
+                            autoDeleteSpamAndTrashDays={mailSettings.AutoDeleteSpamAndTrashDays}
                             onToggle={(newValue) =>
                                 withLoadingAutoDeleteSpamAndTrashDays(handleAutoDeleteSpamAndTrashDays(newValue))
                             }

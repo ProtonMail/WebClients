@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { AccountRecoverySection, CrashReportsToggle, TelemetryToggle } from '@proton/components';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 
@@ -21,7 +22,8 @@ const AccountSettings = ({
     loader: ReactNode;
 }) => {
     const [addresses, loadingAddresses] = useAddresses();
-    const loading = loadingAddresses;
+    const [, loadingUserSettings] = useUserSettings();
+    const loading = loadingAddresses || loadingUserSettings;
 
     const canShowAddressSection = !getIsBYOEOnlyAccount(addresses);
 

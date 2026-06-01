@@ -173,7 +173,9 @@ export enum NEXT_MESSAGE_ON_MOVE {
     ENABLED = 2, // enabled by the user
 }
 
-export const DEFAULT_MAIL_SETTINGS: MailSettings = {
+export const DEFAULT_MAIL_SETTINGS: MailSettings & { _isDefault: boolean } = {
+    // Can be used to determine if the user settings were loaded from the server or are default values
+    _isDefault: true,
     DisplayName: '',
     Signature: '',
     Theme: '',
