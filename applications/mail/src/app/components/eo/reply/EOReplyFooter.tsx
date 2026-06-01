@@ -1,22 +1,23 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router';
 
+import type { PublicKeyReference } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import type { PublicKeyReference } from '@protontech/crypto';
 import type { MessageKeys, MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/constants';
 
 import AttachmentsButton from 'proton-mail/components/message/extrasFooter/attachment/AttachmentsButton';
+import type { StartAddAttachmentsParams } from 'proton-mail/hooks/composer/useAttachements/interface';
 
 import { EO_MAX_REPLIES_NUMBER, EO_MESSAGE_REDIRECT_PATH } from '../../../constants';
 import { useSendEO } from '../../../hooks/eo/useSendEO';
 
 interface Props {
     id: string;
-    onAddAttachments: (files: File[]) => void;
+    onAddAttachments: (files: StartAddAttachmentsParams) => void;
     message: MessageState;
     encryptionKey?: PublicKeyReference;
     outsideKey?: MessageKeys;

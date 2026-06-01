@@ -13,7 +13,7 @@ import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import type { PendingUpload } from 'proton-mail/hooks/composer/useAttachements/interface';
+import type { PendingUpload, StartAddAttachmentsParams } from 'proton-mail/hooks/composer/useAttachements/interface';
 
 import AttachmentList, { AttachmentAction } from '../../components/message/extrasFooter/attachment/AttachmentList';
 import type { MessageChange } from './Composer';
@@ -26,7 +26,7 @@ interface Props extends Pick<EditorProps, 'onMouseUp' | 'onKeyUp' | 'onFocus' | 
     onEditorReady: (editorActions: ExternalEditorActions) => void;
     onChange: MessageChange;
     onChangeContent: (content: string) => void;
-    handleAddAttachments: (files: File[]) => void;
+    handleAddAttachments: (files: StartAddAttachmentsParams) => void;
     handleRemoveAttachment: (attachment: Attachment) => Promise<void>;
     handleRemoveUpload?: (pendingUpload: PendingUpload) => Promise<void>;
     pendingUploads?: PendingUpload[];
@@ -130,7 +130,7 @@ const ComposerContent = (
             {showAttachments && (
                 // Add a wrapping div so that Dropzone does not break the UI
                 <div>
-                    <Dropzone onDrop={handleAddAttachments} shape="invisible">
+                    <Dropzone onDrop={(files) => handleAddAttachments({ files })} shape="invisible">
                         <AttachmentList
                             attachments={attachments}
                             pendingUploads={pendingUploads}

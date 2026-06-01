@@ -404,8 +404,8 @@ const Composer = (
                 handleCloseInnerModal={handleCloseInnerModal}
                 handleScheduleSend={handleScheduleSend}
                 handleCloseInsertImageModal={handleCloseInsertImageModal}
-                handleAddAttachmentsUpload={(action, removeImageMetadata) =>
-                    handleAddAttachmentsUpload(action, undefined, removeImageMetadata)
+                handleAddAttachmentsUpload={({ action, removeImageMetadata }) =>
+                    handleAddAttachmentsUpload({ action, files: [], removeImageMetadata })
                 }
                 handleDelete={handleDelete}
                 handleSendAnyway={handleSendAnyway}
