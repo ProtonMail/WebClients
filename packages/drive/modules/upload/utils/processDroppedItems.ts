@@ -31,6 +31,17 @@ export async function processDroppedItems(dataTransfer: DataTransfer): Promise<F
             null;
 
         if (entry) {
+            if (entry.isFile) {
+                // The dropped file payload must be retrieved synchronously: the browser can release the
+                // underlying blob once the drop event finishes propagating, which has been observed on
+                // Brave (DRVWEB-5473) where the async FileSystemFileEntry.file() callback resolves with
+                // a 0-byte File. DataTransferItem.getAsFile() reads the payload synchronously and avoids the race.
+                const file = item.getAsFile?.();
+                if (file) {
+                    collectedFiles.push(file);
+                    continue;
+                }
+            }
             const promise = processFileSystemEntry(entry).then((files) => {
                 collectedFiles.push(...files);
             });
