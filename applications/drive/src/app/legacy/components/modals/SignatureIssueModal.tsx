@@ -16,7 +16,7 @@ import {
     useModalTwoStatic,
 } from '@proton/components';
 
-import { TransferSignatureIssueStrategy } from '../../../legacy/store/_downloads/interface';
+import { TransferSignatureIssueStrategy } from '../../../legacy/store';
 import type { SignatureIssues } from '../../../legacy/store/_links/interface';
 import { SignatureAlertBody } from '../SignatureAlert';
 

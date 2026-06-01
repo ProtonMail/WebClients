@@ -12,8 +12,6 @@ export type {
     OnFileSkippedSuccessCallbackData,
     OnFolderUploadSuccessCallbackData,
 } from './_uploads/interface';
-export { useDownloadProvider as useDownload, useThumbnailsDownload } from './_downloads';
-export type { LinkDownload } from './_downloads/interface';
 export * from './_links/interface';
 export { ShareType, ShareState } from './_shares/interface';
 export type {
