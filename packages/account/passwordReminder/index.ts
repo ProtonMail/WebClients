@@ -12,17 +12,22 @@ const name = 'passwordReminder' as const;
 
 interface PasswordReminderState {
     /**
-     * Whether the password reminders feature is available to this user
+     * Whether the password reminders feature is available to this user.
      */
     isAvailable: boolean;
 
     /**
-     * Whether password reminders isAvailable and the setting is enabled
+     * Whether password reminders isAvailable and the setting is enabled.
      */
     isEnabled: boolean;
 
     /**
-     * Whether password reminders is available, enabled and the messaging cadence has expired
+     * Whether next prompt time is in the past.
+     */
+    messageCadenceHasExpired: boolean;
+
+    /**
+     * Whether we show the reminder touchpoints -when password reminders is available, enabled and the messaging cadence has expired
      */
     showReminders: boolean;
 }
@@ -36,6 +41,7 @@ export const selectPasswordReminder = (state: PasswordReminderReduxState) => sta
 const initialState: PasswordReminderState = {
     isAvailable: false,
     isEnabled: false,
+    messageCadenceHasExpired: false,
     showReminders: false,
 };
 const slice = createSlice({
@@ -47,6 +53,9 @@ const slice = createSlice({
         },
         setIsEnabled: (state, action: PayloadAction<{ isEnabled: boolean }>) => {
             state.isEnabled = action.payload.isEnabled;
+        },
+        setMessageCadenceHasExpired: (state, action: PayloadAction<{ messageCadenceHasExpired: boolean }>) => {
+            state.messageCadenceHasExpired = action.payload.messageCadenceHasExpired;
         },
         setShowReminders: (state, action: PayloadAction<{ showReminders: boolean }>) => {
             state.showReminders = action.payload.showReminders;
