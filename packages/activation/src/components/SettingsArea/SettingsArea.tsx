@@ -1,4 +1,5 @@
 import { SyncsTable } from '@proton/activation/src/components/ReportsTable/SyncsTable';
+import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus.tsx';
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import EasySwitchStoreInitializer from '@proton/activation/src/logic/EasySwitchStoreInitializer';
 import type { SettingsAreaConfig } from '@proton/components';
@@ -18,12 +19,21 @@ interface Props {
 }
 
 const SettingsArea = ({ config, app }: Props) => {
+    const [hasAccessToBYOE] = useBYOEFeatureStatus();
+
     return (
         <EasySwitchStoreProvider>
             <EasySwitchStoreInitializer>
                 <PrivateMainSettingsArea config={config}>
                     <SettingsSectionWide data-testid="SettingsArea:forwardSection">
-                        <ProviderCard app={app} source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />
+                        <ProviderCard
+                            app={app}
+                            source={
+                                hasAccessToBYOE
+                                    ? EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS_BYOE
+                                    : EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS
+                            }
+                        />
                     </SettingsSectionWide>
                     <SettingsSectionWide>
                         <ImportsTable />
