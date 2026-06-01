@@ -404,9 +404,7 @@ const Composer = (
                 handleCloseInnerModal={handleCloseInnerModal}
                 handleScheduleSend={handleScheduleSend}
                 handleCloseInsertImageModal={handleCloseInsertImageModal}
-                handleAddAttachmentsUpload={({ action, removeImageMetadata }) =>
-                    handleAddAttachmentsUpload({ action, files: [], removeImageMetadata })
-                }
+                handleAddAttachmentsUpload={handleAddAttachmentsUpload}
                 handleDelete={handleDelete}
                 handleSendAnyway={handleSendAnyway}
                 handleCancelSend={handleCancelSend}
@@ -484,7 +482,7 @@ const Composer = (
                     editorMetadata={metadata}
                     loadingScheduleCount={loadingScheduleCount}
                     message={modelMessage}
-                    onAddAttachments={handleAddAttachmentsStart}
+                    handleAddAttachments={handleAddAttachmentsStart}
                     onChange={handleChange}
                     onChangeFlag={handleChangeFlag}
                     onDelete={handleDeleteDraft}

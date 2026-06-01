@@ -55,7 +55,7 @@ interface Props {
     editorMetadata: EditorMetadata;
     loadingScheduleCount: boolean;
     message: MessageState;
-    onAddAttachments: ({ files }: StartAddAttachmentsParams) => void;
+    handleAddAttachments: ({ files }: StartAddAttachmentsParams) => void;
     onChange: MessageChange;
     onChangeFlag: MessageChangeFlag;
     onDelete: () => void;
@@ -84,7 +84,7 @@ const ComposerActions = ({
     editorMetadata,
     loadingScheduleCount,
     message,
-    onAddAttachments,
+    handleAddAttachments,
     onChange,
     onChangeFlag,
     onDelete,
@@ -262,7 +262,7 @@ const ComposerActions = ({
                             <AttachmentsButton
                                 isAttachments={isAttachments}
                                 disabled={disabled}
-                                onAddAttachments={onAddAttachments}
+                                handleAddAttachments={handleAddAttachments}
                                 attachmentTriggerRef={attachmentTriggerRef}
                                 data-testid="composer:attachment-button"
                             />
