@@ -4307,6 +4307,27 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Desbloqueia 15 GB de armazenamento por apenas ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Pausaremos as importações quando o armazenamento atingir 80% da capacidade, de modo a reservar espaço para novas mensagens."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Importaremos seus e-mails antigos e conectar seu Gmail ao ${ MAIL_APP_NAME } para que as novas mensagens apareçam automaticamente"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Iniciamos a importar seus e-mails do Gmail. Avisaremos quando terminar."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Você já possui endereços do Gmail encaminhandos para o ${ MAIL_APP_NAME }. Conecte-o um abaixo para enviar e receber mensagens diretamente no ${ MAIL_APP_NAME }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Sua conta gratuita do ${ MAIL_APP_NAME } tem espaço de armazenamento limitado, por isso importaremos apenas ${ newUserStorageText } de suas mensagens mais recentes do Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Sua conta gratuita do ${ MAIL_APP_NAME } tem espaço de armazenamento limitado, por isso importaremos apenas seus e-mails mais recentes do Gmail."
       ]
     },
     "description": {
@@ -9066,6 +9087,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Você está a alguns cliques de distância de ter uma caixa de entrada organizada"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Faça upgrade a qualquer momento para importar o resto"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Faça upgrade ou limpe espaço em qualquer momento para importar o resto"
       ]
     },
     "info": {
@@ -12703,6 +12730,9 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Recomendamos que você \"desconfie\" dessa chave."
+      ],
+      "This key is used for message verification": [
+        "Essa chave já foi usado para verificação por mensagem"
       ]
     },
     "PGP key warning": {
