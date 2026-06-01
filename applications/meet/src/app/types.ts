@@ -29,7 +29,7 @@ export type SwitchActiveDevice = (params: {
     preserveDefaultDevice?: boolean;
 }) => Promise<void>;
 
-export type { SliceDeviceState as DeviceState } from '@proton/meet/store/slices/deviceManagementSlice';
+export type { SliceDeviceState as DeviceState } from '@proton/meet/store/slices/deviceManagementSlice/types';
 
 export enum RecordingStatus {
     Started = 'started',

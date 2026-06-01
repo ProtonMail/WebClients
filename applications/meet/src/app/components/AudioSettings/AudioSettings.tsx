@@ -9,7 +9,7 @@ import {
     selectSelectedMicrophoneId,
     selectSpeakerState,
     selectSpeakers,
-} from '@proton/meet/store/slices/deviceManagementSlice';
+} from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { filterDevices, isDefaultDevice } from '@proton/meet/utils/deviceUtils';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
