@@ -1,10 +1,12 @@
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 
-import { MAX_DOWNLOADING_BLOCKS, MAX_DOWNLOADING_FILES_LOAD } from '../../legacy/store/_downloads/constants';
 import { createMockNodeEntity } from '../../utils/test/nodeEntity';
 import { DownloadScheduler } from './DownloadScheduler';
 import type { DownloadQueueTask } from './downloadTypes';
 import { flushAsync } from './testUtils';
+
+const MAX_DOWNLOADING_BLOCKS = 10;
+const MAX_DOWNLOADING_FILES_LOAD = 15;
 
 type Deferred<T> = {
     promise: Promise<T>;

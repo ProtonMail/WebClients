@@ -4,13 +4,13 @@ import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import metrics from '@proton/metrics';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 
-import { initDownloadSW } from '../../../legacy/store/_downloads/fileSaver/download';
+import { initDownloadSW } from '../../../modules/fileSaver/download';
 import { useVideoStreaming } from './useVideoStreaming';
 
 jest.mock('@proton/shared/lib/helpers/mimetype');
 const mockedIsVideo = jest.mocked(isVideo);
 
-jest.mock('../../../legacy/store/_downloads/fileSaver/download');
+jest.mock('../../../modules/fileSaver/download');
 const mockedInitDownloadSW = jest.mocked(initDownloadSW);
 
 jest.mock('@proton/drive/legacy/errorHandling');

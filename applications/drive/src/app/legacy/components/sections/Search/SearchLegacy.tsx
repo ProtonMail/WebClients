@@ -9,7 +9,6 @@ import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/li
 import useDriveDragMove from '../../../../legacy/hooks/drive/useDriveDragMove';
 import useDriveNavigation from '../../../../legacy/hooks/drive/useNavigate';
 import type { EncryptedLink, LinkShareUrl, useSearchView } from '../../../../legacy/store';
-import { useThumbnailsDownload } from '../../../../legacy/store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../../legacy/store/_documents';
 import { SortField } from '../../../../legacy/store/_views/utils/useSorting';
 import FileBrowser, { Cells, GridHeader, useItemContextMenu, useSelection } from '../../FileBrowser';
@@ -21,6 +20,7 @@ import { translateSortField } from '../SortDropdown';
 import { getSelectedItems } from '../helpers';
 import { NoSearchResultsView } from './NoSearchResultsView';
 import { SearchItemContextMenu } from './SearchItemContextMenu';
+import { useThumbnailsDownload } from './ThumbnailsDownloadProvider';
 
 interface SearchItem extends FileBrowserBaseItem {
     activeRevision?: EncryptedLink['activeRevision'];
