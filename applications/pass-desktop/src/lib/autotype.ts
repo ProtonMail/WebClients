@@ -27,7 +27,7 @@ const getAutotypeInstance = async (): Promise<Autotype> => {
 };
 
 export const setupIpcHandlers = (getWindow: () => MaybeNull<BrowserWindow>) => {
-    setupIpcHandler('autotype:execute', async (_, { fields, enterAtTheEnd }) => {
+    setupIpcHandler('autotype:execute', async ({ fields, enterAtTheEnd }) => {
         const mainWindow = getWindow();
         if (!mainWindow) return;
 
