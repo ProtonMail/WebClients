@@ -12,8 +12,8 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import type { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
-import { isDummyattachmentUpload } from 'proton-mail/hooks/composer/useAttachements/helpers';
-import type { PendingUpload } from 'proton-mail/hooks/composer/useAttachements/interface';
+import { isDummyAttachmentUpload } from 'proton-mail/hooks/composer/useAttachments/helpers';
+import type { PendingUpload } from 'proton-mail/hooks/composer/useAttachments/interface';
 import { useHasScroll } from 'proton-mail/hooks/useHasScroll';
 
 import { getAttachmentCounts } from '../../../../helpers/message/messages';
@@ -40,8 +40,8 @@ interface Props {
     primaryAction: AttachmentAction;
     secondaryAction: AttachmentAction;
     collapsable: boolean;
-    handleRemoveAttachment?: (attachment: Attachment) => Promise<void>;
-    handleRemoveUpload?: (pendingUpload: PendingUpload) => Promise<void>;
+    onRemoveAttachment?: (attachment: Attachment) => Promise<void>;
+    onRemoveUpload?: (pendingUpload: PendingUpload) => Promise<void>;
     className?: string;
     outsideKey?: OutsideKey;
     noPaddingTop?: boolean;
@@ -54,8 +54,8 @@ const AttachmentList = ({
     primaryAction,
     secondaryAction,
     collapsable,
-    handleRemoveAttachment,
-    handleRemoveUpload,
+    onRemoveAttachment,
+    onRemoveUpload,
     className,
     outsideKey,
     noPaddingTop = false,
@@ -159,7 +159,7 @@ const AttachmentList = ({
     const actions = {
         [AttachmentAction.Download]: handleDownload,
         [AttachmentAction.Preview]: handlePreview,
-        [AttachmentAction.Remove]: handleRemoveAttachment || noop,
+        [AttachmentAction.Remove]: onRemoveAttachment || noop,
         [AttachmentAction.None]: noop,
     };
 
@@ -274,12 +274,12 @@ const AttachmentList = ({
                     ))}
                     {pendingUploads?.map((pendingUpload) => (
                         <AttachmentItem
-                            key={`${pendingUpload.file.name}-${isDummyattachmentUpload(pendingUpload) ? 'dummy' : 'real'}`}
+                            key={`${pendingUpload.file.name}-${isDummyAttachmentUpload(pendingUpload) ? 'dummy' : 'real'}`}
                             pendingUpload={pendingUpload}
                             primaryAction={primaryAction}
                             secondaryAction={AttachmentAction.Remove}
                             onPrimary={noop}
-                            onSecondary={handleRemoveUpload || noop}
+                            onSecondary={onRemoveUpload || noop}
                         />
                     ))}
                 </div>

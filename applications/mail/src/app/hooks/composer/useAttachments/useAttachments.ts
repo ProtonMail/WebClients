@@ -37,8 +37,8 @@ import { useGetMessageKeys } from '../../message/useGetMessageKeys';
 import { useGetMessage } from '../../message/useMessage';
 import { useLongLivingState } from '../../useLongLivingState';
 import { usePromise } from '../../usePromise';
-import { createDummyUpload, isAttachmentUpload, isDummyattachmentUpload } from './helpers';
-import type { AddAttachementsParams, AttachmentUpload, PendingUpload, StartAddAttachmentsParams } from './interface';
+import { createDummyUpload, isAttachmentUpload, isDummyAttachmentUpload } from './helpers';
+import type { AddAttachmentsParams, AttachmentUpload, PendingUpload } from './interface';
 
 interface UseAttachmentsParameters {
     message: MessageState;
@@ -50,7 +50,7 @@ interface UseAttachmentsParameters {
 
 interface PendingUploadParams {
     pendingUploads: PendingUpload[];
-    error?: any;
+    error?: unknown;
 }
 
 interface EndAddAttachmentsParams {
@@ -104,7 +104,7 @@ export const useAttachments = ({
         updatePendingUpload({ pendingUploads: [...getPendingUpload(), ...pendingUploads] });
     };
 
-    const removePendingUpload = ({ pendingUpload, error }: { pendingUpload: PendingUpload; error?: any }) => {
+    const removePendingUpload = ({ pendingUpload, error }: { pendingUpload: PendingUpload; error?: unknown }) => {
         updatePendingUpload({
             pendingUploads: getPendingUpload().filter((aPendingUpload) => aPendingUpload !== pendingUpload),
             error,
@@ -171,12 +171,12 @@ export const useAttachments = ({
      * Start uploading a file, the choice between attachment or inline is done.
      */
     const handleAddAttachmentsUpload = useHandler(
-        async ({ action, files = pendingFiles || [], removeImageMetadata }: AddAttachementsParams) => {
+        async ({ action, files = pendingFiles || [], removeImageMetadata }: AddAttachmentsParams) => {
             // Prepare dummy upload const and methods
             let hasDummyUploads: boolean = false;
             const removeDummyUploads = () => {
                 if (hasDummyUploads) {
-                    const filteredUploads = getPendingUpload().filter((upload) => !isDummyattachmentUpload(upload));
+                    const filteredUploads = getPendingUpload().filter((upload) => !isDummyAttachmentUpload(upload));
                     setPendingUploads(filteredUploads);
                 }
             };
@@ -235,7 +235,7 @@ export const useAttachments = ({
     /**
      * Entry point for upload, will check and ask for attachment action if possible
      */
-    const handleAddAttachmentsStart = useHandler(async ({ files }: StartAddAttachmentsParams) => {
+    const handleAddAttachmentsStart = useHandler(async (files: File[]) => {
         const embeddable = files.every((file) => isEmbeddable(file.type));
         const plainText = isPlainText(message.data);
         const pendingUploadFiles = pendingUploads.map((upload) => upload.file);

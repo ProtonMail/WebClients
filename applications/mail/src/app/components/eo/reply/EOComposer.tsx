@@ -134,9 +134,7 @@ const EOComposer = ({ referenceMessage, id, encryptionKey, outsideKey, numberOfR
                 <ComposerInsertImageModal
                     files={imagesToInsert}
                     onClose={handleCloseInsertImageModal}
-                    onSelect={({ action, removeImageMetadata }) =>
-                        handleUploadImage({ action, files: [], removeImageMetadata })
-                    }
+                    onSelect={handleUploadImage}
                     mailSettings={EO_DEFAULT_MAILSETTINGS}
                 />
             )}
@@ -148,8 +146,8 @@ const EOComposer = ({ referenceMessage, id, encryptionKey, outsideKey, numberOfR
                     onEditorReady={handleEditorReady}
                     onChange={handleChange}
                     onChangeContent={handleChangeContent}
-                    handleAddAttachments={handleAddAttachments}
-                    handleRemoveAttachment={handleRemoveAttachment}
+                    onAddAttachments={handleAddAttachments}
+                    onRemoveAttachment={handleRemoveAttachment}
                     outsideKey={outsideKey}
                     mailSettings={EO_DEFAULT_MAILSETTINGS}
                     userSettings={EO_DEFAULT_USER_SETTINGS}
@@ -159,7 +157,7 @@ const EOComposer = ({ referenceMessage, id, encryptionKey, outsideKey, numberOfR
             </div>
             <EOReplyFooter
                 id={id}
-                handleAddAttachments={handleAddAttachments}
+                onAddAttachments={handleAddAttachments}
                 message={modelMessage}
                 encryptionKey={encryptionKey}
                 outsideKey={outsideKey}
