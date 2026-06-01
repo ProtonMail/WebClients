@@ -232,6 +232,7 @@ export interface ImportReport {
 
 export enum EASY_SWITCH_SOURCES {
     ACCOUNT_WEB_SETTINGS = 'account-web-settings',
+    ACCOUNT_WEB_SETTINGS_BYOE = 'account-web-settings-byoe',
     CALENDAR_WEB_SETTINGS = 'calendar-web-settings',
     CONTACTS_WEB_SETTINGS = 'contacts-web-settings',
     ACCOUNT_WEB_RECONNECT_IMPORT = 'account-web-reconnect-import',
