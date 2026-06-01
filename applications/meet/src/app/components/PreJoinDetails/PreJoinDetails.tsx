@@ -75,13 +75,13 @@ export const PreJoinDetails = ({
             className="pre-join-details-container flex flex-nowrap flex-column mt-0 gap-2 lg:py-4 lg:gap-4 w-full md:w-custom flex-none md:flex-1 lg:flex-none md:justify-center md:items-center"
             style={{ '--md-w-custom': '25rem' }}
         >
-            <div className="flex flex-column gap-2">
+            <div className="pre-join-details-header flex flex-column gap-2">
                 {!isLoadingMeetings && (
                     <>
                         <div
                             className={`title text-semibold text-center hidden md:block ${isPersonalRoom ? 'color-primary' : ''}`}
                         >
-                            {title}
+                            {title || ' '}
                         </div>
                         <div className="text-center color-weak hidden md:block">{subtitle}</div>
                     </>
