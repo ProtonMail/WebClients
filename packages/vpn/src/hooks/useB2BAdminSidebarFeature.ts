@@ -1,5 +1,6 @@
 import { useIsDataRecoveryAvailable } from '@proton/account/recovery/dataRecovery';
 import { useIsSessionRecoveryAvailable } from '@proton/account/recovery/sessionRecoveryHooks';
+import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
 import { useDeclarativeLocalState, useLocalState, useRecoveryNotification } from '@proton/components/index';
 import { defineSearchOptions } from '@proton/nav/api/defineSearchOptions';
 import type { NavResolved } from '@proton/nav/types/nav';
@@ -53,6 +54,7 @@ export const useB2BAdminSidebarFeature = ({
     const recoveryNotification = useRecoveryNotification(false, false);
     const [{ isDataRecoveryAvailable }] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
+    const [permissions] = useOrgPermissions();
 
     const sidebarFeature = useSidebarState();
     const spotlightFeature = useKillableFeature(constants.AdminSidebarSpotlightKey);
@@ -84,6 +86,7 @@ export const useB2BAdminSidebarFeature = ({
                 NewScheduleOption,
             },
             context: { isDataRecoveryAvailable, isSessionRecoveryAvailable },
+            permissions: permissions ?? {},
         });
 
         const settings = defineSearchOptions(routes);
