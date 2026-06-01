@@ -48,8 +48,8 @@ interface Props extends Pick<EditorProps, 'onMouseUp' | 'onKeyUp' | 'onFocus' | 
     onReady: (editorActions: ExternalEditorActions) => void;
     onChange: MessageChange;
     onChangeContent: (content: string, refreshEditor?: boolean, silent?: boolean) => void;
-    onAddAttachments: (files: File[]) => void;
-    onRemoveAttachment: (attachment: Attachment) => Promise<void>;
+    handleAddAttachments: (files: File[]) => void;
+    handleRemoveAttachment: (attachment: Attachment) => Promise<void>;
     mailSettings?: MailSettings;
     userSettings?: UserSettings;
     editorMetadata: EditorMetadata;
@@ -65,8 +65,8 @@ const EditorWrapper = ({
     onMouseUp,
     onKeyUp,
     onChangeContent,
-    onAddAttachments,
-    onRemoveAttachment,
+    handleAddAttachments,
+    handleRemoveAttachment,
     onFocus,
     mailSettings,
     userSettings,
@@ -133,7 +133,7 @@ const EditorWrapper = ({
                     const attachment = embeddedImages.find((image) => image.cid === cid)?.attachment;
                     if (attachment) {
                         hasDeletedCid = true;
-                        void onRemoveAttachment(attachment);
+                        void handleRemoveAttachment(attachment);
                     }
                 });
                 if (hasDeletedCid) {
@@ -299,7 +299,7 @@ const EditorWrapper = ({
     }, [editorMetadata.blockquoteExpanded, blockquoteSaved, isPlainText]);
 
     const { openEmojiPickerRef, toolbarConfig, setToolbarConfig, modalLink, modalImage, modalDefaultFont } = useToolbar(
-        { onAddAttachments, onChangeMetadata: handleChangeMetadata }
+        { onAddAttachments: handleAddAttachments, onChangeMetadata: handleChangeMetadata }
     );
 
     return canRenderEditor ? (
@@ -316,7 +316,7 @@ const EditorWrapper = ({
             onBlockquoteToggleClick={handleBlockquoteToggleClick}
             onReady={handleEditorReady}
             mailSettings={mailSettings}
-            onAddAttachments={onAddAttachments}
+            onAddAttachments={handleAddAttachments}
             isPlainText={isPlainText}
             openEmojiPickerRef={openEmojiPickerRef}
             toolbarConfig={toolbarConfig}
