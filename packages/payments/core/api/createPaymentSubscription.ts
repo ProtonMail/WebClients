@@ -11,7 +11,7 @@ import {
     type BillingAddressProperty,
     getBillingAddressPayload,
 } from '../billing-address/billing-address';
-import { PAYMENT_METHOD_TYPES, PLANS } from '../constants';
+import { PLANS } from '../constants';
 import { isCountryWithRequiredPostalCode, isCountryWithStates } from '../countries';
 import type {
     AmountAndCurrency,
@@ -173,19 +173,6 @@ const createSubscriptionQuery = (rawData: SubscribeData, product: ProductParam, 
 
         data = v5Data;
         delete (data as any).Payment;
-    } else if (version === 'v4' && isSubscribeDataV5(sanitizedData)) {
-        const v4Data: SubscribeDataV4 = {
-            ...sanitizedData,
-            Payment: {
-                Type: PAYMENT_METHOD_TYPES.TOKEN,
-                Details: {
-                    Token: sanitizedData.PaymentToken,
-                },
-            },
-        };
-
-        data = v4Data;
-        delete (data as any).PaymentToken;
     }
 
     if (data.VatId) {
