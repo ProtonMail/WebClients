@@ -43,7 +43,7 @@ import type { HttpsProtonMeDriveDownloadErroringUsersTotalV1SchemaJson } from '.
 import type { HttpsProtonMeDriveDownloadErrorsTotalV2SchemaJson } from './types/drive_download_errors_total_v2.schema';
 import type { HttpsProtonMeDriveDownloadSpeedHistogramV1SchemaJson } from './types/drive_download_speed_histogram_v1.schema';
 import type { HttpsProtonMeDriveDownloadSuccessRateTotalV1SchemaJson } from './types/drive_download_success_rate_total_v1.schema';
-import type { HttpsProtonMeDriveDownloadVerifierAttemptsTotalV1SchemaJson } from './types/drive_download_verifier_attempts_total_v1.schema';
+import type { HttpsProtonMeDriveDownloadVerifierAttemptsTotalV2SchemaJson } from './types/drive_download_verifier_attempts_total_v2.schema';
 import type { HttpsProtonMeDriveErrorErroringUsersTotalV1SchemaJson } from './types/drive_error_erroring_users_total_v1.schema';
 import type { MeProtonDriveObservabilityDomainMetricsDriveErrorTotal } from './types/drive_error_total_v1.schema';
 import type { HttpsProtonMeDriveFilePreviewErrorsTotalV1SchemaJson } from './types/drive_file_preview_errors_total_v1.schema';
@@ -273,7 +273,7 @@ class Metrics extends MetricsBase {
 
     public drive_download_success_rate_total: Counter<HttpsProtonMeDriveDownloadSuccessRateTotalV1SchemaJson>;
 
-    public drive_download_verifier_attempts_total: Counter<HttpsProtonMeDriveDownloadVerifierAttemptsTotalV1SchemaJson>;
+    public drive_download_verifier_attempts_total: Counter<HttpsProtonMeDriveDownloadVerifierAttemptsTotalV2SchemaJson>;
 
     public drive_error_erroring_users_total: Counter<HttpsProtonMeDriveErrorErroringUsersTotalV1SchemaJson>;
 
@@ -778,8 +778,8 @@ class Metrics extends MetricsBase {
         );
 
         this.drive_download_verifier_attempts_total =
-            new Counter<HttpsProtonMeDriveDownloadVerifierAttemptsTotalV1SchemaJson>(
-                { name: 'drive_download_verifier_attempts_total', version: 1 },
+            new Counter<HttpsProtonMeDriveDownloadVerifierAttemptsTotalV2SchemaJson>(
+                { name: 'drive_download_verifier_attempts_total', version: 2 },
                 this.requestService
             );
 
