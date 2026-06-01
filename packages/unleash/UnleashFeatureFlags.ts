@@ -128,6 +128,7 @@ enum AccountFlag {
     SystemGroupFlag = 'SystemGroupFlag',
     UnauthLost2FA = 'UnauthLost2FA',
     UnauthedForgotPassword = 'UnauthedForgotPassword',
+    UserGroupsScimGroups = 'UserGroupsScimGroups',
 }
 
 enum PaymentsFlag {
