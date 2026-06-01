@@ -1,13 +1,13 @@
 import type { ReactNode } from 'react';
 
 import { Input, type InputProps } from '@proton/atoms/Input/Input';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import clsx from '@proton/utils/clsx';
 
 import './InputWithSelectorPrefix.scss';
 
 export const WarningIcon = ({ className }: { className?: string }) => {
-    return <Icon name="exclamation-circle-filled" className={clsx('shrink-0 color-danger', className)} size={4.5} />;
+    return <IcExclamationCircleFilled className={clsx('shrink-0 color-danger', className)} size={4.5} />;
 };
 
 export type InputWithSelectorPrefixProps = {
