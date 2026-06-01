@@ -17,15 +17,20 @@ export default defineConfig(
         plugins: {
             '@typescript-eslint': plugin,
             import: importPlugin,
-            'monorepo-cop': monorepoCop,
+            // monorepo-cop is legacy typed, so we need to cast it to the correct type
+            'monorepo-cop': /** @type {import('eslint').ESLint.Plugin} */ (/** @type {unknown} */ (monorepoCop)),
             'no-only-tests': noOnlyTests,
-            lodash,
+            // lodash is legacy typed, so we need to cast it to the correct type
+            lodash: /** @type {import('eslint').ESLint.Plugin} */ (/** @type {unknown} */ (lodash)),
             '@protontech/enforce-uint8array-arraybuffer': protontechEnforceUint8ArrayArraybuffer,
             testingLibrary,
         },
     },
 
-    { name: 'monorepo', rules: monorepoCop.configs.recommended.rules },
+    {
+        name: 'monorepo',
+        rules: /** @type {Partial<import('@eslint/core').RulesConfig>} */ (monorepoCop.configs.recommended.rules),
+    },
 
     // Unfortunately we are not using prettier recommended
     //eslintPluginPrettierRecommended,
