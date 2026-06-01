@@ -40,8 +40,8 @@ interface Props {
     primaryAction: AttachmentAction;
     secondaryAction: AttachmentAction;
     collapsable: boolean;
-    onRemoveAttachment?: (attachment: Attachment) => Promise<void>;
-    onRemoveUpload?: (pendingUpload: PendingUpload) => Promise<void>;
+    handleRemoveAttachment?: (attachment: Attachment) => Promise<void>;
+    handleRemoveUpload?: (pendingUpload: PendingUpload) => Promise<void>;
     className?: string;
     outsideKey?: OutsideKey;
     noPaddingTop?: boolean;
@@ -54,8 +54,8 @@ const AttachmentList = ({
     primaryAction,
     secondaryAction,
     collapsable,
-    onRemoveAttachment,
-    onRemoveUpload,
+    handleRemoveAttachment,
+    handleRemoveUpload,
     className,
     outsideKey,
     noPaddingTop = false,
@@ -159,7 +159,7 @@ const AttachmentList = ({
     const actions = {
         [AttachmentAction.Download]: handleDownload,
         [AttachmentAction.Preview]: handlePreview,
-        [AttachmentAction.Remove]: onRemoveAttachment || noop,
+        [AttachmentAction.Remove]: handleRemoveAttachment || noop,
         [AttachmentAction.None]: noop,
     };
 
@@ -279,7 +279,7 @@ const AttachmentList = ({
                             primaryAction={primaryAction}
                             secondaryAction={AttachmentAction.Remove}
                             onPrimary={noop}
-                            onSecondary={onRemoveUpload || noop}
+                            onSecondary={handleRemoveUpload || noop}
                         />
                     ))}
                 </div>

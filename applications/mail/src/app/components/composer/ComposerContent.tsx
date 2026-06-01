@@ -26,9 +26,9 @@ interface Props extends Pick<EditorProps, 'onMouseUp' | 'onKeyUp' | 'onFocus' | 
     onEditorReady: (editorActions: ExternalEditorActions) => void;
     onChange: MessageChange;
     onChangeContent: (content: string) => void;
-    onAddAttachments: (files: File[]) => void;
-    onRemoveAttachment: (attachment: Attachment) => Promise<void>;
-    onRemoveUpload?: (pendingUpload: PendingUpload) => Promise<void>;
+    handleAddAttachments: (files: File[]) => void;
+    handleRemoveAttachment: (attachment: Attachment) => Promise<void>;
+    handleRemoveUpload?: (pendingUpload: PendingUpload) => Promise<void>;
     pendingUploads?: PendingUpload[];
     isOutside?: boolean;
     outsideKey?: OutsideKey;
@@ -51,9 +51,9 @@ const ComposerContent = (
         onKeyUp,
         onChangeContent,
         onFocus,
-        onAddAttachments,
-        onRemoveAttachment,
-        onRemoveUpload,
+        handleAddAttachments,
+        handleRemoveAttachment,
+        handleRemoveUpload,
         pendingUploads,
         isOutside = false,
         outsideKey,
@@ -107,8 +107,8 @@ const ComposerContent = (
                     onKeyUp={onKeyUp}
                     onChangeContent={onChangeContent}
                     onFocus={onFocus}
-                    onAddAttachments={onAddAttachments}
-                    onRemoveAttachment={onRemoveAttachment}
+                    handleAddAttachments={handleAddAttachments}
+                    handleRemoveAttachment={handleRemoveAttachment}
                     mailSettings={mailSettings}
                     userSettings={userSettings}
                     editorMetadata={editorMetadata}
@@ -130,7 +130,7 @@ const ComposerContent = (
             {showAttachments && (
                 // Add a wrapping div so that Dropzone does not break the UI
                 <div>
-                    <Dropzone onDrop={onAddAttachments} shape="invisible">
+                    <Dropzone onDrop={handleAddAttachments} shape="invisible">
                         <AttachmentList
                             attachments={attachments}
                             pendingUploads={pendingUploads}
@@ -138,8 +138,8 @@ const ComposerContent = (
                             primaryAction={AttachmentAction.Preview}
                             secondaryAction={AttachmentAction.Remove}
                             collapsable
-                            onRemoveAttachment={onRemoveAttachment}
-                            onRemoveUpload={onRemoveUpload}
+                            handleRemoveAttachment={handleRemoveAttachment}
+                            handleRemoveUpload={handleRemoveUpload}
                             className={clsx(['composer-attachments-list', isOutside && 'eo-composer-attachments-list'])}
                             outsideKey={outsideKey}
                             noPaddingTop={!isOutside}
