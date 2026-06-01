@@ -1,5 +1,5 @@
 import { ServerTime } from '@proton/docs-shared/lib/ServerTime'
-import { type DegradedNode, type NodeEntity, splitNodeUid } from '@proton/drive'
+import { type DegradedNode, type MemberRole, type NodeEntity, splitNodeUid } from '@proton/drive'
 import type { RecentDocumentAPIItem } from '@proton/docs-core/lib/Api/Types/GetRecentsResponse'
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
@@ -13,12 +13,14 @@ export function createItemValue({
   isSharedWithMe,
   path,
   ancestorsNodeUids,
+  effectiveRole,
 }: {
   sdkData: NodeEntity | DegradedNode
   apiData: RecentDocumentAPIItem
   isSharedWithMe: boolean
   path: string[]
   ancestorsNodeUids: string[]
+  effectiveRole: MemberRole
 }): RecentDocumentsItemValue {
   const { volumeId, nodeId: linkId } = splitNodeUid(sdkData.uid)
   const { nodeId: parentLinkId } = sdkData.parentUid ? splitNodeUid(sdkData.parentUid) : {}
@@ -37,7 +39,7 @@ export function createItemValue({
     ancestorsNodeUids,
     isSharedWithMe,
     shareId: apiData.ContextShareID,
-    directRole: sdkData.directRole,
+    effectiveRole,
   }
 }
 
@@ -76,6 +78,7 @@ export function getAuthorName(sdkData: NodeEntity | DegradedNode) {
 export function nodeToTrashedItemValue(node: NodeEntity | DegradedNode): RecentDocumentsItemValue {
   const { volumeId, nodeId: linkId } = splitNodeUid(node.uid)
   const { nodeId: parentLinkId } = node.parentUid ? splitNodeUid(node.parentUid) : {}
+
   return {
     name: getNodeName(node) ?? '',
     type: mimeTypeToProtonDocumentType(node.mediaType) ?? 'document',
@@ -90,7 +93,7 @@ export function nodeToTrashedItemValue(node: NodeEntity | DegradedNode): RecentD
     isSharedWithMe: false,
     shareId: '',
     location: { type: 'root' },
-    directRole: node.directRole,
+    effectiveRole: node.directRole,
   }
 }
 
@@ -102,6 +105,7 @@ export function nodeToRecentItemValue(
   isSharedWithMe: boolean,
   path: string[],
   ancestorsNodeUids: string[],
+  effectiveRole: MemberRole,
   shareId: string = '',
 ): RecentDocumentsItemValue {
   const { volumeId, nodeId: linkId } = splitNodeUid(node.uid)
@@ -120,6 +124,6 @@ export function nodeToRecentItemValue(
     location: getLocation(path, isSharedWithMe),
     ancestorsNodeUids,
     shareId,
-    directRole: node.directRole,
+    effectiveRole,
   }
 }

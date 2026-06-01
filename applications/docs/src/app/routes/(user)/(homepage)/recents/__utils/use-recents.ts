@@ -10,6 +10,7 @@ import { useApplication } from '~/utils/application-context'
 import { extractNodeUid, getFullPath, isSharedWithUser } from '~/utils/drive-sdk'
 import { createItemValue, nodeToRecentItemValue } from './create-document-items'
 import { useRecentsStore } from './use-recents-store'
+import { getNodeEffectiveRole } from '~/utils/get-node-effective-role'
 
 export function useRecents(drive: ProtonDriveClient) {
   const [user] = useUser()
@@ -37,7 +38,8 @@ export function useRecents(drive: ProtonDriveClient) {
         const isSharedWithMe = await isSharedWithUser(drive, user, node.uid)
         const { path, ancestry } = await getFullPath(drive, node.uid)
         const ancestorsNodeUids = ancestry.map(extractNodeUid)
-        documents.push({ sdkData: node, apiData: document, isSharedWithMe, path, ancestorsNodeUids })
+        const effectiveRole = await getNodeEffectiveRole(drive, node)
+        documents.push({ sdkData: node, apiData: document, isSharedWithMe, path, ancestorsNodeUids, effectiveRole })
       } catch (error: any) {
         logger.error('Failed to load document with SDK', error)
         createNotification({
@@ -166,7 +168,8 @@ async function buildDocument(
   documentNode: NodeEntity | DegradedNode,
 ) {
   const { isSharedWithMe, path, shareId, ancestorsNodeUids } = await getDocumentDetails(drive, user, documentNode.uid)
-  return nodeToRecentItemValue(documentNode, isSharedWithMe, path, ancestorsNodeUids, shareId)
+  const effectiveRole = await getNodeEffectiveRole(drive, documentNode)
+  return nodeToRecentItemValue(documentNode, isSharedWithMe, path, ancestorsNodeUids, effectiveRole, shareId)
 }
 
 async function getDocumentDetails(drive: ProtonDriveClient, user: { Email: string }, nodeUid: string) {
