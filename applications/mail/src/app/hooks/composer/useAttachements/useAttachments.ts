@@ -38,7 +38,7 @@ import { useGetMessage } from '../../message/useMessage';
 import { useLongLivingState } from '../../useLongLivingState';
 import { usePromise } from '../../usePromise';
 import { createDummyUpload, isAttachmentUpload, isDummyattachmentUpload } from './helpers';
-import type { AttachmentUpload, PendingUpload } from './interface';
+import type { AddAttachementsParams, AttachmentUpload, PendingUpload, StartAddAttachmentsParams } from './interface';
 
 interface UseAttachmentsParameters {
     message: MessageState;
@@ -46,6 +46,16 @@ interface UseAttachmentsParameters {
     saveNow: (message: MessageState) => Promise<void>;
     editorActionsRef?: MutableRefObject<ExternalEditorActions | undefined>;
     onMessageAlreadySent: () => void;
+}
+
+interface PendingUploadParams {
+    pendingUploads: PendingUpload[];
+    error?: any;
+}
+
+interface EndAddAttachmentsParams {
+    action: ATTACHMENT_DISPOSITION;
+    pendingUpload: AttachmentUpload;
 }
 
 export const useAttachments = ({
@@ -79,20 +89,18 @@ export const useAttachments = ({
 
     const { localID } = message;
 
-    const updatePendingUpload = useHandler(
-        ({ pendingUploads, error }: { pendingUploads: PendingUpload[]; error?: any }) => {
-            const previousValue = getPendingUpload();
-            setPendingUploads(pendingUploads);
+    const updatePendingUpload = useHandler(({ pendingUploads, error }: PendingUploadParams) => {
+        const previousValue = getPendingUpload();
+        setPendingUploads(pendingUploads);
 
-            if (error) {
-                rejectUpload(error);
-            } else if (!pendingUploads.length && previousValue.length) {
-                resolveUpload();
-            }
+        if (error) {
+            rejectUpload(error);
+        } else if (!pendingUploads.length && previousValue.length) {
+            resolveUpload();
         }
-    );
+    });
 
-    const addPendingUploads = ({ pendingUploads }: { pendingUploads: PendingUpload[] }) => {
+    const addPendingUploads = ({ pendingUploads }: PendingUploadParams) => {
         updatePendingUpload({ pendingUploads: [...getPendingUpload(), ...pendingUploads] });
     };
 
@@ -106,66 +114,64 @@ export const useAttachments = ({
     /**
      * Wait for upload to finish, modify the message, add to embedded images if needed
      */
-    const handleAddAttachmentEnd = useHandler(
-        async ({ action, pendingUpload }: { action: ATTACHMENT_DISPOSITION; pendingUpload: AttachmentUpload }) => {
-            try {
-                const upload = await pendingUpload.upload.resultPromise;
+    const handleAddAttachmentEnd = useHandler(async ({ action, pendingUpload }: EndAddAttachmentsParams) => {
+        try {
+            const upload = await pendingUpload.upload.resultPromise;
 
-                const data = new Uint8Array(await readFileAsBuffer(pendingUpload.file));
-                const filename = pendingUpload.file.name;
-                dispatch(
-                    addAttachment({
-                        ID: upload?.attachment.ID || '',
-                        attachment: {
-                            data,
-                            verificationStatus: MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID,
-                            filename,
-                            signatures: [],
-                        },
-                    })
-                );
+            const data = new Uint8Array(await readFileAsBuffer(pendingUpload.file));
+            const filename = pendingUpload.file.name;
+            dispatch(
+                addAttachment({
+                    ID: upload?.attachment.ID || '',
+                    attachment: {
+                        data,
+                        verificationStatus: MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID,
+                        filename,
+                        signatures: [],
+                    },
+                })
+            );
 
-                // Warning, that change function can be called multiple times, don't do any side effect in it
-                onChange((message: MessageState) => {
-                    // New attachment list
-                    const Attachments = [...getAttachments(message.data), upload.attachment];
-                    const embeddedImages = getEmbeddedImages(message);
-
-                    if (action === ATTACHMENT_DISPOSITION.INLINE) {
-                        embeddedImages.push(createEmbeddedImageFromUpload(upload.attachment));
-                    }
-
-                    const messageImages = updateImages(message.messageImages, undefined, undefined, embeddedImages);
-
-                    return { data: { Attachments }, messageImages };
-                });
+            // Warning, that change function can be called multiple times, don't do any side effect in it
+            onChange((message: MessageState) => {
+                // New attachment list
+                const Attachments = [...getAttachments(message.data), upload.attachment];
+                const embeddedImages = getEmbeddedImages(message);
 
                 if (action === ATTACHMENT_DISPOSITION.INLINE) {
-                    editorActionsRef?.current?.insertEmbedded(upload.attachment, upload.packets.Preview);
+                    embeddedImages.push(createEmbeddedImageFromUpload(upload.attachment));
                 }
 
-                removePendingUpload({ pendingUpload });
-            } catch (error: any) {
-                if (error?.message === MESSAGE_ALREADY_SENT_INTERNAL_ERROR) {
-                    onMessageAlreadySent();
-                } else if (error?.message === STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR) {
-                    createNotification({
-                        type: 'error',
-                        text: c('Error')
-                            .t`Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.`,
-                    });
-                }
+                const messageImages = updateImages(message.messageImages, undefined, undefined, embeddedImages);
 
-                removePendingUpload({ pendingUpload, error });
+                return { data: { Attachments }, messageImages };
+            });
+
+            if (action === ATTACHMENT_DISPOSITION.INLINE) {
+                editorActionsRef?.current?.insertEmbedded(upload.attachment, upload.packets.Preview);
             }
+
+            removePendingUpload({ pendingUpload });
+        } catch (error: any) {
+            if (error?.message === MESSAGE_ALREADY_SENT_INTERNAL_ERROR) {
+                onMessageAlreadySent();
+            } else if (error?.message === STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR) {
+                createNotification({
+                    type: 'error',
+                    text: c('Error')
+                        .t`Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.`,
+                });
+            }
+
+            removePendingUpload({ pendingUpload, error });
         }
-    );
+    });
 
     /**
      * Start uploading a file, the choice between attachment or inline is done.
      */
     const handleAddAttachmentsUpload = useHandler(
-        async (action: ATTACHMENT_DISPOSITION, files: File[] = pendingFiles || [], removeImageMetadata?: boolean) => {
+        async ({ action, files = pendingFiles || [], removeImageMetadata }: AddAttachementsParams) => {
             // Prepare dummy upload const and methods
             let hasDummyUploads: boolean = false;
             const removeDummyUploads = () => {
@@ -229,7 +235,7 @@ export const useAttachments = ({
     /**
      * Entry point for upload, will check and ask for attachment action if possible
      */
-    const handleAddAttachmentsStart = useHandler(async (files: File[]) => {
+    const handleAddAttachmentsStart = useHandler(async ({ files }: StartAddAttachmentsParams) => {
         const embeddable = files.every((file) => isEmbeddable(file.type));
         const plainText = isPlainText(message.data);
         const pendingUploadFiles = pendingUploads.map((upload) => upload.file);
@@ -248,7 +254,7 @@ export const useAttachments = ({
         if (!plainText && embeddable) {
             setPendingFiles(files);
         } else {
-            void handleAddAttachmentsUpload(ATTACHMENT_DISPOSITION.ATTACHMENT, files);
+            void handleAddAttachmentsUpload({ action: ATTACHMENT_DISPOSITION.ATTACHMENT, files });
         }
     });
 
