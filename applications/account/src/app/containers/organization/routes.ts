@@ -83,7 +83,8 @@ export const getOrganizationAppRoutes = ({
     const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
 
     const canShowB2BActivityMonitorEvents =
-        (isOrgConfigured || getIsB2BAudienceFromPlan(organization?.PlanName)) && isAdmin;
+        (isOrgConfigured || getIsB2BAudienceFromPlan(organization?.PlanName)) &&
+        !!permissions['account.activity_log.read'];
 
     //vpnbiz2023, and all business bundle plans have the Connection Events feature
     const hasPlanWithEventLogging =
@@ -305,7 +306,7 @@ export const getOrganizationAppRoutes = ({
             text: c('Title').t`Activity monitor`,
             to: '/activity-monitor',
             icon: 'card-identity',
-            available: canHaveOrganization && canShowB2BActivityMonitorEvents,
+            available: canShowB2BActivityMonitorEvents,
             subsections: [
                 {
                     id: 'activity-monitor-dashboard',
