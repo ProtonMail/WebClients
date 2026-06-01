@@ -6,11 +6,11 @@ import type { ModalStateProps } from '@proton/components';
 import type { ProtonDriveClient, Revision } from '@proton/drive';
 import { type Author, type MaybeNode, MemberRole, NodeType, getDrive } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
+import { getNodeName } from '@proton/drive/modules/nodes';
 import { useLoading } from '@proton/hooks';
 
 import { getMimeTypeDescription } from '../../legacy/components/sections/helpers';
 import { getFormattedNodeLocation } from '../../utils/sdk/getNodeLocation';
-import { getNodeName } from '../../utils/sdk/getNodeName';
 import { getAuthorshipStatus } from './authorship';
 
 /**

@@ -1,7 +1,7 @@
 import type { MaybeNode } from '@proton/drive';
 import { NodeType } from '@proton/drive';
 
-export { getNodeName } from '../../utils/sdk/getNodeName';
+export { getNodeName } from '@proton/drive/modules/nodes';
 
 // TODO: create node module with high-level helpers and unify usage across the app
 
