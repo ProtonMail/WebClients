@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { isMobile } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import type { MeetButtonClass } from '../../types';
@@ -62,7 +61,7 @@ export const ConfirmationModal = ({
             <div
                 className="flex flex-column flex-nowrap justify-end items-center gap-4 text-center h-full p-6 pt-custom overflow-hidden min-h-custom"
                 style={{
-                    '--pt-custom': isMobile() ? '3rem' : '5rem',
+                    '--pt-custom': '3rem',
                     '--min-h-custom': '22rem',
                 }}
             >
