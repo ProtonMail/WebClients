@@ -14,6 +14,7 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateMailCategoryView } from '@proton/shared/lib/api/mailSettings';
 import { domIsBusy } from '@proton/shared/lib/busy/busy';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 
 export const CategoriesVisionaryOnboardingModal = () => {
@@ -68,7 +69,7 @@ export const CategoriesVisionaryOnboardingModal = () => {
             {...modalProps}
             disableCloseOnEscape
             disableCloseWhenClickOutside
-            title={c('Title').t`Early access to email categories`}
+            title={c('Title').t`Help shape the future of email categories in ${MAIL_APP_NAME}`}
             buttons={[
                 <Button
                     onClick={() => withLoadingEnableCategories(handleEnableCategories)}
@@ -80,11 +81,10 @@ export const CategoriesVisionaryOnboardingModal = () => {
                 ).t`Not now`}</Button>,
             ]}
         >
-            <p>{c('Description').t`You’re among the first to try email categories.`}</p>
-            <p>{c('Description').t`It’s still learning and we need your help to improve categorization.`}</p>
-            <p>{c('Description').t`If you find an email in the wrong category, simply move it to the correct one.`}</p>
             <p>{c('Description')
-                .t`Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!`}</p>
+                .t`If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.`}</p>
+            <p>{c('Description')
+                .t`You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.`}</p>
         </Prompt>
     ) : null;
 };
