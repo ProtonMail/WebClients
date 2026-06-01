@@ -75,9 +75,10 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
 
   const separator = <ContextSeparator className="my-1" />
 
+  // When "editors can share" is ON the editor role in internally converted to admin
   const canShare =
     loadRecentsWithSdkEnabled && sdkSharingModalEnabled
-      ? currentDocument.directRole === MemberRole.Admin
+      ? currentDocument.effectiveRole === MemberRole.Admin
       : !currentDocument.isSharedWithMe
 
   return (
