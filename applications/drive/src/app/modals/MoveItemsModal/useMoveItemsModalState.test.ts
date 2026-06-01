@@ -49,7 +49,7 @@ jest.mock('../../modules/moveNodes', () => ({
     useMoveNodes: jest.fn(() => ({ moveNodes: mockMoveNodes, isLoading: false })),
 }));
 
-jest.mock('../CreateFolderModal', () => ({
+jest.mock('@proton/drive/modals/createFolderModal', () => ({
     useCreateFolderModal: jest.fn(() => ({
         createFolderModal: null,
         showCreateFolderModal: mockShowCreateFolderModal,

@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useSharingModal } from '@proton/drive/modules/sharingModal';
+import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import noLinksSvg from '@proton/styles/assets/img/illustrations/empty-shared.svg';
 
 import { DriveEmptyView } from '../../legacy/components/layout/DriveEmptyView';

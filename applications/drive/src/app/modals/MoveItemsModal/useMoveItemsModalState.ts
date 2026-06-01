@@ -8,6 +8,7 @@ import { NodeType, getDrive } from '@proton/drive';
 import type { DirectoryTreeItem } from '@proton/drive/components/DirectoryTree/DirectoryTree';
 import { handleSdkError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { useCreateFolderModal } from '@proton/drive/modals/createFolderModal';
 import shallowEqual from '@proton/utils/shallowEqual';
 
 import { directoryTreeFactory } from '../../modules/directoryTree';
@@ -15,7 +16,6 @@ import { getNodeUidFromTreeItemId, makeTreeItemId } from '../../modules/director
 import { type MoveNodesItemMap, useMoveNodes } from '../../modules/moveNodes';
 import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
 import { getMissingUid, isMissingNode } from '../../utils/sdk/node';
-import { useCreateFolderModal } from '../CreateFolderModal';
 
 export type MoveItemsModalInnerProps = {
     nodeUids: string[];
