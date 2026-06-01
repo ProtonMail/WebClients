@@ -6,12 +6,12 @@ import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissi
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
+import type { DecryptedLink } from '../../../../legacy/store';
+import { useOpenInDocs } from '../../../../legacy/store/_documents';
 import { useDetailsModal } from '../../../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../../modals/FilesDetailsModal';
 import { useMoveItemsModal } from '../../../../modals/MoveItemsModal';
 import { useRevisionsModal } from '../../../../modals/RevisionsModal';
-import type { DecryptedLink } from '../../../../legacy/store';
-import { useOpenInDocs } from '../../../../legacy/store/_documents';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
 import { useRenameModalDeprecated } from '../../modals/RenameModal';
 import {
@@ -66,7 +66,12 @@ export function DriveItemContextMenu({
         <>
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
                 {hasPreviewAvailable && (
-                    <PreviewButton shareId={selectedLink.rootShareId} linkId={selectedLink.linkId} close={close} />
+                    <PreviewButton
+                        shareId={selectedLink.rootShareId}
+                        volumeId={selectedLink.volumeId}
+                        linkId={selectedLink.linkId}
+                        close={close}
+                    />
                 )}
                 {isOnlyOneFileItem && openInDocs.canOpen && <OpenInDocsButton {...openInDocs} close={close} />}
                 {(hasPreviewAvailable || (isOnlyOneFileItem && openInDocs.canOpen)) && <ContextSeparator />}

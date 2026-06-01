@@ -27,7 +27,6 @@ import {
     isTransferRetry,
     isTransferSkipError,
 } from '../../../../utils/transfer';
-import type { LogCallback } from '../../_downloads';
 import { useDirectSharingInfo } from '../../_shares/useDirectSharingInfo';
 import { useTransferLog } from '../../_transfer';
 import { useGetMetricsUserPlan } from '../../_user/useGetMetricsUserPlan';
@@ -56,7 +55,7 @@ type InitFileUpload = (
     parentLinkId: string,
     file: File,
     getFileConflictStrategy: ConflictStrategyHandler,
-    log: LogCallback,
+    log: (message: string) => void,
     isForPhotos?: boolean
 ) => UploadFileControls;
 
@@ -66,7 +65,7 @@ type InitFolderUpload = (
     folderName: string,
     modificationTime: Date | undefined,
     getFolderConflictStrategy: ConflictStrategyHandler,
-    log: LogCallback
+    log: (message: string) => void
 ) => UploadFolderControls;
 
 function useBaseUpload(
