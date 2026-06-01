@@ -389,7 +389,6 @@ const SubscriptionContainerInner = ({
             minimumCycle,
             maximumCycle,
             currency,
-            allowDowncycling: true,
         });
 
         const model: Model = {
@@ -693,7 +692,6 @@ const SubscriptionContainerInner = ({
             currency: selectedPlanCurrency,
             planIDs,
             plansMap: plansMapRef.current,
-            allowDowncycling: true,
             cycleParam: maybeCycle,
             app,
             couponConfig,

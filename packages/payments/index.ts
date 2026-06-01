@@ -306,7 +306,6 @@ export {
     hasMail,
     hasMailBusiness,
     hasMailPro,
-    hasMaximumCycle,
     hasMigrationDiscount,
     hasPass,
     hasPassBusiness,

@@ -41,7 +41,6 @@ const SubscriptionCheckoutBillingCycleSection = ({ minimumCycle }: Props) => {
         currency,
         planIDs,
         plansMap,
-        allowDowncycling: true,
         cycleParam: cycle,
         app: appName,
         couponConfig,

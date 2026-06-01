@@ -66,8 +66,7 @@ describe('switchCycle', () => {
         expect(result).toBe(CYCLE.MONTHLY);
     });
 
-    it('returns first allowed cycle (TWO_YEARS) when preferred cycle is MONTHLY but same-plan subscription blocks it', () => {
-        // Same plan checkout on a 24-month subscription: only cycles >= 24 are eligible
+    it('returns MONTHLY when preferred on same-plan subscription with a higher cycle', () => {
         const planIDs: PlanIDs = { [PLANS.MAIL]: 1 };
         const subscription = buildSubscription({ planName: PLANS.MAIL, cycle: CYCLE.TWO_YEARS, currency });
 
@@ -79,7 +78,7 @@ describe('switchCycle', () => {
             plansMap,
         });
 
-        expect(result).toBe(CYCLE.TWO_YEARS);
+        expect(result).toBe(CYCLE.MONTHLY);
     });
 
     it('returns undefined when no plan is found in plansMap (empty allowedCycles)', () => {
