@@ -122,6 +122,19 @@ describe('ArchiveGenerator', () => {
         ]);
     });
 
+    it('should sanitize path-traversal sequences in file and folder names', async () => {
+        await checkWritingLinks([
+            { isFile: false, name: '../..', expectedName: '.._..', expectedPath: '' },
+            {
+                isFile: true,
+                name: '../../evil.exe',
+                path: ['../..'],
+                expectedName: '.._.._evil.exe',
+                expectedPath: '.._..',
+            },
+        ]);
+    });
+
     it('should generate many files with the same name but different case', async () => {
         await checkWritingLinks([
             { isFile: true, name: 'file.txt' },
