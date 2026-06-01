@@ -80,3 +80,9 @@ im.$media-expressions: $media-expressions;
 	font-size: 1.75rem;
 	line-height: 2.25rem;
 }
+
+.pre-join-details-header {
+	@include im.media('>small') {
+		min-block-size: 5.3rem !important;
+	}
+}
