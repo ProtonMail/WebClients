@@ -311,7 +311,7 @@ export type RecentDocumentsItemValue = {
   isSharedWithMe: boolean
   shareId: string
   // Available (and used) only when RecentDocumentsItem is used with SDK
-  directRole?: MemberRole
+  effectiveRole?: MemberRole
 }
 
 export class RecentDocumentsItem implements RecentDocumentsItemValue {
@@ -385,8 +385,8 @@ export class RecentDocumentsItem implements RecentDocumentsItemValue {
   get shareId() {
     return this.#value.shareId
   }
-  get directRole() {
-    return this.#value.directRole
+  get effectiveRole() {
+    return this.#value.effectiveRole
   }
 }
 
