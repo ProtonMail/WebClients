@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import type { IconName } from '@proton/icons/types';
 
 type Props = {
@@ -72,7 +73,7 @@ export const ContextMenuSubButton = ({ name, icon, children }: Props) => {
                 >
                     <Icon className="mr-2 shrink-0" name={icon} />
                     <span className="mr-4">{name}</span>
-                    <Icon className="ml-auto shrink-0" name="chevron-right" />
+                    <IcChevronRight className="ml-auto shrink-0" />
                 </DropdownMenuButton>
             </div>
             <Dropdown
