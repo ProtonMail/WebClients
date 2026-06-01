@@ -3,7 +3,12 @@ import { useEffect, useLayoutEffect, useMemo } from 'react';
 import type { ConnectionState } from 'livekit-client';
 
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { resetMeetingInfo, setMeetingInfo } from '@proton/meet/store/slices/meetingInfo';
+import {
+    resetMeetingInfo,
+    setMeetingInfo,
+    startMeetingDurationTimer,
+    stopMeetingDurationTimer,
+} from '@proton/meet/store/slices/meetingInfo';
 import { selectTotalParticipantCount } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
@@ -116,6 +121,16 @@ export const MeetContainer = ({
         passphrase,
         isGuestAdmin,
     ]);
+
+    useEffect(() => {
+        if (!expirationTime) {
+            return;
+        }
+        dispatch(startMeetingDurationTimer());
+        return () => {
+            dispatch(stopMeetingDurationTimer());
+        };
+    }, [dispatch, expirationTime]);
 
     useEffect(() => {
         return () => {
