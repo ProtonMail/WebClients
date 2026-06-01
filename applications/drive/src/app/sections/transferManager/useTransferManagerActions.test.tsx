@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react';
 
 import { useConfirmActionModal } from '@proton/components';
-import { useSharingModal } from '@proton/drive/modules/sharingModal';
+import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { uploadManager } from '@proton/drive/modules/upload';
 
 import { DownloadManager } from '../../modules/download/DownloadManager';
@@ -40,7 +40,7 @@ jest.mock('@proton/drive/modules/upload', () => {
     };
 });
 
-jest.mock('@proton/drive/modules/sharingModal', () => {
+jest.mock('@proton/drive/modals/sharingModal', () => {
     return {
         useSharingModal: jest.fn(),
     };

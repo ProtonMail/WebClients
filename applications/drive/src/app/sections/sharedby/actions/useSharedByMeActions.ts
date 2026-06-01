@@ -1,6 +1,6 @@
 import { useConfirmActionModal } from '@proton/components';
 import { NodeType, getDrivePerNodeType } from '@proton/drive';
-import { useSharingModal } from '@proton/drive/modules/sharingModal';
+import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
 import { useSharingActions } from '../../../legacy/hooks/drive/useSharingActions';

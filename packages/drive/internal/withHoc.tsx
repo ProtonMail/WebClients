@@ -21,6 +21,7 @@
  * const SmartComponent = withHoc(useMyHook, MyComponent);
  * <SmartComponent someHookInput={...} /> // Only provides HookProps
  */
+// TODO: Unify apps/drive/modals/modalsUtils/withHoc with packages/drive/internal/withHoc
 export function withHoc<HookProps extends {}, InjectedProps extends {}>(
     useHook: (props: HookProps) => InjectedProps,
     Component: React.ComponentType<InjectedProps>

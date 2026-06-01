@@ -92,7 +92,7 @@ export const PublicSharing = ({
                     closeButtonColor: 'white',
                     onUpgrade: () => {
                         if (upsellConfig.onUpgrade) {
-                            upsellConfig.onUpgrade();
+                            void upsellConfig.onUpgrade();
                         } else {
                             goToSettings(upsellConfig.upgradePath);
                         }

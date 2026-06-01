@@ -165,9 +165,12 @@ describe('DirectSharingMemberMenu', () => {
         render(<DirectSharingMemberMenu {...defaultProps} selectedRole={MemberRole.Viewer} />);
 
         const viewerButton = screen.getByText('Viewer').closest('button');
-        expect(within(viewerButton!).getByTestId('item-checkmark')).toBeInTheDocument();
         const editorButton = screen.getByText('Editor').closest('button');
-        expect(within(editorButton!).queryByTestId('item-checkmark')).not.toBeInTheDocument();
+        if (!viewerButton || !editorButton) {
+            throw new Error('role buttons not found');
+        }
+        expect(within(viewerButton).getByTestId('item-checkmark')).toBeInTheDocument();
+        expect(within(editorButton).queryByTestId('item-checkmark')).not.toBeInTheDocument();
     });
 
     it('has checkmark next to "editor" if current role is editor', async () => {
@@ -175,9 +178,12 @@ describe('DirectSharingMemberMenu', () => {
         render(<DirectSharingMemberMenu {...defaultProps} selectedRole={MemberRole.Editor} />);
 
         const viewerButton = screen.getByText('Viewer').closest('button');
-        expect(within(viewerButton!).queryByTestId('item-checkmark')).not.toBeInTheDocument();
         const editorButton = screen.getByText('Editor').closest('button');
-        expect(within(editorButton!).getByTestId('item-checkmark')).toBeInTheDocument();
+        if (!viewerButton || !editorButton) {
+            throw new Error('role buttons not found');
+        }
+        expect(within(viewerButton).queryByTestId('item-checkmark')).not.toBeInTheDocument();
+        expect(within(editorButton).getByTestId('item-checkmark')).toBeInTheDocument();
     });
 
     it('when editors can manage access show different label', async () => {

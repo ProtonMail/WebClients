@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { ToolbarButton } from '@proton/components';
 import { generateNodeUid } from '@proton/drive/index';
+import { useCreateFolderModal } from '@proton/drive/modals/createFolderModal';
 import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 
 import type { DriveFolder } from '../../../../../legacy/hooks/drive/useActiveShare';
-import { useCreateFolderModal } from '../../../../../modals/CreateFolderModal';
 
 export interface CreateNewFolderButtonProps {
     activeFolder: DriveFolder;
