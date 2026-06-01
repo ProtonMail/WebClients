@@ -8,7 +8,7 @@ import type { PopperPosition } from '@proton/components/components/popper/interf
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';
-import type { SliceDeviceState } from '@proton/meet/store/slices/deviceManagementSlice';
+import type { SliceDeviceState } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 import { shouldShowDeviceCheckmark, shouldShowSystemDefaultCheckmark } from '@proton/meet/utils/deviceUtils';
 import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';

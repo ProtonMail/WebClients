@@ -1,6 +1,6 @@
 import { createHooks } from '@proton/redux-utilities/hooks';
 
-import { selectUserSettings, userSettingsThunk } from '../slices';
+import { selectUserSettings, userSettingsThunk } from '../slices/userSettings';
 
 const hooks = createHooks(userSettingsThunk, selectUserSettings);
 
