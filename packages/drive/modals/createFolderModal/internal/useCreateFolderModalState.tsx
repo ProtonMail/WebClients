@@ -2,15 +2,18 @@ import type React from 'react';
 import type { ChangeEvent, FocusEvent } from 'react';
 import { useState } from 'react';
 
+import type { ProtonDriveClient } from '@protontech/drive-sdk';
+import { splitNodeUid } from '@protontech/drive-sdk/dist/internal/uids';
 import { c } from 'ttag';
 
 import { type ModalStateProps, useFormErrors, useNotifications } from '@proton/components';
-import { type ProtonDriveClient, getDrive, splitNodeUid } from '@proton/drive';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
-import { handleSdkError } from '@proton/drive/legacy/errorHandling';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
-import { getEllipsedName } from '@proton/drive/modules/intl';
-import { validateNodeName } from '@proton/drive/modules/validation';
+
+import { getDrive } from '../../../index';
+import { BusDriverEventName, getBusDriver } from '../../../internal/BusDriver';
+import { handleSdkError } from '../../../legacy/errorHandling';
+import { getNodeEntity } from '../../../legacy/sdkUtils/getNodeEntity';
+import { getEllipsedName } from '../../../modules/intl';
+import { validateNodeName } from '../../../modules/validation';
 
 type Drive = Pick<ProtonDriveClient, 'createFolder' | 'getNode'>;
 

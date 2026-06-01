@@ -5,7 +5,7 @@ import { ContextSeparator } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components';
 import { MemberRole, getDrivePerNodeType, splitNodeUid } from '@proton/drive';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
-import type { useSharingModal } from '@proton/drive/modules/sharingModal';
+import type { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 

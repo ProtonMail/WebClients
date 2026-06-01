@@ -20,7 +20,7 @@ import {
     usePopperAnchor,
 } from '@proton/components';
 import { MemberRole, getDriveForPhotos } from '@proton/drive/index';
-import { useSharingModal } from '@proton/drive/modules/sharingModal';
+import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcPlus } from '@proton/icons/icons/IcPlus';

@@ -1,5 +1,5 @@
 import type { useConfirmActionModal } from '@proton/components';
-import type { useSharingModal } from '@proton/drive/modules/sharingModal';
+import type { useSharingModal } from '@proton/drive/modals/sharingModal';
 
 import type { useDetailsModal } from '../../../modals/DetailsModal';
 import type { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';

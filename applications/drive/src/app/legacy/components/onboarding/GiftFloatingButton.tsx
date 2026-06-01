@@ -13,7 +13,7 @@ import {
     useAuthentication,
     useLocalState,
 } from '@proton/components';
-import { useSharingModal } from '@proton/drive/modules/sharingModal';
+import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import type { IconName } from '@proton/icons/types';

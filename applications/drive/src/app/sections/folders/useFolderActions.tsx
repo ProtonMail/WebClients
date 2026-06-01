@@ -1,11 +1,11 @@
 import { generateNodeUid, getDrive, useDrive } from '@proton/drive';
-import { useSharingModal } from '@proton/drive/modules/sharingModal';
+import { useCreateFolderModal } from '@proton/drive/modals/createFolderModal';
+import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { uploadManager } from '@proton/drive/modules/upload';
 
 import { useUploadInput } from '../../legacy/hooks/drive/useUploadInput';
 import { useCopyItemsModal } from '../../modals/CopyItemsModal';
 import { useCreateFileModal } from '../../modals/CreateFileModal';
-import { useCreateFolderModal } from '../../modals/CreateFolderModal';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { useMoveItemsModal } from '../../modals/MoveItemsModal';

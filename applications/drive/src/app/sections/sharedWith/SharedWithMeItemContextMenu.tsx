@@ -1,5 +1,5 @@
 import { useConfirmActionModal } from '@proton/components';
-import { useSharingModal } from '@proton/drive/modules/sharingModal';
+import { useSharingModal } from '@proton/drive/modals/sharingModal';
 
 import type { ContextMenuProps } from '../../legacy/components/FileBrowser';
 import { ItemContextMenu } from '../../legacy/components/sections/ContextMenu/ItemContextMenu';

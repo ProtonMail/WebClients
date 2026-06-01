@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { ToolbarButton } from '@proton/components';
-import { useSharingModal } from '@proton/drive/modules/sharingModal';
+import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 
 import { useFileSharingModal } from '../../../../modals/SelectLinkToShareModal';

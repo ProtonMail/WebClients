@@ -11,13 +11,13 @@ import {
     usePopperAnchor,
 } from '@proton/components';
 import { generateNodeUid } from '@proton/drive/index';
+import { useCreateFolderModal } from '@proton/drive/modals/createFolderModal';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import { useActiveShare } from '../../../legacy/hooks/drive/useActiveShare';
 import { useFileUploadInput, useFolderUploadInput } from '../../../legacy/store';
 import { useDocumentActions, useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../../legacy/store/_documents';
-import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 import { CreateDocumentButton, CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ActionMenuButtons';
 import { CreateSheetButton } from './ActionMenuButtons/CreateSheetButton';
 
