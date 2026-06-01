@@ -7,7 +7,7 @@ import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Vr } from '@proton/atoms/Vr/Vr';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
@@ -68,10 +68,9 @@ export const ModalHeaderCloseButton = ({ buttonProps, iconProps }: ModalHeaderCl
     return (
         <Tooltip title={c('Action').t`Close`}>
             <Button shape="ghost" data-testid="modal:close" {...buttonProps} icon onClick={onClose}>
-                <Icon
+                <IcCrossBig
                     {...iconProps}
                     className={clsx('modal-close-icon', iconProps?.className)}
-                    name="cross-big"
                     alt={c('Action').t`Close`}
                 />
             </Button>
