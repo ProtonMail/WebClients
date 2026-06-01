@@ -5,6 +5,7 @@ import { isWindows } from '@proton/shared/lib/helpers/browser';
 
 import { adjustName, adjustWindowsLinkName, splitLinkName } from '../../legacy/store/_links';
 import type { ArchiveItem } from './downloadTypes';
+import { sanitizeEntryName } from './utils/sanitizeEntryName';
 
 function getPathString(path: string[]): string {
     return path.length > 0 ? `/${path.join('/')}` : '';
@@ -68,7 +69,7 @@ export default class ArchiveGenerator {
         const pathString = getPathString(path);
         const fullPath = `${pathString}/${name}`;
         const parentPath = this.originalToAdjustedPath.get(pathString) || '';
-        const fixedName = isWindows() ? adjustWindowsLinkName(name) : name;
+        const fixedName = isWindows() ? adjustWindowsLinkName(sanitizeEntryName(name)) : sanitizeEntryName(name);
 
         const deduplicate = (index = 0): string => {
             const adjustedName = `${adjustName(index, fixedName)}`;
@@ -92,7 +93,7 @@ export default class ArchiveGenerator {
     private adjustFilePath(path: string[], name: string) {
         const pathString = getPathString(path);
         const parentPath = this.originalToAdjustedPath.get(pathString) || '';
-        const fixedName = isWindows() ? adjustWindowsLinkName(name) : name;
+        const fixedName = isWindows() ? adjustWindowsLinkName(sanitizeEntryName(name)) : sanitizeEntryName(name);
         const [namePart, extension] = splitLinkName(fixedName);
 
         const deduplicate = (index = 0): string => {
