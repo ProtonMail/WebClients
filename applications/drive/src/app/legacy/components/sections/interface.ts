@@ -1,4 +1,4 @@
-import type { useSharingModal } from '@proton/drive/modules/sharingModal';
+import type { useSharingModal } from '@proton/drive/modals/sharingModal';
 
 import type { EncryptedLink, ExtendedInvitationDetails, LinkShareUrl, SignatureIssues } from '../../../legacy/store';
 import type { FileBrowserBaseItem } from '../FileBrowser';

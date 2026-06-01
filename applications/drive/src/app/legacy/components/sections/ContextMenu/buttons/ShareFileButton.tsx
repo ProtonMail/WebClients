@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { useSharingModal } from '@proton/drive/modules/sharingModal';
+import type { useSharingModal } from '@proton/drive/modals/sharingModal';
 
 import type { useFileSharingModal } from '../../../../../modals/SelectLinkToShareModal';
 import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';

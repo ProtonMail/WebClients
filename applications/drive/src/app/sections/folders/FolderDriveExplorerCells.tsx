@@ -2,7 +2,7 @@ import { useShallow } from 'zustand/react/shallow';
 
 import type { Breakpoints } from '@proton/components';
 import { MemberRole, getDrive } from '@proton/drive';
-import { useSharingModal } from '@proton/drive/modules/sharingModal';
+import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { useThumbnail } from '@proton/drive/modules/thumbnails';
 
 import { ShareIcon } from '../../legacy/components/sections/FileBrowser/ShareIcon';

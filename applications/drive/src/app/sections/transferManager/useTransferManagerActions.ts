@@ -5,7 +5,7 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { useConfirmActionModal } from '@proton/components';
 import { getDrivePerNodeType } from '@proton/drive';
-import { useSharingModal } from '@proton/drive/modules/sharingModal';
+import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { uploadManager, useUploadQueueStore } from '@proton/drive/modules/upload';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 

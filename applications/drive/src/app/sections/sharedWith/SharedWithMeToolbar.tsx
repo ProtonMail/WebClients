@@ -2,7 +2,7 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
 import { Toolbar, useConfirmActionModal } from '@proton/components';
-import { useSharingModal } from '@proton/drive/modules/sharingModal';
+import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { LayoutButton } from '../../legacy/components/sections/ToolbarButtons';
