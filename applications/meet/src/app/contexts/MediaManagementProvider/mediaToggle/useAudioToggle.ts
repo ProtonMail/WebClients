@@ -16,7 +16,7 @@ import {
     selectMicrophoneState,
     selectMicrophones,
     selectRealtimeDevices,
-} from '@proton/meet/store/slices/deviceManagementSlice';
+} from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { isAudioSessionAvailable, setAudioSessionType } from '@proton/meet/utils/iosAudioSession';
 import { withTimeout } from '@proton/meet/utils/withTimeout';
 import { isSafari } from '@proton/shared/lib/helpers/browser';

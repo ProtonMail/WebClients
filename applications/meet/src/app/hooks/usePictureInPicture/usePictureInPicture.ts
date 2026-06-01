@@ -11,7 +11,7 @@ import {
     selectMicrophonePermission,
     selectSelectedCameraId,
     selectSelectedMicrophoneId,
-} from '@proton/meet/store/slices/deviceManagementSlice';
+} from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { selectMeetSettings } from '@proton/meet/store/slices/settings';
 import { isChromiumBased, isFirefox, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
@@ -215,6 +215,7 @@ export function usePictureInPicture({
             const lastMessage = chatMessages[chatMessages.length - 1];
             addChatMessage(participantDecryptedNameMapRef.current[lastMessage.identity], lastMessage.message);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [chatMessages, addChatMessage]);
 
     // Unified effect to handle rendering when PiP is active
@@ -246,6 +247,7 @@ export function usePictureInPicture({
             stopRendering();
             startRendering(canvas, displayableWithAvailableTracks, messages, participantDecryptedNameMapRef.current);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [sessionManager, isPipActive, tracksKey, messages, startRendering, stopRendering]);
 
     useEffect(() => {
@@ -303,6 +305,7 @@ export function usePictureInPicture({
             console.error(error);
             reportMeetError(`usePictureInPicture.setActionHandler: ${error.message}`, error);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [startPiP, pipEnabled]);
 
     const prevMediaStatus = useRef(isVideoEnabled || isAudioEnabled);

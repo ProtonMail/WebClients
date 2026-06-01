@@ -3,14 +3,16 @@ import { c } from 'ttag';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
     PermissionBlockedError,
-    PermissionsModalType,
     dismissPermissionsModal,
     requestPermission,
+    showPermissionsModal,
+} from '@proton/meet/store/slices/deviceManagementSlice';
+import {
     selectActiveCameraId,
     selectCameraPermission,
     selectMicrophonePermission,
-    showPermissionsModal,
-} from '@proton/meet/store/slices/deviceManagementSlice';
+} from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
