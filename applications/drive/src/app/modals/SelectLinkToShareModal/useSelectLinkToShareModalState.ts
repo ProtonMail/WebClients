@@ -4,7 +4,7 @@ import type { ModalStateProps } from '@proton/components';
 import { getDrive } from '@proton/drive';
 import type { DirectoryTreeItem } from '@proton/drive/components/DirectoryTree/DirectoryTree';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
-import type { useSharingModal } from '@proton/drive/modules/sharingModal';
+import type { useSharingModal } from '@proton/drive/modals/sharingModal';
 
 import { directoryTreeFactory } from '../../modules/directoryTree';
 import { getNodeUidFromTreeItemId } from '../../modules/directoryTree/helpers';
