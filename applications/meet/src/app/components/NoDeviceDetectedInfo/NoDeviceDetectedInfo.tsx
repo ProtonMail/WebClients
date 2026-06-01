@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { selectCameras, selectMicrophones } from '@proton/meet/store/slices/deviceManagementSlice';
+import { selectCameras, selectMicrophones } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import {
     PermissionPromptStatus,
     selectNoDeviceDetected,

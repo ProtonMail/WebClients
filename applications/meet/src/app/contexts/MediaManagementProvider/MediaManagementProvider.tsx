@@ -9,13 +9,18 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
+    setInitialAudioState,
+    setInitialCameraState,
+    setPreferredDeviceAndPersist,
+} from '@proton/meet/store/slices/deviceManagementSlice';
+import {
     selectActiveAudioOutputId,
     selectActiveCameraId,
     selectActiveMicrophoneId,
     selectCameraPermission,
+    selectCameras,
     selectInitialAudioState,
     selectInitialCameraState,
-    selectLastUsedCameraId,
     selectMicrophonePermission,
     selectMicrophoneState,
     selectPreferredCameraId,
@@ -25,10 +30,7 @@ import {
     selectSelectedCameraId,
     selectSelectedMicrophoneId,
     selectSpeakerState,
-    setInitialAudioState,
-    setInitialCameraState,
-    setPreferredDevice,
-} from '@proton/meet/store/slices/deviceManagementSlice';
+} from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { setAudioSessionType } from '@proton/meet/utils/iosAudioSession';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -68,7 +70,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     const selectedMicrophoneId = useMeetSelector(selectSelectedMicrophoneId);
     const selectedAudioOutputDeviceId = useMeetSelector(selectSelectedAudioOutputId);
 
-    const lastUsedCameraId = useMeetSelector(selectLastUsedCameraId);
+    const cameras = useMeetSelector(selectCameras);
     const microphoneState = useMeetSelector(selectMicrophoneState);
     const speakerState = useMeetSelector(selectSpeakerState);
 
@@ -109,7 +111,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
             }
 
             const toSave = isSystemDefaultDevice ? null : deviceId;
-            dispatch(setPreferredDevice({ kind: deviceType, deviceId: toSave }));
+            dispatch(setPreferredDeviceAndPersist({ kind: deviceType, deviceId: toSave }));
         },
         [activeAudioOutputDeviceId, activeCameraDeviceId, activeMicrophoneDeviceId, room, dispatch, reportMeetError]
     );
@@ -327,17 +329,20 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     });
 
     useEffect(() => {
-        const cameraInitDeviceId = preferredCameraId ?? lastUsedCameraId;
-        if (!initializedDevices.current.video && cameraInitDeviceId) {
+        if (!initializedDevices.current.video && cameras.length) {
+            const cameraInitDeviceId =
+                cameras.find((camera) => camera.deviceId === preferredCameraId)?.deviceId || cameras[0]?.deviceId || '';
+
             void switchActiveDevice({
                 deviceType: 'videoinput',
                 deviceId: cameraInitDeviceId,
                 isSystemDefaultDevice: false,
+                preserveDefaultDevice: true,
             });
             initializedDevices.current.video = true;
         }
 
-        const microphoneInitDeviceId = preferredMicrophoneId ?? microphoneState.systemDefault?.deviceId;
+        const microphoneInitDeviceId = preferredMicrophoneId || microphoneState.systemDefault?.deviceId || '';
         if (!initializedDevices.current.audio && microphoneInitDeviceId) {
             void switchActiveDevice({
                 deviceType: 'audioinput',
@@ -347,7 +352,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
             initializedDevices.current.audio = true;
         }
 
-        const speakerInitDeviceId = preferredSpeakerId ?? speakerState.systemDefault?.deviceId;
+        const speakerInitDeviceId = preferredSpeakerId || speakerState.systemDefault?.deviceId || '';
         if (!initializedDevices.current.audioOutput && speakerInitDeviceId) {
             void switchActiveDevice({
                 deviceType: 'audiooutput',
@@ -357,15 +362,15 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
             initializedDevices.current.audioOutput = true;
         }
     }, [
-        switchActiveDevice,
+        cameras,
+        microphoneState.systemDefault?.deviceId,
+        microphoneState.useSystemDefault,
         preferredCameraId,
         preferredMicrophoneId,
         preferredSpeakerId,
-        lastUsedCameraId,
-        microphoneState.systemDefault?.deviceId,
         speakerState.systemDefault?.deviceId,
-        microphoneState.useSystemDefault,
         speakerState.useSystemDefault,
+        switchActiveDevice,
     ]);
 
     const cleanupPreviews = useStableCallback(async () => {

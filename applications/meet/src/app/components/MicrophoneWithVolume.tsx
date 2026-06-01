@@ -2,7 +2,7 @@ import type { IconProps } from '@proton/components/components/icon/Icon';
 import { IcMeetMicrophone } from '@proton/icons/icons/IcMeetMicrophone';
 import type { IconSize } from '@proton/icons/types';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectInitialAudioState } from '@proton/meet/store/slices/deviceManagementSlice';
+import { selectInitialAudioState } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 
 import { useMediaManagementContext } from '../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMicrophoneVolume, useMicrophoneVolumeDirect } from '../hooks/useMicrophoneVolume';

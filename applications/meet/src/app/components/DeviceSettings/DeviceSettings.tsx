@@ -11,8 +11,10 @@ import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
     PermissionBlockedError,
-    PermissionsModalType,
     requestPermission,
+    showPermissionsModal,
+} from '@proton/meet/store/slices/deviceManagementSlice';
+import {
     selectActiveCameraId,
     selectCameraPermission,
     selectCameraState,
@@ -23,9 +25,8 @@ import {
     selectMicrophones,
     selectSpeakerState,
     selectSpeakers,
-    setLastUsedCameraId,
-    showPermissionsModal,
-} from '@proton/meet/store/slices/deviceManagementSlice';
+} from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 import { filterDevices, isDefaultDevice, resolveDevice } from '@proton/meet/utils/deviceUtils';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
@@ -138,7 +139,6 @@ export const DeviceSettings = ({
         const camera = filteredCameras.find((c) => c.deviceId === deviceId);
         if (camera) {
             await onCameraChange(camera);
-            setLastUsedCameraId(deviceId);
         }
     };
 
