@@ -9,9 +9,11 @@ import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import { IcPaperClip } from '@proton/icons/icons/IcPaperClip';
 import clsx from '@proton/utils/clsx';
 
+import type { StartAddAttachmentsParams } from 'proton-mail/hooks/composer/useAttachements/interface';
+
 interface Props extends ButtonLikeProps<'label'> {
     disabled?: boolean;
-    onAddAttachments: (files: File[]) => void;
+    onAddAttachments: ({ files }: StartAddAttachmentsParams) => void;
     attachmentTriggerRef?: React.MutableRefObject<() => void>;
     isAttachments?: boolean;
 }
@@ -24,7 +26,7 @@ const AttachmentsButton = (
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const input = event.target;
         if (input.files) {
-            onAddAttachments([...input.files]);
+            onAddAttachments({ files: [...input.files] });
             input.value = '';
         }
     };

@@ -8,7 +8,8 @@ import useLocalState from '@proton/components/hooks/useLocalState';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
+
+import type { AddAttachementsParams } from 'proton-mail/hooks/composer/useAttachements/interface';
 
 import { NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY } from '../../../constants';
 import { ComposerInnerModalStates } from '../../../hooks/composer/useComposerInnerModals';
@@ -28,7 +29,7 @@ interface Props {
     handleCloseInnerModal: () => void;
     handleScheduleSend: (scheduledAt: number) => void;
     handleCloseInsertImageModal: () => void;
-    handleAddAttachmentsUpload: (action: ATTACHMENT_DISPOSITION, removeImageMetadata?: boolean) => Promise<void>;
+    handleAddAttachmentsUpload: (data: AddAttachementsParams) => Promise<void>;
     handleDelete: () => void;
     handleSendAnyway: () => void;
     handleCancelSend: (error: string) => void;

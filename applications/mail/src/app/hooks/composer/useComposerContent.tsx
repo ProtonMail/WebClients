@@ -489,7 +489,7 @@ export const useComposerContent = (args: EditorArgs) => {
                 const files = syncedMessage.draftFlags?.initialAttachments;
                 dispatch(removeInitialAttachments(messageID));
                 await saveNow(syncedMessage);
-                await handleAddAttachmentsUpload(ATTACHMENT_DISPOSITION.ATTACHMENT, files);
+                await handleAddAttachmentsUpload({ action: ATTACHMENT_DISPOSITION.ATTACHMENT, files: files || [] });
             };
             void uploadInitialAttachments();
         }
