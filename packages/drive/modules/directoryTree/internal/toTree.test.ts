@@ -1,10 +1,13 @@
-import { MemberRole, NodeType } from '@proton/drive';
-
+import { MemberRole, NodeType } from '../../../index';
 import { makeTreeItemId } from './helpers';
 import { toTree } from './toTree';
 import type { TreeStoreItem } from './types';
 
-const createTreeItem = (nodeUid: string, parentUid: string | null, rest: Partial<TreeStoreItem> = {}): TreeStoreItem => ({
+const createTreeItem = (
+    nodeUid: string,
+    parentUid: string | null,
+    rest: Partial<TreeStoreItem> = {}
+): TreeStoreItem => ({
     nodeUid,
     treeItemId: makeTreeItemId(parentUid, nodeUid),
     parentUid,

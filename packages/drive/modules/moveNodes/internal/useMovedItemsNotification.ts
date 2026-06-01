@@ -1,10 +1,10 @@
 import { c, msgid } from 'ttag';
 
 import { useNotifications } from '@proton/components';
-import { handleSdkError } from '@proton/drive/legacy/errorHandling';
-import { getEllipsedName } from '@proton/drive/modules/intl';
 
-import { useListNotifications } from '../../../utils/useListNotifications';
+import { handleSdkError } from '../../../legacy/errorHandling';
+import { getEllipsedName } from '../../intl';
+import { useListNotifications } from '../../notifications';
 
 export const useMovedItemsNotification = () => {
     const { createSuccessMessage } = useListNotifications();
