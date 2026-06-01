@@ -13,7 +13,7 @@ import {
     selectCameraState,
     selectMicrophoneState,
     selectSpeakerState,
-} from '@proton/meet/store/slices/deviceManagementSlice';
+} from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { filterDevices, getDefaultDevice, isDefaultDevice } from '@proton/meet/utils/deviceUtils';
 import isTruthy from '@proton/utils/isTruthy';
 

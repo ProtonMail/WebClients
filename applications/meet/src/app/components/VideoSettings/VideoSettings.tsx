@@ -6,8 +6,7 @@ import {
     selectCameraState,
     selectCameras,
     selectSelectedCameraId,
-    setLastUsedCameraId,
-} from '@proton/meet/store/slices/deviceManagementSlice';
+} from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { filterDevices } from '@proton/meet/utils/deviceUtils';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
@@ -32,7 +31,6 @@ export function VideoSettings({ anchorRef, onClose, anchorPosition }: VideoSetti
 
     const handleCameraChange = async (deviceId: string) => {
         await toggleVideo({ videoDeviceId: deviceId, isEnabled: isVideoEnabled });
-        setLastUsedCameraId(deviceId);
     };
 
     return (

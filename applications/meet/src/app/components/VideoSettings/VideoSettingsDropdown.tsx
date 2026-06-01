@@ -7,7 +7,7 @@ import { useActiveBreakpoint } from '@proton/components';
 import type { PopperPosition } from '@proton/components/components/popper/interface';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import type { SliceDeviceState } from '@proton/meet/store/slices/deviceManagementSlice';
+import type { SliceDeviceState } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 import { shouldShowDeviceCheckmark } from '@proton/meet/utils/deviceUtils';
 

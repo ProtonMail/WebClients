@@ -12,12 +12,9 @@ import { uiStateReducer } from './uiStateSlice';
 import { userSettingsReducer } from './userSettings';
 import { meetUserReducer } from './userSlice';
 
-export * from './deviceManagementSlice';
 export * from './meetAppStateSlice';
 export * from './meetingInfo';
 export * from './meetings';
-export * from './uiStateSlice';
-export * from './userSettings';
 
 export const meetReducers = {
     ...chatAndReactionsReducer,
