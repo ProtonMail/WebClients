@@ -65,7 +65,8 @@ export const UpsellBanner = () => {
                     }
                     className="shrink-0"
                 >
-                    <Button className="rounded-full text-xs md:text-sm">{c('Action').t`Upgrade`}</Button>
+                    <Button className="upsell-banner-button action-button-new rounded-full">{c('Action')
+                        .t`Upgrade`}</Button>
                 </SettingsLink>
             </div>
 
