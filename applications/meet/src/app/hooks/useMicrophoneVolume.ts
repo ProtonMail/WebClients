@@ -7,7 +7,7 @@ import { useMeetSelector } from '@proton/meet/store/hooks';
 import {
     selectMicrophonePermission,
     selectSelectedMicrophoneId,
-} from '@proton/meet/store/slices/deviceManagementSlice';
+} from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 
 import { useMediaManagementContext } from '../contexts/MediaManagementProvider/MediaManagementContext';
 

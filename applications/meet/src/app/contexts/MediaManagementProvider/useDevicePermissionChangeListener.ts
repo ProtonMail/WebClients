@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import { useMeetDispatch } from '@proton/meet/store/hooks';
-import {
-    PermissionsModalType,
-    setPermissions,
-    showPermissionsModal,
-} from '@proton/meet/store/slices/deviceManagementSlice';
+import { setPermissions, showPermissionsModal } from '@proton/meet/store/slices/deviceManagementSlice';
+import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 
 /**
