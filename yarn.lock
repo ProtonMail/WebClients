@@ -10868,7 +10868,7 @@ __metadata:
     cross-var: "npm:^1.1.0"
     ejs-webpack-loader: "npm:^2.2.2"
     eslint: "npm:^9.39.4"
-    exifreader: "npm:^4.38.1"
+    exifreader: "npm:^4.39.1"
     heic-to: "npm:^1.4.2"
     jest: "npm:^30.4.2"
     jest-junit: "npm:^16.0.0"
@@ -10923,7 +10923,7 @@ __metadata:
     "@xmldom/xmldom": "npm:^0.9.10"
     core-js: "npm:^3.49.0"
     eslint: "npm:^9.39.4"
-    exifreader: "npm:^4.38.1"
+    exifreader: "npm:^4.39.1"
     heic-to: "npm:^1.4.2"
     jest: "npm:^30.4.2"
     jest-when: "npm:3.7.0"
@@ -28072,15 +28072,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"exifreader@npm:^4.38.1":
-  version: 4.38.1
-  resolution: "exifreader@npm:4.38.1"
+"exifreader@npm:^4.39.1":
+  version: 4.39.1
+  resolution: "exifreader@npm:4.39.1"
   dependencies:
     "@xmldom/xmldom": "npm:^0.9.9"
   dependenciesMeta:
     "@xmldom/xmldom":
       optional: true
-  checksum: 10/10834881ba65b9b265e84a405ad9456f9b479be919212484107535aa64344cccd3a7b9cec1e4cc5672ae12cd82f7d843c719212df746e8ab171443b43d8baf30
+  checksum: 10/61c292933142c75089df3754828bbcb88e482a3e339f9605a0bdb3c3616ab3ebd4b725c4ad3ad9eef6fa91de2751cd2bf28eaac264fb229d9fd744f93cbe3c9a
   languageName: node
   linkType: hard
 
@@ -41891,7 +41891,7 @@ __metadata:
     date-fns: "npm:^2.30.0"
     ejs-webpack-loader: "npm:^2.2.2"
     eslint: "npm:^9.39.4"
-    exifreader: "npm:^4.38.1"
+    exifreader: "npm:^4.39.1"
     fake-indexeddb: "npm:^6.2.5"
     heic-to: "npm:^1.4.2"
     history: "npm:^4.10.1"
