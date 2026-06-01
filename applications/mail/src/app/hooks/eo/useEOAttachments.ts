@@ -1,9 +1,10 @@
 import type { RefObject } from 'react';
 import { useState } from 'react';
 
+import type { PublicKeyReference } from '@protontech/crypto';
+
 import { useHandler } from '@proton/components/hooks/useHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { PublicKeyReference } from '@protontech/crypto';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
