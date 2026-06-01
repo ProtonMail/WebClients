@@ -8,11 +8,13 @@ import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectIsGuestAdmin, selectRoomName } from '@proton/meet/store/slices';
 import { selectShowDuration } from '@proton/meet/store/slices/uiStateSlice';
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
+import { PLANS } from '@proton/payments/core/constants.ts';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
+import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin.ts';
 import { useMeetingDuration } from '../../hooks/useMeetingDuration';
 import { formatDuration } from '../../utils/formatDuration';
 import { MeetingDuration } from '../MeetingDuration/MeetingDuration';
@@ -29,13 +31,13 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
     const showRemainingTimeEnabled = useFlag('MeetRemainingTime');
 
     const anchorRef = useRef<HTMLDivElement>(null);
-    const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
+    const { isPaidUser, isSubUser, hasSubscriptionWithoutMeet } = useMeetSelector(selectSubscriptionStatus);
 
     const { timeLeftMs, isExpiringSoon } = useMeetingDuration();
 
     const [showRemainingTime, setShowRemainingTime] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
-    const canOpenDropdown = !isPaidUser;
+    const canOpenDropdown = !isPaidUser && !isSubUser;
 
     const forceShowPopup = showRemainingTime && canOpenDropdown;
 
@@ -121,7 +123,15 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
                                         .t`Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.`}
                                 </div>
                             </div>
-                            <SettingsLink className="w-full" path={'/dashboard'} target={'_blank'}>
+                            <SettingsLink
+                                className="w-full"
+                                path={
+                                    hasSubscriptionWithoutMeet
+                                        ? `/dashboard?addon=meet`
+                                        : `/dashboard?plan=${PLANS.MEET_BUSINESS}`
+                                }
+                                target={'_blank'}
+                            >
                                 <Button
                                     className="create-account-button rounded-full color-invert reload-button py-3 w-full"
                                     color="norm"
@@ -140,13 +150,16 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
 
 export const MeetingName = ({ classNames }: MeetingNameProps) => {
     const isGuestAdmin = useMeetSelector(selectIsGuestAdmin);
+    const { isLocalParticipantHost, isLocalParticipantAdmin } = useIsLocalParticipantAdmin();
     const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
     const roomName = useMeetSelector(selectRoomName);
     const forceShowDuration = !isPaidUser;
     const showDuration = useMeetSelector(selectShowDuration) || forceShowDuration;
 
-    // Determine whether to show the CTA based on the guest mode
-    const Container = useMemo(() => (isGuestAdmin ? CTAContainer : React.Fragment), [isGuestAdmin]);
+    const Container = useMemo(
+        () => (isLocalParticipantHost || isLocalParticipantAdmin || isGuestAdmin ? CTAContainer : React.Fragment),
+        [isLocalParticipantHost, isLocalParticipantAdmin, isGuestAdmin]
+    );
 
     return (
         <Container>
