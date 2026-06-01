@@ -1,1 +1,1 @@
-export { useSharingModal } from '../../modules/sharingModal';
+export { useSharingModal } from '../../modals/sharingModal';

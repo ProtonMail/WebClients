@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { generateNodeUid, getDrive } from '@proton/drive';
-import type { useSharingModal } from '@proton/drive/modules/sharingModal';
+import type { useSharingModal } from '@proton/drive/modals/sharingModal';
 
 import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';
 
