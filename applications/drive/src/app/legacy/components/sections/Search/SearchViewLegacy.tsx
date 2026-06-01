@@ -13,6 +13,7 @@ import { ToolbarRow } from '../../../../statelessComponents/ToolbarRow/ToolbarRo
 import { FileBrowserStateProvider } from '../../FileBrowser';
 import DriveToolbar from '../Drive/DriveToolbar';
 import { SearchLegacy } from './SearchLegacy';
+import { ThumbnailsDownloadProvider } from './ThumbnailsDownloadProvider';
 
 export function SearchViewLegacy() {
     const { activeFolder, setDefaultRoot } = useActiveShare();
@@ -49,7 +50,9 @@ export function SearchViewLegacy() {
                     />
                 }
             />
-            <SearchLegacy shareId={activeFolder.shareId} searchView={searchView} />
+            <ThumbnailsDownloadProvider>
+                <SearchLegacy shareId={activeFolder.shareId} searchView={searchView} />
+            </ThumbnailsDownloadProvider>
         </FileBrowserStateProvider>
     );
 }
