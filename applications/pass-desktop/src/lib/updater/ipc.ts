@@ -2,8 +2,8 @@ import type { BrowserWindow, Session } from 'electron';
 import { app, autoUpdater } from 'electron';
 
 import type { MaybeNull } from '@proton/pass/types';
-import { UpdateStatus } from '@proton/pass/types/desktop';
 import type { UpdateStore } from '@proton/pass/types/desktop';
+import { UpdateStatus } from '@proton/pass/types/desktop';
 
 import logger from '../../utils/logger';
 import { isMac, isWindows } from '../../utils/platform';
@@ -24,7 +24,7 @@ declare module 'proton-pass-desktop/lib/ipc' {
 
 export const setupIpcHandlers = (getWindow: () => MaybeNull<BrowserWindow>, getSession: () => MaybeNull<Session>) => {
     setupIpcHandler('update:getUpdateStore', () => getUpdateStore());
-    setupIpcHandler('update:setUpdateStore', async (_, update) => {
+    setupIpcHandler('update:setUpdateStore', async (update) => {
         setUpdateStore(update);
         if (update.beta !== undefined) {
             const session = getSession();

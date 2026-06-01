@@ -6,8 +6,8 @@ export type BiometricsFactory = (getWindow: () => MaybeNull<BrowserWindow>) => B
 
 export type BiometricsPlatformHandler = {
     canCheckPresence: () => Promise<boolean>;
-    checkPresence: (e: Electron.IpcMainInvokeEvent, reason?: string) => Promise<void>;
-    getSecret: (e: Electron.IpcMainInvokeEvent, key: string, version: number) => Promise<MaybeNull<string>>;
-    setSecret: (e: Electron.IpcMainInvokeEvent, key: string, secret: Uint8Array<ArrayBuffer>) => Promise<void>;
-    deleteSecret: (e: Electron.IpcMainInvokeEvent, key: string) => Promise<void>;
+    checkPresence: (reason?: string) => Promise<void>;
+    getSecret: (key: string, version: number) => Promise<MaybeNull<string>>;
+    setSecret: (key: string, secret: Uint8Array<ArrayBuffer>) => Promise<void>;
+    deleteSecret: (key: string) => Promise<void>;
 };

@@ -11,7 +11,7 @@ declare module 'proton-pass-desktop/lib/ipc' {
 }
 
 export const setupIpcHandlers = (getWindow: () => MaybeNull<BrowserWindow>) => {
-    setupIpcHandler('router:navigate', async (_, href) => {
+    setupIpcHandler('router:navigate', async (href) => {
         const window = getWindow();
         await window?.loadURL(`${MAIN_WINDOW_WEBPACK_ENTRY}?#${href}`);
         window?.reload();
