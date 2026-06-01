@@ -1,36 +1,37 @@
 import { c } from 'ttag';
 
-import { getDrive } from '@proton/drive';
+import { generateNodeUid, getDrive } from '@proton/drive';
 
-import type { useDrivePreviewModal } from '../../../../../modals/preview';
+import { useDrivePreviewModal } from '../../../../../modals/preview';
 import { ContextMenuButton } from '../../../../../statelessComponents/ContextMenu';
 
 interface Props {
     shareId: string;
+    volumeId: string;
     linkId: string;
-    nodeUid?: string;
-    showPreviewModal?: ReturnType<typeof useDrivePreviewModal>['showPreviewModal'];
     close: () => void;
 }
 
-const PreviewButton = ({ shareId, nodeUid, showPreviewModal, close }: Props) => {
+const PreviewButton = ({ shareId, volumeId, linkId, close }: Props) => {
+    const { previewModal, showPreviewModal } = useDrivePreviewModal();
+    const nodeUid = generateNodeUid(volumeId, linkId);
     return (
-        <ContextMenuButton
-            name={c('Action').t`Preview`}
-            icon="eye"
-            testId="context-menu-preview"
-            action={() => {
-                if (showPreviewModal && nodeUid) {
+        <>
+            <ContextMenuButton
+                name={c('Action').t`Preview`}
+                icon="eye"
+                testId="context-menu-preview"
+                action={() => {
                     showPreviewModal({
                         deprecatedContextShareId: shareId,
                         nodeUid,
-                        // Force drive as it's legacy
                         drive: getDrive(),
                     });
-                }
-            }}
-            close={close}
-        />
+                }}
+                close={close}
+            />
+            {previewModal}
+        </>
     );
 };
 
