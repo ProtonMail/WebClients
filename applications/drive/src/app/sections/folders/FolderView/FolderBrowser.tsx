@@ -4,6 +4,8 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components';
 import { MemberRole, getDrive, splitNodeUid } from '@proton/drive';
+import { useMoveNodes } from '@proton/drive/modules/moveNodes';
+import type { MoveNodesItemMap } from '@proton/drive/modules/moveNodes';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
@@ -11,8 +13,6 @@ import type { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSett
 import type { DriveFolder } from '../../../legacy/hooks/drive/useActiveShare';
 import useDriveNavigation from '../../../legacy/hooks/drive/useNavigate';
 import { useContextMenuStore } from '../../../modules/contextMenu';
-import { useMoveNodes } from '../../../modules/moveNodes';
-import type { MoveNodesItemMap } from '../../../modules/moveNodes';
 import { useSelectionStore } from '../../../modules/selection';
 import { useDriveDragMove } from '../../../modules/selection/useDriveDragMove';
 import type { SortConfig, SortField } from '../../../modules/sorting';

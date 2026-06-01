@@ -9,7 +9,7 @@ import { useCopyItemsModalState } from './useCopyItemsModalState';
 
 // directoryTreeFactory() is called at module level in useCopyItemsModalState.
 // We expose the inner mocks via private keys so tests can access and configure them.
-jest.mock('../../modules/directoryTree', () => {
+jest.mock('@proton/drive/modules/directoryTree', () => {
     const mockFns = {
         initializeTree: jest.fn().mockResolvedValue(undefined),
         get: jest.fn(),
@@ -19,6 +19,7 @@ jest.mock('../../modules/directoryTree', () => {
     };
     const mockHook = jest.fn(() => mockFns);
     return {
+        ...jest.requireActual('@proton/drive/modules/directoryTree'),
         directoryTreeFactory: jest.fn(() => mockHook),
         _mockFns: mockFns,
     };
@@ -30,7 +31,7 @@ jest.mock('@proton/drive/modals/createFolderModal');
 
 const mockedUseCopyItems = jest.mocked(useCopyItems);
 const mockedUseCreateFolderModal = jest.mocked(useCreateFolderModal);
-const { _mockFns: mockTree } = jest.requireMock('../../modules/directoryTree');
+const { _mockFns: mockTree } = jest.requireMock('@proton/drive/modules/directoryTree');
 
 const FOLDER_TREE_ID = 'null___folder-uid';
 const FOLDER_UID = 'folder-uid';

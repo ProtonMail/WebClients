@@ -1,5 +1,5 @@
-import type { DegradedNode, NodeEntity, ProtonDriveClient } from '@proton/drive';
-import { MemberRole } from '@proton/drive';
+import type { DegradedNode, NodeEntity, ProtonDriveClient } from '../../../index';
+import { MemberRole } from '../../../index';
 
 export const DEVICES_ROOT_ID = 'devices-root';
 export const SHARED_WITH_ME_ROOT_ID = 'shared-with-me-root';
