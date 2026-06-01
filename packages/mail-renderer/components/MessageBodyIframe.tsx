@@ -10,6 +10,7 @@ import type { ThemeContextInterface } from '@proton/components/containers/themes
 import useSyncIframeStyles from '@proton/components/containers/themes/useSyncIframeStyles';
 import MessageBodyImages from '@proton/mail-renderer/components/MessageBodyImages';
 import getIframeSandboxAttributes from '@proton/mail-renderer/helpers/getIframeSandboxAttributes';
+import useIframeAfterBlockquote from '@proton/mail-renderer/hooks/useIframeAfterBlockquote';
 import useIframeDispatchEvents from '@proton/mail-renderer/hooks/useIframeDispatchEvents';
 import useIframeShowBlockquote from '@proton/mail-renderer/hooks/useIframeShowBlockquote';
 import useInitIframeContent from '@proton/mail-renderer/hooks/useInitIframeContent';
@@ -26,6 +27,7 @@ interface Props {
     showBlockquote: boolean;
     showBlockquoteToggle: boolean;
     blockquoteContent: string;
+    afterBlockquoteContent?: string;
     isPlainText: boolean;
     onBlockquoteToggle?: () => void;
     onContentLoaded: (iframeRootDivRef: HTMLDivElement) => void;
@@ -44,6 +46,7 @@ const MessageBodyIframe = ({
     content,
     className,
     blockquoteContent,
+    afterBlockquoteContent = '',
     showBlockquote: showBlockquoteProp,
     showBlockquoteToggle,
     onBlockquoteToggle,
@@ -81,6 +84,12 @@ const MessageBodyIframe = ({
         showBlockquoteProp,
         showBlockquoteToggle,
         onBlockquoteToggle,
+    });
+
+    useIframeAfterBlockquote({
+        iframeRef,
+        initStatus,
+        afterBlockquoteContent,
     });
 
     useIframeDispatchEvents(initStatus === 'done', iframeRef, onFocus, isPlainText);
