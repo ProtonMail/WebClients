@@ -31,6 +31,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getIsExternalAccount, getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
+import type { Permission } from '@proton/shared/lib/interfaces/UserPermission';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import { isSubscriptionRenewEnabled } from '@proton/shared/lib/subscription/helpers.ts';
 import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
@@ -51,6 +52,7 @@ type VpnNavContext = {
     organizationHasSecurityFeatures: boolean;
     isB2BTrial: boolean;
     flags: Partial<Record<FeatureFlag, boolean>>;
+    permissions: Partial<Record<Permission, boolean>>;
 } & NavContext &
     PropContext;
 
@@ -304,6 +306,7 @@ const routesDefinition = {
                             id: 'organization.monitoring.org-monitor',
                             label: () => c('Title').t`Activity monitor`,
                             to: '/activity-monitor',
+                            isVisible: ({ context }) => !!context.permissions['account.activity_log.read'],
                         },
                     ],
                 },
@@ -483,9 +486,10 @@ type Args = {
     subscription: MaybeFreeSubscription;
     context: PropContext;
     flags?: Partial<Record<FeatureFlag, boolean>>;
+    permissions?: Partial<Record<Permission, boolean>>;
 };
 
-export const getRoutes = ({ prefix, notifications, user, subscription, organization, flags, context }: Args) => {
+export const getRoutes = ({ prefix, notifications, user, subscription, organization, flags, context, permissions }: Args) => {
     const isOrgActive = organization?.State === ORGANIZATION_STATE.ACTIVE;
 
     const canHaveOrganization = !user.isMember && !!organization;
@@ -516,6 +520,7 @@ export const getRoutes = ({ prefix, notifications, user, subscription, organizat
             isB2BTrial: isB2BTrial(subscription, organization),
             ...context,
             flags: flags ?? {},
+            permissions: permissions ?? {},
         },
     });
 
