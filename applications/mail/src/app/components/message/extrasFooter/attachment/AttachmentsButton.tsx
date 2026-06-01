@@ -13,20 +13,20 @@ import type { StartAddAttachmentsParams } from 'proton-mail/hooks/composer/useAt
 
 interface Props extends ButtonLikeProps<'label'> {
     disabled?: boolean;
-    onAddAttachments: ({ files }: StartAddAttachmentsParams) => void;
+    handleAddAttachments: ({ files }: StartAddAttachmentsParams) => void;
     attachmentTriggerRef?: React.MutableRefObject<() => void>;
     isAttachments?: boolean;
 }
 
 const AttachmentsButton = (
-    { onAddAttachments, disabled, isAttachments, attachmentTriggerRef, ...rest }: Props,
+    { handleAddAttachments, disabled, isAttachments, attachmentTriggerRef, ...rest }: Props,
     ref: Ref<HTMLLabelElement>
 ) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const input = event.target;
         if (input.files) {
-            onAddAttachments({ files: [...input.files] });
+            handleAddAttachments({ files: [...input.files] });
             input.value = '';
         }
     };

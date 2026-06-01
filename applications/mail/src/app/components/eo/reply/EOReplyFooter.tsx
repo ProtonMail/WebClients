@@ -17,14 +17,14 @@ import { useSendEO } from '../../../hooks/eo/useSendEO';
 
 interface Props {
     id: string;
-    onAddAttachments: (files: StartAddAttachmentsParams) => void;
+    handleAddAttachments: (files: StartAddAttachmentsParams) => void;
     message: MessageState;
     encryptionKey?: PublicKeyReference;
     outsideKey?: MessageKeys;
     numberOfReplies: number;
 }
 
-const EOReplyFooter = ({ id, onAddAttachments, message, encryptionKey, outsideKey, numberOfReplies }: Props) => {
+const EOReplyFooter = ({ id, handleAddAttachments, message, encryptionKey, outsideKey, numberOfReplies }: Props) => {
     const history = useHistory();
 
     const [isSending, setIsSending] = useState(false);
@@ -70,7 +70,7 @@ const EOReplyFooter = ({ id, onAddAttachments, message, encryptionKey, outsideKe
     const canAddAttachment = (message.data?.Attachments.length || 0) < 10;
     const attachmentButton = (
         <AttachmentsButton
-            onAddAttachments={onAddAttachments}
+            handleAddAttachments={handleAddAttachments}
             data-testid="eo-composer:attachment-button"
             disabled={!canAddAttachment}
         />
