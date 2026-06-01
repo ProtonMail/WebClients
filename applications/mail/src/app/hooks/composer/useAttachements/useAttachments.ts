@@ -225,27 +225,6 @@ export const useAttachments = ({
     );
 
     /**
-     * Trigger an directly an embedded upload.
-     */
-    const handleAddEmbeddedImages = async (files: File[]) => {
-        const pendingUploadFiles = pendingUploads.map((upload) => upload.file);
-
-        const hasReachedLimits = checkSizeAndLength({
-            createNotification,
-            message,
-            files,
-            pendingUploadFiles,
-            attachmentsCountLimit: ATTACHMENT_MAX_COUNT,
-        });
-
-        if (hasReachedLimits) {
-            return;
-        }
-
-        void handleAddAttachmentsUpload(ATTACHMENT_DISPOSITION.INLINE, files);
-    };
-
-    /**
      * Entry point for upload, will check and ask for attachment action if possible
      */
     const handleAddAttachmentsStart = useHandler(async (files: File[]) => {
@@ -317,7 +296,6 @@ export const useAttachments = ({
         promiseUpload,
         uploadInProgress,
         handleAddAttachmentsStart,
-        handleAddEmbeddedImages,
         handleAddAttachmentsUpload,
         handleCancelAddAttachment,
         handleRemoveAttachment,
