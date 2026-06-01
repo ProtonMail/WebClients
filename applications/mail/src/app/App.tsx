@@ -76,7 +76,7 @@ const App = () => {
                                             calendarModelEventManager={extraThunkArguments.calendarModelEventManager}
                                         >
                                             <ApiProvider api={extraThunkArguments.api}>
-                                                <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
+                                                <DrawerProvider defaultShowDrawerSidebar={state.showDrawerSidebar}>
                                                     <ErrorBoundary component={<StandardErrorPage big />}>
                                                         <StandardPrivateApp noModals>
                                                             <NotificationManagerInjector />
