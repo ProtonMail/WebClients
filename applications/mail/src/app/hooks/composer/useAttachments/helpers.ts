@@ -5,7 +5,7 @@ export const createDummyUpload = (file: File) => ({
     isDummy: true,
 });
 
-export const isDummyattachmentUpload = (attachmentUpload: PendingUpload): attachmentUpload is DummyAttachmentUpload =>
+export const isDummyAttachmentUpload = (attachmentUpload: PendingUpload): attachmentUpload is DummyAttachmentUpload =>
     'isDummy' in attachmentUpload;
 export const isAttachmentUpload = (attachmentUpload: PendingUpload): attachmentUpload is AttachmentUpload =>
-    !isDummyattachmentUpload(attachmentUpload);
+    !isDummyAttachmentUpload(attachmentUpload);

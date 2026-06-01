@@ -15,12 +15,9 @@ export type DummyAttachmentUpload = {
 
 export type PendingUpload = AttachmentUpload | DummyAttachmentUpload;
 
-export interface AddAttachementsParams {
+export interface AddAttachmentsParams {
     action: ATTACHMENT_DISPOSITION;
-    files: File[];
+    /** When omitted, the hook falls back to the current pending files. */
+    files?: File[];
     removeImageMetadata?: boolean;
-}
-
-export interface StartAddAttachmentsParams {
-    files: File[];
 }

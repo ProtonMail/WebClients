@@ -18,8 +18,6 @@ import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages
 import clsx from '@proton/utils/clsx';
 import diff from '@proton/utils/diff';
 
-import type { StartAddAttachmentsParams } from 'proton-mail/hooks/composer/useAttachements/interface';
-
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
 import { getContent } from '../../../helpers/message/messageContent';
 import {
@@ -50,8 +48,8 @@ interface Props extends Pick<EditorProps, 'onMouseUp' | 'onKeyUp' | 'onFocus' | 
     onReady: (editorActions: ExternalEditorActions) => void;
     onChange: MessageChange;
     onChangeContent: (content: string, refreshEditor?: boolean, silent?: boolean) => void;
-    handleAddAttachments: (files: StartAddAttachmentsParams) => void;
-    handleRemoveAttachment: (attachment: Attachment) => Promise<void>;
+    onAddAttachments: (files: File[]) => void;
+    onRemoveAttachment: (attachment: Attachment) => Promise<void>;
     mailSettings?: MailSettings;
     userSettings?: UserSettings;
     editorMetadata: EditorMetadata;
@@ -67,8 +65,8 @@ const EditorWrapper = ({
     onMouseUp,
     onKeyUp,
     onChangeContent,
-    handleAddAttachments,
-    handleRemoveAttachment,
+    onAddAttachments,
+    onRemoveAttachment,
     onFocus,
     mailSettings,
     userSettings,
@@ -135,7 +133,7 @@ const EditorWrapper = ({
                     const attachment = embeddedImages.find((image) => image.cid === cid)?.attachment;
                     if (attachment) {
                         hasDeletedCid = true;
-                        void handleRemoveAttachment(attachment);
+                        void onRemoveAttachment(attachment);
                     }
                 });
                 if (hasDeletedCid) {
@@ -301,7 +299,7 @@ const EditorWrapper = ({
     }, [editorMetadata.blockquoteExpanded, blockquoteSaved, isPlainText]);
 
     const { openEmojiPickerRef, toolbarConfig, setToolbarConfig, modalLink, modalImage, modalDefaultFont } = useToolbar(
-        { onAddAttachments: (files) => handleAddAttachments({ files }), onChangeMetadata: handleChangeMetadata }
+        { onAddAttachments, onChangeMetadata: handleChangeMetadata }
     );
 
     return canRenderEditor ? (
@@ -318,7 +316,7 @@ const EditorWrapper = ({
             onBlockquoteToggleClick={handleBlockquoteToggleClick}
             onReady={handleEditorReady}
             mailSettings={mailSettings}
-            onAddAttachments={(files) => handleAddAttachments({ files })}
+            onAddAttachments={onAddAttachments}
             isPlainText={isPlainText}
             openEmojiPickerRef={openEmojiPickerRef}
             toolbarConfig={toolbarConfig}
