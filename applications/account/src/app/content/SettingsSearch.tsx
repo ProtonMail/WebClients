@@ -62,8 +62,9 @@ const getAppNameFromParentKey = (parentKey: RouteParents): APP_NAMES => {
 const getSearchableItems = (routes: Routes, app: APP_NAMES): SearchOption[] => {
     return Object.entries(routes).flatMap(([key, parentRoute]) => {
         const parentKey = key as RouteParents;
-        const parentApp =
-            parentKey === 'account' || parentKey === 'organization' ? app : getAppNameFromParentKey(parentKey);
+        const parentApp = (['account', 'organization', 'msp'] as readonly RouteParents[]).includes(parentKey)
+            ? app
+            : getAppNameFromParentKey(parentKey);
 
         if (parentRoute.available === false) {
             return [];

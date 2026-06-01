@@ -5,6 +5,7 @@ import { getDocsAppRoutes } from '../containers/docs/routes';
 import { getDriveAppRoutes } from '../containers/drive/routes';
 import { getMailAppRoutes } from '../containers/mail/routes';
 import { getMeetAppRoutes } from '../containers/meet/routes';
+import { getMspAppRoutes } from '../containers/msp/routes';
 import { getOrganizationAppRoutes } from '../containers/organization/routes';
 import { getPassAppRoutes } from '../containers/pass/routes';
 import { getVpnAppRoutes } from '../containers/vpn/routes';
@@ -30,6 +31,7 @@ export const getRoutes = (params: AllRouterParams) => {
         docs: getDocsAppRoutes(organizationParams),
         pass: getPassAppRoutes(organizationParams),
         organization: getOrganizationAppRoutes(organizationParams),
+        msp: getMspAppRoutes(sharedSettings),
         vpn: getVpnAppRoutes(sharedSettings),
         wallet: getWalletAppRoutes(),
         meet: getMeetAppRoutes(),
