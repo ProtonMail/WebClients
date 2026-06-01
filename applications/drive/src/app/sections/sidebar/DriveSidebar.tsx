@@ -18,6 +18,7 @@ import {
 } from '@proton/components';
 import AppsDropdown from '@proton/components/containers/app/AppsDropdown';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
+import { directoryTreeFactory } from '@proton/drive/modules/directoryTree';
 import { IcChevronsLeft } from '@proton/icons/icons/IcChevronsLeft';
 import { IcChevronsRight } from '@proton/icons/icons/IcChevronsRight';
 import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
@@ -38,7 +39,6 @@ import type { ShareWithKey } from '../../legacy/store';
 import { useCreateDevice } from '../../legacy/store/_shares/useCreateDevice';
 import { useCreatePhotos } from '../../legacy/store/_shares/useCreatePhotos';
 import { useDefaultShare } from '../../legacy/store/_shares/useDefaultShare';
-import { directoryTreeFactory } from '../../modules/directoryTree';
 import { useIsFreeUploadInProgress } from '../../modules/freeUpload';
 import { ActionMenuButton } from './ActionMenu/ActionMenuButton';
 import { DriveSidebarFooter } from './DriveSidebarFooter';

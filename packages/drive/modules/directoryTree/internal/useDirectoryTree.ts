@@ -3,11 +3,10 @@ import { useCallback, useEffect, useRef } from 'react';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { MemberRole, NodeType, useDrive } from '@proton/drive';
-import { handleSdkError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
-
-import { getDeviceName } from '../../utils/sdk/getNodeName';
+import { MemberRole, NodeType, useDrive } from '../../../index';
+import { handleSdkError, sendErrorReport } from '../../../legacy/errorHandling';
+import { getNodeEntity } from '../../../legacy/sdkUtils/getNodeEntity';
+import { getDeviceName } from '../../nodes';
 import { directoryTreeStoreFactory } from './directoryTreeStoreFactory';
 import { iterateSharedWithMeNodes } from './events/iterateSharedWithMeNodes';
 import { TreeEventManager } from './events/treeEventManager';
@@ -233,13 +232,15 @@ function useDirectoryTree(
     );
     // Stop ongoing work and unregister when closing modal
     useEffect(() => {
+        const controllers = expandAbortControllers.current;
         return () => {
-            expandAbortControllers.current.forEach((controller) => {
+            controllers.forEach((controller) => {
                 controller.abort();
             });
             eventManager.destroy();
         };
         // eventManager is stable (created once per tree in directoryTreeFactory)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const initializeFromNode = useCallback(
@@ -311,6 +312,7 @@ function useDirectoryTree(
                 });
             }
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         [addItem]
     );
 

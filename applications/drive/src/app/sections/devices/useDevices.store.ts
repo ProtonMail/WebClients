@@ -2,8 +2,8 @@ import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
 import type { Device } from '@proton/drive';
+import { getDeviceName } from '@proton/drive/modules/nodes';
 
-import { getDeviceName } from '../../utils/sdk/getNodeName';
 import { sortDeviceItems } from './devices.sorting';
 
 // SDK Device has a more complex type for "name" prop than what we need

@@ -5,11 +5,10 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { Loader, SidebarList } from '@proton/components';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
+import { DirectoryTreeRootType, type directoryTreeFactory } from '@proton/drive/modules/directoryTree';
 import clsx from '@proton/utils/clsx';
 
 import { useDriveSharingFlags } from '../../legacy/store';
-import type { directoryTreeFactory } from '../../modules/directoryTree';
-import { DirectoryTreeRootType } from '../../modules/directoryTree/types';
 import { DevicesSidebar } from './DriveSidebarDevices/DevicesSidebar';
 import { DriveSidebarFolders } from './DriveSidebarFolders/DriveSidebarFolders';
 import { DriveSidebarListItem } from './DriveSidebarListItem';

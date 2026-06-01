@@ -1,8 +1,7 @@
-import { NodeType, getDrive } from '@proton/drive/index';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
-
-import { getDeviceName } from '../../../utils/sdk/getNodeName';
+import { NodeType, getDrive } from '../../../../index';
+import { BusDriverEventName, getBusDriver } from '../../../../internal/BusDriver';
+import { getNodeEntity } from '../../../../legacy/sdkUtils/getNodeEntity';
+import { getDeviceName } from '../../../nodes';
 import { DEVICES_ROOT_ID, SHARED_WITH_ME_ROOT_ID, getNodeUidFromTreeItemId, makeTreeItemId } from '../helpers';
 import { DirectoryTreeRootType } from '../types';
 import type { DirectoryTreeStore, TreeStoreItem } from '../types';

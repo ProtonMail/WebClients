@@ -1,12 +1,12 @@
 import { useMemo, useState } from 'react';
 
 import { Loader } from '@proton/components';
+import type { TreeItemWithChildren } from '@proton/drive/modules/directoryTree';
 import clsx from '@proton/utils/clsx';
 
 import DriveExpandButton from '../../../legacy/components/layout/sidebar/DriveSidebar/DriveSidebarFolders/DriveExpandButton';
 import DriveSidebarListItem from '../../../legacy/components/layout/sidebar/DriveSidebar/DriveSidebarListItem';
 import { getDevicesSectionName } from '../../../legacy/components/sections/Devices/constants';
-import type { TreeItemWithChildren } from '../../../modules/directoryTree';
 import { stringComparator } from '../../../modules/sorting';
 import { DevicesSidebarItem } from './DevicesSidebarItem';
 

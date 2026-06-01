@@ -1,6 +1,5 @@
-import type { DegradedNode, NodeEntity, ProtonDriveClient } from '@proton/drive';
-import { MemberRole } from '@proton/drive';
-
+import type { DegradedNode, NodeEntity, ProtonDriveClient } from '../../../index';
+import { MemberRole } from '../../../index';
 import { findEffectiveRole } from './helpers';
 
 const createMockNode = (

@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 import { FileIcon, FileNameDisplay, Loader, SidebarListItem, SidebarListItemContent } from '@proton/components';
 import { splitNodeUid } from '@proton/drive/index';
+import type { TreeItemWithChildren } from '@proton/drive/modules/directoryTree';
 
 import SidebarListItemLink from '../../../legacy/components/layout/sidebar/SidebarListItemLink';
-import type { TreeItemWithChildren } from '../../../modules/directoryTree';
 import { useSidebarStore } from '../hooks/useSidebar.store';
 import { generateSidebarItemStyle } from '../utils';
 import { DriveExpandButton } from './DriveExpandButton';

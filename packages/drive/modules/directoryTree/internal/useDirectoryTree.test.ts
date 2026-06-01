@@ -1,29 +1,28 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { MemberRole, NodeType, getDrive, useDrive } from '@proton/drive';
-import { getBusDriver } from '@proton/drive/internal/BusDriver';
-import { handleSdkError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
-
+import { MemberRole, NodeType, getDrive, useDrive } from '../../../index';
+import { getBusDriver } from '../../../internal/BusDriver';
+import { handleSdkError, sendErrorReport } from '../../../legacy/errorHandling';
 import { TreeEventManager } from './events/treeEventManager';
 import { DEVICES_ROOT_ID, SHARED_WITH_ME_ROOT_ID, makeTreeItemId } from './helpers';
 import { DirectoryTreeRootType } from './types';
 
-jest.mock('@proton/drive', () => ({
-    ...jest.requireActual('@proton/drive'),
+jest.mock('../../../index', () => ({
+    ...jest.requireActual('../../../index'),
     useDrive: jest.fn(),
     getDrive: jest.fn(),
 }));
 const mockedUseDrive = jest.mocked(useDrive);
 const mockedGetDrive = jest.mocked(getDrive);
 
-jest.mock('@proton/drive/legacy/errorHandling');
+jest.mock('../../../legacy/errorHandling');
 const mockedHandleSdkError = jest.mocked(handleSdkError);
 
-jest.mock('@proton/drive/legacy/errorHandling');
+jest.mock('../../../legacy/errorHandling');
 jest.mocked(sendErrorReport);
 
-jest.mock('@proton/drive/internal/BusDriver', () => ({
-    ...jest.requireActual('@proton/drive/internal/BusDriver'),
+jest.mock('../../../internal/BusDriver', () => ({
+    ...jest.requireActual('../../../internal/BusDriver'),
     getBusDriver: jest.fn(),
 }));
 
