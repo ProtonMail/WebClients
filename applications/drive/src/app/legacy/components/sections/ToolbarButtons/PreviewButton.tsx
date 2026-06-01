@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { ToolbarButton } from '@proton/components';
-import { getDrive } from '@proton/drive';
+import { generateNodeUid, getDrive } from '@proton/drive';
 import { IcEye } from '@proton/icons/icons/IcEye';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
@@ -15,11 +15,9 @@ interface Props {
         mimeType: string;
         size?: number;
         isFile: boolean;
-        // Various sections use uid or nodeUid. It is the same thing.
-        // Only new sections include UIDs. We allow new preview only for new sections.
-        // TODO: Each section should use own button or it must be unified.
         uid?: string;
         nodeUid?: string;
+        volumeId?: string;
     }[];
 }
 
@@ -42,12 +40,15 @@ const PreviewButton = ({ selectedBrowserItems }: Props) => {
                 icon={<IcEye alt={c('Action').t`Preview`} />}
                 onClick={() => {
                     if (selectedBrowserItems.length) {
-                        const nodeUid = selectedBrowserItems[0].nodeUid || selectedBrowserItems[0].uid;
+                        const item = selectedBrowserItems[0];
+                        const nodeUid =
+                            item.nodeUid ||
+                            item.uid ||
+                            (item.volumeId ? generateNodeUid(item.volumeId, item.linkId) : undefined);
                         if (nodeUid) {
                             showPreviewModal({
-                                deprecatedContextShareId: selectedBrowserItems[0].rootShareId,
+                                deprecatedContextShareId: item.rootShareId,
                                 nodeUid,
-                                // Force getDrive as it's legacy
                                 drive: getDrive(),
                             });
                         }
