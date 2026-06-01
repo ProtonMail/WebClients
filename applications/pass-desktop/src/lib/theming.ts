@@ -20,6 +20,6 @@ export const setTheme = (theme: DesktopTheme) => {
 export const getTheme = () => store.get('theme') ?? 'system';
 
 export const setupIpcHandlers = () => {
-    setupIpcHandler('theming:setTheme', (_, theme) => setTheme(theme));
+    setupIpcHandler('theming:setTheme', (theme) => setTheme(theme));
     setupIpcHandler('theming:getTheme', getTheme);
 };

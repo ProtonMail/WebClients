@@ -20,7 +20,7 @@ declare module '@proton/pass/types/desktop/context-menu' {
 }
 
 export default (getWindow: () => MaybeNull<BrowserWindow>) => {
-    setupIpcHandler('contextMenu:open', (_, items) => {
+    setupIpcHandler('contextMenu:open', (items) => {
         const window = getWindow() || undefined;
 
         return new Promise<number>((resolve) => {
