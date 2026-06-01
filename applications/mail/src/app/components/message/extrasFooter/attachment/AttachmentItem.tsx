@@ -16,7 +16,9 @@ import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
-import { type PendingUpload, isAttachmentUpload } from '../../../../hooks/composer/useAttachments';
+import { isAttachmentUpload } from 'proton-mail/hooks/composer/useAttachements/helpers';
+import type { PendingUpload } from 'proton-mail/hooks/composer/useAttachements/interface';
+
 import type { AttachmentHandler } from './AttachmentList';
 import { AttachmentAction } from './AttachmentList';
 
