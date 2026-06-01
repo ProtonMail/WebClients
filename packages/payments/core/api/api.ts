@@ -566,7 +566,7 @@ export const getSubscription = async (api: Api, user: User | undefined) => {
         Subscription: Subscription;
         UpcomingSubscription: Subscription;
     }>({
-        url: `payments/v5/subscription`,
+        url: `payments/v4/subscription`,
         method: 'get',
         silence: true,
     });
