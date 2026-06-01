@@ -7,11 +7,11 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
     PermissionBlockedError,
-    PermissionsModalType,
     requestPermission,
-    selectActiveCameraId,
     showPermissionsModal,
 } from '@proton/meet/store/slices/deviceManagementSlice';
+import { selectActiveCameraId } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import {
     PermissionPromptStatus,
     selectPermissionPromptStatus,

@@ -18,7 +18,7 @@ import {
     selectMicrophones,
     selectSelectedCameraId,
     selectSelectedMicrophoneId,
-} from '@proton/meet/store/slices/deviceManagementSlice';
+} from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { selectPage, selectPageCount, setPage } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import {

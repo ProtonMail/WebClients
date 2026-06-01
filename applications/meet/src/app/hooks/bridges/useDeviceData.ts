@@ -42,6 +42,11 @@ export const useDeviceData = () => {
     }, [activeAudioOutputDeviceId, dispatch]);
 
     useEffect(() => {
-        dispatch(setActiveDevice({ kind: 'videoinput', deviceId: activeCameraDeviceId }));
+        dispatch(
+            setActiveDevice({
+                kind: 'videoinput',
+                deviceId: activeCameraDeviceId !== 'default' ? activeCameraDeviceId : '',
+            })
+        );
     }, [activeCameraDeviceId, dispatch]);
 };

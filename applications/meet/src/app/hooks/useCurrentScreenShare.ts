@@ -8,7 +8,8 @@ import { c } from 'ttag';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
-import { PermissionsModalType, showPermissionsModal } from '@proton/meet/store/slices/deviceManagementSlice';
+import { showPermissionsModal } from '@proton/meet/store/slices/deviceManagementSlice';
+import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import { setParticipantScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { isChrome, isMobile, isSafari, isWindows } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
@@ -43,7 +44,7 @@ export function useCurrentScreenShare({
 
     useEffect(() => {
         dispatch(setParticipantScreenShare(screenShareTrack?.participant?.identity));
-    }, [screenShareTrack?.participant?.identity]);
+    }, [dispatch, screenShareTrack?.participant?.identity]);
 
     const startScreenShare = useStableCallback(async () => {
         const start = performance.now();
@@ -135,6 +136,7 @@ export function useCurrentScreenShare({
                 screenShareTrack.publication.track.off('ended', stopPiP);
             }
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [screenShareTrack?.publication?.trackSid]);
 
     useEffect(() => {
@@ -161,7 +163,7 @@ export function useCurrentScreenShare({
         return () => {
             room.off('trackPublished', handleTrackPublished);
         };
-    }, []);
+    }, [room]);
 
     return {
         screenShareParticipant: screenShareParticipant,

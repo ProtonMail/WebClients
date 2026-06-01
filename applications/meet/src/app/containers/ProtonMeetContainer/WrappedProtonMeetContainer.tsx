@@ -4,7 +4,7 @@ import { RoomContext } from '@livekit/components-react';
 import { LogLevel, Room, setLogLevel } from 'livekit-client';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectActiveAudioOutputId } from '@proton/meet/store/slices/deviceManagementSlice';
+import { selectActiveAudioOutputId } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import { useFlag } from '@proton/unleash/useFlag';
 import { isDevOrBlack } from '@proton/utils/env';
