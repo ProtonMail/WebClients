@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 
-import type { TreeItemWithChildren } from '../../../modules/directoryTree';
+import type { TreeItemWithChildren } from '@proton/drive/modules/directoryTree';
+
 import { stringComparator } from '../../../modules/sorting';
 import { DriveSidebarSubfolder } from './DriveSidebarSubfolder';
 

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useGlobalLoader } from '@proton/components';
 import { generateNodeUid } from '@proton/drive';
+import { type MoveNodesItemMap, useMoveNodes } from '@proton/drive/modules/moveNodes';
 import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -13,7 +14,6 @@ import { useSelection } from '../../../legacy/components/FileBrowser';
 import type { DragMoveControls } from '../../../legacy/components/FileBrowser/interface';
 import type { DriveItem } from '../../../legacy/components/sections/interface';
 import type { LinkInfo } from '../../../legacy/store/_actions/interface';
-import { type MoveNodesItemMap, useMoveNodes } from '../../../modules/moveNodes';
 
 type DragAndDropItem = DriveItem;
 
