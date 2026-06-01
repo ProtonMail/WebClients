@@ -3,10 +3,10 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { useFormErrors, useNotifications } from '@proton/components';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { getDeviceName } from '@proton/drive/modules/nodes';
 import { useLoading } from '@proton/hooks';
 
 import { getDeviceByUid } from '../../utils/sdk/getDeviceByUid';
-import { getDeviceName } from '../../utils/sdk/getNodeName';
 import { type UseRemoveDeviceModalProps, useRemoveDeviceModalState } from './useRemoveDeviceModalState';
 
 jest.mock('@proton/components', () => ({
@@ -24,7 +24,7 @@ jest.mock('../../utils/sdk/getDeviceByUid', () => ({
     getDeviceByUid: jest.fn(),
 }));
 
-jest.mock('../../utils/sdk/getNodeName', () => ({
+jest.mock('@proton/drive/modules/nodes', () => ({
     getDeviceName: jest.fn(),
 }));
 

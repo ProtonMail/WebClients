@@ -9,11 +9,10 @@ import type { DirectoryTreeItem } from '@proton/drive/components/DirectoryTree/D
 import { handleSdkError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { useCreateFolderModal } from '@proton/drive/modals/createFolderModal';
+import { directoryTreeFactory, getNodeUidFromTreeItemId, makeTreeItemId } from '@proton/drive/modules/directoryTree';
+import { type MoveNodesItemMap, useMoveNodes } from '@proton/drive/modules/moveNodes';
 import shallowEqual from '@proton/utils/shallowEqual';
 
-import { directoryTreeFactory } from '../../modules/directoryTree';
-import { getNodeUidFromTreeItemId, makeTreeItemId } from '../../modules/directoryTree/helpers';
-import { type MoveNodesItemMap, useMoveNodes } from '../../modules/moveNodes';
 import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
 import { getMissingUid, isMissingNode } from '../../utils/sdk/node';
 

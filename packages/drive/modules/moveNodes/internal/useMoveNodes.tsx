@@ -1,10 +1,8 @@
 import { useState } from 'react';
 
-import { getDrive, splitNodeUid, useDrive } from '@proton/drive';
-import { BusDriverEventName, type NodeEventMeta, getBusDriver } from '@proton/drive/internal/BusDriver';
-import { handleSdkError } from '@proton/drive/legacy/errorHandling';
-
-import { useDriveEventManager } from '../../../legacy/store';
+import { getDrive, useDrive } from '../../../index';
+import { BusDriverEventName, type NodeEventMeta, getBusDriver } from '../../../internal/BusDriver';
+import { handleSdkError } from '../../../legacy/errorHandling';
 import { useMovedItemsNotification } from './useMovedItemsNotification';
 
 export type MoveNodeItem = {
@@ -16,14 +14,12 @@ export type MoveNodesItemMap = Record<string, MoveNodeItem>;
 
 export const useMoveNodes = () => {
     const { drive } = useDrive();
-    const events = useDriveEventManager();
     const { createMovedItemsNotifications } = useMovedItemsNotification();
     const [isLoading, setIsLoading] = useState(false);
 
     const undoMove = async (itemMap: MoveNodesItemMap) => {
         const successItems = [];
         const failedItems = [];
-        const volumeIdSet = new Set<string>();
         const eventItems: NodeEventMeta[] = [];
 
         // Group UIDs by parent folder so we can batch the move operation
@@ -45,8 +41,6 @@ export const useMoveNodes = () => {
                     const { uid, ok } = result;
                     if (ok) {
                         successItems.push({ uid: result.uid, name: itemMap[uid].name });
-                        const { volumeId } = splitNodeUid(toFolderUid);
-                        volumeIdSet.add(volumeId);
                         eventItems.push({ uid, parentUid: toFolderUid });
                     } else {
                         failedItems.push({ uid: result.uid, error: result.error });
@@ -59,10 +53,6 @@ export const useMoveNodes = () => {
 
         await getBusDriver().emit({ type: BusDriverEventName.MOVED_NODES, items: eventItems }, getDrive());
         createMovedItemsNotifications(successItems, failedItems);
-
-        volumeIdSet.forEach(async (volumeId) => {
-            await events.pollEvents.volumes(volumeId);
-        });
     };
 
     const moveNodes = async (itemMap: MoveNodesItemMap, targetFolderUid: string) => {
@@ -99,8 +89,6 @@ export const useMoveNodes = () => {
                 },
                 getDrive()
             );
-            const { volumeId } = splitNodeUid(targetFolderUid);
-            await events.pollEvents.volumes(volumeId);
         } catch (e) {
             handleSdkError(e, { extra: { itemsUId: uids, targetFolderUid } });
             throw e;
