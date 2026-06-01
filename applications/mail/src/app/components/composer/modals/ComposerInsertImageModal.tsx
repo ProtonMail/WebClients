@@ -46,7 +46,7 @@ const ComposerInsertImageModal = ({ files, onSelect, onClose, mailSettings, canS
             <Button
                 color="norm"
                 fullWidth
-                onClick={() => onSelect({ action: ATTACHMENT_DISPOSITION.ATTACHMENT, files: [], removeImageMetadata })}
+                onClick={() => onSelect({ action: ATTACHMENT_DISPOSITION.ATTACHMENT, files, removeImageMetadata })}
                 data-testid="composer:insert-image-attachment"
                 autoFocus
             >
@@ -55,7 +55,7 @@ const ComposerInsertImageModal = ({ files, onSelect, onClose, mailSettings, canS
             <Button
                 color="norm"
                 fullWidth
-                onClick={() => onSelect({ action: ATTACHMENT_DISPOSITION.INLINE, files: [], removeImageMetadata })}
+                onClick={() => onSelect({ action: ATTACHMENT_DISPOSITION.INLINE, files, removeImageMetadata })}
                 data-testid="composer:insert-image-inline"
             >{c('Action').t`Inline`}</Button>
         </>
