@@ -21,7 +21,7 @@ import {
     readContentIDandLocation,
 } from '../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, updateImages } from '../../helpers/message/messageImages';
-import type { AddAttachementsParams, StartAddAttachmentsParams } from '../composer/useAttachements/interface';
+import type { AddAttachmentsParams } from '../composer/useAttachments/interface';
 
 interface Props {
     message: MessageState;
@@ -39,7 +39,7 @@ export const useEOAttachments = ({ message, onChange, editorActionsRef, encrypti
      * Start uploading a file, the choice between attachment or inline is done.
      */
     const handleAddAttachmentsUpload = useHandler(
-        async ({ action, files = [], removeImageMetadata }: AddAttachementsParams) => {
+        async ({ action, files = [], removeImageMetadata }: AddAttachmentsParams) => {
             if (encryptionKey) {
                 files.forEach((file: File) => {
                     void uploadEO(
@@ -81,7 +81,7 @@ export const useEOAttachments = ({ message, onChange, editorActionsRef, encrypti
     /**
      * Entry point for upload, will check and ask for attachment action if possible
      */
-    const handleAddAttachments = useHandler(async ({ files }: StartAddAttachmentsParams) => {
+    const handleAddAttachments = useHandler(async (files: File[]) => {
         const embeddable = files.every((file) => isEmbeddable(file.type));
         const plainText = isPlainText(message.data);
 
@@ -127,7 +127,7 @@ export const useEOAttachments = ({ message, onChange, editorActionsRef, encrypti
         });
     });
 
-    const handleUploadImage = ({ action, removeImageMetadata }: AddAttachementsParams) => {
+    const handleUploadImage = ({ action, removeImageMetadata }: AddAttachmentsParams) => {
         void handleAddAttachmentsUpload({ action, files: imagesToInsert, removeImageMetadata });
         setImagesToInsert([]);
     };

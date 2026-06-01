@@ -30,7 +30,6 @@ import clsx from '@proton/utils/clsx';
 import { useComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
 import ComposerAssistantSpotlight from 'proton-mail/components/assistant/spotlights/ComposerAssistantSpotlight';
 import AttachmentsButton from 'proton-mail/components/message/extrasFooter/attachment/AttachmentsButton';
-import type { StartAddAttachmentsParams } from 'proton-mail/hooks/composer/useAttachements/interface';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 import { updateExpires } from 'proton-mail/store/messages/draft/messagesDraftActions';
 
@@ -55,7 +54,7 @@ interface Props {
     editorMetadata: EditorMetadata;
     loadingScheduleCount: boolean;
     message: MessageState;
-    handleAddAttachments: ({ files }: StartAddAttachmentsParams) => void;
+    onAddAttachments: (files: File[]) => void;
     onChange: MessageChange;
     onChangeFlag: MessageChangeFlag;
     onDelete: () => void;
@@ -84,7 +83,7 @@ const ComposerActions = ({
     editorMetadata,
     loadingScheduleCount,
     message,
-    handleAddAttachments,
+    onAddAttachments,
     onChange,
     onChangeFlag,
     onDelete,
@@ -262,7 +261,7 @@ const ComposerActions = ({
                             <AttachmentsButton
                                 isAttachments={isAttachments}
                                 disabled={disabled}
-                                handleAddAttachments={handleAddAttachments}
+                                onAddAttachments={onAddAttachments}
                                 attachmentTriggerRef={attachmentTriggerRef}
                                 data-testid="composer:attachment-button"
                             />
