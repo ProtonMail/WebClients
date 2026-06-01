@@ -3116,6 +3116,21 @@
       ],
       "Available storage: ${ storageText }": [
         "Armazenamento disponível: ${ storageText }"
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Desbloqueia 15 GB de armazenamento por apenas ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Pausaremos as importações quando o armazenamento atingir 80% da capacidade, de modo a reservar espaço para novas mensagens."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Iniciamos a importar seus e-mails do Gmail. Avisaremos quando terminar."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Sua conta gratuita do ${ MAIL_APP_NAME } tem espaço de armazenamento limitado, por isso importaremos apenas ${ newUserStorageText } de suas mensagens mais recentes do Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Sua conta gratuita do ${ MAIL_APP_NAME } tem espaço de armazenamento limitado, por isso importaremos apenas seus e-mails mais recentes do Gmail."
       ]
     },
     "description": {
@@ -7195,6 +7210,12 @@
       "Photo saved to your Drive": [
         "Foto salva no seu Drive",
         "Fotos salvas no seu Drive"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Faça upgrade a qualquer momento para importar o resto"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Faça upgrade ou limpe espaço em qualquer momento para importar o resto"
       ]
     },
     "info": {
@@ -10800,6 +10821,9 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Recomendamos que você \"desconfie\" dessa chave."
+      ],
+      "This key is used for message verification": [
+        "Essa chave já foi usado para verificação por mensagem"
       ]
     },
     "PGP key warning": {
