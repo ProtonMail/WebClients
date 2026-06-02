@@ -243,9 +243,6 @@
       "Continue import": [
         "Jatka tuontia"
       ],
-      "Continue on web": [
-        "Jatka verkkosovelluksessa"
-      ],
       "Continue to ${ planOrAppName }": [
         "Jatka sovellukseen ${ planOrAppName }"
       ],
@@ -398,9 +395,6 @@
       "Download anyway": [
         "Lataa silti"
       ],
-      "Download app": [
-        "Lataa sovellus"
-      ],
       "Download for Mac": [
         "Lataa Macille"
       ],
@@ -526,6 +520,9 @@
       ],
       "Go back": [
         "Takaisin"
+      ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Palaa albumiin \"${ ellipsedAlbumName }\""
       ],
       "Go to ${ planOrAppName }": [
         "Avaa ${ planOrAppName }"
@@ -1078,9 +1075,6 @@
       ],
       "Try another method": [
         "Kokeile toista tapaa"
-      ],
-      "Try it now": [
-        "Kokeile sitä nyt"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Yritä tallennusta uudelleen. Tallennus epäonnistui: ${ saveError }"
@@ -3379,20 +3373,11 @@
       "Failed to update public share node": [
         "Julkisen jakosolmun päivittäminen epäonnistui."
       ],
-      "File \"${ name }\" is already downloading": [
-        "Tiedostoa \"${ name }\" ladataan jo."
-      ],
       "File cannot be merged with folder": [
         "Tiedostoa ei voida yhdistää kansioon"
       ],
-      "File selection is already downloading": [
-        "Valittuja tiedostoja ladataan jo."
-      ],
       "First name is too long": [
         "Etunimi on liian pitkä"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Kansiota \"${ name }\" ladataan jo."
       ],
       "Folder name cannot be empty.": [
         "Kansion nimi ei voi olla tyhjä."
@@ -4962,9 +4947,6 @@
       "An active recovery file": [
         "Aktiivinen palautustiedosto"
       ],
-      "an anonymous user": [
-        "anonyymi käyttäjä"
-      ],
       "An issue occurred during the restore process.": [
         "Ongelma palautusprosessissa."
       ],
@@ -5066,9 +5048,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Tarkistetaan yhteystietoa ${ progress }/${ max }..."
-      ],
-      "Checking signatures": [
-        "Tarkastetaan allekirjoituksia"
       ],
       "Choose a plan that works best for you.": [
         "Valitse tilaus, joka sopii sinulle parhaiten."
@@ -5184,12 +5163,6 @@
       "Details": [
         "Lisätiedot"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Tiedoston sähköinen allekirjoitus vahvistettiin ja sen tallensi turvallisesti ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Sähköinen allekirjoitus vahvistettiin ja kansion tallensi turvallisesti ${ emailAddress }."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Tutustu uusiin avattuihin ominaisuuksiin ja aloita niiden käyttö heti!"
       ],
@@ -5222,9 +5195,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Tiedoston ${ downloadFileName } lataus perutaan"
-      ],
-      "Download was canceled": [
-        "Lataus peruttiin"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Lataa suosikkisovelluksesi tänään ja suojaa yksityisyytesi minne ikinä menetkin."
@@ -5326,15 +5296,6 @@
       "Feb": [
         "helmi"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "\"${ name }\" poistettiin latauksen aikana"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Tiedostolta ${ fileName } puuttuu allekirjoitus, eikä käyttäjän ${ emailAddress } voitu vahvistaa tallentaneen sitä."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Tiedostolta ${ fileName } puuttuu allekirjoitus, eikä sen tallentanutta käyttäjää voitu vahvistaa."
-      ],
       "File will not be updated": [
         "Tiedostoa ei tallenneta"
       ],
@@ -5343,15 +5304,6 @@
       ],
       "finance": [
         "rahoitus"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "Kansio \"${ link.name }\" poistettiin kesken latauksen"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Kansiolta ${ fileName } puuttuu allekirjoitus, eikä käyttäjän ${ emailAddress } voitu vahvistaa tallentaneen sitä."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Kansiolta ${ fileName } puuttuu allekirjoitus, eikä sen tallentanutta käyttäjää voitu vahvistaa."
       ],
       "Folder will not be uploaded": [
         "Kansiota ei tallenneta"
@@ -5760,6 +5712,10 @@
       "Photo is set as album cover": [
         "Kuva on asetettu albumin kansikuvaksi"
       ],
+      "Photo saved to your Drive": [
+        "Kuva tallennettu Driveesi",
+        "Kuvat tallennettiin Driveesi"
+      ],
       "Photos have been successfully recovered.": [
         "Kuvat on palautettu."
       ],
@@ -5989,9 +5945,6 @@
       "Shared with you": [
         "Jaettu kanssasi"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Allekirjoitusta ei voida verkkovirheen vuoksi vahvistaa. Yritä myöhemmin uudelleen."
-      ],
       "Signature check will be ignored": [
         "Allekirjoitustarkistus ohitetaan"
       ],
@@ -6056,14 +6009,8 @@
       "that": [
         "että"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Tilillä saattaa olla uusi avain tai seuraavia on saatettu muuttaa tietämättäsi: ${ items }. Avaa se vain, jos luotat siihen."
-      ],
       "The albums you create are shown here.": [
         "Luomasi albumit löytyvät täältä."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Sähköinen allekirjoitus on vahvistettu osittain. Tämä kansio on lähetetty julkisella jakolinkillä sellaisen käyttäjän toimesta, jolla ei ole ${ BRAND_NAME } -tiliä, joten hänen henkilöllisyyttään ei voida vahvistaa."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Latausmäärään sisältyy varsinaisten latausten lisäksi myös tiedostojen esikatselukerrat."
@@ -6073,9 +6020,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Paljastuneet tiedot vuosivat ulkopuolisesta palvelusta. ${ BRAND_NAME }-tilisi tiedot ovat suojassa ja salattuina. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Seuraavia on saatettu muuttaa tietämättäsi: ${ items }. Avaa vain, jos luotat siihen."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Osoitteen omistaja on poistanut päästä päähän -salauksen käytöstä. Jotta osoitteeseen voidaan lähettää salattuja viestejä, on omistajan palautettava päähän -salaus käyttöön."
@@ -6351,17 +6295,15 @@
       "Way to go, you've just increased your storage to 5 GB!": [
         "Hienoa! Olet juuri kasvattanut tallennustilasi 5 gigatavuun."
       ],
+      "We couldn't save this photo to your Drive": [
+        "Emme voineet tallentaa tätä kuvaa Driveesi",
+        "Emme voineet tallentaa näitä kuvia Driveesi"
+      ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Emme voineet varmistaa, että ${ nameAuthor } on ladannut ${ node.name }. Seuraavaa on mahdollisesti muutettu: tiedostojen tietojen järjestys. Avaa vain, jos luotat siihen."
       ],
       "We couldn’t process your payment.": [
         "Maksuasi ei voitu käsitellä."
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Tiedoston ${ fileName } tallentajaksi ei voitu vahvistaa käyttäjää ${ emailAddress }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Tiedoston ${ fileName } tallentajaa ei voitu vahvistaa."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Maksutapa on vahvistettava pankistasi."
@@ -6371,6 +6313,10 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Käytämme 3-D Securea maksujesi suojaukseen"
+      ],
+      "We were not able to add this photo to your album": [
+        "Emme voineet lisätä tätä kuvaa albumiisi",
+        "Emme voineet lisätä joitain kuviasi albumiisi"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Ohjaamme sinut uudessa välilehdessä PayPaliin suorittamaan maksun. Jos käytät ponnahdusikkunoiden estäjiä, poista ne käytöstä jatkaaksesi."
@@ -6564,9 +6510,6 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Tilisi asetuksissa on käytössä käännetty verovelvollisuus, jota valittu tilaus ei tue. Jatkaaksesi joko poista ALV-numero laskutustiedoista tai valitse toinen tilaus."
       ],
-      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
-        "Nykyinen selaimesi ei tue suurten- tai useiden tiedostojen lataamista. Lataa työpöytäsovellus saumattomiin lähetyksiin ja latauksiin."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tietosi lähteestä ${ importedEmailAddressStrong } ovat valmiina ${ BRAND_NAME }-tilillesi tuontia varten."
       ],
@@ -6683,32 +6626,6 @@
         "Vain tarkastelu"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "tiedoston attribuutit"
-      ],
-      "file data": [
-        "tiedoston tiedot"
-      ],
-      "file data key": [
-        "tiedoston tietoavain"
-      ],
-      "file data order": [
-        "tiedoston tietojärjestys"
-      ],
-      "hash key": [
-        "hajautusarvon avain"
-      ],
-      "keys": [
-        "avaimet"
-      ],
-      "name": [
-        "nimi"
-      ],
-      "thumbnail": [
-        "pienoiskuva"
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "Vaarantunut"
@@ -6756,6 +6673,9 @@
       "${ nbYear } year": [
         "${ nbYear } vuosi",
         "${ nbYear } vuotta"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } merkkiä"
       ],
       "(Expired)": [
         "(erääntynyt)"
@@ -8925,6 +8845,10 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" nimettiin uudelleen"
       ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } valokuva on lisätty albumiin \"${ albumName }\"",
+        "${ addedUids.length } valokuvaa on lisätty albumiin \"${ albumName }\""
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } kohteen salauksen purku epäonnistui",
         "${ count } kohteen salauksen purku epäonnistui"
@@ -8994,6 +8918,10 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } otettiin käyttöön"
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } valokuva poistettiin albumista \"${ albumName }\"",
+        "${ removed } valokuvaa poistettiin albumista \"${ albumName }\""
       ],
       "Access for the member removed": [
         "Jäsenen käyttöoikeus mitätöitiin"
@@ -11348,9 +11276,6 @@
       "Albums you've shared will appear here": [
         "Jakamasi albumit näkyvät tässä"
       ],
-      "Securely share your favorite moments with friends and family using Albums.": [
-        "Jaa suosikkisihetkesii turvallisesti ystävien ja perheen kanssa Albumien avulla."
-      ],
       "Shared by ${ sharedBy }": [
         "Jakanut ${ sharedBy }"
       ],
@@ -11718,9 +11643,6 @@
       "Birthday": [
         "Syntymäpäivä"
       ],
-      "Browser might run out of memory": [
-        "Selaimen käytettävissä oleva keskusmuisti ei välttämättä riitä"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Peru ${ MAIL_SHORT_APP_NAME }-tilaus"
       ],
@@ -11906,9 +11828,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Alennetaanko tilaukseen ${ downgradedPlanName }?"
-      ],
-      "Download ${ date }": [
-        "Lataa ${ date }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Lataa ${ DRIVE_APP_NAME }-sovellukset"
@@ -12244,9 +12163,6 @@
       ],
       "Phone numbers": [
         "Puhelinnumerot"
-      ],
-      "Photo albums are here!": [
-        "Kuva-albumit ovat täällä!"
       ],
       "Photos": [
         "Kuvat"

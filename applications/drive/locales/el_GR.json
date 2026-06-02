@@ -246,9 +246,6 @@
       "Continue import": [
         "Συνεχίστε την εισαγωγή"
       ],
-      "Continue on web": [
-        "Συνέχεια στο διαδίκτυο"
-      ],
       "Continue to ${ planOrAppName }": [
         "Συνέχεια στο ${ planOrAppName }"
       ],
@@ -403,9 +400,6 @@
       ],
       "Download anyway": [
         "Λήψη οπωσδήποτε"
-      ],
-      "Download app": [
-        "Λήψη εφαρμογής"
       ],
       "Download for Mac": [
         "Λήψη για Mac"
@@ -1096,9 +1090,6 @@
       ],
       "Try another method": [
         "Δοκιμάστε μια άλλη μέθοδο"
-      ],
-      "Try it now": [
-        "Δοκιμάστε το τώρα"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Παρακαλώ προσπαθήστε να αποθηκεύσετε ξανά. Η αποθήκευση απέτυχε λόγω: ${ saveError }"
@@ -3531,20 +3522,11 @@
       "Failed to update public share node": [
         "Αποτυχία ενημέρωσης δημόσιου κόμβου κοινοποίησης"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Το αρχείο \"${ name }\" κατεβαίνει ήδη"
-      ],
       "File cannot be merged with folder": [
         "Ένα αρχείο δεν γίνεται να συγχωνευθεί με φάκελο"
       ],
-      "File selection is already downloading": [
-        "Τα επιλεγμένα αρχεία κατεβαίνουν ήδη"
-      ],
       "First name is too long": [
         "Το όνομα είναι πολύ μεγάλο"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Ο φάκελος \"${ name }\" κατεβαίνει ήδη"
       ],
       "Folder name cannot be empty.": [
         "Το όνομα φακέλου δεν γίνεται να είναι κενό."
@@ -5181,9 +5163,6 @@
       "An active recovery file": [
         "Ένα ενεργό αρχείο ανάκτησης"
       ],
-      "an anonymous user": [
-        "ένας ανώνυμος χρήστης"
-      ],
       "An issue occurred during the restore process.": [
         "Παρουσιάστηκε ένα πρόβλημα κατά τη διαδικασία επαναφοράς."
       ],
@@ -5294,9 +5273,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Έλεγχος επαφής ${ progress } από ${ max }..."
-      ],
-      "Checking signatures": [
-        "Έλεγχος υπογραφών"
       ],
       "Choose a plan that works best for you.": [
         "Επιλέξτε το πλάνο που σας ταιριάζει καλύτερα."
@@ -5415,12 +5391,6 @@
       "Details": [
         "Λεπτομέρειες"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Η ψηφιακή υπογραφή επαληθεύτηκε. Το αρχείο μεταφορτώθηκε διασφαλισμένα από ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Η ψηφιακή υπογραφή επαληθεύτηκε. Ο φάκελος μεταφορτώθηκε διασφαλισμένα από ${ emailAddress }."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Ανακαλύψτε νέες δυνατότητες που ξεκλειδώθηκαν και αρχίστε να τις χρησιμοποιείτε αμέσως!"
       ],
@@ -5453,9 +5423,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Η λήψη του ${ downloadFileName } θα ματαιωθεί"
-      ],
-      "Download was canceled": [
-        "Η λήψη ακυρώθηκε"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Κατεβάστε την αγαπημένη σας εφαρμογή σήμερα και πάρτε την ιδιωτικότητα σας όπου κι αν πάτε."
@@ -5566,20 +5533,11 @@
       "Feb": [
         "Φεβ"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "Το αρχείο \"${ name }\" διαγράφηκε κατά τη λήψη"
-      ],
       "File could not be scanned": [
         "Δεν ήταν δυνατή η σάρωση του αρχείου"
       ],
       "File flagged as potentially malicious": [
         "Το αρχείο επισημάνθηκε ως πιθανώς κακόβουλο"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Το αρχείο στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ότι το ${ fileName } μεταφορτώθηκε από ${ emailAddress }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Το αρχείο στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ποιος μεταφόρτωσε το ${ fileName }."
       ],
       "File will not be updated": [
         "Το αρχείο δεν θα ενημερωθεί"
@@ -5589,15 +5547,6 @@
       ],
       "finance": [
         "οικονομικά"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "Ο φάκελος \"${ link.name }\" διαγράφηκε κατά τη λήψη"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Ο φάκελος στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ότι ο ${ fileName } μεταφορτώθηκε από ${ emailAddress }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Ο φάκελος στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ποιος μεταφόρτωσε το ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Ο φάκελος δεν θα μεταφορτωθεί"
@@ -6305,9 +6254,6 @@
       "Shared with you": [
         "Κοινοποιημένα με εσάς"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Η υπογραφή δεν μπορεί να επικυρωθεί λόγω σφάλματος δικτύου, δοκιμάστε ξανά αργότερα."
-      ],
       "Signature check will be ignored": [
         "Ο έλεγχος υπογραφής θα αγνοηθεί"
       ],
@@ -6372,17 +6318,8 @@
       "that": [
         "που"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Ο λογαριασμός μπορεί να έχει ένα νέο κλειδί ή μπορεί τα εξής να έχουν αλλοιωθεί: ${ items }. Ανοίξτε τα μόνο αν το εμπιστεύεστε."
-      ],
       "The albums you create are shown here.": [
         "Τα άλμπουμ που δημιουργείτε εμφανίζονται εδώ."
-      ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Η ψηφιακή υπογραφή έχει επαληθευτεί εν μέρει. Αυτό το αρχείο μεταφορτώθηκε χρησιμοποιώντας έναν δημόσια προσβάσιμο σύνδεσμο κοινής χρήσης από έναν χρήστη χωρίς λογαριασμό ${ BRAND_NAME }, επομένως δεν είναι δυνατή η επαλήθευση της ταυτότητάς του."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Η ψηφιακή υπογραφή έχει επαληθευτεί εν μέρει. Αυτός ο φάκελος μεταφορτώθηκε χρησιμοποιώντας έναν δημόσια προσβάσιμο σύνδεσμο κοινής χρήσης από έναν χρήστη χωρίς λογαριασμό ${ BRAND_NAME }, επομένως δεν είναι δυνατή η επαλήθευση της ταυτότητάς του."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Ο αριθμός λήψεων περιλαμβάνει τόσο τις πραγματικές λήψεις όσο και τις εμφανίσεις κατά την προεπισκόπηση αρχείων."
@@ -6392,9 +6329,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Οι εκτεθειμένες πληροφορίες διέρρευσαν από μια υπηρεσία τρίτου μέρους. Οι πληροφορίες του λογαριασμού σας ${ BRAND_NAME } παραμένουν ασφαλείς και κρυπτογραφημένες. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Τα ακόλουθα μπορεί να έχουν αλλοιωθεί: ${ items }. Ανοίξτε τα μόνο αν το εμπιστεύεστε."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ο κάτοχος αυτής της διεύθυνσης έχει απενεργοποιήσει την διατερματική κρυπτογράφηση. Για να είναι δυνατή η αποστολή κρυπτογραφημένων μηνυμάτων ηλεκτρονικού ταχυδρομείου σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει να ενεργοποιήσει ξανά την διατερματική κρυπτογράφηση."
@@ -6695,12 +6629,6 @@
       "We couldn’t process your payment.": [
         "Δεν ήταν δυνατή η επεξεργασία της πληρωμής σας."
       ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Δεν μπορέσαμε να επαληθεύσουμε ότι το ${ fileName } μεταφορτώθηκε από ${ emailAddress }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Δεν μπορέσαμε να επαληθεύσουμε ποιος μεταφόρτωσε το ${ fileName }."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Πρέπει να επαληθεύσουμε τον τρόπο πληρωμής σας με την τράπεζά σας."
       ],
@@ -6912,9 +6840,6 @@
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
         "Ο χώρος στο πρόγραμμα περιήγησής σας εξαντλήθηκε κατά την ευρετηρίαση αρχείων για αναζήτηση. Απελευθερώστε χώρο αποθήκευσης και, στη συνέχεια, δημιουργήστε ξανά το ευρετήριο."
       ],
-      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
-        "Το τρέχον πρόγραμμα περιήγησής σας δεν υποστηρίζει τη λήψη μεγάλων αρχείων/πολλαπλών αρχείων. Κατεβάστε την εφαρμογή επιφάνειας εργασίας για απρόσκοπτες μεταφορτώσεις και λήψεις."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο ${ BRAND_NAME }."
       ],
@@ -7041,32 +6966,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Μόνο για ανάγνωση"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "ιδιότητες αρχείου"
-      ],
-      "file data": [
-        "δεδομένα αρχείου"
-      ],
-      "file data key": [
-        "κλειδί δεδομένων αρχείου"
-      ],
-      "file data order": [
-        "σειρά δεδομένων αρχείου"
-      ],
-      "hash key": [
-        "κλειδί hash"
-      ],
-      "keys": [
-        "κλειδιά"
-      ],
-      "name": [
-        "όνομα"
-      ],
-      "thumbnail": [
-        "μικρογραφία"
       ]
     },
     "Key badge": {
@@ -11890,9 +11789,6 @@
       "Albums you've shared will appear here": [
         "Τα άλμπουμ που έχετε μοιραστεί θα εμφανίζονται εδώ"
       ],
-      "Securely share your favorite moments with friends and family using Albums.": [
-        "Κοινοποιήστε με ασφάλεια τις αγαπημένες σας στιγμές με τους φίλους και την οικογένεια σας χρησιμοποιώντας Άλμπουμ."
-      ],
       "Shared by ${ sharedBy }": [
         "Κοινοποιήθηκε από τον/την ${ sharedBy }"
       ],
@@ -12263,9 +12159,6 @@
       "Birthday": [
         "Γενέθλια"
       ],
-      "Browser might run out of memory": [
-        "Ο περιηγητής ενδέχεται να ξεμείνει από μνήμη"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Ακύρωση συνδρομής ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -12469,9 +12362,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Υποβάθμιση σε ${ downgradedPlanName }?"
-      ],
-      "Download ${ date }": [
-        "Κάντε λήψη ${ date }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Λήψη εφαρμογών ${ DRIVE_APP_NAME }"
@@ -12816,9 +12706,6 @@
       ],
       "Phone numbers": [
         "Αριθμοί Τηλεφώνου"
-      ],
-      "Photo albums are here!": [
-        "Τα άλμπουμ φωτογραφιών είναι εδώ!"
       ],
       "Photos": [
         "Φωτογραφίες"

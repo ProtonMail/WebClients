@@ -243,9 +243,6 @@
       "Continue import": [
         "繼續匯入"
       ],
-      "Continue on web": [
-        "在網頁繼續"
-      ],
       "Continue to ${ planOrAppName }": [
         "繼續使用 ${ planOrAppName }"
       ],
@@ -293,6 +290,9 @@
       ],
       "Create and copy alias": [
         "建立及複製別名"
+      ],
+      "Create business account": [
+        "創建商務帳號"
       ],
       "Create folder": [
         "新建資料夾"
@@ -360,6 +360,9 @@
       "Details": [
         "詳細資訊"
       ],
+      "Diagnostics": [
+        "診斷"
+      ],
       "Discard": [
         "放棄"
       ],
@@ -393,8 +396,8 @@
       "Download anyway": [
         "仍要下載"
       ],
-      "Download app": [
-        "下載應用程式"
+      "Download for Mac": [
+        "下載 Mac 版"
       ],
       "Download info": [
         "下載資訊"
@@ -470,6 +473,9 @@
       ],
       "Forward as attachment": [
         "以附件形式轉寄"
+      ],
+      "Full data": [
+        "完整資料"
       ],
       "Generate password": [
         "生成密碼"
@@ -1046,9 +1052,6 @@
       ],
       "Try another method": [
         "嘗試其它驗證方式"
-      ],
-      "Try it now": [
-        "立即體驗"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "嘗試再次儲存。儲存失敗原因：${ saveError }"
@@ -3372,26 +3375,20 @@
       "Failed to get details, please try again later": [
         "無法取得詳細資料，請稍後再試。"
       ],
+      "Failed to load signature details, please try again later": [
+        "無法取得簽名的詳細資料，請稍後再試。"
+      ],
       "Failed to open to contact": [
         "無法開啟聯絡人"
       ],
       "Failed to resend invitation": [
         "失敗重新傳送邀請"
       ],
-      "File \"${ name }\" is already downloading": [
-        "檔案 「${ name } 」已在下載中"
-      ],
       "File cannot be merged with folder": [
         "檔案無法與資料夾合併"
       ],
-      "File selection is already downloading": [
-        "所選檔案已在下載中"
-      ],
       "First name is too long": [
         "名字太長"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "資料夾「${ name } 」已在下載中"
       ],
       "Folder name cannot be empty.": [
         "資料夾名稱不能留空。"
@@ -4658,6 +4655,9 @@
       "${ addressCount } email address": [
         "${ addressCount } 個電郵位址"
       ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName } 已成功刪除"
+      ],
       "${ albums } album": [
         "${ albums } 相簿"
       ],
@@ -4901,9 +4901,6 @@
       "An active recovery file": [
         "作用的還原檔案"
       ],
-      "an anonymous user": [
-        "一位未知使用者"
-      ],
       "An issue occurred during the restore process.": [
         "問題發生於還原程序。"
       ],
@@ -4985,6 +4982,9 @@
       "Can view only": [
         "僅供檢視"
       ],
+      "Can't move a folder into itself": [
+        "無法將資料夾移動到自身"
+      ],
       "Can't rename to same name": [
         "無法重新命名為相同名稱。"
       ],
@@ -5005,9 +5005,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "正在檢查聯絡人 ${ progress } / ${ max }..."
-      ],
-      "Checking signatures": [
-        "正在核對簽署"
       ],
       "Choose a plan that works best for you.": [
         "選擇最適合於您的方案。"
@@ -5111,12 +5108,6 @@
       "Details": [
         "詳細資訊"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "數碼簽署已通過驗證。此檔案由 ${ emailAddress } 安全上載。"
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "數碼簽署已通過驗證。此資料夾由 ${ emailAddress } 安全上載。"
-      ],
       "Discover new features unlocked and start using them right away!": [
         "探索解鎖的新功能並立即使用!"
       ],
@@ -5149,9 +5140,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } 將會中止下載"
-      ],
-      "Download was canceled": [
-        "下載已取消"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "現在就下載您最愛的應用程式，隱私隨身帶著走。"
@@ -5246,20 +5234,11 @@
       "Feb": [
         "二月"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "檔案 \"${ name }\" 在下載過程中被刪除"
-      ],
       "File could not be scanned": [
         "檔案無法被掃瞄"
       ],
       "File flagged as potentially malicious": [
         "檔案被標註為潛在惡意程式"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "檔案欠缺簽署。我們無法驗證 ${ fileName } 由 ${ emailAddress } 上載。"
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "檔案遺失簽章。我們無法驗證 ${ fileName } 由誰上載。"
       ],
       "File will not be updated": [
         "將不會上傳檔案"
@@ -5269,15 +5248,6 @@
       ],
       "finance": [
         "金融"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "資料夾 \"${ link.name }\" 在下載過程中被刪除"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "資料夾遺失簽章。我們無法驗證 ${ fileName } 是由 ${ emailAddress } 上載。"
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "資料夾遺失簽章。我們無法驗證 ${ fileName } 由誰上傳。"
       ],
       "Folder will not be uploaded": [
         "資料夾將不會被上載"
@@ -5404,6 +5374,9 @@
       ],
       "Internet connection restored.": [
         "網際網路連線已恢復。"
+      ],
+      "Invitation confirmed": [
+        "邀請函已確認"
       ],
       "Invite link copied": [
         "邀請鏈接已復制"
@@ -5834,6 +5807,9 @@
       "Scan the QR code with your mobile device": [
         "透過行動裝置掃描此 QR Code"
       ],
+      "Scan to download": [
+        "掃描以下載"
+      ],
       "Search cannot be enabled in this browser": [
         "此瀏覽器無法啟用搜索功能"
       ],
@@ -5915,9 +5891,6 @@
       "Shared with you": [
         "與您共享"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "因為網路錯誤，所以無法驗證簽章，請稍後再試。"
-      ],
       "Signature check will be ignored": [
         "簽章檢查將會忽略"
       ],
@@ -5969,17 +5942,8 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "感謝您訂閱。立即安全瀏覽。"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "帳號可能換了新的金鑰，不然下列項目可能已遭竄改：${ items }。除非您信任該檔案，否則切勿開啟。"
-      ],
       "The albums you create are shown here.": [
         "您創建的相簿將顯始於這裡。"
-      ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "此電子簽署已部分完成驗證。此檔案由無${ BRAND_NAME }帳號的使用者由大眾可共享連結上傳，所以身分無法驗證。"
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "此電子簽署已部分完成驗證。此資料夾由無${ BRAND_NAME }帳號的使用者由大眾可共享連結上傳，所以身分無法驗證。"
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "下載數量包含實際下載與預覽檔案時的實體。"
@@ -5989,9 +5953,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "您被曝露的資料來自第三方服務。您 ${ BRAND_NAME } 帳號資料保持安全及加密。 ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "下列項目可能已遭竄改：${ items }。除非您信任該檔案，否則切勿開啟。"
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "這個收件者已停用端到端加密。若要傳送加密郵件給這個收件者，該收件者必須重新啟用端到端加密。"
@@ -6247,12 +6208,6 @@
       ],
       "We couldn’t process your payment.": [
         "我們未能處理您的付款。"
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "我們無法驗證 ${ fileName } 是由 ${ emailAddress } 上傳"
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "我們無法驗證 ${ fileName } 由誰上傳"
       ],
       "We need to authenticate your payment method with your bank.": [
         "我們需要與您的銀行認證您的繳款方式。"
@@ -6553,32 +6508,6 @@
         "僅能檢視"
       ]
     },
-    "Item": {
-      "file attributes": [
-        "檔案屬性"
-      ],
-      "file data": [
-        "檔案資料"
-      ],
-      "file data key": [
-        "檔案資料金鑰"
-      ],
-      "file data order": [
-        "檔案資料順序"
-      ],
-      "hash key": [
-        "雜湊金鑰"
-      ],
-      "keys": [
-        "金鑰"
-      ],
-      "name": [
-        "名稱"
-      ],
-      "thumbnail": [
-        "縮圖"
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "已毀損"
@@ -6665,6 +6594,9 @@
       ],
       "Anonymous": [
         "匿名 "
+      ],
+      "Anyone on the Internet with the link": [
+        "網路上的任何有連結的人"
       ],
       "App password": [
         "應用程式密碼"
@@ -6810,6 +6742,9 @@
       "Device": [
         "裝置"
       ],
+      "Device #${ position }": [
+        "裝置 #${ position }"
+      ],
       "Device name": [
         "裝置名稱"
       ],
@@ -6869,6 +6804,9 @@
       ],
       "Expired": [
         "已失效"
+      ],
+      "Expired on ${ formatted }": [
+        "於 ${ formatted } 到期"
       ],
       "Expires": [
         "有效期限"
@@ -6945,6 +6883,9 @@
       "Integrated 2FA authenticator": [
         "整合雙重驗證"
       ],
+      "Item #${ position }": [
+        "項目 #${ position }"
+      ],
       "Keep both": [
         "兩者皆保留"
       ],
@@ -7019,6 +6960,9 @@
       ],
       "Never": [
         "永不"
+      ],
+      "Never expires": [
+        "永不過期"
       ],
       "New password": [
         "新密碼"
@@ -7143,8 +7087,17 @@
       "Shared by": [
         "分享自"
       ],
+      "Shared by ${ sharedBy }": [
+        "由 ${ sharedBy } 分享"
+      ],
+      "Shared by Public link": [
+        "透過公開網址共享"
+      ],
       "Shared on": [
         "已共享於"
+      ],
+      "Shared on ${ sharedOn }": [
+        "於 ${ sharedOn } 分享"
       ],
       "Shared with me": [
         "與我共享"
@@ -8743,6 +8696,12 @@
     "Notification": {
       "\"${ ellipsedName }\" copied": [
         "\"${ ellipsedName }\" 已複製"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "「${ ellipsedName }」已成功創建"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "「${ ellipsedName }」 已刪除"
       ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
         "檔案 \"${ ellipsedName }\" 已經從垃圾桶被永久刪除"
@@ -11119,11 +11078,11 @@
       ]
     },
     "Subtitle": {
+      "Albums shared with you will appear here": [
+        "與您共享的相簿將出現在此"
+      ],
       "Albums you've shared will appear here": [
         "您已共享的相簿將出現於此"
-      ],
-      "Securely share your favorite moments with friends and family using Albums.": [
-        "透過相簿安全地與朋友和家庭共享您最愛的時光。"
       ],
       "Shared by ${ sharedBy }": [
         "由 ${ sharedBy } 分享"
@@ -11472,9 +11431,6 @@
       "Birthday": [
         "生日"
       ],
-      "Browser might run out of memory": [
-        "瀏覽器或耗盡記憶體"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "取消 ${ MAIL_SHORT_APP_NAME } 訂購授權"
       ],
@@ -11643,6 +11599,9 @@
       "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
         "數位簽署已通過驗證。此檔案由 <strong> ${ emailAddress } </strong> 創建。"
       ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "數位簽署已通過驗證。此資料夾由 <strong> ${ emailAddress } </strong> 安全地創建。"
+      ],
       "Discard": [
         "捨棄"
       ],
@@ -11657,9 +11616,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "降級後的方案為 ${ downgradedPlanName }?"
-      ],
-      "Download ${ date }": [
-        "下載 ${ date }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "下載 ${ DRIVE_APP_NAME } 應用程式"
@@ -11904,6 +11860,9 @@
       "No bursts": [
         "沒有連拍"
       ],
+      "No favorites": [
+        "沒有最愛"
+      ],
       "No photos": [
         "沒有照片"
       ],
@@ -11975,9 +11934,6 @@
       ],
       "Phone numbers": [
         "手機號碼"
-      ],
-      "Photo albums are here!": [
-        "照片相簿在此!"
       ],
       "Photos": [
         "相片"
@@ -12243,6 +12199,9 @@
       "Warning: suspected fake website": [
         "警告：疑似假冒網站"
       ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "我們無法驗證此資料夾是由 <strong>${ emailAddress }</strong> 上傳"
+      ],
       "We couldn’t verify that an anonymous user created this file.": [
         "我們無法驗證創建此檔案的匿名使用者。"
       ],
@@ -12251,6 +12210,9 @@
       ],
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "我們無法驗證上傳此資料夾的匿名使用者。"
+      ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "我們無法確認此檔案內容是由 ${ claimedContentAuthor } 上傳。原因是 ${ activeRevision.contentAuthor.error.error }"
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "歡迎使用 ${ BRAND_NAME } 商務版"

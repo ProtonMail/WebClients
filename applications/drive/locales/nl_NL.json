@@ -246,9 +246,6 @@
       "Continue import": [
         "Doorgaan met importeren"
       ],
-      "Continue on web": [
-        "Ga verder op de website"
-      ],
       "Continue to ${ planOrAppName }": [
         "Doorgaan naar ${ planOrAppName }"
       ],
@@ -403,9 +400,6 @@
       ],
       "Download anyway": [
         "Toch downloaden"
-      ],
-      "Download app": [
-        "App downloaden"
       ],
       "Download for Mac": [
         "Downloaden voor Mac"
@@ -1096,9 +1090,6 @@
       ],
       "Try another method": [
         "Andere methode proberen"
-      ],
-      "Try it now": [
-        "Probeer het nu"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Probeer opnieuw op te slaan. Opslaan mislukt door: ${ saveError }"
@@ -3531,20 +3522,11 @@
       "Failed to update public share node": [
         "Bijwerken van openbaar gedeeld knooppunt is mislukt"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Bestand \"${ name }\" wordt reeds gedownload"
-      ],
       "File cannot be merged with folder": [
         "Bestand kan niet worden samengevoegd met map"
       ],
-      "File selection is already downloading": [
-        "Geselecteerde bestanden worden reeds gedownload"
-      ],
       "First name is too long": [
         "Voornaam is te lang"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Map \"${ name }\" wordt reeds gedownload"
       ],
       "Folder name cannot be empty.": [
         "Mapnaam mag niet leeg zijn."
@@ -5181,9 +5163,6 @@
       "An active recovery file": [
         "Een actief herstelbestand"
       ],
-      "an anonymous user": [
-        "een anonieme gebruiker"
-      ],
       "An issue occurred during the restore process.": [
         "Er is een probleem opgetreden tijdens het herstelproces."
       ],
@@ -5294,9 +5273,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Controle van contact ${ progress } van ${ max }..."
-      ],
-      "Checking signatures": [
-        "Handtekeningen controleren"
       ],
       "Choose a plan that works best for you.": [
         "Kies een abonnement dat het beste bij u past."
@@ -5415,12 +5391,6 @@
       "Details": [
         "Details"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Digitale handtekening geverifieerd. Dit bestand werd veilig geüpload door ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Digitale handtekening geverifieerd. Deze map werd veilig geüpload door ${ emailAddress }."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Ontdek nieuwe functies ontgrendeld en begin direct met het gebruik ervan!"
       ],
@@ -5453,9 +5423,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Download van ${ downloadFileName } zal afgebroken worden"
-      ],
-      "Download was canceled": [
-        "Download is geannuleerd"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Download uw favoriete app vandaag nog en neem uw privacy mee overal waar u gaat."
@@ -5566,20 +5533,11 @@
       "Feb": [
         "Feb"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "Bestand \"${ name }\" werd verwijderd tijdens downloaden"
-      ],
       "File could not be scanned": [
         "Bestand kan niet gescanned worden"
       ],
       "File flagged as potentially malicious": [
         "Bestand gemarkeerd als mogelijks schadelijk"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Handtekening van bestand ontbreekt. We konden niet verifiëren dat ${ emailAddress } ${ fileName } heeft geüpload."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Handtekening van bestand ontbreekt. We konden niet verifiëren wie ${ fileName } heeft geüpload."
       ],
       "File will not be updated": [
         "Het bestand zal niet worden bijgewerkt"
@@ -5589,15 +5547,6 @@
       ],
       "finance": [
         "financiën"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "Map \"${ link.name }\" werd verwijderd tijdens downloaden"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Handtekening van map ontbreekt. We konden niet verifiëren dat ${ emailAddress } ${ fileName } heeft geüpload."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Handtekening van map ontbreekt. We konden niet verifiëren wie ${ fileName } heeft geüpload."
       ],
       "Folder will not be uploaded": [
         "Folder zal niet worden ge-upload"
@@ -6305,9 +6254,6 @@
       "Shared with you": [
         "Gedeeld met u"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Handtekening kan niet gecontroleerd worden door een netwerkfout, probeer het later opnieuw."
-      ],
       "Signature check will be ignored": [
         "Handtekeningcontrole zal genegeerd worden"
       ],
@@ -6372,17 +6318,8 @@
       "that": [
         "dat"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Het account heeft mogelijk een nieuwe sleutel of het volgende werd mogelijk onrechtmatig bewerkt: ${ items }. Open alleen als u het vertrouwt."
-      ],
       "The albums you create are shown here.": [
         "De albums die u maakt worden hier weergegeven."
-      ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "De digitale handtekening is gedeeltelijk geverifieerd. Dit bestand is geüpload met behulp van een openbaar toegankelijke share link door een gebruiker zonder een ${ BRAND_NAME }-account, zodat hun identiteit niet kan worden geverifieerd."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "De digitale handtekening is gedeeltelijk geverifieerd. Dit bestand is geüpload met behulp van een openbaar toegankelijke share link door een gebruiker zonder een ${ BRAND_NAME }-account, zodat hun identiteit niet kan worden geverifieerd."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Het aantal downloads omvat zowel daadwerkelijke downloads als exemplaren waarin bestanden worden bekeken."
@@ -6392,9 +6329,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "De gelekte informatie werd gelekt door een dienst van een derde partij. Uw ${ BRAND_NAME } accountinformatie blijft veilig en versleuteld. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Het volgende werd mogelijk onrechtmatig bewerkt: ${ items }. Open alleen als u het vertrouwt."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "De eigenaar van dit adres heeft end-to-end versleuteling uitgeschakeld. Om versleutelde berichten naar dit adres te sturen moet de eigenaar end-to-end versleuteling weer inschakelen."
@@ -6695,12 +6629,6 @@
       "We couldn’t process your payment.": [
         "We konden uw betaling niet verwerken."
       ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "We konden niet verifiëren dat ${ emailAddress } ${ fileName } heeft geüpload."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "We konden niet verifiëren wie ${ fileName } heeft geüpload."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "We moeten uw betalingsmethode authenticeren met uw bank."
       ],
@@ -6912,9 +6840,6 @@
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
         "Uw browser had onvoldoende ruimte tijdens het indexeren van bestanden voor zoeken. Maak opslagruimte vrij en bouw de index opnieuw op."
       ],
-      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
-        "Uw huidige browser biedt geen ondersteuning voor het downloaden van grote bestanden/meerdere bestanden. Download de desktop app voor naadloze uploads en downloads."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw ${ BRAND_NAME } account."
       ],
@@ -7041,32 +6966,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Alleen bekijken"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "bestandsattributen"
-      ],
-      "file data": [
-        "bestandsgegevens"
-      ],
-      "file data key": [
-        "bestandsgegevenssleutel"
-      ],
-      "file data order": [
-        "bestandsgegevens volgorde"
-      ],
-      "hash key": [
-        "hash sleutel"
-      ],
-      "keys": [
-        "sleutels"
-      ],
-      "name": [
-        "naam"
-      ],
-      "thumbnail": [
-        "miniatuur"
       ]
     },
     "Key badge": {
@@ -11986,9 +11885,6 @@
       "Albums you've shared will appear here": [
         "Uw gedeelde albums zullen hier weergegeven worden"
       ],
-      "Securely share your favorite moments with friends and family using Albums.": [
-        "Deel uw favoriete momenten veilig met vrienden en familie via Albums."
-      ],
       "Shared by ${ sharedBy }": [
         "Gedeeld door ${ sharedBy }"
       ],
@@ -12359,9 +12255,6 @@
       "Birthday": [
         "Geboortedatum"
       ],
-      "Browser might run out of memory": [
-        "Browser valt mogelijk zonder geheugen"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME }-abonnement annuleren"
       ],
@@ -12565,9 +12458,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Downgrade naar ${ downgradedPlanName }?"
-      ],
-      "Download ${ date }": [
-        "${ date } downloaden"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Download ${ DRIVE_APP_NAME } apps"
@@ -12912,9 +12802,6 @@
       ],
       "Phone numbers": [
         "Telefoonnummers"
-      ],
-      "Photo albums are here!": [
-        "Fotoalbums zijn hier!"
       ],
       "Photos": [
         "Foto's"
