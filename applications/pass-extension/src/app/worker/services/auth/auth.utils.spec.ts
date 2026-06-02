@@ -4,7 +4,7 @@ import type { WorkerContextInterface } from 'proton-pass-extension/app/worker/co
 import { PassFeature } from '@proton/pass/types/api/features';
 import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
 
-import { isOfflineModeEnabled, shouldForceLock } from './auth.utils';
+import { getForceLockOptions, isOfflineModeEnabled, shouldForceLock } from './auth.utils';
 
 describe('auth.utils', () => {
     let ctx: WorkerContextInterface;
@@ -125,6 +125,63 @@ describe('auth.utils', () => {
         test('should return `false` when in case of errors', async () => {
             getLocal.mockRejectedValueOnce(new Error('storage'));
             expect(await shouldForceLock()).toBe(false);
+        });
+    });
+
+    describe('`getForceLockOptions`', () => {
+        const setup = (persistedSession: any, forceLock = false) => {
+            ctx = {
+                authStore: {
+                    getLocalID: jest.fn().mockReturnValue(0),
+                    getLockPasswordOnLaunch: jest.fn().mockReturnValue(undefined),
+                    getLockLastExtendTime: jest.fn().mockReturnValue(undefined),
+                    getLockTTL: jest.fn().mockReturnValue(undefined),
+                },
+                service: {
+                    auth: {
+                        config: { getPersistedSession: jest.fn().mockResolvedValue(persistedSession) },
+                        alarms: { autoLockAlarm: { when: jest.fn().mockResolvedValue(undefined) } },
+                    },
+                    storage: {
+                        local: {
+                            getItem: jest.fn(async (key) => (key === 'forceLock' ? forceLock : undefined)),
+                            setItem: jest.fn(),
+                        },
+                    },
+                },
+            } as any;
+            WorkerContext.set(ctx);
+        };
+
+        test.each([
+            {
+                name: 'password launch lock is flagged',
+                persistedSession: {
+                    lockPasswordOnLaunch: true,
+                    offlineConfig: {},
+                    offlineVerifier: 'offline-verifier',
+                },
+                forceLock: true,
+                expected: { forceLock: true, forcePasswordLock: true },
+            },
+            {
+                name: 'password launch lock state is unknown',
+                persistedSession: null,
+                expected: { forceLock: true, forcePasswordLock: true },
+            },
+            {
+                name: 'password launch lock is explicitly disabled',
+                persistedSession: { lockPasswordOnLaunch: false },
+                expected: { forceLock: false },
+            },
+            {
+                name: 'launch blob exists even if the outer flag is disabled',
+                persistedSession: { launchPasswordBlob: 'password-blob', lockPasswordOnLaunch: false },
+                expected: { forceLock: true, forcePasswordLock: true },
+            },
+        ])('should handle $name', async ({ persistedSession, forceLock, expected }) => {
+            setup(persistedSession, forceLock);
+            expect(await getForceLockOptions()).toEqual(expected);
         });
     });
 });

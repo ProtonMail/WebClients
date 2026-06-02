@@ -19,6 +19,8 @@ describe('Core AuthService', () => {
     let onLockUpdate: jest.Mock;
 
     beforeEach(() => {
+        (global as any).DESKTOP_BUILD = false;
+        (global as any).EXTENSION_BUILD = true;
         jest.clearAllMocks();
         api = jest.fn() as unknown as Api;
         api.subscribe = jest.fn();
@@ -45,6 +47,32 @@ describe('Core AuthService', () => {
         });
     });
 
+    const registerPasswordLock = () => {
+        const passwordLock = jest.fn().mockResolvedValue({ mode: LockMode.PASSWORD, locked: true });
+        auth.registerLockAdapter({
+            type: LockMode.PASSWORD,
+            check: jest.fn(),
+            create: jest.fn(),
+            delete: jest.fn(),
+            lock: passwordLock,
+            unlock: jest.fn(),
+        });
+        return passwordLock;
+    };
+
+    const offlineSession = {
+        AccessToken: 'access-token',
+        keyPassword: 'key-password',
+        lockMode: LockMode.NONE,
+        offlineConfig: { salt: 'salt', params: {} as any },
+        offlineKD: 'offline-kd',
+        offlineVerifier: 'offline-verifier',
+        RefreshToken: 'refresh-token',
+        sso: false,
+        UID: 'uid',
+        UserID: 'user-id',
+    };
+
     describe('AuthService::resumeSession', () => {
         test('should halt resume when `onResumeStart` returns `false`', async () => {
             onResumeStart.mockResolvedValueOnce(false);
@@ -62,6 +90,34 @@ describe('Core AuthService', () => {
 
             expect(result).toBe(true);
             expect(onResumeStart).toHaveBeenCalledWith({ hasSession: true, memorySession: { LocalID: 0 } });
+        });
+
+        test('should stop before decrypting a launch password protected session', async () => {
+            const passwordLock = registerPasswordLock();
+            getPersistedSession.mockResolvedValueOnce({
+                ...offlineSession,
+                blob: 'client-key-blob',
+                launchPasswordBlob: 'password-blob',
+                lockPasswordOnLaunch: false,
+            });
+
+            const result = await auth.resumeSession(0, {});
+
+            expect(result).toBe(false);
+            expect(passwordLock).toHaveBeenCalled();
+            expect(api).not.toHaveBeenCalled();
+        });
+    });
+
+    describe('AuthService::login', () => {
+        test('should use password lock override when force-locking with offline components', async () => {
+            const passwordLock = registerPasswordLock();
+            authStore.setLockMode(LockMode.NONE);
+
+            const result = await auth.login(offlineSession, { forceLock: true, forcePasswordLock: true });
+
+            expect(result).toBe(false);
+            expect(passwordLock).toHaveBeenCalled();
         });
     });
 

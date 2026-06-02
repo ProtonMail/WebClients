@@ -61,6 +61,13 @@ describe('getInitialLockedAppStatus', () => {
     describe('online', () => {
         const params = { offline: false, offlineEnabled: true };
 
+        test('password-on-launch → PASSWORD_LOCKED', () => {
+            const store = makeAuthStore({ lockMode: LockMode.NONE });
+            expect(getInitialLockedAppStatus(store, { ...params, passwordOnLaunch: true })).toBe(
+                AppStatus.PASSWORD_LOCKED
+            );
+        });
+
         test('BIOMETRICS with encryptedOfflineKD → BIOMETRICS_LOCKED', () => {
             const store = makeAuthStore({ lockMode: LockMode.BIOMETRICS, encryptedOfflineKD: 'kd' });
             expect(getInitialLockedAppStatus(store, params)).toBe(AppStatus.BIOMETRICS_LOCKED);

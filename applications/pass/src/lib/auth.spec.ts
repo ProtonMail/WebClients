@@ -118,6 +118,8 @@ jest.useFakeTimers();
 
 describe('AuthService', () => {
     beforeEach(() => {
+        (global as any).DESKTOP_BUILD = false;
+        (global as any).EXTENSION_BUILD = false;
         authStore.clear();
         jest.clearAllMocks();
 
@@ -246,6 +248,42 @@ describe('AuthService', () => {
 
             expect(result).toBe(false);
             expect(options.forceLock).toBe(true);
+            expect(resumeSession).not.toHaveBeenCalled();
+            expect(app.setStatus).toHaveBeenCalledWith(AppStatus.PASSWORD_LOCKED);
+        });
+
+        test('desktop launch password lock uses auth session flag', async () => {
+            (global as any).DESKTOP_BUILD = true;
+
+            getPersistedSession.mockImplementationOnce(async () => ({
+                ...MOCK_PERSISTED_SESSION,
+                lockMode: LockMode.NONE,
+                lockPasswordOnLaunch: true,
+            }));
+
+            const options: AuthOptions = {};
+            const result = await authService.init(options);
+
+            expect(result).toBe(false);
+            expect(options.forceLock).toBe(true);
+            expect(resumeSession).not.toHaveBeenCalled();
+            expect(app.setStatus).toHaveBeenCalledWith(AppStatus.PASSWORD_LOCKED);
+        });
+
+        test('desktop launch password lock uses protected blob over outer flag', async () => {
+            (global as any).DESKTOP_BUILD = true;
+
+            getPersistedSession.mockImplementationOnce(async () => ({
+                ...MOCK_PERSISTED_SESSION,
+                launchPasswordBlob: 'password-blob',
+                lockMode: LockMode.NONE,
+                lockPasswordOnLaunch: false,
+            }));
+
+            const options: AuthOptions = {};
+            const result = await authService.init(options);
+
+            expect(result).toBe(false);
             expect(resumeSession).not.toHaveBeenCalled();
             expect(app.setStatus).toHaveBeenCalledWith(AppStatus.PASSWORD_LOCKED);
         });
