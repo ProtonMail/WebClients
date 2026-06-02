@@ -2,7 +2,9 @@ jest.mock("electron", () => ({
     app: {
         on: jest.fn(),
         getPath: jest.fn(() => "/mock/home"),
+        getAppPath: jest.fn(() => "/mock/app"),
         exit: jest.fn(),
+        isPackaged: true,
     },
     dialog: {
         showErrorBox: jest.fn(),
@@ -27,10 +29,83 @@ import {
     captureUncaughtErrors,
     resetIsExitingTestOnly,
     resetUnhandledRejectionCountTestOnly,
+    shouldSendSentryReportTestOnly,
 } from "./captureUncaughtErrors";
+
+function makeChromiumLoadError(code: string, errno: number, url: string): Error {
+    return Object.assign(new Error(`${code} (${errno}) loading '${url}'`), { code, errno, url });
+}
 
 // captureTopLevelRejection is synchronous but calls sentryFlush().finally(() => app.exit(1)).
 const flushPromises = () => new Promise((resolve) => setImmediate(resolve));
+
+// app.getAppPath() is mocked to "/mock/app" and isPackaged is true,
+// so packaged resources resolve under dirname("/mock/app") = "/mock".
+describe("shouldSendSentryReport", () => {
+    it("drops Chromium load errors with cancellation codes", () => {
+        expect(shouldSendSentryReportTestOnly(makeChromiumLoadError("ERR_ABORTED", -3, "file:///x.html"))).toBe(false);
+    });
+
+    it("drops Chromium load errors with ERR_FAILED (lifecycle teardown noise)", () => {
+        expect(shouldSendSentryReportTestOnly(makeChromiumLoadError("ERR_FAILED", -2, "file:///x.html"))).toBe(false);
+    });
+
+    it("sends unrelated errors", () => {
+        expect(shouldSendSentryReportTestOnly(new Error("some random error"))).toBe(true);
+    });
+
+    it("drops AbortError DOMExceptions", () => {
+        expect(shouldSendSentryReportTestOnly(new DOMException("aborted", "AbortError"))).toBe(false);
+    });
+
+    it("drops every Chromium load error in development", () => {
+        (app as unknown as { isPackaged: boolean }).isPackaged = false;
+        try {
+            expect(
+                shouldSendSentryReportTestOnly(makeChromiumLoadError("ERR_FILE_NOT_FOUND", -6, "file:///x.html")),
+            ).toBe(false);
+            expect(shouldSendSentryReportTestOnly(makeChromiumLoadError("ERR_TIMED_OUT", -7, "file:///x.html"))).toBe(
+                false,
+            );
+        } finally {
+            (app as unknown as { isPackaged: boolean }).isPackaged = true;
+        }
+    });
+
+    it("sends Chromium load errors for a tracked resource at its expected location", () => {
+        const error = makeChromiumLoadError("ERR_FILE_NOT_FOUND", -6, "file:///mock/loading.html");
+        expect(shouldSendSentryReportTestOnly(error)).toBe(true);
+    });
+
+    it("sends Chromium load errors for a tracked resource with query params at its expected location", () => {
+        const error = makeChromiumLoadError(
+            "ERR_FILE_NOT_FOUND",
+            -6,
+            "file:///mock/loading.html?message=Loading&theme=dark",
+        );
+        expect(shouldSendSentryReportTestOnly(error)).toBe(true);
+    });
+
+    it("drops Chromium load errors when a tracked filename appears outside the expected directory", () => {
+        // The gate applies regardless of code: ERR_TIMED_OUT, ERR_FILE_NOT_FOUND, etc. all drop here.
+        const error = makeChromiumLoadError("ERR_TIMED_OUT", -7, "file:///somewhere/else/loading.html");
+        expect(shouldSendSentryReportTestOnly(error)).toBe(false);
+    });
+
+    it("sends Chromium load errors for a non-tracked file", () => {
+        const error = makeChromiumLoadError(
+            "ERR_FILE_NOT_FOUND",
+            -6,
+            "file:///Users/johndoe/Documents/folder/file.pdf",
+        );
+        expect(shouldSendSentryReportTestOnly(error)).toBe(true);
+    });
+
+    it("sends Chromium load errors when the URL cannot be parsed", () => {
+        const error = makeChromiumLoadError("ERR_FILE_NOT_FOUND", -6, "not a url");
+        expect(shouldSendSentryReportTestOnly(error)).toBe(true);
+    });
+});
 
 describe("captureUncaughtErrors", () => {
     it("registers process handlers", () => {
@@ -87,6 +162,40 @@ describe("captureUncaughtErrors", () => {
             expect(reportException).not.toHaveBeenCalled();
         });
 
+        it("collapses Chromium load errors to a code-only title", () => {
+            const handler = getUnhandledRejectionHandler();
+            const url = "https://mail.proton.me/u/0/inbox?sessionId=abc123";
+            const error = makeChromiumLoadError("ERR_TIMED_OUT", -7, url);
+
+            for (let i = 0; i < 10; i++) handler(error);
+
+            expect(reportException).not.toHaveBeenCalled();
+            expect(reportMessage).toHaveBeenCalledTimes(1);
+            expect(reportMessage).toHaveBeenCalledWith(
+                "ERR_TIMED_OUT loading <file>",
+                expect.objectContaining({
+                    level: "error",
+                    error,
+                    extras: expect.objectContaining({
+                        occurrenceCount: 10,
+                        url,
+                        errno: -7,
+                        originalMessage: error.message,
+                    }),
+                }),
+            );
+        });
+
+        it("does not report skipped Chromium codes regardless of occurrence count", () => {
+            const handler = getUnhandledRejectionHandler();
+            const error = makeChromiumLoadError("ERR_FAILED", -2, "file:///x.html");
+
+            for (let i = 0; i < 20; i++) handler(error);
+
+            expect(reportException).not.toHaveBeenCalled();
+            expect(reportMessage).not.toHaveBeenCalled();
+        });
+
         it("does not report AbortError to Sentry", () => {
             const handler = getUnhandledRejectionHandler();
             const abortError = new DOMException("signal aborted", "AbortError");
@@ -116,6 +225,19 @@ describe("captureUncaughtErrors", () => {
             // 20th fires
             handler(error);
             expect(reportException).toHaveBeenCalledTimes(2);
+        });
+
+        it("stops reporting after the per-session cap is reached", () => {
+            const handler = getUnhandledRejectionHandler();
+            const error = new Error("repeated");
+
+            // Fires at each 10th occurrences (report_cap = 3).
+            for (let i = 0; i < 30; i++) handler(error);
+            expect(reportException).toHaveBeenCalledTimes(3);
+
+            // No further reports past the cap.
+            for (let i = 0; i < 50; i++) handler(error);
+            expect(reportException).toHaveBeenCalledTimes(3);
         });
     });
 });

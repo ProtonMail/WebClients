@@ -3,7 +3,11 @@ import { checkKeys, verifyDownloadCertificate, VerificationResult, resetPinningR
 import { sentryReport } from "./sentryReport";
 
 jest.mock("electron", () => ({
-    app: { on: jest.fn(), isPackaged: true },
+    app: {
+        on: jest.fn(),
+        isPackaged: true,
+        getAppPath: jest.fn(() => "/mock/app"),
+    },
 }));
 
 jest.mock("./sentryReport");
