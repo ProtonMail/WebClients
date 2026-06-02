@@ -2,7 +2,7 @@ import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ListPlugin } from '@lexical/react/LexicalListPlugin'
 import { HorizontalRulePlugin } from '@lexical/react/LexicalHorizontalRulePlugin'
 import { BuildInitialEditorConfig, ShouldBootstrap } from '../Lib/InitialEditorConfig'
-import { useCallback, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { Provider } from '@lexical/yjs'
 import type {
   EditorRequiresClientMethods,
@@ -59,6 +59,7 @@ import { getAccentColorForUsername } from '@proton/atoms/UserAvatar/getAccentCol
 import { PageBreakPlugin } from '../Plugins/PageBreak/PageBreakPlugin'
 import { useApplication } from './ApplicationProvider'
 import { isDevOrBlack } from '@proton/utils/env'
+import { SCROLL_TO_USER_CURSOR_COMMAND } from '../Plugins/Collaboration/ScrollToUserCursorPlugin'
 
 const TypingBotEnabled = false
 
@@ -172,6 +173,27 @@ export function Editor({
     }
     return getAccentColorForUsername(userName)
   }, [letterForAnonymousUser, userName])
+
+  useEffect(() => {
+    return application.syncedState.subscribeToEvent('ScrollToUserCursorData', (data) => {
+      const editor = editorRef.current
+      if (!editor) {
+        application.logger.error('Editor not found when trying to scroll to user cursor')
+        return
+      }
+      editor.dispatchCommand(SCROLL_TO_USER_CURSOR_COMMAND, {
+        state: data.state,
+      })
+    })
+  }, [application.logger, application.syncedState])
+
+  const createSuggestionThread = useMemo(
+    () => clientInvoker.createSuggestionThread.bind(clientInvoker),
+    [clientInvoker],
+  )
+  const getAllThreads = useMemo(() => clientInvoker.getAllThreads.bind(clientInvoker), [clientInvoker])
+  const reopenSuggestion = useMemo(() => clientInvoker.reopenSuggestion.bind(clientInvoker), [clientInvoker])
+  const rejectSuggestion = useMemo(() => clientInvoker.rejectSuggestion.bind(clientInvoker), [clientInvoker])
 
   return (
     <CustomCollaborationContextProvider
@@ -292,8 +314,11 @@ export function Editor({
           {isSuggestionsFeatureEnabled && (
             <SuggestionModePlugin
               isSuggestionMode={isSuggestionMode}
-              controller={clientInvoker}
               onUserModeChange={onUserModeChange}
+              createSuggestionThread={createSuggestionThread}
+              getAllThreads={getAllThreads}
+              reopenSuggestion={reopenSuggestion}
+              rejectSuggestion={rejectSuggestion}
             />
           )}
         </MarkNodesProvider>
