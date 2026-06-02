@@ -130,6 +130,9 @@ export const useAttachments = ({
                             verificationStatus: MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID,
                             filename,
                             signatures: [],
+                            // Needed to keep track of the original MIME type so the re-uploaded image can be
+                            // identified as an inline image (isInline checks the type) and preserved as such.
+                            type: upload.attachment.MIMEType || pendingUpload.file.type,
                         },
                     })
                 );
