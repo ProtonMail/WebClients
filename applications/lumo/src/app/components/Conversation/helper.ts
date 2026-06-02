@@ -9,10 +9,13 @@ import { type ContextFilter, ENABLE_U2L_ENCRYPTION, prepareTurns } from '../../l
 import { flattenAttachmentsForLlm } from '../../llm/attachments';
 import type { AttachmentMap } from '../../redux/slices/core/attachments';
 import { pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
+import { findAgentById } from '../../features/agents/registry';
+import { clearPendingAgent } from '../../redux/slices/composerActions';
 import {
     addConversation,
     newConversationId,
     pushConversationRequest,
+    setConversationAgent,
     updateConversationStatus,
 } from '../../redux/slices/core/conversations';
 import {
@@ -112,6 +115,38 @@ function ensureConversation(c: ConversationContext, ui: UiContext, createdAt: st
         }
         dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.GENERATING }));
         return { spaceId, conversationId };
+    };
+}
+
+/**
+ * Resolve the instructions of the custom agent active for a conversation.
+ *
+ * For an existing conversation the agent id is stored on the conversation. For a
+ * brand-new conversation (just created in this send) we consume the agent the user
+ * selected in the composer (`pendingAgentId`), stamp it onto the conversation so it
+ * persists, and clear the pending selection.
+ */
+function resolveAgentInstructions(conversationId: ConversationId) {
+    return (dispatch: LumoDispatch, getState: () => LumoState): string | undefined => {
+        const state = getState();
+        const conversation = state.conversations[conversationId];
+        let agentId = conversation?.agentId;
+        const pendingAgentId = state.composerActions?.pendingAgentId ?? undefined;
+
+        if (!agentId && pendingAgentId) {
+            agentId = pendingAgentId;
+            dispatch(setConversationAgent({ id: conversationId, agentId }));
+            dispatch(pushConversationRequest({ id: conversationId }));
+        }
+        if (pendingAgentId) {
+            dispatch(clearPendingAgent());
+        }
+
+        if (!agentId) {
+            return undefined;
+        }
+        const agent = findAgentById(agentId, state.lumoUserSettings?.customAgents ?? []);
+        return agent?.instructions?.trim() || undefined;
     };
 }
 
@@ -222,6 +257,12 @@ export function sendMessage({
                 }
             }
         }
+
+        // Resolve the active custom agent (conversation-scoped persona). An existing
+        // conversation stores its agent id; a brand-new conversation consumes the agent
+        // selected in the composer (pendingAgentId) and stamps it onto the conversation.
+        const agentInstructions = dispatch(resolveAgentInstructions(conversationId));
+
         const allAttachments = state.attachments;
 
         // Get user ID for RAG retrieval
@@ -337,7 +378,8 @@ export function sendMessage({
                 s.personalization ?? DEFAULT_PERSONALIZATION,
                 projectInstructions,
                 updatedC,
-                memories
+                memories,
+                agentInstructions
             );
 
             await dispatch(
@@ -503,12 +545,15 @@ export function regenerateMessage({
                     ? formatMemories(state.lumoUserSettings?.memories)
                     : '';
 
+            const agentInstructions = dispatch(resolveAgentInstructions(c.conversationId));
+
             const turns = prepareTurns(
                 updatedMessagesWithContext,
                 s.personalization ?? DEFAULT_PERSONALIZATION,
                 projectInstructions,
                 c,
-                memories
+                memories,
+                agentInstructions
             );
 
             // Add retry instructions if provided
@@ -692,12 +737,17 @@ export function retrySendMessage({
                 ? formatMemories(state.lumoUserSettings?.memories)
                 : '';
 
+        const agentInstructions = c.conversationId
+            ? dispatch(resolveAgentInstructions(c.conversationId))
+            : undefined;
+
         const turns = prepareTurns(
             updatedLinearChain,
             s.personalization ?? DEFAULT_PERSONALIZATION,
             p.projectInstructions,
             c2,
-            memories
+            memories,
+            agentInstructions
         );
 
         // Call the LLM
