@@ -2,6 +2,7 @@ import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
 import { fireEvent, render, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import * as orgHooks from '@proton/account/organization/hooks';
 import * as hooks from '@proton/account/user/hooks';
@@ -11,37 +12,37 @@ import type { NavResolved } from '@proton/nav/types/nav';
 
 import { VPNSidebar } from './VPNSidebar';
 
-jest.mock('@proton/components/components/loader/Loader', () => ({
+vi.mock('@proton/components/components/loader/Loader', () => ({
     __esModule: true,
     default: () => <progress data-testid="loader" aria-label="Loading…" />,
 }));
-jest.mock('@proton/components/components/sidebar/Sidebar', () => ({
+vi.mock('@proton/components/components/sidebar/Sidebar', () => ({
     __esModule: true,
     default: ({ children }: any) => <div data-testid="sidebar">{children}</div>,
 }));
-jest.mock('@proton/components/components/sidebar/SidebarList', () => ({
+vi.mock('@proton/components/components/sidebar/SidebarList', () => ({
     __esModule: true,
     default: ({ children }: any) => <ul data-testid="sidebar-list">{children}</ul>,
 }));
-jest.mock('@proton/components/components/sidebar/SidebarNav', () => ({
+vi.mock('@proton/components/components/sidebar/SidebarNav', () => ({
     __esModule: true,
     default: ({ children }: any) => <nav data-testid="sidebar-nav">{children}</nav>,
 }));
 
-jest.mock('@proton/components/components/sidebar/SettingsListItem', () => ({
+vi.mock('@proton/components/components/sidebar/SettingsListItem', () => ({
     __esModule: true,
     default: ({ children, to }: any) => <li data-testid={`item-${to}`}>{children}</li>,
 }));
 
-jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/account/organization/hooks');
-jest.mock('@proton/vpn/components/Sidebar', () => ({
+vi.mock('@proton/account/user/hooks');
+vi.mock('@proton/account/organization/hooks');
+vi.mock('@proton/vpn/components/Sidebar', () => ({
     FeedbackModal: () => <div data-testid="feedback-modal" />,
     Sidebar: ({ routes }: any) => <div data-testid="admin-sidebar">{JSON.stringify(routes)}</div>,
 }));
-jest.mock('@proton/components/containers/layout/helper', () => ({
-    getIsSectionAvailable: jest.fn(),
-    getSectionPath: jest.fn(),
+vi.mock('@proton/components/containers/layout/helper', () => ({
+    getIsSectionAvailable: vi.fn(),
+    getSectionPath: vi.fn(),
 }));
 
 const renderWithRouter = (ui: React.ReactElement) => render(<MemoryRouter>{ui}</MemoryRouter>);
@@ -64,17 +65,17 @@ describe('VPNSidebar', () => {
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
-        (hooks.useUser as jest.Mock).mockReturnValue([{ id: '1' }]);
-        (orgHooks.useOrganization as jest.Mock).mockReturnValue([{}, false]);
+        (hooks.useUser as Mock).mockReturnValue([{ id: '1' }]);
+        (orgHooks.useOrganization as Mock).mockReturnValue([{}, false]);
 
-        (helper.getIsSectionAvailable as jest.Mock).mockReturnValue(true);
-        (helper.getSectionPath as jest.Mock).mockImplementation((_, section) => section.to);
+        (helper.getIsSectionAvailable as Mock).mockReturnValue(true);
+        (helper.getSectionPath as Mock).mockImplementation((_, section) => section.to);
     });
 
     it('shows loader when subscription or organization are loading', () => {
-        (orgHooks.useOrganization as jest.Mock).mockReturnValue([{}, true]);
+        (orgHooks.useOrganization as Mock).mockReturnValue([{}, true]);
 
         renderWithRouter(
             <VPNSidebar
@@ -130,8 +131,8 @@ describe('VPNSidebar', () => {
                 adminSidebarFeature={{
                     enabled: true,
                     loading: false,
-                    sidebar: { status: true, toggle: jest.fn() },
-                    spotlight: { isOn: true, setOff: jest.fn() },
+                    sidebar: { status: true, toggle: vi.fn() },
+                    spotlight: { isOn: true, setOff: vi.fn() },
                     routes: resolved,
                     settings: [],
                 }}
@@ -146,7 +147,7 @@ describe('VPNSidebar', () => {
     });
 
     it('toggles new sidebar when toggle is clicked', () => {
-        const toggle = jest.fn();
+        const toggle = vi.fn();
 
         renderWithRouter(
             <VPNSidebar
@@ -158,7 +159,7 @@ describe('VPNSidebar', () => {
                     enabled: true,
                     loading: false,
                     sidebar: { status: false, toggle },
-                    spotlight: { isOn: false, setOff: jest.fn() },
+                    spotlight: { isOn: false, setOff: vi.fn() },
                     routes: {
                         items: [
                             {

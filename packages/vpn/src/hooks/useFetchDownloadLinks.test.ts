@@ -6,20 +6,22 @@ const mockFetch = vi.fn();
 global.fetch = mockFetch;
 
 vi.mock('fast-xml-parser', () => ({
-    XMLParser: vi.fn().mockImplementation(() => ({
-        parse: vi.fn().mockReturnValue({
-            rss: {
-                channel: {
-                    item: [
-                        {
-                            minimumSystemVersion: 14,
-                            enclosure: { '@_url': 'https://protonvpn.com/download/mac_v6.dmg' },
-                        },
-                    ],
+    XMLParser: vi.fn().mockImplementation(function () {
+        return {
+            parse: vi.fn().mockReturnValue({
+                rss: {
+                    channel: {
+                        item: [
+                            {
+                                minimumSystemVersion: 14,
+                                enclosure: { '@_url': 'https://protonvpn.com/download/mac_v6.dmg' },
+                            },
+                        ],
+                    },
                 },
-            },
-        }),
-    })),
+            }),
+        };
+    }),
 }));
 
 describe('useFetchDownloadLinks', () => {
