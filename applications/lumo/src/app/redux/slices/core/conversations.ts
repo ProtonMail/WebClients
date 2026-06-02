@@ -28,8 +28,14 @@ export type PullConversationRequest = {
 };
 
 // Low-level Redux store operations without side-effects.
+export type SetConversationAgentAction = {
+    id: ConversationId;
+    agentId: string | undefined;
+};
+
 export const addConversation = createAction<Conversation>('lumo/conversation/add');
 export const changeConversationTitle = createAction<EditConversation>('lumo/conversation/changeTitle');
+export const setConversationAgent = createAction<SetConversationAgentAction>('lumo/conversation/setAgent');
 export const toggleConversationStarred = createAction<ConversationId>('lumo/conversation/toggleStarred');
 export const deleteConversation = createAction<ConversationId>('lumo/conversation/delete');
 export const deleteAllConversations = createAction('lumo/conversation/deleteAll');
@@ -63,6 +69,14 @@ const conversationsReducer = createReducer<ConversationMap>(EMPTY_CONVERSATION_M
             const payload = action.payload;
             const conversation = state[payload.id];
             conversation.title = payload.title;
+        })
+        .addCase(setConversationAgent, (state, action) => {
+            console.log('Action triggered: setConversationAgent', action.payload);
+            const { id, agentId } = action.payload;
+            const conversation = state[id];
+            if (conversation) {
+                conversation.agentId = agentId;
+            }
         })
         .addCase(toggleConversationStarred, (state, action) => {
             console.log('Action triggered: toggleConversationStarred', action.payload);
