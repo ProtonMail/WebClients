@@ -12,7 +12,8 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
+import { IcCogDrawer } from '@proton/icons/icons/IcCogDrawer';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { PasswordMemorableOptions } from '@proton/pass/components/Password/PasswordMemorableOptions';
@@ -87,7 +88,7 @@ export const AutosuggestPassword: FC<Props> = ({ action, config, clipboardSettin
                             size="small"
                             title={c('Action').t`Show advanced options`}
                         >
-                            <Icon name="cog-drawer" alt={c('Action').t`More options`} size={12} />
+                            <IcCogDrawer alt={c('Action').t`More options`} size={12} />
                         </Button>
                         <PauseListDropdown
                             criteria="Autosuggest"
@@ -119,7 +120,7 @@ export const AutosuggestPassword: FC<Props> = ({ action, config, clipboardSettin
                             {label}
                         </Button>
                         <Button icon pill shape="solid" className="shrink-0" onClick={generator.regeneratePassword}>
-                            <Icon name="arrows-rotate" alt={c('Action').t`Regenerate`} />
+                            <IcArrowsRotate alt={c('Action').t`Regenerate`} />
                         </Button>
                     </div>
                 </div>
