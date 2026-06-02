@@ -1,4 +1,12 @@
-import React, { type ChangeEventHandler, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import React, {
+    type ChangeEventHandler,
+    useCallback,
+    useEffect,
+    useLayoutEffect,
+    useMemo,
+    useRef,
+    useState,
+} from 'react';
 
 import data from '@emoji-mart/data';
 import { Picker } from 'emoji-mart';
@@ -22,12 +30,26 @@ import { trimMessage } from '../../utils/trim-message';
 
 import './ChatMessage.scss';
 
-const EmojiPicker = (props: any) => {
+const EmojiPicker = ({
+    autoFocus,
+    onEmojiSelect,
+    set,
+    skinTonePosition,
+    previewPosition,
+    perLine,
+}: {
+    autoFocus: boolean;
+    onEmojiSelect: (emoji: { native: string }) => void;
+    set: string;
+    skinTonePosition: string;
+    previewPosition: string;
+    perLine: number;
+}) => {
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        new Picker({ ...props, data, ref });
-    }, [props]);
+        new Picker({ autoFocus, onEmojiSelect, set, skinTonePosition, previewPosition, perLine, data, ref });
+    }, [autoFocus, onEmojiSelect, perLine, previewPosition, set, skinTonePosition]);
 
     return <div ref={ref} />;
 };
@@ -61,10 +83,10 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
     const [message, setMessage] = useState(draftMessage);
     const currentMessage = useRef(message);
 
-    const updateMessage = (value: string) => {
+    const updateMessage = useCallback((value: string) => {
         setMessage(value);
         currentMessage.current = value;
-    };
+    }, []);
 
     const handleMessageChange: ChangeEventHandler<HTMLTextAreaElement> = (event) => {
         const { value } = event.target;
@@ -106,22 +128,25 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
         return result;
     };
 
-    const handleEmojiSelect = (emoji: { native: string }) => {
-        const textarea = textareaRef.current;
-        if (textarea) {
-            const start = textarea.selectionStart ?? message.length;
-            const end = textarea.selectionEnd ?? message.length;
-            const newMessage = message.slice(0, start) + emoji.native + message.slice(end);
-            updateMessage(newMessage);
-            setTimeout(() => {
-                textarea.setSelectionRange(start + emoji.native.length, start + emoji.native.length);
-                textarea.focus();
-            }, 0);
-        } else {
-            updateMessage(message + emoji.native);
-        }
-        setEmojiPickerOpen(false);
-    };
+    const handleEmojiSelect = useCallback(
+        (emoji: { native: string }) => {
+            const textarea = textareaRef.current;
+            if (textarea) {
+                const start = textarea.selectionStart ?? message.length;
+                const end = textarea.selectionEnd ?? message.length;
+                const newMessage = message.slice(0, start) + emoji.native + message.slice(end);
+                updateMessage(newMessage);
+                setTimeout(() => {
+                    textarea.setSelectionRange(start + emoji.native.length, start + emoji.native.length);
+                    textarea.focus();
+                }, 0);
+            } else {
+                updateMessage(message + emoji.native);
+            }
+            setEmojiPickerOpen(false);
+        },
+        [message, updateMessage]
+    );
 
     useHotkeys(
         textareaRef,
@@ -220,7 +245,7 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
                 }}
             >
                 <EmojiPicker
-                    autoFocus="true"
+                    autoFocus={true}
                     onEmojiSelect={handleEmojiSelect}
                     set="native"
                     skinTonePosition="none"
