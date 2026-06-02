@@ -3,8 +3,18 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
 import { UserAvatar, UserAvatarSizeEnum } from '@proton/atoms/UserAvatar/UserAvatar'
 import type { MouseEventHandler } from 'react'
 import { useCallback, useState } from 'react'
-import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, ToolbarButton } from '@proton/components'
+import { DropdownMenu, DropdownMenuButton, SimpleDropdown, ToolbarButton } from '@proton/components'
 import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark'
+import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle'
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled'
+import { IcCross } from '@proton/icons/icons/IcCross'
+import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled'
+import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled'
+import { IcPencil } from '@proton/icons/icons/IcPencil'
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical'
+import { IcTrash } from '@proton/icons/icons/IcTrash'
+import { IcUser } from '@proton/icons/icons/IcUser'
 import { AnonymousUserEmail, CommentThreadState } from '@proton/docs-shared'
 import clsx from '@proton/utils/clsx'
 import { c } from 'ttag'
@@ -183,7 +193,7 @@ export function CommentsPanelListComment({
               className="h-custom w-custom bg-strong mr-1 flex flex-shrink-0 items-center justify-center rounded-lg"
               style={{ '--h-custom': '1.75rem', '--w-custom': '1.75rem' }}
             >
-              <Icon name="user" />
+              <IcUser />
             </div>
           )}
           <div className="mr-auto flex flex-col overflow-hidden">
@@ -213,7 +223,7 @@ export function CommentsPanelListComment({
                   )}
                   data-testid="suggestion-reject-button"
                 >
-                  <Icon size={4.5} name="cross" />
+                  <IcCross size={4.5} />
                 </Button>
               </Tooltip>
               <Tooltip title={c('Action').t`Accept suggestion`} onClick={handleAcceptSuggestion}>
@@ -228,7 +238,7 @@ export function CommentsPanelListComment({
                   )}
                   data-testid="suggestion-accept-button"
                 >
-                  <Icon size={4.5} name="checkmark" />
+                  <IcCheckmark size={4.5} />
                 </Button>
               </Tooltip>
             </>
@@ -246,7 +256,7 @@ export function CommentsPanelListComment({
                 'opacity-0 hover:opacity-100 focus:opacity-100 group-hover/comment:opacity-100',
                 isFirstComment && 'group-focus-within/thread:opacity-100',
               )}
-              content={<Icon size={4.5} name="three-dots-vertical" alt={c('Label').t`More options`} />}
+              content={<IcThreeDotsVertical size={4.5} alt={c('Label').t`More options`} />}
               hasCaret={false}
               onToggle={setIsOptionsMenuOpen}
             >
@@ -259,7 +269,7 @@ export function CommentsPanelListComment({
                     }}
                     data-testid="edit-button"
                   >
-                    <Icon name="pencil" size={4.5} />
+                    <IcPencil size={4.5} />
                     {c('Action').t`Edit`}
                   </DropdownMenuButton>
                 )}
@@ -271,7 +281,7 @@ export function CommentsPanelListComment({
                     }}
                     data-testid="resolve-button"
                   >
-                    <Icon name="checkmark-circle" size={4.5} />
+                    <IcCheckmarkCircle size={4.5} />
                     {c('Action').t`Resolve`}
                   </DropdownMenuButton>
                 )}
@@ -299,7 +309,7 @@ export function CommentsPanelListComment({
                     }}
                     data-testid="delete-button"
                   >
-                    <Icon name={'trash'} size={4.5} />
+                    <IcTrash size={4.5} />
                     {isFirstComment ? c('Action').t`Delete thread` : c('Action').t`Delete comment`}
                   </DropdownMenuButton>
                 )}
@@ -312,7 +322,7 @@ export function CommentsPanelListComment({
               className="flex-shrink-0"
               data-testid="comment-signature-unverified"
             >
-              <Icon name="exclamation-triangle-filled" size={4.5} />
+              <IcExclamationTriangleFilled size={4.5} />
             </Tooltip>
           )}
         </div>
@@ -347,14 +357,14 @@ export function CommentsPanelListComment({
                 <ToolbarButton
                   className="rounded-full border-none"
                   title={c('Action').t`Cancel`}
-                  icon={<Icon name="cross-circle-filled" size={6} />}
+                  icon={<IcCrossCircleFilled size={6} />}
                   onClick={cancelEditing}
                   data-testid="edit-comment-cancel-button"
                 />
                 <ToolbarButton
                   className="rounded-full border-none"
                   title={c('Action').t`Save`}
-                  icon={<Icon name="checkmark-circle-filled" size={6} className="fill-[--primary]" />}
+                  icon={<IcCheckmarkCircleFilled size={6} className="fill-[--primary]" />}
                   disabled={!canSubmit}
                   onClick={submitComment}
                   data-testid="edit-comment-save-button"
