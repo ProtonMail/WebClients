@@ -1,6 +1,7 @@
 import { type RefObject, useMemo } from 'react';
 
 import type { PopperPosition } from '@proton/components/components/popper/interface';
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import {
     selectMicrophoneState,
@@ -24,6 +25,8 @@ interface AudioSettingsProps {
 }
 
 export const AudioSettings = ({ anchorRef, onClose, anchorPosition }: AudioSettingsProps) => {
+    const { reportMeetError } = useMeetErrorReporting();
+
     const audioDeviceId = useMeetSelector(selectSelectedMicrophoneId);
     const audioOutputDeviceId = useMeetSelector(selectSelectedAudioOutputId);
     const microphoneState = useMeetSelector(selectMicrophoneState);
@@ -59,8 +62,7 @@ export const AudioSettings = ({ anchorRef, onClose, anchorPosition }: AudioSetti
                 isSystemDefaultDevice: isDefaultDevice(value),
             });
         } catch (e) {
-            // eslint-disable-next-line no-console
-            console.error('Error setting audio output device:', e);
+            reportMeetError('Error setting audio output device:', e);
         }
     };
 
