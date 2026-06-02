@@ -1,19 +1,18 @@
 import { type MutableRefObject, useRef, useState } from 'react';
 
-import type { App, GroupKeyInfo } from '@proton-meet/proton-meet-core';
-
 import type { useMeetDispatch } from '@proton/meet/store/hooks';
 import { addKeyRotationLog, setMlsGroupState } from '@proton/meet/store/slices/meetingInfo';
 import type { KeyRotationLog, MLSGroupState } from '@proton/meet/types/types';
 
 import type { ProtonMeetKeyProvider } from '../utils/ProtonMeetKeyProvider';
 import { KeyRotationScheduler } from '../utils/SeamlessKeyRotationScheduler';
+import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 
 interface UseKeyManagementParams {
     keyProvider: ProtonMeetKeyProvider;
     isMeetSeamlessKeyRotationEnabled: boolean;
     isMeetClientMetricsLogEnabled: boolean;
-    wasmApp: App | null;
+    wasmApp: MeetCoreClient | null;
     dispatch: ReturnType<typeof useMeetDispatch>;
     reportMeetError: (msg: string, options?: unknown) => void;
     withMeetingLinkNameTag: (options?: unknown) => unknown;
@@ -71,7 +70,10 @@ export const useKeyManagement = ({
 
     const getGroupKeyInfo = async (): Promise<{ key: string; epoch: bigint }> => {
         try {
-            const newGroupKeyInfo = (await wasmApp?.getGroupKey()) as GroupKeyInfo;
+            const newGroupKeyInfo = await wasmApp?.getGroupKey();
+            if (!newGroupKeyInfo) {
+                throw new Error('Group key info is unavailable');
+            }
             currentKeyRef.current = newGroupKeyInfo.key;
             const displayCode = await wasmApp?.getGroupDisplayCode();
             const nextMlsGroupState = {
@@ -81,7 +83,7 @@ export const useKeyManagement = ({
             dispatch(setMlsGroupState(nextMlsGroupState));
             mlsGroupStateRef.current = nextMlsGroupState;
             return { key: newGroupKeyInfo.key, epoch: newGroupKeyInfo.epoch };
-        } catch (err: any) {
+        } catch (err) {
             reportMeetError('Error while calling getGroupKeyInfo', withMeetingLinkNameTag(err));
             throw err;
         }
