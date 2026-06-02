@@ -237,7 +237,14 @@ export class E2eeRecoveryManager {
 
     // When we have an encryption error, could look like a video stall, so we stop recoveries of that paricipant
     // for a grace period after one is detected.
-    private handleEncryptionError = (_error: Error, participant?: { identity: string }) => {
+    private handleEncryptionError = (error: Error, participant?: { identity: string }) => {
+        this.addSessionEvent(
+            `encryption error detected: participant=${participant?.identity ?? 'unknown'}: ${error.message}`,
+            {
+                silent: true,
+            }
+        );
+
         if (!participant) {
             return;
         }
