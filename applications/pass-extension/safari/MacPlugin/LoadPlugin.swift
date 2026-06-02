@@ -52,7 +52,6 @@ public final class LoadPlugin: Sendable, LoadPluginUseCase {
         guard let pluginClass = bundle.classNamed(className) as? Plugin.Type else { return nil }
 
         // 4. Create an instance of the plugin class
-        let plugin = pluginClass.init()
-        return plugin
+        return pluginClass.init()
     }
 }
