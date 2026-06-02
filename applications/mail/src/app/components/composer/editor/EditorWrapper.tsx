@@ -16,6 +16,7 @@ import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import diff from '@proton/utils/diff';
 
@@ -88,6 +89,12 @@ const EditorWrapper = ({
     const isMounted = useIsMounted();
     const skipNextInputRef = useRef(false); // Had trouble by using a state here
 
+    const isInlineImageReuploadDisabled = useFlag('ComposerInlineImageReuploadDisabled');
+    // Re-upload of inline images on undo is only possible when the composer exposes
+    // onUploadAttachments (not in EO), and can be turned off via kill switch. When disabled,
+    // the missed CIDs are ignored and we fall back to the pre-re-upload behaviour.
+    const canReuploadInlineImages = !!onUploadAttachments && !isInlineImageReuploadDisabled;
+
     const [editorReady, setEditorReady] = useState(false);
     const [documentReady, setDocumentReady] = useState(false);
     const [blockquoteSaved, setBlockquoteSaved] = useState<string>();
@@ -149,15 +156,16 @@ const EditorWrapper = ({
                     }
                 });
 
-                // We keep the old behavior of clearing the undo history in EO where it's not possible to re-upload attachments
-                if (hasDeletedCid && !onUploadAttachments) {
+                // We keep the old behavior of clearing the undo history where re-upload is not available
+                // (EO, or when the kill switch disables it)
+                if (hasDeletedCid && !canReuploadInlineImages) {
                     editorActionsRef.current?.clearUndoHistory?.();
                 }
             }
 
             // Re-upload inline images that are back in the content but whose attachment was deleted.
             // The original CID is preserved in the attachement slice and used to find the attachment.
-            if (missedCIDs.length && onUploadAttachments && getStoreState) {
+            if (canReuploadInlineImages && missedCIDs.length && onUploadAttachments && getStoreState) {
                 const state = getStoreState();
                 const attachedCIDs = getAttachedCIDs(message);
 
@@ -189,7 +197,7 @@ const EditorWrapper = ({
                 }
             }
 
-            if (onUploadAttachments) {
+            if (canReuploadInlineImages) {
                 const attachedCIDSet = new Set(getAttachedCIDs(message));
 
                 setCIDs(
@@ -198,7 +206,7 @@ const EditorWrapper = ({
                     )
                 );
             } else {
-                // Encrypted outside: unchanged behaviour (re-upload is not available here).
+                // Re-upload not available (EO or kill switch): unchanged pre-re-upload behaviour.
                 setCIDs(newCIDs);
             }
         },
@@ -277,8 +285,9 @@ const EditorWrapper = ({
 
             const isInitialContentSetInEditor = editorReady && !isPlainText;
 
-            // We keep the old behavior of clearing the undo history in EO where it's not possible to re-upload attachments
-            if (isInitialContentSetInEditor && !onUploadAttachments) {
+            // We keep the old behavior of clearing the undo history where re-upload is not available
+            // (EO, or when the kill switch disables it)
+            if (isInitialContentSetInEditor && !canReuploadInlineImages) {
                 editorActionsRef.current?.clearUndoHistory?.();
             }
 
