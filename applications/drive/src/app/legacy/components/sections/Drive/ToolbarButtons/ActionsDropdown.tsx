@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton, usePopperAnchor } from '@proton/components';
 import { generateNodeUid, getDrive } from '@proton/drive';
+import { useMoveItemsModal } from '@proton/drive/modals/moveItemsModal';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import type { IconName } from '@proton/icons/types';
@@ -13,10 +14,9 @@ import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
+import type { DecryptedLink, useActions } from '../../../../../legacy/store';
 import { useDetailsModal } from '../../../../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../../../modals/FilesDetailsModal';
-import { useMoveItemsModal } from '../../../../../modals/MoveItemsModal';
-import type { DecryptedLink, useActions } from '../../../../../legacy/store';
 import { useRenameModalDeprecated } from '../../../modals/RenameModal';
 
 interface Props {

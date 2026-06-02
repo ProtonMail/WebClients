@@ -1,5 +1,6 @@
 import { generateNodeUid, getDrive, useDrive } from '@proton/drive';
 import { useCreateFolderModal } from '@proton/drive/modals/createFolderModal';
+import { useMoveItemsModal } from '@proton/drive/modals/moveItemsModal';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { uploadManager } from '@proton/drive/modules/upload';
 
@@ -8,7 +9,6 @@ import { useCopyItemsModal } from '../../modals/CopyItemsModal';
 import { useCreateFileModal } from '../../modals/CreateFileModal';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
-import { useMoveItemsModal } from '../../modals/MoveItemsModal';
 import { useRenameModal } from '../../modals/RenameModal';
 import { useRevisionsModal } from '../../modals/RevisionsModal';
 import { useFileSharingModal } from '../../modals/SelectLinkToShareModal';

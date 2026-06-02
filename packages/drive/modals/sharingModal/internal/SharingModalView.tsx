@@ -24,13 +24,13 @@ import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 import { useFlagsDriveDirectSharing } from '../../../internal/flags/useFlagsDriveDirectSharing';
 import { useFlagsDrivePublicSharing } from '../../../internal/flags/useFlagsDrivePublicSharing';
 import { useFlagsDriveSharingAdminPermissions } from '../../../internal/flags/useFlagsDriveSharingAdminPermissions';
+import ModalContentLoader from '../../modalUtils/ModalContentLoader';
 import { DirectSharingAutocomplete } from './DirectSharing/DirectSharingAutocomplete';
 import { DirectSharingFooter } from './DirectSharing/DirectSharingFooter';
 import { DirectSharingInviteMessage } from './DirectSharing/DirectSharingInviteMessage';
 import { DirectSharingListing } from './DirectSharing/DirectSharingListing';
 import { useShareInvitees } from './DirectSharing/useShareInvitees';
 import ErrorState from './ErrorState';
-import ModalContentLoader from './ModalContentLoader';
 import { PublicSharing } from './PublicSharing/PublicSharing';
 import { useSharingSettingsModal } from './SharingSettingsModal';
 import type { DirectMember, DirectSharingRole } from './interfaces';
@@ -140,11 +140,7 @@ export const SharingModalView = ({
     const canChangePermissions = adminRoleEnabled && roleOnParentNode === MemberRole.Admin && !isPhotoOrAlbum;
 
     const isSettingsVisible =
-        !isInvitationWorkflow &&
-        !publicLinkStateChanging &&
-        !publicLinkUpdating &&
-        isShared &&
-        canChangePermissions;
+        !isInvitationWorkflow && !publicLinkStateChanging && !publicLinkUpdating && isShared && canChangePermissions;
 
     const isShareWithAnyoneLoading = publicLinkStateChanging || isLoading;
     const isClosedButtonDisabled = publicLinkStateChanging || publicLinkUpdating || isAdding;

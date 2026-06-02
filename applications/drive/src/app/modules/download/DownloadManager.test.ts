@@ -1,7 +1,7 @@
 import type { NodeEntity, ProtonDrivePhotosClient } from '@proton/drive/index';
 import { AbortError, NodeType } from '@proton/drive/index';
+import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
-import { createMockNodeEntity } from '../../utils/test/nodeEntity';
 import { createDeferred, createEmptyAsyncGenerator, flushAsync, trackInstances, waitForCondition } from './testUtils';
 
 const schedulerTracker = trackInstances((...args: unknown[]) => {
