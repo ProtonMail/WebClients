@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
-import type { App } from '@proton-meet/proton-meet-core';
 import { RoomEvent } from 'livekit-client';
 import type { Participant, RemoteParticipant } from 'livekit-client';
 
@@ -19,8 +18,9 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { PublishableDataTypes, RecordingStatus } from '../../types';
 import { isValidMessageString } from '../../utils/isValidMessageString';
+import type { MeetCoreClient } from '../../wasm/MeetCoreClient';
 
-export const useIsRecordingInProgressReceiver = (mls: App) => {
+export const useIsRecordingInProgressReceiver = (mls: MeetCoreClient | null) => {
     const isMeetMultipleRecordingEnabled = useFlag('MeetMultipleRecording');
     const { reportMeetError } = useMeetErrorReporting();
 
@@ -68,6 +68,10 @@ export const useIsRecordingInProgressReceiver = (mls: App) => {
             participant?: RemoteParticipant
         ) => {
             if (!participant || !payload) {
+                return;
+            }
+
+            if (!mls) {
                 return;
             }
 

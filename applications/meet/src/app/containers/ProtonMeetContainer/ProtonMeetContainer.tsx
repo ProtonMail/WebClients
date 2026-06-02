@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { type App, RejoinReasonInfo } from '@proton-meet/proton-meet-core';
+import { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 import { ConnectionState, DisconnectReason, type Room, RoomEvent, Track } from 'livekit-client';
 import { c } from 'ttag';
 
@@ -194,7 +194,7 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
     const [reconnectionFailed, setReconnectionFailed] = useState(false);
     const [mlsRetrying, setMlsRetrying] = useState(false);
     // Stable ref to break the circular dependency between useConnectionHealthCheck and performFullReconnection
-    const triggerFullReconnectionRef = useRef<(reason: RejoinReasonInfo) => void>(() => {});
+    const triggerFullReconnectionRef = useRef<(reason: RejoinReasonInfo) => void>(() => { });
     const [prejoinParticipantCount, setPrejoinParticipantCount] = useState<number | null>(null);
     const [liveKitConnectionState, setLiveKitConnectionState] = useState<ConnectionState | null>(null);
     const [showReconnectedMessage, setShowReconnectedMessage] = useState(false);
@@ -251,7 +251,7 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
 
     const notifications = useNotifications();
 
-    useIsRecordingInProgressReceiver(wasmApp as App);
+    useIsRecordingInProgressReceiver(wasmApp);
 
     const isGuestAdminRef = useRef(false);
 
@@ -322,11 +322,10 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
         hasAnotherAdmin,
     } = isLocalParticipantAdmin(participantsMap, room.localParticipant);
 
-    const shareLink = `${window.location.origin}${
-        meetingDetails.meetingId && meetingDetails.meetingPassword
-            ? getMeetingLink(meetingDetails.meetingId, meetingDetails.meetingPassword)
-            : window.location.pathname
-    }`;
+    const shareLink = `${window.location.origin}${meetingDetails.meetingId && meetingDetails.meetingPassword
+        ? getMeetingLink(meetingDetails.meetingId, meetingDetails.meetingPassword)
+        : window.location.pathname
+        }`;
 
     // Check if joining own personal meeting room
     const isPersonalRoom = !isGuest && personalMeeting?.MeetingLinkName === token;
