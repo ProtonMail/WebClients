@@ -4,7 +4,7 @@ import { useIFrameAppController } from 'proton-pass-extension/lib/components/Inl
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { PassIcon } from '@proton/pass/components/Layout/Icon/PassIcon';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import clsx from '@proton/utils/clsx';
@@ -51,7 +51,7 @@ const NotificationHeaderRender: ForwardRefRenderFunction<HTMLDivElement, Props> 
                     }}
                     title={c('Action').t`Cancel`}
                 >
-                    <Icon name="cross" alt={c('Action').t`Cancel`} size={4} />
+                    <IcCross alt={c('Action').t`Cancel`} size={4} />
                 </Button>
             </div>
         </div>

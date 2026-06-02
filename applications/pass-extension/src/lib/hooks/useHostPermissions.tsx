@@ -7,8 +7,8 @@ import { hasHostPermissions, requestHostPermissions } from 'proton-pass-extensio
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
@@ -72,7 +72,7 @@ export const getHostPermissionsError = (origins?: string[]): ReactNode => {
         <span className="flex gap-1">
             {base}
             <span className="text-sm">
-                <Icon name="info-circle" size={2.5} className="mr-1" />
+                <IcInfoCircle size={2.5} className="mr-1" />
                 {instructions}
             </span>
         </span>
