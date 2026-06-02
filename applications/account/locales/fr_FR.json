@@ -13195,9 +13195,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Vous pouvez modifier ceci une fois pour vous assurer que l'adresse e-mail utilisée pour la vérification est correcte."
       ],
-      "You can enable the Photos section from the interface using the toggle below.": [
-        "Vous pouvez activer la section Photos depuis l'interface en utilisant le commutateur ci-dessous."
-      ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Vous pouvez appliquer les règles de mot de passe que les membres de votre organisation utiliseront lorsqu’ils créeront ou réinitialiseront le mot de passe de leur compte ${ BRAND_NAME }."
       ],
@@ -15687,6 +15684,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Oui, je veux supprimer définitivement ce compte et toutes ses données."
+      ],
+      "You don't have permissions": [
+        "Vous n'avez pas d'autorisations."
       ],
       "Your activation code:": [
         "Votre code d'activation :"
@@ -22079,11 +22079,8 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "Activer la section Photos"
-      ],
       "Get updates about comments via email": [
-        "Recevoir des notifications par e-mail concernant les commentaires"
+        "Recevoir les mises à jour des commentaires par e-mail"
       ],
       "Include document name in email notifications": [
         "Inclure le nom du document dans les notifications par e-mail"
@@ -22097,6 +22094,9 @@
     "Settings section title": {
       "Account": [
         "Compte"
+      ],
+      "Managed Companies": [
+        "Entreprises gérées"
       ],
       "Organization": [
         "Organisation"
@@ -24057,6 +24057,12 @@
       ],
       "View VPN session details for your organization.": [
         "Affichez les informations de la session VPN pour votre organisation."
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "Avec les entreprises gérées, vous pouvez ajouter, modifier et supprimer les droits d'accès des organisations dont vous avez la charge."
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "Votre coût mensuel total pour toutes les entreprises gérées."
       ]
     },
     "Success": {
@@ -24952,6 +24958,9 @@
       "Collaborate on documents": [
         "Collaborer sur des documents"
       ],
+      "Companies": [
+        "Entreprises"
+      ],
       "Compare plans": [
         "Comparer les offres"
       ],
@@ -25700,6 +25709,9 @@
       "Monthly": [
         "Mensuel"
       ],
+      "Monthly Costs": [
+        "Coût mensuel"
+      ],
       "Multi-user support": [
         "Prise en charge du multi-utilisateur"
       ],
@@ -25834,9 +25846,6 @@
       ],
       "Phone": [
         "Téléphone"
-      ],
-      "Photos": [
-        "Photos"
       ],
       "Pin the extension": [
         "Épinglez l'extension"

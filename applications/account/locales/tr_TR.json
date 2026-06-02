@@ -13192,9 +13192,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Bunu doğrulamada kullanılacak doğru e-posta adresini yazmak için bir kez düzenleyebilirsiniz."
       ],
-      "You can enable the Photos section from the interface using the toggle below.": [
-        "Arayüzde aşağıdaki anahtarı kullanarak Fotoğraflar bölümünü açabilirsiniz."
-      ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Kuruluşunuzun üyeleri, ${ BRAND_NAME } hesaplarının parolasını oluştururken veya sıfırlarken uygulanacak zorunlu parola kuralları belirleyebilirsiniz."
       ],
@@ -15684,6 +15681,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Evet, bu hesabı ve tüm verilerini kalıcı olarak silmek istiyorum."
+      ],
+      "You don't have permissions": [
+        "İzniniz yok"
       ],
       "Your activation code:": [
         "Etkinleştirme kodunuz:"
@@ -22073,11 +22073,8 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "Fotoğraflar bölümünü aç"
-      ],
       "Get updates about comments via email": [
-        "Yorum güncellemeleri e-posta ile bildirilsin"
+        "Yorumlarla ilgili güncellemeleri e-posta ile al"
       ],
       "Include document name in email notifications": [
         "E-posta bildirimlerine belge adı eklensin"
@@ -22091,6 +22088,9 @@
     "Settings section title": {
       "Account": [
         "Hesap"
+      ],
+      "Managed Companies": [
+        "Yönetilen Şirketler"
       ],
       "Organization": [
         "Kuruluş"
@@ -24051,6 +24051,12 @@
       ],
       "View VPN session details for your organization.": [
         "Kuruluşunuzun VPN oturumu ayrıntılarını görüntüleyin."
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "Yönetilen şirketlerle denetlediğiniz kuruluşlar için erişim ekleyebilir, düzenleyebilir ve kaldırabilirsiniz."
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "Yönetilen tüm şirketler için toplam aylık maliyetiniz."
       ]
     },
     "Success": {
@@ -24946,6 +24952,9 @@
       "Collaborate on documents": [
         "Belgeler üzerinde işbirliği yapın"
       ],
+      "Companies": [
+        "Şirketler"
+      ],
       "Compare plans": [
         "Tarifeleri karşılaştır"
       ],
@@ -25694,6 +25703,9 @@
       "Monthly": [
         "Aylık"
       ],
+      "Monthly Costs": [
+        "Aylık Maliyet"
+      ],
       "Multi-user support": [
         "Çok kullanıcı desteği"
       ],
@@ -25828,9 +25840,6 @@
       ],
       "Phone": [
         "Telefon"
-      ],
-      "Photos": [
-        "Fotoğraflar"
       ],
       "Pin the extension": [
         "Eklentiyi sabitle"
