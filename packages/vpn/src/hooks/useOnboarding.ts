@@ -6,12 +6,14 @@ import { useUser } from '@proton/account/user/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import { useDeclarativeLocalState } from '@proton/components/hooks/useDeclarativeLocalState.ts';
 import { getIsVpnB2BPlan } from '@proton/payments';
+import { removeItem } from '@proton/shared/lib/helpers/storage';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
+import { Onboarding } from '../../constants/onboarding';
 import { getIsBusinessOnboarded, setBusinessOnboarded } from '../apis/onboarding';
-import type { Onboarding } from '../types/Onboarding';
-import { ONBOARDING } from '../types/Onboarding';
+import type { OnboardingStep } from '../types/Onboarding';
+import { ONBOARDING_STEPS } from '../types/Onboarding';
 
 const useIsEligibleForOnboarding = () => {
     const [user] = useUser();
@@ -20,27 +22,25 @@ const useIsEligibleForOnboarding = () => {
     return isAdmin(user) && !!organization?.PlanName && getIsVpnB2BPlan(organization.PlanName);
 };
 
-const resolveOnboardingStep = async ({ api }: { api: ReturnType<typeof useApi> }): Promise<Onboarding> => {
+const resolveOnboardingStep = async ({ api }: { api: ReturnType<typeof useApi> }): Promise<OnboardingStep> => {
     const isOnboarded = await getIsBusinessOnboarded({ api });
-    return isOnboarded ? ONBOARDING.Onboarded : ONBOARDING.NotOnboarded;
+    return isOnboarded ? ONBOARDING_STEPS.Onboarded : ONBOARDING_STEPS.NotOnboarded;
 };
-
-const onboardingKey = 'b2b-get-started-step';
 
 export const useOnboarding = () => {
     const isEligibleForOnboarding = useIsEligibleForOnboarding();
-    const [step, setStep] = useDeclarativeLocalState<Onboarding>(onboardingKey);
+    const [step, setStep] = useDeclarativeLocalState<OnboardingStep>(Onboarding.onboardingKey);
     const api = useApi();
     const location = useLocation();
 
     const hasPromptParam = new URLSearchParams(location.search).has('prompt');
     const onceHandlerRef = useRef(false);
     useEffect(() => {
-        if (step === ONBOARDING.Dismissed) {
+        if (step === ONBOARDING_STEPS.Dismissed) {
             return;
         }
         if (!isEligibleForOnboarding) {
-            setStep(ONBOARDING.NotEligible);
+            setStep(ONBOARDING_STEPS.NotEligible);
             return;
         }
 
@@ -53,13 +53,14 @@ export const useOnboarding = () => {
     }, [isEligibleForOnboarding, hasPromptParam, api]);
 
     const onboarded = () => {
-        setStep(ONBOARDING.Onboarded);
+        setStep(ONBOARDING_STEPS.Onboarded);
         setBusinessOnboarded({ api }).catch(noop);
     };
 
     const complete = () => {
-        setStep(ONBOARDING.Dismissed);
+        removeItem(Onboarding.quickActionsKey);
+        setStep(ONBOARDING_STEPS.Dismissed);
     };
 
-    return [step ?? ONBOARDING.NotEligible, onboarded, complete] as const;
+    return [step ?? ONBOARDING_STEPS.NotEligible, onboarded, complete] as const;
 };
