@@ -2157,6 +2157,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } tárhely"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } felhasználó",
+        "Akár ${ numberOfUsers } felhasználó"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } e-mail tárhely"
       ],
@@ -5343,6 +5347,10 @@
       ],
       "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "Az átállás megkönnyítése érdekében 30 napos ingyenes próbaidőszakot biztosítunk a(z) ${ BRAND_NAME } Unlimited* szolgáltatáshoz."
+      ],
+      "View the invitation": [
+        "Meghívás megtekintése",
+        "Meghívások megtekintése"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Meghívást kapott a csatlakozáshoz: ${ invite.OrganizationName }"
@@ -9056,9 +9064,6 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Ezt egyszer szerkesztheti, hogy biztosítsa a helyes e-mail címet hitelesítéshez."
-      ],
-      "You can enable the Photos section from the interface using the toggle below.": [
-        "A Fotók részt az alábbi kapcsoló segítségével engedélyezheti a felületen."
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Érvényesítheti a jelszószabályokat, amelyeket a szervezetének tagjai alkalmazni fognak, amikor létrehozzák vagy visszaállítják a ${ BRAND_NAME } fiókjuk jelszavát."
@@ -18021,9 +18026,6 @@
       ],
       "Phone": [
         "Telefonszám"
-      ],
-      "Photos": [
-        "Fényképek"
       ],
       "Pin the extension": [
         "Rögzítse a bővítményt"

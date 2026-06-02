@@ -13189,9 +13189,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Podeu editar-ho una vegada per a assegurar-vos que l'adreça de correu electrònic utilitzada per a la verificació és correcta."
       ],
-      "You can enable the Photos section from the interface using the toggle below.": [
-        "Podeu activar la secció Fotos des de la interfície utilitzant el commutador següent."
-      ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Podeu aplicar les regles de contrasenya que els membres de la vostra organització utilitzaran quan creïn o restableixin la contrasenya del seu compte de ${ BRAND_NAME }."
       ],
@@ -15681,6 +15678,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, vull suprimir definitivament aquest compte i totes les seves dades."
+      ],
+      "You don't have permissions": [
+        "No teniu permisos"
       ],
       "Your activation code:": [
         "El vostre codi d'activació:"
@@ -21977,9 +21977,6 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "Habilitar la secció de fotos"
-      ],
       "Get updates about comments via email": [
         "Rebeu actualitzacions per correu electrònic sobre els comentaris"
       ],
@@ -21995,6 +21992,9 @@
     "Settings section title": {
       "Account": [
         "Compte"
+      ],
+      "Managed Companies": [
+        "Empreses gestionades"
       ],
       "Organization": [
         "Organització"
@@ -23955,6 +23955,12 @@
       ],
       "View VPN session details for your organization.": [
         "Veieu els detalls de la sessió VPN de la vostra organització."
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "Amb les empreses gestionades, podreu afegir, editar i esborrar l'accés de les organitzacions que superviseu."
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "El vostre cost mensual total per a totes les empreses gestionades."
       ]
     },
     "Success": {
@@ -24850,6 +24856,9 @@
       "Collaborate on documents": [
         "Col·laboració en documents"
       ],
+      "Companies": [
+        "Empreses"
+      ],
       "Compare plans": [
         "Compareu els plans"
       ],
@@ -25598,6 +25607,9 @@
       "Monthly": [
         "Mensual"
       ],
+      "Monthly Costs": [
+        "Costos mensuals"
+      ],
       "Multi-user support": [
         "Suport multi-usuari"
       ],
@@ -25732,9 +25744,6 @@
       ],
       "Phone": [
         "Telèfon"
-      ],
-      "Photos": [
-        "Fotos"
       ],
       "Pin the extension": [
         "Fixa l'extensió"

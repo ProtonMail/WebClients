@@ -7569,6 +7569,9 @@
       "Contact us": [
         "Ota yhteyttä"
       ],
+      "Downloads": [
+        "Lataukset"
+      ],
       "Enjoying ${ planName }?": [
         "Nautitko ${ planName }ista?"
       ],
@@ -7990,6 +7993,9 @@
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Menetät pääsyn kaikkiin tililläsi tällä hetkellä oleviin salattuihin tietoihin, jos jatkat."
+      ],
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } on itsenäisesti rahoitettu ja toimii ilman mainontaa. Alla on esimerkkejä siitä, miten tätä itsenäisyyttä on hyödynnetty käytännössä."
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } on yksityisyyttä, johon voit luottaa. Sen takaavat vahva salaus, avoin lähdekoodi ja Sveitsin tietosuojalainsäädäntö. Uskomme, että keneenkään ei tulisi pystyä hyväksikäyttämään tietojasi, piste. Teknologiamme ja liiketoimintamme pohjautuvat tälle pohjimmiltaan vahvemmalle yksityisyyden määritelmälle."
@@ -10232,6 +10238,9 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synkronoi ja hallitse tiedostoja ${ DRIVE_APP_NAME }-sovelluksella. Luo ja jaa dokumentit ${ DOCS_APP_NAME }-sovelluksessa, sekä säilytä niitä turvallisesti. Saatavilla ${ ios }, ${ android } ja ${ desktop }."
       ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Tilapäisesti poissa käytöstä suuren kysynnän vuoksi. Yritä myöhemmin uudelleen."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
       ],
@@ -10931,9 +10940,6 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Voit muokata tätä kerran varmistaaksesi sähköpostiosoitteen olevan vahvistusta varten oikea."
-      ],
-      "You can enable the Photos section from the interface using the toggle below.": [
-        "Voit ottaa Kuvat-osion käyttöön käyttöliittymän alla olevalla painikkeella."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, jolle olet jakanut kalentereitasi.",
@@ -11700,6 +11706,9 @@
       ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } / kuukausi"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } merkkiä"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
@@ -13018,6 +13027,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Kyllä, haluan poistaa tilin ja kaikki sen tiedot pysyvästi."
+      ],
+      "You don't have permissions": [
+        "Sinulla ei ole oikeuksia"
       ],
       "Your activation code:": [
         "Aktivointikoodisi:"
@@ -18345,8 +18357,11 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "Ota Kuvat-osio käyttöön"
+      "Get updates about comments via email": [
+        "Saat päivityksiä kommenteista sähköpostitse"
+      ],
+      "Include document name in email notifications": [
+        "Sisällytä dokumentin nimi sähköposti-ilmoituksiin"
       ]
     },
     "Settings description": {
@@ -21538,9 +21553,6 @@
       "Phone": [
         "Puhelin"
       ],
-      "Photos": [
-        "Kuvat"
-      ],
       "Pin the extension": [
         "Kiinnitä laajennus"
       ],
@@ -22204,6 +22216,9 @@
       ],
       "Each imported email will have this label": [
         "Jokainen tuotu viesti merkitään tällä tunnisteella"
+      ],
+      "Early access to new apps and features.": [
+        "Varhainen pääsy uusiin sovelluksiin ja ominaisuuksiin."
       ],
       "Edit folder names": [
         "Muokkaa kansioiden nimiä"
