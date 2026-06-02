@@ -5,7 +5,6 @@ import { Button } from '@proton/atoms/Button/Button';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { PASSWORD_REMINDERS_VALUE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -47,12 +46,9 @@ const ConfirmDisablePasswordRemindersModal = ({ open, onClose }: Props) => {
         >
             <p>
                 {c('password_reminder')
-                    .t`Make sure you memorize or securely store your password as it's the key to encrypt your data.`}
+                    .t`Make sure you memorize or securely store your password as it's the key to decrypt your data.`}
             </p>
-            <p>
-                {c('password_reminder')
-                    .t`If you forget your password, you may lose data when resetting your ${BRAND_NAME} Account.`}
-            </p>
+            <p>{c('password_reminder').t`If you forget your password, you may lose access to your encrypted data.`}</p>
         </Prompt>
     );
 };
