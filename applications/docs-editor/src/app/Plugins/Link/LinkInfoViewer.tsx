@@ -4,7 +4,10 @@ import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { mergeRegister } from '@lexical/utils'
 import { Button } from '@proton/atoms/Button/Button'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
-import { Icon } from '@proton/components'
+import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare'
+import { IcLink } from '@proton/icons/icons/IcLink'
+import { IcPencil } from '@proton/icons/icons/IcPencil'
+import { IcTrash } from '@proton/icons/icons/IcTrash'
 import clsx from '@proton/utils/clsx'
 import type { LexicalEditor } from 'lexical'
 import { COMMAND_PRIORITY_EDITOR, COMMAND_PRIORITY_LOW, SELECTION_CHANGE_COMMAND } from 'lexical'
@@ -131,7 +134,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
           }}
           data-testid="hyperlink-link"
         >
-          <Icon name="arrow-within-square" className="ml-1 flex-shrink-0" />
+          <IcArrowWithinSquare className="ml-1 flex-shrink-0" />
           <div className="max-w-[35ch] overflow-hidden text-ellipsis">{linkUrl}</div>
         </a>
         <Tooltip title={c('Action').t`Copy link`}>
@@ -144,7 +147,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
             }}
             data-testid="hyperlink-copy-link-button"
           >
-            <Icon name="link" />
+            <IcLink />
           </Button>
         </Tooltip>
         {!isAutoLink && isEditorEditable && (
@@ -159,7 +162,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
                 }}
                 data-testid="hyperlink-edit-button"
               >
-                <Icon name="pencil" />
+                <IcPencil />
               </Button>
             </Tooltip>
             <Tooltip title={c('Action').t`Remove link`}>
@@ -177,7 +180,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
                 }}
                 data-testid="hyperlink-delete-button"
               >
-                <Icon name="trash" />
+                <IcTrash />
               </Button>
             </Tooltip>
           </>
