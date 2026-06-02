@@ -14,7 +14,6 @@ import { getNormalizedPlanTitles } from '@proton/components/containers/payments/
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { type FreePlanDefault, PLANS, type Plan, type PlansMap, type SubscriptionPlan } from '@proton/payments';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
-import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 import type { SubscriptionData } from '../../signup/interfaces';
 import svg from '../welcome-suite.svg';
@@ -28,21 +27,12 @@ interface Props extends Omit<ModalProps, 'title'> {
     appName: string;
     plansMap: PlansMap;
     freePlan: FreePlanDefault;
-    vpnServersCountData: VPNServersCountData;
     subscriptionData: SubscriptionData | undefined;
     onUpgrade: () => void;
     onFree: () => void;
 }
 
-const getFamilyFeatures = ({
-    plan,
-    freePlan,
-    vpnServersCountData,
-}: {
-    plan: Plan;
-    freePlan: FreePlanDefault;
-    vpnServersCountData: VPNServersCountData;
-}) => {
+const getFamilyFeatures = ({ plan, freePlan }: { plan: Plan; freePlan: FreePlanDefault }) => {
     return [
         getStorageFeature(plan.MaxSpace, {
             freePlan,
@@ -55,7 +45,6 @@ const getFamilyFeatures = ({
         getDriveAppFeature({ duo: true }),
         getVPNAppFeature({
             duo: true,
-            serversCount: vpnServersCountData,
         }),
         getPassAppFeature(),
     ];
@@ -71,7 +60,6 @@ const UpsellModal = ({
     subscriptionData,
     plansMap,
     freePlan,
-    vpnServersCountData,
     onUpgrade,
     onFree,
     ...rest
@@ -82,9 +70,7 @@ const UpsellModal = ({
         upsellPlan,
     });
 
-    const shortPlan = upsellPlan
-        ? getShortPlan(upsellPlan.Name as PLANS, plansMap, { vpnServers: vpnServersCountData, freePlan })
-        : null;
+    const shortPlan = upsellPlan ? getShortPlan(upsellPlan.Name as PLANS, plansMap, { freePlan }) : null;
 
     const { title, features } = (() => {
         const defaultFeatures = shortPlan?.features || [];
@@ -97,13 +83,13 @@ const UpsellModal = ({
         if (upsellPlan?.Name === PLANS.DUO) {
             return {
                 title: c('pass_signup_2023: Info').t`Get unlimited privacy for two`,
-                features: getFamilyFeatures({ plan: upsellPlan, freePlan, vpnServersCountData }),
+                features: getFamilyFeatures({ plan: upsellPlan, freePlan }),
             };
         }
         if (upsellPlan?.Name === PLANS.FAMILY) {
             return {
                 title: c('pass_signup_2023: Info').t`Get online privacy, for your whole family`,
-                features: getFamilyFeatures({ plan: upsellPlan, freePlan, vpnServersCountData }),
+                features: getFamilyFeatures({ plan: upsellPlan, freePlan }),
             };
         }
         return {

@@ -65,7 +65,7 @@ import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
-import type { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { isFree } from '@proton/shared/lib/user/helpers';
 import simpleLoginLogo from '@proton/styles/assets/img/illustrations/simplelogin-logo.svg';
@@ -146,7 +146,6 @@ const Step1 = ({
     model,
     setModel,
     api: normalApi,
-    vpnServersCountData,
     onOpenLogin,
     onOpenSwitch,
     onTriggerModals,
@@ -165,7 +164,6 @@ const Step1 = ({
     signupConfiguration: SignupConfiguration;
     signupParameters: SignupParameters2;
     isLargeViewport: boolean;
-    vpnServersCountData: VPNServersCountData;
     measure: Measure;
     onComplete: (
         data:
@@ -1418,7 +1416,6 @@ const Step1 = ({
                                 model={model}
                                 handleOptimistic={handleOptimistic}
                                 options={options}
-                                vpnServersCountData={vpnServersCountData}
                                 loadingSignup={loadingSignup}
                                 loadingPaymentDetails={loadingPaymentDetails || loadingSignout}
                                 isDarkBg={isDarkBg}

@@ -2,7 +2,6 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { useVPNServersCount } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
@@ -30,12 +29,11 @@ const YourPlanSectionV2 = ({ app, editBillingCycle = false, cta }: YourPlanSecti
     const plans = plansResult?.plans;
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
-    const [serversCount, serversCountLoading] = useVPNServersCount();
     const [addresses] = useAddresses();
 
     useLoad();
 
-    const loading = loadingSubscription || loadingOrganization || loadingPlans || serversCountLoading;
+    const loading = loadingSubscription || loadingOrganization || loadingPlans;
 
     if (!subscription || !plans || loading) {
         return <Loader />;
@@ -53,7 +51,6 @@ const YourPlanSectionV2 = ({ app, editBillingCycle = false, cta }: YourPlanSecti
                             user={user}
                             subscription={subscription}
                             organization={organization}
-                            serversCount={serversCount}
                             addresses={addresses}
                             editBillingCycle={editBillingCycle}
                         />

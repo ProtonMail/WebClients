@@ -6,7 +6,6 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import useLoad from '@proton/components/hooks/useLoad';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
-import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { FREE_PLAN } from '@proton/payments';
 import { PaymentsContextProvider } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -28,7 +27,6 @@ const UpgradeVpnSectionInner = ({ app }: Props) => {
     const freePlan = plansResult?.freePlan || FREE_PLAN;
     const [subscription, loadingSubscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
-    const [serversCount, serversCountLoading] = useVPNServersCount();
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
     const telemetryFlow = useDashboardPaymentFlow(app);
 
@@ -39,14 +37,13 @@ const UpgradeVpnSectionInner = ({ app }: Props) => {
         subscription,
         plansMap,
         freePlan,
-        serversCount,
         openSubscriptionModal,
         user,
         telemetryFlow,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
 
-    const loading = loadingSubscription || loadingPlans || serversCountLoading || plansMapLoading || upsellsLoading;
+    const loading = loadingSubscription || loadingPlans || plansMapLoading || upsellsLoading;
 
     if (!subscription || loading) {
         return <Loader />;

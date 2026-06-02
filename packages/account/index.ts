@@ -46,8 +46,6 @@ export * from './welcomeFlags';
 export * from './samlSSO';
 export * from './securityCheckup';
 export * from './scheduleCall';
-export * from './vpn/serversCount';
-export * from './vpn/hooks';
 export * from './allowAddressDeletion';
 export * from './persist/listener';
 export * from './groups';

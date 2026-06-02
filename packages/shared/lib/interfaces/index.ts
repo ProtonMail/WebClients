@@ -33,7 +33,6 @@ export * from './Subscription';
 export * from './Support';
 export * from './User';
 export * from './UserSettings';
-export * from './VPN';
 export * from './config';
 export * from './utils';
 export * from './Locale';

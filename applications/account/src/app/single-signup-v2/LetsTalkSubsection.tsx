@@ -28,7 +28,6 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
-import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 const getFeatures = (): PlanCardFeatureDefinition[] => {
     const features = [
@@ -45,12 +44,10 @@ const getFeatures = (): PlanCardFeatureDefinition[] => {
 const LetsTalkSubSection = ({
     app,
     signupParameters,
-    vpnServersCountData,
     mode,
 }: {
     app: 'mail' | 'drive' | 'pass' | 'lumo';
     signupParameters?: { trial?: boolean };
-    vpnServersCountData: VPNServersCountData;
     mode: 'text' | 'logos';
 }) => {
     const logoSize = 8;
@@ -111,7 +108,7 @@ const LetsTalkSubSection = ({
                             title: VPN_APP_NAME,
                             shortTitle: VPN_SHORT_APP_NAME,
                             logo: <VpnLogo variant="glyph-only" size={logoSize} />,
-                            tooltip: getVPNAppFeature({ serversCount: vpnServersCountData }).tooltip,
+                            tooltip: getVPNAppFeature().tooltip,
                         },
                         {
                             app: APPS.PROTONPASS,

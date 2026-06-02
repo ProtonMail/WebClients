@@ -17,7 +17,7 @@ import { PlanCardFeatureList } from '@proton/components/containers/payments/subs
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { ADDON_NAMES, CYCLE, type FreePlanDefault, PLANS, type PlansMap } from '@proton/payments';
 import { APPS, BRAND_NAME, LUMO_APP_NAME, LUMO_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
-import { Audience, type VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { SignupType } from '../../signup/interfaces';
@@ -175,7 +175,6 @@ export const getLumoConfiguration = ({
     audience,
     planParameters,
     isNewB2BPlanEnabled,
-    vpnServersCountData,
     signupParameters,
 }: {
     defaultPlan?: string;
@@ -184,7 +183,6 @@ export const getLumoConfiguration = ({
     audience: Audience.B2B | Audience.B2C;
     planParameters: PlanParameters | undefined;
     isNewB2BPlanEnabled: boolean;
-    vpnServersCountData: VPNServersCountData;
     signupParameters?: { trial?: boolean };
 }): SignupConfiguration => {
     const logo = <LumoLogo variant="wordmark-only" />;
@@ -246,14 +244,7 @@ export const getLumoConfiguration = ({
                       guarantee: true,
                   },
             {
-                subsection: (
-                    <LetsTalkSubSection
-                        app="lumo"
-                        vpnServersCountData={vpnServersCountData}
-                        signupParameters={signupParameters}
-                        mode="logos"
-                    />
-                ),
+                subsection: <LetsTalkSubSection app="lumo" signupParameters={signupParameters} mode="logos" />,
                 type: 'standard' as const,
                 guarantee: true,
                 interactive: false,

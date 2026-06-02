@@ -222,7 +222,6 @@ const UnlimitedProductCards = ({ plansMap, freePlan }: { plansMap: PlansMap; fre
 
 export const useUnlimitedBannerGradientUpsells = ({
     subscription,
-    serversCount,
     app,
     plansMap,
     freePlan,
@@ -244,7 +243,6 @@ export const useUnlimitedBannerGradientUpsells = ({
         app,
         plansMap,
         hasVPN: getHasConsumerVpnPlan(subscription),
-        serversCount,
         freePlan,
         openSubscriptionModal,
         telemetryFlow,
@@ -274,7 +272,7 @@ export const useUnlimitedBannerGradientUpsells = ({
             }),
     ].filter(isTruthy);
 
-    return { upsells, serversCount, handleExplorePlans, telemetryFlow, plansMap, freePlan, user };
+    return { upsells, handleExplorePlans, telemetryFlow, plansMap, freePlan, user };
 };
 
 interface Props extends UpsellsHook {

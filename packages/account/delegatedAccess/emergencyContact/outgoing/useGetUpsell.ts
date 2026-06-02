@@ -14,7 +14,6 @@ import noop from '@proton/utils/noop';
 import { plansThunk } from '../../../plans';
 import { subscriptionThunk } from '../../../subscription';
 import { userThunk } from '../../../user';
-import { vpnServersCountThunk } from '../../../vpn/serversCount';
 
 export const useGetUpsell = () => {
     const dispatch = useDispatch();
@@ -23,11 +22,10 @@ export const useGetUpsell = () => {
     const payments = usePayments();
 
     return useCallback(async (app: APP_NAMES) => {
-        const [subscription, user, { plans, freePlan }, serversCount] = await Promise.all([
+        const [subscription, user, { plans, freePlan }] = await Promise.all([
             dispatch(subscriptionThunk()),
             dispatch(userThunk()),
             dispatch(plansThunk()),
-            dispatch(vpnServersCountThunk()),
         ]);
         const plansMap = getPlansMap(plans, currency);
         const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
@@ -36,7 +34,6 @@ export const useGetUpsell = () => {
             subscription,
             plansMap,
             freePlan,
-            serversCount,
             openSubscriptionModal,
             canAccessDuoPlan,
             user,

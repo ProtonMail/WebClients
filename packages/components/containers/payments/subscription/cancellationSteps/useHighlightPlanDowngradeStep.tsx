@@ -3,7 +3,6 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
-import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { FREE_PLAN, type PLANS, getPlan, getRenewalTime } from '@proton/payments';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -24,7 +23,6 @@ export const useHighlightPlanDowngradeStep = ({ canShow }: CancellationStepConfi
     const [plansResult] = usePlans();
     const freePlan = plansResult?.freePlan || FREE_PLAN;
     const { plansMap } = usePreferredPlansMap();
-    const [vpnServers] = useVPNServersCount();
 
     const [highlightPlanDowngradeModal, showHighlightPlanDowngradeModal] =
         useModalTwoPromise<HighlightPlanDowngradeModalOwnProps>();
@@ -45,7 +43,6 @@ export const useHighlightPlanDowngradeStep = ({ canShow }: CancellationStepConfi
         const currentPlan = getPlan(subscription);
         const shortPlan = currentPlan
             ? getShortPlan(currentPlan.Name as PLANS, plansMap, {
-                  vpnServers,
                   freePlan,
               })
             : undefined;

@@ -56,8 +56,6 @@ describe('SubscriptionCheckout', () => {
         };
     });
 
-    const dummyServers = { free: { servers: 0, countries: 0 }, paid: { servers: 0, countries: 0 } };
-
     it('should display Proration if it is available and isProration is true', () => {
         checkResult.Proration = -451;
 
@@ -66,7 +64,6 @@ describe('SubscriptionCheckout', () => {
                 freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
-                vpnServers={dummyServers}
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
                 planIDs={{}}
@@ -97,7 +94,6 @@ describe('SubscriptionCheckout', () => {
                 freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
-                vpnServers={dummyServers}
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
                 planIDs={{}}
@@ -133,7 +129,6 @@ describe('SubscriptionCheckout', () => {
                     currency: 'CHF',
                 })}
                 plansMap={{} as any}
-                vpnServers={dummyServers}
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
                 planIDs={{}}
@@ -173,7 +168,6 @@ describe('SubscriptionCheckout', () => {
                 freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
-                vpnServers={dummyServers}
                 currency="CHF"
                 cycle={CYCLE.YEARLY}
                 planIDs={{}}
@@ -225,7 +219,6 @@ describe('SubscriptionCheckout', () => {
                 freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
-                vpnServers={{ free: { countries: 0, servers: 0 }, paid: { countries: 0, servers: 0 } }}
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
                 planIDs={{}}
@@ -277,7 +270,6 @@ describe('SubscriptionCheckout', () => {
                 freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
-                vpnServers={{ free: { countries: 0, servers: 0 }, paid: { countries: 0, servers: 0 } }}
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
                 planIDs={{}}
@@ -329,7 +321,6 @@ describe('SubscriptionCheckout', () => {
                 freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
-                vpnServers={{ free: { countries: 0, servers: 0 }, paid: { countries: 0, servers: 0 } }}
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
                 planIDs={{}}
@@ -366,7 +357,6 @@ describe('SubscriptionCheckout', () => {
                     currency: 'CHF',
                 })}
                 plansMap={{} as any}
-                vpnServers={dummyServers}
                 currency="CHF"
                 cycle={CYCLE.YEARLY}
                 planIDs={{ [PLANS.MAIL]: 1 }}
@@ -400,7 +390,6 @@ describe('SubscriptionCheckout', () => {
                     currency: 'CHF',
                 })}
                 plansMap={{} as any}
-                vpnServers={dummyServers}
                 currency="CHF"
                 cycle={CYCLE.YEARLY}
                 planIDs={{ [PLANS.PASS_LIFETIME]: 1 }}
@@ -434,7 +423,6 @@ describe('SubscriptionCheckout', () => {
                     currency: 'CHF',
                 })}
                 plansMap={{} as any}
-                vpnServers={dummyServers}
                 currency="CHF"
                 cycle={CYCLE.YEARLY}
                 planIDs={{ [PLANS.MAIL]: 1 }}
@@ -463,7 +451,6 @@ describe('SubscriptionCheckout', () => {
                 freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
-                vpnServers={dummyServers}
                 currency="CHF"
                 cycle={CYCLE.YEARLY}
                 planIDs={{ [PLANS.PASS_LIFETIME]: 1 }}
@@ -492,7 +479,6 @@ describe('SubscriptionCheckout', () => {
                 freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
-                vpnServers={dummyServers}
                 currency="CHF"
                 cycle={CYCLE.YEARLY}
                 planIDs={{ [PLANS.MAIL]: 1 }}
@@ -521,7 +507,6 @@ describe('SubscriptionCheckout', () => {
                 freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
-                vpnServers={dummyServers}
                 currency="CHF"
                 cycle={CYCLE.YEARLY}
                 planIDs={{ [PLANS.PASS_LIFETIME]: 1 }}

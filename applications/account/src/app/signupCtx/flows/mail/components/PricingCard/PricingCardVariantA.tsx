@@ -5,13 +5,13 @@ import { usePaymentOptimistic } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import clsx from '@proton/utils/clsx';
+import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
 import FeatureItem from '../FeatureItem/FeatureItem';
 
 const PricingFeatures = () => {
     const payments = usePaymentOptimistic();
     const freePlan = payments.freePlan;
-    const vpnServersCountData = payments.vpnServersCountData;
 
     const totalMailStorageSize = humanSize({ bytes: freePlan.MaxBaseRewardSpace, fraction: 0 });
     const totalDriveStorageSize = humanSize({ bytes: freePlan.MaxDriveRewardSpace, fraction: 0 });
@@ -21,7 +21,7 @@ const PricingFeatures = () => {
             <ul className="unstyled m-0 flex flex-column gap-2">
                 <FeatureItem text={c('Signup').t`Encrypted email with ${totalMailStorageSize} storage`} highlighted />
                 <FeatureItem
-                    text={c('Signup').t`VPN with servers in ${vpnServersCountData.free.countries} countries`}
+                    text={c('Signup').t`VPN with servers in ${VPN_SERVERS.free.countries} countries`}
                     highlighted
                 />
                 <FeatureItem

@@ -1,5 +1,5 @@
 import type { FreePlanDefault, PLANS, PlansMap } from '@proton/payments';
-import type { Audience, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getSupportFeatures, getTeamManagementFeatures } from './b2b';
@@ -14,22 +14,14 @@ import { getPassFeatures } from './pass';
 import { getVPNFeatures } from './vpn';
 import { getWalletFeatures } from './wallet';
 
-export const getAllFeatures = ({
-    plansMap,
-    serversCount,
-    freePlan,
-}: {
-    plansMap: PlansMap;
-    serversCount: VPNServersCountData;
-    freePlan: FreePlanDefault;
-}) => {
+export const getAllFeatures = ({ plansMap, freePlan }: { plansMap: PlansMap; freePlan: FreePlanDefault }) => {
     return {
         highlight: getHighlightFeatures(plansMap, freePlan),
         mail: getMailFeatures(plansMap),
         calendar: getCalendarFeatures(plansMap),
         drive: getDriveFeatures(plansMap, freePlan),
         pass: getPassFeatures(),
-        vpn: getVPNFeatures(serversCount),
+        vpn: getVPNFeatures(),
         wallet: getWalletFeatures(),
         lumo: getLumoFeatures(),
         meet: getMeetFeatures(),

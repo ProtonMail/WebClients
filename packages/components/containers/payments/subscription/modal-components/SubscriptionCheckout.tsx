@@ -29,7 +29,7 @@ import type { TaxCountryHook } from '@proton/payments/ui';
 import { createCheckoutView } from '@proton/payments/ui/headless-checkout/checkout-view';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import Checkout from '../../Checkout';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
@@ -69,7 +69,6 @@ type Props = {
     cycle: Cycle;
     currency: Currency;
     checkResult: SubscriptionEstimation;
-    vpnServers: VPNServersCountData;
     gift?: ReactNode;
     onChangeCurrency: (currency: Currency) => void;
     showPlanDescription?: boolean;
@@ -94,7 +93,6 @@ const SubscriptionCheckout = ({
     cycle,
     currency,
     checkResult,
-    vpnServers,
     gift,
     onChangeCurrency,
     showPlanDescription = true,
@@ -118,7 +116,7 @@ const SubscriptionCheckout = ({
         return null;
     }
 
-    const list = getWhatsIncluded({ planIDs, plansMap, vpnServers, freePlan });
+    const list = getWhatsIncluded({ planIDs, plansMap, freePlan });
     const disableCurrencySelector = getDisableCurrencySelector(paymentMethods, user, planIDs, couponConfig, loading);
 
     const perMonthSuffix = <span className="color-weak text-sm">{c('Suffix').t`/month`}</span>;
