@@ -1,0 +1,52 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.lumo-troubleshoot {
+	&-panel {
+		inset-block-end: calc(100% + 0.75rem);
+		inset-inline-end: 0;
+		inline-size: min(26rem, calc(100vw - 3rem));
+		block-size: min(70vh, 38rem);
+		visibility: hidden;
+		opacity: 0;
+		transform: translateY(0.5rem);
+		pointer-events: none;
+		transition:
+			opacity 0.15s ease,
+			transform 0.15s ease;
+
+		&.is-open {
+			visibility: visible;
+			opacity: 1;
+			transform: translateY(0);
+			pointer-events: auto;
+		}
+
+		// On mobile the launcher sits in the corner and the panel would overflow off-screen,
+		// so promote it to a full-screen sheet (modal-like) without unmounting the iframe.
+		@include im.media('<=small') {
+			position: fixed;
+			inset: 0;
+			inline-size: 100%;
+			block-size: 100%;
+			border: none;
+			border-radius: 0;
+			transform: translateY(1rem);
+
+			&.is-open {
+				transform: translateY(0);
+			}
+		}
+	}
+
+	&-avatar {
+		inline-size: 1.75rem;
+	}
+
+	&-avatar-icon {
+		inline-size: 1.1rem;
+	}
+}
