@@ -140,6 +140,7 @@ export const useVideoToggle = (switchActiveDevice: SwitchActiveDevice) => {
                     deviceId: deviceId as string,
                     isSystemDefaultDevice: false,
                     preserveDefaultDevice: !!preserveCache,
+                    throwOnError: true,
                 });
 
                 await localParticipant.setCameraEnabled(isEnabled, facingModeDependentOptions);
@@ -171,22 +172,32 @@ export const useVideoToggle = (switchActiveDevice: SwitchActiveDevice) => {
                     (error as Error)?.name
                 );
 
+                // Pick any available camera other than the one that just failed.
+                const fallback = updatedCameras.find((d) => d.deviceId && d.deviceId !== deviceId);
+
                 // Recovering from potential stale device state
-                if (
-                    !recoveringFromError &&
-                    isPotentialStaleDeviceState &&
-                    updatedCameras.length > 0 &&
-                    updatedCameras[0].deviceId !== deviceId
-                ) {
+                if (!recoveringFromError && isPotentialStaleDeviceState && updatedCameras.length > 0 && fallback) {
+                    // eslint-disable-next-line no-console
+                    console.log('[toggleVideo] recovering with fallback', fallback.deviceId);
+
                     toggleInProgress.current = false;
 
                     const recoveryResult = (await toggleVideo({
                         isEnabled,
-                        videoDeviceId: updatedCameras[0].deviceId,
+                        videoDeviceId: fallback.deviceId,
                         recoveringFromError: true,
                         preserveCache: false,
                     })) as boolean;
                     toggleResult = recoveryResult ?? false;
+                } else {
+                    reportError('Failed to toggle video', {
+                        context: {
+                            error,
+                            recoveringFromError,
+                            isPotentialStaleDeviceState,
+                            hasFallback: !!fallback,
+                        },
+                    });
                 }
             } finally {
                 toggleInProgress.current = false;
