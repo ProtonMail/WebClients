@@ -64,7 +64,6 @@ export const useVpnPlusExtendSubscription = ({
     subscription,
     app,
     plansMap,
-    serversCount,
     freePlan,
     user,
     show24MonthPlan,
@@ -84,7 +83,6 @@ export const useVpnPlusExtendSubscription = ({
         app,
         plansMap,
         hasVPN: getHasConsumerVpnPlan(subscription),
-        serversCount,
         freePlan,
         openSubscriptionModal,
         telemetryFlow,
@@ -112,7 +110,7 @@ export const useVpnPlusExtendSubscription = ({
             }),
     ].filter(isTruthy);
 
-    return { upsells, handleExplorePlans, serversCount, telemetryFlow, plansMap, freePlan, user };
+    return { upsells, handleExplorePlans, telemetryFlow, plansMap, freePlan, user };
 };
 
 interface Props extends UpsellsHook {

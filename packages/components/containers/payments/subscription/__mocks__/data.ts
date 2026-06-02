@@ -1,13 +1,7 @@
 import { CYCLE, PLANS } from '@proton/payments';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
-import type {
-    OrganizationExtended,
-    PendingInvitation,
-    User,
-    UserSettings,
-    VPNServersCountData,
-} from '@proton/shared/lib/interfaces';
+import type { OrganizationExtended, PendingInvitation, User, UserSettings } from '@proton/shared/lib/interfaces';
 import { buildSubscription } from '@proton/testing/builders';
 
 export const mailPlusUpsell = {
@@ -453,17 +447,6 @@ export const organization = {
     State: ORGANIZATION_STATE.ACTIVE,
     IsBusiness: false,
 } as OrganizationExtended;
-
-export const vpnServersCount = {
-    free: {
-        servers: 192,
-        countries: 3,
-    },
-    paid: {
-        servers: 2950,
-        countries: 65,
-    },
-} as VPNServersCountData;
 
 export const user = {
     MaxSpace: 1073741824,

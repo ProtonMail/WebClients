@@ -10,7 +10,6 @@ import {
     VPN_APP_NAME,
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
-import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import {
     getCountriesWithoutPlus,
@@ -18,6 +17,7 @@ import {
     getPlusServers,
     getVpnServers,
 } from '@proton/shared/lib/vpn/features';
+import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
@@ -98,15 +98,10 @@ export const getB2BHighSpeedVPNConnections = (): PlanCardFeatureDefinition => {
 };
 
 export const getVPNAppFeature = ({
-    serversCount,
-    family,
     duo,
-}: {
-    serversCount: VPNServersCountData;
-    family?: boolean;
-    duo?: boolean;
-}): PlanCardFeatureDefinition => {
-    const serversAndCountries = getPlusServers(serversCount.paid.servers, serversCount.paid.countries);
+    family,
+}: { family?: boolean; duo?: boolean } = {}): PlanCardFeatureDefinition => {
+    const serversAndCountries = getPlusServers(VPN_SERVERS.paid.servers, VPN_SERVERS.paid.countries);
     let tooltip = c('new_plans: tooltip')
         .t`${VPN_APP_NAME}: Access blocked content and browse privately. Includes ${serversAndCountries}, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.`;
 
@@ -408,15 +403,9 @@ export const getNoStreamingSupport = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getDedicatedServersVPNFeature = (serversCount?: VPNServersCountData): PlanCardFeatureDefinition => {
-    let text: string;
-
-    if (serversCount === undefined) {
-        text = c('new_plans: Upsell attribute').t`Dedicated server locations in North America and Europe`;
-    } else {
-        const numberOfCountries = serversCount.paid.countries;
-        text = c('new_plans: Upsell attribute').t`Dedicated server locations in ${numberOfCountries}+ countries`;
-    }
+export const getDedicatedServersVPNFeature = (): PlanCardFeatureDefinition => {
+    const numberOfCountries = VPN_SERVERS.paid.countries;
+    const text = c('new_plans: Upsell attribute').t`Dedicated server locations in ${numberOfCountries}+ countries`;
 
     return {
         icon: 'checkmark',
@@ -494,9 +483,9 @@ export const getExistingVpnProfessionalBenefitsFeature = (): PlanCardFeatureDefi
     icon: 'checkmark',
 });
 
-export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeature[] => {
-    const freeServers = getFreeServers(serversCount.free.servers, serversCount.free.countries);
-    const plusServers = getPlusServers(serversCount.paid.servers, serversCount.paid.countries);
+export const getVPNFeatures = (): PlanCardFeature[] => {
+    const freeServers = getFreeServers(VPN_SERVERS.free.servers, VPN_SERVERS.free.countries);
+    const plusServers = getPlusServers(VPN_SERVERS.paid.servers, VPN_SERVERS.paid.countries);
     return [
         {
             name: 'vpn',
@@ -1080,18 +1069,18 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
     ];
 };
 
-export const getVPNPaidServersFeature = (serversCount: VPNServersCountData): PlanCardFeatureDefinition => {
+export const getVPNPaidServersFeature = (): PlanCardFeatureDefinition => {
     return {
         icon: 'servers',
-        text: getVpnServers(serversCount.paid.servers),
+        text: getVpnServers(VPN_SERVERS.paid.servers),
         included: true,
     };
 };
 
-export const getVPNPaidCountriesFeature = (serversCount: VPNServersCountData): PlanCardFeatureDefinition => {
+export const getVPNPaidCountriesFeature = (): PlanCardFeatureDefinition => {
     return {
         icon: 'earth',
-        text: getCountriesWithoutPlus(serversCount.paid.countries),
+        text: getCountriesWithoutPlus(VPN_SERVERS.paid.countries),
         included: true,
     };
 };

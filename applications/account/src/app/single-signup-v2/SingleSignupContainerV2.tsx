@@ -64,7 +64,6 @@ import { Audience } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import { formatUser } from '@proton/shared/lib/user/helpers';
-import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -285,7 +284,6 @@ const SingleSignupContainerV2 = ({
             viewportWidth,
             theme,
             model: defaultSignupModel,
-            vpnServersCountData: defaultSignupModel.vpnServersCountData,
             isNewB2BPlanEnabled,
         });
 
@@ -329,7 +327,6 @@ const SingleSignupContainerV2 = ({
 
     const UID = model.session?.resumedSessionResult.UID;
     const normalApi = UID ? getUIDApi(UID, unauthApi) : unauthApi;
-    const vpnServersCountData = model.vpnServersCountData;
     const silentApi = getSilentApi(normalApi);
 
     const signupConfiguration = getSignupConfiguration({
@@ -339,7 +336,6 @@ const SingleSignupContainerV2 = ({
         viewportWidth,
         theme,
         model,
-        vpnServersCountData,
         isNewB2BPlanEnabled,
     });
     const {
@@ -598,8 +594,6 @@ const SingleSignupContainerV2 = ({
                 currency,
                 cycle,
             });
-
-            void getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
             const initialBillingAddress = {
                 ...savedOrDetectedBillingInformation,
@@ -1317,7 +1311,6 @@ const SingleSignupContainerV2 = ({
                     subscriptionData={model.subscriptionData}
                     upsellPlan={model.upsell.plan}
                     freePlan={model.freePlan}
-                    vpnServersCountData={model.vpnServersCountData}
                     unlockPlan={model.upsell.unlockPlan}
                     relativePrice={relativePrice}
                     plansMap={model.plansMap}
@@ -1436,7 +1429,6 @@ const SingleSignupContainerV2 = ({
                                 dimensions: { location: options.location },
                             });
                         }}
-                        vpnServersCountData={vpnServersCountData}
                         model={model}
                         setModel={setModel}
                         onSignOut={handleSignOut}
