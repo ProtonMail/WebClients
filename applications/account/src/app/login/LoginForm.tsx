@@ -52,6 +52,7 @@ import SupportDropdown from '../public/SupportDropdown';
 import { defaultPersistentKey } from '../public/helper';
 import { RememberMode } from './LoginContainer';
 import SignupButton from './SignupButton';
+import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 
 export interface LoginFormRef {
     getIsLoading: () => boolean;
@@ -716,6 +717,15 @@ const LoginForm = ({
                                                     </Link>
                                                 )
                                             }
+                                            <hr className='m-0'/>
+                                            <Href
+                                                href={getKnowledgeBaseUrl('/common-login-problems')}
+                                                className="dropdown-item-link w-full px-4 py-2 flex flex-nowrap gap-2 items-center text-no-decoration text-left"
+                                            >
+                                                
+                                                {c('Link').t`Sign-in help`}
+                                                <IcArrowOutSquare className="color-weak ml-auto" />
+                                            </Href>
                                         </SupportDropdown>
                                     </div>
                                 </>

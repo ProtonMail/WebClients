@@ -55,6 +55,7 @@ export enum CommonFeatureFlag {
     LumoSmoothedRendering = 'LumoSmoothedRendering',
     LumoHighLoad = 'LumoHighLoad',
     LumoDeactivateGuestModeFrontend = 'LumoDeactivateGuestModeFrontend',
+    LumoSignInHelp = 'LumoSignInHelp',
     AllowGuestInit = 'AllowGuestInit',
     NewScheduleOption = 'NewScheduleOption',
     PMVC2025 = 'PMVC2025',
