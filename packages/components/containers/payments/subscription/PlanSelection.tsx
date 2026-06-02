@@ -34,7 +34,6 @@ import {
     type PlansMap,
     Renew,
     type Subscription,
-    type SubscriptionPlan,
     getBundleProPlanToUse,
     getCanAccessFamilyPlans,
     getCanSubscriptionAccessDuoPlan,
@@ -48,7 +47,6 @@ import {
     getPlanFeatureLimit,
     getPlansMap,
     hasLumoAddon,
-    hasMaximumCycle,
     hasPass,
     hasPassFamily,
     hasSomeAddonOrPlan,
@@ -168,21 +166,6 @@ const PlanRequiresDedicatedServerNote = ({
     );
 };
 
-function excludingCurrentPlanWithMaxCycle(
-    currentPlan: SubscriptionPlan | null | undefined,
-    alreadyHasMaxCycle: boolean
-) {
-    return (plan: Plan | ShortPlanLike): boolean => {
-        if (isShortPlanLike(plan)) {
-            return true;
-        }
-
-        const isCurrentPlan = currentPlan?.ID === plan.ID;
-        const shouldNotRenderCurrentPlan = isCurrentPlan && alreadyHasMaxCycle;
-        return !shouldNotRenderCurrentPlan;
-    };
-}
-
 function excludingTheOnlyFreePlan(plan: Plan | ShortPlanLike, _: number, allPlans: (Plan | ShortPlanLike)[]): boolean {
     return !(plan === FREE_PLAN && allPlans.length === 1);
 }
@@ -204,7 +187,12 @@ function excludingPlansWithAllChecksFordidden(
         const planName = typeof plan === 'string' ? plan : plan.Name;
 
         const planIDs = { [planName]: 1 };
-        const allowedCycles = getAllowedCycles({ subscription, planIDs, currency: subscription.Currency, plansMap });
+        const allowedCycles = getAllowedCycles({
+            subscription,
+            planIDs,
+            currency: subscription.Currency,
+            plansMap,
+        });
 
         const allChecksForbidden = allowedCycles.every((cycle) =>
             isSubscriptionCheckForbidden(subscription, { planIDs, cycle })
@@ -266,8 +254,6 @@ export function useAccessiblePlans({
 
     const enabledProductB2CPlans = enabledProductB2CPlanNames.map((planName) => plansMap[planName]).filter(isTruthy);
 
-    const alreadyHasMaxCycle = hasMaximumCycle(subscription);
-
     const currentPlan = getPlan(subscription);
 
     function filterPlans(plans: (Plan | null | undefined)[]): Plan[];
@@ -275,7 +261,6 @@ export function useAccessiblePlans({
     function filterPlans(plans: (Plan | ShortPlanLike | null | undefined)[]): (Plan | ShortPlanLike)[] {
         return plans
             .filter(isTruthy)
-            .filter(excludingCurrentPlanWithMaxCycle(currentPlan, alreadyHasMaxCycle))
             .filter(excludingTheOnlyFreePlan)
             .filter(excludingPlansWithAllChecksFordidden(subscription, plansMap));
     }
@@ -451,7 +436,6 @@ export function useAccessiblePlans({
         FamilyPlans,
         B2BPlans,
         currentPlan,
-        alreadyHasMaxCycle,
         isVpnSettingsApp,
         isPassSettingsApp,
         isVpnB2bPlans,
@@ -518,7 +502,6 @@ const PlanSelection = (props: Props) => {
         B2BPlans,
         enabledProductB2CPlans,
         currentPlan,
-        alreadyHasMaxCycle,
         isVpnSettingsApp,
         isPassSettingsApp,
         isVpnB2bPlans,
@@ -632,10 +615,6 @@ const PlanSelection = (props: Props) => {
     const renderPlanCard = (plan: Plan, audience: Audience, recommendedPlans: PLANS[], plansInAudience: Plan[]) => {
         const isFree = plan.ID === PLANS.FREE;
         const isCurrentPlan = isFree ? !currentPlan : currentPlan?.ID === plan.ID;
-        const shouldNotRenderCurrentPlan = isCurrentPlan && alreadyHasMaxCycle;
-        if (shouldNotRenderCurrentPlan) {
-            return null;
-        }
         const isRecommended = !hasRecommended.has(audience) && recommendedPlans.includes(plan.Name as PLANS);
         // Only find one recommended plan, in order of priority
         if (isRecommended) {

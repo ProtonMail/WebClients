@@ -367,8 +367,7 @@ describe('useSubscriptionPriceComparison', () => {
         });
     });
 
-    it('should handle when no pricing options match available cycles', () => {
-        // Mock a subscription with a cycle that might not have pricing options in plansMap
+    it('should surface cheaper standard cycles for a subscription on an uncommon cycle (downcycling allowed)', () => {
         const subscription = buildSubscription(
             new SelectedPlan(
                 {
@@ -384,7 +383,38 @@ describe('useSubscriptionPriceComparison', () => {
             wrapper: getWrapper(getTestPlans()),
         });
 
-        // The hook should still return a valid result, potentially the default values
+        expect(result.current).toEqual({
+            priceDifference: 0,
+            priceDifferenceCheapestCycle: 500,
+            priceFallbackPerMonth: 499,
+            cheapestMonthlyPrice: 499,
+            totalSavings: 12000,
+            showPriceDifference: false,
+            showPriceDifferenceCheapest: true,
+            showSavings: true,
+        });
+    });
+
+    it('should return the Infinity fallback when the current plan has no pricing in the plans map', () => {
+        // Valid (non-free) subscription whose plan is absent from plansMap, so every getPrice() is 0 and
+        // pricingOptions ends up empty -- exercising the computed Infinity fallback rather than the early return.
+        const subscription = buildSubscription(
+            new SelectedPlan(
+                {
+                    [PLANS.MAIL]: 1,
+                },
+                getTestPlans('USD'),
+                CYCLE.MONTHLY,
+                'USD'
+            )
+        );
+
+        const plansWithoutCurrentPlan = getTestPlans('USD').filter((plan) => plan.Name !== PLANS.MAIL);
+
+        const { result } = renderHook(() => useSubscriptionPriceComparison(APPS.PROTONMAIL, subscription), {
+            wrapper: getWrapper(plansWithoutCurrentPlan),
+        });
+
         expect(result.current).toEqual({
             priceDifference: 0,
             priceDifferenceCheapestCycle: 0,
