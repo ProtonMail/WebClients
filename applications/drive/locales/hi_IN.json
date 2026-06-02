@@ -2384,20 +2384,11 @@
       "External invitations are temporarily disabled. Please try again later": [
         "बाहरी आमंत्रण फिलहाल अक्षम हैं। कृपया बाद में फिर से कोशिश करें"
       ],
-      "File \"${ name }\" is already downloading": [
-        "फाइल \"${ name }\" पहले से डाउनलोड हो रहा है"
-      ],
       "File cannot be merged with folder": [
         "फाइल को फोल्डर के साथ मिलाया नहीं जा सकता है"
       ],
-      "File selection is already downloading": [
-        "चयनित फ़ाइलें पहले से ही डाउनलोड हो रही हैं"
-      ],
       "First name is too long": [
         "पहला नाम बहुत लंबा है"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "फोल्डर \"${ name }\" पहले से डाउनलोड हो रहा है"
       ],
       "Folder name cannot be empty.": [
         "फ़ोल्डर का नाम रिक्त नहीं हो सकता |"
@@ -3592,9 +3583,6 @@
       "An active recovery file": [
         "एक सक्रिय पुनर्प्राप्ति फ़ाइल"
       ],
-      "an anonymous user": [
-        "एक गुमनाम उपयोगकर्ता"
-      ],
       "An issue occurred during the restore process.": [
         "पुनर्स्थापन प्रक्रिया के दौरान एक समस्या आई।"
       ],
@@ -3670,9 +3658,6 @@
       "Checking contact ${ progress } of ${ max }...": [
         "${ max } के संपर्क ${ progress } की जाँच की जा रही है..."
       ],
-      "Checking signatures": [
-        "हस्ताक्षर जांच रहे"
-      ],
       "Clear data": [
         "डाटा मिटाएं"
       ],
@@ -3747,12 +3732,6 @@
       "Details": [
         "जानकारी"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "डिजिटल हस्ताक्षर सत्यापित। इस फाइल को ${ emailAddress } ने सुरक्षित अपलोड किया।"
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "डिजिटल हस्ताक्षर सत्यापित। इस फोल्डर को ${ emailAddress } ने सुरक्षित अपलोड किया।"
-      ],
       "Discover new features unlocked and start using them right away!": [
         "अनलॉक की गई नई सुविधाएँ खोजें और तुरंत उनका उपयोग शुरू करें!"
       ],
@@ -3776,9 +3755,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } का डाउनलोड छोड़ दिया जाएगा"
-      ],
-      "Download was canceled": [
-        "डाउनलोड रद्द कर दिया गया था"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "आज ही अपना पसंदीदा ऐप डाउनलोड करें और आप जहां भी जाएं, अपने साथ गोपनीयता रखें।"
@@ -3862,15 +3838,6 @@
       "Expired": [
         "समय सीमा समाप्त"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "फाइल \"${ name }\" को डाउनलोड करते समय मिटा दिया गया"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "फाइल में हस्ताक्षर नहीं है। हम ${ fileName } अपलोड करने वाले ${ emailAddress } को सत्यापित नहीं कर सके।"
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "फाइल में हस्ताक्षर नहीं है। हम ${ fileName } अपलोड करने वालो की पहचान सत्यापित नहीं कर सके।"
-      ],
       "File will not be updated": [
         "फ़ाइल अपडेट नहीं की जाएगी"
       ],
@@ -3879,15 +3846,6 @@
       ],
       "finance": [
         "वित्त"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "फोल्डर \"${ link.name }\" को डाउनलोड करते समय मिटा दिया गया"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "फाइल में हस्ताक्षर नहीं है। हम ये सत्यापित नहीं कर सके की ${ emailAddress } ने ${ fileName } अपलोड किया।"
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "फोल्डर में हस्ताक्षर नहीं है। हम ${ fileName } अपलोड करने वालो की पहचान सत्यापित नहीं कर सके।"
       ],
       "Folder will not be uploaded": [
         "फ़ोल्डर अपलोड नहीं किया जाएगा"
@@ -4339,9 +4297,6 @@
       "Shared with me": [
         "मेरे साथ साझा किया गया"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "हस्ताक्षर नेटवर्क में गड़बड़ की वजह से सत्यापित नहीं हो सका, बाद में वापस कोशिश करें।"
-      ],
       "Signature check will be ignored": [
         "हस्ताक्षर चेक नज़रअंदाज किया जाएगा"
       ],
@@ -4366,17 +4321,8 @@
       "Temporarily unavailable. Please check back later.": [
         "अस्थाई रूप से अनुपलब्ध। कृपया फिर से बाद में जाँच करें।"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "खाते की नई चाबी हो सकती है, या फिर इस चीज़ साथ छेड़छाड़ हुई हो सकती है: ${ items }। तभी खोले जब उसपे विश्वास हो।"
-      ],
       "The albums you create are shown here.": [
         "आपके द्वारा बनाए गए एल्बम यहां दिखाए जाते हैं।"
-      ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "डिजिटल हस्ताक्षर आंशिक रूप से सत्यापित किया गया है। यह फाइल एक सार्वजनिक रूप से सुलभ शेयर लिंक के माध्यम से ऐसे उपयोगकर्ता द्वारा अपलोड की गई थी, जिसके पास ${ BRAND_NAME } खाता नहीं है, इसलिए उनकी पहचान सत्यापित नहीं की जा सकती।"
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "डिजिटल हस्ताक्षर आंशिक रूप से सत्यापित किया गया है। यह फ़ोल्डर एक सार्वजनिक रूप से सुलभ शेयर लिंक के माध्यम से ऐसे उपयोगकर्ता द्वारा अपलोड किया गया था, जिसके पास ${ BRAND_NAME } खाता नहीं है, इसलिए उनकी पहचान सत्यापित नहीं की जा सकती।"
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "डाउनलोड गणना में डाउनलोड और उन समय को शामिल करते है जब फ़ाइलों की झलक देखी जाती है।"
@@ -4386,9 +4332,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "उजागर की गई जानकारी किसी तिसरे-पक्ष से लीक हुई थी। आपकी ${ BRAND_NAME } खाता जानकारी सुरक्षित और एन्क्रिप्टेड बनी हुई है। ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "इस चीज़ के साथ छेड़छाड़ हुई हो सकती है: ${ items }। तभी खोले जब उसपे भरोसा हो।"
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "इस पते के स्वामी ने एंड-टू-एंड एन्क्रिप्शन अक्षम कर दिया है। इस पते पर एन्क्रिप्टेड ईमेल भेजने में सक्षम होने के लिए, स्वामी को एंड-टू-एंड एन्क्रिप्शन को फिर से सक्षम करना होगा।"
@@ -4610,12 +4553,6 @@
       "We couldn’t process your payment.": [
         "आपका भुगतान प्रॉसेस नहीं कर सके।"
       ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "हम ये सत्यापित नहीं कर सके कि ${ emailAddress } ने ${ fileName } अपलोड किया।"
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "हम ${ fileName } भेजनेवालो की आईडी सत्यापित ना कर सके।"
-      ],
       "We need to authenticate your payment method with your bank.": [
         "हमें आपका भुगतान तरीका आपके बैंक से सत्यापित करना होगा।"
       ],
@@ -4822,32 +4759,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "सिर्फ देखे"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "फाइल विशेषता"
-      ],
-      "file data": [
-        "फाइल डाटा"
-      ],
-      "file data key": [
-        "फाइल डाटा चाबी"
-      ],
-      "file data order": [
-        "फाइल डाटा क्रम"
-      ],
-      "hash key": [
-        "हैश चाबी"
-      ],
-      "keys": [
-        "चाबियां"
-      ],
-      "name": [
-        "नाम"
-      ],
-      "thumbnail": [
-        "थंबनेल"
       ]
     },
     "Key badge": {
@@ -8160,9 +8071,6 @@
       "Birthday": [
         "जन्मदिन"
       ],
-      "Browser might run out of memory": [
-        "ब्राउज़र में मेमरी शायद ना बचे"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } सदस्यता रद्द करें"
       ],
@@ -8278,9 +8186,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "${ downgradedPlanName } पे डाउनग्रेड करें?"
-      ],
-      "Download ${ date }": [
-        "${ date } डाउनलोड करें"
       ],
       "Download unverified file?": [
         "असत्यापित फाइल डाउनलोड करें?"

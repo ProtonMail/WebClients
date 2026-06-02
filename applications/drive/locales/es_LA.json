@@ -246,9 +246,6 @@
       "Continue import": [
         "Continuar importación"
       ],
-      "Continue on web": [
-        "Continuar en la web"
-      ],
       "Continue to ${ planOrAppName }": [
         "Continuar con ${ planOrAppName }"
       ],
@@ -403,9 +400,6 @@
       ],
       "Download anyway": [
         "Descargar de todos modos"
-      ],
-      "Download app": [
-        "Descargar aplicación"
       ],
       "Download for Mac": [
         "Descargar para Mac"
@@ -1096,9 +1090,6 @@
       ],
       "Try another method": [
         "Intente otro método"
-      ],
-      "Try it now": [
-        "Pruébelos ahora"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Error al guardar debido a: ${ saveError }. Intente guardar de nuevo."
@@ -3531,20 +3522,11 @@
       "Failed to update public share node": [
         "Error al actualizar el nodo compartido público"
       ],
-      "File \"${ name }\" is already downloading": [
-        "El archivo \"${ name }\" ya se está descargando"
-      ],
       "File cannot be merged with folder": [
         "El archivo no puede combinarse con la carpeta"
       ],
-      "File selection is already downloading": [
-        "La selección de archivos ya se está descargando"
-      ],
       "First name is too long": [
         "El nombre es demasiado largo"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "La carpeta \"${ name }\" ya se está descargando"
       ],
       "Folder name cannot be empty.": [
         "El nombre de la carpeta no puede estar vacío."
@@ -5181,9 +5163,6 @@
       "An active recovery file": [
         "Un archivo de recuperación activo"
       ],
-      "an anonymous user": [
-        "un usuario anónimo"
-      ],
       "An issue occurred during the restore process.": [
         "Ocurrió un problema durante el proceso de restauración."
       ],
@@ -5294,9 +5273,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Verificando contacto ${ progress } de ${ max }..."
-      ],
-      "Checking signatures": [
-        "Verificando firmas"
       ],
       "Choose a plan that works best for you.": [
         "Elija un plan que funcione mejor para usted."
@@ -5415,12 +5391,6 @@
       "Details": [
         "Detalles"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Firma digital verificada. Este archivo fue cargado de forma segura por ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Firma digital verificada. Esta carpeta fue cargada de forma segura por ${ emailAddress }."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Descubra las nuevas funciones desbloqueadas y empiece a usarlas de inmediato."
       ],
@@ -5453,9 +5423,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "La descarga de ${ downloadFileName } será abortada"
-      ],
-      "Download was canceled": [
-        "Descarga cancelada"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descargue hoy la aplicación favorita y lleve la privacidad con usted dondequiera que vaya."
@@ -5566,20 +5533,11 @@
       "Feb": [
         "Feb."
       ],
-      "File \"${ name }\" was deleted during download": [
-        "El archivo \"${ name }\" fue eliminado durante la descarga"
-      ],
       "File could not be scanned": [
         "No se pudo escanear el archivo"
       ],
       "File flagged as potentially malicious": [
         "Archivo marcado como potencialmente malicioso"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Falta la firma del archivo. No pudimos verificar que ${ emailAddress } cargó ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Falta la firma del archivo. No pudimos verificar quién cargó ${ fileName }."
       ],
       "File will not be updated": [
         "El archivo no se actualizará"
@@ -5589,15 +5547,6 @@
       ],
       "finance": [
         "finanzas"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "La carpeta \"${ link.name }\" fue eliminada durante la descarga"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Falta la firma de la carpeta. No pudimos verificar que ${ emailAddress } cargó ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Falta la firma de la carpeta. No pudimos verificar quién cargó ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "La carpeta no se cargará"
@@ -6305,9 +6254,6 @@
       "Shared with you": [
         "Compartido con usted"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "No se pudo validar la firma por problemas de red. Intente de nuevo más tarde."
-      ],
       "Signature check will be ignored": [
         "La verificación de la firma será ignorada"
       ],
@@ -6372,17 +6318,8 @@
       "that": [
         "que"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "La cuenta puede tener una clave nueva, o lo siguiente puede haber sido manipulado: ${ items }. Ábralo solo si confía en él."
-      ],
       "The albums you create are shown here.": [
         "Los álbumes que crea se muestran aquí."
-      ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "La firma digital ha sido verificada parcialmente. Este archivo fue cargado mediante un enlace compartido de acceso público por un usuario sin una cuenta ${ BRAND_NAME }, por lo que no se puede verificar su identidad."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "La firma digital ha sido verificada parcialmente. Esta carpeta fue cargada mediante un enlace compartido de acceso público por un usuario sin una cuenta ${ BRAND_NAME }, por lo que no se puede verificar su identidad."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "El recuento de descargas incluye las descargas reales y las instancias en las que se obtiene una vista previa de los archivos."
@@ -6392,9 +6329,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "La información expuesta fue filtrada desde un servicio de terceros. La información de la cuenta de ${ BRAND_NAME } permanece segura y cifrada. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Es posible que se haya manipulado lo siguiente: ${ items }. Ábralo solo si confía en él."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario debe volver a activar el cifrado de extremo a extremo."
@@ -6695,12 +6629,6 @@
       "We couldn’t process your payment.": [
         "No pudimos procesar el pago."
       ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "No pudimos verificar que ${ emailAddress } cargó ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "No pudimos verificar quién cargó ${ fileName }."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Necesitamos autenticar su método de pago con el banco."
       ],
@@ -6912,9 +6840,6 @@
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
         "Su navegador se quedó sin espacio al indexar los archivos para la búsqueda. Libere espacio de almacenamiento para reconstruir el índice."
       ],
-      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
-        "Su navegador actual no soporta la descarga de archivos grandes/múltiples. Descargue la aplicación de escritorio para cargas y descargas sin interrupciones."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Sus datos están listos para importarse desde ${ importedEmailAddressStrong } a la cuenta de ${ BRAND_NAME }."
       ],
@@ -7041,32 +6966,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Solo lectura"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "atributos del archivo"
-      ],
-      "file data": [
-        "datos del archivo"
-      ],
-      "file data key": [
-        "clave de datos de archivo"
-      ],
-      "file data order": [
-        "orden de datos de archivo"
-      ],
-      "hash key": [
-        "clave hash"
-      ],
-      "keys": [
-        "claves"
-      ],
-      "name": [
-        "nombre"
-      ],
-      "thumbnail": [
-        "miniatura"
       ]
     },
     "Key badge": {
@@ -12046,9 +11945,6 @@
       "Albums you've shared will appear here": [
         "Los álbumes que ha compartido aparecerán aquí"
       ],
-      "Securely share your favorite moments with friends and family using Albums.": [
-        "Comparta sus momentos favoritos de forma segura con amigos y familia con los álbumes."
-      ],
       "Shared by ${ sharedBy }": [
         "Compartido por ${ sharedBy }"
       ],
@@ -12419,9 +12315,6 @@
       "Birthday": [
         "Cumpleaños"
       ],
-      "Browser might run out of memory": [
-        "El navegador podría quedarse sin memoria"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancelar la subscripción a ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -12625,9 +12518,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "¿Bajar a ${ downgradedPlanName }?"
-      ],
-      "Download ${ date }": [
-        "Descargar ${ date }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descargue las aplicaciones de ${ DRIVE_APP_NAME }"
@@ -12972,9 +12862,6 @@
       ],
       "Phone numbers": [
         "Números de teléfono"
-      ],
-      "Photo albums are here!": [
-        "¡Los álbumes de fotos ya están aquí!"
       ],
       "Photos": [
         "Fotos"

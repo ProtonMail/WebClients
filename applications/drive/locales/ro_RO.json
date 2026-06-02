@@ -249,9 +249,6 @@
       "Continue import": [
         "Continuare importare"
       ],
-      "Continue on web": [
-        "Continuare pe web"
-      ],
       "Continue to ${ planOrAppName }": [
         "Continuare cu ${ planOrAppName }"
       ],
@@ -408,9 +405,6 @@
       ],
       "Download anyway": [
         "Descărcare așa"
-      ],
-      "Download app": [
-        "Descărcare aplicație"
       ],
       "Download for Mac": [
         "Descărcare pentru Mac"
@@ -1101,9 +1095,6 @@
       ],
       "Try another method": [
         "Încercaţi o altă metodă"
-      ],
-      "Try it now": [
-        "Încercați-le acum"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Reîncercați salvarea. Aceasta a eșuat deoarece: ${ saveError }"
@@ -3556,20 +3547,11 @@
       "Failed to update public share node": [
         "Nu s-a putut actualiza nodul de partajare publică."
       ],
-      "File \"${ name }\" is already downloading": [
-        "Fișierul „${ name }” se descarcă deja"
-      ],
       "File cannot be merged with folder": [
         "Fișierul nu poate fi îmbinat cu folderul."
       ],
-      "File selection is already downloading": [
-        "Fișierele selectate sunt deja în curs de descărcare"
-      ],
       "First name is too long": [
         "Prenumele este prea lung."
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Folderul „${ name }” se descarcă deja"
       ],
       "Folder name cannot be empty.": [
         "Numele folderului nu poate fi gol."
@@ -5259,9 +5241,6 @@
       "An active recovery file": [
         "Un fișier de recuperare activ"
       ],
-      "an anonymous user": [
-        "un utilizator anonim"
-      ],
       "An issue occurred during the restore process.": [
         "A apărut o problemă în timpul procesului de restaurare."
       ],
@@ -5372,9 +5351,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Se verifică contactul ${ progress } din ${ max }..."
-      ],
-      "Checking signatures": [
-        "Se verifică semnăturile"
       ],
       "Choose a plan that works best for you.": [
         "Alegeți un plan care vi se potrivește cel mai bine."
@@ -5496,12 +5472,6 @@
       "Details": [
         "Detalii"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Semnătură digitală verificată. Acest fișier a fost încărcat în siguranță de către ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Semnătură digitală verificată. Acest folder a fost încărcat în siguranță de către ${ emailAddress }."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Descoperiți funcțiile noi deblocate și începeți să le folosiți chiar acum!"
       ],
@@ -5534,9 +5504,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Descărcarea fișierului ${ downloadFileName } va fi întreruptă."
-      ],
-      "Download was canceled": [
-        "Descărcarea a fost anulată."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descărcați aplicația favorită astăzi și păstrați-vă intimitatea oriunde mergeți."
@@ -5648,20 +5615,11 @@
       "Feb": [
         "Feb"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "Fișierul „${ name }” a fost șters în timpul descărcării."
-      ],
       "File could not be scanned": [
         "Fișierul nu a putut fi scanat."
       ],
       "File flagged as potentially malicious": [
         "Fișier semnalat ca potențial rău intenționat."
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Lipsește semnătura fișierului. Nu am putut verifica dacă ${ emailAddress } a încărcat ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Lipsește semnătura fișierului. Nu am putut verifica cine a încărcat ${ fileName }."
       ],
       "File will not be updated": [
         "Fișierul nu va fi actualizat."
@@ -5671,15 +5629,6 @@
       ],
       "finance": [
         "finanțe"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "Folderul „${ link.name }” a fost șters în timpul descărcării."
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Lipsește semnătura folderului. Nu am putut verifica dacă ${ emailAddress } a încărcat „${ fileName }”."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Lipsește semnătura folderului. Nu s-a putut verifica autorul care a încărcat „${ fileName }”."
       ],
       "Folder will not be uploaded": [
         "Folderul nu va fi încărcat."
@@ -6394,9 +6343,6 @@
       "Shared with you": [
         "Partajate cu mine"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Semnătura nu poate fi validată din cauza unei erori de rețea. Reîncercați mai târziu."
-      ],
       "Signature check will be ignored": [
         "Verificarea semnăturii va fi ignorată"
       ],
@@ -6462,17 +6408,8 @@
       "that": [
         "acela"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Contul poate avea o cheie nouă sau este posibil ca următoarele să fi fost modificate: ${ items }. Deschideți-l numai dacă aveți încredere în el."
-      ],
       "The albums you create are shown here.": [
         "Albumele create sunt afișate aici."
-      ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Semnătura digitală a fost parțial verificată. Acest fișier a fost încărcat folosind o legătură web de partajare accesibilă public de către un utilizator fără un cont ${ BRAND_NAME }, astfel că identitatea acestuia nu poate fi verificată."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Semnătura digitală a fost parțial verificată. Acest folder a fost încărcat folosind o legătură web de partajare accesibilă public de către un utilizator fără un cont ${ BRAND_NAME }, astfel că identitatea acestuia nu poate fi verificată."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Numărul de descărcări include atât descărcările reale, cât și cazuri când fișierele sunt examinate."
@@ -6482,9 +6419,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Informațiile expuse au fost divulgate de la un serviciu terță parte. Informațiile contului ${ BRAND_NAME } rămân securizate și criptate. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Este posibil ca următoarele articole să fi fost falsificate: ${ items }. Deschideți-l numai dacă aveți încredere în el."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Proprietarul acestei adrese a dezactivat criptarea bilaterală. Pentru a putea trimite mesaje criptate la această adresă, proprietarul trebuie să reactiveze criptarea bilaterală."
@@ -6787,12 +6721,6 @@
       "We couldn’t process your payment.": [
         "Nu vi s-a putut procesa plata."
       ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Nu am putut verifica dacă ${ emailAddress } a încărcat ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Nu am putut verifica cine a încărcat ${ fileName }."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Trebuie să autentificăm metoda de plată cu banca dvs."
       ],
@@ -7011,9 +6939,6 @@
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
         "Navigatorul web a rămas fără spațiu în timp ce indexa fișierele pentru căutare. Eliberați spațiu de stocare, apoi reconstruiți indexul."
       ],
-      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
-        "Navigatorul web actual nu acceptă descărcarea fișierelor mari sau fișiere multiple. Descărcați aplicația pentru desktop pentru încărcări și descărcări fără probleme."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul ${ BRAND_NAME }."
       ],
@@ -7143,32 +7068,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Numai vizualizare"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "atribute fișier"
-      ],
-      "file data": [
-        "date fișier"
-      ],
-      "file data key": [
-        "fișier date cheie"
-      ],
-      "file data order": [
-        "ordine fișiere date"
-      ],
-      "hash key": [
-        "cheie hash"
-      ],
-      "keys": [
-        "chei"
-      ],
-      "name": [
-        "nume"
-      ],
-      "thumbnail": [
-        "miniatură"
       ]
     },
     "Key badge": {
@@ -12202,9 +12101,6 @@
       "Albums you've shared will appear here": [
         "Albumele pe care le-ați partajat vor apărea aici"
       ],
-      "Securely share your favorite moments with friends and family using Albums.": [
-        "Partajați-vă în siguranță momentele preferate cu prietenii și familia folosind albumele."
-      ],
       "Shared by ${ sharedBy }": [
         "Partajat de ${ sharedBy }"
       ],
@@ -12586,9 +12482,6 @@
       "Birthday": [
         "Data nașterii"
       ],
-      "Browser might run out of memory": [
-        "Navigatorul ar putea rămâne fără memorie"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Anulare abonare ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -12795,9 +12688,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Retrogradare la ${ downgradedPlanName }?"
-      ],
-      "Download ${ date }": [
-        "Descărcare ${ date }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descărcați aplicațiile ${ DRIVE_APP_NAME }"
@@ -13144,9 +13034,6 @@
       ],
       "Phone numbers": [
         "Numere de telefon"
-      ],
-      "Photo albums are here!": [
-        "Albumele foto au sosit!"
       ],
       "Photos": [
         "Fotografii"
