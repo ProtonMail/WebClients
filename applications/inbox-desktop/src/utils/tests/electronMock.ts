@@ -2,6 +2,7 @@ jest.mock("electron", () => ({
     app: {
         on: jest.fn(),
         getPath: jest.fn(() => "/mock/home"),
+        getAppPath: jest.fn(() => "/mock/app"),
         getVersion: jest.fn(() => "0.0.0"),
     },
     screen: {

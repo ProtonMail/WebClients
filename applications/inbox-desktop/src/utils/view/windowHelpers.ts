@@ -1,11 +1,11 @@
-import { BrowserWindowConstructorOptions, app } from "electron";
-import { join } from "path";
+import { BrowserWindowConstructorOptions } from "electron";
 import { MINIMUM_HEIGHT, MINIMUM_WIDTH, getWindowBounds } from "../../store/boundsStore";
 import { getSettings } from "../../store/settingsStore";
 import { isLinux, isMac, isWindows } from "../helpers";
 import { appSession } from "../session";
 import { MAIL_APP_NAME } from "@proton/shared/lib/constants";
 import { isProdEnv } from "../isProdEnv";
+import { getIconResourcePath } from "../../constants/resources";
 
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 
@@ -35,7 +35,7 @@ export const getWindowConfig = (): BrowserWindowConstructorOptions => {
 
     return {
         title: isProdEnv() ? MAIL_APP_NAME : `${MAIL_APP_NAME} Dev`,
-        icon: join(app.getAppPath(), "assets/icon.png"),
+        icon: getIconResourcePath(isWindows ? "icon.ico" : "icon.png"),
         x,
         y,
         width,

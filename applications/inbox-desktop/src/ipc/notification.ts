@@ -10,9 +10,9 @@ import { ipcLogger, notificationLogger } from "../utils/log";
 import { ElectronNotification } from "@proton/shared/lib/desktop/desktopTypes";
 import { isWindows, isMac } from "../utils/helpers";
 import { parseURLParams } from "../utils/urls/urlHelpers";
-import { join } from "node:path";
 import { DEEPLINK_PROTOCOL, DeepLinkActions } from "../utils/protocol/deep_links";
 import { isWindowValid } from "../utils/view/windowUtils";
+import { getFileResourcePath } from "../constants/resources";
 
 const notifications: Map<string, Notification> = new Map();
 
@@ -76,9 +76,8 @@ async function setBadgeCount(value: number) {
                 webContentsView.webContents.once("dom-ready", resolve);
                 // We need to load something on the browser view so we can
                 // now that DOM is ready to execute injected JS
-                const filePath = app.isPackaged
-                    ? join(process.resourcesPath, "blank.html")
-                    : join(app.getAppPath(), "assets/blank.html");
+                const filePath = getFileResourcePath("blank.html");
+
                 webContentsView.webContents.loadURL(`file://${filePath}`);
             });
 
