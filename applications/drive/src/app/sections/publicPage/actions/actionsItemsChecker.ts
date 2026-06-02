@@ -1,8 +1,8 @@
 import { MemberRole } from '@proton/drive';
+import { featureFlagStore } from '@proton/drive/modules/flags';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import { featureFlagStore } from '../../../modules/featureFlag';
 import { getOpenInDocsInfo } from '../../../utils/docs/openInDocs';
 import { NODE_EDIT_EXPIRACY } from '../constants';
 import { usePublicAuthStore } from '../usePublicAuth.store';

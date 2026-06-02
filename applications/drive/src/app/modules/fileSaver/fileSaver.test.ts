@@ -1,11 +1,11 @@
 import 'web-streams-polyfill/polyfill/es5';
 
+import { featureFlagStore } from '@proton/drive/modules/flags';
 import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { UnleashClient } from '@proton/unleash/UnleashClient';
 
-import { featureFlagStore } from '../../modules/featureFlag';
 import { streamToBuffer } from '../../utils/stream';
 import { initDownloadSW, isOPFSSupported, isServiceWorkersSupported, openDownloadStream } from './download';
 import { FileSaver } from './fileSaver';

@@ -2,7 +2,7 @@ import { waitFor } from '@testing-library/react';
 import { act, renderHook } from '@testing-library/react-hooks';
 
 import { useFormErrors, useNotifications } from '@proton/components';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { getDeviceName } from '@proton/drive/modules/nodes';
 import { useLoading } from '@proton/hooks';
 
@@ -28,8 +28,8 @@ jest.mock('@proton/drive/modules/nodes', () => ({
     getDeviceName: jest.fn(),
 }));
 
-jest.mock('@proton/drive/internal/BusDriver', () => ({
-    ...jest.requireActual('@proton/drive/internal/BusDriver'),
+jest.mock('@proton/drive/modules/busDriver', () => ({
+    ...jest.requireActual('@proton/drive/modules/busDriver'),
     getBusDriver: jest.fn(),
 }));
 

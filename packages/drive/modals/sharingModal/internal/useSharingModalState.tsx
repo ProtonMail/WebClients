@@ -23,9 +23,9 @@ import { APPS } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import { BusDriverEventName, getBusDriver } from '../../../internal/BusDriver';
-import { useFlagsDriveDocsPublicSharing } from '../../../internal/flags/useFlagsDriveDocsPublicSharing';
 import { handleSdkError } from '../../../legacy/errorHandling';
+import { BusDriverEventName, getBusDriver } from '../../../modules/busDriver';
+import { useFlagsDriveDocsPublicSharing } from '../../../modules/flags';
 import { getNodeAncestry, getNodeEffectiveRole, getNodeName } from '../../../modules/nodes';
 import { getDisplayName } from './DirectSharing/helpers/userNames';
 import type { SharingModalViewProps } from './SharingModalView';

@@ -1,7 +1,7 @@
-import type { BusDriverClient } from '@proton/drive/internal/BusDriver';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import type { BusDriverClient } from '@proton/drive/modules/busDriver';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 
 import { getFormattedNodeLocation } from '../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';

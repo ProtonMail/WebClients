@@ -1,9 +1,9 @@
 import type { MaybeNode, NodeEntity, PhotoNode } from '@proton/drive';
 import { NodeType, getDriveForPhotos } from '@proton/drive';
-import type { BusDriverClient } from '@proton/drive/internal/BusDriver';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import type { BusDriverClient } from '@proton/drive/modules/busDriver';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { Logging } from '@proton/drive/modules/logging';
 
 import { getSignatureIssues } from '../utils/sdk/getSignatureIssues';

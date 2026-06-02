@@ -5,9 +5,9 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { Loader } from '@proton/components';
 import { MemberRole, generateNodeUid, getDriveForPhotos, splitNodeUid } from '@proton/drive';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { uploadManager } from '@proton/drive/modules/upload';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import clsx from '@proton/utils/clsx';

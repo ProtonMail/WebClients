@@ -1,8 +1,8 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
 import { MemberRole, NodeType, getDrive, useDrive } from '../../../index';
-import { getBusDriver } from '../../../internal/BusDriver';
 import { handleSdkError, sendErrorReport } from '../../../legacy/errorHandling';
+import { getBusDriver } from '../../../modules/busDriver';
 import { TreeEventManager } from './events/treeEventManager';
 import { DEVICES_ROOT_ID, SHARED_WITH_ME_ROOT_ID, makeTreeItemId } from './helpers';
 import { DirectoryTreeRootType } from './types';
@@ -21,8 +21,8 @@ const mockedHandleSdkError = jest.mocked(handleSdkError);
 jest.mock('../../../legacy/errorHandling');
 jest.mocked(sendErrorReport);
 
-jest.mock('../../../internal/BusDriver', () => ({
-    ...jest.requireActual('../../../internal/BusDriver'),
+jest.mock('../../../modules/busDriver', () => ({
+    ...jest.requireActual('../../../modules/busDriver'),
     getBusDriver: jest.fn(),
 }));
 

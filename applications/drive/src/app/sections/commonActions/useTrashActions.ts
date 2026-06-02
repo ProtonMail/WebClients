@@ -1,6 +1,6 @@
 import type { ProtonDriveClient } from '@proton/drive';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 
 import { useTrashNotifications } from '../trash/useTrashNotifications';
 

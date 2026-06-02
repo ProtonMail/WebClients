@@ -1,6 +1,6 @@
 import { NodeType, getDrive } from '../../../../index';
-import { BusDriverEventName, getBusDriver } from '../../../../internal/BusDriver';
 import { getNodeEntity } from '../../../../legacy/sdkUtils/getNodeEntity';
+import { BusDriverEventName, getBusDriver } from '../../../../modules/busDriver';
 import { getDeviceName } from '../../../nodes';
 import { directoryTreeStoreFactory } from '../directoryTreeStoreFactory';
 import { DEVICES_ROOT_ID, SHARED_WITH_ME_ROOT_ID, makeTreeItemId } from '../helpers';
@@ -13,8 +13,8 @@ jest.mock('../../../../index', () => ({
     getDrive: jest.fn(),
 }));
 
-jest.mock('../../../../internal/BusDriver', () => ({
-    ...jest.requireActual('../../../../internal/BusDriver'),
+jest.mock('../../../../modules/busDriver', () => ({
+    ...jest.requireActual('../../../../modules/busDriver'),
     getBusDriver: jest.fn(),
 }));
 

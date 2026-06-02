@@ -19,9 +19,9 @@ import { APPS } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
-import { getBusDriver } from '../../../internal/BusDriver';
-import { useFlagsDriveDocsPublicSharing } from '../../../internal/flags/useFlagsDriveDocsPublicSharing';
 import { handleSdkError } from '../../../legacy/errorHandling';
+import { getBusDriver } from '../../../modules/busDriver';
+import { useFlagsDriveDocsPublicSharing } from '../../../modules/flags';
 import { type DirectMember, MemberType } from './interfaces';
 import { useSharingModalState } from './useSharingModalState';
 
@@ -114,9 +114,12 @@ jest.mock('@proton/components');
 jest.mock('@proton/hooks/useLoading');
 jest.mock('@proton/shared/lib/apps/helper');
 jest.mock('@proton/shared/lib/helpers/browser');
-jest.mock('../../../internal/flags/useFlagsDriveDocsPublicSharing');
+jest.mock('../../../modules/flags', () => ({
+    ...jest.requireActual('../../../modules/flags'),
+    useFlagsDriveDocsPublicSharing: jest.fn(),
+}));
 jest.mock('../../../legacy/errorHandling');
-jest.mock('../../../internal/BusDriver');
+jest.mock('../../../modules/busDriver');
 jest.mock('@proton/mail/store/contactEmails/hooks', () => ({
     useContactEmails: jest.fn(() => [[]]),
 }));
