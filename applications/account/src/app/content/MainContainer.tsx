@@ -52,8 +52,7 @@ import useShowDashboard from '@proton/components/hooks/accounts/useShowDashboard
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
-import { FeatureCode } from '@proton/features/interface';
-import useFeature from '@proton/features/useFeature';
+import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { getHasPassB2BPlan, hasAIAssistant, hasAllProductsB2CPlan } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
@@ -199,9 +198,7 @@ const MainContainer = () => {
     const isMspEnabled = useFlag('MspEnabled');
     const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
 
-    const categoryViewFlag = useFlag('CategoryView');
-    const betaFlag = useFeature<boolean>(FeatureCode.CategoryViewBeta);
-    const hasBetaAccess = betaFlag.feature?.Value ?? false;
+    const { hasAccessToCategoryView } = useCategoriesData();
 
     const [referralInfo] = useReferralInfo();
 
@@ -305,7 +302,7 @@ const MainContainer = () => {
         isRetentionPoliciesEnabled,
         isAuthenticatorAvailable,
         isOLESEnabled,
-        isCategoryViewEnabled: categoryViewFlag || hasBetaAccess,
+        isCategoryViewEnabled: hasAccessToCategoryView,
         isRolesAndPermissionsEnabled,
         isMspEnabled,
         isRecoverySettingsRedesignEnabled,

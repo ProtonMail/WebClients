@@ -17,13 +17,15 @@ export const useCategoriesData = () => {
     const categoriesStore = useSelector(selectCategoriesLabel);
     const activeCategoriesTabs = useSelector(selectActiveCategoriesTabs);
 
+    const hasAccessToCategoryView = categoryViewFlag || hasBetaAccess;
     const settingAccess = organization?.Settings?.MailCategoryViewEnabled ? !!mailSettings.MailCategoryView : false;
-    const categoryViewAccess = (categoryViewFlag || hasBetaAccess) && settingAccess;
+    const categoryViewAccess = hasAccessToCategoryView && settingAccess;
 
     const isRefreshedToolbarUIDisabled = useFlag('RefreshedToolbarUIDisabled');
     const shouldSeeWideToolbars = !isRefreshedToolbarUIDisabled || hasBetaAccess;
 
     return {
+        hasAccessToCategoryView,
         categoriesStore,
         activeCategoriesTabs: categoryViewAccess ? activeCategoriesTabs : [],
         categoryViewAccess,
