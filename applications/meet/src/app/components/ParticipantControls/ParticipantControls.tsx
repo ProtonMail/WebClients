@@ -275,6 +275,7 @@ export const ParticipantControls = () => {
                             <CircleButton
                                 IconComponent={isCameraEnabled ? IcMeetCamera : IcMeetCameraOff}
                                 variant={isCameraEnabled ? 'default' : 'danger'}
+                                loading={isCameraToggleLoading}
                                 onClick={() => {
                                     if (!hasCameraPermission) {
                                         dispatch(setPermissionPromptStatus(PermissionPromptStatus.CAMERA));
@@ -286,11 +287,13 @@ export const ParticipantControls = () => {
                                     }
 
                                     if (videoDeviceId) {
-                                        void toggleVideo({
-                                            isEnabled: !isCameraEnabled,
-                                            videoDeviceId,
-                                            preserveCache: true,
-                                        });
+                                        void withCameraToggleLoading(
+                                            toggleVideo({
+                                                isEnabled: !isCameraEnabled,
+                                                videoDeviceId,
+                                                preserveCache: true,
+                                            })
+                                        );
                                     }
                                 }}
                                 indicatorContent={cameraHasWarning ? '!' : undefined}
