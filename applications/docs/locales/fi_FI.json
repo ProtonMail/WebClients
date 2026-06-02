@@ -2875,6 +2875,12 @@
       "Failed to fetch sharing info": [
         "Jakotietojen nouto epäonnistui"
       ],
+      "Failed to load document details": [
+        "Asiakirjan tietojen lataaminen epäonnistui"
+      ],
+      "Failed to load recent documents": [
+        "Viimeisimpien dokumenttien lataaminen epäonnistui"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Tilaustietoja ei voitu ladata. Yritä myöhemmin uudelleen."
       ],
@@ -5457,6 +5463,9 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } merkkiä"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
