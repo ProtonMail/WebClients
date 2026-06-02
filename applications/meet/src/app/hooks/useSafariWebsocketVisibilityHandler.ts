@@ -1,14 +1,13 @@
 import { useEffect, useRef } from 'react';
 
-import type { App } from '@proton-meet/proton-meet-core';
-
 import { useMeetErrorReporting } from '@proton/meet';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { useCameraTrackSubscriptionManager } from '../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionManagerProvider';
+import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 
 interface UseSafariWebsocketVisibilityHandlerParams {
-    wasmApp: App | null;
+    wasmApp: MeetCoreClient | null;
     joinedRoom: boolean;
 }
 

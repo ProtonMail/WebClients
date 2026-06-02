@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react';
 
-import type { App } from '@proton-meet/proton-meet-core';
-
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import type { MLSGroupState } from '@proton/meet/types/types';
 
+import type { MeetCoreClient } from '../wasm/MeetCoreClient';
+
 interface UseConnectionHealthCheckParams {
-    wasmApp: App | null;
+    wasmApp: MeetCoreClient | null;
     mlsGroupStateRef: React.MutableRefObject<MLSGroupState | null>;
     onMlsFailed: () => void;
 }

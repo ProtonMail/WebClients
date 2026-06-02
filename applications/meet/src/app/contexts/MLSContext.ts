@@ -1,9 +1,9 @@
 import { createContext, useContext } from 'react';
 
-import type { App } from '@proton-meet/proton-meet-core';
+import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 
 interface MLSContextType {
-    mls: App | null;
+    mls: MeetCoreClient | null;
 }
 
 export const MLSContext = createContext<MLSContextType>({
@@ -13,5 +13,5 @@ export const MLSContext = createContext<MLSContextType>({
 export const useMLSContext = () => {
     const { mls } = useContext(MLSContext);
 
-    return mls as App;
+    return mls as MeetCoreClient;
 };
