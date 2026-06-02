@@ -6,9 +6,9 @@ import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
 import noop from '@proton/utils/noop';
 
 import type { DecryptedLink } from '../../../../legacy/store';
-import { getMovedFiles } from '../../../../utils/moveTexts';
 import { selectMessageForItemList } from '../../sections/helpers';
 import type { DragMoveControls, FileBrowserBaseItem } from '../interface';
+import { getMovedFiles } from '../moveTexts';
 import { useSelection } from '../state/useSelection';
 
 interface Options {

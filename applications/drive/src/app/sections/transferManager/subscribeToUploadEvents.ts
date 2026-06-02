@@ -1,6 +1,6 @@
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
-import { getNodeEffectiveRole } from '@proton/drive/internal/sdkUtils/getNodeEffectiveRole';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { getNodeEffectiveRole } from '@proton/drive/modules/nodes';
 import { uploadManager } from '@proton/drive/modules/upload';
 
 import { useTransferManagerStore } from './transferManager.store';
