@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import type { InvalidNameError, MaybeNode, NodeEntity } from '@proton/drive';
-import { Logging } from '@proton/drive/public/logging';
 
 export type GetNodeEntityType = {
     node: NodeEntity;
@@ -51,16 +50,3 @@ export const getNodeEntity = (maybeNode: MaybeNode): GetNodeEntityType => {
         errors,
     };
 };
-
-/**
- * The logging system for the Drive application.
- *
- * Use it to create a logger instance to log messages to the default log
- * handlers.
- *
- * ```typescript
- * const logger = logging.getLogger('my-module');
- * logger.info('Hello, world!');
- * ```
- */
-export const logging = new Logging();
