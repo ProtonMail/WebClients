@@ -19,6 +19,7 @@ import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages
 import clsx from '@proton/utils/clsx';
 import diff from '@proton/utils/diff';
 
+import type { AddAttachmentsParams } from 'proton-mail/hooks/composer/useAttachments/interface';
 import { attachmentByCidOrCloc } from 'proton-mail/store/attachments/attachmentsSelectors';
 import type { MailState } from 'proton-mail/store/store';
 
@@ -59,12 +60,7 @@ interface Props extends Pick<EditorProps, 'onMouseUp' | 'onKeyUp' | 'onFocus' | 
     editorMetadata: EditorMetadata;
     hasAttachments?: boolean;
     onExpandBlockquotes?: () => void;
-    onUploadAttachments?: (
-        action: ATTACHMENT_DISPOSITION,
-        files?: File[],
-        removeImageMetadata?: boolean,
-        cid?: string
-    ) => void;
+    onUploadAttachments?: (data: AddAttachmentsParams) => void;
     getStoreState?: () => MailState;
 }
 
@@ -182,7 +178,12 @@ const EditorWrapper = ({
 
                     // TODO what do we do with the remove image metadata.
                     void Promise.resolve(
-                        onUploadAttachments(ATTACHMENT_DISPOSITION.INLINE, [file], false, cid)
+                        onUploadAttachments({
+                            action: ATTACHMENT_DISPOSITION.INLINE,
+                            files: [file],
+                            removeImageMetadata: false,
+                            cid,
+                        })
                     ).finally(() => {
                         reuploadingCIDsRef.current.delete(cid);
                     });
