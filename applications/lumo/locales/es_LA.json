@@ -1064,8 +1064,14 @@
       "Try again": [
         "Reintentar"
       ],
+      "Turn off": [
+        "Desactivar"
+      ],
       "Turn off and delete": [
         "Desactivar y eliminar"
+      ],
+      "Turn on memory": [
+        "Activar memoria"
       ],
       "Update from chats": [
         "Actualizar desde chats"
@@ -1311,6 +1317,14 @@
       ],
       "This will permanently remove all saved memories. ${ LUMO_SHORT_APP_NAME } will no longer use them in future chats.": [
         "Esto borrará permamentemente toda la memoria guardada. ${ LUMO_SHORT_APP_NAME } ya no la usará en chats futuros."
+      ],
+      "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
+        "Desactivar la memoria eliminará peermanentemente todos los ${ memories.length } recuerdos guardados. Puede reactivar la memoria después, pero los recuerdos eliminados no se recuperarán."
+      ]
+    },
+    "collider_2025: DisableMemory": {
+      "Turn off ${ LUMO_SHORT_APP_NAME } Memory at any time.": [
+        "Desactive la memoria de ${ LUMO_SHORT_APP_NAME } en cualquier momento."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -4886,6 +4900,9 @@
       ]
     },
     "Error": {
+      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
+        "Se actualizó ${ DRIVE_APP_NAME }. Vuelva a cargar la página."
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } es su nombre de usuario. Para crear ${ emailAddress }, vaya a Ajustes > Identidad y direcciones > Dominio corto (pm.me)"
       ],
