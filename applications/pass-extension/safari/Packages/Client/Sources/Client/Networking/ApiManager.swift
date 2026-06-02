@@ -41,9 +41,17 @@ public final class ApiManager {
     public let apiService: any APIService
 
     public var appVersion: String
-    public var userAgent: String? { UserAgent.default.ua }
-    public var locale: String { Locale.autoupdatingCurrent.identifier }
-    public var additionalHeaders: [String: String]? { nil }
+    public var userAgent: String? {
+        UserAgent.default.ua
+    }
+
+    public var locale: String {
+        Locale.autoupdatingCurrent.identifier
+    }
+
+    public var additionalHeaders: [String: String]? {
+        nil
+    }
 
     public let credentialProvider: any CredentialProvider
 
