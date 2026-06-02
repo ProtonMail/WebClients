@@ -3,7 +3,12 @@ import type { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
 import { $createTableSelection, $isTableNode, $isTableSelection } from '@lexical/table'
 import { $findMatchingParent, $insertNodeToNearestRoot, mergeRegister } from '@lexical/utils'
 import { Button } from '@proton/atoms/Button/Button'
-import { ButtonGroup, DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, Toggle } from '@proton/components'
+import { ButtonGroup, DropdownMenu, DropdownMenuButton, SimpleDropdown, Toggle } from '@proton/components'
+import { IcArrowsFromCenterHorizontal } from '@proton/icons/icons/IcArrowsFromCenterHorizontal'
+import { IcPalette } from '@proton/icons/icons/IcPalette'
+import { IcSquares } from '@proton/icons/icons/IcSquares'
+import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal'
+import { IcTrash } from '@proton/icons/icons/IcTrash'
 import { $getSelection, $isRangeSelection, COMMAND_PRIORITY_EDITOR, SELECTION_CHANGE_COMMAND } from 'lexical'
 import { $generateJSONFromSelectedNodes, $generateNodesFromSerializedNodes } from '@lexical/clipboard'
 import { useEffect, useRef, useState } from 'react'
@@ -227,7 +232,7 @@ export function TableMenu() {
       {!isSuggestionMode && (
         <Button icon shape="ghost" size="small" onClick={fitTableToPageWidth} disabled={isSuggestionMode}>
           <span className="sr-only">{c('Action').t`Fit table to page width`}</span>
-          <Icon name="arrows-from-center-horizontal" />
+          <IcArrowsFromCenterHorizontal />
         </Button>
       )}
       {!isSuggestionMode && (
@@ -252,7 +257,7 @@ export function TableMenu() {
                 })
               }}
             >
-              <Icon name="palette" />
+              <IcPalette />
               <span className="mr-1">Header row</span>
               <Toggle className="pointer-events-none ml-auto" checked={tableHasHeaderRow} />
             </DropdownMenuButton>
@@ -267,7 +272,7 @@ export function TableMenu() {
                 })
               }}
             >
-              <Icon name="palette" />
+              <IcPalette />
               <span className="mr-1">Header column</span>
               <Toggle className="pointer-events-none ml-auto" checked={tableHasHeaderColumn} />
             </DropdownMenuButton>
@@ -282,7 +287,7 @@ export function TableMenu() {
         content={
           <>
             <span className="sr-only">{c('Action').t`Table options`}</span>
-            <Icon name="three-dots-horizontal" />
+            <IcThreeDotsHorizontal />
           </>
         }
         hasCaret={false}
@@ -290,12 +295,12 @@ export function TableMenu() {
         <DropdownMenu>
           {!isSuggestionMode && (
             <DropdownMenuButton className="flex items-center gap-2 text-sm" onClick={duplicateTable}>
-              <Icon name="squares" />
+              <IcSquares />
               {c('Action').t`Duplicate`}
             </DropdownMenuButton>
           )}
           <DropdownMenuButton className="flex items-center gap-2 text-sm" onClick={deleteTable}>
-            <Icon name="trash" />
+            <IcTrash />
             {c('Action').t`Delete`}
           </DropdownMenuButton>
         </DropdownMenu>

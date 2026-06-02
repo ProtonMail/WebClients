@@ -1,5 +1,6 @@
-import { Icon, InputFieldTwo } from '@proton/components'
+import { InputFieldTwo } from '@proton/components'
 import { Button } from '@proton/atoms/Button/Button'
+import { IcLink } from '@proton/icons/icons/IcLink'
 import { useUI } from '../../ui-store'
 import * as Ariakit from '@ariakit/react'
 import { createStringifier } from '../../stringifier'
@@ -90,7 +91,7 @@ function InsertLinkPopover() {
         inputClassName="focus-visible:outline-none focus-visible:shadow-none"
         label={s('Insert link')}
         placeholder={s('Paste link')}
-        prefix={<Icon name="link" />}
+        prefix={<IcLink />}
         value={value}
         onChange={(e) => setValue(e.target.value)}
         onKeyDown={(e) => {

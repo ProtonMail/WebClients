@@ -6,10 +6,19 @@ import {
   DropdownButton,
   DropdownMenu,
   DropdownMenuButton,
-  Icon,
   SimpleDropdown,
   usePopperAnchor,
 } from '@proton/components'
+import { IcArrowDown } from '@proton/icons/icons/IcArrowDown'
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft'
+import { IcArrowRight } from '@proton/icons/icons/IcArrowRight'
+import { IcArrowUp } from '@proton/icons/icons/IcArrowUp'
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight'
+import { IcCross } from '@proton/icons/icons/IcCross'
+import { IcDots } from '@proton/icons/icons/IcDots'
+import { IcPalette } from '@proton/icons/icons/IcPalette'
+import { IcSquares } from '@proton/icons/icons/IcSquares'
+import { IcTrash } from '@proton/icons/icons/IcTrash'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { c } from 'ttag'
 import debounce from 'lodash/debounce'
@@ -248,7 +257,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
         onClick={toggleRowMenu}
         hasCaret={false}
       >
-        <Icon name="dots" />
+        <IcDots />
         <div className="sr-only">{c('Action').t`Click to open row menu`}</div>
       </DropdownButton>
       <Dropdown
@@ -266,9 +275,9 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               className={menuButtonClassName}
               content={
                 <>
-                  <Icon name="palette" />
+                  <IcPalette />
                   {c('Action').t`Color`}
-                  <Icon name="chevron-right" className="ml-auto" />
+                  <IcChevronRight className="ml-auto" />
                 </>
               }
               contentProps={{
@@ -302,7 +311,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               closeRowMenu()
             }}
           >
-            <Icon name="arrow-up" />
+            <IcArrowUp />
             {c('Action').t`Insert above`}
           </DropdownMenuButton>
           <DropdownMenuButton
@@ -315,7 +324,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               closeRowMenu()
             }}
           >
-            <Icon name="arrow-down" />
+            <IcArrowDown />
             {c('Action').t`Insert below`}
           </DropdownMenuButton>
           <DropdownMenuButton
@@ -328,7 +337,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               closeRowMenu()
             }}
           >
-            <Icon name="squares" />
+            <IcSquares />
             {c('Action').t`Duplicate`}
           </DropdownMenuButton>
           {!isSuggestionMode && (
@@ -344,7 +353,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
                 closeRowMenu()
               }}
             >
-              <Icon name="cross" />
+              <IcCross />
               {c('Action').t`Clear contents`}
             </DropdownMenuButton>
           )}
@@ -358,7 +367,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               closeRowMenu()
             }}
           >
-            <Icon name="trash" />
+            <IcTrash />
             {c('Action').t`Delete row`}
           </DropdownMenuButton>
         </DropdownMenu>
@@ -377,7 +386,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
         }}
         hasCaret={false}
       >
-        <Icon name="dots" />
+        <IcDots />
         <div className="sr-only">{c('Action').t`Click to open column menu`}</div>
       </DropdownButton>
       <Dropdown
@@ -403,9 +412,9 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               }}
               content={
                 <>
-                  <Icon name="palette" />
+                  <IcPalette />
                   {c('Action').t`Color`}
-                  <Icon name="chevron-right" className="ml-auto" />
+                  <IcChevronRight className="ml-auto" />
                 </>
               }
               hasCaret={false}
@@ -432,7 +441,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               closeColumnMenu()
             }}
           >
-            <Icon name="arrow-left" />
+            <IcArrowLeft />
             {c('Action').t`Insert left`}
           </DropdownMenuButton>
           <DropdownMenuButton
@@ -445,7 +454,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               closeColumnMenu()
             }}
           >
-            <Icon name="arrow-right" />
+            <IcArrowRight />
             {c('Action').t`Insert right`}
           </DropdownMenuButton>
           <DropdownMenuButton
@@ -459,7 +468,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               closeColumnMenu()
             }}
           >
-            <Icon name="squares" />
+            <IcSquares />
             {c('Action').t`Duplicate`}
           </DropdownMenuButton>
           {!isSuggestionMode && (
@@ -475,7 +484,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
                 closeColumnMenu()
               }}
             >
-              <Icon name="cross" size={4.5} />
+              <IcCross size={4.5} />
               {c('Action').t`Clear contents`}
             </DropdownMenuButton>
           )}
@@ -489,7 +498,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               closeColumnMenu()
             }}
           >
-            <Icon name="trash" />
+            <IcTrash />
             {c('Action').t`Delete column`}
           </DropdownMenuButton>
         </DropdownMenu>
