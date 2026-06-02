@@ -13,10 +13,14 @@ import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 import diff from '@proton/utils/diff';
+
+import { attachmentByCidOrCloc } from 'proton-mail/store/attachments/attachmentsSelectors';
+import type { MailState } from 'proton-mail/store/store';
 
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
 import { getContent } from '../../../helpers/message/messageContent';
@@ -55,6 +59,13 @@ interface Props extends Pick<EditorProps, 'onMouseUp' | 'onKeyUp' | 'onFocus' | 
     editorMetadata: EditorMetadata;
     hasAttachments?: boolean;
     onExpandBlockquotes?: () => void;
+    onUploadAttachments?: (
+        action: ATTACHMENT_DISPOSITION,
+        files?: File[],
+        removeImageMetadata?: boolean,
+        cid?: string
+    ) => void;
+    getStoreState?: () => MailState;
 }
 
 const EditorWrapper = ({
@@ -66,6 +77,8 @@ const EditorWrapper = ({
     onKeyUp,
     onChangeContent,
     onAddAttachments,
+    onUploadAttachments,
+    getStoreState,
     onRemoveAttachment,
     onFocus,
     mailSettings,
@@ -84,6 +97,7 @@ const EditorWrapper = ({
 
     // Keep track of the containing CIDs to detect deletion
     const [cids, setCIDs] = useState<string[]>([]);
+    const reuploadingCIDsRef = useRef<Set<string>>(new Set());
 
     const editorActionsRef = useRef<EditorActions>();
     const handleEditorReady = useCallback((editorActions: EditorActions) => {
@@ -125,6 +139,7 @@ const EditorWrapper = ({
             }
             const newCIDs = findCIDsInContent(handleGetContent());
             const removedCIDs = diff(cids, newCIDs);
+            const missedCIDs = diff(newCIDs, cids);
 
             if (removedCIDs.length) {
                 let hasDeletedCid = false;
@@ -136,12 +151,53 @@ const EditorWrapper = ({
                         void onRemoveAttachment(attachment);
                     }
                 });
-                if (hasDeletedCid) {
+
+                // We keep the old behavior of clearing the undo history in EO where it's not possible to re-upload attachments
+                if (hasDeletedCid && !onUploadAttachments) {
                     editorActionsRef.current?.clearUndoHistory?.();
                 }
             }
 
-            setCIDs(newCIDs);
+            // Re-upload inline images that are back in the content but whose attachment was deleted.
+            // The original CID is preserved in the attachement slice and used to find the attachment.
+            if (missedCIDs.length && onUploadAttachments && getStoreState) {
+                const state = getStoreState();
+                const attachedCIDs = (message.data?.Attachments || []).map(
+                    (attachment) => readContentIDandLocation(attachment).cid
+                );
+
+                for (const cid of missedCIDs) {
+                    if (attachedCIDs.includes(cid) || reuploadingCIDsRef.current.has(cid)) {
+                        return;
+                    }
+
+                    const attachment = attachmentByCidOrCloc(state, { identifier: cid });
+                    if (!attachment) {
+                        return;
+                    }
+
+                    reuploadingCIDsRef.current.add(cid);
+                    const blob = new Blob([attachment.data], { type: attachment.type || 'application/octet-stream' });
+                    const file = new File([blob], attachment.filename, { type: attachment.type });
+
+                    // TODO what do we do with the remove image metadata.
+                    void Promise.resolve(
+                        onUploadAttachments(ATTACHMENT_DISPOSITION.INLINE, [file], false, cid)
+                    ).finally(() => {
+                        reuploadingCIDsRef.current.delete(cid);
+                    });
+                }
+            }
+
+            if (onUploadAttachments) {
+                const attachedCIDSet = new Set(
+                    (message.data?.Attachments || []).map((attachment) => readContentIDandLocation(attachment).cid)
+                );
+                setCIDs(newCIDs.filter((cid) => cids.includes(cid) || attachedCIDSet.has(cid)));
+            } else {
+                // Encrypted outside: unchanged behaviour (re-upload is not available here).
+                setCIDs(newCIDs);
+            }
         },
         { debounce: 500 }
     );
@@ -217,7 +273,9 @@ const EditorWrapper = ({
             }
 
             const isInitialContentSetInEditor = editorReady && !isPlainText;
-            if (isInitialContentSetInEditor) {
+
+            // We keep the old behavior of clearing the undo history in EO where it's not possible to re-upload attachments
+            if (isInitialContentSetInEditor && !onUploadAttachments) {
                 editorActionsRef.current?.clearUndoHistory?.();
             }
 
