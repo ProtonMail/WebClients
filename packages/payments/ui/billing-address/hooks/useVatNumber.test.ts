@@ -96,8 +96,15 @@ describe('useVatNumber', () => {
     // ─── 1. Initialization and defaults ──────────────────────────────
 
     describe('Initialization and defaults', () => {
-        it('should return empty vatNumber initially', () => {
-            const { result } = renderHook(() => useVatNumber(defaultProps({ isAuthenticated: false })));
+        it('should return empty vatNumber initially for non-VAT country', () => {
+            const { result } = renderHook(() =>
+                useVatNumber(
+                    defaultProps({
+                        isAuthenticated: false,
+                        taxCountry: buildTaxCountryStub({ selectedCountryCode: 'US' }),
+                    })
+                )
+            );
 
             expect(result.current.vatNumber).toBe('');
         });
@@ -184,24 +191,24 @@ describe('useVatNumber', () => {
             expect(result.current.vatNumber).toBe('VAT123');
         });
 
-        it('should set vatNumber to empty string when VatId is null', async () => {
-            mockGetFullBillingAddress.mockResolvedValue({ VatId: null });
+        it('should keep prefilled prefix when server returns no VatId', async () => {
+            mockGetFullBillingAddress.mockResolvedValue({ VatId: null, BillingAddress: {} });
 
             const { result } = renderHook(() => useVatNumber(defaultProps()));
 
             await act(async () => {});
 
-            expect(result.current.vatNumber).toBe('');
+            expect(result.current.vatNumber).toBe('DE');
         });
 
-        it('should set vatNumber to empty string when VatId is undefined', async () => {
-            mockGetFullBillingAddress.mockResolvedValue({});
+        it('should keep prefilled prefix when server returns no VatId (undefined)', async () => {
+            mockGetFullBillingAddress.mockResolvedValue({ BillingAddress: {} });
 
             const { result } = renderHook(() => useVatNumber(defaultProps()));
 
             await act(async () => {});
 
-            expect(result.current.vatNumber).toBe('');
+            expect(result.current.vatNumber).toBe('DE');
         });
 
         it('should NOT fetch when isAuthenticated is false', async () => {
@@ -220,14 +227,14 @@ describe('useVatNumber', () => {
             expect(mockGetFullBillingAddress).not.toHaveBeenCalled();
         });
 
-        it('should handle API error gracefully', async () => {
+        it('should handle API error gracefully and keep prefilled prefix', async () => {
             mockGetFullBillingAddress.mockRejectedValue(new Error('Network error'));
 
             const { result } = renderHook(() => useVatNumber(defaultProps()));
 
             await act(async () => {});
 
-            expect(result.current.vatNumber).toBe('');
+            expect(result.current.vatNumber).toBe('DE');
         });
     });
 
@@ -382,34 +389,41 @@ describe('useVatNumber', () => {
             expect(onVatChange).toHaveBeenCalledWith('');
         });
 
-        it('should NOT clear vatNumber when country is in VAT list and plan is B2B', () => {
+        it('should reset vatNumber to the new prefix and notify when switching between VAT countries', () => {
+            const onVatChange = jest.fn();
             const { result, rerender } = renderHook((props) => useVatNumber(props), {
-                initialProps: defaultProps({ isAuthenticated: false }),
+                initialProps: defaultProps({ isAuthenticated: false, onVatChange }),
             });
 
             act(() => {
                 result.current.setVatNumber('VAT-123');
             });
+            onVatChange.mockClear();
 
             const frCountry = buildTaxCountryStub({ selectedCountryCode: 'FR' });
-            rerender(defaultProps({ isAuthenticated: false, taxCountry: frCountry }));
+            rerender(defaultProps({ isAuthenticated: false, onVatChange, taxCountry: frCountry }));
 
-            expect(result.current.vatNumber).toBe('VAT-123');
+            expect(result.current.vatNumber).toBe('FR');
+            expect(onVatChange).toHaveBeenCalledWith('');
         });
 
         it('should NOT trigger when vatNumber is already empty', () => {
             const onVatChange = jest.fn();
 
             const { rerender } = renderHook((props) => useVatNumber(props), {
-                initialProps: defaultProps({ isAuthenticated: false, onVatChange }),
+                initialProps: defaultProps({
+                    isAuthenticated: false,
+                    onVatChange,
+                    taxCountry: buildTaxCountryStub({ selectedCountryCode: 'US' }),
+                }),
             });
 
-            const nonVatCountry = buildTaxCountryStub({ selectedCountryCode: 'US' });
+            const anotherNonVatCountry = buildTaxCountryStub({ selectedCountryCode: 'JP' });
             rerender(
                 defaultProps({
                     isAuthenticated: false,
                     onVatChange,
-                    taxCountry: nonVatCountry,
+                    taxCountry: anotherNonVatCountry,
                 })
             );
 
@@ -548,7 +562,7 @@ describe('useVatNumber', () => {
             expect(result.current.renderVatNumberInput).toBe(true);
         });
 
-        it.each(['CH', 'GB', 'NO', 'LI', 'IS'])('should render VAT input for EFTA country %s', (countryCode) => {
+        it.each(['GB', 'NO'])('should render VAT input for additional European country %s', (countryCode) => {
             const { result } = renderHook(() =>
                 useVatNumber(
                     defaultProps({
@@ -561,7 +575,7 @@ describe('useVatNumber', () => {
             expect(result.current.renderVatNumberInput).toBe(true);
         });
 
-        it.each(['US', 'JP', 'KR', 'BR', 'CN'])(
+        it.each(['US', 'JP', 'KR', 'BR', 'CN', 'CH', 'LI', 'IS'])(
             'should NOT render VAT input for country not on the list of VAT enabled countries %s',
             (countryCode) => {
                 const { result } = renderHook(() =>
@@ -576,5 +590,229 @@ describe('useVatNumber', () => {
                 expect(result.current.renderVatNumberInput).toBe(false);
             }
         );
+    });
+
+    // ─── 9. Prefill behaviour ────────────────────────────────────────
+
+    describe('Prefill behaviour', () => {
+        it('prefills VAT field with country prefix on mount for unauthenticated user', () => {
+            const { result } = renderHook(() =>
+                useVatNumber(
+                    defaultProps({
+                        isAuthenticated: false,
+                        taxCountry: buildTaxCountryStub({ selectedCountryCode: 'DE' }),
+                    })
+                )
+            );
+
+            expect(result.current.vatNumber).toBe('DE');
+        });
+
+        it('does not prefill for US (no prefix needed)', () => {
+            const { result } = renderHook(() =>
+                useVatNumber(
+                    defaultProps({
+                        isAuthenticated: false,
+                        taxCountry: buildTaxCountryStub({ selectedCountryCode: 'US' }),
+                        selectedPlanName: PLANS.MAIL_PRO,
+                    })
+                )
+            );
+
+            expect(result.current.vatNumber).toBe('');
+        });
+
+        it('prefills with AU for AU (ABN is prefixed with AU)', () => {
+            const { result } = renderHook(() =>
+                useVatNumber(
+                    defaultProps({
+                        isAuthenticated: false,
+                        taxCountry: buildTaxCountryStub({ selectedCountryCode: 'AU' }),
+                    })
+                )
+            );
+
+            expect(result.current.vatNumber).toBe('AU');
+        });
+
+        it('prefills with EL for GR, not GR', () => {
+            const { result } = renderHook(() =>
+                useVatNumber(
+                    defaultProps({
+                        isAuthenticated: false,
+                        taxCountry: buildTaxCountryStub({ selectedCountryCode: 'GR' }),
+                    })
+                )
+            );
+
+            expect(result.current.vatNumber).toBe('EL');
+        });
+
+        it('does not prefill when initialVatNumber is provided', () => {
+            const { result } = renderHook(() =>
+                useVatNumber(
+                    defaultProps({
+                        isAuthenticated: false,
+                        initialVatNumber: 'DE123456789',
+                        taxCountry: buildTaxCountryStub({ selectedCountryCode: 'DE' }),
+                    })
+                )
+            );
+
+            expect(result.current.vatNumber).toBe('DE123456789');
+        });
+
+        it('updates prefix when country changes while field is pristine', () => {
+            const { result, rerender } = renderHook((props) => useVatNumber(props), {
+                initialProps: defaultProps({
+                    isAuthenticated: false,
+                    taxCountry: buildTaxCountryStub({ selectedCountryCode: 'DE' }),
+                }),
+            });
+
+            expect(result.current.vatNumber).toBe('DE');
+
+            rerender(
+                defaultProps({ isAuthenticated: false, taxCountry: buildTaxCountryStub({ selectedCountryCode: 'FR' }) })
+            );
+
+            expect(result.current.vatNumber).toBe('FR');
+        });
+
+        it('overwrites a user-entered VAT number with the new prefix when the country changes', () => {
+            const { result, rerender } = renderHook((props) => useVatNumber(props), {
+                initialProps: defaultProps({
+                    isAuthenticated: false,
+                    taxCountry: buildTaxCountryStub({ selectedCountryCode: 'DE' }),
+                }),
+            });
+
+            act(() => {
+                result.current.setVatNumber('DE123456789');
+            });
+
+            rerender(
+                defaultProps({ isAuthenticated: false, taxCountry: buildTaxCountryStub({ selectedCountryCode: 'FR' }) })
+            );
+
+            expect(result.current.vatNumber).toBe('FR');
+        });
+
+        it('resets to pristine and re-prefills after switching to non-VAT country and back', () => {
+            const { result, rerender } = renderHook((props) => useVatNumber(props), {
+                initialProps: defaultProps({
+                    isAuthenticated: false,
+                    taxCountry: buildTaxCountryStub({ selectedCountryCode: 'DE' }),
+                }),
+            });
+
+            // Switch to non-VAT country — clears
+            rerender(
+                defaultProps({ isAuthenticated: false, taxCountry: buildTaxCountryStub({ selectedCountryCode: 'JP' }) })
+            );
+            expect(result.current.vatNumber).toBe('');
+
+            // Switch back to VAT country — re-prefills
+            rerender(
+                defaultProps({ isAuthenticated: false, taxCountry: buildTaxCountryStub({ selectedCountryCode: 'FR' }) })
+            );
+            expect(result.current.vatNumber).toBe('FR');
+        });
+
+        it('fetch still runs for authenticated user even when field is prefilled', async () => {
+            mockGetFullBillingAddress.mockResolvedValue({ VatId: 'DE123456789' });
+
+            const { result } = renderHook(() =>
+                useVatNumber(
+                    defaultProps({
+                        isAuthenticated: true,
+                        taxCountry: buildTaxCountryStub({ selectedCountryCode: 'DE' }),
+                    })
+                )
+            );
+
+            await act(async () => {});
+
+            expect(mockGetFullBillingAddress).toHaveBeenCalledTimes(1);
+            expect(result.current.vatNumber).toBe('DE123456789');
+        });
+
+        it('keeps the prefill when server returns no VatId for authenticated user', async () => {
+            mockGetFullBillingAddress.mockResolvedValue({ VatId: null, BillingAddress: {} });
+
+            const { result } = renderHook(() =>
+                useVatNumber(
+                    defaultProps({
+                        isAuthenticated: true,
+                        taxCountry: buildTaxCountryStub({ selectedCountryCode: 'DE' }),
+                    })
+                )
+            );
+
+            await act(async () => {});
+
+            expect(result.current.vatNumber).toBe('DE');
+        });
+
+        it('re-prefills when VAT section is expanded after collapsing', () => {
+            const { result } = renderHook(() =>
+                useVatNumber(
+                    defaultProps({
+                        isAuthenticated: false,
+                        taxCountry: buildTaxCountryStub({ selectedCountryCode: 'DE' }),
+                    })
+                )
+            );
+
+            act(() => {
+                result.current.setUnauthenticatedCollapsed(true);
+            });
+            expect(result.current.vatNumber).toBe('');
+
+            act(() => {
+                result.current.setUnauthenticatedCollapsed(false);
+            });
+            expect(result.current.vatNumber).toBe('DE');
+        });
+
+        it('clears field on B2B → non-B2B and re-prefills on B2B return (pristine is reset on clear)', () => {
+            const { result, rerender } = renderHook((props) => useVatNumber(props), {
+                initialProps: defaultProps({ isAuthenticated: false }),
+            });
+
+            act(() => {
+                result.current.setVatNumber('DE123456789');
+            });
+            expect(result.current.vatNumber).toBe('DE123456789');
+
+            // Switching to a consumer plan clears the field and resets pristine
+            rerender(defaultProps({ isAuthenticated: false, selectedPlanName: PLANS.MAIL }));
+            expect(result.current.vatNumber).toBe('');
+
+            // Returning to a B2B plan re-prefills with the country prefix
+            rerender(defaultProps({ isAuthenticated: false, selectedPlanName: PLANS.MAIL_PRO }));
+            expect(result.current.vatNumber).toBe('DE');
+        });
+
+        it('re-prefills even when expand is called without a prior collapse (idempotent)', () => {
+            const { result } = renderHook(() =>
+                useVatNumber(
+                    defaultProps({
+                        isAuthenticated: false,
+                        taxCountry: buildTaxCountryStub({ selectedCountryCode: 'DE' }),
+                    })
+                )
+            );
+
+            act(() => {
+                result.current.setVatNumber('DE123456789');
+            });
+
+            // Calling expand without a prior collapse resets pristine and re-prefills
+            act(() => {
+                result.current.setUnauthenticatedCollapsed(false);
+            });
+            expect(result.current.vatNumber).toBe('DE');
+        });
     });
 });
