@@ -30,6 +30,7 @@ import noop from '@proton/utils/noop';
 
 import ComposerAssistant from 'proton-mail/components/assistant/ComposerAssistant';
 import { insertTextBeforeContent, prepareContentToInsert } from 'proton-mail/helpers/message/messageContent';
+import { useMailStore } from 'proton-mail/store/hooks';
 
 import { DRAG_ADDRESS_KEY } from '../../constants';
 import { useComposerContent } from '../../hooks/composer/useComposerContent';
@@ -132,6 +133,9 @@ const Composer = (
         setEditorReady(true);
         editorRef.current = editorActions;
     }, []);
+
+    const store = useMailStore();
+    const getStoreState = useCallback(() => store.getState(), [store]);
 
     // Manage focus from the container yet keeping logic in each component
     const addressesBlurRef = useRef<() => void>(noop);
@@ -450,6 +454,8 @@ const Composer = (
                         onChange={handleChange}
                         onChangeContent={handleChangeContent}
                         onFocus={handleContentFocus}
+                        onUploadAttachments={handleAddAttachmentsUpload}
+                        getStoreState={getStoreState}
                         onAddAttachments={handleAddAttachmentsStart}
                         onRemoveAttachment={handleRemoveAttachment}
                         onRemoveUpload={handleRemoveUpload}
