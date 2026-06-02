@@ -4,6 +4,7 @@ import { useTheme } from '@proton/components';
 import { MotionModeSetting } from '@proton/shared/lib/themes/constants';
 
 import { resolveAnimatedBackgroundEnabled } from '../lib/animatedBackground/resolveAnimatedBackgroundEnabled';
+import { setLumoSettings } from '../providers';
 import { useLumoUserSettings } from './useLumoUserSettings';
 
 export const useLumoAnimatedBackground = () => {
@@ -11,7 +12,7 @@ export const useLumoAnimatedBackground = () => {
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
 
     const isAnimatedBackgroundEnabled = resolveAnimatedBackgroundEnabled({
-        // `features.animations` means account-level animations are disabled.
+        // `features.animations` is true when account-level animations are disabled.
         accountAnimationsDisabled: information.features.animations,
         osReduceMotion: information.motionMode === MotionModeSetting.Reduce,
         lumoAnimatedBackgroundEnabled: lumoUserSettings.animatedBackgroundEnabled,
@@ -23,6 +24,7 @@ export const useLumoAnimatedBackground = () => {
                 animatedBackgroundEnabled: enabled,
                 _autoSave: true,
             });
+            setLumoSettings({ animatedBackgroundEnabled: enabled });
         },
         [updateSettings]
     );
