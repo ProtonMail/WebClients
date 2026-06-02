@@ -5976,6 +5976,9 @@
       "120m": [
         "120 分钟"
       ],
+      "15 minutes": [
+        "15 分钟"
+      ],
       "30 minutes": [
         "30 分钟"
       ],
@@ -13056,9 +13059,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "您可以修改一次地址，以确保使用正确的邮箱验证。"
       ],
-      "You can enable the Photos section from the interface using the toggle below.": [
-        "您可以使用下面的切换键在界面上启用照片部分。"
-      ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "您可以为贵组织成员设置密码规则，此规则将在他们创建或重置其 ${ BRAND_NAME } 账户密码时生效。"
       ],
@@ -15531,6 +15531,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "我确定要永久删除此账户及其所有数据。"
+      ],
+      "You don't have permissions": [
+        "您没有权限"
       ],
       "Your activation code:": [
         "您的激活代码："
@@ -21735,9 +21738,6 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "启用照片版块"
-      ],
       "Get updates about comments via email": [
         "通过邮件获取评论更新"
       ],
@@ -25420,9 +25420,6 @@
       ],
       "Phone": [
         "电话"
-      ],
-      "Photos": [
-        "照片"
       ],
       "Pin the extension": [
         "固定扩展"

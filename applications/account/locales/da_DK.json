@@ -13195,9 +13195,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigere dette én gang for at sikre den korrekte e-mailadresse til bekræftelse."
       ],
-      "You can enable the Photos section from the interface using the toggle below.": [
-        "Du kan aktivere billedsektionen fra grænsefladen ved hjælp af indstillingen nedenfor."
-      ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Du kan gennemtvinge de adgangskoderegler, som medlemmer af din organisation bruger, når de opretter eller nulstiller adgangskoden til deres ${ BRAND_NAME }- konto."
       ],
@@ -15687,6 +15684,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jeg ønsker at slette denne konto og alle dens data permanent."
+      ],
+      "You don't have permissions": [
+        "Du har ikke tilladelserne"
       ],
       "Your activation code:": [
         "Din aktiveringskode:"
@@ -22076,14 +22076,11 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "Aktivér sektionen Fotos"
-      ],
       "Get updates about comments via email": [
         "Få opdateringer om kommentarer via e-mail"
       ],
       "Include document name in email notifications": [
-        "Inkluder dokumentnavn i e-mailnotifikationer"
+        "Inkludér dokumentnavn i e-mailnotifikationer"
       ]
     },
     "Settings description": {
@@ -22094,6 +22091,9 @@
     "Settings section title": {
       "Account": [
         "Konto"
+      ],
+      "Managed Companies": [
+        "Administrerede selskaber"
       ],
       "Organization": [
         "Organisation"
@@ -24054,6 +24054,12 @@
       ],
       "View VPN session details for your organization.": [
         "Se VPN-sessionsdetaljer for din organisation."
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "Med administrerede virksomheder kan du tilføje, redigere og fjerne adgang for organisationer, du fører tilsyn med."
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "Dine samlede månedlige omkostninger for alle administrerede selskaber."
       ]
     },
     "Success": {
@@ -24949,6 +24955,9 @@
       "Collaborate on documents": [
         "Arbejd sammen om dokumenter"
       ],
+      "Companies": [
+        "Virksomheder"
+      ],
       "Compare plans": [
         "Sammenlign abonnementer"
       ],
@@ -25697,6 +25706,9 @@
       "Monthly": [
         "Månedlig"
       ],
+      "Monthly Costs": [
+        "Månedlige omkostninger"
+      ],
       "Multi-user support": [
         "Flerbrugerunderstøttelse"
       ],
@@ -25831,9 +25843,6 @@
       ],
       "Phone": [
         "Telefon"
-      ],
-      "Photos": [
-        "Fotos"
       ],
       "Pin the extension": [
         "Fastgør udvidelsen"
