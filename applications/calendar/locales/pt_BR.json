@@ -3186,6 +3186,9 @@
       "To start, give your organization a name.": [
         "Para começar, dê um nome à sua organização."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Desbloqueia 15 GB de armazenamento por apenas ${ config.offerPrice }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arraste e solte para classificar a prioridade de mesclagem dos contatos. Desmarque os contatos que você não deseja mesclar."
       ],
@@ -3194,6 +3197,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Não podemos mais acessar o ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Pausaremos as importações quando o armazenamento atingir 80% da capacidade, de modo a reservar espaço para novas mensagens."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Iniciamos a importar seus e-mails do Gmail. Avisaremos quando terminar."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Lamentamos sua saída. Se tiver um momento, gostaríamos muito de saber o motivo do cancelamento. Seu feedback nos ajuda a fazer a ${ BRAND_NAME } ainda melhor para todos."
@@ -3215,6 +3224,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Sua conta e métodos de recuperação de dados estão definidos."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Sua conta gratuita do ${ MAIL_APP_NAME } tem espaço de armazenamento limitado, por isso importaremos apenas ${ newUserStorageText } de suas mensagens mais recentes do Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Sua conta gratuita do ${ MAIL_APP_NAME } tem espaço de armazenamento limitado, por isso importaremos apenas seus e-mails mais recentes do Gmail."
       ],
       "You’ll get a secure email with the details shortly.": [
         "Você receberá um e-mail seguro com os detalhes em breve."
@@ -3384,6 +3399,9 @@
       ],
       "120m": [
         "120 min"
+      ],
+      "15 minutes": [
+        "15 minutos"
       ],
       "30 minutes": [
         "30 minutos"
@@ -6264,8 +6282,14 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Experimente os novos recursos, atualizações e produtos da ${ BRAND_NAME } antes de serem lançados ao público. Isso recarregará o aplicativo"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Faça upgrade a qualquer momento para importar o resto"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Faça upgrade ou limpe espaço em qualquer momento para importar o resto"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Faça upgrade para manter seus benefícios ${ planTitle }."
@@ -9774,6 +9798,9 @@
       ],
       "External key automatically fetched via WKD.": [
         "Chave externa obtida automaticamente via WKD."
+      ],
+      "This key is used for message verification": [
+        "Essa chave já foi usado para verificação por mensagem"
       ],
       "This key is used to encrypt messages to this contact": [
         "Esta chave é usada para criptografar mensagens para este contato"
