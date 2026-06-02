@@ -318,6 +318,7 @@ enum MeetFeatureFlag {
     MeetSimulcast = 'MeetSimulcast',
     MeetMeetingTimeout = 'MeetMeetingTimeout',
     MeetingRecorderRefactor = 'MeetingRecorderRefactor',
+    MeetCoreWorker = 'MeetCoreWorker',
 }
 
 enum LumoFeatureFlag {
