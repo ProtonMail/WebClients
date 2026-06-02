@@ -1,6 +1,7 @@
 import type { CSSProperties, ReactNode, RefObject } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { IconProps } from '@proton/components/components/icon/Icon';
 import type { IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
@@ -27,6 +28,7 @@ interface CircleButtonProps {
     size?: IconSize;
     buttonStyle?: CSSProperties;
     disabled?: boolean;
+    loading?: boolean;
 }
 
 export const CircleButton = ({
@@ -44,7 +46,21 @@ export const CircleButton = ({
     size = 6,
     buttonStyle,
     disabled = false,
+    loading = false,
 }: CircleButtonProps) => {
+    const getToggleIcon = () => {
+        if (loading) {
+            return (
+                <CircleLoader
+                    className="w-custom h-custom"
+                    style={{ '--w-custom': '1.5rem', '--h-custom': '1.5rem', '--stroke-width': 1.3 }}
+                />
+            );
+        }
+
+        return <IconComponent viewBox={iconViewPort} size={size} />;
+    };
+
     return (
         <ConditionalTooltip
             title={tooltipTitle}
@@ -66,9 +82,9 @@ export const CircleButton = ({
                 aria-label={ariaLabel}
                 ref={anchorRef}
                 style={buttonStyle}
-                disabled={disabled}
+                disabled={disabled || loading}
             >
-                <IconComponent viewBox={iconViewPort} size={size} />
+                {getToggleIcon()}
                 {indicatorContent && (
                     <div
                         className={clsx(
