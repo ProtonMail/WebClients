@@ -1061,6 +1061,9 @@
       "Try again": [
         "Tentar novamente"
       ],
+      "Turn off": [
+        "Desativar"
+      ],
       "Turn off and delete": [
         "Desativar e excluir"
       ],
@@ -1266,6 +1269,9 @@
       "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
         "Saiba mais sobre como usar o ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Memories are stored encrypted.": [
+        "As memórias são armazenadas de forma criptografada."
+      ],
       "Permanently delete your project and chats. This is irreversible.": [
         "Exclua permanentemente seu projeto e bate-papos. Isso é irreversível."
       ],
@@ -1283,6 +1289,11 @@
       ],
       "Switch between light and dark mode": [
         "Alternar entre os modos claro e escuro"
+      ]
+    },
+    "collider_2025: DisableMemory": {
+      "Turn off ${ LUMO_SHORT_APP_NAME } Memory at any time.": [
+        "Desativar memória do ${ LUMO_SHORT_APP_NAME } a qualquer momento."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1367,6 +1378,11 @@
       ]
     },
     "collider_2025: Error (file processing)": {
+      "Error processing file: ${ file.name }": [
+        "Erro ao processar arquivo: ${ file.name }"
+      ]
+    },
+    "collider_2025: Error (local processing)": {
       "Error processing file: ${ file.name }": [
         "Erro ao processar arquivo: ${ file.name }"
       ]
@@ -2212,6 +2228,10 @@
       ]
     },
     "collider_2025: Success": {
+      "Added ${ added } memory from your chats": [
+        "Adicionado ${ added } memória de seus bate-papos",
+        "Adicionados ${ added } memórias de seus bate-papos"
+      ],
       "All chats deleted successfully": [
         "Todas as conversas foram excluídas com sucesso"
       ],
@@ -2284,6 +2304,9 @@
       "Authentication": [
         "Autenticação"
       ],
+      "Auto update memory": [
+        "Atualizar memória automaticamente"
+      ],
       "Automatic web search": [
         "Pesquisa automática da web"
       ],
@@ -2295,6 +2318,9 @@
       ],
       "Clear all memories?": [
         "Limpar todas as memórias?"
+      ],
+      "Clear chat-based memories?": [
+        "Limpar memórias relacionadas ao bate-papo?"
       ],
       "Conversational AI": [
         "IA de conversação"
@@ -4685,6 +4711,9 @@
       ]
     },
     "Error": {
+      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
+        "${ DRIVE_APP_NAME } foi atualizado. Recarregue a página"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } é seu nome de usuário. Para criar um ${ emailAddress }, vá para Configurações > Identidade e endereços > Domínio curto (pm.me)"
       ],
@@ -6135,6 +6164,12 @@
       "Search": [
         "Pesquisar"
       ],
+      "Send messages limit to native": [
+        "Enviar limite de mensagens para nativo"
+      ],
+      "Send spaces limit to native": [
+        "Enviar limite de espaço para nativo"
+      ],
       "Smoothing (Spring-Mass)": [
         "Suavização (Massa-Mola)"
       ],
@@ -6170,6 +6205,24 @@
       ],
       "Tokens/sec": [
         "Tokens/seg"
+      ],
+      "Trigger assets limit": [
+        "Limite de ativos de ativação"
+      ],
+      "Trigger conversations limit": [
+        "Limite de conversas de ativação"
+      ],
+      "Trigger high demand": [
+        "Ativar alta demanda"
+      ],
+      "Trigger messages limit": [
+        "Limite de mensagens de ativação"
+      ],
+      "Trigger spaces limit": [
+        "Limite de espaços de ativação"
+      ],
+      "Trigger stream disconnected": [
+        "Disparador de streaming desconectado"
       ],
       "Unsynced conversations": [
         "Conversas não sincronizadas"
