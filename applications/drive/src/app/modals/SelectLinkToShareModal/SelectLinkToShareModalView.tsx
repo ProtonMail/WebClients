@@ -7,9 +7,8 @@ import type { ModalProps } from '@proton/components';
 import { Alert, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import type { DirectoryTreeItem } from '@proton/drive/components/DirectoryTree/DirectoryTree';
 import { DirectoryTreeRoot } from '@proton/drive/components/DirectoryTree/DirectoryTree';
+import ModalContentLoader from '@proton/drive/modals/modalUtils/ModalContentLoader';
 import { useLoading } from '@proton/hooks';
-
-import ModalContentLoader from '../../legacy/components/modals/ModalContentLoader';
 
 export type SelectLinkToShareModalViewProps =
     | ({ loaded: true } & LoadedSelectLinkToShareModalViewProps)

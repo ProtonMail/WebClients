@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { ToolbarButton } from '@proton/components';
 import { generateNodeUid } from '@proton/drive/index';
+import { useMoveItemsModal } from '@proton/drive/modals/moveItemsModal';
 import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross';
 
-import { useMoveItemsModal } from '../../../../../modals/MoveItemsModal';
 import type { DecryptedLink } from '../../../../../legacy/store';
 
 interface Props {

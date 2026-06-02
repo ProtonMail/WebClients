@@ -2,7 +2,8 @@ import type { MaybeNode, NodeEntity, NodeType } from '@protontech/drive-sdk';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
-import { createMockNodeEntity } from '../../../../../../utils/test/nodeEntity';
+import { createMockNodeEntity } from '@proton/drive/modules/testing';
+
 import { SearchDB } from '../../../shared/SearchDB';
 import { IndexKind } from '../../../shared/types';
 import type { TreeEventScopeId } from '../../../shared/types';

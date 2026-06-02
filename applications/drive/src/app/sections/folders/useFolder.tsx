@@ -7,11 +7,11 @@ import { MemberRole, useDrive } from '@proton/drive';
 import { EnrichedError, handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { driveMetrics } from '@proton/drive/modules/metrics';
+import { getNodeEffectiveRole } from '@proton/drive/modules/nodes';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useFlagsDriveSheet } from '../../modules/featureFlag';
-import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
 import { useDevicesStore } from '../devices/useDevices.store';
 import { mapNodeToFolderViewItem } from './mapNodeToFolderViewItem';
 import { type FolderViewItem, useFolderStore } from './useFolder.store';
