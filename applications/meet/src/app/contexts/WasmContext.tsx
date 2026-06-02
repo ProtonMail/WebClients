@@ -1,14 +1,14 @@
 import { createContext, useContext } from 'react';
 
-import type { App } from '@proton-meet/proton-meet-core';
+import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 
 interface WasmContextValue {
-    wasmApp: App | null;
+    wasmApp: MeetCoreClient | null;
 }
 
 export const WasmContext = createContext<WasmContextValue | undefined>(undefined);
 
-export const useWasmApp = (): App | null => {
+export const useWasmApp = (): MeetCoreClient | null => {
     const context = useContext(WasmContext);
     if (context === undefined) {
         throw new Error('useWasmApp must be used within a WasmProvider');
