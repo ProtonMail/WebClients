@@ -14,6 +14,9 @@
       "Add another account": [
         "Weiteres Konto hinzufügen"
       ],
+      "Allow access": [
+        "Zugriff erlauben"
+      ],
       "Assign ${ selectedParticipantName } as host": [
         "${ selectedParticipantName } zum Organisator machen"
       ],
@@ -262,9 +265,6 @@
       ],
       "Request new code": [
         "Neuen Code anfordern"
-      ],
-      "Request permissions": [
-        "Berechtigungen anfordern"
       ],
       "Resend code": [
         "Code erneut senden"
@@ -1736,6 +1736,15 @@
       "${ maxParticipants } participant limit reached": [
         "${ maxParticipants } Teilnehmerlimit erreicht"
       ],
+      "${ MEET_APP_NAME } needs access so others can see and hear you during the call. You can turn your camera or microphone off at any time.": [
+        "${ MEET_APP_NAME } benötigt Zugriff, damit andere dich während des Anrufs sehen und hören können. Du kannst deine Kamera oder dein Mikrofon jederzeit ausschalten."
+      ],
+      "${ MEET_APP_NAME } needs camera access so others can see you during the call. You can turn it off at any time.": [
+        "${ MEET_APP_NAME } benötigt Zugriff auf die Kamera, damit andere dich während des Anrufs sehen können. Du kannst die Kamera jederzeit ausschalten."
+      ],
+      "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
+        "${ MEET_APP_NAME } benötigt Zugriff auf das Mikrofon, damit andere dich während des Anrufs hören können. Du kannst das Mikrofon jederzeit ausschalten."
+      ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } benötigt WebRTC, um zu funktionieren. Bitte aktualisiere deinen Browser oder dein Gerät auf eine Version, die WebRTC unterstützt, versuche es mit einem anderen Browser oder deaktiviere alle Erweiterungen, die es möglicherweise blockieren."
       ],
@@ -2235,9 +2244,6 @@
       "This will sign you out of all accounts currently logged in.": [
         "Dadurch wirst du auf allen derzeit angemeldeten Geräten abgemeldet."
       ],
-      "To be seen in the call, allow access to your camera.": [
-        "Erlaube den Zugriff auf deine Kamera um im Meeting gesehen zu werden."
-      ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Um einen Raum zu erstellen, benötigst du **ein kostenloses ${ BRAND_NAME }-Konto**, damit wir den Raum speichern können. Das dauert nur wenige Sekunden."
       ],
@@ -2246,12 +2252,6 @@
       ],
       "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
         "Um einen Termin zu planen, benötigst du **ein kostenloses ${ BRAND_NAME }-Konto**, damit wir den Termin speichern können. Das dauert nur wenige Sekunden."
-      ],
-      "To speak and be seen in the call, allow access to your camera and microphone.": [
-        "Erlaube den Zugriff auf deine Kamera und dein Mikrofon um im Meeting sprechen zu können und gesehen zu werden."
-      ],
-      "To speak in the call, allow access to your microphone.": [
-        "Erlaube den Zugriff auf dein Mikrofon um im Meeting sprechen zu können."
       ],
       "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
         "Um deinen persönlichen Besprechungsraum zu nutzen, benötigst du **ein kostenloses ${ BRAND_NAME }-Konto**. Das dauert nur wenige Sekunden."
@@ -2852,6 +2852,15 @@
       "Activity events": [
         "Aktivitäten"
       ],
+      "Allow camera ": [
+        "Kamera zulassen "
+      ],
+      "Allow camera and microphone": [
+        "Kamera und Mikrofon zulassen"
+      ],
+      "Allow microphone": [
+        "Mikrofon zulassen"
+      ],
       "Are you sure?": [
         "Bist du sicher?"
       ],
@@ -2869,12 +2878,6 @@
       ],
       "Available Speakers": [
         "Verfügbare Lautsprecher"
-      ],
-      "Camera access needed": [
-        "Kamerazugriff erforderlich"
-      ],
-      "Camera and microphone access needed": [
-        "Kamera- und Mikrofonzugriff benötigt"
       ],
       "Camera and microphone are blocked": [
         "Kamera und Mikrofon sind gesperrt"
@@ -2960,9 +2963,6 @@
       ],
       "Messaging Layer Security": [
         "Messaging Layer Security"
-      ],
-      "Microphone access needed": [
-        "Mikrofonzugriff erforderlich"
       ],
       "Microphone is blocked": [
         "Mikrofon ist gesperrt"
