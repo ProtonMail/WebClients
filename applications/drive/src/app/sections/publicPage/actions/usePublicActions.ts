@@ -2,10 +2,10 @@ import { c, msgid } from 'ttag';
 
 import { useConfirmActionModal, useNotifications } from '@proton/components';
 import { MemberRole, NodeType } from '@proton/drive';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { useCreateFolderModal } from '@proton/drive/modals/createFolderModal';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { type OpenInDocsType, isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';

@@ -5,9 +5,9 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components';
 import { NodeType, getDrivePerNodeType } from '@proton/drive';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 
 import { useSharedWithMeStore } from '../useSharedWithMe.store';
 

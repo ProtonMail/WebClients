@@ -1,6 +1,6 @@
 import { NodeType, type ProtonDrivePhotosClient, getDriveForPhotos } from '@proton/drive';
-import type { BusDriverClient, BusDriverEvent } from '@proton/drive/internal/BusDriver';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import type { BusDriverClient, BusDriverEvent } from '@proton/drive/modules/busDriver';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 
 import { subscribeToPhotosEvents } from './subscribeToPhotosEvents';
 import { useAlbumsStore } from './useAlbums.store';

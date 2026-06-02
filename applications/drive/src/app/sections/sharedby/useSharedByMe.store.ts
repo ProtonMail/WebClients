@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
 import type { NodeType } from '@proton/drive';
-import { getBusDriver } from '@proton/drive/internal/BusDriver';
+import { getBusDriver } from '@proton/drive/modules/busDriver';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import type { SortConfig } from '../../modules/sorting';

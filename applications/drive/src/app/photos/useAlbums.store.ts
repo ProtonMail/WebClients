@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
 import type { Member, MemberRole } from '@proton/drive';
-import { getBusDriver } from '@proton/drive/internal/BusDriver';
+import { getBusDriver } from '@proton/drive/modules/busDriver';
 
 export interface AlbumItem {
     nodeUid: string;
