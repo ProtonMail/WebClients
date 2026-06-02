@@ -15,9 +15,9 @@
         "lint": "eslint --quiet",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server",
-        "test": "jest",
-        "test:ci": "jest --runInBand",
-        "test:watch": "jest --watch"
+        "test": "vitest run",
+        "test:ci": "vitest run",
+        "test:watch": "vitest"
     },
     "dependencies": {
         "@proton/account": "workspace:^",
@@ -50,15 +50,16 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/i18n": "workspace:^",
-        "@proton/jest-env": "workspace:^",
         "@proton/testing": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
         "@testing-library/user-event": "^14.6.1",
+        "@vitejs/plugin-react": "^6.0.2",
+        "@vitest/coverage-v8": "^4.1.6",
         "eslint": "^9.39.4",
-        "jest": "^30.4.2",
-        "jest-junit": "^16.0.0",
+        "jsdom": "^26.1.0",
         "prettier": "^3.8.3",
-        "typescript": "^6.0.2"
+        "typescript": "^6.0.2",
+        "vitest": "^4.1.6"
     }
 }
