@@ -65,8 +65,8 @@ jest.mock('@proton/drive', () => ({
     })),
 }));
 
-jest.mock('@proton/drive/internal/BusDriver', () => ({
-    ...jest.requireActual('@proton/drive/internal/BusDriver'),
+jest.mock('@proton/drive/modules/busDriver', () => ({
+    ...jest.requireActual('@proton/drive/modules/busDriver'),
     getBusDriver: jest.fn(() => ({ emit: jest.fn().mockResolvedValue(undefined) })),
 }));
 
