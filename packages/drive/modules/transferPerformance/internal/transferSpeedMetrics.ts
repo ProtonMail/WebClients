@@ -10,7 +10,7 @@
 const ONE_MINUTE_MS = 60_000;
 const BYTES_PER_KIB = 1024;
 
-export type TransferSpeedMetricsReporter = (values: {
+type TransferSpeedMetricsReporter = (values: {
     kibibytesPerSecond: number;
     activeSeconds: number;
     kibibytesTransferred: number;

@@ -1,6 +1,6 @@
 import metrics from '@proton/metrics';
 
-import { TransferSpeedMetrics } from '../../../internal/performance/transferSpeedMetrics';
+import { TransferSpeedMetrics } from '../../transferPerformance';
 import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import type { CapacityManager } from '../scheduling/CapacityManager';
 import { useUploadControllerStore } from '../store/uploadController.store';

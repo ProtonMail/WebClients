@@ -1,4 +1,4 @@
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 
 import { useDevicesStore } from './useDevices.store';
 

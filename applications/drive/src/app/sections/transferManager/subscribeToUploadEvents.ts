@@ -1,5 +1,5 @@
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { getNodeEffectiveRole } from '@proton/drive/modules/nodes';
 import { uploadManager } from '@proton/drive/modules/upload';
 
