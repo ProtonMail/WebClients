@@ -9,9 +9,9 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { FileInput, InputFieldTwo, Tabs, Toggle } from '@proton/components';
 import type { MaybeNode } from '@proton/drive';
 import type { ExpectedTreeNode } from '@proton/drive/diagnostic';
+import ModalContentLoader from '@proton/drive/modals/modalUtils/ModalContentLoader';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 
-import ModalContentLoader from '../../legacy/components/modals/ModalContentLoader';
 import { withHoc } from '../modalUtils/withHoc';
 import type { Results } from './useDiagnosticsState';
 import { State, useDiagnosticsState } from './useDiagnosticsState';

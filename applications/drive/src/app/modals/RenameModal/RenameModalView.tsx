@@ -16,11 +16,10 @@ import {
     Row,
 } from '@proton/components';
 import { NodeType } from '@proton/drive/index';
+import ModalContentLoader from '@proton/drive/modals/modalUtils/ModalContentLoader';
 import { validateNodeName } from '@proton/drive/modules/validation';
 import useLoading from '@proton/hooks/useLoading';
 import noop from '@proton/utils/noop';
-
-import ModalContentLoader from '../../legacy/components/modals/ModalContentLoader';
 
 // Props need to be exported with a proper unique name, we can't call them "Props" anymore
 export type RenameModalViewProps =

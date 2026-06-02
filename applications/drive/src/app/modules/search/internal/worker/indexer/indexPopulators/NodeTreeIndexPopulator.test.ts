@@ -1,6 +1,7 @@
 import type { MaybeNode, NodeEntity } from '@protontech/drive-sdk';
 
-import { createMockNodeEntity } from '../../../../../../utils/test/nodeEntity';
+import { createMockNodeEntity } from '@proton/drive/modules/testing';
+
 import type { TreeEventScopeId } from '../../../shared/types';
 import { FakeMainThreadBridge } from '../../../testing/FakeMainThreadBridge';
 import { makeTaskContext } from '../../../testing/makeTaskContext';

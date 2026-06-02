@@ -17,10 +17,10 @@ import {
     useFormErrors,
 } from '@proton/components';
 import type { NodeType } from '@proton/drive';
+import ModalContentLoader from '@proton/drive/modals/modalUtils/ModalContentLoader';
 import { useLoading } from '@proton/hooks';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
-import ModalContentLoader from '../../legacy/components/modals/ModalContentLoader';
 import { FileCard } from './FileCard';
 import { AbuseCategoryType, type AbuseReportPrefill } from './types';
 import { ABUSE_CATEGORIES, CATEGORIES_WITH_EMAIL_VERIFICATION } from './useReportAbuseModalState';

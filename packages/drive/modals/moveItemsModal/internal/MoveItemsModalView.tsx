@@ -13,14 +13,13 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
 } from '@proton/components';
-import type { DirectoryTreeItem } from '@proton/drive/components/DirectoryTree/DirectoryTree';
-import { DirectoryTreeRoot } from '@proton/drive/components/DirectoryTree/DirectoryTree';
-import { NodeType, getDrive } from '@proton/drive/index';
 import { useLoading } from '@proton/hooks';
 
-import ModalContentLoader from '../../legacy/components/modals/ModalContentLoader';
-import { selectMessageForItemList } from '../../legacy/components/sections/helpers';
-import { getMovedFiles } from '../../utils/moveTexts';
+import type { DirectoryTreeItem } from '../../../components/DirectoryTree/DirectoryTree';
+import { DirectoryTreeRoot } from '../../../components/DirectoryTree/DirectoryTree';
+import { NodeType, getDrive } from '../../../index';
+import ModalContentLoader from '../../modalUtils/ModalContentLoader';
+import { getMovedFiles, selectMessageForItemList } from './helpers';
 import { useMoveEligibility } from './useMoveEligibility';
 import type { NodeTarget } from './useMoveItemsModalState';
 

@@ -6,8 +6,7 @@ import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-
-import ModalContentLoader from '../../legacy/components/modals/ModalContentLoader';
+import ModalContentLoader from '@proton/drive/modals/modalUtils/ModalContentLoader';
 
 export type BaseDetailsModalProps<T> = {
     isLoading: boolean;

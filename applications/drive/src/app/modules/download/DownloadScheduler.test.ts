@@ -1,6 +1,6 @@
+import { createMockNodeEntity } from '@proton/drive/modules/testing';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 
-import { createMockNodeEntity } from '../../utils/test/nodeEntity';
 import { DownloadScheduler } from './DownloadScheduler';
 import type { DownloadQueueTask } from './downloadTypes';
 import { flushAsync } from './testUtils';

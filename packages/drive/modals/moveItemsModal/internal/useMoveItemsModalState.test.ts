@@ -1,11 +1,10 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
-import { generateNodeUid } from '@proton/drive';
-import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
-import { directoryTreeFactory, makeTreeItemId } from '@proton/drive/modules/directoryTree';
-
-import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
-import { createMockNodeEntity } from '../../utils/test/nodeEntity';
+import { generateNodeUid } from '../../../index';
+import { sendErrorReport } from '../../../legacy/errorHandling';
+import { directoryTreeFactory, makeTreeItemId } from '../../../modules/directoryTree';
+import { getNodeAncestry } from '../../../modules/nodes';
+import { createMockNodeEntity } from '../../../modules/testing';
 import { useMoveItemsModalState } from './useMoveItemsModalState';
 
 const mockInitializeTree = jest.fn();
@@ -19,8 +18,8 @@ const mockIterateNodes = jest.fn();
 const mockOnClose = jest.fn();
 const mockOnExit = jest.fn();
 
-jest.mock('@proton/drive/modules/directoryTree', () => ({
-    ...jest.requireActual('@proton/drive/modules/directoryTree'),
+jest.mock('../../../modules/directoryTree', () => ({
+    ...jest.requireActual('../../../modules/directoryTree'),
     directoryTreeFactory: jest.fn(() =>
         jest.fn(() => ({
             initializeTree: mockInitializeTree,
@@ -32,11 +31,12 @@ jest.mock('@proton/drive/modules/directoryTree', () => ({
     ),
 }));
 
-jest.mock('../../utils/sdk/getNodeAncestry', () => ({
+jest.mock('../../../modules/nodes', () => ({
+    ...jest.requireActual('../../../modules/nodes'),
     getNodeAncestry: jest.fn(),
 }));
 
-jest.mock('@proton/drive/legacy/errorHandling', () => ({
+jest.mock('../../../legacy/errorHandling', () => ({
     sendErrorReport: jest.fn(),
     handleSdkError: jest.fn(),
 }));
@@ -45,21 +45,21 @@ jest.mock('@proton/components', () => ({
     useNotifications: jest.fn(() => ({ createNotification: mockCreateNotification })),
 }));
 
-jest.mock('@proton/drive/modules/moveNodes', () => ({
+jest.mock('../../../modules/moveNodes', () => ({
     useMoveNodes: jest.fn(() => ({ moveNodes: mockMoveNodes, isLoading: false })),
 }));
 
-jest.mock('@proton/drive/modals/createFolderModal', () => ({
+jest.mock('../../createFolderModal', () => ({
     useCreateFolderModal: jest.fn(() => ({
         createFolderModal: null,
         showCreateFolderModal: mockShowCreateFolderModal,
     })),
 }));
 
-jest.mock('@proton/drive', () => {
+jest.mock('../../../index', () => {
     let driveInstance: { iterateNodes: jest.Mock };
     return {
-        ...jest.requireActual('@proton/drive'),
+        ...jest.requireActual('../../../index'),
         getDrive: jest.fn(() => {
             if (!driveInstance) {
                 driveInstance = { iterateNodes: mockIterateNodes };
