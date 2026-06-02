@@ -18,9 +18,9 @@ const badJson = async () => {
     throw new SyntaxError('Unexpected token');
 };
 
-const nativeResponse = (body: unknown, finalUrl = WELL_KNOWN) =>
+const nativeResponse = (body: unknown, finalUrl = WELL_KNOWN, status = 200) =>
     JSON.stringify({
-        status: 200,
+        status,
         finalUrl,
         body: JSON.stringify(body),
     });
@@ -87,6 +87,11 @@ describe('webauthnFetcher', () => {
 
         test('returns empty origins when the native host reports an error', async () => {
             sendSafariMessage.mockResolvedValue(JSON.stringify({ error: 'bad request' }));
+            await expect(webauthnFetcher(WELL_KNOWN)).resolves.toEqual({ origins: [] });
+        });
+
+        test('returns empty origins on a non-2xx native responses', async () => {
+            sendSafariMessage.mockResolvedValue(nativeResponse({ origins: ORIGINS }, WELL_KNOWN, 404));
             await expect(webauthnFetcher(WELL_KNOWN)).resolves.toEqual({ origins: [] });
         });
 

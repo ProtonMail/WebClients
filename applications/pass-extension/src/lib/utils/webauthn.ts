@@ -4,7 +4,7 @@ import type { MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
 type RelatedOrigins = { origins: string[]; finalUrl?: string };
-type RelatedOriginsNativeResponse = { body: string; finalUrl: string } | { error: string };
+type RelatedOriginsNativeResponse = { body: string; status: number; finalUrl: string } | { error: string };
 
 const browserWebauthnFetcher = async (url: string): Promise<MaybeNull<RelatedOrigins>> => {
     const res = await fetch(url, { credentials: 'omit', referrerPolicy: 'no-referrer' });
@@ -24,7 +24,7 @@ const nativeWebauthnFetcher = async (url: string): Promise<MaybeNull<RelatedOrig
     if (!raw) return null;
 
     const res = JSON.parse(raw) as RelatedOriginsNativeResponse;
-    if ('error' in res) return null;
+    if ('error' in res || res.status < 200 || res.status >= 300) return null;
 
     const json = JSON.parse(res.body);
     if (!Array.isArray(json.origins)) return null;
