@@ -43,7 +43,6 @@ import { getWalletAppFeature } from '@proton/components/containers/payments/feat
 import type { IconSize } from '@proton/icons/types';
 import { type FreePlanDefault, PLANS, type Plan } from '@proton/payments';
 import { APPS, type APP_NAMES, DUO_MAX_USERS, FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
-import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 
 import bundleVpnPass from './bundle-vpn-pass.svg';
@@ -63,13 +62,11 @@ export type SummaryPlan =
 export const getSummaryPlan = ({
     app,
     plan,
-    vpnServersCountData,
     freePlan,
     existingUser,
 }: {
     app: APP_NAMES;
     plan: Plan | undefined;
-    vpnServersCountData: VPNServersCountData;
     freePlan: FreePlanDefault;
     existingUser: boolean;
 }): SummaryPlan => {
@@ -78,7 +75,7 @@ export const getSummaryPlan = ({
     const isMeetApp = app === APPS.PROTONMEET;
 
     if (plan && plan.Name === PLANS.VPN2024) {
-        const shortPlan = getVPNPlan(plan, vpnServersCountData);
+        const shortPlan = getVPNPlan(plan);
         return {
             logo: <VpnLogo variant="glyph-only" size={iconSize} />,
             ...shortPlan,
@@ -140,7 +137,7 @@ export const getSummaryPlan = ({
     }
 
     if (plan?.Name === PLANS.BUNDLE) {
-        const shortPlan = getBundlePlan({ plan, vpnServersCountData, freePlan });
+        const shortPlan = getBundlePlan({ plan, freePlan });
         return {
             logo: (
                 <div>
@@ -154,7 +151,7 @@ export const getSummaryPlan = ({
                 getMailAppFeature(),
                 getCalendarAppFeature(),
                 getDriveAppFeature(),
-                getVPNAppFeature({ serversCount: vpnServersCountData }),
+                getVPNAppFeature(),
                 getPassAppFeature(),
                 getWalletAppFeature(),
             ],
@@ -198,7 +195,7 @@ export const getSummaryPlan = ({
     }
 
     if (plan?.Name === PLANS.FAMILY) {
-        const shortPlan = getFamilyPlan({ plan, serversCount: vpnServersCountData, freePlan });
+        const shortPlan = getFamilyPlan({ plan, freePlan });
         return {
             logo: (
                 <div>
@@ -215,7 +212,6 @@ export const getSummaryPlan = ({
                 getDriveAppFeature({ family: true }),
                 getVPNAppFeature({
                     family: true,
-                    serversCount: vpnServersCountData,
                 }),
                 getPassAppFeature(),
             ],
@@ -223,7 +219,7 @@ export const getSummaryPlan = ({
     }
 
     if (plan?.Name === PLANS.DUO) {
-        const shortPlan = getDuoPlan({ plan, serversCount: vpnServersCountData, freePlan });
+        const shortPlan = getDuoPlan({ plan, freePlan });
         return {
             logo: (
                 <div>
@@ -240,7 +236,6 @@ export const getSummaryPlan = ({
                 getDriveAppFeature({ duo: true }),
                 getVPNAppFeature({
                     duo: true,
-                    serversCount: vpnServersCountData,
                 }),
                 getPassAppFeature(),
             ],
@@ -248,7 +243,7 @@ export const getSummaryPlan = ({
     }
 
     if (plan?.Name === PLANS.VISIONARY) {
-        const shortPlan = getVisionaryPlan({ plan, freePlan, serversCount: vpnServersCountData });
+        const shortPlan = getVisionaryPlan({ plan, freePlan });
         return {
             logo: (
                 <div>
@@ -275,7 +270,7 @@ export const getSummaryPlan = ({
             ),
             plan,
             title: plan.Title,
-            features: [getPassAppFeature(), getVPNAppFeature({ serversCount: vpnServersCountData })],
+            features: [getPassAppFeature(), getVPNAppFeature({})],
         };
     }
 
@@ -347,7 +342,7 @@ export const getSummaryPlan = ({
     }
 
     if (plan?.Name === PLANS.VPN_PASS_BUNDLE_BUSINESS) {
-        const shortPlan = getVPNPassProPlan(plan, vpnServersCountData);
+        const shortPlan = getVPNPassProPlan(plan);
         return {
             ...shortPlan,
             logo: (

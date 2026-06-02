@@ -25,7 +25,6 @@ import {
 import { formatTax } from '@proton/payments/ui/headless-checkout/tax-helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -84,7 +83,6 @@ interface Props {
     model: SignupModelV2;
     options: OptimisticOptions;
     selectedPlan: Plan;
-    vpnServersCountData: VPNServersCountData;
     loadingPaymentDetails: boolean;
     showRenewalNotice: boolean;
     app: APP_NAMES;
@@ -95,7 +93,6 @@ const AccountStepPaymentSummary = ({
     model,
     selectedPlan,
     options,
-    vpnServersCountData,
     loadingPaymentDetails,
     showRenewalNotice,
     app,
@@ -104,7 +101,6 @@ const AccountStepPaymentSummary = ({
     const summaryPlan = getSummaryPlan({
         app,
         plan: selectedPlan,
-        vpnServersCountData,
         freePlan: model.freePlan,
         existingUser: !!model.session?.resumedSessionResult.UID,
     });
