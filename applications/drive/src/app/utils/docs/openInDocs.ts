@@ -1,4 +1,5 @@
 import { splitNodeUid } from '@proton/drive';
+import { featureFlagStore } from '@proton/drive/modules/flags';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { handleDocsCustomPassword } from '@proton/shared/lib/drive/sharing/publicDocsSharing';
@@ -6,7 +7,6 @@ import type { OpenInDocsType, ProtonDocumentType } from '@proton/shared/lib/help
 import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { getCurrentTab, getNewWindow } from '@proton/shared/lib/helpers/window';
 
-import { featureFlagStore } from '../../modules/featureFlag';
 import { extraThunkArguments } from '../../redux-store/thunk';
 import { tmpConvertNewDocTypeToOld } from './tmpConvertNewDocTypeToOld';
 

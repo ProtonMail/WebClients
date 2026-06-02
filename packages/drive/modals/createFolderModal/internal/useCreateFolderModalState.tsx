@@ -9,9 +9,9 @@ import { c } from 'ttag';
 import { type ModalStateProps, useFormErrors, useNotifications } from '@proton/components';
 
 import { getDrive } from '../../../index';
-import { BusDriverEventName, getBusDriver } from '../../../internal/BusDriver';
 import { handleSdkError } from '../../../legacy/errorHandling';
 import { getNodeEntity } from '../../../legacy/sdkUtils/getNodeEntity';
+import { BusDriverEventName, getBusDriver } from '../../../modules/busDriver';
 import { getEllipsedName } from '../../../modules/intl';
 import { validateNodeName } from '../../../modules/validation';
 

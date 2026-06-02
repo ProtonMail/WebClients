@@ -4,8 +4,8 @@ import type { EventSubscription } from '@protontech/drive-sdk/dist/internal/even
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
-import { DriveEventType, getDrive, getDriveForPhotos } from '../..';
-import { Logging } from '../../modules/logging';
+import { DriveEventType, getDrive, getDriveForPhotos } from '../../..';
+import { Logging } from '../../logging';
 import {
     type BusDriverClient,
     type BusDriverEvent,

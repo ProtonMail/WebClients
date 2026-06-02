@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 
 import { FilePreviewContent } from '@proton/components';
+import { useFlagsDriveSheet } from '@proton/drive/modules/flags';
 import clsx from '@proton/utils/clsx';
 
-import { useFlagsDriveSheet } from '../../modules/featureFlag';
 import type { ContentPreviewMethod } from './content';
 import type { Drive } from './interface';
 import { SignatureInformation } from './signatures';

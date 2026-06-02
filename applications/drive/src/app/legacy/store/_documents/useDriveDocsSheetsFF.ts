@@ -1,1 +1,1 @@
-export { useFlagsDriveSheet as useIsSheetsEnabled } from '../../../modules/featureFlag';
+export { useFlagsDriveSheet as useIsSheetsEnabled } from '@proton/drive/modules/flags';

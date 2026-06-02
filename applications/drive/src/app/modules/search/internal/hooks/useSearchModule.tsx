@@ -6,10 +6,10 @@ import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useApi, useConfig } from '@proton/components';
 import { useDrive } from '@proton/drive';
+import { useFlagsDriveFoundationSearch } from '@proton/drive/modules/flags';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
 import { queryLatestVolumeEvent } from '@proton/shared/lib/api/drive/volume';
 
-import { useFlagsDriveFoundationSearch } from '../../../../modules/featureFlag';
 import { SearchModule } from '../mainThread/SearchModule';
 import type { PermanentErrorKind } from '../shared/errors';
 import { sendErrorReportForSearch } from '../shared/errors';
