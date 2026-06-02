@@ -1605,7 +1605,7 @@
         " Le fichier ${ BRAND_NAME } est masqué (non pris en charge pour l'instant)"
       ],
       " ${ BRAND_NAME } files are hidden (not supported yet)": [
-        " Les fichiers ${ BRAND_NAME } sont masqués (pas encore pris en charge)"
+        " fichiers ${ BRAND_NAME } sont masqués (pas encore pris en charge)"
       ],
       " file is hidden (unsupported file type)": [
         " fichier est caché (pas encore supporté)"
@@ -2539,7 +2539,7 @@
         "Remarque de sécurité :"
       ],
       "Show project chats in history": [
-        "Afficher les discussions du projet dans l’historique"
+        "Afficher les discussions de projets dans l’historique"
       ],
       "Theme": [
         "Thème"
@@ -4900,6 +4900,9 @@
       ]
     },
     "Error": {
+      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
+        "${ DRIVE_APP_NAME } a été mis à jour. Nous vous invitons à actualiser la page."
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } est votre nom d'utilisateur. Pour créer ${ emailAddress }, dirigez-vous vers Paramètres > Identités et adresses > Domaine court (pm.me)."
       ],
