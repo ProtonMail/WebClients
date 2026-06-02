@@ -579,6 +579,7 @@ export type ConversationPub = {
 
 export type ConversationPriv = {
     title: string;
+    agentId?: string; // id of an active custom agent (see LumoUserSettings.customAgents)
 };
 
 export type LocalFlags = {
@@ -617,8 +618,8 @@ export function getConversationPub(c: ConversationPub): ConversationPub {
 }
 
 export function getConversationPriv(c: ConversationPriv): ConversationPriv {
-    const { title } = c;
-    return { title };
+    const { title, agentId } = c;
+    return { title, ...(agentId && { agentId }) };
 }
 
 export function splitConversation(c: Conversation): {
@@ -632,13 +633,14 @@ export function splitConversation(c: Conversation): {
 }
 
 export function cleanConversation(conversation: Conversation): Conversation {
-    const { id, spaceId, createdAt, updatedAt, title, starred, status, ghost } = conversation;
+    const { id, spaceId, createdAt, updatedAt, title, agentId, starred, status, ghost } = conversation;
     return {
         id,
         spaceId,
         createdAt,
         updatedAt,
         title,
+        ...(agentId && { agentId }),
         ...(starred && { starred: true }),
         status: status ?? ConversationStatus.COMPLETED,
         ...(ghost && { ghost: true }),

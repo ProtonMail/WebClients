@@ -19,6 +19,7 @@ interface UploadMenuDropdownProps extends Pick<MenuDropdownProps, 'isOpen' | 'an
     onBrowseDrive: () => void;
     onDrawSketch: () => void;
     fileUploadMode: FileUploadMode;
+    isAgent?: boolean;
 }
 
 export const UploadMenuDropdown = ({
@@ -29,11 +30,13 @@ export const UploadMenuDropdown = ({
     onBrowseDrive,
     onDrawSketch,
     fileUploadMode,
+    isAgent = false,
 }: UploadMenuDropdownProps) => {
     const { imageTools: ffImageToolsEnabled } = useLumoFlags();
 
     // Show "Add from Drive" browse option only for authenticated users without a linked folder and guest users (will trigger upsell)
-    const showBrowseDriveOption = fileUploadMode !== 'linked-drive';
+    // The agent surface keeps the composer minimal, so Drive browsing is hidden there.
+    const showBrowseDriveOption = fileUploadMode !== 'linked-drive' && !isAgent;
     // If drive fodler linked, uploads should go to drive, otherwise they will be handled locally
     const showUploadToDrive = fileUploadMode === 'linked-drive';
 
@@ -60,7 +63,7 @@ export const UploadMenuDropdown = ({
             getLabel: () => c('collider_2025: Action').t`Draw a sketch`,
             onClick: onDrawSketch,
             onClose: onClose,
-            canShow: ffImageToolsEnabled,
+            canShow: ffImageToolsEnabled && !isAgent,
         },
     ].filter((item) => item.canShow);
 
