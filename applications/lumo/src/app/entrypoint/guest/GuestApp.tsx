@@ -34,6 +34,7 @@ import locales from '../../locales';
 import { LumoThemeProvider } from '../../providers';
 import { OnboardingProvider } from '../../providers/OnboardingProvider';
 import { createLumoListenerMiddleware } from '../../redux/listeners';
+import { createInitialLumoUserSettings } from '../../redux/slices/lumoUserSettings';
 import type { LumoStore } from '../../redux/store';
 import { extendStore, setupStore } from '../../redux/store';
 import { setStoreRef } from '../../redux/storeRef';
@@ -89,7 +90,12 @@ const bootstrapApp = async () => {
     extendStore({ config, api, authentication, history, unleashClient });
 
     const listenerMiddleware = createLumoListenerMiddleware({ extra: extraThunkArguments });
-    const store = setupStore({ listenerMiddleware });
+    const store = setupStore({
+        listenerMiddleware,
+        preloadedState: {
+            lumoUserSettings: createInitialLumoUserSettings(),
+        },
+    });
     setStoreRef(store);
 
     // need to await unleashPromise so prevent UI flickering when unleash flags updated later
