@@ -74,7 +74,12 @@ const authenticate = (
     options: ReturnType<typeof createPublicKeyRequestOptions>
 ) => core.resolve_passkey_challenge(origin, blob, JSON.stringify(sanitizeBuffers(options)), true);
 
-const mockResponse = (url: string, json: unknown) => ({ url, json: async () => json }) as unknown as Response;
+const fetchResponse = (url: string, json: unknown, status = 200) =>
+    ({ ok: status === 200, status, url, json: async () => json }) as unknown as Response;
+
+const badJson = async () => {
+    throw new SyntaxError('Unexpected token');
+};
 
 describe('assertValidPasskeyRequest', () => {
     test('should throw error when domain is not defined', () => {
@@ -260,20 +265,26 @@ describe('PasskeyService [WASM]', () => {
         const WELL_KNOWN = `https://${RPID}/.well-known/webauthn`;
 
         test('allows registration when request origin is in `origins`', async () => {
-            fetchSpy.mockResolvedValueOnce(mockResponse(WELL_KNOWN, { origins: [ORIGIN] }));
+            fetchSpy.mockResolvedValueOnce(fetchResponse(WELL_KNOWN, { origins: [ORIGIN] }));
             await expect(registerTestPasskey(core, { rpId: RPID, origin: ORIGIN })).resolves.toBeDefined();
             expect(fetchSpy).toHaveBeenCalledWith(WELL_KNOWN, FETCH_OPTIONS);
         });
 
         test('rejects registration when origin is not in `origins`', async () => {
             const origins = ['https://elsewhere.proton.test'];
-            fetchSpy.mockResolvedValueOnce(mockResponse(WELL_KNOWN, { origins }));
+            fetchSpy.mockResolvedValueOnce(fetchResponse(WELL_KNOWN, { origins }));
             await expect(registerTestPasskey(core, { rpId: RPID, origin: ORIGIN })).rejects.toThrow();
             expect(fetchSpy).toHaveBeenCalledWith(WELL_KNOWN, FETCH_OPTIONS);
         });
 
         test('rejects registration when `.well-known` is unreachable', async () => {
             fetchSpy.mockRejectedValueOnce(new TypeError('Failed to fetch'));
+            await expect(registerTestPasskey(core, { rpId: RPID, origin: ORIGIN })).rejects.toThrow();
+            expect(fetchSpy).toHaveBeenCalledWith(WELL_KNOWN, FETCH_OPTIONS);
+        });
+
+        test('rejects registration on a non-2xx `.well-known` response', async () => {
+            fetchSpy.mockResolvedValueOnce(fetchResponse(WELL_KNOWN, {}, 400));
             await expect(registerTestPasskey(core, { rpId: RPID, origin: ORIGIN })).rejects.toThrow();
             expect(fetchSpy).toHaveBeenCalledWith(WELL_KNOWN, FETCH_OPTIONS);
         });
@@ -312,43 +323,38 @@ describe('PasskeyService [WASM]', () => {
         });
 
         test('allows authentication when request origin is in `origins`', async () => {
-            fetchSpy.mockResolvedValueOnce(mockResponse(WELL_KNOWN, { origins: ALLOWED_ORIGINS }));
+            fetchSpy.mockResolvedValueOnce(fetchResponse(WELL_KNOWN, { origins: ALLOWED_ORIGINS }));
             await expect(auth()).resolves.toBeDefined();
             expect(fetchSpy).toHaveBeenCalledWith(WELL_KNOWN, FETCH_OPTIONS);
         });
 
         test('rejects when `origins` does not include request origin', async () => {
             const origins = ['https://elsewhere.proton.test'];
-            fetchSpy.mockResolvedValueOnce(mockResponse(WELL_KNOWN, { origins }));
+            fetchSpy.mockResolvedValueOnce(fetchResponse(WELL_KNOWN, { origins }));
             await expect(auth()).rejects.toThrow();
             expect(fetchSpy).toHaveBeenCalledWith(WELL_KNOWN, FETCH_OPTIONS);
         });
 
         test('rejects when `origins` is empty', async () => {
-            fetchSpy.mockResolvedValueOnce(mockResponse(WELL_KNOWN, { origins: [] }));
+            fetchSpy.mockResolvedValueOnce(fetchResponse(WELL_KNOWN, { origins: [] }));
             await expect(auth()).rejects.toThrow();
             expect(fetchSpy).toHaveBeenCalledWith(WELL_KNOWN, FETCH_OPTIONS);
         });
 
         test('rejects when `origins` field is missing', async () => {
-            fetchSpy.mockResolvedValueOnce(mockResponse(WELL_KNOWN, {}));
+            fetchSpy.mockResolvedValueOnce(fetchResponse(WELL_KNOWN, {}));
             await expect(auth()).rejects.toThrow();
             expect(fetchSpy).toHaveBeenCalledWith(WELL_KNOWN, FETCH_OPTIONS);
         });
 
         test('rejects when `origins` is not an array', async () => {
-            fetchSpy.mockResolvedValueOnce(mockResponse(WELL_KNOWN, { origins: 'nope' }));
+            fetchSpy.mockResolvedValueOnce(fetchResponse(WELL_KNOWN, { origins: 'nope' }));
             await expect(auth()).rejects.toThrow();
             expect(fetchSpy).toHaveBeenCalledWith(WELL_KNOWN, FETCH_OPTIONS);
         });
 
         test('rejects on malformed JSON response', async () => {
-            fetchSpy.mockResolvedValueOnce({
-                url: WELL_KNOWN,
-                json: async () => {
-                    throw new SyntaxError('Unexpected token');
-                },
-            } as unknown as Response);
+            fetchSpy.mockResolvedValueOnce({ ok: true, url: WELL_KNOWN, json: badJson } as unknown as Response);
             await expect(auth()).rejects.toThrow();
             expect(fetchSpy).toHaveBeenCalledWith(WELL_KNOWN, FETCH_OPTIONS);
         });
@@ -380,7 +386,7 @@ describe('PasskeyService [WASM]', () => {
         let response: WasmGeneratePasskeyResponse;
 
         beforeAll(async () => {
-            fetchSpy.mockResolvedValue(mockResponse(WELL_KNOWN, { origins: LISTED_ORIGINS }));
+            fetchSpy.mockResolvedValue(fetchResponse(WELL_KNOWN, { origins: LISTED_ORIGINS }));
             const registered = await registerTestPasskey(core, { rpId: RPID, origin: REGISTER_ORIGIN });
             blob = registered.blob;
             response = registered.response;
@@ -389,7 +395,7 @@ describe('PasskeyService [WASM]', () => {
         test.each(LISTED_ORIGINS.filter((o) => o !== RP_ORIGIN).map((o) => [o]))(
             'authenticates from %s (listed in `origins`)',
             async (origin) => {
-                fetchSpy.mockResolvedValue(mockResponse(WELL_KNOWN, { origins: LISTED_ORIGINS }));
+                fetchSpy.mockResolvedValue(fetchResponse(WELL_KNOWN, { origins: LISTED_ORIGINS }));
                 const options = createPublicKeyRequestOptions(RPID, response.credential_id);
                 await expect(authenticate(core, origin, blob, options)).resolves.toBeDefined();
                 expect(fetchSpy).toHaveBeenCalledWith(WELL_KNOWN, FETCH_OPTIONS);
@@ -419,7 +425,7 @@ describe('PasskeyService [WASM]', () => {
         const ORIGINS_LIST = Object.values(TRUSTED);
 
         beforeEach(() => {
-            fetchSpy.mockResolvedValue(mockResponse(WELL_KNOWN, { origins: ORIGINS_LIST }));
+            fetchSpy.mockResolvedValue(fetchResponse(WELL_KNOWN, { origins: ORIGINS_LIST }));
         });
 
         test.each([

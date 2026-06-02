@@ -27,5 +27,6 @@ public enum SafariExtensionEvent: Sendable, Equatable {
     case environment(PassEnvironment)
     case readFromClipboard
     case writeToClipboard(content: String)
+    case fetchRelatedOrigins(url: String)
     case unknown
 }

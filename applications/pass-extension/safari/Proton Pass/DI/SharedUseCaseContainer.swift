@@ -64,6 +64,10 @@ extension SharedUseCaseContainer {
         self { WriteToClipboard() }
     }
 
+    var fetchRelatedOrigins: Factory<any FetchRelatedOriginsUseCase> {
+        self { FetchRelatedOrigins() }
+    }
+
     var resetDataIfFirstRun: Factory<any ResetDataIfFirstRunUseCase> {
         self { ResetDataIfFirstRun(setEnvironment: self.setEnvironment(),
                                    credentialProvider: self.credentialProvider()) }

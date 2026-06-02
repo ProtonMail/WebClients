@@ -30,11 +30,12 @@ final class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
     private let updateCredentials = resolve(\SharedUseCaseContainer.updateCredentials)
     private let readFromClipboard = resolve(\SharedUseCaseContainer.readFromClipboard)
     private let writeToClipboard = resolve(\SharedUseCaseContainer.writeToClipboard)
+    private let fetchRelatedOrigins = resolve(\SharedUseCaseContainer.fetchRelatedOrigins)
     private let createLogger = resolve(\SharedUseCaseContainer.createLogger)
 
     /// Entry point for every `browser.runtime.sendNativeMessage` from the safari extension.
     /// we MUST call `context.completeRequest` exactly once per invocation, otherwise the JS
-    // side promise will hang forever (Safari never times out the bridge).
+    /// side promise will hang forever (Safari never times out the bridge).
     func beginRequest(with context: NSExtensionContext) {
         let request = context.inputItems.first as? NSExtensionItem
 
@@ -73,6 +74,8 @@ private extension SafariWebExtensionHandler {
                 return try await readFromClipboard()
             case let .writeToClipboard(content):
                 try await writeToClipboard(content)
+            case let .fetchRelatedOrigins(url):
+                return try await fetchRelatedOrigins(url)
             case .unknown:
                 logger.error("Unknown message")
             }
