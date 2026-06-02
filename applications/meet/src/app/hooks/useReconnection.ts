@@ -1,6 +1,6 @@
 import { type Dispatch, type MutableRefObject, type SetStateAction, useCallback, useEffect, useRef } from 'react';
 
-import type { App, RejoinReasonInfo } from '@proton-meet/proton-meet-core';
+import type { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 import type { Room } from 'livekit-client';
 
 import { encryptDisplayNameWithKey } from '@proton/meet/utils/cryptoUtils';
@@ -8,6 +8,7 @@ import { sanitizeMessage } from '@proton/sanitize/purify';
 
 import type { ProtonMeetKeyProvider } from '../utils/ProtonMeetKeyProvider';
 import type { KeyRotationScheduler } from '../utils/SeamlessKeyRotationScheduler';
+import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 import type { UseLiveKitConnectionResult } from './useLiveKitConnection';
 import type { UseMlsSessionResult } from './useMlsSession';
 
@@ -18,7 +19,7 @@ interface GetAccessDetailsParams {
 }
 
 interface UseReconnectionParams {
-    wasmApp: App | null;
+    wasmApp: MeetCoreClient | null;
     room: Room;
     meetingLinkNameRef: MutableRefObject<string>;
     meetingPassword: string;

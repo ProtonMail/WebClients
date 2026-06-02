@@ -26,6 +26,7 @@ import {
 } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
 import type { ProtonConfig, Unwrap } from '@proton/shared/lib/interfaces';
@@ -38,15 +39,19 @@ import locales from './locales';
 import { meetTelemetryConfig } from './telemetryConfig';
 import { clearStoredDevices } from './utils/deviceStorage';
 import { clearDisabledRotatePersonalMeeting } from './utils/disableRotatePersonalMeeting';
+import { DirectMeetCoreClient } from './wasm/DirectMeetCoreClient';
+import type { MeetCoreClient } from './wasm/MeetCoreClient';
+import { MeetCoreWorkerClient } from './wasm/MeetCoreWorkerClient';
+import type { MeetCoreInitParams } from './wasm/meetCoreWorkerProtocol';
 
-const initializeWasmApp = async (
+const MEET_CORE_WORKER_FLAG = 'MeetCoreWorker';
+
+const getMeetCoreInitParams = (
     authentication: MeetExtraThunkArguments['authentication'],
     appVersion: string
-): Promise<App> => {
-    await init();
-
+): MeetCoreInitParams => {
     const persistedSession = getPersistedSession(authentication.localID);
-    const userID = persistedSession?.UserID ?? '';
+    const userId = persistedSession?.UserID ?? '';
     const uid = authentication.UID ?? '';
 
     const env = `${window.location.origin}/api`;
@@ -54,9 +59,59 @@ const initializeWasmApp = async (
     const dbPath = '';
     const host = `${window.location.hostname}/meet/api/`;
 
-    const appResult = await new App(env, appVersion, userAgent, dbPath, host, host, userID ?? '', uid ?? '');
+    return { env, appVersion, userAgent, dbPath, httpHost: host, wsHost: host, userId, uid };
+};
 
-    return appResult;
+const createDirectMeetCoreClient = async (params: MeetCoreInitParams): Promise<DirectMeetCoreClient> => {
+    await init();
+    const app = await new App(
+        params.env,
+        params.appVersion,
+        params.userAgent,
+        params.dbPath,
+        params.httpHost,
+        params.wsHost,
+        params.userId,
+        params.uid
+    );
+    return new DirectMeetCoreClient(app);
+};
+
+const createWorkerMeetCoreClient = async (params: MeetCoreInitParams): Promise<MeetCoreWorkerClient> => {
+    const workerClient = new MeetCoreWorkerClient();
+    try {
+        await workerClient.init(params);
+        return workerClient;
+    } catch (error) {
+        workerClient.dispose();
+        throw error;
+    }
+};
+
+const initializeMeetCoreClient = async ({
+    authentication,
+    appVersion,
+    meetCoreWorkerEnabled,
+}: {
+    authentication: MeetExtraThunkArguments['authentication'];
+    appVersion: string;
+    meetCoreWorkerEnabled: boolean;
+}): Promise<MeetCoreClient> => {
+    const params = getMeetCoreInitParams(authentication, appVersion);
+
+    if (!meetCoreWorkerEnabled) {
+        return createDirectMeetCoreClient(params);
+    }
+
+    try {
+        return await createWorkerMeetCoreClient(params);
+    } catch (error) {
+        captureMessage('Meet core worker init failed, falling back to direct meet core client', {
+            level: 'error',
+            extra: { error },
+        });
+        return createDirectMeetCoreClient(params);
+    }
 };
 
 const getApis = (config: ProtonConfig) => {
@@ -184,12 +239,18 @@ const completeAppBootstrap = async ({
         dispatch(initEvent({ User: sessionResult.session.User }));
     }
 
-    const [userData, wasmApp] = await Promise.all([
+    const [userData] = await Promise.all([
         loadUserData(dispatch),
-        initializeWasmApp(authentication, appVersion),
         bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient }),
         bootstrap.unleashReady({ unleashClient }).catch(noop),
     ]);
+    const meetCoreWorkerEnabled = unleashClient.isEnabled(MEET_CORE_WORKER_FLAG);
+    const wasmApp = await initializeMeetCoreClient({
+        authentication,
+        appVersion,
+        meetCoreWorkerEnabled,
+    });
+    bootstrap.onAbort(signal, () => wasmApp.dispose());
 
     if (!!userData.userSettings.Telemetry) {
         telemetry.init({
@@ -305,7 +366,11 @@ const assertNoSessions = async (api: ApiWithListener) => {
     return new Promise(noop);
 };
 
-export const bootstrapGuestApp = async (config: ProtonConfig, notificationsManager: NotificationsManager) => {
+export const bootstrapGuestApp = async (
+    config: ProtonConfig,
+    notificationsManager: NotificationsManager,
+    signal?: AbortSignal
+) => {
     const api = createApi({ config });
 
     api.addEventListener((event) => {
@@ -333,15 +398,17 @@ export const bootstrapGuestApp = async (config: ProtonConfig, notificationsManag
         ...meetTelemetryConfig,
     });
 
+    await unleashClient.start();
+
+    const meetCoreWorkerEnabled = unleashClient.isEnabled(MEET_CORE_WORKER_FLAG);
     const [wasmApp] = await Promise.all([
-        initializeWasmApp(authentication, appVersion),
+        initializeMeetCoreClient({ authentication, appVersion, meetCoreWorkerEnabled }),
         bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient }),
         loadLocales({ locale: getBrowserLocale(), locales, userSettings: undefined }),
     ]);
+    bootstrap.onAbort(signal, () => wasmApp.dispose());
 
     const history = createBrowserHistory({ basename: '/guest' });
-
-    await unleashClient.start();
 
     await unauthenticatedApi.startUnAuthFlow();
 

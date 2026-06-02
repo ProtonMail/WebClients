@@ -1,7 +1,6 @@
 import { type Dispatch, type MutableRefObject, type SetStateAction, useRef } from 'react';
 
 import { JoinTypeInfo, MeetCoreErrorEnum, MlsSyncStateInfo, RejoinReasonInfo } from '@proton-meet/proton-meet-core';
-import type { App } from '@proton-meet/proton-meet-core';
 import { c } from 'ttag';
 
 import useAuthentication from '@proton/components/hooks/useAuthentication';
@@ -11,9 +10,10 @@ import { setMlsGroupState } from '@proton/meet/store/slices/meetingInfo';
 import type { MLSGroupState } from '@proton/meet/types/types';
 
 import { setupLiveKitAdminChangeEvent, setupWasmDependencies } from '../utils/wasmUtils';
+import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 
 interface UseMlsSessionParams {
-    wasmApp: App | null;
+    wasmApp: MeetCoreClient | null;
     isMeetNewJoinTypeEnabled: boolean;
     isMeetNewSwitchJoinTypeEnabled: boolean;
     isMeetSwitchJoinTypeEnabled: boolean;
@@ -98,7 +98,7 @@ export const useMlsSession = ({
                     isMeetSwitchJoinTypeEnabled
                 );
             } else {
-                const joinType = wasmApp.getJoinType(
+                const joinType = await wasmApp.getJoinType(
                     isMeetNewJoinTypeEnabled,
                     isMeetSwitchJoinTypeEnabled,
                     participantsCountValue ?? 0

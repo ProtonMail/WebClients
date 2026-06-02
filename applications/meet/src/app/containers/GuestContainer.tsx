@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Router } from 'react-router-dom';
 
-import type { App } from '@proton-meet/proton-meet-core';
-
 import { ApiContext, NotificationsChildren, useNotifications } from '@proton/components';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import LoaderPage from '@proton/components/containers/app/LoaderPage';
@@ -20,6 +18,7 @@ import { FlagProvider } from '@proton/unleash/proxy';
 import { bootstrapGuestApp } from '../bootstrap';
 import config from '../config';
 import { WasmContext } from '../contexts/WasmContext';
+import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 
 type ExtraThunkArguments = Omit<ProtonThunkArguments, 'config' | 'api' | 'eventManager'> & {
     unauthenticatedApi: UnauthenticatedApi;
@@ -38,34 +37,45 @@ export const GuestContainer = ({ children }: GuestContainerProps) => {
     const storeRef = useRef<MeetStore>();
 
     const extraThunkArgumentsRef = useRef<ExtraThunkArguments>();
-    const wasmAppRef = useRef<App | null>(null);
-
-    const initialiseServicesAndStore = async () => {
-        try {
-            const { store, authentication, unleashClient, unauthenticatedApi, history, wasmApp } =
-                await bootstrapGuestApp(config, notificationsManager);
-
-            storeRef.current = store;
-
-            extraThunkArgumentsRef.current = {
-                authentication,
-                unleashClient,
-                unauthenticatedApi,
-                history,
-            };
-
-            wasmAppRef.current = wasmApp;
-
-            setInitialised(true);
-        } catch (error) {
-            captureMessage('Error initializing guest services and store', { level: 'error', extra: { error } });
-            setError(getNonEmptyErrorMessage(error));
-        }
-    };
+    const wasmAppRef = useRef<MeetCoreClient | null>(null);
 
     useEffect(() => {
-        void initialiseServicesAndStore();
-    }, []);
+        const initialiseServicesAndStore = async (signal: AbortSignal) => {
+            try {
+                const { store, authentication, unleashClient, unauthenticatedApi, history, wasmApp } =
+                    await bootstrapGuestApp(config, notificationsManager, signal);
+
+                if (signal.aborted) {
+                    return;
+                }
+
+                storeRef.current = store;
+
+                extraThunkArgumentsRef.current = {
+                    authentication,
+                    unleashClient,
+                    unauthenticatedApi,
+                    history,
+                };
+
+                wasmAppRef.current = wasmApp;
+
+                setInitialised(true);
+            } catch (error) {
+                if (signal.aborted) {
+                    return;
+                }
+                captureMessage('Error initializing guest services and store', { level: 'error', extra: { error } });
+                setError(getNonEmptyErrorMessage(error));
+            }
+        };
+
+        const abortController = new AbortController();
+
+        void initialiseServicesAndStore(abortController.signal);
+
+        return () => abortController.abort();
+    }, [notificationsManager]);
 
     if (error) {
         return <StandardLoadErrorPage errorMessage={error} />;
