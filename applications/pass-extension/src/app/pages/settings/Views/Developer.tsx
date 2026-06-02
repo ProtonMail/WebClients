@@ -7,7 +7,9 @@ import { pageMessage, sendMessage } from 'proton-pass-extension/lib/message/send
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcBrandChrome } from '@proton/icons/icons/IcBrandChrome';
+import { IcDrive } from '@proton/icons/icons/IcDrive';
+import { IcFireSlash } from '@proton/icons/icons/IcFireSlash';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { CACHE_KEY } from '@proton/pass/lib/api/cache';
 
@@ -28,7 +30,7 @@ export const Developer: FC = () => (
                 }
             >
                 <div className="flex items-center flex items-center">
-                    <Icon name="brand-chrome" className="mr-2" />
+                    <IcBrandChrome className="mr-2" />
                     <span className="flex-1 text-left">Trigger update</span>
                     <span className="text-xs color-weak">Triggers a fake update (keep popup opened)</span>
                 </div>
@@ -47,7 +49,7 @@ export const Developer: FC = () => (
                 }
             >
                 <div className="flex items-center flex items-center">
-                    <Icon name="drive" className="mr-2" />
+                    <IcDrive className="mr-2" />
                     <span className="flex-1 text-left">Trigger full disk</span>
                     <span className="text-xs color-weak">Triggers a fake disk full event (open popup after)</span>
                 </div>
@@ -55,7 +57,7 @@ export const Developer: FC = () => (
 
             <Button icon shape="ghost" className="w-full" onClick={() => caches.delete(CACHE_KEY)}>
                 <div className="flex items-center flex items-center">
-                    <Icon name="fire-slash" className="mr-2" />
+                    <IcFireSlash className="mr-2" />
                     <span className="flex-1 text-left">Clear network cache</span>
                     <span className="text-xs color-weak">Removes all API network cached entries</span>
                 </div>

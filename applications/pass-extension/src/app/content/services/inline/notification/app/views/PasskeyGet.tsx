@@ -14,8 +14,8 @@ import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/mes
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import type { SelectedPasskey } from '@proton/pass/lib/passkeys/types';
@@ -118,7 +118,7 @@ export const PasskeyGet: FC<Props> = (props) => {
                         locked ? (
                             <Card className="flex flex-auto justify-center text-sm" type="primary">
                                 <div className="flex flex-column justify-center items-center gap-2 mb-2">
-                                    <Icon name="lock-filled" size={6} />
+                                    <IcLockFilled size={6} />
                                     <span className="text-center block">
                                         {c('Info').t`Unlock ${PASS_APP_NAME} to access your passkeys`}
                                     </span>

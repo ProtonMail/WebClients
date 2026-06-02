@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
@@ -15,6 +14,9 @@ import TableHeaderCell from '@proton/components/components/table/TableHeaderCell
 import TableRow from '@proton/components/components/table/TableRow';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcPassTrash } from '@proton/icons/icons/IcPassTrash';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import type { CriteriaMasks } from '@proton/pass/lib/settings/pause-list';
 import {
@@ -126,7 +128,7 @@ export const PauseList: FC = () => {
                             ))}
 
                             <TableHeaderCell>
-                                <Icon name="pass-trash" size={3} className="mr-1 mb-0.5" />
+                                <IcPassTrash size={3} className="mr-1 mb-0.5" />
                             </TableHeaderCell>
                         </TableRow>
                     </TableHeader>
@@ -140,7 +142,7 @@ export const PauseList: FC = () => {
                                 <TableRow key={`${hostname}-${i}`}>
                                     <TableCell label={c('Label').t`Domains`}>
                                         <div className="flex items-center gap-1">
-                                            {isLocked && <Icon name="lock" size={3} className="color-weak shrink-0" />}
+                                            {isLocked && <IcLock size={3} className="color-weak shrink-0" />}
                                             <div className="text-ellipsis">{hostname}</div>
                                         </div>
                                     </TableCell>
@@ -186,7 +188,7 @@ export const PauseList: FC = () => {
                                                     icon
                                                     pill
                                                 >
-                                                    <Icon name="cross" size={3} />
+                                                    <IcCross size={3} />
                                                 </Button>
                                             </div>
                                         )}
