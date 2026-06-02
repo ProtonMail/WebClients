@@ -1,9 +1,9 @@
+import type { PublicKeyReference } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { act, renderHook } from '@testing-library/react-hooks';
 import { verifyAllWhenMocksCalled, when } from 'jest-when';
 
 import { useNotifications } from '@proton/components';
-import type { PublicKeyReference } from '@protontech/crypto';
-import { CryptoProxy } from '@protontech/crypto';
 import noop from '@proton/utils/noop';
 
 import { ShareInviteeValidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
@@ -55,7 +55,8 @@ jest.mocked(useGetPublicKeysForEmail).mockReturnValue({
     getPublicKeysForEmail: jest.fn(),
 });
 
-jest.mock('../../../../internal/flags/useFlagsDriveDirectSharing', () => ({
+jest.mock('../../../../modules/flags', () => ({
+    ...jest.requireActual('../../../../modules/flags'),
     useFlagsDriveDirectSharing: jest.fn().mockReturnValue({ isSharingExternalInviteDisabled: false }),
 }));
 

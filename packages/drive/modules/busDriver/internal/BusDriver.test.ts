@@ -34,7 +34,7 @@ jest.mock('./errorHandling', () => {
 const mockDispose = jest.fn();
 const mockSubscribeToTreeEvents = jest.fn();
 
-jest.mock('../..', () => ({
+jest.mock('../../..', () => ({
     getDrive: jest.fn(() => ({
         subscribeToTreeEvents: mockSubscribeToTreeEvents,
     })),

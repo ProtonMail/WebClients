@@ -3,7 +3,7 @@ import type { ScopeContext } from '@sentry/types';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { isProduction, traceError } from '@proton/shared/lib/helpers/sentry';
 
-import { Logging } from '../../modules/logging';
+import { Logging } from '../../logging';
 
 const hasSentryMessage = (error: unknown): error is Error & { sentryMessage: string } =>
     error instanceof Error && 'sentryMessage' in error && typeof error.sentryMessage === 'string';

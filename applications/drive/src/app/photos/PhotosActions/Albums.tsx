@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { type NodeEntity, PhotoTag, getDriveForPhotos } from '@proton/drive';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { getEllipsedName } from '@proton/drive/modules/intl';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
 

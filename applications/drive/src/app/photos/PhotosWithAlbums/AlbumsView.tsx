@@ -6,8 +6,8 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { Loader, useAppTitle, useModalStateObject, useNotifications } from '@proton/components';
 import { getDriveForPhotos } from '@proton/drive';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
 
 import useNavigate from '../../legacy/hooks/drive/useNavigate';

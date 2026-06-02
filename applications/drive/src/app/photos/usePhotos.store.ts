@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-import { getBusDriver } from '@proton/drive/internal/BusDriver';
+import { getBusDriver } from '@proton/drive/modules/busDriver';
 import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
 import { subscribeToPhotosEvents } from './subscribeToPhotosEvents';
