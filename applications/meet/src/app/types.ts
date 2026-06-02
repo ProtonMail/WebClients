@@ -27,6 +27,7 @@ export type SwitchActiveDevice = (params: {
     deviceId: string;
     isSystemDefaultDevice: boolean;
     preserveDefaultDevice?: boolean;
+    throwOnError?: boolean;
 }) => Promise<void>;
 
 export type { SliceDeviceState as DeviceState } from '@proton/meet/store/slices/deviceManagementSlice/types';
