@@ -6,11 +6,11 @@ import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
-import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import { useNewsletterSubscriptions } from 'proton-mail/store/newsletterSubscriptions/hook';
 
+import { useCategoriesView } from '../categoryView/useCategoriesView';
 import { NewsletterSubscription } from '../view/NewsletterSubscription/Spotlight/NewsletterSubscriptionSpotlight';
 import { useNewsletterSubscriptionSpotlight } from '../view/NewsletterSubscription/Spotlight/useNewsletterSubscriptionSpotlight';
 import SidebarItem from './SidebarItem';
@@ -22,11 +22,11 @@ interface SidebarItemProps {
 
 const NewsletterSubscriptionButton = ({ hideNotificationDot, collapsed }: SidebarItemProps) => {
     const spotlight = useNewsletterSubscriptionSpotlight();
-    const overridenViewName = useFlag('OverrideNewsletterViewName');
 
     const [newsletterSub] = useNewsletterSubscriptions();
+    const { hasAccessToCategoryView } = useCategoriesView();
 
-    const title = overridenViewName
+    const title = hasAccessToCategoryView
         ? c('Title').ngettext(msgid`Mailing list`, `Mailing lists`, newsletterSub.tabs.active.totalCount)
         : c('Title').t`Newsletters`;
 

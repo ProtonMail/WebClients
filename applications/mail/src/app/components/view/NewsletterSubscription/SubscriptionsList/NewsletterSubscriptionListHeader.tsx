@@ -9,9 +9,9 @@ import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { IconName } from '@proton/icons/types';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
 import { getUnreadCount } from 'proton-mail/components/sidebar/locationAsideHelpers';
 import { getUnreadNewslettersText } from 'proton-mail/helpers/text';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
@@ -171,14 +171,14 @@ export const NewsletterSubscriptionListHeader = ({ tabClickCallback }: Newslette
     const counts = useMailSelector(selectSubscriptionsCount);
     const dispatch = useMailDispatch();
 
-    const overridenViewName = useFlag('OverrideNewsletterViewName');
+    const { hasAccessToCategoryView } = useCategoriesView();
 
     const handleTabClick = (tab: SubscriptionTabs) => {
         dispatch(newsletterSubscriptionsActions.setSelectedTab(tab));
         tabClickCallback();
     };
 
-    const title = overridenViewName
+    const title = hasAccessToCategoryView
         ? c('Title').ngettext(msgid`Mailing list`, `Mailing lists`, counts.active)
         : c('Title').t`Newsletters`;
 
