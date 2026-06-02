@@ -4142,14 +4142,8 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Auxilie sua equipe a armazenar de forma segura as senhas relacionadas a informações sensíveis da empresa e dos clientes."
       ],
-      "If you find an email in the wrong category, simply move it to the correct one.": [
-        "Se você encontrar um e-mail na categoria errada, basta movê-lo para a categoria correta."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contatos que você está importando contém alguns grupos. Verifique como esses grupos devem ser importados."
-      ],
-      "It’s still learning and we need your help to improve categorization.": [
-        "Ainda está aprendendo e precisamos da sua ajuda para melhorar a categorização."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Permite que você adicione instantaneamente links de reunião aos convites dos seus eventos."
@@ -4225,6 +4219,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Ative a proteção do rastreador de e-mail para evitar que anunciantes e outras pessoas rastreiem sua localização e atividade online."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Desbloqueia 15 GB de armazenamento por apenas ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Faça upgrade para ${ planName } para conectar até ${ MAX_SYNC_PAID_USER } contas"
       ],
@@ -4246,6 +4243,15 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Não encontramos nenhum rasteador conhecido e URLs de rastreamentro nesse e-mail."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Pausaremos as importações quando o armazenamento atingir 80% da capacidade, de modo a reservar espaço para novas mensagens."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Importaremos seus e-mails antigos e conectar seu Gmail ao ${ MAIL_APP_NAME } para que as novas mensagens apareçam automaticamente"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Iniciamos a importar seus e-mails do Gmail. Avisaremos quando terminar."
+      ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Lamentamos sua saída. Se tiver um momento, gostaríamos muito de saber o motivo do cancelamento. Seu feedback nos ajuda a fazer a ${ BRAND_NAME } ainda melhor para todos."
       ],
@@ -4260,6 +4266,9 @@
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Você já possui um endereço do Gmail encaminhando para o ${ MAIL_APP_NAME }. Conecte-o abaixo para enviar e receber mensagens diretamente no ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Você já possui endereços do Gmail encaminhandos para o ${ MAIL_APP_NAME }. Conecte-o um abaixo para enviar e receber mensagens diretamente no ${ MAIL_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Você pode importar eventos no formato iCal (arquivo ICS). O arquivo deve ter o tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu arquivo for maior, divida-o em arquivos menores."
@@ -4291,8 +4300,11 @@
       "Your account and data recovery methods are set.": [
         "Sua conta e métodos de recuperação de dados estão definidos."
       ],
-      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
-        "Suas correções definirão a experiência padrão para todos; no lançamento, o sistema também lembrará suas preferências daqui para frente!"
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Sua conta gratuita do ${ MAIL_APP_NAME } tem espaço de armazenamento limitado, por isso importaremos apenas ${ newUserStorageText } de suas mensagens mais recentes do Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Sua conta gratuita do ${ MAIL_APP_NAME } tem espaço de armazenamento limitado, por isso importaremos apenas seus e-mails mais recentes do Gmail."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Seu plano suporta ${ MAX_SYNC_FREE_USER } endereço do Gmail.",
@@ -4301,9 +4313,6 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereço do Gmail",
         "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereços do Gmail"
-      ],
-      "You’re among the first to try email categories.": [
-        "Você está entre os primeiros a experimentar as categorias de e-mail."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
@@ -5794,9 +5803,6 @@
       "Reset": [
         "Redefinir"
       ],
-      "Show": [
-        "Mostrar"
-      ],
       "Unread": [
         "Não lido"
       ]
@@ -5867,28 +5873,6 @@
       ],
       "Filter ${ Filter.Name } updated": [
         "Filtro ${ Filter.Name } atualizado"
-      ]
-    },
-    "Filter option": {
-      "All": [
-        "Todos"
-      ],
-      "Hide moved message": [
-        "Ocultar mensagens movidas"
-      ],
-      "Read": [
-        "Lidos"
-      ],
-      "Show moved message": [
-        "Mostrar mensagens movidas"
-      ],
-      "Unread": [
-        "Não lido"
-      ]
-    },
-    "Filter option to only show message with attachments": {
-      "Has attachments": [
-        "Tem anexos"
       ]
     },
     "Filter preview": {
@@ -8608,8 +8592,14 @@
       "Updating message content search...": [
         "Atualizando pesquisa de conteúdo de mensagens..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Faça upgrade a qualquer momento para importar o resto"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Faça upgrade ou limpe espaço em qualquer momento para importar o resto"
       ],
       "Upgrade to ${ plan } to unlock": [
         "Faça upgrade para ${ plan } para desbloquear"
@@ -9771,9 +9761,6 @@
       ],
       "Mail Server (IMAP)": [
         "Servidor de e-mail (IMAP)"
-      ],
-      "Mailing list": [
-        "Lsta de e-mails"
       ],
       "Main": [
         "Principal"
@@ -12698,6 +12685,9 @@
       "External key automatically fetched via WKD.": [
         "Chave externa obtida automaticamente via WKD."
       ],
+      "This key is used for message verification": [
+        "Essa chave já foi usado para verificação por mensagem"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Esta chave é usada para criptografar mensagens para este contato"
       ],
@@ -15378,9 +15368,6 @@
       "Download the app": [
         "Baixar aplicativo"
       ],
-      "Early access to email categories": [
-        "Acesso antecipado para as categorias de e-mail"
-      ],
       "Edit billing address": [
         "Editar o endereço de cobrança"
       ],
@@ -15955,12 +15942,6 @@
       ],
       "Snooze:": [
         "Adiar:"
-      ],
-      "Sort conversations": [
-        "Ordenar conversas"
-      ],
-      "Sort messages": [
-        "Ordenar mensagens"
       ],
       "Start a new import": [
         "Iniciar uma nova importação"

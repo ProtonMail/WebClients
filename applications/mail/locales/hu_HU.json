@@ -2393,6 +2393,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } tárhely"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } felhasználó",
+        "Akár ${ numberOfUsers } felhasználó"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } e-mail tárhely"
       ],
@@ -5194,6 +5198,10 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Az előfizetés a csomag elsődleges adminisztrátorának lesz kiszámlázva."
       ],
+      "View the invitation": [
+        "Meghívás megtekintése",
+        "Meghívások megtekintése"
+      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Meghívást kapott a csatlakozáshoz: ${ invite.OrganizationName }"
       ],
@@ -5337,11 +5345,6 @@
         "Terabájt"
       ]
     },
-    "Filter": {
-      "Show": [
-        "Megjelenítés"
-      ]
-    },
     "Filter Actions": {
       "Archive": [
         "Archívum"
@@ -5408,28 +5411,6 @@
       ],
       "Filter ${ Filter.Name } updated": [
         "${ Filter.Name } szűrő frissítve"
-      ]
-    },
-    "Filter option": {
-      "All": [
-        "Összes"
-      ],
-      "Hide moved message": [
-        "Áthelyezett üzenet elrejtése"
-      ],
-      "Read": [
-        "Olvasott"
-      ],
-      "Show moved message": [
-        "Áthelyezett üzenet megjelenítése"
-      ],
-      "Unread": [
-        "Olvasatlan"
-      ]
-    },
-    "Filter option to only show message with attachments": {
-      "Has attachments": [
-        "Mellékletet tartalmaz"
       ]
     },
     "Filter preview": {
@@ -14742,12 +14723,6 @@
       ],
       "Snooze:": [
         "Szüneteltetés:"
-      ],
-      "Sort conversations": [
-        "Beszélgetések rendezése"
-      ],
-      "Sort messages": [
-        "Üzenetek rendezése"
       ],
       "Start a new import": [
         "Új importálás indítása"

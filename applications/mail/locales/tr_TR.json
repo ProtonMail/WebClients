@@ -4145,14 +4145,11 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ekibinizin önemli kuruluş ve müşteri bilgilerine ait parolaları güvenli bir şekilde kaydetmesini sağlayın."
       ],
-      "If you find an email in the wrong category, simply move it to the correct one.": [
-        "Yanlış kategoride bir e-posta bulursanız onu doğru kategoriye taşımanız yeterlidir."
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Bir ileti yanlış kategoride görünürse onu doğru kategoriye taşımanız yeterlidir. Yeni bir kategori seçmek için bir iletiye sağ tıklayın veya iletiyi ait olduğu yere sürükleyip bırakın."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
-      ],
-      "It’s still learning and we need your help to improve categorization.": [
-        "Henüz öğreniyoruz ve kategorilere ayırmayı iyileştirmek için yardımınız gerekiyor."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Etkinlik davetlerinize anında görüşme bağlantıları ekleyin."
@@ -4315,9 +4312,6 @@
       "Your account and data recovery methods are set.": [
         "Hesabınızı ve verilerinizi kurtarma yöntemleri ayarlandı."
       ],
-      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
-        "Düzeltmeleriniz herkes için varsayılan deneyimi şekillendirecek. Ayrıca ürünün sunulması ile ilerleyen süreçte sistem tercihlerinizi de anımsayacak!"
-      ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
         "Ücretsiz ${ MAIL_APP_NAME } hesabınız sınırlı depolama alanıyla sunulduğundan güncel Gmail iletilerinizin yalnızca ${ newUserStorageText } kadarını içe aktaracağız."
       ],
@@ -4332,8 +4326,8 @@
         "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor",
         "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor"
       ],
-      "You’re among the first to try email categories.": [
-        "E-posta kategorilerini ilk deneyenler arasındasınız."
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Yeni kategori görünümümüzü lansmandan önce deneyen ilk kişiler arasındasınız. Geri bildirimleriniz Proton Mail'in e-postaları herkes için nasıl sıraladığını geliştirmeye yardımcı olacak."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
@@ -5827,9 +5821,6 @@
       "Reset": [
         "Sıfırla"
       ],
-      "Show": [
-        "Görüntüle"
-      ],
       "Unread": [
         "Okunmamış"
       ]
@@ -5900,28 +5891,6 @@
       ],
       "Filter ${ Filter.Name } updated": [
         "${ Filter.Name } süzgeci güncellendi"
-      ]
-    },
-    "Filter option": {
-      "All": [
-        "Tümü"
-      ],
-      "Hide moved message": [
-        "Taşınmış iletiyi gizle"
-      ],
-      "Read": [
-        "Okunmuş"
-      ],
-      "Show moved message": [
-        "Taşınmış iletiyi görüntüle"
-      ],
-      "Unread": [
-        "Okunmamış"
-      ]
-    },
-    "Filter option to only show message with attachments": {
-      "Has attachments": [
-        "Ek dosyaları olan"
       ]
     },
     "Filter preview": {
@@ -9825,9 +9794,6 @@
       ],
       "Mail Server (IMAP)": [
         "E-posta sunucusu (IMAP)"
-      ],
-      "Mailing list": [
-        "E-posta listesi"
       ],
       "Main": [
         "Ana"
@@ -15438,9 +15404,6 @@
       "Download the app": [
         "Uygulamayı indirin"
       ],
-      "Early access to email categories": [
-        "E-posta kategorilerine erken erişim"
-      ],
       "Edit billing address": [
         "Fatura adresini düzenle"
       ],
@@ -15545,6 +15508,9 @@
       ],
       "Help center": [
         "Yardım merkezi"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } içindeki e-posta kategorilerinin geleceğini şekillendirmeye yardımcı olun"
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } ile e-posta adresinizi gizleyin"
@@ -16015,12 +15981,6 @@
       ],
       "Snooze:": [
         "Ertele:"
-      ],
-      "Sort conversations": [
-        "Yazışmaları sırala"
-      ],
-      "Sort messages": [
-        "İletileri sırala"
       ],
       "Start a new import": [
         "Yeni bir içe aktarma başlatın"

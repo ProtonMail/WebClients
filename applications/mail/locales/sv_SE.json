@@ -313,6 +313,9 @@
       "Continue with categories": [
         "Fortsätt med kategorier"
       ],
+      "Continue with Free": [
+        "Fortsätt med Free"
+      ],
       "Continue with Google": [
         "Fortsätt med Google"
       ],
@@ -4130,9 +4133,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Hjälp ditt team att säkert lagra lösenord till känslig företags- och klientinformation."
       ],
-      "If you find an email in the wrong category, simply move it to the correct one.": [
-        "Om du hittar en e-post i fel kategori, flytta det helt enkelt till det rätta."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det verkar som kontaktlistan du importerar innehåller några grupper. Granska hur dessa grupper ska importeras."
       ],
@@ -4301,9 +4301,6 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Ditt paket stöder totalt ${ MAX_SYNC_PAID_USER } Gmail-adress",
         "Ditt paket stöder ett totalt antal av ${ MAX_SYNC_PAID_USER } Gmail-adresser"
-      ],
-      "You’re among the first to try email categories.": [
-        "Du är bland de första att prova e-postkategorier."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
@@ -5788,9 +5785,6 @@
       "Reset": [
         "Återställ"
       ],
-      "Show": [
-        "Visa"
-      ],
       "Unread": [
         "Oläst"
       ]
@@ -5861,28 +5855,6 @@
       ],
       "Filter ${ Filter.Name } updated": [
         "Filter ${ Filter.Name } uppdaterat"
-      ]
-    },
-    "Filter option": {
-      "All": [
-        "Alla"
-      ],
-      "Hide moved message": [
-        "Dölj flyttat meddelande"
-      ],
-      "Read": [
-        "Läst"
-      ],
-      "Show moved message": [
-        "Visa flyttat meddelande"
-      ],
-      "Unread": [
-        "Oläst"
-      ]
-    },
-    "Filter option to only show message with attachments": {
-      "Has attachments": [
-        "Har bilagor"
       ]
     },
     "Filter preview": {
@@ -9739,9 +9711,6 @@
       ],
       "Mail Server (IMAP)": [
         "E-postserver (IMAP)"
-      ],
-      "Mailing list": [
-        "E-postlista"
       ],
       "Main": [
         "Huvud"
@@ -15311,9 +15280,6 @@
       "Download the app": [
         "Ladda ner appen"
       ],
-      "Early access to email categories": [
-        "Förhandstillgång till e-postkategorier"
-      ],
       "Edit billing address": [
         "Redigera faktureringsadress"
       ],
@@ -15885,12 +15851,6 @@
       ],
       "Snooze:": [
         "Snooza:"
-      ],
-      "Sort conversations": [
-        "Sortera konversationer"
-      ],
-      "Sort messages": [
-        "Sortera meddelanden"
       ],
       "Start a new import": [
         "Starta en ny import"
