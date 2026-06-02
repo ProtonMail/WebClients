@@ -839,6 +839,9 @@
       "Remove gift code": [
         "Remover código de vale-presente"
       ],
+      "Removed ${ memberName } as group owner": [
+        "${ memberName } removido como proprietário do grupo"
+      ],
       "Rename": [
         "Renomear"
       ],
@@ -925,6 +928,9 @@
       ],
       "Search groups": [
         "Pesquisar grupos"
+      ],
+      "Search settings": [
+        "Pesquisar configurações"
       ],
       "See DNS TXT record": [
         "Ver registro TXT de DNS"
@@ -1986,6 +1992,15 @@
       "${ migratedCount } of ${ providerUsers.length }": [
         "${ migratedCount } de ${ providerUsers.length }"
       ],
+      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "**p=none**: não coloque em quarentena nem rejeite e-mails não autorizados. Normalmente, as pessoas usam esta política apenas para solucionar problemas ou testar."
+      ],
+      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "$**p=quarantine**: solicitando às plataformas destinatárias que marquem os e-mails não autorizados como spam ou os coloquem em quarentena."
+      ],
+      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
+        "$**p=reject**: solicitando às plataformas destinatárias que rejeitem os e-mails não autorizados."
+      ],
       "Account connected": [
         "Conta conectada"
       ],
@@ -2152,6 +2167,9 @@
       "Pending": [
         "Pendente"
       ],
+      "Please leave this window open until we're done creating all the users.": [
+        "Deixe esta janela aberta até terminarmos de criar todos os usuários."
+      ],
       "Please select at least one product to migrate": [
         "Selecione ao menos um produto para migrar"
       ],
@@ -2217,6 +2235,9 @@
       ],
       "User status": [
         "Status do usuário"
+      ],
+      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
+        "Os usuários podem usar a ${ BRAND_NAME } ou o Google simultaneamente durante o período da migração."
       ],
       "Users migrated": [
         "Usuários migrados"
@@ -3863,6 +3884,9 @@
       "Track the status and activity of your referrals": [
         "Acompanhe o status e a atividade de suas referências"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Desbloqueia 15 GB de armazenamento por apenas ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Faça upgrade para ${ planName } para conectar até ${ MAX_SYNC_PAID_USER } contas"
       ],
@@ -3872,11 +3896,23 @@
       "We can't access ${ boldEmails } anymore.": [
         "Não podemos mais acessar o ${ boldEmails }."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Pausaremos as importações quando o armazenamento atingir 80% da capacidade, de modo a reservar espaço para novas mensagens."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Importaremos seus e-mails antigos e conectar seu Gmail ao ${ MAIL_APP_NAME } para que as novas mensagens apareçam automaticamente"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Iniciamos a importar seus e-mails do Gmail. Avisaremos quando terminar."
+      ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Lamentamos sua saída. Se tiver um momento, gostaríamos muito de saber o motivo do cancelamento. Seu feedback nos ajuda a fazer a ${ BRAND_NAME } ainda melhor para todos."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Você já possui um endereço do Gmail encaminhando para o ${ MAIL_APP_NAME }. Conecte-o abaixo para enviar e receber mensagens diretamente no ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Você já possui endereços do Gmail encaminhandos para o ${ MAIL_APP_NAME }. Conecte-o um abaixo para enviar e receber mensagens diretamente no ${ MAIL_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Você pode importar eventos no formato iCal (arquivo ICS). O arquivo deve ter o tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu arquivo for maior, divida-o em arquivos menores."
@@ -3897,6 +3933,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Você conectou um endereço de conta externa no ${ MAIL_APP_NAME }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Sua conta gratuita do ${ MAIL_APP_NAME } tem espaço de armazenamento limitado, por isso importaremos apenas ${ newUserStorageText } de suas mensagens mais recentes do Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Sua conta gratuita do ${ MAIL_APP_NAME } tem espaço de armazenamento limitado, por isso importaremos apenas seus e-mails mais recentes do Gmail."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Seu plano suporta ${ MAX_SYNC_FREE_USER } endereço do Gmail.",
@@ -4862,6 +4904,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Existem muitas pastas em sua conta externa. Personalize a importação para excluir algumas pastas."
+      ],
+      "There was an error, please try again.": [
+        "Ocorreu um erro. Tente novamente."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede o máximo de ${ maximumLength } caracteres."
@@ -8594,8 +8639,14 @@
       "Unverified email address.": [
         "Endereço de e-mail não verificado."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Faça upgrade a qualquer momento para importar o resto"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Faça upgrade ou limpe espaço em qualquer momento para importar o resto"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Faça upgrade para manter seus benefícios ${ planTitle }."
@@ -8713,6 +8764,9 @@
       ],
       "We couldn’t process your payment.": [
         "Não foi possível realizar o pagamento."
+      ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "Detectamos que você já está iniciado sessão no aplicativo web da ${ BRAND_NAME } em **outro navegador**. Você pode redefinir sua senha a partir da sessão ativa."
       ],
       "We generated a strong password for you": [
         "Nós geramos senhas fortes para você"
@@ -10258,6 +10312,9 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Sim, eu quero excluir permanentemente esta conta e todos os seus dados."
       ],
+      "You don't have permissions": [
+        "Você não tem permissão"
+      ],
       "Your password (admin)": [
         "Sua senha (admin)"
       ],
@@ -10314,6 +10371,9 @@
       ],
       "Host name": [
         "Nome do servidor"
+      ],
+      "Invalid ${ group.name } record found": [
+        "Encontrado um registro inválido de ${ group.name }"
       ],
       "Type": [
         "Tipo"
@@ -10857,6 +10917,9 @@
       "Built-in chat": [
         "Bate-papo integrado"
       ],
+      "Cloud storage and file sharing": [
+        "Armazenamento em nuvem e compartilhamento de arquivos"
+      ],
       "Data retention policies": [
         "Políticas de retenção de dados"
       ],
@@ -10881,6 +10944,12 @@
       "One active meeting at a time": [
         "Uma reunião ativa por vez"
       ],
+      "Password manager with team vaults": [
+        "Gerenciador de senhas com cofres de equipe"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Bate-papo privado com IA (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Compartilhamento de tela"
       ],
@@ -10901,6 +10970,9 @@
       "Video meetings, ${ n } participant": [
         "Reuniões por vídeo, ${ n } participante",
         "Reuniões por vídeo, ${ n } participantes"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN com bloqueador de anúncios e proteção contra malware"
       ]
     },
     "meet_2025: Info": {

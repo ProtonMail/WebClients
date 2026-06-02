@@ -2975,20 +2975,11 @@
       "Failed to load the STL preview": [
         "Не удалось загрузить предварительный просмотр STL"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Файл \"${ name }\" уже скачивается"
-      ],
       "File cannot be merged with folder": [
         "Файл не может быть объединен с папкой"
       ],
-      "File selection is already downloading": [
-        "Выбранные файлы уже скачиваются"
-      ],
       "First name is too long": [
         "Имя слишком длинное"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Папка \"${ name }\" уже скачивается"
       ],
       "Folder name cannot be empty.": [
         "Имя папки не может быть пустым."
@@ -4469,9 +4460,6 @@
       "An active recovery file": [
         "Активный файл восстановления"
       ],
-      "an anonymous user": [
-        "анонимный пользователь"
-      ],
       "An issue occurred during the restore process.": [
         "Во время восстановления возникла проблема."
       ],
@@ -4555,9 +4543,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Проверка контакта ${ progress } из ${ max }..."
-      ],
-      "Checking signatures": [
-        "Проверка подписей"
       ],
       "Clear data": [
         "Очистить данные"
@@ -4655,12 +4640,6 @@
       "Details": [
         "Информация"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "ЭЦП проверена. Этот файл был безопасно загружен ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "ЭЦП проверена. Эта папка была безопасно загружена ${ emailAddress }."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Откройте для себя новые доступные функции и начните использовать их прямо сейчас!"
       ],
@@ -4684,9 +4663,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Скачивание ${ downloadFileName } будет прервано"
-      ],
-      "Download was canceled": [
-        "Скачивание отменено"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Скачайте ваше любимое приложение сегодня и конфиденциальность будет с вами, куда бы вы ни пошли."
@@ -4778,15 +4754,6 @@
       "Feb": [
         "Фев"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "Файл \"${ name }\" был удален во время загрузки"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "У файла отсутствует подпись. Мы не смогли проверить, что ${ emailAddress } загрузил ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "У файла отсутствует подпись. Мы не смогли проверить, кто загрузил ${ fileName }."
-      ],
       "File will not be updated": [
         "Файл не будет обновлен"
       ],
@@ -4795,15 +4762,6 @@
       ],
       "finance": [
         "финансы"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "Папка \"${ link.name }\" была удалена во время загрузки"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "У папки отсутствует подпись. Мы не смогли проверить, что ${ emailAddress } загрузил ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "У папки отсутствует подпись. Мы не смогли проверить, кто загрузил ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Папка не будет загружена"
@@ -5369,9 +5327,6 @@
       "Shared with me": [
         "Поделись со мной"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Подпись не может быть подтверждена из-за сетевой ошибки, повторите попытку позже."
-      ],
       "Signature check will be ignored": [
         "Проверка подписи будет проигнорирована"
       ],
@@ -5423,17 +5378,8 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Спасибо за подписку. Защищенный просмотр веб-страниц начинается сейчас."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Акаунт может иметь новый ключ или могли быть взломаны следующие элементы: ${ items }. Открывайте только в том случае, если вы им доверяете."
-      ],
       "The albums you create are shown here.": [
         "Альбомы, которые вы создаете, показаны здесь."
-      ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Цифровая подпись была частично подтверждена. Данный файл был загружен через публичную ссылку без аккаунта ${ BRAND_NAME }, поэтому их личность не может быть подтверждена."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Цифровая подпись была частично подтверждена. Данная папка была загружена через публичную ссылку без аккаунта ${ BRAND_NAME }, поэтому их личность не может быть подтверждена."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Количество загрузок включает как фактические загрузки, так и случаи предварительного просмотра файлов."
@@ -5443,9 +5389,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Утечка информации произошла из сторонней службы. Информация о вашем аккаунте ${ BRAND_NAME } остается защищенной и зашифрованной. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Возможно, следующие элементы были взломаны: ${ items }. Открывайте их только в том случае, если вы им доверяете."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Владелец этого адреса отключил сквозное шифрование. Чтобы иметь возможность отправлять зашифрованные письма на этот адрес, владелец должен повторно включить сквозное шифрование."
@@ -5686,12 +5629,6 @@
       ],
       "We couldn’t process your payment.": [
         "Нам не удалось обработать ваш платёж."
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Мы не смогли проверить, что ${ emailAddress } загрузил ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Мы не смогли проверить, кто загрузил ${ fileName }."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Нам нужно подтвердить ваш способ оплаты в вашем банке."
@@ -5981,32 +5918,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Только просмотр"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "аттрибуты файла"
-      ],
-      "file data": [
-        "данные файла"
-      ],
-      "file data key": [
-        "ключ данных файла"
-      ],
-      "file data order": [
-        "порядок данных в файле"
-      ],
-      "hash key": [
-        "хеш-ключ"
-      ],
-      "keys": [
-        "ключи"
-      ],
-      "name": [
-        "имя"
-      ],
-      "thumbnail": [
-        "значок"
       ]
     },
     "Key badge": {
@@ -10513,9 +10424,6 @@
       "Birthday": [
         "День рождения"
       ],
-      "Browser might run out of memory": [
-        "У браузера могла закончиться память"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Отменить подписку ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -10671,9 +10579,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Перейти на более дешевую версию ${ downgradedPlanName }?"
-      ],
-      "Download ${ date }": [
-        "Скачать ${ date }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Скачать приложения ${ DRIVE_APP_NAME }"

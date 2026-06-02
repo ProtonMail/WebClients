@@ -249,9 +249,6 @@
       "Continue import": [
         "Pokračovat v importu"
       ],
-      "Continue on web": [
-        "Pokračovat na webu"
-      ],
       "Continue to ${ planOrAppName }": [
         "Pokračovat na ${ planOrAppName }"
       ],
@@ -407,9 +404,6 @@
       ],
       "Download anyway": [
         "Přesto stáhnout"
-      ],
-      "Download app": [
-        "Stáhnout aplikaci"
       ],
       "Download for Mac": [
         "Stáhnout pro Mac"
@@ -1091,9 +1085,6 @@
       ],
       "Try another method": [
         "Zkuste jinou metodu"
-      ],
-      "Try it now": [
-        "Vyzkoušet nyní"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Pokuste se znovu uložit. Uložení se nezdařilo z důvodu: ${ saveError }"
@@ -3545,20 +3536,11 @@
       "Failed to update public share node": [
         "Nepodařilo se aktualizovat veřejný uzel sdílení"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Soubor \"${ name }\" se již stahuje"
-      ],
       "File cannot be merged with folder": [
         "Soubor nelze sloučit se složkou"
       ],
-      "File selection is already downloading": [
-        "Vybrané soubory se již stahují"
-      ],
       "First name is too long": [
         "Křestní jméno je příliš dlouhé"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Složka \"${ name }\" se již stahuje"
       ],
       "Folder name cannot be empty.": [
         "Název složky nesmí být prázdný."
@@ -5277,9 +5259,6 @@
       "An active recovery file": [
         "Aktivní soubor pro obnovení"
       ],
-      "an anonymous user": [
-        "anonymní uživatel"
-      ],
       "An issue occurred during the restore process.": [
         "Během procesu obnovy došlo k chybě."
       ],
@@ -5390,9 +5369,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kontroluji kontakt ${ progress } z ${ max }..."
-      ],
-      "Checking signatures": [
-        "Ověřování podpisů"
       ],
       "Choose a plan that works best for you.": [
         "Vyberte tarif, který vám nejlépe vyhovuje."
@@ -5508,12 +5484,6 @@
       "Details": [
         "Podrobnosti"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Digitální podpis ověřen. Tento soubor byl bezpečně nahrán uživatelem ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Digitální podpis ověřen. Tato složka byla bezpečně nahrána uživatelem ${ emailAddress }."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Objevte nové odemčené funkce a začněte je ihned používat!"
       ],
@@ -5546,9 +5516,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Stahování ${ downloadFileName } bude zrušeno"
-      ],
-      "Download was canceled": [
-        "Stahování bylo zrušeno"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Stáhněte si svou oblíbenou aplikaci ještě dnes a vezměte soukromí do svých rukou, ať jste kdekoli."
@@ -5661,15 +5628,6 @@
       "Feb": [
         "Úno"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "Soubor \"${ name }\" byl smazán během stahování"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Souboru chybí podpis. Nemohli jsme ověřit, že ${ emailAddress } nahrál(a) ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Souboru chybí podpis. Nemohli jsme ověřit, kdo nahrál ${ fileName }."
-      ],
       "File will not be updated": [
         "Soubor nebude aktualizován"
       ],
@@ -5678,15 +5636,6 @@
       ],
       "finance": [
         "finance"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "Složka \"${ link.name }\" byla smazána během stahování"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Složce chybí podpis. Nemohli jsme ověřit, že ${ emailAddress } nahrál(a) ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Složce chybí podpis. Nemohli jsme ověřit, kdo nahrál ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Složka nebude nahrána"
@@ -6369,9 +6318,6 @@
       "Shared with you": [
         "Sdíleno s vámi"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Podpis nelze ověřit z důvodu chyby sítě, zkuste to prosím později."
-      ],
       "Signature check will be ignored": [
         "Výsledek kontroly podpisu bude ignorován"
       ],
@@ -6438,17 +6384,8 @@
       "that": [
         "tento soubor"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Účet může mít nový klíč nebo mohlo dojít k manipulaci s následujícími položkami: ${ items }. Otevřete pouze v případě, že jim důvěřujete."
-      ],
       "The albums you create are shown here.": [
         "Vámi vytvořená alba jsou zobrazena zde."
-      ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Digitální podpis byl částečně ověřen. Tento soubor byl nahrán pomocí veřejně přístupného odkazu ke sdílení uživatelem bez účtu ${ BRAND_NAME }, takže jeho totožnost nelze ověřit."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Digitální podpis byl částečně ověřen. Tato složka byla nahrána pomocí veřejně přístupného odkazu ke sdílení uživatelem bez účtu ${ BRAND_NAME }, takže jeho totožnost nelze ověřit."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Počet stahování zahrnuje jak skutečná stažení, tak případy, kdy jsou soubory zobrazeny v náhledu."
@@ -6458,9 +6395,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Odhalené informace unikly ze služby třetí strany. Informace vašeho účtu ${ BRAND_NAME } zůstaly v bezpečí a šifrované. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "S následujícími položkami mohl někdo bez dovolení manipulovat: ${ items }. Otevřete pouze v případě, že jim důvěřujete."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Vlastník této adresy deaktivoval koncové šifrování. Aby bylo možné na tuto adresu odesílat šifrované e-maily, musí vlastník znovu povolit koncové šifrování."
@@ -6747,12 +6681,6 @@
       "We couldn’t process your payment.": [
         "Vaši platbu jsme nemohli zpracovat."
       ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Nemohli jsme ověřit, že ${ emailAddress } nahrál(a) ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Nemohli jsme ověřit, kdo nahrál ${ fileName }."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Potřebujeme ověřit vaši platební metodu u vaší banky."
       ],
@@ -6969,9 +6897,6 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Váš účet je v současné době nastaven tak, aby využíval režim přenesení daňové povinnosti. Tento režim není u vybraného tarifu podporován. Chcete-li pokračovat, odstraňte DIČ z fakturační adresy nebo vyberte jiný tarif."
       ],
-      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
-        "Váš aktuální prohlížeč nepodporuje stahování velkých souborů/více souborů. Stáhněte si aplikaci pro stolní počítače pro bezproblémové nahrávání a stahování."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu ${ BRAND_NAME }."
       ],
@@ -7104,32 +7029,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Pouze zobrazení"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "vlastnosti souboru"
-      ],
-      "file data": [
-        "data souboru"
-      ],
-      "file data key": [
-        "klíč k datům souboru"
-      ],
-      "file data order": [
-        "pořadí dat v souboru"
-      ],
-      "hash key": [
-        "hash klíč"
-      ],
-      "keys": [
-        "klíče"
-      ],
-      "name": [
-        "název"
-      ],
-      "thumbnail": [
-        "miniatura"
       ]
     },
     "Key badge": {
@@ -12187,9 +12086,6 @@
       "Albums you've shared will appear here": [
         "Zde se zobrazí alba sdílená vámi"
       ],
-      "Securely share your favorite moments with friends and family using Albums.": [
-        "Pomocí alb můžete bezpečně sdílet své oblíbené okamžiky s přáteli a rodinou."
-      ],
       "Shared by ${ sharedBy }": [
         "Sdílel(a) ${ sharedBy }"
       ],
@@ -12582,9 +12478,6 @@
       "Birthday": [
         "Narozeniny"
       ],
-      "Browser might run out of memory": [
-        "Prohlížeči možná dochází paměť"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Zrušit předplatné ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -12791,9 +12684,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Snížit na ${ downgradedPlanName }?"
-      ],
-      "Download ${ date }": [
-        "Stáhnout ${ date }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Stáhnout aplikace ${ DRIVE_APP_NAME }"
@@ -13139,9 +13029,6 @@
       ],
       "Phone numbers": [
         "Telefonní čísla"
-      ],
-      "Photo albums are here!": [
-        "Fotoalba jsou zde!"
       ],
       "Photos": [
         "Fotky"
