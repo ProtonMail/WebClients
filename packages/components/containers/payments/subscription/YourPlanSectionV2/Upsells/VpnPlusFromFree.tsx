@@ -7,9 +7,9 @@ import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymen
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CYCLE, PLANS, PLAN_NAMES, type Subscription, getHasConsumerVpnPlan } from '@proton/payments';
 import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSelectFromNCountries, getVpnServers } from '@proton/shared/lib/vpn/features';
 import isTruthy from '@proton/utils/isTruthy';
+import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
 import type { PlanCardFeatureDefinition } from '../../../features/interface';
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
@@ -29,10 +29,10 @@ import shieldIcon from '../icons/shield.svg';
 import streamingIcon from '../icons/streaming.svg';
 import UpsellMultiBox from './UpsellMultiBox';
 
-export const getVPNFeatures = (vpnServers: VPNServersCountData): PlanCardFeatureDefinition[] => {
+export const getVPNFeatures = (): PlanCardFeatureDefinition[] => {
     return [
         {
-            text: getSelectFromNCountries(vpnServers.paid.countries),
+            text: getSelectFromNCountries(VPN_SERVERS.paid.countries),
             included: true,
             highResIcon: countriesIcon,
         },
@@ -48,7 +48,7 @@ export const getVPNFeatures = (vpnServers: VPNServersCountData): PlanCardFeature
             highResIcon: shieldIcon,
         },
         {
-            text: getVpnServers(vpnServers.paid.servers),
+            text: getVpnServers(VPN_SERVERS.paid.servers),
             included: true,
             highResIcon: serverIcon,
         },
@@ -106,7 +106,6 @@ export const useVpnPlusFromFreeUpsells = ({
     app,
     subscription,
     plansMap,
-    serversCount,
     freePlan,
     user,
 }: UpsellSectionProps): UpsellsHook => {
@@ -117,7 +116,6 @@ export const useVpnPlusFromFreeUpsells = ({
         app,
         plansMap,
         hasVPN: getHasConsumerVpnPlan(subscription),
-        serversCount,
         freePlan,
         openSubscriptionModal,
         telemetryFlow,
@@ -155,14 +153,14 @@ export const useVpnPlusFromFreeUpsells = ({
             }),
     ].filter(isTruthy);
 
-    return { upsells, handleExplorePlans, serversCount, telemetryFlow, plansMap, freePlan, user };
+    return { upsells, handleExplorePlans, telemetryFlow, plansMap, freePlan, user };
 };
 
 interface Props extends UpsellsHook {
     subscription: Subscription;
 }
 
-const VpnPlusFromFree = ({ subscription, serversCount, upsells, handleExplorePlans }: Props) => {
+const VpnPlusFromFree = ({ subscription, upsells, handleExplorePlans }: Props) => {
     const plan = PLANS.VPN2024;
 
     return (
@@ -188,7 +186,7 @@ const VpnPlusFromFree = ({ subscription, serversCount, upsells, handleExplorePla
                             </div>
                         )}
                         <ul className="unstyled grid lg:grid-cols-4 gap-4 m-0">
-                            {getVPNFeatures(serversCount).map(({ text, tooltip, highResIcon }, index) => {
+                            {getVPNFeatures().map(({ text, tooltip, highResIcon }, index) => {
                                 const key = typeof text === 'string' ? text : index;
                                 return (
                                     <li key={key} className="flex items-center">

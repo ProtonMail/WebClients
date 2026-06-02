@@ -47,16 +47,6 @@ describe('resolveUpsellsToDisplay', () => {
             app: APPS.PROTONMAIL,
             subscription: subscriptionMail,
             freePlan: FREE_PLAN,
-            serversCount: {
-                paid: {
-                    servers: 100,
-                    countries: 10,
-                },
-                free: {
-                    servers: 10,
-                    countries: 1,
-                },
-            },
             canPay: true,
             isFree: true,
             hasPaidMail: false,

@@ -1248,6 +1248,3 @@ export const APPS_WITH_IN_APP_PAYMENTS = new Set<APP_NAMES>([
     APPS.PROTONCALENDAR,
     APPS.PROTONLUMO,
 ]);
-
-export const FREE_SERVER_COUNT = 2000; // Free server count for free user
-export const FREE_COUNTRY_COUNT = 10; // Free country count for free user

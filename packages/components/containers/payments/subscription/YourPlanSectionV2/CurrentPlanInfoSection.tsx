@@ -33,7 +33,7 @@ import {
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import type { Address, Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useSubscriptionModal } from '../SubscriptionModalProvider';
@@ -64,7 +64,6 @@ interface CurrentPlanInfoSectionProps {
     user: UserModel;
     subscription: Subscription | FreeSubscription;
     organization: Organization | undefined;
-    serversCount: VPNServersCountData | undefined;
     addresses: Address[] | undefined;
     editBillingCycle?: boolean;
 }
@@ -153,7 +152,6 @@ export const CurrentPlanInfoSection = ({
     user,
     subscription,
     organization,
-    serversCount,
     addresses,
     editBillingCycle = false,
 }: CurrentPlanInfoSectionProps) => {
@@ -298,7 +296,7 @@ export const CurrentPlanInfoSection = ({
                 <StorageSection app={app} organization={organization} subscription={subscription} user={user} />
                 <BillingDateSection subscription={subscription} />
                 <ServersSection app={app} organization={organization} />
-                <FreeVPNFeatures app={app} serversCount={serversCount} isFreeUser={isFree} />
+                <FreeVPNFeatures app={app} isFreeUser={isFree} />
                 <FreeVaultFeatures app={app} isFreeUser={isFree} user={user} />
                 <FreeMeetFeatures app={app} isFreeUser={isFree} />
             </div>

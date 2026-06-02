@@ -23,7 +23,6 @@ import type {
     ProtonConfig,
     UserModel,
 } from '@proton/shared/lib/interfaces';
-import { defaultVPNServersCountData as mockDefaultVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import { buildUser } from '@proton/testing/builders';
 
 import { apiMock } from '../api';
@@ -176,7 +175,10 @@ export const getPreloadedState = (
     plans: getModelState({ plans: modelOverrides.plans ?? [], freePlan: FREE_PLAN }),
     features: {},
     importerConfig: getModelState({} as ApiEnvironmentConfig),
-    vpnServersCount: getModelState(mockDefaultVPNServersCountData),
+    vpnServersCount: getModelState({
+        free: { countries: 10, servers: 2000 },
+        paid: { countries: 20, servers: 20000 },
+    }),
     ...stateOverrides,
 });
 

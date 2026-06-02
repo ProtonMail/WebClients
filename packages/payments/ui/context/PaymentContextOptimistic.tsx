@@ -1,8 +1,6 @@
 import { type ReactNode, createContext, useContext, useRef, useState } from 'react';
 
 import { useHandler } from '@proton/components/hooks/useHandler';
-import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { defaultVPNServersCountData, getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -25,7 +23,6 @@ interface InitializationStatus {
     triggered: boolean;
     cacheInitialized: boolean;
     pricingInitialized: boolean;
-    vpnServersInitialized: boolean;
 }
 
 type OptimisticOptions = PlanToCheck & {
@@ -41,7 +38,6 @@ export type PaymentsContextOptimisticType = PaymentsContextType & {
     selectPlan: (checkOptions: Partial<OptimisticOptions>) => void;
     checkoutUi: PaymentsContextType['checkoutUi'];
     options: OptimisticOptions;
-    vpnServersCountData: VPNServersCountData;
 };
 
 export const PaymentsContextOptimistic = createContext<PaymentsContextOptimisticType | null>(null);
@@ -62,12 +58,10 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
     const latestOptimisticRef = useRef<any>();
     const [optimistic, setOptimistic] = useState<Partial<OptimisticOptions>>({});
     const [loadingPaymentDetails, setLoadingPaymentDetails] = useState(false);
-    const [vpnServersCountData, setVpnServersCountData] = useState<VPNServersCountData>(defaultVPNServersCountData);
     const [initializationStatus, setInitializationStatus] = useState<InitializationStatus>({
         triggered: false,
         cacheInitialized: false,
         pricingInitialized: false,
-        vpnServersInitialized: false,
     });
 
     const initialize: PaymentsContextOptimisticType['initialize'] = async ({
@@ -106,14 +100,6 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
         setInitializationStatus((prev) => ({ ...prev, triggered: true }));
         setLoadingPaymentDetails(true);
 
-        // Fetch VPN servers count data in parallel with payments initialization
-        const fetchVpnServersCount = getVPNServersCountData(api)
-            .then((data) => {
-                setVpnServersCountData(data);
-                setInitializationStatus((prev) => ({ ...prev, vpnServersInitialized: true }));
-            })
-            .catch(noop);
-
         await Promise.all([
             paymentsContext.initialize({
                 api,
@@ -125,7 +111,6 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
                 telemetryContext,
                 product,
             }),
-            fetchVpnServersCount,
         ]);
 
         // Only clear optimistic state if this initialization is still the latest operation
@@ -294,7 +279,6 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
                 loadingPaymentDetails: loadingPaymentDetails || paymentsContext.loading,
                 initializationStatus,
                 options,
-                vpnServersCountData,
                 checkoutUi: getCheckoutUi({
                     planIDs: options.planIDs,
                     plansMap: paymentsContext.plansMap,

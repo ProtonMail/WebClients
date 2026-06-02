@@ -36,12 +36,13 @@ import { useIsB2BTrial } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, DRIVE_SHORT_APP_NAME, FREE_VPN_CONNECTIONS, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import type { Address, Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { getSpace } from '@proton/shared/lib/user/storage';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
+import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
 import { getBasicFeatures, getVersionHistory } from '../../../features/drive';
 import { getSentinel, getSupport } from '../../../features/highlights';
@@ -81,12 +82,11 @@ interface Props {
     user: UserModel;
     subscription: MaybeFreeSubscription;
     organization?: Organization;
-    vpnServers: VPNServersCountData;
     addresses?: Address[];
     upsells: Upsell[];
 }
 
-const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, addresses, upsells }: Props) => {
+const SubscriptionPanel = ({ app, subscription, organization, user, addresses, upsells }: Props) => {
     const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription);
     const isPassB2bPlan = getIsPassB2BPlan(planName);
     const isB2BTrial = useIsB2BTrial(subscription, organization);
@@ -145,7 +145,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
             getVPNConnectionsFeature(FREE_VPN_CONNECTIONS),
             {
                 icon: 'earth' as const,
-                text: getFreeServers(vpnServers.free.servers, vpnServers.free.countries),
+                text: getFreeServers(VPN_SERVERS.free.servers, VPN_SERVERS.free.countries),
             },
         ];
 
@@ -185,7 +185,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
             },
             {
                 icon: 'earth' as const,
-                text: getPlusServers(vpnServers.paid.servers, vpnServers.paid.countries),
+                text: getPlusServers(VPN_SERVERS.paid.servers, VPN_SERVERS.paid.countries),
             },
         ];
     };

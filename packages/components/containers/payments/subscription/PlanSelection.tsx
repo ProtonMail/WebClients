@@ -67,7 +67,7 @@ import { OfferPrice } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 import { selectPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
-import { Audience, type Organization, type UserModel, type VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { Audience, type Organization, type UserModel } from '@proton/shared/lib/interfaces';
 import { isFree } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
@@ -112,7 +112,6 @@ interface Props {
     maximumCycle?: Cycle;
     plans: Plan[];
     freePlan: FreePlanDefault;
-    vpnServers: VPNServersCountData;
     loading?: boolean;
     mode: 'signup' | 'settings' | 'modal' | 'upsell-modal';
     onChangePlanIDs: (newPlanIDs: PlanIDs, cycle: Cycle, currency: Currency) => void;
@@ -488,7 +487,6 @@ const PlanSelection = (props: Props) => {
         mode,
         plans,
         freePlan,
-        vpnServers,
         cycle: cycleProp,
         minimumCycle: maybeMinimumCycle,
         maximumCycle: maybeMaximumCycle,
@@ -589,7 +587,6 @@ const PlanSelection = (props: Props) => {
     const isSignupMode = mode === 'signup';
     const features = getAllFeatures({
         plansMap,
-        serversCount: vpnServers,
         freePlan,
     });
 
@@ -645,7 +642,6 @@ const PlanSelection = (props: Props) => {
             hasRecommended.add(audience);
         }
         const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, {
-            vpnServers,
             freePlan,
             prioritizeMeetFeatures: isMeetSettingsApp,
         });

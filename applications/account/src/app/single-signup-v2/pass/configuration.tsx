@@ -56,7 +56,6 @@ import {
     VPN_CONNECTIONS,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
-import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';
 import clsx from '@proton/utils/clsx';
@@ -487,7 +486,6 @@ export const getPassConfiguration = ({
     audience,
     hideFreePlan,
     isLargeViewport,
-    vpnServersCountData,
     isPaidPass,
     isPaidPassVPNBundle,
     plansMap,
@@ -499,7 +497,6 @@ export const getPassConfiguration = ({
     audience: Audience.B2B | Audience.B2C;
     hideFreePlan: boolean;
     isLargeViewport: boolean;
-    vpnServersCountData: VPNServersCountData;
     isPaidPass: boolean;
     isPaidPassVPNBundle: boolean;
     plansMap?: PlansMap;
@@ -565,14 +562,7 @@ export const getPassConfiguration = ({
                 guarantee: true,
             },
             {
-                subsection: (
-                    <LetsTalkSubSection
-                        app="pass"
-                        signupParameters={signupParameters}
-                        mode="text"
-                        vpnServersCountData={vpnServersCountData}
-                    />
-                ),
+                subsection: <LetsTalkSubSection app="pass" signupParameters={signupParameters} mode="text" />,
                 type: 'standard' as const,
                 guarantee: true,
                 interactive: false,
