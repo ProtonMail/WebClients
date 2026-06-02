@@ -7,8 +7,12 @@ import { useUser } from '@proton/account/user/hooks';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { ComposerAgentBar } from '../../features/agents/ComposerAgentBar';
+import { AgentPickerModal } from '../../features/agents/AgentPickerModal';
+import { ConversationStarters } from '../../features/agents/ConversationStarters';
 import { SketchOverlay } from '../../features/drawingcanvas';
 import useComposerInput from '../../hooks/useComposerInput';
+import { useConversationAgent } from '../../hooks/useConversationAgent';
 import type { DriveSDKMethods } from '../../hooks/useDriveSDK';
 import { useDriveSDK } from '../../hooks/useDriveSDK';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';
@@ -17,9 +21,10 @@ import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
-import { selectProvisionalAttachments } from '../../redux/selectors';
+import { selectProvisionalAttachments, selectSpaceById } from '../../redux/selectors';
 import { upsertAttachment } from '../../redux/slices/core/attachments';
-import type { Attachment, ComposerMode, Message } from '../../types';
+import type { Attachment, Message } from '../../types';
+import { ComposerMode } from '../../types';
 import { base64ToFile } from '../../util/imageHelpers';
 import { createAttachmentFromPastedContent, getPasteConversionMessage } from '../../util/pastedContentHelper';
 import { AttachmentArea } from '../Files';
@@ -80,6 +85,8 @@ export type ComposerComponentProps = {
     canShowLumoUpsellToggle?: boolean;
     canShowGuestNotificationCard?: boolean;
     placeholder?: string;
+    /** Minimal agent surface: hides image creation, sketch and Drive upload from the composer. */
+    isAgent?: boolean;
 };
 
 /**
@@ -109,6 +116,7 @@ const ComposerComponentInner = ({
     placeholder,
     canShowLumoUpsellToggle = false,
     canShowGuestNotificationCard = false,
+    isAgent = false,
     driveContext,
 }: ComposerComponentInnerProps) => {
     const { isDragging: isDraggingOverScreen } = useDragArea();
@@ -127,6 +135,15 @@ const ComposerComponentInner = ({
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
     const isGuest = useIsGuest();
+
+    // Agents are hidden inside projects: a project already injects its own instructions,
+    // so layering an agent persona on top would be redundant and confusing.
+    const composerSpace = useLumoSelector(selectSpaceById(spaceId ?? ''));
+    const canUseAgents = !isGuest && !composerSpace?.isProject;
+
+    // Conversation starters for the active agent, surfaced on a fresh, empty conversation.
+    const { activeAgent } = useConversationAgent(messageChain?.[0]?.conversationId);
+    const agentStarters = activeAgent?.conversationStarters ?? [];
 
     const allRelevantAttachments = useAllRelevantAttachments(messageChain, provisionalAttachments, spaceId);
 
@@ -324,12 +341,23 @@ const ComposerComponentInner = ({
                         onOpenFiles={handleOpenFiles}
                     />
 
+                    {composerMode === ComposerMode.NEW_CONVERSATION && isEmpty && agentStarters.length > 0 && (
+                        <ConversationStarters
+                            starters={agentStarters}
+                            onSelect={(text) => {
+                                void sendGenerateMessage(text);
+                            }}
+                            className="justify-center mb-1"
+                        />
+                    )}
+
                     <div
                         className={clsx(
                             'lumo-input-container border border-norm  w-full',
                             isGhostChatMode && 'ghost-mode'
                         )}
                     >
+                        {canUseAgents && <ComposerAgentBar conversationId={messageChain?.[0]?.conversationId} />}
                         {hasAttachments && (
                             <ComposerAttachmentArea
                                 provisionalAttachments={provisionalAttachments}
@@ -363,9 +391,13 @@ const ComposerComponentInner = ({
                             onDrawSketch={handleDrawSketch}
                             fileUploadMode={fileUploadMode}
                             canShowLumoUpsellToggle={canShowLumoUpsellToggle}
+                            canUseAgents={canUseAgents}
+                            isAgent={isAgent}
                         />
                     </div>
-                    {isGuest && <TermsAndConditions className="m-0 hidden md:block" />}
+                    {isGuest && (
+                        <TermsAndConditions className={clsx('m-0', isAgent ? 'text-center' : 'hidden md:block')} />
+                    )}
                 </section>
 
                 {isDraggingOverScreen && <AttachmentArea handleFileProcessing={handleFileProcessing} />}
@@ -377,6 +409,7 @@ const ComposerComponentInner = ({
                 onExport={handleDrawingExport}
                 mode="blank"
             />
+            {canUseAgents && <AgentPickerModal conversationId={messageChain?.[0]?.conversationId} />}
             {excelSheetSelectionModal}
         </>
     );
