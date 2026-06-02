@@ -81,6 +81,7 @@ import { getVpnServers } from '@proton/shared/lib/vpn/features';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
+import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
 import { getLocaleTermsURL } from '../content/helper';
 import SignupSupportDropdown from '../signup/SignupSupportDropdown';
@@ -235,7 +236,7 @@ const Step1 = ({
     const [changingCurrency, withChangingCurrency] = useLoading();
     const { getAvailableCurrencies } = useCurrencies();
 
-    const { vpnServersCountData, plansMap } = model;
+    const { plansMap } = model;
     const initialLoading = model.loadingDependencies;
 
     useEffect(() => {
@@ -763,7 +764,7 @@ const Step1 = ({
                         <SkeletonLoader width="5em" />
                     </>
                 ) : (
-                    getVpnServers(vpnServersCountData.paid.servers)
+                    getVpnServers(VPN_SERVERS.paid.servers)
                 ),
             },
     ].filter(isTruthy);
@@ -777,7 +778,6 @@ const Step1 = ({
     const planInformation = getPlanInformation({
         loading: model.loadingDependencies,
         selectedPlan: options.plan,
-        vpnServersCountData,
     });
 
     const upsellToCycle = (() => {
@@ -1108,7 +1108,6 @@ const Step1 = ({
                 return model.mode === 'vpn-pass-promotion' && plansMap[PLANS.VPN2024]
                     ? getPlanInformation({
                           selectedPlan: plansMap[PLANS.VPN2024],
-                          vpnServersCountData,
                           loading: model.loadingDependencies,
                       }) || planInformation
                     : planInformation;

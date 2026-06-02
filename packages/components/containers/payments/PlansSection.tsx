@@ -11,7 +11,6 @@ import { Button } from '@proton/atoms/Button/Button';
 import Loader from '@proton/components/components/loader/Loader';
 import useApi from '@proton/components/hooks/useApi';
 import useLoad from '@proton/components/hooks/useLoad';
-import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
@@ -73,7 +72,6 @@ const PlansSectionInner = ({ app }: Props) => {
     const [paymentStatus, statusLoading] = usePaymentStatus();
     const plans = plansResult?.plans || [];
     const freePlan = plansResult?.freePlan || FREE_PLAN;
-    const [vpnServers] = useVPNServersCount();
     const api = useApi();
     const { paymentsApi } = usePaymentsApi(api);
     const location = useLocation();
@@ -184,7 +182,6 @@ const PlansSectionInner = ({ app }: Props) => {
                 loading={loading}
                 freePlan={freePlan}
                 plans={plans}
-                vpnServers={vpnServers}
                 currency={currency}
                 paymentStatus={paymentStatus}
                 cycle={cycle}

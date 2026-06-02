@@ -36,7 +36,6 @@ export const useMailPlusExtendSubscription = ({
     subscription,
     app,
     plansMap,
-    serversCount,
     freePlan,
     user,
 }: UpsellSectionProps): UpsellsHook => {
@@ -55,7 +54,6 @@ export const useMailPlusExtendSubscription = ({
         app,
         plansMap,
         hasVPN: getHasConsumerVpnPlan(subscription),
-        serversCount,
         freePlan,
         openSubscriptionModal,
         telemetryFlow,
@@ -75,7 +73,7 @@ export const useMailPlusExtendSubscription = ({
         }),
     ].filter(isTruthy);
 
-    return { upsells, handleExplorePlans, serversCount, telemetryFlow, plansMap, freePlan, user };
+    return { upsells, handleExplorePlans, telemetryFlow, plansMap, freePlan, user };
 };
 
 interface Props extends UpsellsHook {

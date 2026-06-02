@@ -19,7 +19,7 @@ import type {
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import type { ExtensionApp } from '@proton/shared/lib/browser/extension';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { Audience, HumanVerificationMethodType, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Audience, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
 import type {
     InviteData,
@@ -96,7 +96,6 @@ export interface SignupModelV2 {
         app: ExtensionApp;
         installed: boolean;
     };
-    vpnServersCountData: VPNServersCountData;
     signupTokenMode?: boolean;
     loadingDependencies: boolean;
     disableCurrencySelector?: boolean;

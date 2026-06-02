@@ -9,6 +9,13 @@ import { addApiMock, addApiResolver, apiMock, flushPromises } from '@proton/test
 
 import useBitcoin, { BITCOIN_POLLING_INTERVAL } from './useBitcoin';
 
+jest.mock('@proton/vpn/constants/vpnServers', () => ({
+    VPN_SERVERS: {
+        free: { servers: 10, countries: 2000 },
+        paid: { servers: 1700, countries: 63 },
+    },
+}));
+
 const onTokenValidated = jest.fn();
 
 beforeEach(() => {

@@ -8,7 +8,6 @@ import {
     getVPNPaidCountriesFeature,
     getVPNPaidServersFeature,
 } from '@proton/components/containers/payments/features/vpn';
-import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { APPS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 
@@ -18,9 +17,8 @@ import vpn from '../illustrations/vpn.jpg';
 
 const AlsoInYourPlanProtonVPN = () => {
     const planSectionContext = useContext(AlsoInYourPlanSectionContext);
-    const [vpnServerCount] = useVPNServersCount();
 
-    if (!planSectionContext || !vpnServerCount) {
+    if (!planSectionContext) {
         return null;
     }
 
@@ -32,11 +30,7 @@ const AlsoInYourPlanProtonVPN = () => {
         image: vpn,
         buttonCopy: () => goToPlanOrAppNameText(VPN_APP_NAME),
         logo: <VpnLogo />,
-        features: [
-            getVPNPaidCountriesFeature(vpnServerCount),
-            getVPNPaidServersFeature(vpnServerCount),
-            getVPNLightningFastSpeedFeature(),
-        ],
+        features: [getVPNPaidCountriesFeature(), getVPNPaidServersFeature(), getVPNLightningFastSpeedFeature()],
     };
 
     return <AlsoInYourPlanSectionCard app={app} config={cardConfig} shouldDisplayAllFeatures={isBundlePlan} />;

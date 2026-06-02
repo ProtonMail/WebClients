@@ -4,16 +4,15 @@ import { VpnLogo } from '@proton/components';
 import { getVPNPassProPlan, getVPNPlan } from '@proton/components/containers/payments/features/plan';
 import { getAllPlatforms, getFreeFeatures, getRefundable } from '@proton/components/containers/payments/features/vpn';
 import { CYCLE, PLANS, PLAN_NAMES, type Plan } from '@proton/payments';
-import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 
-export const getUpsellShortPlan = (plan: Plan | undefined, vpnServersCountData: VPNServersCountData) => {
+export const getUpsellShortPlan = (plan: Plan | undefined) => {
     if (!plan) {
         return undefined;
     }
 
     // Handle specific plans that need custom features or formatting
     if (plan.Name === PLANS.VPN2024) {
-        const vpnPlan = getVPNPlan(plan, vpnServersCountData);
+        const vpnPlan = getVPNPlan(plan);
         return {
             logo: <VpnLogo variant="with-wordmark" />,
             ...vpnPlan,
@@ -22,7 +21,7 @@ export const getUpsellShortPlan = (plan: Plan | undefined, vpnServersCountData: 
     }
 
     if (plan.Name === PLANS.VPN_PASS_BUNDLE_BUSINESS) {
-        const vpnPassProPlan = getVPNPassProPlan(plan, vpnServersCountData);
+        const vpnPassProPlan = getVPNPassProPlan(plan);
         return {
             ...vpnPassProPlan,
             features: [...(vpnPassProPlan.features || []), getFreeFeatures(), getAllPlatforms(), getRefundable()],
