@@ -8,7 +8,7 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { backendBillingAddressFieldError } from '../../../core/errors';
+import { type BillingAddressFieldStatus, backendBillingAddressFieldError } from '../../../core/errors';
 import type { TaxCountryHook } from '../hooks/useTaxCountry';
 import { useVatFormValidation } from '../hooks/useVatFormValidation';
 import type { VatNumberHook } from '../hooks/useVatNumber';
@@ -16,7 +16,7 @@ import type { VatNumberHook } from '../hooks/useVatNumber';
 export function getVatPlaceholder(countryCode: string) {
     const placeholders: Record<string, string> = {
         AT: 'ATU12345678',
-        AU: '12345678912',
+        AU: 'AU51824753556',
         BE: 'BE0123456789',
         BG: 'BG0123456789',
         CA: '123456789RT0001',
@@ -79,6 +79,13 @@ export function getAddVatNumberText(countryCode: string): string {
     const stringNames = names as Record<string, string>;
 
     return stringNames[countryCode] ?? c('Payments.VAT number name').t`Add VAT number`;
+}
+
+export function getVatIdBackendError(status: BillingAddressFieldStatus | undefined, countryCode: string): string {
+    if (status === 'invalid' && countryCode === 'AU') {
+        return c('Error').t`Please check if your ABN is registered for cross-border VAT`;
+    }
+    return backendBillingAddressFieldError(status);
 }
 
 type Props = VatNumberHook & {
@@ -167,7 +174,10 @@ export const VatNumberInput = ({
                 value={vatNumber}
                 placeholder={getVatPlaceholder(taxCountry.selectedCountryCode)}
                 data-testid="vat-id-input"
-                error={errorMessages.VatId || backendBillingAddressFieldError(billingAddressValidationResult?.VatId)}
+                error={
+                    errorMessages.VatId ||
+                    getVatIdBackendError(billingAddressValidationResult?.VatId, taxCountry.selectedCountryCode)
+                }
             />
             {showExtendedBillingAddressForm && (
                 <>

@@ -28,6 +28,7 @@ import { isFreeSubscription } from '../../../core/type-guards';
 import { CountryStateSelector } from '../components/CountryStateSelector';
 import { type CountriesWithCustomVatName, getVatNumberName } from '../components/VatNumberInput';
 import { getVatFormErrors } from '../hooks/useVatFormValidation';
+import { useVatPrefixSync } from '../hooks/useVatPrefixSync';
 
 export interface EditBillingAdressModalInputs {
     initialFullBillingAddress: FullBillingAddress;
@@ -78,6 +79,22 @@ export const EditBillingAddressModal = (props: Props) => {
     const [loading, withLoading] = useLoading();
     const [backendErrors, setBackendErrors] = useState<BillingAddressValidationResult | null>(null);
 
+    const updateBillingAddress = (updater: Parameters<typeof setFullBillingAddress>[0]) => {
+        setFullBillingAddress(updater);
+        setBackendErrors(null);
+    };
+
+    const { markVatNumberDirty } = useVatPrefixSync({
+        countryCode: fullBillingAddress.BillingAddress.CountryCode,
+        setVatNumber: (value) =>
+            updateBillingAddress((model) => ({
+                ...model,
+                BillingAddress: { ...model.BillingAddress, VatId: value },
+                VatId: value,
+            })),
+        initialVatNumber: initialFullBillingAddress.VatId,
+    });
+
     const frontendErrors = getVatFormErrors(
         {
             ...fullBillingAddress.BillingAddress,
@@ -118,11 +135,6 @@ export const EditBillingAddressModal = (props: Props) => {
                 }
             }
         });
-    };
-
-    const updateBillingAddress = (updater: Parameters<typeof setFullBillingAddress>[0]) => {
-        setFullBillingAddress(updater);
-        setBackendErrors(null);
     };
 
     const vatNumberName = getVatNumberName(fullBillingAddress.BillingAddress.CountryCode);
@@ -193,13 +205,14 @@ export const EditBillingAddressModal = (props: Props) => {
                         name="vat"
                         data-testid="billing-address-vat"
                         value={fullBillingAddress.VatId ?? ''}
-                        onValue={(value: string) =>
+                        onValue={(value: string) => {
+                            markVatNumberDirty();
                             updateBillingAddress((model) => ({
                                 ...model,
                                 BillingAddress: { ...model.BillingAddress, VatId: value },
                                 VatId: value,
-                            }))
-                        }
+                            }));
+                        }}
                         error={
                             validator([frontendErrors.errorMessages.VatId]) ||
                             backendBillingAddressFieldError(backendErrors?.VatId)
