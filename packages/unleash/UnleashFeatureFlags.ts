@@ -271,7 +271,6 @@ enum MailKillSwitchFlag {
     RefreshedFilterUIDisabled = 'RefreshedFilterUIDisabled',
     RefreshedToolbarUIDisabled = 'RefreshedToolbarUIDisabled',
     RawLinkParsingDisabled = 'RawLinkParsingDisabled',
-    OverrideNewsletterViewName = 'OverrideNewsletterViewName',
     CategoryViewConversationPrefetchDisabled = 'CategoryViewConversationPrefetchDisabled',
 }
 
