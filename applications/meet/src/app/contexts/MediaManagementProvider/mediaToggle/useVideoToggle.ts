@@ -102,7 +102,7 @@ export const useVideoToggle = (switchActiveDevice: SwitchActiveDevice) => {
 
             const deviceId = videoDeviceId;
 
-            if (toggleInProgress.current || !deviceId) {
+            if (toggleInProgress.current || (!deviceId && !isMobile())) {
                 return;
             }
 
