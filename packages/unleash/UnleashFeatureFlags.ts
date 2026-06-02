@@ -260,6 +260,7 @@ enum MailKillSwitchFlag {
     RefreshedToolbarUIDisabled = 'RefreshedToolbarUIDisabled',
     RawLinkParsingDisabled = 'RawLinkParsingDisabled',
     CategoryViewConversationPrefetchDisabled = 'CategoryViewConversationPrefetchDisabled',
+    ComposerInlineImageReuploadDisabled = 'ComposerInlineImageReuploadDisabled',
 }
 
 enum AdminFeatureFlag {
