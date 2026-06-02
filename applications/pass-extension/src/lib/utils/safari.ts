@@ -20,6 +20,7 @@ type NativeSafariMessage =
     | { refreshCredentials: SafariHostRefreshTokens }
     | { readFromClipboard: {} }
     | { writeToClipboard: { Content: string } }
+    | { fetchRelatedOrigins: { url: string } }
     | { environment: string };
 
 /** In Safari, `browser.tabs.getCurrent()` called from the popover returns

@@ -21,8 +21,8 @@
 
 import Foundation
 
-// Bridge between macOS catalyst and macOS native
-// https://betterprogramming.pub/how-to-access-the-appkit-api-from-mac-catalyst-apps-2184527020b5
+/// Bridge between macOS catalyst and macOS native
+/// https://betterprogramming.pub/how-to-access-the-appkit-api-from-mac-catalyst-apps-2184527020b5
 @objc(Plugin)
 public protocol Plugin: NSObjectProtocol {
     init()
