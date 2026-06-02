@@ -51,7 +51,6 @@ import {
     SSO_PATHS,
 } from '@proton/shared/lib/constants';
 import { everythingInPlanOrAppNamePlusText } from '@proton/shared/lib/i18n/ttag';
-import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -281,14 +280,12 @@ export const getMailConfiguration = ({
     signupParameters,
     canUseBYOE,
     isNewB2BPlanEnabled,
-    vpnServersCountData,
 }: {
     freePlan: FreePlanDefault;
     audience: Audience.B2B | Audience.B2C;
     plan: Plan | undefined;
     signupParameters: SignupParameters2;
     isLargeViewport: boolean;
-    vpnServersCountData: VPNServersCountData;
     planParameters: PlanParameters | undefined;
     plansMap?: PlansMap;
     canUseBYOE: boolean;
@@ -379,14 +376,7 @@ export const getMailConfiguration = ({
                 guarantee: true,
             },
             {
-                subsection: (
-                    <LetsTalkSubSection
-                        app="mail"
-                        signupParameters={signupParameters}
-                        mode="text"
-                        vpnServersCountData={vpnServersCountData}
-                    />
-                ),
+                subsection: <LetsTalkSubSection app="mail" signupParameters={signupParameters} mode="text" />,
                 type: 'standard' as const,
                 guarantee: true,
                 interactive: false as const,

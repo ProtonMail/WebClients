@@ -38,10 +38,10 @@ import { IcBrandWindows } from '@proton/icons/icons/IcBrandWindows';
 import type { IconSize } from '@proton/icons/types';
 import { PLANS, PLAN_NAMES, type Plan, getFreeTitle } from '@proton/payments';
 import { APPS, BRAND_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
-import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 import isTruthy from '@proton/utils/isTruthy';
+import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
 import bundleVpnPass from '../single-signup-v2/bundle-vpn-pass.svg';
 import bundle from '../single-signup-v2/bundle.svg';
@@ -60,11 +60,9 @@ export interface PlanInformation {
 export const getPlanInformation = ({
     loading,
     selectedPlan,
-    vpnServersCountData,
 }: {
     loading: boolean;
     selectedPlan: Plan;
-    vpnServersCountData: VPNServersCountData;
 }): PlanInformation | undefined => {
     const iconSize: IconSize = 7;
     const iconImgSize = iconSize * CSS_BASE_UNIT_SIZE;
@@ -76,7 +74,7 @@ export const getPlanInformation = ({
         : null;
 
     if (selectedPlan.Name === PLANS.FREE) {
-        const freeServers = getFreeServers(vpnServersCountData.free.servers, vpnServersCountData.free.countries);
+        const freeServers = getFreeServers(VPN_SERVERS.free.servers, VPN_SERVERS.free.countries);
         return {
             logo: <FreeLogo size={iconImgSize} app={APPS.PROTONVPN_SETTINGS} />,
             title: getFreeTitle(BRAND_NAME),
@@ -85,7 +83,7 @@ export const getPlanInformation = ({
     }
 
     if (selectedPlan.Name === PLANS.VPN2024) {
-        const plusServers = getPlusServers(vpnServersCountData.paid.servers, vpnServersCountData.paid.countries);
+        const plusServers = getPlusServers(VPN_SERVERS.paid.servers, VPN_SERVERS.paid.countries);
 
         return {
             logo: <VpnLogo variant="glyph-only" size={iconSize} />,
@@ -127,7 +125,7 @@ export const getPlanInformation = ({
                 getMailAppFeature(),
                 getCalendarAppFeature(),
                 getDriveAppFeature(),
-                getVPNAppFeature({ serversCount: vpnServersCountData }),
+                getVPNAppFeature(),
                 getPassAppFeature(),
                 getWalletAppFeature(),
             ],
@@ -169,9 +167,9 @@ export const getPlanInformation = ({
     }
 
     const serversInNCountries = c('new_plans: feature').ngettext(
-        msgid`Servers in ${vpnServersCountData.paid.countries}+ country`,
-        `Servers in ${vpnServersCountData.paid.countries}+ countries`,
-        vpnServersCountData.paid.countries
+        msgid`Servers in ${VPN_SERVERS.paid.countries}+ country`,
+        `Servers in ${VPN_SERVERS.paid.countries}+ countries`,
+        VPN_SERVERS.paid.countries
     );
 
     if (selectedPlan.Name === PLANS.VPN_PRO) {

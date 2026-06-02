@@ -12,7 +12,6 @@ import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymen
 import useLoad from '@proton/components/hooks/useLoad';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { useTrialOnlyPaymentMethods } from '@proton/components/hooks/useTrialOnlyPaymentMethods';
-import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { FREE_PLAN, getCanSubscriptionAccessDuoPlan, hasLumo, isAutoRenewTrial, isTrial } from '@proton/payments';
 import { getHasVpnOnlyB2BPlan, isReferralTrial } from '@proton/payments/core/subscription/helpers';
 import { PaymentsContextProvider } from '@proton/payments/ui';
@@ -43,7 +42,6 @@ const YourPlanSectionInner = ({ app }: Props) => {
     const [calendars] = useCalendars();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
-    const [serversCount, serversCountLoading] = useVPNServersCount();
     const [invites = []] = useUserInvitations();
     const [openSubscriptionModal] = useSubscriptionModal();
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
@@ -57,7 +55,6 @@ const YourPlanSectionInner = ({ app }: Props) => {
         subscription,
         plansMap,
         freePlan,
-        serversCount,
         openSubscriptionModal,
         canAccessDuoPlan,
         user,
@@ -68,13 +65,7 @@ const YourPlanSectionInner = ({ app }: Props) => {
 
     const hasTrialPaymentMethods = useTrialOnlyPaymentMethods();
 
-    const loading =
-        loadingSubscription ||
-        loadingOrganization ||
-        loadingPlans ||
-        serversCountLoading ||
-        plansMapLoading ||
-        upsellsLoading;
+    const loading = loadingSubscription || loadingOrganization || loadingPlans || plansMapLoading || upsellsLoading;
 
     if (!subscription || !plans || loading) {
         return <Loader />;
@@ -119,7 +110,6 @@ const YourPlanSectionInner = ({ app }: Props) => {
                         organization={organization}
                         user={user}
                         addresses={addresses}
-                        vpnServers={serversCount}
                         upsells={shouldRenderUpsells ? upsells : []}
                     />
                 )}

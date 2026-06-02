@@ -21,8 +21,9 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { everythingInPlanOrAppNameText, selectPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
-import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import { getSelectFromNCountries, getVpnDevices } from '@proton/shared/lib/vpn/features';
+import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
 import { getStorageFeature, getSyncAndBackupFeature, getVersionHistory } from '../../../features/drive';
 import type { PlanCardFeatureDefinition } from '../../../features/interface';
@@ -291,8 +292,8 @@ const UnlimitedProductCards = ({ plansMap, freePlan }: { plansMap: PlansMap; fre
     );
 };
 
-const getVPNFeatures = (vpnServers: VPNServersCountData): PlanCardFeatureDefinition[] => {
-    const numberOfCountries = vpnServers.paid.countries;
+const getVPNFeatures = (): PlanCardFeatureDefinition[] => {
+    const numberOfCountries = VPN_SERVERS.paid.countries;
     return [
         {
             text: getSelectFromNCountries(numberOfCountries),
@@ -327,15 +328,7 @@ const getVPNFeatures = (vpnServers: VPNServersCountData): PlanCardFeatureDefinit
     ];
 };
 
-const VPNPlanCard = ({
-    vpnUpsells,
-    serversCount,
-    selectedCycle,
-}: {
-    vpnUpsells: UpsellsHook['upsells'];
-    serversCount: VPNServersCountData;
-    selectedCycle: Cycle;
-}) => {
+const VPNPlanCard = ({ vpnUpsells, selectedCycle }: { vpnUpsells: UpsellsHook['upsells']; selectedCycle: Cycle }) => {
     const vpnUpsell = vpnUpsells.filter(isUpsellWithPlan).find((upsell) => upsell.customCycle === selectedCycle);
 
     if (!vpnUpsell || !vpnUpsell.price) {
@@ -362,7 +355,7 @@ const VPNPlanCard = ({
             }
             featureSection={
                 <ul className="unstyled px-2 flex flex-column text-semibold gap-3 m-0">
-                    {getVPNFeatures(serversCount).map(({ text, tooltip, highResIcon }, index) => {
+                    {getVPNFeatures().map(({ text, tooltip, highResIcon }, index) => {
                         const key = typeof text === 'string' ? text : index;
                         return (
                             <li key={key} className="flex items-center flex-nowrap">
@@ -428,7 +421,6 @@ interface Props {
     subscription: Subscription;
     app: APP_NAMES;
     user: UserModel;
-    serversCount: VPNServersCountData;
     plansMap: FullPlansMap;
     freePlan: FreePlanDefault;
     vpnUpsells: UpsellsHook['upsells'];
@@ -442,7 +434,6 @@ const CurrentPlanInfoWithUpsellSection = ({
     subscription,
     app,
     user,
-    serversCount,
     plansMap,
     freePlan,
     vpnUpsells,
@@ -483,9 +474,9 @@ const CurrentPlanInfoWithUpsellSection = ({
                 <PlanCard
                     cta={<Button disabled fullWidth>{c('Action').t`Current plan`}</Button>}
                     planNameSection={<PlanNameSection app={app} user={user} subscription={subscription} />}
-                    featureSection={<FreeVPNFeaturesB serversCount={serversCount} />}
+                    featureSection={<FreeVPNFeaturesB />}
                 />
-                <VPNPlanCard vpnUpsells={vpnUpsells} serversCount={serversCount} selectedCycle={selectedCycle} />
+                <VPNPlanCard vpnUpsells={vpnUpsells} selectedCycle={selectedCycle} />
                 <BundlePlanCard
                     bundleUpsells={bundleUpsells}
                     plansMap={plansMap}

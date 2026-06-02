@@ -36,7 +36,7 @@ import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/use
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import type { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 import { Audience, isBilledUser } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
@@ -61,7 +61,6 @@ interface Props {
     model: SignupModelV2;
     options: OptimisticOptions;
     selectedPlan: Plan;
-    vpnServersCountData: VPNServersCountData;
     loadingPaymentDetails: boolean;
     loadingSignup: boolean;
     onPay: (payment: 'signup-token' | ExtendedTokenPayment, type: 'pp' | 'btc' | 'cc' | undefined) => Promise<void>;
@@ -98,7 +97,6 @@ const AccountStepPayment = ({
     model,
     selectedPlan,
     options,
-    vpnServersCountData,
     loadingPaymentDetails,
     loadingSignup,
     withLoadingSignup,
@@ -523,7 +521,6 @@ const AccountStepPayment = ({
                 model={model}
                 options={options}
                 selectedPlan={selectedPlan}
-                vpnServersCountData={vpnServersCountData}
                 loadingPaymentDetails={loadingPaymentDetails}
                 showRenewalNotice={showRenewalNotice}
                 app={app}

@@ -17,7 +17,6 @@ import useConfig from '@proton/components/hooks/useConfig';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useHandler } from '@proton/components/hooks/useHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import { useLoading } from '@proton/hooks';
@@ -306,7 +305,6 @@ const SubscriptionContainerInner = ({
     const [calendarDowngradeModal, showCalendarDowngradeModal] = useModalTwoPromise();
     const { createNotification } = useNotifications();
     const { cancelSubscriptionModals, cancelSubscription } = useCancelSubscriptionFlow({ app });
-    const [vpnServers] = useVPNServersCount();
     const getCalendars = useGetCalendars();
     const getOrganization = useGetOrganization();
     const { APP_NAME } = useConfig();
@@ -1159,7 +1157,6 @@ const SubscriptionContainerInner = ({
                     loading={loadingCheck}
                     plans={plans}
                     currency={preferredCurrencyRef.current}
-                    vpnServers={vpnServers}
                     cycle={model.cycle}
                     maximumCycle={maximumCycle}
                     minimumCycle={minimumCycle}
@@ -1327,7 +1324,6 @@ const SubscriptionContainerInner = ({
                                 subscription={subscription}
                                 plansMap={plansMapRef.current}
                                 checkResult={checkResult}
-                                vpnServers={vpnServers}
                                 gift={gift}
                                 submit={subscriptionCheckoutSubmit}
                                 loading={loadingCheck || initialLoading}

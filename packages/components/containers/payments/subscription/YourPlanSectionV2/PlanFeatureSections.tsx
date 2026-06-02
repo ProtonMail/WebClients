@@ -27,9 +27,10 @@ import type { FreeSubscription } from '@proton/payments';
 import { type Subscription, getRenewalTime, subscriptionExpires } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, FREE_VPN_CONNECTIONS } from '@proton/shared/lib/constants';
-import type { Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 import { getAutoSelectFromCountries, getCountriesWithoutPlus, getVpnDevices } from '@proton/shared/lib/vpn/features';
+import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
 import {
     FREE_MAX_ACTIVE_MEETINGS,
@@ -112,23 +113,15 @@ export const BillingDateSection = ({ subscription }: { subscription: Subscriptio
     );
 };
 
-export const FreeVPNFeatures = ({
-    serversCount,
-    isFreeUser,
-    app,
-}: {
-    serversCount: VPNServersCountData | undefined;
-    isFreeUser: boolean;
-    app: APP_NAMES;
-}) => {
-    if (app !== APPS.PROTONVPN_SETTINGS || !isFreeUser || !serversCount) {
+export const FreeVPNFeatures = ({ isFreeUser, app }: { isFreeUser: boolean; app: APP_NAMES }) => {
+    if (app !== APPS.PROTONVPN_SETTINGS || !isFreeUser) {
         return null;
     }
     return (
         <ul className="m-0 unstyled flex flex-nowrap gap-4">
             <li className="flex flex-nowrap gap-1 items-center">
                 <IcGlobe className="color-success shrink-0" />
-                {getCountriesWithoutPlus(serversCount.free.countries)}
+                {getCountriesWithoutPlus(VPN_SERVERS.free.countries)}
             </li>
             <li className="flex flex-nowrap gap-1 items-center">
                 <IcMobile className="color-success shrink-0" />
@@ -138,15 +131,12 @@ export const FreeVPNFeatures = ({
     );
 };
 
-export const FreeVPNFeaturesB = ({ serversCount }: { serversCount: VPNServersCountData | undefined }) => {
-    if (!serversCount) {
-        return false;
-    }
+export const FreeVPNFeaturesB = () => {
     return (
         <ul className="m-0 unstyled px-2 flex flex-column flex-nowrap gap-3">
             <li className="flex flex-nowrap gap-1 items-center">
                 <IcCheckmark size={6} className="color-success shrink-0" />
-                {getAutoSelectFromCountries(serversCount.free.countries)}
+                {getAutoSelectFromCountries(VPN_SERVERS.free.countries)}
             </li>
             <li className="flex flex-nowrap gap-1 items-center">
                 <IcCheckmark size={6} className="color-success shrink-0" />

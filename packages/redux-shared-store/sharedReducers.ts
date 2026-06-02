@@ -31,7 +31,6 @@ import {
     userPermissionsReducer,
     userReducer,
     userSettingsReducer,
-    vpnServersCountReducer,
     welcomeFlagsReducer,
 } from '@proton/account';
 import { sessionRecoverySlice } from '@proton/account/recovery/sessionRecovery';
@@ -68,7 +67,6 @@ export const sharedReducers = {
     ...contactEmailsReducer,
     ...categoriesReducer,
     ...importerConfigReducer,
-    ...vpnServersCountReducer,
     ...welcomeFlagsReducer,
     ...memberReducer,
     ...membersReducer,
@@ -101,7 +99,6 @@ export const sharedPersistReducer: Partial<{ [key in keyof typeof sharedReducers
     categories: selectPersistModel,
     organization: selectPersistModel,
     userInvitations: selectPersistModel,
-    vpnServersCount: selectPersistModel,
     protonDomains: selectPersistModel,
     domains: selectPersistModel,
     previousSubscription: selectPersistModel,

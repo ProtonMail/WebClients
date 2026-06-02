@@ -2,7 +2,7 @@ import { FREE_PLAN, PLANS, getPlanFromPlanIDs } from '@proton/payments';
 import { getIsLumoApp, getIsMeetApp, getIsPassApp } from '@proton/shared/lib/authentication/apps';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import type { Audience, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Audience } from '@proton/shared/lib/interfaces';
 
 import type { SignupV2Theme } from './SignupV2ThemeProvider';
 import { getAuthenticatorConfiguration } from './authenticator/configuration';
@@ -20,7 +20,6 @@ export const getSignupConfiguration = ({
     audience,
     model,
     signupParameters,
-    vpnServersCountData,
     viewportWidth,
     theme,
     isNewB2BPlanEnabled,
@@ -29,7 +28,6 @@ export const getSignupConfiguration = ({
     model: SignupModelV2;
     signupParameters: SignupParameters2;
     audience: Audience.B2B | Audience.B2C;
-    vpnServersCountData: VPNServersCountData;
     viewportWidth: any; // todo lazy
     theme: SignupV2Theme;
     isNewB2BPlanEnabled: boolean;
@@ -49,7 +47,6 @@ export const getSignupConfiguration = ({
             toApp,
             signupParameters,
             isNewB2BPlanEnabled,
-            vpnServersCountData,
         });
     }
     if (toApp === APPS.PROTONMAIL || toApp === APPS.PROTONCALENDAR) {
@@ -60,7 +57,6 @@ export const getSignupConfiguration = ({
             planParameters: model.planParameters,
             plansMap: model.plansMap,
             isLargeViewport: viewportWidth['>=large'],
-            vpnServersCountData,
             freePlan: model.freePlan,
             canUseBYOE: toApp === APPS.PROTONMAIL,
             isNewB2BPlanEnabled,
@@ -74,7 +70,6 @@ export const getSignupConfiguration = ({
             showPassFamily,
             audience,
             isLargeViewport: viewportWidth['>=large'],
-            vpnServersCountData,
             hideFreePlan: signupParameters.hideFreePlan,
             mode: signupParameters.mode,
             isPaidPassVPNBundle: !!planIDs[PLANS.VPN_PASS_BUNDLE],
@@ -116,7 +111,6 @@ export const getSignupConfiguration = ({
             audience,
             planParameters: model.planParameters,
             isNewB2BPlanEnabled,
-            vpnServersCountData,
             signupParameters,
         });
     }
@@ -146,7 +140,6 @@ export const getSignupConfiguration = ({
         planParameters: model.planParameters,
         plansMap: model.plansMap,
         isLargeViewport: viewportWidth['>=large'],
-        vpnServersCountData,
         isNewB2BPlanEnabled,
     });
 };

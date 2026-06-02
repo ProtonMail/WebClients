@@ -35,7 +35,6 @@ import {
     getOptimisticCheckout,
 } from '@proton/payments/core/checkout';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
@@ -511,7 +510,6 @@ export const UpsellCardSelector = ({
     currency,
     onSelect,
     onKeep,
-    vpnServersCountData,
 }: {
     audience?: Audience;
     checkout: PaymentsCheckoutUI;
@@ -526,7 +524,6 @@ export const UpsellCardSelector = ({
     coupon?: string;
     onSelect: () => void;
     onKeep: () => void;
-    vpnServersCountData: VPNServersCountData;
 }) => {
     if (!currentPlan) {
         return null;
@@ -578,7 +575,7 @@ export const UpsellCardSelector = ({
                         : getBilledText({ cycle: subscription?.Cycle || cycle, audience, planIDs: currentPlanIDs });
 
                     const shortPlan = currentPlan
-                        ? getShortPlan(currentPlan.Name as any, plansMap, { vpnServers: vpnServersCountData, freePlan })
+                        ? getShortPlan(currentPlan.Name as any, plansMap, { freePlan })
                         : undefined;
 
                     const totals = {
@@ -679,10 +676,7 @@ export const UpsellCardSelector = ({
                             subsection={
                                 <>
                                     {bundlePlans.includes(plan.Name as any) && (
-                                        <BundlePlanSubSection
-                                            className="mb-4"
-                                            vpnServersCountData={vpnServersCountData}
-                                        />
+                                        <BundlePlanSubSection className="mb-4" />
                                     )}
                                     <Button color="norm" fullWidth onClick={onSelect}>
                                         {c('pass_signup_2023: Action').t`Upgrade my plan`}

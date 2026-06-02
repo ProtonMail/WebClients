@@ -63,7 +63,7 @@ import {
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
-import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -212,7 +212,6 @@ type GetUpsellArgs = {
     plansMap: FullPlansMap;
     app: APP_NAMES;
     upsellPath: DASHBOARD_UPSELL_PATHS;
-    serversCount: VPNServersCountData;
     customCycle?: CYCLE;
     telemetryFlow: TelemetryPaymentFlow;
 } & Partial<UpsellWithPlan>;
@@ -268,7 +267,6 @@ export const getPlanTitleWithAddons = ({
 export const getUpsell = ({
     plan,
     plansMap,
-    serversCount,
     upsellPath,
     freePlan,
     app,
@@ -277,7 +275,7 @@ export const getUpsell = ({
     ...upsellFields
 }: GetUpsellArgs): UpsellWithPlan | null => {
     const fullPlan = plansMap[plan];
-    const shortPlan = getShortPlan(plan, plansMap, { vpnServers: serversCount, freePlan });
+    const shortPlan = getShortPlan(plan, plansMap, { freePlan });
 
     if (!shortPlan || !fullPlan) {
         return null;
@@ -583,14 +581,7 @@ const getBundleUpsell = ({
     });
 };
 
-const getDuoUpsell = ({
-    plansMap,
-    freePlan,
-    openSubscriptionModal,
-    app,
-    serversCount,
-    ...rest
-}: GetPlanUpsellArgs): MaybeUpsell => {
+const getDuoUpsell = ({ plansMap, freePlan, openSubscriptionModal, app, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
     const duoPlan = plansMap[PLANS.DUO];
     if (!duoPlan) {
         return null;
@@ -612,7 +603,6 @@ const getDuoUpsell = ({
         plan: PLANS.DUO,
         plansMap,
         freePlan,
-        serversCount,
         app,
         upsellPath: DASHBOARD_UPSELL_PATHS.DUO,
         features: features.filter((item): item is UpsellFeature => isTruthy(item)),
@@ -636,7 +626,6 @@ const getFamilyUpsell = ({
     freePlan,
     openSubscriptionModal,
     app,
-    serversCount,
     ...rest
 }: GetPlanUpsellArgs): MaybeUpsell => {
     const familyPlan = plansMap[PLANS.FAMILY];
@@ -660,7 +649,6 @@ const getFamilyUpsell = ({
         plan: PLANS.FAMILY,
         plansMap,
         freePlan,
-        serversCount,
         app,
         upsellPath: DASHBOARD_UPSELL_PATHS.FAMILY,
         features: features.filter((item): item is UpsellFeature => isTruthy(item)),
@@ -835,7 +823,6 @@ type ResolveUpsellsToDisplayProps = {
     subscription: MaybeFreeSubscription;
     plansMap: FullPlansMap;
     freePlan: FreePlanDefault;
-    serversCount: VPNServersCountData;
     canPay?: boolean;
     isFree?: boolean;
     hasPaidMail?: boolean;
@@ -851,7 +838,6 @@ export const resolveUpsellsToDisplay = ({
     app,
     subscription,
     plansMap,
-    serversCount,
     freePlan,
     canPay,
     isFree,
@@ -875,7 +861,6 @@ export const resolveUpsellsToDisplay = ({
             app,
             plansMap,
             hasVPN: getHasConsumerVpnPlan(subscription),
-            serversCount,
             freePlan,
             telemetryFlow,
             ...rest,

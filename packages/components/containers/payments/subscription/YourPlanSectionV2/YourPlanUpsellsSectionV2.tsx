@@ -8,7 +8,6 @@ import { useUser } from '@proton/account/user/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import useLoad from '@proton/components/hooks/useLoad';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
-import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
 import type { FreeSubscription, FullPlansMap } from '@proton/payments';
@@ -41,7 +40,7 @@ import { PaymentsContextProvider, isPaymentsPreloaded } from '@proton/payments/u
 import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 import type { VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 import { useVariant } from '@proton/unleash/useVariant';
@@ -91,7 +90,6 @@ export interface UpsellSectionBaseProps {
 export interface UpsellSectionProps extends UpsellSectionBaseProps {
     user: UserModel;
     plansMap: FullPlansMap;
-    serversCount: VPNServersCountData;
     freePlan: FreePlanDefault;
     show24MonthPlan: boolean;
 }
@@ -100,7 +98,6 @@ interface GetUpsellSectionProps {
     subscription?: Subscription | FreeSubscription;
     app: APP_NAMES;
     user: UserModel;
-    serversCount: VPNServersCountData;
     plansMap: FullPlansMap;
     freePlan: FreePlanDefault;
     variant: { name?: VPNDashboardVariant | 'disabled' | undefined };
@@ -109,14 +106,13 @@ interface GetUpsellSectionProps {
 export type UpsellsHook = {
     upsells: Upsell[];
     handleExplorePlans: () => void;
-    serversCount: VPNServersCountData;
     telemetryFlow: TelemetryPaymentFlow;
     plansMap: FullPlansMap;
     freePlan: FreePlanDefault;
     user: UserModel;
 };
 
-const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, freePlan }: GetUpsellSectionProps) => {
+const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUpsellSectionProps) => {
     const isFree = user.isFree;
 
     const vpnVariant = useVariant('VPNDashboard');
@@ -143,7 +139,6 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
 
     const upsellParams = {
         subscription,
-        serversCount,
         app,
         plansMap,
         freePlan,
@@ -208,7 +203,6 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                     subscription={subscription as Subscription}
                     app={app}
                     user={user}
-                    serversCount={serversCount}
                     plansMap={plansMap}
                     freePlan={freePlan}
                     vpnUpsells={vpnPlusFromFreeUpsells.upsells}
@@ -751,7 +745,6 @@ const YourPlanUpsellsSectionV2Inner = ({ app }: YourPlanSectionV2Props) => {
     const [plansResult, loadingPlans] = usePlans();
     const plans = plansResult?.plans;
     const [subscription, loadingSubscription] = useSubscription();
-    const [serversCount, serversCountLoading] = useVPNServersCount();
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
     const freePlan = plansResult?.freePlan || FREE_PLAN;
     const variant = useVariant('VPNDashboard');
@@ -762,13 +755,12 @@ const YourPlanUpsellsSectionV2Inner = ({ app }: YourPlanSectionV2Props) => {
         app,
         subscription,
         user,
-        serversCount,
         freePlan,
         plansMap,
         variant,
     });
 
-    const loading = loadingSubscription || loadingPlans || serversCountLoading || plansMapLoading || upsellLoading;
+    const loading = loadingSubscription || loadingPlans || plansMapLoading || upsellLoading;
 
     if (!subscription || !plans || loading) {
         return <Loader />;

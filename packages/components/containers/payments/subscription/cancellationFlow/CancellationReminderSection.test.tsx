@@ -2,7 +2,6 @@ import { screen } from '@testing-library/react';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { PLANS, PLAN_NAMES, PLAN_TYPES } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { renderWithProviders } from '@proton/testing';
@@ -15,11 +14,13 @@ jest.mock('@proton/account/user/hooks');
 const mockUseUser = useUser as jest.MockedFunction<any>;
 jest.mock('@proton/account/subscription/hooks');
 const mockUseSubscription = useSubscription as jest.MockedFunction<any>;
-jest.mock('@proton/components/hooks/useVPNServersCount');
-const mockUseVPNServersCount = useVPNServersCount as jest.MockedFunction<any>;
 
 jest.mock('@proton/unleash/useFlag');
 const mockUseFlag = useFlag as jest.MockedFunction<any>;
+
+jest.mock('@proton/vpn/constants/vpnServers', () => ({
+    VPN_SERVERS: { paid: { countries: 10 } },
+}));
 
 jest.mock('./useCancellationFlow');
 const mockUseCancellationFlow = useCancellationFlow as jest.Mock;
@@ -48,8 +49,6 @@ describe('Cancellation flow section', () => {
 
         // We want to enable the feature everywhere
         mockUseFlag.mockReturnValue(true);
-        // We don't want to test the VPN count in the tests
-        mockUseVPNServersCount.mockReturnValue([{ paid: { countries: 10 } }]);
     });
 
     it('Should render the CancellationReminderSection component', () => {

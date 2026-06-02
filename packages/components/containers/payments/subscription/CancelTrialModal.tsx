@@ -17,7 +17,6 @@ import { StripedList } from '@proton/components/components/stripedList/StripedLi
 import Time from '@proton/components/components/time/Time';
 import { getShortPlan } from '@proton/components/containers/payments/features/plan';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import type { FreePlanDefault, PLANS, Plan } from '@proton/payments';
@@ -30,7 +29,6 @@ const FeatureList = () => {
     const silentApi = useSilentApi();
     const getPlans = useGetPlans();
 
-    const [vpnServers, loadingVPNServers] = useVPNServersCount();
     const [currency, loadingCurrency] = useAutomaticCurrency();
 
     const [plans, setPlans] = useState<Plan[] | undefined>(undefined);
@@ -43,13 +41,13 @@ const FeatureList = () => {
         });
     }, []);
 
-    if (loadingCurrency || loadingVPNServers || !plans || !freePlan || !subscription) {
+    if (loadingCurrency || !plans || !freePlan || !subscription) {
         return null;
     }
 
     const planName = getPlanName(subscription);
     const plansMap = getPlansMap(plans, currency, true);
-    const shortPlan = getShortPlan(planName as PLANS, plansMap, { vpnServers, freePlan });
+    const shortPlan = getShortPlan(planName as PLANS, plansMap, { freePlan });
     const features = shortPlan?.features.map((feature) => feature.text) ?? [];
 
     if (features.length === 0) {
