@@ -10,7 +10,6 @@ import {
     getPlanFromIDs,
     hasCycle,
     isRegularCycle,
-    isTrial,
     notHigherThanAvailableOnBackend,
 } from '@proton/payments';
 import { isBF2025Offer } from '@proton/payments/core/checkout';
@@ -153,8 +152,6 @@ export const getAllowedCycles = ({
     currency,
     defaultCycles = [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY],
     plansMap,
-    disableUpcomingCycleCheck,
-    allowDowncycling,
     rules,
     cycleParam,
     app,
@@ -167,8 +164,6 @@ export const getAllowedCycles = ({
     currency: Currency;
     defaultCycles?: CYCLE[];
     plansMap: PlansMap;
-    disableUpcomingCycleCheck?: boolean;
-    allowDowncycling?: boolean;
     rules?: PlanCapRule[];
     cycleParam?: CYCLE;
     app?: ProductParam;
@@ -184,10 +179,6 @@ export const getAllowedCycles = ({
         return hasCycle(plan, cycle);
     });
 
-    const isTrialSubscription = isTrial(subscription);
-
-    const isSamePlan = isSamePlanCheckout(subscription, planIDs);
-
     const adjustedMaximumCycle = capMaximumCycle({
         maximumCycle,
         planIDs,
@@ -200,27 +191,10 @@ export const getAllowedCycles = ({
     });
 
     const result = availableCycles.filter((cycle) => {
-        const isHigherThanCurrentSubscription: boolean = cycle >= (subscription?.Cycle ?? 0);
-        // disableUpcomingCycleCheck is an escape hatch to allow the selection of the cycle which is **lower** than
-        // upcoming one but higher than current one
-        // Example: user has current subscription 1 month and upcoming 12 months. Now they want to buy Scribe addon.
-        // Normally, we would not show them the current one, because we consider that downgrading of the cycle.
-        // But in this case, we want them to buy same 1 month subscription but with Scribe addon.
-        const isHigherThanUpcoming: boolean =
-            cycle >= (subscription?.UpcomingSubscription?.Cycle ?? 0) || !!disableUpcomingCycleCheck;
-
         const allowedByCouponConfig =
             !couponConfig || !couponConfig.availableCycles || couponConfig.availableCycles.includes(cycle);
 
-        const isEligibleForSelection: boolean =
-            (isHigherThanCurrentSubscription && isHigherThanUpcoming) ||
-            isTrialSubscription ||
-            !isSamePlan ||
-            !!allowDowncycling;
-
-        return (
-            cycle >= minimumCycle && cycle <= adjustedMaximumCycle && isEligibleForSelection && allowedByCouponConfig
-        );
+        return cycle >= minimumCycle && cycle <= adjustedMaximumCycle && allowedByCouponConfig;
     });
 
     return result;

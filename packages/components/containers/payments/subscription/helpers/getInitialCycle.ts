@@ -27,7 +27,6 @@ interface GetInitialCycleParams {
     minimumCycle: Cycle | undefined;
     maximumCycle: Cycle | undefined;
     currency: Currency;
-    allowDowncycling: boolean;
     defaultCycles?: Cycle[];
 }
 
@@ -41,7 +40,6 @@ export function getInitialCycle({
     minimumCycle,
     maximumCycle,
     currency,
-    allowDowncycling,
     defaultCycles,
 }: GetInitialCycleParams): Cycle {
     if (cycleParam && isSupportedCycle({ cycle: cycleParam, planIDs, plansMap })) {
@@ -101,7 +99,6 @@ export function getInitialCycle({
         currency,
         planIDs,
         plansMap,
-        allowDowncycling,
     });
     if (!allowedCycles.includes(cycle)) {
         cycle = allowedCycles.at(0) ?? DEFAULT_CYCLE;
