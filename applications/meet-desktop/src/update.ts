@@ -120,7 +120,7 @@ async function checkForValidUpdates() {
     updateElectronApp({
         updateSource: {
             type: UpdateSourceType.StaticStorage,
-            baseUrl: `https://proton.me/download/meet/${platform}/${newUpdate.Version}`,
+            baseUrl: `https://kevin-ta.github.io/test-version/${platform}/${newUpdate.Version}`,
         },
         updateInterval: "5 min", // minimal
         logger: updateLogger,
@@ -182,7 +182,7 @@ function getNewUpdate(local: LocalDesktopVersion, unorderedAvailableVersions: Ve
 }
 
 function getVersionURL(platform: DESKTOP_PLATFORMS) {
-    return `https://proton.me/download/meet/${platform}/version.json`;
+    return `https://kevin-ta.github.io/test-version/${platform}/version.json`;
 }
 
 function isANewerThanB(a: string, b: string) {
