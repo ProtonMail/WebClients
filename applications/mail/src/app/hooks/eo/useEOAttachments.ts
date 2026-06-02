@@ -1,9 +1,10 @@
 import type { RefObject } from 'react';
 import { useState } from 'react';
 
+import type { PublicKeyReference } from '@protontech/crypto';
+
 import { useHandler } from '@proton/components/hooks/useHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { PublicKeyReference } from '@protontech/crypto';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
@@ -20,6 +21,7 @@ import {
     readContentIDandLocation,
 } from '../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, updateImages } from '../../helpers/message/messageImages';
+import type { AddAttachmentsParams } from '../composer/useAttachments/interface';
 
 interface Props {
     message: MessageState;
@@ -37,7 +39,7 @@ export const useEOAttachments = ({ message, onChange, editorActionsRef, encrypti
      * Start uploading a file, the choice between attachment or inline is done.
      */
     const handleAddAttachmentsUpload = useHandler(
-        async (action: ATTACHMENT_DISPOSITION, files: File[] = [], removeImageMetadata?: boolean) => {
+        async ({ action, files = [], removeImageMetadata }: AddAttachmentsParams) => {
             if (encryptionKey) {
                 files.forEach((file: File) => {
                     void uploadEO(
@@ -97,7 +99,7 @@ export const useEOAttachments = ({ message, onChange, editorActionsRef, encrypti
         if (!plainText && embeddable) {
             setImagesToInsert(files);
         } else {
-            void handleAddAttachmentsUpload(ATTACHMENT_DISPOSITION.ATTACHMENT, files);
+            void handleAddAttachmentsUpload({ action: ATTACHMENT_DISPOSITION.ATTACHMENT, files });
         }
     });
 
@@ -125,8 +127,8 @@ export const useEOAttachments = ({ message, onChange, editorActionsRef, encrypti
         });
     });
 
-    const handleUploadImage = (action: ATTACHMENT_DISPOSITION, removeImageMetadata?: boolean) => {
-        void handleAddAttachmentsUpload(action, imagesToInsert, removeImageMetadata);
+    const handleUploadImage = ({ action, removeImageMetadata }: AddAttachmentsParams) => {
+        void handleAddAttachmentsUpload({ action, files: imagesToInsert, removeImageMetadata });
         setImagesToInsert([]);
     };
 
@@ -134,7 +136,6 @@ export const useEOAttachments = ({ message, onChange, editorActionsRef, encrypti
         imagesToInsert,
         setImagesToInsert,
         handleAddAttachments,
-        handleAddAttachmentsUpload,
         handleRemoveAttachment,
         handleUploadImage,
     };
