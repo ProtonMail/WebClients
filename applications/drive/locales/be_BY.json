@@ -252,9 +252,6 @@
       "Continue import": [
         "Працягнуць імпартаванне"
       ],
-      "Continue on web": [
-        "Працягнуць у вэб-праграме"
-      ],
       "Continue to ${ planOrAppName }": [
         "Працягнуць у ${ planOrAppName }"
       ],
@@ -413,9 +410,6 @@
       ],
       "Download anyway": [
         "Усё роўна спампаваць"
-      ],
-      "Download app": [
-        "Спампаваць праграму"
       ],
       "Download for Mac": [
         "Спампаваць для Mac"
@@ -1106,9 +1100,6 @@
       ],
       "Try another method": [
         "Паспрабуйце іншы спосаб"
-      ],
-      "Try it now": [
-        "Паспрабуйце цяпер"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Паспрабуйце захаваць яшчэ раз пазней. Не ўдалося выканаць аперацыю з прычыны: ${ saveError }"
@@ -3581,20 +3572,11 @@
       "Failed to update public share node": [
         "Не ўдалося абнавіць публічны вузел абагульвання"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Файл \"${ name }\" ужо спампоўваецца"
-      ],
       "File cannot be merged with folder": [
         "Немагчыма аб'яднаць файл з папкай"
       ],
-      "File selection is already downloading": [
-        "Выбраны файл ужо спампоўваецца"
-      ],
       "First name is too long": [
         "Занадта доўгае імя"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Папка \"${ name }\" ужо спампоўваецца"
       ],
       "Folder name cannot be empty.": [
         "Назва папкі не можа быць пустой."
@@ -3909,7 +3891,7 @@
         "У арыгінальным файле адсутнічае хэш-ключ"
       ],
       "The original file has missing session key": [
-        "У арыгінальным файле адсутнічае ключ сеансу"
+        "У арыгінальным файле адсутнічае ключ сеанса"
       ],
       "The original file is not uploaded yet, please try again later": [
         "Арыгінальны файл пакуль не запампаваны. Паспрабуйце яшчэ раз пазней"
@@ -5337,9 +5319,6 @@
       "An active recovery file": [
         "Актыўны файл аднаўлення"
       ],
-      "an anonymous user": [
-        "ананімны карыстальнік"
-      ],
       "An issue occurred during the restore process.": [
         "Падчас працэсу аднаўлення адбылася памылка."
       ],
@@ -5450,9 +5429,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Праверка кантакту ${ progress } з ${ max }..."
-      ],
-      "Checking signatures": [
-        "Праверка подпісаў"
       ],
       "Choose a plan that works best for you.": [
         "Выберыце тарыфны план, які найлепш вам пасуе."
@@ -5577,12 +5553,6 @@
       "Details": [
         "Падрабязнасці"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Лічбавы подпіс правераны. Гэты файл бяспечна запампаваны ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Лічбавы подпіс правераны. Гэта папка бяспечна запампавана ${ emailAddress }."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Пазнаёмцеся з новымі функцыямі і пачніце выкарыстоўваць іх неадкладна!"
       ],
@@ -5615,9 +5585,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Спампоўванне файла ${ downloadFileName } было перарвана"
-      ],
-      "Download was canceled": [
-        "Спампоўванне скасавана"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Спампуйце вашу абраную праграму сёння і прыватнасць застанецца з вамі ў любым месцы."
@@ -5730,20 +5697,11 @@
       "Feb": [
         "Лют"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "Файл \"${ name }\" быў выдалены падчас спампоўвання"
-      ],
       "File could not be scanned": [
         "Не ўдалося сканіраваць файл"
       ],
       "File flagged as potentially malicious": [
         "Файл пазначаны як патэнцыйна шкодны"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Файл не мае подпісу. Мы не можам спраўдзіць, што ${ emailAddress } запампаваў ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Файл не мае подпісу. Немагчыма спраўдзіць хто запампаваў ${ fileName }."
       ],
       "File will not be updated": [
         "Файл не будзе абноўлены"
@@ -5753,15 +5711,6 @@
       ],
       "finance": [
         "фінансы"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "Папка \"${ link.name }\" была выдалена падчас спампоўвання"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Папка не мае подпісу. Мы не можам спраўдзіць, што ${ emailAddress } запампаваў ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Папка не мае подпісу. Немагчыма спраўдзіць хто запампаваў ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Папка не будзе запампавана"
@@ -6238,7 +6187,7 @@
         "Прайдзіце аўтэнтыфікацыю са сваёй карткай на ўкладцы праверкі."
       ],
       "Please authenticate your payment in the verification tab.": [
-        "Прайдзіце аўтэнтыфікацыю свайго плацяжу на ўкладцы праверкі."
+        "Прайдзіце аўтэнтыфікацыю свайго плацяжу на ўкладцы спраўджання."
       ],
       "Please enter the password to decrypt and view content.": [
         "Увядзіце пароль для расшыфроўкі і прагляду змесціва."
@@ -6325,7 +6274,7 @@
         "Прыватны прагляд вэб-старонак (або рэжым \"інкогніта\") карысны толькі для хавання актыўнасці на вашай прыладзе. Браўзер не будзе захоўваць гісторыю і файлы cookie, але гэта не робіць вас нябачным. Ваш пастаўшчык паслуг інтэрнэту, сеткавы адміністратар і вэб-сайты ўсё яшчэ могуць бачыць, што вы робіце ў інтэрнэце."
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Прыватны пошук уключаны. Цяпер вы можаце закрыць гэта акно і шукаць у файлах і папках."
+        "Прыватны пошук уключаны. Цяпер вы можаце закрыць гэта дыялогавае акно і шукаць у файлах і папках."
       ],
       "Public link": [
         "Публічная спасылка"
@@ -6483,9 +6432,6 @@
       "Shared with you": [
         "Абагулена з вамі"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Немагчыма выканаць праверку подпісу з прычыны памылкі сеткі. Паспрабуйце яшчэ раз пазней."
-      ],
       "Signature check will be ignored": [
         "Праверка подпісу была праігнаравана"
       ],
@@ -6552,17 +6498,8 @@
       "that": [
         "што"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Магчыма, што ўліковы запіс мае новы ключ або наступныя элементы былі падроблены: ${ items }. Адкрывайце толькі калі давяраеце ім."
-      ],
       "The albums you create are shown here.": [
         "Створаныя вамі альбомы будуць паказаны тут."
-      ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Лічбавы подпіс часткова правераны. Гэты файл запампаваны з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Лічбавы подпіс быў часткова спраўджаны. Гэта папка запампавана з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Колькасць спампоўванняў уключае як фактычныя спампоўванні, так і папярэдні прагляд файлаў."
@@ -6572,9 +6509,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Магчыма, што гэтыя элементы былі падроблены: ${ items }. Адкрывайце толькі калі давяраеце ім."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Уладальнік гэтага адраса адключыў скразное шыфраванне. Яму неабходна паўторна ўключыць яго, каб мець магчымасць адпраўляць зашыфраваныя лісты на гэты адрас."
@@ -6879,17 +6813,11 @@
       "We couldn’t process your payment.": [
         "Мы не можам апрацаваць ваш плацеж."
       ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Мы не можам спраўдзіць, што ${ emailAddress } запампаваў ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Мы не можам спраўдзіць хто запампаваў ${ fileName }."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Нам неабходна аўтэнтыфікаваць спосаб плацяжу з дапамогай вашага банка."
       ],
       "We need to authenticate your payment with your bank.": [
-        "Нам неабходна аўтэнтыфікаваць плацеж з дапамогай вашага банка."
+        "Неабходна аўтэнтыфікаваць плацеж з дапамогай вашага банка."
       ],
       "We use 3-D Secure to protect your payments": [
         "Выкарыстоўваецца 3-D Secure для абароны вашых плацяжоў"
@@ -7110,9 +7038,6 @@
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
         "У вашым браўзеры скончылася месца пры індэксацыі файлаў для пошуку. Паспрабуйце аднавіць індэкс."
       ],
-      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
-        "У вашага браўзера адсутнічае функцыя спампоўкі вялікіх файлаў або некалькіх файлаў. Спампуйце настольную праграму для бесперашкоднай запампоўкі і спампоўкі."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Вашы даныя гатовы да імпартавання з ${ importedEmailAddressStrong } у ваш уліковы запіс ${ BRAND_NAME }."
       ],
@@ -7245,32 +7170,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Толькі прагляд"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "атрыбуты файла"
-      ],
-      "file data": [
-        "даныя файла"
-      ],
-      "file data key": [
-        "ключ даных файла"
-      ],
-      "file data order": [
-        "парадак даных файла"
-      ],
-      "hash key": [
-        "хэш-ключ"
-      ],
-      "keys": [
-        "ключы"
-      ],
-      "name": [
-        "назва"
-      ],
-      "thumbnail": [
-        "мініяцюра"
       ]
     },
     "Key badge": {
@@ -9393,7 +9292,7 @@
         "Неабмежаваная прыватнасць і больш сховішча. Разлічаны на 1 або 2 карыстальнікі."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы выдаліце свой уліковы запіс, то згубіце гэту перавагу і пры гэтым паўторна вярнуцца на яго вы больш не зможаце, калі паспрабуеце стварыць новы ўліковы запіс."
+        "Вы карыстаецеся бягучым тарыфным планам па акцыйным кошце. Калі вы выдаліце свой уліковы запіс, то згубіце гэту перавагу і пры гэтым паўторна вярнуцца на яго вы больш не зможаце, калі паспрабуеце стварыць новы ўліковы запіс."
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
@@ -12373,9 +12272,6 @@
       "Albums you've shared will appear here": [
         "Абагуленыя вамі альбомы з'явяцца тут"
       ],
-      "Securely share your favorite moments with friends and family using Albums.": [
-        "Бяспечна абагульвайце свае абраныя моманты з сябрамі і сям'ёй з дапамогай Альбомаў."
-      ],
       "Shared by ${ sharedBy }": [
         "Абагулена ${ sharedBy }"
       ],
@@ -12768,9 +12664,6 @@
       "Birthday": [
         "Дзень нараджэння"
       ],
-      "Browser might run out of memory": [
-        "Браўзеру магчыма не хапае памяці"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Скасаваць падпіску ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -12980,9 +12873,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Панізіць да ${ downgradedPlanName }?"
-      ],
-      "Download ${ date }": [
-        "Спампаваць ${ date }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Спампаваць праграмы ${ DRIVE_APP_NAME }"
@@ -13331,9 +13221,6 @@
       ],
       "Phone numbers": [
         "Нумары тэлефонаў"
-      ],
-      "Photo albums are here!": [
-        "Фотаальбомы тут!"
       ],
       "Photos": [
         "Фотаграфіі"

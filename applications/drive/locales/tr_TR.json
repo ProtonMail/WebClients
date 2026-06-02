@@ -246,9 +246,6 @@
       "Continue import": [
         "İçe aktarmayı sürdür"
       ],
-      "Continue on web": [
-        "İnternet uygulamasıyla ilerle"
-      ],
       "Continue to ${ planOrAppName }": [
         "${ planOrAppName } ile ilerle"
       ],
@@ -403,9 +400,6 @@
       ],
       "Download anyway": [
         "Yine de indir"
-      ],
-      "Download app": [
-        "Uygulamayı indir"
       ],
       "Download for Mac": [
         "Mac için indir"
@@ -1096,9 +1090,6 @@
       ],
       "Try another method": [
         "Başka bir yöntem deneyin"
-      ],
-      "Try it now": [
-        "Şimdi deneyin"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Yeniden kaydetmeyi deneyin. Şu sorun nedeniyle kaydedilemedi: ${ saveError }"
@@ -3531,20 +3522,11 @@
       "Failed to update public share node": [
         "Herkese açık paylaşım noktası güncellenemedi"
       ],
-      "File \"${ name }\" is already downloading": [
-        "\"${ name }\" zaten indiriliyor"
-      ],
       "File cannot be merged with folder": [
         "Dosya klasörle birleştirilemez"
       ],
-      "File selection is already downloading": [
-        "Seçilmiş dosyalar zaten indiriliyor"
-      ],
       "First name is too long": [
         "Ad çok uzun"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "\"${ name }\" klasörü zaten indiriliyor"
       ],
       "Folder name cannot be empty.": [
         "Klasör adı boş olamaz."
@@ -5181,9 +5163,6 @@
       "An active recovery file": [
         "Etkn bir kurtarma dosyası"
       ],
-      "an anonymous user": [
-        "isimsiz bir kullanıcı"
-      ],
       "An issue occurred during the restore process.": [
         "Geri yükleme sırasında bir sorun çıktı."
       ],
@@ -5294,9 +5273,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kişi denetleniyor ${ progress }/${ max }..."
-      ],
-      "Checking signatures": [
-        "İmzalar denetleniyor"
       ],
       "Choose a plan that works best for you.": [
         "Size en uygun tarifeyi seçin."
@@ -5415,12 +5391,6 @@
       "Details": [
         "Ayrıntılar"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Sayısal imza doğrulandı. Bu dosya ${ emailAddress } tarafından güvenli şekilde yüklendi."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Sayısal imza doğrulandı. Bu klasör ${ emailAddress } tarafından güvenli şekilde yüklendi."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Erişebileceğiniz yeni özellikleri keşfedin ve hemen kullanmaya başlayın!"
       ],
@@ -5453,9 +5423,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } dosyasının indirilmesinden vazgeçilecek"
-      ],
-      "Download was canceled": [
-        "İndirme iptal edildi"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Kullanmak istediğiniz uygulamayı indirin ve gizliliğinizi gittiğiniz her yere götürün."
@@ -5566,20 +5533,11 @@
       "Feb": [
         "Şub"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "\"${ name }\" dosyası indirme sırasında silindi"
-      ],
       "File could not be scanned": [
         "Dosya taranamadı"
       ],
       "File flagged as potentially malicious": [
         "Dosya potansiyel zararlı olarak işaretlendi"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Dosya imzası eksik. ${ fileName } ögesini ${ emailAddress } kullanıcısının yüklediği doğrulanamadı."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Dosya imzası eksik. ${ fileName } ögesini kimin yüklediği doğrulanamadı."
       ],
       "File will not be updated": [
         "Dosya güncellenmeyecek"
@@ -5589,15 +5547,6 @@
       ],
       "finance": [
         "finans"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "\"${ link.name }\" klasörü indirme sırasında silindi"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Klasör imzası eksik. ${ fileName } ögesini ${ emailAddress } kullanıcısının yüklediği doğrulanamadı."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Klasör imzası eksik. ${ fileName } ögesini kimin yüklediği doğrulanamadı."
       ],
       "Folder will not be uploaded": [
         "Klasör yüklenmeyecek"
@@ -6305,9 +6254,6 @@
       "Shared with you": [
         "Sizinle paylaşılan"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Ağ sorunu nedeniyle imza doğrulanamadı. Lütfen bir süre sonra yeniden deneyin."
-      ],
       "Signature check will be ignored": [
         "İmza denetimi yok sayılacak"
       ],
@@ -6372,17 +6318,8 @@
       "that": [
         "şu"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Hesabın yeni bir anahtarı olabilir ya da şu ögeler üzerinde oynanmış olabilir: ${ items }. Yalnızca güveniyorsanız açın."
-      ],
       "The albums you create are shown here.": [
         "Oluşturduğunuz albümler burada görüntülenir."
-      ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Sayısal imza kısmen doğrulandı. Bu klasör ${ BRAND_NAME } hesabı olmayan bir kullanıcı tarafından herkese açık bir paylaşım bağlantısı kullanılarak yüklendi. Bu nedenle kullanıcının kimliği doğrulanamıyor."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Sayısal imzanın bir bölümöü doğrulandı. Bu klasör ${ BRAND_NAME } hesabı olmayan bir kullanıcı tarafından herkese açık bir paylaşım bağlantısı kullanılarak yüklendi. Bu nedenle kimliği doğrulanamıyor."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "İndirme sayısına hem güncel indirmeler hem de dosya ön izlemeleri katılır."
@@ -6392,9 +6329,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Bilgiler üçüncü taraf bir hizmetten sızdırılmış. ${ BRAND_NAME } hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Şu ögeler üzerinde oynanmış olabilir: ${ items }. Yalnızca güveniyorsanız açın."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Bu adresin sahibi uçtan uca şifrelemeyi kapatmış. Bu adrese şifrelenmiş e-postalar gönderebilmek için adres sahibi uçtan uca şifrelemeyi yeniden açmalıdır."
@@ -6695,12 +6629,6 @@
       "We couldn’t process your payment.": [
         "Ödemenizi işleyemedik."
       ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "${ emailAddress } kullanıcısının ${ fileName } ögesini yüklediği doğrulanamadı."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "${ fileName } dosyasını kimin yüklediği doğrulanamadı."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Ödeme yönteminizi bankanızla doğrulamamız gerekiyor."
       ],
@@ -6912,9 +6840,6 @@
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
         "Arama için dosyalar dizine eklenirken tarayıcınızın depolama alanı doldu. Depolama alanını boşaltın ardından dizini yeniden oluşturun."
       ],
-      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
-        "Geçerli tarayıcınız büyük dosyaların/birden fazla dosyanın indirilmesini desteklemiyor. Yükleme ve indirme işlemlerinde kesinti olmaması için bilgisayar uygulamasını indirin."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
       ],
@@ -7041,32 +6966,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Yalnızca görüntüleme"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "dosya öznitelikleri"
-      ],
-      "file data": [
-        "dosya verileri"
-      ],
-      "file data key": [
-        "dosya verileri anahtarı"
-      ],
-      "file data order": [
-        "dosya verileri sıralaması"
-      ],
-      "hash key": [
-        "karma anahtarı"
-      ],
-      "keys": [
-        "anahtarlar"
-      ],
-      "name": [
-        "ad"
-      ],
-      "thumbnail": [
-        "küçük görsel"
       ]
     },
     "Key badge": {
@@ -11986,9 +11885,6 @@
       "Albums you've shared will appear here": [
         "Paylaştığınız albümler burada görünecek"
       ],
-      "Securely share your favorite moments with friends and family using Albums.": [
-        "Albümleri kullanarak beğendiğiniz anlarınızı arkadaşlarınız ve ailenizle güvenle paylaşın."
-      ],
       "Shared by ${ sharedBy }": [
         "${ sharedBy } tarafından paylaşıldı"
       ],
@@ -12359,9 +12255,6 @@
       "Birthday": [
         "Doğum günü"
       ],
-      "Browser might run out of memory": [
-        "Bellek tarayıcı için yetersiz olabilir"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal edin"
       ],
@@ -12565,9 +12458,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "${ downgradedPlanName } tarifesine düşürülsün mü?"
-      ],
-      "Download ${ date }": [
-        "${ date } indir"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } uygulamalarını indirin"
@@ -12912,9 +12802,6 @@
       ],
       "Phone numbers": [
         "Telefon numaraları"
-      ],
-      "Photo albums are here!": [
-        "Fotoğraf albümleri burada!"
       ],
       "Photos": [
         "Fotoğraflar"

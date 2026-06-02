@@ -239,9 +239,6 @@
       "Continue import": [
         "შემოტანის გაგრძელება"
       ],
-      "Continue on web": [
-        "გაგრძელება ვებზე"
-      ],
       "Continue transfers": [
         "გადაწერების გაგრძელება"
       ],
@@ -390,9 +387,6 @@
       ],
       "Download anyway": [
         "მაინც გადმოწერა"
-      ],
-      "Download app": [
-        "აპის გადმოწერა"
       ],
       "Download for Mac": [
         "გადმოწერა Mac-ისთვის"
@@ -1065,9 +1059,6 @@
       ],
       "Try another method": [
         "სხვა მეთოდის ცდა"
-      ],
-      "Try it now": [
-        "სცადეთ ახლა"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "შენახვა კიდევ ერთხელ სცადეთ. შენახვის შეცდომის მიზეზი: ${ saveError }"
@@ -3373,20 +3364,11 @@
       "Failed to update public share node": [
         "საჯარო ზიარის კვანძის განახლება ჩავარდა"
       ],
-      "File \"${ name }\" is already downloading": [
-        "ფაილის ${ name } გადმოწერა უკვე მიმდინარეობს"
-      ],
       "File cannot be merged with folder": [
         "ფაილი არ შეიძლება საქაღალდეს შეერწყას"
       ],
-      "File selection is already downloading": [
-        "მონიშნული ფაილის გადმოწერა უკვე მიმდინარეობს"
-      ],
       "First name is too long": [
         "სახელი ძალიან გრძელია"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "საქაღალდის ${ name } გადმოწერა უკვე მიმდინარეობს"
       ],
       "Folder name cannot be empty.": [
         "საქაღალდის სახელი ცარიელი არ შეიძლება იყოს."
@@ -4906,9 +4888,6 @@
       "An active recovery file": [
         "აღდგენის აქტიური ფაილი"
       ],
-      "an anonymous user": [
-        "ანონიმური მომხმარებელი"
-      ],
       "An issue occurred during the restore process.": [
         "აღდგენის პროცესში აღმოჩენილია პრობლემა."
       ],
@@ -5017,9 +4996,6 @@
       "Checking contact ${ progress } of ${ max }...": [
         "მოწმდება ${ progress }-ე კონტაქტი ${ max }-დან..."
       ],
-      "Checking signatures": [
-        "ხელმოწერების შემოწმება"
-      ],
       "Choose a plan that works best for you.": [
         "აირჩიეთ სატარიფო გეგმა, რომელიც საუკეთესოდ შეგესაბამებათ."
       ],
@@ -5124,12 +5100,6 @@
       "Details": [
         "დეტალები"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "ციფრული ხელმოწერა შემოწმებულია. ეს ფაილი დაცულად ატვირთა ${ emailAddress }-მა."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "ციფრული ხელმოწერა შემოწმებულია. ეს საქაღალდე დაცულად ატვირთა ${ emailAddress }-მა."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "აღმოაჩინეთ ახალი ფუნქციები და დაიწყეთ მათი გამოყენება ახლავე!"
       ],
@@ -5162,9 +5132,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName }-ის გადმოწერა გაუქმდება"
-      ],
-      "Download was canceled": [
-        "გადმოწერა გაწყდა"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "გადმოწერეთ თქვენი რჩეული აპლიკაცია დღეს და გქონდეთ თქვენი კონფიდენციალობა თან, სადაც უნდა წახვიდეთ."
@@ -5263,15 +5230,6 @@
       "Feb": [
         "თებ"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "ფაილი \"${ name }\" წაიშალა გადმოწერის დროს"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "ფაილს ხელმოწერა აკლია. ჩვენ ვერ შევამოწმეთ, ატვირთა ${ fileName } ${ emailAddress }-მა, თუ არა."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "ფაილს ხელმოწერა აკლია. ჩვენ ვერ შევამოწმეთ, ვინ ატვირთა ${ fileName }."
-      ],
       "File will not be updated": [
         "ფაილი არ განახლდება"
       ],
@@ -5280,15 +5238,6 @@
       ],
       "finance": [
         "ფინანსები"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "საქაღალდე \"${ link.name }\" წაიშალა გადმოწერის დროს"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "საქაღალდეს ხელმოწერა აკლია. ჩვენ ვერ შევამოწმეთ, ატვირთა ${ fileName } ${ emailAddress }-მა, თუ არა."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "საქაღალდეს ხელმოწერა აკლია. ჩვენ ვერ შევამოწმეთ, ვინ ატვირთა ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "საქაღალდე არ აიტვირთება"
@@ -5908,9 +5857,6 @@
       "Shared with you": [
         "თქვენთან გაზიარებული"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "ხელმოწერა ვერ დადასტურდება ქსელის შეცდომის გამო, გთხოვთ, სცადეთ მოგვიანებით."
-      ],
       "Signature check will be ignored": [
         "ხელმოწერის შემოწმების გამოტოვება"
       ],
@@ -5960,9 +5906,6 @@
       "that": [
         "ის"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "ამ ანგარიშს შეიძლება, ახალი გასაღები ჰქონდეს, ან შეიცვალა: ${ items } არ გახსნათ, თუ არ ენდობით."
-      ],
       "The albums you create are shown here.": [
         "ალბომები, რომლებსაც შექმნით, აქ გამოჩნდება."
       ],
@@ -5974,9 +5917,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "გაჟონილი ინფორმაცია მესამე პირების მიერ იქნა გავრცელებული. თქვენი ${ BRAND_NAME }-ის ანგარიშის ინფორმაცია დაცულად და დაშიფრულად რჩება. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "ეს ელემენტები შეიძლება შეიცვალა: ${ items }. გახსენით, მხოლოდ, მაშინ, თუ ენდობით."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "ამ მისამართის მფლობელმა გამჭოლი დაშიფვრა გამორთო. იმისათვის, რომ შეგეძლოთ, ამ მისამართზე დაშიფრული შეტყობინებები გააგზავნოთ, მფლობელმა გამჭოლი დაშიფვრა თავიდან უნდა ჩართოს."
@@ -6232,12 +6172,6 @@
       ],
       "We couldn’t process your payment.": [
         "თქვენი გადახდა ვერ დავამუშავეთ."
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "ჩვენ ვერ შევამოწმეთ, ატვირთა ${ fileName } ${ emailAddress }-მა, თუ არა."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "ჩვენ ვერ ვამოწმებთ, ვინ ატვირთა ${ fileName }."
       ],
       "We need to authenticate your payment method with your bank.": [
         "ჩვენ თქვენი გადახდის მეთოდის ავთენტიკაცია გვჭირდება თქვენს ბანკში."
@@ -6520,32 +6454,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "მხოლოდ დათვალიერებისათვის"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "ფაილის ატრიბუტები"
-      ],
-      "file data": [
-        "ფაილის მონაცემები"
-      ],
-      "file data key": [
-        "ფაილის მონაცემების გასაღები"
-      ],
-      "file data order": [
-        "ფაილის მონაცემების მიმდევრობა"
-      ],
-      "hash key": [
-        "ჰეშის გასაღები"
-      ],
-      "keys": [
-        "გასაღებები"
-      ],
-      "name": [
-        "სახელი"
-      ],
-      "thumbnail": [
-        "მინიატურა"
       ]
     },
     "Key badge": {
@@ -11019,9 +10927,6 @@
       "Albums you've shared will appear here": [
         "ალბომები, რომლებიც გააზიარეთ, აქ გამოჩნდება"
       ],
-      "Securely share your favorite moments with friends and family using Albums.": [
-        "გააზიარეთ დაცულად თქვენი რჩეული მომენტები მეგობრებთან და ოჯახთან ალბომების გამოყენებით."
-      ],
       "Shared by ${ sharedBy }": [
         "გაზიარებულია ${ sharedBy }-ის მიერ"
       ],
@@ -11392,9 +11297,6 @@
       "Birthday": [
         "დაბადების დღე"
       ],
-      "Browser might run out of memory": [
-        "თქვენს ბრაუზერს მეხსიერება არ ჰყოფნის"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } გამოწერის გაუქმება"
       ],
@@ -11577,9 +11479,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა?"
-      ],
-      "Download ${ date }": [
-        "${ date }-ის გადმოწერა"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME }-ის აპების გადმოწერა"
@@ -11915,9 +11814,6 @@
       ],
       "Phone numbers": [
         "ტელეფონის ნომრები"
-      ],
-      "Photo albums are here!": [
-        "ფოტოალბომები უკვე აქაა!"
       ],
       "Photos": [
         "ფოტოები"

@@ -252,9 +252,6 @@
       "Continue import": [
         "Pokračovať v importe"
       ],
-      "Continue on web": [
-        "Pokračovať na webe"
-      ],
       "Continue to ${ planOrAppName }": [
         "Pokračovať do ${ planOrAppName }"
       ],
@@ -410,9 +407,6 @@
       ],
       "Download anyway": [
         "Napriek tomu stiahnuť"
-      ],
-      "Download app": [
-        "Stiahnuť aplikáciu"
       ],
       "Download for Mac": [
         "Stiahnuť pre Mac"
@@ -1103,9 +1097,6 @@
       ],
       "Try another method": [
         "Skúsiť inú metódu"
-      ],
-      "Try it now": [
-        "Skúste to teraz"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Pokúste sa znova uložiť. Uloženie zlyhalo z dôvodu: ${ saveError }"
@@ -3563,20 +3554,11 @@
       "Failed to update public share node": [
         "Nepodarilo sa aktualizovať uzol verejného zdieľania"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Súbor „${ name }“ sa už sťahuje"
-      ],
       "File cannot be merged with folder": [
         "Súbor nie je možné zlúčiť s priečinkom"
       ],
-      "File selection is already downloading": [
-        "Vybrané súbory sa už sťahujú"
-      ],
       "First name is too long": [
         "Meno je príliš dlhé"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Priečinok „${ name }“ sa už sťahuje"
       ],
       "Folder name cannot be empty.": [
         "Názov priečinka nesmie byť prázdny."
@@ -5307,9 +5289,6 @@
       "An active recovery file": [
         "Aktívny súbor na obnovenie"
       ],
-      "an anonymous user": [
-        "anonymný používateľ"
-      ],
       "An issue occurred during the restore process.": [
         "Počas procesu obnovy došlo k chybe."
       ],
@@ -5420,9 +5399,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Vyhľadávanie kontaktu ${ progress } o ${ max }..."
-      ],
-      "Checking signatures": [
-        "Kontrola podpisov"
       ],
       "Choose a plan that works best for you.": [
         "Vyberte si plán, ktorý vám najviac vyhovuje."
@@ -5547,12 +5523,6 @@
       "Details": [
         "Podrobnosti"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Digitálny podpis overený. Tento súbor bol bezpečne nahraný prostredníctvom ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Digitálny podpis overený. Tento priečinok bol bezpečne nahraný prostredníctvom ${ emailAddress }."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Objavte nové odomknuté funkcie a začnite ich hneď používať!"
       ],
@@ -5585,9 +5555,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Preberanie súboru ${ downloadFileName } bude prerušené"
-      ],
-      "Download was canceled": [
-        "Sťahovanie bolo zrušené"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Stiahnite si svoju obľúbenú aplikáciu ešte dnes a vezmite súkromie do svojich rúk, nech ste kdekoľvek."
@@ -5700,20 +5667,11 @@
       "Feb": [
         "Feb"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "Súbor „${ name }“ bol vymazaný počas sťahovania"
-      ],
       "File could not be scanned": [
         "Súbor sa nepodarilo skenovať"
       ],
       "File flagged as potentially malicious": [
         "Súbor označený ako potenciálne škodlivý"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Súboru chýba podpis. Nemohli sme overiť, či ${ emailAddress } nahral ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Súboru chýba podpis. Nemohli sme overiť, kto nahral ${ fileName }."
       ],
       "File will not be updated": [
         "Súbor nebude aktualizovaný"
@@ -5723,15 +5681,6 @@
       ],
       "finance": [
         "financie"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "Priečinok „${ link.name }“ bol vymazaný počas sťahovania"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Priečinku chýba podpis. Nemohli sme overiť, či ${ emailAddress } nahral ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Priečinku chýba podpis. Nemohli sme overiť, kto nahral ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Priečinok nebude nahraný"
@@ -6450,9 +6399,6 @@
       "Shared with you": [
         "Zdieľané s vami"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Podpis nemožno overiť kvôli chybe siete, skúste znovu neskôr, prosím."
-      ],
       "Signature check will be ignored": [
         "Kontrola podpisu sa nebude brať do úvahy"
       ],
@@ -6519,17 +6465,8 @@
       "that": [
         "že"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Účet môže mať nový kľúč alebo mohlo dôjsť k manipulácii s nasledujúcimi údajmi: ${ items }. Otvorte len v prípade, že tomu dôverujete."
-      ],
       "The albums you create are shown here.": [
         "Albumy, ktoré vytvoríte budú zobrazené na tomto mieste."
-      ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Digitálny podpis bol čiastočne overený. Tento súbor bol nahraný pomocou verejne prístupného zdieľacieho odkazu používateľom bez ${ BRAND_NAME } účtu, takže jeho identitu nemožno overiť."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Digitálny podpis bol čiastočne overený. Tento priečinok bol nahraný pomocou verejne prístupného zdieľacieho odkazu používateľom bez ${ BRAND_NAME } účtu, takže jeho identitu nemožno overiť."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Počet stiahnutí zahŕňa skutočné stiahnutia aj prípady, keď sú súbory zobrazené v náhľade."
@@ -6539,9 +6476,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Informácie, ktoré boli zverejnené, unikli zo služby tretej strany. Vaše informácie o účte ${ BRAND_NAME } zostávajú zabezpečené a zašifrované. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "S nasledujúcimi údajmi sa mohlo manipulovať: ${ items }. Otvorte ich, len ak im dôverujete."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Vlastník tejto adresy vypol end-to-end šifrovanie. Ak chcete na túto adresu odosielať šifrované emaily, vlastník musí opäť povoliť end-to-end šifrovanie."
@@ -6840,12 +6774,6 @@
       "We couldn’t process your payment.": [
         "Vašu platbu sa nám nepodarilo spracovať."
       ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Nemohli sme overiť, či ${ emailAddress } nahral ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Nemohli sme overiť, kto nahral ${ fileName }."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Potrebujeme overiť spôsob platby vo vašej banke."
       ],
@@ -7071,9 +6999,6 @@
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
         "Váš prehliadač nemá dostatok miesta na indexovanie súborov pre vyhľadávanie. Uvoľnite miesto v úložisku a potom preindexujte súbory."
       ],
-      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
-        "Váš aktuálny prehliadač nepodporuje sťahovanie veľkých súborov/viacerých súborov. Stiahnite si desktopovú aplikáciu pre bezproblémové nahrávanie a sťahovanie."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaše údaje sú pripravené na import z ${ importedEmailAddressStrong } do vášho účtu ${ BRAND_NAME }."
       ],
@@ -7206,32 +7131,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Iba zobrazenie"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "atribúty súboru"
-      ],
-      "file data": [
-        "údaje o súbore"
-      ],
-      "file data key": [
-        "kľúč k údajom o súbore"
-      ],
-      "file data order": [
-        "poradie údajov o súbore"
-      ],
-      "hash key": [
-        "hash kľúč"
-      ],
-      "keys": [
-        "kľúče"
-      ],
-      "name": [
-        "názov"
-      ],
-      "thumbnail": [
-        "náhľad"
       ]
     },
     "Key badge": {
@@ -12283,9 +12182,6 @@
       "Albums you've shared will appear here": [
         "Tu sa zobrazia albumy, ktoré zdieľate"
       ],
-      "Securely share your favorite moments with friends and family using Albums.": [
-        "Bezpečne zdieľajte vaše obľúbené okamihy s priateľmi a rodinou pomocou Albumov."
-      ],
       "Shared by ${ sharedBy }": [
         "Zdieľané vlastníkom ${ sharedBy }"
       ],
@@ -12678,9 +12574,6 @@
       "Birthday": [
         "Narodeniny"
       ],
-      "Browser might run out of memory": [
-        "Prehliadaču môžno dochádza pamäť"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Zrušiť predplatné ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -12887,9 +12780,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Prejsť na nižší plán ${ downgradedPlanName }?"
-      ],
-      "Download ${ date }": [
-        "Stiahnuť ${ date }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Stiahnuť aplikácie ${ DRIVE_APP_NAME }"
@@ -13235,9 +13125,6 @@
       ],
       "Phone numbers": [
         "Telefónne čísla"
-      ],
-      "Photo albums are here!": [
-        "Fotoalbumy sú tu!"
       ],
       "Photos": [
         "Fotografie"

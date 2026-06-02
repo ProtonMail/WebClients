@@ -2678,20 +2678,11 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Зовнішні запрошення тимчасово вимкнені. Спробуйте ще раз пізніше"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Файл \"${ name }\" вже завантажується"
-      ],
       "File cannot be merged with folder": [
         "Не можна об'єднувати файл з текою"
       ],
-      "File selection is already downloading": [
-        "Вибрані файли вже завантажуються"
-      ],
       "First name is too long": [
         "Ім'я занадто довге"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Тека \"${ name }\" вже завантажується"
       ],
       "Folder name cannot be empty.": [
         "Тека не може бути без назви."
@@ -4113,9 +4104,6 @@
       "An active recovery file": [
         "Активний файл відновлення"
       ],
-      "an anonymous user": [
-        "анонімний користувач"
-      ],
       "An issue occurred during the restore process.": [
         "Під час процесу відновлення сталася помилка."
       ],
@@ -4190,9 +4178,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Перевірка контактів ${ progress } з ${ max }..."
-      ],
-      "Checking signatures": [
-        "Перевірка підписів"
       ],
       "Clear data": [
         "Очистити дані"
@@ -4281,12 +4266,6 @@
       "Details": [
         "Деталі"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Цифровий підпис перевірено. Цей файл безпечно вивантажено користувачем ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Цифровий підпис перевірено. Цю теку безпечно вивантажено користувачем ${ emailAddress }."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Відкрийте для себе нові функції, які стали доступними, та почніть користуватися ними просто зараз!"
       ],
@@ -4307,9 +4286,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Завантаження ${ downloadFileName } буде скасовано"
-      ],
-      "Download was canceled": [
-        "Завантаження скасовано"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Завантажте свою улюблену програму й отримайте приватність з собою всюди."
@@ -4389,15 +4365,6 @@
       "Expired": [
         "Протерміновано"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "Файл \"${ name }\" було видалено під час завантаження"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "У файлі відсутній підпис. Ми не можемо підтвердити, що ${ emailAddress } вивантажив ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "У файлі відсутній підпис. Ми не можемо перевірити хто вивантажив ${ fileName }."
-      ],
       "File will not be updated": [
         "Файл не буде оновлено"
       ],
@@ -4406,15 +4373,6 @@
       ],
       "finance": [
         "фінанси"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "Теку \"${ link.name }\" було видалено під час завантаження"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "У теці відсутній підпис. Ми не можемо підтвердити, що ${ emailAddress } вивантажив ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "У теці відсутній підпис. Ми не можемо перевірити хто вивантажив ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Теку не буде вивантажено"
@@ -4899,9 +4857,6 @@
       "Shared with me": [
         "Поширено для мене"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Неможливо підтвердити підпис через помилку мережі. Будь ласка, спробуйте знову пізніше."
-      ],
       "Signature check will be ignored": [
         "Перевіркою підпису буде знехтувано"
       ],
@@ -4926,9 +4881,6 @@
       "Temporarily unavailable. Please check back later.": [
         "Тимчасово недоступно. Повторіть спробу пізніше."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Можливо, в обліковому записі є новий ключ або ці елементи підроблено: ${ items }. Відкривайте, лише якщо ви довіряєте їм."
-      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Кількість завантажень включає як фактичні завантаження, так і випадки попереднього перегляду файлів."
       ],
@@ -4937,9 +4889,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "На сторонньому сервісі стався витік даних. Інформація вашого облікового запису ${ BRAND_NAME } у безпеці та зашифрована. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Можливо ці елементи було підроблено: ${ items }. Відкрийте лише якщо довіряєте їм."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Власник цієї адреси вимкнув наскрізне шифрування. Щоб мати можливість надсилати зашифровані листи на цю адресу, він повинен повторно ввімкнути шифрування."
@@ -5147,12 +5096,6 @@
       ],
       "We couldn’t process your payment.": [
         "Не вдається обробити ваш платіж."
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Ми не можемо підтвердити, що ${ emailAddress } вивантажив ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Нам не вдалося перевірити хто вивантажив ${ fileName }."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Потрібно підтвердити вказаний спосіб оплати у вашому банку."
@@ -5389,32 +5332,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Тільки перегляд"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "атрибути фалу"
-      ],
-      "file data": [
-        "дані файлу"
-      ],
-      "file data key": [
-        "ключ даних файлу"
-      ],
-      "file data order": [
-        "порядок файлів даних"
-      ],
-      "hash key": [
-        "хеш-ключ"
-      ],
-      "keys": [
-        "ключі"
-      ],
-      "name": [
-        "назва"
-      ],
-      "thumbnail": [
-        "мініатюра"
       ]
     },
     "Key badge": {
@@ -9558,9 +9475,6 @@
       "Birthday": [
         "День народження"
       ],
-      "Browser might run out of memory": [
-        "Браузер може вичерпати пам'ять"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Скасувати передплату ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -9704,9 +9618,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Понизити до ${ downgradedPlanName }?"
-      ],
-      "Download ${ date }": [
-        "Завантажити ${ date }"
       ],
       "Download the app": [
         "Завантажити програму"
