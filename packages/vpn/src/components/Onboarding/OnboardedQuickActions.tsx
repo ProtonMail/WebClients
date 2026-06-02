@@ -3,11 +3,14 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { type DisplayItem, SpotlightMenuButton } from '@proton/components/components/topnavbar/SpotlightMenuButton';
+import { useLocalState } from '@proton/components/index';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import globeVpnImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-globe-vpn.svg';
 import networkConfigurationImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-network-configuration.svg';
 import profilesImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-profiles.svg';
 import recoveryImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-recovery.svg';
+
+import { Onboarding } from '../../../constants/onboarding';
 
 type Props = {
     onDismiss: () => void;
@@ -63,10 +66,20 @@ export const OnboardedQuickActions = ({ onDismiss }: Props) => {
         []
     );
 
+    const [isFresh, setIsFresh] = useLocalState<boolean>(true, Onboarding.quickActionsKey);
+
+    const handleOnDismiss = () => {
+        if (isFresh) {
+            setIsFresh(false);
+        }
+        onDismiss();
+    };
+
     return (
         <SpotlightMenuButton
-            initiallyOpen
+            initiallyOpen={isFresh}
             items={getStartedItems}
+            onToggle={setIsFresh}
             header={
                 <div className="pb-4">
                     <h3 className="text-bold">{c('Info').t`Get started`}</h3>
@@ -74,7 +87,7 @@ export const OnboardedQuickActions = ({ onDismiss }: Props) => {
                         .t`Set up your organization and start protecting your data in a few easy steps.`}</div>
                 </div>
             }
-            onDismiss={onDismiss}
+            onDismiss={handleOnDismiss}
         />
     );
 };

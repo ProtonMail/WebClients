@@ -11,7 +11,7 @@ import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 
 import { useOnOrganizationNameSetup } from '../../hooks/useOnOrganizationNameSetup';
 import { useOnboarding } from '../../hooks/useOnboarding';
-import { ONBOARDING } from '../../types/Onboarding';
+import { ONBOARDING_STEPS } from '../../types/Onboarding';
 import { OnboardedQuickActions } from './OnboardedQuickActions';
 
 const GetStartedOnboardingInner = ({ organization }: { organization: OrganizationExtended }) => {
@@ -21,7 +21,7 @@ const GetStartedOnboardingInner = ({ organization }: { organization: Organizatio
     const goToSettings = useSettingsLink();
 
     const [isOrgNameModalDismissed, setIsOrgNameModalDismissed] = useState(false);
-    if (isBusinessOnboarded === ONBOARDING.NotOnboarded) {
+    if (isBusinessOnboarded === ONBOARDING_STEPS.NotOnboarded) {
         return (
             <>
                 <GetStartedButton onGetStarted={() => setIsOrgNameModalDismissed(false)} />
@@ -49,7 +49,7 @@ const GetStartedOnboardingInner = ({ organization }: { organization: Organizatio
         );
     }
 
-    if (isBusinessOnboarded === ONBOARDING.Onboarded) {
+    if (isBusinessOnboarded === ONBOARDING_STEPS.Onboarded) {
         return <OnboardedQuickActions onDismiss={completed} />;
     }
 

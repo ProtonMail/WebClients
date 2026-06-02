@@ -7,7 +7,7 @@ import useSettingsLink from '@proton/components/components/link/useSettingsLink'
 
 import { useOnOrganizationNameSetup } from '../../hooks/useOnOrganizationNameSetup';
 import { useOnboarding } from '../../hooks/useOnboarding';
-import { ONBOARDING } from '../../types/Onboarding';
+import { ONBOARDING_STEPS } from '../../types/Onboarding';
 import { GetStartedOnboarding } from './index';
 
 vi.mock('@proton/account/organization/hooks', () => ({
@@ -62,7 +62,7 @@ describe('GetStartedOnboarding', () => {
         mockUseOrganization.mockReturnValue([mockOrganization, false]);
         mockUseSettingsLink.mockReturnValue(vi.fn());
         mockUseOnOrganizationNameSetup.mockReturnValue(vi.fn());
-        mockUseOnboarding.mockReturnValue([ONBOARDING.Onboarded, vi.fn(), vi.fn()]);
+        mockUseOnboarding.mockReturnValue([ONBOARDING_STEPS.Onboarded, vi.fn(), vi.fn()]);
     });
 
     it('renders nothing when there is no organization', () => {
@@ -74,7 +74,7 @@ describe('GetStartedOnboarding', () => {
     });
 
     it('renders SetupOrganizationNameModal when not onboarded', () => {
-        mockUseOnboarding.mockReturnValue([ONBOARDING.NotOnboarded, vi.fn(), vi.fn()]);
+        mockUseOnboarding.mockReturnValue([ONBOARDING_STEPS.NotOnboarded, vi.fn(), vi.fn()]);
 
         render(<GetStartedOnboarding />);
 
@@ -88,7 +88,7 @@ describe('GetStartedOnboarding', () => {
     });
 
     it('renders nothing when not eligible', () => {
-        mockUseOnboarding.mockReturnValue([ONBOARDING.NotEligible, vi.fn(), vi.fn()]);
+        mockUseOnboarding.mockReturnValue([ONBOARDING_STEPS.NotEligible, vi.fn(), vi.fn()]);
 
         const { container } = render(<GetStartedOnboarding />);
 
@@ -96,7 +96,7 @@ describe('GetStartedOnboarding', () => {
     });
 
     it('renders nothing when dismissed', () => {
-        mockUseOnboarding.mockReturnValue([ONBOARDING.Dismissed, vi.fn(), vi.fn()]);
+        mockUseOnboarding.mockReturnValue([ONBOARDING_STEPS.Dismissed, vi.fn(), vi.fn()]);
 
         const { container } = render(<GetStartedOnboarding />);
 
@@ -108,7 +108,7 @@ describe('GetStartedOnboarding', () => {
         const mockOnOrganizationNameSetup = vi.fn().mockResolvedValue(undefined);
         const mockGoToSettings = vi.fn();
 
-        mockUseOnboarding.mockReturnValue([ONBOARDING.NotOnboarded, mockOnboarded, vi.fn()]);
+        mockUseOnboarding.mockReturnValue([ONBOARDING_STEPS.NotOnboarded, mockOnboarded, vi.fn()]);
         mockUseOnOrganizationNameSetup.mockReturnValue(mockOnOrganizationNameSetup);
         mockUseSettingsLink.mockReturnValue(mockGoToSettings);
 
@@ -123,7 +123,7 @@ describe('GetStartedOnboarding', () => {
 
     it('passes completed as onDismiss to OnboardedQuickActions', async () => {
         const mockCompleted = vi.fn();
-        mockUseOnboarding.mockReturnValue([ONBOARDING.Onboarded, vi.fn(), mockCompleted]);
+        mockUseOnboarding.mockReturnValue([ONBOARDING_STEPS.Onboarded, vi.fn(), mockCompleted]);
 
         render(<GetStartedOnboarding />);
 
