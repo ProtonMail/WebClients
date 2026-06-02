@@ -81,6 +81,10 @@ public final class ProcessSafariExtensionEvent: ProcessSafariExtensionEventUseCa
             if let content = writeToClipboard["Content"] {
                 return .writeToClipboard(content: content)
             }
+        } else if let fetchRelatedOrigins = dict["fetchRelatedOrigins"] as? [String: String] {
+            if let url = fetchRelatedOrigins["url"] {
+                return .fetchRelatedOrigins(url: url)
+            }
         }
 
         return .unknown
