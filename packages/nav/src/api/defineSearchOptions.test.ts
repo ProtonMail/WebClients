@@ -1,5 +1,3 @@
-import { describe, expect, it } from 'vitest';
-
 import type { NavContext } from '../types/models';
 import type { NavDefinition } from '../types/nav';
 import { SettingsLayoutVariant } from '../types/searchOptions';

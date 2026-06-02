@@ -1,5 +1,3 @@
-import { describe, expect, it } from 'vitest';
-
 import type { NavResolved } from '../types/nav';
 import { applyPrefix } from './applyPrefix';
 
