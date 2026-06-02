@@ -1,4 +1,5 @@
-import { DropdownMenuButton, Icon } from '@proton/components'
+import { DropdownMenuButton } from '@proton/components'
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark'
 import clsx from '@proton/utils/clsx'
 import type { ReactNode } from 'react'
 
@@ -32,8 +33,7 @@ export function InteractionDropdownButton({
       {icon}
       <div className={clsx('[grid-column:2] [grid-row:1]', isActive && 'font-bold')}>{label}</div>
       <div className="text-weak text-xs [grid-column:2] [grid-row:2]">{description}</div>
-      <Icon
-        name="checkmark"
+      <IcCheckmark
         className={clsx('ml-auto opacity-0 [grid-column:3] [grid-row:1]', isActive && 'opacity-100')}
         size={4.5}
       />
