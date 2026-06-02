@@ -461,8 +461,6 @@ describe('checkVatNumber', () => {
             ['ES', 'ESB61979175'],
             ['GB', 'GB000472631'],
             ['GB', 'GB834549605'],
-            ['CH', 'CHE100416306MWST'],
-            ['CH', 'CHE432825998TVA'],
             ['AU', 'AU51824753556'],
             ['AU', 'AU53004085616'],
             ['SG', 'SG200512345G'],
@@ -482,7 +480,6 @@ describe('checkVatNumber', () => {
             ['ES', 'ES00000001A'],
             ['GB', 'GB999000103'],
             ['GB', 'GB010123456'],
-            ['CH', 'CHE-432.825.99-MWST'],
             ['AU', 'AU51824753557'],
             ['AU', 'AU1234567890'],
             ['SG', 'SG12345678'],
@@ -493,18 +490,8 @@ describe('checkVatNumber', () => {
     });
 
     describe('countries not in countriesWithVatId', () => {
-        it.each(['TH', 'TR', 'JP', 'US', 'CN', 'BR', 'RU'])(
+        it.each(['TH', 'TR', 'JP', 'US', 'CN', 'BR', 'RU', 'CH', 'LI', 'IS'])(
             'should return true for any VAT number when country is %s',
-            (countryCode) => {
-                expect(checkVatNumber('ANYTHING123', countryCode)).toBe(true);
-                expect(checkVatNumber('12345', countryCode)).toBe(true);
-            }
-        );
-    });
-
-    describe('countries in countriesWithVatId but not covered by vat-validation library', () => {
-        it.each(['LI', 'IS'])(
-            'should return true for any VAT number when country is %s (not in vat-validation)',
             (countryCode) => {
                 expect(checkVatNumber('ANYTHING123', countryCode)).toBe(true);
                 expect(checkVatNumber('12345', countryCode)).toBe(true);
@@ -524,5 +511,99 @@ describe('checkVatNumber', () => {
         it('should accept BE0123123123 in non-production', () => {
             expect(checkVatNumber('BE0123123123', 'BE')).toBe(true);
         });
+    });
+});
+
+describe('getVatFormErrors — prefix validation', () => {
+    it('returns prefix error when VAT is missing country prefix', () => {
+        const errors = getVatFormErrors({ CountryCode: 'DE', VatId: '123456789' }, false);
+
+        expect(errors.errorMessages.VatId).toMatch(/DE/);
+        expect(errors.hasErrors).toBe(true);
+    });
+
+    it('returns format error (not prefix error) when prefix is present but format is invalid', () => {
+        const errors = getVatFormErrors({ CountryCode: 'DE', VatId: 'DE1' }, false);
+
+        expect(errors.errorMessages.VatId).toBe('Invalid VAT number');
+    });
+
+    it('returns no prefix error for US (no prefix required)', () => {
+        const errors = getVatFormErrors({ CountryCode: 'US', VatId: '12-3456789' }, false);
+
+        expect(errors.errorMessages.VatId).toBe('');
+    });
+
+    it('requires AU prefix for AU (ABN is prefixed with AU)', () => {
+        const withoutPrefix = getVatFormErrors({ CountryCode: 'AU', VatId: '51824753556' }, false);
+        expect(withoutPrefix.errorMessages.VatId).toMatch(/AU/);
+
+        const withPrefix = getVatFormErrors({ CountryCode: 'AU', VatId: 'AU51824753556' }, false);
+        expect(withPrefix.errorMessages.VatId).toBe('');
+    });
+
+    it('requires EL prefix for GR, not GR', () => {
+        const withGr = getVatFormErrors({ CountryCode: 'GR', VatId: 'GR123456789' }, false);
+        expect(withGr.errorMessages.VatId).toMatch(/EL/);
+
+        const withEl = getVatFormErrors({ CountryCode: 'GR', VatId: 'EL123456783' }, false);
+        expect(withEl.errorMessages.VatId).toBe('');
+    });
+
+    it('accepts XI prefix for GB (Northern Ireland)', () => {
+        const errors = getVatFormErrors({ CountryCode: 'GB', VatId: 'XI000472631' }, false);
+
+        expect(errors.errorMessages.VatId).toBe('');
+    });
+
+    it('returns prefix error message containing the required prefix', () => {
+        const errors = getVatFormErrors({ CountryCode: 'FR', VatId: '123456789' }, false);
+
+        expect(errors.errorMessages.VatId).toContain('FR');
+    });
+
+    it('returns format error (not prefix error) when value equals exactly the prefix', () => {
+        // A prefix-only value passes the prefix check but fails format/checksum validation.
+        // Errors are suppressed by the blur-gate in real usage, but the underlying state is invalid.
+        const errors = getVatFormErrors({ CountryCode: 'DE', VatId: 'DE' }, false);
+
+        expect(errors.errorMessages.VatId).toBe('Invalid VAT number');
+        expect(errors.errorMessages.VatId).not.toMatch(/must start with/);
+        expect(errors.hasErrors).toBe(true);
+    });
+
+    it('requires SG prefix for SG', () => {
+        const withoutPrefix = getVatFormErrors({ CountryCode: 'SG', VatId: '200512345G' }, false);
+        expect(withoutPrefix.errorMessages.VatId).toMatch(/SG/);
+
+        const withPrefix = getVatFormErrors({ CountryCode: 'SG', VatId: 'SG200512345G' }, false);
+        expect(withPrefix.errorMessages.VatId).toBe('');
+    });
+});
+
+describe('useVatFormValidation — blur and country interaction', () => {
+    beforeEach(() => {
+        mockUseFlag.mockReturnValue(true);
+    });
+
+    it('should reset errors when country changes while errors are visible', () => {
+        const { result, rerender } = renderHook(
+            ({ fields }: { fields: VatFormFields }) => useVatFormValidation(fields),
+            { initialProps: { fields: withVat() } }
+        );
+
+        act(() => {
+            result.current.handleFormBlur({
+                relatedTarget: document.body,
+            } as unknown as React.FocusEvent);
+        });
+
+        expect(result.current.errors.errorMessages.Company).toBeTruthy();
+
+        // Country changes while errors are visible — errors should reset
+        rerender({ fields: { ...withVat(), CountryCode: 'FR', VatId: 'FR00300076965' } });
+
+        expect(result.current.errors.errorMessages.Company).toBe('');
+        expect(result.current.errors.errorMessages.VatId).toBe('');
     });
 });

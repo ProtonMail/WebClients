@@ -25,6 +25,7 @@ import { getIsB2BAudienceFromPlan } from '../../../core/plan/helpers';
 import { countriesWithVatNumberOnSignup } from './countriesWithVatId';
 import type { TaxCountryHook } from './useTaxCountry';
 import { getVatFormErrors } from './useVatFormValidation';
+import { getVatPrefix } from './vatPrefixHelper';
 
 export type FullBillingAddressWithoutCountry = Omit<FullBillingAddressFlat, 'CountryCode' | 'State' | 'ZipCode'>;
 
@@ -78,6 +79,8 @@ export const useVatNumber = ({
 
     const enableVatNumber = isB2BPlan;
     const [vatNumber, setVatNumber] = useState(initialVatNumber ?? '');
+    const isPristineRef = useRef(!initialVatNumber);
+    const previousCountryRef = useRef(taxCountry.selectedCountryCode);
     const billingAddressExtraRef = useRef<BillingAddressExtraProperties>({
         ...INITIAL_BILLING_ADDRESS_EXTRA,
         ...pick(
@@ -85,6 +88,14 @@ export const useVatNumber = ({
             Object.keys(INITIAL_BILLING_ADDRESS_EXTRA) as (keyof BillingAddressExtraProperties)[]
         ),
     });
+
+    const markDirty = () => {
+        isPristineRef.current = false;
+    };
+    const resetPristine = () => {
+        isPristineRef.current = true;
+    };
+
     const setBillingAddressExtra = (billingAddressExtra: BillingAddressExtraProperties) => {
         billingAddressExtraRef.current = billingAddressExtra;
         triggerRerender();
@@ -97,20 +108,25 @@ export const useVatNumber = ({
     const fetchVatNumber = async () => {
         const result = await paymentsApi.getFullBillingAddress();
 
-        setVatNumber(result.VatId ?? '');
+        if (result.VatId) {
+            markDirty();
+            setVatNumber(result.VatId);
+        }
+        // If no stored VatId, keep the current prefilled prefix as-is
+
         setBillingAddressExtra({
-            Company: result.BillingAddress.Company ?? '',
-            FirstName: result.BillingAddress.FirstName ?? '',
-            LastName: result.BillingAddress.LastName ?? '',
-            Address: result.BillingAddress.Address ?? '',
-            City: result.BillingAddress.City ?? '',
+            Company: result.BillingAddress?.Company ?? '',
+            FirstName: result.BillingAddress?.FirstName ?? '',
+            LastName: result.BillingAddress?.LastName ?? '',
+            Address: result.BillingAddress?.Address ?? '',
+            City: result.BillingAddress?.City ?? '',
         });
 
         setLoaded(true);
     };
 
     useEffect(() => {
-        if (!isAuthenticated || !enableVatNumber || vatNumber || loaded) {
+        if (!isAuthenticated || !enableVatNumber || (!isPristineRef.current && vatNumber) || loaded) {
             return;
         }
 
@@ -118,6 +134,7 @@ export const useVatNumber = ({
     }, [isAuthenticated, enableVatNumber]);
 
     const handleVatNumberChange = (newVatNumber: string) => {
+        markDirty();
         setVatNumber(newVatNumber);
         const fullBillingAddress: FullBillingAddressFlat = {
             CountryCode: taxCountry.selectedCountryCode,
@@ -167,11 +184,32 @@ export const useVatNumber = ({
         handleBillingAddressChange(billingAddressExtra);
     };
 
+    // See also: useVatPrefixSync — This copy stays inline due to signup-specific behaviour
     useEffect(() => {
-        // we don't want to set the VAT number in POST subscription if the country doesn't support VAT IDs or if the
-        // plan is not B2B. However if the vatNumber is already empty, we don't need to trigger an update.
-        if (!!vatNumber && (!countriesWithVatNumberOnSignup.has(taxCountry.selectedCountryCode) || !isB2BPlan)) {
-            handleVatNumberChange('');
+        const inVatCountry = countriesWithVatNumberOnSignup.has(taxCountry.selectedCountryCode) && isB2BPlan;
+        const countryChanged = previousCountryRef.current !== taxCountry.selectedCountryCode;
+        previousCountryRef.current = taxCountry.selectedCountryCode;
+
+        if (!inVatCountry) {
+            if (vatNumber) {
+                setVatNumber('');
+                onVatChange?.('');
+            }
+            resetPristine();
+            return;
+        }
+
+        if (countryChanged && !isPristineRef.current) {
+            // The previously entered VAT belongs to the old country and is no longer valid — clear it in the parent.
+            onVatChange?.('');
+        }
+
+        if (isPristineRef.current || countryChanged) {
+            // onVatChange is intentionally NOT called here: a bare prefix is not a valid VAT number
+            // and should not propagate to the parent until the user completes it.
+            const prefix = getVatPrefix(taxCountry.selectedCountryCode) ?? '';
+            setVatNumber(prefix);
+            resetPristine();
         }
     }, [taxCountry.selectedCountryCode, isB2BPlan]);
 
@@ -225,8 +263,14 @@ export const useVatNumber = ({
         setUnauthenticatedCollapsed: (isCollapsed: boolean) => {
             setUnauthenticatedCollapsed(isCollapsed);
             if (isCollapsed) {
+                resetPristine();
                 setVatNumber('');
                 setBillingAddressExtra(INITIAL_BILLING_ADDRESS_EXTRA);
+            } else {
+                resetPristine();
+                // onVatChange intentionally not called — prefix alone is not a valid VAT number.
+                const prefix = getVatPrefix(taxCountry.selectedCountryCode) ?? '';
+                setVatNumber(prefix);
             }
         },
     };
