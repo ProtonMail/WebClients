@@ -2122,17 +2122,8 @@
       "Error connecting to the Bitcoin API.": [
         "Tuccḍa di tuqqna ar API Bitcoin."
       ],
-      "File \"${ name }\" is already downloading": [
-        "Afaylu \"${ name }\" yettwasader-d yakan"
-      ],
       "File cannot be merged with folder": [
         "Afaylu ur yezmir ara ad yemmezdi d ukaram"
-      ],
-      "File selection is already downloading": [
-        "Tafrant n yifuyla tettwasader-d yakan"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Akaram \"${ name }\" yettwasader-d yakan"
       ],
       "Folder name cannot be empty.": [
         "Isem n ukaram ur ilaq ara ad yili d ilem."
@@ -3195,9 +3186,6 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Anadi ɣef yinermisen ${ progress } seg ${ max }..."
       ],
-      "Checking signatures": [
-        "Asenqed n yizmulen"
-      ],
       "Clear data": [
         "Sfeḍ isefka"
       ],
@@ -3345,14 +3333,8 @@
       "Feb": [
         "Fuṛ"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "Afaylu \"${ name }\" yettwakkes lawan n usader"
-      ],
       "File will not be updated": [
         "Afaylu ur yettuleqqem ara"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "Akaram \"${ link.name }\" yettwakkes lawan n usader"
       ],
       "Folder will not be uploaded": [
         "Akaram ur d-yettali ara"
@@ -3893,32 +3875,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Sken kan"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "imyerren n ufaylu"
-      ],
-      "file data": [
-        "isefka n ufaylu"
-      ],
-      "file data key": [
-        "tasarut n yisefka n ufaylu"
-      ],
-      "file data order": [
-        "asizwer n yisefka n ufaylu"
-      ],
-      "hash key": [
-        "tasarut n uwgelhen"
-      ],
-      "keys": [
-        "tisura"
-      ],
-      "name": [
-        "isem"
-      ],
-      "thumbnail": [
-        "tanfult"
       ]
     },
     "Key badge": {
@@ -6032,9 +5988,6 @@
       "Birthday": [
         "Amulli"
       ],
-      "Browser might run out of memory": [
-        "Yezmer ad tfakk tkatut n yiminig"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Sefsex amulteɣ ɣer ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -6156,9 +6109,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Sader aswir ɣer ${ downgradedPlanName }?"
-      ],
-      "Download ${ date }": [
-        "Sader ${ date }"
       ],
       "Download unverified file?": [
         "Sader afaylu ur yettwasneqden ara?"

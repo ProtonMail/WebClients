@@ -4142,14 +4142,11 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Hilf deinem Team, Passwörter zu sensiblen Geschäfts- und Kundeninformationen sicher zu speichern."
       ],
-      "If you find an email in the wrong category, simply move it to the correct one.": [
-        "Wenn du eine E-Mail in der falschen Kategorie findest, verschiebe sie einfach in die richtige."
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Wenn eine Nachricht in der falschen Kategorie angezeigt wird, verschiebe sie einfach in die richtige. Klicke mit der rechten Maustaste auf eine Nachricht, um eine neue Kategorie auszuwählen, oder ziehe sie per Drag-and-drop an die richtige Stelle."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Die Kontaktliste, die du importieren möchtest, enthält anscheinend Gruppen. Bitte lege fest, wie diese Gruppen importiert werden sollen."
-      ],
-      "It’s still learning and we need your help to improve categorization.": [
-        "Das System befindet sich noch in der Lernphase, und wir brauchen deine Hilfe, um die Kategorisierung zu verbessern."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Hiermit kannst du sofort Meeting-Links zu deinen Termin-Einladungen hinzufügen."
@@ -4312,9 +4309,6 @@
       "Your account and data recovery methods are set.": [
         "Dein Konto und die Methoden zur Datenwiederherstellung sind festgelegt."
       ],
-      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
-        "Deine Korrekturen werden das Standarderlebnis für alle Nutzer prägen, und ab dem offiziellen Start bleiben deine Einstellungen erhalten."
-      ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
         "Dein kostenloses ${ MAIL_APP_NAME }-Konto enthält begrenzten Speicherplatz, darum können wir nur ${ newUserStorageText } deiner aktuellsten Gmail-Nachrichten importieren."
       ],
@@ -4329,8 +4323,8 @@
         "Dein Abonnement unterstützt insgesamt ${ MAX_SYNC_PAID_USER } Gmail-Adresse",
         "Dein Abonnement unterstützt insgesamt ${ MAX_SYNC_PAID_USER } Gmail-Adressen"
       ],
-      "You’re among the first to try email categories.": [
-        "Du gehörst zu den Ersten, die die E-Mail-Kategorien ausprobieren."
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Du gehörst zu den Ersten, die unsere neue Kategorieansicht vor dem offiziellen Start ausprobieren dürfen. Dein Feedback hilft uns dabei, E-Mails in Proton Mail für alle Nutzer besser zu ordnen."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
@@ -5824,9 +5818,6 @@
       "Reset": [
         "Zurücksetzen"
       ],
-      "Show": [
-        "Anzeigen"
-      ],
       "Unread": [
         "Ungelesen"
       ]
@@ -5897,28 +5888,6 @@
       ],
       "Filter ${ Filter.Name } updated": [
         "Filter ${ Filter.Name } aktualisiert"
-      ]
-    },
-    "Filter option": {
-      "All": [
-        "Alle"
-      ],
-      "Hide moved message": [
-        "Verschobene Nachricht ausblenden"
-      ],
-      "Read": [
-        "Gelesen"
-      ],
-      "Show moved message": [
-        "Verschobene Nachricht anzeigen"
-      ],
-      "Unread": [
-        "Ungelesen"
-      ]
-    },
-    "Filter option to only show message with attachments": {
-      "Has attachments": [
-        "Enthält Anhänge"
       ]
     },
     "Filter preview": {
@@ -9822,9 +9791,6 @@
       ],
       "Mail Server (IMAP)": [
         "Mail-Server (IMAP)"
-      ],
-      "Mailing list": [
-        "Verteilerliste"
       ],
       "Main": [
         "Hauptebene"
@@ -15435,9 +15401,6 @@
       "Download the app": [
         "Lade die App herunter"
       ],
-      "Early access to email categories": [
-        "Vorabzugang zu E-Mail-Kategorien"
-      ],
       "Edit billing address": [
         "Rechnungsadresse bearbeiten"
       ],
@@ -15542,6 +15505,9 @@
       ],
       "Help center": [
         "Hilfezentrum"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Gestalte die Zukunft von E-Mail-Kategorien in ${ MAIL_APP_NAME } mit"
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Verstecke deine E-Mail-Adresse mit ${ PASS_APP_NAME }"
@@ -16012,12 +15978,6 @@
       ],
       "Snooze:": [
         "Aufgeschoben:"
-      ],
-      "Sort conversations": [
-        "Unterhaltungen sortieren"
-      ],
-      "Sort messages": [
-        "Nachrichten sortieren"
       ],
       "Start a new import": [
         "Neuer Importvorgang"

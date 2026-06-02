@@ -246,9 +246,6 @@
       "Continue import": [
         "Continuar importação"
       ],
-      "Continue on web": [
-        "Continuar na web"
-      ],
       "Continue to ${ planOrAppName }": [
         "Continuar com ${ planOrAppName }"
       ],
@@ -403,9 +400,6 @@
       ],
       "Download anyway": [
         "Baixar mesmo assim"
-      ],
-      "Download app": [
-        "Baixar aplicativo"
       ],
       "Download for Mac": [
         "Baixar para Mac"
@@ -1096,9 +1090,6 @@
       ],
       "Try another method": [
         "Tentar outro método"
-      ],
-      "Try it now": [
-        "Experimente agora"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Tente salvar novamente. Erro ao salvar devido a: ${ saveError }"
@@ -3008,6 +2999,9 @@
       "To start, give your organization a name.": [
         "Para começar, dê um nome à sua organização."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Desbloqueia 15 GB de armazenamento por apenas ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Faça upgrade para o ${ planName } para continuar compartilhando arquivos com acesso de edição."
       ],
@@ -3019,6 +3013,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Não podemos mais acessar o ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Pausaremos as importações quando o armazenamento atingir 80% da capacidade, de modo a reservar espaço para novas mensagens."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Iniciamos a importar seus e-mails do Gmail. Avisaremos quando terminar."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Lamentamos sua saída. Se tiver um momento, gostaríamos muito de saber o motivo do cancelamento. Seu feedback nos ajuda a fazer a ${ BRAND_NAME } ainda melhor para todos."
@@ -3040,6 +3040,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Sua conta e métodos de recuperação de dados estão definidos."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Sua conta gratuita do ${ MAIL_APP_NAME } tem espaço de armazenamento limitado, por isso importaremos apenas ${ newUserStorageText } de suas mensagens mais recentes do Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Sua conta gratuita do ${ MAIL_APP_NAME } tem espaço de armazenamento limitado, por isso importaremos apenas seus e-mails mais recentes do Gmail."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
@@ -3510,20 +3516,11 @@
       "Failed to update public share node": [
         "Erro ao atualizar o nó de compartilhamento público"
       ],
-      "File \"${ name }\" is already downloading": [
-        "O arquivo \"${ name }\" já está sendo baixado"
-      ],
       "File cannot be merged with folder": [
         "Não é possível mesclar o arquivo com a pasta."
       ],
-      "File selection is already downloading": [
-        "Os arquivos selecionados já estão sendo baixados"
-      ],
       "First name is too long": [
         "Primeiro nome é muito longo"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "A pasta \"${ name }\" já está sendo baixada"
       ],
       "Folder name cannot be empty.": [
         "O nome da pasta não pode ser vazio."
@@ -5151,9 +5148,6 @@
       "An active recovery file": [
         "Um arquivo de recuperação ativo"
       ],
-      "an anonymous user": [
-        "um usuário anônimo"
-      ],
       "An issue occurred during the restore process.": [
         "Ocorreu um problema durante o processo de restauração."
       ],
@@ -5264,9 +5258,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Verificando contato ${ progress } de ${ max }..."
-      ],
-      "Checking signatures": [
-        "Verificando assinaturas"
       ],
       "Choose a plan that works best for you.": [
         "Escolha um plano que funcione melhor para você."
@@ -5385,12 +5376,6 @@
       "Details": [
         "Detalhes"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Assinatura digital verificada. Esse arquivo foi enviado seguramente por ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Assinatura digital verificada. Essa pasta foi enviada seguramente por ${ emailAddress }."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Descubra novos recursos desbloqueados e comece a usá-los agora mesmo!"
       ],
@@ -5423,9 +5408,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Download de ${ downloadFileName } será abortado"
-      ],
-      "Download was canceled": [
-        "O download foi cancelado"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Faça o download do seu aplicativo favorito hoje e leve a privacidade com você para onde quer que você vá."
@@ -5536,20 +5518,11 @@
       "Feb": [
         "Fev."
       ],
-      "File \"${ name }\" was deleted during download": [
-        "Arquivo \"${ name }\" foi deletado durante o download"
-      ],
       "File could not be scanned": [
         "Não foi possível escanear o arquivo."
       ],
       "File flagged as potentially malicious": [
         "O arquivo foi marcado como potencialmente malicioso"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Arquivo está sem assinatura. Não pudemos verificar que ${ emailAddress } enviou ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Arquivo está sem assinatura. Não pudemos verificar quem enviou ${ fileName }."
       ],
       "File will not be updated": [
         "O arquivo não será atualizado"
@@ -5559,15 +5532,6 @@
       ],
       "finance": [
         "finança"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "Pasta \"${ link.name }\" foi deletada durante o download"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Pasta está sem assinatura. Não pudemos verificar que ${ emailAddress } enviou ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Pasta está sem assinatura. Não pudemos verificar quem enviou ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "A pasta não será enviada"
@@ -6263,9 +6227,6 @@
       "Shared with you": [
         "Compartilhado com você"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Não é possível validar a assinatura devido a um erro de rede. Tente novamente mais tarde.."
-      ],
       "Signature check will be ignored": [
         "Verificação de assinatura será ignorada"
       ],
@@ -6330,17 +6291,8 @@
       "that": [
         "que"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "A conta pode ter uma chave nova, ou os seguintes podem ter sido adulterados: ${ items }. Abra apenas se você confiar."
-      ],
       "The albums you create are shown here.": [
         "Os álbuns que você cria são exibidos aqui."
-      ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "A assinatura digital foi parcialmente verificada. Este arquivo foi carregado usando um link de compartilhamento acessível publicamente por um usuário sem uma conta da ${ BRAND_NAME }, então sua identidade não pode ser verificada."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "A assinatura digital foi parcialmente verificada. Esta pasta foi carregada usando um link de compartilhamento acessível publicamente por um usuário sem uma conta da ${ BRAND_NAME }, então sua identidade não pode ser verificada."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "A contagem de downloads inclui downloads reais e instâncias em que os arquivos são visualizados."
@@ -6350,9 +6302,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "As informações expostas vazaram de um serviço de terceiros. As informações da sua conta ${ BRAND_NAME } permanecem seguras e criptografadas. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Os seguintes podem ter sido adulterados: ${ items }. Abra apenas se você confiar."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "O proprietário deste endereço desativou a criptografia de ponta a ponta. Para poder enviar e-mails criptografados para este endereço, o proprietário deve reativar a criptografia de ponta a ponta."
@@ -6562,8 +6511,14 @@
       "Updating drive search...": [
         "Atualizando pesquisa de drive..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Faça upgrade a qualquer momento para importar o resto"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Faça upgrade ou limpe espaço em qualquer momento para importar o resto"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Faça upgrade para manter seus benefícios ${ planTitle }."
@@ -6636,12 +6591,6 @@
       ],
       "We couldn’t process your payment.": [
         "Não foi possível realizar o pagamento."
-      ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Não pudemos verificar que ${ emailAddress } enviou ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Não pudemos verificar quem enviou ${ fileName }."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Precisamos autenticar seu método de pagamento com seu banco."
@@ -6841,9 +6790,6 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. O seu acesso será restringido em breve. ${ payInvoiceLink }"
       ],
-      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
-        "Seu navegador atual não suporta o download de arquivos grandes/múltiplos. Baixe o aplicativo para computador para envios e downloads contínuos."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta da ${ BRAND_NAME }."
       ],
@@ -6970,32 +6916,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Somente leitura"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "atributos do arquivo"
-      ],
-      "file data": [
-        "dados do arquivo"
-      ],
-      "file data key": [
-        "chave de dados do arquivo"
-      ],
-      "file data order": [
-        "ordem de dados do arquivo"
-      ],
-      "hash key": [
-        "chave hash"
-      ],
-      "keys": [
-        "chaves"
-      ],
-      "name": [
-        "nome"
-      ],
-      "thumbnail": [
-        "miniatura"
       ]
     },
     "Key badge": {
@@ -10447,6 +10367,9 @@
       "External key automatically fetched via WKD.": [
         "Chave externa obtida automaticamente via WKD."
       ],
+      "This key is used for message verification": [
+        "Essa chave já foi usado para verificação por mensagem"
+      ],
       "This key is used to encrypt messages to this contact": [
         "Esta chave é usada para criptografar mensagens para este contato"
       ],
@@ -11953,9 +11876,6 @@
       "Albums you've shared will appear here": [
         "Os álbuns que você compartilhou aparecerão aqui."
       ],
-      "Securely share your favorite moments with friends and family using Albums.": [
-        "Compartilhe com segurança seus momentos favoritos com amigos e famílias usando Álbuns."
-      ],
       "Shared by ${ sharedBy }": [
         "Compartilhado por ${ sharedBy }"
       ],
@@ -12326,9 +12246,6 @@
       "Birthday": [
         "Data de nascimento"
       ],
-      "Browser might run out of memory": [
-        "O navegador pode ficar sem memória"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancelar assinatura do ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -12532,9 +12449,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Fazer o downgrade para o ${ downgradedPlanName }?"
-      ],
-      "Download ${ date }": [
-        "Baixar ${ date }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Baixar os aplicativos do ${ DRIVE_APP_NAME }"
@@ -12879,9 +12793,6 @@
       ],
       "Phone numbers": [
         "Números de telefone"
-      ],
-      "Photo albums are here!": [
-        "Álbum de fotos estão aqui!"
       ],
       "Photos": [
         "Fotos"

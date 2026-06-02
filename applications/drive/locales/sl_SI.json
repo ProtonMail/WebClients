@@ -228,9 +228,6 @@
       "Continue import": [
         "Nadaljuj z uvozom"
       ],
-      "Continue on web": [
-        "Nadaljuj na spletu"
-      ],
       "Continue transfers": [
         "Nadaljujte s prenosi"
       ],
@@ -1007,9 +1004,6 @@
       ],
       "Try another method": [
         "Poskusi z drugim načinom"
-      ],
-      "Try it now": [
-        "Poskusite zdaj"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Poskusite znova. Shranjevanje ni uspelo iz naslednjega razloga: ${ saveError }"
@@ -3275,20 +3269,11 @@
       "Failed to update public share node": [
         "Ni uspelo posodobiti vozlišča javne povezave"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Izbrana datoteka \"${ name }\" se že prenaša"
-      ],
       "File cannot be merged with folder": [
         "Datoteke ni mogoče združiti z mapo"
       ],
-      "File selection is already downloading": [
-        "Izbrana datoteka se že prenaša"
-      ],
       "First name is too long": [
         "Ime je predolgo"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Mapa »${ name }« se že prenaša"
       ],
       "Folder name cannot be empty.": [
         "Ime mape ne sme biti prazno."
@@ -4896,9 +4881,6 @@
       "An active recovery file": [
         "Aktivna datoteka za obnovitev"
       ],
-      "an anonymous user": [
-        "anonimni uporabnik"
-      ],
       "An issue occurred during the restore process.": [
         "Med postopkom obnovitve je prišlo do težave."
       ],
@@ -5000,9 +4982,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Preverjanje stika ${ progress } od ${ max } ..."
-      ],
-      "Checking signatures": [
-        "Preverjanje podpisov"
       ],
       "Choose a plan that works best for you.": [
         "Izberite paket, ki vam najbolj ustreza"
@@ -5118,12 +5097,6 @@
       "Details": [
         "Podrobnosti"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Digitalni podpis preverjen. To datoteko je varno naložil ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Digitalni podpis preverjen. To mapo je varno naložil ${ emailAddress }."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Odkrijte nove odklenjene funkcije in jih takoj začnite uporabljati!"
       ],
@@ -5150,9 +5123,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Prenos datoteke ${ downloadFileName } bo prekinjen"
-      ],
-      "Download was canceled": [
-        "Prenos preklican"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Prenesite svojo najljubšo aplikacijo in uživajte v svoji zasebnosti povsod."
@@ -5247,15 +5217,6 @@
       "Expired": [
         "Poteklo"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "Datoteka \"${ name }\" je bila med prenosom izbrisana"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Datoteki manjka podpis. Nismo mogli preveriti, ali je ${ emailAddress } naložil ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Datoteki manjka podpis. Nismo mogli preveriti, kdo je naložil datoteko ${ fileName }."
-      ],
       "File will not be updated": [
         "Datoteka ne bo posodobljena"
       ],
@@ -5264,15 +5225,6 @@
       ],
       "finance": [
         "finance"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "Mapa »${ link.name }« je bila med prenosom izbrisana"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Mapi manjka podpis. Nismo mogli preveriti, ali je ${ emailAddress } naložil ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Mapi manjka podpis. Nismo mogli preveriti, kdo je naložil datoteko ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Mapa ne bo naložena"
@@ -5895,9 +5847,6 @@
       "Shared with me": [
         "Deljeno z mano"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Podpisa ni mogoče preveriti zaradi napake v omrežju, poskusite znova pozneje."
-      ],
       "Signature check will be ignored": [
         "Preverjanje podpisa bo prezrto"
       ],
@@ -5961,17 +5910,8 @@
       "that": [
         "to"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Račun ima morda nov ključ ali pa je bilo spremenjeno naslednje: ${ items }. Odprite le, če mu zaupate."
-      ],
       "The albums you create are shown here.": [
         "Albumi, ki jih ustvarite, so prikazani tukaj."
-      ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Digitalni podpis je bil delno preverjen. Datoteka je bila naložena z javno dostopno povezavo za skupno rabo s strani uporabnika brez računa ${ BRAND_NAME }, zato njegove identitete ni mogoče preveriti."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Digitalni podpis je bil delno preverjen. To mapo je uporabnik brez računa ${ BRAND_NAME } naložil z javno dostopno povezavo za skupno rabo, zato njegove identitete ni mogoče preveriti."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Število prenosov vključuje tako dejanske prenose kot tudi primere predogleda datotek."
@@ -5981,9 +5921,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Razkrite informacije so pricurljale iz storitve tretje osebe. Podatki o vašem računu ${ BRAND_NAME } ostajajo varni in šifrirani. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Morda je bilo spremenjeno brez dovoljenja: ${ items }. Odprite le, če mu zaupate."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Lastnik tega naslova je onemogočil šifriranje od konca do konca. Šifrirana sporočila boste na ta naslov lahko pošiljali, če bo lastnik znova omogočil šifriranje od konca do konca."
@@ -6258,12 +6195,6 @@
       "We couldn’t process your payment.": [
         "Vašega plačila ni bilo mogoče obdelati."
       ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Nismo mogli preveriti, ali je ${ emailAddress } naložil ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Nismo mogli preveriti, kdo je naložil datoteko ${ fileName }."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Potrebujemo overitev vašega načina plačila pri vaši banki."
       ],
@@ -6462,9 +6393,6 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Vaš račun je trenutno nastavljen za uporabo sheme povratnega DDV. To ni podprto za izbrani paket. Če želite nadaljevati, bodisi odstranite številko DDV s plačilnega naslova ali izberite drug paket."
       ],
-      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
-        "Vaš trenutni brskalnik ne podpira prenosa velikih datotek/več datotek. Prenesite namizno aplikacijo za nemoteno nalaganje in prenos."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaši podatki so pripravljeni na uvoz iz računa ${ importedEmailAddressStrong } v račun ${ BRAND_NAME }."
       ],
@@ -6588,32 +6516,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Samo za branje"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "atributi datoteke"
-      ],
-      "file data": [
-        "podatki datoteke"
-      ],
-      "file data key": [
-        "podatkovni ključ datoteke"
-      ],
-      "file data order": [
-        "zaporedje podatkov v datoteki"
-      ],
-      "hash key": [
-        "zgoščeni ključ"
-      ],
-      "keys": [
-        "ključi"
-      ],
-      "name": [
-        "ime"
-      ],
-      "thumbnail": [
-        "sličica"
       ]
     },
     "Key badge": {
@@ -11017,9 +10919,6 @@
       "Albums you've shared will appear here": [
         "Albumi, ki ste jih dali v skupno rabo, bodo prikazani tukaj"
       ],
-      "Securely share your favorite moments with friends and family using Albums.": [
-        "Varno delite svoje najljubše trenutke s prijatelji in družino z uporabo albumov."
-      ],
       "Shared by ${ sharedBy }": [
         "V skupni rabi ${ sharedBy }"
       ],
@@ -11403,9 +11302,6 @@
       "Birthday": [
         "Rojstni dan"
       ],
-      "Browser might run out of memory": [
-        "Brskalniku morda manjka pomnilnika"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Prekliči ${ MAIL_SHORT_APP_NAME } naročnino"
       ],
@@ -11588,9 +11484,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Zmanjšaj na paket ${ downgradedPlanName }?"
-      ],
-      "Download ${ date }": [
-        "Prenesi ${ date }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Prenesite aplikacije ${ DRIVE_APP_NAME }"
@@ -11903,9 +11796,6 @@
       ],
       "Phone numbers": [
         "Telefonske številke"
-      ],
-      "Photo albums are here!": [
-        "Albumi s fotografijami so tukaj!"
       ],
       "Photos": [
         "Fotografije"
