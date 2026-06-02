@@ -16,7 +16,7 @@ import {
 } from '@proton/meet/store/slices/recordingStatusSlice';
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { PLANS } from '@proton/payments/core/constants';
-import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
+import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import IcCircleRadioFilled from '@proton/styles/assets/img/meet/ic-circle-radio-filled.svg';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -26,6 +26,7 @@ import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { useMeetingRecorderContext } from '../../contexts/MeetingRecorderContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
+import { useIsRecordingSupported } from '../../hooks/useMeetingRecorderNew/hooks/useIsRecordingSupported';
 import { ScreenRecordingUpsell } from '../AnonymousModal/feature-upsell/ScreenRecordingUpsell';
 import { SubUserScreenRecordingUpsell } from '../AnonymousModal/feature-upsell/SubUserScreenRecordingUpsell';
 import { ConfirmationModal } from '../ConfirmationModal/ConfirmationModal';
@@ -93,7 +94,7 @@ export const RecordingControls = () => {
     const { isPaidUser, isSubUser } = useMeetSelector(selectSubscriptionStatus);
     const isGuestAdmin = useMeetSelector(selectIsGuestAdmin);
 
-    const recordingNotSupported = isMobile() || isFirefox();
+    const isRecordingSupported = useIsRecordingSupported();
 
     const hasAdminPermission = isLocalParticipantAdmin || isLocalParticipantHost || isGuestAdmin;
 
@@ -136,7 +137,7 @@ export const RecordingControls = () => {
         return null;
     }
 
-    if (recordingNotSupported) {
+    if (!isRecordingSupported) {
         if (isFirefox()) {
             return (
                 <CircleButton
