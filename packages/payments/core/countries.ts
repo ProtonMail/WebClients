@@ -42,6 +42,7 @@ export const getCountries = () => [
     { value: 'KH', label: c('Country name').t`Cambodia` },
     { value: 'CM', label: c('Country name').t`Cameroon` },
     { value: 'CA', label: c('Country name').t`Canada` },
+    { value: 'IC', label: c('Country name').t`Canary Islands` },
     { value: 'CV', label: c('Country name').t`Cape Verde` },
     { value: 'KY', label: c('Country name').t`Cayman Islands` },
     { value: 'CF', label: c('Country name').t`Central African Republic` },
