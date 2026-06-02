@@ -20,6 +20,7 @@
 //
 
 import Foundation
+import Models
 
 public protocol FetchRelatedOriginsUseCase: Sendable {
     func execute(_ url: String) async throws -> String?
@@ -39,32 +40,30 @@ public final class FetchRelatedOrigins: Sendable, FetchRelatedOriginsUseCase {
     public init() {}
 
     private struct Response: Encodable {
-        var status: Int?
-        var finalUrl: String?
-        var body: String?
-        var error: String?
+        let status: Int
+        let finalUrl: String
+        let body: String?
     }
 
     public func execute(_ url: String) async throws -> String? {
         guard let url = URL(string: url),
               url.scheme == "https",
               url.path.hasSuffix("/.well-known/webauthn") else {
-            return encode(Response(error: "invalid url"))
+            throw PassError.failedToFetchRelatedOrigins(.invalidUrl(url))
         }
 
         do {
-            let (data, response) = try await URLSession.shared.data(from: url)
-            let http = response as? HTTPURLResponse
-            return encode(Response(status: http?.statusCode ?? 0,
-                                   finalUrl: http?.url?.absoluteString ?? url.absoluteString,
-                                   body: String(data: data, encoding: .utf8) ?? ""))
+            let (data, httpResponse) = try await URLSession.shared.data(from: url)
+            guard let httpResponse = httpResponse as? HTTPURLResponse else {
+                throw PassError.failedToFetchRelatedOrigins(.badResponse)
+            }
+            let response = Response(status: httpResponse.statusCode,
+                                    finalUrl: httpResponse.url?.absoluteString ?? url.absoluteString,
+                                    body: String(data: data, encoding: .utf8))
+            let responseData = try JSONEncoder().encode(response)
+            return String(data: responseData, encoding: .utf8)
         } catch {
-            return encode(Response(error: error.localizedDescription))
+            throw PassError.failedToFetchRelatedOrigins(.error(error))
         }
-    }
-
-    private func encode(_ payload: Response) -> String? {
-        guard let data = try? JSONEncoder().encode(payload) else { return nil }
-        return String(data: data, encoding: .utf8)
     }
 }
