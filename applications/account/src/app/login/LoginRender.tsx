@@ -6,7 +6,7 @@ import Content from '../public/Content';
 import Header from '../public/Header';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
-import PublicHelpLink from '../public/PublicHelpLink';
+import TroubleshootWithLumo from '../public/TroubleshootWithLumo';
 
 export interface RenderProps {
     title: ReactNode;
@@ -39,7 +39,7 @@ export const defaultLoginRender = (data: RenderProps) => {
             hasWelcome
             onBack={data.onBack}
             hasDecoration={data.hasDecoration}
-            bottomRight={<PublicHelpLink />}
+            bottomRight={<TroubleshootWithLumo />}
         >
             {data.beforeMain}
             <Main>
