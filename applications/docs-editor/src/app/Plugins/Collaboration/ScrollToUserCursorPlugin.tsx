@@ -1,9 +1,13 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { useApplication } from '../../Containers/ApplicationProvider'
 import { useEffect } from 'react'
 import type { Binding } from '@lexical/yjs'
 import { getAnchorAndFocusCollabNodesForUserState } from '@lexical/yjs'
-import type { UnsafeDocsUserState } from '@proton/docs-shared'
+import type { SafeDocsUserState, UnsafeDocsUserState } from '@proton/docs-shared'
+import { COMMAND_PRIORITY_EDITOR, createCommand, type LexicalCommand } from 'lexical'
+
+export const SCROLL_TO_USER_CURSOR_COMMAND: LexicalCommand<{
+  state: SafeDocsUserState
+}> = createCommand('SCROLL_TO_USER_CURSOR_COMMAND')
 
 /**
  * On a `ScrollToUserCursorData` event call, it will use the passed
@@ -21,29 +25,34 @@ import type { UnsafeDocsUserState } from '@proton/docs-shared'
  * so trying to scroll it into view might not work.
  */
 export function useScrollToUserCursorOnEvent(binding: Binding) {
-  const { application } = useApplication()
   const [editor] = useLexicalComposerContext()
 
   useEffect(() => {
-    return application.syncedState.subscribeToEvent('ScrollToUserCursorData', (data) => {
-      const { anchorCollabNode, focusCollabNode } = getAnchorAndFocusCollabNodesForUserState(
-        binding,
-        data.state as UnsafeDocsUserState,
-      )
+    return editor.registerCommand(
+      SCROLL_TO_USER_CURSOR_COMMAND,
+      (data) => {
+        const { anchorCollabNode, focusCollabNode } = getAnchorAndFocusCollabNodesForUserState(
+          binding,
+          data.state as UnsafeDocsUserState,
+        )
 
-      if (anchorCollabNode !== null && focusCollabNode !== null) {
-        const anchorKey = anchorCollabNode.getKey()
-        const focusKey = focusCollabNode.getKey()
+        if (anchorCollabNode !== null && focusCollabNode !== null) {
+          const anchorKey = anchorCollabNode.getKey()
+          const focusKey = focusCollabNode.getKey()
 
-        const element = editor.getElementByKey(focusKey) || editor.getElementByKey(anchorKey)
-        if (element) {
-          element.scrollIntoView({
-            behavior: 'smooth',
-          })
+          const element = editor.getElementByKey(focusKey) || editor.getElementByKey(anchorKey)
+          if (element) {
+            element.scrollIntoView({
+              behavior: 'smooth',
+            })
+          }
         }
-      }
-    })
-  }, [application.syncedState, binding, editor])
+
+        return true
+      },
+      COMMAND_PRIORITY_EDITOR,
+    )
+  }, [binding, editor])
 
   return null
 }
