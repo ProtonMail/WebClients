@@ -22,7 +22,9 @@
 import Foundation
 
 public extension Bundle {
-    var versionNumber: String { string(forKey: "CFBundleShortVersionString") ?? "0.0.0" }
+    var versionNumber: String {
+        string(forKey: "CFBundleShortVersionString") ?? "0.0.0"
+    }
 }
 
 private extension Bundle {

@@ -62,11 +62,17 @@ public struct PassPlan: Decodable, Equatable, Sendable {
         }
     }
 
-    public var isFreeUser: Bool { planType == .free }
+    public var isFreeUser: Bool {
+        planType == .free
+    }
 
-    public var isBusinessUser: Bool { planType == .business }
+    public var isBusinessUser: Bool {
+        planType == .business
+    }
 
-    public var isInTrial: Bool { planType == .trial }
+    public var isInTrial: Bool {
+        planType == .trial
+    }
 
     public init(type: String,
                 internalName: String,
