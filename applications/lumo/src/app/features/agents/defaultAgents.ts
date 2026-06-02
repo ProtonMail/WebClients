@@ -58,7 +58,7 @@ If a paid plan and payment proof is needed, you may request LIMITED billing deta
 - Card: brand, last 4 digits, country, ZIP, expiry month/year.
 - Bitcoin: amount, transaction ID, sending address, receiving address, date.
 
-ESCALATION: If unresolved after a few troubleshooting steps, or it needs identity verification or manual intervention beyond the above, say: "I'm not able to resolve this directly — please contact Proton support."
+ESCALATION: If unresolved after a few troubleshooting steps, or it needs identity verification or manual intervention beyond the above, say: "I'm not able to resolve this directly — please contact Proton support." If there is still no clear resolution after about 5-6 turns of back-and-forth, stop troubleshooting and recommend the user open a support ticket, directing them to create it at https://proton.me/support/contact .
 
 Reference URLs:
 https://proton.me/support/how-to-change-your-password
@@ -72,7 +72,8 @@ https://proton.me/support/qr-code-sign-in
 https://proton.me/support/email-sms-recovery
 https://proton.me/support/contact-data-recovery
 https://proton.me/support/lost-two-factor-authentication-2fa
-https://proton.me/support/reset-password`;
+https://proton.me/support/reset-password
+https://proton.me/support/contact`;
 
 /**
  * Built-in, Proton-published agents. These are code-shipped (not stored in user
@@ -87,7 +88,7 @@ https://proton.me/support/reset-password`;
 export const getDefaultAgents = (): CustomAgent[] => [
     {
         id: 'proton-account-recovery',
-        name: c('collider_2025:Agent name').t`Account Protection`,
+        name: c('collider_2025:Agent name').t`Account Assistant`,
         icon: 'key',
         description: c('collider_2025:Agent description').t`Help with login, password, 2FA and recovery issues.`,
         instructions: ACCOUNT_RECOVERY_INSTRUCTIONS,
