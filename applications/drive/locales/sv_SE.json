@@ -246,14 +246,14 @@
       "Continue import": [
         "Fortsätt import"
       ],
-      "Continue on web": [
-        "Fortsätt på webb"
-      ],
       "Continue to ${ planOrAppName }": [
         "Fortsätt till ${ planOrAppName }"
       ],
       "Continue transfers": [
         "Fortsätt överföringar"
+      ],
+      "Continue with Free": [
+        "Fortsätt med Free"
       ],
       "Continue with Google": [
         "Fortsätt med Google"
@@ -400,9 +400,6 @@
       ],
       "Download anyway": [
         "Ladda ner ändå"
-      ],
-      "Download app": [
-        "Ladda ner app"
       ],
       "Download for Mac": [
         "Ladda ner för Mac"
@@ -1093,9 +1090,6 @@
       ],
       "Try another method": [
         "Prova annan metod"
-      ],
-      "Try it now": [
-        "Prova det nu"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Försök att spara igen. Det gick inte att spara på grund av: ${ saveError }"
@@ -3507,20 +3501,11 @@
       "Failed to update public share node": [
         "Misslyckades att uppdatera offentlig delningsnod"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Filen “${ name }“ laddas redan ner"
-      ],
       "File cannot be merged with folder": [
         "Fil kan inte slås samman med mapp"
       ],
-      "File selection is already downloading": [
-        "Filval laddas redan ner"
-      ],
       "First name is too long": [
         "Förnamn är för långt"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Mappen “${ name }“ laddas redan ner"
       ],
       "Folder name cannot be empty.": [
         "Mappnamn kan inte vara tomt."
@@ -5121,9 +5106,6 @@
       "An active recovery file": [
         "En aktiv återställningsfil"
       ],
-      "an anonymous user": [
-        "en anonym användare"
-      ],
       "An issue occurred during the restore process.": [
         "Ett problem uppstod under återställningsprocessen."
       ],
@@ -5234,9 +5216,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kontrollerar kontakt ${ progress } av ${ max }..."
-      ],
-      "Checking signatures": [
-        "Kontrollerar signaturer"
       ],
       "Choose a plan that works best for you.": [
         "Välj ett paket som passar dig bäst."
@@ -5352,12 +5331,6 @@
       "Details": [
         "Detaljer"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Digital signatur verifierad. Denna fil laddades upp säkert av ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Digital signatur verifierad. Denna mapp laddades upp säkert av ${ emailAddress }."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Upptäck nya funktioner upplåsta och börja använda dem direkt!"
       ],
@@ -5390,9 +5363,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Nedladdning av ${ downloadFileName } kommer att avbrytas"
-      ],
-      "Download was canceled": [
-        "Nedladdning avbröts"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Ladda ner din favoritapp idag och ta integritet med dig var du än går."
@@ -5503,20 +5473,11 @@
       "Feb": [
         "Feb"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "Fil “${ name }“ togs bort under nedladdningen"
-      ],
       "File could not be scanned": [
         "Fil kunde inte skannas"
       ],
       "File flagged as potentially malicious": [
         "Fil flaggad som potentiellt skadlig"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Fil saknar signatur. Vi kunde inte verifiera att ${ emailAddress } laddade upp ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Fil saknar signatur. Vi kunde inte verifiera vem som laddade upp ${ fileName }."
       ],
       "File will not be updated": [
         "Fil kommer inte att uppdateras"
@@ -5526,15 +5487,6 @@
       ],
       "finance": [
         "finans"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "Mapp “${ link.name }“ togs bort under nedladdningen"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Mapp saknar signatur. Vi kunde inte verifiera att ${ emailAddress } laddade upp ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Mapp saknar signatur. Vi kunde inte verifiera vem som laddade upp ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Mappen kommer inte laddas upp"
@@ -6230,9 +6182,6 @@
       "Shared with you": [
         "Delat med dig"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Signatur kan inte valideras på grund av nätverksfel, försök igen senare."
-      ],
       "Signature check will be ignored": [
         "Signaturkontroll kommer att ignoreras"
       ],
@@ -6297,17 +6246,8 @@
       "that": [
         "vem"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Kontot kanske har en ny nyckel eller så har något av följande mixtrats med: ${ items }. Öppna endast om du litar på den."
-      ],
       "The albums you create are shown here.": [
         "De album du skapar visas här."
-      ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Den digitala signaturen har delvis verifierats. Denna fil laddades upp med en offentlig åtkomlig delningslänk av en användare utan ett ${ BRAND_NAME }-konto, så deras identitet kan inte verifieras."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Den digitala signaturen har delvis verifierats. Denna mapp laddades upp med en offentlig åtkomlig delningslänk av en användare utan ett ${ BRAND_NAME }-konto, så deras identitet kan inte verifieras."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Antalet nedladdningar inkluderar både faktiska nedladdningar och tillfällen när filer förhandsgranskas."
@@ -6317,9 +6257,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Den exponerade informationen läckte från en tredjepartstjänst. Din ${ BRAND_NAME }-kontoinformation förblir säker och krypterad. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Följande kan ha manipulerats: ${ items }. Öppna bara om du litar på det."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ägaren till denna adress har inaktiverat end-to-end-kryptering. För att kunna skicka krypterad e-post till denna adress måste ägaren återaktivera end-to-end-kryptering."
@@ -6614,12 +6551,6 @@
       "We couldn’t process your payment.": [
         "Vi kunde inte behandla din betalning."
       ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Fil saknar signatur. Vi kunde inte verifiera att ${ emailAddress } laddade upp ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Vi kunde inte verifiera vem som laddat upp ${ fileName }."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Vi måste autentisera din betalningsmetod med din bank."
       ],
@@ -6809,9 +6740,6 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ditt konto har minst en försenad faktura. Din åtkomst kommer snart att begränsas. ${ payInvoiceLink }"
       ],
-      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
-        "Din nuvarande webbläsare stöder inte nedladdning av stora filer/flera filer. Ladda ner appen för stationär dator för sömlösa uppladdningar och nedladdningar."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Din data är redo att importeras från ${ importedEmailAddressStrong } till ditt ${ BRAND_NAME }-konto."
       ],
@@ -6938,32 +6866,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Endast visa"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "filattribut"
-      ],
-      "file data": [
-        "fildata"
-      ],
-      "file data key": [
-        "fildatanyckel"
-      ],
-      "file data order": [
-        "fildataordning"
-      ],
-      "hash key": [
-        "hash-nyckel"
-      ],
-      "keys": [
-        "nycklar"
-      ],
-      "name": [
-        "namn"
-      ],
-      "thumbnail": [
-        "miniatyr"
       ]
     },
     "Key badge": {
@@ -11890,9 +11792,6 @@
       "Albums you've shared will appear here": [
         "Album du delat kommer visas här"
       ],
-      "Securely share your favorite moments with friends and family using Albums.": [
-        "Dela dina favoritögonblick säkert med vänner och familj med hjälp av album."
-      ],
       "Shared by ${ sharedBy }": [
         "Delat av ${ sharedBy }"
       ],
@@ -12263,9 +12162,6 @@
       "Birthday": [
         "Födelsedag"
       ],
-      "Browser might run out of memory": [
-        "Webbläsaren kan få slut på minne"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Avsluta ${ MAIL_SHORT_APP_NAME }-prenumeration"
       ],
@@ -12466,9 +12362,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Nedgradera till ${ downgradedPlanName }?"
-      ],
-      "Download ${ date }": [
-        "Ladda ner ${ date }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Ladda ner ${ DRIVE_APP_NAME } appar"
@@ -12810,9 +12703,6 @@
       ],
       "Phone numbers": [
         "Telefonnummer"
-      ],
-      "Photo albums are here!": [
-        "Fotoalbum är här!"
       ],
       "Photos": [
         "Foton"

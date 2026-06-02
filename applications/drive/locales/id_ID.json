@@ -228,9 +228,6 @@
       "Continue import": [
         "Lanjutkan impor"
       ],
-      "Continue on web": [
-        "Lanjutkan di web"
-      ],
       "Continue transfers": [
         "Lanjutkan transfer"
       ],
@@ -374,9 +371,6 @@
       ],
       "Download anyway": [
         "Tetap unduh"
-      ],
-      "Download app": [
-        "Unduh aplikasi"
       ],
       "Download for Mac": [
         "Unduh untuk Mac"
@@ -1031,9 +1025,6 @@
       ],
       "Try another method": [
         "Coba metode lain"
-      ],
-      "Try it now": [
-        "Coba sekarang"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Cobalah untuk menyimpan kembali. Penyimpanan gagal karena: ${ saveError }"
@@ -3279,20 +3270,11 @@
       "Failed to update public share node": [
         "Gagal memperbarui node berbagi publik"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Proses unduhan file \"${ name }\" sedang berlangsung"
-      ],
       "File cannot be merged with folder": [
         "Berkas tidak dapat digabungkan dengan folder"
       ],
-      "File selection is already downloading": [
-        "File yang dipilih sudah dalam proses pengunduhan"
-      ],
       "First name is too long": [
         "Nama depan terlalu panjang"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Proses unduhan folder \"${ name }\" sedang berlangsung"
       ],
       "Folder name cannot be empty.": [
         "Nama folder tidak boleh kosong."
@@ -4769,9 +4751,6 @@
       "An active recovery file": [
         "Berkas pemulihan yang aktif"
       ],
-      "an anonymous user": [
-        "pengguna anonim"
-      ],
       "An issue occurred during the restore process.": [
         "Terdapat masalah dalam proses pemulihan."
       ],
@@ -4867,9 +4846,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Memeriksa kontak ${ progress } dari ${ max }..."
-      ],
-      "Checking signatures": [
-        "Memeriksa tanda tangan"
       ],
       "Choose a plan that works best for you.": [
         "Pilih paket yang paling sesuai dengan kebutuhan Anda."
@@ -4973,12 +4949,6 @@
       "Details": [
         "Rincian"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Tanda tangan digital berhasil diverifikasi. Berkas ini diunggah secara aman oleh ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Tanda tangan digital berhasil diverifikasi. Folder ini diunggah secara aman oleh ${ emailAddress }."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Telusuri berbagai fitur yang terbuka dan gunakan fitur-fitur ini sekarang juga!"
       ],
@@ -5011,9 +4981,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Unduhan ${ downloadFileName } akan dibatalkan"
-      ],
-      "Download was canceled": [
-        "Unduhan dibatalkan"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Unduh aplikasi favorit Anda sekarang juga dan bawa privasi ke mana pun Anda pergi."
@@ -5111,15 +5078,6 @@
       "Feb": [
         "Feb"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "File \"${ name }\" telah dihapus pada saat pengunduhan sedang berlangsung"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "File ini tidak ditandatangani. Kami tidak dapat memverifikasi bahwa ${ fileName } diunggah oleh ${ emailAddress }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "File ini tidak ditandatangani. Kami tidak dapat memverifikasi yang mengunggah ${ fileName }."
-      ],
       "File will not be updated": [
         "File tidak akan diperbarui"
       ],
@@ -5128,15 +5086,6 @@
       ],
       "finance": [
         "keuangan"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "Folder \"${ link.name }\" telah dihapus pada saat pengunduhan sedang berlangsung"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Folder ini tidak ditandatangani. Kami tidak dapat memverifikasi bahwa ${ fileName } diunggah oleh ${ emailAddress }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Folder ini tidak ditandatangani. Kami tidak dapat memverifikasi siapa yang mengunggah ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Folder tidak akan diunggah"
@@ -5744,9 +5693,6 @@
       "Shared with you": [
         "Dibagikan dengan Anda"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Tanda tangan tidak dapat divalidasi karena kesalahan jaringan. Silakan coba lagi nanti."
-      ],
       "Signature check will be ignored": [
         "Proses verifikasi tanda tangan akan diabaikan"
       ],
@@ -5810,17 +5756,8 @@
       "that": [
         "yang"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Akun ini mungkin memiliki kunci baru, atau file/folder berikut mungkin telah dimodifikasi: ${ items }. Hanya buka file/folder ini jika Anda memercayai sumbernya."
-      ],
       "The albums you create are shown here.": [
         "Album yang Anda buat akan muncul di sini."
-      ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Tanda tangan digital ini telah diverifikasi secara parsial. File ini diunggah melalui tautan berbagi publik oleh pengguna tanpa akun ${ BRAND_NAME }, sehingga identitas pengunggah ini tidak dapat diverifikasi."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Tanda tangan digital ini telah diverifikasi secara parsial. Folder ini diunggah melalui tautan berbagi publik oleh pengguna tanpa akun ${ BRAND_NAME }, sehingga identitas pengunggah ini tidak dapat diverifikasi."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Jumlah unduhan mencakup unduhan sebenarnya serta saat file dipratinjau."
@@ -5830,9 +5767,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Informasi yang terpapar ini dibocorkan oleh layanan pihak ketiga. Informasi Akun ${ BRAND_NAME } Anda tetap aman dan terenkripsi. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "File/folder berikut mungkin telah dimodifikasi: ${ items }. Hanya buka file/folder ini jika Anda memercayai sumbernya."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Pemilik alamat ini telah menonaktifkan enkripsi ujung ke ujung. Untuk dapat mengirim email terenkripsi kealamat ini, pemiliknya harus mengaktifkan ulang enkripsi ujung ke ujung."
@@ -6095,12 +6029,6 @@
       "We couldn’t process your payment.": [
         "Kami tidak dapat memproses pembayaran Anda."
       ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Kami tidak dapat memverifikasi bahwa ${ fileName } diunggah oleh ${ emailAddress }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Kami tidak dapat memverifikasi siapa yang mengunggah ${ fileName }."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Kami perlu untuk mengautentikasi metode pembayaran Anda dengan bank Anda."
       ],
@@ -6278,9 +6206,6 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Akses ke akun Anda akan segera dibatasi. ${ payInvoiceLink }"
       ],
-      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
-        "Peramban Anda saat ini tidak mendukung pengunduhan file yang besar/banyak file secara bersamaan. Unduk aplikasi desktop kami untuk memperoleh unggahan dan unduhan yang terpadu."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Data Anda siap untuk diimpor dari ${ importedEmailAddressStrong } menuju akun ${ BRAND_NAME } Anda."
       ],
@@ -6398,32 +6323,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Hanya melihat"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "atribut file"
-      ],
-      "file data": [
-        "data file"
-      ],
-      "file data key": [
-        "kunci file data"
-      ],
-      "file data order": [
-        "urutan data file"
-      ],
-      "hash key": [
-        "kunci hash"
-      ],
-      "keys": [
-        "kunci"
-      ],
-      "name": [
-        "nama"
-      ],
-      "thumbnail": [
-        "thumbnail"
       ]
     },
     "Key badge": {
@@ -10826,9 +10725,6 @@
       "Albums you've shared will appear here": [
         "Album yang Anda bagikan akan muncul di sini"
       ],
-      "Securely share your favorite moments with friends and family using Albums.": [
-        "Berbagi momen favorit Anda dengan teman dan keluarga secara aman menggunakan Album."
-      ],
       "Your favorited photos will appear here": [
         "Foto favorit Anda akan muncul di sini"
       ],
@@ -11182,9 +11078,6 @@
       "Birthday": [
         "Tanggal lahir"
       ],
-      "Browser might run out of memory": [
-        "Peramban mungkin kehabisan memori"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Batalkan langganan ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -11367,9 +11260,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Turunkan ke ${ downgradedPlanName }?"
-      ],
-      "Download ${ date }": [
-        "Unduh ${ date }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Unduh aplikasi ${ DRIVE_APP_NAME }"
@@ -11700,9 +11590,6 @@
       ],
       "Phone numbers": [
         "Nomor telepon"
-      ],
-      "Photo albums are here!": [
-        "Album foto sudah tersedia!"
       ],
       "Photos": [
         "Foto"

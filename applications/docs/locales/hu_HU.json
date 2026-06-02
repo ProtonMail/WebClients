@@ -1109,6 +1109,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } tárhely"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } felhasználó",
+        "Akár ${ numberOfUsers } felhasználó"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } e-mail tárhely"
       ],
@@ -3307,6 +3311,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Az előfizetés a csomag elsődleges adminisztrátorának lesz kiszámlázva."
+      ],
+      "View the invitation": [
+        "Meghívás megtekintése",
+        "Meghívások megtekintése"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Meghívást kapott a csatlakozáshoz: ${ invite.OrganizationName }"

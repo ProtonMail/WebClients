@@ -4847,6 +4847,9 @@
       "120m": [
         "120 متر"
       ],
+      "15 minutes": [
+        "15 دقيقة"
+      ],
       "30 minutes": [
         "30 دقيقة"
       ],
@@ -11081,9 +11084,6 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "يمكن تعديل هذا مرة واحدة لضمان صحة عنوان البريد الإلكتروني للتحقق."
-      ],
-      "You can enable the Photos section from the interface using the toggle below.": [
-        "يمكنك تمكين قسم الصور من الواجهة باستخدام مفتاح التبديل في الأسفل"
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "يمكن فرض قواعد كلمة المرور التي سيستخدمها أعضاء مؤسستك عند إنشاء أو إعادة تعيين كلمة المرور لحساباتهم في ${ BRAND_NAME }."
@@ -18513,7 +18513,7 @@
         "احصل على تحديثات حول التعليقات عبر البريد الإلكتروني"
       ],
       "Include document name in email notifications": [
-        "تضمين اسم المستند في إشعارات البريد الإلكتروني"
+        "قم بتضمين اسم المستند في إشعارات البريد الإلكتروني"
       ]
     },
     "Settings description": {
@@ -18524,6 +18524,9 @@
     "Settings section title": {
       "Account": [
         "الحساب"
+      ],
+      "Managed Companies": [
+        "الشركات التي تديرها"
       ],
       "Organization": [
         "المؤسسة"
@@ -20428,6 +20431,12 @@
       ],
       "View VPN session details for your organization.": [
         "عرض تفاصيل جلسة VPN لمؤسستك."
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "تتيح لك ميزة الشركات المُدارة إضافة المؤسسات التي تشرف عليها وإدارة صلاحيات الوصول إليها، بما في ذلك تعديلها أو إزالتها."
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "إجمالي التكلفة الشهرية لكافة الشركات التي تديرها."
       ]
     },
     "Success": {
@@ -21221,6 +21230,9 @@
       "Collaborate on documents": [
         "التعاون في المستندات"
       ],
+      "Companies": [
+        "الشركات"
+      ],
       "Compare plans": [
         "مقارنة الخطط"
       ],
@@ -21862,6 +21874,9 @@
       "Mobile": [
         "الجوال"
       ],
+      "Monthly Costs": [
+        "التكاليف الشهرية"
+      ],
       "Multi-user support": [
         "دعم متعدد المستخدمين"
       ],
@@ -21978,9 +21993,6 @@
       ],
       "Phone": [
         "الهاتف"
-      ],
-      "Photos": [
-        "الصور"
       ],
       "Pin the extension": [
         "تثبيت الملحق"

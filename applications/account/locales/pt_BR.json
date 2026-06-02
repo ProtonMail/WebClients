@@ -1308,6 +1308,9 @@
       "Remove this notification": [
         "Remover esta notificação"
       ],
+      "Removed ${ memberName } as group owner": [
+        "${ memberName } removido como proprietário do grupo"
+      ],
       "Rename": [
         "Renomear"
       ],
@@ -2891,6 +2894,15 @@
       "${ migratedCount } of ${ providerUsers.length }": [
         "${ migratedCount } de ${ providerUsers.length }"
       ],
+      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "**p=none**: não coloque em quarentena nem rejeite e-mails não autorizados. Normalmente, as pessoas usam esta política apenas para solucionar problemas ou testar."
+      ],
+      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "$**p=quarantine**: solicitando às plataformas destinatárias que marquem os e-mails não autorizados como spam ou os coloquem em quarentena."
+      ],
+      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
+        "$**p=reject**: solicitando às plataformas destinatárias que rejeitem os e-mails não autorizados."
+      ],
       "Account connected": [
         "Conta conectada"
       ],
@@ -3087,6 +3099,9 @@
       "Pending": [
         "Pendente"
       ],
+      "Please leave this window open until we're done creating all the users.": [
+        "Deixe esta janela aberta até terminarmos de criar todos os usuários."
+      ],
       "Please select at least one product to migrate": [
         "Selecione ao menos um produto para migrar"
       ],
@@ -3164,6 +3179,9 @@
       ],
       "User status": [
         "Status do usuário"
+      ],
+      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
+        "Os usuários podem usar a ${ BRAND_NAME } ou o Google simultaneamente durante o período da migração."
       ],
       "Users migrated": [
         "Usuários migrados"
@@ -5162,6 +5180,9 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } em ${ DRIVE_APP_NAME } permite que você colabore com outras pessoas em um ambiente seguro e criptografado."
       ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } não é seu aplicativo padrão de e-mail."
+      ],
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } é seu aplicativo padrão de e-mail."
       ],
@@ -5327,6 +5348,9 @@
       "Still need help? Our support team is here for you.": [
         "Precisa de ajuda? Nossa equipe de suporte está aqui para você."
       ],
+      "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
+        "Isso permite recuperar o acesso na sua conta da ${ BRAND_NAME } mas não recupera seus dados criptografados."
+      ],
       "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
         "Para conectar um endereço Gmail diferente, remova os endereços extras do Gmail que estão sendo encaminhados para ${ BRAND_NAME }."
       ],
@@ -5352,11 +5376,17 @@
       "Track the status and activity of your referrals": [
         "Acompanhe o status e a atividade de suas referências"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Desbloqueia 15 GB de armazenamento por apenas ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Faça upgrade para ${ planName } para conectar até ${ MAX_SYNC_PAID_USER } contas"
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Faça upgrade para obter ${ activatePmUser } para um endereço de e-mail mais curto e fácil de lembrar, além do seu atual."
+      ],
+      "Use a recovery method to reset your password": [
+        "Use um método de recuperação para redefinir sua senha"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilize este guia para que sua organização possa rapidamente se beneficiar do ecossistema de criptografia e privacidade de ponta do ${ BRAND_NAME }."
@@ -5364,11 +5394,23 @@
       "We can't access ${ boldEmails } anymore.": [
         "Não podemos mais acessar o ${ boldEmails }."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Pausaremos as importações quando o armazenamento atingir 80% da capacidade, de modo a reservar espaço para novas mensagens."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Importaremos seus e-mails antigos e conectar seu Gmail ao ${ MAIL_APP_NAME } para que as novas mensagens apareçam automaticamente"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Iniciamos a importar seus e-mails do Gmail. Avisaremos quando terminar."
+      ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Lamentamos sua saída. Se tiver um momento, gostaríamos muito de saber o motivo do cancelamento. Seu feedback nos ajuda a fazer a ${ BRAND_NAME } ainda melhor para todos."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Você já possui um endereço do Gmail encaminhando para o ${ MAIL_APP_NAME }. Conecte-o abaixo para enviar e receber mensagens diretamente no ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Você já possui endereços do Gmail encaminhandos para o ${ MAIL_APP_NAME }. Conecte-o um abaixo para enviar e receber mensagens diretamente no ${ MAIL_APP_NAME }."
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "Você pode personalizar a lista de domínios onde certas funções automáticas na extensão do navegador ${ PASS_APP_NAME } (preenchimento automático, sugestão automática e salvamento automático) não devem ser executadas."
@@ -5395,6 +5437,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Você conectou um endereço de conta externa no ${ MAIL_APP_NAME }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Sua conta gratuita do ${ MAIL_APP_NAME } tem espaço de armazenamento limitado, por isso importaremos apenas ${ newUserStorageText } de suas mensagens mais recentes do Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Sua conta gratuita do ${ MAIL_APP_NAME } tem espaço de armazenamento limitado, por isso importaremos apenas seus e-mails mais recentes do Gmail."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Seu plano suporta ${ MAX_SYNC_FREE_USER } endereço do Gmail.",
@@ -5832,6 +5880,9 @@
       ],
       "120m": [
         "120 min"
+      ],
+      "15 minutes": [
+        "15 minutos"
       ],
       "30 minutes": [
         "30 minutos"
@@ -7438,6 +7489,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Existem muitas pastas em sua conta externa. Personalize a importação para excluir algumas pastas."
+      ],
+      "There was an error, please try again.": [
+        "Ocorreu um erro. Tente novamente."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede o máximo de ${ maximumLength } caracteres."
@@ -9756,6 +9810,9 @@
       ],
       "(formerly Twitter)": [
         "(antigo Twitter)"
+      ],
+      "**${ appName }** is not available for your account.": [
+        "**${ appName }** não está disponível para sua conta."
       ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** não é suportado na sua organização **${ organizationName }**."
@@ -12475,8 +12532,14 @@
       "Unverified email address.": [
         "Endereço de e-mail não verificado."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Faça upgrade a qualquer momento para importar o resto"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Faça upgrade ou limpe espaço em qualquer momento para importar o resto"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Faça o upgrade do seu plano para adicionar um endereço curto @pm.me para a sua conta para compartilhá-la facilmente. Ele significa \"${ MAIL_APP_NAME } me\" ou \"Private Message me\"."
@@ -12630,6 +12693,9 @@
       ],
       "We couldn’t process your payment.": [
         "Não foi possível realizar o pagamento."
+      ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "Detectamos que você já está iniciado sessão no aplicativo web da ${ BRAND_NAME } em **outro navegador**. Você pode redefinir sua senha a partir da sessão ativa."
       ],
       "We generated a strong password for you": [
         "Nós geramos senhas fortes para você"
@@ -12847,9 +12913,6 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Você pode editar isso uma só vez para garantir o endereço de e-mail coreto para verificar."
-      ],
-      "You can enable the Photos section from the interface using the toggle below.": [
-        "Você pode habilitar a seção Fotos na interface usando o botão abaixo."
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Você pode aplicar as regras de senha que os membros da sua organização usarão quando criarem ou redefinirem a senha da sua conta da ${ BRAND_NAME }."
@@ -15323,6 +15386,9 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Sim, eu quero excluir permanentemente esta conta e todos os seus dados."
       ],
+      "You don't have permissions": [
+        "Você não tem permissão"
+      ],
       "Your activation code:": [
         "Seu código de ativação:"
       ],
@@ -15422,6 +15488,9 @@
       ],
       "Host name": [
         "Nome do servidor"
+      ],
+      "Invalid ${ group.name } record found": [
+        "Encontrado um registro inválido de ${ group.name }"
       ],
       "Type": [
         "Tipo"
@@ -16125,6 +16194,9 @@
       "Built-in chat": [
         "Bate-papo integrado"
       ],
+      "Cloud storage and file sharing": [
+        "Armazenamento em nuvem e compartilhamento de arquivos"
+      ],
       "Data retention policies": [
         "Políticas de retenção de dados"
       ],
@@ -16149,6 +16221,12 @@
       "One active meeting at a time": [
         "Uma reunião ativa por vez"
       ],
+      "Password manager with team vaults": [
+        "Gerenciador de senhas com cofres de equipe"
+      ],
+      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
+        "Bate-papo privado com IA (${ LUMO_SHORT_APP_NAME })"
+      ],
       "Screen-sharing": [
         "Compartilhamento de tela"
       ],
@@ -16169,6 +16247,9 @@
       "Video meetings, ${ n } participant": [
         "Reuniões por vídeo, ${ n } participante",
         "Reuniões por vídeo, ${ n } participantes"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN com bloqueador de anúncios e proteção contra malware"
       ]
     },
     "meet_2025: Info": {
@@ -21007,14 +21088,23 @@
       "Got it": [
         "Entendi"
       ],
+      "Here's how you increased your account protection:": [
+        "Veja como você aumentou a segurança da sua conta:"
+      ],
       "Later": [
         "Mais tarde"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Proteja o seu legado com Acesso de Emergência"
       ],
       "Save recovery phrase": [
         "Salvar frase de recuperação"
       ],
       "Saved recovery phrase": [
         "Frase de recuperação salva"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "Você deve ter uma conta da ${ BRAND_NAME }"
       ],
       "Verified password": [
         "Senha verificada"
@@ -21045,6 +21135,15 @@
       ],
       "You can use email verification to regain access to your account if you forget your password.": [
         "Você pode usar a verificação por e-mail para recuperar o acesso à sua conta caso esqueça a senha."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Você pode usar a verificação por SMS para recuperar o acesso à sua conta caso esqueça a senha."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Você pode usar o e-mail de recuperação para recuperar o acesso à sua conta caso esqueça a senha."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Você não precisa abrir ou ler o arquivo - apenas faça o download e armazene em local seguro."
       ],
       "Your recovery checklist": [
         "Lista de verificação para sua recuperação"
@@ -21589,14 +21688,8 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "Ativar a seção Fotos"
-      ],
       "Get updates about comments via email": [
         "Receba atualizações sobre comentários por e-mail"
-      ],
-      "Include document name in email notifications": [
-        "Incluir nome do documento em notificações por e-mail"
       ]
     },
     "Settings description": {
@@ -24447,6 +24540,9 @@
       "Collaborate on documents": [
         "Colaborar em documentos"
       ],
+      "Companies": [
+        "Empresas"
+      ],
       "Compare plans": [
         "Comparar planos"
       ],
@@ -25198,6 +25294,9 @@
       "Monthly": [
         "Mensalmente"
       ],
+      "Monthly Costs": [
+        "Custos mensais"
+      ],
       "Multi-user support": [
         "Suporte para múltiplos usuários"
       ],
@@ -25332,9 +25431,6 @@
       ],
       "Phone": [
         "Telefone"
-      ],
-      "Photos": [
-        "Fotos"
       ],
       "Pin the extension": [
         "Fixe a extensão"
