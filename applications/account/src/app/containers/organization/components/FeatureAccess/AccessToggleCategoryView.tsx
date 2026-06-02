@@ -5,10 +5,10 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useApi, useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { IcDrawerDividers } from '@proton/icons/icons/IcDrawerDividers';
+import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { AccessToggle } from './AccessToggle';
 
@@ -18,7 +18,7 @@ export const AccessToggleCategoryView = () => {
     const [organization] = useOrganization();
     const { createNotification } = useNotifications();
 
-    const isCategoryViewEnabled = useFlag('CategoryView');
+    const { hasAccessToCategoryView } = useCategoriesData();
 
     const [categoryLoading, withCategoryLoading] = useLoading();
 
@@ -33,7 +33,7 @@ export const AccessToggleCategoryView = () => {
         createNotification({ text: c('Success notification').t`Preferences updated` });
     };
 
-    if (!isCategoryViewEnabled) {
+    if (!hasAccessToCategoryView) {
         return null;
     }
 

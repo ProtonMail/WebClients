@@ -26,6 +26,7 @@ describe('useCategoriesShortcuts', () => {
                 categoryViewAccess: false,
                 shouldSeeWideToolbars: false,
                 shouldShowTabs: false,
+                hasAccessToCategoryView: false,
             });
 
             const { result } = renderHook(() => useCategoriesShortcuts());
@@ -49,6 +50,7 @@ describe('useCategoriesShortcuts', () => {
                 categoryViewAccess: true,
                 shouldSeeWideToolbars: false,
                 shouldShowTabs: true,
+                hasAccessToCategoryView: false,
             });
 
             const { result } = renderHook(() => useCategoriesShortcuts());
@@ -72,6 +74,7 @@ describe('useCategoriesShortcuts', () => {
                 categoryViewAccess: false,
                 shouldSeeWideToolbars: false,
                 shouldShowTabs: false,
+                hasAccessToCategoryView: false,
             });
 
             const { result } = renderHook(() => useCategoriesShortcuts());
@@ -88,6 +91,7 @@ describe('useCategoriesShortcuts', () => {
                 categoryViewAccess: true,
                 shouldSeeWideToolbars: false,
                 shouldShowTabs: true,
+                hasAccessToCategoryView: false,
             });
 
             const { result } = renderHook(() => useCategoriesShortcuts());
@@ -106,6 +110,7 @@ describe('useCategoriesShortcuts', () => {
                 categoryViewAccess: true,
                 shouldSeeWideToolbars: false,
                 shouldShowTabs: true,
+                hasAccessToCategoryView: false,
             });
 
             const { result } = renderHook(() => useCategoriesShortcuts());
