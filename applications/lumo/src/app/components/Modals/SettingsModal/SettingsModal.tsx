@@ -73,7 +73,13 @@ const BASE_SETTINGS_ITEMS: SettingsItem[] = [
         getText: () => c('collider_2025: Settings Item').t`Memory`,
         guest: false,
     },
-    { id: 'general', icon: 'cog-wheel', getText: () => c('collider_2025: Settings Item').t`General`, guest: true },
+    { id: 'general', icon: 'cog-wheel', getText: () => c('collider_2025: Settings Item').t`General`, guest: false },
+    {
+        id: 'appearance',
+        icon: 'palette',
+        getText: () => c('collider_2025: Settings Item').t`Appearance`,
+        guest: true,
+    },
     { id: 'about', icon: 'info-circle', getText: () => c('collider_2025: Settings Item').t`About`, guest: true },
 ];
 
@@ -125,9 +131,9 @@ const LumoSettingsSidebar = ({
     );
 };
 
-/** Guest-safe General settings panel - only shows theme and about */
-const GeneralSettingsPanelGuest = () => {
+const AppearanceSettingsPanel = () => {
     const { isDarkLumoTheme } = useLumoTheme();
+    const { isAnimatedBackgroundEnabled, isToggleDisabled, setAnimatedBackgroundEnabled } = useLumoAnimatedBackground();
 
     return (
         <div className="flex flex-column flex-nowrap *:min-size-auto gap-4">
@@ -139,18 +145,42 @@ const GeneralSettingsPanelGuest = () => {
                 />
                 <LumoThemeButton />
             </div>
+
+            <SettingsSectionItem
+                icon="image"
+                text={c('collider_2025: Title').t`Animated background`}
+                subtext={c('collider_2025: Description').t`Show animated background on the home screen`}
+                button={
+                    <Tooltip
+                        title={
+                            isToggleDisabled
+                                ? c('Tooltip').t`The reduce motion setting is already enabled on this device`
+                                : undefined
+                        }
+                        closeDelay={0}
+                        openDelay={0}
+                    >
+                        <Toggle
+                            id="animated-background-toggle"
+                            checked={isAnimatedBackgroundEnabled}
+                            disabled={isToggleDisabled}
+                            onChange={() => {
+                                setAnimatedBackgroundEnabled(!isAnimatedBackgroundEnabled);
+                            }}
+                        />
+                    </Tooltip>
+                }
+            />
         </div>
     );
 };
 
-/** Full General settings panel for authenticated users */
+/** General settings panel for authenticated users */
 const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
-    const { isDarkLumoTheme } = useLumoTheme();
     const { externalTools: isLumoToolingEnabled } = useLumoFlags();
     const [user] = useUser();
     const userId = user?.ID;
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
-    const { isAnimatedBackgroundEnabled, isToggleDisabled, setAnimatedBackgroundEnabled } = useLumoAnimatedBackground();
     const showProjectConversationsInHistory = lumoUserSettings.showProjectConversationsInHistory ?? false;
     const automaticWebSearch = lumoUserSettings.automaticWebSearch ?? false;
 
@@ -233,41 +263,6 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
 
     return (
         <div className="flex flex-column flex-nowrap *:min-size-auto gap-4">
-            <div className="flex flex-column flex-nowrap gap-4 mb-4">
-                <SettingsSectionItem
-                    icon={isDarkLumoTheme ? 'moon' : 'sun'}
-                    text={c('collider_2025: Title').t`Theme`}
-                    subtext={c('collider_2025: Description').t`Switch between light and dark mode`}
-                />
-                <LumoThemeButton />
-            </div>
-
-            <SettingsSectionItem
-                icon="image"
-                text={c('collider_2025: Title').t`Animated background`}
-                subtext={c('collider_2025: Description').t`Show animated background on the home screen`}
-                button={
-                    <Tooltip
-                        title={
-                            isToggleDisabled
-                                ? c('Tooltip').t`The reduce motion setting is already enabled on this device`
-                                : undefined
-                        }
-                        closeDelay={0}
-                        openDelay={0}
-                    >
-                        <Toggle
-                            id="animated-background-toggle"
-                            checked={isAnimatedBackgroundEnabled}
-                            disabled={isToggleDisabled}
-                            onChange={() => {
-                                setAnimatedBackgroundEnabled(!isAnimatedBackgroundEnabled);
-                            }}
-                        />
-                    </Tooltip>
-                }
-            />
-
             {/* Project conversations in history toggle */}
             <SettingsSectionItem
                 icon="folder"
@@ -507,12 +502,10 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                                 {activePanel === 'memory' && isMemoryFeatureEnabled && (
                                     <MemoryPanel onClose={closeModal} />
                                 )}
-                                {activePanel === 'general' &&
-                                    (isGuest ? (
-                                        <GeneralSettingsPanelGuest />
-                                    ) : (
-                                        <GeneralSettingsPanelAuth onClose={closeModal} />
-                                    ))}
+                                {activePanel === 'general' && !isGuest && (
+                                    <GeneralSettingsPanelAuth onClose={closeModal} />
+                                )}
+                                {activePanel === 'appearance' && <AppearanceSettingsPanel />}
                                 {activePanel === 'about' && <AboutPanel />}
                             </div>
                         </div>
