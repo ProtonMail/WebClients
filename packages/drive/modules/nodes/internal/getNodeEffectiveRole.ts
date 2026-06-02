@@ -4,10 +4,10 @@ import {
     type NodeEntity,
     NodeType,
     type ProtonDriveClient,
-    ProtonDrivePhotosClient,
-} from '@proton/drive';
-import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+} from '@protontech/drive-sdk';
+import { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
+
+import { EnrichedError, sendErrorReport } from '../../../legacy/errorHandling';
 
 const MemberHierarchy = {
     [MemberRole.Inherited]: 0,
@@ -34,7 +34,7 @@ export async function getNodeEffectiveRole(
 
     if (node.parentUid) {
         const parent = await drive.getNode(node.parentUid);
-        const parentNode = getNodeEntity(parent).node;
+        const parentNode = parent.ok ? parent.value : parent.error;
         role = await getNodeEffectiveRole(parentNode, drive, role);
     }
 
@@ -68,7 +68,7 @@ async function getHighestAlbumRole(
 
     for (const albumUid of albumsUids) {
         const album = await drive.getNode(albumUid);
-        const albumNodeEntity = getNodeEntity(album).node;
+        const albumNodeEntity = album.ok ? album.value : album.error;
         role = getHigherRole(albumNodeEntity.directRole, role);
 
         if (role === MemberRole.Admin) {

@@ -2,11 +2,11 @@ import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
 import type { NodeType } from '@proton/drive';
+import type { EffectiveRole } from '@proton/drive/modules/nodes';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import type { SortField } from '../../../modules/sorting';
 import { type SortConfig, sortItems } from '../../../modules/sorting';
-import type { EffectiveRole } from '../../../utils/sdk/getNodeEffectiveRole';
 import { defaultSort, getSearchResultItemSortValue } from './searchResultItems.sorting';
 
 export type SearchResultItemUI = {

@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton, usePopperAnchor } from '@proton/components';
 import { MemberRole, generateNodeUid, getDrive } from '@proton/drive/index';
+import { useMoveItemsModal } from '@proton/drive/modals/moveItemsModal';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import type { IconName } from '@proton/icons/types';
@@ -12,7 +13,6 @@ import generateUID from '@proton/utils/generateUID';
 
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
-import { useMoveItemsModal } from '../../../modals/MoveItemsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
 import { useTrashActions } from '../../commonActions/useTrashActions';
 

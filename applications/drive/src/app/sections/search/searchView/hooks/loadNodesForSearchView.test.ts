@@ -2,12 +2,11 @@ import { when } from 'jest-when';
 
 import type { MaybeNode, ProtonDriveClient } from '@proton/drive/index';
 import { getDrive } from '@proton/drive/index';
+import { type EffectiveRole, getNodeEffectiveRole } from '@proton/drive/modules/nodes';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
+import { createMockDegradedNode, createMockNodeEntity } from '@proton/drive/modules/testing';
 
-import type { EffectiveRole } from '../../../../utils/sdk/getNodeEffectiveRole';
-import { getNodeEffectiveRole } from '../../../../utils/sdk/getNodeEffectiveRole';
 import { getFormattedNodeLocation } from '../../../../utils/sdk/getNodeLocation';
-import { createMockDegradedNode, createMockNodeEntity } from '../../../../utils/test/nodeEntity';
 import { useSearchViewStore } from '../../searchView/store';
 import { loadNodesForSearchView } from './loadNodesForSearchView';
 
@@ -26,7 +25,8 @@ jest.mock('../../../../utils/sdk/getNodeLocation', () => ({
     getFormattedNodeLocation: jest.fn(),
 }));
 
-jest.mock('../../../../utils/sdk/getNodeEffectiveRole', () => ({
+jest.mock('@proton/drive/modules/nodes', () => ({
+    ...jest.requireActual('@proton/drive/modules/nodes'),
     getNodeEffectiveRole: jest.fn(),
 }));
 

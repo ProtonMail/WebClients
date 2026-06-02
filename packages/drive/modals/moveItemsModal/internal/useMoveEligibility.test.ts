@@ -1,23 +1,19 @@
 import { renderHook, waitFor } from '@testing-library/react';
 
-import type { ProtonDriveClient } from '@proton/drive/index';
-import { MemberRole, generateNodeUid } from '@proton/drive/index';
-import { handleSdkError } from '@proton/drive/legacy/errorHandling';
-
-import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
-import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
-import { createMockNodeEntity } from '../../utils/test/nodeEntity';
+import type { ProtonDriveClient } from '../../../index';
+import { MemberRole, generateNodeUid } from '../../../index';
+import { handleSdkError } from '../../../legacy/errorHandling';
+import { getNodeAncestry, getNodeEffectiveRole } from '../../../modules/nodes';
+import { createMockNodeEntity } from '../../../modules/testing';
 import { useMoveEligibility } from './useMoveEligibility';
 
-jest.mock('@proton/drive/legacy/errorHandling', () => ({
+jest.mock('../../../legacy/errorHandling', () => ({
     handleSdkError: jest.fn(),
 }));
 
-jest.mock('../../utils/sdk/getNodeAncestry', () => ({
+jest.mock('../../../modules/nodes', () => ({
+    ...jest.requireActual('../../../modules/nodes'),
     getNodeAncestry: jest.fn(),
-}));
-
-jest.mock('../../utils/sdk/getNodeEffectiveRole', () => ({
     getNodeEffectiveRole: jest.fn(),
 }));
 

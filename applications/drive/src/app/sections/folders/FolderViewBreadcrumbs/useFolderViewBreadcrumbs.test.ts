@@ -2,11 +2,11 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { type NodeEntity, NodeType } from '@proton/drive/index';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
+import { getNodeAncestry } from '@proton/drive/modules/nodes';
+import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
 import type { CrumbDefinition } from '../../../statelessComponents/Breadcrumbs/types';
-import { getNodeAncestry } from '../../../utils/sdk/getNodeAncestry';
 import { NodeLocation, getNodeLocation } from '../../../utils/sdk/getNodeLocation';
-import { createMockNodeEntity } from '../../../utils/test/nodeEntity';
 import {
     SYNTHETIC_UID_DEVICES,
     SYNTHETIC_UID_SHARED_WITH_ME,
@@ -16,7 +16,10 @@ import {
 jest.mock('../../../utils/sdk/getNodeLocation');
 const mockGetNodeLocation = jest.mocked(getNodeLocation);
 
-jest.mock('../../../utils/sdk/getNodeAncestry');
+jest.mock('@proton/drive/modules/nodes', () => ({
+    ...jest.requireActual('@proton/drive/modules/nodes'),
+    getNodeAncestry: jest.fn(),
+}));
 const mockGetNodeAncestry = jest.mocked(getNodeAncestry);
 
 jest.mock('@proton/drive/legacy/errorHandling');

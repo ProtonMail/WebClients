@@ -3,18 +3,17 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { type ModalStateProps, useNotifications } from '@proton/components';
-import type { MaybeNode, ProtonDriveClient, Result } from '@proton/drive';
-import { NodeType, getDrive } from '@proton/drive';
-import type { DirectoryTreeItem } from '@proton/drive/components/DirectoryTree/DirectoryTree';
-import { handleSdkError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
-import { useCreateFolderModal } from '@proton/drive/modals/createFolderModal';
-import { directoryTreeFactory, getNodeUidFromTreeItemId, makeTreeItemId } from '@proton/drive/modules/directoryTree';
-import { type MoveNodesItemMap, useMoveNodes } from '@proton/drive/modules/moveNodes';
 import shallowEqual from '@proton/utils/shallowEqual';
 
-import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
-import { getMissingUid, isMissingNode } from '../../utils/sdk/node';
+import type { DirectoryTreeItem } from '../../../components/DirectoryTree/DirectoryTree';
+import type { MaybeNode, ProtonDriveClient, Result } from '../../../index';
+import { NodeType, getDrive } from '../../../index';
+import { handleSdkError, sendErrorReport } from '../../../legacy/errorHandling';
+import { getNodeEntity } from '../../../legacy/sdkUtils/getNodeEntity';
+import { directoryTreeFactory, getNodeUidFromTreeItemId, makeTreeItemId } from '../../../modules/directoryTree';
+import { type MoveNodesItemMap, useMoveNodes } from '../../../modules/moveNodes';
+import { getMissingUid, getNodeAncestry, isMissingNode } from '../../../modules/nodes';
+import { useCreateFolderModal } from '../../createFolderModal';
 
 export type MoveItemsModalInnerProps = {
     nodeUids: string[];

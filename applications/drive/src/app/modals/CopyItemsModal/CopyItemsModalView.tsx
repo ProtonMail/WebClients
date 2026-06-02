@@ -14,8 +14,7 @@ import {
 } from '@proton/components';
 import type { DirectoryTreeItem } from '@proton/drive/components/DirectoryTree/DirectoryTree';
 import { DirectoryTreeRoot } from '@proton/drive/components/DirectoryTree/DirectoryTree';
-
-import ModalContentLoader from '../../legacy/components/modals/ModalContentLoader';
+import ModalContentLoader from '@proton/drive/modals/modalUtils/ModalContentLoader';
 
 export type CopyItemsModalViewProps = ModalStateProps & {
     isLoading: boolean;
