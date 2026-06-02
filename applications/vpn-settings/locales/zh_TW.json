@@ -818,6 +818,9 @@
       "Search countries": [
         "搜尋國家與地區"
       ],
+      "Search settings": [
+        "搜尋設定"
+      ],
       "See DNS TXT record": [
         "查看DNS的TXT紀錄"
       ],
@@ -1163,6 +1166,9 @@
       ],
       "${ price } per user": [
         "每使用者${ price }"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } 個自訂網域"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } AI 授權"
@@ -4500,6 +4506,9 @@
       "10+ premium features": [
         "10 + 頂級質子版功能"
       ],
+      "3 email domains": [
+        "3 個電子郵件網域"
+      ],
       "Access to all countries": [
         "所有國家任選"
       ],
@@ -6337,6 +6346,9 @@
       ],
       "New": [
         "加入"
+      ],
+      "New activity data will stop being collected and shown.": [
+        "新活動資料將不再被收集及顯示。"
       ],
       "New user invited to organization": [
         "新使用者已邀請至組織"
@@ -8345,6 +8357,11 @@
     "Label (end date/advanced search)": {
       "To": [
         "收件者"
+      ]
+    },
+    "Label BYOE": {
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ maxBYOEAddresses } 中的 ${ byoeAddressesAvailableCount } 電子郵件地址可用"
       ]
     },
     "Label for adding a new custom domain": {
