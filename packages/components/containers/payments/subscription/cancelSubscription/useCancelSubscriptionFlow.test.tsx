@@ -2,8 +2,7 @@ import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { getModelState } from '@proton/account/test';
-import { organization, vpnServersCount } from '@proton/components/containers/payments/subscription/__mocks__/data';
-import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
+import { organization } from '@proton/components/containers/payments/subscription/__mocks__/data';
 import { FREE_PLAN, FREE_SUBSCRIPTION, PLANS, Renew, type Subscription } from '@proton/payments';
 import { changeRenewState, deleteSubscription } from '@proton/payments/core/api/api';
 import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
@@ -18,10 +17,6 @@ import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/
 import { useCancelSubscriptionFlow } from './useCancelSubscriptionFlow';
 
 jest.mock('@proton/components/components/portal/Portal');
-
-jest.mock('@proton/components/hooks/useVPNServersCount');
-const mockUseVPNServersCount = useVPNServersCount as jest.MockedFunction<any>;
-mockUseVPNServersCount.mockReturnValue([vpnServersCount, false]);
 
 const userModel: UserModel = {
     ID: 'user-123',

@@ -6,6 +6,7 @@ import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import clsx from '@proton/utils/clsx';
+import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
 import FeatureItem from '../FeatureItem/FeatureItem';
 
@@ -14,7 +15,6 @@ export type PricingStep = 'account-details' | 'payment';
 const PricingFeatures = () => {
     const payments = usePaymentOptimistic();
     const freePlan = payments.freePlan;
-    const vpnServersCountData = payments.vpnServersCountData;
 
     const totalMailStorageSize = humanSize({ bytes: freePlan.MaxBaseRewardSpace, fraction: 0 });
     const totalDriveStorageSize = humanSize({ bytes: freePlan.MaxDriveRewardSpace, fraction: 0 });
@@ -38,9 +38,9 @@ const PricingFeatures = () => {
                 />
                 <FeatureItem
                     text={c('Signup').ngettext(
-                        msgid`${vpnServersCountData.free.servers}+ VPN servers in ${vpnServersCountData.free.countries} country`,
-                        `${vpnServersCountData.free.servers}+ VPN servers in ${vpnServersCountData.free.countries} countries`,
-                        vpnServersCountData.free.countries
+                        msgid`${VPN_SERVERS.free.servers}+ VPN servers in ${VPN_SERVERS.free.countries} country`,
+                        `${VPN_SERVERS.free.servers}+ VPN servers in ${VPN_SERVERS.free.countries} countries`,
+                        VPN_SERVERS.free.countries
                     )}
                     highlighted
                 />

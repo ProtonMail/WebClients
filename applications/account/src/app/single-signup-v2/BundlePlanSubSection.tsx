@@ -21,16 +21,9 @@ import {
     VPN_APP_NAME,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
-import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-const BundlePlanSubSection = ({
-    className,
-    vpnServersCountData,
-}: {
-    className?: string;
-    vpnServersCountData: VPNServersCountData;
-}) => {
+const BundlePlanSubSection = ({ className }: { className?: string }) => {
     const logoSize = 8;
     return (
         <div className={clsx(className, 'card-plan-premium bg-weak p-4 rounded-xl w-full')}>
@@ -62,7 +55,7 @@ const BundlePlanSubSection = ({
                         app: APPS.PROTONVPN_SETTINGS,
                         title: VPN_APP_NAME,
                         logo: <VpnLogo variant="glyph-only" size={logoSize} />,
-                        tooltip: getVPNAppFeature({ serversCount: vpnServersCountData }).tooltip,
+                        tooltip: getVPNAppFeature().tooltip,
                     },
                     {
                         app: APPS.PROTONPASS,

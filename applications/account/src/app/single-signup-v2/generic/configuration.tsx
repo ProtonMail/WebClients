@@ -1,7 +1,7 @@
 import { ProtonLogo } from '@proton/components';
 import type { FreePlanDefault, Plan, PlansMap } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { Audience, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Audience } from '@proton/shared/lib/interfaces';
 
 import { SignupType } from '../../signup/interfaces';
 import type { SignupV2Theme } from '../SignupV2ThemeProvider';
@@ -17,7 +17,6 @@ export const getGenericConfiguration = ({
     isLargeViewport,
     plansMap,
     planParameters,
-    vpnServersCountData,
     freePlan,
     signupParameters,
     isNewB2BPlanEnabled,
@@ -31,7 +30,6 @@ export const getGenericConfiguration = ({
     planParameters: PlanParameters | undefined;
     plansMap?: PlansMap;
     isLargeViewport: boolean;
-    vpnServersCountData: VPNServersCountData;
     isNewB2BPlanEnabled: boolean;
 }): SignupConfiguration => {
     const logo = <ProtonLogo color={theme.dark ? 'invert' : 'brand'} />;
@@ -42,7 +40,6 @@ export const getGenericConfiguration = ({
         planParameters,
         isLargeViewport,
         plansMap,
-        vpnServersCountData,
         signupParameters,
         freePlan,
         canUseBYOE: false,

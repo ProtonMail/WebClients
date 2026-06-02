@@ -10,7 +10,6 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useAppTitle from '@proton/components/hooks/useAppTitle';
-import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { PLANS } from '@proton/payments';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -37,7 +36,6 @@ export const CancellationReminderSection = ({ app }: Props) => {
     const [subscription] = useSubscription();
     const { reportCancellationOnSameDay } = useSubscriptionModalTelemetry();
     const [openSubscriptionModal] = useSubscriptionModal();
-    const [{ paid }] = useVPNServersCount();
     const { b2bAccess, b2cAccess, redirectToDashboard, setStartedCancellation } = useCancellationFlow();
     const { sendCancelPageKeepPlanReport, sendCancelPageConfirmCancelReport } = useCancellationTelemetry();
 
@@ -57,7 +55,7 @@ export const CancellationReminderSection = ({ app }: Props) => {
     useEffect(() => {
         const newConfig = getReminderPageConfig({ app, subscription });
         setConfig(newConfig);
-    }, [b2bAccess, b2cAccess, paid]);
+    }, [b2bAccess, b2cAccess]);
 
     useAppTitle(c('Subscription reminder').t`Cancel subscription`);
 

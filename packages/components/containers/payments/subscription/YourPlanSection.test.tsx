@@ -9,7 +9,6 @@ import { useCalendars } from '@proton/calendar/calendars/hooks';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useCache from '@proton/components/hooks/useCache';
 import useConfig from '@proton/components/hooks/useConfig';
-import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useFeature } from '@proton/features';
 import { CYCLE, PLANS } from '@proton/payments';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
@@ -37,7 +36,6 @@ import {
     subscriptionBundle,
     subscriptionMailEssentials,
     user,
-    vpnServersCount,
 } from './__mocks__/data';
 import { SUBSCRIPTION_STEPS } from './constants';
 
@@ -65,10 +63,6 @@ mockUseGetSubscription.mockReturnValue(async () => subscriptionBundle);
 jest.mock('@proton/account/organization/hooks');
 const mockUseOrganization = useOrganization as jest.MockedFunction<any>;
 mockUseOrganization.mockReturnValue([[], false]);
-
-jest.mock('@proton/components/hooks/useVPNServersCount');
-const mockUseVPNServersCount = useVPNServersCount as jest.MockedFunction<any>;
-mockUseVPNServersCount.mockReturnValue([vpnServersCount, false]);
 
 jest.mock('@proton/account/userInvitations/hooks');
 const mockUsePendingUserInvitations = useUserInvitations as jest.MockedFunction<any>;

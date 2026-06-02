@@ -12,9 +12,9 @@ import {
     VPN_CONNECTIONS,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
-import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getPlusServers } from '@proton/shared/lib/vpn/features';
 import isTruthy from '@proton/utils/isTruthy';
+import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
 import { getActivityLog, getRequire2FA, getSSOIntegration, getTeamPolicies } from './b2b';
 import { getCalendarAppFeature } from './calendar';
@@ -164,15 +164,7 @@ export const getFreePlan = (freePlan: FreePlanDefault): ShortPlan => {
     };
 };
 
-export const getBundlePlan = ({
-    plan,
-    vpnServersCountData,
-    freePlan,
-}: {
-    freePlan: FreePlanDefault;
-    plan: Plan;
-    vpnServersCountData: VPNServersCountData;
-}): ShortPlan => {
+export const getBundlePlan = ({ plan, freePlan }: { freePlan: FreePlanDefault; plan: Plan }): ShortPlan => {
     return {
         plan: PLANS.BUNDLE,
         title: plan.Title,
@@ -190,7 +182,7 @@ export const getBundlePlan = ({
             getSupport('priority'),
             getCalendarAppFeature(),
             getDriveAppFeature(),
-            getVPNAppFeature({ serversCount: vpnServersCountData }),
+            getVPNAppFeature(),
             getPassAppFeature(),
         ],
     };
@@ -446,8 +438,8 @@ export const getMailPlan = ({ plan, freePlan }: { plan: Plan; freePlan: FreePlan
     };
 };
 
-export const getVPNPlan = (plan: Plan, serversCount: VPNServersCountData): ShortPlan => {
-    const plusServers = getPlusServers(serversCount.paid.servers, serversCount.paid.countries);
+export const getVPNPlan = (plan: Plan): ShortPlan => {
+    const plusServers = getPlusServers(VPN_SERVERS.paid.servers, VPN_SERVERS.paid.countries);
     return {
         plan: PLANS.VPN2024,
         title: plan.Title,
@@ -469,8 +461,8 @@ export const getVPNPlan = (plan: Plan, serversCount: VPNServersCountData): Short
     };
 };
 
-export const getVPNPassPlan = (plan: Plan, serversCount: VPNServersCountData): ShortPlan => {
-    const plusServers = getPlusServers(serversCount.paid.servers, serversCount.paid.countries);
+export const getVPNPassPlan = (plan: Plan): ShortPlan => {
+    const plusServers = getPlusServers(VPN_SERVERS.paid.servers, VPN_SERVERS.paid.countries);
     return {
         plan: PLANS.VPN2024,
         title: plan.Title,
@@ -603,15 +595,7 @@ export const getBundlePremiumPlan = ({
     };
 };
 
-export const getVisionaryPlan = ({
-    serversCount,
-    plan,
-    freePlan,
-}: {
-    serversCount: VPNServersCountData;
-    plan: Plan;
-    freePlan: FreePlanDefault;
-}): ShortPlan => {
+export const getVisionaryPlan = ({ plan, freePlan }: { plan: Plan; freePlan: FreePlanDefault }): ShortPlan => {
     const planName = plan.Title;
     return {
         plan: PLANS.VISIONARY,
@@ -629,21 +613,13 @@ export const getVisionaryPlan = ({
             getCalendarAppFeature(),
             getDriveAppFeature(),
             getPassAppFeature(),
-            getVPNAppFeature({ serversCount, family: false }),
+            getVPNAppFeature({ family: false }),
             getWalletAppFeature(),
         ].filter(isTruthy),
     };
 };
 
-export const getFamilyPlan = ({
-    freePlan,
-    plan,
-    serversCount,
-}: {
-    freePlan: FreePlanDefault;
-    plan: Plan;
-    serversCount: VPNServersCountData;
-}): ShortPlan => {
+export const getFamilyPlan = ({ freePlan, plan }: { freePlan: FreePlanDefault; plan: Plan }): ShortPlan => {
     return {
         plan: PLANS.FAMILY,
         title: plan.Title,
@@ -662,7 +638,6 @@ export const getFamilyPlan = ({
             getDriveAppFeature({ family: true }),
             getVPNAppFeature({
                 family: true,
-                serversCount,
             }),
             getPassAppFeature(),
             getSupport('priority'),
@@ -672,15 +647,7 @@ export const getFamilyPlan = ({
     };
 };
 
-export const getDuoPlan = ({
-    freePlan,
-    plan,
-    serversCount,
-}: {
-    freePlan: FreePlanDefault;
-    plan: Plan;
-    serversCount: VPNServersCountData;
-}): ShortPlan => {
+export const getDuoPlan = ({ freePlan, plan }: { freePlan: FreePlanDefault; plan: Plan }): ShortPlan => {
     return {
         plan: PLANS.DUO,
         title: plan.Title,
@@ -699,7 +666,6 @@ export const getDuoPlan = ({
             getDriveAppFeature({ duo: true }),
             getVPNAppFeature({
                 duo: true,
-                serversCount,
             }),
             getPassAppFeature(),
             getSupport('priority'),
@@ -709,8 +675,8 @@ export const getDuoPlan = ({
     };
 };
 
-export const getVPNProPlan = (plan: Plan, serversCount: VPNServersCountData | undefined): ShortPlan => {
-    const plusServers = getPlusServers(serversCount?.paid.servers, serversCount?.paid.countries);
+export const getVPNProPlan = (plan: Plan): ShortPlan => {
+    const plusServers = getPlusServers(VPN_SERVERS.paid.servers, VPN_SERVERS.paid.countries);
     return {
         plan: PLANS.VPN_PRO,
         title: plan.Title,
@@ -731,8 +697,8 @@ export const getVPNProPlan = (plan: Plan, serversCount: VPNServersCountData | un
     };
 };
 
-const getVpnBusinessFeatures = (serversCount: VPNServersCountData | undefined) => {
-    const plusServers = getPlusServers(serversCount?.paid.servers, serversCount?.paid.countries);
+const getVpnBusinessFeatures = () => {
+    const plusServers = getPlusServers(VPN_SERVERS.paid.servers, VPN_SERVERS.paid.countries);
 
     return [
         getCountries(plusServers),
@@ -752,7 +718,7 @@ const getVpnBusinessFeatures = (serversCount: VPNServersCountData | undefined) =
     ];
 };
 
-export const getVPNBusinessPlan = (plan: Plan, serversCount: VPNServersCountData | undefined): ShortPlan => {
+export const getVPNBusinessPlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.VPN_BUSINESS,
         title: plan.Title,
@@ -760,7 +726,7 @@ export const getVPNBusinessPlan = (plan: Plan, serversCount: VPNServersCountData
         description: c('new_plans: info')
             .t`Advanced network security and access management with dedicated secure Gateways`,
         cta: getCTA(plan.Title),
-        features: getVpnBusinessFeatures(serversCount),
+        features: getVpnBusinessFeatures(),
     };
 };
 
@@ -786,7 +752,7 @@ export const getLumoBusinessPlan = (plan: Plan): ShortPlan => {
     };
 };
 
-export const getVPNPassProPlan = (plan: Plan, serversCount: VPNServersCountData | undefined): ShortPlan => {
+export const getVPNPassProPlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.VPN_PASS_BUNDLE_BUSINESS,
         title: plan.Title,
@@ -794,7 +760,7 @@ export const getVPNPassProPlan = (plan: Plan, serversCount: VPNServersCountData 
         description: c('collider_2025: Info').t`Advanced account and network security in one plan`,
         cta: getCTA(plan.Title),
         features: [
-            ...getVpnBusinessFeatures(serversCount),
+            ...getVpnBusinessFeatures(),
             getExistingVpnProfessionalBenefitsFeature(),
             getPasswordManager(),
             getVaultSharingB2B('unlimited'),
@@ -836,7 +802,6 @@ export const getShortPlan = (
     options: {
         boldStorageSize?: boolean;
         prioritizeMeetFeatures?: boolean;
-        vpnServers: VPNServersCountData;
         freePlan: FreePlanDefault;
     }
 ) => {
@@ -849,16 +814,16 @@ export const getShortPlan = (
         return null;
     }
 
-    const { vpnServers, boldStorageSize, freePlan, prioritizeMeetFeatures } = options;
+    const { boldStorageSize, freePlan, prioritizeMeetFeatures } = options;
 
     switch (plan) {
         case PLANS.MAIL:
             return getMailPlan({ plan: planData, freePlan });
         case PLANS.VPN:
         case PLANS.VPN2024:
-            return getVPNPlan(planData, vpnServers);
+            return getVPNPlan(planData);
         case PLANS.VPN_PASS_BUNDLE:
-            return getVPNPassPlan(planData, vpnServers);
+            return getVPNPassPlan(planData);
         case PLANS.DRIVE:
             return getDrivePlan({ plan: planData, boldStorageSize, freePlan });
         case PLANS.DRIVE_1TB:
@@ -874,22 +839,22 @@ export const getShortPlan = (
         case PLANS.MAIL_BUSINESS:
             return getMailBusinessPlan(planData);
         case PLANS.BUNDLE:
-            return getBundlePlan({ plan: planData, vpnServersCountData: vpnServers, freePlan });
+            return getBundlePlan({ plan: planData, freePlan });
         case PLANS.BUNDLE_PRO:
         case PLANS.BUNDLE_PRO_2024:
             return getBundleProPlan({ plan: planData, prioritizeMeetFeatures });
         case PLANS.BUNDLE_BIZ_2025:
             return getBundlePremiumPlan({ plan: planData, prioritizeMeetFeatures });
         case PLANS.VISIONARY:
-            return getVisionaryPlan({ serversCount: vpnServers, plan: planData, freePlan });
+            return getVisionaryPlan({ plan: planData, freePlan });
         case PLANS.FAMILY:
-            return getFamilyPlan({ plan: planData, serversCount: vpnServers, freePlan });
+            return getFamilyPlan({ plan: planData, freePlan });
         case PLANS.DUO:
-            return getDuoPlan({ plan: planData, serversCount: vpnServers, freePlan });
+            return getDuoPlan({ plan: planData, freePlan });
         case PLANS.VPN_PRO:
-            return getVPNProPlan(planData, vpnServers);
+            return getVPNProPlan(planData);
         case PLANS.VPN_BUSINESS:
-            return getVPNBusinessPlan(planData, vpnServers);
+            return getVPNBusinessPlan(planData);
         case PLANS.PASS_PRO:
             return getPassProPlan(planData);
         case PLANS.PASS_FAMILY:
@@ -901,7 +866,7 @@ export const getShortPlan = (
         case PLANS.LUMO_BUSINESS:
             return getLumoBusinessPlan(planData);
         case PLANS.VPN_PASS_BUNDLE_BUSINESS:
-            return getVPNPassProPlan(planData, vpnServers);
+            return getVPNPassProPlan(planData);
         case PLANS.MEET:
             return getMeetB2CPlan(planData);
         case PLANS.MEET_BUSINESS:
