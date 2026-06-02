@@ -6,7 +6,7 @@ import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
 import { LUMO_FULL_APP_TITLE } from '../../constants';
 import { useSafeUser } from '../../contexts/SafeUserContext';
 import type { RouteParams } from '../../entrypoint/auth/RouterContainer';
-import { useQueryParam } from '../../hooks';
+import { useQueryParam, useSkillParam } from '../../hooks';
 import { useLumoActions } from '../../hooks/useLumoActions';
 import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
 import { ComposerActionsProvider } from '../../providers/ComposerActionsProvider';
@@ -51,6 +51,9 @@ const ConversationPageComponentInner = () => {
     // Extract query parameters from URL (will be cleared after reading)
     const initialQuery = useQueryParam('q');
     const prefillQuery = useQueryParam('prefill');
+
+    // Activate an agent from a `?skill=<agentId>` link.
+    useSkillParam();
 
     // Prefill text injected from within the conversation (e.g. style change on an inline image).
     const pendingPrefill = useLumoSelector((state) => state.composerActions.pendingPrefill);

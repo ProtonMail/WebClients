@@ -10,6 +10,8 @@ export { usePersonalization } from './usePersonalization';
 
 // URL parameter hooks
 export { useQueryParam } from './useQueryParam';
+export { useSkillParam } from './useSkillParam';
+export { useThemeParam } from './useThemeParam';
 
 // User settings hooks
 export { useLumoUserSettings } from './useLumoUserSettings';

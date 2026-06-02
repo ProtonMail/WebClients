@@ -19,6 +19,8 @@ export type MessageChainComponentProps = {
     isGenerating?: boolean;
     onRetryPanelToggle?: (messageId: string, show: boolean, buttonRef?: HTMLElement) => void;
     composerContainerRef: React.RefObject<HTMLDivElement>;
+    /** Extra classes for the scrollable message container (e.g. top spacing in minimal mode). */
+    className?: string;
 };
 
 interface ScrollState {
@@ -216,6 +218,7 @@ export const MessageChainComponent = ({
     handleOpenFilePreview,
     onRetryPanelToggle,
     composerContainerRef,
+    className,
 }: MessageChainComponentProps) => {
     const newMessageRef = useRef<HTMLDivElement | null>(null);
     const { userHasScrolledUp, scrollToBottom } = useAutoScroll(messageChainRef, messageChain, isGenerating);
@@ -264,7 +267,7 @@ export const MessageChainComponent = ({
         <>
             <div
                 ref={messageChainRef}
-                className="lumo-message-chain h-full overflow-y-auto px-6 md:px-0 flex-1 reset4print"
+                className={`lumo-message-chain h-full overflow-y-auto px-6 md:px-0 flex-1 reset4print${className ? ` ${className}` : ''}`}
             >
                 {messageChain.map((message, index) => {
                     const isLastMessage = index === messageChain.length - 1;

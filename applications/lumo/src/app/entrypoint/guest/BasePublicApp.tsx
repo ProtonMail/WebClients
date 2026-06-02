@@ -6,6 +6,7 @@ import { GuestTrackingProvider } from '../../providers/GuestTrackingProvider';
 import { IsGuestProvider } from '../../providers/IsGuestProvider';
 import { LumoPlanProvider } from '../../providers/LumoPlanProvider';
 import { LumoUpsellModalProvider } from '../../upsells/providers/LumoUpsellModalProvider';
+import { AgentApp } from '../AgentApp';
 import { InnerApp } from '../InnerApp';
 
 const BasePublicApp = () => {
@@ -16,6 +17,13 @@ const BasePublicApp = () => {
                     <SafeUserProvider>
                         <Router>
                             <Switch>
+                                <Route path="/agent">
+                                    <GuestTrackingProvider>
+                                        <LumoUpsellModalProvider>
+                                            <AgentApp />
+                                        </LumoUpsellModalProvider>
+                                    </GuestTrackingProvider>
+                                </Route>
                                 <Route path="/guest">
                                     <GuestTrackingProvider>
                                         <LumoUpsellModalProvider>
