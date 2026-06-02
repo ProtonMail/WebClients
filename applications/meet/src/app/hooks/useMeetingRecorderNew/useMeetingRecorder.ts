@@ -24,6 +24,7 @@ import { useIsLargerThanMd } from '../useIsLargerThanMd';
 import { useIsNarrowHeight } from '../useIsNarrowHeight';
 import { useStableCallback } from '../useStableCallback';
 import { useHaveRecordingPermissions } from './hooks/useHaveRecordingPermissions';
+import { useIsRecordingSupported } from './hooks/useIsRecordingSupported';
 import { useRecordedTracks } from './hooks/useRecordedTracks';
 import { useRecordingCodec } from './hooks/useRecordingCodec';
 import { useRecordingScene } from './hooks/useRecordingScene';
@@ -33,7 +34,8 @@ import { RecordingSession } from './recordingSession/recordingSession';
 
 export const useMeetingRecorder = () => {
     const hasRecordingPermissions = useHaveRecordingPermissions();
-    const recordingCodec = useRecordingCodec(hasRecordingPermissions);
+    const isRecordingSupported = useIsRecordingSupported();
+    const recordingCodec = useRecordingCodec(hasRecordingPermissions && isRecordingSupported);
 
     const room = useRoomContext();
     const dispatch = useMeetDispatch();
