@@ -11,10 +11,16 @@ export const LUMO_ROUTES = {
     PRIVATE_ROUTES_PREFIX: '/u/',
     LOGIN_ROUTE: '/login',
     GUEST: '/guest',
+    // Minimal, single-agent chatbot surface. Runs in guest mode so it loads almost instantly.
+    AGENT: '/agent',
 };
 
 const determineRouteType = (pathname: string): 'private' | 'public' => {
-    if (pathname === LUMO_ROUTES.GUEST) {
+    if (
+        pathname === LUMO_ROUTES.GUEST ||
+        pathname === LUMO_ROUTES.AGENT ||
+        pathname.startsWith(`${LUMO_ROUTES.AGENT}/`)
+    ) {
         return 'public';
     }
     return 'private';

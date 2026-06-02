@@ -91,7 +91,8 @@ export function prepareTurns(
     personalization: PersonalizationSettings,
     projectInstructions?: string,
     c?: ConversationContext,
-    memories?: string
+    memories?: string,
+    agentInstructions?: string
 ): Turn[] {
     // Step 1: Transform messages to turns by iterating over blocks
     let turns: TurnInProgress[] = [];
@@ -155,8 +156,12 @@ export function prepareTurns(
     // Step 4: Add personalization, memories and project instructions to the last user message
     // These are per-request instructions that should apply to the current question
     const personalizationPrompt = formatPersonalization(personalization);
-    if (personalizationPrompt || projectInstructions || memories) {
+    if (personalizationPrompt || projectInstructions || memories || agentInstructions) {
         const instructionParts: string[] = [];
+        // Agent persona comes first so it frames the assistant's role above other context.
+        if (agentInstructions) {
+            instructionParts.push(`[Agent instructions: ${agentInstructions}]`);
+        }
         if (personalizationPrompt) {
             instructionParts.push(`[Personal context: ${personalizationPrompt}]`);
         }
