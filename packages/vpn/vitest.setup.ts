@@ -49,11 +49,13 @@ Object.defineProperty(window, 'matchMedia', {
     })),
 });
 
-global.ResizeObserver = vi.fn().mockImplementation(() => ({
-    observe: vi.fn(),
-    unobserve: vi.fn(),
-    disconnect: vi.fn(),
-}));
+global.ResizeObserver = class {
+    observe = vi.fn();
+
+    unobserve = vi.fn();
+
+    disconnect = vi.fn();
+} as unknown as typeof ResizeObserver;
 
 vi.mock('@proton/components/containers/vpn/flag', () => ({
     getFlagSvg: vi.fn().mockImplementation((it) => it),
