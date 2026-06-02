@@ -4,11 +4,11 @@ import { c, msgid } from 'ttag';
 
 import { useConfirmActionModal, useModalStateObject, useNotifications } from '@proton/components';
 import { ServerError, getDriveForPhotos } from '@proton/drive';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
-import { getNotificationsManager } from '@proton/drive/modules/notifications';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
+import { getNotificationsManager } from '@proton/drive/modules/notifications';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import useNavigate from '../../legacy/hooks/drive/useNavigate';

@@ -2,8 +2,8 @@ import { renderHook } from '@testing-library/react';
 
 import { useNotifications } from '@proton/components';
 import { getDrive, useDrive } from '@proton/drive/index';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { useBookmarksActions } from './useBookmarksActions';
@@ -19,8 +19,8 @@ jest.mock('@proton/drive/index', () => ({
 
 const mockDriveClient = { type: 'drive' } as any;
 
-jest.mock('@proton/drive/internal/BusDriver', () => ({
-    ...jest.requireActual('@proton/drive/internal/BusDriver'),
+jest.mock('@proton/drive/modules/busDriver', () => ({
+    ...jest.requireActual('@proton/drive/modules/busDriver'),
     getBusDriver: jest.fn(),
 }));
 

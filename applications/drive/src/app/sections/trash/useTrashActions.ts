@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import type { ProtonDriveClient, ProtonDrivePhotosClient } from '@proton/drive/index';
 import { NodeType, getDrive, getDriveForPhotos, getDrivePerNodeType, useDrive } from '@proton/drive/index';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useDetailsModal } from '../../modals/DetailsModal';

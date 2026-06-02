@@ -2,9 +2,9 @@ import { renderHook } from '@testing-library/react';
 
 import { useNotifications } from '@proton/components';
 import { MemberRole, type NodeEntity, NodeType, getDrivePerNodeType } from '@proton/drive/index';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 
 import { useInvitationsActions } from './useInvitationsActions';
 
@@ -24,8 +24,8 @@ jest.mock('@proton/drive', () => ({
     splitNodeUid: jest.fn(),
 }));
 
-jest.mock('@proton/drive/internal/BusDriver', () => ({
-    ...jest.requireActual('@proton/drive/internal/BusDriver'),
+jest.mock('@proton/drive/modules/busDriver', () => ({
+    ...jest.requireActual('@proton/drive/modules/busDriver'),
     getBusDriver: jest.fn(),
 }));
 

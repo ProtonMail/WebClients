@@ -4,9 +4,9 @@ import isEqual from 'lodash/isEqual';
 
 import { useApi } from '@proton/components';
 import { type NodeEntity, generateNodeUid, getDriveForPhotos, splitNodeUid } from '@proton/drive';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { queryDeletePhotosShare } from '@proton/shared/lib/api/drive/photos';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 

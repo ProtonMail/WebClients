@@ -1,12 +1,12 @@
 import { NodeType, getDrive } from '../../../../index';
-import { sendErrorReport } from '../../../../internal/BusDriver/errorHandling';
+import { sendErrorReport } from '../../../../modules/busDriver';
 import { iterateSharedWithMeNodes } from './iterateSharedWithMeNodes';
 
 jest.mock('../../../../index', () => ({
     ...jest.requireActual('../../../../index'),
     getDrive: jest.fn(),
 }));
-jest.mock('../../../../internal/BusDriver/errorHandling');
+jest.mock('../../../../modules/busDriver');
 
 const mockedGetDrive = jest.mocked(getDrive);
 const mockedSendErrorReport = jest.mocked(sendErrorReport);

@@ -1,7 +1,7 @@
 import type { NodeEntity } from '../../../../index';
 import { getDrive } from '../../../../index';
-import { sendErrorReport } from '../../../../internal/BusDriver/errorHandling';
 import { getNodeEntity } from '../../../../legacy/sdkUtils/getNodeEntity';
+import { sendErrorReport } from '../../../../modules/busDriver';
 
 export async function iterateSharedWithMeNodes(abortSignal?: AbortSignal) {
     const result: { node: NodeEntity }[] = [];

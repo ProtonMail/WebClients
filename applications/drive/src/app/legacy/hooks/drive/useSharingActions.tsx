@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import type { useConfirmActionModal } from '@proton/components';
 import { type ProtonDriveClient, getDrive } from '@proton/drive';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
 
 export const useSharingActions = () => {
