@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import type { Lock, LockCreateDTO, UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import type { ExtraPasswordDTO, PasswordConfirmDTO } from '@proton/pass/lib/auth/password';
+import type { ExtraPasswordDTO, PasswordConfirmDTO, PasswordLaunchLockDTO } from '@proton/pass/lib/auth/password';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
@@ -144,6 +144,32 @@ export const passwordConfirm = requestActionsFactory<PasswordConfirmDTO, boolean
                 type: 'error',
                 text: getErrorMessage(error),
                 error: null,
+            })({ payload }),
+    },
+});
+
+export const passwordOnLaunchToggle = requestActionsFactory<PasswordLaunchLockDTO, boolean>('auth::password-on-launch::toggle')({
+    intent: {
+        prepare: (payload) =>
+            withNotification({
+                type: 'info',
+                loading: true,
+                text: c('Info').t`Updating launch password requirement...`,
+            })({ payload }),
+    },
+    success: {
+        prepare: (enabled) =>
+            withNotification({
+                type: 'success',
+                text: c('Info').t`Settings successfully updated`,
+            })({ payload: enabled }),
+    },
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Settings update failed`,
+                error,
             })({ payload }),
     },
 });

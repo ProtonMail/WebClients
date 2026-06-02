@@ -1,7 +1,7 @@
-import { c } from 'ttag';
-
 import { ARGON2_PARAMS } from '@protontech/crypto';
 import { importKey } from '@protontech/crypto/subtle/aesGcm.ts';
+import { c } from 'ttag';
+
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { encodeUserData } from '@proton/pass/lib/auth/store.utils';
 import type { OfflineComponents } from '@proton/pass/lib/cache/crypto';
@@ -277,6 +277,7 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<Consumed
         lastUsedAt: getEpoch(),
         AccessToken: cookies ? '' : refresh.AccessToken,
         RefreshToken: cookies ? '' : refresh.RefreshToken,
+        ...(EXTENSION_BUILD || DESKTOP_BUILD ? { lockPasswordOnLaunch: true } : {}),
         lockMode: LockMode.NONE,
         persistent: payload.persistent,
         cookies,

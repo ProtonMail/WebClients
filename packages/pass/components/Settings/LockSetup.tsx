@@ -2,6 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
+import Checkbox from '@proton/components/components/input/Checkbox';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { LockTTLField } from '@proton/pass/components/Lock/LockTTLField';
@@ -15,7 +16,16 @@ type Props = { noTTL?: boolean };
 
 export const LockSetup: FC<Props> = ({ noTTL = false }) => {
     const online = useOnline();
-    const { setLockMode, setLockTTL, lock, biometrics, extensionBiometrics, password } = useLockSetup();
+    const {
+        setLockMode,
+        setLockTTL,
+        setPasswordOnLaunch,
+        lock,
+        biometrics,
+        extensionBiometrics,
+        password,
+        passwordOnLaunch,
+    } = useLockSetup();
     const passwordTypeSwitch = usePasswordTypeSwitch();
 
     /**
@@ -155,6 +165,16 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
                             </>
                         }
                     />
+                    {(EXTENSION_BUILD || DESKTOP_BUILD) && (
+                        <Checkbox
+                            className="mt-4"
+                            checked={passwordOnLaunch}
+                            disabled={!online || lock.loading}
+                            onChange={() => setPasswordOnLaunch(!passwordOnLaunch)}
+                        >
+                            {c('Label').t`Require password on launch`}
+                        </Checkbox>
+                    )}
                 </>
             )}
         </>

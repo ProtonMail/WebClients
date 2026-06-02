@@ -1,5 +1,6 @@
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 
+import { requiresLaunchPasswordUnlock } from '@proton/pass/lib/auth/session';
 import { PassFeature } from '@proton/pass/types/api/features';
 import type { RequiredProps } from '@proton/pass/types/utils';
 import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
@@ -35,6 +36,29 @@ export const shouldForceLock = withContext<() => Promise<boolean>>(async (ctx) =
         return false;
     }
 });
+
+/** Builds auth init options from the protected session launch-lock flag.
+ * Unknown state is treated as enabled; only an explicit `false` disables it. */
+export const getForceLockOptions = withContext(
+    async (ctx): Promise<{ forceLock: boolean; forcePasswordLock?: boolean }> => {
+        const authStore = ctx.authStore ?? ctx.service.auth?.config?.authStore;
+        const localID = authStore?.getLocalID?.();
+        const persistedSession = await ctx.service.auth?.config?.getPersistedSession?.(localID).catch(() => undefined);
+        const persistedForcePasswordLock = persistedSession
+            ? requiresLaunchPasswordUnlock(persistedSession)
+            : undefined;
+        const memoryForcePasswordLock = authStore?.hasOfflineComponents?.()
+            ? authStore.getLockPasswordOnLaunch?.() !== false
+            : true;
+        const forcePasswordLock = persistedForcePasswordLock ?? memoryForcePasswordLock;
+        const forceLock = (await shouldForceLock()) || forcePasswordLock;
+
+        return {
+            forceLock,
+            ...(forcePasswordLock ? { forcePasswordLock: true } : {}),
+        };
+    }
+);
 
 export const isOfflineModeEnabled = withContext<() => Promise<boolean>>(async (ctx) => {
     try {

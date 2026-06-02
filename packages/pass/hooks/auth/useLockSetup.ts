@@ -15,12 +15,13 @@ import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { DEFAULT_LOCK_TTL, UpsellRef } from '@proton/pass/constants';
 import { useDesktopUnlock } from '@proton/pass/hooks/auth/useDesktopUnlock';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { useActionRequest } from '@proton/pass/hooks/useRequest';
+import { useActionRequest, useRequest } from '@proton/pass/hooks/useRequest';
+import { useRerender } from '@proton/pass/hooks/useRerender';
 import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import { lockCreateIntent } from '@proton/pass/store/actions';
+import { lockCreateIntent, passwordOnLaunchToggle } from '@proton/pass/store/actions';
 import { lockCreateRequest } from '@proton/pass/store/actions/requests';
 import { selectLockMode, selectLockTTL, selectPassPlan } from '@proton/pass/store/selectors';
 import type { Maybe, MaybeNull, Result } from '@proton/pass/types';
@@ -66,8 +67,10 @@ interface LockSetup {
     biometrics: BiometricsState;
     extensionBiometrics: ExtensionBiometricsState;
     password: PasswordState;
+    passwordOnLaunch: boolean;
     setLockMode: (mode: LockMode) => Promise<void>;
     setLockTTL: (ttl: number) => Promise<void>;
+    setPasswordOnLaunch: (enabled: boolean) => Promise<void>;
 }
 
 export const useLockSetup = (): LockSetup => {
@@ -100,6 +103,7 @@ export const useLockSetup = (): LockSetup => {
      * this, we use an optimistic value for the next lock. */
     const [nextLock, setNextLock] = useState<MaybeNull<{ ttl: number; mode: LockMode }>>(null);
     const [biometricsEnabled, setBiometricsEnabled] = useState(currentLockMode === LockMode.BIOMETRICS);
+    const [, rerenderLaunchPassword] = useRerender('password-on-launch');
 
     const unlock = useUnlock((err) => createNotification({ type: 'error', text: err.message }));
 
@@ -109,6 +113,7 @@ export const useLockSetup = (): LockSetup => {
         onFailure: () => setNextLock(null),
         onSuccess: () => setNextLock(null),
     });
+    const launchPassword = useRequest(passwordOnLaunchToggle, { initial: true, onSuccess: rerenderLaunchPassword });
 
     const setLockMode = async (mode: LockMode) => {
         if (isFreePlan && (mode === LockMode.BIOMETRICS || mode === LockMode.DESKTOP)) {
@@ -328,11 +333,40 @@ export const useLockSetup = (): LockSetup => {
         }
     };
 
+    /** Mutating launch-password lock requires password confirmation.
+     * The checkbox state is reread from `authStore` after the saga persists it. */
+    const setPasswordOnLaunch = async (enabled: boolean) => {
+        return confirmPassword({
+            onSubmit: (password) => launchPassword.dispatch({ enabled, password }),
+            message: passwordTypeSwitch({
+                extra: enabled
+                    ? c('Info')
+                          .t`Please confirm your extra password in order to require it when ${PASS_APP_NAME} launches.`
+                    : c('Info')
+                          .t`Please confirm your extra password in order to stop requiring it when ${PASS_APP_NAME} launches.`,
+                sso: enabled
+                    ? c('Info')
+                          .t`Please confirm your backup password in order to require it when ${PASS_APP_NAME} launches.`
+                    : c('Info')
+                          .t`Please confirm your backup password in order to stop requiring it when ${PASS_APP_NAME} launches.`,
+                twoPwd: enabled
+                    ? c('Info')
+                          .t`Please confirm your second password in order to require it when ${PASS_APP_NAME} launches.`
+                    : c('Info')
+                          .t`Please confirm your second password in order to stop requiring it when ${PASS_APP_NAME} launches.`,
+                default: enabled
+                    ? c('Info').t`Please confirm your password in order to require it when ${PASS_APP_NAME} launches.`
+                    : c('Info')
+                          .t`Please confirm your password in order to stop requiring it when ${PASS_APP_NAME} launches.`,
+            }),
+        });
+    };
+
     useEffect(() => {
         /** Block reload/navigation if a lock request is on-going.
          * Custom `beforeunload` messages are now deprecated */
         const onBeforeUnload = (evt: BeforeUnloadEvent) => {
-            if (createLock.loading) {
+            if (createLock.loading || launchPassword.loading) {
                 evt.preventDefault();
                 evt.returnValue = '';
                 return '';
@@ -341,7 +375,7 @@ export const useLockSetup = (): LockSetup => {
 
         window.addEventListener('beforeunload', onBeforeUnload);
         return () => window.removeEventListener('beforeunload', onBeforeUnload);
-    }, [createLock.loading]);
+    }, [createLock.loading, launchPassword.loading]);
 
     useEffect(() => {
         (async () => {
@@ -354,14 +388,14 @@ export const useLockSetup = (): LockSetup => {
     const lock = useMemo(
         () => ({
             orgControlled: Boolean(orgLockTTL),
-            loading: createLock.loading,
+            loading: createLock.loading || launchPassword.loading,
             mode: nextLock?.mode ?? currentLockMode,
             ttl: {
                 value: nextLock?.ttl || orgLockTTL || lockTTL,
                 disabled: Boolean(currentLockMode === LockMode.NONE || orgLockTTL),
             },
         }),
-        [currentLockMode, nextLock, orgLockTTL, lockTTL, createLock.loading]
+        [currentLockMode, nextLock, orgLockTTL, lockTTL, createLock.loading, launchPassword.loading]
     );
 
     const biometrics = useMemo(
@@ -370,6 +404,7 @@ export const useLockSetup = (): LockSetup => {
     );
 
     const password = useMemo(() => ({ enabled: !EXTENSION_BUILD }), []);
+    const passwordOnLaunch = authStore?.getLockPasswordOnLaunch() ?? true;
 
     const extensionBiometrics = useMemo(
         () => ({
@@ -389,7 +424,9 @@ export const useLockSetup = (): LockSetup => {
         biometrics,
         extensionBiometrics,
         password,
+        passwordOnLaunch,
         setLockMode,
         setLockTTL,
+        setPasswordOnLaunch,
     };
 };

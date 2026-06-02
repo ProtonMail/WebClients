@@ -1,6 +1,8 @@
 /* Inspired from packages/shared/lib/authentication/persistedSessionHelper.ts */
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
+
 import { type OfflineConfig, getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
+import { importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import type { Api, Maybe, MaybeNull } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -30,6 +32,7 @@ export type AuthSession = {
     extraPassword?: boolean;
     keyPassword: string;
     lastUsedAt?: number;
+    lockPasswordOnLaunch?: boolean;
     LocalID?: number;
     lockMode: LockMode;
     lockTTL?: number;
@@ -54,7 +57,10 @@ export type AuthSession = {
 /** The following values of the `AuthSession` are locally stored in
  * an encrypted blob using the BE local key for the user's session */
 export type EncryptedSessionKeys = 'keyPassword' | 'offlineKD' | 'sessionLockToken';
-export type EncryptedAuthSession = Omit<AuthSession, EncryptedSessionKeys> & { blob: string };
+export type EncryptedAuthSession = Omit<AuthSession, EncryptedSessionKeys> & {
+    blob: string;
+    launchPasswordBlob?: string;
+};
 export type DecryptedAuthSessionBlob = Pick<AuthSession, EncryptedSessionKeys> & { digest?: string };
 
 export const SESSION_KEYS: (keyof AuthSession)[] = [
@@ -65,6 +71,7 @@ export const SESSION_KEYS: (keyof AuthSession)[] = [
     'extraPassword',
     'keyPassword',
     'lastUsedAt',
+    'lockPasswordOnLaunch',
     'LocalID',
     'lockMode',
     'lockTTL',
@@ -88,17 +95,89 @@ export const SESSION_KEYS: (keyof AuthSession)[] = [
 export const getSessionEncryptionTag = (version?: AuthSessionVersion): Maybe<Uint8Array<ArrayBuffer>> =>
     version === 2 ? utf8StringToUint8Array('session') : undefined;
 
+export const getLaunchPasswordEncryptionTag = (): Uint8Array<ArrayBuffer> =>
+    utf8StringToUint8Array('launch-password-session');
+
+const supportsLaunchPasswordLock = (): boolean => EXTENSION_BUILD || DESKTOP_BUILD;
+const LAUNCH_PASSWORD_PROTECTED_PLACEHOLDER = '__launch_password_protected__';
+
+/** Launch-password protection is active when the password-wrapped blob exists,
+ * or when the session has local password material and was not explicitly disabled. */
+export const requiresLaunchPasswordUnlock = (session: Partial<EncryptedAuthSession>): boolean =>
+    supportsLaunchPasswordLock() &&
+    Boolean(
+        session.launchPasswordBlob ||
+        (session.lockPasswordOnLaunch !== false && session.offlineConfig && session.offlineVerifier)
+    );
+
+const getOfflineSessionKey = (offlineKD: string): Promise<CryptoKey> =>
+    importSymmetricKey(stringToUint8Array(offlineKD));
+
+/** Encrypts the sensitive persisted-session blob with the password-derived offline key.
+ * This is the launch gate: the client-key blob no longer holds these secrets when enabled. */
+export const encryptLaunchPasswordSessionBlob = async (
+    blob: DecryptedAuthSessionBlob,
+    offlineKD: string
+): Promise<string> => {
+    const offlineKey = await getOfflineSessionKey(offlineKD);
+    return getEncryptedBlob(offlineKey, JSON.stringify(blob), getLaunchPasswordEncryptionTag());
+};
+
+/** Decrypts the launch-gated session blob after password unlock has restored `offlineKD`.
+ * Failing this path means the protected local session is invalid or tampered with. */
+export const decryptLaunchPasswordSessionBlob = async (
+    offlineKD: Maybe<string>,
+    blob: string
+): Promise<DecryptedAuthSessionBlob> => {
+    try {
+        if (!offlineKD) throw new Error('Missing launch password key');
+
+        const offlineKey = await getOfflineSessionKey(offlineKD);
+        const decryptedBlob = await getDecryptedBlob(offlineKey, blob, getLaunchPasswordEncryptionTag());
+        const parsedValue = JSON.parse(decryptedBlob);
+
+        if (!parsedValue.keyPassword) throw new Error('Missing `keyPassword`');
+
+        return {
+            keyPassword: parsedValue.keyPassword,
+            offlineKD: parsedValue.offlineKD,
+            sessionLockToken: parsedValue.sessionLockToken,
+            digest: parsedValue.digest,
+        };
+    } catch (err) {
+        throw new InvalidPersistentSessionError(getErrorMessage(err));
+    }
+};
+
 /* Given a local session key, encrypts sensitive session components of
  * the `AuthSession` before persisting. Additionally stores a SHA-256
  * integrity digest of the session data to validate when resuming */
 export const encryptPersistedSessionWithKey = async (session: AuthSession, clientKey: CryptoKey): Promise<string> => {
     const { keyPassword, offlineKD, payloadVersion = SESSION_VERSION, sessionLockToken, ...rest } = session;
-    const digest = await digestSession(session, SESSION_DIGEST_VERSION);
+    const launchPasswordProtected = Boolean(
+        supportsLaunchPasswordLock() &&
+        session.lockPasswordOnLaunch !== false &&
+        offlineKD &&
+        session.offlineConfig &&
+        session.offlineVerifier
+    );
+    const sessionForDigest: AuthSession = {
+        ...session,
+        lockPasswordOnLaunch: launchPasswordProtected ? true : session.lockPasswordOnLaunch,
+    };
+    const digest = await digestSession(sessionForDigest, SESSION_DIGEST_VERSION);
     const blob: DecryptedAuthSessionBlob = { keyPassword, offlineKD, sessionLockToken, digest };
+    const clientBlob: DecryptedAuthSessionBlob = launchPasswordProtected
+        ? { keyPassword: LAUNCH_PASSWORD_PROTECTED_PLACEHOLDER, digest }
+        : blob;
 
     const value: EncryptedAuthSession = {
         ...rest,
-        blob: await getEncryptedBlob(clientKey, JSON.stringify(blob), getSessionEncryptionTag(payloadVersion)),
+        lockPasswordOnLaunch: launchPasswordProtected ? true : rest.lockPasswordOnLaunch,
+        ...(launchPasswordProtected
+            ? { launchPasswordBlob: await encryptLaunchPasswordSessionBlob(blob, offlineKD!) }
+            : {}),
+        blob: await getEncryptedBlob(clientKey, JSON.stringify(clientBlob), getSessionEncryptionTag(payloadVersion)),
         payloadVersion,
     };
 
@@ -174,7 +253,7 @@ export const resumeSession = async (
     options: AuthOptions
 ): Promise<ResumeSessionResult> => {
     const { api, authStore, onSessionInvalid } = config;
-    const { blob, ...session } = persistedSession;
+    const { blob, launchPasswordBlob, ...session } = persistedSession;
     const { UID } = session;
 
     const cookieUpgrade = authStore.shouldCookieUpgrade(persistedSession);
@@ -188,7 +267,13 @@ export const resumeSession = async (
         if (!persistedSession || persistedSession.UserID !== User.ID || !clientKey) throw InactiveSessionError();
 
         const payloadVersion = session.payloadVersion ?? SESSION_VERSION;
-        const decryptedBlob = await decryptSessionBlob(clientKey, blob, payloadVersion);
+        const decryptedBlob = launchPasswordBlob
+            ? await decryptLaunchPasswordSessionBlob(authStore.getOfflineKD(), launchPasswordBlob)
+            : await decryptSessionBlob(clientKey, blob, payloadVersion);
+
+        if (!launchPasswordBlob && decryptedBlob.keyPassword === LAUNCH_PASSWORD_PROTECTED_PLACEHOLDER) {
+            throw new InvalidPersistentSessionError('Missing launch password session blob');
+        }
 
         if (decryptedBlob.digest) {
             const version = getSessionDigestVersion(decryptedBlob.digest);
@@ -214,10 +299,11 @@ export const resumeSession = async (
          * or cookie upgrade). This ensures the returned session contains the most
          * up-to-date authentication data. */
         const syncedSession = syncAuthSession({ ...session, ...decryptedBlob }, authStore);
+        const shouldPersistLaunchPasswordBlob = !launchPasswordBlob && requiresLaunchPasswordUnlock(persistedSession);
 
         return {
             clientKey,
-            repersist: cookieUpgrade || !decryptedBlob.digest,
+            repersist: cookieUpgrade || !decryptedBlob.digest || shouldPersistLaunchPasswordBlob,
             session: syncedSession,
         };
     } catch (error: unknown) {
