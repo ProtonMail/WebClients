@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { setPermissions, showPermissionsModal } from '@proton/meet/store/slices/deviceManagementSlice';
 import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagementSlice/types';
-import { isFirefox } from '@proton/shared/lib/helpers/browser';
+import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 
 /**
  * Permission listener that:
@@ -50,7 +50,7 @@ export const useDevicePermissionChangeListener = () => {
                 // permissions are already stored. We do a brief getUserMedia call to
                 // unlock labels and then dispatch devicechange so LiveKit re-enumerates.
                 const alreadyGranted = cameraStatus.state === 'granted' || micStatus.state === 'granted';
-                if (isFirefox() && alreadyGranted) {
+                if ((isFirefox() || isSafari()) && alreadyGranted) {
                     try {
                         const constraints: MediaStreamConstraints = {
                             ...(micStatus.state === 'granted' && { audio: true }),
