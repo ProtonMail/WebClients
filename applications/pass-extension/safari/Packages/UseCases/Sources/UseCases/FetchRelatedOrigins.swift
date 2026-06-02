@@ -48,7 +48,7 @@ public final class FetchRelatedOrigins: Sendable, FetchRelatedOriginsUseCase {
     public func execute(_ url: String) async throws -> String? {
         guard let url = URL(string: url),
               url.scheme == "https",
-              url.path.hasSuffix("/.well-known/webauthn") else {
+              url.path == "/.well-known/webauthn" else {
             throw PassError.failedToFetchRelatedOrigins(.invalidUrl(url))
         }
 
