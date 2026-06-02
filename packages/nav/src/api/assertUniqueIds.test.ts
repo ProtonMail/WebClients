@@ -1,4 +1,6 @@
-import { describe, expect, it } from 'vitest';
+// `expect` is imported explicitly because `expect.fail` is vitest-specific and isn't typed on
+// the global `expect` (the tsconfig `types` blends @types/jest with vitest/globals).
+import { expect } from 'vitest';
 
 import { DuplicateNavIdError, NavError } from '../errors';
 import type { NavItemDefinition } from '../types/nav';
