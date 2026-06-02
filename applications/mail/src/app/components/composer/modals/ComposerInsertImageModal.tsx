@@ -9,11 +9,13 @@ import Info from '@proton/components/components/link/Info';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
+import type { AddAttachmentsParams } from 'proton-mail/hooks/composer/useAttachments/interface';
+
 import ComposerInnerModal from './ComposerInnerModal';
 
 interface Props {
     files: File[];
-    onSelect: (action: ATTACHMENT_DISPOSITION, removeImageMetadata?: boolean) => void;
+    onSelect: (data: AddAttachmentsParams) => void;
     onClose: () => void;
     mailSettings: MailSettings;
     canShowMetadataToggle?: boolean;
@@ -44,7 +46,7 @@ const ComposerInsertImageModal = ({ files, onSelect, onClose, mailSettings, canS
             <Button
                 color="norm"
                 fullWidth
-                onClick={() => onSelect(ATTACHMENT_DISPOSITION.ATTACHMENT, removeImageMetadata)}
+                onClick={() => onSelect({ action: ATTACHMENT_DISPOSITION.ATTACHMENT, files, removeImageMetadata })}
                 data-testid="composer:insert-image-attachment"
                 autoFocus
             >
@@ -53,7 +55,7 @@ const ComposerInsertImageModal = ({ files, onSelect, onClose, mailSettings, canS
             <Button
                 color="norm"
                 fullWidth
-                onClick={() => onSelect(ATTACHMENT_DISPOSITION.INLINE, removeImageMetadata)}
+                onClick={() => onSelect({ action: ATTACHMENT_DISPOSITION.INLINE, files, removeImageMetadata })}
                 data-testid="composer:insert-image-inline"
             >{c('Action').t`Inline`}</Button>
         </>
