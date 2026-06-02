@@ -42,7 +42,6 @@ describe('getInitialCycle', () => {
             minimumCycle: undefined,
             maximumCycle: undefined,
             currency: 'USD',
-            allowDowncycling: false,
         });
         expect(result).toBe(CYCLE.YEARLY);
     });
@@ -63,7 +62,6 @@ describe('getInitialCycle', () => {
             minimumCycle: undefined,
             maximumCycle: undefined,
             currency: 'USD',
-            allowDowncycling: false,
         });
         expect(result).toBe(CYCLE.YEARLY);
     });
@@ -79,7 +77,6 @@ describe('getInitialCycle', () => {
             minimumCycle: undefined,
             maximumCycle: undefined,
             currency: 'USD',
-            allowDowncycling: false,
         });
         expect(result).toBe(CYCLE.YEARLY);
     });
@@ -95,7 +92,6 @@ describe('getInitialCycle', () => {
             minimumCycle: undefined,
             maximumCycle: undefined,
             currency: 'USD',
-            allowDowncycling: false,
         });
         expect(result).toBe(CYCLE.YEARLY); // Assuming DEFAULT_CYCLE is YEARLY
     });
@@ -118,7 +114,6 @@ describe('getInitialCycle', () => {
             minimumCycle: undefined,
             maximumCycle: undefined,
             currency: 'USD',
-            allowDowncycling: false,
         });
         expect(result).toBe(CYCLE.YEARLY);
     });
@@ -138,7 +133,6 @@ describe('getInitialCycle', () => {
             minimumCycle: undefined,
             maximumCycle: undefined,
             currency: 'USD',
-            allowDowncycling: false,
         });
         expect(result).toBe(CYCLE.YEARLY); // Assuming it falls back to YEARLY
     });
@@ -167,7 +161,6 @@ describe('getInitialCycle', () => {
             minimumCycle: undefined,
             maximumCycle: undefined,
             currency: 'USD',
-            allowDowncycling: false,
         });
 
         expect(result).toBe(CYCLE.YEARLY);

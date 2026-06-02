@@ -78,7 +78,6 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
-            alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
         });
@@ -137,7 +136,6 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
-            alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
         });
@@ -196,7 +194,6 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.BUNDLE_BIZ_2025, 'USD', undefined, false),
             ],
-            alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
         });
@@ -250,7 +247,6 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD'),
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD'),
             ],
-            alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
         });
@@ -307,7 +303,6 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
-            alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
         });
@@ -364,13 +359,12 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
-            alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
         });
     });
 
-    it('should not render BRL plans if user is subscribed to the maximum cycle of the only BRL plan', () => {
+    it('should render the BRL plan even when user is subscribed to its maximum cycle, because downcycling is allowed', () => {
         const plans = [
             ...getTestPlans('USD'),
             ...getTestPlans('CHF'),
@@ -408,7 +402,8 @@ describe('useAccessiblePlans', () => {
         expect(result.current).toMatchObject({
             enabledProductB2CPlans: [
                 getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
-                // vpn2024 USD should not be rendered either because all /check calls are forbidden in this case.
+                // vpn2024 USD is now rendered: with downcycling allowed, lower cycles are eligible so /check succeeds.
+                getPlanByName(plans, PLANS.VPN2024, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.DRIVE, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.PASS, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.LUMO, 'USD', undefined, false),
@@ -427,7 +422,6 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
-            alreadyHasMaxCycle: true,
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
         });
@@ -487,7 +481,6 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.BUNDLE_PRO, 'USD', undefined, false),
             ],
-            alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
         });
@@ -547,7 +540,6 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
-            alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
         });
@@ -601,7 +593,6 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
-            alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
         });
