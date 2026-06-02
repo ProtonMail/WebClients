@@ -5,10 +5,10 @@ import { c } from 'ttag';
 import type { MaybeNode } from '@proton/drive';
 import { AbortError, MemberRole, ProtonDriveError } from '@proton/drive';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { getNodeEffectiveRole } from '@proton/drive/modules/nodes';
 import { loadThumbnail, useThumbnail } from '@proton/drive/modules/thumbnails';
 import useLoading from '@proton/hooks/useLoading';
 
-import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
 import { ContentPreviewMethod, downloadContent, getContentPreviewMethod } from './content';
 import type { Drive } from './interface';
 import { getNavigation } from './navigation';

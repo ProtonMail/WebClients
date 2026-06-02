@@ -7,6 +7,7 @@ import type { NodeEntity, ProtonDrivePublicLinkClient } from '@proton/drive';
 import { MemberRole, NodeType } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { getNodeAncestry } from '@proton/drive/modules/nodes';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import { uploadManager } from '@proton/drive/modules/upload';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
@@ -28,7 +29,6 @@ import type {
 } from '../../statelessComponents/DriveExplorer/types';
 import { UploadDragDrop } from '../../statelessComponents/UploadDragDrop/UploadDragDrop';
 import { getOpenInDocsInfo } from '../../utils/docs/openInDocs';
-import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
 import { getPublicFolderCells } from './PublicFolderDriveExplorerCells';
 import { PublicFolderEmptyView } from './PublicFolderEmptyView';
 import { PublicFolderItemContextMenu } from './PublicFolderItemContextMenu';

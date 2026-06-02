@@ -5,10 +5,10 @@ import type { MaybeNode } from '@proton/drive/index';
 import { NodeType, splitNodeUid } from '@proton/drive/index';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { getNodeAncestry } from '@proton/drive/modules/nodes';
 import generateUID from '@proton/utils/generateUID';
 
 import { toLinkURLType } from '../../../legacy/components/sections/helpers';
-import { getNodeAncestry } from '../../../utils/sdk/getNodeAncestry';
 
 interface NavigationEvenListener {
     id: string;

@@ -6,6 +6,7 @@ import type { useConfirmActionModal } from '@proton/components';
 import { MemberRole, getDrivePerNodeType, splitNodeUid } from '@proton/drive';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import type { useSharingModal } from '@proton/drive/modals/sharingModal';
+import { getNodeEffectiveRole } from '@proton/drive/modules/nodes';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
@@ -16,7 +17,6 @@ import type { useDrivePreviewModal } from '../../../modals/preview';
 import { downloadManager } from '../../../modules/download/DownloadManager';
 import { downloadDocument, openDocsOrSheetsDocument } from '../../../utils/docs/openInDocs';
 import { isPreviewOrFallbackAvailable } from '../../../utils/isPreviewOrFallbackAvailable';
-import { getNodeEffectiveRole } from '../../../utils/sdk/getNodeEffectiveRole';
 import { DetailsButton } from '../../commonButtons/DetailsButton';
 import { DownloadButton } from '../../commonButtons/DownloadButton';
 import { OpenInDocsOrSheetsButton } from '../../commonButtons/OpenInDocsOrSheetsButton';
