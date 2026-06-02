@@ -26,6 +26,7 @@ public enum PassError: Error, CustomDebugStringConvertible {
     case badJsonFormat(String)
     case failedToParseCredentials
     case noCredentialsToUpdate
+    case failedToFetchRelatedOrigins(FetchRelatedOriginsFailureReason)
 
     public var debugDescription: String {
         switch self {
@@ -37,6 +38,25 @@ public enum PassError: Error, CustomDebugStringConvertible {
             "Failed to parse credentials"
         case .noCredentialsToUpdate:
             "No credentials to update"
+        case let .failedToFetchRelatedOrigins(reason):
+            "Failed to fetch related origins: \(reason.debugDescription)"
+        }
+    }
+}
+
+public enum FetchRelatedOriginsFailureReason: Sendable, CustomDebugStringConvertible {
+    case invalidUrl(String)
+    case badResponse
+    case error(any Error)
+
+    public var debugDescription: String {
+        switch self {
+        case let .invalidUrl(url):
+            "Invalid URL \(url)"
+        case .badResponse:
+            "Bad response"
+        case let .error(error):
+            error.localizedDescription
         }
     }
 }
