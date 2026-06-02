@@ -1,5 +1,3 @@
-import { describe, expect, it, vi } from 'vitest';
-
 import { DuplicateNavIdError } from '../errors';
 import type { NavContext } from '../types/models';
 import type { NavDefinition, NavItemDefinition } from '../types/nav';
