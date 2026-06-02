@@ -3,7 +3,7 @@ import { useNotifications } from '@proton/components'
 import { generateNodeUid, getDrive } from '@proton/drive'
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { DegradedNode, DriveEvent, DriveListener, NodeEntity, ProtonDriveClient } from '@protontech/drive-sdk'
-import { NodeType } from '@protontech/drive-sdk'
+import { MemberRole, NodeType } from '@protontech/drive-sdk'
 import { useCallback, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
@@ -35,11 +35,19 @@ export function useRecents(drive: ProtonDriveClient) {
       try {
         const maybeNode = await drive.getNode(generateNodeUid(document.VolumeID, document.LinkID))
         const node = maybeNode.ok ? maybeNode.value : maybeNode.error
-        const isSharedWithMe = await isSharedWithUser(drive, user, node.uid)
+        const isSharedDirectly = await isSharedWithUser(drive, user, node.uid)
         const { path, ancestry } = await getFullPath(drive, node.uid)
         const ancestorsNodeUids = ancestry.map(extractNodeUid)
         const effectiveRole = await getNodeEffectiveRole(drive, node)
-        documents.push({ sdkData: node, apiData: document, isSharedWithMe, path, ancestorsNodeUids, effectiveRole })
+        documents.push({
+          sdkData: node,
+          apiData: document,
+          // We assume that "inherited" means document is a child of a shared folder
+          isSharedWithMe: isSharedDirectly || node.directRole === MemberRole.Inherited,
+          path,
+          ancestorsNodeUids,
+          effectiveRole,
+        })
       } catch (error: any) {
         logger.error('Failed to load document with SDK', error)
         createNotification({
@@ -167,17 +175,18 @@ async function buildDocument(
   user: { Email: string },
   documentNode: NodeEntity | DegradedNode,
 ) {
-  const { isSharedWithMe, path, shareId, ancestorsNodeUids } = await getDocumentDetails(drive, user, documentNode.uid)
+  const { isSharedDirectly, path, shareId, ancestorsNodeUids } = await getDocumentDetails(drive, user, documentNode.uid)
+  const isSharedWithMe = isSharedDirectly || documentNode.directRole === MemberRole.Inherited
   const effectiveRole = await getNodeEffectiveRole(drive, documentNode)
   return nodeToRecentItemValue(documentNode, isSharedWithMe, path, ancestorsNodeUids, effectiveRole, shareId)
 }
 
 async function getDocumentDetails(drive: ProtonDriveClient, user: { Email: string }, nodeUid: string) {
-  const isSharedWithMe = await isSharedWithUser(drive, user, nodeUid)
+  const isSharedDirectly = await isSharedWithUser(drive, user, nodeUid)
   const { path, ancestry } = await getFullPath(drive, nodeUid)
   const shareId = ancestry[0].ok ? ancestry[0].value.deprecatedShareId : ancestry[0].error.deprecatedShareId
   const ancestorsNodeUids = ancestry.map(extractNodeUid)
-  return { isSharedWithMe, shareId, path, ancestry, ancestorsNodeUids }
+  return { isSharedDirectly, shareId, path, ancestry, ancestorsNodeUids }
 }
 
 async function getAllDocumentsRecursively(drive: ProtonDriveClient, startFolderUid: string) {
