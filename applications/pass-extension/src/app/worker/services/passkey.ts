@@ -1,5 +1,6 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
+import { webauthnFetcher } from 'proton-pass-extension/lib/utils/webauthn';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
@@ -37,27 +38,6 @@ const getTabURL = async (tabID?: TabId): Promise<Maybe<URL>> => {
 };
 
 export const createPasskeyService = () => {
-    /** Fetches `/.well-known/webauthn` when the RP ID doesn't match the request
-     * origin. Per the WebAuthn spec, a relying party can authorize cross-origin
-     * credential use by listing allowed origins in this well-known file. The rust
-     * library calls this fetcher, and checks whether the request origin appears in
-     * the returned `origins` array before permitting the operation. `finalUrl` is
-     * forwarded so the library can validate the redirect chain.
-     * Spec: https://www.w3.org/TR/webauthn-3/#sctn-related-origins */
-    const webauthnFetcher = async (url: string): Promise<{ origins: string[]; finalUrl?: string }> => {
-        try {
-            logger.debug(`[PasskeyService] fetching ${url}`);
-            const res = await fetch(url, { credentials: 'omit', referrerPolicy: 'no-referrer' });
-            const json = await res.json();
-            const finalUrl = res.url;
-            const origins: string[] = 'origins' in json && Array.isArray(json.origins) ? json.origins : [];
-            return { origins, finalUrl };
-        } catch (err) {
-            logger.debug(`[PasskeyService] Error fetching ${url}`, err);
-            return { origins: [] };
-        }
-    };
-
     const init = withContext(async (ctx) => {
         await ctx.service.core.register_webauthn_fetcher(webauthnFetcher);
         logger.info('[PasskeyService] Registered webauthn fetcher');
