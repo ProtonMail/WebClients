@@ -28,12 +28,9 @@ export const countriesWithVatNumberOnSignup = new Set([
     'ES',
     'SE',
 
-    // Additional EFTA / European countries
-    'CH',
+    // Additional non-EU European countries
     'GB',
     'NO',
-    'LI',
-    'IS',
 
     // Countries for Batch 1 tax exclusive
     'AU',

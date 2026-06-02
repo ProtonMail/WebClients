@@ -16,13 +16,14 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import type { Invoice } from '@proton/payments';
-import { isCountryWithRequiredPostalCode } from '@proton/payments/core/countries';
 import type { FullBillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { zipCodeValidator } from '@proton/payments/core/billing-address/billing-address';
+import { isCountryWithRequiredPostalCode } from '@proton/payments/core/countries';
 import type { BillingAddressValidationResult } from '@proton/payments/core/errors';
 import { WrongBillingAddressError, backendBillingAddressFieldError } from '@proton/payments/core/errors';
 import { getVatNumberName } from '@proton/payments/ui';
 import { getVatFormErrors } from '@proton/payments/ui/billing-address/hooks/useVatFormValidation';
+import { useVatPrefixSync } from '@proton/payments/ui/billing-address/hooks/useVatPrefixSync';
 import { useFlag } from '@proton/unleash/useFlag';
 
 export type EditInvoiceModalInputs = {
@@ -46,6 +47,19 @@ export const EditInvoiceModal = (props: Props) => {
 
     const [loading, withLoading] = useLoading();
     const [backendErrors, setBackendErrors] = useState<BillingAddressValidationResult | null>(null);
+
+    const updateInvoiceAddress = (updater: Parameters<typeof setInvoiceBillingAddress>[0]) => {
+        setInvoiceBillingAddress(updater);
+        setBackendErrors(null);
+    };
+
+    const canEditVatNumber = !initialFullBillingAddress.VatId;
+    const { markVatNumberDirty } = useVatPrefixSync({
+        countryCode: invoiceBillingAddress.BillingAddress.CountryCode,
+        setVatNumber: (value) => updateInvoiceAddress((model) => ({ ...model, VatId: value })),
+        initialVatNumber: invoiceBillingAddress.VatId,
+        enabled: canEditVatNumber,
+    });
 
     const frontendErrors = getVatFormErrors(
         {
@@ -80,11 +94,6 @@ export const EditInvoiceModal = (props: Props) => {
                 createNotification({ type: 'error', text: c('Error').t`Failed to update billing address` });
             }
         });
-    };
-
-    const updateInvoiceAddress = (updater: Parameters<typeof setInvoiceBillingAddress>[0]) => {
-        setInvoiceBillingAddress(updater);
-        setBackendErrors(null);
     };
 
     const hidePostalCode = isCountryWithRequiredPostalCode(invoiceBillingAddress.BillingAddress.CountryCode);
@@ -125,19 +134,20 @@ export const EditInvoiceModal = (props: Props) => {
                     )}
                     {
                         // if user already has VAT number, then we don't let them edit it on the invoices
-                        !initialFullBillingAddress.VatId && (
+                        canEditVatNumber && (
                             <InputFieldTwo
                                 label={getVatNumberName(invoiceBillingAddress.BillingAddress.CountryCode)}
                                 placeholder={c('Placeholder').t`VAT number`}
                                 name="vat"
                                 data-testid="billing-address-vat"
                                 value={invoiceBillingAddress.VatId ?? ''}
-                                onValue={(value: string) =>
+                                onValue={(value: string) => {
+                                    markVatNumberDirty();
                                     updateInvoiceAddress((model) => ({
                                         ...model,
                                         VatId: value,
-                                    }))
-                                }
+                                    }));
+                                }}
                                 error={
                                     validator([frontendErrors.errorMessages.VatId]) ||
                                     backendBillingAddressFieldError(backendErrors?.VatId)
