@@ -1429,6 +1429,9 @@
       "Start setup": [
         "Aloita määritys"
       ],
+      "Start testing": [
+        "Aloita testaus"
+      ],
       "Stay": [
         "Pysy"
       ],
@@ -5669,9 +5672,6 @@
       "Reset": [
         "Nollaa"
       ],
-      "Show": [
-        "Näytä"
-      ],
       "Unread": [
         "Lukematon"
       ]
@@ -5742,28 +5742,6 @@
       ],
       "Filter ${ Filter.Name } updated": [
         "Suodatin ${ Filter.Name } päivitettiin"
-      ]
-    },
-    "Filter option": {
-      "All": [
-        "Kaikki"
-      ],
-      "Hide moved message": [
-        "Piilota siirretty viesti"
-      ],
-      "Read": [
-        "Luetuksi"
-      ],
-      "Show moved message": [
-        "Näytä siirretty viesti"
-      ],
-      "Unread": [
-        "Lukemattomat"
-      ]
-    },
-    "Filter option to only show message with attachments": {
-      "Has attachments": [
-        "Sisältää liitteitä"
       ]
     },
     "Filter preview": {
@@ -8135,6 +8113,9 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synkronoi ja hallitse tiedostoja ${ DRIVE_APP_NAME }-sovelluksella. Luo ja jaa dokumentit ${ DOCS_APP_NAME }-sovelluksessa, sekä säilytä niitä turvallisesti. Saatavilla ${ ios }, ${ android } ja ${ desktop }."
       ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Tilapäisesti poissa käytöstä suuren kysynnän vuoksi. Yritä myöhemmin uudelleen."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
       ],
@@ -9191,6 +9172,9 @@
         "${ n } kuukausi",
         "${ n } kuukautta"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } merkkiä"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
       ],
@@ -9583,9 +9567,6 @@
       ],
       "Mail Server (IMAP)": [
         "Sähköpostipalvelin (IMAP)"
-      ],
-      "Mailing list": [
-        "Postituslista"
       ],
       "Main": [
         "Pää"
@@ -15558,12 +15539,6 @@
       ],
       "Snooze:": [
         "Torkutus:"
-      ],
-      "Sort conversations": [
-        "Järjestä keskustelut"
-      ],
-      "Sort messages": [
-        "Järjestä viestit"
       ],
       "Start a new import": [
         "Aloita uusi tuonti"
