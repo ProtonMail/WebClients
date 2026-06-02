@@ -55,9 +55,7 @@ const PasswordReminderModal = ({ onClose, ...rest }: PasswordReminderModalProps)
         await dispatch(submitPasswordReminder({ password }));
 
         createNotification({
-            text:
-                // Translator: Success notification when password was verified successfully
-                c('Info').t`Congrats, you still got it!`,
+            text: c('Info').t`Password verified`,
             showCloseButton: false,
         });
 
@@ -81,7 +79,7 @@ const PasswordReminderModal = ({ onClose, ...rest }: PasswordReminderModalProps)
         >
             <ModalHeader
                 title={c('Title').t`Verify your password`}
-                subline={c('Info').t`For ${emailOrNameToDisplay}`}
+                subline={emailOrNameToDisplay}
                 leadingContent={<img src={lock} width={64} height={64} alt="" className="hidden md:block mb-2" />}
                 closeButtonProps={{ pill: true, className: 'absolute right-0 top-0 mt-2 mr-2' }}
                 className="flex flex-column items-center px-3 md:pb-4 md:pt-6 text-center"
@@ -100,6 +98,7 @@ const PasswordReminderModal = ({ onClose, ...rest }: PasswordReminderModalProps)
                     onValue={setPassword}
                     error={validator([requiredValidator(password)])}
                     label={c('Label').t`Password`}
+                    bigger
                 />
                 <ButtonLike
                     shape="underline"
@@ -116,8 +115,8 @@ const PasswordReminderModal = ({ onClose, ...rest }: PasswordReminderModalProps)
                     fullWidth
                     loading={dismissing}
                     onClick={() => withDismissing(handleDismiss().catch(handleError))}
-                >{c('Action').t`Not now`}</Button>
-                <Button fullWidth color="norm" type="submit" loading={submitting} disabled={!password}>
+                >{c('Action').t`Later`}</Button>
+                <Button fullWidth color="norm" type="submit" loading={submitting}>
                     {c('Action').t`Verify`}
                 </Button>
             </ModalFooter>
