@@ -7,7 +7,7 @@ import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet';
-import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import {
     setInitialAudioState,
     setInitialCameraState,
@@ -26,12 +26,14 @@ import {
     selectPreferredCameraId,
     selectPreferredMicrophoneId,
     selectPreferredSpeakerId,
+    selectRealtimeDevices,
     selectSelectedAudioOutputId,
     selectSelectedCameraId,
     selectSelectedMicrophoneId,
     selectSpeakerState,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { setAudioSessionType } from '@proton/meet/utils/iosAudioSession';
+import { TimeoutError, withTimeout } from '@proton/meet/utils/withTimeout';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
@@ -51,11 +53,14 @@ import { useDevicePermissionChangeListener } from './useDevicePermissionChangeLi
 import { useDynamicDeviceHandling } from './useDynamicDeviceHandling';
 import { useMicrophoneVolumeAnalysis } from './useMicrophoneVolumeAnalysis';
 
+const SWITCH_DEVICE_TIMEOUT_MS = 5000;
+
 export const MediaManagementProvider = ({ children }: { children: React.ReactNode }) => {
     const room = useRoomContext();
     const { createNotification } = useNotifications();
     const { reportMeetError } = useMeetErrorReporting();
     const dispatch = useMeetDispatch();
+    const store = useMeetStore();
 
     useDeviceListSync();
 
@@ -82,38 +87,88 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         useMicrophoneVolumeAnalysis();
 
     const switchActiveDevice: SwitchActiveDevice = useCallback(
-        async ({ deviceType, deviceId, isSystemDefaultDevice, preserveDefaultDevice = false }) => {
+        async ({
+            deviceType,
+            deviceId,
+            isSystemDefaultDevice,
+            preserveDefaultDevice = false,
+            throwOnError = false,
+        }) => {
             if ((deviceType === 'audiooutput' && !supportsSetSinkId()) || isMobile()) {
                 return;
             }
+
+            let selectedDeviceId = deviceId;
 
             const activeDeviceIdByType: Record<'audioinput' | 'audiooutput' | 'videoinput', string> = {
                 audioinput: activeMicrophoneDeviceId,
                 audiooutput: activeAudioOutputDeviceId,
                 videoinput: activeCameraDeviceId,
             };
-            const currentActiveDeviceId = activeDeviceIdByType[deviceType];
-            const shouldCallLiveKitSwitch = currentActiveDeviceId !== deviceId;
 
             try {
-                if (shouldCallLiveKitSwitch) {
-                    await room.switchActiveDevice(deviceType, deviceId);
+                try {
+                    if (activeDeviceIdByType[deviceType] !== selectedDeviceId) {
+                        await withTimeout(
+                            room.switchActiveDevice(deviceType, deviceId),
+                            'Switch active device',
+                            SWITCH_DEVICE_TIMEOUT_MS
+                        );
+                    }
+                } catch (error) {
+                    if (deviceType !== 'videoinput' || error instanceof TimeoutError) {
+                        throw error;
+                    }
+
+                    const enumerated = await selectRealtimeDevices(store, deviceType);
+                    const fallback = enumerated.find((d) => d.deviceId && d.deviceId !== deviceId);
+
+                    if (!fallback) {
+                        throw error;
+                    }
+
+                    selectedDeviceId = fallback.deviceId;
+
+                    // eslint-disable-next-line no-console
+                    console.warn(`[switchActiveDevice] videoinput fallback`, {
+                        deviceType,
+                        deviceId: selectedDeviceId,
+                        errorName: (error as Error)?.name,
+                        errorMessage: (error as Error)?.message,
+                        error,
+                    });
+
+                    await withTimeout(
+                        room.switchActiveDevice(deviceType, selectedDeviceId),
+                        `room.switchActiveDevice(${deviceType}) fallback`,
+                        SWITCH_DEVICE_TIMEOUT_MS
+                    );
                 }
             } catch (error) {
-                reportMeetError('Failed to switch active device', error);
-                // eslint-disable-next-line no-console
-                console.error(error);
-                return;
+                if (throwOnError) {
+                    throw error;
+                } else {
+                    reportMeetError('Failed to switch active device', error);
+                    return;
+                }
             }
 
             if (preserveDefaultDevice) {
                 return;
             }
 
-            const toSave = isSystemDefaultDevice ? null : deviceId;
+            const toSave = isSystemDefaultDevice ? null : selectedDeviceId;
             dispatch(setPreferredDeviceAndPersist({ kind: deviceType, deviceId: toSave }));
         },
-        [activeAudioOutputDeviceId, activeCameraDeviceId, activeMicrophoneDeviceId, room, dispatch, reportMeetError]
+        [
+            activeMicrophoneDeviceId,
+            activeAudioOutputDeviceId,
+            activeCameraDeviceId,
+            dispatch,
+            room,
+            store,
+            reportMeetError,
+        ]
     );
 
     const {
