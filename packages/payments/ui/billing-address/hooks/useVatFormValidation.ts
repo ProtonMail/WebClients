@@ -8,6 +8,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { countriesWithVatNumberOnSignup } from './countriesWithVatId';
+import { getValidVatPrefixes, vatNumberMissingPrefix } from './vatPrefixHelper';
 
 export interface VatFormFields {
     CountryCode: string;
@@ -82,7 +83,15 @@ function getVatFormErrorMessages(
         return errors;
     }
 
-    errors.VatId = validateVatNumber(fields.VatId, fields.CountryCode);
+    if (vatNumberMissingPrefix(fields.VatId, fields.CountryCode)) {
+        const validPrefixes = getValidVatPrefixes(fields.CountryCode);
+        if (validPrefixes !== null) {
+            const prefixes = validPrefixes.join(', ');
+            errors.VatId = c('Error').t`VAT number must start with ${prefixes}`;
+        }
+    } else {
+        errors.VatId = validateVatNumber(fields.VatId, fields.CountryCode);
+    }
 
     if (!showExtendedBillingAddressForm) {
         return errors;
@@ -145,6 +154,12 @@ export function useVatFormValidation(
             setShowErrors(false);
         }
     }, [fields.VatId, options?.collapsed]);
+
+    // Reset errors when the country changes so a newly-prefilled prefix doesn't
+    // immediately show validation errors before the user has touched the field.
+    useEffect(() => {
+        setShowErrors(false);
+    }, [fields.CountryCode]);
 
     const showExtendedBillingAddressForm = useFlag('PaymentsValidateBillingAddress');
     const allErrors = getVatFormErrors(fields, showExtendedBillingAddressForm);

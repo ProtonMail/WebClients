@@ -79,9 +79,9 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload, onEdit,
         },
         !!invoice.IsExternal &&
             isRegularInvoice(invoice) && {
-                text: c('Action').t`Edit billing address`,
+                text: c('Action').t`Edit invoice details`,
                 'data-testid': 'editBillingAddress',
-                key: 'editBillingAddress',
+                key: 'editInvoiceDetails',
                 onClick: () => onEdit(invoice),
             },
     ].filter(isTruthy);
