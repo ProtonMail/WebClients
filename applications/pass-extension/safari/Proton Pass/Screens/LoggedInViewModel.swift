@@ -27,7 +27,7 @@ import os.log
 import ProtonCoreNetworking
 import ProtonCoreServices
 
-struct UserAndPlan: Sendable, Equatable {
+struct UserAndPlan: Equatable {
     let plan: PassPlan
     let user: User
 }
@@ -54,7 +54,10 @@ final class LoggedInViewModel: ObservableObject {
     private let getUser = resolve(\SharedUseCaseContainer.getUser)
     private let appVersion = resolve(\SharedToolingContainer.appVersion)
 
-    private var apiService: any APIService { apiManager.apiService }
+    private var apiService: any APIService {
+        apiManager.apiService
+    }
+
     private let onLogOut: () -> Void
 
     init(environment: PassEnvironment,
