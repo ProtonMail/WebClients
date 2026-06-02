@@ -4145,14 +4145,11 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ayude a su equipo a almacenar de forma segura las contraseñas de información confidencial de la empresa y de los clientes."
       ],
-      "If you find an email in the wrong category, simply move it to the correct one.": [
-        "Si encuentra un correo electrónico en la categoría incorrecta, simplemene muévalo a la categoría correcta."
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Si un mensaje está mal categorizada, simplemente muévala a la categoría correcta. Haga clic derecho en el mensaje que desea recategorizar, o arrastre y suéltelo donde pertenece."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que la lista de contactos que está importando contiene algunos grupos. Revise cómo deben importarse estos grupos."
-      ],
-      "It’s still learning and we need your help to improve categorization.": [
-        "Aún está aprendiendo y necesitamos su ayuda para mejorar la categorización."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Le permite agregar instantáneamente enlaces de reunión a las invitaciones de sus eventos."
@@ -4315,9 +4312,6 @@
       "Your account and data recovery methods are set.": [
         "Se han establecido los métodos de recuperación de cuenta y de datos."
       ],
-      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
-        "Sus correcciones definirán la experiencia por defecto para todos, al iniciarla también recordará sus preferencias de ahora en adelante."
-      ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
         "Su cuenta gratuita de ${ MAIL_APP_NAME } incluye almacenamiento limitado, así que solo importaremos ${ newUserStorageText } de sus mensajes de Gmail más recientes."
       ],
@@ -4332,8 +4326,8 @@
         "Su plan admite un total de ${ MAX_SYNC_PAID_USER } dirección de Gmail",
         "Su plan soporta un total de ${ MAX_SYNC_PAID_USER } direcciones de Gmail"
       ],
-      "You’re among the first to try email categories.": [
-        "Es parte de las primeras personas en probar las categorías de correo electrónico."
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Forma parte de las primeras personas en probar nuestra nueva vista por categoría antes de lanzarse. Sus comentarios ayudará a cómo Proton Mail categoriza correos electrónicos para todos."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
@@ -5827,9 +5821,6 @@
       "Reset": [
         "Restablecer"
       ],
-      "Show": [
-        "Mostrar"
-      ],
       "Unread": [
         "Sin leer"
       ]
@@ -5900,28 +5891,6 @@
       ],
       "Filter ${ Filter.Name } updated": [
         "Filtro ${ Filter.Name } actualizado"
-      ]
-    },
-    "Filter option": {
-      "All": [
-        "Todas"
-      ],
-      "Hide moved message": [
-        "Ocultar mensaje movido"
-      ],
-      "Read": [
-        "Leídos"
-      ],
-      "Show moved message": [
-        "Mostrar mensaje movido"
-      ],
-      "Unread": [
-        "Sin leer"
-      ]
-    },
-    "Filter option to only show message with attachments": {
-      "Has attachments": [
-        "Tiene adjuntos"
       ]
     },
     "Filter preview": {
@@ -9825,9 +9794,6 @@
       ],
       "Mail Server (IMAP)": [
         "Servidor de correo (IMAP)"
-      ],
-      "Mailing list": [
-        "Lista de correo"
       ],
       "Main": [
         "Principal"
@@ -15438,9 +15404,6 @@
       "Download the app": [
         "Descargar la aplicación"
       ],
-      "Early access to email categories": [
-        "Acceso anticipado a categorías de correo electrónico"
-      ],
       "Edit billing address": [
         "Editar la dirección de la factura"
       ],
@@ -15545,6 +15508,9 @@
       ],
       "Help center": [
         "Centro de ayuda"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Ayude a dar forma el futuro de las categorías de correo electrónico en ${ MAIL_APP_NAME }"
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Oculte su correo electrónico con ${ PASS_APP_NAME }"
@@ -16015,12 +15981,6 @@
       ],
       "Snooze:": [
         "Pausar:"
-      ],
-      "Sort conversations": [
-        "Ordenar conversaciones"
-      ],
-      "Sort messages": [
-        "Ordenar mensajes"
       ],
       "Start a new import": [
         "Iniciar una importación nueva"
