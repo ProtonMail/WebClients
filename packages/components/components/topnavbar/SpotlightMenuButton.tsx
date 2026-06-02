@@ -79,7 +79,7 @@ interface SpotlightMenuButtonProps {
     items: DisplayItem[];
     header?: React.ReactNode;
     /** Toggles the Spotlight popover. */
-    onToggle?: () => void;
+    onToggle?: (isOpen: boolean) => void;
     /** Called when clicking on the [x] companion button. */
     onDismiss?: () => void;
 }
@@ -95,18 +95,19 @@ export const SpotlightMenuButton = ({
 
     const { state: renderSpotlight, toggle: toggleSpotlight, set: setSpotlight } = useToggle(initiallyOpen);
 
-    const closeSpotlight = () => {
+    const onCloseSpotlight = () => {
         setSpotlight(false);
+        onToggle?.(false);
     };
 
     const onToggleSpotlight = () => {
-        onToggle?.();
+        onToggle?.(!renderSpotlight);
         toggleSpotlight();
     };
 
     const onDismiss = () => {
         onDismiss_?.();
-        closeSpotlight();
+        onCloseSpotlight();
     };
 
     return (
@@ -114,7 +115,7 @@ export const SpotlightMenuButton = ({
             originalPlacement="bottom-end"
             closeIcon="cross-big"
             show={renderSpotlight}
-            onClose={toggleSpotlight}
+            onClose={onCloseSpotlight}
             size="large"
             className="w-full"
             innerClassName="px-5 pt-6"
@@ -122,17 +123,16 @@ export const SpotlightMenuButton = ({
             content={
                 <>
                     {header}
-
                     {displayItems.map((item) => {
                         if (item.type === 'dropdown') {
-                            return <DropdownItem key={item.title} item={item} onClick={closeSpotlight} />;
+                            return <DropdownItem key={item.title} item={item} onClick={onCloseSpotlight} />;
                         }
                         return (
                             <ButtonLike
                                 key={item.title}
                                 as={SettingsLink}
                                 path={item.linkHref!}
-                                onClick={closeSpotlight}
+                                onClick={onCloseSpotlight}
                                 shape="ghost"
                                 color="weak"
                             >
