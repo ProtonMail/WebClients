@@ -75,40 +75,46 @@ export interface LumoUserSettings {
     memoryPromptsSinceAutoSave?: number;
 }
 
-const getInitialThemeFromLocalStorage = (): 'light' | 'dark' | 'auto' => {
+/** Builds initial settings from `lumo-settings` in localStorage. */
+export const createInitialLumoUserSettings = (): LumoUserSettings => {
+    let theme: LumoUserSettings['theme'] = 'auto';
+    let animatedBackgroundEnabled: boolean | undefined;
+
     try {
         const localSettings = getLumoSettings() || getDefaultSettings();
-        const theme = localSettingsToUserSettings(localSettings);
-        console.log('debug: initialLumoUserSettings theme from localStorage:', { localSettings, theme });
-        return theme;
-    } catch (error) {
-        console.log('debug: initialLumoUserSettings fallback to auto due to error:', error);
-        // Fallback to auto if there's any error
-        return 'auto';
+        theme = localSettingsToUserSettings(localSettings);
+        if (typeof localSettings.animatedBackgroundEnabled === 'boolean') {
+            animatedBackgroundEnabled = localSettings.animatedBackgroundEnabled;
+        }
+    } catch {
+        // Fall back to defaults above
     }
+
+    return {
+        theme,
+        ...(animatedBackgroundEnabled !== undefined && { animatedBackgroundEnabled }),
+        personalization: {
+            nickname: '',
+            jobRole: '',
+            personality: 'default',
+            traits: [],
+            lumoTraits: '',
+            additionalContext: '',
+            enableForNewChats: true,
+        },
+        featureFlags: [],
+        indexedDriveFolders: [],
+        customAgents: [],
+    automaticWebSearch: true, // Default to enabled (automatic)
+        showGallerySuggestions: true,
+        memories: [],
+        isMemoryEnabled: false,
+        isMemoryAutoSaveEnabled: true,
+        memoryPromptsSinceAutoSave: 0,
+    };
 };
 
-export const initialLumoUserSettings: LumoUserSettings = {
-    theme: getInitialThemeFromLocalStorage(),
-    personalization: {
-        nickname: '',
-        jobRole: '',
-        personality: 'default',
-        traits: [],
-        lumoTraits: '',
-        additionalContext: '',
-        enableForNewChats: true,
-    },
-    featureFlags: [],
-    indexedDriveFolders: [],
-    customAgents: [],
-    automaticWebSearch: true, // Default to enabled (automatic)
-    showGallerySuggestions: true,
-    memories: [],
-    isMemoryEnabled: false,
-    isMemoryAutoSaveEnabled: true,
-    memoryPromptsSinceAutoSave: 0,
-};
+export const initialLumoUserSettings = createInitialLumoUserSettings();
 
 // Actions
 export const updateLumoUserSettings = createAction<Partial<LumoUserSettings>>(
