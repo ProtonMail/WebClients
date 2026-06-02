@@ -16,6 +16,7 @@ import {
     StandardErrorPage,
     StandardLoadErrorPage,
 } from '@proton/components';
+import { featureFlagStore } from '@proton/drive/modules/flags';
 import { driveMetrics } from '@proton/drive/modules/metrics';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
@@ -28,7 +29,6 @@ import noop from '@proton/utils/noop';
 
 import config from './config';
 import locales from './locales';
-import { featureFlagStore } from './modules/featureFlag';
 import type { DriveStore } from './redux-store/store';
 import { extendStore, setupStore } from './redux-store/store';
 import { extraThunkArguments } from './redux-store/thunk';

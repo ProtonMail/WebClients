@@ -21,9 +21,11 @@ import useLoading from '@proton/hooks/useLoading';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 
-import { useFlagsDriveDirectSharing } from '../../../internal/flags/useFlagsDriveDirectSharing';
-import { useFlagsDrivePublicSharing } from '../../../internal/flags/useFlagsDrivePublicSharing';
-import { useFlagsDriveSharingAdminPermissions } from '../../../internal/flags/useFlagsDriveSharingAdminPermissions';
+import {
+    useFlagsDriveDirectSharing,
+    useFlagsDrivePublicSharing,
+    useFlagsDriveSharingAdminPermissions,
+} from '../../../modules/flags';
 import ModalContentLoader from '../../modalUtils/ModalContentLoader';
 import { DirectSharingAutocomplete } from './DirectSharing/DirectSharingAutocomplete';
 import { DirectSharingFooter } from './DirectSharing/DirectSharingFooter';

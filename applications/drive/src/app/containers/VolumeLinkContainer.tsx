@@ -6,9 +6,9 @@ import { c } from 'ttag';
 
 import { Loader } from '@proton/components';
 import { generateNodeUid, getDrive, getDriveForPhotos, splitInvitationUid, splitNodeUid } from '@proton/drive';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
