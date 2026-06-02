@@ -26,7 +26,7 @@ import { useEffect, useRef, useState } from 'react'
 import { ProtonNode, $isSuggestionNode } from './ProtonNode'
 import { SuggestionTypesThatCanBeEmpty, type SuggestionID } from './Types'
 import { BEFOREINPUT_EVENT_COMMAND, COMPOSITION_START_EVENT_COMMAND, INSERT_FILE_COMMAND } from '../../Commands/Events'
-import type { EditorRequiresClientMethods } from '@proton/docs-shared'
+import type { CommentThreadInterface, SuggestionSummaryType } from '@proton/docs-shared'
 import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { useMarkNodesContext } from '../MarkNodesContext'
 import { ACCEPT_SUGGESTION_COMMAND, REJECT_SUGGESTION_COMMAND, TOGGLE_SUGGESTION_MODE_COMMAND } from './Commands'
@@ -90,11 +90,21 @@ const LIST_TRANSFORMERS = [UNORDERED_LIST, ORDERED_LIST, CHECK_LIST]
 
 export function SuggestionModePlugin({
   isSuggestionMode,
-  controller,
+  createSuggestionThread,
+  getAllThreads,
+  reopenSuggestion,
+  rejectSuggestion,
   onUserModeChange,
 }: {
   isSuggestionMode: boolean
-  controller: EditorRequiresClientMethods
+  createSuggestionThread(
+    suggestionID: string,
+    commentContent: string,
+    suggestionType: SuggestionSummaryType,
+  ): Promise<CommentThreadInterface | undefined>
+  getAllThreads(): Promise<CommentThreadInterface[]>
+  reopenSuggestion(threadId: string): Promise<boolean>
+  rejectSuggestion(threadId: string): Promise<boolean>
   onUserModeChange: (mode: EditorUserMode) => void
 }) {
   const [editor] = useLexicalComposerContext()
@@ -186,8 +196,7 @@ export function SuggestionModePlugin({
 
           const content = JSON.stringify(summary)
 
-          controller
-            .createSuggestionThread(id, content, summary[0].type)
+          createSuggestionThread(id, content, summary[0].type)
             .then(() => {
               createdSuggestionIDs.delete(id)
               suggestionModeLogger.info(`Removed id ${id} from set ${[...createdSuggestionIDs]}`)
@@ -196,12 +205,11 @@ export function SuggestionModePlugin({
         }
       }),
     )
-  }, [controller, editor, markNodeMap, suggestionModeLogger])
+  }, [createSuggestionThread, editor, markNodeMap, suggestionModeLogger])
 
   useEffect(() => {
     const resolveOrUnresolveThreadsWhereRequired = (reAddedNodes: ProtonNode[], removedNodes: ProtonNode[]) => {
-      controller
-        .getAllThreads()
+      getAllThreads()
         .then((threads) => {
           for (const added of reAddedNodes) {
             const suggestionID = added.getSuggestionIdOrThrow()
@@ -210,7 +218,7 @@ export function SuggestionModePlugin({
               continue
             }
             suggestionModeLogger.info(`Reopening thread ${thread.id} for suggestion ${suggestionID} after undo/redo`)
-            controller.reopenSuggestion(thread.id).catch(reportErrorToSentry)
+            reopenSuggestion(thread.id).catch(reportErrorToSentry)
           }
           for (const removed of removedNodes) {
             const suggestionID = removed.getSuggestionIdOrThrow()
@@ -219,7 +227,7 @@ export function SuggestionModePlugin({
               continue
             }
             suggestionModeLogger.info(`Rejecting thread ${thread.id} for suggestion ${suggestionID} after undo/redo`)
-            controller.rejectSuggestion(thread.id).catch(reportErrorToSentry)
+            rejectSuggestion(thread.id).catch(reportErrorToSentry)
           }
         })
         .catch(reportErrorToSentry)
@@ -332,7 +340,15 @@ export function SuggestionModePlugin({
         }
       }),
     )
-  }, [controller, editor, isSuggestionMode, onUserModeChange, suggestionModeLogger])
+  }, [
+    editor,
+    getAllThreads,
+    isSuggestionMode,
+    onUserModeChange,
+    rejectSuggestion,
+    reopenSuggestion,
+    suggestionModeLogger,
+  ])
 
   useEffect(() => {
     if (!isSuggestionMode) {
@@ -705,7 +721,7 @@ export function SuggestionModePlugin({
         COMMAND_PRIORITY_CRITICAL,
       ),
     )
-  }, [controller, createNotification, editor, isSuggestionMode, onUserModeChange, showAlertModal, suggestionModeLogger])
+  }, [createNotification, editor, isSuggestionMode, onUserModeChange, showAlertModal, suggestionModeLogger])
 
   return <>{alertModal}</>
 }
