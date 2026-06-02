@@ -49,7 +49,6 @@ import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -299,9 +298,8 @@ const SingleSignupContainer = ({
         }).catch(noop);
     };
 
-    const vpnServersCountData = model.vpnServersCountData;
     const selectedPlan = getPlanFromPlanIDs(model.plansMap, model.subscriptionData.planIDs) || FREE_PLAN;
-    const upsellShortPlan = getUpsellShortPlan(selectedPlan, vpnServersCountData);
+    const upsellShortPlan = getUpsellShortPlan(selectedPlan);
 
     const isB2bPlan = getIsVpnB2BPlan(selectedPlan.Name) || getIsB2BAudienceFromPlan(selectedPlan.Name);
     const background = (() => {
@@ -464,8 +462,6 @@ const SingleSignupContainer = ({
     useEffect(() => {
         const fetchDependencies = async () => {
             await onStartAuth().catch(noop);
-
-            void getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
             const [{ Domains: domains }, { plans, freePlan }, paymentStatus] = await Promise.all([
                 silentApi<{ Domains: string[] }>(queryAvailableDomains('signup')),

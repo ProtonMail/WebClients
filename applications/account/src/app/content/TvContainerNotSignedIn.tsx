@@ -12,7 +12,7 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { setItem } from '@proton/shared/lib/helpers/storage';
 import { useFlag } from '@proton/unleash/useFlag';
 import { TvNotSignedIn } from '@proton/vpn/components/tv';
-import { VPN_TV_USER_TIER } from '@proton/vpn/constants/tvUserTier.ts';
+import { VPN_TV_USER_TIER } from '@proton/vpn/constants/tvUserTier';
 
 import Layout from '../public/Layout';
 import Main from '../public/Main';

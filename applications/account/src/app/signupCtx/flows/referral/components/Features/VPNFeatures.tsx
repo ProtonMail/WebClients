@@ -3,32 +3,27 @@ import { c, msgid } from 'ttag';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { IcMobile } from '@proton/icons/icons/IcMobile';
 import { IcShield } from '@proton/icons/icons/IcShield';
-import { usePaymentOptimistic } from '@proton/payments/ui';
 import { VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
 import FeatureItem from '../FeatureItem/FeatureItem';
 
 export const VPNFeatures = () => {
-    const payments = usePaymentOptimistic();
-    const vpnServersCountData = payments.vpnServersCountData;
-    const vpnServersCountLoading = !payments.initializationStatus.vpnServersInitialized;
-
     return (
         <>
             <FeatureItem
                 icon={<IcGlobe size={5} />}
-                loading={vpnServersCountLoading}
                 text={[
                     // Translator: Full sentence: "N+ servers across N+ countries"
                     c('Signup').ngettext(
-                        msgid`${vpnServersCountData.paid.servers}+ server across`,
-                        `${vpnServersCountData.paid.servers}+ servers across`,
-                        vpnServersCountData.paid.servers
+                        msgid`${VPN_SERVERS.paid.servers}+ server across`,
+                        `${VPN_SERVERS.paid.servers}+ servers across`,
+                        VPN_SERVERS.paid.servers
                     ),
                     c('Signup').ngettext(
-                        msgid`${vpnServersCountData.paid.countries}+ country`,
-                        `${vpnServersCountData.paid.countries}+ countries`,
-                        vpnServersCountData.paid.countries
+                        msgid`${VPN_SERVERS.paid.countries}+ country`,
+                        `${VPN_SERVERS.paid.countries}+ countries`,
+                        VPN_SERVERS.paid.countries
                     ),
                 ].join(', ')}
                 highlighted

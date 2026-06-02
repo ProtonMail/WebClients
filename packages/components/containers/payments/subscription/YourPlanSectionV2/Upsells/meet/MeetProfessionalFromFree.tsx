@@ -105,7 +105,6 @@ export const useMeetProfessionalFromFreeUpsells = ({
     app,
     subscription,
     plansMap,
-    serversCount,
     freePlan,
     user,
 }: UpsellSectionProps): UpsellsHook & {
@@ -120,7 +119,6 @@ export const useMeetProfessionalFromFreeUpsells = ({
         app,
         plansMap,
         hasVPN: getHasConsumerVpnPlan(subscription),
-        serversCount,
         freePlan,
         openSubscriptionModal,
         telemetryFlow,
@@ -168,7 +166,6 @@ export const useMeetProfessionalFromFreeUpsells = ({
 
         const b2bBase = {
             plansMap,
-            serversCount,
             freePlan,
             app,
             upsellPath: DASHBOARD_UPSELL_PATHS.MEET,
@@ -245,7 +242,6 @@ export const useMeetProfessionalFromFreeUpsells = ({
         b2bYearlyUpsells,
         loadingSubscriptionModal,
         handleExplorePlans,
-        serversCount,
         telemetryFlow,
         plansMap,
         freePlan,

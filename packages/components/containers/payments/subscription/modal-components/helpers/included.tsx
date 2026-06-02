@@ -22,8 +22,8 @@ import type { Included } from '@proton/shared/lib/helpers/checkout';
 import { getPremiumPasswordManagerText } from '@proton/shared/lib/helpers/checkout';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getPremium } from '@proton/shared/lib/helpers/premium';
-import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/features';
+import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
 import { getNUsersText } from '../../../features/highlights';
 import { getAccessToAdvancedAIText, getFullChatHistoryText, getUnlimitedChatsText } from '../../../features/lumo';
@@ -49,12 +49,10 @@ import {
 export const getWhatsIncluded = ({
     planIDs,
     plansMap,
-    vpnServers,
     freePlan,
 }: {
     planIDs: PlanIDs;
     plansMap: PlansMap;
-    vpnServers: VPNServersCountData;
     freePlan: FreePlanDefault;
 }): Included[] => {
     const summary = Object.entries(planIDs).reduce(
@@ -135,7 +133,7 @@ export const getWhatsIncluded = ({
         included = [
             {
                 type: 'text',
-                text: getVpnServers(vpnServers.paid.servers),
+                text: getVpnServers(VPN_SERVERS.paid.servers),
             },
             {
                 type: 'text',

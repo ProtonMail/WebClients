@@ -2,7 +2,6 @@ import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import {
     defaultSubscriptionCache,
-    mockUserVPNServersCountApi,
     organizationDefaultResponse,
     plansDefaultResponse,
 } from '@proton/components/hooks/helpers/test';
@@ -128,8 +127,6 @@ describe('SubscriptionContainer', () => {
 
     beforeEach(() => {
         jest.clearAllMocks();
-
-        mockUserVPNServersCountApi();
 
         props = {
             app: 'proton-mail',
@@ -261,7 +258,6 @@ describe('SubscriptionContainer', () => {
             'post'
         );
         enableSepaFeatureFlag();
-        mockUserVPNServersCountApi();
 
         renderWithProviders(<ContextSubscriptionContainer {...props} />);
 
