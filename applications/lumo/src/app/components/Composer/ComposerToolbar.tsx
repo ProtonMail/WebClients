@@ -27,6 +27,7 @@ interface UploadMenuSectionProps {
     onBrowseDrive: () => void;
     onDrawSketch: () => void;
     fileUploadMode: FileUploadMode;
+    isAgent?: boolean;
     buttonIcon?: React.ReactNode;
 }
 
@@ -35,6 +36,7 @@ const UploadMenuSection = ({
     onBrowseDrive,
     onDrawSketch,
     fileUploadMode,
+    isAgent = false,
     buttonIcon = <IcPlus size={4} />,
 }: UploadMenuSectionProps) => {
     const uploadButtonRef = useRef<HTMLButtonElement>(null);
@@ -92,6 +94,7 @@ const UploadMenuSection = ({
                 onBrowseDrive={onBrowseDrive}
                 onDrawSketch={onDrawSketch}
                 fileUploadMode={fileUploadMode}
+                isAgent={isAgent}
             />
         </>
     );
@@ -122,6 +125,8 @@ export interface ComposerToolbarProps {
     // canShowLumoUpsellToggle?: boolean;
     // TODO: remove in later versions
     canShowLumoUpsellToggle?: boolean;
+    canUseAgents?: boolean;
+    isAgent?: boolean;
 }
 
 export const ComposerToolbar = ({
@@ -131,6 +136,8 @@ export const ComposerToolbar = ({
     onDrawSketch,
     fileUploadMode,
     canShowLumoUpsellToggle,
+    canUseAgents = false,
+    isAgent = false,
 }: ComposerToolbarProps) => {
     const toolsButtonRef = useRef<HTMLButtonElement>(null);
     const [showToolsMenu, setShowToolsMenu] = useState(false);
@@ -143,7 +150,7 @@ export const ComposerToolbar = ({
         setShowToolsMenu((prev) => !prev);
     }, []);
 
-    const uploadSectionProps = { onFilesSelected, onBrowseDrive, onDrawSketch, fileUploadMode };
+    const uploadSectionProps = { onFilesSelected, onBrowseDrive, onDrawSketch, fileUploadMode, isAgent };
 
     if (composerMode === ComposerMode.GALLERY) {
         return (
@@ -177,6 +184,8 @@ export const ComposerToolbar = ({
                             anchorRef={toolsButtonRef}
                             onClose={() => setShowToolsMenu(false)}
                             onClickCreateImageOption={() => setShowCreateImageButton(true)}
+                            canUseAgents={canUseAgents}
+                            isAgent={isAgent}
                         />
                     </>
                 )}
@@ -215,7 +224,7 @@ export const ComposerToolbar = ({
                         <IcMicrophone size={6} />
                     </Button>
                 </div>
-                {isImageToolsFlagEnabled && <ModelModeDropdown />}
+                {isImageToolsFlagEnabled && !isAgent && <ModelModeDropdown />}
             </div>
         </div>
     );

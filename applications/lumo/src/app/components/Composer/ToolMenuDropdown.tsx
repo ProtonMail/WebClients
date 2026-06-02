@@ -8,17 +8,29 @@ import type { IconName } from '@proton/icons/types';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useWebSearch } from '../../providers/WebSearchProvider';
+import { useLumoDispatch } from '../../redux/hooks';
+import { openAgentPicker } from '../../redux/slices/composerActions';
 import { MenuDropdown, type MenuDropdownProps, MenuItem } from './components/MenuDropdown';
 
 import './ToolMenuDropdown.scss';
 
 interface ToolMenuDropdownProps extends Pick<MenuDropdownProps, 'isOpen' | 'anchorRef' | 'onClose'> {
     onClickCreateImageOption: () => void;
+    canUseAgents?: boolean;
+    isAgent?: boolean;
 }
 
-export const ToolMenuDropdown = ({ isOpen, anchorRef, onClose, onClickCreateImageOption }: ToolMenuDropdownProps) => {
+export const ToolMenuDropdown = ({
+    isOpen,
+    anchorRef,
+    onClose,
+    onClickCreateImageOption,
+    canUseAgents = false,
+    isAgent = false,
+}: ToolMenuDropdownProps) => {
     const { isWebSearchButtonToggled, handleWebSearchButtonClick } = useWebSearch();
     const { imageTools: isImageToolsFlagEnabled } = useLumoFlags();
+    const dispatch = useLumoDispatch();
 
     const handleWebSearchToggleChange = useCallback(
         (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,7 +46,14 @@ export const ToolMenuDropdown = ({ isOpen, anchorRef, onClose, onClickCreateImag
             getLabel: () => c('collider_2025: Action').t`Create image`,
             onClick: onClickCreateImageOption,
             onClose: onClose,
-            canShow: isImageToolsFlagEnabled,
+            canShow: isImageToolsFlagEnabled && !isAgent,
+        },
+        {
+            iconName: 'robot' as IconName,
+            getLabel: () => c('collider_2025: Action').t`Agents`,
+            onClick: () => dispatch(openAgentPicker()),
+            onClose: onClose,
+            canShow: canUseAgents,
         },
     ];
     const visibleToolMenuItems = toolMenuItems.filter((item) => item.canShow);
