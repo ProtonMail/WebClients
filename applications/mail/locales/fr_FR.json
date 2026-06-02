@@ -4340,6 +4340,12 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Votre compte gratuit sur ${ MAIL_APP_NAME } dispose d'un espace de stockage limité, nous n'importerons donc que vos e-mails Gmail les plus récents."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Si un message apparaît dans la mauvaise catégorie, il suffit de le déplacer vers la bonne. Effectuez un clic droit sur un message pour choisir une nouvelle catégorie, ou faites-le glisser et déposez-le à l'endroit qui lui correspond."
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Vous faites partie des premiers à tester notre nouvel affichage par catégorie avant son lancement. Vos commentaires nous aideront à améliorer la façon dont Proton Mail trie les e-mails pour tous les utilisateurs."
       ]
     },
     "description": {
@@ -7660,7 +7666,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -16190,6 +16197,9 @@
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Obtenez plus d'espace de stockage avec ${ MAIL_APP_NAME } Plus"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Contribuez à façonner l'avenir des catégories d'e-mails dans ${ MAIL_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -4340,6 +4340,12 @@
       ],
       "You’re among the first to try email categories.": [
         "E-posta kategorilerini ilk deneyenler arasındasınız."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Bir ileti yanlış kategoride görünürse onu doğru kategoriye taşımanız yeterlidir. Yeni bir kategori seçmek için bir iletiye sağ tıklayın veya iletiyi ait olduğu yere sürükleyip bırakın."
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Yeni kategori görünümümüzü duyurulmasından önce ilk deneyenlerdensiniz. Geri bildirimleriniz e-postaların Proton Mail tarafından sıralanmasını geliştirmeye yardımcı olacak."
       ]
     },
     "description": {
@@ -7660,7 +7666,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -16190,6 +16197,9 @@
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "${ MAIL_APP_NAME } Plus ile daha fazla depolama alanı edinin"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } içindeki e-posta kategorilerinin geleceğini şekillendirmeye yardımcı olun"
       ]
     },
     "Today icon tooltip in mini calendar": {
