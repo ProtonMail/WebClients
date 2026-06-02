@@ -1,5 +1,4 @@
-import { setLumoSettings } from '../../providers';
-import { matchDarkTheme, userSettingsToLocalSettings } from '../../providers';
+import { matchDarkTheme, setLumoSettings, userSettingsToLocalSettings } from '../../providers';
 import { safeLogger } from '../../util/safeLogger';
 import { loadUserSettingsFromStorage, saveUserSettingsToStorage } from '../../util/userSettingsStorage';
 import { selectMasterKey } from '../selectors';
@@ -43,13 +42,12 @@ export function startLumoUserSettingsListeners(startListening: AppStartListening
                     if (lumoUserSettings.theme) {
                         const systemIsDark = matchDarkTheme().matches;
                         const localSettings = userSettingsToLocalSettings(lumoUserSettings, systemIsDark);
-                        console.log('debug: LumoUserSettingsListener: Syncing theme to localStorage', {
-                            action: action.type,
-                            userSettings: lumoUserSettings,
-                            localSettings,
-                            systemIsDark,
+                        setLumoSettings({
+                            ...localSettings,
+                            ...(lumoUserSettings.animatedBackgroundEnabled !== undefined && {
+                                animatedBackgroundEnabled: lumoUserSettings.animatedBackgroundEnabled,
+                            }),
                         });
-                        setLumoSettings(localSettings);
                     }
                 }
             }
