@@ -1,5 +1,6 @@
 import type { PublicKeyReference, SessionKey, WorkerDecryptionResult } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
+
 import type { MessageKeys, MessageVerification } from '@proton/mail/store/messages/messagesTypes';
 import { getAttachment } from '@proton/shared/lib/api/attachments';
 import { getEOAttachment } from '@proton/shared/lib/api/eo';
@@ -12,6 +13,7 @@ import { getMailVerificationStatus } from '@proton/shared/lib/mail/signature';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
+import { readContentIDandLocation } from '../message/messageEmbeddeds';
 
 export const getVerificationStatusFromKeys = (
     decryptedAttachment: WorkerDecryptionResult<Uint8Array<ArrayBuffer>>,
@@ -146,7 +148,9 @@ export const getAndVerifyAttachment = async (
         } else {
             attachmentdata = await getDecryptedAttachment(attachment, verification, messageKeys, api, messageFlags);
         }
-        onUpdateAttachment(attachmentID, attachmentdata);
+
+        const { cid, cloc } = readContentIDandLocation(attachment);
+        onUpdateAttachment(attachmentID, { ...attachmentdata, cid, cloc, type: attachment.MIMEType || '' });
     } else {
         attachmentdata = await getDecryptedAttachment(attachment, verification, messageKeys, api, messageFlags);
     }

@@ -10,10 +10,12 @@ import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader'
 import type { MessageState, MessageStateWithData, OutsideKey } from '@proton/mail/store/messages/messagesTypes';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
 import type { PendingUpload } from 'proton-mail/hooks/composer/useAttachments/interface';
+import type { MailState } from 'proton-mail/store/store';
 
 import AttachmentList, { AttachmentAction } from '../../components/message/extrasFooter/attachment/AttachmentList';
 import type { MessageChange } from './Composer';
@@ -39,6 +41,13 @@ interface Props extends Pick<EditorProps, 'onMouseUp' | 'onKeyUp' | 'onFocus' | 
     isAssistantExpanded?: boolean;
     toolbarWrapperRef?: RefObject<HTMLDivElement>;
     onExpandBlockquotes?: () => void;
+    onUploadAttachments?: (
+        action: ATTACHMENT_DISPOSITION,
+        files?: File[],
+        removeImageMetadata?: boolean,
+        cid?: string
+    ) => void;
+    getStoreState?: () => MailState;
 }
 
 const ComposerContent = (
@@ -52,6 +61,8 @@ const ComposerContent = (
         onChangeContent,
         onFocus,
         onAddAttachments,
+        onUploadAttachments,
+        getStoreState,
         onRemoveAttachment,
         onRemoveUpload,
         pendingUploads,
@@ -106,6 +117,8 @@ const ComposerContent = (
                     onMouseUp={onMouseUp}
                     onKeyUp={onKeyUp}
                     onChangeContent={onChangeContent}
+                    onUploadAttachments={onUploadAttachments}
+                    getStoreState={getStoreState}
                     onFocus={onFocus}
                     onAddAttachments={onAddAttachments}
                     onRemoveAttachment={onRemoveAttachment}

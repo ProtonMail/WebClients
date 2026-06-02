@@ -20,4 +20,5 @@ export interface AddAttachmentsParams {
     /** When omitted, the hook falls back to the current pending files. */
     files?: File[];
     removeImageMetadata?: boolean;
+    cid?: string;
 }

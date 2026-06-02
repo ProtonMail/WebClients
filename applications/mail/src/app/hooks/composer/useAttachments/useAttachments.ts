@@ -32,7 +32,7 @@ import {
     readContentIDandLocation,
 } from '../../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, updateImages } from '../../../helpers/message/messageImages';
-import { addAttachment } from '../../../store/attachments/attachmentsActions';
+import { addAttachment, addImageIdentifierAction } from '../../../store/attachments/attachmentsActions';
 import { useGetMessageKeys } from '../../message/useGetMessageKeys';
 import { useGetMessage } from '../../message/useMessage';
 import { useLongLivingState } from '../../useLongLivingState';
@@ -56,6 +56,7 @@ interface PendingUploadParams {
 interface EndAddAttachmentsParams {
     action: ATTACHMENT_DISPOSITION;
     pendingUpload: AttachmentUpload;
+    isReinsertion?: boolean;
 }
 
 export const useAttachments = ({
@@ -114,64 +115,73 @@ export const useAttachments = ({
     /**
      * Wait for upload to finish, modify the message, add to embedded images if needed
      */
-    const handleAddAttachmentEnd = useHandler(async ({ action, pendingUpload }: EndAddAttachmentsParams) => {
-        try {
-            const upload = await pendingUpload.upload.resultPromise;
+    const handleAddAttachmentEnd = useHandler(
+        async ({ action, pendingUpload, isReinsertion = false }: EndAddAttachmentsParams) => {
+            try {
+                const upload = await pendingUpload.upload.resultPromise;
 
-            const data = new Uint8Array(await readFileAsBuffer(pendingUpload.file));
-            const filename = pendingUpload.file.name;
-            dispatch(
-                addAttachment({
-                    ID: upload?.attachment.ID || '',
-                    attachment: {
-                        data,
-                        verificationStatus: MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID,
-                        filename,
-                        signatures: [],
-                    },
-                })
-            );
+                const data = new Uint8Array(await readFileAsBuffer(pendingUpload.file));
+                const filename = pendingUpload.file.name;
+                dispatch(
+                    addAttachment({
+                        ID: upload?.attachment.ID || '',
+                        attachment: {
+                            data,
+                            verificationStatus: MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID,
+                            filename,
+                            signatures: [],
+                        },
+                    })
+                );
 
-            // Warning, that change function can be called multiple times, don't do any side effect in it
-            onChange((message: MessageState) => {
-                // New attachment list
-                const Attachments = [...getAttachments(message.data), upload.attachment];
-                const embeddedImages = getEmbeddedImages(message);
+                // Warning, that change function can be called multiple times, don't do any side effect in it
+                onChange((message: MessageState) => {
+                    // New attachment list
+                    const Attachments = [...getAttachments(message.data), upload.attachment];
+                    const embeddedImages = getEmbeddedImages(message);
+
+                    if (action === ATTACHMENT_DISPOSITION.INLINE) {
+                        embeddedImages.push(createEmbeddedImageFromUpload(upload.attachment));
+                    }
+
+                    const messageImages = updateImages(message.messageImages, undefined, undefined, embeddedImages);
+
+                    return { data: { Attachments }, messageImages };
+                });
 
                 if (action === ATTACHMENT_DISPOSITION.INLINE) {
-                    embeddedImages.push(createEmbeddedImageFromUpload(upload.attachment));
+                    const { cid, cloc } = readContentIDandLocation(upload.attachment);
+                    if (upload.attachment.ID) {
+                        dispatch(addImageIdentifierAction({ ID: upload.attachment.ID, cid, cloc }));
+                    }
+
+                    if (!isReinsertion) {
+                        editorActionsRef?.current?.insertEmbedded(upload.attachment, upload.packets.Preview);
+                    }
                 }
 
-                const messageImages = updateImages(message.messageImages, undefined, undefined, embeddedImages);
+                removePendingUpload({ pendingUpload });
+            } catch (error: any) {
+                if (error?.message === MESSAGE_ALREADY_SENT_INTERNAL_ERROR) {
+                    onMessageAlreadySent();
+                } else if (error?.message === STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR) {
+                    createNotification({
+                        type: 'error',
+                        text: c('Error')
+                            .t`Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.`,
+                    });
+                }
 
-                return { data: { Attachments }, messageImages };
-            });
-
-            if (action === ATTACHMENT_DISPOSITION.INLINE) {
-                editorActionsRef?.current?.insertEmbedded(upload.attachment, upload.packets.Preview);
+                removePendingUpload({ pendingUpload, error });
             }
-
-            removePendingUpload({ pendingUpload });
-        } catch (error: any) {
-            if (error?.message === MESSAGE_ALREADY_SENT_INTERNAL_ERROR) {
-                onMessageAlreadySent();
-            } else if (error?.message === STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR) {
-                createNotification({
-                    type: 'error',
-                    text: c('Error')
-                        .t`Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.`,
-                });
-            }
-
-            removePendingUpload({ pendingUpload, error });
         }
-    });
+    );
 
     /**
      * Start uploading a file, the choice between attachment or inline is done.
      */
     const handleAddAttachmentsUpload = useHandler(
-        async ({ action, files = pendingFiles || [], removeImageMetadata }: AddAttachmentsParams) => {
+        async ({ action, files = pendingFiles || [], removeImageMetadata, cid }: AddAttachmentsParams) => {
             // Prepare dummy upload const and methods
             let hasDummyUploads: boolean = false;
             const removeDummyUploads = () => {
@@ -223,12 +233,14 @@ export const useAttachments = ({
                 removeImageMetadata ? removeExifMetadata(file).catch(() => file) : file
             );
             const strippedFiles = await Promise.all(promises);
-            const uploads = upload(strippedFiles, messageFromState, messageKeys, action, auth.UID);
+            const uploads = upload(strippedFiles, messageFromState, messageKeys, action, auth.UID, cid);
             const pendingUploads = strippedFiles.map<AttachmentUpload>((file, i) => ({ file, upload: uploads[i] }));
 
             // Add real pending uploads
             addPendingUploads({ pendingUploads });
-            pendingUploads.forEach((pendingUpload) => handleAddAttachmentEnd({ action, pendingUpload }));
+            pendingUploads.forEach((pendingUpload) =>
+                handleAddAttachmentEnd({ action, pendingUpload, isReinsertion: !!cid })
+            );
         }
     );
 
