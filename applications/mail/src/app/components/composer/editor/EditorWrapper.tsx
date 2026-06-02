@@ -33,6 +33,7 @@ import {
 } from '../../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages } from '../../../helpers/message/messageImages';
 import type { MessageChange } from '../Composer';
+import { getAttachedCIDs } from './editorWrapperHelpers';
 
 export interface ExternalEditorActions extends Pick<
     EditorActions,
@@ -158,18 +159,16 @@ const EditorWrapper = ({
             // The original CID is preserved in the attachement slice and used to find the attachment.
             if (missedCIDs.length && onUploadAttachments && getStoreState) {
                 const state = getStoreState();
-                const attachedCIDs = (message.data?.Attachments || []).map(
-                    (attachment) => readContentIDandLocation(attachment).cid
-                );
+                const attachedCIDs = getAttachedCIDs(message);
 
                 for (const cid of missedCIDs) {
                     if (attachedCIDs.includes(cid) || reuploadingCIDsRef.current.has(cid)) {
-                        return;
+                        continue;
                     }
 
                     const attachment = attachmentByCidOrCloc(state, { identifier: cid });
                     if (!attachment) {
-                        return;
+                        continue;
                     }
 
                     reuploadingCIDsRef.current.add(cid);
@@ -191,10 +190,13 @@ const EditorWrapper = ({
             }
 
             if (onUploadAttachments) {
-                const attachedCIDSet = new Set(
-                    (message.data?.Attachments || []).map((attachment) => readContentIDandLocation(attachment).cid)
+                const attachedCIDSet = new Set(getAttachedCIDs(message));
+
+                setCIDs(
+                    newCIDs.filter(
+                        (cid) => cids.includes(cid) || attachedCIDSet.has(cid) || reuploadingCIDsRef.current.has(cid)
+                    )
                 );
-                setCIDs(newCIDs.filter((cid) => cids.includes(cid) || attachedCIDSet.has(cid)));
             } else {
                 // Encrypted outside: unchanged behaviour (re-upload is not available here).
                 setCIDs(newCIDs);
