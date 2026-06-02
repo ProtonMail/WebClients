@@ -19,8 +19,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { Field } from '@proton/pass/components/Form/Field/Field';
@@ -327,7 +327,7 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
 
                                         <Card className="flex flex-auto justify-center text-sm" type="primary">
                                             <div className="flex flex-column justify-center items-center gap-2 mb-2">
-                                                <Icon name="lock-filled" size={6} />
+                                                <IcLockFilled size={6} />
                                                 <span className="text-center block">
                                                     {c('Info').t`Unlock ${PASS_APP_NAME} to save this passkey`}
                                                 </span>

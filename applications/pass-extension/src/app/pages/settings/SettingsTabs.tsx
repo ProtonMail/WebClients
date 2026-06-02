@@ -8,8 +8,8 @@ import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/Ex
 import { useExtensionReauth } from 'proton-pass-extension/lib/hooks/useExtensionReauth';
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import { Tabs } from '@proton/components/components/tabs/Tabs';
+import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PinUnlockProvider } from '@proton/pass/components/Lock/PinUnlockProvider';
@@ -130,7 +130,7 @@ export const SettingsTabs: FC<Props> = ({ pathname }) => {
 
     return (
         <div className="flex flex-column items-center justify-center my-auto">
-            <Icon name="lock-filled" size={10} className="mb-4" />
+            <IcLockFilled size={10} className="mb-4" />
             {clientSessionLocked(status) && (
                 <>
                     <span className="block color-norm">{c('Info').t`Your ${PASS_APP_NAME} session is locked`}</span>
