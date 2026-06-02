@@ -1,4 +1,4 @@
-import type { DegradedNode, MemberRole, NodeEntity, NodeType, RevisionState } from '@proton/drive/index';
+import type { DegradedNode, MemberRole, NodeEntity, NodeType, RevisionState } from '../../../index';
 
 const DEFAULT_MEMBER_ROLE: MemberRole = 'admin' as MemberRole;
 const DEFAULT_NODE_TYPE: NodeType = 'file' as NodeType;

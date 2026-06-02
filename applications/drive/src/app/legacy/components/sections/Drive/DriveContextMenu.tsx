@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 
 import { ContextSeparator } from '@proton/components';
+import { useMoveItemsModal } from '@proton/drive/modals/moveItemsModal';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
@@ -10,7 +11,6 @@ import type { DecryptedLink } from '../../../../legacy/store';
 import { useOpenInDocs } from '../../../../legacy/store/_documents';
 import { useDetailsModal } from '../../../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../../modals/FilesDetailsModal';
-import { useMoveItemsModal } from '../../../../modals/MoveItemsModal';
 import { useRevisionsModal } from '../../../../modals/RevisionsModal';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
 import { useRenameModalDeprecated } from '../../modals/RenameModal';

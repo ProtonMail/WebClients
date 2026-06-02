@@ -5,10 +5,10 @@ import { c } from 'ttag';
 import type { ProtonDriveClient, Result } from '@proton/drive/index';
 import { handleSdkError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { getNodeAncestry } from '@proton/drive/modules/nodes';
 
 import useDriveNavigation from '../../../legacy/hooks/drive/useNavigate';
 import type { CrumbDefinition } from '../../../statelessComponents/Breadcrumbs/types';
-import { getNodeAncestry } from '../../../utils/sdk/getNodeAncestry';
 import { NodeLocation, getNodeLocation } from '../../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
 

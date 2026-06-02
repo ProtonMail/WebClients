@@ -4,8 +4,8 @@ import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
 import { RateLimitedError as SdkRateLimitedError } from '@proton/drive';
+import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
-import { createMockNodeEntity } from '../../../../../utils/test/nodeEntity';
 import { SearchDB } from '../../shared/SearchDB';
 import {
     DEFAULT_RETRY_AFTER_IN_MS,
