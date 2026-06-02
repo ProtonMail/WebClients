@@ -12,9 +12,8 @@ import {
     ModalTwoHeader,
     Row,
 } from '@proton/components';
+import ModalContentLoader from '@proton/drive/modals/modalUtils/ModalContentLoader';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-
-import ModalContentLoader from '../../legacy/components/modals/ModalContentLoader';
 
 export type FilesDetailsModalViewProps = ModalStateProps & {
     isLoading: boolean;

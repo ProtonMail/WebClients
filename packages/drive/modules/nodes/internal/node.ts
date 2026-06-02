@@ -1,4 +1,4 @@
-import type { MaybeMissingNode, MaybeNode } from '@proton/drive/index';
+import type { MaybeMissingNode, MaybeNode } from '@protontech/drive-sdk';
 
 export const isMissingNode = (
     maybeMissingNode: MaybeMissingNode

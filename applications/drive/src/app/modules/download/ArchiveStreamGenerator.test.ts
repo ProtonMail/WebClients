@@ -1,8 +1,8 @@
 import { jest } from '@jest/globals';
 
 import { NodeType } from '@proton/drive/index';
+import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
-import { createMockNodeEntity } from '../../utils/test/nodeEntity';
 import type { ArchiveStreamGenerator as ArchiveStreamGeneratorClass } from './ArchiveStreamGenerator';
 import { DownloadStatus, useDownloadManagerStore } from './downloadManager.store';
 import type { DownloadQueueTask } from './downloadTypes';

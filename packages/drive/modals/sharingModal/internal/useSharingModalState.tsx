@@ -25,10 +25,8 @@ import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import { BusDriverEventName, getBusDriver } from '../../../internal/BusDriver';
 import { useFlagsDriveDocsPublicSharing } from '../../../internal/flags/useFlagsDriveDocsPublicSharing';
-import { getNodeAncestry } from '../../../internal/sdkUtils/getNodeAncestry';
-import { getNodeEffectiveRole } from '../../../internal/sdkUtils/getNodeEffectiveRole';
 import { handleSdkError } from '../../../legacy/errorHandling';
-import { getNodeName } from '../../../modules/nodes';
+import { getNodeAncestry, getNodeEffectiveRole, getNodeName } from '../../../modules/nodes';
 import { getDisplayName } from './DirectSharing/helpers/userNames';
 import type { SharingModalViewProps } from './SharingModalView';
 import { type DirectMember, MemberType } from './interfaces';
