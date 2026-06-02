@@ -5,7 +5,8 @@ import { CommentsPanelListComment } from './CommentsPanelListComment'
 import { CommentsComposer } from './CommentsComposer'
 import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
 import { CommentThreadState, CommentThreadType, CommentType } from '@proton/docs-shared'
-import { Icon, ToolbarButton } from '@proton/components'
+import { ToolbarButton } from '@proton/components'
+import { IcArrowUp } from '@proton/icons/icons/IcArrowUp'
 import { c, msgid } from 'ttag'
 import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
@@ -299,7 +300,7 @@ export function CommentsPanelListThread({ thread, className }: { thread: Comment
                 <ToolbarButton
                   className="bg-primary rounded-full p-1"
                   title={c('Action').t`Reply`}
-                  icon={<Icon name="arrow-up" size={3.5} />}
+                  icon={<IcArrowUp size={3.5} />}
                   disabled={!canSubmit}
                   onClick={submitComment}
                   data-testid="reply-in-send-button"

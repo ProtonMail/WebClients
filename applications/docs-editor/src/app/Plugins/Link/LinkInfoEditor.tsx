@@ -6,7 +6,8 @@ import { getDOMRangeRect } from '../../Utils/getDOMRangeRect'
 import { createPortal } from 'react-dom'
 import { Button } from '@proton/atoms/Button/Button'
 import { Input } from '@proton/atoms/Input/Input'
-import { Icon } from '@proton/components'
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle'
+import { IcLink } from '@proton/icons/icons/IcLink'
 import { mergeRegister } from '@lexical/utils'
 import { c } from 'ttag'
 import { LINK_CHANGE_COMMAND } from './LinkPlugin'
@@ -158,7 +159,7 @@ export function LinkInfoEditor({
       >
         {shouldShowLinkTextInput && (
           <div className="flex items-center gap-3">
-            <Icon name="info-circle" className="flex-shrink-0" />
+            <IcInfoCircle className="flex-shrink-0" />
             <Input
               aria-label={c('Label').t`Link text`}
               placeholder={c('Placeholder').t`Text`}
@@ -170,7 +171,7 @@ export function LinkInfoEditor({
           </div>
         )}
         <div className="flex items-center gap-3">
-          <Icon name="link" className="flex-shrink-0" />
+          <IcLink className="flex-shrink-0" />
           <Input
             value={url}
             aria-label={c('Label').t`Link URL`}

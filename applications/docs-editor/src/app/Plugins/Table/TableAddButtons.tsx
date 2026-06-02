@@ -3,7 +3,7 @@ import type { TableNode } from '@lexical/table'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import debounce from 'lodash/debounce'
 import clsx from '@proton/utils/clsx'
-import { Icon } from '@proton/components'
+import { IcPlus } from '@proton/icons/icons/IcPlus'
 import { c } from 'ttag'
 import { $addNewColumnAtEndOfTable } from './TableUtils/addNewColumnToTable'
 import { $addNewRowAtEndOfTable } from './TableUtils/addNewRowToTable'
@@ -178,7 +178,7 @@ export function TableAddButtons({ tableNode }: { tableNode: TableNode }) {
           resetHoverState()
         }}
       >
-        <Icon name="plus" size={3.5} />
+        <IcPlus size={3.5} />
         <div className="sr-only">{c('Action').t`Add new table row`}</div>
       </button>
       <button
@@ -205,7 +205,7 @@ export function TableAddButtons({ tableNode }: { tableNode: TableNode }) {
           resetHoverState()
         }}
       >
-        <Icon name="plus" size={3.5} />
+        <IcPlus size={3.5} />
         <div className="sr-only">{c('Action').t`Add new table column`}</div>
       </button>
     </>
