@@ -246,9 +246,6 @@
       "Continue import": [
         "Continuar importació"
       ],
-      "Continue on web": [
-        "Continueu al web"
-      ],
       "Continue to ${ planOrAppName }": [
         "Continuar amb ${ planOrAppName }"
       ],
@@ -403,9 +400,6 @@
       ],
       "Download anyway": [
         "Baixa igualment"
-      ],
-      "Download app": [
-        "Descarregueu l'aplicació"
       ],
       "Download for Mac": [
         "Descarregueu-ho per Mac"
@@ -1096,9 +1090,6 @@
       ],
       "Try another method": [
         "Proveu amb un altre mètode"
-      ],
-      "Try it now": [
-        "Proveu-ho ara"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Intenteu tornar a desar. No s'ha pogut desar a causa de: ${ saveError }"
@@ -3531,20 +3522,11 @@
       "Failed to update public share node": [
         "No s'ha pogut actualitzar el node de compartició públic"
       ],
-      "File \"${ name }\" is already downloading": [
-        "El fitxer «${ name }» ja s'està descarregant"
-      ],
       "File cannot be merged with folder": [
         "Un fitxer no es pot fusionar amb una carpeta"
       ],
-      "File selection is already downloading": [
-        "La selecció d'arxius ja s'està descarregant"
-      ],
       "First name is too long": [
         "El nom és massa llarg."
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "La carpeta «${ name }»  ja s'està descarregant"
       ],
       "Folder name cannot be empty.": [
         "El nom de la carpeta no pot estar buit."
@@ -5181,9 +5163,6 @@
       "An active recovery file": [
         "Un fitxer de recuperació actiu"
       ],
-      "an anonymous user": [
-        "un usuari anònim"
-      ],
       "An issue occurred during the restore process.": [
         "S'ha produït un error durant el procés de restauració."
       ],
@@ -5294,9 +5273,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Comprovant contacte ${ progress } de ${ max }..."
-      ],
-      "Checking signatures": [
-        "S'estan verificant les signatures"
       ],
       "Choose a plan that works best for you.": [
         "Trieu el pla que se us adapti millor."
@@ -5415,12 +5391,6 @@
       "Details": [
         "Detalls"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "S'ha validat la signatura digital. El fitxer va ser carregat de manera segura per ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "S'ha validat la signatura digital. La carpeta va ser carregada de manera segura per ${ emailAddress }."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Descobriu les noves característiques desbloquejades i comenceu a utilitzar-les de seguida!"
       ],
@@ -5453,9 +5423,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "La descàrrega de ${ downloadFileName } serà cancel·lada"
-      ],
-      "Download was canceled": [
-        "La descàrrega ha estat cancel·lada"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descarregueu la vostra aplicació favorita avui i porteu la privadesa amb vosaltres allà on aneu."
@@ -5566,20 +5533,11 @@
       "Feb": [
         "febr."
       ],
-      "File \"${ name }\" was deleted during download": [
-        "El fitxer «${ name }» s'ha eliminat durant la descarregada"
-      ],
       "File could not be scanned": [
         "No s'ha pogut analitzar el fitxer."
       ],
       "File flagged as potentially malicious": [
         "Fitxer marcat com a potencialment maliciós"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "El fitxer no està signat. No podem verificar que ${ emailAddress } va carregar ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "El fitxer no està signat. No podem verificar qui va carregar ${ fileName }."
       ],
       "File will not be updated": [
         "El fitxer no s'actualitzarà"
@@ -5589,15 +5547,6 @@
       ],
       "finance": [
         "finances"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "La carpeta «${ link.name }» s'ha eliminat durant la descarregada"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "La carpeta no està signada. No podem verificar que ${ emailAddress } va carregar ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "La carpeta no està signada. No podem verificar qui va carregar ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "No es carregarà la carpeta"
@@ -6305,9 +6254,6 @@
       "Shared with you": [
         "Compartit amb vós"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "No es pot validar la signatura a causa d'un error de xarxa. Torneu-ho a provar més tard."
-      ],
       "Signature check will be ignored": [
         "S'ignorarà la comprovació de la signatura"
       ],
@@ -6372,17 +6318,8 @@
       "that": [
         "que"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "És possible que el compte tingui una clau nova o que el següent hagi estat manipulat: ${ items }. Obriu-ho només si hi confieu."
-      ],
       "The albums you create are shown here.": [
         "Els àlbums que creeu es mostren aquí."
-      ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "La signatura digital s'ha verificat parcialment. Aquest fitxer s'ha carregat mitjançant un enllaç compartit accessible públicament per un usuari sense un compte ${ BRAND_NAME }, de manera que no es pot verificar la seva identitat."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "La signatura digital s'ha verificat parcialment. Aquesta carpeta s'ha carregat mitjançant un enllaç compartit accessible públicament per un usuari sense un compte ${ BRAND_NAME }, de manera que no es pot verificar la seva identitat."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "El recompte de descàrregues inclou tant les descàrregues reals com les instàncies en què els fitxers es previsualitzen."
@@ -6392,9 +6329,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "La informació exposada es va filtrar d'un servei de tercers. La informació del vostre compte de ${ BRAND_NAME } continua sent segura i xifrada. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "El següent pot haver estat manipulat: ${ items }. Obriu-ho només si hi confieu."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
@@ -6695,12 +6629,6 @@
       "We couldn’t process your payment.": [
         "No hem pogut processar el vostre pagament."
       ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "No podem verificar que ${ emailAddress } va carregar ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "No podem verificar qui va carregar ${ fileName }."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Hem d'autenticar el vostre mètode de pagament amb el banc."
       ],
@@ -6912,9 +6840,6 @@
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
         "El vostre navegador s'ha quedat sense espai mentre s'indexaven els fitxers per a la cerca. Allibereu espai d'emmagatzematge i després reconstruïu l'índex."
       ],
-      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
-        "El vostre navegador actual no permet la descàrrega de múltiples fitxers o molt grans. Baixeu l'aplicació d'escriptori per poder-ho fer."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Les vostres dades estan a punt per ser importades des de ${ importedEmailAddressStrong } al vostre compte de ${ BRAND_NAME }."
       ],
@@ -7041,32 +6966,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Només lectura"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "atributs del fitxer"
-      ],
-      "file data": [
-        "dades del fitxer"
-      ],
-      "file data key": [
-        "clau de dades del fitxer"
-      ],
-      "file data order": [
-        "ordre de les dades del fitxer"
-      ],
-      "hash key": [
-        "clau hash"
-      ],
-      "keys": [
-        "claus"
-      ],
-      "name": [
-        "nom"
-      ],
-      "thumbnail": [
-        "miniatura"
       ]
     },
     "Key badge": {
@@ -11950,9 +11849,6 @@
       "Albums you've shared will appear here": [
         "Els àlbums que heu compartit apareixeran aquí."
       ],
-      "Securely share your favorite moments with friends and family using Albums.": [
-        "Compartiu de manera segura els vostres moments preferits amb amics i familiars amb els àlbums."
-      ],
       "Shared by ${ sharedBy }": [
         "Compartit per ${ sharedBy }"
       ],
@@ -12323,9 +12219,6 @@
       "Birthday": [
         "Aniversari"
       ],
-      "Browser might run out of memory": [
-        "És possible que el navegador arribi al límit de memòria"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancel·la la subscripció de ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -12529,9 +12422,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Passar a ${ downgradedPlanName }?"
-      ],
-      "Download ${ date }": [
-        "Descarrega ${ date }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descarregueu aplicacions de ${ DRIVE_APP_NAME }"
@@ -12876,9 +12766,6 @@
       ],
       "Phone numbers": [
         "Números de telèfon"
-      ],
-      "Photo albums are here!": [
-        "Aquí teniu els àlbums de fotos"
       ],
       "Photos": [
         "Fotos"

@@ -237,9 +237,6 @@
       "Continue import": [
         "사용자 지정 설정값으로 계속하기"
       ],
-      "Continue on web": [
-        "웹에서 계속"
-      ],
       "Continue to ${ planOrAppName }": [
         "${ planOrAppName }(으)로 계속하기"
       ],
@@ -389,9 +386,6 @@
       ],
       "Download anyway": [
         "무시하고 다운로드"
-      ],
-      "Download app": [
-        "앱 다운로드"
       ],
       "Download for Mac": [
         "Mac용 다운로드"
@@ -1067,9 +1061,6 @@
       ],
       "Try another method": [
         "다른 방법 시도"
-      ],
-      "Try it now": [
-        "지금 체험하기"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "다시 저장해보세요. 이 이유로 저장을 실패했습니다: ${ saveError }"
@@ -3455,20 +3446,11 @@
       "Failed to update public share node": [
         "공개 공유 노드 업데이트 실패"
       ],
-      "File \"${ name }\" is already downloading": [
-        "\"${ name }\" 파일은 이미 다운로드 중입니다"
-      ],
       "File cannot be merged with folder": [
         "파일을 폴더와 병합할 수 없음"
       ],
-      "File selection is already downloading": [
-        "선택한 파일이 이미 다운로드 중입니다"
-      ],
       "First name is too long": [
         "이름이 너무 깁니다."
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "\"${ name }\" 폴더는 이미 다운로드 중입니다"
       ],
       "Folder name cannot be empty.": [
         "폴더 이름은 비워둘 수 없습니다."
@@ -5016,9 +4998,6 @@
       "An active recovery file": [
         "활성 복구 파일"
       ],
-      "an anonymous user": [
-        "익명의 사용자"
-      ],
       "An issue occurred during the restore process.": [
         "복구 과정에서 문제가 발생했습니다."
       ],
@@ -5130,9 +5109,6 @@
       "Checking contact ${ progress } of ${ max }...": [
         "연락처 확인 중 ${ max } 중 ${ progress }..."
       ],
-      "Checking signatures": [
-        "서명 확인 중"
-      ],
       "Choose a plan that works best for you.": [
         "당신에게 가장 적합한 플랜을 선택하세요."
       ],
@@ -5241,12 +5217,6 @@
       "Details": [
         "세부 사항"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "디지털 서명이 인증되었습니다. 이 파일은 ${ emailAddress }에 의해 안전하게 업로드되었습니다."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "디지털 서명이 인증되었습니다. 이 폴더는 ${ emailAddress }에 의해 안전하게 업로드되었습니다."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "잠금해제된 새 기능들을 둘러보고 바로 사용해보세요!"
       ],
@@ -5279,9 +5249,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName }의 다운로드가 중단됩니다"
-      ],
-      "Download was canceled": [
-        "다운로드가 취소되었습니다."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "오늘 회원님이 선호하는 앱을 다운로드하여 언제 어디서나 프라이버시를 유지해 보세요."
@@ -5388,15 +5355,6 @@
       "Feb": [
         "2월"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "파일 \"${ name }\"는 다은로드 도중 삭제되었습니다"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "파일에 서명이 없습니다. ${ emailAddress }가 ${ fileName } 를 업로드했는지 인증할 수 없습니다."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "파일에 서명이 없습니다. 누가 ${ fileName }을(를) 업로드했는지 인증할 수 없습니다."
-      ],
       "File will not be updated": [
         "파일이 업로드되지 않습니다"
       ],
@@ -5405,15 +5363,6 @@
       ],
       "finance": [
         "금융정보"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "폴더 \"${ link.name }\"가 다운로드 도중에 삭제되었습니다"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "폴더에 서명이 없습니다. ${ emailAddress }가 ${ fileName } 를 업로드했는지 인증할 수 없습니다."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "폴더에 서명이 없습니다. 누가 ${ fileName }을(를) 업로드했는지 인증할 수 없습니다."
       ],
       "Folder will not be uploaded": [
         "폴더가 업로드되지 않습니다"
@@ -6057,9 +6006,6 @@
       "Shared with you": [
         "나와 공유됨"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "네트워크 오류로 인해 서명을 확인할 수 없습니다. 나중에 다시 시도하세요."
-      ],
       "Signature check will be ignored": [
         "서명 확인이 무시됩니다"
       ],
@@ -6123,17 +6069,8 @@
       "that": [
         "그"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "이 계정이 새 키를 가지고 있거나, 다음이 변조되었을 수 있습니다: ${ items }. 신뢰할 수 있는 경우에만 여십시오."
-      ],
       "The albums you create are shown here.": [
         "생성한 앨범이 여기에 나타납니다."
-      ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "디지털 서명이 부분적으로 인증되었습니다. 이 파일은 ${ BRAND_NAME } 계정이 없는 사용자가 공개적으로 접근할 수 있는 공유 링크를 사용하여 업로드했기 때문에 신원을 확인할 수 없습니다."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "디지털 서명이 부분적으로 인증되었습니다. 이 폴더는 ${ BRAND_NAME } 계정이 없는 사용자가 공개적으로 접근할 수 있는 공유 링크를 사용하여 업로드했기 때문에 신원을 확인할 수 없습니다."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "다운로드 횟수에는 실제 다운로드와 파일을 미리보는 경우도 포함됩니다."
@@ -6143,9 +6080,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "노출된 정보가 서드 파티 서비스에서 유출되었습니다. 사용자의 ${ BRAND_NAME } 계정 정보는 안전하고 암호화 상태로 유지됩니다. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "다음은 변조되었을 수 있습니다: ${ items }. 신뢰할 수 있는 경우에만 여십시오."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "이 주소의 주인이 종단 간 암호화를 비활성화 시켰습니다. 따라서 이 주소로 암호화된 이메일을 보내려면, 해당 주소 주인이 종단 간 암호화 재활성화를 해야합니다."
@@ -6429,12 +6363,6 @@
       "We couldn’t process your payment.": [
         "결제를 처리할 수 없습니다."
       ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "${ emailAddress }가 ${ fileName }을(를) 업로드했는지 인증할 수 없습니다."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "누가 ${ fileName }을(를) 업로드했는지 인증할 수 없습니다."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "은행의 결제 수단 인증이 필요합니다."
       ],
@@ -6633,9 +6561,6 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "사용자의 계정에 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 현재 선택한 플랜에서는 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 플랜을 선택하십시오."
       ],
-      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
-        "현재 사용중인 브라우저는 대용량 파일/복수의 파일 다운로드를 지원하지 않습니다. 매끄러운 업로드 및 다운로드를 위해 데스크톱 앱을 내려받으세요."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "${ importedEmailAddressStrong }(에)서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 완료되었습니다."
       ],
@@ -6759,32 +6684,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "보기 전용"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "파일 속성"
-      ],
-      "file data": [
-        "파일 데이터"
-      ],
-      "file data key": [
-        "파일 데이터 키"
-      ],
-      "file data order": [
-        "파일 데이터 가져오기"
-      ],
-      "hash key": [
-        "해시 키"
-      ],
-      "keys": [
-        "키"
-      ],
-      "name": [
-        "이름"
-      ],
-      "thumbnail": [
-        "섬네일"
       ]
     },
     "Key badge": {
@@ -11435,9 +11334,6 @@
       "Albums you've shared will appear here": [
         "내가 공유한 앨범이 여기에 표시됩니다"
       ],
-      "Securely share your favorite moments with friends and family using Albums.": [
-        "앨범을 사용하여 소중한 순간들을 친구나 가족과 안전하게 공유해 보세요."
-      ],
       "Shared by ${ sharedBy }": [
         "${ sharedBy }님에 의해 공유됨"
       ],
@@ -11797,9 +11693,6 @@
       "Birthday": [
         "생일"
       ],
-      "Browser might run out of memory": [
-        "브라우저의 메모리가 부족할 수 있음"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } 구독 취소"
       ],
@@ -11997,9 +11890,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "${ downgradedPlanName }(으)로 다운그래이드?"
-      ],
-      "Download ${ date }": [
-        "${ date } 다운로드"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } 앱 다운로드"
@@ -12336,9 +12226,6 @@
       ],
       "Phone numbers": [
         "전화번호"
-      ],
-      "Photo albums are here!": [
-        "사진 앨범을 만나보세요!"
       ],
       "Photos": [
         "사진"

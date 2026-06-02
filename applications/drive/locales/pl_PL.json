@@ -234,9 +234,6 @@
       "Continue import": [
         "Kontynuuj importowanie"
       ],
-      "Continue on web": [
-        "Przejdź do strony internetowej"
-      ],
       "Continue transfers": [
         "Kontynuuj listę transferów"
       ],
@@ -383,9 +380,6 @@
       ],
       "Download anyway": [
         "Pobierz mimo to"
-      ],
-      "Download app": [
-        "Pobierz aplikację"
       ],
       "Download info": [
         "Pobierz informacje"
@@ -1007,9 +1001,6 @@
       ],
       "Try another method": [
         "Użyj innej metody"
-      ],
-      "Try it now": [
-        "Wypróbuj teraz"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Spróbuj zapisać ponownie. Zapisanie nie powiodło się: ${ saveError }"
@@ -3119,20 +3110,11 @@
       "Failed to update public share node": [
         "Nie udało się zaktualizować publicznego węzła udostępniania"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Pobieranie pliku \"${ name }\""
-      ],
       "File cannot be merged with folder": [
         "Plik nie może zostać scalony z folderem"
       ],
-      "File selection is already downloading": [
-        "Pobieranie zaznaczonych plików"
-      ],
       "First name is too long": [
         "Imię jest zbyt długie"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Pobieranie folderu \"${ name }\""
       ],
       "Folder name cannot be empty.": [
         "Nazwa folderu nie może być pusta."
@@ -4699,9 +4681,6 @@
       "An active recovery file": [
         "Aktywny plik odzyskiwania"
       ],
-      "an anonymous user": [
-        "anonimowy użytkownik"
-      ],
       "An issue occurred during the restore process.": [
         "Wystąpił błąd podczas procesu przywracania."
       ],
@@ -4788,9 +4767,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Sprawdzanie kontaktów... (${ progress } z ${ max })"
-      ],
-      "Checking signatures": [
-        "Sprawdzanie podpisów"
       ],
       "Clear data": [
         "Usuń dane"
@@ -4891,12 +4867,6 @@
       "Details": [
         "Szczegóły"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Podpis cyfrowy został zweryfikowany. Plik został bezpiecznie przesłany przez ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Podpis cyfrowy został zweryfikowany. Folder został bezpiecznie przesłany przez adres ${ emailAddress }."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Poznaj nowe funkcje i zacznij z nich korzystać!"
       ],
@@ -4926,9 +4896,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Pobieranie pliku ${ downloadFileName } zostało przerwane"
-      ],
-      "Download was canceled": [
-        "Pobieranie zostało anulowane"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Pobierz swoją ulubioną aplikację i ciesz się prywatnością, gdziekolwiek jesteś."
@@ -5029,15 +4996,6 @@
       "Feb": [
         "Lut"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "Plik \"${ name }\" został usunięty podczas pobierania"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Brak podpisu pliku. Nie możemy zweryfikować, czy adres ${ emailAddress } przesłał plik ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Brak podpisu pliku. Nie możemy zweryfikować, kto przesłał plik ${ fileName }."
-      ],
       "File will not be updated": [
         "Plik nie zostanie zaktualizowany"
       ],
@@ -5046,15 +5004,6 @@
       ],
       "finance": [
         "finanse"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "Folder \"${ link.name }\" został usunięty podczas pobierania"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Brak podpisu folderu. Nie możemy zweryfikować, czy adres ${ emailAddress } przesłał plik ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Brak podpisu folderu. Nie możemy zweryfikować, kto przesłał plik ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Folder nie zostanie przesłany"
@@ -5647,9 +5596,6 @@
       "Shared with you": [
         "Udostępnione Tobie"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Podpis nie może zostać zweryfikowany z powodu błędu sieci. Spróbuj ponownie później."
-      ],
       "Signature check will be ignored": [
         "Sprawdzanie podpisu zostanie pominięte"
       ],
@@ -5713,17 +5659,8 @@
       "that": [
         "ten"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Konto może mieć nowy klucz lub poniższe elementy mogły zostać naruszone: ${ items }. Otwórz te elementy tylko wtedy, kiedy masz do nich zaufanie."
-      ],
       "The albums you create are shown here.": [
         "Utworzone albumy pojawią się tutaj."
-      ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Podpis cyfrowy został częściowo zweryfikowany. Plik został przesłany z linku publicznego przez użytkownika bez konta ${ BRAND_NAME }, który nie określa tożsamości właściciela."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Podpis cyfrowy został częściowo zweryfikowany. Folder został przesłany z linku publicznego przez użytkownika bez konta ${ BRAND_NAME }, który nie określa tożsamości właściciela."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Liczba pobrań obejmuje rzeczywiste pobrania i podgląd plików."
@@ -5733,9 +5670,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Twoje informacje zostały ujawnione przez usługi stron trzecich. Informacje konta ${ BRAND_NAME } pozostają bezpieczne i zaszyfrowane. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Poniższe elementy mogły zostać naruszone: ${ items }. Otwórz te elementy tylko wtedy, kiedy masz do nich zaufanie."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Właściciel adresu wyłączył szyfrowanie end-to-end. Aby móc wysyłać wiadomości zaszyfrowane na ten adres, właściciel musi ponownie włączyć szyfrowanie end-to-end."
@@ -5986,12 +5920,6 @@
       "We couldn’t process your payment.": [
         "Nie mogliśmy przetworzyć płatności."
       ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Nie możemy zweryfikować, czy adres ${ emailAddress } przesłał plik ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Nie możemy zweryfikować, kto przesłał plik ${ fileName }."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Musimy zweryfikować metodę płatności z Twoim bankiem."
       ],
@@ -6181,9 +6109,6 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Twoje konto posiada zaległe faktury. Dostęp do konta zostanie wkrótce ograniczony. ${ payInvoiceLink }"
       ],
-      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
-        "Twoja przeglądarka nie obsługuje pobierania dużych plików / wielu plików. Pobierz aplikację desktopową, aby zapewnić płynne przesyłanie i pobieranie plików."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dane z konta ${ importedEmailAddressStrong } są gotowe do zaimportowania do konta ${ BRAND_NAME }."
       ],
@@ -6310,32 +6235,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Tylko do odczytu"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "atrybuty pliku"
-      ],
-      "file data": [
-        "dane pliku"
-      ],
-      "file data key": [
-        "dane pliku klucza"
-      ],
-      "file data order": [
-        "kolejność danych pliku"
-      ],
-      "hash key": [
-        "kryptograficzny skrót klucza"
-      ],
-      "keys": [
-        "klucze"
-      ],
-      "name": [
-        "nazwa"
-      ],
-      "thumbnail": [
-        "podgląd"
       ]
     },
     "Key badge": {
@@ -10780,9 +10679,6 @@
       "Albums you've shared will appear here": [
         "Udostępnione albumy pojawią się tutaj"
       ],
-      "Securely share your favorite moments with friends and family using Albums.": [
-        "Bezpiecznie udostępniaj swoje ulubione chwile znajomym i rodzinie za pomocą albumów."
-      ],
       "Your favorited photos will appear here": [
         "Ulubione zdjęcia pojawią się tutaj"
       ],
@@ -11166,9 +11062,6 @@
       "Birthday": [
         "Urodziny"
       ],
-      "Browser might run out of memory": [
-        "Brak pamięci przeglądarki"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Anuluj subskrypcję ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -11354,9 +11247,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Obniżyć plan do wersji ${ downgradedPlanName }?"
-      ],
-      "Download ${ date }": [
-        "Pobierz ${ date }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Pobierz aplikacje ${ DRIVE_APP_NAME }"
@@ -11672,9 +11562,6 @@
       ],
       "Phone numbers": [
         "Numery telefonów"
-      ],
-      "Photo albums are here!": [
-        "Albumy są tutaj!"
       ],
       "Photos": [
         "Zdjęcia"
