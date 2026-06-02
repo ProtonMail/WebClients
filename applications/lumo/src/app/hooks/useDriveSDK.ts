@@ -9,7 +9,7 @@ import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import config from '../config';
 import { useIsGuest } from '../providers/IsGuestProvider';
-import { getNodeEntity, logging } from '../util/driveSdk';
+import { getNodeEntity } from '../util/driveSdk';
 
 let hasInitialized = false;
 
@@ -549,7 +549,6 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized
                     appName: config.APP_NAME,
                     appVersion: config.APP_VERSION,
                     userPlan,
-                    logging,
                 });
             } catch {
                 // Drive SDK may already be configured (e.g. after HMR) — not fatal
