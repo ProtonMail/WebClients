@@ -14,6 +14,9 @@
       "Add another account": [
         "Voeg een account toe"
       ],
+      "Allow access": [
+        "Toegang verlenen"
+      ],
       "Assign ${ selectedParticipantName } as host": [
         "Wijs ${ selectedParticipantName } aan als host"
       ],
@@ -262,9 +265,6 @@
       ],
       "Request new code": [
         "Nieuwe code aanvragen"
-      ],
-      "Request permissions": [
-        "Machtiging aanvragen"
       ],
       "Resend code": [
         "Verstuur code opnieuw"
@@ -2223,9 +2223,6 @@
       "This will sign you out of all accounts currently logged in.": [
         "Dit zal u uitloggen uit alle accounts die momenteel zijn ingelogd."
       ],
-      "To be seen in the call, allow access to your camera.": [
-        "Om tijdens het gesprek zichtbaar te zijn, moet u toegang tot uw camera toestaan."
-      ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Om een ruimte aan te maken, hebt u **een gratis ${ BRAND_NAME } Account** nodig, zodat we de ruimte kunnen opslaan. Dit duurt slechts enkele seconden."
       ],
@@ -2234,12 +2231,6 @@
       ],
       "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
         "Om een afspraak in te plannen, hebt u **een gratis ${ BRAND_NAME } Account** nodig, zodat we de afspraak kunnen opslaan. Dit duurt slechts enkele seconden."
-      ],
-      "To speak and be seen in the call, allow access to your camera and microphone.": [
-        "Om tijdens het gesprek te kunnen spreken en gezien te worden, moet u toegang tot uw camera en microfoon toestaan."
-      ],
-      "To speak in the call, allow access to your microphone.": [
-        "Om deel te nemen aan het gesprek, moet u toegang tot uw microfoon verlenen."
       ],
       "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
         "Om uw persoonlijke vergaderruimte te gebruiken, hebt u **een gratis ${ BRAND_NAME } Account** nodig. Dit duurt slechts enkele seconden."
@@ -2858,12 +2849,6 @@
       "Available Speakers": [
         "Beschikbare luidsprekers"
       ],
-      "Camera access needed": [
-        "Toegang tot camera nodig"
-      ],
-      "Camera and microphone access needed": [
-        "Toegang tot camera en microfoon vereist"
-      ],
       "Camera and microphone are blocked": [
         "Camera en microfoon zijn geblokkeerd."
       ],
@@ -2948,9 +2933,6 @@
       ],
       "Messaging Layer Security": [
         "Messaging Layer Security"
-      ],
-      "Microphone access needed": [
-        "Toegang tot een microfoon is vereist"
       ],
       "Microphone is blocked": [
         "Microfoon is geblokkeerd."

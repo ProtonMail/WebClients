@@ -14,6 +14,9 @@
       "Add another account": [
         "Başka bir hesap ekle"
       ],
+      "Allow access": [
+        "Erişime izin ver"
+      ],
       "Assign ${ selectedParticipantName } as host": [
         "${ selectedParticipantName } katılımcısını görüşme sahibi olarak ata"
       ],
@@ -262,9 +265,6 @@
       ],
       "Request new code": [
         "Yeni kod iste"
-      ],
-      "Request permissions": [
-        "İzinleri iste"
       ],
       "Resend code": [
         "Kodu yeniden gönder"
@@ -1736,6 +1736,15 @@
       "${ maxParticipants } participant limit reached": [
         "${ maxParticipants } katılımcı sınırına ulaşıldı"
       ],
+      "${ MEET_APP_NAME } needs access so others can see and hear you during the call. You can turn your camera or microphone off at any time.": [
+        "Görüşme sırasında diğerlerinin sizi görebilmesi ve duyabilmesi için ${ MEET_APP_NAME } uygulamasına erişim izni vermeniz gerekiyor. Kameranızı veya mikrofonunuzu istediğiniz zaman kapatabilirsiniz."
+      ],
+      "${ MEET_APP_NAME } needs camera access so others can see you during the call. You can turn it off at any time.": [
+        "Görüşme sırasında diğerlerinin sizi görebilmesi için ${ MEET_APP_NAME } uygulamasının kamera erişimine ihtiyacı var. Bunu istediğiniz zaman kapatabilirsiniz."
+      ],
+      "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
+        "Görüşme sırasında diğerlerinin sizi duyabilmesi için ${ MEET_APP_NAME } uygulamasının mikrofon erişimine ihtiyacı var. Bunu istediğiniz zaman kapatabilirsiniz."
+      ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } uygulamasının çalışması için WebRTC gereklidir. Lütfen tarayıcınızı veya aygıtınızı WebRTC hizmetini destekleyen bir sürüme güncelleyin, farklı bir tarayıcı kullanmayı deneyin veya hizmeti engelleyebilecek tüm eklentileri kapatın."
       ],
@@ -2235,9 +2244,6 @@
       "This will sign you out of all accounts currently logged in.": [
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
       ],
-      "To be seen in the call, allow access to your camera.": [
-        "Görüşmede görünmek için kameranıza erişme izni verin."
-      ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Bir oda oluştururken oda bilgilerini kaydedebilmemiz için **bir ücretsiz ${ BRAND_NAME } hesabı** açmalısınız. Bu işlem yalnızca birkaç saniye sürer."
       ],
@@ -2246,12 +2252,6 @@
       ],
       "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
         "Bir etkinlik zamanlarken, etkinlik bilgilerini kaydedebilmemiz için **bir ücretsiz ${ BRAND_NAME } hesabı** açmalısınız. Bu işlem yalnızca birkaç saniye sürer."
-      ],
-      "To speak and be seen in the call, allow access to your camera and microphone.": [
-        "Görüşmede konuşabilmek ve görünebilmek için kameranıza ve mikrofonunuza erişme izni verin."
-      ],
-      "To speak in the call, allow access to your microphone.": [
-        "Görüşmede konuşabilmek için mikrofonunuza erişme izni verin."
       ],
       "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
         "Kişisel toplantı odanızı kullanmak için **bir ücretsiz ${ BRAND_NAME } hesabı** açmalısınız. Bu işlem yalnızca birkaç saniye sürer."
@@ -2852,6 +2852,15 @@
       "Activity events": [
         "Etkinlik olayları"
       ],
+      "Allow camera ": [
+        "Kameraya izin ver "
+      ],
+      "Allow camera and microphone": [
+        "Kamera ve mikrofona izin ver"
+      ],
+      "Allow microphone": [
+        "Mikrofona izin ver"
+      ],
       "Are you sure?": [
         "Emin misiniz?"
       ],
@@ -2869,12 +2878,6 @@
       ],
       "Available Speakers": [
         "Uygun konuşmacılar"
-      ],
-      "Camera access needed": [
-        "Kameraya erişme izni gerekli"
-      ],
-      "Camera and microphone access needed": [
-        "Kameraya ve mikrofona erişme izni gerekli"
       ],
       "Camera and microphone are blocked": [
         "Kamera ve mikrofon engellendi"
@@ -2960,9 +2963,6 @@
       ],
       "Messaging Layer Security": [
         "İletişim katmanı güvenliği"
-      ],
-      "Microphone access needed": [
-        "Mikrofona erişme izni gerekli"
       ],
       "Microphone is blocked": [
         "Mikrofon engellendi"

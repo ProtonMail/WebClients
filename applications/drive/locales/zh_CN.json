@@ -243,9 +243,6 @@
       "Continue import": [
         "继续导入"
       ],
-      "Continue on web": [
-        "在网页版继续"
-      ],
       "Continue to ${ planOrAppName }": [
         "继续使用 ${ planOrAppName }"
       ],
@@ -398,9 +395,6 @@
       ],
       "Download anyway": [
         "仍要下载"
-      ],
-      "Download app": [
-        "下载应用程序"
       ],
       "Download for Mac": [
         "下载 Mac 版"
@@ -1091,9 +1085,6 @@
       ],
       "Try another method": [
         "更换验证方式"
-      ],
-      "Try it now": [
-        "立即试用"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "保存失败，请重试。失败原因：${ saveError }"
@@ -3506,20 +3497,11 @@
       "Failed to update public share node": [
         "更新公开共享节点失败"
       ],
-      "File \"${ name }\" is already downloading": [
-        "文件“${ name }”已在下载中"
-      ],
       "File cannot be merged with folder": [
         "文件无法与文件夹合并"
       ],
-      "File selection is already downloading": [
-        "所选文件已在下载中"
-      ],
       "First name is too long": [
         "名字太长。"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "文件夹“${ name }”已在下载中"
       ],
       "Folder name cannot be empty.": [
         "文件夹名称不能为空。"
@@ -5103,9 +5085,6 @@
       "An active recovery file": [
         "一个激活的恢复文件"
       ],
-      "an anonymous user": [
-        "匿名用户"
-      ],
       "An issue occurred during the restore process.": [
         "恢复过程中出现问题。"
       ],
@@ -5216,9 +5195,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "正在检查联系人 ${ progress } / ${ max }..."
-      ],
-      "Checking signatures": [
-        "正在检查签名"
       ],
       "Choose a plan that works best for you.": [
         "选择一个最适合您的套餐。"
@@ -5334,12 +5310,6 @@
       "Details": [
         "详细信息"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "数字签名已验证，此文件是由 ${ emailAddress } 用户安全上传。"
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "数字签名已验证，此文件夹是由 ${ emailAddress } 用户安全上传。"
-      ],
       "Discover new features unlocked and start using them right away!": [
         "发现解锁的新功能，并立即开始使用！"
       ],
@@ -5372,9 +5342,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } 的下载进程将被中止"
-      ],
-      "Download was canceled": [
-        "已取消下载"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "即刻下载您所需的应用，随时随地保护隐私。"
@@ -5484,20 +5451,11 @@
       "Feb": [
         "二月"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "文件“${ name }”在下载过程中被删除"
-      ],
       "File could not be scanned": [
         "无法扫描文件"
       ],
       "File flagged as potentially malicious": [
         "文件被标记为潜在恶意软件"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "文件缺少签名，我们无法验证 ${ fileName } 由 ${ emailAddress } 上传。"
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "文件缺少签名，我们无法验证 ${ fileName } 由谁上传。"
       ],
       "File will not be updated": [
         "文件不会被更新"
@@ -5507,15 +5465,6 @@
       ],
       "finance": [
         "金融"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "文件夹“${ link.name }”在下载过程中被删除"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "文件夹缺少签名，我们无法验证 ${ fileName } 由 ${ emailAddress } 上传。"
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "文件夹缺少签名，我们无法验证 ${ fileName } 由谁上传。"
       ],
       "Folder will not be uploaded": [
         "文件夹将不会上传"
@@ -6216,9 +6165,6 @@
       "Shared with you": [
         "与您共享"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "由于网络错误，无法验证签名，请稍后重试。"
-      ],
       "Signature check will be ignored": [
         "将忽略签名校验"
       ],
@@ -6282,17 +6228,8 @@
       "that": [
         "那个"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "该账户可能有一个新密钥，或是以下内容可能已被篡改：${ items }。请务必在信任的情况下打开。"
-      ],
       "The albums you create are shown here.": [
         "您创建的相册将在此显示."
-      ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "数字签名已部分验证。该文件是由一个没有 ${ BRAND_NAME } 账户的用户使用可公开访问的共享链接上传的，因此无法验证其身份。"
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "数字签名已部分验证。该文件夹是由一个没有 ${ BRAND_NAME } 账户的用户使用可公开访问的共享链接上传的，因此无法验证其身份。"
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "下载次数是在线预览和实际下载的总次数。"
@@ -6302,9 +6239,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "所暴露的信息是从第三方服务泄露的。您的 ${ BRAND_NAME } 账户信息仍然安全且被加密。${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "以下内容可能已被篡改：${ items }，请确认后打开。"
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "此收件人已停用端到端加密。要能够向此收件人发送加密电子邮件，该收件人必须重新启用端到端加密。"
@@ -6603,12 +6537,6 @@
       "We couldn’t process your payment.": [
         "我们未能处理您的支付。"
       ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "我们无法验证 ${ fileName } 由 ${ emailAddress } 上传。"
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "无法验证 ${ fileName } 的上传者。"
-      ],
       "We need to authenticate your payment method with your bank.": [
         "我们需要向您的发卡银行核实支付方式是否有效。"
       ],
@@ -6813,9 +6741,6 @@
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
         "浏览器在索引文件以进行搜索时空间不足。请释放存储空间，然后重建索引。"
       ],
-      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
-        "您当前的浏览器不支持下载大型文件/多个文件，请下载桌面应用程序以获得流畅的上传和下载体验。"
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的数据可以从 ${ importedEmailAddressStrong } 导入 ${ BRAND_NAME } 账户了。"
       ],
@@ -6939,32 +6864,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "仅查看"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "文件属性"
-      ],
-      "file data": [
-        "文件数据"
-      ],
-      "file data key": [
-        "文件数据密钥"
-      ],
-      "file data order": [
-        "文件数据顺序"
-      ],
-      "hash key": [
-        "散列密钥"
-      ],
-      "keys": [
-        "密钥"
-      ],
-      "name": [
-        "名称"
-      ],
-      "thumbnail": [
-        "缩略图"
       ]
     },
     "Key badge": {
@@ -11671,9 +11570,6 @@
       "Albums you've shared will appear here": [
         "您分享的相册将在此处显示"
       ],
-      "Securely share your favorite moments with friends and family using Albums.": [
-        "使用相册安全地与朋友和家人分享您最喜欢的时刻。"
-      ],
       "Shared by ${ sharedBy }": [
         "由 ${ sharedBy } 共享"
       ],
@@ -12033,9 +11929,6 @@
       "Birthday": [
         "生日"
       ],
-      "Browser might run out of memory": [
-        "浏览器可能内存不足"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "取消 ${ MAIL_SHORT_APP_NAME } 订阅"
       ],
@@ -12236,9 +12129,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "降级至 ${ downgradedPlanName }?"
-      ],
-      "Download ${ date }": [
-        "下载 ${ date }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "下载 ${ DRIVE_APP_NAME } 应用"
@@ -12581,9 +12471,6 @@
       ],
       "Phone numbers": [
         "电话号码"
-      ],
-      "Photo albums are here!": [
-        "相册在这里！"
       ],
       "Photos": [
         "照片"

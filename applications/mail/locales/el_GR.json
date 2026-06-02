@@ -4145,14 +4145,11 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Βοηθήστε την ομάδα σας να αποθηκεύει με ασφάλεια κωδικούς πρόσβασης σε ευαίσθητες επιχειρηματικές και πελατειακές πληροφορίες."
       ],
-      "If you find an email in the wrong category, simply move it to the correct one.": [
-        "Αν βρείτε ένα μήνυμα σε λάθος κατηγορία, απλώς μετακινήστε το στη σωστή."
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Εάν ένα μήνυμα εμφανίζεται σε λάθος κατηγορία, απλώς μετακινήστε το στη σωστή. Κάντε δεξί κλικ σε ένα μήνυμα για να επιλέξετε μια νέα κατηγορία ή σύρετέ το και αποθέστε το εκεί που ανήκει."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Φαίνεται ότι η λίστα επαφών που εισάγετε περιέχει κάποιες ομάδες. Παρακαλούμε εξετάστε τον τρόπο εισαγωγής αυτών των ομάδων."
-      ],
-      "It’s still learning and we need your help to improve categorization.": [
-        "Ακόμα μαθαίνει και χρειαζόμαστε τη βοήθειά σας για να βελτιώσουμε την κατηγοριοποίηση."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Σας επιτρέπει να προσθέτετε άμεσα συνδέσμους συσκέψεων στις προσκλήσεις εκδηλώσεων."
@@ -4315,9 +4312,6 @@
       "Your account and data recovery methods are set.": [
         "Οι μέθοδοι ανάκτησης του λογαριασμού και των δεδομένων σας έχουν οριστεί."
       ],
-      "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
-        "Οι διορθώσεις σας θα διαμορφώσουν την προεπιλεγμένη εμπειρία για όλους, και κατά την έκδοση θα θυμάται επίσης τις προτιμήσεις σας στο μέλλον!"
-      ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
         "Ο δωρεάν λογαριασμός σας ${ MAIL_APP_NAME } διαθέτει περιορισμένο αποθηκευτικό χώρο, επομένως θα εισάγουμε μόνο ${ newUserStorageText } από τα πιο πρόσφατα μηνύματά σας στο Gmail"
       ],
@@ -4332,8 +4326,8 @@
         "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διεύθυνση Gmail",
         "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διευθύνσεις Gmail"
       ],
-      "You’re among the first to try email categories.": [
-        "Είστε από τους πρώτους που δοκιμάζουν κατηγορίες ηλεκτρονικών μηνυμάτων."
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Είστε από τους πρώτους που θα δοκιμάσουν τη νέα μας προβολή κατηγοριών πριν κυκλοφορήσει. Τα σχόλιά σας θα βοηθήσουν στη βελτίωση του τρόπου με τον οποίο το Proton Mail ταξινομεί τα ηλεκτρονικά μηνύματα για όλους."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
@@ -5827,9 +5821,6 @@
       "Reset": [
         "Επαναφορά"
       ],
-      "Show": [
-        "Εμφάνιση"
-      ],
       "Unread": [
         "Μη αναγνωσμένα"
       ]
@@ -5900,28 +5891,6 @@
       ],
       "Filter ${ Filter.Name } updated": [
         "Το φίλτρο ${ Filter.Name } ενημερώθηκε"
-      ]
-    },
-    "Filter option": {
-      "All": [
-        "Όλες"
-      ],
-      "Hide moved message": [
-        "Απόκρυψη μηνυματων που έχουν ήδη μεταφερθεί"
-      ],
-      "Read": [
-        "Διαβασμένα"
-      ],
-      "Show moved message": [
-        "Εμφάνιση μηνυματων που έχουν ήδη μεταφερθεί"
-      ],
-      "Unread": [
-        "Μη διαβασμένα"
-      ]
-    },
-    "Filter option to only show message with attachments": {
-      "Has attachments": [
-        "Με συνημμένα"
       ]
     },
     "Filter preview": {
@@ -9825,9 +9794,6 @@
       ],
       "Mail Server (IMAP)": [
         "Διακομιστής Αλληλογραφίας (IMAP)"
-      ],
-      "Mailing list": [
-        "Λίστα αλληλογραφίας"
       ],
       "Main": [
         "Κύριο"
@@ -15342,9 +15308,6 @@
       "Download the app": [
         "Λήψη της εφαρμογής"
       ],
-      "Early access to email categories": [
-        "Πρώιμη πρόσβαση σε κατηγορίες ηλεκτρονικών μηνυμάτων"
-      ],
       "Edit billing address": [
         "Επεξεργασία διεύθυνσης χρέωσης"
       ],
@@ -15449,6 +15412,9 @@
       ],
       "Help center": [
         "Κέντρο βοήθειας"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Βοηθήστε στη διαμόρφωση του μέλλοντος των κατηγοριών ηλεκτρονικών μηνυμάτων στο ${ MAIL_APP_NAME }"
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Κρύψτε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας με το ${ PASS_APP_NAME }"
@@ -15919,12 +15885,6 @@
       ],
       "Snooze:": [
         "Αναβολή:"
-      ],
-      "Sort conversations": [
-        "Ταξινόμηση συνομιλιών"
-      ],
-      "Sort messages": [
-        "Ταξινόμηση μηνυμάτων"
       ],
       "Start a new import": [
         "Ξεκινήστε μια νέα εισαγωγή"

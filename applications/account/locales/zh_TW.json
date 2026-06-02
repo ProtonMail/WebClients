@@ -430,6 +430,9 @@
       "Delete user": [
         "刪除使用者"
       ],
+      "Delete without exporting": [
+        "刪除且略過匯出"
+      ],
       "Delete your account": [
         "刪除您的帳號"
       ],
@@ -582,6 +585,9 @@
       ],
       "Export": [
         "匯出"
+      ],
+      "Export key before deleting": [
+        "刪除前匯出金鑰"
       ],
       "Extend": [
         "延展"
@@ -1494,6 +1500,9 @@
       ],
       "${ price } per user": [
         "每使用者${ price }"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } 個自訂網域"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats } ${ LUMO_APP_NAME } AI 授權"
@@ -5644,6 +5653,9 @@
       "10+ premium features": [
         "10 + 頂級質子版功能"
       ],
+      "3 email domains": [
+        "3 個電子郵件網域"
+      ],
       "Access to all countries": [
         "所有國家任選"
       ],
@@ -7960,6 +7972,9 @@
       "New": [
         "加入"
       ],
+      "New activity data will stop being collected and shown.": [
+        "新活動資料將不再被收集及顯示。"
+      ],
       "New user invited to organization": [
         "新使用者已邀請至組織"
       ],
@@ -9742,6 +9757,9 @@
       "Account storage": [
         "帳號儲存空間"
       ],
+      "Action": [
+        "操作"
+      ],
       "Actions": [
         "動作"
       ],
@@ -10618,6 +10636,9 @@
       "Skip feedback": [
         "略過意見回饋"
       ],
+      "SMTP token": [
+        "SMTP 權杖"
+      ],
       "Social": [
         "社群網路"
       ],
@@ -10818,6 +10839,11 @@
     "Label (end date/advanced search)": {
       "To": [
         "收件者"
+      ]
+    },
+    "Label BYOE": {
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ maxBYOEAddresses } 中的 ${ byoeAddressesAvailableCount } 電子郵件地址可用"
       ]
     },
     "Label for adding a new custom domain": {
@@ -14448,6 +14474,11 @@
         "您將取得至多 **${ maxRewardAmount }** 額度。"
       ]
     },
+    "Remove calendar section description": {
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
+        "取消訂購授權後，您將無法再存取這個行事曆。此行事曆中的所有事件都將從您的帳號中刪除，但是仍然會保留在原始的公開連結中。"
+      ]
+    },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
         "貴組織中的 ${ n } 個管理員需要存取組織金鑰。"
@@ -14682,6 +14713,11 @@
       ],
       "Your recovery phone number is:": [
         "您的復原電話號碼:"
+      ]
+    },
+    "safety_review": {
+      "Download recovery file": [
+        "下載帳號復原檔案"
       ]
     },
     "saml: Action": {
@@ -17853,9 +17889,6 @@
       ],
       "Phone": [
         "電話"
-      ],
-      "Photos": [
-        "相片"
       ],
       "Pin the extension": [
         "定置擴充功能"

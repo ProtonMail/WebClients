@@ -246,9 +246,6 @@
       "Continue import": [
         "Fortsett importen"
       ],
-      "Continue on web": [
-        "Fortsett på nettet"
-      ],
       "Continue to ${ planOrAppName }": [
         "Fortsett til ${ planOrAppName }"
       ],
@@ -403,9 +400,6 @@
       ],
       "Download anyway": [
         "Last ned uansett"
-      ],
-      "Download app": [
-        "Last ned app"
       ],
       "Download for Mac": [
         "Last ned for Mac"
@@ -1096,9 +1090,6 @@
       ],
       "Try another method": [
         "Prøv annen metode"
-      ],
-      "Try it now": [
-        "Prøv det nå"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Prøv å lagre igjen. Lagring mislyktes på grunn av: ${ saveError }"
@@ -3531,20 +3522,11 @@
       "Failed to update public share node": [
         "Kunne ikke oppdatere offentlig delingsnode"
       ],
-      "File \"${ name }\" is already downloading": [
-        "Fil \"${ name }\" lastes allerede ned"
-      ],
       "File cannot be merged with folder": [
         "Fil kan ikke slås sammen med mappe"
       ],
-      "File selection is already downloading": [
-        "Filvalg lastes allerede ned"
-      ],
       "First name is too long": [
         "Fornavnet er for langt"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "Mappe \"${ name }\" lastes allerede ned"
       ],
       "Folder name cannot be empty.": [
         "Mappenavn kan ikke være tomt."
@@ -5181,9 +5163,6 @@
       "An active recovery file": [
         "En aktiv gjenopprettingsfil"
       ],
-      "an anonymous user": [
-        "en anonym bruker"
-      ],
       "An issue occurred during the restore process.": [
         "Det oppstod et problem under gjenopprettingsprosessen."
       ],
@@ -5294,9 +5273,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Sjekker kontakt ${ progress } av ${ max }..."
-      ],
-      "Checking signatures": [
-        "Sjekker signaturer"
       ],
       "Choose a plan that works best for you.": [
         "Velg en plan som fungerer best for deg."
@@ -5415,12 +5391,6 @@
       "Details": [
         "Detaljer"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Digital signatur bekreftet. Denne filen ble sikkert lastet opp av ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Digital signatur bekreftet. Denne mappen ble sikkert lastet opp av ${ emailAddress }."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Oppdag nye opplåste funksjoner og begynn å bruke dem med en gang!"
       ],
@@ -5453,9 +5423,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Nedlasting av ${ downloadFileName } vil bli avbrutt"
-      ],
-      "Download was canceled": [
-        "Nedlastingen ble kansellert"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Last ned favorittappen din i dag og ta personvern med deg hvor hen du går."
@@ -5566,20 +5533,11 @@
       "Feb": [
         "Feb"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "Fil \"${ name }\" ble slettet under nedlasting"
-      ],
       "File could not be scanned": [
         "Fil kunne ikke skannes"
       ],
       "File flagged as potentially malicious": [
         "Fil markert som potensielt skadelig"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Fil mangler signatur. Vi kan ikke bekrefte at ${ emailAddress } lastet opp ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Fil mangler signatur. Vi kan ikke bekrefte hvem som lastet opp ${ fileName }."
       ],
       "File will not be updated": [
         "Filen blir ikke oppdatert"
@@ -5589,15 +5547,6 @@
       ],
       "finance": [
         "finans"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "Mappe \"${ link.name }\" ble slettet under nedlasting"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Mappe mangler signatur. Vi kan ikke bekrefte at ${ emailAddress } lastet opp ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Mappe mangler signatur. Vi kan ikke bekrefte hvem som lastet opp ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Mappen blir ikke lastet opp"
@@ -6305,9 +6254,6 @@
       "Shared with you": [
         "Delt med deg"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Signaturen kan ikke valideres på grunn av nettverksfeil, prøv igjen senere."
-      ],
       "Signature check will be ignored": [
         "Signaturkontrollen ignoreres"
       ],
@@ -6372,17 +6318,8 @@
       "that": [
         "den"
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Kontoen kan ha en ny nøkkel, eller følgende kan ha blitt tuklet med: ${ items }. Bare åpne hvis du klarérer de."
-      ],
       "The albums you create are shown here.": [
         "Albumene du oppretter vises her."
-      ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Den digitale signaturen er delvis verifisert. Denne filen ble lastet opp ved hjelp av en offentlig tilgjengelig delingskobling av en bruker uten en ${ BRAND_NAME }-konto, så identiteten deres kan ikke bekreftes."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Den digitale signaturen er delvis verifisert. Denne mappen ble lastet opp ved hjelp av en offentlig tilgjengelig delingskobling av en bruker uten en ${ BRAND_NAME }-konto, så identiteten deres kan ikke bekreftes."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Nedlastingsantallet inkluderer både faktiske nedlastinger og forekomster der filer forhåndsvises."
@@ -6392,9 +6329,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Den eksponerte informasjonen ble lekket fra en tredjepartstjeneste. ${ BRAND_NAME }-kontoinformasjonen din forblir sikker og kryptert. ${ learnMoreLink }."
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Følgende kan ha blitt tuklet med: ${ items }. Bare åpne hvis du klarérer de."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Eieren av denne adressen har deaktivert ende-til-ende-kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
@@ -6695,12 +6629,6 @@
       "We couldn’t process your payment.": [
         "Vi kunne ikke behandle betalingen din."
       ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Vi kan ikke bekrefte at ${ emailAddress } lastet opp ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Vi kan ikke bekrefte hvem som lastet opp ${ fileName }."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Vi trenger å autentisere betalingsmåten med banken din."
       ],
@@ -6912,9 +6840,6 @@
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
         "Nettleseren gikk tom for plass mens den indekserte filer for søk. Frigjør lagringsplass, og bygg deretter opp indeksen på nytt."
       ],
-      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
-        "Din nåværende nettleser støtter ikke nedlasting av store filer/flere filer. Last ned desktopappen for sømløse opplastinger og nedlastinger."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dataene dine er klare til import fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
       ],
@@ -7041,32 +6966,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Vis bare"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "filattributter"
-      ],
-      "file data": [
-        "fildata"
-      ],
-      "file data key": [
-        "fildatanøkkel"
-      ],
-      "file data order": [
-        "fildatarekkefølge"
-      ],
-      "hash key": [
-        "hashnøkkel"
-      ],
-      "keys": [
-        "nøkler"
-      ],
-      "name": [
-        "navn"
-      ],
-      "thumbnail": [
-        "miniatyr"
       ]
     },
     "Key badge": {
@@ -12043,9 +11942,6 @@
       "Albums you've shared will appear here": [
         "Albumene du har delt, vises her"
       ],
-      "Securely share your favorite moments with friends and family using Albums.": [
-        "Del trygt dine favorittøyeblikk med venner og familie ved å bruke Album."
-      ],
       "Shared by ${ sharedBy }": [
         "Delt av ${ sharedBy }"
       ],
@@ -12416,9 +12312,6 @@
       "Birthday": [
         "Bursdag"
       ],
-      "Browser might run out of memory": [
-        "Nettleseren kan gå tom for minne"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Avbryt ${ MAIL_SHORT_APP_NAME }-abonnement"
       ],
@@ -12622,9 +12515,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Nedgradere til ${ downgradedPlanName }?"
-      ],
-      "Download ${ date }": [
-        "Nedlasting ${ date }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Last ned ${ DRIVE_APP_NAME }-appen"
@@ -12969,9 +12859,6 @@
       ],
       "Phone numbers": [
         "Telefonnumre"
-      ],
-      "Photo albums are here!": [
-        "Fotoalbum er her!"
       ],
       "Photos": [
         "Bilder"

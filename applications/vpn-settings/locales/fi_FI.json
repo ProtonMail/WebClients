@@ -872,6 +872,9 @@
       "Search groups": [
         "Hae ryhmiä"
       ],
+      "Search settings": [
+        "Etsi asetuksista"
+      ],
       "See DNS TXT record": [
         "Katso DNS TXT -tietue"
       ],
@@ -5758,6 +5761,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Menetät pääsyn kaikkiin tililläsi tällä hetkellä oleviin salattuihin tietoihin, jos jatkat."
       ],
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } on itsenäisesti rahoitettu ja toimii ilman mainontaa. Alla on esimerkkejä siitä, miten tätä itsenäisyyttä on hyödynnetty käytännössä."
+      ],
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } ei koskaan jaa tietojasi ulkopuolisille tahoille. Tiedot ovat peräisin ${ BRAND_NAME }in omista analyyseistä ja Constella Intelligenceltä."
       ],
@@ -7490,6 +7496,9 @@
       "Symbols (#$&)": [
         "Symbolit (#$&)"
       ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Tilapäisesti poissa käytöstä suuren kysynnän vuoksi. Yritä myöhemmin uudelleen."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
       ],
@@ -8458,6 +8467,9 @@
         "${ nbDay } päivä",
         "${ nbDay } päivää"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } merkkiä"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
       ],
@@ -9214,6 +9226,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Kyllä, haluan poistaa tilin ja kaikki sen tiedot pysyvästi."
+      ],
+      "You don't have permissions": [
+        "Sinulla ei ole oikeuksia"
       ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
@@ -15862,6 +15877,9 @@
       ],
       "Each imported email will have this label": [
         "Jokainen tuotu viesti merkitään tällä tunnisteella"
+      ],
+      "Early access to new apps and features.": [
+        "Varhainen pääsy uusiin sovelluksiin ja ominaisuuksiin."
       ],
       "Edit folder names": [
         "Muokkaa kansioiden nimiä"

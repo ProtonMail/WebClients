@@ -224,9 +224,6 @@
       "Continue import": [
         "Importálás folytatása"
       ],
-      "Continue on web": [
-        "Folytatás a weben"
-      ],
       "Continue transfers": [
         "Le- és feltöltések folytatása"
       ],
@@ -369,9 +366,6 @@
       ],
       "Download anyway": [
         "Letöltés mindenképpen"
-      ],
-      "Download app": [
-        "Alkalmazás letöltése"
       ],
       "Download info": [
         "Letöltési információk"
@@ -994,9 +988,6 @@
       "Try another method": [
         "Másik módszer"
       ],
-      "Try it now": [
-        "Próbálja ki most"
-      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Próbálja újra. Sikertelen mentés oka: ${ saveError }"
       ],
@@ -1462,6 +1453,10 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } tárhely"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } felhasználó",
+        "Akár ${ numberOfUsers } felhasználó"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } e-mail tárhely"
@@ -3124,20 +3119,11 @@
       "Failed to update public share node": [
         "Nem sikerült frissíteni a nyilvános megosztási csomópontot"
       ],
-      "File \"${ name }\" is already downloading": [
-        "A fájl: \"${ name }\" már töltődik lefelé"
-      ],
       "File cannot be merged with folder": [
         "Fájl nem egyesíthető mappával"
       ],
-      "File selection is already downloading": [
-        "A kiválasztott fájlok már töltődnek lefelé"
-      ],
       "First name is too long": [
         "A keresztnév túl hosszú"
-      ],
-      "Folder \"${ name }\" is already downloading": [
-        "A mappa: \"${ name }\" már töltődik lefelé"
       ],
       "Folder name cannot be empty.": [
         "A mappa nevének megadása szükséges."
@@ -3803,6 +3789,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Az előfizetés a csomag elsődleges adminisztrátorának lesz kiszámlázva."
+      ],
+      "View the invitation": [
+        "Meghívás megtekintése",
+        "Meghívások megtekintése"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Meghívást kapott a csatlakozáshoz: ${ invite.OrganizationName }"
@@ -4595,9 +4585,6 @@
       "An active recovery file": [
         "Egy aktív helyreállító fájl"
       ],
-      "an anonymous user": [
-        "egy névtelen felhasználó"
-      ],
       "An issue occurred during the restore process.": [
         "A helyreállítás során probléma merült fel."
       ],
@@ -4684,9 +4671,6 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Névjegy ellenőrzése ${ progress }/${ max }..."
-      ],
-      "Checking signatures": [
-        "Aláírások ellenőrzése"
       ],
       "Choose a plan that works best for you.": [
         "Válassza ki az Önnek legjobban megfelelő csomagot."
@@ -4783,12 +4767,6 @@
       "Details": [
         "Részletek"
       ],
-      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Digitális aláírás lellenőrizve. Ezt a fájlt biztonságosan feltöltötte ${ emailAddress }."
-      ],
-      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Digitális aláírás lellenőrizve. Ezt a mappát biztonságosan feltöltötte ${ emailAddress }."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Fedezze fel az új funkciókat, és használja őket azonnal."
       ],
@@ -4812,9 +4790,6 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } letöltése megszakításra kerül"
-      ],
-      "Download was canceled": [
-        "A letöltés leállítva"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Töltse le a kedvenc alkalmazását, így a biztonságot bárhova magával viheti."
@@ -4910,15 +4885,6 @@
       "Feb": [
         "Feb"
       ],
-      "File \"${ name }\" was deleted during download": [
-        "\"${ name }\" fájl törölve lett letöltés közben"
-      ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "A fájl aláírása hiányzik. Nem tudtuk megerősíteni, hogy ${ emailAddress } töltötte fel ezt: ${ fileName }."
-      ],
-      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "A fájl aláírása hiányzik. Nem tudtuk megerősíteni, hogy ki töltötte fel ezt: ${ fileName }."
-      ],
       "File will not be updated": [
         "A fájl nem kerül frissítésre"
       ],
@@ -4927,15 +4893,6 @@
       ],
       "finance": [
         "pénzügyi"
-      ],
-      "Folder \"${ link.name }\" was deleted during download": [
-        "\"${ link.name }\" mappa törölve lett letöltés közben"
-      ],
-      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "A mappa aláírása hiányzik. Nem tudtuk megerősíteni, hogy ${ emailAddress } töltötte fel ezt: ${ fileName }."
-      ],
-      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "A mappa aláírása hiányzik. Nem tudtuk megerősíteni, hogy ki töltötte fel ezt: ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Mappa nem lesz feltöltve"
@@ -5522,9 +5479,6 @@
       "Shared with you": [
         "Megosztva önnel"
       ],
-      "Signature cannot be validated due to network error, please try again later.": [
-        "Az aláírás hálózati hiba miatt nem ellenőrizhető. Próbája újra később."
-      ],
       "Signature check will be ignored": [
         "Az aláírás-ellenőrzés figyelmen kívül lesz hagyva"
       ],
@@ -5583,17 +5537,8 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Köszönjük a feliratkozást! A biztonságos böngészés most kezdődik."
       ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "A fióknak lehet, hogy új kulcsa van, vagy babráltak a következőkkel: ${ items }. Csak akkor nyissa meg, ha megbízik benne."
-      ],
       "The albums you create are shown here.": [
         "Az Ön által létrehozott albumok itt láthatók."
-      ],
-      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "A digitális aláírás részben ellenőrizve lett. Ezt a fájlt egy nyilvánosan elérhető megosztási link segítségével töltötte fel egy ${ BRAND_NAME } fiókkal nem rendelkező felhasználó, így személyazonossága nem ellenőrizhető."
-      ],
-      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "A digitális aláírást részben ellenőriztük. Ezt a mappát egy nyilvánosan elérhető megosztási hivatkozás használatával töltötte fel egy ${ BRAND_NAME } fiókkal nem rendelkező felhasználó, így a személyazonossága nem ellenőrizhető."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "A letöltések száma tartalmazza a tényleges letöltéseket és az előnézet megtekintéseit is."
@@ -5603,9 +5548,6 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "A kiszivárgott információ egy harmadik féltől származó szolgáltatás volt. Az ön ${ BRAND_NAME } fiókja biztonságban van. ${ learnMoreLink }"
-      ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Az alábbiakkal, lehet, hogy babráltak: ${ items }. Csak akkor nyissa meg, ha megbízik benne."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "A cím tulajdonosa letiltotta a végpontok közötti titkosítást. Ahhoz, hogy titkosított e-maileket tudjon küldeni erre a címre, a tulajdonosnak újra engedélyeznie kell a végpontok közti titkosítást."
@@ -5848,12 +5790,6 @@
       "We couldn’t process your payment.": [
         "Nem tudjuk feldolgozni az Ön befizetését."
       ],
-      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Nem tudtuk megerősíteni, hogy ${ emailAddress } töltötte fel ezt: ${ fileName }."
-      ],
-      "We couldn’t verify who uploaded ${ fileName }.": [
-        "Nem tudtuk megerősíteni, hogy ki töltötte fel ezt: ${ fileName }."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "A befizetési módot hitelesítenünk kell a bankjánál."
       ],
@@ -6030,9 +5966,6 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Lejárt számlatartozása van. Hozzáférése hamarosan korlátozásra kerül. ${ payInvoiceLink }"
       ],
-      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
-        "A jelenlegi böngészője nem támogatja a nagy méretű fájlok/több fájl letöltését. Töltse le az asztali alkalmazást a zökkenőmentes feltöltésekhez és letöltésekhez."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Az adatok a ${ BRAND_NAME } fiókjába importálásra készen állnak a(z) ${ importedEmailAddressStrong } címről."
       ],
@@ -6153,32 +6086,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Csak megtekintés"
-      ]
-    },
-    "Item": {
-      "file attributes": [
-        "fájl tulajdonságok"
-      ],
-      "file data": [
-        "fájl adatok"
-      ],
-      "file data key": [
-        "fájl adatkulcs"
-      ],
-      "file data order": [
-        "fájl adatsorrend"
-      ],
-      "hash key": [
-        "kivonatkulcs"
-      ],
-      "keys": [
-        "kulcsok"
-      ],
-      "name": [
-        "név"
-      ],
-      "thumbnail": [
-        "miniatűr"
       ]
     },
     "Key badge": {
@@ -10353,9 +10260,6 @@
       "Albums you've shared will appear here": [
         "Az Ön által megosztott albumok itt fognak megjelenni"
       ],
-      "Securely share your favorite moments with friends and family using Albums.": [
-        "Az albumok segítségével biztonságosan megoszthatja kedvenc pillanatait barátaival és családjával."
-      ],
       "Your favorited photos will appear here": [
         "A kedvenc fényképei itt fognak megjelenni"
       ],
@@ -10720,9 +10624,6 @@
       "Birthday": [
         "Születésnap"
       ],
-      "Browser might run out of memory": [
-        "A böngésző kifuthat memóriából"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } előfizetés lemondása"
       ],
@@ -10902,9 +10803,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Váltás kisebb csomagra: ${ downgradedPlanName }?"
-      ],
-      "Download ${ date }": [
-        "${ date } letöltése"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } alkalmazások letöltése"
@@ -11215,9 +11113,6 @@
       ],
       "Phone numbers": [
         "Telefonszámok"
-      ],
-      "Photo albums are here!": [
-        "Fotóalbumok már elérhetők!"
       ],
       "Photos": [
         "Fényképek"

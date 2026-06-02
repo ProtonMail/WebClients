@@ -13192,9 +13192,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Μπορείτε να το επεξεργαστείτε αυτό μία φορά για να διασφαλίσετε τη σωστή διεύθυνση ηλεκτρονικού ταχυδρομείου για επαλήθευση."
       ],
-      "You can enable the Photos section from the interface using the toggle below.": [
-        "Μπορείτε να ενεργοποιήσετε την ενότητα Φωτογραφίες από τη διεπαφή με τον παρακάτω διακόπτη."
-      ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Μπορείτε να επιβάλετε τους κανόνες κωδικού που θα χρησιμοποιούν τα μέλη του οργανισμού σας όταν δημιουργούν ή κάνουν επαναφορά του κωδικού πρόσβασης για τον ${ BRAND_NAME } λογαριασμό τους."
       ],
@@ -15684,6 +15681,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ναι, θέλω να διαγράψω οριστικά αυτόν τον λογαριασμό και όλα τα δεδομένα του."
+      ],
+      "You don't have permissions": [
+        "Δεν έχετε δικαιώματα"
       ],
       "Your activation code:": [
         "Ο κωδικός ενεργοποίησης σας:"
@@ -21977,9 +21977,6 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "Ενεργοποίηση ενότητας Φωτογραφίες"
-      ],
       "Get updates about comments via email": [
         "Λάβετε ενημερώσεις σχετικά με σχόλια μέσω ηλεκτρονικού ταχυδρομείου"
       ],
@@ -21995,6 +21992,9 @@
     "Settings section title": {
       "Account": [
         "Λογαριασμός"
+      ],
+      "Managed Companies": [
+        "Διαχειριζόμενες Εταιρείες"
       ],
       "Organization": [
         "Οργανισμός"
@@ -23955,6 +23955,12 @@
       ],
       "View VPN session details for your organization.": [
         "Δείτε τις λεπτομέρειες της περιόδου λειτουργίας VPN για τον οργανισμό σας."
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "Με τις διαχειριζόμενες εταιρείες, μπορείτε να προσθέσετε, να επεξεργαστείτε και να καταργήσετε την πρόσβαση για οργανισμούς που επιβλέπετε."
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "Το συνολικό μηνιαίο κόστος για όλες τις διαχειριζόμενες εταιρείες."
       ]
     },
     "Success": {
@@ -24850,6 +24856,9 @@
       "Collaborate on documents": [
         "Συνεργαστείτε σε έγγραφα"
       ],
+      "Companies": [
+        "Εταιρείες"
+      ],
       "Compare plans": [
         "Σύγκριση πλάνων"
       ],
@@ -25598,6 +25607,9 @@
       "Monthly": [
         "Μηνιαία"
       ],
+      "Monthly Costs": [
+        "Μηνιαίο Κόστος"
+      ],
       "Multi-user support": [
         "Υποστήριξη Πολλαπλών Χρηστών"
       ],
@@ -25732,9 +25744,6 @@
       ],
       "Phone": [
         "Τηλέφωνο"
-      ],
-      "Photos": [
-        "Φωτογραφίες"
       ],
       "Pin the extension": [
         "Καρφίτσωμα της προέκτασης"

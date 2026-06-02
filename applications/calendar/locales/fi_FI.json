@@ -6590,6 +6590,9 @@
         "${ n } kuukausi",
         "${ n } kuukautta"
       ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } merkkiä"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
       ],

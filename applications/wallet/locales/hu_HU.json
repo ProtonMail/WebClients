@@ -936,6 +936,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } tárhely"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } felhasználó",
+        "Akár ${ numberOfUsers } felhasználó"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } e-mail tárhely"
       ],

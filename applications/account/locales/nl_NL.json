@@ -5917,6 +5917,9 @@
       "120m": [
         "120m"
       ],
+      "15 minutes": [
+        "15 minuten"
+      ],
       "30 minutes": [
         "30 minuten"
       ],
@@ -13063,9 +13066,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "U kunt dit eenmaal bewerken om ervoor te zorgen dat het juiste e-mailadres voor verificatie is ingevoerd."
       ],
-      "You can enable the Photos section from the interface using the toggle below.": [
-        "U kunt het gedeelte Foto's inschakelen vanuit de interface met de onderstaande schakelaar."
-      ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "U kunt de wachtwoordregels afdwingen die leden van uw organisatie gebruiken wanneer ze het wachtwoord voor hun ${ BRAND_NAME }-account aanmaken of resetten."
       ],
@@ -15537,6 +15537,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, ik wil permanent mijn account inclusief alle gegevens verwijderen."
+      ],
+      "You don't have permissions": [
+        "U heeft geen toestemming"
       ],
       "Your activation code:": [
         "Uw activeringscode:"
@@ -21916,17 +21919,6 @@
         "Aanvraag wijziging wachtwoord"
       ]
     },
-    "Setting": {
-      "Enable Photos section": [
-        "Sectie voor foto's inschakelen"
-      ],
-      "Get updates about comments via email": [
-        "Ontvang updates over reacties via e-mail"
-      ],
-      "Include document name in email notifications": [
-        "Documentnaam opnemen in e-mailnotificaties"
-      ]
-    },
     "Settings description": {
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Houd uw inbox georganiseerd met mappen en labels. ${ learnMoreLink }"
@@ -25669,9 +25661,6 @@
       ],
       "Phone": [
         "Telefoon"
-      ],
-      "Photos": [
-        "Foto's"
       ],
       "Pin the extension": [
         "Extensie vastpinnen"
