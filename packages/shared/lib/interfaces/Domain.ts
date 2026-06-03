@@ -79,3 +79,7 @@ export interface Domain {
         'dark-web-monitoring': boolean;
     };
 }
+
+export interface DomainRegistrar {
+    RegistrarID: number | null;
+}
