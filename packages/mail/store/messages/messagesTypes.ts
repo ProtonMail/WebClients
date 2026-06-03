@@ -1,4 +1,5 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
+
 import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
 import type { Api, KeyTransparencyVerificationResult, RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
@@ -60,6 +61,7 @@ export interface MessageVerification {
 
     /**
      * Sender public keys retrieved from API which can are not pinned
+     * (NB: only internal keys are included; no KOO/WKD)
      */
     senderPinnableKeys: PublicKeyReference[] | undefined;
 
