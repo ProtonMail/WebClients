@@ -5,17 +5,21 @@ import { countriesWithVatNumberOnSignup } from './countriesWithVatId';
 const VAT_VALID_PREFIXES: Record<string, string[]> = {
     GR: ['EL'], // Greece uses EL, not GR
     GB: ['GB', 'XI'], // XI = Northern Ireland
+    CH: ['CHE'], // Switzerland uses CHE, not CH
+    LI: ['CHE'], // Liechtenstein shares the Swiss VAT system (CHE)
 };
 
+// VAT-collected countries whose number carries no prefix (Iceland's VSK number).
+const COLLECTED_COUNTRIES_WITHOUT_VAT_PREFIX = new Set(['IS']);
+
 /**
- * Returns every valid VAT prefix for a country, or null if the country
- * doesn't use a VAT prefix (US and any country we don't collect VAT IDs for,
- * e.g. JP, BR). The VAT field is rendered for all countries in
- * EditBillingAddress, so gating here is what stops non-VAT countries from
- * being prefilled with — and validated against — a bogus country-code prefix.
+ * Returns every valid VAT prefix for a country, or null when the country uses no
+ * prefix — whether because we don't collect its VAT ID, or because we do but its
+ * number has none. The VAT field renders for every country in EditBillingAddress,
+ * so this gate is what stops a bogus country-code prefix being prefilled/validated.
  */
 export function getValidVatPrefixes(countryCode: string): string[] | null {
-    if (!countriesWithVatNumberOnSignup.has(countryCode)) {
+    if (!countriesWithVatNumberOnSignup.has(countryCode) || COLLECTED_COUNTRIES_WITHOUT_VAT_PREFIX.has(countryCode)) {
         return null;
     }
     return VAT_VALID_PREFIXES[countryCode] ?? [countryCode];
