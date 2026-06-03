@@ -8,6 +8,7 @@ import ModalsProvider from '@proton/components/containers/modals/Provider';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
 import Icons from '@proton/icons/Icons';
+import '@proton/polyfill';
 import sentry from '@proton/shared/lib/helpers/sentry';
 
 import { UpdateBar } from './components/Layout/UpdateBar';
