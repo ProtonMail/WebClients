@@ -31,25 +31,16 @@ export const ActionButtons = ({
     const [openSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
 
-    /**
-     * Since all the components here are used in the same context, we can use the same metrics source for all of them.
-     */
-    const metrics = {
-        source: 'plans',
-    } as const;
-
     const handleCustomizeSubscription = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             disablePlanSelection: true,
-            metrics,
             telemetryFlow,
         });
     };
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            metrics,
             telemetryFlow,
         });
     };
@@ -57,7 +48,6 @@ export const ActionButtons = ({
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             disablePlanSelection: true,
-            metrics,
             telemetryFlow,
         });
 

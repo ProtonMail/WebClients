@@ -24,7 +24,6 @@ const DrivePlusFromFreeBanner = ({ app }: UpsellSectionBaseProps) => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: plan,
-            metrics: { source: 'upsells' },
             telemetryFlow,
         });
     };

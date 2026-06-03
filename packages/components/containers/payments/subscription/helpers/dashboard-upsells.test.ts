@@ -68,9 +68,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.MAIL,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: 'subscription',
             });
 
@@ -81,9 +78,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.BUNDLE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: 'subscription',
             });
         });
@@ -120,9 +114,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.BUNDLE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: 'subscription',
             });
 
@@ -133,9 +124,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: 'subscription',
             });
         });
@@ -181,9 +169,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.BUNDLE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: 'subscription',
             });
 
@@ -194,9 +179,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.DUO,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: 'subscription',
             });
         });
@@ -228,9 +210,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: 'subscription',
             });
         });
@@ -260,9 +239,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.DUO,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: 'subscription',
             });
 
@@ -273,9 +249,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: 'subscription',
             });
         });
@@ -326,9 +299,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: 'subscription',
             });
         });
@@ -358,9 +328,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.DUO,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: 'subscription',
             });
 
@@ -371,9 +338,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: 'subscription',
             });
         });
@@ -424,9 +388,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.BUNDLE_PRO_2024,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                metrics: {
-                    source: 'upsells',
-                },
             });
         });
     });
@@ -449,9 +410,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.DRIVE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: 'subscription',
             });
         });
@@ -475,9 +433,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.PASS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: 'subscription',
             });
         });
@@ -510,9 +465,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.VPN_BUSINESS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                metrics: {
-                    source: 'upsells',
-                },
             });
 
             expect(upsell2).toMatchObject(vpnPassProUpsell);
@@ -524,9 +476,6 @@ describe('resolveUpsellsToDisplay', () => {
                 plan: PLANS.VPN_PASS_BUNDLE_BUSINESS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: 'subscription',
             });
         });
@@ -558,9 +507,6 @@ describe('resolveUpsellsToDisplay', () => {
                 plan: PLANS.VPN_PASS_BUNDLE_BUSINESS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: 'subscription',
             });
 
@@ -575,9 +521,6 @@ describe('resolveUpsellsToDisplay', () => {
                 plan: PLANS.BUNDLE_PRO_2024,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
             });
         });
     });

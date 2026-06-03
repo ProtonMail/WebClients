@@ -52,9 +52,6 @@ const getBundleUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetP
                 plan,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
@@ -75,7 +72,6 @@ export const useUnlimitedBannerExtendSubscription = ({
     const handleExplorePlans = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            metrics: { source: 'plans' },
             defaultAudience: Audience.B2C,
             telemetryFlow,
         });

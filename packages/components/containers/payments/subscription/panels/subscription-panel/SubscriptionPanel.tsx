@@ -268,7 +268,7 @@ const SubscriptionPanel = ({ app, subscription, organization, user, addresses, u
             return false;
         }
         const showGetMoreButton = MaxLumo < MaxMembers;
-        const actionElement = showGetMoreButton ? <GetMoreButton metricsSource="upsells" /> : null;
+        const actionElement = showGetMoreButton ? <GetMoreButton /> : null;
 
         return {
             icon: 'speech-bubble' as const,
@@ -282,7 +282,7 @@ const SubscriptionPanel = ({ app, subscription, organization, user, addresses, u
             return false;
         }
         const showGetMoreButton = MaxMeet < MaxMembers;
-        const actionElement = showGetMoreButton ? <GetMoreButton metricsSource="upsells" /> : null;
+        const actionElement = showGetMoreButton ? <GetMoreButton /> : null;
 
         return {
             icon: 'meet-camera' as const,
@@ -297,7 +297,7 @@ const SubscriptionPanel = ({ app, subscription, organization, user, addresses, u
         }
 
         const showGetMoreButton = MaxAI < MaxMembers && getIsB2BAudienceFromSubscription(subscription);
-        const actionElement = showGetMoreButton ? <GetMoreButton metricsSource="upsells" /> : null;
+        const actionElement = showGetMoreButton ? <GetMoreButton /> : null;
 
         return {
             icon: 'pen-sparks' as const,
@@ -351,7 +351,7 @@ const SubscriptionPanel = ({ app, subscription, organization, user, addresses, u
         const items = [
             b2bUsersItem && {
                 ...b2bUsersItem,
-                actionElement: <GetMoreButton metricsSource="upsells" />,
+                actionElement: <GetMoreButton />,
             },
             lumoItem,
             ...getLumoPlusFeatures(),
@@ -397,12 +397,7 @@ const SubscriptionPanel = ({ app, subscription, organization, user, addresses, u
     };
 
     const getVpnB2B = () => {
-        /**
-         * The `vpn` in `vpn-get-more` is unimportant.
-         * The intention is to observe the user journey, not the specific plan the journey is for.
-         * However changing this would require a new metric schema version.
-         */
-        const getMoreButtonVpnUpsell = <GetMoreButton metricsSource="vpn-get-more" />;
+        const getMoreButtonVpnUpsell = <GetMoreButton />;
 
         const items: Item[] = [
             !!b2bUsersItem && {
@@ -425,7 +420,7 @@ const SubscriptionPanel = ({ app, subscription, organization, user, addresses, u
     };
 
     const getVpnPassProfessional = () => {
-        const getMoreButtonVpnUpsell = <GetMoreButton metricsSource="vpn-get-more" />;
+        const getMoreButtonVpnUpsell = <GetMoreButton />;
 
         const items: Item[] = [
             !!b2bUsersItem && {

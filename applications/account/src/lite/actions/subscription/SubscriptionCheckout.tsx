@@ -13,7 +13,6 @@ import { PaymentsContextProvider, usePayments } from '@proton/payments/ui/contex
 import { getPlanToCheck } from '@proton/payments/ui/context/helpers';
 import noop from '@proton/utils/noop';
 
-import type { SubscriptionCheckoutMetricsOverrides } from './interface';
 import SubscriptionCheckoutAddonSection from './sections/SubscriptionCheckoutAddonSection';
 import SubscriptionCheckoutBillingCycleSection from './sections/SubscriptionCheckoutBillingCycleSection';
 import SubscriptionCheckoutPaymentSection from './sections/SubscriptionCheckoutPaymentSection';
@@ -27,7 +26,6 @@ interface Props {
     onSubscribed: () => void;
     onUnsubscribed: () => void;
     onClose: () => void;
-    metrics: SubscriptionCheckoutMetricsOverrides;
     subscription: Subscription | FreeSubscription;
     minimumCycle?: number;
 }
@@ -38,7 +36,6 @@ const SubscriptionCheckoutWithPayments = ({
     onSubscribed,
     onUnsubscribed,
     onClose,
-    metrics,
     subscription,
     minimumCycle,
 }: Props) => {
@@ -57,7 +54,6 @@ const SubscriptionCheckoutWithPayments = ({
         onStepChange,
         onSubscribed,
         onUnsubscribed,
-        metrics,
     });
 
     const handleUnlimitedUpgrade = () => {

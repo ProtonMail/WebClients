@@ -15,9 +15,6 @@ const getUpsellSubscriptionModalConfig = (options: Props): OpenCallbackProps => 
         disablePlanSelection: options.step === SUBSCRIPTION_STEPS.CHECKOUT,
         maximumCycle: options.maximumCycle || CYCLE.YEARLY,
         minimumCycle: options.minimumCycle,
-        metrics: {
-            source: 'upsells',
-        },
         mode: 'upsell-modal', // hide the Free plan
         step: options.step || SUBSCRIPTION_STEPS.CHECKOUT,
         upsellRef: options.upsellRef,
