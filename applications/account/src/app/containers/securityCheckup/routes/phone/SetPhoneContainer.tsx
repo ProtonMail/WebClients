@@ -18,7 +18,7 @@ import { phoneIcon } from '../../methodIcons';
 const SetPhoneContainer = () => {
     const history = useHistory();
 
-    const accountRecovery = useUpdateAccountRecovery();
+    const accountRecovery = useUpdateAccountRecovery({ sendSettingEnabledTelemetry: false });
     const defaultCountry = useMyCountry();
 
     if (accountRecovery.data.loading) {
