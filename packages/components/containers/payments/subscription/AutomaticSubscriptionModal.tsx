@@ -291,9 +291,6 @@ const AutomaticSubscriptionModal = () => {
             step,
             disablePlanSelection,
             disableCycleSelector,
-            metrics: {
-                source: 'automatic',
-            },
         };
 
         if (eligibility.type === 'bf-applied') {

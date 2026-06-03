@@ -356,9 +356,6 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
                                 loading={loadingSubscriptionModal}
                                 onClick={() => {
                                     void openSubscriptionModal({
-                                        metrics: {
-                                            source: 'upsells',
-                                        },
                                         step: SUBSCRIPTION_STEPS.CHECKOUT,
                                         plan: ssoAppInfo.upsellPlan,
                                     });

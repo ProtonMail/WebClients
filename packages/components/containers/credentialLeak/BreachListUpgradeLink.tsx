@@ -10,14 +10,10 @@ interface Props {
 
 const BreachListUpgradeLink = ({ total }: Props) => {
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
-    const metrics = {
-        source: 'plans',
-    } as const;
 
     const handleUpgradeClick = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            metrics,
             mode: 'upsell-modal',
         });
     };

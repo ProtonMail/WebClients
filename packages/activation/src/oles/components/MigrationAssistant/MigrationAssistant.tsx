@@ -150,9 +150,6 @@ const MigrationAssistant: FC<{ model: MigrationModel }> = ({ model }) => {
             disableCycleSelector: true,
             disableThanksStep: true,
             allowedAddonTypes: [isMemberAddon],
-            metrics: {
-                source: 'automatic',
-            },
         });
 
     const handleMigrateUsers = async () => {

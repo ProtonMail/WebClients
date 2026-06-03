@@ -70,7 +70,6 @@ export const getUpsellConfig = ({
             disablePlanSelection: step === SUBSCRIPTION_STEPS.CHECKOUT,
             maximumCycle,
             minimumCycle,
-            metrics: { source: 'upsells' },
             mode: 'upsell-modal', // hide the Free plan
             step,
             upsellRef,

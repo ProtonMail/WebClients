@@ -73,7 +73,6 @@ const BaseUpsellOutgoingEmergencyContactAction = ({ app }: Props) => {
                             step,
                             plan: upsell.plan,
                             cycle: upsell.cycle,
-                            metrics: { source: 'upsells' },
                             upsellRef,
                         });
                     }}
