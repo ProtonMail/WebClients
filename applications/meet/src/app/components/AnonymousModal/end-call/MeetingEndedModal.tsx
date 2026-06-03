@@ -18,11 +18,11 @@ export const MeetingEndedModal = ({ open, onClose }: CTAModalBaseProps) => {
                     }}
                     size="medium"
                 >
-                    {c('Action').t`Back to dashboard`}
+                    {c('Action').t`Return to dashboard`}
                 </Button>
             }
             title={c('Info').t`Meeting ended`}
-            subtitle={c('Info').t`The host ended this meeting.`}
+            subtitle={c('Info').t`Everyone has been disconnected from the call.`}
         />
     );
 };
