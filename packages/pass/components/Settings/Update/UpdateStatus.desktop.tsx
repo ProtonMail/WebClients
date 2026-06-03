@@ -5,12 +5,17 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Progress from '@proton/components/components/progress/Progress';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { useOffline } from '@proton/pass/components/Core/ConnectivityProvider';
+import { getErrorLabel } from '@proton/pass/components/Settings/Update/Update.desktop';
+import type { UpdateErrorType, UpdateStore } from '@proton/pass/types/desktop';
 import { UpdateStatus as UpdateStatusEnum } from '@proton/pass/types/desktop';
-import type { UpdateStore } from '@proton/pass/types/desktop';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-const getStatusLabel = (status: UpdateStatusEnum, newVersion: string | null): string => {
+const getStatusLabel = (
+    status: UpdateStatusEnum,
+    newVersion: string | null,
+    errorType: UpdateErrorType | null
+): string => {
     switch (status) {
         case UpdateStatusEnum.Checking:
             return c('Info').t`Checking for updates...`;
@@ -18,17 +23,22 @@ const getStatusLabel = (status: UpdateStatusEnum, newVersion: string | null): st
             return newVersion ? c('Info').t`Downloading update ${newVersion}...` : c('Info').t`Downloading update...`;
         case UpdateStatusEnum.UpdateReady:
             return newVersion
-                ? c('Info').t`Restart to apply update to ${newVersion}`
-                : c('Info').t`Restart to apply update`;
+                ? c('Info').t`Restart to apply update to ${newVersion}.`
+                : c('Info').t`Restart to apply update.`;
+        case UpdateStatusEnum.Error:
+            return getErrorLabel(errorType);
         default:
-            return c('Info').t`Up to date`;
+            return c('Info').t`Up to date.`;
     }
 };
 
 type Props = { updateStore: UpdateStore; onCheckForUpdates: () => Promise<void> };
 
-export const UpdateStatus: FC<Props> = ({ updateStore: { status, newVersion, progress }, onCheckForUpdates }) => {
-    const { config } = usePassCore();
+export const UpdateStatus: FC<Props> = ({
+    updateStore: { status, currentVersion, newVersion, progress, errorType },
+    onCheckForUpdates,
+}) => {
+    const offline = useOffline();
 
     const busy = status === UpdateStatusEnum.Checking || status === UpdateStatusEnum.Downloading;
     const showStatus = status !== UpdateStatusEnum.Idle;
@@ -43,10 +53,17 @@ export const UpdateStatus: FC<Props> = ({ updateStore: { status, newVersion, pro
         <div>
             <div className="flex items-center justify-space-between mb-2">
                 <div className="text-bold">
-                    {PASS_APP_NAME} v{config.APP_VERSION}
+                    {PASS_APP_NAME} v{currentVersion}
                 </div>
                 {status !== UpdateStatusEnum.UpdateReady && (
-                    <Button color="weak" shape="solid" size="small" loading={busy} onClick={onCheckForUpdates}>
+                    <Button
+                        color="weak"
+                        shape="solid"
+                        size="small"
+                        loading={busy}
+                        onClick={onCheckForUpdates}
+                        disabled={offline}
+                    >
                         {c('Action').t`Check for updates`}
                     </Button>
                 )}
@@ -58,7 +75,7 @@ export const UpdateStatus: FC<Props> = ({ updateStore: { status, newVersion, pro
             </div>
             {showStatus && (
                 <div className="color-weak text-sm mb-2 flex gap-2">
-                    <span>{getStatusLabel(status, newVersion)}</span>
+                    <span>{getStatusLabel(status, newVersion, errorType)}</span>
                     {showLoader && <CircleLoader />}
                 </div>
             )}
