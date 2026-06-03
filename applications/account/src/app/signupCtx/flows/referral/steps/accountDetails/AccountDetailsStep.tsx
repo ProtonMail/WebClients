@@ -28,7 +28,7 @@ const AccountDetailsStep = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
                     <Button
                         onClick={() => {
                             history.push({
-                                pathname: SSO_PATHS.REFERAL_PLAN_SELECTION,
+                                pathname: SSO_PATHS.REFERRAL_PLAN_SELECTION,
                                 search: location.search,
                             });
                         }}
