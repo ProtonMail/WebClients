@@ -2,7 +2,9 @@ import { c, msgid } from 'ttag';
 
 import { useMemberAddresses } from '@proton/account';
 import { useMembers } from '@proton/account/members/hooks';
+import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -27,6 +29,9 @@ const OrganizationTwoFARemindersSection = ({ organization }: Props) => {
     const { APP_NAME } = useConfig();
     const [modalProps, setModal, renderModal] = useModalState();
     const [members] = useMembers();
+    const [permissions] = useOrgPermissions();
+    const canSendReminder =
+        permissions?.['account.security_policy.create'] || permissions?.['account.security_policy.update'];
 
     const { canHaveTwoFAMembersLength, noTwoFAMembers, noTwoFAMembersLength } = getTwoFAMemberStatistics(members);
 
@@ -86,11 +91,18 @@ const OrganizationTwoFARemindersSection = ({ organization }: Props) => {
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight>
-                    <Button
-                        id="send-email-reminder-button"
-                        onClick={() => setModal(true)}
-                        disabled={noTwoFAMembers.length === 0}
-                    >{c('Action').t`Send email reminder`}</Button>
+                    <Tooltip
+                        title={!canSendReminder ? c('Label').t`You don't have permissions` : undefined}
+                        openDelay={100}
+                    >
+                        <span>
+                            <Button
+                                id="send-email-reminder-button"
+                                onClick={() => setModal(true)}
+                                disabled={noTwoFAMembers.length === 0 || !canSendReminder}
+                            >{c('Action').t`Send email reminder`}</Button>
+                        </span>
+                    </Tooltip>
                 </SettingsLayoutRight>
             </SettingsLayout>
         </>

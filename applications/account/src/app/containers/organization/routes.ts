@@ -165,6 +165,12 @@ export const getOrganizationAppRoutes = ({
         (hasBundleBiz2025(subscription) || hasVisionary(subscription))
     );
 
+    const canShowSecuritySection =
+        permissions['account.security_policy.read'] &&
+        (hasActiveOrganizationKey || hasActiveOrganization) &&
+        organization &&
+        (organization.MaxMembers > 1 || organization.TwoFactorRequired !== ORGANIZATION_TWOFA_SETTING.NOT_REQUIRED);
+
     const sectionTitle = isPartOfFamily
         ? c('familyOffer_2023:Settings section title').t`Family`
         : c('Settings section title').t`Organization`;
@@ -259,7 +265,10 @@ export const getOrganizationAppRoutes = ({
                 {
                     text: c('Title').t`Organization key`,
                     id: 'password-keys',
-                    available: hasMemberCapablePlan && hasActiveOrganizationKey,
+                    available:
+                        permissions['account.organization_key.read'] &&
+                        hasMemberCapablePlan &&
+                        hasActiveOrganizationKey,
                 },
             ],
         },
@@ -361,12 +370,7 @@ export const getOrganizationAppRoutes = ({
             text: c('Title').t`Security`,
             to: '/authentication-security',
             icon: 'shield',
-            available:
-                canHaveOrganization &&
-                (hasActiveOrganizationKey || hasActiveOrganization) &&
-                organization &&
-                (organization.MaxMembers > 1 ||
-                    organization.TwoFactorRequired !== ORGANIZATION_TWOFA_SETTING.NOT_REQUIRED),
+            available: canShowSecuritySection,
             subsections: [
                 {
                     text: c('Title').t`${PROTON_SENTINEL_NAME} for organizations`,
