@@ -18,7 +18,7 @@ const PasswordReminderRecoverySettings = () => {
 
     return (
         <>
-            {renderPasswordReminderModal && <PasswordReminderModal {...passwordReminderModalProps} />}
+            {renderPasswordReminderModal && <PasswordReminderModal {...passwordReminderModalProps} disableDismiss />}
             <section
                 className="rounded-xl bg-elevated p-4 md:p-6 shadow-norm flex flex-column gap-2 lg:flex-row lg:items-center lg:gap-8 flex-nowrap text-center lg:text-left lg:pr-8"
                 style={{ background: 'linear-gradient(2deg, rgba(109 74 255 / 0.15) 17%, rgba(70 26 255 / 0.04) 80%)' }}
