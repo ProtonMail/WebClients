@@ -56,6 +56,8 @@ export const EMPTY_ASSISTANT_TURN: Turn = {
     content: '',
 };
 
+export const ENABLE_U2L_ENCRYPTION = false;
+
 // Internal type for turns during processing (before final cleanup)
 type TurnInProgress = Turn & {
     attachments?: ShallowAttachment[];
@@ -92,7 +94,7 @@ function attachmentToWireImage(attachment: Attachment): WireImage {
     };
 }
 
-const ARTIFACT_INSTRUCTION = `When your response contains content that is more useful as a standalone artifact than as part of the conversation, output it inside an artifact tag.
+const ARTIFACT_INSTRUCTION = `When your response contains content that is more useful as a standalone artifact than as part of the conversation, output it inside an artifact tag. Never include the artifact tag in the conversation title. 
 
 Use this format:
 
@@ -114,17 +116,19 @@ Do NOT use an artifact for:
 - Brief structured answers (a small table, a short list)
 - Content that only makes sense as part of your explanation
 
+
 Tag attribute rules:
 - type: "code" or "document"
 - language: required for code; lowercase common name (python, javascript, typescript, bash, sql, etc.). Omit for document artifacts.
 - title: 2-5 words, title case, describing the content
 
 Placement rules:
-- Always write your explanation or intro first, then the artifact
+- ALWAYS write your explanation or intro first, then the artifact. The artifacts should always be included last in the message. Disclaimers or notes should be included before the artifacts.
 - Never open a response with an artifact tag
 - Never split an artifact across multiple tags
 - Never nest artifacts
-- If a response has multiple artifacts, output them sequentially`;
+- If a response has multiple artifacts, output them sequentially
+- When generating a conversation title, never include an artifact tag.`;
 
 export function prepareTurns(
     linearChain: Message[],
