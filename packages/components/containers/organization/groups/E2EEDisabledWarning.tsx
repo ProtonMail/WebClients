@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
+import { Banner } from '@proton/atoms/Banner/Banner';
 import Loader from '@proton/components/components/loader/Loader';
-import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
+import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import type { GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces';
 
@@ -23,10 +24,13 @@ const E2EEDisabledWarning = ({
         : c('Info').t`End-to-end email encryption is disabled for this group. It can be enabled.`;
 
     return (
-        <div className="p-1 flex flex-nowrap items-center">
-            <IcExclamationCircle className="shrink-0 color-warning" />
-            <p className="text-sm color-warning flex-1 pl-4 my-0">{message}</p>
-        </div>
+        <Banner
+            className="e2ee-disabled-banner"
+            icon={<IcExclamationTriangleFilled size={4.5} className="shrink-0" />}
+            contentWrapperClassName="flex items-center"
+        >
+            <span>{message}</span>
+        </Banner>
     );
 };
 
