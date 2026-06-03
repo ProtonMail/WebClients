@@ -175,7 +175,6 @@ const TrialInfoFooter = ({ modalProps }: TrialInfoFooterProps) => {
         }
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            metrics: { source: 'plans' },
             telemetryFlow,
         });
     };

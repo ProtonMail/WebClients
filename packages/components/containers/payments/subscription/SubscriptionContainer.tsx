@@ -21,7 +21,6 @@ import { useCurrencies } from '@proton/components/payments/client-extensions/use
 import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import { useLoading } from '@proton/hooks';
 import { IcGift } from '@proton/icons/icons/IcGift';
-import metrics, { observeApiError } from '@proton/metrics';
 import {
     type AddonGuard,
     Audience,
@@ -113,13 +112,7 @@ import { type SelectedProductPlans, getDefaultSelectedProductPlans } from './hel
 import { getAllowedCycles } from './helpers/getAllowedCycles';
 import { getInitialCycle } from './helpers/getInitialCycle';
 import { getInitialCheckoutStep } from './helpers/initialCheckoutStep';
-import {
-    type SubscriptionCheckoutMetricsOverrides,
-    getCommonTelemetryPayload,
-    getMetricsProps,
-    reportChangeTelemetry,
-    telemetryContext,
-} from './helpers/subscriptionTelemetry';
+import { getCommonTelemetryPayload, reportChangeTelemetry, telemetryContext } from './helpers/subscriptionTelemetry';
 import { useVpn2024AddonsExperiment } from './helpers/useVpn2024AddonsExperiment';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
@@ -236,7 +229,6 @@ export interface SubscriptionContainerProps {
             | { model: Model; newModel: Model; type: 'error'; error: any }
             | { model: Model; newModel: Model; type: 'success'; result: SubscriptionEstimation }
     ) => void;
-    metrics: SubscriptionCheckoutMetricsOverrides;
     telemetryFlow?: TelemetryPaymentFlow;
     render: (renderProps: RenderProps) => ReactNode;
     subscription: Subscription | FreeSubscription;
@@ -278,7 +270,6 @@ const SubscriptionContainerInner = ({
     disableThanksStep,
     defaultAudience = Audience.B2C,
     defaultSelectedProductPlans,
-    metrics: outerMetricsProps,
     telemetryFlow,
     render,
     subscription,
@@ -471,8 +462,6 @@ const SubscriptionContainerInner = ({
 
     const isAccountLiteApp = application === APPS.PROTONACCOUNTLITE;
 
-    const metricsProps = getMetricsProps(outerMetricsProps, model.step, subscription, application);
-
     const checkoutModifiers = getCheckoutModifiers(checkResult);
 
     const amountDue = checkResult?.AmountDue || 0;
@@ -576,11 +565,6 @@ const SubscriptionContainerInner = ({
                 getPaymentMethods({ cache: CacheType.None }),
             ]).catch(noop);
 
-            void metrics.payments_subscription_total.increment({
-                ...metricsProps,
-                status: 'success',
-            });
-
             if (disableThanksStep) {
                 onSubscribed?.();
             } else {
@@ -594,13 +578,6 @@ const SubscriptionContainerInner = ({
                 // translator: this message pops in a notification, in case user is waiting really too long, or does the checkout in another tab, which makes this ones not valid/expiring
                 createNotification({ text: c('Error').t`Checkout expired, please try again`, type: 'error' });
             }
-
-            observeApiError(error, (status) =>
-                metrics.payments_subscription_total.increment({
-                    ...metricsProps,
-                    status,
-                })
-            );
 
             setModel((model) => ({ ...model, step: checkoutStep }));
             throw error;
@@ -854,14 +831,6 @@ const SubscriptionContainerInner = ({
         })(),
         app,
     });
-
-    useEffect(() => {
-        if (!model.initialCheckComplete) {
-            return;
-        }
-
-        void metrics.payments_subscription_steps_total.increment(metricsProps);
-    }, [model.step, model.initialCheckComplete]);
 
     useEffect(() => {
         if (!paymentFacade.initialized) {

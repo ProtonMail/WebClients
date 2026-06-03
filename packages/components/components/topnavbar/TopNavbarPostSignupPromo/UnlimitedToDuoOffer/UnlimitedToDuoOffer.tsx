@@ -98,9 +98,6 @@ export const UnlimitedToDuoOffer = () => {
                     dimensions: { messageType: spotlightConfig.type },
                 });
             },
-            metrics: {
-                source: 'upsells',
-            },
         });
     };
 

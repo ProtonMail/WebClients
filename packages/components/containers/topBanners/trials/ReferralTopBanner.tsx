@@ -79,9 +79,6 @@ const ModalAction = ({ upsellRef, step, closeModal, disablePlanSelection, childr
                     disablePlanSelection,
                     planIDs: getPlanIDs(subscription),
                     upsellRef,
-                    metrics: {
-                        source: 'upsells',
-                    },
                     cycle: CYCLE.YEARLY,
                 });
                 closeModal();

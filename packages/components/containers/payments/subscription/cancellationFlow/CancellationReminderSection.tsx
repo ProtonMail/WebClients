@@ -93,7 +93,6 @@ export const CancellationReminderSection = ({ app }: Props) => {
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
                 plan: config.upsellPlan,
-                metrics: { source: 'dashboard' },
                 onClose: () => {
                     goToSettings('/dashboard');
                 },
