@@ -2,6 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import {
     BorderedContainer,
@@ -12,14 +13,15 @@ import Label from '@proton/components/components/label/Label';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcEnvelopes } from '@proton/icons/icons/IcEnvelopes';
 import { IcPerson2 } from '@proton/icons/icons/IcPerson2';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import type { MigrationSetupModel, Product } from '../../types';
+import type { Product } from '../../types';
 import type { StepComponentProps } from './MigrationSetup';
 
 const availableProducts: { id: Product; label: string; icon: React.ReactNode }[] = [
     {
         id: 'Mail',
-        label: c('BOSS').t`Mail`,
+        label: c('BOSS').t`Emails`,
         icon: <IcEnvelopes className="shrink-0" />,
     },
     {
@@ -34,20 +36,33 @@ const availableProducts: { id: Product; label: string; icon: React.ReactNode }[]
     },
 ];
 
-const StepConfigureMigration: FC<{ model: MigrationSetupModel } & StepComponentProps> = ({ model, submitButton }) => {
+const StepConfigureMigration: FC<StepComponentProps> = ({ model, onNext }) => {
     const handleServiceSelected = (serviceId: Product) => () => {
         const nextValue = model.selectedProducts.includes(serviceId)
             ? model.selectedProducts.filter((id) => id !== serviceId)
             : [...model.selectedProducts, serviceId];
-        model.setSelectedProducts(nextValue);
+
+        model.update({ selectedProducts: nextValue });
     };
 
     return (
         <div className="max-w-custom" style={{ '--max-w-custom': '42rem' }}>
-            <h3 className="text-4xl text-bold mb-2">{c('BOSS').t`Configure migration`}</h3>
+            <div className="flex justify-space-between flex-nowrap items-center gap-4 mb-4">
+                <h3 className="text-4xl text-bold">{c('BOSS').t`Configure migration`}</h3>
+                <div className="flex gap-2 shrink-0 text-semibold">
+                    <Button
+                        disabled={!onNext}
+                        onClick={() => onNext?.()}
+                        color="norm"
+                        size="medium"
+                        className="rounded-lg"
+                    >
+                        {c('Action').t`Next`}
+                    </Button>
+                </div>
+            </div>
             <p className="color-weak mt-0">
-                {c('BOSS')
-                    .t`Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.`}
+                {c('BOSS').t`Select exactly what you'd like to migrate. It will apply to all organisation users.`}
             </p>
             <h4 className="mt-6 mb-3 text-lg text-semibold">{c('BOSS').t`What are you migrating?`}</h4>
             <BorderedContainer className="mb-3">
@@ -58,6 +73,7 @@ const StepConfigureMigration: FC<{ model: MigrationSetupModel } & StepComponentP
                             onChange={handleServiceSelected(s.id)}
                             checked={model.selectedProducts.includes(s.id)}
                             id={`migrate-${s.id}`}
+                            disabled={Boolean(model.importerOrganizationId)}
                         />
                         <Label htmlFor={`migrate-${s.id}`} className="flex-1 flex flex-nowrap items-center gap-2 pt-0">
                             {s.icon} {s.label}
@@ -67,9 +83,9 @@ const StepConfigureMigration: FC<{ model: MigrationSetupModel } & StepComponentP
             </BorderedContainer>
             <p className="color-weak inline-flex items-center gap-1 mt-0">
                 {c('BOSS').t`Find out what can be migrated.`}
-                <Href href="#" className="inline-block">{c('Link').t`Learn more`}</Href>
+                <Href href={getKnowledgeBaseUrl('/easy-switch-for-business')} className="inline-block">{c('Link')
+                    .t`Learn more`}</Href>
             </p>
-            {submitButton && <div className="mt-8 flex justify-end">{submitButton}</div>}
         </div>
     );
 };

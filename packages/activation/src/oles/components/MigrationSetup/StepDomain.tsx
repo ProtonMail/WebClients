@@ -1,52 +1,72 @@
+import type { FC } from 'react';
+
 import { c } from 'ttag';
 
-import { createDomain } from '@proton/account/domains/actions';
+import { createDomain, syncDomain } from '@proton/account/domains/actions';
 import { Button } from '@proton/atoms/Button/Button';
-import { useErrorHandler, useNotifications } from '@proton/components/index';
+import { Option, SelectTwo, useErrorHandler, useNotifications } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import type { Domain } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
 
-import type { MigrationSetupModel } from '../../types';
+import { KNOWN_REGISTRARS } from '../../domains';
 import type { StepComponentProps } from './MigrationSetup';
 
-interface Props extends StepComponentProps {
-    model: MigrationSetupModel;
-    domain?: Domain;
-    registrar?: { name: string; url?: string };
-}
-
-const StepDomain = ({ model, domain, registrar, submitButton }: Props) => {
+const StepDomain: FC<StepComponentProps> = ({ model, onNext }) => {
     const dispatch = useDispatch();
     const handleError = useErrorHandler();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
+
     const handleAddDomain = () =>
         dispatch(createDomain({ name: model.domainName! }))
-            .then(() => createNotification({ text: c('BOSS').t`Domain added` }))
+            .then((domain) => {
+                createNotification({ text: c('BOSS').t`Domain added` });
+                dispatch(syncDomain(domain)).catch(noop);
+            })
             .catch(handleError);
+
+    // Some registrars have multiple IANA ids, so we keep a single option per name.
+    // We pick the first id for each name, but always keep the currently selected id
+    // so the value stays valid in the dropdown.
+    const registrarOptions = (() => {
+        const byName = new Map<string, [number, { name: string; url?: string }]>();
+        for (const [id, data] of KNOWN_REGISTRARS) {
+            if (!byName.has(data.name) || id === model.domainRegistrarId) {
+                byName.set(data.name, [id, data]);
+            }
+        }
+        return [...byName.values()];
+    })();
 
     return (
         <div className="max-w-custom" style={{ '--max-w-custom': '42rem' }}>
-            <h3 className="text-4xl text-bold mb-2">{c('BOSS').t`Configure your domain`}</h3>
+            <div className="flex justify-space-between flex-nowrap items-center gap-4 mb-4">
+                <h3 className="text-4xl text-bold">{c('BOSS').t`Configure your domain`}</h3>
+                <div className="flex gap-2 shrink-0 text-semibold">
+                    <Button
+                        disabled={!onNext}
+                        onClick={() => onNext?.()}
+                        color="norm"
+                        size="medium"
+                        className="rounded-lg"
+                    >
+                        {c('Action').t`Next`}
+                    </Button>
+                </div>
+            </div>
+            <p className="color-weak mt-0">{c('BOSS').t`Add your organization email domain to ${BRAND_NAME}.`}</p>
 
-            <p className="color-weak mt-0">{c('BOSS')
-                .t`We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${BRAND_NAME} organization.`}</p>
-
-            <div className="relative flex flex-row flex-nowrap items-center justify-space-between gap-2 border border-weak rounded-xl p-4 mt-2">
+            <div className="relative flex flex-row flex-nowrap items-center justify-space-between gap-2 border border-weak rounded-xl p-4 mt-2 mb-8">
                 <div>
                     <p className="text-ellipsis flex-1 m-0" title={model.domainName}>
                         {model.domainName}
                     </p>
-                    <p className="m-0 text-sm color-weak">
-                        {!domain && c('BOSS').t`Not confirmed`}
-                        {domain && registrar && c('BOSS').t`Managed via ${registrar.name}`}
-                        {domain && !registrar && c('BOSS').t`Domain added`}
-                    </p>
+                    {!model.domain && <p className="m-0 text-sm color-weak">{c('BOSS').t`Not confirmed`}</p>}
                 </div>
-                {!domain ? (
+                {!model.domain ? (
                     <Button
                         className="text-semibold shrink-0"
                         color="norm"
@@ -56,13 +76,29 @@ const StepDomain = ({ model, domain, registrar, submitButton }: Props) => {
                         {c('BOSS').t`Add domain`}
                     </Button>
                 ) : (
-                    <div className="flex gap-1 text-semibold color-primary items-center">
+                    <div className="flex gap-1 text-semibold color-primary items-center py-2">
                         <IcCheckmarkCircleFilled />
                         <span>{c('BOSS').t`Domain added`}</span>
                     </div>
                 )}
             </div>
-            {submitButton && <div className="mt-8 flex justify-end">{submitButton}</div>}
+
+            {model.domain && (
+                <div>
+                    <h4 className="m-0 text-lg text-semibold">{c('BOSS').t`Domain provider`}</h4>
+                    <p className="mt-0 color-weak">{c('BOSS')
+                        .t`Not detected correctly? Choose your provider from the list.`}</p>
+                    <SelectTwo
+                        className="border-weak py-8 rounded-lg"
+                        value={model.domainRegistrarId ?? 0}
+                        onChange={(e) => model.update({ domainRegistrarId: e.value })}
+                    >
+                        {registrarOptions.map(([id, data]) => (
+                            <Option key={id} value={id} title={data.name} />
+                        ))}
+                    </SelectTwo>
+                </div>
+            )}
         </div>
     );
 };

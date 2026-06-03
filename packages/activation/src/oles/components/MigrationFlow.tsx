@@ -4,70 +4,149 @@ import { c } from 'ttag';
 
 import { useCustomDomains } from '@proton/account/domains/hooks';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Href } from '@proton/atoms/Href/Href';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { EllipsisLoader } from '@proton/components/index';
+import usePrevious from '@proton/hooks/usePrevious';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { getDomainRegistrar } from '@proton/shared/lib/api/domains';
+import { getEmailParts } from '@proton/shared/lib/helpers/email';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import type { DomainRegistrar } from '@proton/shared/lib/interfaces';
 
 import { ApiImporterOrganizationState } from '../../api/api.interface';
+import { EASY_SWITCH_FEATURES, OAUTH_PROVIDER } from '../../interface';
 import { setupMigration } from '../thunk';
 import type { MigrationConfiguration, MigrationModel, MigrationSetupModel } from '../types';
+import { useConnectionState } from '../useConnectionState';
 import { useImporterOrganizations } from '../useImporterOrganizations';
+import { useProviderTokens } from '../useProviderTokens';
+import { useProviderUsers } from '../useProviderUsers';
 import { CircledLogoWithProton } from './CircledLogoWithProton';
-import MigrationAssistant from './MigrationAssistant/MigrationAssistant';
+import FinishModal from './MigrationAssistant/FinishModal';
+import MigrationSummary from './MigrationAssistant/MigrationSummary';
 import MigrationSetup from './MigrationSetup/MigrationSetup';
 
+const SETUP_DEFAULTS: MigrationConfiguration = {
+    selectedProducts: ['Mail', 'Contacts', 'Calendar'],
+    tokens: [],
+    notifyList: [],
+    transferErrors: [],
+    timePeriod: 'all',
+    importOrganizationSettings: true,
+
+    connectionState: undefined,
+    importerOrganizationId: undefined,
+    domain: undefined,
+    domainName: undefined,
+    state: undefined,
+    joiningLink: undefined,
+    domainRegistrarId: 0,
+};
+
 const MigrationFlow = () => {
+    const api = useSilentApi();
     const dispatch = useDispatch();
     const [customDomains] = useCustomDomains();
     const [importerOrganizations] = useImporterOrganizations();
-    const [migrationConfig, setMigrationConfig] = useState<MigrationConfiguration>({
-        importerOrganizationId: undefined,
-        domainName: undefined,
-        selectedProducts: ['Mail', 'Contacts', 'Calendar'],
-        notifyList: [],
-        timePeriod: 'all',
-        importOrganizationSettings: true,
-        joiningLink: undefined,
-        state: ApiImporterOrganizationState.INITIALIZED,
-    });
-    const loading = !customDomains || !importerOrganizations;
+    const [tokens] = useProviderTokens(OAUTH_PROVIDER.GSUITE, [EASY_SWITCH_FEATURES.OLES]);
+    const [connectionState] = useConnectionState(tokens);
+    const [migrationConfig, setMigrationConfig] = useState<MigrationConfiguration>();
+    const [providerUsers] = useProviderUsers(migrationConfig?.domainName);
+    const [finishModalProps, setFinishModalOpen, renderFinishModal] = useModalState();
+    const loading = !customDomains || !importerOrganizations || !tokens || !connectionState || !providerUsers;
 
     const onMigrationSetupSubmit = async (payload: MigrationConfiguration) => {
         const migrationConfig = await dispatch(setupMigration(payload)).unwrap();
         setMigrationConfig(migrationConfig);
     };
 
+    const onUpdate = (diff: Partial<MigrationConfiguration>) =>
+        setMigrationConfig((prev) => ({ ...(prev || SETUP_DEFAULTS), ...diff }));
+
     useEffect(() => {
-        if (loading || !importerOrganizations?.length) {
+        if (!importerOrganizations?.length) {
             return;
         }
 
-        const { ImporterConfig, ImporterOrganizationID, DomainName, JoiningLink, State } = importerOrganizations[0];
+        const [{ ImporterConfig, ImporterOrganizationID, DomainName, JoiningLink, State }] = importerOrganizations;
 
-        setMigrationConfig((config) => ({
-            ...config,
+        onUpdate({
             importerOrganizationId: ImporterOrganizationID,
             selectedProducts: ImporterConfig.Products,
             domainName: DomainName,
             importOrganizationSettings: ImporterConfig.ImportOrganizationSettings,
             joiningLink: JoiningLink,
             state: State,
-        }));
-    }, [importerOrganizations, loading]);
+        });
+    }, [importerOrganizations]);
 
-    const model: MigrationSetupModel & MigrationModel = {
-        ...migrationConfig,
-        setSelectedProducts: (products) => setMigrationConfig((state) => ({ ...state, selectedProducts: products })),
-        setNotifyList: (emails) => setMigrationConfig((state) => ({ ...state, notifyList: emails })),
-        setTimePeriod: (timePeriod) => setMigrationConfig((state) => ({ ...state, timePeriod })),
-        setImportOrganizationSettings: (importOrganizationSettings) =>
-            setMigrationConfig((state) => ({ ...state, importOrganizationSettings })),
-        setDomainName: (domainName) => setMigrationConfig((state) => ({ ...state, domainName })),
-        update: setMigrationConfig,
+    const domainName = (() => {
+        if (migrationConfig?.domainName) {
+            return migrationConfig.domainName;
+        }
+
+        if (!tokens || !tokens.length) {
+            return undefined;
+        }
+
+        return getEmailParts(tokens[0].Account)[1];
+    })();
+
+    const domain = customDomains?.find((d) => d.DomainName === domainName);
+
+    const model: MigrationSetupModel = {
+        ...(migrationConfig || SETUP_DEFAULTS),
+        domainName,
+        domain,
+        tokens,
+        connectionState,
+        update: onUpdate,
     };
 
-    const component = (() => {
-        if (loading) {
-            return (
+    useEffect(() => {
+        void (async () => {
+            if (!domain) {
+                onUpdate({ domainRegistrarId: undefined });
+                return;
+            }
+
+            const { RegistrarID } = await api<DomainRegistrar>(getDomainRegistrar(domain.ID));
+            onUpdate({ domainRegistrarId: RegistrarID ?? undefined });
+        })();
+    }, [domain]);
+
+    const prevModelState = usePrevious(model.state);
+    useEffect(() => {
+        if (
+            prevModelState === null ||
+            prevModelState === undefined ||
+            prevModelState >= ApiImporterOrganizationState.COMPLETED ||
+            model.state !== ApiImporterOrganizationState.COMPLETED
+        ) {
+            return;
+        }
+
+        setFinishModalOpen(true);
+    }, [model.state]);
+
+    return (
+        <div className="relative flex-1 flex flex-column flex-nowrap">
+            <div className="w-full flex flex-nowrap items-center justify-space-between py-5 px-4 xl:px-8 border-bottom border-top border-weak">
+                <div className="flex flex-nowrap items-center mr-2">
+                    <CircledLogoWithProton iconPosition="outside-bottom-right" className="shrink-0 mb-1" />
+                    <h2 className="text-2xl text-bold ml-4 my-0">{c('BOSS').t`Migrate from Google Workspace`}</h2>
+                </div>
+                <Href
+                    href={getKnowledgeBaseUrl('/easy-switch-for-business')}
+                    className="inline-block text-no-decoration shrink-0"
+                >
+                    {c('Link').t`Help & support`}
+                </Href>
+            </div>
+
+            {loading && (
                 <div className="flex-1 h-full w-full flex flex-nowrap">
                     <div className="m-auto text-center">
                         <CircleLoader size="large" />
@@ -78,24 +157,17 @@ const MigrationFlow = () => {
                         </div>
                     </div>
                 </div>
-            );
-        }
+            )}
 
-        if (!migrationConfig.importerOrganizationId) {
-            return <MigrationSetup model={model} onSubmit={onMigrationSetupSubmit} />;
-        }
+            {!loading && (!model.state || model.state < ApiImporterOrganizationState.COMPLETED) && (
+                <MigrationSetup model={model} onSubmit={onMigrationSetupSubmit} />
+            )}
 
-        return <MigrationAssistant model={model} />;
-    })();
+            {!loading && model.state && model.state >= ApiImporterOrganizationState.COMPLETED && (
+                <MigrationSummary model={model as MigrationModel} />
+            )}
 
-    return (
-        <div className="relative flex-1 flex flex-column flex-nowrap">
-            <div className="w-full flex flex-nowrap items-center py-5 px-4 xl:px-8 border-bottom border-top border-weak">
-                <CircledLogoWithProton iconPosition="outside-bottom-right" className="shrink-0 mb-1" />
-                <h2 className="text-2xl text-bold ml-4 my-0">{c('BOSS').t`Migrate from Google Workspace`}</h2>
-            </div>
-
-            {component}
+            {renderFinishModal && model.domain && <FinishModal initialView={'all-set'} modalProps={finishModalProps} />}
         </div>
     );
 };

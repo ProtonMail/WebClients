@@ -26,7 +26,8 @@ export const ProviderUsersProvider = ({ children }: { children: ReactNode }) => 
 };
 
 export const useProviderUsers = (
-    domainName: string
+    domainName: string | undefined,
+    useCachedData: boolean = false
 ): [ApiImporterOrganizationUser[] | undefined, boolean, () => Promise<void>] => {
     const api = useSilentApi();
     const { data, setData, loading, setLoading } = useContext(Context);
@@ -34,19 +35,23 @@ export const useProviderUsers = (
     const refresh = useCallback(async () => {
         setLoading(true);
 
-        return api<{ Users: ApiImporterOrganizationUser[] }>(getOrganizationUsers({ DomainName: domainName }))
-            .then((r) => setData(r.Users))
-            .catch(data ? noop : () => setData([]))
-            .finally(() => setLoading(false));
-    }, [data]);
-
-    useEffect(() => {
-        if (data) {
+        if (!domainName) {
+            setData([]);
+            setLoading(false);
             return;
         }
 
+        return api<{ Users: ApiImporterOrganizationUser[] }>(
+            getOrganizationUsers({ DomainName: domainName }, useCachedData)
+        )
+            .then((r) => setData(r.Users))
+            .catch(data ? noop : () => setData([]))
+            .finally(() => setLoading(false));
+    }, [domainName, useCachedData]);
+
+    useEffect(() => {
         void refresh();
-    }, []);
+    }, [domainName]);
 
     return [data, loading, refresh];
 };
