@@ -20,6 +20,7 @@ import type { FetchMetaAndRawCommit } from './FetchMetaAndRawCommit'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import { jwtDecode } from 'jwt-decode'
 import { realtimeTokenPayloadSchema } from './FetchRealtimeToken'
+import type { GetNodePermissions } from './GetNodePermissions'
 
 type LoadDocumentResult<E extends DocumentState | PublicDocumentState> = {
   documentState: E
@@ -41,6 +42,7 @@ export class LoadDocument {
     private decryptCommit: DecryptCommit,
     private loadMetaAndCommit: FetchMetaAndRawCommit,
     private getDocumentKeys: GetDocumentKeys,
+    private getNodePermissions: GetNodePermissions,
     private logger: LoggerInterface,
   ) {}
 
@@ -111,7 +113,13 @@ export class LoadDocument {
       }
 
       if (!userRole) {
-        return DynamicResult.fail({ message: 'Unable to determine user role' })
+        const permissionsResult = await this.getNodePermissions.execute(nodeMeta, { useCache: true })
+
+        if (permissionsResult.isFailed()) {
+          return DynamicResult.fail({ message: permissionsResult.getError() })
+        }
+
+        userRole = permissionsResult.getValue().role
       }
 
       let decryptedCommit: DecryptedCommit | undefined
