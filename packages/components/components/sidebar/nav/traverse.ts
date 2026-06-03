@@ -1,15 +1,62 @@
 import type { NavItemResolved } from '@proton/nav/types/nav';
 
+interface Match {
+    parents: NavItemResolved[];
+    to: string;
+}
+
 /**
- * Traverses a navigation tree and returns the set of branch IDs that are
- * ancestors of the leaf node matching the given pathname.
+ * True when `pathname` either equals `to` exactly or extends it by one or more
+ * additional path segments. The trailing-slash check prevents false positives
+ * like `/vpn/recoveryx` matching `/vpn/recovery`.
+ */
+function isPrefixMatch(pathname: string, to: string): boolean {
+    return pathname === to || pathname.startsWith(`${to}/`);
+}
+
+/**
+ * Walks the tree and collects every item whose `to` is a prefix of `pathname`,
+ * along with the chain of ancestors leading to it.
+ */
+function getMatchingItems(items: NavItemResolved[], pathname: string): Match[] {
+    const matches: Match[] = [];
+
+    function walk(item: NavItemResolved, parents: NavItemResolved[]): void {
+        if (item.to && isPrefixMatch(pathname, item.to)) {
+            matches.push({ parents, to: item.to });
+        }
+        item.children?.forEach((child) => walk(child, [...parents, item]));
+    }
+
+    items.forEach((item) => walk(item, []));
+    return matches;
+}
+
+/**
+ * Picks the match whose `to` is longest.
+ * The deepest, most specific route.
  *
- * This is used to determine which branches need to be open in order to
- * reveal the currently active leaf — regardless of URL structure or nesting depth.
+ * @example
+ * For `/vpn/settings/email`, this prefers `/vpn/settings` over `/vpn`.
+ */
+function pickBestBranchesFrom(matches: Match[]) {
+    const bestMatches = matches.reduce<Match | undefined>((best, current) => {
+        if (!best || current.to.length > best.to.length) {
+            return current;
+        }
+        return best;
+    }, undefined);
+
+    return new Set(bestMatches?.parents.map((parent) => parent.id) ?? []);
+}
+
+/**
+ * Returns the set of branch IDs that need to be open in order to reveal the
+ * sidebar item matching the current pathname.
  *
- * @remarks
- * Only branch IDs are included in the result — the matching leaf's own ID is excluded.
- * If no leaf matches the pathname, an empty Set is returned.
+ * Matching is prefix-based on path segments, so a URL like `/vpn/recovery/email`
+ * still resolves to the `/vpn/recovery` item even when `/email` is not itself
+ * a registered route. When multiple items match, the most specific one wins.
  *
  * @example
  * Given a tree where `/vpn/gateways` lives under `organization` → `organization.vpn`:
@@ -17,22 +64,8 @@ import type { NavItemResolved } from '@proton/nav/types/nav';
  * findActiveBranches(items, '/vpn/gateways')
  * // → Set { 'organization', 'organization.vpn' }
  * ```
- *
- * @param items - The top-level navigation items to traverse
- * @param pathname - The current URL pathname to match against leaf `to` values
- * @returns A Set of branch IDs that are ancestors of the matching leaf
  */
-export function findActiveBranches(items: NavItemResolved[], pathname: string): Set<string> {
-    const active = new Set<string>();
-
-    function walk(item: NavItemResolved, ancestors: NavItemResolved[]): void {
-        if (item.to === pathname) {
-            ancestors.forEach((a) => active.add(a.id));
-            return;
-        }
-        item.children?.forEach((child) => walk(child, [...ancestors, item]));
-    }
-
-    items.forEach((item) => walk(item, []));
-    return active;
+export function getActiveBranches(items: NavItemResolved[], pathname: string): Set<string> {
+    const matches = getMatchingItems(items, pathname);
+    return pickBestBranchesFrom(matches);
 }

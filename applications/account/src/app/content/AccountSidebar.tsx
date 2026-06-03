@@ -1,10 +1,12 @@
-import type { JSX } from 'react';
+import type { ComponentProps, JSX } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import {
     AppVersion,
     AppsDropdown,
+    Loader,
     Sidebar,
     SidebarBackButton,
     SidebarList,
@@ -12,8 +14,11 @@ import {
     StartUsingPassSpotlight,
     useAccountSpotlights,
 } from '@proton/components';
+import { Tree } from '@proton/components/components/sidebar/nav/Tree';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, MEET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { SidebarToggle } from '@proton/vpn/components/Sidebar/Toggle';
+import type { useB2BAdminSidebarFeature } from '@proton/vpn/hooks/useB2BAdminSidebarFeature';
 
 import SidebarListWrapper from '../containers/SidebarListWrapper';
 import CalendarSettingsSidebar from '../containers/calendar/CalendarSettingsSidebar';
@@ -26,9 +31,20 @@ interface AccountSidebarProps {
     expanded: boolean;
     onToggleExpand: () => void;
     routes: Routes;
+    adminSidebar?: ReturnType<typeof useB2BAdminSidebarFeature>;
+    navigationRef: ComponentProps<typeof Sidebar>['navigationRef'];
 }
 
-const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }: AccountSidebarProps) => {
+const AccountSidebar = ({
+    app,
+    appSlug,
+    logo,
+    expanded,
+    onToggleExpand,
+    routes,
+    adminSidebar,
+    navigationRef,
+}: AccountSidebarProps) => {
     const backButtonCopy = {
         [APPS.PROTONMAIL]: c('Navigation').t`Inbox`,
         [APPS.PROTONCALENDAR]: c('Navigation').t`Calendar`,
@@ -64,6 +80,11 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
         }
     };
 
+    const isAdminSidebarEnabled = app === APPS.PROTONVPN_SETTINGS && adminSidebar?.enabled;
+    const isB2BAdminActive = app === APPS.PROTONVPN_SETTINGS && adminSidebar?.enabled && adminSidebar.sidebar.status;
+
+    const { pathname } = useLocation();
+
     return (
         <Sidebar
             app={app}
@@ -90,26 +111,41 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             version={<AppVersion />}
+            wide={isAdminSidebarEnabled}
             data-testid="account:sidebar"
+            navigationRef={isAdminSidebarEnabled ? navigationRef : null}
         >
-            <SidebarNav>
-                <SidebarList>
-                    <SidebarListWrapper prefix={prefix} {...routes.account} />
-                    {app === APPS.PROTONMAIL && <SidebarListWrapper prefix={prefix} {...routes.mail} />}
-                    {app === APPS.PROTONCALENDAR && <CalendarSettingsSidebar prefix={prefix} {...routes.calendar} />}
-                    {app === APPS.PROTONDRIVE && <SidebarListWrapper prefix={prefix} {...routes.drive} />}
-                    {app === APPS.PROTONVPN_SETTINGS && <SidebarListWrapper prefix={prefix} {...routes.vpn} />}
-                    {app === APPS.PROTONPASS && <SidebarListWrapper prefix={prefix} {...routes.pass} />}
-                    {app === APPS.PROTONDOCS && <SidebarListWrapper prefix={prefix} {...routes.docs} />}
-                    {app === APPS.PROTONWALLET && <SidebarListWrapper prefix={prefix} {...routes.wallet} />}
-                    {app === APPS.PROTONMEET && <SidebarListWrapper prefix={prefix} {...routes.meet} />}
-                    {app === APPS.PROTONAUTHENTICATOR && (
-                        <SidebarListWrapper prefix={prefix} {...routes.authenticator} />
+            {adminSidebar?.loading ? (
+                <Loader />
+            ) : (
+                <SidebarNav className="overflow-auto">
+                    {isB2BAdminActive ? (
+                        <Tree routes={adminSidebar.routes} pathname={pathname} />
+                    ) : (
+                        <SidebarList>
+                            <SidebarListWrapper prefix={prefix} {...routes.account} />
+                            {app === APPS.PROTONMAIL && <SidebarListWrapper prefix={prefix} {...routes.mail} />}
+                            {app === APPS.PROTONCALENDAR && (
+                                <CalendarSettingsSidebar prefix={prefix} {...routes.calendar} />
+                            )}
+                            {app === APPS.PROTONDRIVE && <SidebarListWrapper prefix={prefix} {...routes.drive} />}
+                            {app === APPS.PROTONVPN_SETTINGS && <SidebarListWrapper prefix={prefix} {...routes.vpn} />}
+                            {app === APPS.PROTONPASS && <SidebarListWrapper prefix={prefix} {...routes.pass} />}
+                            {app === APPS.PROTONDOCS && <SidebarListWrapper prefix={prefix} {...routes.docs} />}
+                            {app === APPS.PROTONWALLET && <SidebarListWrapper prefix={prefix} {...routes.wallet} />}
+                            {app === APPS.PROTONMEET && <SidebarListWrapper prefix={prefix} {...routes.meet} />}
+                            {app === APPS.PROTONAUTHENTICATOR && (
+                                <SidebarListWrapper prefix={prefix} {...routes.authenticator} />
+                            )}
+                            {routes.organization.available && (
+                                <SidebarListWrapper prefix={prefix} {...routes.organization} />
+                            )}
+                            {routes.msp.available && <SidebarListWrapper prefix={prefix} {...routes.msp} />}
+                        </SidebarList>
                     )}
-                    {routes.organization.available && <SidebarListWrapper prefix={prefix} {...routes.organization} />}
-                    {routes.msp.available && <SidebarListWrapper prefix={prefix} {...routes.msp} />}
-                </SidebarList>
-            </SidebarNav>
+                </SidebarNav>
+            )}
+            {isAdminSidebarEnabled ? <SidebarToggle key="sidebar-toggle" adminSidebarFeature={adminSidebar} /> : null}
         </Sidebar>
     );
 };

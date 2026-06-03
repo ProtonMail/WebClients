@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect } from 'react';
+import { Suspense, lazy, useEffect, useRef } from 'react';
 import { Redirect, Route, Switch, matchPath, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -68,6 +68,7 @@ import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 import { GetStartedOnboarding } from '@proton/vpn/components/Onboarding';
 import { TVContainer, TvContainerSignedIn } from '@proton/vpn/components/tv';
+import { useB2BAdminSidebarFeature } from '@proton/vpn/hooks/useB2BAdminSidebarFeature';
 
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
 import { recoveryIds } from '../containers/account/recoveryIds';
@@ -77,7 +78,7 @@ import Layout from '../public/Layout';
 import Main from '../public/Main';
 import AccountSidebar from './AccountSidebar';
 import AccountStartupModals from './AccountStartupModals';
-import SettingsSearch from './SettingsSearch';
+import SettingsSearch, { AutocompleteSettingsSearch } from './SettingsSearch';
 import type { AccountSettings, Flags, OrganizationSettings } from './router-params';
 import { getRoutes } from './routes';
 
@@ -378,6 +379,24 @@ const MainContainer = () => {
         </TopBanners>
     );
 
+    const navigationRef = useRef<HTMLDivElement>(null);
+    const adminSidebar = useB2BAdminSidebarFeature({
+        prefix: pathPrefix,
+        navigationRef,
+    });
+
+    const settingsSearch = () => {
+        if (!viewportWidth['>=large']) {
+            return null;
+        }
+
+        if (adminSidebar.enabled && adminSidebar.sidebar.status) {
+            return <AutocompleteSettingsSearch options={adminSidebar.settings} />;
+        }
+
+        return <SettingsSearch routes={routes} app={app} />;
+    };
+
     const header = (
         <PrivateHeader
             userDropdown={<UserDropdown app={app} sessionOptions={{ path: pathPrefix }} />}
@@ -387,7 +406,7 @@ const MainContainer = () => {
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isSmallViewport={viewportWidth['<=small']}
-            actionArea={viewportWidth['>=large'] && <SettingsSearch routes={routes} app={app} />}
+            actionArea={settingsSearch()}
             app={app}
             onBoardingButton={app === APPS.PROTONVPN_SETTINGS && <GetStartedOnboarding />}
         />
@@ -401,6 +420,8 @@ const MainContainer = () => {
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             routes={routes}
+            adminSidebar={adminSidebar}
+            navigationRef={navigationRef}
         />
     );
 

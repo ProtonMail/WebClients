@@ -237,7 +237,8 @@ const MainContainer: FunctionComponent = () => {
           }
         : undefined;
 
-    const adminSidebarFeature = useB2BAdminSidebarFeature({ user, subscription, organization });
+    const navigationRef = useRef<HTMLDivElement>(null);
+    const adminSidebarFeature = useB2BAdminSidebarFeature({ navigationRef });
 
     const header = (
         <PrivateHeader
@@ -320,6 +321,7 @@ const MainContainer: FunctionComponent = () => {
                                 sidebarExpanded={expanded}
                                 onSidebarToggle={onToggleExpand}
                                 adminSidebarFeature={adminSidebarFeature}
+                                navigationRef={navigationRef}
                             />
                         }
                     >

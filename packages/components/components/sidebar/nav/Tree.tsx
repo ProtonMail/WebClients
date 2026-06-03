@@ -8,7 +8,7 @@ import { Sidebar } from '@proton/components/components/sidebar/nav';
 import { Icon } from '@proton/components/index';
 import type { NavItemResolved, NavResolved } from '@proton/nav/types/nav';
 
-import { findActiveBranches } from './traverse';
+import { getActiveBranches } from './traverse';
 
 function isThemeColor(value: unknown): value is ThemeColor {
     return Object.values(ThemeColor).includes(value as ThemeColor);
@@ -100,7 +100,7 @@ type Props = {
 export const Tree = ({ routes, pathname }: Props) => {
     const firstLevels = routes.items;
 
-    const activeBranches = useMemo(() => findActiveBranches(firstLevels, pathname), [firstLevels, pathname]);
+    const activeBranches = useMemo(() => getActiveBranches(firstLevels, pathname), [firstLevels, pathname]);
 
     const [openLevel1, setOpenLevel1] = useState<string | undefined>(() => {
         return firstLevels.find((item) => activeBranches.has(item.id))?.id;
