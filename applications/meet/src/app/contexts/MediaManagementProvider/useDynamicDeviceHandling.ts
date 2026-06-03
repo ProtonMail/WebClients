@@ -10,8 +10,8 @@ import {
     selectActiveAudioOutputId,
     selectActiveCameraId,
     selectActiveMicrophoneId,
-    selectCameraState,
     selectMicrophoneState,
+    selectPreferredCameraId,
     selectSpeakerState,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { filterDevices, getDefaultDevice, isDefaultDevice } from '@proton/meet/utils/deviceUtils';
@@ -113,7 +113,7 @@ export const useDynamicDeviceHandling = ({
     const activeMicrophoneDeviceId = useMeetSelector(selectActiveMicrophoneId);
     const activeAudioOutputDeviceId = useMeetSelector(selectActiveAudioOutputId);
     const activeCameraDeviceId = useMeetSelector(selectActiveCameraId);
-    const cameraState = useMeetSelector(selectCameraState);
+    const preferredCameraId = useMeetSelector(selectPreferredCameraId);
     const microphoneState = useMeetSelector(selectMicrophoneState);
     const speakerState = useMeetSelector(selectSpeakerState);
     const room = useRoomContext();
@@ -238,7 +238,7 @@ export const useDynamicDeviceHandling = ({
                 !areDeviceIdSetsEqual.cameras && {
                     deviceList: camerasAfterDeviceChange,
                     deviceId: activeCameraDeviceId,
-                    preferredDeviceId: cameraState.preferredDeviceId,
+                    preferredDeviceId: preferredCameraId,
                     systemDefaultDevice: null,
                     previousSystemDefaultDeviceId: null,
                     useSystemDefault: false,
