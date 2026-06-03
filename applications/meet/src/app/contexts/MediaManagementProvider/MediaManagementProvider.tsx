@@ -43,7 +43,6 @@ import { useStableCallback } from '../../hooks/useStableCallback';
 import { preloadBackgroundProcessorAssets } from '../../processors/background-processor/createBackgroundProcessor';
 import type { SwitchActiveDevice } from '../../types';
 import { supportsSetSinkId } from '../../utils/browser';
-import { isRNNoiseFilterSupported, preloadRNNoiseWorkletAsset } from '../../utils/rnnoiseProcessor';
 import { MediaManagementContext } from './MediaManagementContext';
 import { PermissionsModal } from './PermissionsModal/PermissionsModal';
 import { useAudioToggle } from './mediaToggle/useAudioToggle';
@@ -503,9 +502,6 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
 
     useEffect(() => {
         void preloadBackgroundProcessorAssets();
-        if (isRNNoiseFilterSupported()) {
-            preloadRNNoiseWorkletAsset();
-        }
     }, []);
 
     return (
