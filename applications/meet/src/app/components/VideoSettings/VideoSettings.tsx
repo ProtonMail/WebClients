@@ -2,11 +2,7 @@ import { type RefObject, useMemo } from 'react';
 
 import type { PopperPosition } from '@proton/components/components/popper/interface';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import {
-    selectCameraState,
-    selectCameras,
-    selectSelectedCameraId,
-} from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import { selectCameras, selectSelectedCameraId } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { filterDevices } from '@proton/meet/utils/deviceUtils';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
@@ -22,7 +18,6 @@ interface VideoSettingsProps {
 export function VideoSettings({ anchorRef, onClose, anchorPosition }: VideoSettingsProps) {
     const videoDeviceId = useMeetSelector(selectSelectedCameraId);
     const cameras = useMeetSelector(selectCameras);
-    const cameraState = useMeetSelector(selectCameraState);
     const { toggleVideo, isVideoEnabled } = useMediaManagementContext();
 
     const { isLoading, withLoading } = useDeviceLoading();
@@ -38,7 +33,6 @@ export function VideoSettings({ anchorRef, onClose, anchorPosition }: VideoSetti
             anchorRef={anchorRef}
             handleCameraChange={handleCameraChange}
             videoDeviceId={videoDeviceId}
-            cameraState={cameraState}
             cameras={filteredCameras}
             onClose={onClose}
             anchorPosition={anchorPosition}
