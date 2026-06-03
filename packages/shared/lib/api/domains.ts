@@ -10,6 +10,11 @@ export const getDomain = (domainID: string, refresh: boolean) => ({
     params: { Refresh: +refresh },
 });
 
+export const getDomainRegistrar = (domainID: string) => ({
+    url: `domains/${domainID}/registrar`,
+    method: 'get',
+});
+
 export const queryDomainAddresses = (domainID: string, params?: { Page: number; PageSize: number }) => ({
     url: `domains/${domainID}/addresses`,
     method: 'get',
