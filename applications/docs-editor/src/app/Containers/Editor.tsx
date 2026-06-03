@@ -60,6 +60,8 @@ import { PageBreakPlugin } from '../Plugins/PageBreak/PageBreakPlugin'
 import { useApplication } from './ApplicationProvider'
 import { isDevOrBlack } from '@proton/utils/env'
 import { SCROLL_TO_USER_CURSOR_COMMAND } from '../Plugins/Collaboration/ScrollToUserCursorPlugin'
+import { useNotifications } from '@proton/components'
+import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAlert'
 
 const TypingBotEnabled = false
 
@@ -195,6 +197,28 @@ export function Editor({
   const reopenSuggestion = useMemo(() => clientInvoker.reopenSuggestion.bind(clientInvoker), [clientInvoker])
   const rejectSuggestion = useMemo(() => clientInvoker.rejectSuggestion.bind(clientInvoker), [clientInvoker])
 
+  const { createNotification } = useNotifications()
+  const createWarningNotification = useCallback(
+    (message: string) => {
+      createNotification({
+        text: message,
+        type: 'warning',
+      })
+    },
+    [createNotification],
+  )
+
+  const [alertModal, showAlertModal] = useGenericAlertModal()
+  const showAlert = useCallback(
+    (title: string, message: string) => {
+      showAlertModal({
+        title,
+        translatedMessage: message,
+      })
+    },
+    [showAlertModal],
+  )
+
   return (
     <CustomCollaborationContextProvider
       value={{
@@ -319,8 +343,11 @@ export function Editor({
               getAllThreads={getAllThreads}
               reopenSuggestion={reopenSuggestion}
               rejectSuggestion={rejectSuggestion}
+              createWarningNotification={createWarningNotification}
+              showAlert={showAlert}
             />
           )}
+          {alertModal}
         </MarkNodesProvider>
       </SafeLexicalComposer>
     </CustomCollaborationContextProvider>
