@@ -24,9 +24,11 @@ import PasswordReminderInput from './PasswordReminderInput';
 import { dismissPasswordReminder, submitPasswordReminder } from './index';
 import lock from './lock.svg';
 
-interface PasswordReminderModalProps extends ModalProps<'form'> {}
+interface PasswordReminderModalProps extends ModalProps<'form'> {
+    disableDismiss?: boolean;
+}
 
-const PasswordReminderModal = ({ onClose, ...rest }: PasswordReminderModalProps) => {
+const PasswordReminderModal = ({ onClose, disableDismiss, ...rest }: PasswordReminderModalProps) => {
     const { createNotification } = useNotifications();
     const handleError = useErrorHandler();
     const dispatch = useDispatch();
@@ -41,12 +43,14 @@ const PasswordReminderModal = ({ onClose, ...rest }: PasswordReminderModalProps)
     const emailOrNameToDisplay = user.Email || user.DisplayName || user.Name;
 
     const handleDismiss = async () => {
-        await dispatch(dismissPasswordReminder());
+        if (!disableDismiss) {
+            await dispatch(dismissPasswordReminder());
 
-        createNotification({
-            text: c('Info').t`We'll remind you to verify your password again later`,
-            showCloseButton: false,
-        });
+            createNotification({
+                text: c('Info').t`We'll remind you to verify your password again later`,
+                showCloseButton: false,
+            });
+        }
 
         onClose?.();
     };
