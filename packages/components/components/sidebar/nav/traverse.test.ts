@@ -1,6 +1,6 @@
 import type { NavResolved } from '@proton/nav/types/nav';
 
-import { findActiveBranches } from './traverse';
+import { getActiveBranches } from './traverse';
 
 const routes: NavResolved = {
     items: [
@@ -74,32 +74,47 @@ const routes: NavResolved = {
 };
 
 describe('findActiveBranches', () => {
-    it('returns empty set when no leaf matches', () => {
-        const active = findActiveBranches(routes.items, '/unknown');
-        expect(active.size).toBe(0);
+    it.each`
+        pathname                   | expected                                | description
+        ${'/unknown'}              | ${[]}                                   | ${'returns empty set when no leaf matches'}
+        ${''}                      | ${[]}                                   | ${'returns empty set for an empty pathname'}
+        ${'/vpn/dashboard'}        | ${['organization']}                     | ${'returns the direct parent when leaf is at L2'}
+        ${'/vpn/gateways'}         | ${['organization', 'organization.vpn']} | ${'returns all ancestors when leaf is at L3'}
+        ${'/vpn/recovery'}         | ${['my-account']}                       | ${'matches exactly and excludes unrelated branches'}
+        ${'/vpn/recovery/email'}   | ${['my-account']}                       | ${'matches a nested path that extends beyond a registered leaf'}
+        ${'/vpn/recovery/email/x'} | ${['my-account']}                       | ${'matches a deeply nested extension of a registered leaf'}
+        ${'/vpn/recovery/'}        | ${['my-account']}                       | ${'matches a pathname with a trailing slash'}
+        ${'/vpn/recoveryx'}        | ${[]}                                   | ${'does not match paths that share a prefix but cross a segment boundary'}
+    `('$description', ({ pathname, expected }: { pathname: string; expected: string[] }) => {
+        const active = getActiveBranches(routes.items, pathname);
+        expect([...active].sort()).toEqual([...expected].sort());
     });
 
-    it('returns the direct parent when leaf is at L2', () => {
-        const active = findActiveBranches(routes.items, '/vpn/dashboard');
-        expect(active).toContain('organization');
-        expect(active.size).toBe(1);
-    });
-
-    it('returns all ancestors when leaf is at L3', () => {
-        const active = findActiveBranches(routes.items, '/vpn/gateways');
-        expect(active).toContain('organization');
-        expect(active).toContain('organization.vpn');
-        expect(active.size).toBe(2);
-    });
-
-    it('does not include the leaf id itself', () => {
-        const active = findActiveBranches(routes.items, '/vpn/gateways');
-        expect(active).not.toContain('organization.vpn.gateways');
-    });
-
-    it('does not include unrelated branches', () => {
-        const active = findActiveBranches(routes.items, '/vpn/recovery');
-        expect(active).toContain('my-account');
-        expect(active).not.toContain('organization');
+    it('prefers the most specific match when multiple items share a prefix', () => {
+        const nested: NavResolved = {
+            items: [
+                {
+                    id: 'a',
+                    label: 'A',
+                    to: '/vpn',
+                    meta: {},
+                    icon: undefined,
+                    sections: undefined,
+                    children: [
+                        {
+                            id: 'a.b',
+                            label: 'B',
+                            to: '/vpn/settings',
+                            meta: {},
+                            icon: undefined,
+                            sections: undefined,
+                            children: undefined,
+                        },
+                    ],
+                },
+            ],
+        };
+        const active = getActiveBranches(nested.items, '/vpn/settings/email');
+        expect([...active].sort()).toEqual(['a']);
     });
 });
