@@ -52,7 +52,7 @@ const SignupCtxRouter = (props: BaseSignupContextProps) => {
                 <Route path={SSO_PATHS.DRIVE_SIGNUP}>
                     <DriveSignupController {...props} />
                 </Route>
-                <Route path={SSO_PATHS.REFERAL_PLAN_SELECTION}>
+                <Route path={SSO_PATHS.REFERRAL_PLAN_SELECTION}>
                     <ReferralSignup {...props} />
                 </Route>
                 <Route path={SSO_PATHS.PASS_SIGNUP}>
