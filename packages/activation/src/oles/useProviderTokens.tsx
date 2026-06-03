@@ -1,9 +1,9 @@
-import { type ReactNode, createContext, useContext, useEffect, useState } from 'react';
+import { type ReactNode, createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 import type { EASY_SWITCH_FEATURES, ImportToken, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { useOAuthToken } from '@proton/activation/src/logic/oauthToken/hooks';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
 
 import { getTokensByFeature } from '../api';
 
@@ -31,47 +31,45 @@ export const ProviderTokensProvider = ({ children }: { children: ReactNode }) =>
 export const useProviderTokens = (
     provider: OAUTH_PROVIDER,
     features: EASY_SWITCH_FEATURES[] = []
-): [ImportToken[] | undefined, boolean] => {
+): [ImportToken[] | undefined, boolean, () => Promise<void>] => {
     const api = useSilentApi();
     const [oauthTokens] = useOAuthToken();
     const { data, setData, loading, setLoading } = useContext(Context);
 
-    useEffect(() => {
-        if (!oauthTokens) {
+    const isProviderToken = (t: ImportToken) =>
+        t.Provider === provider && features.every((f) => t.Features.includes(f));
+
+    const refresh = useCallback(async () => {
+        setLoading(true);
+
+        if (!oauthTokens && !data) {
+            setData(undefined);
+            setLoading(false);
             return;
         }
 
-        void (async () => {
-            setLoading(true);
+        const filteredTokens = ((oauthTokens || []) as ImportToken[]).filter(isProviderToken);
 
-            try {
-                const refreshedTokens = (
-                    await Promise.allSettled(
-                        (oauthTokens as ImportToken[])
-                            .filter((t) => t.Provider === provider && features.every((f) => t.Features.includes(f)))
-                            .map(async (t) => {
-                                return api<{ Tokens: ImportToken[] }>({
-                                    ...getTokensByFeature({
-                                        Account: t.Account,
-                                        Features: features,
-                                        Provider: provider,
-                                    }),
-                                    silent: true,
-                                }).then(({ Tokens }) => Tokens.at(0));
-                            })
-                    )
-                )
-                    .map((result) => (result.status === 'fulfilled' ? result.value : undefined))
-                    .filter(isTruthy);
+        let refreshedToken: ImportToken | undefined;
+        for (const token of filteredTokens) {
+            refreshedToken = await api<{ Tokens: ImportToken[] }>(
+                getTokensByFeature({ Account: token.Account, Features: features, Provider: provider })
+            )
+                .then(({ Tokens }) => Tokens.at(0))
+                .catch(noop);
 
-                setData(refreshedTokens);
-            } catch {
-                setData(undefined);
+            if (refreshedToken) {
+                break;
             }
+        }
 
-            setLoading(false);
-        })();
+        setData(refreshedToken ? [refreshedToken] : []);
+        setLoading(false);
+    }, [data, oauthTokens]);
+
+    useEffect(() => {
+        void refresh();
     }, [oauthTokens]);
 
-    return [data, loading];
+    return [data, loading, refresh];
 };

@@ -1,21 +1,21 @@
-import React, { type FC, type ReactNode, useEffect, useMemo, useState } from 'react';
+import React, { type FC, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useCustomDomains } from '@proton/account/domains/hooks';
-import { EASY_SWITCH_FEATURES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms/Button/Button';
-import { useNotifications } from '@proton/components/index';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
+import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
+import { IcChevronUpFilled } from '@proton/icons/icons/IcChevronUpFilled';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
-import { getEmailParts } from '@proton/shared/lib/helpers/email';
+import { SECOND } from '@proton/shared/lib/constants';
 import { DKIM_STATE, DMARC_STATE, SPF_STATE, VERIFY_STATE } from '@proton/shared/lib/interfaces/Domain';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import type { MigrationConfiguration, MigrationSetupModel } from '../../types';
-import { useConnectionState } from '../../useConnectionState';
-import { useProviderTokens } from '../../useProviderTokens';
+import type { MigrationConfiguration, MigrationModel, MigrationSetupModel } from '../../types';
+import { useProviderUsers } from '../../useProviderUsers';
+import { isTerminal } from '../MigrationAssistant/ImportStatus';
+import MigrationAssistant from '../MigrationAssistant/MigrationAssistant';
 import StepAuthenticate from './StepAuthenticate';
 import StepConfigureMigration from './StepConfigureMigration';
 import StepDomain from './StepDomain';
@@ -23,7 +23,9 @@ import StepDomainDKIM from './StepDomainDKIM';
 import StepDomainDMARC from './StepDomainDMARC';
 import StepDomainSPF from './StepDomainSPF';
 import StepDomainVerify from './StepDomainVerify';
+import StepFinal from './StepFinal';
 import StepInstallApp from './StepInstallApp';
+import StepInviteUsers from './StepInviteUsers';
 
 import './MigrationSetup.scss';
 
@@ -32,37 +34,71 @@ export type MigrationSetupProps = {
     onSubmit: (payload: MigrationConfiguration) => Promise<void>;
 };
 
-const STEPS = [
-    { id: 'authenticate' },
-    { id: 'install-app' },
+type StepId =
+    | 'configure-migration'
+    | 'authenticate'
+    | 'install-app'
+    | 'domain-setup'
+    | 'domain-verify'
+    | 'spf-records'
+    | 'dkim-records'
+    | 'dmarc-records'
+    | 'configure-users'
+    | 'migrate-accounts'
+    | 'invite-users'
+    | 'final';
+
+const STEPS: { id: StepId; component?: FC<StepComponentProps>; steps?: typeof STEPS }[] = [
+    { id: 'configure-migration', component: StepConfigureMigration },
+    { id: 'authenticate', component: StepAuthenticate },
+    { id: 'install-app', component: StepInstallApp },
     {
         id: 'domain-setup',
-        steps: [{ id: 'domain-verify' }, { id: 'spf-records' }, { id: 'dkim-records' }, { id: 'dmark-records' }],
+        component: StepDomain,
+        steps: [
+            { id: 'domain-verify', component: StepDomainVerify },
+            { id: 'spf-records', component: StepDomainSPF },
+            { id: 'dkim-records', component: StepDomainDKIM },
+            { id: 'dmarc-records', component: StepDomainDMARC },
+        ],
     },
-    { id: 'configure-migration' },
-] as const;
+    {
+        id: 'configure-users',
+        steps: [
+            {
+                id: 'migrate-accounts',
+                component: MigrationAssistant,
+            },
+            {
+                id: 'invite-users',
+                component: StepInviteUsers,
+            },
+        ],
+    },
+    {
+        id: 'final',
+        component: StepFinal,
+    },
+];
 
-type StepId =
-    | (typeof STEPS)[number]['id']
-    | Extract<(typeof STEPS)[number], { steps: readonly any[] }>['steps'][number]['id'];
+export type StepComponentProps = {
+    // MigrationSetupModal before the migration is POSTed,
+    // then MigrationModel afterwards
+    model: MigrationSetupModel | MigrationModel;
+    onNext: (() => void) | (() => Promise<void>) | undefined;
+};
 
 type StepConfig = {
-    id: StepId;
     text: string;
     isCompleted: () => boolean;
     optional?: boolean;
     isDisabled: boolean;
-    component: ReactNode;
-    steps?: StepConfig[];
-};
-
-export type StepComponentProps = {
-    submitButton?: ReactNode;
 };
 
 type MigrationSetupState = {
     currentStep: StepId;
-    completedSteps: StepId[];
+    seenSteps: StepId[];
+    expanded: StepId[];
     loading: boolean;
 };
 
@@ -79,7 +115,7 @@ const MigrationNavigationList = ({
         <ol
             className={clsx(
                 'migration-setup-step-list unstyled shrink-0 relative gap-2 flex flex-column flex-nowrap',
-                isSubstepList ? 'mt-2 mb-0 ml-10 ' : 'gap-2 flex flex-column flex-nowrap',
+                isSubstepList ? 'm-0 pt-2 pl-10' : 'overflow-auto',
                 className
             )}
         >
@@ -136,196 +172,240 @@ const MigrationNavigationListStepButton = ({
 };
 
 const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
-    const [tokens] = useProviderTokens(OAUTH_PROVIDER.GSUITE, [EASY_SWITCH_FEATURES.OLES]);
-    const [connectionState, , verifyConnectionState] = useConnectionState();
-    const { createNotification } = useNotifications();
-
-    const [customDomains] = useCustomDomains();
-    const domain = !model.domainName ? undefined : customDomains?.find((d) => d.DomainName === model.domainName);
-
+    const [providerUsers, , refreshProviderUsers] = useProviderUsers(model.domainName);
     const [state, setState] = useState<MigrationSetupState>({
-        currentStep: STEPS[0].id,
-        completedSteps: [],
+        currentStep: model.importerOrganizationId ? 'migrate-accounts' : 'configure-migration',
+        expanded: model.importerOrganizationId ? ['configure-users'] : [],
+        seenSteps: model.importerOrganizationId
+            ? [
+                  'configure-migration',
+                  'authenticate',
+                  'install-app',
+                  'domain-setup',
+                  'domain-verify',
+                  'spf-records',
+                  'dkim-records',
+                  'dmarc-records',
+                  'migrate-accounts',
+                  'invite-users',
+              ]
+            : [],
         loading: false,
     });
 
+    const hasAnySubmitted = providerUsers?.some((u) => u.ImporterOrganizationUser) ?? false;
+    const hasAllSubmittedMigrated =
+        hasAnySubmitted &&
+        (providerUsers?.filter((u) => u.ImporterOrganizationUser).every((u) => isTerminal(u)) ?? false);
+    const hasInactiveUsers =
+        providerUsers?.some((u) => u.ImporterOrganizationUser?.HasTemporaryPassword === true) ?? false;
+    const hasIncompleteUsers =
+        providerUsers?.some((u) => Boolean(u.ImporterOrganizationUser) && !isTerminal(u)) ?? false;
+
     useEffect(() => {
-        setState((state) => ({
-            ...state,
-            completedSteps: state.completedSteps.filter((s) => s !== 'install-app'),
-        }));
+        let timer: NodeJS.Timeout;
 
-        const domainName = tokens?.length ? getEmailParts(tokens[0].Account)[1] : undefined;
+        const refreshAfter = (delay: number) => {
+            if (!hasIncompleteUsers && !hasInactiveUsers) {
+                return;
+            }
 
-        model.setDomainName(domainName);
+            timer = setTimeout(() => {
+                refreshProviderUsers().catch(noop);
+                refreshAfter(delay);
+            }, delay);
+        };
 
-        if (domainName) {
-            void verifyConnectionState();
-        }
-    }, [tokens]);
+        refreshAfter(30 * SECOND);
+        return () => clearTimeout(timer);
+    }, [hasIncompleteUsers, hasInactiveUsers, refreshProviderUsers]);
 
-    const steps = useMemo<StepConfig[]>(() => {
-        return [
-            {
-                id: 'authenticate',
-                text: c('BOSS').t`Authenticate`,
-                component: <StepAuthenticate tokens={tokens} />,
-                isCompleted: () => Boolean(tokens?.length),
-                isDisabled: false,
-            },
-            {
-                id: 'install-app',
-                text: c('BOSS').t`Install migration app`,
-                component: <StepInstallApp model={model} />,
-                isCompleted: () => connectionState === 'connected',
-                isDisabled: !tokens?.length,
-            },
-            {
-                id: 'domain-setup',
-                text: c('BOSS').t`Configure domain`,
-                component: <StepDomain domain={domain} model={model} />,
-                isCompleted: () => Boolean(domain),
-                isDisabled: !model.domainName || !tokens?.length || connectionState !== 'connected',
-                steps: [
-                    {
-                        id: 'domain-verify',
-                        text: c('BOSS').t`Verify your domain`,
-                        component: <StepDomainVerify domain={domain} />,
-                        isCompleted: () => domain?.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD,
-                        isDisabled: domain === undefined,
-                    },
-                    {
-                        id: 'spf-records',
-                        text: c('BOSS').t`Set up secure sending (SPF)`,
-                        component: <StepDomainSPF domain={domain} />,
-                        isCompleted: () => domain?.SpfState === SPF_STATE.SPF_STATE_GOOD,
-                        optional: true,
-                        isDisabled: domain?.VerifyState !== VERIFY_STATE.VERIFY_STATE_GOOD,
-                    },
-                    {
-                        id: 'dkim-records',
-                        text: c('BOSS').t`Set up secure sending (DKIM)`,
-                        component: <StepDomainDKIM domain={domain} />,
-                        isCompleted: () => domain?.DKIM?.State === DKIM_STATE.DKIM_STATE_GOOD,
-                        optional: true,
-                        isDisabled: domain?.VerifyState !== VERIFY_STATE.VERIFY_STATE_GOOD,
-                    },
-                    {
-                        id: 'dmark-records',
-                        text: c('BOSS').t`Set up secure sending (DMARC)`,
-                        component: <StepDomainDMARC domain={domain} />,
-                        isCompleted: () => domain?.DmarcState === DMARC_STATE.DMARC_STATE_GOOD,
-                        optional: true,
-                        isDisabled: domain?.VerifyState !== VERIFY_STATE.VERIFY_STATE_GOOD,
-                    },
-                ],
-            },
-            {
-                id: 'configure-migration',
-                text: c('BOSS').t`Configure migration`,
-                component: <StepConfigureMigration model={model} />,
-                isCompleted: () => true,
-                isDisabled:
-                    !tokens?.length ||
-                    connectionState !== 'connected' ||
-                    domain?.VerifyState !== VERIFY_STATE.VERIFY_STATE_GOOD,
-            },
-        ];
-    }, [model, tokens, connectionState]);
+    const stepConfigs: Record<StepId, StepConfig> = {
+        'configure-migration': {
+            text: c('BOSS').t`Configure migration`,
+            isCompleted: () => Boolean(model.selectedProducts.length),
+            isDisabled: false,
+        },
+        authenticate: {
+            text: c('BOSS').t`Authenticate`,
+            isCompleted: () => Boolean(model.tokens?.length),
+            isDisabled: !model.selectedProducts.length,
+        },
+        'install-app': {
+            text: c('BOSS').t`Install migration app`,
+            isCompleted: () => model.connectionState === 'connected',
+            isDisabled: !model.selectedProducts.length || !model.tokens?.length,
+        },
+        'domain-setup': {
+            text: c('BOSS').t`Configure domain`,
+            isCompleted: () => Boolean(model.domain),
+            isDisabled: !model.selectedProducts.length || !model.domainName,
+        },
+        'domain-verify': {
+            text: c('BOSS').t`Verify your domain`,
+            isCompleted: () => model.domain?.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD,
+            isDisabled: !model.domain,
+        },
+        'spf-records': {
+            text: c('BOSS').t`Set up secure sending (SPF)`,
+            isCompleted: () => model.domain?.SpfState === SPF_STATE.SPF_STATE_GOOD,
+            optional: true,
+            isDisabled: model.domain?.VerifyState !== VERIFY_STATE.VERIFY_STATE_GOOD,
+        },
+        'dkim-records': {
+            text: c('BOSS').t`Set up secure sending (DKIM)`,
+            isCompleted: () => model.domain?.DKIM?.State === DKIM_STATE.DKIM_STATE_GOOD,
+            optional: true,
+            isDisabled: model.domain?.VerifyState !== VERIFY_STATE.VERIFY_STATE_GOOD,
+        },
+        'dmarc-records': {
+            text: c('BOSS').t`Set up secure sending (DMARC)`,
+            isCompleted: () => model.domain?.DmarcState === DMARC_STATE.DMARC_STATE_GOOD,
+            optional: true,
+            isDisabled: model.domain?.VerifyState !== VERIFY_STATE.VERIFY_STATE_GOOD,
+        },
+        'configure-users': {
+            text: c('BOSS').t`Configure users`,
+            isCompleted: () => true,
+            isDisabled: !model.tokens?.length,
+        },
+        'migrate-accounts': {
+            text: c('BOSS').t`Migrate accounts`,
+            isCompleted: () => hasAllSubmittedMigrated,
+            isDisabled: !model.tokens?.length,
+        },
+        'invite-users': {
+            text: c('BOSS').t`Onboard your team`,
+            isCompleted: () => hasAnySubmitted && !hasInactiveUsers,
+            isDisabled: !model.importerOrganizationId || !hasAnySubmitted,
+        },
+        final: {
+            text: c('BOSS').t`Final step`,
+            isCompleted: () => false,
+            isDisabled: !model.importerOrganizationId || !model.tokens?.length || !hasAnySubmitted,
+        },
+    };
 
-    const { flatSteps, stepIndex } = useMemo(() => {
-        const flatSteps = steps.flatMap((s) => [s, ...(s.steps ?? [])]);
+    const { flatSteps, stepIndex } = (() => {
+        const flatSteps = STEPS.flatMap((s) => [s, ...(s.steps ?? [])]).map((s) => ({ ...s, ...stepConfigs[s.id] }));
         const stepIndex = new Map<StepId, number>(flatSteps.map((s, i) => [s.id, i]));
         return { flatSteps, stepIndex };
-    }, [steps]);
+    })();
 
     const activeStep = flatSteps[stepIndex.get(state.currentStep)!];
     const isLastStep = state.currentStep === flatSteps.at(-1)!.id;
 
-    const isStepTicked = (id: StepId): boolean => {
-        const step = flatSteps.find((s) => s.id === id);
+    const stepStatusIcon = (step: (typeof STEPS)[number]): React.JSX.Element => {
+        const defaultIcon = <IcExclamationCircle className="color-weak shrink-0 visibility-hidden" />;
 
-        if (!step) {
-            return false;
+        const stepConfig = stepConfigs[step.id];
+        const substeps = STEPS.find((s) => s.id === step.id)?.steps ?? [];
+
+        if (!stepConfig) {
+            return defaultIcon;
         }
 
-        // Last step is never ticked as completed because
-        // it may be prefilled validly
-        if (id === steps.at(-1)?.id) {
-            return false;
+        // If step wasn't visited, display nothing
+        // Exception: step without a component (only children)
+        if (step.component && !state.seenSteps.includes(step.id)) {
+            return defaultIcon;
         }
 
-        // Disabled step is missing prerequisites, so cannot
-        // be validly completed
-        if (step.isDisabled) {
-            return false;
+        // Final step never has an icon
+        if (step.id === 'final') {
+            return defaultIcon;
         }
 
-        // Ensure the step validation logic passes
-        if (!step.isCompleted() || step.steps?.some((s) => !s.optional && !s.isCompleted())) {
-            return false;
+        if (!step.component && !substeps.every(({ id }) => state.seenSteps.includes(id))) {
+            return defaultIcon;
         }
 
-        return (
-            state.completedSteps.includes(id) && (step.steps ?? []).every((s) => state.completedSteps.includes(s.id))
-        );
+        const isIncomplete =
+            !stepConfig.isCompleted() ||
+            substeps.some((s) => !stepConfigs[s.id].optional && !stepConfigs[s.id].isCompleted());
+
+        if (!isIncomplete) {
+            return <IcCheckmarkCircleFilled className="color-success shrink-0" />;
+        }
+
+        return <IcExclamationCircle className="color-weak shrink-0" />;
+    };
+
+    const isStepExpanded = (id: StepId): boolean => state.expanded.includes(id);
+
+    const toggleStepExpanded = (id: StepId) => {
+        setState((prev) => {
+            const expanded = prev.expanded.includes(id)
+                ? prev.expanded.filter((expandedId) => expandedId !== id)
+                : [...prev.expanded, id];
+            return { ...prev, expanded };
+        });
     };
 
     const changeStep = (nextId: StepId) => {
-        if (!stepIndex.has(nextId)) {
+        const nextIx = stepIndex.get(nextId);
+
+        if (nextIx === undefined) {
             return;
+        }
+
+        let nextStep = flatSteps[nextIx];
+        if (!nextStep.component) {
+            nextStep = flatSteps[nextIx + 1];
         }
 
         setState((state) => ({
             ...state,
-            completedSteps:
-                activeStep.isCompleted() || activeStep.optional
-                    ? Array.from(new Set([...state.completedSteps, state.currentStep]))
-                    : state.completedSteps,
-            currentStep: nextId,
+            seenSteps:
+                nextStep.id === STEPS[STEPS.length - 1].id
+                    ? state.seenSteps
+                    : Array.from(new Set([...state.seenSteps, activeStep.id, nextId, nextStep.id])),
+            currentStep: nextStep.id,
+            expanded:
+                STEPS.find((s) => s.id === nextId)?.steps && !isStepExpanded(nextId)
+                    ? [...state.expanded, nextId]
+                    : state.expanded,
         }));
     };
 
-    const onNext = () => {
-        if (activeStep.id === 'configure-migration' && !model.selectedProducts.length) {
-            return createNotification({
-                type: 'info',
-                text: c('BOSS').t`Please select at least one product to migrate`,
-            });
-        }
-
+    const onNext = async () => {
         if (!isLastStep) {
-            return changeStep(flatSteps[stepIndex.get(state.currentStep)! + 1].id);
+            changeStep(flatSteps[stepIndex.get(state.currentStep)! + 1].id);
         }
-
-        setState((state) => ({ ...state, loading: true }));
-        return onSubmit(model).catch(() => setState((state) => ({ ...state, loading: false })));
     };
 
-    const submitButton = (
-        <Button
-            disabled={state.loading || flatSteps[stepIndex.get(state.currentStep)! + 1]?.isDisabled === true}
-            onClick={onNext}
-            color="norm"
-        >
-            {c('Action').t`Next`}
-        </Button>
-    );
+    const stepComponent = (() => {
+        if (!activeStep.component) {
+            return;
+        }
 
-    // TODO(@djankovic): drop it
-    const activeComponent = !activeStep.component
-        ? undefined
-        : React.cloneElement<StepComponentProps>(activeStep.component as any, { submitButton });
+        return (
+            <activeStep.component
+                model={model}
+                onNext={flatSteps[stepIndex.get(state.currentStep)! + 1]?.isDisabled === true ? undefined : onNext}
+            />
+        );
+    })();
+
+    useEffect(() => {
+        void (async () => {
+            if (activeStep.id === 'migrate-accounts' && !model.importerOrganizationId) {
+                setState((state) => ({ ...state, loading: true }));
+                await onSubmit(model);
+                setState((state) => ({ ...state, loading: false }));
+            }
+        })();
+    }, [model.importerOrganizationId, activeStep.id]);
 
     return (
         <>
-            <div className="lg:flex flex-1 flex-nowrap flex-column lg:flex-row relative items-start py-12 overflow-auto">
-                <MigrationNavigationList className="mt-0 ml-8 xl:ml-12 mb-8 lg:mb-0 lg:sticky top-0">
-                    {steps.map((step, ix) => (
-                        <li key={step.id}>
+            <div className="lg:flex flex-1 flex-nowrap flex-column lg:flex-row items-start overflow-auto">
+                <MigrationNavigationList className="mt-0 ml-8 xl:ml-12 mb-4 pb-4 pt-12 lg:mb-0 lg:sticky top-0 lg:pb-12">
+                    {STEPS.map((step, ix) => (
+                        <li key={step.id} className="shrink-0">
                             <MigrationNavigationListStepButton
                                 isCurrentStep={state.currentStep === step.id}
-                                disabled={step.isDisabled}
+                                disabled={stepConfigs[step.id].isDisabled}
                                 onClick={() => changeStep(step.id)}
                             >
                                 <MigrationNavigationListStepNumber isCurrentStep={state.currentStep === step.id}>
@@ -337,20 +417,40 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
                                         state.currentStep === step.id ? 'color-primary' : 'color-weak'
                                     )}
                                 >
-                                    {step.text}
+                                    {stepConfigs[step.id].text}
+                                    {step.steps && (
+                                        <Button
+                                            icon
+                                            size="tiny"
+                                            shape="ghost"
+                                            className="p-0 ml-2"
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                toggleStepExpanded(step.id);
+                                            }}
+                                        >
+                                            {isStepExpanded(step.id) ? (
+                                                <IcChevronUpFilled title={c('BOSS').t`Collapse step`} />
+                                            ) : (
+                                                <IcChevronDownFilled title={c('BOSS').t`Expand step`} />
+                                            )}
+                                        </Button>
+                                    )}
                                 </span>
-                                {isStepTicked(step.id) && (
-                                    <IcCheckmarkCircleFilled className="color-success shrink-0" />
-                                )}
+
+                                {stepStatusIcon(step)}
                             </MigrationNavigationListStepButton>
 
-                            {step.steps && step.steps.length > 0 && (
+                            {step.steps && step.steps.length > 0 && isStepExpanded(step.id) && (
                                 <MigrationNavigationList isSubstepList>
                                     {step.steps.map((substep, six) => (
-                                        <li key={substep.id}>
+                                        <li key={substep.id} className="shrink-0">
                                             <MigrationNavigationListStepButton
                                                 isCurrentStep={state.currentStep === substep.id}
-                                                disabled={step.isDisabled || substep.isDisabled}
+                                                disabled={
+                                                    stepConfigs[step.id].isDisabled ||
+                                                    stepConfigs[substep.id].isDisabled
+                                                }
                                                 onClick={() => changeStep(substep.id)}
                                             >
                                                 <MigrationNavigationListStepNumber
@@ -367,15 +467,10 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
                                                             : 'color-weak'
                                                     )}
                                                 >
-                                                    {substep.text}
+                                                    {stepConfigs[substep.id].text}
                                                 </span>
-                                                {isStepTicked(substep.id) && (
-                                                    <IcCheckmarkCircleFilled className="color-success shrink-0" />
-                                                )}
-                                                {!isStepTicked(substep.id) &&
-                                                    state.completedSteps.includes(substep.id) && (
-                                                        <IcExclamationCircle className="color-weak shrink-0" />
-                                                    )}
+
+                                                {stepStatusIcon(substep)}
                                             </MigrationNavigationListStepButton>
                                         </li>
                                     ))}
@@ -383,18 +478,9 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
                             )}
                         </li>
                     ))}
-                    <li key="migration">
-                        <MigrationNavigationListStepButton isCurrentStep={false} disabled={true} onClick={noop}>
-                            <MigrationNavigationListStepNumber isCurrentStep={false}>
-                                {STEPS.length + 1}
-                            </MigrationNavigationListStepNumber>
-                            <span className={clsx('text-semibold flex-1 text-left color-weak')}>{c('BOSS')
-                                .t`Migrate users`}</span>
-                        </MigrationNavigationListStepButton>
-                    </li>
                 </MigrationNavigationList>
 
-                <div className="w-full px-4 md:px-8 xl:px-16 pb-4">{activeComponent}</div>
+                <div className="w-full px-4 md:px-8 xl:px-12 py-4 lg:py-12">{stepComponent}</div>
             </div>
         </>
     );
