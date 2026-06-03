@@ -8,11 +8,11 @@ import '@proton/testing/lib/vitest/mockUnleash';
 // @ts-ignore
 global.IS_REACT_ACT_ENVIRONMENT = true;
 
-window.ResizeObserver = vi.fn().mockImplementation(() => ({
-    observe: vi.fn(),
-    unobserve: vi.fn(),
-    disconnect: vi.fn(),
-}));
+window.ResizeObserver = class {
+    observe = vi.fn();
+    unobserve = vi.fn();
+    disconnect = vi.fn();
+};
 
 // Do not start crypto worker pool, let the single tests setup/mock the CryptoProxy as needed
 vi.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({

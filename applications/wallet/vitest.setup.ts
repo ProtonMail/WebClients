@@ -16,11 +16,11 @@ afterEach(cleanup); // TODO double check if needed; see https://github.com/vites
 // console.error = () => {};
 // console.warn = () => {};
 
-window.ResizeObserver = vi.fn().mockImplementation(() => ({
-    observe: vi.fn(),
-    unobserve: vi.fn(),
-    disconnect: vi.fn(),
-}));
+window.ResizeObserver = class {
+    observe = vi.fn();
+    unobserve = vi.fn();
+    disconnect = vi.fn();
+};
 
 // JSDom does not include a full implementation of webcrypto
 // const crypto = require('crypto').webcrypto;
