@@ -397,6 +397,13 @@ const ExploreAppsListV2 = ({ onExplore, apps, subscription, localID }: Props) =>
                                         return;
                                     }
 
+                                    const target = event.currentTarget?.getAttribute('target') || '';
+                                    const shouldProcessClick = getShouldProcessLinkClick(event.nativeEvent, target);
+                                    // Prevent default `a` behavior before calling telemetry to keep this synchronous
+                                    if (shouldProcessClick) {
+                                        event.preventDefault();
+                                    }
+
                                     if (getShouldObserveAppClick(event.nativeEvent)) {
                                         sendAppClick({
                                             appName,
@@ -407,9 +414,7 @@ const ExploreAppsListV2 = ({ onExplore, apps, subscription, localID }: Props) =>
                                         await wait(50); // This ensures the telemetry event has time to be initiated and sent before the page redirects
                                     }
 
-                                    const target = event.currentTarget?.getAttribute('target') || '';
-                                    if (getShouldProcessLinkClick(event.nativeEvent, target)) {
-                                        event.preventDefault();
+                                    if (shouldProcessClick) {
                                         await withLoading(appName, onExplore(appName));
                                         return;
                                     }
