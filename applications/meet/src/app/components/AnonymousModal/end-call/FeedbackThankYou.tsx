@@ -32,7 +32,7 @@ export const FeedbackThankYou = ({ open, onClose }: FeedbackThankYouProps) => (
                 onClick={onClose}
                 size="medium"
             >
-                {c('Label').t`Back to dashboard`}
+                {c('Label').t`Return to dashboard`}
             </Button>
         }
     />

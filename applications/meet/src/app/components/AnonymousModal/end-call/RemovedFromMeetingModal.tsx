@@ -18,7 +18,7 @@ export const RemovedFromMeetingModal = ({ open, onClose }: CTAModalBaseProps) =>
                     }}
                     size="medium"
                 >
-                    {c('Action').t`Back to dashboard`}
+                    {c('Action').t`Return to dashboard`}
                 </Button>
             }
             title={c('Info').t`You were removed from the meeting`}
