@@ -68,7 +68,7 @@ export const ArtifactChipLoading = ({ streaming }: LoadingChipProps) => {
             className={clsx([
                 'artifact-chip',
                 'flex flex-row items-center gap-2',
-                'border border-weak rounded-lg px-3 py-2 mt-2',
+                'border border-weak rounded-lg px-3 py-4 my-2',
                 'text-sm text-norm',
                 'w-full max-w-xs',
                 'opacity-60',
