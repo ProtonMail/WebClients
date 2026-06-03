@@ -26,7 +26,7 @@ const EnableDeviceRecoveryContainer = () => {
     const { securityState } = useSecurityCheckup();
     const { deviceRecovery } = securityState;
     const recoveryFileData = useSelector(selectRecoveryFileData);
-    const updateRecoveryFile = useUpdateRecoveryFile(recoveryFileData);
+    const updateRecoveryFile = useUpdateRecoveryFile(recoveryFileData, { sendSettingEnabledTelemetry: false });
 
     const history = useHistory();
 

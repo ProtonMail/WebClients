@@ -25,8 +25,15 @@ import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { SETTINGS_STATUS, type UserSettings } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-export const useUpdateAccountRecovery = () => {
-    const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
+interface UseUpdateAccountRecoveryOptions {
+    sendSettingEnabledTelemetry?: boolean;
+}
+
+export const useUpdateAccountRecovery = ({
+    sendSettingEnabledTelemetry = true,
+}: UseUpdateAccountRecoveryOptions = {}) => {
+    const { sendRecoverySettingEnabled: sendRecoverySettingEnabledImpl } = useRecoverySettingsTelemetry();
+    const sendRecoverySettingEnabled = sendSettingEnabledTelemetry ? sendRecoverySettingEnabledImpl : noop;
     const { createNotification } = useNotifications();
 
     const dispatch = useDispatch();
