@@ -38,9 +38,6 @@ const SentinelUpgradeButton = ({ app, variant }: Props) => {
         });
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            metrics: {
-                source: 'upsells',
-            },
             mode: 'upsell-modal',
             defaultAudience: variant === 'user' ? Audience.B2C : Audience.B2B,
             upsellRef,

@@ -18,7 +18,6 @@ const DashboardUpgradePlanButton = ({ app, plan }: Props) => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: plan,
-            metrics: { source: 'upsells' },
             telemetryFlow,
         });
     };

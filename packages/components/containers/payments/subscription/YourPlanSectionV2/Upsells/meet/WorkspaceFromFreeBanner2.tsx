@@ -58,7 +58,6 @@ const BundleUpsellBanner = ({ app }: { app: APP_NAMES }) => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             plan: plan,
-            metrics: { source: 'upsells' },
             telemetryFlow,
         });
     };

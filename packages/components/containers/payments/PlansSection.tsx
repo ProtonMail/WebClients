@@ -135,9 +135,6 @@ const PlansSectionInner = ({ app }: Props) => {
             defaultAudience: Object.keys(newPlanIDs).some((planID) => getIsB2BAudienceFromPlan(planID as any))
                 ? Audience.B2B
                 : Audience.B2C,
-            metrics: {
-                source: 'plans',
-            },
             onSubscribed: () => sendSubscriptionSuccess({ origin: 'select_plan', plan: planName }),
         });
     };
@@ -213,9 +210,6 @@ const PlansSectionInner = ({ app }: Props) => {
                             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
                             defaultAudience: audience,
                             defaultSelectedProductPlans: selectedProductPlans,
-                            metrics: {
-                                source: 'plans',
-                            },
                             onSubscribed: () => sendSubscriptionSuccess({ origin: 'view_plans_details' }),
                         });
                     }}

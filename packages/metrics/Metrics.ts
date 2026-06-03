@@ -201,8 +201,6 @@ import type { EmailContentRenderTime } from './types/web_mail_performance_email_
 import type { EmailContentRenderTimeSeconds } from './types/web_mail_performance_email_content_render_time_second_histogram_v1.schema';
 import type { EmailListDisplayTime } from './types/web_mail_performance_email_list_display_time_histogram_v1.schema';
 import type { PageTransitionTime } from './types/web_mail_performance_page_transition_time_histogram_v1.schema';
-import type { WebPaymentsSubscriptionStepsTotal } from './types/web_payments_subscription_steps_total_v1.schema';
-import type { WebPaymentsSubscriptionTotal } from './types/web_payments_subscription_total_v1.schema';
 
 class Metrics extends MetricsBase {
     public core_ui_blocking_error_page_total: Counter<HttpsProtonMeCoreUiBlockingErrorPageTotalV1SchemaJson>;
@@ -588,10 +586,6 @@ class Metrics extends MetricsBase {
     public mail_performance_email_list_display_time_histogram: Histogram<EmailListDisplayTime>;
 
     public mail_performance_page_transition_time_histogram: Histogram<PageTransitionTime>;
-
-    public payments_subscription_steps_total: Counter<WebPaymentsSubscriptionStepsTotal>;
-
-    public payments_subscription_total: Counter<WebPaymentsSubscriptionTotal>;
 
     constructor(requestService: IMetricsRequestService) {
         super(requestService);
@@ -1628,16 +1622,6 @@ class Metrics extends MetricsBase {
 
         this.mail_performance_page_transition_time_histogram = new Histogram<PageTransitionTime>(
             { name: 'web_mail_performance_page_transition_time_histogram', version: 1 },
-            this.requestService
-        );
-
-        this.payments_subscription_steps_total = new Counter<WebPaymentsSubscriptionStepsTotal>(
-            { name: 'web_payments_subscription_steps_total', version: 1 },
-            this.requestService
-        );
-
-        this.payments_subscription_total = new Counter<WebPaymentsSubscriptionTotal>(
-            { name: 'web_payments_subscription_total', version: 1 },
             this.requestService
         );
     }

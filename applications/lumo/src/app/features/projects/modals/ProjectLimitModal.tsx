@@ -38,9 +38,6 @@ export const ProjectLimitModal = ({ ...modalProps }: ModalProps) => {
             onSubscribed: () => {
                 handleSubscriptionModalSubscribed();
             },
-            metrics: {
-                source: 'upsells',
-            },
         });
     };
 

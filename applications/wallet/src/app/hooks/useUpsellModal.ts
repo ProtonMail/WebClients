@@ -24,9 +24,6 @@ export const useUpsellModal = (subscription: Subscription | FreeSubscription | u
               };
         openSubscriptionModal({
             ...subscriptionProps,
-            metrics: {
-                source: 'upsells',
-            },
         });
     }, [openSubscriptionModal]);
 

@@ -45,9 +45,6 @@ const ModalAction = ({ textAction, upsellRef }: { textAction: string; upsellRef:
                     cycle: CYCLE.YEARLY,
                     planIDs: getPlanIDs(subscription),
                     upsellRef,
-                    metrics: {
-                        source: 'upsells',
-                    },
                 });
             }}
         >

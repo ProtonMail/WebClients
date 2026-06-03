@@ -19,11 +19,8 @@ const B2BOrganizationUpsellBanner = ({ organization }: Props) => {
     const [user] = useUser();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
 
-    const getCustomizeSubscriptionOpener = (source: 'dashboard' | 'upsells') => () => {
+    const getCustomizeSubscriptionOpener = () => () => {
         void openSubscriptionModal({
-            metrics: {
-                source,
-            },
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             defaultAudience: Audience.B2B,
             plan: organization?.PlanName,
@@ -69,7 +66,7 @@ const B2BOrganizationUpsellBanner = ({ organization }: Props) => {
                             color="norm"
                             fullWidth
                             loading={loadingSubscriptionModal}
-                            onClick={getCustomizeSubscriptionOpener('upsells')}
+                            onClick={getCustomizeSubscriptionOpener()}
                             title={c('Title').t`View organization events by upgrading to Professional`}
                         >
                             {c('Action').t`Upgrade`}

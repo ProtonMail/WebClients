@@ -34,7 +34,6 @@ export const VPNDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: plan,
-            metrics: { source: 'upsells' },
             telemetryFlow,
         });
     };

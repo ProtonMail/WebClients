@@ -59,7 +59,6 @@ const MeetAddonBanner = ({ app }: UpsellSectionBaseProps) => {
             disablePlanSelection: true,
             disableCycleSelector: true,
             planIDs: selectedPlan.setMeetCount(selectedPlan.getTotalUsers()).planIDs,
-            metrics: { source: 'upsells' },
             telemetryFlow,
         });
     };

@@ -46,7 +46,6 @@ export interface OpenCallbackProps extends Pick<
     | 'defaultAudience'
     | 'disableCycleSelector'
     | 'defaultSelectedProductPlans'
-    | 'metrics'
     | 'telemetryFlow'
     | 'upsellRef'
     | 'maximumCycle'

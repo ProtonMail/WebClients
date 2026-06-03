@@ -31,7 +31,6 @@ const FamilyBanner = ({ app, subscription }: Props) => {
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            metrics: { source: 'plans' },
             defaultAudience: Audience.FAMILY,
             telemetryFlow,
         });
@@ -41,7 +40,6 @@ const FamilyBanner = ({ app, subscription }: Props) => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: plan,
-            metrics: { source: 'upsells' },
             telemetryFlow,
         });
     };

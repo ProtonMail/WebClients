@@ -41,9 +41,6 @@ const LumoPlusUpsellModal = ({ modalProps, upsellRef, specialBackdrop = false }:
             onSubscribed: () => {
                 handleSubscriptionModalSubscribed();
             },
-            metrics: {
-                source: 'upsells',
-            },
             upsellRef,
         });
     };

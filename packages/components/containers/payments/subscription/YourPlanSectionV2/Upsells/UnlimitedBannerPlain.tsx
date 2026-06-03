@@ -34,7 +34,6 @@ const UnlimitedBannerPlain = ({ app, subscription }: Props) => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             plan: plan,
-            metrics: { source: 'upsells' },
             telemetryFlow,
         });
     };
