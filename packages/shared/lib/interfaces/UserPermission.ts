@@ -9,7 +9,6 @@ export const PERMISSIONS = [
     'account.group.read',
     'account.group.update',
     'account.group.delete',
-    'account.organization_key.read',
     'account.security_policy.create',
     'account.security_policy.read',
     'account.security_policy.update',
