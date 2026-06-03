@@ -13,6 +13,7 @@
         "./components/Gateways": "./src/components/Gateways/GatewaysSection.tsx",
         "./components/Onboarding": "./src/components/Onboarding/index.tsx",
         "./components/Sidebar": "./src/components/Sidebar/index.tsx",
+        "./components/Sidebar/Toggle": "./src/components/Sidebar/SidebarToggle.tsx",
         "./components/tv": "./src/components/tv/index.ts",
         "./components/VPNDownloadSection": "./src/components/VPNDownloadSection/DownloadAndInfoSection.tsx",
         "./components/VPNClientsSection": "./src/components/VPNClientsSection/index.tsx",
