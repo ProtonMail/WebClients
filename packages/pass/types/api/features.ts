@@ -16,6 +16,7 @@ export enum PassFeature {
     PassExperimentalWebsiteRules = 'PassExperimentalWebsiteRules',
     PassExtensionCustomTLDs = 'PassExtensionCustomTLDs',
     PassExtensionOfflineV1 = 'PassExtensionOfflineV1',
+    PassFileAttachmentsEssentialsUpsell = 'PassFileAttachmentsEssentialsUpsell',
     PassGroupInvitesV1 = 'PassGroupInvitesV1',
     PassHideShowVault = 'PassHideShowVault',
     PassIFrameKillswitch = 'PassIFrameKillswitch',
