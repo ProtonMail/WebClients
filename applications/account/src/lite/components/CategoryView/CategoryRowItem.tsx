@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import { useActiveBreakpoint } from '@proton/components/index';
 import { IcMinusCircleFilled } from '@proton/icons/icons/IcMinusCircleFilled';
 import { IcPlusCircleFilled } from '@proton/icons/icons/IcPlusCircleFilled';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
@@ -10,7 +11,6 @@ import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/cat
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import MobileSectionLabel from '../MobileSectionLabel';
 import MobileSectionRow from '../MobileSectionRow';
 
 interface CategoryRowItemProps {
@@ -22,10 +22,17 @@ export const CategoryRowItem = ({ category, onUpdate }: CategoryRowItemProps) =>
     const isPrimaryCategory = category.id === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT;
     const categoryLabel = getLabelFromCategoryId(category.id);
 
+    const { viewportWidth } = useActiveBreakpoint();
+
     return (
         <MobileSectionRow key={category.id}>
-            <div className="w-full flex items-center flex-nowrap justify-space-between">
-                <MobileSectionLabel htmlFor={category.id}>
+            <div
+                className={clsx(
+                    'w-full flex',
+                    viewportWidth.xsmall ? 'flex-column gap-2' : 'flex-row items-center justify-space-between'
+                )}
+            >
+                <div>
                     <>
                         <Button
                             icon
@@ -43,7 +50,7 @@ export const CategoryRowItem = ({ category, onUpdate }: CategoryRowItemProps) =>
                         </Button>
                         <span className="shrink-0">{categoryLabel}</span>
                     </>
-                </MobileSectionLabel>
+                </div>
                 {category.display && !isPrimaryCategory && (
                     <SelectTwo<boolean>
                         value={!!category.notify}
