@@ -4,12 +4,33 @@
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
+// Promotes the panel to a full-screen sheet (modal-like) without unmounting the iframe,
+// so the conversation is preserved. Used both on narrow widths and short viewports where
+// the floating panel would otherwise overflow off-screen.
+@mixin lumo-troubleshoot-sheet {
+	position: fixed;
+	inset: 0;
+	inline-size: 100%;
+	block-size: 100%;
+	max-block-size: none;
+	border: none;
+	border-radius: 0;
+	transform: translateY(1rem);
+
+	&.is-open {
+		transform: translateY(0);
+	}
+}
+
 .lumo-troubleshoot {
 	&-panel {
 		inset-block-end: calc(100% + 0.75rem);
 		inset-inline-end: 0;
 		inline-size: min(26rem, calc(100vw - 3rem));
+		// Cap to the space actually available above the launcher so the panel never
+		// gets clipped at the top on vertically compact screens.
 		block-size: min(70vh, 38rem);
+		max-block-size: calc(100vh - 6rem);
 		visibility: hidden;
 		opacity: 0;
 		transform: translateY(0.5rem);
@@ -25,20 +46,15 @@ im.$media-expressions: $media-expressions;
 			pointer-events: auto;
 		}
 
-		// On mobile the launcher sits in the corner and the panel would overflow off-screen,
-		// so promote it to a full-screen sheet (modal-like) without unmounting the iframe.
+		// On mobile the launcher sits in the corner and the panel would overflow off-screen.
 		@include im.media('<=small') {
-			position: fixed;
-			inset: 0;
-			inline-size: 100%;
-			block-size: 100%;
-			border: none;
-			border-radius: 0;
-			transform: translateY(1rem);
+			@include lumo-troubleshoot-sheet;
+		}
 
-			&.is-open {
-				transform: translateY(0);
-			}
+		// On short viewports there isn't enough room above the launcher for the floating
+		// panel, so fall back to the full-screen sheet here too.
+		@include im.media('height<=37em') {
+			@include lumo-troubleshoot-sheet;
 		}
 	}
 
