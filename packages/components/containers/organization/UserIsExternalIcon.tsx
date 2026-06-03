@@ -20,7 +20,9 @@ const UserIsExternalIcon = ({ groupMemberType }: { groupMemberType: GROUP_MEMBER
 
     return (
         <Tooltip title={tooltipMessage} openDelay={0} closeDelay={250} longTapDelay={0} originalPlacement="top">
-            <IcExclamationCircle className="shrink-0 color-warning" />
+            <span className="inline-flex shrink-0 ml-1">
+                <IcExclamationCircle className="color-warning" />
+            </span>
         </Tooltip>
     );
 };
