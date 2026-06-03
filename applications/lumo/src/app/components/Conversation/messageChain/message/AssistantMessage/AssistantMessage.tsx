@@ -141,6 +141,7 @@ const AssistantActionToolbar = ({
                         />
                     </div>
                 </>
+                <div>{message.content}</div>
             </div>
         </div>
     );
