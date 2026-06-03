@@ -1,4 +1,4 @@
-import { buildAlreadyMentionedNames, filterFiles } from './fileMentionHelpers';
+import { buildAlreadyMentionedNames, buildAttachedNames, filterFiles } from './fileMentionHelpers';
 import type { FileItem } from './fileMentionHelpers';
 
 // ─── helpers ─────────────────────────────────────────────────────────────────
@@ -47,6 +47,26 @@ describe('buildAlreadyMentionedNames', () => {
     it('returns empty set when files list is empty', () => {
         const result = buildAlreadyMentionedNames([], 'tell me about @README.txt');
         expect(result.size).toBe(0);
+    });
+});
+
+// ─── buildAttachedNames ───────────────────────────────────────────────────────
+
+describe('buildAttachedNames', () => {
+    it('returns an empty set when there are no provisional attachments', () => {
+        expect(buildAttachedNames([]).size).toBe(0);
+    });
+
+    it('returns lowercase filenames of provisional attachments', () => {
+        const result = buildAttachedNames([{ filename: 'Report.PDF' }, { filename: 'notes.txt' }]);
+        expect(result.has('report.pdf')).toBe(true);
+        expect(result.has('notes.txt')).toBe(true);
+    });
+
+    it('detects an already-attached file regardless of casing', () => {
+        const attached = buildAttachedNames([{ filename: 'README.txt' }]);
+        // Re-mentioning the same file (any casing) should be detected as already attached.
+        expect(attached.has('readme.txt'.toLowerCase())).toBe(true);
     });
 });
 

@@ -1,20 +1,20 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
-import { selectSpaceByIdOptional } from '../../../redux/selectors';
+import { selectProvisionalAttachments, selectSpaceByIdOptional } from '../../../redux/selectors';
 import { newAttachmentId, upsertAttachment } from '../../../redux/slices/core/attachments';
 import { SearchService } from '../../../services/search/searchService';
-import type { ProjectSpace, SpaceId } from '../../../types';
+import type { Message, ProjectSpace, SpaceId } from '../../../types';
 import { getMimeTypeFromExtension } from '../../../util/filetypes';
 import { getApproximateTokenCount } from '../../../llm/tokenizer';
 import { useDriveFileAttachment } from './useDriveFileAttachment';
 import { useDriveFileLoader } from './useDriveFileLoader';
 import { EMPTY_FILES, useFileInventory } from './useFileInventory';
-import { buildAlreadyMentionedNames, filterFiles } from './fileMentionHelpers';
+import { buildAlreadyMentionedNames, buildAttachedNames, filterFiles } from './fileMentionHelpers';
 import type { FileItem } from './fileMentionHelpers';
 
 export type { FileItem } from './fileMentionHelpers';
@@ -36,6 +36,8 @@ export interface DriveSDKFunctions {
     browseFolderChildren: (folderId?: string) => Promise<{ id: string; name: string; type: string }[]>;
     downloadFile: (nodeId: string) => Promise<ArrayBuffer>;
 }
+
+const EMPTY_MESSAGES: Message[] = [];
 
 const INITIAL_MENTION_STATE: FileMentionState = {
     isActive: false,
@@ -79,7 +81,8 @@ export const useFileMentionAutocomplete = (
     spaceId?: SpaceId,
     driveSDK?: DriveSDKFunctions,
     onDriveFilesRefresh?: () => void,
-    userId?: string
+    userId?: string,
+    messageChain: Message[] = EMPTY_MESSAGES
 ): {
     mentionState: FileMentionState;
     files: FileItem[];
@@ -91,6 +94,7 @@ export const useFileMentionAutocomplete = (
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
 
+    const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
     const space = useLumoSelector(selectSpaceByIdOptional(spaceId));
     const spaceProject = space?.isProject ? (space satisfies ProjectSpace) : undefined;
     const linkedDriveFolder = spaceProject?.linkedDriveFolder;
@@ -98,6 +102,19 @@ export const useFileMentionAutocomplete = (
     const { driveFiles, refreshDriveFiles } = useDriveFileLoader(linkedDriveFolder, driveSDK, onDriveFilesRefresh);
     const allFiles = useFileInventory(spaceId, driveFiles);
     const { attach } = useDriveFileAttachment(driveSDK, userId);
+
+    // Lowercase filenames already present in this conversation — as composer chips
+    // (provisional attachments) or as attachments on any message in the chain.
+    // Re-mentioning one of these should only insert the `@filename` text reference,
+    // never create another attachment (which would duplicate the file).
+    const attachedNames = useMemo(
+        () =>
+            buildAttachedNames([
+                ...provisionalAttachments,
+                ...messageChain.flatMap((message) => message.attachments ?? []),
+            ]),
+        [provisionalAttachments, messageChain]
+    );
 
     // Detect @ mentions whenever the textarea value changes
     useEffect(() => {
@@ -184,6 +201,17 @@ export const useFileMentionAutocomplete = (
                 return;
             }
 
+            // If the file is already attached to this conversation (as a composer chip or on
+            // any previous message), do NOT create a second attachment — just insert the
+            // `@filename` text reference. This prevents the duplicate-attachment bug when
+            // re-mentioning a file that is already attached.
+            if (attachedNames.has(file.name.toLowerCase())) {
+                setValue(newValue);
+                closeMention();
+                restoreCursor(textarea, newCursorPos);
+                return;
+            }
+
             if (file.source === 'local') {
                 if (file.attachment?.spaceId) {
                     const sourceAtt = file.attachment;
@@ -264,7 +292,18 @@ export const useFileMentionAutocomplete = (
             closeMention();
             restoreCursor(textarea, newCursorPos);
         },
-        [value, mentionState, textareaRef, setValue, dispatch, driveSDK, createNotification, attach, closeMention]
+        [
+            value,
+            mentionState,
+            textareaRef,
+            setValue,
+            dispatch,
+            driveSDK,
+            createNotification,
+            attach,
+            closeMention,
+            attachedNames,
+        ]
     );
 
     return {
