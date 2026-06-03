@@ -18044,6 +18044,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@workadventure/noise-suppression@npm:v0.0.1":
+  version: 0.0.1
+  resolution: "@workadventure/noise-suppression@npm:0.0.1"
+  dependencies:
+    fft.js: "npm:^4.0.4"
+  checksum: 10/50496764af6e937bc4c9051d62badeac41be0436fe812bddcbd09a5ce9e6430661fae67b5496ea14c9ae00ee11149608dfb3567087c7146256e39441d260d999
+  languageName: node
+  linkType: hard
+
 "@xhmikosr/archive-type@npm:^6.0.1":
   version: 6.0.1
   resolution: "@xhmikosr/archive-type@npm:6.0.1"
@@ -28472,6 +28481,13 @@ __metadata:
   version: 0.8.2
   resolution: "fflate@npm:0.8.2"
   checksum: 10/2bd26ba6d235d428de793c6a0cd1aaa96a06269ebd4e21b46c8fd1bd136abc631acf27e188d47c3936db090bf3e1ede11d15ce9eae9bffdc4bfe1b9dc66ca9cb
+  languageName: node
+  linkType: hard
+
+"fft.js@npm:^4.0.4":
+  version: 4.0.4
+  resolution: "fft.js@npm:4.0.4"
+  checksum: 10/bb2cada2e5a501fd159f2db53681e756687822d2486d5b471f80e5ef424c9c84053967cbf63e6d7c2038a89f58549f5fdeade117ef48cb29cdbea8e323e17d0b
   languageName: node
   linkType: hard
 
@@ -41969,6 +41985,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:^6.0.2"
     "@vitest/coverage-v8": "npm:^4.1.7"
     "@vitest/ui": "npm:3.2.4"
+    "@workadventure/noise-suppression": "npm:v0.0.1"
     cross-env: "npm:^10.1.0"
     date-fns-tz: "npm:^2.0.1"
     eslint: "npm:^9.39.4"
