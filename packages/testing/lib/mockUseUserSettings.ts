@@ -36,6 +36,7 @@ const defaultUserSettings: UserSettings = {
     OrganizationPolicy: {
         Enforced: 0,
     },
+    UsedClients: [],
 };
 
 export const mockUseUserSettings = (params?: [Partial<UserSettings>?, boolean?]) => {

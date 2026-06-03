@@ -1,23 +1,46 @@
+import { useEffect, useRef } from 'react';
+
 import { c } from 'ttag';
 
-import { useWelcomeFlags } from '@proton/account';
+import { useUserSettings, useWelcomeFlags } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
+import { Button } from '@proton/atoms/Button/Button';
+import { useMeetFunnelTelemetry } from '@proton/calendar/protonMeetIntegration/meetFunnelTelemetry';
+import useAppLink from '@proton/components/components/link/useAppLink';
 import Logo from '@proton/components/components/logo/Logo';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
-import { APPS, MEET_APP_NAME } from '@proton/shared/lib/constants';
+import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { APPS, MEET_APP_NAME, MEET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isUserAccountOlderThanOrEqualToDays } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
+import { useVariant } from '@proton/unleash/useVariant';
 
 export const useProtonMeetSpotlight = () => {
     const [user] = useUser();
+    const goToApp = useAppLink();
+    const { sendSpotlightDisplayed, sendExploreMeetClicked } = useMeetFunnelTelemetry();
+
     const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
     const {
         welcomeFlags: { isDone: hasUserFinishedWelcomeFlow },
     } = useWelcomeFlags();
 
-    const userAccountHasMoreThanTwoDays = isUserAccountOlderThanOrEqualToDays(user, 2);
+    const meetSpotlightType = useFlag('MeetSpotlightType');
+    const meetSpotlightTypeVariant = useVariant('MeetSpotlightType');
+
+    const [settings] = useUserSettings();
+
+    const usedMeet = (settings.UsedClients ?? []).some((client) => client.toLowerCase().includes('meet'));
+
+    const userAccountHasMoreThanThreeDays = isUserAccountOlderThanOrEqualToDays(user, 3);
+
+    const hasMeetProductAccess = useHasMeetProductAccess();
+
+    const spotlightTelemetrySent = useRef(false);
 
     const {
         show: showProtonMeetSpotlight,
@@ -25,10 +48,28 @@ export const useProtonMeetSpotlight = () => {
         onClose,
     } = useSpotlightOnFeature(
         FeatureCode.NewScheduleOptionSpotlight,
-        isMeetVideoConferenceEnabled && hasUserFinishedWelcomeFlow && userAccountHasMoreThanTwoDays
+        isMeetVideoConferenceEnabled &&
+            hasUserFinishedWelcomeFlow &&
+            userAccountHasMoreThanThreeDays &&
+            !usedMeet &&
+            hasMeetProductAccess
     );
 
-    const shouldShowProtonMeetSpotlight = useSpotlightShow(showProtonMeetSpotlight, 3000);
+    const spotlightEnabled = showProtonMeetSpotlight && meetSpotlightType;
+
+    const shouldShowProtonMeetSpotlight = useSpotlightShow(spotlightEnabled, 3000);
+
+    const handleExploreMeet = () => {
+        sendExploreMeetClicked();
+        onClose();
+
+        if (isElectronApp) {
+            window.open(getAppHref('/', APPS.PROTONMEET), '_blank', 'noopener,noreferrer');
+            return;
+        }
+
+        goToApp('/', APPS.PROTONMEET, true);
+    };
 
     const getSpotlightContent = () => {
         return (
@@ -50,11 +91,30 @@ export const useProtonMeetSpotlight = () => {
                         <p className="text-lg text-bold m-0 mb-1">{c('Spotlight').t`${MEET_APP_NAME} is here!`}</p>
                         <p className="m-0 w-custom" style={{ '--w-custom': '15rem' }}>{c('Spotlight')
                             .t`Schedule and join ${MEET_APP_NAME} calls right from your calendar.`}</p>
+
+                        {meetSpotlightTypeVariant.name === 'cta' && (
+                            <Button className="mt-2" onClick={handleExploreMeet} color="norm">{c('Action')
+                                .t`Explore ${MEET_SHORT_APP_NAME}`}</Button>
+                        )}
                     </div>
                 </div>
             </>
         );
     };
+
+    useEffect(() => {
+        if (
+            shouldShowProtonMeetSpotlight &&
+            typeof meetSpotlightTypeVariant.name === 'string' &&
+            meetSpotlightTypeVariant.name !== 'disabled' &&
+            !spotlightTelemetrySent.current
+        ) {
+            sendSpotlightDisplayed(meetSpotlightTypeVariant.name);
+            spotlightTelemetrySent.current = true;
+        }
+        // We only need to run this effect when the spotlight should be shown
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [shouldShowProtonMeetSpotlight]);
 
     return {
         spotlightContent: getSpotlightContent(),
