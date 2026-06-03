@@ -1,39 +1,41 @@
 import type { Session } from 'electron';
 
-import { UpdateStatus } from '@proton/pass/types/desktop';
-import { logger } from '@proton/pass/utils/logger';
+import { UpdateErrorType, UpdateStatus } from '@proton/pass/types/desktop';
 
-import { setUpdateStore } from './store';
-import type { RemoteManifestResponse } from './updater';
+import logger from '../../utils/logger';
+import { getUpdateStore, setUpdateStore } from './store';
 
-const FAKE_MANIFEST: RemoteManifestResponse = {
-    Releases: [
-        { Version: '99.9.0', RolloutPercentage: 1, CategoryName: 'Beta' },
-        { Version: '99.0.0', RolloutPercentage: 0.42, CategoryName: 'Stable' },
-    ],
-};
+const PROGRESS_THROTTLE_MS = 100;
 
-export const setupUpdaterMock = (session: Session) => {
-    const originalFetch = session.fetch.bind(session);
-    (session as any).fetch = (input: Parameters<typeof session.fetch>[0], init?: RequestInit) => {
-        if (typeof input === 'string' && input.endsWith('/version.json')) {
-            return Promise.resolve(
-                new Response(JSON.stringify(FAKE_MANIFEST), {
-                    headers: { 'Content-Type': 'application/json' },
-                })
-            );
-        }
-        return originalFetch(input, init);
-    };
-};
-
-export const fakeDownload = async (newVersion: string) => {
-    logger.log(`[Update] Unpacked app short-circuit triggered as non prod env`);
+export const mockDownload = async (session: Session, url: string, newVersion: string): Promise<void> => {
+    logger.log(`[Update] Mock download from real source url=${url}`);
     setUpdateStore({ status: UpdateStatus.Downloading, progress: 0, newVersion });
-    for (let i = 0; i <= 100; i += 10) {
-        await new Promise<void>((resolve) => setTimeout(resolve, 300));
-        setUpdateStore({ progress: i });
+
+    try {
+        if (getUpdateStore().mockDoDownloadError) throw new Error('Mock download error (mockDoDownloadError=true)');
+
+        const response = await session.fetch(url);
+        if (!response.ok || !response.body) throw new Error(`HTTP ${response.status}`);
+
+        const total = Number(response.headers.get('content-length')) || 0;
+        const reader = response.body.getReader();
+        let received = 0;
+        let lastUpdate = 0;
+
+        while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            received += value.length;
+            const now = Date.now();
+            if (total > 0 && now - lastUpdate >= PROGRESS_THROTTLE_MS) {
+                lastUpdate = now;
+                setUpdateStore({ progress: Math.floor((received / total) * 100) });
+            }
+        }
+
+        setUpdateStore({ status: UpdateStatus.UpdateReady, progress: null });
+    } catch (err) {
+        logger.log('[Update] Mock download failed', err);
+        setUpdateStore({ status: UpdateStatus.Error, errorType: UpdateErrorType.DownloadFailed, progress: null });
     }
-    setUpdateStore({ status: UpdateStatus.UpdateReady, progress: null });
-    return true;
 };
