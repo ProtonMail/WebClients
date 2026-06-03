@@ -1,9 +1,11 @@
-import { type ReactNode, createContext, useContext, useState } from 'react';
+import { type ReactNode, createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import noop from '@proton/utils/noop';
 
 import { getConnectionStatus } from '../api';
 import type { ApiImporterConnectionStatus } from '../api/api.interface';
+import type { ImportToken } from '../interface';
 
 export type ConnectionState = 'connected' | 'disconnected';
 
@@ -26,27 +28,34 @@ export const ConnectionStateProvider = ({ children }: { children: ReactNode }) =
     return <Context.Provider value={{ loading, setLoading, data, setData }}>{children}</Context.Provider>;
 };
 
-export const useConnectionState = (): [ConnectionState | undefined, boolean, () => Promise<void>, () => void] => {
+export const useConnectionState = (
+    tokens: ImportToken[] | undefined
+): [ConnectionState | undefined, boolean, () => Promise<void>] => {
     const api = useSilentApi();
     const { data, setData, loading, setLoading } = useContext(Context);
 
-    const verify = async () => {
+    const refresh = useCallback(async () => {
         setLoading(true);
 
-        try {
-            const { Status } = await api<{ Status: ApiImporterConnectionStatus }>(getConnectionStatus());
-            setData(Status.IsConnected ? 'connected' : 'disconnected');
-        } catch (err) {
+        if (!tokens) {
+            setData(undefined);
+            setLoading(false);
+            return;
+        } else if (!tokens.length) {
             setData('disconnected');
+            setLoading(false);
+            return;
         }
 
-        setLoading(false);
-    };
+        return api<{ Status: ApiImporterConnectionStatus }>(getConnectionStatus())
+            .then((r) => setData(r.Status.IsConnected ? 'connected' : 'disconnected'))
+            .catch(data ? noop : () => setData('disconnected'))
+            .finally(() => setLoading(false));
+    }, [data, tokens]);
 
-    const reset = () => {
-        setLoading(false);
-        setData(undefined);
-    };
+    useEffect(() => {
+        void refresh();
+    }, [tokens]);
 
-    return [data, loading, verify, reset];
+    return [data, loading, refresh];
 };

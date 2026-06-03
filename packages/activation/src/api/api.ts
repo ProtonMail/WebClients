@@ -217,10 +217,13 @@ export const createBYOEAddress = ({ Email, OrganizationId }: { Email: string; Or
     data: { Email, OrganizationId },
 });
 
-export const getOrganizationUsers = (params: { DomainName: string }) => ({
+export const getOrganizationUsers = (params: { DomainName: string }, useCachedData: boolean = false) => ({
     url: `importer/v1/organizations/users`,
     method: 'GET',
-    params,
+    params: {
+        ...params,
+        ...(useCachedData ? { UseCachedData: true } : {}),
+    },
 });
 
 export const getOrganizationImporter = () => ({
