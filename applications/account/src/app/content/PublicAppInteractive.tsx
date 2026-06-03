@@ -448,7 +448,7 @@ const PublicAppInteractive = ({
                                             path={[
                                                 SSO_PATHS.SIGNUP,
                                                 SSO_PATHS.START,
-                                                SSO_PATHS.REFERAL_PLAN_SELECTION,
+                                                SSO_PATHS.REFERRAL_PLAN_SELECTION,
                                                 SSO_PATHS.BUSINESS_SIGNUP,
                                                 SSO_PATHS.CALENDAR_SIGNUP,
                                                 SSO_PATHS.CALENDAR_SIGNUP_B2B,

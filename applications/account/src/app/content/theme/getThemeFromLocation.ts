@@ -57,8 +57,8 @@ export const getThemeFromLocation = (
 
     if (
         pathname.includes('signup') ||
-        pathname === SSO_PATHS.REFERAL_SIGNUP ||
-        pathname === SSO_PATHS.REFERAL_PLAN_SELECTION ||
+        pathname === SSO_PATHS.REFERRAL_SIGNUP ||
+        pathname === SSO_PATHS.REFERRAL_PLAN_SELECTION ||
         pathname === SSO_PATHS.START ||
         pathname === SSO_PATHS.PASS_SIGNUP ||
         pathname === SSO_PATHS.MAIL_SIGNUP ||
