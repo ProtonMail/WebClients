@@ -1,4 +1,4 @@
-import react from '@vitejs/plugin-react-swc';
+import react from '@vitejs/plugin-react';
 import path from 'path';
 import wasm from 'vite-plugin-wasm';
 import { defineConfig } from 'vitest/config';
@@ -8,12 +8,12 @@ export default defineConfig({
     test: {
         globals: true,
         environment: 'happy-dom',
-        deps: {
-            inline: ['@protontech/crypto'],
+        server: {
+            deps: {
+                inline: ['@protontech/crypto'],
+            },
         },
-        poolOptions: {
-            singleThread: true,
-        },
+        maxWorkers: 1,
         reporters: [
             [
                 'default',
