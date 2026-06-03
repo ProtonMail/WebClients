@@ -88,7 +88,13 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const isCreationOrConversion = !!editorInitializationConfig
   const canRunMigration = !isRevisionMode && canEdit && !isCreationOrConversion
 
-  const state = useProtonSheetsState({ docState, functions, isReadonly })
+  const state = useProtonSheetsState({
+    docState,
+    functions,
+    isReadonly,
+    isConversionFlow: editorInitializationConfig?.mode === 'conversion',
+  })
+  const didSetInitialVersion = useRef(false)
   const { setInitialVersion } = useVersioning(
     canRunMigration,
     state,
@@ -127,6 +133,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       const buffer = await createExcelFile({
         ...state,
         cellXfs: state.cellXfs ?? undefined,
+        locale: state.locale.resolved,
       })
       return new Uint8Array(buffer)
     }
@@ -182,10 +189,15 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     if (!editorInitializationConfig) {
       return
     }
-    setInitialVersion()
     const canConvertFile =
       editorInitializationConfig.mode === 'conversion' &&
       ['xlsx', 'csv', 'tsv', 'ods'].includes(editorInitializationConfig.type.dataType)
+    const setInitialVersionIfNotSet = () => {
+      if (!didSetInitialVersion.current) {
+        didSetInitialVersion.current = true
+        setInitialVersion()
+      }
+    }
     if (canConvertFile && !didConvertFromFile.current) {
       didConvertFromFile.current = true
       const file = new File([editorInitializationConfig.data], `import.${editorInitializationConfig.type.dataType}`, {
@@ -194,12 +206,25 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       const isExcelFile = editorInitializationConfig.type.dataType === 'xlsx'
       const isODSFile = editorInitializationConfig.type.dataType === 'ods'
       if (isExcelFile || isODSFile) {
-        void handleExcelFileImport(file, isExcelFile ? 'excel' : 'ods')
+        void handleExcelFileImport(file, isExcelFile ? 'excel' : 'ods').then(setInitialVersionIfNotSet)
       } else {
-        void importCSVFile(file)
+        docState.consumeIsInConversionFromOtherFormat()
+        void importCSVFile(
+          file,
+          1,
+          { rowIndex: 1, columnIndex: 1 },
+          {
+            preserveFormatting: true,
+            replaceSheetData: true,
+            enabledSharedStrings: true,
+            enableCellXfsRegistry: true,
+          },
+        ).then(setInitialVersionIfNotSet)
       }
+    } else {
+      setInitialVersionIfNotSet()
     }
-  }, [editorInitializationConfig, handleExcelFileImport, importCSVFile, setInitialVersion])
+  }, [docState, editorInitializationConfig, handleExcelFileImport, importCSVFile, setInitialVersion])
 
   // TODO: document this effect
   const { onCreateNewSheet, onRenameSheet } = state
@@ -231,6 +256,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
           preserveFormatting: data.shouldConvertCellContents,
           replaceSheetData: data.destination === SheetImportDestination.ReplaceCurrentSheet,
           enabledSharedStrings: true,
+          enableCellXfsRegistry: true,
         })
           .then(() => {
             calculateNow({

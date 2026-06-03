@@ -17,4 +17,5 @@ export interface DocStateInterface extends Observable<string> {
   endSheetsExcelImport(): void
   markImportUpdateAsSuccessful(uuid: string): void
   waitForImportSuccess(): Promise<void>
+  consumeIsInConversionFromOtherFormat(): boolean
 }
