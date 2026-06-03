@@ -46,7 +46,7 @@ const CodeRenderer = ({ artifact, showLineNumbers }: CodeRendererProps) => {
     }
 
     return (
-        <div className="artifact-code-content overflow-auto flex-1">
+        <div className="artifact-code-content overflow-auto flex-1 w-full">
             <Suspense
                 fallback={
                     <pre className="text-monospace text-sm m-0 p-4 overflow-auto color-norm">{artifact.content}</pre>
@@ -181,16 +181,16 @@ const PanelHeader = ({
     language,
     title,
     isStreaming,
-    showLineNumbers,
-    onToggleLineNumbers,
+    // showLineNumbers,
+    // onToggleLineNumbers,
     onCopy,
     copySuccess,
     onDownload,
     onClose,
 }: PanelHeaderProps) => (
-    <div className="artifact-panel-header flex flex-row items-center gap-2 px-3 py-2 border-bottom border-weak shrink-0">
+    <div className="artifact-panel-header flex flex-row items-center gap-2 px-3 py-2 border-bottom border-weak shrink-0 w-full">
         {type ? (
-            <span className="artifact-type-badge flex flex-row items-center gap-1 shrink-0">
+            <span className="artifact-type-badge flex flex-row items-center gap-1 shrink-0 bg-strong">
                 {type === 'code' ? <IcCode size={3} /> : <IcFileLines size={3} />}
                 <span className="text-xs font-bold">{type === 'code' ? 'CODE' : 'DOC'}</span>
             </span>
@@ -213,8 +213,9 @@ const PanelHeader = ({
             )}
         </span>
         <div className="flex flex-row items-center gap-1 shrink-0">
-            {!isStreaming && type === 'code' && (
+            {/* {!isStreaming && type === 'code' && (
                 <Button
+                    icon
                     shape="ghost"
                     size="small"
                     onClick={onToggleLineNumbers}
@@ -223,10 +224,11 @@ const PanelHeader = ({
                 >
                     {c('collider_2025:Action').t`1:1`}
                 </Button>
-            )}
+            )} */}
             {!isStreaming && (
                 <>
                     <Button
+                        icon
                         shape="ghost"
                         size="small"
                         onClick={onCopy}
@@ -240,6 +242,7 @@ const PanelHeader = ({
                         )}
                     </Button>
                     <Button
+                        icon
                         shape="ghost"
                         size="small"
                         onClick={onDownload}
@@ -251,6 +254,7 @@ const PanelHeader = ({
                 </>
             )}
             <Button
+                icon
                 shape="ghost"
                 size="small"
                 onClick={onClose}
@@ -280,7 +284,7 @@ const ArtifactPanel = () => {
     // --- Streaming state ---
     if (streamingArtifact && !selectedArtifact) {
         return (
-            <div className="artifact-panel flex flex-column h-full overflow-hidden">
+            <div className="artifact-panel flex flex-column h-full overflow-hidden w-full">
                 <PanelHeader
                     type={streamingArtifact.type}
                     language={streamingArtifact.language}
@@ -318,7 +322,7 @@ const ArtifactPanel = () => {
     };
 
     return (
-        <div className="artifact-panel flex flex-column h-full overflow-hidden">
+        <div className="artifact-panel flex flex-column h-full overflow-hidden w-full">
             <PanelHeader
                 type={artifact.type}
                 language={artifact.language}
@@ -333,7 +337,7 @@ const ArtifactPanel = () => {
                 onDownload={handleDownload}
                 onClose={closePanel}
             />
-            <div className="flex flex-column flex-1 overflow-hidden">
+            <div className="flex flex-column flex-1 overflow-hidden w-full">
                 <ArtifactContent artifact={artifact} showLineNumbers={showLineNumbers} />
             </div>
         </div>
