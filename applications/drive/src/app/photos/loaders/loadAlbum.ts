@@ -3,9 +3,10 @@ import { handleSdkError, sendErrorReport } from '@proton/drive/legacy/errorHandl
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { getNodeAncestry } from '@proton/drive/modules/nodes';
 
+import { createDebouncedBuffer } from '../../utils/createDebouncedBuffer';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 import { useAlbumsStore } from '../useAlbums.store';
-import { usePhotosStore } from '../usePhotos.store';
+import { type PhotoItem, usePhotosStore } from '../usePhotos.store';
 
 export const refreshAlbumMetadata = async (albumNodeUid: string) => {
     const drive = getDriveForPhotos();
@@ -72,20 +73,27 @@ export const loadCurrentAlbum = async (albumNodeUid: string, abortSignal?: Abort
         }
 
         const collectedUids: string[] = [];
-
         const photosStore = usePhotosStore.getState();
+
+        const { push, drain } = createDebouncedBuffer<PhotoItem>((items) => {
+            photosStore.setPhotoItemsWithoutTimeline(items);
+            albumsStore.addPhotoNodeUids(
+                albumNodeUid,
+                items.map((item) => item.nodeUid)
+            );
+        });
 
         for await (const photoItem of drive.iterateAlbum(albumNodeUid, abortSignal)) {
             collectedUids.push(photoItem.nodeUid);
             const existing = photosStore.getPhotoItem(photoItem.nodeUid);
-            photosStore.setPhotoItemWithoutTimeline({
+            push({
                 nodeUid: photoItem.nodeUid,
                 captureTime: photoItem.captureTime,
                 tags: existing?.tags ?? [],
                 relatedPhotoNodeUids: existing?.relatedPhotoNodeUids ?? [],
             });
         }
-        albumsStore.setPhotoNodeUids(collectedUids);
+        drain();
     } catch (e) {
         handleSdkError(e);
     } finally {
