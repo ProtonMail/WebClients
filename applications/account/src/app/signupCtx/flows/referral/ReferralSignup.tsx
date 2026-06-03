@@ -115,7 +115,7 @@ const ReferralSignupRouter = () => {
 
     return (
         <Switch>
-            <Route path={SSO_PATHS.REFERAL_SIGNUP}>
+            <Route path={SSO_PATHS.REFERRAL_SIGNUP}>
                 <ReferralSignupInner />
             </Route>
             <Route>
