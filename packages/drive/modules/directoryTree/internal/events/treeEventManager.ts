@@ -12,6 +12,7 @@ export type Section = 'myFiles' | 'devices' | 'sharedWithMe';
 export class TreeEventManager {
     private store: DirectoryTreeStore;
     private context: string;
+    private onlyFolders: boolean;
 
     private expandedSections: Set<Section> = new Set();
     private expandedTreeEventScopeIds: Set<string> = new Set();
@@ -20,9 +21,10 @@ export class TreeEventManager {
     private subscribedTreeEventScopeIds = new Set<string>();
     private unsubBusDriver: (() => void) | null = null;
 
-    constructor(store: DirectoryTreeStore, context: string) {
+    constructor(store: DirectoryTreeStore, context: string, onlyFolders = false) {
         this.store = store;
         this.context = context;
+        this.onlyFolders = onlyFolders;
         this.startListener();
     }
 
@@ -266,11 +268,13 @@ export class TreeEventManager {
 
                 case BusDriverEventName.REFRESH_SHARED_WITH_ME:
                     if (this.expandedSections.has('sharedWithMe')) {
-                        const newShared = (await iterateSharedWithMeNodes()).map(({ node: { uid, name, type } }) => ({
-                            nodeUid: uid,
-                            name,
-                            type,
-                        }));
+                        const newShared = (await iterateSharedWithMeNodes())
+                            .filter(({ node: { type } }) => !this.onlyFolders || type === NodeType.Folder)
+                            .map(({ node: { uid, name, type } }) => ({
+                                nodeUid: uid,
+                                name,
+                                type,
+                            }));
                         const currentShared = this.store.getState().getItemsByParentUid(SHARED_WITH_ME_ROOT_ID);
                         this.sharedRootsReconciliation(currentShared, newShared);
                     }

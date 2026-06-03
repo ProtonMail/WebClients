@@ -1240,7 +1240,7 @@ describe('useDirectoryTree', () => {
             });
 
             const mockInstance = getMockEventManagerInstance();
-            expect(MockTreeEventManager).toHaveBeenCalledWith(expect.anything(), TEST_CONTEXT);
+            expect(MockTreeEventManager).toHaveBeenCalledWith(expect.anything(), TEST_CONTEXT, undefined);
 
             mockInstance.syncSubscriptions.mockClear();
             await act(async () => {
@@ -1253,6 +1253,15 @@ describe('useDirectoryTree', () => {
                 await result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
             });
             expect(mockInstance.syncSubscriptions).toHaveBeenCalled();
+        });
+
+        it('should forward onlyFolders to the event manager', async () => {
+            createMyFilesRoot();
+
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
+            renderHook(() => useDirectoryTreeWithStore({ onlyFolders: true }));
+
+            expect(MockTreeEventManager).toHaveBeenCalledWith(expect.anything(), TEST_CONTEXT, true);
         });
 
         it('should resync subscriptions when Devices root is expanded and collapsed', async () => {
