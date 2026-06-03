@@ -1514,7 +1514,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -5310,6 +5311,12 @@
       ],
       "Organization key must be activated to create non-private users": [
         "La clé de l'organisation doit être activée pour créer des utilisateurs non privés."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Veuillez vérifier si votre numéro ABN est enregistré pour la TVA transfrontalière."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Le numéro de TVA doit commencer avec ${ prefixes }."
       ]
     },
     "error": {
@@ -7666,8 +7673,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"

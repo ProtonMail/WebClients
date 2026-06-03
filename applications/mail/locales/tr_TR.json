@@ -1514,7 +1514,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -5310,6 +5311,12 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Korunmayan kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Lütfen ABN numaranızın sınır ötesi KDV için kayıtlı olup olmadığını denetleyin"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "KDV numarası ${ prefixes } ile başlamalıdır"
       ]
     },
     "error": {
@@ -7666,8 +7673,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"

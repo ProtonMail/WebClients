@@ -4374,6 +4374,12 @@
       ],
       "You’re among the first to try email categories.": [
         "Sunteți printre primii utilizatori care testează categoriile de mesaje."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Dacă un mesaj apare în categoria greșită, mutați-l pur și simplu în cea corectă. Faceți clic dreapta pe un mesaj pentru a alege o categorie nouă sau glisați-l și plasați-l acolo unde îi este locul."
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Sunteți printre primii care au încercat noua noastră vizualizare pe categorii înainte de lansare. Feedback-ul dvs. va ajuta la îmbunătățirea modului în care Proton Mail sortează mesajele pentru toată lumea."
       ]
     },
     "description": {
@@ -5351,6 +5357,12 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Cheia organizației trebuie activată pentru a crea utilizatori neprivați."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Verificați dacă numărul ABN vă este înregistrat pentru TVA transfrontalier."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Valoarea TVA trebuie să înceapă cu ${ prefixes }."
       ]
     },
     "error": {
@@ -7790,9 +7802,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -16500,6 +16510,9 @@
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Obțineți mai mult spațiu cu ${ MAIL_APP_NAME } Plus"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Contribuiți la modelarea viitorului categoriilor de mesaje din ${ MAIL_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {

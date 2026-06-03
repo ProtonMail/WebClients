@@ -1514,7 +1514,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -5310,6 +5311,12 @@
       ],
       "Organization key must be activated to create non-private users": [
         "S'ha d'activar la clau d'organització per a crear usuaris no privats"
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Comproveu si el vostre ABN està registrat per a l'IVA transfronterer"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "El número d'IVA ha de començar per ${ prefixes }"
       ]
     },
     "error": {
@@ -7666,8 +7673,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
