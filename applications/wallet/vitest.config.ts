@@ -1,4 +1,4 @@
-import react from '@vitejs/plugin-react-swc';
+import react from '@vitejs/plugin-react';
 import path from 'path';
 import wasm from 'vite-plugin-wasm';
 import { defineConfig } from 'vitest/config';
