@@ -126,8 +126,6 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
         },
     ].filter(isTruthy);
 
-    const latestSubscription = upcoming ?? subscription;
-
     const { renewAmount, renewCurrency, renewCycle } = (() => {
         const hasUpcomingUnpaidSubscription = upcoming && isUpcomingSubscriptionUnpaid(subscription);
         if (hasUpcomingUnpaidSubscription) {
@@ -143,23 +141,30 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
             };
         }
 
-        // For a same plan same cycle renewal (which is enabled by a coupon)
-        // we want to display the BaseRenewAmount so the user does not expect to be charged the RenewAmount,
-        // which represents the discounted price.
-        // However if it is a full discount, we want to display a renewAmount of 0
-        if (
-            isSamePlan(latestSubscription, upcoming) &&
-            isSameCycle(latestSubscription, upcoming) &&
-            !isAddonDowngrade(latestSubscription, upcoming) &&
-            latestSubscription.RenewAmount !== 0
-        ) {
+        // About some words: there is current subscription. Sometimes there is an upcoming subscription. In case of this
+        // code branch, we are considering an upcoming subscription that was created for the same plan and cycle
+        // (so-called retention offers). When the upcoming subscription ends, it will be renewed for the second upcoming
+        // subscription. Our system can represent at most one upcoming subscription, but we still need to display the
+        // price of the second upcoming subscription to the user.
+        //
+        // For a same plan same cycle renewal (which is enabled by a coupon) we want to display the BaseRenewAmount so
+        // the user does not expect to be charged the RenewAmount for the second upcoming subscription, which represents
+        // the discounted price. However if it is a full discount, we want to display a renewAmount of 0
+        const isUpcomingSubscriptionSameAsCurrentSubscription =
+            upcoming &&
+            isSamePlan(subscription, upcoming) &&
+            isSameCycle(subscription, upcoming) &&
+            !isAddonDowngrade(subscription, upcoming) &&
+            upcoming.RenewAmount !== 0;
+        if (isUpcomingSubscriptionSameAsCurrentSubscription) {
             return {
-                renewAmount: latestSubscription.BaseRenewAmount,
-                renewCurrency: latestSubscription.Currency,
-                renewCycle: latestSubscription.RenewCycle,
+                renewAmount: upcoming.BaseRenewAmount,
+                renewCurrency: upcoming.Currency,
+                renewCycle: upcoming.RenewCycle,
             };
         }
 
+        const latestSubscription = upcoming ?? subscription;
         return {
             renewAmount: latestSubscription.RenewAmount,
             renewCurrency: latestSubscription.Currency,
