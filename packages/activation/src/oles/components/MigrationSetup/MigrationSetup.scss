@@ -10,11 +10,8 @@ $step-list-substep-size: rem(32);
 
 .migration-setup-step-list {
 	font-size: rem(13);
-	inline-size: calc(100% - (var(--space-8) * 2));
-	@include im.media('>medium') {
-		min-inline-size: rem(250);
-		inline-size: auto;
-	}
+	inline-size: 100%;
+	max-inline-size: rem(256);
 
 	&-button {
 		background-color: var(--background-norm);

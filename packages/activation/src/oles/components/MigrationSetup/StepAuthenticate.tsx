@@ -9,21 +9,25 @@ import { type OAuthToken, deleteOAuthTokenThunk, oauthTokenActions } from '@prot
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useErrorHandler, useNotifications } from '@proton/components/index';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import googleLogoMono from '@proton/styles/assets/img/import/providers/google_mono.svg';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 
+import { useProviderTokens } from '../../useProviderTokens';
 import { CircledLogoWithProton } from '../CircledLogoWithProton';
 import type { StepComponentProps } from './MigrationSetup';
 
-const StepAuthenticate: FC<{ tokens?: OAuthToken[] } & StepComponentProps> = ({ tokens, submitButton }) => {
+const StepAuthenticate: FC<StepComponentProps> = ({ onNext }) => {
     const api = useSilentApi();
     const dispatch = useDispatch();
     const { createNotification } = useNotifications();
     const handleError = useErrorHandler();
+    const [tokens] = useProviderTokens(OAUTH_PROVIDER.GSUITE, [EASY_SWITCH_FEATURES.OLES]);
 
     const { triggerOAuthPopup } = useOAuthPopup({
         errorMessage: c('BOSS').t`Failed to load OAuth`,
@@ -67,11 +71,24 @@ const StepAuthenticate: FC<{ tokens?: OAuthToken[] } & StepComponentProps> = ({ 
 
     return (
         <div className="max-w-custom" style={{ '--max-w-custom': '42rem' }}>
-            <h3 className="text-4xl text-bold mb-2">{c('BOSS').t`Authenticate your Google Workspace account`}</h3>
-            <p className="color-weak mt-0 mb-8">
+            <div className="flex justify-space-between flex-nowrap items-center gap-4 mb-4">
+                <h3 className="text-4xl text-bold">{c('BOSS').t`Authenticate your Google Workspace account`}</h3>
+                <div className="flex gap-2 shrink-0 text-semibold">
+                    <Button
+                        disabled={!onNext}
+                        onClick={() => onNext?.()}
+                        color="norm"
+                        size="medium"
+                        className="rounded-lg"
+                    >
+                        {c('Action').t`Next`}
+                    </Button>
+                </div>
+            </div>
+            <p className="color-weak mt-0">
                 {c('BOSS')
-                    .t`You need to grant the permission for ${BRAND_NAME} to copy your data. After accepting permissions, come back here to continue.`}{' '}
-                <Href href="#">{c('Link').t`Learn more`}</Href>
+                    .t`Sign-in with a Google Workspace administrator account for ${BRAND_NAME} to setup the migration.`}{' '}
+                <Href href={getKnowledgeBaseUrl('/easy-switch-for-business')}>{c('Link').t`Learn more`}</Href>
             </p>
             {tokens && Boolean(tokens.length) && (
                 <div className="flex flex-nowrap border border-weak rounded-xxl justify-space-between p-4 items-center mb-8">
@@ -86,25 +103,26 @@ const StepAuthenticate: FC<{ tokens?: OAuthToken[] } & StepComponentProps> = ({ 
                             </div>
                         </div>
                     </div>
-                    <Button
-                        icon
-                        shape="outline"
-                        color="danger"
-                        className="shrink-0 rounded-lg"
-                        onClick={handleDeleteToken(tokens[0])}
-                    >
-                        <IcTrash alt={c('Action').t`Delete token ${tokens[0].Account}`} />
-                    </Button>
+                    <Tooltip title={c('Action').t`Sign out`}>
+                        <Button
+                            icon
+                            shape="outline"
+                            color="danger"
+                            className="shrink-0 rounded-lg border-weak"
+                            onClick={handleDeleteToken(tokens[0])}
+                        >
+                            <IcTrash alt={c('Action').t`Sign out of ${tokens[0].Account}`} />
+                        </Button>
+                    </Tooltip>
                 </div>
             )}
             {tokens && !tokens.length && (
-                <Button color="norm" onClick={handleAddToken} className="flex items-center text-semibold">
-                    <img src={googleLogoMono} width={18} height={18} alt="" className="mr-2" />
+                <Button color="norm" onClick={handleAddToken} className="flex items-center text-semibold p-2 pr-6">
+                    <img src={googleLogo} width={40} height={40} alt="" className="mr-4 bg-weak p-2 rounded" />
                     {c('BOSS').t`Sign in to Google Workspace`}
                 </Button>
             )}
             {!tokens && <CircleLoader />}
-            {submitButton && <div className="mt-8 flex justify-end">{submitButton}</div>}
         </div>
     );
 };

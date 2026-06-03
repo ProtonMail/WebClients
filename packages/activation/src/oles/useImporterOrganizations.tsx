@@ -1,9 +1,10 @@
-import { type ReactNode, createContext, useContext, useEffect, useState } from 'react';
+import { type ReactNode, createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 import { getJoiningLink, getOrganizationImporter } from '@proton/activation/src/api';
 import type { ApiImporterOrganization, ApiJoiningLinkData } from '@proton/activation/src/api/api.interface';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import noop from '@proton/utils/noop';
 
 import { parseJoiningLinkData } from './thunk';
 import type { JoiningLink } from './types';
@@ -34,42 +35,34 @@ export const useImporterOrganizations = (): [StateData | undefined, boolean, () 
     const dispatch = useDispatch();
     const { data, setData, loading, setLoading } = useContext(Context);
 
-    const refresh = async () => {
+    const refresh = useCallback(async () => {
         setLoading(true);
 
-        try {
-            const result = await api<{ ImporterOrganizations: ApiImporterOrganization[] }>(getOrganizationImporter());
-
-            const resultWithJoiningLink = await Promise.all(
-                result.ImporterOrganizations.map(async (io) => {
-                    const JoiningLink = await api<{ JoiningLinkData: ApiJoiningLinkData | null }>(
-                        getJoiningLink(io.ImporterOrganizationID)
-                    )
-                        .then(({ JoiningLinkData }) =>
-                            JoiningLinkData ? dispatch(parseJoiningLinkData(JoiningLinkData)).unwrap() : undefined
+        return api<{ ImporterOrganizations: ApiImporterOrganization[] }>(getOrganizationImporter())
+            .then((result) =>
+                Promise.all(
+                    result.ImporterOrganizations.map(async (io) => {
+                        const JoiningLink = await api<{ JoiningLinkData: ApiJoiningLinkData | null }>(
+                            getJoiningLink(io.ImporterOrganizationID)
                         )
-                        .catch(() => undefined);
+                            .then(({ JoiningLinkData }) =>
+                                JoiningLinkData ? dispatch(parseJoiningLinkData(JoiningLinkData)).unwrap() : undefined
+                            )
+                            .catch(() => undefined);
 
-                    return {
-                        ...io,
-                        JoiningLink,
-                    };
-                })
-            );
-
-            setData(resultWithJoiningLink);
-        } catch {
-            setData(undefined);
-        }
-
-        setLoading(false);
-    };
+                        return {
+                            ...io,
+                            JoiningLink,
+                        };
+                    })
+                )
+            )
+            .then((resultWithJoiningLink) => setData(resultWithJoiningLink))
+            .catch(data ? noop : () => setData([]))
+            .finally(() => setLoading(false));
+    }, [data]);
 
     useEffect(() => {
-        if (data) {
-            return;
-        }
-
         void refresh();
     }, []);
 
