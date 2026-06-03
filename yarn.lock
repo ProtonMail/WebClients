@@ -13546,7 +13546,7 @@ __metadata:
     "@rowsncolumns/utils": "workspace:^"
     "@types/lodash-es": "npm:^4.17.12"
     "@zip.js/zip.js": "npm:^2.8.17"
-    fast-xml-parser: "npm:^5.5.10"
+    fast-xml-parser: "npm:^5.8.0"
     fflate: "npm:^0.8.2"
     htmlparser2: "npm:^9.1.0"
     lodash-es: "npm:^4.18.1"
@@ -28268,7 +28268,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-xml-parser@npm:^5.5.10, fast-xml-parser@npm:^5.8.0":
+"fast-xml-parser@npm:^5.8.0":
   version: 5.8.0
   resolution: "fast-xml-parser@npm:5.8.0"
   dependencies:

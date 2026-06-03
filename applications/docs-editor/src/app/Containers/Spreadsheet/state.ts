@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
 
-import type { CellXfs, SheetData, UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
+import type { CellXfs, SharedStrings, SheetData, UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
 import { Align, type CellInterface } from '@rowsncolumns/grid'
 import { useSearch, useSpreadsheetState as useSpreadsheetStateOriginal } from '@rowsncolumns/spreadsheet-state'
 import type {
@@ -56,7 +56,7 @@ type LocalState = {
   cellXfs: CellXfs | null | undefined
   scale: number
   userDefinedColors: string[]
-  sharedStrings: string[]
+  sharedStrings: SharedStrings
 
   onChangeSheets: SetState<Sheet[]>
   onChangeSheetData: SetState<SheetData<CellData>>
@@ -71,7 +71,7 @@ type LocalState = {
   onChangeCellXfs: SetState<CellXfs | null | undefined>
   onChangeScale: SetState<number>
   onChangeUserDefinedColors: SetState<string[]>
-  onChangeSharedStrings: SetState<string[]>
+  onChangeSharedStrings: SetState<SharedStrings>
 }
 type LocalStateWithoutActions = Omit<
   LocalState,
@@ -108,7 +108,7 @@ const useLocalSpreadsheetState = create<LocalState>()((set) => ({
   cellXfs: new Map(),
   scale: 1,
   userDefinedColors: [],
-  sharedStrings: [],
+  sharedStrings: new Map(),
 
   onChangeSheets: (sheets) => set((state) => ({ sheets: getValueFromUpdateAction(sheets, state.sheets) })),
   onChangeSheetData: (sheetData) =>
@@ -312,7 +312,7 @@ type OmitDepsKey = 'localState' | 'spreadsheetState' | 'onChangeHistory' | 'loca
 type ProtonSheetsStateDependencies = Omit<SpreadsheetStateDependencies, OmitDepsKey> &
   Omit<ChartsStateDependencies, OmitDepsKey> &
   Omit<SearchStateDependencies, OmitDepsKey> &
-  Omit<YjsStateDependencies, OmitDepsKey> & { isReadonly: boolean }
+  Omit<YjsStateDependencies, OmitDepsKey> & { isReadonly: boolean; isConversionFlow: boolean }
 
 export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
   const kv = useKeyValueState()
@@ -331,7 +331,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
   }
 
   const onChangeHistory: UseSpreadsheetProps['onChangeHistory'] = (patches) => {
-    if (deps.isReadonly) {
+    if (deps.isReadonly && !deps.isConversionFlow) {
       console.error('Attempted to modify readonly spreadsheet')
       return
     }
@@ -541,7 +541,9 @@ export function useLocalState(
       cellXfs: (state.cellXfs ? Object.fromEntries(state.cellXfs.entries()) : {}) as unknown as CellXfs,
       scale: state.scale,
       userDefinedColors: state.userDefinedColors,
-      sharedStrings: state.sharedStrings,
+      sharedStrings: (state.sharedStrings
+        ? Object.fromEntries(state.sharedStrings.entries())
+        : {}) as unknown as SharedStrings,
     }),
     [
       state.cellXfs,
@@ -565,7 +567,9 @@ export function useLocalState(
     async (newState: object, broadcastPatches: boolean = true) => {
       useLocalSpreadsheetState.setState({
         ...(newState as LocalStateWithoutActions),
-        cellXfs: 'cellXfs' in newState ? new Map(Object.entries(newState.cellXfs as object)) : undefined,
+        cellXfs: 'cellXfs' in newState ? new Map(Object.entries(newState.cellXfs as object)) : new Map(),
+        sharedStrings:
+          'sharedStrings' in newState ? new Map(Object.entries(newState.sharedStrings as object)) : new Map(),
       })
       if (broadcastPatches) {
         const patches = await state.generateStatePatches()
