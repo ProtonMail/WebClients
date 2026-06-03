@@ -25,20 +25,22 @@ export const GroupMemberItemWrapper = ({
     return (
         <>
             <div className="flex shrink-0 gap-3 items-center">
-                <Avatar className="shrink-0 text-rg" color="weak">
-                    {getInitials(memberName ?? memberEmail ?? '')}
+                <Avatar className="shrink-0 text-rg text-semibold" color="weak">
+                    {getInitials(memberName || memberEmail || '')}
                 </Avatar>
-                <span className="flex-1 flex flex-column justify-center">
-                    <span className="block max-w-full text-ellipsis" title={memberName || ''}>
-                        {memberName}
-                    </span>
-                    {memberName !== memberEmail && (
-                        <span className="color-weak text-sm block max-w-full text-ellipsis" title={memberEmail || ''}>
-                            {memberEmail}
+                <span className="flex flex-1 items-center">
+                    <span className="flex flex-column justify-center mr-1">
+                        <span className="block text-ellipsis" title={memberName || ''}>
+                            {memberName}
                         </span>
-                    )}
+                        {memberName !== memberEmail && (
+                            <span className="color-weak text-sm block text-ellipsis" title={memberEmail || ''}>
+                                {memberEmail}
+                            </span>
+                        )}
+                    </span>
+                    {showMailFeatures && mailE2EEDisabled && <UserIsExternalIcon groupMemberType={groupMemberType} />}
                 </span>
-                {showMailFeatures && mailE2EEDisabled && <UserIsExternalIcon groupMemberType={groupMemberType} />}
                 {children}
             </div>
         </>
