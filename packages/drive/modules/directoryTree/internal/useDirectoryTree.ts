@@ -349,7 +349,7 @@ export function directoryTreeFactory() {
     let eventManager: TreeEventManager | undefined;
     function useDirectoryTreeWithStore(context: string, options?: DirectoryTreeOptions) {
         if (!eventManager) {
-            eventManager = new TreeEventManager(directoryTreeStore, context);
+            eventManager = new TreeEventManager(directoryTreeStore, context, options?.onlyFolders);
         }
         return useDirectoryTree(directoryTreeStore, eventManager, options);
     }

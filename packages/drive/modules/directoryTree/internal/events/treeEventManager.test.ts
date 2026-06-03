@@ -58,8 +58,8 @@ const SECTION_META: Record<SectionName, { uid: string; type: DirectoryTreeRootTy
     shared: { uid: SHARED_WITH_ME_ROOT_ID, type: DirectoryTreeRootType.SharesRoot, name: 'Shared with me' },
 };
 
-function createManager(store = directoryTreeStoreFactory()) {
-    const manager = new TreeEventManager(store, TEST_CONTEXT);
+function createManager(store = directoryTreeStoreFactory(), onlyFolders = false) {
+    const manager = new TreeEventManager(store, TEST_CONTEXT, onlyFolders);
     return { store, manager };
 }
 
@@ -482,6 +482,50 @@ describe('TreeEventManager', () => {
 
             expect(store.getState().items.has('old-shared')).toBe(false);
             expect(store.getState().items.get('new-shared')?.name).toBe('New Item');
+        });
+
+        it('REFRESH_SHARED_WITH_ME – onlyFolders → shared files filtered out, folders kept', async () => {
+            const { store, manager } = createManager(directoryTreeStoreFactory(), true);
+            mockedGetNodeEntity.mockImplementation((item: any) => ({
+                node: item.value ?? item.error,
+                errors: new Map(),
+            }));
+            mockedGetDrive.mockReturnValue({
+                iterateSharedNodesWithMe: jest.fn().mockReturnValue(
+                    makeAsyncIterator([
+                        { ok: true, value: { uid: 'shared-folder', name: 'A Folder', type: NodeType.Folder } },
+                        { ok: true, value: { uid: 'shared-file', name: 'A File', type: NodeType.File } },
+                    ])
+                ),
+            } as any);
+            expandSection(store, manager, 'shared');
+
+            await fireEvent({ type: BusDriverEventName.REFRESH_SHARED_WITH_ME });
+
+            expect(store.getState().items.has('shared-folder')).toBe(true);
+            expect(store.getState().items.has('shared-file')).toBe(false);
+        });
+
+        it('REFRESH_SHARED_WITH_ME – without onlyFolders → shared files kept', async () => {
+            const { store, manager } = createManager();
+            mockedGetNodeEntity.mockImplementation((item: any) => ({
+                node: item.value ?? item.error,
+                errors: new Map(),
+            }));
+            mockedGetDrive.mockReturnValue({
+                iterateSharedNodesWithMe: jest
+                    .fn()
+                    .mockReturnValue(
+                        makeAsyncIterator([
+                            { ok: true, value: { uid: 'shared-file', name: 'A File', type: NodeType.File } },
+                        ])
+                    ),
+            } as any);
+            expandSection(store, manager, 'shared');
+
+            await fireEvent({ type: BusDriverEventName.REFRESH_SHARED_WITH_ME });
+
+            expect(store.getState().items.get('shared-file')?.name).toBe('A File');
         });
 
         it('UPDATED_NODES – node in shared with me that is not expanded → no-op', async () => {
