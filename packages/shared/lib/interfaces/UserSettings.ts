@@ -253,4 +253,5 @@ export interface UserSettings {
     OrganizationPolicy: {
         Enforced: ORGANIZATION_POLICY_ENFORCED;
     };
+    UsedClients: string[];
 }
