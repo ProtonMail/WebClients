@@ -95,6 +95,14 @@ jest.mock('./useAutoAddMeetLinkNotification', () => ({
     }),
 }));
 
+jest.mock('./useMeetFunnelTelemetry', () => ({
+    useMeetFunnelTelemetry: jest.fn().mockReturnValue({
+        sendSpotlightDisplayed: jest.fn(),
+        sendExploreMeetClicked: jest.fn(),
+        sendMeetingCreated: jest.fn(),
+    }),
+}));
+
 const mockModel = {
     title: 'Test Meeting',
     attendees: [],
