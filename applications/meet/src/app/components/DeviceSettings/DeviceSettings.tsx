@@ -17,7 +17,6 @@ import {
 import {
     selectActiveCameraId,
     selectCameraPermission,
-    selectCameraState,
     selectCameras,
     selectInitialCameraState,
     selectMicrophonePermission,
@@ -85,7 +84,6 @@ export const DeviceSettings = ({
     const camera = useMeetSelector(selectCameraPermission);
     const microphone = useMeetSelector(selectMicrophonePermission);
     const initialCameraState = useMeetSelector(selectInitialCameraState);
-    const cameraState = useMeetSelector(selectCameraState);
     const microphoneState = useMeetSelector(selectMicrophoneState);
     const speakerState = useMeetSelector(selectSpeakerState);
     const cameras = useMeetSelector(selectCameras);
@@ -349,7 +347,6 @@ export const DeviceSettings = ({
                         contentProps={{
                             handleCameraChange,
                             videoDeviceId: selectedCameraId,
-                            cameraState,
                             cameras: filteredCameras,
                             isCameraLoading: (deviceId: string) => isDeviceLoading('camera', deviceId),
                             withCameraLoading: (deviceId: string, operation: () => Promise<void>) =>
