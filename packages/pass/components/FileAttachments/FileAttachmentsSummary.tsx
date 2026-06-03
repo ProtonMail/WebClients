@@ -18,6 +18,7 @@ import { PassPlusPromotionButton } from '../Upsell/PassPlusPromotionButton';
 type FileSummaryHeaderProps = PropsWithChildren<{
     deleteDisabled?: boolean;
     filesCount: number;
+    hidePromotionButton?: boolean; // to hide the promotion badge for Pass Ess as clicking on it opens the upsell banner that isn't relevant for B2B
     loading?: boolean;
     onDelete?: () => void;
 }>;
@@ -26,6 +27,7 @@ export const FileAttachmentsSummary: FC<FileSummaryHeaderProps> = ({
     children,
     deleteDisabled,
     filesCount,
+    hidePromotionButton,
     loading,
     onDelete,
 }) => {
@@ -60,7 +62,7 @@ export const FileAttachmentsSummary: FC<FileSummaryHeaderProps> = ({
                         })()}
                     </div>
                 </div>
-                {!canUseStorage && upsell && (
+                {!canUseStorage && upsell && !hidePromotionButton && (
                     <PassPlusPromotionButton
                         onClick={() => upsell({ type: 'pass-plus', upsellRef: UpsellRef.FILE_ATTACHMENTS })}
                     />
