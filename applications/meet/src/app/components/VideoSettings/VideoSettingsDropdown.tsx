@@ -7,9 +7,7 @@ import { useActiveBreakpoint } from '@proton/components';
 import type { PopperPosition } from '@proton/components/components/popper/interface';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import type { SliceDeviceState } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
-import { shouldShowDeviceCheckmark } from '@proton/meet/utils/deviceUtils';
 
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
@@ -20,7 +18,6 @@ interface VideoSettingsDropdownProps {
     anchorRef: RefObject<HTMLButtonElement>;
     handleCameraChange: (deviceId: string) => Promise<void>;
     videoDeviceId: string | null;
-    cameraState: SliceDeviceState;
     cameras: SerializableDeviceInfo[];
     onClose: () => void;
     anchorPosition?: PopperPosition;
@@ -32,7 +29,6 @@ const VideoSettingsDropdownComponent = ({
     anchorRef,
     handleCameraChange,
     videoDeviceId,
-    cameraState,
     cameras,
     onClose,
     anchorPosition,
@@ -62,17 +58,13 @@ const VideoSettingsDropdownComponent = ({
                     {cameras.map((camera) => (
                         <OptionButton
                             key={camera.deviceId}
-                            showIcon={shouldShowDeviceCheckmark(camera.deviceId, videoDeviceId!, cameraState)}
+                            showIcon={camera.deviceId === videoDeviceId}
                             label={camera.label}
                             onClick={() => {
-                                const isAlreadySelected = shouldShowDeviceCheckmark(
-                                    camera.deviceId,
-                                    videoDeviceId!,
-                                    cameraState
-                                );
-                                if (isAlreadySelected) {
+                                if (camera.deviceId === videoDeviceId) {
                                     return;
                                 }
+
                                 void withCameraLoading(camera.deviceId, () => handleCameraChange(camera.deviceId));
                             }}
                             loading={isCameraLoading(camera.deviceId)}
