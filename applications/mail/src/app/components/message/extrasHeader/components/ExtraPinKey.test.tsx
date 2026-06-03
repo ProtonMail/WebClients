@@ -1,7 +1,7 @@
+import type { PublicKeyReference } from '@protontech/crypto';
 import { fireEvent, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
-import type { PublicKeyReference } from '@protontech/crypto';
 import type { MessageVerification } from '@proton/mail/store/messages/messagesTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -205,25 +205,37 @@ describe('Extra pin key banner displayed', () => {
 
     // PIN_ATTACHED_SIGNED
     it.each`
-        verificationStatus
-        ${MAIL_VERIFICATION_STATUS.NOT_VERIFIED}
-        ${MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID}
-    `('should render the banner when prompt key pinning is PIN_ATTACHED_SIGNED', async ({ verificationStatus }) => {
-        const signingKey = await generateKeys('signing', message.Sender.Address);
+        verificationStatus                             | withApiKeys
+        ${MAIL_VERIFICATION_STATUS.NOT_VERIFIED}       | ${true}
+        ${MAIL_VERIFICATION_STATUS.NOT_VERIFIED}       | ${false}
+        ${MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID} | ${true}
+        ${MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID} | ${false}
+    `(
+        'should render the banner when prompt key pinning is PIN_ATTACHED_SIGNED as long as API keys are not present',
+        async ({ verificationStatus, withApiKeys }) => {
+            const signingKey = await generateKeys('signing', message.Sender.Address);
 
-        const messageVerification = {
-            signingPublicKey: signingKey.publicKeys[0],
-            attachedPublicKeys: [...signingKey.publicKeys] as PublicKeyReference[],
-            verificationStatus,
-        } as MessageVerification;
+            const messageVerification = {
+                signingPublicKey: signingKey.publicKeys[0],
+                attachedPublicKeys: [...signingKey.publicKeys] as PublicKeyReference[],
+                verificationStatus,
+                senderPinnableKeys: withApiKeys ? [...signingKey.publicKeys] : [],
+            } as MessageVerification;
 
-        await setup(message, messageVerification);
-        screen.getByTestId('extra-pin-key:banner');
-        // Expected text is displayed
-        screen.getByText('This message is signed by the key attached, that has not been trusted yet.');
+            await setup(message, messageVerification);
+            const banner = screen.queryByTestId('extra-pin-key:banner');
+            if (withApiKeys) {
+                // if verificationStatus is NOT_VERIFIED: PromptPin is off, so no banner expected (`AUTOPROMPT` behavior)
+                expect(banner).toBeNull();
+            } else {
+                expect(banner).toBeVisible();
+                // Expected text is displayed
+                screen.getByText('This message is signed by the key attached, that has not been trusted yet.');
 
-        await openTrustKeyModal();
-    });
+                await openTrustKeyModal();
+            }
+        }
+    );
 
     // PIN_ATTACHED
     it('should render the banner when prompt key pinning is PIN_ATTACHED', async () => {
