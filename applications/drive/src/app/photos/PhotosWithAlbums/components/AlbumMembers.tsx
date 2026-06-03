@@ -1,5 +1,7 @@
 import { useMemo } from 'react';
 
+import { useShallow } from 'zustand/react/shallow';
+
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { UserAvatar } from '@proton/atoms/UserAvatar/UserAvatar';
@@ -13,10 +15,12 @@ interface AlbumMembersProps {
 }
 
 export const AlbumMembers = ({ onShare }: AlbumMembersProps) => {
-    const members = useAlbumsStore((state) => {
-        const uid = state.currentAlbumNodeUid;
-        return uid ? (state.albums.get(uid)?.members ?? []) : [];
-    });
+    const members = useAlbumsStore(
+        useShallow((state) => {
+            const uid = state.currentAlbumNodeUid;
+            return uid ? (state.albums.get(uid)?.members ?? []) : [];
+        })
+    );
     const [contactEmails] = useContactEmails();
 
     const membersWithName = useMemo(() => {
