@@ -5,6 +5,7 @@ import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrap
 import type { GetDocumentKeys } from './GetDocumentKeys'
 import type { GetDocumentMeta } from './GetDocumentMeta'
 import type { GetNode } from './GetNode'
+import type { GetNodePermissions } from './GetNodePermissions'
 import type { FetchMetaAndRawCommit } from './FetchMetaAndRawCommit'
 import { LoadDocument } from './LoadDocument'
 import type { LoggerInterface } from '@proton/utils/logs'
@@ -12,8 +13,10 @@ import { DocumentState, PublicDocumentState } from '../State/DocumentState'
 import { DecryptedCommit } from '../Models/DecryptedCommit'
 import { LoadLogger } from '../LoadLogger/LoadLogger'
 import { jwtDecode } from 'jwt-decode'
-import { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions'
+import { SHARE_MEMBER_PERMISSIONS, SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions'
 import type { RealtimeTokenPayload } from './FetchRealtimeToken'
+import { rawPermissionToRole } from '../Types/DocumentEntitlements'
+import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 
 jest.mock('jwt-decode', () => ({
   jwtDecode: jest.fn(),
@@ -29,6 +32,7 @@ describe('LoadDocument', () => {
   let mockDecryptCommit: jest.Mocked<DecryptCommit>
   let mockLoadMetaAndCommit: jest.Mocked<FetchMetaAndRawCommit>
   let mockGetDocumentKeys: jest.Mocked<GetDocumentKeys>
+  let mockGetNodePermissions: jest.Mocked<GetNodePermissions>
   let mockLogger: jest.Mocked<LoggerInterface>
 
   const nodeMeta: NodeMeta = {
@@ -64,6 +68,10 @@ describe('LoadDocument', () => {
       execute: jest.fn(),
     } as unknown as jest.Mocked<GetDocumentKeys>
 
+    mockGetNodePermissions = {
+      execute: jest.fn(),
+    } as unknown as jest.Mocked<GetNodePermissions>
+
     mockLogger = {
       error: jest.fn(),
     } as unknown as jest.Mocked<LoggerInterface>
@@ -79,6 +87,7 @@ describe('LoadDocument', () => {
       mockDecryptCommit,
       mockLoadMetaAndCommit,
       mockGetDocumentKeys,
+      mockGetNodePermissions,
       mockLogger,
     )
   })
@@ -101,6 +110,9 @@ describe('LoadDocument', () => {
     beforeEach(() => {
       mockGetNode.execute.mockResolvedValue(Result.ok({ node: mockNode, fromCache: false } as any))
       mockGetDocumentKeys.execute.mockResolvedValue(Result.ok({ keys: mockKeys as any, fromCache: false } as any))
+      mockGetNodePermissions.execute.mockResolvedValue(
+        Result.ok({ role: rawPermissionToRole(SHARE_MEMBER_PERMISSIONS.EDITOR), fromCache: false } as any),
+      )
       mockLoadMetaAndCommit.execute.mockResolvedValue(
         DynamicResult.ok({
           serverBasedMeta: mockMeta,
@@ -162,6 +174,22 @@ describe('LoadDocument', () => {
 
       expect(mockDecryptCommit.execute).toHaveBeenCalled()
       expect(result.isFailed()).toBe(false)
+    })
+
+    it('should use node permissions when the realtime token is unavailable', async () => {
+      mockLoadMetaAndCommit.execute.mockResolvedValue(
+        DynamicResult.ok({
+          serverBasedMeta: mockMeta,
+          latestCommit: undefined,
+          realtimeTokenResult: ApiResult.fail({ message: 'File or folder not found', code: DocsApiErrorCode.Unknown }),
+        } as any),
+      )
+
+      const result = await loadDocument.executePrivate(nodeMeta)
+
+      expect(result.isFailed()).toBe(false)
+      expect(mockGetNodePermissions.execute).toHaveBeenCalledWith(nodeMeta, { useCache: true })
+      expect(result.getValue().documentState.getProperty('userRole').canEdit()).toBe(true)
     })
   })
 
