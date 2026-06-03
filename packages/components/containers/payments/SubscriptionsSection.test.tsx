@@ -189,6 +189,51 @@ describe('SubscriptionsSection', () => {
         expect(getByTestId('renewalNotice')).toHaveTextContent('Renews automatically at CHF 0, for 12 months');
     });
 
+    it('should show the discounted renew amount when upcoming subscription has a different cycle', () => {
+        // The upcoming yearly subscription carries a coupon discount on its RenewAmount.
+        // Because the current subscription is monthly (different cycle), this is NOT a same plan same cycle
+        // retention renewal, so we must display the actual discounted RenewAmount, not the BaseRenewAmount.
+        upcoming!.RenewAmount = 8000;
+        upcoming!.BaseRenewAmount = 11988;
+
+        subscription.UpcomingSubscription = upcoming;
+        const { getByTestId } = renderWithProviders(<SubscriptionsSection />, {
+            preloadedState: {
+                subscription: getSubscriptionState(subscription),
+                plans: defaultPlansState,
+            },
+        });
+        expect(getByTestId('renewalNotice')).toHaveTextContent('Renews automatically at CHF 80, for 12 months');
+    });
+
+    it('should show the discounted renew amount when upcoming subscription has a different plan', () => {
+        // The upcoming subscription is for a different plan than the current one (same cycle), so it is not a
+        // same plan same cycle retention renewal. The actual discounted RenewAmount must be displayed.
+        const upcomingDifferentPlan = buildSubscription(
+            {
+                planName: PLANS.MAIL,
+                currency: 'CHF',
+                cycle: CYCLE.MONTHLY,
+            },
+            {
+                RenewAmount: 8000,
+                BaseRenewAmount: 11988,
+                PeriodStart: 1699239558,
+                PeriodEnd: 1701831558,
+                CreateTime: 1696561195,
+            }
+        );
+
+        subscription.UpcomingSubscription = upcomingDifferentPlan;
+        const { getByTestId } = renderWithProviders(<SubscriptionsSection />, {
+            preloadedState: {
+                subscription: getSubscriptionState(subscription),
+                plans: defaultPlansState,
+            },
+        });
+        expect(getByTestId('renewalNotice')).toHaveTextContent('Renews automatically at CHF 80, for 1 month');
+    });
+
     it('should now show renewal notice if subscription is expiring', () => {
         subscription.Renew = Renew.Disabled;
         const { container } = renderWithProviders(<SubscriptionsSection />, {
