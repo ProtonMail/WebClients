@@ -73,12 +73,16 @@ export const CategoriesSettings = () => {
                 })}
             </MobileSection>
 
-            <p className="px-4 text-lg text-semibold m-0 mb-2">{c('Title').t`Add categories`}</p>
-            <MobileSection>
-                {disabledCategoriesTabs.map((category) => {
-                    return <CategoryRowItem category={category} onUpdate={handleUpdate} />;
-                })}
-            </MobileSection>
+            {disabledCategoriesTabs.length > 0 && (
+                <>
+                    <p className="px-4 text-lg text-semibold m-0 mb-2">{c('Title').t`Add categories`}</p>
+                    <MobileSection>
+                        {disabledCategoriesTabs.map((category) => {
+                            return <CategoryRowItem category={category} onUpdate={handleUpdate} />;
+                        })}
+                    </MobileSection>
+                </>
+            )}
         </div>
     );
 };
