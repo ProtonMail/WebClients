@@ -53,13 +53,13 @@
         "@proton/i18n": "workspace:packages/i18n",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
-        "@vitejs/plugin-react-swc": "^3.11.0",
+        "@vitejs/plugin-react": "^6.0.2",
         "eslint": "^9.39.4",
         "happy-dom": "^20.9.0",
         "prettier": "^3.8.3",
         "typescript": "^6.0.2",
         "vite-plugin-wasm": "^3.6.0",
-        "vitest": "^3.2.4"
+        "vitest": "^4.1.7"
     },
     "exifreader": {
         "exclude": {
