@@ -80,6 +80,7 @@ const AccessTokensList: FC = () => {
             onDelete={(t) => setAction({ type: 'delete', token: t })}
             onManageAccess={(t) => setAction({ type: 'manage-access', token: t })}
             onViewActions={(t) => setAction({ type: 'view-actions', token: t })}
+            className="mb-2"
         />
     );
 
@@ -97,17 +98,17 @@ const AccessTokensList: FC = () => {
         }
 
         return (
-            <div className="flex flex-column gap-2">
+            <>
                 {active.map(renderTokenCard)}
                 {createNewTokenBtn}
                 {expired.length > 0 && (
-                    <CollapsibleSection className="mt-3" label={c('Label').t`Expired tokens (${expired.length})`}>
+                    <CollapsibleSection className="mt-4" label={c('Label').t`Expired tokens (${expired.length})`}>
                         <div className="color-weak text-sm mb-4">{c('Info')
                             .t`Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.`}</div>
-                        <div className="flex flex-column gap-2">{expired.map(renderTokenCard)}</div>
+                        {expired.map(renderTokenCard)}
                     </CollapsibleSection>
                 )}
-            </div>
+            </>
         );
     };
 
