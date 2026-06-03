@@ -21,7 +21,9 @@ import {
     planSupportsSSO,
     upsellPlanSSO,
 } from '@proton/payments/index';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
+    APPS,
     BRAND_NAME,
     DARK_WEB_MONITORING_NAME,
     ORGANIZATION_STATE,
@@ -30,8 +32,8 @@ import {
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import { getIsExternalAccount, getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 import type { Permission } from '@proton/shared/lib/interfaces/UserPermission';
+import { getIsExternalAccount, getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import { isSubscriptionRenewEnabled } from '@proton/shared/lib/subscription/helpers.ts';
 import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
@@ -39,6 +41,7 @@ import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
 type PropContext = {
     isDataRecoveryAvailable: boolean;
     isSessionRecoveryAvailable: boolean;
+    appName: APP_NAMES;
 };
 
 type VpnNavContext = {
@@ -452,8 +455,9 @@ const routesDefinition = {
             children: [
                 {
                     id: 'my-vpn.download-apps',
-                    label: () => c('Title').t`Download apps`,
-                    to: '/downloads',
+                    label: ({ context }) =>
+                        context.appName === APPS.PROTONACCOUNT ? c('Title').t`VPN apps` : c('Title').t`Download apps`,
+                    to: ({ context }) => (context.appName === APPS.PROTONACCOUNT ? '/vpn-apps' : '/downloads'),
                     icon: 'arrow-down-line',
                     sections: [
                         {
@@ -465,13 +469,36 @@ const routesDefinition = {
                             id: 'my-vpn.download-apps.wireguard-configuration',
                             to: 'wireguard-configuration',
                             text: c('Title').t`WireGuard configuration`,
+                            isVisible: ({ context }) => context.appName === APPS.PROTONVPN_SETTINGS,
                         },
                         {
                             id: 'my-vpn.download-apps.openvpn-configuration-files',
                             to: 'openvpn-configuration-files',
                             text: c('Title').t`OpenVPN configuration files`,
+                            isVisible: ({ context }) => context.appName === APPS.PROTONVPN_SETTINGS,
                         },
                     ],
+                },
+                {
+                    id: 'my-vpn.wireguard',
+                    label: () => c('Title').t`WireGuard`,
+                    to: '/WireGuard',
+                    icon: 'brand-wireguard',
+                    isVisible: ({ context }) => context.appName === APPS.PROTONACCOUNT,
+                    sections: [
+                        {
+                            id: 'my-vpn.download-apps.wireguard-configuration',
+                            to: 'wireguard-configuration',
+                            text: c('Title').t`WireGuard configuration`,
+                        },
+                    ],
+                },
+                {
+                    id: 'my-vpn.openvpn',
+                    icon: 'key',
+                    to: '/OpenVpn',
+                    label: c('Title').t`OpenVpn`,
+                    isVisible: ({ context }) => context.appName === APPS.PROTONACCOUNT,
                 },
             ],
         },
@@ -489,7 +516,16 @@ type Args = {
     permissions?: Partial<Record<Permission, boolean>>;
 };
 
-export const getRoutes = ({ prefix, notifications, user, subscription, organization, flags, context, permissions }: Args) => {
+export const getRoutes = ({
+    prefix,
+    notifications,
+    user,
+    subscription,
+    organization,
+    flags,
+    context,
+    permissions,
+}: Args) => {
     const isOrgActive = organization?.State === ORGANIZATION_STATE.ACTIVE;
 
     const canHaveOrganization = !user.isMember && !!organization;

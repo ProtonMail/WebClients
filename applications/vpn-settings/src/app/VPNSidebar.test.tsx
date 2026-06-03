@@ -1,4 +1,4 @@
-import React from 'react';
+import { createRef } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
 import { fireEvent, render, screen } from '@testing-library/react';
@@ -58,12 +58,6 @@ describe('VPNSidebar', () => {
         routes: { org: { id: 'org', icon: 'brand-proton', text: 'text', to: '/org' } },
     };
 
-    const disabledAdminSidebarFeature = {
-        enabled: false as const,
-        loading: false,
-        routes: undefined,
-    };
-
     beforeEach(() => {
         vi.clearAllMocks();
 
@@ -79,11 +73,12 @@ describe('VPNSidebar', () => {
 
         renderWithRouter(
             <VPNSidebar
+                navigationRef={createRef()}
                 sidebarExpanded={false}
                 onSidebarToggle={() => {}}
                 routes={routesMock}
                 organizationRoutes={organizationRoutesMock}
-                adminSidebarFeature={disabledAdminSidebarFeature}
+                adminSidebarFeature={{ loading: true, enabled: false, routes: undefined }}
             />
         );
         expect(screen.getByRole('progressbar')).toBeInTheDocument();
@@ -93,11 +88,16 @@ describe('VPNSidebar', () => {
     it('renders old sidebar when admin feature is disabled', () => {
         renderWithRouter(
             <VPNSidebar
+                navigationRef={createRef()}
                 sidebarExpanded={false}
                 onSidebarToggle={() => {}}
                 routes={routesMock}
                 organizationRoutes={organizationRoutesMock}
-                adminSidebarFeature={disabledAdminSidebarFeature}
+                adminSidebarFeature={{
+                    enabled: false as const,
+                    loading: false,
+                    routes: undefined,
+                }}
             />
         );
         expect(screen.getByTestId('sidebar-nav')).toBeInTheDocument();
@@ -124,6 +124,7 @@ describe('VPNSidebar', () => {
 
         renderWithRouter(
             <VPNSidebar
+                navigationRef={createRef()}
                 sidebarExpanded={false}
                 onSidebarToggle={() => {}}
                 routes={routesMock}
@@ -151,6 +152,7 @@ describe('VPNSidebar', () => {
 
         renderWithRouter(
             <VPNSidebar
+                navigationRef={createRef()}
                 sidebarExpanded={false}
                 onSidebarToggle={() => {}}
                 routes={routesMock}
