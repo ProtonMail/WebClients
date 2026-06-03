@@ -121,9 +121,6 @@ export const MailPostSignupOneDollar = () => {
                 maximumCycle: CYCLE.YEARLY,
                 coupon: COUPON_CODES.TRYMAILPLUS0724,
                 upsellRef,
-                metrics: {
-                    source: 'upsells',
-                },
                 onSubscribed: () => {
                     sendReportUserSubscribed(daysSinceOffer);
                 },

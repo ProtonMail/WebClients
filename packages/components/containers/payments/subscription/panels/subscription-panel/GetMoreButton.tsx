@@ -2,15 +2,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 
-import type { OpenCallbackProps } from '../../SubscriptionModalProvider';
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';
 
-interface Props {
-    metricsSource: OpenCallbackProps['metrics']['source'];
-}
-
-export const GetMoreButton = ({ metricsSource }: Props) => {
+export const GetMoreButton = () => {
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
 
     return (
@@ -25,9 +20,6 @@ export const GetMoreButton = ({ metricsSource }: Props) => {
                 void openSubscriptionModal({
                     step: SUBSCRIPTION_STEPS.CHECKOUT,
                     disablePlanSelection: true,
-                    metrics: {
-                        source: metricsSource,
-                    },
                 });
             }}
         >

@@ -38,9 +38,6 @@ export const OrganizationLogoUploadUpsellBanner = ({
 
         if (newPlan) {
             void openSubscriptionModal({
-                metrics: {
-                    source: 'upsells',
-                },
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 plan: newPlan,
             });

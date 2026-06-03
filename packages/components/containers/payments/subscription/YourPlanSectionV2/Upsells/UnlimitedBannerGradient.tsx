@@ -82,9 +82,6 @@ const getBundleUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetP
                 plan,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
@@ -234,7 +231,6 @@ export const useUnlimitedBannerGradientUpsells = ({
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            metrics: { source: 'upsells' },
             telemetryFlow,
         });
     };
@@ -314,9 +310,6 @@ const UnlimitedBannerGradient = ({
             plan,
             step: step,
             disablePlanSelection: true,
-            metrics: {
-                source: 'upsells',
-            },
             telemetryFlow,
         });
     };

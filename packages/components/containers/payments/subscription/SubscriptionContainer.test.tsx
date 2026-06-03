@@ -135,9 +135,6 @@ describe('SubscriptionContainer', () => {
                 [Audience.B2B]: PLANS.MAIL_PRO,
                 [Audience.FAMILY]: PLANS.FAMILY,
             },
-            metrics: {
-                source: 'dashboard',
-            },
             render: ({ onSubmit, title, content, footer }) => {
                 return (
                     <form onSubmit={onSubmit}>

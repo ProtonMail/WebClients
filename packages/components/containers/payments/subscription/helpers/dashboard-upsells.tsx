@@ -233,9 +233,6 @@ const exploreAllPlansCTA = (openSubscriptionModal: OpenSubscriptionModalCallback
         action: () =>
             openSubscriptionModal({
                 step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-                metrics: {
-                    source: 'upsells',
-                },
             }),
     };
 };
@@ -374,9 +371,6 @@ const getMailPlusUpsell = ({
                 plan: PLANS.MAIL,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
@@ -395,9 +389,6 @@ const getDriveUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPl
                 plan: PLANS.DRIVE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
@@ -418,9 +409,6 @@ const getVPNUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPlan
                 plan,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: rest.telemetryFlow,
             }),
         customCycle: CYCLE.TWO_YEARS,
@@ -440,9 +428,6 @@ const getLumoUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPla
                 plan: PLANS.LUMO,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
@@ -461,9 +446,6 @@ const getMeetUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPla
                 plan: PLANS.MEET_BUSINESS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
             }),
         ...rest,
     });
@@ -481,9 +463,6 @@ const getPassUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPla
                 plan: PLANS.PASS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
@@ -519,9 +498,6 @@ const getPassFamilyUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: 
                 plan: PLANS.PASS_FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
@@ -570,9 +546,6 @@ const getBundleUpsell = ({
                 plan: PLANS.BUNDLE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: rest.telemetryFlow,
             }),
         otherCtas: isTrialEnding ? [exploreAllPlansCTA(openSubscriptionModal)] : [],
@@ -612,9 +585,6 @@ const getDuoUpsell = ({ plansMap, freePlan, openSubscriptionModal, app, ...rest 
                 plan: PLANS.DUO,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
@@ -658,9 +628,6 @@ const getFamilyUpsell = ({
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
@@ -706,9 +673,6 @@ const getBundleProUpsell = ({
                 cycle: defaultUpsellCycleB2B,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
             }),
         ...rest,
     });
@@ -753,9 +717,6 @@ const getBundleBizUpsell = ({
                 cycle: defaultUpsellCycleB2B,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
             }),
         ...rest,
     });
@@ -778,9 +739,6 @@ const getVpnBusinessUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetP
                 plan: PLANS.VPN_BUSINESS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
             }),
         ...rest,
     });
@@ -798,9 +756,6 @@ const getVPNPassProUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPl
                 plan: PLANS.VPN_PASS_BUNDLE_BUSINESS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,

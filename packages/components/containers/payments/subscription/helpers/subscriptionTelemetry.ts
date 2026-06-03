@@ -1,12 +1,9 @@
 import isEqual from 'lodash/isEqual';
 
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
-import type { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
 import type { Currency, Cycle, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import type {
     PaymentTelemetryContext,
     SubscriptionModificationStepTelemetry,
@@ -20,19 +17,6 @@ import type { RequireOnly, UserModel } from '@proton/shared/lib/interfaces';
 import type { Model } from '../SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from '../constants';
 
-export type SubscriptionCheckoutMetricsUpgradeFromPlan = WebPaymentsSubscriptionStepsTotal['Labels']['fromPlan'];
-export type SubscriptionCheckoutMetricsStep = WebPaymentsSubscriptionStepsTotal['Labels']['step'];
-export interface SubscriptionCheckoutMetricsOverrides {
-    source: WebPaymentsSubscriptionStepsTotal['Labels']['source'];
-}
-
-export interface SubscriptionMetricsProps {
-    source: SubscriptionCheckoutMetricsOverrides['source'];
-    step: SubscriptionCheckoutMetricsStep;
-    fromPlan: SubscriptionCheckoutMetricsUpgradeFromPlan;
-    application: 'proton-account' | 'proton-account-lite' | 'proton-vpn-settings';
-}
-
 export interface SubscriptionTelemetryDeps {
     user: UserModel;
     subscription: Subscription | FreeSubscription;
@@ -43,26 +27,6 @@ export interface SubscriptionTelemetryDeps {
 }
 
 export const telemetryContext: PaymentTelemetryContext = 'subscription-modification';
-
-const metricStepMap: Record<SUBSCRIPTION_STEPS, SubscriptionCheckoutMetricsStep> = {
-    [SUBSCRIPTION_STEPS.NETWORK_ERROR]: 'network-error',
-    [SUBSCRIPTION_STEPS.PLAN_SELECTION]: 'plan-selection',
-    [SUBSCRIPTION_STEPS.CHECKOUT]: 'checkout',
-    [SUBSCRIPTION_STEPS.UPGRADE]: 'upgrade',
-    [SUBSCRIPTION_STEPS.THANKS]: 'thanks',
-};
-
-export const getMetricsProps = (
-    outerMetricsProps: SubscriptionCheckoutMetricsOverrides,
-    step: SUBSCRIPTION_STEPS,
-    subscription: MaybeFreeSubscription,
-    application: 'proton-account' | 'proton-account-lite' | 'proton-vpn-settings'
-): SubscriptionMetricsProps => ({
-    ...outerMetricsProps,
-    step: metricStepMap[step],
-    fromPlan: isFreeSubscription(subscription) ? 'free' : ('paid' as SubscriptionCheckoutMetricsUpgradeFromPlan),
-    application,
-});
 
 export const getCommonTelemetryPayload = (
     telemetryDeps: SubscriptionTelemetryDeps

@@ -125,9 +125,6 @@ export const AztecoPaymentDetailsModal = ({
                                             resetQuoteByProvider();
                                             modalProps.onClose?.();
                                         },
-                                        metrics: {
-                                            source: 'upsells',
-                                        },
                                     });
                                 }}
                             >
