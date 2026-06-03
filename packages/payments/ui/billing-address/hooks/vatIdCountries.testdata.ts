@@ -1,4 +1,8 @@
-export const countriesWithVatNumberOnSignup = new Set([
+// Single source of truth for the countries that must render the VAT id input across all VAT tests.
+// Intentionally hand-maintained and independent of countriesWithVatNumberOnSignup: the drift test in
+// countriesWithVatId.test.ts asserts the two stay in sync, so this list is what catches the set
+// silently losing (or gaining) a country.
+export const EXPECTED_VAT_ID_COUNTRIES = [
     // EU member states (27)
     'AT',
     'BE',
@@ -38,4 +42,4 @@ export const countriesWithVatNumberOnSignup = new Set([
     // Countries for Batch 1 tax exclusive
     'AU',
     'SG',
-]);
+];
