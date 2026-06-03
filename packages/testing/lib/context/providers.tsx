@@ -175,10 +175,6 @@ export const getPreloadedState = (
     plans: getModelState({ plans: modelOverrides.plans ?? [], freePlan: FREE_PLAN }),
     features: {},
     importerConfig: getModelState({} as ApiEnvironmentConfig),
-    vpnServersCount: getModelState({
-        free: { countries: 10, servers: 2000 },
-        paid: { countries: 20, servers: 20000 },
-    }),
     ...stateOverrides,
 });
 
