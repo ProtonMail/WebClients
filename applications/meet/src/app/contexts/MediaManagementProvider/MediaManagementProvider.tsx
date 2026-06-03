@@ -23,6 +23,7 @@ import {
     selectInitialCameraState,
     selectMicrophonePermission,
     selectMicrophoneState,
+    selectMicrophones,
     selectPreferredCameraId,
     selectPreferredMicrophoneId,
     selectPreferredSpeakerId,
@@ -30,6 +31,7 @@ import {
     selectSelectedCameraId,
     selectSelectedMicrophoneId,
     selectSpeakerState,
+    selectSpeakers,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { setAudioSessionType } from '@proton/meet/utils/iosAudioSession';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
@@ -71,6 +73,8 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     const selectedAudioOutputDeviceId = useMeetSelector(selectSelectedAudioOutputId);
 
     const cameras = useMeetSelector(selectCameras);
+    const microphones = useMeetSelector(selectMicrophones);
+    const speakers = useMeetSelector(selectSpeakers);
     const microphoneState = useMeetSelector(selectMicrophoneState);
     const speakerState = useMeetSelector(selectSpeakerState);
 
@@ -342,27 +346,37 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
             initializedDevices.current.video = true;
         }
 
-        const microphoneInitDeviceId = preferredMicrophoneId || microphoneState.systemDefault?.deviceId || '';
-        if (!initializedDevices.current.audio && microphoneInitDeviceId) {
+        if (!initializedDevices.current.audio && microphones.length) {
+            const microphoneInitDeviceId =
+                microphones.find((microphone) => microphone.deviceId === preferredMicrophoneId)?.deviceId ||
+                microphoneState.systemDefault?.deviceId ||
+                '';
             void switchActiveDevice({
                 deviceType: 'audioinput',
                 deviceId: microphoneInitDeviceId,
                 isSystemDefaultDevice: microphoneState.useSystemDefault,
+                preserveDefaultDevice: true,
             });
             initializedDevices.current.audio = true;
         }
 
-        const speakerInitDeviceId = preferredSpeakerId || speakerState.systemDefault?.deviceId || '';
-        if (!initializedDevices.current.audioOutput && speakerInitDeviceId) {
+        if (!initializedDevices.current.audioOutput && speakers.length) {
+            const speakerInitDeviceId =
+                speakers.find((speaker) => speaker.deviceId === preferredSpeakerId)?.deviceId ||
+                speakerState.systemDefault?.deviceId ||
+                '';
             void switchActiveDevice({
                 deviceType: 'audiooutput',
                 deviceId: speakerInitDeviceId,
                 isSystemDefaultDevice: speakerState.useSystemDefault,
+                preserveDefaultDevice: true,
             });
             initializedDevices.current.audioOutput = true;
         }
     }, [
         cameras,
+        microphones,
+        speakers,
         microphoneState.systemDefault?.deviceId,
         microphoneState.useSystemDefault,
         preferredCameraId,
