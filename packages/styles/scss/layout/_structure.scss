@@ -186,6 +186,15 @@ html,
 		}
 	}
 
+	&--wide {
+		inline-size: rem(280);
+
+		.logo-container {
+			inline-size: auto;
+			flex-direction: row;
+		}
+	}
+
 	@include im.media('<=small') {
 		position: fixed;
 		inset: 0;

@@ -1,11 +1,20 @@
+import type { RefObject } from 'react';
+
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useIsDataRecoveryAvailable } from '@proton/account/recovery/dataRecovery';
 import { useIsSessionRecoveryAvailable } from '@proton/account/recovery/sessionRecoveryHooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
-import { useDeclarativeLocalState, useLocalState, useRecoveryNotification } from '@proton/components/index';
+import { useVisibilityTracker } from '@proton/components/components/visibility/useVisibilityTracker';
+import { useDeclarativeLocalState } from '@proton/components/hooks/useDeclarativeLocalState';
+import useLocalState from '@proton/components/hooks/useLocalState';
+import useRecoveryNotification from '@proton/components/hooks/useRecoveryNotification';
+import { useConfig } from '@proton/components/index';
+import { applyPrefix } from '@proton/nav/api/applyPrefix';
 import { defineSearchOptions } from '@proton/nav/api/defineSearchOptions';
 import type { NavResolved } from '@proton/nav/types/nav';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
-import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
+import { telemetry } from '@proton/shared/lib/telemetry';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { constants } from '../../constants';
@@ -30,15 +39,13 @@ const useKillableFeature = (key: string) => {
 };
 
 type Args = {
-    user: UserModel;
-    subscription: MaybeFreeSubscription;
-    organization?: OrganizationExtended;
+    prefix?: string;
+    navigationRef: RefObject<HTMLDivElement>;
 };
 
 export const useB2BAdminSidebarFeature = ({
-    user,
-    subscription,
-    organization,
+    prefix,
+    navigationRef,
 }: Args):
     | {
           enabled: true;
@@ -49,7 +56,13 @@ export const useB2BAdminSidebarFeature = ({
           loading: false;
       }
     | { enabled: false; routes: undefined; loading: boolean } => {
+    const [user, isUserLoading] = useUser();
+    const [subscription, isSubscriptionLoading] = useSubscription();
+    const [organization, isOrganizationLoading] = useOrganization();
+
+    const skip = isUserLoading || isSubscriptionLoading || isOrganizationLoading;
     const isEnabled = useFlag('B2BSidebarRefreshEnabled');
+    const { APP_NAME } = useConfig();
     const isAdmin = isB2BAdmin({ user, organization, subscription });
     const recoveryNotification = useRecoveryNotification(false, false);
     const [{ isDataRecoveryAvailable }] = useIsDataRecoveryAvailable();
@@ -65,40 +78,53 @@ export const useB2BAdminSidebarFeature = ({
     const ZoomIntegrationDisabled = useFlag('ZoomIntegrationDisabled');
     const NewScheduleOption = useFlag('NewScheduleOption');
 
-    if (!subscription || !organization) {
-        return {
-            loading: true,
-            enabled: false,
-            routes: undefined,
-        };
+    useVisibilityTracker(navigationRef, {
+        onEnter: () => {
+            if (!skip && isEnabled && isAdmin) {
+                const trackingData = {
+                    user: user.ID,
+                    ...(organization ? { organization: organization.ID } : undefined),
+                    isEnabled: true,
+                    isActive: isEnabled && sidebarFeature.status,
+                };
+
+                telemetry.sendCustomEvent('b2b-admin-sidebar-viewed', trackingData);
+            }
+        },
+        once: true,
+    });
+
+    const disabled = (loading: boolean) => ({ enabled: false as const, routes: undefined, loading });
+
+    if (skip || !subscription || !organization) {
+        return disabled(true);
+    }
+    if (!isEnabled || !isAdmin) {
+        return disabled(false);
     }
 
-    if (isEnabled && isAdmin) {
-        const routes = getRoutes({
-            user,
-            subscription,
-            organization,
-            notifications: { recovery: recoveryNotification?.color },
-            flags: {
-                B2BLogsVPN,
-                SsoForPbs,
-                ZoomIntegrationDisabled,
-                NewScheduleOption,
-            },
-            context: { isDataRecoveryAvailable, isSessionRecoveryAvailable },
-            permissions: permissions ?? {},
-        });
+    const routes = getRoutes({
+        user,
+        subscription,
+        organization,
+        notifications: { recovery: recoveryNotification?.color },
+        flags: {
+            B2BLogsVPN,
+            SsoForPbs,
+            ZoomIntegrationDisabled,
+            NewScheduleOption,
+        },
+        context: { isDataRecoveryAvailable, isSessionRecoveryAvailable, appName: APP_NAME },
+        permissions: permissions ?? {},
+    });
 
-        const settings = defineSearchOptions(routes);
-        return {
-            enabled: true,
-            loading: false,
-            routes,
-            settings,
-            sidebar: sidebarFeature,
-            spotlight: spotlightFeature,
-        };
-    }
-
-    return { enabled: false, routes: undefined, loading: false };
+    const prefixedRoutes = prefix ? applyPrefix(routes, prefix) : routes;
+    return {
+        enabled: true,
+        loading: false,
+        routes: prefixedRoutes,
+        settings: defineSearchOptions(prefixedRoutes),
+        sidebar: sidebarFeature,
+        spotlight: spotlightFeature,
+    };
 };

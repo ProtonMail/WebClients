@@ -141,6 +141,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
      * Only when collapse button is present
      */
     collapsed?: boolean;
+    wide?: boolean;
     navigationRef?: Ref<HTMLDivElement>;
     wavyMeter?: boolean;
     /** Used exlusively on Mail for Desktop App. Indicates whether draggable areas should be disabled if composers are in focus.  */
@@ -162,6 +163,7 @@ const Sidebar = ({
     growContent = true,
     showStorage = true,
     collapsed = false,
+    wide = false,
     className,
     navigationRef,
     wavyMeter = false,
@@ -186,6 +188,7 @@ const Sidebar = ({
                 className={clsx(
                     'sidebar flex flex-nowrap flex-column no-print outline-none',
                     collapsed && 'sidebar--collapsed',
+                    wide && 'sidebar--wide',
                     className
                 )}
                 data-expanded={expanded}
