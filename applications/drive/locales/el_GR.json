@@ -4086,6 +4086,12 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για τη δημιουργία μη ιδιωτικών χρηστών"
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Ελέγξτε εάν ο ABN σας είναι εγγεγραμμένος για διασυνοριακό ΦΠΑ"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Ο αριθμός ΦΠΑ πρέπει να ξεκινά με ${ prefixes }"
       ]
     },
     "error": {
