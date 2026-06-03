@@ -96,13 +96,13 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
 
     useLayoutEffect(() => {
         // Moving textarea cursor to the end of the message on initial load
-        textareaRef.current?.setSelectionRange(message.length, message.length);
+        textareaRef.current?.setSelectionRange(currentMessage.current.length, currentMessage.current.length);
 
         return () => {
             // Preserve last message when component is unmounted
             dispatch(setDraftMessage(currentMessage.current));
         };
-    }, [dispatch, message.length]);
+    }, [dispatch]);
 
     const textareaHeight = useMemo(() => {
         if (textareaRef.current) {
