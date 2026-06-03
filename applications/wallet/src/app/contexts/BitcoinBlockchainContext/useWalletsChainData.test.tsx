@@ -92,11 +92,11 @@ describe('useWalletsChainData', () => {
         mockUseWalletApiClients();
         mockUseDebounceEffect();
 
-        vitest.useFakeTimers({ shouldAdvanceTime: true });
+        vi.useFakeTimers({ shouldAdvanceTime: true });
     });
 
     afterEach(() => {
-        vitest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should sync accounts every 10 minutes, when needed', async () => {
@@ -117,7 +117,7 @@ describe('useWalletsChainData', () => {
 
         // After 10 minutes, it should run a new sync loop
         vi.clearAllMocks();
-        vitest.advanceTimersByTime(10 * MINUTE);
+        vi.advanceTimersByTime(10 * MINUTE);
 
         await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));
         expect(mockedFullSync).toHaveBeenLastCalledWith(53);
@@ -143,7 +143,7 @@ describe('useWalletsChainData', () => {
             await waitForNextUpdate();
 
             // we advance timer to bypass cooldown
-            vitest.advanceTimersByTime(2 * MINUTE);
+            vi.advanceTimersByTime(2 * MINUTE);
             mockedFullSync.mockClear();
 
             await result.current.syncSingleWalletAccount({ walletId: '0', accountId: '8' });
@@ -171,7 +171,7 @@ describe('useWalletsChainData', () => {
             });
             await waitForNextUpdate();
             // we advance timer to bypass cooldown
-            vitest.advanceTimersByTime(2 * MINUTE);
+            vi.advanceTimersByTime(2 * MINUTE);
             mockedFullSync.mockClear();
 
             await result.current.syncSingleWallet({ walletId: '0', manual: true });
@@ -206,7 +206,7 @@ describe('useWalletsChainData', () => {
 
             // After 10 minutes, it should run a new sync loop
             vi.clearAllMocks();
-            vitest.advanceTimersByTime(10 * MINUTE);
+            vi.advanceTimersByTime(10 * MINUTE);
 
             await waitForNextUpdate();
             await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));
@@ -214,7 +214,7 @@ describe('useWalletsChainData', () => {
 
             vi.clearAllMocks();
             unmount();
-            vitest.advanceTimersByTime(10 * MINUTE);
+            vi.advanceTimersByTime(10 * MINUTE);
 
             expect(mockedFullSync).toHaveBeenCalledTimes(0);
         });
