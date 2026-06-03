@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useModalState } from '@proton/components/index';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import { getCategoryTabFromLabel } from '@proton/mail/features/categoriesView/categoriesHelpers';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
@@ -8,6 +9,7 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
+import { PromptDisableCategories } from '../../../app/containers/mail/sections/PromptDisableCategories';
 import MobileSection from '../MobileSection';
 import { CategoryRowItem } from './CategoryRowItem';
 
@@ -19,6 +21,8 @@ type CategoriesArrays = {
 export const CategoriesSettings = () => {
     const [mailSettings] = useMailSettings();
     const { categoriesStore } = useCategoriesData();
+
+    const [modal, setModal, renderModal] = useModalState();
 
     const dispatch = useDispatch();
 
@@ -49,6 +53,15 @@ export const CategoriesSettings = () => {
             return;
         }
 
+        const isLastEnabledCategory =
+            activeCategoriesTabs.filter((cat) => cat.id !== MAILBOX_LABEL_IDS.CATEGORY_DEFAULT).length === 1 &&
+            !category.display;
+
+        if (isLastEnabledCategory) {
+            setModal(true);
+            return;
+        }
+
         const newCategory = {
             Name: categoryFromStore.Name,
             Color: categoryFromStore.Color,
@@ -60,29 +73,32 @@ export const CategoriesSettings = () => {
     };
 
     return (
-        <div>
-            <p className="px-4 text-lg text-semibold m-0 mb-1.5">{c('Title').t`Categories`}</p>
-            <p className="color-weak px-4 m-0 mb-2">
-                {c('Description')
-                    .t`Select which categories you want to add and if you want to receive push notifications for each category.`}
-            </p>
+        <>
+            <div>
+                <p className="px-4 text-lg text-semibold m-0 mb-1.5">{c('Title').t`Categories`}</p>
+                <p className="color-weak px-4 m-0 mb-2">
+                    {c('Description')
+                        .t`Select which categories you want to add and if you want to receive push notifications for each category.`}
+                </p>
 
-            <MobileSection>
-                {activeCategoriesTabs.map((category) => {
-                    return <CategoryRowItem category={category} onUpdate={handleUpdate} />;
-                })}
-            </MobileSection>
+                <MobileSection>
+                    {activeCategoriesTabs.map((category) => {
+                        return <CategoryRowItem category={category} onUpdate={handleUpdate} />;
+                    })}
+                </MobileSection>
 
-            {disabledCategoriesTabs.length > 0 && (
-                <>
-                    <p className="px-4 text-lg text-semibold m-0 mb-2">{c('Title').t`Add categories`}</p>
-                    <MobileSection>
-                        {disabledCategoriesTabs.map((category) => {
-                            return <CategoryRowItem category={category} onUpdate={handleUpdate} />;
-                        })}
-                    </MobileSection>
-                </>
-            )}
-        </div>
+                {disabledCategoriesTabs.length > 0 && (
+                    <>
+                        <p className="px-4 text-lg text-semibold m-0 mb-2">{c('Title').t`Add categories`}</p>
+                        <MobileSection>
+                            {disabledCategoriesTabs.map((category) => {
+                                return <CategoryRowItem category={category} onUpdate={handleUpdate} />;
+                            })}
+                        </MobileSection>
+                    </>
+                )}
+            </div>
+            {renderModal && <PromptDisableCategories open={modal.open} onClose={modal.onClose} onExit={modal.onExit} />}
+        </>
     );
 };
