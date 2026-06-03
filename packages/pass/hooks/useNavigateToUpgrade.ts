@@ -23,6 +23,7 @@ type UpgradeOptions = {
     offer?: string;
     path?: string;
     plan?: string;
+    targetPage?: 'compare';
     type?: string;
     upsellRef?: UpsellRef;
 };
@@ -59,6 +60,7 @@ const upgradeURLBuilder =
         if (options.email) searchParams.append('email', options.email);
         if (options.offer) searchParams.append('offer', options.offer);
         if (options.plan) searchParams.append('plan', options.plan);
+        if (options.targetPage) searchParams.append('target', options.targetPage);
         if (options.upsellRef) searchParams.append('ref', `${refPrefix}_${options.upsellRef}`);
         if (options.type) searchParams.append('type', options.type);
 
