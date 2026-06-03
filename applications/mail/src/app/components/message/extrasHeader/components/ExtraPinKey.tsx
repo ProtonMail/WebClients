@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 
+import type { PublicKeyReference } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
@@ -10,7 +11,6 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { PublicKeyReference } from '@protontech/crypto';
 import { useLoading } from '@proton/hooks';
 import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
@@ -68,7 +68,7 @@ const getPromptKeyPinningType = ({
     const { PromptPin } = mailSettings;
     const {
         senderPinnedKeys = [],
-        senderPinnableKeys = [],
+        senderPinnableKeys: internalSenderPinnableKeys = [],
         attachedPublicKeys = [],
         signingPublicKey,
         verificationStatus,
@@ -101,28 +101,43 @@ const getPromptKeyPinningType = ({
             }
             const senderHasPinnedKeys = !!senderPinnedKeys.length;
             if (senderHasPinnedKeys) {
-                const isSignedByPinnableApiKeys = !!findKey(signingPublicKey, senderPinnableKeys);
+                const isSignedByPinnableApiKeys = !!findKey(signingPublicKey, internalSenderPinnableKeys);
                 return isSignedByPinnableApiKeys ? PROMPT_KEY_PINNING_TYPE.PIN_UNSEEN : undefined;
             }
+            // For external users, verification is only carried out if pinned keys are present.
+            // Only prompt for external users, since:
+            // - for internal users with KT, all `senderPinnableKeys` have already been passed for verification;
+            //   if the attached key matches one of them, we know it won't work; if it doesn't, it is not pinnable anyway
+            // - for internal users with pinned keys, then `isSignedByPinnableApiKeys` (above) applies,
+            // - same is true for external users with pinned keys and new, unpinned KOO/WKD keys:
+            //     if the attached key differs from those and signs the message, in principle we don't want it to
+            //     be trusted (aka uploaded) when API keys are present.
+            //     However, in this context we do not have access to external API keys, hence we also have to prompt
+            //     in this case.
             const isSignedByAttachedKey = !!findKey(signingPublicKey, attachedPublicKeys);
-            if (isSignedByAttachedKey) {
+            if (isSignedByAttachedKey && internalSenderPinnableKeys.length === 0) {
                 return PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED_SIGNING;
             }
             break;
         }
         case MAIL_VERIFICATION_STATUS.NOT_VERIFIED: {
             // This case occurs when KT is not enabled, and no pinned keys are present,
-            // but API keys, as well as attached or autocrypt keys might be available
+            // but attached or autocrypt keys might be available
+            // NB: KOO/WKD keys may also be available but we do not have access to them in this context
+            // (they are not returned as part of the verification preferences)
             if (!signingPublicKey) {
                 // no verification keys are actually available
                 return;
             }
-            const isSignedByPinnableApiKeys = senderPinnableKeys.some((key) => signingPublicKey.equals(key, true));
+            const isSignedByPinnableApiKeys = internalSenderPinnableKeys.some((key) =>
+                signingPublicKey.equals(key, true)
+            );
             if (PromptPin && isSignedByPinnableApiKeys) {
                 return PROMPT_KEY_PINNING_TYPE.AUTOPROMPT;
             }
             const isSignedByAttachedKey = !!findKey(signingPublicKey, attachedPublicKeys);
-            if (isSignedByAttachedKey) {
+            // Only prompt for external users, since internal ones can decide to enable KT or PromptPin
+            if (isSignedByAttachedKey && internalSenderPinnableKeys.length === 0) {
                 return PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED_SIGNING;
             }
             break;
