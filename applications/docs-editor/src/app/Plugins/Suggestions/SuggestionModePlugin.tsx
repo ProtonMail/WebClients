@@ -49,7 +49,6 @@ import { INSERT_IMAGE_NODE_COMMAND, SET_IMAGE_SIZE_COMMAND } from '../Image/Imag
 import { $handleImageDragAndDropAsSuggestion, $handleImageSizeChangeAsSuggestion } from './imageHandling'
 import { EditorUserMode } from '../../Lib/EditorUserMode'
 import { $handleIndentOutdentAsSuggestion } from './handleIndentOutdent'
-import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAlert'
 import { c } from 'ttag'
 import {
   DELETE_TABLE_COLUMN_COMMAND,
@@ -82,7 +81,6 @@ import { $insertPageBreakAsSuggestion } from './insertPageBreakAsSuggestion'
 import { $clearFormattingAsSuggestion } from './clearFormattingAsSuggestion'
 import { ResolveSuggestionsUpdateTag } from './removeSuggestionNodeAndResolveIfNeeded'
 import { $setElementAlignmentAsSuggestion } from './setElementAlignmentAsSuggestion'
-import { useNotifications } from '@proton/components'
 import { $insertListAsSuggestion } from './insertListAsSuggestion'
 import { eventFiles } from '@lexical/rich-text'
 
@@ -95,6 +93,8 @@ export function SuggestionModePlugin({
   reopenSuggestion,
   rejectSuggestion,
   onUserModeChange,
+  createWarningNotification,
+  showAlert,
 }: {
   isSuggestionMode: boolean
   createSuggestionThread(
@@ -106,15 +106,14 @@ export function SuggestionModePlugin({
   reopenSuggestion(threadId: string): Promise<boolean>
   rejectSuggestion(threadId: string): Promise<boolean>
   onUserModeChange: (mode: EditorUserMode) => void
+  createWarningNotification?: (message: string) => void
+  showAlert: (title: string, message: string) => void
 }) {
   const [editor] = useLexicalComposerContext()
 
   const { markNodeMap } = useMarkNodesContext()
 
   const [suggestionModeLogger] = useState(() => new Logger('docs-suggestions-mode'))
-
-  const { createNotification } = useNotifications()
-  const [alertModal, showAlertModal] = useGenericAlertModal()
 
   /**
    * Set of suggestion IDs created during the current session.
@@ -413,7 +412,13 @@ export function SuggestionModePlugin({
       editor.registerCommand(
         BEFOREINPUT_EVENT_COMMAND,
         (event) => {
-          return $handleBeforeInputEvent(editor, event, addCreatedIDtoSet, suggestionModeLogger, createNotification)
+          return $handleBeforeInputEvent(
+            editor,
+            event,
+            addCreatedIDtoSet,
+            suggestionModeLogger,
+            createWarningNotification,
+          )
         },
         COMMAND_PRIORITY_CRITICAL,
       ),
@@ -596,11 +601,11 @@ export function SuggestionModePlugin({
           editor.setEditable(false)
           editor._compositionKey = null
           onUserModeChange(EditorUserMode.Preview)
-          showAlertModal({
-            title: c('Title').t`Language not supported`,
-            translatedMessage: c('Info')
+          showAlert(
+            c('Title').t`Language not supported`,
+            c('Info')
               .t`The language you're using isn’t currently supported in suggestion mode. Please switch to edit mode or change the language.`,
-          })
+          )
           return true
         },
         COMMAND_PRIORITY_CRITICAL,
@@ -721,7 +726,7 @@ export function SuggestionModePlugin({
         COMMAND_PRIORITY_CRITICAL,
       ),
     )
-  }, [createNotification, editor, isSuggestionMode, onUserModeChange, showAlertModal, suggestionModeLogger])
+  }, [createWarningNotification, editor, isSuggestionMode, onUserModeChange, showAlert, suggestionModeLogger])
 
-  return <>{alertModal}</>
+  return null
 }
