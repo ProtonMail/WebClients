@@ -265,10 +265,7 @@ export const getOrganizationAppRoutes = ({
                 {
                     text: c('Title').t`Organization key`,
                     id: 'password-keys',
-                    available:
-                        permissions['account.organization_key.read'] &&
-                        hasMemberCapablePlan &&
-                        hasActiveOrganizationKey,
+                    available: hasMemberCapablePlan && hasActiveOrganizationKey,
                 },
             ],
         },
