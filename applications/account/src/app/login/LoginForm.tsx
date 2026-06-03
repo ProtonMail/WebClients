@@ -23,6 +23,7 @@ import { AuthType, type AuthTypeData, ExternalSSOFlow } from '@proton/components
 import { handleLogin } from '@proton/components/containers/login/loginActions';
 import { ExternalSSOError, handleExternalSSOLogin } from '@proton/components/containers/login/ssoExternalLogin';
 import { useLoading } from '@proton/hooks';
+import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcQrCode } from '@proton/icons/icons/IcQrCode';
@@ -52,7 +53,6 @@ import SupportDropdown from '../public/SupportDropdown';
 import { defaultPersistentKey } from '../public/helper';
 import { RememberMode } from './LoginContainer';
 import SignupButton from './SignupButton';
-import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 
 export interface LoginFormRef {
     getIsLoading: () => boolean;
@@ -717,13 +717,12 @@ const LoginForm = ({
                                                     </Link>
                                                 )
                                             }
-                                            <hr className='m-0'/>
+                                            <hr className="m-0" />
                                             <Href
                                                 href={getKnowledgeBaseUrl('/common-login-problems')}
                                                 className="dropdown-item-link w-full px-4 py-2 flex flex-nowrap gap-2 items-center text-no-decoration text-left"
                                             >
-                                                
-                                                {c('Link').t`Sign-in help`}
+                                                {c('Link').t`Frequent sign-in problems`}
                                                 <IcArrowOutSquare className="color-weak ml-auto" />
                                             </Href>
                                         </SupportDropdown>
