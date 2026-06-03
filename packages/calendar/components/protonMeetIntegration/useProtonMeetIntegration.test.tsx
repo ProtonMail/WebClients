@@ -88,6 +88,14 @@ jest.mock('./useAutoAddMeetLinkNotification', () => ({
     }),
 }));
 
+jest.mock('./useMeetFunnelTelemetry', () => ({
+    useMeetFunnelTelemetry: jest.fn().mockReturnValue({
+        sendSpotlightDisplayed: jest.fn(),
+        sendExploreMeetClicked: jest.fn(),
+        sendMeetingCreated: jest.fn(),
+    }),
+}));
+
 const Wrapper = ({ children }: { children: React.ReactNode }) => {
     return <Router history={createBrowserHistory()}>{children}</Router>;
 };

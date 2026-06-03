@@ -17,6 +17,7 @@ export const FLAGS_WITH_VARIANT = [
     'ShowLiteAppCheckoutV2',
     'OlesM1',
     'Vpn2024AddonsExperiment',
+    'MeetSpotlightType',
 ] satisfies FeatureFlag[];
 
 /**
@@ -30,6 +31,7 @@ export type MailDashboardVariant = 'A' | 'B';
 export type PassDashboardVariant = 'A' | 'B';
 export type DriveDashboardVariant = 'A' | 'B';
 export type MeetDashboardVariant = 'A' | 'B';
+export type MeetSpotlightTypeVariant = 'no-cta' | 'cta';
 export type InboxBringYourOwnEmailSignupVariant = 'Control' | 'Bold' | 'Light';
 export type WebApiRateLimiterVariant = 'Config';
 export type MaxContactsImportVariant = 'Config';
@@ -69,6 +71,7 @@ type FeatureFlagVariantMap = {
     ShowLiteAppCheckoutV2: VariantReturnType<ShowLiteAppCheckoutV2Variant>;
     OlesM1: VariantReturnType<OlesM1Variant>;
     Vpn2024AddonsExperiment: VariantReturnType<EnableVpn2024AddonsExperimentVariant>;
+    MeetSpotlightType: VariantReturnType<MeetSpotlightTypeVariant>;
 };
 
 /**

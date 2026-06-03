@@ -18,6 +18,7 @@ export enum TelemetryMeasurementGroups {
     calendarIcsSurgery = 'calendar.web.ics_surgery',
     calendarTimeZoneSelector = 'calendar.web.timezone_selector',
     calendarVideoConferencing = 'calendar.web.video_conferencing',
+    meetFunnelTelemetry = 'meet.web.meet_funnel_telemetry',
     accountCancellation = 'account.web.cancellation',
     accountCancellationFeedbackFirst = 'account.web.cancellation_feedback_first',
     settingsHeartBeat = 'any.web.settings_heart_beat',
@@ -131,6 +132,13 @@ export enum TelemetryCalendarVideoConferencing {
     video_conference_zoom_integration = 'video_conference_zoom_integration',
     video_conference_proton_meet_integration = 'video_conference_proton_meet_integration',
     video_conference_proton_meet_settings_toggle = 'video_conference_proton_meet_settings_toggle',
+}
+
+export enum TelemetryMeetFunnelTelemetry {
+    spotlight_displayed = 'spotlight_displayed',
+    explore_meet_clicked = 'explore_meet_clicked',
+    meeting_created = 'meeting_created',
+    meet_opened = 'meet_opened',
 }
 
 export enum TelemetryMailNewsletterSubscriptions {
@@ -572,7 +580,8 @@ export type TelemetryEvents =
     | TelemetryUpgradePageEvents
     | TelemetryVpnTvEvents
     | TelemetryPreventWasmLoading
-    | TelemetryCategoriesOnboardingEvents;
+    | TelemetryCategoriesOnboardingEvents
+    | TelemetryMeetFunnelTelemetry;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;

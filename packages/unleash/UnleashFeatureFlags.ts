@@ -71,6 +71,7 @@ export enum CommonFeatureFlag {
     EventLoopInterval = 'EventLoopInterval',
     DesktopDownloadApiEnabled = 'DesktopDownloadApiEnabled',
     LogWasmLoadingDisabled = 'LogWasmLoadingDisabled',
+    MeetSpotlightType = 'MeetSpotlightType',
 }
 
 enum AccountFlag {
