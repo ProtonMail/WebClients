@@ -22,18 +22,18 @@
 	white-space: nowrap;
 }
 
-.artifact-btn {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	min-inline-size: 28px;
-	min-block-size: 28px;
-	padding: 0.25rem;
+// .artifact-btn {
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	min-inline-size: 28px;
+// 	min-block-size: 28px;
+// 	padding: 0.25rem;
 
-	&:hover {
-		color: var(--text-norm);
-	}
-}
+// 	&:hover {
+// 		color: var(--text-norm);
+// 	}
+// }
 
 .artifact-chip {
 	background: var(--background-weak);
