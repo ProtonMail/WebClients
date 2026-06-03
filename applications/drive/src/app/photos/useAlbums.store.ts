@@ -98,7 +98,11 @@ export const useAlbumsStore = create<AlbumsStore>()(
                         newUids.push(album.nodeUid);
                     }
                     const existing = newAlbums.get(album.nodeUid);
-                    newAlbums.set(album.nodeUid, { photoNodeUids: existing?.photoNodeUids, ...album });
+                    newAlbums.set(album.nodeUid, {
+                        photoNodeUids: existing?.photoNodeUids,
+                        members: existing?.members,
+                        ...album,
+                    });
                 }
                 return { albums: newAlbums, albumsUids: sortAlbumUidsByLastActivity(newUids, newAlbums) };
             });
@@ -183,7 +187,6 @@ export const useAlbumsStore = create<AlbumsStore>()(
                 albums.set(state.currentAlbumNodeUid, {
                     ...existing,
                     photoNodeUids: new Set(uids),
-                    photoCount: uids.length,
                 });
                 return { albums };
             });
@@ -207,7 +210,6 @@ export const useAlbumsStore = create<AlbumsStore>()(
                 albums.set(albumUid, {
                     ...existing,
                     photoNodeUids: newPhotoNodeUids,
-                    photoCount: (existing.photoCount ?? 0) + newUids.length,
                 });
                 return { albums };
             });
@@ -231,7 +233,6 @@ export const useAlbumsStore = create<AlbumsStore>()(
                 albums.set(albumUid, {
                     ...existing,
                     photoNodeUids: newPhotoNodeUids,
-                    photoCount: Math.max(0, (existing.photoCount ?? 0) - uids.length),
                 });
                 return { albums };
             });
@@ -252,7 +253,7 @@ export const useAlbumsStore = create<AlbumsStore>()(
         },
 
         subscribeToAlbumEvents: async (treeEventScopeId: string, context: string) => {
-            await getBusDriver().subscribePhotosEventsScope(treeEventScopeId, context);
+            getBusDriver().subscribePhotosEventsScope(treeEventScopeId, context);
             return () => getBusDriver().unsubscribeSdkEventsScope(treeEventScopeId, context, 'photos');
         },
     }))
