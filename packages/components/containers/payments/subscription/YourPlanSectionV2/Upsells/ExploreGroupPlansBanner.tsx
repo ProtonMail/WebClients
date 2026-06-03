@@ -29,7 +29,6 @@ const ExploreGroupPlansBanner = ({ subscription, app }: Props) => {
     const handleExplorePlans = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            metrics: { source: 'plans' },
             defaultAudience: Audience.FAMILY,
             telemetryFlow,
         });

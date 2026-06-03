@@ -31,7 +31,6 @@ export const GetMoreSection = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: PLANS.BUNDLE,
-            metrics: { source: 'upsells' },
             telemetryFlow,
         });
     };

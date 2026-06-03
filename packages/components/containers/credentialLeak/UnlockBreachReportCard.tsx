@@ -11,14 +11,9 @@ import './UnlockReportModal.scss';
 const UnlockBreachReportCard = () => {
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
 
-    const metrics = {
-        source: 'plans',
-    } as const;
-
     const handleUnlockBreachReport = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            metrics,
             mode: 'upsell-modal',
         });
     };

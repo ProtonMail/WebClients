@@ -28,9 +28,6 @@ const useAssistantUpsellConfig = ({ upsellRef, plans }: Props) => {
         mode: 'upsell-modal',
         step: SUBSCRIPTION_STEPS.CHECKOUT,
         disablePlanSelection: true,
-        metrics: {
-            source: 'upsells',
-        },
     };
 
     return { assistantUpsellConfig };

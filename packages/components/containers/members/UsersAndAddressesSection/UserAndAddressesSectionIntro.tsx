@@ -39,14 +39,6 @@ const UserAndAddressesSectionIntro = ({ onOpenNewDomainModal }: Props) => {
             openSubscriptionModal({
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    /**
-                     * The `vpn` in `vpn-um-get-more` is unimportant.
-                     * The intention is to observe the user journey, not the specific plan the journey is for.
-                     * However changing this would require a new metric schema version.
-                     */
-                    source: 'vpn-um-get-more',
-                },
             });
 
         const maxMembers = organization?.MaxMembers || 0;

@@ -27,7 +27,6 @@ const DuoBanner = ({ app, subscription }: Props) => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: plan,
-            metrics: { source: 'upsells' },
             telemetryFlow,
         });
     };

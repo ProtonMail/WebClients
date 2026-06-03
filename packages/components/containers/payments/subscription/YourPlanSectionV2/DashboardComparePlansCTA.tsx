@@ -21,7 +21,6 @@ const DashboardComparePlansCTA = ({ app }: Props) => {
     const handleExplorePlans = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            metrics: { source: 'upsells' },
             defaultAudience: getAudienceFromSubscription(subscription),
             telemetryFlow,
         });

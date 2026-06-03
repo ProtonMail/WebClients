@@ -85,9 +85,6 @@ export const GoUnlimited2025 = () => {
             onSubscribed: () => {
                 sendTelemetryReportGoUnlimited2025(TelemetryUnlimitedOffer2025.userSubscribed, config.type);
             },
-            metrics: {
-                source: 'upsells',
-            },
         });
     };
 
