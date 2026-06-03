@@ -119,11 +119,6 @@ const getDeviceState = (devices: SerializableDeviceInfo[], preferredId: string |
     };
 };
 
-export const selectCameraState = createSelector(
-    [selectCameras, selectPreferredCameraId],
-    (cameras, preferredId): SliceDeviceState => getDeviceState(cameras, preferredId)
-);
-
 export const selectMicrophoneState = createSelector(
     [selectMicrophones, selectPreferredMicrophoneId],
     (microphones, preferredId): SliceDeviceState => getDeviceState(microphones, preferredId)
