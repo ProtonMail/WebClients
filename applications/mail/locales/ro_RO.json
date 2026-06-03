@@ -1716,6 +1716,11 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Trust key": [
+        "Aprobare cheie",
+        "Aprobare cheie",
+        "Aprobare cheie"
       ]
     },
     "action": {
@@ -4366,6 +4371,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Dacă un mesaj apare în categoria greșită, mutați-l pur și simplu în cea corectă. Faceți clic dreapta pe un mesaj pentru a alege o categorie nouă sau glisați-l și plasați-l acolo unde îi este locul."
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Sunteți printre primii care au încercat noua noastră vizualizare pe categorii înainte de lansare. Feedback-ul dvs. va ajuta la îmbunătățirea modului în care Proton Mail sortează mesajele pentru toată lumea."
       ]
     },
     "description": {
@@ -5343,6 +5354,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Căutarea a găsit prea multe rezultate. Vă rugăm să limitați căutarea și să reîncercați."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Verificați dacă numărul ABN vă este înregistrat pentru TVA transfrontalier."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Valoarea TVA trebuie să înceapă cu ${ prefixes }."
       ]
     },
     "error": {
@@ -16490,6 +16507,9 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Contribuiți la modelarea viitorului categoriilor de mesaje din ${ MAIL_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {

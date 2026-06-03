@@ -1520,7 +1520,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -4337,6 +4338,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Bir ileti yanlış kategoride görünürse onu doğru kategoriye taşımanız yeterlidir. Yeni bir kategori seçmek için bir iletiye sağ tıklayın veya iletiyi ait olduğu yere sürükleyip bırakın."
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Yeni kategori görünümümüzü duyurulmasından önce ilk deneyenlerdensiniz. Geri bildirimleriniz e-postaların Proton Mail tarafından sıralanmasını geliştirmeye yardımcı olacak."
       ]
     },
     "description": {
@@ -5301,6 +5308,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Lütfen ABN numaranızın sınır ötesi KDV için kayıtlı olup olmadığını denetleyin"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "KDV numarası ${ prefixes } ile başlamalıdır"
       ]
     },
     "error": {
@@ -16187,6 +16200,9 @@
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } içindeki e-posta kategorilerinin geleceğini şekillendirmeye yardımcı olun"
       ]
     },
     "Today icon tooltip in mini calendar": {

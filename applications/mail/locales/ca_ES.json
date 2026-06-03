@@ -1520,7 +1520,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -4337,6 +4338,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Si un missatge apareix a la categoria incorrecta, simplement desplaceu-lo a la correcta. Feu clic amb el botó dret en un missatge per triar una nova categoria, o arrossegueu-lo i deixeu-lo anar on correspongui."
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Sou dels primers a provar la nostra nova visualització per categories abans del seu llançament. Els vostres comentaris ajudaran a millorar la manera com Proton Mail classifica els correus electrònics per a tothom."
       ]
     },
     "description": {
@@ -5301,6 +5308,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La vostra cerca coincideix amb massa resultats. Limiteu-la i torneu-ho a provar."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Comproveu si el vostre ABN està registrat per a l'IVA transfronterer"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "El número d'IVA ha de començar per ${ prefixes }"
       ]
     },
     "error": {
@@ -16091,6 +16104,9 @@
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Ajudeu a donar forma al futur de les categories de correu electrònic a ${ MAIL_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {

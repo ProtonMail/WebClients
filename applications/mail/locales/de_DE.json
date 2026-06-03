@@ -1517,7 +1517,8 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen"
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -4334,6 +4335,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Wenn eine Nachricht in der falschen Kategorie angezeigt wird, verschiebe sie einfach in die richtige. Klicke mit der rechten Maustaste auf eine Nachricht, um eine neue Kategorie auszuwählen, oder ziehe sie per Drag-and-drop an die richtige Stelle."
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Du gehörst zu den Ersten, die unsere neue Kategorieansicht vor dem offiziellen Start ausprobieren dürfen. Dein Feedback hilft uns dabei, E-Mails in Proton Mail für alle Nutzer besser zu ordnen."
       ]
     },
     "description": {
@@ -5298,6 +5305,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Deine Suche ergab zu viele Treffer. Schränke deine Suche ein und versuche es erneut."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Bitte überprüfe, ob deine ABN für die grenzüberschreitende Mehrwertsteuer registriert ist"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "MWST-Nummer muss mit ${ prefixes } beginnen"
       ]
     },
     "error": {
@@ -16184,6 +16197,9 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Gestalte die Zukunft von E-Mail-Kategorien in ${ MAIL_APP_NAME } mit"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1525,7 +1525,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -1721,6 +1724,9 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Continue with Free": [
+        "Pokračovať s Free"
       ]
     },
     "action": {
@@ -4383,6 +4389,27 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
+      ],
+      "Available storage: ${ storageText }": [
+        "Dostupné úložisko: ${ storageText }"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Dostatok miesta na roky emailov, príloh a ďalších súborov."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Ak sa správa zobrazí v nesprávnej kategórii, jednoducho ju presuňte do tej správnej. Kliknite pravým tlačidlom na správu a vyberte novú kategóriu, alebo ju pretiahnite a umiestnite tam, kam patrí."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Získajte 15 GB úložného priestoru len za ${ config.offerPrice }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Váš bezplatný ${ MAIL_APP_NAME } účet má obmedzenú kapacitu úložiska, preto naimportujeme len ${ newUserStorageText } vašich najnovších správ z Gmailu"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Váš bezplatný ${ MAIL_APP_NAME } účet má obmedzenú kapacitu úložiska, preto naimportujeme len vašich najnovších emailov z Gmailu."
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Patríte medzi prvých, ktorí si môžu vyskúšať naše nové zobrazenie kategórií ešte pred jeho spustením. Vaša spätná väzba pomôže vylepšiť spôsob, akým Proton Mail triedi emaily pre každého."
       ]
     },
     "description": {
@@ -5373,6 +5400,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhľadávanie našlo príliš veľa výsledkov. Upresnite hľadanie a skúste to prosím znova."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Skontrolujte, či je vaše ABN zaregistrované na účely cezhraničnej DPH, prosím."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Číslo DIČ musí začínať predponami ${ prefixes }"
       ]
     },
     "error": {
@@ -5809,6 +5842,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Neobmedzený počet hide-my-email aliasov"
+      ],
+      "10+ premium features": [
+        "10+ prémiových funkcií"
+      ],
+      "Custom email domain": [
+        "Vlastná emailová doména"
+      ],
+      "Email addresses": [
+        "Emailové adresy"
+      ],
+      "Storage": [
+        "Úložisko"
       ]
     },
     "Features": {
@@ -9378,6 +9423,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "Included": [
+        "Zahrnuté"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Kedykoľvek si môžete zvýšiť úroveň a preniesť aj zvyšok"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Kedykoľvek môžete zvýšiť úroveň alebo uvoľniť miesto, aby ste mohli preniesť zvyšok"
       ]
     },
     "info": {
@@ -16658,6 +16712,15 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Continue with free storage": [
+        "Pokračovať s bezplatným úložiskom"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Získajte väčšie úložisko s ${ MAIL_APP_NAME } Plus"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Pomôžte nám formovať budúcnosť kategórií emailov v ${ MAIL_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {

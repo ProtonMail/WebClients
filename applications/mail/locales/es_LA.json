@@ -1520,7 +1520,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -4337,6 +4338,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Si un mensaje está mal categorizada, simplemente muévala a la categoría correcta. Haga clic derecho en el mensaje que desea recategorizar, o arrastre y suéltelo donde pertenece."
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Forma parte de las primeras personas en probar nuestra nueva vista por categoría antes de lanzarse. Sus comentarios ayudará a cómo Proton Mail categoriza correos electrónicos para todos."
       ]
     },
     "description": {
@@ -5301,6 +5308,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La búsqueda coincidió con muchos resultados. Limite la búsqueda e inténtelo de nuevo."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Revise si su IVA está registrado para el IVA transfronterizo"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "El número IVA debe comenzar con ${ prefixes }"
       ]
     },
     "error": {
@@ -16187,6 +16200,9 @@
       ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Ayude a dar forma el futuro de las categorías de correo electrónico en ${ MAIL_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {

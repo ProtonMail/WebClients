@@ -1520,7 +1520,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -4337,6 +4338,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Εάν ένα μήνυμα εμφανίζεται σε λάθος κατηγορία, απλώς μετακινήστε το στη σωστή. Κάντε δεξί κλικ σε ένα μήνυμα για να επιλέξετε μια νέα κατηγορία ή σύρετέ το και αποθέστε το εκεί που ανήκει."
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Είστε από τους πρώτους που θα δοκιμάσουν τη νέα μας προβολή κατηγοριών πριν κυκλοφορήσει. Τα σχόλιά σας θα βοηθήσουν στη βελτίωση του τρόπου με τον οποίο το Proton Mail ταξινομεί τα ηλεκτρονικά μηνύματα για όλους."
       ]
     },
     "description": {
@@ -5301,6 +5308,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Η αναζήτησή σας ταίριαξε με υπερβολικό αριθμό αποτελεσμάτων. Παρακαλούμε περιορίστε την αναζήτησή σας και δοκιμάστε ξανά."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Ελέγξτε εάν ο ABN σας είναι εγγεγραμμένος για διασυνοριακό ΦΠΑ"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Ο αριθμός ΦΠΑ πρέπει να ξεκινά με ${ prefixes }"
       ]
     },
     "error": {
@@ -16091,6 +16104,9 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Βοηθήστε στη διαμόρφωση του μέλλοντος των κατηγοριών ηλεκτρονικών μηνυμάτων στο ${ MAIL_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {

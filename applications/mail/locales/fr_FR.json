@@ -1520,7 +1520,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -4337,6 +4338,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Si un message apparaît dans la mauvaise catégorie, il suffit de le déplacer vers la bonne. Effectuez un clic droit sur un message pour choisir une nouvelle catégorie, ou faites-le glisser et déposez-le à l'endroit qui lui correspond."
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Vous faites partie des premiers à tester notre nouvel affichage par catégorie avant son lancement. Vos commentaires nous aideront à améliorer la façon dont Proton Mail trie les e-mails pour tous les utilisateurs."
       ]
     },
     "description": {
@@ -5301,6 +5308,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Veuillez vérifier si votre numéro ABN est enregistré pour la TVA transfrontalière."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Le numéro de TVA doit commencer avec ${ prefixes }."
       ]
     },
     "error": {
@@ -16187,6 +16200,9 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Contribuez à façonner l'avenir des catégories d'e-mails dans ${ MAIL_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {
