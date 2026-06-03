@@ -43,7 +43,6 @@ import { SuggestionTypesThatCanBeEmpty, TextEditingSuggestionTypes } from './Typ
 import type { ListItemNode } from '@lexical/list'
 import { $handleListInsertParagraph, $isListItemNode } from '@lexical/list'
 import { $getListInfo } from '../CustomList/$getListInfo'
-import type { CreateNotificationOptions } from '@proton/components'
 import { c } from 'ttag'
 import { $removeSuggestionNodeAndResolveIfNeeded } from './removeSuggestionNodeAndResolveIfNeeded'
 import { $setBlocksTypeAsSuggestion } from './setBlocksTypeAsSuggestion'
@@ -60,7 +59,7 @@ export function $handleBeforeInputEvent(
   event: InputEvent,
   onSuggestionCreation: (id: string) => void,
   logger: Logger,
-  createNotification?: (options: CreateNotificationOptions) => number,
+  createWarningNotification?: (message: string) => void,
 ): boolean {
   const inputType = event.inputType
 
@@ -86,10 +85,7 @@ export function $handleBeforeInputEvent(
 
   if ($isAnyPartOfSelectionInCodeNode(selection)) {
     logger.info('Aborting beforeinput because selection is inside a code-block')
-    createNotification?.({
-      text: c('Warning').t`Making suggestions inside code blocks is not supported`,
-      type: 'warning',
-    })
+    createWarningNotification?.(c('Warning').t`Making suggestions inside code blocks is not supported`)
     return true
   }
 
