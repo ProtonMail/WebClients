@@ -562,20 +562,23 @@ describe('useVatNumber', () => {
             expect(result.current.renderVatNumberInput).toBe(true);
         });
 
-        it.each(['GB', 'NO'])('should render VAT input for additional European country %s', (countryCode) => {
-            const { result } = renderHook(() =>
-                useVatNumber(
-                    defaultProps({
-                        isAuthenticated: false,
-                        taxCountry: buildTaxCountryStub({ selectedCountryCode: countryCode }),
-                    })
-                )
-            );
+        it.each(['GB', 'NO', 'CH', 'LI', 'IS'])(
+            'should render VAT input for additional European country %s',
+            (countryCode) => {
+                const { result } = renderHook(() =>
+                    useVatNumber(
+                        defaultProps({
+                            isAuthenticated: false,
+                            taxCountry: buildTaxCountryStub({ selectedCountryCode: countryCode }),
+                        })
+                    )
+                );
 
-            expect(result.current.renderVatNumberInput).toBe(true);
-        });
+                expect(result.current.renderVatNumberInput).toBe(true);
+            }
+        );
 
-        it.each(['US', 'JP', 'KR', 'BR', 'CN', 'CH', 'LI', 'IS'])(
+        it.each(['US', 'JP', 'KR', 'BR', 'CN'])(
             'should NOT render VAT input for country not on the list of VAT enabled countries %s',
             (countryCode) => {
                 const { result } = renderHook(() =>
