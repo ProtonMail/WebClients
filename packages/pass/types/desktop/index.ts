@@ -6,11 +6,13 @@ import type {
     NativeMessageResponse,
 } from '@proton/pass/types';
 import type { ContextMenuItemSerializable } from '@proton/pass/types/desktop/context-menu';
+import type { UpdateStore } from '@proton/pass/types/desktop/update';
 
 import type { AutotypeProperties } from './autotype';
 
 export * from './autotype';
 export * from './extension-unlock-with-desktop';
+export * from './update';
 
 export type ContextBridgeApi = {
     windowShow: () => Promise<void>;
@@ -51,18 +53,3 @@ export type ContextBridgeApi = {
 };
 
 export type DesktopTheme = 'dark' | 'light' | 'system';
-
-export enum UpdateStatus {
-    Idle = 0,
-    Checking = 1,
-    Downloading = 2,
-    UpdateReady = 3,
-}
-
-export type UpdateStore = {
-    distribution: number;
-    beta: boolean;
-    status: UpdateStatus;
-    newVersion: MaybeNull<string>;
-    progress: MaybeNull<number>;
-};

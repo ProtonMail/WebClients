@@ -1,18 +1,6 @@
-import {
-    BrowserWindow,
-    Menu,
-    type Session,
-    Tray,
-    app,
-    autoUpdater,
-    nativeImage,
-    nativeTheme,
-    session,
-    shell,
-} from 'electron';
+import { BrowserWindow, Menu, type Session, Tray, app, nativeImage, nativeTheme, session, shell } from 'electron';
 import { join } from 'path';
 
-import { UpdateStatus } from '@proton/pass/types';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
@@ -25,8 +13,7 @@ import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
 import { fixSSOUrl } from './lib/sso';
 import { getTheme } from './lib/theming';
 import { setTagCookie } from './lib/updater/helpers';
-import { setupUpdaterMock } from './lib/updater/mock';
-import { getUpdateStore, setUpdateStore } from './lib/updater/store';
+import { getUpdateStore } from './lib/updater/store';
 import { startUpdater } from './lib/updater/updater';
 import { userAgent } from './lib/user-agent';
 import { onHideWindow } from './lib/window';
@@ -115,8 +102,6 @@ const createSession = () => {
     secureSession.setUserAgent(userAgent());
 
     void setTagCookie(secureSession, getUpdateStore().beta);
-
-    if (!isProdEnv()) setupUpdaterMock(secureSession);
 
     return secureSession;
 };
@@ -339,14 +324,11 @@ app.addListener('window-all-closed', () => !isMac() && app.quit());
 app.addListener('will-finish-launching', () => isWindows() && app.setAppUserModelId(WINDOWS_APP_ID));
 
 // Call cleanup functions when quitting
+let exiting = false;
 app.addListener('will-quit', async (event) => {
+    if (exiting) return;
     event.preventDefault();
+    exiting = true;
     await cleanup();
-    if (isMac() && getUpdateStore().status === UpdateStatus.UpdateReady) {
-        logger.log('[Update] Installing update on quit');
-        setUpdateStore({ status: UpdateStatus.Idle });
-        autoUpdater.quitAndInstall();
-    } else {
-        app.exit(0);
-    }
+    app.exit(0);
 });
