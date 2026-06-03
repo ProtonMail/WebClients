@@ -25,6 +25,7 @@
         "./holidaysDirectory/listener": "./holidaysDirectory/listener.ts",
         "./protonMeetIntegration/ProtonMeetRow": "./components/protonMeetIntegration/ProtonMeetRow.tsx",
         "./protonMeetIntegration/hooks": "./components/protonMeetIntegration/useProtonMeetIntegration.ts",
+        "./protonMeetIntegration/meetFunnelTelemetry": "./components/protonMeetIntegration/useMeetFunnelTelemetry.ts",
         "./timezones": "./timezones/index.ts",
         "./utils": "./utils.ts",
         "./videoConferencing/constants": "./components/videoConferencing/constants.ts",

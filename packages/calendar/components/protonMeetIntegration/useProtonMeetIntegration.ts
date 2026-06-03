@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
+import type { SessionKey } from '@protontech/crypto';
 import debounce from 'lodash/debounce';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/components';
-import type { SessionKey } from '@protontech/crypto';
 import { getMeetingLink, useGetMeetingDependencies, useProtonMeet } from '@proton/meet';
 import {
     decryptSessionKey,
@@ -23,6 +23,8 @@ import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calenda
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { calendarUrlQueryParams } from '../../constants';
+import { validateDeepLinkParams } from '../../utils';
 import {
     VideoConferenceProtonMeetIntegration,
     useVideoConfTelemetry,
@@ -30,8 +32,7 @@ import {
 import { shouldAutoAddMeetingLink } from './shouldAutoAddMeetingLink';
 import type { IntegrationState } from './types';
 import { useAutoAddMeetLinkNotification } from './useAutoAddMeetLinkNotification';
-import { validateDeepLinkParams } from '../../utils';
-import { calendarUrlQueryParams } from '../../constants';
+import { useMeetFunnelTelemetry } from './useMeetFunnelTelemetry';
 
 interface UseProtonMeetIntegrationParameters {
     model: EventModel;
@@ -106,6 +107,7 @@ export const useProtonMeetIntegration = ({
     const getMeetingDependencies = useGetMeetingDependencies();
 
     const { sentEventProtonMeet } = useVideoConfTelemetry();
+    const { sendMeetingCreated } = useMeetFunnelTelemetry();
 
     const setupMeetingConference = async ({
         meetingId,
@@ -211,6 +213,7 @@ export const useProtonMeetIntegration = ({
             });
 
             sentEventProtonMeet(VideoConferenceProtonMeetIntegration.create_proton_meet);
+            sendMeetingCreated();
         } catch (error) {
             setActiveProvider(null);
 
@@ -254,6 +257,7 @@ export const useProtonMeetIntegration = ({
             });
 
             sentEventProtonMeet(VideoConferenceProtonMeetIntegration.add_existing_proton_meet);
+            sendMeetingCreated();
         } catch (error) {
             setActiveProvider(null);
 
