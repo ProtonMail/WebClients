@@ -19,7 +19,6 @@ export interface SettingsStore {
     profilingEnabled?: boolean;
     profilingMode?: "warm" | "cold";
     chromiumLoggingEnabled?: boolean;
-    disableHardwareAcceleration?: boolean;
 }
 
 const defaultSettings = {
