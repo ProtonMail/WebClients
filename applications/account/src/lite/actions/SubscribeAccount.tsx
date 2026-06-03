@@ -440,9 +440,6 @@ const SubscribeAccount = ({
                                             setError(defaultError);
                                         }
                                     }}
-                                    metrics={{
-                                        source: 'lite-subscribe',
-                                    }}
                                     render={({ onSubmit, title, content, footer, step, model, onModelUpdate }) => {
                                         return (
                                             <LiteBox
@@ -462,9 +459,6 @@ const SubscribeAccount = ({
                                                                 step: nextStep,
                                                             })
                                                         }
-                                                        metrics={{
-                                                            source: 'lite-subscribe',
-                                                        }}
                                                     />
                                                 ) : (
                                                     <>

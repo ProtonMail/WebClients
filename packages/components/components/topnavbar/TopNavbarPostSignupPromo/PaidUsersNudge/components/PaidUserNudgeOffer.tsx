@@ -85,9 +85,6 @@ export const PaidUserNudgeOffer = ({ offerConfig, openSpotlight, isLoading }: Pr
                 ...defaultOfferUpsellConfig,
                 plan: offerConfig.currentPlan,
                 upsellRef: offerConfig.upsellRef,
-                metrics: {
-                    source: 'upsells',
-                },
                 onSubscribed: handleSubscribed,
             });
         }

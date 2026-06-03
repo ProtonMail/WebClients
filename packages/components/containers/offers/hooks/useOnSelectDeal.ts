@@ -40,7 +40,6 @@ const useSelectDeal = (callback?: () => void) => {
                 cycle: deal.cycle,
                 maximumCycle: deal.cycle,
                 minimumCycle: deal.cycle,
-                metrics: { source: 'upsells' },
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 upsellRef: deal.ref,
             };

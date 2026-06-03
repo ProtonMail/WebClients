@@ -64,9 +64,6 @@ const getFeaturesAndUserIds = (data: Partial<GatewayModel>): [number, string[] |
 };
 
 export const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
-    const DASHBOARD = 'dashboard';
-    const UPSELLS = 'upsells';
-
     const api = useApi();
     const isMultiIpEndpointEnabled = useFlag('VpnOrganizationLogRelayGatewayCreationMultiIp');
     const isMultiIpAddEndpointEnabled = useFlag('VpnOrganizationLogRelayGatewayUpdateMultiIp');
@@ -155,12 +152,9 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
     };
 
     const getCustomizeSubscriptionOpener =
-        (source: typeof DASHBOARD | typeof UPSELLS, plan = organization.PlanName) =>
+        (plan = organization.PlanName) =>
         () =>
             openSubscriptionModal({
-                metrics: {
-                    source,
-                },
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 plan,
             });
@@ -213,7 +207,7 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
                             <Button
                                 color="norm"
                                 fullWidth
-                                onClick={getCustomizeSubscriptionOpener(UPSELLS, PLANS.VPN_BUSINESS)}
+                                onClick={getCustomizeSubscriptionOpener(PLANS.VPN_BUSINESS)}
                                 title={c('Title').t`Setup dedicated servers by upgrading to Business`}
                             >
                                 {c('Action').t`Upgrade to Business`}
@@ -533,7 +527,7 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
 
                 await refreshList();
             },
-            onUpsell: getCustomizeSubscriptionOpener(DASHBOARD),
+            onUpsell: getCustomizeSubscriptionOpener(),
         });
 
     const editGatewayUsers = (gateway: Gateway, logical: GatewayLogical) => () =>
@@ -660,7 +654,7 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
                             size="small"
                             color="norm"
                             shape={canAdd ? 'outline' : 'solid'}
-                            onClick={getCustomizeSubscriptionOpener(DASHBOARD)}
+                            onClick={getCustomizeSubscriptionOpener()}
                             title={c('Title').t`Customize the number of IP addresses in your plan`}
                         >
                             {c('Action').t`Get more servers`}
