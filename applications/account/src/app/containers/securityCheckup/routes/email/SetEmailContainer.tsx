@@ -65,7 +65,7 @@ const SetEmailContainer = () => {
     const { securityState } = useSecurityCheckup();
     const { email } = securityState;
 
-    const accountRecovery = useUpdateAccountRecovery();
+    const accountRecovery = useUpdateAccountRecovery({ sendSettingEnabledTelemetry: false });
 
     if (accountRecovery.data.loading) {
         return <AccountLoaderPage />;
