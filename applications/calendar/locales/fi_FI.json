@@ -7127,6 +7127,9 @@
       ],
       "Zoom meeting": [
         "Zoom-kokous"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } merkkiä"
       ]
     },
     "label": {
