@@ -3454,6 +3454,9 @@
       ],
       "90m": [
         "90 m"
+      ],
+      "15 minutes": [
+        "15 minute"
       ]
     },
     "Edit billing address form note": {
@@ -4168,6 +4171,12 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Cheia organizației trebuie activată pentru a crea utilizatori neprivați."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Verificați dacă numărul ABN vă este înregistrat pentru TVA transfrontalier."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Valoarea TVA trebuie să înceapă cu ${ prefixes }."
       ]
     },
     "error": {

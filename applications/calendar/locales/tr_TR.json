@@ -3426,6 +3426,9 @@
       ],
       "90m": [
         "90 dk"
+      ],
+      "15 minutes": [
+        "15 dakika"
       ]
     },
     "Edit billing address form note": {
@@ -4128,6 +4131,12 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Korunmayan kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Lütfen ABN numaranızın sınır ötesi KDV için kayıtlı olup olmadığını denetleyin"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "KDV numarası ${ prefixes } ile başlamalıdır"
       ]
     },
     "error": {
