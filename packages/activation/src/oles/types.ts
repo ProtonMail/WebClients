@@ -1,4 +1,9 @@
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+
 import type { ApiImporterOrganizationState, ApiImporterProduct } from '../api/api.interface';
+import type { ImportToken } from '../interface';
+import type { CreateMigrationBatchError } from './thunk';
+import type { ConnectionState } from './useConnectionState';
 
 export type Product = ApiImporterProduct;
 
@@ -14,21 +19,25 @@ export type MigrationConfiguration = {
     selectedProducts: Product[];
     notifyList: string[];
     timePeriod: TimePeriod;
-    domainName: string | undefined;
     importerOrganizationId: string | undefined;
     importOrganizationSettings: boolean;
     joiningLink: JoiningLink | undefined;
-    state: ApiImporterOrganizationState;
+    domainName: string | undefined;
+    domain: Domain | undefined;
+    domainRegistrarId: number;
+    state: ApiImporterOrganizationState | undefined;
+    tokens: ImportToken[] | undefined;
+    connectionState: ConnectionState | undefined;
+    transferErrors: CreateMigrationBatchError[];
 };
 
 export type MigrationModel = MigrationConfiguration & {
-    update: (newState: MigrationConfiguration) => void;
+    importerOrganizationId: string;
+    domainName: string;
+    state: ApiImporterOrganizationState;
+    update: (newState: Partial<MigrationModel>) => void;
 };
 
 export type MigrationSetupModel = MigrationConfiguration & {
-    setNotifyList: (emails: string[]) => void;
-    setTimePeriod: (period: TimePeriod) => void;
-    setSelectedProducts: (products: Product[]) => void;
-    setImportOrganizationSettings: (value: boolean) => void;
-    setDomainName: (value: string | undefined) => void;
+    update: (newState: Partial<MigrationSetupModel>) => void;
 };

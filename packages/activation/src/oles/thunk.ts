@@ -18,6 +18,7 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { createCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { authMember, updateQuota } from '@proton/shared/lib/api/members';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
@@ -157,13 +158,10 @@ export const setupMigration = createAsyncThunk<
     const joiningLink = await dispatch(setupJoiningLink(ImporterOrganizationID)).unwrap();
 
     return {
-        selectedProducts: payload.selectedProducts,
-        notifyList: payload.notifyList,
-        timePeriod: payload.timePeriod,
+        ...payload,
+        joiningLink,
         domainName: DomainName,
         importerOrganizationId: ImporterOrganizationID,
-        importOrganizationSettings: payload.importOrganizationSettings,
-        joiningLink,
         state: State,
     };
 });
@@ -184,10 +182,11 @@ const toSerializableUserError = (user: ApiImporterOrganizationUser, err: any): C
             };
         }
 
+        const apiError = getApiError(err);
         return {
-            code: err?.Code || err?.code,
+            code: apiError.code || err?.Code || err?.code,
+            message: apiError.message || err?.Message || err?.message,
             name: err?.Name || err?.name,
-            message: err?.Message || err?.message,
         };
     })();
 
