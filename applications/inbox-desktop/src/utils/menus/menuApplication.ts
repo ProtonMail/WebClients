@@ -4,7 +4,7 @@ import { uninstallProton } from "../../macos/uninstall";
 import { clearStorage, isMac } from "../helpers";
 import { getMainWindow, getSpellCheckStatus, resetZoom, toggleSpellCheck, updateZoom } from "../view/viewManagement";
 import { isProdEnv } from "../isProdEnv";
-import { getSettings, updateSettings } from "../../store/settingsStore";
+import { updateSettings } from "../../store/settingsStore";
 import { MAIL_APP_NAME } from "@proton/shared/lib/constants";
 import { profiler } from "../profiler/profiler";
 
@@ -15,8 +15,6 @@ interface MenuProps extends MenuItemConstructorOptions {
 
 export const setApplicationMenu = () => {
     const quitMenuProps: MenuProps["submenu"] = isMac ? [] : [{ role: "quit", label: c("App menu").t`Quit` }];
-
-    const hardwareAccelerationDisabled = getSettings().disableHardwareAcceleration;
 
     const temp: MenuProps[] = [
         {
@@ -32,44 +30,6 @@ export const setApplicationMenu = () => {
                     label: c("App menu").t`Show logs`,
                     type: "normal",
                     click: () => shell.openPath(app.getPath("logs")),
-                },
-                {
-                    label: hardwareAccelerationDisabled
-                        ? c("App Menu").t`Enable Hardware Acceleration`
-                        : c("App Menu").t`Disable Hardware Acceleration`,
-                    type: "checkbox",
-                    click: () => {
-                        dialog
-                            .showMessageBox({
-                                type: "info",
-                                buttons: [
-                                    hardwareAccelerationDisabled ? c("App menu").t`Enable` : c("App menu").t`Disable`,
-                                    c("App menu").t`Cancel`,
-                                ],
-                                defaultId: 0,
-                                cancelId: 1,
-                                title: hardwareAccelerationDisabled
-                                    ? c("App menu").t`Enable Hardware Acceleration`
-                                    : c("App menu").t`Disable Hardware Acceleration`,
-                                message: hardwareAccelerationDisabled
-                                    ? c("App menu").t`Enable Hardware Acceleration`
-                                    : c("App menu").t`Disable Hardware Acceleration`,
-                                detail: hardwareAccelerationDisabled
-                                    ? c("App menu")
-                                          .t`When hardware acceleration is enabled, the app uses your device’s dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.`
-                                    : c("App menu")
-                                          .t`When hardware acceleration is disabled, the app falls back to software rendering. This can cause choppy animations, dropped frames, slower video playback, higher CPU usage, and reduced graphics performance.`,
-                            })
-                            .then(({ response }) => {
-                                if (response == 0) {
-                                    updateSettings({
-                                        disableHardwareAcceleration: !hardwareAccelerationDisabled,
-                                    });
-                                    app.relaunch();
-                                    app.exit(0);
-                                }
-                            });
-                    },
                 },
                 { type: "separator" },
                 {
