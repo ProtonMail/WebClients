@@ -78,7 +78,7 @@ const ReferralPlans = () => {
                         }}
                         onCTAClick={() => {
                             history.push({
-                                pathname: SSO_PATHS.REFERAL_SIGNUP,
+                                pathname: SSO_PATHS.REFERRAL_SIGNUP,
                                 search: location.search,
                             });
                         }}
