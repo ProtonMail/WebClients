@@ -41,3 +41,15 @@ export function buildAlreadyMentionedNames(files: FileItem[], composerValue: str
         files.filter((f) => composerValue.includes(`@${f.name}`)).map((f) => f.name.toLowerCase())
     );
 }
+
+/**
+ * Returns the set of lowercase filenames that are already attached to the
+ * composer as provisional chips.
+ *
+ * Used to avoid creating a duplicate attachment when a user re-mentions a file
+ * that is already attached — in that case we only insert the `@filename` text
+ * reference instead of dispatching another attachment.
+ */
+export function buildAttachedNames(provisionalAttachments: Pick<Attachment, 'filename'>[]): Set<string> {
+    return new Set(provisionalAttachments.map((a) => a.filename.toLowerCase()));
+}
