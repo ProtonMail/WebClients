@@ -19,9 +19,21 @@ import { GuestContainer } from './containers/GuestContainer';
 import { WrappedProtonMeetContainer } from './containers/ProtonMeetContainer/WrappedProtonMeetContainer';
 import { ProviderContainer } from './containers/ProviderContainer';
 import { getPublicToken } from './hooks/srp/usePublicToken';
+import { useMeetFunnelTelemetry } from './hooks/useMeetFunnelTelemetry';
 
 // @ts-ignore
 import meetTheme from './styles/meet.theme.css';
+
+const MeetAppTelemetry = () => {
+    const { sendMeetOpened } = useMeetFunnelTelemetry();
+
+    useEffect(() => {
+        sendMeetOpened();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    return null;
+};
 
 const routes = ['join', 'dashboard'];
 
@@ -57,7 +69,7 @@ const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
         if (location.pathname.length < 2 && hasInitialized.current) {
             history.push('/dashboard');
         }
-    }, [location.pathname]);
+    }, [location.pathname, history]);
 
     useEffect(() => {
         if (location.pathname.includes(landingPageRoute)) {
@@ -87,6 +99,8 @@ const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
         }
 
         hasInitialized.current = true;
+        // Empty dependency array to only run once
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return children;
@@ -120,6 +134,7 @@ export const App = () => {
                     </GuestContainer>
                 ) : (
                     <ProviderContainer>
+                        <MeetAppTelemetry />
                         <RedirectWrapper>
                             <ComingSoonWrapper>
                                 <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
