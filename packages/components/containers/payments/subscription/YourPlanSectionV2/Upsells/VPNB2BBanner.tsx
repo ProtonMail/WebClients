@@ -21,7 +21,6 @@ const VPNB2BBanner = ({ app }: UpsellSectionBaseProps) => {
     const handleExplorePlans = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            metrics: { source: 'plans' },
             defaultAudience: Audience.B2B,
             telemetryFlow,
         });

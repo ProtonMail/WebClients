@@ -37,7 +37,6 @@ export const BaseUpsellEmergencyContacts = (props: Props) => {
 
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            metrics: { source: 'upsells' },
             upsellRef,
             disableThanksStep: true,
             onSubscribed: () => {

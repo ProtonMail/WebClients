@@ -7,10 +7,8 @@ import { useModalTwoPromise } from '@proton/components/components/modalTwo/useMo
 import { changeDefaultPaymentMethodBeforePayment } from '@proton/components/containers/payments/DefaultPaymentMethodMessage';
 import { useCancelSubscriptionFlow } from '@proton/components/containers/payments/subscription/cancelSubscription/useCancelSubscriptionFlow';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import { getMetricsProps } from '@proton/components/containers/payments/subscription/helpers/subscriptionTelemetry';
 import { useAvailableCurrenciesForPlan } from '@proton/components/containers/payments/subscription/modal-components/SubscriptionCheckout';
 import useApi from '@proton/components/hooks/useApi';
-import useConfig from '@proton/components/hooks/useConfig';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { sortMethodsBasedOnDevice } from '@proton/components/payments/client-extensions';
@@ -20,7 +18,6 @@ import type {
     OperationsSubscriptionData,
 } from '@proton/components/payments/react-extensions/usePaymentFacade';
 import useLoading from '@proton/hooks/useLoading';
-import Metrics, { observeApiError } from '@proton/metrics/index';
 import { ProrationMode } from '@proton/payments/core/api/api';
 import { FREE_SUBSCRIPTION, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentMethodType } from '@proton/payments/core/interface';
@@ -31,13 +28,10 @@ import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 import { usePaymentPollers } from '@proton/payments/ui/hooks/usePaymentPollers';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import noop from '@proton/utils/noop';
 
 import { getCodesForSubscription } from './helpers';
-import type { SubscriptionCheckoutMetricsOverrides } from './interface';
 
 type SubscriptionContext = {
     operationsSubscriptionData: OperationsSubscriptionData;
@@ -45,26 +39,13 @@ type SubscriptionContext = {
     paymentMethodValue: PaymentMethodType;
 };
 
-function getMetricsAppName(appName: APP_NAMES) {
-    switch (appName) {
-        case APPS.PROTONVPN_SETTINGS:
-            return APPS.PROTONVPN_SETTINGS;
-        case APPS.PROTONACCOUNTLITE:
-            return APPS.PROTONACCOUNTLITE;
-        default:
-            return APPS.PROTONACCOUNT;
-    }
-}
-
 interface Props {
     onStepChange: (step: SUBSCRIPTION_STEPS) => void;
     onSubscribed: () => void;
     onUnsubscribed: () => void;
-    metrics: SubscriptionCheckoutMetricsOverrides;
 }
 
-const useSubscriptionCheckout = ({ onStepChange, onSubscribed, onUnsubscribed, metrics }: Props) => {
-    const { APP_NAME } = useConfig();
+const useSubscriptionCheckout = ({ onStepChange, onSubscribed, onUnsubscribed }: Props) => {
     const appName = useAppName();
     const [user] = useUser();
     const getCalendars = useGetCalendars();
@@ -120,13 +101,6 @@ const useSubscriptionCheckout = ({ onStepChange, onSubscribed, onUnsubscribed, m
             return showCalendarDowngradeModal();
         }
 
-        const metricsProps = getMetricsProps(
-            metrics,
-            SUBSCRIPTION_STEPS.CHECKOUT,
-            subscription,
-            getMetricsAppName(APP_NAME)
-        );
-
         try {
             const pollSubscription = createSubscriptionPoller();
             eventManager.stop();
@@ -157,11 +131,6 @@ const useSubscriptionCheckout = ({ onStepChange, onSubscribed, onUnsubscribed, m
                 throw error;
             }
 
-            void Metrics.payments_subscription_total.increment({
-                ...metricsProps,
-                status: 'success',
-            });
-
             await pollSubscription().catch(noop);
 
             onSubscribed();
@@ -172,13 +141,6 @@ const useSubscriptionCheckout = ({ onStepChange, onSubscribed, onUnsubscribed, m
                 // translator: this message pops in a notification, in case user is waiting really too long, or does the checkout in another tab, which makes this ones not valid/expiring
                 createNotification({ text: c('Error').t`Checkout expired, please try again`, type: 'error' });
             }
-
-            observeApiError(error, (status) =>
-                Metrics.payments_subscription_total.increment({
-                    ...metricsProps,
-                    status,
-                })
-            );
 
             onStepChange(SUBSCRIPTION_STEPS.CHECKOUT);
             throw error;

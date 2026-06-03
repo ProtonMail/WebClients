@@ -132,9 +132,6 @@ export const getDashboardUpsellV2 = ({ plan, openSubscriptionModal, ...rest }: G
                 plan,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,

@@ -183,7 +183,6 @@ export const CurrentPlanInfoSection = ({
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            metrics: { source: 'upsells' },
             telemetryFlow,
         });
     };
@@ -192,9 +191,6 @@ export const CurrentPlanInfoSection = ({
         openSubscriptionModal({
             step,
             disablePlanSelection: true,
-            metrics: {
-                source: 'plans',
-            },
             telemetryFlow,
         });
 

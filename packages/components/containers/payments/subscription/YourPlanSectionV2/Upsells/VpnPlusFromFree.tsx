@@ -91,9 +91,6 @@ const getVPNUpsell = ({ app, plansMap, openSubscriptionModal, ...rest }: GetPlan
                 plan,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: rest.telemetryFlow,
             });
         },
@@ -124,7 +121,6 @@ export const useVpnPlusFromFreeUpsells = ({
     const handleExplorePlans = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            metrics: { source: 'upsells' },
             telemetryFlow,
         });
     };

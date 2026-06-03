@@ -127,7 +127,6 @@ export const useMeetProfessionalFromFreeUpsells = ({
     const handleExplorePlans = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            metrics: { source: 'upsells' },
             telemetryFlow,
         });
     };
@@ -188,7 +187,6 @@ export const useMeetProfessionalFromFreeUpsells = ({
                         plan: PLANS.MEET_BUSINESS,
                         step: SUBSCRIPTION_STEPS.CHECKOUT,
                         disablePlanSelection: true,
-                        metrics: { source: 'upsells' },
                         telemetryFlow,
                     }),
             }),
@@ -208,7 +206,6 @@ export const useMeetProfessionalFromFreeUpsells = ({
                         plan: PLANS.BUNDLE_PRO_2024,
                         step: SUBSCRIPTION_STEPS.CHECKOUT,
                         disablePlanSelection: true,
-                        metrics: { source: 'upsells' },
                         telemetryFlow,
                     }),
             }),
@@ -226,7 +223,6 @@ export const useMeetProfessionalFromFreeUpsells = ({
                         plan: PLANS.BUNDLE_BIZ_2025,
                         step: SUBSCRIPTION_STEPS.CHECKOUT,
                         disablePlanSelection: true,
-                        metrics: { source: 'upsells' },
                         telemetryFlow,
                     }),
             }),

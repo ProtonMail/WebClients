@@ -82,7 +82,6 @@ export const OfferContent = ({ onKeepPlan, onContinueCancelling, offerData }: Pr
             coupon,
             disablePlanSelection: true,
             disableCycleSelector: true,
-            metrics: { source: 'upsells' },
             onSubscribed: () => {
                 void update(false);
                 onKeepPlan();

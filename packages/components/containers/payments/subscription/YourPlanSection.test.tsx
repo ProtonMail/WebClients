@@ -157,9 +157,6 @@ describe('YourPlanSection', () => {
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
                 telemetryFlow: 'subscription',
             });
         });

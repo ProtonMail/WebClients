@@ -31,7 +31,6 @@ const DriveGetMoreSection = ({ subscription }: Props) => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: PLANS.DRIVE,
-            metrics: { source: 'upsells' },
             telemetryFlow,
         });
     };
