@@ -461,6 +461,8 @@ describe('checkVatNumber', () => {
             ['ES', 'ESB61979175'],
             ['GB', 'GB000472631'],
             ['GB', 'GB834549605'],
+            ['CH', 'CHE100416306MWST'],
+            ['CH', 'CHE432825998TVA'],
             ['AU', 'AU51824753556'],
             ['AU', 'AU53004085616'],
             ['SG', 'SG200512345G'],
@@ -480,6 +482,7 @@ describe('checkVatNumber', () => {
             ['ES', 'ES00000001A'],
             ['GB', 'GB999000103'],
             ['GB', 'GB010123456'],
+            ['CH', 'CHE43282599MWST'],
             ['AU', 'AU51824753557'],
             ['AU', 'AU1234567890'],
             ['SG', 'SG12345678'],
@@ -490,8 +493,18 @@ describe('checkVatNumber', () => {
     });
 
     describe('countries not in countriesWithVatId', () => {
-        it.each(['TH', 'TR', 'JP', 'US', 'CN', 'BR', 'RU', 'CH', 'LI', 'IS'])(
+        it.each(['TH', 'TR', 'JP', 'US', 'CN', 'BR', 'RU'])(
             'should return true for any VAT number when country is %s',
+            (countryCode) => {
+                expect(checkVatNumber('ANYTHING123', countryCode)).toBe(true);
+                expect(checkVatNumber('12345', countryCode)).toBe(true);
+            }
+        );
+    });
+
+    describe('countries in countriesWithVatId but not covered by vat-validation library', () => {
+        it.each(['LI', 'IS'])(
+            'should return true for any VAT number when country is %s (not in vat-validation)',
             (countryCode) => {
                 expect(checkVatNumber('ANYTHING123', countryCode)).toBe(true);
                 expect(checkVatNumber('12345', countryCode)).toBe(true);
