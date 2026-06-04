@@ -1,9 +1,10 @@
+import { type Device, type MaybeNode, NodeType, type Result } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
-import { type Device, type MaybeNode, NodeType, type Result } from '@proton/drive';
-import { handleSdkError } from '@proton/drive/legacy/errorHandling';
-import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
-import { getNodeAncestry, getNodeName } from '@proton/drive/modules/nodes';
+import { handleSdkError } from '../../../legacy/errorHandling';
+import { getNodeEntity } from '../../../legacy/sdkUtils/getNodeEntity';
+import { getNodeAncestry } from './getNodeAncestry';
+import { getNodeName } from './getNodeName';
 
 export enum NodeLocation {
     MY_FILES = 'MY_FILES',
