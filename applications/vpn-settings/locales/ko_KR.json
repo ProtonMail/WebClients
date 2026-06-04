@@ -1845,9 +1845,6 @@
       ]
     },
     "BOSS": {
-      "${ BRAND_NAME } Migration Assistant": [
-        "${ BRAND_NAME } 이전 도우미"
-      ],
       "Authenticate": [
         "인증"
       ],
@@ -1857,17 +1854,11 @@
       "Calendar": [
         "캘린더"
       ],
-      "Completed": [
-        "완료"
-      ],
       "Configure migration": [
         "이전 작업 구성"
       ],
       "Contacts": [
         "연락처"
-      ],
-      "Domain connected": [
-        "도메인 연결됨"
       ],
       "Estimated size": [
         "예상 용량"
@@ -1896,9 +1887,6 @@
       "Migrate from Google Workspace": [
         "Google Workspace에서 이전"
       ],
-      "Migrate users": [
-        "이전된 사용자"
-      ],
       "Migration includes": [
         "이전에 포함되는 항목:"
       ],
@@ -1914,17 +1902,8 @@
       "Organization does not have enough storage available": [
         "조직에 충분한 저장공간이 남아있지 않습니다."
       ],
-      "Required": [
-        "필수"
-      ],
-      "Required to create user accounts": [
-        "사용자 계정 생성 필요"
-      ],
       "Select at least one user to start a migration": [
         "하나 이상의 사용자를 선택하여 마이그레이션을 시작하세요"
-      ],
-      "Set up": [
-        "설정"
       ],
       "Settings": [
         "설정"
@@ -1934,9 +1913,6 @@
       ],
       "Status": [
         "상태"
-      ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
-        "조직의 데이터를 이전하려면 Google Workspace Marketplace에서 ${ BRAND_NAME } 이전 도우미 앱을 설치해야 합니다. 이 앱을 통해 ${ BRAND_NAME }에서 데이터를 복사할 수 있는 권한이 부여됩니다. 설치 후 계속 진행하려면 이곳으로 돌아오세요."
       ],
       "User": [
         "사용자"
@@ -1958,9 +1934,6 @@
       ],
       "What are you migrating?": [
         "무엇을 이전하시나요?"
-      ],
-      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
-        "회원님의 데이터를 복사하기 위해 ${ BRAND_NAME }에 대한 접근 권한을 부여해야 합니다. 권한 수락 후 다시 돌아와 계속 진행해 주세요."
       ]
     },
     "Browser": {
@@ -10585,9 +10558,6 @@
       "Send & receive invitations": [
         "전송 및 받은 초대"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries }개 이상 국가 내 서버"
-      ],
       "Share files with no size limit": [
         "크기 제한 없는 파일 공유"
       ],
@@ -11143,9 +11113,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "${ numberOfCountries }개 이상 국가에서 지원하는 전용 서버 위치"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "북미 및 유럽에서 지원하는 전용 서버 위치"
       ],
       "Multi-platform support": [
         "멀티 플랫품 지원"
@@ -16111,6 +16078,9 @@
       ],
       "View organization events by upgrading to Professional": [
         "Professional 플랜으로 업그레이드하여 조직 이벤트 확인"
+      ],
+      "VPN apps": [
+        "VPN 앱"
       ],
       "Warning": [
         "경고"

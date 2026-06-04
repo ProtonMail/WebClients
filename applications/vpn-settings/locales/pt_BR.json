@@ -338,9 +338,6 @@
       "Delete policy": [
         "Excluir política"
       ],
-      "Delete token ${ tokens[0].Account }": [
-        "Excluir token ${ tokens[0].Account }"
-      ],
       "Delete user": [
         "Excluir usuário"
       ],
@@ -439,6 +436,9 @@
       ],
       "Edit group": [
         "Editar grupo"
+      ],
+      "Edit invoice details": [
+        "Editar de fatura de crédito"
       ],
       "Edit invoice note": [
         "Editar nota de fatura"
@@ -571,9 +571,6 @@
       ],
       "Go to ${ planOrAppName }": [
         "Acesse o ${ planOrAppName }"
-      ],
-      "Go to domain provider": [
-        "Ir para o provedor de domínios"
       ],
       "Go to label": [
         "Ir para marcador"
@@ -1986,21 +1983,6 @@
       ]
     },
     "BOSS": {
-      "${ BRAND_NAME } Migration Assistant": [
-        "Assistente de Migração da ${ BRAND_NAME }"
-      ],
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } de ${ providerUsers.length }"
-      ],
-      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
-        "**p=none**: não coloque em quarentena nem rejeite e-mails não autorizados. Normalmente, as pessoas usam esta política apenas para solucionar problemas ou testar."
-      ],
-      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
-        "$**p=quarantine**: solicitando às plataformas destinatárias que marquem os e-mails não autorizados como spam ou os coloquem em quarentena."
-      ],
-      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
-        "$**p=reject**: solicitando às plataformas destinatárias que rejeitem os e-mails não autorizados."
-      ],
       "Account connected": [
         "Conta conectada"
       ],
@@ -2009,12 +1991,6 @@
       ],
       "Activated": [
         "Ativado"
-      ],
-      "Activation link": [
-        "Link de ativação"
-      ],
-      "Activation link copied to clipboard": [
-        "Link de ativação copiado para a área de transferência"
       ],
       "Add domain": [
         "Adicionar domínio"
@@ -2028,9 +2004,6 @@
       "All": [
         "Todos"
       ],
-      "An unknown error occurred": [
-        "Ocorreu um erro desconhecido"
-      ],
       "Authenticate": [
         "Autenticar"
       ],
@@ -2039,9 +2012,6 @@
       ],
       "Calendar": [
         "Calendário"
-      ],
-      "Completed": [
-        "Concluído"
       ],
       "Configure domain": [
         "Configurar domínio"
@@ -2055,26 +2025,8 @@
       "Contacts": [
         "Contatos"
       ],
-      "Copy activation link": [
-        "Copiar link de ativação"
-      ],
-      "Copy activation link to clipboard": [
-        "Copiar link de ativação para a área de transferência"
-      ],
-      "Creating accounts": [
-        "Criando contas"
-      ],
-      "DKIM records": [
-        "Registos DKIM"
-      ],
-      "DMARC records": [
-        "Registros DMARC"
-      ],
       "Domain added": [
         "Domínio adicionado"
-      ],
-      "Domain connected": [
-        "Domínio conectado"
       ],
       "Errors": [
         "Errors"
@@ -2084,9 +2036,6 @@
       ],
       "Failed to load OAuth": [
         "Falha ao carregar o OAuth"
-      ],
-      "Finalize migration": [
-        "Finalizar migração"
       ],
       "Find out what can be migrated.": [
         "Descubra o que pode ser migrado."
@@ -2099,9 +2048,6 @@
       ],
       "Has errors": [
         "Tem erros"
-      ],
-      "Import errors for ${ user.AdminSetName }": [
-        "Importar erros para ${ user.AdminSetName }"
       ],
       "In progress": [
         "Em processo"
@@ -2118,14 +2064,8 @@
       "Mail": [
         "E-mail"
       ],
-      "Managed via ${ registrar.name }": [
-        "Gerenciado via ${ registrar.name }"
-      ],
       "Migrate from Google Workspace": [
         "Migrar do Google Workspace"
-      ],
-      "Migrate users": [
-        "Migrar usuários"
       ],
       "Migrated": [
         "Migrado"
@@ -2146,9 +2086,6 @@
       "Missing organization public key": [
         "Falta a chave pública da organização"
       ],
-      "More details": [
-        "Mais detalhes"
-      ],
       "No users to display": [
         "Nenhum usuário para exibir"
       ],
@@ -2167,29 +2104,14 @@
       "Pending": [
         "Pendente"
       ],
-      "Please leave this window open until we're done creating all the users.": [
-        "Deixe esta janela aberta até terminarmos de criar todos os usuários."
-      ],
-      "Please select at least one product to migrate": [
-        "Selecione ao menos um produto para migrar"
-      ],
       "Refresh": [
         "Atualizar"
-      ],
-      "Required": [
-        "Obrigatório"
-      ],
-      "Required to create user accounts": [
-        "Obrigatório para criar contas de usuário"
       ],
       "Select at least one user to start a migration": [
         "Selecione pelo menos um usuário para iniciar uma migração"
       ],
       "Select users to migrate": [
         "Selecione os usuários a serem migrados"
-      ],
-      "Set up": [
-        "Configurar"
       ],
       "Set up secure sending (DKIM)": [
         "Configurar envio seguro (DKIM)"
@@ -2212,32 +2134,14 @@
       "Some accounts are not claimed": [
         "Algumas contas não foram reivindicadas"
       ],
-      "SPF records": [
-        "Registros SPF"
-      ],
-      "Start migrating": [
-        "Iniciar migração"
-      ],
       "Status": [
         "Status"
-      ],
-      "This migration has been completed": [
-        "A migração foi completada"
-      ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
-        "Para migrar os dados da sua organização, você precisa instalar o aplicativo Assistente de Migração do ${ BRAND_NAME } na Google Workspace Marketplace. Isso concederá permissão ao ${ BRAND_NAME } para copiar seus dados. Após a instalação, volte aqui para continuar."
       ],
       "Update records for receiving": [
         "Atualize os registros para recener"
       ],
       "User": [
         "Usuário"
-      ],
-      "User status": [
-        "Status do usuário"
-      ],
-      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
-        "Os usuários podem usar a ${ BRAND_NAME } ou o Google simultaneamente durante o período da migração."
       ],
       "Users migrated": [
         "Usuários migrados"
@@ -9822,9 +9726,6 @@
       "Hide password": [
         "Ocultar senha"
       ],
-      "Host name": [
-        "Nome do servidor"
-      ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Entendo que precisarei adicionar esse endereço de e-mail à outra conta imediatamente, para evitar perdê-lo permanentemente."
       ],
@@ -9941,9 +9842,6 @@
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Deve conter ao menos ${ MIN_PASSWORD_LENGTH } caracteres"
-      ],
-      "MX records": [
-        "Registros MX"
       ],
       "Name": [
         "Nome"
@@ -10076,9 +9974,6 @@
       ],
       "Previous password": [
         "Senha anterior"
-      ],
-      "Priority": [
-        "Prioridade"
       ],
       "Priority support": [
         "Suporte prioritário"
@@ -10378,9 +10273,6 @@
       "Type": [
         "Tipo"
       ],
-      "Use default value": [
-        "Usar valor padrão"
-      ],
       "Valid ${ group.name } record found": [
         "Encontrado um registro válido de ${ group.name }"
       ]
@@ -10499,9 +10391,6 @@
       ],
       "data recovery option": [
         "opção de recuperação de dados"
-      ],
-      "Detailed instructions": [
-        "Instruções detalhadas"
       ],
       "Details": [
         "Detalhes"
@@ -10640,6 +10529,9 @@
       ],
       "Sign in": [
         "Iniciar sessão"
+      ],
+      "Sign-in help": [
+        "Ajuda para iniciar sessão"
       ],
       "Terms": [
         "Termos"
@@ -11641,10 +11533,6 @@
       "Send & receive invitations": [
         "Enviar e receber convites"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Servidores em ${ vpnServersCountData.paid.countries }+ país",
-        "Servidores em ${ vpnServersCountData.paid.countries }+ países"
-      ],
       "Share files with no size limit": [
         "Compartilhe arquivos sem limite de tamanho"
       ],
@@ -12216,9 +12104,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Localizações de servidores dedicados em ${ numberOfCountries }+ países"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Localizações de servidores dedicados na América do Norte e Europa"
       ],
       "Multi-platform support": [
         "Suporte multiplataforma"
@@ -15896,9 +15781,6 @@
       "Account deleted. Signing out...": [
         "Conta excluída. Encerando sessão..."
       ],
-      "Activation link copied to clipboard": [
-        "Link de ativação copiado para a área de transferência"
-      ],
       "Address added": [
         "Endereço adicionado"
       ],
@@ -17508,6 +17390,9 @@
       "VPN": [
         "VPN"
       ],
+      "VPN apps": [
+        "Aplicativos de VPN"
+      ],
       "Warning": [
         "Aviso"
       ],
@@ -17531,6 +17416,9 @@
       ],
       "Wipe all logs?": [
         "Limpar todos os registros?"
+      ],
+      "WireGuard": [
+        "WireGuard"
       ],
       "WireGuard configuration": [
         "Configuração do WireGuard"
@@ -18384,6 +18272,9 @@
       ],
       "Are you sure you want to remove your recovery email?": [
         "Você tem certeza que deseja remover seu e-mail de recuperação?"
+      ],
+      "Are you sure you want to remove your recovery phone number?": [
+        "Você tem certeza que deseja remover seu número de telefone de recuperação?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Ao excluir este endereço, você não poderá mais receber notificações diárias por e-mail."

@@ -338,9 +338,6 @@
       "Delete policy": [
         "删除策略"
       ],
-      "Delete token ${ tokens[0].Account }": [
-        "删除令牌 ${ tokens[0].Account }"
-      ],
       "Delete user": [
         "删除用户"
       ],
@@ -571,9 +568,6 @@
       ],
       "Go to ${ planOrAppName }": [
         "前往 ${ planOrAppName }"
-      ],
-      "Go to domain provider": [
-        "转到域名提供商"
       ],
       "Go to label": [
         "转至标签"
@@ -1975,21 +1969,6 @@
       ]
     },
     "BOSS": {
-      "${ BRAND_NAME } Migration Assistant": [
-        "${ BRAND_NAME } 迁移助手"
-      ],
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } / ${ providerUsers.length }"
-      ],
-      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
-        "**p=none**：不隔离也不拒绝未经授权的邮件，通常仅在排查或测试时使用此策略。"
-      ],
-      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
-        "**p=quarantine**：要求收件人平台将未经授权的邮件标记为垃圾邮件或进行隔离。"
-      ],
-      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
-        "**p=reject**：要求收件人平台拒绝未经授权的邮件。"
-      ],
       "Account connected": [
         "账户已连接"
       ],
@@ -1998,12 +1977,6 @@
       ],
       "Activated": [
         "已激活"
-      ],
-      "Activation link": [
-        "激活链接"
-      ],
-      "Activation link copied to clipboard": [
-        "激活链接已复制到剪贴板"
       ],
       "Add domain": [
         "添加域名"
@@ -2017,14 +1990,8 @@
       "All": [
         "全部"
       ],
-      "An unknown error occurred": [
-        "发生未知错误"
-      ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "您确定要继续吗？在迁移完成前未领取账户的用户，需要向其 ${ BRAND_NAME } 组织管理员申请重置密码。"
-      ],
-      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
-        "账户创建完成后，您可以分享激活链接，以便用户领取其 ${ BRAND_NAME } 账户。"
       ],
       "Authenticate": [
         "身份验证"
@@ -2034,12 +2001,6 @@
       ],
       "Calendar": [
         "日历"
-      ],
-      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
-        "请选择要迁移的内容，您的选择将应用于所有用户。在您决定复制哪些用户后，迁移将开始。"
-      ],
-      "Completed": [
-        "已完成"
       ],
       "Configure domain": [
         "配置域名"
@@ -2053,35 +2014,14 @@
       "Contacts": [
         "联系人"
       ],
-      "Copy activation link": [
-        "复制激活链接"
-      ],
-      "Copy activation link to clipboard": [
-        "复制激活链接到剪贴板"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
-        "请将下面的代码复制并粘贴到您域名提供商的 DNS 设置中，您可以在 ${ hereHref } 找到示例和一些实用提示。"
-      ],
-      "Creating accounts": [
-        "正在创建账户"
-      ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM 为每封邮件添加数字签名，以便收件人验证邮件确实来自您的域名且未被篡改。否则，邮件可能被认为可信度较低！"
-      ],
-      "DKIM records": [
-        "DKIM 记录"
       ],
       "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
         "DMARC 在 SPF 和 DKIM 的基础上，告知接收服务器如何处理未通过这些检查的邮件。它有助于保护您的域名免遭冒充，并提高整体的投递可靠性。"
       ],
-      "DMARC records": [
-        "DMARC 记录"
-      ],
       "Domain added": [
         "已添加域名"
-      ],
-      "Domain connected": [
-        "域名已连接"
       ],
       "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
         "请确保您的邮件进入收件箱而非垃圾邮件文件夹，更新 SPF 将允许用户在迁移期间同时通过 ${ BRAND_NAME } 和 Google 发送邮件。"
@@ -2095,12 +2035,6 @@
       "Failed to load OAuth": [
         "加载 OAuth 失败"
       ],
-      "Finalize migration": [
-        "完成迁移"
-      ],
-      "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
-        "完成迁移后，您的所有邮件将直接路由到 ${ BRAND_NAME }。用户将不再在 Google 账户上接收邮件，并且 ${ BRAND_NAME } 与 Google 之间的数据将不再同步。"
-      ],
       "Find out what can be migrated.": [
         "了解可以迁移哪些内容"
       ],
@@ -2110,14 +2044,8 @@
       "Google Workspace account": [
         "Google Workspace 账户"
       ],
-      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
-        "请耐心等待，我们正在设置用户账户，并将很快开始导入用户数据。"
-      ],
       "Has errors": [
         "出错啦"
-      ],
-      "Import errors for ${ user.AdminSetName }": [
-        "导入 ${ user.AdminSetName } 时出错"
       ],
       "In progress": [
         "进行中"
@@ -2134,17 +2062,11 @@
       "Mail": [
         "邮箱"
       ],
-      "Managed via ${ registrar.name }": [
-        "通过 ${ registrar.name } 管理"
-      ],
       "Member address not found. Please contact customer support to resolve this": [
         "未找到成员地址，请联系客服解决此问题。"
       ],
       "Migrate from Google Workspace": [
         "从 Google Workspace 迁移"
-      ],
-      "Migrate users": [
-        "迁移用户"
       ],
       "Migrated": [
         "已迁移"
@@ -2164,9 +2086,6 @@
       "Missing organization public key": [
         "缺少组织公钥"
       ],
-      "More details": [
-        "更多详情"
-      ],
       "No error details available. Please contact customer support for more information": [
         "没有可用的错误详情，请联系客服以获取更多信息。"
       ],
@@ -2178,9 +2097,6 @@
       ],
       "Not confirmed": [
         "尚未确认"
-      ],
-      "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
-        "用户领取其 ${ BRAND_NAME } 账户后，将完成迁移。"
       ],
       "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
         "一旦我们确认邮件已路由到 ${ BRAND_NAME }，迁移即告完成。完成后您将收到一封确认邮件。此过程最多可能需要 24 小时。"
@@ -2194,32 +2110,14 @@
       "Pending": [
         "待处理"
       ],
-      "Please add the following records in your DNS console of your domain provider:": [
-        "请在您域名提供商的 DNS 控制台中添加以下记录："
-      ],
-      "Please leave this window open until we're done creating all the users.": [
-        "请保持窗口打开，直到我们完成所有用户的创建。"
-      ],
-      "Please select at least one product to migrate": [
-        "请至少选择一个要迁移的产品"
-      ],
       "Refresh": [
         "刷新"
-      ],
-      "Required": [
-        "必填"
-      ],
-      "Required to create user accounts": [
-        "创建用户账户所必需"
       ],
       "Select at least one user to start a migration": [
         "请至少选择一位用户以开始迁移"
       ],
       "Select users to migrate": [
         "请选择要迁移的用户"
-      ],
-      "Set up": [
-        "设置"
       ],
       "Set up secure sending (DKIM)": [
         "设置安全发送 (DKIM)"
@@ -2233,9 +2131,6 @@
       "Settings": [
         "设置"
       ],
-      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
-        "向用户分享激活链接，以便他们领取其 ${ BRAND_NAME } 账户！"
-      ],
       "Sign in to Google Workspace": [
         "登录 Google Workspace"
       ],
@@ -2245,41 +2140,14 @@
       "Some accounts are not claimed": [
         "部分账户未被领取"
       ],
-      "SPF records": [
-        "SPF 记录"
-      ],
-      "Start migrating": [
-        "开始迁移"
-      ],
       "Status": [
         "状态"
-      ],
-      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
-        "默认设置为 none。但为了提升安全性，我们建议将此值设置为 p=quarantine！"
-      ],
-      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
-        "“p=”值指定了对 DMARC 验证失败的邮件所采取的操作。可用的操作如下："
-      ],
-      "This migration has been completed": [
-        "迁移已完成"
-      ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
-        "若要迁移您组织的数据，您需要从 Google Workspace Marketplace 安装 ${ BRAND_NAME } 迁移助手应用。这将授予 ${ BRAND_NAME } 复制您数据的权限。安装完成后，请返回此处继续。"
       ],
       "Update records for receiving": [
         "更新接收记录"
       ],
       "User": [
         "用户"
-      ],
-      "User needs to activate their account through the activation link shown above": [
-        "用户需要通过上述激活链接激活其账户"
-      ],
-      "User status": [
-        "用户状态"
-      ],
-      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
-        "在迁移期间，用户可以同时使用 ${ BRAND_NAME } 或 Google。"
       ],
       "Users migrated": [
         "已迁移的用户"
@@ -2296,14 +2164,8 @@
       "Verify your domain to start a migration": [
         "验证您的域名以开始迁移"
       ],
-      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
-        "我们检测到与您的 Google Workspace 账户关联的主域名。请确认以继续为您的 ${ BRAND_NAME } 组织设置邮箱。"
-      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "我们无法验证安装，请检查您已在 Google Workspace 账户中安装该应用，然后重试。"
-      ],
-      "We're still checking the MX records with your domain provider.": [
-        "我们仍在与您的域名提供商检查 MX 记录！"
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "我们注意到部分用户尚未领取其 ${ BRAND_NAME } 账户！"
@@ -2313,9 +2175,6 @@
       ],
       "You": [
         "您"
-      ],
-      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
-        "您需要授予 ${ BRAND_NAME } 复制数据的权限。接受权限后，请返回此处继续。"
       ],
       "You're all set!": [
         "一切就绪！"
@@ -4028,11 +3887,6 @@
     "description": {
       "use the Easy Switch import assistant": [
         "使用 Easy Switch 导入助手"
-      ]
-    },
-    "Description for domain modal": {
-      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
-        "发现重复的 DMARC 记录，请前往域名提供商的 DNS 控制台进行修复！"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -9872,9 +9726,6 @@
       "Hide password": [
         "隐藏密码"
       ],
-      "Host name": [
-        "主机名"
-      ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "我知道我需要立即将此邮箱地址添加到另一个账户中，以免永久丢失该地址。"
       ],
@@ -9991,9 +9842,6 @@
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "必须至少有 ${ MIN_PASSWORD_LENGTH } 个字符"
-      ],
-      "MX records": [
-        "MX 记录"
       ],
       "Name": [
         "名称"
@@ -10126,9 +9974,6 @@
       ],
       "Previous password": [
         "先前的密码"
-      ],
-      "Priority": [
-        "优先级"
       ],
       "Priority support": [
         "优先支持"
@@ -10426,9 +10271,6 @@
       "Type": [
         "类型"
       ],
-      "Use default value": [
-        "使用默认值"
-      ],
       "Valid ${ group.name } record found": [
         "找到有效的 ${ group.name } 记录"
       ]
@@ -10547,9 +10389,6 @@
       ],
       "data recovery option": [
         "数据恢复选项"
-      ],
-      "Detailed instructions": [
-        "详细说明"
       ],
       "Details": [
         "详细信息"
@@ -11661,9 +11500,6 @@
       "Send & receive invitations": [
         "发送和接收邀请"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries } 个国家/地区的服务器"
-      ],
       "Share files with no size limit": [
         "共享文件无大小限制"
       ],
@@ -12225,9 +12061,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "${ numberOfCountries }+ 个国家的专用服务器地址"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "专用服务器位于北美和欧洲"
       ],
       "Multi-platform support": [
         "多平台支持"
@@ -15760,9 +15593,6 @@
       "Account deleted. Signing out...": [
         "账户已删除，正在退出..."
       ],
-      "Activation link copied to clipboard": [
-        "激活链接已复制到剪贴板"
-      ],
       "Address added": [
         "地址已添加"
       ],
@@ -17359,6 +17189,9 @@
       ],
       "VPN": [
         "VPN"
+      ],
+      "VPN apps": [
+        "VPN 应用程序"
       ],
       "Warning": [
         "警告"
