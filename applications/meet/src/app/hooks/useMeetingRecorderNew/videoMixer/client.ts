@@ -23,6 +23,8 @@ export class VideoMixerClient {
     private canvasStream: MediaStream;
     private trackCaptures: Map<string, TrackCapture> = new Map();
     private reportMeetError: ReportMeetError;
+    private videoFrameCount = 0;
+    private pendingFrameCountResolve: ((count: number) => void) | null = null;
 
     constructor({
         initialScene,
@@ -43,7 +45,15 @@ export class VideoMixerClient {
         });
 
         this.worker.onmessage = (event: MessageEvent) => {
-            forwardWorkerLog(event.data);
+            if (forwardWorkerLog(event.data)) {
+                return;
+            }
+
+            if (event.data?.type === 'frameCountReport') {
+                this.videoFrameCount = event.data.count;
+                this.pendingFrameCountResolve?.(event.data.count);
+                this.pendingFrameCountResolve = null;
+            }
         };
 
         this.worker.onerror = (event) => {
@@ -116,6 +126,22 @@ export class VideoMixerClient {
 
     public getVideoTracks(): MediaStreamTrack[] {
         return this.canvasStream.getVideoTracks();
+    }
+
+    public requestFinalFrameCount(): Promise<number> {
+        return new Promise((resolve) => {
+            const timeout = setTimeout(() => {
+                this.pendingFrameCountResolve = null;
+                resolve(this.videoFrameCount);
+            }, 500);
+
+            this.pendingFrameCountResolve = (count) => {
+                clearTimeout(timeout);
+                resolve(count);
+            };
+
+            this.worker.postMessage({ type: VideoMixerMessageType.REQUEST_FRAME_COUNT });
+        });
     }
 
     public cleanup(): void {
