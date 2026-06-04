@@ -2679,9 +2679,6 @@
       "Contacts": [
         "連絡先"
       ],
-      "Domain connected": [
-        "ドメインを接続しました"
-      ],
       "Estimated size": [
         "推定サイズ"
       ],
@@ -2703,9 +2700,6 @@
       "Migrate from Google Workspace": [
         "Google Workspaceから移行"
       ],
-      "Migrate users": [
-        "ユーザーを移行"
-      ],
       "Migration includes": [
         "移行に含まれるもの"
       ],
@@ -2720,9 +2714,6 @@
       ],
       "Organization does not have enough storage available": [
         "組織には十分なストレージがありません"
-      ],
-      "Required": [
-        "必須"
       ],
       "Required to create user accounts": [
         "ユーザーアカウントの作成のために必須です"
@@ -2745,9 +2736,6 @@
       "Start migration": [
         "移行を開始"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
-        "組織のデータを移行するには、Google Workspace Marketplaceから${ BRAND_NAME } Migration Assistant をインストールする必要があります。これにより、${ BRAND_NAME }にデータをコピーする権限が与えられます。インストールをしてから、ここに戻って続行してください。"
-      ],
       "User": [
         "ユーザー"
       ],
@@ -2759,9 +2747,6 @@
       ],
       "What are you migrating?": [
         "何を移行しますか？"
-      ],
-      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
-        "${ BRAND_NAME } がデータをコピーすることを許可する必要があります。権限を許可した後、ここに戻って続行してください。"
       ]
     },
     "breadcrumb": {
@@ -15435,9 +15420,6 @@
       "Send & receive invitations": [
         "招待を送受信"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries }+ か国のサーバー"
-      ],
       "Share files with no size limit": [
         "サイズ制限のないファイル共有"
       ],
@@ -16017,9 +15999,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "${ numberOfCountries } か国の専用サーバーの場所"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "北米とヨーロッパに専用サーバーを設置"
       ],
       "Multi-platform support": [
         "マルチプラットフォーム対応"
@@ -19640,15 +19619,6 @@
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS } 件の高速VPN接続"
       ],
-      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
-        "${ vpnServersCountData.free.countries }ヶ国に${ vpnServersCountData.free.servers }以上のVPNサーバー"
-      ],
-      "${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries }ヶ国以上"
-      ],
-      "${ vpnServersCountData.paid.servers }+ server across": [
-        "${ vpnServersCountData.paid.servers } 台以上のサーバーが利用可能"
-      ],
       "/user": [
         "/ユーザー"
       ],
@@ -19909,12 +19879,6 @@
       ],
       "use your own email.": [
         "独自のメールアドレスを使用。"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "${ vpnServersCountData.free.countries } か国にサーバーを備えたVPN"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "${ vpnServersCountData.free.countries }ヶ国にサーバーがあるVPN"
       ],
       "We’ll email you before your trial ends.": [
         "トライアル終了前にメールを送ります。"
@@ -22196,6 +22160,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "VPNブログ投稿を深掘りする"
+      ],
+      "Delete": [
+        "削除"
       ],
       "Delete ${ name }?": [
         "${ name } を削除しますか？"

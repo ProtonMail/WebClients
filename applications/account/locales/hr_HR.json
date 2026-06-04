@@ -8772,9 +8772,6 @@
       "Censorship circumvention": [
         "Zaobilaženje cenzure"
       ],
-      "Dedicated server locations in North America and Europe": [
-        "Namjenske lokacije poslužitelja u Sjevernoj Americi i Europi"
-      ],
       "Multi-platform support": [
         "Podrška na više platformi"
       ]
@@ -10476,11 +10473,6 @@
       "${ value } of secure storage": [
         "${ value } sigurne pohrane"
       ],
-      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
-        "${ vpnServersCountData.free.servers }+ VPN poslužitelja u ${ vpnServersCountData.free.countries } državi",
-        "${ vpnServersCountData.free.servers }+ VPN poslužitelja u ${ vpnServersCountData.free.countries } države",
-        "${ vpnServersCountData.free.servers }+ VPN poslužitelja u ${ vpnServersCountData.free.countries } država"
-      ],
       "/user": [
         "/korisnik"
       ],
@@ -10618,14 +10610,6 @@
       ],
       "use your own email.": [
         "koristite svoju e-poštu"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "VPN s poslužiteljima u ${ vpnServersCountData.free.countries } zemalja"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "VPN s poslužiteljima u ${ vpnServersCountData.free.countries } zemlji",
-        "VPN s poslužiteljima u ${ vpnServersCountData.free.countries } zemlje",
-        "VPN s poslužiteljima u ${ vpnServersCountData.free.countries } zemalja"
       ],
       "Yearly": [
         "Godišnje"
@@ -11920,6 +11904,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "Detaljna analiza blog objava o VPN-u"
+      ],
+      "Delete": [
+        "Izbriši"
       ],
       "Delete ${ name }?": [
         "Izbriši ${ name }?"

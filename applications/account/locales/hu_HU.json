@@ -12071,10 +12071,6 @@
       "Send & receive invitations": [
         "Meghívók küldése és fogadása"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Szerverek több mint ${ vpnServersCountData.paid.countries } országban",
-        "Szerverek több mint ${ vpnServersCountData.paid.countries } országban"
-      ],
       "Share files with no size limit": [
         "Fájlok megosztása méretkorlátozás nélkül"
       ],
@@ -12648,9 +12644,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Dedikált szerverhelyek ${ numberOfCountries }+ országban"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Dedikált szerver helyek Észak-Amerikában és Európában"
       ],
       "Multi-platform support": [
         "Multi platform támogatás"
@@ -15442,13 +15435,6 @@
       "use your own email.": [
         "saját e-mail használata."
       ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "VPN ${ vpnServersCountData.free.countries } országban található szerverekkel"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "VPN ${ vpnServersCountData.free.countries } országban található szerverekkel",
-        "VPN ${ vpnServersCountData.free.countries } országban található szerverekkel"
-      ],
       "Yearly": [
         "Évente"
       ],
@@ -17540,6 +17526,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "Merüljön el mélyen a VPN blogbejegyzésekben"
+      ],
+      "Delete": [
+        "Törlés"
       ],
       "Delete ${ name }?": [
         "${ name } törlése?"

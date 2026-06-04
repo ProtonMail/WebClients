@@ -2586,9 +2586,6 @@
       "Change": [
         "Ubah"
       ],
-      "Completed": [
-        "Selesai"
-      ],
       "Configure": [
         "Atur"
       ],
@@ -2597,9 +2594,6 @@
       ],
       "Contacts": [
         "Kontak"
-      ],
-      "Domain connected": [
-        "Domain terhubung"
       ],
       "Estimated size": [
         "Perkiraan ukuran"
@@ -2622,9 +2616,6 @@
       "Migrate from Google Workspace": [
         "Migrasikan dari Google Workspace"
       ],
-      "Migrate users": [
-        "Migrasikan pengguna"
-      ],
       "Migration includes": [
         "Migrasi meliputi"
       ],
@@ -2639,9 +2630,6 @@
       ],
       "Organization does not have enough storage available": [
         "Organisasi tidak memiliki cukup ruang penyimpanan yang tersedia"
-      ],
-      "Required": [
-        "Wajib diisi"
       ],
       "Required to create user accounts": [
         "Diperlukan untuk membuat akun pengguna"
@@ -14986,9 +14974,6 @@
       "Send & receive invitations": [
         "Kirim & terima undangan"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Server di ${ vpnServersCountData.paid.countries }+ negara"
-      ],
       "Share files with no size limit": [
         "Bagikan file tanpa batasan ukuran"
       ],
@@ -15562,9 +15547,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Server khusus yang berlokasi di ${ numberOfCountries }+ negara"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Server khusus yang berlokasi di Amerika Utara dan Eropa"
       ],
       "Multi-platform support": [
         "Dukungan lintas platform"
@@ -18992,15 +18974,6 @@
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS } koneksi VPN berkecepatan tinggi"
       ],
-      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
-        "${ vpnServersCountData.free.servers }+ server VPN di ${ vpnServersCountData.free.countries } negara"
-      ],
-      "${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries }+ negara"
-      ],
-      "${ vpnServersCountData.paid.servers }+ server across": [
-        "${ vpnServersCountData.paid.servers }+ server di"
-      ],
       "/user": [
         "/pengguna"
       ],
@@ -19246,12 +19219,6 @@
       ],
       "use your own email.": [
         "gunakan alamat email Anda sendiri."
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "VPN dengan server di ${ vpnServersCountData.free.countries } negara"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "VPN dengan server di ${ vpnServersCountData.free.countries } negara"
       ],
       "We’ll email you before your trial ends.": [
         "Kami akan mengirimkan Anda email sebelum masa uji coba Anda berakhir."
@@ -21486,6 +21453,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "Dalami postingan blog VPN"
+      ],
+      "Delete": [
+        "Hapus"
       ],
       "Delete ${ name }?": [
         "Hapus ${ name }?"
