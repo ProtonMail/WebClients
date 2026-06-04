@@ -518,6 +518,9 @@
       "Get the apps": [
         "Apps herunterladen"
       ],
+      "Get the deal": [
+        "Jetzt zugreifen"
+      ],
       "Get the writing assistant": [
         "Hol dir den Schreibassistenten"
       ],
@@ -3663,6 +3666,9 @@
       "Please activate your search again": [
         "Bitte aktiviere die Inhaltssuche erneut."
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Bitte überprüfe, ob deine ABN für die grenzüberschreitende Mehrwertsteuer registriert ist"
+      ],
       "Please complete the billing details": [
         "Bitte die Rechnungsdaten eintragen"
       ],
@@ -3895,6 +3901,9 @@
       ],
       "Validation error": [
         "Überprüfungsfehler"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "MWST-Nummer muss mit ${ prefixes } beginnen"
       ],
       "We cannot retrieve this item": [
         "Dieses Element konnte nicht abgerufen werden"
@@ -9288,9 +9297,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Dedizierte Serverstandorte in mehr als ${ numberOfCountries } Ländern"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Dedizierte Serverstandorte in Nordamerika und Europa"
       ],
       "Multi-platform support": [
         "Multi-Plattform-Unterstützung"
