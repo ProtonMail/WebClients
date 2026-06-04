@@ -58,7 +58,7 @@ const MessagePrintModal = ({ labelID, message, ...rest }: Props) => {
         <ModalTwo className="print-modal" as={Form} onSubmit={handlePrint} {...rest} onClose={handleClose}>
             <ModalTwoHeader title={c('Info').t`Print email`} />
             <ModalTwoContent>
-                <MailboxContainerContextProvider containerRef={null} elementID={undefined} isResizing={false}>
+                <MailboxContainerContextProvider containerRef={null} isResizing={false}>
                     <MessageBody
                         messageLoaded
                         bodyLoaded
