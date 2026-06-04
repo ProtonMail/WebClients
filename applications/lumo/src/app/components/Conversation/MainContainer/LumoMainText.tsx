@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import lumoLogoNew from '@proton/styles/assets/img/lumo/lumo-cat-logo-v5.svg';
-
 // Custom hook for encrypted text animation
 const useEncryptedTextAnimation = (targetText: string, trigger: boolean, duration: number = 600) => {
     const [displayText, setDisplayText] = useState(targetText);
@@ -121,11 +119,7 @@ const LumoMainText = ({ isOnboardingCompleted, isSmallScreen, isGhostMode }: Lum
     //     return <h1 className={`${textClassName} onboarded`}>{displayText}</h1>;
     // }
 
-    return (
-        <span className="flex flex-row flex-nowrap items-center gap-2 mb-8 relative z-10">
-            <img src={lumoLogoNew} alt="Lumo" className="h-full" /> <h1 className={textClassName}>{displayText}</h1>
-        </span>
-    );
+    return <h1 className={clsx(textClassName, 'text-center mb-8 relative z-10')}>{displayText}</h1>;
 };
 
 export default LumoMainText;
