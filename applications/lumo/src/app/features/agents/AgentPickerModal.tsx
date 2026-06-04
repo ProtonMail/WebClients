@@ -10,7 +10,6 @@ import {
     ModalTwoContent,
     ModalTwoHeader,
     useModalStateObject,
-    useNotifications,
 } from '@proton/components';
 import { clsx } from 'clsx';
 
@@ -21,7 +20,7 @@ import { closeAgentPicker } from '../../redux/slices/composerActions';
 import type { CustomAgent } from '../../redux/slices/lumoUserSettings';
 import { AgentModal } from './AgentModal';
 import { DEFAULT_AGENT_ICON } from './constants';
-import { buildAgentChatLink, getAgentByline, isAgentEditable } from './registry';
+import { getAgentByline, isAgentEditable } from './registry';
 import {BRAND_NAME} from "@proton/shared/lib/constants";
 
 interface AgentPickerModalProps {
@@ -29,7 +28,7 @@ interface AgentPickerModalProps {
     conversationId?: string;
 }
 
-type AgentFilter = 'all' | 'mine' | 'default' | 'shared';
+type AgentFilter = 'all' | 'mine' | 'default';
 
 /**
  * Lists default (built-in) and personal agents so one can be activated for the
@@ -38,7 +37,6 @@ type AgentFilter = 'all' | 'mine' | 'default' | 'shared';
  */
 export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
     const dispatch = useLumoDispatch();
-    const { createNotification } = useNotifications();
     const isOpen = useLumoSelector((state) => state.composerActions.agentPickerOpen);
     const { personalAgents, protonAgents, createAgent } = useCustomAgents();
     const { activeAgentId, activateAgent } = useConversationAgent(conversationId);
@@ -74,24 +72,13 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
         openEditor(created.id);
     };
 
-    const copyAgentLink = async (agentId: string) => {
-        try {
-            await navigator.clipboard.writeText(buildAgentChatLink(agentId));
-            createNotification({ text: c('collider_2025:Info').t`Link copied`, type: 'success' });
-        } catch {
-            createNotification({ text: c('collider_2025:Error').t`Could not copy link`, type: 'error' });
-        }
-    };
-
     const filteredAgents = useMemo(() => {
         const byFilter: CustomAgent[] =
             filter === 'mine'
                 ? personalAgents
                 : filter === 'default'
                   ? protonAgents
-                  : filter === 'shared'
-                    ? []
-                    : [...protonAgents, ...personalAgents];
+                  : [...protonAgents, ...personalAgents];
         const query = search.trim().toLowerCase();
         if (query) {
             // Searching is an explicit lookup, so hidden agents are included in results.
@@ -109,7 +96,6 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
         { id: 'all', label: c('collider_2025:Filter').t`All` },
         { id: 'mine', label: c('collider_2025:Filter').t`Mine` },
         { id: 'default', label: c('collider_2025:Filter').t`Default` },
-        { id: 'shared', label: c('collider_2025:Filter').t`Shared`, disabled: true },
     ];
 
     return (
@@ -206,16 +192,6 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                                                     <Icon name="checkmark" size={4} className="color-primary" />
                                                 )}
                                             </span>
-                                            <Button
-                                                icon
-                                                shape="ghost"
-                                                size="small"
-                                                onClick={() => copyAgentLink(agent.id)}
-                                                title={c('collider_2025:Action').t`Copy link`}
-                                                aria-label={c('collider_2025:Action').t`Copy link`}
-                                            >
-                                                <Icon name="link" size={4} />
-                                            </Button>
                                             {editable ? (
                                                 <Button
                                                     icon
