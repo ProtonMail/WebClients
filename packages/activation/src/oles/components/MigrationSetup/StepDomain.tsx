@@ -4,7 +4,10 @@ import { c } from 'ttag';
 
 import { createDomain, syncDomain } from '@proton/account/domains/actions';
 import { Button } from '@proton/atoms/Button/Button';
-import { Option, SelectTwo, useErrorHandler, useNotifications } from '@proton/components/index';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
