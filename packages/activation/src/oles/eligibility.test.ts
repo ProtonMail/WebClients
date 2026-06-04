@@ -4,7 +4,7 @@ import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { buildSubscription } from '@proton/testing/builders';
 
-import { isOLESEligible } from './eligibility';
+import { isUserOLESEligible as isOLESEligible } from './eligibility';
 
 const baseOrganization: Partial<Organization> = {
     RequiresKey: 1,
