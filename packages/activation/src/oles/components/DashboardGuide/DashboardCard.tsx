@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
-import { SettingsLink, SettingsSectionWide } from '@proton/components/index';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { IcBuildings } from '@proton/icons/icons/IcBuildings';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcClock } from '@proton/icons/icons/IcClock';
