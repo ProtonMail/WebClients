@@ -176,6 +176,9 @@
       "Get the apps": [
         "Obtenha os aplicativos"
       ],
+      "Get the deal": [
+        "Obtenha a oferta"
+      ],
       "Get verification code": [
         "Obter código de verificação"
       ],
@@ -938,6 +941,9 @@
       "Add to active": [
         "Adicionar a ativos"
       ],
+      "Agents": [
+        "Agentes"
+      ],
       "Already in KB": [
         "Já na KB"
       ],
@@ -1069,6 +1075,9 @@
       ],
       "Turn on memory": [
         "Ativar memórias"
+      ],
+      "Update from chats": [
+        "Atualizar a partir do bate-papos"
       ],
       "Upload file to Drive": [
         "Enviar arquivo para o Drive"
@@ -1531,6 +1540,11 @@
         "Forneça mais informações"
       ]
     },
+    "collider_2025: Hint": {
+      "You can turn it off again at any time.": [
+        "Você pode desativá-lo novamente a qualquer momento."
+      ]
+    },
     "collider_2025: Info": {
       " ${ BRAND_NAME } file is hidden (not supported yet)": [
         " arquivo da ${ BRAND_NAME } está oculto (ainda não suportado)"
@@ -1965,6 +1979,9 @@
       ],
       "File upload": [
         "Envio de arquivo"
+      ],
+      "From chats": [
+        "De bate-papos"
       ],
       "Loop": [
         "Laço"
@@ -2641,6 +2658,12 @@
       "Cancel": [
         "Cancelar"
       ],
+      "Change": [
+        "Alterar"
+      ],
+      "Change agent": [
+        "Alterar agente"
+      ],
       "Change style": [
         "Alterar estilo"
       ],
@@ -2652,6 +2675,9 @@
       ],
       "Close": [
         "Fechar"
+      ],
+      "Copy link": [
+        "Copiar link"
       ],
       "Create": [
         "Criar"
@@ -2680,6 +2706,9 @@
       "Download image": [
         "Baixar imagem"
       ],
+      "Edit agent": [
+        "Editar agente"
+      ],
       "Edit image": [
         "Editar imagem"
       ],
@@ -2704,6 +2733,9 @@
       "Keep these chats": [
         "Manter estes bate-papos"
       ],
+      "Make a copy": [
+        "Fazer uma cópia"
+      ],
       "Manage chats": [
         "Gerenciar bate-papos"
       ],
@@ -2722,6 +2754,9 @@
       "More options": [
         "Mais opções"
       ],
+      "New agent": [
+        "Novo agente"
+      ],
       "Next message": [
         "Próxima mensagem"
       ],
@@ -2733,6 +2768,12 @@
       ],
       "Regenerate": [
         "Gerar novamente"
+      ],
+      "Remove": [
+        "Remover"
+      ],
+      "Remove agent": [
+        "Remover agente"
       ],
       "Remove all": [
         "Remover todos"
@@ -2798,6 +2839,35 @@
         "O que precisa ser alterado?"
       ]
     },
+    "collider_2025:Agent": {
+      "(copy)": [
+        "(copiar)"
+      ]
+    },
+    "collider_2025:Agent description": {
+      "Help with login, password, 2FA and recovery issues.": [
+        "Ajuda com problemas de início de sessão, senha, A2F e recuperação."
+      ]
+    },
+    "collider_2025:Agent name": {
+      "Account Assistant": [
+        "Assistente de contas"
+      ],
+      "Data Analyst": [
+        "Analista de dados"
+      ],
+      "Summarizer": [
+        "Resumir"
+      ],
+      "Writing Assistant": [
+        "Assistente de escrita"
+      ]
+    },
+    "collider_2025:Badge": {
+      "Default": [
+        "Padrão"
+      ]
+    },
     "collider_2025:Button": {
       "Add instructions to tailor ${ LUMO_SHORT_APP_NAME }'s responses": [
         "Adicione instruções para personalizar as respostas do ${ LUMO_SHORT_APP_NAME }"
@@ -2813,6 +2883,9 @@
       ],
       "Close sidebar": [
         "Fechar barra lateral"
+      ],
+      "Create agent": [
+        "Criar agente"
       ],
       "Create project": [
         "Criar projeto"
@@ -2891,6 +2964,9 @@
       "Cannot link the root folder. Please select a subfolder.": [
         "Não é possível vincular a pasta raiz. Selecione uma subpasta."
       ],
+      "Could not copy link": [
+        "Não foi possível copiar o link"
+      ],
       "Database connection lost. Please refresh the page to continue.": [
         "Conexão com o banco de dados perdida. Atualize a página para continuar."
       ],
@@ -2957,6 +3033,17 @@
       ],
       "Tailored responses based on your project’s files and instructions.": [
         "Respostas personalizadas com base nos arquivos e instruções do seu projeto."
+      ]
+    },
+    "collider_2025:Filter": {
+      "All": [
+        "Todos"
+      ],
+      "Default": [
+        "Padrão"
+      ],
+      "Shared": [
+        "Compartilhado"
       ]
     },
     "collider_2025:Finance": {
@@ -3092,6 +3179,9 @@
       "Learn more about how project knowledge works": [
         "Saiba mais sobre como funciona o conhecimento do projeto"
       ],
+      "Link copied": [
+        "Link copiado"
+      ],
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Vincule arquivos do ${ DRIVE_APP_NAME } ou envie do seu computador."
       ],
@@ -3148,8 +3238,14 @@
       "chats": [
         "bate-papos"
       ],
+      "Conversation starters (optional)": [
+        "Iniciadores de conversa (opcional)"
+      ],
       "Created on": [
         "Criada em"
+      ],
+      "Description (optional)": [
+        "Descrição (opcional)"
       ],
       "Discover what ${ LUMO_SHORT_APP_NAME } can create": [
         "Descubra o que o ${ LUMO_SHORT_APP_NAME } pode criar"
@@ -3159,6 +3255,9 @@
       ],
       "Folder name": [
         "Nome da pasta"
+      ],
+      "Hide from list": [
+        "Ocultar da lista"
       ],
       "Instructions": [
         "Instruções"
@@ -3187,6 +3286,12 @@
       ]
     },
     "collider_2025:Placeholder": {
+      "Account recovery assistant": [
+        "Assistente de recuperação de conta"
+      ],
+      "Add a conversation starter": [
+        "Adicionar um iniciador de conversa"
+      ],
       "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
         "Adicione instruções sobre o tom, estilo e personalidade que você deseja que o ${ LUMO_SHORT_APP_NAME } adote."
       ],
@@ -3205,8 +3310,14 @@
       "Enter project name": [
         "Insira o nome do projeto"
       ],
+      "Help with login, password and recovery issues.": [
+        "Ajuda com problemas de início de sessão, senha e recuperação."
+      ],
       "Holiday planner": [
         "Planejador de feriados"
+      ],
+      "Search agents": [
+        "Pesquisar agentes"
       ],
       "Search chats": [
         "Pesquisar bate-papos"
@@ -3493,11 +3604,17 @@
       ]
     },
     "collider_2025:Title": {
+      "Agents": [
+        "Agentes"
+      ],
       "An AI assistant should empower you, not exploit you for your data. That’s why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Um assistente de IA deve empoderar você, não explorá-lo por seus dados. É por isso que desenvolvemos o ${ LUMO_SHORT_APP_NAME }: para proporcionar a você todos os benefícios da IA, sem comprometer sua privacidade e segurança de dados."
       ],
       "Built by the team that knows privacy": [
         "Desenvolvido pela equipe que entende de privacidade"
+      ],
+      "Create agent": [
+        "Criar agente"
       ],
       "Create folder": [
         "Criar pasta"
@@ -3513,6 +3630,9 @@
       ],
       "Earlier": [
         "Anterior"
+      ],
+      "Edit agent": [
+        "Editar agente"
       ],
       "Edit Instructions": [
         "Editar instruções"
@@ -6212,6 +6332,9 @@
       "Trigger conversations limit": [
         "Limite de conversas de ativação"
       ],
+      "Trigger generation rejected": [
+        "Gatilho de geração rejeitado"
+      ],
       "Trigger high demand": [
         "Ativar alta demanda"
       ],
@@ -7217,9 +7340,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Localizações de servidores dedicados em ${ numberOfCountries }+ países"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Localizações de servidores dedicados na América do Norte e Europa"
       ],
       "Multi-platform support": [
         "Suporte multiplataforma"

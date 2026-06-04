@@ -2571,9 +2571,6 @@
       "Contacts": [
         "Mga Contact"
       ],
-      "Domain connected": [
-        "Nakakonekta ang domain"
-      ],
       "Estimated size": [
         "Tinatayang laki"
       ],
@@ -2588,9 +2585,6 @@
       ],
       "Migrate from Google Workspace": [
         "I-migrate mula sa Google Workspace"
-      ],
-      "Migrate users": [
-        "I-migrate ang mga user"
       ],
       "Migration includes": [
         "Kasama sa migration ang"
@@ -2607,9 +2601,6 @@
       ],
       "Organization does not have enough storage available": [
         "Walang sapat na storage ang organisasyon"
-      ],
-      "Required": [
-        "Kailangan"
       ],
       "Required to create user accounts": [
         "Kinakailangan upang gumawa ng mga account ng user"
@@ -14942,10 +14933,6 @@
       "Send & receive invitations": [
         "Magpadala at tumanggap ng mga imbitasyon"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Mga server sa ${ vpnServersCountData.paid.countries }+ bansa",
-        "Mga server sa ${ vpnServersCountData.paid.countries }na + bansa"
-      ],
       "Share files with no size limit": [
         "I-share ang mga file nang walang limitasyon sa laki"
       ],
@@ -15528,9 +15515,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Mga lokasyon ng dedicated server sa ${ numberOfCountries }+ na bansa"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Mga lokasyon ng dedicated server sa North America at Europe"
       ],
       "Multi-platform support": [
         "Multi-platform na suporta"
@@ -18932,18 +18916,6 @@
         "${ VPN_CONNECTIONS } high-speed na koneksyon sa VPN",
         "${ VPN_CONNECTIONS } na high-speed na koneksyon sa VPN"
       ],
-      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
-        "${ vpnServersCountData.free.servers }+ VPN server sa ${ vpnServersCountData.free.countries } bansa",
-        "${ vpnServersCountData.free.servers }na + VPN server sa ${ vpnServersCountData.free.countries } na bansa"
-      ],
-      "${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries }+ bansa",
-        "${ vpnServersCountData.paid.countries }na + bansa"
-      ],
-      "${ vpnServersCountData.paid.servers }+ server across": [
-        "${ vpnServersCountData.paid.servers }+ server sa buong",
-        "${ vpnServersCountData.paid.servers }na + server sa buong"
-      ],
       "/user": [
         "/user"
       ],
@@ -19190,13 +19162,6 @@
       ],
       "use your own email.": [
         "gamitin ang sariling email."
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "VPN na may mga server sa ${ vpnServersCountData.free.countries } bansa"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "VPN na may mga server sa ${ vpnServersCountData.free.countries } bansa",
-        "VPN na may mga server sa ${ vpnServersCountData.free.countries } na bansa"
       ],
       "We’ll email you before your trial ends.": [
         "Mag-e-email bago matapos ang pagsubok."
@@ -21445,6 +21410,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "Masusing pag-aaral sa mga blog post ng VPN"
+      ],
+      "Delete": [
+        "I-delete"
       ],
       "Delete ${ name }?": [
         "I-delete ang ${ name }?"

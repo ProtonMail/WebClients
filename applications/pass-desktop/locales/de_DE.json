@@ -679,6 +679,9 @@
       "Skip": [
         "Überspringen"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Jemand hat einen Eintrag über ${ PASS_APP_NAME } mit dir geteilt."
+      ],
       "Sort vault items": [
         "Tresoreinträge sortieren"
       ],
@@ -1308,6 +1311,9 @@
       ],
       "Trashing item failed": [
         "Fehler beim Verschieben des Eintrags in den Papierkorb."
+      ],
+      "Try reaching out to the link owner.": [
+        "Versuche, dich mit dem Eigentümer des Links in Verbindung zu setzen."
       ],
       "Unable to generate an OTP code for this item": [
         "Es konnte kein OTP-Code für diesen Eintrag generiert werden."
@@ -3761,6 +3767,9 @@
       "Theme": [
         "Farbschema"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Dieser Eintrag ist bis ${ date } oder bis zum Erreichen der Anzeigegrenze zugänglich."
+      ],
       "Tier/Level": [
         "Stufe/Ebene"
       ],
@@ -4111,6 +4120,12 @@
       ],
       "The file you are trying to import is empty": [
         "Die Datei, die du importieren möchtest, ist leer."
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Diese Funktion ist in deinem Abonnement nicht enthalten. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Diese Funktion ist in deinem Abonnement nicht enthalten. Kontaktiere deinen Administrator um Zugang zu erhalten."
       ],
       "Total files: ": [
         "Dateien insgesamt: "

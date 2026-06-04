@@ -176,6 +176,9 @@
       "Get the apps": [
         "Apps herunterladen"
       ],
+      "Get the deal": [
+        "Jetzt zugreifen"
+      ],
       "Get verification code": [
         "Verifizierungscode anfordern"
       ],
@@ -934,6 +937,9 @@
       ],
       "Add to active": [
         "Zu Aktiven hinzufügen"
+      ],
+      "Agents": [
+        "Agenten"
       ],
       "Already in KB": [
         "Bereits in der Wissensdatenbank"
@@ -2545,6 +2551,12 @@
       "Cancel": [
         "Abbrechen"
       ],
+      "Change": [
+        "Ändern"
+      ],
+      "Change agent": [
+        "Agent wechseln"
+      ],
       "Choose project icon": [
         "Projektsymbol auswählen"
       ],
@@ -2553,6 +2565,9 @@
       ],
       "Close": [
         "Schließen"
+      ],
+      "Copy link": [
+        "Link kopieren"
       ],
       "Create": [
         "Erstellen"
@@ -2581,6 +2596,9 @@
       "Download image": [
         "Bild herunterladen"
       ],
+      "Edit agent": [
+        "Agent bearbeiten"
+      ],
       "Edit image": [
         "Bild bearbeiten"
       ],
@@ -2605,6 +2623,9 @@
       "Keep these chats": [
         "Diese Chats behalten"
       ],
+      "Make a copy": [
+        "Kopieren"
+      ],
       "Manage chats": [
         "Chats verwalten"
       ],
@@ -2620,6 +2641,9 @@
       "More options": [
         "Weitere Optionen"
       ],
+      "New agent": [
+        "Neuer Agent"
+      ],
       "Next message": [
         "Nächste Nachricht"
       ],
@@ -2631,6 +2655,12 @@
       ],
       "Regenerate": [
         "Neu generieren"
+      ],
+      "Remove": [
+        "Entfernen"
+      ],
+      "Remove agent": [
+        "Agent entfernen"
       ],
       "Remove all": [
         "Alle entfernen"
@@ -2693,6 +2723,44 @@
         "Was muss geändert werden?"
       ]
     },
+    "collider_2025:Agent": {
+      "(copy)": [
+        "(Kopie)"
+      ]
+    },
+    "collider_2025:Agent description": {
+      "Draft, refine and proofread your writing.": [
+        "Deinen Text entwerfen, überarbeiten und korrigieren."
+      ],
+      "Help with login, password, 2FA and recovery issues.": [
+        "Hilfe bei Problemen mit der Anmeldung, dem Passwort, der Zwei-Faktor-Authentifizierung und der Wiederherstellung."
+      ],
+      "Summarize documents into clear, concise takeaways.": [
+        "Dokumente zu klaren, prägnanten Kernaussagen zusammenfassen."
+      ],
+      "Turn a CSV or spreadsheet into a clear analysis.": [
+        "Eine CSV-Datei oder eine Tabellenkalkulation in eine übersichtliche Analyse verwandeln."
+      ]
+    },
+    "collider_2025:Agent name": {
+      "Account Assistant": [
+        "Konto-Assistent"
+      ],
+      "Data Analyst": [
+        "Datenanalyst"
+      ],
+      "Summarizer": [
+        "Zusammenfasser"
+      ],
+      "Writing Assistant": [
+        "Schreibassistent"
+      ]
+    },
+    "collider_2025:Badge": {
+      "Default": [
+        "Standard"
+      ]
+    },
     "collider_2025:Button": {
       "Add instructions to tailor ${ LUMO_SHORT_APP_NAME }'s responses": [
         "Anweisungen zum Anpassen der Antworten von ${ LUMO_SHORT_APP_NAME } hinzufügen"
@@ -2708,6 +2776,9 @@
       ],
       "Close sidebar": [
         "Seitenleiste schließen"
+      ],
+      "Create agent": [
+        "Agent erstellen"
       ],
       "Create project": [
         "Projekt erstellen"
@@ -2786,6 +2857,9 @@
       "Cannot link the root folder. Please select a subfolder.": [
         "Du kannst nicht den Stammordner verknüpfen. Wähle bitte einen Unterordner aus."
       ],
+      "Could not copy link": [
+        "Link konnte nicht kopiert werden"
+      ],
       "Database connection lost. Please refresh the page to continue.": [
         "Datenbankverbindung verloren. Bitte lade die Seite neu, um fortzufahren."
       ],
@@ -2848,6 +2922,17 @@
         "Maßgeschneiderte Antworten basierend auf den Dateien und Anweisungen deines Projekts."
       ]
     },
+    "collider_2025:Filter": {
+      "All": [
+        "Alle"
+      ],
+      "Default": [
+        "Standard"
+      ],
+      "Shared": [
+        "Geteilt"
+      ]
+    },
     "collider_2025:Finance": {
       "Exchange": [
         "Austauschen"
@@ -2878,6 +2963,9 @@
       "${ project.fileCount } files": [
         "${ project.fileCount } Dateien"
       ],
+      "Agents turn a chat into a focused assistant with its own instructions.": [
+        "Agenten verwandeln einen Chat in einen zielgerichteten Assistenten mit eigenen Anweisungen."
+      ],
       "AIs from Big Tech are built on harvesting your data. But ${ LUMO_SHORT_APP_NAME } is different. It was created by the scientists behind innovative, privacy-first services like ${ MAIL_APP_NAME } and ${ VPN_APP_NAME }. And it’s owned by a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.": [
         "KIs von großen Technologieunternehmen basieren auf der Sammlung deiner Daten. ${ LUMO_SHORT_APP_NAME } ist anders. Es wurde von den Wissenschaftlern hinter innovativen, datenschutzorientierten Diensten wie ${ MAIL_APP_NAME } und ${ VPN_APP_NAME } entwickelt. Und es gehört einer Schweizer Non-Profit-Organisation, deren Mission es ist, den Datenschutz zu fördern und niemals Geld mit Nutzerdaten zu verdienen."
       ],
@@ -2890,11 +2978,17 @@
       "Are you sure you want to delete this conversation? This action cannot be undone.": [
         "Möchtest du diese Unterhaltung wirklich löschen? Dies kann nicht rückgängig gemacht werden."
       ],
+      "Ask a question to get started. Your conversation is private.": [
+        "Stelle eine Frage, um loszulegen. Dein Gespräch ist vertraulich."
+      ],
       "Auto-retrieved": [
         "Automatisch abgerufen"
       ],
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Navigiere zu dem ${ DRIVE_SHORT_APP_NAME }-Ordner, den du mit diesem Projekt verknüpfen möchtest, und klicke dann auf \"Diesen Ordner verknüpfen\"."
+      ],
+      "Built-in ${ BRAND_NAME } agent": [
+        "Integrierter ${ BRAND_NAME }-Agent"
       ],
       "Conversation encrypted": [
         "Unterhaltung verschlüsselt"
@@ -2904,6 +2998,9 @@
       ],
       "Drive files are not available for guest users": [
         "Drive-Dateien sind für Gastbenutzer nicht verfügbar"
+      ],
+      "Example prompts shown when a conversation with this agent begins.": [
+        "Beispielfragen, die zu Beginn eines Gesprächs mit diesem Agenten angezeigt werden."
       ],
       "File \"${ file.name }\" is already in this project": [
         "Die Datei \"${ file.name }\" ist bereits in diesem Projekt"
@@ -2920,8 +3017,14 @@
       "Initializing Drive...": [
         "Drive wird initialisiert..."
       ],
+      "Keep this agent out of the picker. It can still be opened with a shared link.": [
+        "Halte diesen Agenten aus der Auswahl fern. Er kann weiterhin über einen geteilten Link geöffnet werden."
+      ],
       "Learn more about how project knowledge works": [
         "Erfahre mehr darüber, wie Projektwissen funktioniert"
+      ],
+      "Link copied": [
+        "Link kopiert"
       ],
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Dateien von ${ DRIVE_APP_NAME } verknüpfen oder vom Computer hochladen."
@@ -2979,14 +3082,23 @@
       "chats": [
         "Chats"
       ],
+      "Conversation starters (optional)": [
+        "Unterhaltungsaufhänger (optional)"
+      ],
       "Created on": [
         "Erstellt am"
+      ],
+      "Description (optional)": [
+        "Beschreibung (optional)"
       ],
       "Edit conversation title": [
         "Titel der Unterhaltung bearbeiten"
       ],
       "Folder name": [
         "Ordnername"
+      ],
+      "Hide from list": [
+        "In der Liste ausblenden"
       ],
       "Instructions": [
         "Anweisungen"
@@ -3015,6 +3127,12 @@
       ]
     },
     "collider_2025:Placeholder": {
+      "Account recovery assistant": [
+        "Assistent zur Kontowiederherstellung"
+      ],
+      "Add a conversation starter": [
+        "Einen Unterhaltungsaufhänger hinzufügen"
+      ],
       "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
         "Ergänze Anweisungen zum Tonfall, Stil und zur Persönlichkeit, die ${ LUMO_SHORT_APP_NAME } verwenden soll."
       ],
@@ -3023,6 +3141,9 @@
       ],
       "Ask anything…": [
         "Frag alles…"
+      ],
+      "Describe the role, scope, and behavior you want ${ LUMO_SHORT_APP_NAME } to adopt for this agent.": [
+        "Beschreibe die Rolle, den Umfang und das Verhalten, das ${ LUMO_SHORT_APP_NAME } für diesen Agenten annehmen soll."
       ],
       "e.g. Iterate over documents in a folder, extract people and dates from each, then build a graph of how terms relate.": [
         "Z. B. Dokumente in einem Ordner durchlaufen, Personen und Termine aus jedem extrahieren und dann eine Grafik aufbauen, wie Begriffe miteinander in Beziehung stehen."
@@ -3033,8 +3154,14 @@
       "Enter project name": [
         "Projektname eingeben"
       ],
+      "Help with login, password and recovery issues.": [
+        "Hilfe bei Problemen mit der Anmeldung, dem Passwort und der Wiederherstellung."
+      ],
       "Holiday planner": [
         "Urlaubsplaner"
+      ],
+      "Search agents": [
+        "Agenten suchen"
       ],
       "Search chats": [
         "Chats durchsuchen"
@@ -3231,6 +3358,9 @@
       ]
     },
     "collider_2025:Subline": {
+      "Agents turn a chat into a focused assistant with its own instructions. Pick one from the composer to start a conversation with it.": [
+        "Agenten verwandeln einen Chat in einen zielgerichteten Assistenten mit eigenen Anweisungen. Wähle einen aus dem Editor aus, um ein Gespräch mit ihm zu beginnen."
+      ],
       "Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.": [
         "Mit Projekten kannst du zusammenhängende Chats, Dateien und Anleitungen an einem Ort zusammenfassen. So behältst du den Überblick und kannst Inhalte in verschiedenen Chats wiederverwenden."
       ]
@@ -3270,11 +3400,17 @@
       ]
     },
     "collider_2025:Title": {
+      "Agents": [
+        "Agenten"
+      ],
       "An AI assistant should empower you, not exploit you for your data. That’s why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Ein KI-Assistent sollte dich stärken, nicht deine Daten ausnutzen. Deshalb haben wir ${ LUMO_SHORT_APP_NAME } entwickelt: Um dir alle Vorteile der KI zu bieten, ohne deine Privatsphäre und Datensicherheit zu gefährden."
       ],
       "Built by the team that knows privacy": [
         "Entwickelt vom Team, das Datenschutz versteht"
+      ],
+      "Create agent": [
+        "Agent erstellen"
       ],
       "Create folder": [
         "Ordner erstellen"
@@ -3290,6 +3426,9 @@
       ],
       "Earlier": [
         "Früher"
+      ],
+      "Edit agent": [
+        "Agent bearbeiten"
       ],
       "Edit Instructions": [
         "Anweisungen bearbeiten"
@@ -4578,6 +4717,9 @@
       "Payment process not supported": [
         "Bezahlvorgang nicht unterstützt"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Bitte überprüfe, ob deine ABN für die grenzüberschreitende Mehrwertsteuer registriert ist"
+      ],
       "Please complete the billing details": [
         "Bitte die Rechnungsdaten eintragen"
       ],
@@ -4661,6 +4803,9 @@
       ],
       "Username must end with a letter or digit": [
         "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "MWST-Nummer muss mit ${ prefixes } beginnen"
       ],
       "Wrong billing address": [
         "Ungültige Rechnungsadresse"
@@ -6947,9 +7092,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Dedizierte Serverstandorte in mehr als ${ numberOfCountries } Ländern"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Dedizierte Serverstandorte in Nordamerika und Europa"
       ],
       "Multi-platform support": [
         "Multi-Plattform-Unterstützung"

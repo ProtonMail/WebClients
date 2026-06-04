@@ -1606,9 +1606,6 @@
       ]
     },
     "BOSS": {
-      "Domain connected": [
-        "Domena połączona"
-      ],
       "Migration started for ${ n } user": [
         "Migracja rozpoczęta dla ${ n } użytkownika",
         "Migracja rozpoczęta dla ${ n } użytkowników",
@@ -1623,9 +1620,6 @@
       ],
       "Organization does not have enough storage available": [
         "Organizacja nie ma wystarczającej ilości przestrzeni dyskowej"
-      ],
-      "Required": [
-        "Wymagane"
       ],
       "Select at least one user to start a migration": [
         "Zaznacz co najmniej jednego użytkownika, aby rozpocząć migrację"
@@ -9668,12 +9662,6 @@
       "Send & receive invitations": [
         "Wysyłaj i otrzymuj zaproszenia"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Serwery w ponad ${ vpnServersCountData.paid.countries } kraju",
-        "Serwery w ponad ${ vpnServersCountData.paid.countries } krajach",
-        "Serwery w ponad ${ vpnServersCountData.paid.countries } krajach",
-        "Serwery w ponad ${ vpnServersCountData.paid.countries } krajach"
-      ],
       "Share files with no size limit": [
         "Udostępniaj pliki bez limitów"
       ],
@@ -10241,9 +10229,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Dedykowane serwery w ponad ${ numberOfCountries } krajach"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Dedykowane serwery w Ameryce Północnej i Europie"
       ],
       "Multi-platform support": [
         "Wsparcie dla wielu systemów operacyjnych"
@@ -14905,6 +14890,9 @@
       ],
       "View organization events by upgrading to Professional": [
         "Zobacz zdarzenia organizacji w planie Professional"
+      ],
+      "VPN apps": [
+        "Aplikacje VPN"
       ],
       "Warning": [
         "Ostrzeżenie"

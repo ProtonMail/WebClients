@@ -38,11 +38,23 @@
       "Delete": [
         "Vymazať"
       ],
+      "Disable": [
+        "Deaktivovať"
+      ],
+      "Disable Hardware Acceleration": [
+        "Deaktivovať hardvérové zrýchlenie"
+      ],
+      "Enable": [
+        "Povoliť"
+      ],
       "Enable diagnostic logs": [
         "Povoliť diagnostické záznamy"
       ],
       "Enable diagnostic logs from the Chromium engine.": [
         "Povoliť diagnostické záznamy z enginu Chromium."
+      ],
+      "Enable Hardware Acceleration": [
+        "Povoliť hardvérové zrýchlenie"
       ],
       "Force Reload": [
         "Vynútené obnovenie"
@@ -122,6 +134,12 @@
       "Uninstall ${ MAIL_APP_NAME }": [
         "Odinštalovať ${ MAIL_APP_NAME }"
       ],
+      "When hardware acceleration is disabled, the app falls back to software rendering. This can cause choppy animations, dropped frames, slower video playback, higher CPU usage, and reduced graphics performance.": [
+        "Ak je hardvérová akcelerácia vypnutá, aplikácia prejde na softvérové vykresľovanie. To môže spôsobiť trhané animácie, vynechávanie snímok, spomalené prehrávanie videa, vyššie zaťaženie procesora a znížený grafický výkon."
+      ],
+      "When hardware acceleration is enabled, the app uses your device’s dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
+        "Keď je povolené hardvérové zrýchlenie, aplikácia na vykresľovanie využíva špecializovaný grafický hardvér vášho zariadenia. Na niektorých systémoch to môže spôsobiť problémy s kompatibilitou."
+      ],
       "Zoom": [
         "Priblížiť"
       ],
@@ -133,6 +151,12 @@
       ]
     },
     "App Menu": {
+      "Disable Hardware Acceleration": [
+        "Deaktivovať hardvérovú akceleráciu"
+      ],
+      "Enable Hardware Acceleration": [
+        "Povoliť hardvérové zrýchlenie"
+      ],
       "Services": [
         "Služby"
       ]

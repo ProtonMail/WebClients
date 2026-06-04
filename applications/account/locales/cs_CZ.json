@@ -1458,6 +1458,9 @@
       "Send email reminder": [
         "Poslat připomenutí e-mailem"
       ],
+      "Send feedback": [
+        "Odeslat zpětnou vazbu"
+      ],
       "Send messages with @pm.me": [
         "Odesílat zprávy s @pm.me"
       ],
@@ -1511,6 +1514,9 @@
       ],
       "Share": [
         "Sdílet"
+      ],
+      "Share feedback": [
+        "Sdílet zpětnou vazbu"
       ],
       "Share via link": [
         "Sdílet přes odkaz"
@@ -2889,9 +2895,6 @@
       ]
     },
     "BOSS": {
-      "${ BRAND_NAME } Migration Assistant": [
-        "Asistent migrace ${ BRAND_NAME }"
-      ],
       "Authenticate": [
         "Ověřit"
       ],
@@ -2904,9 +2907,6 @@
       "Change": [
         "Změnit"
       ],
-      "Completed": [
-        "Dokončeno"
-      ],
       "Configure": [
         "Konfigurovat"
       ],
@@ -2915,9 +2915,6 @@
       ],
       "Contacts": [
         "Kontakty"
-      ],
-      "Domain connected": [
-        "Doména připojena"
       ],
       "Estimated size": [
         "Odhadovaná velikost"
@@ -2949,9 +2946,6 @@
       "Migrate from Google Workspace": [
         "Migrovat z Google Workspace"
       ],
-      "Migrate users": [
-        "Migrovat uživatele"
-      ],
       "Migration includes": [
         "Migrace zahrnuje"
       ],
@@ -2969,9 +2963,6 @@
       ],
       "Organization does not have enough storage available": [
         "Organizace nemá dostatečně velké úložiště"
-      ],
-      "Required": [
-        "Vyžadováno"
       ],
       "Required to create user accounts": [
         "Nutné pro vytvoření uživatelských účtů"
@@ -3000,9 +2991,6 @@
       "Status": [
         "Stav"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
-        "Chcete-li migrovat data své organizace, musíte nainstalovat ${ BRAND_NAME } Migration Assistant z Google Workspace Markeplace. Tím udělíte společnosti ${ BRAND_NAME } oprávnění kopírovat vaše data. Po instalaci se vraťte sem a pokračujte."
-      ],
       "User": [
         "Uživatel"
       ],
@@ -3023,9 +3011,6 @@
       ],
       "What are you migrating?": [
         "Co migrujete?"
-      ],
-      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
-        "Musíte udělit společnosti ${ BRAND_NAME } oprávnění ke kopírování vašich dat. Po udělení oprávnění se vraťte sem a pokračujte."
       ]
     },
     "breadcrumb": {
@@ -10356,6 +10341,9 @@
       "Copy your referral link": [
         "Kopírovat váš doporučující odkaz"
       ],
+      "Couldn´t send feedback": [
+        "Nelze odeslat zpětnou vazbu"
+      ],
       "Country code": [
         "Kód země"
       ],
@@ -11256,6 +11244,9 @@
       "Key deletion is irreversible!": [
         "Smazání klíče je nevratné!"
       ],
+      "Key sections reorganized for faster access.": [
+        "Hlavní sekce byly přeskupeny, aby se k nim dalo rychleji dostat."
+      ],
       "Keys created": [
         "Klíče vytvořeny"
       ],
@@ -11423,6 +11414,12 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Data o nových aktivitách se přestanou shromažďovat a zobrazovat."
+      ],
+      "New sidebar": [
+        "Nový postranní panel"
+      ],
+      "New sidebar layout": [
+        "Nové uspořádání postranního panelu"
       ],
       "New user invited to organization": [
         "Nový uživatel byl pozván do organizace"
@@ -11979,6 +11976,9 @@
       "Settings updated": [
         "Nastavení aktualizováno"
       ],
+      "Share your thoughts...": [
+        "Sdílejte své myšlenky..."
+      ],
       "Shared ${ vaultLink } deleted": [
         "Sdílený ${ vaultLink } smazán"
       ],
@@ -12129,6 +12129,9 @@
       "Swiss based": [
         "Vytvořeno ve Švýcarsku"
       ],
+      "Switch sidebars": [
+        "Přepnout postranní panely"
+      ],
       "Symbols (#$&)": [
         "Symboly (#$&)"
       ],
@@ -12161,6 +12164,9 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Děkujeme vám za přihlášení k odběru. Bezpečné prohlížení začíná nyní."
+      ],
+      "Thanks - your feedback was sent.": [
+        "Děkujeme – vaše zpětná vazba byla odeslána."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Děkujeme za podporu našeho poslání budovat lepší internet, kde jsou soukromí a svoboda na prvním místě."
@@ -13190,6 +13196,9 @@
       ],
       "your encrypted data will be locked": [
         "vaše šifrovaná data budou uzamčena"
+      ],
+      "Your feedback": [
+        "Vaše zpětná vazba"
       ],
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
@@ -17268,12 +17277,6 @@
       "Send & receive invitations": [
         "Odesílání a přijímání pozvánek"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Servery v ${ vpnServersCountData.paid.countries }+ zemi",
-        "Servery ve ${ vpnServersCountData.paid.countries }+ zemích",
-        "Servery v ${ vpnServersCountData.paid.countries }+ zemích",
-        "Servery v ${ vpnServersCountData.paid.countries }+ zemích"
-      ],
       "Share files with no size limit": [
         "Sdílení souborů bez omezení velikosti"
       ],
@@ -17880,9 +17883,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Umístění dedikovaných serverů v ${ numberOfCountries }+ zemích"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Umístění dedikovaných serverů v Severní Americe a Evropě"
       ],
       "Multi-platform support": [
         "Podpora několika platforem"
@@ -21847,24 +21847,6 @@
         "${ VPN_CONNECTIONS } vysokorychlostních připojení VPN",
         "${ VPN_CONNECTIONS } vysokorychlostních připojení VPN"
       ],
-      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
-        "${ vpnServersCountData.free.servers }+ VPN serverů v ${ vpnServersCountData.free.countries } zemi",
-        "${ vpnServersCountData.free.servers }+ VPN serverů ve ${ vpnServersCountData.free.countries }+ zemích",
-        "${ vpnServersCountData.free.servers }+ VPN serverů ve ${ vpnServersCountData.free.countries }+ zemích",
-        "${ vpnServersCountData.free.servers }+ VPN serverů ve ${ vpnServersCountData.free.countries }+ zemích"
-      ],
-      "${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries }+ země",
-        "${ vpnServersCountData.paid.countries }+ země",
-        "${ vpnServersCountData.paid.countries }+ zemí",
-        "${ vpnServersCountData.paid.countries }+ zemí"
-      ],
-      "${ vpnServersCountData.paid.servers }+ server across": [
-        "${ vpnServersCountData.paid.servers }+ server napříč",
-        "${ vpnServersCountData.paid.servers }+ servery napříč",
-        "${ vpnServersCountData.paid.servers }+ serverů napříč",
-        "${ vpnServersCountData.paid.servers }+ serverů napříč"
-      ],
       "/user": [
         "/uživatel"
       ],
@@ -22137,15 +22119,6 @@
       ],
       "use your own email.": [
         "použijte svůj vlastní e-mail."
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "VPN se servery v ${ vpnServersCountData.free.countries } zemích"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "VPN se servery v ${ vpnServersCountData.free.countries } zemi",
-        "VPN se servery ve ${ vpnServersCountData.free.countries } zemích",
-        "VPN se servery v ${ vpnServersCountData.free.countries } zemích",
-        "VPN se servery v ${ vpnServersCountData.free.countries } zemích"
       ],
       "We’ll email you before your trial ends.": [
         "Před koncem zkušební verze vám zašleme e-mail."
@@ -24186,6 +24159,11 @@
         "Použijte nastavení ${ BRAND_NAME }"
       ]
     },
+    "Themes": {
+      "Themes": [
+        "Motivy"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } den",
@@ -24293,6 +24271,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } pro organizace"
+      ],
+      "${ VPN_APP_NAME } clients": [
+        "Klienti ${ VPN_APP_NAME }"
       ],
       "(active)": [
         "(aktivní)"
@@ -24804,6 +24785,9 @@
       "Deep dive into VPN blog posts": [
         "Začtěte se do článků o VPN na blogu"
       ],
+      "Delete": [
+        "Smazat"
+      ],
       "Delete ${ name }?": [
         "Smazat ${ name }?"
       ],
@@ -24924,6 +24908,9 @@
       "Download ${ PASS_APP_NAME } for your devices": [
         "Stáhněte ${ PASS_APP_NAME } pro svá zařízení"
       ],
+      "Download apps": [
+        "Stáhnout aplikace"
+      ],
       "Download the desktop app": [
         "Stáhnout desktopovou aplikaci"
       ],
@@ -25010,6 +24997,9 @@
       ],
       "Email privacy": [
         "Soukromí emailu"
+      ],
+      "Email subscriptions": [
+        "E-mailové odběry"
       ],
       "Email verification": [
         "Ověření e-mailu"
@@ -25206,6 +25196,9 @@
       "Help center": [
         "Centrum podpory"
       ],
+      "Help us improve": [
+        "Pomozte nám se zlepšit"
+      ],
       "Helping activists in Hong Kong": [
         "Pomoc aktivistům v Hong Kongu"
       ],
@@ -25356,6 +25349,9 @@
       "Mobile": [
         "Mobil"
       ],
+      "Monitoring": [
+        "Monitorování"
+      ],
       "Monthly": [
         "Měsíční"
       ],
@@ -25365,11 +25361,17 @@
       "Multiple accounts, 1 private inbox": [
         "Více účtů, 1 soukromá doručená pošta"
       ],
+      "My account": [
+        "Můj účet"
+      ],
       "My addresses": [
         "Moje adresy"
       ],
       "My calendars": [
         "Můj kalendář"
+      ],
+      "My VPN": [
+        "Moje VPN"
       ],
       "Name": [
         "Jméno"
@@ -25419,8 +25421,17 @@
       "OpenVPN configuration files": [
         "Konfigurační soubory OpenVPN"
       ],
+      "OpenVPN username": [
+        "Uživatelské jméno OpenVPN"
+      ],
       "Org setup": [
         "Nastavení organizace"
+      ],
+      "Organization": [
+        "Ogranizace"
+      ],
+      "Organization and people": [
+        "Organizace a lidé"
       ],
       "Organization filters": [
         "Filtry organizace"
@@ -25659,6 +25670,9 @@
       "Security": [
         "Zabezpečení"
       ],
+      "Security and compliance": [
+        "Bezpečnost a dodržování předpisů"
+      ],
       "Security and privacy": [
         "Bezpečnost a soukromí"
       ],
@@ -25787,6 +25801,9 @@
       ],
       "Single sign-on": [
         "Jednotné přihlášení"
+      ],
+      "Single-sign on (SSO)": [
+        "Jednotné přihlášení (SSO)"
       ],
       "SMS verification": [
         "SMS ověření"
@@ -25947,6 +25964,9 @@
       "Upgrade to keep your premium benefits.": [
         "Navyšte tarif pro zachování prémiových výhod."
       ],
+      "Upgrade your network protection with dedicated servers": [
+        "Vylepšete ochranu své sítě pomocí dedikovaných serverů"
+      ],
       "Upgrade your privacy": [
         "Zvyšte své soukromí"
       ],
@@ -26018,6 +26038,9 @@
       ],
       "View organization events by upgrading to Professional": [
         "Zobrazení událostí organizace po navýšení na Professional"
+      ],
+      "VPN": [
+        "VPN"
       ],
       "VPN apps": [
         "VPN aplikace"
@@ -26093,6 +26116,9 @@
       ],
       "Your changes are not synced yet": [
         "Vaše změny zatím nejsou synchronizovány"
+      ],
+      "Your current plan": [
+        "Váš aktuální tarif"
       ],
       "Your exposed information": [
         "Vaše uniklé informace"

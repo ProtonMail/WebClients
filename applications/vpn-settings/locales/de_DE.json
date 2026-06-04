@@ -437,6 +437,9 @@
       "Edit group": [
         "Gruppe bearbeiten"
       ],
+      "Edit invoice details": [
+        "Rechnungsdaten bearbeiten"
+      ],
       "Edit invoice note": [
         "Rechnungsnotiz bearbeiten"
       ],
@@ -529,6 +532,9 @@
       ],
       "Get Deal": [
         "Angebot nutzen"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Hol dir Hilfe von ${ LUMO_SHORT_APP_NAME }"
       ],
       "Get in touch": [
         "Kontakt aufnehmen"
@@ -1983,9 +1989,6 @@
       ]
     },
     "BOSS": {
-      "${ BRAND_NAME } Migration Assistant": [
-        "${ BRAND_NAME }-Migrations-Assistent"
-      ],
       "Authenticate": [
         "Authentifizieren"
       ],
@@ -1995,17 +1998,11 @@
       "Calendar": [
         "Kalender"
       ],
-      "Completed": [
-        "Abgeschlossen"
-      ],
       "Configure migration": [
         "Übernahme konfigurieren"
       ],
       "Contacts": [
         "Kontakte"
-      ],
-      "Domain connected": [
-        "Domain verbunden"
       ],
       "Estimated size": [
         "Geschätzte Größe"
@@ -2037,9 +2034,6 @@
       "Migrate from Google Workspace": [
         "Von Google Workspace übernehmen"
       ],
-      "Migrate users": [
-        "Benutzer übernehmen"
-      ],
       "Migration includes": [
         "Übernahme beinhaltet"
       ],
@@ -2062,17 +2056,8 @@
       "Organization does not have enough storage available": [
         "Die Organisation hat nicht genügend Speicherplatz verfügbar"
       ],
-      "Required": [
-        "Erforderlich"
-      ],
-      "Required to create user accounts": [
-        "Zum Erstellen von Benutzerkonten erforderlich"
-      ],
       "Select at least one user to start a migration": [
         "Wähle mindestens einen Benutzer aus, um eine Migration zu starten"
-      ],
-      "Set up": [
-        "Einrichten"
       ],
       "Settings": [
         "Einstellungen"
@@ -2082,9 +2067,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
-        "Um die Daten deiner Organisation zu migrieren, musst du die ${ BRAND_NAME }-Migrations-Assistenten-App aus dem Google Workspace Marketplace installieren. Dadurch erhält ${ BRAND_NAME } die Berechtigung, deine Daten zu kopieren. Komm nach der Installation hierher zurück, um fortzufahren."
       ],
       "User": [
         "Benutzer"
@@ -2106,9 +2088,6 @@
       ],
       "What are you migrating?": [
         "Was übernimmst du?"
-      ],
-      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
-        "Du musst ${ BRAND_NAME } die Berechtigung erteilen, deine Daten zu kopieren. Nachdem du die Berechtigungen akzeptiert hast, kehre hierher zurück, um fortzufahren."
       ]
     },
     "Browser": {
@@ -4610,6 +4589,9 @@
       "Please add a payment method before reactivating your subscription": [
         "Bitte füge eine Zahlungsmethode hinzu, bevor du dein Abonnement reaktivierst."
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Bitte überprüfe, ob deine ABN für die grenzüberschreitende Mehrwertsteuer registriert ist"
+      ],
       "Please complete the billing details": [
         "Bitte die Rechnungsdaten eintragen"
       ],
@@ -4841,6 +4823,9 @@
       ],
       "Username must end with a letter or digit": [
         "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "MWST-Nummer muss mit ${ prefixes } beginnen"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Die Überprüfung konnte nicht abgeschlossen werden. Bitte versuche es in einer Stunde erneut."
@@ -10549,6 +10534,9 @@
       "Sign in": [
         "Anmelden"
       ],
+      "Sign-in help": [
+        "Hilfe beim Anmelden"
+      ],
       "Terms": [
         "AGB"
       ],
@@ -11552,9 +11540,9 @@
       "Send & receive invitations": [
         "Einladungen senden & empfangen"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Server in mehr als ${ vpnServersCountData.paid.countries } Land",
-        "Server in mehr als ${ vpnServersCountData.paid.countries } Ländern"
+      "Servers in ${ VPN_SERVERS.paid.countries }+ country": [
+        "Server in mehr als ${ VPN_SERVERS.paid.countries } Land",
+        "Server in mehr als ${ VPN_SERVERS.paid.countries } Ländern"
       ],
       "Share files with no size limit": [
         "Teile Dateien ohne Größenbeschränkung"
@@ -12127,9 +12115,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Dedizierte Serverstandorte in mehr als ${ numberOfCountries } Ländern"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Dedizierte Serverstandorte in Nordamerika und Europa"
       ],
       "Multi-platform support": [
         "Multi-Plattform-Unterstützung"
@@ -17325,6 +17310,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Um diese Tabelle in der Vorschau anzuzeigen, öffne sie in ${ SHEETS_APP_NAME } oder lade sie herunter."
       ],
+      "Troubleshoot with ${ LUMO_SHORT_APP_NAME }": [
+        "Probleme mit ${ LUMO_SHORT_APP_NAME } lösen"
+      ],
       "Troubleshoot your issue": [
         "Dein Problem beheben"
       ],
@@ -17429,6 +17417,9 @@
       ],
       "VPN": [
         "VPN"
+      ],
+      "VPN apps": [
+        "VPN-Apps"
       ],
       "Warning": [
         "Warnhinweis"

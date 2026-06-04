@@ -2095,7 +2095,8 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort supprimera ses liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -4143,6 +4144,12 @@
       ],
       "The file you are trying to import is empty": [
         "Le fichier que vous essayez d'importer est vide."
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Cette fonctionnalité n'est pas prise en charge dans votre abonnement. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Cette fonctionnalité n'est pas prise en charge dans votre abonnement. Contactez votre administrateur pour y avoir accès."
       ],
       "Total files: ": [
         "Nombre total de fichiers : "

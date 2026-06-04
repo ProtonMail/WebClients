@@ -610,6 +610,9 @@
       "Skip": [
         "Пропустить"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Кто-то поделился с вами элементом в ${ PASS_APP_NAME }."
+      ],
       "Sort vault items": [
         "Сортировать элементы хранилища"
       ],
@@ -1193,6 +1196,9 @@
       ],
       "Trashing item failed": [
         "Ошибка при перемещении элемента в корзину"
+      ],
+      "Try reaching out to the link owner.": [
+        "Попробуйте связаться с владельцем ссылки."
       ],
       "Unable to generate an OTP code for this item": [
         "Невозможно сгенерировать OTP-код для этого элемента"
@@ -3501,6 +3507,9 @@
       ],
       "Theme": [
         "Тема"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Этот элемент доступен до ${ date } или пока не будет достигнут лимит просмотров."
       ],
       "Title": [
         "Заголовок"

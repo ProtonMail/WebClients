@@ -12109,12 +12109,6 @@
       "Send & receive invitations": [
         "Отправляйте и получайте приглашения"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Серверы в более чем в ${ vpnServersCountData.paid.countries } стране",
-        "Серверы в более чем в ${ vpnServersCountData.paid.countries } странах",
-        "Серверы в более чем в ${ vpnServersCountData.paid.countries } странах",
-        "Серверы в более чем в ${ vpnServersCountData.paid.countries } странах"
-      ],
       "Share files with no size limit": [
         "Делитесь файлами без ограничений по размеру"
       ],
@@ -12691,9 +12685,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Расположение выделенных серверов в более чем ${ numberOfCountries } странах"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Выделенные серверы в Северной Америке и Европе"
       ],
       "Multi-platform support": [
         "Мультиплатформенная поддержка"
@@ -15461,15 +15452,6 @@
       "use your own email.": [
         "использовать свой адрес электронной почты."
       ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "VPN с серверами в ${ vpnServersCountData.free.countries } странах"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "VPN с серверами в ${ vpnServersCountData.free.countries } стране",
-        "VPN с серверами в ${ vpnServersCountData.free.countries } странах",
-        "VPN с серверами в ${ vpnServersCountData.free.countries } странах",
-        "VPN с серверами в ${ vpnServersCountData.free.countries } странах"
-      ],
       "Yearly": [
         "Ежегодно"
       ],
@@ -17610,6 +17592,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "Подробное изучение постов блога VPN"
+      ],
+      "Delete": [
+        "Удалить"
       ],
       "Delete ${ name }?": [
         "Удалить ${ name }?"

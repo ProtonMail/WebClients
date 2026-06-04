@@ -11132,12 +11132,6 @@
       "Send & receive invitations": [
         "Надсилайте й отримуйте запрошення"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Сервери в ${ vpnServersCountData.paid.countries }+ країні",
-        "Сервери в ${ vpnServersCountData.paid.countries }+ країнах",
-        "Сервери в ${ vpnServersCountData.paid.countries }+ країнах",
-        "Сервери в ${ vpnServersCountData.paid.countries }+ країнах"
-      ],
       "Share files with no size limit": [
         "Обмінюйтеся файлами без обмеження розміру"
       ],
@@ -11702,9 +11696,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Розташування виділених серверів у ${ numberOfCountries }+ країнах"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Розташування виділених серверів у Північній Америці та Європі"
       ],
       "Multi-platform support": [
         "Підтримка різних платформ"
@@ -14178,15 +14169,6 @@
       "Up to 6 users": [
         "До 6 користувачів"
       ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "VPN із серверами в ${ vpnServersCountData.free.countries } країнах"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "VPN із серверами в ${ vpnServersCountData.free.countries } країні",
-        "VPN із серверами в ${ vpnServersCountData.free.countries } країнах",
-        "VPN із серверами в ${ vpnServersCountData.free.countries } країнах",
-        "VPN із серверами в ${ vpnServersCountData.free.countries } країні(ах)"
-      ],
       "Yearly": [
         "Щороку"
       ],
@@ -16244,6 +16226,9 @@
       ],
       "Decrypt key": [
         "Розшифрувати ключ"
+      ],
+      "Delete": [
+        "Видалити"
       ],
       "Delete ${ name }?": [
         "Видалити ${ name }?"

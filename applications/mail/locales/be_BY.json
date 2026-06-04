@@ -645,6 +645,9 @@
       "Get the browser extension": [
         "Атрымаць пашырэнні для браўзера"
       ],
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ],
       "Get the writing assistant": [
         "Атрымаць памочніка ў напісанні"
       ],
@@ -1528,7 +1531,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -4195,6 +4201,9 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Дапамажыце сваёй камандзе бяспечна захоўваць паролі да важных дзелавых і кліенцкіх звестак."
       ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Проста перамясціце ліст ў слушную катэгорыю, калі ён трапіў не туды. Правы націск па лісту дазволіць выбраць для яго новую катэгорыю або проста перацягніце яго ў тую катэгорыю, якой ён належыць."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае некаторыя групы. Паглядзіце, як неабходна імпартаваць такія групы."
       ],
@@ -4386,6 +4395,9 @@
         "Ваш тарыфны план агулам падтрымлівае ${ MAX_SYNC_PAID_USER } адрасы Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail"
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Вы адзін з першых сярод тых, хто паспрабуе нашы новыя катэгорыі перад іх запускам. Вашы водгукі дапамогуць удасканаліць саратванне лістоў у Proton Mail для кожнага карыстальніка."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
@@ -5059,6 +5071,9 @@
       "Please activate your search again": [
         "Актывуйце пошук яшчэ раз"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Праверцеце, ці зарэгістраваны ваш ABN для трансгранічнага ПДВ"
+      ],
       "Please complete the billing details": [
         "Запоўніце плацежныя звесткі"
       ],
@@ -5331,6 +5346,9 @@
       ],
       "Username must end with a letter or digit": [
         "Імя карыстальніка павінна заканчвацца літарай або лічбай"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Нумар ПДВ павінен пачынацца з ${ prefixes }"
       ],
       "Wrong billing address": [
         "Няправільны плацежны адрас"
@@ -7879,10 +7897,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -12244,9 +12259,6 @@
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Размяшчэнні вылучаных сервераў у больш чым у ${ numberOfCountries } краінах"
       ],
-      "Dedicated server locations in North America and Europe": [
-        "Размяшчэнне вылучаных сервераў у Паўночнай Амерыцы і Еўропе"
-      ],
       "Multi-platform support": [
         "Шматплатформенная падтрымка"
       ],
@@ -16012,6 +16024,9 @@
       ],
       "Help center": [
         "Даведачны цэнтр"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Дапамажыце вызначыць будучыню катэгорый электроннай пошты ў ${ MAIL_APP_NAME }"
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Схавайце сваю электронную пошту з дапамогай ${ PASS_APP_NAME }"
