@@ -2,25 +2,22 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { type NodeEntity, NodeType } from '@proton/drive/index';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
-import { getNodeAncestry } from '@proton/drive/modules/nodes';
+import { NodeLocation, getNodeLocation } from '@proton/drive/modules/nodes';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
 import type { CrumbDefinition } from '../../../statelessComponents/Breadcrumbs/types';
-import { NodeLocation, getNodeLocation } from '../../../utils/sdk/getNodeLocation';
 import {
     SYNTHETIC_UID_DEVICES,
     SYNTHETIC_UID_SHARED_WITH_ME,
     useFolderViewBreadcrumbs,
 } from './useFolderViewBreadcrumbs';
 
-jest.mock('../../../utils/sdk/getNodeLocation');
-const mockGetNodeLocation = jest.mocked(getNodeLocation);
-
 jest.mock('@proton/drive/modules/nodes', () => ({
     ...jest.requireActual('@proton/drive/modules/nodes'),
-    getNodeAncestry: jest.fn(),
+    getNodeLocation: jest.fn(),
 }));
-const mockGetNodeAncestry = jest.mocked(getNodeAncestry);
+const mockGetNodeLocation = jest.mocked(getNodeLocation);
+const mockGetNodeHierarchy = jest.fn();
 
 jest.mock('@proton/drive/legacy/errorHandling');
 const mockedSendErrorReport = jest.mocked(sendErrorReport);
@@ -39,6 +36,7 @@ jest.mock('../../../legacy/hooks/drive/useNavigate', () => {
 
 const mockDrive = {
     getNode: jest.fn(),
+    getNodeHierarchy: mockGetNodeHierarchy,
 } as any;
 
 const CURRENT_FILE_NODE_UID = 'file-node-uid';
@@ -73,14 +71,10 @@ const mockNodeLocation = (location: NodeLocation) => {
 };
 
 const mockNodeAncestry = (nodes: NodeEntity[]) => {
-    mockGetNodeAncestry.mockImplementation((nodeUid, _driveClient, includeSelf) => {
+    mockGetNodeHierarchy.mockImplementation((nodeUid: string) => {
         expect(nodeUid).toBe(CURRENT_FILE_NODE_UID);
-        expect(includeSelf).toBeFalsy();
 
-        return Promise.resolve({
-            ok: true,
-            value: nodes.map((node) => ({ ok: true, value: node })),
-        });
+        return Promise.resolve(nodes.map((node) => ({ ok: true, value: node })));
     });
 };
 
