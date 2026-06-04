@@ -59,7 +59,6 @@ export type Flags = {
     isSsoForPbsEnabled?: boolean;
     isRetentionPoliciesEnabled?: boolean;
     isAuthenticatorAvailable?: boolean;
-    isOLESEnabled?: boolean;
     isCategoryViewEnabled?: boolean;
     isRecoveryContactsEnabled?: boolean;
     isRolesAndPermissionsEnabled?: boolean;

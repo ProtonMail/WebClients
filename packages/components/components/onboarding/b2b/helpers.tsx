@@ -113,12 +113,12 @@ export const getFeatures = (
         },
         {
             id: 'easy-switch',
-            title: c('Title').t`Import emails, calendars, contacts`,
+            title: c('Title').t`Migrate your organization to ${BRAND_NAME}`,
             description: c('Description')
-                .t`For a seamless transition to ${BRAND_NAME}, import your data from Google, Outlook, and others.`,
+                .t`For a seamless onboarding of your team to ${BRAND_NAME}, import your data from Google, Outlook, and others.`,
             kb: {
                 title: c('Link').t`How to migrate to ${BRAND_NAME}`,
-                link: getKnowledgeBaseUrl('/easy-switch-emails'),
+                link: getKnowledgeBaseUrl('/easy-switch-for-business'),
             },
             cta: (
                 <ButtonLike
@@ -136,6 +136,7 @@ export const getFeatures = (
             ),
             illustration: easySwitchImg,
             canShowFeature: true,
+            highlighted: true,
         },
         {
             id: 'recovery',
@@ -523,7 +524,16 @@ export const getSections = (app: APP_NAMES, parentApp?: APP_NAMES): B2BFeaturesS
 
     const orgSetupSection: B2BFeaturesSection = {
         title: c('Section').t`Org setup and account security`,
-        featuresList: ['custom-domain', 'add-users', 'easy-switch', 'recovery', '2fa', 'security', 'security-breaches'],
+        featuresList: [
+            ...(app === APPS.PROTONMAIL || parentApp === APPS.PROTONMAIL
+                ? []
+                : (['custom-domain', 'add-users'] as const)),
+            'easy-switch',
+            'recovery',
+            '2fa',
+            'security',
+            'security-breaches',
+        ],
     };
 
     const mailSection: B2BFeaturesSection = {
