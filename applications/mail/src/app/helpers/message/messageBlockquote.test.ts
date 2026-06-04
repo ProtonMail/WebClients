@@ -336,6 +336,32 @@ describe('messageBlockquote', () => {
         // Only one <blockquote ... type="cite"> tag should remain.
         expect(after.match(/<blockquote/g)?.length).toBe(1);
     });
+
+    it('should not wrap an Outlook separator already nested inside a known blockquote selector', () => {
+        // The border + "From:" header sits inside a .protonmail_quote wrapper, which is
+        // already one of BLOCKQUOTE_SELECTORS. The Outlook fallback must skip it so we
+        // don't end up with the quoted body double-wrapped.
+        const content = `
+            <div>
+                <p>My reply</p>
+                <div class="protonmail_quote">
+                    <div style="border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm">
+                        <p><b>From:</b> sender@example.com</p>
+                    </div>
+                    <p>Quoted body</p>
+                </div>
+            </div>`;
+
+        const [before, blockquote] = locateBlockquote(createDocument(content));
+
+        expect(before).toContain('My reply');
+        expect(before).not.toContain('From:');
+        expect(blockquote).toContain('From:');
+        expect(blockquote).toContain('Quoted body');
+        // No synthetic <blockquote> should have been injected — the existing
+        // .protonmail_quote wrapper is the only quote container.
+        expect(blockquote.match(/<blockquote/g)).toBeNull();
+    });
 });
 
 describe('locatePlaintextInternalBlockquotes', () => {
