@@ -3,7 +3,6 @@ import { Input } from '@proton/atoms/Input/Input'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
 import type { ModalStateProps } from '@proton/components'
 import {
-  Icon,
   MimeIcon,
   ModalTwo,
   ModalTwoContent,
@@ -15,6 +14,9 @@ import {
   NOTIFICATION_DEFAULT_EXPIRATION_TIME,
   useConfirmActionModal,
 } from '@proton/components'
+import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft'
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig'
+import { IcEye } from '@proton/icons/icons/IcEye'
 import type {
   AuthenticatedDocControllerInterface,
   NativeVersionHistory,
@@ -223,10 +225,10 @@ function HistoryViewerModalContent({
       {/* Left column */}
       <div className="flex flex-col">
         <div className="flex items-center gap-3 px-3 py-2.5">
-          <Icon name="clock-rotate-left" size={5} />
+          <IcClockRotateLeft size={5} />
           {selectedBatchTimestamp}
           <div className="flex items-center gap-1 rounded-lg bg-[--background-weak] px-2 py-1 text-sm text-[--text-weak]">
-            <Icon name="eye" />
+            <IcEye />
             {c('Info').t`View only`}
           </div>
         </div>
@@ -248,7 +250,7 @@ function HistoryViewerModalContent({
             <div className="text-bold text-rg">Document History</div>
             <Tooltip title={c('Action').t`Close`}>
               <Button className="shrink-0" icon shape="ghost" onClick={onClose}>
-                <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
+                <IcCrossBig className="modal-close-icon" alt={c('Action').t`Close`} />
               </Button>
             </Tooltip>
           </div>
