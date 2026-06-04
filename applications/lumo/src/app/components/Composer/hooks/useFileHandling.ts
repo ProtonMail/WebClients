@@ -6,10 +6,10 @@ import { useNotifications } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-import { MAX_ASSET_SIZE } from '../../../constants';
+import { MAX_ASSET_SIZE, MAX_PROVISIONAL_ATTACHMENTS } from '../../../constants';
 import { useFileProcessing } from '../../../hooks';
-import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
-import { selectSpaceByIdOptional } from '../../../redux/selectors';
+import { useLumoDispatch, useLumoSelector, useLumoStore } from '../../../redux/hooks';
+import { selectProvisionalAttachments, selectSpaceByIdOptional } from '../../../redux/selectors';
 import { deleteAttachment } from '../../../redux/slices/core/attachments';
 import { handleFileAsync } from '../../../services/files';
 import { type ExcelSheetInfo, createExcelSheetFile, getExcelSheetsFromFile } from '../../../services/files/excelSheets';
@@ -47,6 +47,7 @@ export const useFileHandling = ({
     notifyOnSuccess = false,
 }: UseFileHandlingProps) => {
     const dispatch = useLumoDispatch();
+    const store = useLumoStore();
     const { createNotification } = useNotifications();
     const fileProcessingService = useFileProcessing();
     const userId = useLumoSelector((state) => state.user?.value?.ID);
@@ -96,6 +97,21 @@ export const useFileHandling = ({
         },
         [createNotification]
     );
+
+    // Reads the live attachment count from the store (rather than a render-time
+    // snapshot) so the limit holds even while a batch upload is in flight.
+    const isAtAttachmentLimit = useCallback((): boolean => {
+        const count = selectProvisionalAttachments(store.getState()).length;
+        if (count >= MAX_PROVISIONAL_ATTACHMENTS) {
+            createNotification({
+                text: c('collider_2025: Error')
+                    .t`You can attach up to ${MAX_PROVISIONAL_ATTACHMENTS} files at a time. Remove some to add more.`,
+                type: 'warning',
+            });
+            return true;
+        }
+        return false;
+    }, [store, createNotification]);
 
     const getSelectedExcelSheetNames = useCallback(
         async (file: File): Promise<string[] | undefined | null> => {
@@ -216,6 +232,12 @@ export const useFileHandling = ({
                 : [{ file, selectedExcelSheetNames: undefined }];
 
             for (const fileToProcess of filesToProcess) {
+                // Stop staging once the composer is full so we never exceed the limit,
+                // even when a single Excel file expands into multiple sheet attachments.
+                if (isAtAttachmentLimit()) {
+                    break;
+                }
+
                 const result = await dispatch(
                     handleFileAsync(fileToProcess.file, messageChain, fileProcessingService, {
                         selectedExcelSheetNames: fileToProcess.selectedExcelSheetNames,
@@ -278,12 +300,22 @@ export const useFileHandling = ({
                 }
             }
         },
-        [createNotification, dispatch, fileProcessingService, indexFileForSearch, messageChain, notifyOnSuccess, spaceId]
+        [
+            createNotification,
+            dispatch,
+            fileProcessingService,
+            indexFileForSearch,
+            isAtAttachmentLimit,
+            messageChain,
+            notifyOnSuccess,
+            spaceId,
+        ]
     );
 
     const handleLocalFileProcessing = useCallback(
         async (file: File): Promise<void> => {
             try {
+                if (isAtAttachmentLimit()) return;
                 if (!validateFile(file)) return;
 
                 const selectedExcelSheetNames = await getSelectedExcelSheetNames(file);
@@ -300,12 +332,15 @@ export const useFileHandling = ({
                 });
             }
         },
-        [createNotification, getSelectedExcelSheetNames, processFileLocally, validateFile]
+        [createNotification, getSelectedExcelSheetNames, isAtAttachmentLimit, processFileLocally, validateFile]
     );
 
     const handleFileProcessing = useCallback(
         async (file: File): Promise<void> => {
             try {
+                // The limit only applies to attachments staged in the composer; linked-drive
+                // uploads go straight to Drive and don't occupy a composer slot.
+                if (fileUploadMode !== 'linked-drive' && isAtAttachmentLimit()) return;
                 if (!validateFile(file)) return;
 
                 const selectedExcelSheetNames = await getSelectedExcelSheetNames(file);
@@ -330,6 +365,7 @@ export const useFileHandling = ({
             createNotification,
             fileUploadMode,
             getSelectedExcelSheetNames,
+            isAtAttachmentLimit,
             processFileLocally,
             uploadFileToDrive,
             validateFile,
