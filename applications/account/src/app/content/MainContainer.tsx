@@ -194,7 +194,6 @@ const MainContainer = () => {
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
     const isMeetAvailable = useFlag('PMVC2025');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
-    const isOLESEnabled = useFlag('OlesM1');
     const isRolesAndPermissionsEnabled = useFlag('AdminRoleMVP');
     const isMspEnabled = useFlag('MspEnabled');
     const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
@@ -302,7 +301,6 @@ const MainContainer = () => {
         isSsoForPbsEnabled,
         isRetentionPoliciesEnabled,
         isAuthenticatorAvailable,
-        isOLESEnabled,
         isCategoryViewEnabled: hasAccessToCategoryView,
         isRolesAndPermissionsEnabled,
         isMspEnabled,

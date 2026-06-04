@@ -50,14 +50,14 @@ const OnboardingDiscoverFeaturesStep = ({ onClose }: Props) => {
 
     // Remove sections having no features
     const allSections = getSections(APP_NAME, parentApp).filter((section) => section.featuresList.length != 0);
-    // If not expanded, show only the first 4 items of the first section. Otherwise, show them all.
+    // If not expanded, show only the first 2 items of the first section. Otherwise, show them all.
     const firstSection = allSections[0];
     const filteredSections = expanded
         ? allSections
         : [
               {
                   ...firstSection,
-                  featuresList: firstSection.featuresList.slice(0, Math.min(4, firstSection.featuresList.length - 1)),
+                  featuresList: firstSection.featuresList.slice(0, Math.min(2, firstSection.featuresList.length - 1)),
               },
           ];
 

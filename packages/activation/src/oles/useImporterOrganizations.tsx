@@ -12,11 +12,13 @@ import type { JoiningLink } from './types';
 type StateData = (ApiImporterOrganization & { JoiningLink?: JoiningLink })[];
 
 const Context = createContext<{
+    enabled: boolean;
     loading: boolean;
     setLoading: (loading: boolean) => void;
     data?: StateData;
     setData: (data?: StateData) => void;
 }>({
+    enabled: false,
     loading: false,
     setLoading: () => {},
     data: undefined,
@@ -27,13 +29,15 @@ export const ImporterOrganizationsProvider = ({ children }: { children: ReactNod
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState<StateData>();
 
-    return <Context.Provider value={{ loading, setLoading, data, setData }}>{children}</Context.Provider>;
+    return (
+        <Context.Provider value={{ enabled: true, loading, setLoading, data, setData }}>{children}</Context.Provider>
+    );
 };
 
 export const useImporterOrganizations = (): [StateData | undefined, boolean, () => Promise<void>] => {
     const api = useSilentApi();
     const dispatch = useDispatch();
-    const { data, setData, loading, setLoading } = useContext(Context);
+    const { enabled, data, setData, loading, setLoading } = useContext(Context);
 
     const refresh = useCallback(async () => {
         setLoading(true);
@@ -63,8 +67,11 @@ export const useImporterOrganizations = (): [StateData | undefined, boolean, () 
     }, [data]);
 
     useEffect(() => {
+        if (!enabled) {
+            return;
+        }
         void refresh();
-    }, []);
+    }, [enabled]);
 
     return [data, loading, refresh];
 };
