@@ -29,7 +29,7 @@ export const ToolMenuDropdown = ({
     isAgent = false,
 }: ToolMenuDropdownProps) => {
     const { isWebSearchButtonToggled, handleWebSearchButtonClick } = useWebSearch();
-    const { imageTools: isImageToolsFlagEnabled } = useLumoFlags();
+    const { imageTools: isImageToolsFlagEnabled, customAgents: isCustomAgentsFlagEnabled } = useLumoFlags();
     const dispatch = useLumoDispatch();
 
     const handleWebSearchToggleChange = useCallback(
@@ -53,7 +53,7 @@ export const ToolMenuDropdown = ({
             getLabel: () => c('collider_2025: Action').t`Agents`,
             onClick: () => dispatch(openAgentPicker()),
             onClose: onClose,
-            canShow: canUseAgents,
+            canShow: canUseAgents && isCustomAgentsFlagEnabled,
         },
     ];
     const visibleToolMenuItems = toolMenuItems.filter((item) => item.canShow);
