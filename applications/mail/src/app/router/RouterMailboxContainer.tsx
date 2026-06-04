@@ -110,15 +110,10 @@ export const RouterMailboxContainer = () => {
     const viewPortIsNarrow = breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium;
 
     return (
-        <MailboxContainerContextProvider
-            containerRef={messageContainerRef}
-            elementID={params.elementID}
-            isResizing={isResizing}
-        >
+        <MailboxContainerContextProvider containerRef={messageContainerRef} isResizing={isResizing}>
             <MailHeader
                 elementsData={elementsData}
                 actions={actions}
-                elementID={params.elementID}
                 labelID={params.labelID}
                 settingsButton={<InboxQuickSettingsAppButton />}
                 toolbar={

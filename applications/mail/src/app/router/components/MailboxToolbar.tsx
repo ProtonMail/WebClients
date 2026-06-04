@@ -25,7 +25,7 @@ export const MailboxToolbar = ({
     actions,
     overrideColumnMode,
 }: MailboxToolbarProps) => {
-    const { conversationMode, labelID, elementID, messageID, isSearching } = useMailSelector(selectParams);
+    const { conversationMode, labelID, messageID, isSearching } = useMailSelector(selectParams);
     const { handleBack, handlePage, page } = navigation;
     const { loading, total, elementIDs } = elementsData;
     const {
@@ -45,7 +45,6 @@ export const MailboxToolbar = ({
         <>
             <Toolbar
                 labelID={labelID}
-                elementID={elementID}
                 messageID={messageID}
                 selectedIDs={selectedIDs}
                 checkedIDs={checkedIDs}

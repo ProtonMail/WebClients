@@ -16,6 +16,7 @@ import clsx from '@proton/utils/clsx';
 
 import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
+import { selectElementID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import {
@@ -34,27 +35,20 @@ import SnoozeDropdown from './snooze/containers/SnoozeDropdown';
 interface Props {
     element: Element; // Element of the current line
     labelID: string;
-    elementID?: string; // ElementID of the currently selected element
     className?: string;
     onBack: () => void;
     hasStar?: boolean;
     size?: 'small' | 'medium';
 }
 
-const ItemHoverButtons = ({
-    element,
-    labelID,
-    elementID,
-    className,
-    onBack,
-    hasStar = true,
-    size = 'medium',
-}: Props) => {
+const ItemHoverButtons = ({ element, labelID, className, onBack, hasStar = true, size = 'medium' }: Props) => {
     const { markAs } = useMarkAs();
     const { applyLocation } = useApplyLocation();
     const { handleDelete: permanentDelete, deleteSelectionModal } = usePermanentDelete(labelID);
     const snoozedElement = useMailSelector(selectSnoozeElement);
     const snoozeDropdownState = useMailSelector(selectSnoozeDropdownState);
+
+    const elementID = useMailSelector(selectElementID);
 
     const [loadingStar, withLoadingStar] = useLoading();
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
