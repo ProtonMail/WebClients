@@ -55,5 +55,5 @@ export function buildAgentDeepLink(agentId: string): string {
  * loads almost instantly into a simple, single-agent chat.
  */
 export function buildAgentChatLink(agentId: string): string {
-    return `${window.location.origin}/agent?skill=${encodeURIComponent(agentId)}`;
+    return `${window.location.origin}/?skill=${encodeURIComponent(agentId)}`;
 }
