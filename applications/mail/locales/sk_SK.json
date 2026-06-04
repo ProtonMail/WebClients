@@ -315,6 +315,9 @@
       "Continue with categories": [
         "Pokračovať s kategóriami"
       ],
+      "Continue with Free": [
+        "Pokračovať s Free"
+      ],
       "Continue with Google": [
         "Pokračovať cez Google"
       ],
@@ -641,6 +644,9 @@
       ],
       "Get the browser extension": [
         "Získať rozšírenie prehliadača"
+      ],
+      "Get the deal": [
+        "Využiť ponuku"
       ],
       "Get the writing assistant": [
         "Získajte asistenta písania"
@@ -1525,7 +1531,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -4126,6 +4135,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Automatické triedenie prichádzajúcich správ pred ich doručením do schránky."
       ],
+      "Available storage: ${ storageText }": [
+        "Dostupné úložisko: ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Zabráňte spoločnosti Google v profilovaní vašej osoby. Gmail nemá prehľad o tom, čo robíte v aplikácii ${ MAIL_APP_NAME }"
       ],
@@ -4165,6 +4177,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrovanie a import kontaktov... Táto akcia môže trvať niekoľko minút. Akonáhle je proces ukončený, môžete zavrieť tento modul."
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "Dostatok miesta na roky emailov, príloh a ďalších súborov."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Poskytnite bezpečný prístup k údajom organizácie, aj keď je váš tím vzdialený alebo používa verejné Wi-Fi."
       ],
@@ -4185,6 +4200,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Pomôžte svojmu tímu bezpečne ukladať heslá k citlivým obchodným a klientskym informáciám."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Ak sa správa zobrazí v nesprávnej kategórii, jednoducho ju presuňte do tej správnej. Kliknite pravým tlačidlom na správu a vyberte novú kategóriu, alebo ju pretiahnite a umiestnite tam, kam patrí."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá sa, že zoznam kontaktov ktorý importujete, zahŕňa nejaké skupiny. Prosím, skontrolujte ako by tieto skupiny mali byť importované."
@@ -4273,6 +4291,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Zapnite ochranu sledovania emailov, aby ste zabránili inzerentom a ostatným v sledovaní vašej polohy a online aktivity."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Získajte 15 GB úložného priestoru len za ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Navýšte úroveň na ${ planName } pre pripojenie až ${ MAX_SYNC_PAID_USER } účtov"
       ],
@@ -4357,6 +4378,12 @@
       "Your account and data recovery methods are set.": [
         "Váš účet a metódy obnovy údajov sú nastavené."
       ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Váš bezplatný ${ MAIL_APP_NAME } účet má obmedzenú kapacitu úložiska, preto naimportujeme len ${ newUserStorageText } vašich najnovších správ z Gmailu"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Váš bezplatný ${ MAIL_APP_NAME } účet má obmedzenú kapacitu úložiska, preto naimportujeme len vašich najnovších emailov z Gmailu."
+      ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Váš plán podporuje ${ MAX_SYNC_FREE_USER } Gmailovú adresu.",
         "Váš plán podporuje ${ MAX_SYNC_FREE_USER } Gmailové adresy.",
@@ -4368,6 +4395,9 @@
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailové adresy",
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries",
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries"
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Patríte medzi prvých, ktorí si môžu vyskúšať naše nové zobrazenie kategórií ešte pred jeho spustením. Vaša spätná väzba pomôže vylepšiť spôsob, akým Proton Mail triedi emaily pre každého."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
@@ -5041,6 +5071,9 @@
       "Please activate your search again": [
         "Aktivujte znovu vyhľadávanie"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Skontrolujte, či je vaše ABN zaregistrované na účely cezhraničnej DPH, prosím."
+      ],
       "Please complete the billing details": [
         "Doplňte fakturačné údaje, prosím"
       ],
@@ -5313,6 +5346,9 @@
       ],
       "Username must end with a letter or digit": [
         "Používateľské meno musí končiť písmenom alebo číslom"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Číslo DIČ musí začínať predponami ${ prefixes }"
       ],
       "Wrong billing address": [
         "Nesprávna fakturačná adresa"
@@ -5789,11 +5825,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ prémiových funkcií"
+      ],
+      "Custom email domain": [
+        "Vlastná emailová doména"
+      ],
+      "Email addresses": [
+        "Emailové adresy"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Šifrované cloudové úložisko na súbory, fotografie a dokumenty"
       ],
       "More premium features": [
         "Viac prémiových funkcií"
+      ],
+      "Storage": [
+        "Úložisko"
       ],
       "Unlimited hide-my-email aliases": [
         "Neobmedzený počet hide-my-email aliasov"
@@ -7818,6 +7866,9 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Zahrnutie vášho zadania a následnej odpovede nám pomôže zlepšiť presnosť."
       ],
+      "Included": [
+        "Zahrnuté"
+      ],
       "Included for free with your plan": [
         "Bezplatne vo vašom pláne"
       ],
@@ -7846,10 +7897,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -8847,8 +8895,14 @@
       "Updating message content search...": [
         "Aktualizujem vyhľadávanie v správach..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Kedykoľvek si môžete zvýšiť úroveň a preniesť aj zvyšok"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navýšte teraz a získajte prémiové funkcie, produkty a úložisko za špeciálnu cenu"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Kedykoľvek môžete zvýšiť úroveň alebo uvoľniť miesto, aby ste mohli preniesť zvyšok"
       ],
       "Upgrade to ${ plan } to unlock": [
         "Na odomknutie upgradujte na ${ plan }"
@@ -12204,9 +12258,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Umiestnenie špecializovaných serverov v ${ numberOfCountries }+ krajinách"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Umiestnenie špecializovaných serverov v Severnej Amerike a Európe"
       ],
       "Multi-platform support": [
         "Podpora viacerých platforiem"
@@ -15734,6 +15785,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Continue with free storage": [
+        "Pokračovať s bezplatným úložiskom"
+      ],
       "Continue with partial import?": [
         "Pokračovať s čiastočným importom?"
       ],
@@ -15950,6 +16004,9 @@
       "Get more from your VPN": [
         "Získajte zo svojej VPN viac"
       ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Získajte väčšie úložisko s ${ MAIL_APP_NAME } Plus"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Získať ${ appName[APP_NAME] } aplikácie"
       ],
@@ -15967,6 +16024,9 @@
       ],
       "Help center": [
         "Centrum pomoci"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Pomôžte nám formovať budúcnosť kategórií emailov v ${ MAIL_APP_NAME }"
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Ukryte svoj email pomocou ${ PASS_APP_NAME }"
