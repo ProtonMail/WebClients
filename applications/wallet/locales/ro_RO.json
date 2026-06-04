@@ -172,6 +172,9 @@
       "Get the apps": [
         "Luați aplicațiile"
       ],
+      "Get the deal": [
+        "Obțineți oferta"
+      ],
       "Get verification code": [
         "Obținere cod de verificare"
       ],
@@ -2391,6 +2394,9 @@
       "Payment process not supported": [
         "Metoda de plată nu este acceptată."
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Verificați dacă numărul ABN vă este înregistrat pentru TVA transfrontalier."
+      ],
       "Please complete the billing details": [
         "Completați detaliile de facturare."
       ],
@@ -2477,6 +2483,9 @@
       ],
       "Username must end with a letter or digit": [
         "Numele de utilizator trebuie să se termine cu o literă sau cifră."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Valoarea TVA trebuie să înceapă cu ${ prefixes }."
       ],
       "Wrong billing address": [
         "Adresă de facturare incorectă."
@@ -4631,9 +4640,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Locuri de servere dedicate în peste ${ numberOfCountries } de țări"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Locuri de servere dedicate în America de Nord și Europa"
       ],
       "Multi-platform support": [
         "Suport platforme multiple"
