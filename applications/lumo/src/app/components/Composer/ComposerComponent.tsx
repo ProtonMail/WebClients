@@ -419,9 +419,9 @@ const ComposerComponentInner = ({
                         />
                     </div>
                     {optionalElementBelowComposer}
-                    {isGuest && (
+                    {/* {isGuest && (
                         <TermsAndConditions className={clsx('m-0', isAgent ? 'text-center' : 'hidden md:block')} />
-                    )}
+                    )} */}
                 </section>
 
                 {isDraggingOverScreen && <AttachmentArea handleFileProcessing={handleFileProcessing} />}
