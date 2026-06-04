@@ -57,9 +57,9 @@ export const ComposerLimitBanner = ({ conversationId, spaceId, onOpenFiles }: Pr
                 key: `messages-at-${conversationId ?? 'none'}`,
                 severity: 'error',
                 dismissible: false,
-                title: c('collider_2025: Warning').t`Message limit reached`,
+                title: c('collider_2025: Warning').t`Conversation too long`,
                 description: c('collider_2025: Warning')
-                    .t`You've hit the ${messagesStatus.limit}-message limit in this conversation. Start a new chat to keep talking with ${LUMO_SHORT_APP_NAME}.`,
+                    .t`This conversation is too long to continue. Start a new chat to keep ${LUMO_SHORT_APP_NAME} purring and responsive.`,
                 action: { label: c('collider_2025: Action').t`Start new chat`, onClick: startNewChat },
             };
         }
@@ -68,35 +68,33 @@ export const ComposerLimitBanner = ({ conversationId, spaceId, onOpenFiles }: Pr
                 key: `assets-at-${spaceId ?? 'none'}`,
                 severity: 'error',
                 dismissible: false,
-                title: c('collider_2025: Warning').t`File limit reached`,
+                title: c('collider_2025: Warning').t`Too many files to juggle`,
                 description: c('collider_2025: Warning')
-                    .t`You've hit the ${assetsStatus.limit}-file limit in this project. Remove some files before uploading new ones.`,
+                    .t`That's a lot of files for ${LUMO_SHORT_APP_NAME} to juggle. Remove some before uploading new ones to keep things purring.`,
                 action: onOpenFiles
                     ? { label: c('collider_2025: Action').t`Manage files`, onClick: onOpenFiles }
                     : undefined,
             };
         }
         if (canShowMessageLimit && messagesStatus.isApproaching) {
-            const remaining = messagesStatus.remaining;
             return {
                 key: `messages-approaching-${conversationId ?? 'none'}`,
                 severity: 'warning',
                 dismissible: true,
-                title: c('collider_2025: Warning').t`Approaching message limit`,
+                title: c('collider_2025: Warning').t`This conversation is getting long`,
                 description: c('collider_2025: Warning')
-                    .t`You have ${remaining} messages left in this conversation. Start a new chat for best responses.`,
+                    .t`Long conversations can slow down responses. Start a new chat to keep ${LUMO_SHORT_APP_NAME} purring.`,
                 action: { label: c('collider_2025: Action').t`Start new chat`, onClick: startNewChat },
             };
         }
         if (assetsStatus.isApproaching) {
-            const remaining = assetsStatus.remaining;
             return {
                 key: `assets-approaching-${spaceId ?? 'none'}`,
                 severity: 'warning',
                 dismissible: true,
-                title: c('collider_2025: Warning').t`Approaching file limit`,
+                title: c('collider_2025: Warning').t`This project is filling up`,
                 description: c('collider_2025: Warning')
-                    .t`You have ${remaining} file uploads left in this project.`,
+                    .t`Tidying away files you no longer need keeps ${LUMO_SHORT_APP_NAME} purring.`,
                 action: onOpenFiles
                     ? { label: c('collider_2025: Action').t`Manage files`, onClick: onOpenFiles }
                     : undefined,
