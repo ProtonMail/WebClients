@@ -4,7 +4,6 @@ import {
     getIsIncomingDelegatedAccessAvailable,
     getIsOutgoingDelegatedAccessAvailable,
 } from '@proton/account/delegatedAccess/available';
-import { isOLESEligible } from '@proton/activation/src/oles/eligibility';
 import type { ThemeColor } from '@proton/colors';
 import type { SectionConfig, SubrouteGroup } from '@proton/components';
 import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
@@ -89,13 +88,8 @@ function getV1DashboardSections(
     subscription: MaybeFreeSubscription,
     cancellableOnlyViaSupport: boolean,
     hasExternalMemberCapableB2BPlan: boolean,
-    showBusinessActivation: boolean
 ) {
     return [
-        {
-            id: 'business-activation',
-            available: showBusinessActivation,
-        },
         // do not show Your Plan section for Pass users
         {
             text: hasSplitStorage ? c('Title').t`Your storage` : undefined,
@@ -353,7 +347,6 @@ export const getAccountAppRoutes = ({
         isZoomIntegrationEnabled = false,
         isProtonMeetIntegrationEnabled = false,
         canDisplayNonPrivateEmailPhone = false,
-        isOLESEnabled = false,
         isRecoverySettingsRedesignEnabled = false,
         isMnemonicAvailable = false,
         isRecoveryFileAvailable = false,
@@ -431,9 +424,6 @@ export const getAccountAppRoutes = ({
     // As VPN dashboard has its own route for v2 dashboard, we need to check for APP and Feature flag to decide between v1 vs v2 dashboard
     const isVPNDashboardEnabled = app === APPS.PROTONVPN_SETTINGS && showVPNDashboard;
 
-    // Show B2B onboarding to admins of B2B orgs when OLES is available
-    const showBusinessActivation = isOLESEnabled && isOLESEligible({ user, subscription, organization });
-
     return <const>{
         available: true,
         header: c('Settings section title').t`Account`,
@@ -495,8 +485,7 @@ export const getAccountAppRoutes = ({
                           cancellablePlan,
                           subscription,
                           cancellableOnlyViaSupport,
-                          hasExternalMemberCapableB2BPlan,
-                          showBusinessActivation
+                          hasExternalMemberCapableB2BPlan
                       ),
             },
             subscription: {

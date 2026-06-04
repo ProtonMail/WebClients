@@ -99,20 +99,11 @@ describe('b2b onboarding helpers', () => {
         it('should return mail features', () => {
             const sectionsInMail = getSections(APPS.PROTONMAIL);
             const sectionsInMailSettings = getSections(APPS.PROTONACCOUNT, APPS.PROTONMAIL);
-            const sectionsInOtherApp = getSections(APPS.PROTONVPN_SETTINGS);
 
             const expectedSections: B2BFeaturesSection[] = [
                 {
                     title: 'Org setup and account security',
-                    featuresList: [
-                        'custom-domain',
-                        'add-users',
-                        'easy-switch',
-                        'recovery',
-                        '2fa',
-                        'security',
-                        'security-breaches',
-                    ],
+                    featuresList: ['easy-switch', 'recovery', '2fa', 'security', 'security-breaches'],
                 },
                 {
                     title: MAIL_APP_NAME,
@@ -138,7 +129,6 @@ describe('b2b onboarding helpers', () => {
 
             expect(sectionsInMail).toEqual(expectedSections);
             expect(sectionsInMailSettings).toEqual(expectedSections);
-            expect(sectionsInOtherApp).toEqual(expectedSections);
         });
 
         it('should return calendar features', () => {

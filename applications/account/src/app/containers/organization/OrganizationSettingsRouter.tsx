@@ -1,7 +1,6 @@
 import { type ReactNode, useRef, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import OLESSettingsArea from '@proton/activation/src/oles/components/SettingsArea';
 import {
     ActivityMonitorDashboard,
     CatchAllSection,
@@ -77,7 +76,6 @@ const OrganizationSettingsRouter = ({
             accessControl,
             rolesAndPermissions,
             sharedServers,
-            migrationAssistant,
         },
     } = organizationAppRoutes;
 
@@ -89,11 +87,6 @@ const OrganizationSettingsRouter = ({
 
     return (
         <Switch>
-            {getIsSectionAvailable(migrationAssistant) && (
-                <Route path={getSectionPath(path, migrationAssistant)}>
-                    <OLESSettingsArea />
-                </Route>
-            )}
             {getIsSectionAvailable(gateways) && (
                 <Route path={getSectionPath(path, gateways)}>
                     <PrivateMainSettingsArea config={gateways}>

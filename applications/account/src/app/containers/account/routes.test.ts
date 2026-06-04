@@ -37,7 +37,6 @@ const defaultFlags: Flags = {
     isSsoForPbsEnabled: false,
     isRetentionPoliciesEnabled: false,
     isAuthenticatorAvailable: false,
-    isOLESEnabled: false,
     isCategoryViewEnabled: false,
     isRecoveryContactsEnabled: false,
     isRolesAndPermissionsEnabled: false,
