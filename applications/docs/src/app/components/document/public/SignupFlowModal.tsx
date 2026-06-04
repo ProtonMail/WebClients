@@ -7,7 +7,6 @@ import type { ModalStateProps } from '@proton/components'
 import {
   DriveLogo,
   Form,
-  Icon,
   InputFieldTwo,
   ModalTwo,
   ModalTwoContent,
@@ -16,6 +15,7 @@ import {
   useApi,
   useModalTwoStatic,
 } from '@proton/components'
+import { IcGift } from '@proton/icons/icons/IcGift'
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper'
 import { queryCheckEmailAvailability } from '@proton/shared/lib/api/user'
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
@@ -23,9 +23,9 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors'
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators'
 
 import { useDocsUrlPublicToken } from '@proton/drive-store'
-import { Actions, countActionWithTelemetry } from '@proton/drive-store/utils/telemetry'
 import { RedirectAction } from '@proton/drive-store/store/_documents'
-import { redirectToSignUp, redirectToSignIn } from './utils'
+import { Actions, countActionWithTelemetry } from '@proton/drive-store/utils/telemetry'
+import { redirectToSignIn, redirectToSignUp } from './utils'
 
 export type SignupFlowModalProps = ModalStateProps & {
   urlPassword: string
@@ -46,7 +46,7 @@ export function SignupFlowModal({
   const { token, linkId } = useDocsUrlPublicToken()
 
   useEffect(() => {
-    countActionWithTelemetry(Actions.ViewSignUpFlowModal)
+    void countActionWithTelemetry(Actions.ViewSignUpFlowModal)
   }, [])
 
   const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -60,7 +60,7 @@ export function SignupFlowModal({
    */
   const handleSubmit = async () => {
     try {
-      countActionWithTelemetry(Actions.SubmitSignUpFlowModal)
+      void countActionWithTelemetry(Actions.SubmitSignUpFlowModal)
       const { Code } = await api({
         ...queryCheckEmailAvailability(email),
         silence: [API_CUSTOM_ERROR_CODES.ALREADY_USED, API_CUSTOM_ERROR_CODES.NOT_ALLOWED],
@@ -95,7 +95,7 @@ export function SignupFlowModal({
       onSubmit={handleSubmit}
       enableCloseWhenClickOutside
       onClose={() => {
-        countActionWithTelemetry(Actions.DismissSignUpFlowModal)
+        void countActionWithTelemetry(Actions.DismissSignUpFlowModal)
         onClose()
       }}
       size="small"
@@ -125,7 +125,7 @@ export function SignupFlowModal({
           value={email}
         />
         <span className="flex items-center gap-1">
-          <Icon className="color-primary" name="gift" />
+          <IcGift className="color-primary" />
           {c('Info').t`Free 5GB encrypted storage to get started`}
         </span>
       </ModalTwoContent>
