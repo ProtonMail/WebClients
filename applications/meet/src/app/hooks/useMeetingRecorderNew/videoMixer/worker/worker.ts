@@ -22,7 +22,8 @@ interface WorkerState {
     ctx: OffscreenCanvasRenderingContext2D | null;
     scene: SceneState;
     videoFrames: Map<string, VideoFrame | ImageBitmap>;
-    renderInterval: number | null;
+    renderInterval: ReturnType<typeof setInterval> | null;
+    frameCount: number;
     trackProcessors: Map<string, { reader: ReadableStreamDefaultReader<VideoFrame>; participantIdentity: string }>;
 }
 
@@ -37,6 +38,7 @@ const state: WorkerState = {
     },
     videoFrames: new Map(),
     renderInterval: null,
+    frameCount: 0,
     trackProcessors: new Map(),
 };
 
@@ -44,6 +46,10 @@ function cleanupFrame(frame: VideoFrame | ImageBitmap) {
     if ('close' in frame) {
         frame.close();
     }
+}
+
+function postFrameCount() {
+    self.postMessage({ type: 'frameCountReport', count: state.frameCount });
 }
 
 function render() {
@@ -61,6 +67,8 @@ function render() {
         scene: state.scene,
         videoFrames: state.videoFrames,
     });
+
+    state.frameCount++;
 }
 
 function startRenderLoop() {
@@ -69,7 +77,7 @@ function startRenderLoop() {
     }
 
     render();
-    state.renderInterval = setInterval(render, 1000 / RECORDING_FPS) as unknown as number;
+    state.renderInterval = setInterval(render, 1000 / RECORDING_FPS);
 }
 
 function stopRenderLoop() {
@@ -131,6 +139,10 @@ self.onmessage = (event: MessageEvent<VideoMixerWorkerMessage>) => {
 
         case VideoMixerMessageType.STOP_TRACK_CAPTURE:
             stopTrackCaptureInWorker(trackProcessorEnv, message.trackId);
+            break;
+
+        case VideoMixerMessageType.REQUEST_FRAME_COUNT:
+            postFrameCount();
             break;
 
         case VideoMixerMessageType.STOP:
