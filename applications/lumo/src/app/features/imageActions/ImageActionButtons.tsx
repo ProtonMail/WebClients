@@ -3,18 +3,26 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 
 import { IMAGE_STYLE_OPTIONS } from './styleOptions';
 
-const BUTTON_STYLE = 'flex flex-row gap-2 flex-nowrap items-center rounded-full w-fit-content';
+const BUTTON_STYLE = 'flex flex-row gap-2 flex-nowrap items-center w-fit-content';
 
 export const ImageModifyButton = ({ onClick }: { onClick: () => void }) => (
     <Button className={BUTTON_STYLE} shape="outline" size="medium" onClick={onClick}>
         <IcPen size={3.5} />
         {c('collider_2025:Action').t`Modify...`}
+    </Button>
+);
+
+export const ImageDownloadButton = ({ onClick }: { onClick: () => void }) => (
+    <Button className={BUTTON_STYLE} shape="outline" size="medium" onClick={onClick}>
+        <IcArrowDownLine size={3.5} />
+        {c('collider_2025:Action').t`Download`}
     </Button>
 );
 
