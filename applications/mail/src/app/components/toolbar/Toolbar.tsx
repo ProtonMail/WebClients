@@ -7,6 +7,9 @@ import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { selectElementID } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
+
 import { isInDeletedFolder } from '../../helpers/elements';
 import { isLabelIDNewsletterSubscription } from '../../helpers/labels';
 import { useCategoriesView } from '../categoryView/useCategoriesView';
@@ -27,7 +30,6 @@ export interface Props {
     loading?: boolean;
     onCheck: (IDs: string[], checked: boolean, replace: boolean) => void;
     labelID: string;
-    elementID?: string;
     messageID?: string;
     selectedIDs: string[];
     checkedIDs: string[];
@@ -62,7 +64,8 @@ type Variant =
     | undefined;
 
 const Toolbar = (props: Props) => {
-    const { elementID, columnMode, selectedIDs = defaultSelectedIDs, toolbarInHeader, labelID } = props;
+    const elementID = useMailSelector(selectElementID);
+    const { columnMode, selectedIDs = defaultSelectedIDs, toolbarInHeader, labelID } = props;
     const breakpoints = useActiveBreakpoint();
 
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');

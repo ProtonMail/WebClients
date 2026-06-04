@@ -59,7 +59,6 @@ const MailboxListItems = ({
         total,
         labelID = '',
         conversationMode,
-        elementID,
         isSearch,
     } = useMailboxListContext();
     const { displayState, changeChecklistDisplay, canDisplayChecklist, byoeFlowInProgress } = useGetStartedChecklist();
@@ -135,7 +134,6 @@ const MailboxListItems = ({
                                     labelID={labelID}
                                     loading={mailboxListLoading}
                                     columnLayout={columnLayout}
-                                    elementID={elementID}
                                     element={element}
                                     checked={!!checkedIDsMap[element.ID || '']}
                                     onCheck={onCheckOne}

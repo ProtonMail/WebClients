@@ -47,7 +47,6 @@ const ToolbarHeaderMessageWide = ({
     onBack,
     conversationMode,
     elementIDs,
-    elementID,
     messageID,
     onElement,
     selectedIDs,
@@ -108,7 +107,6 @@ const ToolbarHeaderMessageWide = ({
                             <NavigationControls
                                 loading={loading}
                                 conversationMode={conversationMode}
-                                elementID={elementID}
                                 messageID={messageID}
                                 elementIDs={elementIDs}
                                 onElement={onElement}

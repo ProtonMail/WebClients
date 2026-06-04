@@ -9,7 +9,6 @@ import { useItemContextMenu } from '../../components/list/useItemContextMenu';
  * Hook to manage list actions like mark as, delete, move, etc.
  */
 export const useListActions = ({
-    elementID,
     labelID,
     checkedIDs = [],
     onCheck,
@@ -17,7 +16,6 @@ export const useListActions = ({
     anchorRef,
     customActions = {},
 }: {
-    elementID?: string;
     labelID?: string;
     checkedIDs?: string[];
     onCheck: (IDs: string[], checked: boolean, replace: boolean) => void;
@@ -31,7 +29,6 @@ export const useListActions = ({
 }) => {
     const { onMarkAs = noop, onDelete = noop, onMove = noop } = customActions;
     const { contextMenu, onContextMenu, blockSenderModal } = useItemContextMenu({
-        elementID,
         labelID: labelID || '',
         anchorRef,
         checkedIDs,
