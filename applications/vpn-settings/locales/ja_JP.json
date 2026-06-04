@@ -1831,9 +1831,6 @@
       "Contacts": [
         "連絡先"
       ],
-      "Domain connected": [
-        "ドメインを接続しました"
-      ],
       "Estimated size": [
         "推定サイズ"
       ],
@@ -1852,9 +1849,6 @@
       "Migrate from Google Workspace": [
         "Google Workspaceから移行"
       ],
-      "Migrate users": [
-        "ユーザーを移行"
-      ],
       "Migration includes": [
         "移行に含まれるもの"
       ],
@@ -1870,23 +1864,11 @@
       "Organization does not have enough storage available": [
         "組織には十分なストレージがありません"
       ],
-      "Required": [
-        "必須"
-      ],
-      "Required to create user accounts": [
-        "ユーザーアカウントの作成のために必須です"
-      ],
       "Select at least one user to start a migration": [
         "移行を開始するには少なくとも1人のユーザーを選択してください"
       ],
-      "Set up": [
-        "セットアップ"
-      ],
       "Sign in to Google Workspace": [
         "Google Workspaceにサインイン"
-      ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
-        "組織のデータを移行するには、Google Workspace Marketplaceから${ BRAND_NAME } Migration Assistant をインストールする必要があります。これにより、${ BRAND_NAME }にデータをコピーする権限が与えられます。インストールをしてから、ここに戻って続行してください。"
       ],
       "User": [
         "ユーザー"
@@ -1899,9 +1881,6 @@
       ],
       "What are you migrating?": [
         "何を移行しますか？"
-      ],
-      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
-        "${ BRAND_NAME } がデータをコピーすることを許可する必要があります。権限を許可した後、ここに戻って続行してください。"
       ]
     },
     "Browser": {
@@ -10330,9 +10309,6 @@
       "Send & receive invitations": [
         "招待を送受信"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries }+ か国のサーバー"
-      ],
       "Share files with no size limit": [
         "サイズ制限のないファイル共有"
       ],
@@ -10888,9 +10864,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "${ numberOfCountries } か国の専用サーバーの場所"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "北米とヨーロッパに専用サーバーを設置"
       ],
       "Multi-platform support": [
         "マルチプラットフォーム対応"
@@ -15805,6 +15778,9 @@
       ],
       "View organization events by upgrading to Professional": [
         "Professionalにアップグレードして組織の予定を表示"
+      ],
+      "VPN apps": [
+        "VPN アプリ"
       ],
       "Warning": [
         "警告"

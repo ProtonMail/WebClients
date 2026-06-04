@@ -1767,17 +1767,11 @@
       "Calendar": [
         "Kalenteri"
       ],
-      "Completed": [
-        "Valmis"
-      ],
       "Configure migration": [
         "Määritä siirto"
       ],
       "Contacts": [
         "Yhteystiedot"
-      ],
-      "Domain connected": [
-        "Verkkotunnus yhdistetty"
       ],
       "Estimated size": [
         "Arvioitu koko"
@@ -1803,9 +1797,6 @@
       "Migrate from Google Workspace": [
         "Siirrä Google Workspace -palvelusta"
       ],
-      "Migrate users": [
-        "Siirrä käyttäjät"
-      ],
       "Migration includes": [
         "Migraatio sisältää"
       ],
@@ -1822,17 +1813,8 @@
       "Organization does not have enough storage available": [
         "Organisaatiolla ei ole tarpeeksi tallennustilaa"
       ],
-      "Required": [
-        "Pakollinen"
-      ],
-      "Required to create user accounts": [
-        "Vaaditaan käyttäjätilien luomiseen"
-      ],
       "Select at least one user to start a migration": [
         "Valitse vähintään yksi käyttäjä siirron aloittamiseksi"
-      ],
-      "Set up": [
-        "Määritä"
       ],
       "Settings": [
         "Asetukset"
@@ -10368,10 +10350,6 @@
       "Send & receive invitations": [
         "Kutsujen lähetys ja vastaanotto"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Palvelimet ${ vpnServersCountData.paid.countries }+ maassa",
-        "Palvelimet ${ vpnServersCountData.paid.countries }+ maassa"
-      ],
       "Share files with no size limit": [
         "Jaa tiedostoja ilman kokorajoituksia"
       ],
@@ -10936,9 +10914,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Omat palvelinsijainnit ${ numberOfCountries }+ maassa"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Omat palvelinsijainnit Pohjois-Amerikassa ja Euroopassa"
       ],
       "Multi-platform support": [
         "Tuki useille alustoille"
@@ -15356,6 +15331,9 @@
       "Open pagination": [
         "Avaa sivunavigaatio"
       ],
+      "OpenVpn": [
+        "OpenVpn"
+      ],
       "OpenVPN configuration files": [
         "OpenVPN-määritystiedostot"
       ],
@@ -15722,6 +15700,9 @@
       ],
       "Verifying your payment...": [
         "Vahvistetaan maksua..."
+      ],
+      "VPN apps": [
+        "VPN-sovellukset"
       ],
       "Warning": [
         "Varoitus"

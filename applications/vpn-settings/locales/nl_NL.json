@@ -338,9 +338,6 @@
       "Delete policy": [
         "Policy verwijderen"
       ],
-      "Delete token ${ tokens[0].Account }": [
-        "Token ${ tokens[0].Account } verwijderen"
-      ],
       "Delete user": [
         "Gebruiker verwijderen"
       ],
@@ -571,9 +568,6 @@
       ],
       "Go to ${ planOrAppName }": [
         "Ga naar ${ planOrAppName }"
-      ],
-      "Go to domain provider": [
-        "Ga naar de domeinprovider"
       ],
       "Go to label": [
         "Ga naar label"
@@ -1981,20 +1975,14 @@
       ]
     },
     "BOSS": {
-      "${ BRAND_NAME } Migration Assistant": [
-        "${ BRAND_NAME } Migratieassistent"
-      ],
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } van ${ providerUsers.length }"
-      ],
-      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
-        "**p=quarantaine**: de ontvangende platforms vragen om de ongeautoriseerde e-mails als spam te markeren of in quarantaine te plaatsen."
-      ],
-      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
-        "**p=reject**: hiermee wordt de ontvangende platformen gevraagd de ongeautoriseerde e-mails te weigeren."
+      "${ relevantCount } of ${ totalCount }": [
+        "${ relevantCount } van ${ totalCount }"
       ],
       "Account connected": [
         "Account verbonden"
+      ],
+      "Accounts migrated": [
+        "Accounts zijn gemigreerd"
       ],
       "Activated": [
         "Geactiveerd"
@@ -2005,9 +1993,6 @@
       "All": [
         "Alle"
       ],
-      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
-        "Zodra de accounts zijn aangemaakt, kunt u de activeringslink delen zodat gebruikers hun ${ BRAND_NAME }-account kunnen claimen."
-      ],
       "Authenticate": [
         "Authenticeren"
       ],
@@ -2016,9 +2001,6 @@
       ],
       "Calendar": [
         "Agenda"
-      ],
-      "Completed": [
-        "Voltooid"
       ],
       "Configure migration": [
         "Migratie configureren"
@@ -2029,32 +2011,20 @@
       "Contacts": [
         "Contacten"
       ],
-      "Copy activation link": [
-        "Activeringslink kopiëren"
-      ],
-      "Copy activation link to clipboard": [
-        "Kopieer de activatielink naar klembord"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
-        "Kopieer onderstaande code en plak ze in de DNS-sectie van uw domein beheerder. U vindt voorbeelden en hulpzame tips ${ hereHref }"
-      ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM voegt een digitale handtekening toe aan elke e-mail, zodat ontvangers kunnen controleren of het bericht daadwerkelijk van uw domein afkomstig is en niet is gewijzigd tijdens de verzending. Zonder DKIM worden berichten mogelijk als minder betrouwbaar beschouwd."
-      ],
-      "DKIM records": [
-        "DKIM-records"
       ],
       "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
         "DMARC bouwt voort op SPF en DKIM door ontvangende servers te vertellen hoe ze berichten moeten afhandelen die niet aan deze controles voldoen. Het helpt uw ​​domein te beschermen tegen namaak en verbetert de algehele betrouwbaarheid van de levering."
       ],
-      "DMARC records": [
-        "DMARC-records"
-      ],
       "Domain added": [
         "Domein toegevoegd"
       ],
-      "Domain connected": [
-        "Domein verbonden"
+      "Domain provider": [
+        "Domeinleverancier"
+      ],
+      "Emails": [
+        "E-mails"
       ],
       "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
         "Zorg ervoor dat uw e-mails in de inbox terechtkomen en niet in de spammap. Door SPF bij te werken, kunnen gebruikers gedurende de migratieperiode gelijktijdig e-mails verzenden vanaf ${ BRAND_NAME } en Google."
@@ -2065,17 +2035,20 @@
       "Failed to load OAuth": [
         "Laden van OAuth mislukt"
       ],
+      "Final step": [
+        "Laatste stap"
+      ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace-app om gegevens naar ${ BRAND_NAME } te kopiëren"
       ],
       "Google Workspace account": [
         "Google Workspace account"
       ],
-      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
-        "Even geduld, we zijn bezig met het aanmaken van gebruikersaccounts en beginnen binnenkort met het importeren van gebruikersgegevens."
-      ],
       "Has errors": [
         "Bevat fouten"
+      ],
+      "Import details": [
+        "Gegevens importeren"
       ],
       "In progress": [
         "Bezig"
@@ -2089,20 +2062,20 @@
       "Mail": [
         "Mail"
       ],
-      "Managed via ${ registrar.name }": [
-        "Beheerd via ${ registrar.name }"
-      ],
       "Member address not found. Please contact customer support to resolve this": [
         "Lidadres niet gevonden. Neem contact op met de klantenservice om dit op te lossen"
+      ],
+      "Migrate accounts": [
+        "Accounts migreren"
       ],
       "Migrate from Google Workspace": [
         "Migreren vanuit Google Workspace"
       ],
-      "Migrate users": [
-        "Gebruikers migreren"
-      ],
       "Migrated": [
         "Gemigreerd"
+      ],
+      "Migrated accounts": [
+        "Gemigreerde accounts"
       ],
       "Migration includes": [
         "Migratie omvat"
@@ -2120,9 +2093,6 @@
       "Missing organization public key": [
         "Ontbrekende openbare sleutel van de organisatie"
       ],
-      "More details": [
-        "Meer details"
-      ],
       "No users to display": [
         "Geen gebruikers om weer te geven"
       ],
@@ -2131,9 +2101,6 @@
       ],
       "Not confirmed": [
         "Niet bevestigd"
-      ],
-      "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
-        "Zodra gebruikers hun ${ BRAND_NAME }-account hebben geclaimd, kunt u de migratie voltooien."
       ],
       "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
         "Zodra we hebben bevestigd dat e-mails worden doorgestuurd naar ${ BRAND_NAME }, wordt de migratie afgerond. U ontvangt een bevestigingsmail wanneer dit is gebeurd. Dit proces kan tot 24 uur duren."
@@ -2147,20 +2114,8 @@
       "Pending": [
         "In behandeling"
       ],
-      "Please add the following records in your DNS console of your domain provider:": [
-        "Voeg volgende DNS-records toe in het configuratiepaneel van uw domein provider."
-      ],
-      "Please leave this window open until we're done creating all the users.": [
-        "Laat dit venster open staan ​​totdat we alle gebruikers hebben aangemaakt."
-      ],
       "Refresh": [
         "Vernieuw"
-      ],
-      "Required": [
-        "Vereist"
-      ],
-      "Required to create user accounts": [
-        "Nodig om gebruikersaccounts aan te maken."
       ],
       "Select at least one user to start a migration": [
         "Selecteer minimaal één gebruiker om een migratie te starten"
@@ -2168,17 +2123,11 @@
       "Select users to migrate": [
         "Selecteer gebruikers om te migreren"
       ],
-      "Set up": [
-        "Configureren"
-      ],
       "Set up secure sending (SPF)": [
         "Beveiligd verzenden (SPF) instellen"
       ],
       "Settings": [
         "Instellingen"
-      ],
-      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
-        "Deel de activatielink met de gebruikers zodat ze hun ${ BRAND_NAME }-account kunnen opeisen"
       ],
       "Sign in to Google Workspace": [
         "Inloggen bij Google Workspace"
@@ -2186,26 +2135,16 @@
       "Size": [
         "Grootte"
       ],
-      "SPF records": [
-        "SPF-Records"
+      "Skipped ${ count } contact due to incompatibilities": [
+        "${ count } contact is overgeslagen vanwege onverenigbaarheden",
+        "${ count } contacten zijn overgeslagen vanwege onverenigbaarheden"
       ],
-      "Start migrating": [
-        "Migratie starten"
+      "Skipped ${ count } email due to incompatibilities": [
+        "${ count } e-mail is overgeslagen vanwege onverenigbaarheden",
+        "${ count } e-mails zijn overgeslagen vanwege onverenigbaarheden"
       ],
       "Status": [
         "Status"
-      ],
-      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
-        "De standaardinstelling is 'geen'. Om uw veiligheid te verbeteren, raden we echter aan deze waarde in te stellen op 'p=quarantaine'."
-      ],
-      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
-        "De waarde “p=” specificeert de actie die moet worden uitgevoerd voor e-mails die niet aan de DMARC-vereisten voldoen. Dit zijn de beschikbare acties:"
-      ],
-      "This migration has been completed": [
-        "Deze migratie is voltooid"
-      ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
-        "Om de gegevens van uw organisatie te migreren, moet u de ${ BRAND_NAME } Migration Assistant-app installeren vanuit de Google Workspace Marketplace. Hiermee wordt toestemming verleend aan ${ BRAND_NAME } om uw gegevens te kopiëren. Nadat u de app hebt geïnstalleerd, keert u hier terug om verder te gaan."
       ],
       "Update records for receiving": [
         "Gegevens bijwerken voor ontvangst"
@@ -2213,8 +2152,8 @@
       "User": [
         "Gebruiker"
       ],
-      "User needs to activate their account through the activation link shown above": [
-        "De gebruiker moet zijn account activeren via de bovenstaande activeringslink."
+      "Users activated": [
+        "Gebruikers geactiveerd"
       ],
       "Users migrated": [
         "Gebruikers gemigreerd"
@@ -2231,14 +2170,8 @@
       "Verify your domain to start a migration": [
         "Verifieer uw domein om een migratie te starten"
       ],
-      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
-        "We hebben het primaire domein gedetecteerd dat aan uw Google Workspace-account is gekoppeld. Bevestig dit om door te gaan met het instellen van e-mail voor uw ${ BRAND_NAME }-organisatie."
-      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "We konden de installatie niet verifiëren. Controleer of u deze in uw Google Workspace-account hebt geïnstalleerd en probeer het opnieuw."
-      ],
-      "We're still checking the MX records with your domain provider.": [
-        "We controleren de MX-records nog steeds bij uw domeinprovider."
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "We hebben gemerkt dat sommige gebruikers hun ${ BRAND_NAME } profiel nog niet hebben geactiveerd."
@@ -2248,9 +2181,6 @@
       ],
       "You": [
         "U"
-      ],
-      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
-        "U dient de toestemming te verlenen aan ${ BRAND_NAME } om uw gegevens te kopiëren. Keer hier terug om verder te gaan nadat u de toestemmingen hebt geaccepteerd."
       ],
       "You're all set!": [
         "U bent helemaal klaar!"
@@ -3962,11 +3892,6 @@
     "description": {
       "use the Easy Switch import assistant": [
         "gebruik de Easy Switch-importhulp"
-      ]
-    },
-    "Description for domain modal": {
-      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
-        "Er is een dubbel DMARC-record gevonden. Ga naar de DNS-console van uw domeinprovider om dit te corrigeren."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -9984,9 +9909,6 @@
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten"
       ],
-      "MX records": [
-        "MX records"
-      ],
       "Name": [
         "Naam"
       ],
@@ -10118,9 +10040,6 @@
       ],
       "Previous password": [
         "Vorig wachtwoord"
-      ],
-      "Priority": [
-        "Prioriteit"
       ],
       "Priority support": [
         "Prioriteitsondersteuning"
@@ -10413,9 +10332,6 @@
       ],
       "Type": [
         "Type"
-      ],
-      "Use default value": [
-        "Gebruik de standaard waarde"
       ]
     },
     "Label for new member": {
@@ -10529,9 +10445,6 @@
       ],
       "Create an alias": [
         "Alias aanmaken"
-      ],
-      "Detailed instructions": [
-        "Gedetailleerde instructies"
       ],
       "Details": [
         "Details"
@@ -11674,10 +11587,6 @@
       "Send & receive invitations": [
         "Uitnodigingen verzenden & ontvangen"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Servers in ${ vpnServersCountData.paid.countries }+ land",
-        "Servers in ${ vpnServersCountData.paid.countries }+ landen"
-      ],
       "Share files with no size limit": [
         "Deel bestanden zonder maximale grootte"
       ],
@@ -12249,9 +12158,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Toegewijde server locaties in ${ numberOfCountries }+ landen"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Toegewijde server locaties in Noord-Amerika en Europa"
       ],
       "Multi-platform support": [
         "Multi-platformondersteuning"
@@ -15949,9 +15855,6 @@
       "Account deleted. Signing out...": [
         "Account verwijderd. Uitloggen..."
       ],
-      "Activation link copied to clipboard": [
-        "Activeringslink naar klembord gekopieerd"
-      ],
       "Address added": [
         "Adres toegevoegd"
       ],
@@ -17113,6 +17016,9 @@
       "Open pagination": [
         "Paginering openen"
       ],
+      "OpenVpn": [
+        "OpenVPN"
+      ],
       "OpenVPN configuration files": [
         "OpenVPN-configuratiebestanden"
       ],
@@ -17423,6 +17329,9 @@
       "Summary": [
         "Overzicht"
       ],
+      "Summer Sale": [
+        "Zomeruitverkoop"
+      ],
       "Support your compliance objectives": [
         "Ondersteun uw compliancedoelstellingen"
       ],
@@ -17557,6 +17466,9 @@
       ],
       "VPN": [
         "VPN"
+      ],
+      "VPN apps": [
+        "VPN-apps"
       ],
       "Warning": [
         "Waarschuwing"

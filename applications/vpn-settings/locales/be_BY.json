@@ -338,9 +338,6 @@
       "Delete policy": [
         "Выдаліць палітыку"
       ],
-      "Delete token ${ tokens[0].Account }": [
-        "Выдаліць токен ${ tokens[0].Account }"
-      ],
       "Delete user": [
         "Выдаліць карыстальніка"
       ],
@@ -440,6 +437,9 @@
       "Edit group": [
         "Рэдагаваць групу"
       ],
+      "Edit invoice details": [
+        "Рэдагаваць падрабязнасці рахунка"
+      ],
       "Edit invoice note": [
         "Рэдагаваць нататку рахунка"
       ],
@@ -533,6 +533,9 @@
       "Get Deal": [
         "Атрымаць прапанову"
       ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Атрымаць дапамогу ад ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Get in touch": [
         "Звязацца з намі"
       ],
@@ -571,9 +574,6 @@
       ],
       "Go to ${ planOrAppName }": [
         "Перайсці ў ${ planOrAppName }"
-      ],
-      "Go to domain provider": [
-        "Перайсці да пастаўшчыка даменаў"
       ],
       "Go to label": [
         "Перайсці ў меткі"
@@ -2026,21 +2026,6 @@
       ]
     },
     "BOSS": {
-      "${ BRAND_NAME } Migration Assistant": [
-        "${ BRAND_NAME } Migration Assistant"
-      ],
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } з ${ providerUsers.length }"
-      ],
-      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
-        "**p=none**: не пераводзіць у каранцін і не адхіляе неаўтарызаваныя лісты. Звычайна карыстальнікі выкарыстоўваюць гэту палітыку пры непаладках або тэсціраванні."
-      ],
-      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
-        "**p=quarantine**: просіць платформы атрымальніка пазначаць неаўтарызаваныя электронныя лісты як спам або пераводзіць іх у каранцін."
-      ],
-      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
-        "**p=reject**: просіць платформы атрымальніка адхіляць неаўтарызаваныя лісты."
-      ],
       "Account connected": [
         "Уліковы запіс падключаны"
       ],
@@ -2049,12 +2034,6 @@
       ],
       "Activated": [
         "Актывавана"
-      ],
-      "Activation link": [
-        "Спасылка актывацыі"
-      ],
-      "Activation link copied to clipboard": [
-        "Спасылка актывацыі скапіявана ў буфер абмену"
       ],
       "Add domain": [
         "Дадаць дамен"
@@ -2068,14 +2047,8 @@
       "All": [
         "Усе"
       ],
-      "An unknown error occurred": [
-        "Адбылася невядомая памылка"
-      ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "Вы сапраўды хочаце працягнуць? Карыстальнікі, якія не запыталі свой уліковы запіс да завяршэння пераносу, неабходна будзе скінуць пароль праз адміністратара арганізацыі ${ BRAND_NAME }."
-      ],
-      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
-        "Як толькі ўліковыя запісы будуць створаны, вы зможаце абагуліць спасылку актывацыі, карыстальнікі змаглі атрымаць свой уліковы запіс ${ BRAND_NAME }."
       ],
       "Authenticate": [
         "Аўтэнтыфікаваць"
@@ -2085,12 +2058,6 @@
       ],
       "Calendar": [
         "Каляндар"
-      ],
-      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
-        "Выберыце, што вы хочаце перанесці. Ваш выбар будзе прыменены да ўсіх карыстальнікаў. Перанос пачнецца адразу пасля таго, як вы вырашыце якіх карыстальнікаў капіяваць."
-      ],
-      "Completed": [
-        "Завершаныя"
       ],
       "Configure domain": [
         "Сканіфігурыраваць дамен"
@@ -2104,35 +2071,14 @@
       "Contacts": [
         "Кантакты"
       ],
-      "Copy activation link": [
-        "Скапіяваць спасылку актывацыі"
-      ],
-      "Copy activation link to clipboard": [
-        "Скапіюйце спасылку актывацыі ў буфер абмену"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
-        "Скапіюйце код ніжэй і ўстаўце яго ў раздзел DNS вашага даменнага вузла. Прыклады і карысныя парады як гэта зрабіць можна знайсці ў ${ hereHref }."
-      ],
-      "Creating accounts": [
-        "Стварэнне ўліковых запісаў"
-      ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM дадае лічбавы подпіс да кожнага ліста, каб атрымальнікі маглі спраўдзіць, што паведамленне сапраўды паступіла з вашага дамена і не было зменена пры перадачы. Без гэтага спосабу спраўджання паведамленні могуць лічыцца менш надзейнымі."
-      ],
-      "DKIM records": [
-        "Запісы DKIM"
       ],
       "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
         "DMARC заснаваны на SPF і DKIM. Сутнасць тэхналогіі заключаецца ў тым, што ён паведамляе правілы апрацоўкі паведамленняў, якія не прайшлі спраўджанне на серверы, які атрымаў гэтыя паведамленні. Гэта дапамагае абараніць ваш дамен ад імітацыі і павышае агульную надзейнасць дастаўкі."
       ],
-      "DMARC records": [
-        "Запісы DMARC"
-      ],
       "Domain added": [
         "Дамены дададзены"
-      ],
-      "Domain connected": [
-        "Дамен падключаны"
       ],
       "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
         "Пераканайцеся, што вашы электронныя лісты трапляюць у паштовую скрыню, а не ў папку са спамам. Абнаўленне SPF дазволіць карыстальнікам адначасова адпраўляць лісты з ${ BRAND_NAME } і Google на працягу ўсяго перыяду пераносу."
@@ -2146,12 +2092,6 @@
       "Failed to load OAuth": [
         "Не ўдалося загрузіць OAuth"
       ],
-      "Finalize migration": [
-        "Завяршэнне пераносу"
-      ],
-      "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
-        "Завяршэнне пераносу азначае, што ўсе вашы лісты будуць накіроўвацца непасрэдна ў ${ BRAND_NAME }. Карыстальнікі больш не будуць атрымліваць лісты ў сваіх уліковых запісах Google, а даныя больш не будуць сінхранізавацца паміж ${ BRAND_NAME } і Google."
-      ],
       "Find out what can be migrated.": [
         "Даведайцеся, што перанесена."
       ],
@@ -2161,14 +2101,8 @@
       "Google Workspace account": [
         "Уліковы запіс Google Workspace"
       ],
-      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
-        "Пачакайце крыху... адбываецца наладжванне ўліковых запісаў карыстальнікаў і неўзабаве пачнецца імпартаванне іх даных."
-      ],
       "Has errors": [
         "З памылкамі"
-      ],
-      "Import errors for ${ user.AdminSetName }": [
-        "Памылкі імпартавання для ${ user.AdminSetName }"
       ],
       "In progress": [
         "Выконваецца"
@@ -2185,17 +2119,11 @@
       "Mail": [
         "Пошта"
       ],
-      "Managed via ${ registrar.name }": [
-        "Кіруецца праз ${ registrar.name }"
-      ],
       "Member address not found. Please contact customer support to resolve this": [
         "Адрас удзельніка не знойдзены. Звяжыцеся з нашай службай падтрымкі кліентаў, каб вырашыць гэта"
       ],
       "Migrate from Google Workspace": [
         "Перанесці з Google Workspace"
-      ],
-      "Migrate users": [
-        "Перанос карыстальнікаў"
       ],
       "Migrated": [
         "Перанесена"
@@ -2218,9 +2146,6 @@
       "Missing organization public key": [
         "Адсутнічае адкрыты ключ арганізацыі"
       ],
-      "More details": [
-        "Дадатковая інфармацыя"
-      ],
       "No error details available. Please contact customer support for more information": [
         "Падрабязнасці памылкі недаступны. Звяжыцеся са службай падтрымкі для атрымання дадатковай інфармацыі."
       ],
@@ -2232,9 +2157,6 @@
       ],
       "Not confirmed": [
         "Не пацверджана"
-      ],
-      "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
-        "Пасля таго, як карыстальнікі запытаюць свае ўліковыя запісы ${ BRAND_NAME }, завяршыце перанос."
       ],
       "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
         "Як толькі будзе пацверджана, што лісты накіроўваюцца ў ${ BRAND_NAME } перанос будзе завершаны. Вы атрымаеце ліст з пацвярджэннем, калі гэта адбудзецца. Гэты працэс зойме да 24 гадзін."
@@ -2248,32 +2170,14 @@
       "Pending": [
         "У чаканні"
       ],
-      "Please add the following records in your DNS console of your domain provider:": [
-        "Дадайце наступныя запісы ў кансоль DNS вашага пастаўшчыка даменаў:"
-      ],
-      "Please leave this window open until we're done creating all the users.": [
-        "Пакіньце гэта акно адкрытым, пакуль не будзе завершана стварэнне ўсіх карыстальнікаў."
-      ],
-      "Please select at least one product to migrate": [
-        "Выберыце прынамсі адзін прадукт для пераносу"
-      ],
       "Refresh": [
         "Абнавiць"
-      ],
-      "Required": [
-        "Абавязкова"
-      ],
-      "Required to create user accounts": [
-        "Неабходна для стварэння ўліковых запісаў карыстальнікаў"
       ],
       "Select at least one user to start a migration": [
         "Выберыце прынамсі аднаго карыстальніка, каб пачаць перанос"
       ],
       "Select users to migrate": [
         "Выберыце карыстальнікаў для пераносу"
-      ],
-      "Set up": [
-        "Наладзіць"
       ],
       "Set up secure sending (DKIM)": [
         "Наладзьце бяспечную адпраўку (DKIM)"
@@ -2287,9 +2191,6 @@
       "Settings": [
         "Налады"
       ],
-      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
-        "Абагуліце спасылку актывацыі з карыстальнікамі, каб яны змаглі пацвердзіць свой уліковы запіс ${ BRAND_NAME }."
-      ],
       "Sign in to Google Workspace": [
         "Увайсці ў Google Workspace"
       ],
@@ -2299,41 +2200,14 @@
       "Some accounts are not claimed": [
         "Некаторыя ўліковыя запісы не пацверджаны"
       ],
-      "SPF records": [
-        "Запісы SPF"
-      ],
-      "Start migrating": [
-        "Пачаць перанос"
-      ],
       "Status": [
         "Статус"
-      ],
-      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
-        "Прадвызначаныя налады адсутнічаюць. Аднак для ўдасканалення вашай бяспекі рэкамендуецца наладзіць гэта значэнне ў p=quarantine."
-      ],
-      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
-        "Значэнне \"p=\" указвае дзеянне, якое неабходна выканаць для лістоў, якія не прайшлі спраўджанне DMARC. Тут прадстаўлены даступныя дзеянні:"
-      ],
-      "This migration has been completed": [
-        "Перанос завершаны"
-      ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
-        "Вам неабходна ўсталяваць праграму ${ BRAND_NAME } Migration Assistant з Google Workspace Marketplace, каб перанесці даныя сваёй арганізацыі. Гэта дзеянне дазволіць ${ BRAND_NAME } скапіяваць вашы даныя. Вярніцеся сюды для працягу пасля таго, як праграма будзе ўсталявана."
       ],
       "Update records for receiving": [
         "Абнавіце запісы для атрымання"
       ],
       "User": [
         "Карыстальнік"
-      ],
-      "User needs to activate their account through the activation link shown above": [
-        "Карыстальнік павінен актываваць свой уліковы запіс праз спасылку актывацыі паказаную вышэй"
-      ],
-      "User status": [
-        "Статус карыстальніка"
-      ],
-      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
-        "Карыстальнікі могуць адначасова выкарыстоўваць ${ BRAND_NAME } або Google на працягу ўсяго перыяду пераносу."
       ],
       "Users migrated": [
         "Карыстальнікі перанесены"
@@ -2350,14 +2224,8 @@
       "Verify your domain to start a migration": [
         "Спраўдзіце свой дамен, каб пачаць перанос"
       ],
-      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
-        "Сістэма выявіла, што асноўны дамен звязаны з вашым уліковым запісам Google Workspace. Пацвердзіце яго, каб працягнуць наладжванне электроннай пошты для сваёй арганізацыі ${ BRAND_NAME }."
-      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Немагчыма спраўдзіць усталяванне. Праверце, што ўсталяванне было зроблена ва ўліковым запісе Google Workspace і паспрабуйце яшчэ раз."
-      ],
-      "We're still checking the MX records with your domain provider.": [
-        "Сістэма ўсё яшчэ правярае запісы MX з вашым пастаўшчыком дамена."
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Звярніце ўвагу, што некаторыя карыстальнікі не запыталі свае ўліковыя запісы ${ BRAND_NAME }."
@@ -2367,9 +2235,6 @@
       ],
       "You": [
         "Вы"
-      ],
-      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
-        "Вам неабходна даць дазвол для ${ BRAND_NAME } на капіяванне вашых даных. Працягвайце далей пасля таго, як будуць прыняты дазволы."
       ],
       "You're all set!": [
         "Усё гатова!"
@@ -4120,11 +3985,6 @@
         "скарыстайцеся памочнікам імпартавання Easy Switch"
       ]
     },
-    "Description for domain modal": {
-      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
-        "Знойдзены дублікат запісу DMARC. Перайдзіце ў кансоль DNS свайго пастаўшчыка дамена, каб выправіць гэта."
-      ]
-    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "Таксама мы аўтаматычна параўналі палі CSV з палямі vCard. Вы можаце праверыць і змяніць гэтыя адпаведнасці ўручную."
@@ -4915,6 +4775,9 @@
       "Please add a payment method before reactivating your subscription": [
         "Дадайце спосаб аплаты перад тым, як аднавіць сваю падпіску"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Праверцеце, ці зарэгістраваны ваш ABN для трансгранічнага ПДВ"
+      ],
       "Please complete the billing details": [
         "Запоўніце плацежныя звесткі"
       ],
@@ -5148,6 +5011,9 @@
       ],
       "Username must end with a letter or digit": [
         "Імя карыстальніка павінна заканчвацца літарай або лічбай"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Нумар ПДВ павінен пачынацца з ${ prefixes }"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Не ўдалося праверыць. Паспрабуйце яшчэ раз праз гадзіну."
@@ -10262,9 +10128,6 @@
       "Hide password": [
         "Схаваць пароль"
       ],
-      "Host name": [
-        "Імя вузла"
-      ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Я разумею, што мне неабходна будзе неадкладна дадаць гэты адрас электроннай пошты ў іншы ўліковы запіс, каб пазбегнуць незваротнай страты гэтага адраса."
       ],
@@ -10381,9 +10244,6 @@
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Пароль павінен мець прынамсі ${ MIN_PASSWORD_LENGTH } сімвалы(аў)"
-      ],
-      "MX records": [
-        "Запіс MX"
       ],
       "Name": [
         "Назва"
@@ -10516,9 +10376,6 @@
       ],
       "Previous password": [
         "Папярэдні пароль"
-      ],
-      "Priority": [
-        "Прыярытэт"
       ],
       "Priority support": [
         "Прыярытэтная падтрымка"
@@ -10822,9 +10679,6 @@
       "Type": [
         "Тып"
       ],
-      "Use default value": [
-        "Выкарыстоўваць прадвызначанае значэнне"
-      ],
       "Valid ${ group.name } record found": [
         "Знойдзены сапраўдны запіс ${ group.name }"
       ]
@@ -10943,9 +10797,6 @@
       ],
       "data recovery option": [
         "параметр аднаўлення даных"
-      ],
-      "Detailed instructions": [
-        "Падрабязныя інструкцыі"
       ],
       "Details": [
         "Падрабязнасці"
@@ -11084,6 +10935,9 @@
       ],
       "Sign in": [
         "Увайсці"
+      ],
+      "Sign-in help": [
+        "Дапамога з уваходам у сістэму"
       ],
       "Terms": [
         "Умовы"
@@ -12150,11 +12004,11 @@
       "Send & receive invitations": [
         "Адпраўка і атрыманне запрашэнняў"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краіне",
-        "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краінах",
-        "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краінах",
-        "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краінах"
+      "Servers in ${ VPN_SERVERS.paid.countries }+ country": [
+        "Серверы ў больш, чым ${ VPN_SERVERS.paid.countries } краіне",
+        "Серверы ў больш, чым ${ VPN_SERVERS.paid.countries } краінах",
+        "Серверы ў больш, чым ${ VPN_SERVERS.paid.countries } краінах",
+        "Серверы ў больш, чым ${ VPN_SERVERS.paid.countries } краінах"
       ],
       "Share files with no size limit": [
         "Абагульванне файлаў без абмежавання памеру"
@@ -12747,9 +12601,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Размяшчэнні вылучаных сервераў у больш чым у ${ numberOfCountries } краінах"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Размяшчэнне вылучаных сервераў у Паўночнай Амерыцы і Еўропе"
       ],
       "Multi-platform support": [
         "Шматплатформенная падтрымка"
@@ -16489,9 +16340,6 @@
       "Account deleted. Signing out...": [
         "Уліковы запіс выдалены. Адбываецца выхад..."
       ],
-      "Activation link copied to clipboard": [
-        "Спасылка актывацыі скапіявана ў буфер абмену"
-      ],
       "Address added": [
         "Адрас дададзены"
       ],
@@ -18020,6 +17868,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Адкрыйце гэту электронную табліцу ў ${ SHEETS_APP_NAME } або спампуйце яе для папярэдняга прагляду."
       ],
+      "Troubleshoot with ${ LUMO_SHORT_APP_NAME }": [
+        "Пошук і выпраўленне непаладак з ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Troubleshoot your issue": [
         "Выпраўленне непаладкі"
       ],
@@ -18124,6 +17975,9 @@
       ],
       "VPN": [
         "VPN"
+      ],
+      "VPN apps": [
+        "Праграмы VPN"
       ],
       "Warning": [
         "Папярэджанне"

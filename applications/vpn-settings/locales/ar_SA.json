@@ -407,6 +407,9 @@
       "Edit group": [
         "تعديل المجموعة"
       ],
+      "Edit invoice details": [
+        "تعديل بيانات الفاتورة"
+      ],
       "Edit invoice note": [
         "تعديل ملاحظة الفاتورة"
       ],
@@ -496,6 +499,9 @@
       ],
       "Get Deal": [
         "الحصول على العرض"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "اطلب المساعدة من ${ LUMO_SHORT_APP_NAME }"
       ],
       "Get in touch": [
         "تواصل معنا"
@@ -4173,6 +4179,9 @@
       "Please add a payment method before reactivating your subscription": [
         "يرجى إضافة طريقة دفع قبل إعادة تفعيل اشتراكك."
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "يُرجى التأكد من أن رقم ABN الخاص بك مسجّل لضريبة القيمة المضافة على المعاملات العابرة للحدود."
+      ],
       "Please complete the billing details": [
         "يرجى إكمال تفاصيل الفوترة"
       ],
@@ -4399,6 +4408,9 @@
       ],
       "Username must end with a letter or digit": [
         "يجب أن ينتهي اسم المستخدم بحرف أو رقم"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "يجب أن يبدأ رقم ضريبة القيمة المضافة بأحد البادئات التالية: ${ prefixes }"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "لم تنجح عملية التحقق، يرجى المحاولة مرة أخرى بعد ساعة."
@@ -9943,6 +9955,9 @@
       "Sign in": [
         "تسجيل الدخول"
       ],
+      "Sign-in help": [
+        "مساعدة تسجيل الدخول"
+      ],
       "Terms": [
         "الشروط"
       ],
@@ -10876,14 +10891,6 @@
       "Send & receive invitations": [
         "إرسال واستقبال الدعوات"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ countries": [
-        "خوادم في أكثر من ${ vpnServersCountData.paid.countries } بلدًا",
-        "خوادم في ${ vpnServersCountData.paid.countries } بلد",
-        "خوادم في أكثر من ${ vpnServersCountData.paid.countries } بلدين",
-        "خوادم في أكثر من ${ vpnServersCountData.paid.countries } بلدان",
-        "خوادم في أكثر من ${ vpnServersCountData.paid.countries } بلدًا",
-        "خوادم في أكثر من ${ vpnServersCountData.paid.countries } بلدًا"
-      ],
       "Share files with no size limit": [
         "مشاركة الملفات بلا حدود للحجم"
       ],
@@ -11484,9 +11491,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "مواقع خوادم مخصصة في أكثر من ${ numberOfCountries } دولة"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "مواقع خوادم مخصصة في أمريكا الشمالية وأوروبا"
       ],
       "Multi-platform support": [
         "دعم متعدد المنصات"
@@ -16290,6 +16294,9 @@
       "Open pagination": [
         "فتح ترقيم الصفحات"
       ],
+      "OpenVpn": [
+        "فتح Vpn"
+      ],
       "OpenVPN configuration files": [
         "ملفات تكوين OpenVPN"
       ],
@@ -16592,6 +16599,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "لمعاينة جدول البيانات هذا، افتحه في ${ SHEETS_APP_NAME } أو قم بتنزيله."
       ],
+      "Troubleshoot with ${ LUMO_SHORT_APP_NAME }": [
+        "حلّ المشكلات باستخدام ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "جرب ${ AUTHENTICATOR_APP_NAME }"
       ],
@@ -16678,6 +16688,9 @@
       ],
       "View organization events by upgrading to Professional": [
         "عرض أحداث المؤسسة بالترقية إلى خطة Professional"
+      ],
+      "VPN apps": [
+        "تطبيقات VPN"
       ],
       "Warning": [
         "تحذير"

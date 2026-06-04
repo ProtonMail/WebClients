@@ -338,9 +338,6 @@
       "Delete policy": [
         "Slet politik"
       ],
-      "Delete token ${ tokens[0].Account }": [
-        "Slet token ${ tokens[0].Account }"
-      ],
       "Delete user": [
         "Slet bruger"
       ],
@@ -440,6 +437,9 @@
       "Edit group": [
         "Rediger gruppe"
       ],
+      "Edit invoice details": [
+        "Rediger fakturaoplysninger"
+      ],
       "Edit invoice note": [
         "Rediger fakturanote"
       ],
@@ -533,6 +533,9 @@
       "Get Deal": [
         "Få et tilbud"
       ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Få hjælp fra ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Get in touch": [
         "Kontakt os"
       ],
@@ -571,9 +574,6 @@
       ],
       "Go to ${ planOrAppName }": [
         "Gå til ${ planOrAppName }"
-      ],
-      "Go to domain provider": [
-        "Gå til domæneudbyder"
       ],
       "Go to label": [
         "Gå til etikette"
@@ -1992,21 +1992,6 @@
       ]
     },
     "BOSS": {
-      "${ BRAND_NAME } Migration Assistant": [
-        "${ BRAND_NAME } Migreringsassistent"
-      ],
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } af ${ providerUsers.length }"
-      ],
-      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
-        "**p=none**: sæt hverken uautoriserede e-mails i karantæne eller afvis dem. Normalt bruger folk kun denne politik til fejlfinding eller test."
-      ],
-      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
-        "**p=quarantine**: beder modtagerplatformene om at markere de uautoriserede e-mails som spam eller sætte dem i karantæne."
-      ],
-      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
-        "**p=reject**: beder modtagerplatformene om at afvise de uautoriserede e-mails."
-      ],
       "Account connected": [
         "Konto forbundet"
       ],
@@ -2015,12 +2000,6 @@
       ],
       "Activated": [
         "Aktiveret"
-      ],
-      "Activation link": [
-        "Aktiveringslink"
-      ],
-      "Activation link copied to clipboard": [
-        "Aktiveringslink kopieret til udklipsholder"
       ],
       "Add domain": [
         "Tilføj domæne"
@@ -2034,14 +2013,8 @@
       "All": [
         "Alle"
       ],
-      "An unknown error occurred": [
-        "Der opstod en ukendt fejl"
-      ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "Er du sikker på, at du vil fortsætte? Brugere, som ikke har indløst deres konto før migrationen er færdiggjort, vil skulle anmode om at nulstille adgangskoden fra deres ${ BRAND_NAME } organisationsadministrator."
-      ],
-      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
-        "Så snart kontiene er tilføjet, kan du dele aktiveringslinket, så brugerne kan indløse deres ${ BRAND_NAME }-konto."
       ],
       "Authenticate": [
         "Godkend"
@@ -2051,12 +2024,6 @@
       ],
       "Calendar": [
         "Kalender"
-      ],
-      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
-        "Vælg hvad der skal migreres. Dit valg vil gælde alle brugere. Migrationen starter efter du vælger hvilke brugere der skal kopieres."
-      ],
-      "Completed": [
-        "Fuldført"
       ],
       "Configure domain": [
         "Konfigurer domæne"
@@ -2070,35 +2037,14 @@
       "Contacts": [
         "Kontakter"
       ],
-      "Copy activation link": [
-        "Kopiér aktiveringslink"
-      ],
-      "Copy activation link to clipboard": [
-        "Kopiér aktiveringslink til udklipsholder"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
-        "Kopiér den nedenstående kode og indsæt det i DNS-sektionen hos din domænevært. Du kan se et eksempel og nogle tips ${ hereHref }."
-      ],
-      "Creating accounts": [
-        "Kontioprettelse"
-      ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM tilføjer en digital signatur til hver e-mail, så modtagerne kan verificere at beskeden virkelig kom fra dit domæne, og ikke blev ændret undervejs. Beskeder kan blive betragtet som mindre troværdige uden den."
-      ],
-      "DKIM records": [
-        "DKIM-records"
       ],
       "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
         "DMARC bygger på SPF og DKIM ved at fortælle modtagerservere hvordan de skal håndtere beskeder der fejler disse tjek. Det hjælper med at beskytte dit domæne fra falske beskeder der udgiver sig for at være fra dit, og gør generelt levering mere pålidelig."
       ],
-      "DMARC records": [
-        "DMARC-records"
-      ],
       "Domain added": [
         "Domæne tilføjet"
-      ],
-      "Domain connected": [
-        "Domæne forbundet"
       ],
       "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
         "Sørg for at dine e-mails når indbakken, og ikke spammappen. Ved at opdatere SPF kan brugere sende e-mails fra ${ BRAND_NAME } og Google på samme tid under hele migrationen."
@@ -2112,12 +2058,6 @@
       "Failed to load OAuth": [
         "Kunne ikke indlæse OAuth"
       ],
-      "Finalize migration": [
-        "Færdiggør migrationen"
-      ],
-      "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
-        "Ved at færdiggøre migrationen bliver alle e-mails sendt direkte til ${ BRAND_NAME }. Brugerne vil ikke længere modtage e-mails på deres Google-konti, og data synkroniseres ikke mellem ${ BRAND_NAME } og Google længere."
-      ],
       "Find out what can be migrated.": [
         "Find ud af hvad der kan migreres."
       ],
@@ -2127,14 +2067,8 @@
       "Google Workspace account": [
         "Google Workspace konto"
       ],
-      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
-        "Hæng på, vi sætter brugerkontiene op, og vil begynde at importere brugerdata snart."
-      ],
       "Has errors": [
         "Fejlbehæftet"
-      ],
-      "Import errors for ${ user.AdminSetName }": [
-        "Fejl ved import for ${ user.AdminSetName }"
       ],
       "In progress": [
         "I gang"
@@ -2151,17 +2085,11 @@
       "Mail": [
         "Mail"
       ],
-      "Managed via ${ registrar.name }": [
-        "Administreret via ${ registrar.name }"
-      ],
       "Member address not found. Please contact customer support to resolve this": [
         "Adresse for medlem ikke fundet. Kontakt venligst vores kundesupport for at løse dette"
       ],
       "Migrate from Google Workspace": [
         "Migrer fra Google Workspace"
-      ],
-      "Migrate users": [
-        "Migrer brugere"
       ],
       "Migrated": [
         "Migreret"
@@ -2182,9 +2110,6 @@
       "Missing organization public key": [
         "Mangler organisationens offentlige nøgle"
       ],
-      "More details": [
-        "Flere detaljer"
-      ],
       "No error details available. Please contact customer support for more information": [
         "Ingen tilgængelige fejloplysninger. Kontakt kundesupport for mere information"
       ],
@@ -2196,9 +2121,6 @@
       ],
       "Not confirmed": [
         "Ikke bekræftet"
-      ],
-      "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
-        "Færdiggør migrationen når brugerne har indløst deres ${ BRAND_NAME }-konto."
       ],
       "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
         "Når vi har bekræftet at e-mails bliver dirigeret til ${ BRAND_NAME }, så færdiggøres migrationen. Du vil modtage en bekræftelse på e-mail der fortæller dig hvornår dette sker. Processen kan tage op til 24 timer."
@@ -2212,32 +2134,14 @@
       "Pending": [
         "Afventer"
       ],
-      "Please add the following records in your DNS console of your domain provider:": [
-        "Tilføj de følgende records i din domæneudbyders DNS-konsol:"
-      ],
-      "Please leave this window open until we're done creating all the users.": [
-        "Lad dette vindue være åbent indtil vi er færdige med at oprette alle brugerne."
-      ],
-      "Please select at least one product to migrate": [
-        "Vælg venligst mindst ét produkt der skal migreres"
-      ],
       "Refresh": [
         "Opdater"
-      ],
-      "Required": [
-        "Påkrævet"
-      ],
-      "Required to create user accounts": [
-        "Påkrævet for at oprette brugerkonti"
       ],
       "Select at least one user to start a migration": [
         "Vælg mindst én bruger for at starte en migrering"
       ],
       "Select users to migrate": [
         "Vælg brugere at migrere"
-      ],
-      "Set up": [
-        "Opsætning"
       ],
       "Set up secure sending (DKIM)": [
         "Konfigurer sikker afsendelse (DKIM)"
@@ -2251,9 +2155,6 @@
       "Settings": [
         "Indstillinger"
       ],
-      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
-        "Del aktiveringslinket til brugere så de kan oprette deres ${ BRAND_NAME }-konto."
-      ],
       "Sign in to Google Workspace": [
         "Log ind på Google Workspace"
       ],
@@ -2263,41 +2164,14 @@
       "Some accounts are not claimed": [
         "Nogle konti er ikke indløst"
       ],
-      "SPF records": [
-        "SPF-records"
-      ],
-      "Start migrating": [
-        "Start migration"
-      ],
       "Status": [
         "Status"
-      ],
-      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
-        "Standardindstillingen er none. Vi anbefaler dog at sætte denne værdi til p=quarantine for at forbedre din sikkerhed."
-      ],
-      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
-        "\"p=\"-værdien angiver den handling der skal tages for de e-mails der fejler DMARC. Her er de tilgængelige handlinger:"
-      ],
-      "This migration has been completed": [
-        "Denne migration er færdig"
-      ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
-        "For at migrere din organisations data skal du installere appen ${ BRAND_NAME } Migration Assistant fra Google Workspace Marketplace. Dette giver ${ BRAND_NAME } tilladelse til at kopiere dine data. Når du har installeret den, så vend tilbage hertil for at fortsætte."
       ],
       "Update records for receiving": [
         "Opdater records for modtagelse"
       ],
       "User": [
         "Bruger"
-      ],
-      "User needs to activate their account through the activation link shown above": [
-        "Brugeren skal aktivere deres konto gennem aktiveringslinket vist ovenfor"
-      ],
-      "User status": [
-        "Brugerstatus"
-      ],
-      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
-        "Brugerne kan bruge ${ BRAND_NAME } eller Google på samme tid under hele migrationen."
       ],
       "Users migrated": [
         "Brugere migreret"
@@ -2314,14 +2188,8 @@
       "Verify your domain to start a migration": [
         "Bekræft dit domæne for at starte en migrering"
       ],
-      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
-        "Vi har registreret det primære domæne tilsluttet din Google Workspace-konto. Bekræft den for at fortsætte med at konfigurere din e-mail til din ${ BRAND_NAME }-organisation."
-      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Vi kunne ikke verificere installationen. Kontrollér, at du har installeret den i din Google Workspace-konto, og prøv igen."
-      ],
-      "We're still checking the MX records with your domain provider.": [
-        "Vi er stadig i gang med at tjekke dine MX-records med din domæneudbyder."
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Vi har bemærket at nogle brugere ikke har oprettet deres ${ BRAND_NAME }-konti."
@@ -2331,9 +2199,6 @@
       ],
       "You": [
         "Dig"
-      ],
-      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
-        "Du skal give tilladelse til, at ${ BRAND_NAME } kan kopiere dine data. Når du har accepteret tilladelserne, så vend tilbage hertil for at fortsætte."
       ],
       "You're all set!": [
         "Så er du klar!"
@@ -4060,11 +3925,6 @@
         "skal du bruge Easy Switch importassistenten"
       ]
     },
-    "Description for domain modal": {
-      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
-        "Duplikerede DMARC-records fundet, gå til din domæneudbyders DNS-konsol for at fikse det."
-      ]
-    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "Vi har også automatisk matchet CSV-felter med vCard-felter. Du kan gennemgå og ændre denne matchning manuelt."
@@ -4847,6 +4707,9 @@
       "Please add a payment method before reactivating your subscription": [
         "Tilføj en betalingsmetode før du genaktiverer dit abonnement"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Tjek venligst om dit ABN er registeret til moms på tværs af grænser"
+      ],
       "Please complete the billing details": [
         "Udfyld faktureringsoplysningerne"
       ],
@@ -5078,6 +4941,9 @@
       ],
       "Username must end with a letter or digit": [
         "Brugernavn skal ende på et bogstav eller et tal"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Momsnummer skal starte med ${ prefixes }"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Bekræftelse mislykkedes, forsøg igen om en time."
@@ -10002,9 +9868,6 @@
       "Hide password": [
         "Skjul adgangskode"
       ],
-      "Host name": [
-        "Værtsnavn"
-      ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Jeg forstår, at jeg straks skal tilføje denne e-mailadresse til den anden konto for at undgå at miste denne adresse permanent."
       ],
@@ -10121,9 +9984,6 @@
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Skal være mindst ${ MIN_PASSWORD_LENGTH } tegn"
-      ],
-      "MX records": [
-        "MX-records"
       ],
       "Name": [
         "Navn"
@@ -10256,9 +10116,6 @@
       ],
       "Previous password": [
         "Forrige adgangskode"
-      ],
-      "Priority": [
-        "Prioritet"
       ],
       "Priority support": [
         "Prioriteret support"
@@ -10558,9 +10415,6 @@
       "Type": [
         "Type"
       ],
-      "Use default value": [
-        "Brug standardværdi"
-      ],
       "Valid ${ group.name } record found": [
         "Gyldigt ${ group.name }-record fundet"
       ]
@@ -10679,9 +10533,6 @@
       ],
       "data recovery option": [
         "metode til datagendannelse"
-      ],
-      "Detailed instructions": [
-        "Detaljerede instruktioner"
       ],
       "Details": [
         "Detaljer"
@@ -10820,6 +10671,9 @@
       ],
       "Sign in": [
         "Log ind"
+      ],
+      "Sign-in help": [
+        "Hjælp til login"
       ],
       "Terms": [
         "Betingelser"
@@ -11824,9 +11678,9 @@
       "Send & receive invitations": [
         "Send og modtag invitationer"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Servere i ${ vpnServersCountData.paid.countries }+ land",
-        "Servere i ${ vpnServersCountData.paid.countries }+ lande"
+      "Servers in ${ VPN_SERVERS.paid.countries }+ country": [
+        "Servere i ${ VPN_SERVERS.paid.countries }+ land",
+        "Servere i ${ VPN_SERVERS.paid.countries }+ lande"
       ],
       "Share files with no size limit": [
         "Del filer uden størrelsesbegrænsning"
@@ -12399,9 +12253,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Dedikerede serverplaceringer i ${ numberOfCountries }+ lande"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Dedikerede serverplaceringer i Nordamerika og Europa"
       ],
       "Multi-platform support": [
         "Understøttelse af flere platforme"
@@ -16099,9 +15950,6 @@
       "Account deleted. Signing out...": [
         "Konto slettet, logger ud..."
       ],
-      "Activation link copied to clipboard": [
-        "Aktiveringslink kopieret til udklipsholder"
-      ],
       "Address added": [
         "Adresse tilføjet"
       ],
@@ -17606,6 +17454,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Åbn dette regneark i ${ SHEETS_APP_NAME } eller download det for at forhåndsvise det."
       ],
+      "Troubleshoot with ${ LUMO_SHORT_APP_NAME }": [
+        "Fejlfind med ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Troubleshoot your issue": [
         "Fejlfind dit problem"
       ],
@@ -17710,6 +17561,9 @@
       ],
       "VPN": [
         "VPN"
+      ],
+      "VPN apps": [
+        "VPN-apps"
       ],
       "Warning": [
         "Advarsel"
