@@ -99,6 +99,11 @@ export interface ElementsState {
      * Labels on which on task is currently running
      */
     taskRunning: TaskRunningInfo;
+
+    /**
+     * List of context filters for which we are awaiting fresh data from the server.
+     */
+    awaitingStaleRetry: SimpleMap<boolean>;
 }
 
 export interface QueryParams {

@@ -64,6 +64,7 @@ const retry = (state: MailState) => state.elements.retry;
 const invalidated = (state: MailState) => state.elements.invalidated;
 export const total = (state: MailState) => state.elements.total;
 export const taskRunning = (state: MailState) => state.elements.taskRunning;
+const awaitingStaleRetryMap = (state: MailState) => state.elements.awaitingStaleRetry;
 export const addresses = (state: MailState) => state.addresses;
 
 const currentPage = (_: MailState, { page }: { page: number }) => page;
@@ -116,6 +117,11 @@ export const contextPages = createSelector([selectParams, pages], (params, pages
 
     return pages[contextFilter] || [];
 });
+
+export const awaitingStaleRetry = createSelector(
+    [selectCurrentContextIdentifier, awaitingStaleRetryMap],
+    (contextFilter, awaitingStaleRetryMap) => !!awaitingStaleRetryMap[contextFilter]
+);
 
 export const contextTotal = createSelector([selectParams, total], (params, total) => {
     const contextFilter = getElementContextIdentifier({
@@ -258,14 +264,15 @@ export const pageIsConsecutive = createSelector([contextPages, currentPage], (pa
  * It should be true either when `shouldResetElementsState` or
  */
 export const shouldLoadElements = createSelector(
-    [pendingRequest, retry, needsMoreElements, invalidated, pageCached, selectParams, taskRunning],
-    (pendingRequest, retry, needsMoreElements, invalidated, pageCached, params, taskRunning) => {
+    [pendingRequest, retry, needsMoreElements, invalidated, pageCached, selectParams, taskRunning, awaitingStaleRetry],
+    (pendingRequest, retry, needsMoreElements, invalidated, pageCached, params, taskRunning, awaitingStaleRetry) => {
         // Prevent elements from loading in locations where a task is running
         const taskRunningInLabel = taskRunning.labelIDs.includes(params.labelID);
 
         return (
             !taskRunningInLabel &&
             !pendingRequest &&
+            !awaitingStaleRetry &&
             retry.count < MAX_ELEMENT_LIST_LOAD_RETRIES &&
             (needsMoreElements || invalidated || !pageCached)
         );
