@@ -15,6 +15,7 @@ import { FilePreviewModal } from '../Files/Common/FilePreviewModal';
 import { PublicHeader } from '../Guest/PublicHeader';
 import TermsAndConditions from '../TermsAndConditions';
 import WhatsNew from '../WhatsNew/WhatsNew';
+import LumoCatAnimation from './MainContainer/LumoCatAnimation';
 import LumoMainText from './MainContainer/LumoMainText';
 import MainContainerFooter from './MainContainer/MainContainerFooter';
 import ProtectedByProton from './MainContainer/ProtectedByProton';
@@ -113,7 +114,10 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                             '--lg-max-w-custom': '43rem',
                         }}
                     >
-                        <LumoMainText isSmallScreen={isSmallScreen} isGhostMode={isGhostChatMode} />
+                        <div className="lumo-welcome-section flex flex-column items-center text-center w-full">
+                            <LumoCatAnimation isGhostMode={isGhostChatMode} />
+                            <LumoMainText isSmallScreen={isSmallScreen} isGhostMode={isGhostChatMode} />
+                        </div>
                         <div className="composer-container md:px-4 w-full">
                             <ComposerComponent
                                 composerMode={ComposerMode.NEW_CONVERSATION}
