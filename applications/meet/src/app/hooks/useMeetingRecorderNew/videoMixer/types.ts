@@ -8,6 +8,7 @@ export enum VideoMixerMessageType {
     STOP = 'stop',
     START_TRACK_CAPTURE = 'startTrackCapture',
     STOP_TRACK_CAPTURE = 'stopTrackCapture',
+    REQUEST_FRAME_COUNT = 'requestFrameCount',
 }
 
 export interface RecordingTrackInfo {
@@ -53,4 +54,5 @@ export type VideoMixerWorkerMessage =
     | { type: VideoMixerMessageType.UPDATE_FRAME; frameData: SingleFrameData }
     | { type: VideoMixerMessageType.STOP }
     | { type: VideoMixerMessageType.START_TRACK_CAPTURE; trackData: TrackCaptureData }
-    | { type: VideoMixerMessageType.STOP_TRACK_CAPTURE; trackId: string };
+    | { type: VideoMixerMessageType.STOP_TRACK_CAPTURE; trackId: string }
+    | { type: VideoMixerMessageType.REQUEST_FRAME_COUNT };
