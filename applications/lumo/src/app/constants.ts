@@ -11,7 +11,11 @@ export const LUMO_SIGNUP_PATH = '/signup';
 // Unified limit for all ingestion paths (device upload, project KB upload, Drive browser
 // add-to-KB, and linked-folder uploads). All of these paths download + process + index
 // the file on the main thread, so the same limit must apply everywhere to avoid freezes.
-export const MAX_ASSET_SIZE = 10 * 1024 * 1024; // 10MB
+export const MAX_ASSET_SIZE = 25 * 1024 * 1024; // 25MB
+
+// Maximum number of attachments that can be staged in the composer at once.
+// Mirrors the limit used by other assistants (e.g. Claude allows 20).
+export const MAX_PROVISIONAL_ATTACHMENTS = 20;
 
 export const LUMO_FULL_APP_TITLE = 'Lumo: Privacy-first AI assistant where chats stay confidential';
 
