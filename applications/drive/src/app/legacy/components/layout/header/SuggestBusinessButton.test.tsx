@@ -50,7 +50,7 @@ describe('SuggestBusinessButton', () => {
         it('should render the button', () => {
             render(<SuggestBusinessButton />);
             expect(screen.getByRole('button')).toBeInTheDocument();
-            expect(screen.getByText('Get Drive for Business')).toBeInTheDocument();
+            expect(screen.getByText('Try Proton Workspace')).toBeInTheDocument();
         });
 
         it('should show modal when button is clicked', () => {

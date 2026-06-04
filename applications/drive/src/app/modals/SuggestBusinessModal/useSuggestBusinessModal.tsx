@@ -4,9 +4,10 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import type { ModalStateProps } from '@proton/components';
 import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, useModalTwoStatic } from '@proton/components';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
+import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
 import business from './business.webp';
 
 function SuggestBusinessModal({ ...modalProps }: ModalStateProps) {
@@ -23,10 +24,9 @@ function SuggestBusinessModal({ ...modalProps }: ModalStateProps) {
             </div>
 
             <ModalTwoContent className="text-center mt-8">
-                <span className="h2 text-bold mb-2">{c('Info')
-                    .t`Cloud storage for businesses that take security seriously`}</span>
+                <span className="h2 text-bold mb-2">{c('Info').t`One encrypted suite. Full business protection.`}</span>
                 <span className="color-weak">{c('Info')
-                    .t`Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.`}</span>
+                    .t`${BRAND_NAME} Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.`}</span>
             </ModalTwoContent>
 
             <ModalTwoFooter className="flex gap-4">
@@ -38,8 +38,9 @@ function SuggestBusinessModal({ ...modalProps }: ModalStateProps) {
                     size="large"
                 >{c('Action').t`Explore more`}</ButtonLike>
                 <ButtonLike
+                    onClick={() => countActionWithTelemetry(Actions.RedirectToB2BWorkspaceSignUp)}
                     as="a"
-                    href={getAppHref('/drive/signup/business?users=2', APPS.PROTONACCOUNT)}
+                    href={getAppHref('/drive/signup/business?billing=12&trial=true&users=5', APPS.PROTONACCOUNT)}
                     target="_blank"
                     className="flex-1"
                     size="large"
