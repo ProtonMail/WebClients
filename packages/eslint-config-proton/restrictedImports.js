@@ -20,5 +20,9 @@ export const restrictedImports = {
             group: ['@proton/mail/index'],
             message: 'You should import from `@proton/mail` instead.',
         },
+        {
+            group: ['@proton/drive/*', '!@proton/drive/index', '!@proton/drive/public', '!@proton/drive/public/**'],
+            message: 'Only `@proton/drive` (index) and `@proton/drive/public/*` are public and importable.',
+        },
     ],
 };
