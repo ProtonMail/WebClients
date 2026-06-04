@@ -1,6 +1,7 @@
 import { Button } from '@proton/atoms/Button/Button'
 import { Slider, SliderSizeEnum } from '@proton/atoms/Slider/Slider'
 import { Icon } from '@proton/components/index'
+import { IcCross } from '@proton/icons/icons/IcCross'
 import type { EditorControllerInterface } from '@proton/docs-core/lib/EditorController/EditorController'
 import { getBufferHash } from '@proton/docs-core/lib/utils/hash'
 import { useEffect, useRef, useState } from 'react'
@@ -251,7 +252,7 @@ export default function UpdateReplayTool({
           onClick={onClose}
         >
           <div className="sr-only">Close menu</div>
-          <Icon name="cross" className="h-3.5 w-3.5" />
+          <IcCross className="h-3.5 w-3.5" />
         </button>
       </div>
       <div className="flex flex-col gap-2 p-2">
