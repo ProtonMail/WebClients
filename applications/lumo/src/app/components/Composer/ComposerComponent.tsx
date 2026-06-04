@@ -7,8 +7,8 @@ import { useUser } from '@proton/account/user/hooks';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import { ComposerAgentBar } from '../../features/agents/ComposerAgentBar';
 import { AgentPickerModal } from '../../features/agents/AgentPickerModal';
+import { ComposerAgentBar } from '../../features/agents/ComposerAgentBar';
 import { ConversationStarters } from '../../features/agents/ConversationStarters';
 import { SketchOverlay } from '../../features/drawingcanvas';
 import useComposerInput from '../../hooks/useComposerInput';
@@ -407,9 +407,9 @@ const ComposerComponentInner = ({
                         />
                     </div>
                     {optionalElementBelowComposer}
-                    {isGuest && (
+                    {/* {isGuest && (
                         <TermsAndConditions className={clsx('m-0', isAgent ? 'text-center' : 'hidden md:block')} />
-                    )}
+                    )} */}
                 </section>
 
                 {isDraggingOverScreen && <AttachmentArea handleFileProcessing={handleFileProcessing} />}
