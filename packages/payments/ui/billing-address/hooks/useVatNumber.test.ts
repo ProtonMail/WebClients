@@ -191,24 +191,26 @@ describe('useVatNumber', () => {
             expect(result.current.vatNumber).toBe('VAT123');
         });
 
-        it('should keep prefilled prefix when server returns no VatId', async () => {
+        it('should leave vatNumber empty when server returns no VatId (authenticated edits in modal)', async () => {
             mockGetFullBillingAddress.mockResolvedValue({ VatId: null, BillingAddress: {} });
 
             const { result } = renderHook(() => useVatNumber(defaultProps()));
 
             await act(async () => {});
 
-            expect(result.current.vatNumber).toBe('DE');
+            // Authenticated users edit billing in a modal (which prefills its own prefix), so the
+            // inline field is left empty rather than seeded with a bare country prefix.
+            expect(result.current.vatNumber).toBe('');
         });
 
-        it('should keep prefilled prefix when server returns no VatId (undefined)', async () => {
+        it('should leave vatNumber empty when server returns no VatId (undefined, authenticated)', async () => {
             mockGetFullBillingAddress.mockResolvedValue({ BillingAddress: {} });
 
             const { result } = renderHook(() => useVatNumber(defaultProps()));
 
             await act(async () => {});
 
-            expect(result.current.vatNumber).toBe('DE');
+            expect(result.current.vatNumber).toBe('');
         });
 
         it('should NOT fetch when isAuthenticated is false', async () => {
@@ -227,14 +229,14 @@ describe('useVatNumber', () => {
             expect(mockGetFullBillingAddress).not.toHaveBeenCalled();
         });
 
-        it('should handle API error gracefully and keep prefilled prefix', async () => {
+        it('should handle API error gracefully and leave the field empty (authenticated)', async () => {
             mockGetFullBillingAddress.mockRejectedValue(new Error('Network error'));
 
             const { result } = renderHook(() => useVatNumber(defaultProps()));
 
             await act(async () => {});
 
-            expect(result.current.vatNumber).toBe('DE');
+            expect(result.current.vatNumber).toBe('');
         });
     });
 
@@ -395,6 +397,10 @@ describe('useVatNumber', () => {
                 initialProps: defaultProps({ isAuthenticated: false, onVatChange }),
             });
 
+            // Expand the business form so the prefix is prefilled and edits are possible.
+            act(() => {
+                result.current.setUnauthenticatedCollapsed(false);
+            });
             act(() => {
                 result.current.setVatNumber('VAT-123');
             });
@@ -598,7 +604,7 @@ describe('useVatNumber', () => {
     // ─── 9. Prefill behaviour ────────────────────────────────────────
 
     describe('Prefill behaviour', () => {
-        it('prefills VAT field with country prefix on mount for unauthenticated user', () => {
+        it('prefills VAT field with country prefix when the business form is expanded', () => {
             const { result } = renderHook(() =>
                 useVatNumber(
                     defaultProps({
@@ -608,7 +614,33 @@ describe('useVatNumber', () => {
                 )
             );
 
+            // The form is collapsed by default (no billing data), so nothing is prefilled yet.
+            expect(result.current.vatNumber).toBe('');
+
+            act(() => {
+                result.current.setUnauthenticatedCollapsed(false);
+            });
+
             expect(result.current.vatNumber).toBe('DE');
+        });
+
+        it('does NOT prefill while the business form is collapsed (form hidden)', () => {
+            const { result, rerender } = renderHook((props) => useVatNumber(props), {
+                initialProps: defaultProps({
+                    isAuthenticated: false,
+                    taxCountry: buildTaxCountryStub({ selectedCountryCode: 'DE' }),
+                }),
+            });
+
+            // Collapsed on mount: no prefix injected into the hidden field.
+            expect(result.current.vatNumber).toBe('');
+
+            // Changing country while collapsed must not seed a prefix either — otherwise a bare
+            // prefix would make vatFormValid false and block payment on a form the user can't see.
+            rerender(
+                defaultProps({ isAuthenticated: false, taxCountry: buildTaxCountryStub({ selectedCountryCode: 'FR' }) })
+            );
+            expect(result.current.vatNumber).toBe('');
         });
 
         it('does not prefill for US (no prefix needed)', () => {
@@ -635,6 +667,10 @@ describe('useVatNumber', () => {
                 )
             );
 
+            act(() => {
+                result.current.setUnauthenticatedCollapsed(false);
+            });
+
             expect(result.current.vatNumber).toBe('AU');
         });
 
@@ -647,6 +683,10 @@ describe('useVatNumber', () => {
                     })
                 )
             );
+
+            act(() => {
+                result.current.setUnauthenticatedCollapsed(false);
+            });
 
             expect(result.current.vatNumber).toBe('EL');
         });
@@ -673,6 +713,9 @@ describe('useVatNumber', () => {
                 }),
             });
 
+            act(() => {
+                result.current.setUnauthenticatedCollapsed(false);
+            });
             expect(result.current.vatNumber).toBe('DE');
 
             rerender(
@@ -690,6 +733,9 @@ describe('useVatNumber', () => {
                 }),
             });
 
+            act(() => {
+                result.current.setUnauthenticatedCollapsed(false);
+            });
             act(() => {
                 result.current.setVatNumber('DE123456789');
             });
@@ -709,13 +755,17 @@ describe('useVatNumber', () => {
                 }),
             });
 
+            act(() => {
+                result.current.setUnauthenticatedCollapsed(false);
+            });
+
             // Switch to non-VAT country — clears
             rerender(
                 defaultProps({ isAuthenticated: false, taxCountry: buildTaxCountryStub({ selectedCountryCode: 'JP' }) })
             );
             expect(result.current.vatNumber).toBe('');
 
-            // Switch back to VAT country — re-prefills
+            // Switch back to VAT country — re-prefills (form is still expanded)
             rerender(
                 defaultProps({ isAuthenticated: false, taxCountry: buildTaxCountryStub({ selectedCountryCode: 'FR' }) })
             );
@@ -740,7 +790,7 @@ describe('useVatNumber', () => {
             expect(result.current.vatNumber).toBe('DE123456789');
         });
 
-        it('keeps the prefill when server returns no VatId for authenticated user', async () => {
+        it('leaves the field empty when server returns no VatId for authenticated user', async () => {
             mockGetFullBillingAddress.mockResolvedValue({ VatId: null, BillingAddress: {} });
 
             const { result } = renderHook(() =>
@@ -754,7 +804,9 @@ describe('useVatNumber', () => {
 
             await act(async () => {});
 
-            expect(result.current.vatNumber).toBe('DE');
+            // Authenticated users do not get an inline bare prefix — the edit modal handles the
+            // prefix itself via useVatPrefixSync.
+            expect(result.current.vatNumber).toBe('');
         });
 
         it('re-prefills when VAT section is expanded after collapsing', () => {
@@ -783,6 +835,9 @@ describe('useVatNumber', () => {
                 initialProps: defaultProps({ isAuthenticated: false }),
             });
 
+            act(() => {
+                result.current.setUnauthenticatedCollapsed(false);
+            });
             act(() => {
                 result.current.setVatNumber('DE123456789');
             });
