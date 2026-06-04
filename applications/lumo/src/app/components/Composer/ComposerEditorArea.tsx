@@ -43,7 +43,7 @@ export const ComposerEditorArea = ({
     onAbort,
     onSubmit,
     spaceId,
-    // messageChain = [],
+    messageChain = [],
     isAutocompleteActiveRef,
     placeholder,
     browseFolderChildren,
@@ -86,7 +86,8 @@ export const ComposerEditorArea = ({
         spaceId,
         driveSDK,
         undefined,
-        userId
+        userId,
+        messageChain
     );
 
     const [selectedIndex, setSelectedIndex] = useState(0);
