@@ -2691,9 +2691,6 @@
       "Contacts": [
         "Contatti"
       ],
-      "Domain connected": [
-        "Dominio connesso"
-      ],
       "Estimated size": [
         "Dimensioni Stimate"
       ],
@@ -2708,9 +2705,6 @@
       ],
       "Migrate from Google Workspace": [
         "Migra da Google Workspace"
-      ],
-      "Migrate users": [
-        "Migra gli utenti"
       ],
       "Migration includes": [
         "La migrazione include"
@@ -2727,9 +2721,6 @@
       ],
       "Organization does not have enough storage available": [
         "L'organizzazione non dispone di spazio di archiviazione sufficiente"
-      ],
-      "Required": [
-        "Obbligatorio"
       ],
       "Required to create user accounts": [
         "Necessario per creare account utente"
@@ -15720,10 +15711,6 @@
       "Send & receive invitations": [
         "Invia e ricevi inviti"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Server in ${ vpnServersCountData.paid.countries }+ paese",
-        "Server in ${ vpnServersCountData.paid.countries }+ paesi"
-      ],
       "Share files with no size limit": [
         "Condividi file senza limiti di dimensione"
       ],
@@ -16309,9 +16296,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Locazioni server dedicati in ${ numberOfCountries }+ paesi"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Locazioni server dedicati in Nord America ed Europa"
       ],
       "Multi-platform support": [
         "Supporto multi-piattaforma"
@@ -19886,18 +19870,6 @@
         "${ VPN_CONNECTIONS } connessione VPN ad alta velocità",
         "${ VPN_CONNECTIONS } connessioni VPN ad alta velocità"
       ],
-      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
-        "${ vpnServersCountData.free.servers }+ server VPN in ${ vpnServersCountData.free.countries } paese",
-        "${ vpnServersCountData.free.servers }+ server VPN in ${ vpnServersCountData.free.countries } paesi"
-      ],
-      "${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries }+ paese",
-        "${ vpnServersCountData.paid.countries }+ paesi"
-      ],
-      "${ vpnServersCountData.paid.servers }+ server across": [
-        "${ vpnServersCountData.paid.servers }+ server across",
-        "${ vpnServersCountData.paid.servers }+ server in"
-      ],
       "/user": [
         "/utente"
       ],
@@ -20147,13 +20119,6 @@
       ],
       "use your own email.": [
         "usa la tua email."
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "VPN con server in ${ vpnServersCountData.free.countries } paesi"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "VPN con server in ${ vpnServersCountData.free.countries } paese",
-        "VPN con server in ${ vpnServersCountData.free.countries } paesi"
       ],
       "We’ll email you before your trial ends.": [
         "Ti invieremo un'email prima della fine del periodo di prova."
@@ -22494,6 +22459,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "Approfondimento sui post del blog VPN"
+      ],
+      "Delete": [
+        "Elimina"
       ],
       "Delete ${ name }?": [
         "Eliminare ${ name }?"

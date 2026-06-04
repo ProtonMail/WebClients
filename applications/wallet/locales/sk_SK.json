@@ -172,6 +172,9 @@
       "Get the apps": [
         "Stiahnť aplikácie"
       ],
+      "Get the deal": [
+        "Využiť ponuku"
+      ],
       "Get verification code": [
         "Odoslať overovací kód"
       ],
@@ -2404,6 +2407,9 @@
       "Payment process not supported": [
         "Proces platby nie je podporovaný"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Skontrolujte, či je vaše ABN zaregistrované na účely cezhraničnej DPH, prosím."
+      ],
       "Please complete the billing details": [
         "Doplňte fakturačné údaje, prosím"
       ],
@@ -2490,6 +2496,9 @@
       ],
       "Username must end with a letter or digit": [
         "Používateľské meno musí končiť písmenom alebo číslom"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Číslo DIČ musí začínať predponami ${ prefixes }"
       ],
       "Wrong billing address": [
         "Nesprávna fakturačná adresa"
@@ -4694,9 +4703,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Umiestnenie špecializovaných serverov v ${ numberOfCountries }+ krajinách"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Umiestnenie špecializovaných serverov v Severnej Amerike a Európe"
       ],
       "Multi-platform support": [
         "Podpora viacerých platforiem"

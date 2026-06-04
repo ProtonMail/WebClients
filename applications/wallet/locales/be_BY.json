@@ -172,6 +172,9 @@
       "Get the apps": [
         "Атрымаць праграмы"
       ],
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ],
       "Get verification code": [
         "Атрымаць код спраўджання"
       ],
@@ -2404,6 +2407,9 @@
       "Payment process not supported": [
         "Апрацоўка плацяжу не падтрымліваецца"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Праверцеце, ці зарэгістраваны ваш ABN для трансгранічнага ПДВ"
+      ],
       "Please complete the billing details": [
         "Запоўніце плацежныя звесткі"
       ],
@@ -2490,6 +2496,9 @@
       ],
       "Username must end with a letter or digit": [
         "Імя карыстальніка павінна заканчвацца літарай або лічбай"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Нумар ПДВ павінен пачынацца з ${ prefixes }"
       ],
       "Wrong billing address": [
         "Няправільны плацежны адрас"
@@ -4694,9 +4703,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Размяшчэнні вылучаных сервераў у больш чым у ${ numberOfCountries } краінах"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Размяшчэнне вылучаных сервераў у Паўночнай Амерыцы і Еўропе"
       ],
       "Multi-platform support": [
         "Шматплатформенная падтрымка"

@@ -172,6 +172,9 @@
       "Get the apps": [
         "Apps herunterladen"
       ],
+      "Get the deal": [
+        "Jetzt zugreifen"
+      ],
       "Get verification code": [
         "Verifizierungscode anfordern"
       ],
@@ -2378,6 +2381,9 @@
       "Payment process not supported": [
         "Bezahlvorgang nicht unterstützt"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Bitte überprüfe, ob deine ABN für die grenzüberschreitende Mehrwertsteuer registriert ist"
+      ],
       "Please complete the billing details": [
         "Bitte die Rechnungsdaten eintragen"
       ],
@@ -2464,6 +2470,9 @@
       ],
       "Username must end with a letter or digit": [
         "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "MWST-Nummer muss mit ${ prefixes } beginnen"
       ],
       "Wrong billing address": [
         "Ungültige Rechnungsadresse"
@@ -4568,9 +4577,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Dedizierte Serverstandorte in mehr als ${ numberOfCountries } Ländern"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Dedizierte Serverstandorte in Nordamerika und Europa"
       ],
       "Multi-platform support": [
         "Multi-Plattform-Unterstützung"

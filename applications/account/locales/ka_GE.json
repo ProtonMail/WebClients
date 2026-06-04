@@ -2618,9 +2618,6 @@
       "Change": [
         "შეცვლა"
       ],
-      "Completed": [
-        "დასრულებულია"
-      ],
       "Configure": [
         "მორგება"
       ],
@@ -2629,9 +2626,6 @@
       ],
       "Contacts": [
         "კონტაქტები"
-      ],
-      "Domain connected": [
-        "დომენი დაკავშირებულია"
       ],
       "Estimated size": [
         "სავარაუდო ზომა"
@@ -2657,9 +2651,6 @@
       "Migrate from Google Workspace": [
         "მიგრაცია Google Workspace-დან"
       ],
-      "Migrate users": [
-        "მომხმარებლების მიგრაცია"
-      ],
       "Migration includes": [
         "მიგრაცია შეიცავს"
       ],
@@ -2675,9 +2666,6 @@
       ],
       "Organization does not have enough storage available": [
         "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
-      ],
-      "Required": [
-        "აუცილებელია"
       ],
       "Required to create user accounts": [
         "აუცილებელია მომხმარებლის ანგარიშების შესაქმნელად"
@@ -15225,10 +15213,6 @@
       "Send & receive invitations": [
         "მოსაწვევების გაგზავნა და მიღება"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "სერვერები ${ vpnServersCountData.paid.countries }+ ქვეყანაში",
-        "სერვერები ${ vpnServersCountData.paid.countries }+ ქვეყანაში"
-      ],
       "Share files with no size limit": [
         "გააზიარეთ ფაილები ზომის შეზღუდვის გარეშე"
       ],
@@ -15808,9 +15792,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "გამოყოფილი სერვერის მდებარეობები ${ numberOfCountries }+ ქვეყანაში"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "გამოყოფილი სერვერის მდებარეობები ჩრდილოეთ ამერიკაში და ევროპაში"
       ],
       "Multi-platform support": [
         "მრავალპლატფორმიანობის მხარდაჭერა"
@@ -19258,18 +19239,6 @@
         "${ VPN_CONNECTIONS } ჩქაროსნული VPN შეერთება",
         "${ VPN_CONNECTIONS } ჩქაროსნული VPN შეერთება"
       ],
-      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
-        "${ vpnServersCountData.free.servers }+ VPN სერვერი ${ vpnServersCountData.free.countries } ქვეყანაში",
-        "${ vpnServersCountData.free.servers }+ VPN სერვერი ${ vpnServersCountData.free.countries } ქვეყანაში"
-      ],
-      "${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries }+ ქვეყანა",
-        "${ vpnServersCountData.paid.countries }+ ქვეყანა"
-      ],
-      "${ vpnServersCountData.paid.servers }+ server across": [
-        "${ vpnServersCountData.paid.servers }+ სერვერი მთელ დედამიწაზე",
-        "${ vpnServersCountData.paid.servers }+ სერვერი მთელ დედამიწაზე"
-      ],
       "/user": [
         "/მომხმარებელი"
       ],
@@ -19522,13 +19491,6 @@
       ],
       "use your own email.": [
         "გამოიყენეთ თქვენი საკუთარი ელფოსტა."
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "VPN ${ vpnServersCountData.free.countries } ქვეყანაში განთავსებული სერვერებით"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "VPN სერვერი ${ vpnServersCountData.free.countries } ქვეყანაში",
-        "VPN სერვერი ${ vpnServersCountData.free.countries } ქვეყანაში"
       ],
       "We’ll email you before your trial ends.": [
         "ჩვენ მოგწერთ, სანამ თქვენი საცდელი ვადა დასრულდება."
@@ -21330,6 +21292,11 @@
         "${ BRAND_NAME }-ის პარამეტრების გამოყენება"
       ]
     },
+    "Themes": {
+      "Themes": [
+        "თემები"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } დღე",
@@ -21854,6 +21821,9 @@
       "Deep dive into VPN blog posts": [
         "ჩაეფალით VPN-ის ბლოგის პოსტებში"
       ],
+      "Delete": [
+        "წაშლა"
+      ],
       "Delete ${ name }?": [
         "წავშალო ${ name }?"
       ],
@@ -22357,6 +22327,9 @@
       ],
       "My calendars": [
         "ჩემი კალენდრები"
+      ],
+      "My VPN": [
+        "ჩემი VPN"
       ],
       "Name": [
         "სახელი"
@@ -22928,6 +22901,9 @@
       ],
       "View organization events by upgrading to Professional": [
         "დაათვალიერეთ ორგანიზაციის მოვლენები სატარიფო გეგმის Professional-მდე აწევით"
+      ],
+      "VPN": [
+        "VPN"
       ],
       "VPN apps": [
         "VPN აპები"

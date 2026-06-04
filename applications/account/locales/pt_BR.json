@@ -534,9 +534,6 @@
       "Delete record": [
         "Excluir registro"
       ],
-      "Delete token ${ tokens[0].Account }": [
-        "Excluir token ${ tokens[0].Account }"
-      ],
       "Delete token “${ token.Name }”": [
         "Excluir token “${ token.Name }”"
       ],
@@ -683,6 +680,9 @@
       ],
       "Edit group": [
         "Editar grupo"
+      ],
+      "Edit invoice details": [
+        "Editar de fatura de crédito"
       ],
       "Edit invoice note": [
         "Editar nota de fatura"
@@ -908,9 +908,6 @@
       ],
       "Go to ${ planOrAppName }": [
         "Acesse o ${ planOrAppName }"
-      ],
-      "Go to domain provider": [
-        "Ir para o provedor de domínios"
       ],
       "Go to label": [
         "Ir para marcador"
@@ -1485,6 +1482,9 @@
       "Send email reminder": [
         "Enviar lembrete por e-mail"
       ],
+      "Send feedback": [
+        "Enviar comentários"
+      ],
       "Send messages with @pm.me": [
         "Enviar mensagens com @pm.me"
       ],
@@ -1541,6 +1541,9 @@
       ],
       "Share": [
         "Compartilhar"
+      ],
+      "Share feedback": [
+        "Compartilhar comentário"
       ],
       "Share via link": [
         "Compartilhar via link"
@@ -2888,21 +2891,6 @@
       ]
     },
     "BOSS": {
-      "${ BRAND_NAME } Migration Assistant": [
-        "Assistente de Migração da ${ BRAND_NAME }"
-      ],
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } de ${ providerUsers.length }"
-      ],
-      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
-        "**p=none**: não coloque em quarentena nem rejeite e-mails não autorizados. Normalmente, as pessoas usam esta política apenas para solucionar problemas ou testar."
-      ],
-      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
-        "$**p=quarantine**: solicitando às plataformas destinatárias que marquem os e-mails não autorizados como spam ou os coloquem em quarentena."
-      ],
-      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
-        "$**p=reject**: solicitando às plataformas destinatárias que rejeitem os e-mails não autorizados."
-      ],
       "Account connected": [
         "Conta conectada"
       ],
@@ -2911,12 +2899,6 @@
       ],
       "Activated": [
         "Ativado"
-      ],
-      "Activation link": [
-        "Link de ativação"
-      ],
-      "Activation link copied to clipboard": [
-        "Link de ativação copiado para a área de transferência"
       ],
       "Add a domain": [
         "Adicionar um domínio"
@@ -2933,9 +2915,6 @@
       "All": [
         "Todos"
       ],
-      "An unknown error occurred": [
-        "Ocorreu um erro desconhecido"
-      ],
       "Authenticate": [
         "Autenticar"
       ],
@@ -2950,9 +2929,6 @@
       ],
       "Change": [
         "Alterar"
-      ],
-      "Completed": [
-        "Concluído"
       ],
       "Configure": [
         "Configurar"
@@ -2972,26 +2948,8 @@
       "Continue migration": [
         "Continuar migração"
       ],
-      "Copy activation link": [
-        "Copiar link de ativação"
-      ],
-      "Copy activation link to clipboard": [
-        "Copiar link de ativação para a área de transferência"
-      ],
-      "Creating accounts": [
-        "Criando contas"
-      ],
-      "DKIM records": [
-        "Registos DKIM"
-      ],
-      "DMARC records": [
-        "Registros DMARC"
-      ],
       "Domain added": [
         "Domínio adicionado"
-      ],
-      "Domain connected": [
-        "Domínio conectado"
       ],
       "Errors": [
         "Errors"
@@ -3001,9 +2959,6 @@
       ],
       "Failed to load OAuth": [
         "Falha ao carregar o OAuth"
-      ],
-      "Finalize migration": [
-        "Finalizar migração"
       ],
       "Finalize your migration": [
         "Finalizar sua migração"
@@ -3026,9 +2981,6 @@
       "Has errors": [
         "Tem erros"
       ],
-      "Import errors for ${ user.AdminSetName }": [
-        "Importar erros para ${ user.AdminSetName }"
-      ],
       "In progress": [
         "Em processo"
       ],
@@ -3047,14 +2999,8 @@
       "Mail": [
         "E-mail"
       ],
-      "Managed via ${ registrar.name }": [
-        "Gerenciado via ${ registrar.name }"
-      ],
       "Migrate from Google Workspace": [
         "Migrar do Google Workspace"
-      ],
-      "Migrate users": [
-        "Migrar usuários"
       ],
       "Migrate users to ${ BRAND_NAME }": [
         "Migrar usuários para ${ BRAND_NAME }"
@@ -3078,9 +3024,6 @@
       "Missing organization public key": [
         "Falta a chave pública da organização"
       ],
-      "More details": [
-        "Mais detalhes"
-      ],
       "No users to display": [
         "Nenhum usuário para exibir"
       ],
@@ -3099,17 +3042,8 @@
       "Pending": [
         "Pendente"
       ],
-      "Please leave this window open until we're done creating all the users.": [
-        "Deixe esta janela aberta até terminarmos de criar todos os usuários."
-      ],
-      "Please select at least one product to migrate": [
-        "Selecione ao menos um produto para migrar"
-      ],
       "Refresh": [
         "Atualizar"
-      ],
-      "Required": [
-        "Obrigatório"
       ],
       "Required to create user accounts": [
         "Obrigatório para criar contas de usuário"
@@ -3153,35 +3087,17 @@
       "Some accounts are not claimed": [
         "Algumas contas não foram reivindicadas"
       ],
-      "SPF records": [
-        "Registros SPF"
-      ],
-      "Start migrating": [
-        "Iniciar migração"
-      ],
       "Start migration": [
         "Iniciar migração"
       ],
       "Status": [
         "Status"
       ],
-      "This migration has been completed": [
-        "A migração foi completada"
-      ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
-        "Para migrar os dados da sua organização, você precisa instalar o aplicativo Assistente de Migração do ${ BRAND_NAME } na Google Workspace Marketplace. Isso concederá permissão ao ${ BRAND_NAME } para copiar seus dados. Após a instalação, volte aqui para continuar."
-      ],
       "Update records for receiving": [
         "Atualize os registros para recener"
       ],
       "User": [
         "Usuário"
-      ],
-      "User status": [
-        "Status do usuário"
-      ],
-      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
-        "Os usuários podem usar a ${ BRAND_NAME } ou o Google simultaneamente durante o período da migração."
       ],
       "Users migrated": [
         "Usuários migrados"
@@ -8738,6 +8654,9 @@
       ]
     },
     "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
+        "Eu entendo que não conseguirei mais iniciar sessão em versões mais antigas dos aplicativos da ${ BRAND_NAME }."
+      ],
       "Learn more": [
         "Saiba mais"
       ]
@@ -10408,6 +10327,9 @@
       "Copy your referral link": [
         "Copiar seu link de referência"
       ],
+      "Couldn´t send feedback": [
+        "Não foi possível enviar o feedback"
+      ],
       "Country code": [
         "Código do país"
       ],
@@ -11268,6 +11190,9 @@
       "Key deletion is irreversible!": [
         "A exclusão da chave é irreversível."
       ],
+      "Key sections reorganized for faster access.": [
+        "Seções principais reorganizadas para acesso mais rápido."
+      ],
       "Keys created": [
         "Chave criada"
       ],
@@ -11435,6 +11360,12 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Os novos dados de atividade deixarão de ser coletados e mostrados."
+      ],
+      "New sidebar": [
+        "Nova barra lateral"
+      ],
+      "New sidebar layout": [
+        "Novo layout da barra lateral"
       ],
       "New user invited to organization": [
         "Novo usuário convidado para a organização"
@@ -11977,6 +11908,9 @@
       "Settings updated": [
         "Configurações atualizadas"
       ],
+      "Share your thoughts...": [
+        "Compartilhe suas ideias..."
+      ],
       "Shared ${ vaultLink } deleted": [
         "${ vaultLink } compartilhado excluído"
       ],
@@ -12127,6 +12061,9 @@
       "Swiss based": [
         "Sediado na Suíça"
       ],
+      "Switch sidebars": [
+        "Alternar barras laterais"
+      ],
       "Symbols (#$&)": [
         "Símbolos (#$&)"
       ],
@@ -12159,6 +12096,9 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Obrigado por se inscrever. A navegação segura começa agora."
+      ],
+      "Thanks - your feedback was sent.": [
+        "Obrigado - seu feedback foi enviado."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Obrigado por apoiar nossa missão em construir uma internet melhor onde a privacidade e a liberdade em primeiro lugar."
@@ -13139,6 +13079,9 @@
       ],
       "your encrypted data will be locked": [
         "seus dados criptografados ficarão bloqueados"
+      ],
+      "Your feedback": [
+        "Seu comentário"
       ],
       "Your files will be encrypted and then saved": [
         "Seus arquivos serão criptografados e depois salvos"
@@ -14590,9 +14533,6 @@
       "Highest VPN speed": [
         "Velocidade VPN máxima"
       ],
-      "Host name": [
-        "Nome do servidor"
-      ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Entendo que precisarei adicionar esse endereço de e-mail à outra conta imediatamente, para evitar perdê-lo permanentemente."
       ],
@@ -14782,9 +14722,6 @@
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Deve conter ao menos ${ MIN_PASSWORD_LENGTH } caracteres"
       ],
-      "MX records": [
-        "Registros MX"
-      ],
       "Name": [
         "Nome"
       ],
@@ -14967,9 +14904,6 @@
       ],
       "Primary": [
         "Primário"
-      ],
-      "Priority": [
-        "Prioridade"
       ],
       "Priority support": [
         "Suporte prioritário"
@@ -15495,9 +15429,6 @@
       "Type": [
         "Tipo"
       ],
-      "Use default value": [
-        "Usar valor padrão"
-      ],
       "Valid ${ group.name } record found": [
         "Encontrado um registro válido de ${ group.name }"
       ]
@@ -15667,9 +15598,6 @@
       "data recovery option": [
         "opção de recuperação de dados"
       ],
-      "Detailed instructions": [
-        "Instruções detalhadas"
-      ],
       "Details": [
         "Detalhes"
       ],
@@ -15822,6 +15750,9 @@
       ],
       "Sign in": [
         "Iniciar sessão"
+      ],
+      "Sign-in help": [
+        "Ajuda para iniciar sessão"
       ],
       "Snap store": [
         "Snap store"
@@ -17191,10 +17122,6 @@
       "Send & receive invitations": [
         "Enviar e receber convites"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Servidores em ${ vpnServersCountData.paid.countries }+ país",
-        "Servidores em ${ vpnServersCountData.paid.countries }+ países"
-      ],
       "Share files with no size limit": [
         "Compartilhe arquivos sem limite de tamanho"
       ],
@@ -17790,9 +17717,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Localizações de servidores dedicados em ${ numberOfCountries }+ países"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Localizações de servidores dedicados na América do Norte e Europa"
       ],
       "Multi-platform support": [
         "Suporte multiplataforma"
@@ -21701,6 +21625,9 @@
       "Account": [
         "Conta"
       ],
+      "Managed Companies": [
+        "Empresas gerenciadas"
+      ],
       "Organization": [
         "Organização"
       ]
@@ -21854,18 +21781,6 @@
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS } conexão VPN de alta velocidade",
         "${ VPN_CONNECTIONS } conexões VPN de alta velocidade"
-      ],
-      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
-        "Mais de ${ vpnServersCountData.free.servers } servidores de VPN em ${ vpnServersCountData.free.countries } país",
-        "Mais de ${ vpnServersCountData.free.servers } servidores de VPN em ${ vpnServersCountData.free.countries } países"
-      ],
-      "${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries }+ país",
-        "${ vpnServersCountData.paid.countries }+ países"
-      ],
-      "${ vpnServersCountData.paid.servers }+ server across": [
-        "${ vpnServersCountData.paid.servers }+ servidor em",
-        "${ vpnServersCountData.paid.servers }+ servidores em"
       ],
       "/user": [
         "/usuário"
@@ -22137,13 +22052,6 @@
       ],
       "use your own email.": [
         "use seu próprio e-mail."
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "VPN com servidores em ${ vpnServersCountData.free.countries } países"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "VPN com servidores em ${ vpnServersCountData.free.countries } país",
-        "VPN com servidores em ${ vpnServersCountData.free.countries } países"
       ],
       "We’ll email you before your trial ends.": [
         "Enviaremos um e-mail para você antes do término da avaliação."
@@ -23648,9 +23556,6 @@
       "Account deleted. Signing out...": [
         "Conta excluída. Encerando sessão..."
       ],
-      "Activation link copied to clipboard": [
-        "Link de ativação copiado para a área de transferência"
-      ],
       "Address added": [
         "Endereço adicionado"
       ],
@@ -24125,6 +24030,11 @@
         "Use as configurações da ${ BRAND_NAME }"
       ]
     },
+    "Themes": {
+      "Themes": [
+        "Temas"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dia",
@@ -24211,6 +24121,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } para organizações"
+      ],
+      "${ VPN_APP_NAME } clients": [
+        "${ VPN_APP_NAME } clientes"
       ],
       "(active)": [
         "(ativo)"
@@ -24736,6 +24649,9 @@
       "Deep dive into VPN blog posts": [
         "Aprofunde-se nas postagens do blog sobre VPN"
       ],
+      "Delete": [
+        "Excluir"
+      ],
       "Delete ${ name }?": [
         "Excluir ${ name }?"
       ],
@@ -24854,6 +24770,9 @@
       "Download ${ PASS_APP_NAME } for your devices": [
         "Baixe ${ PASS_APP_NAME } para seu dispositivo"
       ],
+      "Download apps": [
+        "Baixar aplicativos"
+      ],
       "Download the desktop app": [
         "Baixe o aplicativo para computador"
       ],
@@ -24940,6 +24859,9 @@
       ],
       "Email privacy": [
         "Privacidade do e-mail"
+      ],
+      "Email subscriptions": [
+        "Inscrições de e-mail"
       ],
       "Email verification": [
         "Verificação do e-mail"
@@ -25140,6 +25062,9 @@
       "Help center": [
         "Central de ajuda"
       ],
+      "Help us improve": [
+        "Ajude-nos a melhorar"
+      ],
       "Helping activists in Hong Kong": [
         "Ajudando ativistas em Hong Kong"
       ],
@@ -25291,6 +25216,9 @@
       "Mobile": [
         "Celular"
       ],
+      "Monitoring": [
+        "Monitoramento"
+      ],
       "Monthly": [
         "Mensalmente"
       ],
@@ -25303,11 +25231,17 @@
       "Multiple accounts, 1 private inbox": [
         "Várias contas, 1 caixa de entrada privada."
       ],
+      "My account": [
+        "Minha conta"
+      ],
       "My addresses": [
         "Meus endereços"
       ],
       "My calendars": [
         "Meus calendários"
+      ],
+      "My VPN": [
+        "Minha VPN"
       ],
       "Name": [
         "Nome"
@@ -25357,8 +25291,17 @@
       "OpenVPN configuration files": [
         "Arquivos de configuração OpenVPN"
       ],
+      "OpenVPN username": [
+        "Nome de usuário do OpenVPN"
+      ],
       "Org setup": [
         "Configuração da organização"
+      ],
+      "Organization": [
+        "Organização"
+      ],
+      "Organization and people": [
+        "Organização e pessoas"
       ],
       "Organization filters": [
         "Filtros de organização"
@@ -25597,6 +25540,9 @@
       "Security": [
         "Segurança"
       ],
+      "Security and compliance": [
+        "Segurança e conformidade"
+      ],
       "Security and privacy": [
         "Segurança e privacidade"
       ],
@@ -25725,6 +25671,9 @@
       ],
       "Single sign-on": [
         "Autenticação única"
+      ],
+      "Single-sign on (SSO)": [
+        "Início de sessão único (SSO)"
       ],
       "SMS verification": [
         "Verificação de SMS"
@@ -25883,6 +25832,9 @@
       "Upgrade to keep your premium benefits.": [
         "Faça upgrade para manter seus benefícios premium."
       ],
+      "Upgrade your network protection with dedicated servers": [
+        "Atualize sua proteção de rede com servidores dedicados"
+      ],
       "Upgrade your privacy": [
         "Faça um upgrade na sua privacidade"
       ],
@@ -25955,6 +25907,9 @@
       "View organization events by upgrading to Professional": [
         "Consulta os eventos da organização ao fazer upgrade para Professional."
       ],
+      "VPN": [
+        "VPN"
+      ],
       "VPN apps": [
         "Aplicativos de VPN"
       ],
@@ -26023,6 +25978,9 @@
       ],
       "Your changes are not synced yet": [
         "Sua alteração não foram sintonizadas ainda"
+      ],
+      "Your current plan": [
+        "Seu plano atual"
       ],
       "Your exposed information": [
         "Sua informação exposta"
@@ -27173,6 +27131,9 @@
       ],
       "Are you sure you want to remove your recovery email?": [
         "Você tem certeza que deseja remover seu e-mail de recuperação?"
+      ],
+      "Are you sure you want to remove your recovery phone number?": [
+        "Você tem certeza que deseja remover seu número de telefone de recuperação?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Ao excluir este endereço, você não poderá mais receber notificações diárias por e-mail."

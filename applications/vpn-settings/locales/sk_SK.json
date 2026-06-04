@@ -254,6 +254,9 @@
       "Continue to sign in": [
         "Pokračovať na prihlásenie"
       ],
+      "Continue with Free": [
+        "Pokračovať s Free"
+      ],
       "Continue with this password": [
         "Pokračovať s týmto heslom"
       ],
@@ -334,9 +337,6 @@
       ],
       "Delete policy": [
         "Vymazať pravidlo"
-      ],
-      "Delete token ${ tokens[0].Account }": [
-        "Vymazať token ${ tokens[0].Account }"
       ],
       "Delete user": [
         "Vymazať používateľa"
@@ -437,6 +437,9 @@
       "Edit group": [
         "Upraviť skupinu"
       ],
+      "Edit invoice details": [
+        "Upraviť fakturačné údaje"
+      ],
       "Edit invoice note": [
         "Upraviť poznámku k faktúre"
       ],
@@ -530,6 +533,9 @@
       "Get Deal": [
         "Získať ponuku"
       ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Získajte pomoc od ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Get in touch": [
         "Skontaktovať sa"
       ],
@@ -568,9 +574,6 @@
       ],
       "Go to ${ planOrAppName }": [
         "Prejsť do ${ planOrAppName }"
-      ],
-      "Go to domain provider": [
-        "Prejsť k poskytovateľovi domén"
       ],
       "Go to label": [
         "Prejsť na štítok"
@@ -2023,21 +2026,6 @@
       ]
     },
     "BOSS": {
-      "${ BRAND_NAME } Migration Assistant": [
-        "Asistent migrácie ${ BRAND_NAME }"
-      ],
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } z ${ providerUsers.length }"
-      ],
-      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
-        "**p=none**: neumiestňovať do karantény ani neodmietať neautorizované emaily. Obvykle túto zásadu ľudia používajú zvyčajne na diagnostiku a odstraňovanie problémov alebo na testovanie."
-      ],
-      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
-        "**p=quarantine**: žiada platformy príjemcov, aby neautorizované emaily označili ako spam alebo ich umiestnili do karantény."
-      ],
-      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
-        "**p=reject**: žiada platformy príjemcov o odmietnutie neautorizovaných emailov."
-      ],
       "Account connected": [
         "Účet je pripojený"
       ],
@@ -2046,12 +2034,6 @@
       ],
       "Activated": [
         "Aktivované"
-      ],
-      "Activation link": [
-        "Aktivačný odkaz"
-      ],
-      "Activation link copied to clipboard": [
-        "Aktivačný odkaz skopírovaný do schránky"
       ],
       "Add domain": [
         "Pridať doménu"
@@ -2065,14 +2047,8 @@
       "All": [
         "Všetko"
       ],
-      "An unknown error occurred": [
-        "Vyskytla sa neznáma chyba"
-      ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "Naozaj chcete pokračovať? Používatelia, ktorí si svoj účet neprevzali pred dokončením migrácie, budú musieť požiadať správcu organizácie ${ BRAND_NAME } o obnovenie hesla."
-      ],
-      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
-        "Hneď po vytvorení účtov môžete zdieľať aktivačný odkaz, aby si používatelia mohli aktivovať svoje ${ BRAND_NAME } účty."
       ],
       "Authenticate": [
         "Autentifikovať"
@@ -2082,12 +2058,6 @@
       ],
       "Calendar": [
         "Kalendár"
-      ],
-      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
-        "Vyberte, čo chcete preniesť. Váš výber sa bude vzťahovať na všetkých používateľov. Migrácia sa spustí hneď, ako určíte, ktorých používateľov chcete skopírovať."
-      ],
-      "Completed": [
-        "Dokončené"
       ],
       "Configure domain": [
         "Nakonfigurovať doménu"
@@ -2101,35 +2071,14 @@
       "Contacts": [
         "Kontakty"
       ],
-      "Copy activation link": [
-        "Kopírovať aktivačný odkaz"
-      ],
-      "Copy activation link to clipboard": [
-        "Skopírovať aktivačný odkaz do schránky"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
-        "Skopírujte nižšie uvedený kód a vložte ho do sekcie DNS u vášho poskytovateľa doménových služieb. Príklad a niekoľko užitočných tipov nájdete ${ hereHref }."
-      ],
-      "Creating accounts": [
-        "Vytváranie účtov"
-      ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM pridáva ku každému emailu digitálny podpis, vďaka čomu si príjemcovia môžu overiť, že správa skutočne pochádza z vašej domény a nebola počas prenosu pozmenená. Bez neho môžu byť správy považované za menej dôveryhodné."
-      ],
-      "DKIM records": [
-        "DKIM záznamy"
       ],
       "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
         "DMARC nadväzuje na protokoly SPF a DKIM tým, že prijímajúcim serverom určuje, ako majú postupovať v prípade správ, ktoré tieto kontroly neprejdú. Pomáha chrániť vašu doménu pred zneužitím a zvyšuje celkovú spoľahlivosť doručovania."
       ],
-      "DMARC records": [
-        "DMARC záznamy"
-      ],
       "Domain added": [
         "Doména pridaná"
-      ],
-      "Domain connected": [
-        "Doména prepojená"
       ],
       "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
         "Uistite sa, že vaše emaily prichádzajú do doručenej pošty a nie do priečinka so spamom. Aktualizáciou SPF umožníte používateľom počas migrácie odosielať správy súčasne z adresy ${ BRAND_NAME } aj z adresy Google."
@@ -2143,12 +2092,6 @@
       "Failed to load OAuth": [
         "Nepodarilo sa načítať OAuth"
       ],
-      "Finalize migration": [
-        "Dokončiť presun"
-      ],
-      "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
-        "Dokončením migrácie budú všetky vaše emaily smerované priamo do ${ BRAND_NAME }. Používatelia už nebudú dostávať emaily na svoje Google účty a údaje medzi ${ BRAND_NAME } a Google sa už nebudú synchronizovať."
-      ],
       "Find out what can be migrated.": [
         "Zistite, čo je možné preniesť."
       ],
@@ -2158,14 +2101,8 @@
       "Google Workspace account": [
         "Účet Google Workspace"
       ],
-      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
-        "Vydržte, práve vytvárame používateľské účty a čoskoro začneme importovať údaje používateľov."
-      ],
       "Has errors": [
         "Má chyby"
-      ],
-      "Import errors for ${ user.AdminSetName }": [
-        "Chyby pri importe pre ${ user.AdminSetName }"
       ],
       "In progress": [
         "Prebieha"
@@ -2182,17 +2119,11 @@
       "Mail": [
         "Pošta"
       ],
-      "Managed via ${ registrar.name }": [
-        "Spravované cez ${ registrar.name }"
-      ],
       "Member address not found. Please contact customer support to resolve this": [
         "Adresa člena nebola nájdená. Na vyriešenie tohto problému kontaktujte zákaznícku podporu."
       ],
       "Migrate from Google Workspace": [
         "Migrovať z Google Workspace"
-      ],
-      "Migrate users": [
-        "Migrovať používateľov"
       ],
       "Migrated": [
         "Presunuté"
@@ -2215,9 +2146,6 @@
       "Missing organization public key": [
         "Chýba verejný kľúč organizácie"
       ],
-      "More details": [
-        "Ďalšie podrobnosti"
-      ],
       "No error details available. Please contact customer support for more information": [
         "Podrobnosti o chybe nie sú k dispozícii. Pre viac informácií kontaktujte zákaznícku podporu."
       ],
@@ -2229,9 +2157,6 @@
       ],
       "Not confirmed": [
         "Nepotvrdené"
-      ],
-      "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
-        "Akonáhle si používatelia aktivujú svoj ${ BRAND_NAME } účet, dokončite migráciu."
       ],
       "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
         "Akonáhle overíme, že emaily sú smerované na ${ BRAND_NAME }, migrácia bude dokončená. Po dokončení tohto procesu dostanete potvrdzovací email. Tento proces môže trvať až 24 hodín."
@@ -2245,32 +2170,14 @@
       "Pending": [
         "Čakajúce"
       ],
-      "Please add the following records in your DNS console of your domain provider:": [
-        "Do konzoly DNS vášho poskytovateľa doménových služieb, prosím, pridajte nasledujúce záznamy:"
-      ],
-      "Please leave this window open until we're done creating all the users.": [
-        "Nechajte toto okno otvorené, kým nedokončíme vytváranie všetkých používateľov, prosím."
-      ],
-      "Please select at least one product to migrate": [
-        "Vyberte aspoň jeden produkt na presun, prosím"
-      ],
       "Refresh": [
         "Obnoviť"
-      ],
-      "Required": [
-        "Povinné"
-      ],
-      "Required to create user accounts": [
-        "Potrebné na vytvorenie používateľských účtov"
       ],
       "Select at least one user to start a migration": [
         "Pre spustenie migrácie vyberte aspoň jedného používateľa"
       ],
       "Select users to migrate": [
         "Vyberte používateľov na presun"
-      ],
-      "Set up": [
-        "Nastaviť"
       ],
       "Set up secure sending (DKIM)": [
         "Nastavte bezpečné odosielanie (DKIM)"
@@ -2284,9 +2191,6 @@
       "Settings": [
         "Nastavenia"
       ],
-      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
-        "Zdieľajte aktivačný odkaz s používateľmi, aby si mohli aktivovať svoj ${ BRAND_NAME } účet."
-      ],
       "Sign in to Google Workspace": [
         "Prihlásiť sa do Google Workspace"
       ],
@@ -2296,41 +2200,14 @@
       "Some accounts are not claimed": [
         "Niektoré účty neboli prevzaté"
       ],
-      "SPF records": [
-        "SPF záznamy"
-      ],
-      "Start migrating": [
-        "Spustiť migráciu"
-      ],
       "Status": [
         "Stav"
-      ],
-      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
-        "Predvolené nastavenie je „none“. Pre zvýšenie bezpečnosti však odporúčame nastaviť túto hodnotu na „p=quarantine“."
-      ],
-      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
-        "Hodnota „p=” určuje, aká akcia sa má vykonať v prípade emailov, ktoré neprejdú DMARC kontrolou. K dispozícii sú tieto akcie:"
-      ],
-      "This migration has been completed": [
-        "Migrácia bola dokončená"
-      ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
-        "Ak chcete migrovať dáta vašej organizácie, potrebujete nainštalovať aplikáciu ${ BRAND_NAME } Migration Assistant z Google Workspace Marketplace. Toto udelí povolenie pre ${ BRAND_NAME } na kopírovanie vašich dát. Po jej nainštalovaní sa vráťte sem, aby ste pokračovali."
       ],
       "Update records for receiving": [
         "Aktualizovať záznamy o príjme"
       ],
       "User": [
         "Používateľ"
-      ],
-      "User needs to activate their account through the activation link shown above": [
-        "Používateľ musí aktivovať svoj účet prostredníctvom aktivačného odkazu uvedeného vyššie"
-      ],
-      "User status": [
-        "Stav používateľa"
-      ],
-      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
-        "Počas migrácie môžu používatelia súčasne využívať službu ${ BRAND_NAME } aj Google."
       ],
       "Users migrated": [
         "Používatelia zmigrovaní"
@@ -2347,14 +2224,8 @@
       "Verify your domain to start a migration": [
         "Overte vašu doménu pre spustenie migrácie"
       ],
-      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
-        "Zistili sme primárnu doménu prepojenú s vaším účtom Google Workspace. Potvrďte ju, aby ste mohli pokračovať v nastavovaní emailu pre vašu organizáciu ${ BRAND_NAME }."
-      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Inštaláciu sa nám nepodarilo overiť. Skontrolujte, či ste ju nainštalovali do svojho účtu Google Workspace, a skúste to znova."
-      ],
-      "We're still checking the MX records with your domain provider.": [
-        "Stále overujeme MX záznamy u vášho poskytovateľa domén."
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Zistili sme, že niektorí používatelia si ešte neaktivovali svoje ${ BRAND_NAME } účty."
@@ -2364,9 +2235,6 @@
       ],
       "You": [
         "Vy"
-      ],
-      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
-        "Musíte udeliť povolenie pre ${ BRAND_NAME } na kopírovanie vašich údajov. Po udelení povolení sa vráťte sem a pokračujte."
       ],
       "You're all set!": [
         "Všetko je pripravené!"
@@ -3871,6 +3739,9 @@
       "Automatically forward incoming email to another email address.": [
         "Automaticky pre posielajte prichádzajúce emaily na inú emailovú adresu."
       ],
+      "Available storage: ${ storageText }": [
+        "Dostupné úložisko: ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Zabráňte spoločnosti Google v profilovaní vašej osoby. Gmail nemá prehľad o tom, čo robíte v aplikácii ${ MAIL_APP_NAME }"
       ],
@@ -3924,6 +3795,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrovanie a import kontaktov... Táto akcia môže trvať niekoľko minút. Akonáhle je proces ukončený, môžete zavrieť tento modul."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Dostatok miesta na roky emailov, príloh a ďalších súborov."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Poskytnite bezpečný prístup k údajom organizácie, aj keď je váš tím vzdialený alebo používa verejné Wi-Fi."
@@ -4024,6 +3898,9 @@
       "Track the status and activity of your referrals": [
         "Sledujte stav a aktivitu svojich odporúčaní"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Získajte 15 GB úložného priestoru len za ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Navýšte úroveň na ${ planName } pre pripojenie až ${ MAX_SYNC_PAID_USER } účtov"
       ],
@@ -4084,6 +3961,12 @@
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Do jedného externého účtu ste pripojili adresu v ${ MAIL_APP_NAME }."
       ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Váš bezplatný ${ MAIL_APP_NAME } účet má obmedzenú kapacitu úložiska, preto naimportujeme len ${ newUserStorageText } vašich najnovších správ z Gmailu"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Váš bezplatný ${ MAIL_APP_NAME } účet má obmedzenú kapacitu úložiska, preto naimportujeme len vašich najnovších emailov z Gmailu."
+      ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Váš plán podporuje ${ MAX_SYNC_FREE_USER } Gmailovú adresu.",
         "Váš plán podporuje ${ MAX_SYNC_FREE_USER } Gmailové adresy.",
@@ -4100,11 +3983,6 @@
     "description": {
       "use the Easy Switch import assistant": [
         "použite asistenta pre import Easy Switch"
-      ]
-    },
-    "Description for domain modal": {
-      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
-        "Bol nájdený duplicitný DMARC záznam. Prejdite do DNS konzoly vášho poskytovateľa domén a problém vyriešte."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4897,6 +4775,9 @@
       "Please add a payment method before reactivating your subscription": [
         "Pred opätovnou aktiváciou predplatného pridajte spôsob platby."
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Skontrolujte, či je vaše ABN zaregistrované na účely cezhraničnej DPH, prosím."
+      ],
       "Please complete the billing details": [
         "Doplňte fakturačné údaje, prosím"
       ],
@@ -5130,6 +5011,9 @@
       ],
       "Username must end with a letter or digit": [
         "Používateľské meno musí končiť písmenom alebo číslom"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Číslo DIČ musí začínať predponami ${ prefixes }"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Overenie sa nepodarilo, skúste to prosím za hodinu znovu."
@@ -5719,6 +5603,9 @@
       "${ PROTON_SENTINEL_NAME } account protection": [
         "Ochrana účtu ${ PROTON_SENTINEL_NAME }"
       ],
+      "10+ premium features": [
+        "10+ prémiových funkcií"
+      ],
       "15 GB storage": [
         "15 GB úložisko"
       ],
@@ -5758,6 +5645,12 @@
       "Continue": [
         "Pokračovať"
       ],
+      "Custom email domain": [
+        "Vlastná emailová doména"
+      ],
+      "Email addresses": [
+        "Emailové adresy"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Šifrované cloudové úložisko na súbory, fotografie a dokumenty"
       ],
@@ -5787,6 +5680,9 @@
       ],
       "Short domain @pm.me": [
         "Skrátená doména @pm.me"
+      ],
+      "Storage": [
+        "Úložisko"
       ],
       "Torrenting support (P2P)": [
         "Podpora Torrentu (P2P)"
@@ -7880,6 +7776,9 @@
       "Include device, location, and IP details": [
         "Zahrnúť podrobnosti o zariadení, polohe a IP adrese"
       ],
+      "Included": [
+        "Zahrnuté"
+      ],
       "Increase your account security by verifying your email address.": [
         "Zvýšte bezpečnosť svojho účtu overením svojej emailovej adresy."
       ],
@@ -9002,8 +8901,14 @@
       "Unverified email address.": [
         "Neoverená emailová adresa."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Kedykoľvek si môžete zvýšiť úroveň a preniesť aj zvyšok"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navýšte teraz a získajte prémiové funkcie, produkty a úložisko za špeciálnu cenu"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Kedykoľvek môžete zvýšiť úroveň alebo uvoľniť miesto, aby ste mohli preniesť zvyšok"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Zvýšte si úroveň, aby ste si zachovali svoje ${ planTitle } výhody."
@@ -10223,9 +10128,6 @@
       "Hide password": [
         "Skryť heslo"
       ],
-      "Host name": [
-        "Názov servera (Host name)"
-      ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Chápem, že túto emailovú adresu budem musieť okamžite pridať do druhého konta, aby nedošlo k trvalej strate tejto adresy."
       ],
@@ -10342,9 +10244,6 @@
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
-      ],
-      "MX records": [
-        "MX záznamy"
       ],
       "Name": [
         "Meno"
@@ -10477,9 +10376,6 @@
       ],
       "Previous password": [
         "Predchádzajúce heslo"
-      ],
-      "Priority": [
-        "Prioritné"
       ],
       "Priority support": [
         "Prednostná podpora"
@@ -10715,6 +10611,9 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Áno, chcem trvale zmazať tento účet a všetky údaje s ním spojené."
       ],
+      "You don't have permissions": [
+        "Nemáte oprávnenia"
+      ],
       "Your password (admin)": [
         "Vaše heslo (správca)"
       ],
@@ -10779,9 +10678,6 @@
       ],
       "Type": [
         "Typ"
-      ],
-      "Use default value": [
-        "Použiť predvolenú hodnotu"
       ],
       "Valid ${ group.name } record found": [
         "Bol nájdený platný záznam ${ group.name }"
@@ -10901,9 +10797,6 @@
       ],
       "data recovery option": [
         "možnosť obnovy dát"
-      ],
-      "Detailed instructions": [
-        "Podrobné pokyny"
       ],
       "Details": [
         "Podrobnosti"
@@ -11042,6 +10935,9 @@
       ],
       "Sign in": [
         "Prihlásiť sa"
+      ],
+      "Sign-in help": [
+        "Pomoc s prihlásením"
       ],
       "Terms": [
         "Podmienky"
@@ -12108,11 +12004,11 @@
       "Send & receive invitations": [
         "Odosielanie a prijímanie pozvánok"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Servery v ${ vpnServersCountData.paid.countries }+ krajine",
-        "Servery v ${ vpnServersCountData.paid.countries }+ krajinách",
-        "Servery v ${ vpnServersCountData.paid.countries }+ krajinách",
-        "Servery v ${ vpnServersCountData.paid.countries }+ krajinách"
+      "Servers in ${ VPN_SERVERS.paid.countries }+ country": [
+        "Servery v ${ VPN_SERVERS.paid.countries }+ krajine",
+        "Servery v ${ VPN_SERVERS.paid.countries }+ krajinách",
+        "Servery v ${ VPN_SERVERS.paid.countries }+ krajinách",
+        "Servery v ${ VPN_SERVERS.paid.countries }+ krajinách"
       ],
       "Share files with no size limit": [
         "Zdieľanie súborov bez obmedzenia veľkosti"
@@ -12705,9 +12601,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Umiestnenie špecializovaných serverov v ${ numberOfCountries }+ krajinách"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Umiestnenie špecializovaných serverov v Severnej Amerike a Európe"
       ],
       "Multi-platform support": [
         "Podpora viacerých platforiem"
@@ -16447,9 +16340,6 @@
       "Account deleted. Signing out...": [
         "Účet vymazaný. Odhlasovanie..."
       ],
-      "Activation link copied to clipboard": [
-        "Aktivačný odkaz skopírovaný do schránky"
-      ],
       "Address added": [
         "Adresa pridaná"
       ],
@@ -17156,6 +17046,9 @@
       "Contact us": [
         "Kontaktujte nás"
       ],
+      "Continue with free storage": [
+        "Pokračovať s bezplatným úložiskom"
+      ],
       "Continue with partial import?": [
         "Pokračovať s čiastočným importom?"
       ],
@@ -17476,6 +17369,9 @@
       ],
       "Get more from your VPN": [
         "Získajte zo svojej VPN viac"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Získajte väčšie úložisko s ${ MAIL_APP_NAME } Plus"
       ],
       "Get started": [
         "Začíname"
@@ -17972,6 +17868,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Ak chcete zobraziť náhľad tejto tabuľky, otvorte ju v aplikácii ${ SHEETS_APP_NAME } alebo si ju stiahnite."
       ],
+      "Troubleshoot with ${ LUMO_SHORT_APP_NAME }": [
+        "Riešenie problémov s aplikáciou ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Troubleshoot your issue": [
         "Vyriešte svoj problém"
       ],
@@ -18076,6 +17975,9 @@
       ],
       "VPN": [
         "VPN"
+      ],
+      "VPN apps": [
+        "VPN aplikácie"
       ],
       "Warning": [
         "Upozornenie"

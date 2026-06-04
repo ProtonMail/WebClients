@@ -172,6 +172,9 @@
       "Get the apps": [
         "Obtenir les applications"
       ],
+      "Get the deal": [
+        "J'en profite"
+      ],
       "Get verification code": [
         "Obtenir un code de vérification"
       ],
@@ -2378,6 +2381,9 @@
       "Payment process not supported": [
         "Le traitement du paiement n'est pas pris en charge."
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Veuillez vérifier si votre numéro ABN est enregistré pour la TVA transfrontalière."
+      ],
       "Please complete the billing details": [
         "Veuillez compléter les informations de facturation."
       ],
@@ -2464,6 +2470,9 @@
       ],
       "Username must end with a letter or digit": [
         "Le nom d'utilisateur doit se terminer par une lettre ou un chiffre."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Le numéro de TVA doit commencer avec ${ prefixes }."
       ],
       "Wrong billing address": [
         "L'adresse de facturation n'est pas correct."
@@ -4569,9 +4578,6 @@
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Emplacements de serveurs dédiés dans plus de ${ numberOfCountries } pays"
       ],
-      "Dedicated server locations in North America and Europe": [
-        "Emplacements de serveurs dédiés en Amérique du Nord et en Europe"
-      ],
       "Multi-platform support": [
         "Prise en charge multiplateforme"
       ],
@@ -5748,6 +5754,9 @@
       ],
       "Summary": [
         "Résumé"
+      ],
+      "Summer Sale": [
+        "Soldes d'été"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activer ${ DARK_WEB_MONITORING_NAME }"

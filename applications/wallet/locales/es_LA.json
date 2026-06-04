@@ -172,6 +172,9 @@
       "Get the apps": [
         "Obtener las aplicaciones"
       ],
+      "Get the deal": [
+        "Obtener la promoción"
+      ],
       "Get verification code": [
         "Obtener código de verificación"
       ],
@@ -2378,6 +2381,9 @@
       "Payment process not supported": [
         "Proceso de pago no soportado"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Revise si su IVA está registrado para el IVA transfronterizo"
+      ],
       "Please complete the billing details": [
         "Complete los detalles de facturación"
       ],
@@ -2464,6 +2470,9 @@
       ],
       "Username must end with a letter or digit": [
         "El nombre de usuario debe terminar con una letra o dígito"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "El número IVA debe comenzar con ${ prefixes }"
       ],
       "Wrong billing address": [
         "Dirección de facturación incorrecta"
@@ -4568,9 +4577,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Ubicaciones de servidores dedicados en más de ${ numberOfCountries } países"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Ubicaciones de servidores dedicados en América del Norte y Europa"
       ],
       "Multi-platform support": [
         "Soporte multi plataforma"

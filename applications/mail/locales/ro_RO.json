@@ -642,6 +642,9 @@
       "Get the browser extension": [
         "Luați extensia pentru navigatorul web"
       ],
+      "Get the deal": [
+        "Obțineți oferta"
+      ],
       "Get the writing assistant": [
         "Luați asistentul de scriere"
       ],
@@ -1522,6 +1525,11 @@
       ],
       "Trust": [
         "Aprobare"
+      ],
+      "Trust key": [
+        "Aprobare cheie",
+        "Aprobare cheie",
+        "Aprobare cheie"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -4167,6 +4175,9 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ajutați-vă echipa să stocheze în siguranță parolele pentru informațiile private despre afaceri și clienți."
       ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Dacă un mesaj apare în categoria greșită, mutați-l pur și simplu în cea corectă. Faceți clic dreapta pe un mesaj pentru a alege o categorie nouă sau glisați-l și plasați-l acolo unde îi este locul."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
       ],
@@ -4351,6 +4362,9 @@
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adresă Gmail",
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adrese Gmail",
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } de adrese Gmail"
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Sunteți printre primii care au încercat noua noastră vizualizare pe categorii înainte de lansare. Feedback-ul dvs. va ajuta la îmbunătățirea modului în care Proton Mail sortează mesajele pentru toată lumea."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
@@ -5016,6 +5030,9 @@
       "Please activate your search again": [
         "Reactivați căutarea."
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Verificați dacă numărul ABN vă este înregistrat pentru TVA transfrontalier."
+      ],
       "Please complete the billing details": [
         "Completați detaliile de facturare."
       ],
@@ -5285,6 +5302,9 @@
       ],
       "Username must end with a letter or digit": [
         "Numele de utilizator trebuie să se termine cu o literă sau cifră."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Valoarea TVA trebuie să înceapă cu ${ prefixes }."
       ],
       "Wrong billing address": [
         "Adresă de facturare incorectă."
@@ -7748,9 +7768,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -12037,9 +12055,6 @@
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Locuri de servere dedicate în peste ${ numberOfCountries } de țări"
       ],
-      "Dedicated server locations in North America and Europe": [
-        "Locuri de servere dedicate în America de Nord și Europa"
-      ],
       "Multi-platform support": [
         "Suport platforme multiple"
       ],
@@ -15802,6 +15817,9 @@
       ],
       "Help center": [
         "Centru de ajutor"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Contribuiți la modelarea viitorului categoriilor de mesaje din ${ MAIL_APP_NAME }"
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Ascundeți-vă e-mailul cu ${ PASS_APP_NAME }"
