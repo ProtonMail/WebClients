@@ -1,27 +1,36 @@
-import { useEffect, useState } from 'react';
+import { Suspense, lazy, useEffect, useState } from 'react';
 
-import Lottie, { type LottieComponentProps } from 'lottie-react';
+import type { LottieComponentProps } from 'lottie-react';
 
-import noop from '@proton/utils/noop';
+const LazyLottieComponent = lazy(() => import('lottie-react'));
 
 interface Props extends Omit<LottieComponentProps, 'animationData' | 'ref'> {
     getAnimationData: () => Promise<{ default: object }>;
-    fallbackClassName?: string;
-    fallbackStyle?: React.CSSProperties;
 }
 
-export const LazyLottie = ({ getAnimationData, fallbackClassName, fallbackStyle, ...props }: Props) => {
-    const [animationData, setAnimationData] = useState<object>();
+export const LazyLottie = ({ getAnimationData, ...props }: Props) => {
+    const [animationData, setAnimationData] = useState<object | null>(null);
 
     useEffect(() => {
-        getAnimationData()
-            .then(({ default: animationData }) => setAnimationData(animationData))
-            .catch(noop);
-    }, []);
+        void (async () => {
+            try {
+                const result = await getAnimationData();
+                setAnimationData(result.default);
+            } catch {
+                console.error('Failed to load animation');
+            }
+        })();
+    }, [getAnimationData]);
+
+    const fallback = <div className={props.className} style={props.style} />;
 
     if (!animationData) {
-        return <div className={fallbackClassName} style={fallbackStyle} />;
+        return fallback;
     }
 
-    return <Lottie animationData={animationData} {...props} />;
+    return (
+        <Suspense fallback={fallback}>
+            <LazyLottieComponent animationData={animationData} {...props} />
+        </Suspense>
+    );
 };
