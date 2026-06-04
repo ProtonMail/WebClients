@@ -258,6 +258,9 @@
       "Continue transfers": [
         "Pokračovať v prenosoch"
       ],
+      "Continue with Free": [
+        "Pokračovať s Free"
+      ],
       "Continue with Google": [
         "Pokračovať cez Google"
       ],
@@ -524,6 +527,9 @@
       ],
       "Get the apps": [
         "Stiahnť aplikácie"
+      ],
+      "Get the deal": [
+        "Využiť ponuku"
       ],
       "Get the writing assistant": [
         "Získajte asistenta písania"
@@ -2950,6 +2956,9 @@
       "Automatically forward incoming email to another email address.": [
         "Automaticky pre posielajte prichádzajúce emaily na inú emailovú adresu."
       ],
+      "Available storage: ${ storageText }": [
+        "Dostupné úložisko: ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Najprv nakonfigurujte túto možnosť, aby ste aktivovali svoju organizáciu a prispôsobili svoju emailovú adresu."
       ],
@@ -2979,6 +2988,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrovanie a import kontaktov... Táto akcia môže trvať niekoľko minút. Akonáhle je proces ukončený, môžete zavrieť tento modul."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Dostatok miesta na roky emailov, príloh a ďalších súborov."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Poskytnite bezpečný prístup k údajom organizácie, aj keď je váš tím vzdialený alebo používa verejné Wi-Fi."
@@ -3040,6 +3052,9 @@
       "To start, give your organization a name.": [
         "Začnite tým, že zadáte názov svojej organizácie."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Získajte 15 GB úložného priestoru len za ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Navýšte na ${ planName }, aby ste mohli naďalej zdieľať súbory s prístupom na úpravu"
       ],
@@ -3078,6 +3093,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Váš účet a metódy obnovy údajov sú nastavené."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Váš bezplatný ${ MAIL_APP_NAME } účet má obmedzenú kapacitu úložiska, preto naimportujeme len ${ newUserStorageText } vašich najnovších správ z Gmailu"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Váš bezplatný ${ MAIL_APP_NAME } účet má obmedzenú kapacitu úložiska, preto naimportujeme len vašich najnovších emailov z Gmailu."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
@@ -3710,6 +3731,9 @@
       "Please activate your search again": [
         "Aktivujte znovu vyhľadávanie"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Skontrolujte, či je vaše ABN zaregistrované na účely cezhraničnej DPH, prosím."
+      ],
       "Please complete the billing details": [
         "Doplňte fakturačné údaje, prosím"
       ],
@@ -3946,6 +3970,9 @@
       ],
       "Validation error": [
         "Chyba overenia"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Číslo DIČ musí začínať predponami ${ prefixes }"
       ],
       "We cannot retrieve this item": [
         "Túto položku sa nám nepodarilo získať"
@@ -4398,11 +4425,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ prémiových funkcií"
+      ],
+      "Custom email domain": [
+        "Vlastná emailová doména"
+      ],
+      "Email addresses": [
+        "Emailové adresy"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Šifrované cloudové úložisko na súbory, fotografie a dokumenty"
       ],
       "More premium features": [
         "Viac prémiových funkcií"
+      ],
+      "Storage": [
+        "Úložisko"
       ],
       "Unlimited hide-my-email aliases": [
         "Neobmedzený počet hide-my-email aliasov"
@@ -5796,6 +5835,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "V ďalšom kroku budete môcť odoslať vklad pomocou Bitcoin adresy."
       ],
+      "Included": [
+        "Zahrnuté"
+      ],
       "Index is empty.": [
         "Index je prázdny."
       ],
@@ -6693,8 +6735,14 @@
       "Updating drive search...": [
         "Aktualizácia vyhľadávania na disku..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Kedykoľvek si môžete zvýšiť úroveň a preniesť aj zvyšok"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navýšte teraz a získajte prémiové funkcie, produkty a úložisko za špeciálnu cenu"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Kedykoľvek môžete zvýšiť úroveň alebo uvoľniť miesto, aby ste mohli preniesť zvyšok"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Zvýšte si úroveň, aby ste si zachovali svoje ${ planTitle } výhody."
@@ -9502,9 +9550,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Umiestnenie špecializovaných serverov v ${ numberOfCountries }+ krajinách"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Umiestnenie špecializovaných serverov v Severnej Amerike a Európe"
       ],
       "Multi-platform support": [
         "Podpora viacerých platforiem"
@@ -12649,6 +12694,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Continue with free storage": [
+        "Pokračovať s bezplatným úložiskom"
+      ],
       "Continue with partial import?": [
         "Pokračovať s čiastočným importom?"
       ],
@@ -12888,6 +12936,9 @@
       ],
       "Get more from your VPN": [
         "Získajte zo svojej VPN viac"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Získajte väčšie úložisko s ${ MAIL_APP_NAME } Plus"
       ],
       "Get started with 10 minutes of free uploads, on the house.": [
         "Začnite s 10 minútami bezplatného nahrávania súborov na účet podniku."
