@@ -12,6 +12,7 @@ import lumoStop from '@proton/styles/assets/img/illustrations/lumo-stop.svg';
 import type useComposerInput from '../../hooks/useComposerInput';
 import type { DriveNode } from '../../hooks/useDriveSDK';
 import type { Message, SpaceId } from '../../types';
+import { isImeComposing } from '../../util/keyboard';
 import { FileMentionComponent } from './FileMentionComponent';
 import { type DriveSDKFunctions, useFileMentionAutocomplete } from './hooks/useFileMentionAutocomplete';
 import { useMobilePromptHandler } from './hooks/useMobilePromptHandler';
@@ -125,6 +126,11 @@ export const ComposerEditorArea = ({
 
     // Handle autocomplete keyboard navigation on top of the normal handleKeyDown
     const handleKeyDownWithAutocomplete = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+        // While an IME composition is in progress, Enter confirms the composition candidate.
+        // Don't treat it as a mention selection or message submission.
+        if (e.key === 'Enter' && isImeComposing(e)) {
+            return;
+        }
         if (mentionState.isActive) {
             if (e.key === 'ArrowDown') {
                 e.preventDefault();

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 
 import { useTierErrors } from '../../../../../hooks/useTierErrors';
+import { isImeComposing } from '../../../../../util/keyboard';
 
 interface MessageEditorProps {
     messageContent: string;
@@ -43,7 +44,9 @@ const MessageEditor = ({ messageContent, handleEditMessage, handleCancel }: Mess
     };
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-        if (e.key === 'Enter' && !e.shiftKey) {
+        // Ignore Enter while an IME composition is in progress (it confirms the
+        // candidate character rather than submitting the edited message).
+        if (e.key === 'Enter' && !e.shiftKey && !isImeComposing(e)) {
             e.preventDefault();
             handleSubmit();
         }
