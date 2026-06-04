@@ -36,4 +36,5 @@ export interface B2BOnboardingFeature {
     cta: ReactNode;
     illustration: string;
     canShowFeature: boolean;
+    highlighted?: boolean;
 }

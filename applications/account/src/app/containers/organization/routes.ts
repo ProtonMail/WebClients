@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { isOLESEligible } from '@proton/activation/src/oles/eligibility';
 import type { SectionConfig, SidebarConfig } from '@proton/components';
 import { canUseGroups } from '@proton/components';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
@@ -61,7 +60,6 @@ export const getOrganizationAppRoutes = ({
         isSharedServerFeatureEnabled = false,
         isSsoForPbsEnabled = false,
         isRetentionPoliciesEnabled = false,
-        isOLESEnabled = false,
         isRolesAndPermissionsEnabled = false,
     } = flags;
     const isAdmin = user.isAdmin && user.isSelf;
@@ -183,16 +181,7 @@ export const getOrganizationAppRoutes = ({
 
     const subSectionTitleAppearance = isPartOfFamily ? '' : c('Title').t`Customization`;
 
-    const showBusinessMigrationSection = Boolean(isOLESEnabled) && isOLESEligible({ user, organization, subscription });
-
     const routes = {
-        migrationAssistant: {
-            id: 'migration-assistant',
-            text: c('Title').t`Migration assistant`,
-            to: '/migration-assistant',
-            icon: 'arrow-down-to-square',
-            available: canHaveOrganization && showBusinessMigrationSection,
-        },
         users: {
             id: 'users',
             text: hasExternalMemberCapableB2BPlan ? c('Title').t`Users` : c('Title').t`Users and addresses`,
