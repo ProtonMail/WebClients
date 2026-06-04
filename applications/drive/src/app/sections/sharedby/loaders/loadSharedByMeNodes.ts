@@ -4,8 +4,8 @@ import { type ProtonDriveClient, getDrive, getDriveForPhotos } from '@proton/dri
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { driveMetrics } from '@proton/drive/modules/metrics';
+import { getFormattedNodeLocation } from '@proton/drive/modules/nodes';
 
-import { getFormattedNodeLocation } from '../../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
 import { useSharedByMeStore } from '../useSharedByMe.store';
 import { getOldestShareCreationTime } from '../utils/getOldestShareCreationTime';

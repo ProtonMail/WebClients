@@ -1,5 +1,5 @@
-import type { MaybeNode, NodeEntity, Result } from '@proton/drive/index';
-import { MemberRole, NodeType } from '@proton/drive/index';
+import type { MaybeNode, NodeEntity, Result } from '@protontech/drive-sdk';
+import { MemberRole, NodeType } from '@protontech/drive-sdk';
 
 import { NodeLocation, formatNodeLocation, getFormattedNodeLocation, getNodeLocation } from './getNodeLocation';
 

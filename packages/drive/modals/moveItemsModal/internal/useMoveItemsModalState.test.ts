@@ -3,7 +3,6 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 import { generateNodeUid } from '../../../index';
 import { sendErrorReport } from '../../../legacy/errorHandling';
 import { directoryTreeFactory, makeTreeItemId } from '../../../modules/directoryTree';
-import { getNodeAncestry } from '../../../modules/nodes';
 import { createMockNodeEntity } from '../../../modules/testing';
 import { useMoveItemsModalState } from './useMoveItemsModalState';
 
@@ -15,6 +14,7 @@ const mockCreateNotification = jest.fn();
 const mockMoveNodes = jest.fn();
 const mockShowCreateFolderModal = jest.fn();
 const mockIterateNodes = jest.fn();
+const mockGetNodeHierarchy = jest.fn();
 const mockOnClose = jest.fn();
 const mockOnExit = jest.fn();
 
@@ -29,11 +29,6 @@ jest.mock('../../../modules/directoryTree', () => ({
             clear: mockClear,
         }))
     ),
-}));
-
-jest.mock('../../../modules/nodes', () => ({
-    ...jest.requireActual('../../../modules/nodes'),
-    getNodeAncestry: jest.fn(),
 }));
 
 jest.mock('../../../legacy/errorHandling', () => ({
@@ -57,19 +52,18 @@ jest.mock('../../createFolderModal', () => ({
 }));
 
 jest.mock('../../../index', () => {
-    let driveInstance: { iterateNodes: jest.Mock };
+    let driveInstance: { iterateNodes: jest.Mock; getNodeHierarchy: jest.Mock };
     return {
         ...jest.requireActual('../../../index'),
         getDrive: jest.fn(() => {
             if (!driveInstance) {
-                driveInstance = { iterateNodes: mockIterateNodes };
+                driveInstance = { iterateNodes: mockIterateNodes, getNodeHierarchy: mockGetNodeHierarchy };
             }
             return driveInstance;
         }),
     };
 });
 
-const mockGetNodeAncestry = getNodeAncestry as jest.MockedFunction<typeof getNodeAncestry>;
 const mockSendErrorReport = sendErrorReport as jest.MockedFunction<typeof sendErrorReport>;
 
 const ROOT_UID = generateNodeUid('vol1', 'root');
@@ -83,15 +77,12 @@ async function* makeAsyncIterable<T>(items: T[]): AsyncIterable<T> {
 }
 
 /**
- * Builds a mock ancestry result where the first element is the root.
+ * Builds a mock node hierarchy where the first element is the root.
  */
-const createMockAncestry = (rootUid: string, ...leafUids: string[]) => ({
-    ok: true as const,
-    value: [
-        { ok: true as const, value: createMockNodeEntity({ uid: rootUid, parentUid: undefined }) },
-        ...leafUids.map((uid) => ({ ok: true as const, value: createMockNodeEntity({ uid }) })),
-    ],
-});
+const createMockHierarchy = (rootUid: string, ...leafUids: string[]) => [
+    { ok: true as const, value: createMockNodeEntity({ uid: rootUid, parentUid: undefined }) },
+    ...leafUids.map((uid) => ({ ok: true as const, value: createMockNodeEntity({ uid }) })),
+];
 
 const defaultProps = {
     nodeUids: [NODE1_UID],
@@ -139,7 +130,7 @@ describe('useMoveItemsModalState', () => {
     beforeEach(() => {
         jest.clearAllMocks();
 
-        mockGetNodeAncestry.mockResolvedValue(createMockAncestry(ROOT_UID, NODE1_UID));
+        mockGetNodeHierarchy.mockResolvedValue(createMockHierarchy(ROOT_UID, NODE1_UID));
         mockInitializeTree.mockResolvedValue(undefined);
         mockIterateNodes.mockImplementation(() => makeAsyncIterable([{ ok: true, value: defaultNode }]));
         mockMoveNodes.mockResolvedValue(undefined);
@@ -150,7 +141,7 @@ describe('useMoveItemsModalState', () => {
     describe('loading state', () => {
         it('returns loaded: false on initial render', async () => {
             // Prevent ancestry resolution from settling before we inspect
-            mockGetNodeAncestry.mockReturnValue(new Promise(() => {}));
+            mockGetNodeHierarchy.mockReturnValue(new Promise(() => {}));
 
             const { result } = renderHook(() => useMoveItemsModalState(defaultProps));
 
@@ -196,8 +187,8 @@ describe('useMoveItemsModalState', () => {
         it('resolves the common root when multiple nodes share the same root', async () => {
             const NODE2_UID = generateNodeUid('vol1', 'node2');
 
-            mockGetNodeAncestry.mockImplementation((nodeUid) =>
-                Promise.resolve(createMockAncestry(ROOT_UID, nodeUid as string))
+            mockGetNodeHierarchy.mockImplementation((nodeUid: string) =>
+                Promise.resolve(createMockHierarchy(ROOT_UID, nodeUid))
             );
             mockIterateNodes.mockImplementation(() =>
                 makeAsyncIterable([
@@ -230,9 +221,9 @@ describe('useMoveItemsModalState', () => {
             const ROOT2_UID = generateNodeUid('vol2', 'root');
             const NODE2_UID = generateNodeUid('vol2', 'node2');
 
-            mockGetNodeAncestry
-                .mockResolvedValueOnce(createMockAncestry(ROOT_UID, NODE1_UID))
-                .mockResolvedValueOnce(createMockAncestry(ROOT2_UID, NODE2_UID));
+            mockGetNodeHierarchy
+                .mockResolvedValueOnce(createMockHierarchy(ROOT_UID, NODE1_UID))
+                .mockResolvedValueOnce(createMockHierarchy(ROOT2_UID, NODE2_UID));
 
             renderHook(() => useMoveItemsModalState({ ...defaultProps, nodeUids: [NODE1_UID, NODE2_UID] }));
 
