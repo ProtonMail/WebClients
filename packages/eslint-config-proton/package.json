@@ -20,7 +20,8 @@
         "./barrel": "./barrel.js",
         "./base": "./base.js",
         "./glob": "./glob.js",
-        "./react": "./react.js"
+        "./react": "./react.js",
+        "./restrictedImports": "./restrictedImports.js"
     },
     "dependencies": {
         "@eslint/eslintrc": "^3.3.5",
