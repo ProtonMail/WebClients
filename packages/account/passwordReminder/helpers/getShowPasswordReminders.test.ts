@@ -104,7 +104,7 @@ describe('getShowPasswordReminders', () => {
     it.each([
         ['0', 0],
         ['null', null],
-    ])('returns true when NextPasswordReminderTime is %s (epoch is in the past)', (_label, value) => {
+    ])('returns false when NextPasswordReminderTime is %s (no reminder scheduled)', (_label, value) => {
         const userSettings = makeUserSettings({ nextPasswordReminderTime: value });
 
         const result = getShowPasswordReminders({
@@ -113,6 +113,6 @@ describe('getShowPasswordReminders', () => {
             userSettings,
         });
 
-        expect(result).toBe(true);
+        expect(result).toBe(false);
     });
 });
