@@ -27,7 +27,7 @@ import { isChromiumBased } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
-import logger from '@proton/shared/lib/logger';
+import logger, { loggerManager } from '@proton/shared/lib/logger';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import { CommonFeatureFlag } from '@proton/unleash/Flags';
 import noop from '@proton/utils/noop';
@@ -169,6 +169,13 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
                 appName,
                 loggerID,
                 loggerName: 'main',
+            });
+
+            void loggerManager.createLogger('redux', {
+                encryptionKey: loggerKey,
+                appName,
+                loggerID,
+                loggerName: 'redux',
             });
         }
         // postLoad needs everything to be loaded.
