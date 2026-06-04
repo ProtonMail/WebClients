@@ -234,7 +234,6 @@ im.$media-expressions: $media-expressions;
 
 	@include im.media('<=small') {
 		max-block-size: 12vh;
-		overflow: auto;
 	}
 }
 

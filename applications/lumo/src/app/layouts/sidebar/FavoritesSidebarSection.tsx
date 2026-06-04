@@ -32,7 +32,7 @@ export const FavoritesSidebarSection = ({ showText, onItemClick }: FavoritesSide
             showText={showText}
             className="favorites-sidebar-section"
         >
-            <div className="favorites-content ml-4">
+            <div className="favorites-content ml-4 overflow-auto">
                 <RecentChatsList
                     conversations={favorites}
                     selectedConversationId={conversationId}
