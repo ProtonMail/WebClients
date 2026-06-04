@@ -9,6 +9,7 @@ import { MeetMediaRecorder } from '../mediaRecorder/meetMediaRecorder';
 import { type RecordingStorageClient, createRecordingStorageClient } from '../recordingStorage/client';
 import type { RecordingArtifact } from '../recordingStorage/types';
 import { VideoMixerClient } from '../videoMixer/client';
+import { RECORDING_FPS } from '../videoMixer/constants';
 import type { RecordingTrackInfo, SceneState } from '../videoMixer/types';
 import type { RecordingSessionDeps, RecordingSessionStartOptions } from './types';
 
@@ -25,6 +26,8 @@ export class RecordingSession {
     private watchdog: ChunkWatchdog | null = null;
     private stats: ChunkStats | null = null;
     private active = false;
+    private startTimeMs: number | null = null;
+    private audioStartTimeMs: number | null = null;
 
     constructor(deps: RecordingSessionDeps) {
         this.deps = deps;
@@ -132,6 +135,9 @@ export class RecordingSession {
 
         await this.mediaRecorder.start();
 
+        this.startTimeMs = performance.now();
+        this.audioStartTimeMs = this.audioMixer.getAudioContextCurrentTimeMs();
+
         this.watchdog = createChunkWatchdog({
             stats,
             reportMeetError,
@@ -154,6 +160,16 @@ export class RecordingSession {
             return null;
         }
 
+        const durationMs = this.startTimeMs !== null ? performance.now() - this.startTimeMs : 0;
+        const audioDurationMs =
+            this.audioMixer !== null && this.audioStartTimeMs !== null
+                ? this.audioMixer.getAudioContextCurrentTimeMs() - this.audioStartTimeMs
+                : 0;
+        const videoFramesEmitted = (await this.videoMixer?.requestFinalFrameCount()) ?? 0;
+        const videoDurationMs = (videoFramesEmitted / RECORDING_FPS) * 1000;
+        const driftMs = audioDurationMs - videoDurationMs;
+        const effectiveFps = durationMs > 0 ? (videoFramesEmitted / durationMs) * 1000 : 0;
+
         try {
             await this.mediaRecorder.stop();
             this.watchdog?.stop();
@@ -169,7 +185,30 @@ export class RecordingSession {
                 emptyChunks: snapshot?.emptyChunkCount,
                 firstChunkAt: snapshot?.firstChunkAt,
                 lastChunkAt: snapshot?.lastChunkAt,
+                duration: (durationMs / 1000).toFixed(3),
+                videoDurationSec: (videoDurationMs / 1000).toFixed(3),
+                audioDurationSec: (audioDurationMs / 1000).toFixed(3),
+                driftSec: (driftMs / 1000).toFixed(3),
+                videoFramesEmitted,
+                expectedFps: RECORDING_FPS,
+                effectiveFps: effectiveFps.toFixed(2),
+                codec: this.mediaRecorder?.getActiveCodec(),
             });
+
+            if (driftMs > 300 || driftMs < -300) {
+                this.deps.reportMeetError('MeetingRecording Error: drift detected', {
+                    context: {
+                        duration: (durationMs / 1000).toFixed(3),
+                        videoDurationSec: (videoDurationMs / 1000).toFixed(3),
+                        audioDurationSec: (audioDurationMs / 1000).toFixed(3),
+                        driftSec: (driftMs / 1000).toFixed(3),
+                        videoFramesEmitted,
+                        expectedFps: RECORDING_FPS,
+                        effectiveFps: effectiveFps.toFixed(2),
+                        codec: this.mediaRecorder?.getActiveCodec(),
+                    },
+                });
+            }
         }
     }
 
