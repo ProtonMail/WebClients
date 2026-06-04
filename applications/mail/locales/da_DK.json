@@ -1715,6 +1715,9 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Get the deal": [
+        "Gør brug af tilbuddet"
       ]
     },
     "action": {
@@ -4340,10 +4343,10 @@
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
       ],
       "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "Hvis en meddelelse vises i den forkerte kategori skal du blot flytte den til den rigtige. Højreklik på en meddelelse for at vælge en ny kategori, eller træk og slip den, hvor den hører hjemme."
+        "Hvis en meddelelse vises i den forkerte kategori skal du blot flytte den til den rigtige. Højreklik på en meddelelse for at vælge en ny kategori, eller træk og slip den hvor den hører hjemme."
       ],
       "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Du er blandt de første til at prøve vores nye kategorivisning, før den lanceres. Din feedback vil hjælpe os med at forbedre, hvordan Proton Mail sorterer e-mails for alle."
+        "Du er blandt de første til at prøve vores nye kategorivisning, før den lanceres. Din feedback vil hjælpe os med at forbedre hvordan Proton Mail sorterer e-mails for alle."
       ]
     },
     "description": {
@@ -5308,6 +5311,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din søgning gav for mange resultater. Begræns din søgning, og forsøg igen."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Tjek venligst om dit ABN er registeret til moms på tværs af grænser"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Momsnummer skal starte med ${ prefixes }"
       ]
     },
     "error": {

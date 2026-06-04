@@ -1727,6 +1727,9 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Get the deal": [
+        "Скарыстацца прапановай"
       ]
     },
     "action": {
@@ -4404,6 +4407,12 @@
       ],
       "Your corrections will shape the default experience for everyone, at launch it will also remember your preferences moving forward!": [
         "Вашы выпраўленні паўплываюць на стандартны інтэрфейс для ўсіх, а пры запуску праграма таксама запомніць вашы параметры ў будучыні!"
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Проста перамясціце ліст ў слушную катэгорыю, калі ён трапіў не туды. Правы націск па лісту дазволіць выбраць для яго новую катэгорыю або проста перацягніце яго ў тую катэгорыю, якой ён належыць."
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Вы адзін з першых сярод тых, хто паспрабуе нашы новыя катэгорыі перад іх запускам. Вашы водгукі дапамогуць удасканаліць саратванне лістоў у Proton Mail для кожнага карыстальніка."
       ]
     },
     "description": {
@@ -5394,6 +5403,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш пошук вярнуў занадта шмат вынікаў. Абмяжуйце вобласць пошуку і паспрабуйце яшчэ раз."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Праверцеце, ці зарэгістраваны ваш ABN для трансгранічнага ПДВ"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Нумар ПДВ павінен пачынацца з ${ prefixes }"
       ]
     },
     "error": {
@@ -16706,6 +16721,12 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Дапамажыце вызначыць будучыню катэгорый электроннай пошты ў ${ MAIL_APP_NAME }"
+      ],
+      "Summer Sale": [
+        "Летні распродаж"
       ]
     },
     "Today icon tooltip in mini calendar": {
