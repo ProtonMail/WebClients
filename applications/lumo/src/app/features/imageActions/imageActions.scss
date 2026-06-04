@@ -4,73 +4,108 @@
 // Used by InlineImageComponent and GalleryImageCard.
 
 .image-icon-btn {
-    border: none;
-    background: var(--background-weak);
-    color: var(--text-norm);
-    cursor: pointer;
-    transition: background 0.12s;
+	border: none;
+	background: var(--background-weak);
+	color: var(--text-norm);
+	cursor: pointer;
+	transition: background 0.12s;
 
-    &:hover {
-        background: rgb(255 255 255 / 0.22);
-    }
+	&:hover {
+		background: rgb(255 255 255 / 0.22);
+	}
 }
 
 .image-style-menu__popup {
-    inset-block-end: calc(100% + #{rem(6)});
-    inset-inline-start: 0;
-    z-index: 200;
-    min-inline-size: rem(180);
-    background: var(--background-norm);
-    border: 1px solid var(--border-norm);
-    box-shadow: var(--shadow-lifted-lg, 0 rem(8) rem(32) rgb(0 0 0 / 0.14));
+	inset-block-end: calc(100% + #{rem(6)});
+	inset-inline-start: 0;
+	z-index: 200;
+	min-inline-size: rem(180);
+	background: var(--background-norm);
+	border: 1px solid var(--border-norm);
+	box-shadow: var(--shadow-lifted-lg, 0 rem(8) rem(32) rgb(0 0 0 / 0.14));
 }
 
 .image-style-menu__item {
-    border: none;
-    background: transparent;
-    color: var(--text-norm);
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.1s;
+	border: none;
+	background: transparent;
+	color: var(--text-norm);
+	font-weight: 500;
+	cursor: pointer;
+	transition: background 0.1s;
 
-    &:hover {
-        background: var(--background-strong);
-    }
+	&:hover {
+		background: var(--background-strong);
+	}
 }
 
 // ── Inline image card (image left, actions right) ─────────────────────────────
 
 .inline-image-card {
-    gap: rem(10);
-    vertical-align: top;
+	gap: rem(10);
+	vertical-align: top;
 }
 
 .inline-image-card__img {
-    line-height: 0;
+	line-height: 0;
 
-    img {
-        display: block;
-        max-inline-size: rem(280);
-        inline-size: 100%;
-        border-radius: rem(12);
-    }
+	img {
+		display: block;
+		max-inline-size: rem(280);
+		inline-size: 100%;
+		border-radius: rem(12);
+	}
 }
 
 .inline-image-card__actions {
-    gap: rem(5);
-    min-inline-size: rem(118);
-    padding-block-start: rem(2);
+	gap: rem(5);
+	min-inline-size: rem(118);
+	padding-block-start: rem(2);
 }
 
 .image-style-menu--side {
-    .image-style-menu__popup {
-        inset-block: 0 auto;
-        inset-inline: calc(100% + #{rem(6)}) auto;
-    }
+	.image-style-menu__popup {
+		inset-block: 0 auto;
+		inset-inline: calc(100% + #{rem(6)}) auto;
+	}
 }
 
 .image-lightbox {
-    z-index: 9999;
-    background-color: rgb(255 255 255 / 0.85);
-    backdrop-filter: blur(6px);
+	z-index: 9999;
+	background: rgb(233 234 252 / 0.5);
+	backdrop-filter: blur(3.5px);
+}
+
+.image-preview-shell {
+	position: relative;
+	inline-size: fit-content;
+	max-inline-size: 100%;
+}
+
+// Floating close control: above and outside the card’s top-right corner
+.image-preview-close {
+	position: absolute;
+	z-index: 2;
+	inset-block-start: 0;
+	inset-inline-end: 0;
+	transform: translate(50%, calc(-100% - #{rem(8)}));
+}
+
+.image-lightbox-back {
+	position: absolute;
+	z-index: 2;
+	inset-block-start: #{rem(16)};
+	inset-inline-end: #{rem(16)};
+}
+
+.image-preview-container {
+	box-shadow:
+		0 299px 84px 0 rgb(64 41 163 / 0),
+		0 191px 76px 0 rgb(64 41 163 / 0.01),
+		0 107px 64px 0 rgb(64 41 163 / 0.02),
+		0 48px 48px 0 rgb(64 41 163 / 0.04),
+		0 12px 26px 0 rgb(64 41 163 / 0.05);
+
+	.button {
+		border-radius: var(--border-radius-lg);
+	}
 }
