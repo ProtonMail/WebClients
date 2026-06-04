@@ -1,7 +1,9 @@
+/** JS mirror of the `@protontech/pass-rust-core` share dedupe logic.
+ * Keep this file inline with the rust source: `proton-pass-common/src/share.rs::visible_share_ids` */
 import type { Share as ShareCore, TargetType } from '@protontech/pass-rust-core/worker';
 
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
-import { isShareVisible } from '@proton/pass/lib/shares/share.predicates';
+import { isGroupShare, isShareVisible } from '@proton/pass/lib/shares/share.predicates';
 import type { ShareDedupeState } from '@proton/pass/store/reducers/shares-dedupe';
 import type { Share, ShareId } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
@@ -24,15 +26,17 @@ export const intoShareCore = (share: Share): ShareCore => ({
     role: share.shareRoleId,
     permissions: share.permission,
     flags: share.flags,
+    create_time: share.createTime,
+    is_group_share: isGroupShare(share),
+    user_is_vault_owner: share.owner,
 });
 
 const ROLE_PRIORITY: Record<string, number> = { '1': 3, '2': 2, '3': 1 };
 const rolePriority = (role: string) => ROLE_PRIORITY[role] ?? 0;
 
-/** JS mirror of the Rust `visible_share_ids` used as WASM fallback.
- * Deduplicates per (vault_id, target_type, target_id) keeping best role,
- * hides item shares superseded by their parent vault, and produces both
- * `dedupe` and `dedupeAndVisible` in one pass. */
+/** WASM fallback for `dedupeShares`. The rust implementation derives each output
+ * via a separate `visible_share_ids(_, filter_hidden)` call. Here we compute both
+ * in a single pass: both `dedupe` and `dedupeAndVisible` are returned. */
 export const getVisibleShareIds = (shares: ShareCore[]): ShareDedupeState => {
     const hiddenVaults = new Set<string>();
     const bestPerTriplet = new Map<string, ShareCore>();
@@ -43,10 +47,25 @@ export const getVisibleShareIds = (shares: ShareCore[]): ShareDedupeState => {
         const key = `${share.vault_id}:${share.target_type}:${share.target_id}`;
         const existing = bestPerTriplet.get(key);
         if (!existing) bestPerTriplet.set(key, share);
-        else {
+        else if (share.user_is_vault_owner && !share.is_group_share) {
+            /** Always give priority to the share of the owner of the vault.
+             * Checking also that the share is not group since clients may
+             * assign owner if just the vault id matches. */
+            bestPerTriplet.set(key, share);
+        } else if (existing.user_is_vault_owner && !existing.is_group_share) {
+            /** If existing is already vault owner no need to check anything else */
+        } else {
             const sp = rolePriority(share.role);
             const ep = rolePriority(existing.role);
-            if (sp > ep || (sp === ep && share.vault_id < existing.vault_id)) bestPerTriplet.set(key, share);
+            if (sp > ep) bestPerTriplet.set(key, share);
+            else if (sp === ep) {
+                /** If the existing is a group one but the new one is not, keep the new one */
+                if (existing.is_group_share && !share.is_group_share) bestPerTriplet.set(key, share);
+                /** If it's an older share keep it and both have the same group share property */
+                if (share.create_time < existing.create_time && existing.is_group_share === share.is_group_share) {
+                    bestPerTriplet.set(key, share);
+                }
+            }
         }
     }
 
