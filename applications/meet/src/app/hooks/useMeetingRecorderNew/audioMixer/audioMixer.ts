@@ -142,6 +142,10 @@ export class AudioMixer {
         return this.destinationStream.getAudioTracks();
     }
 
+    public getAudioContextCurrentTimeMs(): number {
+        return this.audioContext.currentTime * 1000;
+    }
+
     public cleanup() {
         this.cancelPendingResyncs();
         document.removeEventListener('visibilitychange', this.handleVisibilityChange);
