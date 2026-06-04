@@ -246,6 +246,7 @@ const EditGroupModal = ({ groupsManagement, groupData }: Props) => {
                                               onChange={setSelectedRoles}
                                               organizationRoles={organizationRoles}
                                               loadingRoles={loadingRoles}
+                                              isGroupContext
                                           />
                                       ),
                                   },
