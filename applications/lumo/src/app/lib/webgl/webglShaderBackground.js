@@ -22,7 +22,55 @@ export const WEBGL_SHADER_BG_MAX_BLOBS = 8;
  * @property {[number, number, number]} color RGB 0–1
  * @property {number} [mixStrength]
  * @property {number} [driftY] amplitude for `sin(time * speed + i)` vertical wobble (UV space)
+ * @property {number} [pulsePeriodSec] full fade cycle in seconds; omit for always visible
+ * @property {number} [pulsePhaseSec] phase offset in seconds within the pulse cycle
+ * @property {number} [radiusPulsePeriodSec] breathe cycle (full → min scale → full)
+ * @property {number} [radiusPulsePhaseSec] phase offset for radius breathe
+ * @property {number} [radiusPulseMinScale] smallest radius fraction (default 0.6)
  */
+
+/**
+ * @param {number} timeSec
+ * @param {number} periodSec
+ * @param {number} phaseSec
+ */
+function blobPulseSine(timeSec, periodSec, phaseSec) {
+    const angle = ((timeSec + phaseSec) / periodSec) * Math.PI * 2;
+    return Math.sin(angle);
+}
+
+/**
+ * @param {number} timeSec
+ * @param {WebglShaderBgBlobConfig} blob
+ * @param {boolean} freezePulse
+ */
+function blobPulseOpacity(timeSec, blob, freezePulse) {
+    const period = blob.pulsePeriodSec;
+    if (freezePulse || period == null || period <= 0) {
+        return 1;
+    }
+    const sine = blobPulseSine(timeSec, period, blob.pulsePhaseSec ?? 0);
+    return (sine + 1) * 0.5;
+}
+
+/**
+ * Contract from full radius down to `radiusPulseMinScale`, then expand back; opacity tracks size.
+ * @param {number} timeSec
+ * @param {WebglShaderBgBlobConfig} blob
+ * @param {boolean} freezePulse
+ * @returns {{ scale: number; opacity: number }}
+ */
+function blobRadiusBreathe(timeSec, blob, freezePulse) {
+    const period = blob.radiusPulsePeriodSec;
+    if (freezePulse || period == null || period <= 0) {
+        return { scale: 1, opacity: 1 };
+    }
+    const minScale = blob.radiusPulseMinScale ?? 0.6;
+    const sine = blobPulseSine(timeSec, period, blob.radiusPulsePhaseSec ?? 0);
+    const expand = (sine + 1) * 0.5;
+    const scale = minScale + (1 - minScale) * expand;
+    return { scale, opacity: scale };
+}
 
 /** @type {HTMLDivElement | null} */
 let themeColorProbe = null;
@@ -481,22 +529,35 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
         };
     }
 
-    /** @param {ReturnType<typeof mergeConfig>} cfg */
-    function pushBlobUniforms(cfg) {
+    /** @param {ReturnType<typeof mergeConfig>} cfg @param {number} timeSec */
+    function pushBlobUniforms(cfg, timeSec) {
         const blobs = cfg.blobs.slice(0, MAX_BLOBS);
         const count = blobs.length;
         gl.uniform1i(uBlobCount, count);
         for (let i = 0; i < MAX_BLOBS; i++) {
             const b = blobs[i];
             if (b) {
+                let opacity = blobPulseOpacity(timeSec, b, reducedMotion);
+                let radiusScale = 1;
+                const radiusPeriod = b.radiusPulsePeriodSec;
+                if (radiusPeriod != null && radiusPeriod > 0) {
+                    const breathe = blobRadiusBreathe(timeSec, b, reducedMotion);
+                    radiusScale = breathe.scale;
+                    const hasOpacityPulse = b.pulsePeriodSec != null && b.pulsePeriodSec > 0;
+                    if (!hasOpacityPulse) {
+                        opacity = breathe.opacity;
+                    } else {
+                        opacity = opacity * breathe.opacity;
+                    }
+                }
                 const p = resolveBlobPlacement(b);
                 gl.uniform2f(uBlobPos[i], p.x, p.y);
-                gl.uniform1f(uBlobRadiusX[i], p.radiusX);
-                gl.uniform1f(uBlobRadiusY[i], p.radiusY);
-                gl.uniform1f(uBlobWeight[i], b.weight ?? 1);
+                gl.uniform1f(uBlobRadiusX[i], p.radiusX * radiusScale);
+                gl.uniform1f(uBlobRadiusY[i], p.radiusY * radiusScale);
+                gl.uniform1f(uBlobWeight[i], (b.weight ?? 1) * opacity);
                 const c = b.color;
                 gl.uniform3f(uBlobColor[i], c[0], c[1], c[2]);
-                gl.uniform1f(uBlobMix[i], b.mixStrength ?? 0.6);
+                gl.uniform1f(uBlobMix[i], (b.mixStrength ?? 0.6) * opacity);
                 gl.uniform1f(uBlobDriftY[i], b.driftY ?? 0);
             } else {
                 gl.uniform2f(uBlobPos[i], 0, 0);
@@ -510,8 +571,8 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
         }
     }
 
-    /** @param {ReturnType<typeof mergeConfig>} cfg */
-    function applyShaderUniforms(cfg) {
+    /** @param {ReturnType<typeof mergeConfig>} cfg @param {number} timeSec */
+    function applyShaderUniforms(cfg, timeSec) {
         const mc = cfg.mouse.color;
         gl.uniform1f(uSpeed, cfg.speed);
         gl.uniform1f(uGlowPower, cfg.glowPower);
@@ -524,7 +585,7 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
         gl.uniform1f(uMouseWeight, cfg.mouse.weight);
         gl.uniform3f(uMouseColor, mc[0], mc[1], mc[2]);
         gl.uniform1f(uMouseMix, cfg.mouse.mixStrength);
-        pushBlobUniforms(cfg);
+        pushBlobUniforms(cfg, timeSec);
     }
 
     if (config.blobs.length > MAX_BLOBS) {
@@ -542,7 +603,7 @@ export function createWebglShaderBackground(canvas, userConfig, runtime = {}) {
         gl.uniform2f(uResolution, canvas.width, canvas.height);
         gl.uniform2f(uMouse, mouse.x, mouse.y);
         gl.uniform1f(uTime, t);
-        applyShaderUniforms(config);
+        applyShaderUniforms(config, t);
         gl.drawArrays(gl.TRIANGLES, 0, 6);
         const w = gl.drawingBufferWidth;
         const h = gl.drawingBufferHeight;
