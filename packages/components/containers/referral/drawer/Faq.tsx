@@ -4,16 +4,21 @@ import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { Href } from '@proton/atoms/Href/Href';
 import Details from '@proton/components/components/container/Details';
 import Summary from '@proton/components/components/container/Summary';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { IcGift } from '@proton/icons/icons/IcGift';
 import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
+
+import {
+    getReferralMaxRewardCopy,
+    getReferralStep1Copy,
+    getReferralStep2Copy,
+    getReferralStep3Copy,
+} from '../referralCopy';
 
 const FAQ = () => {
     const [referralInfo] = useReferralInfo();
-    const { referrerRewardAmount } = referralInfo.uiData;
+    const { refereeRewardAmount, referrerRewardAmount, maxRewardAmount } = referralInfo.uiData;
 
     return (
         <Details className="my-2 border-none">
@@ -24,29 +29,19 @@ const FAQ = () => {
             <ul className="unstyled mt-2 m-0 text-sm color-weak flex flex-column gap-4">
                 <li className="flex flex-nowrap gap-2">
                     <IcUsers className="shrink-0 color-hint" size={4} />
-                    <p className="m-0">
-                        {getBoldFormattedText(
-                            c('Info').t`**Step 1:** Invite your friends to ${BRAND_NAME} with your referral link.`
-                        )}
-                    </p>
+                    <p className="m-0">{getReferralStep1Copy()}</p>
                 </li>
                 <li className="flex flex-nowrap gap-2">
                     <IcGift className="shrink-0 color-hint" size={4} />
-                    <p className="m-0">
-                        {getBoldFormattedText(
-                            c('Info')
-                                .t`**Step 2:** Your friends get 2 weeks for free on their chosen ${BRAND_NAME} plan.`
-                        )}
-                    </p>
+                    <p className="m-0">{getReferralStep2Copy(refereeRewardAmount)}</p>
                 </li>
                 <li className="flex flex-nowrap gap-2">
                     <IcMoneyBills className="shrink-0 color-hint" size={4} />
-                    <p className="m-0">
-                        {getBoldFormattedText(
-                            c('Info')
-                                .t`**Step 3:** Get ${referrerRewardAmount} credits for every friend that subscribes to a plan.`
-                        )}
-                    </p>
+                    <div>
+                        <p className="m-0">
+                            {getReferralStep3Copy(referrerRewardAmount)} {getReferralMaxRewardCopy(maxRewardAmount)}
+                        </p>
+                    </div>
                 </li>
             </ul>
 
