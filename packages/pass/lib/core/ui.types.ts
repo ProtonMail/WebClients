@@ -1,10 +1,12 @@
 import type * as PassUIWorker from '@protontech/pass-rust-core/ui';
 
 import type { WasmWorkerService } from '@proton/pass/lib/core/wasm.worker.service';
-import type { Result } from '@proton/pass/types';
+import type { Callback, ExtractKeysOfType, Result } from '@proton/pass/types';
 
-export type PassUI = typeof PassUIWorker;
-export type PassUIMethod = keyof { [K in keyof PassUI]: PassUI[K] extends Function ? K : never };
+type PassUIModule = typeof PassUIWorker;
+
+export type PassUI = Pick<PassUIModule, ExtractKeysOfType<PassUIModule, Callback>>;
+export type PassUIMethod = keyof PassUI;
 export type PassUIParams<T extends PassUIMethod> = Parameters<PassUI[T]>;
 export type PassUIResult<T extends PassUIMethod> = ReturnType<PassUI[T]>;
 export type PassUIMessageEvent<T extends PassUIMethod> = Result<{ value: PassUIResult<T> }>;
