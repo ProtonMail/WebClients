@@ -119,7 +119,6 @@ export const RouterLabelContainer = ({
     } = useMailboxHotkeys(
         {
             labelID,
-            elementID,
             messageID,
             elementIDs,
             checkedIDs,
