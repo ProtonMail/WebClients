@@ -176,6 +176,9 @@
       "Get the apps": [
         "Uygulamaları edinin"
       ],
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ],
       "Get verification code": [
         "Doğrulama kodu alın"
       ],
@@ -937,6 +940,9 @@
       ],
       "Add to active": [
         "Etkin olana ekle"
+      ],
+      "Agents": [
+        "Aracılar"
       ],
       "Already in KB": [
         "Zaten bilgi bankasında"
@@ -2813,6 +2819,12 @@
       "Cancel": [
         "İptal"
       ],
+      "Change": [
+        "Değiştir"
+      ],
+      "Change agent": [
+        "Aracıyı değiştir"
+      ],
       "Change style": [
         "Tarzı değiştir"
       ],
@@ -2824,6 +2836,9 @@
       ],
       "Close": [
         "Kapat"
+      ],
+      "Copy link": [
+        "Bağlantıyı kopyala"
       ],
       "Create": [
         "Oluştur"
@@ -2852,6 +2867,9 @@
       "Download image": [
         "Görseli indir"
       ],
+      "Edit agent": [
+        "Aracıyı düzenle"
+      ],
       "Edit image": [
         "Görseli düzenle"
       ],
@@ -2876,6 +2894,9 @@
       "Keep these chats": [
         "Bu sohbetleri sakla"
       ],
+      "Make a copy": [
+        "Kopyasını oluştur"
+      ],
       "Manage chats": [
         "Sohbet yönetimi"
       ],
@@ -2894,6 +2915,9 @@
       "More options": [
         "Daha fazla seçenek"
       ],
+      "New agent": [
+        "Yeni aracı"
+      ],
       "Next message": [
         "Sonraki ileti"
       ],
@@ -2905,6 +2929,12 @@
       ],
       "Regenerate": [
         "Yeniden üret"
+      ],
+      "Remove": [
+        "Kaldır"
+      ],
+      "Remove agent": [
+        "Aracıyı kaldır"
       ],
       "Remove all": [
         "Tümünü kaldır"
@@ -2970,6 +3000,44 @@
         "Neyin değiştirilmesi gerekiyor?"
       ]
     },
+    "collider_2025:Agent": {
+      "(copy)": [
+        "(kopya)"
+      ]
+    },
+    "collider_2025:Agent description": {
+      "Draft, refine and proofread your writing.": [
+        "Yazınızı hazırlayın, geliştirin ve düzeltin."
+      ],
+      "Help with login, password, 2FA and recovery issues.": [
+        "Oturum açma, parola, iki adımlı doğrulama ve kurtarma sorunları ile ilgili yardım."
+      ],
+      "Summarize documents into clear, concise takeaways.": [
+        "Belgeleri açık, özlü çıkarımlar ile özetleyin."
+      ],
+      "Turn a CSV or spreadsheet into a clear analysis.": [
+        "Bir CSV ya da e-tablo dosyasını anlaşılır bir incelemeye dönüştür."
+      ]
+    },
+    "collider_2025:Agent name": {
+      "Account Assistant": [
+        "Hesap yardımcısı"
+      ],
+      "Data Analyst": [
+        "Veri analisti"
+      ],
+      "Summarizer": [
+        "Özetleyici"
+      ],
+      "Writing Assistant": [
+        "Yazma yardımcısı"
+      ]
+    },
+    "collider_2025:Badge": {
+      "Default": [
+        "Varsayılan"
+      ]
+    },
     "collider_2025:Button": {
       "Add instructions to tailor ${ LUMO_SHORT_APP_NAME }'s responses": [
         "${ LUMO_SHORT_APP_NAME } yanıtlarını özelleştirmek için yönergeler ekleyin"
@@ -2985,6 +3053,9 @@
       ],
       "Close sidebar": [
         "Kenar çubuğunu kapat"
+      ],
+      "Create agent": [
+        "Aracı oluştur"
       ],
       "Create project": [
         "Proje oluştur"
@@ -3063,6 +3134,9 @@
       "Cannot link the root folder. Please select a subfolder.": [
         "Kök klasör bağlanamaz. Lütfen bir alt klasör seçin."
       ],
+      "Could not copy link": [
+        "Bağlantı kopyalanamadı"
+      ],
       "Database connection lost. Please refresh the page to continue.": [
         "Veri tabanı bağlantısı kesildi. İlerlemek için sayfayı yenileyin."
       ],
@@ -3129,6 +3203,20 @@
       ],
       "Tailored responses based on your project’s files and instructions.": [
         "Projenizin dosyalarına ve yönergelerine göre özelleştirilmiş yanıtlar."
+      ]
+    },
+    "collider_2025:Filter": {
+      "All": [
+        "Tümü"
+      ],
+      "Default": [
+        "Varsayılan"
+      ],
+      "Mine": [
+        "Benim"
+      ],
+      "Shared": [
+        "Paylaşılmış"
       ]
     },
     "collider_2025:Finance": {
@@ -3224,6 +3312,9 @@
       "${ project.fileCount } files": [
         "${ project.fileCount } dosya"
       ],
+      "Agents turn a chat into a focused assistant with its own instructions.": [
+        "Aracılar, bir sohbeti kendi yönergeleriyle odaklanmış bir yardımcıya dönüştürür."
+      ],
       "AIs from Big Tech are built on harvesting your data. But ${ LUMO_SHORT_APP_NAME } is different. It was created by the scientists behind innovative, privacy-first services like ${ MAIL_APP_NAME } and ${ VPN_APP_NAME }. And it’s owned by a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.": [
         "Big Tech şirketlerinin yapay zekaları verilerinizi toplamak üzerine kuruludur. Ancak ${ LUMO_SHORT_APP_NAME } farklıdır. Yenilikçi, gizlilik odaklı ${ MAIL_APP_NAME } ve ${ VPN_APP_NAME } gibi hizmetlerin arkasındaki bilim insanları tarafından oluşturulmuştur. Amacı gizliliği iyileştirmek ve kullanıcı verilerinden asla para kazanmamak olan ve kar amacı gütmeyen İsviçreli bir kuruluşa aittir."
       ],
@@ -3236,11 +3327,17 @@
       "Are you sure you want to delete this conversation? This action cannot be undone.": [
         "Bu yazışmayı silmek istediğinize emin misiniz? Bu işlem geri alınamaz."
       ],
+      "Ask a question to get started. Your conversation is private.": [
+        "Başlamak için bir soru sorun. Yazışmanız gizlidir."
+      ],
       "Auto-retrieved": [
         "Otomatik olarak alındı"
       ],
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Bu projeye bağlamak istediğiniz ${ DRIVE_SHORT_APP_NAME } klasörüne gidin ve ardından “Bu klasörü bağla” seçeneğine tıklayın."
+      ],
+      "Built-in ${ BRAND_NAME } agent": [
+        "Hazır ${ BRAND_NAME } aracısı"
       ],
       "Conversation encrypted": [
         "Sohbet şifrelendi"
@@ -3253,6 +3350,9 @@
       ],
       "Drive files are not available for guest users": [
         "Konuk kullanıcılar Drive dosyalarını kullanamaz"
+      ],
+      "Example prompts shown when a conversation with this agent begins.": [
+        "Bu aracı ile bir yazışma başladığında görüntülenecek örnek istemler."
       ],
       "File \"${ file.name }\" is already in this project": [
         "“${ file.name }” dosyası bu projede zaten var"
@@ -3272,8 +3372,14 @@
       "Initializing Drive...": [
         "Drive başlatılıyor..."
       ],
+      "Keep this agent out of the picker. It can still be opened with a shared link.": [
+        "Bu aracı seçicide görüntülenmesin. Bir paylaşılan bağlantı ile açılması sürdürülebilir."
+      ],
       "Learn more about how project knowledge works": [
         "Proje bilgisinin nasıl işlediğini öğrenin"
+      ],
+      "Link copied": [
+        "Bağlantı kopyalandı"
       ],
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Dosyaları ${ DRIVE_APP_NAME } uygulamasından bağlayın veya bilgisayarınızdan yükleyin."
@@ -3331,8 +3437,14 @@
       "chats": [
         "sohbet"
       ],
+      "Conversation starters (optional)": [
+        "Yazışma başlatıcılar (isteğe bağlı)"
+      ],
       "Created on": [
         "Oluşturulma"
+      ],
+      "Description (optional)": [
+        "Açıklama (isteğe bağlı)"
       ],
       "Discover what ${ LUMO_SHORT_APP_NAME } can create": [
         "${ LUMO_SHORT_APP_NAME } ile neler yapabileceğinizi keşfedin"
@@ -3342,6 +3454,9 @@
       ],
       "Folder name": [
         "Klasör adı"
+      ],
+      "Hide from list": [
+        "Listede gizle"
       ],
       "Instructions": [
         "Yönergeler"
@@ -3370,6 +3485,12 @@
       ]
     },
     "collider_2025:Placeholder": {
+      "Account recovery assistant": [
+        "Hesap kurtarma yardımcısı"
+      ],
+      "Add a conversation starter": [
+        "Bir yazışma başlatıcı ekleyin"
+      ],
       "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
         "${ LUMO_SHORT_APP_NAME } tarafından kullanılacak ton, tarz ve kişilik ile ilgili yönergeler ekleyin."
       ],
@@ -3378,6 +3499,9 @@
       ],
       "Ask anything…": [
         "İstediğinizi sorun…"
+      ],
+      "Describe the role, scope, and behavior you want ${ LUMO_SHORT_APP_NAME } to adopt for this agent.": [
+        "${ LUMO_SHORT_APP_NAME } uygulamasının bu aracıyı uyarlayacağı rolü, kapsamı ve davranışı açıklayın."
       ],
       "Describe your image...": [
         "Görselinizi tarif edin..."
@@ -3394,8 +3518,14 @@
       "Enter project name": [
         "Proje adını yazın"
       ],
+      "Help with login, password and recovery issues.": [
+        "Oturum açma, parola ve kurtarma sorunlarında yardım."
+      ],
       "Holiday planner": [
         "Tatil planlayıcı"
+      ],
+      "Search agents": [
+        "Aracı ara"
       ],
       "Search chats": [
         "Sohbetlerde ara"
@@ -3643,6 +3773,9 @@
       ]
     },
     "collider_2025:Subline": {
+      "Agents turn a chat into a focused assistant with its own instructions. Pick one from the composer to start a conversation with it.": [
+        "Aracılar, bir sohbeti kendi yönergeleri ile odaklanmış bir yardımcıya dönüştürür. Aracı ile bir yazışma başlatmak için oluşturucudan bir aracı seçin."
+      ],
       "Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.": [
         "Projeler ilgili sohbetleri, dosyaları ve yönergeleri tek bir yerde toplamanıza yardımcı olur. Böylece düzenli kalmanız ve farklı sohbetler arasında aynı içeriği yeniden kullanmanızı kolaylaşır."
       ]
@@ -3682,11 +3815,17 @@
       ]
     },
     "collider_2025:Title": {
+      "Agents": [
+        "Aracılar"
+      ],
       "An AI assistant should empower you, not exploit you for your data. That’s why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Bir yapay zeka asistanı sizi güçlendirmeli, verileriniz için sizi sömürmemeli. Bu nedenle, gizliliğinizden ve veri güvenliğinizden ödün vermeden yapay zekanın tüm faydalarını size sunmak için ${ LUMO_SHORT_APP_NAME } hizmetini geliştirdik."
       ],
       "Built by the team that knows privacy": [
         "Gizliliği bilen bir ekip tarafından geliştirildi"
+      ],
+      "Create agent": [
+        "Aracı oluştur"
       ],
       "Create folder": [
         "Klasör oluştur"
@@ -3702,6 +3841,9 @@
       ],
       "Earlier": [
         "Daha önce"
+      ],
+      "Edit agent": [
+        "Aracıyı düzenle"
       ],
       "Edit Instructions": [
         "Yönergeleri düzenle"
@@ -4999,6 +5141,9 @@
       "Payment process not supported": [
         "Ödeme işlemi desteklenmiyor"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Lütfen ABN numaranızın sınır ötesi KDV için kayıtlı olup olmadığını denetleyin"
+      ],
       "Please complete the billing details": [
         "Lütfen fatura bilgilerini tamamlayın"
       ],
@@ -5082,6 +5227,9 @@
       ],
       "Username must end with a letter or digit": [
         "Kullanıcı adı bir harf ya da rakam ile bitmeli"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "KDV numarası ${ prefixes } ile başlamalıdır"
       ],
       "Wrong billing address": [
         "Fatura adresi yanlış"
@@ -7452,9 +7600,6 @@
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "${ numberOfCountries } üzerindeki ülkede size ayrılmış sunucu konumları"
       ],
-      "Dedicated server locations in North America and Europe": [
-        "Kuzey Amerika ve Avrupa'da size ayrılmış sunucu konumları"
-      ],
       "Multi-platform support": [
         "Çeşitli platformları destekler"
       ],
@@ -8845,6 +8990,9 @@
       ],
       "Summary": [
         "Özet"
+      ],
+      "Summer Sale": [
+        "Yaz indirimi"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"
