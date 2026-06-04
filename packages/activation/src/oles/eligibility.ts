@@ -5,7 +5,31 @@ import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organiz
 import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { isOrganizationB2B } from '@proton/shared/lib/organization/helper';
 
-export const isOLESEligible = ({
+import { ImportProvider } from '../interface';
+
+export const isProviderSupported = (provider: ImportProvider) => {
+    return provider === ImportProvider.GOOGLE;
+};
+
+export const isOrganizationOLESEligible = ({
+    organization,
+    subscription,
+}: {
+    organization: Organization | undefined;
+    subscription: MaybeFreeSubscription;
+}) => {
+    return (
+        !!organization &&
+        !!subscription &&
+        hasOrganizationSetupWithKeys(organization) &&
+        organization?.State === ORGANIZATION_STATE.ACTIVE &&
+        getHasMemberCapablePlan(organization, subscription) &&
+        getHasInboxB2BPlan(subscription) &&
+        isOrganizationB2B(organization)
+    );
+};
+
+export const isUserOLESEligible = ({
     user,
     organization,
     subscription,
@@ -14,16 +38,5 @@ export const isOLESEligible = ({
     organization: Organization | undefined;
     subscription: MaybeFreeSubscription;
 }) => {
-    return (
-        !!organization &&
-        !!user &&
-        !!subscription &&
-        user.isAdmin &&
-        user.isSelf &&
-        hasOrganizationSetupWithKeys(organization) &&
-        organization?.State === ORGANIZATION_STATE.ACTIVE &&
-        getHasMemberCapablePlan(organization, subscription) &&
-        getHasInboxB2BPlan(subscription) &&
-        isOrganizationB2B(organization)
-    );
+    return Boolean(isOrganizationOLESEligible({ organization, subscription }) && user?.isSelf && user?.isAdmin);
 };
