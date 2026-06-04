@@ -1,7 +1,11 @@
-import { Avatar } from '@proton/atoms/Avatar/Avatar';
-import { Button } from '@proton/atoms/Button/Button';
+import { Avatar } from '@proton/atoms/Avatar/Avatar'
+import { Button } from '@proton/atoms/Button/Button'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
 import { Icon } from '@proton/components'
+import { IcArrowToCenterHorizontal } from '@proton/icons/icons/IcArrowToCenterHorizontal'
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark'
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown'
+import { IcCross } from '@proton/icons/icons/IcCross'
 import { DateFormatter } from '@proton/docs-core'
 import { ServerTime } from '@proton/docs-shared'
 import { useDocInvites } from '@proton/drive-store'
@@ -103,7 +107,7 @@ export function InvitesTable(props: InvitesTableProps) {
                     aria-label={c('Action').t`Accept invitation to document`}
                     data-testid="accept-invite-button"
                   >
-                    <Icon name="checkmark" />
+                    <IcCheckmark />
                   </Button>
                 </Tooltip>
                 <Tooltip title={c('Action').t`Decline invitation`}>
@@ -119,7 +123,7 @@ export function InvitesTable(props: InvitesTableProps) {
                     aria-label={c('Action').t`Decline invitation to document`}
                     data-testid="reject-invite-button"
                   >
-                    <Icon name="cross" />
+                    <IcCross />
                   </Button>
                 </Tooltip>
               </div>
@@ -193,7 +197,7 @@ export function InvitesTable(props: InvitesTableProps) {
           onClick={() => setCollapsed(false)}
           className="flex h-[3.375rem] w-full items-center gap-3 px-6 text-[#0284C7]"
         >
-          <Icon name="chevron-down" size={4} className="shrink-0" />
+          <IcChevronDown size={4} className="shrink-0" />
           <span className="text-[.875rem]">
             {c('Action').ngettext(
               msgid`View ${pendingCount} invitation`,
@@ -220,7 +224,7 @@ function CollapseButton({ collapse }: CollapseButtonProps) {
         shape="ghost"
         className="ml-auto shrink-0 px-2"
       >
-        <Icon name="arrow-to-center-horizontal" className="shrink-0 rotate-90" />
+        <IcArrowToCenterHorizontal className="shrink-0 rotate-90" />
       </Button>
     </Tooltip>
   )

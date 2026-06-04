@@ -10,7 +10,6 @@ import {
   DropdownMenu,
   DropdownMenuButton,
   DropdownSizeUnit,
-  Icon,
   SimpleDropdown,
   Toggle,
   useAppTitle,
@@ -20,6 +19,21 @@ import {
   useNotifications,
   getAppVersion,
 } from '@proton/components'
+import { IcArrowDownToSquare } from '@proton/icons/icons/IcArrowDownToSquare'
+import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross'
+import { IcBrandProtonDocs } from '@proton/icons/icons/IcBrandProtonDocs'
+import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive'
+import { IcBrandProtonSheets } from '@proton/icons/icons/IcBrandProtonSheets'
+import { IcChevronRightFilled } from '@proton/icons/icons/IcChevronRightFilled'
+import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft'
+import { IcCogWheel } from '@proton/icons/icons/IcCogWheel'
+import { IcFileArrowInUp } from '@proton/icons/icons/IcFileArrowInUp'
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle'
+import { IcLockCheck } from '@proton/icons/icons/IcLockCheck'
+import { IcPencil } from '@proton/icons/icons/IcPencil'
+import { IcPrinter } from '@proton/icons/icons/IcPrinter'
+import { IcSquares } from '@proton/icons/icons/IcSquares'
+import { IcTrash } from '@proton/icons/icons/IcTrash'
 import type {
   AuthenticatedDocControllerInterface,
   DocumentState,
@@ -540,7 +554,7 @@ export function DocumentTitleDropdown({
               onClick={() => setIsRenaming((renaming) => !renaming)}
               data-testid="dropdown-rename"
             >
-              <Icon name="pencil" className="color-weak mr-2" />
+              <IcPencil className="color-weak mr-2" />
               {c('Action').t`Rename document`}
             </DropdownMenuButton>
           )}
@@ -556,7 +570,7 @@ export function DocumentTitleDropdown({
               }}
               data-testid="dropdown-new-document"
             >
-              <Icon name="brand-proton-docs" className="color-weak mr-2" />
+              <IcBrandProtonDocs className="color-weak mr-2" />
               {c('Action').t`New document`}
               {isMakingNewDocument && <CircleLoader size="small" className="ml-auto" />}
             </DropdownMenuButton>
@@ -572,7 +586,7 @@ export function DocumentTitleDropdown({
                 void onNewDocument('sheet')
               }}
             >
-              <Icon name="brand-proton-sheets" className="color-weak mr-2" />
+              <IcBrandProtonSheets className="color-weak mr-2" />
               {c('sheets_2025:Action').t`New spreadsheet`}
               {isMakingNewSheetDocument ? <CircleLoader size="small" className="ml-auto" /> : null}
             </DropdownMenuButton>
@@ -584,7 +598,7 @@ export function DocumentTitleDropdown({
               data-testid="dropdown-sheet-import"
               onClick={openSheetImportModal}
             >
-              <Icon name="file-arrow-in-up" className="color-weak mr-2" />
+              <IcFileArrowInUp className="color-weak mr-2" />
               {c('Action').t`Import`}
             </DropdownMenuButton>
           )}
@@ -600,7 +614,7 @@ export function DocumentTitleDropdown({
               }}
               data-testid="dropdown-duplicate"
             >
-              <Icon name="squares" className="color-weak mr-2" />
+              <IcSquares className="color-weak mr-2" />
               {c('Action').t`Make a copy`}
               {isDuplicating && <CircleLoader size="small" className="ml-auto" />}
             </DropdownMenuButton>
@@ -612,7 +626,7 @@ export function DocumentTitleDropdown({
               data-testid="dropdown-move-to-folder"
               onClick={openMoveToFolderModal}
             >
-              <Icon name="arrows-cross" className="color-weak mr-2" />
+              <IcArrowsCross className="color-weak mr-2" />
               {c('Action').t`Move to folder`}
             </DropdownMenuButton>
           )}
@@ -623,7 +637,7 @@ export function DocumentTitleDropdown({
               onClick={showVersionHistory}
               data-testid="dropdown-versioning"
             >
-              <Icon name="clock-rotate-left" className="color-weak mr-2" />
+              <IcClockRotateLeft className="color-weak mr-2" />
               {c('Action').t`See version history`}
             </DropdownMenuButton>
           )}
@@ -638,7 +652,7 @@ export function DocumentTitleDropdown({
                   <WordCountIcon className="color-weak mr-2 h-4 w-4" />
                   {c('Action').t`Word count`}
                   <span className="ml-auto text-[--text-hint]">{wordCount.document?.wordCount}</span>
-                  <Icon name="chevron-right-filled" className="ml-2" />
+                  <IcChevronRightFilled className="ml-2" />
                 </>
               }
               hasCaret={false}
@@ -710,7 +724,7 @@ export function DocumentTitleDropdown({
               }}
               className="flex items-center text-left"
             >
-              <Icon name="trash" className="color-weak mr-2" />
+              <IcTrash className="color-weak mr-2" />
               {c('Action').t`Move to trash`}
               {trashState === 'trashing' && <CircleLoader size="small" className="ml-auto" />}
             </DropdownMenuButton>
@@ -718,7 +732,7 @@ export function DocumentTitleDropdown({
           <hr className="my-1 min-h-px" />
 
           <DropdownMenuButton className="flex items-center text-left" onClick={printAsPDF} data-testid="dropdown-print">
-            <Icon name="printer" className="color-weak mr-2" />
+            <IcPrinter className="color-weak mr-2" />
             {c('Action').t`Print`}
           </DropdownMenuButton>
 
@@ -728,9 +742,9 @@ export function DocumentTitleDropdown({
             data-testid="dropdown-download"
             content={
               <>
-                <Icon name="arrow-down-to-square" className="color-weak mr-2" />
+                <IcArrowDownToSquare className="color-weak mr-2" />
                 {c('Action').t`Download`}
-                <Icon name="chevron-right-filled" className="ml-auto" />
+                <IcChevronRightFilled className="ml-auto" />
               </>
             }
             hasCaret={false}
@@ -838,7 +852,7 @@ export function DocumentTitleDropdown({
               }}
               data-testid="dropdown-copy-as-md"
             >
-              <Icon name="squares" className="color-weak mr-2" />
+              <IcSquares className="color-weak mr-2" />
               {c('Action').t`Copy as markdown`}
             </DropdownMenuButton>
           )}
@@ -846,7 +860,7 @@ export function DocumentTitleDropdown({
           <hr className="my-1 min-h-px" />
 
           <DropdownMenuButton className="flex items-center text-left" onClick={openHelp} data-testid="dropdown-help">
-            <Icon name="info-circle" className="color-weak mr-2" />
+            <IcInfoCircle className="color-weak mr-2" />
             {c('Action').t`Help`}
             {showVersionNumber && (
               <VersionNumber
@@ -862,7 +876,7 @@ export function DocumentTitleDropdown({
             onClick={openDriveFolderForDocument}
             data-testid="dropdown-open-drive"
           >
-            <Icon name="brand-proton-drive" className="color-weak mr-2" />
+            <IcBrandProtonDrive className="color-weak mr-2" />
             {c('Action').t`Open ${DRIVE_APP_NAME}`}
           </DropdownMenuButton>
 
@@ -872,7 +886,7 @@ export function DocumentTitleDropdown({
               onClick={handleDownloadLogs}
               data-testid="dropdown-download-logs"
             >
-              <Icon name="arrow-down-to-square" className="color-weak mr-2" />
+              <IcArrowDownToSquare className="color-weak mr-2" />
               {c('Action').t`Download logs`}
             </DropdownMenuButton>
           )}
@@ -883,7 +897,7 @@ export function DocumentTitleDropdown({
               onClick={toggleDebugMode}
               data-testid="dropdown-download-logs"
             >
-              <Icon name="cog-wheel" className="color-weak mr-2" />
+              <IcCogWheel className="color-weak mr-2" />
               {c('Action').t`Toggle debug mode`}
             </DropdownMenuButton>
           )}
@@ -897,7 +911,7 @@ export function DocumentTitleDropdown({
             }}
             data-testid="e2e-info"
           >
-            <Icon name="lock-check" className="color-weak mr-2 align-middle" />
+            <IcLockCheck className="color-weak mr-2 align-middle" />
             <span className="align-middle">{c('Info').t`End-to-end encrypted.`} </span>
             <a
               data-connection-popover

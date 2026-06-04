@@ -1,5 +1,7 @@
 import { Button } from '@proton/atoms/Button/Button'
-import { Icon } from '@proton/components'
+import { IcCogWheel } from '@proton/icons/icons/IcCogWheel'
+import { IcCross } from '@proton/icons/icons/IcCross'
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle'
 import { lazy, Suspense, useEffect, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
 import { downloadLogsAsJSON } from '~/utils/downloadLogs'
@@ -172,7 +174,7 @@ export function DebugMenu({ docController, editorController, documentState, docu
         data-testid="debug-menu-button"
       >
         <div className="sr-only">Debug menu</div>
-        <Icon name="cog-wheel" className="h-4 w-4" />
+        <IcCogWheel className="h-4 w-4" />
       </button>
     )
   }
@@ -208,7 +210,7 @@ export function DebugMenu({ docController, editorController, documentState, docu
             onClick={() => setIsOpen(false)}
           >
             <div className="sr-only">Close menu</div>
-            <Icon name="cross" className="h-3.5 w-3.5" />
+            <IcCross className="h-3.5 w-3.5" />
           </button>
         </div>
         <div className="mb-1 flex flex-col gap-2 px-1">
@@ -260,21 +262,21 @@ export function DebugMenu({ docController, editorController, documentState, docu
           <Button size="small" onClick={() => downloadLogsAsJSON(editorController, documentType)}>
             Download state as JSON
             <Ariakit.TooltipProvider>
-              <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
+              <Ariakit.TooltipAnchor render={<IcInfoCircle />} />
               <Tooltip>Downloads the current Yjs and local state of the document as JSON</Tooltip>
             </Ariakit.TooltipProvider>
           </Button>
           <Button size="small" onClick={downloadYJSStateAsUpdate}>
             Download YJS state as single update
             <Ariakit.TooltipProvider>
-              <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
+              <Ariakit.TooltipAnchor render={<IcInfoCircle />} />
               <Tooltip>Downloads the current Yjs state as a single update</Tooltip>
             </Ariakit.TooltipProvider>
           </Button>
           <Button size="small" onClick={downloadBaseCommit}>
             Download base commit updates
             <Ariakit.TooltipProvider>
-              <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
+              <Ariakit.TooltipAnchor render={<IcInfoCircle />} />
               <Tooltip>Downloads the updates from the base commit only</Tooltip>
             </Ariakit.TooltipProvider>
           </Button>
@@ -283,7 +285,7 @@ export function DebugMenu({ docController, editorController, documentState, docu
               <Button size="small" onClick={() => docController.downloadAllUpdatesAsZip()}>
                 Download all updates as ZIP
                 <Ariakit.TooltipProvider>
-                  <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
+                  <Ariakit.TooltipAnchor render={<IcInfoCircle />} />
                   <Tooltip>Downloads all updates as a ZIP file</Tooltip>
                 </Ariakit.TooltipProvider>
               </Button>
@@ -296,14 +298,14 @@ export function DebugMenu({ docController, editorController, documentState, docu
               >
                 Download update debug information
                 <Ariakit.TooltipProvider>
-                  <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
+                  <Ariakit.TooltipAnchor render={<IcInfoCircle />} />
                   <Tooltip>Downloads debug information about all updates, does not include the content</Tooltip>
                 </Ariakit.TooltipProvider>
               </Button>
               <Button size="small" onClick={() => docController.downloadObfuscatedUpdates()}>
                 Download obfuscated updates
                 <Ariakit.TooltipProvider>
-                  <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
+                  <Ariakit.TooltipAnchor render={<IcInfoCircle />} />
                   <Tooltip>
                     Downloads all updates obfuscated so that they can be used for debugging without revealing sensitive
                     data
