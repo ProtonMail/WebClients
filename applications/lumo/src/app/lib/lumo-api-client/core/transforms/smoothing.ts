@@ -96,12 +96,27 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
     let ending = false;
     let debugEnabled = typeof window !== 'undefined' && localStorage.getItem('lumo_debug_perf') === 'true';
 
+    // The readable side may be cancelled/errored (e.g. the consumer aborts the generation or
+    // navigates away) while a smoothing timer is still scheduled. When that happens the
+    // controller can no longer accept chunks and `enqueue` throws. `desiredSize` is `null`
+    // for an errored/closed stream, so we use it to detect this and stop the timer loop
+    // instead of crashing.
+    function canEnqueue(controller: TransformStreamDefaultController<M>): boolean {
+        if (controller.desiredSize === null) {
+            disableTimeout();
+            return false;
+        }
+        return true;
+    }
+
     function emit(value: M, controller: TransformStreamDefaultController<M>) {
+        if (!canEnqueue(controller)) return;
         controller.enqueue(value);
         count += 1;
     }
 
     function emitString(s: string, controller: TransformStreamDefaultController<M>) {
+        if (!canEnqueue(controller)) return;
         const value: M = {
             type: 'token_data',
             content: s,
@@ -126,8 +141,9 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
         // missing lag0 chars in the buffer
         ending = true;
 
-        // Make progress manually until stream is over
-        while (!buffer.isEmpty()) {
+        // Make progress manually until stream is over. Stop early if the stream became
+        // cancelled/errored, otherwise the buffer would never drain and we'd loop forever.
+        while (!buffer.isEmpty() && controller.desiredSize !== null) {
             progress(controller, false);
             await sleep(REFRESH_MS);
         }
@@ -143,6 +159,12 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
     function progress(controller: TransformStreamDefaultController<any>, restart: boolean = true) {
         // Clear scheduled invocation
         disableTimeout();
+
+        // Bail out if the stream is no longer writable (cancelled/errored). This prevents a
+        // dangling timer from throwing when it tries to enqueue into an errored stream.
+        if (controller.desiredSize === null) {
+            return;
+        }
 
         // Calculate time advance
         const now = Date.now(); // ms
