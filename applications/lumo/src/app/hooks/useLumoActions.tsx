@@ -29,7 +29,7 @@ import { useActionErrorHandler } from '../services/errors/useActionErrorHandler'
 import type { ActionParams, Attachment, ErrorContext, RetryStrategy } from '../types';
 import { type ConversationId, type Message, Role, type Space, type SpaceId, getSpaceDek } from '../types';
 import { sendMessageGenerationAbortedEvent, sendMessageSendEvent, sendNewMessageDataEvent } from '../util/telemetry';
-import { useAbortController } from './useAbortController';
+import { OPERATION_IN_PROGRESS_MESSAGE, generationRegistry } from '../services/generation/generationRegistry';
 import { useConversationErrors } from './useConversationErrors';
 import { useConversationState } from './useConversationState';
 import { useLumoFlags } from './useLumoFlags';
@@ -103,12 +103,10 @@ export const useLumoActions = ({
         conversationId,
         spaceId: space?.id,
     });
-    const {
-        ensureAbortController,
-        clearAbortController,
-        abort: abortOperation,
-        isOperationInProgress,
-    } = useAbortController();
+    // Generation lifecycle is owned by an app-level registry (keyed by conversation id) rather
+    // than by this component. This lets an in-flight generation survive navigation/unmount; it is
+    // only cancelled on an explicit user stop. "In progress" is scoped to the current conversation.
+    const isOperationInProgress = () => !!conversationId && generationRegistry.isInProgress(conversationId);
 
     const messageChain = buildLinearChain(messageMap, null, preferredSiblings);
 
@@ -546,9 +544,6 @@ export const useLumoActions = ({
             return;
         }
 
-        const abortController = ensureAbortController();
-        const { signal } = abortController;
-
         // TODO: test when Jails with weekly limits are updated
         //TODO: check if this code is still needed
         if (hasTierErrors) {
@@ -569,6 +564,20 @@ export const useLumoActions = ({
         }
 
         const { conversationId: finalConversationId, spaceId: finalSpaceId } = ensureConversationAndSpace();
+
+        // Register the generation in the app-level registry, keyed by the final conversation id.
+        // This must happen after the conversation exists so abort/stop and the in-progress guard
+        // resolve to the right conversation, and so the generation outlives this component.
+        let abortController: AbortController;
+        try {
+            abortController = generationRegistry.start(finalConversationId);
+        } catch (error: any) {
+            if (error?.message === OPERATION_IN_PROGRESS_MESSAGE) {
+                return;
+            }
+            throw error;
+        }
+        const { signal } = abortController;
 
         // Create error context with guaranteed conversationId
         const errorContext: ErrorContext = {
@@ -615,7 +624,7 @@ export const useLumoActions = ({
         } catch (error: any) {
             handleActionError(error, errorContext);
         } finally {
-            clearAbortController();
+            generationRegistry.finish(finalConversationId);
         }
     };
 
@@ -665,10 +674,10 @@ export const useLumoActions = ({
     };
 
     const handleAbort = () => {
-        if (isOperationInProgress()) {
+        if (conversationId && isOperationInProgress()) {
             // send telemetry for generation aborted
             sendMessageGenerationAbortedEvent();
-            abortOperation();
+            generationRegistry.abort(conversationId);
         }
     };
 
@@ -690,16 +699,20 @@ export const useLumoActions = ({
                     return;
                 }
 
-                const abortController = ensureAbortController();
+                const abortController = generationRegistry.start(finalConversationId);
                 const { signal } = abortController;
 
-                await handleRetryAction(
-                    finalConversationId,
-                    finalSpaceId,
-                    spaceDek,
-                    signal,
-                    error.actionParams.isWebSearchButtonToggled
-                );
+                try {
+                    await handleRetryAction(
+                        finalConversationId,
+                        finalSpaceId,
+                        spaceDek,
+                        signal,
+                        error.actionParams.isWebSearchButtonToggled
+                    );
+                } finally {
+                    generationRegistry.finish(finalConversationId);
+                }
             } catch (retryError) {
                 const errorContext: ErrorContext = {
                     actionType: 'send',
@@ -707,8 +720,6 @@ export const useLumoActions = ({
                     actionParams: error.actionParams,
                 };
                 handleActionError(retryError, errorContext);
-            } finally {
-                clearAbortController();
             }
         } else {
             // For non-send actions, fall back to the original message action logic
