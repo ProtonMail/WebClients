@@ -27,13 +27,14 @@ export const ComposerAttachmentArea = ({
                 messageChain={messageChain}
                 onOpenFiles={onOpenFiles}
             />
-            <div className="flex flex-row gap-3 px-2 overflow-x-auto py-2">
+            <div className="flex flex-row flex-nowrap gap-3 px-2 overflow-x-auto py-2">
                 {provisionalAttachments.map((attachment) => (
                     <AttachmentFileCard
                         key={attachment.id}
                         attachment={attachment}
                         onRemove={() => onDeleteAttachment(attachment.id)}
                         onView={onViewFile}
+                        className="shrink-0"
                     />
                 ))}
             </div>
