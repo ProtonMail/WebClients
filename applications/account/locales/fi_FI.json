@@ -2390,9 +2390,6 @@
       "Change": [
         "Muuta"
       ],
-      "Completed": [
-        "Valmis"
-      ],
       "Configure": [
         "Määritä"
       ],
@@ -2401,9 +2398,6 @@
       ],
       "Contacts": [
         "Yhteystiedot"
-      ],
-      "Domain connected": [
-        "Verkkotunnus yhdistetty"
       ],
       "Estimated size": [
         "Arvioitu koko"
@@ -2432,9 +2426,6 @@
       "Migrate from Google Workspace": [
         "Siirrä Google Workspace -palvelusta"
       ],
-      "Migrate users": [
-        "Siirrä käyttäjät"
-      ],
       "Migration includes": [
         "Migraatio sisältää"
       ],
@@ -2450,9 +2441,6 @@
       ],
       "Organization does not have enough storage available": [
         "Organisaatiolla ei ole tarpeeksi tallennustilaa"
-      ],
-      "Required": [
-        "Pakollinen"
       ],
       "Required to create user accounts": [
         "Vaaditaan käyttäjätilien luomiseen"
@@ -14598,10 +14586,6 @@
       "Send & receive invitations": [
         "Kutsujen lähetys ja vastaanotto"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Palvelimet ${ vpnServersCountData.paid.countries }+ maassa",
-        "Palvelimet ${ vpnServersCountData.paid.countries }+ maassa"
-      ],
       "Share files with no size limit": [
         "Jaa tiedostoja ilman kokorajoituksia"
       ],
@@ -15187,9 +15171,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Omat palvelinsijainnit ${ numberOfCountries }+ maassa"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Omat palvelinsijainnit Pohjois-Amerikassa ja Euroopassa"
       ],
       "Multi-platform support": [
         "Tuki useille alustoille"
@@ -18521,18 +18502,6 @@
         "${ VPN_CONNECTIONS } suurinopeuksinen VPN-yhteys",
         "${ VPN_CONNECTIONS } suurinopeuksista VPN-yhteyttä"
       ],
-      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
-        "${ vpnServersCountData.free.servers }+ VPN-palvelinta ${ vpnServersCountData.free.countries } maassa",
-        "${ vpnServersCountData.free.servers }+ VPN-palvelinta ${ vpnServersCountData.free.countries } maassa"
-      ],
-      "${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries }+ maa",
-        "${ vpnServersCountData.paid.countries }+ maata"
-      ],
-      "${ vpnServersCountData.paid.servers }+ server across": [
-        "${ vpnServersCountData.paid.servers }+ palvelin",
-        "${ vpnServersCountData.paid.servers }+ palvelinta eri puolilla"
-      ],
       "/user": [
         "/käyttäjä"
       ],
@@ -18725,13 +18694,6 @@
       ],
       "use your own email.": [
         "käytä omaa sähköpostiosoitettasi."
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "VPN, jolla on palvelimia ${ vpnServersCountData.free.countries } maassa"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "VPN, jolla on palvelin ${ vpnServersCountData.free.countries } maassa",
-        "VPN, jolla on palvelimia ${ vpnServersCountData.free.countries } maassa"
       ],
       "Yearly": [
         "Vuosittain"
@@ -20986,6 +20948,9 @@
       "Deep dive into VPN blog posts": [
         "Perehdy VPN- blogipostauksiin"
       ],
+      "Delete": [
+        "Poista"
+      ],
       "Delete ${ name }?": [
         "Poistetaanko ${ name }?"
       ],
@@ -21483,6 +21448,9 @@
       ],
       "Open pagination": [
         "Avaa sivunavigaatio"
+      ],
+      "OpenVpn": [
+        "OpenVpn"
       ],
       "OpenVPN": [
         "OpenVPN"

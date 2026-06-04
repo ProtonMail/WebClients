@@ -523,6 +523,9 @@
       "Get the apps": [
         "Luați aplicațiile"
       ],
+      "Get the deal": [
+        "Obțineți oferta"
+      ],
       "Get the writing assistant": [
         "Luați asistentul de scriere"
       ],
@@ -3700,6 +3703,9 @@
       "Please activate your search again": [
         "Reactivați căutarea."
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Verificați dacă numărul ABN vă este înregistrat pentru TVA transfrontalier."
+      ],
       "Please complete the billing details": [
         "Completați detaliile de facturare."
       ],
@@ -3934,6 +3940,9 @@
       ],
       "Validation error": [
         "Eroare validare."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Valoarea TVA trebuie să înceapă cu ${ prefixes }."
       ],
       "We cannot retrieve this item": [
         "Acest articol nu se poate prelua."
@@ -9395,9 +9404,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Locuri de servere dedicate în peste ${ numberOfCountries } de țări"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Locuri de servere dedicate în America de Nord și Europa"
       ],
       "Multi-platform support": [
         "Suport platforme multiple"

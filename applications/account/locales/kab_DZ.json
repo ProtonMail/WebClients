@@ -7518,10 +7518,6 @@
       "Send & receive invitations": [
         "Azen & nermes-d tinubgiwin"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Iqeddacen deg wugar ${ vpnServersCountData.paid.countries } tmurt",
-        "Iqeddacen deg wugar n ${ vpnServersCountData.paid.countries } tmura"
-      ],
       "Sign in as user": [
         "Qqen d aseqdac"
       ],
@@ -8821,13 +8817,6 @@
       "Up to 6 users": [
         "Armi d 6 n iseqdacen"
       ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "VPN s yiqeddacen deg ${ vpnServersCountData.free.countries } tmura"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "VPN s yiqeddacen deg ${ vpnServersCountData.free.countries } tmurt",
-        "VPN s yiqeddacen deg ${ vpnServersCountData.free.countries } tmura"
-      ],
       "Yearly": [
         "S useggas"
       ],
@@ -9855,6 +9844,9 @@
       ],
       "Decrypt key": [
         "Tasarut n tukksa n uwgelhen"
+      ],
+      "Delete": [
+        "Kkes"
       ],
       "Delete ${ name }?": [
         "Kkes ${ name }?"

@@ -172,6 +172,9 @@
       "Get the apps": [
         "Αποκτήστε τις εφαρμογές"
       ],
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
+      ],
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
       ],
@@ -2378,6 +2381,9 @@
       "Payment process not supported": [
         "Η διαδικασία πληρωμής δεν υποστηρίζεται"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Ελέγξτε εάν ο ABN σας είναι εγγεγραμμένος για διασυνοριακό ΦΠΑ"
+      ],
       "Please complete the billing details": [
         "Παρακαλούμε συμπληρώστε τα στοιχεία χρέωσης"
       ],
@@ -2464,6 +2470,9 @@
       ],
       "Username must end with a letter or digit": [
         "Το όνομα χρήστη πρέπει να τελειώνει με γράμμα ή ψηφίο"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Ο αριθμός ΦΠΑ πρέπει να ξεκινά με ${ prefixes }"
       ],
       "Wrong billing address": [
         "Λανθασμένη διεύθυνσης χρέωσης"
@@ -4569,9 +4578,6 @@
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Αποκλειστικές τοποθεσίες διακομιστών σε ${ numberOfCountries }+ χώρες"
       ],
-      "Dedicated server locations in North America and Europe": [
-        "Αποκλειστικές τοποθεσίες διακομιστών στη Βόρεια Αμερική και την Ευρώπη"
-      ],
       "Multi-platform support": [
         "Υποστήριξη πολλαπλών πλατφορμών"
       ],
@@ -5748,6 +5754,9 @@
       ],
       "Summary": [
         "Περίληψη"
+      ],
+      "Summer Sale": [
+        "Καλοκαιρινές Εκπτώσεις"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ενεργοποίηση ${ DARK_WEB_MONITORING_NAME }"

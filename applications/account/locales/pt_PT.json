@@ -11892,10 +11892,6 @@
       "Send & receive invitations": [
         "Enviar e receber convites"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Servidores em ${ vpnServersCountData.paid.countries } país",
-        "Servidores em mais de ${ vpnServersCountData.paid.countries } países"
-      ],
       "Share files with no size limit": [
         "Partilhe ficheiros sem limite de tamanho"
       ],
@@ -12468,9 +12464,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Localizações de servidor dedicado em ${ numberOfCountries }+ países"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Localizações de servidor dedicado em América do Norte e Europa"
       ],
       "Multi-platform support": [
         "Apoio ao cliente multiplataforma"
@@ -15191,14 +15184,6 @@
         "${ VPN_CONNECTIONS } ligação VPN de alta velocidade",
         "${ VPN_CONNECTIONS } ligações VPN de alta velocidade"
       ],
-      "${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries }+ país",
-        "${ vpnServersCountData.paid.countries }+ países"
-      ],
-      "${ vpnServersCountData.paid.servers }+ server across": [
-        "${ vpnServersCountData.paid.servers }+ servidor em",
-        "${ vpnServersCountData.paid.servers }+ servidores em"
-      ],
       "/user": [
         "/utilizador"
       ],
@@ -15406,13 +15391,6 @@
       ],
       "use your own email.": [
         "utilize o seu próprio e-mail."
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "VPN com servidores em ${ vpnServersCountData.free.countries } países"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "VPN com servidores em ${ vpnServersCountData.free.countries } país",
-        "VPN com servidores em ${ vpnServersCountData.free.countries } países"
       ],
       "We’ll email you before your trial ends.": [
         "Vamos enviar-lhe um e-mail antes que a sua avaliação termine."
@@ -17519,6 +17497,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "Análise aprofundada dos nossos artigos de blog sobre VPN"
+      ],
+      "Delete": [
+        "Eliminar"
       ],
       "Delete ${ name }?": [
         "Eliminar ${ name }?"

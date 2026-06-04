@@ -443,6 +443,9 @@
       "Get the apps": [
         "Få appsene"
       ],
+      "Get the deal": [
+        "Gør brug af tilbuddet"
+      ],
       "Get the writing assistant": [
         "Hent skriveassistenten"
       ],
@@ -3904,6 +3907,9 @@
       "Please activate your search again": [
         "Aktiver venligst din søgning igen"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Tjek venligst om dit ABN er registeret til moms på tværs af grænser"
+      ],
       "Please complete the billing details": [
         "Udfyld faktureringsoplysningerne"
       ],
@@ -4097,6 +4103,9 @@
       ],
       "Validation error": [
         "Bekræftelsesfejl"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Momsnummer skal starte med ${ prefixes }"
       ],
       "Wrong billing address": [
         "Forkert faktureringsadresse"
@@ -8916,9 +8925,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Dedikerede serverplaceringer i ${ numberOfCountries }+ lande"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Dedikerede serverplaceringer i Nordamerika og Europa"
       ],
       "Multi-platform support": [
         "Understøttelse af flere platforme"

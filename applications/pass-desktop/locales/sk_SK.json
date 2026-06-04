@@ -694,6 +694,9 @@
       "Skip": [
         "Preskočiť"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Niekto s vami zdieľal položku v ${ PASS_APP_NAME }."
+      ],
       "Sort vault items": [
         "Triediť položky trezoru"
       ],
@@ -1380,6 +1383,9 @@
       ],
       "Trashing item failed": [
         "Presun do koša zlyhal"
+      ],
+      "Try reaching out to the link owner.": [
+        "Skúste kontaktovať vlastníka odkazu."
       ],
       "Unable to generate an OTP code for this item": [
         "Pre túto položku nie je možné vygenerovať OTP kód"
@@ -2686,6 +2692,9 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Ak chcete skontrolovať importované údaje, kliknite na ikonu ${ PASS_APP_NAME } v nástrojovom paneli prehliadača."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "Na nastavenie odomykania pomocou biometrických údajov vyžaduje ${ PASS_APP_NAME } nové povolenie prehliadača. Po ich udelení sa rozšírenie znovu načíta. Následne znovu otvorte túto stránku, prosím."
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Má dôveru viac ako 50 000 firemných používateľov a 100 miliónov účtov na celom svete."
@@ -4014,6 +4023,9 @@
       "Theme": [
         "Vzhľad"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Táto položka je prístupná do ${ date } alebo do dosiahnutia limitu zobrazení."
+      ],
       "Tier/Level": [
         "Úroveň členstva"
       ],
@@ -4756,6 +4768,9 @@
       ],
       "Breaches detected for": [
         "Zistený únik informácií pre"
+      ],
+      "Browser permission required": [
+        "Je potrebné povolenie prehliadača"
       ],
       "Cancel changing your email?": [
         "Zrušiť zmenu vášho emailu?"

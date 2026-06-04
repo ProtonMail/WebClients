@@ -639,6 +639,9 @@
       "Get the browser extension": [
         "Obtenga la extensión del navegador"
       ],
+      "Get the deal": [
+        "Obtener la promoción"
+      ],
       "Get the writing assistant": [
         "Obtener el asistente de escritura"
       ],
@@ -1520,7 +1523,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -4985,6 +4989,9 @@
       "Please activate your search again": [
         "Active de nuevo la búsqueda"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Revise si su IVA está registrado para el IVA transfronterizo"
+      ],
       "Please complete the billing details": [
         "Complete los detalles de facturación"
       ],
@@ -5251,6 +5258,9 @@
       ],
       "Username must end with a letter or digit": [
         "El nombre de usuario debe terminar con una letra o dígito"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "El número IVA debe comenzar con ${ prefixes }"
       ],
       "Wrong billing address": [
         "Dirección de facturación incorrecta"
@@ -7629,8 +7639,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -11841,9 +11850,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Ubicaciones de servidores dedicados en más de ${ numberOfCountries } países"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Ubicaciones de servidores dedicados en América del Norte y Europa"
       ],
       "Multi-platform support": [
         "Soporte multi plataforma"

@@ -1862,9 +1862,6 @@
       ]
     },
     "BOSS": {
-      "${ BRAND_NAME } Migration Assistant": [
-        "${ BRAND_NAME } Migration Assistant"
-      ],
       "Authenticate": [
         "Autentificar"
       ],
@@ -1874,17 +1871,11 @@
       "Calendar": [
         "Calendario"
       ],
-      "Completed": [
-        "Completado"
-      ],
       "Configure migration": [
         "Configurar migración"
       ],
       "Contacts": [
         "Contactos"
-      ],
-      "Domain connected": [
-        "Dominio conectado"
       ],
       "Estimated size": [
         "Tamaño estimado"
@@ -1913,9 +1904,6 @@
       "Migrate from Google Workspace": [
         "Migra desde Google Workspace"
       ],
-      "Migrate users": [
-        "Migrar usuarios"
-      ],
       "Migration includes": [
         "La migración incluye"
       ],
@@ -1932,17 +1920,8 @@
       "Organization does not have enough storage available": [
         "La organización no tiene suficiente espacio de almacenamiento disponible"
       ],
-      "Required": [
-        "Requerido"
-      ],
-      "Required to create user accounts": [
-        "Necesario para crear cuentas de usuario"
-      ],
       "Select at least one user to start a migration": [
         "Selecciona al menos un usuario para iniciar una migración"
-      ],
-      "Set up": [
-        "Configurar"
       ],
       "Settings": [
         "Ajustes"
@@ -1952,9 +1931,6 @@
       ],
       "Status": [
         "Estado"
-      ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
-        "Para migrar los datos de tu organización, necesitas instalar la aplicación ${ BRAND_NAME } Migration Assistant desde Google Workspace Marketplace. Esto otorgará permiso a ${ BRAND_NAME } para copiar tus datos. Después de instalarla, vuelve aquí para continuar."
       ],
       "User": [
         "Usuario"
@@ -1976,9 +1952,6 @@
       ],
       "What are you migrating?": [
         "¿Qué estás migrando?"
-      ],
-      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
-        "Debes otorgar el permiso para que ${ BRAND_NAME } copie tus datos. Después de aceptar los permisos, vuelve aquí para continuar."
       ]
     },
     "Browser": {
@@ -10736,10 +10709,6 @@
       "Send & receive invitations": [
         "Enviar y recibir invitaciones"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Servidores en más de ${ vpnServersCountData.paid.countries } país",
-        "Servidores en más de ${ vpnServersCountData.paid.countries } países"
-      ],
       "Share files with no size limit": [
         "Comparte archivos sin límites de tamaño."
       ],
@@ -11304,9 +11273,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Ubicaciones de servidores dedicados en más de ${ numberOfCountries } países"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Ubicaciones de servidores dedicados en América del Norte y Europa"
       ],
       "Multi-platform support": [
         "Soporte multiplataforma"
@@ -16408,6 +16374,9 @@
       ],
       "VPN": [
         "VPN"
+      ],
+      "VPN apps": [
+        "Aplicaciones VPN"
       ],
       "Warning": [
         "Advertencia"

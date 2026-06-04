@@ -1794,17 +1794,11 @@
       "Calendar": [
         "კალენდარი"
       ],
-      "Completed": [
-        "დასრულებულია"
-      ],
       "Configure migration": [
         "მიგრაციის მორგება"
       ],
       "Contacts": [
         "კონტაქტები"
-      ],
-      "Domain connected": [
-        "დომენი დაკავშირებულია"
       ],
       "Estimated size": [
         "სავარაუდო ზომა"
@@ -1830,9 +1824,6 @@
       "Migrate from Google Workspace": [
         "მიგრაცია Google Workspace-დან"
       ],
-      "Migrate users": [
-        "მომხმარებლების მიგრაცია"
-      ],
       "Migration includes": [
         "მიგრაცია შეიცავს"
       ],
@@ -1849,17 +1840,8 @@
       "Organization does not have enough storage available": [
         "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
       ],
-      "Required": [
-        "აუცილებელია"
-      ],
-      "Required to create user accounts": [
-        "აუცილებელია მომხმარებლის ანგარიშების შესაქმნელად"
-      ],
       "Select at least one user to start a migration": [
         "მიგრაციის დასაწყებად აირჩიეთ, სულ ცოტა, ერთი მომხმარებელი"
-      ],
-      "Set up": [
-        "მორგება"
       ],
       "Settings": [
         "მორგება"
@@ -10199,10 +10181,6 @@
       "Send & receive invitations": [
         "მოსაწვევების გაგზავნა და მიღება"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "სერვერები ${ vpnServersCountData.paid.countries }+ ქვეყანაში",
-        "სერვერები ${ vpnServersCountData.paid.countries }+ ქვეყანაში"
-      ],
       "Share files with no size limit": [
         "გააზიარეთ ფაილები ზომის შეზღუდვის გარეშე"
       ],
@@ -10758,9 +10736,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "გამოყოფილი სერვერის მდებარეობები ${ numberOfCountries }+ ქვეყანაში"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "გამოყოფილი სერვერის მდებარეობები ჩრდილოეთ ამერიკაში და ევროპაში"
       ],
       "Multi-platform support": [
         "მრავალპლატფორმიანობის მხარდაჭერა"
@@ -15542,6 +15517,9 @@
       ],
       "VPN": [
         "VPN"
+      ],
+      "VPN apps": [
+        "VPN აპები"
       ],
       "Warning": [
         "გაფრთხილება"

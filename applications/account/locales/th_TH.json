@@ -2559,9 +2559,6 @@
       "Contacts": [
         "ผู้ติดต่อ"
       ],
-      "Domain connected": [
-        "เชื่อมต่อโดเมนแล้ว"
-      ],
       "Estimated size": [
         "ขนาดโดยประมาณ"
       ],
@@ -2577,9 +2574,6 @@
       "Migrate from Google Workspace": [
         "ย้ายข้อมูลจาก Google Workspace"
       ],
-      "Migrate users": [
-        "ย้ายข้อมูลผู้ใช้"
-      ],
       "Migration includes": [
         "การย้ายข้อมูลรวมถึง"
       ],
@@ -2594,9 +2588,6 @@
       ],
       "Organization does not have enough storage available": [
         "องค์กรมีพื้นที่จัดเก็บไม่เพียงพอ"
-      ],
-      "Required": [
-        "จำเป็น"
       ],
       "Required to create user accounts": [
         "จำเป็นต้องสร้างบัญชีผู้ใช้"
@@ -14825,9 +14816,6 @@
       "Send & receive invitations": [
         "ส่งและรับคำเชิญ"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "เซิร์ฟเวอร์ในกว่า ${ vpnServersCountData.paid.countries } ประเทศ"
-      ],
       "Share files with no size limit": [
         "แชร์ไฟล์โดยไม่มีขีดจำกัดขนาด"
       ],
@@ -15401,9 +15389,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "ตำแหน่งที่ตั้งเซิร์ฟเวอร์เฉพาะในกว่า ${ numberOfCountries } ประเทศ"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "ตำแหน่งที่ตั้งเซิร์ฟเวอร์เฉพาะในอเมริกาเหนือและยุโรป"
       ],
       "Multi-platform support": [
         "รองรับหลายแพลตฟอร์ม"
@@ -18799,15 +18784,6 @@
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS }การเชื่อมต่อ VPN ความเร็วสูง"
       ],
-      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
-        "เซิร์ฟเวอร์ VPN ${ vpnServersCountData.free.servers } เครื่องขึ้นไปใน ${ vpnServersCountData.free.countries } ประเทศ"
-      ],
-      "${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries }+ ประเทศ"
-      ],
-      "${ vpnServersCountData.paid.servers }+ server across": [
-        "เซิร์ฟเวอร์กว่า ${ vpnServersCountData.paid.servers } เครื่องทั่ว"
-      ],
       "/user": [
         "/ผู้ใช้งาน"
       ],
@@ -19053,12 +19029,6 @@
       ],
       "use your own email.": [
         "ใช้อีเมลของคุณเอง"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "VPN พร้อมเซิร์ฟเวอร์ใน ${ vpnServersCountData.free.countries } ประเทศ"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "VPN พร้อมเซิร์ฟเวอร์ใน ${ vpnServersCountData.free.countries } ประเทศ"
       ],
       "We’ll email you before your trial ends.": [
         "เราจะส่งอีเมลถึงคุณก่อนที่การทดลองใช้ของคุณจะสิ้นสุดลง"
@@ -21276,6 +21246,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "เจาะลึกบทความบล็อก VPN"
+      ],
+      "Delete": [
+        "ลบ"
       ],
       "Delete ${ name }?": [
         "ลบ ${ name }?"

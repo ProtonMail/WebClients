@@ -2131,17 +2131,11 @@
       ]
     },
     "BOSS": {
-      "${ BRAND_NAME } Migration Assistant": [
-        "Pomočnik za migracijo ${ BRAND_NAME }"
-      ],
       "Authenticate your Google Workspace account": [
         "Preverjanje pristnosti računa Google Workspace"
       ],
       "Calendar": [
         "Koledar"
-      ],
-      "Completed": [
-        "Končano"
       ],
       "Contacts": [
         "Stiki"
@@ -2176,9 +2170,6 @@
       "Status": [
         "Stanje"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
-        "Če želite migrirati podatke svoje organizacije, morate namestiti aplikacijo ${ BRAND_NAME } Migration Assistant iz Trgovine Google Workspace. To bo družbi ${ BRAND_NAME } dodelilo dovoljenje za kopiranje vaših podatkov. Po namestitvi se vrnite sem, da nadaljujete."
-      ],
       "Users migrated": [
         "Uporabniki so se preneseni"
       ],
@@ -2187,9 +2178,6 @@
       ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Nismo mogli preveriti namestitve, preverite, ali ste jo namestili v svoj Google Workspace račun in poskusite znova."
-      ],
-      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
-        "Morate odobriti dovoljenje ${ BRAND_NAME } za kopiranje vaših podatkov. Ko sprejmete dovoljenja, se vrnite sem, da nadaljujete."
       ]
     },
     "Bridge version load failed": {
@@ -13039,12 +13027,6 @@
       "Send & receive invitations": [
         "Pošljite in prejmite povabila."
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Strežniki v več kot ${ vpnServersCountData.paid.countries } državi",
-        "Strežniki v več kot ${ vpnServersCountData.paid.countries } državah",
-        "Strežniki v več kot ${ vpnServersCountData.paid.countries } državah",
-        "Strežniki v več kot ${ vpnServersCountData.paid.countries } državah"
-      ],
       "Share files with no size limit": [
         "Souporaba datotek brez omejitve velikosti"
       ],
@@ -13627,9 +13609,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Namenski strežniki v več kot ${ numberOfCountries } državah"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Namenski strežniki v Severni Ameriki in Evropi"
       ],
       "Multi-platform support": [
         "Podpora za več platform"
@@ -16524,15 +16503,6 @@
       "Up to 6 users": [
         "Do šest uporabnikov"
       ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "VPN s strežniki v ${ vpnServersCountData.free.countries } državah"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "VPN s strežniki v ${ vpnServersCountData.free.countries } državi",
-        "VPN s strežniki v ${ vpnServersCountData.free.countries } državah",
-        "VPN s strežniki v ${ vpnServersCountData.free.countries } državah",
-        "VPN s strežniki v ${ vpnServersCountData.free.countries } državah"
-      ],
       "Yearly": [
         "Letno"
       ],
@@ -18639,6 +18609,9 @@
       ],
       "Decrypt key": [
         "Dešifriraj ključ"
+      ],
+      "Delete": [
+        "Izbriši"
       ],
       "Delete ${ name }?": [
         "Izbriši ${ name }?"

@@ -639,6 +639,9 @@
       "Get the browser extension": [
         "Tarayıcı eklentisini edinin"
       ],
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ],
       "Get the writing assistant": [
         "Yazma yardımcısını edinin"
       ],
@@ -1520,7 +1523,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -4327,7 +4331,7 @@
         "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor"
       ],
       "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Yeni kategori görünümümüzü lansmandan önce deneyen ilk kişiler arasındasınız. Geri bildirimleriniz Proton Mail'in e-postaları herkes için nasıl sıraladığını geliştirmeye yardımcı olacak."
+        "Yeni kategori görünümümüzü duyurulmasından önce ilk deneyenlerdensiniz. Geri bildirimleriniz e-postaların Proton Mail tarafından sıralanmasını geliştirmeye yardımcı olacak."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
@@ -4985,6 +4989,9 @@
       "Please activate your search again": [
         "Lütfen arama özelliğini yeniden açın"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Lütfen ABN numaranızın sınır ötesi KDV için kayıtlı olup olmadığını denetleyin"
+      ],
       "Please complete the billing details": [
         "Lütfen fatura bilgilerini tamamlayın"
       ],
@@ -5251,6 +5258,9 @@
       ],
       "Username must end with a letter or digit": [
         "Kullanıcı adı bir harf ya da rakam ile bitmeli"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "KDV numarası ${ prefixes } ile başlamalıdır"
       ],
       "Wrong billing address": [
         "Fatura adresi yanlış"
@@ -7629,8 +7639,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -11842,9 +11851,6 @@
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "${ numberOfCountries } üzerindeki ülkede size ayrılmış sunucu konumları"
       ],
-      "Dedicated server locations in North America and Europe": [
-        "Kuzey Amerika ve Avrupa'da size ayrılmış sunucu konumları"
-      ],
       "Multi-platform support": [
         "Çeşitli platformları destekler"
       ],
@@ -15999,6 +16005,9 @@
       ],
       "Summary": [
         "Özet"
+      ],
+      "Summer Sale": [
+        "Yaz indirimi"
       ],
       "This field cannot be empty": [
         "Bu alan boş olamaz"

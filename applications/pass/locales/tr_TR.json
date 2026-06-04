@@ -2095,7 +2095,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak güvenli bağlantılarını siler."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -4143,6 +4144,12 @@
       ],
       "The file you are trying to import is empty": [
         "İçe aktarmaya çalıştığınız dosya boş"
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Tarifeniz bu özelliği desteklemiyor. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Tarifeniz bu özelliği desteklemiyor. Bu özelliğe erişmek için yöneticiniz ile görüşün."
       ],
       "Total files: ": [
         "Toplam dosya: "
