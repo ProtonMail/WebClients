@@ -1,5 +1,5 @@
 import { Button } from '@proton/atoms/Button/Button'
-import { Icon } from '@proton/components'
+import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble'
 import { useEffect, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
 import type { CommentsChangedData } from '@proton/docs-shared'
@@ -34,7 +34,7 @@ export function CommentsButton({ editorController }: CommentsButtonProps) {
             'after:absolute after:right-0 after:top-0 after:block after:h-[11px] after:w-[11px] after:-translate-y-[3px] after:translate-x-[3px] after:rounded-full after:border-[3px] after:border-[--background-norm] after:bg-[--signal-danger]',
         )}
       >
-        <Icon name="speech-bubble" />
+        <IcSpeechBubble />
       </div>
     </Button>
   )

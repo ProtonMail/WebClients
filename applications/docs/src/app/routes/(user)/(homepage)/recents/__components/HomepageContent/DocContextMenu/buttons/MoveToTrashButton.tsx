@@ -1,4 +1,5 @@
-import { Icon } from '@proton/components'
+import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight'
+import { IcTrash } from '@proton/icons/icons/IcTrash'
 
 import { ContextMenuButton } from '../ContextMenuButton'
 import { useDocumentActions } from '../../../../__utils/document-actions'
@@ -17,13 +18,7 @@ export function MoveToTrashButton({ currentDocument }: MoveToTrashButtonProps) {
     <ContextMenuButton
       disabled={isLoading}
       name={!isLoading ? c('Action').t`Move to trash` : c('Action').t`Trashing...`}
-      icon={
-        !isLoading ? (
-          <Icon name="trash" className="mr-2" />
-        ) : (
-          <Icon name="arrow-rotate-right" className="mr-2 animate-spin" />
-        )
-      }
+      icon={!isLoading ? <IcTrash className="mr-2" /> : <IcArrowRotateRight className="mr-2 animate-spin" />}
       action={async () => {
         if (isLoading) {
           return

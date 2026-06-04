@@ -1,4 +1,4 @@
-import { Icon } from '@proton/components'
+import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle'
 
 import { ContextMenuButton } from '../ContextMenuButton'
 import { useDocumentActions } from '../../../../__utils/document-actions'
@@ -15,7 +15,7 @@ export function DeletePermanentlyButton({ currentDocument, close }: DeletePerman
   return (
     <ContextMenuButton
       name={c('Action').t`Delete permanently`}
-      icon={<Icon name="cross-circle" className="mr-2" />}
+      icon={<IcCrossCircle className="mr-2" />}
       action={async () => {
         close()
         await documentActions.deletePermanently(currentDocument)

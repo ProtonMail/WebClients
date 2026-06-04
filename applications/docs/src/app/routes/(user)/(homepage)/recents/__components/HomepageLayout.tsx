@@ -26,6 +26,13 @@ import {
   UserDropdown,
   useToggle,
 } from '@proton/components'
+import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight'
+import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive'
+import { IcHouse } from '@proton/icons/icons/IcHouse'
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier'
+import { IcPlus } from '@proton/icons/icons/IcPlus'
+import { IcStar } from '@proton/icons/icons/IcStar'
+import { IcTrash } from '@proton/icons/icons/IcTrash'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 
 import { DocsQuickSettings } from '~/components/DocsQuickSettings'
@@ -178,7 +185,7 @@ function Search({ value, onChange, type, className }: SearchProps) {
         }}
         prefix={
           <span>
-            <Icon size={5} color="weak" name="magnifier" alt={c('Action').t`Search`} />
+            <IcMagnifier size={5} color="weak" alt={c('Action').t`Search`} />
           </span>
         }
         value={value ?? ''}
@@ -232,7 +239,7 @@ function MobileSearch({ value, onChange, type, className }: SearchProps) {
           inputClassName="h-[32px] small:h-auto"
           prefix={
             <span>
-              <Icon size={5} color="weak" name="magnifier" alt={c('Action').t`Search`} />
+              <IcMagnifier size={5} color="weak" alt={c('Action').t`Search`} />
             </span>
           }
           value={value ?? ''}
@@ -246,7 +253,7 @@ function MobileSearch({ value, onChange, type, className }: SearchProps) {
           </div>
           <Tooltip title={placeholder}>
             <Button size="medium" icon shape="outline" color="weak" onClick={() => setActive(true)}>
-              <Icon name="magnifier" size={4} />
+              <IcMagnifier size={4} />
             </Button>
           </Tooltip>
         </>
@@ -274,7 +281,7 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
   const newDocumentButton = (
     <Ariakit.MenuProvider>
       <Ariakit.MenuButton className="flex w-full items-center justify-center gap-2 rounded-[0.5rem] !bg-[--docs-blue-color] px-4 py-2.5 text-[#fff]">
-        <Icon name="plus" />
+        <IcPlus />
         New
       </Ariakit.MenuButton>
       <NewDocumentMenu sameWidth />
@@ -322,10 +329,9 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
                   setExpanded(false)
                 }}
               >
-                <Icon
+                <IcArrowRotateRight
                   data-updating={isRecentsUpdating ? '' : undefined}
                   className="data-[updating]:animate-spin"
-                  name="arrow-rotate-right"
                 />
               </Button>
             </Tooltip>
@@ -346,7 +352,7 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
               isActive={(match) => Boolean(match?.isExact && !type)}
             >
               <span className="flex items-center gap-2">
-                <Icon name="house" />
+                <IcHouse />
                 <span>{c('Info').t`All`}</span>
               </span>
             </SidebarListItemLink>
@@ -409,7 +415,7 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
             <SidebarListItem onClick={() => setExpanded(false)}>
               <SidebarListItemLink to="/favorites" exact={true} activeClassName="!font-semibold">
                 <span className="flex items-center gap-2">
-                  <Icon name="star" />
+                  <IcStar />
                   <span>{c('Info').t`Favorites`}</span>
                 </span>
               </SidebarListItemLink>
@@ -418,7 +424,7 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
           <SidebarListItem onClick={() => setExpanded(false)}>
             <SidebarListItemLink to="/trash" exact={true} activeClassName="!font-semibold">
               <span className="flex items-center gap-2">
-                <Icon name="trash" />
+                <IcTrash />
                 <span>{c('Info').t`Trash`}</span>
               </span>
             </SidebarListItemLink>
@@ -434,7 +440,7 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
               }}
             >
               <SidebarListItemDiv className="flex items-center gap-2">
-                <Icon name="brand-proton-drive" /> {goToPlanOrAppNameText(DRIVE_APP_NAME)}
+                <IcBrandProtonDrive /> {goToPlanOrAppNameText(DRIVE_APP_NAME)}
               </SidebarListItemDiv>
             </a>
           </SidebarListItem>

@@ -13,7 +13,6 @@ import useEffectOnce from '@proton/hooks/useEffectOnce'
 import type { EditorControllerInterface, PublicDocumentState } from '@proton/docs-core'
 import {
   Spotlight,
-  Icon,
   DropdownButton,
   usePopperAnchor,
   Dropdown,
@@ -23,6 +22,10 @@ import {
   ButtonGroup,
   SimpleDropdown,
 } from '@proton/components'
+import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled'
+import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn'
+import { IcSquares } from '@proton/icons/icons/IcSquares'
+import { IcUser } from '@proton/icons/icons/IcUser'
 import { APPS, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants'
 import { useSignupFlowModal } from './SignupFlowModal'
 import { TooltipKey, useTooltipOnce } from '@proton/docs-shared'
@@ -231,7 +234,7 @@ export function HeaderPublicOptions({ editorController, documentState, documentT
             data-testid="make-a-copy-button"
             onClick={handleMakeCopyClick}
           >
-            <Icon name="squares" />
+            <IcSquares />
             <span>{c('Action').t`Create a copy`}</span>
           </Button>
         </Spotlight>
@@ -259,7 +262,7 @@ export function HeaderPublicOptions({ editorController, documentState, documentT
                   color="weak"
                   data-testid="save-in-drive-button"
                 >
-                  {!isAdding && <Icon name="folder-arrow-in" className="mr-2 align-text-bottom" />}
+                  {!isAdding && <IcFolderArrowIn className="mr-2 align-text-bottom" />}
                   <span className="head-max-849:!sr-only">
                     {isAdding ? c('Info').t`Saving...` : saveToDriveButtonText}
                   </span>
@@ -296,7 +299,7 @@ export function HeaderPublicOptions({ editorController, documentState, documentT
         size="small"
         className="[display:none] head-max-849:![display:inline-block]"
       >
-        <Icon name="chevron-down-filled" />
+        <IcChevronDownFilled />
         <span className="sr-only text-ellipsis">{c('Action').t`Show options`}</span>
       </DropdownButton>
       <Dropdown
@@ -311,17 +314,17 @@ export function HeaderPublicOptions({ editorController, documentState, documentT
         <DropdownMenu>
           {canShowSaveForLaterOption && (
             <DropdownMenuButton className="flex items-center gap-2 text-left" onClick={handleSaveToDriveClick}>
-              <Icon name="folder-arrow-in" />
+              <IcFolderArrowIn />
               <span>{isAdding ? c('Info').t`Saving...` : saveToDriveButtonText}</span>
             </DropdownMenuButton>
           )}
           <DropdownMenuButton className="flex items-center gap-2 text-left" onClick={handleMakeCopyClick}>
-            <Icon name="squares" />
+            <IcSquares />
             <span>{c('Action').t`Create a copy`}</span>
           </DropdownMenuButton>
           {!user && (
             <DropdownMenuButton className="flex items-center gap-2 text-left" onClick={handleSignUpButtonClick}>
-              <Icon name="user" />
+              <IcUser />
               <span>{c('Action').t`Sign up`}</span>
             </DropdownMenuButton>
           )}

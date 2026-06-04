@@ -4,7 +4,7 @@ import { useUser } from '@proton/account/user/hooks'
 import { useUserSettings } from '@proton/account/userSettings/hooks'
 import { Button } from '@proton/atoms/Button/Button'
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike'
-import { Icon } from '@proton/components'
+import { IcBriefcase } from '@proton/icons/icons/IcBriefcase'
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { hasBit } from '@proton/shared/lib/helpers/bitset'
@@ -30,7 +30,7 @@ export function WorkspacePromoBanner() {
       data-testid="workspace-promo-banner"
     >
       <div className="flex min-w-0 items-center gap-2">
-        <Icon name="briefcase" size={5} className="shrink-0" />
+        <IcBriefcase size={5} className="shrink-0" />
         <span className="truncate text-sm font-medium leading-5">
           {c('Info')
             .t`Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${BRAND_NAME} Workspace.`}
