@@ -534,9 +534,6 @@
       "Delete record": [
         "Kaydı sil"
       ],
-      "Delete token ${ tokens[0].Account }": [
-        "${ tokens[0].Account } kodunu sil"
-      ],
       "Delete token “${ token.Name }”": [
         "“${ token.Name }” kodunu sil"
       ],
@@ -683,6 +680,9 @@
       ],
       "Edit group": [
         "Grubu düzenle"
+      ],
+      "Edit invoice details": [
+        "Fatura bilgilerini düzenle"
       ],
       "Edit invoice note": [
         "Fatura notunu düzenle"
@@ -837,6 +837,9 @@
       "Get Deal": [
         "Fırsatı değerlendirin"
       ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } ile yardım alın"
+      ],
       "Get in touch": [
         "Bizimle görüşün"
       ],
@@ -908,9 +911,6 @@
       ],
       "Go to ${ planOrAppName }": [
         "${ planOrAppName } uygulamasına git"
-      ],
-      "Go to domain provider": [
-        "Etki alanı hizmeti sağlayıcısına git"
       ],
       "Go to label": [
         "Etikete git"
@@ -1485,6 +1485,9 @@
       "Send email reminder": [
         "E-posta hatırlatıcısı gönder"
       ],
+      "Send feedback": [
+        "Geri bildirim gönder"
+      ],
       "Send messages with @pm.me": [
         "@pm.me adresinden ileti gönderin"
       ],
@@ -1542,6 +1545,9 @@
       "Share": [
         "Paylaş"
       ],
+      "Share feedback": [
+        "Geri bildiriminizi paylaşın"
+      ],
       "Share via link": [
         "Bağlantı ile paylaş"
       ],
@@ -1583,6 +1589,9 @@
       ],
       "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "${ nameToDisplay } ${ maybeEmailInBrackets } oturumunu kapat"
+      ],
+      "Sign out of ${ tokens[0].Account }": [
+        "${ tokens[0].Account } oturumunu kapat"
       ],
       "Sign out of all accounts": [
         "Tüm hesapların oturumunu kapat"
@@ -2894,20 +2903,11 @@
       ]
     },
     "BOSS": {
-      "${ BRAND_NAME } Migration Assistant": [
-        "${ BRAND_NAME } Migration Assistant"
+      "${ BRAND_NAME } Easy Switch": [
+        "${ BRAND_NAME } Easy Switch"
       ],
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } / ${ providerUsers.length }"
-      ],
-      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
-        "**p=none**: Yetkisiz e-postaları karantinaya almaz veya reddetmez. İnsanlar genellikle bu ilkeyi yalnızca sorun gidermek veya denemeler yapmak için kullanılır."
-      ],
-      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
-        "**p=karantina**: Alıcı platformlardan yetkisiz e-postaları istenmeyen olarak işaretlemelerini veya karantinaya almalarını ister."
-      ],
-      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
-        "**p=reject**: Alıcı platformlardan yetkisiz e-postaları reddetmelerini ister."
+      "${ relevantCount } of ${ totalCount }": [
+        "${ relevantCount } / ${ totalCount }"
       ],
       "Account connected": [
         "Hesap bağlantısı kuruldu"
@@ -2915,14 +2915,11 @@
       "Account disconnected": [
         "Hesap bağlantısı kesildi"
       ],
+      "Accounts migrated": [
+        "Aktarılan hesap"
+      ],
       "Activated": [
         "Etkinleştirildi"
-      ],
-      "Activation link": [
-        "Etkinleştirme bağlantısı"
-      ],
-      "Activation link copied to clipboard": [
-        "Etkinleştirme bağlantısı panoya kopyalandı"
       ],
       "Add a domain": [
         "Bir etki alanı ekleyin"
@@ -2936,20 +2933,23 @@
       "Add users and configure your domain manually for sending and receiving mail. Ideal for small teams starting from a clean slate.": [
         "Kullanıcıları ekleyin ve e-posta gönderip almak için etki alanınızı el ile yapılandırın. Sıfırdan başlayan küçük ekipler için idealdir."
       ],
+      "Add your organization email domain to ${ BRAND_NAME }.": [
+        "Kuruluşunuzun e-posta etki alanını ${ BRAND_NAME } üzerine ekleyin."
+      ],
       "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
         "Bu adres kuruluşunuz dışındaki bir kullanıcı tarafından kullanılıyor. Bu sorunu çözmek için lütfen müşteri destek ekibimiz ile görüşün"
       ],
       "All": [
         "Tümü"
       ],
-      "An unknown error occurred": [
-        "Bilinmeyen bir sorun çıktı"
+      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
+        "Aktarılan tüm kullanıcı hesapları ${ BRAND_NAME } kuruluşuna davet edilmeye hazır."
+      ],
+      "An unknown error ocurred. Please refresh the page and try again": [
+        "Bilinmeyen bir sorun çıktı. Lütfen sayfayı yenileyip yeniden deneyin"
       ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "İlerlemek istediğinize emin misiniz? Aktarım işlemi tamamlanmadan önce hesaplarını doğrulamamış olan kullanıcıların ${ BRAND_NAME } kuruluş yöneticisinden parola sıfırlama isteğinde bulunmaları gerekecek."
-      ],
-      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
-        "Hesaplar açıldığı anda kullanıcıların ${ BRAND_NAME } hesaplarını kullanabilmeleri için etkinleştirme bağlantısını paylaşabilirsiniz."
       ],
       "Authenticate": [
         "Kimliği doğrulayın"
@@ -2969,11 +2969,8 @@
       "Choose how you want to bring your team and email setup to ${ BRAND_NAME }.": [
         "Ekibinizi ve e-posta ayarlarınızı ${ BRAND_NAME } üzerine nasıl aktarmak istediğinizi seçin."
       ],
-      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
-        "Aktarılacak ögeleri seçin. Seçiminiz tüm kullanıcılar için geçerli olacak. Hangi kullanıcıların kopyalanacağına karar verdikten sonra aktarım işlemi başlayacak."
-      ],
-      "Completed": [
-        "Tamamlandı"
+      "Collapse step": [
+        "Adımı daralt"
       ],
       "Configure": [
         "Yapılandırma"
@@ -2984,6 +2981,9 @@
       "Configure migration": [
         "Aktarımı yapılandırın"
       ],
+      "Configure users": [
+        "Kullanıcıları yapılandır"
+      ],
       "Configure your domain": [
         "Etki alanınızı yapılandırın"
       ],
@@ -2993,35 +2993,32 @@
       "Continue migration": [
         "Aktarımı sürdür"
       ],
-      "Copy activation link": [
-        "Etkinleştirme bağlantısını kopyala"
+      "Copy the below code and paste it in the DNS section of your domain host.": [
+        "Aşağıdaki kodu kopyalayın ve etki alanı hizmeti sağlayıcınızın DNS bölümüne yapıştırın."
       ],
-      "Copy activation link to clipboard": [
-        "Etkinleştirme bağlantısını panoya kopyala"
+      "Creating accounts. Going private": [
+        "Hesaplar oluşturuluyor. Gizliliğe geçiliyor"
       ],
-      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
-        "Aşağıdaki kodu kopyalayıp etki alanı barındırıcınızın DNS bölümüne yapıştırın. Bir örnek ve bazı yararlı ipuçlarını ${ hereHref } adresinde bulabilirsiniz."
-      ],
-      "Creating accounts": [
-        "Hesaplar oluşturuluyor"
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Google Workspace üzerinden ${ BRAND_NAME } üzerine veri aktarımı durumu"
       ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM her e-postaya bir dijital imza ekler. Böylece alıcılar iletinin gerçekten sizin etki alanınızdan geldiğini ve aktarım sırasında değiştirilmediğini doğrulayabilir. Bu imza olmadan iletiler daha az güvenilir olarak değerlendirilebilir."
       ],
-      "DKIM records": [
-        "DKIM kayıtları"
-      ],
       "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
         "DMARC, SPF ve DKIM alıcı sunuculara bu denetimleri geçemeyen iletileri nasıl işleyeceklerini bildirir. Bunlar, etki alanınızın kimlik sahtekarlığından korunmasını sağlar ve genel gönderim güvenilirliğini artırır."
-      ],
-      "DMARC records": [
-        "DMARC kayıtları"
       ],
       "Domain added": [
         "Etki alanı eklendi"
       ],
-      "Domain connected": [
-        "Etki alanı bağlandı"
+      "Domain provider": [
+        "Etki alanı hizmeti sağlayıcı"
+      ],
+      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
+        "Nereden başlayacağınızı bilmiyor musunuz? ${ registrarLink } üzerindeki DNS kayıtlarınızı nasıl güncelleyeceğinizi izleyin"
+      ],
+      "Emails": [
+        "E-postalar"
       ],
       "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
         "E-postalarınızın istenmeyen klasörüne değil gelen kutusuna ulaşmasını sağlayın. SPF verisini güncellemek aktarım sürecinde kullanıcıların hem ${ BRAND_NAME } hem de Google adreslerinden e-posta gönderebilmesini sağlar."
@@ -3032,23 +3029,29 @@
       "Estimated size": [
         "Öngörülen boyut"
       ],
+      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
+        "Herkes aynı davet bağlantısını alır. Sayfayı ziyaret ederler, e-posta adreslerini girerler ve Gmail gelen kutularına bir doğrulama kodu gelir. Buradan itibaren ${ BRAND_NAME } parolalarını belirlerler."
+      ],
+      "Expand step": [
+        "Adımı genişlet"
+      ],
       "Failed to load OAuth": [
         "OAuth yüklenemedi"
       ],
-      "Finalize migration": [
-        "Aktarım işlemini tamamla"
+      "Final step": [
+        "Son adım"
       ],
       "Finalize your migration": [
         "Aktarım işlemini tamamlayın"
-      ],
-      "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
-        "Aktarım tamamlandığında tüm e-postalarınız doğrudan ${ BRAND_NAME } adresine yönlendirilir. Kullanıcılar artık Google hesaplarına e-posta almayacak ve veriler ${ BRAND_NAME } ile Google arasında eşitlenmeyecek."
       ],
       "Find out what can be migrated.": [
         "Nelerin aktarılabileceğini öğrenin."
       ],
       "Finish setting up your business account": [
         "Kuruluş hesabınızın kurulumunu tamamlayın"
+      ],
+      "Get help and useful tips for other domain providers ${ here }": [
+        "Diğer etki alanı hizmeti sağlayıcıları için yardım ve ipuçlarını ${ here } alabilirsiniz"
       ],
       "Go to Domain names": [
         "Etki alanı adlarına git"
@@ -3059,14 +3062,14 @@
       "Google Workspace account": [
         "Google Workspace hesabı"
       ],
-      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
-        "Biraz bekleyin. Kullanıcı hesapları oluşturuluyor ve kısa süre içinde kullanıcı verileri aktarılmaya başlanacak."
-      ],
       "Has errors": [
         "Sorunlar çıktı"
       ],
-      "Import errors for ${ user.AdminSetName }": [
-        "${ user.AdminSetName } için içe aktarma hataları"
+      "Import completed successfully": [
+        "İçe aktarım tamamlandı"
+      ],
+      "Import details": [
+        "İçe aktarma ayrıntıları"
       ],
       "In progress": [
         "İşleniyor"
@@ -3080,29 +3083,47 @@
       "Install Migration assistant": [
         "Aktarım yardımcısını kur"
       ],
+      "Invitation link": [
+        "Davet bağlantısı"
+      ],
+      "Invitation message": [
+        "Davet iletisi"
+      ],
+      "invite link": [
+        "davet bağlantısı"
+      ],
+      "It can take up to 24 hours for these changes to propagate.": [
+        "Bu değişikliklerin yayılması 24 saat kadar sürebilir."
+      ],
       "Loading your organization data": [
         "Kuruluşunuzun verileri yükleniyor"
       ],
       "Mail": [
         "E-posta"
       ],
-      "Managed via ${ registrar.name }": [
-        "${ registrar.name } ile yönetiliyor"
-      ],
       "Member address not found. Please contact customer support to resolve this": [
         "Üye adresi bulunamadı. Bu sorunu çözmek için müşteri destek ekibimizle görüşün"
       ],
+      "Migrate": [
+        "Aktar"
+      ],
+      "Migrate accounts": [
+        "Hesapları aktar"
+      ],
+      "Migrate accounts to ${ BRAND_NAME }": [
+        "Hesapları ${ BRAND_NAME } hizmetine taşıyın"
+      ],
       "Migrate from Google Workspace": [
         "Google Workspace üzerinden aktar"
-      ],
-      "Migrate users": [
-        "Kullanıcıları aktar"
       ],
       "Migrate users to ${ BRAND_NAME }": [
         "Kullanıcıları ${ BRAND_NAME } üzerine aktarın"
       ],
       "Migrated": [
         "Aktarıldı"
+      ],
+      "Migrated accounts": [
+        "Aktarılan hesaplar"
       ],
       "Migration includes": [
         "Şunlar aktarılır"
@@ -3114,17 +3135,20 @@
       "Migration status": [
         "Aktarım durumu"
       ],
+      "Migration summary": [
+        "Aktarım özeti"
+      ],
       "Missing organization private key": [
         "Kuruluşun kişisel anahtarı eksik"
       ],
       "Missing organization public key": [
         "Kuruluşun herkese açık anahtarı bulunamadı"
       ],
-      "More details": [
-        "Daha fazla bilgi"
-      ],
       "Move your users, emails, and settings from Google Workspace automatically. We’ll guide you through connecting your account, verifying your domain, and migrating users securely.": [
         "Kullanıcılarınızı, e-postaları ve ayarları Google Workspace üzerinden otomatik olarak aktarın. Hesabınızı bağlamanız, etki alanınızı doğrulamanız ve kullanıcıları güvenli bir şekilde aktarmanız için size yol göstereceğiz."
+      ],
+      "Need help?": [
+        "Yardım mı gerekiyor?"
       ],
       "No error details available. Please contact customer support for more information": [
         "Herhangi bir hata bilgisi yok. Ayrıntılı bilgi almak için müşteri destek ekibimizle görüşün"
@@ -3138,8 +3162,11 @@
       "Not confirmed": [
         "Onaylanmamış"
       ],
-      "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
-        "Kullanıcılar ${ BRAND_NAME } hesaplarını aldığında aktarım işlemini tamamlayın."
+      "Not detected correctly? Choose your provider from the list.": [
+        "Doğru değil mi? Listeden hizmet sağlayıcınızı seçin."
+      ],
+      "Onboard your team": [
+        "Ekibinizi hazırlayın"
       ],
       "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
         "E-postaların ${ BRAND_NAME } adresine yönlendirildiğini doğruladığımızda aktarım tamamlanmış olacak. Bundan sonra size bilgi veren bir onay e-postası alacaksınız. Bu işlemin tamamlanması 24 saat kadar sürebilir."
@@ -3153,26 +3180,26 @@
       "Pending": [
         "Bekliyor"
       ],
-      "Please add the following records in your DNS console of your domain provider:": [
-        "Lütfen etki alanı sağlayıcınızın DNS panosuna şu kayıtları ekleyin:"
+      "Please don’t close or refresh this window.": [
+        "Lütfen bu pencereyi kapatmayın veya yenilemeyin."
       ],
-      "Please leave this window open until we're done creating all the users.": [
-        "Tüm kullanıcılar oluşturulana kadar bu pencereyi açık bırakın."
-      ],
-      "Please select at least one product to migrate": [
-        "Lütfen aktarılacak en az bir ürün seçin"
+      "Reauthenticate your Google Workspace account to start a migration": [
+        "Aktarımı başlatmak için Google Workspace hesap kimliğinizi yeniden doğrulayın"
       ],
       "Refresh": [
         "Yenile"
-      ],
-      "Required": [
-        "Zorunlu"
       ],
       "Required to create user accounts": [
         "Kullanıcı hesaplarını açmak için gereklidir"
       ],
       "Select at least one user to start a migration": [
         "Bir aktarım başlatmak için en az bir kullanıcı seçin"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Tam olarak neyi aktarmak istediğinizi seçin. Kuruluşun tüm kullanıcılarına uygulanır."
+      ],
+      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
+        "${ BRAND_NAME } üzerine aktarmak istediğiniz hesapları seçin. Kuruluşunuzun tümünü bugün aktarabilir ya da küçük bir parçasıyla başlayıp hazır olduğunuzda kalanını getirebilirsiniz."
       ],
       "Select users to migrate": [
         "Aktarılacak kullanıcıları seçin"
@@ -3201,23 +3228,32 @@
       "Settings": [
         "Ayarlar"
       ],
-      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
-        "Kullanıcıların ${ BRAND_NAME } hesaplarını alabilmeleri için onlarla etkinleştirme bağlantısını paylaşın."
-      ],
       "Sign in to Google Workspace": [
         "Google Workspace oturumu açın"
+      ],
+      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
+        "Aktarımı kurmak amacıyla ${ BRAND_NAME } için Google Workspace yönetici hesabıyla oturum açın."
       ],
       "Size": [
         "Boyut"
       ],
+      "Skip": [
+        "Atla"
+      ],
+      "Skipped ${ count } contact due to incompatibilities": [
+        "Uyumsuzluklar nedeniyle ${ count } kişi atlandı",
+        "Uyumsuzluklar nedeniyle ${ count } kişi atlandı"
+      ],
+      "Skipped ${ count } email due to incompatibilities": [
+        "Uyumsuzluklar nedeniyle ${ count } e-posta atlandı",
+        "Uyumsuzluklar nedeniyle ${ count } e-posta atlandı"
+      ],
+      "Skipped ${ count } event due to incompatibilities": [
+        "Uyumsuzluklar nedeniyle ${ count } etkinlik atlandı",
+        "Uyumsuzluklar nedeniyle ${ count } etkinlik atlandı"
+      ],
       "Some accounts are not claimed": [
         "Bazı hesaplar sahiplenilmemiş"
-      ],
-      "SPF records": [
-        "SPF kayıtları"
-      ],
-      "Start migrating": [
-        "Aktarımı başlat"
       ],
       "Start migration": [
         "Aktarımı başlat"
@@ -3225,17 +3261,8 @@
       "Status": [
         "Durum"
       ],
-      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
-        "Varsayılan ayar: Yok. Ancak güvenliğinizi artırmak için bu değeri p=quarantine olarak ayarlamanızı öneririz."
-      ],
-      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
-        "“p=“ değeri DMARC denetiminden geçemeyen e-postalar için yapılacak işlemi belirler. Yapılabilecek işlemler şunlardır:"
-      ],
-      "This migration has been completed": [
-        "Aktarım tamamlandı"
-      ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
-        "Kuruluşunuzun verilerini aktarmak için Google Workspace Marketplace üzerinden ${ BRAND_NAME } Migration Assistant uygulamasını kurmalısınız. Bu işlem ${ BRAND_NAME } ile verilerinizi kopyalama izni verecek. Kurduktan sonra buraya dönerek ilerleyin."
+      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
+        "Kuruluşunuzun verilerini ${ BRAND_NAME } üzerine taşımak için Google Workspace Marketplace üzerinden ${ BRAND_NAME } Easy Switch uygulamasını kurun. Kurulum sonrasında ilerlemek için buraya dönün."
       ],
       "Update records for receiving": [
         "Almak için kayıtları güncelleyin"
@@ -3243,17 +3270,17 @@
       "User": [
         "Kullanıcı"
       ],
-      "User needs to activate their account through the activation link shown above": [
-        "Kullanıcının hesabını yukarıdaki etkinleştirme bağlantısı ile etkinleştirmesi gerekiyor"
-      ],
-      "User status": [
-        "Kullanıcı durumu"
-      ],
-      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
-        "Kullanıcılar aktarım süreci boyunca aynı anda ${ BRAND_NAME } ve Google kullanabilir."
+      "Users activated": [
+        "Kullanıcılar etkinleştirildi"
       ],
       "Users migrated": [
         "Kullanıcılar aktarıldı"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } hesaplarına erişen kullanıcılar"
+      ],
+      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Aktarım tamamlanmadan önce hesap başvurusu yapmamış kullanıcıların ${ BRAND_NAME } kuruluş yöneticilerinden parola sıfırlama isteğinde bulunmaları gerekecek."
       ],
       "Verified": [
         "Doğrulandı"
@@ -3270,17 +3297,20 @@
       "Verify your domain to start a migration": [
         "Bir aktarım başlatmak için etki alanınızı doğrulayın"
       ],
-      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
-        "Google Workspace hesabınızla ilişkilendirilmiş bir birincil etki alanı bulduk. ${ BRAND_NAME } kuruluşunuzun e-posta kurulumunu sürdürmek için bunu onaylayın."
+      "Waiting for MX...": [
+        "MX kaydı bekleniyor..."
       ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Kurulum doğrulanamadı. Lütfen Google Workspace hesabınız ile kurduğunuzdan emin olun ve yeniden deneyin."
       ],
-      "We're still checking the MX records with your domain provider.": [
-        "Hala etki alanı hizmeti sağlayıcınızdaki MX kayıtlarını denetliyoruz."
+      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
+        "${ BRAND_NAME } güvenli e-posta hizmetine geçiyoruz.\nVe ${ BRAND_NAME } hesabınız alınmaya hazır.\n${ inviteLink } bağlantısına tıklayın.\nE-posta adresinizi yazın. Gmail adresinize bir kod göndereceğiz.\nBu kod ile parolanızı belirleyin ve ${ BRAND_NAME } hesabınız hazırlansın.\nKısa bir süre için ${ BRAND_NAME } ve Gmail adresleri yan yana çalışacak.\nArdından herkes aktarıldığında Gmail kullanımdan kaldırılacak. Bunu yapmadan önce size bildireceğiz."
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Bazı kullanıcıların henüz ${ BRAND_NAME } hesaplarını almadıklarını fark ettik."
+      ],
+      "We’re creating your accounts and importing your data now. Every email, every event is yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Şu anda hesaplarınızı oluşturuyor ve verilerinizi içe aktarıyoruz. Her e-posta ve her etkinlik sadece size aittir. Yalnızca ekibiniz tarafından görülebilir. Bizim tarafımızdan veya başka hiç kimse tarafından değil."
       ],
       "What are you migrating?": [
         "Neyi aktarıyorsunuz?"
@@ -3288,11 +3318,11 @@
       "You": [
         "Siz"
       ],
-      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
-        "Verilerinizi kopyalaması için ${ BRAND_NAME } uygulamasına izin vermelisiniz. İzinleri verdikten sonra ilerlemek için buraya dönün."
-      ],
       "You're all set!": [
         "Hazırsınız!"
+      ],
+      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
+        "Neredeyse bitirdiniz. E-postalarınızı doğrudan ${ BRAND_NAME } üzerinden alabilmek için etki alanınızı yapılandırmanız gerekiyor. Onaylandıktan sonra ekibiniz Gmail üzerinden yeni e-posta almayı durduracak ve aktarım tamamlanacak."
       ],
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Geçerli tarifenizde en fazla ${ maxMembers } kullanıcı olabilir. Daha fazla kullanıcı aktarmak için aboneliğinize yeni koltuklar ekleyin.",
@@ -5585,11 +5615,6 @@
         "Easy Switch içe aktarma yardımcısını kullanın"
       ]
     },
-    "Description for domain modal": {
-      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
-        "Yinelenen bir DMARC kaydı bulundu. Sorunu gidermek için etki alanı hizmeti sağlayıcınızın DNS panosuna gidin."
-      ]
-    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "Ayrıca, CSV alanları vCard alanlarıyla otomatik olarak eşleştirildi. Bu eşleşmeyi inceleyebilir ve el ile değiştirebilirsiniz."
@@ -7438,6 +7463,9 @@
       "Please add a payment method before reactivating your subscription": [
         "Aboneliğinizi yeniden etkinleştirmeden önce bir ödeme yöntemi ekleyin"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Lütfen ABN numaranızın sınır ötesi KDV için kayıtlı olup olmadığını denetleyin"
+      ],
       "Please complete the billing details": [
         "Lütfen fatura bilgilerini tamamlayın"
       ],
@@ -7709,6 +7737,9 @@
       ],
       "Validation error": [
         "Doğrulama sorunu"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "KDV numarası ${ prefixes } ile başlamalıdır"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Doğrulama başarısız oldu. Lütfen bir saat içinde yeniden deneyin."
@@ -10592,6 +10623,9 @@
       "Copy your referral link": [
         "Öneri bağlantınızı kopyalayın"
       ],
+      "Couldn´t send feedback": [
+        "Geri bildirim gönderilemedi"
+      ],
       "Country code": [
         "Ülke kodu"
       ],
@@ -10837,6 +10871,9 @@
       ],
       "Edit link": [
         "Bağlantıyı düzenle"
+      ],
+      "Editing requires permission": [
+        "Düzenleme için izin verilmelidir"
       ],
       "eduGAIN configuration saved": [
         "eduGAIN yapılandırması kaydedildi"
@@ -11498,6 +11535,9 @@
       "Key deletion is irreversible!": [
         "Anahtar silme işlemi geri alınamaz!"
       ],
+      "Key sections reorganized for faster access.": [
+        "Daha hızlı erişim için temel bölümler yeniden düzenlendi."
+      ],
       "Keys created": [
         "Anahtarlar oluşturuldu"
       ],
@@ -11665,6 +11705,12 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Yeni etkinlik verilerinin toplanması ve görüntülenmesi durdurulacak."
+      ],
+      "New sidebar": [
+        "Yeni kenar çubuğu"
+      ],
+      "New sidebar layout": [
+        "Yeni kenar çubuğu yerleşimi"
       ],
       "New user invited to organization": [
         "Kuruluşa yeni kullanıcı davet edildi"
@@ -12216,6 +12262,9 @@
       "Settings updated": [
         "Ayarlar güncellendi"
       ],
+      "Share your thoughts...": [
+        "Düşüncelerinizi paylaşın..."
+      ],
       "Shared ${ vaultLink } deleted": [
         "Paylaşılan ${ vaultLink } silindi"
       ],
@@ -12366,6 +12415,9 @@
       "Swiss based": [
         "İsviçre merkezli"
       ],
+      "Switch sidebars": [
+        "Kenar çubuklarını değiştir"
+      ],
       "Symbols (#$&)": [
         "Simgeler (#$&)"
       ],
@@ -12401,6 +12453,9 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Abone olduğunuz için teşekkürler. Artık güvenle gezinebilirsiniz."
+      ],
+      "Thanks - your feedback was sent.": [
+        "Teşekkürler. Geri bildiriminiz gönderildi."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Gizlilik ve özgürlüğe öncelik veren daha iyi bir internet oluşturma amacımızı desteklediğiniz için teşekkür ederiz."
@@ -13423,6 +13478,9 @@
       ],
       "your encrypted data will be locked": [
         "şifrelenmiş verileriniz kilitlenecek"
+      ],
+      "Your feedback": [
+        "Geri bildiriminiz"
       ],
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
@@ -14880,9 +14938,6 @@
       "Highest VPN speed": [
         "En yüksek VPN hızı"
       ],
-      "Host name": [
-        "Sunucu adı"
-      ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Bu e-posta adresini kalıcı olarak kaybetmemek için bu adresi şu anda başka bir hesaba eklemem gerektiğini anladım."
       ],
@@ -15075,9 +15130,6 @@
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "En az ${ MIN_PASSWORD_LENGTH } karakterden oluşmalıdır"
       ],
-      "MX records": [
-        "MX kayıtları"
-      ],
       "Name": [
         "Ad"
       ],
@@ -15260,9 +15312,6 @@
       ],
       "Primary": [
         "Birincil saat dilimi"
-      ],
-      "Priority": [
-        "Öncelik"
       ],
       "Priority support": [
         "Öncelikli destek"
@@ -15788,11 +15837,17 @@
       "Invalid ${ group.name } record found": [
         "Geçersiz ${ group.name } kaydı bulundu"
       ],
+      "Priority": [
+        "Öncelik"
+      ],
+      "Status": [
+        "Durum"
+      ],
       "Type": [
         "Tür"
       ],
-      "Use default value": [
-        "Varsayılan değer kullanılsın"
+      "Use default value (e.g. “@”)": [
+        "Varsayılan değer kullanılsın (“@” gibi)"
       ],
       "Valid ${ group.name } record found": [
         "Geçerli ${ group.name } kaydı bulundu"
@@ -15963,9 +16018,6 @@
       "data recovery option": [
         "verileri kurtarma seçeneği"
       ],
-      "Detailed instructions": [
-        "Ayrıntılı yönergeler"
-      ],
       "Details": [
         "Ayrıntılar"
       ],
@@ -16004,6 +16056,9 @@
       ],
       "Help": [
         "Yardım"
+      ],
+      "Help & support": [
+        "Yardım ve destek"
       ],
       "Help translate": [
         "Çeviriye yardımcı olun"
@@ -16118,6 +16173,9 @@
       ],
       "Sign in": [
         "Oturum aç"
+      ],
+      "Sign-in help": [
+        "Oturum açma yardımı"
       ],
       "Snap store": [
         "Snap store"
@@ -17487,9 +17545,9 @@
       "Send & receive invitations": [
         "Davetleri alma ve gönderme"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries } üzerinde ülkede sunucular",
-        "${ vpnServersCountData.paid.countries } üzerinde ülkede sunucular"
+      "Servers in ${ VPN_SERVERS.paid.countries }+ country": [
+        "${ VPN_SERVERS.paid.countries } üzerinde ülkede sunucu",
+        "${ VPN_SERVERS.paid.countries } üzerinde ülkede sunucu"
       ],
       "Share files with no size limit": [
         "Dosyaları boyut sınırı olmadan paylaşma"
@@ -18086,9 +18144,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "${ numberOfCountries } üzerindeki ülkede size ayrılmış sunucu konumları"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Kuzey Amerika ve Avrupa'da size ayrılmış sunucu konumları"
       ],
       "Multi-platform support": [
         "Çeşitli platformları destekler"
@@ -22074,7 +22129,7 @@
     },
     "Setting": {
       "Get updates about comments via email": [
-        "Yorumlarla ilgili güncellemeleri e-posta ile al"
+        "Yorum güncellemeleri e-posta ile bildirilsin"
       ],
       "Include document name in email notifications": [
         "E-posta bildirimlerine belge adı eklensin"
@@ -22090,7 +22145,7 @@
         "Hesap"
       ],
       "Managed Companies": [
-        "Yönetilen Şirketler"
+        "Yönetilen kuruluşlar"
       ],
       "Organization": [
         "Kuruluş"
@@ -22246,17 +22301,17 @@
         "${ VPN_CONNECTIONS } yüksek hızlı VPN bağlantısı",
         "${ VPN_CONNECTIONS } yüksek hızlı VPN bağlantısı"
       ],
-      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
-        "${ vpnServersCountData.free.countries } ülkede ${ vpnServersCountData.free.servers } üzerinde VPN sunucusu",
-        "${ vpnServersCountData.free.countries } ülkede ${ vpnServersCountData.free.servers } üzerinde VPN sunucusu"
+      "${ VPN_SERVERS.free.servers }+ VPN servers in ${ VPN_SERVERS.free.countries } country": [
+        "${ VPN_SERVERS.free.countries } ülkede ${ VPN_SERVERS.free.servers } üzerinde VPN sunucusu",
+        "${ VPN_SERVERS.free.countries } ülkede ${ VPN_SERVERS.free.servers } üzerinde VPN sunucusu"
       ],
-      "${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries } üzerinde ülkede",
-        "${ vpnServersCountData.paid.countries } üzerinde ülkede"
+      "${ VPN_SERVERS.paid.countries }+ country": [
+        "${ VPN_SERVERS.paid.countries } üzerinde ülke",
+        "${ VPN_SERVERS.paid.countries } üzerinde ülke"
       ],
-      "${ vpnServersCountData.paid.servers }+ server across": [
-        "${ vpnServersCountData.paid.servers } üzerinde sunucu",
-        "${ vpnServersCountData.paid.servers } üzerinde sunucu"
+      "${ VPN_SERVERS.paid.servers }+ server across": [
+        "${ VPN_SERVERS.paid.servers } üzerinde sunucu ile",
+        "${ VPN_SERVERS.paid.servers } üzerinde sunucu ile"
       ],
       "/user": [
         "/kullanıcı"
@@ -22529,12 +22584,12 @@
       "use your own email.": [
         "kendi e-posta adresinizi kullanın."
       ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "${ vpnServersCountData.free.countries } ülkede sunucuları bulunan VPN"
+      "VPN with servers in ${ VPN_SERVERS.free.countries } countries": [
+        "${ VPN_SERVERS.free.countries } ülkede sunucusu bulunan VPN"
       ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "${ vpnServersCountData.free.countries } ülkede sunucular",
-        "${ vpnServersCountData.free.countries } ülkede sunucular"
+      "VPN with servers in ${ VPN_SERVERS.free.countries } country": [
+        "${ VPN_SERVERS.free.countries } ülkede sunucusu bulunan VPN",
+        "${ VPN_SERVERS.free.countries } ülkede sunucusu bulunan VPN"
       ],
       "We’ll email you before your trial ends.": [
         "Deneme süreniz bitmeden önce size bir e-posta göndereceğiz."
@@ -24053,18 +24108,15 @@
         "Kuruluşunuzun VPN oturumu ayrıntılarını görüntüleyin."
       ],
       "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
-        "Yönetilen şirketlerle denetlediğiniz kuruluşlar için erişim ekleyebilir, düzenleyebilir ve kaldırabilirsiniz."
+        "Yönetilen kuruluşlar ile denetlediğiniz kuruluşlar için erişim ekleyebilir, düzenleyebilir ve kaldırabilirsiniz."
       ],
       "Your total monthly cost for all managed companies.": [
-        "Yönetilen tüm şirketler için toplam aylık maliyetiniz."
+        "Yönetilen tüm kuruluşlar için toplam aylık maliyetiniz."
       ]
     },
     "Success": {
       "Account deleted. Signing out...": [
         "Hesap silindi. Oturum kapatılıyor..."
-      ],
-      "Activation link copied to clipboard": [
-        "Etkinleştirme bağlantısı panoya kopyalandı"
       ],
       "Address added": [
         "Adres eklendi"
@@ -24540,6 +24592,11 @@
         "${ BRAND_NAME } ayarları kullanılsın"
       ]
     },
+    "Themes": {
+      "Themes": [
+        "Temalar"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } gün",
@@ -24623,6 +24680,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "Kuruluşlar için ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ VPN_APP_NAME } clients": [
+        "${ VPN_APP_NAME } istemcileri"
       ],
       "(active)": [
         "(etkin)"
@@ -24953,7 +25013,7 @@
         "Belgeler üzerinde işbirliği yapın"
       ],
       "Companies": [
-        "Şirketler"
+        "Kuruluşlar"
       ],
       "Compare plans": [
         "Tarifeleri karşılaştır"
@@ -25148,6 +25208,9 @@
       "Deep dive into VPN blog posts": [
         "VPN yazılarına derinlemesine dalın"
       ],
+      "Delete": [
+        "Sil"
+      ],
       "Delete ${ name }?": [
         "${ name } albümü silinsin mi?"
       ],
@@ -25266,6 +25329,9 @@
       "Download ${ PASS_APP_NAME } for your devices": [
         "Aygıtlarınız için ${ PASS_APP_NAME } indirin"
       ],
+      "Download apps": [
+        "Uygulamaları indir"
+      ],
       "Download the desktop app": [
         "Bilgisayar uygulamasını indirin"
       ],
@@ -25352,6 +25418,9 @@
       ],
       "Email privacy": [
         "E-posta gizliliği"
+      ],
+      "Email subscriptions": [
+        "E-posta abonelikleri"
       ],
       "Email verification": [
         "E-posta doğrulama"
@@ -25552,6 +25621,9 @@
       "Help center": [
         "Yardım merkezi"
       ],
+      "Help us improve": [
+        "Kendimizi geliştirmemize yardımcı olun"
+      ],
       "Helping activists in Hong Kong": [
         "Hong Kong aktivistlerine yardımlarımız"
       ],
@@ -25700,11 +25772,14 @@
       "Mobile": [
         "Mobil"
       ],
+      "Monitoring": [
+        "İzleme"
+      ],
       "Monthly": [
         "Aylık"
       ],
       "Monthly Costs": [
-        "Aylık Maliyet"
+        "Aylık maliyet"
       ],
       "Multi-user support": [
         "Çok kullanıcı desteği"
@@ -25712,11 +25787,17 @@
       "Multiple accounts, 1 private inbox": [
         "Birden çok hesap, 1 güvenli gelen kutusu"
       ],
+      "My account": [
+        "Hesabım"
+      ],
       "My addresses": [
         "Adreslerim"
       ],
       "My calendars": [
         "Takvimlerim"
+      ],
+      "My VPN": [
+        "VPN hizmetim"
       ],
       "Name": [
         "Ad"
@@ -25760,14 +25841,26 @@
       "Open pagination": [
         "Sayfalandırmayı aç"
       ],
+      "OpenVpn": [
+        "OpenVpn"
+      ],
       "OpenVPN": [
         "OpenVPN"
       ],
       "OpenVPN configuration files": [
         "OpenVPN yapılandırma dosyaları"
       ],
+      "OpenVPN username": [
+        "OpenVPN kullanıcı adı"
+      ],
       "Org setup": [
         "Kuruluş ayarları"
+      ],
+      "Organization": [
+        "Kuruluş"
+      ],
+      "Organization and people": [
+        "Kuruluş ve kişiler"
       ],
       "Organization filters": [
         "Kuruluş süzgeçleri"
@@ -26006,6 +26099,9 @@
       "Security": [
         "Güvenlik"
       ],
+      "Security and compliance": [
+        "Güvenlik ve uyumluluk"
+      ],
       "Security and privacy": [
         "Güvenlik ve gizlilik"
       ],
@@ -26135,6 +26231,9 @@
       "Single sign-on": [
         "Tek oturum açma"
       ],
+      "Single-sign on (SSO)": [
+        "Tek oturum açma (SSO)"
+      ],
       "SMS verification": [
         "SMS doğrulaması"
       ],
@@ -26199,6 +26298,9 @@
       "Summary": [
         "Özet"
       ],
+      "Summer Sale": [
+        "Yaz indirimi"
+      ],
       "Support ticket closed": [
         "Destek kaydı kapatıldı"
       ],
@@ -26247,6 +26349,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Bu elektronik tabloyu ön izlemek için ${ SHEETS_APP_NAME } uygulaması ile açın ya da indirin."
       ],
+      "Troubleshoot with ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } ile sorun çözün"
+      ],
       "Troubleshoot your issue": [
         "Sorununuzu giderin"
       ],
@@ -26291,6 +26396,9 @@
       ],
       "Upgrade to keep your premium benefits.": [
         "Ücretli avantajlarınızı korumak için tarifenizi yükseltin."
+      ],
+      "Upgrade your network protection with dedicated servers": [
+        "Size ayrılmış sunucular ile ağ korumanızı yükseltin"
       ],
       "Upgrade your privacy": [
         "Gizlilik düzeyinizi yükseltin"
@@ -26363,6 +26471,9 @@
       ],
       "View organization events by upgrading to Professional": [
         "Professional tarifesine yükselterek kuruluş etkinliklerini görüntüleyin"
+      ],
+      "VPN": [
+        "VPN"
       ],
       "VPN apps": [
         "VPN uygulamaları"
@@ -26438,6 +26549,9 @@
       ],
       "Your changes are not synced yet": [
         "Değişiklikleriniz henüz eşitlenmedi"
+      ],
+      "Your current plan": [
+        "Geçerli tarifeniz"
       ],
       "Your exposed information": [
         "Sızdırılmış bilgileriniz"
