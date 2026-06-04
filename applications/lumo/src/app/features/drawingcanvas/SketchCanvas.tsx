@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { IcPen } from '@proton/icons/icons/IcPen';
 
+import { isImeComposing } from '../../util/keyboard';
 import { Canvas } from './Canvas';
 import { Toolbar } from './Toolbar';
 import { useHistory } from './hooks/useHistory';
@@ -83,6 +84,10 @@ export const SketchCanvas = ({
                                 .t`e.g. "Make the sky purple", "Remove the items circled in red"`}
                             rows={1}
                             onKeyDown={(e) => {
+                                // Ignore Enter while an IME composition is in progress.
+                                if (isImeComposing(e)) {
+                                    return;
+                                }
                                 if (e.key === 'Enter' && !e.shiftKey) {
                                     e.preventDefault();
                                     handleExport();
