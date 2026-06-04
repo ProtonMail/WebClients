@@ -443,6 +443,9 @@
       "Get the apps": [
         "Obtener las aplicaciones"
       ],
+      "Get the deal": [
+        "Obtener la promoción"
+      ],
       "Get the writing assistant": [
         "Obtener el asistente de escritura"
       ],
@@ -3904,6 +3907,9 @@
       "Please activate your search again": [
         "Active de nuevo la búsqueda"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Revise si su IVA está registrado para el IVA transfronterizo"
+      ],
       "Please complete the billing details": [
         "Complete los detalles de facturación"
       ],
@@ -4097,6 +4103,9 @@
       ],
       "Validation error": [
         "Error de validación"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "El número IVA debe comenzar con ${ prefixes }"
       ],
       "Wrong billing address": [
         "Dirección de facturación incorrecta"
@@ -8916,9 +8925,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Ubicaciones de servidores dedicados en más de ${ numberOfCountries } países"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Ubicaciones de servidores dedicados en América del Norte y Europa"
       ],
       "Multi-platform support": [
         "Soporte multi plataforma"
