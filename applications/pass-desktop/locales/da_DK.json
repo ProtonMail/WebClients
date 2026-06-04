@@ -694,6 +694,9 @@
       "Skip": [
         "Spring over"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Nogen har delt et element med dig på ${ PASS_APP_NAME }."
+      ],
       "Sort vault items": [
         "Sortér elementer i boks"
       ],
@@ -1370,6 +1373,9 @@
       ],
       "Trashing item failed": [
         "Kunne ikke flytte element til papirkurven"
+      ],
+      "Try reaching out to the link owner.": [
+        "Prøv at kontakte linkets ejer."
       ],
       "Unable to generate an OTP code for this item": [
         "Kunne ikke generere en OTP-kode for dette element"
@@ -3921,6 +3927,9 @@
       "Theme": [
         "Tema"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Dette element er tilgængeligt indtil ${ date } eller indtil visningsgrænsen er nået."
+      ],
       "Tier/Level": [
         "Niveau"
       ],
@@ -4280,6 +4289,12 @@
       ],
       "The file you are trying to import is empty": [
         "Filen du prøver at importere er tom"
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Denne funktion understøttes ikke i dit abonnement. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Denne funktion understøttes ikke i dit abonnement. Kontakt din administrator for at få adgang."
       ],
       "Total files: ": [
         "Filer i alt: "
