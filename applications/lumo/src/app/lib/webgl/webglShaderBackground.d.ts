@@ -19,6 +19,19 @@ export interface WebglShaderBgBlobConfig {
     color: [number, number, number];
     mixStrength?: number;
     driftY?: number;
+    /** Full fade-in/fade-out cycle length in seconds (sinusoidal 0–1 opacity). Omit for always visible. */
+    pulsePeriodSec?: number;
+    /** Time offset in seconds within the pulse cycle (e.g. half the period for opposite phase). */
+    pulsePhaseSec?: number;
+    /**
+     * Breathe cycle: radius eases from full size down to `radiusPulseMinScale`, then back.
+     * Opacity follows the same curve (full at max size, dimmest at min). Omit for fixed size.
+     */
+    radiusPulsePeriodSec?: number;
+    /** Phase offset in seconds for the radius breathe cycle. */
+    radiusPulsePhaseSec?: number;
+    /** Smallest radius as a fraction of the configured `radius` (default 0.6). */
+    radiusPulseMinScale?: number;
 }
 
 export interface WebglShaderBgConfig {
