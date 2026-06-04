@@ -229,13 +229,11 @@ const getFollowingTextContent = (element: Element): string => {
  * blockquote so the rest of the pipeline treats it as the quoted message.
  */
 const processOutlookTopBorderEmail = (inputDocument: Element): Element => {
-    const existingSeparator = inputDocument.querySelector(BLOCKQUOTE_SELECTOR);
-    if (existingSeparator) {
-        return inputDocument;
-    }
-
     const candidates = Array.from(inputDocument.querySelectorAll('div'));
     const borderElement = candidates.find((element) => {
+        if (element.closest(BLOCKQUOTE_SELECTOR)) {
+            return false;
+        }
         if (!hasOutlookSeparatorStyle(element)) {
             return false;
         }
