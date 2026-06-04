@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { MemberRole, type ProtonDriveClient } from '../../../index';
+import { type MaybeNode, MemberRole, type ProtonDriveClient } from '../../../index';
 import { handleSdkError } from '../../../legacy/errorHandling';
 import { getNodeEntity } from '../../../legacy/sdkUtils/getNodeEntity';
-import { getNodeAncestry, getNodeEffectiveRole } from '../../../modules/nodes';
+import { getNodeEffectiveRole } from '../../../modules/nodes';
 
 type SelectedItemsConfig = {
     nodeUid: string;
@@ -38,12 +38,14 @@ export const useMoveEligibility = (
             }
 
             // Check: Can't move a folder into itself.
-            const ancestryNodesResult = await getNodeAncestry(targetFolderUid, drive);
-            if (!ancestryNodesResult.ok) {
-                handleSdkError(ancestryNodesResult.error, { showNotification: false });
+            let hierarchy: MaybeNode[];
+            try {
+                hierarchy = await drive.getNodeHierarchy(targetFolderUid);
+            } catch (e) {
+                handleSdkError(e, { showNotification: false });
                 return;
             }
-            const ancestryNodeUids = ancestryNodesResult.value.map((maybeNode) => getNodeEntity(maybeNode).node.uid);
+            const ancestryNodeUids = hierarchy.map((maybeNode) => getNodeEntity(maybeNode).node.uid);
             const selectedItemUids = selectedItemConfigs.map((config) => config.nodeUid);
             const isMovingIntoDescendant = ancestryNodeUids.some((ancestorUid) =>
                 selectedItemUids.includes(ancestorUid)

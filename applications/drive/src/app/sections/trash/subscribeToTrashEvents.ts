@@ -2,8 +2,8 @@ import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import type { BusDriverClient } from '@proton/drive/modules/busDriver';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
+import { getFormattedNodeLocation } from '@proton/drive/modules/nodes';
 
-import { getFormattedNodeLocation } from '../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 import { trashLogDebug } from './trashLogger';
 import { createTrashItem, useTrashStore } from './useTrash.store';

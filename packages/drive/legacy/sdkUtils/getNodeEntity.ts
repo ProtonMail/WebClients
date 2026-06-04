@@ -8,7 +8,7 @@ import {
     type PhotoNode,
 } from '@protontech/drive-sdk';
 
-import { getNodeName } from '../../modules/nodes';
+import { getNodeName } from '../../modules/nodes/internal/getNodeName';
 
 export type GetNodeEntityType = {
     node: NodeEntity;
