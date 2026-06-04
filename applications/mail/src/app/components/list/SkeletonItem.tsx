@@ -50,7 +50,6 @@ const SkeletonItem = ({ labelID, conversationMode, isCompactView, loading, eleme
                     isCompactView={isCompactView}
                     labelID={labelID}
                     loading={loading}
-                    elementID={element.ID}
                     element={element}
                     conversationMode={conversationMode}
                     showIcon={false}

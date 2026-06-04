@@ -64,7 +64,6 @@ interface MailboxListContextValue {
 
     // Others
     labelID?: string;
-    elementID?: string;
     conversationMode: boolean;
     mailboxListLoading: boolean;
     isSearch: boolean;
@@ -94,7 +93,7 @@ export const MailboxListProvider = ({
     anchorRef,
     customActions = {},
 }: MailboxListProviderProps) => {
-    const { labelID, isSearching: isSearch, filter, elementID, conversationMode } = useMailSelector(selectParams);
+    const { labelID, isSearching: isSearch, filter, conversationMode } = useMailSelector(selectParams);
 
     const elementsData = useListElements({
         inputElements,
@@ -116,7 +115,6 @@ export const MailboxListProvider = ({
     });
 
     const actionsData = useListActions({
-        elementID,
         labelID,
         checkedIDs,
         onCheck,
@@ -157,7 +155,6 @@ export const MailboxListProvider = ({
         handlePage: onPage,
 
         labelID,
-        elementID,
         conversationMode,
         mailboxListLoading: loading,
         isSearch,

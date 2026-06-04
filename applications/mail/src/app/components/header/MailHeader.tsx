@@ -14,6 +14,7 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
 import type { MailboxActions } from 'proton-mail/router/interface';
 import { selectHasFocusedComposer } from 'proton-mail/store/composers/composerSelectors';
+import { selectElementID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
@@ -25,14 +26,15 @@ import { MailHeaderActionArea } from './MailHeaderActionArea';
 
 interface Props {
     labelID: string;
-    elementID: string | undefined;
     elementsData: ElementsStructure;
     actions: MailboxActions;
     settingsButton?: ReactNode;
     toolbar?: ReactNode | undefined;
 }
 
-const MailHeader = ({ labelID, elementID, elementsData, actions, toolbar, settingsButton }: Props) => {
+const MailHeader = ({ labelID, elementsData, actions, toolbar, settingsButton }: Props) => {
+    const elementID = useMailSelector(selectElementID);
+
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
     const dispatch = useMailDispatch();

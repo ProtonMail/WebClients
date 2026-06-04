@@ -117,7 +117,6 @@ const TestProvider = ({ children, history }: Props) => {
                                                         <MailboxContainerContextProvider
                                                             isResizing={false}
                                                             containerRef={contentRef}
-                                                            elementID={undefined}
                                                         >
                                                             <GlobalModalProvider>
                                                                 <ComposeProvider onCompose={onCompose}>

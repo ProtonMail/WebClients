@@ -3,6 +3,9 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 import debounce from 'lodash/debounce';
 
+import { selectElementID } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
+
 interface ContextProps {
     /**
      * Related to column layout when user is resizing MessageView.
@@ -24,17 +27,17 @@ interface ProviderProps {
      * Pass null value for tests
      */
     containerRef: RefObject<HTMLElement> | null;
-    elementID: string | undefined;
 }
 
 const MailboxContainerContext = createContext<ContextProps | undefined>(undefined);
 
-export const MailboxContainerContextProvider = ({ children, isResizing, containerRef, elementID }: ProviderProps) => {
+export const MailboxContainerContextProvider = ({ children, isResizing, containerRef }: ProviderProps) => {
     /**
      * This value is set in order to trigger a rerender after containerRef scroll.
      * This helps the tooltip to keep up to date x/y coords related to the iframe
      */
     const [containerScrollTop, setContainerScrollTop] = useState(0);
+    const elementID = useMailSelector(selectElementID);
 
     useEffect(() => {
         const containerEl = containerRef && containerRef?.current;
