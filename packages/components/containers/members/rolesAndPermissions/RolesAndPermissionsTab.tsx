@@ -33,9 +33,17 @@ interface Props {
     organizationRoles: OrganizationRole[] | undefined;
     userRoles?: RoleAssignment[];
     loadingRoles: boolean;
+    isGroupContext?: boolean;
 }
 
-const RolesAndPermissionsTab = ({ selectedRoles, onChange, organizationRoles, userRoles, loadingRoles }: Props) => {
+const RolesAndPermissionsTab = ({
+    selectedRoles,
+    onChange,
+    organizationRoles,
+    userRoles,
+    loadingRoles,
+    isGroupContext = false,
+}: Props) => {
     const rows = buildRows(organizationRoles, userRoles, selectedRoles);
 
     const handleToggle = (roleId: string) => {
@@ -51,8 +59,11 @@ const RolesAndPermissionsTab = ({ selectedRoles, onChange, organizationRoles, us
     return (
         <>
             <p className="color-weak mt-6 mb-8">
-                {c('user_modal')
-                    .t`Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.`}
+                {isGroupContext
+                    ? c('group_modal')
+                          .t`Add delegated roles to a group to grant its members only the specific permissions they need, keeping full-admin power separate and your environment secure.`
+                    : c('user_modal')
+                          .t`Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.`}
             </p>
             {loadingRoles ? (
                 <div className="flex justify-center py-4">
