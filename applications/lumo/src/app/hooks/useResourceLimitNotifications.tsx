@@ -19,34 +19,34 @@ interface ConversationRouteParams {
 }
 
 const getLimitErrorText = (error: ResourceLimitError, isProjectSpace = true): string => {
-    const { resource, limit } = error;
+    const { resource } = error;
     switch (resource) {
         case 'messages':
-            // translator: shown when a conversation reaches the maximum number of messages allowed (e.g. 250)
+            // translator: shown when a conversation gets too long to stay responsive. Reassures the user this is about performance, not a plan limit.
             return c('collider_2025: Error')
-                .t`You've reached the maximum of ${limit} messages in this conversation. Start a new conversation to continue chatting with ${LUMO_SHORT_APP_NAME}.`;
+                .t`This conversation is too long to continue. Start a new chat to keep ${LUMO_SHORT_APP_NAME} purring and responsive.`;
         case 'assets':
             if (!isProjectSpace) {
-                // translator: shown when a non-project chat space reaches the maximum number of uploaded files allowed (e.g. 100)
+                // translator: shown when a chat has as many files as it can handle while staying responsive. This is a performance limit, not a plan limit.
                 return c('collider_2025: Error')
-                    .t`You've reached the maximum of ${limit} files in this chat. Remove some files before uploading new ones.`;
+                    .t`That's a lot of files for ${LUMO_SHORT_APP_NAME} to juggle. Remove some from this chat before uploading new ones to keep things purring.`;
             }
-            // translator: shown when a project reaches the maximum number of uploaded files allowed (e.g. 100)
+            // translator: shown when a project has as many files as it can handle while staying responsive. This is a performance limit, not a plan limit.
             return c('collider_2025: Error')
-                .t`You've reached the maximum of ${limit} files in this project. Remove some files before uploading new ones.`;
+                .t`That's a lot of files for ${LUMO_SHORT_APP_NAME} to juggle. Remove some from this project before uploading new ones to keep things purring.`;
         case 'conversations':
             if (!isProjectSpace) {
-                // translator: shown when a non-project chat space reaches the maximum number of conversations allowed (e.g. 100)
+                // translator: shown when a chat holds as many conversations as it can while staying responsive. This is a performance limit, not a plan limit.
                 return c('collider_2025: Error')
-                    .t`You've reached the maximum of ${limit} conversations. Delete some to create a new one.`;
+                    .t`This chat is full to the whiskers. Start a new chat to keep ${LUMO_SHORT_APP_NAME} purring.`;
             }
-            // translator: shown when a project reaches the maximum number of conversations allowed (e.g. 100)
+            // translator: shown when a project holds as many conversations as it can while staying responsive. This is a performance limit, not a plan limit.
             return c('collider_2025: Error')
-                .t`You've reached the maximum of ${limit} conversations in this project. Delete some to create a new one.`;
+                .t`This project is full to the whiskers. Delete a conversation to make room for a new one and keep ${LUMO_SHORT_APP_NAME} purring.`;
         case 'spaces':
-            // translator: shown when a user reaches the maximum number of projects/spaces allowed
+            // translator: shown when a user has as many projects as ${LUMO_SHORT_APP_NAME} can keep responsive. This is a performance limit, not a plan limit.
             return c('collider_2025: Error')
-                .t`You've reached the maximum number of projects. Delete some before creating a new one.`;
+                .t`That's all the projects ${LUMO_SHORT_APP_NAME} can keep purring at once. Delete one before creating a new one.`;
         default:
             // translator: generic fallback when a resource limit is reached
             return c('collider_2025: Error').t`You've reached a usage limit. Please try again later.`;
@@ -96,19 +96,24 @@ export const useResourceLimitNotifications = () => {
     }, [errors, createNotification, dispatch, activeConversationId, activeSpaceId, spaces]);
 };
 
-export const getApproachingLimitText = (resource: ResourceLimitType, remaining: number): string => {
+export const getApproachingLimitText = (resource: ResourceLimitType, _remaining: number): string => {
     switch (resource) {
         case 'messages':
+            // translator: shown when a conversation is getting long. Frames it as a performance hint, not a plan limit.
             return c('collider_2025: Warning')
-                .t`You have ${remaining} messages left in this conversation before reaching the limit.`;
+                .t`This conversation is getting long. Start a new chat soon to keep ${LUMO_SHORT_APP_NAME} purring.`;
         case 'assets':
+            // translator: shown when a project is getting close to its responsive file capacity.
             return c('collider_2025: Warning')
-                .t`You have ${remaining} file uploads left in this project before reaching the limit.`;
+                .t`This project is filling up. Tidying away files you no longer need keeps ${LUMO_SHORT_APP_NAME} purring.`;
         case 'conversations':
+            // translator: shown when a project is getting close to its responsive conversation capacity.
             return c('collider_2025: Warning')
-                .t`You have ${remaining} conversations left in this project before reaching the limit.`;
+                .t`This project is filling up. Tidying away conversations you no longer need keeps ${LUMO_SHORT_APP_NAME} purring.`;
         case 'spaces':
-            return c('collider_2025: Warning').t`You have ${remaining} projects left before reaching the limit.`;
+            // translator: shown when a user is getting close to the number of projects that stay responsive.
+            return c('collider_2025: Warning')
+                .t`You're getting close to the number of projects ${LUMO_SHORT_APP_NAME} can keep purring over.`;
         default:
             return '';
     }
