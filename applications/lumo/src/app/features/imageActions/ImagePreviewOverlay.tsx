@@ -3,13 +3,13 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcCross } from '@proton/icons/icons/IcCross';
 
 import { SketchCanvas } from '../drawingcanvas/SketchCanvas';
 import type { DrawingMode } from '../drawingcanvas/types';
-import { ImageModifyButton, ImageStyleDropdown } from './ImageActionButtons';
+import { ImageDownloadButton, ImageModifyButton, ImageStyleDropdown } from './ImageActionButtons';
 
 import '../drawingcanvas/SketchCanvas.scss';
 import './imageActions.scss';
@@ -157,24 +157,49 @@ export const ImagePreviewOverlay = ({
                         style={{ padding: '4rem 2rem 1rem' }}
                         onClick={onClose}
                     >
-                        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
-                        <img
-                            src={imageDataUrl}
-                            alt={filename || 'Generated image'}
-                            className="block rounded-xl"
-                            style={{
-                                maxWidth: '80vw',
-                                maxHeight: '100%',
-                                objectFit: 'contain',
-                                boxShadow: '0 8px 40px rgba(0,0,0,0.3)',
-                            }}
-                            onClick={(e) => e.stopPropagation()}
-                        />
+                        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                        <div className="image-preview-shell" onClick={(e) => e.stopPropagation()}>
+                            <Button
+                                className="image-preview-close shrink-0 bg-norm"
+                                icon
+                                size="small"
+                                shape="ghost"
+                                onClick={onClose}
+                                title={c('collider_2025:Action').t`Close`}
+                            >
+                                <IcCross size={4} />
+                            </Button>
+                            <div className="image-preview-container bg-norm flex flex-column items-center justify-center p-6 pb-8 rounded-xxl gap-6">
+                                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
+                                <img
+                                    src={imageDataUrl}
+                                    alt={filename || 'Generated image'}
+                                    className="block rounded-xxl "
+                                    style={{
+                                        maxWidth: '60vw',
+                                        maxHeight: '100%',
+                                        objectFit: 'contain',
+                                    }}
+                                    onClick={(e) => e.stopPropagation()}
+                                />
+                                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                                <div
+                                    className="flex items-center justify-center gap-2 flex-wrap"
+                                    onClick={(e) => e.stopPropagation()}
+                                >
+                                    {onExport && <ImageModifyButton onClick={handleModify} />}
+                                    {showStyleOptions && onChangeStyle && (
+                                        <ImageStyleDropdown onSelect={handleStyleChange} stopPropagation />
+                                    )}
+                                    {mode === 'preview' && onDownload && <ImageDownloadButton onClick={onDownload} />}
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Action bar */}
-                    {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
-                    <div
+                    {}
+                    {/* <div
                         className="flex items-center justify-center gap-2 flex-wrap pb-20"
                         onClick={(e) => e.stopPropagation()}
                     >
@@ -182,7 +207,7 @@ export const ImagePreviewOverlay = ({
                         {showStyleOptions && onChangeStyle && (
                             <ImageStyleDropdown onSelect={handleStyleChange} stopPropagation />
                         )}
-                    </div>
+                    </div> */}
 
                     {formattedDate && (
                         <div
@@ -200,6 +225,16 @@ export const ImagePreviewOverlay = ({
             ) : (
                 /* Edit mode: SketchCanvas takes all remaining space */
                 <div className="flex-1 min-h-0 relative">
+                    <Button
+                        className="image-lightbox-back shrink-0 bg-norm"
+                        icon
+                        size="small"
+                        shape="ghost"
+                        onClick={() => setMode('preview')}
+                        title={c('collider_2025:Action').t`Back`}
+                    >
+                        <IcArrowLeft size={4} />
+                    </Button>
                     <SketchCanvas
                         mode="overlay"
                         baseImage={imageDataUrl}
