@@ -1261,6 +1261,12 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Edit invoice details": [
+        "Redigera fakturadetaljer"
+      ],
+      "Sign out of ${ tokens[0].Account }": [
+        "Logga ut från ${ tokens[0].Account }"
       ]
     },
     "action": {
@@ -2160,6 +2166,51 @@
       ],
       "You're all set!": [
         "Du är klar!"
+      ],
+      "${ relevantCount } of ${ totalCount }": [
+        "${ relevantCount } av ${ totalCount }"
+      ],
+      "Configure users": [
+        "Konfigurera användare"
+      ],
+      "Domain provider": [
+        "Domänleverantör"
+      ],
+      "Emails": [
+        "E-post"
+      ],
+      "Final step": [
+        "Sista steget"
+      ],
+      "Import details": [
+        "Importdetaljer"
+      ],
+      "Invitation link": [
+        "Inbjudningslänk"
+      ],
+      "Invitation message": [
+        "Inbjudningsmeddelande"
+      ],
+      "invite link": [
+        "inbjudningslänk"
+      ],
+      "Migrate": [
+        "Migrera"
+      ],
+      "Migrate accounts": [
+        "Migrera konton"
+      ],
+      "Migrated accounts": [
+        "Migrerade konton"
+      ],
+      "Need help?": [
+        "Behöver du hjälp?"
+      ],
+      "Skip": [
+        "Hoppa över"
+      ],
+      "Users activated": [
+        "Användare aktiverade"
       ]
     },
     "Browser": {
@@ -10192,6 +10243,12 @@
       ],
       "Valid ${ group.name } record found": [
         "Giltig ${ group.name }-post hittades"
+      ],
+      "Priority": [
+        "Prioritet"
+      ],
+      "Status": [
+        "Status"
       ]
     },
     "Label for new member": {
@@ -10473,6 +10530,9 @@
       ],
       "What’s this?": [
         "Vad är detta?"
+      ],
+      "Help & support": [
+        "Hjälp och support"
       ]
     },
     "Link (Scribe)": {

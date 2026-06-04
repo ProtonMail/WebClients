@@ -1273,6 +1273,9 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Sign out of ${ tokens[0].Account }": [
+        "Deconectat de la ${ tokens[0].Account }"
       ]
     },
     "action": {
@@ -2225,6 +2228,159 @@
         "Planul actual permite maxim ${ maxMembers } utilizator. Pentru a migra utilizatori suplimentari, adăugați mai multe licențe la abonament.",
         "Planul actual permite maxim ${ maxMembers } utilizatori. Pentru a migra utilizatori suplimentari, adăugați mai multe licențe la abonament.",
         "Planul actual permite maxim ${ maxMembers } de utilizatori. Pentru a migra utilizatori suplimentari, adăugați mai multe licențe la abonament."
+      ],
+      "${ BRAND_NAME } Easy Switch": [
+        "${ BRAND_NAME } Easy Switch"
+      ],
+      "${ relevantCount } of ${ totalCount }": [
+        "${ relevantCount } din ${ totalCount }"
+      ],
+      "Accounts migrated": [
+        "Conturi migrate"
+      ],
+      "Add your organization email domain to ${ BRAND_NAME }.": [
+        "Adăugați domeniul de e-mail al organizației proprii la ${ BRAND_NAME }."
+      ],
+      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
+        "Toate conturile de utilizator migrate sunt gata pentru a fi invitate în organizația proprie din ${ BRAND_NAME }."
+      ],
+      "An unknown error ocurred. Please refresh the page and try again": [
+        "A apărut o eroare necunoscută. Actualizați pagina și reîncercați."
+      ],
+      "Collapse step": [
+        "Restrângere pas"
+      ],
+      "Configure users": [
+        "Configurare utilizatori"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host.": [
+        "Copiați codul de mai jos și inserați-l în secțiunea DNS a gazdei domeniului."
+      ],
+      "Creating accounts. Going private": [
+        "Se creează conturile. Se confidențializează."
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Starea migrării datelor din Google Workspace către ${ BRAND_NAME }"
+      ],
+      "Domain provider": [
+        "Furnizor domeniu"
+      ],
+      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
+        "Nu știți de unde să începeți? Priviți cum să vă actualizați DNS-ul pe ${ registrarLink }."
+      ],
+      "Emails": [
+        "Mesaje"
+      ],
+      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
+        "Toată lumea primește aceeași legătură web de invitare. Vor accesa pagina, vor introduce adresa de e-mail și un cod de verificare va ajunge în contul Gmail. De acolo, își vor seta parola pentru ${ BRAND_NAME }."
+      ],
+      "Expand step": [
+        "Extindere pas"
+      ],
+      "Final step": [
+        "Pas final"
+      ],
+      "Get help and useful tips for other domain providers ${ here }": [
+        "Obțineți ajutor și sfaturi utile de la alți furnizori de domenii ${ here }"
+      ],
+      "Import completed successfully": [
+        "Import realizat cu succes."
+      ],
+      "Import details": [
+        "Detalii importare"
+      ],
+      "Invitation link": [
+        "Legătură web invitare"
+      ],
+      "Invitation message": [
+        "Mesaj invitație"
+      ],
+      "invite link": [
+        "legătură web invitare"
+      ],
+      "It can take up to 24 hours for these changes to propagate.": [
+        "Propagarea acestor modificări poate dura până la 24 de ore."
+      ],
+      "Migrate": [
+        "Migrare"
+      ],
+      "Migrate accounts": [
+        "Migrare conturi"
+      ],
+      "Migrate accounts to ${ BRAND_NAME }": [
+        "Migrare conturi în ${ BRAND_NAME }"
+      ],
+      "Migrated accounts": [
+        "Conturi migrate"
+      ],
+      "Migration summary": [
+        "Rezumat migrare"
+      ],
+      "Need help?": [
+        "Doriți ajutor?"
+      ],
+      "Not detected correctly? Choose your provider from the list.": [
+        "Nu a fost detectat corect? Alegeți furnizorul din listă."
+      ],
+      "Onboard your team": [
+        "Înrolați-vă echipa"
+      ],
+      "Please don’t close or refresh this window.": [
+        "Nu închideți și nu împrospătați această fereastră."
+      ],
+      "Reauthenticate your Google Workspace account to start a migration": [
+        "Reautentificați-vă contul Google Workspace pentru a începe o migrare."
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selectați exact ce doriți să migrați. Se va aplica tuturor utilizatorilor organizației."
+      ],
+      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
+        "Selectați conturile pe care doriți să le aduceți la ${ BRAND_NAME }. Puteți migra întreaga organizație astăzi sau puteți începe cu o migrație mică și puteți aduce restul când sunteți gata."
+      ],
+      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
+        "Conectați-vă cu un cont de administrator Google Workspace pentru ca ${ BRAND_NAME } să configureze migrarea."
+      ],
+      "Skip": [
+        "Omitere"
+      ],
+      "Skipped ${ count } contact due to incompatibilities": [
+        "S-a omis ${ count } contact datorită incompatibilităților.",
+        "S-au omis ${ count } contacte datorită incompatibilităților.",
+        "S-au omis ${ count } de contacte datorită incompatibilităților."
+      ],
+      "Skipped ${ count } email due to incompatibilities": [
+        "S-a omis ${ count } de mesaje datorită incompatibilităților.",
+        "S-au omis ${ count } mesaje datorită incompatibilităților.",
+        "S-au omis ${ count } de mesaje datorită incompatibilităților."
+      ],
+      "Skipped ${ count } event due to incompatibilities": [
+        "S-a omis ${ count } eveniment datorită incompatibilităților.",
+        "S-au omis ${ count } evenimente datorită incompatibilităților.",
+        "S-au omis ${ count } de evenimente datorită incompatibilităților."
+      ],
+      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
+        "Pentru a transfera datele organizației la ${ BRAND_NAME }, instalați ${ BRAND_NAME } Easy Switch din Google Workspace Marketplace. După instalare, reveniți aici pentru a continua."
+      ],
+      "Users activated": [
+        "Utilizatori activați"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Utilizatori care și-au accesat contul ${ BRAND_NAME }"
+      ],
+      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Utilizatorii care nu și-au revendicat contul înainte de finalizarea migrării vor trebui să solicite o resetare a parolei de la administratorul organizației lor din ${ BRAND_NAME }."
+      ],
+      "Waiting for MX...": [
+        "În așteptarea MX-ului..."
+      ],
+      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
+        "Ne mutăm la ${ BRAND_NAME }, serviciul de e-mail securizat.\nContul ${ BRAND_NAME } pe care îl dețineți este gata de revendicat.\nFaceți clic pe ${ inviteLink }.\nIntroduceți adresa de e-mail unde să vi se trimită un cod în contul de Gmail.\nFolosiți-l pentru a vă seta parola — iar contul ${ BRAND_NAME } vă aparține.\nPentru o perioadă scurtă de timp, ambele vor funcționa împreună. Atât ${ BRAND_NAME } cât și Gmail.\nApoi, când toată lumea va face mutarea, vom retrage adresa din Gmail. Vă vom reaminti înainte de a o face."
+      ],
+      "We’re creating your accounts and importing your data now. Every email, every event is yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Se creează conturile și se importă datele. Fiecare e-mail, fiecare eveniment vă aparține doar dumneavoastră. Vizibil doar pentru echipa proprie. Nu pentru noi, nu pentru nimeni altcineva."
+      ],
+      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
+        "Aproape ați terminat, trebuie să vă configurații domeniul pentru a primi mesaje direct pe ${ BRAND_NAME }. După confirmare, echipa proprie nu va mai primi mesaje noi pe Gmail, iar migrarea va fi finalizată."
       ]
     },
     "Browser": {
@@ -9365,6 +9521,9 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "Editing requires permission": [
+        "Editarea necesită permisiuni"
       ]
     },
     "info": {
@@ -10549,6 +10708,15 @@
       ],
       "Valid ${ group.name } record found": [
         "S-a găsit o înregistrare ${ group.name } validă"
+      ],
+      "Priority": [
+        "Prioritate"
+      ],
+      "Status": [
+        "Stare"
+      ],
+      "Use default value (e.g. “@”)": [
+        "Folosire valoare implicită (ex. „@”)"
       ]
     },
     "Label for new member": {
@@ -10836,6 +11004,9 @@
       ],
       "What’s this?": [
         "Ce este asta?"
+      ],
+      "Help & support": [
+        "Ajutor și asistență"
       ]
     },
     "Link (Scribe)": {
@@ -17882,6 +18053,12 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "OpenVpn": [
+        "OpenVPN"
+      ],
+      "Summer Sale": [
+        "Promoție de vară"
       ]
     },
     "Title for payment methods table": {
