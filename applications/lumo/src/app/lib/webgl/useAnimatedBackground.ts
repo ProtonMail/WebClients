@@ -33,7 +33,7 @@ const SHADER_CONFIG: WebglShaderBgConfig = {
             x: 0.2,
             y: 0.7,
             radius: 0.1,
-            weight: 0.4,
+            weight: 0.6,
             color: [0.55, 1, 0.93], // Cyan ≈ rgb(142, 255, 238)
             mixStrength: 0.7,
             driftY: 0,
@@ -45,7 +45,7 @@ const SHADER_CONFIG: WebglShaderBgConfig = {
             x: 0.35,
             y: 0.7,
             radius: 0.2,
-            weight: 0.4,
+            weight: 0.6,
             color: [0.45, 0.3, 1], // Purple ≈ rgb(140, 64, 255)
             mixStrength: 0.4,
             driftY: 0.1,
@@ -58,7 +58,7 @@ const SHADER_CONFIG: WebglShaderBgConfig = {
             x: 0.5,
             y: 0.7,
             radius: 0.2,
-            weight: 0.4,
+            weight: 0.6,
             color: [0.91, 0.31, 0.8], // Pink ≈ rgb(232, 79, 205)
             mixStrength: 0.4,
             driftY: 0,
@@ -71,7 +71,7 @@ const SHADER_CONFIG: WebglShaderBgConfig = {
             x: 0.6,
             y: 0.8,
             radius: 0.1,
-            weight: 0.4,
+            weight: 0.6,
             color: [0.99, 0.62, 0.44], // Orange ≈ rgb(254, 160, 126)
             mixStrength: 0.6,
             driftY: 0,
@@ -344,8 +344,8 @@ const SHADER_CONFIG: WebglShaderBgConfig = {
 // };
 
 const PARTICLE_CONFIG: Partial<GridParticleFieldOptions> = {
-    spacing: 12,
-    size: 1,
+    spacing: 18,
+    size: 2,
     alpha: 0.98,
     interactionRadius: 200, // Larger area of effect (was 120)
     repelStrength: 10, // Stronger push effect (was 6)
