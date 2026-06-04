@@ -2568,9 +2568,6 @@
       "Contacts": [
         "Liên hệ"
       ],
-      "Domain connected": [
-        "Đã kết nối miền"
-      ],
       "Estimated size": [
         "Kích thước ước tính"
       ],
@@ -2586,9 +2583,6 @@
       "Migrate from Google Workspace": [
         "Chuyển từ Google Workspace"
       ],
-      "Migrate users": [
-        "Chuyển người dùng"
-      ],
       "Migration includes": [
         "Chuyển dữ liệu bao gồm"
       ],
@@ -2603,9 +2597,6 @@
       ],
       "Organization does not have enough storage available": [
         "Tổ chức không có đủ dung lượng lưu trữ khả dụng"
-      ],
-      "Required": [
-        "Bắt buộc"
       ],
       "Required to create user accounts": [
         "Bắt buộc để tạo tài khoản người dùng"
@@ -15066,9 +15057,6 @@
       "Send & receive invitations": [
         "Gửi & nhận lời mời"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Các máy chủ tại ${ vpnServersCountData.paid.countries }+ quốc gia"
-      ],
       "Share files with no size limit": [
         "Chia sẻ tệp không giới hạn kích thước"
       ],
@@ -15642,9 +15630,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Vị trí máy chủ chuyên dụng tại hơn ${ numberOfCountries } quốc gia"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Các vị trí máy chủ chuyên dụng tại Bắc Mỹ và Châu Âu"
       ],
       "Multi-platform support": [
         "Hỗ trợ đa nền tảng"
@@ -19040,15 +19025,6 @@
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS } kết nối VPN tốc độ cao"
       ],
-      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
-        "Hơn ${ vpnServersCountData.free.servers } máy chủ VPN tại ${ vpnServersCountData.free.countries } quốc gia"
-      ],
-      "${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries }+ quốc gia"
-      ],
-      "${ vpnServersCountData.paid.servers }+ server across": [
-        "${ vpnServersCountData.paid.servers }+ máy chủ tại"
-      ],
       "/user": [
         "/người dùng"
       ],
@@ -19294,12 +19270,6 @@
       ],
       "use your own email.": [
         "sử dụng email của riêng bạn."
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "VPN với máy chủ tại ${ vpnServersCountData.free.countries } quốc gia"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "VPN với máy chủ tại ${ vpnServersCountData.free.countries } quốc gia"
       ],
       "We’ll email you before your trial ends.": [
         "Chúng tôi sẽ gửi email trước khi bản dùng thử kết thúc."
@@ -21546,6 +21516,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "Tìm hiểu sâu về các bài đăng blog VPN"
+      ],
+      "Delete": [
+        "Xóa"
       ],
       "Delete ${ name }?": [
         "Xóa ${ name }?"

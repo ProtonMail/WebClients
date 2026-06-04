@@ -531,9 +531,6 @@
       "Delete record": [
         "Ta bort post"
       ],
-      "Delete token ${ tokens[0].Account }": [
-        "Ta bort token ${ tokens[0].Account }"
-      ],
       "Delete token “${ token.Name }”": [
         "Ta bort token “${ token.Name }“"
       ],
@@ -905,9 +902,6 @@
       ],
       "Go to ${ planOrAppName }": [
         "Gå till ${ planOrAppName }"
-      ],
-      "Go to domain provider": [
-        "Gå till domänleverantör"
       ],
       "Go to label": [
         "Gå till etikett"
@@ -1482,6 +1476,9 @@
       "Send email reminder": [
         "Skicka e-postpåminnelse"
       ],
+      "Send feedback": [
+        "Skicka feedback"
+      ],
       "Send messages with @pm.me": [
         "Skicka meddelanden med @pm.me"
       ],
@@ -1538,6 +1535,9 @@
       ],
       "Share": [
         "Dela"
+      ],
+      "Share feedback": [
+        "Dela feedback"
       ],
       "Share via link": [
         "Dela via länk"
@@ -2852,9 +2852,6 @@
       ]
     },
     "BOSS": {
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } av ${ providerUsers.length }"
-      ],
       "Account connected": [
         "Konto anslutet"
       ],
@@ -2863,12 +2860,6 @@
       ],
       "Activated": [
         "Aktiverat"
-      ],
-      "Activation link": [
-        "Aktiveringslänk"
-      ],
-      "Activation link copied to clipboard": [
-        "Aktiveringslänk kopierad till urklipp"
       ],
       "Add a domain": [
         "Lägg till en domän"
@@ -2885,12 +2876,6 @@
       "All": [
         "Alla"
       ],
-      "An unknown error occurred": [
-        "Ett okänt fel uppstod"
-      ],
-      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
-        "Så snart kontona har skapats kan du dela aktiveringslänken så att användarna kan göra anspråk på sitt ${ BRAND_NAME }-konto."
-      ],
       "Authenticate": [
         "Autentisera"
       ],
@@ -2905,12 +2890,6 @@
       ],
       "Change": [
         "Ändra"
-      ],
-      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
-        "Välj vad som ska migreras.Ditt val kommer tillämpas till alla användare. Migreringen kommer starta efter du bestämt vilka användare som ska kopieras."
-      ],
-      "Completed": [
-        "Slutförd"
       ],
       "Configure": [
         "Konfigurera"
@@ -2930,26 +2909,8 @@
       "Continue migration": [
         "Fortsätt migrering"
       ],
-      "Copy activation link": [
-        "Kopiera aktiveringslänk"
-      ],
-      "Copy activation link to clipboard": [
-        "Kopiera aktiveringslänk till urklipp"
-      ],
-      "Creating accounts": [
-        "Skapar konton"
-      ],
-      "DKIM records": [
-        "DKIM-poster"
-      ],
-      "DMARC records": [
-        "DMARC-poster"
-      ],
       "Domain added": [
         "Domän tillagd"
-      ],
-      "Domain connected": [
-        "Domän ansluten"
       ],
       "Errors": [
         "Fel"
@@ -2959,9 +2920,6 @@
       ],
       "Failed to load OAuth": [
         "Misslyckades att ladda OAuth"
-      ],
-      "Finalize migration": [
-        "Slutför migrering"
       ],
       "Finalize your migration": [
         "Slutför din migrering"
@@ -2984,9 +2942,6 @@
       "Has errors": [
         "Har fel"
       ],
-      "Import errors for ${ user.AdminSetName }": [
-        "Importfel för ${ user.AdminSetName }"
-      ],
       "In progress": [
         "Pågår"
       ],
@@ -3005,17 +2960,11 @@
       "Mail": [
         "E-post"
       ],
-      "Managed via ${ registrar.name }": [
-        "Hanterad via ${ registrar.name }"
-      ],
       "Member address not found. Please contact customer support to resolve this": [
         "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta."
       ],
       "Migrate from Google Workspace": [
         "Migrera från Google Workspace"
-      ],
-      "Migrate users": [
-        "Migrera användare"
       ],
       "Migrate users to ${ BRAND_NAME }": [
         "Migrera användare till ${ BRAND_NAME }"
@@ -3038,9 +2987,6 @@
       ],
       "Missing organization public key": [
         "Saknar organisationens offentliga nyckel"
-      ],
-      "More details": [
-        "Mer detaljer"
       ],
       "Move your users, emails, and settings from Google Workspace automatically. We’ll guide you through connecting your account, verifying your domain, and migrating users securely.": [
         "Flytta dina användare, e-post och inställningar automatiskt från Google Workspace. Vi guidar dig genom att ansluta ditt konto, verifiera din domän och migrera användare säkert."
@@ -3066,20 +3012,8 @@
       "Pending": [
         "Väntar"
       ],
-      "Please add the following records in your DNS console of your domain provider:": [
-        "Lägg till följande poster i din DNS-konsol för din domänleverantör:"
-      ],
-      "Please leave this window open until we're done creating all the users.": [
-        "Lämna detta fönster öppet tills vi är klara med att skapa alla användare."
-      ],
-      "Please select at least one product to migrate": [
-        "Välj minst en produkt att migrera"
-      ],
       "Refresh": [
         "Uppdatera"
-      ],
-      "Required": [
-        "Obligatoriskt"
       ],
       "Required to create user accounts": [
         "Krävs för att skapa användarkonton"
@@ -3114,20 +3048,11 @@
       "Settings": [
         "Inställningar"
       ],
-      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
-        "Dela aktiveringslänken med användarna så att de kan göra anspråk på sitt ${ BRAND_NAME }-konto."
-      ],
       "Sign in to Google Workspace": [
         "Logga in på Google Workspace"
       ],
       "Size": [
         "Storlek"
-      ],
-      "SPF records": [
-        "SPF-poster"
-      ],
-      "Start migrating": [
-        "Starta migrering"
       ],
       "Start migration": [
         "Starta migrering"
@@ -3135,23 +3060,8 @@
       "Status": [
         "Status"
       ],
-      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
-        "Standardinställningen är ingen. För att förbättra din säkerhet rekommenderar vi dock att du ställer in detta värde till p=quarantine."
-      ],
-      "This migration has been completed": [
-        "Denna migrering har slutförts"
-      ],
       "User": [
         "Användare"
-      ],
-      "User needs to activate their account through the activation link shown above": [
-        "Användare måste aktivera sitt konto via aktiveringslänken som visas ovan."
-      ],
-      "User status": [
-        "Användarstatus"
-      ],
-      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
-        "Användare kan använda ${ BRAND_NAME } eller Google samtidigt under migreringens gång."
       ],
       "Users migrated": [
         "Användare migrerade"
@@ -3171,14 +3081,8 @@
       "Verify your domain to start a migration": [
         "Verifiera din domän för att starta en migrering"
       ],
-      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
-        "Vi upptäckte den primära domänen länkad till ditt Google Workspace-konto. Bekräfta den för att fortsätta ställa in e-post för din ${ BRAND_NAME }-organisation."
-      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Vi kunde inte verifiera installationen, kontrollera att du har installerat den i ditt Google Workspace-konto och försök igen."
-      ],
-      "We're still checking the MX records with your domain provider.": [
-        "Vi kontrollerar fortfarande MX-posterna med din domänleverantör."
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Vi har märkt att några användare inte har gjort anspråk på sina ${ BRAND_NAME }-konton."
@@ -3188,9 +3092,6 @@
       ],
       "You": [
         "Du"
-      ],
-      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
-        "Du måste bevilja behörighet för ${ BRAND_NAME } att kopiera dina data. När du har accepterat behörigheterna, kom tillbaka hit för att fortsätta."
       ],
       "You're all set!": [
         "Du är klar!"
@@ -5432,11 +5333,6 @@
     "description": {
       "use the Easy Switch import assistant": [
         "använd importassistenten Easy Switch"
-      ]
-    },
-    "Description for domain modal": {
-      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
-        "Dubblett av DMARC-post hittades, gå till DNS-konsolen hos din domänleverantör för att åtgärda det."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -10358,6 +10254,9 @@
       "Copy your referral link": [
         "Kopiera din hänvisningslänk"
       ],
+      "Couldn´t send feedback": [
+        "Kunde inte skicka feedback"
+      ],
       "Country code": [
         "Landskod"
       ],
@@ -11231,6 +11130,9 @@
       "Key deletion is irreversible!": [
         "Borttagning av nyckel är oåterkalleligt!"
       ],
+      "Key sections reorganized for faster access.": [
+        "Viktiga sektioner omorganiserade för snabbare åtkomst."
+      ],
       "Keys created": [
         "Nycklar skapade"
       ],
@@ -11395,6 +11297,12 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Ny aktivitetsdata kommer att sluta samlas in och visas."
+      ],
+      "New sidebar": [
+        "Ny sidopanel"
+      ],
+      "New sidebar layout": [
+        "Ny layout på sidopanel"
       ],
       "New user invited to organization": [
         "Ny användare inbjuden till organisation"
@@ -11934,6 +11842,9 @@
       "Settings updated": [
         "Inställningar uppdaterade"
       ],
+      "Share your thoughts...": [
+        "Dela dina tankar …"
+      ],
       "Shared ${ vaultLink } deleted": [
         "Delad ${ vaultLink } borttagen"
       ],
@@ -12081,6 +11992,9 @@
       "Swiss based": [
         "Baserat i Schweiz"
       ],
+      "Switch sidebars": [
+        "Byt sidopaneler"
+      ],
       "Symbols (#$&)": [
         "Symboler (#$&)"
       ],
@@ -12116,6 +12030,9 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Tack för att du prenumererar. Säker surfning börjar nu."
+      ],
+      "Thanks - your feedback was sent.": [
+        "Tack - din feedback skickades."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Tack för att du stödjer vårt uppdrag att bygga ett bättre internet där integritet och frihet kommer först."
@@ -13082,6 +12999,9 @@
       ],
       "your encrypted data will be locked": [
         "dina krypterade data kommer att låsas"
+      ],
+      "Your feedback": [
+        "Din feedback"
       ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
@@ -14704,9 +14624,6 @@
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Måste ha minst ${ MIN_PASSWORD_LENGTH } tecken"
       ],
-      "MX records": [
-        "MX-poster"
-      ],
       "Name": [
         "Namn"
       ],
@@ -14886,9 +14803,6 @@
       ],
       "Primary": [
         "Primär"
-      ],
-      "Priority": [
-        "Prioritet"
       ],
       "Priority support": [
         "Prioriterad support"
@@ -15411,9 +15325,6 @@
       "Type": [
         "Typ"
       ],
-      "Use default value": [
-        "Använd standardvärde"
-      ],
       "Valid ${ group.name } record found": [
         "Giltig ${ group.name }-post hittades"
       ]
@@ -15579,9 +15490,6 @@
       ],
       "data recovery option": [
         "alternativ för dataåterställning"
-      ],
-      "Detailed instructions": [
-        "Detaljerade instruktioner"
       ],
       "Details": [
         "Detaljer"
@@ -17066,10 +16974,6 @@
       "Send & receive invitations": [
         "Skicka och ta emot inbjudningar"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Servrar i ${ vpnServersCountData.paid.countries }+ land",
-        "Servrar i ${ vpnServersCountData.paid.countries }+ länder"
-      ],
       "Share files with no size limit": [
         "Dela filer utan storleksbegränsning"
       ],
@@ -17665,9 +17569,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Dedikerade serverplatser i ${ numberOfCountries }+ länder"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Dedikerade serverplatser i Nordamerika och Europa"
       ],
       "Multi-platform support": [
         "Stöd för flera plattformar"
@@ -21745,18 +21646,6 @@
         "${ VPN_CONNECTIONS } höghastighets VPN-anslutning",
         "${ VPN_CONNECTIONS } höghastighets VPN-anslutningar"
       ],
-      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
-        "${ vpnServersCountData.free.servers }+ VPN-serverar i ${ vpnServersCountData.free.countries } land",
-        "${ vpnServersCountData.free.servers }+ VPN-serverar i ${ vpnServersCountData.free.countries } länder"
-      ],
-      "${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries }+ land",
-        "${ vpnServersCountData.paid.countries }+ länder"
-      ],
-      "${ vpnServersCountData.paid.servers }+ server across": [
-        "${ vpnServersCountData.paid.servers }+ server över",
-        "${ vpnServersCountData.paid.servers }+ servrar över"
-      ],
       "/user": [
         "/användare"
       ],
@@ -22027,13 +21916,6 @@
       ],
       "use your own email.": [
         "använd din egen e-post."
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "VPN med servrar i ${ vpnServersCountData.free.countries } länder"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "VPN med servrar i ${ vpnServersCountData.free.countries } land",
-        "VPN med servrar i ${ vpnServersCountData.free.countries } länder"
       ],
       "We’ll email you before your trial ends.": [
         "Vi skickar e-post till dig innan din provperiod slutar."
@@ -23550,9 +23432,6 @@
       "Account deleted. Signing out...": [
         "Konto borttaget. Loggar ut..."
       ],
-      "Activation link copied to clipboard": [
-        "Aktiveringslänk kopierad till urklipp"
-      ],
       "Address added": [
         "Adress tillagd"
       ],
@@ -24027,6 +23906,11 @@
         "Använd ${ BRAND_NAME }-inställningar"
       ]
     },
+    "Themes": {
+      "Themes": [
+        "Teman"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dag",
@@ -24113,6 +23997,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } för organisationer"
+      ],
+      "${ VPN_APP_NAME } clients": [
+        "${ VPN_APP_NAME }-klienter"
       ],
       "(active)": [
         "(aktiv)"
@@ -24635,6 +24522,9 @@
       "Deep dive into VPN blog posts": [
         "Djupdyk i VPN-blogginlägg"
       ],
+      "Delete": [
+        "Ta bort"
+      ],
       "Delete ${ name }?": [
         "Ta bort ${ name }?"
       ],
@@ -24744,6 +24634,9 @@
       "Download ${ PASS_APP_NAME } for your devices": [
         "Ladda ner ${ PASS_APP_NAME } för dina enheter"
       ],
+      "Download apps": [
+        "Ladda ner appar"
+      ],
       "Download the desktop app": [
         "Ladda ner skrivbordsappen"
       ],
@@ -24830,6 +24723,9 @@
       ],
       "Email privacy": [
         "E-postintegritet"
+      ],
+      "Email subscriptions": [
+        "E-postprenumerationer"
       ],
       "Email verification": [
         "E-postverifiering"
@@ -25027,6 +24923,9 @@
       "Help center": [
         "Hjälpcenter"
       ],
+      "Help us improve": [
+        "Hjälp oss att förbättra"
+      ],
       "Helping activists in Hong Kong": [
         "Hjälper aktivister i Hongkong"
       ],
@@ -25178,8 +25077,14 @@
       "Mobile": [
         "Mobil"
       ],
+      "Monitoring": [
+        "Övervakning"
+      ],
       "Monthly": [
         "Månadsvis"
+      ],
+      "Monthly Costs": [
+        "Månadskostnad"
       ],
       "Multi-user support": [
         "Stöd för flera användare"
@@ -25187,11 +25092,17 @@
       "Multiple accounts, 1 private inbox": [
         "Flera konton, 1 privat inkorg"
       ],
+      "My account": [
+        "Mitt konto"
+      ],
       "My addresses": [
         "Mina adresser"
       ],
       "My calendars": [
         "Mina kalendrar"
+      ],
+      "My VPN": [
+        "Min VPN"
       ],
       "Name": [
         "Namn"
@@ -25241,8 +25152,17 @@
       "OpenVPN configuration files": [
         "OpenVPN-konfigurationsfiler"
       ],
+      "OpenVPN username": [
+        "OpenVPN-användarnamn"
+      ],
       "Org setup": [
         "Organisationsinställning"
+      ],
+      "Organization": [
+        "Organisation"
+      ],
+      "Organization and people": [
+        "Organisation och personer"
       ],
       "Organization filters": [
         "Organisationsfilter"
@@ -25477,6 +25397,9 @@
       ],
       "Security": [
         "Säkerhet"
+      ],
+      "Security and compliance": [
+        "Säkerhet och efterlevnad"
       ],
       "Security and privacy": [
         "Säkerhet och integritet"
@@ -25761,6 +25684,9 @@
       "Upgrade to keep your premium benefits.": [
         "Uppgradera för att behålla dina premiumförmåner."
       ],
+      "Upgrade your network protection with dedicated servers": [
+        "Uppgradera ditt nätverksskydd med dedikerade servrar"
+      ],
       "Upgrade your privacy": [
         "Uppgradera din integritet"
       ],
@@ -25829,6 +25755,9 @@
       ],
       "View organization events by upgrading to Professional": [
         "Visa organisationens händelser genom att uppgradera till Professional"
+      ],
+      "VPN": [
+        "VPN"
       ],
       "VPN apps": [
         "VPN-appar"
@@ -25904,6 +25833,9 @@
       ],
       "Your changes are not synced yet": [
         "Dina ändringar är inte synkroniserade än"
+      ],
+      "Your current plan": [
+        "Ditt nuvarande paket"
       ],
       "Your exposed information": [
         "Din exponerade information"
