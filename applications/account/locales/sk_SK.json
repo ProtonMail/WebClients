@@ -1862,6 +1862,9 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Sign out of ${ tokens[0].Account }": [
+        "Odhlásiť sa z ${ tokens[0].Account }"
       ]
     },
     "action": {
@@ -3212,6 +3215,162 @@
         "Váš súčasný plán umožňuje ${ maxMembers } používateľov. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie.",
         "Váš súčasný plán umožňuje až ${ maxMembers } používateľov. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie.",
         "Váš súčasný plán umožňuje až ${ maxMembers } používateľov. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie."
+      ],
+      "${ BRAND_NAME } Easy Switch": [
+        "${ BRAND_NAME } Easy Switch"
+      ],
+      "${ relevantCount } of ${ totalCount }": [
+        "${ relevantCount } z ${ totalCount }"
+      ],
+      "Accounts migrated": [
+        "Migrované účty"
+      ],
+      "Add your organization email domain to ${ BRAND_NAME }.": [
+        "Pridajte emailovú doménu vašej organizácie do ${ BRAND_NAME }."
+      ],
+      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
+        "Všetky presunuté používateľské účty sú pripravené na pozvanie do vašej organizácie ${ BRAND_NAME }."
+      ],
+      "An unknown error ocurred. Please refresh the page and try again": [
+        "Došlo k neznámej chybe. Obnovte stránku a skúste to znovu, prosím."
+      ],
+      "Collapse step": [
+        "Zbaliť krok"
+      ],
+      "Configure users": [
+        "Nastaviť používateľov"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host.": [
+        "Skopírujte nasledujúci kód a vložte ho do sekcie DNS u vášho poskytovateľa doménových služieb."
+      ],
+      "Creating accounts. Going private": [
+        "Vytváranie účtov. Prechod do súkromného režimu"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Stav migrácie dát z Google Workspace do ${ BRAND_NAME }"
+      ],
+      "Domain provider": [
+        "Poskytovateľ domény"
+      ],
+      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
+        "Neviete, kde začať? Pozrite si, ako aktualizovať svoje DNS na ${ registrarLink }"
+      ],
+      "Emails": [
+        "Emaily"
+      ],
+      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
+        "Všetci dostanú rovnaký pozývací odkaz. Navštívia stránku, zadajú svoj email a do ich Gmailovej schránky dorazí overovací kód. Na základe toho si nastavia heslo pre ${ BRAND_NAME }."
+      ],
+      "Expand step": [
+        "Rozbaliť krok"
+      ],
+      "Final step": [
+        "Posledný krok"
+      ],
+      "Get help and useful tips for other domain providers ${ here }": [
+        "Pomoc a užitočné tipy pre iných poskytovateľov domén nájdete ${ here }"
+      ],
+      "Import completed successfully": [
+        "Import bol úspešne dokončený"
+      ],
+      "Import details": [
+        "Podrobnosti o importe"
+      ],
+      "Invitation link": [
+        "Pozývací odkaz"
+      ],
+      "Invitation message": [
+        "Text pozvánky"
+      ],
+      "invite link": [
+        "pozývací odkaz"
+      ],
+      "It can take up to 24 hours for these changes to propagate.": [
+        "Tieto zmeny sa môžu prejaviť až do 24 hodín."
+      ],
+      "Migrate": [
+        "Migrovať"
+      ],
+      "Migrate accounts": [
+        "Migrovať účty"
+      ],
+      "Migrate accounts to ${ BRAND_NAME }": [
+        "Preneste účty do ${ BRAND_NAME }"
+      ],
+      "Migrated accounts": [
+        "Migrované účty"
+      ],
+      "Migration summary": [
+        "Súhrn informácií o migrácii"
+      ],
+      "Need help?": [
+        "Potrebujete pomoc?"
+      ],
+      "Not detected correctly? Choose your provider from the list.": [
+        "Nenašlo sa to správne? Vyberte si svojho poskytovateľa zo zoznamu."
+      ],
+      "Onboard your team": [
+        "Zapojte svoj tím"
+      ],
+      "Please don’t close or refresh this window.": [
+        "Nezatvárajte ani neobnovujte toto okno, prosím."
+      ],
+      "Reauthenticate your Google Workspace account to start a migration": [
+        "Znovu sa prihláste do svojho účtu Google Workspace, aby ste mohli začať s migráciou"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Vyberte presne to, čo chcete preniesť. Zmena sa uplatní na všetkých používateľov v organizácii."
+      ],
+      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
+        "Vyberte účty, ktoré chcete preniesť do ${ BRAND_NAME }. Môžete preniesť celú svoju organizáciu hneď dnes, alebo začať v menšom rozsahu a zvyšok preniesť neskôr, keď budete pripravení."
+      ],
+      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
+        "Prihláste sa pomocou účtu správcu služby Google Workspace pre ${ BRAND_NAME } a nastavte migráciu."
+      ],
+      "Skip": [
+        "Preskočiť"
+      ],
+      "Skipped ${ count } contact due to incompatibilities": [
+        "Vynechaný ${ count } kontakt z dôvodu nekompatibility",
+        "Vynechané ${ count } kontakty z dôvodu nekompatibility",
+        "Vynechaných ${ count } kontaktov z dôvodu nekompatibility",
+        "Vynechaných ${ count } kontaktov z dôvodu nekompatibility"
+      ],
+      "Skipped ${ count } email due to incompatibilities": [
+        "Vynechaný ${ count } email z dôvodu nekompatibility",
+        "Vynechané ${ count } emaily z dôvodu nekompatibility",
+        "Vynechaných ${ count } emailov z dôvodu nekompatibility",
+        "Vynechaných ${ count } emailov z dôvodu nekompatibility"
+      ],
+      "Skipped ${ count } event due to incompatibilities": [
+        "Vynechaná ${ count } udalosť z dôvodu nekompatibility",
+        "Vynechané ${ count } udalosti z dôvodu nekompatibility",
+        "Vynechaných ${ count } udalostí z dôvodu nekompatibility",
+        "Vynechaných ${ count } udalostí z dôvodu nekompatibility"
+      ],
+      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
+        "Ak chcete preniesť dáta vašej organizácie do ${ BRAND_NAME }, nainštalujte si aplikáciu ${ BRAND_NAME } Easy Switch z obchodu Google Workspace Marketplace. Po inštalácii sa vráťte sem a pokračujte."
+      ],
+      "Users activated": [
+        "Aktivovaní používatelia"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Používatelia, ktorí sa prihlásili do svojho ${ BRAND_NAME } účtu"
+      ],
+      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Používatelia, ktorí si svoj účet neprevzali pred dokončením migrácie, budú musieť požiadať správcu organizácie ${ BRAND_NAME } o obnovenie hesla."
+      ],
+      "Waiting for MX...": [
+        "Čakám na MX..."
+      ],
+      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
+        "Prechádzame na ${ BRAND_NAME }, bezpečnú emailovú službu.\nVáš účet na ${ BRAND_NAME } je pripravený na aktiváciu.\nKliknite na odkaz ${ inviteLink }.\nZadajte svoju emailovú adresu a my vám pošleme kód na váš Gmail.\nPomocou neho si nastavte heslo – a účet na ${ BRAND_NAME } je váš.\nEšte chvíľu budú obe služby fungovať súbežne. ${ BRAND_NAME } a Gmail.\nPotom, keď všetci prejdú na novú službu, Gmail ukončíme. Predtým vám to pripomenieme."
+      ],
+      "We’re creating your accounts and importing your data now. Every email, every event is yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Práve vám vytvárame účty a importujeme vaše údaje. Každý email, každá udalosť patrí výlučne vám. Vidí ich len váš tím. Ani my, ani nikto iný."
+      ],
+      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
+        "Už to máte takmer hotové, stačí nastaviť doménu tak, aby ste emaily dostávali priamo na ${ BRAND_NAME }. Po potvrdení prestane váš tím dostávať nové emaily v Gmaile a migrácia bude dokončená."
       ]
     },
     "breadcrumb": {
@@ -13713,6 +13872,9 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "Editing requires permission": [
+        "Na úpravu je potrebné povolenie"
       ]
     },
     "info": {
@@ -15988,6 +16150,15 @@
       ],
       "Valid ${ group.name } record found": [
         "Bol nájdený platný záznam ${ group.name }"
+      ],
+      "Priority": [
+        "Priorita"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Use default value (e.g. “@”)": [
+        "Použiť predvolenú hodnotu (napr. “@”)"
       ]
     },
     "Label for new member": {
@@ -16355,6 +16526,9 @@
       ],
       "What’s this?": [
         "Čo je to?"
+      ],
+      "Help & support": [
+        "Pomoc a podpora"
       ]
     },
     "Link (Scribe)": {
@@ -26926,6 +27100,12 @@
       ],
       "Your subscriptions": [
         "Vaše predplatné"
+      ],
+      "OpenVpn": [
+        "OpenVPN"
+      ],
+      "Summer Sale": [
+        "Letná zľava"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
