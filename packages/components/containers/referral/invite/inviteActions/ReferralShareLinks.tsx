@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { Href } from '@proton/atoms/Href/Href';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
@@ -42,11 +43,14 @@ const getShareLinkTitle = (name: string) => {
 
 const ReferralShareLinks = ({ referralLink }: ReferralShareLinksProps) => {
     const { sendShare } = useReferralTelemetry();
+    const [referralInfo] = useReferralInfo();
+    const { refereeRewardAmount } = referralInfo.uiData;
 
     const encodedLink = encodeURIComponent(referralLink);
+    // TODO: Change this
     const text = encodeURIComponent(
         c('Referral')
-            .t`I've been using ${BRAND_NAME} and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${referralLink}`
+            .t`I've been using ${BRAND_NAME} and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${refereeRewardAmount} off your next subscription: ${referralLink}`
     );
 
     const linkedInURL = `https://www.linkedin.com/feed/?shareUrl=${encodedLink}&shareActive&mini=true&text=${text}&source=${encodeURIComponent(BRAND_NAME)}`;
