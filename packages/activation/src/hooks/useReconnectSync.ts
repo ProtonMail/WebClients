@@ -31,7 +31,7 @@ const useReconnectSync = (address: Address) => {
     const dispatch = useDispatch();
     const { createNotification } = useNotifications();
 
-    const { addressesOrSyncs } = useBYOEAddressesCounts();
+    const { activeBYOEAddresses } = useBYOEAddressesCounts();
 
     const sync = useEasySwitchSelector((state) => selectSyncByEmail(state, address.Email));
 
@@ -146,10 +146,10 @@ const useReconnectSync = (address: Address) => {
         setLimitModalOpen: (open: boolean) => void;
     }) => {
         // Prevent user from reconnecting manually disconnected address if the BYOE limit has been reached
-        if (!hasPaidMail(user) && addressesOrSyncs.length >= MAX_SYNC_FREE_USER) {
+        if (!hasPaidMail(user) && activeBYOEAddresses.length >= MAX_SYNC_FREE_USER) {
             setUpsellModalOpen(true);
             return;
-        } else if (addressesOrSyncs.length >= MAX_SYNC_PAID_USER) {
+        } else if (activeBYOEAddresses.length >= MAX_SYNC_PAID_USER) {
             setLimitModalOpen(true);
             return;
         }
