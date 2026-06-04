@@ -8,6 +8,7 @@ import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import type { IconName } from '@proton/icons/types';
 
 import type { RetryStrategy } from '../types';
+import { isImeComposing } from '../util/keyboard';
 
 export type RetryOption = {
     strategy: RetryStrategy;
@@ -81,6 +82,10 @@ export const RetryPanel: React.FC<RetryPanelProps> = ({ onRetry, disabled = fals
                     value={customInstructions}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCustomInstructions(e.target.value)}
                     onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+                        // Ignore Enter while an IME composition is in progress.
+                        if (isImeComposing(e)) {
+                            return;
+                        }
                         if (e.key === 'Enter' && customInstructions.trim()) {
                             e.preventDefault();
                             handleCustomRetry();

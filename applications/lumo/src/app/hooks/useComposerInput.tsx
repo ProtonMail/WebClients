@@ -2,6 +2,7 @@ import { useCallback, useRef, useState } from 'react';
 
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
+import { isImeComposing } from '../util/keyboard';
 import { shouldConvertPasteToAttachment } from '../util/pastedContentHelper';
 
 export interface ComposerInputProps {
@@ -48,6 +49,12 @@ const useComposerInput = ({
 
             const isEnter = e.key === 'Enter';
             if (!isEnter) {
+                return;
+            }
+
+            // While an IME composition is in progress, Enter confirms the composition
+            // candidate rather than submitting the message.
+            if (isImeComposing(e)) {
                 return;
             }
 
