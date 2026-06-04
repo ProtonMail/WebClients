@@ -63,6 +63,7 @@ export enum CommonFeatureFlag {
     AvatarColorWeb = 'AvatarColorWeb',
     AuthenticatorSettingsEnabled = 'AuthenticatorSettingsEnabled',
     OlesM1 = 'OlesM1',
+    OrganizationLevelEasySwitch = 'OrganizationLevelEasySwitch',
     WebNPSModal = 'WebNPSModal',
     MeetAddonCustomizer = 'MeetAddonCustomizer',
     WebApiRateLimiter = 'WebApiRateLimiter',
