@@ -2795,6 +2795,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Ak chcete skontrolovať importované údaje, kliknite na ikonu ${ PASS_APP_NAME } v nástrojovom paneli prehliadača."
       ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
+        "Na nastavenie odomykania pomocou biometrických údajov vyžaduje ${ PASS_APP_NAME } nové povolenie prehliadača. Po ich udelení sa rozšírenie znovu načíta. Následne znovu otvorte túto stránku, prosím."
+      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Skúste znovu načítať alebo preinštalovať rozšírenie a uistite sa, že váš prehliadač a ${ PASS_SHORT_APP_NAME } sú aktuálne."
       ],
@@ -4800,6 +4803,9 @@
       ],
       "Breaches detected for": [
         "Zistený únik informácií pre"
+      ],
+      "Browser permission required": [
+        "Je potrebné povolenie prehliadača"
       ],
       "Cancel changing your email?": [
         "Zrušiť zmenu vášho emailu?"
