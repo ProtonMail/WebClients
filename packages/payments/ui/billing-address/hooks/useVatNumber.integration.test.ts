@@ -1,3 +1,5 @@
+import { act } from 'react';
+
 import { renderHook } from '@testing-library/react';
 
 import { getStoreWrapper } from '@proton/testing/index';
@@ -77,6 +79,32 @@ describe('useVatNumber integration', () => {
             const { result } = renderUseVatNumber({ countryCode: 'DE', selectedPlanName: PLANS.MAIL });
 
             expect(result.current.renderVatNumberInput).toBe(false);
+        });
+    });
+
+    // Regression: a hidden VAT form must not block payment. These assertions run the real
+    // getVatFormErrors (only the feature flag and payments API are mocked).
+    describe('vatFormValid while the business form is collapsed', () => {
+        it('stays valid for a B2B VAT country when the form is collapsed (no prefix injected)', () => {
+            const { result } = renderUseVatNumber({ countryCode: 'DE', selectedPlanName: PLANS.MAIL_PRO });
+
+            // Collapsed by default (no billing data): nothing is prefilled, so real validation of an
+            // empty VAT number passes and the PayButton is not blocked on a form the user can't see.
+            expect(result.current.vatNumber).toBe('');
+            expect(result.current.vatFormValid).toBe(true);
+        });
+
+        it('runs real validation once the form is expanded (a bare prefix is not yet valid)', () => {
+            const { result } = renderUseVatNumber({ countryCode: 'DE', selectedPlanName: PLANS.MAIL_PRO });
+
+            act(() => {
+                result.current.setUnauthenticatedCollapsed(false);
+            });
+
+            // Expanding seeds the country prefix; a bare prefix is an incomplete VAT number, so
+            // validation now correctly flags it until the user finishes typing.
+            expect(result.current.vatNumber).toBe('DE');
+            expect(result.current.vatFormValid).toBe(false);
         });
     });
 });

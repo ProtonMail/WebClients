@@ -204,7 +204,12 @@ export const useVatNumber = ({
             onVatChange?.('');
         }
 
-        if (isPristineRef.current || countryChanged) {
+        // Only prefill the prefix when the VAT form is actually shown inline. When the form is
+        // hidden (business checkbox unchecked) or edited in a modal, leave vatNumber empty.
+        const isVatFormVisible = !isAuthenticated && !unauthenticatedCollapsed;
+        const canPrefillVatNumber = isVatFormVisible && (isPristineRef.current || countryChanged);
+
+        if (canPrefillVatNumber) {
             // onVatChange is intentionally NOT called here: a bare prefix is not a valid VAT number
             // and should not propagate to the parent until the user completes it.
             const prefix = getVatPrefix(taxCountry.selectedCountryCode) ?? '';
