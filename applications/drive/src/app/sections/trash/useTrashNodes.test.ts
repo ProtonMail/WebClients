@@ -2,8 +2,8 @@ import { act, renderHook } from '@testing-library/react';
 
 import { type NodeEntity, getDrive, getDriveForPhotos } from '@proton/drive/index';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { getFormattedNodeLocation } from '@proton/drive/modules/nodes';
 
-import { getFormattedNodeLocation } from '../../utils/sdk/getNodeLocation';
 import { useTrashStore } from './useTrash.store';
 import { useTrashNodes } from './useTrashNodes';
 
@@ -14,7 +14,8 @@ jest.mock('@proton/drive/index', () => ({
 
 jest.mock('@proton/drive/legacy/errorHandling');
 
-jest.mock('../../utils/sdk/getNodeLocation', () => ({
+jest.mock('@proton/drive/modules/nodes', () => ({
+    ...jest.requireActual('@proton/drive/modules/nodes'),
     getFormattedNodeLocation: jest.fn(),
 }));
 
