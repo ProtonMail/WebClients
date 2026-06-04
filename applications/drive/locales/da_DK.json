@@ -1290,6 +1290,9 @@
       ],
       "Manage addresses": [
         "Administrer adresser"
+      ],
+      "Get the deal": [
+        "Gør brug af tilbuddet"
       ]
     },
     "Action: Docs": {
@@ -4086,6 +4089,12 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisationsnøgle skal være aktiveret for at oprette ikke private brugere"
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Tjek venligst om dit ABN er registeret til moms på tværs af grænser"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Momsnummer skal starte med ${ prefixes }"
       ]
     },
     "error": {
