@@ -4,10 +4,9 @@ import type { MaybeNode, NodeEntity, ProtonDriveClient } from '@proton/drive/ind
 import { getDrive } from '@proton/drive/index';
 import { handleSdkError, shouldTrackError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
-import { getNodeEffectiveRole, isMissingNode } from '@proton/drive/modules/nodes';
+import { getFormattedNodeLocation, getNodeEffectiveRole, isMissingNode } from '@proton/drive/modules/nodes';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
 
-import { getFormattedNodeLocation } from '../../../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../../../utils/sdk/getSignatureIssues';
 import type { SearchResultItemUI } from '../../searchView/store';
 import { useSearchViewStore } from '../../searchView/store';
