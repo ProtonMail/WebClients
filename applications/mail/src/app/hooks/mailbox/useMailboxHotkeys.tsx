@@ -17,6 +17,8 @@ import isTruthy from '@proton/utils/isTruthy';
 import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
+import { selectElementID } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { isStarred } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';
@@ -31,7 +33,6 @@ import { useFolderNavigationHotkeys } from './useFolderNavigationHotkeys';
 
 export interface MailboxHotkeysContext {
     labelID: string;
-    elementID?: string;
     messageID?: string;
     elementIDs: string[];
     checkedIDs: string[];
@@ -62,7 +63,6 @@ export interface MailboxHotkeysHandlers {
 export const useMailboxHotkeys = (
     {
         labelID,
-        elementID,
         messageID,
         elementIDs,
         checkedIDs,
@@ -89,6 +89,8 @@ export const useMailboxHotkeys = (
         showCommander,
     }: MailboxHotkeysHandlers
 ) => {
+    const elementID = useMailSelector(selectElementID);
+
     const [mailSettings] = useMailSettings();
     const { Shortcuts, ViewLayout } = mailSettings;
     const { selectAll } = useSelectAll({ labelID });

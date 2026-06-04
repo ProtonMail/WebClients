@@ -179,7 +179,6 @@ export const MailToolbarHeader = ({ elementsData, actions }: Props) => {
                         <NavigationControls
                             loading={elementsData.loading}
                             conversationMode={conversationMode}
-                            elementID={elementID}
                             messageID={messageID}
                             elementIDs={elementsData.elementIDs}
                             onElement={actions.handleElement}

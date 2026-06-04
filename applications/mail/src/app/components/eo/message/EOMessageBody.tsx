@@ -84,7 +84,7 @@ const EOMessageBody = ({
             {sourceMode && <pre>{message.decryption?.decryptedBody}</pre>}
             {(loadingMode || decryptingMode) && <MessageBodyPlaceholder margin="small" />}
             {contentMode && (
-                <MailboxContainerContextProvider containerRef={null} elementID={undefined} isResizing={false}>
+                <MailboxContainerContextProvider containerRef={null} isResizing={false}>
                     <MessageBodyIframe
                         iframeRef={iframeRef}
                         content={content}

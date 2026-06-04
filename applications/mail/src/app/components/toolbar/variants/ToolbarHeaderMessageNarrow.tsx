@@ -40,7 +40,6 @@ const ToolbarHeaderMessageNarrow = ({
     onBack,
     conversationMode,
     elementIDs,
-    elementID,
     messageID,
     onElement,
     selectedIDs,
@@ -122,7 +121,6 @@ const ToolbarHeaderMessageNarrow = ({
                     <NavigationControls
                         loading={loading}
                         conversationMode={conversationMode}
-                        elementID={elementID}
                         messageID={messageID}
                         elementIDs={elementIDs}
                         onElement={onElement}

@@ -35,7 +35,6 @@ import ItemExpiration from './item-expiration/ItemExpiration';
 
 interface Props {
     labelID: string;
-    elementID?: string;
     labels?: Label[];
     element: Element;
     conversationMode: boolean;
@@ -50,7 +49,6 @@ interface Props {
 
 const ItemColumnLayout = ({
     labelID,
-    elementID,
     labels,
     element,
     conversationMode,
@@ -231,13 +229,7 @@ const ItemColumnLayout = ({
                         </div>
                     </div>
                 </div>
-                <ItemHoverButtons
-                    element={element}
-                    labelID={labelID}
-                    elementID={elementID}
-                    onBack={onBack}
-                    size="small"
-                />
+                <ItemHoverButtons element={element} labelID={labelID} onBack={onBack} size="small" />
             </div>
 
             {hasLabels && !isCompactView && (

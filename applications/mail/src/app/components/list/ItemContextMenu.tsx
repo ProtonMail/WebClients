@@ -19,7 +19,6 @@ import { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 
 interface Props {
     checkedIDs: string[];
-    elementID?: string;
     labelID: string;
     anchorRef: RefObject<HTMLElement>;
     isOpen: boolean;
@@ -39,7 +38,6 @@ interface Props {
 
 const ItemContextMenu = ({
     checkedIDs,
-    elementID,
     labelID,
     onMove,
     onDelete,
