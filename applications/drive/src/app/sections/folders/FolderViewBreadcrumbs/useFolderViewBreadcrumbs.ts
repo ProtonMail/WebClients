@@ -2,14 +2,13 @@ import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { ProtonDriveClient, Result } from '@proton/drive/index';
+import type { MaybeNode, ProtonDriveClient, Result } from '@proton/drive/index';
 import { handleSdkError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
-import { getNodeAncestry } from '@proton/drive/modules/nodes';
+import { NodeLocation, getNodeLocation } from '@proton/drive/modules/nodes';
 
 import useDriveNavigation from '../../../legacy/hooks/drive/useNavigate';
 import type { CrumbDefinition } from '../../../statelessComponents/Breadcrumbs/types';
-import { NodeLocation, getNodeLocation } from '../../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
 
 export const SYNTHETIC_UID_DEVICES = 'synthetic-uid-devices';
@@ -22,14 +21,16 @@ export const useFolderViewBreadcrumbs = (driveClient: ProtonDriveClient) => {
 
     const computeCrumbs = useCallback(
         async (nodeUid: string, driveClient: ProtonDriveClient): Promise<Result<CrumbDefinition[], Error>> => {
-            const result = await getNodeAncestry(nodeUid, driveClient);
-            if (!result.ok) {
+            let hierarchy: MaybeNode[];
+            try {
+                hierarchy = await driveClient.getNodeHierarchy(nodeUid);
+            } catch (e) {
                 return {
                     ok: false,
-                    error: result.error,
+                    error: e instanceof Error ? e : new Error(String(e)),
                 };
             }
-            const nodeLocation = await getNodeLocation(driveClient, result.value[0]);
+            const nodeLocation = await getNodeLocation(driveClient, hierarchy[0]);
             if (!nodeLocation.ok) {
                 return {
                     ok: false,
@@ -37,7 +38,7 @@ export const useFolderViewBreadcrumbs = (driveClient: ProtonDriveClient) => {
                 };
             }
 
-            const pathItems: CrumbDefinition[] = result.value.map((maybeNode) => {
+            const pathItems: CrumbDefinition[] = hierarchy.map((maybeNode) => {
                 const nodeEntity = getNodeEntity(maybeNode).node;
                 const signatureIssuesResult = getSignatureIssues(maybeNode);
                 return {

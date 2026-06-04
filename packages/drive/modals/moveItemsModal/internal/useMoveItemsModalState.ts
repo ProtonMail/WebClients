@@ -12,7 +12,7 @@ import { handleSdkError, sendErrorReport } from '../../../legacy/errorHandling';
 import { getNodeEntity } from '../../../legacy/sdkUtils/getNodeEntity';
 import { directoryTreeFactory, getNodeUidFromTreeItemId, makeTreeItemId } from '../../../modules/directoryTree';
 import { type MoveNodesItemMap, useMoveNodes } from '../../../modules/moveNodes';
-import { getMissingUid, getNodeAncestry, isMissingNode } from '../../../modules/nodes';
+import { getMissingUid, isMissingNode } from '../../../modules/nodes';
 import { useCreateFolderModal } from '../../createFolderModal';
 
 export type MoveItemsModalInnerProps = {
@@ -52,11 +52,13 @@ const resolveTreeScopeRootUid = async (
     let commonRootUid: string | undefined;
 
     for (const nodeUid of nodeUids) {
-        const ancestryResult = await getNodeAncestry(nodeUid, drive);
-        if (!ancestryResult.ok) {
-            return ancestryResult;
+        let hierarchy: MaybeNode[];
+        try {
+            hierarchy = await drive.getNodeHierarchy(nodeUid);
+        } catch (e) {
+            return { ok: false, error: e instanceof Error ? e : new Error(String(e)) };
         }
-        const topRoot = ancestryResult.value[0];
+        const topRoot = hierarchy[0];
         if (!topRoot) {
             return { ok: false, error: new Error(`No ancestry found for node ${nodeUid}`) };
         }

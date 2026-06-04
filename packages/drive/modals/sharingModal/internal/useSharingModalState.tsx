@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import type { DegradedNode, ProtonDriveClient } from '@protontech/drive-sdk';
 import {
+    type MaybeNode,
     MemberRole,
     type NodeEntity,
     NodeType,
@@ -26,7 +27,7 @@ import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import { handleSdkError } from '../../../legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '../../../modules/busDriver';
 import { useFlagsDriveDocsPublicSharing } from '../../../modules/flags';
-import { getNodeAncestry, getNodeEffectiveRole, getNodeName } from '../../../modules/nodes';
+import { getNodeEffectiveRole, getNodeName } from '../../../modules/nodes';
 import { getDisplayName } from './DirectSharing/helpers/userNames';
 import type { SharingModalViewProps } from './SharingModalView';
 import { type DirectMember, MemberType } from './interfaces';
@@ -456,10 +457,16 @@ function getMediaType(nodeInfo?: NodeEntity | DegradedNode): string | undefined 
 }
 
 async function isShareInMyFiles(nodeUid: string, drive: ProtonDriveClient): Promise<boolean> {
-    const ancestors = await getNodeAncestry(nodeUid, drive);
-    const firstAncestor = ancestors.ok && ancestors.value.at(0);
+    let hierarchy: MaybeNode[];
+    try {
+        hierarchy = await drive.getNodeHierarchy(nodeUid);
+    } catch (e) {
+        handleSdkError(e, { showNotification: false });
+        return false;
+    }
+    const firstAncestor = hierarchy.at(0);
     if (!firstAncestor) {
-        // Impossible, because getNodeAncestry will always at least return self
+        // Impossible, because getNodeHierarchy will always at least return self
         return false;
     }
     // If node has "membership" it means it is a direct share

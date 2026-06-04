@@ -3,7 +3,7 @@ import { renderHook, waitFor } from '@testing-library/react';
 import type { ProtonDriveClient } from '../../../index';
 import { MemberRole, generateNodeUid } from '../../../index';
 import { handleSdkError } from '../../../legacy/errorHandling';
-import { getNodeAncestry, getNodeEffectiveRole } from '../../../modules/nodes';
+import { getNodeEffectiveRole } from '../../../modules/nodes';
 import { createMockNodeEntity } from '../../../modules/testing';
 import { useMoveEligibility } from './useMoveEligibility';
 
@@ -13,16 +13,15 @@ jest.mock('../../../legacy/errorHandling', () => ({
 
 jest.mock('../../../modules/nodes', () => ({
     ...jest.requireActual('../../../modules/nodes'),
-    getNodeAncestry: jest.fn(),
     getNodeEffectiveRole: jest.fn(),
 }));
 
-const mockGetNodeAncestry = getNodeAncestry as jest.MockedFunction<typeof getNodeAncestry>;
 const mockGetNodeEffectiveRole = getNodeEffectiveRole as jest.MockedFunction<typeof getNodeEffectiveRole>;
 const mockHandleSdkError = handleSdkError as jest.MockedFunction<typeof handleSdkError>;
 
 const mockGetNode = jest.fn();
-const drive: ProtonDriveClient = { getNode: mockGetNode } as any;
+const mockGetNodeHierarchy = jest.fn();
+const drive: ProtonDriveClient = { getNode: mockGetNode, getNodeHierarchy: mockGetNodeHierarchy } as any;
 
 /*
     Tests folder hierarchy setup:
@@ -51,17 +50,14 @@ const ITEM_CONFIG_FOLDER2 = {
     parentNodeUid: PARENT2_UID,
 };
 
-const createMockAncestry = (...uids: string[]) => {
-    return {
-        ok: true as const,
-        value: uids.map((uid) => ({ ok: true as const, value: createMockNodeEntity({ uid }) })),
-    };
+const createMockHierarchy = (...uids: string[]) => {
+    return uids.map((uid) => ({ ok: true as const, value: createMockNodeEntity({ uid }) }));
 };
 
 const mockAncestryForTarget = ({ target, targetAncestors }: { target: string; targetAncestors: string[] }) => {
-    mockGetNodeAncestry.mockImplementation(async (calledTarget) => {
+    mockGetNodeHierarchy.mockImplementation(async (calledTarget: string) => {
         expect(calledTarget).toBe(target);
-        return createMockAncestry(...targetAncestors, target);
+        return createMockHierarchy(...targetAncestors, target);
     });
 };
 
@@ -138,7 +134,7 @@ describe('useMoveEligibility', () => {
                 expect(result.current.invalidMoveMessage).toBe("Can't move a folder into itself");
             });
 
-            expect(mockGetNodeAncestry).toHaveBeenCalledWith(targetFolderUid, drive);
+            expect(mockGetNodeHierarchy).toHaveBeenCalledWith(targetFolderUid);
         });
 
         it('should mark move as invalid when any selected item is in target ancestry', async () => {
@@ -166,10 +162,7 @@ describe('useMoveEligibility', () => {
             const targetFolderUid = PARENT2_UID;
             const mockError = new Error('API Error');
 
-            mockGetNodeAncestry.mockResolvedValue({
-                ok: false,
-                error: mockError,
-            });
+            mockGetNodeHierarchy.mockRejectedValue(mockError);
 
             renderHook(() => useMoveEligibility(selectedItemConfigs, targetFolderUid, drive));
 

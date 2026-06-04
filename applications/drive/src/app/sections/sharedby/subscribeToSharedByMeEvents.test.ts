@@ -2,8 +2,8 @@ import { type NodeEntity, getDrivePerNodeType } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
+import { getFormattedNodeLocation } from '@proton/drive/modules/nodes';
 
-import { getFormattedNodeLocation } from '../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 import { subscribeToSharedByMeEvents } from './subscribeToSharedByMeEvents';
 import { useSharedByMeStore } from './useSharedByMe.store';
@@ -16,7 +16,10 @@ jest.mock('@proton/drive/modules/busDriver', () => ({
 }));
 jest.mock('@proton/drive/legacy/errorHandling');
 jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity');
-jest.mock('../../utils/sdk/getNodeLocation');
+jest.mock('@proton/drive/modules/nodes', () => ({
+    ...jest.requireActual('@proton/drive/modules/nodes'),
+    getFormattedNodeLocation: jest.fn(),
+}));
 jest.mock('../../utils/sdk/getSignatureIssues');
 jest.mock('./useSharedByMe.store');
 jest.mock('./utils/getOldestShareCreationTime');
