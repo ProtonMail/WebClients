@@ -1,4 +1,7 @@
-import { Icon } from '@proton/components'
+import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight'
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle'
+import { IcLock } from '@proton/icons/icons/IcLock'
+import { IcLockCheck } from '@proton/icons/icons/IcLockCheck'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type { DocumentState, PublicDocumentState } from '@proton/docs-core'
 import { WebsocketConnectionEvent } from '@proton/docs-core'
@@ -75,7 +78,7 @@ export function ConnectionStatus({ documentState }: ConnectionStatusProps) {
         if (shouldShowConnecting) {
           connectionPill = (
             <Pill data-connection-popover>
-              <Icon name="arrow-rotate-right" className="animate-spin" data-testid="network-status-connecting" />
+              <IcArrowRotateRight className="animate-spin" data-testid="network-status-connecting" />
               <span className="head-max-1199:!sr-only">{c('Info').t`Opening...`}</span>
             </Pill>
           )
@@ -114,14 +117,14 @@ export function ConnectionStatus({ documentState }: ConnectionStatusProps) {
         <PopoverPill
           title={
             <div className="flex gap-2">
-              <Icon name="lock" className="h-6 w-6 fill-current" />
+              <IcLock className="h-6 w-6 fill-current" />
               <span>{c('Title').t`Read-only`}</span>
             </div>
           }
           content={c('Info')
             .t`This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.`}
         >
-          <Icon name="lock" className="h-4 w-4 fill-current" />
+          <IcLock className="h-4 w-4 fill-current" />
           <span className="head-max-1199:!sr-only">{c('Info').t`Read-only`}</span>
         </PopoverPill>
       )
@@ -156,13 +159,13 @@ export function ConnectionStatus({ documentState }: ConnectionStatusProps) {
         <PopoverPill
           title={
             <div className="flex gap-2" data-testid="changes-info-e2e-encrypted">
-              <Icon name="lock-check" className="h-6 w-6 fill-current" />
+              <IcLockCheck className="h-6 w-6 fill-current" />
               <span>{c('Info').t`End-to-end encrypted`}</span>
             </div>
           }
           content={c('Info').t`Every change you make is automatically and securely saved to Drive.`}
         >
-          <Icon name="lock-check" className="h-4 w-4 fill-current" />
+          <IcLockCheck className="h-4 w-4 fill-current" />
           <span className="head-max-1199:!sr-only">{c('Info').t`End-to-end encrypted`}</span>
         </PopoverPill>
       )}
@@ -170,7 +173,7 @@ export function ConnectionStatus({ documentState }: ConnectionStatusProps) {
         <PopoverPill
           title={
             <div className="flex gap-2" data-testid="changes-info-error">
-              <Icon name="exclamation-circle" className="h-6 w-6 fill-current" />
+              <IcExclamationCircle className="h-6 w-6 fill-current" />
               <span>{c('Title').t`Error Syncing`}</span>
             </div>
           }
@@ -178,7 +181,7 @@ export function ConnectionStatus({ documentState }: ConnectionStatusProps) {
             .t`Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.`}
           onToggle={onErrorPillToggle}
         >
-          <Icon name="exclamation-circle" className="h-4 w-4 fill-current" />
+          <IcExclamationCircle className="h-4 w-4 fill-current" />
           <span className="head-max-1199:!sr-only">{c('Info').t`Error Syncing`}</span>
         </PopoverPill>
       )}
@@ -186,13 +189,13 @@ export function ConnectionStatus({ documentState }: ConnectionStatusProps) {
         <PopoverPill
           title={
             <div className="flex gap-2" data-testid="changes-info-limited">
-              <Icon name="exclamation-circle" className="h-6 w-6 fill-current" />
+              <IcExclamationCircle className="h-6 w-6 fill-current" />
               <span>{c('Title').t`Limited availability`}</span>
             </div>
           }
           content={c('Info').t`This document has lots of activity. Some features may be temporarily unavailable.`}
         >
-          <Icon name="exclamation-circle" className="h-4 w-4 fill-current" />
+          <IcExclamationCircle className="h-4 w-4 fill-current" />
           <span className="head-max-1199:!sr-only">{c('Info').t`Limited availability`}</span>
         </PopoverPill>
       )}
