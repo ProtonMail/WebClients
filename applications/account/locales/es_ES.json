@@ -1300,6 +1300,9 @@
       "Send email reminder": [
         "Enviar un recordatorio por correo electrónico"
       ],
+      "Send feedback": [
+        "Envía tus sugerencias"
+      ],
       "Send my username": [
         "Enviar mi nombre de usuario"
       ],
@@ -1347,6 +1350,9 @@
       ],
       "Share": [
         "Compartir"
+      ],
+      "Share feedback": [
+        "Comparte tu opinión"
       ],
       "Share via link": [
         "Compartir con un enlace"
@@ -2603,9 +2609,6 @@
       ]
     },
     "BOSS": {
-      "${ BRAND_NAME } Migration Assistant": [
-        "${ BRAND_NAME } Migration Assistant"
-      ],
       "Authenticate": [
         "Autentificar"
       ],
@@ -2618,9 +2621,6 @@
       "Change": [
         "Cambiar"
       ],
-      "Completed": [
-        "Completado"
-      ],
       "Configure": [
         "Configurar"
       ],
@@ -2629,9 +2629,6 @@
       ],
       "Contacts": [
         "Contactos"
-      ],
-      "Domain connected": [
-        "Dominio conectado"
       ],
       "Estimated size": [
         "Tamaño estimado"
@@ -2663,9 +2660,6 @@
       "Migrate from Google Workspace": [
         "Migra desde Google Workspace"
       ],
-      "Migrate users": [
-        "Migrar usuarios"
-      ],
       "Migration includes": [
         "La migración incluye"
       ],
@@ -2681,9 +2675,6 @@
       ],
       "Organization does not have enough storage available": [
         "La organización no tiene suficiente espacio de almacenamiento disponible"
-      ],
-      "Required": [
-        "Requerido"
       ],
       "Required to create user accounts": [
         "Necesario para crear cuentas de usuario"
@@ -2712,9 +2703,6 @@
       "Status": [
         "Estado"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
-        "Para migrar los datos de tu organización, necesitas instalar la aplicación ${ BRAND_NAME } Migration Assistant desde Google Workspace Marketplace. Esto otorgará permiso a ${ BRAND_NAME } para copiar tus datos. Después de instalarla, vuelve aquí para continuar."
-      ],
       "User": [
         "Usuario"
       ],
@@ -2735,9 +2723,6 @@
       ],
       "What are you migrating?": [
         "¿Qué estás migrando?"
-      ],
-      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
-        "Debes otorgar el permiso para que ${ BRAND_NAME } copie tus datos. Después de aceptar los permisos, vuelve aquí para continuar."
       ]
     },
     "breadcrumb": {
@@ -9298,6 +9283,9 @@
       "Copy your referral link": [
         "Copia tu enlace de referido"
       ],
+      "Couldn´t send feedback": [
+        "No se han podido enviar los comentarios"
+      ],
       "Country code": [
         "Código de país"
       ],
@@ -10083,6 +10071,9 @@
       "Key deletion is irreversible!": [
         "¡La eliminación de la clave es irreversible!"
       ],
+      "Key sections reorganized for faster access.": [
+        "Se han reorganizado las secciones clave para un acceso más rápido."
+      ],
       "Keys created": [
         "Se han creado las claves."
       ],
@@ -10241,6 +10232,12 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Los nuevos datos de actividad dejarán de recopilarse y mostrarse."
+      ],
+      "New sidebar": [
+        "Nueva barra lateral"
+      ],
+      "New sidebar layout": [
+        "Nuevo diseño de la barra lateral"
       ],
       "New user invited to organization": [
         "Se ha invitado el nuevo usuario a la organización."
@@ -10747,6 +10744,9 @@
       "Settings updated": [
         "Se han actualizado los ajustes."
       ],
+      "Share your thoughts...": [
+        "Comparte tu opinión..."
+      ],
       "Shared ${ vaultLink } deleted": [
         "${ vaultLink } compartido eliminado"
       ],
@@ -10888,6 +10888,9 @@
       "Swiss based": [
         "Con sede en Suiza"
       ],
+      "Switch sidebars": [
+        "Cambiar barras laterales"
+      ],
       "Symbols (#$&)": [
         "Símbolos (#$&)"
       ],
@@ -10920,6 +10923,9 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Gracias por suscribirte. La navegación segura comienza ahora."
+      ],
+      "Thanks - your feedback was sent.": [
+        "Gracias. Se han enviado tus comentarios."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Gracias por apoyar nuestra misión de construir un mejor internet donde la privacidad y la libertad son primero."
@@ -11810,6 +11816,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico se utilizará solo para esta verificación única."
+      ],
+      "Your feedback": [
+        "Tus comentarios"
       ],
       "Your files will be encrypted and then saved": [
         "Tus archivos serán cifrados y después guardados."
@@ -15432,10 +15441,6 @@
       "Send & receive invitations": [
         "Enviar y recibir invitaciones"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Servidores en más de ${ vpnServersCountData.paid.countries } país",
-        "Servidores en más de ${ vpnServersCountData.paid.countries } países"
-      ],
       "Share files with no size limit": [
         "Comparte archivos sin límites de tamaño."
       ],
@@ -16021,9 +16026,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Ubicaciones de servidores dedicados en más de ${ numberOfCountries } países"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Ubicaciones de servidores dedicados en América del Norte y Europa"
       ],
       "Multi-platform support": [
         "Soporte multiplataforma"
@@ -19598,18 +19600,6 @@
         "${ VPN_CONNECTIONS } conexión VPN de alta velocidad",
         "${ VPN_CONNECTIONS } conexiones VPN de alta velocidad"
       ],
-      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
-        "${ vpnServersCountData.free.servers } servidores VPN en ${ vpnServersCountData.free.countries } país",
-        "Más de ${ vpnServersCountData.free.servers } servidores VPN en ${ vpnServersCountData.free.countries } países"
-      ],
-      "${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries }+ país",
-        "${ vpnServersCountData.paid.countries }+ países"
-      ],
-      "${ vpnServersCountData.paid.servers }+ server across": [
-        "${ vpnServersCountData.paid.servers }+ servidor en",
-        "${ vpnServersCountData.paid.servers }+ servidores en"
-      ],
       "/user": [
         "/usuario"
       ],
@@ -19880,13 +19870,6 @@
       ],
       "use your own email.": [
         "usa tu propio correo electrónico."
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "VPN con servidores en ${ vpnServersCountData.free.countries } países"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "VPN con servidores en ${ vpnServersCountData.free.countries } país",
-        "VPN con servidores en ${ vpnServersCountData.free.countries } países"
       ],
       "We’ll email you before your trial ends.": [
         "Te enviaremos un correo electrónico antes de que termine tu prueba."
@@ -21708,6 +21691,11 @@
         "Usa la configuración de ${ BRAND_NAME }"
       ]
     },
+    "Themes": {
+      "Themes": [
+        "Temas"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } día",
@@ -21788,6 +21776,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } para organizaciones"
+      ],
+      "${ VPN_APP_NAME } clients": [
+        "Clientes de ${ VPN_APP_NAME }"
       ],
       "(active)": [
         "(activo)"
@@ -22238,6 +22229,9 @@
       "Deep dive into VPN blog posts": [
         "Análisis en profundidad de las publicaciones de nuestro blog de VPN"
       ],
+      "Delete": [
+        "Eliminar"
+      ],
       "Delete ${ name }?": [
         "¿Eliminar ${ name }?"
       ],
@@ -22344,6 +22338,9 @@
       "Download ${ PASS_APP_NAME } for your devices": [
         "Descarga ${ PASS_APP_NAME } para tus dispositivos"
       ],
+      "Download apps": [
+        "Descargar aplicaciones"
+      ],
       "Download the desktop app": [
         "Descarga la aplicación de escritorio"
       ],
@@ -22424,6 +22421,9 @@
       ],
       "Email privacy": [
         "Privacidad del correo"
+      ],
+      "Email subscriptions": [
+        "Suscripciones de correo"
       ],
       "Emergency access": [
         "Acceso de emergencia"
@@ -22606,6 +22606,9 @@
       "Help center": [
         "Centro de ayuda"
       ],
+      "Help us improve": [
+        "Ayúdanos a mejorar"
+      ],
       "Home": [
         "Inicio"
       ],
@@ -22733,6 +22736,9 @@
       "Mobile": [
         "Móvil"
       ],
+      "Monitoring": [
+        "Supervisar"
+      ],
       "Monthly": [
         "Mensualmente"
       ],
@@ -22742,11 +22748,17 @@
       "Multiple accounts, 1 private inbox": [
         "Varias cuentas, 1 bandeja de entrada privada"
       ],
+      "My account": [
+        "Mi cuenta"
+      ],
       "My addresses": [
         "Mis direcciones"
       ],
       "My calendars": [
         "Mis calendarios"
+      ],
+      "My VPN": [
+        "Mi VPN"
       ],
       "Name": [
         "Nombre"
@@ -22796,8 +22808,17 @@
       "OpenVPN configuration files": [
         "Archivos de configuración de OpenVPN"
       ],
+      "OpenVPN username": [
+        "Nombre de usuario de OpenVPN"
+      ],
       "Org setup": [
         "Configuración de la organización"
+      ],
+      "Organization": [
+        "Organización"
+      ],
+      "Organization and people": [
+        "Organización y personas"
       ],
       "Organization filters": [
         "Filtros de la organización"
@@ -23009,6 +23030,9 @@
       "Security": [
         "Seguridad"
       ],
+      "Security and compliance": [
+        "Seguridad y cumplimiento"
+      ],
       "Security and privacy": [
         "Seguridad y privacidad"
       ],
@@ -23128,6 +23152,9 @@
       ],
       "Single sign-on": [
         "Inicio de sesión único"
+      ],
+      "Single-sign on (SSO)": [
+        "Inicio de sesión único (SSO)"
       ],
       "SMTP submission": [
         "Envío SMTP"
@@ -23262,6 +23289,9 @@
       "Upgrade to keep your premium benefits.": [
         "Mejora para mantener tus beneficios prémium."
       ],
+      "Upgrade your network protection with dedicated servers": [
+        "Mejora la protección de tu red con servidores dedicados"
+      ],
       "Upgrade your privacy": [
         "Mejora tu privacidad"
       ],
@@ -23318,6 +23348,9 @@
       ],
       "View organization events by upgrading to Professional": [
         "Consulta los eventos de la organización al mejorar a Professional"
+      ],
+      "VPN": [
+        "VPN"
       ],
       "VPN apps": [
         "Aplicaciones VPN"
@@ -23378,6 +23411,9 @@
       ],
       "Your changes are not synced yet": [
         "Tus cambios todavía no están sincronizados."
+      ],
+      "Your current plan": [
+        "Tu plan actual"
       ],
       "Your exposed information": [
         "Tus datos expuestos"

@@ -338,9 +338,6 @@
       "Delete policy": [
         "Slett retningslinje"
       ],
-      "Delete token ${ tokens[0].Account }": [
-        "Slett token ${ tokens[0].Account }"
-      ],
       "Delete user": [
         "Slett bruker"
       ],
@@ -571,9 +568,6 @@
       ],
       "Go to ${ planOrAppName }": [
         "Gå til ${ planOrAppName }"
-      ],
-      "Go to domain provider": [
-        "Gå til domeneleverandøren"
       ],
       "Go to label": [
         "Gå til etikett"
@@ -1992,21 +1986,6 @@
       ]
     },
     "BOSS": {
-      "${ BRAND_NAME } Migration Assistant": [
-        "${ BRAND_NAME } Migration Assistant"
-      ],
-      "${ migratedCount } of ${ providerUsers.length }": [
-        "${ migratedCount } av ${ providerUsers.length }"
-      ],
-      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
-        "**p=none**: ikke sett uautoriserte e-poster i karantene eller avvis e-poster. Vanligvis bruker folk bare denne retningslinjen til å feilsøke eller teste."
-      ],
-      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
-        "**p=quarantine**: ber mottakerplattformene om å merke de uautoriserte e-postene som søppelpost eller sette dem i karantene."
-      ],
-      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
-        "**p=reject**: ber mottakerplattformene om å avvise de uautoriserte e-postene."
-      ],
       "Account connected": [
         "Konto tilkoblet"
       ],
@@ -2015,12 +1994,6 @@
       ],
       "Activated": [
         "Aktivert"
-      ],
-      "Activation link": [
-        "Aktiveringskobling"
-      ],
-      "Activation link copied to clipboard": [
-        "Aktiveringskobling kopiert til utklippstavlen"
       ],
       "Add domain": [
         "Legg til domene"
@@ -2034,14 +2007,8 @@
       "All": [
         "Alle"
       ],
-      "An unknown error occurred": [
-        "En ukjent feil har oppstått"
-      ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "Er du sikker på at du vil fortsette? Brukere som ikke har gjort krav på kontoen sin før overføringen er fullført, må be om en tilbakestilling av passordet fra administratoren for ${ BRAND_NAME }-organisasjonen."
-      ],
-      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
-        "Så snart kontoene er opprettet, kan du dele aktiveringskoblingen slik at brukerne kan gjøre krav på ${ BRAND_NAME }-kontoen sin."
       ],
       "Authenticate": [
         "Autentiser"
@@ -2051,12 +2018,6 @@
       ],
       "Calendar": [
         "Kalender"
-      ],
-      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
-        "Velg hva du vil migrere. Valget ditt gjelder for alle brukere. Migreringen starter etter at du har bestemt deg for hvilke brukere du vil kopiere."
-      ],
-      "Completed": [
-        "Fullført"
       ],
       "Configure domain": [
         "Konfigurer domene"
@@ -2070,35 +2031,14 @@
       "Contacts": [
         "Kontakter"
       ],
-      "Copy activation link": [
-        "Kopier aktiveringskoblingen"
-      ],
-      "Copy activation link to clipboard": [
-        "Kopier aktiveringskoblingen til utklippstavlen"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
-        "Kopier koden nedenfor og lim den inn i DNS-delen av domeneverten din. Du finner et eksempel og noen nyttige tips ${ hereHref }."
-      ],
-      "Creating accounts": [
-        "Oppretter kontoer"
-      ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM legger til en digital signatur i hver e-post, slik at mottakerne kan bekrefte at meldingen faktisk kom fra domenet ditt og ikke ble endret underveis. Uten den kan meldinger bli behandlet som mindre pålitelige."
-      ],
-      "DKIM records": [
-        "DKIM-poster"
       ],
       "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
         "DMARC bygger på SPF og DKIM ved å fortelle mottakerserverne hvordan de skal håndtere meldinger som ikke består disse kontrollene. Det bidrar til å beskytte domenet ditt mot etterligning og forbedrer den generelle leveringspåliteligheten."
       ],
-      "DMARC records": [
-        "DMARC-poster"
-      ],
       "Domain added": [
         "Domene lagt til"
-      ],
-      "Domain connected": [
-        "Domene tilkoblet"
       ],
       "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
         "Sørg for at e-postene dine havner i innboksen, ikke i søppelpostmappen. Hvis du oppdaterer SPF, kan brukere sende fra ${ BRAND_NAME } og Google samtidig under migreringen."
@@ -2112,12 +2052,6 @@
       "Failed to load OAuth": [
         "Kunne ikke laste inn OAuth"
       ],
-      "Finalize migration": [
-        "Fullfør migreringen"
-      ],
-      "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
-        "Når migreringen er fullført, blir alle e-postene dine sendt direkte til ${ BRAND_NAME }. Brukerne vil slutte å motta e-poster på Google-kontoene sine, og dataene vil ikke lenger bli synkronisert mellom ${ BRAND_NAME } og Google."
-      ],
       "Find out what can be migrated.": [
         "Finn ut hva som kan migreres."
       ],
@@ -2127,14 +2061,8 @@
       "Google Workspace account": [
         "Google Workspace-konto"
       ],
-      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
-        "Vent litt, vi setter opp brukerkontoer og begynner snart å importere brukerdata."
-      ],
       "Has errors": [
         "Inneholder feil"
-      ],
-      "Import errors for ${ user.AdminSetName }": [
-        "Importfeil for ${ user.AdminSetName }"
       ],
       "In progress": [
         "Pågår"
@@ -2151,17 +2079,11 @@
       "Mail": [
         "E-post"
       ],
-      "Managed via ${ registrar.name }": [
-        "Administrert via ${ registrar.name }"
-      ],
       "Member address not found. Please contact customer support to resolve this": [
         "Medlemsadressen ble ikke funnet. Ta kontakt med kundestøtte for å løse dette."
       ],
       "Migrate from Google Workspace": [
         "Migrer fra Google Workspace"
-      ],
-      "Migrate users": [
-        "Migrer brukere"
       ],
       "Migrated": [
         "Migrert"
@@ -2182,9 +2104,6 @@
       "Missing organization public key": [
         "Mangler offentlig nøkkel for organisasjonen"
       ],
-      "More details": [
-        "Flere detaljer"
-      ],
       "No error details available. Please contact customer support for more information": [
         "Ingen feilinformasjon tilgjengelig. Ta kontakt med kundestøtte for mer informasjon."
       ],
@@ -2196,9 +2115,6 @@
       ],
       "Not confirmed": [
         "Ikke bekreftet"
-      ],
-      "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
-        "Når brukerne har gjort krav på ${ BRAND_NAME }-kontoen sin, fullfør migreringen."
       ],
       "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
         "Når vi har bekreftet at e-postene er sendt til ${ BRAND_NAME }, vil overføringen være fullført. Du vil motta en bekreftelses-e-post som gir deg beskjed når dette skjer. Denne prosessen kan ta opptil 24 timer."
@@ -2212,32 +2128,14 @@
       "Pending": [
         "Venter"
       ],
-      "Please add the following records in your DNS console of your domain provider:": [
-        "Legg til følgende poster i DNS-konsollen til domeneleverandøren din:"
-      ],
-      "Please leave this window open until we're done creating all the users.": [
-        "La dette vinduet stå åpent til vi er ferdige med å opprette alle brukerne."
-      ],
-      "Please select at least one product to migrate": [
-        "Velg minst ett produkt du vil migrere"
-      ],
       "Refresh": [
         "Oppdater"
-      ],
-      "Required": [
-        "Obligatorisk"
-      ],
-      "Required to create user accounts": [
-        "Kreves for å opprette brukerkontoer"
       ],
       "Select at least one user to start a migration": [
         "Velg minst én bruker for å starte en migrering"
       ],
       "Select users to migrate": [
         "Velg brukere som skal migreres"
-      ],
-      "Set up": [
-        "Konfigurer"
       ],
       "Set up secure sending (DKIM)": [
         "Konfigurer sikker sending (DKIM)"
@@ -2251,9 +2149,6 @@
       "Settings": [
         "Innstillinger"
       ],
-      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
-        "Del aktiveringskoblingen med brukerne slik at de kan gjøre krav på ${ BRAND_NAME }-kontoen sin."
-      ],
       "Sign in to Google Workspace": [
         "Logg på Google Workspace"
       ],
@@ -2263,41 +2158,14 @@
       "Some accounts are not claimed": [
         "Noen kontoer er ikke gjort krav på"
       ],
-      "SPF records": [
-        "SPF-poster"
-      ],
-      "Start migrating": [
-        "Start migrering"
-      ],
       "Status": [
         "Status"
-      ],
-      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
-        "Standardinnstillingen er ingen. For å forbedre sikkerheten anbefaler vi imidlertid at du setter denne verdien til p=quarantine."
-      ],
-      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
-        "Verdien \"p=\" angir handlingen som skal utføres for e-poster som ikke lykkes med DMARC. Her er de tilgjengelige handlingene:"
-      ],
-      "This migration has been completed": [
-        "Migreringen er fullført"
-      ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
-        "For å migrere organisasjonens data, må du installere ${ BRAND_NAME } Migration Assistant-appen fra Google Workspace Marketplace. Dette vil gi ${ BRAND_NAME } tillatelse til å kopiere dataene dine. Etter å ha installert den, kom tilbake hit for å fortsette."
       ],
       "Update records for receiving": [
         "Oppdater poster for mottak"
       ],
       "User": [
         "Bruker"
-      ],
-      "User needs to activate their account through the activation link shown above": [
-        "Brukeren må aktivere kontoen sin via aktiveringskoblingen som vises ovenfor."
-      ],
-      "User status": [
-        "Brukerstatus"
-      ],
-      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
-        "Brukere kan bruke ${ BRAND_NAME } eller Google samtidig under migreringen."
       ],
       "Users migrated": [
         "Brukere migrert"
@@ -2314,14 +2182,8 @@
       "Verify your domain to start a migration": [
         "Verifiser domenet ditt for å starte en migrering"
       ],
-      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
-        "Vi fant hoveddomenet som er knyttet til Google Workspace-kontoen din. Bekreft det for å fortsette å konfigurere e-post for ${ BRAND_NAME }-organisasjonen din."
-      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Vi kunne ikke bekrefte installasjonen. Sjekk at du har installert den i Google Workspace-kontoen din, og prøv på nytt."
-      ],
-      "We're still checking the MX records with your domain provider.": [
-        "Vi sjekker fortsatt MX-postene med domeneleverandøren din."
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Vi har lagt merke til at noen brukere ikke har gjort krav på ${ BRAND_NAME }-kontoene sine."
@@ -2331,9 +2193,6 @@
       ],
       "You": [
         "Du"
-      ],
-      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
-        "Du må gi ${ BRAND_NAME } tillatelse til å kopiere dataene dine. Etter at du har godtatt tillatelsene, kan du komme tilbake hit for å fortsette."
       ],
       "You're all set!": [
         "Nå er du klar!"
@@ -4058,11 +3917,6 @@
     "description": {
       "use the Easy Switch import assistant": [
         "bruk Easy Switch-importassistenten"
-      ]
-    },
-    "Description for domain modal": {
-      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
-        "Duplikat DMARC-post funnet. Gå til DNS-konsollen til domeneleverandøren din for å fikse det."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -10002,9 +9856,6 @@
       "Hide password": [
         "Skjul passord"
       ],
-      "Host name": [
-        "Vertsnavn"
-      ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Jeg forstår at jeg må legge til denne e-postadressen i den andre kontoen umiddelbart, for å unngå å miste denne adressen permanent."
       ],
@@ -10121,9 +9972,6 @@
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Må minst ha ${ MIN_PASSWORD_LENGTH } tegn"
-      ],
-      "MX records": [
-        "MX-poster"
       ],
       "Name": [
         "Navn"
@@ -10256,9 +10104,6 @@
       ],
       "Previous password": [
         "Forrige passord"
-      ],
-      "Priority": [
-        "Prioritet"
       ],
       "Priority support": [
         "Prioritert kundestøtte"
@@ -10558,9 +10403,6 @@
       "Type": [
         "Type"
       ],
-      "Use default value": [
-        "Bruk standardverdi"
-      ],
       "Valid ${ group.name } record found": [
         "Gyldig ${ group.name }-post funnet"
       ]
@@ -10679,9 +10521,6 @@
       ],
       "data recovery option": [
         "alternativ for datagjenoppretting"
-      ],
-      "Detailed instructions": [
-        "Detaljerte instruksjoner"
       ],
       "Details": [
         "Detaljer"
@@ -11824,10 +11663,6 @@
       "Send & receive invitations": [
         "Send & motta invitasjoner"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Servere i ${ vpnServersCountData.paid.countries }+ land",
-        "Servere i ${ vpnServersCountData.paid.countries }+ land"
-      ],
       "Share files with no size limit": [
         "Del filer uten størrelsesbegrensning"
       ],
@@ -12399,9 +12234,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Dedikerte tjenerplasseringer i ${ numberOfCountries }+ land"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Dedikerte tjenerplasseringer i Nord-Amerika og Europa"
       ],
       "Multi-platform support": [
         "Støtte for mange plattformer"
@@ -16099,9 +15931,6 @@
       "Account deleted. Signing out...": [
         "Konto slettet. Logger av..."
       ],
-      "Activation link copied to clipboard": [
-        "Aktiveringskobling kopiert til utklippstavlen"
-      ],
       "Address added": [
         "Adresse lagt til"
       ],
@@ -17710,6 +17539,9 @@
       ],
       "VPN": [
         "VPN"
+      ],
+      "VPN apps": [
+        "VPN-apper"
       ],
       "Warning": [
         "Advarsel"

@@ -172,6 +172,9 @@
       "Get the apps": [
         "Uygulamaları edinin"
       ],
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ],
       "Get verification code": [
         "Doğrulama kodu alın"
       ],
@@ -2378,6 +2381,9 @@
       "Payment process not supported": [
         "Ödeme işlemi desteklenmiyor"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Lütfen ABN numaranızın sınır ötesi KDV için kayıtlı olup olmadığını denetleyin"
+      ],
       "Please complete the billing details": [
         "Lütfen fatura bilgilerini tamamlayın"
       ],
@@ -2464,6 +2470,9 @@
       ],
       "Username must end with a letter or digit": [
         "Kullanıcı adı bir harf ya da rakam ile bitmeli"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "KDV numarası ${ prefixes } ile başlamalıdır"
       ],
       "Wrong billing address": [
         "Fatura adresi yanlış"
@@ -4569,9 +4578,6 @@
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "${ numberOfCountries } üzerindeki ülkede size ayrılmış sunucu konumları"
       ],
-      "Dedicated server locations in North America and Europe": [
-        "Kuzey Amerika ve Avrupa'da size ayrılmış sunucu konumları"
-      ],
       "Multi-platform support": [
         "Çeşitli platformları destekler"
       ],
@@ -5748,6 +5754,9 @@
       ],
       "Summary": [
         "Özet"
+      ],
+      "Summer Sale": [
+        "Yaz indirimi"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"

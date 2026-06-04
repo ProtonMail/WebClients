@@ -2095,7 +2095,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -4143,6 +4144,12 @@
       ],
       "The file you are trying to import is empty": [
         "Het bestand dat u probeert te importeren is leeg"
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Deze functie wordt in jouw plan niet ondersteund. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Deze functie wordt in jouw plan niet ondersteund. Neem contact op met je beheerder om toegang te krijgen."
       ],
       "Total files: ": [
         "Totaal aantal bestanden: "

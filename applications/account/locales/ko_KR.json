@@ -1374,6 +1374,9 @@
       "Send email reminder": [
         "이메일 알리미 전송"
       ],
+      "Send feedback": [
+        "피드백 전송"
+      ],
       "Send messages with @pm.me": [
         "@pm.me로 메시지 전송"
       ],
@@ -1424,6 +1427,9 @@
       ],
       "Share": [
         "공유"
+      ],
+      "Share feedback": [
+        "피드백 공유"
       ],
       "Share via link": [
         "링크로 공유"
@@ -2699,9 +2705,6 @@
       ]
     },
     "BOSS": {
-      "${ BRAND_NAME } Migration Assistant": [
-        "${ BRAND_NAME } 이전 도우미"
-      ],
       "Authenticate": [
         "인증"
       ],
@@ -2714,9 +2717,6 @@
       "Change": [
         "변경"
       ],
-      "Completed": [
-        "완료"
-      ],
       "Configure": [
         "구성"
       ],
@@ -2725,9 +2725,6 @@
       ],
       "Contacts": [
         "연락처"
-      ],
-      "Domain connected": [
-        "도메인 연결됨"
       ],
       "Estimated size": [
         "예상 용량"
@@ -2759,9 +2756,6 @@
       "Migrate from Google Workspace": [
         "Google Workspace에서 이전"
       ],
-      "Migrate users": [
-        "이전된 사용자"
-      ],
       "Migration includes": [
         "이전에 포함되는 항목:"
       ],
@@ -2776,9 +2770,6 @@
       ],
       "Organization does not have enough storage available": [
         "조직에 충분한 저장공간이 남아있지 않습니다."
-      ],
-      "Required": [
-        "필수"
       ],
       "Required to create user accounts": [
         "사용자 계정 생성 필요"
@@ -2807,9 +2798,6 @@
       "Status": [
         "상태"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
-        "조직의 데이터를 이전하려면 Google Workspace Marketplace에서 ${ BRAND_NAME } 이전 도우미 앱을 설치해야 합니다. 이 앱을 통해 ${ BRAND_NAME }에서 데이터를 복사할 수 있는 권한이 부여됩니다. 설치 후 계속 진행하려면 이곳으로 돌아오세요."
-      ],
       "User": [
         "사용자"
       ],
@@ -2830,9 +2818,6 @@
       ],
       "What are you migrating?": [
         "무엇을 이전하시나요?"
-      ],
-      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
-        "회원님의 데이터를 복사하기 위해 ${ BRAND_NAME }에 대한 접근 권한을 부여해야 합니다. 권한 수락 후 다시 돌아와 계속 진행해 주세요."
       ]
     },
     "breadcrumb": {
@@ -9588,6 +9573,9 @@
       "Copy your referral link": [
         "당신의 추천인 링크를 공유하세요"
       ],
+      "Couldn´t send feedback": [
+        "피드백을 전송할 수 없음"
+      ],
       "Country code": [
         "국가 코드"
       ],
@@ -11072,6 +11060,9 @@
       ],
       "Settings updated": [
         "설정 업데이트 완료"
+      ],
+      "Share your thoughts...": [
+        "회원님의 생각을 공유해주세요..."
       ],
       "Shared ${ vaultLink } deleted": [
         "공유된 ${ vaultLink }이(가) 삭제됨"
@@ -15880,9 +15871,6 @@
       "Send & receive invitations": [
         "전송 및 받은 초대"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries }개 이상 국가 내 서버"
-      ],
       "Share files with no size limit": [
         "크기 제한 없는 파일 공유"
       ],
@@ -16462,9 +16450,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "${ numberOfCountries }개 이상 국가에서 지원하는 전용 서버 위치"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "북미 및 유럽에서 지원하는 전용 서버 위치"
       ],
       "Multi-platform support": [
         "멀티 플랫품 지원"
@@ -20100,15 +20085,6 @@
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS }개 기기에서의 고속 VPN 연결"
       ],
-      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
-        "${ vpnServersCountData.free.countries }개 국가의 ${ vpnServersCountData.free.servers }개 이상의 VPN 서버"
-      ],
-      "${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries }개 이상의 국가"
-      ],
-      "${ vpnServersCountData.paid.servers }+ server across": [
-        "${ vpnServersCountData.paid.servers }개 이상의 서버"
-      ],
       "/user": [
         "/사용자 당"
       ],
@@ -20375,12 +20351,6 @@
       ],
       "use your own email.": [
         "자신만의 이메일 주소를 사용해보세요."
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "${ vpnServersCountData.free.countries }개 국가에 서버를 둔 VPN"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "${ vpnServersCountData.free.countries }개 국가에 소재된 서버의 VPN"
       ],
       "We’ll email you before your trial ends.": [
         "체험이 종료되기 전 이메일을 보내드립니다"
@@ -22261,6 +22231,9 @@
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "조직용 ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ VPN_APP_NAME } clients": [
+        "${ VPN_APP_NAME } 클라이언트"
+      ],
       "(active)": [
         "(활성)"
       ],
@@ -22708,6 +22681,9 @@
       "Deep dive into VPN blog posts": [
         "VPN 블로그 게시물 자세히 살펴보기"
       ],
+      "Delete": [
+        "삭제"
+      ],
       "Delete ${ name }?": [
         "${ name }을(를) 삭제할까요?"
       ],
@@ -22812,6 +22788,9 @@
       ],
       "Download ${ PASS_APP_NAME } for your devices": [
         "${ PASS_APP_NAME }를 가지고 계신 모든 기기에 다운로드하세요"
+      ],
+      "Download apps": [
+        "앱 다운로드"
       ],
       "Download the desktop app": [
         "데스크톱 앱 다운로드"
@@ -23071,6 +23050,9 @@
       "Help center": [
         "지원 센터"
       ],
+      "Help us improve": [
+        "개선할 수 있도록 도와주세요"
+      ],
       "Home": [
         "홈"
       ],
@@ -23206,6 +23188,9 @@
       "Mobile": [
         "모바일"
       ],
+      "Monitoring": [
+        "모니터링"
+      ],
       "Monthly": [
         "월간"
       ],
@@ -23214,6 +23199,9 @@
       ],
       "Multiple accounts, 1 private inbox": [
         "여러 계정, 하나의 받은 편지함"
+      ],
+      "My account": [
+        "나의 계정"
       ],
       "My addresses": [
         "내 주소"
@@ -23602,6 +23590,9 @@
       "Single sign-on": [
         "싱글 사인온 (SSO)"
       ],
+      "Single-sign on (SSO)": [
+        "싱글 사인 온 (SSO)"
+      ],
       "SMTP submission": [
         "SMTP 세부 사항"
       ],
@@ -23733,6 +23724,9 @@
       ],
       "Upgrade to keep your premium benefits.": [
         "프리미엄 기능 혜택을 놓치지 않기 위해 업그레이드하세요."
+      ],
+      "Upgrade your network protection with dedicated servers": [
+        "전용 서버로 네트워크 보호를 업그레이드하세요"
       ],
       "Upgrade your privacy": [
         "개인정보 보호를 업그레이드하세요"
