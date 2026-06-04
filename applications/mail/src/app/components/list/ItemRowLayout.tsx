@@ -34,7 +34,6 @@ interface Props {
     isCompactView: boolean;
     labelID: string;
     loading: boolean;
-    elementID?: string;
     labels?: Label[];
     element: Element;
     conversationMode: boolean;
@@ -49,7 +48,6 @@ const ItemRowLayout = ({
     isCompactView,
     labelID,
     loading,
-    elementID,
     labels,
     element,
     conversationMode,
@@ -165,7 +163,6 @@ const ItemRowLayout = ({
                     <ItemHoverButtons
                         element={element}
                         labelID={labelID}
-                        elementID={elementID}
                         onBack={onBack}
                         hasStar={false}
                         size="small"

@@ -10,7 +10,6 @@ import ItemContextMenu from './ItemContextMenu';
 import type { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 
 interface Props {
-    elementID?: string;
     labelID: string;
     anchorRef: RefObject<HTMLElement>;
     checkedIDs: string[];
@@ -22,7 +21,6 @@ interface Props {
 }
 
 export const useItemContextMenu = ({
-    elementID,
     labelID,
     anchorRef,
     checkedIDs,
@@ -69,7 +67,6 @@ export const useItemContextMenu = ({
             open={openContextMenu}
             close={closeContextMenu}
             position={contextMenuPosition}
-            elementID={elementID}
             labelID={labelID}
             checkedIDs={checkedIDs}
             onMarkAs={onMarkAs}
