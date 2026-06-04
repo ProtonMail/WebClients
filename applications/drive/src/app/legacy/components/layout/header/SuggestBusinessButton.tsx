@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { IcBriefcase } from '@proton/icons/icons/IcBriefcase';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 
 import { useSuggestBusinessModal } from '../../../../modals/SuggestBusinessModal/useSuggestBusinessModal';
@@ -27,7 +27,7 @@ export function SuggestBusinessButton() {
                     onClick={() => showModal({})}
                 >
                     <IcBriefcase className="shrink-0" />
-                    {c('Action').t`Get Drive for Business`}
+                    {c('Action').t`Try ${BRAND_NAME} Workspace`}
                 </button>
                 {modal}
             </>
