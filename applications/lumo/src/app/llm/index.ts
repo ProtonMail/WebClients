@@ -216,15 +216,28 @@ function tryConvertToWireImage(attachment: Attachment): WireImage | null {
 }
 
 /**
- * Format a single text attachment for LLM context
+ * Format a single text attachment for LLM context.
+ *
+ * Returns `null` when the attachment has no usable content (e.g. project/Drive
+ * files whose text lives in the RAG index and whose `markdown` is empty). Emitting
+ * an empty `BEGIN/END FILE CONTENTS` block confuses the model into thinking the file
+ * is empty, so we omit the block entirely instead — mirroring `flattenAttachmentsForLlm`.
  */
-function formatTextAttachmentContent(attachment: Attachment): string {
-    const filename = `Filename: ${attachment.filename}`;
-    const header = 'File contents:';
+function formatTextAttachmentContent(attachment: Attachment): string | null {
     const beginMarker = '----- BEGIN FILE CONTENTS -----';
     const endMarker = '----- END FILE CONTENTS -----';
-    const content = attachment.markdown?.trim() || '';
 
+    let content: string | undefined;
+    if (attachment.markdown) {
+        content = attachment.markdown.trim();
+    } else if (attachment.error) {
+        content = '[Contents not available: there was an error processing this file]';
+    }
+
+    if (!content) return null;
+
+    const filename = `Filename: ${attachment.filename}`;
+    const header = 'File contents:';
     return [filename, header, beginMarker, content, endMarker].join('\n');
 }
 
@@ -248,10 +261,14 @@ function createAttachmentTurn(shallowAttachment: ShallowAttachment, allAttachmen
             images: [wireImage],
         };
     } else if (textAttachments.length > 0) {
-        // Text attachment turn
+        // Text attachment turn — skip when there is no usable content so the model
+        // doesn't receive an empty file block (which it interprets as "file is empty").
+        const content = formatTextAttachmentContent(fullAttachment);
+        if (!content) return null;
+
         return {
             role: Role.User,
-            content: formatTextAttachmentContent(fullAttachment),
+            content,
         };
     }
 
