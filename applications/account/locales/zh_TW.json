@@ -12124,9 +12124,6 @@
       "Send & receive invitations": [
         "傳送並接收邀請"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "伺服器遍布 ${ vpnServersCountData.paid.countries }+ 國家"
-      ],
       "Share files with no size limit": [
         "分享檔案無大小限制"
       ],
@@ -12691,9 +12688,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "專用伺服器位於${ numberOfCountries }+個國家"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "專用伺服器位於北美或歐洲"
       ],
       "Multi-platform support": [
         "多平台支援"
@@ -15247,12 +15241,6 @@
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS } 個高速 VPN 連線"
       ],
-      "${ vpnServersCountData.paid.countries }+ country": [
-        "超過 ${ vpnServersCountData.paid.countries } 個國家"
-      ],
-      "${ vpnServersCountData.paid.servers }+ server across": [
-        "含跨 ${ vpnServersCountData.paid.servers }+ 伺服器"
-      ],
       "/user": [
         "/位使用者"
       ],
@@ -15384,12 +15372,6 @@
       ],
       "Use your current email": [
         "使用您目前的電子郵件位址"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "在 ${ vpnServersCountData.free.countries } 個國家設有伺服器的 VPN"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "在 ${ vpnServersCountData.free.countries } 個國家設有伺服器的 VPN"
       ],
       "Yearly": [
         "每年"
@@ -17376,6 +17358,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "深度了解VPN部落格貼文"
+      ],
+      "Delete": [
+        "刪除"
       ],
       "Delete ${ name }?": [
         "刪除 ${ name }？"

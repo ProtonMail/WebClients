@@ -10464,10 +10464,6 @@
       "Send & receive invitations": [
         "न्योते भेजें और लें"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries }+ देश में सर्वर",
-        "${ vpnServersCountData.paid.countries }+ देशों में सर्वर"
-      ],
       "Sign in as user": [
         "यूज़र के रूप में साइनइन"
       ],
@@ -10927,9 +10923,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "${ numberOfCountries }+ देशों में समर्पित सर्वर स्थान"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "उत्तरी अमेरिका और यूरोप में समर्पित सर्वर स्थान"
       ],
       "Multi-platform support": [
         "मल्टी-प्लैटफॉर्म समर्थन"
@@ -13133,13 +13126,6 @@
       "Up to 6 users": [
         "6 यूज़र तक"
       ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "${ vpnServersCountData.free.countries } देशों में सर्वरों वाला VPN"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "${ vpnServersCountData.free.countries } देश में सर्वरों वाला VPN",
-        "${ vpnServersCountData.free.countries } देशों में सर्वरों वाला VPN"
-      ],
       "Yearly": [
         "हर साल"
       ],
@@ -14858,6 +14844,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "VPN ब्लॉग पोस्ट में गहराई से जाएं"
+      ],
+      "Delete": [
+        "मिटाएं"
       ],
       "Delete ${ name }?": [
         "${ name } मिटाएं?"

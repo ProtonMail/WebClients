@@ -2110,9 +2110,6 @@
       ]
     },
     "BOSS": {
-      "Domain connected": [
-        "Domena połączona"
-      ],
       "Migration started for ${ n } user": [
         "Migracja rozpoczęta dla ${ n } użytkownika",
         "Migracja rozpoczęta dla ${ n } użytkowników",
@@ -2127,9 +2124,6 @@
       ],
       "Organization does not have enough storage available": [
         "Organizacja nie ma wystarczającej ilości przestrzeni dyskowej"
-      ],
-      "Required": [
-        "Wymagane"
       ],
       "Select at least one user to start a migration": [
         "Zaznacz co najmniej jednego użytkownika, aby rozpocząć migrację"
@@ -13034,12 +13028,6 @@
       "Send & receive invitations": [
         "Wysyłaj i otrzymuj zaproszenia"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Serwery w ponad ${ vpnServersCountData.paid.countries } kraju",
-        "Serwery w ponad ${ vpnServersCountData.paid.countries } krajach",
-        "Serwery w ponad ${ vpnServersCountData.paid.countries } krajach",
-        "Serwery w ponad ${ vpnServersCountData.paid.countries } krajach"
-      ],
       "Share files with no size limit": [
         "Udostępniaj pliki bez limitów"
       ],
@@ -13628,9 +13616,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Dedykowane serwery w ponad ${ numberOfCountries } krajach"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Dedykowane serwery w Ameryce Północnej i Europie"
       ],
       "Multi-platform support": [
         "Wsparcie dla wielu systemów operacyjnych"
@@ -16686,18 +16671,6 @@
         "${ VPN_CONNECTIONS } szybkich połączeń VPN",
         "${ VPN_CONNECTIONS } szybkich połączeń VPN"
       ],
-      "${ vpnServersCountData.paid.countries }+ country": [
-        "ponad ${ vpnServersCountData.paid.countries } kraju",
-        "ponad ${ vpnServersCountData.paid.countries } krajach",
-        "ponad ${ vpnServersCountData.paid.countries } krajach",
-        "ponad ${ vpnServersCountData.paid.countries } krajach"
-      ],
-      "${ vpnServersCountData.paid.servers }+ server across": [
-        "Ponad ${ vpnServersCountData.paid.servers } serwer w",
-        "Ponad ${ vpnServersCountData.paid.servers } serwery w",
-        "Ponad ${ vpnServersCountData.paid.servers } serwerów w",
-        "Ponad ${ vpnServersCountData.paid.servers } serwerów w"
-      ],
       "/user": [
         "/ użytkownika"
       ],
@@ -16910,15 +16883,6 @@
       ],
       "use your own email.": [
         "użyj własnego adresu."
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "VPN z serwerami w ${ vpnServersCountData.free.countries } krajach"
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "VPN z serwerami w ${ vpnServersCountData.free.countries } kraju",
-        "VPN z serwerami w ${ vpnServersCountData.free.countries } krajach",
-        "VPN z serwerami w ${ vpnServersCountData.free.countries } krajach",
-        "VPN z serwerami w ${ vpnServersCountData.free.countries } krajach"
       ],
       "We’ll email you before your trial ends.": [
         "Powiadomimy Cię przed zakończeniem wersji próbnej."
@@ -19128,6 +19092,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "Szczegółowa analiza wpisów na blogu VPN"
+      ],
+      "Delete": [
+        "Usuń"
       ],
       "Delete ${ name }?": [
         "Usunąć ${ name }?"
