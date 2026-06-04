@@ -134,6 +134,8 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
             registry.dropdown?.destroy();
         },
 
+        requestFocus: () => registry.dropdown?.requestFocus() ?? Promise.resolve(),
+
         sendMessage: (message) => registry.dropdown?.sendMessage(message),
 
         getState: async (checkInFlight) => {
