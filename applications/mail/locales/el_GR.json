@@ -639,6 +639,9 @@
       "Get the browser extension": [
         "Λήψη της προέκτασης για το πρόγραμμα περιήγησης"
       ],
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
+      ],
       "Get the writing assistant": [
         "Λάβετε τον βοηθό γραφής"
       ],
@@ -1520,7 +1523,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -4985,6 +4989,9 @@
       "Please activate your search again": [
         "Παρακαλούμε ενεργοποιήστε ξανά την αναζήτησή σας"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Ελέγξτε εάν ο ABN σας είναι εγγεγραμμένος για διασυνοριακό ΦΠΑ"
+      ],
       "Please complete the billing details": [
         "Παρακαλούμε συμπληρώστε τα στοιχεία χρέωσης"
       ],
@@ -5251,6 +5258,9 @@
       ],
       "Username must end with a letter or digit": [
         "Το όνομα χρήστη πρέπει να τελειώνει με γράμμα ή ψηφίο"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Ο αριθμός ΦΠΑ πρέπει να ξεκινά με ${ prefixes }"
       ],
       "Wrong billing address": [
         "Λανθασμένη διεύθυνσης χρέωσης"
@@ -7629,8 +7639,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -11842,9 +11851,6 @@
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Αποκλειστικές τοποθεσίες διακομιστών σε ${ numberOfCountries }+ χώρες"
       ],
-      "Dedicated server locations in North America and Europe": [
-        "Αποκλειστικές τοποθεσίες διακομιστών στη Βόρεια Αμερική και την Ευρώπη"
-      ],
       "Multi-platform support": [
         "Υποστήριξη πολλαπλών πλατφορμών"
       ],
@@ -15903,6 +15909,9 @@
       ],
       "Summary": [
         "Περίληψη"
+      ],
+      "Summer Sale": [
+        "Καλοκαιρινές Εκπτώσεις"
       ],
       "This field cannot be empty": [
         "Αυτό το πεδίο δεν μπορεί να είναι κενό"

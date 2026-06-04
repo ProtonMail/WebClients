@@ -639,6 +639,9 @@
       "Get the browser extension": [
         "Hent browserudvidelsen"
       ],
+      "Get the deal": [
+        "Gør brug af tilbuddet"
+      ],
       "Get the writing assistant": [
         "Hent skriveassistenten"
       ],
@@ -1520,7 +1523,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -4146,7 +4150,7 @@
         "Hjælp dit team med sikkert at lagre adgangskoder til følsomme forretnings- og klientoplysninger."
       ],
       "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "Hvis en meddelelse vises i den forkerte kategori skal du blot flytte den til den rigtige. Højreklik på en meddelelse for at vælge en ny kategori, eller træk og slip den, hvor den hører hjemme."
+        "Hvis en meddelelse vises i den forkerte kategori skal du blot flytte den til den rigtige. Højreklik på en meddelelse for at vælge en ny kategori, eller træk og slip den hvor den hører hjemme."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
@@ -4327,7 +4331,7 @@
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
       ],
       "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Du er blandt de første til at prøve vores nye kategorivisning, før den lanceres. Din feedback vil hjælpe os med at forbedre, hvordan Proton Mail sorterer e-mails for alle."
+        "Du er blandt de første til at prøve vores nye kategorivisning, før den lanceres. Din feedback vil hjælpe os med at forbedre hvordan Proton Mail sorterer e-mails for alle."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
@@ -4985,6 +4989,9 @@
       "Please activate your search again": [
         "Aktiver venligst din søgning igen"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Tjek venligst om dit ABN er registeret til moms på tværs af grænser"
+      ],
       "Please complete the billing details": [
         "Udfyld faktureringsoplysningerne"
       ],
@@ -5251,6 +5258,9 @@
       ],
       "Username must end with a letter or digit": [
         "Brugernavn skal ende på et bogstav eller et tal"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Momsnummer skal starte med ${ prefixes }"
       ],
       "Wrong billing address": [
         "Forkert faktureringsadresse"
@@ -7629,8 +7639,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -11841,9 +11850,6 @@
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Dedikerede serverplaceringer i ${ numberOfCountries }+ lande"
-      ],
-      "Dedicated server locations in North America and Europe": [
-        "Dedikerede serverplaceringer i Nordamerika og Europa"
       ],
       "Multi-platform support": [
         "Understøttelse af flere platforme"
