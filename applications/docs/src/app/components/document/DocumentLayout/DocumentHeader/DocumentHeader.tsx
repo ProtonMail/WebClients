@@ -1,4 +1,7 @@
-import { AppsDropdown, Icon, Logo, MimeIcon, useActiveBreakpoint, useConfig, UserDropdown } from '@proton/components'
+import { AppsDropdown, Logo, MimeIcon, useActiveBreakpoint, useConfig, UserDropdown } from '@proton/components'
+import { IcEye } from '@proton/icons/icons/IcEye'
+import { IcLockFilled } from '@proton/icons/icons/IcLockFilled'
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus'
 import { APPS } from '@proton/shared/lib/constants'
 import { DocumentTitleDropdown } from './DocumentTitleDropdown/DocumentTitleDropdown'
 import { DocumentActiveUsers } from './DocumentActiveUsers'
@@ -114,7 +117,7 @@ function DocsHeaderNoDocument() {
         <AppsDropdown />
       </div>
       <div className="hidden items-center justify-center text-center md:flex">
-        <Icon name="lock-filled" className="mr-1.5" />
+        <IcLockFilled className="mr-1.5" />
         <span className="pt-0.5 text-sm">{c('Title').t`End-to-end encrypted`}</span>
       </div>
       <div className="no-doc-header">
@@ -233,7 +236,7 @@ function DocsHeaderForDocument({
                       : authenticatedController?.openDocumentSharingModal()
                   }
                 >
-                  <Icon name="user-plus" />
+                  <IcUserPlus />
                   <span className="leading-none head-max-849:!sr-only">{c('Action').t`Share`}</span>
                 </Button>
               )}
@@ -272,14 +275,14 @@ function ViewOnlyPill() {
       placement="bottom"
       title={
         <div className="flex gap-2" data-testid="changes-info-e2e-encrypted">
-          <Icon name="eye" className="h-6 w-6 fill-current" />
+          <IcEye className="h-6 w-6 fill-current" />
           <span>{c('Info').t`View only`}</span>
         </div>
       }
       content={c('Info')
         .t`You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.`}
     >
-      <Icon name="eye" className="h-4 w-4 fill-current" />
+      <IcEye className="h-4 w-4 fill-current" />
       <span className="head-max-1199:sr-only">{c('Info').t`View only`}</span>
     </PopoverPill>
   )

@@ -46,7 +46,8 @@ import type { InviteAutoAcceptResult } from './InviteAutoAccepter'
 import { InviteAutoAccepter } from './InviteAutoAccepter'
 import { type DocumentError, DocumentErrorFallback } from './DocumentErrorFallback'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
-import { useAuthentication, useConfig, MimeIcon, Icon } from '@proton/components'
+import { useAuthentication, useConfig, MimeIcon } from '@proton/components'
+import { IcLockFilled } from '@proton/icons/icons/IcLockFilled'
 import { useApplication } from '~/utils/application-context'
 import { useDocsUrlBar } from '~/utils/docs-url-bar'
 import { AppendPublicShareKeyMaterialToTitle } from './append-public-share-key-material-to-title'
@@ -559,7 +560,7 @@ function Loader({ documentType }: LoaderProps) {
           {documentType === 'sheet' ? 'Proton Sheets' : 'Proton Docs'}
         </span>
         <span className="flex items-center gap-1.5">
-          <Icon name="lock-filled" />
+          <IcLockFilled />
           <span className="text-center text-sm font-semibold">{c('Info').t`Decrypting your document`}</span>
         </span>
       </div>

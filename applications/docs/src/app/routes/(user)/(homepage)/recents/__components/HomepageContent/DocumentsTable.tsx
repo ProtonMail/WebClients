@@ -11,6 +11,12 @@ import {
   usePopperAnchor,
 } from '@proton/components'
 import { DateFormatter, type RecentDocumentsItem } from '@proton/docs-core'
+import { IcArrowDown } from '@proton/icons/icons/IcArrowDown'
+import { IcArrowDownArrowUp } from '@proton/icons/icons/IcArrowDownArrowUp'
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark'
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical'
+import { IcUser } from '@proton/icons/icons/IcUser'
+import { IcUserFilled } from '@proton/icons/icons/IcUserFilled'
 import type { IconName } from '@proton/icons/types'
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
@@ -193,7 +199,7 @@ function SortSelect() {
           shape="ghost"
           className={clsx('ml-auto shrink-0 px-2', isOpen && '!bg-[--button-active-background-color]')}
         >
-          <Icon name="arrow-down-arrow-up" className="shrink-0" />
+          <IcArrowDownArrowUp className="shrink-0" />
         </Button>
       </Tooltip>
       <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
@@ -210,7 +216,7 @@ function SortSelect() {
               className="flex items-center gap-2"
             >
               <span>{label()}</span>
-              {sortValue === value ? <Icon name="checkmark" /> : null}
+              {sortValue === value ? <IcCheckmark /> : null}
             </DropdownMenuButton>
           ))}
         </DropdownMenu>
@@ -227,7 +233,7 @@ function MaybeSorted({ sorted, ...props }: MaybeSortedProps) {
   return (
     <span {...props} className={clsx('flex flex-nowrap items-center gap-[.375rem]', props.className)}>
       <span>{props.children}</span>
-      {sorted ? <Icon name="arrow-down" size={4} className="text-[--icon-norm]" /> : null}
+      {sorted ? <IcArrowDown size={4} className="text-[--icon-norm]" /> : null}
     </span>
   )
 }
@@ -333,10 +339,10 @@ function Row({ document, variant }: RowProps) {
 
   const contextMenu = useContextMenu()
 
-  let avatarContent: ReactNode = <Icon name="user-filled" className="shrink-0" />
+  let avatarContent: ReactNode = <IcUserFilled className="shrink-0" />
   if (document.isSharedWithMe) {
     if (!document.createdBy) {
-      avatarContent = <Icon name="user" className="shrink-0" />
+      avatarContent = <IcUser className="shrink-0" />
     } else {
       avatarContent = getInitials(document.createdBy)
     }
@@ -446,7 +452,7 @@ function Row({ document, variant }: RowProps) {
               className="ml-auto shrink-0 px-2"
               aria-label={c('Action').t`Actions`}
             >
-              <Icon name="three-dots-vertical" />
+              <IcThreeDotsVertical />
             </Button>
           </Tooltip>
         </div>

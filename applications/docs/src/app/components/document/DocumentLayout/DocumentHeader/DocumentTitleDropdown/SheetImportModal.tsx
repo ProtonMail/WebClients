@@ -1,6 +1,8 @@
 import { Button } from '@proton/atoms/Button/Button'
 import type { ModalStateProps } from '@proton/components'
-import { Checkbox, Icon, ModalTwo, ModalTwoContent, SelectTwo, Option, useModalTwoStatic } from '@proton/components'
+import { Checkbox, ModalTwo, ModalTwoContent, SelectTwo, Option, useModalTwoStatic } from '@proton/components'
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle'
+import { IcTrash } from '@proton/icons/icons/IcTrash'
 import { SheetImportDestination, SheetImportSeparatorType, type SheetImportData } from '@proton/docs-shared'
 import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants'
 import { useFlag } from '@proton/unleash/useFlag'
@@ -92,7 +94,7 @@ function SheetImportModal({ handleImport, onClose, open, ...modalProps }: SheetI
                   {file.name}
                 </span>
                 <Button icon shape="ghost" onClick={() => setFile(undefined)}>
-                  <Icon className="text-[--signal-danger]" name="trash" />
+                  <IcTrash className="text-[--signal-danger]" />
                   <span className="sr-only">{c('Action').t`Remove file`}</span>
                 </Button>
               </>
@@ -168,13 +170,13 @@ function SheetImportModal({ handleImport, onClose, open, ...modalProps }: SheetI
         </div>
         {file?.type === SupportedProtonDocsMimeTypes.ods && (
           <div className="mt-2 flex items-center gap-2 px-8 text-sm text-[--text-hint]">
-            <Icon name="info-circle" />
+            <IcInfoCircle />
             <span>{c('Info').t`Importing ODS files is currently in beta`}</span>
           </div>
         )}
         {destination === SheetImportDestination.ReplaceSpreadsheet && (
           <div className="mt-2 flex items-center gap-2 bg-[--signal-warning-minor-2] px-8 py-2 text-sm">
-            <Icon name="info-circle" className="text-[--signal-warning]" />
+            <IcInfoCircle className="text-[--signal-warning]" />
             <span>{c('Warning').t`This will replace all the data in the spreadsheet`}</span>
           </div>
         )}
