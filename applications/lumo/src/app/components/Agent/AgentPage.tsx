@@ -15,7 +15,7 @@ import { useQueryParam, useSkillParam, useThemeParam } from '../../hooks';
 import { useConversationAgent } from '../../hooks/useConversationAgent';
 import { useLumoActions } from '../../hooks/useLumoActions';
 import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
-import { ComposerActionsProvider } from '../../providers/ComposerActionsProvider';
+import { ConversationActionsProvider } from '../../providers/ConversationActionsProvider';
 import { useConversation } from '../../providers/ConversationProvider';
 import { DragAreaProvider } from '../../providers/DragAreaProvider';
 import { ModelTierProvider } from '../../providers/ModelTierProvider';
@@ -28,8 +28,7 @@ import {
     selectSpaceByConversationId,
 } from '../../redux/selectors';
 import type { CustomAgent } from '../../redux/slices/lumoUserSettings';
-import { type ConversationId, ConversationStatus } from '../../types';
-import { ComposerMode } from '../../types';
+import { ComposerMode, type ConversationId, ConversationStatus } from '../../types';
 import { ComposerComponent } from '../Composer/ComposerComponent';
 import ConversationComponent from '../Conversation/ConversationComponent';
 
@@ -125,7 +124,16 @@ const AgentPageInner = () => {
     }, [curConversationId, conversation, navigate]);
 
     return (
-        <ComposerActionsProvider handleSendMessage={handleSendMessage}>
+        <ConversationActionsProvider
+            handleSendMessage={handleSendMessage}
+            handleAbort={handleAbort}
+            handleEditMessage={handleEditMessage}
+            handleRegenerateMessage={handleRegenerateMessage}
+            getSiblingInfo={getSiblingInfo}
+            handleRetryGeneration={handleRetryGeneration}
+            messageChain={messageChain}
+            messageChainRef={messageChainRef}
+        >
             <div className="relative flex-1 min-h-0 flex flex-column flex-nowrap reset4print overflow-auto">
                 {!curConversationId ? (
                     <div
@@ -146,22 +154,14 @@ const AgentPageInner = () => {
                     <ConversationComponent
                         key={curConversationId}
                         conversation={conversation}
-                        handleSendMessage={handleSendMessage}
-                        handleAbort={handleAbort}
                         isGenerating={isGenerating}
                         isProcessingAttachment={isProcessingAttachment}
-                        messageChainRef={messageChainRef}
-                        messageChain={messageChain}
-                        handleRegenerateMessage={handleRegenerateMessage}
-                        handleEditMessage={handleEditMessage}
-                        getSiblingInfo={getSiblingInfo}
-                        handleRetryGeneration={handleRetryGeneration}
                         initialQuery={initialQuery || undefined}
                         isAgent
                     />
                 )}
             </div>
-        </ComposerActionsProvider>
+        </ConversationActionsProvider>
     );
 };
 
