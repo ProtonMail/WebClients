@@ -12,6 +12,7 @@ import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } fro
 import clsx from '@proton/utils/clsx';
 
 import { filterAttachmentToPreview } from 'proton-mail/helpers/attachment/attachmentThumbnails';
+import { selectElementID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -41,7 +42,6 @@ interface Props {
     isCompactView: boolean;
     labelID: string;
     loading: boolean;
-    elementID?: string;
     columnLayout: boolean;
     element: Element;
     checked?: boolean;
@@ -65,7 +65,6 @@ const Item = ({
     labelID,
     loading,
     element,
-    elementID,
     columnLayout,
     checked = false,
     onCheck,
@@ -83,6 +82,8 @@ const Item = ({
 }: Props) => {
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled, contentIndexingDone } = esStatus;
+
+    const elementID = useMailSelector(selectElementID);
 
     const useContentSearch =
         dbExists && esEnabled && shouldHighlight() && contentIndexingDone && !!(element as ESMessage)?.decryptedBody;
@@ -229,7 +230,6 @@ const Item = ({
                     isCompactView={isCompactView}
                     labelID={labelID}
                     loading={loading}
-                    elementID={elementID}
                     labels={labels}
                     element={element}
                     conversationMode={conversationMode}

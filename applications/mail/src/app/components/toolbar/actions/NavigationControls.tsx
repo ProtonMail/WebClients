@@ -8,30 +8,26 @@ import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
 import { IcArrowUp } from '@proton/icons/icons/IcArrowUp';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
+import { selectElementID } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
+
 import { isConversationMode } from '../../../helpers/mailSettings';
 
 interface Props {
     loading: boolean;
     conversationMode: boolean;
-    elementID?: string;
     messageID?: string;
     elementIDs: string[];
     onElement: (elementID?: string, preventComposer?: boolean) => void;
     labelID: string;
 }
 
-const NavigationControls = ({
-    loading,
-    conversationMode,
-    elementID,
-    messageID,
-    elementIDs,
-    onElement,
-    labelID,
-}: Props) => {
+const NavigationControls = ({ loading, conversationMode, messageID, elementIDs, onElement, labelID }: Props) => {
     const location = useLocation();
     const [mailSettings] = useMailSettings();
     const { Shortcuts } = mailSettings;
+
+    const elementID = useMailSelector(selectElementID);
 
     const ID = !isConversationMode(labelID, mailSettings, location) && messageID ? messageID : elementID;
     const index = elementIDs.findIndex((id) => id === ID);
