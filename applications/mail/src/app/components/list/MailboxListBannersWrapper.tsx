@@ -2,9 +2,9 @@ import SelectAllBanner from 'proton-mail/components/list/select-all/SelectAllBan
 import { getCanDisplaySelectAllBanner } from 'proton-mail/helpers/selectAll';
 
 import {
-    pageSize as pageSizeSelector,
     selectFilter,
     selectLabelID,
+    selectPageSize,
     selectisSearching,
     taskRunningInLabel,
 } from '../../store/elements/elementsSelectors';
@@ -22,7 +22,7 @@ const MailboxListBannersWrapper = ({ columnLayout, checkedIDs, onCheckAll }: Mai
     const isSearch = useMailSelector(selectisSearching);
     const labelID = useMailSelector(selectLabelID);
     const filter = useMailSelector(selectFilter);
-    const pageSize = useMailSelector(pageSizeSelector);
+    const pageSize = useMailSelector(selectPageSize);
     const { isESLoading, showESSlowToolbar } = useMailboxListContext();
 
     const taskIsRunningInLabel = useMailSelector((state) => taskRunningInLabel(state, { labelID }));
