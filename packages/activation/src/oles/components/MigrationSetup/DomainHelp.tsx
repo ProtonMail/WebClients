@@ -22,7 +22,7 @@ const DomainHelp: FC<{ registrarId?: number }> = ({ registrarId }) => {
     );
 
     return (
-        <div className="bg-weak rounded-lg p-6 max-w-custom" style={{ '--max-w-custom': '15rem' }}>
+        <div className="bg-weak rounded-lg p-6 steps-domain-help-wrapper">
             <h4 className="flex items-center text-semibold gap-2 text-lg">
                 <IcLifeRing alt="" className="shrink-0" />
                 {c('BOSS').t`Need help?`}
