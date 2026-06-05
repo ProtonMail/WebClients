@@ -25,6 +25,7 @@ describe('defineNavigation', () => {
                 icon: 'house',
                 meta: { badge: 'new' },
                 children: undefined,
+                hideFromSidebar: false,
             });
         });
 
@@ -95,6 +96,39 @@ describe('defineNavigation', () => {
                 to: '/pro',
                 meta: { plan: 'pro' },
             });
+        });
+    });
+
+    describe('hideFromSidebar', () => {
+        it('defaults to false when the definition omits it', () => {
+            const [item] = resolve([{ id: 'home', label: 'Home', to: '/' }]);
+            expect(item.hideFromSidebar).toBe(false);
+        });
+
+        it('mirrors a static boolean onto the resolved item', () => {
+            const [item] = resolve([{ id: 'sub', label: 'Subroute', to: '/sub', hideFromSidebar: true }]);
+            expect(item.hideFromSidebar).toBe(true);
+        });
+
+        it('runs hideFromSidebar as a function and uses its return value', () => {
+            type Ctx = NavContext & { betaUser: boolean };
+            const [item] = resolve<Ctx>(
+                [
+                    {
+                        id: 'sub',
+                        label: 'Subroute',
+                        to: '/sub',
+                        hideFromSidebar: ({ context }) => !context.betaUser,
+                    },
+                ],
+                makeContext({ betaUser: false }) as Ctx
+            );
+            expect(item.hideFromSidebar).toBe(true);
+        });
+
+        it('does not prune hidden items — they stay reachable in the resolved tree', () => {
+            const items = resolve([{ id: 'sub', label: 'Subroute', to: '/sub', hideFromSidebar: true }]);
+            expect(items.map((i) => i.id)).toEqual(['sub']);
         });
     });
 
