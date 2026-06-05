@@ -1,18 +1,35 @@
 .source-link {
-	&#{&} {
-		text-decoration: none;
+	&:hover,
+	&:focus-within {
+		background-color: var(--background-strong);
 	}
 
-	&:hover,
-	&:focus {
-		background-color: var(--background-strong);
+	.source-link-target {
+		&#{&} {
+			text-decoration: none;
+		}
 	}
 }
 
-.clampped {
-	line-clamp: 3;
-	-webkit-line-clamp: 3;
-	display: flex;
+.source-clamp {
+	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
+}
+
+.source-clamp-2 {
+	line-clamp: 2;
+	-webkit-line-clamp: 2;
+}
+
+.source-link-toggle {
+	align-self: flex-start;
+	cursor: pointer;
+	padding: 0;
+	background: none;
+	border: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
 }
