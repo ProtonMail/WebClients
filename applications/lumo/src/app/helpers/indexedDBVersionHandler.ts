@@ -2,22 +2,25 @@
  * Utility to handle IndexedDB version downgrades by detecting version mismatches
  * and automatically deleting and recreating the database.
  */
+import { getIndexedDB } from '../indexedDb/util';
 
 export const getIndexedDBVersion = async (dbName: string): Promise<number | null> => {
     return new Promise((resolve) => {
         try {
-            const request = indexedDB.open(dbName);
+            const request = getIndexedDB().open(dbName);
             let isNew = false;
 
-            request.onupgradeneeded = () => { isNew = true; };
-            
+            request.onupgradeneeded = () => {
+                isNew = true;
+            };
+
             request.onsuccess = (event) => {
                 const db = (event.target as IDBOpenDBRequest).result;
                 const version = db.version;
                 db.close();
-                
+
                 if (isNew) {
-                    indexedDB.deleteDatabase(dbName);
+                    getIndexedDB().deleteDatabase(dbName);
                     resolve(null);
                 } else {
                     resolve(version);
@@ -34,7 +37,7 @@ export const getIndexedDBVersion = async (dbName: string): Promise<number | null
 export const deleteIndexedDB = async (dbName: string): Promise<boolean> => {
     return new Promise((resolve) => {
         try {
-            const request = indexedDB.deleteDatabase(dbName);
+            const request = getIndexedDB().deleteDatabase(dbName);
             request.onsuccess = () => {
                 console.log(`[IndexedDB] Successfully deleted database: ${dbName}`);
                 resolve(true);
@@ -42,21 +45,17 @@ export const deleteIndexedDB = async (dbName: string): Promise<boolean> => {
             request.onerror = request.onblocked = () => resolve(false);
         } catch {
             console.error(
-                `[IndexedDB] Failed to delete database ${dbName}. ` +
-                    `Application may not function correctly.`
+                `[IndexedDB] Failed to delete database ${dbName}. ` + `Application may not function correctly.`
             );
             resolve(false);
         }
     });
 };
 
-export const handleIndexedDBVersionDowngrade = async (
-    dbName: string,
-    requestedVersion: number
-): Promise<boolean> => {
+export const handleIndexedDBVersionDowngrade = async (dbName: string, requestedVersion: number): Promise<boolean> => {
     try {
         const currentVersion = await getIndexedDBVersion(dbName);
-        
+
         if (currentVersion !== null && currentVersion > requestedVersion) {
             console.warn(
                 `[IndexedDB] Version downgrade detected for ${dbName}: ` +
@@ -66,7 +65,7 @@ export const handleIndexedDBVersionDowngrade = async (
 
             return await deleteIndexedDB(dbName);
         }
-        
+
         return false;
     } catch {
         return false;
