@@ -1,7 +1,7 @@
-import type { NavItemResolved } from '@proton/nav/types/nav';
+import type { SidebarNode } from '@proton/nav/types/sidebar';
 
 interface Match {
-    parents: NavItemResolved[];
+    parents: SidebarNode[];
     to: string;
 }
 
@@ -18,10 +18,10 @@ function isPrefixMatch(pathname: string, to: string): boolean {
  * Walks the tree and collects every item whose `to` is a prefix of `pathname`,
  * along with the chain of ancestors leading to it.
  */
-function getMatchingItems(items: NavItemResolved[], pathname: string): Match[] {
+function getMatchingItems(items: SidebarNode[], pathname: string): Match[] {
     const matches: Match[] = [];
 
-    function walk(item: NavItemResolved, parents: NavItemResolved[]): void {
+    function walk(item: SidebarNode, parents: SidebarNode[]): void {
         if (item.to && isPrefixMatch(pathname, item.to)) {
             matches.push({ parents, to: item.to });
         }
@@ -65,7 +65,7 @@ function pickBestBranchesFrom(matches: Match[]) {
  * // → Set { 'organization', 'organization.vpn' }
  * ```
  */
-export function getActiveBranches(items: NavItemResolved[], pathname: string): Set<string> {
+export function getActiveBranches(items: SidebarNode[], pathname: string): Set<string> {
     const matches = getMatchingItems(items, pathname);
     return pickBestBranchesFrom(matches);
 }
