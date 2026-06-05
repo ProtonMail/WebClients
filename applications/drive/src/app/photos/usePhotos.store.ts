@@ -44,6 +44,7 @@ interface PhotosStore {
     setPhotoItems: (photos: PhotoItem[]) => void;
     getPhotoItem: (uid: string) => PhotoItem | undefined;
     upsertPhotoAdditionalInfo: (photo: PhotoItem) => void;
+    upsertPhotoAdditionalInfoBulk: (photos: PhotoItem[]) => void;
     removePhotoItem: (uid: string) => void;
 
     setPhotoItemsWithoutTimeline: (photos: PhotoItem[]) => void;
@@ -112,6 +113,20 @@ export const usePhotosStore = create<PhotosStore>()(
                     photo.nodeUid,
                     existing ? { ...photo, additionalInfo: photo.additionalInfo ?? existing.additionalInfo } : photo
                 );
+                return { photoItems: newPhotoItems };
+            });
+        },
+
+        upsertPhotoAdditionalInfoBulk: (photos: PhotoItem[]) => {
+            set((state) => {
+                const newPhotoItems = new Map(state.photoItems);
+                for (const photo of photos) {
+                    const existing = newPhotoItems.get(photo.nodeUid);
+                    newPhotoItems.set(
+                        photo.nodeUid,
+                        existing ? { ...photo, additionalInfo: photo.additionalInfo ?? existing.additionalInfo } : photo
+                    );
+                }
                 return { photoItems: newPhotoItems };
             });
         },
