@@ -174,7 +174,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         // postLoad needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
         // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
-        const [, mailSettings, organization] = await preloadPromise;
+        await preloadPromise;
 
         const isEncryptedSearchMigrationSystemDisabled = unleashClient.isEnabled(
             'EncryptedSearchMigrationSystemDisabled'
@@ -193,17 +193,19 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             }
         }
 
-        const OnlyInInboxForCategoriesCounts =
-            organization.Settings.MailCategoryViewEnabled && mailSettings.MailCategoryView ? 1 : 0;
-
         const eventManager = bootstrap.eventManager({
             api: silentApi,
-            query: (eventID) =>
-                getEvents(eventID, {
+            query: (eventID) => {
+                const state = store.getState();
+                const orgSettings = state.organization.value?.Settings.MailCategoryViewEnabled;
+                const mailSettings = state.mailSettings.value?.MailCategoryView;
+
+                return getEvents(eventID, {
                     ConversationCounts: 1,
                     MessageCounts: 1,
-                    OnlyInInboxForCategoriesCounts,
-                }),
+                    OnlyInInboxForCategoriesCounts: orgSettings && mailSettings ? 1 : 0,
+                });
+            },
         });
         const calendarModelEventManager = createCalendarModelEventManager({ api: silentApi });
 
