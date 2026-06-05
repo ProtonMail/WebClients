@@ -112,7 +112,7 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
   return <HomepageViewContext.Provider value={value}>{children}</HomepageViewContext.Provider>
 }
 
-function buildRecentsState(
+export function buildRecentsState(
   recentDocuments: RecentDocumentsItemValue[],
   recentDocumentsInitialized: boolean,
   isRecentsUpdating: boolean,
@@ -120,12 +120,12 @@ function buildRecentsState(
   contactEmails: ContactEmail[] | undefined,
   type: ProtonDocumentType | undefined,
 ): HomepageViewState {
-  if (!recentDocumentsInitialized) {
-    return { view: 'recents-initial' }
-  }
-
   if (isRecentsUpdating) {
     return { view: 'recents-loading' }
+  }
+
+  if (!recentDocumentsInitialized) {
+    return { view: 'recents-initial' }
   }
 
   const recentItems = recentDocuments.map(RecentDocumentsItem.create)
@@ -148,7 +148,10 @@ function buildRecentsState(
   return { view: 'recents', itemSections, sort: recentsSort }
 }
 
-function buildTrashState(trashedDocumentItems: RecentDocumentsItemValue[], isTrashLoading: boolean): HomepageViewState {
+export function buildTrashState(
+  trashedDocumentItems: RecentDocumentsItemValue[],
+  isTrashLoading: boolean,
+): HomepageViewState {
   if (isTrashLoading) {
     return { view: 'trash-loading' }
   }
@@ -163,19 +166,19 @@ function buildTrashState(trashedDocumentItems: RecentDocumentsItemValue[], isTra
   }
 }
 
-function buildSearchState(
+export function buildSearchState(
   query: string,
   isRecentsUpdating: boolean,
   recentDocumentsInitialized: boolean,
   recentDocuments: RecentDocumentsItemValue[],
   type: ProtonDocumentType | undefined,
 ): HomepageViewState {
-  if (!recentDocumentsInitialized) {
-    return { view: 'search-initial', query }
-  }
-
   if (isRecentsUpdating) {
     return { view: 'search-loading', query }
+  }
+
+  if (!recentDocumentsInitialized) {
+    return { view: 'search-initial', query }
   }
 
   const recentItems = recentDocuments?.map(RecentDocumentsItem.create) ?? []
