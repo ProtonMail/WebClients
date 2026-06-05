@@ -2,21 +2,24 @@ import { getDriveForPhotos } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 
 import { createDebouncedBuffer } from '../../../utils/createDebouncedBuffer';
-import { usePhotosStore } from '../../usePhotos.store';
+import { type PhotoItem, usePhotosStore } from '../../usePhotos.store';
 import { mapNodeToPhotoItem } from './mapNodeToAdditionalInfo';
 
-const loadAdditionalInfo = async (uids: string[]) => {
-    const store = usePhotosStore.getState();
+const { push: pushPhotoItem, drain: drainPhotoItems } = createDebouncedBuffer<PhotoItem>((items) => {
+    usePhotosStore.getState().upsertPhotoAdditionalInfoBulk(items);
+});
 
+const loadAdditionalInfo = async (uids: string[]) => {
     for await (const maybeNode of getDriveForPhotos().iterateNodes(uids)) {
         if (!maybeNode.ok) {
             continue;
         }
         const photoItem = mapNodeToPhotoItem(maybeNode);
         if (photoItem) {
-            store.upsertPhotoAdditionalInfo(photoItem);
+            pushPhotoItem(photoItem);
         }
     }
+    drainPhotoItems();
 };
 
 const { push } = createDebouncedBuffer<{ uid: string; shouldProcess: () => boolean }>((items) => {
