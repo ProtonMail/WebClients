@@ -3,11 +3,17 @@
  *
  * This file was adapted from https://gitlab.com/autokent/pdf-parse, MIT license
  */
-import * as PDFJS from 'pdfjs-dist';
-// import workerSrc from 'pdfjs-dist/build/pdf.worker?worker&url'
+// Use the "legacy" build: it transpiles modern syntax (e.g. `static {}` class
+// initialization blocks) that older browsers can't parse. The default build
+// ships untranspiled and webpack/babel don't transpile node_modules, so it
+// throws "Unexpected token '{'" on those browsers.
+import * as PDFJS from 'pdfjs-dist/legacy/build/pdf.mjs';
 import type { TextContent, TextItem } from 'pdfjs-dist/types/src/display/api';
 
-const workerSrc = new URL('../../../../../../node_modules/pdfjs-dist/build/pdf.worker.mjs', import.meta.url).toString();
+const workerSrc = new URL(
+    '../../../../../../node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs',
+    import.meta.url
+).toString();
 PDFJS.GlobalWorkerOptions.workerSrc = workerSrc;
 
 // Define the interface for render options
