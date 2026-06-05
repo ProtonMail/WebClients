@@ -10,7 +10,7 @@ import { urlHasOpenMailParams, readAndClearOpenMailArgs, readAndClearOpenCalenda
 import { checkKeys } from "../keyPinning";
 import { mainLogger, viewLogger } from "../log";
 import { registerWindowEventLog } from "../log/appEventLog";
-import { setApplicationMenu } from "../menus/menuApplication";
+import { enableAppSwitcherMenuItems, setApplicationMenu } from "../menus/menuApplication";
 import { createContextMenu } from "../menus/menuContext";
 import {
     getLocalID,
@@ -366,7 +366,14 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
     }
 
     currentViewID = viewID;
+
     mainWindow!.title = viewTitleMap[viewID];
+
+    // If we're switching to account we should disable the app switcher shortcuts.
+    // We cannot cleanly differentiate whether the app is running in an auth state / forcibly logged out / switching accounts.
+    // Depending on the case switching between the apps may present the user with an unexpected view, thus we disable it whenever we
+    // display any account page or view.
+    enableAppSwitcherMenuItems(viewID !== "account");
 
     telemetry.showView(viewID);
 
@@ -392,6 +399,9 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
     }
 }
 
+/**
+ * May or may not reload the Mail application, depends on the passed in parameters and the current state of the web app.
+ */
 export const openMail = (labelID?: string, elementID?: string, messageID?: string) => {
     if (!isWindowValid(mainWindow)) {
         viewLogger("mail").warn("Ignoring openMail action, mainWindow is not available");
@@ -426,20 +436,28 @@ export const openMail = (labelID?: string, elementID?: string, messageID?: strin
     mainWindow.focus();
 };
 
-export const openCalendar = () => {
+const openViewWithoutReload = (view: "mail" | "calendar") => {
     if (!isWindowValid(mainWindow)) {
-        viewLogger("calendar").warn("Ignoring openCalendar action, mainWindow is not available");
+        viewLogger(view).warn(`Ignoring open ${view} action, mainWindow is not available`);
         return;
     }
 
-    showView("calendar");
+    showView(view);
 
     if (mainWindow.isMinimized()) {
-        viewLogger("calendar").info("Restoring main window");
+        viewLogger(view).info("Restoring main window");
         mainWindow.restore();
     }
 
     mainWindow.focus();
+};
+
+export const openMailWithoutReload = () => {
+    return openViewWithoutReload("mail");
+};
+
+export const openCalendarWithoutReload = () => {
+    return openViewWithoutReload("calendar");
 };
 
 export async function loadURL(viewID: ViewID, url: string, { force } = { force: false }) {
