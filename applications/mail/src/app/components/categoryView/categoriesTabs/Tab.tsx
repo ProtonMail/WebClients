@@ -68,6 +68,7 @@ export const Tab = ({ category, count, tabState }: Props) => {
             data-testid={`category-tab-${category.id}`}
             data-color={category.colorShade}
             onClick={handleClick}
+            draggable={false}
         >
             <Icon
                 className={clsx('shrink-0', tabState === TabState.ACTIVE && categoryColorClassName)}
