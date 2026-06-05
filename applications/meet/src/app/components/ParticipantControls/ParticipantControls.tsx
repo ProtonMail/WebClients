@@ -325,8 +325,8 @@ export const ParticipantControls = () => {
                     <div className="flex lg:hidden gap-1 sm:gap-2 flex-nowrap">
                         {isMobile() ? (
                             <>
-                                {!viewportWidth.xsmall && <ChatButton />}
-                                <EmojiReactionButton />
+                                <ChatButton />
+                                {!viewportWidth.xsmall && <EmojiReactionButton />}
                             </>
                         ) : (
                             <>
