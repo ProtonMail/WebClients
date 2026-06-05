@@ -68,6 +68,10 @@ it('should display end date of the current subscription', () => {
 });
 
 it('should display the end date of the upcoming subscription if it exists', () => {
+    jest.useFakeTimers();
+    jest.setSystemTime(new Date('2024-01-01T00:00:00.000Z'));
+
+    const upcomingPeriodEnd = new Date('2026-01-01T00:00:00.000Z');
     const withUpcoming = mockSubscription;
     withUpcoming.UpcomingSubscription = buildSubscription(
         {
@@ -76,8 +80,8 @@ it('should display the end date of the upcoming subscription if it exists', () =
             cycle: CYCLE.TWO_YEARS,
         },
         {
-            PeriodStart: 1717588460,
-            PeriodEnd: 1780660460,
+            PeriodStart: getUnixTime(new Date('2025-01-01T00:00:00.000Z')),
+            PeriodEnd: getUnixTime(upcomingPeriodEnd),
             CreateTime: 1685966060,
         }
     );
@@ -86,5 +90,7 @@ it('should display the end date of the upcoming subscription if it exists', () =
         <CancelSubscriptionModal subscription={withUpcoming} onResolve={onResolve} onReject={onReject} open />
     );
 
-    expect(container).toHaveTextContent('expires on June 5th, 2026');
+    expect(container).toHaveTextContent(`expires on ${format(upcomingPeriodEnd, 'PPP')}`);
+
+    jest.useRealTimers();
 });
