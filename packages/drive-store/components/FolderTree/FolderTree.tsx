@@ -55,7 +55,7 @@ const FolderTree = ({ isLoaded, treeItems, selectedItemId, onSelect, rowIsDisabl
         <FloatingEllipsisContext.Provider value={context}>
             <div className="folder-tree" ref={containerRef}>
                 <table ref={resizableRef} className="folder-tree-table simple-table simple-table--is-hoverable ">
-                    <tbody>{isLoaded ? rows : <TableRowBusy />}</tbody>
+                    <tbody data-testid="directorytree-root">{isLoaded ? rows : <TableRowBusy />}</tbody>
                 </table>
             </div>
         </FloatingEllipsisContext.Provider>

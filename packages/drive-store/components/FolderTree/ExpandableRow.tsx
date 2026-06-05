@@ -54,56 +54,67 @@ const ExpandableRow = ({
                 onClick={handleSelect}
                 data-testid="item-row"
             >
-                <td className="flex items-center flex-nowrap m-0 pl-custom relative">
-                    <div
-                        className={clsx([
-                            `folder-tree-list-item-selected flex shrink-0`,
-                            !isSelected && 'folder-tree-list-item-selected-hidden',
-                        ])}
-                        data-testid={!isSelected ? 'checkbox-not-visible' : 'checkbox-visible'}
-                    >
-                        <span className="flex justify-center items-center w-8 h-8 bg-primary rounded-full">
-                            <IcCheckmark className="p-1" size={4} />
-                        </span>
-                    </div>
-                    <div
-                        className="flex shrink-0 folder-tree-list-item-indent"
-                        style={paddingElement}
-                        data-testid="expanded-depth"
-                    ></div>
-                    <div className="folder-tree-list-item-expand shrink-0 relative">
-                        <Button
-                            disabled={isDisabled}
-                            style={{ visibility: link.isFile ? 'hidden' : 'visible' }}
-                            className="folder-tree-list-item-expand-button expand-click-area"
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                e.currentTarget.blur();
-                                toggleExpand(link.linkId);
-                            }}
-                            data-testid={isExpanded ? 'expanded-folder' : 'expand-button'}
-                            icon
+                <td className="m-0 pl-custom relative" data-testid="directorytree-item">
+                    <div className="directory-tree-node flex items-center flex-nowrap">
+                        <input
+                            type="hidden"
+                            data-testid={isSelected ? 'directorytree-item-selected' : 'directorytree-item-not-selected'}
+                        />
+                        <div
+                            className={clsx([
+                                `folder-tree-list-item-selected flex shrink-0`,
+                                !isSelected && 'folder-tree-list-item-selected-hidden',
+                            ])}
+                            data-testid={!isSelected ? 'checkbox-not-visible' : 'checkbox-visible'}
                         >
-                            <IcChevronDown
-                                size={3}
-                                alt={isExpanded ? c('Action').t`Collapse` : c('Action').t`Expand`}
-                                className={isExpanded ? 'rotateX-180' : undefined}
-                            />
-                        </Button>
-                    </div>
-                    <div key="Name" className="folder-tree-list-item-name flex items-center flex-nowrap w-full">
-                        <FileIcon mimeType={link.isFile ? link.mimeType : 'Folder'} className="mr-2" />
-                        <Tooltip title={link.name} originalPlacement="bottom">
-                            <span
-                                ref={floatingEllipsisVisibilityControlRef}
-                                className="text-nowrap pr-8"
-                                data-testid="item-name"
-                            >
-                                {link.name}
+                            <span className="flex justify-center items-center w-8 h-8 bg-primary rounded-full">
+                                <IcCheckmark className="p-1" size={4} />
                             </span>
-                        </Tooltip>
+                        </div>
+                        <div
+                            className="flex shrink-0 folder-tree-list-item-indent"
+                            style={paddingElement}
+                            data-testid="expanded-depth"
+                        ></div>
+                        <div className="folder-tree-list-item-expand shrink-0 relative">
+                            <Button
+                                disabled={isDisabled}
+                                style={{ visibility: link.isFile ? 'hidden' : 'visible' }}
+                                className="folder-tree-list-item-expand-button expand-click-area"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    e.currentTarget.blur();
+                                    toggleExpand(link.linkId);
+                                }}
+                                aria-expanded={isExpanded}
+                                data-testid={isExpanded ? 'expanded-folder' : 'expand-button'}
+                                icon
+                            >
+                                <IcChevronDown
+                                    size={3}
+                                    alt={isExpanded ? c('Action').t`Collapse` : c('Action').t`Expand`}
+                                    className={isExpanded ? 'rotateX-180' : undefined}
+                                />
+                            </Button>
+                        </div>
+                        <div
+                            key="Name"
+                            className="folder-tree-list-item-name flex items-center flex-nowrap w-full"
+                            data-testid="directorytree-item-name"
+                        >
+                            <FileIcon mimeType={link.isFile ? link.mimeType : 'Folder'} className="mr-2" />
+                            <Tooltip title={link.name} originalPlacement="bottom">
+                                <span
+                                    ref={floatingEllipsisVisibilityControlRef}
+                                    className="text-nowrap pr-8"
+                                    data-testid="item-name"
+                                >
+                                    {link.name}
+                                </span>
+                            </Tooltip>
+                        </div>
+                        <FloatingEllipsis visibilityControlRef={floatingEllipsisVisibilityControlRef} />
                     </div>
-                    <FloatingEllipsis visibilityControlRef={floatingEllipsisVisibilityControlRef} />
                 </td>
             </tr>
             {isExpanded && (
