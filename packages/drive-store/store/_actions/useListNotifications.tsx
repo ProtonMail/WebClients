@@ -64,11 +64,11 @@ export default function useListNotifications() {
         createSuccessMessage(
             linkInfos,
             ok,
-            (name: string) => c('Notification').t`"${name}" successfully moved`,
+            (name: string) => c('Notification').t`"${name}" moved`,
             (numberOfItems: number) =>
                 c('Notification').ngettext(
-                    msgid`${numberOfItems} item successfully moved`,
-                    `${numberOfItems} items successfully moved`,
+                    msgid`${numberOfItems} item moved`,
+                    `${numberOfItems} items moved`,
                     numberOfItems
                 ),
             undoAction
