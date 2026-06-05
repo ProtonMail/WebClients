@@ -58,6 +58,7 @@ function resolveItem<TContext extends NavContext>(
         meta: compute(definition.meta, context) ?? {},
         children: resolvedChildren.length ? resolvedChildren : undefined,
         sections: resolvedSections?.length ? resolvedSections : undefined,
+        hideFromSidebar: compute(definition.hideFromSidebar, context) ?? false,
     };
 }
 

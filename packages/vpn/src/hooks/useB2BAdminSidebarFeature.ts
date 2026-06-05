@@ -13,12 +13,13 @@ import useRecoveryNotification from '@proton/components/hooks/useRecoveryNotific
 import { useConfig } from '@proton/components/index';
 import { applyPrefix } from '@proton/nav/api/applyPrefix';
 import { defineSearchOptions } from '@proton/nav/api/defineSearchOptions';
-import type { NavResolved } from '@proton/nav/types/nav';
+import { defineSidebar } from '@proton/nav/api/defineSidebar';
+import type { SidebarTree } from '@proton/nav/types/sidebar';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { constants } from '../../constants';
-import { getRoutes } from '../definitions/routes';
+import { resolveNavigation } from '../definitions/routes';
 import { isB2BAdmin } from '../functions/isB2BAdmin';
 
 const off = false;
@@ -49,7 +50,7 @@ export const useB2BAdminSidebarFeature = ({
 }: Args):
     | {
           enabled: true;
-          routes: NavResolved;
+          routes: SidebarTree;
           settings: ReturnType<typeof defineSearchOptions>;
           sidebar: ReturnType<typeof useSidebarState>;
           spotlight: ReturnType<typeof useKillableFeature>;
@@ -103,7 +104,7 @@ export const useB2BAdminSidebarFeature = ({
         return disabled(false);
     }
 
-    const routes = getRoutes({
+    const resolvedNavigation = resolveNavigation({
         user,
         subscription,
         organization,
@@ -118,12 +119,12 @@ export const useB2BAdminSidebarFeature = ({
         permissions: permissions ?? {},
     });
 
-    const prefixedRoutes = prefix ? applyPrefix(routes, prefix) : routes;
+    const prefixedNavigation = prefix ? applyPrefix(resolvedNavigation, prefix) : resolvedNavigation;
     return {
         enabled: true,
         loading: false,
-        routes: prefixedRoutes,
-        settings: defineSearchOptions(prefixedRoutes),
+        routes: defineSidebar(prefixedNavigation),
+        settings: defineSearchOptions(prefixedNavigation),
         sidebar: sidebarFeature,
         spotlight: spotlightFeature,
     };

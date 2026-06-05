@@ -19,6 +19,13 @@ export interface NavItemDefinition<TContext extends NavContext = NavContext> {
      */
     isVisible?: (args: { context: TContext }) => boolean;
     sections?: NavSectionDefinition<TContext>[];
+    /**
+     * When `true`, the item is kept in the resolved tree (and remains reachable,
+     * e.g. via search) but is omitted from the sidebar. Use for subroutes —
+     * children routes that should not surface as sidebar entries.
+     * @default false
+     */
+    hideFromSidebar?: Computed<boolean, TContext>;
 }
 
 export interface NavItemResolved {
@@ -29,6 +36,7 @@ export interface NavItemResolved {
     meta: Meta;
     children: NavItemResolved[] | undefined;
     sections: NavSectionResolved[] | undefined;
+    hideFromSidebar: boolean;
 }
 
 export interface NavDefinition<TContext extends NavContext = NavContext> {

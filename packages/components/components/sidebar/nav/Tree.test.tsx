@@ -2,7 +2,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import type { NavResolved } from '@proton/nav/types/nav';
+import type { SidebarTree } from '@proton/nav/types/sidebar';
 
 import { Tree } from './Tree';
 
@@ -14,7 +14,7 @@ jest.mock('./animated', () => ({
     ),
 }));
 
-const routes: NavResolved = {
+const routes: SidebarTree = {
     items: [
         {
             id: 'organization',
@@ -22,7 +22,6 @@ const routes: NavResolved = {
             meta: {},
             to: undefined,
             icon: undefined,
-            sections: [],
             children: [
                 {
                     id: 'organization.home',
@@ -31,7 +30,6 @@ const routes: NavResolved = {
                     to: '/vpn/dashboard',
                     meta: {},
                     children: undefined,
-                    sections: [],
                 },
                 {
                     id: 'organization.vpn',
@@ -39,7 +37,6 @@ const routes: NavResolved = {
                     icon: 'brand-proton-vpn-filled',
                     meta: {},
                     to: undefined,
-                    sections: [],
                     children: [
                         {
                             id: 'organization.vpn.gateways',
@@ -48,7 +45,6 @@ const routes: NavResolved = {
                             meta: {},
                             children: undefined,
                             icon: undefined,
-                            sections: [],
                         },
                         {
                             id: 'organization.vpn.shared-servers',
@@ -57,7 +53,6 @@ const routes: NavResolved = {
                             meta: {},
                             children: undefined,
                             icon: undefined,
-                            sections: [],
                         },
                     ],
                 },
@@ -69,7 +64,6 @@ const routes: NavResolved = {
             to: undefined,
             meta: {},
             icon: undefined,
-            sections: [],
             children: [
                 {
                     id: 'my-account.recovery',
@@ -78,7 +72,6 @@ const routes: NavResolved = {
                     meta: {},
                     children: undefined,
                     icon: undefined,
-                    sections: [],
                 },
             ],
         },
