@@ -21,7 +21,7 @@ import {
 } from '../types';
 import { mapify } from '../util/collections';
 import { isNonNullable } from '../util/nullable';
-import { requestToPromise, withCursor } from './util';
+import { getIndexedDB, requestToPromise, withCursor } from './util';
 
 // Type aliases for backwards compatibility (assets are now attachments)
 type AssetId = AttachmentId;
@@ -462,6 +462,13 @@ export class DbApi {
     private readonly baseReconnectDelay = 1000; // 1 second
 
     constructor(userId: string | undefined) {
+        // Surface a clear, user-facing error synchronously when IndexedDB is
+        // unavailable (e.g. iOS Safari with website data blocked, private
+        // browsing, or Lockdown Mode) so it propagates to the caller and the
+        // bootstrap error screen, instead of becoming an unhandled rejection
+        // and getting stuck in the reconnect loop.
+        getIndexedDB();
+
         this.userId = userId;
         this.db = this.openDb(userId);
 
@@ -1177,6 +1184,12 @@ export class DbApi {
     };
 
     private openDb = async (userId: string | undefined): Promise<IDBDatabase> => {
+        // Fail fast (and with a clear, user-facing error) if IndexedDB is not
+        // available in this environment, e.g. iOS Safari with website data
+        // blocked, private browsing, or Lockdown Mode. Accessing the global
+        // directly would otherwise throw a `ReferenceError` here.
+        const idb = getIndexedDB();
+
         return new Promise<IDBDatabase>(async (resolve, reject) => {
             const userAndSalt = `${userId}:${DB_NAME_SALT}`;
             const userHash = userId ? await computeSha256AsBase64(userAndSalt) : undefined;
@@ -1190,7 +1203,7 @@ export class DbApi {
                 console.error('[LumoDB] Error handling version downgrade:', error);
             }
 
-            const request = indexedDB.open(dbName, dbVersion);
+            const request = idb.open(dbName, dbVersion);
             request.onupgradeneeded = async (event) => {
                 const db = (event.target as IDBOpenDBRequest).result;
                 const tx = (event.target as IDBOpenDBRequest).transaction;
