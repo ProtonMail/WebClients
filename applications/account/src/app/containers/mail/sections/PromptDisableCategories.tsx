@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { type ModalProps, Prompt } from '@proton/components';
-import { useCategoryToggle } from '@proton/mail/features/categoriesView/useCategoryToggle';
+import { useCategoriesToggle } from '@proton/mail/features/categoriesView/useCategoriesToggle';
 
 export const PromptDisableCategories = (props: ModalProps) => {
-    const { handleChange, loading } = useCategoryToggle();
+    const { handleChange, loading } = useCategoriesToggle();
 
     return (
         <Prompt

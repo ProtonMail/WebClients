@@ -1,14 +1,14 @@
 import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
-import { useCategoryToggle } from '@proton/mail/features/categoriesView/useCategoryToggle';
+import { useCategoriesToggle } from '@proton/mail/features/categoriesView/useCategoriesToggle';
 
 import MobileSection from '../MobileSection';
 import MobileSectionLabel from '../MobileSectionLabel';
 import MobileSectionRow from '../MobileSectionRow';
 
 export const CategoriesToggle = () => {
-    const { handleChange, loading, state } = useCategoryToggle();
+    const { handleChange, loading, state } = useCategoriesToggle();
 
     return (
         <MobileSection>
