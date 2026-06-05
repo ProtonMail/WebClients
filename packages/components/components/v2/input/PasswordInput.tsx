@@ -10,12 +10,12 @@ import Icon from '@proton/components/components/icon/Icon';
 
 type PasswordType = 'password' | 'text';
 
-interface Props extends Omit<InputProps, 'type'> {
+export interface PasswordInputTwoProps extends Omit<InputProps, 'type'> {
     defaultType?: PasswordType;
 }
 
 const PasswordInputTwoBase = (
-    { disabled, suffix, defaultType = 'password', ...rest }: Props,
+    { disabled, suffix, defaultType = 'password', ...rest }: PasswordInputTwoProps,
     ref: Ref<HTMLInputElement>
 ) => {
     const [type, setType] = useState<PasswordType>(defaultType);

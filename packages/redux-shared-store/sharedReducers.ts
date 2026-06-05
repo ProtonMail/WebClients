@@ -17,6 +17,7 @@ import {
     organizationKeyReducer,
     organizationReducer,
     organizationThemeSlice,
+    passwordReminderReducer,
     paymentStatusReducer,
     plansReducer,
     previousSubscriptionReducer,
@@ -85,6 +86,7 @@ export const sharedReducers = {
     sessions: accountSessionsSlice.reducer,
     sessionRecovery: sessionRecoverySlice.reducer,
     ...delegatedAccessReducer,
+    ...passwordReminderReducer,
 };
 
 export const sharedPersistReducer: Partial<{ [key in keyof typeof sharedReducers]: any }> = {

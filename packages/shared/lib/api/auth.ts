@@ -120,7 +120,6 @@ export const pushForkSession = (data: {
     data,
 });
 
-
 export const getForks = () => ({
     method: 'get',
     url: `auth/v4/sessions/forks`,
@@ -217,4 +216,25 @@ export const reauthMnemonic = (data: { Username: string; PersistentCookies: bool
         ...data,
         PersistentCookies: Number(data.PersistentCookies),
     },
+});
+
+interface AuthReminderPayload {
+    ClientEphemeral: string;
+    ClientProof: string;
+    SRPSession: string;
+}
+
+export interface AuthReminderResponse {
+    ServerProof: string;
+}
+
+export const authReminder = (data: AuthReminderPayload) => ({
+    method: 'post',
+    url: 'auth/v4/reminder',
+    data,
+});
+
+export const deleteAuthReminder = () => ({
+    method: 'delete',
+    url: 'auth/v4/reminder',
 });

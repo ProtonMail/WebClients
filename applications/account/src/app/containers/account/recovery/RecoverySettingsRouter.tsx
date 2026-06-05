@@ -30,6 +30,7 @@ import { RecoverySettingsTelemetryVariantProvider } from '@proton/components/con
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import type { getAccountAppRoutes } from '../routes';
+import PasswordReminderRecoverySettings from './PasswordReminderRecoverySettings';
 import DeviceBasedRecoverySubpage from './recoverySubpages/DeviceBasedRecoverySubpage';
 import { EmergencyContactSubpage } from './recoverySubpages/EmergencyContactSubpage';
 import { RecoveryContactSubpage } from './recoverySubpages/RecoveryContactSubpage';
@@ -215,6 +216,7 @@ const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
                             to={getSubroutePath(recoveryPath, advancedRecovery.subroutes.emergencyContacts)}
                         />
                     </SettingsNavGroup>
+                    <PasswordReminderRecoverySettings />
                 </PrivateMainSettingsArea>
             </Route>
         </Switch>

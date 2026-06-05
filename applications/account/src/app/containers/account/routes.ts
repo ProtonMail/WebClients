@@ -281,6 +281,10 @@ const getRecoverySettings = ({
                           text: '',
                           id: 'checklist',
                       },
+                      {
+                          text: '',
+                          id: 'password-reminder',
+                      },
                   ],
                   subrouteGroups: recoverySubrouteGroups,
               }

@@ -75,11 +75,17 @@ export enum EDM_VALUE {
     DISABLED = 1,
 }
 
+export enum PASSWORD_REMINDERS_VALUE {
+    ENABLED = 0,
+    DISABLED = 1,
+}
+
 export interface Flags {
     Welcomed: number;
     SupportPgpV6Keys: 0 | 1;
     EdmOptOut: EDM_VALUE;
     DisplayTrialEndModal: 0 | 1;
+    PasswordReminderOptOut: PASSWORD_REMINDERS_VALUE;
 }
 
 export enum AI_ASSISTANT_ACCESS {
@@ -253,5 +259,6 @@ export interface UserSettings {
     OrganizationPolicy: {
         Enforced: ORGANIZATION_POLICY_ENFORCED;
     };
+    NextPasswordReminderTime: number | null;
     UsedClients: string[];
 }
