@@ -26,6 +26,7 @@ type Props = {
     onDelete: (token: PersonalAccessToken) => void;
     onManageAccess: (token: PersonalAccessToken) => void;
     onViewActions: (token: PersonalAccessToken) => void;
+    className?: string;
 };
 
 const BADGE_CLASSNAMES = `m-0 text-sm px-1.5 shrink-0`;
@@ -52,7 +53,7 @@ const getExpiryLabel = (expireTime: number): string => {
     return c('Info').ngettext(msgid`Expires in ${hours} hour`, `Expires in ${hours} hours`, hours);
 };
 
-export const AccessTokenCard: FC<Props> = ({ token, onDelete, onManageAccess, onViewActions }) => {
+export const AccessTokenCard: FC<Props> = ({ className, token, onDelete, onManageAccess, onViewActions }) => {
     const { statusBadge, expiryLabel, isExpired, createdDate } = useMemo<Derived>(() => {
         const status = getTokenStatus(token.ExpireTime);
         return {
@@ -64,7 +65,7 @@ export const AccessTokenCard: FC<Props> = ({ token, onDelete, onManageAccess, on
     }, [token.ExpireTime, token.CreateTime]);
 
     return (
-        <Card rounded className="flex items-center gap-3 w-full border-weak" background={false}>
+        <Card rounded className={clsx('flex items-center gap-3 w-full border-weak', className)} background={false}>
             <div
                 className={clsx('flex items-center justify-center rounded bg-weak shrink-0', isExpired && 'opacity-70')}
                 style={{ width: '2.5rem', height: '2.5rem' }}
