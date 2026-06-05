@@ -365,6 +365,7 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
         return;
     }
 
+    const previousViewID = currentViewID;
     currentViewID = viewID;
 
     mainWindow!.title = viewTitleMap[viewID];
@@ -396,6 +397,11 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
     } else {
         viewLogger(viewID).info("showView showing view for ", url);
         mainWindow!.setContentView(view);
+    }
+
+    if (previousViewID === "account" && (viewID === "mail" || viewID === "calendar")) {
+        viewLogger(viewID).info("Refreshing event loop after returning from account view");
+        view.webContents.send("hostUpdate", { type: "refreshEventLoop" });
     }
 }
 

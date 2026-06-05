@@ -114,6 +114,10 @@ export const IPCInboxHostUpdateMessageSchema = z.discriminatedUnion('type', [
         type: z.literal('sentHeartbeatMetrics'),
         payload: z.custom<HttpsProtonMeDesktopInboxHeartbeatTotalV1SchemaJson>(),
     }),
+    z.object({
+        type: z.literal('refreshEventLoop'),
+        payload: z.undefined().optional(),
+    }),
 ]);
 
 export type IPCInboxHostUpdateMessage = z.infer<typeof IPCInboxHostUpdateMessageSchema>;
