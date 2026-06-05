@@ -95,6 +95,7 @@ export const usePostSubscription = () => {
     const userIsFreeRef = useRef<boolean>(user.isFree);
     const isPostSubscriptionFlowEnabled = useFlag('InboxWebPostSubscriptionFlow');
     const isB2BPostSubscriptionFlowEnabled = useFlag('B2BOnboarding');
+    const b2bPostSubscriptionFlowKillSwitch = useFlag('DisablePostSubscriptionB2BOnboarding');
     const { APP_NAME } = useConfig();
 
     /**
@@ -137,7 +138,7 @@ export const usePostSubscription = () => {
             // - Subscription is not older than 60 days
             // - The user is a b2b admin
             const canShowB2BPostSubscription = canShowB2BOnboardingButton(subscription);
-            if (isB2BPostSubscriptionFlowEnabled && canShowB2BPostSubscription) {
+            if (!b2bPostSubscriptionFlowKillSwitch && isB2BPostSubscriptionFlowEnabled && canShowB2BPostSubscription) {
                 const planName = getPlanNameFromIDs(planIDs);
                 const isB2BAdmin = isAdmin(user) && getIsB2BAudienceFromPlan(planName);
 

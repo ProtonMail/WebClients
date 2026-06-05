@@ -74,6 +74,7 @@ export enum CommonFeatureFlag {
     LogWasmLoadingDisabled = 'LogWasmLoadingDisabled',
     PasswordReminders = 'PasswordReminders',
     MeetSpotlightType = 'MeetSpotlightType',
+    DisablePostSubscriptionB2BOnboarding = 'DisablePostSubscriptionB2BOnboarding',
 }
 
 enum AccountFlag {
