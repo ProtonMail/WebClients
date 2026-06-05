@@ -400,8 +400,16 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
     }
 
     if (previousViewID === "account" && (viewID === "mail" || viewID === "calendar")) {
-        viewLogger(viewID).info("Refreshing event loop after returning from account view");
-        view.webContents.send("hostUpdate", { type: "refreshEventLoop" });
+        try {
+            viewLogger(viewID).info("Refreshing event loop after returning from account view");
+            view.webContents.send("hostUpdate", { type: "refreshEventLoop" });
+        } catch (e) {
+            viewLogger(viewID).error("Refreshing event loop", e);
+            sentryReport.reportMessage("Failed to refresh event loop after returning from account view", {
+                level: "error",
+                error: e instanceof Error ? e : undefined,
+            });
+        }
     }
 }
 
