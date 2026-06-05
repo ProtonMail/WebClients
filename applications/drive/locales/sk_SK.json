@@ -1307,6 +1307,9 @@
       ],
       "Get the deal": [
         "Využiť ponuku"
+      ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "Vyskúšajte ${ BRAND_NAME } Workspace"
       ]
     },
     "Action: Docs": {
@@ -3186,6 +3189,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Váš bezplatný ${ MAIL_APP_NAME } účet má obmedzenú kapacitu úložiska, preto naimportujeme len vašich najnovších emailov z Gmailu."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Aby sa váš tím bez problémov zapojil do ${ BRAND_NAME }, importujte svoje údaje z Google, Outlooku a ďalších zdrojov."
       ]
     },
     "description": {
@@ -4159,6 +4165,27 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "Číslo DIČ musí začínať predponami ${ prefixes }"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Všetok úložný priestor bol pridelený. Zmenšite prosím úložný priestor pridelený iným používateľom."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Pred pridaním adries nastavte vlastnú doménu."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Pred pridaním používateľov do svojej organizácie nakonfigurujte vlastnú doménu."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Pred pridaním používateľov do organizácie povoľte podporu viacerých používateľov."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Ak chcete spravovať viacerých používateľov, prejdite na obchodný plán s viac ako 1 používateľom."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Využili ste všetky adresy vo vašom pláne. Navýšte, prosím, svoj plán, aby ste mohli pridať novú adresu alebo deaktivujte nejakú adresu vo vašom účte."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Limit počtu používateľov vo vašom pláne bol vyčerpaný. Prejdite na vyšší plán, ak chcete pridať ďalšieho používateľa."
       ]
     },
     "error": {
@@ -7501,6 +7528,27 @@
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Kedykoľvek môžete zvýšiť úroveň alebo uvoľniť miesto, aby ste mohli preniesť zvyšok"
+      ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "${ BRAND_NAME } Workspace umožňuje vášmu tímu efektívne spolupracovať bez toho, aby boli údaje vašej spoločnosti akokoľvek ohrozené."
+      ],
+      "${ total } user found": [
+        "${ total } nájdený používateľ",
+        "${ total } nájdení používatelia",
+        "${ total } nájdených používateľov",
+        "${ total } nájdených používateľov"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Pozvite svojich priateľov** do ${ BRAND_NAME } pomocou svojho odporúčacieho odkazu."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "Ak sa prihlásia k odberu, získajú **${ refereeRewardAmount }** kreditov."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "Za každého priateľa, ktorý sa prihlási k odberu, získate kredit v hodnote **${ referrerRewardAmount }**."
+      ],
+      "One encrypted suite. Full business protection.": [
+        "Jeden šifrovaný balík. Komplexná ochrana pre firmy."
       ]
     },
     "info": {
@@ -11374,6 +11422,12 @@
       ],
       "Select a provider": [
         "Vyberte poskytovateľa"
+      ],
+      "Search": [
+        "Hľadať"
+      ],
+      "Search for users or addresses": [
+        "Hľadať používateľov alebo adresy"
       ]
     },
     "Placeholder for contact group name": {
@@ -14113,6 +14167,12 @@
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Získajte väčšie úložisko s ${ MAIL_APP_NAME } Plus"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Presuňte svoju organizáciu do ${ BRAND_NAME }"
+      ],
+      "Summer Sale": [
+        "Letná zľava"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14515,6 +14575,104 @@
     "Notitication": {
       "Album renamed successfully": [
         "Album bol úspešne premenovaný"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Aktivované"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresu už používa používateľ mimo vašej organizácie. Kontaktujte zákaznícku podporu, aby ste to vyriešili."
+      ],
+      "All": [
+        "Všetko"
+      ],
+      "Calendar": [
+        "Kalendár"
+      ],
+      "Configure migration": [
+        "Nastaviť migráciu"
+      ],
+      "Contacts": [
+        "Kontakty"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Stav migrácie dát z Google Workspace do ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Emaily"
+      ],
+      "Errors": [
+        "Chyby"
+      ],
+      "Estimated size": [
+        "Odhadovaná veľkosť"
+      ],
+      "Find out what can be migrated.": [
+        "Zistite, čo je možné preniesť."
+      ],
+      "Has errors": [
+        "Má chyby"
+      ],
+      "In progress": [
+        "Prebieha"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresa člena nebola nájdená. Na vyriešenie tohto problému kontaktujte zákaznícku podporu."
+      ],
+      "Migrate": [
+        "Migrovať"
+      ],
+      "Migrated": [
+        "Presunuté"
+      ],
+      "Migration status": [
+        "Stav migrácie"
+      ],
+      "Missing organization private key": [
+        "Chýba súkromný kľúč organizácie"
+      ],
+      "Missing organization public key": [
+        "Chýba verejný kľúč organizácie"
+      ],
+      "No users to display": [
+        "Nie sú žiadni používatelia na zobrazenie"
+      ],
+      "Not activated": [
+        "Neaktivované"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizaícia nemá dostatok voľných licencií"
+      ],
+      "Organization does not have enough storage available": [
+        "Organzácia nemá dostatok úložného priestoru"
+      ],
+      "Pending": [
+        "Čakajúce"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Vyberte presne to, čo chcete preniesť. Zmena sa uplatní na všetkých používateľov v organizácii."
+      ],
+      "Select users to migrate": [
+        "Vyberte používateľov na presun"
+      ],
+      "Size": [
+        "Veľkosť"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "User": [
+        "Používateľ"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Používatelia, ktorí sa prihlásili do svojho ${ BRAND_NAME } účtu"
+      ],
+      "What are you migrating?": [
+        "Čo migrujete?"
+      ],
+      "You": [
+        "Vy"
       ]
     }
   }

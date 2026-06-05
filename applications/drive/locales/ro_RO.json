@@ -1300,6 +1300,9 @@
       ],
       "Get the deal": [
         "Obțineți oferta"
+      ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "Încercați ${ BRAND_NAME } Workspace"
       ]
     },
     "Action: Docs": {
@@ -3163,6 +3166,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Contul gratuit ${ MAIL_APP_NAME } are un spațiu de stocare limitat, așa că se vor importa doar cele mai recente mesaje din Gmail."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pentru o înrolare fără probleme a echipei la ${ BRAND_NAME }, importați-vă datele din Google, Outlook și altele."
       ]
     },
     "description": {
@@ -4127,6 +4133,27 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "Valoarea TVA trebuie să înceapă cu ${ prefixes }."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Tot spațiul de stocare a fost alocat. Reduceți spațiul alocat altor utilizatori."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configurația un domeniu personal înainte de a adăuga adrese."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Configurați un nume de domeniu personal înainte de a adăuga utilizatori la organizație."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Activați suportul pentru utilizatori multipli înainte de a adăuga utilizatori la organizație."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Migrați la un plan de afaceri cu mai mult de un utilizator pentru a destiona mai mulți utilizatori."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Ați folosit toate adresele disponibile în plan. Modificați-vă planul pentru a adăuga o adresă nouă sau dezactivați o adresă din cont."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Ați folosit toate numele de utilizator din plan. Treceți la un plan cu plată superior pentru a adăuga un utilizator nou."
       ]
     },
     "error": {
@@ -7394,6 +7421,26 @@
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Modificați abonamentul sau goliți spațiul de stocare pentru a le aduce și pe restul."
+      ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "${ BRAND_NAME } Workspace îi permite echipei să colaboreze eficient fără a vă pune vreodată în pericol datele companiei."
+      ],
+      "${ total } user found": [
+        "Utilizatori găsiți: ${ total }",
+        "Utilizatori găsiți: ${ total }",
+        "Utilizatori găsiți: ${ total }"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Invitați persoane** la ${ BRAND_NAME } cu legătura web personală de recomandare."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Aceștia primesc ${ refereeRewardAmount }** în credite dacă se abonează."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Primiți ${ referrerRewardAmount }** în credite pentru fiecare persoană care se abonează."
+      ],
+      "One encrypted suite. Full business protection.": [
+        "O suită criptată. Protecție completă pentru afacere."
       ]
     },
     "info": {
@@ -9543,7 +9590,7 @@
         "Ștergeți automat mesajele mai vechi de 30 de zile din gunoi și cele nedorite."
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Transferați automat mesajele trimise spre contul ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
+        "Transferați automat mesajele trimise spre contul din ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "În prezent, trimiterea mesajelor promoționale sau programate grupate nu este acceptată. Vă recomandăm să utilizați un furnizor dedicat de servicii de e-mail pentru acest caz de utilizare."
@@ -10819,7 +10866,7 @@
         "TVA ${ rate }%"
       ],
       "terms and conditions": [
-        "termenii și condițiile"
+        "termeni și condiții"
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoire.",
@@ -11182,6 +11229,12 @@
       ],
       "Select a provider": [
         "Selectați un furnizor"
+      ],
+      "Search": [
+        "Căutare"
+      ],
+      "Search for users or addresses": [
+        "Căutare utilizator sau adresă"
       ]
     },
     "Placeholder for contact group name": {
@@ -13963,6 +14016,9 @@
       ],
       "Summer Sale": [
         "Promoție de vară"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrați-vă organizația la ${ BRAND_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14348,6 +14404,104 @@
     "Notitication": {
       "Album renamed successfully": [
         "Albumul a fost redenumit."
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Activat"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresa este deja utilizată de un utilizator din afara propriei organizații. Contactați serviciul de asistență pentru clienți pentru a rezolva această problemă."
+      ],
+      "All": [
+        "Toate"
+      ],
+      "Calendar": [
+        "Calendar"
+      ],
+      "Configure migration": [
+        "Configurare migrare"
+      ],
+      "Contacts": [
+        "Contacte"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Starea migrării datelor din Google Workspace către ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Mesaje"
+      ],
+      "Errors": [
+        "Erori"
+      ],
+      "Estimated size": [
+        "Mărime estimată"
+      ],
+      "Find out what can be migrated.": [
+        "Aflați ce poate fi migrat."
+      ],
+      "Has errors": [
+        "Are erori"
+      ],
+      "In progress": [
+        "În derulare"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresa membrului nu a fost găsită. Contactați serviciul de asistență pentru clienți pentru a rezolva această problemă."
+      ],
+      "Migrate": [
+        "Migrare"
+      ],
+      "Migrated": [
+        "Migrat"
+      ],
+      "Migration status": [
+        "Stare migrare"
+      ],
+      "Missing organization private key": [
+        "Cheia privată a organizației lipsește."
+      ],
+      "Missing organization public key": [
+        "Cheia publică a organizației lipsește."
+      ],
+      "No users to display": [
+        "Nu există utilizatori de afișat."
+      ],
+      "Not activated": [
+        "Neactivat"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizația nu dispune de suficiente licențe disponibile."
+      ],
+      "Organization does not have enough storage available": [
+        "Organizația nu are suficient spațiu de stocare disponibil."
+      ],
+      "Pending": [
+        "În așteptare"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selectați exact ce doriți să migrați. Se va aplica tuturor utilizatorilor organizației."
+      ],
+      "Select users to migrate": [
+        "Selectați utilizatorii pentru migrare"
+      ],
+      "Size": [
+        "Mărime"
+      ],
+      "Status": [
+        "Stare"
+      ],
+      "User": [
+        "Utilizator"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Utilizatori care și-au accesat contul ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Ce migrați?"
+      ],
+      "You": [
+        "Eu"
       ]
     }
   }

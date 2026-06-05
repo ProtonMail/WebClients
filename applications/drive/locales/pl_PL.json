@@ -3607,6 +3607,24 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Musisz aktywować klucz organizacji, aby utworzyć służbowych użytkowników"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Cała przestrzeń dyskowa została już przydzielona. Zmniejsz przydział przestrzeni innym użytkownikom."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Ustaw niestandardową domenę przed dodaniem adresów."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Ustaw niestandardową domenę przed dodaniem użytkowników do organizacji."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Przed dodaniem użytkowników do organizacji, włącz obsługę wielu użytkowników."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Ulepsz do planu biznesowego z więcej niż 1 użytkownikiem, aby zarządzać wieloma użytkownikami."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Wykorzystano limit liczby użytkowników w obecnym planie. Ulepsz plan, aby dodać nowego użytkownika."
       ]
     },
     "Error importing calendar": {
@@ -9849,6 +9867,9 @@
       ],
       "ZIP code": [
         "Kod pocztowy"
+      ],
+      "Search": [
+        "Szukaj"
       ]
     },
     "Placeholder for contact group name": {
@@ -12762,6 +12783,20 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Otwórz w ${ appName }"
+      ]
+    },
+    "BOSS": {
+      "Migration status": [
+        "Status migracji"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizacja nie dysponuje wystarczającą ilością dostępnych licencji"
+      ],
+      "Organization does not have enough storage available": [
+        "Organizacja nie ma wystarczającej ilości przestrzeni dyskowej"
+      ],
+      "You": [
+        "Ty"
       ]
     }
   }
