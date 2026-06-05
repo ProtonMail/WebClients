@@ -41,6 +41,7 @@ import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { PRINT_DATA_URL_PREFIX } from "../printing/print";
 import { isDynamicOAuthURL, isOAuthWindow, registerOAuthWindow, unregisterOAuthWindow } from "../oauthProcess";
 import { sentryReport } from "../sentryReport";
+import { enableAppSwitcherMenuItems } from "../menus/menuApplication";
 
 const RENDERER_LOG_MAX_MESSAGE_LENGTH = 500;
 
@@ -80,6 +81,10 @@ export function handleWebContents(contents: WebContents) {
         if (!isCurrentContent()) {
             return;
         }
+
+        // App switch shortcuts should be disabled when the account is present. In some cases we can display
+        // the account app within a calendar/mail view. Therefore we need to compare against the actual href we're navigating to.
+        enableAppSwitcherMenuItems(!isAccount(url));
 
         if (isAccountLogin(url) || isAccountSwitch(url)) {
             resetBadge();
