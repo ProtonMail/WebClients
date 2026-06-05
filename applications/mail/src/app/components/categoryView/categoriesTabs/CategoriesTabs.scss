@@ -75,8 +75,7 @@
 	// Medium and above (≥ 820px): expand tabs, show labels and counts
 	@container (min-width: #{rem(820)}) {
 		.tab-wrapper {
-			flex: 1;
-			inline-size: rem(136);
+			max-inline-size: rem(136);
 		}
 
 		.tab-container {
