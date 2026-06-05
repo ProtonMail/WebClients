@@ -76,8 +76,8 @@ it('should display the end date of the upcoming subscription if it exists', () =
             cycle: CYCLE.TWO_YEARS,
         },
         {
-            PeriodStart: 1717588460,
-            PeriodEnd: 1780660460,
+            PeriodStart: 1861956000,
+            PeriodEnd: 1893492000,
             CreateTime: 1685966060,
         }
     );
@@ -86,5 +86,5 @@ it('should display the end date of the upcoming subscription if it exists', () =
         <CancelSubscriptionModal subscription={withUpcoming} onResolve={onResolve} onReject={onReject} open />
     );
 
-    expect(container).toHaveTextContent('expires on June 5th, 2026');
+    expect(container).toHaveTextContent('expires on January 1st, 2030');
 });
