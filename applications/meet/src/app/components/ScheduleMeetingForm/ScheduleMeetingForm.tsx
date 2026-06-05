@@ -30,7 +30,7 @@ import { useMeetingUpdates } from '@proton/meet/hooks/useMeetingUpdates';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { addMeeting, removeMeeting, updateMeeting } from '@proton/meet/store/slices';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, CALENDAR_APP_NAME, MINUTE } from '@proton/shared/lib/constants';
 import { getTimeZoneOptions, getTimezone } from '@proton/shared/lib/date/timezone';
 import { type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
 import clsx from '@proton/utils/clsx';
@@ -44,6 +44,8 @@ import type { OnDateTimeChange } from './types';
 import { combineDateAndTime, getInitialValues, validate } from './utils';
 
 import './ScheduleMeetingForm.scss';
+
+const DEFAULT_MEETING_DURATION = 30 * MINUTE;
 
 // generate all quaters of hours for the day in the format of { hour: '00', minute: '00' }
 const QUARTERS_OF_HOURS = Array.from({ length: 24 }, (_, hour) =>
@@ -290,12 +292,12 @@ export const ScheduleMeetingForm = ({
         return timeOptions.filter(
             (option) => combineDateAndTime(values.startDate, option.value, values.timeZone) > now
         );
-    }, [values.startDate]);
+    }, [timeOptions, values.startDate, values.timeZone]);
 
     const endTimeOptions = useMemo(() => {
         const now = new Date();
         return timeOptions.filter((option) => combineDateAndTime(values.endDate, option.value, values.timeZone) > now);
-    }, [values.endDate]);
+    }, [timeOptions, values.endDate, values.timeZone]);
 
     const goToCalendar = () => {
         goToApp(
@@ -336,14 +338,30 @@ export const ScheduleMeetingForm = ({
             [fieldName]: value,
         };
 
-        // check if endDateTime is before startDateTime, if so, set endDateTime to one hour later
+        const setEndFromStart = (vals: typeof newValues, startDateTime: Date, duration: number) => {
+            const newEnd = utcToZonedTime(new Date(startDateTime.getTime() + duration), vals.timeZone);
+            vals.endDate = new Date(newEnd.getFullYear(), newEnd.getMonth(), newEnd.getDate());
+            vals.endTime = `${String(newEnd.getHours()).padStart(2, '0')}:${String(newEnd.getMinutes()).padStart(2, '0')}`;
+        };
+
         const startDateTime = combineDateAndTime(newValues.startDate, newValues.startTime, newValues.timeZone);
+
+        if (fieldName === 'startDate' || fieldName === 'startTime') {
+            const previousStart = combineDateAndTime(values.startDate, values.startTime, values.timeZone);
+            const previousEnd = combineDateAndTime(values.endDate, values.endTime, values.timeZone);
+            const previousDuration = previousEnd.getTime() - previousStart.getTime();
+
+            setEndFromStart(
+                newValues,
+                startDateTime,
+                previousDuration > 0 ? previousDuration : DEFAULT_MEETING_DURATION
+            );
+        }
+
         const endDateTime = combineDateAndTime(newValues.endDate, newValues.endTime, newValues.timeZone);
 
         if (endDateTime <= startDateTime) {
-            const oneHourLater = utcToZonedTime(new Date(startDateTime.getTime() + 60 * 60 * 1000), newValues.timeZone);
-            newValues.endDate = new Date(oneHourLater.getFullYear(), oneHourLater.getMonth(), oneHourLater.getDate());
-            newValues.endTime = `${String(oneHourLater.getHours()).padStart(2, '0')}:${String(oneHourLater.getMinutes()).padStart(2, '0')}`;
+            setEndFromStart(newValues, startDateTime, DEFAULT_MEETING_DURATION);
         }
 
         setValues(newValues);
