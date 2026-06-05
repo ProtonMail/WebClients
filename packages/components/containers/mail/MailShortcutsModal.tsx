@@ -12,14 +12,15 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import ShortcutsSectionView from '@proton/components/components/shortcuts/ShortcutsSectionView';
 import { getCategoryCommanderKeyboardShortcut } from '@proton/mail/features/categoriesView/categoriesHelpers';
-import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { getLabelFromCategoryIdInCommander } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
+import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKeyboardShortcutsWithAppName } from '@proton/shared/lib/shortcuts/i18n';
 import { getShortcuts } from '@proton/shared/lib/shortcuts/mail';
 import clsx from '@proton/utils/clsx';
 
+import InboxDesktopAppSwitchingShortcuts from '../desktop/InboxDesktopAppSwitchingShortcuts';
 import ShortcutsToggle from '../general/ShortcutsToggle';
 
 import './MailShortcutsModal.scss';
@@ -49,6 +50,7 @@ const MailShortCutsModal = (props: ModalProps) => {
                         .t`Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.`}
                 </Banner>
                 <div className="columns-1 md:columns-2 gap-8">
+                    <InboxDesktopAppSwitchingShortcuts />
                     {alwaysOnSections.map((section) => {
                         return <ShortcutsSectionView key={section.name} {...section} />;
                     })}

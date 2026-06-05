@@ -18,6 +18,9 @@ import { getShortcuts } from '@proton/shared/lib/shortcuts/calendar';
 import { getKeyboardShortcutsWithAppName } from '@proton/shared/lib/shortcuts/i18n';
 import clsx from '@proton/utils/clsx';
 
+import InboxDesktopAppSwitchingShortcuts, {
+    showInboxDesktopAppSwitchingShortcuts,
+} from '../../desktop/InboxDesktopAppSwitchingShortcuts';
 import ShortcutsToggle from '../../general/ShortcutsToggle';
 
 import './CalendarShortcutsModal.scss';
@@ -32,6 +35,14 @@ const CalendarShortcutsModal = (props: ModalProps) => {
         <ModalTwo className="shortcut-modal" {...props}>
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
+                {showInboxDesktopAppSwitchingShortcuts && (
+                    <>
+                        <div className="columns-1 md:columns-2 gap-8">
+                            <InboxDesktopAppSwitchingShortcuts />
+                        </div>
+                        <hr className="my-8 border-bottom" />
+                    </>
+                )}
                 <Banner className="mb-4" variant="info">
                     {c('Info')
                         .t`If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${metaKey} + K is always enabled.`}
