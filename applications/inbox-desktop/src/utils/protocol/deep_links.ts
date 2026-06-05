@@ -1,7 +1,7 @@
 import { Event, app } from "electron";
 import { isMac, OneTimeArgument } from "../helpers";
 import { protocolLogger } from "../log";
-import { openCalendar, getCurrentLocalID, openMail } from "../view/viewManagement";
+import { openCalendarWithoutReload, getCurrentLocalID, openMail } from "../view/viewManagement";
 import { parseURLParams } from "../urls/urlHelpers";
 
 export const DEEPLINK_PROTOCOL = "proton-inbox";
@@ -71,7 +71,7 @@ export const handleOpenCalendar = (argv: string[]): boolean => {
     }
 
     protocolLogger.log("open calendar", argv);
-    openCalendar();
+    openCalendarWithoutReload();
     return true;
 };
 

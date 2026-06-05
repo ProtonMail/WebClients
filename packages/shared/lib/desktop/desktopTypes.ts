@@ -43,7 +43,8 @@ export type IPCInboxDesktopFeature =
     | 'PrintDialog'
     | 'UserLogoutV2'
     | 'MailtoBannerPermanentDismiss'
-    | 'OAuthPopupV2';
+    | 'OAuthPopupV2'
+    | 'SwitchViewShortcuts';
 export type IPCInboxGetInfoMessage =
     | { type: 'theme'; result: ThemeSetting }
     | { type: 'latestVersion'; result: DesktopVersion | null }
