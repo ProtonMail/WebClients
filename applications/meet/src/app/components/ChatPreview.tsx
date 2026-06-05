@@ -4,6 +4,7 @@ import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectParticipantDecryptedNameMap, selectRoomName } from '@proton/meet/store/slices/meetingInfo';
 import { selectTotalParticipantCount } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
+import clsx from '@proton/utils/clsx';
 
 import { CloseButton } from '../atoms/CloseButton/CloseButton';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
@@ -42,8 +43,6 @@ export const ChatPreview = () => {
 
     const pseudoId = `${latestMeetingRoomUpdate?.identity}${latestMeetingRoomUpdate?.timestamp}${latestMeetingRoomUpdate?.type}`;
 
-    const isLargerThanMd = useIsLargerThanMd();
-
     const shouldNotDisplayLastMessage = !isOpen || sideBarState[MeetingSideBars.Chat] || !latestMeetingRoomUpdate;
 
     // We always show the latest meeting room update (message or participant event), had to make it disappear after a timeout
@@ -59,15 +58,21 @@ export const ChatPreview = () => {
         return () => {
             clearTimeout(timeoutId);
         };
-    }, [pseudoId]);
+    }, [pseudoId, latestMeetingRoomUpdate, sideBarState]);
 
-    if (shouldNotDisplayLastMessage || !isLargerThanMd) {
+    const isLargerThanMd = useIsLargerThanMd();
+
+    if (shouldNotDisplayLastMessage) {
         return null;
     }
 
     return (
         <div
-            className="absolute bottom-custom left-custom z-up bg-norm border border-norm rounded-xl p-4 w-custom max-w-custom max-h-custom flex flex-nowrap justify-space-between items-center overflow-hidden"
+            className={clsx(
+                'absolute bottom-custom left-custom z-up bg-norm border border-norm rounded-xl p-4 max-h-custom flex flex-nowrap justify-space-between items-center overflow-hidden',
+                !isLargerThanMd && 'mb-2 w-full',
+                isLargerThanMd && 'w-custom max-w-custom'
+            )}
             style={{
                 '--bottom-custom': '4.5rem',
                 '--left-custom': '50%',
