@@ -7,13 +7,13 @@ import Info from '@proton/components/components/link/Info';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
-import { useCategoryToggle } from '@proton/mail/features/categoriesView/useCategoryToggle';
+import { useCategoriesToggle } from '@proton/mail/features/categoriesView/useCategoriesToggle';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
 export const CategoriesQuickSettings = () => {
     const { hasAccessToCategoryView } = useCategoriesData();
-    const { handleChange, state, loading } = useCategoryToggle();
+    const { handleChange, state, loading } = useCategoriesToggle();
 
     const authentication = useAuthentication();
 
