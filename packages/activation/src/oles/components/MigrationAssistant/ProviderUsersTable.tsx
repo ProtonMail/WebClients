@@ -219,12 +219,12 @@ const ProviderUsersTable: FC<Props> = ({
                                 <label htmlFor="select-all" className="m-0 flex-1">{c('BOSS').t`User`}</label>
                             </div>
                         </TableHeaderCell>
-                        <TableHeaderCell className="w-custom" style={{ '--w-custom': 'max(7rem, 11vw)' }}>
+                        <TableHeaderCell className="w-custom" style={{ '--w-custom': 'max(9rem, 12vw)' }}>
                             <span className="text-ellipsis" title={c('BOSS').t`Estimated size`}>{c('BOSS')
                                 .t`Estimated size`}</span>
                         </TableHeaderCell>
                         {(hiddenColumns & ProviderUserColumn.Migration) !== ProviderUserColumn.Migration && (
-                            <TableHeaderCell className="w-custom" style={{ '--w-custom': 'max(7rem, 11vw)' }}>
+                            <TableHeaderCell className="w-custom" style={{ '--w-custom': 'max(11rem, 13vw)' }}>
                                 <div className="flex">
                                     <Tooltip
                                         openDelay={0}
