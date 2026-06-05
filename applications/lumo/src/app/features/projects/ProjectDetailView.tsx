@@ -13,6 +13,7 @@ import { ComposerComponent } from '../../components/Composer/ComposerComponent';
 import { useNativeComposerPromptApi } from '../../components/Composer/hooks/useNativeComposerPromptApi';
 import { sendMessage } from '../../components/Conversation/helper';
 import { FilesManagementView } from '../../components/Files';
+import ConfirmDeleteModal from '../../components/Modals/ConfirmDeleteModal';
 import { type ConversationGroup, SelectableConversationList } from '../../components/SelectableConversationList';
 import { usePersonalization } from '../../hooks';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
@@ -45,7 +46,6 @@ import { ProjectEmptyState } from './components/ProjectEmptyState';
 import { getProjectCategory, getPromptSuggestionsForCategory } from './constants';
 import { useNativeComposerProjectDetailVisibilityApi } from './hooks/useNativeComposerProjectDetailVisibilityApi';
 import { useProjectActions } from './hooks/useProjectActions';
-import { DeleteConversationModal } from './modals/DeleteConversationModal';
 import { DeleteProjectModal } from './modals/DeleteProjectModal';
 import { ProjectInstructionsModal } from './modals/ProjectInstructionsModal';
 import type { Project } from './types';
@@ -438,9 +438,12 @@ const ProjectDetailViewInner = () => {
             )}
 
             {deleteConversationModal.render && (
-                <DeleteConversationModal
+                <ConfirmDeleteModal
                     {...deleteConversationModal.modalProps}
-                    onConfirm={confirmDeleteConversation}
+                    handleDelete={() => {
+                        confirmDeleteConversation();
+                        deleteConversationModal.openModal(false);
+                    }}
                 />
             )}
 
