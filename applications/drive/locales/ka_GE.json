@@ -3898,6 +3898,24 @@
       ],
       "Organization key must be activated to create non-private users": [
         "არაკონფიდენციალური მომხმარებლების შესაქმნელად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "შესაძლო სივრცე მთლიანად გაცემულია. შეამცირეთ სხვა მომხმარებლების მიერ მოხმარებული ადგილის რაოდენობა."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "მისამართების დამატებმდე თქვენი დომენის მორგება აუცილებელია."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "თქვენს ორგანიზაციაში მომხმარებლების ჩამატებამდე თქვენი დომენის მორგებაა საჭირო."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "მომხმარებლების ორგანიზაციაში ჩამატებამდე მრავალმომხმარებლიანი რეჟიმის ჩართვაა საჭირო."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "ბევრი მომხმარებლის სამართავად შეიძინეთ სატარიფო გეგმა, რომელიც 1-ზე მეტ მომხმარებელს შეიცავს."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "იყენებთ თქვენს სატარიფო გეგმაში შემავალ ყველა მომხმარებელს. ახალი მომხმარებლის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
       ]
     },
     "error": {
@@ -6733,6 +6751,10 @@
       ],
       "Update required": [
         "საჭიროა განახლება"
+      ],
+      "${ total } user found": [
+        "აღმოჩენილია ${ total } მომხმარებელი",
+        "აღმოჩენილია ${ total } მომხმარებელი"
       ]
     },
     "info": {
@@ -10170,6 +10192,9 @@
       ],
       "Select a provider": [
         "აირჩიეთ პროვაიდერი"
+      ],
+      "Search": [
+        "ძებნა"
       ]
     },
     "Placeholder for contact group name": {
@@ -13022,6 +13047,53 @@
       ],
       "Microsoft 365": [
         "Microsoft 365"
+      ]
+    },
+    "BOSS": {
+      "All": [
+        "ყველა"
+      ],
+      "Calendar": [
+        "კალენდარი"
+      ],
+      "Configure migration": [
+        "მიგრაციის მორგება"
+      ],
+      "Contacts": [
+        "კონტაქტები"
+      ],
+      "Estimated size": [
+        "სავარაუდო ზომა"
+      ],
+      "Has errors": [
+        "აქვს შეცდომები"
+      ],
+      "In progress": [
+        "მიმდინარეობს"
+      ],
+      "Migration status": [
+        "მიგრაციის სტატუსი"
+      ],
+      "Organization does not have enough seats available": [
+        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
+      ],
+      "Organization does not have enough storage available": [
+        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
+      ],
+      "Size": [
+        "ზომა"
+      ],
+      "Status": [
+        "სტატუსი"
+      ],
+      "User": [
+        "მომხმარებელი"
+      ],
+      "What are you migrating?": [
+        "რის მიგრაციას ახდენთ?"
+      ],
+      "You": [
+        "თქვენ"
       ]
     }
   }

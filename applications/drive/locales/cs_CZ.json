@@ -4108,6 +4108,27 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Pro vytvoření nesoukromých uživatelů musí být aktivován klíč organizace"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Celé úložiště již bylo přiděleno. Zmenšete prosím přidělený prostor ostatním uživatelům."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Před přidáním adres nastavte vlastní doménu."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Před přidáním uživatelů do Vaši organizace si prosím nastavte vlastní doménu."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Zapněte prosím podporu pro více uživatelů před přidáváním uživatelů do vaší organizace."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Chcete-li spravovat více uživatelů, přejděte na firemní tarif."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Využili jste všechny adresy ve vašem tarifu. Prosím navyšte svůj tarif, abyste mohli přidat novou adresu, nebo deaktivujte některou z adres ve svém účtu."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Limit počtu uživatelů ve vašem tarifu byl vyčerpán. Přejděte na vyšší tarif, abyste mohli přidat dalšího uživatele."
       ]
     },
     "error": {
@@ -7340,6 +7361,12 @@
       ],
       "No populator states found.": [
         "Nebylo nalezeno žádné stavové hlášení procesu indexování."
+      ],
+      "${ total } user found": [
+        "Nalezen ${ total } uživatel",
+        "Nalezeni ${ total } uživatelé",
+        "Nalezeno ${ total } uživatelů",
+        "Nalezeno ${ total } uživatelů"
       ]
     },
     "info": {
@@ -11123,6 +11150,9 @@
       ],
       "Select a provider": [
         "Vyberte poskytovatele"
+      ],
+      "Search": [
+        "Vyhledat"
       ]
     },
     "Placeholder for contact group name": {
@@ -14356,6 +14386,44 @@
     "Notitication": {
       "Album renamed successfully": [
         "Album úspěšně přejmenováno"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Kalendář"
+      ],
+      "Configure migration": [
+        "Nastavte migraci"
+      ],
+      "Contacts": [
+        "Kontakty"
+      ],
+      "Estimated size": [
+        "Odhadovaná velikost"
+      ],
+      "Has errors": [
+        "Má chyby"
+      ],
+      "In progress": [
+        "Probíhá"
+      ],
+      "Migration status": [
+        "Stav migrace"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizace nemá dostatek volných licencí"
+      ],
+      "Organization does not have enough storage available": [
+        "Organizace nemá dostatečně velké úložiště"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "User": [
+        "Uživatel"
+      ],
+      "What are you migrating?": [
+        "Co migrujete?"
       ]
     }
   }

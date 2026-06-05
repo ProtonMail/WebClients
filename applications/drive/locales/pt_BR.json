@@ -4071,6 +4071,27 @@
       ],
       "Organization key must be activated to create non-private users": [
         "A chave da organização deve ser ativada para criar usuários não privados"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Todo o espaço de armazenamento foi alocado. Reduza o armazenamento alocado para outros usuários."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configure um domínio personalizado antes de adicionar endereços."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Configure um domínio personalizado antes de adicionar usuários à sua organização."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Ative o suporte a múltiplos usuários antes de adicionar usuários à sua organização."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Atualize para um plano de negócios com mais de 1 usuário para gerenciar vários usuários."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Você usou todos os endereços do seu plano. Faça o upgrade do seu plano para adicionar um novo endereço ou desative um endereço na sua conta."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Você usou todos os usuários do seu plano. Faça o upgrade do seu plano para adicionar um novo usuário."
       ]
     },
     "error": {
@@ -7219,6 +7240,10 @@
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Faça upgrade ou limpe espaço em qualquer momento para importar o resto"
+      ],
+      "${ total } user found": [
+        "${ total } usuário encontrado",
+        "${ total } usuários encontrados"
       ]
     },
     "info": {
@@ -10963,6 +10988,12 @@
       ],
       "Anything you'd like us to know": [
         "Algo que você gostaria que soubéssemos?"
+      ],
+      "Search": [
+        "Pesquisar"
+      ],
+      "Search for users or addresses": [
+        "Pesquisar por um usuários ou endereços"
       ]
     },
     "Placeholder for contact group name": {
@@ -14052,6 +14083,89 @@
     "Notitication": {
       "Album renamed successfully": [
         "O álbum foi renomeado com sucesso"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Ativado"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "O endereço já é usado por um usuário fora da sua organização. Entre em contato com o suporte ao cliente para resolver isso"
+      ],
+      "All": [
+        "Todos"
+      ],
+      "Calendar": [
+        "Calendário"
+      ],
+      "Configure migration": [
+        "Configurar migração"
+      ],
+      "Contacts": [
+        "Contatos"
+      ],
+      "Errors": [
+        "Errors"
+      ],
+      "Estimated size": [
+        "Tempo estimado"
+      ],
+      "Find out what can be migrated.": [
+        "Descubra o que pode ser migrado."
+      ],
+      "Has errors": [
+        "Tem erros"
+      ],
+      "In progress": [
+        "Em processo"
+      ],
+      "Migrate": [
+        "Migrar"
+      ],
+      "Migrated": [
+        "Migrado"
+      ],
+      "Migration status": [
+        "Status da migração"
+      ],
+      "Missing organization private key": [
+        "Falta a chave privada da organização"
+      ],
+      "Missing organization public key": [
+        "Falta a chave pública da organização"
+      ],
+      "No users to display": [
+        "Nenhum usuário para exibir"
+      ],
+      "Not activated": [
+        "Não ativado"
+      ],
+      "Organization does not have enough seats available": [
+        "A organização não tem licenças suficientes disponíveis"
+      ],
+      "Organization does not have enough storage available": [
+        "A organização não tem armazenamento suficientes disponíveis"
+      ],
+      "Pending": [
+        "Pendente"
+      ],
+      "Select users to migrate": [
+        "Selecione os usuários a serem migrados"
+      ],
+      "Size": [
+        "Tamanho"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Usuário"
+      ],
+      "What are you migrating?": [
+        "O que você está migrando?"
+      ],
+      "You": [
+        "Você"
       ]
     }
   }

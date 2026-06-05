@@ -3785,6 +3785,24 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Za ustvarjanje nezasebnih uporabnikov mora biti ključ organizacije aktiviran."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Ves prostor na disku je že dodeljen. Zmanjšajte dodelitev prostora drugim uporabnikom."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Prosimo, najprej nastavite domeno po meri in šele potem dodate naslove."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Pred dodajanjem uporabnika v organizacijo najprej konfigurirajte domeno po meri."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Pred dodajanjem uporabnika v organizacijo najprej omogočite podporo za več uporabnikov."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Prosim, nadgradite na poslovni paket z več kot enim uporabnikom, da boste lahko upravljali več uporabnikov."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Uporabili ste vse uporabnike v svojem paketu. Prosimo nadgradite paket, da dodate novega uporabnika."
       ]
     },
     "error": {
@@ -6809,6 +6827,12 @@
       ],
       "for ${ price }": [
         "za ${ price }"
+      ],
+      "${ total } user found": [
+        "Najden je ${ total } uporabnik.",
+        "Najdena sta ${ total } uporabnika.",
+        "Najdeni so ${ total } uporabniki.",
+        "Najdenih je ${ total } uporabnikov."
       ]
     },
     "info": {
@@ -10167,6 +10191,9 @@
       ],
       "Enter a name": [
         "Vnesi ime"
+      ],
+      "Search": [
+        "Iskanje"
       ]
     },
     "Placeholder for contact group name": {
@@ -13013,6 +13040,26 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Koledar"
+      ],
+      "Contacts": [
+        "Stiki"
+      ],
+      "Has errors": [
+        "Ima napake"
+      ],
+      "In progress": [
+        "V obdelavi"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizacija nima na voljo dovolj sedežev"
+      ],
+      "Status": [
+        "Stanje"
       ]
     }
   }

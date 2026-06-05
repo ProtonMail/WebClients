@@ -3405,6 +3405,24 @@
       ],
       "Organization key must be activated to create non-private users": [
         "A chave da organização deve ser ativada para criar utilizadores não privados."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Foi alocado todo o espaço de armazenamento. Reduza o armazenamento alocado a outros membros."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configure um domínio personalizado antes de adicionar endereços."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Defina um domínio personalizado antes de adicionar utilizadores à sua organização."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Ative o suporte multi-utilizador antes de adicionar utilizadores à sua organização."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Subscreva um plano empresarial com mais de 1 utilizador para gerir vários utilizadores."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Usou todos os utilizadores do seu plano. Subscreva um plano superior para adicionar um utilizador."
       ]
     },
     "Error importing calendar": {
@@ -9167,6 +9185,9 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Search": [
+        "Pesquisar"
       ]
     },
     "Placeholder for contact group name": {

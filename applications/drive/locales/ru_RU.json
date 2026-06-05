@@ -3418,6 +3418,24 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Ключ организации должен быть активирован для создания нечастных пользователей"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Весь объём хранилища был распределён. Пожалуйста, уменьшите объём хранилища, выделенного для других пользователей."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Перед добавлением адресов настройте пользовательский домен."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Пожалуйста, настройте свой домен перед добавлением пользователей в вашу организацию."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Пожалуйста, включите многопользовательский режим перед добавлением пользователей в вашу организацию."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Чтобы управлять несколькими пользователями, перейдите на бизнес-план с более чем 1 пользователем."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Вы достигли максимального числа пользователей, предусмотренного вашим тарифом. Пожалуйста, улучшите ваш тариф прежде, чем добавлять нового пользователя."
       ]
     },
     "Error importing calendar": {
@@ -9226,6 +9244,9 @@
       ],
       "ZIP code": [
         "Почтовый индекс"
+      ],
+      "Search": [
+        "Поиск"
       ]
     },
     "Placeholder for contact group name": {

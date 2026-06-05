@@ -4051,6 +4051,27 @@
       ],
       "Organization key must be activated to create non-private users": [
         "组织密钥必须激活才能创建非私人用户"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "已分配所有存储空间。请减少分配给其他用户的存储空间。"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "添加地址前请先配置自有域名。"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "为机构添加用户前，请先配置自有域名。"
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "添加用户前请先开启多用户功能。"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "请升级为支持多用户的商务账户后再执行用户管理操作。"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "您已用完当前套餐中的所有地址！请升级您的套餐以添加新地址，或禁用您账户中的某个现有地址。"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "您的用户数已达上限，升级账户后方可继续添加用户。"
       ]
     },
     "error": {
@@ -7150,6 +7171,9 @@
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "随时升级或清理空间以迁移剩余内容"
+      ],
+      "${ total } user found": [
+        "已找到 ${ total } 位用户"
       ]
     },
     "info": {
@@ -10765,6 +10789,12 @@
       ],
       "Select a provider": [
         "请选择提供商"
+      ],
+      "Search": [
+        "搜索"
+      ],
+      "Search for users or addresses": [
+        "搜索用户或地址"
       ]
     },
     "Placeholder for contact group name": {
@@ -13684,6 +13714,89 @@
     "Notitication": {
       "Album renamed successfully": [
         "相册重命名成功"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "已激活"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "该地址已被您组织外的用户使用，请联系客服以解决此问题。"
+      ],
+      "All": [
+        "全部"
+      ],
+      "Calendar": [
+        "日历"
+      ],
+      "Configure migration": [
+        "配置迁移"
+      ],
+      "Contacts": [
+        "联系人"
+      ],
+      "Errors": [
+        "错误"
+      ],
+      "Estimated size": [
+        "预计大小"
+      ],
+      "Find out what can be migrated.": [
+        "了解可以迁移哪些内容"
+      ],
+      "Has errors": [
+        "出错啦"
+      ],
+      "In progress": [
+        "进行中"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "未找到成员地址，请联系客服解决此问题。"
+      ],
+      "Migrated": [
+        "已迁移"
+      ],
+      "Migration status": [
+        "迁移状态"
+      ],
+      "Missing organization private key": [
+        "缺少组织私钥"
+      ],
+      "Missing organization public key": [
+        "缺少组织公钥"
+      ],
+      "No users to display": [
+        "无可显示的用户"
+      ],
+      "Not activated": [
+        "未激活"
+      ],
+      "Organization does not have enough seats available": [
+        "组织可用席位不足"
+      ],
+      "Organization does not have enough storage available": [
+        "组织可用存储空间不足"
+      ],
+      "Pending": [
+        "待处理"
+      ],
+      "Select users to migrate": [
+        "请选择要迁移的用户"
+      ],
+      "Size": [
+        "大小"
+      ],
+      "Status": [
+        "状态"
+      ],
+      "User": [
+        "用户"
+      ],
+      "What are you migrating?": [
+        "您需要迁移什么？"
+      ],
+      "You": [
+        "您"
       ]
     }
   }

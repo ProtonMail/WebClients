@@ -1293,6 +1293,9 @@
       ],
       "Get the deal": [
         "Obteniu l’oferta"
+      ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "Proveu el Workspace de ${ BRAND_NAME }"
       ]
     },
     "Action: Docs": {
@@ -3140,6 +3143,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "El vostre compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem els vostres correus electrònics més recents de Gmail."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Per a una incorporació fluida del vostre equip a ${ BRAND_NAME }, importeu les vostres dades de Google, Outlook i d'altres."
       ]
     },
     "description": {
@@ -4095,6 +4101,27 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "El número d'IVA ha de començar per ${ prefixes }"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "S'ha assignat tot l'espai d'emmagatzematge. Reduïu l'emmagatzematge assignat a altres usuaris."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configureu un domini personalitzat abans d'afegir adreces."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Configureu un domini personalitzat abans d'afegir usuaris a la seva organització."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Habiliteu el suport multiusuari abans d'afegir usuaris a la vostra organització."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Milloreu a un pla per a empreses amb més d'un usuari per a gestionar múltiples usuaris."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Heu utilitzat totes les adreces del vostre pla. Actualitzeu-lo per afegir-ne una de nova o desactiveu una adreça al vostre compte."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Heu utilitzat tots els usuaris del vostre pla. Milloreu-lo per a afegir un usuari."
       ]
     },
     "error": {
@@ -7281,6 +7308,25 @@
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Milloreu de pla o allibereu espai en qualsevol moment per portar la resta"
+      ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "El Workspace de ${ BRAND_NAME } capacita el vostre equip per col·laborar de manera eficient sense posar mai en risc les dades de l'empresa."
+      ],
+      "${ total } user found": [
+        "S'ha trobat ${ total } usuari",
+        "S'han trobat ${ total } usuaris"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Convideu amistats** a ${ BRAND_NAME } amb el vostre enllaç de referència."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Ells reben ${ refereeRewardAmount }** en crèdits si es subscriuen."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Rebeu ${ referrerRewardAmount }** en crèdits per cada amistat que se subscrigui."
+      ],
+      "One encrypted suite. Full business protection.": [
+        "Un conjunt xifrat. Protecció empresarial completa."
       ]
     },
     "info": {
@@ -11044,6 +11090,12 @@
       ],
       "Select a provider": [
         "Seleccioneu un proveïdor"
+      ],
+      "Search": [
+        "Cerca"
+      ],
+      "Search for users or addresses": [
+        "Cercar un usuari o adreça"
       ]
     },
     "Placeholder for contact group name": {
@@ -13672,6 +13724,9 @@
       ],
       "Summer Sale": [
         "Rebaixes d'estiu"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migreu la vostra organització a ${ BRAND_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14040,6 +14095,104 @@
     "Notitication": {
       "Album renamed successfully": [
         "S'ha canviat el nom de l'àlbum correctament"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Activat"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Aquesta adreça ja la utilitza un usuari de fora de la vostra organització. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
+      ],
+      "All": [
+        "Tots"
+      ],
+      "Calendar": [
+        "Calendari"
+      ],
+      "Configure migration": [
+        "Configureu la migració"
+      ],
+      "Contacts": [
+        "Contactes"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Estat de la migració de dades de Google Workspace a ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Correus electrònics"
+      ],
+      "Errors": [
+        "Errors"
+      ],
+      "Estimated size": [
+        "Mida estimada"
+      ],
+      "Find out what can be migrated.": [
+        "Descobriu què es pot migrar."
+      ],
+      "Has errors": [
+        "Té errors"
+      ],
+      "In progress": [
+        "En curs"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "No s'ha trobat l'adreça del membre. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
+      ],
+      "Migrate": [
+        "Migrar"
+      ],
+      "Migrated": [
+        "S'ha migrat"
+      ],
+      "Migration status": [
+        "Estat de la migració"
+      ],
+      "Missing organization private key": [
+        "Falta la clau privada de l'organització"
+      ],
+      "Missing organization public key": [
+        "Falta la clau pública de l'organització"
+      ],
+      "No users to display": [
+        "No hi ha cap usuari per mostrar"
+      ],
+      "Not activated": [
+        "No s'ha activat"
+      ],
+      "Organization does not have enough seats available": [
+        "L'organització no té prou llicències disponibles"
+      ],
+      "Organization does not have enough storage available": [
+        "L'organització no té prou espai d'emmagatzematge disponible"
+      ],
+      "Pending": [
+        "Està pendent"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Seleccioneu exactament què voleu migrar. S'aplicarà a tots els usuaris de l'organització."
+      ],
+      "Select users to migrate": [
+        "Seleccioneu els usuaris que voleu migrar"
+      ],
+      "Size": [
+        "Mida"
+      ],
+      "Status": [
+        "Estat"
+      ],
+      "User": [
+        "Usuari"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Usuaris que han accedit al seu compte de ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Què esteu migrant?"
+      ],
+      "You": [
+        "Tú"
       ]
     }
   }
