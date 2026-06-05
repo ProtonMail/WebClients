@@ -2,7 +2,6 @@ import type { ReactNode, RefObject } from 'react';
 import { createContext, useContext } from 'react';
 
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
-import type { Filter } from '@proton/shared/lib/mail/search';
 
 import { useListActions } from '../../hooks/list/useListActions';
 import { useListElements } from '../../hooks/list/useListElements';
@@ -57,17 +56,12 @@ interface MailboxListContextValue {
     // Pagination
     total: number;
     page: number;
-    pageSize: number;
     handlePrevious: () => void;
     handleNext: () => void;
     handlePage: (page: number) => void;
 
     // Others
-    labelID?: string;
-    conversationMode: boolean;
     mailboxListLoading: boolean;
-    isSearch: boolean;
-    filter: Filter;
 }
 
 const MailboxListContext = createContext<MailboxListContextValue | null>(null);
@@ -149,16 +143,11 @@ export const MailboxListProvider = ({
 
         total: pagingHandlers.total,
         page: pagingHandlers.page,
-        pageSize,
         handlePrevious: onPrevious,
         handleNext: onNext,
         handlePage: onPage,
 
-        labelID,
-        conversationMode,
         mailboxListLoading: loading,
-        isSearch,
-        filter: filter || {},
     };
 
     return <MailboxListContext.Provider value={contextValue}>{children}</MailboxListContext.Provider>;
