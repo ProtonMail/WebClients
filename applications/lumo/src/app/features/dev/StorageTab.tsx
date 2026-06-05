@@ -4,7 +4,9 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 
+import IndexedDBUnavailablePage from '../../components/IndexedDBUnavailablePage';
 import { DbApi } from '../../indexedDb/db';
+import { isIndexedDBAvailable } from '../../indexedDb/util';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectConversations, selectMessages } from '../../redux/selectors';
 
@@ -48,6 +50,7 @@ export const StorageTab = ({ currentConversationId }: StorageTabProps) => {
     const [dirtyMessageIds, setDirtyMessageIds] = useState<Set<string>>(new Set());
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
+    const [previewUnavailable, setPreviewUnavailable] = useState(false);
 
     const refresh = async () => {
         setError(null);
@@ -143,9 +146,38 @@ export const StorageTab = ({ currentConversationId }: StorageTabProps) => {
 
     return (
         <div className="debug-view-tab-panel">
+            {previewUnavailable && (
+                <div
+                    style={{
+                        position: 'fixed',
+                        inset: 0,
+                        width: '100%',
+                        height: '100%',
+                        background: 'var(--background-norm)',
+                        zIndex: 9999,
+                    }}
+                >
+                    <IndexedDBUnavailablePage />
+                    <button
+                        className="debug-view-btn debug-view-btn--secondary"
+                        onClick={() => setPreviewUnavailable(false)}
+                        style={{ position: 'fixed', top: '12px', right: '12px', zIndex: 10000 }}
+                    >
+                        ✕ {c('lumo: Debug View').t`Close preview`}
+                    </button>
+                </div>
+            )}
+
             <div className="debug-view-header">
                 <span className="debug-view-header-icon">💾</span>
                 {c('lumo: Debug View').t`Local storage (IndexedDB)`}
+            </div>
+
+            <div className="debug-view-row">
+                <span className="debug-view-label">{c('lumo: Debug View').t`IndexedDB available`}</span>
+                <span className={`debug-view-value ${isIndexedDBAvailable() ? '' : 'debug-view-value--danger'}`}>
+                    {isIndexedDBAvailable() ? c('lumo: Debug View').t`Yes` : c('lumo: Debug View').t`No`}
+                </span>
             </div>
 
             {error && (
@@ -205,6 +237,12 @@ export const StorageTab = ({ currentConversationId }: StorageTabProps) => {
                     disabled={!currentConversationId}
                 >
                     💬 {c('lumo: Debug View').t`Export current conversation (JSON)`}
+                </button>
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() => setPreviewUnavailable(true)}
+                >
+                    🚫 {c('lumo: Debug View').t`Preview "IndexedDB unavailable" screen`}
                 </button>
                 <div className="debug-view-hint">
                     {c('lumo: Debug View')

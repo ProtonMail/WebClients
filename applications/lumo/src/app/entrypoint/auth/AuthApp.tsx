@@ -26,8 +26,10 @@ import { FlagProvider } from '@proton/unleash/proxy';
 import { bootstrapApp } from '../../bootstrap';
 import ConditionalNotificationsChildren from '../../components/ConditionalNotificationsChildren';
 import { IndexedDBConnectionMonitor } from '../../components/IndexedDBConnectionMonitor';
+import IndexedDBUnavailablePage from '../../components/IndexedDBUnavailablePage';
 import LumoLoader from '../../components/Loading/LumoLoader';
 import config from '../../config';
+import { isIndexedDBAvailable } from '../../indexedDb/util';
 import locales from '../../locales';
 import { LumoThemeProvider } from '../../providers';
 import type { LumoStore } from '../../redux/store';
@@ -51,9 +53,11 @@ const defaultState: {
     initialUser?: UserModel;
     store?: LumoStore;
     error?: { message: string } | undefined;
+    indexedDBUnavailable?: boolean;
     showDrawerSidebar?: boolean;
 } = {
     error: undefined,
+    indexedDBUnavailable: false,
     showDrawerSidebar: false,
 };
 
@@ -80,6 +84,14 @@ const AuthApp = () => {
                     initialUser: user,
                 });
             } catch (error: any) {
+                // IndexedDB being unavailable is a fatal-but-explainable state
+                // (e.g. iOS Safari with website data blocked, private browsing,
+                // or Lockdown Mode). Show a dedicated, clearer screen for it.
+                if (!isIndexedDBAvailable()) {
+                    setState({ indexedDBUnavailable: true });
+                    return;
+                }
+
                 setState({
                     error: {
                         message: getNonEmptyErrorMessage(error),
@@ -92,6 +104,10 @@ const AuthApp = () => {
     return (
         <ProtonApp config={config}>
             {(() => {
+                if (state.indexedDBUnavailable) {
+                    return <IndexedDBUnavailablePage />;
+                }
+
                 if (state.error) {
                     return <StandardLoadErrorPage errorMessage={state.error.message} />;
                 }

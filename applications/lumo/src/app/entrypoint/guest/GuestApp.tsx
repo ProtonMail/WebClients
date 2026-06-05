@@ -27,9 +27,11 @@ import noop from '@proton/utils/noop';
 
 import ConditionalNotificationsChildren from '../../components/ConditionalNotificationsChildren';
 import { IndexedDBConnectionMonitor } from '../../components/IndexedDBConnectionMonitor';
+import IndexedDBUnavailablePage from '../../components/IndexedDBUnavailablePage';
 import LumoLoader from '../../components/Loading/LumoLoader';
 import ProtectGuestRouteGuard from '../../components/ProtectGuestRouteGuard/ProtectGuestRouteGuard';
 import config from '../../config';
+import { isIndexedDBAvailable } from '../../indexedDb/util';
 import locales from '../../locales';
 import { LumoThemeProvider } from '../../providers';
 import { OnboardingProvider } from '../../providers/OnboardingProvider';
@@ -52,8 +54,10 @@ const GuestContainerLazy = lazy(
 const defaultState: {
     store?: LumoStore;
     error?: { message: string } | undefined;
+    indexedDBUnavailable?: boolean;
 } = {
     error: undefined,
+    indexedDBUnavailable: false,
 };
 
 const bootstrapApp = async () => {
@@ -116,6 +120,11 @@ const GuestApp = () => {
                     store,
                 });
             } catch (error: any) {
+                if (!isIndexedDBAvailable()) {
+                    setState({ indexedDBUnavailable: true });
+                    return;
+                }
+
                 setState({
                     error: {
                         message: getNonEmptyErrorMessage(error),
@@ -128,6 +137,10 @@ const GuestApp = () => {
     return (
         <ProtonApp config={config}>
             {(() => {
+                if (state.indexedDBUnavailable) {
+                    return <IndexedDBUnavailablePage />;
+                }
+
                 if (!state.store) {
                     return <LumoLoader />;
                 }
