@@ -305,6 +305,7 @@ export type IconName =
     | 'meet-connection-indicator'
     | 'meet-copy'
     | 'meet-eye-closed'
+    | 'meet-hand'
     | 'meet-microphone'
     | 'meet-phone'
     | 'meet-microphone-off'

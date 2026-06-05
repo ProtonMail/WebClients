@@ -6,6 +6,7 @@ import { selectChatMessages } from '@proton/meet/store/slices/chatAndReactionsSl
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';
+import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
 import { ChatPreview } from './ChatPreview';
 
 export const ChatButton = () => {
@@ -16,20 +17,25 @@ export const ChatButton = () => {
 
     const unreadMessages = chatMessages.filter((message) => !message.seen).length;
 
+    const isLargerThanMd = useIsLargerThanMd();
+
     return (
-        <div className="relative">
-            <ChatPreview />
-            <CircleButton
-                IconComponent={IcMeetChat}
-                variant={sideBarState[MeetingSideBars.Chat] ? 'active' : 'default'}
-                onClick={() => {
-                    dispatch(toggleSideBarState(MeetingSideBars.Chat));
-                }}
-                indicatorContent={unreadMessages > 0 ? unreadMessages.toString() : undefined}
-                indicatorStatus="success"
-                ariaLabel={c('Alt').t`Toggle chat`}
-                tooltipTitle={c('Info').t`Chat with everyone`}
-            />
-        </div>
+        <>
+            <div className="relative">
+                {isLargerThanMd && <ChatPreview />}
+                <CircleButton
+                    IconComponent={IcMeetChat}
+                    variant={sideBarState[MeetingSideBars.Chat] ? 'active' : 'default'}
+                    onClick={() => {
+                        dispatch(toggleSideBarState(MeetingSideBars.Chat));
+                    }}
+                    indicatorContent={unreadMessages > 0 ? unreadMessages.toString() : undefined}
+                    indicatorStatus="success"
+                    ariaLabel={c('Alt').t`Toggle chat`}
+                    tooltipTitle={c('Info').t`Chat with everyone`}
+                />
+            </div>
+            {!isLargerThanMd && <ChatPreview />}
+        </>
     );
 };
