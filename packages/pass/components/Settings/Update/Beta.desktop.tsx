@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
+import { useOffline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { PassFeature } from '@proton/pass/types/api/features';
 import type { UpdateStore } from '@proton/pass/types/desktop';
@@ -11,6 +12,7 @@ import { BRAND_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 type Props = { updateStore: UpdateStore; onCheckForUpdates: () => Promise<void> };
 
 export const Beta: FC<Props> = ({ updateStore: { beta }, onCheckForUpdates }) => {
+    const offline = useOffline();
     const featureFlagDesktopBeta = useFeatureFlag(PassFeature.PassDesktopBeta);
 
     if (!featureFlagDesktopBeta) return null;
@@ -18,7 +20,7 @@ export const Beta: FC<Props> = ({ updateStore: { beta }, onCheckForUpdates }) =>
     const onToggle = async () => {
         const newValue = !beta;
         await window.ctxBridge?.setUpdateStore({ beta: newValue });
-        if (newValue) await onCheckForUpdates();
+        if (newValue && !offline) await onCheckForUpdates();
     };
 
     return (
