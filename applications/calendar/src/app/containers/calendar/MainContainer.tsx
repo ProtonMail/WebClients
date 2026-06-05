@@ -11,6 +11,7 @@ import KeyTransparencyManager from '@proton/components/containers/keyTransparenc
 import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import useDrawerParent from '@proton/components/hooks/drawer/useDrawerParent';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
+import { useInboxDesktopEventLoopRefresh } from '@proton/components/hooks/useInboxDesktopEventLoopRefresh';
 import { usePreventWasmLoading } from '@proton/components/hooks/usePreventWasmLoading';
 import { FeatureCode, useFeatures } from '@proton/features';
 import { useInstance } from '@proton/hooks';
@@ -35,6 +36,7 @@ import NotificationManagerInjector from './notifications/NotificationManagerInje
 const MainContainer = () => {
     useCalendarFavicon();
     usePreventWasmLoading();
+    useInboxDesktopEventLoopRefresh();
 
     const hasReactivatedCalendarsRef = useRef<boolean>(false);
     const [addresses] = useAddresses();
