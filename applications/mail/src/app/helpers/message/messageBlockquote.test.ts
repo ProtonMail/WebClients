@@ -207,6 +207,28 @@ describe('messageBlockquote', () => {
         expect(after).toContain('Previous message content');
     });
 
+    it('should detect Outlook logical-property border-block-start separator', () => {
+        // Newer Outlook variants emit CSS logical properties (`border-block-start`,
+        // `padding-block`) instead of the physical `border-top` / `padding` shorthand.
+        // The detector must recognize both so quote stripping works on these messages.
+        const content = `
+            <div>
+                <p>My reply</p>
+                <div style="border:none;border-block-start:solid #B5C4DF 1.0pt;padding-block:3.0pt 0cm;padding-inline:0">
+                    <p><b>From:</b> sender@example.com</p>
+                </div>
+                <p>Previous message body</p>
+            </div>`;
+
+        const [before, after] = locateBlockquote(createDocument(content));
+
+        expect(before).toContain('My reply');
+        expect(before).not.toContain('From:');
+        expect(before).not.toContain('Previous message body');
+        expect(after).toContain('From:');
+        expect(after).toContain('Previous message body');
+    });
+
     it('should walk up to the wrapper div when the separator is its first child', () => {
         // The separator is wrapped in its own <div>, and the actual previous message body
         // sits as a sibling of that wrapper — not of the separator. Without walking up,

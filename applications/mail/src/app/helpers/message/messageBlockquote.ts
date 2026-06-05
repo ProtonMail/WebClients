@@ -69,18 +69,25 @@ const searchForContent = (element: Element, text: string) => {
     return result;
 };
 
-const MICROSOFT_WORD_SEPARATOR_PATTERNS = ['border-top:solid #E1E1E1 1', 'border-top:solid #B5C4DF 1'] as const;
+const MICROSOFT_WORD_SEPARATOR_PATTERNS = [
+    'border-top:solid #E1E1E1 1',
+    'border-top:solid #B5C4DF 1',
+    'border-block-start:solid #E1E1E1 1',
+    'border-block-start:solid #B5C4DF 1',
+] as const;
 
-const REQUIRED_WORD_SEPARATOR_STYLES = ['border:none', 'padding:3'] as const;
+// Outlook's logical-property variant emits `padding-block:3...` instead of `padding:3...`,
+// so the padding requirement needs to accept either form.
+const WORD_SEPARATOR_PADDING_PATTERNS = ['padding:3', 'padding-block:3'] as const;
 
 const hasMicrosoftWordSeparatorStyle = (element: Element): boolean => {
     const style = element.getAttribute('style') ?? '';
 
-    const hasRequiredStyles = REQUIRED_WORD_SEPARATOR_STYLES.every((requiredStyle) => style.includes(requiredStyle));
-
+    const hasBorderNone = style.includes('border:none');
+    const hasPadding = WORD_SEPARATOR_PADDING_PATTERNS.some((pattern) => style.includes(pattern));
     const hasSeparatorPattern = MICROSOFT_WORD_SEPARATOR_PATTERNS.some((pattern) => style.includes(pattern));
 
-    return hasRequiredStyles && hasSeparatorPattern;
+    return hasBorderNone && hasPadding && hasSeparatorPattern;
 };
 
 const collectSiblingNodesAfter = (startNode: Node): Node[] => {
@@ -114,41 +121,6 @@ const walkUpIfFirstChild = (separator: Element): Element => {
     return separator;
 };
 
-const processMicrosoftWordEmail = (inputDocument: Element): Element => {
-    const wordSection = inputDocument.querySelector('div.WordSection1');
-
-    if (!wordSection) {
-        return inputDocument;
-    }
-
-    const existingSeparator = inputDocument.querySelector(BLOCKQUOTE_SELECTOR);
-    if (existingSeparator) {
-        return inputDocument;
-    }
-
-    const separatorDiv = Array.from(wordSection.querySelectorAll('div')).find(hasMicrosoftWordSeparatorStyle);
-
-    if (!separatorDiv) {
-        return inputDocument;
-    }
-
-    const blockquote = inputDocument.ownerDocument?.createElement('blockquote');
-    if (!blockquote) {
-        return inputDocument;
-    }
-
-    blockquote.setAttribute('type', 'cite');
-
-    const adjustedSeparator = walkUpIfFirstChild(separatorDiv);
-    const targetParent = adjustedSeparator.parentElement ?? wordSection;
-    const elementsToMove = collectSiblingNodesAfter(adjustedSeparator);
-    moveNodesToBlockquote(elementsToMove, blockquote);
-
-    targetParent.appendChild(blockquote);
-
-    return inputDocument;
-};
-
 const FROM_HEADER_PATTERNS = [
     'From:', // English
     'De :', // French
@@ -178,15 +150,17 @@ const FROM_HEADER_PATTERNS = [
 
 // Windows Mail / Outlook on iOS use long-form border-top properties instead of the shorthand
 // used by Outlook 2007+. Pattern sourced from mailgun/talon's cut_microsoft_quote().
-const WINDOWS_MAIL_SEPARATOR_PATTERNS = [
-    'border-top-color: rgb(229, 229, 229)',
-    'border-top-width: 1px',
-    'border-top-style: solid',
+// Each axis (color/width/style) accepts either the physical `border-top-*` form or the
+// logical `border-block-start-*` form — clients won't emit both at once.
+const WINDOWS_MAIL_SEPARATOR_AXES = [
+    ['border-top-color: rgb(229, 229, 229)', 'border-block-start-color: rgb(229, 229, 229)'],
+    ['border-top-width: 1px', 'border-block-start-width: 1px'],
+    ['border-top-style: solid', 'border-block-start-style: solid'],
 ] as const;
 
 const hasWindowsMailSeparatorStyle = (element: Element): boolean => {
     const style = element.getAttribute('style') ?? '';
-    return WINDOWS_MAIL_SEPARATOR_PATTERNS.every((pattern) => style.includes(pattern));
+    return WINDOWS_MAIL_SEPARATOR_AXES.every((alternatives) => alternatives.some((pattern) => style.includes(pattern)));
 };
 
 // Reuses the existing Outlook 2007/2010/2013 detector (#B5C4DF / #E1E1E1) and adds the
@@ -229,16 +203,20 @@ const getFollowingTextContent = (element: Element): string => {
  * blockquote so the rest of the pipeline treats it as the quoted message.
  */
 const processOutlookTopBorderEmail = (inputDocument: Element): Element => {
-    const candidates = Array.from(inputDocument.querySelectorAll('div'));
-    const borderElement = candidates.find((element) => {
-        if (element.closest(BLOCKQUOTE_SELECTOR)) {
-            return false;
-        }
+    const candidates = inputDocument.querySelectorAll('div[style*="border-top"], div[style*="border-block-start"]');
+    let borderElement: Element | undefined;
+    for (const element of candidates) {
         if (!hasOutlookSeparatorStyle(element)) {
-            return false;
+            continue;
         }
-        return startsWithFromHeader(getFollowingTextContent(element));
-    });
+        if (element.closest(BLOCKQUOTE_SELECTOR)) {
+            continue;
+        }
+        if (startsWithFromHeader(getFollowingTextContent(element))) {
+            borderElement = element;
+            break;
+        }
+    }
 
     if (!borderElement) {
         return inputDocument;
@@ -276,10 +254,8 @@ export const locateBlockquote = (
         return ['', '', ''];
     }
 
-    // Process Microsoft Word emails first to transform them into standard blockquote structure
-    const wordProcessedDocument = processMicrosoftWordEmail(inputDocument);
-    // Then handle Outlook-style messages where the quote starts with a top border + "From:" header
-    const processedDocument = processOutlookTopBorderEmail(wordProcessedDocument);
+    // Edit Outlook messages where the quote starts with a top border + "From:" header to wrap previous message in a blockquote
+    const processedDocument = processOutlookTopBorderEmail(inputDocument);
     const body = processedDocument.querySelector('body');
     const tmpDocument = body || processedDocument;
 
