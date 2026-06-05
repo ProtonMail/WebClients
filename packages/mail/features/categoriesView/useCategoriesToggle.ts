@@ -11,7 +11,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateMailCategoryView } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 
-export const useCategoryToggle = () => {
+export const useCategoriesToggle = () => {
     const api = useApi();
     const dispatch = useDispatch();
 

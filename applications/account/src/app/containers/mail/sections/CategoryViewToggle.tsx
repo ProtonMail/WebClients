@@ -5,10 +5,10 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
-import { useCategoryToggle } from '@proton/mail/features/categoriesView/useCategoryToggle';
+import { useCategoriesToggle } from '@proton/mail/features/categoriesView/useCategoriesToggle';
 
 export const CategoryViewToggle = () => {
-    const { handleChange, state, loading } = useCategoryToggle();
+    const { handleChange, state, loading } = useCategoriesToggle();
 
     return (
         <SettingsLayout className="w-full">
