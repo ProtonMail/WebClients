@@ -9,7 +9,7 @@ import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import { isElementMessage } from '../../helpers/elements';
 import type { Element } from '../../models/element';
-import { pageSize as pageSizeSelector } from '../../store/elements/elementsSelectors';
+import { selectPageSize } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
 
 /**
@@ -42,7 +42,7 @@ export const useListSelection = ({
 
     const { selectAll, locationCount } = useSelectAll({ labelID: labelID || '' });
 
-    const pageSize = useMailSelector(pageSizeSelector);
+    const pageSize = useMailSelector(selectPageSize);
 
     const canShowSelectAllBanner = useMemo(() => {
         if (!labelID) {
