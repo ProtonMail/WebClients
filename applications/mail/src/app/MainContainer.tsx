@@ -11,6 +11,7 @@ import SubscriptionModalProvider from '@proton/components/containers/payments/su
 import { DrawerThemeInjector } from '@proton/components/containers/themes/ThemeInjector';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import useConfig from '@proton/components/hooks/useConfig';
+import { useInboxDesktopEventLoopRefresh } from '@proton/components/hooks/useInboxDesktopEventLoopRefresh';
 import { useInboxDesktopMetrics } from '@proton/components/hooks/useInboxDesktopMetrics';
 import { usePreventWasmLoading } from '@proton/components/hooks/usePreventWasmLoading.ts';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
@@ -33,6 +34,7 @@ const MainContainer: FunctionComponent = () => {
 
     useInboxDesktopHeartbeat();
     useInboxDesktopMetrics();
+    useInboxDesktopEventLoopRefresh();
 
     usePreventWasmLoading();
 
