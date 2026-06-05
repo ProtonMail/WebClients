@@ -159,11 +159,11 @@ const MigrationFlow = () => {
                 </div>
             )}
 
-            {!loading && (!model.state || model.state < ApiImporterOrganizationState.COMPLETED) && (
+            {!loading && Boolean(!model.state || model.state < ApiImporterOrganizationState.COMPLETED) && (
                 <MigrationSetup model={model} onSubmit={onMigrationSetupSubmit} />
             )}
 
-            {!loading && model.state && model.state >= ApiImporterOrganizationState.COMPLETED && (
+            {!loading && Boolean(model.state && model.state >= ApiImporterOrganizationState.COMPLETED) && (
                 <MigrationSummary model={model as MigrationModel} />
             )}
 
