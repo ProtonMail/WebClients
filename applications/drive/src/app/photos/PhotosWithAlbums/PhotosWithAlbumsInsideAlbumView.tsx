@@ -85,7 +85,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 nodeUid: nodeUid,
                 revisionUid: activeRevisionUid,
                 shouldLoad: () => Boolean(domRef.current),
-                thumbnailTypes: ['sd', 'hd'],
+                thumbnailTypes: ['sd'],
             });
         },
         []
