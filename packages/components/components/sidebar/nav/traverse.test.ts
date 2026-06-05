@@ -1,8 +1,8 @@
-import type { NavResolved } from '@proton/nav/types/nav';
+import type { SidebarTree } from '@proton/nav/types/sidebar';
 
 import { getActiveBranches } from './traverse';
 
-const routes: NavResolved = {
+const routes: SidebarTree = {
     items: [
         {
             id: 'organization',
@@ -10,7 +10,6 @@ const routes: NavResolved = {
             meta: {},
             to: undefined,
             icon: undefined,
-            sections: undefined,
             children: [
                 {
                     id: 'organization.home',
@@ -19,7 +18,6 @@ const routes: NavResolved = {
                     to: '/vpn/dashboard',
                     meta: {},
                     children: undefined,
-                    sections: undefined,
                 },
                 {
                     id: 'organization.vpn',
@@ -27,7 +25,6 @@ const routes: NavResolved = {
                     icon: 'brand-proton-vpn-filled',
                     meta: {},
                     to: undefined,
-                    sections: undefined,
                     children: [
                         {
                             id: 'organization.vpn.gateways',
@@ -36,7 +33,6 @@ const routes: NavResolved = {
                             meta: {},
                             children: undefined,
                             icon: undefined,
-                            sections: undefined,
                         },
                         {
                             id: 'organization.vpn.shared-servers',
@@ -45,7 +41,6 @@ const routes: NavResolved = {
                             meta: {},
                             children: undefined,
                             icon: undefined,
-                            sections: undefined,
                         },
                     ],
                 },
@@ -57,7 +52,6 @@ const routes: NavResolved = {
             to: undefined,
             meta: {},
             icon: undefined,
-            sections: undefined,
             children: [
                 {
                     id: 'my-account.recovery',
@@ -66,7 +60,6 @@ const routes: NavResolved = {
                     meta: {},
                     children: undefined,
                     icon: undefined,
-                    sections: undefined,
                 },
             ],
         },
@@ -91,7 +84,7 @@ describe('findActiveBranches', () => {
     });
 
     it('prefers the most specific match when multiple items share a prefix', () => {
-        const nested: NavResolved = {
+        const nested: SidebarTree = {
             items: [
                 {
                     id: 'a',
@@ -99,7 +92,6 @@ describe('findActiveBranches', () => {
                     to: '/vpn',
                     meta: {},
                     icon: undefined,
-                    sections: undefined,
                     children: [
                         {
                             id: 'a.b',
@@ -107,7 +99,6 @@ describe('findActiveBranches', () => {
                             to: '/vpn/settings',
                             meta: {},
                             icon: undefined,
-                            sections: undefined,
                             children: undefined,
                         },
                     ],

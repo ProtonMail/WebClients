@@ -8,7 +8,7 @@ import * as orgHooks from '@proton/account/organization/hooks';
 import * as hooks from '@proton/account/user/hooks';
 import * as helper from '@proton/components/containers/layout/helper';
 import type { SectionConfig, SidebarConfig } from '@proton/components/index';
-import type { NavResolved } from '@proton/nav/types/nav';
+import type { SidebarTree } from '@proton/nav/types/sidebar';
 
 import { VPNSidebar } from './VPNSidebar';
 
@@ -108,7 +108,7 @@ describe('VPNSidebar', () => {
     });
 
     it('renders new sidebar when admin feature is enabled', () => {
-        const resolved: NavResolved = {
+        const resolved: SidebarTree = {
             items: [
                 {
                     id: 'admin',
@@ -117,7 +117,6 @@ describe('VPNSidebar', () => {
                     children: undefined,
                     icon: undefined,
                     meta: {},
-                    sections: undefined,
                 },
             ],
         };
@@ -171,7 +170,6 @@ describe('VPNSidebar', () => {
                                 children: undefined,
                                 icon: undefined,
                                 meta: {},
-                                sections: undefined,
                             },
                         ],
                     },

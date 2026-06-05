@@ -6,7 +6,7 @@ import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import { ThemeColor } from '@proton/colors/types';
 import { Sidebar } from '@proton/components/components/sidebar/nav';
 import { Icon } from '@proton/components/index';
-import type { NavItemResolved, NavResolved } from '@proton/nav/types/nav';
+import type { SidebarNode, SidebarTree } from '@proton/nav/types/sidebar';
 
 import { getActiveBranches } from './traverse';
 
@@ -14,13 +14,11 @@ function isThemeColor(value: unknown): value is ThemeColor {
     return Object.values(ThemeColor).includes(value as ThemeColor);
 }
 
-function hasNotifications(
-    meta: NavItemResolved['meta']
-): meta is NavItemResolved['meta'] & { hasNotifications: ThemeColor } {
+function hasNotifications(meta: SidebarNode['meta']): meta is SidebarNode['meta'] & { hasNotifications: ThemeColor } {
     return 'hasNotifications' in meta && isThemeColor(meta.hasNotifications);
 }
 
-function Leaf({ item }: { item: NavItemResolved }) {
+function Leaf({ item }: { item: SidebarNode }) {
     const notification = hasNotifications(item.meta) ? item.meta.hasNotifications : undefined;
     if (!item.to) {
         return null;
@@ -35,7 +33,7 @@ function Leaf({ item }: { item: NavItemResolved }) {
     );
 }
 
-function Branch({ item, activeBranches }: { item: NavItemResolved; activeBranches: Set<string> }) {
+function Branch({ item, activeBranches }: { item: SidebarNode; activeBranches: Set<string> }) {
     const [isOpen, setIsOpen] = useState(activeBranches.has(item.id));
 
     useEffect(() => {
@@ -66,7 +64,7 @@ function Branch({ item, activeBranches }: { item: NavItemResolved; activeBranche
 }
 
 type Props = {
-    routes: NavResolved;
+    routes: SidebarTree;
     pathname: string;
 };
 
