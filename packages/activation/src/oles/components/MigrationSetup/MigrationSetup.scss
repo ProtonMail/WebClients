@@ -1,5 +1,6 @@
 @use 'sass:math';
 @use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
 @use '~@proton/styles/scss/lib/rem' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
 im.$breakpoints: $breakpoints-product;
@@ -28,5 +29,18 @@ $step-list-substep-size: rem(32);
 		&--substep {
 			min-inline-size: $step-list-substep-size;
 		}
+	}
+}
+
+@include im.media('<=#{em(1320, 16)}') {
+	.steps-domain-wrapper {
+		flex-direction: column;
+		max-inline-size: 100%;
+	}
+}
+
+@include im.media('>=#{em(1321, 16)}') {
+	.steps-domain-help-wrapper {
+		max-inline-size: 15rem;
 	}
 }
