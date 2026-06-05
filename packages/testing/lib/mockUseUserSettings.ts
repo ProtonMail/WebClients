@@ -1,5 +1,5 @@
 import * as useUserSettingsModule from '@proton/account';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
+import { PASSWORD_REMINDERS_VALUE, type UserSettings } from '@proton/shared/lib/interfaces';
 
 const defaultUserSettings: UserSettings = {
     '2FA': { Enabled: 0, Allowed: 0, ExpirationTime: null, RegisteredKeys: [] },
@@ -12,7 +12,13 @@ const defaultUserSettings: UserSettings = {
     Density: 0,
     EarlyAccess: 0,
     Email: { Value: '', Status: 0, Notify: 0, Reset: 0 },
-    Flags: { Welcomed: 0, SupportPgpV6Keys: 0, EdmOptOut: 0, DisplayTrialEndModal: 0 },
+    Flags: {
+        Welcomed: 0,
+        SupportPgpV6Keys: 0,
+        EdmOptOut: 0,
+        DisplayTrialEndModal: 0,
+        PasswordReminderOptOut: PASSWORD_REMINDERS_VALUE.ENABLED,
+    },
     HideSidePanel: 0,
     InvoiceText: '',
     Locale: 'en',
@@ -36,6 +42,7 @@ const defaultUserSettings: UserSettings = {
     OrganizationPolicy: {
         Enforced: 0,
     },
+    NextPasswordReminderTime: 0,
     UsedClients: [],
 };
 
