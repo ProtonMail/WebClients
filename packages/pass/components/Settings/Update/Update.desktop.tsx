@@ -1,8 +1,9 @@
-import { type FC, useEffect, useState } from 'react';
+import { type FC, useCallback, useEffect } from 'react';
 
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
+import useStateRef from '@proton/hooks/useStateRef';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { MaybeNull } from '@proton/pass/types';
 import { UpdateErrorType, UpdateStatus as UpdateStatusEnum } from '@proton/pass/types/desktop';
@@ -42,12 +43,32 @@ export const getErrorLabel = (type: MaybeNull<UpdateErrorType>): string => {
 };
 
 const useUpdateStore = () => {
+    const { createNotification } = useNotifications();
     const { config } = usePassCore();
-    const [updateStore, setUpdateStore] = useState<UpdateStore>(DEFAULT_UPDATE_STORE(config.APP_VERSION));
+    const [updateStore, setUpdateStore, updateStoreRef] = useStateRef<UpdateStore>(
+        DEFAULT_UPDATE_STORE(config.APP_VERSION)
+    );
+
+    const handleUpdateStoreChange = useCallback((store: UpdateStore) => {
+        if (updateStoreRef.current.status !== UpdateStatusEnum.Error && store.status === UpdateStatusEnum.Error) {
+            createNotification({ text: getErrorLabel(store.errorType), type: 'error' });
+        }
+        setUpdateStore(store);
+    }, []);
 
     useEffect(() => {
         void window.ctxBridge?.getUpdateStore().then(setUpdateStore);
-        return window.ctxBridge?.onUpdateStoreChange(setUpdateStore);
+        const clearUpdateStoreChange = window.ctxBridge?.onUpdateStoreChange(handleUpdateStoreChange);
+        return () => {
+            clearUpdateStoreChange?.();
+            if (updateStoreRef.current.status === UpdateStatusEnum.Error) {
+                void window.ctxBridge?.setUpdateStore({
+                    status: UpdateStatusEnum.Idle,
+                    errorType: null,
+                    progress: null,
+                });
+            }
+        };
     }, []);
 
     return updateStore;
@@ -71,20 +92,8 @@ const useCheckForUpdates = () => {
 };
 
 export const Update: FC = () => {
-    const { createNotification } = useNotifications();
     const updateStore = useUpdateStore();
     const checkForUpdates = useCheckForUpdates();
-
-    useEffect(
-        () => {
-            if (updateStore.status === UpdateStatusEnum.Error) {
-                createNotification({ text: getErrorLabel(updateStore.errorType), type: 'error' });
-            }
-        },
-        // If errorType change but not status, it's ok to show a new notification
-        // New check should first set status to pending so it should not occur anyway
-        [updateStore.status, updateStore.errorType]
-    );
 
     return (
         <SettingsPanel
