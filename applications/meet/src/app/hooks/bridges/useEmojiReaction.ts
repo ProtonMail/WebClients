@@ -11,7 +11,7 @@ import { useMLSContext } from '../../contexts/MLSContext';
 import { PublishableDataTypes } from '../../types';
 import { dispatchTimedReaction } from '../../utils/dispatchTimedReaction';
 
-export const EMOJI_REACTIONS = ['👍', '👎', '👏'] as const;
+export const EMOJI_REACTIONS = ['👍', '👎', '👏', '😁', '❤️', '🎉', '🙌'] as const;
 export type EmojiReaction = (typeof EMOJI_REACTIONS)[number];
 
 export const useEmojiReaction = () => {
