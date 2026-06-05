@@ -45,6 +45,10 @@ it('should return all four polling factory methods', () => {
 });
 
 describe('createSubscriptionPoller', () => {
+    beforeEach(() => {
+        mockGetUser.mockResolvedValue(buildUser());
+    });
+
     it('should resolve true when subscription changes', async () => {
         const initial = buildSubscription(undefined, { Amount: 100 });
         const updated = buildSubscription(undefined, { Amount: 200 });
@@ -92,6 +96,38 @@ describe('createSubscriptionPoller', () => {
         void pollSubscription();
         await jest.runAllTimersAsync();
 
+        expect(mockGetSubscription).toHaveBeenCalledWith({ cache: CacheType.None });
+    });
+
+    it('should keep polling without fetching the subscription while the user stays free', async () => {
+        mockGetUser.mockResolvedValue(buildUser({ isFree: true }));
+        mockGetSubscription
+            .mockResolvedValueOnce(buildSubscription(undefined, { Amount: 100 }))
+            .mockResolvedValue(buildSubscription(undefined, { Amount: 200 }));
+
+        const { result } = renderHook(() => usePaymentPollers());
+        const pollSubscription = result.current.createSubscriptionPoller();
+        const promise = pollSubscription();
+        await jest.runAllTimersAsync();
+
+        await expect(promise).resolves.toBe(false);
+        expect(mockGetUser).toHaveBeenCalledWith({ cache: CacheType.None });
+        expect(mockGetSubscription).not.toHaveBeenCalledWith({ cache: CacheType.None });
+    });
+
+    it('should force-fetch the subscription once the user upgrades from free to paid', async () => {
+        mockGetUser.mockResolvedValueOnce(buildUser({ isFree: true })).mockResolvedValue(buildUser({ isFree: false }));
+        mockGetSubscription
+            .mockResolvedValueOnce(buildSubscription(undefined, { Amount: 100 }))
+            .mockResolvedValue(buildSubscription(undefined, { Amount: 200 }));
+
+        const { result } = renderHook(() => usePaymentPollers());
+        const pollSubscription = result.current.createSubscriptionPoller();
+        const promise = pollSubscription();
+        await jest.runAllTimersAsync();
+
+        await expect(promise).resolves.toBe(true);
+        expect(mockGetUser).toHaveBeenCalledWith({ cache: CacheType.None });
         expect(mockGetSubscription).toHaveBeenCalledWith({ cache: CacheType.None });
     });
 });
