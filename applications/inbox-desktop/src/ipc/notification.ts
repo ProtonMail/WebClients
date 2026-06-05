@@ -1,7 +1,7 @@
 import { Notification, app, Event, nativeImage, WebContentsView } from "electron";
 import {
     bringWindowToFront,
-    openCalendar,
+    openCalendarWithoutReload,
     getMainWindow,
     getCurrentLocalID,
     openMail,
@@ -209,7 +209,7 @@ export const showNotification = (payload: ElectronNotification) => {
                 }
                 break;
             case "calendar":
-                openCalendar();
+                openCalendarWithoutReload();
                 break;
             default:
                 notificationLogger.error(`Wrong notification app: ${app}, ${uuid}`);

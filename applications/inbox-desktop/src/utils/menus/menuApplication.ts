@@ -2,16 +2,39 @@ import { app, dialog, Menu, shell, WebContentsView, type MenuItemConstructorOpti
 import { c } from "ttag";
 import { uninstallProton } from "../../macos/uninstall";
 import { clearStorage, isMac } from "../helpers";
-import { getMainWindow, getSpellCheckStatus, resetZoom, toggleSpellCheck, updateZoom } from "../view/viewManagement";
+import {
+    getMainWindow,
+    getSpellCheckStatus,
+    openCalendarWithoutReload,
+    openMailWithoutReload,
+    resetZoom,
+    toggleSpellCheck,
+    updateZoom,
+} from "../view/viewManagement";
 import { isProdEnv } from "../isProdEnv";
 import { getSettings, updateSettings } from "../../store/settingsStore";
-import { MAIL_APP_NAME } from "@proton/shared/lib/constants";
+import { CALENDAR_APP_NAME, MAIL_APP_NAME } from "@proton/shared/lib/constants";
 import { profiler } from "../profiler/profiler";
 
 type MenuKey = "app" | "file" | "edit" | "view" | "window";
 interface MenuProps extends MenuItemConstructorOptions {
     key: MenuKey;
 }
+
+let switchToMailItem: Electron.MenuItem | undefined;
+let switchToCalendarItem: Electron.MenuItem | undefined;
+let appSwitchShortcutsEnabled = false;
+
+export const enableAppSwitcherMenuItems = (enabled: boolean) => {
+    // Avoid unnecessary re-renders.
+    if (appSwitchShortcutsEnabled === enabled) return;
+
+    if (switchToMailItem) switchToMailItem.enabled = enabled;
+    if (switchToCalendarItem) switchToCalendarItem.enabled = enabled;
+    appSwitchShortcutsEnabled = enabled;
+};
+
+const switchToAppLabel = (appName: string) => c("App menu").t`Switch to ${appName}`;
 
 export const setApplicationMenu = () => {
     const quitMenuProps: MenuProps["submenu"] = isMac ? [] : [{ role: "quit", label: c("App menu").t`Quit` }];
@@ -158,6 +181,21 @@ export const setApplicationMenu = () => {
             key: "view",
             submenu: [
                 {
+                    id: "switch-to-mail",
+                    label: switchToAppLabel(MAIL_APP_NAME),
+                    accelerator: "CmdOrCtrl+1",
+                    enabled: false,
+                    click: openMailWithoutReload,
+                },
+                {
+                    id: "switch-to-calendar",
+                    label: switchToAppLabel(CALENDAR_APP_NAME),
+                    accelerator: "CmdOrCtrl+2",
+                    enabled: false,
+                    click: openCalendarWithoutReload,
+                },
+                { type: "separator" },
+                {
                     label: c("App menu").t`Reload`,
                     accelerator: "CmdOrCtrl+R",
                     click: () => {
@@ -263,5 +301,10 @@ export const setApplicationMenu = () => {
     }
 
     const menu = Menu.buildFromTemplate(temp);
+
+    switchToMailItem = menu.getMenuItemById("switch-to-mail") ?? undefined;
+    switchToCalendarItem = menu.getMenuItemById("switch-to-calendar") ?? undefined;
+    enableAppSwitcherMenuItems(false);
+
     Menu.setApplicationMenu(menu);
 };
