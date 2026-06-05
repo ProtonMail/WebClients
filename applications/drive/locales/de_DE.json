@@ -1287,6 +1287,9 @@
       ],
       "Get the deal": [
         "Jetzt zugreifen"
+      ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "${ BRAND_NAME } Workspace ausprobieren"
       ]
     },
     "Action: Docs": {
@@ -3134,6 +3137,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Dein kostenloses ${ MAIL_APP_NAME }-Konto enthält begrenzten Speicherplatz, darum können wir nur deine aktuellsten Gmail-Nachrichten importieren."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Um dein Team nahtlos bei ${ BRAND_NAME } einzubinden, importiere deine Daten aus Google, Outlook und anderen Quellen."
       ]
     },
     "description": {
@@ -4086,6 +4092,27 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "MWST-Nummer muss mit ${ prefixes } beginnen"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Der gesamte Speicherplatz wurde zugeordnet. Bitte reduziere den anderen Benutzern zugewiesenen Speicherplatz."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Bitte richte eine eigene Domain ein, bevor du Adressen hinzufügst."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Bitte konfiguriere eine eigene Domain, bevor du Benutzer zu deiner Organisation hinzufügst."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Bitte aktiviere die Mehrbenutzerunterstützung, bevor du Benutzer zu deiner Organisation hinzufügst."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Bitte upgrade auf ein Business-Abonnement mit mehr als einem Benutzer, um mehrere Benutzer zu verwalten."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Alle E-Mail-Adressen in deinem Abonnement wurden bereits verwendet. Bitte upgrade dein Abonnement, um eine neue E-Mail-Adresse hinzuzufügen, oder deaktiviere eine E-Mail-Adresse in deinem Konto."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Du hast die max. Anzahl von Benutzern in deinem Abonnement ausgeschöpft. Bitte upgrade dein Abonnement, um weitere Benutzer hinzuzufügen."
       ]
     },
     "error": {
@@ -7263,6 +7290,25 @@
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Jederzeit upgraden oder Speicherplatz freigeben, um den Rest zu übertragen"
+      ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "${ BRAND_NAME } Workspace ermöglicht deinem Team eine effiziente Zusammenarbeit, ohne dass die Daten deines Unternehmens jemals gefährdet werden."
+      ],
+      "${ total } user found": [
+        "${ total } Benutzer gefunden",
+        "${ total } Benutzer gefunden"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Lade deine Freunde** mit deinem Empfehlungs-Link zu ${ BRAND_NAME } ein."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Sie erhalten ${ refereeRewardAmount }** Guthaben, wenn sie abonnieren."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Du erhältst ${ referrerRewardAmount }** Guthaben für jeden Freund, der abonniert."
+      ],
+      "One encrypted suite. Full business protection.": [
+        "Eine verschlüsselte Suite. Umfassender Schutz für Unternehmen."
       ]
     },
     "info": {
@@ -11023,6 +11069,9 @@
       ],
       "Select a provider": [
         "Anbieter auswählen"
+      ],
+      "Search": [
+        "Suchen"
       ]
     },
     "Placeholder for contact group name": {
@@ -13744,6 +13793,9 @@
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Mehr Speicherplatz mit ${ MAIL_APP_NAME } Plus erhalten"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Deine Organisation nach ${ BRAND_NAME } migrieren"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14112,6 +14164,53 @@
     "Notitication": {
       "Album renamed successfully": [
         "Album erfolgreich umbenannt"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Übernahme konfigurieren"
+      ],
+      "Contacts": [
+        "Kontakte"
+      ],
+      "Estimated size": [
+        "Geschätzte Größe"
+      ],
+      "Has errors": [
+        "Hat Fehler"
+      ],
+      "In progress": [
+        "In Bearbeitung"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "E-Mail-Adresse des Mitglieds fehlt. Bitte kontaktiere den Kundensupport, um das zu beheben."
+      ],
+      "Migration status": [
+        "Migrationsstatus"
+      ],
+      "Missing organization private key": [
+        "Privater Schlüssel der Organisation fehlt"
+      ],
+      "Missing organization public key": [
+        "Öffentlicher Schlüssel der Organisation fehlt"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisation hat nicht genügend Lizenzen verfügbar"
+      ],
+      "Organization does not have enough storage available": [
+        "Die Organisation hat nicht genügend Speicherplatz verfügbar"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Benutzer"
+      ],
+      "What are you migrating?": [
+        "Was übernimmst du?"
       ]
     }
   }

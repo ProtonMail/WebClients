@@ -3882,6 +3882,24 @@
       ],
       "Failed to load signature details, please try again later": [
         "無法取得簽名的詳細資料，請稍後再試。"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "所有儲存空間已被分配。請減少分配給其他使用者的儲存空間。"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "您需要先設定好自訂網域才能新增電子郵件。"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "請先設置一個自訂網域，然後才加入使用者到您的組織。"
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "請先啟用多使用者支援，然後才加入使用者到您的組織。"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "請升級至選用多於 1 位使用者的企業方案，以便管理多位使用者。"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "您已使用您的方案中所有使用者。請升級您的方案以加入使用者。"
       ]
     },
     "error": {
@@ -6749,6 +6767,9 @@
       ],
       "Scan to download": [
         "掃描以下載"
+      ],
+      "${ total } user found": [
+        "找到 ${ total } 位使用者"
       ]
     },
     "info": {
@@ -10185,6 +10206,9 @@
       ],
       "Select a provider": [
         "選擇一個供應商"
+      ],
+      "Search": [
+        "搜尋"
       ]
     },
     "Placeholder for contact group name": {
@@ -13028,6 +13052,17 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
+      ]
+    },
+    "BOSS": {
+      "Member address not found. Please contact customer support to resolve this": [
+        "未發現成員的位址。請聯繫客戶支援服務以協助解決問題。"
+      ],
+      "Missing organization private key": [
+        "缺少組織私有密鑰"
+      ],
+      "Missing organization public key": [
+        "缺少組織公用密鑰"
       ]
     }
   }
