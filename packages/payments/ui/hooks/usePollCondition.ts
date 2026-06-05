@@ -5,6 +5,9 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 export const maxPollingSteps = 5;
 export const interval = 5000;
 
+/**
+ * @returns a promise that resolves to true if the data has changed, or false if it hasn't.
+ */
 const helper = async (counter: number, cb: () => Promise<boolean>, signal?: AbortSignal) => {
     if (signal?.aborted) {
         return false;
