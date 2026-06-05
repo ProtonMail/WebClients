@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router';
 
+import { conversationCountsThunk } from '@proton/mail/store/counts/conversationCountsSlice';
+import { messageCountsThunk } from '@proton/mail/store/counts/messageCountsSlice';
 import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
@@ -25,7 +28,6 @@ export const useCategoryFlagWatcher = () => {
     const disabledCategories = useMailSelector(selectDisabledCategoriesIDs);
 
     const dispatch = useMailDispatch();
-
     const categoryView = useCategoriesView();
 
     // We get the ID from the URL because the labelID in the state is not up-to-date yet.
@@ -35,6 +37,9 @@ export const useCategoryFlagWatcher = () => {
         if (!isInbox) {
             return;
         }
+
+        void dispatch(conversationCountsThunk({ cache: CacheType.None }));
+        void dispatch(messageCountsThunk({ cache: CacheType.None }));
 
         const categoryID = categoryIDFromUrl(location);
         if (
