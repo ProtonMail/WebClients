@@ -516,7 +516,7 @@ type Args = {
     permissions?: Partial<Record<Permission, boolean>>;
 };
 
-export const getRoutes = ({
+export const resolveNavigation = ({
     prefix,
     notifications,
     user,
