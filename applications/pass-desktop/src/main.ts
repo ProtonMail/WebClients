@@ -138,7 +138,9 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
         acceptFirstMouse: true,
     });
 
-    ctx.window.setContentProtection(true);
+    if (!process.env.PASS_DEBUG && isProdEnv()) {
+        ctx.window.setContentProtection(true);
+    }
 
     if (zoomLevel) {
         ctx.window.webContents.setZoomLevel(zoomLevel);
