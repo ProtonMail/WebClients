@@ -3,7 +3,8 @@ import type { ProtonDriveClient } from '@protontech/drive-sdk';
 export type ThumbnailStatus = 'loading' | 'loaded';
 
 /**
- * Holds the loaded state for a single thumbnail entry, keyed by revisionUid.
+ * Holds the loaded state for a single thumbnail entry, keyed by its store key
+ * (revisionUid, or nodeUid for single-revision nodes — see ThumbnailRequest).
  * SD (Type1) and HD (Type2) are tracked independently so both can coexist.
  */
 export type ThumbnailData = {
@@ -22,10 +23,12 @@ export type ThumbnailData = {
  * - `thumbnailTypes` controls which resolutions to load. Defaults to ['sd'].
  * - `shouldLoad` is an optional guard evaluated lazily at batch time — if it
  *   returns false the item is skipped and no status is set.
+ * - `revisionUid` is optional. When omitted the store/cache is keyed by
+ *   `nodeUid` instead. This should be used only for single-revision nodes (e.g. photos).
  */
 export interface ThumbnailRequest {
     nodeUid: string;
-    revisionUid: string;
+    revisionUid?: string;
     thumbnailTypes?: ('hd' | 'sd')[];
     shouldLoad?: () => boolean;
 }

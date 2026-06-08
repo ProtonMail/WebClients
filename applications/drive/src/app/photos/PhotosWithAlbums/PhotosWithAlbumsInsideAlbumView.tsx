@@ -76,20 +76,18 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     const { navigateToNodeUid } = useNavigate();
 
     const handleItemRender = useCallback((nodeUid: string, domRef: React.MutableRefObject<unknown>) => {
-        enqueueAdditionalInfo(nodeUid, () => Boolean(domRef.current));
+        const shouldProcess = () => Boolean(domRef.current);
+        // Decrypt the node and fetch its metadata.
+        enqueueAdditionalInfo(nodeUid, shouldProcess);
+        // Load the thumbnail. Photos are single-revision, so we can request it from the
+        // thumbnail loader by nodeUid alone, without waiting for the revisionUid — which
+        // would otherwise mean waiting on the node to be decrypted and its metadata fetched.
+        loadThumbnail(getDriveForPhotos(), {
+            nodeUid: nodeUid,
+            shouldLoad: shouldProcess,
+            thumbnailTypes: ['sd'],
+        });
     }, []);
-
-    const handleItemRenderLoadedLink = useCallback(
-        (nodeUid: string, activeRevisionUid: string, domRef: React.MutableRefObject<unknown>) => {
-            loadThumbnail(getDriveForPhotos(), {
-                nodeUid: nodeUid,
-                revisionUid: activeRevisionUid,
-                shouldLoad: () => Boolean(domRef.current),
-                thumbnailTypes: ['sd'],
-            });
-        },
-        []
-    );
 
     const { album, isLoading } = useAlbumsStore(
         useShallow((state) => {
@@ -164,7 +162,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 <PhotosInsideAlbumsGrid
                     uids={albumUids}
                     onItemRender={handleItemRender}
-                    onItemRenderLoadedLink={handleItemRenderLoadedLink}
                     isLoading={isLoading}
                     onItemClick={setPreviewNodeUid}
                     selectedCount={selectedItems.length}
