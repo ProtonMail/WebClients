@@ -40,7 +40,7 @@ export const selectSort = createSelector([selectParams], (params) => params.sort
 export const selectFilter = createSelector([selectParams], (params) => params.filter);
 export const selectSearch = createSelector([selectParams], (params) => params.search);
 export const selectESEnabled = createSelector([selectParams], (params) => params.esEnabled);
-export const selectisSearching = createSelector([selectParams], (params) => params.isSearching);
+export const selectIsSearching = createSelector([selectParams], (params) => params.isSearching);
 export const selectNewsletterSubscriptionID = createSelector(
     [selectParams],
     (params) => params.newsletterSubscriptionID
