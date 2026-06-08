@@ -20,7 +20,7 @@ export const RecoveryScoreBar = ({
                     key={index}
                     className={clsx(
                         'h-full flex-1 rounded-full',
-                        index < score ? SCORE_TONE_BG_CLASS[scoreTone] : 'bg-weak'
+                        index < score ? SCORE_TONE_BG_CLASS[scoreTone] : 'bg-strong'
                     )}
                 />
             ))}
