@@ -1,12 +1,13 @@
 import { act } from 'react';
 
+import { generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
 import { type WasmApiEmailAddress, WasmNetwork } from '@proton/andromeda';
-import { generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
-import { mockUseAddresses, mockUseNotifications } from '@proton/testing/lib/vitest';
+import { mockUseAddresses } from '@proton/testing/lib/vitest/mockUseAddresses';
+import { mockUseNotifications } from '@proton/testing/lib/vitest/mockUseNotifications';
 import { apiWalletsData } from '@proton/wallet/tests/fixtures';
 import { mockUseWalletApiClients, mockUseWalletDispatch } from '@proton/wallet/tests/mocks';
 import { getAddressKey } from '@proton/wallet/tests/utils';

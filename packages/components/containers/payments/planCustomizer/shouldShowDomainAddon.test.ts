@@ -1,5 +1,5 @@
 import { ADDON_NAMES, CYCLE, PLANS, SelectedPlan } from '@proton/payments/index';
-import { getTestPlansMap } from '@proton/testing/data';
+import { getTestPlansMap } from '@proton/testing/data/payments/data-plans';
 
 import { shouldShowDomainAddon } from './shouldShowDomainAddon';
 

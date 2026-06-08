@@ -1,4 +1,4 @@
-import { getTestPlansMap } from '@proton/testing/data';
+import { getTestPlansMap } from '@proton/testing/data/payments/data-plans';
 
 import { computeOptimisticRenewProperties } from './computeOptimisticRenewProperties';
 import { CYCLE, PLANS } from './constants';

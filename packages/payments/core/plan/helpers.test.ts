@@ -1,4 +1,4 @@
-import { getTestPlansMap } from '@proton/testing/data';
+import { getTestPlansMap } from '@proton/testing/data/payments/data-plans';
 
 import { ADDON_NAMES, PLANS } from '../constants';
 import { getLumoAddonNameByPlan, getScribeAddonNameByPlan, isMultiUserPersonalPlan } from './helpers';

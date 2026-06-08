@@ -10,8 +10,8 @@ import {
     Renew,
     type Subscription,
 } from '@proton/payments';
-import { buildSubscription } from '@proton/testing/builders';
-import { PLANS_MAP } from '@proton/testing/data';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { PLANS_MAP } from '@proton/testing/data/payments/data-plans';
 
 import { type Props, ProtonPlanCustomizer } from './ProtonPlanCustomizer';
 

@@ -1,5 +1,5 @@
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
-import { PLANS_MAP } from '@proton/testing/data';
+import { PLANS_MAP } from '@proton/testing/data/payments/data-plans';
 
 import { getCheckoutUi, getInformedOptimisticSubscriptionEstimation, getUsersAndAddons } from './checkout';
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from './constants';

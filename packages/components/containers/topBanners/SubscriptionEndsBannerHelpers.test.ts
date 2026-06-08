@@ -3,7 +3,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import type { Subscription } from '@proton/payments';
 import { PLANS } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { buildSubscription } from '@proton/testing/builders';
+import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import { useHideBanner } from './SubscriptionEndsBannerHelpers';
 

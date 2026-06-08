@@ -1,6 +1,6 @@
 import { PLANS } from '@proton/payments';
 import { Audience } from '@proton/shared/lib/interfaces';
-import { getLongTestPlans } from '@proton/testing/data';
+import { getLongTestPlans } from '@proton/testing/data/payments/data-plans';
 
 import type { PlanCard } from './PlanCardSelector';
 import { getAccessiblePlans } from './helper';
