@@ -5,7 +5,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
-import { buildUser } from '@proton/testing/builders';
+import { buildUser } from '@proton/testing/builders/user';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import type { OnboardingChecklistContext } from '../containers/onboardingChecklist/provider/GetStartedChecklistProvider';

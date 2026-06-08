@@ -8,7 +8,14 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { Address, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
 import { ForwardingState } from '@proton/shared/lib/interfaces';
-import { applyHOCs, withApi, withAuthentication, withCache, withConfig, withEventManager } from '@proton/testing';
+import { applyHOCs } from '@proton/testing/lib/context/hocs';
+import {
+    withApi,
+    withAuthentication,
+    withCache,
+    withConfig,
+    withEventManager,
+} from '@proton/testing/lib/context/providers';
 import { mockUseAddresses } from '@proton/testing/lib/mockUseAddresses';
 
 import IncomingForwardActions from './IncomingForwardActions';

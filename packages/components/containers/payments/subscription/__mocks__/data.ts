@@ -2,7 +2,7 @@ import { CYCLE, PLANS } from '@proton/payments';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import type { OrganizationExtended, PendingInvitation, User, UserSettings } from '@proton/shared/lib/interfaces';
-import { buildSubscription } from '@proton/testing/builders';
+import { buildSubscription } from '@proton/testing/builders/subscription';
 
 export const mailPlusUpsell = {
     plan: PLANS.MAIL,

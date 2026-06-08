@@ -5,8 +5,10 @@ import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { Renew, TrialType } from '@proton/payments/core/subscription/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { apiMock, getSubscriptionState, renderWithProviders } from '@proton/testing';
-import { buildSubscription } from '@proton/testing/builders';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { apiMock } from '@proton/testing/lib/api';
+import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
+import { getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
 import SubscriptionsSection from './SubscriptionsSection';
 

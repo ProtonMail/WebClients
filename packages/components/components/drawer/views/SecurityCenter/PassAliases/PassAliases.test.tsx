@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { mockNotifications } from '@proton/testing';
+import { mockNotifications } from '@proton/testing/lib/mockNotifications';
 
 import PassAliases from './PassAliases';
 import * as passAliasesProvider from './PassAliasesProvider';

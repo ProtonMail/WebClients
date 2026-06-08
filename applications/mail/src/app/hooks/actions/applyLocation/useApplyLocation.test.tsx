@@ -5,8 +5,9 @@ import { renderHook } from '@testing-library/react';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
-import { mockUseFolders, mockUseLabels } from '@proton/testing';
 import { mockUseCategoriesData } from '@proton/testing/lib/mockUseCategoriesData';
+import { mockUseFolders } from '@proton/testing/lib/mockUseFolders';
+import { mockUseLabels } from '@proton/testing/lib/mockUseLabels';
 import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 
 import { SUCCESS_NOTIFICATION_EXPIRATION } from 'proton-mail/constants';

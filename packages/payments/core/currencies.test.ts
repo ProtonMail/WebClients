@@ -1,5 +1,5 @@
 import type { User, UserModel } from '@proton/shared/lib/interfaces';
-import { getTestPlans } from '@proton/testing/data';
+import { getTestPlans } from '@proton/testing/data/payments/data-plans';
 
 import { FREE_SUBSCRIPTION, PLANS } from './constants';
 import {

@@ -5,13 +5,9 @@ import { PAYMENT_TOKEN_STATUS } from '@proton/payments';
 import { buyCredit, createTokenV4 } from '@proton/payments/core/api/api';
 import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { addApiMock } from '@proton/testing/lib/api';
+import { applyHOCs } from '@proton/testing/lib/context/hocs';
 import {
-    MOCK_PAYMENT_STATUS,
-    addApiMock,
-    applyHOCs,
-    mockEventManager,
-    mockPaymentMethods,
-    mockPaymentStatus,
     withApi,
     withAuthentication,
     withCache,
@@ -20,7 +16,9 @@ import {
     withEventManager,
     withNotifications,
     withReduxStore,
-} from '@proton/testing';
+} from '@proton/testing/lib/context/providers';
+import { mockEventManager } from '@proton/testing/lib/event-manager';
+import { MOCK_PAYMENT_STATUS, mockPaymentMethods, mockPaymentStatus } from '@proton/testing/lib/payments/api-endpoints';
 
 import CreditsModal from './CreditsModal';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

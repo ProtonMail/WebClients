@@ -20,7 +20,7 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
 import { APPS } from '@proton/shared/lib/constants';
 import type { MailSettings, ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
-import { getFeatureFlagsState } from '@proton/testing';
+import { getFeatureFlagsState } from '@proton/testing/lib/features';
 
 import fakeCache from './fakeCache';
 import { setupStore } from './protonStore';

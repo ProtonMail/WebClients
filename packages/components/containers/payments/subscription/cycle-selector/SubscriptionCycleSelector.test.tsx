@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { CYCLE, PLANS } from '@proton/payments';
-import { PLANS_MAP } from '@proton/testing/data';
+import { PLANS_MAP } from '@proton/testing/data/payments/data-plans';
 
 import type { Props } from './SubscriptionCycleSelector';
 import SubscriptionCycleSelector from './SubscriptionCycleSelector';

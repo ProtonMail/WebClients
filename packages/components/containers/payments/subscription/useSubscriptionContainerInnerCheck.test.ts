@@ -11,7 +11,7 @@ import { ProrationMode } from '@proton/payments/core/api/api';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
 import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
-import { buildSubscription } from '@proton/testing/builders';
+import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import type { Model } from './SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from './constants';

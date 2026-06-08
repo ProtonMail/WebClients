@@ -7,8 +7,8 @@ import {
     getDefaultMainCurrency,
     getPlansMap,
 } from '@proton/payments';
-import { buildSubscription } from '@proton/testing/builders';
-import { getLongTestPlans } from '@proton/testing/data';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { getLongTestPlans } from '@proton/testing/data/payments/data-plans';
 
 import { switchCycle } from './switchCycle';
 

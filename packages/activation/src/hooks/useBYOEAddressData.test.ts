@@ -6,7 +6,9 @@ import { ADDRESS_FLAGS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Address, User } from '@proton/shared/lib/interfaces';
 import { ClaimableAddressType } from '@proton/shared/lib/keys';
-import { addApiMock, hookWrapper, withApi } from '@proton/testing';
+import { addApiMock } from '@proton/testing/lib/api';
+import { hookWrapper } from '@proton/testing/lib/context/hocs';
+import { withApi } from '@proton/testing/lib/context/providers';
 
 const wrapper = hookWrapper(withApi());
 
