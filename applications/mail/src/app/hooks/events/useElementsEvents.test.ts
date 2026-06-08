@@ -52,6 +52,7 @@ const mockElementsState = (elementIds: string[] = []): ElementsState => ({
         count: 0,
         error: undefined,
     },
+    awaitingStaleRetry: {},
 });
 
 describe('processElementEvents', () => {
