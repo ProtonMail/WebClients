@@ -3504,6 +3504,24 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vaša pretraga je pronašla previše rezultata. Ograničite pretragu i pokušajte ponovno."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Sav prostor za pohranu je dodijeljen. Molimo smanjite prostor za pohranu dodijeljen ostalim korisnicima."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Molimo, konfigurirajte prilagođenu domenu prije dodavanja adresa."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Konfigurirajte prilagođenu domenu prije dodavanja korisnika u vašu organizaciju."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Molimo vas da omogućite višekorisničku podršku prije dodavanja korisnika u vašu organizaciju."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Molimo nadogradite na poslovnu pretplatu s više od jednog korisnika kako biste upravljali višestrukim korisnicima."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Iskoristili ste sve slobodne korisnike u Vašem planu. Molimo Vas da nadogradite Vaš plan da biste dodali novog korisnika."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4965,7 +4983,9 @@
         "Inicijalizacija…"
       ],
       "Insert image": [
-        "Umetni sliku"
+        "Umetni sliku",
+        "Umetni slike",
+        "Umetni slike"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -7872,6 +7892,9 @@
       ],
       "ZIP code": [
         "Poštanski broj"
+      ],
+      "Search": [
+        "Pretraga"
       ]
     },
     "Placeholder for contact group name": {

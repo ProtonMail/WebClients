@@ -1520,8 +1520,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Faire confiance à cette clé",
-        "Faire confiance à ces clés"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1718,6 +1717,9 @@
       ],
       "Get the deal": [
         "J'en profite"
+      ],
+      "Verify now": [
+        "Vérifier maintenant"
       ]
     },
     "action": {
@@ -4347,6 +4349,9 @@
       ],
       "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
         "Vous faites partie des premiers à tester notre nouvel affichage par catégorie avant son lancement. Vos commentaires nous aideront à améliorer la façon dont Proton Mail trie les e-mails pour tous les utilisateurs."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pour une intégration transparente de votre équipe à ${ BRAND_NAME }, importez vos données depuis Google, Outlook et autres plateformes."
       ]
     },
     "description": {
@@ -5316,7 +5321,28 @@
         "Veuillez vérifier si votre numéro ABN est enregistré pour la TVA transfrontalière."
       ],
       "VAT number must start with ${ prefixes }": [
-        "Le numéro de TVA doit commencer avec ${ prefixes }."
+        "Le numéro de TVA doit commencer par ${ prefixes }."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Tout l'espace de stockage est alloué. Nous vous invitons à réduire l'espace de stockage alloué à d'autres utilisateurs."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Veuillez configurer un domaine personnalisé avant d'ajouter des adresses."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Nous vous invitons à configurer un domaine personnalisé avant d'ajouter des utilisateurs à votre organisation."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Nous vous invitons à activer la prise en charge multi-utilisateur avant d'ajouter des utilisateurs à votre organisation."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Nous vous invitons à passer à un abonnement entreprise avec plus d'un utilisateur pour gérer plusieurs utilisateurs."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Vous avez utilisé toutes les adresses de votre abonnement. Veuillez mettre à niveau votre abonnement pour ajouter une nouvelle adresse ou désactiver une adresse dans votre compte."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Tous les utilisateurs de votre abonnement sont utilisés. Nous vous invitons à mettre à jour votre abonnement pour ajouter un nouvel utilisateur."
       ]
     },
     "error": {
@@ -7676,7 +7702,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -9129,6 +9156,37 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "${ total } user found": [
+        "${ total } utilisateur trouvé",
+        "${ total } utilisateurs trouvés"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Invitez vos amis** à ${ BRAND_NAME } avec votre lien de parrainage."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Ils obtiennent ${ refereeRewardAmount }** en crédits s'ils s'abonnent."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Vous obtenez ${ referrerRewardAmount }** en crédits pour chaque ami abonné."
+      ],
+      "Automatically sort incoming emails into categories": [
+        "Trier automatiquement les e-mails entrants par catégorie"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Vous souvenez-vous de votre mot de passe ? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "Mot de passe oublié ?"
+      ],
+      "Password verified": [
+        "Mot de passe vérifié"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Pour vous aider à vous souvenir de votre mot de passe, nous vous demanderons occasionnellement de le saisir. Nous vous le demanderons de moins en moins."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Nous vous rappellerons de vérifier votre mot de passe ultérieurement."
       ]
     },
     "info": {
@@ -9406,6 +9464,9 @@
       ],
       "Message shortcuts": [
         "Raccourcis des messages"
+      ],
+      "Desktop app navigation": [
+        "Navigation de l'application de bureau"
       ]
     },
     "Label": {
@@ -10206,6 +10267,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Email categories": [
+        "Catégories d'e-mails"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12971,6 +13035,12 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Search": [
+        "Rechercher"
+      ],
+      "Search for users or addresses": [
+        "Rechercher des utilisateurs ou des adresses"
       ]
     },
     "Placeholder for contact group name": {
@@ -16209,6 +16279,12 @@
       ],
       "Summer Sale": [
         "Soldes d'été"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrer votre organisation vers ${ BRAND_NAME }"
+      ],
+      "Verify your password": [
+        "Vérifiez votre mot de passe"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16795,6 +16871,117 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Activé"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "L'adresse est déjà utilisée par un utilisateur en dehors de votre organisation. Nous vous invitons à prendre contact avec le service client pour résoudre ce problème."
+      ],
+      "All": [
+        "Tout"
+      ],
+      "Calendar": [
+        "Calendrier"
+      ],
+      "Configure migration": [
+        "Configurer la migration"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Contactez votre administrateur pour commencer une migration."
+      ],
+      "Contacts": [
+        "Contacts"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "État de migration des données depuis Google Workspace vers ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "E-mails"
+      ],
+      "Errors": [
+        "Erreurs"
+      ],
+      "Estimated size": [
+        "Taille estimée"
+      ],
+      "Find out what can be migrated.": [
+        "Découvrez ce qui peut être migré."
+      ],
+      "Has errors": [
+        "Il y a des erreurs"
+      ],
+      "In progress": [
+        "En cours"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "L'adresse du membre n'a pas été trouvée. Veuillez contacter le service client pour résoudre ce problème."
+      ],
+      "Migrate": [
+        "Migrer"
+      ],
+      "Migrated": [
+        "Migré"
+      ],
+      "Migration status": [
+        "État de la migration"
+      ],
+      "Missing organization private key": [
+        "La clé privée de l'organisation est absente."
+      ],
+      "Missing organization public key": [
+        "La clé publique de l'organisation est absente."
+      ],
+      "No users to display": [
+        "Il n'y a aucun utilisateur à afficher."
+      ],
+      "Not activated": [
+        "Non activé"
+      ],
+      "Organization does not have enough seats available": [
+        "L'organisation n'a pas assez d'accès disponibles."
+      ],
+      "Organization does not have enough storage available": [
+        "L'organisation n'a pas assez d'espace de stockage disponible."
+      ],
+      "Pending": [
+        "En attente"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Sélectionnez exactement ce que vous voulez migrer. Cela s'appliquera à tous les utilisateurs de l'organisation."
+      ],
+      "Select users to migrate": [
+        "Sélectionnez les utilisateurs à migrer"
+      ],
+      "Size": [
+        "Taille"
+      ],
+      "Status": [
+        "État"
+      ],
+      "User": [
+        "Utilisateur"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Utilisateurs qui ont activé leur compte ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Que migrez-vous ?"
+      ],
+      "You": [
+        "Vous"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Passer sur ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Passer sur ${ MAIL_APP_NAME }"
       ]
     }
   }

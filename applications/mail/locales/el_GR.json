@@ -1520,8 +1520,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -1718,6 +1717,9 @@
       ],
       "Get the deal": [
         "Αποκτήστε την προσφορά"
+      ],
+      "Verify now": [
+        "Επαλήθευση τώρα"
       ]
     },
     "action": {
@@ -4347,6 +4349,9 @@
       ],
       "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
         "Είστε από τους πρώτους που θα δοκιμάσουν τη νέα μας προβολή κατηγοριών πριν κυκλοφορήσει. Τα σχόλιά σας θα βοηθήσουν στη βελτίωση του τρόπου με τον οποίο το Proton Mail ταξινομεί τα ηλεκτρονικά μηνύματα για όλους."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Για απρόσκοπτη ενσωμάτωση της ομάδας σας στο ${ BRAND_NAME }, εισαγάγετε τα δεδομένα σας από το Google, το Outlook και άλλα."
       ]
     },
     "description": {
@@ -5317,6 +5322,27 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "Ο αριθμός ΦΠΑ πρέπει να ξεκινά με ${ prefixes }"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Έχει κατανεμηθεί όλος ο αποθηκευτικός χώρος. Παρακαλούμε μειώστε την κατανομή του σε άλλους χρήστες."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Παρακαλούμε διαμορφώσετε έναν προσαρμοσμένο τομέα πριν προσθέσετε διευθύνσεις"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Διαμορφώστε έναν προσαρμοσμένο τομέα (custom domain) πριν προσθέσετε χρήστες στον οργανισμό σας."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Παρακαλώ ενεργοποιήστε την υποστήριξη πολλαπλών-χρηστών πριν προσθέσετε χρήστες στον οργανισμό σας."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Παρακαλώ αναβαθμίστε σε επιχειρηματικό πλάνο με περισσότερους από 1 χρήστες ώστε να διαχειριστείτε πολλαπλούς χρήστες."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Έχετε χρησιμοποιήσει όλες τις διευθύνσεις του πλάνου σας. Αναβαθμίστε το πλάνο σας για να προσθέσετε μια νέα διεύθυνση ή απενεργοποιήστε μια διεύθυνση από τον λογαριασμό σας."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Έχετε χρησιμοποιήσει όλους τους χρήστες στο πρόγραμμά σας. Για προσθήκη νέου χρήστη, παρακαλούμε αναβαθμίστε το πρόγραμμά σας."
       ]
     },
     "error": {
@@ -7676,7 +7702,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -9129,6 +9156,37 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "${ total } user found": [
+        "${ total } χρήστης βρέθηκε",
+        "${ total } χρήστες βρέθηκαν"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Προσκαλέστε τους φίλους σας** στο ${ BRAND_NAME } με τον σύνδεσμο παραπομπής σας."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Λαμβάνουν ${ refereeRewardAmount }** σε πιστώσεις εάν εγγραφούν."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Λαμβάνετε ${ referrerRewardAmount }** σε πιστώσεις για κάθε φίλο που εγγράφεται."
+      ],
+      "Automatically sort incoming emails into categories": [
+        "Αυτόματη ταξινόμηση εισερχόμενων ηλεκτρονικών μηνυμάτων σε κατηγορίες"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Θυμάστε τον κωδικό πρόσβασής σας; ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "Ξεχάσατε τον κωδικό πρόσβασης;"
+      ],
+      "Password verified": [
+        "Ο Κωδικός πρόσβασης επαληθεύτηκε"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Για να σας βοηθήσουμε να θυμάστε τον κωδικό πρόσβασής σας, θα σας ζητάμε να τον εισάγετε περιοδικά. Με την πάροδο του χρόνου, θα σας ζητάμε λιγότερο."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Θα σας υπενθυμίσουμε να επαληθεύσετε ξανά τον κωδικό πρόσβασής σας αργότερα"
       ]
     },
     "info": {
@@ -9406,6 +9464,9 @@
       ],
       "Message shortcuts": [
         "Συντομεύσεις μηνυμάτων"
+      ],
+      "Desktop app navigation": [
+        "Πλοήγηση εφαρμογής για υπολογιστές"
       ]
     },
     "Label": {
@@ -10206,6 +10267,9 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Email categories": [
+        "Κατηγορίες ηλεκτρονικών μηνυμάτων"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12971,6 +13035,12 @@
       ],
       "ZIP code": [
         "Ταχυδρομικός κώδικας"
+      ],
+      "Search": [
+        "Αναζήτηση"
+      ],
+      "Search for users or addresses": [
+        "Αναζήτηση χρηστών ή διευθύνσεων"
       ]
     },
     "Placeholder for contact group name": {
@@ -16113,6 +16183,12 @@
       ],
       "Summer Sale": [
         "Καλοκαιρινές Εκπτώσεις"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Μετεγκαταστήσετε τον οργανισμό σας στο ${ BRAND_NAME }"
+      ],
+      "Verify your password": [
+        "Επαληθεύστε τον κωδικό πρόσβασής σας"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16699,6 +16775,117 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Ενεργοποιήθηκε"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Η διεύθυνση χρησιμοποιείται ήδη από χρήστη εκτός του οργανισμού σας. Για επίλυση, παρακαλούμε απευθυνθείτε στην υποστήριξη πελατών."
+      ],
+      "All": [
+        "Όλοι"
+      ],
+      "Calendar": [
+        "Ημερολόγιο"
+      ],
+      "Configure migration": [
+        "Διαμόρφωση μετεγκατάστασης"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Επικοινωνήστε με τον διαχειριστή σας για να ξεκινήσετε μια μετεγκατάσταση."
+      ],
+      "Contacts": [
+        "Επαφές"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Κατάσταση μετεγκατάστασης δεδομένων από το Google Workspace στο ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Μηνύματα"
+      ],
+      "Errors": [
+        "Σφάλματα"
+      ],
+      "Estimated size": [
+        "Εκτιμώμενος χρόνος"
+      ],
+      "Find out what can be migrated.": [
+        "Μάθετε τι μπορεί να μετεγκατασταθεί."
+      ],
+      "Has errors": [
+        "Έχει σφάλματα"
+      ],
+      "In progress": [
+        "Σε εξέλιξη"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Η διεύθυνση μέλους δε βρέθηκε. Επικοινωνήστε με την υποστήριξη πελατών για να επιλύσετε αυτό το πρόβλημα."
+      ],
+      "Migrate": [
+        "Μετεγκατάσταση"
+      ],
+      "Migrated": [
+        "Μετεγκαταστάθηκε"
+      ],
+      "Migration status": [
+        "Κατάσταση μετεγκατάστασης"
+      ],
+      "Missing organization private key": [
+        "Λείπει το ιδιωτικό κλειδί του οργανισμού"
+      ],
+      "Missing organization public key": [
+        "Λείπει το δημόσιο κλειδί του οργανισμού"
+      ],
+      "No users to display": [
+        "Δεν υπάρχουν χρήστες για εμφάνιση"
+      ],
+      "Not activated": [
+        "Δεν έχει ενεργοποιηθεί"
+      ],
+      "Organization does not have enough seats available": [
+        "Ο οργανισμός δε διαθέτει αρκετές θέσεις διαθέσιμες"
+      ],
+      "Organization does not have enough storage available": [
+        "Ο οργανισμός δεν διαθέτει αρκετό χώρο αποθήκευσης"
+      ],
+      "Pending": [
+        "Σε εκκρεμότητα"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Επιλέξτε ακριβώς αυτό που θέλετε να μετεγκαταστήσετε. Θα εφαρμοστεί για όλους τους χρήστες του οργανισμού."
+      ],
+      "Select users to migrate": [
+        "Επιλογή χρηστών για μετεγκατάσταση"
+      ],
+      "Size": [
+        "Μέγεθος"
+      ],
+      "Status": [
+        "Κατάσταση"
+      ],
+      "User": [
+        "Χρήστης"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Χρήστες που έχουν κάνει πρόσβαση στον λογαριασμό τους ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Τι μεταφέρετε;"
+      ],
+      "You": [
+        "Εσείς"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Μετάβαση στο ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Μετάβαση στο ${ MAIL_APP_NAME }"
       ]
     }
   }

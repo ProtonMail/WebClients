@@ -1718,6 +1718,9 @@
       ],
       "Get the deal": [
         "Skaff deg tilbudet"
+      ],
+      "Verify now": [
+        "Verifiser nå"
       ]
     },
     "action": {
@@ -5305,6 +5308,30 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Søket samsvarte med for mange resultater. Begrens søket, og prøv på nytt."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "All lagringsplass er tildelt. Reduser lagringsplass tildelt andre brukere."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Konfigurer et egendefinert domene før du legger til adresser."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Konfigurer et egendefinert domene før du legger til nye brukere til din organisasjon."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Aktiver støtte for flere brukere før du legger brukere til din organisasjon."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Oppgrader til en forretningsplan med mer enn 1 bruker for å administrere flere brukere."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "MVA-nummeret må starte med ${ prefixes }"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Du har brukt alle adressene i planen. Oppgrader planen for å legge til en ny adresse eller deaktiver en adresse i kontoen din."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Du har brukt alle brukerne i planen din. Oppgrader planen din for å legge til en ny bruker."
       ]
     },
     "error": {
@@ -7664,7 +7691,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -9117,6 +9145,19 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "${ total } user found": [
+        "${ total } bruker funnet",
+        "${ total } brukere funnet"
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "** Du får ${ referrerRewardAmount }** i kreditter for hver venn som abonnerer."
+      ],
+      "Automatically sort incoming emails into categories": [
+        "Sorter innkommende e-poster automatisk i kategorier"
+      ],
+      "Forgot password?": [
+        "Glemt passord?"
       ]
     },
     "info": {
@@ -9394,6 +9435,9 @@
       ],
       "Message shortcuts": [
         "Meldingssnarveier"
+      ],
+      "Desktop app navigation": [
+        "Skrivebordsapp-navigering"
       ]
     },
     "Label": {
@@ -10194,6 +10238,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Email categories": [
+        "E-postkategorier"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12959,6 +13006,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Search": [
+        "Søk"
+      ],
+      "Search for users or addresses": [
+        "Søk etter brukere eller adresser"
       ]
     },
     "Placeholder for contact group name": {
@@ -16777,6 +16830,99 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Aktivert"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresse er allerede i bruk av en bruker på utsiden av din organisasjon. Kontakt kundestøtte for å løse dette."
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Konfigurer migrering"
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Errors": [
+        "Feil"
+      ],
+      "Estimated size": [
+        "Estimert størrelse"
+      ],
+      "Find out what can be migrated.": [
+        "Finn ut hva som kan migreres."
+      ],
+      "Has errors": [
+        "Inneholder feil"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadressen ble ikke funnet. Ta kontakt med kundestøtte for å løse dette."
+      ],
+      "Migrated": [
+        "Migrert"
+      ],
+      "Migration status": [
+        "Migreringsstatus"
+      ],
+      "Missing organization private key": [
+        "Mangler privat nøkkel for organisasjonen"
+      ],
+      "Missing organization public key": [
+        "Mangler offentlig nøkkel for organisasjonen"
+      ],
+      "No users to display": [
+        "Ingen brukere å vise"
+      ],
+      "Not activated": [
+        "Ikke aktivert"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisasjonen har ikke nok ledige lisenser"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisasjonen har ikke nok lagringsplass tilgjengelig"
+      ],
+      "Pending": [
+        "Venter"
+      ],
+      "Select users to migrate": [
+        "Velg brukere som skal migreres"
+      ],
+      "Size": [
+        "Størrelse"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Bruker"
+      ],
+      "What are you migrating?": [
+        "Hva migrerer du?"
+      ],
+      "You": [
+        "Du"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Bytt til ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Bytt til ${ MAIL_APP_NAME }"
       ]
     }
   }

@@ -1516,10 +1516,7 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
+        "Důvěřovat klíči"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -5352,6 +5349,27 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhledávání našlo příliš mnoho výsledků. Upřesněte hledání a zkuste to prosím znovu."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Celé úložiště již bylo přiděleno. Zmenšete prosím přidělený prostor ostatním uživatelům."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Před přidáním adres nastavte vlastní doménu."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Před přidáním uživatelů do Vaši organizace si prosím nastavte vlastní doménu."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Zapněte prosím podporu pro více uživatelů před přidáváním uživatelů do vaší organizace."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Chcete-li spravovat více uživatelů, přejděte na firemní tarif."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Využili jste všechny adresy ve vašem tarifu. Prosím navyšte svůj tarif, abyste mohli přidat novou adresu, nebo deaktivujte některou z adres ve svém účtu."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Limit počtu uživatelů ve vašem tarifu byl vyčerpán. Přejděte na vyšší tarif, abyste mohli přidat dalšího uživatele."
       ]
     },
     "error": {
@@ -7847,7 +7865,10 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -9330,6 +9351,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od doručené pošty bez nepořádku vás dělí jen několik kliknutí"
+      ],
+      "${ total } user found": [
+        "Nalezen ${ total } uživatel",
+        "Nalezeni ${ total } uživatelé",
+        "Nalezeno ${ total } uživatelů",
+        "Nalezeno ${ total } uživatelů"
       ]
     },
     "info": {
@@ -13242,6 +13269,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Search": [
+        "Vyhledat"
       ]
     },
     "Placeholder for contact group name": {
@@ -17319,6 +17349,44 @@
       ],
       "Passcode:": [
         "Přístupový kód:"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Kalendář"
+      ],
+      "Configure migration": [
+        "Nastavte migraci"
+      ],
+      "Contacts": [
+        "Kontakty"
+      ],
+      "Estimated size": [
+        "Odhadovaná velikost"
+      ],
+      "Has errors": [
+        "Má chyby"
+      ],
+      "In progress": [
+        "Probíhá"
+      ],
+      "Migration status": [
+        "Stav migrace"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizace nemá dostatek volných licencí"
+      ],
+      "Organization does not have enough storage available": [
+        "Organizace nemá dostatečně velké úložiště"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "User": [
+        "Uživatel"
+      ],
+      "What are you migrating?": [
+        "Co migrujete?"
       ]
     }
   }

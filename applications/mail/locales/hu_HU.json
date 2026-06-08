@@ -1469,8 +1469,7 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Kulcs megjelölése megbízhatóként",
-        "Kulcsok megjelölése megbízhatóként"
+        "Megbízható kulcs"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -4865,6 +4864,24 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A keresés túl sok találatot eredményezett. Korlátozza a keresést majd próbálja meg újra."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Minden tárhely terület kiosztásra került. Kérjük csökkentse más felhasználók tárhelyét."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Címek létrehozása előtt, állítson be egy saját domain nevet."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Vegyen fel egy saját domain nevet, mielőtt felhasználókat venne fel a szervezethez."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Engedélyezze a többfelhasználós módot, mielőtt felhasználókat venne fel a szervezethez."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Váltson egy üzleti csomagra, egynél több felhasználval, hogy több felhasználót kezelhessen."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Valamennyi, az előfizetéséhez rendelkezésére álló felhasználót elhasználta. Több felhasználó létrehozásához váltson nagyobb csomagra."
       ]
     },
     "error": {
@@ -7092,6 +7109,7 @@
         "Inicializálás…"
       ],
       "Insert image": [
+        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -11958,6 +11976,9 @@
       ],
       "ZIP code": [
         "Irányítószám"
+      ],
+      "Search": [
+        "Keresés"
       ]
     },
     "Placeholder for contact group name": {
