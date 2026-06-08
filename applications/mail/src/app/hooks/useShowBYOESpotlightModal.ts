@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 
 import { differenceInDays, fromUnixTime } from 'date-fns';
 
@@ -16,27 +16,30 @@ import { useMailGlobalModals } from '../containers/globalModals/GlobalModalProvi
 import { ModalType } from '../containers/globalModals/inteface';
 
 const useShowBYOESpotlightModal = () => {
+    const notifiedRef = useRef(false);
     const [user] = useUser();
     const [addresses = []] = useAddresses();
     const allSyncs = useEasySwitchSelector(getAllSync);
     const syncListLoaded = useEasySwitchSelector(selectSyncListLoadingState);
-    const { feature, update } = useFeature(FeatureCode.BYOESpotlightModal);
+    const { feature, update, loading: loadingFeature } = useFeature(FeatureCode.BYOESpotlightModal);
     const { notify } = useMailGlobalModals();
 
     const [hasAccessToBYOE, loadingBYOEFeatureStatus] = useBYOEFeatureStatus(false);
 
-    const emailsFromAddresses = new Set(addresses.map((address) => address.Email));
-    const { forwardingSyncs, byoeSyncs } = allSyncs.reduce<{ forwardingSyncs: Sync[]; byoeSyncs: Sync[] }>(
-        (acc, sync) => {
-            if (emailsFromAddresses.has(sync.account)) {
-                acc.byoeSyncs.push(sync);
-            } else {
-                acc.forwardingSyncs.push(sync);
-            }
-            return acc;
-        },
-        { forwardingSyncs: [], byoeSyncs: [] }
-    );
+    const { forwardingSyncs, byoeSyncs } = useMemo(() => {
+        const emailsFromAddresses = new Set(addresses.map((address) => address.Email));
+        return allSyncs.reduce<{ forwardingSyncs: Sync[]; byoeSyncs: Sync[] }>(
+            (acc, sync) => {
+                if (emailsFromAddresses.has(sync.account)) {
+                    acc.byoeSyncs.push(sync);
+                } else {
+                    acc.forwardingSyncs.push(sync);
+                }
+                return acc;
+            },
+            { forwardingSyncs: [], byoeSyncs: [] }
+        );
+    }, [addresses, allSyncs]);
 
     // Show the modal if:
     // - User has access to BYOE (feature flag ON && not b2b sub user)
@@ -45,17 +48,20 @@ const useShowBYOESpotlightModal = () => {
     // - User never seen the modal before (old feature flag system)
     // - User is not busy
     const canShowBYOESpotlightModal =
+        !notifiedRef.current &&
         !loadingBYOEFeatureStatus &&
         hasAccessToBYOE &&
         !getIsBYOEOnlyAccount(addresses) &&
         byoeSyncs.length === 0 &&
         syncListLoaded === 'success' &&
         differenceInDays(new Date(), fromUnixTime(user.CreateTime)) >= 30 &&
+        !loadingFeature &&
         !!feature?.Value &&
         !domIsBusy();
 
     useEffect(() => {
         if (canShowBYOESpotlightModal) {
+            notifiedRef.current = true; // We only want to notify once
             notify({
                 type: ModalType.BYOESpotlight,
                 value: {
