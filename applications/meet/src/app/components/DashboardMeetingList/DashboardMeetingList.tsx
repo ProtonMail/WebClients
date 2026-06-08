@@ -57,7 +57,7 @@ export const DashboardMeetingList = ({
         meeting.MeetingName.toLowerCase().includes(search.toLowerCase())
     );
 
-    const timeBasedMeetings = filteredMeetings
+    const expandedTimeBasedMeetings = filteredMeetings
         .filter((meeting) => meeting.Type === MeetingType.SCHEDULED || meeting.Type === MeetingType.RECURRING)
         .map((meeting) => {
             const occurrence = getNextOccurrence(meeting);
@@ -67,6 +67,25 @@ export const DashboardMeetingList = ({
                 adjustedEndTime: occurrence.endTime,
             };
         });
+
+    // Collapse to the earliest next occurrence per meeting ID. Prefer the entry with
+    // the higher original StartTime — the master starts at the series DTSTART, so a
+    // later StartTime indicates a single-edit exception, which is the authoritative
+    // version for that occurrence.
+    const timeBasedMeetings = Object.values(
+        expandedTimeBasedMeetings.reduce<Record<string, (typeof expandedTimeBasedMeetings)[number]>>((acc, meeting) => {
+            const existing = acc[meeting.ID];
+            if (
+                !existing ||
+                meeting.adjustedStartTime < existing.adjustedStartTime ||
+                (meeting.adjustedStartTime === existing.adjustedStartTime &&
+                    Number(meeting.StartTime) > Number(existing.StartTime))
+            ) {
+                acc[meeting.ID] = meeting;
+            }
+            return acc;
+        }, {})
+    );
     const meetingRooms = filteredMeetings
         .filter((meeting) => meeting.Type === MeetingType.PERMANENT || meeting.Type === MeetingType.PERSONAL)
         .sort((a, b) => {
