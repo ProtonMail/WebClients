@@ -28,12 +28,18 @@ import {
     DARK_WEB_MONITORING_NAME,
     ORGANIZATION_STATE,
     ORGANIZATION_TWOFA_SETTING,
+    PRODUCT_NAMES,
     PROTON_SENTINEL_NAME,
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import type { Permission } from '@proton/shared/lib/interfaces/UserPermission';
-import { getIsExternalAccount, getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
+import {
+    getIsBYOEAccount,
+    getIsExternalAccount,
+    getIsGlobalSSOAccount,
+    getIsSSOVPNOnlyAccount,
+} from '@proton/shared/lib/keys';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import { isSubscriptionRenewEnabled } from '@proton/shared/lib/subscription/helpers.ts';
 import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
@@ -79,35 +85,35 @@ const routesDefinition = {
                         },
                         {
                             id: 'organization.home.upgrade',
-                            text: c('Title').t`Upgrade your network protection with dedicated servers`,
+                            text: () => c('Title').t`Upgrade your network protection with dedicated servers`,
                             to: 'upgrade',
                             isVisible: ({ context }) => context.user.isPaid && getHasVpnB2BPlan(context.subscription),
                         },
                         {
                             id: 'organization.home.your-subscriptions',
-                            text: c('Title').t`Your subscriptions`,
+                            text: () => c('Title').t`Your subscriptions`,
                             to: 'your-subscriptions',
                             isVisible: ({ context }) => context.user.isPaid,
                         },
                         {
                             id: 'organization.home.credits',
-                            text: c('Title').t`Credits`,
+                            text: () => c('Title').t`Credits`,
                             to: 'credits',
                         },
                         {
                             id: 'organization.home.gift-code',
-                            text: c('Title').t`Gift code`,
+                            text: () => c('Title').t`Gift code`,
                             to: 'gift-code',
                         },
                         {
                             id: 'organization.home.invoices',
-                            text: c('Title').t`Invoices`,
+                            text: () => c('Title').t`Invoices`,
                             isVisible: ({ context }) => !context.isB2BTrial,
                             to: 'invoices',
                         },
                         {
                             id: 'organization.home.cancel-subscription',
-                            text: c('Title').t`Cancel subscription`,
+                            text: () => c('Title').t`Cancel subscription`,
                             to: 'cancel-subscription',
                             isVisible: ({ context }) =>
                                 context.user.isPaid &&
@@ -117,7 +123,7 @@ const routesDefinition = {
                         },
                         {
                             id: 'organization.home.cancel-via-support',
-                            text: c('Title').t`Cancel subscription`,
+                            text: () => c('Title').t`Cancel subscription`,
                             to: 'cancel-via-support',
                             // B2B cancellation has a different flow, so we don't consider it a classic cancellable plan
                             isVisible: ({ context }) =>
@@ -139,7 +145,7 @@ const routesDefinition = {
                                 {
                                     id: 'organization.org-and-people.users.multi-user-creation',
                                     to: 'multi-user-creation',
-                                    text: c('Title').t`Create multiple user accounts`,
+                                    text: () => c('Title').t`Create multiple user accounts`,
                                     isVisible: ({ context }) =>
                                         !!context.organization?.RequiresKey &&
                                         !getHasExternalMemberCapableB2BPlan(context.subscription),
@@ -160,7 +166,7 @@ const routesDefinition = {
                             sections: [
                                 {
                                     id: 'organization.org-and-people.access-control.feature-access',
-                                    text: c('Title').t`Feature access`,
+                                    text: () => c('Title').t`Feature access`,
                                     to: 'feature-access',
                                     isVisible: ({ context }) => {
                                         const showVideoConferenceSection =
@@ -184,7 +190,7 @@ const routesDefinition = {
                                 {
                                     id: 'organization.org-and-people.multi-user.name',
                                     to: 'name',
-                                    text: c('Title').t`Activate multi-user support`,
+                                    text: () => c('Title').t`Activate multi-user support`,
                                 },
                             ],
                         },
@@ -202,11 +208,11 @@ const routesDefinition = {
                                 {
                                     id: 'organization.org-and-people.organization-keys.organization',
                                     to: 'organization',
-                                    text: c('Title').t`Customization`,
+                                    text: () => c('Title').t`Customization`,
                                 },
                                 {
                                     id: 'organization.org-and-people.organization-keys.password-keys',
-                                    text: c('Title').t`Organization key`,
+                                    text: () => c('Title').t`Organization key`,
                                     to: 'password-keys',
                                     isVisible: ({ context }) =>
                                         getHasMemberCapablePlan(context.organization, context.subscription) &&
@@ -260,24 +266,24 @@ const routesDefinition = {
                         {
                             id: 'organization.security-and-compliance.sentinel',
                             to: 'sentinel',
-                            text: c('Title').t`${PROTON_SENTINEL_NAME} for organizations`,
+                            text: () => c('Title').t`${PROTON_SENTINEL_NAME} for organizations`,
                             isVisible: ({ context }) =>
                                 !context.needsOrgSetup || getIsB2BAudienceFromPlan(context.organization?.PlanName),
                         },
                         {
                             id: 'organization.security-and-compliance.proton-account-password-rules',
                             to: 'proton-account-password-rules',
-                            text: c('Title').t`${BRAND_NAME} Account password rules`,
+                            text: () => c('Title').t`${BRAND_NAME} Account password rules`,
                         },
                         {
                             id: 'organization.security-and-compliance.two-factor-authentication-reminders',
                             to: 'two-factor-authentication-reminders',
-                            text: c('Title').t`Two-factor authentication reminders`,
+                            text: () => c('Title').t`Two-factor authentication reminders`,
                         },
                         {
                             id: 'organization.security-and-compliance.two-factor-authentication-enforcement',
                             to: 'two-factor-authentication-enforcement',
-                            text: c('Title').t`Two-factor authentication enforcement`,
+                            text: () => c('Title').t`Two-factor authentication enforcement`,
                         },
                     ],
                 },
@@ -327,25 +333,25 @@ const routesDefinition = {
                     sections: [
                         {
                             id: 'my-account.my-account-and-password.two-fa',
-                            text: c('Title').t`Two-factor authentication`,
+                            text: () => c('Title').t`Two-factor authentication`,
                             to: 'two-fa',
                             isVisible: ({ context }) => !getIsSSOVPNOnlyAccount(context.user),
                         },
                         {
                             id: 'my-account.account-and-password.openvpn',
                             to: 'openvpn',
-                            text: c('Title').t`OpenVPN username`,
+                            text: () => c('Title').t`OpenVPN username`,
                         },
                         {
                             id: 'my-account.account-and-password.news',
-                            text: c('Title').t`Email subscriptions`,
+                            text: () => c('Title').t`Email subscriptions`,
                             to: 'news',
                             isVisible: ({ context }) => !context.user.isMember,
                         },
                         {
                             id: 'my-account.account-and-password.delete',
                             to: 'delete',
-                            text: c('Title').t`Delete`,
+                            text: () => c('Title').t`Delete`,
                             isVisible: ({ context }) => context.user.canPay && !context.user.isMember,
                         },
                     ],
@@ -361,18 +367,18 @@ const routesDefinition = {
                         {
                             id: 'my-account.recovery.account',
                             to: 'account',
-                            text: c('Title').t`Account recovery`,
+                            text: () => c('Title').t`Account recovery`,
                         },
                         {
                             id: 'my-account.recovery.data',
                             to: 'data',
-                            text: c('Title').t`Data recovery`,
+                            text: () => c('Title').t`Data recovery`,
                             isVisible: ({ context }) => context.isDataRecoveryAvailable,
                         },
                         {
                             id: 'my-account.recovery.password-reset',
                             to: 'password-reset',
-                            text: c('Title').t`Password reset settings`,
+                            text: () => c('Title').t`Password reset settings`,
                             isVisible: ({ context }) => context.isSessionRecoveryAvailable,
                         },
                     ],
@@ -385,7 +391,7 @@ const routesDefinition = {
                     sections: [
                         {
                             id: 'my-account.appearance.themes',
-                            text: c('Themes').t`Themes`,
+                            text: () => c('Themes').t`Themes`,
                             to: 'themes',
                         },
                     ],
@@ -410,25 +416,25 @@ const routesDefinition = {
                         },
                         {
                             id: 'my-account.security-and-privacy.devices',
-                            text: c('sso').t`Devices management`,
+                            text: () => c('sso').t`Devices management`,
                             to: 'devices',
                             isVisible: ({ context }) => getIsGlobalSSOAccount(context.user),
                         },
                         {
                             id: 'my-account.security-and-privacy.sessions',
-                            text: c('Title').t`Session management`,
+                            text: () => c('Title').t`Session management`,
                             to: 'sessions',
                             isVisible: ({ context }) => !getIsSSOVPNOnlyAccount(context.user),
                         },
                         {
                             id: 'my-account.security-and-privacy.logs',
-                            text: c('Title').t`Account monitor`,
+                            text: () => c('Title').t`Account monitor`,
                             to: 'logs',
                             isVisible: ({ context }) => !getIsSSOVPNOnlyAccount(context.user),
                         },
                         {
                             id: 'my-account.security-and-privacy.third-party',
-                            text: c('Title').t`Third-party apps and services`,
+                            text: () => c('Title').t`Third-party apps and services`,
                             to: 'third-party',
                             isVisible: ({ context }) => {
                                 const showVideoConferenceSection =
@@ -442,8 +448,38 @@ const routesDefinition = {
                         },
                         {
                             id: 'my-account.security-and-privacy.privacy',
-                            text: c('Title').t`Privacy and data collection`,
+                            text: () => c('Title').t`Privacy and data collection`,
                             to: 'privacy',
+                        },
+                    ],
+                },
+                {
+                    id: 'my-account.import-via-easy-switch',
+                    label: () => c('Title').t`Import via ${PRODUCT_NAMES.EASY_SWITCH}`,
+                    to: '/easy-switch',
+                    icon: 'arrow-down-to-square',
+                    isVisible: ({ context }) => {
+                        if (context.appName !== APPS.PROTONACCOUNT) {
+                            return false;
+                        }
+
+                        const isExternalUser = getIsExternalAccount(context.user);
+                        const isBYOEUser = getIsBYOEAccount(context.user);
+                        const isSSOUser = getIsSSOVPNOnlyAccount(context.user);
+
+                        const showEasySwitchSection = (!isExternalUser || isBYOEUser) && !isSSOUser;
+                        return showEasySwitchSection;
+                    },
+                    sections: [
+                        {
+                            id: 'my-account.import-via-easy-switch.import-list',
+                            text: () => c('Title').t`Imports`,
+                            to: 'import-list',
+                        },
+                        {
+                            id: 'my-account.import-via-easy-switch.forwarding-list',
+                            text: () => c('Title').t`Connected emails`,
+                            to: 'forwarding-list',
                         },
                     ],
                 },
@@ -463,18 +499,18 @@ const routesDefinition = {
                         {
                             id: 'my-vpn.download-apps.protonvpn-clients',
                             to: 'protonvpn-clients',
-                            text: c('Title').t`${VPN_APP_NAME} clients`,
+                            text: () => c('Title').t`${VPN_APP_NAME} clients`,
                         },
                         {
                             id: 'my-vpn.download-apps.wireguard-configuration',
                             to: 'wireguard-configuration',
-                            text: c('Title').t`WireGuard configuration`,
+                            text: () => c('Title').t`WireGuard configuration`,
                             isVisible: ({ context }) => context.appName === APPS.PROTONVPN_SETTINGS,
                         },
                         {
                             id: 'my-vpn.download-apps.openvpn-configuration-files',
                             to: 'openvpn-configuration-files',
-                            text: c('Title').t`OpenVPN configuration files`,
+                            text: () => c('Title').t`OpenVPN configuration files`,
                             isVisible: ({ context }) => context.appName === APPS.PROTONVPN_SETTINGS,
                         },
                     ],
@@ -489,7 +525,7 @@ const routesDefinition = {
                         {
                             id: 'my-vpn.download-apps.wireguard-configuration',
                             to: 'wireguard-configuration',
-                            text: c('Title').t`WireGuard configuration`,
+                            text: () => c('Title').t`WireGuard configuration`,
                         },
                     ],
                 },
