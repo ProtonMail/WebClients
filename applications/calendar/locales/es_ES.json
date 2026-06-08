@@ -1025,6 +1025,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Tu prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Get the deal": [
+        "Obtener la promoción"
+      ],
+      "Verify now": [
+        "Verificar ahora"
       ]
     },
     "action": {
@@ -3194,6 +3200,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Para una incorporación perfecta de tu equipo a ${ BRAND_NAME }, importa tus datos desde Google, Outlook y otras plataformas."
       ]
     },
     "description": {
@@ -4068,6 +4077,27 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Tu conexión de Zoom ha expirado. Vuelve a conectarte para continuar."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Se ha asignado todo el espacio de almacenamiento. Reduce el almacenamiento asignado a otros usuarios."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configura un dominio personalizado antes de añadir direcciones."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Configura un dominio personalizado antes de añadir usuarios a tu organización."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Activa el soporte multiusuario antes de añadir usuarios a tu organización."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Pasa a un plan para empresa con más de 1 usuario para administrar varios usuarios."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Has agotado todas las direcciones disponibles. Actualiza tu plan para añadir una nueva o desactiva alguna de las que tienes en tu cuenta."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Has utilizado todos los usuarios de tu plan. Mejora tu plan para añadir un nuevo usuario."
       ]
     },
     "error": {
@@ -6525,6 +6555,34 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Has alcanzado el límite de franjas de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ total } user found": [
+        "${ total } usuario encontrado",
+        "${ total } usuarios encontrados"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Invita a tus amigos** a ${ BRAND_NAME } con tu enlace de referidos."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Consiguen ${ refereeRewardAmount }** en créditos si se suscriben."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Consigues ${ referrerRewardAmount }** en créditos por cada persona que se suscriba."
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "¿Recuerdas tu contraseña? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "¿Has olvidado la contraseña?"
+      ],
+      "Password verified": [
+        "Contraseña verificada"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Para ayudarte a recordar tu contraseña, te pedimos que la introduzcas periódicamente. Con el tiempo, te la pedimos con menos frecuencia."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Te recordamos que vuelvas a verificar tu contraseña más tarde"
       ]
     },
     "info": {
@@ -6688,6 +6746,9 @@
       ],
       "View options": [
         "Ver las opciones"
+      ],
+      "Desktop app navigation": [
+        "Navegación de la aplicación de escritorio"
       ]
     },
     "Knowledge base link label": {
@@ -9820,6 +9881,9 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Search": [
+        "Buscar"
       ]
     },
     "Placeholder for contact group name": {
@@ -12364,6 +12428,12 @@
       ],
       "Your shorter address is now ready": [
         "Tu dirección en formato más corto ya está lista."
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migra tu organización a ${ BRAND_NAME }."
+      ],
+      "Verify your password": [
+        "Verifica tu contraseña"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12946,6 +13016,54 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Calendario"
+      ],
+      "Configure migration": [
+        "Configurar migración"
+      ],
+      "Contacts": [
+        "Contactos"
+      ],
+      "Estimated size": [
+        "Tamaño estimado"
+      ],
+      "Has errors": [
+        "Tiene errores"
+      ],
+      "In progress": [
+        "En progreso"
+      ],
+      "Migration status": [
+        "Estado de la migración"
+      ],
+      "Organization does not have enough seats available": [
+        "La organización no tiene suficientes licencias disponibles"
+      ],
+      "Organization does not have enough storage available": [
+        "La organización no tiene suficiente espacio de almacenamiento disponible"
+      ],
+      "Status": [
+        "Estado"
+      ],
+      "User": [
+        "Usuario"
+      ],
+      "What are you migrating?": [
+        "¿Qué estás migrando?"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Cambiar a ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Cambiar a ${ MAIL_APP_NAME }"
       ]
     }
   }

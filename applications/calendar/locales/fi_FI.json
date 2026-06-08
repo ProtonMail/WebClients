@@ -1013,6 +1013,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Get the deal": [
+        "Hyödynnä tarjous"
       ]
     },
     "action": {
@@ -4000,6 +4003,27 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom-yhteytesi on vanhentunut. Ole hyvä ja yhdistä uudelleen jatkaaksesi."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Kaikki tallennustila on varattu. Vähennä muille käyttäjille varattua tallennustilaa."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Määritä oma verkkotunnus ennen kuin lisäät osoitteita."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Määritä oma verkkotunnus ennen kuin lisäät organisaatioosi käyttäjiä."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Ota usean käyttäjän tuki käyttöön ennen kuin lisäät käyttäjiä organisaatioosi."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Hallitaksesi useita käyttäjiä, päivitä yritystilaukseen, joka sisältää enemmän kuin yhden käyttäjän."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Olet käyttänyt kaikki tilauksesi osoitteet. Päivitä tilauksesi lisätäksesi uuden osoitteen tai ota osoite pois käytöstä tililtäsi."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Olet kuluttanut tilaukseesi sisältyvän käyttäjäkiintiön. Lisää uusia käyttäjiä päivittämällä tilauksesi."
       ]
     },
     "error": {
@@ -6412,6 +6436,10 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Olet saavuttanut varausaikojen enimmäismäärän (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "${ total } user found": [
+        "Löytyi ${ total } käyttäjä",
+        "${ total } käyttäjää löytyi"
       ]
     },
     "info": {
@@ -9593,6 +9621,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Search": [
+        "Etsi"
       ]
     },
     "Placeholder for contact group name": {
@@ -12664,6 +12695,44 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Kalenteri"
+      ],
+      "Configure migration": [
+        "Määritä siirto"
+      ],
+      "Contacts": [
+        "Yhteystiedot"
+      ],
+      "Estimated size": [
+        "Arvioitu koko"
+      ],
+      "Has errors": [
+        "Virheitä"
+      ],
+      "In progress": [
+        "Käynnissä"
+      ],
+      "Migration status": [
+        "Siirron tila"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisaatiolla ei ole tarpeeksi paikkoja saatavilla"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisaatiolla ei ole tarpeeksi tallennustilaa"
+      ],
+      "Status": [
+        "Tila"
+      ],
+      "User": [
+        "Käyttäjä"
+      ],
+      "What are you migrating?": [
+        "Mitä olet siirtämässä?"
       ]
     }
   }

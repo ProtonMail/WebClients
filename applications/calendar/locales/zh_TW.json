@@ -1009,6 +1009,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Get the deal": [
+        "取得優惠"
       ]
     },
     "action": {
@@ -3993,6 +3996,24 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "您 Zoom 連接階段已逾期，請重新連接以繼續。"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "所有儲存空間已被分配。請減少分配給其他使用者的儲存空間。"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "您需要先設定好自訂網域才能新增電子郵件。"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "請先設置一個自訂網域，然後才加入使用者到您的組織。"
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "請先啟用多使用者支援，然後才加入使用者到您的組織。"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "請升級至選用多於 1 位使用者的企業方案，以便管理多位使用者。"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "您已使用您的方案中所有使用者。請升級您的方案以加入使用者。"
       ]
     },
     "error": {
@@ -6355,6 +6376,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍可瀏覽您的帳號資料，但所有使用者帳號將被從貴組織移除。"
+      ],
+      "${ total } user found": [
+        "找到 ${ total } 位使用者"
       ]
     },
     "info": {
@@ -9523,6 +9547,9 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Search": [
+        "搜尋"
       ]
     },
     "Placeholder for contact group name": {
@@ -12456,6 +12483,17 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "BOSS": {
+      "Member address not found. Please contact customer support to resolve this": [
+        "未發現成員的位址。請聯繫客戶支援服務以協助解決問題。"
+      ],
+      "Missing organization private key": [
+        "缺少組織私有密鑰"
+      ],
+      "Missing organization public key": [
+        "缺少組織公用密鑰"
       ]
     }
   }

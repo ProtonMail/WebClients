@@ -941,6 +941,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Az asztali alkalmazás ingyenes kipróbálásának vége: ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Get the deal": [
+        "Érdekel az ajánlat"
       ]
     },
     "action": {
@@ -3695,6 +3698,24 @@
       ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Minden tárhely terület kiosztásra került. Kérjük csökkentse más felhasználók tárhelyét."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Címek létrehozása előtt, állítson be egy saját domain nevet."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Vegyen fel egy saját domain nevet, mielőtt felhasználókat venne fel a szervezethez."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Engedélyezze a többfelhasználós módot, mielőtt felhasználókat venne fel a szervezethez."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Váltson egy üzleti csomagra, egynél több felhasználval, hogy több felhasználót kezelhessen."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Valamennyi, az előfizetéséhez rendelkezésére álló felhasználót elhasználta. Több felhasználó létrehozásához váltson nagyobb csomagra."
       ]
     },
     "error": {
@@ -8910,6 +8931,9 @@
       ],
       "ZIP code": [
         "Irányítószám"
+      ],
+      "Search": [
+        "Keresés"
       ]
     },
     "Placeholder for contact group name": {

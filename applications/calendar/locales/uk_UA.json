@@ -838,6 +838,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Безплатний пробний період програми для комп'ютера завершується ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Get the deal": [
+        "Скористатися пропозицією"
       ]
     },
     "action": {
@@ -3397,6 +3400,24 @@
       ],
       "Your import will not be processed.": [
         "Ваш імпорт не буде оброблений."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Увесь обсяг сховища розподілено. Зменште простір, наданий іншим користувачам."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Налаштуйте власний домен, щоб мати можливість додавати адреси."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Налаштуйте власний домен, перш ніж додавати користувачів до вашої організації."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Будь ласка, увімкніть підтримку декількох користувачів, перш ніж додавати користувачів до вашої організації."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Для керування декількома користувачами, перейдіть на тарифний план для бізнесу."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Ви вже використали усіх користувачів у своєму тарифному плані. Щоб додати нового користувача, необхідно покращити тарифний план."
       ]
     },
     "Error accepting calendar invitation": {
@@ -8159,6 +8180,9 @@
       ],
       "ZIP code": [
         "Поштовий індекс"
+      ],
+      "Search": [
+        "Пошук"
       ]
     },
     "Placeholder for contact group name": {

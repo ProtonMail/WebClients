@@ -1034,6 +1034,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "De gratis proefperiode van uw desktop programma loopt af op ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Get the deal": [
+        "Pak deze deal"
       ]
     },
     "action": {
@@ -4128,6 +4131,27 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Uw Zoom-verbinding is verlopen. Verbind opnieuw om door te gaan."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Alle opslagruimte is reeds toegewezen. Beperk de toegewezen opslagruimte van andere gebruikers."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configureer eerst een eigen domein voordat u adressen toevoegt."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Configureer een eigen domein om gebruikers aan uw organisatie toe te voegen."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Activeer multi-user ondersteuning voordat u gebruikers toevoegt aan uw organisatie."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Upgrade naar een zakelijk abonnement met meer dan 1 gebruiker om meerdere gebruikers te beheren."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "U heeft alle adressen in uw abonnement gebruikt. Upgrade uw abonnement om een nieuw adres toe te voegen of schakel een adres in uw account uit."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "U heeft het maximale aantal gebruikers bereikt dat uw huidige abonnement toestaat. Upgrade uw abonnement om een nieuwe gebruiker toe te voegen."
       ]
     },
     "error": {
@@ -6642,6 +6666,10 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "U heeft de limiet voor boekingen bereikt (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ total } user found": [
+        "${ total } gebruiker gevonden",
+        "${ total } gebruikers gevonden"
       ]
     },
     "info": {
@@ -9988,6 +10016,12 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Search": [
+        "Zoeken"
+      ],
+      "Search for users or addresses": [
+        "Naar gebruikers of adressen zoeken"
       ]
     },
     "Placeholder for contact group name": {
@@ -12551,6 +12585,9 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "Summer Sale": [
+        "Zomeruitverkoop"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13133,6 +13170,83 @@
       ],
       "Passcode:": [
         "Toegangscode:"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Geactiveerd"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Calendar": [
+        "Agenda"
+      ],
+      "Configure migration": [
+        "Migratie configureren"
+      ],
+      "Contacts": [
+        "Contacten"
+      ],
+      "Emails": [
+        "E-mails"
+      ],
+      "Estimated size": [
+        "Geschatte grootte."
+      ],
+      "Has errors": [
+        "Bevat fouten"
+      ],
+      "In progress": [
+        "Bezig"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Lidadres niet gevonden. Neem contact op met de klantenservice om dit op te lossen"
+      ],
+      "Migrated": [
+        "Gemigreerd"
+      ],
+      "Migration status": [
+        "Migratiestatus"
+      ],
+      "Missing organization private key": [
+        "Ontbrekende privésleutel van de organisatie"
+      ],
+      "Missing organization public key": [
+        "Ontbrekende openbare sleutel van de organisatie"
+      ],
+      "No users to display": [
+        "Geen gebruikers om weer te geven"
+      ],
+      "Not activated": [
+        "Niet geactiveerd"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisatie heeft onvoldoende licenties beschikbaar"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisatie heeft onvoldoende opslagruimte beschikbaar"
+      ],
+      "Pending": [
+        "In behandeling"
+      ],
+      "Select users to migrate": [
+        "Selecteer gebruikers om te migreren"
+      ],
+      "Size": [
+        "Grootte"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Gebruiker"
+      ],
+      "What are you migrating?": [
+        "Wat migreert u?"
+      ],
+      "You": [
+        "U"
       ]
     }
   }

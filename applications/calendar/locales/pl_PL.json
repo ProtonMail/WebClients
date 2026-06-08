@@ -937,6 +937,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Darmowa wersja próbna aplikacji desktopowej zakończy się ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Get the deal": [
+        "Skorzystaj z oferty"
       ]
     },
     "action": {
@@ -3697,6 +3700,24 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Połączenie z Zoom wygasło. Połącz się ponownie, aby kontynuować."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Cała przestrzeń dyskowa została już przydzielona. Zmniejsz przydział przestrzeni innym użytkownikom."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Ustaw niestandardową domenę przed dodaniem adresów."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Ustaw niestandardową domenę przed dodaniem użytkowników do organizacji."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Przed dodaniem użytkowników do organizacji, włącz obsługę wielu użytkowników."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Ulepsz do planu biznesowego z więcej niż 1 użytkownikiem, aby zarządzać wieloma użytkownikami."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Wykorzystano limit liczby użytkowników w obecnym planie. Ulepsz plan, aby dodać nowego użytkownika."
       ]
     },
     "Error accepting calendar invitation": {
@@ -9067,6 +9088,9 @@
       ],
       "ZIP code": [
         "Kod pocztowy"
+      ],
+      "Search": [
+        "Szukaj"
       ]
     },
     "Placeholder for contact group name": {
@@ -12165,6 +12189,20 @@
       ],
       "Passcode:": [
         "Kod dostępu:"
+      ]
+    },
+    "BOSS": {
+      "Migration status": [
+        "Status migracji"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizacja nie dysponuje wystarczającą ilością dostępnych licencji"
+      ],
+      "Organization does not have enough storage available": [
+        "Organizacja nie ma wystarczającej ilości przestrzeni dyskowej"
+      ],
+      "You": [
+        "Ty"
       ]
     }
   }

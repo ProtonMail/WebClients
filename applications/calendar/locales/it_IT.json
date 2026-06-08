@@ -1022,6 +1022,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La tua prova gratuita dell'applicazione desktop termina ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Get the deal": [
+        "Approfitta dell'offerta"
       ]
     },
     "action": {
@@ -4018,6 +4021,27 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "La tua connessione a Zoom è scaduta. Riconnettiti per continuare."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Tutto lo spazio di archiviazione è stato allocato. Riduci lo spazio assegnato agli altri utenti."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configura un dominio personalizzato prima di aggiungere indirizzi."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Per favore configura un dominio personalizzato prima di aggiungere utenti all'organizzazione."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Abilita il supporto multi-utente prima di aggiungere utenti all'organizzazione."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Effettua l'upgrade a un piano aziendale con più di 1 utente per gestire più utenti."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Hai utilizzato tutti gli indirizzi inclusi nel tuo piano. Effettua l'upgrade del piano per aggiungere un nuovo indirizzo o disattivarne uno dal tuo account."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Hai utilizzato tutti gli utenti del tuo piano. Per favore effettua l'upgrade del tuo piano per aggiungere un nuovo utente."
       ]
     },
     "error": {
@@ -6460,6 +6484,10 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Hai raggiunto il limite di slot di prenotazione (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ total } user found": [
+        "${ total } utente trovato",
+        "${ total } utenti trovati"
       ]
     },
     "info": {
@@ -9680,6 +9708,9 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Search": [
+        "Cerca"
       ]
     },
     "Placeholder for contact group name": {
@@ -12768,6 +12799,35 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Calendario"
+      ],
+      "Configure migration": [
+        "Configura la migrazione"
+      ],
+      "Contacts": [
+        "Contatti"
+      ],
+      "Estimated size": [
+        "Dimensioni Stimate"
+      ],
+      "Migration status": [
+        "Stato della migrazione"
+      ],
+      "Organization does not have enough seats available": [
+        "L'organizzazione non dispone di licenze sufficienti"
+      ],
+      "Organization does not have enough storage available": [
+        "L'organizzazione non dispone di spazio di archiviazione sufficiente"
+      ],
+      "User": [
+        "Utente"
+      ],
+      "What are you migrating?": [
+        "Cosa stai migrando?"
       ]
     }
   }

@@ -1042,6 +1042,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ваш бясплатны пробны перыяд праграмы для камп'ютара завершыцца ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "Даследаваць ${ MEET_SHORT_APP_NAME }"
+      ],
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ],
+      "Verify now": [
+        "Спраўдзіць"
       ]
     },
     "action": {
@@ -3171,7 +3180,7 @@
         "Лёгка сінхранізуйце файлы ў воблака са свайго камп’ютара і атрымлівайце доступ да іх на сваёй мабільнай прыладзе."
       ],
       "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
-        "Лісты, якія адпраўленыя на ${ connectedAddressText }, цяпер будуць паказвацца ў ${ MAIL_APP_NAME }."
+        "Лісты, якія адпраўлены на ${ connectedAddressText }, цяпер будуць паказвацца ў ${ MAIL_APP_NAME }."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Заахвочвайце выкарыстанне двухфактарнай аўтэнтыфікацыі ў сваёй арганізацыі для дадатковай бяспекі."
@@ -3298,6 +3307,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Для лёгкага пераходу вашай каманды ў ${ BRAND_NAME }, імпартуйце свае даныя з Google, Outlook і іншых сэрвісаў."
       ]
     },
     "description": {
@@ -4208,6 +4220,33 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Ваша падключэнне па Zoom пратэрмінавана. Перападключыцеся, каб працягнуць."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Уся прастора сховішча была размеркавана. Паменшыце сховішча, якое вы вылучылі іншым карыстальнікам."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Праверце, ці зарэгістраваны ваш ABN для трансгранічнага ПДВ"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Перад дадаваннем адрасоў неабходна сканфігураваць карыстальніцкі дамен."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Cканфігурыруйце свой карыстальніцкі дамен перад тым, як дадаваць карыстальнікаў у вашу арганізацыю."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Уключыце падтрымку шматкарыстальніцкага рэжыму перад тым, як дадаць карыстальнікаў да вашай арганізацыі."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Перайдзіце на тарыфны план для бізнесу з больш чым 1 карыстальнікам, каб атрымаць падтрымку шматкарыстальніцкага рэжыму."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Нумар ПДВ павінен пачынацца з ${ prefixes }"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Вы выкарысталі ўсе адрасы на сваім тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новыя адрасы або адключыце адрас у сваім уліковым запісе."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Вы дасягнулі максімальнай колькасці карыстальнікаў на вашым тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новага карыстальніка."
       ]
     },
     "error": {
@@ -6824,6 +6863,36 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Вы дасягнулі абмежавання па прамежках браніравання (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ total } user found": [
+        "Знойдзены ${ total } карыстальнік",
+        "Знойдзена ${ total } карыстальнікі",
+        "Знойдзена ${ total } карыстальнікаў",
+        "Знойдзена ${ total } карыстальнікаў"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Запрашайце сваіх сяброў** у ${ BRAND_NAME } са сваёй рэферальнай спасылкай."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Яны атрымаюць ${ refereeRewardAmount }** у крэдытах, калі падпішуцца."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Вы атрымаеце ${ referrerRewardAmount }** у крэдытах за кожнага сябра, які падпішацца."
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Вы памятаеце свой пароль? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "Забылі пароль?"
+      ],
+      "Password verified": [
+        "Пароль спраўджаны"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Сістэма перыядычна будзе прасіць вас увесці пароль, каб вы не забылі яго. З цягам часу колькасць такіх запытаў будзе скарачацца."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Сістэма нагадае вам спраўдзіць пароль пазней яшчэ раз"
       ]
     },
     "info": {
@@ -7001,6 +7070,9 @@
       ],
       "View options": [
         "Параметры прагляду"
+      ],
+      "Desktop app navigation": [
+        "Праграма навігацыі для камп'ютара"
       ]
     },
     "Knowledge base link label": {
@@ -10334,6 +10406,12 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Search": [
+        "Пошук"
+      ],
+      "Search for users or addresses": [
+        "Пошук карыстальнікаў або адрасоў"
       ]
     },
     "Placeholder for contact group name": {
@@ -12913,6 +12991,15 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Перанесці вашу арганізацыю ў ${ BRAND_NAME }"
+      ],
+      "Summer Sale": [
+        "Летні распродаж"
+      ],
+      "Verify your password": [
+        "Спраўджанне вашага пароля"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13583,6 +13670,114 @@
       ],
       "Passcode:": [
         "Код доступу:"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Актывавана"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Адрас ужо выкарыстоўваецца карыстальнікам з іншай арганізацыі. Звярніцеся ў службу падтрымкі кліентаў для вырашэння гэтай праблемы"
+      ],
+      "All": [
+        "Усе"
+      ],
+      "Calendar": [
+        "Каляндар"
+      ],
+      "Configure migration": [
+        "Сканфігурыраваць перанос"
+      ],
+      "Contacts": [
+        "Кантакты"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Статус пераносу даных з Google Workspace у ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Лісты"
+      ],
+      "Errors": [
+        "Памылкі"
+      ],
+      "Estimated size": [
+        "Прыблізны памер"
+      ],
+      "Find out what can be migrated.": [
+        "Даведайцеся, што перанесена."
+      ],
+      "Has errors": [
+        "З памылкамі"
+      ],
+      "In progress": [
+        "Выконваецца"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Адрас удзельніка не знойдзены. Звяжыцеся з нашай службай падтрымкі кліентаў, каб вырашыць гэта"
+      ],
+      "Migrate": [
+        "Перанос"
+      ],
+      "Migrated": [
+        "Перанесена"
+      ],
+      "Migration status": [
+        "Статус пераносу"
+      ],
+      "Missing organization private key": [
+        "Адсутнічае закрыты ключ арганізацыі"
+      ],
+      "Missing organization public key": [
+        "Адсутнічае адкрыты ключ арганізацыі"
+      ],
+      "No users to display": [
+        "Няма карыстальнікаў для адлюстравання"
+      ],
+      "Not activated": [
+        "Не актываваны"
+      ],
+      "Organization does not have enough seats available": [
+        "У арганізацыі недастаткова даступных ліцэнзій"
+      ],
+      "Organization does not have enough storage available": [
+        "У арганізацыі недастаткова даступнага месца для захоўвання"
+      ],
+      "Pending": [
+        "У чаканні"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Выберыце толькі тое, што хочаце перанесці. Гэта будзе прыменена да ўсіх карыстальнікаў арганізацыі."
+      ],
+      "Select users to migrate": [
+        "Выберыце карыстальнікаў для пераносу"
+      ],
+      "Size": [
+        "Памер"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "User": [
+        "Карыстальнік"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Карыстальнікі, якія маюць доступ да сваіх уліковых запісаў ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Што вы плануеце перанесці?"
+      ],
+      "You": [
+        "Вы"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Пераключыцца на ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Пераключыцца на ${ MAIL_APP_NAME }"
       ]
     }
   }

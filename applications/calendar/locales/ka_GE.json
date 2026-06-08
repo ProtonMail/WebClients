@@ -1022,6 +1022,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსიის დასრულების დროა ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Get the deal": [
+        "ფასდაკლების მიღება"
+      ],
+      "Verify now": [
+        "ახლა გადამოწმება"
       ]
     },
     "action": {
@@ -3311,6 +3317,9 @@
       ],
       "90m": [
         "90წთ"
+      ],
+      "15 minutes": [
+        "15 წუთი"
       ]
     },
     "Edit event button tooltip": {
@@ -3981,6 +3990,24 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "თქვენი Zoom-ის კავშირის ვადა ამოიწურა. გასაგრძელებლად, დაუკავშირდით თავიდან."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "შესაძლო სივრცე მთლიანად გაცემულია. შეამცირეთ სხვა მომხმარებლების მიერ მოხმარებული ადგილის რაოდენობა."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "მისამართების დამატებმდე თქვენი დომენის მორგება აუცილებელია."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "თქვენს ორგანიზაციაში მომხმარებლების ჩამატებამდე თქვენი დომენის მორგებაა საჭირო."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "მომხმარებლების ორგანიზაციაში ჩამატებამდე მრავალმომხმარებლიანი რეჟიმის ჩართვაა საჭირო."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "ბევრი მომხმარებლის სამართავად შეიძინეთ სატარიფო გეგმა, რომელიც 1-ზე მეტ მომხმარებელს შეიცავს."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "იყენებთ თქვენს სატარიფო გეგმაში შემავალ ყველა მომხმარებელს. ახალი მომხმარებლის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
       ]
     },
     "error": {
@@ -4427,6 +4454,9 @@
       ],
       "Unlimited hide-my-email aliases": [
         "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
+      ],
+      "Storage": [
+        "საცავი"
       ]
     },
     "Features": {
@@ -6329,6 +6359,19 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "თქვენ მიაღწიეთ დაჯავშნის სლოტების ლიმიტს (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ total } user found": [
+        "აღმოჩენილია ${ total } მომხმარებელი",
+        "აღმოჩენილია ${ total } მომხმარებელი"
+      ],
+      "Enter code": [
+        "შეიყვანეთ კოდი"
+      ],
+      "Included": [
+        "შეიცავს"
+      ],
+      "RECOMMENDED": [
+        "რეკომენდებულია"
       ]
     },
     "info": {
@@ -6452,6 +6495,9 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Fallback": [
+        "სარეზერვო ვარიანტი"
       ]
     },
     "Keyboard shortcut name": {
@@ -9505,6 +9551,9 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Search": [
+        "ძებნა"
       ]
     },
     "Placeholder for contact group name": {
@@ -11896,6 +11945,9 @@
       ],
       "Your shorter address is now ready": [
         "თქვენი მოკლე მისამართი ახლა მზადაა"
+      ],
+      "Summer Sale": [
+        "საზაფხულო ფასდაკლება"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12472,6 +12524,71 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "აქტიურია"
+      ],
+      "All": [
+        "ყველა"
+      ],
+      "Calendar": [
+        "კალენდარი"
+      ],
+      "Configure migration": [
+        "მიგრაციის მორგება"
+      ],
+      "Contacts": [
+        "კონტაქტები"
+      ],
+      "Emails": [
+        "ელფოსტები"
+      ],
+      "Errors": [
+        "შეცდომები"
+      ],
+      "Estimated size": [
+        "სავარაუდო ზომა"
+      ],
+      "Has errors": [
+        "აქვს შეცდომები"
+      ],
+      "In progress": [
+        "მიმდინარეობს"
+      ],
+      "Migrate": [
+        "მიგრაცია"
+      ],
+      "Migrated": [
+        "მიგრირებულია"
+      ],
+      "Migration status": [
+        "მიგრაციის სტატუსი"
+      ],
+      "Organization does not have enough seats available": [
+        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
+      ],
+      "Organization does not have enough storage available": [
+        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
+      ],
+      "Pending": [
+        "რიგში"
+      ],
+      "Size": [
+        "ზომა"
+      ],
+      "Status": [
+        "სტატუსი"
+      ],
+      "User": [
+        "მომხმარებელი"
+      ],
+      "What are you migrating?": [
+        "რის მიგრაციას ახდენთ?"
+      ],
+      "You": [
+        "თქვენ"
       ]
     }
   }

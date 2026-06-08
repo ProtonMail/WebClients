@@ -765,6 +765,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "आपका डेस्कटॉप ऐप मुफ्त ट्रायल ${ formattedEndDate } को समाप्त होता है ${ upgradeButton }"
+      ],
+      "Get the deal": [
+        "सौदा लें"
       ]
     },
     "action": {
@@ -2953,6 +2956,24 @@
       ],
       "Your import will not be processed.": [
         "आपका आयात संसाधित नहीं किया जाएगा।"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "सभी भंडारण स्थान आवंटित किया गया है। कृपया अन्य उपयोगकर्ताओं को आवंटित संग्रहण कम करें।"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "कृपया पता जोड़ने से पहले एक कस्टम डोमेन कॉन्फ़िगर करें।"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "अपने संगठन में उपयोगकर्ताओं को जोड़ने से पहले कृपया एक कस्टम डोमेन कॉन्फ़िगर करें।"
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "कृपया अपने संगठन में उपयोगकर्ताओं को जोड़ने से पहले बहु-उपयोगकर्ता समर्थन सक्षम करें।"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "कई-यूज़र संभालने के लिए कृपया 1 से ज़्यादा यूज़र वाले बिज़नेस प्लान पे अपग्रेड करें।"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "आपने अपनी योजना में सभी उपयोगकर्ताओं का उपयोग किया है। कृपया एक नया उपयोगकर्ता जोड़ने के लिए अपनी योजना को अपग्रेड करें।"
       ]
     },
     "Error accepting calendar invitation": {
@@ -7015,6 +7036,9 @@
       ],
       "ZIP code": [
         "ज़िप कोड"
+      ],
+      "Search": [
+        "खोजें"
       ]
     },
     "Placeholder for contact group name": {
