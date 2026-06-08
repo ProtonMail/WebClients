@@ -14,9 +14,11 @@ import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCirc
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import clsx from '@proton/utils/clsx';
 
+import { useRecoveryScoreBannerVariant } from '../useRecoveryScoreBannerVariant';
 import SecureAccountButton from './SecureAccountButton';
 import { getRecoveryScoreItemCopy } from './recoveryScoreCopy';
-import { SCORE_TONE_CLASS, getRecoveryScoreTone } from './recoveryScoreState';
+import * as recoveryScoreState from './recoveryScoreState';
+import * as recoveryScoreStateV2 from './recoveryScoreStateV2';
 
 type RecoveryScoreModalItem = {
     id: RecoveryItemIds;
@@ -24,6 +26,10 @@ type RecoveryScoreModalItem = {
 };
 
 const RecoveryScoreModal = ({ onClose, ...rest }: ModalProps) => {
+    const scoreBannerVariant = useRecoveryScoreBannerVariant();
+    const { SCORE_TONE_CLASS, getRecoveryScoreTone } =
+        scoreBannerVariant === 'B2' ? recoveryScoreStateV2 : recoveryScoreState;
+
     const {
         recoveryScore: { score, maxScore },
         recoveryItems,
@@ -124,7 +130,14 @@ const RecoveryScoreModal = ({ onClose, ...rest }: ModalProps) => {
 
             <ModalFooter>
                 {score < maxScore ? (
-                    <SecureAccountButton fullWidth onClick={onClose} scoreTone={scoreTone} />
+                    <SecureAccountButton
+                        fullWidth
+                        onClick={onClose}
+                        scoreTone={scoreTone}
+                        label={
+                            scoreBannerVariant === 'B2' ? recoveryScoreStateV2.getRecoveryScoreCta(score) : undefined
+                        }
+                    />
                 ) : (
                     <Button fullWidth onClick={onClose} color="weak" shape="outline">
                         {c('Action').t`Close`}
