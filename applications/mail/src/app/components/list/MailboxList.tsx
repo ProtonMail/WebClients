@@ -6,7 +6,7 @@ import { useLabels } from '@proton/mail/store/labels/hooks';
 
 import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
 import type { MailboxActions } from 'proton-mail/router/interface';
-import { selectElementID, selectParams } from 'proton-mail/store/elements/elementsSelectors';
+import { selectElementID, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 
 import { pageFromUrl } from '../../helpers/mailboxUrl';
 import { useMailboxLayoutProvider } from '../../router/components/MailboxLayoutContext';
@@ -50,7 +50,7 @@ export default function MailboxList({
     const [labels = []] = useLabels();
     const location = useLocation();
     const elementID = useMailSelector(selectElementID);
-    const { labelID } = useMailSelector(selectParams);
+    const labelID = useMailSelector(selectLabelID);
     const { total, loading, placeholderCount } = elementsData;
     const {
         handleElement,

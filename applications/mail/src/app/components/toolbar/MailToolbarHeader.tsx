@@ -16,9 +16,9 @@ import type { MailboxActions } from 'proton-mail/router/interface';
 import {
     selectConversationMode,
     selectElementID,
+    selectIsSearching,
     selectLabelID,
     selectMessageID,
-    selectisSearching,
 } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
@@ -48,7 +48,7 @@ export const MailToolbarHeader = ({ elementsData, actions }: Props) => {
     const elementID = useMailSelector(selectElementID);
     const messageID = useMailSelector(selectMessageID);
     const conversationMode = useMailSelector(selectConversationMode);
-    const isSearching = useMailSelector(selectisSearching);
+    const isSearching = useMailSelector(selectIsSearching);
 
     const { selectAll: isSelectAll } = useSelectAll({ labelID });
     const { labelDropdownToggleRef, moveDropdownToggleRef, isColumnModeActive } = useMailboxLayoutProvider();

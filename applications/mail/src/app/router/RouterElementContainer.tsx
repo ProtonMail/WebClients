@@ -7,7 +7,7 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import ConversationView from 'proton-mail/components/conversation/ConversationView';
 import MessageOnlyView from 'proton-mail/components/message/MessageOnlyView';
 import { selectComposersCount } from 'proton-mail/store/composers/composerSelectors';
-import { selectElementID, selectParams } from 'proton-mail/store/elements/elementsSelectors';
+import { selectElementID, selectLabelID, selectMessageID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useMailboxLayoutProvider } from './components/MailboxLayoutContext';
@@ -21,7 +21,8 @@ interface Props {
 
 export const RouterElementContainer = ({ navigation, actions }: Props) => {
     const elementID = useMailSelector(selectElementID);
-    const { labelID, messageID } = useMailSelector(selectParams);
+    const labelID = useMailSelector(selectLabelID);
+    const messageID = useMailSelector(selectMessageID);
     const { handleBack } = navigation;
     const { checkedIDs, onMessageReady } = actions;
 

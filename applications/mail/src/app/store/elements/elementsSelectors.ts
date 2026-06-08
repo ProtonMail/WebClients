@@ -40,7 +40,7 @@ export const selectSort = createSelector([selectParams], (params) => params.sort
 export const selectFilter = createSelector([selectParams], (params) => params.filter);
 export const selectSearch = createSelector([selectParams], (params) => params.search);
 export const selectESEnabled = createSelector([selectParams], (params) => params.esEnabled);
-export const selectisSearching = createSelector([selectParams], (params) => params.isSearching);
+export const selectIsSearching = createSelector([selectParams], (params) => params.isSearching);
 export const selectNewsletterSubscriptionID = createSelector(
     [selectParams],
     (params) => params.newsletterSubscriptionID
@@ -55,7 +55,7 @@ export const selectCategoryIDs = createSelector([selectParams], (params): Catego
 const beforeFirstLoad = (state: MailState) => state.elements.beforeFirstLoad;
 export const elementsMap = (state: MailState) => state.elements.elements;
 export const selectPage = (state: MailState) => state.elements.page;
-export const pageSize = (state: MailSettingState) => state.mailSettings.value?.PageSize || MAIL_PAGE_SIZE.FIFTY;
+export const selectPageSize = (state: MailSettingState) => state.mailSettings.value?.PageSize || MAIL_PAGE_SIZE.FIFTY;
 const pages = (state: MailState) => state.elements.pages;
 const bypassFilter = (state: MailState) => state.elements.bypassFilter;
 export const pendingRequest = (state: MailState) => state.elements.pendingRequest;
@@ -143,7 +143,7 @@ export const contextTotal = createSelector([selectParams, total], (params, total
 });
 
 export const elements = createSelector(
-    [elementsMap, selectParams, selectPage, pageSize, contextPages, bypassFilter, addresses],
+    [elementsMap, selectParams, selectPage, selectPageSize, contextPages, bypassFilter, addresses],
     (elements, params, page, pageSize, pages, bypassFilter, addresses) => {
         // Getting all params from the cache and not from scoped params
         // To prevent any de-synchronization between cache and the output of the memo
@@ -216,7 +216,7 @@ export const expiringElements = createSelector([selectParams, elements], (params
  * It doesn't rely at all on the optimistic counter logic
  */
 export const needsMoreElements = createSelector(
-    [contextTotal, selectPage, pageSize, elementsLength, selectParams],
+    [contextTotal, selectPage, selectPageSize, elementsLength, selectParams],
     (total, page, pageSize, elementsLength, params) => {
         // There are no elements for newsletter subscriptions if there is no newsletter subscription ID
         if (params.labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS && !params.newsletterSubscriptionID) {
@@ -367,7 +367,7 @@ export const dynamicTotal = createSelector(
  * Modify this selector to add other custom views only if we have the expected length of elements to load.
  */
 export const customViewDynamicPageLength = createSelector(
-    [selectParams, pageSize, selectedSubscriptionSelector],
+    [selectParams, selectPageSize, selectedSubscriptionSelector],
     (params, pageSize, selectedSubscription) => {
         switch (params.labelID) {
             case CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS:
@@ -384,7 +384,7 @@ export const customViewDynamicPageLength = createSelector(
  * Has to be used only for non-sensitive behaviors
  */
 export const dynamicPageLength = createSelector(
-    [selectPage, pageSize, dynamicTotal, selectParams, bypassFilter, customViewDynamicPageLength],
+    [selectPage, selectPageSize, dynamicTotal, selectParams, bypassFilter, customViewDynamicPageLength],
     (page, pageSize, dynamicTotal, params, bypassFilter, customViewLength) => {
         if (customViewLength !== undefined) {
             return customViewLength;
@@ -397,7 +397,7 @@ export const dynamicPageLength = createSelector(
 );
 
 export const placeholderCount = createSelector(
-    [selectPage, pageSize, contextTotal, selectParams, dynamicPageLength, bypassFilter],
+    [selectPage, selectPageSize, contextTotal, selectParams, dynamicPageLength, bypassFilter],
     (page, pageSize, total, params, dynamicPageLength, bypassFilter) => {
         if (dynamicPageLength !== undefined) {
             return dynamicPageLength;
