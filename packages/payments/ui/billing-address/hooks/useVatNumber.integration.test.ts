@@ -2,7 +2,7 @@ import { act } from 'react';
 
 import { renderHook } from '@testing-library/react';
 
-import { getStoreWrapper } from '@proton/testing/index';
+import { getStoreWrapper } from '@proton/testing/lib/context/renderWithProviders';
 
 import { PLANS } from '../../../core/constants';
 import type { PaymentsApi } from '../../../core/interface';

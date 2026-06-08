@@ -1,4 +1,5 @@
-import { buildSubscription, buildUser } from '@proton/testing/builders';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildUser } from '@proton/testing/builders/user';
 
 import { ADDON_NAMES, COUPON_CODES, CYCLE, FREE_SUBSCRIPTION, PLANS, PLAN_NAMES } from '../constants';
 import type { PlanIDs } from '../interface';

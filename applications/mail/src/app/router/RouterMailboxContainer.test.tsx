@@ -2,7 +2,7 @@ import { getModelState } from '@proton/account/test';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { RetentionRule } from '@proton/shared/lib/interfaces/RetentionRule';
-import { buildUser } from '@proton/testing/builders';
+import { buildUser } from '@proton/testing/builders/user';
 
 import { mailTestRender } from '../helpers/test/helper';
 import { newElementsState } from '../store/elements/elementsSlice';

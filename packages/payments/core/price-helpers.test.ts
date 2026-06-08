@@ -1,4 +1,4 @@
-import { PLANS_MAP } from '@proton/testing/data';
+import { PLANS_MAP } from '@proton/testing/data/payments/data-plans';
 
 import { ADDON_NAMES, CYCLE, PLANS } from './constants';
 import type { Plan } from './plan/interface';

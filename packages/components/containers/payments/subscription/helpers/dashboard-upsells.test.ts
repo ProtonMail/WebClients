@@ -8,8 +8,9 @@ import {
     getPlansMap,
 } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { buildSubscription, buildUser } from '@proton/testing/builders';
-import { getTestPlans } from '@proton/testing/data';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildUser } from '@proton/testing/builders/user';
+import { getTestPlans } from '@proton/testing/data/payments/data-plans';
 
 import {
     bundle2024Upsell,

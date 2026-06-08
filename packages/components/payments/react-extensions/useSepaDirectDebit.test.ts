@@ -8,7 +8,7 @@ import {
     PAYMENT_METHOD_TYPES,
     PLANS,
 } from '@proton/payments';
-import { apiMock } from '@proton/testing/index';
+import { apiMock } from '@proton/testing/lib/api';
 
 import { getMockedIframeHandles, mockPostV5Token } from './__mocks__/mock-helpers';
 import { type Dependencies, SepaEmailNotProvidedError, useSepaDirectDebit } from './useSepaDirectDebit';

@@ -5,7 +5,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import type { QRCode } from 'jsqr';
 
 import { WasmNetwork } from '@proton/andromeda';
-import { mockUseAddresses } from '@proton/testing/lib/vitest';
+import { mockUseAddresses } from '@proton/testing/lib/vitest/mockUseAddresses';
 
 import { useEmailOrBitcoinAddressInput } from './useEmailOrBitcoinAddressInput';
 

@@ -1,6 +1,6 @@
 import { CYCLE, PLANS, type Plan } from '@proton/payments';
-import { buildSubscription } from '@proton/testing/builders';
-import { getTestPlans } from '@proton/testing/data';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { getTestPlans } from '@proton/testing/data/payments/data-plans';
 
 import { getUpsellAmountAndSavings } from './getUpsellAmountAndSavings';
 

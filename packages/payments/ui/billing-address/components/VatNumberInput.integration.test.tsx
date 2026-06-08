@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 
-import { renderWithProviders } from '@proton/testing/index';
+import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
 import { PLANS } from '../../../core/constants';
 import type { PaymentsApi } from '../../../core/interface';

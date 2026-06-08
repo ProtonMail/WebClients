@@ -1,7 +1,7 @@
 import * as useUserModule from '@proton/account/user/hooks';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
-import { buildUser } from '../builders';
+import { buildUser } from '../builders/user';
 
 jest.mock('@proton/account/user/hooks', () => ({
     __esModule: true,

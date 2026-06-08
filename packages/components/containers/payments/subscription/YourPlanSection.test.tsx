@@ -12,9 +12,9 @@ import useConfig from '@proton/components/hooks/useConfig';
 import { useFeature } from '@proton/features';
 import { CYCLE, PLANS } from '@proton/payments';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import { getLongTestPlans } from '@proton/testing/data/payments/data-plans';
+import { applyHOCs } from '@proton/testing/lib/context/hocs';
 import {
-    applyHOCs,
-    renderWithProviders,
     withApi,
     withAuthentication,
     withCache,
@@ -23,8 +23,8 @@ import {
     withMemoryRouter,
     withNotifications,
     withReduxStore,
-} from '@proton/testing';
-import { getLongTestPlans } from '@proton/testing/data';
+} from '@proton/testing/lib/context/providers';
+import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 import { mockUseFlag } from '@proton/testing/lib/mockUseFlag';
 
 import YourPlanSection from './YourPlanSection';

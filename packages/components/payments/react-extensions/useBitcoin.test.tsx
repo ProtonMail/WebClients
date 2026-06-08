@@ -5,7 +5,8 @@ import type { AmountAndCurrency } from '@proton/payments';
 import { PAYMENT_TOKEN_STATUS } from '@proton/payments';
 import { getMaxBitcoinAmount } from '@proton/payments/core/amount-limits';
 import { type PaymentsVersion, createTokenV4, getTokenStatusV4 } from '@proton/payments/core/api/api';
-import { addApiMock, addApiResolver, apiMock, flushPromises } from '@proton/testing';
+import { addApiMock, addApiResolver, apiMock } from '@proton/testing/lib/api';
+import { flushPromises } from '@proton/testing/lib/flush-promises';
 
 import useBitcoin, { BITCOIN_POLLING_INTERVAL } from './useBitcoin';
 

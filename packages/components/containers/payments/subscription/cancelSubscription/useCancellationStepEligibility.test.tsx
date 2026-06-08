@@ -5,7 +5,7 @@ import { componentsHookRenderer } from '@proton/components/containers/contacts/t
 import useApi from '@proton/components/hooks/useApi';
 import { CYCLE, PLANS } from '@proton/payments';
 import { PRODUCT_BIT } from '@proton/shared/lib/constants';
-import { buildSubscription } from '@proton/testing/builders';
+import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import { useCancellationStepEligibility } from './useCancellationStepEligibility';
 
