@@ -1170,12 +1170,12 @@ const SubscriptionContainerInner = ({
                                 const selectedPlanIDs = optimisticPlanIDs ?? model.planIDs;
 
                                 const {
-                                    noAddonVariant,
-                                    displayLumoOnly,
-                                    displayMeetOnly,
-                                    displayPassAsFakeAddonOnly,
+                                    displayLumo,
+                                    displayMeet,
+                                    displayPassAsFakeAddon,
                                     isVPNPass2023,
                                     overrideAddonsBehaviour,
+                                    canDisplayAddonCustomizer,
                                 } = vpn2024AddonsExperiment;
 
                                 return (
@@ -1185,32 +1185,30 @@ const SubscriptionContainerInner = ({
                                                 ? couponConfig?.checkoutSubtitle()
                                                 : c('Label').t`Subscription options`}
                                         </h2>
-                                        {!displayPassAsFakeAddonOnly &&
-                                            !noAddonVariant &&
-                                            getHasPlanCustomizer(model.planIDs) && (
-                                                <ProtonPlanCustomizer
-                                                    addonFlags={{
-                                                        scribeAddonEnabled: scribeEnabled.paymentsEnabled,
-                                                        lumoAddonEnabled: overrideAddonsBehaviour
-                                                            ? displayLumoOnly
-                                                            : lumoAddonEnabled,
-                                                        meetAddonEnabled: overrideAddonsBehaviour
-                                                            ? displayMeetOnly
-                                                            : meetAddonEnabled,
-                                                    }}
-                                                    loading={blockAccountSizeSelector}
-                                                    currency={model.currency}
-                                                    cycle={model.cycle}
-                                                    plansMap={plansMapRef.current}
-                                                    selectedPlanIDs={selectedPlanIDs}
-                                                    onChangePlanIDs={handleOptimisticPlanIDs}
-                                                    latestSubscription={latestSubscription}
-                                                    allowedAddonTypes={allowedAddonTypes}
-                                                    className="subscription-container-plan-customizer"
-                                                    telemetryContext={telemetryContext}
-                                                />
-                                            )}
-                                        {displayPassAsFakeAddonOnly && (
+                                        {canDisplayAddonCustomizer && getHasPlanCustomizer(model.planIDs) && (
+                                            <ProtonPlanCustomizer
+                                                addonFlags={{
+                                                    scribeAddonEnabled: scribeEnabled.paymentsEnabled,
+                                                    lumoAddonEnabled: overrideAddonsBehaviour
+                                                        ? displayLumo
+                                                        : lumoAddonEnabled,
+                                                    meetAddonEnabled: overrideAddonsBehaviour
+                                                        ? displayMeet
+                                                        : meetAddonEnabled,
+                                                }}
+                                                loading={blockAccountSizeSelector}
+                                                currency={model.currency}
+                                                cycle={model.cycle}
+                                                plansMap={plansMapRef.current}
+                                                selectedPlanIDs={selectedPlanIDs}
+                                                onChangePlanIDs={handleOptimisticPlanIDs}
+                                                latestSubscription={latestSubscription}
+                                                allowedAddonTypes={allowedAddonTypes}
+                                                className="subscription-container-plan-customizer"
+                                                telemetryContext={telemetryContext}
+                                            />
+                                        )}
+                                        {displayPassAsFakeAddon && (
                                             <div className="subscription-container-plan-customizer">
                                                 <PassFakeAddon
                                                     currency={model.currency}
