@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -19,6 +19,7 @@ import { ModalType } from './inteface';
 
 export const GlobalBYOESpotlightModal = () => {
     const { subscribe } = useMailGlobalModals();
+    const renderOnceRef = useRef(false);
 
     const [modalProps, setOpen, shouldRender] = useModalState();
     const [byoeSpotlightModalProps, setBYOESpotlightModalProps] = useState<BYOESpotlightModalPayload['value'] | null>(
@@ -37,7 +38,8 @@ export const GlobalBYOESpotlightModal = () => {
 
     const onDisplayed = byoeSpotlightModalProps?.onDisplayed;
     useEffect(() => {
-        if (shouldRender) {
+        if (shouldRender && !renderOnceRef.current) {
+            renderOnceRef.current = true;
             onDisplayed?.();
         }
     }, [shouldRender, onDisplayed]);
