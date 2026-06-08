@@ -1293,6 +1293,9 @@
       ],
       "Get the deal": [
         "Skaff deg tilbudet"
+      ],
+      "Verify now": [
+        "Verifiser nå"
       ]
     },
     "Action: Docs": {
@@ -4104,6 +4107,9 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har brukt alle brukerne i planen din. Oppgrader planen din for å legge til en ny bruker."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "MVA-nummeret må starte med ${ prefixes }"
       ]
     },
     "error": {
@@ -7288,6 +7294,12 @@
       "${ total } user found": [
         "${ total } bruker funnet",
         "${ total } brukere funnet"
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "** Du får ${ referrerRewardAmount }** i kreditter for hver venn som abonnerer."
+      ],
+      "Forgot password?": [
+        "Glemt passord?"
       ]
     },
     "info": {

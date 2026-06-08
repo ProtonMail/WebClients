@@ -1296,6 +1296,9 @@
       ],
       "Try ${ BRAND_NAME } Workspace": [
         "Δοκιμάστε το ${ BRAND_NAME } Workspace"
+      ],
+      "Verify now": [
+        "Επαλήθευση τώρα"
       ]
     },
     "Action: Docs": {
@@ -7327,6 +7330,21 @@
       ],
       "One encrypted suite. Full business protection.": [
         "Μία κρυπτογραφημένη σουίτα. Πλήρης προστασία της επιχείρησης."
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Θυμάστε τον κωδικό πρόσβασής σας; ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "Ξεχάσατε τον κωδικό πρόσβασης;"
+      ],
+      "Password verified": [
+        "Ο Κωδικός πρόσβασης επαληθεύτηκε"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Για να σας βοηθήσουμε να θυμάστε τον κωδικό πρόσβασής σας, θα σας ζητάμε να τον εισάγετε περιοδικά. Με την πάροδο του χρόνου, θα σας ζητάμε λιγότερο."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Θα σας υπενθυμίσουμε να επαληθεύσετε ξανά τον κωδικό πρόσβασής σας αργότερα"
       ]
     },
     "info": {
@@ -13667,6 +13685,9 @@
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Μετεγκαταστήσετε τον οργανισμό σας στο ${ BRAND_NAME }"
+      ],
+      "Verify your password": [
+        "Επαληθεύστε τον κωδικό πρόσβασής σας"
       ]
     },
     "Today icon tooltip in mini calendar": {
