@@ -3,6 +3,7 @@ import { type FC, useMemo } from 'react';
 import type { FieldProps } from 'formik';
 
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
+import { isCustomIconFile } from '@proton/pass/lib/file-attachments/custom-icon';
 import { selectItemFilesForRevision } from '@proton/pass/store/selectors/files';
 import type { FileAttachmentValues, FileID, SelectedRevision } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -18,11 +19,17 @@ export const FileAttachmentsFieldEdit: FC<Props> = (props) => {
     const { shareId, itemId, revision, form } = props;
 
     const filesForRevision = useMemoSelector(selectItemFilesForRevision, [shareId, itemId, revision]);
-    const filesCount = filesForRevision.length;
+
+    /** Filter out custom icon files — they are managed by CustomIconField */
+    const regularFiles = useMemo(
+        () => filesForRevision.filter((f) => !isCustomIconFile(f.name)),
+        [filesForRevision]
+    );
+    const filesCount = regularFiles.length;
 
     const files = useMemo(
-        () => filesForRevision.filter(pipe(prop('fileID'), notIn(form.values.files.toRemove))),
-        [filesForRevision, form.values.files.toRemove]
+        () => regularFiles.filter(pipe(prop('fileID'), notIn(form.values.files.toRemove))),
+        [regularFiles, form.values.files.toRemove]
     );
 
     const handleFileDelete = (fileID: FileID) =>
