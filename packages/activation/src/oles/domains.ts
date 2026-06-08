@@ -13,8 +13,8 @@ export const KNOWN_REGISTRARS = new Map<number, { name: string; url?: string }>(
     [146, { name: 'GoDaddy', url: getKnowledgeBaseUrl('/custom-domain-godaddy') }],
     [1659, { name: 'GoDaddy', url: getKnowledgeBaseUrl('/custom-domain-godaddy') }],
     [3786, { name: 'GoDaddy', url: getKnowledgeBaseUrl('/custom-domain-godaddy') }],
-    [895, { name: 'Squarespace' }],
-    [3827, { name: 'Squarespace' }],
+    [895, { name: 'Squarespace', url: getKnowledgeBaseUrl('/custom-domain-squarespace') }],
+    [3827, { name: 'Squarespace', url: getKnowledgeBaseUrl('/custom-domain-squarespace') }],
     [0, { name: 'Other', url: getKnowledgeBaseUrl('/mail/custom-email-domain') }],
 ]);
 
