@@ -61,20 +61,19 @@ export const PhotosWithAlbumsView = () => {
     });
 
     const handleItemRender = useCallback((nodeUid: string, domRef: React.MutableRefObject<unknown>) => {
-        enqueueAdditionalInfo(nodeUid, () => Boolean(domRef.current));
-    }, []);
+        const shouldProcess = () => Boolean(domRef.current);
+        // Decrypt the node and fetch its metadata.
+        enqueueAdditionalInfo(nodeUid, shouldProcess);
 
-    const handleItemRenderLoadedLink = useCallback(
-        (nodeUid: string, activeRevisionUid: string, domRef: React.MutableRefObject<unknown>) => {
-            loadThumbnail(getDriveForPhotos(), {
-                nodeUid: nodeUid,
-                revisionUid: activeRevisionUid,
-                shouldLoad: () => Boolean(domRef.current),
-                thumbnailTypes: ['sd'],
-            });
-        },
-        []
-    );
+        // Load the thumbnail. Photos are single-revision, so we can request it from the
+        // thumbnail loader by nodeUid alone, without waiting for the revisionUid — which
+        // would otherwise mean waiting on the node to be decrypted and its metadata fetched.
+        loadThumbnail(getDriveForPhotos(), {
+            nodeUid: nodeUid,
+            shouldLoad: shouldProcess,
+            thumbnailTypes: ['sd'],
+        });
+    }, []);
 
     // TODO: ALBUMSADDPHOTOS and ALBUMS page types may need their own empty-state logic
     const isPhotosEmpty =
@@ -108,7 +107,6 @@ export const PhotosWithAlbumsView = () => {
                 <PhotosGrid
                     uids={activeUids}
                     onItemRender={handleItemRender}
-                    onItemRenderLoadedLink={handleItemRenderLoadedLink}
                     isLoading={isPhotosLoading}
                     onItemClick={setPreviewNodeUid}
                     onSelectChange={(i, isSelected) =>
