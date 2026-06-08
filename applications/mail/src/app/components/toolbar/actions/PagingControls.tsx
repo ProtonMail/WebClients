@@ -17,7 +17,7 @@ import { TelemetryMailPagingControlsEvents } from '@proton/shared/lib/api/teleme
 
 import { isPageConsecutive } from 'proton-mail/helpers/paging';
 import { PaginationSources, useTelemetryPagingControls } from 'proton-mail/hooks/useTelemetryPagingControls';
-import { contextPages, pageSize as selectPageSize } from 'proton-mail/store/elements/elementsSelectors';
+import { contextPages, selectPageSize } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';

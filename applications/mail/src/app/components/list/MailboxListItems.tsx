@@ -12,6 +12,8 @@ import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/const
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
+import { selectConversationMode, selectIsSearching, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { PLACEHOLDER_ID_PREFIX } from '../../hooks/usePlaceholders';
@@ -57,10 +59,12 @@ const MailboxListItems = ({
         useLoadingElement,
         loadingElement,
         total,
-        labelID = '',
-        conversationMode,
-        isSearch,
     } = useMailboxListContext();
+
+    const labelID = useMailSelector(selectLabelID);
+    const isSearch = useMailSelector(selectIsSearching);
+    const conversationMode = useMailSelector(selectConversationMode);
+
     const { displayState, changeChecklistDisplay, canDisplayChecklist, byoeFlowInProgress } = useGetStartedChecklist();
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     const [mailSettings] = useMailSettings();

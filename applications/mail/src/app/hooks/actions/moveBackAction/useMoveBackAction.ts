@@ -8,7 +8,7 @@ import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { isElementMessage } from 'proton-mail/helpers/elements';
 import { useGetConversation } from 'proton-mail/hooks/conversation/useConversation';
 import { useRouterNavigation } from 'proton-mail/router/hooks/useRouterNavigation';
-import { selectElementID, selectParams } from 'proton-mail/store/elements/elementsSelectors';
+import { selectElementID, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import {
@@ -59,7 +59,7 @@ export const useMoveBackAction = () => {
     const getConversation = useGetConversation();
 
     const elementID = useMailSelector(selectElementID);
-    const { labelID: sourceLabelID } = useMailSelector(selectParams);
+    const sourceLabelID = useMailSelector(selectLabelID);
     const conversationMode = mailSettings.ViewMode === VIEW_MODE.GROUP;
     const navigation = useRouterNavigation({ labelID: sourceLabelID });
 

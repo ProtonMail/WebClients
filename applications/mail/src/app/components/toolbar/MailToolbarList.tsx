@@ -12,7 +12,7 @@ import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
 import type { MailboxActions } from 'proton-mail/router/interface';
-import { selectElementID, selectLabelID, selectisSearching } from 'proton-mail/store/elements/elementsSelectors';
+import { selectElementID, selectIsSearching, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { CategoriesTabs } from '../categoryView/categoriesTabs/CategoriesTabs';
@@ -43,7 +43,7 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
 
     const labelID = useMailSelector(selectLabelID);
     const elementID = useMailSelector(selectElementID);
-    const isSearching = useMailSelector(selectisSearching);
+    const isSearching = useMailSelector(selectIsSearching);
 
     const { selectAll: isSelectAll } = useSelectAll({ labelID });
     const { labelDropdownToggleRef, moveDropdownToggleRef, isColumnModeActive } = useMailboxLayoutProvider();

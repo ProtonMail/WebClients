@@ -14,7 +14,7 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 
 import {
     elementsAreUnread as elementsAreUnreadSelector,
-    selectParams,
+    selectLabelID,
 } from '../../../store/elements/elementsSelectors';
 import { SOURCE_ACTION } from '../../list/list-telemetry/useListTelemetry';
 
@@ -25,7 +25,7 @@ interface Props {
 
 const ReadUnreadButtons = ({ selectedIDs, onMarkAs }: Props) => {
     const [{ Shortcuts }] = useMailSettings();
-    const { labelID } = useMailSelector(selectParams);
+    const labelID = useMailSelector(selectLabelID);
     const { selectAll } = useSelectAll({ labelID });
 
     const elementsAreUnread = useMailSelector(elementsAreUnreadSelector);
