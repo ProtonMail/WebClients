@@ -1290,6 +1290,9 @@
       ],
       "Try ${ BRAND_NAME } Workspace": [
         "${ BRAND_NAME } Workspace ausprobieren"
+      ],
+      "Verify now": [
+        "Jetzt verifizieren"
       ]
     },
     "Action: Docs": {
@@ -7309,6 +7312,21 @@
       ],
       "One encrypted suite. Full business protection.": [
         "Eine verschlüsselte Suite. Umfassender Schutz für Unternehmen."
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Erinnerst du dich an dein Passwort? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "Passwort vergessen?"
+      ],
+      "Password verified": [
+        "Passwort verifiziert"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Damit du dir dein Passwort besser merken kannst, bitten wir dich, es in regelmäßigen Abständen einzugeben. Mit der Zeit wirst du immer seltener dazu aufgefordert."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Wir werden dich später daran erinnern, dein Passwort erneut zu bestätigen"
       ]
     },
     "info": {
@@ -13796,6 +13814,9 @@
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Deine Organisation nach ${ BRAND_NAME } migrieren"
+      ],
+      "Verify your password": [
+        "Passwort bestätigen"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1296,6 +1296,9 @@
       ],
       "Try ${ BRAND_NAME } Workspace": [
         "Pruebe ${ BRAND_NAME } Workspace"
+      ],
+      "Verify now": [
+        "Verificar ahora"
       ]
     },
     "Action: Docs": {
@@ -7327,6 +7330,21 @@
       ],
       "One encrypted suite. Full business protection.": [
         "Un paquete cifrado. Protección empresarial completa."
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "¿Recuerda su contraseña? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "¿Contraseña olvidada?"
+      ],
+      "Password verified": [
+        "Contraseña verificada"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Para ayudarle a recordar su contraseña, le solicitaremos que la ingrese periódicamente. Se reducirá la frecuencia conforme pasa el tiempo."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Le recordaremos nuevamente que verifique su contraseña después"
       ]
     },
     "info": {
@@ -13820,6 +13838,12 @@
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Migre su organización a ${ BRAND_NAME }"
+      ],
+      "Summer Sale": [
+        "Oferta de Verano"
+      ],
+      "Verify your password": [
+        "Verificar contraseña"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14271,6 +14295,21 @@
       ],
       "You": [
         "Usted"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Estado de migración de datos desde Google Workspace a ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Correos electrónicos"
+      ],
+      "Migrate": [
+        "Migrar"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Seleccione exactamente qué desea migrar. Se aplicará a todos los usuarios de la organización."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Usuarios que han accedido a sus cuentas de ${ BRAND_NAME }"
       ]
     }
   }
