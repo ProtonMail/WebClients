@@ -165,7 +165,7 @@ body {
 	font-size: 0.875rem; /* 14 */
 	line-height: 1.5; // Need to be bigger so that we don't have jumps when adding emojis
 	color: black;
-	background: white;
+	background: var(--background-norm);
 
 	// to avoid overscrolling in case of reply to an email with a bg color set on body
 	overscroll-behavior: none;
