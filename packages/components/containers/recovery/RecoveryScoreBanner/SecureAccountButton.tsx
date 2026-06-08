@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
@@ -12,9 +14,10 @@ import { type RecoveryScoreTone, SCORE_TONE_CLASS } from './recoveryScoreState';
 
 interface Props extends Omit<ButtonLikeProps<typeof AppLink>, 'as' | 'to'> {
     scoreTone?: RecoveryScoreTone;
+    label?: ReactNode;
 }
 
-const SecureAccountButton = ({ scoreTone, className, ...restButtonProps }: Props) => {
+const SecureAccountButton = ({ scoreTone, label, className, ...restButtonProps }: Props) => {
     const app = getAppFromPathnameSafe(window.location.pathname);
     const { sendAccountSafetyReviewClick } = useRecoverySettingsTelemetry();
     const securityCheckupParams = new URLSearchParams({
@@ -38,7 +41,7 @@ const SecureAccountButton = ({ scoreTone, className, ...restButtonProps }: Props
             )}
             onClick={() => sendAccountSafetyReviewClick()}
         >
-            {c('Action').t`Secure account`}
+            {label ?? c('Action').t`Secure account`}
         </ButtonLike>
     );
 };
