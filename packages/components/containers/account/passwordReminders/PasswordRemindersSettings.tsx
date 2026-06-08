@@ -9,6 +9,7 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -19,6 +20,7 @@ import ConfirmDisablePasswordRemindersModal from './ConfirmDisablePasswordRemind
 const PasswordRemindersSettings = () => {
     const [userSettings] = useUserSettings();
     const dispatch = useDispatch();
+    const { createNotification } = useNotifications();
     const [loadingPasswordReminders, withLoadingPasswordReminders] = useLoading();
     const [
         confirmDisablePasswordRemindersModal,
@@ -33,6 +35,7 @@ const PasswordRemindersSettings = () => {
 
     const enablePasswordReminders = async () => {
         await dispatch(setPasswordReminderFlag({ value: PASSWORD_REMINDERS_VALUE.ENABLED }));
+        createNotification({ text: c('Success').t`Password reminders enabled` });
     };
 
     const hasPasswordRemindersEnabled = userSettings.Flags.PasswordReminderOptOut === PASSWORD_REMINDERS_VALUE.ENABLED;
