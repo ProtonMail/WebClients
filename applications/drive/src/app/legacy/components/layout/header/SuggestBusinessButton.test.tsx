@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useSummerSale2026 } from '@proton/components/containers/offers/operations/summerSale2026configs';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 
 import { useSuggestBusinessModal } from '../../../../modals/SuggestBusinessModal/useSuggestBusinessModal';
@@ -8,6 +9,9 @@ import { SuggestBusinessButton } from './SuggestBusinessButton';
 
 jest.mock('@proton/account/user/hooks');
 const mockedUseUser = jest.mocked(useUser);
+
+jest.mock('@proton/components/containers/offers/operations/summerSale2026configs');
+const mockedUseSummerSale2026 = jest.mocked(useSummerSale2026);
 
 jest.mock('@proton/shared/lib/user/storage');
 const mockedGetSpace = jest.mocked(getSpace);
@@ -22,6 +26,9 @@ describe('SuggestBusinessButton', () => {
 
     beforeEach(() => {
         jest.clearAllMocks();
+        mockedUseSummerSale2026.mockReturnValue([{ isLoading: false, isValid: false }] as ReturnType<
+            typeof useSummerSale2026
+        >);
         mockedUseSuggestBusinessModal.mockReturnValue([mockModal, mockShowModal]);
         mockedGetSpace.mockReturnValue({ usedSpace: 100, maxSpace: 1000 } as ReturnType<typeof getSpace>);
         mockedGetAppSpace.mockReturnValue({ usedSpace: 100, maxSpace: 1000 });
