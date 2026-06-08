@@ -6,8 +6,8 @@ import { screen, waitFor, within } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
 import { getModelState } from '@proton/account/test';
-import { renderWithProviders } from '@proton/testing';
 import { buildAddress } from '@proton/testing/builders/address';
+import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
 import { useSharingModal } from './SharingModal';
 import type { SharingModalInnerProps } from './useSharingModalState';

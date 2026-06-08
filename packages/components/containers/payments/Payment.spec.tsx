@@ -3,7 +3,14 @@ import { render, screen, waitFor } from '@testing-library/react';
 import type { ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import type { SavedPaymentMethod, SavedPaymentMethodExternal, SavedPaymentMethodInternal } from '@proton/payments';
 import { MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/payments';
-import { applyHOCs, withApi, withCache, withConfig, withNotifications, withReduxStore } from '@proton/testing';
+import { applyHOCs } from '@proton/testing/lib/context/hocs';
+import {
+    withApi,
+    withCache,
+    withConfig,
+    withNotifications,
+    withReduxStore,
+} from '@proton/testing/lib/context/providers';
 
 import { PaymentsNoApi } from './Payment';
 

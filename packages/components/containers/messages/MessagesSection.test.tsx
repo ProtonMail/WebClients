@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { FeatureCode } from '@proton/features';
 import { ALMOST_ALL_MAIL, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
-import { renderWithProviders } from '@proton/testing';
+import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 import { mockUseApi } from '@proton/testing/lib/mockUseApi';
 import { mockUseFeatureBarrel } from '@proton/testing/lib/mockUseFeatureBarrel';
 import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';

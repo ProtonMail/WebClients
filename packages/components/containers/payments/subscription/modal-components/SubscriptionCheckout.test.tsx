@@ -6,9 +6,10 @@ import { CYCLE, FREE_PLAN, PLANS, SubscriptionMode } from '@proton/payments';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { useTaxCountry } from '@proton/payments/ui';
-import { renderWithProviders } from '@proton/testing';
-import { buildSubscription, buildUser } from '@proton/testing/builders';
-import { getTestPlansMap } from '@proton/testing/data';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildUser } from '@proton/testing/builders/user';
+import { getTestPlansMap } from '@proton/testing/data/payments/data-plans';
+import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
 import SubscriptionCheckout, { type SubscriptionCheckoutProps } from './SubscriptionCheckout';
 

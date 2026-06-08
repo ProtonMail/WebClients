@@ -5,7 +5,13 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import { FREE_SUBSCRIPTION, MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { applyHOCs, defaultProtonConfig, withConfig, withEventManager, withReduxStore } from '@proton/testing';
+import { applyHOCs } from '@proton/testing/lib/context/hocs';
+import {
+    defaultProtonConfig,
+    withConfig,
+    withEventManager,
+    withReduxStore,
+} from '@proton/testing/lib/context/providers';
 import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
 import useModals from '../../../hooks/__mocks__/useModals';
