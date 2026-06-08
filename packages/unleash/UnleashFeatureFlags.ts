@@ -131,6 +131,7 @@ enum AccountFlag {
     BornPrivateEurope = 'BornPrivateEurope',
     B2BSidebarRefreshEnabled = 'B2BSidebarRefreshEnabled',
     RecoverySettingsRedesign = 'RecoverySettingsRedesign',
+    RecoverySettingsScoreBanner = 'RecoverySettingsScoreBanner',
     SystemGroupFlag = 'SystemGroupFlag',
     UnauthLost2FA = 'UnauthLost2FA',
     UnauthedForgotPassword = 'UnauthedForgotPassword',
