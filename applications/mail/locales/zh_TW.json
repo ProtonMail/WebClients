@@ -1682,6 +1682,9 @@
       ],
       "Continue with Free": [
         "繼續使用免費方案"
+      ],
+      "Get the deal": [
+        "取得優惠"
       ]
     },
     "action": {
@@ -5137,6 +5140,24 @@
       ],
       "That action can't be performed on emails in this folder": [
         "此操作無法進行於電子郵件的此資料夾"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "所有儲存空間已被分配。請減少分配給其他使用者的儲存空間。"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "您需要先設定好自訂網域才能新增電子郵件。"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "請先設置一個自訂網域，然後才加入使用者到您的組織。"
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "請先啟用多使用者支援，然後才加入使用者到您的組織。"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "請升級至選用多於 1 位使用者的企業方案，以便管理多位使用者。"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "您已使用您的方案中所有使用者。請升級您的方案以加入使用者。"
       ]
     },
     "error": {
@@ -7351,7 +7372,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖像"
+        "插入影像"
       ],
       "Insert link": [
         "插入連結"
@@ -8762,6 +8783,9 @@
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "隨時升級或清理空間以帶入更多"
+      ],
+      "${ total } user found": [
+        "找到 ${ total } 位使用者"
       ]
     },
     "info": {
@@ -12452,6 +12476,9 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Search": [
+        "搜尋"
       ]
     },
     "Placeholder for contact group name": {
@@ -16015,6 +16042,17 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "BOSS": {
+      "Member address not found. Please contact customer support to resolve this": [
+        "未發現成員的位址。請聯繫客戶支援服務以協助解決問題。"
+      ],
+      "Missing organization private key": [
+        "缺少組織私有密鑰"
+      ],
+      "Missing organization public key": [
+        "缺少組織公用密鑰"
       ]
     }
   }

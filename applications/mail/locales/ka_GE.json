@@ -1691,6 +1691,12 @@
       "Trust key": [
         "ნდობის გასაღები",
         "ნდობის გასაღებები"
+      ],
+      "Get the deal": [
+        "ფასდაკლების მიღება"
+      ],
+      "Verify now": [
+        "ახლა გადამოწმება"
       ]
     },
     "action": {
@@ -5057,6 +5063,24 @@
       ],
       "Organization key must be activated to create non-private users": [
         "არაკონფიდენციალური მომხმარებლების შესაქმნელად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "შესაძლო სივრცე მთლიანად გაცემულია. შეამცირეთ სხვა მომხმარებლების მიერ მოხმარებული ადგილის რაოდენობა."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "მისამართების დამატებმდე თქვენი დომენის მორგება აუცილებელია."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "თქვენს ორგანიზაციაში მომხმარებლების ჩამატებამდე თქვენი დომენის მორგებაა საჭირო."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "მომხმარებლების ორგანიზაციაში ჩამატებამდე მრავალმომხმარებლიანი რეჟიმის ჩართვაა საჭირო."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "ბევრი მომხმარებლის სამართავად შეიძინეთ სატარიფო გეგმა, რომელიც 1-ზე მეტ მომხმარებელს შეიცავს."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "იყენებთ თქვენს სატარიფო გეგმაში შემავალ ყველა მომხმარებელს. ახალი მომხმარებლის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
       ]
     },
     "error": {
@@ -5481,6 +5505,9 @@
       ],
       "Unlimited hide-my-email aliases": [
         "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
+      ],
+      "Storage": [
+        "საცავი"
       ]
     },
     "Features": {
@@ -7287,7 +7314,8 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა"
+        "გამოსახულების ჩასმა",
+        "გამოსახულებების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -8651,6 +8679,19 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "გაჭედვისგან თავისუფალი საფოსტო ყუთისგან რამდენიმე წკაპი გაშორებთ"
+      ],
+      "${ total } user found": [
+        "აღმოჩენილია ${ total } მომხმარებელი",
+        "აღმოჩენილია ${ total } მომხმარებელი"
+      ],
+      "Enter code": [
+        "შეიყვანეთ კოდი"
+      ],
+      "Included": [
+        "შეიცავს"
+      ],
+      "RECOMMENDED": [
+        "რეკომენდებულია"
       ]
     },
     "info": {
@@ -8717,6 +8758,9 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Fallback": [
+        "სარეზერვო ვარიანტი"
       ]
     },
     "Key pinning": {
@@ -9695,6 +9739,9 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Category:": [
+        "კატეგორია:"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12284,6 +12331,9 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Search": [
+        "ძებნა"
       ]
     },
     "Placeholder for contact group name": {
@@ -12956,6 +13006,9 @@
       ],
       "Smallest first": [
         "ჯერ ყველაზე პატარა"
+      ],
+      "Sort by": [
+        "დალაგების პირობა"
       ]
     },
     "specialoffer: Action": {
@@ -15319,6 +15372,16 @@
       ],
       "Your shorter address is now ready": [
         "თქვენი მოკლე მისამართი ახლა მზადაა"
+      ],
+      "Loading...": [
+        "იტვირთება..."
+      ],
+      "Mailing list": [
+        "დაგზავნის სია",
+        "დაგზავნის სიები"
+      ],
+      "Summer Sale": [
+        "საზაფხულო ფასდაკლება"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15899,6 +15962,71 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "აქტიურია"
+      ],
+      "All": [
+        "ყველა"
+      ],
+      "Calendar": [
+        "კალენდარი"
+      ],
+      "Configure migration": [
+        "მიგრაციის მორგება"
+      ],
+      "Contacts": [
+        "კონტაქტები"
+      ],
+      "Emails": [
+        "ელფოსტები"
+      ],
+      "Errors": [
+        "შეცდომები"
+      ],
+      "Estimated size": [
+        "სავარაუდო ზომა"
+      ],
+      "Has errors": [
+        "აქვს შეცდომები"
+      ],
+      "In progress": [
+        "მიმდინარეობს"
+      ],
+      "Migrate": [
+        "მიგრაცია"
+      ],
+      "Migrated": [
+        "მიგრირებულია"
+      ],
+      "Migration status": [
+        "მიგრაციის სტატუსი"
+      ],
+      "Organization does not have enough seats available": [
+        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
+      ],
+      "Organization does not have enough storage available": [
+        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
+      ],
+      "Pending": [
+        "რიგში"
+      ],
+      "Size": [
+        "ზომა"
+      ],
+      "Status": [
+        "სტატუსი"
+      ],
+      "User": [
+        "მომხმარებელი"
+      ],
+      "What are you migrating?": [
+        "რის მიგრაციას ახდენთ?"
+      ],
+      "You": [
+        "თქვენ"
       ]
     }
   }

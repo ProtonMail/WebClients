@@ -1691,6 +1691,9 @@
       ],
       "Trust key": [
         "鍵を信頼する"
+      ],
+      "Get the deal": [
+        "割引をゲット"
       ]
     },
     "action": {
@@ -5163,6 +5166,27 @@
       ],
       "Organization key must be activated to create non-private users": [
         "非プライベートユーザーを作成するには、組織の鍵を有効にする必要があります"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "すべてのストレージ容量が割り当てられています。他のユーザーに割り当てられたストレージ容量を小さくしてください。"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "アドレスを追加する前にカスタム ドメインを構成してください。"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "ユーザーを組織に追加する前に、独自ドメインを設定してください。"
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "組織にユーザーを追加する前に、マルチユーザー対応を有効にしてください。"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "複数のユーザーを管理するには、複数のユーザーを含むビジネスプランにアップグレードしてください。"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "現在のプランで使用可能なアドレス数の上限に達しました。アドレスを追加するにはプランをアップグレードするか、アカウントに登録済みのアドレスを無効にしてください。"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "現在のプランでのユーザー数の上限に達しました。新規ユーザーを追加するにはアップグレードしてください。"
       ]
     },
     "error": {
@@ -7373,7 +7397,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像の挿入"
+        "画像を挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -8784,6 +8808,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "${ total } user found": [
+        "${ total } 人のユーザーが見つかりました"
       ]
     },
     "info": {
@@ -12483,6 +12510,9 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Search": [
+        "検索"
       ]
     },
     "Placeholder for contact group name": {
@@ -16131,6 +16161,35 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "カレンダー"
+      ],
+      "Configure migration": [
+        "移行を設定"
+      ],
+      "Contacts": [
+        "連絡先"
+      ],
+      "Estimated size": [
+        "推定サイズ"
+      ],
+      "Migration status": [
+        "移行ステータス"
+      ],
+      "Organization does not have enough seats available": [
+        "組織には十分なシートがありません"
+      ],
+      "Organization does not have enough storage available": [
+        "組織には十分なストレージがありません"
+      ],
+      "User": [
+        "ユーザー"
+      ],
+      "What are you migrating?": [
+        "何を移行しますか？"
       ]
     }
   }

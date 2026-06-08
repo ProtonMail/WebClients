@@ -1514,8 +1514,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1715,6 +1714,12 @@
       ],
       "Start testing": [
         "Denemeyi başlat"
+      ],
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ],
+      "Verify now": [
+        "Şimdi doğrula"
       ]
     },
     "action": {
@@ -4347,6 +4352,9 @@
       ],
       "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
         "Yeni kategori görünümümüzü duyurulmasından önce ilk deneyenlerdensiniz. Geri bildirimleriniz e-postaların Proton Mail tarafından sıralanmasını geliştirmeye yardımcı olacak."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Ekibinizin ${ BRAND_NAME } hizmetlerine sorunsuz bir şekilde uyum sağlaması için verilerinizi Google, Outlook ve diğer kaynaklardan içe aktarın."
       ]
     },
     "description": {
@@ -5317,6 +5325,27 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "KDV numarası ${ prefixes } ile başlamalıdır"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Tüm depolama alanı dağıtıldı. Lütfen diğer kullanıcılara ayrılmış depolama alanlarını azaltın."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Lütfen adresleri eklemeden önce bir özel etki alanı yapılandırın."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Lütfen kuruluşunuza kullanıcılar eklemeden önce bir özel etki alanı ayarlayın."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Lütfen kuruluşunuza kullanıcılar eklemeden önce çok kullanıcı desteğini açın."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Birden çok kullanıcıyı yönetmek için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye geçin."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Tarifenizdeki tüm adresleri kullandınız. Yeni bir adres eklemek veya hesabınızdaki bir adresi kullanımdan kaldırmak için lütfen tarifenizi yükseltin."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Tarifenizin kullanıcı sayısı sınırına ulaştınız. Yeni bir kullanıcı eklemek için lütfen tarifenizi yükseltin."
       ]
     },
     "error": {
@@ -7673,7 +7702,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9129,6 +9159,37 @@
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Geri kalanları aktarmak için istediğiniz zaman tarifenizi yükseltin ya da yer açın"
+      ],
+      "${ total } user found": [
+        "${ total } kullanıcı bulundu",
+        "${ total } kullanıcı bulundu"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Arkadaşlarınızı** yönlendirme bağlantınızla ${ BRAND_NAME } kullanmaya davet edin."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Abone olduklarında ${ refereeRewardAmount }** kredi kazanırlar."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "Abone olan her arkadaşınız için **${ referrerRewardAmount } tutarında kredi kazanırsınız**."
+      ],
+      "Automatically sort incoming emails into categories": [
+        "Gelen e-postaları kategorilere göre otomatik olarak sırala"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Parolanızı hatırlıyor musunuz? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "Parolamı unuttum"
+      ],
+      "Password verified": [
+        "Parola doğrulandı"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Parolanızı unutmamanız için belirli aralıklarla parolanızı yazmanızı isteyeceğiz. Zamanla bunu daha az isteyeceğiz."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Daha sonra yeniden parolanızı doğrulamanızı hatırlatacağız."
       ]
     },
     "info": {
@@ -9406,6 +9467,9 @@
       ],
       "Message shortcuts": [
         "İleti kısayolları"
+      ],
+      "Desktop app navigation": [
+        "Bilgisayar uygulaması gezinmesi"
       ]
     },
     "Label": {
@@ -10206,6 +10270,9 @@
       ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } karakter"
+      ],
+      "Email categories": [
+        "E-posta kategorileri"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12971,6 +13038,12 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Search": [
+        "Arama"
+      ],
+      "Search for users or addresses": [
+        "Kullanıcıları veya adresleri ara"
       ]
     },
     "Placeholder for contact group name": {
@@ -16206,6 +16279,15 @@
       ],
       "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } içindeki e-posta kategorilerinin geleceğini şekillendirmeye yardımcı olun"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Kuruluşunuzu ${ BRAND_NAME } üzerine aktarın"
+      ],
+      "Summer Sale": [
+        "Yaz indirimi"
+      ],
+      "Verify your password": [
+        "Parolanızı doğrulayın"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16792,6 +16874,117 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Etkinleştirildi"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Bu adres kuruluşunuz dışındaki bir kullanıcı tarafından kullanılıyor. Bu sorunu çözmek için lütfen müşteri destek ekibimiz ile görüşün"
+      ],
+      "All": [
+        "Tümü"
+      ],
+      "Calendar": [
+        "Takvim"
+      ],
+      "Configure migration": [
+        "Aktarımı yapılandırın"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Aktarma işlemini başlatmak için yöneticiniz ile görüşün."
+      ],
+      "Contacts": [
+        "Kişiler"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Google Workspace üzerinden ${ BRAND_NAME } üzerine veri aktarımı durumu"
+      ],
+      "Emails": [
+        "E-postalar"
+      ],
+      "Errors": [
+        "Hatalar"
+      ],
+      "Estimated size": [
+        "Öngörülen boyut"
+      ],
+      "Find out what can be migrated.": [
+        "Nelerin aktarılabileceğini öğrenin."
+      ],
+      "Has errors": [
+        "Sorunlar çıktı"
+      ],
+      "In progress": [
+        "İşleniyor"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Üye adresi bulunamadı. Bu sorunu çözmek için müşteri destek ekibimizle görüşün"
+      ],
+      "Migrate": [
+        "Aktar"
+      ],
+      "Migrated": [
+        "Aktarıldı"
+      ],
+      "Migration status": [
+        "Aktarım durumu"
+      ],
+      "Missing organization private key": [
+        "Kuruluşun kişisel anahtarı eksik"
+      ],
+      "Missing organization public key": [
+        "Kuruluşun herkese açık anahtarı bulunamadı"
+      ],
+      "No users to display": [
+        "Görüntülenebilecek bir kullanıcı yok"
+      ],
+      "Not activated": [
+        "Etkinleştirilmemiş"
+      ],
+      "Organization does not have enough seats available": [
+        "Kuruluşun yeterli koltuk sayısı yok"
+      ],
+      "Organization does not have enough storage available": [
+        "Kuruluşun yeterli depolama alanı yok"
+      ],
+      "Pending": [
+        "Bekliyor"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Tam olarak neyi aktarmak istediğinizi seçin. Kuruluşun tüm kullanıcılarına uygulanır."
+      ],
+      "Select users to migrate": [
+        "Aktarılacak kullanıcıları seçin"
+      ],
+      "Size": [
+        "Boyut"
+      ],
+      "Status": [
+        "Durum"
+      ],
+      "User": [
+        "Kullanıcı"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } hesaplarına erişen kullanıcılar"
+      ],
+      "What are you migrating?": [
+        "Neyi aktarıyorsunuz?"
+      ],
+      "You": [
+        "Siz"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } uygulamasına geç"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } uygulamasına geç"
       ]
     }
   }

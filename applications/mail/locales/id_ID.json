@@ -1685,6 +1685,9 @@
       ],
       "Zoom out": [
         "Perkecil"
+      ],
+      "Get the deal": [
+        "Dapatkan penawaran ini"
       ]
     },
     "action": {
@@ -4984,6 +4987,24 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Kunci organisasi harus diaktifkan untuk membuat pengguna non-privat"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Semua ruang penyimpanan telah dialokasikan. Harap kurangi penyimpanan yang dialokasikan ke pengguna lain."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Silakan atur domain kustom sebelum menambahkan alamat"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Mohon konfigurasi domain khusus sebelum menambahkan pengguna ke organisasi Anda."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Harap aktifkan dukungan multi-pengguna sebelum menambahkan pengguna ke organisasi Anda."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Harap tingkatkan jenis akun Anda ke paket bisnis dengan lebih dari 1 pengguna untuk dapat mengelola banyak pengguna sekaligus."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Anda telah menggunakan semua pengguna dalam paket Anda. Harap tingkatkan paket untuk menambah pengguna baru."
       ]
     },
     "error": {
@@ -12120,6 +12141,9 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Search": [
+        "Pencarian"
       ]
     },
     "Placeholder for contact group name": {
@@ -15613,6 +15637,41 @@
       ],
       "Passcode:": [
         "Kode sandi:"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Atur migrasi"
+      ],
+      "Contacts": [
+        "Kontak"
+      ],
+      "Estimated size": [
+        "Perkiraan ukuran"
+      ],
+      "In progress": [
+        "Sedang berlangsung"
+      ],
+      "Migration status": [
+        "Status migrasi"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisasi tidak memiliki jumlah kuota yang memadai"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisasi tidak memiliki cukup ruang penyimpanan yang tersedia"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Pengguna"
+      ],
+      "What are you migrating?": [
+        "Apa yang ingin Anda migrasikan?"
       ]
     }
   }

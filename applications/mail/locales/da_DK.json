@@ -1514,8 +1514,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -1715,6 +1714,9 @@
       ],
       "Start testing": [
         "Begynd at teste"
+      ],
+      "Get the deal": [
+        "Gør brug af tilbuddet"
       ]
     },
     "action": {
@@ -4343,10 +4345,13 @@
         "Du er en af de første til at prøve e-mailkategorier."
       ],
       "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
-        "Hvis en meddelelse vises i den forkerte kategori skal du blot flytte den til den rigtige. Højreklik på en meddelelse for at vælge en ny kategori, eller træk og slip den, hvor den hører hjemme."
+        "Hvis en meddelelse vises i den forkerte kategori skal du blot flytte den til den rigtige. Højreklik på en meddelelse for at vælge en ny kategori, eller træk og slip den hvor den hører hjemme."
       ],
       "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
-        "Du er blandt de første til at prøve vores nye kategorivisning, før den lanceres. Din feedback vil hjælpe os med at forbedre, hvordan Proton Mail sorterer e-mails for alle."
+        "Du er blandt de første til at prøve vores nye kategorivisning, før den lanceres. Din feedback vil hjælpe os med at forbedre hvordan Proton Mail sorterer e-mails for alle."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Importér dine data fra Google, Outlook og andre for at sikre en smidig onboarding af dit team til ${ BRAND_NAME }."
       ]
     },
     "description": {
@@ -5311,6 +5316,33 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisationsnøgle skal være aktiveret for at oprette ikke private brugere"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Al lagerplads er blevet tildelt. Reducér lagerplads tildelt andre brugere."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Tjek venligst om dit ABN er registeret til moms på tværs af grænser"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Sæt et brugerdomæne op, før du tilføjer adresser."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Konfigurer et brugerdomæne, inden du tilføjer brugere til din organisation."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Aktivér flerbrugerunderstøttelse inden du tilføjer brugere til din organisation."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Opgradér venligst til et erhvervsabonnement med mere end 1 bruger for at administrere flere brugere."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "Momsnummer skal starte med ${ prefixes }"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Du har opbrugt alle adresser i dit abonnement. Opgradér dit abonnement for at tilføje en ny adresse, eller deaktivér en adresse på din konto."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Du har brugt alle brugere i dit abonnement. Opgradér abonnementet for at tilføje en ny bruger."
       ]
     },
     "error": {
@@ -7667,7 +7699,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -9123,6 +9156,19 @@
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Opgrader eller frigør lagerplads når som helst for at overføre resten"
+      ],
+      "${ total } user found": [
+        "${ total } bruger fundet",
+        "${ total } brugere fundet"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Inviter dine venner** til ${ BRAND_NAME } med dit henvisningslink."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**De får${ refereeRewardAmount }** i kredit, hvis de tegner et abonnement."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Du får ${ referrerRewardAmount }** i kredit for hver ven, der tegner et abonnement."
       ]
     },
     "info": {
@@ -12965,6 +13011,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Search": [
+        "Søg"
+      ],
+      "Search for users or addresses": [
+        "Søg efter brugere eller adresser"
       ]
     },
     "Placeholder for contact group name": {
@@ -16200,6 +16252,9 @@
       ],
       "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
         "Vær med til at forme fremtiden for e-mail-kategorier i ${ MAIL_APP_NAME }"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Flyt din organisation til ${ BRAND_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16786,6 +16841,92 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Aktiveret"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adressen bruges allerede af en bruger uden for din organisation. Kontakt kundesupport for at løse dette"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Konfigurer migrering"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Kontakt din administrator for at starte en migration."
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Errors": [
+        "Fejl"
+      ],
+      "Estimated size": [
+        "Anslået størrelse"
+      ],
+      "Find out what can be migrated.": [
+        "Find ud af hvad der kan migreres."
+      ],
+      "Has errors": [
+        "Fejlbehæftet"
+      ],
+      "In progress": [
+        "I gang"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresse for medlem ikke fundet. Kontakt venligst vores kundesupport for at løse dette"
+      ],
+      "Migrated": [
+        "Migreret"
+      ],
+      "Migration status": [
+        "Migrationsstatus"
+      ],
+      "Missing organization private key": [
+        "Mangler organisationens private nøgle"
+      ],
+      "Missing organization public key": [
+        "Mangler organisationens offentlige nøgle"
+      ],
+      "No users to display": [
+        "Ingen brugere at vise"
+      ],
+      "Not activated": [
+        "Ikke aktiveret"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisationen har ikke nok ledige pladser"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisationen har ikke tilstrækkelig ledig lagerplads"
+      ],
+      "Pending": [
+        "Afventer"
+      ],
+      "Select users to migrate": [
+        "Vælg brugere at migrere"
+      ],
+      "Size": [
+        "Størrelse"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Bruger"
+      ],
+      "What are you migrating?": [
+        "Hvad migrerer du?"
+      ],
+      "You": [
+        "Dig"
       ]
     }
   }

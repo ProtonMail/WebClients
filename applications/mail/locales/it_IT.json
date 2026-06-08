@@ -1691,6 +1691,9 @@
       "Trust key": [
         "chiave attendibile",
         "chiavi attendibili"
+      ],
+      "Get the deal": [
+        "Approfitta dell'offerta"
       ]
     },
     "action": {
@@ -5168,6 +5171,27 @@
       ],
       "Organization key must be activated to create non-private users": [
         "La chiave dell'organizzazione deve essere attivata per creare utenti non privati"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Tutto lo spazio di archiviazione è stato allocato. Riduci lo spazio assegnato agli altri utenti."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configura un dominio personalizzato prima di aggiungere indirizzi."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Per favore configura un dominio personalizzato prima di aggiungere utenti all'organizzazione."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Abilita il supporto multi-utente prima di aggiungere utenti all'organizzazione."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Effettua l'upgrade a un piano aziendale con più di 1 utente per gestire più utenti."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Hai utilizzato tutti gli indirizzi inclusi nel tuo piano. Effettua l'upgrade del piano per aggiungere un nuovo indirizzo o disattivarne uno dal tuo account."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Hai utilizzato tutti gli utenti del tuo piano. Per favore effettua l'upgrade del tuo piano per aggiungere un nuovo utente."
       ]
     },
     "error": {
@@ -7434,7 +7458,8 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagine",
+        "Inserisci immagini"
       ],
       "Insert link": [
         "Inserisci link"
@@ -8866,6 +8891,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sei a pochi clic da una posta in arrivo organizzata"
+      ],
+      "${ total } user found": [
+        "${ total } utente trovato",
+        "${ total } utenti trovati"
       ]
     },
     "info": {
@@ -12555,6 +12584,9 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Search": [
+        "Cerca"
       ]
     },
     "Placeholder for contact group name": {
@@ -16297,6 +16329,35 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Calendario"
+      ],
+      "Configure migration": [
+        "Configura la migrazione"
+      ],
+      "Contacts": [
+        "Contatti"
+      ],
+      "Estimated size": [
+        "Dimensioni Stimate"
+      ],
+      "Migration status": [
+        "Stato della migrazione"
+      ],
+      "Organization does not have enough seats available": [
+        "L'organizzazione non dispone di licenze sufficienti"
+      ],
+      "Organization does not have enough storage available": [
+        "L'organizzazione non dispone di spazio di archiviazione sufficiente"
+      ],
+      "User": [
+        "Utente"
+      ],
+      "What are you migrating?": [
+        "Cosa stai migrando?"
       ]
     }
   }
