@@ -10,7 +10,7 @@ import { SnapshotRecorder } from "./snapshots";
 import { IpcRecorder } from "./ipc";
 import { StartupRequestRecorder } from "./startupRequests";
 import { systemContext } from "./system";
-import { quitTracker } from "../log/quitTracker";
+import { restartApp } from "../restartApp";
 
 class Profiler {
     private static instance: Profiler;
@@ -160,9 +160,7 @@ class Profiler {
         profilerLogger.info(`Profiling enabled, mode: ${cold ? "cold" : "warm"}`);
 
         if (!cold) {
-            app.relaunch();
-            quitTracker.setReason("profiler-warm");
-            app.quit();
+            restartApp("profiler-warm");
         } else {
             new Notification({
                 title: "Startup profiling enabled",
