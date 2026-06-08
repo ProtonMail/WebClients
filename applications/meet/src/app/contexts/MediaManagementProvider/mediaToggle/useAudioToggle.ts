@@ -24,7 +24,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { useStableCallback } from '../../../hooks/useStableCallback';
 import { audioQuality } from '../../../qualityConstants';
-import type { SwitchActiveDevice } from '../../../types';
+import type { AudioToggleParams, SwitchActiveDevice, ToggleAudioType } from '../../../types';
 import { getPersistedNoiseFilter, persistNoiseFilter } from '../../../utils/noiseFilterPersistence';
 import {
     RNNoiseFilter,
@@ -42,13 +42,6 @@ const NOISE_FILTER_SETTLE_DELAY_MS = 600;
 /** Longer delay after device change to let the track and devicechange events settle */
 const NOISE_FILTER_DEVICE_CHANGE_DELAY_MS = 1500;
 const SAFARI_DEVICE_RELEASE_DELAY_MS = 300;
-interface AudioToggleParams {
-    isEnabled: boolean;
-    audioDeviceId: string;
-    preserveCache: boolean;
-    /** Skip noise filter setup — used by track-ended recovery to get audio working immediately */
-    skipNoiseFilter: boolean;
-}
 
 const DEBUG_PREFIX = '[AudioToggle]';
 
@@ -446,7 +439,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
      * (LiveKit restarts it internally). If the track was replaced (new ID), schedules
      * a fresh noise filter attach with a longer delay to let devicechange events settle.
      */
-    const toggleAudio = useStableCallback(async (params: Partial<AudioToggleParams> = {}) => {
+    const toggleAudio: ToggleAudioType = useStableCallback(async (params) => {
         let toggleResult = false;
         const operationId = ++toggleOperationId.current;
 
@@ -456,7 +449,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         const {
             isEnabled = !currentMuteState,
             audioDeviceId = activeMicrophoneDeviceId,
-            preserveCache,
+            preserveCache = false,
             skipNoiseFilter = false,
         } = params;
 

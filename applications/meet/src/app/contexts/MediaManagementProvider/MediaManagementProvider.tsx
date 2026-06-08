@@ -39,7 +39,6 @@ import { TimeoutError, withTimeout } from '@proton/meet/utils/withTimeout';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { useDeviceData } from '../../hooks/bridges/useDeviceData';
 import { useStableCallback } from '../../hooks/useStableCallback';
 import { preloadBackgroundProcessorAssets } from '../../processors/background-processor/createBackgroundProcessor';
 import type { SwitchActiveDevice } from '../../types';
@@ -50,9 +49,7 @@ import { PermissionsModal } from './PermissionsModal/PermissionsModal';
 import { useAudioToggle } from './mediaToggle/useAudioToggle';
 import { useVideoToggle } from './mediaToggle/useVideoToggle';
 import { useCameraPreview } from './useCameraPreview';
-import { useDeviceListSync } from './useDeviceListSync';
-import { useDevicePermissionChangeListener } from './useDevicePermissionChangeListener';
-import { useDynamicDeviceHandling } from './useDynamicDeviceHandling';
+import { useDeviceManagement } from './useDeviceManagement/useDeviceManagement';
 import { useMicrophoneVolumeAnalysis } from './useMicrophoneVolumeAnalysis';
 
 const SWITCH_DEVICE_TIMEOUT_MS = 5000;
@@ -63,8 +60,6 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     const { reportMeetError } = useMeetErrorReporting();
     const dispatch = useMeetDispatch();
     const store = useMeetStore();
-
-    useDeviceListSync();
 
     const initialCameraState = useMeetSelector(selectInitialCameraState);
     const initialAudioState = useMeetSelector(selectInitialAudioState);
@@ -186,6 +181,8 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     } = useVideoToggle(switchActiveDevice);
 
     const { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled } = useAudioToggle(switchActiveDevice);
+
+    const { permissionsLoading } = useDeviceManagement({ toggleAudio, toggleVideo, switchActiveDevice });
 
     const { handlePreviewCameraToggle, cleanupCameraPreview, cleanupPreviewTrack } = useCameraPreview({
         selectedCameraId: activeCameraDeviceId,
@@ -370,16 +367,6 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
             await initializeDevicesInternal();
         }
     };
-
-    useDeviceData();
-
-    const { permissionsLoading } = useDevicePermissionChangeListener();
-
-    useDynamicDeviceHandling({
-        toggleAudio,
-        toggleVideo,
-        switchActiveDevice,
-    });
 
     const initializedDevices = useRef({
         video: false,

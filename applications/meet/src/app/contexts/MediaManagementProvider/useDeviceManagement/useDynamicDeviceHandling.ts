@@ -14,12 +14,13 @@ import {
     selectPreferredCameraId,
     selectSpeakerState,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import type { DeviceKind } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import { filterDevices, getDefaultDevice, isDefaultDevice } from '@proton/meet/utils/deviceUtils';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useStableCallback } from '../../hooks/useStableCallback';
-import type { SwitchActiveDevice } from '../../types';
-import { supportsSetSinkId } from '../../utils/browser';
+import { useStableCallback } from '../../../hooks/useStableCallback';
+import type { SwitchActiveDevice, ToggleAudioType, ToggleVideoType } from '../../../types';
+import { supportsSetSinkId } from '../../../utils/browser';
 
 const dynamicDeviceUpdate = ({
     deviceList,
@@ -80,28 +81,8 @@ interface DeviceIdSets {
 }
 
 interface UseDynamicDeviceHandlingParams {
-    toggleVideo: ({
-        isEnabled,
-        videoDeviceId,
-        forceUpdate,
-        preserveCache,
-        updateUserIntent,
-    }: {
-        isEnabled?: boolean;
-        videoDeviceId?: string;
-        forceUpdate?: boolean;
-        preserveCache?: boolean;
-        updateUserIntent?: boolean;
-    }) => Promise<boolean | undefined>;
-    toggleAudio: ({
-        isEnabled,
-        audioDeviceId,
-        preserveCache,
-    }: {
-        isEnabled?: boolean;
-        audioDeviceId?: string;
-        preserveCache?: boolean;
-    }) => Promise<boolean | undefined>;
+    toggleVideo: ToggleVideoType;
+    toggleAudio: ToggleAudioType;
     switchActiveDevice: SwitchActiveDevice;
 }
 
@@ -110,13 +91,15 @@ export const useDynamicDeviceHandling = ({
     toggleVideo,
     switchActiveDevice,
 }: UseDynamicDeviceHandlingParams) => {
+    const room = useRoomContext();
+
     const activeMicrophoneDeviceId = useMeetSelector(selectActiveMicrophoneId);
     const activeAudioOutputDeviceId = useMeetSelector(selectActiveAudioOutputId);
     const activeCameraDeviceId = useMeetSelector(selectActiveCameraId);
+
     const preferredCameraId = useMeetSelector(selectPreferredCameraId);
     const microphoneState = useMeetSelector(selectMicrophoneState);
     const speakerState = useMeetSelector(selectSpeakerState);
-    const room = useRoomContext();
 
     const previousDevices = useRef<{
         microphones: MediaDeviceInfo[];
@@ -146,7 +129,7 @@ export const useDynamicDeviceHandling = ({
     }
 
     const handleDeviceChange = useStableCallback(async () => {
-        const getLocalDevicesWithErrorHandling = async (deviceType: 'audioinput' | 'videoinput' | 'audiooutput') => {
+        const getLocalDevicesWithErrorHandling = async (deviceType: DeviceKind) => {
             try {
                 return await Room.getLocalDevices(deviceType, false);
             } catch (error) {
@@ -253,7 +236,6 @@ export const useDynamicDeviceHandling = ({
 
                             void toggleVideo({
                                 videoDeviceId: newDeviceId,
-                                forceUpdate: true,
                                 preserveCache: true,
                                 updateUserIntent: false,
                             });
