@@ -38,8 +38,8 @@ import { useMailboxContainerSideEffects } from './sideEffects/useMailboxContaine
 
 export const RouterMailboxContainer = () => {
     // We get most of the data here to avoid unnecessary re-renders
-    const params = useMailSelector(selectParams);
-    const navigation = useRouterNavigation({ labelID: params.labelID });
+    const { labelID, isSearching, elementID } = useMailSelector(selectParams);
+    const navigation = useRouterNavigation({ labelID: labelID });
     const elementsParams = useGetElementParams({ navigation });
     const elementsData = useElements(elementsParams);
     const actions = useElementActions({ navigation, elementsData });
@@ -61,12 +61,12 @@ export const RouterMailboxContainer = () => {
      * Temporary: Router mailbox side effects
      */
     useMailboxContainerSideEffects({
-        isSearch: params.isSearching,
+        isSearch: isSearching,
         handleCheckAll: actions.handleCheckAll,
         elementsParams,
         elements: elementsData.elements,
         loading: elementsData.loading,
-        labelID: params.labelID,
+        labelID: labelID,
     });
 
     const dispatch = useMailDispatch(); // You're already using useMailSelector, so this is consistent
@@ -76,12 +76,12 @@ export const RouterMailboxContainer = () => {
     const urlPage = pageFromUrl(location);
     const searchParams = getSearchParams(location.hash);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-649484
-    const sort = useMemo<Sort>(() => sortFromUrl(location, params.labelID), [searchParams.sort, params.labelID]);
+    const sort = useMemo<Sort>(() => sortFromUrl(location, labelID), [searchParams.sort, labelID]);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C5320A
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
     useScrollToTop(scrollContainerRef as RefObject<HTMLElement>, [
         urlPage,
-        params.labelID,
+        labelID,
         sort,
         filter,
         elementsParams.search,
@@ -91,19 +91,19 @@ export const RouterMailboxContainer = () => {
     // When the labelID is updated, reset the select all value
     useEffect(() => {
         dispatch(layoutActions.setSelectAll(false));
-    }, [params.labelID, dispatch]);
+    }, [labelID, dispatch]);
 
-    if (!params.labelID) {
+    if (!labelID) {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
     // Prevent non-admin users from accessing the Deleted folder via URL
-    if (params.labelID === MAILBOX_LABEL_IDS.SOFT_DELETED && !isAdminOrLoginAsAdmin(user)) {
+    if (labelID === MAILBOX_LABEL_IDS.SOFT_DELETED && !isAdminOrLoginAsAdmin(user)) {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
     // Redirect users without retention rules from accessing the Deleted folder via URL
-    if (params.labelID === MAILBOX_LABEL_IDS.SOFT_DELETED && retentionRules && !retentionRules.length) {
+    if (labelID === MAILBOX_LABEL_IDS.SOFT_DELETED && retentionRules && !retentionRules.length) {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
@@ -114,11 +114,11 @@ export const RouterMailboxContainer = () => {
             <MailHeader
                 elementsData={elementsData}
                 actions={actions}
-                labelID={params.labelID}
+                labelID={labelID}
                 settingsButton={<InboxQuickSettingsAppButton />}
                 toolbar={
                     // Show toolbar in header when in row layout and an email is selected
-                    !shouldSeeWideToolbars && ((!isColumnModeActive && params.elementID) || viewPortIsNarrow) ? (
+                    !shouldSeeWideToolbars && ((!isColumnModeActive && elementID) || viewPortIsNarrow) ? (
                         <MailboxToolbar
                             inHeader
                             navigation={navigation}
@@ -131,7 +131,7 @@ export const RouterMailboxContainer = () => {
             <PrivateMainArea
                 className={clsx([
                     'flex',
-                    !isColumnModeActive && params.elementID && 'row-layout-email-view full-width-email',
+                    !isColumnModeActive && elementID && 'row-layout-email-view full-width-email',
                     isColumnModeActive && 'column-layout-view',
                     breakpoints.viewportWidth['<=small'] && 'border-none',
                 ])}
