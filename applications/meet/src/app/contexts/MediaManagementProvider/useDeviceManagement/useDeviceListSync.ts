@@ -2,9 +2,9 @@ import { useEffect, useRef } from 'react';
 
 import { useMeetStore } from '@proton/meet/store/hooks';
 import { setDeviceList } from '@proton/meet/store/slices/deviceManagementSlice';
+import type { DeviceKind } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import { toSerializableDevice } from '@proton/meet/utils/deviceUtils';
 
-type DeviceKind = 'audioinput' | 'audiooutput' | 'videoinput';
 const KINDS: DeviceKind[] = ['audioinput', 'audiooutput', 'videoinput'];
 
 const RECHECK_DELAY_MS = 150;

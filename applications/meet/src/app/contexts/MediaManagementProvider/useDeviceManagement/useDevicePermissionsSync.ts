@@ -16,7 +16,7 @@ import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
  * Permission requests are not triggered here — they are initiated by the user
  * via the DevicesNeededConfirmation modal.
  */
-export const useDevicePermissionChangeListener = () => {
+export const useDevicePermissionsSync = () => {
     const dispatch = useMeetDispatch();
     const [permissionsLoading, setPermissionsLoading] = useState(true);
 
