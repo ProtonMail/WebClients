@@ -237,6 +237,9 @@ export const getStoreWrapper = ({
         api: api as any,
         eventManager: jest.fn() as any,
         history,
+        unleashClient: {
+            isEnabled: () => false,
+        } as any,
     });
 
     function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
