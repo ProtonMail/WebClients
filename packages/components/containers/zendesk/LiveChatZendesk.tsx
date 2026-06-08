@@ -16,8 +16,6 @@ import noop from '@proton/utils/noop';
 
 type MessageDestination = 'proton' | 'zendesk';
 
-let zendeskToken = '';
-
 const fetchJWT = async (api: Api) => {
     try {
         const { JWT } = await api<{ JWT: string }>({
@@ -98,9 +96,20 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
     const sendMessage = (args: any, destination: MessageDestination = 'zendesk') => {
         const contentWindow = iframeRef.current?.contentWindow;
         if (!contentWindow || !stateRef.current.loaded) {
+            captureMessage('Zendesk: Sending message to invalid iframe', {
+                level: 'error',
+                extra: { hasContentWindow: !!contentWindow, isLoaded: stateRef.current.loaded, args: args[0] },
+            });
             return;
         }
-        contentWindow.postMessage({ args, destination }, targetOrigin);
+        try {
+            contentWindow.postMessage({ args, destination }, targetOrigin);
+        } catch (e) {
+            captureMessage('Zendesk: postMessage failed', {
+                level: 'error',
+                extra: { error: e, args: args[0], destination },
+            });
+        }
     };
 
     const handleOpen = () => {
@@ -127,7 +136,6 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
             (async () => {
                 const jwt = await fetchJWT(api);
                 if (jwt) {
-                    zendeskToken = jwt;
                     sendMessage(['login', jwt], 'proton');
                 }
             })().catch(noop);
@@ -308,8 +316,6 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
                             reason: btoa(safeReason),
                             message,
                             status,
-                            // TODO: Remove after figuring out ZD authentication issues
-                            code: zendeskToken || 'unknown',
                         },
                     });
                 }
