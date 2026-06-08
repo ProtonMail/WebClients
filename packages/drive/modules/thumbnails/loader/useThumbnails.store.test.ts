@@ -158,5 +158,46 @@ describe('useThumbnailsStore', () => {
             expect(useThumbnailsStore.getState().getThumbnail('rev-2')?.sdUrl).toBe('blob:mock-url');
             expect(useThumbnailsStore.getState().getThumbnail('rev-2')?.sdStatus).toBe('loaded');
         });
+
+        describe('store key (revisionUid ?? nodeUid)', () => {
+            it('keys by nodeUid when revisionUid is omitted', async () => {
+                const drive = makeDrive([{ nodeUid: 'node-1', ok: true, thumbnail: new Uint8Array([1]) }]);
+
+                loadThumbnail(drive, { nodeUid: 'node-1' });
+
+                // Stored under nodeUid, not under any revision.
+                expect(useThumbnailsStore.getState().getThumbnail('node-1')?.sdStatus).toBe('loading');
+
+                await flushBatch();
+
+                expect(useThumbnailsStore.getState().getThumbnail('node-1')?.sdStatus).toBe('loaded');
+                expect(useThumbnailsStore.getState().getThumbnail('node-1')?.sdUrl).toBe('blob:mock-url');
+                // Still fetched from the SDK by nodeUid.
+                expect(jest.mocked(drive.iterateThumbnails).mock.calls[0][0]).toEqual(['node-1']);
+            });
+
+            it('prefers revisionUid as the key when provided', async () => {
+                const drive = makeDrive([{ nodeUid: 'node-1', ok: true, thumbnail: new Uint8Array([1]) }]);
+
+                loadThumbnail(drive, { nodeUid: 'node-1', revisionUid: 'rev-1' });
+                await flushBatch();
+
+                expect(useThumbnailsStore.getState().getThumbnail('rev-1')?.sdStatus).toBe('loaded');
+                expect(useThumbnailsStore.getState().getThumbnail('node-1')).toBeUndefined();
+            });
+
+            it('dedupes a nodeUid-keyed item once attempted', async () => {
+                const drive = makeDrive([{ nodeUid: 'node-1', ok: false }]);
+
+                loadThumbnail(drive, { nodeUid: 'node-1' });
+                await flushBatch();
+
+                loadThumbnail(drive, { nodeUid: 'node-1' });
+                await flushBatch();
+
+                expect(useThumbnailsStore.getState().getThumbnail('node-1')?.sdStatus).toBe('loaded');
+                expect(jest.mocked(drive.iterateThumbnails)).toHaveBeenCalledTimes(1);
+            });
+        });
     });
 });

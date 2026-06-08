@@ -20,11 +20,6 @@ const SCROLLBAR_CONTAINER_WIDTH = 48;
 type PhotosGridProps = {
     uids: string[];
     onItemRender: (nodeUid: string, domRef: React.MutableRefObject<unknown>) => void;
-    onItemRenderLoadedLink: (
-        nodeUid: string,
-        activeRevisionUid: string,
-        domRef: React.MutableRefObject<unknown>
-    ) => void;
     isLoading: boolean;
     onItemClick: (nodeUid: string) => void;
     onSelectChange: (index: number, isSelected: boolean) => void;
@@ -40,7 +35,6 @@ type PhotosGridProps = {
 export const PhotosGrid: FC<PhotosGridProps> = ({
     uids,
     onItemRender,
-    onItemRenderLoadedLink,
     isLoading,
     onItemClick,
     onSelectChange,
@@ -239,7 +233,6 @@ export const PhotosGrid: FC<PhotosGridProps> = ({
                             key={item.nodeUid}
                             nodeUid={item.nodeUid}
                             onRender={onItemRender}
-                            onRenderLoadedLink={onItemRenderLoadedLink}
                             onClick={() => {
                                 if (hasSelection) {
                                     onSelectChange(i, !isSelected);
@@ -299,7 +292,6 @@ export const PhotosGrid: FC<PhotosGridProps> = ({
         onSelectChange,
         isItemSelected,
         onItemRender,
-        onItemRenderLoadedLink,
         hasSelection,
         rootLinkId,
         isAddAlbumPhotosView,
