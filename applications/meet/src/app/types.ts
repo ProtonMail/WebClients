@@ -49,8 +49,19 @@ export enum PublishableDataTypes {
 export type ToggleVideoType = (params: {
     isEnabled?: boolean;
     videoDeviceId?: string;
-    forceUpdate?: boolean;
+    facingMode?: 'environment' | 'user';
     preserveCache?: boolean;
+    recoveringFromError?: boolean;
+    updateUserIntent?: boolean;
 }) => Promise<boolean | undefined>;
+
+export type AudioToggleParams = {
+    isEnabled?: boolean;
+    audioDeviceId?: string;
+    preserveCache?: boolean;
+    skipNoiseFilter?: boolean;
+};
+
+export type ToggleAudioType = (params: AudioToggleParams) => Promise<boolean | undefined>;
 
 export type MeetButtonClass = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'danger' | 'danger-secondary';
