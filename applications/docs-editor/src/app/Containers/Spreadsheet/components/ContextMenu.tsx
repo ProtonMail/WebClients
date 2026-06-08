@@ -122,6 +122,8 @@ export function ContextMenu({
   const clearContent = useUI.$.withFocusGrid(useUI.$.operation.delete)
   const openConditionalFormat = useUI.$.format.conditional.open
   const openDataValidation = useUI.$.data.validation.open
+  const sortAscending = useUI.$.withFocusGrid(useUI.$.data.sortAscending)
+  const sortDescending = useUI.$.withFocusGrid(useUI.$.data.sortDescending)
   const onAutoResize = useUI((ui) => ui.legacy.onAutoResize)
 
   const multiColumnTitle = generateMultiDimTitle(selectedColumnHeadersIds, 'y')
@@ -371,7 +373,7 @@ export function ContextMenu({
 
           <UI.MenuItem
             leadingIconSlot={<UI.Icon legacyName="sort-alphabetically" />}
-            onClick={() => onSortColumn?.(sheetId, activeCell.columnIndex, 'ASCENDING')}
+            onClick={sortAscending}
             disabled={readonly}
           >
             {s('Sort sheet A to Z')}
@@ -379,7 +381,7 @@ export function ContextMenu({
 
           <UI.MenuItem
             leadingIconSlot={<UI.Icon legacyName="sort-alphabetically" />}
-            onClick={() => onSortColumn?.(sheetId, activeCell.columnIndex, 'DESCENDING')}
+            onClick={sortDescending}
             disabled={readonly}
           >
             {s('Sort sheet Z to A')}
