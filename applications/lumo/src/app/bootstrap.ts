@@ -41,6 +41,7 @@ import { LUMO_ELIGIBILITY } from './types';
 import { initializeConsoleOverride } from './util/logging';
 import { lumoEventLoop } from './redux/eventLoop';
 import { type UserAndAddressKeys, initializeLumoBackground, initializeLumoCritical } from './util/lumoBootstrap';
+import { setLumoTelemetryEnabled } from './util/telemetry';
 import { lumoTelemetryConfig } from './util/telemetryConfig';
 
 const checkForGuestMigration = async (dispatch: any) => {
@@ -161,6 +162,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
                     uid: authentication.UID,
                     ...lumoTelemetryConfig,
                 });
+                setLumoTelemetryEnabled(true);
             }
 
             dispatch(welcomeFlagsActions.initial(userSettings));
