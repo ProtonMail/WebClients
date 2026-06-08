@@ -1,14 +1,20 @@
 import { Href } from '@proton/atoms/Href/Href';
 import type { B2BOnboardingFeature } from '@proton/components/components/onboarding/b2b/interface';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     feature: B2BOnboardingFeature;
 }
 
 const B2BOnboardingFeatureItem = ({ feature }: Props) => {
+    const className = clsx(
+        'relative flex flex-row flex-nowrap py-4 sm:px-4',
+        feature.highlighted && 'border border-weak rounded-lg mt-2'
+    );
+
     return (
-        <div key={feature.id} className="relative flex flex-row flex-nowrap py-4 sm:px-4">
+        <div key={feature.id} className={className}>
             <img src={feature.illustration} alt="" className="shrink-0 hidden sm:flex" />
             <div className="flex-1 mr-4 sm:ml-4 my-auto">
                 <h3 className="text-rg text-semibold">{feature.title}</h3>
