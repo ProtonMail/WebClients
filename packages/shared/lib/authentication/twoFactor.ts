@@ -68,6 +68,35 @@ export const getHasFIDO2Enabled = (Enabled?: number) => {
     return hasBit(Enabled || 0, SETTINGS_2FA_ENABLED.FIDO2);
 };
 
+/**
+ * Returns true if the user can only complete 2FA via security key (FIDO2 enabled, TOTP not enabled)
+ * AND the current application/hostname does not support FIDO2 (e.g. calendar/mail/drive, onion).
+ *
+ * Used to detect — before prompting for a password — that re-auth on this app will dead-end,
+ * so the UI can route the user to account.proton.me instead of showing an error after submission.
+ *
+ * Note: when an admin is signed in as a sub-user, `userSettings` reflects the sub-user, not the
+ * authenticating principal, so callers should treat this as an optimistic hint rather than a hard gate.
+ */
+export const getRequiresAccountAppForTwoFactor = ({
+    enabled,
+    appName,
+    hostname,
+}: {
+    enabled: number | undefined;
+    appName: APP_NAMES;
+    hostname: string;
+}) => {
+    const enabledValue = enabled || 0;
+    if (!getHasFIDO2Enabled(enabledValue)) {
+        return false;
+    }
+    if (getHasTOTPEnabled(enabledValue)) {
+        return false;
+    }
+    return !getHasFIDO2Support({ appName, hostname });
+};
+
 export interface TwoFactorAuthTypes {
     /** Whether TOTP (time-based one-time password) two-factor authentication is enabled for the user. */
     totp: boolean;
