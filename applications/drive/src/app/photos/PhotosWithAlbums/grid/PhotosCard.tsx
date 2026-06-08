@@ -31,7 +31,6 @@ type Props = {
     nodeUid: string;
     selected: boolean;
     onRender: (nodeUid: string, domRef: React.MutableRefObject<unknown>) => void;
-    onRenderLoadedLink: (nodeUid: string, activeRevisionUid: string, domRef: React.MutableRefObject<unknown>) => void;
     style: CSSProperties;
     onClick: () => void;
     onSelect: (isSelected: boolean) => void;
@@ -46,7 +45,6 @@ const getAltText = ({ mediaType, name }: { mediaType: string; name: string }) =>
 export const PhotosCard: FC<Props> = ({
     style,
     onRender,
-    onRenderLoadedLink,
     nodeUid,
     onClick,
     onSelect,
@@ -79,24 +77,21 @@ export const PhotosCard: FC<Props> = ({
     const [imageReady, setImageReady] = useState(false);
     const ref = useRef(null);
 
-    // First call when photo is rendered to request caching link meta data.
-
-    // Once we have link meta data (link has name which is missing during
-    // photo listing), we can initiate thumbnail loading.
-    // The separation is needed to call thumbnail queue when link is already
-    // present in cache to not fetch or decrypt meta data more than once.
+    // Photos are single-revision, so both the node metadata (name, duration,
+    // badges) and the thumbnail are requested from a single render callback,
+    // keyed by nodeUid — no need to decrypt the node first to learn its revision.
+    // The image paints as soon as the thumbnail arrives; the overlays fill in
+    // once the metadata resolves.
     useEffect(() => {
-        if (!photoInfo?.activeRevisionUid) {
-            onRender(nodeUid, ref);
-        } else {
-            onRenderLoadedLink(nodeUid, photoInfo.activeRevisionUid, ref);
-        }
-    }, [nodeUid, onRender, onRenderLoadedLink, photoInfo?.activeRevisionUid]);
+        onRender(nodeUid, ref);
+    }, [nodeUid, onRender]);
 
-    const thumbnail = useThumbnail(photoInfo?.activeRevisionUid);
+    const thumbnail = useThumbnail(nodeUid);
     const thumbnailUrl = thumbnail?.hdUrl || thumbnail?.sdUrl;
     const isThumbnailLoading = Boolean(thumbnail?.sdStatus === 'loading' || (thumbnailUrl && !imageReady));
-    const isLoaded = thumbnail !== undefined && !isThumbnailLoading && Boolean(photoInfo);
+    // Loaded once the image is painted, or — when there is no thumbnail — once
+    // the node metadata has resolved and we know the empty state to show.
+    const isLoaded = thumbnailUrl ? imageReady : Boolean(photoInfo) && !isThumbnailLoading;
 
     useEffect(() => {
         if (thumbnailUrl) {
@@ -186,53 +181,60 @@ export const PhotosCard: FC<Props> = ({
                     </Tooltip>
                 )}
 
-                {isLoaded && photoInfo ? (
+                {thumbnailUrl || photoInfo ? (
                     <div className="w-full h-full relative photos-card-thumbnail-holder">
                         {thumbnailUrl ? (
                             <img
                                 data-testid="photos-card-thumbnail"
                                 data-node-uid={nodeUid}
                                 src={thumbnailUrl}
-                                alt={getAltText({ name: photoInfo.name, mediaType: photoInfo.mediaType })}
+                                alt={
+                                    photoInfo
+                                        ? getAltText({ name: photoInfo.name, mediaType: photoInfo.mediaType })
+                                        : c('Label').t`Asset`
+                                }
                                 className="w-full h-full photos-card-thumbnail rounded"
                             />
                         ) : (
-                            <div
-                                className="flex items-center justify-center w-full h-full photos-card-thumbnail photos-card-thumbnail--empty"
-                                data-testid={getAltText({ name: photoInfo.name, mediaType: photoInfo.mediaType })}
-                            >
-                                <FileIcon mimeType={photoInfo.mediaType} size={12} />
-                            </div>
+                            photoInfo && (
+                                <div
+                                    className="flex items-center justify-center w-full h-full photos-card-thumbnail photos-card-thumbnail--empty"
+                                    data-testid={getAltText({ name: photoInfo.name, mediaType: photoInfo.mediaType })}
+                                >
+                                    <FileIcon mimeType={photoInfo.mediaType} size={12} />
+                                </div>
+                            )
                         )}
 
-                        {(!isOwnedByCurrentUser || photoInfo.haveSignatureIssues || photoInfo.isShared) && (
-                            <div className="absolute bottom-0 flex left-0 ml-2 mb-2 gap-1">
-                                {!isOwnedByCurrentUser &&
-                                    !isFavorite &&
-                                    /* saved photos are not linked with original and thus cloud icon is for now not shown until this is resolved */ false && (
-                                        <div
-                                            data-testid="photo-cloud-icon"
-                                            className="photos-card-bottom-icon rounded-50 color-white flex items-center justify-center"
-                                        >
-                                            <IcCloud alt={c('Info').t`Photo is not saved to your library`} />
+                        {photoInfo &&
+                            (!isOwnedByCurrentUser || photoInfo.haveSignatureIssues || photoInfo.isShared) && (
+                                <div className="absolute bottom-0 flex left-0 ml-2 mb-2 gap-1">
+                                    {!isOwnedByCurrentUser &&
+                                        !isFavorite &&
+                                        /* saved photos are not linked with original and thus cloud icon is for now not shown until this is resolved */ false && (
+                                            <div
+                                                data-testid="photo-cloud-icon"
+                                                className="photos-card-bottom-icon rounded-50 color-white flex items-center justify-center"
+                                            >
+                                                <IcCloud alt={c('Info').t`Photo is not saved to your library`} />
+                                            </div>
+                                        )}
+                                    {photoInfo.haveSignatureIssues && (
+                                        <SignatureIcon
+                                            isFile
+                                            haveSignatureIssues={photoInfo.haveSignatureIssues}
+                                            className="color-danger"
+                                        />
+                                    )}
+                                    {photoInfo.isShared && (
+                                        <div className="photos-card-bottom-icon rounded-50 flex items-center justify-center">
+                                            <IcUsers color="white" size={3} />
                                         </div>
                                     )}
-                                {photoInfo.haveSignatureIssues && (
-                                    <SignatureIcon
-                                        isFile
-                                        haveSignatureIssues={photoInfo.haveSignatureIssues}
-                                        className="color-danger"
-                                    />
-                                )}
-                                {photoInfo.isShared && (
-                                    <div className="photos-card-bottom-icon rounded-50 flex items-center justify-center">
-                                        <IcUsers color="white" size={3} />
-                                    </div>
-                                )}
-                            </div>
-                        )}
+                                </div>
+                            )}
 
-                        {photoInfo.mediaType && isVideo(photoInfo.mediaType) && (
+                        {photoInfo && photoInfo.mediaType && isVideo(photoInfo.mediaType) && (
                             <div className="absolute bottom-0 flex right-0 mr-2 mb-2 gap-2">
                                 <div
                                     className={clsx(
