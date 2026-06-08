@@ -6,6 +6,9 @@ import { c } from 'ttag';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { selectConversationMode, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
+
 import { isInDeletedFolder } from '../../helpers/elements';
 import { useMailboxListContext } from './MailboxListProvider';
 import { MailboxListScreenReaderHeading } from './MailboxListScreenReaderHeading';
@@ -22,7 +25,9 @@ const MailboxListContainer = (
     { className, show = true, showContentPanel = false, children, noBorder = false }: MailboxListContainerProps,
     ref: Ref<HTMLDivElement>
 ) => {
-    const { contextMenu, blockSenderModal, mailboxListLoading, conversationMode, labelID } = useMailboxListContext();
+    const labelID = useMailSelector(selectLabelID);
+    const conversationMode = useMailSelector(selectConversationMode);
+    const { contextMenu, blockSenderModal, mailboxListLoading } = useMailboxListContext();
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
 
     return (

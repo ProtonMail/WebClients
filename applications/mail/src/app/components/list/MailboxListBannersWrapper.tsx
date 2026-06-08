@@ -1,7 +1,13 @@
 import SelectAllBanner from 'proton-mail/components/list/select-all/SelectAllBanner';
 import { getCanDisplaySelectAllBanner } from 'proton-mail/helpers/selectAll';
 
-import { taskRunningInLabel } from '../../store/elements/elementsSelectors';
+import {
+    selectFilter,
+    selectIsSearching,
+    selectLabelID,
+    selectPageSize,
+    taskRunningInLabel,
+} from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
 import ListBanners from './MailboxListBanners';
 import { useMailboxListContext } from './MailboxListProvider';
@@ -13,7 +19,11 @@ interface MailboxListBannersWrapperProps {
 }
 
 const MailboxListBannersWrapper = ({ columnLayout, checkedIDs, onCheckAll }: MailboxListBannersWrapperProps) => {
-    const { labelID = '', isESLoading, isSearch, showESSlowToolbar, pageSize, filter } = useMailboxListContext();
+    const isSearch = useMailSelector(selectIsSearching);
+    const labelID = useMailSelector(selectLabelID);
+    const filter = useMailSelector(selectFilter);
+    const pageSize = useMailSelector(selectPageSize);
+    const { isESLoading, showESSlowToolbar } = useMailboxListContext();
 
     const taskIsRunningInLabel = useMailSelector((state) => taskRunningInLabel(state, { labelID }));
 
