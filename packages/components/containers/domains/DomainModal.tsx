@@ -93,7 +93,7 @@ const renderDKIMIcon = (dkimState: Domain['DKIM']['State']) => {
                     title={c('Tooltip')
                         .t`We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.`}
                 >
-                    <IcExclamationCircleFilled size={6} className="mr-1 md:mr-2 p-1 md:p-0" />
+                    <IcExclamationCircleFilled size={3.5} className="mr-1 md:mr-2 p-1 md:p-0 color-warning" />
                 </Tooltip>
             );
         }
