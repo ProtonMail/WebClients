@@ -3,21 +3,23 @@ import type { Middleware } from '@reduxjs/toolkit';
 
 import { loggerManager } from '@proton/shared/lib/logger';
 
-import { contextPages, contextTotal, selectCurrentContextIdentifier } from './elements/elementsSelectors';
+import { contextTotal, selectCurrentContextIdentifier } from './elements/elementsSelectors';
 import type { MailState } from './rootReducer';
 
 const TRACKED_ACTIONS = [
-    'mailbox/markConversationsAsUnread/',
-    'mailbox/markConversationsAsRead/',
-    'mailbox/markMessagesAsUnread/',
-    'mailbox/markMessagesAsRead/',
-    'mailbox/labelConversations/',
-    'mailbox/unlabelConversations/',
-    'mailbox/labelMessages/',
-    'mailbox/unlabelMessages/',
+    'mailbox/markConversationsAsUnread/pending',
+    'mailbox/markConversationsAsRead/pending',
+    'mailbox/markMessagesAsUnread/pending',
+    'mailbox/markMessagesAsRead/pending',
+    'mailbox/labelConversations/pending',
+    'mailbox/unlabelConversations/pending',
+    'mailbox/labelMessages/pending',
+    'mailbox/unlabelMessages/pending',
     'elements/showSerializedElements/',
     'elements/load/',
     'elements/eventUpdates/',
+    'elements/setParams',
+    'elements/reset',
 ] as const;
 
 const shouldLogAction = (type: string) => {
@@ -42,15 +44,12 @@ const prepareContext = (state: MailState) => ({
     filter: state.elements.params.filter,
     page: state.elements.page,
     pages: state.elements.pages,
-    total: state.elements.total,
     esEnabled: state.elements.params.esEnabled,
     isSearching: state.elements.params.isSearching,
     pendingRequest: state.elements.pendingRequest,
     taskRunning: state.elements.taskRunning.labelIDs,
     elementCount: Object.keys(state.elements.elements).length,
     bypassFilerLength: state.elements.bypassFilter.length,
-    ctxIdentifier: selectCurrentContextIdentifier(state),
-    ctxPages: contextPages(state),
 });
 
 const reduxLogger = loggerManager.getLogger('redux');
