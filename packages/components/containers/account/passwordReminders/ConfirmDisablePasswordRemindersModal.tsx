@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { setPasswordReminderFlag } from '@proton/account/passwordReminder/setPasswordReminderFlag';
 import { Button } from '@proton/atoms/Button/Button';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { PASSWORD_REMINDERS_VALUE } from '@proton/shared/lib/interfaces';
@@ -15,10 +16,12 @@ interface Props {
 
 const ConfirmDisablePasswordRemindersModal = ({ open, onClose }: Props) => {
     const dispatch = useDispatch();
+    const { createNotification } = useNotifications();
     const [submitting, withSubmitting] = useLoading();
 
     const disablePasswordReminders = async () => {
         await dispatch(setPasswordReminderFlag({ value: PASSWORD_REMINDERS_VALUE.DISABLED }));
+        createNotification({ text: c('Success').t`Password reminders disabled` });
         onClose();
     };
 
