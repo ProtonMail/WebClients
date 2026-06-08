@@ -22,21 +22,30 @@ import { constants } from '../../constants';
 import { resolveNavigation } from '../definitions/routes';
 import { isB2BAdmin } from '../functions/isB2BAdmin';
 
-const off = false;
-const on = true;
+const SIDEBAR_OPEN_BY_DEFAULT = true;
 
-const useSidebarState = () => {
-    const [status, setState] = useLocalState<boolean>(on, constants.AdminSidebarStorageKey);
+type SidebarControls = { status: boolean; toggle: () => void };
+type SpotlightControls = { isOn: boolean; setOff: () => void };
 
-    const toggle = () => setState((previous) => !previous);
-    return { status, toggle };
-};
+const useSidebarFeature = (): { sidebar: SidebarControls; spotlight: SpotlightControls } => {
+    const [status, setStatus] = useLocalState<boolean>(SIDEBAR_OPEN_BY_DEFAULT, constants.AdminSidebarStorageKey);
+    const [spotlight, setSpotlight] = useDeclarativeLocalState<boolean>(constants.AdminSidebarSpotlightKey);
 
-const useKillableFeature = (key: string) => {
-    const [isOn, setState] = useDeclarativeLocalState<boolean>(key);
+    const dismissSpotlight = () => setSpotlight(false);
 
-    const setOff = () => setState(off);
-    return { isOn: isOn !== off, setOff };
+    return {
+        sidebar: {
+            status,
+            toggle: () => {
+                setStatus((previous) => !previous);
+                dismissSpotlight();
+            },
+        },
+        spotlight: {
+            isOn: spotlight !== false,
+            setOff: dismissSpotlight,
+        },
+    };
 };
 
 type Args = {
@@ -52,8 +61,8 @@ export const useB2BAdminSidebarFeature = ({
           enabled: true;
           routes: SidebarTree;
           settings: ReturnType<typeof defineSearchOptions>;
-          sidebar: ReturnType<typeof useSidebarState>;
-          spotlight: ReturnType<typeof useKillableFeature>;
+          sidebar: SidebarControls;
+          spotlight: SpotlightControls;
           loading: false;
       }
     | { enabled: false; routes: undefined; loading: boolean } => {
@@ -70,8 +79,7 @@ export const useB2BAdminSidebarFeature = ({
     const [isSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
     const [permissions] = useOrgPermissions();
 
-    const sidebarFeature = useSidebarState();
-    const spotlightFeature = useKillableFeature(constants.AdminSidebarSpotlightKey);
+    const { sidebar, spotlight } = useSidebarFeature();
 
     const B2BLogsVPN = useFlag('B2BLogsVPN');
     const SsoForPbs = useFlag('SsoForPbs');
@@ -86,7 +94,7 @@ export const useB2BAdminSidebarFeature = ({
                     user: user.ID,
                     ...(organization ? { organization: organization.ID } : undefined),
                     isEnabled: true,
-                    isActive: isEnabled && sidebarFeature.status,
+                    isActive: isEnabled && sidebar.status,
                 };
 
                 telemetry.sendCustomEvent('b2b-admin-sidebar-viewed', trackingData);
@@ -125,7 +133,7 @@ export const useB2BAdminSidebarFeature = ({
         loading: false,
         routes: defineSidebar(prefixedNavigation),
         settings: defineSearchOptions(prefixedNavigation),
-        sidebar: sidebarFeature,
-        spotlight: spotlightFeature,
+        sidebar,
+        spotlight,
     };
 };
