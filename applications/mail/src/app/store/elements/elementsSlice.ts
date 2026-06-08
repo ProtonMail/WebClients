@@ -123,6 +123,7 @@ export const newElementsState = ({
         bypassFilter: [],
         retry,
         taskRunning,
+        awaitingStaleRetry: {},
     };
 };
 

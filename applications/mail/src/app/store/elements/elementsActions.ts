@@ -19,6 +19,7 @@ import { isElementMessage } from 'proton-mail/helpers/elements';
 import type { Element } from '../../models/element';
 import type { ConversationParams, ConversationResult } from '../conversations/conversationsTypes';
 import type { MailState, MailThunkExtra } from '../store';
+import { selectCurrentContextIdentifier } from './elementsSelectors';
 import type {
     ESResults,
     ElementsStateParams,
@@ -49,10 +50,11 @@ export const showSerializedElements = createAction<{
     result: QueryResults;
     page: number;
     params: ElementsStateParams;
+    onlyInsertNewData: boolean;
 }>('elements/showSerializedElements');
 
 export const load = createAsyncThunk<
-    { result: QueryResults; taskRunning: TaskRunningInfo; params: ElementsStateParams },
+    { result: QueryResults; taskRunning: TaskRunningInfo; params: ElementsStateParams; onlyInsertNewData: boolean },
     QueryParams,
     MailThunkExtra
 >(
@@ -64,12 +66,19 @@ export const load = createAsyncThunk<
         const state = getState() as MailState;
         const params = state.elements.params;
 
+        const currentContextIdentifier = selectCurrentContextIdentifier(state);
+        const onlyInsertNewData = extra.unleashClient.isEnabled('OnlyInsertNewDataOnFetch');
+
+        // Indicates that we have a context, the location was already loaded
+        const contextAlreadyPresent = onlyInsertNewData && !!state.elements.total[currentContextIdentifier];
+
         const onSerializedResponse = ({ result, page }: { result: QueryResults; page: number }) => {
             dispatch(
                 showSerializedElements({
                     result,
                     page,
                     params,
+                    onlyInsertNewData,
                 })
             );
         };
@@ -101,21 +110,24 @@ export const load = createAsyncThunk<
             throw error;
         });
 
-        if (result.Stale === 1 && REFRESHES?.[count]) {
-            const ms = 1 * SECOND * REFRESHES[count];
+        if (result.Stale === 1) {
+            const refreshDelay = contextAlreadyPresent
+                ? REFRESHES[Math.min(count, REFRESHES.length - 1)]
+                : REFRESHES?.[count];
 
-            // Wait few seconds before retrying
-            setTimeout(() => {
-                void dispatch(
-                    load({
-                        page,
-                        pageSize,
-                        abortController,
-                        count: count + 1,
-                        refetch: true, // Do not update current page if we refetch,
-                    })
-                );
-            }, ms);
+            if (refreshDelay !== undefined) {
+                setTimeout(() => {
+                    void dispatch(
+                        load({
+                            page,
+                            pageSize,
+                            abortController,
+                            count: count + 1,
+                            refetch: true, // Do not update current page if we refetch,
+                        })
+                    );
+                }, refreshDelay * SECOND);
+            }
         }
 
         const taskLabels = Object.keys(result.TasksRunning || {});
@@ -131,7 +143,7 @@ export const load = createAsyncThunk<
             });
         }
 
-        return { result, taskRunning, params };
+        return { result, taskRunning, params, onlyInsertNewData };
     }
 );
 

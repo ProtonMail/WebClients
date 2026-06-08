@@ -101,12 +101,14 @@ export const loadFulfilled = (
 ) => {
     const { page, refetch } = action.meta.arg;
     const {
-        result: { Total },
+        result: { Total, Stale },
         taskRunning,
         // Always use params from the request, and do not use params from the state
         // Otherwise, concurrent requests will update the wrong "context filter"
         params,
     } = action.payload;
+
+    const isResponseStale = Stale === 1;
 
     const contextFilter = getElementContextIdentifier({
         labelID: params.labelID,
@@ -132,7 +134,9 @@ export const loadFulfilled = (
         taskRunning,
     });
 
-    if (!state.taskRunning.labelIDs.includes(params.labelID)) {
+    state.awaitingStaleRetry[contextFilter] = isResponseStale;
+
+    if (!state.taskRunning.labelIDs.includes(params.labelID) && !isResponseStale) {
         state.total[contextFilter] = Total;
     }
 };
@@ -142,14 +146,18 @@ export const loadFulfilled = (
  */
 export const showSerializedElements = (
     state: Draft<ElementsState>,
-    action: PayloadAction<{ result: QueryResults; page: number; params: ElementsStateParams }, string>
+    action: PayloadAction<
+        { result: QueryResults; page: number; params: ElementsStateParams; onlyInsertNewData: boolean },
+        string
+    >
 ) => {
     // Always use params from the request, and do not use params from the state
     // Otherwise, concurrent requests will update the wrong "context filter"
     const params = action.payload.params;
     const {
-        result: { Total, Elements },
+        result: { Total, Stale, Elements },
         page,
+        onlyInsertNewData,
     } = action.payload;
 
     if (state.taskRunning.labelIDs.includes(params.labelID)) {
@@ -171,10 +179,23 @@ export const showSerializedElements = (
         newsletterSubscriptionID: params.newsletterSubscriptionID,
     });
 
-    Object.assign(state, {
-        elements: { ...state.elements, ...toMap(Elements, 'ID') },
-    });
-    state.total[contextFilter] = Total;
+    // We only insert elements that are not already in the state. The event loop updates existing items.
+    if (onlyInsertNewData) {
+        Elements.forEach((element) => {
+            if (element.ID && !state.elements[element.ID]) {
+                state.elements[element.ID] = element;
+            }
+        });
+    } else {
+        Object.assign(state, {
+            elements: { ...state.elements, ...toMap(Elements, 'ID') },
+        });
+    }
+
+    if (Stale === 0 || !state.total[contextFilter]) {
+        state.total[contextFilter] = Total;
+    }
+
     state.pages[contextFilter] = state.pages[contextFilter]
         ? unique([...state.pages[contextFilter], page]).sort()
         : [page];
