@@ -253,6 +253,7 @@ export {
     getCanSubscriptionAccessDuoPlan,
     getCanSubscriptionAccessPassFamilyPlan,
     getHas2025OfferCoupon,
+    hasSummerSale2026Coupon,
     getHasConsumerVpnPlan,
     getHasDriveB2BPlan,
     getHasExternalMemberCapableB2BPlan,
