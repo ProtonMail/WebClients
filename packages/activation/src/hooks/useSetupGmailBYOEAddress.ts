@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { createBYOEAddress } from '@proton/account/addresses/actions';
+import { updateBYOEAddressConnection } from '@proton/account/addressKeys/actions';
+import { convertBYOEAddress, createBYOEAddress } from '@proton/account/addresses/actions';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { startEasySwitchSignupImportTask } from '@proton/activation/src/api';
 import { BYOE_QUOTA_THRESHOLD_RATIO } from '@proton/activation/src/constants';
@@ -13,7 +14,7 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useApi } from '@proton/components/index';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { findUserAddress } from '@proton/shared/lib/helpers/address';
+import { findUserAddress, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -46,28 +47,14 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal, onComplete, source }: Prop
     }) => {
         const [local, domain] = getEmailParts(connectedAddress);
 
-        const emailAddressParts = {
-            Local: local,
-            Domain: domain,
-        };
+        try {
+            const address = await dispatch(createBYOEAddress({ emailAddressParts: { Local: local, Domain: domain } }));
 
-        // If the BYOE address is already part of the user addresses, no need to create it
-        const emailAddress = `${emailAddressParts.Local}@${emailAddressParts.Domain}`;
-        if (findUserAddress(emailAddress, addresses)) {
-            createNotification({
-                type: 'error',
-                text: c('Error').t`Address is already added to your account`,
-            });
-        } else {
-            try {
-                const address = await dispatch(createBYOEAddress({ emailAddressParts }));
-
-                return address;
-            } catch (e) {
-                handleError(e);
-                onError();
-                onComplete?.();
-            }
+            return address;
+        } catch (e) {
+            handleError(e);
+            onError();
+            onComplete?.();
         }
     };
 
@@ -78,9 +65,10 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal, onComplete, source }: Prop
             return;
         }
 
-        // If setting up the token worked, we can create the BYOE address
         if (!hasError && token) {
-            if (findUserAddress(token.Account, addresses)) {
+            const existingAddress = findUserAddress(token.Account, addresses);
+
+            if (existingAddress && getIsBYOEAddress(existingAddress)) {
                 createNotification({
                     type: 'error',
                     text: c('Error').t`Address is already added to your account`,
@@ -90,7 +78,6 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal, onComplete, source }: Prop
             }
 
             try {
-                // In this case we have no BYOE address yet, so we want to import user emails on the primary address
                 await api(
                     startEasySwitchSignupImportTask({
                         Provider: OAUTH_PROVIDER.GOOGLE,
@@ -106,15 +93,31 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal, onComplete, source }: Prop
                 return;
             }
 
-            const address = await handleCreateAddress({
-                connectedAddress: token.Account,
-                onError: () => {
+            let address;
+            if (existingAddress) {
+                try {
+                    address = await dispatch(convertBYOEAddress({ addressID: existingAddress.ID }));
+                    await dispatch(updateBYOEAddressConnection({ address: existingAddress, type: 'reconnect' }));
+                } catch (e) {
+                    handleError(e);
                     createNotification({
                         type: 'error',
-                        text: c('Error').t`Something went wrong while creating the address`,
+                        text: c('Error').t`Something went wrong while converting the address`,
                     });
-                },
-            });
+                    onComplete?.();
+                    return;
+                }
+            } else {
+                address = await handleCreateAddress({
+                    connectedAddress: token.Account,
+                    onError: () => {
+                        createNotification({
+                            type: 'error',
+                            text: c('Error').t`Something went wrong while creating the address`,
+                        });
+                    },
+                });
+            }
 
             if (address) {
                 onComplete?.();
