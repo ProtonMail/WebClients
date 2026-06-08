@@ -1,10 +1,15 @@
 import { combineReducers, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
-import { sharedReducers } from '@proton/redux-shared-store/sharedReducers';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import { sharedReducers } from '@proton/redux-shared-store/sharedReducers';
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 
-export const extraThunkArguments = {} as ProtonThunkArguments;
+import { apiMock } from '../api';
+
+// Mirror the real store, which always carries an `api` in its thunk arguments. Without it, any model
+// that isn't preloaded throws `extraArgument.api is not a function` the moment it auto-fetches. Unregistered
+// endpoints resolve to `{}` via apiMock, so an unprovided model resolves empty instead of crashing.
+export const extraThunkArguments = { api: apiMock } as unknown as ProtonThunkArguments;
 
 export const listenerMiddleware = createListenerMiddleware();
 
