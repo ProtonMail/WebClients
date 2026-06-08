@@ -1,4 +1,4 @@
-import { getHasInboxB2BPlan, getHasMemberCapablePlan } from '@proton/payments';
+import { PLANS } from '@proton/payments';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
@@ -7,24 +7,21 @@ import { isOrganizationB2B } from '@proton/shared/lib/organization/helper';
 
 import { ImportProvider } from '../interface';
 
+const hasSupportedPlan = (plan: PLANS) =>
+    [PLANS.MAIL_BUSINESS, PLANS.MAIL_PRO, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_BIZ_2025].includes(
+        plan
+    );
+
 export const isProviderSupported = (provider: ImportProvider) => {
     return provider === ImportProvider.GOOGLE;
 };
 
-export const isOrganizationOLESEligible = ({
-    organization,
-    subscription,
-}: {
-    organization: Organization | undefined;
-    subscription: MaybeFreeSubscription;
-}) => {
+export const isOrganizationOLESEligible = ({ organization }: { organization: Organization | undefined }) => {
     return (
         !!organization &&
-        !!subscription &&
+        hasSupportedPlan(organization.PlanName) &&
         hasOrganizationSetupWithKeys(organization) &&
         organization?.State === ORGANIZATION_STATE.ACTIVE &&
-        getHasMemberCapablePlan(organization, subscription) &&
-        getHasInboxB2BPlan(subscription) &&
         isOrganizationB2B(organization)
     );
 };
@@ -38,5 +35,5 @@ export const isUserOLESEligible = ({
     organization: Organization | undefined;
     subscription: MaybeFreeSubscription;
 }) => {
-    return Boolean(isOrganizationOLESEligible({ organization, subscription }) && user?.isSelf && user?.isAdmin);
+    return Boolean(isOrganizationOLESEligible({ organization }) && !!subscription && user?.isSelf && user?.isAdmin);
 };
