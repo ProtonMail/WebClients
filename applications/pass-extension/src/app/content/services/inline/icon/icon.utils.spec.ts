@@ -1,4 +1,6 @@
-import { resolveInjectionAnchor, shouldCreateContainingBlock } from './icon.utils';
+import type { MaybeNull } from '@proton/pass/types';
+
+import { isInvisible, resolveInjectionAnchor, shouldCreateContainingBlock } from './icon.utils';
 
 describe('resolveInjectionAnchor', () => {
     beforeEach(() => {
@@ -147,5 +149,92 @@ describe('shouldCreateStackingContext', () => {
         const scrollParent = document.getElementById('scrollParent')!;
 
         expect(shouldCreateContainingBlock(target, form, scrollParent)).toBe(false);
+    });
+});
+
+describe('isInvisible', () => {
+    /** JSDOM can't resolve `getComputedStyle(el, '::before')` and reports
+     * an unset `background-image` as '' rather than the 'none'. */
+    const pseudos: Map<HTMLElement, { before?: string; after?: string }> = new Map();
+    const getComputedStyle = window.getComputedStyle.bind(window);
+
+    beforeEach(() => {
+        document.body.innerHTML = '';
+        pseudos.clear();
+
+        jest.spyOn(window, 'getComputedStyle').mockImplementation((el: Element, pseudo?: MaybeNull<string>) => {
+            if (pseudo === '::before' || pseudo === '::after') {
+                const key = pseudo === '::before' ? 'before' : 'after';
+                return { content: pseudos.get(el as HTMLElement)?.[key] ?? 'none' } as CSSStyleDeclaration;
+            }
+
+            const styles = getComputedStyle(el);
+            return {
+                display: styles.display,
+                visibility: styles.visibility,
+                opacity: styles.opacity,
+                backgroundColor: styles.backgroundColor,
+                backgroundImage: styles.backgroundImage || 'none',
+            } as CSSStyleDeclaration;
+        });
+    });
+
+    afterEach(() => jest.restoreAllMocks());
+
+    const render = (html: string): HTMLElement => {
+        document.body.innerHTML = html;
+        return document.getElementById('el')!;
+    };
+
+    test('should treat `display: none` as invisible', () => {
+        expect(isInvisible(render(`<div id="el" style="display: none;"></div>`))).toBe(true);
+    });
+
+    test('should treat `visibility: hidden` as invisible', () => {
+        expect(isInvisible(render(`<div id="el" style="visibility: hidden;"></div>`))).toBe(true);
+    });
+
+    test('should treat `opacity: 0` as invisible', () => {
+        expect(isInvisible(render(`<div id="el" style="opacity: 0;"></div>`))).toBe(true);
+    });
+
+    test('should treat an empty transparent div as invisible', () => {
+        expect(isInvisible(render(`<div id="el"></div>`))).toBe(true);
+    });
+
+    test('should treat an empty transparent span as invisible', () => {
+        expect(isInvisible(render(`<span id="el"></span>`))).toBe(true);
+    });
+
+    test('should not treat a div with a background color as invisible', () => {
+        expect(isInvisible(render(`<div id="el" style="background-color: rgb(1, 2, 3);"></div>`))).toBe(false);
+    });
+
+    test('should not treat a div with a background image as invisible', () => {
+        expect(isInvisible(render(`<div id="el" style="background-image: url(x.png);"></div>`))).toBe(false);
+    });
+
+    test('should not treat a div with text content as invisible', () => {
+        expect(isInvisible(render(`<div id="el">hello</div>`))).toBe(false);
+    });
+
+    test('should not treat a div with child elements as invisible', () => {
+        expect(isInvisible(render(`<div id="el"><span>child</span></div>`))).toBe(false);
+    });
+
+    test('should not treat a div with `::before` pseudo content as invisible', () => {
+        const el = render(`<div id="el"></div>`);
+        pseudos.set(el, { before: '_' });
+        expect(isInvisible(el)).toBe(false);
+    });
+
+    test('should not treat a div with `::after` pseudo content as invisible', () => {
+        const el = render(`<div id="el"></div>`);
+        pseudos.set(el, { after: '_' });
+        expect(isInvisible(el)).toBe(false);
+    });
+
+    test('should not treat an empty transparent `<i>` as invisible', () => {
+        expect(isInvisible(render(`<i id="el"></i>`))).toBe(false);
     });
 });
