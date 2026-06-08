@@ -1310,6 +1310,9 @@
       ],
       "Try ${ BRAND_NAME } Workspace": [
         "Паспрабуйце ${ BRAND_NAME } Workspace"
+      ],
+      "Verify now": [
+        "Спраўдзіць"
       ]
     },
     "Action: Docs": {
@@ -3167,7 +3170,7 @@
         "Даступна ў сховішчы: ${ storageText }"
       ],
       "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
-        "Лісты, якія адпраўленыя на ${ connectedAddressText }, цяпер будуць паказвацца ў ${ MAIL_APP_NAME }."
+        "Лісты, якія адпраўлены на ${ connectedAddressText }, цяпер будуць паказвацца ў ${ MAIL_APP_NAME }."
       ],
       "Enough room for years of emails, attachments and more.": [
         "Дастаткова месца ў сховішчы, якога хопіць на доўгія гады для захоўвання лістоў, далучэнняў і іншай інфармацыі."
@@ -4161,7 +4164,7 @@
         "Ключ арганізацыі павінен быць актываваны, каб ствараць непрыватных карыстальнікаў"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
-        "Праверцеце, ці зарэгістраваны ваш ABN для трансгранічнага ПДВ"
+        "Праверце, ці зарэгістраваны ваш ABN для трансгранічнага ПДВ"
       ],
       "VAT number must start with ${ prefixes }": [
         "Нумар ПДВ павінен пачынацца з ${ prefixes }"
@@ -6840,7 +6843,7 @@
         "${ DRIVE_APP_NAME } неабходна лакальна праіндэксаваць вашы файлы для таго, каб задзейнічаць сапраўды прыватны пошук."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Неабходна лакальна праіндэксаваць вашы файлы для таго, каб задзейнічаць сапраўды прыватны пошук. Вы можаце выкарыстоўваць ${ DRIVE_APP_NAME } у звычайным рэжыме, а калі індэксацыя будзе завершана, вы атрымаеце апавяшчэнне."
+        "Неабходна лакальна праіндэксаваць вашы файлы для таго, каб задзейнічаць сапраўды прыватны пошук. Вы можаце выкарыстоўваць ${ DRIVE_APP_NAME } у звычайным рэжыме. Вам будзе адпраўлена апавяшчэнне, калі індэксацыя будзе завершана."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
@@ -7341,7 +7344,7 @@
         "Калі вы выдаліце сябе, то вы страціце доступ да \"${ fileName }\" і не зможаце адкрыць яго зноў. Толькі ўладальнік зможа абагуліць яго з вамі зноў."
       ],
       "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
-        "Вы не зможаце абагуліць \"${ fileName }\" пасля змены доступу на праглядальніка. Толькі ўладальнік можа змяніць ваш доступ зноў."
+        "Вы не зможаце абагуліць \"${ fileName }\" пасля змены доступу праглядальніка. Толькі ўладальнік можа змяніць ваш доступ зноў."
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } — гэта зашыфраванае скразным метадам рашэнне для відэаканферэнцый. Дадайце яго ў свой тарыфны план, каб праводзіць бяспечныя сустрэчы."
@@ -7446,7 +7449,7 @@
         "Індэксавана ${ first }, ${ second } і ${ third }"
       ],
       "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
-        "${ DRIVE_APP_NAME } выявіў, што лакальны індэкс пошуку пашкоджаны і яго больш нельга выкарыстоўваць. Паспрабуйце аднавіць індэкс."
+        "${ DRIVE_APP_NAME } выявіў, што лакальны індэкс пошуку пашкоджаны і яго больш нельга выкарыстоўваць. Паспрабуйце аднавіць індэкс, каб мець магчымасць карыстацца пошукам далей."
       ],
       "Could not scan file for malware": [
         "Немагчыма праверыць файл на шкодныя праграмы"
@@ -7555,6 +7558,21 @@
       ],
       "One encrypted suite. Full business protection.": [
         "Адзін зашыфраваны набор. Поўная абарона бізнесу."
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Вы памятаеце свой пароль? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "Забылі пароль?"
+      ],
+      "Password verified": [
+        "Пароль спраўджаны"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Сістэма перыядычна будзе прасіць вас увесці пароль, каб вы не забылі яго. З цягам часу колькасць такіх запытаў будзе скарачацца."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Сістэма нагадае вам спраўдзіць пароль пазней яшчэ раз"
       ]
     },
     "info": {
@@ -14226,10 +14244,13 @@
         "Усё гатова"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
-        "Перанесці ваш арганізацыю ў ${ BRAND_NAME }"
+        "Перанесці вашу арганізацыю ў ${ BRAND_NAME }"
       ],
       "Summer Sale": [
         "Летні распродаж"
+      ],
+      "Verify your password": [
+        "Спраўджанне вашага пароля"
       ]
     },
     "Today icon tooltip in mini calendar": {

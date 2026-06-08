@@ -1268,6 +1268,13 @@
       ],
       "Get the deal": [
         "Obtener la promoción"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Añadir a «${ name }» (${ photoCount } foto)",
+        "Añadir a «${ name }» (${ photoCount } fotos)"
+      ],
+      "Verify now": [
+        "Verificar ahora"
       ]
     },
     "Action: Docs": {
@@ -3076,6 +3083,9 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Lamentamos que te vayas. Si tienes un momento, te agradeceríamos mucho que nos contaras por qué quieres cancelar. Tus comentarios nos ayudan a mejorar ${ BRAND_NAME } para todo el mundo."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Para una incorporación perfecta de tu equipo a ${ BRAND_NAME }, importa tus datos desde Google, Outlook y otras plataformas."
       ]
     },
     "description": {
@@ -7051,6 +7061,30 @@
       "${ total } user found": [
         "${ total } usuario encontrado",
         "${ total } usuarios encontrados"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Invita a tus amigos** a ${ BRAND_NAME } con tu enlace de referidos."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Consiguen ${ refereeRewardAmount }** en créditos si se suscriben."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Consigues ${ referrerRewardAmount }** en créditos por cada persona que se suscriba."
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "¿Recuerdas tu contraseña? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "¿Has olvidado la contraseña?"
+      ],
+      "Password verified": [
+        "Contraseña verificada"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Para ayudarte a recordar tu contraseña, te pedimos que la introduzcas periódicamente. Con el tiempo, te la pedimos con menos frecuencia."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Te recordamos que vuelvas a verificar tu contraseña más tarde"
       ]
     },
     "info": {
@@ -13367,6 +13401,12 @@
       ],
       "Disconnected from Gmail": [
         "Desconectado de Gmail"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migra tu organización a ${ BRAND_NAME }."
+      ],
+      "Verify your password": [
+        "Verifica tu contraseña"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13768,6 +13808,11 @@
       ],
       "What are you migrating?": [
         "¿Qué estás migrando?"
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Se ha cambiado el nombre del álbum."
       ]
     }
   }

@@ -1296,6 +1296,9 @@
       ],
       "Try ${ BRAND_NAME } Workspace": [
         "${ BRAND_NAME } Workspace tarifesini dene"
+      ],
+      "Verify now": [
+        "Şimdi doğrula"
       ]
     },
     "Action: Docs": {
@@ -7327,6 +7330,21 @@
       ],
       "One encrypted suite. Full business protection.": [
         "Tek bir şifrelenmiş paket. Tam kapsamlı iş koruması."
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Parolanızı hatırlıyor musunuz? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "Parolamı unuttum"
+      ],
+      "Password verified": [
+        "Parola doğrulandı"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Parolanızı unutmamanız için belirli aralıklarla parolanızı yazmanızı isteyeceğiz. Zamanla bunu daha az isteyeceğiz."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Daha sonra yeniden parolanızı doğrulamanızı hatırlatacağız."
       ]
     },
     "info": {
@@ -13763,6 +13781,9 @@
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Kuruluşunuzu ${ BRAND_NAME } üzerine aktarın"
+      ],
+      "Verify your password": [
+        "Parolanızı doğrulayın"
       ]
     },
     "Today icon tooltip in mini calendar": {
