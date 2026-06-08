@@ -7,7 +7,7 @@ import { COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
 import type { CouponConfig } from './interface';
 
 export const summerSale2026Config: CouponConfig = {
-    coupons: [COUPON_CODES.JUNE26SALE, COUPON_CODES.MAR26SALECS, COUPON_CODES.MAR26OFFERCS],
+    coupons: [COUPON_CODES.JUNE26SALE, COUPON_CODES.MAR26SALECS],
     checkoutSubtitle: () => c('Title').t`Summer Sale`,
     payCTA: () => c('Action').t`Get the deal`,
     hidden: true,
@@ -22,5 +22,7 @@ export const summerSale2026Config: CouponConfig = {
         );
     },
     availableCycles: [CYCLE.YEARLY],
+    disableCurrencySelector: true,
     hideLumoAddonBanner: true,
+    hideMeetAddonBanner: true,
 };
