@@ -19,6 +19,13 @@ const getUrlKey = (thumbnailType: ThumbnailType): 'sdUrl' | 'hdUrl' => (isHdType
 const shouldProcess = (item: ThumbnailRequest) => !item.shouldLoad || item.shouldLoad();
 
 /**
+ * Key under which a thumbnail is stored and deduplicated. Defaults to
+ * `revisionUid` (so a new revision invalidates the cached thumbnail), falling
+ * back to `nodeUid` for single-revision nodes that load without a revision.
+ */
+const storeKeyOf = ({ revisionUid, nodeUid }: ThumbnailRequest) => revisionUid ?? nodeUid;
+
+/**
  * Internal state for one (drive, thumbnailType) batch.
  *
  * Items accumulate in `pendingItems` and are flushed together every
@@ -38,10 +45,11 @@ const BATCH_INTERVAL_MS = 100;
 
 /**
  * Produces a unique key used by the `attempted` set to track which
- * (revisionUid, thumbnailType) pairs have already been fetched, preventing
- * duplicate requests after a successful or failed load.
+ * (thumbnailKey, thumbnailType) pairs have already been fetched, preventing
+ * duplicate requests after a successful or failed load. `thumbnailKey` is the
+ * store key — see `storeKeyOf`.
  */
-const attemptedKey = (revisionUid: string, thumbnailType: ThumbnailType) => `${revisionUid}:${thumbnailType}`;
+const attemptedKey = (thumbnailKey: string, thumbnailType: ThumbnailType) => `${thumbnailKey}:${thumbnailType}`;
 
 /**
  * Returns the existing batch for (drive, thumbnailType), creating the
@@ -116,25 +124,25 @@ const processBatch = async (
                 continue;
             }
 
-            attempted.add(attemptedKey(item.revisionUid, batch.thumbnailType));
+            attempted.add(attemptedKey(storeKeyOf(item), batch.thumbnailType));
 
             if (thumbnailResult.ok) {
                 const url = URL.createObjectURL(
                     new Blob([thumbnailResult.thumbnail as Uint8Array<ArrayBuffer>], { type: 'image/jpeg' })
                 );
-                setThumbnailData(item.revisionUid, { [statusKey]: 'loaded', [urlKey]: url });
-                logger.debug(`Thumbnail loaded: ${item.revisionUid} (type: ${batch.thumbnailType})`);
+                setThumbnailData(storeKeyOf(item), { [statusKey]: 'loaded', [urlKey]: url });
+                logger.debug(`Thumbnail loaded: ${storeKeyOf(item)} (type: ${batch.thumbnailType})`);
             } else {
-                setThumbnailData(item.revisionUid, { [statusKey]: 'loaded' });
-                logger.debug(`Thumbnail not available: ${item.revisionUid} (type: ${batch.thumbnailType})`);
+                setThumbnailData(storeKeyOf(item), { [statusKey]: 'loaded' });
+                logger.debug(`Thumbnail not available: ${storeKeyOf(item)} (type: ${batch.thumbnailType})`);
             }
         }
     } catch (error) {
         logger.warn(`Batch processing failed (type: ${batch.thumbnailType}): ${error}`);
         handleSdkError(error, { showNotification: false });
         itemsToProcess.filter(shouldProcess).forEach((item) => {
-            attempted.add(attemptedKey(item.revisionUid, batch.thumbnailType));
-            setThumbnailData(item.revisionUid, { [statusKey]: 'loaded' });
+            attempted.add(attemptedKey(storeKeyOf(item), batch.thumbnailType));
+            setThumbnailData(storeKeyOf(item), { [statusKey]: 'loaded' });
         });
     } finally {
         batch.isProcessing = false;
@@ -187,7 +195,9 @@ type ThumbnailsStore = {
      */
     batches: Map<DriveClient, Map<ThumbnailType, BatchState>>;
 
-    getThumbnail: (revisionUid: string) => ThumbnailData | undefined;
+    // If you use revision uid, make sure it was specified in the loadThumbnail request.
+    getThumbnail: (nodeUidOrRevisionUid: string) => ThumbnailData | undefined;
+
     loadThumbnail: (drive: DriveClient, item: ThumbnailRequest) => void;
 };
 
@@ -196,7 +206,7 @@ export const useThumbnailsStore = create<ThumbnailsStore>((set, get) => ({
     attempted: new Set<string>(),
     batches: new Map<DriveClient, Map<ThumbnailType, BatchState>>(),
 
-    getThumbnail: (revisionUid: string) => get().thumbnails.get(revisionUid),
+    getThumbnail: (nodeUidOrRevisionUid: string) => get().thumbnails.get(nodeUidOrRevisionUid),
 
     /**
      * Queues a thumbnail item for loading. For each requested type:
@@ -221,7 +231,7 @@ export const useThumbnailsStore = create<ThumbnailsStore>((set, get) => ({
             });
 
         for (const thumbnailType of thumbnailTypes) {
-            if (attempted.has(attemptedKey(item.revisionUid, thumbnailType))) {
+            if (attempted.has(attemptedKey(storeKeyOf(item), thumbnailType))) {
                 continue;
             }
 
@@ -229,15 +239,15 @@ export const useThumbnailsStore = create<ThumbnailsStore>((set, get) => ({
 
             const batch = getOrCreateBatch(drive, thumbnailType, batches);
             if (!batch.pendingItems.has(item.nodeUid)) {
-                logger.debug(`Queuing thumbnail: ${item.revisionUid} uid: ${item.nodeUid} (type: ${thumbnailType})`);
+                logger.debug(`Queuing thumbnail: ${storeKeyOf(item)} uid: ${item.nodeUid} (type: ${thumbnailType})`);
                 const wasEmpty = batch.pendingItems.size === 0;
                 batch.pendingItems.set(item.nodeUid, item);
 
                 if (shouldProcess(item)) {
                     set((state) => {
                         const thumbnails = new Map(state.thumbnails);
-                        thumbnails.set(item.revisionUid, {
-                            ...thumbnails.get(item.revisionUid),
+                        thumbnails.set(storeKeyOf(item), {
+                            ...thumbnails.get(storeKeyOf(item)),
                             [statusKey]: 'loading',
                         });
                         return { thumbnails };

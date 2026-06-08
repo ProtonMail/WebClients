@@ -26,8 +26,6 @@ import clsx from '@proton/utils/clsx';
 
 import { SignatureIcon } from '../../../legacy/components/SignatureIcon';
 import { useAlbumsStore } from '../../useAlbums.store';
-import { usePhotosStore } from '../../usePhotos.store';
-import { enqueueAdditionalInfo } from '../loaders/loadAdditionalInfo';
 import { SharedAlbumDropdownButton } from './SharedAlbumDropdownButton';
 
 import './AlbumsCard.scss';
@@ -128,43 +126,29 @@ export const AlbumsCard: FC<Props> = ({ style, nodeUid, onClick, onShare, onRena
         })
     );
     const albumSharedLabel = isShared && isOwner ? c('Info').t`Shared` : c('Info').t`Shared with you`;
-    const coverPhoto = usePhotosStore(
-        useShallow((state) => {
-            const item = coverNodeUid && state.getPhotoItem(coverNodeUid);
-            if (!item || item.additionalInfo === undefined) {
-                return undefined;
-            }
-            return {
-                activeRevisionUid: item.additionalInfo.activeRevisionUid,
-            };
-        })
-    );
 
-    const thumbnail = useThumbnail(coverPhoto?.activeRevisionUid);
+    // The cover is a (single-revision) photo, so load it keyed by nodeUid — like the
+    // photos grid does — without first decrypting the node to learn its revision. This
+    // also lets the cover reuse a thumbnail the timeline already loaded for the same node.
+    const thumbnail = useThumbnail(coverNodeUid);
     const thumbnailUrl = thumbnail?.hdUrl || thumbnail?.sdUrl;
     const isThumbnailLoading = Boolean(
         coverNodeUid &&
-        (!coverPhoto ||
-            (coverPhoto.activeRevisionUid && thumbnail === undefined) ||
-            thumbnail?.sdStatus === 'loading' ||
-            (thumbnail?.sdStatus === 'loaded' && thumbnailUrl && !imageReady))
+        (thumbnail === undefined ||
+            thumbnail.sdStatus === 'loading' ||
+            (thumbnail.sdStatus === 'loaded' && thumbnailUrl && !imageReady))
     );
 
     useEffect(() => {
         if (!coverNodeUid) {
             return;
         }
-        if (!coverPhoto?.activeRevisionUid) {
-            enqueueAdditionalInfo(coverNodeUid, () => Boolean(ref.current));
-        } else {
-            loadThumbnail(getDriveForPhotos(), {
-                nodeUid: coverNodeUid,
-                revisionUid: coverPhoto.activeRevisionUid,
-                shouldLoad: () => Boolean(ref.current),
-                thumbnailTypes: ['sd', 'hd'],
-            });
-        }
-    }, [coverNodeUid, coverPhoto?.activeRevisionUid]);
+        loadThumbnail(getDriveForPhotos(), {
+            nodeUid: coverNodeUid,
+            shouldLoad: () => Boolean(ref.current),
+            thumbnailTypes: ['sd', 'hd'],
+        });
+    }, [coverNodeUid]);
 
     useEffect(() => {
         if (thumbnailUrl) {
