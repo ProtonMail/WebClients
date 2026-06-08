@@ -1,5 +1,5 @@
-const servers = 20227;
-const capacity = 23665.59;
-const countries = 145;
-const locations = 191;
+const servers = 20332;
+const capacity = 23788.44;
+const countries = 148;
+const locations = 194;
 export { servers, capacity, countries, locations };
