@@ -208,7 +208,10 @@ const ProjectDetailViewInner = () => {
         () => {} // todo: abort handler missing at this point, known bug
     );
 
-    useNativeComposerProjectDetailVisibilityApi(sidebarModal.render);
+    // Hide the native composer while these modals are open on mobile, so it
+    // doesn't overlap them when the keyboard shows. Only on mobile: on larger
+    // screens the composer's own logic decides when to show it.
+    useNativeComposerProjectDetailVisibilityApi(sidebarModal.render || (isMobileViewport && instructionsModal.render));
 
     const handleSaveTitle = useCallback(
         (newTitle: string) => {
