@@ -121,6 +121,7 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
         show: false,
         opacity: 1,
         autoHideMenuBar: true,
+        icon: join(app.isPackaged ? process.resourcesPath : app.getAppPath(), 'assets', 'logo.png'),
         webPreferences: {
             session: session,
             sandbox: true,
