@@ -1,5 +1,29 @@
 import { telemetry } from '@proton/shared/lib/telemetry';
 
+/**
+ * The shared telemetry singleton can only send events once it has been
+ * initialised with a valid UID and the user has telemetry enabled. When that's
+ * not the case (e.g. guests without a session, or users who opted out of
+ * telemetry), attempting to send events makes the singleton report a
+ * "telemetry has not been initialised" message to Sentry for every interaction.
+ *
+ * We therefore track whether telemetry is usable at the Lumo level and skip
+ * sending events entirely when it isn't.
+ */
+let telemetryEnabled = false;
+
+export const setLumoTelemetryEnabled = (enabled: boolean) => {
+    telemetryEnabled = enabled;
+};
+
+const sendLumoCustomEvent: (typeof telemetry)['sendCustomEvent'] = (...args) => {
+    if (!telemetryEnabled) {
+        return;
+    }
+
+    return telemetry.sendCustomEvent(...args);
+};
+
 export const sendNewMessageDataEvent = (
     actionType: 'send' | 'edit' | 'regenerate',
     isNewConversation: boolean,
@@ -7,7 +31,7 @@ export const sendNewMessageDataEvent = (
     hasAttachments: boolean,
     isGhostConversation: boolean
 ) => {
-    telemetry.sendCustomEvent('lumo-user-prompt-event', {
+    sendLumoCustomEvent('lumo-user-prompt-event', {
         actionType,
         isNewConversation,
         isWebSearchButtonToggled,
@@ -25,7 +49,7 @@ export const sendUpgradeButtonClickedEvent = ({
     // buttonType?: string;
     to?: string;
 }) => {
-    telemetry.sendCustomEvent('lumo-upgrade-button-clicked', {
+    sendLumoCustomEvent('lumo-upgrade-button-clicked', {
         feature,
         // buttonType,
         to,
@@ -36,7 +60,7 @@ export const sendUpgradeButtonClickedEvent = ({
  * Telemetry events for the composer component
  */
 const sendLumoComposerEvent = (eventType: string, eventData?: Record<string, any>) => {
-    telemetry.sendCustomEvent('lumo-composer-event', {
+    sendLumoCustomEvent('lumo-composer-event', {
         eventType,
         ...eventData,
     });
@@ -64,7 +88,7 @@ export const sendVoiceEntryClickEvent = () => {
  * Telemetry events for the file upload
  */
 const sendLumoFileUploadEvent = (eventType: string, eventData?: Record<string, any>) => {
-    telemetry.sendCustomEvent('lumo-file-upload-event', {
+    sendLumoCustomEvent('lumo-file-upload-event', {
         eventType,
         ...eventData,
     });
@@ -93,7 +117,7 @@ export const sendFileUploadFinishEvent = (
  */
 
 const sendLumoSubscriptionModalEvent = (event: string, upsellRef?: string) => {
-    telemetry.sendCustomEvent('lumo-subscription-modal-event', {
+    sendLumoCustomEvent('lumo-subscription-modal-event', {
         upsellRef,
         event,
     });
@@ -112,7 +136,7 @@ export const sendSubscriptionModalInitializedEvent = (upsellRef?: string) => {
  */
 
 const sendLumoMessageEvent = (eventType: string, eventData?: Record<string, any>) => {
-    telemetry.sendCustomEvent('lumo-message-event', {
+    sendLumoCustomEvent('lumo-message-event', {
         eventType,
         ...eventData,
     });
@@ -141,7 +165,7 @@ export const sendMessageCopyEvent = () => {
  */
 
 const sendLumoConversationEvent = (eventType: string, eventData?: Record<string, any>) => {
-    telemetry.sendCustomEvent('lumo-conversation-event', {
+    sendLumoCustomEvent('lumo-conversation-event', {
         eventType,
         ...eventData,
     });
@@ -176,7 +200,7 @@ export const sendConversationEditTitleEvent = (location?: 'sidebar' | 'header') 
  */
 
 const sendLumoProjectEvent = (eventType: string, eventData?: Record<string, any>) => {
-    telemetry.sendCustomEvent('lumo-project-event', {
+    sendLumoCustomEvent('lumo-project-event', {
         eventType,
         ...eventData,
     });
@@ -203,7 +227,7 @@ export const sendProjectDriveFolderUnlinkEvent = () => {
  */
 
 const sendLumoGuestNotificationEvent = (eventType: string, eventData?: Record<string, any>) => {
-    telemetry.sendCustomEvent('lumo-guest-notification-event', {
+    sendLumoCustomEvent('lumo-guest-notification-event', {
         eventType,
         ...eventData,
     });
@@ -222,5 +246,5 @@ export const sendGuestNotificationCtaClickedEvent = (messageCount: number) => {
  */
 
 export const sendGhostChatToggledEvent = (enabled: boolean) => {
-    telemetry.sendCustomEvent('lumo-ghost-chat-toggled', { enabled });
+    sendLumoCustomEvent('lumo-ghost-chat-toggled', { enabled });
 };

@@ -41,6 +41,7 @@ import { extendStore, setupStore } from '../../redux/store';
 import { setStoreRef } from '../../redux/storeRef';
 import { extraThunkArguments } from '../../redux/thunk';
 import { initializeConsoleOverride } from '../../util/logging';
+import { setLumoTelemetryEnabled } from '../../util/telemetry';
 import { lumoTelemetryConfig } from '../../util/telemetryConfig';
 
 const GuestContainerLazy = lazy(
@@ -71,7 +72,14 @@ const bootstrapApp = async () => {
         userSettings: undefined,
     });
 
-    telemetry.init({ config, uid: authentication.UID, ...lumoTelemetryConfig });
+    // Guests don't load a session, so there's no UID and telemetry cannot be
+    // initialised. Only init/enable telemetry when a UID is actually available,
+    // otherwise the shared singleton reports a "not initialised" message for
+    // every event.
+    if (authentication.UID) {
+        telemetry.init({ config, uid: authentication.UID, ...lumoTelemetryConfig });
+        setLumoTelemetryEnabled(true);
+    }
     initMainHost();
     initElectronClassnames();
     initSafariFontFixClassnames();
