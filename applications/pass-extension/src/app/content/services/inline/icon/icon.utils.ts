@@ -55,11 +55,31 @@ export const ICON_FLICKER_TRESHOLD = 2;
 export const ICON_MAX_OVERLAY_CHECKS = 2;
 export const ICON_MAX_SHIFT_RATIO = 0.5;
 
-const isInvisible = (el: HTMLElement) => {
-    const { display, visibility, opacity, backgroundColor } = getComputedStyle(el);
-    const isTransparentAndEmpty =
-        backgroundColor === 'rgba(0, 0, 0, 0)' && el.childElementCount === 0 && !el.textContent?.trim();
-    return display === 'none' || visibility === 'hidden' || opacity === '0' || isTransparentAndEmpty;
+/** An element can render visible content purely through its pseudo-elements.
+ * We must treat such an element as having content even when its subtree is empty */
+const hasPseudoContent = (el: HTMLElement): boolean =>
+    getComputedStyle(el, '::before').content !== 'none' || getComputedStyle(el, '::after').content !== 'none';
+
+export const isInvisible = (el: HTMLElement) => {
+    const styles = getComputedStyle(el);
+
+    const { display, visibility, opacity } = styles;
+    if (display === 'none' || visibility === 'hidden' || opacity === '0') return true;
+
+    /** Empty transparent placeholder div/spans are skipped during shift
+     * computation, We exclude interactive/semantic empty elements (icons,
+     * buttons, anchors etc..) which can legitimately be empty + transparent
+     * yet represent a real element the icon should shift away from. */
+    if (el.tagName === 'DIV' || el.tagName === 'SPAN') {
+        const { backgroundColor, backgroundImage } = styles;
+        const transparent = backgroundColor === 'rgba(0, 0, 0, 0)' && backgroundImage === 'none';
+        if (!transparent) return false;
+
+        const emptyEl = el.childElementCount === 0 && !el.textContent?.trim();
+        if (emptyEl && !hasPseudoContent(el)) return true;
+    }
+
+    return false;
 };
 
 /** Calculates the maximum horizontal shift required for injected elements.
