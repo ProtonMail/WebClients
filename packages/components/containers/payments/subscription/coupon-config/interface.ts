@@ -85,6 +85,11 @@ export type CouponConfig = {
     hideLumoAddonBanner?: boolean;
 
     /**
+     * If set to true then the Meet addon banner will not be displayed.
+     */
+    hideMeetAddonBanner?: boolean;
+
+    /**
      * If set to true then the currency selector will be disabled or hidden.
      */
     disableCurrencySelector?: boolean;
