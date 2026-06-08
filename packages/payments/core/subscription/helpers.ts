@@ -116,6 +116,17 @@ export const getHas2025OfferCoupon = (coupon: string | undefined | null): boolea
     return blackFriday2025Discounts.has(coupon?.toUpperCase());
 };
 
+export function hasSummerSale2026Coupon(subscription: Subscription | FreeSubscription | undefined) {
+    return (
+        [
+            COUPON_CODES.JUNE26SALE,
+            COUPON_CODES.JUNE26BUNDLESALE,
+            COUPON_CODES.MAR26SALECS,
+            COUPON_CODES.MAR26BUNDLESALECS,
+        ] as string[]
+    ).includes(subscription?.CouponCode || '');
+}
+
 export type MaybeFreeSubscription = Subscription | FreeSubscription | undefined;
 
 export const getAddons = (subscription: Subscription | undefined) =>
