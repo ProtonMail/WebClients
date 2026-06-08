@@ -11,8 +11,9 @@ import {
 } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
-import { buildSubscription, buildUser } from '@proton/testing/builders';
-import { getLongTestPlans, getTestPlans } from '@proton/testing/data';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildUser } from '@proton/testing/builders/user';
+import { getLongTestPlans, getTestPlans } from '@proton/testing/data/payments/data-plans';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { type AccessiblePlansHookProps, getMaximumCycle, useAccessiblePlans } from './PlanSelection';

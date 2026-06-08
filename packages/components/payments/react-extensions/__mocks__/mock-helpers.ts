@@ -1,6 +1,6 @@
 import { type ChargebeeIframeHandles, PAYMENT_TOKEN_STATUS } from '@proton/payments';
 import type { BackendPaymentIntent } from '@proton/payments/core/api/api';
-import { addApiMock } from '@proton/testing/index';
+import { addApiMock } from '@proton/testing/lib/api';
 
 export function mockPostV5Token({
     token = 'token',

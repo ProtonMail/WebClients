@@ -3,7 +3,8 @@ import { act } from 'react';
 import { renderHook as baseRenderHook } from '@testing-library/react';
 
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
-import { componentWrapper, withConfig, withReduxStore } from '@proton/testing';
+import { componentWrapper } from '@proton/testing/lib/context/hocs';
+import { withConfig, withReduxStore } from '@proton/testing/lib/context/providers';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { DEFAULT_TAX_BILLING_ADDRESS } from '../../../core/billing-address/billing-address';

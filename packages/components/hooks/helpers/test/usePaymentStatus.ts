@@ -1,5 +1,5 @@
 import type { PaymentStatus } from '@proton/payments';
-import { addApiMock } from '@proton/testing/index';
+import { addApiMock } from '@proton/testing/lib/api';
 
 export const statusDefaultResponse: PaymentStatus = {
     CountryCode: 'CH',

@@ -2,8 +2,9 @@ import { render, screen } from '@testing-library/react';
 
 import { CYCLE, PLANS, SubscriptionPlatform } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { renderWithProviders } from '@proton/testing';
-import { buildSubscription, buildUser } from '@proton/testing/builders';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildUser } from '@proton/testing/builders/user';
+import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
 import SubscriptionPanel from './SubscriptionPanel';
 

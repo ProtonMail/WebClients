@@ -1,13 +1,6 @@
 import type { FeatureCode } from '@proton/features';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import {
-    addApiMock,
-    addApiResolver,
-    apiMock,
-    apiMocksMap,
-    getFeatureFlags as baseGetFeatureFlags,
-    clearApiMocks,
-} from '@proton/testing';
+import { addApiMock, addApiResolver, apiMock, apiMocksMap, clearApiMocks } from '@proton/testing/lib/api';
+import { getFeatureFlags as baseGetFeatureFlags } from '@proton/testing/lib/features';
 
 /**
  * Export for backward compatibility in the tests. It can be gradually migrated to use @proton/testing package directly

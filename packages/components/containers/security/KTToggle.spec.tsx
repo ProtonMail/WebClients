@@ -2,7 +2,8 @@ import { fireEvent, render } from '@testing-library/react';
 
 import { updateKT } from '@proton/shared/lib/api/mailSettings';
 import { KEY_TRANSPARENCY_SETTING } from '@proton/shared/lib/mail/mailSettings';
-import { applyHOCs, withApi, withEventManager, withNotifications, withReduxStore } from '@proton/testing';
+import { applyHOCs } from '@proton/testing/lib/context/hocs';
+import { withApi, withEventManager, withNotifications, withReduxStore } from '@proton/testing/lib/context/providers';
 import { mockUseApi } from '@proton/testing/lib/mockUseApi';
 import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 import { mockUseNotifications } from '@proton/testing/lib/mockUseNotifications';

@@ -4,7 +4,7 @@ import { componentsHookRenderer, componentsHookWrapper } from '@proton/component
 import type { PaymentStatus, PaymentsApi, SavedPaymentMethod } from '@proton/payments';
 import { Autopay, MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { addApiMock, apiMock } from '@proton/testing';
+import { addApiMock, apiMock } from '@proton/testing/lib/api';
 
 import { useMethods } from './useMethods';
 

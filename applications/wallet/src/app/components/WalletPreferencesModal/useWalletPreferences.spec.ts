@@ -1,11 +1,13 @@
 import { act } from 'react';
 
+import { generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
-import { generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
-import { mockUseAddresses, mockUseNotifications, mockUseUserKeys } from '@proton/testing/lib/vitest';
+import { mockUseAddresses } from '@proton/testing/lib/vitest/mockUseAddresses';
+import { mockUseNotifications } from '@proton/testing/lib/vitest/mockUseNotifications';
+import { mockUseUserKeys } from '@proton/testing/lib/vitest/mockUseUserKeys';
 import { apiWalletsData } from '@proton/wallet/tests/fixtures';
 import { mockUseUserWalletSettings, mockUseWalletApiClients, mockUseWalletDispatch } from '@proton/wallet/tests/mocks';
 import { getAddressKey, getUserKeys } from '@proton/wallet/tests/utils';

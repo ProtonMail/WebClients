@@ -5,7 +5,7 @@ import { getModelState } from '@proton/account/test';
 import { PLANS, SubscriptionPlatform } from '@proton/payments';
 import { Audience } from '@proton/shared/lib/interfaces';
 import format from '@proton/shared/lib/subscription/format';
-import { renderWithProviders } from '@proton/testing';
+import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 import { getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
 import {
@@ -65,7 +65,9 @@ it('should render <SubscriptionContainer> if there is no legacy plans', async ()
     await waitFor(() => {
         expect(openSubscriptionModal).toBeDefined();
     });
-    openSubscriptionModal({} as any);
+    await act(async () => {
+        await openSubscriptionModal({} as any);
+    });
 
     await screen.findByText('SubscriptionContainer');
 });
@@ -238,7 +240,9 @@ it('should render <InAppPurchaseModal> if subscription is managed externally', a
     await waitFor(() => {
         expect(openSubscriptionModal).toBeDefined();
     });
-    openSubscriptionModal({} as any);
+    await act(async () => {
+        await openSubscriptionModal({} as any);
+    });
 
     expect(await screen.findByTestId('InAppPurchaseModal/text')).not.toBeEmptyDOMElement();
 });

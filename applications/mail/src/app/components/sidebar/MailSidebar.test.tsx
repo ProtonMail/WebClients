@@ -12,7 +12,7 @@ import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey, type Label } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
-import { buildUser } from '@proton/testing/builders';
+import { buildUser } from '@proton/testing/builders/user';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop.ts';
 import range from '@proton/utils/range';

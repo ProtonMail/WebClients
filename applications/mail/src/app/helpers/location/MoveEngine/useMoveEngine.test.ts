@@ -3,7 +3,8 @@ import { renderHook } from '@testing-library/react';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
-import { mockUseFolders, mockUseLabels } from '@proton/testing/index';
+import { mockUseFolders } from '@proton/testing/lib/mockUseFolders';
+import { mockUseLabels } from '@proton/testing/lib/mockUseLabels';
 
 import { useMoveEngine } from 'proton-mail/helpers/location/MoveEngine/useMoveEngine';
 import type { Conversation } from 'proton-mail/models/conversation';

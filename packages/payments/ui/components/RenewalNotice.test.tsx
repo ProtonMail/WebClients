@@ -4,7 +4,7 @@ import { addMonths } from 'date-fns';
 import { APPS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getTermsURL } from '@proton/shared/lib/helpers/url';
-import { buildSubscription } from '@proton/testing/builders';
+import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import { getCheckoutUi } from '../../core/checkout';
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from '../../core/constants';
