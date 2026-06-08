@@ -1,3 +1,7 @@
+### Version 1.1.6
+
+- Add polyfill to support older WebView
+
 ### Version 1.1.5
 
 - Fix WebKitGTK crash on Linux when trying to login or set a password lock
