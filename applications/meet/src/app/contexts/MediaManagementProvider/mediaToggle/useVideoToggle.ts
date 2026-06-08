@@ -22,7 +22,7 @@ import {
     createBackgroundProcessor,
     ensureBackgroundBlurProcessor,
 } from '../../../processors/background-processor/createBackgroundProcessor';
-import type { SwitchActiveDevice } from '../../../types';
+import type { SwitchActiveDevice, ToggleVideoType } from '../../../types';
 import { getPersistedBackgroundBlur, persistBackgroundBlur } from '../../../utils/backgroundBlurPersistance';
 import { ERRORS_SIGNALING_POTENTIAL_STALE_DEVICE_STATE } from './constants';
 
@@ -78,27 +78,16 @@ export const useVideoToggle = (switchActiveDevice: SwitchActiveDevice) => {
         }
     });
 
-    const toggleVideo = useStableCallback(
-        async (
-            params: {
-                isEnabled?: boolean;
-                videoDeviceId?: string;
-                facingMode?: 'environment' | 'user';
-                preserveCache?: boolean;
-                recoveringFromError?: boolean;
-                updateUserIntent?: boolean;
-            } = {}
-        ) => {
+    const toggleVideo: ToggleVideoType = useStableCallback(
+        async ({
+            isEnabled = userCameraIntent ?? initialCameraState,
+            videoDeviceId = activeCameraDeviceId,
+            facingMode: customFacingMode,
+            preserveCache,
+            recoveringFromError = false,
+            updateUserIntent = true,
+        } = {}) => {
             let toggleResult = false;
-
-            const {
-                isEnabled = userCameraIntent ?? initialCameraState,
-                videoDeviceId = activeCameraDeviceId,
-                facingMode: customFacingMode,
-                preserveCache,
-                recoveringFromError = false,
-                updateUserIntent = true,
-            } = params;
 
             const deviceId = videoDeviceId;
 
