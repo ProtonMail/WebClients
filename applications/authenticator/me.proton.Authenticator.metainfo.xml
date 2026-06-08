@@ -53,6 +53,11 @@
   </content_rating>
 
   <releases>
+    <release version="1.1.6" date="2026-06-08">
+      <description>
+        <p>Add polyfill to support older WebView.</p>
+      </description>
+    </release>
     <release version="1.1.5" date="2026-05-12">
       <url type="details">https://github.com/ProtonMail/WebClients/blob/main/applications/authenticator/CHANGELOG.md</url>
       <description>
