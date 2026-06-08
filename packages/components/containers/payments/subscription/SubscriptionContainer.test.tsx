@@ -13,17 +13,13 @@ import type { SubscriptionEstimation } from '@proton/payments/core/subscription/
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
-import {
-    addApiMock,
-    apiMock,
-    applyHOCs,
-    renderWithProviders,
-    withDeprecatedModals,
-    withPaymentContext,
-    withReduxStore,
-} from '@proton/testing';
-import { buildSubscription, buildUser } from '@proton/testing/builders';
-import { getLongTestPlans } from '@proton/testing/data';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildUser } from '@proton/testing/builders/user';
+import { getLongTestPlans } from '@proton/testing/data/payments/data-plans';
+import { addApiMock, apiMock } from '@proton/testing/lib/api';
+import { applyHOCs } from '@proton/testing/lib/context/hocs';
+import { withDeprecatedModals, withPaymentContext, withReduxStore } from '@proton/testing/lib/context/providers';
+import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 import type { FeatureFlag } from '@proton/unleash/Flags';
 
 import type { SubscriptionContainerProps } from './SubscriptionContainer';

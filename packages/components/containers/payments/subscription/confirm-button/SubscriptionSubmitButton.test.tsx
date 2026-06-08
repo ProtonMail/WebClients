@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 
 import type { SubscriptionEstimation } from '@proton/payments';
 import { CYCLE, PAYMENT_METHOD_TYPES, SubscriptionMode } from '@proton/payments';
-import { buildSubscription } from '@proton/testing/builders';
+import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import { type Props, SubscriptionSubmitButton } from './SubscriptionSubmitButton';
 

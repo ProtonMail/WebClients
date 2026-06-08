@@ -1,7 +1,7 @@
 import { CYCLE, PLANS, type Subscription } from '@proton/payments';
 import formatSubscription from '@proton/shared/lib/subscription/format';
-import { addApiMock } from '@proton/testing';
-import { buildSubscription } from '@proton/testing/builders';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { addApiMock } from '@proton/testing/lib/api';
 
 export const subscriptionDefaultResponse: {
     Code: Number;

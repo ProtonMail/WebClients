@@ -5,7 +5,7 @@ import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { PLANS } from '@proton/payments';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
-import { mockUseOrganization } from '@proton/testing/index';
+import { mockUseOrganization } from '@proton/testing/lib/mockUseOrganization';
 import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';

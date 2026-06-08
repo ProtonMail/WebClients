@@ -1,3 +1,4 @@
+import type { PublicKeyReference } from '@protontech/crypto';
 import { act, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { mocked } from 'jest-mock';
@@ -7,12 +8,13 @@ import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import useApi from '@proton/components/hooks/useApi';
 import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { PublicKeyReference } from '@protontech/crypto';
 import { MIME_TYPES, PGP_SCHEMES } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 import type { EncryptionPreferences } from '@proton/shared/lib/mail/encryptionPreferences';
-import { addressBuilder, calendarBuilder, mockApiWithServer, mockNotifications } from '@proton/testing';
+import { addressBuilder, calendarBuilder } from '@proton/testing/lib/builders';
 import { getHandlers } from '@proton/testing/lib/handlers';
+import { mockApiWithServer } from '@proton/testing/lib/mockApiWithServer';
+import { mockNotifications } from '@proton/testing/lib/mockNotifications';
 
 import ShareCalendarModal from './ShareCalendarModal';
 

@@ -3,15 +3,9 @@ import { renderHook } from '@testing-library/react-hooks';
 import { PLANS } from '@proton/payments';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { APPS } from '@proton/shared/lib/constants';
-import {
-    addApiMock,
-    apiMock,
-    defaultProtonConfig,
-    hookWrapper,
-    withApi,
-    withConfig,
-    withReduxStore,
-} from '@proton/testing';
+import { addApiMock, apiMock } from '@proton/testing/lib/api';
+import { hookWrapper } from '@proton/testing/lib/context/hocs';
+import { defaultProtonConfig, withApi, withConfig, withReduxStore } from '@proton/testing/lib/context/providers';
 
 import { usePaymentsApi } from './usePaymentsApi';
 

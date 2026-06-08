@@ -23,7 +23,7 @@ import type {
     ProtonConfig,
     UserModel,
 } from '@proton/shared/lib/interfaces';
-import { buildUser } from '@proton/testing/builders';
+import { buildUser } from '@proton/testing/builders/user';
 
 import { apiMock } from '../api';
 import { mockCache } from '../cache';

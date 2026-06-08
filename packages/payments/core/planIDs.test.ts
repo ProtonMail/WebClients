@@ -1,6 +1,6 @@
 import type { Organization } from '@proton/shared/lib/interfaces';
-import { buildSubscription } from '@proton/testing/builders';
-import { PLANS_MAP, getLongTestPlans } from '@proton/testing/data';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { PLANS_MAP, getLongTestPlans } from '@proton/testing/data/payments/data-plans';
 
 import { ADDON_NAMES, PLANS } from './constants';
 import type { PlanIDs } from './interface';

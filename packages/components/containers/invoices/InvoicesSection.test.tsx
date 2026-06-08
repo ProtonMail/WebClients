@@ -2,7 +2,8 @@ import { fireEvent, render } from '@testing-library/react';
 
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { APPS } from '@proton/shared/lib/constants';
-import { applyHOCs, withConfig, withNotifications, withReduxStore } from '@proton/testing';
+import { applyHOCs } from '@proton/testing/lib/context/hocs';
+import { withConfig, withNotifications, withReduxStore } from '@proton/testing/lib/context/providers';
 
 import useApiResult from '../../hooks/useApiResult';
 import InvoicesSection from './InvoicesSection';

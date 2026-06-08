@@ -1,6 +1,6 @@
 import { ADDON_NAMES, COUPON_CODES, CYCLE, type Coupon, PLANS } from '@proton/payments';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
-import { getTestPlansMap } from '@proton/testing/data';
+import { getTestPlansMap } from '@proton/testing/data/payments/data-plans';
 
 import { enrichCoupon } from './helpers';
 

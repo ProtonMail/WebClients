@@ -11,8 +11,8 @@ import {
     isRegionalCurrency,
 } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { buildSubscription } from '@proton/testing/builders';
-import { PLANS_MAP, getLongTestPlans, getTestPlansMap } from '@proton/testing/data';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { PLANS_MAP, getLongTestPlans, getTestPlansMap } from '@proton/testing/data/payments/data-plans';
 
 import { type PlanCapRule, getAllowedCycles } from './getAllowedCycles';
 

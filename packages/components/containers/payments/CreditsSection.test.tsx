@@ -2,8 +2,11 @@ import { getModelState } from '@proton/account/test';
 import { userDefault } from '@proton/components/hooks/helpers/test';
 import { CYCLE, PLANS, type Subscription } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { applyHOCs, getSubscriptionState, renderWithProviders, withApi, withCache } from '@proton/testing';
-import { buildSubscription } from '@proton/testing/builders';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { applyHOCs } from '@proton/testing/lib/context/hocs';
+import { withApi, withCache } from '@proton/testing/lib/context/providers';
+import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
+import { getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
 import CreditsSection from './CreditsSection';
 

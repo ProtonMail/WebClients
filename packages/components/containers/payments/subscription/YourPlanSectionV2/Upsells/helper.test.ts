@@ -3,9 +3,9 @@ import { renderHook } from '@testing-library/react-hooks';
 import type { Plan } from '@proton/payments';
 import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS, SelectedPlan } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { hookWrapper } from '@proton/testing';
-import { buildSubscription } from '@proton/testing/builders';
-import { getTestPlans } from '@proton/testing/data';
+import { buildSubscription } from '@proton/testing/builders/subscription';
+import { getTestPlans } from '@proton/testing/data/payments/data-plans';
+import { hookWrapper } from '@proton/testing/lib/context/hocs';
 import { withApi, withConfig, withReduxStore } from '@proton/testing/lib/context/providers';
 
 import { useSubscriptionPriceComparison } from './helper';
