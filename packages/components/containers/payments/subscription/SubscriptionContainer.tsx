@@ -118,6 +118,7 @@ import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
 import { canShowGiftCodeInput } from './modal-components/helpers/canShowGiftCodeInput';
 import { showLumoAddonCustomizer } from './modal-components/helpers/showLumoAddonCustomizer';
+import { showMeetAddonCustomizer } from './modal-components/helpers/showMeetAddonCustomizer';
 import { PostSubscriptionModalLoadingContent } from './postSubscription/modals/PostSubscriptionModalsComponents';
 import { getCodes, useSubscriptionContainerInnerCheck } from './useSubscriptionContainerInnerCheck';
 import useSubscriptionModalTelemetry from './useSubscriptionModalTelemetry';
@@ -442,6 +443,7 @@ const SubscriptionContainerInner = ({
         cycle: model.cycle,
         hideLumoAddonForVpn2024,
     });
+    const meetAddonEnabled = showMeetAddonCustomizer({ meetAddonFlag, couponConfig });
     const [selectedProductPlans, setSelectedProductPlans] = useState(
         defaultSelectedProductPlans ||
             getDefaultSelectedProductPlans({
@@ -1194,7 +1196,7 @@ const SubscriptionContainerInner = ({
                                                             : lumoAddonEnabled,
                                                         meetAddonEnabled: overrideAddonsBehaviour
                                                             ? displayMeetOnly
-                                                            : meetAddonFlag,
+                                                            : meetAddonEnabled,
                                                     }}
                                                     loading={blockAccountSizeSelector}
                                                     currency={model.currency}

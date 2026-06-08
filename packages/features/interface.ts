@@ -86,6 +86,21 @@ export enum FeatureCode {
     OfferGoUnlimited2022 = 'OfferGoUnlimited2022',
     OfferMailTrial2023 = 'OfferMailTrial2023',
 
+    // Summer Sale 2026 — Mail
+    OfferSummerSale2026FreeToMailPlus = 'OfferSummerSale2026FreeToMailPlus',
+    OfferSummerSale2026MailPlusMonthlyToYearly = 'OfferSummerSale2026MailPlusMonthlyToYearly',
+    OfferSummerSale2026PlusToUnlimited = 'OfferSummerSale2026PlusToUnlimited',
+    OfferSummerSale2026FreeInboxToUnlimited = 'OfferSummerSale2026FreeInboxToUnlimited',
+    // Summer Sale 2026 — Drive
+    OfferSummerSale2026FreeToDrivePlus = 'OfferSummerSale2026FreeToDrivePlus',
+    OfferSummerSale2026DrivePlusToUnlimited = 'OfferSummerSale2026DrivePlusToUnlimited',
+    OfferSummerSale2026FreeDriveToUnlimited = 'OfferSummerSale2026FreeDriveToUnlimited',
+    // Summer Sale 2026 — Multi-user
+    OfferSummerSale2026UnlimitedToDuo = 'OfferSummerSale2026UnlimitedToDuo',
+    OfferSummerSale2026DuoToFamily = 'OfferSummerSale2026DuoToFamily',
+    // Summer Sale 2026 — Cross-product free user experiment (integer, set by BE)
+    SummerSale2026CrossProductExperiment = 'SummerSale2026CrossProductExperiment',
+
     // Bookings spotlights
     SpotlightIntroduceBookings = 'SpotlightIntroduceBookings',
     BookingPageLocationSpotlight = 'BookingPageLocationSpotlight',

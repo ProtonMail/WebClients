@@ -22,5 +22,6 @@ export const summerSale2026BundleConfig: CouponConfig = {
         );
     },
     availableCycles: [CYCLE.YEARLY],
+    disableCurrencySelector: true,
     hideLumoAddonBanner: false,
 };

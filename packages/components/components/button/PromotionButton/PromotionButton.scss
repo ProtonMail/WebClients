@@ -112,6 +112,19 @@
 		}
 	}
 
+	&--summer-sale-2026 {
+		// used for summer sale 2026
+		&#{&} {
+			&,
+			&:hover,
+			&:focus {
+				background: linear-gradient(to right, rgb(255 235 241 / 0.2), rgb(255 207 221 / 0.2));
+				color: #ff4c81;
+				border: 0;
+			}
+		}
+	}
+
 	// Unlimited permanent offer 2025
 	&--go-unlimited-2025 {
 		&#{&} {
@@ -127,5 +140,16 @@
 
 	&--lumo {
 		--text-norm: var(--link-norm);
+	}
+}
+
+[data-theme-mode='dark'] {
+	.button-promotion--summer-sale-2026 {
+		&,
+		&:hover,
+		&:focus {
+			background: transparent;
+			border: 1px solid currentcolor;
+		}
 	}
 }
