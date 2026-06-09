@@ -1,5 +1,5 @@
 import type { FunctionComponent } from 'react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Route } from 'react-router';
 import { Redirect, Switch, useHistory, useLocation } from 'react-router-dom';
 
@@ -88,6 +88,7 @@ import { useReferralUserEligible } from '@proton/components/containers/referral/
 import { RewardSection } from '@proton/components/containers/referral/rewards/RewardSection';
 import LiveChatZendesk, { getIsSelfChat } from '@proton/components/containers/zendesk/LiveChatZendesk';
 import type { ZendeskRef } from '@proton/components/containers/zendesk/helper';
+import { getZendeskTags } from '@proton/components/containers/zendesk/helper';
 import { useCanEnableChat } from '@proton/components/containers/zendesk/useCanEnableChat';
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
@@ -183,9 +184,6 @@ const MainContainer: FunctionComponent = () => {
     });
 
     const canEnableChat = useCanEnableChat(user);
-    const chatTags = useMemo(() => {
-        return organization?.PlanName ? [organization?.PlanName] : [];
-    }, [organization?.PlanName]);
     const [authenticatedBugReportMode, setAuthenticatedBugReportMode] = useState<BugModalMode>();
     const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();
     const [freeUserLiveChatModal, setFreeUserLiveChatModal, renderFreeUserLiveChatModal] = useModalState();
@@ -468,7 +466,7 @@ const MainContainer: FunctionComponent = () => {
                         </Switch>
                         {showChat.render && canEnableChat ? (
                             <LiveChatZendesk
-                                tags={chatTags}
+                                tags={getZendeskTags(user, organization)}
                                 zendeskRef={zendeskRef}
                                 name={name || ''}
                                 email={email || ''}
