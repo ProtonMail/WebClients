@@ -174,6 +174,8 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
         }
         if (isZendeskV2Enabled) {
             sendMessage(['messenger:set', 'conversationTags', tags]);
+            // `id` is from Zendesk. Talk to support team for any questions
+            sendMessage(['messenger:set', 'conversationFields', [{ id: '34274976897554', value: tags[0] }]]);
         } else {
             sendMessage(['webWidget', 'chat:addTags', tags]);
         }
