@@ -478,6 +478,19 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
       async markImportUpdateAsSuccessful(uuid: string) {
         void docState.markImportUpdateAsSuccessful(uuid)
       },
+
+      async generateSpreadsheetPatches() {
+        if (spreadsheetRef.current) {
+          return spreadsheetRef.current.generatePatches()
+        }
+        return undefined
+      },
+
+      async applyPatches(patches: unknown) {
+        if (spreadsheetRef.current) {
+          spreadsheetRef.current.applyPatches(patches)
+        }
+      },
     }
 
     application.logger.info('Setting request handler for bridge')
