@@ -228,6 +228,5 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             MainContainer,
         };
     };
-
     return bootstrap.wrap({ appName, authentication }, run());
 };
