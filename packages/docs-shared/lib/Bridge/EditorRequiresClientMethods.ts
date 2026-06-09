@@ -9,6 +9,7 @@ import type { EditorEvent, EditorEventData } from './EditorEvent'
 import type { SafeDocsUserState } from '../Doc/DocsAwareness'
 import type { DataTypesThatDocumentCanBeExportedAs } from '../ExportableDataType'
 import type { FeatureFlag } from '@proton/unleash/Flags'
+import type { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema'
 
 export type FileMenuAction =
   | {
@@ -113,4 +114,7 @@ export interface EditorRequiresClientMethods {
   checkIfFeatureFlagIsEnabled(featureFlag: FeatureFlag): Promise<boolean>
 
   reloadClient(): Promise<void>
+
+  storeSpreadsheetPatches(patches: unknown, updateHash: string, type?: SheetsPatchesType): Promise<void>
+  hasBasePatchesStored(): Promise<boolean>
 }

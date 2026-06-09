@@ -18,4 +18,7 @@ export interface DocStateInterface extends Observable<string> {
   markImportUpdateAsSuccessful(uuid: string): void
   waitForImportSuccess(): Promise<void>
   consumeIsInConversionFromOtherFormat(): boolean
+
+  addUpdatePropagationListener(listener: (update: Uint8Array<ArrayBuffer>) => void): void
+  removeUpdatePropagationListener(listener: (update: Uint8Array<ArrayBuffer>) => void): void
 }

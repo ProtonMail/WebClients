@@ -23,6 +23,8 @@ import type { DocumentState, PublicDocumentState } from '../../State/DocumentSta
 import { DocParticipantTracker } from '../../ParticipantTracker/DocParticipantTracker'
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import type { FeatureFlag } from '@proton/unleash/Flags'
+import type { UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
+import type { SheetsPatchesType } from '../../Database/SheetsDBSchema'
 
 /**
  * Exposes a unified interface for interacting with a document to the editor bridge,
@@ -249,5 +251,25 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
 
   async checkIfFeatureFlagIsEnabled(featureFlag: FeatureFlag): Promise<boolean> {
     return this.unleashClient.isReady() && this.unleashClient.isEnabled(featureFlag)
+  }
+
+  async storeSpreadsheetPatches(
+    patches: Parameters<NonNullable<UseSpreadsheetProps['onChangeHistory']>>[0],
+    updateHash: string,
+    type?: SheetsPatchesType,
+  ): Promise<void> {
+    if (!this.editor) {
+      throw new Error('Editor not initialized')
+    }
+
+    return this.editor.storeSpreadsheetPatches(patches, updateHash, type)
+  }
+
+  async hasBasePatches(): Promise<boolean> {
+    if (!this.editor) {
+      throw new Error('Editor not initialized')
+    }
+
+    return this.editor.hasBasePatches()
   }
 }

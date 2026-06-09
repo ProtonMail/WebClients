@@ -35,6 +35,8 @@ import { redirectToCorrectDocTypeIfNeeded } from '../../Util/redirect-to-correct
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import type { DocSizeTracker } from '../../SizeTracker/SizeTracker'
+import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
+import type { SheetsStorageService } from '../SheetsStorageService'
 
 export class DocLoader implements DocLoaderInterface<DocumentState> {
   private docController?: AuthenticatedDocControllerInterface
@@ -68,6 +70,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
     private unleashClient: UnleashClient,
     private sizeTracker: DocSizeTracker,
     private syncedEditorState: SyncedEditorState,
+    private sheetsStorageService?: SheetsStorageService,
   ) {}
 
   destroy(): void {
@@ -102,7 +105,12 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
 
     this.documentState = documentState
 
-    const editorController = new EditorController(this.logger, documentState, this.eventBus)
+    const editorController = new EditorController(
+      this.logger,
+      documentState,
+      this.eventBus,
+      isProtonDocsSpreadsheet(mimeType) ? this.sheetsStorageService : undefined,
+    )
     this.editorController = editorController
 
     const controller = new AuthenticatedDocController(

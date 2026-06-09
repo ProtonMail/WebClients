@@ -150,6 +150,14 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     return this.invokeEditorMethod('markImportUpdateAsSuccessful', [uuid])
   }
 
+  async generateSpreadsheetPatches(): Promise<unknown> {
+    return this.invokeEditorMethod('generateSpreadsheetPatches', [])
+  }
+
+  async applyPatches(patches: unknown): Promise<void> {
+    return this.invokeEditorMethod('applyPatches', [patches])
+  }
+
   async initializeEditor(
     documentId: string,
     userAddress: string,

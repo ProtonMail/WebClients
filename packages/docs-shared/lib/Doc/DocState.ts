@@ -47,6 +47,8 @@ export class DocState extends Observable<string> implements DocStateInterface {
   successfullyImportedUpdateUUIDs: string[] = []
   importSubscriptionCallbacks: (() => void)[] = []
 
+  updatePropagationListeners: Set<(update: Uint8Array<ArrayBuffer>) => void> = new Set()
+
   constructor(
     readonly callbacks: DocStateCallbacks,
     private logger: LoggerInterface,
@@ -54,7 +56,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
     super()
 
     this.doc = new Doc()
-    this.doc.on('update', this.handleDocBeingUpdatedByLexical)
+    this.doc.on('update', this.handleYDocUpdate)
     this.doc.on(DocWillInitializeWithEmptyNodeEvent, () => {
       this.docWasInitializedWithEmptyNode = true
     })
@@ -91,7 +93,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
   }
 
   destroy(): void {
-    this.doc.off('update', this.handleDocBeingUpdatedByLexical)
+    this.doc.off('update', this.handleYDocUpdate)
     this.awareness.off('update', this.handleAwarenessUpdateOrChange)
     this.awareness.off('change', this.handleAwarenessUpdateOrChange)
     window.removeEventListener('unload', this.handleWindowUnloadEvent)
@@ -226,7 +228,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
   }
 
   // eslint-disable-next-line @protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer
-  handleDocBeingUpdatedByLexical = (_update: Uint8Array<ArrayBufferLike>, origin: any) => {
+  handleYDocUpdate = (_update: Uint8Array<ArrayBufferLike>, origin: any) => {
     const update = _update as Uint8Array<ArrayBuffer> /* upcast Uint8Array<ArrayBuffer> to make TS happy */
     const isNonUserInitiatedChange = origin === this || origin === DocUpdateOrigin.BaseCommit
     if (isNonUserInitiatedChange) {
@@ -270,6 +272,9 @@ export class DocState extends Observable<string> implements DocStateInterface {
 
     const updateMessage = this.createSyncMessagePayload(updateToPropagate, isInConversionFunnel ? 'conversion' : 'du')
     this.callbacks.docStateRequestsPropagationOfUpdate(updateMessage, BroadcastSource.HandleDocBeingUpdatedByLexical)
+    for (const listener of this.updatePropagationListeners) {
+      listener(updateToPropagate)
+    }
 
     this.emptyNodeInitializationUpdate = undefined
   }
@@ -346,5 +351,13 @@ export class DocState extends Observable<string> implements DocStateInterface {
     return new Promise((resolve) => {
       this.importSubscriptionCallbacks.push(resolve)
     })
+  }
+
+  addUpdatePropagationListener(listener: (update: Uint8Array<ArrayBuffer>) => void): void {
+    this.updatePropagationListeners.add(listener)
+  }
+
+  removeUpdatePropagationListener(listener: (update: Uint8Array<ArrayBuffer>) => void): void {
+    this.updatePropagationListeners.delete(listener)
   }
 }
