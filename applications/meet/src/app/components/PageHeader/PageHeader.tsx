@@ -11,6 +11,7 @@ import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
+import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { isElectronMeet } from '@proton/shared/lib/helpers/desktop';
 import logo from '@proton/styles/assets/img/meet/brand-dual-colors.svg';
@@ -48,6 +49,13 @@ export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: Pa
 
     const isJoinPage = window.location.pathname.includes('join');
     const isSchedulePage = window.location.pathname.includes('schedule');
+
+    // On the pre-join page, switching/adding an account should bring the user back to the same
+    // meeting link instead of dropping them on the dashboard. The path is computed without the local
+    // account basename so it can be re-based onto the account the user switches to.
+    const switchAccountReturnPath = isJoinPage
+        ? stripLocalBasenameFromPathname(window.location.pathname) + window.location.search + window.location.hash
+        : undefined;
 
     const buttons = (
         <div className="flex flex-nowrap gap-2 items-center w-custom" style={{ '--w-custom': 'fit-content' }}>
@@ -112,6 +120,12 @@ export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: Pa
                                 <UserDropdown
                                     app={APPS.PROTONMEET}
                                     logoutRedirectUrl={`${location.pathname}${location.hash}`}
+                                    extraSessionForkData={{ returnUrl: switchAccountReturnPath }}
+                                    sessionOptions={
+                                        switchAccountReturnPath
+                                            ? { path: switchAccountReturnPath, target: '_self' }
+                                            : undefined
+                                    }
                                 />
                             )}
                             {(isJoinPage || isSchedulePage) && (
