@@ -181,6 +181,12 @@ export const getOrganizationAppRoutes = ({
 
     const subSectionTitleAppearance = isPartOfFamily ? '' : c('Title').t`Customization`;
 
+    const canShowSSOSection =
+        permissions['account.sso_config.read'] &&
+        appSupportsSSO(app) &&
+        (planSupportsSSO(organization?.PlanName, isSsoForPbsEnabled) || upsellPlanSSO(organization?.PlanName)) &&
+        isOrgConfigured;
+
     const routes = {
         users: {
             id: 'users',
@@ -382,12 +388,7 @@ export const getOrganizationAppRoutes = ({
             text: c('Title').t`Single sign-on`,
             to: '/single-sign-on',
             icon: 'key',
-            available:
-                canHaveOrganization &&
-                appSupportsSSO(app) &&
-                (planSupportsSSO(organization?.PlanName, isSsoForPbsEnabled) ||
-                    upsellPlanSSO(organization?.PlanName)) &&
-                isOrgConfigured,
+            available: canShowSSOSection,
         },
         accessControl: {
             id: 'accessControl',

@@ -6,6 +6,7 @@ import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSamlSSO } from '@proton/account/samlSSO/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -45,10 +46,10 @@ import { OrganizationIdentityWarningBanner } from './OrganizationIdentityWarning
 import RemoveSSODomain from './RemoveSSODomain';
 import RemoveSSOSection from './RemoveSSOSection';
 import SSOInfoForm from './SSOInfoForm';
+import SamlSetupEntry from './SamlSetupEntry';
 import SetupSSODomainModal from './SetupSSODomainModal';
 import TXTRecordModal from './TXTRecordModal';
 import SCIMSettingsSection from './scim/SCIMSettingsSection';
-import SelectIDPSection from './scim/SelectIDPSection';
 import { type SsoAppInfo, getSsoAppInfo } from './ssoAppInfo';
 
 const getSsoConfigForDomain = (ssoConfigs: SSO[], domain: Domain) => {
@@ -71,7 +72,6 @@ const ConfigureSamlContent = ({
     renderConfigureSamlModal,
     renderConfigureSamlEdugainModal,
     identityProviderEndpointsContentProps,
-    isEduGainSSOEnabled,
 }: {
     ssoAppInfo: SsoAppInfo;
     domain: Domain;
@@ -88,12 +88,12 @@ const ConfigureSamlContent = ({
     renderConfigureSamlModal: boolean | undefined;
     renderConfigureSamlEdugainModal: boolean | undefined;
     identityProviderEndpointsContentProps: IdentityProviderEndpointsContentProps;
-    isEduGainSSOEnabled: boolean;
 }) => {
     const [removeSSODomainProps, setRemoveSSODomainOpen, renderRemoveSSODomain] = useModalState();
     const [testSamlConfigurationProps, setTestSamlConfigurationOpen, renderTestSamlConfiguration] = useModalState();
 
     const ssoConfigForDomain = getSsoConfigForDomain(ssoConfigs, domain);
+    const [permissions] = useOrgPermissions();
 
     return (
         <>
@@ -221,6 +221,7 @@ const ConfigureSamlContent = ({
                                     onClick={() => {
                                         setRemoveSSODomainOpen(true);
                                     }}
+                                    disabled={!permissions?.['account.sso_config.delete']}
                                 >
                                     <IcCrossBig alt="" />
                                 </Button>
@@ -244,30 +245,15 @@ const ConfigureSamlContent = ({
                     {...identityProviderEndpointsContentProps}
                 />
             ) : (
-                <>
-                    {isEduGainSSOEnabled && (
-                        <SelectIDPSection
-                            onClick={(IDPType) => {
-                                if (IDPType === IDP_TYPE.EDUGAIN) {
-                                    setConfigureSamlEdugainModalOpen(true);
-                                } else {
-                                    setConfigureSamlModalOpen(true);
-                                }
-                            }}
-                        />
-                    )}
-
-                    {!isEduGainSSOEnabled && (
-                        <Button
-                            color="norm"
-                            onClick={() => {
-                                setConfigureSamlModalOpen(true);
-                            }}
-                        >
-                            {c('Action').t`Configure SAML`}
-                        </Button>
-                    )}
-                </>
+                <SamlSetupEntry
+                    onBeginSamlSetup={(idpType) => {
+                        if (idpType === IDP_TYPE.EDUGAIN) {
+                            setConfigureSamlEdugainModalOpen(true);
+                        } else {
+                            setConfigureSamlModalOpen(true);
+                        }
+                    }}
+                />
             )}
         </>
     );
@@ -307,6 +293,7 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
     const [organization] = useOrganization();
     const [user] = useUser();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
+    const [permissions] = useOrgPermissions();
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
 
     const [setupSSODomainModalProps, setSetupSSODomainModalOpen, renderSetupSSODomainModal] = useModalState();
@@ -317,8 +304,6 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
 
     const [preferredDomainID, setPreferredDomainID] = useState<Domain['ID'] | undefined>(undefined);
     const [selectedIDPType, setSelectedIDPType] = useState<IDP_TYPE | null>(null);
-
-    const isEduGainSSOEnabled = useFlag('EduGainSSO');
 
     if (!customDomains || !samlSSO || !organization) {
         return <Loader />;
@@ -420,82 +405,68 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
                         {c('Info')
                             .t`Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.`}
                     </SettingsParagraph>
-
-                    {hasSsoDomain ? (
-                        <ConfigureSamlContent
-                            ssoAppInfo={ssoAppInfo}
-                            domain={domain}
-                            domains={ssoDomains}
-                            count={{
-                                used: customDomains.length,
-                                total: Math.max(customDomains.length, organization.MaxDomains),
-                            }}
-                            onAddDomain={
-                                canAddSsoDomain
-                                    ? () => {
-                                          setSelectedIDPType(null);
-                                          setSetupSSODomainModalOpen(true);
-                                      }
-                                    : undefined
-                            }
-                            onChangeDomain={(domain) => {
-                                setPreferredDomainID(domain.ID);
-                            }}
-                            onRemoveDomain={() => {
-                                setPreferredDomainID(undefined);
-                            }}
-                            ssoConfigs={samlSSO.configs}
-                            configureSamlModalProps={configureSamlModalProps}
-                            configureSamlEdugainModalProps={configureSamlEdugainModalProps}
-                            setConfigureSamlModalOpen={setConfigureSamlModalOpen}
-                            setConfigureSamlEdugainModalOpen={setConfigureSamlEdugainModalOpen}
-                            renderConfigureSamlModal={renderConfigureSamlModal}
-                            renderConfigureSamlEdugainModal={renderConfigureSamlEdugainModal}
-                            identityProviderEndpointsContentProps={{
-                                issuerID: samlSSO.staticInfo.EntityID,
-                                callbackURL: samlSSO.staticInfo.CallbackURL,
-                                ssoAppInfo,
-                            }}
-                            isEduGainSSOEnabled={isEduGainSSOEnabled}
-                        />
-                    ) : (
-                        <>
-                            {isEduGainSSOEnabled && (
-                                <SelectIDPSection
-                                    onClick={(IDP_TYPE) => {
-                                        setSelectedIDPType(IDP_TYPE);
-                                        setSetupSSODomainModalOpen(true);
-                                    }}
-                                />
-                            )}
-
-                            {!isEduGainSSOEnabled && (
-                                <Button
-                                    color="norm"
-                                    onClick={() => {
-                                        setSelectedIDPType(IDP_TYPE.DEFAULT);
-                                        setSetupSSODomainModalOpen(true);
-                                    }}
-                                >
-                                    {c('Action').t`Configure SAML`}
-                                </Button>
-                            )}
-                        </>
-                    )}
+                    {hasSsoDomain
+                        ? permissions?.['account.sso_config.read'] && (
+                              <ConfigureSamlContent
+                                  ssoAppInfo={ssoAppInfo}
+                                  domain={domain}
+                                  domains={ssoDomains}
+                                  count={{
+                                      used: customDomains.length,
+                                      total: Math.max(customDomains.length, organization.MaxDomains),
+                                  }}
+                                  onAddDomain={
+                                      canAddSsoDomain
+                                          ? () => {
+                                                setSelectedIDPType(null);
+                                                setSetupSSODomainModalOpen(true);
+                                            }
+                                          : undefined
+                                  }
+                                  onChangeDomain={(domain) => {
+                                      setPreferredDomainID(domain.ID);
+                                  }}
+                                  onRemoveDomain={() => {
+                                      setPreferredDomainID(undefined);
+                                  }}
+                                  ssoConfigs={samlSSO.configs}
+                                  configureSamlModalProps={configureSamlModalProps}
+                                  configureSamlEdugainModalProps={configureSamlEdugainModalProps}
+                                  setConfigureSamlModalOpen={setConfigureSamlModalOpen}
+                                  setConfigureSamlEdugainModalOpen={setConfigureSamlEdugainModalOpen}
+                                  renderConfigureSamlModal={renderConfigureSamlModal}
+                                  renderConfigureSamlEdugainModal={renderConfigureSamlEdugainModal}
+                                  identityProviderEndpointsContentProps={{
+                                      issuerID: samlSSO.staticInfo.EntityID,
+                                      callbackURL: samlSSO.staticInfo.CallbackURL,
+                                      ssoAppInfo,
+                                  }}
+                              />
+                          )
+                        : permissions?.['account.sso_config.create'] && (
+                              <SamlSetupEntry
+                                  onBeginSamlSetup={(idpType) => {
+                                      setSelectedIDPType(idpType);
+                                      setSetupSSODomainModalOpen(true);
+                                  }}
+                              />
+                          )}
                 </SettingsSectionWide>
             </SubSettingsSection>
 
-            <SCIMSettingsSection
-                domain={domain}
-                hasSsoConfig={hasSsoConfig}
-                scimInfo={samlSSO.scimInfo}
-                onShowVerifyDomain={() => {
-                    setVerifySSODomainModalOpen(true);
-                }}
-                ssoAppInfo={ssoAppInfo}
-            />
+            {permissions?.['account.sso_config.read'] && (
+                <SCIMSettingsSection
+                    domain={domain}
+                    hasSsoConfig={hasSsoConfig}
+                    scimInfo={samlSSO.scimInfo}
+                    onShowVerifyDomain={() => {
+                        setVerifySSODomainModalOpen(true);
+                    }}
+                    ssoAppInfo={ssoAppInfo}
+                />
+            )}
 
-            {hasSsoDomain && hasSsoConfig && (
+            {hasSsoDomain && hasSsoConfig && permissions?.['account.sso_config.delete'] && (
                 <RemoveSSOSettingsSection domain={domain} ssoConfigs={samlSSO.configs} ssoAppInfo={ssoAppInfo} />
             )}
         </>
