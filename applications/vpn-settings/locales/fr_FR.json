@@ -534,7 +534,7 @@
         "Profitez de l'offre"
       ],
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
-        "Obtenez de l'aide par ${ LUMO_SHORT_APP_NAME }"
+        "Obtenez de l'aide de ${ LUMO_SHORT_APP_NAME }"
       ],
       "Get in touch": [
         "Nous contacter"
@@ -646,6 +646,9 @@
       ],
       "Keep my subscription": [
         "Conserver mon abonnement"
+      ],
+      "Later": [
+        "Plus tard"
       ],
       "Learn about recovery options": [
         "En savoir plus sur les options de récupération"
@@ -911,9 +914,6 @@
       "Save": [
         "Enregistrer"
       ],
-      "Save & exit": [
-        "Enregistrer et quitter"
-      ],
       "Save address": [
         "Enregistrer l'adresse"
       ],
@@ -1051,9 +1051,6 @@
       ],
       "Sign out": [
         "Se déconnecter"
-      ],
-      "Sign out of ${ tokens[0].Account }": [
-        "Déconnectez-vous de ${ tokens[0].Account }"
       ],
       "Sign out of all accounts": [
         "Se déconnecter de tous les comptes"
@@ -1231,6 +1228,9 @@
       ],
       "Verify domain": [
         "Vérifier le domaine"
+      ],
+      "Verify now": [
+        "Vérifier maintenant"
       ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Vérifier le domaine ${ unverifiedSSODomain.DomainName }"
@@ -1995,32 +1995,8 @@
       ]
     },
     "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } sur ${ totalCount }"
-      ],
-      "Account connected": [
-        "Compte connecté"
-      ],
-      "Account disconnected": [
-        "Compte déconnecté"
-      ],
-      "Accounts migrated": [
-        "Comptes migrés"
-      ],
       "Activated": [
         "Activé"
-      ],
-      "Add domain": [
-        "Ajouter un domaine"
-      ],
-      "Add users": [
-        "Ajouter des utilisateurs"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "Ajoutez le domaine de messagerie de votre organisation à ${ BRAND_NAME }."
       ],
       "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
         "L'adresse est déjà utilisée par un utilisateur en dehors de votre organisation. Nous vous invitons à prendre contact avec le service client pour résoudre ce problème."
@@ -2028,71 +2004,20 @@
       "All": [
         "Tout"
       ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "Tous les comptes utilisateur migrés sont prêts à être invités à votre organisation ${ BRAND_NAME }."
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "Une erreur inconnue s'est produite. Veuillez rafraîchir la page et réessayer."
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Voulez-vous vraiment continuer ? Les utilisateurs qui n'auront pas activé leur compte avant la fin de la migration devront demander une réinitialisation de mot de passe à l'administrateur de leur organisation ${ BRAND_NAME }."
-      ],
-      "Authenticate": [
-        "S'authentifier"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Authentifiez votre compte Google Workspace"
-      ],
       "Calendar": [
         "Calendrier"
-      ],
-      "Collapse step": [
-        "Réduire l'étape"
-      ],
-      "Configure domain": [
-        "Configurer le domaine"
       ],
       "Configure migration": [
         "Configurer la migration"
       ],
-      "Configure users": [
-        "Configurer les utilisateurs"
-      ],
-      "Configure your domain": [
-        "Configurez votre domaine"
-      ],
       "Contacts": [
         "Contacts"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "Copiez le code ci-dessous et collez-le dans la section DNS de votre hôte de domaine."
-      ],
-      "Creating accounts. Going private": [
-        "Création des comptes. Passage en mode privé."
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "État de migration des données depuis Google Workspace vers ${ BRAND_NAME }"
       ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIM ajoute une signature numérique à chaque e-mail afin que les destinataires puissent vérifier que le message provient bien de votre domaine et qu'il n'a pas été altéré pendant son acheminement. Sans cela, les messages risquent d'être considérés comme moins fiables."
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARC s'appuie sur les protocoles SPF et DKIM pour indiquer aux serveurs destinataires comment traiter les messages qui ne satisfont pas ces vérifications. Il contribue à protéger votre domaine contre l'usurpation d'identité et améliore la fiabilité globale de la distribution des e-mails."
-      ],
-      "Domain added": [
-        "Le domaine a été ajouté."
-      ],
-      "Domain provider": [
-        "Fournisseur de domaine"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "Vous ne savez pas par où commencer ? Regardez comment modifier votre DNS sur ${ registrarLink }"
-      ],
       "Emails": [
         "E-mails"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "Assurez-vous que vos e-mails arrivent dans la boîte de réception et non dans le dossier des indésirables. La mise à jour du SPF permettra aux utilisateurs d'envoyer des e-mails à la fois depuis ${ BRAND_NAME } et depuis Google pendant toute la durée de la migration."
       ],
       "Errors": [
         "Erreurs"
@@ -2100,65 +2025,14 @@
       "Estimated size": [
         "Taille estimée"
       ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "Tous les utilisateurs reçoivent le même lien d'invitation. Ils se rendent sur la page, saisissent leur e-mail, puis un code de vérification est envoyé sur leur boite de réception Gmail. À partir de là, ils définissent leur mot de passe ${ BRAND_NAME }."
-      ],
-      "Expand step": [
-        "Agrandir l'étape"
-      ],
-      "Failed to load OAuth": [
-        "Echec du chargement du OAuth"
-      ],
-      "Final step": [
-        "Étape finale"
-      ],
       "Find out what can be migrated.": [
         "Découvrez ce qui peut être migré."
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "Obtenez de l'aide et des conseils utiles pour d'autres fournisseurs de domaines ${ here }"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Application Google Marketplace pour copier des données vers ${ BRAND_NAME }"
-      ],
-      "Google Workspace account": [
-        "Compte Google Workspace"
       ],
       "Has errors": [
         "Il y a des erreurs"
       ],
-      "Import completed successfully": [
-        "L'importation s'est bien terminée."
-      ],
-      "Import details": [
-        "Détails de l'importation"
-      ],
       "In progress": [
         "En cours"
-      ],
-      "Install app": [
-        "Installer l'application"
-      ],
-      "Install migration app": [
-        "Installer l'application de migration"
-      ],
-      "Invitation link": [
-        "Lien d'invitation"
-      ],
-      "Invitation message": [
-        "Message d'invitation"
-      ],
-      "invite link": [
-        "lien d'invitation"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "La propagation de ces changements peut prendre jusqu'à 24 heures."
-      ],
-      "Loading your organization data": [
-        "Chargement des données de votre organisation en cours"
-      ],
-      "Mail": [
-        "E-mail"
       ],
       "Member address not found. Please contact customer support to resolve this": [
         "L'adresse du membre n'a pas été trouvée. Veuillez contacter le service client pour résoudre ce problème."
@@ -2166,33 +2040,11 @@
       "Migrate": [
         "Migrer"
       ],
-      "Migrate accounts": [
-        "Migrer les comptes"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "Migrer les comptes vers ${ BRAND_NAME }"
-      ],
-      "Migrate from Google Workspace": [
-        "Migrer depuis Google Workspace"
-      ],
       "Migrated": [
         "Migré"
       ],
-      "Migrated accounts": [
-        "Comptes migrés"
-      ],
-      "Migration includes": [
-        "La migration comprend"
-      ],
-      "Migration started for ${ n } user": [
-        "La migration a commencé pour ${ n } utilisateur",
-        "La migration a commencé pour ${ n } utilisateurs"
-      ],
       "Migration status": [
         "État de la migration"
-      ],
-      "Migration summary": [
-        "Résumé de la migration"
       ],
       "Missing organization private key": [
         "La clé privée de l'organisation est absente."
@@ -2200,29 +2052,11 @@
       "Missing organization public key": [
         "La clé publique de l'organisation est absente."
       ],
-      "Need help?": [
-        "Besoin d'aide ?"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "Aucun détail sur l'erreur n'est disponible. Veuillez contacter le service client pour plus d'informations."
-      ],
       "No users to display": [
         "Il n'y a aucun utilisateur à afficher."
       ],
       "Not activated": [
         "Non activé"
-      ],
-      "Not confirmed": [
-        "Non confirmé"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "Détection incorrecte ? Choisissez votre fournisseur depuis la liste."
-      ],
-      "Onboard your team": [
-        "Embarquez votre équipe"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "Dès que nous aurons vérifié que les e-mails sont bien acheminés vers ${ BRAND_NAME }, la migration sera finalisée. Vous recevrez un e-mail de confirmation pour vous en informer. Ce processus peut prendre jusqu'à 24 heures."
       ],
       "Organization does not have enough seats available": [
         "L'organisation n'a pas assez d'accès disponibles."
@@ -2233,132 +2067,29 @@
       "Pending": [
         "En attente"
       ],
-      "Please don’t close or refresh this window.": [
-        "Veillez à ne pas fermer ni actualiser cette fenêtre."
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "Reconnectez votre compte Google Workspace afin de démarrer une migration."
-      ],
-      "Refresh": [
-        "Actualiser"
-      ],
-      "Select at least one user to start a migration": [
-        "Sélectionnez au moins un utilisateur pour commencer une migration"
-      ],
       "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
         "Sélectionnez exactement ce que vous voulez migrer. Cela s'appliquera à tous les utilisateurs de l'organisation."
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "Sélectionnez les comptes que vous souhaitez transférer vers ${ BRAND_NAME }. Vous pouvez migrer toute votre organisation dès aujourd'hui, ou démarrer petit puis terminer quand vous l'aurez décidé."
       ],
       "Select users to migrate": [
         "Sélectionnez les utilisateurs à migrer"
       ],
-      "Set up secure sending (DKIM)": [
-        "Configurer l'envoi sécurisé (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "Configurer l'envoi sécurisé (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "Configurer l'envoi sécurisé (SPF)"
-      ],
-      "Settings": [
-        "Paramètres"
-      ],
-      "Sign in to Google Workspace": [
-        "Se connecter à Google Workspace"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "Connectez-vous avec un compte administrateur Google Workspace pour ${ BRAND_NAME } afin de configurer la migration."
-      ],
       "Size": [
         "Taille"
-      ],
-      "Skip": [
-        "Ignorer"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "${ count } contact a été ignoré du fait d'incompatibilités.",
-        "${ count } contacts ont été ignorés du fait d'incompatibilités."
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "${ count } contact a été ignoré du fait d'incompatibilités.",
-        "${ count } contacts ont été ignorés du fait d'incompatibilités."
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "${ count } événement a été ignoré du fait d'incompatibilités.",
-        "${ count } événements ont été ignorés du fait d'incompatibilités."
-      ],
-      "Some accounts are not claimed": [
-        "Certains comptes ne sont pas activés."
       ],
       "Status": [
         "État"
       ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "Pour transférer les données de votre organisation vers ${ BRAND_NAME }, installez ${ BRAND_NAME } Easy Switch depuis le marketplace Google Workspace. Une fois l'installation terminée, revenez ici pour continuer."
-      ],
-      "Update records for receiving": [
-        "Mettre à jour les enregistrements pour recevoir"
-      ],
       "User": [
         "Utilisateur"
       ],
-      "Users activated": [
-        "Utilisateurs activés"
-      ],
-      "Users migrated": [
-        "Utilisateurs migrés"
-      ],
       "Users who have accessed their ${ BRAND_NAME } account": [
         "Utilisateurs qui ont activé leur compte ${ BRAND_NAME }"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Les utilisateurs qui n'auront pas activé leur compte avant la fin de la migration devront demander une réinitialisation de mot de passe à l'administrateur de leur organisation ${ BRAND_NAME }."
-      ],
-      "Verified": [
-        "Vérifié"
-      ],
-      "Verify installation": [
-        "Vérifier l'installation"
-      ],
-      "Verify your domain": [
-        "Vérifiez votre domaine"
-      ],
-      "Verify your domain to start a migration": [
-        "Vérifiez votre domaine pour commencer une migration"
-      ],
-      "Waiting for MX...": [
-        "En attente des MX"
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Nous n'avons pas pu vérifier l'installation. Veuillez vérifier que vous l'avez installée dans votre compte Google Workspace, puis réessayez."
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "Nous passons à ${ BRAND_NAME }, le service de messagerie sécurisé.\nEt votre compte ${ BRAND_NAME } est prêt à être activé.\nCliquez sur ${ inviteLink }.\nSaisissez votre adresse e-mail, nous vous enverrons un code sur votre compte Gmail.\nUtilisez-le pour définir votre mot de passe, et votre compte ${ BRAND_NAME } sera à vous.\nPendant quelques temps, les deux services fonctionneront en parallèle. ${ BRAND_NAME } et Gmail.\nEnsuite, lorsque tout le monde aura effectué la transition, nous mettrons fin à Gmail. Nous vous en informerons à l'avance."
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "Nous avons remarqué que certains utilisateurs n'ont pas encore activé leur compte ${ BRAND_NAME }."
-      ],
-      "We’re creating your accounts and importing your data now. Every email, every event is yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Nous sommes en train de créer vos comptes et d'importer vos données. Chaque e-mail, chaque événement vous appartient en propre. Seule votre équipe y a accès. Pas nous, ni personne d'autre."
       ],
       "What are you migrating?": [
         "Que migrez-vous ?"
       ],
       "You": [
         "Vous"
-      ],
-      "You're all set!": [
-        "Tout est prêt !"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "Vous avez presque terminé, vous deviez configurer votre domaine afin de recevoir vos e-mails directement sur ${ BRAND_NAME }. Une fois confirmé, votre équipe arrêtera de recevoir les nouveaux e-mails sur Gmail et la migration sera terminée."
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "Votre offre actuelle prend en charge jusqu'à ${ maxMembers } utilisateur. Pour ajouter d'autres utilisateurs, augmentez le nombre de comptes inclus dans votre abonnement.",
-        "Votre offre actuelle prend en charge jusqu'à ${ maxMembers } utilisateurs. Pour ajouter d'autres utilisateurs, augmentez le nombre de comptes inclus dans votre abonnement."
       ]
     },
     "Browser": {
@@ -3914,8 +3645,8 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Tous les membres de votre organisation peuvent se connecter à des serveurs partagés dans tous les pays."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Pour une transition en douceur vers ${ BRAND_NAME }, importez vos données depuis Google, Outlook et autres plateformes."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pour une intégration transparente de votre équipe à ${ BRAND_NAME }, importez vos données depuis Google, Outlook et autres plateformes."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Recevez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
@@ -4975,6 +4706,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Certains de vos noms de labels dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
       ],
+      "Something went wrong while converting the address": [
+        "Une erreur s'est produite lors de la conversion de l'adresse"
+      ],
       "Something went wrong while creating the address": [
         "Quelque chose s'est mal passé lors de la création de l'adresse"
       ],
@@ -5096,7 +4830,7 @@
         "Le nom d'utilisateur doit se terminer par une lettre ou un chiffre."
       ],
       "VAT number must start with ${ prefixes }": [
-        "Le numéro de TVA doit commencer avec ${ prefixes }."
+        "Le numéro de TVA doit commencer par ${ prefixes }."
       ],
       "Verification did not succeed, please try again in an hour.": [
         "La vérification n'a pas réussi, nous vous invitons à réessayer dans une heure."
@@ -6083,6 +5817,9 @@
       ]
     },
     "group_modal": {
+      "Add delegated roles to a group to grant its members only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Ajoutez des rôles délégués à un groupe pour accorder à ses membres uniquement les autorisations spécifiques dont ils ont besoin, en gardant le pouvoir d'administrateur complet séparé et votre environnement sécurisé."
+      ],
       "General": [
         "Général"
       ],
@@ -6805,29 +6542,20 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importez vos codes existants** depuis d'autres applications A2F, telles que Google Authenticator"
       ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Étape 1 : Invitez vos amis** sur ${ BRAND_NAME } avec votre lien de parrainage."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Étape 1 :** Invitez vos amis sur ${ BRAND_NAME } avec votre lien de parrainage."
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**Étape 2 :** Vos amis bénéficient de **2 semaines gratuites** sur leur abonnement."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Étape 2 :** Vos amis bénéficieront de 2 semaines gratuites sur leur abonnement."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Étape 3 :** Obtenez ${ referrerRewardAmount } de crédits pour chaque personne qui s'abonne à un abonnement."
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**Étape 3 :** Obtenez **${ referrerRewardAmount } de crédit** pour chaque personne qui souscrit à un abonnement."
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Invitez vos amis** à ${ BRAND_NAME } avec votre lien de parrainage."
       ],
       "**Sync codes** to all your devices": [
         "**Synchronisez les codes** sur tous vos appareils"
       ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Ils obtiennent ${ refereeRewardAmount }** en crédits s'ils s'abonnent."
+      ],
       "**This will disable 2-factor authentication.**": [
         "**Cela désactivera l’authentification à 2 facteurs.**"
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Vous obtenez ${ referrerRewardAmount }** en crédits pour chaque ami abonné."
       ],
       "+ ${ invisibleCount } More": [
         "${ invisibleCount } de plus",
@@ -7326,6 +7054,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "N'oubliez PAS ce mot de passe. Si vous l'oubliez, vous ne pourrez plus gérer votre organisation."
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Vous souvenez-vous de votre mot de passe ? ${ verifyButton }"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Voulez-vous révoquer toutes les autres sessions à l'exception de celle qui est en cours ?"
       ],
@@ -7557,6 +7288,9 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pour les utilisateurs qui passent d'un autre service de messagerie à ${ MAIL_APP_NAME }, sélectionnez l'onglet ${ boldAddresses } et ajoutez toutes les adresses de messagerie actives avant de modifier l'enregistrement MX pour assurer une transition fluide."
+      ],
+      "Forgot password?": [
+        "Mot de passe oublié ?"
       ],
       "Free trial": [
         "Essai gratuit"
@@ -8138,6 +7872,9 @@
       "Password must have:": [
         "Le mot de passe doit comprendre :"
       ],
+      "Password verified": [
+        "Mot de passe vérifié"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Les paiements sont protégés par le chiffrement TLS et par les lois suisses en matière de protection de la vie privée."
       ],
@@ -8149,6 +7886,9 @@
       ],
       "per month, billed at ${ price }": [
         "par mois, facturé ${ price }"
+      ],
+      "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
+        "Nous vous inviterons régulièrement à vérifier votre mot de passe ${ BRAND_NAME } afin de s'assurer que vous ne l'oubliez pas. Ces demandes deviendront moins fréquentes au fil du temps."
       ],
       "Please add a password for the user on row": [
         "Ajoutez un mot de passe pour l'utilisateur choisi.",
@@ -8745,6 +8485,9 @@
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "Pour aider à sécuriser votre compte, nous voulons nous assurer que c'est bien vous qui tentez de vous connecter."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Pour vous aider à vous souvenir de votre mot de passe, nous vous demanderons occasionnellement de le saisir. Nous vous le demanderons de moins en moins."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Pour importer des événements, créez d'abord un calendrier dans ${ CALENDAR_APP_NAME }. Ce calendrier contiendra les événements après leur importation."
       ],
@@ -9011,6 +8754,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Nous vous informerons dès que l'importation sera terminée."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Nous vous rappellerons de vérifier votre mot de passe ultérieurement."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }."
@@ -9801,9 +9547,6 @@
       "Confirm login password": [
         "Confirmer le mot de passe de connexion"
       ],
-      "Confirm MX records added": [
-        "Vérifier les enregistrements MX ajoutés"
-      ],
       "Confirm new password": [
         "Confirmer le nouveau mot de passe"
       ],
@@ -10222,6 +9965,9 @@
       "Password": [
         "Mot de passe"
       ],
+      "Password reminders": [
+        "Rappels de mot de passe"
+      ],
       "Password strength": [
         "Niveau de sécurité du mot de passe"
       ],
@@ -10558,32 +10304,6 @@
         "Veuillez ajouter l'enregistrement TXT suivant. Attention : les enregistrements DNS peuvent prendre plusieurs heures pour être mis à jour."
       ]
     },
-    "Label for domain setup": {
-      "${ capitalizedGroup } record not found": [
-        "L'enregistrement ${ capitalizedGroup } n'a pas été trouvé."
-      ],
-      "Host name": [
-        "Nom d'hôte"
-      ],
-      "Invalid ${ group.name } record found": [
-        "Un enregistrement ${ group.name } non valide a été trouvé."
-      ],
-      "Priority": [
-        "Priorité"
-      ],
-      "Status": [
-        "État"
-      ],
-      "Type": [
-        "Type"
-      ],
-      "Use default value (e.g. “@”)": [
-        "Utiliser la valeur par défaut (par exemple “@”)"
-      ],
-      "Valid ${ group.name } record found": [
-        "Un enregistrement ${ group.name } valide a été trouvé."
-      ]
-    },
     "Label for new member": {
       "Admin": [
         "Admin"
@@ -10720,6 +10440,9 @@
       "Forgot username?": [
         "Nom d'utilisateur oublié ?"
       ],
+      "Frequent sign-in problems": [
+        "Problèmes de connexion fréquents"
+      ],
       "Get ${ BRAND_NAME } Pass": [
         "Obtenir ${ BRAND_NAME } Pass"
       ],
@@ -10731,9 +10454,6 @@
       ],
       "Help": [
         "Aide"
-      ],
-      "Help & support": [
-        "Aide et support"
       ],
       "Help translate": [
         "Contribuez à la traduction"
@@ -10839,9 +10559,6 @@
       ],
       "Sign in": [
         "Se connecter"
-      ],
-      "Sign-in help": [
-        "Aide pour la connexion"
       ],
       "Terms": [
         "Conditions générales d'utilisation"
@@ -13132,6 +12849,20 @@
         "Offre à durée limitée."
       ]
     },
+    "password_reminder": {
+      "If you forget your password, you may lose access to your encrypted data.": [
+        "Si vous perdez votre mot de passe, vous pourriez perdre l'accès à vos données chiffrées."
+      ],
+      "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
+        "Assurez-vous de vous souvenir ou de stocker votre mot de passe en sécurité, il s'agit de la clé pour déchiffrer vos données."
+      ],
+      "Turn off password reminders?": [
+        "Désactiver les rappels de mots de passe ?"
+      ],
+      "Turn off reminders": [
+        "Désactiver les rappels"
+      ]
+    },
     "password_reset: info": {
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
         "**Toutes vos informations existantes** (e-mails, événements, contacts, fichiers, entrées ${ PASS_APP_NAME }…) **seront verrouillées** et peuvent uniquement être déverrouillées avec votre **ancien mot de passe**."
@@ -13951,6 +13682,78 @@
         "OFFRE DE PRINTEMPS"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Profitez de l'offre"
+      ],
+      "Summer Sale": [
+        "Offre estivale"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mois"
+      ],
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "2 TB data storage": [
+        "2 To d'espace de stockage de données"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 Go d'espace de stockage : 40x votre abonnement actuel"
+      ],
+      "3 TB data storage": [
+        "3 To d'espace de stockage de données"
+      ],
+      "500 GB storage": [
+        "500 Go d'espace de stockage"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Toutes les fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Toutes les fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Accès complet à ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Comptes individuels pour 6 utilisateurs"
+      ],
+      "Individual accounts for you and a partner": [
+        "Comptes individuels pour vous et un partenaire"
+      ],
+      "Online document and spreadsheet editor": [
+        "Éditeur de documents et de feuilles de calcul en ligne"
+      ],
+      "Recover previous file versions": [
+        "Récupérez les versions précédentes des fichiers"
+      ],
+      "Stronger protection against cyber threats": [
+        "Une protection renforcée contre les cybermenaces"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Passez à notre abonnement annuel et économisez ${ toYearlyDiscountAmount } !"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Des dossiers, labels et filtres illimités"
+      ],
+      "Use your own email domain": [
+        "Utilisez votre propre domaine de messagerie"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "pendant 12 mois"
+      ],
+      "SUMMER SALE": [
+        "OFFRE ESTIVALE"
+      ]
+    },
     "Recovery Email": {
       "Cancel": [
         "Annuler"
@@ -14036,14 +13839,14 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Profitez de **${ planTitle }** gratuitement jusqu'au **${ textDate }**."
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "Offrez 2 semaines, obtenez ${ referrerRewardAmount }"
+      "Give ${ refereeRewardAmount }, get ${ referrerRewardAmount }": [
+        "Donnez ${ refereeRewardAmount }, recevez ${ referrerRewardAmount }"
       ],
       "How your free trial works:": [
         "Comment fonctionne votre essai gratuit :"
       ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "J'utilise ${ BRAND_NAME } et j'ai pensé que cela pourrait vous plaire. Il s'agit d'une boîte mail sécurisée, d'un stockage cloud, d'un gestionnaire de mots de passe, et un VPN qui protège votre vie privée. Inscrivez-vous avec ce lien pour profiter gratuitement des fonctionnalités premium pendant 14 jours : ${ referralLink }."
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
+        "J'ai utilisé ${ BRAND_NAME } et j'ai pensé que cela pourrait vous plaire. Il s'agit d'un e-mail sécurisé, d'un stockage cloud, d'un gestionnaire de mots de passe et d'un VPN qui protège votre vie privée. Inscrivez-vous avec ce lien pour obtenir ${ refereeRewardAmount } de votre prochain abonnement : ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Si vous annulez avant cette date, vous passerez à un abonnement inférieur ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } lorsque la version d'essai prendra fin. Si vous n'annulez pas, votre abonnement complet commencera et vous recevrez **${ referrerRewardAmount }** en crédits."
@@ -14078,9 +13881,6 @@
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Il vous reste **${ daysRemaining } jour** pour explorer toutes les puissantes fonctionnalités qu'offre **${ planTitle }**.",
         "Il vous reste **${ daysRemaining } jours** pour explorer toutes les puissantes fonctionnalités qu'offre **${ planTitle }**."
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "Votre ami recevra également ${ refereeRewardAmount } à utiliser sur sa prochaine facture !"
       ],
       "your subscription": [
         "votre abonnement"
@@ -16217,6 +16017,12 @@
       "Password copied to clipboard": [
         "Le mot de passe a été copié dans le presse-papiers."
       ],
+      "Password reminders disabled": [
+        "Les rappels de mot de passe ont été désactivés."
+      ],
+      "Password reminders enabled": [
+        "Les rappels de mot de passe ont été activés."
+      ],
       "Password updated": [
         "Le mot de passe a été mis à jour."
       ],
@@ -16807,6 +16613,9 @@
       "Connect your custom domain": [
         "Connectez votre domaine personnalisé"
       ],
+      "Connected emails": [
+        "E-mails connectés"
+      ],
       "Connection status": [
         "Statut de la connexion"
       ],
@@ -17186,9 +16995,6 @@
       "Import contacts": [
         "Importer les contacts"
       ],
-      "Import emails, calendars, contacts": [
-        "Importer des messages, calendriers et contacts"
-      ],
       "Import events": [
         "Importer des événements"
       ],
@@ -17198,8 +17004,14 @@
       "Import groups": [
         "Importer des groupes"
       ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "Importer avec ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
       "Import your data to ${ BRAND_NAME }": [
         "Importer vos données vers ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "Imports"
       ],
       "Information exposed in breach": [
         "Informations divulguées lors de la fuite de données"
@@ -17231,8 +17043,8 @@
       "Make your business stand out": [
         "Faites en sorte que votre entreprise se démarque !"
       ],
-      "Migration assistant": [
-        "Assistant de migration"
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrer votre organisation vers ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Mini calendrier"
@@ -17286,7 +17098,7 @@
         "Ouvrir la pagination"
       ],
       "OpenVpn": [
-        "OpenVpn"
+        "OpenVPN"
       ],
       "OpenVPN configuration files": [
         "Fichiers de configuration OpenVPN"
@@ -17723,6 +17535,9 @@
       ],
       "Verify it’s you": [
         "Vérifiez que c'est bien vous"
+      ],
+      "Verify your password": [
+        "Vérifiez votre mot de passe"
       ],
       "Verifying your card...": [
         "Vérification de votre carte en cours"

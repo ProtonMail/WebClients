@@ -602,6 +602,9 @@
       "Keep my subscription": [
         "Pidä tilaukseni"
       ],
+      "Later": [
+        "Myöhemmin"
+      ],
       "Learn about recovery options": [
         "Tutustu palautusvaihtoehtoihin"
       ],
@@ -1761,9 +1764,6 @@
       ]
     },
     "BOSS": {
-      "Authenticate": [
-        "Tunnistaudu"
-      ],
       "Calendar": [
         "Kalenteri"
       ],
@@ -1776,33 +1776,11 @@
       "Estimated size": [
         "Arvioitu koko"
       ],
-      "Failed to load OAuth": [
-        "OAuthin lataaminen epäonnistui"
-      ],
       "Has errors": [
         "Virheitä"
       ],
       "In progress": [
         "Käynnissä"
-      ],
-      "Install app": [
-        "Asenna sovellus"
-      ],
-      "Install migration app": [
-        "Asenna migraatio-sovellus"
-      ],
-      "Mail": [
-        "Sähköposti"
-      ],
-      "Migrate from Google Workspace": [
-        "Siirrä Google Workspace -palvelusta"
-      ],
-      "Migration includes": [
-        "Migraatio sisältää"
-      ],
-      "Migration started for ${ n } user": [
-        "Siirto aloitettu ${ n } käyttäjälle",
-        "Siirto aloitettu ${ n } käyttäjälle"
       ],
       "Migration status": [
         "Siirron tila"
@@ -1813,29 +1791,11 @@
       "Organization does not have enough storage available": [
         "Organisaatiolla ei ole tarpeeksi tallennustilaa"
       ],
-      "Select at least one user to start a migration": [
-        "Valitse vähintään yksi käyttäjä siirron aloittamiseksi"
-      ],
-      "Settings": [
-        "Asetukset"
-      ],
-      "Sign in to Google Workspace": [
-        "Kirjaudu Google Workspace -palveluun"
-      ],
       "Status": [
         "Tila"
       ],
       "User": [
         "Käyttäjä"
-      ],
-      "Users migrated": [
-        "Käyttäjät siirretty"
-      ],
-      "Verify your domain": [
-        "Vahvista verkkotunnuksesi"
-      ],
-      "Verify your domain to start a migration": [
-        "Varmista verkkotunnuksesi aloittaaksesi siirron"
       ],
       "What are you migrating?": [
         "Mitä olet siirtämässä?"
@@ -3288,9 +3248,6 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Kaikki organisaatiossanne voivat yhdistää jaettuihin palvelimiin kaikissa maissa."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Voit siirtyä ${ BRAND_NAME }iin saumattomasti tuomalla tietosi Googlesta, Outlookista ja muualta."
-      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut muista palveluista."
       ],
@@ -4238,6 +4195,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Joidenkin tunnisteiden nimet ylittävät ${ MAIL_APP_NAME }n enimmäismerkkimäärän. Muuta nimiä muokkaamalla tuontia."
+      ],
+      "Something went wrong while converting the address": [
+        "Jotain meni vikaan muutettaessa osoitetta"
       ],
       "Something went wrong while creating the address": [
         "Jotain meni vikaan luotaessa osoitetta"
@@ -5943,15 +5903,6 @@
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Hanki ${ BRAND_NAME }-osoite** käyttääksesi kaikkia ${ BRAND_NAME_TWO }-palveluita, kuten ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Vaihe 1:** Kutsu kaverisi ${ BRAND_NAME }:iin suosittelulinkilläsi."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Vaihe 2:** Kaverisi saavat kahden viikon ilmaisen tilauksen."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Vaihe 3:** Ansaitse ${ referrerRewardAmount } krediitteinä jokaista tilauksen hankkivaa kaveria kohden."
       ],
       "**Sync codes** to all your devices": [
         "**Synkronoi koodit** kaikkiin laitteisiisi"
@@ -9386,6 +9337,9 @@
       "Forgot username?": [
         "Unohditko käyttäjätunnuksesi?"
       ],
+      "Frequent sign-in problems": [
+        "Toistuvat kirjautumisongelmat"
+      ],
       "Get ${ BRAND_NAME } Pass": [
         "Hanki ${ BRAND_NAME } Pass"
       ],
@@ -12333,6 +12287,78 @@
         "KEVÄTALE"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Hyödynnä tarjous"
+      ],
+      "Summer Sale": [
+        "Kesäale"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/kk"
+      ],
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "2 TB data storage": [
+        "2 Tt:n tiedontallennus"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 Gt tallennustilaa: 40x nykyinen tilauksesi"
+      ],
+      "3 TB data storage": [
+        "3 Tt:n tiedontallennus"
+      ],
+      "500 GB storage": [
+        "500 Gt tallennustilaa"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Kaikki sovellusten ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME } premium-ominaisuudet"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Kaikki sovellusten ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME } premium-ominaisuudet"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Alennukset perustuvat normaaliin kuukausihintaan. Tilauksesi uusiutuu laskutusjakson päättyessä normaalilla vuosihinnalla."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Täysi ${ VPN_APP_NAME } -käyttöoikeus"
+      ],
+      "Individual accounts for 6 users": [
+        "Henkilökohtaiset tilit 6 käyttäjälle"
+      ],
+      "Individual accounts for you and a partner": [
+        "Henkilökohtaiset tilit sinulle ja kumppanille"
+      ],
+      "Online document and spreadsheet editor": [
+        "Yhdistetty asiakirjojen ja laskentataulukoiden muokkausohjelma"
+      ],
+      "Recover previous file versions": [
+        "Palauta aiempia tiedostoversioita"
+      ],
+      "Stronger protection against cyber threats": [
+        "Vahvempi suoja kyberuhkia vastaan"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Vaihda vuositilaukseemme ja säästä ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Rajattomasti kansioita, tunnisteita ja suodattimia"
+      ],
+      "Use your own email domain": [
+        "Käytä omaa sähköpostin verkkotunnusta"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12 kuukaudeksi"
+      ],
+      "SUMMER SALE": [
+        "KESÄALE"
+      ]
+    },
     "Recovery Email": {
       "Cancel": [
         "Peruuta"
@@ -12402,9 +12428,6 @@
       ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Tämän päivän jälkeen tilisi alennetaan **${ BRAND_NAME } Free -tilaukseen**. Jos muutat mieltäsi, voit **uudelleenaktivoida tilauksesi** säilyttääksesi pääsyn premium-ominaisuuksiin."
-      ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "Olen käyttänyt ${ BRAND_NAME } -palvelua ja ajattelin, että se voisi kiinnostaa sinua. Se on turvallinen sähköpostipalvelu, pilvitallennustila, salasananhallinta ja VPN, joka suojaa yksityisyyttäsi. Rekisteröidy tämän linkin kautta ja saat 14 päivän ilmaisen premium-käyttöoikeuden: ${ referralLink }"
       ],
       "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
         "Jos peruutat, menetät **${ referrerRewardAmount }** krediittipalkkion."
@@ -14404,6 +14427,12 @@
       "Password copied to clipboard": [
         "Salasana kopioitiin leikepöydälle"
       ],
+      "Password reminders disabled": [
+        "Salasanamuistutukset pois käytöstä"
+      ],
+      "Password reminders enabled": [
+        "Salasanamuistutukset käytössä"
+      ],
       "Password updated": [
         "Salasana vaihdettiin"
       ],
@@ -15253,9 +15282,6 @@
       "Import contacts": [
         "Tuo yhteystietoja"
       ],
-      "Import emails, calendars, contacts": [
-        "Tuo sähköpostit, kalenterit ja yhteystiedot"
-      ],
       "Import events": [
         "Tuo tapahtumia"
       ],
@@ -15265,8 +15291,14 @@
       "Import groups": [
         "Tuo ryhmiä"
       ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "${ PRODUCT_NAMES.EASY_SWITCH } -tuonti"
+      ],
       "Import your data to ${ BRAND_NAME }": [
         "Tuo tietosi ${ BRAND_NAME }iin"
+      ],
+      "Imports": [
+        "Tuonnit"
       ],
       "Information exposed in breach": [
         "Tietomurrossa paljastuneet tiedot"
@@ -15291,9 +15323,6 @@
       ],
       "Main password": [
         "Pääsalasana"
-      ],
-      "Migration assistant": [
-        "Migraatio-avustaja"
       ],
       "Minicalendar": [
         "Pienoiskalenteri"

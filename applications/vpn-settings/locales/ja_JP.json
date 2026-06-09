@@ -587,6 +587,9 @@
       "Keep my subscription": [
         "サブスクリプションを継続する"
       ],
+      "Later": [
+        "後で"
+      ],
       "Learn more": [
         "詳細"
       ],
@@ -1819,9 +1822,6 @@
       ]
     },
     "BOSS": {
-      "Authenticate": [
-        "認証"
-      ],
       "Calendar": [
         "カレンダー"
       ],
@@ -1834,27 +1834,6 @@
       "Estimated size": [
         "推定サイズ"
       ],
-      "Failed to load OAuth": [
-        "OAuthの読み込みに失敗しました"
-      ],
-      "Install app": [
-        "アプリをインストール"
-      ],
-      "Install migration app": [
-        "移行アプリをインストール"
-      ],
-      "Mail": [
-        "メール"
-      ],
-      "Migrate from Google Workspace": [
-        "Google Workspaceから移行"
-      ],
-      "Migration includes": [
-        "移行に含まれるもの"
-      ],
-      "Migration started for ${ n } user": [
-        "${ n }ユーザーの移行を開始しました"
-      ],
       "Migration status": [
         "移行ステータス"
       ],
@@ -1864,20 +1843,8 @@
       "Organization does not have enough storage available": [
         "組織には十分なストレージがありません"
       ],
-      "Select at least one user to start a migration": [
-        "移行を開始するには少なくとも1人のユーザーを選択してください"
-      ],
-      "Sign in to Google Workspace": [
-        "Google Workspaceにサインイン"
-      ],
       "User": [
         "ユーザー"
-      ],
-      "Verify your domain": [
-        "ドメインの検証"
-      ],
-      "Verify your domain to start a migration": [
-        "移行を開始するにはドメインを確認してください"
       ],
       "What are you migrating?": [
         "何を移行しますか？"
@@ -3338,9 +3305,6 @@
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "組織内の誰もが、すべての国の共有サーバーに接続できます。"
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "${ BRAND_NAME }への移行をスムーズに行うために、Google、Outlookなどのサービスからデータをインポートしてください。"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "他社のサービスからパスワードやその他のデータが漏洩した場合に通知を受け取ります。"
@@ -5911,24 +5875,6 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "Google Authenticator などの他の2要素認証アプリから、**既存のコードをインポート**"
-      ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**ステップ1:友達を招待してください**招待リンクで${ BRAND_NAME }に。"
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "ステップ1：招待リンクで${ BRAND_NAME }に**友達を招待してください**"
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**ステップ2：** あなたの友達は、プランを**2週間無料**でご利用いただけます。"
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**ステップ2：** あなたの友人に、2週間分のプランが無料で提供されます。"
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**ステップ3：**プランに登録する人ごとに、${ referrerRewardAmount } クレジットを獲得できます。"
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**ステップ3：**プランに登録する人ごとに、**${ referrerRewardAmount } クレジット**を獲得できます。"
       ],
       "**Sync codes** to all your devices": [
         "すべてのデバイスに**コードを同期**"
@@ -12361,6 +12307,78 @@
         "スプリング セール"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "特典を利用する"
+      ],
+      "Summer Sale": [
+        "サマーセール"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/月"
+      ],
+      "15 GB storage": [
+        "15 GB ストレージ"
+      ],
+      "2 TB data storage": [
+        "2 TB データストレージ"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB ストレージで現在のプランの40倍に"
+      ],
+      "3 TB data storage": [
+        "3 TB データストレージ"
+      ],
+      "500 GB storage": [
+        "500 GB ストレージ"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、および${ CALENDAR_SHORT_APP_NAME }のすべてのプレミアム機能"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、および${ CALENDAR_SHORT_APP_NAME }のすべてのプレミアム機能"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "割引は通常の月額料金を基準に適用されています。サブスクリプションは、請求期間終了後に通常の年額料金で更新されます。"
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME }へのフルアクセス"
+      ],
+      "Individual accounts for 6 users": [
+        "6ユーザー分の個別アカウント"
+      ],
+      "Individual accounts for you and a partner": [
+        "お客様用とパートナー様用の個別アカウント"
+      ],
+      "Online document and spreadsheet editor": [
+        "オンラインのドキュメントおよびスプレッドシートエディター"
+      ],
+      "Recover previous file versions": [
+        "ファイルの以前のバージョンを復元"
+      ],
+      "Stronger protection against cyber threats": [
+        "サイバー脅威に対するより強力な保護"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "年間プランに切り替えて、${ toYearlyDiscountAmount }お得に！"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "無制限のフォルダー、ラベル、フィルター"
+      ],
+      "Use your own email domain": [
+        "独自のメールドメインを使用"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12か月プラン"
+      ],
+      "SUMMER SALE": [
+        "サマーセール"
+      ]
+    },
     "Recovery Email": {
       "Cancel": [
         "キャンセル"
@@ -12440,14 +12458,8 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "**${ textDate }** まで、**${ planTitle }** を無料でお楽しみいただけます。"
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "2週間待って、${ referrerRewardAmount }をもらおう"
-      ],
       "How your free trial works:": [
         "無料トライアルについて："
-      ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "私は ${ BRAND_NAME } を使用しており、あなたにも気に入っていただけると思いました。これは、プライバシーを保護する安全なメール、クラウドストレージ、パスワードマネージャー、VPNです。このリンクからサインアップすると、プレミアム機能を14日間無料でご利用いただけます：${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "それまでにキャンセルすると、トライアル終了時に${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }にダウングレードされます。キャンセルしない場合、お客様のフルプランが開始され、**${ referrerRewardAmount }** のクレジットを獲得できます。"
@@ -12481,9 +12493,6 @@
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "**${ planTitle }**が提供するすべての強力な機能をお試しいただける期間は、残り**${ daysRemaining }日**です。"
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "お友達も、次回の請求で ${ refereeRewardAmount } を獲得できます！"
       ],
       "your subscription": [
         "あなたのサブスクリプション"
@@ -15323,9 +15332,6 @@
       "Import contacts": [
         "連絡先をインポート"
       ],
-      "Import emails, calendars, contacts": [
-        "メール、カレンダー、連絡先をインポート"
-      ],
       "Import events": [
         "予定をインポート"
       ],
@@ -15334,6 +15340,9 @@
       ],
       "Import groups": [
         "グループをインポート"
+      ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "${ PRODUCT_NAMES.EASY_SWITCH } でインポート"
       ],
       "Import your data to ${ BRAND_NAME }": [
         "データを ${ BRAND_NAME } にインポート"
@@ -15361,9 +15370,6 @@
       ],
       "Main password": [
         "メインパスワード"
-      ],
-      "Migration assistant": [
-        "移行アシスタント"
       ],
       "Minicalendar": [
         "ミニカレンダー"

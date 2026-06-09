@@ -446,6 +446,9 @@
       "Enable multi-user support": [
         "다중 사용자 지원 활성화"
       ],
+      "Enter code": [
+        "코드 입력"
+      ],
       "Explore ${ target }": [
         "${ target } 알아보기"
       ],
@@ -595,6 +598,9 @@
       ],
       "Keep my subscription": [
         "내 구독 유지하기"
+      ],
+      "Later": [
+        "나중에"
       ],
       "Learn more": [
         "더 알아보기"
@@ -1047,6 +1053,9 @@
         "다시 시도"
       ],
       "Try another method": [
+        "다른 방법 시도"
+      ],
+      "Try another way": [
         "다른 방법 시도"
       ],
       "Try for free": [
@@ -1845,12 +1854,6 @@
       ]
     },
     "BOSS": {
-      "Authenticate": [
-        "인증"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Google Workspace 계정 인증"
-      ],
       "Calendar": [
         "캘린더"
       ],
@@ -1863,35 +1866,11 @@
       "Estimated size": [
         "예상 용량"
       ],
-      "Failed to load OAuth": [
-        "OAuth를 불러오지 못했습니다."
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Google Marketplace 앱에서 ${ BRAND_NAME }으로 데이터를 복사"
-      ],
       "Has errors": [
         "오류 있음"
       ],
       "In progress": [
         "진행 중"
-      ],
-      "Install app": [
-        "앱 설치"
-      ],
-      "Install migration app": [
-        "이전 앱 설치"
-      ],
-      "Mail": [
-        "멩리"
-      ],
-      "Migrate from Google Workspace": [
-        "Google Workspace에서 이전"
-      ],
-      "Migration includes": [
-        "이전에 포함되는 항목:"
-      ],
-      "Migration started for ${ n } user": [
-        "${ n }명의 사용자에 대한 마이그레이션이 시작됨"
       ],
       "Migration status": [
         "마이그레이션 상태"
@@ -1902,35 +1881,11 @@
       "Organization does not have enough storage available": [
         "조직에 충분한 저장공간이 남아있지 않습니다."
       ],
-      "Select at least one user to start a migration": [
-        "하나 이상의 사용자를 선택하여 마이그레이션을 시작하세요"
-      ],
-      "Settings": [
-        "설정"
-      ],
-      "Sign in to Google Workspace": [
-        "Google Workspace에 로그인"
-      ],
       "Status": [
         "상태"
       ],
       "User": [
         "사용자"
-      ],
-      "Users migrated": [
-        "사용자가 이전되었습니다."
-      ],
-      "Verify installation": [
-        "설치 검증"
-      ],
-      "Verify your domain": [
-        "내 도메인 인증"
-      ],
-      "Verify your domain to start a migration": [
-        "마이그레이션을 시작하려면 도메인을 확인하세요"
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Google Workspace 계정에 설치되었는지 확인하고 다시 시도해 주세요."
       ],
       "What are you migrating?": [
         "무엇을 이전하시나요?"
@@ -3409,9 +3364,6 @@
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "조직의 모든 구성원이 모든 국가의 공유 서버에 연결할 수 있습니다."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "원활하게 ${ BRAND_NAME }(으)로 전환하기 위해 Google, Outlook 등에서 데이터를 불러오기 하세요."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "제3자 서비스로부터 비밀번호 혹은 다른 데이터가 유출되면 알림받으세요."
@@ -6058,24 +6010,6 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "Google Authenticator과 같은 다른 2단계 인증 앱으로부터 **기존 코드를 불러올 수 있어요**"
       ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**1단계:** 리퍼럴 링크로 친구들을 ${ BRAND_NAME }에 초대하세요."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**1단계:** 리퍼럴 링크로 친구들을 ${ BRAND_NAME }에 초대하세요."
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**2단계:** 초대한 친구들은 구독한 플랜에 추가로 **2주 무료 혜택**을 받게 됩니다."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**2단계:** 초대한 친구들은 구독한 플랜에 추가로 2주 무료 혜택을 받게 됩니다."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**3단계:** 플랜을 구독하는 친구 한 명당 ${ referrerRewardAmount } 크레딧을 받아보세요."
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**3단계:** 플랜을 구독하는 친구 한 명당 **${ referrerRewardAmount } 크레딧**을 받아보세요."
-      ],
       "**Sync codes** to all your devices": [
         "가지고 계신 모든 기기와 **코드를 동기화할 수 있어요**"
       ],
@@ -6231,6 +6165,9 @@
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "이메일 별칭은 이메일 주소와 같이 동작하지만 스팸을 줄여주고 당신의 실제 이메일 주소와 신원을 감추어 줍니다."
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "인증 코드가 포함된 SMS 메시지가 ${ phoneNumber }(으)로 전송되었습니다."
       ],
       "and": [
         "그리고"
@@ -6564,6 +6501,9 @@
       ],
       "Drop to import": [
         "드래그해서 불러오기"
+      ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "종단 간 암호화로 인해 비밀번호를 재설정할 수는 있지만, ${ DataRecoveryOptionsLink } 사용 전까지 ${ DataLockedText }."
       ],
       "Each code can only be used once": [
         "각 코드는 한 번씩만 유효합니다."
@@ -8344,6 +8284,9 @@
       "Your email will only be used for this one-time verification.": [
         "회원님의 이메일 주소는 이번 인증에만 사용됩니다."
       ],
+      "your encrypted data will be locked": [
+        "개인 데이터는 잠금 상태로 유지됩니다"
+      ],
       "Your files will be encrypted and then saved": [
         "파일이 암호화된 후 저장됩니다"
       ],
@@ -8901,6 +8844,9 @@
       ],
       "Enabled": [
         "활성화됨"
+      ],
+      "Enter code": [
+        "코드 입력"
       ],
       "Enter password": [
         "비밀번호 입력"
@@ -12613,6 +12559,78 @@
         "봄 세일"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "할인 받기"
+      ],
+      "Summer Sale": [
+        "여름 세일"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/월"
+      ],
+      "15 GB storage": [
+        "15 GB 저장공간"
+      ],
+      "2 TB data storage": [
+        "2 TB 데이터 저장공간"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 저장공간: 현재 요금제의 40배"
+      ],
+      "3 TB data storage": [
+        "3 TB 데이터 저장공간"
+      ],
+      "500 GB storage": [
+        "500 GB 저장공간"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 premium 기능"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 premium 기능"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME }에 대한 완전한 접근"
+      ],
+      "Individual accounts for 6 users": [
+        "6인용 개별 계정"
+      ],
+      "Individual accounts for you and a partner": [
+        "귀하와 파트너를 위한 개별 계정"
+      ],
+      "Online document and spreadsheet editor": [
+        "온라인 문서 및 스프레드시트 편집기"
+      ],
+      "Recover previous file versions": [
+        "이전 파일 버전 복구"
+      ],
+      "Stronger protection against cyber threats": [
+        "사이버 위협에 대한 더욱 강력한 보호"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "연간 요금제로 전환하고 ${ toYearlyDiscountAmount }를 절약하세요!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "무제한 폴더, 라벨 및 필터"
+      ],
+      "Use your own email domain": [
+        "나만의 이메일 도메인 사용"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12개월 동안"
+      ],
+      "SUMMER SALE": [
+        "여름 세일"
+      ]
+    },
     "Recovery Email": {
       "Cancel": [
         "취소"
@@ -12692,14 +12710,8 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "**${ textDate }**까지 **${ planTitle }**을(를) 무료로 즐겨보세요."
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "2주 혜택 추천 시 ${ referrerRewardAmount } 크레딧을 받아보세요."
-      ],
       "How your free trial works:": [
         "무료 체험 작동 방식:"
-      ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "저는 ${ BRAND_NAME }을 사용해왔고 당신이 좋아할 거라고 생각합니다. Proton은 당신의 프라이버시를 보호하는 안전한 이메일, 클라우드 스토리지, 비밀번호 관리자이자 VPN입니다. 이 링크로 회원가입하여 무료로 14일간 프리미엄 기능을 경험해 보세요: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "해당 날짜 전에 취소시 무료체험 종료 후 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }로 다운그레이드됩니다. 취소하지 않으면 전체 플랜이 시작되며 **${ referrerRewardAmount }** 크레딧을 받게 됩니다."
@@ -12733,9 +12745,6 @@
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "**${ planTitle }**가 제공하는 강력한 기능들을 탐색할 수 있는 시간이 **${ daysRemaining }일** 남았습니다."
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "친구 또한 차후 청구서에서 사용 가능하도록 ${ refereeRewardAmount } 크레딧을 받게 됩니다!"
       ],
       "your subscription": [
         "내 구독"
@@ -15608,9 +15617,6 @@
       "Import contacts": [
         "연락처 가져오기"
       ],
-      "Import emails, calendars, contacts": [
-        "이메일, 캘린더 및 연락처 불러오기"
-      ],
       "Import events": [
         "이벤트 불러오기"
       ],
@@ -15620,8 +15626,14 @@
       "Import groups": [
         "그룹 가져오기"
       ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "${ PRODUCT_NAMES.EASY_SWITCH }로 불러오기"
+      ],
       "Import your data to ${ BRAND_NAME }": [
         "${ BRAND_NAME }으로 데이터 불러오기"
+      ],
+      "Imports": [
+        "불러오기"
       ],
       "Information exposed in breach": [
         "유출 시 노출된 정보"
@@ -15646,9 +15658,6 @@
       ],
       "Main password": [
         "기본 비밀번호"
-      ],
-      "Migration assistant": [
-        "이전 작업 도우미"
       ],
       "Minicalendar": [
         "간편 캘린더"
@@ -16066,6 +16075,9 @@
       ],
       "Verification failed": [
         "인증 실패"
+      ],
+      "Verify it’s you": [
+        "본인 여부 확인"
       ],
       "Verifying your card...": [
         "카드 인증 중..."
@@ -16912,6 +16924,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송할 것입니다."
       ],
+      "Are you sure you want to remove your recovery phone number?": [
+        "복구 휴대폰 번호를 정말 삭제하시겠어요?"
+      ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "이 주소를 삭제하면 더 이상 일일 이메일 알림을 받을 수 없습니다."
       ],
@@ -16920,6 +16935,9 @@
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
         "이 주소를 삭제하면 더 이상 계정을 복구할 수 없습니다."
+      ],
+      "By removing this phone number, you will no longer be able to recover your account.": [
+        "해당 휴대폰 번호를 삭제하는 경우 계정 복구가 더 이상 불가능합니다."
       ],
       "Please add at least one recipient.": [
         "최소한 한 명의 수신자를 추가해주세요."
