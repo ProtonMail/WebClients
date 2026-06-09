@@ -133,6 +133,9 @@
       "Add public holidays": [
         "أضف عطلات رسمية"
       ],
+      "Add recovery options": [
+        "إضافة خيارات الاسترداد"
+      ],
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "أضف رابط الإحالة إلى توقيع ${ MAIL_APP_NAME }"
       ],
@@ -291,6 +294,9 @@
       ],
       "Connect your ${ BRAND_NAME } Account": [
         "اربط حساب ${ BRAND_NAME } الخاص بك"
+      ],
+      "Connect your email": [
+        "قم بربط بريدك الإلكتروني"
       ],
       "Connected": [
         "مُتصل"
@@ -967,6 +973,9 @@
       "Or": [
         "أو"
       ],
+      "Or remove forwarding address": [
+        "أو قم بإزالة عنوان إعادة التوجيه"
+      ],
       "Or use a different Gmail address": [
         "أو استخدم عنوان Gmail مختلفًا"
       ],
@@ -1117,6 +1126,9 @@
       "Review": [
         "المراجعة"
       ],
+      "Review recovery options": [
+        "مراجعة خيارات الاسترداد"
+      ],
       "Revoke": [
         "حذف"
       ],
@@ -1233,6 +1245,9 @@
       ],
       "Set up a custom domain": [
         "إعداد نطاق مخصَّص"
+      ],
+      "Set up account recovery": [
+        "إعداد استرداد الحساب"
       ],
       "Set up auto-forwarding from Gmail": [
         "إعداد إعادة التوجيه التلقائي من Gmail"
@@ -1491,6 +1506,9 @@
       ],
       "Verify domain": [
         "التحقق من النطاق"
+      ],
+      "Verify now": [
+        "تحقق الآن"
       ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "التحقق من النطاق ${ unverifiedSSODomain.DomainName }"
@@ -2484,11 +2502,6 @@
         "عنوان بريدك الإلكتروني الشخصي جزء أساسي من هويتك الرقمية. وعل غرار رقم هاتفك، لا تعطه لكل شخص تقابله. من المُستحسن أن تتوفر على عناوين أخرى لاستخدامها لأغراض مختلفة."
       ]
     },
-    "BOSS": {
-      "Finish setting up your business account": [
-        "أكمل إعداد حساب نشاطك التجاري"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "تطبيق ${ MAIL_APP_NAME } لسطح المكتب"
@@ -3259,9 +3272,6 @@
       ]
     },
     "Country name": {
-      "Abkhazia": [
-        "دولة أبخازيا"
-      ],
       "Afghanistan": [
         "أفغانستان"
       ],
@@ -3271,9 +3281,6 @@
       "Algeria": [
         "الجزائر"
       ],
-      "American Samoa": [
-        "ساموا الأمريكية"
-      ],
       "Andorra": [
         "أندورا"
       ],
@@ -3282,9 +3289,6 @@
       ],
       "Anguilla": [
         "أنجويلا"
-      ],
-      "Antarctica": [
-        "القارة القطبية الجنوبية"
       ],
       "Antigua and Barbuda": [
         "أنتيغوا وبربودا"
@@ -3297,9 +3301,6 @@
       ],
       "Aruba": [
         "أروبا"
-      ],
-      "Ascension Island": [
-        "جزيرة أسنسيون"
       ],
       "Australia": [
         "أستراليا"
@@ -3342,9 +3343,6 @@
       ],
       "Bolivia": [
         "بوليفيا"
-      ],
-      "Bonaire, Sint Eustatius and Saba": [
-        "بونير، سانت أوستاتيوس وسابا"
       ],
       "Bosnia and Herzegovina": [
         "البوسنة والهرسك"
@@ -3421,9 +3419,6 @@
       "Congo (The Democratic Republic of the)": [
         "جمهورية الكونغو الديمقراطية"
       ],
-      "Congo, Democratic Republic of the": [
-        "جمهورية الكونغو الديمقراطية"
-      ],
       "Cook Islands": [
         "جزر كوك"
       ],
@@ -3481,23 +3476,14 @@
       "Estonia": [
         "إستونيا"
       ],
-      "Eswatini": [
-        "اسواتيني"
-      ],
       "Ethiopia": [
         "إثيوبيا"
-      ],
-      "Falkland Islands": [
-        "جزر فالكلاند"
       ],
       "Falkland Islands (Malvinas)": [
         "جزر فوكلاند (مالفيناس)"
       ],
       "Faroe Islands": [
         "جزر فاراو"
-      ],
-      "Federated States of Micronesia": [
-        "ولايات ميكرونيزيا الموحدة"
       ],
       "Fiji": [
         "فيجي"
@@ -3547,9 +3533,6 @@
       "Guadeloupe": [
         "غوادلوبي"
       ],
-      "Guam": [
-        "غوام"
-      ],
       "Guatemala": [
         "غواتيمالا"
       ],
@@ -3592,12 +3575,6 @@
       "Indonesia": [
         "اندونيسيا"
       ],
-      "International": [
-        "عالمي"
-      ],
-      "Iran": [
-        "إيران"
-      ],
       "Iraq": [
         "العراق"
       ],
@@ -3606,9 +3583,6 @@
       ],
       "Islamic Republic of Iran": [
         "جمهورية إيران الإسلامية"
-      ],
-      "Isle of Man": [
-        "جزيرة إيل أوف مان"
       ],
       "Israel": [
         "إسرائيل"
@@ -3621,9 +3595,6 @@
       ],
       "Japan": [
         "اليابان"
-      ],
-      "Jersey": [
-        "جيرسي"
       ],
       "Jordan": [
         "الأردن"
@@ -3655,9 +3626,6 @@
       "Lao People's Democratic Republic": [
         "جمهورية لاو الديمقراطية الشعبية"
       ],
-      "Laos": [
-        "اللاووس"
-      ],
       "Latvia": [
         "لاتفيا"
       ],
@@ -3669,9 +3637,6 @@
       ],
       "Liberia": [
         "ليبيريا"
-      ],
-      "Libya": [
-        "ليبيا"
       ],
       "Libyan Arab Jamahiriya": [
         "الجماهيرية العربية الليبية"
@@ -3781,12 +3746,6 @@
       "Norfolk Island": [
         "جزيرة نورفولك"
       ],
-      "North Korea": [
-        "كوريا الشمالية"
-      ],
-      "Northern Mariana Islands": [
-        "جزر ماريانا الشمالية"
-      ],
       "Norway": [
         "النرويج"
       ],
@@ -3844,9 +3803,6 @@
       "Rwanda": [
         "رواندا"
       ],
-      "Saint Barthélemy": [
-        "سانت بارتيليمي"
-      ],
       "Saint Helena": [
         "سانت هيلينا"
       ],
@@ -3855,9 +3811,6 @@
       ],
       "Saint Lucia": [
         "سانتا لوسيا"
-      ],
-      "Saint Martin (French Part)": [
-        "سانت مارتن (الجزء الفرنسي)"
       ],
       "Saint Pierre and Miquelon": [
         "سانت بيير وميكلون"
@@ -3892,9 +3845,6 @@
       "Singapore": [
         "سنغافورة"
       ],
-      "Sint Maarten": [
-        "سينت مارتن"
-      ],
       "Slovakia": [
         "سلوفاكيا"
       ],
@@ -3912,12 +3862,6 @@
       ],
       "South Georgia and the South Sandwich Islands": [
         "جورجيا الجنوبية وجزر ساندويتش الجنوبية"
-      ],
-      "South Korea": [
-        "كوريا الجنوبية"
-      ],
-      "South Ossetia": [
-        "أوسيتيا الجنوبية"
       ],
       "South Sudan": [
         "جنوب السودان"
@@ -3946,9 +3890,6 @@
       "Switzerland": [
         "سويسرا"
       ],
-      "Syria": [
-        "سوريا"
-      ],
       "Syrian Arab Republic": [
         "سوريا"
       ],
@@ -3958,17 +3899,11 @@
       "Tajikistan": [
         "طاجيكستان"
       ],
-      "Tanzania": [
-        "تنزانيا"
-      ],
       "Tanzania, United Republic of": [
         "تنزانيا، جمهورية المتحدة"
       ],
       "Thailand": [
         "تايلاند"
-      ],
-      "Timor-Leste": [
-        "تيمور الشرقية"
       ],
       "Togo": [
         "الطوغو"
@@ -3981,9 +3916,6 @@
       ],
       "Trinidad and Tobago": [
         "ترنداد وتوباجو"
-      ],
-      "Tristan da Cunha": [
-        "جزر تريستان دا كونها"
       ],
       "Tunisia": [
         "تونس"
@@ -4015,9 +3947,6 @@
       "United States": [
         "الولايات المتحدة"
       ],
-      "United States Minor Outlying Islands": [
-        "جزر الولايات المتحدة الصغيرة النائية"
-      ],
       "Uruguay": [
         "الأورغواي"
       ],
@@ -4033,12 +3962,6 @@
       "Vietnam": [
         "فييتنام"
       ],
-      "Virgin Islands, British": [
-        "جزر فيرجن البريطانية"
-      ],
-      "Virgin Islands, U.S.": [
-        "جزر فيرجن الأمريكية"
-      ],
       "Wallis and Futuna": [
         "جزر واليس وفوتونا"
       ],
@@ -4053,9 +3976,6 @@
       ],
       "Zimbabwe": [
         "زيمبابوي"
-      ],
-      "Åland Islands": [
-        "جزر آلاند"
       ]
     },
     "Country select label": {
@@ -4321,6 +4241,9 @@
       "Available storage: ${ storageText }": [
         "التخزين المتاح: ${ storageText }"
       ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "امنع Google من تتبّع نشاطك وإنشاء ملف تعريفي عنك. لا يستطيع Gmail الاطلاع على ما تفعله داخل ${ MAIL_APP_NAME }."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "قم بتكوين هذا أولاً لتفعيل مؤسستك وتخصيص عنوان بريدك الإلكتروني."
       ],
@@ -4344,6 +4267,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "مزامنة الملفات بسهولة مع السحابة من سطح المكتب والوصول إليها من جهازك المحمول."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "ستظهر الآن رسائل البريد الإلكتروني المرسلة إلى ${ connectedAddressText } في ${ MAIL_APP_NAME }."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "قم بتفعيل ${ PROTON_SENTINEL_NAME } للوصول إلى هذه الميزات"
@@ -4375,8 +4301,8 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "يمكن لكل شخص في مؤسستك الاتصال بالخوادم المشتركة في جميع البلدان."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "للانتقال السلس إلى ${ BRAND_NAME }، استورد بياناتك من Google و Outlook وغيرهما."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "لتسهيل انضمام فريقك إلى ${ BRAND_NAME }، يمكنك استيراد بياناتك من Google وOutlook وغيرها من الخدمات."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "تلقَّ إشعارًا إذا تم تسريب كلمة مرورك أو بيانات أخرى من خدمة طرف ثالث."
@@ -4399,8 +4325,14 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "يتيح لك إضافة روابط الاجتماعات على الفور إلى دعوات الأحداث."
       ],
+      "No ads. No trackers.": [
+        "لا توجد إعلانات. لا توجد أجهزة تتبع."
+      ],
       "No one in your organization can connect to shared servers.": [
         "لا يمكن لأي شخص في مؤسستك الاتصال بالخوادم المشتركة"
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "اقرأ وأجب وابق على قمة Gmail من داخل ${ MAIL_APP_NAME }"
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "أعد حسابات لجميع المستخدمين وادعهم للانضمام إلى ${ BRAND_NAME }."
@@ -4410,6 +4342,9 @@
       ],
       "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
         "يتيح لك ذلك استعادة الوصول إلى حساب ${ BRAND_NAME } الخاص بك، لكنه لا يستعيد بياناتك المشفّرة."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "لربط عنوان Gmail آخر، أزل عناوين Gmail الإضافية التي تقوم بإعادة توجيه الرسائل إلى ${ BRAND_NAME }."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "لاستيراد جهات الاتصال عبر ملف CSV أو VCF، تأكد من أن حجم الملف لا يتجاوز ${ MAX_IMPORT_FILE_SIZE_STRING } أو ${ maxContactString } جهة اتصال. إذا كان ملفك أكبر من ذلك، يرجى تقسيمه إلى ملفات أصغر. ${ learnMoreLink }."
@@ -4426,11 +4361,17 @@
       "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
         "احصل على 15 غيغابايت من مساحة التخزين مقابل ${ config.offerPrice } فقط."
       ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "رقِّ إلى ${ planName } لربط ما يصل إلى ${ MAX_SYNC_PAID_USER } حسابات."
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "قم بالترقية للحصول على ${ activatePmUser } لعنوان بريد إلكتروني أقصر وسهل التذكر بالإضافة إلى عنوانك الحالي."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "استخدم هذا الدليل لتجعل مؤسستك تستفيد على الفور من نظام ${ BRAND_NAME } البيئي الرائد في مجال التشفير والخصوصية."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "سنقوم بإيقاف الواردات مؤقتا عند 80٪ من التخزين لحجز مساحة للرسائل الجديدة."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "نأسف لرؤيتك تغادر. إذا كان لديك بعض الوقت، سنكون ممتنين لمعرفة سبب رغبتك في الإلغاء. تساعدنا ملاحظاتك على جعل ${ BRAND_NAME } أفضل للجميع."
@@ -4443,6 +4384,12 @@
       ],
       "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
         "يمكنك دمج العناوين في حساب رئيسي واحد على ${ BRAND_NAME } باستخدام دليل الدعم الخاص بنا."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "يمكنك الآن إرسال رسائل البريد الإلكتروني من ${ BRAND_NAME } باستخدام هذا العنوان."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "لقد قمت بتوصيل عنوان حساب خارجي واحد ب ${ MAIL_APP_NAME }."
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
         "نظرًا لأن حسابك المجاني في ${ MAIL_APP_NAME } يتضمن مساحة تخزين محدودة، فسنستورد فقط ${ newUserStorageText } من أحدث رسائل Gmail لديك."
@@ -4873,6 +4820,11 @@
       ],
       "90m": [
         "90 دقيقة"
+      ]
+    },
+    "Easy switch": {
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "أنت تقوم بإعادة توجيه رسائل البريد الإلكتروني من حساب خارجي واحد إلى ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -5639,6 +5591,9 @@
       "Address cannot be yours": [
         "لا يمكن أن يكون العنوان خاصًا بك"
       ],
+      "Address could not be added.": [
+        "تعذر إضافة العنوان."
+      ],
       "Address primary private key not found": [
         "لم يتم العثور على المفتاح الخاص الرئيسي للعنوان"
       ],
@@ -6101,6 +6056,12 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "تتجاوز بعض أسماء التسميات الخاصة بك الحد الأقصى لعدد الأحرف في ${ MAIL_APP_NAME }. يرجى تخصيص الاستيراد لتعديل هذه الأسماء."
+      ],
+      "Something went wrong while creating the address": [
+        "حدث خطأ ما أثناء إنشاء العنوان"
+      ],
+      "Something went wrong while fetching available domains": [
+        "حدث خطأ ما أثناء جلب النطاقات المتاحة"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "حدث خطأ ما، قم بـ ${ refresh } للمتابعة. إذا كنت لا تزال ترى رسالة الخطأ يرجى الاتصال بـ ${ supportTeam } الخاص بنا."
@@ -7465,6 +7426,11 @@
         "عضوية المجموعة"
       ]
     },
+    "group_modal": {
+      "Add delegated roles to a group to grant its members only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "أضف أدوارًا مفوَّضة إلى مجموعة لمنح أعضائها الصلاحيات التي يحتاجونها فقط، مع فصل صلاحيات المسؤول الكامل والحفاظ على أمان بيئة العمل."
+      ]
+    },
     "Header": {
       "Actions": [
         "إجراءات"
@@ -8392,26 +8358,17 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**استيراد رموزك الحالية** من تطبيقات المصادقة الثنائية (2FA) الأخرى، مثل Google Authenticator"
       ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**الخطوة 1: ادعُ أصدقاءك** إلى ${ BRAND_NAME } باستخدام رابط إحالتك."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**الخطوة 1:** ادعُ أصدقاءك إلى ${ BRAND_NAME } باستخدام رابط الإحالة الخاص بك."
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**الخطوة 2:** سيحصل أصدقاؤك على **أسبوعين مجانًا** في باقتهم."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**الخطوة 2:** يحصل أصدقاؤك على أسبوعين مجانًا في خطتهم."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**الخطوة 3:** احصل على ${ referrerRewardAmount } من الأرصدة عن كل شخص يشترك في خطة."
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**الخطوة 3:** احصل على **${ referrerRewardAmount } كرصيد** عن كل شخص يشترك في إحدى الباقات."
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**شارك أصدقاءك** ${ BRAND_NAME } عبر رابط الإحالة الخاص بك."
       ],
       "**Sync codes** to all your devices": [
         "**مزامنة الرموز** في جميع أجهزتك"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**يحصلون على ${ refereeRewardAmount }** كرصيد عند الاشتراك."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**تحصل على ${ referrerRewardAmount }** من الرصيد عن كل صديق يقوم بالاشتراك."
       ],
       "+ ${ invisibleCount } More": [
         "المزيد من المشتركين ${ invisibleCount }",
@@ -8482,6 +8439,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "إضافة ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "أضف ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "add a recovery method": [
         "إضافة طريقة استرداد"
@@ -9029,6 +8989,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "لا تنسى كلمة المرور هذه. إذا نسيتها، فلن تتمكن من إدارة مؤسستك."
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "هل ما زلت تتذكر كلمة مرورك؟ ${ verifyButton }"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "هل تريد تسجيل الخروج من جميع الجلسات السابقة عدا الجلسة الحالية؟"
       ],
@@ -9297,6 +9260,9 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "للمستخدمين الذين يرغبون في الانتقال إلى ${ MAIL_APP_NAME } من خدمة بريد إلكتروني أخرى، اختارو علامة التبويب ${ boldAddresses } وأضيفو جميع عناوين البريد الإلكتروني النشطة قبل تغيير سجل MX لضمان انتقال سلس."
+      ],
+      "Forgot password?": [
+        "هل نسيت كلمة المرور؟"
       ],
       "Free forever": [
         "مجاني للأبد"
@@ -9969,6 +9935,9 @@
       "Password must have:": [
         "يجب أن تحتوي كلمة المرور على:"
       ],
+      "Password verified": [
+        "تم التحقق من كلمة المرور"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "يتم حماية المدفوعات بواسطة تشفير TLS وقوانين الخصوصية السويسرية."
       ],
@@ -10401,6 +10370,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "موصى به من TechRadar Pro بتقييم 4.2 من 5 نجوم"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "غير متاح مؤقتا بسبب ارتفاع الطلب. من فضلك حاول مرة أخرى"
       ],
       "Temporarily unavailable. Please check back later.": [
         "غير متاح مؤقتًا. يرجى المحاولة مرة أخرى لاحقًا."
@@ -10935,6 +10907,9 @@
       ],
       "We'll notify you when the import is done.": [
         "سنعلمك عند اكتمال الاستيراد."
+      ],
+      "We'll remind you to verify your password again later": [
+        "سنذكرك بالتحقق من كلمة المرور الخاصة بك مرة أخرى لاحقا"
       ],
       "We'll send a new verification code to ${ strong }": [
         "سنرسل رمز تحقق جديدًا إلى ${strong}"
@@ -11794,6 +11769,11 @@
         "عرض الأسبوع"
       ]
     },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "قم بالتبديل إلى ${ MAIL_APP_NAME }"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Action shortcuts": [
         "اختصارات الإجراء"
@@ -11806,6 +11786,9 @@
       ],
       "Composer shortcuts": [
         "اختصارات المؤلف"
+      ],
+      "Desktop app navigation": [
+        "التنقل في تطبيق سطح المكتب"
       ],
       "Folder shortcuts": [
         "اختصارات المجلد"
@@ -11880,6 +11863,9 @@
         "${ nbYear } سنوات",
         "${ nbYear } سنوات",
         "${ nbYear } سنوات"
+      ],
+      "${ value.length }/${ maxLength } characters": [
+        "${ value.length }/${ maxLength } حرف"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(غير متاح مؤقتًا. يرجى المحاولة مرة أخرى لاحقًا.)"
@@ -12826,6 +12812,9 @@
       "Secure password generator": [
         "مولد كلمات مرور آمن"
       ],
+      "Select which Gmail address to connect": [
+        "حدد عنوان Gmail للاتصال"
+      ],
       "Send auto-reply": [
         "أرسل ردًا تلقائيًا"
       ],
@@ -13396,9 +13385,6 @@
       "Sign in": [
         "تسجيل الدخول"
       ],
-      "Sign-in help": [
-        "مساعدة تسجيل الدخول"
-      ],
       "switch account": [
         "تبديل الحساب"
       ],
@@ -13878,8 +13864,14 @@
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "إنشاء حساب ${ BRAND_NAME } | استعد خصوصيتك"
       ],
+      "Experience true online privacy with a secure email, cloud storage, password manager, and VPN. Join ${ BRAND_NAME } today and get ${ refereeRewardAmount } off your next subscription.": [
+        "استمتع بخصوصية حقيقية على الإنترنت مع بريد إلكتروني آمن، وتخزين سحابي، ومدير كلمات مرور، وشبكة VPN. انضم إلى ${ BRAND_NAME } اليوم واحصل على خصم بقيمة ${ refereeRewardAmount } على اشتراكك القادم."
+      ],
       "Find your ${ BRAND_NAME } Account username": [
         "العثور على اسم مستخدم حساب ${ BRAND_NAME }"
+      ],
+      "Join ${ BRAND_NAME } and get ${ refereeRewardAmount } in credits": [
+        "انضم إلى ${ BRAND_NAME } واحصل على رصيد بقيمة ${ refereeRewardAmount }."
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "سجل الدخول إلى حساب ${ BRAND_NAME } الخاص بك للوصول إلى جميع خدمات ${ BRAND_NAME } المشفرة مثل ${ MAIL_APP_NAME }، و${ DRIVE_SHORT_APP_NAME }، و${ CALENDAR_SHORT_APP_NAME }، وغيرها. ليس لديك حساب؟ أنشئ واحدًا مجانًا."
@@ -14539,6 +14531,9 @@
       ],
       "Multiple admin roles": [
         "أدوار مسؤولين متعددة"
+      ],
+      "No streaming support": [
+        "البث غير مدعوم"
       ],
       "No-logs policy": [
         "سياسة عدم الاحتفاظ بالسجلات"
@@ -16524,6 +16519,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "خلال هذا الوقت، لن تتمكن من تعديل اشتراكك أو إلغائه. يُرجى الانتظار حتى اكتمال دفعتك قبل محاولة إجراء أي تغييرات. شكرًا لصبرك."
       ],
+      "Edit billing address": [
+        "تعديل عنوان إرسال الفواتير"
+      ],
       "Got it": [
         "أحصل عليها"
       ],
@@ -17188,6 +17186,78 @@
         "ياهو"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "احصل على العرض"
+      ],
+      "Summer Sale": [
+        "تخفيضات الصيف"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/شهر"
+      ],
+      "15 GB storage": [
+        "مساحة تخزينية 15 جيجا"
+      ],
+      "2 TB data storage": [
+        "تخزين بيانات بسعة 2 تيرابايت"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "مساحة تخزين 200 جيجابايت: 40 ضعف خطتك الحالية"
+      ],
+      "3 TB data storage": [
+        "تخزين بيانات بسعة 3 تيرابايت"
+      ],
+      "500 GB storage": [
+        "مساحة تخزينية 500 جيجا"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "جميع الميزات المميزة لـ ${ MAIL_SHORT_APP_NAME } و ${ PASS_SHORT_APP_NAME } و ${ DRIVE_SHORT_APP_NAME } و ${ VPN_SHORT_APP_NAME } و ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "جميع الميزات المميزة لـ ${ MAIL_SHORT_APP_NAME } و ${ PASS_SHORT_APP_NAME } و ${ DRIVE_SHORT_APP_NAME } و ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "تعتمد الخصومات على التسعير الشهري القياسي. سيُجدد اشتراكك بالسعر السنوي القياسي عند انتهاء دورة الفوترة."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "وصول كامل إلى ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "حسابات فردية لـ 6 مستخدمين"
+      ],
+      "Individual accounts for you and a partner": [
+        "حسابات فردية لك ولشريكك"
+      ],
+      "Online document and spreadsheet editor": [
+        "محرر مستندات وجداول بيانات متصل بالإنترنت"
+      ],
+      "Recover previous file versions": [
+        "استرداد إصدارات الملفات السابقة"
+      ],
+      "Stronger protection against cyber threats": [
+        "حماية أقوى ضد التهديدات السيبرانية"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "انتقل إلى خطتنا السنوية ووفر ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "مجلدات، تصنيفات، وعوامل تصفية غير محدودة"
+      ],
+      "Use your own email domain": [
+        "استخدم نطاق بريدك الإلكتروني الخاص"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "لمدة 12 شهراً"
+      ],
+      "SUMMER SALE": [
+        "تخفيضات الصيف"
+      ]
+    },
     "Recovery Email": {
       "Back to ${ signIn }.": [
         "العودة إلى ${ signIn }."
@@ -17260,6 +17330,54 @@
     "Recovery score": {
       "Add more options to avoid getting locked out of your account.": [
         "أضف المزيد من الخيارات لتجنّب قفل حسابك."
+      ],
+      "Check your access to your recovery options": [
+        "تأكد من قدرتك على الوصول إلى خيارات الاسترداد الخاصة بك"
+      ],
+      "Critical": [
+        "حرِج"
+      ],
+      "Don’t get locked out of your ${ BRAND_NAME } Account": [
+        "تجنّب فقدان الوصول إلى حسابك في ${ BRAND_NAME }"
+      ],
+      "Recoverability": [
+        "إمكانية الاسترداد"
+      ],
+      "Take precautions to avoid losing access": [
+        "اتخذ الاحتياطات اللازمة لتجنب فقدان الوصول"
+      ],
+      "You're fully protected. A periodic review keeps everything working as your devices and contacts change over time.": [
+        "أنت تتمتع بحماية كاملة. وستضمن المراجعة الدورية بقاء كل شيء يعمل كما ينبغي مع تغيّر أجهزتك وجهات اتصالك مع مرور الوقت."
+      ],
+      "You're partly there, but not safe yet. A forgotten password could still mean losing your emails, files, and passwords.": [
+        "أنت على الطريق الصحيح، لكنك لست في مأمن بعد. فقد يؤدي نسيان كلمة المرور إلى فقدان الوصول إلى رسائلك الإلكترونية وملفاتك وكلمات المرور الخاصة بك."
+      ],
+      "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
+        "لا يزال مستوى المخاطر مرتفعًا. وقد يؤدي نسيان كلمة المرور إلى فقدان الوصول بشكل دائم إلى رسائلك الإلكترونية وملفاتك وكلمات المرور الخاصة بك."
+      ],
+      "You're well covered, but there are still gaps. More recovery options give you a stronger safety net if you ever lose your password.": [
+        "أنت تتمتع بمستوى جيد من الحماية، لكن لا تزال هناك بعض الجوانب التي يمكن تعزيزها. فإضافة المزيد من خيارات الاسترداد تمنحك شبكة أمان أقوى إذا فقدت كلمة المرور يومًا ما."
+      ],
+      "Your account and data can be recovered": [
+        "يمكن استرداد حسابك وبياناتك"
+      ],
+      "Your account has no recovery options set up. If you lose your password, you'll permanently lose access to your emails, files, and passwords.": [
+        "لم يتم إعداد أي خيارات استرداد لحسابك. وإذا فقدت كلمة المرور، فستفقد بشكل دائم إمكانية الوصول إلى رسائلك الإلكترونية وملفاتك وكلمات المرور الخاصة بك."
+      ],
+      "Your account isn't fully protected. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "لا يزال حسابك غير محمي بالكامل. وقد يعني نسيان كلمة المرور فقدان الوصول إلى رسائلك الإلكترونية وملفاتك وكلمات المرور الخاصة بك."
+      ],
+      "Your recovery setup is barely there. If you lose your password, you could permanently lose access to your emails, files, and passwords.": [
+        "إعدادات الاسترداد لديك غير كافية حاليًا. وإذا فقدت كلمة المرور، فقد تفقد بشكل دائم إمكانية الوصول إلى رسائلك الإلكترونية وملفاتك وكلمات المرور الخاصة بك."
+      ],
+      "Your recovery setup is excellent. Keep your options up to date so they still work when you need them.": [
+        "إعدادات الاسترداد لديك ممتازة. حافظ على تحديث خيارات الاسترداد الخاصة بك لضمان جاهزيتها عند الحاجة إليها."
+      ],
+      "Your recovery setup is incomplete. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "إعدادات الاسترداد لديك غير مكتملة. وقد يعني نسيان كلمة المرور فقدان الوصول إلى رسائلك الإلكترونية وملفاتك وكلمات المرور الخاصة بك."
+      ],
+      "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
+        "إعدادات الاسترداد لديك قوية، لكن لا تزال هناك بعض الخطوات المتبقية لإكمالها. وكل خيار تضيفه يعزز حماية حسابك ويقوّي شبكة الأمان الخاصة به."
       ]
     },
     "RecoveryPhrase: Action": {
@@ -17329,11 +17447,14 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "استمتع بـ **${ planTitle }** مجانًا حتى **${ textDate }**."
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "امنح أسبوعين، واحصل على ${ referrerRewardAmount }"
+      "Give ${ refereeRewardAmount }, get ${ referrerRewardAmount }": [
+        "امنح ${ refereeRewardAmount } لصديقك، واحصل على ${ referrerRewardAmount } لنفسك"
       ],
       "How your free trial works:": [
         "كيف تعمل فترتك التجريبية المجانية:"
+      ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
+        "أستخدم ${ BRAND_NAME } منذ فترة وأردت أن أشاركك إياه. إنه يوفر بريدًا إلكترونيًا آمنًا، وتخزينًا سحابيًا، ومدير كلمات مرور، وشبكة VPN تساعد على حماية خصوصيتك. اشترك عبر هذا الرابط لتحصل على خصم بقيمة ${ refereeRewardAmount } على اشتراكك القادم: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "في حال الإلغاء قبل ذلك، سيتم تخفيض اشتراكك إلى خطة ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } عند انتهاء فترة التجربة. وفي حال عدم الإلغاء، ستبدأ خطتك الكاملة وستحصل على **${ referrerRewardAmount }** كرصيد."
@@ -17366,9 +17487,6 @@
         "لديك **${ daysRemaining } أيام متبقية** لاستكشاف جميع الميزات المذهلة التي توفرها **${ planTitle }**.",
         "لديك **${ daysRemaining } يومًا متبقيًا** لاستكشاف جميع الميزات المذهلة التي توفرها **${ planTitle }**.",
         "لديك **${ daysRemaining } يومًا متبقيًا** لاستكشاف جميع الميزات المذهلة التي توفرها **${ planTitle }**."
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "سيحصل صديقك أيضًا على رصيد ${ refereeRewardAmount } للاستفادة منه في فاتورته القادمة!"
       ],
       "your subscription": [
         "اشتراكك"
@@ -20003,6 +20121,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } مساعد كتابة الكاتب"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "احصل على ${ CALENDAR_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ PASS_SHORT_APP_NAME } و${ VPN_SHORT_APP_NAME } و${ MEET_SHORT_APP_NAME } و${ LUMO_APP_NAME } مع الميزات المميزة."
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME } و ${ DRIVE_SHORT_APP_NAME } و ${ PASS_SHORT_APP_NAME } و ${ VPN_SHORT_APP_NAME } مع ميزات مميزة"
       ],
@@ -21144,6 +21268,9 @@
       "Block trackers and malware": [
         "حظر المتتبعات والبرامج الضارة"
       ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "اجلب بريد Gmail الخاص بك إلى ${ MAIL_APP_NAME }"
+      ],
       "Can you access your session in the browser?": [
         "هل يمكنك الوصول إلى جلستك في المتصفح؟"
       ],
@@ -21462,6 +21589,9 @@
       ],
       "Discard changes?": [
         "تجاهل التغييرات؟"
+      ],
+      "Disconnected from Gmail": [
+        "غير متصل ب Gmail"
       ],
       "Display name and signature": [
         "إسم الحساب والتوقيع"
@@ -22148,6 +22278,9 @@
       "Select when you want this notification to be sent": [
         "حدد متى تريد إرسال هذا الإشعار"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "أرسل واستقبل بريد Gmail من خلال ${ MAIL_APP_NAME }"
+      ],
       "Send email reminders?": [
         "هل تريد إرسال تذكيرات بالبريد الإلكتروني؟"
       ],
@@ -22290,6 +22423,9 @@
       ],
       "Summary": [
         "الملخص"
+      ],
+      "Summer Sale": [
+        "تخفيضات الصيف"
       ],
       "Support ticket closed": [
         "تم إغلاق تذكرة الدعم"

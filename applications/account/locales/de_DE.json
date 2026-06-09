@@ -261,6 +261,9 @@
       "Check import progress": [
         "Importfortschritt prüfen"
       ],
+      "Check now": [
+        "Jetzt prüfen"
+      ],
       "Choose a file or drag it here": [
         "Datei auswählen oder hierhinein ziehen"
       ],
@@ -1080,6 +1083,9 @@
       "Manage labels": [
         "Kategorien verwalten"
       ],
+      "Manage migration": [
+        "Migration verwalten"
+      ],
       "Manage subscription": [
         "Abonnement verwalten"
       ],
@@ -1799,6 +1805,9 @@
       ],
       "Verify domain": [
         "Domain verifizieren"
+      ],
+      "Verify now": [
+        "Jetzt verifizieren"
       ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Die Domain ${ unverifiedSSODomain.DomainName } verifizieren"
@@ -2894,17 +2903,8 @@
       ]
     },
     "BOSS": {
-      "Add a domain": [
-        "Eine Domain hinzufügen"
-      ],
-      "Add users and configure your domain manually for sending and receiving mail. Ideal for small teams starting from a clean slate.": [
-        "Benutzer hinzufügen und deine Domain manuell einrichten, um E-Mails zu senden und erhalten. Ideal für kleine Teams, die ganz von vorne anfangen."
-      ],
       "Authenticate": [
         "Authentifizieren"
-      ],
-      "Authenticate to Google Workspace": [
-        "Bei Google Workspace anmelden"
       ],
       "Authenticate your Google Workspace account": [
         "Dein Google Workspace-Konto authentifizieren"
@@ -2912,38 +2912,20 @@
       "Calendar": [
         "Kalender"
       ],
-      "Change": [
-        "Ändern"
-      ],
-      "Choose how you want to bring your team and email setup to ${ BRAND_NAME }.": [
-        "Entscheide, wie du dein Team und deine E-Mail-Einstellungen zu ${ BRAND_NAME } übertragen möchtest."
-      ],
-      "Configure": [
-        "Konfigurieren"
-      ],
       "Configure migration": [
         "Übernahme konfigurieren"
       ],
+      "Contact your administrator to start a migration.": [
+        "Kontaktiere deinen Administrator um, eine Migration zu starten."
+      ],
       "Contacts": [
         "Kontakte"
-      ],
-      "Continue migration": [
-        "Migration fortsetzen"
       ],
       "Estimated size": [
         "Geschätzte Größe"
       ],
       "Failed to load OAuth": [
         "OAuth konnte nicht geladen werden"
-      ],
-      "Finalize your migration": [
-        "Deine Migration fertigstellen"
-      ],
-      "Finish setting up your business account": [
-        "Da Einrichten deines Geschäftskontos abschließen"
-      ],
-      "Go to Domain names": [
-        "Zu Domain-Namen gehen"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace-App zum Kopieren von Daten nach ${ BRAND_NAME }"
@@ -2960,9 +2942,6 @@
       "Install migration app": [
         "Übernahme-App installieren"
       ],
-      "Install Migration assistant": [
-        "Migrations-Assistenten installieren"
-      ],
       "Mail": [
         "E-Mail"
       ],
@@ -2971,9 +2950,6 @@
       ],
       "Migrate from Google Workspace": [
         "Von Google Workspace übernehmen"
-      ],
-      "Migrate users to ${ BRAND_NAME }": [
-        "Benutzer nach ${ BRAND_NAME } migrieren"
       ],
       "Migration includes": [
         "Übernahme beinhaltet"
@@ -2991,41 +2967,20 @@
       "Missing organization public key": [
         "Öffentlicher Schlüssel der Organisation fehlt"
       ],
-      "Move your users, emails, and settings from Google Workspace automatically. We’ll guide you through connecting your account, verifying your domain, and migrating users securely.": [
-        "Deine Benutzer, E-Mails und Einstellungen automatisch aus Google Workspace übertragen. Wir führen dich Schritt für Schritt durch das Verbinden deines Kontos, die Verifizierung deiner Domain und die sichere Migration deiner Benutzer."
-      ],
       "Organization does not have enough seats available": [
         "Organisation hat nicht genügend Lizenzen verfügbar"
       ],
       "Organization does not have enough storage available": [
         "Die Organisation hat nicht genügend Speicherplatz verfügbar"
       ],
-      "Required to create user accounts": [
-        "Zum Erstellen von Benutzerkonten erforderlich"
-      ],
       "Select at least one user to start a migration": [
         "Wähle mindestens einen Benutzer aus, um eine Migration zu starten"
-      ],
-      "Set up": [
-        "Einrichten"
-      ],
-      "Set up billing information": [
-        "Zahlungsinformationen einrichten"
-      ],
-      "Set up manually": [
-        "Manuell einrichten"
-      ],
-      "Set up two-factor authentication": [
-        "Zwei-Faktor-Authentifizierung einrichten"
       ],
       "Settings": [
         "Einstellungen"
       ],
       "Sign in to Google Workspace": [
         "Bei Google Workspace anmelden"
-      ],
-      "Start migration": [
-        "Übernahme starten"
       ],
       "Status": [
         "Status"
@@ -3035,9 +2990,6 @@
       ],
       "Users migrated": [
         "Benutzer übernommen"
-      ],
-      "Verify domain ownership": [
-        "Inhaberschaft der Domain verifizieren"
       ],
       "Verify installation": [
         "Installation überprüfen"
@@ -3978,9 +3930,6 @@
       ]
     },
     "Country name": {
-      "Abkhazia": [
-        "Abkhazia"
-      ],
       "Afghanistan": [
         "Afghanistan"
       ],
@@ -3990,9 +3939,6 @@
       "Algeria": [
         "Algerien"
       ],
-      "American Samoa": [
-        "Amerikanisch‐Samoa"
-      ],
       "Andorra": [
         "Andorra"
       ],
@@ -4001,9 +3947,6 @@
       ],
       "Anguilla": [
         "Anguilla"
-      ],
-      "Antarctica": [
-        "Antarktis"
       ],
       "Antigua and Barbuda": [
         "Antigua und Barbuda"
@@ -4016,9 +3959,6 @@
       ],
       "Aruba": [
         "Aruba"
-      ],
-      "Ascension Island": [
-        "Ascension‐Inseln"
       ],
       "Australia": [
         "Australien"
@@ -4061,9 +4001,6 @@
       ],
       "Bolivia": [
         "Bolivien"
-      ],
-      "Bonaire, Sint Eustatius and Saba": [
-        "Bonaire, Sint Eustatius und Saba"
       ],
       "Bosnia and Herzegovina": [
         "Bosnien und Herzegowina"
@@ -4140,9 +4077,6 @@
       "Congo (The Democratic Republic of the)": [
         "Demokratische Republik Kongo"
       ],
-      "Congo, Democratic Republic of the": [
-        "Demokratische Republik Kongo"
-      ],
       "Cook Islands": [
         "Cookinseln"
       ],
@@ -4200,23 +4134,14 @@
       "Estonia": [
         "Estland"
       ],
-      "Eswatini": [
-        "Königreich Eswatini"
-      ],
       "Ethiopia": [
         "Äthiopien"
-      ],
-      "Falkland Islands": [
-        "Falklandinseln"
       ],
       "Falkland Islands (Malvinas)": [
         "Falklandinseln (Malvinen)"
       ],
       "Faroe Islands": [
         "Färöer-Inseln"
-      ],
-      "Federated States of Micronesia": [
-        "Föderierte Staaten von Mikronesien"
       ],
       "Fiji": [
         "Fidschi"
@@ -4266,9 +4191,6 @@
       "Guadeloupe": [
         "Guadeloupe"
       ],
-      "Guam": [
-        "Guam"
-      ],
       "Guatemala": [
         "Guatemala"
       ],
@@ -4311,12 +4233,6 @@
       "Indonesia": [
         "Indonesien"
       ],
-      "International": [
-        "International"
-      ],
-      "Iran": [
-        "Iran"
-      ],
       "Iraq": [
         "Irak"
       ],
@@ -4325,9 +4241,6 @@
       ],
       "Islamic Republic of Iran": [
         "Islamische Republik Iran"
-      ],
-      "Isle of Man": [
-        "Isle of Man"
       ],
       "Israel": [
         "Israel"
@@ -4340,9 +4253,6 @@
       ],
       "Japan": [
         "Japan"
-      ],
-      "Jersey": [
-        "Jersey"
       ],
       "Jordan": [
         "Jordanien"
@@ -4374,9 +4284,6 @@
       "Lao People's Democratic Republic": [
         "Demokratische Volksrepublik Laos"
       ],
-      "Laos": [
-        "Laos"
-      ],
       "Latvia": [
         "Lettland"
       ],
@@ -4388,9 +4295,6 @@
       ],
       "Liberia": [
         "Liberia"
-      ],
-      "Libya": [
-        "Libyen"
       ],
       "Libyan Arab Jamahiriya": [
         "Libysch-Arabische Dschamahirija"
@@ -4500,14 +4404,8 @@
       "Norfolk Island": [
         "Norfolkinsel"
       ],
-      "North Korea": [
-        "Nordkorea"
-      ],
       "North Macedonia": [
         "Nordmazedonien"
-      ],
-      "Northern Mariana Islands": [
-        "Nördliche Marianen"
       ],
       "Norway": [
         "Norwegen"
@@ -4566,9 +4464,6 @@
       "Rwanda": [
         "Ruanda"
       ],
-      "Saint Barthélemy": [
-        "Saint‐Barthélemy"
-      ],
       "Saint Helena": [
         "St. Helena (Insel)"
       ],
@@ -4577,9 +4472,6 @@
       ],
       "Saint Lucia": [
         "St. Lucia"
-      ],
-      "Saint Martin (French Part)": [
-        "St. Martin (französischer Teil)"
       ],
       "Saint Pierre and Miquelon": [
         "Saint-Pierre und Miquelon"
@@ -4614,9 +4506,6 @@
       "Singapore": [
         "Singapur"
       ],
-      "Sint Maarten": [
-        "Sint Maarten"
-      ],
       "Slovakia": [
         "Slowakei"
       ],
@@ -4634,12 +4523,6 @@
       ],
       "South Georgia and the South Sandwich Islands": [
         "Südgeorgien und die Südlichen Sandwichinseln"
-      ],
-      "South Korea": [
-        "Südkorea"
-      ],
-      "South Ossetia": [
-        "Süd-Ossetien"
       ],
       "South Sudan": [
         "Südsudan"
@@ -4668,9 +4551,6 @@
       "Switzerland": [
         "Schweiz"
       ],
-      "Syria": [
-        "Syrien"
-      ],
       "Syrian Arab Republic": [
         "Arabische Republik Syrien"
       ],
@@ -4680,17 +4560,11 @@
       "Tajikistan": [
         "Tadschikistan"
       ],
-      "Tanzania": [
-        "Tansania"
-      ],
       "Tanzania, United Republic of": [
         "Vereinigte Republik Tansania"
       ],
       "Thailand": [
         "Thailand"
-      ],
-      "Timor-Leste": [
-        "Osttimor"
       ],
       "Togo": [
         "Togo"
@@ -4703,9 +4577,6 @@
       ],
       "Trinidad and Tobago": [
         "Trinidad und Tobago"
-      ],
-      "Tristan da Cunha": [
-        "Tristan da Cunha"
       ],
       "Tunisia": [
         "Tunesien"
@@ -4737,9 +4608,6 @@
       "United States": [
         "Vereinigte Staaten"
       ],
-      "United States Minor Outlying Islands": [
-        "Kleinere abgelegene Inseln der Vereinigten Staaten"
-      ],
       "Uruguay": [
         "Uruguay"
       ],
@@ -4755,12 +4623,6 @@
       "Vietnam": [
         "Vietnam"
       ],
-      "Virgin Islands, British": [
-        "Britische Jungferninseln"
-      ],
-      "Virgin Islands, U.S.": [
-        "Amerikanische Jungferninseln"
-      ],
       "Wallis and Futuna": [
         "Wallis und Futuna"
       ],
@@ -4775,9 +4637,6 @@
       ],
       "Zimbabwe": [
         "Simbabwe"
-      ],
-      "Åland Islands": [
-        "Åland‐Inseln"
       ]
     },
     "Country select label": {
@@ -5141,8 +5000,8 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Jeder in Ihrem Unternehmen kann sich mit gemeinsamen Servern in allen Ländern verbinden."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Für einen nahtlosen Übergang zu ${ BRAND_NAME } kannst du deine Daten von Google, Outlook und anderen importieren."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Um dein Team nahtlos bei ${ BRAND_NAME } einzubinden, importiere deine Daten aus Google, Outlook und anderen Quellen."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Lass dich benachrichtigen, wenn dein Passwort oder andere Daten von einem Service eines Drittanbieters preisgegeben wurden."
@@ -8789,6 +8648,9 @@
       ]
     },
     "group_modal": {
+      "Add delegated roles to a group to grant its members only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Fügen einer Gruppe delegierte Rollen hinzu, um ihren Mitgliedern nur die Berechtigungen zu erteilen, die sie benötigen. So bleiben die vollständigen Administratorrechte getrennt und deine Umgebung bleibt sicher."
+      ],
       "General": [
         "Allgemein"
       ],
@@ -9372,8 +9234,14 @@
       "Imported": [
         "Importiert"
       ],
+      "In progress": [
+        "In Bearbeitung"
+      ],
       "In progress...": [
         "In Bearbeitung..."
+      ],
+      "Migrated": [
+        "Migriert"
       ],
       "Paused": [
         "Angehalten"
@@ -9730,32 +9598,23 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importiere deine bestehenden Codes** aus anderen 2FA-Apps, wie Google Authenticator"
       ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Schritt 1: Lade deine Freunde** mit deinem Empfehlungs-Link zu ${ BRAND_NAME } ein."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Schritt 1:** Lade deine Freunde mit deinem Empfehlungs-Link zu ${ BRAND_NAME } ein."
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**Schritt 2:** Deine Freunde erhalten ihr Abonnement **2 Wochen kostenlos**."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Schritt 2:** Deine Freunde erhalten ihr Abonnement 2 Wochen kostenlos."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Schritt 3:** Erhalte ${ referrerRewardAmount } Guthaben für jede Person, die ein Abonnement abschließt."
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**Schritt 3:** Erhalte **${ referrerRewardAmount } Guthaben** für jede Person, die ein Abonnement abschließt."
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Lade deine Freunde** mit deinem Empfehlungs-Link zu ${ BRAND_NAME } ein."
       ],
       "**Sync codes** to all your devices": [
         "**Synchronisiere Codes** auf all deine Geräte"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Sie erhalten ${ refereeRewardAmount }** Guthaben, wenn sie abonnieren."
       ],
       "**This will disable 2-factor authentication.**": [
         "**Dies deaktiviert die 2-Faktor-Authentifizierung.**"
       ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Dies deaktiviert Ende-zu-Ende-verschlüsselte E-Mail-Weiterleitungen:** du kannst sie später wieder einrichten."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Du erhältst ${ referrerRewardAmount }** Guthaben für jeden Freund, der abonniert."
       ],
       "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
         "**Deine Wiederherstellungsmethoden werden ungültig gemacht:** Du kannst später neue Wiederherstellungsdaten generieren."
@@ -10473,6 +10332,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Vergiss dieses Passwort NICHT. Wenn du es vergisst, kannst du deine Organisation nicht mehr verwalten."
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Erinnerst du dich an dein Passwort? ${ verifyButton }"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Möchtest du alle anderen (außer der aktuellen) Sitzungen widerrufen?"
       ],
@@ -10785,6 +10647,9 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Für Benutzer, die von einem anderen E-Mail-Anbieter zu ${ MAIL_APP_NAME } wechseln, wähle den Tab ${ boldAddresses } aus und füge alle aktiven E-Mail-Adressen hinzu, bevor du den MX-Eintrag änderst, damit ein reibungsloser Übergang gewährleistet ist."
+      ],
+      "Forgot password?": [
+        "Passwort vergessen?"
       ],
       "Free forever": [
         "Für immer kostenlos"
@@ -11577,6 +11442,9 @@
       "Password must have:": [
         "Passwort muss enthalten:"
       ],
+      "Password verified": [
+        "Passwort verifiziert"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Zahlungen sind durch TLS-Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
       ],
@@ -11588,6 +11456,9 @@
       ],
       "per month, billed at ${ price }": [
         "pro Monat, abgerechnet zu ${ price }"
+      ],
+      "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
+        "Du wirst regelmäßig aufgefordert, dein ${ BRAND_NAME }-Passwort zu bestätigen, damit du es nicht vergisst. Mit der Zeit wirst du immer seltener dazu aufgefordert."
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "PGP-Clients erkennen deine PGP-Schlüssel mit größerer Wahrscheinlichkeit automatisch, wenn ausgehende Nachrichten signiert sind."
@@ -12401,6 +12272,9 @@
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "Um dein Konto sicher zu halten, möchten wir sicherstellen, dass du es wirklich bist, der sich anmeldet."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Damit du dir dein Passwort besser merken kannst, bitten wir dich, es in regelmäßigen Abständen einzugeben. Mit der Zeit wirst du immer seltener dazu aufgefordert."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Um Termine zu importieren, erstelle zuerst einen Kalender in ${ CALENDAR_APP_NAME }. Dort werden die Termine nach dem Import angezeigt."
       ],
@@ -12727,6 +12601,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Du wirst benachrichtigt, sobald der Datenimport abgeschlossen ist."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Wir werden dich später daran erinnern, dein Passwort erneut zu bestätigen"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
@@ -13696,6 +13573,16 @@
         "Wochenansicht"
       ]
     },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Zu ${ CALENDAR_APP_NAME } wechseln"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Zu ${ MAIL_APP_NAME } wechseln"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Action shortcuts": [
         "Aktions-Tastaturkürzel"
@@ -13708,6 +13595,9 @@
       ],
       "Composer shortcuts": [
         "Tastaturkürzel im Verfassen-Fenster"
+      ],
+      "Desktop app navigation": [
+        "Desktop-App-Navigation"
       ],
       "Folder shortcuts": [
         "Ordner-Tastaturkürzel"
@@ -14885,6 +14775,9 @@
       "Password": [
         "Passwort"
       ],
+      "Password reminders": [
+        "Passworterinnerungen"
+      ],
       "Password strength": [
         "Passwortstärke"
       ],
@@ -15774,9 +15667,6 @@
       "Sign in": [
         "Anmelden"
       ],
-      "Sign-in help": [
-        "Hilfe beim Anmelden"
-      ],
       "Snap store": [
         "Snap Store"
       ],
@@ -16373,6 +16263,9 @@
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
         "Genieße zwei Wochen ${ BRAND_NAME } kostenlos"
       ],
+      "Experience true online privacy with a secure email, cloud storage, password manager, and VPN. Join ${ BRAND_NAME } today and get ${ refereeRewardAmount } off your next subscription.": [
+        "Erlebe echte Online-Privatsphäre mit sicherer E-Mail, Cloud-Speicher, Passwort-Manager und VPN. Melde dich noch heute bei ${ BRAND_NAME } an und erhalte ${ refereeRewardAmount } Rabatt auf dein nächstes Abonnement."
+      ],
       "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
         "Wahre Online-Privatsphäre erleben. Deine Daten mit ${ BRAND_NAME } für die nächsten 14 Tage kostenlos schützen."
       ],
@@ -16384,6 +16277,9 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Du hast deinen Benutzernamen für dein ${ BRAND_NAME }-Konto vergessen? Finde ihn mithilfe deiner Wiederherstellungs-E-Mail-Adresse oder Telefonnummer und erhalte wieder Zugriff auf deine ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und mehr."
+      ],
+      "Join ${ BRAND_NAME } and get ${ refereeRewardAmount } in credits": [
+        "Trete ${ BRAND_NAME } bei und erhalte ${ refereeRewardAmount } Guthaben"
       ],
       "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
         "Greife auf die private ${ BRAND_NAME }-E-Mail-Adresse zu, die für dein Kind reserviert ist."
@@ -19047,6 +18943,28 @@
         "Zeitlich begrenztes Angebot."
       ]
     },
+    "Password reminder": {
+      "Do you remember your ${ BRAND_NAME } password?": [
+        "Erinnerst du dich an dein ${ BRAND_NAME }-Passwort?"
+      ],
+      "The best way to avoid losing access to your account and data is to remember your credentials.": [
+        "Der beste Weg, um zu verhindern, dass du den Zugriff auf dein Konto und deine Daten verlierst, ist, sich seine Zugangsdaten zu merken."
+      ]
+    },
+    "password_reminder": {
+      "If you forget your password, you may lose access to your encrypted data.": [
+        "Wenn du dein Passwort vergisst, verlierst du möglicherweise den Zugriff auf deine verschlüsselten Daten."
+      ],
+      "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
+        "Merke dir dein Passwort unbedingt oder bewahre es sicher auf, da es der Schlüssel zur Entschlüsselung deiner Daten ist."
+      ],
+      "Turn off password reminders?": [
+        "Passworterinnerungen ausschalten?"
+      ],
+      "Turn off reminders": [
+        "Erinnerungen ausschalten"
+      ]
+    },
     "password_reset: info": {
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
         "**Alle deine vorhandenen Daten** (E-Mails, Termine, Kontakte, Dateien, ${ PASS_APP_NAME }-Einträge usw.) **werden gesperrt** und können nur mit deinem **alten Passwort** entsperrt werden."
@@ -20029,6 +19947,78 @@
         "SPRING SALE"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Deal sichern"
+      ],
+      "Summer Sale": [
+        "Sommer Sale"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/Monat"
+      ],
+      "15 GB storage": [
+        "15 GB Speicher"
+      ],
+      "2 TB data storage": [
+        "2 TB Datenspeicher"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB Speicher: 40-mal dein aktuelles Abonnement"
+      ],
+      "3 TB data storage": [
+        "3 TB Datenspeicher"
+      ],
+      "500 GB storage": [
+        "500 GB Speicher"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle Premium-Funktionen von ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle Premium-Funktionen von ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Die Rabatte basieren auf den monatlichen Standardpreisen. Dein Abonnement wird am Ende des Abrechnungszeitraums zum jährlichen Standardtarif verlängert."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Voller Zugriff auf ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Eigene Konten für 6 Benutzer"
+      ],
+      "Individual accounts for you and a partner": [
+        "Eigene Konten für dich und einen Partner"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online-Dokumenten- und Tabelleneditor"
+      ],
+      "Recover previous file versions": [
+        "Stelle frühere Dateiversionen wieder her"
+      ],
+      "Stronger protection against cyber threats": [
+        "Stärkerer Schutz vor Cyber-Bedrohungen"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Wechsle zu unserem jährlichen Abonnement und spare ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
+      ],
+      "Use your own email domain": [
+        "Nutze deine eigene E-Mail-Domain"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "für 12 Monate"
+      ],
+      "SUMMER SALE": [
+        "SOMMER SALE"
+      ]
+    },
     "Recovery Email": {
       "Back to ${ signIn }.": [
         "Zurück zur ${ signIn }."
@@ -20256,14 +20246,14 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Genieße **${ planTitle }** kostenlos bis zum **${ textDate }**."
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "Gib 2 Wochen, erhalte ${ referrerRewardAmount }"
+      "Give ${ refereeRewardAmount }, get ${ referrerRewardAmount }": [
+        "Gib ${ refereeRewardAmount }, erhalte ${ referrerRewardAmount }"
       ],
       "How your free trial works:": [
         "So funktioniert deine kostenlose Testversion:"
       ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "Ich benutze ${ BRAND_NAME } und dachte, es könnte dir gefallen. Es ist sicher für E-Mail, Cloud-Speicher, Passwort-Manager und VPN, das deine Privatsphäre schützt. Registriere dich über diesen Link und erhalte 14 Tage Premium-Funktionen kostenlos: ${ referralLink }"
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
+        "Ich nutze ${ BRAND_NAME } schon seit einiger Zeit und dachte, es könnte dir gefallen. Es ist eine Kombination aus sicherer E-Mail, Cloud-Speicher, Passwort-Manager und VPN, die deine Privatsphäre schützt. Melde dich über diesen Link an, um ${ refereeRewardAmount } Rabatt auf dein nächstes Abonnement zu erhalten: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Wenn du vorher kündigst, wirst du auf ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } zurückgestuft, wenn die Testversion endet. Wenn du nicht kündigst, beginnt dein vollständiges Abonnement und du erhältst **${ referrerRewardAmount }** Guthaben."
@@ -20298,9 +20288,6 @@
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Du hast noch **${ daysRemaining } Tag übrig**, um alle leistungsstarken Funktionen zu erkunden, die **${ planTitle }** zu bieten hat.",
         "Du hast **noch ${ daysRemaining } Tage übrig**, um alle leistungsstarken Funktionen zu erkunden, die **${ planTitle }** zu bieten hat."
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "Dein Freund erhält ebenfalls ${ refereeRewardAmount }, um es bei der nächsten Rechnung einzulösen!"
       ],
       "your subscription": [
         "Dein Abonnement"
@@ -25027,6 +25014,9 @@
       "Messages and composing": [
         "Nachrichten und verfassen"
       ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Deine Organisation nach ${ BRAND_NAME } migrieren"
+      ],
       "Migration assistant": [
         "Übernahmeassistent"
       ],
@@ -25104,6 +25094,9 @@
       ],
       "Open pagination": [
         "Seitennummerierung öffnen"
+      ],
+      "OpenVpn": [
+        "OpenVPN"
       ],
       "OpenVPN": [
         "OpenVPN"
@@ -25703,6 +25696,9 @@
       "Verify your email": [
         "Bestätige deine E-Mail"
       ],
+      "Verify your password": [
+        "Passwort bestätigen"
+      ],
       "Verifying your card...": [
         "Deine Karte wird verifiziert..."
       ],
@@ -25843,6 +25839,15 @@
       ]
     },
     "Title header": {
+      "Date": [
+        "Datum"
+      ],
+      "Organization migrations": [
+        "Migrationen von Organisationen"
+      ],
+      "Personal accounts": [
+        "Persönliche Konten"
+      ],
       "Size": [
         "Größe"
       ]
