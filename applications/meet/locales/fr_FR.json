@@ -326,6 +326,9 @@
       "Start meeting": [
         "Démarrer la réunion"
       ],
+      "Start new meeting": [
+        "Démarrer une nouvelle réunion"
+      ],
       "Start recording": [
         "Démarrer l'enregistrement"
       ],
@@ -433,6 +436,9 @@
       "Lock meeting": [
         "Verrouiller la réunion"
       ],
+      "Lower hand": [
+        "Baisser la main"
+      ],
       "Meeting details": [
         "Informations de la réunion"
       ],
@@ -447,6 +453,9 @@
       ],
       "Participants": [
         "Participants"
+      ],
+      "Raise hand": [
+        "Lever la main"
       ],
       "Rotate camera": [
         "Faire pivoter la caméra"
@@ -1563,9 +1572,6 @@
       "The email addresses do not match": [
         "Les adresses e-mail ne correspondent pas."
       ],
-      "The meeting link you are trying to access does not exist or may have been deleted.": [
-        "Le lien de la réunion que vous tentez d'accéder n'existe pas ou a peut-être été supprimé."
-      ],
       "The meeting password is incorrect": [
         "Le mot de passe de la réunion est erroné."
       ],
@@ -2219,6 +2225,9 @@
       ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "L'hôte vous a retiré de cette réunion. Si c'est une erreur, demandez à l'hôte de vous inviter à nouveau."
+      ],
+      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
+        "Le lien de réunion que vous avez essayé d'ouvrir n'existe pas ou a expiré. Assurez-vous que ce lien est correct, ou démarrez une nouvelle réunion sécurisée à la place."
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Ceci est un chat chiffré de bout en bout avec des messages éphémères, qui disparaissent à la fin de l'appel."
@@ -2920,6 +2929,9 @@
       ],
       "Info": [
         "Information"
+      ],
+      "Invalid meeting link": [
+        "Le lien de réunion n'est pas valide."
       ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."

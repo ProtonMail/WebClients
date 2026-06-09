@@ -326,6 +326,9 @@
       "Start meeting": [
         "Görüşme başlat"
       ],
+      "Start new meeting": [
+        "Yeni görüşme başlat"
+      ],
       "Start recording": [
         "Görüşme kaydını başlat"
       ],
@@ -433,6 +436,9 @@
       "Lock meeting": [
         "Görüşmeyi kilitle"
       ],
+      "Lower hand": [
+        "Eli indir"
+      ],
       "Meeting details": [
         "Görüşme ayrıntıları"
       ],
@@ -447,6 +453,9 @@
       ],
       "Participants": [
         "Katılımcılar"
+      ],
+      "Raise hand": [
+        "El kaldır"
       ],
       "Rotate camera": [
         "Kamerayı döndür"
@@ -1563,9 +1572,6 @@
       "The email addresses do not match": [
         "E-posta adresleri eşleşmiyor"
       ],
-      "The meeting link you are trying to access does not exist or may have been deleted.": [
-        "Erişmeye çalıştığınız görüşme bağlantısı bulunamadı, silinmiş olabilir."
-      ],
       "The meeting password is incorrect": [
         "Görüşme parolası yanlış"
       ],
@@ -2219,6 +2225,9 @@
       ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Görüşme sahibi sizi bu görüşmeden çıkardı. Bir yanlışlık olduğunu düşünüyorsanız görüşme sahibinden sizi yeniden davet etmesini isteyin."
+      ],
+      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
+        "Açmaya çalıştığınız görüşme bağlantısı bulunamadı veya süresi dolmuş olabilir. Bağlantının doğru olduğundan emin olun ya da bunun yerine yeni bir güvenli görüşme başlatın."
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Bu şifrelenmiş sohbette, çağrı sonunda kaybolacak olan süreli iletiler kullanılıyor."
@@ -2920,6 +2929,9 @@
       ],
       "Info": [
         "Bilgiler"
+      ],
+      "Invalid meeting link": [
+        "Görüşme bağlantısı geçersiz"
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"

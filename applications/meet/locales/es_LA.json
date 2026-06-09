@@ -266,6 +266,9 @@
       "Resend code": [
         "Reenviar código"
       ],
+      "Return to dashboard": [
+        "Volver al panel"
+      ],
       "Room": [
         "Sala"
       ],
@@ -322,6 +325,9 @@
       ],
       "Start meeting": [
         "Comenzar la reunión"
+      ],
+      "Start new meeting": [
+        "Iniciar una reunión"
       ],
       "Start recording": [
         "Iniciar grabación"
@@ -430,6 +436,9 @@
       "Lock meeting": [
         "Bloquear reunión"
       ],
+      "Lower hand": [
+        "Bajar la mano"
+      ],
       "Meeting details": [
         "Detalles de la reunión"
       ],
@@ -444,6 +453,9 @@
       ],
       "Participants": [
         "Participantes"
+      ],
+      "Raise hand": [
+        "Levantar la mano"
       ],
       "Rotate camera": [
         "Rotar cámara"
@@ -1560,9 +1572,6 @@
       "The email addresses do not match": [
         "Las direcciónes de correo electrónico no son las mismas"
       ],
-      "The meeting link you are trying to access does not exist or may have been deleted.": [
-        "El enlace de reunión al que intenta acceder no existe o ha sido eliminado."
-      ],
       "The meeting password is incorrect": [
         "La contraseña de la reunión es incorrecta"
       ],
@@ -1734,10 +1743,10 @@
         "Se alcanzó el límite de ${ maxParticipants } participantes"
       ],
       "${ MEET_APP_NAME } needs access so others can see and hear you during the call. You can turn your camera or microphone off at any time.": [
-        "${ MEET_APP_NAME } necesita acceso para que otros puedan escucharle durante la llamada. Puede activar o desactivar su cámara o micrófono en cualquier momento."
+        "${ MEET_APP_NAME } necesita acceso para que otros puedan escucharle durante la llamada. Puede activar o desactivar la cámara o micrófono en cualquier momento."
       ],
       "${ MEET_APP_NAME } needs camera access so others can see you during the call. You can turn it off at any time.": [
-        "${ MEET_APP_NAME } necesita acceder a su cámara para que otros vuedan verle durante la llamada. Puede desactivarla en cualquier momento."
+        "${ MEET_APP_NAME } necesita acceder a la cámara para que otros puedan verle durante la llamada. Puede desactivarla en cualquier momento."
       ],
       "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
         "${ MEET_APP_NAME } necesita acceder a su micrófono para que otros vuedan escucharle durante la llamada. Puede desactivarla en cualquier momento."
@@ -1907,6 +1916,9 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Ingrese su propia contraseña (como contacto de confianza)."
+      ],
+      "Everyone has been disconnected from the call.": [
+        "Todos se han desconectado de la llamada."
       ],
       "Failed to update meeting name": [
         "Error al actualizar el nombre de la reunión"
@@ -2214,6 +2226,9 @@
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "El anfitrión le ha retirado de esta reunión. Si fue un error, solicite que vuelva a invitarle."
       ],
+      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
+        "Este enlace de reunión que intentó abrir no existe o expiró. Asegúrese de que el enlace sea correcto, o inicie una reunión segura nueva."
+      ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Este es un chat cifrado de extremo a extremo con mensajes efímeros, que desaparecen al final de la llamada."
       ],
@@ -2516,6 +2531,9 @@
       ],
       "Repeat event": [
         "Repetir el evento"
+      ],
+      "Return to dashboard": [
+        "Volver al panel"
       ],
       "Reveal password": [
         "Mostrar contraseña"
@@ -2911,6 +2929,9 @@
       ],
       "Info": [
         "Info."
+      ],
+      "Invalid meeting link": [
+        "Enlace de reunión inválido"
       ],
       "Invalid verification code": [
         "Código de verificación inválido"
