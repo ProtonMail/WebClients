@@ -19,6 +19,8 @@ import { ApplicationEvent, type GenericInfoEventPayload } from '../Application/A
 import { WordCountEvent } from './Events'
 import type { CustomWindow } from '../Application/Window'
 import type { FeatureFlag } from '@proton/unleash/Flags'
+import type { UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
+import type { SheetsPatchesType } from '../Database/SheetsDBSchema'
 
 declare const window: CustomWindow
 
@@ -184,5 +186,17 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
 
   async reloadClient(): Promise<void> {
     window.location.reload()
+  }
+
+  async storeSpreadsheetPatches(
+    patches: Parameters<NonNullable<UseSpreadsheetProps['onChangeHistory']>>[0],
+    updateHash: string,
+    type?: SheetsPatchesType,
+  ): Promise<void> {
+    return this.docOrchestrator.storeSpreadsheetPatches(patches, updateHash, type)
+  }
+
+  async hasBasePatchesStored(): Promise<boolean> {
+    return this.docOrchestrator.hasBasePatches()
   }
 }

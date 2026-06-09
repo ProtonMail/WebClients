@@ -253,7 +253,7 @@ describe('DocState', () => {
     it('should abort if origin is self', () => {
       const docStateRequestsPropagationOfUpdateSpy = jest.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
 
-      state.handleDocBeingUpdatedByLexical(new Uint8Array(), state)
+      state.handleYDocUpdate(new Uint8Array(), state)
 
       expect(docStateRequestsPropagationOfUpdateSpy).not.toHaveBeenCalled()
     })
@@ -262,7 +262,7 @@ describe('DocState', () => {
     it('should abort if origin is BaseCommit', () => {
       const docStateRequestsPropagationOfUpdateSpy = jest.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
 
-      state.handleDocBeingUpdatedByLexical(new Uint8Array(), DocUpdateOrigin.BaseCommit)
+      state.handleYDocUpdate(new Uint8Array(), DocUpdateOrigin.BaseCommit)
 
       expect(docStateRequestsPropagationOfUpdateSpy).not.toHaveBeenCalled()
     })
@@ -275,14 +275,14 @@ describe('DocState', () => {
         structs: [{ id: { clock: 0 } }],
       }))
 
-      state.handleDocBeingUpdatedByLexical(new Uint8Array(), {})
+      state.handleYDocUpdate(new Uint8Array(), {})
 
       expect(docStateRequestsPropagationOfUpdateSpy).not.toHaveBeenCalled()
       ;(decodeUpdate as jest.Mock).mockImplementationOnce(() => ({
         structs: [{ id: { clock: 1 } }],
       }))
 
-      state.handleDocBeingUpdatedByLexical(new Uint8Array(), {})
+      state.handleYDocUpdate(new Uint8Array(), {})
 
       expect(docStateRequestsPropagationOfUpdateSpy).toHaveBeenCalled()
     })
@@ -292,7 +292,7 @@ describe('DocState', () => {
 
       state.isInConversionFromOtherFormatFlow = true
 
-      state.handleDocBeingUpdatedByLexical(new Uint8Array(), {})
+      state.handleYDocUpdate(new Uint8Array(), {})
 
       expect(docStateRequestsPropagationOfUpdateSpy).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -307,7 +307,7 @@ describe('DocState', () => {
 
       state.isInConversionFromOtherFormatFlow = false
 
-      state.handleDocBeingUpdatedByLexical(new Uint8Array(), {})
+      state.handleYDocUpdate(new Uint8Array(), {})
 
       expect(docStateRequestsPropagationOfUpdateSpy).toHaveBeenCalledWith(
         expect.objectContaining({

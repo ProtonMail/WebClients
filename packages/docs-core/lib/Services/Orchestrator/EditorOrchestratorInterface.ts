@@ -12,6 +12,7 @@ import type {
   FileMenuAction,
 } from '@proton/docs-shared'
 import type { FeatureFlag } from '@proton/unleash/Flags'
+import type { SheetsPatchesType } from '../../Database/SheetsDBSchema'
 
 export interface EditorOrchestratorInterface {
   userAddress: string
@@ -53,4 +54,7 @@ export interface EditorOrchestratorInterface {
 
   handleFileMenuAction(action: FileMenuAction): Promise<void>
   checkIfFeatureFlagIsEnabled(featureFlag: FeatureFlag): Promise<boolean>
+
+  storeSpreadsheetPatches(patches: unknown, updateHash: string, type?: SheetsPatchesType): Promise<void>
+  hasBasePatches(): Promise<boolean>
 }
