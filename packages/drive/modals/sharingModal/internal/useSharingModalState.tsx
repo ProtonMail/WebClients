@@ -7,9 +7,12 @@ import {
     type NodeEntity,
     NodeType,
     NonProtonInvitationState,
+    type Result,
     type ShareNodeSettings,
     type ShareResult,
     ValidationError,
+    resultError,
+    resultOk,
 } from '@protontech/drive-sdk';
 import { splitInvitationUid, splitNodeUid } from '@protontech/drive-sdk/dist/internal/uids';
 import { c } from 'ttag';
@@ -40,6 +43,7 @@ type Drive = Pick<
 export type SharingModalInnerProps = {
     nodeUid: string;
     drive: Drive;
+    onShareSnapshot?: (result: Result<ShareResult, Error>) => void;
 };
 
 export type UseSharingModalProps = ModalStateProps & SharingModalInnerProps;
@@ -67,6 +71,7 @@ export const useSharingModalState = ({
     onClose,
     open,
     onExit,
+    onShareSnapshot,
 }: UseSharingModalProps): SharingModalViewProps => {
     const [contactEmails] = useContactEmails();
 
@@ -109,7 +114,11 @@ export const useSharingModalState = ({
             drive
         );
         setSharingInfo(shareResult);
+        onShareSnapshot?.(resultOk(shareResult));
     };
+
+    const emitShareResultError = (e: unknown) =>
+        onShareSnapshot?.(resultError(e instanceof Error ? e : new Error(String(e))));
 
     const unshareNode: SharingModalViewProps['actions']['unshareNode'] = async (
         email,
@@ -141,6 +150,7 @@ export const useSharingModalState = ({
                 extra: { nodeUid },
                 showNotification: true,
             });
+            emitShareResultError(e);
         }
     };
 
@@ -157,6 +167,7 @@ export const useSharingModalState = ({
                 extra: { nodeUid },
                 showNotification: true,
             });
+            emitShareResultError(e);
         }
     };
 
@@ -178,6 +189,7 @@ export const useSharingModalState = ({
                 extra: { nodeUid },
                 showNotification: true,
             });
+            emitShareResultError(e);
         }
     };
 
@@ -222,6 +234,7 @@ export const useSharingModalState = ({
                 extra: { nodeUid },
                 showNotification: true,
             });
+            emitShareResultError(e);
         }
     };
 
@@ -245,6 +258,7 @@ export const useSharingModalState = ({
                 extra: { nodeUid },
                 showNotification: true,
             });
+            emitShareResultError(e);
         }
     };
 
@@ -259,6 +273,7 @@ export const useSharingModalState = ({
                 extra: { nodeUid },
                 showNotification: true,
             });
+            emitShareResultError(e);
         }
     };
 
@@ -296,7 +311,9 @@ export const useSharingModalState = ({
                             handleSdkError(e, { showNotification: false });
                         }
                     }
-                    setSharingInfo({ ...sharingResult, protonInvitations, nonProtonInvitations });
+                    const snapshot = { ...sharingResult, protonInvitations, nonProtonInvitations };
+                    setSharingInfo(snapshot);
+                    onShareSnapshot?.(resultOk(snapshot));
                 }
             } catch (e) {
                 handleSdkError(e, {
@@ -304,6 +321,7 @@ export const useSharingModalState = ({
                     extra: { nodeUid },
                     showNotification: false,
                 });
+                onShareSnapshot?.(resultError(e instanceof Error ? e : new Error(String(e))));
             }
         };
         const fetchNodeInfo = async () => {
@@ -334,7 +352,7 @@ export const useSharingModalState = ({
             }
         };
         void withLoading(Promise.all([fetchSharingInfo(), fetchNodeInfo()]));
-    }, [drive, nodeUid, withLoading]);
+    }, [drive, nodeUid, withLoading, onShareSnapshot]);
 
     const copyInvitationLink = (invitationUid: string, email: string) => {
         const { invitationId } = splitInvitationUid(invitationUid);
