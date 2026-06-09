@@ -474,9 +474,6 @@
       "Get a free ${ BRAND_NAME } address": [
         "Dapatkan alamat ${ BRAND_NAME } gratis"
       ],
-      "Get Drive for Business": [
-        "Dapatkan Drive for Business"
-      ],
       "Get in touch": [
         "Hubungi kami"
       ],
@@ -1417,6 +1414,41 @@
       ],
       "Yearly": [
         "Tahunan"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Atur migrasi"
+      ],
+      "Contacts": [
+        "Kontak"
+      ],
+      "Estimated size": [
+        "Perkiraan ukuran"
+      ],
+      "In progress": [
+        "Sedang berlangsung"
+      ],
+      "Migration status": [
+        "Status migrasi"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisasi tidak memiliki jumlah kuota yang memadai"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisasi tidak memiliki cukup ruang penyimpanan yang tersedia"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Pengguna"
+      ],
+      "What are you migrating?": [
+        "Apa yang ingin Anda migrasikan?"
       ]
     },
     "Browser": {
@@ -2774,9 +2806,6 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Pastikan Anda tetap dapat mengakses akun dan data Anda bahkan apabila Anda kehilangan kata sandi ${ BRAND_NAME } Anda."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Untuk transisi ke ${ BRAND_NAME } yang berlangsung tanpa hambatan, impor data Anda dari Google, Outlook, dan layanan lainnya."
-      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Dapatkan pemberitahuan apabila kata sandi atau data lain Anda terbocorkan dari layanan pihak ketiga."
       ],
@@ -3117,6 +3146,9 @@
       "Aliases could not be loaded": [
         "Alias tidak dapat dimuat"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Semua ruang penyimpanan telah dialokasikan. Harap kurangi penyimpanan yang dialokasikan ke pengguna lain."
+      ],
       "Already a member of this share": [
         "Pengguna sudah merupakan anggota dari partisi ini"
       ],
@@ -3411,6 +3443,15 @@
       "Please activate your search again": [
         "Silakan aktifkan pencarian Anda kembali"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Silakan atur domain kustom sebelum menambahkan alamat"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Mohon konfigurasi domain khusus sebelum menambahkan pengguna ke organisasi Anda."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Harap aktifkan dukungan multi-pengguna sebelum menambahkan pengguna ke organisasi Anda."
+      ],
       "Please enter a valid postal code": [
         "Silakan masukkan kode pos yang valid"
       ],
@@ -3440,6 +3481,9 @@
       ],
       "Please select billing state": [
         "Silakan pilih negara bagian penagihan"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Harap tingkatkan jenis akun Anda ke paket bisnis dengan lebih dari 1 pengguna untuk dapat mengelola banyak pengguna sekaligus."
       ],
       "Port is required": [
         "Port wajib diisi"
@@ -3650,6 +3694,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Anda telah mencapai batas jumlah kontak untuk akun Anda"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Anda telah menggunakan semua pengguna dalam paket Anda. Harap tingkatkan paket untuk menambah pengguna baru."
       ],
       "You must set a name": [
         "Anda harus menetapkan nama"
@@ -4658,21 +4705,6 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: Menghentikan kebocoran data dengan memblokir internet Anda apabila koneski VPN terputus secara tiba-tiba."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Langkah 1:** Undang teman Anda ke ${ BRAND_NAME } dengan tautan rujukan Anda."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Langkah 2:** Teman Anda memperoleh 2 minggu gratis untuk paket ${ BRAND_NAME } pilihan mereka."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Langkah 2:** Teman Anda memperoleh 2 minggu gratis untuk paket mereka."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Langkah 3:** Dapatkan kredit senilai ${ referrerRewardAmount } untuk setiap teman yang berlangganan ke salah satu paket."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Langkah 3:** Dapatkan kredit senilai ${ referrerRewardAmount } untuk setiap orang yang berlangganan ke salah satu paket."
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ruang penyimpanan tambahan"
       ],
@@ -4870,12 +4902,6 @@
       ],
       "Close this screen to exit.": [
         "Tutup layar ini untuk keluar."
-      ],
-      "Cloud storage for businesses that take security seriously": [
-        "Ruang penyimpanan cloud untuk bisnis yang memperlakukan keamanan secara serius"
-      ],
-      "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
-        "Kolaborasikan pekerjaan Anda secara efisien selagi melindungi data klien dan bisnis Anda dari pembobolan, ransomware, dan monitoring."
       ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Hubungkan ke ${ VPN_APP_NAME } untuk menjelajahi secara privat"
@@ -9499,6 +9525,9 @@
       "San Francisco": [
         "San Francisco"
       ],
+      "Search": [
+        "Pencarian"
+      ],
       "Search for group name": [
         "Cari nama grup"
       ],
@@ -9637,6 +9666,78 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Dapatkan penawaran ini"
+      ],
+      "Summer Sale": [
+        "Promo Musim Panas"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/bulan"
+      ],
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "2 TB data storage": [
+        "Penyimpanan data 2 TB"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "Ruang penyimpanan 200 GB: 40x lebih besar dari paket Anda saat ini"
+      ],
+      "3 TB data storage": [
+        "Penyimpanan data 3 TB"
+      ],
+      "500 GB storage": [
+        "Penyimpanan 500 GB"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Semua fitur premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Semua fitur premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Diskon didasarkan pada harga bulanan standar. Langganan Anda akan diperpanjang dengan tarif tahunan standar setelah siklus tagihan berakhir."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Akses penuh ke ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Akun individu untuk 6 pengguna"
+      ],
+      "Individual accounts for you and a partner": [
+        "Akun individu untuk Anda dan pasangan"
+      ],
+      "Online document and spreadsheet editor": [
+        "Editor dokumen dan spreadsheet daring"
+      ],
+      "Recover previous file versions": [
+        "Pulihkan versi file sebelumnya"
+      ],
+      "Stronger protection against cyber threats": [
+        "Perlindungan lebih kuat terhadap ancaman siber"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Beralih ke paket tahunan dan hemat ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Tanpa batasan jumlah folder, label, dan saringan"
+      ],
+      "Use your own email domain": [
+        "Gunakan domain email milik Anda sendiri"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "untuk 12 bulan"
+      ],
+      "SUMMER SALE": [
+        "PROMO MUSIM PANAS"
       ]
     },
     "Referral": {
@@ -11407,9 +11508,6 @@
       ],
       "Import contacts": [
         "Impor kontak"
-      ],
-      "Import emails, calendars, contacts": [
-        "Impor email, kalender, kontak"
       ],
       "Import events": [
         "Impor acara"
