@@ -69,7 +69,11 @@ export const useCopyItemsModalState = ({ itemsToCopy, onClose, ...modalProps }: 
         setIsCopying(true);
         copyItems(itemsToCopy, copyTargetUid)
             .then(onClose)
-            .catch((e) => handleSdkError(e, { extra: { itemsToCopy, target: copyTargetTreeId } }))
+            .catch((e) =>
+                handleSdkError(e, {
+                    extra: { itemsToCopy: itemsToCopy.map((item) => item.uid), target: copyTargetTreeId },
+                })
+            )
             .finally(() => setIsCopying(false));
     };
 
