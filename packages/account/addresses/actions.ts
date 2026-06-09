@@ -2,12 +2,9 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { type UserInvitationsState, userInvitationsThunk } from '@proton/account/userInvitations';
-import {
-    convertToBYOEAddress as convertToBYOEAddressApi,
-    createBYOEAddress as createBYOEAddressApi,
-} from '@proton/activation/src/api/api';
-import { createKTVerifier } from '@proton/key-transparency/helpers';
+import { createBYOEAddress as createBYOEAddressApi } from '@proton/activation/src/api/api';
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
+import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import {
@@ -529,45 +526,6 @@ export const createBYOEAddress = ({
                 OrganizationId: organization.ID,
             })
         );
-
-        const userSettings = await dispatch(userSettingsThunk());
-        const userKeys = await dispatch(userKeysThunk());
-        const { keyTransparencyVerify, keyTransparencyCommit } = createKTVerifier({
-            ktActivation: dispatch(getKTActivation()),
-            api,
-            config: extra.config,
-        });
-        await missingKeysSelfProcess({
-            api,
-            userKeys,
-            addresses,
-            addressesToGenerate: [Address],
-            password: extra.authentication.getPassword(),
-            keyGenConfigForV4Keys: KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
-            supportV6Keys: !!userSettings.Flags.SupportPgpV6Keys,
-            keyTransparencyVerify,
-        });
-        await keyTransparencyCommit(await dispatch(userThunk()), userKeys);
-
-        const [, result] = await Promise.all([
-            dispatch(userThunk({ cache: CacheType.None })),
-            dispatch(addressesThunk({ cache: CacheType.None })),
-        ]);
-
-        return result.find(({ ID }) => ID === Address.ID) || Address;
-    };
-};
-
-export const convertBYOEAddress = ({
-    addressID,
-}: {
-    addressID: string;
-}): ThunkAction<Promise<Address | undefined>, RequiredState, ProtonThunkArguments, UnknownAction> => {
-    return async (dispatch, _, extra) => {
-        const addresses = await dispatch(addressesThunk());
-        const api = getSilentApi(extra.api);
-
-        const { Address } = await api<{ Address: Address }>(convertToBYOEAddressApi(addressID));
 
         const userSettings = await dispatch(userSettingsThunk());
         const userKeys = await dispatch(userKeysThunk());

@@ -217,11 +217,6 @@ export const createBYOEAddress = ({ Email, OrganizationId }: { Email: string; Or
     data: { Email, OrganizationId },
 });
 
-export const convertToBYOEAddress = (addressID: string) => ({
-    url: `mail/v4/byoe-address/${addressID}/convert`,
-    method: 'POST',
-});
-
 export const getOrganizationUsers = (params: { DomainName: string }, useCachedData: boolean = false) => ({
     url: `importer/v1/organizations/users`,
     method: 'GET',
