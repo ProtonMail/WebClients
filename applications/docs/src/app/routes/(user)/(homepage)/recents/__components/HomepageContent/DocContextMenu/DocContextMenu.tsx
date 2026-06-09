@@ -9,7 +9,6 @@ import { ShareButton } from './buttons/ShareButton'
 import { MoveToTrashButton } from './buttons/MoveToTrashButton'
 import { MoveButton } from './buttons/MoveButton'
 import { RenameButton } from './buttons/RenameButton'
-import { IS_MOVE_ENABLED, IS_RENAME_ENABLED } from '../../../__utils/features'
 import { useDocumentActions } from '../../../__utils/document-actions'
 import { useEvent } from '~/utils/misc'
 import { useHomepageView } from '../../../__utils/homepage-view'
@@ -95,13 +94,9 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
             <OpenButton currentDocument={currentDocument} close={close} />
             {canShare ? <ShareButton currentDocument={currentDocument} close={close} /> : null}
             {separator}
-            {IS_MOVE_ENABLED && !currentDocument.isSharedWithMe ? (
-              <MoveButton currentDocument={currentDocument} close={close} />
-            ) : null}
+            <MoveButton currentDocument={currentDocument} close={close} />
             <OpenFolderButton currentDocument={currentDocument} close={close} />
-            {IS_RENAME_ENABLED && !currentDocument.isSharedWithMe ? (
-              <RenameButton currentDocument={currentDocument} close={close} />
-            ) : null}
+            <RenameButton currentDocument={currentDocument} close={close} />
             {!currentDocument.isSharedWithMe ? (
               <>
                 {separator}
