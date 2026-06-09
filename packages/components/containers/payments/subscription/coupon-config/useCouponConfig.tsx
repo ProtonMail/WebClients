@@ -16,6 +16,7 @@ import {
 import { monthlyNudgeConfig } from './monthlyNudge';
 import { summerSale2026Config } from './summerSale2026';
 import { summerSale2026BundleConfig } from './summerSale2026bundle';
+import { tryMailPlus0724Config } from './tryMailPlus0724';
 import { vpn15mConfig } from './vpn15m';
 
 const defaultCouponConfigs: CouponConfig[] = [
@@ -24,6 +25,7 @@ const defaultCouponConfigs: CouponConfig[] = [
     cancellationFlow,
     summerSale2026Config,
     summerSale2026BundleConfig,
+    tryMailPlus0724Config,
 ];
 
 export type CouponConfigRendered = Omit<CouponConfig, 'amountDueMessage' | 'cyclePriceCompare' | 'cycleTitle'> & {
