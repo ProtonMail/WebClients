@@ -115,6 +115,8 @@ function bundle_extension_from_sources {
         -x "packages/docs-proto/*" \
         -x "packages/docs-core/*" \
         -x "packages/docs-shared/*" \
+        -x "packages/llm/*" \
+        -x "packages/ai-assistant/*" \
         -x "packages/raw-images/tests/*" \
         -x "applications/pass-extension/dist/*" \
         -x "applications/pass-extension/*.md" \
@@ -130,15 +132,15 @@ function bundle_extension_from_sources {
     mkdir -p "$OUTDIR/$BUILD_ID-FF-sources"
     cd "$OUTDIR/$BUILD_ID-FF-sources"
     unzip -q "$ARTEFACTSDIR/release/$BUILD_ID-FF-sources.zip"
-    yarn install --no-immutable >/dev/null
+    yarn install --no-immutable
     cd applications/pass-extension
-    RELEASE=true yarn run build:extension:ff >/dev/null
+    RELEASE=true yarn run build:extension:ff
     cd dist
     zip -rqX "$ARTEFACTSDIR/release/$BUILD_ID-FF.zip" "."
 
     # Remove config lock to not affect chromium builds
     cd "$PASSDIR"
-    yarn run config:clean >/dev/null
+    yarn run config:clean
 
     on_leave "release/$BUILD_ID-FF.zip"
 }
