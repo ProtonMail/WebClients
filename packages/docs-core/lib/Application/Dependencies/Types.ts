@@ -14,6 +14,8 @@ export const App_TYPES = {
   RecentDocumentsService: Symbol.for('RecentDocumentsService'),
   WebsocketService: Symbol.for('WebsocketService'),
   Database: Symbol.for('Database'),
+  SheetsDatabase: Symbol.for('SheetsDatabase'),
+  SheetsStorageService: Symbol.for('SheetsStorageService'),
   SizeTracker: Symbol.for('SizeTracker'),
 
   // Use cases

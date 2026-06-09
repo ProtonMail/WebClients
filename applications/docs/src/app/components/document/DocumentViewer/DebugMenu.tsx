@@ -2,7 +2,7 @@ import { Button } from '@proton/atoms/Button/Button'
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel'
 import { IcCross } from '@proton/icons/icons/IcCross'
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle'
-import { lazy, Suspense, useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
 import { downloadLogsAsJSON } from '~/utils/downloadLogs'
 import type {
@@ -162,6 +162,8 @@ export function DebugMenu({ docController, editorController, documentState, docu
 
   const [showUpdateReplayTool, setShowUpdateReplayTool] = useState(false)
 
+  const patchesFileInputRef = useRef<HTMLInputElement>(null)
+
   if (!isOpen) {
     return (
       <button
@@ -256,6 +258,61 @@ export function DebugMenu({ docController, editorController, documentState, docu
             <>
               <Button size="small" onClick={copyLatestSpreadsheetStateToLogJSON}>
                 Copy Spreadsheet State
+              </Button>
+              <Button size="small" onClick={() => editorController.downloadSpreadsheetPatches()}>
+                Download stored patches
+              </Button>
+              <Button size="small" onClick={() => editorController.removeSpreadsheetPatches()}>
+                Remove stored patches
+              </Button>
+              <Button
+                size="small"
+                onClick={async () => {
+                  const patches = await editorController.generateSpreadsheetPatches()
+                  if (!patches) {
+                    return
+                  }
+                  const stringifiedPatches = JSON.stringify(patches)
+                  const blob = new Blob([stringifiedPatches], { type: 'application/json' })
+                  const url = URL.createObjectURL(blob)
+                  const a = document.createElement('a')
+                  a.href = url
+                  a.download = 'spreadsheet-state-patches.json'
+                  a.click()
+                  URL.revokeObjectURL(url)
+                  a.remove()
+                }}
+              >
+                Generate patches from state
+              </Button>
+              <input
+                ref={patchesFileInputRef}
+                type="file"
+                className="sr-only"
+                onChange={async function handlePatchesFile(event) {
+                  const file = event.target.files?.[0]
+                  if (!file) {
+                    return
+                  }
+                  const fileReader = new FileReader()
+                  fileReader.onload = async (event) => {
+                    const patches = JSON.parse(event.target?.result as string)
+                    await editorController.applyPatches(patches)
+                  }
+                  fileReader.readAsText(file)
+                }}
+              />
+              <Button
+                size="small"
+                onClick={() => {
+                  const fileInput = patchesFileInputRef.current
+                  if (!fileInput) {
+                    return
+                  }
+                  fileInput.click()
+                }}
+              >
+                Apply patches from file
               </Button>
             </>
           )}
