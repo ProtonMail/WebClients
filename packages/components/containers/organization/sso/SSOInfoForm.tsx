@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useGetSamlSSO } from '@proton/account/samlSSO/hooks';
+import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import Info from '@proton/components/components/link/Info';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
@@ -45,6 +46,8 @@ const SSOInfoForm = ({ domain, sso, issuerID, callbackURL, onImportSaml, onTestS
     const getSamlSSO = useGetSamlSSO();
     const { createNotification } = useNotifications();
     const api = useApi();
+    const [permissions] = useOrgPermissions();
+    const canUpdate = !!permissions?.['account.sso_config.update'];
 
     const ssoInfo: SSOInfo = {
         url: sso.SSOURL,
@@ -146,9 +149,9 @@ const SSOInfoForm = ({ domain, sso, issuerID, callbackURL, onImportSaml, onTestS
                 </SettingsLayout>
 
                 <div className="flex gap-4">
-                    <Button color="norm" shape="outline" onClick={onImportSaml}>{c('Action')
+                    <Button color="norm" shape="outline" onClick={onImportSaml} disabled={!canUpdate}>{c('Action')
                         .t`Change configuration`}</Button>
-                    <Button color="norm" shape="outline" onClick={onTestSaml}>{c('Action')
+                    <Button color="norm" shape="outline" onClick={onTestSaml} disabled={!canUpdate}>{c('Action')
                         .t`Test SAML configuration`}</Button>
                 </div>
             </>
@@ -178,7 +181,7 @@ const SSOInfoForm = ({ domain, sso, issuerID, callbackURL, onImportSaml, onTestS
                         value={url}
                         onValue={onChange('url')}
                         error={validator([requiredValidator(url)])}
-                        disableChange={submitting}
+                        disableChange={submitting || !canUpdate}
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>
@@ -198,7 +201,7 @@ const SSOInfoForm = ({ domain, sso, issuerID, callbackURL, onImportSaml, onTestS
                         value={entity}
                         onValue={onChange('entity')}
                         error={validator([requiredValidator(entity)])}
-                        disableChange={submitting}
+                        disableChange={submitting || !canUpdate}
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>
@@ -221,7 +224,7 @@ const SSOInfoForm = ({ domain, sso, issuerID, callbackURL, onImportSaml, onTestS
                         value={certificate}
                         onValue={onChange('certificate')}
                         error={validator([requiredValidator(certificate)])}
-                        disableChange={submitting}
+                        disableChange={submitting || !canUpdate}
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>
@@ -261,7 +264,7 @@ const SSOInfoForm = ({ domain, sso, issuerID, callbackURL, onImportSaml, onTestS
                     .t`Import new SAML metadata`}</Button>
                 <Button color="norm" shape="outline" onClick={onTestSaml}>{c('Action')
                     .t`Test SAML configuration`}</Button>
-                <Button color="norm" disabled={!isFormDirty} loading={submitting} type="submit">
+                <Button color="norm" disabled={!isFormDirty || !canUpdate} loading={submitting} type="submit">
                     {c('Action').t`Save SAML configuration`}
                 </Button>
             </div>
