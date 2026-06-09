@@ -5,13 +5,15 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { ButtonWithTextAndIcon, useActiveBreakpoint } from '@proton/components';
 import { VintageClock } from '@proton/components/components/vintageClock/VintageClock';
+import { generateNodeUid } from '@proton/drive';
+import { uploadManager } from '@proton/drive/modules/upload';
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { toMinutesAndSeconds } from '@proton/shared/lib/helpers/time';
 import clsx from '@proton/utils/clsx';
 
 import { useActiveShare } from '../../../legacy/hooks/drive/useActiveShare';
-import { useFileUploadInput, useFolderUploadInput } from '../../../legacy/store';
+import { useUploadInput } from '../../../legacy/hooks/drive/useUploadInput';
 import { useFreeUploadStore } from '../../../modules/freeUpload/internal/freeUpload.store';
 
 export function DriveEmptyViewFreeUpload() {
@@ -31,16 +33,17 @@ export function DriveEmptyViewFreeUpload() {
     }, [setBigCounterVisible]);
 
     const { activeFolder } = useActiveShare();
+    const parentFolderUid = generateNodeUid(activeFolder.volumeId, activeFolder.linkId);
     const {
         inputRef: fileInput,
         handleClick: fileClick,
         handleChange: fileChange,
-    } = useFileUploadInput(activeFolder.volumeId, activeFolder.shareId, activeFolder.linkId);
+    } = useUploadInput({ onUpload: (files) => uploadManager.upload(files, parentFolderUid) });
     const {
         inputRef: folderInput,
         handleClick: folderClick,
         handleChange: folderChange,
-    } = useFolderUploadInput(activeFolder.volumeId, activeFolder.shareId, activeFolder.linkId);
+    } = useUploadInput({ onUpload: (files) => uploadManager.upload(files, parentFolderUid), forFolders: true });
 
     const freeUploadLength = <FreeUploadLength key="freeUploadLength" />;
 
