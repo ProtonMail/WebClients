@@ -489,9 +489,6 @@
       "Get a free ${ BRAND_NAME } address": [
         "無料の${ BRAND_NAME }アドレスを入手"
       ],
-      "Get Drive for Business": [
-        "Drive for Businessを入手"
-      ],
       "Get in touch": [
         "連絡する"
       ],
@@ -1536,6 +1533,35 @@
       ],
       "Yearly": [
         "年払い"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "カレンダー"
+      ],
+      "Configure migration": [
+        "移行を設定"
+      ],
+      "Contacts": [
+        "連絡先"
+      ],
+      "Estimated size": [
+        "推定サイズ"
+      ],
+      "Migration status": [
+        "移行ステータス"
+      ],
+      "Organization does not have enough seats available": [
+        "組織には十分なシートがありません"
+      ],
+      "Organization does not have enough storage available": [
+        "組織には十分なストレージがありません"
+      ],
+      "User": [
+        "ユーザー"
+      ],
+      "What are you migrating?": [
+        "何を移行しますか？"
       ]
     },
     "Browser": {
@@ -2899,9 +2925,6 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "${ BRAND_NAME }のパスワードを忘れても、アカウントとデータにアクセスできることを確認してください。"
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "${ BRAND_NAME }への移行をスムーズに行うために、Google、Outlookなどのサービスからデータをインポートしてください。"
-      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "他社のサービスからパスワードやその他のデータが漏洩した場合に通知を受け取ります。"
       ],
@@ -3257,6 +3280,9 @@
       "Aliases could not be loaded": [
         "エイリアスを読み込めませんでした"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "すべてのストレージ容量が割り当てられています。他のユーザーに割り当てられたストレージ容量を小さくしてください。"
+      ],
       "Already a member of this share": [
         "既にこの共有のメンバーです"
       ],
@@ -3578,6 +3604,15 @@
       "Please complete the billing details": [
         "請求の詳細をご記入ください"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "アドレスを追加する前にカスタム ドメインを構成してください。"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "ユーザーを組織に追加する前に、独自ドメインを設定してください。"
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "組織にユーザーを追加する前に、マルチユーザー対応を有効にしてください。"
+      ],
       "Please enter a valid postal code": [
         "有効な郵便番号を入力してください"
       ],
@@ -3607,6 +3642,9 @@
       ],
       "Please select billing state": [
         "請求先の州を選択してください"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "複数のユーザーを管理するには、複数のユーザーを含むビジネスプランにアップグレードしてください。"
       ],
       "Port is required": [
         "ポートは必須です"
@@ -3838,6 +3876,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "このアカウントの連絡先の数が上限に達しています"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "現在のプランで使用可能なアドレス数の上限に達しました。アドレスを追加するにはプランをアップグレードするか、アカウントに登録済みのアドレスを無効にしてください。"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "現在のプランでのユーザー数の上限に達しました。新規ユーザーを追加するにはアップグレードしてください。"
       ],
       "You must set a name": [
         "名前を設定してください"
@@ -4836,6 +4880,9 @@
       "${ storage } storage": [
         "${ storage } ストレージ"
       ],
+      "${ total } user found": [
+        "${ total } 人のユーザーが見つかりました"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } 連絡先が正常に更新されました。"
       ],
@@ -4856,21 +4903,6 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**緊急停止装置**: VPNに予期せぬ問題が起きた際には、インターネット接続を切ることによりデータ漏洩を防ぎます。"
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "ステップ1：招待リンクで${ BRAND_NAME }に**友達を招待してください**"
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**ステップ2：** あなたの友達は、選択した${ BRAND_NAME }プランを2週間無料で利用できます。"
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**ステップ2：** あなたの友人に、2週間分のプランが無料で提供されます。"
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**ステップ3：**友達がプランに登録するたびに、${ referrerRewardAmount } クレジットを獲得できます。"
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**ステップ3：**プランに登録する人ごとに、${ referrerRewardAmount } クレジットを獲得できます。"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ボーナスストレージ"
@@ -5099,12 +5131,6 @@
       ],
       "Close this screen to exit.": [
         "画面を閉じると終了します。"
-      ],
-      "Cloud storage for businesses that take security seriously": [
-        "セキュリティを真剣に考える企業向けのクラウドストレージ"
-      ],
-      "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
-        "侵害、ランサムウェア、監視からお客様のクライアントデータとビジネスデータを保護しつつ、効率的に共同作業を行えます。"
       ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "秘匿ブラウジングの前に${ VPN_APP_NAME }に接続してください"
@@ -9878,6 +9904,9 @@
       "San Francisco": [
         "サンフランシスコ"
       ],
+      "Search": [
+        "検索"
+      ],
       "Search for group name": [
         "グループ名で検索"
       ],
@@ -10121,6 +10150,78 @@
       ],
       "SPRING SALE": [
         "スプリング セール"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "特典を利用する"
+      ],
+      "Summer Sale": [
+        "サマーセール"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/月"
+      ],
+      "15 GB storage": [
+        "15 GB ストレージ"
+      ],
+      "2 TB data storage": [
+        "2 TB データストレージ"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB ストレージで現在のプランの40倍に"
+      ],
+      "3 TB data storage": [
+        "3 TB データストレージ"
+      ],
+      "500 GB storage": [
+        "500 GB ストレージ"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、および${ CALENDAR_SHORT_APP_NAME }のすべてのプレミアム機能"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、および${ CALENDAR_SHORT_APP_NAME }のすべてのプレミアム機能"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "割引は通常の月額料金を基準に適用されています。サブスクリプションは、請求期間終了後に通常の年額料金で更新されます。"
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME }へのフルアクセス"
+      ],
+      "Individual accounts for 6 users": [
+        "6ユーザー分の個別アカウント"
+      ],
+      "Individual accounts for you and a partner": [
+        "お客様用とパートナー様用の個別アカウント"
+      ],
+      "Online document and spreadsheet editor": [
+        "オンラインのドキュメントおよびスプレッドシートエディター"
+      ],
+      "Recover previous file versions": [
+        "ファイルの以前のバージョンを復元"
+      ],
+      "Stronger protection against cyber threats": [
+        "サイバー脅威に対するより強力な保護"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "年間プランに切り替えて、${ toYearlyDiscountAmount }お得に！"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "無制限のフォルダー、ラベル、フィルター"
+      ],
+      "Use your own email domain": [
+        "独自のメールドメインを使用"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12か月プラン"
+      ],
+      "SUMMER SALE": [
+        "サマーセール"
       ]
     },
     "Referral": {
@@ -11932,9 +12033,6 @@
       ],
       "Import contacts": [
         "連絡先をインポート"
-      ],
-      "Import emails, calendars, contacts": [
-        "メール、カレンダー、連絡先をインポート"
       ],
       "Import events": [
         "予定をインポート"
