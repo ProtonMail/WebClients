@@ -1,6 +1,6 @@
 import { RecentDocumentsItem } from '@proton/docs-core'
 import { useHistory, useRouteMatch } from 'react-router'
-import { HOMEPAGE_RECENTS_PATH, HOMEPAGE_FAVORITES_PATH, HOMEPAGE_TRASH_PATH } from '../../../__components/AppContainer'
+import { HOMEPAGE_RECENTS_PATH, HOMEPAGE_TRASH_PATH } from '../../../__components/AppContainer'
 import type { ReactNode } from 'react'
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom-v5-compat'
@@ -59,10 +59,6 @@ export type HomepageViewState =
   | { view: 'recents-loading' }
   | { view: 'recents-empty' }
   | { view: 'recents'; itemSections: ItemsSection[]; sort: RecentsSort }
-  // Favorites.
-  | { view: 'favorites-loading' }
-  | { view: 'favorites-empty' }
-  | { view: 'favorites'; itemSections: ItemsSection[] }
   // Trash.
   | { view: 'trash-empty' }
   | { view: 'trash-loading' }
@@ -91,7 +87,6 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
   useSubscribeToMainVolume()
 
   const isRecentsRoute = Boolean(useRouteMatch(HOMEPAGE_RECENTS_PATH))
-  const isFavoritesRoute = Boolean(useRouteMatch(HOMEPAGE_FAVORITES_PATH))
   const isTrashRoute = Boolean(useRouteMatch(HOMEPAGE_TRASH_PATH))
 
   const [search, setSearch] = useSearch()
@@ -109,7 +104,6 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
 
   const state = useHomepageViewState({
     isRecentsRoute,
-    isFavoritesRoute,
     isTrashRoute,
     search,
     recentsSort,
@@ -148,7 +142,6 @@ export function useHomepageView() {
 
 type HomepageViewStateOptions = {
   isRecentsRoute: boolean
-  isFavoritesRoute: boolean
   isTrashRoute: boolean
   search: string | undefined
   recentsSort: RecentsSort
@@ -161,7 +154,6 @@ type HomepageViewStateOptions = {
 
 function useHomepageViewState({
   isRecentsRoute,
-  isFavoritesRoute,
   isTrashRoute,
   search,
   recentsSort,
@@ -198,10 +190,6 @@ function useHomepageViewState({
           outputState = { view: 'recents', itemSections: [], sort: recentsSort }
         }
       }
-      // Favorites.
-    } else if (isFavoritesRoute) {
-      outputState = { view: 'favorites-empty' }
-      // Trash.
     } else if (isTrashRoute) {
       if (isTrashedLoading) {
         outputState = { view: 'trash-loading' }
@@ -214,7 +202,6 @@ function useHomepageViewState({
 
     return outputState
   }, [
-    isFavoritesRoute,
     isRecentsInitial,
     isRecentsLoading,
     isRecentsRoute,
