@@ -474,6 +474,9 @@
       "Keep my subscription": [
         "Behåll min prenumeration"
       ],
+      "Later": [
+        "Senare"
+      ],
       "Learn more": [
         "Lär dig mer"
       ],
@@ -894,6 +897,9 @@
       "Verify account": [
         "Verifiera konto"
       ],
+      "Verify now": [
+        "Verifiera nu"
+      ],
       "View": [
         "Visa"
       ],
@@ -1200,6 +1206,95 @@
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Specialdesignade NetShield skyddar dina enheter och snabbar upp din surfning genom att blockera annonser, spårare och skadlig kod."
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Aktiverat"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adress används redan av en användare utanför din organisation. Kontakta kundsupport för att lösa detta"
+      ],
+      "All": [
+        "Alla"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Konfigurera migrering"
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Emails": [
+        "E-post"
+      ],
+      "Errors": [
+        "Fel"
+      ],
+      "Estimated size": [
+        "Beräknad storlek"
+      ],
+      "Find out what can be migrated.": [
+        "Ta reda på vad som kan migreras."
+      ],
+      "Has errors": [
+        "Har fel"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta."
+      ],
+      "Migrate": [
+        "Migrera"
+      ],
+      "Migrated": [
+        "Migrerad"
+      ],
+      "Migration status": [
+        "Migreringsstatus"
+      ],
+      "Missing organization private key": [
+        "Saknar organisationens privata nyckel"
+      ],
+      "Missing organization public key": [
+        "Saknar organisationens offentliga nyckel"
+      ],
+      "No users to display": [
+        "Inga användare att visa"
+      ],
+      "Not activated": [
+        "Inte aktiverat"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisation har inte tillräckligt med licenser tillgängligt"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisation har inte tillräckligt med lagringsutrymme tillgängligt"
+      ],
+      "Pending": [
+        "Väntar"
+      ],
+      "Select users to migrate": [
+        "Välj användare att migrera"
+      ],
+      "Size": [
+        "Storlek"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Användare"
+      ],
+      "What are you migrating?": [
+        "Vad migrerar du?"
+      ],
+      "You": [
+        "Du"
       ]
     },
     "Browser": {
@@ -2507,9 +2602,6 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Se till att du fortfarande kan komma åt ditt konto och dina data även om du förlorar ditt ${ BRAND_NAME }-lösenord."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "För en sömlös övergång till ${ BRAND_NAME }, importera din data från Google, Outlook och andra."
-      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Bli aviserad om ditt lösenord eller annan data har läckt från en tjänst från tredje part."
       ],
@@ -2864,6 +2956,9 @@
       "Aliases could not be loaded": [
         "Alias kunde inte läsas in"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Allt lagringsutrymme har allokerats. Minska lagringsutrymmet som tilldelas andra användare."
+      ],
       "Already a member of this share": [
         "Redan medlem av denna delning"
       ],
@@ -3118,6 +3213,15 @@
       "Photos upload is temporarily disabled. Please try again later": [
         "Fotouppladdning är tillfälligt inaktiverad. Försök igen senare"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Konfigurera en anpassad domän innan du lägger till adresser."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Konfigurera en anpassad domän innan du lägger till användare till din organisation."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Aktivera stöd för flera användare innan du lägger till användare till din organisation."
+      ],
       "Please enter a valid postal code": [
         "Ange ett giltigt postnummer"
       ],
@@ -3142,6 +3246,9 @@
       ],
       "Please select a state": [
         "Välj en delstat"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Uppgradera till ett företagspaket med mer än 1 användare för att hantera flera användare."
       ],
       "Port is required": [
         "Port är obligatoriskt"
@@ -3300,6 +3407,9 @@
       "Unknown error": [
         "Okänt fel"
       ],
+      "Unknown location": [
+        "Okänd plats"
+      ],
       "Update Too Large": [
         "Uppdatering är för stor"
       ],
@@ -3336,6 +3446,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Du har nått gränsen för antalet kontakter för ditt konto"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Du har använt alla adresser i ditt paket. Uppgradera ditt paket för att lägga till en ny adress eller inaktivera en adress i ditt konto."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Du har använt alla användare i ditt paket. Uppgradera ditt paket för att lägga till en ny användare."
       ],
       "You must set a name": [
         "Du måste ange ett namn"
@@ -4287,6 +4403,10 @@
         "${ selectedFoldersCountLocalized } etikett vald",
         "${ selectedFoldersCountLocalized } etiketter valda"
       ],
+      "${ total } user found": [
+        "${ total } användare hittades",
+        "${ total } användare hittades"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt uppdaterades.",
         "${ updated } kontakter uppdaterades."
@@ -4304,23 +4424,11 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Anslut automatiskt**: Öppnar och ansluter till VPN så snart du slår på din enhet."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Bjud in dina vänner** till ${ BRAND_NAME } med din hänvisningslänk."
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill-switch**: Stoppar dataläckage genom att blockera ditt internet om VPN:et oväntat slutar fungera."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Steg 1:** Bjud in dina vänner till ${ BRAND_NAME } med din hänvisningslänk."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Steg 2:** Dina vänner får 2 veckor gratis på sitt valda ${ BRAND_NAME }-paket."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Steg 2:** Dina vänner får 2 veckor gratis på sitt paket."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Steg 3:** Få ${ referrerRewardAmount } krediter för varje vän som prenumererar på ett paket."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Steg 3:** Få ${ referrerRewardAmount } krediter för varje person som prenumererar på ett paket."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
@@ -4543,6 +4651,9 @@
       "Display word count": [
         "Visa antalet ord"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Kommer du ihåg ditt lösenord? ${ verifyButton }"
+      ],
       "Document is in trash": [
         "Dokument är i papperskorg"
       ],
@@ -4686,6 +4797,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "För bästa resultat bör du undvika streaming och minneskrävande aktiviteter eller dela upp din uppladdning i mindre partier."
+      ],
+      "Forgot password?": [
+        "Gömt lösenord?"
       ],
       "Free 5GB encrypted storage to get started": [
         "Gratis 5 GB krypterat lagringsutrymme för att komma igång"
@@ -4952,6 +5066,9 @@
       ],
       "Password must have:": [
         "Lösenord måste innehålla:"
+      ],
+      "Password verified": [
+        "Lösenord verifierat"
       ],
       "Pending invitations": [
         "Väntande inbjudningar"
@@ -7642,6 +7759,9 @@
       "\"${ name }\" failed to be saved": [
         "”${ name }” kunde inte sparas"
       ],
+      "\"${ name }\" moved": [
+        "”${ name }” flyttad"
+      ],
       "\"${ name }\" moved to trash": [
         "“${ name }“ flyttades till papperskorgen"
       ],
@@ -7650,9 +7770,6 @@
       ],
       "\"${ name }\" saved successfully": [
         "”${ name }” har sparats"
-      ],
-      "\"${ name }\" successfully moved": [
-        "“${ name }“ flyttades utan problem"
       ],
       "\"${ newName }\" failed to be renamed": [
         "“${ newName }“ misslyckades att namnändras"
@@ -7692,6 +7809,10 @@
         "“${ numberOfItems }“ fil misslyckades att återställas från papperskorgen",
         "“${ numberOfItems }“ filer misslyckades att återställas från papperskorgen"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } objekt flyttat",
+        "${ numberOfItems } objekt flyttade"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } objekt flyttades till papperskorgen",
         "${ numberOfItems } objekt flyttades till papperskorgen"
@@ -7699,10 +7820,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } objekt återställdes från papperskorg",
         "${ numberOfItems } objekt återställdes från papperskorg"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } objekt har flyttats",
-        "${ numberOfItems } objekt har flyttats"
       ],
       "${ reason } has been disabled": [
         "${ reason } har inaktiverats"
@@ -8313,11 +8430,17 @@
       "Please describe the problem and include any error messages": [
         "Beskriv problemet och inkludera eventuella felmeddelanden"
       ],
+      "Search": [
+        "Sök"
+      ],
       "Search for group name": [
         "Sök efter gruppnamn"
       ],
       "Search for name or email": [
         "Sök efter namn eller e-postadress"
+      ],
+      "Search for users or addresses": [
+        "Sök efter användare eller adresser"
       ],
       "Search parent folder": [
         "Sök överordnad mapp"
@@ -8531,6 +8654,78 @@
       ],
       "SPRING SALE": [
         "VÅRREA"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ],
+      "Summer Sale": [
+        "Sommarrea"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/månad"
+      ],
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "2 TB data storage": [
+        "2 TB lagringsutrymme"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagringsutrymme: 40x ditt nuvarande paket"
+      ],
+      "3 TB data storage": [
+        "3 TB lagringsutrymme"
+      ],
+      "500 GB storage": [
+        "500 GB lagringsutrymme"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter baseras på ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln löper ut."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Full åtkomst till ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuella konton för 6 användare"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuella konton för dig och en partner"
+      ],
+      "Online document and spreadsheet editor": [
+        "Dokument- och kalkylbladsredigerare online"
+      ],
+      "Recover previous file versions": [
+        "Återställ tidigare filversioner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Starkare skydd mot cyberhot"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Byt till vårt årspaket och spara ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Obegränsade mappar, etiketter och filter"
+      ],
+      "Use your own email domain": [
+        "Använd din egen e-postdomän"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "för 12 månader"
+      ],
+      "SUMMER SALE": [
+        "SOMMARREA"
       ]
     },
     "Recent documents table header": {
@@ -9849,6 +10044,9 @@
       "Desktop": [
         "Stationär dator"
       ],
+      "Devices": [
+        "Enheter"
+      ],
       "Discard": [
         "Förkasta"
       ],
@@ -9975,9 +10173,6 @@
       ],
       "Import contacts": [
         "Importera kontakter"
-      ],
-      "Import emails, calendars, contacts": [
-        "Importera e-post, kalendrar, kontakter"
       ],
       "Import events": [
         "Importera händelser"
@@ -10168,6 +10363,9 @@
       "Share your link": [
         "Dela din länk"
       ],
+      "Shared with me": [
+        "Delat med mig"
+      ],
       "Sign in and grant access": [
         "Logga in och bevilja åtkomst"
       ],
@@ -10239,6 +10437,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Använd ${ VPN_SHORT_APP_NAME } för dataintegritet"
+      ],
+      "Verify your password": [
+        "Verifiera ditt lösenord"
       ],
       "VPN explained": [
         "VPN förklarat"

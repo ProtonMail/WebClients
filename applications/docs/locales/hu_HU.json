@@ -441,6 +441,9 @@
       "Keep my subscription": [
         "Előfizetés megtartása"
       ],
+      "Later": [
+        "Később"
+      ],
       "Learn more": [
         "További információk"
       ],
@@ -2270,9 +2273,6 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Biztosítsa be, hogy továbbra is hozzáférhessen a fiókjához és az adataihoz, még akkor is, ha elveszíti a ${ BRAND_NAME } jelszavát."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "A zökkenőmentes átálláshoz a ${ BRAND_NAME }-ra, importálja adatait a Google-ból, az Outlook-ból és más forrásokból."
-      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Értesítést kap, ha jelszava vagy más adata kiszivárgott egy harmadik fél szolgáltatásából."
       ],
@@ -2597,6 +2597,9 @@
       "Aliases could not be loaded": [
         "Az e-mail álnevek betöltése nem sikerült"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Minden tárhely terület kiosztásra került. Kérjük csökkentse más felhasználók tárhelyét."
+      ],
       "Already a member of this share": [
         "Már tagja ennek a megosztásnak"
       ],
@@ -2824,6 +2827,15 @@
       "Photos upload is temporarily disabled. Please try again later": [
         "A fényképek feltöltése ideiglenesen le van tiltva. Kérjük, próbálja meg később újra."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Címek létrehozása előtt, állítson be egy saját domain nevet."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Vegyen fel egy saját domain nevet, mielőtt felhasználókat venne fel a szervezethez."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Engedélyezze a többfelhasználós módot, mielőtt felhasználókat venne fel a szervezethez."
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Javítsa ki a megjelölt hibát a folytatáshoz.",
         "Javítsa ki a megjelölt hibákat a folytatáshoz."
@@ -2836,6 +2848,9 @@
       ],
       "Please select a state": [
         "Kérjük, válasszon ki egy megyét"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Váltson egy üzleti csomagra, egynél több felhasználval, hogy több felhasználót kezelhessen."
       ],
       "Port is required": [
         "A port megadása szükséges"
@@ -2982,6 +2997,9 @@
       "Unknown error": [
         "Ismeretlen hiba"
       ],
+      "Unknown location": [
+        "Ismeretlen hely"
+      ],
       "Update Too Large": [
         "Frissítés túl nagy"
       ],
@@ -3009,6 +3027,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Elérte a fiókhoz létrehozható névjegyek maximális számát"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Valamennyi, az előfizetéséhez rendelkezésére álló felhasználót elhasználta. Több felhasználó létrehozásához váltson nagyobb csomagra."
       ],
       "You must set a name": [
         "Meg kell adnia egy nevet"
@@ -3953,21 +3974,6 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Vészkapcsoló**: Megállítja az adatszivárgást azáltal, hogy blokkolja az internetet, ha a VPN kapcsolat váratlanul megszakad."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**1. lépés:** Hívja meg barátait a ${ BRAND_NAME } szolgáltatásba az ajánlói hivatkozásával."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**2. lépés:** Az ismerősei 2 ingyenes hetet kapnak a választott ${ BRAND_NAME } csomagjukhoz."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**2. lépés:** Az ismerősei 2 ingyenes hetet kapnak a csomagjukhoz."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**3. lépés:** Kap ${ referrerRewardAmount } Kreditet minden ismerőse után, aki előfizet egy csomagra."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**3. lépés:** ${ referrerRewardAmount } kreditet kap minden személy után, aki előfizet egy csomagra."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bónusz tárterület"
@@ -6935,9 +6941,6 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\" sikeresen mentve"
       ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" sikeresen áthelyezve"
-      ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" átnevezése nem sikerült"
       ],
@@ -6983,10 +6986,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } elem visszaállítva a lomtárból",
         "${ numberOfItems } elem visszaállítva a lomtárból"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } elem sikeresen áthelyezve",
-        "${ numberOfItems } elem sikeresen áthelyezve"
       ],
       "${ reason } has been disabled": [
         "${ reason } letiltva"
@@ -7543,6 +7542,9 @@
       "Please describe the problem and include any error messages": [
         "Írja le a problémát és másolja be az esetleges hibaüzeneteket"
       ],
+      "Search": [
+        "Keresés"
+      ],
       "Search for group name": [
         "Csoport név keresése"
       ],
@@ -7634,6 +7636,78 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Hivatalos e-mail tőle: ${ BRAND_NAME }"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Szerezze meg az ajánlatot"
+      ],
+      "Summer Sale": [
+        "Nyári akció"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/hónap"
+      ],
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "2 TB data storage": [
+        "2 TB adattárhely"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB tárhely: a jelenlegi csomag negyvenszerese"
+      ],
+      "3 TB data storage": [
+        "3 TB adattárhely"
+      ],
+      "500 GB storage": [
+        "500 GB tárhely"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "A ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME } összes prémium funkciója"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "A ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME } összes prémium funkciója"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "A kedvezmények a standard havi árakon alapulnak. Az előfizetése a standard éves díjjal fog megújulni, amikor a számlázási ciklus véget ér."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Teljes hozzáférés a ${ VPN_APP_NAME } szolgáltatáshoz"
+      ],
+      "Individual accounts for 6 users": [
+        "Egyéni fiókok 6 felhasználó számára"
+      ],
+      "Individual accounts for you and a partner": [
+        "Egyéni fiókok Önnek és partnerének"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online dokumentum- és táblázatszerkesztő"
+      ],
+      "Recover previous file versions": [
+        "Régebbi fájlverziók helyreállítása"
+      ],
+      "Stronger protection against cyber threats": [
+        "Erősebb védelem a kiberfenyegetésekkel szemben"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Váltson éves csomagunkra, és takarítson meg ${ toYearlyDiscountAmount } összeget!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Korlátlan számú mappa, címke és szűrő"
+      ],
+      "Use your own email domain": [
+        "Saját e-mail domain használata"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12 hónapra"
+      ],
+      "SUMMER SALE": [
+        "NYÁRI AKCIÓ"
       ]
     },
     "Recent documents table header": {
@@ -8832,6 +8906,9 @@
       "Desktop": [
         "Asztali számítógép"
       ],
+      "Devices": [
+        "Eszköz"
+      ],
       "Discard": [
         "Elvetés"
       ],
@@ -8949,9 +9026,6 @@
       ],
       "Import contacts": [
         "Névjegyek importálása"
-      ],
-      "Import emails, calendars, contacts": [
-        "E-mailek, naptárak, névjegyek importálása"
       ],
       "Import events": [
         "Események importálása"
@@ -9117,6 +9191,9 @@
       ],
       "Share your link": [
         "Ossza meg a hivatkozását"
+      ],
+      "Shared with me": [
+        "Velem megosztva"
       ],
       "Sign in and grant access": [
         "Jelentkezzen be és adjon hozzáférést"
