@@ -456,6 +456,9 @@
       "Keep my subscription": [
         "Mantieni il mio abbonamento"
       ],
+      "Later": [
+        "Più tardi"
+      ],
       "Learn more": [
         "Scopri di più"
       ],
@@ -1126,6 +1129,35 @@
       ],
       "Built-in 2FA authenticator": [
         "Autenticazione 2FA integrata"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Calendario"
+      ],
+      "Configure migration": [
+        "Configura la migrazione"
+      ],
+      "Contacts": [
+        "Contatti"
+      ],
+      "Estimated size": [
+        "Dimensioni Stimate"
+      ],
+      "Migration status": [
+        "Stato della migrazione"
+      ],
+      "Organization does not have enough seats available": [
+        "L'organizzazione non dispone di licenze sufficienti"
+      ],
+      "Organization does not have enough storage available": [
+        "L'organizzazione non dispone di spazio di archiviazione sufficiente"
+      ],
+      "User": [
+        "Utente"
+      ],
+      "What are you migrating?": [
+        "Cosa stai migrando?"
       ]
     },
     "Browser": {
@@ -2433,9 +2465,6 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Assicurati di poter accedere comunque al tuo account e ai tuoi dati anche se perdi la password di ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Per una transizione senza problemi a ${ BRAND_NAME }, importa i tuoi dati da Google, Outlook e altri."
-      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ricevi una notifica se la tua password o altri dati vengono resi pubblici da un servizio di terze parti."
       ],
@@ -2781,6 +2810,9 @@
       "Aliases could not be loaded": [
         "Impossibile caricare gli alias"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Tutto lo spazio di archiviazione è stato allocato. Riduci lo spazio assegnato agli altri utenti."
+      ],
       "Already a member of this share": [
         "Già membro di questa condivisione"
       ],
@@ -3023,6 +3055,15 @@
       "Photos upload is temporarily disabled. Please try again later": [
         "Il caricamento delle foto è temporaneamente disabilitato. Riprova più tardi."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configura un dominio personalizzato prima di aggiungere indirizzi."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Per favore configura un dominio personalizzato prima di aggiungere utenti all'organizzazione."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Abilita il supporto multi-utente prima di aggiungere utenti all'organizzazione."
+      ],
       "Please enter a valid postal code": [
         "Si prega di inserire un codice postale valido"
       ],
@@ -3047,6 +3088,9 @@
       ],
       "Please select a state": [
         "Per favore seleziona uno stato"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Effettua l'upgrade a un piano aziendale con più di 1 utente per gestire più utenti."
       ],
       "Port is required": [
         "La porta è obbligatoria"
@@ -3202,6 +3246,9 @@
       "Unknown error": [
         "Errore sconosciuto"
       ],
+      "Unknown location": [
+        "Posizione sconosciuta"
+      ],
       "Update Too Large": [
         "Aggiornamento troppo grande"
       ],
@@ -3235,6 +3282,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Hai raggiunto il numero limite di contatti per il tuo account"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Hai utilizzato tutti gli indirizzi inclusi nel tuo piano. Effettua l'upgrade del piano per aggiungere un nuovo indirizzo o disattivarne uno dal tuo account."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Hai utilizzato tutti gli utenti del tuo piano. Per favore effettua l'upgrade del tuo piano per aggiungere un nuovo utente."
       ],
       "You must set a name": [
         "È necessario impostare un nome"
@@ -4172,6 +4225,10 @@
         "${ selectedFoldersCountLocalized } etichetta selezionata",
         "${ selectedFoldersCountLocalized } etichette selezionate"
       ],
+      "${ total } user found": [
+        "${ total } utente trovato",
+        "${ total } utenti trovati"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contatto aggiornato con successo.",
         "${ updated } contatti aggiornati con successo."
@@ -4191,21 +4248,6 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: blocca la fuga di dati bloccando la connessione Internet in caso di interruzione imprevista della VPN."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Passaggio 1:** Invita i tuoi amici a ${ BRAND_NAME } con il tuo link di affiliazione."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Passo 2:** I tuoi amici ottengono 2 settimane gratis sul piano ${ BRAND_NAME } che hanno scelto."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Passo 2:** I tuoi amici ottengono 2 settimane gratis sul loro piano."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Passaggio 3:** Ottieni ${ referrerRewardAmount } crediti per ogni amico che si abbona a un piano."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Passaggio 3:** Ottieni ${ referrerRewardAmount } crediti per ogni persona che si abbona a un piano."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } memoria bonus"
@@ -7401,9 +7443,6 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\" salvato con successo"
       ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" spostato correttamente"
-      ],
       "\"${ newName }\" failed to be renamed": [
         "Rinominazione di \"${ newName }\" non riuscita"
       ],
@@ -7442,6 +7481,10 @@
         "Ripristino di ${ numberOfItems } elemento dal cestino non riuscito",
         "Ripristino di ${ numberOfItems } elementi dal cestino non riuscito"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } oggetto spostato",
+        "${ numberOfItems } oggetti spostati"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } oggetto spostato nel cestino",
         "${ numberOfItems } oggetti spostati nel cestino"
@@ -7449,10 +7492,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } oggetto ripristinato dal cestino",
         "${ numberOfItems } oggetti ripristinati dal cestino"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } elemento spostato con successo",
-        "${ numberOfItems } elementi spostati con successo"
       ],
       "${ reason } has been disabled": [
         "${ reason } è stato disabilitato"
@@ -8045,6 +8084,9 @@
       "Please describe the problem and include any error messages": [
         "Descrivi il problema e includi eventuali messaggi di errore"
       ],
+      "Search": [
+        "Cerca"
+      ],
       "Search for group name": [
         "Cerca per nome gruppo"
       ],
@@ -8240,6 +8282,78 @@
       ],
       "SPRING SALE": [
         "SPRING SALE"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Ottieni l'offerta"
+      ],
+      "Summer Sale": [
+        "Saldi estivi"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mese"
+      ],
+      "15 GB storage": [
+        "15 GB di archiviazione"
+      ],
+      "2 TB data storage": [
+        "2 TB di archiviazione dati"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB di archiviazione: 40 volte il tuo piano attuale"
+      ],
+      "3 TB data storage": [
+        "3 TB di archiviazione dati"
+      ],
+      "500 GB storage": [
+        "500 GB di archiviazione"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tutte le funzionalità premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tutte le funzionalità premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Gli sconti si basano sui prezzi mensili standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Accesso completo a ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Account individuali per sei utenti"
+      ],
+      "Individual accounts for you and a partner": [
+        "Account individuali per te e un'altra persona"
+      ],
+      "Online document and spreadsheet editor": [
+        "Editor di documenti e fogli di calcolo online"
+      ],
+      "Recover previous file versions": [
+        "Recupera le versioni precedenti dei file"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protezione più efficace dalle minacce informatiche"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Passa al nostro piano annuale e risparmia ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Cartelle, etichette e filtri illimitati"
+      ],
+      "Use your own email domain": [
+        "Usa il tuo dominio email personale"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "per 12 mesi"
+      ],
+      "SUMMER SALE": [
+        "SALDI ESTIVI"
       ]
     },
     "Recent documents table header": {
@@ -9478,6 +9592,9 @@
       "Desktop": [
         "Desktop"
       ],
+      "Devices": [
+        "Dispositivi"
+      ],
       "Discard": [
         "Scarta"
       ],
@@ -9607,9 +9724,6 @@
       ],
       "Import contacts": [
         "Importa i contatti"
-      ],
-      "Import emails, calendars, contacts": [
-        "Importa email, calendari, contatti"
       ],
       "Import events": [
         "Importa eventi"
@@ -9784,6 +9898,9 @@
       ],
       "Share your link": [
         "Condividi il tuo link"
+      ],
+      "Shared with me": [
+        "Condiviso con me"
       ],
       "Sign in and grant access": [
         "Accedi e concedi l'accesso"
