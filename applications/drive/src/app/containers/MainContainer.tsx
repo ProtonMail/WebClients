@@ -2,6 +2,7 @@ import type { FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom-v5-compat';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import {
     GlobalLoader,
@@ -84,7 +85,7 @@ function InitContainer() {
     const { redirectionReason, redirectToPublicPage, cleanupUrl } = useRedirectToPublicPage();
     const drawerWidth = useDrawerWidth();
     const driveWebASVEnabled = useFlag('DriveWebRecoveryASV');
-
+    const [subscription] = useSubscription();
     // Bootstrap search module.
     useSearchModule();
 
@@ -214,7 +215,11 @@ function InitContainer() {
             <ModalsChildren />
             <FloatingElements>
                 <GiftFloatingButton />
-                <TransferManager drawerWidth={drawerWidth} deprecatedRootShareId={defaultShareRoot.shareId} />
+                <TransferManager
+                    drawerWidth={drawerWidth}
+                    deprecatedRootShareId={defaultShareRoot.shareId}
+                    subscription={subscription}
+                />
             </FloatingElements>
             <DriveWindow>
                 <Routes>
