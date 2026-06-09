@@ -328,17 +328,11 @@
       "Contract composer": [
         "Contraure l'editor"
       ],
-      "Copy": [
-        "Copia"
-      ],
       "Copy address": [
         "Copia l'adreça"
       ],
       "Copy addresses": [
         "Copia les adreces"
-      ],
-      "Copy alias “${ name }”": [
-        "Copia l'àlies «${ name }»"
       ],
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
@@ -1523,8 +1517,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1651,6 +1644,9 @@
       ],
       "Verify account": [
         "Verifiqueu el compte"
+      ],
+      "Verify now": [
+        "Verifiqueu-ho ara"
       ],
       "View": [
         "Mostra"
@@ -2184,6 +2180,107 @@
       ],
       "Yearly": [
         "Anual"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Activat"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Aquesta adreça ja la utilitza un usuari de fora de la vostra organització. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
+      ],
+      "All": [
+        "Tots"
+      ],
+      "Calendar": [
+        "Calendari"
+      ],
+      "Configure migration": [
+        "Configureu la migració"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Contacteu amb el vostre administrador per iniciar una migració."
+      ],
+      "Contacts": [
+        "Contactes"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Estat de la migració de dades de Google Workspace a ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Correus electrònics"
+      ],
+      "Errors": [
+        "Errors"
+      ],
+      "Estimated size": [
+        "Mida estimada"
+      ],
+      "Find out what can be migrated.": [
+        "Descobriu què es pot migrar."
+      ],
+      "Has errors": [
+        "Té errors"
+      ],
+      "In progress": [
+        "En curs"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "No s'ha trobat l'adreça del membre. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
+      ],
+      "Migrate": [
+        "Migrar"
+      ],
+      "Migrated": [
+        "S'ha migrat"
+      ],
+      "Migration status": [
+        "Estat de la migració"
+      ],
+      "Missing organization private key": [
+        "Falta la clau privada de l'organització"
+      ],
+      "Missing organization public key": [
+        "Falta la clau pública de l'organització"
+      ],
+      "No users to display": [
+        "No hi ha cap usuari per mostrar"
+      ],
+      "Not activated": [
+        "No s'ha activat"
+      ],
+      "Organization does not have enough seats available": [
+        "L'organització no té prou llicències disponibles"
+      ],
+      "Organization does not have enough storage available": [
+        "L'organització no té prou espai d'emmagatzematge disponible"
+      ],
+      "Pending": [
+        "Està pendent"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Seleccioneu exactament què voleu migrar. S'aplicarà a tots els usuaris de l'organització."
+      ],
+      "Select users to migrate": [
+        "Seleccioneu els usuaris que voleu migrar"
+      ],
+      "Size": [
+        "Mida"
+      ],
+      "Status": [
+        "Estat"
+      ],
+      "User": [
+        "Usuari"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Usuaris que han accedit al seu compte de ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Què esteu migrant?"
+      ],
+      "You": [
+        "Tú"
       ]
     },
     "Browser": {
@@ -4137,8 +4234,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Assegureu-vos que encara podeu accedir al vostre compte i a les vostres dades encara que perdeu la contrasenya del ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Per a una transició sense problemes al ${ BRAND_NAME }, importeu les vostres dades de Google, Outlook i altres."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Per a una incorporació fluida del vostre equip a ${ BRAND_NAME }, importeu les vostres dades de Google, Outlook i d'altres."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Per obtenir accés il·limitat a l'assistent d'escriptura i més, milloreu a ${ BRAND_NAME } Duo."
@@ -4671,6 +4768,9 @@
       "Aliases could not be loaded": [
         "No s'han pogut carregar els àlies."
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "S'ha assignat tot l'espai d'emmagatzematge. Reduïu l'emmagatzematge assignat a altres usuaris."
+      ],
       "Amount above the maximum.": [
         "Quantitat per sobre del màxim."
       ],
@@ -4995,6 +5095,15 @@
       "Please complete the billing details": [
         "Empleneu les dades de facturació"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configureu un domini personalitzat abans d'afegir adreces."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Configureu un domini personalitzat abans d'afegir usuaris a la seva organització."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Habiliteu el suport multiusuari abans d'afegir usuaris a la vostra organització."
+      ],
       "Please enter a valid postal code": [
         "Introduïu un codi postal vàlid"
       ],
@@ -5034,6 +5143,9 @@
       ],
       "Please try generating the text again": [
         "Proveu de tornar a generar el text"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Milloreu a un pla per a empreses amb més d'un usuari per a gestionar múltiples usuaris."
       ],
       "Port is required": [
         "Es requereix el port"
@@ -5119,6 +5231,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Els noms d'algunes de les etiquetes superen el límit de caràcters màxim de ${ MAIL_APP_NAME }. Modifiqueu la importació per tal d'editar-ne els noms."
+      ],
+      "Something went wrong while converting the address": [
+        "Alguna cosa ha anat malament en convertir l'adreça"
       ],
       "Something went wrong while creating the address": [
         "Alguna cosa ha anat malament mentre es creava l'adreça"
@@ -5284,6 +5399,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Heu arribat al nombre límit de contactes per al vostre compte."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Heu utilitzat totes les adreces del vostre pla. Actualitzeu-lo per afegir-ne una de nova o desactiveu una adreça al vostre compte."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Heu utilitzat tots els usuaris del vostre pla. Milloreu-lo per a afegir un usuari."
       ],
       "You must set a name": [
         "Heu d'establir un nom"
@@ -5500,9 +5621,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la vostra connexió a Internet."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Quan s'ha activat la contrasenya addicional, la gestió d'àlies només es pot fer a ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Encara no teniu cap contacte. Comenceu creant-ne un de nou."
@@ -6773,6 +6891,10 @@
         "${ total } missatge",
         "${ total } missatges"
       ],
+      "${ total } user found": [
+        "S'ha trobat ${ total } usuari",
+        "S'han trobat ${ total } usuaris"
+      ],
       "${ trackersCount } email tracker blocked": [
         "S'ha bloquejat ${ trackersCount } rastrejador de correu",
         "S'han bloquejat ${ trackersCount } rastrejadors de correu"
@@ -6822,23 +6944,17 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Connexió automàtica**: s'obre i es connecta a la VPN tan bon punt encengueu el dispositiu."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Convideu amistats** a ${ BRAND_NAME } amb el vostre enllaç de referència."
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Interruptor de bloqueig (kill switch)**: atura les filtracions de dades en bloquejar la connexió a Internet si la VPN es desconnecta sobtadament."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Pas 1:** Convideu amistats a ${ BRAND_NAME } amb el vostre enllaç de recomanació."
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Ells reben ${ refereeRewardAmount }** en crèdits si es subscriuen."
       ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Pas 2:** Les vostres amistats obtindran 2 setmanes de franc en el seu pla ${ BRAND_NAME } escollit."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Pas 2:** Les vostres amistats obtindran 2 setmanes de franc en el seu pla."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Pas 3:** Obtingueu ${ referrerRewardAmount } crèdits per cada amistat que es subscrigui a un pla."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Pas 3:** Obtingueu ${ referrerRewardAmount } en crèdits per cada persona que se subscrigui a un pla."
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Rebeu ${ referrerRewardAmount }** en crèdits per cada amistat que se subscrigui."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
@@ -7048,6 +7164,9 @@
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
         "Elimina automàticament els missatges que han estat a la paperera i al correu brossa durant més de 30 dies."
       ],
+      "Automatically sort incoming emails into categories": [
+        "Classifiqueu automàticament els correus electrònics entrants en categories"
+      ],
       "Awaiting transaction": [
         "S'està esperant la transacció"
       ],
@@ -7168,9 +7287,6 @@
       "Copy the link to clipboard": [
         "Copia l'enllaç al porta-retalls"
       ],
-      "Copy to clipboard": [
-        "Copiar-ho al porta-retalls"
-      ],
       "Copy your referral link": [
         "Copieu el vostre enllaç de recomanació"
       ],
@@ -7262,6 +7378,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Recordeu la vostra contrasenya? ${ verifyButton }"
       ],
       "Do you want to download this attachment anyway?": [
         "Voleu descarregar aquest adjunt de totes maneres?",
@@ -7488,6 +7607,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Per obtenir més resultats, proveu de cercar aquesta paraula clau al contingut dels vostres missatges de correu electrònic."
       ],
+      "Forgot password?": [
+        "Heu oblidat la contrasenya?"
+      ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "Prova gratuïta durant ${ ASSISTANT_TRIAL_TIME_DAYS } dia",
         "Prova gratuïta durant ${ ASSISTANT_TRIAL_TIME_DAYS } dies"
@@ -7639,7 +7761,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -7943,6 +8066,9 @@
       ],
       "Password must have:": [
         "La contrasenya ha de tenir:"
+      ],
+      "Password verified": [
+        "S'ha verificat la contrasenya"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Els pagaments estan protegits amb xifratge TLS i les lleis de privacitat suïsses."
@@ -8541,6 +8667,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Per ajudar-vos a recordar la contrasenya, us demanarem que la introduïu periòdicament. Amb el temps, us la demanarem menys sovint."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Per a importar esdeveniments, creeu abans un calendari en ${ CALENDAR_APP_NAME }. Aquí és on apareixeran tots els esdeveniments després de la importació."
       ],
@@ -8765,6 +8894,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Us notificarem quan la importació s'hagi realitzat."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Us recordarem més tard que torneu a verificar la contrasenya"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviarem un codi de verificació nou a ${ strong }"
@@ -9348,6 +9480,16 @@
         "Destaca"
       ]
     },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Canvia a ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Canvia a ${ MAIL_APP_NAME }"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Action shortcuts": [
         "Dreceres d'acció"
@@ -9360,6 +9502,9 @@
       ],
       "Composer shortcuts": [
         "Dreceres de l'editor"
+      ],
+      "Desktop app navigation": [
+        "Navegació de l'aplicació d'escriptori"
       ],
       "Folder shortcuts": [
         "Dreceres de carpeta"
@@ -9641,6 +9786,9 @@
       ],
       "Email address": [
         "Adreça de correu electrònic"
+      ],
+      "Email categories": [
+        "Categories de correu electrònic"
       ],
       "Email format": [
         "Format de correu electrònic"
@@ -12851,6 +12999,9 @@
       "San Francisco": [
         "San Francisco"
       ],
+      "Search": [
+        "Cerca"
+      ],
       "Search date, name, email address, or subject line": [
         "Cerca data, nom, adreça de correu electrònic o línia de l'assumpte"
       ],
@@ -12859,6 +13010,9 @@
       ],
       "Search for name or email": [
         "Cerca per nom o correu electrònic"
+      ],
+      "Search for users or addresses": [
+        "Cercar un usuari o adreça"
       ],
       "Search messages": [
         "Cerqueu missatges"
@@ -13046,6 +13200,78 @@
         "Yahoo"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Aconseguiu l'oferta"
+      ],
+      "Summer Sale": [
+        "Rebaixes d'estiu"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mesos"
+      ],
+      "15 GB storage": [
+        "15 GB d'emmagatzemament"
+      ],
+      "2 TB data storage": [
+        "2 TB d'emmagatzematge de dades"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB d'emmagatzematge: 40 vegades el vostre pla actual"
+      ],
+      "3 TB data storage": [
+        "3 TB d'emmagatzematge de dades"
+      ],
+      "500 GB storage": [
+        "500 GB d'emmagatzematge"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Totes les característiques prèmium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Totes les característiques prèmium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Els descomptes es basen en els preus mensuals estàndard. La vostra subscripció es renovarà a la tarifa anual estàndard quan acabi el cicle de facturació."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Accés complet a ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Comptes individuals per a 6 usuaris"
+      ],
+      "Individual accounts for you and a partner": [
+        "Comptes individuals per a vós i la vostra parella"
+      ],
+      "Online document and spreadsheet editor": [
+        "Editor de documents i fulls de càlcul en línia"
+      ],
+      "Recover previous file versions": [
+        "Recupereu versions anteriors dels fitxers"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protecció més robusta contra les ciberamenaces"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Canvieu al nostre pla anual i estalvieu ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Nombre il·limitat de carpetes, etiquetes i filtres"
+      ],
+      "Use your own email domain": [
+        "Utilitzeu el vostre propi domini de correu electrònic"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "durant 12 mesos"
+      ],
+      "SUMMER SALE": [
+        "REBAIXES D'ESTIU"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Missatge signat i xifrat d'extrem a extrem"
@@ -13211,46 +13437,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Tots els àlies"
-      ],
       "Create alias": [
         "Crea un àlies"
-      ],
-      "Create an alias": [
-        "Crea un àlies"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Genereu àlies sobre la marxa i gestioneu fàcilment els àlies i contrasenyes."
-      ],
-      "Hide-my-email aliases": [
-        "Àlies hide-my-email"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Els àlies de Hide-my-email us permeten registrar-vos per a llocs en línia sense compartir l'adreça de correu electrònic. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Nou àlies"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Obri ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Protegiu la vostra identitat en línia"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Proveu ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "S'utilitza a l'Amazon per a fer compres, etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Quan se us demani l'adreça de correu electrònic, doneu aquest àlies en el seu lloc. ${ passLink } proporciona els àlies."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(obrirà ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -14572,9 +14766,6 @@
       "Address verification disabled": [
         "S'ha desactivat la verificació de l'adreça"
       ],
-      "Alias copied to clipboard": [
-        "L'àlies s'ha copiat al porta-retalls."
-      ],
       "Alias saved and copied": [
         "S'ha desat i copiat l'àlies."
       ],
@@ -14663,9 +14854,6 @@
       ],
       "Labels applied.": [
         "S'han posat les etiquetes."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Últims àlies modificats emmagatzemats a la vostra caixa forta més antiga"
       ],
       "Mail list unsubscribed": [
         "S'ha cancel·lat la subscripció a la llista de correu"
@@ -15556,6 +15744,9 @@
       "Message will expire": [
         "Aquest missatge caducarà"
       ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migreu la vostra organització a ${ BRAND_NAME }"
+      ],
       "Minicalendar": [
         "Minicalendari"
       ],
@@ -15988,6 +16179,9 @@
       ],
       "Verification failed": [
         "No s'ha pogut completar la verificació."
+      ],
+      "Verify your password": [
+        "Verifiqueu la vostra contrasenya"
       ],
       "Verifying your card...": [
         "S'està verificant la targeta…"

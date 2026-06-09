@@ -555,6 +555,9 @@
       "Keep my subscription": [
         "Zachowaj subskrypcję"
       ],
+      "Later": [
+        "Później"
+      ],
       "Learn more": [
         "Dowiedz się więcej"
       ],
@@ -1606,12 +1609,6 @@
       ]
     },
     "BOSS": {
-      "Migration started for ${ n } user": [
-        "Migracja rozpoczęta dla ${ n } użytkownika",
-        "Migracja rozpoczęta dla ${ n } użytkowników",
-        "Migracja rozpoczęta dla ${ n } użytkowników",
-        "Migracja rozpoczęta dla ${ n } użytkowników"
-      ],
       "Migration status": [
         "Status migracji"
       ],
@@ -1620,12 +1617,6 @@
       ],
       "Organization does not have enough storage available": [
         "Organizacja nie ma wystarczającej ilości przestrzeni dyskowej"
-      ],
-      "Select at least one user to start a migration": [
-        "Zaznacz co najmniej jednego użytkownika, aby rozpocząć migrację"
-      ],
-      "Verify your domain to start a migration": [
-        "Zweryfikuj swoją domenę, aby rozpocząć migrację"
       ],
       "You": [
         "Ty"
@@ -3021,9 +3012,6 @@
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Każda osoba w organizacji może łączyć się z udostępnionymi serwerami we wszystkich krajach."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Zaimportuj dane z Google, Outlook i innych usług, aby płynnie przejść do ${ BRAND_NAME }."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych przez usługi stron trzecich."
@@ -5514,21 +5502,6 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importuj obecne kody** z innych aplikacji uwierzytelniających, takich jak Google Authenticator"
-      ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Krok 1: Zaproś znajomych** do ${ BRAND_NAME } za pomocą linku polecającego."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Krok 1:** Zaproś znajomych do ${ BRAND_NAME } za pomocą linku polecającego."
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**Krok 2:** Twoi znajomi otrzymają **2 tygodnie planu za darmo**."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Krok 2:** Twoi znajomi otrzymają 2 tygodnie planu za darmo."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Krok 3:** Otrzymaj ${ referrerRewardAmount } w środkach za każdego użytkownika, który zasubskrybuje plan."
       ],
       "**Sync codes** to all your devices": [
         "**Synchronizuj kody** na wszystkich urządzeniach"
@@ -11522,6 +11495,78 @@
         "WIOSENNA PROMOCJA"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
+      "Summer Sale": [
+        "Letnie promocje"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/miesiąc"
+      ],
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "2 TB data storage": [
+        "2 TB przestrzeni dyskowej na dane"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB przestrzeni dyskowej: 40 × Twój obecny plan"
+      ],
+      "3 TB data storage": [
+        "3 TB przestrzeni dyskowej na dane"
+      ],
+      "500 GB storage": [
+        "500 GB przestrzeni dyskowej"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Wszystkie funkcje premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Wszystkie funkcje premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zniżki są naliczane na podstawie standardowych cen miesięcznych. Twoja subskrypcja odnowi się po standardowej stawce rocznej, gdy zakończy się cykl rozliczeniowy."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Pełny dostęp do ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Indywidualne konta dla 6 użytkowników"
+      ],
+      "Individual accounts for you and a partner": [
+        "Indywidualne konta dla Ciebie i partnera"
+      ],
+      "Online document and spreadsheet editor": [
+        "Edytor dokumentów i arkuszy kalkulacyjnych online"
+      ],
+      "Recover previous file versions": [
+        "Odzyskaj poprzednie wersje pliku"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silniejsza ochrona przed cyberzagrożeniami"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Przejdź na nasz roczny plan i zaoszczędź ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Nieograniczona liczba folderów, etykiet i filtrów"
+      ],
+      "Use your own email domain": [
+        "Możliwość użycia własnej domeny e-mail"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "na 12 miesięcy"
+      ],
+      "SUMMER SALE": [
+        "LETNIE PROMOCJE"
+      ]
+    },
     "Recovery Email": {
       "Cancel": [
         "Anuluj"
@@ -14480,9 +14525,6 @@
       "Import contacts": [
         "Importuj kontakty"
       ],
-      "Import emails, calendars, contacts": [
-        "Importuj wiadomości, kalendarze i kontakty"
-      ],
       "Import events": [
         "Importuj wydarzenia"
       ],
@@ -14491,6 +14533,9 @@
       ],
       "Import groups": [
         "Importuj grupy"
+      ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "Importuj przez ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Information exposed in breach": [
         "Ujawnione informacje w wycieku"

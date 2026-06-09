@@ -572,6 +572,9 @@
       "Keep my subscription": [
         "Panatilihin ang aking subscription"
       ],
+      "Later": [
+        "Mamaya na"
+      ],
       "Learn more": [
         "Matuto pa"
       ],
@@ -1717,9 +1720,6 @@
       ]
     },
     "BOSS": {
-      "Authenticate": [
-        "Mag-authenticate"
-      ],
       "Calendar": [
         "Kalendaryo"
       ],
@@ -1732,25 +1732,6 @@
       "Estimated size": [
         "Tinatayang laki"
       ],
-      "Failed to load OAuth": [
-        "Nabigong i-load ang OAuth"
-      ],
-      "Install migration app": [
-        "I-install ang migration app"
-      ],
-      "Mail": [
-        "Mail"
-      ],
-      "Migrate from Google Workspace": [
-        "I-migrate mula sa Google Workspace"
-      ],
-      "Migration includes": [
-        "Kasama sa migration ang"
-      ],
-      "Migration started for ${ n } user": [
-        "Nagsimula na ang migration para sa ${ n } user",
-        "Nagsimula na ang migration para sa ${ n } na user"
-      ],
       "Migration status": [
         "Status ng migration"
       ],
@@ -1760,20 +1741,8 @@
       "Organization does not have enough storage available": [
         "Walang sapat na storage ang organisasyon"
       ],
-      "Select at least one user to start a migration": [
-        "Pumili ng kahit isang user upang simulan ang migration"
-      ],
-      "Sign in to Google Workspace": [
-        "Mag-sign in sa Google Workspace"
-      ],
       "User": [
         "User"
-      ],
-      "Verify your domain": [
-        "I-verify ang iyong domain"
-      ],
-      "Verify your domain to start a migration": [
-        "I-verify ang iyong domain upang simulan ang migration"
       ],
       "What are you migrating?": [
         "Ano ang iyong minamigrate?"
@@ -3227,9 +3196,6 @@
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Ang lahat sa iyong organisasyon ay makakakonekta sa mga shared server sa lahat ng bansa."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Para sa maayos na paglipat sa ${ BRAND_NAME }, i-import ang data mula sa Google, Outlook, at iba pa."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Maabisuhan kung na-leak ang password o iba pang data mula sa serbisyo ng third-party."
@@ -5720,24 +5686,6 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**I-import ang iyong mga umiiral na code** mula sa iba pang 2FA app, tulad ng Google Authenticator"
-      ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Hakbang 1: Anyayahan ang mga kaibigan** sa ${ BRAND_NAME } gamit ang referral link."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Hakbang 1:** Mag-imbita ng mga kaibigan sa ${ BRAND_NAME } gamit ang referral link."
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**Hakbang 2:** Makakakuha ang mga kaibigan ng **2 linggo nang libre** sa kanilang plano."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Hakbang 2:** Makakakuha ang mga kaibigan ng 2 linggong libre sa kanilang plano."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Hakbang 3:** Makakuha ng ${ referrerRewardAmount } na credit para sa bawat taong magsu-subscribe sa plano."
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**Hakbang 3:** Kumuha ng **${ referrerRewardAmount } na credits** para sa bawat taong mag-susubscribe sa isang plano."
       ],
       "**Sync codes** to all your devices": [
         "**I-sync ang mga code** sa lahat ng iyong device"
@@ -11869,6 +11817,78 @@
         "Hindi alam"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Kunin ang deal"
+      ],
+      "Summer Sale": [
+        "Sale sa Tag-araw"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/buwan"
+      ],
+      "15 GB storage": [
+        "15 GB na storage"
+      ],
+      "2 TB data storage": [
+        "2 TB na data storage"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB na storage: 40x ng kasalukuyang plano"
+      ],
+      "3 TB data storage": [
+        "3 TB na data storage"
+      ],
+      "500 GB storage": [
+        "500 GB na storage"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Lahat ng premium feature ng ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, at ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Lahat ng premium feature ng ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, at ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Nakabatay ang mga diskwento sa karaniwang buwanang presyo. Magre-renew ang subscription sa karaniwang taunang rate kapag natapos ang siklo ng pagsingil."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Buong access sa ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Mga indibidwal na account para sa 6 na user"
+      ],
+      "Individual accounts for you and a partner": [
+        "Mga indibidwal na account para sa iyo at sa isang partner"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online na editor ng dokumento at spreadsheet"
+      ],
+      "Recover previous file versions": [
+        "I-recover ang mga nakaraang bersyon ng file"
+      ],
+      "Stronger protection against cyber threats": [
+        "Mas malakas na proteksyon laban sa mga banta sa cyber"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Lumipat sa taunang plano at makatipid ng ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Walang limitasyong mga folder, label, at filter"
+      ],
+      "Use your own email domain": [
+        "Gumamit ng sariling domain ng email"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "para sa 12 buwan"
+      ],
+      "SUMMER SALE": [
+        "SALE SA TAG-ARAW"
+      ]
+    },
     "Recovery Email": {
       "Cancel": [
         "Kanselahin"
@@ -11942,14 +11962,8 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "I-enjoy ang **${ planTitle }** nang libre hanggang **${ textDate }**."
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "Magbigay ng 2 linggo, kumuha ng ${ referrerRewardAmount }"
-      ],
       "How your free trial works:": [
         "Paano gumagana ang iyong libreng pagsubok:"
-      ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "Gumagamit ako ng ${ BRAND_NAME } at naisip kong baka magustuhan mo ito. Isa itong secure na email, cloud storage, tagapamahala ng password, at VPN na pumoprotekta sa iyong privacy. Mag-sign up gamit ang link na ito upang makakuha ng 14 na araw ng mga premium na feature nang libre: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Kung magkakansela ka bago iyon, ma-da-downgrade ka sa ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } kapag natapos ang pagsubok. Kung hindi ka magkakansela, magsisimula ang buong plano at makakakuha ka ng **${ referrerRewardAmount }** na credit."
@@ -11984,9 +11998,6 @@
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Mayroon kang **${ daysRemaining } na araw na natitira** upang tuklasin ang lahat ng mga makapangyarihang feature na inaalok ng **${ planTitle }**.",
         "Mayroon kang **${ daysRemaining } na mga araw na natitira** upang tuklasin ang lahat ng mga makapangyarihang feature na inaalok ng **${ planTitle }**."
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "Makakakuha rin ang kaibigan ng ${ refereeRewardAmount } na mare-redeem sa kanilang susunod na bill!"
       ],
       "your subscription": [
         "ang iyong subscription"
@@ -14800,9 +14811,6 @@
       "Import contacts": [
         "I-import ang mga contact"
       ],
-      "Import emails, calendars, contacts": [
-        "I-import ang mga email, kalendaryo, contacts"
-      ],
       "Import events": [
         "I-import ang mga kaganapan"
       ],
@@ -14811,6 +14819,9 @@
       ],
       "Import groups": [
         "I-import ang mga pangkat"
+      ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "Mag-import gamit ang ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Information exposed in breach": [
         "Impormasyong na-expose sa breach"
@@ -14835,9 +14846,6 @@
       ],
       "Main password": [
         "Pangunahing password"
-      ],
-      "Migration assistant": [
-        "Migration assistant"
       ],
       "Minicalendar": [
         "Minicalendar"

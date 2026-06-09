@@ -1402,10 +1402,7 @@
         "Доверять"
       ],
       "Trust key": [
-        "Доверенный ключ",
-        "Доверенных ключа",
-        "Доверенных ключей",
-        "Доверенных ключей"
+        "Доверять ключу"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -3779,9 +3776,6 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Убедитесь, что вы по-прежнему можете получить доступ к своему аккаунту и данным, даже если вы потеряете ваш пароль ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Для плавного перехода на ${ BRAND_NAME } импортируйте данные из Google, Outlook и других приложений."
-      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
       ],
@@ -4153,6 +4147,9 @@
       "Aliases could not be loaded": [
         "Не удалось загрузить псевдонимы"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Весь объём хранилища был распределён. Пожалуйста, уменьшите объём хранилища, выделенного для других пользователей."
+      ],
       "Amount above the maximum.": [
         "Сумма выше допустимого максимума."
       ],
@@ -4447,6 +4444,15 @@
       "Please activate your search again": [
         "Активируйте поиск снова"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Перед добавлением адресов настройте пользовательский домен."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Пожалуйста, настройте свой домен перед добавлением пользователей в вашу организацию."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Пожалуйста, включите многопользовательский режим перед добавлением пользователей в вашу организацию."
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Пожалуйста, исправьте выделенный конфликт, чтобы продолжить.",
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
@@ -4476,6 +4482,9 @@
       ],
       "Please try generating the text again": [
         "Попробуйте сгенерировать текст еще раз"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Чтобы управлять несколькими пользователями, перейдите на бизнес-план с более чем 1 пользователем."
       ],
       "Port is required": [
         "Нужно указать порт"
@@ -4705,6 +4714,9 @@
       "You have reached the number of contacts limit for your account": [
         "Вы достигли лимита контактов для вашего аккаунта"
       ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Вы достигли максимального числа пользователей, предусмотренного вашим тарифом. Пожалуйста, улучшите ваш тариф прежде, чем добавлять нового пользователя."
+      ],
       "You must set a name": [
         "Вы должны задать имя"
       ],
@@ -4904,9 +4916,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Мы не смогли загрузить эту страницу. Пожалуйста, обновите страницу или проверьте подключение к Интернету."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Когда дополнительный пароль включен, управлять псевдонимами можно только в ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "У вас пока нет контактов. Начните с создания нового контакта"
@@ -6959,7 +6968,10 @@
         "Инициализация…"
       ],
       "Insert image": [
-        "Вставить изображение"
+        "Вставить изображение",
+        "Вставить изображения",
+        "Вставить изображения",
+        "Вставить изображения"
       ],
       "Insert link": [
         "Вставить ссылку"
@@ -11493,6 +11505,9 @@
       "Postal code": [
         "Почтовый индекс"
       ],
+      "Search": [
+        "Поиск"
+      ],
       "Search date, name, email address, or subject line": [
         "Поиск по дате, имени, адресу электронной почты или теме письма"
       ],
@@ -11749,6 +11764,78 @@
         "ВЕСЕННИЕ СКИДКИ"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Получить со скидкой"
+      ],
+      "Summer Sale": [
+        "Летние скидки"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "15 GB storage": [
+        "15 ГБ для хранения"
+      ],
+      "2 TB data storage": [
+        "2 ТБ для хранения данных"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 ГБ для хранения: в 40 раз больше вашего текущего тарифа"
+      ],
+      "3 TB data storage": [
+        "3 ТБ для хранения данных"
+      ],
+      "500 GB storage": [
+        "500 ГБ для хранения"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Все платные функции ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Все платные функции ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скидки рассчитываются от стандартной ежемесячной цены. Ваша подписка будет продлена по стандартному годовому тарифу в конце платежного цикла."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Полный доступ к ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Индивидуальные аккаунты для 6 пользователей"
+      ],
+      "Individual accounts for you and a partner": [
+        "Индивидуальные аккаунты для вас и партнера"
+      ],
+      "Online document and spreadsheet editor": [
+        "Онлайн-редактор документов и электронных таблиц"
+      ],
+      "Recover previous file versions": [
+        "Восстанавливайте предыдущие версии файлов"
+      ],
+      "Stronger protection against cyber threats": [
+        "Усиленная защита от киберугроз"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Перейдите на наш годовой тариф и сэкономьте ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Use your own email domain": [
+        "Используйте собственный домен адреса электронной почты"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "на 12 месяцев"
+      ],
+      "SUMMER SALE": [
+        "ЛЕТНИЕ СКИДКИ"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Зашифрованное сквозным шифрованием и подписанное сообщение"
@@ -11848,46 +11935,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Все псевдонимы"
-      ],
       "Create alias": [
         "Создать псевдоним"
-      ],
-      "Create an alias": [
-        "Создать псевдоним"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Создавайте псевдонимы на лету и легко управляйте псевдонимами и паролями."
-      ],
-      "Hide-my-email aliases": [
-        "Псевдонимы hide-my-email"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Псевдонимы Hide-my-email позволяют регистрироваться в Интернете, не сообщая свой адрес электронной почты. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Новый псевдоним"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Открыть ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Защитите свои личные данные в Интернете"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Попробуйте ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Используется на Amazon для покупок и прочего"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Когда вас попросят указать адрес электронной почты, укажите вместо него этот псевдоним. Псевдонимы предоставляются с помощью ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(откроет ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -13232,9 +13287,6 @@
       "Address verification disabled": [
         "Проверка адреса отключена"
       ],
-      "Alias copied to clipboard": [
-        "Псевдоним скопирован в буфер обмена"
-      ],
       "Alias saved and copied": [
         "Псевдоним сохранён и скопирован"
       ],
@@ -13324,9 +13376,6 @@
       ],
       "Labels applied.": [
         "Ярлыки применены."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Последние измененные псевдонимы хранятся в вашем самом старом хранилище"
       ],
       "Mail list unsubscribed": [
         "Вы удалились из списка рассылки"

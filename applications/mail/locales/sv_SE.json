@@ -328,17 +328,11 @@
       "Contract composer": [
         "Krymp redigeringsfönster"
       ],
-      "Copy": [
-        "Kopiera"
-      ],
       "Copy address": [
         "Kopiera adress"
       ],
       "Copy addresses": [
         "Kopiera adresser"
-      ],
-      "Copy alias “${ name }”": [
-        "Kopiera alias “${ name }“"
       ],
       "Copy email to clipboard": [
         "Kopiera e-post till urklipp"
@@ -1523,8 +1517,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1651,6 +1644,9 @@
       ],
       "Verify account": [
         "Verifiera konto"
+      ],
+      "Verify now": [
+        "Verifiera nu"
       ],
       "View": [
         "Visa"
@@ -2181,6 +2177,95 @@
       ],
       "Yearly": [
         "Årsvis"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Aktiverat"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adress används redan av en användare utanför din organisation. Kontakta kundsupport för att lösa detta"
+      ],
+      "All": [
+        "Alla"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Konfigurera migrering"
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Emails": [
+        "E-post"
+      ],
+      "Errors": [
+        "Fel"
+      ],
+      "Estimated size": [
+        "Beräknad storlek"
+      ],
+      "Find out what can be migrated.": [
+        "Ta reda på vad som kan migreras."
+      ],
+      "Has errors": [
+        "Har fel"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta."
+      ],
+      "Migrate": [
+        "Migrera"
+      ],
+      "Migrated": [
+        "Migrerad"
+      ],
+      "Migration status": [
+        "Migreringsstatus"
+      ],
+      "Missing organization private key": [
+        "Saknar organisationens privata nyckel"
+      ],
+      "Missing organization public key": [
+        "Saknar organisationens offentliga nyckel"
+      ],
+      "No users to display": [
+        "Inga användare att visa"
+      ],
+      "Not activated": [
+        "Inte aktiverat"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisation har inte tillräckligt med licenser tillgängligt"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisation har inte tillräckligt med lagringsutrymme tillgängligt"
+      ],
+      "Pending": [
+        "Väntar"
+      ],
+      "Select users to migrate": [
+        "Välj användare att migrera"
+      ],
+      "Size": [
+        "Storlek"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Användare"
+      ],
+      "What are you migrating?": [
+        "Vad migrerar du?"
+      ],
+      "You": [
+        "Du"
       ]
     },
     "Browser": {
@@ -4125,9 +4210,6 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Se till att du fortfarande kan komma åt ditt konto och dina data även om du förlorar ditt ${ BRAND_NAME }-lösenord."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "För en sömlös övergång till ${ BRAND_NAME }, importera din data från Google, Outlook och andra."
-      ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "För obegränsad åtkomst till skrivassistenten och mer, uppgradera till ${ BRAND_NAME } Duo."
       ],
@@ -4644,6 +4726,9 @@
       "Aliases could not be loaded": [
         "Alias kunde inte läsas in"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Allt lagringsutrymme har allokerats. Minska lagringsutrymmet som tilldelas andra användare."
+      ],
       "Amount above the maximum.": [
         "Belopp över det maximala."
       ],
@@ -4959,6 +5044,15 @@
       "Please activate your search again": [
         "Aktivera din sökning igen"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Konfigurera en anpassad domän innan du lägger till adresser."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Konfigurera en anpassad domän innan du lägger till användare till din organisation."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Aktivera stöd för flera användare innan du lägger till användare till din organisation."
+      ],
       "Please enter a valid postal code": [
         "Ange ett giltigt postnummer"
       ],
@@ -4998,6 +5092,9 @@
       ],
       "Please try generating the text again": [
         "Försök att generera texten igen"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Uppgradera till ett företagspaket med mer än 1 användare för att hantera flera användare."
       ],
       "Port is required": [
         "Port är obligatoriskt"
@@ -5243,6 +5340,12 @@
       "You have reached the number of contacts limit for your account": [
         "Du har nått gränsen för antalet kontakter för ditt konto"
       ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Du har använt alla adresser i ditt paket. Uppgradera ditt paket för att lägga till en ny adress eller inaktivera en adress i ditt konto."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Du har använt alla användare i ditt paket. Uppgradera ditt paket för att lägga till en ny användare."
+      ],
       "You must set a name": [
         "Du måste ange ett namn"
       ],
@@ -5458,9 +5561,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunde inte ladda denna sida. Uppdatera sidan eller kontrollera din internetanslutning."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "När extralösenord är aktiverat kan hantering av alias endast göras i ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Du har ingen kontakt ännu. Börja med att skapa en ny kontakt"
@@ -6722,6 +6822,10 @@
         "${ total } meddelande",
         "${ total } meddelanden"
       ],
+      "${ total } user found": [
+        "${ total } användare hittades",
+        "${ total } användare hittades"
+      ],
       "${ trackersCount } email tracker blocked": [
         "${ trackersCount } e-postspårare blockerad",
         "${ trackersCount } e-postspårare blockerade"
@@ -6768,23 +6872,11 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Anslut automatiskt**: Öppnar och ansluter till VPN så snart du slår på din enhet."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Bjud in dina vänner** till ${ BRAND_NAME } med din hänvisningslänk."
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill-switch**: Stoppar dataläckage genom att blockera ditt internet om VPN:et oväntat slutar fungera."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Steg 1:** Bjud in dina vänner till ${ BRAND_NAME } med din hänvisningslänk."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Steg 2:** Dina vänner får 2 veckor gratis på sitt valda ${ BRAND_NAME }-paket."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Steg 2:** Dina vänner får 2 veckor gratis på sitt paket."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Steg 3:** Få ${ referrerRewardAmount } krediter för varje vän som prenumererar på ett paket."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Steg 3:** Få ${ referrerRewardAmount } krediter för varje person som prenumererar på ett paket."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
@@ -7111,9 +7203,6 @@
       "Copy the link to clipboard": [
         "Kopiera länken till urklipp"
       ],
-      "Copy to clipboard": [
-        "Kopiera till urklipp"
-      ],
       "Copy your referral link": [
         "Kopiera din hänvisningslänk"
       ],
@@ -7205,6 +7294,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logga för Discover ProtectBuy"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Kommer du ihåg ditt lösenord? ${ verifyButton }"
       ],
       "Do you want to download this attachment anyway?": [
         "Vill du ladda ner denna bilaga ändå?",
@@ -7431,6 +7523,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "För fler sökresultat, prova att söka efter detta nyckelord i innehållet i dina e-postmeddelanden."
       ],
+      "Forgot password?": [
+        "Gömt lösenord?"
+      ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "Gratis att prova i ${ ASSISTANT_TRIAL_TIME_DAYS } dag",
         "Gratis att prova i ${ ASSISTANT_TRIAL_TIME_DAYS } dagar"
@@ -7579,7 +7674,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -7880,6 +7976,9 @@
       ],
       "Password must have:": [
         "Lösenord måste innehålla:"
+      ],
+      "Password verified": [
+        "Lösenord verifierat"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalningar är skyddad med TLS-kryptering och schweiziska integritetslagar."
@@ -9259,6 +9358,16 @@
         "Stjärnmärk"
       ]
     },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Byt till ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Byt till ${ MAIL_APP_NAME }"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Action shortcuts": [
         "Åtgärdsgenvägar"
@@ -9552,6 +9661,9 @@
       ],
       "Email address": [
         "E-postadress"
+      ],
+      "Email categories": [
+        "E-postkategorier"
       ],
       "Email format": [
         "E-postformat"
@@ -12724,6 +12836,9 @@
       "San Francisco": [
         "San Francisco"
       ],
+      "Search": [
+        "Sök"
+      ],
       "Search date, name, email address, or subject line": [
         "Sök datum, namn, e-postadress eller ämnesrad"
       ],
@@ -12732,6 +12847,9 @@
       ],
       "Search for name or email": [
         "Sök efter namn eller e-postadress"
+      ],
+      "Search for users or addresses": [
+        "Sök efter användare eller adresser"
       ],
       "Search messages": [
         "Sök meddelanden"
@@ -13015,6 +13133,78 @@
         "VÅRREA"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ],
+      "Summer Sale": [
+        "Sommarrea"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/månad"
+      ],
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "2 TB data storage": [
+        "2 TB lagringsutrymme"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagringsutrymme: 40x ditt nuvarande paket"
+      ],
+      "3 TB data storage": [
+        "3 TB lagringsutrymme"
+      ],
+      "500 GB storage": [
+        "500 GB lagringsutrymme"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter baseras på ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln löper ut."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Full åtkomst till ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuella konton för 6 användare"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuella konton för dig och en partner"
+      ],
+      "Online document and spreadsheet editor": [
+        "Dokument- och kalkylbladsredigerare online"
+      ],
+      "Recover previous file versions": [
+        "Återställ tidigare filversioner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Starkare skydd mot cyberhot"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Byt till vårt årspaket och spara ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Obegränsade mappar, etiketter och filter"
+      ],
+      "Use your own email domain": [
+        "Använd din egen e-postdomän"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "för 12 månader"
+      ],
+      "SUMMER SALE": [
+        "SOMMARREA"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "End-to-end-krypterat och signerat meddelande"
@@ -13180,46 +13370,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Alla alias"
-      ],
       "Create alias": [
         "Skapa alias"
-      ],
-      "Create an alias": [
-        "Skapa ett alias"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Generera alias i farten och hantera enkelt dina alias och lösenord."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-alias"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email-alias låter dig registrera dig för saker online utan att dela din e-postadress. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Nytt alias"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Öppna ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Skydda din identitet online"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Prova ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Används på Amazon för shopping etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "När du tillfrågas om din e-postadress, ge detta alias istället. Alias ​​tillhandahålls av ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(kommer öppna ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -14538,9 +14696,6 @@
       "Address verification disabled": [
         "Adressverifiering inaktiverad"
       ],
-      "Alias copied to clipboard": [
-        "Alias kopierat till urklipp"
-      ],
       "Alias saved and copied": [
         "Alias sparat och kopierat"
       ],
@@ -14629,9 +14784,6 @@
       ],
       "Labels applied.": [
         "Etiketter tillämpade."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Senast ändrade alias lagrade i ditt äldsta valv"
       ],
       "Mail list unsubscribed": [
         "Avslutad prenumeration från e-postlista"
@@ -15870,6 +16022,9 @@
       "Summary": [
         "Sammanfattning"
       ],
+      "Summer Sale": [
+        "Sommarrea"
+      ],
       "This field cannot be empty": [
         "Detta fält kan inte vara tomt"
       ],
@@ -15945,6 +16100,9 @@
       ],
       "Verification failed": [
         "Verifiering misslyckades"
+      ],
+      "Verify your password": [
+        "Verifiera ditt lösenord"
       ],
       "Verifying your card...": [
         "Verifierar ditt kort …"

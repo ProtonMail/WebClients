@@ -540,6 +540,9 @@
       "Keep my subscription": [
         "Ohrani mojo naročnino"
       ],
+      "Later": [
+        "Kasneje"
+      ],
       "Learn more": [
         "Več o tem"
       ],
@@ -1620,17 +1623,11 @@
       ]
     },
     "BOSS": {
-      "Authenticate your Google Workspace account": [
-        "Preverjanje pristnosti računa Google Workspace"
-      ],
       "Calendar": [
         "Koledar"
       ],
       "Contacts": [
         "Stiki"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Aplikacija Google Marketplace za kopiranje podatkov v ${ BRAND_NAME }"
       ],
       "Has errors": [
         "Ima napake"
@@ -1638,32 +1635,11 @@
       "In progress": [
         "V obdelavi"
       ],
-      "Install app": [
-        "Namesti aplikacijo"
-      ],
-      "Migration started for ${ n } user": [
-        "Začela se je migracija ${ n } uporabnika",
-        "Začela se je migracija ${ n } uporabnikov",
-        "Začela se je migracija ${ n } uporabnikov",
-        "Začela se je migracija ${ n } uporabnikov"
-      ],
       "Organization does not have enough seats available": [
         "Organizacija nima na voljo dovolj sedežev"
       ],
-      "Settings": [
-        "Nastavitve"
-      ],
       "Status": [
         "Stanje"
-      ],
-      "Users migrated": [
-        "Uporabniki so se preneseni"
-      ],
-      "Verify installation": [
-        "Preveri namestitev"
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Nismo mogli preveriti namestitve, preverite, ali ste jo namestili v svoj Google Workspace račun in poskusite znova."
       ]
     },
     "Browser": {
@@ -3074,9 +3050,6 @@
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Vsakdo v vaši organizaciji se lahko poveže s skupnimi strežniki v vseh državah."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Za nemoten prehod na ${ BRAND_NAME } uvozite svoje podatke iz storitev Google, Outlook in drugih."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe."
@@ -5565,24 +5538,6 @@
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Pridobite si naslov ${ BRAND_NAME }**, ki ga uporabite za vse storitve ${ BRAND_NAME_TWO }, vključno z ${ MAIL_SHORT_APP_NAME } in ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Korak 1: Povabite vaše prijatelje** na ${ BRAND_NAME } z vašo povezavo za priporočilo."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Korak 1:** Povabite vaše prijatelje na ${ BRAND_NAME } z vašo povezavo za priporočilo."
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**Korak 2:** Vaši prijatelji dobijo svoj paket **2 tedna brezplačno**."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Korak 2:** Vaši prijatelji dobijo svoj paket 2 tedna brezplačno."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Korak 3:** Prejmite ${ referrerRewardAmount } kot dobropis za vsako osebo, ki se naroči na paket."
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**Korak 3:** Prejmite **${ referrerRewardAmount } kot dobropis** za vsako osebo, ki se naroči na paket."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Več",
@@ -11272,6 +11227,78 @@
         "Yahoo"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Izkoristite posebno ponudbo"
+      ],
+      "Summer Sale": [
+        "Poletna razprodaja"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mesec"
+      ],
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "2 TB data storage": [
+        "2 TB shrambe podatkov"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB shrambe: 40-kratnik vašega trenutnega paketa"
+      ],
+      "3 TB data storage": [
+        "3 TB shrambe podatkov"
+      ],
+      "500 GB storage": [
+        "500 GB prostora"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Vse premijske funkcije storitev ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } in ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Vse premijske funkcije storitev ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } in ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Popusti temeljijo na standardnih mesečnih cenah. Vaša naročnina se bo ob koncu obračunskega obdobja podaljšala po standardni letni tarifi."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Poln dostop do ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Posamezni računi za 6 uporabnikov"
+      ],
+      "Individual accounts for you and a partner": [
+        "Posamezni računi za vas in partnerja"
+      ],
+      "Online document and spreadsheet editor": [
+        "Urejevalnik dokumentov in preglednic s povezavo"
+      ],
+      "Recover previous file versions": [
+        "Obnovi prejšnje različice datoteke"
+      ],
+      "Stronger protection against cyber threats": [
+        "Močnejša zaščita pred kibernetskimi grožnjami"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Preklopite na naš letni paket in prihranite ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neomejeno število map, oznak in filtrov"
+      ],
+      "Use your own email domain": [
+        "Uporabite svojo e-poštno domeno"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "za 12 mesecev"
+      ],
+      "SUMMER SALE": [
+        "POLETNA RAZPRODAJA"
+      ]
+    },
     "Recovery Email": {
       "Cancel": [
         "Prekliči"
@@ -11335,9 +11362,6 @@
       ],
       "How your free trial works:": [
         "Kako deluje vaš brezplačni preizkus:"
-      ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "Uporabljam ${ BRAND_NAME } in pomislil sem, da ti bo morda všeč. To je varna e-pošta, shramba v oblaku, upravitelj gesel in VPN, ki varuje zasebnost. Registriraj se s to povezavo in za 14 dni dobiš brezplačne premijske funkcije: ${ referralLink }"
       ],
       "Invite friends. Get credits.": [
         "Povabite prijatelje. Prejmite dobroimetje."
@@ -13930,9 +13954,6 @@
       "Import contacts": [
         "Uvozite stike"
       ],
-      "Import emails, calendars, contacts": [
-        "Uvozi e-pošto, koledarje, stike"
-      ],
       "Import events": [
         "Uvoz dogodkov"
       ],
@@ -13942,8 +13963,14 @@
       "Import groups": [
         "Uvozi skupine"
       ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "Uvozi preko ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
       "Import your data to ${ BRAND_NAME }": [
         "Uvozite svoje podatke v ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "Uvozi"
       ],
       "Information exposed in breach": [
         "Informacije, razkrite pri kršitvi"

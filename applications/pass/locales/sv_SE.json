@@ -2021,6 +2021,9 @@
       "Loading ${ PASS_APP_NAME }": [
         "Laddar in ${ PASS_APP_NAME }"
       ],
+      "Log out of any existing session:": [
+        "Logga ut från varje befintlig session:"
+      ],
       "Logging you out...": [
         "Du loggas ut …"
       ],
@@ -2054,10 +2057,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"

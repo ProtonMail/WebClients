@@ -318,17 +318,11 @@
       "Contract composer": [
         "전체화면 닫기"
       ],
-      "Copy": [
-        "복사"
-      ],
       "Copy address": [
         "주소 복사하기"
       ],
       "Copy addresses": [
         "주소 복사"
-      ],
-      "Copy alias “${ name }”": [
-        "별칭 \"${ name }\" 복사"
       ],
       "Copy email to clipboard": [
         "클립보드에 이메일 복사"
@@ -2151,6 +2145,44 @@
       ],
       "Yearly": [
         "연간"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "캘린더"
+      ],
+      "Configure migration": [
+        "이전 작업 구성"
+      ],
+      "Contacts": [
+        "연락처"
+      ],
+      "Estimated size": [
+        "예상 용량"
+      ],
+      "Has errors": [
+        "오류 있음"
+      ],
+      "In progress": [
+        "진행 중"
+      ],
+      "Migration status": [
+        "마이그레이션 상태"
+      ],
+      "Organization does not have enough seats available": [
+        "조직의 사용 권한이 충분하지 않습니다."
+      ],
+      "Organization does not have enough storage available": [
+        "조직에 충분한 저장공간이 남아있지 않습니다."
+      ],
+      "Status": [
+        "상태"
+      ],
+      "User": [
+        "사용자"
+      ],
+      "What are you migrating?": [
+        "무엇을 이전하시나요?"
       ]
     },
     "Browser": {
@@ -4090,9 +4122,6 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "${ BRAND_NAME } 비밀번호를 분실한 경우에도 계정과 데이터에 접근 가능한지 여부를 확인하세요."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "원활하게 ${ BRAND_NAME }(으)로 전환하기 위해 Google, Outlook 등에서 데이터를 불러오기 하세요."
-      ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "글쓰기 도우미 및 기타 서비스에 대한 무제한 접근이 필요하다면 ${ BRAND_NAME } Duo로 업그레이드하세요."
       ],
@@ -4567,6 +4596,9 @@
       "Aliases could not be loaded": [
         "별칭을 불러올 수 없습니다."
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "모든 저장 공간이 할당되었습니다. 다른 사용자에게 할당 된 저장공간을 줄이십시오."
+      ],
       "Amount above the maximum.": [
         "최대 금액보다 많습니다."
       ],
@@ -4879,6 +4911,15 @@
       "Please complete the billing details": [
         "청구 상세 정보를 입력해 주세요."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "주소를 추가하기 전에 지정 도메인을 설정해야 합니다."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "조직에 사용자를 추가하기 전에 커스텀 도메인을 구성하세요."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "조직에 사용자를 추가하기 전에 다중 사용자 지원을 활성화해주세요."
+      ],
       "Please enter a valid postal code": [
         "유효한 우편 번호를 입력해 주세요"
       ],
@@ -4917,6 +4958,9 @@
       ],
       "Please try generating the text again": [
         "문장 생성을 다시 시도해 보세요."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "1명 보다 더 많은 다중 사용자를 관리하려면 비즈니스 플랜으로 업그레이드 하세요."
       ],
       "Port is required": [
         "포트가 필요함"
@@ -5161,6 +5205,12 @@
       "You have reached the number of contacts limit for your account": [
         "계정의 최대 연락처 수를 초과했습니다"
       ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "플랜에서 사용 가능한 모든 주소를 사용했습니다. 새 주소를 사용하려면 계정에서 주소를 비활성화하거나 플랜을 업그레이드하세요."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "현재 플랜에서 추가 가능한 모든 사용자를 추가했습니다. 새 사용자를 추가하려면 플랜을 업그레이드해 주세요."
+      ],
       "You must set a name": [
         "이름을 반드시 설정해야 합니다"
       ],
@@ -5374,9 +5424,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "이 페이지를 로드할 수 없습니다. 페이지를 새로고침 하거나 인터넷 연결을 확인하세요."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "추가 비밀번호 설정 시, 별칭 관리는 ${ PASS_APP_NAME } 에서만 가능합니다."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "연락처를 가지고 있지 않습니다. 새로운 연락처를 추가해 보세요"
@@ -6556,6 +6603,9 @@
       "${ total } message": [
         "${ total }개 메시지"
       ],
+      "${ total } user found": [
+        "${ total }명 사용자 찾음"
+      ],
       "${ trackersCount } email tracker blocked": [
         "${ trackersCount }개 이메일 트래커 차단됨"
       ],
@@ -6597,21 +6647,6 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**킬 스위치**: VPN이 예기치 않게 끊길 경우 인터넷을 차단하여 데이터 유출을 차단합니다."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**1단계:** 리퍼럴 링크로 친구들을 ${ BRAND_NAME }에 초대하세요."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**2단계:** 초대한 친구들은 구독한 ${ BRAND_NAME } 플랜에 추가로 2주 무료 혜택을 받게 됩니다."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**2단계:** 초대한 친구들은 구독한 플랜에 추가로 2주 무료 혜택을 받게 됩니다."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**3단계:** 플랜을 구독하는 친구 한 명당 ${ referrerRewardAmount } 크레딧을 받아보세요."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**3단계:** 플랜을 구독하는 친구 한 명당 ${ referrerRewardAmount } 크레딧을 받아보세요."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 추가 저장공간"
@@ -12424,6 +12459,9 @@
       "San Francisco": [
         "샌프란시스코"
       ],
+      "Search": [
+        "검색"
+      ],
       "Search date, name, email address, or subject line": [
         "날짜, 이름, 이메일 주소 및 제목을 입력하세요"
       ],
@@ -12711,6 +12749,78 @@
         "봄 세일"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "할인 받기"
+      ],
+      "Summer Sale": [
+        "여름 세일"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/월"
+      ],
+      "15 GB storage": [
+        "15 GB 저장공간"
+      ],
+      "2 TB data storage": [
+        "2 TB 데이터 저장공간"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 저장공간: 현재 요금제의 40배"
+      ],
+      "3 TB data storage": [
+        "3 TB 데이터 저장공간"
+      ],
+      "500 GB storage": [
+        "500 GB 저장공간"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 premium 기능"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 premium 기능"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME }에 대한 완전한 접근"
+      ],
+      "Individual accounts for 6 users": [
+        "6인용 개별 계정"
+      ],
+      "Individual accounts for you and a partner": [
+        "귀하와 파트너를 위한 개별 계정"
+      ],
+      "Online document and spreadsheet editor": [
+        "온라인 문서 및 스프레드시트 편집기"
+      ],
+      "Recover previous file versions": [
+        "이전 파일 버전 복구"
+      ],
+      "Stronger protection against cyber threats": [
+        "사이버 위협에 대한 더욱 강력한 보호"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "연간 요금제로 전환하고 ${ toYearlyDiscountAmount }를 절약하세요!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "무제한 폴더, 라벨 및 필터"
+      ],
+      "Use your own email domain": [
+        "나만의 이메일 도메인 사용"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12개월 동안"
+      ],
+      "SUMMER SALE": [
+        "여름 세일"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "종단간 암호화와 서명된 메시지"
@@ -12872,46 +12982,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "모든 별칭"
-      ],
       "Create alias": [
         "별칭 생성"
-      ],
-      "Create an alias": [
-        "별칭 생성"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "즉석에서 만들어지는 별칭, 그리고 간편한 별칭과 비밀번호의 관리."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email 별칭"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email 별칭은 이메일 주소 공유 없이도 로그인할 수 있도록 해줍니다. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "새 별칭"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } 열기"
-      ],
-      "Protect your online identity": [
-        "나의 온라인 신원 보호"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } 체험"
       ],
       "Used on Amazon for shopping, etc.": [
         "쇼핑을 위해 쿠팡에서 사용됨, 기타 등등."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "이메일 주소를 누군가 물어본다면, 별칭을 대신 제공하세요. 별칭이 ${ passLink }에 의해 제공됩니다."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(${ PASS_APP_NAME }을 엽니다)"
       ]
     },
     "Security Center - Action": {
@@ -14162,9 +14240,6 @@
       "Address verification disabled": [
         "주소 인증 비활성화됨"
       ],
-      "Alias copied to clipboard": [
-        "별칭이 클립보드에 복사됨"
-      ],
       "Alias saved and copied": [
         "별칭이 저장 및 복사되었습니다"
       ],
@@ -14251,9 +14326,6 @@
       ],
       "Labels applied.": [
         "라벨 적용됨"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "마지막으로 편집한 별칭이 가장 오래된 금고에 보관되었습니다"
       ],
       "Mail list unsubscribed": [
         "매일 리스트가 구독 취소되었습니다"

@@ -2139,8 +2139,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Zorg ervoor dat u nog steeds toegang hebt tot uw account en gegevens, zelfs als u uw ${ BRAND_NAME } wachtwoord verliest."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Voor een naadloze overgang naar ${ BRAND_NAME } kunt u uw gegevens importeren vanuit Google, Outlook en andere."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Voor een naadloze introductie van uw team bij ${ BRAND_NAME } importeert u uw gegevens uit Google, Outlook en anderen."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ontvang een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
@@ -2381,6 +2381,9 @@
       "Payment process not supported": [
         "Betalingsproces niet ondersteund"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Controleer of uw ABN geregistreerd is voor grensoverschrijdende BTW"
+      ],
       "Please complete the billing details": [
         "Voltooi de factuurgegevens"
       ],
@@ -2467,6 +2470,9 @@
       ],
       "Username must end with a letter or digit": [
         "Gebruikersnaam moet met een letter of cijfer eindigen"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "BTW-nummer moet beginnen met ${ prefixes }"
       ],
       "Wrong billing address": [
         "Verkeerd factuuradres"
@@ -5686,11 +5692,11 @@
       "Human verification": [
         "Persoonsverificatie"
       ],
-      "Import emails, calendars, contacts": [
-        "Importeer e-mails, agenda's, contacten"
-      ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migreer uw organisatie naar ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Mini-agenda"

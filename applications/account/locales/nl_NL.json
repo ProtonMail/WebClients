@@ -156,6 +156,9 @@
       "Add public holidays": [
         "Feestdagen toevoegen"
       ],
+      "Add recovery options": [
+        "Voeg herstelopties toe"
+      ],
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "Verwijzingslink toevoegen aan de ${ MAIL_APP_NAME }-handtekening"
       ],
@@ -260,6 +263,9 @@
       ],
       "Check import progress": [
         "Import-voortgang checken"
+      ],
+      "Check now": [
+        "Nu controleren"
       ],
       "Choose a file or drag it here": [
         "Kies een bestand of sleep het hierheen"
@@ -681,6 +687,9 @@
       "Edit group": [
         "Groep bewerken"
       ],
+      "Edit invoice details": [
+        "Factuurgegevens bewerken"
+      ],
       "Edit invoice note": [
         "Factuurnota bewerken"
       ],
@@ -833,6 +842,9 @@
       ],
       "Get Deal": [
         "Neem deze aanbieding"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Krijg hulp van ${ LUMO_SHORT_APP_NAME }"
       ],
       "Get in touch": [
         "Neem contact op"
@@ -1076,6 +1088,9 @@
       ],
       "Manage labels": [
         "Labels beheeren"
+      ],
+      "Manage migration": [
+        "Beheer migratie"
       ],
       "Manage subscription": [
         "Abonnement beheren"
@@ -1365,6 +1380,9 @@
       "Review": [
         "Bekijken"
       ],
+      "Review recovery options": [
+        "Herstelopties bekijken"
+      ],
       "Revoke": [
         "Intrekken"
       ],
@@ -1524,6 +1542,9 @@
       "Set up a custom domain": [
         "Een eigen domein instellen"
       ],
+      "Set up account recovery": [
+        "Accountherstel instellen"
+      ],
       "Set up auto-forwarding from Gmail": [
         "Stel automatisch doorsturen in vanaf Gmail"
       ],
@@ -1580,6 +1601,9 @@
       ],
       "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Uitloggen van ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
+      "Sign out of ${ tokens[0].Account }": [
+        "Uitloggen van ${ tokens[0].Account }"
       ],
       "Sign out of all accounts": [
         "Alle accounts uitloggen"
@@ -1793,6 +1817,9 @@
       ],
       "Verify domain": [
         "Domein verifiëren"
+      ],
+      "Verify now": [
+        "Nu verifiëren"
       ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Controleer het domein ${ unverifiedSSODomain.DomainName }"
@@ -2883,6 +2910,9 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Easy Switch": [
+        "${ BRAND_NAME } Gemakkelijke overstap"
+      ],
       "${ relevantCount } of ${ totalCount }": [
         "${ relevantCount } van ${ totalCount }"
       ],
@@ -2895,23 +2925,23 @@
       "Activated": [
         "Geactiveerd"
       ],
-      "Add a domain": [
-        "Een domein toevoegen"
-      ],
       "Add domain": [
         "Domein toevoegen"
       ],
-      "Add users and configure your domain manually for sending and receiving mail. Ideal for small teams starting from a clean slate.": [
-        "Voeg handmatig gebruikers toe en configureer uw domein voor het verzenden en ontvangen van e-mail. Ideaal voor kleine teams die helemaal vanaf nul beginnen."
+      "Add your organization email domain to ${ BRAND_NAME }.": [
+        "Voeg het e-maildomein van uw organisatie toe aan ${ BRAND_NAME }."
       ],
       "All": [
         "Alle"
       ],
+      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
+        "Alle gemigreerde gebruikersaccounts zijn klaar om te worden uitgenodigd voor uw ${ BRAND_NAME }-organisatie."
+      ],
+      "An unknown error ocurred. Please refresh the page and try again": [
+        "Er is een onbekende fout opgetreden. Vernieuw de pagina en probeer het opnieuw"
+      ],
       "Authenticate": [
         "Authenticeren"
-      ],
-      "Authenticate to Google Workspace": [
-        "Meld u aan bij Google Workspace"
       ],
       "Authenticate your Google Workspace account": [
         "Authentiseer uw Google Workspace-account"
@@ -2919,26 +2949,32 @@
       "Calendar": [
         "Agenda"
       ],
-      "Change": [
-        "Wijzigen"
-      ],
-      "Choose how you want to bring your team and email setup to ${ BRAND_NAME }.": [
-        "Kies hoe u uw team en e-mailinstellingen wilt overzetten naar ${ BRAND_NAME }."
-      ],
-      "Configure": [
-        "Configureren"
+      "Collapse step": [
+        "Stap samenvouwen"
       ],
       "Configure migration": [
         "Migratie configureren"
       ],
+      "Configure users": [
+        "Configureer gebruikers"
+      ],
       "Configure your domain": [
         "Configureer uw domein"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Neem contact op met uw beheerder om een ​​migratie te starten."
       ],
       "Contacts": [
         "Contacten"
       ],
-      "Continue migration": [
-        "Migratie verderzetten"
+      "Copy the below code and paste it in the DNS section of your domain host.": [
+        "Kopieer de onderstaande code en plak deze in het DNS-sectie van uw domeinhost."
+      ],
+      "Creating accounts. Going private": [
+        "Accounts aanmaken. Privé gaan"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Gegevensmigratiestatus van Google Workspace naar ${ BRAND_NAME }"
       ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM voegt een digitale handtekening toe aan elke e-mail, zodat ontvangers kunnen controleren of het bericht daadwerkelijk van uw domein afkomstig is en niet is gewijzigd tijdens de verzending. Zonder DKIM worden berichten mogelijk als minder betrouwbaar beschouwd."
@@ -2952,6 +2988,9 @@
       "Domain provider": [
         "Domeinleverancier"
       ],
+      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
+        "Weet u niet waar u moet beginnen? Bekijk hoe u uw DNS bijwerkt op ${ registrarLink }"
+      ],
       "Emails": [
         "E-mails"
       ],
@@ -2961,20 +3000,20 @@
       "Estimated size": [
         "Geschatte grootte."
       ],
+      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
+        "Iedereen krijgt dezelfde uitnodigingslink. Ze bezoeken de pagina, voeren hun e-mailadres in en er verschijnt een verificatiecode in hun Gmail-inbox. Van daaruit stelden ze hun ${ BRAND_NAME }-wachtwoord in."
+      ],
+      "Expand step": [
+        "Stap uitvouwen"
+      ],
       "Failed to load OAuth": [
         "Laden van OAuth mislukt"
       ],
       "Final step": [
         "Laatste stap"
       ],
-      "Finalize your migration": [
-        "Voltooi uw migratie"
-      ],
-      "Finish setting up your business account": [
-        "Voltooi het instellen van uw zakelijke account"
-      ],
-      "Go to Domain names": [
-        "Ga naar Domeinnamen"
+      "Get help and useful tips for other domain providers ${ here }": [
+        "Krijg ${ here } hulp en handige tips voor andere domeinproviders"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace-app om gegevens naar ${ BRAND_NAME } te kopiëren"
@@ -2984,6 +3023,9 @@
       ],
       "Has errors": [
         "Bevat fouten"
+      ],
+      "Import completed successfully": [
+        "Importeren is succesvol voltooid"
       ],
       "Import details": [
         "Gegevens importeren"
@@ -2997,8 +3039,17 @@
       "Install migration app": [
         "Installeer migratie app"
       ],
-      "Install Migration assistant": [
-        "Migratie-assistent installeren"
+      "Invitation link": [
+        "Uitnodigingslink"
+      ],
+      "Invitation message": [
+        "Uitnodigingsbericht"
+      ],
+      "invite link": [
+        "uitnodigings link"
+      ],
+      "It can take up to 24 hours for these changes to propagate.": [
+        "Het kan tot 24 uur duren voordat deze wijzigingen zijn doorgevoerd."
       ],
       "Mail": [
         "Mail"
@@ -3006,14 +3057,17 @@
       "Member address not found. Please contact customer support to resolve this": [
         "Lidadres niet gevonden. Neem contact op met de klantenservice om dit op te lossen"
       ],
+      "Migrate": [
+        "Migreer"
+      ],
       "Migrate accounts": [
         "Accounts migreren"
       ],
+      "Migrate accounts to ${ BRAND_NAME }": [
+        "Accounts migreren naar ${ BRAND_NAME }"
+      ],
       "Migrate from Google Workspace": [
         "Migreren vanuit Google Workspace"
-      ],
-      "Migrate users to ${ BRAND_NAME }": [
-        "Migreer gebruikers naar ${ BRAND_NAME }"
       ],
       "Migrated": [
         "Gemigreerd"
@@ -3031,14 +3085,17 @@
       "Migration status": [
         "Migratiestatus"
       ],
+      "Migration summary": [
+        "Samenvatting van de migratie"
+      ],
       "Missing organization private key": [
         "Ontbrekende privésleutel van de organisatie"
       ],
       "Missing organization public key": [
         "Ontbrekende openbare sleutel van de organisatie"
       ],
-      "Move your users, emails, and settings from Google Workspace automatically. We’ll guide you through connecting your account, verifying your domain, and migrating users securely.": [
-        "Verplaats uw gebruikers, e-mails en instellingen automatisch vanuit Google Workspace. Wij begeleiden u bij het koppelen van uw account, het verifiëren van uw domein en het veilig migreren van gebruikers."
+      "Need help?": [
+        "Hulp nodig?"
       ],
       "No users to display": [
         "Geen gebruikers om weer te geven"
@@ -3048,6 +3105,12 @@
       ],
       "Not confirmed": [
         "Niet bevestigd"
+      ],
+      "Not detected correctly? Choose your provider from the list.": [
+        "Niet correct gedetecteerd? Kies uw aanbieder uit de lijst."
+      ],
+      "Onboard your team": [
+        "Betrek uw team"
       ],
       "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
         "Zodra we hebben bevestigd dat e-mails worden doorgestuurd naar ${ BRAND_NAME }, wordt de migratie afgerond. U ontvangt een bevestigingsmail wanneer dit is gebeurd. Dit proces kan tot 24 uur duren."
@@ -3061,32 +3124,29 @@
       "Pending": [
         "In behandeling"
       ],
+      "Please don’t close or refresh this window.": [
+        "Sluit of vernieuw dit venster niet."
+      ],
+      "Reauthenticate your Google Workspace account to start a migration": [
+        "Verifieer uw Google Workspace-account opnieuw om een ​​migratie te starten"
+      ],
       "Refresh": [
         "Vernieuw"
-      ],
-      "Required to create user accounts": [
-        "Nodig om gebruikersaccounts aan te maken."
       ],
       "Select at least one user to start a migration": [
         "Selecteer minimaal één gebruiker om een migratie te starten"
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selecteer precies wat u wilt migreren. Het is van toepassing op alle organisatiegebruikers."
+      ],
+      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
+        "Selecteer de accounts die u wilt toevoegen aan ${ BRAND_NAME }. U kunt uw hele organisatie vandaag nog migreren of klein beginnen en de rest meenemen wanneer u er klaar voor bent."
+      ],
       "Select users to migrate": [
         "Selecteer gebruikers om te migreren"
       ],
-      "Set up": [
-        "Configureren"
-      ],
-      "Set up billing information": [
-        "Facturatiegegevens instellen"
-      ],
-      "Set up manually": [
-        "Handmatig instellen"
-      ],
       "Set up secure sending (SPF)": [
         "Beveiligd verzenden (SPF) instellen"
-      ],
-      "Set up two-factor authentication": [
-        "Tweestapsverificatie instellen"
       ],
       "Settings": [
         "Instellingen"
@@ -3094,8 +3154,14 @@
       "Sign in to Google Workspace": [
         "Inloggen bij Google Workspace"
       ],
+      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
+        "Log in met een Google Workspace-beheerdersaccount voor ${ BRAND_NAME } om de migratie in te stellen."
+      ],
       "Size": [
         "Grootte"
+      ],
+      "Skip": [
+        "Overslaan"
       ],
       "Skipped ${ count } contact due to incompatibilities": [
         "${ count } contact is overgeslagen vanwege onverenigbaarheden",
@@ -3105,11 +3171,15 @@
         "${ count } e-mail is overgeslagen vanwege onverenigbaarheden",
         "${ count } e-mails zijn overgeslagen vanwege onverenigbaarheden"
       ],
-      "Start migration": [
-        "Migratie starten"
+      "Skipped ${ count } event due to incompatibilities": [
+        "${ count } gebeurtenis werd overgeslagen vanwege onverenigbaarheden",
+        "${ count } gebeurtenissen zijn overgeslagen vanwege onverenigbaarheden"
       ],
       "Status": [
         "Status"
+      ],
+      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
+        "Als u de gegevens van uw organisatie naar ${ BRAND_NAME } wilt brengen, installeert u ${ BRAND_NAME } Easy Switch vanuit de Google Workspace Marketplace. Nadat u het hebt geïnstalleerd, komt u hier terug om door te gaan."
       ],
       "Update records for receiving": [
         "Gegevens bijwerken voor ontvangst"
@@ -3123,11 +3193,14 @@
       "Users migrated": [
         "Gebruikers gemigreerd"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Gebruikers die toegang hebben gehad tot hun ${ BRAND_NAME }-account"
+      ],
+      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Gebruikers die hun account nog niet hebben geclaimd voordat de migratie is voltooid, moeten een wachtwoordreset aanvragen bij hun ${ BRAND_NAME } organisatiebeheerder."
+      ],
       "Verified": [
         "Geverifiëerd"
-      ],
-      "Verify domain ownership": [
-        "Verifieer domeineigendom"
       ],
       "Verify installation": [
         "Installatie verifiëren"
@@ -3138,11 +3211,20 @@
       "Verify your domain to start a migration": [
         "Verifieer uw domein om een migratie te starten"
       ],
+      "Waiting for MX...": [
+        "Wachten op MX..."
+      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "We konden de installatie niet verifiëren. Controleer of u deze in uw Google Workspace-account hebt geïnstalleerd en probeer het opnieuw."
       ],
+      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
+        "We gaan over op ${ BRAND_NAME }, de beveiligde e-mailservice.\nEn uw ${ BRAND_NAME }-account is klaar om te claimen.\nKlik op de ${ inviteLink }.\nVoer uw e-mailadres in, we sturen een code naar uw Gmail.\nGebruik het om uw wachtwoord in te stellen — en uw ${ BRAND_NAME }-account is van u.\nEen tijdje zullen beide naast elkaar werken. ${ BRAND_NAME } en Gmail.\nAls iedereen de overstap heeft gemaakt, beëindigen we Gmail. \nWe zullen u eraan herinneren voordat dit gebeurt."
+      ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "We hebben gemerkt dat sommige gebruikers hun ${ BRAND_NAME } profiel nog niet hebben geactiveerd."
+      ],
+      "We’re creating your accounts and importing your data now. Every email, every event is yours alone. Visible to your team only. Not us, not anyone else.": [
+        "We maken nu uw accounts aan en importeren uw gegevens. Elke e-mail, elk evenement is alleen van u. Alleen zichtbaar voor uw team. Wij niet, en niemand anders."
       ],
       "What are you migrating?": [
         "Wat migreert u?"
@@ -3152,6 +3234,9 @@
       ],
       "You're all set!": [
         "U bent helemaal klaar!"
+      ],
+      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
+        "U bent bijna klaar. U moet uw domein configureren om uw e-mails rechtstreeks op ${ BRAND_NAME } te ontvangen. Na bevestiging ontvangt uw team geen nieuwe e-mails meer op Gmail en wordt de migratie voltooid."
       ]
     },
     "breadcrumb": {
@@ -4071,9 +4156,6 @@
       ]
     },
     "Country name": {
-      "Abkhazia": [
-        "Abchazië"
-      ],
       "Afghanistan": [
         "Afghanistan"
       ],
@@ -4083,9 +4165,6 @@
       "Algeria": [
         "Algerije"
       ],
-      "American Samoa": [
-        "Amerikaans Samoa"
-      ],
       "Andorra": [
         "Andorra"
       ],
@@ -4094,9 +4173,6 @@
       ],
       "Anguilla": [
         "Anguilla"
-      ],
-      "Antarctica": [
-        "Antarctica"
       ],
       "Antigua and Barbuda": [
         "Antigua en Barbuda"
@@ -4109,9 +4185,6 @@
       ],
       "Aruba": [
         "Aruba"
-      ],
-      "Ascension Island": [
-        "Ascension"
       ],
       "Australia": [
         "Australië"
@@ -4154,9 +4227,6 @@
       ],
       "Bolivia": [
         "Bolivia"
-      ],
-      "Bonaire, Sint Eustatius and Saba": [
-        "Bonaire, Sint Eustatius en Saba"
       ],
       "Bosnia and Herzegovina": [
         "Bosnië en Herzegovina"
@@ -4233,9 +4303,6 @@
       "Congo (The Democratic Republic of the)": [
         "Congo (Democratische Republiek)"
       ],
-      "Congo, Democratic Republic of the": [
-        "Congo, Democratische Republiek"
-      ],
       "Cook Islands": [
         "Cook Eilanden"
       ],
@@ -4293,23 +4360,14 @@
       "Estonia": [
         "Estland"
       ],
-      "Eswatini": [
-        "Swaziland"
-      ],
       "Ethiopia": [
         "Ethiopië"
-      ],
-      "Falkland Islands": [
-        "Falklandeilanden"
       ],
       "Falkland Islands (Malvinas)": [
         "Falkland Eilanden (Malvinas)"
       ],
       "Faroe Islands": [
         "Faeröer Eilanden"
-      ],
-      "Federated States of Micronesia": [
-        "Federale Staten van Micronesië"
       ],
       "Fiji": [
         "Fiji"
@@ -4359,9 +4417,6 @@
       "Guadeloupe": [
         "Guadeloupe"
       ],
-      "Guam": [
-        "Guam"
-      ],
       "Guatemala": [
         "Guatemala"
       ],
@@ -4404,12 +4459,6 @@
       "Indonesia": [
         "Indonesië"
       ],
-      "International": [
-        "Internationaal"
-      ],
-      "Iran": [
-        "Iran"
-      ],
       "Iraq": [
         "Irak"
       ],
@@ -4418,9 +4467,6 @@
       ],
       "Islamic Republic of Iran": [
         "Islamitische Republiek Iran"
-      ],
-      "Isle of Man": [
-        "Isle of Man"
       ],
       "Israel": [
         "Israël"
@@ -4433,9 +4479,6 @@
       ],
       "Japan": [
         "Japan"
-      ],
-      "Jersey": [
-        "Jersey"
       ],
       "Jordan": [
         "Jordanië"
@@ -4467,9 +4510,6 @@
       "Lao People's Democratic Republic": [
         "Lao Democratische Volksrepubliek"
       ],
-      "Laos": [
-        "Laos"
-      ],
       "Latvia": [
         "Letland"
       ],
@@ -4481,9 +4521,6 @@
       ],
       "Liberia": [
         "Liberia"
-      ],
-      "Libya": [
-        "Libië"
       ],
       "Libyan Arab Jamahiriya": [
         "Libië"
@@ -4593,14 +4630,8 @@
       "Norfolk Island": [
         "Norfolk eiland"
       ],
-      "North Korea": [
-        "Noord-Korea"
-      ],
       "North Macedonia": [
         "Noord-Macedonië"
-      ],
-      "Northern Mariana Islands": [
-        "Noordelijke Marianen"
       ],
       "Norway": [
         "Noorwegen"
@@ -4659,9 +4690,6 @@
       "Rwanda": [
         "Rwanda"
       ],
-      "Saint Barthélemy": [
-        "Sint-Bartholomeus"
-      ],
       "Saint Helena": [
         "Sint-Helena"
       ],
@@ -4670,9 +4698,6 @@
       ],
       "Saint Lucia": [
         "Saint Lucia"
-      ],
-      "Saint Martin (French Part)": [
-        "Sint Maarten (Frans deel)"
       ],
       "Saint Pierre and Miquelon": [
         "Saint-Pierre en Miquelon"
@@ -4707,9 +4732,6 @@
       "Singapore": [
         "Singapore"
       ],
-      "Sint Maarten": [
-        "Sint-Maarten"
-      ],
       "Slovakia": [
         "Slowakije"
       ],
@@ -4727,12 +4749,6 @@
       ],
       "South Georgia and the South Sandwich Islands": [
         "Zuid-Georgië en de Zuidelijke Sandwicheilanden"
-      ],
-      "South Korea": [
-        "Zuid-Korea"
-      ],
-      "South Ossetia": [
-        "Zuid-Ossetië"
       ],
       "South Sudan": [
         "Zuid-Soedan"
@@ -4761,9 +4777,6 @@
       "Switzerland": [
         "Zwitserland"
       ],
-      "Syria": [
-        "Syrië"
-      ],
       "Syrian Arab Republic": [
         "Syrische Arabische Republiek"
       ],
@@ -4773,17 +4786,11 @@
       "Tajikistan": [
         "Tadjikistan"
       ],
-      "Tanzania": [
-        "Tanzania"
-      ],
       "Tanzania, United Republic of": [
         "Tanzania, Verenigde Republiek van"
       ],
       "Thailand": [
         "Thailand"
-      ],
-      "Timor-Leste": [
-        "Oost-Timor"
       ],
       "Togo": [
         "Togo"
@@ -4796,9 +4803,6 @@
       ],
       "Trinidad and Tobago": [
         "Trinidad en Tobago"
-      ],
-      "Tristan da Cunha": [
-        "Tristan da Cunha"
       ],
       "Tunisia": [
         "Tunesië"
@@ -4830,9 +4834,6 @@
       "United States": [
         "Verenigde Staten"
       ],
-      "United States Minor Outlying Islands": [
-        "Amerikaanse ondergeschikte afgelegen eilanden"
-      ],
       "Uruguay": [
         "Uruguay"
       ],
@@ -4848,12 +4849,6 @@
       "Vietnam": [
         "Vietnam"
       ],
-      "Virgin Islands, British": [
-        "Maagdeneilanden, Verenigd Koninkrijk"
-      ],
-      "Virgin Islands, U.S.": [
-        "Maagdeneilanden, Verenigde Staten."
-      ],
       "Wallis and Futuna": [
         "Wallis en Futuna"
       ],
@@ -4868,9 +4863,6 @@
       ],
       "Zimbabwe": [
         "Zimbabwe"
-      ],
-      "Åland Islands": [
-        "Aland Eilanden"
       ]
     },
     "Country select label": {
@@ -5234,8 +5226,8 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Iedereen in uw organisatie kan verbinding maken met gedeelde servers in alle landen."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Voor een naadloze overgang naar ${ BRAND_NAME } kunt u uw gegevens importeren vanuit Google, Outlook en andere."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Voor een naadloze introductie van uw team bij ${ BRAND_NAME } importeert u uw gegevens uit Google, Outlook en anderen."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ontvang een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
@@ -7279,6 +7271,9 @@
       "Please add a payment method before reactivating your subscription": [
         "Voeg een betaalmethode toe voordat u uw abonnement opnieuw activeert."
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Controleer of uw ABN geregistreerd is voor grensoverschrijdende BTW"
+      ],
       "Please complete the billing details": [
         "Voltooi de factuurgegevens"
       ],
@@ -7409,6 +7404,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
+      ],
+      "Something went wrong while converting the address": [
+        "Er is iets misgegaan tijdens het aanmaken van het adres"
       ],
       "Something went wrong while creating the address": [
         "Er is iets misgegaan tijdens het aanmaken van het adres"
@@ -7550,6 +7548,9 @@
       ],
       "Validation error": [
         "Validatiefout"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "BTW-nummer moet beginnen met ${ prefixes }"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Verificatie mislukt, probeer het over een uur opnieuw."
@@ -8889,6 +8890,9 @@
       ]
     },
     "group_modal": {
+      "Add delegated roles to a group to grant its members only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Voeg gedelegeerde rollen toe aan een groep om de leden alleen de specifieke machtigingen te geven die ze nodig hebben, waardoor de volledige beheerbevoegdheid gescheiden blijft en uw omgeving veilig blijft."
+      ],
       "General": [
         "Algemeen"
       ],
@@ -9472,8 +9476,14 @@
       "Imported": [
         "Geïmporteerd"
       ],
+      "In progress": [
+        "Bezig"
+      ],
       "In progress...": [
         "Bezig..."
+      ],
+      "Migrated": [
+        "Gemigreerd"
       ],
       "Paused": [
         "Gepauzeerd"
@@ -9827,32 +9837,23 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importeer uw bestaande codes** van andere 2FA-apps, zoals Google Authenticator"
       ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Step 1: Nodig uw vrienden uit** voor ${ BRAND_NAME } met uw verwijzingslink."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Stap 1:** Nodig uw vrienden uit voor ${ BRAND_NAME } met uw verwijzingssnelkoppeling."
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**Stap 2:** Uw vrienden krijgen **2 weken gratis** op hun abonnement."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Stap 2:** Uw vrienden krijgen 2 weken gratis op hun abonnement."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Stap 3:** Ontvang ${ referrerRewardAmount } tegoed voor elke persoon die zich inschrijft voor een abonnement."
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**Stap 3:** Ontvang **${ referrerRewardAmount } tegoed** voor elke persoon die zich inschrijft voor een abonnement."
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Nodig uw vrienden uit** voor ${ BRAND_NAME } met uw verwijzingslink."
       ],
       "**Sync codes** to all your devices": [
         "**Synchroniseer codes** naar al uw apparaten"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Ze krijgen ${ refereeRewardAmount }** aan credits als ze zich abonneren."
       ],
       "**This will disable 2-factor authentication.**": [
         "**Dit zal 2-factor authenticatie uitschakelen.**"
       ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Dit zal end-to-end versleutelde e-mail doorsturingen uitschakelen:** u kunt deze later opnieuw instellen."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**U krijgt ${ referrerRewardAmount }** aan credits voor elke vriend die zich abonneert."
       ],
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**Uw herstel e-mail alleen is niet voldoende om uw versleutelde gegevens te herstellen** nadat u uw wachtwoord opnieuw hebt ingesteld."
@@ -10582,6 +10583,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Vergeet dit wachtwoord NIET. Als u het vergeet, kan u uw organisatie niet meer beheren."
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Weet u uw wachtwoord nog? ${ verifyButton }"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Wilt u alle andere sessies intrekken behalve de huidige?"
       ],
@@ -10660,6 +10664,9 @@
       ],
       "Edit link": [
         "Link bewerken"
+      ],
+      "Editing requires permission": [
+        "Voor bewerken is toestemming vereist"
       ],
       "eduGAIN configuration saved": [
         "eduGain-configuratie opgeslagen"
@@ -10894,6 +10901,9 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Voor gebruikers die overschakelen naar ${ MAIL_APP_NAME } vanuit een andere e-maildienst, selecteer het tabblad ${ boldAddresses } en voeg alle actieve e-mailadressen toe voordat u het MX-record wijzigt om te zorgen voor een soepele overgang."
+      ],
+      "Forgot password?": [
+        "Wachtwoord vergeten?"
       ],
       "Free forever": [
         "Altijd gratis"
@@ -11695,6 +11705,9 @@
       "Password must have:": [
         "Het wachtwoord moet:"
       ],
+      "Password verified": [
+        "Wachtwoord is geverifieerd"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalingen worden beschermd met TLS-encryptie en Zwitserse privacywetten."
       ],
@@ -11706,6 +11719,9 @@
       ],
       "per month, billed at ${ price }": [
         "per maand, voor ${ price }"
+      ],
+      "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
+        "U wordt regelmatig gevraagd uw wachtwoord voor ${ BRAND_NAME } te verifiëren, zodat u het niet vergeet. In de loop van de tijd wordt u minder vaak gevraagd."
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "PGP-clients zullen uw PGP-sleutels eerder automatisch detecteren wanneer uitgaande berichten zijn ondertekend."
@@ -12528,6 +12544,9 @@
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "Om uw account veilig te houden, willen we er zeker van zijn dat u het echt bent die probeert in te loggen."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Om u te helpen uw wachtwoord te onthouden, vragen wij u dit periodiek in te voeren. We vragen u in de loop van de tijd minder."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Maak eerst een agenda aan in ${ CALENDAR_APP_NAME } om afspraken te importeren. Dit is waar de afspraken tevoorschijn komen na het importeren."
       ],
@@ -12854,6 +12873,9 @@
       ],
       "We'll notify you when the import is done.": [
         "We laten het u weten als de import klaar is."
+      ],
+      "We'll remind you to verify your password again later": [
+        "We herinneren u er later aan om uw wachtwoord opnieuw te controleren"
       ],
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
@@ -13829,6 +13851,16 @@
         "Weekweergave"
       ]
     },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Schakel over naar ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Schakel over naar ${ MAIL_APP_NAME }"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Action shortcuts": [
         "Actiesneltoetsen"
@@ -13841,6 +13873,9 @@
       ],
       "Composer shortcuts": [
         "Sneltoetsensamensteller"
+      ],
+      "Desktop app navigation": [
+        "Navigatie via desktop-app"
       ],
       "Folder shortcuts": [
         "Snelkoppelingenmap"
@@ -15018,6 +15053,9 @@
       "Password": [
         "Wachtwoord"
       ],
+      "Password reminders": [
+        "Wachtwoordherinneringen"
+      ],
       "Password strength": [
         "Wachtwoordsterkte"
       ],
@@ -15599,8 +15637,17 @@
       "Invalid ${ group.name } record found": [
         "Ongeldig ${ group.name } record gevonden"
       ],
+      "Priority": [
+        "Prioriteit"
+      ],
+      "Status": [
+        "Status"
+      ],
       "Type": [
         "Type"
+      ],
+      "Use default value (e.g. “@”)": [
+        "Gebruik standaardwaarde (bijvoorbeeld “@”)"
       ]
     },
     "Label for new member": {
@@ -15789,6 +15836,9 @@
       "Forgot username?": [
         "Gebruikersnaam vergeten?"
       ],
+      "Frequent sign-in problems": [
+        "Regelmatige aanmeldingsproblemen"
+      ],
       "General": [
         "Algemeen"
       ],
@@ -15803,6 +15853,9 @@
       ],
       "Help": [
         "Hulp"
+      ],
+      "Help & support": [
+        "Hulp & ondersteuning"
       ],
       "Help translate": [
         "Help met vertalen"
@@ -16514,6 +16567,9 @@
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
         "Geniet gratis van twee weken ${ BRAND_NAME }"
       ],
+      "Experience true online privacy with a secure email, cloud storage, password manager, and VPN. Join ${ BRAND_NAME } today and get ${ refereeRewardAmount } off your next subscription.": [
+        "Ervaar echte online privacy met een veilige e-mail, cloudopslag, wachtwoordbeheerder en VPN. Sluit u vandaag nog aan bij ${ BRAND_NAME } en ontvang ${ refereeRewardAmount } korting op uw volgende abonnement."
+      ],
       "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
         "Ervaar echte on-line privacy. Bescherm gratis uw gegevens met ${ BRAND_NAME } voor de komende 14 dagen."
       ],
@@ -16525,6 +16581,9 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Bent u uw ${ BRAND_NAME }-account gebruikersnaam vergeten? Vind deze met uw herstel e-mailadres of telefoonnummer en krijg weer toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } en meer."
+      ],
+      "Join ${ BRAND_NAME } and get ${ refereeRewardAmount } in credits": [
+        "Sluit u aan bij ${ BRAND_NAME } en ontvang ${ refereeRewardAmount } aan credits"
       ],
       "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
         "Herstel de toegang tot het privé ${ BRAND_NAME } e-mailadres dat voor uw kind is gereserveerd."
@@ -17285,6 +17344,10 @@
       ],
       "Send & receive invitations": [
         "Uitnodigingen verzenden & ontvangen"
+      ],
+      "Servers in ${ VPN_SERVERS.paid.countries }+ country": [
+        "Servers in ${ VPN_SERVERS.paid.countries }+ land",
+        "Servers in ${ VPN_SERVERS.paid.countries }+ landen"
       ],
       "Share files with no size limit": [
         "Deel bestanden zonder maximale grootte"
@@ -19190,6 +19253,28 @@
         "Tijdelijk aanbieding."
       ]
     },
+    "Password reminder": {
+      "Do you remember your ${ BRAND_NAME } password?": [
+        "Weet u uw wachtwoord van ${ BRAND_NAME } nog?"
+      ],
+      "The best way to avoid losing access to your account and data is to remember your credentials.": [
+        "De beste manier om te voorkomen dat u de toegang tot uw account en gegevens kwijtraakt, is door uw inloggegevens te onthouden."
+      ]
+    },
+    "password_reminder": {
+      "If you forget your password, you may lose access to your encrypted data.": [
+        "Als u uw wachtwoord vergeet, verliest u mogelijk de toegang tot uw gecodeerde gegevens."
+      ],
+      "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
+        "Zorg ervoor dat u uw wachtwoord onthoudt of veilig opslaat, aangezien dit de sleutel is om uw gegevens te ontsleutelen."
+      ],
+      "Turn off password reminders?": [
+        "Wachtwoordherinneringen uitschakelen?"
+      ],
+      "Turn off reminders": [
+        "Schakel herinneringen uit"
+      ]
+    },
     "password_reset: info": {
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
         "**Al uw bestaande gegevens** (e-mails, evenementen, contactpersonen, bestanden, ${ PASS_APP_NAME } gegevens, etc.) **zullen worden vergrendeld** en kunnen alleen ontgrendeld worden met uw **oude wachtwoord**."
@@ -20175,6 +20260,78 @@
         "LENTE SALE"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Pak de aanbieding"
+      ],
+      "Summer Sale": [
+        "Zomer Sale"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/maandelijks"
+      ],
+      "15 GB storage": [
+        "15 GB opslag"
+      ],
+      "2 TB data storage": [
+        "2 TB dataopslag"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB opslag: 40x uw huidige abonnement"
+      ],
+      "3 TB data storage": [
+        "3 TB dataopslag"
+      ],
+      "500 GB storage": [
+        "500 GB opslag"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium-functies van ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium-functies van ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus eindigt."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Volledige toegang tot ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Afzonderlijke accounts voor 6 gebruikers"
+      ],
+      "Individual accounts for you and a partner": [
+        "Afzonderlijke accounts voor u en een partner"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online document- en spreadsheetbewerker"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Stronger protection against cyber threats": [
+        "Krachtigere bescherming tegen cyberdreigingen"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Stap over op ons jaarabonnement en bespaar ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Onbeperkte mappen, labels en filters"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "gedurende 12 maanden"
+      ],
+      "SUMMER SALE": [
+        "ZOMER SALE"
+      ]
+    },
     "Recovery Email": {
       "Back to ${ signIn }.": [
         "Terug naar ${ signIn }."
@@ -20266,6 +20423,15 @@
       "Awesome. Keep your options up-to-date for stronger protection.": [
         "Fantastisch. Zorg dat uw opties up-to-date zijn voor een betere bescherming."
       ],
+      "Check your access to your recovery options": [
+        "Controleer uw toegang tot uw herstelopties"
+      ],
+      "Critical": [
+        "Kritisch"
+      ],
+      "Don’t get locked out of your ${ BRAND_NAME } Account": [
+        "Zorg ervoor dat de toegang tot uw ${ BRAND_NAME }-account niet verliest"
+      ],
       "Good start. Add more options for a stronger protection.": [
         "Een goed begin. Voeg meer opties toe voor een betere bescherming."
       ],
@@ -20284,6 +20450,9 @@
       "Partial": [
         "Gedeeltelijk"
       ],
+      "Recoverability": [
+        "Herstelbaarheid"
+      ],
       "Recovery score: ${ score }": [
         "Herstelscore: ${ score }"
       ],
@@ -20296,11 +20465,47 @@
       "Strong": [
         "Sterk"
       ],
+      "Take precautions to avoid losing access": [
+        "Neem voorzorgsmaatregelen om te voorkomen dat u de toegang verliest"
+      ],
       "Unprotected": [
         "Onbeschermd"
       ],
       "Weak": [
         "Zwak"
+      ],
+      "You're fully protected. A periodic review keeps everything working as your devices and contacts change over time.": [
+        "U bent volledig beschermd. Een periodieke beoordeling zorgt ervoor dat alles blijft werken, terwijl uw apparaten en contacten in de loop van de tijd veranderen."
+      ],
+      "You're partly there, but not safe yet. A forgotten password could still mean losing your emails, files, and passwords.": [
+        "U bent er gedeeltelijk, maar nog niet veilig. Een vergeten wachtwoord kan nog steeds betekenen dat u uw e-mails, bestanden en wachtwoorden kwijtraakt."
+      ],
+      "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
+        "U loopt nog steeds een groot risico. Als u uw wachtwoord vergeet, kunt u uw e-mails, bestanden en wachtwoorden permanent kwijtraken."
+      ],
+      "You're well covered, but there are still gaps. More recovery options give you a stronger safety net if you ever lose your password.": [
+        "Uw herstelconfiguratie is uitstekend. Houd uw opties up-to-date, zodat ze nog steeds werken wanneer u ze nodig heeft."
+      ],
+      "Your account and data can be recovered": [
+        "Uw account en gegevens kunnen worden hersteld"
+      ],
+      "Your account has no recovery options set up. If you lose your password, you'll permanently lose access to your emails, files, and passwords.": [
+        "Voor uw account zijn geen herstelopties ingesteld. Als u uw wachtwoord verliest, verliest u definitief de toegang tot uw e-mails, bestanden en wachtwoorden."
+      ],
+      "Your account isn't fully protected. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Uw account is niet volledig beveiligd. Een vergeten wachtwoord kan nog steeds betekenen dat u de toegang tot uw e-mails, bestanden en wachtwoorden verliest."
+      ],
+      "Your recovery setup is barely there. If you lose your password, you could permanently lose access to your emails, files, and passwords.": [
+        "Uw herstelconfiguratie is nauwelijks aanwezig. Als u uw wachtwoord verliest, kunt u permanent de toegang tot uw e-mails, bestanden en wachtwoorden kwijtraken."
+      ],
+      "Your recovery setup is excellent. Keep your options up to date so they still work when you need them.": [
+        "Uw herstelconfiguratie is uitstekend. Houd uw opties up-to-date, zodat ze nog steeds werken wanneer u ze nodig heeft."
+      ],
+      "Your recovery setup is incomplete. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Uw herstelconfiguratie is onvolledig. Een vergeten wachtwoord kan nog steeds betekenen dat u de toegang tot uw e-mails, bestanden en wachtwoorden verliest."
+      ],
+      "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
+        "Uw herstelconfiguratie is solide, er moeten nog enkele hiaten worden gedicht. Elke optie die u toevoegt, maakt uw vangnet sterker."
       ]
     },
     "Recovery score item": {
@@ -20444,14 +20649,14 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Geniet gratis van **${ planTitle }** tot **${ textDate }**."
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "Geef 2 weken, ontvang ${ referrerRewardAmount }"
+      "Give ${ refereeRewardAmount }, get ${ referrerRewardAmount }": [
+        "Geef ${ refereeRewardAmount }, ontvang ${ referrerRewardAmount }"
       ],
       "How your free trial works:": [
         "Hoe uw gratis proefperiode werkt:"
       ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "Ik gebruik ${ BRAND_NAME } en dacht dat u het wellicht interessant vindt. Het is een beveiligde e-mail, cloudopslag, wachtwoordmanager en VPN die uw privacy beschermt. Meld u aan met deze link om 14 dagen gratis premium-functies te krijgen: ${ referralLink }"
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
+        "Ik gebruik ${ BRAND_NAME } en dacht dat u het misschien wel leuk zou vinden. Het is een veilige e-mail, cloudopslag, wachtwoordbeheerder en VPN die uw privacy beschermt. Meld u aan via deze link en ontvang ${ refereeRewardAmount } korting op uw volgende abonnement: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Als u daarvoor annuleert, wordt u gedowngraded naar ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } wanneer de proefversie eindigt. Als u niet annuleert, start uw volledige abonnement en krijgt u **${ referrerRewardAmount }** aan tegoed."
@@ -20486,9 +20691,6 @@
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "U heeft nog **${ daysRemaining } dag** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft.",
         "U heeft **${ daysRemaining } dagen over** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "Uw vriend ontvangt ook ${ refereeRewardAmount } om in te wisselen voor hun volgende factuur!"
       ],
       "your subscription": [
         "uw abonnement"
@@ -21861,6 +22063,14 @@
         "Aanvraag wijziging wachtwoord"
       ]
     },
+    "Setting": {
+      "Get updates about comments via email": [
+        "Ontvang updates over reacties via e-mail"
+      ],
+      "Include document name in email notifications": [
+        "Documentnaam opnemen in e-mailnotificaties"
+      ]
+    },
     "Settings description": {
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Houd uw inbox georganiseerd met mappen en labels. ${ learnMoreLink }"
@@ -21869,6 +22079,9 @@
     "Settings section title": {
       "Account": [
         "Account"
+      ],
+      "Managed Companies": [
+        "Beheerde Bedrijven"
       ],
       "Organization": [
         "Bedrijf"
@@ -22023,6 +22236,18 @@
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS } hoge snelheid VPN-verbinding",
         "${ VPN_CONNECTIONS } hoge snelheid VPN-verbindingen"
+      ],
+      "${ VPN_SERVERS.free.servers }+ VPN servers in ${ VPN_SERVERS.free.countries } country": [
+        "${ VPN_SERVERS.free.servers }+ VPN-servers in ${ VPN_SERVERS.free.countries } land",
+        "${ VPN_SERVERS.free.servers }+ VPN-servers in ${ VPN_SERVERS.free.countries } landen"
+      ],
+      "${ VPN_SERVERS.paid.countries }+ country": [
+        "${ VPN_SERVERS.paid.countries }+ land",
+        "${ VPN_SERVERS.paid.countries }+ landen"
+      ],
+      "${ VPN_SERVERS.paid.servers }+ server across": [
+        "${ VPN_SERVERS.paid.servers }+ server verspreid",
+        "${ VPN_SERVERS.paid.servers }+ servers verspreid"
       ],
       "/user": [
         "/gebruiker"
@@ -22294,6 +22519,13 @@
       ],
       "use your own email.": [
         "gebruik uw eigen e-mailadres."
+      ],
+      "VPN with servers in ${ VPN_SERVERS.free.countries } countries": [
+        "VPN met servers in ${ VPN_SERVERS.free.countries } landen"
+      ],
+      "VPN with servers in ${ VPN_SERVERS.free.countries } country": [
+        "VPN met servers in ${ VPN_SERVERS.free.countries } land",
+        "VPN met servers in ${ VPN_SERVERS.free.countries } landen"
       ],
       "We’ll email you before your trial ends.": [
         "We mailen u voordat uw proefversie eindigt."
@@ -23810,6 +24042,12 @@
       ],
       "View VPN session details for your organization.": [
         "Bekijk VPN-sessiedetails voor uw organisatie."
+      ],
+      "With managed companies, you can add, edit, and remove access for organizations you oversee.": [
+        "Bij beheerde bedrijven kunt u toegang toevoegen, bewerken en verwijderen voor organisaties waarop u toezicht houdt."
+      ],
+      "Your total monthly cost for all managed companies.": [
+        "Uw totale maandelijkse kosten voor alle beheerde bedrijven."
       ]
     },
     "Success": {
@@ -23944,6 +24182,12 @@
       ],
       "Password copied to clipboard": [
         "Wachtwoord gekopieerd naar klembord"
+      ],
+      "Password reminders disabled": [
+        "Wachtwoordherinneringen uitgeschakeld"
+      ],
+      "Password reminders enabled": [
+        "Wachtwoordherinneringen ingeschakeld"
       ],
       "Password updated": [
         "Wachtwoord bijgewerkt"
@@ -24707,6 +24951,9 @@
       "Collaborate on documents": [
         "Samenwerken aan documenten"
       ],
+      "Companies": [
+        "Bedrijven"
+      ],
       "Compare plans": [
         "Vergelijk abonnementen"
       ],
@@ -25455,6 +25702,9 @@
       "Messages and composing": [
         "Berichten en opstellen"
       ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migreer uw organisatie naar ${ BRAND_NAME }"
+      ],
       "Migration assistant": [
         "Migratie-assistent"
       ],
@@ -25469,6 +25719,9 @@
       ],
       "Monthly": [
         "Maandelijks"
+      ],
+      "Monthly Costs": [
+        "Maandelijkse Kosten"
       ],
       "Multi-user support": [
         "Ondersteuning voor meerdere gebruikers"
@@ -26038,6 +26291,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Om een voorbeeld van dit rekenblad te bekijken, opent u het in ${ SHEETS_APP_NAME } of downloadt u het."
       ],
+      "Troubleshoot with ${ LUMO_SHORT_APP_NAME }": [
+        "Problemen oplossen met ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Troubleshoot your issue": [
         "Los uw probleem op"
       ],
@@ -26142,6 +26398,9 @@
       ],
       "Verify your email": [
         "Verifieer uw e-mailadres"
+      ],
+      "Verify your password": [
+        "Controleer uw wachtwoord"
       ],
       "Verifying your card...": [
         "Uw kaart wordt geverifieerd..."
@@ -26295,6 +26554,15 @@
       ]
     },
     "Title header": {
+      "Date": [
+        "Datum"
+      ],
+      "Organization migrations": [
+        "Organisatiemigraties"
+      ],
+      "Personal accounts": [
+        "Persoonlijke accounts"
+      ],
       "Size": [
         "Grootte"
       ]

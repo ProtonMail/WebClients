@@ -1302,6 +1302,9 @@
       "Trust": [
         "Довіряти"
       ],
+      "Trust key": [
+        "Довіряти ключу"
+      ],
       "Trust public key": [
         "Довіряти відкритому ключу"
       ],
@@ -3928,6 +3931,9 @@
       "Aliases could not be loaded": [
         "Не вдалося завантажити псевдоніми"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Увесь обсяг сховища розподілено. Зменште простір, наданий іншим користувачам."
+      ],
       "Amount above the maximum.": [
         "Сума перевищує обмеження."
       ],
@@ -4213,6 +4219,15 @@
       "Please activate your search again": [
         "Повторно активуйте пошук"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Налаштуйте власний домен, щоб мати можливість додавати адреси."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Налаштуйте власний домен, перш ніж додавати користувачів до вашої організації."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Будь ласка, увімкніть підтримку декількох користувачів, перш ніж додавати користувачів до вашої організації."
+      ],
       "Please enter a valid postal code": [
         "Будь ласка, введіть коректний поштовий індекс"
       ],
@@ -4254,6 +4269,9 @@
       ],
       "Please try generating the text again": [
         "Спробуйте згенерувати текст ще раз"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Для керування декількома користувачами, перейдіть на тарифний план для бізнесу."
       ],
       "Port is required": [
         "Порт обов'язковий"
@@ -4480,6 +4498,9 @@
       "You have reached the number of contacts limit for your account": [
         "Ви досягли ліміту кількості контактів для вашого облікового запису"
       ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Ви вже використали усіх користувачів у своєму тарифному плані. Щоб додати нового користувача, необхідно покращити тарифний план."
+      ],
       "You must set a name": [
         "Ви повинні вказати назву"
       ],
@@ -4679,9 +4700,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Не вдалося завантажити цю сторінку. Перезавантажте сторінку або перевірте з'єднання з інтернетом."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Коли увімкнено додатковий пароль, керування псевдонімами може бути здійснено лише в ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "У вас поки що немає жодного контакту. Почніть зі створення нового"
@@ -6618,6 +6636,9 @@
         "Ініціалізація…"
       ],
       "Insert image": [
+        "Вставити зображення",
+        "Вставити зображення",
+        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [
@@ -10830,6 +10851,9 @@
       "Postal code": [
         "Поштовий індекс"
       ],
+      "Search": [
+        "Пошук"
+      ],
       "Search date, name, email address, or subject line": [
         "Пошук за датою, ім'ям, електронною адресою або темою листа"
       ],
@@ -10987,6 +11011,78 @@
         "Офіційний лист від ${ BRAND_NAME }"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
+      "Summer Sale": [
+        "Літній розпродаж"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/місячний"
+      ],
+      "15 GB storage": [
+        "15 ГБ сховища"
+      ],
+      "2 TB data storage": [
+        "Сховище даних на 2 ТБ"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "Сховище на 200 ГБ: у 40 разів більше за ваш поточний тарифний план"
+      ],
+      "3 TB data storage": [
+        "Сховище даних на 3 ТБ"
+      ],
+      "500 GB storage": [
+        "500 ГБ сховища"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усі преміумфункції ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усі преміумфункції ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Знижки розраховуються на основі стандартної щомісячної ціни. Вашу передплату буде подовжено за стандартним річним тарифом після закінчення платіжного циклу."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Повний доступ до ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Окремі облікові записи для 6 користувачів"
+      ],
+      "Individual accounts for you and a partner": [
+        "Окремі облікові записи для вас і вашого партнера"
+      ],
+      "Online document and spreadsheet editor": [
+        "Онлайн-редактор документів та електронних таблиць"
+      ],
+      "Recover previous file versions": [
+        "Відновити попередні версії файлів"
+      ],
+      "Stronger protection against cyber threats": [
+        "Надійніший захист від кіберзагроз"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Перейдіть на наш річний тарифний план і заощадьте ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Необмежена кількість тек, міток і фільтрів"
+      ],
+      "Use your own email domain": [
+        "Використовуйте свій власний домен електронної пошти"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "за 12 місяців"
+      ],
+      "SUMMER SALE": [
+        "ЛІТНІЙ РОЗПРОДАЖ"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Наскрізно зашифроване і підписане повідомлення"
@@ -11076,46 +11172,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Усі псевдоніми"
-      ],
       "Create alias": [
         "Створити псевдонім"
-      ],
-      "Create an alias": [
-        "Створити псевдонім"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Миттєво створюйте псевдоніми, а також легко керуйте ними й паролями."
-      ],
-      "Hide-my-email aliases": [
-        "Псевдоніми Hide-my-email"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Псевдоніми Hide-my-email дають змогу реєструватися в Інтернеті без поширення своєї адреси електронної пошти. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Новий псевдонім"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Відкрити ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Захистіть свої особисті дані в мережі"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Спробуйте ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Використовується на Amazon для покупок та ін."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Коли потрібно вказати адресу електронної пошти, скористайтеся натомість цим псевдонімом. Псевдоніми надаються ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(відкриє ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -12426,9 +12490,6 @@
       "Address verification disabled": [
         "Перевірку адреси вимкнено"
       ],
-      "Alias copied to clipboard": [
-        "Псевдонім скопійовано в буфер обміну"
-      ],
       "Alias saved and copied": [
         "Псевдонім збережено та скопійовано"
       ],
@@ -12515,9 +12576,6 @@
       ],
       "Labels applied.": [
         "Мітки застосовано."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Останні змінені псевдоніми зберігаються у вашому найстарішому сховищі"
       ],
       "Mail list unsubscribed": [
         "Підписку на розсилку скасовано"

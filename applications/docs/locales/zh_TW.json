@@ -432,6 +432,9 @@
       "Keep my subscription": [
         "保持訂閱"
       ],
+      "Later": [
+        "稍後"
+      ],
       "Learn more": [
         "瞭解詳情"
       ],
@@ -1101,6 +1104,17 @@
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "精心設計的 NetShield 保護您的裝置並攔截讓您變慢的廣告、追蹤程式與惡意軟體。"
+      ]
+    },
+    "BOSS": {
+      "Member address not found. Please contact customer support to resolve this": [
+        "未發現成員的位址。請聯繫客戶支援服務以協助解決問題。"
+      ],
+      "Missing organization private key": [
+        "缺少組織私有密鑰"
+      ],
+      "Missing organization public key": [
+        "缺少組織公用密鑰"
       ]
     },
     "Browser": {
@@ -2757,6 +2771,9 @@
       "Aliases could not be loaded": [
         "無法載入別名"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "所有儲存空間已被分配。請減少分配給其他使用者的儲存空間。"
+      ],
       "Already a member of this share": [
         "已經是這個分享的成員了"
       ],
@@ -2973,6 +2990,15 @@
       "Photos upload is temporarily disabled. Please try again later": [
         "照片上載暫時停用。請稍後再試"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "您需要先設定好自訂網域才能新增電子郵件。"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "請先設置一個自訂網域，然後才加入使用者到您的組織。"
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "請先啟用多使用者支援，然後才加入使用者到您的組織。"
+      ],
       "Please enter a valid postal code": [
         "請輸入有效的郵遞區號"
       ],
@@ -2996,6 +3022,9 @@
       ],
       "Please select a state": [
         "請選擇一個州"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "請升級至選用多於 1 位使用者的企業方案，以便管理多位使用者。"
       ],
       "Port is required": [
         "通訊埠為必填"
@@ -3138,6 +3167,9 @@
       "Unknown error": [
         "未知錯誤"
       ],
+      "Unknown location": [
+        "未知的位置"
+      ],
       "Update Too Large": [
         "更新內容超過大小限制"
       ],
@@ -3167,6 +3199,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "您的帳號已達聯絡人數量限制"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "您已使用您的方案中所有使用者。請升級您的方案以加入使用者。"
       ],
       "You must set a name": [
         "您必須設定名稱"
@@ -4078,6 +4113,9 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "已選取 ${ selectedFoldersCountLocalized } 種標籤"
       ],
+      "${ total } user found": [
+        "找到 ${ total } 位使用者"
+      ],
       "${ updated } contact updated successfully.": [
         "已成功更新 ${ updated } 位聯絡人。"
       ],
@@ -4092,21 +4130,6 @@
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**自動連線**：在您開啟裝置時，即可開啟並連線至 VPN。"
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**第一步：**使用您的推薦連結邀請朋友加入 ${ BRAND_NAME }。"
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**第二步：**您的朋友將取得 ${ BRAND_NAME } 方案的 2 週免費。"
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**第二步：**您的朋友將取得該方案的 2 週免費。"
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**第三步：**每當有朋友訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**第三步：**每當有使用者訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
@@ -7130,9 +7153,6 @@
       "\"${ name }\" saved successfully": [
         "「${ name }」已成功儲存"
       ],
-      "\"${ name }\" successfully moved": [
-        "「${ name }」已成功移動"
-      ],
       "\"${ newName }\" failed to be renamed": [
         "「${ newName }」重新命名失敗"
       ],
@@ -7163,14 +7183,14 @@
       "${ numberOfItems } item failed to be restored from trash": [
         "${ numberOfItems } 個項目未能從垃圾中被復原"
       ],
+      "${ numberOfItems } item moved": [
+        "已移動 ${ numberOfItems } 個項目"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } 個項目已移動到垃圾桶"
       ],
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } 個項目已從垃圾桶中還原"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } 個項目已成功移動"
       ],
       "${ reason } has been disabled": [
         "${ reason } 已停用。"
@@ -7733,6 +7753,9 @@
       "Please describe the problem and include any error messages": [
         "請描述問題並附上相關的錯誤訊息 (如有)"
       ],
+      "Search": [
+        "搜尋"
+      ],
       "Search for group name": [
         "搜尋群組名稱"
       ],
@@ -7948,6 +7971,78 @@
       ],
       "SPRING SALE": [
         "春季特賣"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "取得優惠"
+      ],
+      "Summer Sale": [
+        "夏季特賣"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/每月"
+      ],
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "2 TB data storage": [
+        "2 TB 資料儲存空間"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 儲存空間：您目前方案的 40 倍"
+      ],
+      "3 TB data storage": [
+        "3 TB 資料儲存空間"
+      ],
+      "500 GB storage": [
+        "500 GB 儲存空間"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣以標準月費定價為基礎。您的訂閱將在帳單週期結束時以標準年費率續訂。"
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "完整存取 ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "6 位使用者的個人帳號"
+      ],
+      "Individual accounts for you and a partner": [
+        "供您與夥伴使用的個人帳號"
+      ],
+      "Online document and spreadsheet editor": [
+        "線上文件和試算表編輯器"
+      ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
+      ],
+      "Stronger protection against cyber threats": [
+        "針對網路威脅的更強大保護"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "切換至我們的年度方案並節省 ${ toYearlyDiscountAmount }！"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "資料夾、標籤與篩選器無上限"
+      ],
+      "Use your own email domain": [
+        "使用您自己的電子郵件網域"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12 個月"
+      ],
+      "SUMMER SALE": [
+        "夏季特賣"
       ]
     },
     "Recent documents table header": {
@@ -9102,6 +9197,9 @@
       "Desktop": [
         "電腦版應用程式"
       ],
+      "Devices": [
+        "個裝置"
+      ],
       "Discard": [
         "捨棄"
       ],
@@ -9224,9 +9322,6 @@
       ],
       "Import contacts": [
         "匯入聯絡人"
-      ],
-      "Import emails, calendars, contacts": [
-        "匯入電子郵件、行事曆、聯絡人"
       ],
       "Import events": [
         "匯入事件"
@@ -9410,6 +9505,9 @@
       ],
       "Share your link": [
         "共享您的連結"
+      ],
+      "Shared with me": [
+        "與我共享"
       ],
       "Sign in and grant access": [
         "登入並授予存取權"

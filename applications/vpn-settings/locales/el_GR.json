@@ -647,6 +647,9 @@
       "Keep my subscription": [
         "Διατηρήστε την συνδρομή μου"
       ],
+      "Later": [
+        "Αργότερα"
+      ],
       "Learn about recovery options": [
         "Μάθετε για τις επιλογές ανάκτησης"
       ],
@@ -911,9 +914,6 @@
       "Save": [
         "Αποθήκευση"
       ],
-      "Save & exit": [
-        "Αποθήκευση & έξοδος"
-      ],
       "Save address": [
         "Αποθήκευση διεύθυνσης"
       ],
@@ -1051,9 +1051,6 @@
       ],
       "Sign out": [
         "Αποσύνδεση"
-      ],
-      "Sign out of ${ tokens[0].Account }": [
-        "Αποσύνδεση από το ${ tokens[0].Account }"
       ],
       "Sign out of all accounts": [
         "Έξοδος από όλους τους λογαριασμούς"
@@ -1231,6 +1228,9 @@
       ],
       "Verify domain": [
         "Επαλήθευση τομέα"
+      ],
+      "Verify now": [
+        "Επαλήθευση τώρα"
       ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Επαληθεύστε τον τομέα ${ unverifiedSSODomain.DomainName }"
@@ -1995,32 +1995,8 @@
       ]
     },
     "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } από ${ totalCount }"
-      ],
-      "Account connected": [
-        "Ο λογαριασμός συνδέθηκε"
-      ],
-      "Account disconnected": [
-        "Λογαριασμός αποσυνδεδεμένος"
-      ],
-      "Accounts migrated": [
-        "Οι λογαριασμοί μετεγκαταστάθηκαν"
-      ],
       "Activated": [
         "Ενεργοποιήθηκε"
-      ],
-      "Add domain": [
-        "Προσθήκη τομέα"
-      ],
-      "Add users": [
-        "Προσθήκη χρηστών"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "Προσθέστε τον τομέα ηλεκτρονικού ταχυδρομείου του οργανισμού σας στο ${ BRAND_NAME }."
       ],
       "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
         "Η διεύθυνση χρησιμοποιείται ήδη από χρήστη εκτός του οργανισμού σας. Για επίλυση, παρακαλούμε απευθυνθείτε στην υποστήριξη πελατών."
@@ -2028,71 +2004,20 @@
       "All": [
         "Όλοι"
       ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "Όλοι οι λογαριασμοί χρηστών που έχουν μετεγκατασταθεί είναι έτοιμοι για πρόσκληση στον οργανισμό σας ${ BRAND_NAME }."
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "Προέκυψε άγνωστο σφάλμα. Παρακαλούμε ανανεώστε τη σελίδα και προσπαθήστε ξανά"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Είστε σίγουρος ότι θέλετε να συνεχίσετε; Οι χρήστες που δεν έχουν διεκδικήσει τον λογαριασμό τους πριν ολοκληρωθεί η μετεγκατάσταση θα χρειαστεί να ζητήσουν επαναφορά κωδικού πρόσβασης από τον διαχειριστή της οργάνωσης ${ BRAND_NAME }."
-      ],
-      "Authenticate": [
-        "Ταυτοποίηση"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Ταυτοποιήστε τον λογαριασμό σας στο Google Workspace"
-      ],
       "Calendar": [
         "Ημερολόγιο"
-      ],
-      "Collapse step": [
-        "Σύμπτυξη βήματος"
-      ],
-      "Configure domain": [
-        "Ρύθμιση τομέα"
       ],
       "Configure migration": [
         "Διαμόρφωση μετεγκατάστασης"
       ],
-      "Configure users": [
-        "Διαμόρφωση χρηστών"
-      ],
-      "Configure your domain": [
-        "Ρυθμίστε τον τομέα σας"
-      ],
       "Contacts": [
         "Επαφές"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "Αντιγράψτε τον παρακάτω κώδικα και επικολλήστε τον στην ενότητα DNS του κεντρικού υπολογιστή του τομέα σας."
-      ],
-      "Creating accounts. Going private": [
-        "Δημιουργία λογαριασμών. Μετάβαση σε ιδιωτικότητα"
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Κατάσταση μετεγκατάστασης δεδομένων από το Google Workspace στο ${ BRAND_NAME }"
       ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "Το DKIM προσθέτει μια ψηφιακή υπογραφή σε κάθε μήνυμα ηλεκτρονικού ταχυδρομείου, ώστε οι παραλήπτες να μπορούν να επαληθεύσουν ότι το μήνυμα προήλθε όντως από τον τομέα σας και δεν τροποποιήθηκε κατά τη μεταφορά του. Χωρίς αυτήν, τα μηνύματα ενδέχεται να θεωρηθούν λιγότερο αξιόπιστα."
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "Το DMARC βασίζεται στο SPF και το DKIM, υποδεικνύοντας στους διακομιστές λήψης πώς να χειρίζονται τα μηνύματα που αποτυγχάνουν σε αυτούς τους ελέγχους. Βοηθά στην προστασία του τομέα σας από την πλαστοπροσωπία και βελτιώνει τη συνολική αξιοπιστία παράδοσης."
-      ],
-      "Domain added": [
-        "Προστέθηκε τομέας"
-      ],
-      "Domain provider": [
-        "Πάροχος τομέα"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "Δεν ξέρετε από πού να ξεκινήσετε; Δείτε πώς να ενημερώσετε το DNS σας στο ${ registrarLink }"
-      ],
       "Emails": [
         "Μηνύματα"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "Βεβαιωθείτε ότι τα ηλεκτρονικά μηνύματά σας φτάνουν στα εισερχόμενα και όχι στον φάκελο ανεπιθύμητης αλληλογραφίας. Η ενημέρωση του SPF θα επιτρέψει στους χρήστες να στέλνουν από ${ BRAND_NAME } και την Google ταυτόχρονα κατά τη διάρκεια της μετεγκατάστασης."
       ],
       "Errors": [
         "Σφάλματα"
@@ -2100,65 +2025,14 @@
       "Estimated size": [
         "Εκτιμώμενος χρόνος"
       ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "Όλοι λαμβάνουν τον ίδιο σύνδεσμο πρόσκλησης. Θα επισκεφτούν τη σελίδα, θα εισαγάγουν την ηλεκτρονική διεύθυνσή τους και θα φτάσει ένας κωδικός επαλήθευσης στα εισερχόμενά τους στο Gmail. Από εκεί, ορίζουν τον κωδικό πρόσβασης ${ BRAND_NAME }."
-      ],
-      "Expand step": [
-        "Ανάπτυξη βήματος"
-      ],
-      "Failed to load OAuth": [
-        "Αποτυχία φόρτωσης OAuth"
-      ],
-      "Final step": [
-        "Τελευταίο βήμα"
-      ],
       "Find out what can be migrated.": [
         "Μάθετε τι μπορεί να μετεγκατασταθεί."
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "Λάβετε βοήθεια και χρήσιμες συμβουλές για άλλους παρόχους τομέων ${ here }"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Εφαρμογή Google Marketplace για αντιγραφή δεδομένων στο ${ BRAND_NAME }"
-      ],
-      "Google Workspace account": [
-        "Λογαριασμός Google Workspace"
       ],
       "Has errors": [
         "Έχει σφάλματα"
       ],
-      "Import completed successfully": [
-        "Η εισαγωγή ολοκληρώθηκε επιτυχώς"
-      ],
-      "Import details": [
-        "Λεπτομέρειες εισαγωγής"
-      ],
       "In progress": [
         "Σε εξέλιξη"
-      ],
-      "Install app": [
-        "Εγκατάσταση εφαρμογής"
-      ],
-      "Install migration app": [
-        "Εγκατάσταση εφαρμογής μετεγκατάστασης"
-      ],
-      "Invitation link": [
-        "Σύνδεσμος πρόσκλησης"
-      ],
-      "Invitation message": [
-        "Μήνυμα πρόσκλησης"
-      ],
-      "invite link": [
-        "σύνδεσμος πρόσκλησης"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "Μπορεί να χρειαστούν έως και 24 ώρες για να διαδοθούν αυτές οι αλλαγές."
-      ],
-      "Loading your organization data": [
-        "Φόρτωση των δεδομένων του οργανισμού σας"
-      ],
-      "Mail": [
-        "Ταχυδρομείο"
       ],
       "Member address not found. Please contact customer support to resolve this": [
         "Η διεύθυνση μέλους δε βρέθηκε. Επικοινωνήστε με την υποστήριξη πελατών για να επιλύσετε αυτό το πρόβλημα."
@@ -2166,33 +2040,11 @@
       "Migrate": [
         "Μετεγκατάσταση"
       ],
-      "Migrate accounts": [
-        "Μετεγκατάσταση λογαριασμών"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "Μετεγκαταστήστε λογαριασμούς στο ${ BRAND_NAME }"
-      ],
-      "Migrate from Google Workspace": [
-        "Μετάβαση από το Google Workspace"
-      ],
       "Migrated": [
         "Μετεγκαταστάθηκε"
       ],
-      "Migrated accounts": [
-        "Μετεγκατεστημένοι λογαριασμοί"
-      ],
-      "Migration includes": [
-        "Η μετεγκατάσταση περιλαμβάνει"
-      ],
-      "Migration started for ${ n } user": [
-        "Η μετεγκατάσταση ξεκίνησε για ${ n } χρήστη",
-        "Η μετεγκατάσταση ξεκίνησε για ${ n } χρήστες"
-      ],
       "Migration status": [
         "Κατάσταση μετεγκατάστασης"
-      ],
-      "Migration summary": [
-        "Περίληψη μετεγκατάστασης"
       ],
       "Missing organization private key": [
         "Λείπει το ιδιωτικό κλειδί του οργανισμού"
@@ -2200,29 +2052,11 @@
       "Missing organization public key": [
         "Λείπει το δημόσιο κλειδί του οργανισμού"
       ],
-      "Need help?": [
-        "Χρειάζεσαι βοήθεια;"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "Δεν υπάρχουν διαθέσιμες λεπτομέρειες σφάλματος. Παρακαλούμε επικοινωνήστε με την υποστήριξη πελατών για περισσότερες πληροφορίες."
-      ],
       "No users to display": [
         "Δεν υπάρχουν χρήστες για εμφάνιση"
       ],
       "Not activated": [
         "Δεν έχει ενεργοποιηθεί"
-      ],
-      "Not confirmed": [
-        "Δεν έχει επιβεβαιωθεί"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "Δεν εντοπίστηκε σωστά; Επιλέξτε τον παροχέα σας από τη λίστα."
-      ],
-      "Onboard your team": [
-        "Ενσωματώστε την ομάδα σας"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "Μόλις επιβεβαιώσουμε ότι τα μηνύματα ηλεκτρονικού ταχυδρομείου προωθούνται στο ${ BRAND_NAME }, η μετεγκατάσταση θα ολοκληρωθεί. Θα λάβετε ένα επιβεβαιωτικό μήνυμα ηλεκτρονικού ταχυδρομείου για να σας ενημερώσουμε πότε θα συμβεί αυτό. Αυτή η διαδικασία μπορεί να διαρκέσει έως και 24 ώρες."
       ],
       "Organization does not have enough seats available": [
         "Ο οργανισμός δε διαθέτει αρκετές θέσεις διαθέσιμες"
@@ -2233,132 +2067,29 @@
       "Pending": [
         "Σε εκκρεμότητα"
       ],
-      "Please don’t close or refresh this window.": [
-        "Παρακαλώ μην κλείσετε και μην ανανεώσετε αυτό το παράθυρο."
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "Επαληθεύστε ξανά τον λογαριασμό σας στο Google Workspace για να ξεκινήσετε μια μετεγκατάσταση"
-      ],
-      "Refresh": [
-        "Ανανέωση"
-      ],
-      "Select at least one user to start a migration": [
-        "Επιλέξτε τουλάχιστον έναν χρήστη για να ξεκινήσετε τη μετεγκατάσταση."
-      ],
       "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
         "Επιλέξτε ακριβώς αυτό που θέλετε να μετεγκαταστήσετε. Θα εφαρμοστεί για όλους τους χρήστες του οργανισμού."
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "Επιλέξτε τους λογαριασμούς που θέλετε να φέρετε στο ${ BRAND_NAME }. Μπορείτε να μετεγκαταστήσετε ολόκληρο τον οργανισμό σας σήμερα ή να ξεκινήσετε μικρά και να φέρετε τα υπόλοιπα μαζί όταν είστε έτοιμοι."
       ],
       "Select users to migrate": [
         "Επιλογή χρηστών για μετεγκατάσταση"
       ],
-      "Set up secure sending (DKIM)": [
-        "Ρύθμιση ασφαλούς αποστολής (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "Ρύθμιση ασφαλούς αποστολής (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "Ρύθμιση ασφαλούς αποστολής (SPF)"
-      ],
-      "Settings": [
-        "Ρυθμίσεις"
-      ],
-      "Sign in to Google Workspace": [
-        "Σύνδεση στο Google Workspace"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "Συνδεθείτε με έναν λογαριασμό διαχειριστή Google Workspace για ${ BRAND_NAME } για να ρυθμίσετε τη μετεγκατάσταση."
-      ],
       "Size": [
         "Μέγεθος"
-      ],
-      "Skip": [
-        "Παράλειψη"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "Παραβλέφθηκε ${ count } επαφή λόγω ασυμβατοτήτων",
-        "Παραβλέφθηκαν ${ count } επαφές λόγω ασυμβατοτήτων"
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "Παραβλέφθηκε ${ count } μήνυμα λόγω ασυμβατοτήτων",
-        "Παραβλέφθηκαν ${ count } μηνύματα λόγω ασυμβατοτήτων"
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "Παραβλέφθηκε ${ count } εκδήλωση λόγω ασυμβατοτήτων",
-        "Παραβλέφθηκαν ${ count } εκδηλώσεις λόγω ασυμβατοτήτων"
-      ],
-      "Some accounts are not claimed": [
-        "Ορισμένοι λογαριασμοί δεν έχουν διεκδικηθεί"
       ],
       "Status": [
         "Κατάσταση"
       ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "Για να μεταφέρετε τα δεδομένα του οργανισμού σας στο ${ BRAND_NAME }, εγκαταστήστε το ${ BRAND_NAME } Easy Switch από το Google Workspace Marketplace. Αφού το εγκαταστήσετε, επιστρέψτε εδώ για να συνεχίσετε."
-      ],
-      "Update records for receiving": [
-        "Ενημέρωση αρχείων για παραλαβή"
-      ],
       "User": [
         "Χρήστης"
       ],
-      "Users activated": [
-        "Οι χρήστες ενεργοποιήθηκαν"
-      ],
-      "Users migrated": [
-        "Οι χρήστες μεταφέρθηκαν"
-      ],
       "Users who have accessed their ${ BRAND_NAME } account": [
         "Χρήστες που έχουν κάνει πρόσβαση στον λογαριασμό τους ${ BRAND_NAME }"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Οι χρήστες που δεν έχουν διεκδικήσει τον λογαριασμό τους πριν οριστικοποιηθεί η μετεγκατάσταση θα πρέπει να ζητήσουν επαναφορά κωδικού πρόσβασης από τον διαχειριστή του οργανισμού τους ${ BRAND_NAME }."
-      ],
-      "Verified": [
-        "Επικυρωμένο"
-      ],
-      "Verify installation": [
-        "Επαλήθευση εγκατάστασης"
-      ],
-      "Verify your domain": [
-        "Επαληθεύστε τον τομέα σας"
-      ],
-      "Verify your domain to start a migration": [
-        "Επαληθεύστε τον τομέα σας για να ξεκινήσετε τη μετεγκατάσταση"
-      ],
-      "Waiting for MX...": [
-        "Αναμονή για MX..."
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Δεν καταφέραμε να επαληθεύσουμε την εγκατάσταση, παρακαλούμε ελέγξτε ότι την έχετε εγκαταστήσει στο Google Workspace λογαριασμό σας και προσπαθήστε ξανά."
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "Μεταβαίνουμε στο ${ BRAND_NAME }, την ασφαλή υπηρεσία ηλεκτρονικού ταχυδρομείου.\nΚαι ο λογαριασμός σας ${ BRAND_NAME } είναι έτοιμος για αξίωση.\nΚάντε κλικ στο ${ inviteLink }.\nΕισαγάγετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας, θα στείλουμε έναν κωδικό στο Gmail σας.\nΧρησιμοποιήστε το για να ορίσετε τον κωδικό πρόσβασής σας — και ο λογαριασμός σας ${ BRAND_NAME } είναι δικός σας.\nΓια λίγο θα λειτουργήσουν και τα δύο δίπλα-δίπλα. ${ BRAND_NAME } και το Gmail.\nΣτη συνέχεια, όταν όλοι μετακινηθούν, θα αποσύρουμε το Gmail. Θα σας το υπενθυμίσουμε πριν γίνει αυτό."
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "Παρατηρήσαμε ότι ορισμένοι χρήστες δεν έχουν διεκδικήσει τους λογαριασμούς τους ${ BRAND_NAME }."
-      ],
-      "We’re creating your accounts and importing your data now. Every email, every event is yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Δημιουργούμε τους λογαριασμούς σας και εισάγουμε τα δεδομένα σας τώρα. Κάθε ηλεκτρονικό μήνυμα, κάθε εκδήλωση είναι μόνο δική σας. Ορατό μόνο στην ομάδα σας. Ούτε εμείς, ούτε κανένας άλλος."
       ],
       "What are you migrating?": [
         "Τι μεταφέρετε;"
       ],
       "You": [
         "Εσείς"
-      ],
-      "You're all set!": [
-        "Όλα έτοιμα!"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "Έχετε σχεδόν τελειώσει, πρέπει να διαμορφώσετε τον τομέα σας ώστε να λαμβάνει τα μηνύματα ηλεκτρονικού ταχυδρομείου σας απευθείας στο ${ BRAND_NAME }. Μόλις επιβεβαιωθεί, η ομάδα σας θα σταματήσει να λαμβάνει νέα ηλεκτρονικά μηνύματα στο Gmail και η μετεγκατάσταση θα ολοκληρωθεί."
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "Το τρέχον πλάνο σας επιτρέπει έως και ${ maxMembers } χρήστη. Για να μετεγκαταστήσετε επιπλέον χρήστες, προσθέστε περισσότερες θέσεις στη συνδρομή σας.",
-        "Το τρέχον πλάνο σας επιτρέπει έως και ${ maxMembers } χρήστες. Για να μετεγκαταστήσετε επιπλέον χρήστες, προσθέστε περισσότερες θέσεις στη συνδρομή σας."
       ]
     },
     "Browser": {
@@ -3914,8 +3645,8 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Οποιοσδήποτε στον οργανισμό σας μπορεί να συνδεθεί σε κοινόχρηστους διακομιστές σε οποιαδήποτε χώρα."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Για μια απρόσκοπτη μετάβαση στο ${ BRAND_NAME }, κάντε εισαγωγή των δεδομένων σας από το Google, το Outlook και άλλες υπηρεσίες."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Για απρόσκοπτη ενσωμάτωση της ομάδας σας στο ${ BRAND_NAME }, εισαγάγετε τα δεδομένα σας από το Google, το Outlook και άλλα."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διαρρεύσουν από υπηρεσία τρίων."
@@ -6083,6 +5814,9 @@
       ]
     },
     "group_modal": {
+      "Add delegated roles to a group to grant its members only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Προσθέστε ανατεθειμένους ρόλους σε μια ομάδα για να εκχωρήσετε στα μέλη της μόνο τις συγκεκριμένες άδειες που χρειάζονται, διατηρώντας την εξουσία πλήρους διαχειριστή ξεχωριστή και το περιβάλλον σας ασφαλές."
+      ],
       "General": [
         "Γενικά"
       ],
@@ -6805,29 +6539,20 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Εισάγετε τους υπάρχοντες κωδικούς σας** από άλλες εφαρμογές 2FA, όπως το Google Authenticator"
       ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Βήμα 1: Προσκαλέστε τους φίλους σας** στο ${ BRAND_NAME } με τον σύνδεσμο παραπομπής σας."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Βήμα 1:** Προσκαλέστε τους φίλους σας στο ${ BRAND_NAME } με τον σύνδεσμο παραπομπής σας."
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**Βήμα 2:** Οι φίλοι σας λαμβάνουν **2 εβδομάδες δωρεάν** στο πλάνο τους."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Βήμα 2:** Οι φίλοι σας λαμβάνουν 2 εβδομάδες δωρεάν στο πλάνο τους."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Βήμα 3:** Κερδίστε ${ referrerRewardAmount } σε πιστώσεις για κάθε άτομο που εγγράφεται σε ένα πλάνο."
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**Βήμα 3:** Κερδίστε **${ referrerRewardAmount } σε πιστώσεις** για κάθε άτομο που εγγράφεται σε ένα πλάνο."
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Προσκαλέστε τους φίλους σας** στο ${ BRAND_NAME } με τον σύνδεσμο παραπομπής σας."
       ],
       "**Sync codes** to all your devices": [
         "**Συγχρονίστε τους κωδικούς** σε όλες τις συσκευές σας"
       ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Λαμβάνουν ${ refereeRewardAmount }** σε πιστώσεις εάν εγγραφούν."
+      ],
       "**This will disable 2-factor authentication.**": [
         "**Αυτό θα απενεργοποιήσει την ταυτοποίηση δύο παραγόντων.**"
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Λαμβάνετε ${ referrerRewardAmount }** σε πιστώσεις για κάθε φίλο που εγγράφεται."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Περισσότερο",
@@ -7326,6 +7051,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ΜΗΝ ξεχάσετε αυτόν τον κωδικό πρόσβασης. Αν τον ξεχάσετε, δεν θα είστε σε θέση να διαχειριστείτε τον οργανισμό σας."
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Θυμάστε τον κωδικό πρόσβασής σας; ${ verifyButton }"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Θέλετε να ανακαλέσετε όλες τις άλλες συνεδρίες εκτός από τις τρέχουσες;"
       ],
@@ -7557,6 +7285,9 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Για χρήστες που μεταβαίνουν σε ${ MAIL_APP_NAME } από άλλη υπηρεσία ηλεκτρονικού ταχυδρομείου, επιλέξτε την καρτέλα ${ boldAddresses } και προσθέστε όλες τις ενεργές διευθύνσεις ηλεκτρονικού ταχυδρομείου πριν αλλάξετε την εγγραφή MX για να διασφαλίσετε την ομαλή μετάβαση."
+      ],
+      "Forgot password?": [
+        "Ξεχάσατε τον κωδικό πρόσβασης;"
       ],
       "Free trial": [
         "Δωρεάν δοκιμή"
@@ -8138,6 +7869,9 @@
       "Password must have:": [
         "Ο κωδικός πρόσβασης πρέπει να περιλαμβάνει:"
       ],
+      "Password verified": [
+        "Ο Κωδικός πρόσβασης επαληθεύτηκε"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Οι πληρωμές προστατεύονται με κρυπτογράφηση TLS και με Ελβετικούς νόμους περί ιδιωτικότητας."
       ],
@@ -8149,6 +7883,9 @@
       ],
       "per month, billed at ${ price }": [
         "ανά μήνα, χρεώνεται ${ price }"
+      ],
+      "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
+        "Σας ζητά περιοδικά να επαληθεύσετε τον κωδικό πρόσβασής σας για το ${ BRAND_NAME } για να βεβαιωθείτε ότι δεν τον ξεχάσατε. Με την πάροδο του χρόνου, θα σας ζητείται λιγότερο συχνά."
       ],
       "Please add a password for the user on row": [
         "Παρακαλούμε προσθέστε ένα κωδικό πρόσβασης για το χρήστη στη σειρά",
@@ -8745,6 +8482,9 @@
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "Για να βοηθήσουμε να διατηρηθεί ο λογαριασμός σας ασφαλής, θέλουμε να βεβαιωθούμε ότι είστε πραγματικά εσείς που προσπαθείτε να συνδεθείτε."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Για να σας βοηθήσουμε να θυμάστε τον κωδικό πρόσβασής σας, θα σας ζητάμε να τον εισάγετε περιοδικά. Με την πάροδο του χρόνου, θα σας ζητάμε λιγότερο."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Για να εισάγετε εκδηλώσεις, θα πρέπει πρώτα να δημιουργήσετε ένα ημερολόγιο στο ${ CALENDAR_APP_NAME }. Εδώ θα εμφανιστούν οι εκδηλώσεις μετά την εισαγωγή."
       ],
@@ -9011,6 +8751,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Θα σας ειδοποιήσουμε όταν ολοκληρωθεί η εισαγωγή."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Θα σας υπενθυμίσουμε να επαληθεύσετε ξανά τον κωδικό πρόσβασής σας αργότερα"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
@@ -9801,9 +9544,6 @@
       "Confirm login password": [
         "Επιβεβαίωση κωδικού σύνδεσης"
       ],
-      "Confirm MX records added": [
-        "Επιβεβαίωση προσθήκης εγγραφών MX"
-      ],
       "Confirm new password": [
         "Επιβεβαίωση νέου κωδικού"
       ],
@@ -10222,6 +9962,9 @@
       "Password": [
         "Κωδικός πρόσβασης"
       ],
+      "Password reminders": [
+        "Υπενθυμίσεις κωδικού πρόσβασης"
+      ],
       "Password strength": [
         "Ισχύς Κωδικού Πρόσβασης"
       ],
@@ -10558,32 +10301,6 @@
         "Παρακαλούμε προσθέστε την ακόλουθη εγγραφή TXT. Σημειώστε: οι εγγραφές DNS ενδέχεται να χρειαστούν αρκετές ώρες για να ενημερωθούν."
       ]
     },
-    "Label for domain setup": {
-      "${ capitalizedGroup } record not found": [
-        "Η εγγραφή ${ capitalizedGroup } δεν βρέθηκε"
-      ],
-      "Host name": [
-        "Όνομα εξυπηρετητή"
-      ],
-      "Invalid ${ group.name } record found": [
-        "Βρέθηκε μη έγκυρη εγγραφή ${ group.name }"
-      ],
-      "Priority": [
-        "Προτεραιότητα"
-      ],
-      "Status": [
-        "Κατάσταση"
-      ],
-      "Type": [
-        "Τύπος"
-      ],
-      "Use default value (e.g. “@”)": [
-        "Χρήση προκαθορισμένης τιμής (e.g. “@”)"
-      ],
-      "Valid ${ group.name } record found": [
-        "Βρέθηκε έγκυρη εγγραφή ${ group.name }"
-      ]
-    },
     "Label for new member": {
       "Admin": [
         "Διαχειριστής"
@@ -10732,9 +10449,6 @@
       "Help": [
         "Βοήθεια"
       ],
-      "Help & support": [
-        "Βοήθεια και υποστήριξη"
-      ],
       "Help translate": [
         "Βοηθήστε στη μετάφραση"
       ],
@@ -10839,9 +10553,6 @@
       ],
       "Sign in": [
         "Είσοδος"
-      ],
-      "Sign-in help": [
-        "Βοήθεια σύνδεσης"
       ],
       "Terms": [
         "Όροι"
@@ -13132,6 +12843,20 @@
         "Προσφορά περιορισμένου χρόνου."
       ]
     },
+    "password_reminder": {
+      "If you forget your password, you may lose access to your encrypted data.": [
+        "Εάν ξεχάσετε τον κωδικό πρόσβασής σας, ενδέχεται να χάσετε την πρόσβαση στα κρυπτογραφημένα δεδομένα σας."
+      ],
+      "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
+        "Βεβαιωθείτε ότι έχετε απομνημονεύσει ή αποθηκεύσει με ασφάλεια τον κωδικό πρόσβασής σας, καθώς είναι το κλειδί για την αποκρυπτογράφηση των δεδομένων σας."
+      ],
+      "Turn off password reminders?": [
+        "Απενεργοποίηση υπενθυμίσεων κωδικού πρόσβασης;"
+      ],
+      "Turn off reminders": [
+        "Απενεργοποίηση υπενθυμίσεων"
+      ]
+    },
     "password_reset: info": {
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
         "**Όλα τα υπάρχοντα δεδομένα σας** (μηνύματα ηλεκτρονικού ταχυδρομείου, συμβάντα, επαφές, αρχεία, καταχωρήσεις ${ PASS_APP_NAME } κλπ.) **θα κλειδωθούν** και μπορούν να ξεκλειδωθούν μόνο με τον **παλιό κωδικό πρόσβασης** σας."
@@ -13855,6 +13580,78 @@
         "Yahoo"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
+      ],
+      "Summer Sale": [
+        "Καλοκαιρινές εκπτώσεις"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/μήνας"
+      ],
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "2 TB data storage": [
+        "Χώρος αποθήκευσης δεδομένων 2 TB"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "Αποθηκευτικός χώρος 200 GB: 40 φορές το τρέχον πλάνο σας"
+      ],
+      "3 TB data storage": [
+        "Χώρος αποθήκευσης δεδομένων 3 TB"
+      ],
+      "500 GB storage": [
+        "500 GB αποθηκευτικός χώρος"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Όλες οι premium λειτουργίες των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Όλες οι premium λειτουργίες των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Η συνδρομή σας θα ανανεωθεί με την τυπική ετήσια τιμή όταν λήξει ο κύκλος χρέωσης."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Πλήρης πρόσβαση στο ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Ατομικοί λογαριασμοί για 6 χρήστες"
+      ],
+      "Individual accounts for you and a partner": [
+        "Ατομικοί λογαριασμοί για εσάς και έναν σύντροφο"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online πρόγραμμα επεξεργασίας εγγράφων και υπολογιστικών φύλλων"
+      ],
+      "Recover previous file versions": [
+        "Ανάκτηση προηγούμενων εκδόσεων αρχείων"
+      ],
+      "Stronger protection against cyber threats": [
+        "Ισχυρότερη προστασία από κυβερνοαπειλές"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Μεταβείτε στο ετήσιο πρόγραμμά μας και εξοικονομήστε ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Απεριόριστοι φάκελοι, ετικέτες, και φίλτρα"
+      ],
+      "Use your own email domain": [
+        "Χρησιμοποιήστε τον δικό σας τομέα ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "για 12 μήνες"
+      ],
+      "SUMMER SALE": [
+        "ΚΑΛΟΚΑΙΡΙΝΕΣ ΕΚΠΤΩΣΕΙΣ"
+      ]
+    },
     "Recovery Email": {
       "Cancel": [
         "Ακύρωση"
@@ -13940,14 +13737,14 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Απολαύστε το **${ planTitle }** δωρεάν μέχρι τις **${ textDate }**."
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "Δώστε 2 εβδομάδες, λάβετε ${ referrerRewardAmount }"
+      "Give ${ refereeRewardAmount }, get ${ referrerRewardAmount }": [
+        "Δώστε ${ refereeRewardAmount }, λάβετε ${ referrerRewardAmount }"
       ],
       "How your free trial works:": [
         "Πως λειτουργεί η δοκιμαστική περίοδος σας:"
       ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "Χρησιμοποιώ το ${ BRAND_NAME } και σκέφτηκα ότι μπορεί να σας αρέσει. Πρόκειται για ένα ασφαλές email, αποθήκευση στο cloud, διαχειριστή κωδικών πρόσβασης και VPN που προστατεύει τα προσωπικά σας δεδομένα. Εγγραφείτε μέσω αυτού του συνδέσμου για να αποκτήσετε δωρεάν πρόσβαση σε premium λειτουργίες για 14 ημέρες: ${ referralLink }"
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
+        "Χρησιμοποιούσα το ${ BRAND_NAME } και σκέφτηκα ότι μπορεί να σας αρέσει. Είναι ένα ασφαλές ηλεκτρονικό ταχυδρομείο, χώρος αποθήκευσης cloud, διαχείριση κωδικών πρόσβασης και VPN που προστατεύει το απόρρητό σας. Εγγραφείτε με αυτόν τον σύνδεσμο για να κερδίσετε ${ refereeRewardAmount } από την επόμενη συνδρομή σας: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Εάν ακυρώσετε πριν από τότε, θα γίνει υποβάθμιση σε ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } όταν τελειώσει η δοκιμαστική περίοδος. Εάν δεν ακυρώσετε, το πλήρες πλάνο σας θα ξεκινήσει και θα λάβετε **${ referrerRewardAmount }** σε πιστώσεις."
@@ -13982,9 +13779,6 @@
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Έχετε **${ daysRemaining } ημέρα** για να εξερευνήσετε όλες τις ισχυρές λειτουργίες που προσφέρει το **${ planTitle }**.",
         "Έχετε **${ daysRemaining } ημέρες** για να εξερευνήσετε όλες τις ισχυρές λειτουργίες που προσφέρει το **${ planTitle }**."
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "Ο φίλος σας θα λάβει επίσης ${ refereeRewardAmount } για να εξαργυρώσει στον επόμενο λογαριασμό του!"
       ],
       "your subscription": [
         "η συνδρομή σας"
@@ -16708,6 +16502,9 @@
       "Connect your custom domain": [
         "Συνδέστε τον προσαρμοσμένο τομέα σας"
       ],
+      "Connected emails": [
+        "Συνδεδεμένα email"
+      ],
       "Connection status": [
         "Κατάσταση σύνδεσης"
       ],
@@ -17087,9 +16884,6 @@
       "Import contacts": [
         "Εισαγωγή Επαφών"
       ],
-      "Import emails, calendars, contacts": [
-        "Εισαγωγή ηλεκτρονικών διευθύνσεων, ημερολογίων, επαφών"
-      ],
       "Import events": [
         "Εισαγωγή εκδηλώσεων"
       ],
@@ -17099,8 +16893,14 @@
       "Import groups": [
         "Εισαγωγή ομάδων"
       ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "Εισαγωγή μέσω ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
       "Import your data to ${ BRAND_NAME }": [
         "Εισάγετε τα δεδομένα σας στο ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "Εισαγωγές"
       ],
       "Information exposed in breach": [
         "Πληροφορίες που εκτέθηκαν κατά την παραβίαση"
@@ -17132,8 +16932,8 @@
       "Make your business stand out": [
         "Κάντε την επιχείρησή σας να ξεχωρίζει"
       ],
-      "Migration assistant": [
-        "Βοηθός μετεγκατάστασης"
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Μετεγκαταστήσετε τον οργανισμό σας στο ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Μίνι ημερολόγιο"
@@ -17624,6 +17424,9 @@
       ],
       "Verify it’s you": [
         "Επαλήθευση ταυτότητας"
+      ],
+      "Verify your password": [
+        "Επαληθεύστε τον κωδικό πρόσβασής σας"
       ],
       "Verifying your card...": [
         "Γίνεται επαλήθευση της κάρτας σας..."

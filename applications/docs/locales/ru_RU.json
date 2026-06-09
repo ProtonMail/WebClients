@@ -429,6 +429,9 @@
       "Keep my subscription": [
         "Сохранить подписку"
       ],
+      "Later": [
+        "Позже"
+      ],
       "Learn more": [
         "Подробнее"
       ],
@@ -2228,9 +2231,6 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Убедитесь, что вы по-прежнему можете получить доступ к своему аккаунту и данным, даже если вы потеряете ваш пароль ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Для плавного перехода на ${ BRAND_NAME } импортируйте данные из Google, Outlook и других приложений."
-      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
       ],
@@ -2502,6 +2502,9 @@
       "Aliases could not be loaded": [
         "Не удалось загрузить псевдонимы"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Весь объём хранилища был распределён. Пожалуйста, уменьшите объём хранилища, выделенного для других пользователей."
+      ],
       "Already a member of this share": [
         "Уже участник этого общего ресурса"
       ],
@@ -2718,6 +2721,15 @@
       "Photos upload is temporarily disabled. Please try again later": [
         "Загрузка фотографий временно отключена. Повторите попытку позже"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Перед добавлением адресов настройте пользовательский домен."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Пожалуйста, настройте свой домен перед добавлением пользователей в вашу организацию."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Пожалуйста, включите многопользовательский режим перед добавлением пользователей в вашу организацию."
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Пожалуйста, исправьте выделенный конфликт, чтобы продолжить.",
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
@@ -2732,6 +2744,9 @@
       ],
       "Please select a state": [
         "Выберите штат"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Чтобы управлять несколькими пользователями, перейдите на бизнес-план с более чем 1 пользователем."
       ],
       "Port is required": [
         "Нужно указать порт"
@@ -2906,6 +2921,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Вы достигли лимита контактов для вашего аккаунта"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Вы достигли максимального числа пользователей, предусмотренного вашим тарифом. Пожалуйста, улучшите ваш тариф прежде, чем добавлять нового пользователя."
       ],
       "You must set a name": [
         "Вы должны задать имя"
@@ -6840,9 +6858,6 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\" успешно сохранено"
       ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" успешно перемещено"
-      ],
       "\"${ newName }\" failed to be renamed": [
         "Не удалось переименовать \"${ newName }\""
       ],
@@ -6908,12 +6923,6 @@
         "${ numberOfItems } элемента восстановлены из корзины",
         "${ numberOfItems } элемента восстановлены из корзины",
         "${ numberOfItems } элемента восстановлены из корзины"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } элемент успешно перемещен",
-        "${ numberOfItems } элемента успешно перемещены",
-        "${ numberOfItems } элемента успешно перемещены",
-        "${ numberOfItems } элемента успешно перемещены"
       ],
       "${ reason } has been disabled": [
         "${ reason } был отключен"
@@ -7413,6 +7422,9 @@
       "Please describe the problem and include any error messages": [
         "Пожалуйста, опишите проблему и добавьте все возникавшие сообщения об ошибках"
       ],
+      "Search": [
+        "Поиск"
+      ],
       "Search for group name": [
         "Поиск по названию группы"
       ],
@@ -7606,6 +7618,78 @@
       ],
       "SPRING SALE": [
         "ВЕСЕННИЕ СКИДКИ"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Получить со скидкой"
+      ],
+      "Summer Sale": [
+        "Летние скидки"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "15 GB storage": [
+        "15 ГБ для хранения"
+      ],
+      "2 TB data storage": [
+        "2 ТБ для хранения данных"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 ГБ для хранения: в 40 раз больше вашего текущего тарифа"
+      ],
+      "3 TB data storage": [
+        "3 ТБ для хранения данных"
+      ],
+      "500 GB storage": [
+        "500 ГБ для хранения"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Все платные функции ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Все платные функции ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скидки рассчитываются от стандартной ежемесячной цены. Ваша подписка будет продлена по стандартному годовому тарифу в конце платежного цикла."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Полный доступ к ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Индивидуальные аккаунты для 6 пользователей"
+      ],
+      "Individual accounts for you and a partner": [
+        "Индивидуальные аккаунты для вас и партнера"
+      ],
+      "Online document and spreadsheet editor": [
+        "Онлайн-редактор документов и электронных таблиц"
+      ],
+      "Recover previous file versions": [
+        "Восстанавливайте предыдущие версии файлов"
+      ],
+      "Stronger protection against cyber threats": [
+        "Усиленная защита от киберугроз"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Перейдите на наш годовой тариф и сэкономьте ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Use your own email domain": [
+        "Используйте собственный домен адреса электронной почты"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "на 12 месяцев"
+      ],
+      "SUMMER SALE": [
+        "ЛЕТНИЕ СКИДКИ"
       ]
     },
     "Recent documents table header": {
@@ -8800,6 +8884,9 @@
       "Desktop": [
         "Для настольных компьютеров"
       ],
+      "Devices": [
+        "Устройств"
+      ],
       "Discard": [
         "Сбросить"
       ],
@@ -8916,9 +9003,6 @@
       ],
       "Import contacts": [
         "Импорт контактов"
-      ],
-      "Import emails, calendars, contacts": [
-        "Импорт электронных писем, календарей и контактов"
       ],
       "Import events": [
         "Импортировать события"
@@ -9081,6 +9165,9 @@
       ],
       "Share your calendar with your team": [
         "Делитесь своим календарём с командой"
+      ],
+      "Shared with me": [
+        "Поделись со мной"
       ],
       "Sign in and grant access": [
         "Войдите и предоставьте доступ"

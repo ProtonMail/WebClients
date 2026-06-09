@@ -465,6 +465,9 @@
       "Keep my subscription": [
         "내 구독 유지하기"
       ],
+      "Later": [
+        "나중에"
+      ],
       "Learn more": [
         "더 알아보기"
       ],
@@ -1176,6 +1179,44 @@
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "특수 설계된 NetShield는 광고나 추적기 및 멀웨어를 차단하여 기기를 보호하고 브라우징 성능을 향상시켜줍니다."
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "캘린더"
+      ],
+      "Configure migration": [
+        "이전 작업 구성"
+      ],
+      "Contacts": [
+        "연락처"
+      ],
+      "Estimated size": [
+        "예상 용량"
+      ],
+      "Has errors": [
+        "오류 있음"
+      ],
+      "In progress": [
+        "진행 중"
+      ],
+      "Migration status": [
+        "마이그레이션 상태"
+      ],
+      "Organization does not have enough seats available": [
+        "조직의 사용 권한이 충분하지 않습니다."
+      ],
+      "Organization does not have enough storage available": [
+        "조직에 충분한 저장공간이 남아있지 않습니다."
+      ],
+      "Status": [
+        "상태"
+      ],
+      "User": [
+        "사용자"
+      ],
+      "What are you migrating?": [
+        "무엇을 이전하시나요?"
       ]
     },
     "Browser": {
@@ -2484,9 +2525,6 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "${ BRAND_NAME } 비밀번호를 분실한 경우에도 계정과 데이터에 접근 가능한지 여부를 확인하세요."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "원활하게 ${ BRAND_NAME }(으)로 전환하기 위해 Google, Outlook 등에서 데이터를 불러오기 하세요."
-      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "제3자 서비스로부터 비밀번호 혹은 다른 데이터가 유출되면 알림받으세요."
       ],
@@ -2835,6 +2873,9 @@
       "Aliases could not be loaded": [
         "별칭을 불러올 수 없습니다."
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "모든 저장 공간이 할당되었습니다. 다른 사용자에게 할당 된 저장공간을 줄이십시오."
+      ],
       "Already a member of this share": [
         "이미 이 공유의 구성원입니다"
       ],
@@ -3075,6 +3116,15 @@
       "Photos upload is temporarily disabled. Please try again later": [
         "사진 업로드가 일시적으로 비활성화되었습니다. 나중에 다시 시도해 주십시오."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "주소를 추가하기 전에 지정 도메인을 설정해야 합니다."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "조직에 사용자를 추가하기 전에 커스텀 도메인을 구성하세요."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "조직에 사용자를 추가하기 전에 다중 사용자 지원을 활성화해주세요."
+      ],
       "Please enter a valid postal code": [
         "유효한 우편 번호를 입력해 주세요"
       ],
@@ -3098,6 +3148,9 @@
       ],
       "Please select a state": [
         "주를 선택해주세요"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "1명 보다 더 많은 다중 사용자를 관리하려면 비즈니스 플랜으로 업그레이드 하세요."
       ],
       "Port is required": [
         "포트가 필요함"
@@ -3255,6 +3308,9 @@
       "Unknown error": [
         "알 수 없는 오류"
       ],
+      "Unknown location": [
+        "알 수 없는 위치"
+      ],
       "Update Too Large": [
         "업데이트 너무 큼"
       ],
@@ -3290,6 +3346,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "계정의 최대 연락처 수를 초과했습니다"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "플랜에서 사용 가능한 모든 주소를 사용했습니다. 새 주소를 사용하려면 계정에서 주소를 비활성화하거나 플랜을 업그레이드하세요."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "현재 플랜에서 추가 가능한 모든 사용자를 추가했습니다. 새 사용자를 추가하려면 플랜을 업그레이드해 주세요."
       ],
       "You must set a name": [
         "이름을 반드시 설정해야 합니다"
@@ -4203,6 +4265,9 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized }개 라벨 선택함"
       ],
+      "${ total } user found": [
+        "${ total }명 사용자 찾음"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } 연락처가 성공적으로 업데이트 되었습니다."
       ],
@@ -4220,21 +4285,6 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**킬 스위치**: VPN이 예기치 않게 끊길 경우 인터넷을 차단하여 데이터 유출을 차단합니다."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**1단계:** 리퍼럴 링크로 친구들을 ${ BRAND_NAME }에 초대하세요."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**2단계:** 초대한 친구들은 구독한 ${ BRAND_NAME } 플랜에 추가로 2주 무료 혜택을 받게 됩니다."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**2단계:** 초대한 친구들은 구독한 플랜에 추가로 2주 무료 혜택을 받게 됩니다."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**3단계:** 플랜을 구독하는 친구 한 명당 ${ referrerRewardAmount } 크레딧을 받아보세요."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**3단계:** 플랜을 구독하는 친구 한 명당 ${ referrerRewardAmount } 크레딧을 받아보세요."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 추가 저장공간"
@@ -7414,9 +7464,6 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\"이(가) 성공적으로 저장되었습니다"
       ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\"이(가) 성공적으로 이동되었습니다"
-      ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\"의 이름을 변경할 수 없습니다"
       ],
@@ -7452,9 +7499,6 @@
       ],
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems }개가 휴지통에서 복구되었습니다"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems }개가 성공적으로 삭제되었습니다"
       ],
       "${ reason } has been disabled": [
         "${ reason }이(가) 비활성화 되었습니다."
@@ -8047,6 +8091,9 @@
       "Please describe the problem and include any error messages": [
         "문제를 설명해 주시고 오류 메시지를 포함해 주십시오"
       ],
+      "Search": [
+        "검색"
+      ],
       "Search for group name": [
         "그룹 이름을 위해 검색"
       ],
@@ -8262,6 +8309,78 @@
       ],
       "SPRING SALE": [
         "봄 세일"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "할인 받기"
+      ],
+      "Summer Sale": [
+        "여름 세일"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/월"
+      ],
+      "15 GB storage": [
+        "15 GB 저장공간"
+      ],
+      "2 TB data storage": [
+        "2 TB 데이터 저장공간"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 저장공간: 현재 요금제의 40배"
+      ],
+      "3 TB data storage": [
+        "3 TB 데이터 저장공간"
+      ],
+      "500 GB storage": [
+        "500 GB 저장공간"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 premium 기능"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 premium 기능"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME }에 대한 완전한 접근"
+      ],
+      "Individual accounts for 6 users": [
+        "6인용 개별 계정"
+      ],
+      "Individual accounts for you and a partner": [
+        "귀하와 파트너를 위한 개별 계정"
+      ],
+      "Online document and spreadsheet editor": [
+        "온라인 문서 및 스프레드시트 편집기"
+      ],
+      "Recover previous file versions": [
+        "이전 파일 버전 복구"
+      ],
+      "Stronger protection against cyber threats": [
+        "사이버 위협에 대한 더욱 강력한 보호"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "연간 요금제로 전환하고 ${ toYearlyDiscountAmount }를 절약하세요!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "무제한 폴더, 라벨 및 필터"
+      ],
+      "Use your own email domain": [
+        "나만의 이메일 도메인 사용"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12개월 동안"
+      ],
+      "SUMMER SALE": [
+        "여름 세일"
       ]
     },
     "Recent documents table header": {
@@ -9532,6 +9651,9 @@
       "Desktop": [
         "데스크톱"
       ],
+      "Devices": [
+        "기기"
+      ],
       "Discard": [
         "취소"
       ],
@@ -9660,9 +9782,6 @@
       ],
       "Import contacts": [
         "연락처 가져오기"
-      ],
-      "Import emails, calendars, contacts": [
-        "이메일, 캘린더 및 연락처 불러오기"
       ],
       "Import events": [
         "이벤트 불러오기"
@@ -9852,6 +9971,9 @@
       ],
       "Share your link": [
         "링크 공유"
+      ],
+      "Shared with me": [
+        "나와 공유됨"
       ],
       "Sign in and grant access": [
         "로그인 및 엑세스 권한 부여"
