@@ -126,7 +126,7 @@ const DNSGroupRecords: FC<{ group: DNSGroup; onRefresh?: () => Promise<void> }> 
                             )}
 
                             {state === 'valid' && (
-                                <span className="color-success inline-flex flex-nowrap items-top gap-1 py-3">
+                                <span className="color-success inline-flex flex-nowrap items-top gap-1 py-3 text-cut">
                                     <IcCheckmarkCircle className="shrink-0 mt-0.5" />
                                     {c('Label for domain setup').t`Valid ${group.name} record found`}
                                 </span>
@@ -137,7 +137,7 @@ const DNSGroupRecords: FC<{ group: DNSGroup; onRefresh?: () => Promise<void> }> 
                                     color="norm"
                                     shape="ghost"
                                     size="small"
-                                    className="ml-auto"
+                                    className="ml-auto shrink-0"
                                     loading={loading}
                                     onClick={() => withLoading(onRefresh())}
                                 >
