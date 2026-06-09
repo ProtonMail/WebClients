@@ -647,6 +647,9 @@
       "Keep my subscription": [
         "Mantén la subscripció"
       ],
+      "Later": [
+        "Més tard"
+      ],
       "Learn about recovery options": [
         "Informeu-vos sobre les opcions de recuperació"
       ],
@@ -911,9 +914,6 @@
       "Save": [
         "Desa"
       ],
-      "Save & exit": [
-        "Deseu i sortiu"
-      ],
       "Save address": [
         "Desa l'adreça"
       ],
@@ -1051,9 +1051,6 @@
       ],
       "Sign out": [
         "Tanca la sessió"
-      ],
-      "Sign out of ${ tokens[0].Account }": [
-        "Tanqueu la sessió de ${ tokens[0].Account }"
       ],
       "Sign out of all accounts": [
         "Tanca tots els comptes"
@@ -1231,6 +1228,9 @@
       ],
       "Verify domain": [
         "Verifica el domini"
+      ],
+      "Verify now": [
+        "Verifiqueu-ho ara"
       ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verifica el domini ${ unverifiedSSODomain.DomainName }"
@@ -1995,32 +1995,8 @@
       ]
     },
     "BOSS": {
-      "${ BRAND_NAME } Easy Switch": [
-        "${ BRAND_NAME } Easy Switch"
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } de ${ totalCount }"
-      ],
-      "Account connected": [
-        "S'ha connectat el compte"
-      ],
-      "Account disconnected": [
-        "S'ha desconnectat el compte"
-      ],
-      "Accounts migrated": [
-        "Comptes migrats"
-      ],
       "Activated": [
         "Activat"
-      ],
-      "Add domain": [
-        "Afegeix un domini"
-      ],
-      "Add users": [
-        "Afegiu usuaris"
-      ],
-      "Add your organization email domain to ${ BRAND_NAME }.": [
-        "Afegiu el domini de correu electrònic de la vostra organització a ${ BRAND_NAME }."
       ],
       "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
         "Aquesta adreça ja la utilitza un usuari de fora de la vostra organització. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
@@ -2028,71 +2004,20 @@
       "All": [
         "Tots"
       ],
-      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
-        "Tots els comptes d'usuari migrats estan a punt per ser convidats a la vostra organització de ${ BRAND_NAME }."
-      ],
-      "An unknown error ocurred. Please refresh the page and try again": [
-        "S'ha produït un error desconegut. Actualitzeu la pàgina i torneu-ho a provar"
-      ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Segur que voleu continuar? Els usuaris que no hagin demanat el compte abans que finalitzi la migració hauran de sol·licitar un restabliment de contrasenya a l'administrador de la seva organització de ${ BRAND_NAME }."
-      ],
-      "Authenticate": [
-        "Autentiqueu-vos"
-      ],
-      "Authenticate your Google Workspace account": [
-        "Autentiqueu el vostre compte de Google Workspace"
-      ],
       "Calendar": [
         "Calendari"
-      ],
-      "Collapse step": [
-        "Plegueu el pas"
-      ],
-      "Configure domain": [
-        "Configureu el domini"
       ],
       "Configure migration": [
         "Configureu la migració"
       ],
-      "Configure users": [
-        "Configureu els usuaris"
-      ],
-      "Configure your domain": [
-        "Configureu el vostre domini"
-      ],
       "Contacts": [
         "Contactes"
-      ],
-      "Copy the below code and paste it in the DNS section of your domain host.": [
-        "Copieu el codi següent i enganxeu-lo a la secció DNS del vostre proveïdor de domini."
-      ],
-      "Creating accounts. Going private": [
-        "S'estan creant els comptes. S'estan passant a privats"
       ],
       "Data migration status from Google Workspace to ${ BRAND_NAME }": [
         "Estat de la migració de dades de Google Workspace a ${ BRAND_NAME }"
       ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIM afegeix una signatura digital a cada correu electrònic perquè els destinataris puguin verificar que el missatge prové realment del vostre domini i no ha estat alterat durant el trànsit. Sense ella, els missatges poden ser considerats menys fiables."
-      ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARC es basa en SPF i DKIM indicant als servidors receptors com gestionar els missatges que no superin aquestes comprovacions. Ajuda a protegir el vostre domini contra la suplantació i millora la fiabilitat general dels lliuraments."
-      ],
-      "Domain added": [
-        "S'ha afegit el domini"
-      ],
-      "Domain provider": [
-        "Proveïdor de domini"
-      ],
-      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
-        "No sabeu per on començar? Mireu com actualitzar el vostre DNS a ${ registrarLink }"
-      ],
       "Emails": [
         "Correus electrònics"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "Assegureu-vos que els vostres correus electrònics arribin a la bústia d'entrada i no a la carpeta de correu brossa. L'actualització de l'SPF permetrà als usuaris enviar correus des de ${ BRAND_NAME } i Google simultàniament mentre duri la migració."
       ],
       "Errors": [
         "Errors"
@@ -2100,65 +2025,14 @@
       "Estimated size": [
         "Mida estimada"
       ],
-      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
-        "Tothom rep el mateix enllaç d'invitació. Visitaran la pàgina, introduiran el seu correu electrònic i rebran un codi de verificació a la seva bústia d'entrada de Gmail. Des d'allà, establiran la seva contrasenya de ${ BRAND_NAME }."
-      ],
-      "Expand step": [
-        "Desplegueu el pas"
-      ],
-      "Failed to load OAuth": [
-        "No s'ha pogut carregar OAuth"
-      ],
-      "Final step": [
-        "Pas final"
-      ],
       "Find out what can be migrated.": [
         "Descobriu què es pot migrar."
-      ],
-      "Get help and useful tips for other domain providers ${ here }": [
-        "Obtingueu ajuda i consells útils per a altres proveïdors de dominis ${ here }"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "Aplicació de Google Marketplace per copiar dades a ${ BRAND_NAME }"
-      ],
-      "Google Workspace account": [
-        "Compte de Google Workspace"
       ],
       "Has errors": [
         "Té errors"
       ],
-      "Import completed successfully": [
-        "La importació s'ha completat correctament"
-      ],
-      "Import details": [
-        "Detalls de la importació"
-      ],
       "In progress": [
         "En curs"
-      ],
-      "Install app": [
-        "Instal·lar aplicació"
-      ],
-      "Install migration app": [
-        "Instal·leu l’aplicació de migració"
-      ],
-      "Invitation link": [
-        "Enllaç d'invitació"
-      ],
-      "Invitation message": [
-        "Missatge d'invitació"
-      ],
-      "invite link": [
-        "enllaç d'invitació"
-      ],
-      "It can take up to 24 hours for these changes to propagate.": [
-        "Pot trigar fins a 24 hores perquè aquests canvis es propaguin."
-      ],
-      "Loading your organization data": [
-        "S'estan carregant les dades de la vostra organització"
-      ],
-      "Mail": [
-        "Correu"
       ],
       "Member address not found. Please contact customer support to resolve this": [
         "No s'ha trobat l'adreça del membre. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
@@ -2166,33 +2040,11 @@
       "Migrate": [
         "Migrar"
       ],
-      "Migrate accounts": [
-        "Migrar els comptes"
-      ],
-      "Migrate accounts to ${ BRAND_NAME }": [
-        "Migreu els comptes a ${ BRAND_NAME }"
-      ],
-      "Migrate from Google Workspace": [
-        "Migreu des de Google Workspace"
-      ],
       "Migrated": [
         "S'ha migrat"
       ],
-      "Migrated accounts": [
-        "Comptes migrats"
-      ],
-      "Migration includes": [
-        "La migració inclou"
-      ],
-      "Migration started for ${ n } user": [
-        "S'ha iniciat la migració per ${ n } usuari",
-        "S'ha iniciat la migració per ${ n } usuaris"
-      ],
       "Migration status": [
         "Estat de la migració"
-      ],
-      "Migration summary": [
-        "Resum de la migració"
       ],
       "Missing organization private key": [
         "Falta la clau privada de l'organització"
@@ -2200,29 +2052,11 @@
       "Missing organization public key": [
         "Falta la clau pública de l'organització"
       ],
-      "Need help?": [
-        "Necessiteu ajuda?"
-      ],
-      "No error details available. Please contact customer support for more information": [
-        "No hi ha detalls de l'error disponibles. Poseu-vos en contacte amb el servei d'atenció al client per més informació"
-      ],
       "No users to display": [
         "No hi ha cap usuari per mostrar"
       ],
       "Not activated": [
         "No s'ha activat"
-      ],
-      "Not confirmed": [
-        "No confirmat"
-      ],
-      "Not detected correctly? Choose your provider from the list.": [
-        "No s'ha detectat correctament? Trieu el vostre proveïdor de la llista."
-      ],
-      "Onboard your team": [
-        "Incorporeu el vostre equip"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "Un cop hàgim confirmat que els correus electrònics s'envien a ${ BRAND_NAME }, la migració es completarà. Rebreu un correu electrònic de confirmació per informar-vos quan això passi. Aquest procés pot trigar fins a 24 hores."
       ],
       "Organization does not have enough seats available": [
         "L'organització no té prou llicències disponibles"
@@ -2233,132 +2067,29 @@
       "Pending": [
         "Està pendent"
       ],
-      "Please don’t close or refresh this window.": [
-        "No tanqueu ni actualitzeu aquesta finestra."
-      ],
-      "Reauthenticate your Google Workspace account to start a migration": [
-        "Torneu a autenticar el vostre compte de Google Workspace per iniciar una migració"
-      ],
-      "Refresh": [
-        "Actualitzar"
-      ],
-      "Select at least one user to start a migration": [
-        "Seleccioneu almenys un usuari per iniciar una migració"
-      ],
       "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
         "Seleccioneu exactament què voleu migrar. S'aplicarà a tots els usuaris de l'organització."
-      ],
-      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
-        "Seleccioneu els comptes que voleu portar a ${ BRAND_NAME }. Podeu migrar tota la vostra organització avui mateix o començar a petita escala i portar la resta quan estigueu a punt."
       ],
       "Select users to migrate": [
         "Seleccioneu els usuaris que voleu migrar"
       ],
-      "Set up secure sending (DKIM)": [
-        "Configureu l'enviament segur (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "Configurar l'enviament segur (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "Configura l'enviament segur (SPF)"
-      ],
-      "Settings": [
-        "Preferències"
-      ],
-      "Sign in to Google Workspace": [
-        "Inicieu la sessió a Google Workspace"
-      ],
-      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
-        "Inicieu sessió amb un compte d'administrador de Google Workspace per a ${ BRAND_NAME } per configurar la migració."
-      ],
       "Size": [
         "Mida"
-      ],
-      "Skip": [
-        "Ometre"
-      ],
-      "Skipped ${ count } contact due to incompatibilities": [
-        "S'ha omès ${ count } contacte a causa d'incompatibilitats",
-        "S'han omès ${ count } contactes a causa d'incompatibilitats"
-      ],
-      "Skipped ${ count } email due to incompatibilities": [
-        "S'ha omès ${ count } correu electrònic a causa d'incompatibilitats",
-        "S'han omès ${ count } correus electrònics a causa d'incompatibilitats"
-      ],
-      "Skipped ${ count } event due to incompatibilities": [
-        "S'ha omès ${ count } esdeveniment a causa d'incompatibilitats",
-        "S'han omès ${ count } esdeveniments a causa d'incompatibilitats"
-      ],
-      "Some accounts are not claimed": [
-        "Alguns comptes no s'han reclamat"
       ],
       "Status": [
         "Estat"
       ],
-      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
-        "Per portar les dades de la vostra organització a ${ BRAND_NAME }, instal·leu ${ BRAND_NAME } Easy Switch des del Marketplace de Google Workspace. Després d'instal·lar-lo, torneu aquí per continuar."
-      ],
-      "Update records for receiving": [
-        "Actualitzeu els registres per a la recepció"
-      ],
       "User": [
         "Usuari"
       ],
-      "Users activated": [
-        "S'han activat els usuaris"
-      ],
-      "Users migrated": [
-        "S'han migrat els usuaris"
-      ],
       "Users who have accessed their ${ BRAND_NAME } account": [
         "Usuaris que han accedit al seu compte de ${ BRAND_NAME }"
-      ],
-      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Els usuaris que no hagin reclamat el seu compte abans que finalitzi la migració hauran de sol·licitar un restabliment de la contrasenya a l'administrador de la seva organització de ${ BRAND_NAME }."
-      ],
-      "Verified": [
-        "Verificat"
-      ],
-      "Verify installation": [
-        "Verifiqueu la instal·lació"
-      ],
-      "Verify your domain": [
-        "Verifiqueu el vostre domini"
-      ],
-      "Verify your domain to start a migration": [
-        "Verifiqueu el vostre domini per iniciar una migració"
-      ],
-      "Waiting for MX...": [
-        "S'està esperant el registre MX..."
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "No s'ha pogut verificar la instal·lació; comproveu que estigui instal·lada al vostre compte de Google Workspace i torneu-ho a provar."
-      ],
-      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
-        "Ens traslladem a ${ BRAND_NAME }, el servei de correu electrònic segur.\nI el vostre compte de ${ BRAND_NAME } ja està a punt per reclamar-lo.\nFeu clic a ${ inviteLink }.\nIntroduïu la vostra adreça de correu electrònic i us enviarem un codi al vostre Gmail.\nUtilitzeu-lo per establir la contrasenya i el compte de ${ BRAND_NAME } serà vostre.\nDurant una estona, tots dos funcionaran alhora: ${ BRAND_NAME } i Gmail.\nDesprés, quan tothom s'hagi traslladat, retirarem Gmail. Us ho recordarem abans que passi."
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "Hem observat que alguns usuaris no han demanat els seus comptes de ${ BRAND_NAME }."
-      ],
-      "We’re creating your accounts and importing your data now. Every email, every event is yours alone. Visible to your team only. Not us, not anyone else.": [
-        "Ara mateix estem creant els vostres comptes i important les vostres dades. Cada correu electrònic, cada esdeveniment és exclusivament vostre. Visible només per al vostre equip. Ni per a nosaltres, ni per a ningú més."
       ],
       "What are you migrating?": [
         "Què esteu migrant?"
       ],
       "You": [
         "Tú"
-      ],
-      "You're all set!": [
-        "Ja ho teniu tot a punt!"
-      ],
-      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
-        "Gairebé heu acabat, cal que configureu el vostre domini per rebre els vostres correus electrònics directament a ${ BRAND_NAME }. Un cop confirmat, el vostre equip deixarà de rebre correus electrònics nous a Gmail i es completarà la migració."
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "El vostre pla actual us permet fins a ${ maxMembers } usuari. Per migrar usuaris addicionals, afegiu més llicències a la vostra subscripció.",
-        "El vostre pla actual us permet fins a ${ maxMembers } usuaris. Per migrar usuaris addicionals, afegiu més llicències a la vostra subscripció."
       ]
     },
     "Browser": {
@@ -3914,8 +3645,8 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Tothom a la vostra organització es pot connectar a servidors compartits de tots els països."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Per a una transició sense problemes al ${ BRAND_NAME }, importeu les vostres dades de Google, Outlook i altres."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Per a una incorporació fluida del vostre equip a ${ BRAND_NAME }, importeu les vostres dades de Google, Outlook i d'altres."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers."
@@ -4974,6 +4705,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Els noms d'algunes de les etiquetes superen el límit de caràcters màxim de ${ MAIL_APP_NAME }. Modifiqueu la importació per tal d'editar-ne els noms."
+      ],
+      "Something went wrong while converting the address": [
+        "Alguna cosa ha anat malament en convertir l'adreça"
       ],
       "Something went wrong while creating the address": [
         "Alguna cosa ha anat malament mentre es creava l'adreça"
@@ -6083,6 +5817,9 @@
       ]
     },
     "group_modal": {
+      "Add delegated roles to a group to grant its members only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Afegiu rols delegats a un grup per concedir als seus membres només els permisos específics que necessitin, mantenint separat el poder d'administrador total i el vostre entorn segur."
+      ],
       "General": [
         "General"
       ],
@@ -6805,29 +6542,20 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importeu els vostres codis** d'altres aplicacions 2FA, com ara Google Authenticator"
       ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Pas 1: Convideu les vostres amistats** a ${ BRAND_NAME } amb el vostre enllaç de referència."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Pas 1:** Convideu amistats a ${ BRAND_NAME } amb el vostre enllaç de recomanació."
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**Pas 2:** Les vostres amistats obtindran **2 setmanes de franc** en el seu pla."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Pas 2:** Les vostres amistats obtindran 2 setmanes de franc en el seu pla."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Pas 3:** Obtingueu ${ referrerRewardAmount } en crèdits per cada persona que se subscrigui a un pla."
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**Pas 3:** Aconseguiu **${ referrerRewardAmount } en crèdits** per cada persona que se subscrigui a un pla."
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Convideu amistats** a ${ BRAND_NAME } amb el vostre enllaç de referència."
       ],
       "**Sync codes** to all your devices": [
         "**Sincronitzeu els codis** a tots els dispositius"
       ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Ells reben ${ refereeRewardAmount }** en crèdits si es subscriuen."
+      ],
       "**This will disable 2-factor authentication.**": [
         "**Això desactivarà l'autenticació de doble factor.**"
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Rebeu ${ referrerRewardAmount }** en crèdits per cada amistat que se subscrigui."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } més",
@@ -7323,6 +7051,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "No oblideu aquesta contrasenya. Si l'oblideu, no podreu administrar la vostra organització."
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Recordeu la vostra contrasenya? ${ verifyButton }"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Voleu revocar totes les altres sessions i l’actual?"
       ],
@@ -7554,6 +7285,9 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Per als usuaris que canviïn a ${ MAIL_APP_NAME } des d'un altre servei de correu electrònic, seleccioneu la pestanya ${ boldAddresses } i afegiu totes les adreces de correu electrònic actives abans de canviar el registre MX per assegurar una transició sense problemes."
+      ],
+      "Forgot password?": [
+        "Heu oblidat la contrasenya?"
       ],
       "Free trial": [
         "Prova gratuïta"
@@ -8135,6 +7869,9 @@
       "Password must have:": [
         "La contrasenya ha de tenir:"
       ],
+      "Password verified": [
+        "S'ha verificat la contrasenya"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Els pagaments estan protegits amb xifratge TLS i les lleis de privacitat suïsses."
       ],
@@ -8146,6 +7883,9 @@
       ],
       "per month, billed at ${ price }": [
         "al mes, facturat a ${ price }"
+      ],
+      "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
+        "Periòdicament us demana que verifiqueu la contrasenya de ${ BRAND_NAME } per assegurar-vos que no l'oblideu. Amb el temps, us la demanarà amb menys freqüència."
       ],
       "Please add a password for the user on row": [
         "Afegiu una contrasenya per a l'usuari seleccionat",
@@ -8742,6 +8482,9 @@
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "Per ajudar-vos a mantenir el compte segur, ens volem assegurar que sou realment vós qui intenteu iniciar sessió."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Per ajudar-vos a recordar la contrasenya, us demanarem que la introduïu periòdicament. Amb el temps, us la demanarem menys sovint."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Per a importar esdeveniments, creeu abans un calendari en ${ CALENDAR_APP_NAME }. Aquí és on apareixeran tots els esdeveniments després de la importació."
       ],
@@ -9008,6 +8751,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Us notificarem quan la importació s'hagi realitzat."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Us recordarem més tard que torneu a verificar la contrasenya"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviarem un codi de verificació nou a ${ strong }"
@@ -9798,9 +9544,6 @@
       "Confirm login password": [
         "Confirma la contrasenya d'inici de sessió"
       ],
-      "Confirm MX records added": [
-        "Confirmeu que s'han afegit els registres MX"
-      ],
       "Confirm new password": [
         "Confirmi la nova contrasenya"
       ],
@@ -10219,6 +9962,9 @@
       "Password": [
         "Contrasenya"
       ],
+      "Password reminders": [
+        "Recordatoris de contrasenya"
+      ],
       "Password strength": [
         "Nivell de seguretat de la contrasenya"
       ],
@@ -10555,32 +10301,6 @@
         "Afegiu el següent registre TXT. Recordeu que els registres DNS poden trigar diverses hores a actualitzar-se."
       ]
     },
-    "Label for domain setup": {
-      "${ capitalizedGroup } record not found": [
-        "No s'ha trobat el registre ${ capitalizedGroup }"
-      ],
-      "Host name": [
-        "Nom del servidor"
-      ],
-      "Invalid ${ group.name } record found": [
-        "S'ha trobat un registre de ${ group.name } no vàlid"
-      ],
-      "Priority": [
-        "Prioritat"
-      ],
-      "Status": [
-        "Estat"
-      ],
-      "Type": [
-        "Tipus"
-      ],
-      "Use default value (e.g. “@”)": [
-        "Utilitzeu el valor predeterminat (per exemple \"@\")"
-      ],
-      "Valid ${ group.name } record found": [
-        "S'ha trobat un registre ${ group.name } vàlid"
-      ]
-    },
     "Label for new member": {
       "Admin": [
         "Administrador"
@@ -10717,6 +10437,9 @@
       "Forgot username?": [
         "Heu oblidat el nom d'usuari?"
       ],
+      "Frequent sign-in problems": [
+        "Problemes freqüents d'inici de sessió"
+      ],
       "Get ${ BRAND_NAME } Pass": [
         "Obtén ${ BRAND_NAME } Pass"
       ],
@@ -10728,9 +10451,6 @@
       ],
       "Help": [
         "Ajuda"
-      ],
-      "Help & support": [
-        "Ajuda i suport"
       ],
       "Help translate": [
         "Ajudeu a traduir"
@@ -10836,9 +10556,6 @@
       ],
       "Sign in": [
         "Inicia la sessió"
-      ],
-      "Sign-in help": [
-        "Ajuda per iniciar la sessió"
       ],
       "Terms": [
         "Termes"
@@ -13129,6 +12846,20 @@
         "Oferta per temps limitat."
       ]
     },
+    "password_reminder": {
+      "If you forget your password, you may lose access to your encrypted data.": [
+        "Si oblideu la contrasenya, podeu perdre l'accés a les vostres dades xifrades."
+      ],
+      "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
+        "Assegureu-vos de memoritzar o desar de manera segura la contrasenya, ja que és la clau per desxifrar les vostres dades."
+      ],
+      "Turn off password reminders?": [
+        "Voleu desactivar els recordatoris de contrasenya?"
+      ],
+      "Turn off reminders": [
+        "Desactiveu els recordatoris"
+      ]
+    },
     "password_reset: info": {
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
         "**Totes les vostres dades** (correus electrònics, esdeveniments, contactes, fitxers, entrades de ${ PASS_APP_NAME }, etc.) **es bloquejaran** i només es podran desbloquejar amb la **contrasenya antiga**."
@@ -13852,6 +13583,78 @@
         "Yahoo"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Aconseguiu l'oferta"
+      ],
+      "Summer Sale": [
+        "Rebaixes d'estiu"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mesos"
+      ],
+      "15 GB storage": [
+        "15 GB d'emmagatzemament"
+      ],
+      "2 TB data storage": [
+        "2 TB d'emmagatzematge de dades"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB d'emmagatzematge: 40 vegades el vostre pla actual"
+      ],
+      "3 TB data storage": [
+        "3 TB d'emmagatzematge de dades"
+      ],
+      "500 GB storage": [
+        "500 GB d'emmagatzematge"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Totes les característiques prèmium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Totes les característiques prèmium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Els descomptes es basen en els preus mensuals estàndard. La vostra subscripció es renovarà a la tarifa anual estàndard quan acabi el cicle de facturació."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Accés complet a ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Comptes individuals per a 6 usuaris"
+      ],
+      "Individual accounts for you and a partner": [
+        "Comptes individuals per a vós i la vostra parella"
+      ],
+      "Online document and spreadsheet editor": [
+        "Editor de documents i fulls de càlcul en línia"
+      ],
+      "Recover previous file versions": [
+        "Recupereu versions anteriors dels fitxers"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protecció més robusta contra les ciberamenaces"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Canvieu al nostre pla anual i estalvieu ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Nombre il·limitat de carpetes, etiquetes i filtres"
+      ],
+      "Use your own email domain": [
+        "Utilitzeu el vostre propi domini de correu electrònic"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "durant 12 mesos"
+      ],
+      "SUMMER SALE": [
+        "REBAIXES D'ESTIU"
+      ]
+    },
     "Recovery Email": {
       "Cancel": [
         "Cancel·la"
@@ -13937,14 +13740,14 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Gaudiu de **${ planTitle }** de franc fins al **${ textDate }**."
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "Oferiu 2 setmanes, rebeu ${ referrerRewardAmount }"
+      "Give ${ refereeRewardAmount }, get ${ referrerRewardAmount }": [
+        "Regaleu ${ refereeRewardAmount }, rebeu ${ referrerRewardAmount }"
       ],
       "How your free trial works:": [
         "Com funciona la vostra prova gratuïta:"
       ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "He estat utilitzant ${ BRAND_NAME } i he pensat que us podria agradar. És un correu electrònic segur, amb emmagatzematge al núvol, gestor de contrasenyes i VPN que protegeix la vostra privacitat. Registreu-vos en aquest enllaç per obtenir 14 dies de funcions prèmium de franc: ${ referralLink }"
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
+        "Fa temps que faig servir ${ BRAND_NAME } i he pensat que us podria agradar. És un correu electrònic segur, emmagatzematge al núvol, gestor de contrasenyes i VPN que protegeix la vostra privacitat. Registreu-vos amb aquest enllaç per rebre ${ refereeRewardAmount } de descompte en la vostra propera subscripció: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Si cancel·leu abans, se us rebaixarà a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quan acabi la prova. Si no cancel·leu, començarà el vostre pla complet i rebreu **${ referrerRewardAmount }** en crèdits."
@@ -13979,9 +13782,6 @@
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Us queda **${ daysRemaining } dia** per explorar totes les potents funcionalitats que ofereix el **${ planTitle }**.",
         "Us queden **${ daysRemaining } dies** per explorar totes les potents funcionalitats que ofereix el **${ planTitle }**."
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "El vostre amic també rebrà ${ refereeRewardAmount } per bescanviar en la seva pròxima factura!"
       ],
       "your subscription": [
         "la vostra subscripció"
@@ -16118,6 +15918,12 @@
       "Password copied to clipboard": [
         "La contrasenya s'ha copiat al porta-retalls."
       ],
+      "Password reminders disabled": [
+        "S'han deshabilitat els recordatoris de contrasenya"
+      ],
+      "Password reminders enabled": [
+        "S'han habilitat els recordatoris de contrasenya"
+      ],
       "Password updated": [
         "Contrasenya actualitzada"
       ],
@@ -16708,6 +16514,9 @@
       "Connect your custom domain": [
         "Connecteu el vostre domini personalitzat"
       ],
+      "Connected emails": [
+        "Correus electrònics connectats"
+      ],
       "Connection status": [
         "Estat de la connexió"
       ],
@@ -17087,9 +16896,6 @@
       "Import contacts": [
         "Importar contactes"
       ],
-      "Import emails, calendars, contacts": [
-        "Importeu correus, calendaris i contactes"
-      ],
       "Import events": [
         "Importar esdeveniments"
       ],
@@ -17099,8 +16905,14 @@
       "Import groups": [
         "Importa grups"
       ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "Importa via ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
       "Import your data to ${ BRAND_NAME }": [
         "Importeu les dades a ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "Importacions"
       ],
       "Information exposed in breach": [
         "Informació exposada en la filtració"
@@ -17132,8 +16944,8 @@
       "Make your business stand out": [
         "Feu que el vostre negoci destaqui"
       ],
-      "Migration assistant": [
-        "Assistent de migració"
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migreu la vostra organització a ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Minicalendari"
@@ -17624,6 +17436,9 @@
       ],
       "Verify it’s you": [
         "Verifiqueu que sou vós"
+      ],
+      "Verify your password": [
+        "Verifiqueu la vostra contrasenya"
       ],
       "Verifying your card...": [
         "S'està verificant la targeta…"

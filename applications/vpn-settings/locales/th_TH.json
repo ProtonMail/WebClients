@@ -572,6 +572,9 @@
       "Keep my subscription": [
         "คงการสมัครสมาชิกของฉันไว้"
       ],
+      "Later": [
+        "ไว้ทีหลัง"
+      ],
       "Learn more": [
         "เรียนรู้เพิ่มเติม"
       ],
@@ -1705,9 +1708,6 @@
       ]
     },
     "BOSS": {
-      "Authenticate": [
-        "ยืนยันตัวตน"
-      ],
       "Calendar": [
         "ปฏิทิน"
       ],
@@ -1720,24 +1720,6 @@
       "Estimated size": [
         "ขนาดโดยประมาณ"
       ],
-      "Failed to load OAuth": [
-        "โหลด OAuth ล้มเหลว"
-      ],
-      "Install migration app": [
-        "ติดตั้งแอปย้ายข้อมูล"
-      ],
-      "Mail": [
-        "อีเมล"
-      ],
-      "Migrate from Google Workspace": [
-        "ย้ายข้อมูลจาก Google Workspace"
-      ],
-      "Migration includes": [
-        "การย้ายข้อมูลรวมถึง"
-      ],
-      "Migration started for ${ n } user": [
-        "เริ่มการย้ายข้อมูลสำหรับผู้ใช้ ${ n } คน"
-      ],
       "Migration status": [
         "สถานะการย้ายข้อมูล"
       ],
@@ -1747,20 +1729,8 @@
       "Organization does not have enough storage available": [
         "องค์กรมีพื้นที่จัดเก็บไม่เพียงพอ"
       ],
-      "Select at least one user to start a migration": [
-        "เลือกผู้ใช้อย่างน้อยหนึ่งคนเพื่อเริ่มการย้ายข้อมูล"
-      ],
-      "Sign in to Google Workspace": [
-        "เข้าสู่ระบบ Google Workspace"
-      ],
       "User": [
         "ผู้ใช้"
-      ],
-      "Verify your domain": [
-        "ยืนยันโดเมนของคุณ"
-      ],
-      "Verify your domain to start a migration": [
-        "ยืนยันโดเมนของคุณเพื่อเริ่มการย้ายข้อมูล"
       ],
       "What are you migrating?": [
         "คุณกำลังย้ายข้อมูลอะไร?"
@@ -3209,9 +3179,6 @@
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "ทุกคนในองค์กรของคุณสามารถเชื่อมต่อกับเซิร์ฟเวอร์ที่แชร์ในทุกประเทศ"
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "เพื่อการเปลี่ยนแปลงที่ราบรื่นไปยัง ${ BRAND_NAME } ให้นำเข้าข้อมูลจาก Google, Outlook และอื่นๆ"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "รับการแจ้งเตือนหากรหัสผ่านหรือข้อมูลอื่นๆ รั่วไหลจากบริการของบุคคลที่สาม"
@@ -5656,24 +5623,6 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**นำเข้ารหัสที่มีอยู่ของคุณ** จากแอป 2FA อื่นๆ เช่น Google Authenticator"
-      ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**ขั้นตอนที่ 1: เชิญเพื่อน**มายัง ${ BRAND_NAME } ด้วยลิงก์แนะนำของคุณ"
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**ขั้นตอนที่ 1:** เชิญเพื่อนมายัง ${ BRAND_NAME } ด้วยลิงก์แนะนำ"
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**ขั้นตอนที่ 2:** เพื่อนของคุณจะได้รับ**ฟรี 2 สัปดาห์**ในแผนของพวกเขา"
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**ขั้นตอนที่ 2:** เพื่อนของคุณจะได้รับแผนฟรี 2 สัปดาห์"
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**ขั้นตอนที่ 3:** รับเครดิต ${ referrerRewardAmount } สำหรับทุกคนที่สมัครรับข้อมูลแผน"
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**ขั้นตอนที่ 3:** รับ **${ referrerRewardAmount } เป็นเครดิต** สำหรับทุกคนที่สมัครรับข้อมูลแผน"
       ],
       "**Sync codes** to all your devices": [
         "**ซิงค์รหัส** ไปยังอุปกรณ์ทั้งหมดของคุณ"
@@ -11729,6 +11678,78 @@
         "ระบุไม่ได้"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "รับข้อเสนอ"
+      ],
+      "Summer Sale": [
+        "โปรโมชันฤดูร้อน"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/เดือน"
+      ],
+      "15 GB storage": [
+        "พื้นที่จัดเก็บ 15 GB"
+      ],
+      "2 TB data storage": [
+        "พื้นที่จัดเก็บข้อมูล 2 TB"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "พื้นที่จัดเก็บ 200 GB: มากกว่าแผนปัจจุบันถึง 40 เท่า"
+      ],
+      "3 TB data storage": [
+        "พื้นที่จัดเก็บข้อมูล 3 TB"
+      ],
+      "500 GB storage": [
+        "พื้นที่จัดเก็บ 500 GB"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "คุณสมบัติพรีเมียมทั้งหมดของ ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } และ ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "คุณสมบัติพรีเมียมทั้งหมดของ ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } และ ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "ส่วนลดอิงตามราคามาตรฐานรายเดือน การสมัครสมาชิกจะต่ออายุในอัตรามาตรฐานรายปีเมื่อสิ้นสุดรอบการชำระเงิน"
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "เข้าถึง ${ VPN_APP_NAME } ได้อย่างเต็มรูปแบบ"
+      ],
+      "Individual accounts for 6 users": [
+        "บัญชีส่วนบุคคลสำหรับผู้ใช้ 6 ราย"
+      ],
+      "Individual accounts for you and a partner": [
+        "บัญชีส่วนบุคคลสำหรับตนเองและพาร์ทเนอร์"
+      ],
+      "Online document and spreadsheet editor": [
+        "เครื่องมือแก้ไขเอกสารและตารางคำนวณออนไลน์"
+      ],
+      "Recover previous file versions": [
+        "กู้คืนเวอร์ชันไฟล์ก่อนหน้า"
+      ],
+      "Stronger protection against cyber threats": [
+        "การป้องกันที่แข็งแกร่งยิ่งขึ้นจากภัยคุกคามทางไซเบอร์"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "เปลี่ยนมาใช้แผนรายปีและประหยัด ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "โฟลเดอร์ ป้ายกำกับ และตัวกรองไม่จำกัด"
+      ],
+      "Use your own email domain": [
+        "ใช้โดเมนอีเมลของตนเอง"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "เป็นเวลา 12 เดือน"
+      ],
+      "SUMMER SALE": [
+        "ลดราคาต้อนรับฤดูร้อน"
+      ]
+    },
     "Recovery Email": {
       "Cancel": [
         "ยกเลิก"
@@ -11808,14 +11829,8 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "เพลิดเพลินกับ **${ planTitle }** ฟรีจนถึง **${ textDate }**"
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "ให้ 2 สัปดาห์ รับ ${ referrerRewardAmount }"
-      ],
       "How your free trial works:": [
         "การทดลองใช้ฟรีทำงานอย่างไร:"
-      ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "ฉันใช้ ${ BRAND_NAME } อยู่และคิดว่าคุณน่าจะชอบ เป็นบริการอีเมล พื้นที่จัดเก็บข้อมูลบนคลาวด์ โปรแกรมจัดการรหัสผ่าน และ VPN ที่ปลอดภัยซึ่งปกป้องความเป็นส่วนตัวของคุณ ลงทะเบียนผ่านลิงก์นี้เพื่อรับคุณสมบัติพรีเมียมฟรี 14 วัน: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "หากยกเลิกก่อนหน้านั้น คุณจะถูกดาวน์เกรดเป็น ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } เมื่อการทดลองใช้สิ้นสุดลง หากไม่ยกเลิก แผนเต็มรูปแบบจะเริ่มขึ้นและคุณจะได้รับ **${ referrerRewardAmount }** เป็นเครดิต"
@@ -11849,9 +11864,6 @@
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "คุณเหลือเวลา **${ daysRemaining } วัน** เพื่อสำรวจคุณสมบัติอันทรงพลังทั้งหมดที่ **${ planTitle }** มีให้"
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "เพื่อนของคุณจะได้รับ ${ refereeRewardAmount } เพื่อแลกใช้ในบิลถัดไป!"
       ],
       "your subscription": [
         "การสมัครสมาชิกของคุณ"
@@ -14650,9 +14662,6 @@
       "Import contacts": [
         "นำเข้ารายชื่อติดต่อ"
       ],
-      "Import emails, calendars, contacts": [
-        "นำเข้าอีเมล, ปฏิทิน, ผู้ติดต่อ"
-      ],
       "Import events": [
         "นำเข้ากิจกรรม"
       ],
@@ -14661,6 +14670,9 @@
       ],
       "Import groups": [
         "นำเข้ากลุ่ม"
+      ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "นำเข้าโดย ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Information exposed in breach": [
         "ข้อมูลที่ถูกเปิดเผยในการละเมิดข้อมูล"
@@ -14685,9 +14697,6 @@
       ],
       "Main password": [
         "รหัสผ่านหลัก"
-      ],
-      "Migration assistant": [
-        "ผู้ช่วยการย้ายข้อมูล"
       ],
       "Minicalendar": [
         "ปฏิทินขนาดเล็ก"
