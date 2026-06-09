@@ -1,9 +1,11 @@
+import { ValidationError } from '@proton/drive';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { getNodeEffectiveRole } from '@proton/drive/modules/nodes';
 import { uploadManager } from '@proton/drive/modules/upload';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
-import { useTransferManagerStore } from './transferManager.store';
+import { TransferManagerBannerType, useTransferManagerStore } from './transferManager.store';
 
 export const subscribeToUploadEvents = (): (() => void) => {
     const busDriver = getBusDriver();
@@ -29,6 +31,13 @@ export const subscribeToUploadEvents = (): (() => void) => {
                 },
                 driveClient
             );
+        } else if (event.type === 'file:error') {
+            if (
+                event.error instanceof ValidationError &&
+                event.error.code === API_CUSTOM_ERROR_CODES.INSUFFICIENT_STORAGE
+            ) {
+                useTransferManagerStore.getState().setBannerType(TransferManagerBannerType.StorageFull);
+            }
         }
     });
 
