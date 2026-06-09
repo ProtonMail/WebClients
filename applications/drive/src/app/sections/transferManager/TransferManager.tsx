@@ -1,17 +1,21 @@
 import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import { useBeforeUnload, useConfirmActionModal } from '@proton/components';
 import { uploadManager } from '@proton/drive/modules/upload';
+import type { FreeSubscription, Subscription } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 
 import type { AbuseReportPrefill } from '../../modals/ReportAbuseModal';
 import { useUploadConflictModal } from '../../modals/UploadConflictModal';
 import { DownloadIssueWatcher } from './connectedComponents/DownloadIssueWatcher';
+import { TransferManagerBanner } from './connectedComponents/TransferManagerBanner';
 import { TransferManagerHeader } from './connectedComponents/TransferManagerHeader';
 import { TransferManagerList } from './connectedComponents/TransferManagerList';
 import { subscribeToUploadEvents } from './subscribeToUploadEvents';
+import { useTransferManagerStore } from './transferManager.store';
 import { useTransferManagerActions } from './useTransferManagerActions';
 import { TransferManagerStatus, useTransferManagerState } from './useTransferManagerState';
 
@@ -22,6 +26,7 @@ interface TransferManagerProps {
     deprecatedRootShareId: string | undefined;
     className?: string;
     onReportAbuse?: (nodeUid: string, prefill?: AbuseReportPrefill) => void;
+    subscription?: Subscription | FreeSubscription;
 }
 
 export const TransferManager = ({
@@ -29,6 +34,7 @@ export const TransferManager = ({
     deprecatedRootShareId,
     className,
     onReportAbuse,
+    subscription,
 }: TransferManagerProps) => {
     const { items, status, isVisible } = useTransferManagerState();
     const {
@@ -50,6 +56,11 @@ export const TransferManager = ({
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     useBeforeUnload(leaveMessage);
 
+    const { bannerType } = useTransferManagerStore(
+        useShallow((state) => ({
+            bannerType: state.bannerType,
+        }))
+    );
     const [uploadConflictModal, showUploadConflictModal] = useUploadConflictModal();
 
     useEffect(() => {
@@ -136,7 +147,7 @@ export const TransferManager = ({
                         />
                     ))}
                 {!isMinimized && (
-                    <div className="mt-3" data-testid="drive-transfers-manager:list">
+                    <div className="mt-3 pb-4" data-testid="drive-transfers-manager:list">
                         <TransferManagerList
                             items={items}
                             deprecatedRootShareId={deprecatedRootShareId}
@@ -145,8 +156,17 @@ export const TransferManager = ({
                             retryTransfer={retryTransfer}
                             onReportAbuse={onReportAbuse}
                         />
+                        {bannerType ? (
+                            <TransferManagerBanner
+                                className="mx-3 mt-3"
+                                type={bannerType}
+                                subscription={subscription}
+                                onAction={() => useTransferManagerStore.getState().setBannerType(undefined)}
+                            />
+                        ) : null}
                     </div>
                 )}
+
                 {uploadConflictModal}
                 {confirmModal}
                 {actionsConfirmModal}
