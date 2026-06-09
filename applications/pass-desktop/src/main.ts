@@ -161,6 +161,13 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
 
     ctx.window.on('closed', () => (ctx.window = null));
 
+    // Flush DOMStorage (the persisted session blob) to disk before the OS
+    // reboots/shuts down, as a safeguard against losing the latest write.
+    ctx.window.on('session-end', () => {
+        logger.info('[storage] session-end: flushing DOMStorage before shutdown');
+        ctx.session?.flushStorageData();
+    });
+
     await ctx.window.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
     ctx.window.show();
