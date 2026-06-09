@@ -261,6 +261,9 @@
       "Check import progress": [
         "Verificare progres importare"
       ],
+      "Check now": [
+        "Verificare acum"
+      ],
       "Choose a file or drag it here": [
         "Alegeți un fișier sau trageți-l aici"
       ],
@@ -1083,6 +1086,9 @@
       "Manage labels": [
         "Gestionare etichete"
       ],
+      "Manage migration": [
+        "Gestionare migrare"
+      ],
       "Manage subscription": [
         "Gestionare abonament"
       ],
@@ -1590,6 +1596,9 @@
       "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Deconectare de la ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
+      "Sign out of ${ tokens[0].Account }": [
+        "Deconectat de la ${ tokens[0].Account }"
+      ],
       "Sign out of all accounts": [
         "Deconectare din toate conturile"
       ],
@@ -1805,6 +1814,9 @@
       ],
       "Verify domain": [
         "Verificare domeniu"
+      ],
+      "Verify now": [
+        "Verificare acum"
       ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verificare domeniu ${ unverifiedSSODomain.DomainName }"
@@ -2917,17 +2929,23 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Easy Switch": [
+        "${ BRAND_NAME } Easy Switch"
+      ],
+      "${ relevantCount } of ${ totalCount }": [
+        "${ relevantCount } din ${ totalCount }"
+      ],
       "Account connected": [
         "Cont conectat"
       ],
       "Account disconnected": [
         "Cont deconectat"
       ],
+      "Accounts migrated": [
+        "Conturi migrate"
+      ],
       "Activated": [
         "Activat"
-      ],
-      "Add a domain": [
-        "Adăugare domeniu"
       ],
       "Add domain": [
         "Adăugare domeniu"
@@ -2935,8 +2953,8 @@
       "Add users": [
         "Adăugare utilizatori"
       ],
-      "Add users and configure your domain manually for sending and receiving mail. Ideal for small teams starting from a clean slate.": [
-        "Adăugați utilizatori și configurați manual domeniul pentru trimiterea și primirea de e-mailuri. Ideal pentru echipe mici care pornesc de la zero."
+      "Add your organization email domain to ${ BRAND_NAME }.": [
+        "Adăugați domeniul de e-mail al organizației proprii la ${ BRAND_NAME }."
       ],
       "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
         "Adresa este deja utilizată de un utilizator din afara propriei organizații. Contactați serviciul de asistență pentru clienți pentru a rezolva această problemă."
@@ -2944,14 +2962,17 @@
       "All": [
         "Toate"
       ],
+      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
+        "Toate conturile de utilizator migrate sunt gata pentru a fi invitate în organizația proprie din ${ BRAND_NAME }."
+      ],
+      "An unknown error ocurred. Please refresh the page and try again": [
+        "A apărut o eroare necunoscută. Actualizați pagina și reîncercați."
+      ],
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "Sigur doriți să continuați? Utilizatorii care nu și-au revendicat contul înainte de finalizarea migrării vor trebui să solicite o resetare a parolei de la administratorul organizației lor ${ BRAND_NAME }."
       ],
       "Authenticate": [
         "Autentificare"
-      ],
-      "Authenticate to Google Workspace": [
-        "Conectați-vă la Google Workspace"
       ],
       "Authenticate your Google Workspace account": [
         "Autentificați contul Google Workspace"
@@ -2959,14 +2980,8 @@
       "Calendar": [
         "Calendar"
       ],
-      "Change": [
-        "Modificare"
-      ],
-      "Choose how you want to bring your team and email setup to ${ BRAND_NAME }.": [
-        "Alegeți cum doriți să vă aduceți configurarea echipei și a e-mailului la ${ BRAND_NAME }."
-      ],
-      "Configure": [
-        "Configurare"
+      "Collapse step": [
+        "Restrângere pas"
       ],
       "Configure domain": [
         "Configurare domeniu"
@@ -2974,14 +2989,26 @@
       "Configure migration": [
         "Configurare migrare"
       ],
+      "Configure users": [
+        "Configurare utilizatori"
+      ],
       "Configure your domain": [
         "Configurați-vă domeniul"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Contactați-vă administratorul pentru a începe o migrare."
       ],
       "Contacts": [
         "Contacte"
       ],
-      "Continue migration": [
-        "Continuare migrare"
+      "Copy the below code and paste it in the DNS section of your domain host.": [
+        "Copiați codul de mai jos și inserați-l în secțiunea DNS a gazdei domeniului."
+      ],
+      "Creating accounts. Going private": [
+        "Se creează conturile. Se confidențializează."
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Starea migrării datelor din Google Workspace către ${ BRAND_NAME }"
       ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM adaugă o semnătură digitală fiecărui e-mail, astfel încât destinatarii să poată verifica dacă mesajul provine într-adevăr de pe domeniul dvs. și nu a fost modificat în timpul tranzitului. Fără această semnătură, mesajele pot fi tratate ca fiind mai puțin demne de încredere."
@@ -2992,6 +3019,15 @@
       "Domain added": [
         "Domeniu adăugat"
       ],
+      "Domain provider": [
+        "Furnizor domeniu"
+      ],
+      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
+        "Nu știți de unde să începeți? Priviți cum să vă actualizați DNS-ul pe ${ registrarLink }."
+      ],
+      "Emails": [
+        "Mesaje"
+      ],
       "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
         "Se asigură că e-mailurile ajung în folderul primite, nu în folderul de mesaje nedorite. Actualizând SPF va permite utilizatorilor să trimită mesaje simultan de la ${ BRAND_NAME } și Google pe durata migrării."
       ],
@@ -3001,20 +3037,23 @@
       "Estimated size": [
         "Mărime estimată"
       ],
+      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
+        "Toată lumea primește aceeași legătură web de invitare. Vor accesa pagina, vor introduce adresa de e-mail și un cod de verificare va ajunge în contul Gmail. De acolo, își vor seta parola pentru ${ BRAND_NAME }."
+      ],
+      "Expand step": [
+        "Extindere pas"
+      ],
       "Failed to load OAuth": [
         "Încărcarea OAuth a eșuat"
       ],
-      "Finalize your migration": [
-        "Finalizare migrare"
+      "Final step": [
+        "Pas final"
       ],
       "Find out what can be migrated.": [
         "Aflați ce poate fi migrat."
       ],
-      "Finish setting up your business account": [
-        "Finalizați configurarea contului de afaceri"
-      ],
-      "Go to Domain names": [
-        "Accesare nume de domenii"
+      "Get help and useful tips for other domain providers ${ here }": [
+        "Obțineți ajutor și sfaturi utile de la alți furnizori de domenii ${ here }"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Aplicația Google Marketplace pentru a copia datele în ${ BRAND_NAME }"
@@ -3025,6 +3064,12 @@
       "Has errors": [
         "Are erori"
       ],
+      "Import completed successfully": [
+        "Import realizat cu succes."
+      ],
+      "Import details": [
+        "Detalii importare"
+      ],
       "In progress": [
         "În derulare"
       ],
@@ -3034,8 +3079,17 @@
       "Install migration app": [
         "Instalare aplicație de migrare"
       ],
-      "Install Migration assistant": [
-        "Instalați asistentul de migrare"
+      "Invitation link": [
+        "Legătură web invitare"
+      ],
+      "Invitation message": [
+        "Mesaj invitație"
+      ],
+      "invite link": [
+        "legătură web invitare"
+      ],
+      "It can take up to 24 hours for these changes to propagate.": [
+        "Propagarea acestor modificări poate dura până la 24 de ore."
       ],
       "Loading your organization data": [
         "Se încarcă datele organizației"
@@ -3046,14 +3100,23 @@
       "Member address not found. Please contact customer support to resolve this": [
         "Adresa membrului nu a fost găsită. Contactați serviciul de asistență pentru clienți pentru a rezolva această problemă."
       ],
+      "Migrate": [
+        "Migrare"
+      ],
+      "Migrate accounts": [
+        "Migrare conturi"
+      ],
+      "Migrate accounts to ${ BRAND_NAME }": [
+        "Migrare conturi în ${ BRAND_NAME }"
+      ],
       "Migrate from Google Workspace": [
         "Migrați de la Google Workspace"
       ],
-      "Migrate users to ${ BRAND_NAME }": [
-        "Migrați utilizatori la ${ BRAND_NAME }"
-      ],
       "Migrated": [
         "Migrat"
+      ],
+      "Migrated accounts": [
+        "Conturi migrate"
       ],
       "Migration includes": [
         "Migrarea include"
@@ -3066,14 +3129,17 @@
       "Migration status": [
         "Stare migrare"
       ],
+      "Migration summary": [
+        "Rezumat migrare"
+      ],
       "Missing organization private key": [
         "Cheia privată a organizației lipsește."
       ],
       "Missing organization public key": [
         "Cheia publică a organizației lipsește."
       ],
-      "Move your users, emails, and settings from Google Workspace automatically. We’ll guide you through connecting your account, verifying your domain, and migrating users securely.": [
-        "Mutați-vă automat utilizatorii, adresele de e-mail și setările din Google Workspace. Vă vom ghida în procesul de conectare a contului, verificare a domeniului și migrare a utilizatorilor în siguranță."
+      "Need help?": [
+        "Doriți ajutor?"
       ],
       "No error details available. Please contact customer support for more information": [
         "Nu sunt disponibile detalii despre eroare. Contactați serviciul de asistență pentru clienți pentru mai multe informații."
@@ -3087,6 +3153,12 @@
       "Not confirmed": [
         "Neconfirmat"
       ],
+      "Not detected correctly? Choose your provider from the list.": [
+        "Nu a fost detectat corect? Alegeți furnizorul din listă."
+      ],
+      "Onboard your team": [
+        "Înrolați-vă echipa"
+      ],
       "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
         "După ce confirmăm că mesajele sunt direcționate către ${ BRAND_NAME }, migrarea va fi finalizată. Veți primi un e-mail de confirmare care vă va anunța când se întâmplă acest lucru. Acest proces poate dura până la 24 de ore."
       ],
@@ -3099,26 +3171,26 @@
       "Pending": [
         "În așteptare"
       ],
+      "Please don’t close or refresh this window.": [
+        "Nu închideți și nu împrospătați această fereastră."
+      ],
+      "Reauthenticate your Google Workspace account to start a migration": [
+        "Reautentificați-vă contul Google Workspace pentru a începe o migrare."
+      ],
       "Refresh": [
         "Împrospătare"
-      ],
-      "Required to create user accounts": [
-        "Este necesar pentru a crea conturi de utilizator"
       ],
       "Select at least one user to start a migration": [
         "Selectați cel puțin un utilizator pentru a începe o migrare."
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selectați exact ce doriți să migrați. Se va aplica tuturor utilizatorilor organizației."
+      ],
+      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
+        "Selectați conturile pe care doriți să le aduceți la ${ BRAND_NAME }. Puteți migra întreaga organizație astăzi sau puteți începe cu o migrație mică și puteți aduce restul când sunteți gata."
+      ],
       "Select users to migrate": [
         "Selectați utilizatorii pentru migrare"
-      ],
-      "Set up": [
-        "Configurare"
-      ],
-      "Set up billing information": [
-        "Setare date de facturare"
-      ],
-      "Set up manually": [
-        "Setare manuală"
       ],
       "Set up secure sending (DKIM)": [
         "Configurați trimiterea securizată (DKIM)"
@@ -3129,26 +3201,44 @@
       "Set up secure sending (SPF)": [
         "Configurați trimiterea securizată (SPF)"
       ],
-      "Set up two-factor authentication": [
-        "Setare autentificare cu doi factori"
-      ],
       "Settings": [
         "Setări"
       ],
       "Sign in to Google Workspace": [
         "Conectare la Google Workspace"
       ],
+      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
+        "Conectați-vă cu un cont de administrator Google Workspace pentru ca ${ BRAND_NAME } să configureze migrarea."
+      ],
       "Size": [
         "Mărime"
+      ],
+      "Skip": [
+        "Omitere"
+      ],
+      "Skipped ${ count } contact due to incompatibilities": [
+        "S-a omis ${ count } contact datorită incompatibilităților.",
+        "S-au omis ${ count } contacte datorită incompatibilităților.",
+        "S-au omis ${ count } de contacte datorită incompatibilităților."
+      ],
+      "Skipped ${ count } email due to incompatibilities": [
+        "S-a omis ${ count } de mesaje datorită incompatibilităților.",
+        "S-au omis ${ count } mesaje datorită incompatibilităților.",
+        "S-au omis ${ count } de mesaje datorită incompatibilităților."
+      ],
+      "Skipped ${ count } event due to incompatibilities": [
+        "S-a omis ${ count } eveniment datorită incompatibilităților.",
+        "S-au omis ${ count } evenimente datorită incompatibilităților.",
+        "S-au omis ${ count } de evenimente datorită incompatibilităților."
       ],
       "Some accounts are not claimed": [
         "Unele conturi nu sunt revendicate."
       ],
-      "Start migration": [
-        "Start migrare"
-      ],
       "Status": [
         "Stare"
+      ],
+      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
+        "Pentru a transfera datele organizației la ${ BRAND_NAME }, instalați ${ BRAND_NAME } Easy Switch din Google Workspace Marketplace. După instalare, reveniți aici pentru a continua."
       ],
       "Update records for receiving": [
         "Actualizare înregistrări pentru primire"
@@ -3156,14 +3246,20 @@
       "User": [
         "Utilizator"
       ],
+      "Users activated": [
+        "Utilizatori activați"
+      ],
       "Users migrated": [
         "Utilizatori migrați"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Utilizatori care și-au accesat contul ${ BRAND_NAME }"
+      ],
+      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Utilizatorii care nu și-au revendicat contul înainte de finalizarea migrării vor trebui să solicite o resetare a parolei de la administratorul organizației lor din ${ BRAND_NAME }."
+      ],
       "Verified": [
         "Verificat"
-      ],
-      "Verify domain ownership": [
-        "Verificare deținere domeniu"
       ],
       "Verify installation": [
         "Verificare instalare"
@@ -3174,11 +3270,20 @@
       "Verify your domain to start a migration": [
         "Verificați domeniul pentru a începe o migrare."
       ],
+      "Waiting for MX...": [
+        "În așteptarea MX-ului..."
+      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Nu s-a putut verifica instalarea. Verificați dacă ați instalat-o în contul Google Workspace și reîncercați."
       ],
+      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
+        "Ne mutăm la ${ BRAND_NAME }, serviciul de e-mail securizat.\nContul ${ BRAND_NAME } pe care îl dețineți este gata de revendicat.\nFaceți clic pe ${ inviteLink }.\nIntroduceți adresa de e-mail unde să vi se trimită un cod în contul de Gmail.\nFolosiți-l pentru a vă seta parola — iar contul ${ BRAND_NAME } vă aparține.\nPentru o perioadă scurtă de timp, ambele vor funcționa împreună. Atât ${ BRAND_NAME } cât și Gmail.\nApoi, când toată lumea va face mutarea, vom retrage adresa din Gmail. Vă vom reaminti înainte de a o face."
+      ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Am observat că unii utilizatori nu și-au revendicat conturile ${ BRAND_NAME }."
+      ],
+      "We’re creating your accounts and importing your data now. Every email, every event is yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Se creează conturile și se importă datele. Fiecare e-mail, fiecare eveniment vă aparține doar dumneavoastră. Vizibil doar pentru echipa proprie. Nu pentru noi, nu pentru nimeni altcineva."
       ],
       "What are you migrating?": [
         "Ce migrați?"
@@ -3188,6 +3293,9 @@
       ],
       "You're all set!": [
         "Totul e în regulă!"
+      ],
+      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
+        "Aproape ați terminat, trebuie să vă configurații domeniul pentru a primi mesaje direct pe ${ BRAND_NAME }. După confirmare, echipa proprie nu va mai primi mesaje noi pe Gmail, iar migrarea va fi finalizată."
       ],
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Planul actual permite maxim ${ maxMembers } utilizator. Pentru a migra utilizatori suplimentari, adăugați mai multe licențe la abonament.",
@@ -4127,9 +4235,6 @@
       ]
     },
     "Country name": {
-      "Abkhazia": [
-        "Abhazia"
-      ],
       "Afghanistan": [
         "Afganistan"
       ],
@@ -4139,9 +4244,6 @@
       "Algeria": [
         "Algeria"
       ],
-      "American Samoa": [
-        "Samoa Americană"
-      ],
       "Andorra": [
         "Andorra"
       ],
@@ -4150,9 +4252,6 @@
       ],
       "Anguilla": [
         "Anguilla"
-      ],
-      "Antarctica": [
-        "Antarctica"
       ],
       "Antigua and Barbuda": [
         "Antigua și Barbuda"
@@ -4165,9 +4264,6 @@
       ],
       "Aruba": [
         "Aruba"
-      ],
-      "Ascension Island": [
-        "Insula Ascension"
       ],
       "Australia": [
         "Australia"
@@ -4210,9 +4306,6 @@
       ],
       "Bolivia": [
         "Bolivia"
-      ],
-      "Bonaire, Sint Eustatius and Saba": [
-        "Bonaire, Sfântul Eustasie și Saba"
       ],
       "Bosnia and Herzegovina": [
         "Bosnia și Herțegovina"
@@ -4289,9 +4382,6 @@
       "Congo (The Democratic Republic of the)": [
         "Congo (Republica Democrată)"
       ],
-      "Congo, Democratic Republic of the": [
-        "Congo, Republica Democrată"
-      ],
       "Cook Islands": [
         "Insulele Cook"
       ],
@@ -4349,23 +4439,14 @@
       "Estonia": [
         "Estonia"
       ],
-      "Eswatini": [
-        "Eswatini"
-      ],
       "Ethiopia": [
         "Etiopia"
-      ],
-      "Falkland Islands": [
-        "Insulele Falkland"
       ],
       "Falkland Islands (Malvinas)": [
         "Insulele Falkland (Malvine)"
       ],
       "Faroe Islands": [
         "Insulele Feroe"
-      ],
-      "Federated States of Micronesia": [
-        "Statele federative ale Microneziei"
       ],
       "Fiji": [
         "Fiji"
@@ -4415,9 +4496,6 @@
       "Guadeloupe": [
         "Guadalupe"
       ],
-      "Guam": [
-        "Guam"
-      ],
       "Guatemala": [
         "Guatemala"
       ],
@@ -4460,12 +4538,6 @@
       "Indonesia": [
         "Indonezia"
       ],
-      "International": [
-        "Internațional"
-      ],
-      "Iran": [
-        "Iran"
-      ],
       "Iraq": [
         "Irak"
       ],
@@ -4474,9 +4546,6 @@
       ],
       "Islamic Republic of Iran": [
         "Republica Islamică Iran"
-      ],
-      "Isle of Man": [
-        "Insula Man"
       ],
       "Israel": [
         "Israel"
@@ -4489,9 +4558,6 @@
       ],
       "Japan": [
         "Japonia"
-      ],
-      "Jersey": [
-        "Jersey"
       ],
       "Jordan": [
         "Iordan"
@@ -4523,9 +4589,6 @@
       "Lao People's Democratic Republic": [
         "Republica Populară Democrată Laos"
       ],
-      "Laos": [
-        "Laos"
-      ],
       "Latvia": [
         "Letonia"
       ],
@@ -4537,9 +4600,6 @@
       ],
       "Liberia": [
         "Liberia"
-      ],
-      "Libya": [
-        "Libia"
       ],
       "Libyan Arab Jamahiriya": [
         "Jamahiriya Arabă Libiană"
@@ -4649,14 +4709,8 @@
       "Norfolk Island": [
         "Insula Norfolk"
       ],
-      "North Korea": [
-        "Coreea de Nord"
-      ],
       "North Macedonia": [
         "Macedonia de Nord"
-      ],
-      "Northern Mariana Islands": [
-        "Insulele Mariane de Nord"
       ],
       "Norway": [
         "Norvegia"
@@ -4715,9 +4769,6 @@
       "Rwanda": [
         "Ruanda"
       ],
-      "Saint Barthélemy": [
-        "Sfântul Bartolomeu"
-      ],
       "Saint Helena": [
         "Sfânta Elena"
       ],
@@ -4726,9 +4777,6 @@
       ],
       "Saint Lucia": [
         "Sfânta Lucia"
-      ],
-      "Saint Martin (French Part)": [
-        "Sfântul Martin (Franța)"
       ],
       "Saint Pierre and Miquelon": [
         "Sfântul Pierre și Miquelon"
@@ -4763,9 +4811,6 @@
       "Singapore": [
         "Singapore"
       ],
-      "Sint Maarten": [
-        "Sint Maarten"
-      ],
       "Slovakia": [
         "Slovacia"
       ],
@@ -4783,12 +4828,6 @@
       ],
       "South Georgia and the South Sandwich Islands": [
         "Georgia de Sud și Insulele Sandwich de Sud"
-      ],
-      "South Korea": [
-        "Coreea de Sud"
-      ],
-      "South Ossetia": [
-        "Oseția de Sud"
       ],
       "South Sudan": [
         "Sudanul de Sud"
@@ -4817,9 +4856,6 @@
       "Switzerland": [
         "Elveția"
       ],
-      "Syria": [
-        "Siria"
-      ],
       "Syrian Arab Republic": [
         "Republica Arabă Siriană"
       ],
@@ -4829,17 +4865,11 @@
       "Tajikistan": [
         "Tadjikistan"
       ],
-      "Tanzania": [
-        "Tanzania"
-      ],
       "Tanzania, United Republic of": [
         "Tanzania (Republica Unită)"
       ],
       "Thailand": [
         "Tailanda"
-      ],
-      "Timor-Leste": [
-        "Timorul De Est"
       ],
       "Togo": [
         "Togo"
@@ -4852,9 +4882,6 @@
       ],
       "Trinidad and Tobago": [
         "Trinidad și Tobago"
-      ],
-      "Tristan da Cunha": [
-        "Tristan da Cunha"
       ],
       "Tunisia": [
         "Tunisia"
@@ -4886,9 +4913,6 @@
       "United States": [
         "SUA"
       ],
-      "United States Minor Outlying Islands": [
-        "Insulele Minore Îndepărtate ale Statelor Unite"
-      ],
       "Uruguay": [
         "Uruguai"
       ],
@@ -4904,12 +4928,6 @@
       "Vietnam": [
         "Vietnam"
       ],
-      "Virgin Islands, British": [
-        "Insulele Virgine, Britania"
-      ],
-      "Virgin Islands, U.S.": [
-        "Insulele Virgine, S.U.A."
-      ],
       "Wallis and Futuna": [
         "Wallis și Futuna"
       ],
@@ -4924,9 +4942,6 @@
       ],
       "Zimbabwe": [
         "Zimbabwe"
-      ],
-      "Åland Islands": [
-        "Insulele Åland"
       ]
     },
     "Country select label": {
@@ -5294,8 +5309,8 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Oricine din organizație se poate conecta la serverele partajate din toate țările."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Pentru o tranziție lină la ${ BRAND_NAME }, importați-vă datele din Google, Outlook și altele."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pentru o înrolare fără probleme a echipei la ${ BRAND_NAME }, importați-vă datele din Google, Outlook și altele."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte."
@@ -9000,6 +9015,9 @@
       ]
     },
     "group_modal": {
+      "Add delegated roles to a group to grant its members only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Adăugați roluri delegate unui grup pentru a acorda membrilor săi doar permisiunile specifice de care au nevoie, păstrând puterea de administrator complet separată și mediul securizat."
+      ],
       "General": [
         "Generale"
       ],
@@ -9590,8 +9608,14 @@
       "Imported": [
         "Importat"
       ],
+      "In progress": [
+        "În derulare"
+      ],
       "In progress...": [
         "În desfășurare..."
+      ],
+      "Migrated": [
+        "Migrat"
       ],
       "Paused": [
         "Suspendat"
@@ -9974,32 +9998,23 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importați-vă codurile existente** din alte aplicații de A2F, precum Google Authenticator."
       ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Pasul 1: Invitați persoane** la ${ BRAND_NAME } cu legătura web personală de recomandare."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Pasul 1:** Invitați persoane la ${ BRAND_NAME } cu legătura web personală de recomandare."
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**Pasul 2:** Persoanele invitate primesc **două săptămâni gratuite** pentru planul ales."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Pasul 2:** Persoanele invitate primesc 2 săptămâni gratuite pentru planul ales."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Pasul 3:** Obțineți ${ referrerRewardAmount } credite pentru fiecare persoană care se abonează la un plan."
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**Pasul 3:** Obțineți **${ referrerRewardAmount } în credite** pentru fiecare persoană care se abonează la un plan."
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Invitați persoane** la ${ BRAND_NAME } cu legătura web personală de recomandare."
       ],
       "**Sync codes** to all your devices": [
         "**Vă sincronizați codurile** pe toate dispozitivele"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Aceștia primesc ${ refereeRewardAmount }** în credite dacă se abonează."
       ],
       "**This will disable 2-factor authentication.**": [
         "**Aceasta va dezactiva autentificarea cu doi factori.**"
       ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Aceasta va dezactiva transferurile mesajelor criptate bilateral:** le veți putea configura din nou mai târziu."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Primiți ${ referrerRewardAmount }** în credite pentru fiecare persoană care se abonează."
       ],
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**Doar adresa de e-mail de recuperare nu vă permite să recuperați datele criptate** după ce vă resetați parola."
@@ -10752,6 +10767,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NU uitați această parolă. În cazul în care o uitați, nu vă veți mai putea administra organizația."
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Vă amintiți parola? ${ verifyButton }"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Doriți să anulați toate celelalte sesiuni în afară de cea curentă?"
       ],
@@ -10834,6 +10852,9 @@
       ],
       "Edit link": [
         "Editare legătură web"
+      ],
+      "Editing requires permission": [
+        "Editarea necesită permisiuni"
       ],
       "eduGAIN configuration saved": [
         "Configurația eduGAIN s-a salvat."
@@ -11068,6 +11089,9 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pentru utilizatorii care trec la ${ MAIL_APP_NAME } de la un alt serviciu de e-mail, selectați fila ${ boldAddresses } și adăugați toate adresele de e-mail active înainte de a schimba înregistrarea MX pentru a asigura o tranziție ușoară."
+      ],
+      "Forgot password?": [
+        "Ați uitat parola?"
       ],
       "Free forever": [
         "Gratuit pentru totdeauna"
@@ -11877,6 +11901,9 @@
       "Password must have:": [
         "Parola trebuie să conțină:"
       ],
+      "Password verified": [
+        "Parolă verificată"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Plățile sunt protejate de criptarea TLS și de legile de confidențialitate elvețiene."
       ],
@@ -11888,6 +11915,9 @@
       ],
       "per month, billed at ${ price }": [
         "pe lună, facturat cu ${ price }"
+      ],
+      "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
+        "Vă solicită periodic să verificați parola din ${ BRAND_NAME } pentru a vă asigura că nu o uitați. Vi se va solicita mai rar în timp."
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "Clienții PGP probabil vor detecta automat cheile PGP dacă mesajele trimise sunt semnate."
@@ -12718,6 +12748,9 @@
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "Pentru a vă ajuta să vă protejați contul, dorim să ne asigurăm că dețineți cu adevărat contul."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Pentru a vă ajuta să vă amintiți parola, vă vom solicita să o introduceți periodic. Vi se va solicita mai rar în timp."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Pentru a importa evenimente, mai întâi creați un calendar în ${ CALENDAR_APP_NAME }. Aici vor apărea evenimentele după importare."
       ],
@@ -13019,7 +13052,7 @@
         "Vă recomandăm să aveți cel puțin două servere pentru a beneficia de redundanță."
       ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
-        "Se recomandă notificarea membrilor familiei și solicitați-le să-și activeze autentificarea cu doi factori înainte de activarea utilizării acesteia."
+        "Vă recomandăm să notificați membrii grupului și să le solicitați să-și activeze autentificarea cu doi factori înainte de activarea utilizării acesteia."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Se recomandă notificarea membrilor organizației și solicitarea ca aceștia să-ți activeze autentificarea cu doi factori înainte de forțarea utilizării acesteia."
@@ -13050,6 +13083,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Veți primi o notificare la finalizarea importării."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Vă vom reaminti să vă verificați din nou parola mai târziu."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Se va trimite trimite un nou cod de verificare la ${ strong }."
@@ -14039,6 +14075,16 @@
         "Afișare săptămână"
       ]
     },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Comutare la ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Comutare la ${ MAIL_APP_NAME }"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Action shortcuts": [
         "Combinații de taste acțiuni"
@@ -14051,6 +14097,9 @@
       ],
       "Composer shortcuts": [
         "Combinații de taste editor mesaje"
+      ],
+      "Desktop app navigation": [
+        "Navigare în aplicațiile desktop"
       ],
       "Folder shortcuts": [
         "Combinații de taste foldere"
@@ -15243,6 +15292,9 @@
       "Password": [
         "Parola"
       ],
+      "Password reminders": [
+        "Mementouri parole"
+      ],
       "Password strength": [
         "Dificultate parolă"
       ],
@@ -15832,8 +15884,17 @@
       "Invalid ${ group.name } record found": [
         "S-a găsit o înregistrare ${ group.name } nevalidă"
       ],
+      "Priority": [
+        "Prioritate"
+      ],
+      "Status": [
+        "Stare"
+      ],
       "Type": [
         "Tip"
+      ],
+      "Use default value (e.g. “@”)": [
+        "Folosire valoare implicită (ex. „@”)"
       ],
       "Valid ${ group.name } record found": [
         "S-a găsit o înregistrare ${ group.name } validă"
@@ -16043,6 +16104,9 @@
       "Help": [
         "Ajutor"
       ],
+      "Help & support": [
+        "Ajutor și asistență"
+      ],
       "Help translate": [
         "Traducere completă"
       ],
@@ -16156,9 +16220,6 @@
       ],
       "Sign in": [
         "Autentificare"
-      ],
-      "Sign-in help": [
-        "Ajutor conectare"
       ],
       "Snap store": [
         "magazinul Snap"
@@ -16771,6 +16832,9 @@
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
         "Bucurați-vă de două săptămâni de ${ BRAND_NAME } gratuit"
       ],
+      "Experience true online privacy with a secure email, cloud storage, password manager, and VPN. Join ${ BRAND_NAME } today and get ${ refereeRewardAmount } off your next subscription.": [
+        "Experimentași confidențialitatea online autentică folosind un e-mail securizat, spațiu de stocare în cloud, manager de parole și VPN. Alăturați-vă astăzi la ${ BRAND_NAME } și primiți o reducere de ${ refereeRewardAmount } la următorul abonament."
+      ],
       "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
         "Experimentați confidențialitatea online cu adevărat. Protejați-vă datele cu ${ BRAND_NAME } gratuit pentru următoarele 14 zile."
       ],
@@ -16782,6 +16846,9 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "V-ați uitat numele de utilizator al contului ${ BRAND_NAME }? Aflați-l folosind adresa de e-mail de recuperare sau numărul de telefon și redobândiți accesul la ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și multe altele."
+      ],
+      "Join ${ BRAND_NAME } and get ${ refereeRewardAmount } in credits": [
+        "Alăturați-vă la ${ BRAND_NAME } și primiți ${ refereeRewardAmount } în credite"
       ],
       "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
         "Recuperați accesul la adresa de e-mail privată ${ BRAND_NAME } rezervată copilului dvs."
@@ -17935,7 +18002,7 @@
         "Ștergeți automat mesajele mai vechi de 30 de zile din gunoi și cele nedorite."
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Transferați automat mesajele trimise spre contul ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
+        "Transferați automat mesajele trimise spre contul din ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "În prezent, trimiterea mesajelor promoționale sau programate grupate nu este acceptată. Vă recomandăm să utilizați un furnizor dedicat de servicii de e-mail pentru acest caz de utilizare."
@@ -19494,6 +19561,28 @@
         "Ofertă limitată."
       ]
     },
+    "Password reminder": {
+      "Do you remember your ${ BRAND_NAME } password?": [
+        "Vă amintiți parola pentru ${ BRAND_NAME }?"
+      ],
+      "The best way to avoid losing access to your account and data is to remember your credentials.": [
+        "Cea mai bună modalitate de a evita pierderea accesului la contul și datele personale este să vă amintiți datele de autentificare."
+      ]
+    },
+    "password_reminder": {
+      "If you forget your password, you may lose access to your encrypted data.": [
+        "Dacă vă uitați parola, este posibil să pierdeți accesul la datele criptate."
+      ],
+      "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
+        "Asigurați-vă că memorați sau stocați în siguranță parola, deoarece este cheia pentru decriptarea datelor."
+      ],
+      "Turn off password reminders?": [
+        "Opriți mementourile pentru parolă?"
+      ],
+      "Turn off reminders": [
+        "Oprire mementouri"
+      ]
+    },
     "password_reset: info": {
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
         "**Toate datele existente** (e-mailuri, evenimente, contacte, fișiere, intrări ${ PASS_APP_NAME } etc.) **vor fi blocate** și pot fi deblocate numai cu **parola veche**."
@@ -19711,7 +19800,7 @@
         "TVA ${ rate }%"
       ],
       "terms and conditions": [
-        "termenii și condițiile"
+        "termeni și condiții"
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoire.",
@@ -20487,6 +20576,78 @@
         "OFERTĂ PRIMĂVERII"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Valorificați oferta"
+      ],
+      "Summer Sale": [
+        "Reduceri de vară"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/lună"
+      ],
+      "15 GB storage": [
+        "15 GB de spațiu de stocare"
+      ],
+      "2 TB data storage": [
+        "2 TB de spațiu de stocare pentru date"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de spațiu de stocare: de 40 de ori planul actual"
+      ],
+      "3 TB data storage": [
+        "3 TB de spațiu de stocare pentru date"
+      ],
+      "500 GB storage": [
+        "500 GB de spațiu de stocare"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Toate caracteristicile premium ale ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Toate caracteristicile premium ale ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Reducerile se bazează pe prețurile lunare standard. Abonamentul dvs. se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Acces complet la ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Conturi individuale pentru 6 utilizatori"
+      ],
+      "Individual accounts for you and a partner": [
+        "Conturi individuale pentru dvs. și un partener"
+      ],
+      "Online document and spreadsheet editor": [
+        "Editor conectat de documente și foi de calcul"
+      ],
+      "Recover previous file versions": [
+        "Recuperați versiunile anterioare ale fișierelor"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protecție mai puternică împotriva amenințărilor cibernetice"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Treceți la planul nostru anual și economisiți ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Număr nelimitat de foldere, etichete și filtre"
+      ],
+      "Use your own email domain": [
+        "Utilizați propriul domeniu de e-mail"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "pentru 12 luni"
+      ],
+      "SUMMER SALE": [
+        "REDUCERI DE VARĂ"
+      ]
+    },
     "Recovery Email": {
       "Back to ${ signIn }.": [
         "Înapoi la ${ signIn }."
@@ -20756,14 +20917,14 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Bucurați-vă de **${ planTitle }** gratuit până la **${ textDate }**."
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "Oferiți două săptămâni gratuite, primiți ${ referrerRewardAmount } în credite."
+      "Give ${ refereeRewardAmount }, get ${ referrerRewardAmount }": [
+        "Oferiți ${ refereeRewardAmount }, primiți ${ referrerRewardAmount }"
       ],
       "How your free trial works:": [
         "Cum funcționează evaluarea gratuită:"
       ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "Am folosit ${ BRAND_NAME } și am crezut că v-ar plăcea. Este un serviciu de e-mail securizat, stocare în cloud, manager de parole și VPN care vă protejează confidențialitatea. Înscrieți-vă folosind această legătură pentru a obține 14 zile de funcții premium gratuit: ${ referralLink }"
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
+        "Am folosit ${ BRAND_NAME } și m-am gândit că ți-ar plăcea. Este un serviciu securizat de e-mail, stocare în cloud, administrare de parole și VPN care îți protejează confidențialitatea. Înscrie-te folosind această legătură web pentru a primi o reducere de ${ refereeRewardAmount } la următorul tău abonament: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Dacă anulați până atunci, contul va fi retrogradat la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } atunci când perioada de evaluare se încheie. Dacă nu anulați, va începe planul complet și veți primi **${ referrerRewardAmount }** în credite."
@@ -20799,9 +20960,6 @@
         "Mai aveți **${ daysRemaining } zi** pentru a explora toate funcțiile puternice pe care le oferă **${ planTitle }**.",
         "Mai aveți **${ daysRemaining } zile** pentru a explora toate funcțiile puternice pe care vi le oferă **${ planTitle }**.",
         "Mai aveți **${ daysRemaining } de zile** pentru a explora toate funcțiile puternice pe care **${ planTitle }** le are de oferit."
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "Persoana invitată va primi și ea ${ refereeRewardAmount } pentru răscumpărare la următoarea factură!"
       ],
       "your subscription": [
         "abonament personal"
@@ -25901,6 +26059,9 @@
       "Messages and composing": [
         "Mesaje și compunere"
       ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrați-vă organizația la ${ BRAND_NAME }"
+      ],
       "Migration assistant": [
         "Asistent de migrare"
       ],
@@ -25971,13 +26132,16 @@
         "Notificări"
       ],
       "Open": [
-        "Active"
+        "Deschise"
       ],
       "Open actions dropdown": [
         "Deschidere meniu acțiuni"
       ],
       "Open pagination": [
         "Deschidere paginare"
+      ],
+      "OpenVpn": [
+        "OpenVPN"
       ],
       "OpenVPN": [
         "OpenVPN"
@@ -26434,6 +26598,9 @@
       "Summary": [
         "Sumar"
       ],
+      "Summer Sale": [
+        "Promoție de vară"
+      ],
       "Support ticket closed": [
         "Tichet de asistență închis"
       ],
@@ -26590,6 +26757,9 @@
       "Verify your email": [
         "Verificați adresa de email"
       ],
+      "Verify your password": [
+        "Verificați-vă parola"
+      ],
       "Verifying your card...": [
         "Verificare card..."
       ],
@@ -26742,6 +26912,15 @@
       ]
     },
     "Title header": {
+      "Date": [
+        "Data"
+      ],
+      "Organization migrations": [
+        "Migrări organizație"
+      ],
+      "Personal accounts": [
+        "Conturi personale"
+      ],
       "Size": [
         "Mărime"
       ]
