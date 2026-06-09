@@ -25,16 +25,11 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { useStableCallback } from '../../../hooks/useStableCallback';
 import { audioQuality } from '../../../qualityConstants';
 import type { AudioToggleParams, SwitchActiveDevice, ToggleAudioType } from '../../../types';
+import { DTLNFilter, DTLN_AUDIO_CONTEXT_SAMPLE_RATE, isDTLNFilterSupported } from '../../../utils/dtlnProcessor';
 import { getPersistedNoiseFilter, persistNoiseFilter } from '../../../utils/noiseFilterPersistence';
-import {
-    RNNoiseFilter,
-    isRNNoiseFilterSupported,
-    preloadRNNoiseWorklet,
-    waitForRNNoiseWorklet,
-} from '../../../utils/rnnoiseProcessor';
 
 const isKrispNoiseFilterBrowserSupported = isKrispNoiseFilterSupported();
-const isRNNoiseFilterBrowserSupported = isRNNoiseFilterSupported();
+const isDTLNFilterBrowserSupported = isDTLNFilterSupported();
 const TOGGLE_TIMEOUT_MS = 8000;
 const NOISE_FILTER_ATTACH_TIMEOUT_MS = 3000;
 /** Delay before attaching noise filter after a mute/unmute toggle */
@@ -70,7 +65,7 @@ const isRoomInLivekitCloud = (room: Room) => {
  *
  * Noise filter hierarchy:
  * - Krisp: used when the room is LiveKit Cloud and the browser supports it.
- * - RNNoise (WASM): fallback when Krisp is unavailable but AudioWorklet is supported.
+ * - DTLN (LiteRT.js): fallback when Krisp is unavailable but AudioWorklet is supported.
  * - Native noiseSuppression constraint: last resort for very old browsers.
  *
  * Shared architecture:
@@ -140,16 +135,20 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         if (audioContext.current && audioContext.current.state !== 'closed') {
             return audioContext.current;
         }
-        // RNNoise's model is trained on 48 kHz audio — request it explicitly. Some browsers
-        // (older iOS Safari, some Android configs) silently ignore the option, hence the readback below.
+        // DTLN is trained on 16 kHz audio — pin the rate when it's the active denoiser. Krisp accepts
+        // whatever rate the browser hands us, so let it pick its default in that case.
+        // Some browsers (older iOS Safari, some Android configs) silently ignore the requested rate,
+        // hence the readback in attachNoiseFilter below.
         // @ts-ignore - webkitAudioContext is not available in all browsers
         const Ctor = (window.AudioContext || window.webkitAudioContext) as typeof AudioContext;
-        const ctx = new Ctor({ sampleRate: 48000 });
+        const ctx = isAdvancedNoiseFilterSupported
+            ? new Ctor()
+            : new Ctor({ sampleRate: DTLN_AUDIO_CONTEXT_SAMPLE_RATE });
         audioContext.current = ctx;
-        debugLog('noiseFilter:audio-context-created', { sampleRate: ctx.sampleRate });
-        if (isRNNoiseFilterBrowserSupported && ctx.sampleRate === 48000) {
-            preloadRNNoiseWorklet(ctx);
-        }
+        debugLog('noiseFilter:audio-context-created', {
+            sampleRate: ctx.sampleRate,
+            filter: isAdvancedNoiseFilterSupported ? 'krisp' : 'dtln',
+        });
         return ctx;
     };
 
@@ -275,7 +274,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
     };
 
     /**
-     * Creates a new noise filter processor (Krisp or RNNoise) and attaches it to the current audio track.
+     * Creates a new noise filter processor (Krisp or DTLN) and attaches it to the current audio track.
      * Reuses the persistent AudioContext. Guards against stale attach via generation counter —
      * if abandonNoiseFilter() is called while setProcessor is in flight, the result is discarded.
      * On failure, detaches the AudioContext from the track so audio still flows directly.
@@ -284,12 +283,12 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         const publication = getCurrentPublication();
         const currentAudioTrack = publication?.audioTrack;
 
-        const isAnyProcessorSupported = isAdvancedNoiseFilterSupported || isRNNoiseFilterBrowserSupported;
+        const isAnyProcessorSupported = isAdvancedNoiseFilterSupported || isDTLNFilterBrowserSupported;
         if (!currentAudioTrack || !isAnyProcessorSupported) {
             debugLog('noiseFilter:attach-skip', {
                 hasTrack: !!currentAudioTrack,
                 krisp: isAdvancedNoiseFilterSupported,
-                rnnoise: isRNNoiseFilterBrowserSupported,
+                dtln: isDTLNFilterBrowserSupported,
             });
             return;
         }
@@ -318,16 +317,12 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
 
         debugLog('noiseFilter:attach-start', { trackId: currentAudioTrack.id, generation: gen });
 
-        // RNNoise requires 48 kHz; if the browser ignored our sampleRate request, skip it
+        // DTLN requires 16 kHz; if the browser ignored our sampleRate request, skip it
         // (the model would produce garbage at any other rate).
-        const wouldUseRNNoise = !isAdvancedNoiseFilterSupported && isRNNoiseFilterBrowserSupported;
-        if (wouldUseRNNoise && ctx.sampleRate !== 48000) {
-            debugLog('noiseFilter:attach-skip-non-48k', { sampleRate: ctx.sampleRate });
+        const wouldUseDTLN = !isAdvancedNoiseFilterSupported && isDTLNFilterBrowserSupported;
+        if (wouldUseDTLN && ctx.sampleRate !== DTLN_AUDIO_CONTEXT_SAMPLE_RATE) {
+            debugLog('noiseFilter:attach-skip-non-16k', { sampleRate: ctx.sampleRate });
             return;
-        }
-
-        if (wouldUseRNNoise) {
-            await withTimeout(waitForRNNoiseWorklet(ctx), 'rnnoise-worklet-load', TOGGLE_TIMEOUT_MS);
         }
 
         if (noiseFilterGeneration.current !== gen) {
@@ -337,7 +332,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
 
         const processor = isAdvancedNoiseFilterSupported
             ? KrispNoiseFilter({ debugLogs: isKrispDebugEnabled })
-            : RNNoiseFilter();
+            : DTLNFilter();
 
         try {
             currentAudioTrack.setAudioContext(ctx);
@@ -512,7 +507,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
             ...(useIOSWorkaround ? {} : { deviceId: { exact: deviceId as string } }),
             echoCancellation: { ideal: true },
             autoGainControl: { ideal: true },
-            noiseSuppression: isAdvancedNoiseFilterSupported || isRNNoiseFilterBrowserSupported ? false : noiseFilter,
+            noiseSuppression: isAdvancedNoiseFilterSupported || isDTLNFilterBrowserSupported ? false : noiseFilter,
             channelCount: { ideal: 1 },
             dtx: false,
         };
@@ -629,7 +624,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
             // - If the track changed (new ID), the old processor is on a dead track → abandon and re-attach.
             if (
                 isEnabled &&
-                (isAdvancedNoiseFilterSupported || isRNNoiseFilterBrowserSupported) &&
+                (isAdvancedNoiseFilterSupported || isDTLNFilterBrowserSupported) &&
                 noiseFilter &&
                 !skipNoiseFilter
             ) {
@@ -725,14 +720,14 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
 
         if (isMicrophoneEnabled) {
             try {
-                if (isAdvancedNoiseFilterSupported || isRNNoiseFilterBrowserSupported) {
+                if (isAdvancedNoiseFilterSupported || isDTLNFilterBrowserSupported) {
                     if (newValue) {
                         await attachNoiseFilter();
                     } else {
                         await detachNoiseFilter();
                     }
                 } else {
-                    // Neither Krisp nor RNNoise available — recreate the mic track with the native
+                    // Neither Krisp nor DTLN available — recreate the mic track with the native
                     // `noiseSuppression` constraint as a last resort. `applyConstraints` is a no-op
                     // for this constraint once the track is published in an RTCPeerConnection.
                     await recreateMicrophoneWithNoiseSuppression(newValue);
