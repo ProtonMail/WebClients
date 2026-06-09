@@ -3,41 +3,29 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { groupOwnerInvitesThunk } from '@proton/account/groupOwnerInvites';
-import { useUser } from '@proton/account/user/hooks';
+import { useOrganization } from '@proton/account/organization/hooks';
 import { Card } from '@proton/atoms/Card/Card';
-import { DualPaneContent } from '@proton/atoms/DualPane/DualPaneContent';
-import { DualPaneSidebar } from '@proton/atoms/DualPane/DualPaneSidebar';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
-import Loader from '@proton/components/components/loader/Loader';
 import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import AdminRolesOnboardingModal from '@proton/components/containers/members/rolesAndPermissions/AdminRolesOnboardingModal';
-import canUseGroups from '@proton/components/containers/organization/groups/canUseGroups';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Organization } from '@proton/shared/lib/interfaces';
-import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
-import GroupForm from './GroupForm';
-import GroupList from './GroupList';
+import GroupsMemberManagementPanel from './components/GroupsMemberManagementPanel';
+import { useGroupsManagement, withGroupsManagementContext } from './context/GroupsManagementContext';
+import useGroupAvailableAddressDomains from './hooks/useGroupAvailableAddressDomains';
 import shouldShowMail from './shouldShowMail';
-import useGroupsManagement from './useGroupsManagement';
 
 import './OrganizationGroupsManagementSection.scss';
 
-interface Props {
-    organization?: Organization;
-}
-
-const OrganizationGroupsManagementSection = ({ organization }: Props) => {
-    const groupsManagement = useGroupsManagement(organization);
-    const [user, loadingUser] = useUser();
-    const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
-    const isUserGroupsPassBusinessEnabled = useFlag('UserGroupsPassBusiness');
+const OrganizationGroupsManagementSection = () => {
+    const [organization] = useOrganization();
+    const { isFrozen } = useGroupsManagement();
     const isUserGroupsGroupOwnerEnabled = useFlag('UserGroupsGroupOwner');
     const dispatch = useDispatch();
     const hasAdminRoles = useFlag('AdminRoleMVP');
@@ -55,30 +43,11 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
         }
     }, []);
 
-    if (!groupsManagement || loadingUser || !user) {
-        return <Loader />;
-    }
-
-    const {
-        groups,
-        domainData: { customDomains },
-        suggestedAddressDomainSource,
-    } = groupsManagement;
-    const hasUsableDomain = customDomains?.some(getIsDomainActive) || isUserGroupsNoCustomDomainEnabled;
+    const { hasUsableDomain, invalidGroupSuggestion } = useGroupAvailableAddressDomains();
 
     const linkToDomainPage = (
         <SettingsLink key="link-to-domain-page" path="/domain-names">{c('Action').t`Domain name`}</SettingsLink>
     );
-
-    const usingGroupsDomainButNotActive =
-        suggestedAddressDomainSource === 'group' && !isUserGroupsNoCustomDomainEnabled;
-    const canOnlyDelete =
-        (!canUseGroups(organization?.PlanName, {
-            isUserGroupsNoCustomDomainEnabled,
-            isUserGroupsPassBusinessEnabled,
-        }) ||
-            usingGroupsDomainButNotActive) &&
-        (groups?.length ?? 0) > 0;
 
     const showMailFeatures = shouldShowMail(organization?.PlanName);
     const mailDescription = c('Info')
@@ -98,7 +67,7 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
                         .jt`A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${linkToDomainPage}.`}
                 </SettingsParagraph>
             )}
-            {canOnlyDelete && (
+            {isFrozen && (
                 <Card
                     rounded
                     background
@@ -110,24 +79,7 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
                         .t`The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.`}
                 </Card>
             )}
-            {(hasUsableDomain || usingGroupsDomainButNotActive) && (
-                <div className="content flex-1 mt-8">
-                    <div className="flex flex-nowrap flex-column h-full">
-                        <div className="groups-dual-pane flex items-start justify-start flex-nowrap w-full gap-6">
-                            <DualPaneSidebar>
-                                <GroupList
-                                    groupsManagement={groupsManagement}
-                                    canOnlyDelete={canOnlyDelete}
-                                    hasUsableDomain={hasUsableDomain}
-                                />
-                            </DualPaneSidebar>
-                            <DualPaneContent>
-                                <GroupForm groupsManagement={groupsManagement} canOnlyDelete={canOnlyDelete} />
-                            </DualPaneContent>
-                        </div>
-                    </div>
-                </div>
-            )}
+            {(hasUsableDomain || invalidGroupSuggestion) && <GroupsMemberManagementPanel />}
             <AdminRolesOnboardingModal
                 variant="group"
                 open={canShowAdminRolesModal}
@@ -139,4 +91,4 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
     );
 };
 
-export default OrganizationGroupsManagementSection;
+export default withGroupsManagementContext(OrganizationGroupsManagementSection);
