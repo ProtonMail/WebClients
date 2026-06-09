@@ -1,4 +1,5 @@
 import { Integer as asn1jsInteger } from 'asn1js';
+import type { Certificate } from 'pkijs';
 
 import { HOUR, SECOND, YEAR } from '@proton/shared/lib/constants';
 
@@ -19,8 +20,11 @@ describe('certificate transparency', () => {
         try {
             await parseCertificate('corrupt');
             errorThrown = false;
-        } catch (err) {
-            expect(err.message).toEqual("Object's schema was not verified against input data for Certificate");
+        } catch (err: unknown) {
+            expect(err).toBeInstanceOf(Error);
+            expect((err as Error).message).toEqual(
+                "Object's schema was not verified against input data for Certificate"
+            );
         }
         expect(errorThrown).toEqual(true);
     });
@@ -32,10 +36,11 @@ describe('certificate transparency', () => {
 
         let errorThrown = true;
         try {
-            await verifyAltName(certNoExt, ChainHash, EpochID, CertificateTime);
+            await verifyAltName(certNoExt as Certificate, ChainHash, EpochID, CertificateTime);
             errorThrown = false;
-        } catch (err) {
-            expect(err.message).toEqual('Epoch certificate does not have extensions');
+        } catch (err: unknown) {
+            expect(err).toBeInstanceOf(Error);
+            expect((err as Error).message).toEqual('Epoch certificate does not have extensions');
         }
         expect(errorThrown).toEqual(true);
     });
@@ -43,14 +48,20 @@ describe('certificate transparency', () => {
     it('should fail in verifyAltName with missing AltName extension', async () => {
         const { Certificate, ChainHash, EpochID, CertificateTime } = epoch;
         const [cert] = await parseCertChain(Certificate);
-        const corruptExt = cert.extensions.filter((ext) => ext.extnID !== '2.5.29.17');
+        const corruptExt = cert.extensions!.filter((ext) => ext.extnID !== '2.5.29.17');
 
         let errorThrown = true;
         try {
-            await verifyAltName({ ...cert, extensions: corruptExt }, ChainHash, EpochID, CertificateTime);
+            await verifyAltName(
+                { ...cert, extensions: corruptExt } as Certificate,
+                ChainHash,
+                EpochID,
+                CertificateTime
+            );
             errorThrown = false;
-        } catch (err) {
-            expect(err.message).toEqual('Epoch certificate does not have AltName extension');
+        } catch (err: unknown) {
+            expect(err).toBeInstanceOf(Error);
+            expect((err as Error).message).toEqual('Epoch certificate does not have AltName extension');
         }
         expect(errorThrown).toEqual(true);
     });
@@ -66,8 +77,11 @@ describe('certificate transparency', () => {
         try {
             await verifySCT(epochCert, issuerCert);
             errorThrown = false;
-        } catch (err) {
-            expect(err.message).toEqual('The number of verified SCTs does not reach the number of operator threshold');
+        } catch (err: unknown) {
+            expect(err).toBeInstanceOf(Error);
+            expect((err as Error).message).toEqual(
+                'The number of verified SCTs does not reach the number of operator threshold'
+            );
         }
         expect(errorThrown).toEqual(true);
     });
@@ -141,7 +155,7 @@ describe('certificate chain verification', () => {
     });
     it('Should fail on expiry', async () => {
         const now = new Date(1709529634 * SECOND + 1 * YEAR); // 1year after epoch was published.
-        let error;
+        let error: unknown;
         try {
             await verifyCertChain(
                 await parseCertChain(letsEncryptCertificateChain),
@@ -152,11 +166,14 @@ describe('certificate chain verification', () => {
             error = err;
         }
         expect(error).toBeDefined();
-        expect(error.message).toEqual("Epoch certificate did not pass verification against issuer's certificate chain");
+        expect(error).toBeInstanceOf(Error);
+        expect((error as Error).message).toEqual(
+            "Epoch certificate did not pass verification against issuer's certificate chain"
+        );
     });
     it('Should fail if the certificate is in the future', async () => {
         const now = new Date(1709529634 * SECOND - 1 * YEAR); // 1year before epoch was published.
-        let error;
+        let error: unknown;
         try {
             await verifyCertChain(
                 await parseCertChain(letsEncryptCertificateChain),
@@ -167,11 +184,14 @@ describe('certificate chain verification', () => {
             error = err;
         }
         expect(error).toBeDefined();
-        expect(error.message).toEqual("Epoch certificate did not pass verification against issuer's certificate chain");
+        expect(error).toBeInstanceOf(Error);
+        expect((error as Error).message).toEqual(
+            "Epoch certificate did not pass verification against issuer's certificate chain"
+        );
     });
     it('Should fail if the certificate chain is broken', async () => {
         const now = new Date(1709529634 * SECOND + 24 * HOUR); // 24h after epoch was published.
-        let error;
+        let error: unknown;
         try {
             const zeroSSLChain = await parseCertChain(zeroSSLCertificateChain);
             const letsEncryptChain = await parseCertChain(letsEncryptCertificateChain);
@@ -181,6 +201,9 @@ describe('certificate chain verification', () => {
             error = err;
         }
         expect(error).toBeDefined();
-        expect(error.message).toEqual("Epoch certificate did not pass verification against issuer's certificate chain");
+        expect(error).toBeInstanceOf(Error);
+        expect((error as Error).message).toEqual(
+            "Epoch certificate did not pass verification against issuer's certificate chain"
+        );
     });
 });
