@@ -244,6 +244,9 @@
       "Create note": [
         "Crear nota"
       ],
+      "Create token": [
+        "Crear token"
+      ],
       "Create vault": [
         "Crear caja fuerte"
       ],
@@ -441,6 +444,9 @@
       ],
       "Manage access": [
         "Gestionar el acceso"
+      ],
+      "Manage vault access": [
+        "Gestionar el acceso a la caja fuerte"
       ],
       "Manually sync your data": [
         "Sincronizar tus datos manualmente"
@@ -1012,6 +1018,9 @@
       ],
       "Error reporting problem": [
         "Error al notificar el problema"
+      ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "La caducidad debe estar entre 60 minutos y 1 año"
       ],
       "Failed loading group members": [
         "Error al cargar los miembros del grupo"
@@ -1603,6 +1612,9 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Antes de exportar tus datos con este formato, abre y desactiva Ajustes de Safari -> General -> Abrir archivos seguros al descargarlos. Esto evitará que Safari extraiga el archivo exportado de manera incorrecta."
       ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Entre 60 (1 hora) y 525 600 (1 año)"
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Se ha registrado el bloqueo automático biométrico. Úsalo para desbloquear ${ PASS_APP_NAME }."
       ],
@@ -1665,6 +1677,9 @@
       ],
       "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
         "Copiado al portapapeles (expira en ${ timeoutDurationHumanReadable })"
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Copia este token ahora. Por motivos de seguridad, no se vuelve a mostrar."
       ],
       "Coupon successfully applied!": [
         "Se ha aplicado el cupón."
@@ -1991,8 +2006,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
-        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte borrará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -3022,6 +3036,9 @@
       ],
       "Expired tokens (${ expired.length })": [
         "Tokens expirados (${ expired.length })"
+      ],
+      "Expires in (minutes)": [
+        "Caduca en (minutos)"
       ],
       "Expiry Date": [
         "Fecha de expiración"
@@ -4791,6 +4808,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menos que se descifren, las contraseñas cifradas permanecen seguras incluso si están expuestas."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Obtén ${ planName }"
       ]
     },
     "Validation": {
