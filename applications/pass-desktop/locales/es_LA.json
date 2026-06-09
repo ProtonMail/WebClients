@@ -2169,6 +2169,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
+      ],
       "Moving items": [
         "Moviendo los elementos"
       ],
@@ -4289,6 +4293,12 @@
       ],
       "The file you are trying to import is empty": [
         "El archivo que intenta importar está vacío."
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Esta función no está disponible en su plan. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Esta función no está soportada en su plan. Contáctese con su administración para obtener acceso."
       ],
       "Total files: ": [
         "Total de archivos: "

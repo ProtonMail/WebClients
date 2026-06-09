@@ -164,6 +164,9 @@
       "Claim ${ BRAND_NAME } address": [
         "${ BRAND_NAME }-ის მისამართის გამოთხოვა"
       ],
+      "Claim offer": [
+        "შეთავაზების მიღება"
+      ],
       "Claim this address": [
         "ამ მისამართის გამოთხოვა"
       ],
@@ -341,6 +344,9 @@
       "Discard Changes": [
         "ცვლილებების გაუქმება"
       ],
+      "Disconnect": [
+        "გათიშვა"
+      ],
       "Discover ${ planName }": [
         "აღმოაჩინეთ ${ planName }"
       ],
@@ -436,6 +442,9 @@
       ],
       "Enable multi-user support": [
         "მრავალმომხმარებლიანობის მხარდაჭერა"
+      ],
+      "Enter code": [
+        "შეიყვანეთ კოდი"
       ],
       "Explore ${ target }": [
         "${ target }-ის დათვალიერება"
@@ -586,6 +595,9 @@
       ],
       "Keep my subscription": [
         "ჩემი გამოწერის შენარჩუნება"
+      ],
+      "Later": [
+        "მოგვიანებით"
       ],
       "Learn more": [
         "გაიგეთ მეტი"
@@ -1127,6 +1139,9 @@
       "Verify domain": [
         "დომენის გადამოწმება"
       ],
+      "Verify now": [
+        "ახლა გადამოწმება"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "დომენის ${ unverifiedSSODomain.DomainName } შემოწმება"
       ],
@@ -1381,6 +1396,11 @@
     "Admin": {
       "admin": [
         "ადმინისტრატორი"
+      ]
+    },
+    "Admin roles onboarding": {
+      "User admin:": [
+        "მომხმარებლის ადმინისტრატორი:"
       ]
     },
     "Alert": {
@@ -1785,11 +1805,11 @@
       ]
     },
     "BOSS": {
+      "Activated": [
+        "აქტიურია"
+      ],
       "All": [
         "ყველა"
-      ],
-      "Authenticate": [
-        "ავთენტიკაცია"
       ],
       "Calendar": [
         "კალენდარი"
@@ -1800,11 +1820,14 @@
       "Contacts": [
         "კონტაქტები"
       ],
+      "Emails": [
+        "ელფოსტები"
+      ],
+      "Errors": [
+        "შეცდომები"
+      ],
       "Estimated size": [
         "სავარაუდო ზომა"
-      ],
-      "Failed to load OAuth": [
-        "OAuth-ის ჩატვირთვა ჩავარდა"
       ],
       "Has errors": [
         "აქვს შეცდომები"
@@ -1812,24 +1835,11 @@
       "In progress": [
         "მიმდინარეობს"
       ],
-      "Install app": [
-        "აპის დაყენება"
+      "Migrate": [
+        "მიგრაცია"
       ],
-      "Install migration app": [
-        "მიგრაციის პროგრამის დაყენება"
-      ],
-      "Mail": [
-        "ფოსტა"
-      ],
-      "Migrate from Google Workspace": [
-        "მიგრაცია Google Workspace-დან"
-      ],
-      "Migration includes": [
-        "მიგრაცია შეიცავს"
-      ],
-      "Migration started for ${ n } user": [
-        "მიგრაცია დაიწყო ${ n } მომხმარებლისთვის",
-        "მიგრაცია დაიწყო ${ n } მომხმარებლისთვის"
+      "Migrated": [
+        "მიგრირებულია"
       ],
       "Migration status": [
         "მიგრაციის სტატუსი"
@@ -1840,14 +1850,8 @@
       "Organization does not have enough storage available": [
         "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
       ],
-      "Select at least one user to start a migration": [
-        "მიგრაციის დასაწყებად აირჩიეთ, სულ ცოტა, ერთი მომხმარებელი"
-      ],
-      "Settings": [
-        "მორგება"
-      ],
-      "Sign in to Google Workspace": [
-        "შესვლა Google Workspace-ში"
+      "Pending": [
+        "რიგში"
       ],
       "Size": [
         "ზომა"
@@ -1857,18 +1861,6 @@
       ],
       "User": [
         "მომხმარებელი"
-      ],
-      "Users migrated": [
-        "მომხმარებლები მიგრირებულია"
-      ],
-      "Verify installation": [
-        "დაყენების გადამოწმება"
-      ],
-      "Verify your domain": [
-        "თქვენი დომენის გადამოწმება"
-      ],
-      "Verify your domain to start a migration": [
-        "დაადასტურეთ თქვენი დომენი მიგრაციის დასაწყებად"
       ],
       "What are you migrating?": [
         "რის მიგრაციას ახდენთ?"
@@ -2004,6 +1996,9 @@
       ],
       "Set up other features": [
         "სხვა ფუნქციების მორგება"
+      ],
+      "Set up SSO": [
+        "SSO-ის მორგება"
       ],
       "Take a tour": [
         "გასაცნობი ტური"
@@ -3201,6 +3196,9 @@
       "/month": [
         "/თვე"
       ],
+      "/user /month": [
+        "/მომმარებელი /თვეში"
+      ],
       "/user per month": [
         "/მომხმარებელი თვეში"
       ]
@@ -3322,9 +3320,6 @@
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "თქვენს ორგანიზაციაში ყველას შეუძლია გაზიარებულ სერვერებთან დაკავშირება, ყველა ქვეყანაში."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "იმისათვის, რომ შეუფერხებლად გადახვიდეთ ${ BRAND_NAME }-ზე, შემოიტანეთ თქვენი მონაცემები Google-დან, Outlook-დან და სხვა წყაროებიდან."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "მიიღეთ გაფრთხილება, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
@@ -4882,6 +4877,9 @@
       "Secure streaming support": [
         "დაცული სტრიმინგის მხარდაჭერა"
       ],
+      "Storage": [
+        "საცავი"
+      ],
       "Torrenting support (P2P)": [
         "ტორენტების მხარდაჭერა (P2P)"
       ],
@@ -5175,10 +5173,20 @@
         "სერვისები"
       ]
     },
+    "Group detail label": {
+      "Description:": [
+        "აღწერა:"
+      ]
+    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } წევრი",
         "${ memberCount } წევრი"
+      ]
+    },
+    "group_modal": {
+      "General": [
+        "ზოგადი"
       ]
     },
     "Header": {
@@ -5853,24 +5861,6 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**შემოიტანეთ თქვენი არსებული კოდები** სხვა 2FA აპებიდან, მაგალითად Google Authenticator"
       ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**ნაბიჯი 1:** მოიწვიეთ თქვენი მეგობრები ${ BRAND_NAME }-ზე თქვენი რეფერალი ბმულით."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**ნაბიჯი 1:** მოიწვიეთ თქვენი მეგობრები ${ BRAND_NAME }-ზე თქვენი რეფერალი ბმულით."
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**ნაბიჯი 2:** თქვენი მეგობრები მიიღებენ **2 კვირას უფასოდ** თავიანთ სატარიფო გეგმაზე."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**ნაბიჯი 2:** თქვენი მეგობრები მიიღებენ 2 კვირას უფასოდ თავიანთ სატარიფო გეგმაზე."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**ნაბიჯი 3:** მიიღეთ ${ referrerRewardAmount }-ის კრედიტები ყოველი პიროვნებისთვის, რომელიც გამოიწერს სატარიფო გეგმას."
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**ნაბიჯი 3:** მიიღეთ **${ referrerRewardAmount }-ის კრედიტები** ყოველი პიროვნებისთვის, რომელიც გამოიწერს სატარიფო გეგმას."
-      ],
       "**Sync codes** to all your devices": [
         "**დაასინქრონიზეთ კოდები** ყველა თქვენს მოწყობილობაზე"
       ],
@@ -6417,6 +6407,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "უზრუნველყავით სრულად პირადი და დაშიფრული კომუნიკაცია. მოითხოვეთ თქვენი უფასო ${ BRAND_NAME } ელფოსტის მისამართი ახლავე."
       ],
+      "Enter code": [
+        "შეიყვანეთ კოდი"
+      ],
       "Enter key manually instead": [
         "გასაღების ხელით შეყვანა"
       ],
@@ -6521,6 +6514,9 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "მიიღეთ გაფრთხილება, თუ თქვენმა პაროლმა ან სხვა პირადმა მონაცემებმა გაჟონა. ${ learnMoreLinkNoBreach }"
+      ],
+      "Get started": [
+        "დავიწყოთ"
       ],
       "Get started with the referral link above.": [
         "დაიწყეთ რეფერალი ბმულით ზემოთ მხარეს."
@@ -6633,6 +6629,9 @@
       ],
       "Include device, location, and IP details": [
         "შეიცავს მოწყობილობას, მდებარეობას და IP-ის დეტალებს"
+      ],
+      "Included": [
+        "შეიცავს"
       ],
       "Increase your account security by verifying your email address.": [
         "გაზარდეთ თქვენი ანგარიშის უსაფრთხოება თქვენი ელფოსტის მისამართის გადამოწმებით."
@@ -6877,6 +6876,9 @@
       ],
       "New activity data will stop being collected and shown.": [
         "ახალი აქტივობის მონაცემების შეგროვებას და ჩვენებას შევწყვეტთ."
+      ],
+      "New sidebar": [
+        "ახალი გვერდითი ზოლი"
       ],
       "New user invited to organization": [
         "ახალი მომხმარებელი მოწვეულია მორგანიზაციაში"
@@ -7130,6 +7132,9 @@
       ],
       "Recently used servers:": [
         "ახლახან გამოყენებული სერვერები:"
+      ],
+      "RECOMMENDED": [
+        "რეკომენდებულია"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "რეკომენდებულია სანდო მოწყობილობებზე. ${ keepMeSignedInLearnMoreLink }"
@@ -8543,6 +8548,9 @@
       "e.g. example.com": [
         "მაგ: example.com"
       ],
+      "Early access": [
+        "ადრეული წვდომა"
+      ],
       "Email": [
         "ელფოსტა"
       ],
@@ -8572,6 +8580,9 @@
       ],
       "Enabled": [
         "ჩართულია"
+      ],
+      "Enter code": [
+        "შეიყვანეთ კოდი"
       ],
       "Enter password": [
         "შეიყვანეთ პაროლი"
@@ -9113,11 +9124,6 @@
         "დაამატეთ ეს TXT ჩანაწერი. გაითვალისწინეთ, რომ DNS ჩანაწერების განახლებას რამდენიმე საათი შეიძლება, დასჭირდეს."
       ]
     },
-    "Label for domain setup": {
-      "Type": [
-        "ტიპი"
-      ]
-    },
     "Label for new member": {
       "Admin": [
         "ადმინისტრატორი"
@@ -9313,6 +9319,9 @@
       ],
       "if your data is leaked": [
         "თუ თქვენი მონაცემები გაიჟონება"
+      ],
+      "Learn how": [
+        "სწავლა, თუ როგორ"
       ],
       "Learn more": [
         "გაიგეთ მეტი"
@@ -12072,6 +12081,78 @@
         "Yahoo"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "ფასდაკლების მიღება"
+      ],
+      "Summer Sale": [
+        "ზაფხულის ფასდაკლება"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/თვე"
+      ],
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "2 TB data storage": [
+        "2 ტბ მონაცემთა საცავი"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 გბ საცავი: 40-ჯერ მეტი მიმდინარე სატარიფო გეგმაზე"
+      ],
+      "3 TB data storage": [
+        "3 ტბ მონაცემთა საცავი"
+      ],
+      "500 GB storage": [
+        "500 გბ საცავი"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }-ის, ${ PASS_SHORT_APP_NAME }-ის, ${ DRIVE_SHORT_APP_NAME }-ის, ${ VPN_SHORT_APP_NAME }-ისა და ${ CALENDAR_SHORT_APP_NAME }-ის ყველა პრემიუმ ფუნქცია"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }-ის, ${ PASS_SHORT_APP_NAME }-ის, ${ DRIVE_SHORT_APP_NAME }-ისა და ${ CALENDAR_SHORT_APP_NAME }-ის ყველა პრემიუმ ფუნქცია"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "ფასდაკლებები ეფუძნება სტანდარტულ ყოველთვიურ ტარიფს. თქვენი გამოწერა განახლდება სტანდარტული წლიური ტარიფით, როდესაც გადახდის ციკლი დასრულდება."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "სრული წვდომა ${ VPN_APP_NAME }-ზე"
+      ],
+      "Individual accounts for 6 users": [
+        "ინდივიდუალური ანგარიშები 6 მომხმარებლისთვის"
+      ],
+      "Individual accounts for you and a partner": [
+        "ინდივიდუალური ანგარიშები თქვენთვის და პარტნიორისთვის"
+      ],
+      "Online document and spreadsheet editor": [
+        "დოკუმენტებისა და ელექტრონული ცხრილების ონლაინ რედაქტორი"
+      ],
+      "Recover previous file versions": [
+        "წინა ფაილის ვერსიების აღდგენა"
+      ],
+      "Stronger protection against cyber threats": [
+        "უფრო ძლიერი დაცვა კიბერსაფრთხეებისგან"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "გადადით ჩვენს წლიურ პაკეტზე და დაზოგეთ ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
+      ],
+      "Use your own email domain": [
+        "გამოიყენეთ თქვენი საკუთარი ელფოსტის დომენი"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12 თვით"
+      ],
+      "SUMMER SALE": [
+        "ზაფხულის ფასდაკლება"
+      ]
+    },
     "Recovery Email": {
       "Cancel": [
         "გაუქმება"
@@ -12142,9 +12223,6 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "ისიამოვნეთ **${ planTitle }**-ით **${ textDate }**-მდე"
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "მოითმინეთ 2 კვირა, მიიღეთ ${ referrerRewardAmount }"
-      ],
       "How your free trial works:": [
         "როგორ მუშაობს საცდელი ვერსია:"
       ],
@@ -12171,9 +12249,6 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "შეგიძლიათ, გქონდეთ **${ maxRewardAmount }**-მდე კრედიტი."
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "თქვენი მეგობარი ასევე მიიღებს ${ refereeRewardAmount }-ს, რათა დაფაროს შემდეგი გადასახადი!"
       ],
       "your subscription": [
         "თქვენი გამოწერა"
@@ -13226,6 +13301,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს მოიცავს ავტომატურ სინქრონიზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
+      ]
+    },
+    "Spotlight": {
+      "Assign roles": [
+        "როლების მინიჭება"
       ]
     },
     "sso": {
@@ -14522,6 +14602,9 @@
       "Access control": [
         "წვდომის მართვა"
       ],
+      "Account": [
+        "ანგარიში"
+      ],
       "Account and password": [
         "მომხმარებელი და პაროლი"
       ],
@@ -14761,6 +14844,9 @@
       "Create Gateway": [
         "რაუტერის შექმნა"
       ],
+      "Create group": [
+        "ჯგუფის შექმნა"
+      ],
       "Create multiple user accounts": [
         "მრავალი მომხმარებლის ანგარიშის შექმნა"
       ],
@@ -14924,6 +15010,9 @@
       "Edit Gateway ${ currentName }": [
         "${ currentName } რაუტერის ჩასწორება"
       ],
+      "Edit group": [
+        "ჯგუფის ჩასწორება"
+      ],
       "Edit invoice note": [
         "ინვოისის შენიშვნის ჩასწორება"
       ],
@@ -14988,6 +15077,9 @@
       "Forgot recovery method": [
         "დამავიწყდა აღდგენის მეთოდი"
       ],
+      "Free plan": [
+        "უფასო სატარიფო გეგმა"
+      ],
       "Gateway": [
         "კარიბჭე"
       ],
@@ -15020,6 +15112,9 @@
       ],
       "Get more from your VPN": [
         "მიიღეთ მეტი თქვენი VPN-სგან"
+      ],
+      "Get started": [
+        "დავიწყოთ"
       ],
       "Get the apps": [
         "აპების გადმოწერა"
@@ -15058,9 +15153,6 @@
       "Import contacts": [
         "კონტაქტების შემოტანა"
       ],
-      "Import emails, calendars, contacts": [
-        "ელფოსტების, კალენდრების, კონტაქტების შემოტანა"
-      ],
       "Import events": [
         "მოვლენების შემოტანა"
       ],
@@ -15069,6 +15161,12 @@
       ],
       "Import groups": [
         "ჯგუფების შემოტანა"
+      ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "${ PRODUCT_NAMES.EASY_SWITCH }-ის გავლით შემოტანა"
+      ],
+      "Imports": [
+        "შემოტანები"
       ],
       "Information exposed in breach": [
         "გაჟონილი ინფორმაცია"
@@ -15094,17 +15192,20 @@
       "Main password": [
         "მთავარი პაროლი"
       ],
-      "Migration assistant": [
-        "მიგრაციის დამხმარე"
-      ],
       "Minicalendar": [
         "მინიკალენდარი"
+      ],
+      "Monitoring": [
+        "მონიტორინგი"
       ],
       "Multi-user support": [
         "მრავალმომხმარებლიანობის მხარდაჭერა"
       ],
       "Multiple accounts, 1 private inbox": [
         "ერთზე მეტი ანგარიში, 1 პირადი საფოსტო ყუთი"
+      ],
+      "My account": [
+        "ჩემი ანგარიში"
       ],
       "My VPN": [
         "ჩემი VPN"
@@ -15139,11 +15240,17 @@
       "Open pagination": [
         "გვერდების დანომრვა"
       ],
+      "OpenVpn": [
+        "OpenVPN"
+      ],
       "OpenVPN configuration files": [
         "OpenVPN-ის კონფიგურაციის ფაილები"
       ],
       "Org setup": [
         "ორგ.-ის მორგება"
+      ],
+      "Organization": [
+        "ორგანიზაცია"
       ],
       "Organization filters": [
         "ორგანიზაციის ფილტრები"
@@ -15237,6 +15344,9 @@
       ],
       "Remove domain": [
         "დომენის წაშლა"
+      ],
+      "Remove email": [
+        "ელფოსტის წაშლა"
       ],
       "Remove forwarding address": [
         "გადაგზავნის მისამართის წაშლა"
@@ -15409,6 +15519,9 @@
       ],
       "Summary": [
         "შეჯამება"
+      ],
+      "Summer Sale": [
+        "საზაფხულო ფასდაკლება"
       ],
       "Switch to one-password mode": [
         "ერთპაროლიან რეჟიმზე გადართვა"
@@ -16015,6 +16128,9 @@
       ]
     },
     "user_modal": {
+      "(via group)": [
+        "(ჯგუფის გავლით)"
+      ],
       "Add multiple users": [
         "ერთზე მეტი მომხმარებლის დამატება"
       ],

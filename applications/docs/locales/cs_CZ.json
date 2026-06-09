@@ -474,6 +474,9 @@
       "Keep my subscription": [
         "Zachovat mé předplatné"
       ],
+      "Later": [
+        "Později"
+      ],
       "Learn more": [
         "Více informací"
       ],
@@ -1221,6 +1224,44 @@
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Speciálně navržený NetShield chrání vaše zařízení a zrychluje vaše prohlížení blokováním reklam, sledovacích prvků a malwaru."
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Kalendář"
+      ],
+      "Configure migration": [
+        "Nastavte migraci"
+      ],
+      "Contacts": [
+        "Kontakty"
+      ],
+      "Estimated size": [
+        "Odhadovaná velikost"
+      ],
+      "Has errors": [
+        "Má chyby"
+      ],
+      "In progress": [
+        "Probíhá"
+      ],
+      "Migration status": [
+        "Stav migrace"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizace nemá dostatek volných licencí"
+      ],
+      "Organization does not have enough storage available": [
+        "Organizace nemá dostatečně velké úložiště"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "User": [
+        "Uživatel"
+      ],
+      "What are you migrating?": [
+        "Co migrujete?"
       ]
     },
     "Browser": {
@@ -2535,9 +2576,6 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Zajistěte si přístup ke svému účtu a datům i v případě ztráty hesla ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Pro bezproblémový přechod na ${ BRAND_NAME } importujte data ze služeb Google, Outlook a dalších."
-      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
       ],
@@ -2886,6 +2924,9 @@
       "Aliases could not be loaded": [
         "Aliasy se nepodařilo načíst"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Celé úložiště již bylo přiděleno. Zmenšete prosím přidělený prostor ostatním uživatelům."
+      ],
       "Already a member of this share": [
         "Již má členství v tomto sdílení"
       ],
@@ -3144,6 +3185,15 @@
       "Photos upload is temporarily disabled. Please try again later": [
         "Nahrávání fotek je dočasně vypnuté. Zkuste to prosíme později."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Před přidáním adres nastavte vlastní doménu."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Před přidáním uživatelů do Vaši organizace si prosím nastavte vlastní doménu."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Zapněte prosím podporu pro více uživatelů před přidáváním uživatelů do vaší organizace."
+      ],
       "Please enter a valid postal code": [
         "Zadejte prosím platné poštovní směrovací číslo"
       ],
@@ -3170,6 +3220,9 @@
       ],
       "Please select a state": [
         "Vyberte prosím stát"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Chcete-li spravovat více uživatelů, přejděte na firemní tarif."
       ],
       "Port is required": [
         "Port je povinná položka"
@@ -3330,6 +3383,9 @@
       "Unknown error": [
         "Neznámá chyba"
       ],
+      "Unknown location": [
+        "Neznámé umístění"
+      ],
       "Update Too Large": [
         "Aktualizace je moc velká"
       ],
@@ -3368,6 +3424,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Dosáhli jste limitu počtu kontaktů vašeho účtu"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Využili jste všechny adresy ve vašem tarifu. Prosím navyšte svůj tarif, abyste mohli přidat novou adresu, nebo deaktivujte některou z adres ve svém účtu."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Limit počtu uživatelů ve vašem tarifu byl vyčerpán. Přejděte na vyšší tarif, abyste mohli přidat dalšího uživatele."
       ],
       "You must set a name": [
         "Musíte nastavit jméno"
@@ -4377,6 +4439,12 @@
         "vybráno ${ selectedFoldersCountLocalized } štítků",
         "vybráno ${ selectedFoldersCountLocalized } štítků"
       ],
+      "${ total } user found": [
+        "Nalezen ${ total } uživatel",
+        "Nalezeni ${ total } uživatelé",
+        "Nalezeno ${ total } uživatelů",
+        "Nalezeno ${ total } uživatelů"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt úspěšně aktualizován.",
         "${ updated } kontakty úspěšně aktualizovány.",
@@ -4400,21 +4468,6 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: Zabraňuje úniku dat zablokováním internetu v případě neočekávaného výpadku VPN."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Krok 1:** Pozvěte své přátele do ${ BRAND_NAME } pomocí svého doporučujícího odkazu."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Krok 2:** Vaši přátelé získají 2 týdny zdarma na jejich zvoleném tarifu ${ BRAND_NAME }."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Krok 2:** Vaši přátelé získají 2 týdny zdarma na svém tarifu."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Krok 3:** Získejte ${ referrerRewardAmount } kreditů za každého přítele, který se přihlásí k odběru tarifu."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Krok 3:** Získejte ${ referrerRewardAmount } kreditů za každou osobu, která se přihlásí k odběru tarifu."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového místa na disku"
@@ -7771,9 +7824,6 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\" úspěšně uloženo"
       ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" úspěšně přesunuto"
-      ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" se nepodařilo přejmenovat"
       ],
@@ -7828,6 +7878,12 @@
         "${ numberOfItems } položek se nepodařilo obnovit z koše",
         "${ numberOfItems } položek se nepodařilo obnovit z koše"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } položka přesunuta",
+        "${ numberOfItems } položky přesunuty",
+        "${ numberOfItems } položek přesunuto",
+        "${ numberOfItems } položek přesunuto"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } položka přesunuta do koše",
         "${ numberOfItems } položky přesunuty do koše",
@@ -7839,12 +7895,6 @@
         "${ numberOfItems } položky obnoveny z koše",
         "${ numberOfItems } položek obnoveno z koše",
         "${ numberOfItems } položek obnoveno z koše"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } položka úspěšně přesunuta",
-        "${ numberOfItems } položky úspěšně přesunuty",
-        "${ numberOfItems } položek úspěšně přesunuto",
-        "${ numberOfItems } položek úspěšně přesunuto"
       ],
       "${ reason } has been disabled": [
         "${ reason } byl deaktivován"
@@ -8473,6 +8523,9 @@
       "Please describe the problem and include any error messages": [
         "Popište prosím problém a uveďte jakékoli chybové zprávy"
       ],
+      "Search": [
+        "Vyhledat"
+      ],
       "Search for group name": [
         "Vyhledat název skupiny"
       ],
@@ -8697,6 +8750,78 @@
       ],
       "SPRING SALE": [
         "JARNÍ VÝPRODEJ"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Využít nabídku"
+      ],
+      "Summer Sale": [
+        "Letní výprodej"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/měsíčně"
+      ],
+      "15 GB storage": [
+        "15GB úložiště"
+      ],
+      "2 TB data storage": [
+        "2TB datové úložiště"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200GB úložiště: 40× váš současný plán"
+      ],
+      "3 TB data storage": [
+        "3TB datové úložiště"
+      ],
+      "500 GB storage": [
+        "500GB úložiště"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce služeb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce služeb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Slevy vycházejí ze standardních měsíčních cen. Vaše předplatné se na konci fakturačního cyklu obnoví za standardní roční sazbu."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Plný přístup k ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuální účty pro 6 uživatelů"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuální účty pro vás a partnera"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online editor dokumentů a tabulek"
+      ],
+      "Recover previous file versions": [
+        "Obnova předchozích verzí souborů"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnější ochrana proti kybernetickým hrozbám"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Přejděte na náš roční plán a ušetřete ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Use your own email domain": [
+        "Používejte svou vlastní e-mailovou doménu"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "na 12 měsíců"
+      ],
+      "SUMMER SALE": [
+        "LETNÍ VÝPRODEJ"
       ]
     },
     "Recent documents table header": {
@@ -10102,6 +10227,9 @@
       "Desktop": [
         "Desktop"
       ],
+      "Devices": [
+        "Zařízení"
+      ],
       "Discard": [
         "Zahodit"
       ],
@@ -10233,9 +10361,6 @@
       ],
       "Import contacts": [
         "Importovat kontakty"
-      ],
-      "Import emails, calendars, contacts": [
-        "Importovat e-maily, kalendáře a kontakty"
       ],
       "Import events": [
         "Import událostí"
@@ -10425,6 +10550,9 @@
       ],
       "Share your link": [
         "Sdílejte svůj odkaz"
+      ],
+      "Shared with me": [
+        "Sdíleno se mnou"
       ],
       "Sign in and grant access": [
         "Přihlaste se a povolte přístup"

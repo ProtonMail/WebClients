@@ -2190,7 +2190,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -4260,6 +4260,12 @@
       ],
       "The file you are trying to import is empty": [
         "您尝试导入的文件是空的"
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "您的套餐不支持此功能。${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "您的套餐不支持此功能，请联系您的管理员获取权限。"
       ],
       "Total files: ": [
         "总文件数： "

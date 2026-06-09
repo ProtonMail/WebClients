@@ -2177,6 +2177,9 @@
       "Aliases could not be loaded": [
         "Nije moguće učitati pseudonime"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Sav prostor za pohranu je dodijeljen. Molimo smanjite prostor za pohranu dodijeljen ostalim korisnicima."
+      ],
       "Amount above the maximum.": [
         "Iznos veći od maksimuma."
       ],
@@ -2313,8 +2316,20 @@
       "Please activate your search again": [
         "Ponovno aktivirajte svoje pretraživanje"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Molimo, konfigurirajte prilagođenu domenu prije dodavanja adresa."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Konfigurirajte prilagođenu domenu prije dodavanja korisnika u vašu organizaciju."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Molimo vas da omogućite višekorisničku podršku prije dodavanja korisnika u vašu organizaciju."
+      ],
       "Please select a country": [
         "Molimo odaberite državu"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Molimo nadogradite na poslovnu pretplatu s više od jednog korisnika kako biste upravljali višestrukim korisnicima."
       ],
       "Process aborted": [
         "Proces je prekinut"
@@ -2410,6 +2425,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Dosegli ste maksimalan broj kalendara."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Iskoristili ste sve slobodne korisnike u Vašem planu. Molimo Vas da nadogradite Vaš plan da biste dodali novog korisnika."
       ],
       "You must set a name": [
         "Morate postaviti naziv"
@@ -3089,9 +3107,6 @@
         "(${ memberCount } član)",
         "(${ memberCount } člana)",
         "(${ memberCount } članova)"
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**1. korak:** pozovite svoje prijatelje da se pridruže usluzi ${ BRAND_NAME } pomoću Vaše referalne poveznice."
       ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } dodatnog prostora za pohranu"
@@ -5539,6 +5554,9 @@
       "Postal code": [
         "Poštanski broj"
       ],
+      "Search": [
+        "Pretraga"
+      ],
       "Search for group name": [
         "Pretraga po nazivu grupe"
       ],
@@ -5625,6 +5643,78 @@
     "protonbadge": {
       "Official": [
         "Službeno"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Ugrabite ponudu"
+      ],
+      "Summer Sale": [
+        "Ljetna rasprodaja"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mjesec"
+      ],
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "2 TB data storage": [
+        "2 TB pohrane podataka"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB pohrane: 40x više od vašeg trenutnog plana"
+      ],
+      "3 TB data storage": [
+        "3 TB pohrane podataka"
+      ],
+      "500 GB storage": [
+        "500 GB prostora za pohranu"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Sve premium značajke za ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Sve premium značajke za ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Popusti se temelje na standardnim mjesečnim cijenama. Vaša će se pretplata obnoviti po standardnoj godišnjoj cijeni nakon završetka ciklusa naplate."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Potpuni pristup usluzi ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Pojedinačni korisnički računi za 6 korisnika"
+      ],
+      "Individual accounts for you and a partner": [
+        "Pojedinačni korisnički računi za vas i partnera"
+      ],
+      "Online document and spreadsheet editor": [
+        "Uređivač dokumenata i proračunskih tablica na mreži"
+      ],
+      "Recover previous file versions": [
+        "Oporavite prethodne verzije datoteka"
+      ],
+      "Stronger protection against cyber threats": [
+        "Snažnija zaštita od kibernetičkih prijetnji"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Pređite na naš godišnji plan i uštedite ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neograničen broj mapa, oznaka i filtara"
+      ],
+      "Use your own email domain": [
+        "Upotrijebite vlastitu domenu e-pošte"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "na 12 mjeseci"
+      ],
+      "SUMMER SALE": [
+        "LJETNA RASPRODAJA"
       ]
     },
     "Referral": {

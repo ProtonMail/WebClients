@@ -88,6 +88,10 @@
       "Add photos": [
         "Añadir fotos"
       ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Añadir a «${ name }» (${ photoCount } foto)",
+        "Añadir a «${ name }» (${ photoCount } fotos)"
+      ],
       "Add to album": [
         "Añadir al álbum"
       ],
@@ -492,9 +496,6 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "Obtén una dirección gratuita de ${ BRAND_NAME }"
-      ],
-      "Get Drive for Business": [
-        "Obtén Drive for Business"
       ],
       "Get in touch": [
         "Ponte en contacto"
@@ -1159,6 +1160,9 @@
       "Verify account": [
         "Verificar cuenta"
       ],
+      "Verify now": [
+        "Verificar ahora"
+      ],
       "View": [
         "Ver"
       ],
@@ -1559,6 +1563,44 @@
       ],
       "Yearly": [
         "Anual"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Calendario"
+      ],
+      "Configure migration": [
+        "Configurar migración"
+      ],
+      "Contacts": [
+        "Contactos"
+      ],
+      "Estimated size": [
+        "Tamaño estimado"
+      ],
+      "Has errors": [
+        "Tiene errores"
+      ],
+      "In progress": [
+        "En progreso"
+      ],
+      "Migration status": [
+        "Estado de la migración"
+      ],
+      "Organization does not have enough seats available": [
+        "La organización no tiene suficientes licencias disponibles"
+      ],
+      "Organization does not have enough storage available": [
+        "La organización no tiene suficiente espacio de almacenamiento disponible"
+      ],
+      "Status": [
+        "Estado"
+      ],
+      "User": [
+        "Usuario"
+      ],
+      "What are you migrating?": [
+        "¿Qué estás migrando?"
       ]
     },
     "Browser": {
@@ -2926,8 +2968,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Asegúrate de que aún puedes acceder a tu cuenta y a tus datos aunque pierdas tu contraseña de ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Para una transición fluida a ${ BRAND_NAME }, importa tus datos de Google, Outlook y otros servicios."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Para una incorporación perfecta de tu equipo a ${ BRAND_NAME }, importa tus datos desde Google, Outlook y otras plataformas."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros."
@@ -3275,6 +3317,9 @@
       "Aliases could not be loaded": [
         "No se han podido cargar los alias."
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Se ha asignado todo el espacio de almacenamiento. Reduce el almacenamiento asignado a otros usuarios."
+      ],
       "Already a member of this share": [
         "Ya se ha compartido con este miembro."
       ],
@@ -3601,8 +3646,20 @@
       "Please activate your search again": [
         "Activa de nuevo tu búsqueda."
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Comprueba si tu ABN está registrado para el IVA transfronterizo"
+      ],
       "Please complete the billing details": [
         "Completa los detalles de facturación"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configura un dominio personalizado antes de añadir direcciones."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Configura un dominio personalizado antes de añadir usuarios a tu organización."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Activa el soporte multiusuario antes de añadir usuarios a tu organización."
       ],
       "Please enter a valid postal code": [
         "Por favor, introduzca un código postal válido"
@@ -3634,6 +3691,9 @@
       ],
       "Please select billing state": [
         "Selecciona el estado de facturación"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Pasa a un plan para empresa con más de 1 usuario para administrar varios usuarios."
       ],
       "Port is required": [
         "Puerto requerido"
@@ -3831,6 +3891,9 @@
       "Validation error": [
         "Error de validación"
       ],
+      "VAT number must start with ${ prefixes }": [
+        "El número de IVA debe empezar por ${ prefixes }."
+      ],
       "We cannot retrieve this item": [
         "No se puede recuperar este elemento"
       ],
@@ -3876,6 +3939,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Has alcanzado el límite de contactos para tu cuenta."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Has agotado todas las direcciones disponibles. Actualiza tu plan para añadir una nueva o desactiva alguna de las que tienes en tu cuenta."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Has utilizado todos los usuarios de tu plan. Mejora tu plan para añadir un nuevo usuario."
       ],
       "You must set a name": [
         "Debes establecer un nombre."
@@ -4912,6 +4981,10 @@
       "${ storage } storage": [
         "${ storage } de almacenamiento"
       ],
+      "${ total } user found": [
+        "${ total } usuario encontrado",
+        "${ total } usuarios encontrados"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacto actualizado.",
         "${ updated } contactos actualizados."
@@ -4932,23 +5005,17 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Conexión automática**: Inicia y conéctate a la VPN en cuanto enciendas tu dispositivo."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Invita a tus amigos** a ${ BRAND_NAME } con tu enlace de referidos."
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Interruptor de bloqueo**: Detiene las filtraciones de datos al bloquear tu conexión internet si la VPN se desconecta inesperadamente."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Paso 1:** Invita a tus amigos a ${ BRAND_NAME } con tu enlace de referidos."
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Consiguen ${ refereeRewardAmount }** en créditos si se suscriben."
       ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Paso 2:** Tus amigos obtienen 2 semanas gratis en el plan ${ BRAND_NAME } que elijan."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Paso 2:** Tus amigos obtienen 2 semanas gratis en su plan."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Paso 3:** Consigue ${ referrerRewardAmount } créditos por cada amigo que se suscriba a un plan."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Paso 3:** Consigue ${ referrerRewardAmount } créditos por cada amigo que se suscriba a un plan."
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Consigues ${ referrerRewardAmount }** en créditos por cada persona que se suscriba."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } de almacenamiento adicional"
@@ -5182,12 +5249,6 @@
       "Close this screen to exit.": [
         "Cierra esta pantalla para salir."
       ],
-      "Cloud storage for businesses that take security seriously": [
-        "Almacenamiento en la nube para empresas que se toman la seguridad en serio"
-      ],
-      "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
-        "Colabora de forma eficiente mientras proteges los datos de tus clientes y de tu empresa de filtraciones, ransomware y espionaje\n."
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Conéctate a ${ VPN_APP_NAME } para navegar de forma privada."
       ],
@@ -5273,6 +5334,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "¿Recuerdas tu contraseña? ${ verifyButton }"
       ],
       "Done": [
         "Hecho"
@@ -5421,6 +5485,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Para obtener el mejor resultado, evita las actividades de streaming o demandantes de memoria, o divide tus cargas de archivos en lotes más pequeños."
+      ],
+      "Forgot password?": [
+        "¿Has olvidado la contraseña?"
       ],
       "Free 5GB encrypted storage to get started": [
         "Almacenamiento encriptado gratuito de 5GB para empezar"
@@ -5792,6 +5859,9 @@
       ],
       "Password must have:": [
         "La contraseña debe tener:"
+      ],
+      "Password verified": [
+        "Contraseña verificada"
       ],
       "Paused": [
         "En pausa"
@@ -6252,6 +6322,9 @@
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "Para ayudar a protegerte, ${ DRIVE_APP_NAME } puede analizar tus archivos de forma que se preserve tu privacidad y bloquear los que sean maliciosos. No obstante, te recomendamos descargar archivos únicamente de fuentes de confianza. "
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Para ayudarte a recordar tu contraseña, te pedimos que la introduzcas periódicamente. Con el tiempo, te la pedimos con menos frecuencia."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Para importar eventos, primero crea un calendario en ${ CALENDAR_APP_NAME }. En este calendario aparecerán los eventos tras la importación."
       ],
@@ -6425,6 +6498,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Te avisaremos cuando la importación esté terminada."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Te recordamos que vuelvas a verificar tu contraseña más tarde"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un nuevo código de verificación a ${ strong }."
@@ -9264,6 +9340,11 @@
         "Algunas imágenes no se han cargado debido a archivos duplicados en la selección actual."
       ]
     },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Se ha cambiado el nombre del álbum."
+      ]
+    },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
         "A continuación, deberás iniciar sesión en tu cuenta de Google y permitir a ${ BRAND_NAME } acceder a tus datos."
@@ -10154,6 +10235,9 @@
       "San Francisco": [
         "San Francisco"
       ],
+      "Search": [
+        "Buscar"
+      ],
       "Search for group name": [
         "Buscar por nombre de grupo"
       ],
@@ -10401,6 +10485,78 @@
       ],
       "SPRING SALE": [
         "OFERTA DE PRIMAVERA"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Aprovecha la oferta"
+      ],
+      "Summer Sale": [
+        "Descuento de verano"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/meses"
+      ],
+      "15 GB storage": [
+        "15 GB de almacenamiento"
+      ],
+      "2 TB data storage": [
+        "2 TB de almacenamiento de datos"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de almacenamiento: 40 veces tu plan actual"
+      ],
+      "3 TB data storage": [
+        "3 TB de almacenamiento de datos"
+      ],
+      "500 GB storage": [
+        "500 GB de almacenamiento"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todas las funciones prémium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todas las funciones prémium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en el precio mensual estándar. Tu suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Acceso completo a ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Cuentas individuales para 6 usuarios"
+      ],
+      "Individual accounts for you and a partner": [
+        "Cuentas individuales para ti y otra persona"
+      ],
+      "Online document and spreadsheet editor": [
+        "Editor online de documentos y hojas de cálculo"
+      ],
+      "Recover previous file versions": [
+        "Recupera las versiones previas de los archivos"
+      ],
+      "Stronger protection against cyber threats": [
+        "Mayor protección contra las ciberamenazas"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "¡Cámbiate a nuestro plan anual y ahorra ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Use your own email domain": [
+        "Usa tu propio dominio de correo electrónico"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "durante 12 meses"
+      ],
+      "SUMMER SALE": [
+        "DESCUENTO DE VERANO"
       ]
     },
     "Referral": {
@@ -12270,9 +12426,6 @@
       "Import contacts": [
         "Importar contactos"
       ],
-      "Import emails, calendars, contacts": [
-        "Importar correos electrónicos, calendarios y contactos"
-      ],
       "Import events": [
         "Importar eventos"
       ],
@@ -12335,6 +12488,9 @@
       ],
       "Message": [
         "Mensaje"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migra tu organización a ${ BRAND_NAME }."
       ],
       "Minicalendar": [
         "Minicalendario"
@@ -12723,6 +12879,9 @@
       ],
       "Verification failed": [
         "Error de verificación"
+      ],
+      "Verify your password": [
+        "Verifica tu contraseña"
       ],
       "Verifying your card...": [
         "Verificando tu tarjeta..."

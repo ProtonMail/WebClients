@@ -2139,7 +2139,7 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Sørg for at du fortsatt har tilgang til kontoen og dataene dine selv om du mister ${ BRAND_NAME }-passordet ditt."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
         "For en sømløs overgang til ${ BRAND_NAME }, importer dataene dine fra Google, Outlook og andre."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
@@ -2381,6 +2381,9 @@
       "Payment process not supported": [
         "Betalingsprosess støttes ikke"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Sjekk om ABN-nummeret ditt er registrert for grenseoverskridende merverdiavgift"
+      ],
       "Please complete the billing details": [
         "Fyll ut faktureringsdetaljene"
       ],
@@ -2467,6 +2470,9 @@
       ],
       "Username must end with a letter or digit": [
         "Brukernavn må ende med en bokstav eller ett tall"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "MVA-nummeret må starte med ${ prefixes }"
       ],
       "Wrong billing address": [
         "Feil faktureringsadresse"
@@ -5686,11 +5692,11 @@
       "Human verification": [
         "Menneskelig verifisering"
       ],
-      "Import emails, calendars, contacts": [
-        "Importer e-poster, kalendere, kontakter"
-      ],
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrer organisasjonen din til ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Minikalender"
@@ -5748,6 +5754,9 @@
       ],
       "Summary": [
         "Sammendrag"
+      ],
+      "Summer Sale": [
+        "Sommersalg"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"

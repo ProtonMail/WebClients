@@ -503,9 +503,6 @@
       "Get a free ${ BRAND_NAME } address": [
         "Αποκτήστε μια δωρεάν ${ BRAND_NAME } διεύθυνση"
       ],
-      "Get Drive for Business": [
-        "Αποκτήστε το Drive για Business"
-      ],
       "Get in touch": [
         "Επικοινωνήστε"
       ],
@@ -1088,6 +1085,9 @@
       "Trust": [
         "Αξιόπιστο"
       ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "Δοκιμάστε το ${ BRAND_NAME } Workspace"
+      ],
       "Try again": [
         "Δοκιμάστε ξανά"
       ],
@@ -1180,6 +1180,9 @@
       ],
       "Verify account": [
         "Επαλήθευση λογαριασμού"
+      ],
+      "Verify now": [
+        "Επαλήθευση τώρα"
       ],
       "View": [
         "Προβολή"
@@ -1581,6 +1584,104 @@
       ],
       "Yearly": [
         "Ετησίως"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Ενεργοποιήθηκε"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Η διεύθυνση χρησιμοποιείται ήδη από χρήστη εκτός του οργανισμού σας. Για επίλυση, παρακαλούμε απευθυνθείτε στην υποστήριξη πελατών."
+      ],
+      "All": [
+        "Όλοι"
+      ],
+      "Calendar": [
+        "Ημερολόγιο"
+      ],
+      "Configure migration": [
+        "Διαμόρφωση μετεγκατάστασης"
+      ],
+      "Contacts": [
+        "Επαφές"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Κατάσταση μετεγκατάστασης δεδομένων από το Google Workspace στο ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Μηνύματα"
+      ],
+      "Errors": [
+        "Σφάλματα"
+      ],
+      "Estimated size": [
+        "Εκτιμώμενος χρόνος"
+      ],
+      "Find out what can be migrated.": [
+        "Μάθετε τι μπορεί να μετεγκατασταθεί."
+      ],
+      "Has errors": [
+        "Έχει σφάλματα"
+      ],
+      "In progress": [
+        "Σε εξέλιξη"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Η διεύθυνση μέλους δε βρέθηκε. Επικοινωνήστε με την υποστήριξη πελατών για να επιλύσετε αυτό το πρόβλημα."
+      ],
+      "Migrate": [
+        "Μετεγκατάσταση"
+      ],
+      "Migrated": [
+        "Μετεγκαταστάθηκε"
+      ],
+      "Migration status": [
+        "Κατάσταση μετεγκατάστασης"
+      ],
+      "Missing organization private key": [
+        "Λείπει το ιδιωτικό κλειδί του οργανισμού"
+      ],
+      "Missing organization public key": [
+        "Λείπει το δημόσιο κλειδί του οργανισμού"
+      ],
+      "No users to display": [
+        "Δεν υπάρχουν χρήστες για εμφάνιση"
+      ],
+      "Not activated": [
+        "Δεν έχει ενεργοποιηθεί"
+      ],
+      "Organization does not have enough seats available": [
+        "Ο οργανισμός δε διαθέτει αρκετές θέσεις διαθέσιμες"
+      ],
+      "Organization does not have enough storage available": [
+        "Ο οργανισμός δεν διαθέτει αρκετό χώρο αποθήκευσης"
+      ],
+      "Pending": [
+        "Σε εκκρεμότητα"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Επιλέξτε ακριβώς αυτό που θέλετε να μετεγκαταστήσετε. Θα εφαρμοστεί για όλους τους χρήστες του οργανισμού."
+      ],
+      "Select users to migrate": [
+        "Επιλογή χρηστών για μετεγκατάσταση"
+      ],
+      "Size": [
+        "Μέγεθος"
+      ],
+      "Status": [
+        "Κατάσταση"
+      ],
+      "User": [
+        "Χρήστης"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Χρήστες που έχουν κάνει πρόσβαση στον λογαριασμό τους ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Τι μεταφέρετε;"
+      ],
+      "You": [
+        "Εσείς"
       ]
     },
     "Browser": {
@@ -2957,8 +3058,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Βεβαιωθείτε ότι έχετε ακόμα πρόσβαση στον λογαριασμό και τα δεδομένα σας, ακόμα και αν χάσετε τον ${ BRAND_NAME } κωδικό πρόσβασής σας."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Για μια απρόσκοπτη μετάβαση στο ${ BRAND_NAME }, κάντε εισαγωγή των δεδομένων σας από το Google, το Outlook και άλλες υπηρεσίες."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Για απρόσκοπτη ενσωμάτωση της ομάδας σας στο ${ BRAND_NAME }, εισαγάγετε τα δεδομένα σας από το Google, το Outlook και άλλα."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διαρρεύσουν από υπηρεσία τρίων."
@@ -3343,6 +3444,9 @@
       "Aliases could not be loaded": [
         "Τα ψευδώνυμα δεν μπορούν να φορτωθούν"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Έχει κατανεμηθεί όλος ο αποθηκευτικός χώρος. Παρακαλούμε μειώστε την κατανομή του σε άλλους χρήστες."
+      ],
       "Already a member of this share": [
         "Είναι ήδη μέλος στην παρούσα κοινοποίηση"
       ],
@@ -3681,6 +3785,15 @@
       "Please complete the billing details": [
         "Παρακαλούμε συμπληρώστε τα στοιχεία χρέωσης"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Παρακαλούμε διαμορφώσετε έναν προσαρμοσμένο τομέα πριν προσθέσετε διευθύνσεις"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Διαμορφώστε έναν προσαρμοσμένο τομέα (custom domain) πριν προσθέσετε χρήστες στον οργανισμό σας."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Παρακαλώ ενεργοποιήστε την υποστήριξη πολλαπλών-χρηστών πριν προσθέσετε χρήστες στον οργανισμό σας."
+      ],
       "Please enter a valid postal code": [
         "Παρακαλούμε εισάγετε έναν έγκυρο ταχυδρομικό κώδικα"
       ],
@@ -3711,6 +3824,9 @@
       ],
       "Please select billing state": [
         "Παρακαλούμε επιλέξτε τον νομό χρέωσης"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Παρακαλώ αναβαθμίστε σε επιχειρηματικό πλάνο με περισσότερους από 1 χρήστες ώστε να διαχειριστείτε πολλαπλούς χρήστες."
       ],
       "Port is required": [
         "Απαιτείται θύρα"
@@ -3959,6 +4075,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Έχετε συμπληρώσει το νούμερο ορίου επαφών για τον λογαριασμό σας"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Έχετε χρησιμοποιήσει όλες τις διευθύνσεις του πλάνου σας. Αναβαθμίστε το πλάνο σας για να προσθέσετε μια νέα διεύθυνση ή απενεργοποιήστε μια διεύθυνση από τον λογαριασμό σας."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Έχετε χρησιμοποιήσει όλους τους χρήστες στο πρόγραμμά σας. Για προσθήκη νέου χρήστη, παρακαλούμε αναβαθμίστε το πρόγραμμά σας."
       ],
       "You must set a name": [
         "Πρέπει να ορίσετε ένα όνομα"
@@ -4885,6 +5007,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe βοηθός γραφής"
       ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "Το ${ BRAND_NAME } Workspace δίνει τη δυνατότητα στην ομάδα σας να συνεργάζεται αποτελεσματικά χωρίς να θέτει ποτέ σε κίνδυνο τα δεδομένα της εταιρείας σας."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Η τεχνολογία κρυπτογράφησης του ${ BRAND_NAME } σημαίνει ότι κανείς δεν μπορεί να έχει πρόσβαση στον κωδικό πρόσβασής σας - ούτε καν εμείς."
       ],
@@ -5034,6 +5159,10 @@
       "${ storage } storage": [
         "${ storage } αποθηκευτικού χώρου"
       ],
+      "${ total } user found": [
+        "${ total } χρήστης βρέθηκε",
+        "${ total } χρήστες βρέθηκαν"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } επαφή ενημερώθηκε επιτυχώς.",
         "${ updated } επαφές ενημερώθηκαν επιτυχώς."
@@ -5057,23 +5186,17 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Αυτόματη σύνδεση**: Ανοίγει και συνδέεται στο VPN μόλις ενεργοποιήσετε τη συσκευή σας."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Προσκαλέστε τους φίλους σας** στο ${ BRAND_NAME } με τον σύνδεσμο παραπομπής σας."
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Λειτουργία kill switch**: Σταματά τις διαρροές δεδομένων μπλοκάροντας το διαδίκτυο αν το VPN αποσυνδεθεί απροσδόκητα."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Βήμα 1:** Προσκαλέστε τους φίλους σας στο ${ BRAND_NAME } με τον σύνδεσμο παραπομπής σας."
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Λαμβάνουν ${ refereeRewardAmount }** σε πιστώσεις εάν εγγραφούν."
       ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Βήμα 2:** Οι φίλοι σας λαμβάνουν 2 εβδομάδες δωρεάν στο επιλεγμένο ${ BRAND_NAME } πλάνο τους."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Βήμα 2:** Οι φίλοι σας λαμβάνουν 2 εβδομάδες δωρεάν στο πλάνο τους."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Βήμα 3:** Κερδίστε ${ referrerRewardAmount } πιστώσεις για κάθε φίλο που εγγράφεται σε ένα πλάνο."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Βήμα 3:** Κερδίστε ${ referrerRewardAmount } σε πιστώσεις για κάθε άτομο που εγγράφεται σε ένα πλάνο."
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Λαμβάνετε ${ referrerRewardAmount }** σε πιστώσεις για κάθε φίλο που εγγράφεται."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus αποθήκευση"
@@ -5310,12 +5433,6 @@
       "Close this screen to exit.": [
         "Κλείστε αυτήν την οθόνη για έξοδο."
       ],
-      "Cloud storage for businesses that take security seriously": [
-        "Αποθήκευση στο cloud για επιχειρήσεις που λαμβάνουν σοβαρά υπόψη την ασφάλεια"
-      ],
-      "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
-        "Συνεργαστείτε αποτελεσματικά, προστατεύοντας παράλληλα τα δεδομένα των πελατών και της επιχείρησής σας από παραβιάσεις, ransomware και παρακολούθηση."
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Συνδεθείτε στο ${ VPN_APP_NAME } για ιδιωτική περιήγηση"
       ],
@@ -5408,6 +5525,9 @@
       ],
       "Discover ProtectBuy logo": [
         "λογότυπο Discover ProtectBuy"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Θυμάστε τον κωδικό πρόσβασής σας; ${ verifyButton }"
       ],
       "Done": [
         "Έτοιμο"
@@ -5571,6 +5691,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Μόνο για ${ bundlePlanPriceInline }"
+      ],
+      "Forgot password?": [
+        "Ξεχάσατε τον κωδικό πρόσβασης;"
       ],
       "Free 5GB encrypted storage to get started": [
         "Δωρεάν κρυπτογραφημένος χώρος 5GB για να ξεκινήσετε"
@@ -5946,6 +6069,9 @@
       "On public WiFi networks": [
         "Σε δημόσια δίκτυα WiFi"
       ],
+      "One encrypted suite. Full business protection.": [
+        "Μία κρυπτογραφημένη σουίτα. Πλήρης προστασία της επιχείρησης."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Ένας από τους κρυπτογραφημένους δίσκους σας είναι κλειδωμένος, πιθανότατα λόγω πρόσφατης επαναφοράς κωδικού πρόσβασης."
       ],
@@ -5981,6 +6107,9 @@
       ],
       "Password must have:": [
         "Ο κωδικός πρόσβασης πρέπει να περιλαμβάνει:"
+      ],
+      "Password verified": [
+        "Ο Κωδικός πρόσβασης επαληθεύτηκε"
       ],
       "Paused": [
         "Σε παύση"
@@ -6469,6 +6598,9 @@
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "Για την προστασία σας, το ${ DRIVE_APP_NAME } μπορεί να σαρώσει τα αρχεία σας με τρόπο που διατηρεί το απόρρητο και να αποκλείσει κακόβουλα αρχεία. Ωστόσο, εξακολουθεί να είναι καλύτερο να κάνετε λήψη αρχείων μόνο από αξιόπιστες πηγές. "
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Για να σας βοηθήσουμε να θυμάστε τον κωδικό πρόσβασής σας, θα σας ζητάμε να τον εισάγετε περιοδικά. Με την πάροδο του χρόνου, θα σας ζητάμε λιγότερο."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Για να εισάγετε εκδηλώσεις, θα πρέπει πρώτα να δημιουργήσετε ένα ημερολόγιο στο ${ CALENDAR_APP_NAME }. Εδώ θα εμφανιστούν οι εκδηλώσεις μετά την εισαγωγή."
       ],
@@ -6659,6 +6791,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Θα σας ειδοποιήσουμε όταν ολοκληρωθεί η εισαγωγή."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Θα σας υπενθυμίσουμε να επαληθεύσετε ξανά τον κωδικό πρόσβασής σας αργότερα"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
@@ -7102,6 +7237,9 @@
       ],
       "Apply to all unverified items": [
         "Εφαρμογή σε όλα τα μη επαληθευμένα στοιχεία"
+      ],
+      "Asset": [
+        "Στοιχεία"
       ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
@@ -10488,11 +10626,17 @@
       "San Francisco": [
         "Σαν Φρανσίσκο"
       ],
+      "Search": [
+        "Αναζήτηση"
+      ],
       "Search for group name": [
         "Αναζήτηση ονόματος ομάδας"
       ],
       "Search for name or email": [
         "Αναζήτηση βάσει ονόματος ή e-mail"
+      ],
+      "Search for users or addresses": [
+        "Αναζήτηση χρηστών ή διευθύνσεων"
       ],
       "Search parent folder": [
         "Αναζήτηση σε γονικό φάκελο"
@@ -10639,6 +10783,78 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
+      ],
+      "Summer Sale": [
+        "Καλοκαιρινές εκπτώσεις"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/μήνας"
+      ],
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "2 TB data storage": [
+        "Χώρος αποθήκευσης δεδομένων 2 TB"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "Αποθηκευτικός χώρος 200 GB: 40 φορές το τρέχον πλάνο σας"
+      ],
+      "3 TB data storage": [
+        "Χώρος αποθήκευσης δεδομένων 3 TB"
+      ],
+      "500 GB storage": [
+        "500 GB αποθηκευτικός χώρος"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Όλες οι premium λειτουργίες των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Όλες οι premium λειτουργίες των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Η συνδρομή σας θα ανανεωθεί με την τυπική ετήσια τιμή όταν λήξει ο κύκλος χρέωσης."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Πλήρης πρόσβαση στο ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Ατομικοί λογαριασμοί για 6 χρήστες"
+      ],
+      "Individual accounts for you and a partner": [
+        "Ατομικοί λογαριασμοί για εσάς και έναν σύντροφο"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online πρόγραμμα επεξεργασίας εγγράφων και υπολογιστικών φύλλων"
+      ],
+      "Recover previous file versions": [
+        "Ανάκτηση προηγούμενων εκδόσεων αρχείων"
+      ],
+      "Stronger protection against cyber threats": [
+        "Ισχυρότερη προστασία από κυβερνοαπειλές"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Μεταβείτε στο ετήσιο πρόγραμμά μας και εξοικονομήστε ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Απεριόριστοι φάκελοι, ετικέτες, και φίλτρα"
+      ],
+      "Use your own email domain": [
+        "Χρησιμοποιήστε τον δικό σας τομέα ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "για 12 μήνες"
+      ],
+      "SUMMER SALE": [
+        "ΚΑΛΟΚΑΙΡΙΝΕΣ ΕΚΠΤΩΣΕΙΣ"
       ]
     },
     "Referral": {
@@ -12524,9 +12740,6 @@
       "Import contacts": [
         "Εισαγωγή Επαφών"
       ],
-      "Import emails, calendars, contacts": [
-        "Εισαγωγή ηλεκτρονικών διευθύνσεων, ημερολογίων, επαφών"
-      ],
       "Import events": [
         "Εισαγωγή εκδηλώσεων"
       ],
@@ -12589,6 +12802,9 @@
       ],
       "Message": [
         "Μήνυμα"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Μετεγκαταστήσετε τον οργανισμό σας στο ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Μίνι ημερολόγιο"
@@ -12980,6 +13196,9 @@
       ],
       "Verification failed": [
         "Αποτυχία επαλήθευσης"
+      ],
+      "Verify your password": [
+        "Επαληθεύστε τον κωδικό πρόσβασής σας"
       ],
       "Verifying your card...": [
         "Γίνεται επαλήθευση της κάρτας σας..."

@@ -437,6 +437,9 @@
       "Edit group": [
         "修改群组"
       ],
+      "Edit invoice details": [
+        "编辑发票信息"
+      ],
       "Edit invoice note": [
         "编辑发票备注"
       ],
@@ -529,6 +532,9 @@
       ],
       "Get Deal": [
         "获取优惠"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "获取 ${ LUMO_SHORT_APP_NAME } 的帮助"
       ],
       "Get in touch": [
         "保持联系"
@@ -640,6 +646,9 @@
       ],
       "Keep my subscription": [
         "保留订阅"
+      ],
+      "Later": [
+        "稍后"
       ],
       "Learn about recovery options": [
         "了解恢复选项"
@@ -904,9 +913,6 @@
       ],
       "Save": [
         "保存"
-      ],
-      "Save & exit": [
-        "保存并退出"
       ],
       "Save address": [
         "保存地址"
@@ -1222,6 +1228,9 @@
       ],
       "Verify domain": [
         "认证域名"
+      ],
+      "Verify now": [
+        "立即验证"
       ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "验证域 ${ unverifiedSSODomain.DomainName }"
@@ -1969,20 +1978,8 @@
       ]
     },
     "BOSS": {
-      "Account connected": [
-        "账户已连接"
-      ],
-      "Account disconnected": [
-        "账户已断开连接"
-      ],
       "Activated": [
         "已激活"
-      ],
-      "Add domain": [
-        "添加域名"
-      ],
-      "Add users": [
-        "添加用户"
       ],
       "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
         "该地址已被您组织外的用户使用，请联系客服以解决此问题。"
@@ -1990,41 +1987,20 @@
       "All": [
         "全部"
       ],
-      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "您确定要继续吗？在迁移完成前未领取账户的用户，需要向其 ${ BRAND_NAME } 组织管理员申请重置密码。"
-      ],
-      "Authenticate": [
-        "身份验证"
-      ],
-      "Authenticate your Google Workspace account": [
-        "验证您的 Google Workspace 账户"
-      ],
       "Calendar": [
         "日历"
-      ],
-      "Configure domain": [
-        "配置域名"
       ],
       "Configure migration": [
         "配置迁移"
       ],
-      "Configure your domain": [
-        "配置域名"
-      ],
       "Contacts": [
         "联系人"
       ],
-      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIM 为每封邮件添加数字签名，以便收件人验证邮件确实来自您的域名且未被篡改。否则，邮件可能被认为可信度较低！"
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "从 Google Workspace 到 ${ BRAND_NAME } 的数据迁移状态"
       ],
-      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARC 在 SPF 和 DKIM 的基础上，告知接收服务器如何处理未通过这些检查的邮件。它有助于保护您的域名免遭冒充，并提高整体的投递可靠性。"
-      ],
-      "Domain added": [
-        "已添加域名"
-      ],
-      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
-        "请确保您的邮件进入收件箱而非垃圾邮件文件夹，更新 SPF 将允许用户在迁移期间同时通过 ${ BRAND_NAME } 和 Google 发送邮件。"
+      "Emails": [
+        "邮件"
       ],
       "Errors": [
         "错误"
@@ -2032,17 +2008,8 @@
       "Estimated size": [
         "预计大小"
       ],
-      "Failed to load OAuth": [
-        "加载 OAuth 失败"
-      ],
       "Find out what can be migrated.": [
         "了解可以迁移哪些内容"
-      ],
-      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
-        "用于将数据复制到 ${ BRAND_NAME } 的 Google Marketplace 应用"
-      ],
-      "Google Workspace account": [
-        "Google Workspace 账户"
       ],
       "Has errors": [
         "出错啦"
@@ -2050,32 +2017,14 @@
       "In progress": [
         "进行中"
       ],
-      "Install app": [
-        "安装应用"
-      ],
-      "Install migration app": [
-        "安装迁移应用"
-      ],
-      "Loading your organization data": [
-        "正在加载您的组织数据"
-      ],
-      "Mail": [
-        "邮箱"
-      ],
       "Member address not found. Please contact customer support to resolve this": [
         "未找到成员地址，请联系客服解决此问题。"
       ],
-      "Migrate from Google Workspace": [
-        "从 Google Workspace 迁移"
+      "Migrate": [
+        "迁移"
       ],
       "Migrated": [
         "已迁移"
-      ],
-      "Migration includes": [
-        "迁移内容包括"
-      ],
-      "Migration started for ${ n } user": [
-        "已开始为 ${ n } 位用户迁移数据"
       ],
       "Migration status": [
         "迁移状态"
@@ -2086,20 +2035,11 @@
       "Missing organization public key": [
         "缺少组织公钥"
       ],
-      "No error details available. Please contact customer support for more information": [
-        "没有可用的错误详情，请联系客服以获取更多信息。"
-      ],
       "No users to display": [
         "无可显示的用户"
       ],
       "Not activated": [
         "未激活"
-      ],
-      "Not confirmed": [
-        "尚未确认"
-      ],
-      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "一旦我们确认邮件已路由到 ${ BRAND_NAME }，迁移即告完成。完成后您将收到一封确认邮件。此过程最多可能需要 24 小时。"
       ],
       "Organization does not have enough seats available": [
         "组织可用席位不足"
@@ -2110,77 +2050,29 @@
       "Pending": [
         "待处理"
       ],
-      "Refresh": [
-        "刷新"
-      ],
-      "Select at least one user to start a migration": [
-        "请至少选择一位用户以开始迁移"
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "精确选择您要迁移的内容，这将适用于所有组织用户。"
       ],
       "Select users to migrate": [
         "请选择要迁移的用户"
       ],
-      "Set up secure sending (DKIM)": [
-        "设置安全发送 (DKIM)"
-      ],
-      "Set up secure sending (DMARC)": [
-        "设置安全发送 (DMARC)"
-      ],
-      "Set up secure sending (SPF)": [
-        "设置安全发送 (SPF)"
-      ],
-      "Settings": [
-        "设置"
-      ],
-      "Sign in to Google Workspace": [
-        "登录 Google Workspace"
-      ],
       "Size": [
         "大小"
-      ],
-      "Some accounts are not claimed": [
-        "部分账户未被领取"
       ],
       "Status": [
         "状态"
       ],
-      "Update records for receiving": [
-        "更新接收记录"
-      ],
       "User": [
         "用户"
       ],
-      "Users migrated": [
-        "已迁移的用户"
-      ],
-      "Verified": [
-        "已验证"
-      ],
-      "Verify installation": [
-        "验证安装"
-      ],
-      "Verify your domain": [
-        "验证您的域名"
-      ],
-      "Verify your domain to start a migration": [
-        "验证您的域名以开始迁移"
-      ],
-      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "我们无法验证安装，请检查您已在 Google Workspace 账户中安装该应用，然后重试。"
-      ],
-      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "我们注意到部分用户尚未领取其 ${ BRAND_NAME } 账户！"
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "已访问过其 ${ BRAND_NAME } 账户的用户"
       ],
       "What are you migrating?": [
         "您需要迁移什么？"
       ],
       "You": [
         "您"
-      ],
-      "You're all set!": [
-        "一切就绪！"
-      ],
-      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "您当前的套餐最多允许 ${ maxMembers } 位用户。如需迁移更多用户，请为您的订阅增加席位。"
       ]
     },
     "Browser": {
@@ -3730,8 +3622,8 @@
       "Everyone in your organization can connect to shared servers in all countries.": [
         "组织内的任何人都可以连接到所有国家的共享服务器。"
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "为了无缝过渡到 ${ BRAND_NAME }，请从 Google、Outlook 等其他地方导入数据。"
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "为了让您的团队无缝上手 ${ BRAND_NAME }，请从 Google、Outlook 等平台导入数据。"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "如果您的密码或其他数据从第三方服务泄露，您会收到通知。"
@@ -4667,6 +4559,9 @@
       "Please add a payment method before reactivating your subscription": [
         "请在重新激活您的订阅前添加付款方式"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "请检查您的 ABN 是否已注册跨境增值税"
+      ],
       "Please complete the billing details": [
         "请填写账单信息"
       ],
@@ -4897,6 +4792,9 @@
       ],
       "Username must end with a letter or digit": [
         "用户名必须以字母或数字结尾"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "增值税号必须以 ${ prefixes } 开头"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "验证失败，请等待一小时后重试。"
@@ -5866,6 +5764,9 @@
       ]
     },
     "group_modal": {
+      "Add delegated roles to a group to grant its members only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "将委托角色添加到群组，仅授予其成员所需的特定权限，同时保持完全管理员权限的独立，确保您的环境安全。"
+      ],
       "General": [
         "常规"
       ],
@@ -6555,29 +6456,20 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "从其他双重验证应用（如 Google Authenticator）**导入现有的验证码**"
       ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**第 1 步：邀请您的朋友** 通过您的推荐链接加入 ${ BRAND_NAME }。"
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**第一步：** 使用您的推荐链接邀请朋友加入 ${ BRAND_NAME }"
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**第 2 步：** 您的朋友将在其套餐上获得 **2 周免费** 试用。"
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**第二步：** 您的朋友可在其套餐上免费试用 2 周"
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**第三步：** 每人订阅套餐，您即可获得 ${ referrerRewardAmount } 积分"
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**第 3 步：** 每位订阅付费套餐的朋友可为您带来 **${ referrerRewardAmount } 积分** 奖励。"
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "通过您的推荐链接 **邀请朋友加入 ${ BRAND_NAME }**"
       ],
       "**Sync codes** to all your devices": [
         "在所有设备之间**同步验证码**"
       ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "如果对方订阅，他们将获得 **${ refereeRewardAmount }** 积分"
+      ],
       "**This will disable 2-factor authentication.**": [
         "**这将禁用 2FA！**"
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "每推荐一位朋友订阅，您将获得 **${ referrerRewardAmount }** 积分"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } 更多"
@@ -7062,6 +6954,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "切勿遗忘此密码，否则您将失去机构的管理权限。"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "您还记得密码吗？ ${ verifyButton }"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "确定要让本机以外的所有设备退出此账户吗？"
       ],
@@ -7130,6 +7025,9 @@
       ],
       "Edit email address": [
         "编辑邮箱地址"
+      ],
+      "Editing requires permission": [
+        "编辑需要权限"
       ],
       "eduGAIN configuration saved": [
         "已保存 eduGAIN 配置"
@@ -7289,6 +7187,9 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "如果您正在将另一款邮箱服务更换为 ${ MAIL_APP_NAME }，更改 MX 记录前请先在${ boldAddresses }设置中添加所有已在使用的邮箱地址，确保邮件投递路径能够无缝切换。"
+      ],
+      "Forgot password?": [
+        "忘记密码？"
       ],
       "Free trial": [
         "免费试用"
@@ -7866,6 +7767,9 @@
       "Password must have:": [
         "密码必须具有："
       ],
+      "Password verified": [
+        "密码已验证"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支付安全由 TLS 加密和瑞士隐私法律保障。"
       ],
@@ -7877,6 +7781,9 @@
       ],
       "per month, billed at ${ price }": [
         "每月支付为 ${ price }"
+      ],
+      "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
+        "定期提示您验证 ${ BRAND_NAME } 密码，以确保您不会忘记。后续提示频率会逐渐降低。"
       ],
       "Please add a password for the user on row": [
         "请为这几行对应的用户添加密码："
@@ -8466,6 +8373,9 @@
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "为保障您的账户安全，我们需要确认确实是您本人在尝试登录！"
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "为了帮助您记住密码，我们会要求您定期输入密码，后续提醒频率会逐渐降低。"
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "导入日程需要先在 ${ CALENDAR_APP_NAME } 中创建日历，作为日程导入后的存放位置。"
       ],
@@ -8732,6 +8642,9 @@
       ],
       "We'll notify you when the import is done.": [
         "当导入完成时我们将通知您"
+      ],
+      "We'll remind you to verify your password again later": [
+        "稍后我们会再次提醒您验证密码"
       ],
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
@@ -9504,9 +9417,6 @@
       "Confirm login password": [
         "确认登录密码"
       ],
-      "Confirm MX records added": [
-        "确认已添加 MX 记录"
-      ],
       "Confirm new password": [
         "确认新密码"
       ],
@@ -9924,6 +9834,9 @@
       "Password": [
         "密码"
       ],
+      "Password reminders": [
+        "密码提醒"
+      ],
       "Password strength": [
         "密码强度"
       ],
@@ -10256,23 +10169,6 @@
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "请添加下列 TXT 记录。注意： DNS 记录更新可能需要若干小时。"
-      ]
-    },
-    "Label for domain setup": {
-      "${ capitalizedGroup } record not found": [
-        "未找到 ${ capitalizedGroup } 记录"
-      ],
-      "Host name": [
-        "主机名"
-      ],
-      "Invalid ${ group.name } record found": [
-        "发现无效的 ${ group.name } 记录"
-      ],
-      "Type": [
-        "类型"
-      ],
-      "Valid ${ group.name } record found": [
-        "找到有效的 ${ group.name } 记录"
       ]
     },
     "Label for new member": {
@@ -11499,6 +11395,9 @@
       ],
       "Send & receive invitations": [
         "发送和接收邀请"
+      ],
+      "Servers in ${ VPN_SERVERS.paid.countries }+ country": [
+        "覆盖 ${ VPN_SERVERS.paid.countries }+ 个国家/地区的服务器"
       ],
       "Share files with no size limit": [
         "共享文件无大小限制"
@@ -12767,6 +12666,20 @@
         "限时优惠。"
       ]
     },
+    "password_reminder": {
+      "If you forget your password, you may lose access to your encrypted data.": [
+        "如果您忘记密码，可能会无法访问您的加密数据。"
+      ],
+      "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
+        "请务必牢记或妥善保管您的密码，因为它是解密您数据的钥匙。"
+      ],
+      "Turn off password reminders?": [
+        "关闭密码提醒？"
+      ],
+      "Turn off reminders": [
+        "不再提示"
+      ]
+    },
     "password_reset: info": {
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
         "**所有您现有的数据**（电子邮件、事件、联系人、文件、 ${ PASS_APP_NAME } 条目等）**将被锁定** 并只能使用您的 **旧密码** 解锁。"
@@ -13482,6 +13395,78 @@
         "Yahoo"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "立即享受优惠"
+      ],
+      "Summer Sale": [
+        "夏季大促"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/每月"
+      ],
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "2 TB data storage": [
+        "2 TB 数据存储空间"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 存储空间：您当前套餐的 40 倍"
+      ],
+      "3 TB data storage": [
+        "3 TB 数据存储空间"
+      ],
+      "500 GB storage": [
+        "500 GB 存储空间"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级版功能"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级版功能"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "优惠基于标准月度定价。您的订阅将在计费周期结束时按标准年度费率续订。"
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "获取 ${ VPN_APP_NAME } 的完整访问权限"
+      ],
+      "Individual accounts for 6 users": [
+        "为 6 名用户提供的独立帐户"
+      ],
+      "Individual accounts for you and a partner": [
+        "为您和伴侣提供的独立帐户"
+      ],
+      "Online document and spreadsheet editor": [
+        "在线文档和电子表格编辑器"
+      ],
+      "Recover previous file versions": [
+        "恢复先前的文件版本"
+      ],
+      "Stronger protection against cyber threats": [
+        "针对网络威胁的更强防护"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "切换到我们的年度套餐，立省 ${ toYearlyDiscountAmount }！"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "不限量文件夹、标签和筛选规则"
+      ],
+      "Use your own email domain": [
+        "个性化邮箱域名"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "年费"
+      ],
+      "SUMMER SALE": [
+        "夏季大促"
+      ]
+    },
     "Recovery Email": {
       "Cancel": [
         "取消"
@@ -13567,14 +13552,14 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "免费享受 **${ planTitle }** 直至 **${ textDate }**。"
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "给予 2 周，获得 ${ referrerRewardAmount }"
+      "Give ${ refereeRewardAmount }, get ${ referrerRewardAmount }": [
+        "送出 ${ refereeRewardAmount }，获得 ${ referrerRewardAmount }"
       ],
       "How your free trial works:": [
         "您的免费试用如何运作："
       ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "我一直在使用 ${ BRAND_NAME }，并认为您可能也会喜欢。这是一款保护您隐私的安全邮箱、云存储、密码管理器和 VPN 服务。使用此链接注册可免费获得 14 天高级功能：${ referralLink }"
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
+        "我一直在使用 ${ BRAND_NAME }，并认为您可能也会喜欢。这是一款保护您隐私的安全邮箱、云存储、密码管理器和 VPN 服务。使用此链接注册，下次订阅可立减 ${ refereeRewardAmount }：${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "如果您在此之前取消，试用期结束后您将被降级至 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } 套餐。如果您不取消，您的完整套餐将生效，并且您将获得 **${ referrerRewardAmount }** 积分。"
@@ -13608,9 +13593,6 @@
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "您还有**${ daysRemaining }天**的时间，可以尽情探索**${ planTitle }**提供的所有强大功能。"
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "您的朋友也将获得 ${ refereeRewardAmount } 积分，可用于抵扣下一笔账单！"
       ],
       "your subscription": [
         "您的订阅"
@@ -16272,6 +16254,9 @@
       "Connect your custom domain": [
         "连接您的自定义域名"
       ],
+      "Connected emails": [
+        "已关联的邮箱"
+      ],
       "Connection status": [
         "连接状况"
       ],
@@ -16647,9 +16632,6 @@
       "Import contacts": [
         "导入联系人"
       ],
-      "Import emails, calendars, contacts": [
-        "导入电子邮件、日历、联系人"
-      ],
       "Import events": [
         "导入事件"
       ],
@@ -16659,8 +16641,14 @@
       "Import groups": [
         "导入群组"
       ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "通过 ${ PRODUCT_NAMES.EASY_SWITCH } 导入"
+      ],
       "Import your data to ${ BRAND_NAME }": [
         "将您的数据导入到 ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "导入"
       ],
       "Information exposed in breach": [
         "数据外泄事件中泄露的信息"
@@ -16692,8 +16680,8 @@
       "Make your business stand out": [
         "让您的企业脱颖而出"
       ],
-      "Migration assistant": [
-        "迁移助手"
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "将您的组织迁移到 ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "迷你日历"
@@ -16745,6 +16733,9 @@
       ],
       "Open pagination": [
         "选择页码"
+      ],
+      "OpenVpn": [
+        "OpenVPN"
       ],
       "OpenVPN configuration files": [
         "OpenVPN 配置文件"
@@ -17055,6 +17046,9 @@
       "Summary": [
         "概览"
       ],
+      "Summer Sale": [
+        "夏季促销"
+      ],
       "Support your compliance objectives": [
         "支持您的合规目标"
       ],
@@ -17084,6 +17078,9 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "要预览此电子表格，请在 ${ SHEETS_APP_NAME } 中打开或下载它。"
+      ],
+      "Troubleshoot with ${ LUMO_SHORT_APP_NAME }": [
+        "使用 ${ LUMO_SHORT_APP_NAME } 进行故障排查"
       ],
       "Troubleshoot your issue": [
         "排查问题"
@@ -17174,6 +17171,9 @@
       ],
       "Verify it’s you": [
         "验证您的身份"
+      ],
+      "Verify your password": [
+        "请验证您的密码"
       ],
       "Verifying your card...": [
         "正在验证您的银行卡..."

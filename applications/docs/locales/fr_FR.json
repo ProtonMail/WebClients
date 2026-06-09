@@ -474,6 +474,9 @@
       "Keep my subscription": [
         "Conserver mon abonnement"
       ],
+      "Later": [
+        "Plus tard"
+      ],
       "Learn more": [
         "En savoir plus"
       ],
@@ -897,6 +900,9 @@
       "Verify account": [
         "Vérifier le compte"
       ],
+      "Verify now": [
+        "Vérifier maintenant"
+      ],
       "View": [
         "Afficher"
       ],
@@ -1206,6 +1212,104 @@
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "La fonctionnalité NetShield est spécialement conçue pour protéger vos appareils et accélérer votre navigation en bloquant les publicités, les traqueurs et les logiciels malveillants."
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Activé"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "L'adresse est déjà utilisée par un utilisateur en dehors de votre organisation. Nous vous invitons à prendre contact avec le service client pour résoudre ce problème."
+      ],
+      "All": [
+        "Tout"
+      ],
+      "Calendar": [
+        "Calendrier"
+      ],
+      "Configure migration": [
+        "Configurer la migration"
+      ],
+      "Contacts": [
+        "Contacts"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "État de migration des données depuis Google Workspace vers ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "E-mails"
+      ],
+      "Errors": [
+        "Erreurs"
+      ],
+      "Estimated size": [
+        "Taille estimée"
+      ],
+      "Find out what can be migrated.": [
+        "Découvrez ce qui peut être migré."
+      ],
+      "Has errors": [
+        "Il y a des erreurs"
+      ],
+      "In progress": [
+        "En cours"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "L'adresse du membre n'a pas été trouvée. Veuillez contacter le service client pour résoudre ce problème."
+      ],
+      "Migrate": [
+        "Migrer"
+      ],
+      "Migrated": [
+        "Migré"
+      ],
+      "Migration status": [
+        "État de la migration"
+      ],
+      "Missing organization private key": [
+        "La clé privée de l'organisation est absente."
+      ],
+      "Missing organization public key": [
+        "La clé publique de l'organisation est absente."
+      ],
+      "No users to display": [
+        "Il n'y a aucun utilisateur à afficher."
+      ],
+      "Not activated": [
+        "Non activé"
+      ],
+      "Organization does not have enough seats available": [
+        "L'organisation n'a pas assez d'accès disponibles."
+      ],
+      "Organization does not have enough storage available": [
+        "L'organisation n'a pas assez d'espace de stockage disponible."
+      ],
+      "Pending": [
+        "En attente"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Sélectionnez exactement ce que vous voulez migrer. Cela s'appliquera à tous les utilisateurs de l'organisation."
+      ],
+      "Select users to migrate": [
+        "Sélectionnez les utilisateurs à migrer"
+      ],
+      "Size": [
+        "Taille"
+      ],
+      "Status": [
+        "État"
+      ],
+      "User": [
+        "Utilisateur"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Utilisateurs qui ont activé leur compte ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Que migrez-vous ?"
+      ],
+      "You": [
+        "Vous"
       ]
     },
     "Browser": {
@@ -2522,8 +2626,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Assurez-vous de pouvoir toujours accéder à votre compte et à vos données même si vous perdez votre mot de passe ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Pour une transition en douceur vers ${ BRAND_NAME }, importez vos données depuis Google, Outlook et autres plateformes."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pour une intégration transparente de votre équipe à ${ BRAND_NAME }, importez vos données depuis Google, Outlook et autres plateformes."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Recevez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
@@ -2888,6 +2992,9 @@
       "Aliases could not be loaded": [
         "Les alias n'ont pu être chargés."
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Tout l'espace de stockage est alloué. Nous vous invitons à réduire l'espace de stockage alloué à d'autres utilisateurs."
+      ],
       "Already a member of this share": [
         "Déjà membre de ce partage"
       ],
@@ -3142,6 +3249,15 @@
       "Photos upload is temporarily disabled. Please try again later": [
         "Le chargement de photos est temporairement désactivé. Réessayez plus tard."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Veuillez configurer un domaine personnalisé avant d'ajouter des adresses."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Nous vous invitons à configurer un domaine personnalisé avant d'ajouter des utilisateurs à votre organisation."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Nous vous invitons à activer la prise en charge multi-utilisateur avant d'ajouter des utilisateurs à votre organisation."
+      ],
       "Please enter a valid postal code": [
         "Veuillez saisir un code postal valide."
       ],
@@ -3166,6 +3282,9 @@
       ],
       "Please select a state": [
         "Sélectionnez une région"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Nous vous invitons à passer à un abonnement entreprise avec plus d'un utilisateur pour gérer plusieurs utilisateurs."
       ],
       "Port is required": [
         "Le port est nécessaire."
@@ -3327,6 +3446,9 @@
       "Unknown error": [
         "Erreur inconnue"
       ],
+      "Unknown location": [
+        "Emplacement inconnu"
+      ],
       "Update Too Large": [
         "La mise à jour est trop volumineuse."
       ],
@@ -3363,6 +3485,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Vous avez atteint la limite du nombre de contacts pour votre compte."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Vous avez utilisé toutes les adresses de votre abonnement. Veuillez mettre à niveau votre abonnement pour ajouter une nouvelle adresse ou désactiver une adresse dans votre compte."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Tous les utilisateurs de votre abonnement sont utilisés. Nous vous invitons à mettre à jour votre abonnement pour ajouter un nouvel utilisateur."
       ],
       "You must set a name": [
         "Vous devez définir un nom."
@@ -4320,6 +4448,10 @@
         "${ selectedFoldersCountLocalized } label sélectionné",
         "${ selectedFoldersCountLocalized } labels sélectionnés"
       ],
+      "${ total } user found": [
+        "${ total } utilisateur trouvé",
+        "${ total } utilisateurs trouvés"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact a été mis à jour.",
         "${ updated } contacts ont été mis à jour."
@@ -4337,23 +4469,17 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Connexion automatique** : cette option ouvre et vous connecte au VPN dès que vous allumez votre appareil."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Invitez vos amis** à ${ BRAND_NAME } avec votre lien de parrainage."
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Arrêt d'urgence (kill switch)** : cette option arrête les fuites de données en bloquant votre connexion internet si le VPN se déconnecte de manière inattendue."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Étape 1 :** Invitez vos amis sur ${ BRAND_NAME } avec votre lien de parrainage."
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Ils obtiennent ${ refereeRewardAmount }** en crédits s'ils s'abonnent."
       ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Étape 2 :** Vos amis bénéficieront de 2 semaines gratuites sur l'abonnement ${ BRAND_NAME } qu'ils auront choisi."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Étape 2 :** Vos amis bénéficieront de 2 semaines gratuites sur leur abonnement."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Étape 3 :** Obtenez ${ referrerRewardAmount } de crédits pour chacun de vos amis qui s'abonne à un abonnement."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Étape 3 :** Obtenez ${ referrerRewardAmount } de crédits pour chaque personne qui s'abonne à un abonnement."
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Vous obtenez ${ referrerRewardAmount }** en crédits pour chaque ami abonné."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } d'espace de stockage supplémentaire"
@@ -4576,6 +4702,9 @@
       "Display word count": [
         "Afficher le nombre de mots"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Vous souvenez-vous de votre mot de passe ? ${ verifyButton }"
+      ],
       "Document is in trash": [
         "Le document est dans la corbeille."
       ],
@@ -4719,6 +4848,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Pour de meilleurs résultats, évitez les activités de streaming et gourmandes en mémoire ou réduisez la taille de votre envoi."
+      ],
+      "Forgot password?": [
+        "Mot de passe oublié ?"
       ],
       "Free 5GB encrypted storage to get started": [
         "5 Go d'espace de stockage chiffré gratuit pour démarrer"
@@ -4991,6 +5123,9 @@
       ],
       "Password must have:": [
         "Le mot de passe doit comprendre :"
+      ],
+      "Password verified": [
+        "Mot de passe vérifié"
       ],
       "Pending invitations": [
         "Invitations en attente"
@@ -5291,6 +5426,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous n'êtes pas un robot."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Pour vous aider à vous souvenir de votre mot de passe, nous vous demanderons occasionnellement de le saisir. Nous vous le demanderons de moins en moins."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Pour importer des événements, créez d'abord un calendrier dans ${ CALENDAR_APP_NAME }. Ce calendrier contiendra les événements après leur importation."
       ],
@@ -5383,6 +5521,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Nous vous informerons dès que l'importation sera terminée."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Nous vous rappellerons de vérifier votre mot de passe ultérieurement."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }."
@@ -7720,6 +7861,9 @@
       "\"${ name }\" failed to be saved": [
         "« ${ name } » n'a pas pu être enregistré."
       ],
+      "\"${ name }\" moved": [
+        "« ${ name } » a été déplacé"
+      ],
       "\"${ name }\" moved to trash": [
         "« ${ name } » a été déplacé dans le dossier Corbeille."
       ],
@@ -7728,9 +7872,6 @@
       ],
       "\"${ name }\" saved successfully": [
         "« ${ name } » a été enregistré."
-      ],
-      "\"${ name }\" successfully moved": [
-        "« ${ name } » a été déplacé."
       ],
       "\"${ newName }\" failed to be renamed": [
         "« ${ newName } » n'a pas pu être renommé."
@@ -7770,6 +7911,10 @@
         "${ numberOfItems } élément n'a pas pu être restauré depuis le dossier Corbeille.",
         "${ numberOfItems } éléments n'ont pas pu être restaurés depuis le dossier Corbeille."
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } élément a été déplacé",
+        "${ numberOfItems } éléments ont été déplacés"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } élément a été déplacé dans le dossier Corbeille.",
         "${ numberOfItems } éléments ont été déplacés dans le dossier Corbeille."
@@ -7777,10 +7922,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } élément a été restauré depuis le dossier Corbeille.",
         "${ numberOfItems } éléments ont été restaurés depuis le dossier Corbeille."
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } élément a été déplacé.",
-        "${ numberOfItems } éléments ont été déplacés."
       ],
       "${ reason } has been disabled": [
         "${ reason } a été désactivé."
@@ -8394,11 +8535,17 @@
       "Please describe the problem and include any error messages": [
         "Décrivez le problème et incluez les éventuels messages d'erreur."
       ],
+      "Search": [
+        "Rechercher"
+      ],
       "Search for group name": [
         "Recherchez un nom de groupe."
       ],
       "Search for name or email": [
         "Recherchez par nom ou adresse e-mail."
+      ],
+      "Search for users or addresses": [
+        "Rechercher des utilisateurs ou des adresses"
       ],
       "Search parent folder": [
         "Rechercher le dossier principal"
@@ -8612,6 +8759,78 @@
       ],
       "SPRING SALE": [
         "OFFRE DE PRINTEMPS"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Profitez de l'offre"
+      ],
+      "Summer Sale": [
+        "Offre estivale"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mois"
+      ],
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "2 TB data storage": [
+        "2 To d'espace de stockage de données"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 Go d'espace de stockage : 40x votre abonnement actuel"
+      ],
+      "3 TB data storage": [
+        "3 To d'espace de stockage de données"
+      ],
+      "500 GB storage": [
+        "500 Go d'espace de stockage"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Toutes les fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Toutes les fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Accès complet à ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Comptes individuels pour 6 utilisateurs"
+      ],
+      "Individual accounts for you and a partner": [
+        "Comptes individuels pour vous et un partenaire"
+      ],
+      "Online document and spreadsheet editor": [
+        "Éditeur de documents et de feuilles de calcul en ligne"
+      ],
+      "Recover previous file versions": [
+        "Récupérez les versions précédentes des fichiers"
+      ],
+      "Stronger protection against cyber threats": [
+        "Une protection renforcée contre les cybermenaces"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Passez à notre abonnement annuel et économisez ${ toYearlyDiscountAmount } !"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Des dossiers, labels et filtres illimités"
+      ],
+      "Use your own email domain": [
+        "Utilisez votre propre domaine de messagerie"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "pendant 12 mois"
+      ],
+      "SUMMER SALE": [
+        "OFFRE ESTIVALE"
       ]
     },
     "Recent documents table header": {
@@ -9933,6 +10152,9 @@
       "Desktop": [
         "Bureau"
       ],
+      "Devices": [
+        "Appareils"
+      ],
       "Discard": [
         "Abandonner"
       ],
@@ -10066,9 +10288,6 @@
       "Import contacts": [
         "Importer les contacts"
       ],
-      "Import emails, calendars, contacts": [
-        "Importer des messages, calendriers et contacts"
-      ],
       "Import events": [
         "Importer des événements"
       ],
@@ -10107,6 +10326,9 @@
       ],
       "Merging contacts": [
         "Fusion des contacts"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrer votre organisation vers ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Mini calendrier"
@@ -10258,6 +10480,9 @@
       "Share your link": [
         "Partagez votre lien"
       ],
+      "Shared with me": [
+        "Partagé avec moi"
+      ],
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
       ],
@@ -10329,6 +10554,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilisez ${ VPN_SHORT_APP_NAME } pour la confidentialité des données"
+      ],
+      "Verify your password": [
+        "Vérifiez votre mot de passe"
       ],
       "VPN explained": [
         "Explications sur le VPN"
