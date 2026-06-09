@@ -605,6 +605,9 @@
       "Keep my subscription": [
         "Mantieni il mio abbonamento"
       ],
+      "Later": [
+        "Più tardi"
+      ],
       "Learn more": [
         "Scopri di più"
       ],
@@ -1825,9 +1828,6 @@
       ]
     },
     "BOSS": {
-      "Authenticate": [
-        "Autenticati"
-      ],
       "Calendar": [
         "Calendario"
       ],
@@ -1840,25 +1840,6 @@
       "Estimated size": [
         "Dimensioni Stimate"
       ],
-      "Failed to load OAuth": [
-        "Impossibile caricare OAuth"
-      ],
-      "Install migration app": [
-        "Installa l’app di migrazione"
-      ],
-      "Mail": [
-        "E-mail"
-      ],
-      "Migrate from Google Workspace": [
-        "Migra da Google Workspace"
-      ],
-      "Migration includes": [
-        "La migrazione include"
-      ],
-      "Migration started for ${ n } user": [
-        "Migrazione avviata per ${ n } utente",
-        "Migrazione iniziata per ${ n } utenti"
-      ],
       "Migration status": [
         "Stato della migrazione"
       ],
@@ -1868,20 +1849,8 @@
       "Organization does not have enough storage available": [
         "L'organizzazione non dispone di spazio di archiviazione sufficiente"
       ],
-      "Select at least one user to start a migration": [
-        "Seleziona almeno un utente per avviare una migrazione"
-      ],
-      "Sign in to Google Workspace": [
-        "Accedi a Google Workspace"
-      ],
       "User": [
         "Utente"
-      ],
-      "Verify your domain": [
-        "Verifica il tuo dominio"
-      ],
-      "Verify your domain to start a migration": [
-        "Verifica il tuo dominio per avviare una migrazione"
       ],
       "What are you migrating?": [
         "Cosa stai migrando?"
@@ -3361,9 +3330,6 @@
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Tutti nella tua organizzazione possono connettersi ai server condivisi in tutti i paesi."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Per una transizione senza problemi a ${ BRAND_NAME }, importa i tuoi dati da Google, Outlook e altri."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ricevi una notifica se la tua password o altri dati vengono resi pubblici da un servizio di terze parti."
@@ -6034,24 +6000,6 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importa i codici esistenti** da altre app 2FA, come Google Authenticator."
-      ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Passaggio 1:** Invita i tuoi amici a ${ BRAND_NAME } con il tuo link di affiliazione."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Passaggio 1:** Invita i tuoi amici a ${ BRAND_NAME } con il tuo link di affiliazione."
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**Passo 2:** I tuoi amici ottengono **2 settimane gratis** sul loro piano."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Passo 2:** I tuoi amici ottengono 2 settimane gratis sul loro piano."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Passaggio 3:** Ottieni ${ referrerRewardAmount } crediti per ogni persona che si abbona a un piano."
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**Passaggio 3:** Ottieni **${ referrerRewardAmount } crediti** per ogni persona che si abbona a un piano."
       ],
       "**Sync codes** to all your devices": [
         "**Sincronizza i codici** su tutti i tuoi dispositivi."
@@ -12602,6 +12550,78 @@
         "SPRING SALE"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Ottieni l'offerta"
+      ],
+      "Summer Sale": [
+        "Saldi estivi"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mese"
+      ],
+      "15 GB storage": [
+        "15 GB di archiviazione"
+      ],
+      "2 TB data storage": [
+        "2 TB di archiviazione dati"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB di archiviazione: 40 volte il tuo piano attuale"
+      ],
+      "3 TB data storage": [
+        "3 TB di archiviazione dati"
+      ],
+      "500 GB storage": [
+        "500 GB di archiviazione"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tutte le funzionalità premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tutte le funzionalità premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Gli sconti si basano sui prezzi mensili standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Accesso completo a ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Account individuali per sei utenti"
+      ],
+      "Individual accounts for you and a partner": [
+        "Account individuali per te e un'altra persona"
+      ],
+      "Online document and spreadsheet editor": [
+        "Editor di documenti e fogli di calcolo online"
+      ],
+      "Recover previous file versions": [
+        "Recupera le versioni precedenti dei file"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protezione più efficace dalle minacce informatiche"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Passa al nostro piano annuale e risparmia ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Cartelle, etichette e filtri illimitati"
+      ],
+      "Use your own email domain": [
+        "Usa il tuo dominio email personale"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "per 12 mesi"
+      ],
+      "SUMMER SALE": [
+        "SALDI ESTIVI"
+      ]
+    },
     "Recovery Email": {
       "Cancel": [
         "Annulla"
@@ -12681,14 +12701,8 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Goditi **${ planTitle }** gratuitamente fino al **${ textDate }**."
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "Dai 2 settimane, ottieni ${ referrerRewardAmount }"
-      ],
       "How your free trial works:": [
         "Come funziona la tua prova gratuita:"
-      ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "Sto usando ${ BRAND_NAME } e ho pensato che ti potrebbe piacere. È una posta elettronica sicura, archiviazione cloud, un gestore di password e una VPN che protegge la tua privacy. Iscriviti con questo link per ottenere 14 giorni di funzionalità premium gratis: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Se annulli prima di allora, sarai declassato a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quando la prova scade. Se non annulli, il tuo piano completo si attiverà e riceverai **${ referrerRewardAmount }** in crediti."
@@ -12723,9 +12737,6 @@
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Ti rimane **${ daysRemaining } giorno** per esplorare tutte le potenti funzionalità che **${ planTitle }** ha da offrire.",
         "Ti restano **${ daysRemaining } giorni** per esplorare tutte le potenti funzionalità che **${ planTitle }** ha da offrire."
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "Il tuo amico riceverà anche ${ refereeRewardAmount } da riscattare sulla sua prossima fattura!"
       ],
       "your subscription": [
         "il tuo abbonamento"
@@ -15656,9 +15667,6 @@
       "Import contacts": [
         "Importa i contatti"
       ],
-      "Import emails, calendars, contacts": [
-        "Importa email, calendari, contatti"
-      ],
       "Import events": [
         "Importa eventi"
       ],
@@ -15667,6 +15675,9 @@
       ],
       "Import groups": [
         "Importa gruppi"
+      ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "Importa tramite ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Information exposed in breach": [
         "Informazioni esposte in caso di violazioni"
@@ -15694,9 +15705,6 @@
       ],
       "Main password": [
         "Password principale"
-      ],
-      "Migration assistant": [
-        "Migration Assistant"
       ],
       "Minicalendar": [
         "Mini calendario"
