@@ -413,11 +413,11 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
                                 </MigrationNavigationListStepNumber>
                                 <span
                                     className={clsx(
-                                        'text-semibold flex-1 text-left inline-flex flex-nowrap items-center gap-2',
+                                        'text-semibold flex-1 text-left flex flex-nowrap items-center gap-2',
                                         state.currentStep === step.id ? 'color-primary' : 'color-weak'
                                     )}
                                 >
-                                    <span>{stepConfigs[step.id].text}</span>
+                                    <span className="flex-1">{stepConfigs[step.id].text}</span>
                                     {step.steps && (
                                         <Button
                                             icon
