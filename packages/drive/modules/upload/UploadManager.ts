@@ -154,7 +154,7 @@ export class UploadManager {
         const batchId = generateUID();
 
         const filesArray = isDataTransferList(filesOrDataTransfer)
-            ? await processDroppedItems(filesOrDataTransfer)
+            ? await processDroppedItems(filesOrDataTransfer, { skipEmptyFolders: isForPhotos })
             : Array.from(filesOrDataTransfer);
 
         const hasStructure = hasFolderStructure(filesArray);
