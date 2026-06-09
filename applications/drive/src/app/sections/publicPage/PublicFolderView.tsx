@@ -127,13 +127,6 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
 
     const currentFolderUid = folder?.uid || rootNode.uid;
 
-    const handleUpload = useCallback(
-        (files: FileList) => {
-            return uploadManager.upload(files, currentFolderUid);
-        },
-        [currentFolderUid]
-    );
-
     const handleDrop = (dataTransfer: DataTransfer) => {
         void uploadManager.upload(dataTransfer, currentFolderUid);
     };
@@ -142,19 +135,13 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
         inputRef: fileInputRef,
         handleClick: handleClickFileUpload,
         handleChange: handleFileChange,
-    } = useUploadInput({
-        onUpload: handleUpload,
-        forFolders: false,
-    });
+    } = useUploadInput({ onUpload: (files) => uploadManager.upload(files, currentFolderUid) });
 
     const {
         inputRef: folderInputRef,
         handleClick: handleClickFolderUpload,
         handleChange: handleFolderChange,
-    } = useUploadInput({
-        onUpload: handleUpload,
-        forFolders: true,
-    });
+    } = useUploadInput({ onUpload: (files) => uploadManager.upload(files, currentFolderUid), forFolders: true });
 
     // TODO: Probably moving it to the store of public folder
     useEffect(() => {
@@ -348,7 +335,11 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
             />
 
             {isEmpty ? (
-                <PublicFolderEmptyView uploadEnabled={isEditor} onUpload={handleUpload} />
+                <PublicFolderEmptyView
+                    uploadEnabled={isEditor}
+                    onUploadFile={handleClickFileUpload}
+                    onUploadFolder={handleClickFolderUpload}
+                />
             ) : (
                 <DriveExplorer
                     itemIds={Array.from(itemUids.values())}

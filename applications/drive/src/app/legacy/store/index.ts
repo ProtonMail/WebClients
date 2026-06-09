@@ -6,12 +6,6 @@ export { useDriveEventManager } from './_events';
 export { validateLinkNameField, formatLinkName, splitLinkName } from './_links';
 export { useUserSettings } from './_settings';
 export { useDefaultShare, useLockedVolume, useShareUrl, useDriveSharingFlags } from './_shares';
-export { useUpload, useFileUploadInput, useFolderUploadInput, mimeTypeFromFile } from './_uploads';
-export type {
-    OnFileUploadSuccessCallbackData,
-    OnFileSkippedSuccessCallbackData,
-    OnFolderUploadSuccessCallbackData,
-} from './_uploads/interface';
 export * from './_links/interface';
 export { ShareType, ShareState } from './_shares/interface';
 export type {
