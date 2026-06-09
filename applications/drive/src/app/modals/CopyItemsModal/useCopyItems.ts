@@ -77,7 +77,10 @@ export const useCopyItems = () => {
                 }
             }
         } catch (error) {
-            handleSdkError(error, { showNotification: false, extra: { itemsToCopy, targetFolderUid, errors } });
+            handleSdkError(error, {
+                showNotification: false,
+                extra: { itemsToCopy: itemsToCopy.map((item) => item.uid), targetFolderUid, errors },
+            });
         }
 
         const copiesList = Object.values(copies);
