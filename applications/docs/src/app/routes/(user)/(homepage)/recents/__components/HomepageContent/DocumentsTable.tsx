@@ -402,16 +402,6 @@ function Row({ document, variant }: RowProps) {
           ) : (
             <span className="text-pre text-ellipsis">{document.name}</span>
           )}
-          {/* {
-            recentDocument.whatever || recentDocument.isFavorite ? (
-                <div className="flex gap-[.625rem] text-[--text-weak]"> */}
-          {/* TODO: implement shared with others & public (globe icon in that case), tooltips: "Shared" & "Public" */}
-          {/* {recentDocument.whatever ? <Icon name="users" size={5} /> : null} */}
-          {/* TODO: implement favorites */}
-          {/* {recentDocument.isFavorite ? <Icon name="star" size={5} /> : null} */}
-          {/* </div>
-            ) : null
-          } */}
         </span>
       </Table.DataCell>
 

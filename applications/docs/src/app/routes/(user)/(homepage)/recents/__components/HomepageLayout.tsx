@@ -31,7 +31,6 @@ import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive'
 import { IcHouse } from '@proton/icons/icons/IcHouse'
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier'
 import { IcPlus } from '@proton/icons/icons/IcPlus'
-import { IcStar } from '@proton/icons/icons/IcStar'
 import { IcTrash } from '@proton/icons/icons/IcTrash'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 
@@ -51,7 +50,6 @@ import { HOMEPAGE_RECENTS_PATH } from '../../../__components/AppContainer'
 import { useEvent } from '~/utils/misc'
 import { useIsSheetsEnabled } from '~/utils/flags'
 import clsx from '@proton/utils/clsx'
-import { IS_REFRESH_ENABLED, IS_FAVORITES_ENABLED } from '../__utils/features'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { useApplication } from '~/utils/application-context'
 import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag'
@@ -306,36 +304,34 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
       <SidebarNav>
         <div className="flex items-center justify-between px-3 py-2">
           <div className="px-3 !text-xs text-[--text-hint]">Recents</div>
-          {IS_REFRESH_ENABLED ? (
-            <Tooltip title={c('Info').t`Update recent documents`}>
-              <Button
-                aria-label={c('Info').t`Update recent documents`}
-                icon
-                size="small"
-                shape="ghost"
-                className="-mr-1"
-                disabled={isRecentsUpdating}
-                onClick={async (e) => {
-                  e.stopPropagation()
-                  e.preventDefault()
-                  if (!isRecents) {
-                    history.push('/recents')
-                  }
-                  await updateRecentDocuments()
-                  createNotification({
-                    text: c('Notification').t`Recent documents updated`,
-                    expiration: NOTIFICATION_DEFAULT_EXPIRATION_TIME,
-                  })
-                  setExpanded(false)
-                }}
-              >
-                <IcArrowRotateRight
-                  data-updating={isRecentsUpdating ? '' : undefined}
-                  className="data-[updating]:animate-spin"
-                />
-              </Button>
-            </Tooltip>
-          ) : null}
+          <Tooltip title={c('Info').t`Update recent documents`}>
+            <Button
+              aria-label={c('Info').t`Update recent documents`}
+              icon
+              size="small"
+              shape="ghost"
+              className="-mr-1"
+              disabled={isRecentsUpdating}
+              onClick={async (e) => {
+                e.stopPropagation()
+                e.preventDefault()
+                if (!isRecents) {
+                  history.push('/recents')
+                }
+                await updateRecentDocuments()
+                createNotification({
+                  text: c('Notification').t`Recent documents updated`,
+                  expiration: NOTIFICATION_DEFAULT_EXPIRATION_TIME,
+                })
+                setExpanded(false)
+              }}
+            >
+              <IcArrowRotateRight
+                data-updating={isRecentsUpdating ? '' : undefined}
+                className="data-[updating]:animate-spin"
+              />
+            </Button>
+          </Tooltip>
         </div>
         <SidebarList>
           <SidebarListItem onClick={() => setExpanded(false)}>
@@ -411,16 +407,6 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
             </>
           )}
 
-          {IS_FAVORITES_ENABLED && (
-            <SidebarListItem onClick={() => setExpanded(false)}>
-              <SidebarListItemLink to="/favorites" exact={true} activeClassName="!font-semibold">
-                <span className="flex items-center gap-2">
-                  <IcStar />
-                  <span>{c('Info').t`Favorites`}</span>
-                </span>
-              </SidebarListItemLink>
-            </SidebarListItem>
-          )}
           <SidebarListItem onClick={() => setExpanded(false)}>
             <SidebarListItemLink to="/trash" exact={true} activeClassName="!font-semibold">
               <span className="flex items-center gap-2">
@@ -470,10 +456,6 @@ function titleByViewState(state: HomepageViewState): string {
     case 'recents-loading':
     case 'recents':
       return c('Page title').t`Recents`
-    case 'favorites-empty':
-    case 'favorites-loading':
-    case 'favorites':
-      return c('Page title').t`Favorites`
     case 'trash-loading':
     case 'trash-empty':
     case 'trash':
