@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { generateNodeUid } from '@proton/drive';
+import { uploadManager } from '@proton/drive/modules/upload';
 import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
 import { IcFileArrowInUp } from '@proton/icons/icons/IcFileArrowInUp';
 import { IcFolderArrowUp } from '@proton/icons/icons/IcFolderArrowUp';
@@ -11,7 +13,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useActiveShare } from '../../../legacy/hooks/drive/useActiveShare';
 import { useFileDrop } from '../../../legacy/hooks/drive/useFileDrop';
-import { useFileUploadInput, useFolderUploadInput } from '../../../legacy/store/_uploads/useUploadInput';
+import { useUploadInput } from '../../../legacy/hooks/drive/useUploadInput';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { Container } from '../Container';
 import type { OnboardingProps } from '../interface';
@@ -24,15 +26,12 @@ export const UploadStep = ({ onNext }: OnboardingProps) => {
         shareId: activeFolder.shareId,
         parentLinkId: activeFolder.linkId,
         volumeId: activeFolder.volumeId,
-        onFileUpload: () => countActionWithTelemetry(Actions.OnboardingV2UploadFile),
-        onFolderUpload: () => countActionWithTelemetry(Actions.OnboardingV2UploadFolder),
     });
 
     const [isDragged, setIsDragged] = useState(false);
 
     const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
         e.preventDefault();
-
         setIsDragged(true);
     };
 
@@ -83,16 +82,17 @@ export const UploadStep = ({ onNext }: OnboardingProps) => {
 
 export const UploadStepButtons = ({ onNext }: OnboardingProps) => {
     const { activeFolder } = useActiveShare();
+    const parentFolderUid = generateNodeUid(activeFolder.volumeId, activeFolder.linkId);
     const {
         inputRef: fileInput,
         handleClick: fileClick,
         handleChange: fileChange,
-    } = useFileUploadInput(activeFolder.volumeId, activeFolder.shareId, activeFolder.linkId);
+    } = useUploadInput({ onUpload: (files) => uploadManager.upload(files, parentFolderUid) });
     const {
         inputRef: folderInput,
         handleClick: folderClick,
         handleChange: folderChange,
-    } = useFolderUploadInput(activeFolder.volumeId, activeFolder.shareId, activeFolder.linkId);
+    } = useUploadInput({ onUpload: (files) => uploadManager.upload(files, parentFolderUid), forFolders: true });
 
     return (
         <div className="w-full flex justify-space-between">
