@@ -6,7 +6,7 @@ import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@prot
 import { CacheType } from '@proton/redux-utilities/interface';
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getGroup, getGroups } from '@proton/shared/lib/api/groups';
-import { getGroupOrganizationRoles } from '@proton/shared/lib/api/organizationRoles';
+import { getGroupOrganizationRoles, updateGroupOrganizationRoles } from '@proton/shared/lib/api/organizationRoles';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
@@ -59,15 +59,10 @@ const applyGroupUpdate = (state: ModelState<EnhancedGroup[]>, group: Group) => {
         return;
     }
     const previous = state.value[index];
-    const previousRoleState = previous.GroupOrganizationRoles
-        ? {
-              roleState: 'stale' as const,
-              GroupOrganizationRoles: previous.GroupOrganizationRoles,
-          }
-        : {};
     state.value[index] = {
         ...group,
-        ...previousRoleState,
+        roleState: previous.roleState,
+        GroupOrganizationRoles: previous.GroupOrganizationRoles,
     };
 };
 
@@ -97,7 +92,9 @@ const modelThunk = createAsyncModelThunk<Model, GroupsState, ProtonThunkArgument
         }
         return extraArgument
             .api(getGroups())
-            .then(({ Groups }: { Groups: Group[] }) => Groups)
+            .then(({ Groups }: { Groups: Group[] }) =>
+                Groups.map((group): EnhancedGroup => ({ ...group, roleState: 'initial', GroupOrganizationRoles: [] }))
+            )
             .catch(() => []);
     },
     previous: previousSelector(selectGroups),
@@ -128,7 +125,7 @@ const slice = createSlice({
                 return;
             }
 
-            state.value.push(action.payload);
+            state.value.push({ ...action.payload, roleState: 'initial', GroupOrganizationRoles: [] });
         },
         updateGroup: (state, action: PayloadAction<Group>) => {
             applyGroupUpdate(state, action.payload);
@@ -217,6 +214,11 @@ const slice = createSlice({
                     model: state.value,
                     events: action.payload.Groups,
                     itemKey: 'Group',
+                    create: (group): EnhancedGroup => ({
+                        ...group,
+                        roleState: 'initial',
+                        GroupOrganizationRoles: [],
+                    }),
                 });
             }
         });
@@ -249,12 +251,16 @@ export const getGroupRoles = ({
     const map = getTemporaryRolePromiseMap();
 
     return async (dispatch, getState, extra) => {
+        const isAdminRoleEnabled = extra.unleashClient?.isEnabled('AdminRoleMVP') ?? false;
+        if (!isAdminRoleEnabled) {
+            return [];
+        }
         const group = getGroupFromState(selectGroups(getState()), targetGroup);
         if (!group) {
             return [];
         }
         if (cache !== CacheType.None) {
-            if (group.roleState === 'full' && group.GroupOrganizationRoles) {
+            if (group.roleState === 'full') {
                 return group.GroupOrganizationRoles;
             }
             if (group.roleState === 'rejected' && !retry) {
@@ -280,6 +286,32 @@ export const getGroupRoles = ({
         } finally {
             map.delete(group.ID);
         }
+    };
+};
+
+export const updateGroupRoles = ({
+    group,
+    currentRoleIds,
+    desiredRoleIds,
+    api,
+}: {
+    group: Pick<Group, 'ID'>;
+    currentRoleIds: Set<string>;
+    desiredRoleIds: Set<string>;
+    api: Api;
+}): ThunkAction<Promise<RoleAssignment[]>, GroupsState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, _getState, extra) => {
+        const isAdminRoleEnabled = extra.unleashClient?.isEnabled('AdminRoleMVP') ?? false;
+        if (!isAdminRoleEnabled) {
+            return [];
+        }
+        const add = [...desiredRoleIds].filter((id) => !currentRoleIds.has(id));
+        const remove = [...currentRoleIds].filter((id) => !desiredRoleIds.has(id));
+        const { RoleAssignments } = await api<{ RoleAssignments: RoleAssignment[] }>(
+            updateGroupOrganizationRoles(group.ID, { add, remove })
+        );
+        dispatch(slice.actions.groupRoleFetchFulfilled({ group, organizationRoles: RoleAssignments }));
+        return RoleAssignments;
     };
 };
 
