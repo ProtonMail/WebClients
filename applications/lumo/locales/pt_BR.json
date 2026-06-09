@@ -29,9 +29,6 @@
       "Are you sure you want to delete all conversations?": [
         "Tem certeza de que deseja excluir todas as conversas?"
       ],
-      "Are you sure you want to delete the conversation?": [
-        "Tem certeza de que deseja excluir a conversa?"
-      ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
       ],
@@ -277,6 +274,9 @@
       ],
       "Refresh the page": [
         "Atualizar a página"
+      ],
+      "Reload": [
+        "Recarregar"
       ],
       "Remove": [
         "Remover"
@@ -2596,17 +2596,8 @@
       "${ LUMO_SHORT_APP_NAME }'s a busy cat": [
         "O ${ LUMO_SHORT_APP_NAME } é muito ocupado"
       ],
-      "Approaching file limit": [
-        "Aproximando-se do limite de arquivos"
-      ],
       "Failed to index file for search: ${ processingResult.message }": [
         "Falha ao indexar o arquivo para pesquisa: ${ processingResult.message }"
-      ],
-      "File limit reached": [
-        "O limite de arquivo foi atingido"
-      ],
-      "Message limit reached": [
-        "Limite de mensagens atingido."
       ],
       "Suspicious: ${ urlParts.subdomainCount } subdomain": [
         "Suspeito: ${ urlParts.subdomainCount } subdomínio",
@@ -2623,14 +2614,17 @@
       ],
       "We're experiencing higher than usual traffic, so responses may be a bit slower than usual. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for priority access during peak times.": [
         "Estamos com um tráfego acima do normal, então as respostas podem ser um pouco mais lentas. Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para ter acesso prioritário durante os horários de pico."
-      ],
-      "You have ${ remaining } file uploads left in this project.": [
-        "Você ainda tem ${ remaining } envios de arquivos disponíveis neste projeto."
       ]
     },
     "collider_2025: Web Search": {
       "Close": [
         "Fechar"
+      ],
+      "Show less": [
+        "Mostrar menos"
+      ],
+      "Show more": [
+        "Mostrar mais"
       ],
       "Sources": [
         "Fontes"
@@ -2675,9 +2669,6 @@
       ],
       "Close": [
         "Fechar"
-      ],
-      "Copy link": [
-        "Copiar link"
       ],
       "Create": [
         "Criar"
@@ -2964,9 +2955,6 @@
       "Cannot link the root folder. Please select a subfolder.": [
         "Não é possível vincular a pasta raiz. Selecione uma subpasta."
       ],
-      "Could not copy link": [
-        "Não foi possível copiar o link"
-      ],
       "Database connection lost. Please refresh the page to continue.": [
         "Conexão com o banco de dados perdida. Atualize a página para continuar."
       ],
@@ -3041,9 +3029,6 @@
       ],
       "Default": [
         "Padrão"
-      ],
-      "Shared": [
-        "Compartilhado"
       ]
     },
     "collider_2025:Finance": {
@@ -3143,9 +3128,6 @@
       "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
         "Você tem certeza de que deseja excluir \"${ project.name }\"? Esta ação não pode ser desfeita."
       ],
-      "Are you sure you want to delete this conversation? This action cannot be undone.": [
-        "Você tem certeza de que deseja excluir essa conversa? Esta ação não pode ser desfeita."
-      ],
       "Auto-retrieved": [
         "Recuperado automaticamente"
       ],
@@ -3178,9 +3160,6 @@
       ],
       "Learn more about how project knowledge works": [
         "Saiba mais sobre como funciona o conhecimento do projeto"
-      ],
-      "Link copied": [
-        "Link copiado"
       ],
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Vincule arquivos do ${ DRIVE_APP_NAME } ou envie do seu computador."
@@ -3604,6 +3583,9 @@
       ]
     },
     "collider_2025:Title": {
+      "${ LUMO_SHORT_APP_NAME } can't start": [
+        "${ LUMO_SHORT_APP_NAME } não pode iniciar"
+      ],
       "Agents": [
         "Agentes"
       ],
@@ -3621,9 +3603,6 @@
       ],
       "Create new project": [
         "Criar novo projeto"
-      ],
-      "Delete conversation?": [
-        "Excluir conversa?"
       ],
       "Delete project?": [
         "Excluir projeto?"
@@ -4723,9 +4702,6 @@
       ],
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Garanta que você ainda possa acessar sua conta e seus dados, mesmo que perca sua senha do ${ BRAND_NAME }."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Para uma transição sem interrupções para o ${ BRAND_NAME }, importe seus dados do Google, Outlook e outros."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Seja notificado caso sua senha ou outros dados sejam vazados de um serviço de terceiros."
@@ -6203,6 +6179,9 @@
       "Clear overrides": [
         "Limpar substituições"
       ],
+      "Close preview": [
+        "Fechar pré-visualização"
+      ],
       "Conversations": [
         "Conversas"
       ],
@@ -6233,6 +6212,9 @@
       "Idle": [
         "Ocioso"
       ],
+      "IndexedDB available": [
+        "IndexedDB disponível"
+      ],
       "Lag": [
         "Atraso"
       ],
@@ -6254,11 +6236,17 @@
       "Native bridge: onLimitReachedError": [
         "Ponte nativa: onLimitReachedError"
       ],
+      "No": [
+        "Não"
+      ],
       "Notifications": [
         "Notificações"
       ],
       "Performance": [
         "Desempenho"
+      ],
+      "Preview \"IndexedDB unavailable\" screen": [
+        "Pré-visualização da tela \"IIndexedDB não disponível\""
       ],
       "Rate": [
         "Avaliar"
@@ -6355,6 +6343,9 @@
       ],
       "Unsynced spaces": [
         "Espaços não sincronizados"
+      ],
+      "Yes": [
+        "Sim"
       ]
     },
     "lumo: Test Renderer": {
@@ -8010,6 +8001,78 @@
         "PROMO DE PRIMAVERA"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Aproveitar a oferta"
+      ],
+      "Summer Sale": [
+        "Oferta Especial"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mês"
+      ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "2 TB data storage": [
+        "2 TB de armazenamento de dados"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de armazenamento: 40x o seu plano atual"
+      ],
+      "3 TB data storage": [
+        "3 TB de armazenamento de dados"
+      ],
+      "500 GB storage": [
+        "500 GB de armazenamento"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todos os recursos premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todos os recursos premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Os descontos são baseados nos preços mensais padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Acesso total ao ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Contas individuais para 6 usuários"
+      ],
+      "Individual accounts for you and a partner": [
+        "Contas individuais para você e um parceiro"
+      ],
+      "Online document and spreadsheet editor": [
+        "Editor on-line de documentos e planilhas"
+      ],
+      "Recover previous file versions": [
+        "Recupere versões anteriores de arquivos"
+      ],
+      "Stronger protection against cyber threats": [
+        "Proteção mais forte contra ameaças cibernéticas"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Mude para o nosso plano anual e economize ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, marcadores e filtros ilimitados"
+      ],
+      "Use your own email domain": [
+        "Use seu próprio domínio de e-mail"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "por 12 meses"
+      ],
+      "SUMMER SALE": [
+        "OFERTA ESPECIAL"
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Revise a segurança da conta"
@@ -8666,14 +8729,14 @@
       "Human verification": [
         "Verificação humana"
       ],
-      "Import emails, calendars, contacts": [
-        "Importar e-mails, calendários e contatos"
-      ],
       "Indexed Drive documents": [
         "Documentos indexados do Drive"
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migre sua organização para a ${ BRAND_NAME }"
       ],
       "My Files": [
         "Meus arquivos"
@@ -8734,6 +8797,9 @@
       ],
       "Summary": [
         "Resumo"
+      ],
+      "Summer Sale": [
+        "Promoção de verão"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ativar ${ DARK_WEB_MONITORING_NAME }"
