@@ -18,22 +18,12 @@ interface Props {
     onClick?: () => void;
     isNew?: boolean;
     onDeleteGroup?: () => void;
-    canOnlyDelete: boolean;
     name?: string;
     serializedGroup?: ReturnType<GroupsManagementReturn['getSerializedGroup']>;
     groupOrganizationRoles?: RoleAssignment[];
 }
 
-const GroupItem = ({
-    active,
-    group,
-    serializedGroup,
-    onClick,
-    isNew,
-    onDeleteGroup,
-    canOnlyDelete,
-    groupOrganizationRoles,
-}: Props) => {
+const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGroup, groupOrganizationRoles }: Props) => {
     const api = useApi();
     const [organization] = useOrganization();
     const showMailFeatures = shouldShowMail(organization?.PlanName);
@@ -86,11 +76,9 @@ const GroupItem = ({
                     {group && !isNew && handleDeleteAllGroupMembers && (
                         <div className="shrink-0">
                             <GroupItemMoreOptionsDropdown
-                                group={group}
                                 showMailFeatures={showMailFeatures}
                                 handleDeleteGroup={handleDeleteGroup}
                                 handleDeleteAllGroupMembers={handleDeleteAllGroupMembers}
-                                canOnlyDelete={canOnlyDelete}
                             />
                         </div>
                     )}
