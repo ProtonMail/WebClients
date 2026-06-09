@@ -24,6 +24,7 @@ import { getSubscriptionPlanTitles, isTrial } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { ForkType } from '@proton/shared/lib/authentication/fork';
+import type { ExtraSessionForkData } from '@proton/shared/lib/authentication/interface';
 import { APPS, type APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
@@ -45,6 +46,7 @@ interface UserDropdownProps extends Omit<UserDropdownButtonProps, 'user' | 'isOp
     hasAppLinks?: boolean;
     sessionOptions?: Parameters<typeof AccountSessionsSwitcher>[0]['sessionOptions'];
     logoutRedirectUrl?: string;
+    extraSessionForkData?: ExtraSessionForkData;
     reportDescriptionContext?: string[];
 }
 
@@ -61,6 +63,7 @@ const UserDropdown = ({
     sessionOptions,
     hasAppLinks,
     logoutRedirectUrl,
+    extraSessionForkData,
     reportDescriptionContext,
     ...rest
 }: UserDropdownProps) => {
@@ -100,13 +103,16 @@ const UserDropdown = ({
         return { switchHref: getSwitchHref(app), loginHref: getLoginHref(app) };
     }, [app]);
 
-    const handleSwitchAccount = useCallback((event: MouseEvent<HTMLAnchorElement>, forkType: ForkType) => {
-        const target = event.currentTarget?.getAttribute('target') || '';
-        if (APP_NAME !== APPS.PROTONACCOUNT && getShouldProcessLinkClick(event.nativeEvent, target)) {
-            event.preventDefault();
-            handleSwitchAccountFork(app, forkType);
-        }
-    }, []);
+    const handleSwitchAccount = useCallback(
+        (event: MouseEvent<HTMLAnchorElement>, forkType: ForkType) => {
+            const target = event.currentTarget?.getAttribute('target') || '';
+            if (APP_NAME !== APPS.PROTONACCOUNT && getShouldProcessLinkClick(event.nativeEvent, target)) {
+                event.preventDefault();
+                handleSwitchAccountFork(app, forkType, extraSessionForkData);
+            }
+        },
+        [app, extraSessionForkData]
+    );
 
     const { sessionRecoveryInitiated } = useSelector(selectSessionRecoveryData);
 
