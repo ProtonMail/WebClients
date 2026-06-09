@@ -2126,8 +2126,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "确保您即使丢失了 ${ BRAND_NAME } 密码，也能访问账户和数据。"
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "为了无缝过渡到 ${ BRAND_NAME }，请从 Google、Outlook 等其他地方导入数据。"
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "为了让您的团队无缝上手 ${ BRAND_NAME }，请从 Google、Outlook 等平台导入数据。"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "如果您的密码或其他数据从第三方服务泄露，您会收到通知。"
@@ -2368,6 +2368,9 @@
       "Payment process not supported": [
         "不支持此支付流程"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "请检查您的 ABN 是否已注册跨境增值税"
+      ],
       "Please complete the billing details": [
         "请填写账单信息"
       ],
@@ -2454,6 +2457,9 @@
       ],
       "Username must end with a letter or digit": [
         "用户名必须以字母或数字结尾"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "增值税号必须以 ${ prefixes } 开头"
       ],
       "Wrong billing address": [
         "错误的账单地址"
@@ -5604,11 +5610,11 @@
       "Human verification": [
         "身份验证"
       ],
-      "Import emails, calendars, contacts": [
-        "导入电子邮件、日历、联系人"
-      ],
       "Invalid verification code": [
         "验证码无效"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "将您的组织迁移到 ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "迷你日历"
@@ -5666,6 +5672,9 @@
       ],
       "Summary": [
         "概览"
+      ],
+      "Summer Sale": [
+        "夏季促销"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "启用 ${ DARK_WEB_MONITORING_NAME }"

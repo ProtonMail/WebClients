@@ -2139,8 +2139,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Assurez-vous de pouvoir toujours accéder à votre compte et à vos données même si vous perdez votre mot de passe ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Pour une transition en douceur vers ${ BRAND_NAME }, importez vos données depuis Google, Outlook et autres plateformes."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pour une intégration transparente de votre équipe à ${ BRAND_NAME }, importez vos données depuis Google, Outlook et autres plateformes."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Recevez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
@@ -2472,7 +2472,7 @@
         "Le nom d'utilisateur doit se terminer par une lettre ou un chiffre."
       ],
       "VAT number must start with ${ prefixes }": [
-        "Le numéro de TVA doit commencer avec ${ prefixes }."
+        "Le numéro de TVA doit commencer par ${ prefixes }."
       ],
       "Wrong billing address": [
         "L'adresse de facturation n'est pas correct."
@@ -5692,11 +5692,11 @@
       "Human verification": [
         "Vérification que vous n'êtes pas un robot"
       ],
-      "Import emails, calendars, contacts": [
-        "Importer des messages, calendriers et contacts"
-      ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrer votre organisation vers ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Mini calendrier"
