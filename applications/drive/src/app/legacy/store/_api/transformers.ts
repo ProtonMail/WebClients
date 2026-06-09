@@ -36,8 +36,12 @@ import type {
     ShareWithKey,
     SharedUrlInfo,
 } from '../_shares';
-import { ThumbnailType } from '../_uploads/media';
 import type { DriveVolume } from '../_volumes';
+
+enum ThumbnailType {
+    PREVIEW = 1,
+    HD_PREVIEW = 2,
+}
 
 // LinkMetaWithShareURL is used when loading shared links.
 // We need this to load information about number of accesses.

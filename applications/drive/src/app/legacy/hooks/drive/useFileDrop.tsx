@@ -3,12 +3,6 @@ import { useCallback } from 'react';
 import { generateNodeUid } from '@proton/drive';
 import { uploadManager } from '@proton/drive/modules/upload';
 
-import type {
-    OnFileSkippedSuccessCallbackData,
-    OnFileUploadSuccessCallbackData,
-    OnFolderUploadSuccessCallbackData,
-} from '../../../legacy/store/_uploads/interface';
-
 declare global {
     interface DataTransferItem {
         getAsEntry?: () => FileSystemEntry | null;
@@ -34,9 +28,6 @@ export const useFileDrop = ({
     shareId: string;
     parentLinkId: string;
     volumeId: string;
-    onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
-    onFolderUpload?: (folder: OnFolderUploadSuccessCallbackData) => void;
-    onFileSkipped?: (folder: OnFileSkippedSuccessCallbackData) => void;
 }) => {
     const handleDrop = useCallback(
         async (e: React.DragEvent<HTMLDivElement>) => {
