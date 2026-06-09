@@ -54,12 +54,15 @@ import sentry from '@proton/shared/lib/helpers/sentry';
 import { clipboard } from '../lib/clipboard';
 import { PASS_CONFIG, SENTRY_CONFIG } from '../lib/env';
 import { useDesktopContextMenu } from '../lib/hooks/useDesktopContextMenu';
+import { installStorageFlush } from '../lib/storage/storage.view';
 import { ExtensionUnlock } from './ExtensionUnlock';
 import { WelcomeScreen } from './Views/WelcomeScreen/WelcomeScreen';
 import { isFirstLaunch } from './firstLaunch';
 import locales from './locales';
 
 import './app.scss';
+
+installStorageFlush(window.ctxBridge);
 
 if (ENV === 'development') QA_SERVICE?.init(localStorage);
 
