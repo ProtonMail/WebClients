@@ -4,6 +4,7 @@ import { sub } from 'date-fns';
 import { ApiSyncState } from '@proton/activation/src/api/api.interface';
 import { ImportType } from '@proton/activation/src/interface';
 import { ADDRESS_FLAGS, ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS } from '@proton/shared/lib/constants';
+import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter.ts';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import useShowBYOESpotlightModal from './useShowBYOESpotlightModal';
@@ -14,6 +15,10 @@ jest.mock('@proton/account/addresses/hooks', () => ({
 
 jest.mock('@proton/account/user/hooks', () => ({
     useUser: jest.fn(),
+}));
+
+jest.mock('@proton/account/userSettings/hooks', () => ({
+    useUserSettings: jest.fn(),
 }));
 
 jest.mock('@proton/activation/src/logic/store', () => ({
@@ -67,6 +72,7 @@ const sync1 = {
 describe('useShowBYOESpotlightModal', () => {
     const mockUseAddresses = require('@proton/account/addresses/hooks').useAddresses;
     const mockUseUser = require('@proton/account/user/hooks').useUser;
+    const mockUseUserSettings = require('@proton/account/userSettings/hooks').useUserSettings;
     const mockUseEasySwitchSelector = require('@proton/activation/src/logic/store').useEasySwitchSelector;
     const mockGetAllSync = require('@proton/activation/src/logic/sync/sync.selectors').getAllSync;
     const mockSelectSyncListLoadingState =
@@ -95,11 +101,13 @@ describe('useShowBYOESpotlightModal', () => {
     it('should open the BYOE spotlight modal', () => {
         const addresses = [internalAddress];
         const user = { CreateTime: Math.floor(sub(new Date(), { months: 3 }).getTime() / 1000) };
+        const userSettings = { News: NEWSLETTER_SUBSCRIPTIONS_BITS.IN_APP_NOTIFICATIONS };
         const syncs = [sync1];
 
         mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
         mockUseAddresses.mockReturnValue([addresses]);
         mockUseUser.mockReturnValue([user]);
+        mockUseUserSettings.mockReturnValue([userSettings]);
         mockGetAllSync.mockReturnValue(syncs);
         mockSelectSyncListLoadingState.mockReturnValue('success');
         mockUseFeature.mockReturnValue({ feature: { Value: true } as any, update: jest.fn() });
@@ -189,6 +197,26 @@ describe('useShowBYOESpotlightModal', () => {
         mockGetAllSync.mockReturnValue(syncs);
         mockSelectSyncListLoadingState.mockReturnValue('success');
         mockUseFeature.mockReturnValue({ feature: { Value: false } as any, update: jest.fn() });
+
+        renderHook(() => useShowBYOESpotlightModal());
+
+        expect(openModalSpy).not.toHaveBeenCalled();
+    });
+
+    it('should not open the BYOE spotlight modal when user disabled in app notifications', () => {
+        const addresses = [internalAddress];
+        // user created the account 3 days ago
+        const user = { CreateTime: Math.floor(sub(new Date(), { months: 3 }).getTime() / 1000) };
+        const userSettings = { News: NEWSLETTER_SUBSCRIPTIONS_BITS.ANNOUNCEMENTS };
+        const syncs = [sync1];
+
+        mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
+        mockUseAddresses.mockReturnValue([addresses]);
+        mockUseUser.mockReturnValue([user]);
+        mockUseUserSettings.mockReturnValue([userSettings]);
+        mockGetAllSync.mockReturnValue(syncs);
+        mockSelectSyncListLoadingState.mockReturnValue('success');
+        mockUseFeature.mockReturnValue({ feature: { Value: true } as any, update: jest.fn() });
 
         renderHook(() => useShowBYOESpotlightModal());
 
