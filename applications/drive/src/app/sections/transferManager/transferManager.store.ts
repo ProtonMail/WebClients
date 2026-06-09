@@ -7,17 +7,24 @@ type TransferItem = {
     type: 'upload' | 'download';
 };
 
+export enum TransferManagerBannerType {
+    StorageFull = 'StorageFull',
+}
+
 // Mapped based on the transfer manager entry id, NOT the node uid
 type TransferManagerStore = {
     queue: Map<string, TransferItem>;
+    bannerType: TransferManagerBannerType | undefined;
     addItem: (entryId: string, item: TransferItem) => void;
     getItem: (entryId: string) => TransferItem | undefined;
+    setBannerType: (value: TransferManagerBannerType | undefined) => void;
 };
 
 export const useTransferManagerStore = create<TransferManagerStore>()(
     devtools(
         (set, get) => ({
             queue: new Map(),
+            bannerType: undefined,
 
             addItem: (entryId, item) => {
                 set((state) => ({
@@ -26,6 +33,8 @@ export const useTransferManagerStore = create<TransferManagerStore>()(
             },
 
             getItem: (entryId) => get().queue.get(entryId),
+
+            setBannerType: (value) => set({ bannerType: value }),
         }),
         { name: 'TransferManagerStore' }
     )

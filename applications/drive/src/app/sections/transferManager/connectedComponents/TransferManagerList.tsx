@@ -79,29 +79,27 @@ export const TransferManagerList = ({
     }
 
     return (
-        <div className="pb-4">
-            <div ref={listContainerRef}>
-                {listWidth && (
-                    <FixedSizeList
-                        height={listHeight}
-                        itemCount={items.length}
-                        itemData={{
-                            items,
-                            share,
-                            deprecatedRootShareId,
-                            cancelTransfer,
-                            retryTransfer,
-                            onReportAbuse,
-                        }}
-                        itemSize={itemSize}
-                        width={listWidth}
-                        itemKey={(index, { items }) => items[index].id}
-                        className={hasOverflow ? 'scrollbar-always-visible' : undefined}
-                    >
-                        {TransferListRow}
-                    </FixedSizeList>
-                )}
-            </div>
+        <div ref={listContainerRef}>
+            {listWidth && (
+                <FixedSizeList
+                    height={listHeight}
+                    itemCount={items.length}
+                    itemData={{
+                        items,
+                        share,
+                        deprecatedRootShareId,
+                        cancelTransfer,
+                        retryTransfer,
+                        onReportAbuse,
+                    }}
+                    itemSize={itemSize}
+                    width={listWidth}
+                    itemKey={(index, { items }) => items[index].id}
+                    className={hasOverflow ? 'scrollbar-always-visible' : undefined}
+                >
+                    {TransferListRow}
+                </FixedSizeList>
+            )}
         </div>
     );
 };
