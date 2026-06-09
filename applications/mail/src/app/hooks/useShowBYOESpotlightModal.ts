@@ -4,6 +4,7 @@ import { differenceInDays, fromUnixTime } from 'date-fns';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks.ts';
 import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import type { Sync } from '@proton/activation/src/logic/sync/sync.interface';
@@ -11,20 +12,29 @@ import { getAllSync, selectSyncListLoadingState } from '@proton/activation/src/l
 import { FeatureCode, useFeature } from '@proton/features';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
+import { hasBit } from '@proton/shared/lib/helpers/bitset.ts';
+import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter.ts';
 
 import { useMailGlobalModals } from '../containers/globalModals/GlobalModalProvider';
 import { ModalType } from '../containers/globalModals/inteface';
 
 const useShowBYOESpotlightModal = () => {
     const notifiedRef = useRef(false);
-    const [user] = useUser();
-    const [addresses = []] = useAddresses();
+    const [user, loadingUser] = useUser();
+    const [addresses = [], loadingAddresses] = useAddresses();
+    const [userSettings, loadingUserSettings] = useUserSettings();
     const allSyncs = useEasySwitchSelector(getAllSync);
     const syncListLoaded = useEasySwitchSelector(selectSyncListLoadingState);
     const { feature, update, loading: loadingFeature } = useFeature(FeatureCode.BYOESpotlightModal);
     const { notify } = useMailGlobalModals();
 
     const [hasAccessToBYOE, loadingBYOEFeatureStatus] = useBYOEFeatureStatus(false);
+
+    const isLoading =
+        loadingUser || loadingAddresses || loadingUserSettings || loadingFeature || loadingBYOEFeatureStatus;
+
+    const hasNotificationsEnabled =
+        !!userSettings && hasBit(userSettings.News, NEWSLETTER_SUBSCRIPTIONS_BITS.IN_APP_NOTIFICATIONS);
 
     const { forwardingSyncs, byoeSyncs } = useMemo(() => {
         const emailsFromAddresses = new Set(addresses.map((address) => address.Email));
@@ -47,17 +57,18 @@ const useShowBYOESpotlightModal = () => {
     // - User created its account more than 30 days ago
     // - User never seen the modal before (old feature flag system)
     // - User is not busy
+    // - User has in apps notifications enabled
     const canShowBYOESpotlightModal =
         !notifiedRef.current &&
-        !loadingBYOEFeatureStatus &&
         hasAccessToBYOE &&
         !getIsBYOEOnlyAccount(addresses) &&
         byoeSyncs.length === 0 &&
         syncListLoaded === 'success' &&
         differenceInDays(new Date(), fromUnixTime(user.CreateTime)) >= 30 &&
-        !loadingFeature &&
+        !isLoading &&
         !!feature?.Value &&
-        !domIsBusy();
+        !domIsBusy() &&
+        hasNotificationsEnabled;
 
     useEffect(() => {
         if (canShowBYOESpotlightModal) {
