@@ -10928,22 +10928,14 @@ __metadata:
     "@proton/cross-storage": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/i18n": "workspace:^"
+    "@proton/polyfill": "workspace:^"
     "@proton/shared": "workspace:^"
     "@protontech/crypto": "npm:*"
-    "@types/jasmine": "npm:^5.1.15"
     eslint: "npm:^9.39.4"
-    eslint-plugin-jasmine: "npm:^4.2.2"
-    jasmine: "npm:^5.13.0"
-    jasmine-core: "npm:^5.13.0"
-    karma: "npm:^6.4.4"
-    karma-chrome-launcher: "npm:^3.2.0"
-    karma-jasmine: "npm:^5.1.0"
-    karma-webpack: "npm:^5.0.1"
+    happy-dom: "npm:^20.9.0"
     pkijs: "npm:^3.4.0"
-    playwright: "patch:playwright@npm%3A1.58.2#~/.yarn/patches/playwright-npm-1.58.2-0c12daad27.patch"
-    ts-loader: "npm:^9.5.7"
     typescript: "npm:^6.0.2"
-    webpack: "npm:^5.106.2"
+    vitest: "npm:^4.1.7"
   languageName: unknown
   linkType: soft
 
@@ -50952,8 +50944,8 @@ __metadata:
   linkType: hard
 
 "vite@npm:^7.3.2":
-  version: 7.3.3
-  resolution: "vite@npm:7.3.3"
+  version: 7.3.5
+  resolution: "vite@npm:7.3.5"
   dependencies:
     esbuild: "npm:^0.27.0"
     fdir: "npm:^6.5.0"
@@ -51002,7 +50994,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10/c7fa17bc0aa530313417a28a144edcf910466b936cb192ce2c8cf7d6075e4b8e481b08a55ef71a7486757b03465b054d8c2cb49473d6fc9a0db8ac1dd641edff
+  checksum: 10/2e1337510d6b81948b035f8b096c9be22daf1101fc52ad3d06cad9e090057ba1c1396e5e12cbaac2485f9c6cdcc854f978fe862280bdfe1a9a4149c60734c125
   languageName: node
   linkType: hard
 
