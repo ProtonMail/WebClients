@@ -4,6 +4,7 @@ export enum AbuseCategoryType {
     Spam = 'spam',
     Copyright = 'copyright',
     ChildAbuse = 'child-abuse',
+    NonConsensualIntimate = 'non-consensual-intimate',
     StolenData = 'stolen-data',
     Malware = 'malware',
     Other = 'other',
