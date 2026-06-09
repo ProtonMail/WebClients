@@ -24,6 +24,8 @@ import {
 } from '@proton/docs-shared'
 import type { ErrorInfo } from 'react'
 import type { FeatureFlag } from '@proton/unleash/Flags'
+import type { UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
+import type { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema'
 
 /** Allows the editor to invoke methods on the client */
 export class ClientInvoker implements EditorRequiresClientMethods {
@@ -196,5 +198,17 @@ export class ClientInvoker implements EditorRequiresClientMethods {
 
   async reloadClient(): Promise<void> {
     return this.invokeClientMethod('reloadClient', [])
+  }
+
+  async storeSpreadsheetPatches(
+    patches: Parameters<NonNullable<UseSpreadsheetProps['onChangeHistory']>>[0],
+    updateHash: string,
+    type?: SheetsPatchesType,
+  ): Promise<void> {
+    return this.invokeClientMethod('storeSpreadsheetPatches', [patches, updateHash, type])
+  }
+
+  async hasBasePatchesStored(): Promise<boolean> {
+    return this.invokeClientMethod('hasBasePatchesStored', [])
   }
 }

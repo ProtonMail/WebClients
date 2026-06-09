@@ -16,7 +16,7 @@ import { splitExtension } from '@proton/shared/lib/helpers/file'
 import { functions } from '@rowsncolumns/functions'
 import { createCSVFromSheetData, createExcelFile, createODSFile } from '@rowsncolumns/toolkit'
 import type { ForwardedRef } from 'react'
-import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react'
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import { downloadLogsAsJSON } from '../../../../../docs/src/app/utils/downloadLogs'
 import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
 import { useApplication } from '../ApplicationProvider'
@@ -45,6 +45,8 @@ export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
   replaceLocalSpreadsheetState: (state: object, broadcastPatches: boolean) => void
   focusSheet: (() => void) | undefined
+  generatePatches: () => Promise<unknown>
+  applyPatches: (patches: unknown) => void
 }
 
 export type SpreadsheetProps = {
@@ -88,11 +90,16 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const isCreationOrConversion = !!editorInitializationConfig
   const canRunMigration = !isRevisionMode && canEdit && !isCreationOrConversion
 
+  const pushPatches = useMemo(() => clientInvoker.storeSpreadsheetPatches.bind(clientInvoker), [clientInvoker])
+  const hasBasePatchesStored = useMemo(() => clientInvoker.hasBasePatchesStored.bind(clientInvoker), [clientInvoker])
+
   const state = useProtonSheetsState({
     docState,
     functions,
     isReadonly,
     isConversionFlow: editorInitializationConfig?.mode === 'conversion',
+    pushPatches,
+    hasBasePatchesStored,
   })
   const didSetInitialVersion = useRef(false)
   const { setInitialVersion } = useVersioning(
@@ -156,13 +163,29 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     }
     throw new Error(`Spreadsheet cannot be exported to format ${format}`)
   }
-  useImperativeHandle(ref, (): SpreadsheetRef => ({ exportData, replaceLocalSpreadsheetState, focusSheet }))
+
+  const { generateStatePatches } = state
+  const getInitialSpreadsheetPatches = useCallback(async () => {
+    const patches = await generateStatePatches()
+    return patches
+  }, [generateStatePatches])
+
+  useImperativeHandle(
+    ref,
+    (): SpreadsheetRef => ({
+      exportData,
+      replaceLocalSpreadsheetState,
+      focusSheet,
+      generatePatches: getInitialSpreadsheetPatches,
+      applyPatches: state.applyPatches,
+    }),
+  )
 
   useEffect(() => {
     onEditorLoadResult(TranslatedResult.ok())
   }, [onEditorLoadResult])
 
-  const { onInsertFile, importExcelFile, importCSVFile, generateStatePatches, calculateNow } = state
+  const { onInsertFile, importExcelFile, importCSVFile, calculateNow } = state
   const handleExcelFileImport = useCallback(
     async (file: File, type: 'excel' | 'ods') => {
       setImportType(type)

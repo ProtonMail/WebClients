@@ -54,6 +54,9 @@ import type { DatabaseSchema } from '../../Database/Schema'
 import { CURRENT_DB_VERSION, DATABASE_NAME, migrations } from '../../Database/Schema'
 import { DocSizeTracker } from '../../SizeTracker/SizeTracker'
 import type { APP_NAMES } from '@proton/shared/lib/constants'
+import type { SheetsDatabaseSchema } from '../../Database/SheetsDBSchema'
+import { CURRENT_SHEETS_DB_VERSION, SHEETS_DATABASE_NAME, sheetsDBMigrations } from '../../Database/SheetsDBSchema'
+import { SheetsStorageService } from '../../Services/SheetsStorageService'
 
 export class AppDependencies extends DependencyContainer {
   constructor(
@@ -83,6 +86,32 @@ export class AppDependencies extends DependencyContainer {
         DATABASE_NAME,
         CURRENT_DB_VERSION,
         migrations,
+        this.get<LoggerInterface>(App_TYPES.Logger),
+      )
+    })
+
+    this.bind(App_TYPES.SheetsDatabase, () => {
+      return new IndexedDatabase<SheetsDatabaseSchema>(
+        SHEETS_DATABASE_NAME,
+        CURRENT_SHEETS_DB_VERSION,
+        sheetsDBMigrations,
+        this.get<LoggerInterface>(App_TYPES.Logger),
+      )
+    })
+    this.bind(App_TYPES.SheetsStorageService, () => {
+      if (compatWrapper.getCompatType() === 'public') {
+        return undefined
+      }
+
+      const cacheConfig = compatWrapper.getUserCompat().getKeysForLocalStorageEncryption()
+      if (!cacheConfig) {
+        return undefined
+      }
+
+      return new SheetsStorageService(
+        cacheConfig,
+        this.get<EncryptionService<EncryptionContext.LocalStorage>>(App_TYPES.LocalStorageEncryptionService),
+        this.get<IndexedDatabase<SheetsDatabaseSchema>>(App_TYPES.SheetsDatabase),
         this.get<LoggerInterface>(App_TYPES.Logger),
       )
     })
@@ -347,6 +376,7 @@ export class AppDependencies extends DependencyContainer {
         unleashClient,
         this.get<DocSizeTracker>(App_TYPES.SizeTracker),
         syncedEditorState,
+        this.get<SheetsStorageService>(App_TYPES.SheetsStorageService),
       )
     })
 

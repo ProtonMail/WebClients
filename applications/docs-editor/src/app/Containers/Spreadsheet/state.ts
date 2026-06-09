@@ -1,6 +1,12 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
 
-import type { CellXfs, SharedStrings, SheetData, UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
+import type {
+  CellXfs,
+  SharedStrings,
+  SheetData,
+  SpreadsheetPatch,
+  UseSpreadsheetProps,
+} from '@rowsncolumns/spreadsheet-state'
 import { Align, type CellInterface } from '@rowsncolumns/grid'
 import { useSearch, useSpreadsheetState as useSpreadsheetStateOriginal } from '@rowsncolumns/spreadsheet-state'
 import type {
@@ -36,6 +42,9 @@ import { CURRENCY_SYMBOL } from './constants'
 import { minutes_to_ms, seconds_to_ms } from '@proton/docs-core/lib/Util/time-utils'
 import { useEditorState } from '../EditorStateProvider'
 import { useApplication } from '../ApplicationProvider'
+import { getBufferHash } from '@proton/docs-core/lib/utils/hash'
+import { applyPatches as applyPatchesImmer } from 'immer'
+import { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema'
 
 // local state
 // -----------
@@ -308,11 +317,46 @@ function useYjsState({ localState, spreadsheetState, docState }: YjsStateDepende
 // proton sheets state
 // -------------------
 
-type OmitDepsKey = 'localState' | 'spreadsheetState' | 'onChangeHistory' | 'locale'
+function applyPatchToLocalState(patches: SpreadsheetPatch) {
+  useLocalSpreadsheetState.setState((state) => {
+    return {
+      ...state,
+      sheetData: patches.sheetData ? applyPatchesImmer(state.sheetData, patches.sheetData.patches) : state.sheetData,
+      sheets: patches.sheets ? applyPatchesImmer(state.sheets, patches.sheets.patches) : state.sheets,
+      protectedRanges: patches.protectedRanges
+        ? applyPatchesImmer(state.protectedRanges, patches.protectedRanges.patches)
+        : state.protectedRanges,
+      conditionalFormats: patches.conditionalFormats
+        ? applyPatchesImmer(state.conditionalFormats, patches.conditionalFormats.patches)
+        : state.conditionalFormats,
+      dataValidations: patches.dataValidations
+        ? applyPatchesImmer(state.dataValidations, patches.dataValidations.patches)
+        : state.dataValidations,
+      tables: patches.tables ? applyPatchesImmer(state.tables, patches.tables.patches) : state.tables,
+      namedRanges: patches.namedRanges
+        ? applyPatchesImmer(state.namedRanges, patches.namedRanges.patches)
+        : state.namedRanges,
+      charts: patches.charts ? applyPatchesImmer(state.charts, patches.charts.patches) : state.charts,
+      embeds: patches.embeds ? applyPatchesImmer(state.embeds, patches.embeds.patches) : state.embeds,
+      cellXfs:
+        state.cellXfs && patches.cellXfs ? applyPatchesImmer(state.cellXfs, patches.cellXfs.patches) : state.cellXfs,
+      sharedStrings: patches.sharedStrings
+        ? applyPatchesImmer(state.sharedStrings, patches.sharedStrings.patches)
+        : state.sharedStrings,
+    }
+  })
+}
+
+type OmitDepsKey = 'localState' | 'spreadsheetState' | 'onChangeHistory' | 'locale' | 'onHandledInitialLoad'
 type ProtonSheetsStateDependencies = Omit<SpreadsheetStateDependencies, OmitDepsKey> &
   Omit<ChartsStateDependencies, OmitDepsKey> &
   Omit<SearchStateDependencies, OmitDepsKey> &
-  Omit<YjsStateDependencies, OmitDepsKey> & { isReadonly: boolean; isConversionFlow: boolean }
+  Omit<YjsStateDependencies, OmitDepsKey> & {
+    isReadonly: boolean
+    isConversionFlow: boolean
+    pushPatches: (patches: unknown, updateHash: string, type?: SheetsPatchesType) => void
+    hasBasePatchesStored: () => Promise<boolean>
+  }
 
 export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
   const kv = useKeyValueState()
@@ -330,14 +374,43 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     currency: { code: localeCurrency, symbol: localeCurrencySymbol },
   }
 
+  const latestPatches = useRef<Parameters<NonNullable<UseSpreadsheetProps['onChangeHistory']>>[0][]>([])
   const onChangeHistory: UseSpreadsheetProps['onChangeHistory'] = (patches) => {
     if (deps.isReadonly && !deps.isConversionFlow) {
       console.error('Attempted to modify readonly spreadsheet')
       return
     }
+    latestPatches.current.push(patches)
     // eslint-disable-next-line @typescript-eslint/no-use-before-define
     yjsState.onBroadcastPatch(patches)
   }
+
+  /**
+   * NOTE: This only applies patches to the local state. None of the changes
+   * are persisted to the Yjs state. Currently only usable for debugging.
+   */
+  const applyPatches = useEvent((patchesArray: unknown) => {
+    if (!patchesArray || !Array.isArray(patchesArray)) {
+      console.error('Invalid patches', patchesArray)
+      return
+    }
+    for (const p of patchesArray) {
+      if (p.type === 0) {
+        // base patch
+        const baseState = p.patches[0][0]
+        useLocalSpreadsheetState.setState({
+          ...(baseState as LocalStateWithoutActions),
+          cellXfs: 'cellXfs' in baseState ? new Map(Object.entries(baseState.cellXfs as object)) : new Map(),
+          sharedStrings:
+            'sharedStrings' in baseState ? new Map(Object.entries(baseState.sharedStrings as object)) : new Map(),
+        })
+      } else {
+        // delta patch
+        const patches = p.patches[0][0] as SpreadsheetPatch
+        applyPatchToLocalState(patches)
+      }
+    }
+  })
 
   const localState = useLocalSpreadsheetState()
 
@@ -348,6 +421,43 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
   const depsWithLocalState = { localState, onChangeHistory, onRequestFonts, ...deps }
   const spreadsheetState = useSpreadsheetState({ ...depsWithLocalState, locale: localeResolved })
   const canvasGridMethods = useSpreadsheet()
+
+  const { pushPatches, hasBasePatchesStored } = deps
+  const wroteBasePatch = useRef(false)
+  useEffect(() => {
+    async function handleUpdatePropagation(update: Uint8Array<ArrayBuffer>) {
+      const patches = structuredClone(latestPatches.current.shift())
+      if (patches) {
+        // Only the first caller that sees no base patch claims the write.
+        if (!wroteBasePatch.current) {
+          const hasBasePatches = await hasBasePatchesStored()
+          // Re-check the ref after the await in case another update claimed it
+          // while we were waiting on the IndexedDB round-trip.
+          if (!hasBasePatches && !wroteBasePatch.current) {
+            wroteBasePatch.current = true // set synchronously before the async write
+            const baseState = { ...useLocalSpreadsheetState.getState() }
+            for (const key of Object.keys(baseState)) {
+              if (typeof baseState[key as keyof LocalState] === 'function') {
+                delete baseState[key as keyof LocalState]
+              }
+              if ((key === 'cellXfs' || key === 'sharedStrings') && baseState[key]) {
+                ;(baseState as any)[key] = Object.fromEntries(baseState[key].entries()) as unknown as
+                  | CellXfs
+                  | SharedStrings
+              }
+            }
+            pushPatches([[structuredClone(baseState), null]], '', SheetsPatchesType.Base)
+          }
+        }
+        const hash = await getBufferHash(update)
+        pushPatches(patches, hash)
+      }
+    }
+    deps.docState.addUpdatePropagationListener(handleUpdatePropagation)
+    return () => {
+      deps.docState.removeUpdatePropagationListener(handleUpdatePropagation)
+    }
+  }, [deps.docState, hasBasePatchesStored, pushPatches])
 
   const previousLocaleResolved = useRef(localeResolved)
   const { receivedEverythingFromRTS } = useSyncedState()
@@ -517,6 +627,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     onAddUserDefinedColor,
     kv,
     locale,
+    applyPatches,
   }
 }
 export type ProtonSheetsState = ReturnType<typeof useProtonSheetsState>
