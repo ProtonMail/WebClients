@@ -211,6 +211,9 @@
       "Copy to clipboard": [
         "ბუფერში კოპირება"
       ],
+      "Copy token": [
+        "ტოკენის კოპირება"
+      ],
       "Copy username": [
         "მომხმარებლის სახელის კოპირება"
       ],
@@ -246,6 +249,9 @@
       ],
       "Create note": [
         "შექმენით ჩანაწერი"
+      ],
+      "Create token": [
+        "ტოკენის შექმნა"
       ],
       "Create vault": [
         "საცავის შექმნა"
@@ -486,6 +492,9 @@
       ],
       "Multiple select": [
         "ერთზე მეტის მონიშვნა"
+      ],
+      "New token": [
+        "ახალი ტოკენი"
       ],
       "Next month": [
         "შემდეგი თვე"
@@ -776,6 +785,23 @@
       ],
       "Your password manager is not here? Request it.": [
         "თქვენი პაროლების მმართველი აქ არაა? მოითხოვეთ ის."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "აქტივობა"
+      ],
+      "Folder": [
+        "საქაღალდე"
+      ],
+      "Item": [
+        "ელემენტი"
+      ],
+      "Reason": [
+        "მიზეზი"
+      ],
+      "Vault": [
+        "საცავი"
       ]
     },
     "Browser": {
@@ -1715,6 +1741,9 @@
       "Created ${ time }.": [
         "შექმნის დრო: ${ time }."
       ],
+      "Created item": [
+        "შექმნა ელემენტი"
+      ],
       "Creating alias...": [
         "ფსევდონიმის შექმნა..."
       ],
@@ -1729,6 +1758,9 @@
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "ნაგულისხმევი საჩვენებელი სახელი ფსევდონიმებისთვის, რომლებიც შექმნილია ${ domainDisplay }-ით, თუ ფსევდონიმის საჩვენებელი სახელით არ გადაფარავთ."
+      ],
+      "Deleted item": [
+        "წაშალა ელემენტი"
       ],
       "Deleted items will be moved here first": [
         "წაშლილი ელემენტები ჯერ აქ იქნება გადმოტანილი"
@@ -2013,10 +2045,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
-      ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
       ],
@@ -2258,6 +2286,9 @@
       "Quickly autofill your saved credentials.": [
         "სწრაფი შევსება თქვენი შენახული ავტორიზაციის დეტალებით."
       ],
+      "Read item": [
+        "ელემენტის წაკითხვა"
+      ],
       "Reconnect": [
         "თავიდან დაკავშირება"
       ],
@@ -2495,6 +2526,9 @@
       ],
       "Update login": [
         "შესვლის დეტალების განახლება"
+      ],
+      "Updated item": [
+        "განაახლა ელემენტი"
       ],
       "Updating vault organization...": [
         "საცავის ორგანიზაციის განახლება..."
@@ -3745,6 +3779,9 @@
       "Value:": [
         "მნიშვნელობა:"
       ],
+      "Vault access": [
+        "საცავთან წვდომა"
+      ],
       "Vault ID": [
         "საცავის ID"
       ],
@@ -4032,6 +4069,9 @@
       "Coupon": [
         "კუპონი"
       ],
+      "e.g. 60": [
+        "მაგ: 60"
+      ],
       "E.g., ": [
         "მაგ. "
       ],
@@ -4187,6 +4227,17 @@
       ],
       "Unknown": [
         "უცნობი"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "აქტიური"
+      ],
+      "Agent": [
+        "აგენტი"
+      ],
+      "Expired": [
+        "ვადაგასულია"
       ]
     },
     "Success": {
