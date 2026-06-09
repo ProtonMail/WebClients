@@ -16,10 +16,12 @@ const ReportRowStatus = ({ status, rollbackState }: Props) => {
                 return (
                     <div className="inline-flex gap-2 color-success items-center">
                         <IcCheckmarkCircleFilled />
+                        {/* translator: When undoing an import in easy switch section has completed */}
                         <span>{c('Import status').t`Undo finished`}</span>
                     </div>
                 );
             case ApiReportRollbackState.ROLLING_BACK:
+                // translator: When the user decided to undo an import in easy switch section, action is running
                 return <span className="color-weak">{c('Import status').t`Undo in progress`}</span>;
         }
     }

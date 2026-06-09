@@ -15,6 +15,7 @@ const ImporterRowStatus = ({ state, errorCode }: Props) => {
         case ApiImporterState.PAUSED:
             return (
                 <div className="inline-flex gap-2 color-weak items-center">
+                    {/* translator: When the user decided to pause an import in easy switch section*/}
                     <span>{c('Import status').t`Paused`}</span>
                     {errorCode === ApiImporterError.ERROR_CODE_IMAP_CONNECTION && (
                         <Tooltip
@@ -39,10 +40,12 @@ const ImporterRowStatus = ({ state, errorCode }: Props) => {
                 </div>
             );
         case ApiImporterState.CANCELED:
+            // translator: When the user decides to cancel an import in easy switch section
             return <span className="color-weak">{c('Import status').t`Canceling...`}</span>;
         case ApiImporterState.DELAYED:
             return (
                 <div className="inline-flex gap-2 color-weak items-center">
+                    {/* translator: When an import in easy switch section has been delayed */}
                     <span>{c('Import status').t`Delayed`}</span>
                     <Tooltip
                         title={c('Tooltip')
@@ -59,6 +62,7 @@ const ImporterRowStatus = ({ state, errorCode }: Props) => {
          * Default case is "in progress"
          */
         default:
+            // translator: When an import in easy switch section is running
             return <span className="color-weak">{c('Import status').t`In progress...`}</span>;
     }
 };
