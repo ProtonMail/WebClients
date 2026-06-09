@@ -21,7 +21,7 @@ import { getIsMobileDevice } from '../../../../../util/device';
 import { parseFileReferences } from '../../../../../util/fileReferences';
 import { getMimeTypeFromExtension } from '../../../../../util/filetypes';
 import { sendMessageEditEvent } from '../../../../../util/telemetry';
-import { canUseNativeEditMode } from '../../../../../util/userAgent';
+import { canShowWebComposer, canUseNativeEditMode, isNativeMobileApp } from '../../../../../util/userAgent';
 import { AttachmentFileCard } from '../../../../Files/Common';
 import SiblingSelector from '../../../../SiblingSelector';
 import useCollapsibleMessageContent from '../useCollapsibleMessageContent';
@@ -211,11 +211,14 @@ const UserMessage = ({
     const canBeCollapsed = showCollapseButton || hasAttachments;
 
     const hasSiblingInfo = siblingInfo.count > 1;
-    const isMobile = getIsMobileDevice();
+    // getIsMobileDevice misses iPad in the native WebView (isIpad needs Safari).
+    const isMobile = getIsMobileDevice() || isNativeMobileApp();
 
     const handleEdit = () => {
         sendMessageEditEvent();
-        if (lumoNativeComposerEnabled && canUseNativeEditMode()) {
+        const shouldShowWebComposer = canShowWebComposer(lumoNativeComposerEnabled);
+        const shouldEditViaNativeComposer = !shouldShowWebComposer && canUseNativeEditMode();
+        if (shouldEditViaNativeComposer) {
             startNativeEdit();
         } else {
             setIsEditing(true);
