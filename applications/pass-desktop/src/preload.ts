@@ -49,6 +49,9 @@ const contextBridgeApi: ContextBridgeApi = {
     setSecret: (key, data) => invoke('biometrics:setSecret', key, data),
     deleteSecret: (key) => invoke('biometrics:deleteSecret', key),
 
+    /* session storage */
+    flushStorageData: () => invoke('storage:flush'),
+
     /* install info */
     getInstallInfo: () => invoke('installInfo:getInfo'),
     setInstallSourceReported: () => invoke('installInfo:setInstallSourceReported'),
