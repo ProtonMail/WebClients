@@ -26,9 +26,6 @@
       "Are you sure you want to delete all conversations?": [
         "Confermi di voler eliminare tutte le conversazioni?"
       ],
-      "Are you sure you want to delete the conversation?": [
-        "Confermi di voler eliminare la conversazione?"
-      ],
       "Attach screenshot(s)": [
         "Allega screenshot"
       ],
@@ -244,6 +241,9 @@
       ],
       "Refresh the page": [
         "Aggiorna la pagina"
+      ],
+      "Reload": [
+        "Ricarica"
       ],
       "Remove": [
         "Rimuovi"
@@ -2139,9 +2139,6 @@
       "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
         "Sei sicuro di voler eliminare \"${ project.name }\"? Questa azione non può essere annullata."
       ],
-      "Are you sure you want to delete this conversation? This action cannot be undone.": [
-        "Sei sicuro di voler eliminare questa conversazione? Questa azione non può essere annullata."
-      ],
       "Auto-retrieved": [
         "Recuperato automaticamente"
       ],
@@ -2473,9 +2470,6 @@
       ],
       "Create new project": [
         "Crea nuovo oggetto"
-      ],
-      "Delete conversation?": [
-        "Elimina la conversazione?"
       ],
       "Delete project?": [
         "Eliminare il progetto?"
@@ -3540,9 +3534,6 @@
       ],
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Assicurati di poter accedere comunque al tuo account e ai tuoi dati anche se perdi la password di ${ BRAND_NAME }."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Per una transizione senza problemi a ${ BRAND_NAME }, importa i tuoi dati da Google, Outlook e altri."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ricevi una notifica se la tua password o altri dati vengono resi pubblici da un servizio di terze parti."
@@ -6500,6 +6491,78 @@
         "SPRING SALE"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Ottieni l'offerta"
+      ],
+      "Summer Sale": [
+        "Saldi estivi"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mese"
+      ],
+      "15 GB storage": [
+        "15 GB di archiviazione"
+      ],
+      "2 TB data storage": [
+        "2 TB di archiviazione dati"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB di archiviazione: 40 volte il tuo piano attuale"
+      ],
+      "3 TB data storage": [
+        "3 TB di archiviazione dati"
+      ],
+      "500 GB storage": [
+        "500 GB di archiviazione"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tutte le funzionalità premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tutte le funzionalità premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Gli sconti si basano sui prezzi mensili standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Accesso completo a ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Account individuali per sei utenti"
+      ],
+      "Individual accounts for you and a partner": [
+        "Account individuali per te e un'altra persona"
+      ],
+      "Online document and spreadsheet editor": [
+        "Editor di documenti e fogli di calcolo online"
+      ],
+      "Recover previous file versions": [
+        "Recupera le versioni precedenti dei file"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protezione più efficace dalle minacce informatiche"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Passa al nostro piano annuale e risparmia ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Cartelle, etichette e filtri illimitati"
+      ],
+      "Use your own email domain": [
+        "Usa il tuo dominio email personale"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "per 12 mesi"
+      ],
+      "SUMMER SALE": [
+        "SALDI ESTIVI"
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Controlla la sicurezza dell'account"
@@ -7155,9 +7218,6 @@
       ],
       "Human verification": [
         "Verifica umana"
-      ],
-      "Import emails, calendars, contacts": [
-        "Importa email, calendari, contatti"
       ],
       "Indexed Drive documents": [
         "Documenti indicizzati di Drive"
