@@ -563,6 +563,9 @@
       "Keep my subscription": [
         "保持訂閱"
       ],
+      "Later": [
+        "稍後"
+      ],
       "Learn more": [
         "瞭解詳情"
       ],
@@ -5431,24 +5434,6 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "從其他雙重驗證應用程式**匯入您的現有代碼**，例如 Google Authenticator"
-      ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**第一步：使用您的推薦連結**邀請朋友加入 ${ BRAND_NAME }。"
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**第一步：**使用您的推薦連結邀請朋友加入 ${ BRAND_NAME }。"
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**第二步：**您的朋友將取得該方案的 **2 週免費**。"
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**第二步：**您的朋友將取得該方案的 2 週免費。"
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**第三步：**每當有使用者訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**第三步：**每成功推薦一人訂閱方案，您將獲得 **${ referrerRewardAmount } 可用額度**。"
       ],
       "**Sync codes** to all your devices": [
         "**同步代碼**到您的所有裝置"
@@ -11198,6 +11183,78 @@
         "春季特賣"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "取得優惠"
+      ],
+      "Summer Sale": [
+        "夏季特賣"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/每月"
+      ],
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "2 TB data storage": [
+        "2 TB 資料儲存空間"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 儲存空間：您目前方案的 40 倍"
+      ],
+      "3 TB data storage": [
+        "3 TB 資料儲存空間"
+      ],
+      "500 GB storage": [
+        "500 GB 儲存空間"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣以標準月費定價為基礎。您的訂閱將在帳單週期結束時以標準年費率續訂。"
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "完整存取 ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "6 位使用者的個人帳號"
+      ],
+      "Individual accounts for you and a partner": [
+        "供您與夥伴使用的個人帳號"
+      ],
+      "Online document and spreadsheet editor": [
+        "線上文件和試算表編輯器"
+      ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
+      ],
+      "Stronger protection against cyber threats": [
+        "針對網路威脅的更強大保護"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "切換至我們的年度方案並節省 ${ toYearlyDiscountAmount }！"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "資料夾、標籤與篩選器無上限"
+      ],
+      "Use your own email domain": [
+        "使用您自己的電子郵件網域"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12 個月"
+      ],
+      "SUMMER SALE": [
+        "夏季特賣"
+      ]
+    },
     "Recovery Email": {
       "Cancel": [
         "取消"
@@ -13742,9 +13799,6 @@
       "Import contacts": [
         "匯入聯絡人"
       ],
-      "Import emails, calendars, contacts": [
-        "匯入電子郵件、行事曆、聯絡人"
-      ],
       "Import events": [
         "匯入事件"
       ],
@@ -13753,6 +13807,9 @@
       ],
       "Import groups": [
         "匯入群組"
+      ],
+      "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "使用${ PRODUCT_NAMES.EASY_SWITCH }匯入"
       ],
       "Import your data to ${ BRAND_NAME }": [
         "匯入您的資料至 ${ BRAND_NAME }"

@@ -404,6 +404,9 @@
       "Expand video conferencing widget": [
         "Udvid widget til videokonference"
       ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "Opdag ${ MEET_SHORT_APP_NAME }"
+      ],
       "Explore other plans": [
         "Udforsk andre abonnementer"
       ],
@@ -1462,6 +1465,104 @@
       ],
       "Yearly": [
         "Årligt"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Aktiveret"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adressen bruges allerede af en bruger uden for din organisation. Kontakt kundesupport for at løse dette"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Konfigurer migrering"
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status for datamigration fra Google Workspace til ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "E-mails"
+      ],
+      "Errors": [
+        "Fejl"
+      ],
+      "Estimated size": [
+        "Anslået størrelse"
+      ],
+      "Find out what can be migrated.": [
+        "Find ud af hvad der kan migreres."
+      ],
+      "Has errors": [
+        "Fejlbehæftet"
+      ],
+      "In progress": [
+        "I gang"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresse for medlem ikke fundet. Kontakt venligst vores kundesupport for at løse dette"
+      ],
+      "Migrate": [
+        "Migrer"
+      ],
+      "Migrated": [
+        "Migreret"
+      ],
+      "Migration status": [
+        "Migrationsstatus"
+      ],
+      "Missing organization private key": [
+        "Mangler organisationens private nøgle"
+      ],
+      "Missing organization public key": [
+        "Mangler organisationens offentlige nøgle"
+      ],
+      "No users to display": [
+        "Ingen brugere at vise"
+      ],
+      "Not activated": [
+        "Ikke aktiveret"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisationen har ikke nok ledige pladser"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisationen har ikke tilstrækkelig ledig lagerplads"
+      ],
+      "Pending": [
+        "Afventer"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Vælg præcis det du gerne vil migrere. Det vil gælde for brugere i organisationen."
+      ],
+      "Select users to migrate": [
+        "Vælg brugere at migrere"
+      ],
+      "Size": [
+        "Størrelse"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Bruger"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Brugere, som har tilgået deres ${ BRAND_NAME }-konto"
+      ],
+      "What are you migrating?": [
+        "Hvad migrerer du?"
+      ],
+      "You": [
+        "Dig"
       ]
     },
     "Browser": {
@@ -3138,8 +3239,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Sørg for, at du stadig kan få adgang til din konto og data, selv hvis du mister din ${ BRAND_NAME }-adgangskode."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "For en smidig overgang til ${ BRAND_NAME }, importér dine data fra Google, Outlook og andre."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Importér dine data fra Google, Outlook og andre for at sikre en smidig onboarding af dit team til ${ BRAND_NAME }."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Få besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste."
@@ -3338,17 +3439,6 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Dit ${ PLAN_NAMES[PLANS.PASS] }-abonnement er til en særpris på ${ price } pr. år. Hvis du nedgraderer til et gratis abonnement, mister du rabatten permanent, selv hvis du opgraderer igen engang i fremtiden."
-      ]
-    },
-    "Drawer tab, Action": {
-      "Download for Linux": [
-        "Download til Linux"
-      ],
-      "Download for macOS": [
-        "Download til macOS"
-      ],
-      "Download for Windows": [
-        "Download til Windows"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3583,6 +3673,9 @@
       ],
       "Aliases could not be loaded": [
         "Aliasser kunne ikke indlæses"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Al lagerplads er blevet tildelt. Reducér lagerplads tildelt andre brugere."
       ],
       "Already a member of this calendar": [
         "Allerede et medlem af denne kalender"
@@ -3913,8 +4006,17 @@
       "Please complete the billing details": [
         "Udfyld faktureringsoplysningerne"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Sæt et brugerdomæne op, før du tilføjer adresser."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Konfigurer et brugerdomæne, inden du tilføjer brugere til din organisation."
+      ],
       "Please create an address first.": [
         "Opret en adresse først."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Aktivér flerbrugerunderstøttelse inden du tilføjer brugere til din organisation."
       ],
       "Please enter a valid postal code": [
         "Indtast et gyldigt postnummer"
@@ -3946,6 +4048,9 @@
       ],
       "Please select billing state": [
         "Vælg venligst faktureringsstat"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Opgradér venligst til et erhvervsabonnement med mere end 1 bruger for at administrere flere brugere."
       ],
       "Port is required": [
         "Port er påkrævet."
@@ -4083,9 +4188,6 @@
       "Try using only letters, numerals, and _.-": [
         "Prøv kun at bruge bogstaver, tal og _.-"
       ],
-      "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "Kunne ikke indlæse VPN-kontrolpanel. Kontrollér din forbindelse, og forsøg igen."
-      ],
       "Unexpected error, we can't import the contacts": [
         "Uventet fejl, vi kan ikke importere kontakterne"
       ],
@@ -4128,6 +4230,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Du har nået grænsen for antallet af kontakter på din konto"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Du har opbrugt alle adresser i dit abonnement. Opgradér dit abonnement for at tilføje en ny adresse, eller deaktivér en adresse på din konto."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Du har brugt alle brugere i dit abonnement. Opgradér abonnementet for at tilføje en ny bruger."
       ],
       "You must set a name": [
         "Du skal angive et navn"
@@ -5209,12 +5317,13 @@
       "${ storage } storage": [
         "${ storage } lagerplads"
       ],
+      "${ total } user found": [
+        "${ total } bruger fundet",
+        "${ total } brugere fundet"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt blev opdateret.",
         "${ updated } kontakter blev opdateret."
-      ],
-      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
-        "${ VPN_APP_NAME } maskerer din IP-adresse, så websteder ikke kan identificere dig."
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } skjuler din internettrafik. ${ PASS_SHORT_APP_NAME } skjuler din identitet – ubegrænsede **hide-my-email-aliasser** og **mørk-net advarsler** hvis dine data lækkes."
@@ -5226,26 +5335,14 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/måned)"
       ],
-      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
-        "**Auto-forbindelse**: Åbner og forbinder til VPN, så snart du tænder din enhed."
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Inviter dine venner** til ${ BRAND_NAME } med dit henvisningslink."
       ],
-      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**Kill switch**: Stopper datalækager ved at blokere din internetadgang, hvis VPN-forbindelsen afbrydes uventet."
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**De får${ refereeRewardAmount }** i kredit, hvis de tegner et abonnement."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Trin 1:** Inviter dine venner til ${ BRAND_NAME } med dit henvisningslink."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Trin 2:** Dine venner får 2 uger gratis på deres valgte ${ BRAND_NAME }-abonnement."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Trin 2:** Dine venner får 2 uger gratis på deres abonnement."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Trin 3:** Få ${ referrerRewardAmount } i kredit for hver ven, der opretter et abonnement."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Trin 3:** Få ${ referrerRewardAmount } i kredit for hver person, der opretter et abonnement."
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Du får ${ referrerRewardAmount }** i kredit for hver ven, der tegner et abonnement."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagerplads"
@@ -5269,26 +5366,11 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan kun bruges til at bekræfte én ${ BRAND_NAME }-konto"
       ],
-      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
-        "En sikker forbindelse er afgørende, når der arbejdes eksternt. En VPN beskytter virksomhedsdata mod cybertrusler og holder dit arbejde privat."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruger er en konto, der er knyttet til et enkelt brugernavn, en enkelt postkasse og en enkelt person"
       ],
-      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "En VPN krypterer din forbindelse og skjuler din IP-adresse, hvilket gør det meget sværere for nogen at spore eller overvåge din browsing."
-      ],
-      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "En VPN skjuler din IP-adresse og krypterer din browseraktivitet, hvilket gør det sværere for websteder, annoncører og ISPs at spore dig over tid."
-      ],
-      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
-        "En VPN er en sikker tunnel mellem din enhed og internettet. Den skjuler din placering og aktivitet for din internetudbyder (ISP) og de websteder, du besøger."
-      ],
       "Account successfully updated": [
         "Opdatering af konto lykkedes"
-      ],
-      "Ad targeting": [
-        "Annoncemålretning"
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Tilføj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
@@ -5307,9 +5389,6 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adressebekræftelse med Betroede nøgler er aktiv for denne e-mail. For at kunne sende til denne adresse skal de offentlige nøgler, som kan benyttes hertil, først gøres betroede."
-      ],
-      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
-        "Annoncører sporer din browsing for at vise målrettede annoncer. ${ VPN_APP_NAME } blokerer trackere og annoncer, hvilket gør din forbindelse hurtigere og forbedrer din onlineoplevelse."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-drevet assistent hjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
@@ -5457,9 +5536,6 @@
       ],
       "Close this screen to exit.": [
         "Luk denne skærm for at afslutte."
-      ],
-      "Connect to ${ VPN_APP_NAME } to browse privately": [
-        "Forbind til ${ VPN_APP_NAME } for at browse privat"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilføjet til gruppen ${ contactGroupName }"
@@ -5675,14 +5751,8 @@
       "Frequency modifications will be lost.": [
         "Hyppighedsændringer vil gå tabt."
       ],
-      "Geoblocking": [
-        "Geoblokering"
-      ],
       "Google Pay mark": [
         "Google Pay-mærke"
-      ],
-      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
-        "Regeringer og internetudbydere kan overvåge din online aktivitet. Ved at skjule din rigtige IP og kryptere din aktivitet bliver din browsing privat."
       ],
       "here": [
         "her"
@@ -5745,9 +5815,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
       ],
-      "In restrictive countries": [
-        "I restriktive lande"
-      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I det næste trin kan du foretage en indbetaling ved hjælp af en Bitcoin-adresse."
       ],
@@ -5777,9 +5844,6 @@
       ],
       "It's better to have:": [
         "Det er bedre at have:"
-      ],
-      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "Det er bedst at bruge en VPN til enhver tid. Men her er, hvornår cybertrusler kan være højest:"
       ],
       "JCB logo": [
         "JCB logo"
@@ -5871,9 +5935,6 @@
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
       ],
-      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
-        "De fleste offentlige WiFi-netværk er sikre, men nogle mangler sikkerhed, hvilket udsætter dig for cybertrusler. En VPN krypterer din trafik og holder dig beskyttet."
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
       ],
@@ -5916,9 +5977,6 @@
       "Not a valid URL": [
         "Ugyldig URL"
       ],
-      "Not connected": [
-        "Ikke forbundet"
-      ],
       "Not on the same day": [
         "Ikke samme dag"
       ],
@@ -5936,9 +5994,6 @@
       ],
       "Occurrences previously updated by the organizer will be kept.": [
         "Forekomster som arrangøren tidligere har opdateret vil blive opbevaret."
-      ],
-      "On public WiFi networks": [
-        "På offentlige WiFi-netværk"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
@@ -6055,9 +6110,6 @@
       "Privacy by default": [
         "Privatlivsbeskyttelse som standard"
       ],
-      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
-        "Privat browsing (eller \"inkognito\"-tilstand) er kun nyttig til at holde din aktivitet skjult på din enhed. Den forhindrer din browser i at gemme historik og cookies, men den gør dig ikke usynlig. Din internetudbyder, netværksadministrator og de websteder, du besøger, kan stadig se, hvad du foretager dig online."
-      ],
       "Range already exists.": [
         "Intervallet findes allerede."
       ],
@@ -6088,9 +6140,6 @@
       "Saving event": [
         "Gemmer begivenhed",
         "Gemmer begivenheder"
-      ],
-      "Scan the QR code with your mobile device": [
-        "Scan QR-koden med din mobilenhed"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vælg det e-mail-format, der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
@@ -6125,20 +6174,11 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
       ],
-      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
-        "Nogle regeringer blokerer eller begrænser adgangen til visse websteder. En VPN hjælper med at omgå censur, samtidig med at din aktivitet og identitet holdes privat."
-      ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Nogle af dine svar på forekomster, som arrangøren tidligere har opdateret, vil gå tabt."
       ],
-      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
-        "Nogle websteder og streamingservices blokerer indhold efter region. En VPN giver dig mulighed for at omgå disse begrænsninger og få fri adgang til internettet."
-      ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynd at dele det med dine kontakter, og brug det til onlinetjenester."
-      ],
-      "Stay connected effortlessly by enabling the following VPN settings:": [
-        "Hold forbindelsen ubesværet ved at aktivere følgende VPN-indstillinger:"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Indsend et depositum ved hjælp af følgende adresse eller scan QR-koden. Din indbetaling vil blive afspejlet på din konto efter bekræftelse."
@@ -6158,9 +6198,6 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Abonnement udløber: For at beholde dine ${ planName } fordele, skal du fornye din abonnement i Apple App Store inden ${ byDate }. ${ reactivateLink }"
-      ],
-      "Surveillance": [
-        "Overvågning"
       ],
       "Symbols (#$&)": [
         "Symboler (#$&)"
@@ -6246,12 +6283,6 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dette link kan være et homografisk angreb. Bekræft at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
       ],
-      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
-        "Det betyder, at din internetudbyder og de websteder, du besøger, ikke kan forbinde dine personlige oplysninger med din online-aktivitet."
-      ],
-      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
-        "Denne unikke kode kan bruges af websteder og ISPs (internetudbydere) til at forbinde din placering og browserhistorik til din enhed."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Dette vil logge dig ud af alle kontoer, der i øjeblikket er logget ind."
       ],
@@ -6293,9 +6324,6 @@
       ],
       "Total VPN connections": [
         "Samlet antal VPN-forbindelser"
-      ],
-      "Tracking": [
-        "Sporing"
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Stol på \"${ activeSignerText }\"-nøglen for at verificere nye beskeder fra denne kontakt."
@@ -6339,9 +6367,6 @@
       "Visa Secure logo": [
         "Visa Secure-logo"
       ],
-      "VPN IP": [
-        "VPN-IP"
-      ],
       "Warning": [
         "Advarsel"
       ],
@@ -6383,12 +6408,6 @@
       ],
       "When can appointments be booked?": [
         "Hvornår kan der bookes aftaler?"
-      ],
-      "When working remotely": [
-        "Når du arbejder eksternt"
-      ],
-      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
-        "Når du forbinder til VPN, bruges krypteringsteknologi til at skjule din IP-adresse (en unik kode tildelt din enhed)."
       ],
       "Where will the appointment take place?": [
         "Hvor vil aftalen finde sted?"
@@ -6594,15 +6613,6 @@
       "Your information was found on ${ displayedDate }": [
         "Dine oplysninger blev fundet ${ displayedDate }"
       ],
-      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
-        "Din internetudbyder kan overvåge og sommetider sælge dine data, eller endda begrænse hvilke websteder du kan få adgang til."
-      ],
-      "Your IP": [
-        "Din IP"
-      ],
-      "Your IP address is visible and can be used to track your online activity.": [
-        "Din IP-adresse er synlig og kan bruges til at spore din online aktivitet."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "Dine loginoplysninger vil ikke blive gemt, når importen er gennemført."
       ],
@@ -6612,17 +6622,11 @@
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Din næste faktureringsdato er ${ renewalTime }. Du kan annullere når som helst. Kontakt support, hvis du har brug for en øjeblikkelig ændring af dit abonnement."
       ],
-      "Your online activity is protected": [
-        "Din online aktivitet er beskyttet"
-      ],
       "Your password was leaked:": [
         "Din adgangskode er blevet lækket:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
-      ],
-      "Your physical location is visible and can be used to restrict your access to the internet.": [
-        "Din fysiske placering er synlig og kan bruges til at begrænse din adgang til internettet."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Dit planlagte abonnement starter ${ renewalTime } og fornyes automatisk hver ${ cycle } måned.",
@@ -7375,15 +7379,6 @@
       ],
       "Your domain": [
         "Dit domæne"
-      ],
-      "Your IP": [
-        "Din IP"
-      ],
-      "Your ISP": [
-        "Din ISP"
-      ],
-      "Your location": [
-        "Din placering"
       ],
       "Your password (admin)": [
         "Din adgangskode (admin)"
@@ -9956,6 +9951,9 @@
       "San Francisco": [
         "San Francisco"
       ],
+      "Search": [
+        "Søg"
+      ],
       "Search events": [
         "Søg efter begivenheder"
       ],
@@ -9964,6 +9962,9 @@
       ],
       "Search for name or email": [
         "Søg efter navn eller e-mail"
+      ],
+      "Search for users or addresses": [
+        "Søg efter brugere eller adresser"
       ],
       "Search parent folder": [
         "Søg i overordnet mappe"
@@ -10211,6 +10212,78 @@
       ],
       "SPRING SALE": [
         "FORÅR SALG"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Tag imod tilbuddet"
+      ],
+      "Summer Sale": [
+        "Sommerudsalg"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "2 TB data storage": [
+        "2 TB datalagerplads"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagerplads: 40x dit nuværende abonnement"
+      ],
+      "3 TB data storage": [
+        "3 TB datalagerplads"
+      ],
+      "500 GB storage": [
+        "500 GB lagerplads"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium-funktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium-funktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter er baseret på standardpriser pr. måned. Dit abonnement fornyes til standardprisen pr. år, når faktureringscyklussen slutter."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Fuld adgang til ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuelle konti til 6 brugere"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuelle konti til dig og en partner"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online-editor til dokumenter og regneark"
+      ],
+      "Recover previous file versions": [
+        "Gendan tidligere filversioner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Stærkere beskyttelse mod cybertrusler"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Skift til vores årlige abonnement og spar ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ubegrænset antal mapper, etiketter og filtre"
+      ],
+      "Use your own email domain": [
+        "Brug dit eget e-mail-domæne"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "i 12 måneder"
+      ],
+      "SUMMER SALE": [
+        "SOMMERUDSALG"
       ]
     },
     "Referral": {
@@ -12014,9 +12087,6 @@
       "Deleting contacts": [
         "Sletter kontakter"
       ],
-      "Desktop": [
-        "Desktop"
-      ],
       "Discard changes?": [
         "Kassér ændringer?"
       ],
@@ -12034,9 +12104,6 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Download ${ DRIVE_APP_NAME }-apps"
-      ],
-      "Download the app": [
-        "Download appen"
       ],
       "Drop to upload": [
         "Slip for at uploade"
@@ -12110,9 +12177,6 @@
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Få **${ referralInfo.uiData.refereeRewardAmount }** i kreditter med ${ planTitle }"
       ],
-      "Get more from your VPN": [
-        "Få mere ud af deres VPN"
-      ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Få mere lagerplads med ${ MAIL_APP_NAME } Plus"
       ],
@@ -12143,9 +12207,6 @@
       "Host": [
         "Vært"
       ],
-      "How does it all work?": [
-        "Hvordan fungerer det hele?"
-      ],
       "How does it work?": [
         "Hvordan fungerer det?"
       ],
@@ -12161,9 +12222,6 @@
       ],
       "Import contacts": [
         "Importér kontakter"
-      ],
-      "Import emails, calendars, contacts": [
-        "Importer e-mails, kalendere, kontakter"
       ],
       "Import events": [
         "Importer begivenheder"
@@ -12192,20 +12250,17 @@
       "Location": [
         "Placering"
       ],
-      "Make a secure connection your default": [
-        "Gør en sikker forbindelse til din standard"
-      ],
       "Merge contacts": [
         "Flet kontakter"
       ],
       "Merging contacts": [
         "Fletter kontakter"
       ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Flyt din organisation til ${ BRAND_NAME }"
+      ],
       "Minicalendar": [
         "Minikalender"
-      ],
-      "Mobile": [
-        "Mobil"
       ],
       "Need more aliases?": [
         "Brug for flere aliasser?"
@@ -12266,9 +12321,6 @@
       ],
       "Previous": [
         "Forrige"
-      ],
-      "Private browsing vs VPN": [
-        "Privat browsing vs. VPN"
       ],
       "Processing...": [
         "Behandler..."
@@ -12429,6 +12481,9 @@
       "Summary": [
         "Sammenfatning"
       ],
+      "Summer Sale": [
+        "Sommertilbud"
+      ],
       "The booking feature is currently unavailable.": [
         "Denne reservationsfunktion er ikke tilgængelig i øjeblikket."
       ],
@@ -12486,9 +12541,6 @@
       "Verifying your payment...": [
         "Bekræfter din betaling..."
       ],
-      "VPN explained": [
-        "VPN forklaret"
-      ],
       "Warning": [
         "Advarsel"
       ],
@@ -12509,15 +12561,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Velkommen til ${ BRAND_NAME } for Business"
-      ],
-      "What can a VPN protect you from?": [
-        "Hvad kan en VPN beskytte dig imod?"
-      ],
-      "What is a VPN?": [
-        "Hvad er en VPN?"
-      ],
-      "When is it most important to use a VPN?": [
-        "Hvornår er det vigtigst at bruge en VPN?"
       ],
       "You are all set": [
         "Så er du klar"

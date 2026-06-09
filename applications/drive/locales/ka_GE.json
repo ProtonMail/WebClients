@@ -490,9 +490,6 @@
       "Get a free ${ BRAND_NAME } address": [
         "მიიღეთ უფასო ${ BRAND_NAME }-ის მისამართი"
       ],
-      "Get Drive for Business": [
-        "მიიღეთ Drive for Business"
-      ],
       "Get in touch": [
         "დაგვიკავშირდით"
       ],
@@ -759,6 +756,9 @@
       ],
       "Quit": [
         "გასვლა"
+      ],
+      "Re-index": [
+        "რეინდექსაცია"
       ],
       "Re-sign": [
         "ხელახლა ხელმოწერა"
@@ -1150,6 +1150,9 @@
       "Verify account": [
         "ანგარიშის გადამოწმება"
       ],
+      "Verify now": [
+        "ახლა გადამოწმება"
+      ],
       "View": [
         "ნახვა"
       ],
@@ -1511,6 +1514,71 @@
       ],
       "Yearly": [
         "წლიურად"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "აქტიურია"
+      ],
+      "All": [
+        "ყველა"
+      ],
+      "Calendar": [
+        "კალენდარი"
+      ],
+      "Configure migration": [
+        "მიგრაციის მორგება"
+      ],
+      "Contacts": [
+        "კონტაქტები"
+      ],
+      "Emails": [
+        "ელფოსტები"
+      ],
+      "Errors": [
+        "შეცდომები"
+      ],
+      "Estimated size": [
+        "სავარაუდო ზომა"
+      ],
+      "Has errors": [
+        "აქვს შეცდომები"
+      ],
+      "In progress": [
+        "მიმდინარეობს"
+      ],
+      "Migrate": [
+        "მიგრაცია"
+      ],
+      "Migrated": [
+        "მიგრირებულია"
+      ],
+      "Migration status": [
+        "მიგრაციის სტატუსი"
+      ],
+      "Organization does not have enough seats available": [
+        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
+      ],
+      "Organization does not have enough storage available": [
+        "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
+      ],
+      "Pending": [
+        "რიგში"
+      ],
+      "Size": [
+        "ზომა"
+      ],
+      "Status": [
+        "სტატუსი"
+      ],
+      "User": [
+        "მომხმარებელი"
+      ],
+      "What are you migrating?": [
+        "რის მიგრაციას ახდენთ?"
+      ],
+      "You": [
+        "თქვენ"
       ]
     },
     "Browser": {
@@ -2865,9 +2933,6 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "დარწმუნდით, რომ კვლავ შეძლებთ წვდომას თქვენს ანგარიშსა და მონაცემებზე მაშინაც კი, თუ დაკარგავთ თქვენს ${ BRAND_NAME } პაროლს."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "იმისათვის, რომ შეუფერხებლად გადახვიდეთ ${ BRAND_NAME }-ზე, შემოიტანეთ თქვენი მონაცემები Google-დან, Outlook-დან და სხვა წყაროებიდან."
-      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "მიიღეთ გაფრთხილება, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
       ],
@@ -3197,6 +3262,9 @@
       "Aliases could not be loaded": [
         "ფსევდონიმების ჩატვირთვა შეუძლებელია"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "შესაძლო სივრცე მთლიანად გაცემულია. შეამცირეთ სხვა მომხმარებლების მიერ მოხმარებული ადგილის რაოდენობა."
+      ],
       "Already a member of this share": [
         "უკვე წარმოადგენს ამ გაზიარების წევრს"
       ],
@@ -3514,6 +3582,15 @@
       "Please activate your search again": [
         "თავიდან ჩართეთ შემცველობაში ძებნის ფუნქცია"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "მისამართების დამატებმდე თქვენი დომენის მორგება აუცილებელია."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "თქვენს ორგანიზაციაში მომხმარებლების ჩამატებამდე თქვენი დომენის მორგებაა საჭირო."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "მომხმარებლების ორგანიზაციაში ჩამატებამდე მრავალმომხმარებლიანი რეჟიმის ჩართვაა საჭირო."
+      ],
       "Please enter a valid postal code": [
         "გთხოვთ შეიყვანოთ სწორი საფოსტო კოდი"
       ],
@@ -3544,6 +3621,9 @@
       ],
       "Please select billing state": [
         "აირჩიეთ გადახდის მდგომარეობა"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "ბევრი მომხმარებლის სამართავად შეიძინეთ სატარიფო გეგმა, რომელიც 1-ზე მეტ მომხმარებელს შეიცავს."
       ],
       "Port is required": [
         "პორტი აუცილებელია"
@@ -3771,6 +3851,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "თქვენ მიაღწიეთ კონტაქტების რაოდენობის ზღვარს თქვენი ანგარიშისთვის"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "იყენებთ თქვენს სატარიფო გეგმაში შემავალ ყველა მომხმარებელს. ახალი მომხმარებლის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
       ],
       "You must set a name": [
         "სახელის დაყენება აუცილებელია"
@@ -4168,6 +4251,9 @@
       ],
       "More premium features": [
         "მეტი ფასიანი ფუნქცია"
+      ],
+      "Storage": [
+        "საცავი"
       ],
       "Unlimited hide-my-email aliases": [
         "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
@@ -4780,6 +4866,10 @@
       "${ storage } storage": [
         "${ storage } საცავი"
       ],
+      "${ total } user found": [
+        "აღმოჩენილია ${ total } მომხმარებელი",
+        "აღმოჩენილია ${ total } მომხმარებელი"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } კონტაქტი წარმატებით განახლდა.",
         "${ updated } კონტაქტი წარმატებით განახლდა."
@@ -4802,21 +4892,6 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: აჩერებს მონაცემების გაჟონვას თქვენი ინტერნეტის დაბლოკვით, თუ VPN გაითიშება."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**ნაბიჯი 1:** მოიწვიეთ თქვენი მეგობრები ${ BRAND_NAME }-ზე თქვენი რეფერალი ბმულით."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**ნაბიჯი 2:** თქვენი მეგობრები მიიღებენ 2 კვირას უფასოდ თავიანთ ${ BRAND_NAME }-ის სატარიფო გეგმაზე."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**ნაბიჯი 2:** თქვენი მეგობრები მიიღებენ 2 კვირას უფასოდ თავიანთ სატარიფო გეგმაზე."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**ნაბიჯი 3:** მიიღეთ ${ referrerRewardAmount }-ის კრედიტები ყოველი მეგობრისთვის, რომელიც გამოიწერს გეგმას."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**ნაბიჯი 3:** მიიღეთ ${ referrerRewardAmount }-ის კრედიტები ყოველი პიროვნებისთვის, რომელიც გამოიწერს სატარიფო გეგმას."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } დამატებითი საცავი"
@@ -5023,9 +5098,6 @@
       "Close this screen to exit.": [
         "გასასვლელად დახურეთ ეს ეკრანი."
       ],
-      "Cloud storage for businesses that take security seriously": [
-        "ღრუბლოვანი საცავი ბიზნესებისთვის, რომლებიც სერიოზულად ეკიდებიან უსაფრთხოებას"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "მიუერთდით ${ VPN_APP_NAME } ინტერნეტში უსაფრთხოდ სამუშაოდ"
       ],
@@ -5193,6 +5265,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "უზრუნველყავით სრულად პირადი და დაშიფრული კომუნიკაცია. მოითხოვეთ თქვენი უფასო ${ BRAND_NAME } ელფოსტის მისამართი ახლავე."
       ],
+      "Enter code": [
+        "შეიყვანეთ კოდი"
+      ],
       "Enter password": [
         "შეიყვანეთ პაროლი"
       ],
@@ -5341,6 +5416,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "შემდეგ ნაბიჯზე თქვენ საშუალება გექნებათ, დეპოზიტი ბიტკოინის მისამართით გადმოგვცეთ."
+      ],
+      "Included": [
+        "შეიცავს"
       ],
       "Index is empty.": [
         "ინდექსი ცარიელია."
@@ -5740,6 +5818,9 @@
       "Ready to add some photos?": [
         "მზად ბრძანდებით, სურათები დაამატოთ?"
       ],
+      "RECOMMENDED": [
+        "რეკომენდებულია"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "აღდგენის ინფორმაცია დარჩება ამ მოწყობილობაზე, თუ მას ხელით არ წაშლით."
       ],
@@ -5793,6 +5874,9 @@
       ],
       "Search Enabled": [
         "ძებნა ჩართულია"
+      ],
+      "Search error": [
+        "ძებნის შეცდომა"
       ],
       "Select a destination folder": [
         "აირჩიეთ სამიზნე საქაღალდე"
@@ -6465,6 +6549,9 @@
       ],
       "Expired": [
         "ვადაგასულია"
+      ],
+      "Fallback": [
+        "სარეზერვო ვარიანტი"
       ],
       "KOO": [
         "KOO"
@@ -9678,6 +9765,9 @@
       "San Francisco": [
         "სან-ფრანცისკო"
       ],
+      "Search": [
+        "ძებნა"
+      ],
       "Search for group name": [
         "ჯგუფის სახელის მოძებნა"
       ],
@@ -9818,6 +9908,78 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "ფასდაკლების მიღება"
+      ],
+      "Summer Sale": [
+        "ზაფხულის ფასდაკლება"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/თვე"
+      ],
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "2 TB data storage": [
+        "2 ტბ მონაცემთა საცავი"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 გბ საცავი: 40-ჯერ მეტი მიმდინარე სატარიფო გეგმაზე"
+      ],
+      "3 TB data storage": [
+        "3 ტბ მონაცემთა საცავი"
+      ],
+      "500 GB storage": [
+        "500 გბ საცავი"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }-ის, ${ PASS_SHORT_APP_NAME }-ის, ${ DRIVE_SHORT_APP_NAME }-ის, ${ VPN_SHORT_APP_NAME }-ისა და ${ CALENDAR_SHORT_APP_NAME }-ის ყველა პრემიუმ ფუნქცია"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }-ის, ${ PASS_SHORT_APP_NAME }-ის, ${ DRIVE_SHORT_APP_NAME }-ისა და ${ CALENDAR_SHORT_APP_NAME }-ის ყველა პრემიუმ ფუნქცია"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "ფასდაკლებები ეფუძნება სტანდარტულ ყოველთვიურ ტარიფს. თქვენი გამოწერა განახლდება სტანდარტული წლიური ტარიფით, როდესაც გადახდის ციკლი დასრულდება."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "სრული წვდომა ${ VPN_APP_NAME }-ზე"
+      ],
+      "Individual accounts for 6 users": [
+        "ინდივიდუალური ანგარიშები 6 მომხმარებლისთვის"
+      ],
+      "Individual accounts for you and a partner": [
+        "ინდივიდუალური ანგარიშები თქვენთვის და პარტნიორისთვის"
+      ],
+      "Online document and spreadsheet editor": [
+        "დოკუმენტებისა და ელექტრონული ცხრილების ონლაინ რედაქტორი"
+      ],
+      "Recover previous file versions": [
+        "წინა ფაილის ვერსიების აღდგენა"
+      ],
+      "Stronger protection against cyber threats": [
+        "უფრო ძლიერი დაცვა კიბერსაფრთხეებისგან"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "გადადით ჩვენს წლიურ პაკეტზე და დაზოგეთ ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
+      ],
+      "Use your own email domain": [
+        "გამოიყენეთ თქვენი საკუთარი ელფოსტის დომენი"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12 თვით"
+      ],
+      "SUMMER SALE": [
+        "ზაფხულის ფასდაკლება"
       ]
     },
     "Referral": {
@@ -11632,9 +11794,6 @@
       "Import contacts": [
         "კონტაქტების შემოტანა"
       ],
-      "Import emails, calendars, contacts": [
-        "ელფოსტების, კალენდრების, კონტაქტების შემოტანა"
-      ],
       "Import events": [
         "მოვლენების შემოტანა"
       ],
@@ -11995,6 +12154,9 @@
       ],
       "Summary": [
         "შეჯამება"
+      ],
+      "Summer Sale": [
+        "საზაფხულო ფასდაკლება"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "ფაილს აკლია ან აქვს არასწორი ხელმოწერა. მეტი ინფორმაციის მისაღებად გადადით მენიუ (:) -> დეტალები."

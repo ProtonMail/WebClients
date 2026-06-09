@@ -156,6 +156,9 @@
       "Add public holidays": [
         "Lägg till allmänna helgdagar"
       ],
+      "Add recovery options": [
+        "Lägg till återställningsalternativ"
+      ],
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "Lägg till hänvisningslänk till ${ MAIL_APP_NAME }-signatur"
       ],
@@ -260,6 +263,9 @@
       ],
       "Check import progress": [
         "Kontrollera importförloppet"
+      ],
+      "Check now": [
+        "Kontrollera nu"
       ],
       "Choose a file or drag it here": [
         "Välj en fil eller dra den hit"
@@ -678,6 +684,9 @@
       "Edit group": [
         "Redigera grupp"
       ],
+      "Edit invoice details": [
+        "Redigera fakturadetaljer"
+      ],
       "Edit invoice note": [
         "Redigera fakturaanteckning"
       ],
@@ -1074,6 +1083,9 @@
       "Manage labels": [
         "Hantera etiketter"
       ],
+      "Manage migration": [
+        "Hantera migrering"
+      ],
       "Manage subscription": [
         "Hantera prenumeration"
       ],
@@ -1365,6 +1377,9 @@
       "Review": [
         "Granska"
       ],
+      "Review recovery options": [
+        "Granska återställningsalternativ"
+      ],
       "Revoke": [
         "Återkalla"
       ],
@@ -1581,6 +1596,9 @@
       "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Logga ut från ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
+      "Sign out of ${ tokens[0].Account }": [
+        "Logga ut från ${ tokens[0].Account }"
+      ],
       "Sign out of all accounts": [
         "Logga ut från alla konton"
       ],
@@ -1793,6 +1811,9 @@
       ],
       "Verify domain": [
         "Verifiera domän"
+      ],
+      "Verify now": [
+        "Verifiera nu"
       ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Verifiera domänen ${ unverifiedSSODomain.DomainName }"
@@ -2852,6 +2873,9 @@
       ]
     },
     "BOSS": {
+      "${ relevantCount } of ${ totalCount }": [
+        "${ relevantCount } av ${ totalCount }"
+      ],
       "Account connected": [
         "Konto anslutet"
       ],
@@ -2860,9 +2884,6 @@
       ],
       "Activated": [
         "Aktiverat"
-      ],
-      "Add a domain": [
-        "Lägg till en domän"
       ],
       "Add domain": [
         "Lägg till domän"
@@ -2876,11 +2897,11 @@
       "All": [
         "Alla"
       ],
+      "An unknown error ocurred. Please refresh the page and try again": [
+        "Ett okänt fel uppstod. Uppdatera sidan och försök igen"
+      ],
       "Authenticate": [
         "Autentisera"
-      ],
-      "Authenticate to Google Workspace": [
-        "Autentisera till Google Workspace"
       ],
       "Authenticate your Google Workspace account": [
         "Autentisera ditt Google Workspace-konto"
@@ -2888,11 +2909,8 @@
       "Calendar": [
         "Kalender"
       ],
-      "Change": [
-        "Ändra"
-      ],
-      "Configure": [
-        "Konfigurera"
+      "Collapse step": [
+        "Minimera steg"
       ],
       "Configure domain": [
         "Konfigurera domän"
@@ -2900,17 +2918,23 @@
       "Configure migration": [
         "Konfigurera migrering"
       ],
+      "Configure users": [
+        "Konfigurera användare"
+      ],
       "Configure your domain": [
         "Konfigurera din domän"
       ],
       "Contacts": [
         "Kontakter"
       ],
-      "Continue migration": [
-        "Fortsätt migrering"
-      ],
       "Domain added": [
         "Domän tillagd"
+      ],
+      "Domain provider": [
+        "Domänleverantör"
+      ],
+      "Emails": [
+        "E-post"
       ],
       "Errors": [
         "Fel"
@@ -2918,20 +2942,17 @@
       "Estimated size": [
         "Beräknad storlek"
       ],
+      "Expand step": [
+        "Expandera steg"
+      ],
       "Failed to load OAuth": [
         "Misslyckades att ladda OAuth"
       ],
-      "Finalize your migration": [
-        "Slutför din migrering"
+      "Final step": [
+        "Sista steget"
       ],
       "Find out what can be migrated.": [
         "Ta reda på vad som kan migreras."
-      ],
-      "Finish setting up your business account": [
-        "Slutför inställningen av ditt företagskonto"
-      ],
-      "Go to Domain names": [
-        "Gå till domännamn"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace-app för att kopiera data till ${ BRAND_NAME }"
@@ -2942,6 +2963,9 @@
       "Has errors": [
         "Har fel"
       ],
+      "Import details": [
+        "Importdetaljer"
+      ],
       "In progress": [
         "Pågår"
       ],
@@ -2951,8 +2975,14 @@
       "Install migration app": [
         "Installera migreringsappen"
       ],
-      "Install Migration assistant": [
-        "Installera migrationsassistent"
+      "Invitation link": [
+        "Inbjudningslänk"
+      ],
+      "Invitation message": [
+        "Inbjudningsmeddelande"
+      ],
+      "invite link": [
+        "inbjudningslänk"
       ],
       "Loading your organization data": [
         "Laddar din organisationsdata"
@@ -2963,14 +2993,23 @@
       "Member address not found. Please contact customer support to resolve this": [
         "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta."
       ],
+      "Migrate": [
+        "Migrera"
+      ],
+      "Migrate accounts": [
+        "Migrera konton"
+      ],
+      "Migrate accounts to ${ BRAND_NAME }": [
+        "Migrera konton till ${ BRAND_NAME }"
+      ],
       "Migrate from Google Workspace": [
         "Migrera från Google Workspace"
       ],
-      "Migrate users to ${ BRAND_NAME }": [
-        "Migrera användare till ${ BRAND_NAME }"
-      ],
       "Migrated": [
         "Migrerad"
+      ],
+      "Migrated accounts": [
+        "Migrerade konton"
       ],
       "Migration includes": [
         "Migrering inkluderar"
@@ -2988,8 +3027,8 @@
       "Missing organization public key": [
         "Saknar organisationens offentliga nyckel"
       ],
-      "Move your users, emails, and settings from Google Workspace automatically. We’ll guide you through connecting your account, verifying your domain, and migrating users securely.": [
-        "Flytta dina användare, e-post och inställningar automatiskt från Google Workspace. Vi guidar dig genom att ansluta ditt konto, verifiera din domän och migrera användare säkert."
+      "Need help?": [
+        "Behöver du hjälp?"
       ],
       "No error details available. Please contact customer support for more information": [
         "Inga feldetaljer tillgängliga. Kontakta kundsupport för mer information."
@@ -3012,26 +3051,17 @@
       "Pending": [
         "Väntar"
       ],
+      "Please don’t close or refresh this window.": [
+        "Stäng inte eller uppdatera detta fönster."
+      ],
       "Refresh": [
         "Uppdatera"
-      ],
-      "Required to create user accounts": [
-        "Krävs för att skapa användarkonton"
       ],
       "Select at least one user to start a migration": [
         "Välj minst en användare för att starta en migrering"
       ],
       "Select users to migrate": [
         "Välj användare att migrera"
-      ],
-      "Set up": [
-        "Ställ in"
-      ],
-      "Set up billing information": [
-        "Ställ in faktureringsinformation"
-      ],
-      "Set up manually": [
-        "Ställ in manuellt"
       ],
       "Set up secure sending (DKIM)": [
         "Ställ in säker sändning (DKIM)"
@@ -3042,9 +3072,6 @@
       "Set up secure sending (SPF)": [
         "Ställ in säker sändning (SPF)"
       ],
-      "Set up two-factor authentication": [
-        "Ställ in tvåfaktorsautentisering"
-      ],
       "Settings": [
         "Inställningar"
       ],
@@ -3054,8 +3081,8 @@
       "Size": [
         "Storlek"
       ],
-      "Start migration": [
-        "Starta migrering"
+      "Skip": [
+        "Hoppa över"
       ],
       "Status": [
         "Status"
@@ -3063,14 +3090,14 @@
       "User": [
         "Användare"
       ],
+      "Users activated": [
+        "Användare aktiverade"
+      ],
       "Users migrated": [
         "Användare migrerade"
       ],
       "Verified": [
         "Verified"
-      ],
-      "Verify domain ownership": [
-        "Verifiera domänägarskap"
       ],
       "Verify installation": [
         "Verifiera installation"
@@ -3080,6 +3107,9 @@
       ],
       "Verify your domain to start a migration": [
         "Verifiera din domän för att starta en migrering"
+      ],
+      "Waiting for MX...": [
+        "Väntar på MX…"
       ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Vi kunde inte verifiera installationen, kontrollera att du har installerat den i ditt Google Workspace-konto och försök igen."
@@ -4005,9 +4035,6 @@
       ]
     },
     "Country name": {
-      "Abkhazia": [
-        "Abchazien"
-      ],
       "Afghanistan": [
         "Afghanistan"
       ],
@@ -4017,9 +4044,6 @@
       "Algeria": [
         "Algeriet"
       ],
-      "American Samoa": [
-        "Amerikanska Samoa"
-      ],
       "Andorra": [
         "Andorra"
       ],
@@ -4028,9 +4052,6 @@
       ],
       "Anguilla": [
         "Anguilla"
-      ],
-      "Antarctica": [
-        "Antarktis"
       ],
       "Antigua and Barbuda": [
         "Antigua och Barbuda"
@@ -4043,9 +4064,6 @@
       ],
       "Aruba": [
         "Aruba"
-      ],
-      "Ascension Island": [
-        "Ascension"
       ],
       "Australia": [
         "Australien"
@@ -4088,9 +4106,6 @@
       ],
       "Bolivia": [
         "Bolivia"
-      ],
-      "Bonaire, Sint Eustatius and Saba": [
-        "Karibiska Nederländerna"
       ],
       "Bosnia and Herzegovina": [
         "Bosnien och Hercegovina"
@@ -4167,9 +4182,6 @@
       "Congo (The Democratic Republic of the)": [
         "Kongo (Demokratiska republiken)"
       ],
-      "Congo, Democratic Republic of the": [
-        "Demokratiska republiken Kongo"
-      ],
       "Cook Islands": [
         "Cooköarna"
       ],
@@ -4227,23 +4239,14 @@
       "Estonia": [
         "Estland"
       ],
-      "Eswatini": [
-        "Swaziland"
-      ],
       "Ethiopia": [
         "Etiopien"
-      ],
-      "Falkland Islands": [
-        "Falklandsöarna"
       ],
       "Falkland Islands (Malvinas)": [
         "Falklandsöarna (Malvinas)"
       ],
       "Faroe Islands": [
         "Färöarna"
-      ],
-      "Federated States of Micronesia": [
-        "Mikronesiens federerade stater"
       ],
       "Fiji": [
         "Fiji"
@@ -4293,9 +4296,6 @@
       "Guadeloupe": [
         "Guadeloupe"
       ],
-      "Guam": [
-        "Guam"
-      ],
       "Guatemala": [
         "Guatemala"
       ],
@@ -4338,12 +4338,6 @@
       "Indonesia": [
         "Indonesien"
       ],
-      "International": [
-        "Internationell"
-      ],
-      "Iran": [
-        "Iran"
-      ],
       "Iraq": [
         "Irak"
       ],
@@ -4352,9 +4346,6 @@
       ],
       "Islamic Republic of Iran": [
         "Islamiska republiken Iran"
-      ],
-      "Isle of Man": [
-        "Isle of Man"
       ],
       "Israel": [
         "Israel"
@@ -4367,9 +4358,6 @@
       ],
       "Japan": [
         "Japan"
-      ],
-      "Jersey": [
-        "Jersey"
       ],
       "Jordan": [
         "Jordanien"
@@ -4401,9 +4389,6 @@
       "Lao People's Democratic Republic": [
         "Laos (Demokratiska folkrepubliken)"
       ],
-      "Laos": [
-        "Laos"
-      ],
       "Latvia": [
         "Lettland"
       ],
@@ -4415,9 +4400,6 @@
       ],
       "Liberia": [
         "Liberia"
-      ],
-      "Libya": [
-        "Libyen"
       ],
       "Libyan Arab Jamahiriya": [
         "Libyen"
@@ -4527,14 +4509,8 @@
       "Norfolk Island": [
         "Norfolkön"
       ],
-      "North Korea": [
-        "Nordkorea"
-      ],
       "North Macedonia": [
         "Nordmakedonien"
-      ],
-      "Northern Mariana Islands": [
-        "Nordmarianerna"
       ],
       "Norway": [
         "Norge"
@@ -4593,9 +4569,6 @@
       "Rwanda": [
         "Rwanda"
       ],
-      "Saint Barthélemy": [
-        "Saint Barthélemy"
-      ],
       "Saint Helena": [
         "Saint Helena"
       ],
@@ -4604,9 +4577,6 @@
       ],
       "Saint Lucia": [
         "Saint Lucia"
-      ],
-      "Saint Martin (French Part)": [
-        "Saint Martin (franska delen)"
       ],
       "Saint Pierre and Miquelon": [
         "Saint Pierre och Miquelon"
@@ -4641,9 +4611,6 @@
       "Singapore": [
         "Singapore"
       ],
-      "Sint Maarten": [
-        "Sint Maarten"
-      ],
       "Slovakia": [
         "Slovakien"
       ],
@@ -4661,12 +4628,6 @@
       ],
       "South Georgia and the South Sandwich Islands": [
         "Sydgeorgien och södra sandwichöarna"
-      ],
-      "South Korea": [
-        "Sydkorea"
-      ],
-      "South Ossetia": [
-        "Sydossetien"
       ],
       "South Sudan": [
         "Sydsudan"
@@ -4695,9 +4656,6 @@
       "Switzerland": [
         "Schweiz"
       ],
-      "Syria": [
-        "Syrien"
-      ],
       "Syrian Arab Republic": [
         "Syriska Arabrepubliken"
       ],
@@ -4707,17 +4665,11 @@
       "Tajikistan": [
         "Tadzjikistan"
       ],
-      "Tanzania": [
-        "Tanzania"
-      ],
       "Tanzania, United Republic of": [
         "Tanzania, Förenade republiken"
       ],
       "Thailand": [
         "Thailand"
-      ],
-      "Timor-Leste": [
-        "Östtimor"
       ],
       "Togo": [
         "Togo"
@@ -4730,9 +4682,6 @@
       ],
       "Trinidad and Tobago": [
         "Trinidad och Tobago"
-      ],
-      "Tristan da Cunha": [
-        "Tristan da Cunha"
       ],
       "Tunisia": [
         "Tunisien"
@@ -4764,9 +4713,6 @@
       "United States": [
         "Förenta Staterna"
       ],
-      "United States Minor Outlying Islands": [
-        "Förenta staternas mindre öar i Oceanien och Västindien"
-      ],
       "Uruguay": [
         "Uruguay"
       ],
@@ -4782,12 +4728,6 @@
       "Vietnam": [
         "Vietnam"
       ],
-      "Virgin Islands, British": [
-        "Brittiska Jungfruöarna"
-      ],
-      "Virgin Islands, U.S.": [
-        "Jungfruöarna, USA"
-      ],
       "Wallis and Futuna": [
         "Wallis och Futuna"
       ],
@@ -4802,9 +4742,6 @@
       ],
       "Zimbabwe": [
         "Zimbabwe"
-      ],
-      "Åland Islands": [
-        "Åland"
       ]
     },
     "Country select label": {
@@ -5155,9 +5092,6 @@
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Alla i din organisation kan ansluta till delade servrar i alla länder."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "För en sömlös övergång till ${ BRAND_NAME }, importera din data från Google, Outlook och andra."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Bli aviserad om ditt lösenord eller annan data har läckt från en tjänst från tredje part."
@@ -9350,8 +9284,14 @@
       "Imported": [
         "Importerad"
       ],
+      "In progress": [
+        "Pågår"
+      ],
       "In progress...": [
         "Pågår …"
+      ],
+      "Migrated": [
+        "Migrerad"
       ],
       "Paused": [
         "Pausad"
@@ -9687,23 +9627,8 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importera dina befintliga koder** från andra 2FA-appar, som Google Authenticator"
       ],
-      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Steg 1: Bjud in dina vänner** till ${ BRAND_NAME } med din hänvisningslänk."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Steg 1:** Bjud in dina vänner till ${ BRAND_NAME } med din hänvisningslänk."
-      ],
-      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**Steg 2:** Dina vänner får **2 veckor gratis** på sitt paket."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Steg 2:** Dina vänner får 2 veckor gratis på sitt paket."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Steg 3:** Få ${ referrerRewardAmount } krediter för varje person som prenumererar på ett paket."
-      ],
-      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**Steg 3:** Få **${ referrerRewardAmount } krediter** för varje person som prenumererar på ett paket."
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Bjud in dina vänner** till ${ BRAND_NAME } med din hänvisningslänk."
       ],
       "**Sync codes** to all your devices": [
         "**Synkronisera koder** till alla dina enheter"
@@ -10415,6 +10340,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Glöm INTE det här lösenordet. Om du glömmer det kommer du inte att kunna hantera din organisation."
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Kommer du ihåg ditt lösenord? ${ verifyButton }"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Vill du återkalla alla andra sessioner än den nuvarande?"
       ],
@@ -10727,6 +10655,9 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "För användare som byter till ${ MAIL_APP_NAME } från en annan e-posttjänst, välj fliken ${ boldAddresses } och lägg till alla aktiva e-postadresser innan du ändrar MX-posten för att säkerställa en smidig övergång."
+      ],
+      "Forgot password?": [
+        "Gömt lösenord?"
       ],
       "Free forever": [
         "Gratis för alltid"
@@ -11497,6 +11428,9 @@
       ],
       "Password must have:": [
         "Lösenord måste innehålla:"
+      ],
+      "Password verified": [
+        "Lösenord verifierat"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalningar är skyddad med TLS-kryptering och schweiziska integritetslagar."
@@ -12664,6 +12598,9 @@
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "När detta är inaktiverat förhindrar det att fjärrbilder laddas utan din vetskap."
       ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "När det är aktiverat kommer vi kontrollera om ${ MAIL_APP_NAME } är din standardapplikation för e-post och avisera dig om det inte är det."
+      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Vid aktivering av SAML för ${ appName } hos din identitetsleverantör så kan du bli ombedd att använda callback (ACS) URL och utfärdar-ID. Kopiera och klistra in värdena nedan i fälten hos din identitetsleverantör."
       ],
@@ -13565,6 +13502,16 @@
       ],
       "Week view": [
         "Veckovy"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Byt till ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Byt till ${ MAIL_APP_NAME }"
       ]
     },
     "Keyboard shortcut section name": {
@@ -14744,6 +14691,9 @@
       "Password": [
         "Lösenord"
       ],
+      "Password reminders": [
+        "Lösenordspåminnelser"
+      ],
       "Password strength": [
         "Lösenordsstyrka"
       ],
@@ -15322,8 +15272,17 @@
       "Invalid ${ group.name } record found": [
         "Ogiltig ${ group.name }-post hittades"
       ],
+      "Priority": [
+        "Prioritet"
+      ],
+      "Status": [
+        "Status"
+      ],
       "Type": [
         "Typ"
+      ],
+      "Use default value (e.g. “@”)": [
+        "Använd standardvärde (t.ex. “@”)"
       ],
       "Valid ${ group.name } record found": [
         "Giltig ${ group.name }-post hittades"
@@ -15529,6 +15488,9 @@
       ],
       "Help": [
         "Hjälp"
+      ],
+      "Help & support": [
+        "Hjälp och support"
       ],
       "Help translate": [
         "Hjälp till att översätta"
@@ -16973,6 +16935,10 @@
       ],
       "Send & receive invitations": [
         "Skicka och ta emot inbjudningar"
+      ],
+      "Servers in ${ VPN_SERVERS.paid.countries }+ country": [
+        "Servrar i ${ VPN_SERVERS.paid.countries }+ land",
+        "Servrar i ${ VPN_SERVERS.paid.countries }+ länder"
       ],
       "Share files with no size limit": [
         "Dela filer utan storleksbegränsning"
@@ -18864,6 +18830,16 @@
         "Tidsbegränsat erbjudande."
       ]
     },
+    "Password reminder": {
+      "Do you remember your ${ BRAND_NAME } password?": [
+        "Kommer du ihåg ditt lösenord för ${ BRAND_NAME }?"
+      ]
+    },
+    "password_reminder": {
+      "Turn off reminders": [
+        "Stäng av påminnelser"
+      ]
+    },
     "password_reset: info": {
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
         "**Alla dina befintliga data** (e-post, händelser, kontakter, filer, ${ PASS_APP_NAME }-poster, etc.) **kommer att låsas** och kan endast låsas upp med ditt ** gamla lösenord**."
@@ -19825,6 +19801,78 @@
         "VÅRREA"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ],
+      "Summer Sale": [
+        "Sommarrea"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/månad"
+      ],
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "2 TB data storage": [
+        "2 TB lagringsutrymme"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagringsutrymme: 40x ditt nuvarande paket"
+      ],
+      "3 TB data storage": [
+        "3 TB lagringsutrymme"
+      ],
+      "500 GB storage": [
+        "500 GB lagringsutrymme"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter baseras på ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln löper ut."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Full åtkomst till ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuella konton för 6 användare"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuella konton för dig och en partner"
+      ],
+      "Online document and spreadsheet editor": [
+        "Dokument- och kalkylbladsredigerare online"
+      ],
+      "Recover previous file versions": [
+        "Återställ tidigare filversioner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Starkare skydd mot cyberhot"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Byt till vårt årspaket och spara ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Obegränsade mappar, etiketter och filter"
+      ],
+      "Use your own email domain": [
+        "Använd din egen e-postdomän"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "för 12 månader"
+      ],
+      "SUMMER SALE": [
+        "SOMMARREA"
+      ]
+    },
     "Recovery Email": {
       "Back to ${ signIn }.": [
         "Tillbaka till ${ signIn }."
@@ -19915,6 +19963,9 @@
       ],
       "Awesome. Keep your options up-to-date for stronger protection.": [
         "Fantastiskt. Håll dina alternativ uppdaterade för starkare skydd."
+      ],
+      "Critical": [
+        "Kritiskt"
       ],
       "Good start. Add more options for a stronger protection.": [
         "Bra start. Lägg till fler alternativ för ett starkare skydd."
@@ -20085,14 +20136,8 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Njut av **${ planTitle }** gratis fram till **${ textDate }**."
       ],
-      "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "Ge 2 veckor, få ${ referrerRewardAmount }"
-      ],
       "How your free trial works:": [
         "Hur din gratis provperiod fungerar:"
-      ],
-      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "Jag har använt ${ BRAND_NAME } och tänkte att du kanske skulle gilla det. Det är en säker e-post, molnlagring, lösenordshanterare och VPN som skyddar din integritet. Registrera dig med denna länk för att få 14 dagars premiumfunktioner gratis: ${ referralLink }"
       ],
       "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
         "Om du avbryter, kommer du att förlora din **${ referrerRewardAmount }** kreditbelöning."
@@ -20124,9 +20169,6 @@
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Du har **${ daysRemaining } dag kvar** att utforska alla kraftfulla funktioner som **${ planTitle }** har att erbjuda.",
         "Du har **${ daysRemaining } dagar kvar** för att utforska alla kraftfulla funktioner som **${ planTitle }** har att erbjuda."
-      ],
-      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "Din vän får också ${ refereeRewardAmount } att lösa in på sin nästa faktura!"
       ],
       "your subscription": [
         "din prenumeration"
@@ -21646,6 +21688,14 @@
         "${ VPN_CONNECTIONS } höghastighets VPN-anslutning",
         "${ VPN_CONNECTIONS } höghastighets VPN-anslutningar"
       ],
+      "${ VPN_SERVERS.free.servers }+ VPN servers in ${ VPN_SERVERS.free.countries } country": [
+        "${ VPN_SERVERS.free.servers }+ VPN-serverar i ${ VPN_SERVERS.free.countries } land",
+        "${ VPN_SERVERS.free.servers }+ VPN-serverar i ${ VPN_SERVERS.free.countries } länder"
+      ],
+      "${ VPN_SERVERS.paid.countries }+ country": [
+        "${ VPN_SERVERS.paid.countries }+ land",
+        "${ VPN_SERVERS.paid.countries }+ länder"
+      ],
       "/user": [
         "/användare"
       ],
@@ -21916,6 +21966,13 @@
       ],
       "use your own email.": [
         "använd din egen e-post."
+      ],
+      "VPN with servers in ${ VPN_SERVERS.free.countries } countries": [
+        "VPN med servrar i ${ VPN_SERVERS.free.countries } länder"
+      ],
+      "VPN with servers in ${ VPN_SERVERS.free.countries } country": [
+        "VPN med servrar i ${ VPN_SERVERS.free.countries } land",
+        "VPN med servrar i ${ VPN_SERVERS.free.countries } länder"
       ],
       "We’ll email you before your trial ends.": [
         "Vi skickar e-post till dig innan din provperiod slutar."
@@ -25146,6 +25203,9 @@
       "Open pagination": [
         "Öppna sidnumrering"
       ],
+      "OpenVpn": [
+        "OpenVPN"
+      ],
       "OpenVPN": [
         "OpenVPN"
       ],
@@ -25591,6 +25651,9 @@
       "Summary": [
         "Sammanfattning"
       ],
+      "Summer Sale": [
+        "Sommarrea"
+      ],
       "Support ticket closed": [
         "Supportärende stängd"
       ],
@@ -25638,6 +25701,9 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "För att förhandsgranska detta kalkylblad, öppna det i ${ SHEETS_APP_NAME } eller ladda ner det."
+      ],
+      "Troubleshoot with ${ LUMO_SHORT_APP_NAME }": [
+        "Felsök med ${ LUMO_SHORT_APP_NAME }"
       ],
       "Troubleshoot your issue": [
         "Felsök ditt problem"
@@ -25740,6 +25806,9 @@
       ],
       "Verify your email": [
         "Verifiera din e-post"
+      ],
+      "Verify your password": [
+        "Verifiera ditt lösenord"
       ],
       "Verifying your card...": [
         "Verifierar ditt kort …"
@@ -25893,6 +25962,12 @@
       ]
     },
     "Title header": {
+      "Date": [
+        "Datum"
+      ],
+      "Personal accounts": [
+        "Personliga konton"
+      ],
       "Size": [
         "Storlek"
       ]

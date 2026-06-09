@@ -2254,17 +2254,6 @@
         "Ukloni popust"
       ]
     },
-    "Drawer tab, Action": {
-      "Download for Linux": [
-        "Učitaj za Linux"
-      ],
-      "Download for macOS": [
-        "Učitaj za macOS"
-      ],
-      "Download for Windows": [
-        "Preuzmi za Windows"
-      ]
-    },
     "driveplus2024: Deal details": {
       "Priority support": [
         "Prioritetna podrška"
@@ -2377,6 +2366,9 @@
       ],
       "Aliases could not be loaded": [
         "Nije moguće učitati pseudonime"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Sav prostor za pohranu je dodijeljen. Molimo smanjite prostor za pohranu dodijeljen ostalim korisnicima."
       ],
       "Already a member of this calendar": [
         "Već je član ovog kalendara"
@@ -2559,11 +2551,23 @@
       "Please activate your search again": [
         "Ponovno aktivirajte svoje pretraživanje"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Molimo, konfigurirajte prilagođenu domenu prije dodavanja adresa."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Konfigurirajte prilagođenu domenu prije dodavanja korisnika u vašu organizaciju."
+      ],
       "Please create an address first.": [
         "Prvo stvorite adresu."
       ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Molimo vas da omogućite višekorisničku podršku prije dodavanja korisnika u vašu organizaciju."
+      ],
       "Please select a country": [
         "Molimo odaberite državu"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Molimo nadogradite na poslovnu pretplatu s više od jednog korisnika kako biste upravljali višestrukim korisnicima."
       ],
       "Process aborted": [
         "Proces je prekinut"
@@ -2662,6 +2666,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Dosegli ste maksimalan broj kalendara."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Iskoristili ste sve slobodne korisnike u Vašem planu. Molimo Vas da nadogradite Vaš plan da biste dodali novog korisnika."
       ],
       "You must set a name": [
         "Morate postaviti naziv"
@@ -3366,9 +3373,6 @@
         "(${ memberCount } člana)",
         "(${ memberCount } članova)"
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**1. korak:** pozovite svoje prijatelje da se pridruže usluzi ${ BRAND_NAME } pomoću Vaše referalne poveznice."
-      ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } dodatnog prostora za pohranu"
       ],
@@ -3386,9 +3390,6 @@
       ],
       "Account successfully updated": [
         "Račun je uspješno ažuriran"
-      ],
-      "Ad targeting": [
-        "Ciljanje oglasa"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Dodani i uklonjeni sudionici bit će obaviješteni o svim događajima u ovom nizu."
@@ -3697,9 +3698,6 @@
       "Not a valid URL": [
         "Nije valjani URL"
       ],
-      "Not connected": [
-        "Nije povezano"
-      ],
       "Numbers": [
         "Brojke"
       ],
@@ -3785,9 +3783,6 @@
       ],
       "Subscription auto-renews every month.": [
         "Pretplata se automatski obnavlja svaki mjesec."
-      ],
-      "Surveillance": [
-        "Nadzor"
       ],
       "Symbols (#$&)": [
         "Simboli (#$&)"
@@ -3999,14 +3994,8 @@
       "Your files will be encrypted and then saved": [
         "Vaše datoteke će biti šifrirane i spremljene"
       ],
-      "Your IP": [
-        "Vaš IP"
-      ],
       "Your login information will not be saved after the import is completed.": [
         "Vaši podaci za prijavi neće biti spremljeni nakon što se uvoz završi."
-      ],
-      "Your online activity is protected": [
-        "Vaša aktivnost na mreži je zaštićena"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
@@ -4507,12 +4496,6 @@
       ],
       "Your alias": [
         "Vaš pseudonim"
-      ],
-      "Your ISP": [
-        "Vaš ISP"
-      ],
-      "Your location": [
-        "Vaša lokacija"
       ],
       "Your password (admin)": [
         "Vaša lozinka (administrator)"
@@ -5808,6 +5791,9 @@
       "Postal code": [
         "Poštanski broj"
       ],
+      "Search": [
+        "Pretraga"
+      ],
       "Search events": [
         "Traži događaje"
       ],
@@ -5902,6 +5888,78 @@
     "protonbadge": {
       "Official": [
         "Službeno"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Ugrabite ponudu"
+      ],
+      "Summer Sale": [
+        "Ljetna rasprodaja"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mjesec"
+      ],
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "2 TB data storage": [
+        "2 TB pohrane podataka"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB pohrane: 40x više od vašeg trenutnog plana"
+      ],
+      "3 TB data storage": [
+        "3 TB pohrane podataka"
+      ],
+      "500 GB storage": [
+        "500 GB prostora za pohranu"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Sve premium značajke za ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Sve premium značajke za ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Popusti se temelje na standardnim mjesečnim cijenama. Vaša će se pretplata obnoviti po standardnoj godišnjoj cijeni nakon završetka ciklusa naplate."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Potpuni pristup usluzi ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Pojedinačni korisnički računi za 6 korisnika"
+      ],
+      "Individual accounts for you and a partner": [
+        "Pojedinačni korisnički računi za vas i partnera"
+      ],
+      "Online document and spreadsheet editor": [
+        "Uređivač dokumenata i proračunskih tablica na mreži"
+      ],
+      "Recover previous file versions": [
+        "Oporavite prethodne verzije datoteka"
+      ],
+      "Stronger protection against cyber threats": [
+        "Snažnija zaštita od kibernetičkih prijetnji"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Pređite na naš godišnji plan i uštedite ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neograničen broj mapa, oznaka i filtara"
+      ],
+      "Use your own email domain": [
+        "Upotrijebite vlastitu domenu e-pošte"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "na 12 mjeseci"
+      ],
+      "SUMMER SALE": [
+        "LJETNA RASPRODAJA"
       ]
     },
     "Referral": {
@@ -6883,9 +6941,6 @@
       "Deleting contacts": [
         "Brisanje kontakata"
       ],
-      "Desktop": [
-        "Desktop"
-      ],
       "Discard changes?": [
         "Odbaci promjene?"
       ],
@@ -6894,9 +6949,6 @@
       ],
       "Downgrade account": [
         "Smanjite pretplatu računa"
-      ],
-      "Download the app": [
-        "Preuzmite aplikaciju"
       ],
       "Drop to upload": [
         "Ispustite za prijenos"
@@ -6961,9 +7013,6 @@
       "Hide time zones for event start and end times": [
         "Sakrij vremenske zone za vrijeme početka i završetka događaja"
       ],
-      "How does it all work?": [
-        "Kako to sve funkcionira?"
-      ],
       "How does it work?": [
         "Kako funkcionira?"
       ],
@@ -6999,9 +7048,6 @@
       ],
       "Minicalendar": [
         "Minikalendar"
-      ],
-      "Mobile": [
-        "Mobitel"
       ],
       "Network error": [
         "Pogreška mreže"
@@ -7050,9 +7096,6 @@
       ],
       "Previous": [
         "Prethodno"
-      ],
-      "Private browsing vs VPN": [
-        "Privatno pretraživanje protiv VPN-a"
       ],
       "Processing...": [
         "Obrada..."
@@ -7191,9 +7234,6 @@
       ],
       "Verifying your payment...": [
         "Vaša uplata se provjerava..."
-      ],
-      "VPN explained": [
-        "VPN objašnjen"
       ],
       "Warning": [
         "Upozorenje"

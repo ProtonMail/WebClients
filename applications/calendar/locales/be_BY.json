@@ -410,6 +410,9 @@
       "Expand video conferencing widget": [
         "Разгарнуць віджэт відэаканферэнцыі"
       ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "Даследаваць ${ MEET_SHORT_APP_NAME }"
+      ],
       "Explore other plans": [
         "Даследаваць іншыя тарыфныя планы"
       ],
@@ -1010,6 +1013,9 @@
       "Verify account": [
         "Спраўдзіць уліковы запіс"
       ],
+      "Verify now": [
+        "Спраўдзіць"
+      ],
       "View": [
         "Паглядзець"
       ],
@@ -1494,6 +1500,104 @@
       ],
       "Yearly": [
         "Штогод"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Актывавана"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Адрас ужо выкарыстоўваецца карыстальнікам з іншай арганізацыі. Звярніцеся ў службу падтрымкі кліентаў для вырашэння гэтай праблемы"
+      ],
+      "All": [
+        "Усе"
+      ],
+      "Calendar": [
+        "Каляндар"
+      ],
+      "Configure migration": [
+        "Сканфігурыраваць перанос"
+      ],
+      "Contacts": [
+        "Кантакты"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Статус пераносу даных з Google Workspace у ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Лісты"
+      ],
+      "Errors": [
+        "Памылкі"
+      ],
+      "Estimated size": [
+        "Прыблізны памер"
+      ],
+      "Find out what can be migrated.": [
+        "Даведайцеся, што перанесена."
+      ],
+      "Has errors": [
+        "З памылкамі"
+      ],
+      "In progress": [
+        "Выконваецца"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Адрас удзельніка не знойдзены. Звяжыцеся з нашай службай падтрымкі кліентаў, каб вырашыць гэта"
+      ],
+      "Migrate": [
+        "Перанос"
+      ],
+      "Migrated": [
+        "Перанесена"
+      ],
+      "Migration status": [
+        "Статус пераносу"
+      ],
+      "Missing organization private key": [
+        "Адсутнічае закрыты ключ арганізацыі"
+      ],
+      "Missing organization public key": [
+        "Адсутнічае адкрыты ключ арганізацыі"
+      ],
+      "No users to display": [
+        "Няма карыстальнікаў для адлюстравання"
+      ],
+      "Not activated": [
+        "Не актываваны"
+      ],
+      "Organization does not have enough seats available": [
+        "У арганізацыі недастаткова даступных ліцэнзій"
+      ],
+      "Organization does not have enough storage available": [
+        "У арганізацыі недастаткова даступнага месца для захоўвання"
+      ],
+      "Pending": [
+        "У чаканні"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Выберыце толькі тое, што хочаце перанесці. Гэта будзе прыменена да ўсіх карыстальнікаў арганізацыі."
+      ],
+      "Select users to migrate": [
+        "Выберыце карыстальнікаў для пераносу"
+      ],
+      "Size": [
+        "Памер"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "User": [
+        "Карыстальнік"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Карыстальнікі, якія маюць доступ да сваіх уліковых запісаў ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Што вы плануеце перанесці?"
+      ],
+      "You": [
+        "Вы"
       ]
     },
     "Browser": {
@@ -3174,7 +3278,7 @@
         "Лёгка сінхранізуйце файлы ў воблака са свайго камп’ютара і атрымлівайце доступ да іх на сваёй мабільнай прыладзе."
       ],
       "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
-        "Лісты, якія адпраўленыя на ${ connectedAddressText }, цяпер будуць паказвацца ў ${ MAIL_APP_NAME }."
+        "Лісты, якія адпраўлены на ${ connectedAddressText }, цяпер будуць паказвацца ў ${ MAIL_APP_NAME }."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Заахвочвайце выкарыстанне двухфактарнай аўтэнтыфікацыі ў сваёй арганізацыі для дадатковай бяспекі."
@@ -3194,8 +3298,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Пераканайцеся, што ў вас усё яшчэ ёсць доступ да вашага ўліковага запісу і даных, нават калі вы страціце свой пароль ад ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Для бясшвовага пераходу ў ${ BRAND_NAME } імпартуйце свае даныя з Google, Outlook і іншых сэрвісаў."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Для лёгкага пераходу вашай каманды ў ${ BRAND_NAME }, імпартуйце свае даныя з Google, Outlook і іншых сэрвісаў."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Атрымлівайце апавяшчэнні, калі адбываецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
@@ -3394,17 +3498,6 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Ваша падпіска ${ PLAN_NAMES[PLANS.PASS] } па спецыяльнай цане ${ price } у год. Перайшоўшы на бясплатны тарыфны план, вы назаўсёды страціце скідку, нават калі ў будучыні зноў палепшыце сваю падпіску."
-      ]
-    },
-    "Drawer tab, Action": {
-      "Download for Linux": [
-        "Спампаваць для Linux"
-      ],
-      "Download for macOS": [
-        "Спампаваць для macOS"
-      ],
-      "Download for Windows": [
-        "Спампаваць для Windows"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3647,6 +3740,9 @@
       ],
       "Aliases could not be loaded": [
         "Не ўдалося загрузіць псеўданімы"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Уся прастора сховішча была размеркавана. Паменшыце сховішча, якое вы вылучылі іншым карыстальнікам."
       ],
       "Already a member of this calendar": [
         "Ужо з'яўляецца ўдзельнікам гэтага календара"
@@ -3982,13 +4078,22 @@
         "Актывуйце пошук яшчэ раз"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
-        "Праверцеце, ці зарэгістраваны ваш ABN для трансгранічнага ПДВ"
+        "Праверце, ці зарэгістраваны ваш ABN для трансгранічнага ПДВ"
       ],
       "Please complete the billing details": [
         "Запоўніце плацежныя звесткі"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Перад дадаваннем адрасоў неабходна сканфігураваць карыстальніцкі дамен."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Cканфігурыруйце свой карыстальніцкі дамен перад тым, як дадаваць карыстальнікаў у вашу арганізацыю."
+      ],
       "Please create an address first.": [
         "Спачатку стварыце адрас."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Уключыце падтрымку шматкарыстальніцкага рэжыму перад тым, як дадаць карыстальнікаў да вашай арганізацыі."
       ],
       "Please enter a valid postal code": [
         "Увядзіце сапраўдны паштовы індэкс"
@@ -4022,6 +4127,9 @@
       ],
       "Please select billing state": [
         "Выберыце штат выстаўлення рахунку"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Перайдзіце на тарыфны план для бізнесу з больш чым 1 карыстальнікам, каб атрымаць падтрымку шматкарыстальніцкага рэжыму."
       ],
       "Port is required": [
         "Патрабуецца ўвесці порт"
@@ -4161,9 +4269,6 @@
       "Try using only letters, numerals, and _.-": [
         "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
       ],
-      "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "Немагчыма загрузіць панэль кіравання VPN. Праверце падключэнне і паўтарыце спробу."
-      ],
       "Unexpected error, we can't import the contacts": [
         "Нечаканая памылка. Немагчыма імпартаваць кантакты."
       ],
@@ -4208,6 +4313,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Вы дасягнулі абмежавання па колькасці кантактаў для вашага ўліковага запісу"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Вы выкарысталі ўсе адрасы на сваім тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новыя адрасы або адключыце адрас у сваім уліковым запісе."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Вы дасягнулі максімальнай колькасці карыстальнікаў на вашым тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новага карыстальніка."
       ],
       "You must set a name": [
         "Вы павінны задаць назву"
@@ -5355,14 +5466,17 @@
       "${ storage } storage": [
         "${ storage } сховішча"
       ],
+      "${ total } user found": [
+        "Знойдзены ${ total } карыстальнік",
+        "Знойдзена ${ total } карыстальнікі",
+        "Знойдзена ${ total } карыстальнікаў",
+        "Знойдзена ${ total } карыстальнікаў"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } кантакт паспяхова абноўлены.",
         "${ updated } кантакты паспяхова абноўлены.",
         "${ updated } кантактаў паспяхова абноўлены.",
         "${ updated } кантактаў паспяхова абноўлены."
-      ],
-      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
-        "${ VPN_APP_NAME } маскіруе ваш IP-адрас і вэб-сайты не могуць вызначыць вас."
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } хавае ваш трафік. ${ PASS_SHORT_APP_NAME } хавае вашу ідэнтычнасць\nз дапамогай неабмежаванай колькасці псеўданімаў **hide-my-email** і **папярэджанняў цёмнай сеткі**, калі раптам адбудзецца ўцечка вашых даных."
@@ -5376,26 +5490,14 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/месяц)"
       ],
-      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
-        "**Аўтаматычнае падключэнне**: падключэнне да сервера VPN адбываецца адразу пасля ўключэння прылады."
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Запрашайце сваіх сяброў** у ${ BRAND_NAME } са сваёй рэферальнай спасылкай."
       ],
-      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**Kill Switch**: спыняе ўцечку даных блакіруючы інтэрнэт, калі падключэнне па VPN нечакана знікла."
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Яны атрымаюць ${ refereeRewardAmount }** у крэдытах, калі падпішуцца."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Крок 1:** Запрашайце сваіх сяброў у ${ BRAND_NAME } са сваёй рэферальнай спасылкай."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Крок 2:** Вашы сябры атрымаюць 2 тыдні бясплатнага выкарыстання на тарыфным плане ${ BRAND_NAME }, які яны выбралі."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Крок 2:** Вашы сябры атрымаюць 2 тыдні бясплатнага выкарыстання на сваім тарыфным плане."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Крок 3:** Атрымайце ${ referrerRewardAmount } крэдытаў за кожнага сябра, які падпішацца на тарыфны план."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Крок 3:** Вы атрымаеце ${ referrerRewardAmount } у крэдытах за кожную асобу, якая падпішацца на тарыфны план."
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Вы атрымаеце ${ referrerRewardAmount }** у крэдытах за кожнага сябра, які падпішацца."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонуснага сховішча"
@@ -5421,26 +5523,11 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
-      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
-        "Бяспечнае падключэнне неабходна пры аддаленай працы. VPN абараняе даныя кампаніі ад кіберпагроз і захоўвае прыватнасць вашай працы."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Карыстальнік - гэта ўліковы запіс, які звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
       ],
-      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "VPN шыфруе ваша падключэнне і хавае ваш IP-адрас. Гэта вельмі ўскладняе адсочванне або назеранне прагляду вэб-старонак для любых зацікаўленых структур."
-      ],
-      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "VPN хавае ваш IP-адрас і шыфруе вашу актыўнасць у браўзеры. Гэта вельмі ўскладняе вэб-сайтам, рэкламадаўцам і пастаўшчыкам паслуг інтэрнэту адсочваць вас з цягам часу."
-      ],
-      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
-        "VPN - гэта бяспечны тунэль паміж вашай прыладай і інтэрнэтам. Ён хавае ваша месцазнаходжанне і актыўнасць ад вашага пастаўшчыка паслуг інтэрнэту (ISP) і вэб-сайтаў, якія вы наведваеце."
-      ],
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
-      ],
-      "Ad targeting": [
-        "Мэтавая рэклама"
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Дадаванне ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
@@ -5459,9 +5546,6 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Для гэтага адраса ўключана праверка адраса даверанымі ключамі. Каб атрымаць магчымасць адпраўкі на гэты адрас, спачатку зрабіце даверанымі адкрытыя ключы, якія можна выкарыстоўваць для адпраўкі."
-      ],
-      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
-        "Рэкламадаўцы адсочваюць, якія вэб-старонкі вы наведваеце для паказу мэтавай рэкламы. ${ VPN_APP_NAME } блакіруе праграмы адсочвання і рэкламу, робіць ваша падключэнне хутчэйшым і паляпшае працу ў інтэрнэце."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Асістэнт ШІ дапаможа вам хутка і без намаганняў ствараць лепшыя лісты."
@@ -5616,9 +5700,6 @@
       "Close this screen to exit.": [
         "Закрыйце гэта акно, каб выйсці."
       ],
-      "Connect to ${ VPN_APP_NAME } to browse privately": [
-        "Падключыцеся да ${ VPN_APP_NAME } для прыватнага прагляду"
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Кантакт прызначаны групе ${ contactGroupName }"
       ],
@@ -5717,6 +5798,9 @@
       ],
       "Display events for calendar ${ Name }": [
         "Адлюстраванне падзей для календара ${ Name }"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Вы памятаеце свой пароль? ${ verifyButton }"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Нічога не бачыце? Праверце, ці адключаны блакіроўшчыкі ўсплывальных вокнаў."
@@ -5838,17 +5922,14 @@
       "For just ${ bundlePlanPriceInline }": [
         "Усяго за ${ bundlePlanPriceInline }"
       ],
+      "Forgot password?": [
+        "Забылі пароль?"
+      ],
       "Frequency modifications will be lost.": [
         "Змяненні перыядычнасці будуць страчаны."
       ],
-      "Geoblocking": [
-        "Геаблакіроўка"
-      ],
       "Google Pay mark": [
         "Пазнака Google Pay"
-      ],
-      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
-        "Урады і пастаўшчыкі паслуг інтэрнэту могуць сачыць за тым, якія сайты вы наведваеце. Ваш прагляд вэб-старонак у інтэрнэце становіцца прыватным дзякуючы хаванню вашага рэальнага IP-адраса і шыфраванню."
       ],
       "here": [
         "тут"
@@ -5913,9 +5994,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпартаванне вашых даных з ${ fromEmail } у ${ toEmail }."
       ],
-      "In restrictive countries": [
-        "У краінах, якія абмяжоўваюць інтэрнэт"
-      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "На наступным кроку вы можаце адправіць дэпазіт з выкарыстаннем адраса Bitcoin."
       ],
@@ -5945,9 +6023,6 @@
       ],
       "It's better to have:": [
         "Лепш за ўсё, каб у вас было:"
-      ],
-      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "Лепш за ўсё выкарыстоўваць VPN пастаянна, але тут прыведзены выпадкі калі пагрозы кібербяспекі могуць быць самымі высокімі:"
       ],
       "JCB logo": [
         "Лагатып JCB"
@@ -6039,9 +6114,6 @@
       "Monthly ${ onDayString }": [
         "Штомесяц ${ onDayString }"
       ],
-      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
-        "Большасць агульнадаступных сетак Wi-Fi з'яўляюцца бяспечнымі, але ў некаторых адсутнічаюць функцыі бяспекі і гэта падвяргае вас кіберпагрозам. VPN шыфруе трафік і абараняе ваша падключэнне."
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выберыце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
       ],
@@ -6084,9 +6156,6 @@
       "Not a valid URL": [
         "Несапраўдны URL-адрас"
       ],
-      "Not connected": [
-        "Не падключана"
-      ],
       "Not on the same day": [
         "Не ў той жа дзень"
       ],
@@ -6104,9 +6173,6 @@
       ],
       "Occurrences previously updated by the organizer will be kept.": [
         "Паўтарэнні, якія былі раней абноўлены арганізатарам, будуць захаваны."
-      ],
-      "On public WiFi networks": [
-        "У грамадскіх сетках Wi-Fi"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як \"скампраметаваныя\". Рэкамендуецца не давяраць гэтым ключам."
@@ -6143,6 +6209,9 @@
       ],
       "Password must have:": [
         "Пароль павінен змяшчаць:"
+      ],
+      "Password verified": [
+        "Пароль спраўджаны"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
@@ -6225,9 +6294,6 @@
       "Privacy by default": [
         "Прадвызначаная прыватнасць"
       ],
-      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
-        "Прыватны прагляд вэб-старонак (або рэжым \"інкогніта\") карысны толькі для хавання актыўнасці на вашай прыладзе. Браўзер не будзе захоўваць гісторыю і файлы cookie, але гэта не робіць вас нябачным. Ваш пастаўшчык паслуг інтэрнэту, сеткавы адміністратар і вэб-сайты ўсё яшчэ могуць бачыць, што вы робіце ў інтэрнэце."
-      ],
       "Range already exists.": [
         "Дыяпазон ужо існуе."
       ],
@@ -6260,9 +6326,6 @@
         "Захаванне падзей",
         "Захаванне падзей",
         "Захаванне падзей"
-      ],
-      "Scan the QR code with your mobile device": [
-        "Адсканіруйце QR-код з дапамогай мабільнай прылады"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць прадвызначана пры адпраўцы лістоў на гэты адрас электроннай пошты."
@@ -6297,20 +6360,11 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
       ],
-      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
-        "Некаторыя ўрады блакіруюць або абмяжоўваюць доступ да пэўных вэб-сайтаў. VPN дапамагае абысці цэнзуру, захоўваючы вашу актыўнасць і асобу ў таямніцы."
-      ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Некаторыя вашы адказы на паўтарэнні, якія былі раней абноўлены арганізатарам, будуць страчаны."
       ],
-      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
-        "Некаторыя вэб-сайты і сэрвісы з трансляцыямі блакіруюць змесціва па рэгіёнах. VPN дазваляе абысці гэтыя абмежаванні і атрымаць свабодны доступ у інтэрнэт."
-      ],
       "Start sharing it with contacts and use it for online services.": [
         "Пачніце абагульваць яго са сваімі кантактамі і выкарыстоўваць для сэрвісаў у інтэрнэце."
-      ],
-      "Stay connected effortlessly by enabling the following VPN settings:": [
-        "Уключыце наступныя налады VPN, каб заставацца падключанымі без асаблівых намаганняў:"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Адпраўце дэпазіт выкарыстоўваючы наступны адрас або адсканіруйце QR-код. Ваш дэпазіт адлюструецца на вашым рахунку пасля пацвярджэння."
@@ -6332,9 +6386,6 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Завяршэнне падпіскі: перазапусціце сваю падпіску ў Google Play Store да ${ byDate }, каб далей пакінуць перавагі ${ planName }. ${ reactivateLink }"
-      ],
-      "Surveillance": [
-        "Назіранне"
       ],
       "Symbols (#$&)": [
         "Сімвалы (#$&)"
@@ -6420,12 +6471,6 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Гэта спасылка можа быць гамаграфічнай атакай. Спраўдзіце спасылку, якую вы хочаце наведаць або не пераходзьце па ёй."
       ],
-      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
-        "Гэта азначае, што ваш пастаўшчык паслуг інтэрнэту і вэб-сайты не змогуць атрымліваць асабістыя звесткі з вашай актыўнасцю ў інтэрнэце."
-      ],
-      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
-        "Гэты ўнікальны код можа быць выкарыстаны вэб-сайтамі і пастаўшчыком паслуг інтэрнэту (ISP), каб звязаць ваша месцазнаходжанне і гісторыю прагляду старонак на вашай прыладзе."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Гэта правядзе да выхаду з усіх уліковых запісаў у якіх вы ў цяперашні час аўтарызаваныя."
       ],
@@ -6443,6 +6488,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Сістэма перыядычна будзе прасіць вас увесці пароль, каб вы не забылі яго. З цягам часу колькасць такіх запытаў будзе скарачацца."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Спачатку стварыце каляндар у ${ CALENDAR_APP_NAME } для імпартавання падзей. Менавіта тут з'явяцца падзеі пасля імпартавання."
@@ -6467,9 +6515,6 @@
       ],
       "Total VPN connections": [
         "Колькасць падключэнняў па VPN"
-      ],
-      "Tracking": [
-        "Адсочванне"
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Давяраць ключу \"${ activeSignerText }\", каб спраўдзіць новыя паведамленні ад гэтага кантакту."
@@ -6513,9 +6558,6 @@
       "Visa Secure logo": [
         "Лагатып Visa Secure"
       ],
-      "VPN IP": [
-        "IP VPN"
-      ],
       "Warning": [
         "Папярэджанне"
       ],
@@ -6543,6 +6585,9 @@
       "We'll notify you when the import is done.": [
         "Вы атрымаеце апавяшчэнне, калі імпартаванне будзе завершана."
       ],
+      "We'll remind you to verify your password again later": [
+        "Сістэма нагадае вам спраўдзіць пароль пазней яшчэ раз"
+      ],
       "We'll send a new verification code to ${ strong }": [
         "Вам адпраўлены новы код спраўджання на ${ strong }"
       ],
@@ -6557,12 +6602,6 @@
       ],
       "When can appointments be booked?": [
         "Калі можна забраніраваць сустрэчу?"
-      ],
-      "When working remotely": [
-        "Пры аддаленай працы"
-      ],
-      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
-        "VPN выкарыстоўвае тэхналогію шыфравання, каб схаваць ваш IP-адрас пры падключэнні да VPN (унікальны код, які прызначаны вашай прыладзе)."
       ],
       "Where will the appointment take place?": [
         "Дзе адбудзецца сустрэча?"
@@ -6774,15 +6813,6 @@
       "Your information was found on ${ displayedDate }": [
         "Вашы звесткі былі знойдзены ${ displayedDate }"
       ],
-      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
-        "Ваш пастаўшчык паслуг інтэрнэту можа назіраць за вашымі дзеяннямі ў інтэрнэце і час ад часу прадаваць вашы даныя або нават абмяжоўваць доступ да некаторых вэб-сайтаў"
-      ],
-      "Your IP": [
-        "Ваш IP"
-      ],
-      "Your IP address is visible and can be used to track your online activity.": [
-        "Ваш IP-адрас з'яўляецца бачным і можа быць выкарыстаны для адсочвання вашай актыўнасці ў інтэрнэце."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "Пасля завяршэння імпартавання вашы даныя ўваходу не будуць захаваны."
       ],
@@ -6792,17 +6822,11 @@
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Наступная дата спагнання адбудзецца ${ renewalTime }. Скасаваць можна ў любы час. Звяжыцеся са службай падтрымкі, калі вы запатрабавалі неадкладную змену тарыфнага плана."
       ],
-      "Your online activity is protected": [
-        "Ваша актыўнасць у інтэрнэце абаронена"
-      ],
       "Your password was leaked:": [
         "Адбылася ўцечка вашага пароля:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
-      ],
-      "Your physical location is visible and can be used to restrict your access to the internet.": [
-        "Ваша фізічнае месцазнаходжанне з'яўляецца бачным і можа выкарыстоўвацца для забароны доступу ў інтэрнэт."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожны ${ cycle } месяц.",
@@ -7004,9 +7028,22 @@
         "Выгляд \"Тыдзень\""
       ]
     },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Пераключыцца на ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Пераключыцца на ${ MAIL_APP_NAME }"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Basic actions": [
         "Асноўныя дзеянні"
+      ],
+      "Desktop app navigation": [
+        "Праграма навігацыі для камп'ютара"
       ],
       "View options": [
         "Параметры прагляду"
@@ -7569,15 +7606,6 @@
       ],
       "Your domain": [
         "Ваш дамен"
-      ],
-      "Your IP": [
-        "Ваш IP"
-      ],
-      "Your ISP": [
-        "Ваш ISP"
-      ],
-      "Your location": [
-        "Ваша месцазнаходжанне"
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
@@ -10302,6 +10330,9 @@
       "San Francisco": [
         "Сан-Францыска"
       ],
+      "Search": [
+        "Пошук"
+      ],
       "Search events": [
         "Пошук падзей"
       ],
@@ -10310,6 +10341,9 @@
       ],
       "Search for name or email": [
         "Шукаць імя або электронную пошту"
+      ],
+      "Search for users or addresses": [
+        "Пошук карыстальнікаў або адрасоў"
       ],
       "Search parent folder": [
         "Пошук бацькоўскай папкі"
@@ -10469,6 +10503,78 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Атрымаць прапанову"
+      ],
+      "Summer Sale": [
+        "Летні распродаж"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "2 TB data storage": [
+        "Сховішча даных на 2 ТБ"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 ГБ сховішча: у 40 разоў больш за ваш бягучы тарыфны план"
+      ],
+      "3 TB data storage": [
+        "Сховішча даных на 3 ТБ"
+      ],
+      "500 GB storage": [
+        "500 ГБ сховішча"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усе прэміяльныя функцыі ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усе прэміяльныя функцыі ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скідкі разлічваюцца на аснове стандартнага штомесячнага кошту. Ваша падпіска будзе падоўжана па стандартным гадавым тарыфе, калі скончыцца перыяд аплаты."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Поўны доступ да ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Асобныя ўліковыя запісы для 6 карыстальнікаў"
+      ],
+      "Individual accounts for you and a partner": [
+        "Асобныя ўліковыя запісы для вас і партнёра"
+      ],
+      "Online document and spreadsheet editor": [
+        "Рэдактар дакументаў і электронных табліц у сетцы"
+      ],
+      "Recover previous file versions": [
+        "Аднаўленне папярэдніх версій файла"
+      ],
+      "Stronger protection against cyber threats": [
+        "Больш надзейная абарона ад кіберпагроз"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Перайдзіце на наш гадавы тарыфны план і зэканомце ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Неабмежаваная колькасць папак, метак і фільтраў"
+      ],
+      "Use your own email domain": [
+        "Выкарыстоўвайце ўласны дамен электроннай пошты"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "за 12 месяцаў"
+      ],
+      "SUMMER SALE": [
+        "ЛЕТНІ РАСПРОДАЖ"
       ]
     },
     "Referral": {
@@ -12374,9 +12480,6 @@
       "Deleting contacts": [
         "Выдаленне кантактаў"
       ],
-      "Desktop": [
-        "Для камп'ютара"
-      ],
       "Discard changes?": [
         "Адхіліць змены?"
       ],
@@ -12394,9 +12497,6 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Спампаваць праграмы ${ DRIVE_APP_NAME }"
-      ],
-      "Download the app": [
-        "Спампаваць праграму"
       ],
       "Drop to upload": [
         "Перацягніце, каб запампаваць"
@@ -12470,9 +12570,6 @@
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Атрымайце **${ referralInfo.uiData.refereeRewardAmount }** у крэдытах з ${ planTitle }"
       ],
-      "Get more from your VPN": [
-        "Атрымайце больш ад свайго VPN"
-      ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Атрымайце больш сховішча з ${ MAIL_APP_NAME } Plus"
       ],
@@ -12503,9 +12600,6 @@
       "Host": [
         "Арганізатар"
       ],
-      "How does it all work?": [
-        "Як гэта ўсё працуе?"
-      ],
       "How does it work?": [
         "Як гэта працуе?"
       ],
@@ -12523,9 +12617,6 @@
       ],
       "Import contacts": [
         "Імпартаваць кантакты"
-      ],
-      "Import emails, calendars, contacts": [
-        "Імпартаванне лістоў, календароў, кантактаў"
       ],
       "Import events": [
         "Імпартаванне падзей"
@@ -12554,20 +12645,17 @@
       "Location": [
         "Размяшчэнне"
       ],
-      "Make a secure connection your default": [
-        "Зрабіце бяспечнае падключэнне сваім прадвызначаным"
-      ],
       "Merge contacts": [
         "Аб'яднанне кантактаў"
       ],
       "Merging contacts": [
         "Аб'яднанне кантактаў"
       ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Перанесці вашу арганізацыю ў ${ BRAND_NAME }"
+      ],
       "Minicalendar": [
         "Мінікаляндар"
-      ],
-      "Mobile": [
-        "Для смартфона"
       ],
       "Need more aliases?": [
         "Патрабуецца больш псеўданімаў?"
@@ -12628,9 +12716,6 @@
       ],
       "Previous": [
         "Папярэдні"
-      ],
-      "Private browsing vs VPN": [
-        "Прыватны прагляд у параўнанні з VPN"
       ],
       "Processing...": [
         "Апрацоўка..."
@@ -12791,6 +12876,9 @@
       "Summary": [
         "Зводка"
       ],
+      "Summer Sale": [
+        "Летні распродаж"
+      ],
       "The booking feature is currently unavailable.": [
         "Функцыя браніравання ў цяперашні час недаступна."
       ],
@@ -12842,14 +12930,14 @@
       "Verification failed": [
         "Збой праверкі"
       ],
+      "Verify your password": [
+        "Спраўджанне вашага пароля"
+      ],
       "Verifying your card...": [
         "Спраўджанне вашай карткі..."
       ],
       "Verifying your payment...": [
         "Спраўджанне вашага плацяжу..."
-      ],
-      "VPN explained": [
-        "Тлумачэнне VPN"
       ],
       "Warning": [
         "Папярэджанне"
@@ -12871,15 +12959,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Вітаем у ${ BRAND_NAME } for Business"
-      ],
-      "What can a VPN protect you from?": [
-        "Ад чаго можа абараніць VPN?"
-      ],
-      "What is a VPN?": [
-        "Што такое VPN?"
-      ],
-      "When is it most important to use a VPN?": [
-        "У якіх выпадках варта выкарыстоўваць VPN?"
       ],
       "You are all set": [
         "Усё гатова"

@@ -2197,6 +2197,11 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+      ],
       "Moving items": [
         "Se mută articolele."
       ],
@@ -4340,6 +4345,12 @@
       ],
       "The file you are trying to import is empty": [
         "Fișierul pe care încercați să îl importați este gol."
+      ],
+      "This feature is not supported in your plan. ${ upgradeLink }": [
+        "Această funcție nu este acceptată în planul actual. ${ upgradeLink }"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Această funcție nu este acceptată în abonamentul actual. Contactați administratorul pentru a obține acces."
       ],
       "Total files: ": [
         "Total fișiere: "

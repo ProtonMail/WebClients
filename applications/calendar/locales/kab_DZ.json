@@ -2306,6 +2306,9 @@
       "Alias options could not be resolved": [
         "Tixtiṛiyin n alias ggummant ad ṣegment"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Amḍiq n usekles meṛṛa yettunefk-ak. Ma ulac aɣilif, senɣes amḍiq ittunefken i yiseqdacen-nniḍen."
+      ],
       "Amount above the maximum.": [
         "Azal nnig n ufellay."
       ],
@@ -2506,8 +2509,14 @@
       "Please activate your search again": [
         "Ttxil-k·m rmed anadi-k·m i tikkelt niḍen"
       ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Sbadu taɣult tudmawant send ad ternuḍ iseqdacen ar tuddsa-ik."
+      ],
       "Please create an address first.": [
         "Ma ulac aɣilif di tazwara snulfu-d tansa."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Rme ma ulac aɣilif asefrek n ddeqs n yiseqdacen send ad ternuḍ iseqdacen ar tuddsa-ik."
       ],
       "Please select a country": [
         "Ttxil-k·m fren tamurt"
@@ -2635,6 +2644,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Tessawḍeḍ amḍan afellay n yiwitayen."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Tesqedceḍ meṛṛa iseqdsacen yellan di tikci-ik. Beddel tikci akken ad ternuḍ aseqdac amaynut."
       ],
       "You must set a name": [
         "Yessefk ad tesbaduḍ isem"
@@ -5714,6 +5726,9 @@
       "Postal code": [
         "Tangalt n lpusṭa"
       ],
+      "Search": [
+        "Anadi"
+      ],
       "Search events": [
         "Nadi tidyanin"
       ],
@@ -5824,6 +5839,78 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Imayl uzzig seg ${ BRAND_NAME }"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Faṛes tagnit"
+      ],
+      "Summer Sale": [
+        "Tanzayt n unebdu"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/ayyur"
+      ],
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
+      "2 TB data storage": [
+        "Aklas n isefka n 2 TAṬ"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "Aklas n 200 GB: 40 n tikkal aɣawas-ik n tura"
+      ],
+      "3 TB data storage": [
+        "Aklas n isefka n 3 TAṬ"
+      ],
+      "500 GB storage": [
+        "500 GAṬ n uḥraz"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Akk timahilin premium n ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, d ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Akk timahilin premium n ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, d ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Isenqasen bnan ɣef watig amagnu n yal aggur. Tajerridt-ik ad tettuɣal s watig amagnu n yal aseggas mi ara tfak tuzya n tfaturt."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Anekcum ummid ɣer ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Imiḍanen iymanen i 6 n yimseqdacen"
+      ],
+      "Individual accounts for you and a partner": [
+        "Imiḍanen iymanen i kečč d umrec-ik"
+      ],
+      "Online document and spreadsheet editor": [
+        "Amaẓrag s tuqqna n isemliyen d tkaṛḍiwin n usiḍen"
+      ],
+      "Recover previous file versions": [
+        "Ssuɣal tilqamin yezrin n ufaylu"
+      ],
+      "Stronger protection against cyber threats": [
+        "Amestan ijehden mgal isgagen isenselkimen"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Ssenfel ɣer uɣawas-nneɣ n yal aseggas tessefrit ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ikaramen, tibzimin, d yimsizedgen war tilas"
+      ],
+      "Use your own email domain": [
+        "Seqdec taɣult-ik n yimayl"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "i 12 wayyuren"
+      ],
+      "SUMMER SALE": [
+        "TANZAYT N UNEBDU"
       ]
     },
     "Reload event button tooltip": {
@@ -6646,9 +6733,6 @@
       "Deleting contacts": [
         "Tukksa n yinermisen"
       ],
-      "Desktop": [
-        "Tanarit"
-      ],
       "Discard changes?": [
         "Sefsex ibeddilen?"
       ],
@@ -6757,9 +6841,6 @@
       ],
       "Minicalendar": [
         "Awitay ameẓẓyan"
-      ],
-      "Mobile": [
-        "Aziraz"
       ],
       "Network error": [
         "Tuccḍa n uẓeṭṭa"

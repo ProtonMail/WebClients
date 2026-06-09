@@ -1462,10 +1462,7 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Ključ zaupanja",
-        "Ključa zaupanja",
-        "Ključi zaupanja",
-        "Ključev zaupanja"
+        "Zaupaj ključu"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -2109,6 +2106,26 @@
       ],
       "Yearly": [
         "Letno"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Koledar"
+      ],
+      "Contacts": [
+        "Stiki"
+      ],
+      "Has errors": [
+        "Ima napake"
+      ],
+      "In progress": [
+        "V obdelavi"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizacija nima na voljo dovolj sedežev"
+      ],
+      "Status": [
+        "Stanje"
       ]
     },
     "Browser": {
@@ -4007,9 +4024,6 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Zagotovite si, da boste še vedno lahko dostopali do svojega računa in podatkov, tudi če izgubite geslo za ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Za nemoten prehod na ${ BRAND_NAME } uvozite svoje podatke iz storitev Google, Outlook in drugih."
-      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe."
       ],
@@ -4426,6 +4440,9 @@
       "Aliases could not be loaded": [
         "Vzdevkov ni bilo mogoče naložiti"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Ves prostor na disku je že dodeljen. Zmanjšajte dodelitev prostora drugim uporabnikom."
+      ],
       "Amount above the maximum.": [
         "Znesek nad največjim."
       ],
@@ -4747,6 +4764,15 @@
       "Please complete the billing details": [
         "Dopolnite podatke o plačilu"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Prosimo, najprej nastavite domeno po meri in šele potem dodate naslove."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Pred dodajanjem uporabnika v organizacijo najprej konfigurirajte domeno po meri."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Pred dodajanjem uporabnika v organizacijo najprej omogočite podporo za več uporabnikov."
+      ],
       "Please enter a valid postal code": [
         "Prosimo vnesite veljavno poštno številko"
       ],
@@ -4779,6 +4805,9 @@
       ],
       "Please try generating the text again": [
         "Poskusite znova ustvariti besedilo"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Prosim, nadgradite na poslovni paket z več kot enim uporabnikom, da boste lahko upravljali več uporabnikov."
       ],
       "Port is required": [
         "Zahtevana so vrata"
@@ -5026,6 +5055,9 @@
       "You have reached the number of contacts limit for your account": [
         "Dosegli ste mejo za število stikov v vašem računu."
       ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Uporabili ste vse uporabnike v svojem paketu. Prosimo nadgradite paket, da dodate novega uporabnika."
+      ],
       "You must set a name": [
         "Vnesti morate ime"
       ],
@@ -5233,9 +5265,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Te strani ni bilo mogoče naložiti. Osvežite stran ali preverite svojo povezavo z internetom."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Ko je omogočeno dodatno geslo, je upravljanje vzdevkov mogoče samo v ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Nimate še nobenega stika. Začnite z ustvarjanjem novega stika."
@@ -6556,6 +6585,12 @@
         "${ total } sporočila",
         "${ total } sporočil"
       ],
+      "${ total } user found": [
+        "Najden je ${ total } uporabnik.",
+        "Najdena sta ${ total } uporabnika.",
+        "Najdeni so ${ total } uporabniki.",
+        "Najdenih je ${ total } uporabnikov."
+      ],
       "${ trackersCount } email tracker blocked": [
         "${ trackersCount } blokiran e-poštni sledilnik",
         "${ trackersCount } blokirana e-poštna sledilnika",
@@ -6618,21 +6653,6 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Stikalo za odklop**: Ustavi uhajanje podatkov tako, da blokira vašo internetno povezavo, če VPN nepričakovano preneha delovati."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Korak 1:** Povabite vaše prijatelje na ${ BRAND_NAME } z vašo povezavo za priporočilo."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Korak 2:** Vaši prijatelji dobijo svoj izbrani ${ BRAND_NAME } paket 2 tedna brezplačno."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Korak 2:** Vaši prijatelji dobijo svoj paket 2 tedna brezplačno."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Korak 3:** Prejmite ${ referrerRewardAmount } kot dobropis za vsakega prijatelja, ki se naroči na paket."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Korak 3:** Prejmite ${ referrerRewardAmount } kot dobropis za vsako osebo, ki se naroči na paket."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } dodaten prostor za shranjevanje"
@@ -6951,9 +6971,6 @@
       ],
       "Copy the link to clipboard": [
         "Kopiraj povezavo v odložišče"
-      ],
-      "Copy to clipboard": [
-        "Kopiraj v odložišče"
       ],
       "Copy your referral link": [
         "Kopirajte svojo povezavo za priporočilo"
@@ -7400,7 +7417,10 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko"
+        "Vstavi sliko",
+        "Vstavi sliki",
+        "Vstavi slike",
+        "Vstavi slik"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -12338,6 +12358,9 @@
       "San Francisco": [
         "San Francisco"
       ],
+      "Search": [
+        "Iskanje"
+      ],
       "Search date, name, email address, or subject line": [
         "Iskanje datuma, imena, e-poštnega naslova ali zadeve sporočila"
       ],
@@ -12521,6 +12544,78 @@
         "Yahoo"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Izkoristite posebno ponudbo"
+      ],
+      "Summer Sale": [
+        "Poletna razprodaja"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mesec"
+      ],
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "2 TB data storage": [
+        "2 TB shrambe podatkov"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB shrambe: 40-kratnik vašega trenutnega paketa"
+      ],
+      "3 TB data storage": [
+        "3 TB shrambe podatkov"
+      ],
+      "500 GB storage": [
+        "500 GB prostora"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Vse premijske funkcije storitev ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } in ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Vse premijske funkcije storitev ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } in ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Popusti temeljijo na standardnih mesečnih cenah. Vaša naročnina se bo ob koncu obračunskega obdobja podaljšala po standardni letni tarifi."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Poln dostop do ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Posamezni računi za 6 uporabnikov"
+      ],
+      "Individual accounts for you and a partner": [
+        "Posamezni računi za vas in partnerja"
+      ],
+      "Online document and spreadsheet editor": [
+        "Urejevalnik dokumentov in preglednic s povezavo"
+      ],
+      "Recover previous file versions": [
+        "Obnovi prejšnje različice datoteke"
+      ],
+      "Stronger protection against cyber threats": [
+        "Močnejša zaščita pred kibernetskimi grožnjami"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Preklopite na naš letni paket in prihranite ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neomejeno število map, oznak in filtrov"
+      ],
+      "Use your own email domain": [
+        "Uporabite svojo e-poštno domeno"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "za 12 mesecev"
+      ],
+      "SUMMER SALE": [
+        "POLETNA RAZPRODAJA"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Od konca do konca šifrirano in podpisano sporočilo"
@@ -12650,46 +12745,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Vsi vzdevki"
-      ],
       "Create alias": [
         "Ustvari vzdevek"
-      ],
-      "Create an alias": [
-        "Ustvari vzdevek"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Ustvarite vzdevke sproti in preprosto upravljajte svoje vzdevke in gesla."
-      ],
-      "Hide-my-email aliases": [
-        "Vzdevki hide-my-email"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email vzdevki vam omogočajo, da se prijavite na straneh v spletu, ne da bi razkrili svoj e-poštni naslov. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Nov vzdevek"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Odpri ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Zaščitite svojo spletno identiteto"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Poizkusite ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Uporablja se v spletnih trgovinah, kot je Amazon, itd."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Ko vas vprašajo za vaš e-poštni naslov, namesto tega navedite ta vzdevek. Vzdevke ponuja ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(bo odprlo ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -14048,9 +14111,6 @@
       "Address verification disabled": [
         "Preverjanje naslova onemogočeno"
       ],
-      "Alias copied to clipboard": [
-        "Vzdevek kopiran v odložišče"
-      ],
       "Alias saved and copied": [
         "Vzdevek shranjen in kopiran"
       ],
@@ -14140,9 +14200,6 @@
       ],
       "Labels applied.": [
         "Označeno."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Zadnji spremenjeni vzdevki, shranjeni v vašem najstarejšem trezorju"
       ],
       "Mail list unsubscribed": [
         "Poštna lista je bila odjavljena."

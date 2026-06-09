@@ -328,17 +328,11 @@
       "Contract composer": [
         "Sammentræk skrivevinduet"
       ],
-      "Copy": [
-        "Kopiér"
-      ],
       "Copy address": [
         "Kopier adresse"
       ],
       "Copy addresses": [
         "Kopiér adresser"
-      ],
-      "Copy alias “${ name }”": [
-        "Kopier alias \"${ name }\""
       ],
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
@@ -1523,8 +1517,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -2184,6 +2177,107 @@
       ],
       "Yearly": [
         "Årligt"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Aktiveret"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adressen bruges allerede af en bruger uden for din organisation. Kontakt kundesupport for at løse dette"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Konfigurer migrering"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Kontakt din administrator for at starte en migration."
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Status for datamigration fra Google Workspace til ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "E-mails"
+      ],
+      "Errors": [
+        "Fejl"
+      ],
+      "Estimated size": [
+        "Anslået størrelse"
+      ],
+      "Find out what can be migrated.": [
+        "Find ud af hvad der kan migreres."
+      ],
+      "Has errors": [
+        "Fejlbehæftet"
+      ],
+      "In progress": [
+        "I gang"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresse for medlem ikke fundet. Kontakt venligst vores kundesupport for at løse dette"
+      ],
+      "Migrate": [
+        "Migrer"
+      ],
+      "Migrated": [
+        "Migreret"
+      ],
+      "Migration status": [
+        "Migrationsstatus"
+      ],
+      "Missing organization private key": [
+        "Mangler organisationens private nøgle"
+      ],
+      "Missing organization public key": [
+        "Mangler organisationens offentlige nøgle"
+      ],
+      "No users to display": [
+        "Ingen brugere at vise"
+      ],
+      "Not activated": [
+        "Ikke aktiveret"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisationen har ikke nok ledige pladser"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisationen har ikke tilstrækkelig ledig lagerplads"
+      ],
+      "Pending": [
+        "Afventer"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Vælg præcis det du gerne vil migrere. Det vil gælde for brugere i organisationen."
+      ],
+      "Select users to migrate": [
+        "Vælg brugere at migrere"
+      ],
+      "Size": [
+        "Størrelse"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Bruger"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Brugere, som har tilgået deres ${ BRAND_NAME }-konto"
+      ],
+      "What are you migrating?": [
+        "Hvad migrerer du?"
+      ],
+      "You": [
+        "Dig"
       ]
     },
     "Browser": {
@@ -4137,8 +4231,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Sørg for, at du stadig kan få adgang til din konto og data, selv hvis du mister din ${ BRAND_NAME }-adgangskode."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "For en smidig overgang til ${ BRAND_NAME }, importér dine data fra Google, Outlook og andre."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Importér dine data fra Google, Outlook og andre for at sikre en smidig onboarding af dit team til ${ BRAND_NAME }."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Opgradér til ${ BRAND_NAME } Duo for ubegrænset adgang til skriveassistenten og mere."
@@ -4671,6 +4765,9 @@
       "Aliases could not be loaded": [
         "Aliasser kunne ikke indlæses"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Al lagerplads er blevet tildelt. Reducér lagerplads tildelt andre brugere."
+      ],
       "Amount above the maximum.": [
         "Beløb over maksimum."
       ],
@@ -4995,6 +5092,15 @@
       "Please complete the billing details": [
         "Udfyld faktureringsoplysningerne"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Sæt et brugerdomæne op, før du tilføjer adresser."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Konfigurer et brugerdomæne, inden du tilføjer brugere til din organisation."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Aktivér flerbrugerunderstøttelse inden du tilføjer brugere til din organisation."
+      ],
       "Please enter a valid postal code": [
         "Indtast et gyldigt postnummer"
       ],
@@ -5034,6 +5140,9 @@
       ],
       "Please try generating the text again": [
         "Prøv venligst at generere teksten igen"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Opgradér venligst til et erhvervsabonnement med mere end 1 bruger for at administrere flere brugere."
       ],
       "Port is required": [
         "Port er påkrævet."
@@ -5285,6 +5394,12 @@
       "You have reached the number of contacts limit for your account": [
         "Du har nået grænsen for antallet af kontakter på din konto"
       ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Du har opbrugt alle adresser i dit abonnement. Opgradér dit abonnement for at tilføje en ny adresse, eller deaktivér en adresse på din konto."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Du har brugt alle brugere i dit abonnement. Opgradér abonnementet for at tilføje en ny bruger."
+      ],
       "You must set a name": [
         "Du skal angive et navn"
       ],
@@ -5500,9 +5615,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunne ikke indlæse denne side. Opdater siden eller tjek din internetforbindelse."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Med ekstra adgangskode aktiveret kan håndteringen af alias kun ske i ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Du har ikke nogen kontakt endnu. Start med at oprette en ny kontakt"
@@ -6773,6 +6885,10 @@
         "${ total } besked",
         "${ total } beskeder"
       ],
+      "${ total } user found": [
+        "${ total } bruger fundet",
+        "${ total } brugere fundet"
+      ],
       "${ trackersCount } email tracker blocked": [
         "${ trackersCount } e-mail-tracker blokeret",
         "${ trackersCount } e-mail-trackere blokeret"
@@ -6822,23 +6938,17 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Auto-forbindelse**: Åbner og forbinder til VPN, så snart du tænder din enhed."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Inviter dine venner** til ${ BRAND_NAME } med dit henvisningslink."
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: Stopper datalækager ved at blokere din internetadgang, hvis VPN-forbindelsen afbrydes uventet."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Trin 1:** Inviter dine venner til ${ BRAND_NAME } med dit henvisningslink."
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**De får${ refereeRewardAmount }** i kredit, hvis de tegner et abonnement."
       ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Trin 2:** Dine venner får 2 uger gratis på deres valgte ${ BRAND_NAME }-abonnement."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Trin 2:** Dine venner får 2 uger gratis på deres abonnement."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Trin 3:** Få ${ referrerRewardAmount } i kredit for hver ven, der opretter et abonnement."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Trin 3:** Få ${ referrerRewardAmount } i kredit for hver person, der opretter et abonnement."
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Du får ${ referrerRewardAmount }** i kredit for hver ven, der tegner et abonnement."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagerplads"
@@ -7167,9 +7277,6 @@
       ],
       "Copy the link to clipboard": [
         "Kopiér linket til udklipsholder"
-      ],
-      "Copy to clipboard": [
-        "Kopier til udklipsholder"
       ],
       "Copy your referral link": [
         "Kopier dit henvisningslink"
@@ -7639,7 +7746,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -12851,6 +12959,9 @@
       "San Francisco": [
         "San Francisco"
       ],
+      "Search": [
+        "Søg"
+      ],
       "Search date, name, email address, or subject line": [
         "Søg dato, navn, e-mailadresse eller emnelinje"
       ],
@@ -12859,6 +12970,9 @@
       ],
       "Search for name or email": [
         "Søg efter navn eller e-mail"
+      ],
+      "Search for users or addresses": [
+        "Søg efter brugere eller adresser"
       ],
       "Search messages": [
         "Søg i beskeder"
@@ -13142,6 +13256,78 @@
         "FORÅR SALG"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Tag imod tilbuddet"
+      ],
+      "Summer Sale": [
+        "Sommerudsalg"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "2 TB data storage": [
+        "2 TB datalagerplads"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagerplads: 40x dit nuværende abonnement"
+      ],
+      "3 TB data storage": [
+        "3 TB datalagerplads"
+      ],
+      "500 GB storage": [
+        "500 GB lagerplads"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium-funktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium-funktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter er baseret på standardpriser pr. måned. Dit abonnement fornyes til standardprisen pr. år, når faktureringscyklussen slutter."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Fuld adgang til ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuelle konti til 6 brugere"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuelle konti til dig og en partner"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online-editor til dokumenter og regneark"
+      ],
+      "Recover previous file versions": [
+        "Gendan tidligere filversioner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Stærkere beskyttelse mod cybertrusler"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Skift til vores årlige abonnement og spar ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ubegrænset antal mapper, etiketter og filtre"
+      ],
+      "Use your own email domain": [
+        "Brug dit eget e-mail-domæne"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "i 12 måneder"
+      ],
+      "SUMMER SALE": [
+        "SOMMERUDSALG"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "End-to-end krypteret og signeret besked"
@@ -13307,46 +13493,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Alle aliasser"
-      ],
       "Create alias": [
         "Opret alias"
-      ],
-      "Create an alias": [
-        "Opret et alias."
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Generér aliasser på farten, og administrér nemt dine aliasser og adgangskoder."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-aliasser"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email-aliasser giver dig mulighed for at tilmelde dig ting online uden at dele din e-mailadresse. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Nyt alias"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Åbn ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Beskyt din online-identitet"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Prøv ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Bruges på Amazon til shopping osv."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Når du bliver bedt om din email-adresse, skal du i stedet give dette email-alias i stedet for. E-mail aliasserne bliver leveret af ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(vil åbne ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -14668,9 +14822,6 @@
       "Address verification disabled": [
         "Adressebekræftelse deaktiveret"
       ],
-      "Alias copied to clipboard": [
-        "Alias kopieret til udklipsholder"
-      ],
       "Alias saved and copied": [
         "Alias gemt og kopieret"
       ],
@@ -14759,9 +14910,6 @@
       ],
       "Labels applied.": [
         "Etiketter anvendt."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Sidst ændrede aliasser gemt i din ældste boks"
       ],
       "Mail list unsubscribed": [
         "Mailliste afmeldt"
@@ -15652,6 +15800,9 @@
       "Message will expire": [
         "Besked vil udløbe"
       ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Flyt din organisation til ${ BRAND_NAME }"
+      ],
       "Minicalendar": [
         "Minikalender"
       ],
@@ -16005,6 +16156,9 @@
       ],
       "Summary": [
         "Sammenfatning"
+      ],
+      "Summer Sale": [
+        "Sommertilbud"
       ],
       "This field cannot be empty": [
         "Dette felt må ikke være tomt"

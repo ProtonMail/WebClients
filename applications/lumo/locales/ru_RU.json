@@ -26,9 +26,6 @@
       "Are you sure you want to delete all conversations?": [
         "Вы уверены, что хотите удалить все беседы?"
       ],
-      "Are you sure you want to delete the conversation?": [
-        "Вы уверены, что хотите удалить беседу?"
-      ],
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"
       ],
@@ -208,6 +205,9 @@
       ],
       "Refresh the page": [
         "Обновить страницу"
+      ],
+      "Reload": [
+        "Перезагрузить"
       ],
       "Remove": [
         "Удалить"
@@ -2129,9 +2129,6 @@
       ],
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Убедитесь, что вы по-прежнему можете получить доступ к своему аккаунту и данным, даже если вы потеряете ваш пароль ${ BRAND_NAME }."
-      ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Для плавного перехода на ${ BRAND_NAME } импортируйте данные из Google, Outlook и других приложений."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
@@ -4630,6 +4627,78 @@
         "ВЕСЕННИЕ СКИДКИ"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Получить со скидкой"
+      ],
+      "Summer Sale": [
+        "Летние скидки"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "15 GB storage": [
+        "15 ГБ для хранения"
+      ],
+      "2 TB data storage": [
+        "2 ТБ для хранения данных"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 ГБ для хранения: в 40 раз больше вашего текущего тарифа"
+      ],
+      "3 TB data storage": [
+        "3 ТБ для хранения данных"
+      ],
+      "500 GB storage": [
+        "500 ГБ для хранения"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Все платные функции ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Все платные функции ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скидки рассчитываются от стандартной ежемесячной цены. Ваша подписка будет продлена по стандартному годовому тарифу в конце платежного цикла."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Полный доступ к ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Индивидуальные аккаунты для 6 пользователей"
+      ],
+      "Individual accounts for you and a partner": [
+        "Индивидуальные аккаунты для вас и партнера"
+      ],
+      "Online document and spreadsheet editor": [
+        "Онлайн-редактор документов и электронных таблиц"
+      ],
+      "Recover previous file versions": [
+        "Восстанавливайте предыдущие версии файлов"
+      ],
+      "Stronger protection against cyber threats": [
+        "Усиленная защита от киберугроз"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Перейдите на наш годовой тариф и сэкономьте ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Use your own email domain": [
+        "Используйте собственный домен адреса электронной почты"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "на 12 месяцев"
+      ],
+      "SUMMER SALE": [
+        "ЛЕТНИЕ СКИДКИ"
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Проверьте безопасность аккаунта"
@@ -5280,9 +5349,6 @@
       ],
       "Human verification": [
         "Проверка \"Я не робот\""
-      ],
-      "Import emails, calendars, contacts": [
-        "Импорт электронных писем, календарей и контактов"
       ],
       "Invalid verification code": [
         "Неверный проверочный код"

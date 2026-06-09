@@ -474,6 +474,9 @@
       "Keep my subscription": [
         "Aboneliğimi sürdür"
       ],
+      "Later": [
+        "Daha sonra"
+      ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
@@ -894,6 +897,9 @@
       "Verify account": [
         "Hesabı doğrula"
       ],
+      "Verify now": [
+        "Şimdi doğrula"
+      ],
       "View": [
         "Görüntüle"
       ],
@@ -1203,6 +1209,104 @@
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Özel olarak tasarlanmış NetShield aygıtlarınızı korur ve reklamları, etkinlik izleyicileri ve kötü amaçlı yazılımları engelleyerek gezinmenizi hızlandırır."
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Etkinleştirildi"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Bu adres kuruluşunuz dışındaki bir kullanıcı tarafından kullanılıyor. Bu sorunu çözmek için lütfen müşteri destek ekibimiz ile görüşün"
+      ],
+      "All": [
+        "Tümü"
+      ],
+      "Calendar": [
+        "Takvim"
+      ],
+      "Configure migration": [
+        "Aktarımı yapılandırın"
+      ],
+      "Contacts": [
+        "Kişiler"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Google Workspace üzerinden ${ BRAND_NAME } üzerine veri aktarımı durumu"
+      ],
+      "Emails": [
+        "E-postalar"
+      ],
+      "Errors": [
+        "Hatalar"
+      ],
+      "Estimated size": [
+        "Öngörülen boyut"
+      ],
+      "Find out what can be migrated.": [
+        "Nelerin aktarılabileceğini öğrenin."
+      ],
+      "Has errors": [
+        "Sorunlar çıktı"
+      ],
+      "In progress": [
+        "İşleniyor"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Üye adresi bulunamadı. Bu sorunu çözmek için müşteri destek ekibimizle görüşün"
+      ],
+      "Migrate": [
+        "Aktar"
+      ],
+      "Migrated": [
+        "Aktarıldı"
+      ],
+      "Migration status": [
+        "Aktarım durumu"
+      ],
+      "Missing organization private key": [
+        "Kuruluşun kişisel anahtarı eksik"
+      ],
+      "Missing organization public key": [
+        "Kuruluşun herkese açık anahtarı bulunamadı"
+      ],
+      "No users to display": [
+        "Görüntülenebilecek bir kullanıcı yok"
+      ],
+      "Not activated": [
+        "Etkinleştirilmemiş"
+      ],
+      "Organization does not have enough seats available": [
+        "Kuruluşun yeterli koltuk sayısı yok"
+      ],
+      "Organization does not have enough storage available": [
+        "Kuruluşun yeterli depolama alanı yok"
+      ],
+      "Pending": [
+        "Bekliyor"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Tam olarak neyi aktarmak istediğinizi seçin. Kuruluşun tüm kullanıcılarına uygulanır."
+      ],
+      "Select users to migrate": [
+        "Aktarılacak kullanıcıları seçin"
+      ],
+      "Size": [
+        "Boyut"
+      ],
+      "Status": [
+        "Durum"
+      ],
+      "User": [
+        "Kullanıcı"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } hesaplarına erişen kullanıcılar"
+      ],
+      "What are you migrating?": [
+        "Neyi aktarıyorsunuz?"
+      ],
+      "You": [
+        "Siz"
       ]
     },
     "Browser": {
@@ -2519,8 +2623,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "${ BRAND_NAME } parolanızı kaybetseniz bile hesabınıza ve verilerinize erişebileceğinizden emin olun."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "${ BRAND_NAME } uygulamasına sorunsuz geçmek için verilerinizi Google, Outlook ve diğer hizmetlerden içe aktarın."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Ekibinizin ${ BRAND_NAME } hizmetlerine sorunsuz bir şekilde uyum sağlaması için verilerinizi Google, Outlook ve diğer kaynaklardan içe aktarın."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmet tarafından açığa çıkarsa bildirim alın."
@@ -2885,6 +2989,9 @@
       "Aliases could not be loaded": [
         "Takma adlar yüklenemedi"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Tüm depolama alanı dağıtıldı. Lütfen diğer kullanıcılara ayrılmış depolama alanlarını azaltın."
+      ],
       "Already a member of this share": [
         "Zaten bu paylaşımın bir üyesi"
       ],
@@ -3139,6 +3246,15 @@
       "Photos upload is temporarily disabled. Please try again later": [
         "Fotoğraf yükleme özelliği geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden deneyin."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Lütfen adresleri eklemeden önce bir özel etki alanı yapılandırın."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Lütfen kuruluşunuza kullanıcılar eklemeden önce bir özel etki alanı ayarlayın."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Lütfen kuruluşunuza kullanıcılar eklemeden önce çok kullanıcı desteğini açın."
+      ],
       "Please enter a valid postal code": [
         "Lütfen geçerli bir posta kodu yazın"
       ],
@@ -3163,6 +3279,9 @@
       ],
       "Please select a state": [
         "Lütfen bir il seçin"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Birden çok kullanıcıyı yönetmek için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye geçin."
       ],
       "Port is required": [
         "Bağlantı noktasının yazılması zorunludur"
@@ -3324,6 +3443,9 @@
       "Unknown error": [
         "Bilinmeyen sorun"
       ],
+      "Unknown location": [
+        "Konum bilinmiyor"
+      ],
       "Update Too Large": [
         "Güncelleme çok büyük"
       ],
@@ -3360,6 +3482,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Hesabınızın kişi sayısı sınırına ulaştınız"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Tarifenizdeki tüm adresleri kullandınız. Yeni bir adres eklemek veya hesabınızdaki bir adresi kullanımdan kaldırmak için lütfen tarifenizi yükseltin."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Tarifenizin kullanıcı sayısı sınırına ulaştınız. Yeni bir kullanıcı eklemek için lütfen tarifenizi yükseltin."
       ],
       "You must set a name": [
         "Bir ad belirtmelisiniz"
@@ -4317,6 +4445,10 @@
         "${ selectedFoldersCountLocalized } etiket seçildi",
         "${ selectedFoldersCountLocalized } etiket seçildi"
       ],
+      "${ total } user found": [
+        "${ total } kullanıcı bulundu",
+        "${ total } kullanıcı bulundu"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kişi güncellendi.",
         "${ updated } kişi güncellendi."
@@ -4334,23 +4466,17 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Otomatik bağlan**: Aygıtınızı açar açmaz VPN uygulamasını açar ve bağlanır."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Arkadaşlarınızı** yönlendirme bağlantınızla ${ BRAND_NAME } kullanmaya davet edin."
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Bağlantı kesici**: VPN bağlantısı beklenmedik bir şekilde kesilirse internet erişiminizi engelleyerek veri sızıntısını engeller."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**1. adım:** Arkadaşlarınızı öneri bağlantınızla ${ BRAND_NAME } kullanmaya davet edin."
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Abone olduklarında ${ refereeRewardAmount }** kredi kazanırlar."
       ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**2. Adım:** Arkadaşlarınız, seçtikleri ${ BRAND_NAME } tarifesinde 2 hafta ücretsiz kullanım alacak."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**2. adım:** Arkadaşlarınız tarifelerine 2 hafta ücretsiz kullanım alacak."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**3. adım**: Bir tarifeye abone olan her arkadaşınız için ${ referrerRewardAmount } kredi kazanın."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**3. adım**: Bir tarifeye abone olan her kişi için ${ referrerRewardAmount } kredi kazanın."
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "Abone olan her arkadaşınız için **${ referrerRewardAmount } tutarında kredi kazanırsınız**."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ek depolama alanı"
@@ -4573,6 +4699,9 @@
       "Display word count": [
         "Sözcük sayısı görüntülensin"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Parolanızı hatırlıyor musunuz? ${ verifyButton }"
+      ],
       "Document is in trash": [
         "Belge çöp kutusunda"
       ],
@@ -4716,6 +4845,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "En iyi sonucu almak için yayın akışları ve fazla bellek kullanılması gereken etkinliklerden kaçının ya da yüklemenizi daha küçük gruplara ayırın."
+      ],
+      "Forgot password?": [
+        "Parolamı unuttum"
       ],
       "Free 5GB encrypted storage to get started": [
         "Başlamak için ücretsiz 5GB şifrelenmiş depolama alanı"
@@ -4988,6 +5120,9 @@
       ],
       "Password must have:": [
         "Parolada şunlar bulunmalıdır:"
+      ],
+      "Password verified": [
+        "Parola doğrulandı"
       ],
       "Pending invitations": [
         "Bekleyen davetler"
@@ -5288,6 +5423,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Parolanızı unutmamanız için belirli aralıklarla parolanızı yazmanızı isteyeceğiz. Zamanla bunu daha az isteyeceğiz."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Etkinlikleri içe aktarmak için önce ${ CALENDAR_APP_NAME } içinde bir takvim oluşturun. Etkinlikleriniz içe aktarma işleminden sonra bu takvimde görüntülenir."
       ],
@@ -5380,6 +5518,9 @@
       ],
       "We'll notify you when the import is done.": [
         "İçe aktarım tamamlandığında sizi bilgilendireceğiz."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Daha sonra yeniden parolanızı doğrulamanızı hatırlatacağız."
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
@@ -7660,6 +7801,9 @@
       "\"${ name }\" failed to be saved": [
         "\"${ name }\" kaydedilemedi"
       ],
+      "\"${ name }\" moved": [
+        "\"${ name }\" taşındı"
+      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" çöpe atıldı"
       ],
@@ -7668,9 +7812,6 @@
       ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" kaydedildi"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" taşındı"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" yeniden adlandırılamadı"
@@ -7710,6 +7851,10 @@
         "${ numberOfItems } öge çöpten çıkarılamadı",
         "${ numberOfItems } öge çöpten çıkarılamadı"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } öge taşındı",
+        "${ numberOfItems } öge taşındı"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } öge çöpe atıldı",
         "${ numberOfItems } öge çöpe atıldı"
@@ -7717,10 +7862,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } öge çöpten çıkarıldı",
         "${ numberOfItems } öge çöpten çıkarıldı"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } öge taşındı",
-        "${ numberOfItems } öge taşındı"
       ],
       "${ reason } has been disabled": [
         "${ reason } kullanım dışı bırakıldı"
@@ -8334,11 +8475,17 @@
       "Please describe the problem and include any error messages": [
         "Lütfen sorunu açıklayın ve varsa hata iletisini ekleyin"
       ],
+      "Search": [
+        "Arama"
+      ],
       "Search for group name": [
         "Grup adı ile arayın"
       ],
       "Search for name or email": [
         "Ad veya e-posta adresi ile arayın"
+      ],
+      "Search for users or addresses": [
+        "Kullanıcıları veya adresleri ara"
       ],
       "Search parent folder": [
         "Üst klasörü ara"
@@ -8552,6 +8699,78 @@
       ],
       "SPRING SALE": [
         "BAHAR İNDİRİMİ"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ],
+      "Summer Sale": [
+        "Yaz İndirimi"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/ay"
+      ],
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "2 TB data storage": [
+        "2 TB veri depolama alanı"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB depolama alanı: Geçerli tarifenizin 40 katı"
+      ],
+      "3 TB data storage": [
+        "3 TB veri depolama alanı"
+      ],
+      "500 GB storage": [
+        "500 GB depolama alanı"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } ürünlerinin tüm ücretli özellikleri"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } ürünlerinin tüm ücretli özellikleri"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } uygulamasına tam erişim"
+      ],
+      "Individual accounts for 6 users": [
+        "6 kullanıcı için bireysel hesaplar"
+      ],
+      "Individual accounts for you and a partner": [
+        "Siz ve bir partneriniz için bireysel hesaplar"
+      ],
+      "Online document and spreadsheet editor": [
+        "Çevrim içi belge ve hesap tablosu düzenleyici"
+      ],
+      "Recover previous file versions": [
+        "Önceki dosya sürümlerini geri yükleyin"
+      ],
+      "Stronger protection against cyber threats": [
+        "Siber tehditlere karşı daha güçlü koruma"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Yıllık tarifemize geçin ve ${ toYearlyDiscountAmount } tasarruf edin!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Sınırsız klasör, etiket ve filtre"
+      ],
+      "Use your own email domain": [
+        "Kendi e-posta etki alanınızı kullanın"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12 aylığına"
+      ],
+      "SUMMER SALE": [
+        "YAZ İNDİRİMİ"
       ]
     },
     "Recent documents table header": {
@@ -9873,6 +10092,9 @@
       "Desktop": [
         "Bilgisayar"
       ],
+      "Devices": [
+        "Aygıtlar"
+      ],
       "Discard": [
         "Yok say"
       ],
@@ -10006,9 +10228,6 @@
       "Import contacts": [
         "Kişileri içe aktar"
       ],
-      "Import emails, calendars, contacts": [
-        "E-postaları, takvimleri, kişileri içe aktarın"
-      ],
       "Import events": [
         "Etkinlikleri içe aktar"
       ],
@@ -10047,6 +10266,9 @@
       ],
       "Merging contacts": [
         "Kişileri birleştirme"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Kuruluşunuzu ${ BRAND_NAME } üzerine aktarın"
       ],
       "Minicalendar": [
         "Mini takvim"
@@ -10198,6 +10420,9 @@
       "Share your link": [
         "Bağlantınızı paylaşın."
       ],
+      "Shared with me": [
+        "Benimle paylaşılan"
+      ],
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
       ],
@@ -10269,6 +10494,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Veri gizliliği için ${ VPN_SHORT_APP_NAME } kullanın"
+      ],
+      "Verify your password": [
+        "Parolanızı doğrulayın"
       ],
       "VPN explained": [
         "VPN nedir"

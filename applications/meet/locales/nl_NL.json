@@ -266,6 +266,9 @@
       "Resend code": [
         "Verstuur code opnieuw"
       ],
+      "Return to dashboard": [
+        "Terug naar dashboard"
+      ],
       "Room": [
         "Ruimte"
       ],
@@ -322,6 +325,9 @@
       ],
       "Start meeting": [
         "Start vergadering"
+      ],
+      "Start new meeting": [
+        "Start een nieuwe vergadering"
       ],
       "Start recording": [
         "Start opname"
@@ -430,6 +436,9 @@
       "Lock meeting": [
         "Vergadering vergrendelen"
       ],
+      "Lower hand": [
+        "Laat hand zakken"
+      ],
       "Meeting details": [
         "Vergaderingsgegevens"
       ],
@@ -444,6 +453,9 @@
       ],
       "Participants": [
         "Deelnemers"
+      ],
+      "Raise hand": [
+        "Hand opsteken"
       ],
       "Rotate camera": [
         "Camera roteren"
@@ -1560,9 +1572,6 @@
       "The email addresses do not match": [
         "De e-mailadressen komen niet overeen"
       ],
-      "The meeting link you are trying to access does not exist or may have been deleted.": [
-        "De vergadering link waartoe u toegang probeert te krijgen, bestaat niet of is mogelijk verwijderd."
-      ],
       "The meeting password is incorrect": [
         "Het wachtwoord voor de vergadering is onjuist."
       ],
@@ -1733,6 +1742,15 @@
       "${ maxParticipants } participant limit reached": [
         "${ maxParticipants } deelnemerslimiet bereikt"
       ],
+      "${ MEET_APP_NAME } needs access so others can see and hear you during the call. You can turn your camera or microphone off at any time.": [
+        "${ MEET_APP_NAME } heeft toegang nodig zodat anderen u kunnen zien en horen tijdens het gesprek. U kunt uw camera of microfoon op elk gewenst moment uitschakelen."
+      ],
+      "${ MEET_APP_NAME } needs camera access so others can see you during the call. You can turn it off at any time.": [
+        "${ MEET_APP_NAME } heeft cameratoegang nodig zodat anderen u kunnen zien tijdens het gesprek. U kunt het op elk gewenst moment uitschakelen."
+      ],
+      "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
+        "${ MEET_APP_NAME } heeft microfoontoegang nodig zodat anderen u kunnen horen tijdens het gesprek. U kunt het op elk gewenst moment uitschakelen."
+      ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } heeft WebRTC nodig om te functioneren. Update uw browser of apparaat naar een versie die WebRTC ondersteunt, probeer een andere browser, of schakel extensies uit die deze mogelijk blokkeren."
       ],
@@ -1892,6 +1910,9 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Voer uw eigen wachtwoord in (als vertrouwd contact)."
+      ],
+      "Everyone has been disconnected from the call.": [
+        "De verbinding met iedereen is verbroken."
       ],
       "Failed to update meeting name": [
         "Naam vergadering bijwerken mislukt"
@@ -2192,6 +2213,9 @@
       ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "De host heeft u uit deze vergadering verwijderd. Als dit een vergissing was, vraag de host dan om u opnieuw uit te nodigen."
+      ],
+      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
+        "De vergaderingslink die u probeerde te openen, bestaat niet of is mogelijk verlopen. Zorg ervoor dat de link correct is, of start in plaats daarvan een nieuwe beveiligde vergadering."
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Dit is een begin-tot-eind versleutelde chat met vergankelijke berichten, die verdwijnen aan het einde van het gesprek."
@@ -2495,6 +2519,9 @@
       ],
       "Repeat event": [
         "Afspraak herhalen"
+      ],
+      "Return to dashboard": [
+        "Terug naar dashboard"
       ],
       "Reveal password": [
         "Wachtwoord tonen"
@@ -2822,6 +2849,15 @@
       "Activity events": [
         "Activiteitsafspraken"
       ],
+      "Allow camera ": [
+        "Camera toestaan "
+      ],
+      "Allow camera and microphone": [
+        "Camera- en microfoon toestaan"
+      ],
+      "Allow microphone": [
+        "Microfoon toestaan"
+      ],
       "Are you sure?": [
         "Weet u het zeker?"
       ],
@@ -2881,6 +2917,9 @@
       ],
       "Info": [
         "Informatie"
+      ],
+      "Invalid meeting link": [
+        "Ongeldige vergaderlink"
       ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"

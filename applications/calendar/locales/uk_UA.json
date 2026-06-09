@@ -2760,11 +2760,6 @@
         "Ваша підписка ${ PLAN_NAMES[PLANS.PASS] } має спеціальну ціну ${ price } на рік. Перейшовши на тарифний план Безплатний, ви назавжди втратите знижку, навіть якщо в майбутньому знову перейдете на нього."
       ]
     },
-    "Drawer tab, Action": {
-      "Download for Windows": [
-        "Завантажити для Windows"
-      ]
-    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Розширена історія версій"
@@ -2917,6 +2912,9 @@
       ],
       "Aliases could not be loaded": [
         "Не вдалося завантажити псевдоніми"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Увесь обсяг сховища розподілено. Зменште простір, наданий іншим користувачам."
       ],
       "Already a member of this calendar": [
         "Уже учасник цього календаря"
@@ -3200,8 +3198,17 @@
       "Please activate your search again": [
         "Повторно активуйте пошук"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Налаштуйте власний домен, щоб мати можливість додавати адреси."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Налаштуйте власний домен, перш ніж додавати користувачів до вашої організації."
+      ],
       "Please create an address first.": [
         "Спочатку створіть адресу."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Будь ласка, увімкніть підтримку декількох користувачів, перш ніж додавати користувачів до вашої організації."
       ],
       "Please enter a valid postal code": [
         "Будь ласка, введіть коректний поштовий індекс"
@@ -3235,6 +3242,9 @@
       ],
       "Please select billing state": [
         "Будь ласка, виберіть штат для виставлення рахунку"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Для керування декількома користувачами, перейдіть на тарифний план для бізнесу."
       ],
       "Port is required": [
         "Порт обов'язковий"
@@ -3394,6 +3404,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Ви досягли ліміту кількості контактів для вашого облікового запису"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Ви вже використали усіх користувачів у своєму тарифному плані. Щоб додати нового користувача, необхідно покращити тарифний план."
       ],
       "You must set a name": [
         "Ви повинні вказати назву"
@@ -4476,14 +4489,8 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Користувач — це обліковий запис, пов'язаний з певним іменем користувача, поштовою скринькою та людиною"
       ],
-      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "VPN шифрує ваше з’єднання та приховує вашу IP-адресу, що значно ускладнює відстеження або моніторинг вашої активності в Інтернеті."
-      ],
       "Account successfully updated": [
         "Обліковий запис успішно оновлено"
-      ],
-      "Ad targeting": [
-        "Націлювання реклами"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Додані та вилучені учасники отримають сповіщення про всі події в цій серії."
@@ -4818,9 +4825,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
       ],
-      "In restrictive countries": [
-        "У країнах із обмеженнями"
-      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Наступним кроком ви зможете внести депозит за допомогою адреси Bitcoin."
       ],
@@ -4946,9 +4950,6 @@
       ],
       "Not a valid URL": [
         "Недійсна URL-адреса"
-      ],
-      "Not connected": [
-        "Не під’єднано"
       ],
       "Number of dedicated servers in the organization": [
         "Кількість виділених серверів у організації"
@@ -5229,9 +5230,6 @@
       "Visa Secure logo": [
         "Логотип Visa Secure"
       ],
-      "VPN IP": [
-        "VPN IP"
-      ],
       "Warning": [
         "Попередження"
       ],
@@ -5439,17 +5437,8 @@
       "Your information was found on ${ displayedDate }": [
         "Вашу інформацію було знайдено на ${ displayedDate }"
       ],
-      "Your IP": [
-        "Ваш IP"
-      ],
-      "Your IP address is visible and can be used to track your online activity.": [
-        "Ваша IP-адреса є видимою, і її можуть використати для відстеження вашої онлайн-активності."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "Ваша реєстраційна інформація не буде збережена після завершення імпорту."
-      ],
-      "Your online activity is protected": [
-        "Ваша онлайн активність захищена"
       ],
       "Your password was leaked:": [
         "Ваш пароль було викрито:"
@@ -6055,12 +6044,6 @@
       ],
       "Your domain": [
         "Ваш домен"
-      ],
-      "Your IP": [
-        "Ваш IP"
-      ],
-      "Your location": [
-        "Ваше розташування:"
       ],
       "Your password (admin)": [
         "Новий пароль (адмін)"
@@ -8130,6 +8113,9 @@
       "Postal code": [
         "Поштовий індекс"
       ],
+      "Search": [
+        "Пошук"
+      ],
       "Search events": [
         "Пошук подій"
       ],
@@ -8251,6 +8237,78 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Офіційний лист від ${ BRAND_NAME }"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
+      "Summer Sale": [
+        "Літній розпродаж"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/місячний"
+      ],
+      "15 GB storage": [
+        "15 ГБ сховища"
+      ],
+      "2 TB data storage": [
+        "Сховище даних на 2 ТБ"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "Сховище на 200 ГБ: у 40 разів більше за ваш поточний тарифний план"
+      ],
+      "3 TB data storage": [
+        "Сховище даних на 3 ТБ"
+      ],
+      "500 GB storage": [
+        "500 ГБ сховища"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усі преміумфункції ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усі преміумфункції ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Знижки розраховуються на основі стандартної щомісячної ціни. Вашу передплату буде подовжено за стандартним річним тарифом після закінчення платіжного циклу."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Повний доступ до ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Окремі облікові записи для 6 користувачів"
+      ],
+      "Individual accounts for you and a partner": [
+        "Окремі облікові записи для вас і вашого партнера"
+      ],
+      "Online document and spreadsheet editor": [
+        "Онлайн-редактор документів та електронних таблиць"
+      ],
+      "Recover previous file versions": [
+        "Відновити попередні версії файлів"
+      ],
+      "Stronger protection against cyber threats": [
+        "Надійніший захист від кіберзагроз"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Перейдіть на наш річний тарифний план і заощадьте ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Необмежена кількість тек, міток і фільтрів"
+      ],
+      "Use your own email domain": [
+        "Використовуйте свій власний домен електронної пошти"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "за 12 місяців"
+      ],
+      "SUMMER SALE": [
+        "ЛІТНІЙ РОЗПРОДАЖ"
       ]
     },
     "Reload event button tooltip": {
@@ -9884,9 +9942,6 @@
       "Deleting contacts": [
         "Видалення контактів"
       ],
-      "Desktop": [
-        "Настільний"
-      ],
       "Discard changes?": [
         "Відхилити зміни?"
       ],
@@ -9898,9 +9953,6 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Понизити до ${ downgradedPlanName }?"
-      ],
-      "Download the app": [
-        "Завантажити програму"
       ],
       "Drop to upload": [
         "Перетягніть для вивантаження"
@@ -9977,9 +10029,6 @@
       "High security for your account": [
         "Високий рівень безпеки для вашого облікового запису"
       ],
-      "How does it all work?": [
-        "Як це все працює?"
-      ],
       "How does it work?": [
         "Як це працює?"
       ],
@@ -10021,9 +10070,6 @@
       ],
       "Minicalendar": [
         "Мінікалендар"
-      ],
-      "Mobile": [
-        "Мобільний"
       ],
       "Need more aliases?": [
         "Потрібно більше псевдонімів?"
@@ -10243,9 +10289,6 @@
       ],
       "Verifying your payment...": [
         "Триває перевірка платежу..."
-      ],
-      "VPN explained": [
-        "VPN — простими словами"
       ],
       "Warning": [
         "Попередження"

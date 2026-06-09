@@ -1004,6 +1004,9 @@
       "Verify account": [
         "Verifiser konto"
       ],
+      "Verify now": [
+        "Verifiser nå"
+      ],
       "View": [
         "Vis"
       ],
@@ -1462,6 +1465,89 @@
       ],
       "Yearly": [
         "Årlig"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Aktivert"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresse er allerede i bruk av en bruker på utsiden av din organisasjon. Kontakt kundestøtte for å løse dette."
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Konfigurer migrering"
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Errors": [
+        "Feil"
+      ],
+      "Estimated size": [
+        "Estimert størrelse"
+      ],
+      "Find out what can be migrated.": [
+        "Finn ut hva som kan migreres."
+      ],
+      "Has errors": [
+        "Inneholder feil"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadressen ble ikke funnet. Ta kontakt med kundestøtte for å løse dette."
+      ],
+      "Migrated": [
+        "Migrert"
+      ],
+      "Migration status": [
+        "Migreringsstatus"
+      ],
+      "Missing organization private key": [
+        "Mangler privat nøkkel for organisasjonen"
+      ],
+      "Missing organization public key": [
+        "Mangler offentlig nøkkel for organisasjonen"
+      ],
+      "No users to display": [
+        "Ingen brukere å vise"
+      ],
+      "Not activated": [
+        "Ikke aktivert"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisasjonen har ikke nok ledige lisenser"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisasjonen har ikke nok lagringsplass tilgjengelig"
+      ],
+      "Pending": [
+        "Venter"
+      ],
+      "Select users to migrate": [
+        "Velg brukere som skal migreres"
+      ],
+      "Size": [
+        "Størrelse"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Bruker"
+      ],
+      "What are you migrating?": [
+        "Hva migrerer du?"
+      ],
+      "You": [
+        "Du"
       ]
     },
     "Browser": {
@@ -3138,7 +3224,7 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Sørg for at du fortsatt har tilgang til kontoen og dataene dine selv om du mister ${ BRAND_NAME }-passordet ditt."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
         "For en sømløs overgang til ${ BRAND_NAME }, importer dataene dine fra Google, Outlook og andre."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
@@ -3338,17 +3424,6 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Abonnementet ditt på ${ PLAN_NAMES[PLANS.PASS] } har en spesiell pris på ${ price } i året. Hvis du nedgraderer til Free, mister du rabatten for godt, selv om du oppgraderer på nytt i fremtiden."
-      ]
-    },
-    "Drawer tab, Action": {
-      "Download for Linux": [
-        "Last ned for Linux"
-      ],
-      "Download for macOS": [
-        "Last ned for macOS"
-      ],
-      "Download for Windows": [
-        "Last ned for Windows"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3583,6 +3658,9 @@
       ],
       "Aliases could not be loaded": [
         "Aliaser kan ikke lastes inn"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "All lagringsplass er tildelt. Reduser lagringsplass tildelt andre brukere."
       ],
       "Already a member of this calendar": [
         "Allerede medlem av denne kalenderen"
@@ -3907,11 +3985,23 @@
       "Please activate your search again": [
         "Aktiver søket ditt på nytt"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Sjekk om ABN-nummeret ditt er registrert for grenseoverskridende merverdiavgift"
+      ],
       "Please complete the billing details": [
         "Fyll ut faktureringsdetaljene"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Konfigurer et egendefinert domene før du legger til adresser."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Konfigurer et egendefinert domene før du legger til nye brukere til din organisasjon."
+      ],
       "Please create an address first.": [
         "Opprett en adresse først."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Aktiver støtte for flere brukere før du legger brukere til din organisasjon."
       ],
       "Please enter a valid postal code": [
         "Skriv inn et gyldig postnummer"
@@ -3943,6 +4033,9 @@
       ],
       "Please select billing state": [
         "Velg faktureringsstat"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Oppgrader til en forretningsplan med mer enn 1 bruker for å administrere flere brukere."
       ],
       "Port is required": [
         "Port kreves"
@@ -4080,9 +4173,6 @@
       "Try using only letters, numerals, and _.-": [
         "Prøv å bruke bare bokstaver, tall og _.-"
       ],
-      "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "Kan ikke laste VPN-kontrollpanelet. Kontroller tilkoblingen og prøv på nytt."
-      ],
       "Unexpected error, we can't import the contacts": [
         "Uventet feil, vi kan ikke importere kontaktene"
       ],
@@ -4100,6 +4190,9 @@
       ],
       "Validation error": [
         "Valideringsfeil"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "MVA-nummeret må starte med ${ prefixes }"
       ],
       "Wrong billing address": [
         "Feil faktureringsadresse"
@@ -4122,6 +4215,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Du har nådd grensen for antall kontakter for kontoen din"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Du har brukt alle adressene i planen. Oppgrader planen for å legge til en ny adresse eller deaktiver en adresse i kontoen din."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Du har brukt alle brukerne i planen din. Oppgrader planen din for å legge til en ny bruker."
       ],
       "You must set a name": [
         "Du må angi et navn"
@@ -5203,12 +5302,13 @@
       "${ storage } storage": [
         "${ storage } lagringsplass"
       ],
+      "${ total } user found": [
+        "${ total } bruker funnet",
+        "${ total } brukere funnet"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt oppdatert",
         "${ updated } kontakter oppdatert"
-      ],
-      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
-        "${ VPN_APP_NAME } maskerer IP-adressen din, slik at nettsteder ikke kan identifisere deg."
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } skjuler trafikken din. ${ PASS_SHORT_APP_NAME } skjule identiteten din\n— ubegrenset antall **hide-my-email-aliaser** og **varsler på det mørke nettet** hvis dataene dine noen gang lekker ut."
@@ -5220,26 +5320,14 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/måned)"
       ],
-      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
-        "**Automatisk tilkobling**: åpnes og kobles til VPN så snart du slår på enheten."
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Inviter vennene dine** til ${ BRAND_NAME } med vervekoblingen."
       ],
-      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**Nødstopp**: stopper datalekkasjer ved å blokkere internett hvis VPN-en dropper ut uventet."
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**De får ${ refereeRewardAmount }** i kreditter hvis de abonnerer."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Trinn 1:** Inviter vennene dine til ${ BRAND_NAME } med vervekoblingen."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Trinn 2:** Vennene dine får 2 uker gratis på den valgte ${ BRAND_NAME }-planen."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Trinn 2:** Vennene dine får 2 uker gratis på planene deres."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Trinn 3:** Få ${ referrerRewardAmount } kreditter for hver venn som abonnerer på en plan."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Trinn 3:** Få ${ referrerRewardAmount } i kreditter for hver person som abonnerer på en plan."
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "** Du får ${ referrerRewardAmount }** i kreditter for hver venn som abonnerer."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
@@ -5263,26 +5351,11 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan bare brukes til å bekrefte en ${ BRAND_NAME }-konto"
       ],
-      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
-        "En sikker tilkobling er avgjørende når du jobber eksternt. Et VPN beskytter bedriftsdata mot cybertrusler og holder arbeidet ditt privat."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruker er en konto assosiert med et enkelt brukernavn, postboks og person"
       ],
-      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "Et VPN krypterer tilkoblingen din og skjuler IP-adressen, noe som gjør det mye vanskeligere for noen å spore eller overvåke surfingen din."
-      ],
-      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "Et VPN skjuler IP-adressen din og krypterer nettleseraktiviteten, noe som gjør det vanskeligere for nettsteder, annonsører og Internett-leverandører å spore deg over tid."
-      ],
-      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
-        "Et VPN er en sikker tunnel mellom enheten din og internett. Den skjuler posisjonen og aktiviteten din for internettleverandøren din (ISP) og nettstedene du besøker."
-      ],
       "Account successfully updated": [
         "Konto oppdatert"
-      ],
-      "Ad targeting": [
-        "Annonsemålretting"
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
@@ -5301,9 +5374,6 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adresseverifisering med klarerte nøkler er aktivert for denne adressen. For å kunne sende til denne adressen skal de offentlige nøklene, som kan brukes for å sende, først angis som klarerte."
-      ],
-      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
-        "Annonsører sporer surfingen din for å vise målrettede annonser. ${ VPN_APP_NAME } blokkerer sporere og annonser, noe som gjør tilkoblingen din raskere og forbedrer nettopplevelsen din."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "KI-drevet assistent for å hjelpe deg med å lage bedre e-poster, raskt og enkelt."
@@ -5452,9 +5522,6 @@
       "Close this screen to exit.": [
         "Lukk dette skjermbildet for å avslutte."
       ],
-      "Connect to ${ VPN_APP_NAME } to browse privately": [
-        "Koble til ${ VPN_APP_NAME } for å surfe privat"
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilordnet gruppe ${ contactGroupName }"
       ],
@@ -5547,6 +5614,9 @@
       ],
       "Display events for calendar ${ Name }": [
         "Vis hendelser for kalender ${ Name }"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Husker du passordet ditt? ${ verifyButton }"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ser ingenting? Husk å slå av blokkering av sprett-opp-vinduer."
@@ -5666,17 +5736,14 @@
       "For just ${ bundlePlanPriceInline }": [
         "For kun ${ bundlePlanPriceInline }"
       ],
+      "Forgot password?": [
+        "Glemt passord?"
+      ],
       "Frequency modifications will be lost.": [
         "Frekvensendringer vil gå tapt."
       ],
-      "Geoblocking": [
-        "Geoblokkering"
-      ],
       "Google Pay mark": [
         "Merk Google Pay"
-      ],
-      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
-        "Myndigheter og Internett-leverandører kan overvåke nettaktiviteten din. Ved å skjule din virkelige IP og kryptere aktiviteten din blir surfingen privat."
       ],
       "here": [
         "her"
@@ -5739,9 +5806,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
       ],
-      "In restrictive countries": [
-        "I restriktive land"
-      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I neste trinn, vil du kunne sende inn et innskudd ved å bruke en Bitcoin-adresse."
       ],
@@ -5771,9 +5835,6 @@
       ],
       "It's better to have:": [
         "Det er bedre å ha:"
-      ],
-      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "Det er best å bruke et VPN til enhver tid. Men her er når cybersikkerhetstrusler kan være høyest:"
       ],
       "JCB logo": [
         "JCB-logo"
@@ -5865,9 +5926,6 @@
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
       ],
-      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
-        "De fleste offentlige WiFi-nettverk er trygge, men noen mangler sikkerhet, noe som utsetter deg for cybertrusler. Et VPN krypterer trafikken din og holder deg beskyttet."
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Gi den nye mappen et navn, og velg den overordnede mappen du vil legge den i. Hvis du ikke velger en overordnet mappe, opprettes denne nye mappen som en mappe på øverste nivå."
       ],
@@ -5910,9 +5968,6 @@
       "Not a valid URL": [
         "Ikke en gyldig nettadresse"
       ],
-      "Not connected": [
-        "Ikke tilkoblet"
-      ],
       "Not on the same day": [
         "Ikke på samme dag"
       ],
@@ -5930,9 +5985,6 @@
       ],
       "Occurrences previously updated by the organizer will be kept.": [
         "Forekomster som tidligere er oppdatert av arrangøren vil bli beholdt."
-      ],
-      "On public WiFi networks": [
-        "På offentlige Wi-Fi-nettverk"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere av de betrodde nøklene dine ble merket \"kompromittert\" av eieren. Vi anbefaler at du \"ikke stoler på\" disse nøklene."
@@ -5969,6 +6021,9 @@
       ],
       "Password must have:": [
         "Passordet må ha:"
+      ],
+      "Password verified": [
+        "Passord bekreftet"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet med TLS-kryptering og sveitsiske personvernlover."
@@ -6049,9 +6104,6 @@
       "Privacy by default": [
         "Personvern som standard"
       ],
-      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
-        "Privat surfing (eller \"inkognitomodus\") er bare nyttig for å holde aktiviteten din skjult på enheten din. Det hindrer nettleseren din i å lagre historikk og informasjonskapsler, men det gjør deg ikke usynlig. Internett-leverandøren, nettverksadministratoren og nettstedene du besøker, kan fortsatt se hva du gjør på nettet."
-      ],
       "Range already exists.": [
         "Tidsintervallet finnes allerede."
       ],
@@ -6082,9 +6134,6 @@
       "Saving event": [
         "Lagrer hendelsen",
         "Lagrer hendelser"
-      ],
-      "Scan the QR code with your mobile device": [
-        "Skann QR-koden med mobilenheten din"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Velg det e-postformatet du vil bruke som standard når du sender en e-post til denne adressen."
@@ -6119,20 +6168,11 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
       ],
-      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
-        "Noen myndigheter blokkerer eller begrenser tilgangen til visse nettsteder. Et VPN hjelper til med å omgå sensur samtidig som aktiviteten og identiteten din holdes privat."
-      ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Noen av svarene dine på forekomster som tidligere er oppdatert av arrangøren vil gå tapt."
       ],
-      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
-        "Noen nettsteder og strømmetjenester blokkerer innhold etter region. Et VPN lar deg omgå disse begrensningene og gir fri tilgang til internett."
-      ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynn å dele det med kontakter og bruk det til nettjenester."
-      ],
-      "Stay connected effortlessly by enabling the following VPN settings:": [
-        "Hold deg tilkoblet uten problemer ved å aktivere følgende VPN-innstillinger:"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Send inn et innskudd ved å bruke følgende adresse eller skann QR-koden. Innskuddet ditt vil gjenspeiles i kontoen din etter bekreftelse."
@@ -6152,9 +6192,6 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Abonnementet avsluttes: For å beholde fordelene med ${ planName }, start abonnementet på nytt i Google Play Store innen ${ byDate }. ${ reactivateLink }"
-      ],
-      "Surveillance": [
-        "Overvåking"
       ],
       "Symbols (#$&)": [
         "Symboler (#$&)"
@@ -6240,12 +6277,6 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Denne koblingen kan være et homografangrep. Kontroller at dette er koblingen du ønsker å besøke, eller la være å åpne den."
       ],
-      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
-        "Dette betyr at Internett-leverandøren din og nettstedene du besøker, ikke kan koble personopplysningene dine til nettaktiviteten din."
-      ],
-      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
-        "Denne unike koden kan brukes av nettsteder og Internett-leverandører for å koble posisjonen og nettleserloggen din til enheten din."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Dette vil logge deg ut av alle kontoer som for øyeblikket er logget på."
       ],
@@ -6263,6 +6294,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For å bekjempe søppelpost og misbruk må du bekrefte at du er et menneske."
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "For å hjelpe deg med å huske passordet ditt, ber vi deg om å skrive det inn med jevne mellomrom. Vi ber deg færre ganger over tid."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "For å importere hendelser, først opprett en kalender i ${ CALENDAR_APP_NAME }. Dette er hvor hendelsene vil vises etter importen."
@@ -6287,9 +6321,6 @@
       ],
       "Total VPN connections": [
         "Totalt antall VPN-forbindelser"
-      ],
-      "Tracking": [
-        "Sporing"
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Stol på \"${ activeSignerText }\"-nøkkelen for å bekrefte nye meldinger fra denne kontakten."
@@ -6333,9 +6364,6 @@
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
-      "VPN IP": [
-        "VPN-IP"
-      ],
       "Warning": [
         "Advarsel"
       ],
@@ -6363,6 +6391,9 @@
       "We'll notify you when the import is done.": [
         "Vi varsler deg når importen er ferdig."
       ],
+      "We'll remind you to verify your password again later": [
+        "Vi minner deg på å bekrefte passordet ditt igjen senere."
+      ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifiseringskode til ${ strong }"
       ],
@@ -6377,12 +6408,6 @@
       ],
       "When can appointments be booked?": [
         "Når kan avtaler bestilles?"
-      ],
-      "When working remotely": [
-        "Når du jobber eksternt"
-      ],
-      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
-        "Når du kobler til VPN, bruker det krypteringsteknologi for å skjule IP-adressen din (en unik kode som er tildelt enheten din)."
       ],
       "Where will the appointment take place?": [
         "Hvor vil avtalen finne sted?"
@@ -6588,15 +6613,6 @@
       "Your information was found on ${ displayedDate }": [
         "Informasjonen din ble funnet den ${ displayedDate }."
       ],
-      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
-        "Internett-leverandøren din kan overvåke og noen ganger selge dataene dine, eller til og med begrense hvilke nettsteder du har tilgang til."
-      ],
-      "Your IP": [
-        "IP-en din"
-      ],
-      "Your IP address is visible and can be used to track your online activity.": [
-        "IP-adressen din er synlig og kan brukes til å spore nettaktiviteten din."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "Påloggingsinformasjonen lagres ikke etter at importen er fullført."
       ],
@@ -6606,17 +6622,11 @@
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Din neste faktureringsdato er ${ renewalTime }. Du kan avbryte når som helst. Ta kontakt med kundestøtte hvis du trenger en umiddelbar planendring."
       ],
-      "Your online activity is protected": [
-        "Nettaktiviteten din er beskyttet"
-      ],
       "Your password was leaked:": [
         "Passordet ditt ble lekket:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefonnummeret ditt vil kun bli brukt til denne engangsbekreftelsen."
-      ],
-      "Your physical location is visible and can be used to restrict your access to the internet.": [
-        "Din fysiske plassering er synlig og kan brukes til å begrense tilgangen din til internett."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Den planlagte planen starter på ${ renewalTime } og fornyes automatisk hver ${ cycle } måned.",
@@ -6808,9 +6818,22 @@
         "Ukesvisning"
       ]
     },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Bytt til ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Bytt til ${ MAIL_APP_NAME }"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Basic actions": [
         "Grunnleggende handlinger"
+      ],
+      "Desktop app navigation": [
+        "Skrivebordsapp-navigering"
       ],
       "View options": [
         "Vis alternativer"
@@ -7369,15 +7392,6 @@
       ],
       "Your domain": [
         "Ditt domene"
-      ],
-      "Your IP": [
-        "IP-en din"
-      ],
-      "Your ISP": [
-        "Internettleverandøren din"
-      ],
-      "Your location": [
-        "Plasseringen din"
       ],
       "Your password (admin)": [
         "Ditt passord (admin)"
@@ -9950,6 +9964,9 @@
       "San Francisco": [
         "San Francisco"
       ],
+      "Search": [
+        "Søk"
+      ],
       "Search events": [
         "Søk hendelser"
       ],
@@ -9958,6 +9975,9 @@
       ],
       "Search for name or email": [
         "Søk etter navn eller e-post"
+      ],
+      "Search for users or addresses": [
+        "Søk etter brukere eller adresser"
       ],
       "Search parent folder": [
         "Søk i overordnet mappe"
@@ -10205,6 +10225,78 @@
       ],
       "SPRING SALE": [
         "VÅRSALG"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Benytt deg av tilbudet"
+      ],
+      "Summer Sale": [
+        "Sommersalg"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "2 TB data storage": [
+        "2 TB datalagring"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagring: 40 ganger ditt nåværende abonnement"
+      ],
+      "3 TB data storage": [
+        "3 TB datalagring"
+      ],
+      "500 GB storage": [
+        "500 GB lagringsplass"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premiumfunksjoner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premiumfunksjoner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter er basert på standard månedspris. Abonnementet ditt fornyes til standard årspris når faktureringssyklusen utløper."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Full tilgang til ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuelle kontoer for 6 brukere"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuelle kontoer for deg og en partner"
+      ],
+      "Online document and spreadsheet editor": [
+        "Pålogget redigeringsprogram for dokumenter og regneark"
+      ],
+      "Recover previous file versions": [
+        "Gjenopprett tidligere filversjoner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Sterkere beskyttelse mot cybertrusler"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Bytt til vårt årlige abonnement og spar ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ubegrensede mapper, etiketter og filtre"
+      ],
+      "Use your own email domain": [
+        "Bruk ditt eget e-postdomene"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "i 12 måneder"
+      ],
+      "SUMMER SALE": [
+        "SOMMERSALG"
       ]
     },
     "Referral": {
@@ -12008,9 +12100,6 @@
       "Deleting contacts": [
         "Sletter kontakter"
       ],
-      "Desktop": [
-        "Skrivebord"
-      ],
       "Discard changes?": [
         "Forkaste endringer?"
       ],
@@ -12028,9 +12117,6 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Last ned ${ DRIVE_APP_NAME }-appen"
-      ],
-      "Download the app": [
-        "Last ned appen"
       ],
       "Drop to upload": [
         "Slipp for å laste opp"
@@ -12104,9 +12190,6 @@
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Få **${ referralInfo.uiData.refereeRewardAmount }** i kreditter med ${ planTitle }"
       ],
-      "Get more from your VPN": [
-        "Får mer ut av ditt VPN"
-      ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Skaff deg mer lagringsplass med ${ MAIL_APP_NAME } Plus"
       ],
@@ -12137,9 +12220,6 @@
       "Host": [
         "Vert"
       ],
-      "How does it all work?": [
-        "Hvordan fungerer alt?"
-      ],
       "How does it work?": [
         "Hvordan fungerer det?"
       ],
@@ -12155,9 +12235,6 @@
       ],
       "Import contacts": [
         "Importer kontakter"
-      ],
-      "Import emails, calendars, contacts": [
-        "Importer e-poster, kalendere, kontakter"
       ],
       "Import events": [
         "Importer hendelser"
@@ -12186,20 +12263,17 @@
       "Location": [
         "Plassering"
       ],
-      "Make a secure connection your default": [
-        "Gjør en sikker tilkobling til standard"
-      ],
       "Merge contacts": [
         "Slå sammen kontakter"
       ],
       "Merging contacts": [
         "Slår sammen kontakter"
       ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrer organisasjonen din til ${ BRAND_NAME }"
+      ],
       "Minicalendar": [
         "Minikalender"
-      ],
-      "Mobile": [
-        "Mobil"
       ],
       "Need more aliases?": [
         "Trenger du flere aliaser?"
@@ -12260,9 +12334,6 @@
       ],
       "Previous": [
         "Forrige"
-      ],
-      "Private browsing vs VPN": [
-        "Privat surfing kontra VPN"
       ],
       "Processing...": [
         "Behandler..."
@@ -12423,6 +12494,9 @@
       "Summary": [
         "Sammendrag"
       ],
+      "Summer Sale": [
+        "Sommersalg"
+      ],
       "The booking feature is currently unavailable.": [
         "Bestillingsfunksjonen er utilgjengelig for øyeblikket."
       ],
@@ -12474,14 +12548,14 @@
       "Verification failed": [
         "Bekreftelse mislyktes"
       ],
+      "Verify your password": [
+        "Bekreft passordet ditt"
+      ],
       "Verifying your card...": [
         "Verifiserer kortet ditt..."
       ],
       "Verifying your payment...": [
         "Verifiserer betalingen din..."
-      ],
-      "VPN explained": [
-        "VPN forklart"
       ],
       "Warning": [
         "Advarsel"
@@ -12503,15 +12577,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Velkommen til ${ BRAND_NAME } for Business"
-      ],
-      "What can a VPN protect you from?": [
-        "Hva kan et VPN beskytte deg mot?"
-      ],
-      "What is a VPN?": [
-        "Hva er et VPN?"
-      ],
-      "When is it most important to use a VPN?": [
-        "Når er det viktigst å bruke et VPN?"
       ],
       "You are all set": [
         "Du er klar"
