@@ -474,6 +474,9 @@
       "Keep my subscription": [
         "Manter minha assinatura"
       ],
+      "Later": [
+        "Mais tarde"
+      ],
       "Learn more": [
         "Saiba mais"
       ],
@@ -897,6 +900,9 @@
       "Verify account": [
         "Verificar conta"
       ],
+      "Verify now": [
+        "Verificar agora"
+      ],
       "View": [
         "Visualizar"
       ],
@@ -1206,6 +1212,92 @@
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Especialmente projetado, o NetShield protege os dispositivos e acelera sua navegação ao bloquear anúncios, rastreadores e malware."
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Ativado"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "O endereço já é usado por um usuário fora da sua organização. Entre em contato com o suporte ao cliente para resolver isso"
+      ],
+      "All": [
+        "Todos"
+      ],
+      "Calendar": [
+        "Calendário"
+      ],
+      "Configure migration": [
+        "Configurar migração"
+      ],
+      "Contacts": [
+        "Contatos"
+      ],
+      "Emails": [
+        "E-mails"
+      ],
+      "Errors": [
+        "Errors"
+      ],
+      "Estimated size": [
+        "Tempo estimado"
+      ],
+      "Find out what can be migrated.": [
+        "Descubra o que pode ser migrado."
+      ],
+      "Has errors": [
+        "Tem erros"
+      ],
+      "In progress": [
+        "Em processo"
+      ],
+      "Migrate": [
+        "Migrar"
+      ],
+      "Migrated": [
+        "Migrado"
+      ],
+      "Migration status": [
+        "Status da migração"
+      ],
+      "Missing organization private key": [
+        "Falta a chave privada da organização"
+      ],
+      "Missing organization public key": [
+        "Falta a chave pública da organização"
+      ],
+      "No users to display": [
+        "Nenhum usuário para exibir"
+      ],
+      "Not activated": [
+        "Não ativado"
+      ],
+      "Organization does not have enough seats available": [
+        "A organização não tem licenças suficientes disponíveis"
+      ],
+      "Organization does not have enough storage available": [
+        "A organização não tem armazenamento suficientes disponíveis"
+      ],
+      "Pending": [
+        "Pendente"
+      ],
+      "Select users to migrate": [
+        "Selecione os usuários a serem migrados"
+      ],
+      "Size": [
+        "Tamanho"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Usuário"
+      ],
+      "What are you migrating?": [
+        "O que você está migrando?"
+      ],
+      "You": [
+        "Você"
       ]
     },
     "Browser": {
@@ -2519,9 +2611,6 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Garanta que você ainda possa acessar sua conta e seus dados, mesmo que perca sua senha do ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Para uma transição sem interrupções para o ${ BRAND_NAME }, importe seus dados do Google, Outlook e outros."
-      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Seja notificado caso sua senha ou outros dados sejam vazados de um serviço de terceiros."
       ],
@@ -2882,6 +2971,9 @@
       "Aliases could not be loaded": [
         "Não foi possível carregar os aliases"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Todo o espaço de armazenamento foi alocado. Reduza o armazenamento alocado para outros usuários."
+      ],
       "Already a member of this share": [
         "Já é membro deste compartilhamento"
       ],
@@ -3130,6 +3222,15 @@
       "Photos upload is temporarily disabled. Please try again later": [
         "O envio de fotos está temporariamente desativado. Tente novamente mais tarde."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configure um domínio personalizado antes de adicionar endereços."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Configure um domínio personalizado antes de adicionar usuários à sua organização."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Ative o suporte a múltiplos usuários antes de adicionar usuários à sua organização."
+      ],
       "Please enter a valid postal code": [
         "Insira um código postal válido"
       ],
@@ -3154,6 +3255,9 @@
       ],
       "Please select a state": [
         "Selecione um estado"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Atualize para um plano de negócios com mais de 1 usuário para gerenciar vários usuários."
       ],
       "Port is required": [
         "Porta é necessária"
@@ -3309,6 +3413,9 @@
       "Unknown error": [
         "Erro desconhecido"
       ],
+      "Unknown location": [
+        "Localização desconhecida"
+      ],
       "Update Too Large": [
         "Atualização muito grande"
       ],
@@ -3345,6 +3452,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Você atingiu o limite de contatos para sua conta"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Você usou todos os endereços do seu plano. Faça o upgrade do seu plano para adicionar um novo endereço ou desative um endereço na sua conta."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Você usou todos os usuários do seu plano. Faça o upgrade do seu plano para adicionar um novo usuário."
       ],
       "You must set a name": [
         "Você deve especificar um nome"
@@ -4302,6 +4415,10 @@
         "${ selectedFoldersCountLocalized } marcador selecionado",
         "${ selectedFoldersCountLocalized } marcadores selecionados"
       ],
+      "${ total } user found": [
+        "${ total } usuário encontrado",
+        "${ total } usuários encontrados"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contato atualizado.",
         "${ updated } contatos atualizados."
@@ -4321,21 +4438,6 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: Impede vazamentos de dados bloqueando sua conexão com a internet se a VPN cair inesperadamente."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Passo 1:** Convide seus amigos para a ${ BRAND_NAME } com seu link de indicação."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Passo 2:** Seus amigos ganham 2 semanas grátis no plano ${ BRAND_NAME } escolhido por eles."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Passo 2:** Seus amigos ganham 2 semanas grátis no plano deles."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Passo 3:** Ganhe ${ referrerRewardAmount } créditos para cada amigo que se inscrever para um plano."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Passo 3:** Ganhe ${ referrerRewardAmount } em créditos para cada pessoa que se inscrever para um plano."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } de armazenamento bônus"
@@ -4558,6 +4660,9 @@
       "Display word count": [
         "Exibir contagem de palavras"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Você lembra sua senha ? ${ verifyButton }"
+      ],
       "Document is in trash": [
         "O documento está na lixeira"
       ],
@@ -4701,6 +4806,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Para obter melhores resultados, evite streaming e atividades que consomem muita memória ou divida seu carregamento em lotes menores."
+      ],
+      "Forgot password?": [
+        "Esqueceu sua senha?"
       ],
       "Free 5GB encrypted storage to get started": [
         "Armazenamento criptografado gratuito de 5 GB para começar"
@@ -4967,6 +5075,9 @@
       ],
       "Password must have:": [
         "A senha deve conter:"
+      ],
+      "Password verified": [
+        "Senha verificada"
       ],
       "Pending invitations": [
         "Convites pendentes"
@@ -5638,6 +5749,9 @@
       ],
       "Expired": [
         "Expirado"
+      ],
+      "Fallback": [
+        "Alternativa"
       ],
       "KOO": [
         "KOO"
@@ -7678,6 +7792,9 @@
       "\"${ name }\" failed to be saved": [
         "Não foi possível salvar \"${ name }\"."
       ],
+      "\"${ name }\" moved": [
+        "\"${ name }\" movido"
+      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" movido para a lixeira"
       ],
@@ -7686,9 +7803,6 @@
       ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" salvo"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" movido"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Não foi possível mudar o nome de \"${ newName }\"."
@@ -7728,6 +7842,10 @@
         "Erro ao restaurar ${ numberOfItems } arquivo da lixeira",
         "Erro ao restaurar ${ numberOfItems } arquivos da lixeira"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } item movido",
+        "${ numberOfItems } itens movidos"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } item movido para a lixeira",
         "${ numberOfItems } itens movidos para a lixeira"
@@ -7735,10 +7853,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } item restaurado da lixeira",
         "${ numberOfItems } itens restaurados da lixeira"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } item movido",
-        "${ numberOfItems } itens movidos"
       ],
       "${ reason } has been disabled": [
         "${ reason } foi desativado"
@@ -8346,11 +8460,17 @@
       "Please describe the problem and include any error messages": [
         "Descreva o problema e inclua quaisquer mensagens de erro"
       ],
+      "Search": [
+        "Pesquisar"
+      ],
       "Search for group name": [
         "Pesquisar nome do grupo"
       ],
       "Search for name or email": [
         "Pesquisar nome ou e-mail"
+      ],
+      "Search for users or addresses": [
+        "Pesquisar por um usuários ou endereços"
       ],
       "Search parent folder": [
         "Pesquisar pasta pai"
@@ -8564,6 +8684,78 @@
       ],
       "SPRING SALE": [
         "PROMO DE PRIMAVERA"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Aproveitar a oferta"
+      ],
+      "Summer Sale": [
+        "Oferta Especial"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mês"
+      ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "2 TB data storage": [
+        "2 TB de armazenamento de dados"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de armazenamento: 40x o seu plano atual"
+      ],
+      "3 TB data storage": [
+        "3 TB de armazenamento de dados"
+      ],
+      "500 GB storage": [
+        "500 GB de armazenamento"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todos os recursos premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todos os recursos premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Os descontos são baseados nos preços mensais padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Acesso total ao ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Contas individuais para 6 usuários"
+      ],
+      "Individual accounts for you and a partner": [
+        "Contas individuais para você e um parceiro"
+      ],
+      "Online document and spreadsheet editor": [
+        "Editor on-line de documentos e planilhas"
+      ],
+      "Recover previous file versions": [
+        "Recupere versões anteriores de arquivos"
+      ],
+      "Stronger protection against cyber threats": [
+        "Proteção mais forte contra ameaças cibernéticas"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Mude para o nosso plano anual e economize ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, marcadores e filtros ilimitados"
+      ],
+      "Use your own email domain": [
+        "Use seu próprio domínio de e-mail"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "por 12 meses"
+      ],
+      "SUMMER SALE": [
+        "OFERTA ESPECIAL"
       ]
     },
     "Recent documents table header": {
@@ -9885,6 +10077,9 @@
       "Desktop": [
         "Área de trabalho"
       ],
+      "Devices": [
+        "Dispositivos"
+      ],
       "Discard": [
         "Descartar"
       ],
@@ -10018,9 +10213,6 @@
       "Import contacts": [
         "Importar contatos"
       ],
-      "Import emails, calendars, contacts": [
-        "Importar e-mails, calendários e contatos"
-      ],
       "Import events": [
         "Importar eventos"
       ],
@@ -10059,6 +10251,9 @@
       ],
       "Merging contacts": [
         "Mesclando contatos"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migre sua organização para a ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Mini calendário"
@@ -10210,6 +10405,9 @@
       "Share your link": [
         "Compartilhe seu link"
       ],
+      "Shared with me": [
+        "Compartilhado comigo"
+      ],
       "Sign in and grant access": [
         "Iniciar sessão e conceder acesso"
       ],
@@ -10281,6 +10479,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Usar o ${ VPN_SHORT_APP_NAME } para a privacidade de dados"
+      ],
+      "Verify your password": [
+        "Verificar sua senha"
       ],
       "VPN explained": [
         "VPN explicada"
