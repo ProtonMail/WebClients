@@ -12,13 +12,9 @@ import { IcPlus } from '@proton/icons/icons/IcPlus';
 import type { Group } from '@proton/shared/lib/interfaces';
 
 import GroupItem from './GroupItem';
-import type { GroupsManagementReturn } from './types';
-
-interface Props {
-    groupsManagement: GroupsManagementReturn;
-    canOnlyDelete: boolean;
-    hasUsableDomain: boolean;
-}
+import { useGroupsManagement } from './context/GroupsManagementContext';
+import useGroupAvailableAddressDomains from './hooks/useGroupAvailableAddressDomains';
+import { GROUPS_STATE } from './types';
 
 // Sort by natural order e.g. [1, 10, 11, 2] -> [1, 2, 10, 11]
 const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
@@ -34,16 +30,15 @@ const getSortedGroups = (input: string, groups: Group[]) => {
         : [...groups].sort(compareGroupNames);
 };
 
-const GroupList = ({
-    groupsManagement: { uiState, groups, selectedGroup, actions, getSerializedGroup, groupRolesMap },
-    canOnlyDelete,
-    hasUsableDomain,
-}: Props) => {
+const GroupList = () => {
     const [user] = useUser();
+    const { isFrozen, uiState, groups, selectedGroup, actions, getSerializedGroup, groupRolesMap } = useGroupsManagement();
+    const { hasUsableDomain } = useGroupAvailableAddressDomains();
     const isAdmin = user?.isAdmin;
-    const canCreateGroup = isAdmin && hasUsableDomain && !canOnlyDelete;
-    const [searchInput, setSearchInput] = useState<string>('');
+
+    const canCreateGroup = isAdmin && hasUsableDomain && !isFrozen;
     const [showSearchInput, setShowSearchInput] = useState(!canCreateGroup);
+    const [searchInput, setSearchInput] = useState<string>('');
 
     const sideBarPlaceholder = (
         <div className="flex justify-center items-center w-full m-auto overflow-x-auto p-3 h-full">
@@ -61,59 +56,57 @@ const GroupList = ({
 
     return (
         <>
-            {showSearchInput ? (
-                <div className="flex items-center gap-2 border-bottom pb-4 mb-4 shrink-0 flex-nowrap px-3 pt-4">
-                    <Input
-                        autoFocus
-                        value={searchInput}
-                        onValue={setSearchInput}
-                        placeholder={c('Placeholder').t`Group name`}
-                        prefix={<IcMagnifier />}
-                    />
-                    {canCreateGroup && (
+            <div
+                className="flex items-center gap-2 border-bottom pb-4 mb-4 shrink-0 flex-nowrap px-3 pt-4 h-custom"
+                style={{ '--h-custom': '5em' }}
+            >
+                {showSearchInput ? (
+                    <>
+                        <Input
+                            autoFocus
+                            value={searchInput}
+                            onValue={setSearchInput}
+                            placeholder={c('Placeholder').t`Group name`}
+                            prefix={<IcMagnifier />}
+                        />
+                        {canCreateGroup && (
+                            <Button
+                                shape="ghost"
+                                icon
+                                onClick={() => {
+                                    setShowSearchInput(false);
+                                    setSearchInput('');
+                                }}
+                                title={c('Action').t`Close search`}
+                            >
+                                <IcCross alt={c('Action').t`Close search`} />
+                            </Button>
+                        )}
+                    </>
+                ) : (
+                    <>
                         <Button
-                            shape="ghost"
-                            icon
-                            onClick={() => {
-                                setShowSearchInput(false);
-                                setSearchInput('');
-                            }}
-                            title={c('Action').t`Close search`}
+                            className="group-button flex flex-row flex-nowrap items-center px-3"
+                            onClick={() => actions.onCreateGroup()}
                         >
-                            <IcCross alt={c('Action').t`Close search`} />
+                            <IcPlus className="shrink-0 mr-2" />
+                            {c('Action').t`New group`}
                         </Button>
-                    )}
-                </div>
-            ) : (
-                <div className="flex items-center justify-space-between border-bottom pb-4 mb-4 shrink-0 flex-nowrap px-3 pt-4">
-                    <Button
-                        className="group-button flex flex-row flex-nowrap items-center px-3"
-                        onClick={() => actions.onCreateGroup()}
-                    >
-                        <IcPlus className="shrink-0 mr-2" />
-                        {c('Action').t`New group`}
-                    </Button>
-                    <Button
-                        icon
-                        className="ml-auto"
-                        onClick={() => setShowSearchInput(true)}
-                        title={c('Action').t`Search groups`}
-                    >
-                        <IcMagnifier alt={c('Action').t`Search groups`} />
-                    </Button>
-                </div>
-            )}
-
-            {uiState !== 'new' && groups.length === 0 && sideBarPlaceholder}
+                        <Button
+                            icon
+                            className="ml-auto"
+                            onClick={() => setShowSearchInput(true)}
+                            title={c('Action').t`Search groups`}
+                        >
+                            <IcMagnifier alt={c('Action').t`Search groups`} />
+                        </Button>
+                    </>
+                )}
+            </div>
+            {uiState !== GROUPS_STATE.NEW && groups.length === 0 && sideBarPlaceholder}
             <Scroll className="pb-4">
-                {uiState === 'new' && (
-                    <GroupItem
-                        key="new"
-                        active
-                        serializedGroup={serializedGroup}
-                        isNew={true}
-                        canOnlyDelete={canOnlyDelete}
-                    />
+                {uiState === GROUPS_STATE.NEW && (
+                    <GroupItem key="new" active serializedGroup={serializedGroup} isNew={true} />
                 )}
                 {sortedGroups.map((group) => (
                     <GroupItem
@@ -121,11 +114,8 @@ const GroupList = ({
                         group={group}
                         active={group.ID === selectedGroup?.ID}
                         serializedGroup={serializedGroup?.payload.id === group.ID ? serializedGroup : undefined}
-                        onClick={() => {
-                            actions.onViewGroup(group);
-                        }}
+                        onClick={() => actions.onViewGroup(group)}
                         onDeleteGroup={actions.onDeleteGroup}
-                        canOnlyDelete={canOnlyDelete}
                         groupOrganizationRoles={groupRolesMap[group.ID]}
                     />
                 ))}

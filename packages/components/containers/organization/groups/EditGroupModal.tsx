@@ -24,46 +24,39 @@ import { useLoading } from '@proton/hooks';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { stripWhitespace } from '@proton/shared/lib/helpers/string';
-import type { EnhancedGroup } from '@proton/shared/lib/interfaces';
 import { GroupPermissions } from '@proton/shared/lib/interfaces';
-import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import DiscardGroupChangesPrompt from './DiscardGroupChangesPrompt';
 import E2EEDisabledWarning from './E2EEDisabledWarning';
 import GroupAddressDomainSelect from './GroupAddressDomainSelect';
 import E2EEToggle from './components/E2EEToggle';
+import { useGroupsManagement } from './context/GroupsManagementContext';
 import { getAddressSuggestedLocalPart } from './helpers';
+import useGroupAvailableAddressDomains from './hooks/useGroupAvailableAddressDomains';
 import useTriggerDiscardModal from './hooks/useTriggerDiscardModal';
 import shouldShowMail from './shouldShowMail';
-import type { GroupsManagementReturn } from './types';
+import { GROUPS_STATE } from './types';
 
-interface Props {
-    groupsManagement: GroupsManagementReturn;
-    groupData?: EnhancedGroup;
-}
-
-const EditGroupModal = ({ groupsManagement, groupData }: Props) => {
+const EditGroupModal = () => {
     const {
         uiState,
+        selectedGroup: groupData,
         actions,
         form,
         groupMembers,
         loadingGroupMembers,
         domainData,
-        suggestedAddressDomainName,
-        suggestedAddressDomainPart,
-    } = groupsManagement;
+    } = useGroupsManagement();
 
     const { dirty, values: formValues, setFieldValue, isValid, errors } = form;
     const hasErrors = !isEmpty(errors);
-    const { loadingCustomDomains, selectedDomain, setSelectedDomain, customDomains } = domainData;
+    const { primarySuggestion } = useGroupAvailableAddressDomains();
 
     const [discardChangesModalProps, setDiscardChangesModal, renderDiscardChangesModal] = useModalState();
 
     const [loading, withLoading] = useLoading();
     const [organization] = useOrganization();
-    const verifiedCustomDomains = customDomains?.filter(getIsDomainActive);
 
     const [selectedRoles, setSelectedRoles] = useState<Set<string>>(
         () => new Set(groupData?.GroupOrganizationRoles?.map(({ Role }) => Role.OrganizationRoleID) ?? [])
@@ -91,19 +84,19 @@ const EditGroupModal = ({ groupsManagement, groupData }: Props) => {
     });
 
     useEffect(() => {
-        if (uiState === 'edit') {
+        if (uiState === GROUPS_STATE.EDIT) {
             const addressDomain = formValues.address.substring(formValues.address.indexOf('@') + 1);
-            setSelectedDomain(addressDomain);
-        } else if (uiState === 'new') {
-            setSelectedDomain(suggestedAddressDomainPart);
+            domainData.setSelectedDomain(addressDomain);
+        } else if (uiState === GROUPS_STATE.NEW) {
+            domainData.setSelectedDomain(primarySuggestion.domain ?? '');
         }
-    }, [uiState]);
+    }, [uiState, primarySuggestion.domain]);
 
     const hideMail = !shouldShowMail(organization?.PlanName);
     const primaryGroupAddressKey = groupData?.Address.Keys[0];
     const isE2EEEnabled = !hasBit(primaryGroupAddressKey?.Flags ?? 0, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
     useEffect(() => {
-        if (hideMail && uiState === 'new') {
+        if (hideMail && uiState === GROUPS_STATE.NEW) {
             const suggestedLocalPart = getAddressSuggestedLocalPart(formValues.name, organization?.Name, hideMail);
             void setFieldValue('address', suggestedLocalPart, false);
         }
@@ -128,7 +121,7 @@ const EditGroupModal = ({ groupsManagement, groupData }: Props) => {
                                 name="name"
                                 maxLength={30}
                                 placeholder={c('placeholder').t`Add a group name`}
-                                autoFocus={uiState === 'new' ? true : undefined}
+                                autoFocus={uiState === GROUPS_STATE.NEW ? true : undefined}
                                 value={formValues.name}
                                 onValue={(name: string) => setFieldValue('name', name)}
                                 onBlur={() => {
@@ -168,7 +161,7 @@ const EditGroupModal = ({ groupsManagement, groupData }: Props) => {
                                     name="address"
                                     placeholder={c('placeholder').t`e.g. marketing`}
                                     value={
-                                        uiState === 'new'
+                                        uiState === GROUPS_STATE.NEW
                                             ? formValues.address
                                             : formValues.address.substring(0, formValues.address.indexOf('@'))
                                     }
@@ -179,20 +172,18 @@ const EditGroupModal = ({ groupsManagement, groupData }: Props) => {
                                     }}
                                     onValue={(address: string) => setFieldValue('address', stripWhitespace(address))}
                                     error={errors.address}
-                                    disabled={uiState === 'edit'} // disable until BE supports address change
+                                    disabled={uiState === GROUPS_STATE.EDIT} // disable until BE supports address change
                                     suffix={(() => {
-                                        if (loadingCustomDomains) {
+                                        if (domainData.loading) {
                                             return <CircleLoader />;
                                         }
 
                                         return (
                                             <GroupAddressDomainSelect
-                                                domains={verifiedCustomDomains}
-                                                selectedDomain={selectedDomain}
-                                                suggestedDomainName={suggestedAddressDomainName}
-                                                onChange={(value: string) => setSelectedDomain(value)}
-                                                setSelectedDomain={setSelectedDomain}
-                                                disabled={uiState === 'edit'} // disable until BE supports address change
+                                                selectedDomain={domainData.selectedDomain}
+                                                onChange={(value: string) => domainData.setSelectedDomain(value)}
+                                                setSelectedDomain={domainData.setSelectedDomain}
+                                                disabled={uiState === GROUPS_STATE.EDIT} // disable until BE supports address change
                                             />
                                         );
                                     })()}
@@ -221,13 +212,11 @@ const EditGroupModal = ({ groupsManagement, groupData }: Props) => {
                     )}
                 </Form>
             </FormikProvider>
-            {!hideMail && uiState === 'edit' && groupData && (
-                <E2EEToggle group={groupData} groupsManagement={groupsManagement} />
-            )}
+            {!hideMail && uiState === GROUPS_STATE.EDIT && groupData && <E2EEToggle group={groupData} />}
         </>
     );
 
-    const modalTitle = uiState === 'new' ? c('Title').t`Create group` : c('Title').t`Edit group`;
+    const modalTitle = uiState === GROUPS_STATE.NEW ? c('Title').t`Create group` : c('Title').t`Edit group`;
 
     return (
         <>

@@ -8,6 +8,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import GroupMemberItemDropdown from './GroupMemberItemDropdown';
 import { GroupMemberItemWrapper } from './components/GroupMemberItemWrapper';
+import { useGroupsManagement } from './context/GroupsManagementContext';
 
 type InvitationBadgeMap = Partial<{
     [key in GROUP_MEMBER_STATE]: { label: string; tooltip: string };
@@ -32,7 +33,6 @@ interface Props {
     groupMember: GroupMember;
     member?: EnhancedMember;
     group: Group; // needs to be removed once GroupMemberItemDropdown does not need it
-    canOnlyDelete: boolean;
     canChangeVisibility: boolean;
     showMailFeatures: boolean;
 }
@@ -42,10 +42,10 @@ export const GroupMemberItem = ({
     groupMember: { Email, State },
     member,
     group,
-    canOnlyDelete,
     canChangeVisibility,
     showMailFeatures,
 }: Props) => {
+    const { isFrozen } = useGroupsManagement();
     const badge = getInvitationBadgeMap()[State];
     const isGroupOwner = hasBit(groupMember.Permissions, GROUP_MEMBER_PERMISSIONS.OWNER);
     const isGroupOwnerEnabled = useFlag('UserGroupsGroupOwner');
@@ -82,7 +82,7 @@ export const GroupMemberItem = ({
                         groupMember={groupMember}
                         member={member}
                         group={group}
-                        canOnlyDelete={canOnlyDelete}
+                        isFrozen={isFrozen}
                         canChangeVisibility={canChangeVisibility}
                     />
                 </div>

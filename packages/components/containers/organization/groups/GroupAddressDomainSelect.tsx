@@ -1,5 +1,3 @@
-import { useCallback } from 'react';
-
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
@@ -8,38 +6,28 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import type { Domain } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import AddSubdomainModal from './AddSubdomainModal';
-import useGroupsProtonMeDomain from './useGroupsProtonMeDomain';
-import usePmMeDomain from './usePmMeDomain';
-
-interface DomainOption {
-    label: string;
-    value: string;
-}
+import useGroupAvailableAddressDomains from './hooks/useGroupAvailableAddressDomains';
+import type { DomainSuggestion } from './types';
 
 const Option = ({
-    option,
+    suggestion,
     isSelected,
     onSelect,
 }: {
-    option: DomainOption;
+    suggestion: DomainSuggestion;
     isSelected?: boolean;
     onSelect: (value: string) => void;
 }) => {
-    const handleClick = useCallback(() => {
-        onSelect(option.value);
-    }, [option]);
     return (
         <DropdownMenuButton
             className="text-left flex items-center flex-nowrap gap-4"
-            key={option.value}
-            onClick={handleClick}
+            key={suggestion.domain}
+            onClick={() => onSelect(suggestion.domain!)}
         >
-            <span className="text-ellipsis inline-block" title={option.label}>
-                {option.label}
+            <span className="text-ellipsis inline-block" title={`@${suggestion.domain}`}>
+                {`@${suggestion.domain}`}
             </span>
             {isSelected ? <IcCheckmark className="color-primary shrink-0" data-testid="selected-domain" /> : null}
         </DropdownMenuButton>
@@ -47,55 +35,23 @@ const Option = ({
 };
 
 interface Props {
-    domains: Domain[] | undefined;
     selectedDomain: string;
-    suggestedDomainName: string;
     onChange: (value: string) => void;
     setSelectedDomain: (domain: string) => void;
     disabled?: boolean;
 }
 
-const GroupAddressDomainSelect = ({
-    domains: domainsArg = [],
-    selectedDomain,
-    suggestedDomainName,
-    setSelectedDomain,
-    onChange,
-    disabled,
-}: Props) => {
+const GroupAddressDomainSelect = ({ selectedDomain, setSelectedDomain, onChange, disabled }: Props) => {
+    const { allSuggestions, primarySuggestion, pmMeDomain } = useGroupAvailableAddressDomains();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     // setAddSubdomainModal is removed for now until add pm.me domain option can be supported
     const [addSubdomainModal, , renderAddSubdomainModal] = useModalState();
-    const groupsWithoutCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
-    const [pmMeDomain, loadingPmMeDomain] = usePmMeDomain();
-    const [groupsProtonMeDomain, loadingGroupsProtonMeDomain] = useGroupsProtonMeDomain();
-
-    if (loadingPmMeDomain || loadingGroupsProtonMeDomain) {
-        return null;
-    }
-
-    const defaultDomains = pmMeDomain === null ? [] : [{ DomainName: `${suggestedDomainName}${pmMeDomain}` }];
-    const domains = domainsArg.length > 0 ? [...domainsArg] : defaultDomains;
-
-    if (groupsProtonMeDomain && groupsWithoutCustomDomainEnabled) {
-        const groupsDomain = { DomainName: groupsProtonMeDomain };
-        domains.push(groupsDomain);
-    }
-
-    const domainOptions: DomainOption[] = domains.map((domain) => ({
-        label: `@${domain.DomainName}`,
-        value: domain.DomainName,
-    }));
-
-    const handleChange = (value: string) => {
-        onChange(value);
-    };
 
     return (
         <>
             {renderAddSubdomainModal && pmMeDomain && (
                 <AddSubdomainModal
-                    prefilledDomainName={suggestedDomainName}
+                    prefilledDomainName={primarySuggestion.domain ?? ''}
                     setSelectedDomain={setSelectedDomain}
                     pmMeDomain={pmMeDomain}
                     {...addSubdomainModal}
@@ -120,12 +76,12 @@ const GroupAddressDomainSelect = ({
                 size={{ width: DropdownSizeUnit.Dynamic, height: DropdownSizeUnit.Dynamic }}
             >
                 <DropdownMenu>
-                    {domainOptions.map((option) => (
+                    {allSuggestions.map((s) => (
                         <Option
-                            key={option.value}
-                            option={option}
-                            isSelected={option.value === selectedDomain}
-                            onSelect={handleChange}
+                            key={s.domain}
+                            suggestion={s}
+                            isSelected={s.domain === selectedDomain}
+                            onSelect={onChange}
                         />
                     ))}
                 </DropdownMenu>
