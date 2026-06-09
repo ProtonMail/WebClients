@@ -1,10 +1,10 @@
-import { useEffect, useMemo, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import type { ComponentType } from 'react';
 
 import type { FormikErrors } from 'formik';
 import { useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useGroupMembers } from '@proton/account/groupMembers/hooks';
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
 import { createGroup, deleteGroup, editGroup } from '@proton/account/groups/actions';
@@ -13,7 +13,9 @@ import { getIsSystemGroup } from '@proton/account/groups/groupFlags';
 import { useGroups } from '@proton/account/groups/hooks';
 import { useGroupRoles } from '@proton/account/groups/useGroupRoles';
 import { useMembers } from '@proton/account/members/hooks';
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import Loader from '@proton/components/components/loader/Loader';
 import useGroupKeys from '@proton/components/containers/organization/groups/useGroupKeys';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
@@ -24,13 +26,14 @@ import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/fo
 import type { EnhancedMember, Group, GroupMember, Organization } from '@proton/shared/lib/interfaces';
 import { GroupFlags, GroupPermissions } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_PERMISSIONS } from '@proton/shared/lib/interfaces/GroupMember';
+import { useFlag } from '@proton/unleash/useFlag';
 
-import shouldShowMail from './shouldShowMail';
-import type { DomainSuggestion, GroupFormData, GroupsManagementReturn } from './types';
-import useGroupsProtonMeDomain from './useGroupsProtonMeDomain';
-import usePmMeDomain from './usePmMeDomain';
-
-export type GROUPS_STATE = 'empty' | 'view' | 'new' | 'edit';
+import canUseGroups from '../canUseGroups';
+import useGroupAvailableAddressDomains from '../hooks/useGroupAvailableAddressDomains';
+import shouldShowMail from '../shouldShowMail';
+import { GROUPS_STATE } from '../types';
+import type { GroupFormData, GroupsManagementReturn } from '../types';
+import useGroupsProtonMeDomain from '../useGroupsProtonMeDomain';
 
 const INITIAL_FORM_VALUES = (organization?: Organization) => ({
     name: '',
@@ -42,8 +45,10 @@ const INITIAL_FORM_VALUES = (organization?: Organization) => ({
     members: '',
 });
 
-const useGroupsManagement = (organization?: Organization): GroupsManagementReturn | undefined => {
-    const showMailFeatures = shouldShowMail(organization?.PlanName);
+const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
+    const [organization] = useOrganization();
+    const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
+    const isUserGroupsPassBusinessEnabled = useFlag('UserGroupsPassBusiness');
 
     const handleError = useErrorHandler();
     const [members] = useMembers();
@@ -56,8 +61,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     const { createNotification } = useNotifications();
     const [selectedGroupId, setSelectedGroupId] = useState<string | undefined>(undefined);
     const selectedGroup = groups?.find((group) => group.ID === selectedGroupId);
-    const [uiState, setUiState] = useState<GROUPS_STATE>('empty');
-    const [customDomains, loadingCustomDomains] = useCustomDomains();
+    const [uiState, setUiState] = useState<GROUPS_STATE>(GROUPS_STATE.EMPTY);
     const { getMemberPublicKeys } = useGroupKeys();
 
     const addGroupMembers = async (group: Group, emails: string[]) => {
@@ -67,8 +71,8 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
             handleError(e);
         }
     };
-    const [pmMeDomain, loadingPmMeDomain] = usePmMeDomain();
-    const [groupsProtonMeDomain, loadingGroupsProtonMeDomain] = useGroupsProtonMeDomain();
+    const [groupsProtonMeDomain] = useGroupsProtonMeDomain();
+    const { primarySuggestion, invalidGroupSuggestion, loading: loadingDomains } = useGroupAvailableAddressDomains();
 
     const addressToMemberMap = useMemo(() => {
         const value: { [id: string]: EnhancedMember | undefined } = {};
@@ -94,79 +98,13 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         return value;
     }, [members]);
 
-    const getSuggestedAddressDomainName = () => {
-        if (!organization) {
-            createNotification({ type: 'error', text: 'Organization data is missing' });
-            return '';
-        }
-
-        return organization?.DisplayName.toLowerCase().replace(/\s+/g, '');
-    };
-
-    const suggestedAddressDomainName = useMemo(getSuggestedAddressDomainName, [organization]);
-
-    const getSuggestedAddressDomainPart = (): DomainSuggestion => {
-        // case 1: simplest case, prefer custom domain if available and mail is enabled
-        if (showMailFeatures && customDomains && customDomains.length > 0) {
-            return {
-                domain: customDomains[0].DomainName,
-                source: 'customdomain',
-            };
-        }
-
-        // case 2: use the pm.me domain, if available
-        if (loadingPmMeDomain || !organization) {
-            return {
-                domain: null,
-                source: null,
-            };
-        }
-
-        // case 3: use the groups proton.me domain
-        if (loadingGroupsProtonMeDomain) {
-            return {
-                domain: null,
-                source: null,
-            };
-        }
-
-        if (groupsProtonMeDomain) {
-            return {
-                domain: groupsProtonMeDomain,
-                source: 'group',
-            };
-        }
-
-        if (!pmMeDomain) {
-            // We tried cases 1, 2 and 3, and none of them worked. This should normally not happen.
-            throw new Error('No domain available for groups.');
-        }
-
-        const organizationName = organization.DisplayName.toLowerCase().replace(/\s+/g, '');
-        return {
-            domain: `${organizationName}${pmMeDomain}`,
-            source: 'pm.me',
-        };
-    };
-
-    const { domain: suggestedAddressDomainPart, source: suggestedAddressDomainSource } = useMemo(
-        getSuggestedAddressDomainPart,
-        [
-            organization,
-            customDomains,
-            pmMeDomain,
-            loadingPmMeDomain,
-            groupsProtonMeDomain,
-            loadingGroupsProtonMeDomain,
-            showMailFeatures,
-        ]
-    );
-
     const [selectedDomain, setSelectedDomain] = useState<string | null>(null);
 
     useEffect(() => {
-        setSelectedDomain(suggestedAddressDomainPart);
-    }, [suggestedAddressDomainPart]);
+        if (primarySuggestion.domain && selectedDomain === null) {
+            setSelectedDomain(primarySuggestion.domain);
+        }
+    }, [primarySuggestion, selectedDomain]);
 
     const [groupMembers, loadingGroupMembers] = useGroupMembers(selectedGroup?.ID);
 
@@ -175,7 +113,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
 
     const hasDuplicateNameValidator = (name: string): string => {
         const countGroupsWithName = groups?.filter(({ Name }) => Name === name).length ?? 0;
-        const groupNameLimit = uiState === 'new' ? 0 : 1;
+        const groupNameLimit = uiState === GROUPS_STATE.NEW ? 0 : 1;
         return countGroupsWithName > groupNameLimit ? c('Error').t`Name already exists` : '';
     };
 
@@ -195,7 +133,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
             if (nameDuplicateError) {
                 errors.name = nameDuplicateError;
             }
-            if (uiState === 'new' && addressError) {
+            if (uiState === GROUPS_STATE.NEW && addressError) {
                 errors.address = addressError;
             }
             return errors;
@@ -207,14 +145,13 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     const isLoading =
         !organization ||
         loadingGroups ||
-        loadingPmMeDomain ||
-        loadingGroupsProtonMeDomain ||
+        loadingDomains ||
         loadingUser ||
         loadingMemberships ||
         !groups ||
         !members ||
         !selectedDomain ||
-        !suggestedAddressDomainPart ||
+        !primarySuggestion.domain ||
         !user ||
         !memberships;
 
@@ -223,12 +160,14 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     }
 
     const getSerializedGroup: GroupsManagementReturn['getSerializedGroup'] = () => {
-        const allowedTypes = uiState === 'new' || uiState === 'edit';
+        const allowedTypes = uiState === GROUPS_STATE.NEW || uiState === GROUPS_STATE.EDIT;
         if (!allowedTypes) {
             return;
         }
         const email =
-            uiState === 'new' && formValues.address ? `${formValues.address}@${selectedDomain}` : formValues.address;
+            uiState === GROUPS_STATE.NEW && formValues.address
+                ? `${formValues.address}@${selectedDomain}`
+                : formValues.address;
         return {
             type: uiState,
             payload: {
@@ -253,7 +192,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
             createNotification({ type: 'success', text: c('Info').t`Group deleted` });
             resetForm();
             setSelectedGroupId(undefined);
-            setUiState('empty');
+            setUiState(GROUPS_STATE.EMPTY);
         } catch (error) {
             handleError(error);
         }
@@ -266,7 +205,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         }
 
         const { type, payload } = serializedGroup;
-        const isNewGroup = type === 'new';
+        const isNewGroup = type === GROUPS_STATE.NEW;
 
         const isGroupsProtonMeDomain = selectedDomain === groupsProtonMeDomain;
 
@@ -286,14 +225,14 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         const thunkAction = isNewGroup ? createGroup : editGroup;
         const Group = await dispatch(thunkAction({ api: api, group: payload }));
 
-        setUiState('view');
+        setUiState(GROUPS_STATE.VIEW);
 
         resetForm();
         setSelectedGroupId(Group.ID);
     };
 
     const handleEditGroup = (group: Group) => {
-        setUiState('edit');
+        setUiState(GROUPS_STATE.EDIT);
         resetForm({
             values: {
                 name: group.Name,
@@ -307,7 +246,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
 
     const handleViewGroup = (group: Group) => {
         setSelectedGroupId(group.ID);
-        setUiState('view');
+        setUiState(GROUPS_STATE.VIEW);
         resetForm({
             values: {
                 name: group.Name,
@@ -319,8 +258,13 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         });
     };
 
+    const handleUnselectGroup = () => {
+        setSelectedGroupId(undefined);
+        setUiState(GROUPS_STATE.EMPTY);
+    };
+
     const handleCreateGroup = () => {
-        setUiState('new');
+        setUiState(GROUPS_STATE.NEW);
         resetForm({
             values: INITIAL_FORM_VALUES(organization),
         });
@@ -328,13 +272,17 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     };
 
     const handleDiscardChanges = () => {
-        setUiState(groups.length === 0 ? 'empty' : 'view');
+        setUiState(groups.length === 0 ? GROUPS_STATE.EMPTY : GROUPS_STATE.VIEW);
         resetForm({
             values: INITIAL_FORM_VALUES(organization),
         });
     };
 
-    const domainData = { loadingCustomDomains, selectedDomain, customDomains, setSelectedDomain };
+    const domainData = {
+        loading: loadingDomains,
+        selectedDomain,
+        setSelectedDomain,
+    };
 
     const filteredGroups = groups.filter((group) => {
         // Filter out system groups. They should never be displayed in the UI.
@@ -350,8 +298,17 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         );
     });
 
+
+    const isFrozen =
+        !canUseGroups(organization.PlanName, {
+            isUserGroupsNoCustomDomainEnabled,
+            isUserGroupsPassBusinessEnabled,
+        }) ||
+        (invalidGroupSuggestion && filteredGroups.length > 0);
+
     return {
         groups: filteredGroups,
+        isFrozen,
         members,
         selectedGroup,
         uiState,
@@ -362,9 +319,6 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         groupRolesMap,
         loadingGroupMembers,
         domainData,
-        suggestedAddressDomainName,
-        suggestedAddressDomainPart,
-        suggestedAddressDomainSource,
         getSerializedGroup,
         actions: {
             onDiscardChanges: handleDiscardChanges,
@@ -374,8 +328,33 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
             onSaveGroup: handleSaveGroup,
             onCreateGroup: handleCreateGroup,
             onAddGroupMembers: addGroupMembers,
+            onUnselectGroup: handleUnselectGroup,
         },
     };
 };
 
-export default useGroupsManagement;
+const GroupsManagementContext = createContext<GroupsManagementReturn | null>(null);
+
+export const useGroupsManagement = () => {
+    const ctx = useContext(GroupsManagementContext);
+    if (!ctx) {
+        throw new Error('useGroupsManagement must be used within withGroupsManagementContext');
+    }
+    return ctx;
+};
+
+export const withGroupsManagementContext = <P extends object>(Component: ComponentType<P>) => {
+    const WrappedComponent = (props: P) => {
+        const groupsManagement = useGroupsManagementLogic();
+        if (!groupsManagement) {
+            return <Loader />;
+        }
+        return (
+            <GroupsManagementContext.Provider value={groupsManagement}>
+                <Component {...props} />
+            </GroupsManagementContext.Provider>
+        );
+    };
+    WrappedComponent.displayName = `withGroupsManagementContext(${Component.displayName || Component.name})`;
+    return WrappedComponent;
+};

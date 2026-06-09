@@ -13,16 +13,16 @@ import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { Address, Group } from '@proton/shared/lib/interfaces';
 
-import type { GroupsManagementReturn } from '../types';
+import { useGroupsManagement } from '../context/GroupsManagementContext';
 
 interface Props {
     group: Group;
-    groupsManagement: GroupsManagementReturn;
 }
 
-const E2EEToggle = ({ group, groupsManagement }: Props) => {
+const E2EEToggle = ({ group }: Props) => {
+    const { groups } = useGroupsManagement();
     const groupAddressID = group.Address.ID;
-    const address = groupsManagement.groups.find(({ Address: { ID } }) => ID === groupAddressID)?.Address;
+    const address = groups.find(({ Address: { ID } }) => ID === groupAddressID)?.Address;
     const { createNotification } = useNotifications();
     const handleError = useErrorHandler();
 
