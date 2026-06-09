@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { usePasswordReminder } from '@proton/account/passwordReminder/hooks';
+import { usePasswordReminderTelemetry } from '@proton/account/passwordReminder/passwordReminderTelemetry';
 import { setPasswordReminderFlag } from '@proton/account/passwordReminder/setPasswordReminderFlag';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import Info from '@proton/components/components/link/Info';
@@ -29,6 +30,7 @@ const PasswordRemindersSettings = () => {
     ] = useModalState();
 
     const { isAvailable } = usePasswordReminder();
+    const { sendEnable } = usePasswordReminderTelemetry();
     if (!isAvailable) {
         return null;
     }
@@ -36,6 +38,7 @@ const PasswordRemindersSettings = () => {
     const enablePasswordReminders = async () => {
         await dispatch(setPasswordReminderFlag({ value: PASSWORD_REMINDERS_VALUE.ENABLED }));
         createNotification({ text: c('Success').t`Password reminders enabled` });
+        sendEnable();
     };
 
     const hasPasswordRemindersEnabled = userSettings.Flags.PasswordReminderOptOut === PASSWORD_REMINDERS_VALUE.ENABLED;
