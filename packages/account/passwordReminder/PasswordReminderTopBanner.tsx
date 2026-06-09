@@ -8,9 +8,11 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import PasswordReminderModal from './PasswordReminderModal';
 import { usePasswordReminder } from './hooks';
 import { dismissPasswordReminder, passwordReminderActions } from './index';
+import { usePasswordReminderTelemetry } from './passwordReminderTelemetry';
 
 const PasswordReminderTopBanner = () => {
     const dispatch = useDispatch();
+    const { sendDismiss } = usePasswordReminderTelemetry();
 
     const [passwordReminderModalProps, setPasswordReminderModalOpen, renderPasswordReminderModal] = useModalState();
 
@@ -23,6 +25,7 @@ const PasswordReminderTopBanner = () => {
         // Let's hide the banner in local state, and then fire and forget the delete call
         dispatch(passwordReminderActions.hideReminders());
 
+        sendDismiss();
         await dispatch(dismissPasswordReminder());
     };
 
@@ -34,7 +37,9 @@ const PasswordReminderTopBanner = () => {
 
     return (
         <>
-            {renderPasswordReminderModal && <PasswordReminderModal {...passwordReminderModalProps} />}
+            {renderPasswordReminderModal && (
+                <PasswordReminderModal {...passwordReminderModalProps} source="top_banner" />
+            )}
             <TopBanner className="bg-info" onClose={dismissReminder}>
                 {
                     // Translator: Full sentence "Do you remember your password? Verify now"
