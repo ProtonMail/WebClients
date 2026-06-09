@@ -26,9 +26,6 @@
       "Are you sure you want to delete all conversations?": [
         "¿Confirmas que quieres eliminar todas las conversaciones?"
       ],
-      "Are you sure you want to delete the conversation?": [
-        "¿Confirmas que quieres eliminar la conversación?"
-      ],
       "Attach screenshot(s)": [
         "Adjuntar una o varias capturas de pantalla"
       ],
@@ -262,6 +259,9 @@
       ],
       "Refresh the page": [
         "Actualizar la página"
+      ],
+      "Reload": [
+        "Recargar"
       ],
       "Remove": [
         "Eliminar"
@@ -910,6 +910,9 @@
       ]
     },
     "collider_2025: Action": {
+      "Agents": [
+        "Agentes"
+      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -1188,17 +1191,32 @@
       "Sign up for free to continue chatting and unlock access to chat history, starred chats, and more features.": [
         "Regístrate gratis para seguir chateando y desbloquear el acceso al historial de chat, a los chats destacados y a más funciones."
       ],
+      "That's a lot of files for ${ LUMO_SHORT_APP_NAME } to juggle. Remove some from this chat before uploading new ones to keep things purring.": [
+        "Son muchos archivos a la vez para ${ LUMO_SHORT_APP_NAME }. Elimina algunos de este chat antes de subir otros nuevos para que todo funcione a la perfección."
+      ],
+      "That's a lot of files for ${ LUMO_SHORT_APP_NAME } to juggle. Remove some from this project before uploading new ones to keep things purring.": [
+        "Son muchos archivos a la vez para ${ LUMO_SHORT_APP_NAME }. Elimina algunos de este proyecto antes de subir otros nuevos para que todo funcione a la perfección."
+      ],
+      "That's all the projects ${ LUMO_SHORT_APP_NAME } can keep purring at once. Delete one before creating a new one.": [
+        "Son todos los proyectos que ${ LUMO_SHORT_APP_NAME } puede hacer funcionar a la perfección a la vez. Elimina uno antes de crear uno nuevo."
+      ],
       "The provided URL is invalid.": [
         "La URL proporcionada no es válida."
+      ],
+      "This chat is full to the whiskers. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring.": [
+        "Este chat se ha llenado por completo. Inicia un nuevo chat para que ${ LUMO_SHORT_APP_NAME } funcione a la perfección."
+      ],
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Esta conversación es demasiado larga para continuar. Inicia un nuevo chat para que ${ LUMO_SHORT_APP_NAME } funcione a la perfección y responda con rapidez."
+      ],
+      "This project is full to the whiskers. Delete a conversation to make room for a new one and keep ${ LUMO_SHORT_APP_NAME } purring.": [
+        "Este proyecto se ha llenado por completo. Elimina una conversación para dejar espacio a una nueva y que ${ LUMO_SHORT_APP_NAME } funcione a la perfección."
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for unlimited chats, extended history, access to advanced AI models, and more.": [
         "Contrata ${ LUMO_SHORT_APP_NAME } Plus para chats ilimitados, historial extendido, acceso a modelos avanzados de IA y mucho más."
       ],
-      "You've reached the maximum of ${ limit } conversations. Delete some to create a new one.": [
-        "Has alcanzado el límite de ${ limit } conversaciones. Borra algunas para crear una nueva."
-      ],
-      "You've reached the maximum of ${ limit } files in this chat. Remove some files before uploading new ones.": [
-        "Has alcanzado el máximo de ${ limit } archivos en este chat. Elimina algunos antes de subir otros nuevos."
+      "You can attach up to ${ MAX_PROVISIONAL_ATTACHMENTS } files at a time. Remove some to add more.": [
+        "Puedes adjuntar hasta ${ MAX_PROVISIONAL_ATTACHMENTS } archivos a la vez. Elimina algunos para añadir más."
       ]
     },
     "collider_2025: Error Message": {
@@ -1875,15 +1893,48 @@
       "${ LUMO_SHORT_APP_NAME }'s a busy cat": [
         "${ LUMO_SHORT_APP_NAME } es un gato ocupado"
       ],
+      "Conversation too long": [
+        "Conversación demasiado larga"
+      ],
       "Failed to index file for search: ${ processingResult.message }": [
         "Error al indexar el archivo para la búsqueda: ${ processingResult.message }"
+      ],
+      "Long conversations can slow down responses. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring.": [
+        "Las conversaciones largas pueden ralentizar las respuestas. Inicia un nuevo chat para que ${ LUMO_SHORT_APP_NAME } funcione a la perfección."
       ],
       "Suspicious: ${ urlParts.subdomainCount } subdomain": [
         "Sospechoso: ${ urlParts.subdomainCount } subdominio",
         "Sospechosos: ${ urlParts.subdomainCount } subdominios"
       ],
+      "That's a lot of files for ${ LUMO_SHORT_APP_NAME } to juggle. Remove some before uploading new ones to keep things purring.": [
+        "Son muchos archivos a la vez para ${ LUMO_SHORT_APP_NAME }. Elimina algunos antes de subir otros nuevos para que todo funcione a la perfección."
+      ],
+      "This conversation is getting long": [
+        "Esta conversación se está alargando."
+      ],
+      "This conversation is getting long. Start a new chat soon to keep ${ LUMO_SHORT_APP_NAME } purring.": [
+        "Esta conversación se está alargando. Inicia un nuevo chat pronto para que ${ LUMO_SHORT_APP_NAME } funcione a la perfección."
+      ],
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Esta conversación es demasiado larga para continuar. Inicia un nuevo chat para que ${ LUMO_SHORT_APP_NAME } funcione a la perfección y responda con rapidez."
+      ],
       "This is the only time you'll see this key. Copy it now.": [
         "Solo verás esta clave una vez. Cópiala ahora."
+      ],
+      "This project is filling up": [
+        "Este proyecto se está llenando."
+      ],
+      "This project is filling up. Tidying away conversations you no longer need keeps ${ LUMO_SHORT_APP_NAME } purring.": [
+        "Este proyecto se está llenando. Organizar las conversaciones que ya no necesitas hace que ${ LUMO_SHORT_APP_NAME } funcione a la perfección."
+      ],
+      "This project is filling up. Tidying away files you no longer need keeps ${ LUMO_SHORT_APP_NAME } purring.": [
+        "Este proyecto se está llenando. Organizar los archivos que ya no necesitas hace que ${ LUMO_SHORT_APP_NAME } funcione a la perfección."
+      ],
+      "Tidying away files you no longer need keeps ${ LUMO_SHORT_APP_NAME } purring.": [
+        "Organizar los archivos que ya no necesitas hace que ${ LUMO_SHORT_APP_NAME } funcione a la perfección."
+      ],
+      "Too many files to juggle": [
+        "Demasiados archivos a la vez"
       ],
       "We're experiencing high traffic right now, but as a ${ LUMO_SHORT_APP_NAME } Plus customer, you're in the fast lane. We're prioritizing your requests as always.": [
         "Estamos experimentando mucho tráfico ahora mismo, pero como cliente Plus de ${ LUMO_SHORT_APP_NAME }, tienes prioridad. Como siempre, estamos dando prioridad a tus solicitudes."
@@ -1893,9 +1944,18 @@
       ],
       "We're experiencing higher than usual traffic, so responses may be a bit slower than usual. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for priority access during peak times.": [
         "Estamos experimentando un tráfico más alto de lo normal, por lo que las respuestas pueden ser un poco más lentas de lo habitual. Mejora a ${ LUMO_SHORT_APP_NAME } Plus para tener acceso prioritario durante las horas punta."
+      ],
+      "You're getting close to the number of projects ${ LUMO_SHORT_APP_NAME } can keep purring over.": [
+        "Te estás acercando al número de proyectos que ${ LUMO_SHORT_APP_NAME } puede hacer funcionar a la perfección."
       ]
     },
     "collider_2025: Web Search": {
+      "Show less": [
+        "Mostrar menos"
+      ],
+      "Show more": [
+        "Mostrar más"
+      ],
       "Sources": [
         "Fuentes"
       ]
@@ -1913,6 +1973,12 @@
       "Cancel": [
         "Cancelar"
       ],
+      "Change": [
+        "Cambiar"
+      ],
+      "Change agent": [
+        "Cambiar agente"
+      ],
       "Choose project icon": [
         "Elige el icono del proyecto"
       ],
@@ -1927,6 +1993,9 @@
       ],
       "Describe desired changes...": [
         "Describe los cambios deseados..."
+      ],
+      "Edit agent": [
+        "Editar agente"
       ],
       "Edit instructions": [
         "Editar instrucciones"
@@ -1943,11 +2012,17 @@
       "Keep these chats": [
         "Conservar estos chats"
       ],
+      "Make a copy": [
+        "Hacer una copia"
+      ],
       "Manage Drive folder link": [
         "Administrar enlace de carpeta de Drive"
       ],
       "More concise": [
         "Más conciso"
+      ],
+      "New agent": [
+        "Nuevo agente"
       ],
       "Next message": [
         "Mensaje siguiente"
@@ -1957,6 +2032,12 @@
       ],
       "Regenerate": [
         "Volver a generar"
+      ],
+      "Remove": [
+        "Eliminar"
+      ],
+      "Remove agent": [
+        "Quitar agente"
       ],
       "Remove all": [
         "Eliminar todo"
@@ -2001,6 +2082,44 @@
         "¿Qué hay que cambiar?"
       ]
     },
+    "collider_2025:Agent": {
+      "(copy)": [
+        "(Copia)"
+      ]
+    },
+    "collider_2025:Agent description": {
+      "Draft, refine and proofread your writing.": [
+        "Las instrucciones se han integrado correctamente y se aplican a partir de este momento."
+      ],
+      "Help with login, password, 2FA and recovery issues.": [
+        "Ayuda con problemas de inicio de sesión, contraseña, 2FA y recuperación."
+      ],
+      "Summarize documents into clear, concise takeaways.": [
+        "Resume documentos en conclusiones claras y concisas."
+      ],
+      "Turn a CSV or spreadsheet into a clear analysis.": [
+        "Convierte un CSV o una hoja de cálculo en un análisis claro."
+      ]
+    },
+    "collider_2025:Agent name": {
+      "Account Assistant": [
+        "Asistente de cuentas"
+      ],
+      "Data Analyst": [
+        "Analista de Datos"
+      ],
+      "Summarizer": [
+        "Resumidor"
+      ],
+      "Writing Assistant": [
+        "Asistente de redacción"
+      ]
+    },
+    "collider_2025:Badge": {
+      "Default": [
+        "Por defecto"
+      ]
+    },
     "collider_2025:Button": {
       "Add instructions to tailor ${ LUMO_SHORT_APP_NAME }'s responses": [
         "Agregar instrucciones para adaptar las respuestas de ${ LUMO_SHORT_APP_NAME }"
@@ -2013,6 +2132,9 @@
       ],
       "Close sidebar": [
         "Cerrar la barra lateral"
+      ],
+      "Create agent": [
+        "Crear agente"
       ],
       "Delete": [
         "Eliminar"
@@ -2079,6 +2201,9 @@
       ]
     },
     "collider_2025:Error": {
+      "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to run, but it isn't available in this browser. This can happen when cookies or website data are blocked, in private browsing, or with Lockdown Mode enabled. Please allow website data for this site and reload.": [
+        "${ LUMO_SHORT_APP_NAME } necesita almacenamiento de base de datos local (IndexedDB) para funcionar, pero no está disponible en este navegador. Esto puede ocurrir si se bloquean las cookies o los datos del sitio web, en la navegación privada o si el Modo de aislamiento está activado. Permite los datos del sitio web para este sitio y recarga."
+      ],
       "Database connection lost. Please refresh the page to continue.": [
         "Se ha perdido la conexión con la base de datos. Actualiza la página para continuar."
       ],
@@ -2118,17 +2243,34 @@
         "Proyectos ilimitados"
       ]
     },
+    "collider_2025:Filter": {
+      "All": [
+        "Todo"
+      ],
+      "Default": [
+        "Por defecto"
+      ],
+      "Mine": [
+        "Mis agentes"
+      ]
+    },
     "collider_2025:Icon": {
       "Expiring soon": [
         "Caducará pronto"
       ]
     },
     "collider_2025:Info": {
+      "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to keep your conversations on this device, but it isn't available here.": [
+        "${ LUMO_SHORT_APP_NAME } necesita almacenamiento de base de datos local (IndexedDB) para guardar tus conversaciones en este dispositivo, pero no está disponible aquí."
+      ],
       "${ project.conversationCount } conversations": [
         "${ project.conversationCount } conversaciones"
       ],
       "${ project.fileCount } files": [
         "${ project.fileCount } archivos"
+      ],
+      "Agents turn a chat into a focused assistant with its own instructions.": [
+        "Los agentes convierten un chat en un asistente especializado con sus propias instrucciones."
       ],
       "AIs from Big Tech are built on harvesting your data. But ${ LUMO_SHORT_APP_NAME } is different. It was created by the scientists behind innovative, privacy-first services like ${ MAIL_APP_NAME } and ${ VPN_APP_NAME }. And it’s owned by a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.": [
         "Las IA de las grandes empresas tecnológicas se basan en la recopilación de tus datos. Pero ${ LUMO_SHORT_APP_NAME } es diferente. Fue creada por los científicos responsables de servicios innovadores y centrados en la privacidad como ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }. Y es propiedad de una organización sin ánimo de lucro suiza, cuya misión es avanzar en la privacidad y nunca ganar dinero con los datos del usuario."
@@ -2136,14 +2278,26 @@
       "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
         "¿Estás seguro que deseas eliminar \"${ project.name }\"? Esta acción no se puede deshacer."
       ],
+      "Ask a question to get started. Your conversation is private.": [
+        "Haz una pregunta para empezar. Tu conversación es privada."
+      ],
       "Auto-retrieved": [
         "Recuperado automáticamente"
+      ],
+      "Built-in ${ BRAND_NAME } agent": [
+        "Agente integrado de ${ BRAND_NAME }"
       ],
       "Conversation encrypted": [
         "Conversación cifrada"
       ],
+      "Cookies or website data are blocked in your browser settings": [
+        "Se han bloqueado las cookies o los datos del sitio web en los ajustes de tu navegador"
+      ],
       "Current chat:": [
         "Chat actual:"
+      ],
+      "Example prompts shown when a conversation with this agent begins.": [
+        "Ejemplos de indicaciones que se muestran al comenzar una conversación con este agente."
       ],
       "File \"${ file.name }\" is already mentioned": [
         "El archivo \"${ file.name }\" ya se ha incluido"
@@ -2151,11 +2305,20 @@
       "From ${ DRIVE_APP_NAME }": [
         "Desde ${ DRIVE_APP_NAME }"
       ],
+      "Keep this agent out of the picker. It can still be opened with a shared link.": [
+        "Mantén este agente fuera del selector. Aún se puede abrir con un enlace compartido."
+      ],
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Adjunta archivos desde ${ DRIVE_APP_NAME } o súbelos desde tu ordenador."
       ],
+      "Lockdown Mode is enabled on your device": [
+        "El Modo de aislamiento está activado en tu dispositivo."
+      ],
       "No projects yet": [
         "Aún no hay proyectos"
+      ],
+      "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
+        "En el iPhone o iPad, abre Ajustes → Apps → Safari y asegúrate de que «Bloquear todas las cookies» está desactivado. Después recarga."
       ],
       "Processing file...": [
         "Procesando archivo..."
@@ -2175,6 +2338,9 @@
       "This project already has files. Please remove all files before linking a Drive folder.": [
         "Este proyecto ya tiene archivos. Por favor elimina todos los archivos antes de vincular una carpeta de Drive."
       ],
+      "This usually happens when:": [
+        "Esto suele ocurrir cuando:"
+      ],
       "This will remove all ${ fileCount } files from this project. This action cannot be undone.": [
         "Se eliminarán los ${ fileCount } archivos de este proyecto. Esta acción no se puede deshacer."
       ],
@@ -2183,6 +2349,9 @@
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
         "Pásate a ${ LUMO_SHORT_APP_NAME } Plus para crear proyectos ilimitados, desbloquear modelos de IA avanzados y mucho más."
+      ],
+      "You're using private browsing": [
+        "Estás usando la navegación privada"
       ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "Tus archivos son grandes. ${ LUMO_SHORT_APP_NAME } quizás no pueda procesar toda la información."
@@ -2198,8 +2367,17 @@
       "chats": [
         "conversaciones"
       ],
+      "Conversation starters (optional)": [
+        "Iniciadores de conversación (opcionales)"
+      ],
+      "Description (optional)": [
+        "Descripción (opcional)"
+      ],
       "Edit conversation title": [
         "Editar título de la conversación"
+      ],
+      "Hide from list": [
+        "Ocultar de la lista"
       ],
       "Instructions": [
         "Instrucciones"
@@ -2225,11 +2403,20 @@
       ]
     },
     "collider_2025:Placeholder": {
+      "Account recovery assistant": [
+        "Asistente de recuperación de cuenta"
+      ],
+      "Add a conversation starter": [
+        "Añadir un iniciador de conversación"
+      ],
       "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
         "Añade instrucciones sobre el tono, el estilo y la personalidad que quieres que adopte ${ LUMO_SHORT_APP_NAME }"
       ],
       "Ask anything…": [
         "Pregunta lo que quieras…"
+      ],
+      "Describe the role, scope, and behavior you want ${ LUMO_SHORT_APP_NAME } to adopt for this agent.": [
+        "Describe el rol, el alcance y el comportamiento que quieres que adopte ${ LUMO_SHORT_APP_NAME } para este agente."
       ],
       "Enter folder name": [
         "Ingresa el nombre de la carpeta"
@@ -2237,8 +2424,14 @@
       "Enter project name": [
         "Introduce el nombre del proyecto"
       ],
+      "Help with login, password and recovery issues.": [
+        "Ayuda con problemas de inicio de sesión, contraseña y recuperación."
+      ],
       "Holiday planner": [
         "Planificador de vacaciones"
+      ],
+      "Search agents": [
+        "Agentes de búsqueda"
       ],
       "Search chats": [
         "Buscar chats"
@@ -2364,6 +2557,9 @@
       ]
     },
     "collider_2025:Subline": {
+      "Agents turn a chat into a focused assistant with its own instructions. Pick one from the composer to start a conversation with it.": [
+        "Los agentes convierten un chat en un asistente especializado con sus propias instrucciones. Elige uno en el editor para empezar una conversación."
+      ],
       "Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.": [
         "Los proyectos te ayudan a guardar los chats, archivos e instrucciones relacionados en un mismo sitio. Te facilitan mantener la organización y permiten reutilizar el contexto entre chats."
       ]
@@ -2380,11 +2576,20 @@
       ]
     },
     "collider_2025:Title": {
+      "${ LUMO_SHORT_APP_NAME } can't start": [
+        "${ LUMO_SHORT_APP_NAME } no puede iniciarse"
+      ],
+      "Agents": [
+        "Agentes"
+      ],
       "An AI assistant should empower you, not exploit you for your data. That’s why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Un asistente de IA debería empoderarte, no explotar tus datos. Por eso creamos ${ LUMO_SHORT_APP_NAME }: para ofrecerte todos los beneficios de la IA, sin comprometer la privacidad y la seguridad de tus datos."
       ],
       "Built by the team that knows privacy": [
         "Creado por el equipo que sabe de privacidad"
+      ],
+      "Create agent": [
+        "Crear agente"
       ],
       "Create folder": [
         "Crear carpeta"
@@ -2392,11 +2597,11 @@
       "Create new project": [
         "Crear nuevo proyecto"
       ],
-      "Delete conversation?": [
-        "¿Eliminar la conversación?"
-      ],
       "Earlier": [
         "Anterior"
+      ],
+      "Edit agent": [
+        "Editar agente"
       ],
       "Edit Project": [
         "Editar proyecto"
@@ -3452,8 +3657,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Asegúrate de que aún puedes acceder a tu cuenta y a tus datos aunque pierdas tu contraseña de ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Para una transición fluida a ${ BRAND_NAME }, importa tus datos de Google, Outlook y otros servicios."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Para una incorporación perfecta de tu equipo a ${ BRAND_NAME }, importa tus datos desde Google, Outlook y otras plataformas."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros."
@@ -3655,6 +3860,9 @@
       "Payment process not supported": [
         "Proceso de pago no soportado"
       ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Comprueba si tu ABN está registrado para el IVA transfronterizo"
+      ],
       "Please complete the billing details": [
         "Completa los detalles de facturación"
       ],
@@ -3738,6 +3946,9 @@
       ],
       "Username must end with a letter or digit": [
         "El nombre de usuario debe terminar con una letra o un número."
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "El número de IVA debe empezar por ${ prefixes }."
       ],
       "Wrong billing address": [
         "Dirección de facturación incorrecta"
@@ -4851,11 +5062,23 @@
       "Clear History": [
         "Borrar historial"
       ],
+      "Close preview": [
+        "Cerrar vista previa"
+      ],
       "Create Test Chats": [
         "Crear chats de prueba"
       ],
+      "IndexedDB available": [
+        "IndexedDB disponible"
+      ],
       "Last token": [
         "Último token"
+      ],
+      "No": [
+        "No"
+      ],
+      "Preview \"IndexedDB unavailable\" screen": [
+        "Visualizar la pantalla 'IndexedDB no disponible'"
       ],
       "Render time": [
         "Tiempo de renderizado"
@@ -4868,6 +5091,9 @@
       ],
       "Tokens/sec": [
         "Tokens por segundo"
+      ],
+      "Yes": [
+        "Sí"
       ]
     },
     "lumo: Test Renderer": {
@@ -6490,6 +6716,78 @@
         "OFERTA DE PRIMAVERA"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Aprovecha la oferta"
+      ],
+      "Summer Sale": [
+        "Descuento de verano"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/meses"
+      ],
+      "15 GB storage": [
+        "15 GB de almacenamiento"
+      ],
+      "2 TB data storage": [
+        "2 TB de almacenamiento de datos"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de almacenamiento: 40 veces tu plan actual"
+      ],
+      "3 TB data storage": [
+        "3 TB de almacenamiento de datos"
+      ],
+      "500 GB storage": [
+        "500 GB de almacenamiento"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todas las funciones prémium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todas las funciones prémium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en el precio mensual estándar. Tu suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Acceso completo a ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Cuentas individuales para 6 usuarios"
+      ],
+      "Individual accounts for you and a partner": [
+        "Cuentas individuales para ti y otra persona"
+      ],
+      "Online document and spreadsheet editor": [
+        "Editor online de documentos y hojas de cálculo"
+      ],
+      "Recover previous file versions": [
+        "Recupera las versiones previas de los archivos"
+      ],
+      "Stronger protection against cyber threats": [
+        "Mayor protección contra las ciberamenazas"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "¡Cámbiate a nuestro plan anual y ahorra ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Use your own email domain": [
+        "Usa tu propio dominio de correo electrónico"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "durante 12 meses"
+      ],
+      "SUMMER SALE": [
+        "DESCUENTO DE VERANO"
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Verificar la seguridad de la cuenta"
@@ -7143,14 +7441,14 @@
       "Human verification": [
         "Verificación humana"
       ],
-      "Import emails, calendars, contacts": [
-        "Importar correos electrónicos, calendarios y contactos"
-      ],
       "Indexed Drive documents": [
         "Documentos de Drive indexados"
       ],
       "Invalid verification code": [
         "Código de verificación no válido"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migra tu organización a ${ BRAND_NAME }."
       ],
       "My Files": [
         "Mis archivos"
