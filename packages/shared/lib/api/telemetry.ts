@@ -8,6 +8,7 @@ export enum TelemetryMeasurementGroups {
     accountSafetyReviewCtr = 'account.web.safety_review_ctr',
     accountSafetyReviewScoreDiff = 'account.web.safety_review_score_diff',
     accountRecoverySettings = 'account.web.recovery_settings',
+    accountPasswordReminder = 'account.web.password_reminder',
     accountResetPassword = 'account.web.reset_password',
     accountUnauthLost2FA = 'account.web.unauth_lost_2fa',
     accountDashboard = 'account.web.dashboard',
@@ -244,6 +245,18 @@ export enum TelemetryRecoverySettingsEvents {
     page_load = 'page_load',
     account_safety_review_click = 'account_safety_review_click',
     setting_enabled = 'setting_enabled',
+}
+
+export enum TelemetryPasswordReminderEvents {
+    open = 'open',
+    success = 'success',
+    wrong_password = 'wrong_password',
+    api_error = 'api_error',
+    close = 'close',
+    dismiss = 'dismiss',
+    forgot_password_exit = 'forgot_password_exit',
+    enable = 'enable',
+    disable = 'disable',
 }
 
 export enum TelemetryResetPasswordEvents {
@@ -531,6 +544,7 @@ export type TelemetryEvents =
     | TelemetryAccountCancellationEvents
     | TelemetryAccountDashboardEvents
     | TelemetryRecoverySettingsEvents
+    | TelemetryPasswordReminderEvents
     | TelemetryResetPasswordEvents
     | TelemetryReferralDiscoverEvents
     | TelemetryKeyTransparencyErrorEvents
