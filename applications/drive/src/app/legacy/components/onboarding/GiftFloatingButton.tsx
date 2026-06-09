@@ -13,7 +13,9 @@ import {
     useAuthentication,
     useLocalState,
 } from '@proton/components';
+import { generateNodeUid } from '@proton/drive';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
+import { uploadManager } from '@proton/drive/modules/upload';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import type { IconName } from '@proton/icons/types';
@@ -27,7 +29,7 @@ import spotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-sta
 import clsx from '@proton/utils/clsx';
 
 import { useActiveShare } from '../../../legacy/hooks/drive/useActiveShare';
-import { useFileUploadInput } from '../../../legacy/store';
+import { useUploadInput } from '../../../legacy/hooks/drive/useUploadInput';
 import { useFileSharingModal } from '../../../modals/SelectLinkToShareModal';
 import { useIsFreeUploadInProgress } from '../../../modules/freeUpload';
 import { useTransferManagerState } from '../../../sections/transferManager/useTransferManagerState';
@@ -231,7 +233,9 @@ function WelcomeActions({
         inputRef: fileInput,
         handleClick,
         handleChange: handleFileChange,
-    } = useFileUploadInput(activeFolder.volumeId, activeFolder.shareId, activeFolder.linkId);
+    } = useUploadInput({
+        onUpload: (files) => uploadManager.upload(files, generateNodeUid(activeFolder.volumeId, activeFolder.linkId)),
+    });
     const { getLocalID } = useAuthentication();
 
     return (

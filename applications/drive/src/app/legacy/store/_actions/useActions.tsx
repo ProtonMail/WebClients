@@ -1,17 +1,14 @@
 import { c } from 'ttag';
 
 import { useConfirmActionModal, useNotifications } from '@proton/components';
-import { ValidationError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getEllipsedName } from '@proton/drive/modules/intl';
 import { isSafari, textToClipboard } from '@proton/shared/lib/helpers/browser';
-import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useDevicesActions from '../_devices/useDevicesActions';
 import { useLinkActions, useLinksActions } from '../_links';
 import { useShareActions, useShareUrl } from '../_shares';
-import useUploadFile from '../_uploads/UploadProvider/useUploadFile';
-import { TransferConflictStrategy } from '../_uploads/interface';
 import { useErrorHandler } from '../_utils';
 import type { LinkInfo } from './interface';
 import useListNotifications from './useListNotifications';
@@ -34,7 +31,6 @@ export default function useActions() {
         createRestoredItemsNotifications,
         createDeletedItemsNotifications,
     } = useListNotifications();
-    const { initFileUpload } = useUploadFile();
     const link = useLinkActions();
     const links = useLinksActions();
     const shareUrl = useShareUrl();
@@ -65,81 +61,6 @@ export default function useActions() {
                     e,
                     <span className="text-pre-wrap">{c('Notification')
                         .jt`"${ellipsedName}" failed to be created`}</span>
-                );
-                throw e;
-            });
-    };
-
-    const createFile = async (shareId: string, parentLinkId: string, newName: string) => {
-        const file = new File([], newName, { type: 'text/plain' });
-        const controls = initFileUpload(
-            shareId,
-            parentLinkId,
-            file,
-            async () => {
-                const sanitizedName = rtlSanitize(newName);
-                throw new ValidationError(c('Error').t`"${sanitizedName}" already exists`);
-            },
-            // Logging is not useful for single file creation.
-            () => {}
-        );
-
-        const unsafeEllipsedName = getEllipsedName(newName);
-        const ellipsedName = safeName(unsafeEllipsedName);
-        await controls
-            .start()
-            .then(() => {
-                createNotification({
-                    text: (
-                        <span className="text-pre-wrap">{c('Notification')
-                            .jt`"${ellipsedName}" created successfully`}</span>
-                    ),
-                });
-            })
-            .catch((e) => {
-                showErrorNotification(
-                    e,
-                    <span className="text-pre-wrap">{c('Notification')
-                        .jt`"${ellipsedName}" failed to be created`}</span>
-                );
-                throw e;
-            });
-    };
-
-    const saveFile = async (
-        shareId: string,
-        parentLinkId: string,
-        newName: string,
-        mimeType: string,
-        content: Uint8Array<ArrayBuffer>[]
-    ) => {
-        // saveFile is using file upload using name with replace strategy as
-        // default. That's not the best way - better would be to use link ID
-        // and also verify revision ID that file was not touched in meantime
-        // by other client. But this is enough for first version to play with
-        // the feature and see what all needs to be changed and implemented.
-        const file = new File(content, newName, { type: mimeType });
-        const controls = initFileUpload(
-            shareId,
-            parentLinkId,
-            file,
-            async () => TransferConflictStrategy.Replace,
-            // Logging is not useful for single file updates.
-            () => {}
-        );
-
-        const name = safeName(newName);
-        await controls
-            .start()
-            .then(() => {
-                createNotification({
-                    text: <span className="text-pre-wrap">{c('Notification').jt`"${name}" saved successfully`}</span>,
-                });
-            })
-            .catch((e) => {
-                showErrorNotification(
-                    e,
-                    <span className="text-pre-wrap">{c('Notification').jt`"${name}" failed to be saved`}</span>
                 );
                 throw e;
             });
@@ -410,8 +331,6 @@ export default function useActions() {
 
     return {
         createFolder,
-        createFile,
-        saveFile,
         renameLink,
         moveLinks,
         trashLinks,

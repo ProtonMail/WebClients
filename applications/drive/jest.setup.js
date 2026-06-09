@@ -74,12 +74,6 @@ jest.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
     __esModule: true,
 }));
 
-jest.mock('./src/app/legacy/store/_uploads/initUploadFileWorker.ts', () => {
-    return {
-        initUploadFileWorker: jest.fn(),
-    };
-});
-
 // Mock VPN flag to prevent those issues
 // TypeError: require.context is not a function
 // > 1 | const flags = require.context('@proton/styles/assets/img/flags', true, /.svg$/);
