@@ -1,7 +1,6 @@
 import type { useFormik } from 'formik';
 
 import type {
-    Domain,
     EnhancedGroup,
     EnhancedMember,
     Group,
@@ -11,12 +10,16 @@ import type {
     RoleAssignment,
 } from '@proton/shared/lib/interfaces';
 
-import type { GROUPS_STATE } from './useGroupsManagement';
+export enum GROUPS_STATE {
+    EMPTY = 'empty',
+    VIEW = 'view',
+    NEW = 'new',
+    EDIT = 'edit',
+}
 
 interface DomainData {
-    loadingCustomDomains: boolean;
     selectedDomain: string;
-    customDomains: Domain[] | undefined;
+    loading: boolean;
     setSelectedDomain: (domain: string) => void;
 }
 
@@ -45,6 +48,8 @@ export interface DomainSuggestion {
 
 export interface GroupsManagementReturn {
     groups: Group[];
+    /** Groups exist but full management is revoked — either the plan no longer supports groups, or the no-custom-domain feature flag was disabled after groups were created. Users can only delete. */
+    isFrozen: boolean;
     members: EnhancedMember[];
     selectedGroup: EnhancedGroup | undefined;
     uiState: GROUPS_STATE;
@@ -52,13 +57,12 @@ export interface GroupsManagementReturn {
     loadingGroupMembers: boolean;
     groupMembers: GroupMember[];
     domainData: DomainData;
-    suggestedAddressDomainName: string;
-    suggestedAddressDomainPart: string;
-    suggestedAddressDomainSource: 'customdomain' | 'group' | 'pm.me' | null;
     addressToMemberMap: { [key: string]: EnhancedMember | undefined };
     addressEmailToMemberMap: { [key: string]: EnhancedMember | undefined };
     groupRolesMap: { [groupID: string]: RoleAssignment[] | undefined };
-    getSerializedGroup: () => { type: 'new' | 'edit'; payload: SerializedGroupFormData } | undefined;
+    getSerializedGroup: () =>
+        | { type: GROUPS_STATE.NEW | GROUPS_STATE.EDIT; payload: SerializedGroupFormData }
+        | undefined;
     actions: {
         onDiscardChanges: () => void;
         onSaveGroup: () => Promise<void>;
@@ -67,5 +71,6 @@ export interface GroupsManagementReturn {
         onEditGroup: (group: Group) => void;
         onCreateGroup: () => void;
         onAddGroupMembers: (group: Group, emails: string[]) => Promise<void>;
+        onUnselectGroup: () => void;
     };
 }

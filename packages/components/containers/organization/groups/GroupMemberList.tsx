@@ -14,7 +14,6 @@ interface Props {
     loading: boolean;
     group: Group | undefined; // needs to be removed once GroupMemberItem doesn't need it
     edit?: boolean;
-    canOnlyDelete: boolean;
     canChangeVisibility: boolean;
     showMailFeatures: boolean;
 }
@@ -32,7 +31,6 @@ const GroupMemberList = ({
     loading,
     group,
     edit = false,
-    canOnlyDelete,
     canChangeVisibility,
     showMailFeatures,
 }: Props) => {
@@ -68,7 +66,6 @@ const GroupMemberList = ({
                             group={group}
                             groupMember={memberData}
                             member={member}
-                            canOnlyDelete={canOnlyDelete}
                             canChangeVisibility={canChangeVisibility}
                             showMailFeatures={showMailFeatures}
                         />

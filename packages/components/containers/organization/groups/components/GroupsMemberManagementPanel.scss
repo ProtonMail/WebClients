@@ -1,0 +1,41 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+@use '~@proton/styles/scss/lib/include-media' as im with (
+	$breakpoints: $breakpoints-product,
+	$media-expressions: $media-expressions
+);
+
+.groups-member-panel-list {
+	--lg-w-custom: 33.33%;
+}
+
+.groups-member-panel-overlay {
+	--left-custom: 0;
+
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	background-color: var(--background-norm);
+	inset-block: 0;
+	inset-inline: var(--left-custom) 0;
+	pointer-events: none;
+
+	// slightly larger translation offset to hide the shadow
+	transform: translateX(110%);
+	transition: transform 0.6s easing(ease-out-cubic);
+
+	&.is-visible {
+		pointer-events: auto;
+		transform: translateX(0);
+	}
+
+	@include im.media('>small') {
+		--left-custom: #{rem($width-sidebar)};
+	}
+
+	@include im.media('reduced-motion') {
+		transition: none;
+	}
+}
