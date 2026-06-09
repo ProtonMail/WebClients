@@ -315,17 +315,11 @@
       "Contract composer": [
         "Zamknij pełny ekran"
       ],
-      "Copy": [
-        "Kopiuj"
-      ],
       "Copy address": [
         "Kopiuj adres"
       ],
       "Copy addresses": [
         "Kopiuj adresy"
-      ],
-      "Copy alias “${ name }”": [
-        "Kopiuj alias “${ name }”"
       ],
       "Copy email to clipboard": [
         "Kopiuj adres e-mail do schowka"
@@ -1470,6 +1464,9 @@
       "Trust": [
         "Zaufaj"
       ],
+      "Trust key": [
+        "Zaufaj kluczowi"
+      ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
       ],
@@ -2014,6 +2011,20 @@
       ],
       "Yearly": [
         "Rocznie"
+      ]
+    },
+    "BOSS": {
+      "Migration status": [
+        "Status migracji"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizacja nie dysponuje wystarczającą ilością dostępnych licencji"
+      ],
+      "Organization does not have enough storage available": [
+        "Organizacja nie ma wystarczającej ilości przestrzeni dyskowej"
+      ],
+      "You": [
+        "Ty"
       ]
     },
     "Browser": {
@@ -3891,9 +3902,6 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Upewnij się, że nadal możesz uzyskać dostęp do konta i danych, nawet jeśli zapomnisz hasła ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Zaimportuj dane z Google, Outlook i innych usług, aby płynnie przejść do ${ BRAND_NAME }."
-      ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Aby uzyskać nieograniczony dostęp do asystenta pisania i nie tylko, ulepsz konto do planu ${ BRAND_NAME } Duo."
       ],
@@ -4273,6 +4281,9 @@
       "Aliases could not be loaded": [
         "Aliasy nie mogły zostać załadowane"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Cała przestrzeń dyskowa została już przydzielona. Zmniejsz przydział przestrzeni innym użytkownikom."
+      ],
       "Amount above the maximum.": [
         "Kwota powyżej maksimum."
       ],
@@ -4579,6 +4590,15 @@
       "Please activate your search again": [
         "Włącz ponownie wyszukiwanie"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Ustaw niestandardową domenę przed dodaniem adresów."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Ustaw niestandardową domenę przed dodaniem użytkowników do organizacji."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Przed dodaniem użytkowników do organizacji, włącz obsługę wielu użytkowników."
+      ],
       "Please enter a valid postal code": [
         "Wpisz prawidłowy kod pocztowy"
       ],
@@ -4620,6 +4640,9 @@
       ],
       "Please try generating the text again": [
         "Wygeneruj ponownie tekst"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Ulepsz do planu biznesowego z więcej niż 1 użytkownikiem, aby zarządzać wieloma użytkownikami."
       ],
       "Port is required": [
         "Port jest wymagany"
@@ -4849,6 +4872,9 @@
       "You have reached the number of contacts limit for your account": [
         "Osiągnięto limit liczby kontaktów na koncie"
       ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Wykorzystano limit liczby użytkowników w obecnym planie. Ulepsz plan, aby dodać nowego użytkownika."
+      ],
       "You must set a name": [
         "Musisz wpisać nazwę"
       ],
@@ -5048,9 +5074,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nie możemy załadować strony. Odśwież stronę lub sprawdź swoje połączenie."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Po włączeniu dodatkowego hasła zarządzanie aliasami dostępne jest tylko w ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Nie masz jeszcze żadnego kontaktu. Zacznij od utworzenia nowego kontaktu"
@@ -6440,21 +6463,6 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill Switch**: Zatrzymuje wycieki danych, blokując dostęp do Internetu w przypadku nieoczekiwanego przerwania połączenia VPN."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Krok 1:** Zaproś znajomych do ${ BRAND_NAME } za pomocą linku polecającego."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Krok 2:** Twoi znajomi otrzymają 2 tygodnie planu ${ BRAND_NAME } za darmo."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Krok 2:** Twoi znajomi otrzymają 2 tygodnie planu za darmo."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Krok 3:** Otrzymaj ${ referrerRewardAmount } w środkach za każdego znajomego, który zasubskrybuje plan."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Krok 3:** Otrzymaj ${ referrerRewardAmount } w środkach za każdego użytkownika, który zasubskrybuje plan."
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusowej przestrzeni dyskowej"
       ],
@@ -7206,7 +7214,10 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz"
+        "Wstaw obraz",
+        "Wstaw obrazy",
+        "Wstaw obrazy",
+        "Wstaw obrazy"
       ],
       "Insert link": [
         "Wstaw link"
@@ -12021,6 +12032,9 @@
       "Postal code": [
         "Kod pocztowy"
       ],
+      "Search": [
+        "Szukaj"
+      ],
       "Search date, name, email address, or subject line": [
         "Szukaj daty, nazwy, adresu e-mail lub tematu"
       ],
@@ -12302,6 +12316,78 @@
         "WIOSENNA PROMOCJA"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
+      "Summer Sale": [
+        "Letnie promocje"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/miesiąc"
+      ],
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "2 TB data storage": [
+        "2 TB przestrzeni dyskowej na dane"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB przestrzeni dyskowej: 40 × Twój obecny plan"
+      ],
+      "3 TB data storage": [
+        "3 TB przestrzeni dyskowej na dane"
+      ],
+      "500 GB storage": [
+        "500 GB przestrzeni dyskowej"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Wszystkie funkcje premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Wszystkie funkcje premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zniżki są naliczane na podstawie standardowych cen miesięcznych. Twoja subskrypcja odnowi się po standardowej stawce rocznej, gdy zakończy się cykl rozliczeniowy."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Pełny dostęp do ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Indywidualne konta dla 6 użytkowników"
+      ],
+      "Individual accounts for you and a partner": [
+        "Indywidualne konta dla Ciebie i partnera"
+      ],
+      "Online document and spreadsheet editor": [
+        "Edytor dokumentów i arkuszy kalkulacyjnych online"
+      ],
+      "Recover previous file versions": [
+        "Odzyskaj poprzednie wersje pliku"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silniejsza ochrona przed cyberzagrożeniami"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Przejdź na nasz roczny plan i zaoszczędź ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Nieograniczona liczba folderów, etykiet i filtrów"
+      ],
+      "Use your own email domain": [
+        "Możliwość użycia własnej domeny e-mail"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "na 12 miesięcy"
+      ],
+      "SUMMER SALE": [
+        "LETNIE PROMOCJE"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Wiadomość zaszyfrowana end-to-end i podpisana"
@@ -12421,46 +12507,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Wszystkie aliasy"
-      ],
       "Create alias": [
         "Utwórz alias"
-      ],
-      "Create an alias": [
-        "Utwórz alias"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Generuj aliasy \"w locie\" i zarządzaj aliasami oraz hasłami."
-      ],
-      "Hide-my-email aliases": [
-        "Aliasy hide-my-email"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Aliasy hide-my-email pozwalają zakładać konta online bez udostępniania adresu e-mail. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Nowy alias"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Otwórz ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Chroń swoją tożsamość online"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Wypróbuj ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Używany w Amazon do zakupów itp."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Użyj aliasu, zamiast adresu e-mail. Aliasy dostarcza ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(otworzy ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -13757,9 +13811,6 @@
       "Address verification disabled": [
         "Weryfikacja adresu została wyłączona"
       ],
-      "Alias copied to clipboard": [
-        "Alias został skopiowany do schowka"
-      ],
       "Alias saved and copied": [
         "Alias został zapisany i skopiowany"
       ],
@@ -13852,9 +13903,6 @@
       ],
       "Labels applied.": [
         "Etykiety zostały zastosowane."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Ostatnio zmodyfikowane aliasy są przechowywane w najstarszym sejfie"
       ],
       "Mail list unsubscribed": [
         "Subskrypcja została anulowana"
