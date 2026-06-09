@@ -6,7 +6,6 @@ import { InvitationsStateProvider } from './_invitations/useInvitationsState';
 import { LinksProvider } from './_links';
 import { SearchProvider } from './_search';
 import { SharesProvider } from './_shares';
-import { UploadProvider } from './_uploads';
 import { VolumesProvider } from './_volumes';
 
 interface DriveProviderProps {
@@ -20,11 +19,9 @@ export function DriveProvider({ children }: DriveProviderProps) {
                 <SharesProvider>
                     <LinksProvider>
                         <DevicesProvider>
-                            <UploadProvider>
-                                <SearchProvider>
-                                    <InvitationsStateProvider>{children}</InvitationsStateProvider>
-                                </SearchProvider>
-                            </UploadProvider>
+                            <SearchProvider>
+                                <InvitationsStateProvider>{children}</InvitationsStateProvider>
+                            </SearchProvider>
                         </DevicesProvider>
                     </LinksProvider>
                 </SharesProvider>

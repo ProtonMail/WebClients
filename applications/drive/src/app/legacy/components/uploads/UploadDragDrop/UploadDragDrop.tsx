@@ -6,11 +6,6 @@ import { c } from 'ttag';
 import dragdropImageSvg from '@proton/styles/assets/img/illustrations/drag-and-drop.svg';
 
 import { useFileDrop } from '../../../../legacy/hooks/drive/useFileDrop';
-import type {
-    OnFileSkippedSuccessCallbackData,
-    OnFileUploadSuccessCallbackData,
-    OnFolderUploadSuccessCallbackData,
-} from '../../../../legacy/store';
 
 import './UploadDragDrop.scss';
 
@@ -22,9 +17,6 @@ interface UploadDragDropProps {
     className?: string;
     disabled?: boolean;
     isForPhotos?: boolean;
-    onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
-    onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
-    onFolderUpload?: (folder: OnFolderUploadSuccessCallbackData) => void;
     onDrop?: () => void;
 }
 
@@ -35,9 +27,6 @@ const UploadDragDrop = ({
     shareId,
     volumeId,
     parentLinkId,
-    onFileUpload,
-    onFileSkipped,
-    onFolderUpload,
     onDrop,
     isForPhotos = false,
 }: UploadDragDropProps) => {
@@ -46,9 +35,6 @@ const UploadDragDrop = ({
         shareId,
         volumeId,
         parentLinkId,
-        onFileUpload,
-        onFolderUpload,
-        onFileSkipped,
     });
 
     const [overlayIsVisible, setOverlayIsVisible] = useState(false);
