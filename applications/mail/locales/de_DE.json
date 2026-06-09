@@ -328,17 +328,11 @@
       "Contract composer": [
         "Verfassen-Fenster verkleinern"
       ],
-      "Copy": [
-        "Kopieren"
-      ],
       "Copy address": [
         "Adresse kopieren"
       ],
       "Copy addresses": [
         "E-Mail-Adressen kopieren"
-      ],
-      "Copy alias “${ name }”": [
-        "Alias “${ name }” kopieren"
       ],
       "Copy email to clipboard": [
         "E-Mail in Zwischenablage kopieren"
@@ -1520,8 +1514,7 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -1648,6 +1641,9 @@
       ],
       "Verify account": [
         "Konto verifizieren"
+      ],
+      "Verify now": [
+        "Jetzt verifizieren"
       ],
       "View": [
         "Anzeigen"
@@ -2181,6 +2177,56 @@
       ],
       "Yearly": [
         "Jährlich"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Übernahme konfigurieren"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Kontaktiere deinen Administrator um, eine Migration zu starten."
+      ],
+      "Contacts": [
+        "Kontakte"
+      ],
+      "Estimated size": [
+        "Geschätzte Größe"
+      ],
+      "Has errors": [
+        "Hat Fehler"
+      ],
+      "In progress": [
+        "In Bearbeitung"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "E-Mail-Adresse des Mitglieds fehlt. Bitte kontaktiere den Kundensupport, um das zu beheben."
+      ],
+      "Migration status": [
+        "Migrationsstatus"
+      ],
+      "Missing organization private key": [
+        "Privater Schlüssel der Organisation fehlt"
+      ],
+      "Missing organization public key": [
+        "Öffentlicher Schlüssel der Organisation fehlt"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisation hat nicht genügend Lizenzen verfügbar"
+      ],
+      "Organization does not have enough storage available": [
+        "Die Organisation hat nicht genügend Speicherplatz verfügbar"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Benutzer"
+      ],
+      "What are you migrating?": [
+        "Was übernimmst du?"
       ]
     },
     "Browser": {
@@ -4134,8 +4180,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Stelle sicher, dass du weiterhin auf dein Konto und deine Daten zugreifen kannst, auch wenn du dein ${ BRAND_NAME }-Passwort verlierst."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Für einen nahtlosen Übergang zu ${ BRAND_NAME } kannst du deine Daten von Google, Outlook und anderen importieren."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Um dein Team nahtlos bei ${ BRAND_NAME } einzubinden, importiere deine Daten aus Google, Outlook und anderen Quellen."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Für unbegrenzten Zugang zum Schreibassistenten und mehr, upgrade auf ${ BRAND_NAME } Duo."
@@ -4668,6 +4714,9 @@
       "Aliases could not be loaded": [
         "Aliasse konnten nicht geladen werden"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Der gesamte Speicherplatz wurde zugeordnet. Bitte reduziere den anderen Benutzern zugewiesenen Speicherplatz."
+      ],
       "Amount above the maximum.": [
         "Höchstbetrag überschritten"
       ],
@@ -4992,6 +5041,15 @@
       "Please complete the billing details": [
         "Bitte die Rechnungsdaten eintragen"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Bitte richte eine eigene Domain ein, bevor du Adressen hinzufügst."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Bitte konfiguriere eine eigene Domain, bevor du Benutzer zu deiner Organisation hinzufügst."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Bitte aktiviere die Mehrbenutzerunterstützung, bevor du Benutzer zu deiner Organisation hinzufügst."
+      ],
       "Please enter a valid postal code": [
         "Bitte gib eine gültige Postleitzahl ein"
       ],
@@ -5031,6 +5089,9 @@
       ],
       "Please try generating the text again": [
         "Bitte versuche den Text erneut zu generieren."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Bitte upgrade auf ein Business-Abonnement mit mehr als einem Benutzer, um mehrere Benutzer zu verwalten."
       ],
       "Port is required": [
         "Port ist erforderlich"
@@ -5282,6 +5343,12 @@
       "You have reached the number of contacts limit for your account": [
         "Du hast die maximale Anzahl von Kontakten für dein Konto erreicht"
       ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Alle E-Mail-Adressen in deinem Abonnement wurden bereits verwendet. Bitte upgrade dein Abonnement, um eine neue E-Mail-Adresse hinzuzufügen, oder deaktiviere eine E-Mail-Adresse in deinem Konto."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Du hast die max. Anzahl von Benutzern in deinem Abonnement ausgeschöpft. Bitte upgrade dein Abonnement, um weitere Benutzer hinzuzufügen."
+      ],
       "You must set a name": [
         "Du musst einen Namen eingeben"
       ],
@@ -5497,9 +5564,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Diese Seite konnte nicht geladen werden. Bitte aktualisiere die Seite oder überprüfe deine Internetverbindung."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Wenn das zusätzliche Passwort aktiviert ist, kann die Alias-Verwaltung nur in ${ PASS_APP_NAME } erfolgen."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Noch keine Kontakte vorhanden. Lege jetzt einen neuen Kontakt an!"
@@ -6770,6 +6834,10 @@
         "${ total } Nachricht",
         "${ total } Nachrichten"
       ],
+      "${ total } user found": [
+        "${ total } Benutzer gefunden",
+        "${ total } Benutzer gefunden"
+      ],
       "${ trackersCount } email tracker blocked": [
         "${ trackersCount } E-Mail-Tracker blockiert",
         "${ trackersCount } E-Mail-Tracker blockiert"
@@ -6819,23 +6887,17 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Automatische Verbindung**: Öffnet und verbindet sich mit dem VPN, sobald du dein Gerät einschaltest."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Lade deine Freunde** mit deinem Empfehlungs-Link zu ${ BRAND_NAME } ein."
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill Switch**: Stoppt Datenlecks, indem es das Internet blockiert, wenn die VPN-Verbindung unerwartet abbricht."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Schritt 1:** Lade deine Freunde mit deinem Empfehlungs-Link zu ${ BRAND_NAME } ein."
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Sie erhalten ${ refereeRewardAmount }** Guthaben, wenn sie abonnieren."
       ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Schritt 2:** Deine Freunde bekommen ihr gewähltes ${ BRAND_NAME }-Abonnement 2 Wochen kostenlos."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Schritt 2:** Deine Freunde erhalten ihr Abonnement 2 Wochen kostenlos."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Schritt 3:** Erhalte ${ referrerRewardAmount } Guthaben für jeden Freund, der ein Abonnement abschließt."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Schritt 3:** Erhalte ${ referrerRewardAmount } Guthaben für jede Person, die ein Abonnement abschließt."
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Du erhältst ${ referrerRewardAmount }** Guthaben für jeden Freund, der abonniert."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } Bonus-Speicherplatz"
@@ -7045,6 +7107,9 @@
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
         "Nachrichten, die länger als 30 Tage im Papierkorb und Spam liegen, automatisch löschen."
       ],
+      "Automatically sort incoming emails into categories": [
+        "Eingehende E-Mails automatisch in Kategorien sortieren"
+      ],
       "Awaiting transaction": [
         "Warte auf Transaktion"
       ],
@@ -7165,9 +7230,6 @@
       "Copy the link to clipboard": [
         "Link in die Zwischenablage kopieren"
       ],
-      "Copy to clipboard": [
-        "In die Zwischenablage kopieren"
-      ],
       "Copy your referral link": [
         "Einladungslink kopieren"
       ],
@@ -7259,6 +7321,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy Logo"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Erinnerst du dich an dein Passwort? ${ verifyButton }"
       ],
       "Do you want to download this attachment anyway?": [
         "Möchtest du diesen Anhang trotzdem herunterladen?",
@@ -7485,6 +7550,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Um mehr Suchergebnisse zu erhalten, suche nach diesem Schlüsselwort im Inhalt deiner E-Mails."
       ],
+      "Forgot password?": [
+        "Passwort vergessen?"
+      ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "Kostenlos für ${ ASSISTANT_TRIAL_TIME_DAYS } Tag ausprobieren",
         "Kostenlos für ${ ASSISTANT_TRIAL_TIME_DAYS } Tage ausprobieren"
@@ -7636,7 +7704,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -7940,6 +8009,9 @@
       ],
       "Password must have:": [
         "Passwort muss enthalten:"
+      ],
+      "Password verified": [
+        "Passwort verifiziert"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Zahlungen sind durch TLS-Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
@@ -8538,6 +8610,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Damit du dir dein Passwort besser merken kannst, bitten wir dich, es in regelmäßigen Abständen einzugeben. Mit der Zeit wirst du immer seltener dazu aufgefordert."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Um Termine zu importieren, erstelle zuerst einen Kalender in ${ CALENDAR_APP_NAME }. Dort werden die Termine nach dem Import angezeigt."
       ],
@@ -8762,6 +8837,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Du wirst benachrichtigt, sobald der Datenimport abgeschlossen ist."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Wir werden dich später daran erinnern, dein Passwort erneut zu bestätigen"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
@@ -9345,6 +9423,16 @@
         "Favorisieren"
       ]
     },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Zu ${ CALENDAR_APP_NAME } wechseln"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Zu ${ MAIL_APP_NAME } wechseln"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Action shortcuts": [
         "Aktions-Tastaturkürzel"
@@ -9357,6 +9445,9 @@
       ],
       "Composer shortcuts": [
         "Tastaturkürzel im Verfassen-Fenster"
+      ],
+      "Desktop app navigation": [
+        "Desktop-App-Navigation"
       ],
       "Folder shortcuts": [
         "Ordner-Tastaturkürzel"
@@ -9638,6 +9729,9 @@
       ],
       "Email address": [
         "E-Mail-Adresse"
+      ],
+      "Email categories": [
+        "E-Mail-Kategorien"
       ],
       "Email format": [
         "E-Mail-Format"
@@ -12848,6 +12942,9 @@
       "San Francisco": [
         "San Francisco"
       ],
+      "Search": [
+        "Suchen"
+      ],
       "Search date, name, email address, or subject line": [
         "Nach Datum, Name, E-Mail-Adresse oder Betreff suchen"
       ],
@@ -13139,6 +13236,78 @@
         "SPRING SALE"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Deal sichern"
+      ],
+      "Summer Sale": [
+        "Sommer Sale"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/Monat"
+      ],
+      "15 GB storage": [
+        "15 GB Speicher"
+      ],
+      "2 TB data storage": [
+        "2 TB Datenspeicher"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB Speicher: 40-mal dein aktuelles Abonnement"
+      ],
+      "3 TB data storage": [
+        "3 TB Datenspeicher"
+      ],
+      "500 GB storage": [
+        "500 GB Speicher"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle Premium-Funktionen von ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle Premium-Funktionen von ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Die Rabatte basieren auf den monatlichen Standardpreisen. Dein Abonnement wird am Ende des Abrechnungszeitraums zum jährlichen Standardtarif verlängert."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Voller Zugriff auf ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Eigene Konten für 6 Benutzer"
+      ],
+      "Individual accounts for you and a partner": [
+        "Eigene Konten für dich und einen Partner"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online-Dokumenten- und Tabelleneditor"
+      ],
+      "Recover previous file versions": [
+        "Stelle frühere Dateiversionen wieder her"
+      ],
+      "Stronger protection against cyber threats": [
+        "Stärkerer Schutz vor Cyber-Bedrohungen"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Wechsle zu unserem jährlichen Abonnement und spare ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
+      ],
+      "Use your own email domain": [
+        "Nutze deine eigene E-Mail-Domain"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "für 12 Monate"
+      ],
+      "SUMMER SALE": [
+        "SOMMER SALE"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Ende-zu-Ende verschlüsselte und signierte Nachricht"
@@ -13304,46 +13473,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Alle Aliasse"
-      ],
       "Create alias": [
         "Alias erstellen"
-      ],
-      "Create an alias": [
-        "Alias erstellen"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Generiere Aliasse im Handumdrehen und verwalte deine Aliasse und Passwörter ganz einfach."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-Aliasse"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Mit Hide-my-email-Aliassen kannst du dich online für Dinge anmelden, ohne deine E-Mail-Adresse preiszugeben. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Neuer Alias"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } öffnen"
-      ],
-      "Protect your online identity": [
-        "Schütze deine Online-Identität"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } ausprobieren"
       ],
       "Used on Amazon for shopping, etc.": [
         "Verwendet auf Amazon für Shopping, etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Wenn du nach deiner E-Mail-Adresse gefragt wirst, gibst du stattdessen diesen Alias an. Aliasse werden von ${ passLink } zur Verfügung gestellt."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(dadurch wird ${ PASS_APP_NAME } geöffnet)"
       ]
     },
     "Security Center - Action": {
@@ -14665,9 +14802,6 @@
       "Address verification disabled": [
         "Adressüberprüfung deaktiviert"
       ],
-      "Alias copied to clipboard": [
-        "Alias in die Zwischenablage kopiert"
-      ],
       "Alias saved and copied": [
         "Alias gespeichert und kopiert"
       ],
@@ -14756,9 +14890,6 @@
       ],
       "Labels applied.": [
         "Kategorien angewendet."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Zuletzt geänderte Aliasse, die in deinem ältesten Tresor gespeichert sind"
       ],
       "Mail list unsubscribed": [
         "Aus Verteilerliste ausgetragen"
@@ -15649,6 +15780,9 @@
       "Message will expire": [
         "Nachricht wird ablaufen"
       ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Deine Organisation nach ${ BRAND_NAME } migrieren"
+      ],
       "Minicalendar": [
         "Minikalender"
       ],
@@ -16078,6 +16212,9 @@
       ],
       "Verification failed": [
         "Verifizierung fehlgeschlagen"
+      ],
+      "Verify your password": [
+        "Passwort bestätigen"
       ],
       "Verifying your card...": [
         "Deine Karte wird verifiziert..."

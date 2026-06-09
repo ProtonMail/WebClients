@@ -1170,10 +1170,6 @@
       "Trust": [
         "भरोसा करें"
       ],
-      "Trust key": [
-        "ट्रस्ट की",
-        "ट्रस्ट कीज़"
-      ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
       ],
@@ -3405,6 +3401,9 @@
       "Aliases could not be loaded": [
         "नकली-नाम लोड नहीं हो सके"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "सभी भंडारण स्थान आवंटित किया गया है। कृपया अन्य उपयोगकर्ताओं को आवंटित संग्रहण कम करें।"
+      ],
       "Amount above the maximum.": [
         "राशि अधिकत से ज्यादा है।"
       ],
@@ -3650,12 +3649,24 @@
       "Please activate your search again": [
         "कृपया अपना खोज वापिस सक्षम करें"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "कृपया पता जोड़ने से पहले एक कस्टम डोमेन कॉन्फ़िगर करें।"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "अपने संगठन में उपयोगकर्ताओं को जोड़ने से पहले कृपया एक कस्टम डोमेन कॉन्फ़िगर करें।"
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "कृपया अपने संगठन में उपयोगकर्ताओं को जोड़ने से पहले बहु-उपयोगकर्ता समर्थन सक्षम करें।"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोध को ठीक करें।",
         "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोधों को ठीक करें।"
       ],
       "Please select a country": [
         "एक देश चुनें"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "कई-यूज़र संभालने के लिए कृपया 1 से ज़्यादा यूज़र वाले बिज़नेस प्लान पे अपग्रेड करें।"
       ],
       "Port is required": [
         "पोर्ट चाहिए"
@@ -3831,6 +3842,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "आप कैलेंडर के नंबर के लिमिट पे पहुंच चुके है।"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "आपने अपनी योजना में सभी उपयोगकर्ताओं का उपयोग किया है। कृपया एक नया उपयोगकर्ता जोड़ने के लिए अपनी योजना को अपग्रेड करें।"
       ],
       "You must set a name": [
         "आपको एक नाम सेट करना होगा"
@@ -4009,9 +4023,6 @@
       ],
       "Something went wrong": [
         "कुछ गलत हो गया"
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "जब अतिरिक्त पासवर्ड सक्षम हो, तो नकली-नाम प्रबंधन केवल ${ PASS_APP_NAME } में किया जा सकता है।"
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "आपका अभी तक कोई संपर्क नहीं है। एक नया संपर्क बनाकर प्रारंभ करें।"
@@ -5440,9 +5451,6 @@
       ],
       "Inherited from parent folder": [
         "मूल फ़ोल्डर से इनहेरिट की गई"
-      ],
-      "Insert image": [
-        "तस्वीर डालें"
       ],
       "Insert link": [
         "लिंक डालें"
@@ -8800,6 +8808,9 @@
       "Postal code": [
         "डाक कोड"
       ],
+      "Search": [
+        "खोजें"
+      ],
       "Search date, name, email address, or subject line": [
         "तिथि, नाम, ईमेल पता, या विषय की खोज करें"
       ],
@@ -8925,6 +8936,78 @@
         "आधिकारिक ईमेल ${ BRAND_NAME } से"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "सौदा पाएं"
+      ],
+      "Summer Sale": [
+        "समर सेल"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/महीना"
+      ],
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
+      ],
+      "2 TB data storage": [
+        "2 टीबी डेटा स्टोरेज"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 जीबी स्टोरेज: आपके मौजूदा प्लैन से 40 गुना ज़्यादा"
+      ],
+      "3 TB data storage": [
+        "3 टीबी डेटा स्टोरेज"
+      ],
+      "500 GB storage": [
+        "500 जीबी स्टोरेज"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME } की सभी प्रीमियम खासियतें"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME } की सभी प्रीमियम खासियतें"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "छूट मानक मासिक कीमतों पर आधारित है। बिल साइकिल समाप्त होने पर आपकी सदस्यता का नवीनीकरण मानक वार्षिक दर पर होगा।"
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } का पूरा एक्सेस"
+      ],
+      "Individual accounts for 6 users": [
+        "6 उपयोगकर्ताओं के लिए अलग-अलग खाते"
+      ],
+      "Individual accounts for you and a partner": [
+        "आपके और आपके पार्टनर के लिए अलग-अलग खाते"
+      ],
+      "Online document and spreadsheet editor": [
+        "ऑनलाइन दस्तावेज़ और स्प्रेडशीट एडिटर"
+      ],
+      "Recover previous file versions": [
+        "फ़ाइलों के पिछले वर्शन रिकवर करें"
+      ],
+      "Stronger protection against cyber threats": [
+        "साइबर खतरों से बेहतर सुरक्षा"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "हमारे वार्षिक प्लैन पर स्विच करें और ${ toYearlyDiscountAmount } बचाएं!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "असीमित फोल्डर, लेबल, और फिल्टर"
+      ],
+      "Use your own email domain": [
+        "अपने खुद के ईमेल डोमेन का इस्तेमाल करें"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12 महीनों के लिए"
+      ],
+      "SUMMER SALE": [
+        "समर सेल"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "शुरु-से-अंत तक एन्क्रिप्ट और हस्ताक्षर किया संदेश"
@@ -9009,46 +9092,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "सभी नकली-नाम"
-      ],
       "Create alias": [
         "नकली-नाम बनाएं"
-      ],
-      "Create an alias": [
-        "नकली-नाम बनाएं"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "तुरंत नकली-नाम उत्पन्न करें, और आसानी से नकली-नामों और पासवर्डों को संभाले।"
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email नकलीनाम"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email नकली-नाम ईमेल पता शेयर किए बिना ऑनलाइन चीजों के लिए साइनअप करने की सुविधा देता है। ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "नया नकली-नाम"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } खोलें"
-      ],
-      "Protect your online identity": [
-        "अपनी ऑनलाइन पहचान सुरक्षित रखें"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } आज़माएँ"
       ],
       "Used on Amazon for shopping, etc.": [
         "अमेज़न पर शॉपिंग आदि के लिए उपयोग किया जाता है।"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "जब आपसे आपका ईमेल पता पूछा जाए, तो इसके बजाय यह उपनाम दें। उपनाम ${ passLink } द्वारा प्रदान किए जाते हैं।"
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(${ PASS_APP_NAME } खुल जाएगा)"
       ]
     },
     "Security Center - Action": {
@@ -9864,9 +9915,6 @@
       "Address verification disabled": [
         "पता सत्यापन अक्षम"
       ],
-      "Alias copied to clipboard": [
-        "नकली-नाम क्लिपबोर्ड पर कॉपी किया गया"
-      ],
       "Billing details updated": [
         "बिलिंग विवरण अपडेट हुआ"
       ],
@@ -9943,9 +9991,6 @@
       ],
       "Labels applied.": [
         "लेबल लागू किए गए।"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "आपके सबसे पुराने तिजोरी में स्टोर किया अंतिम संशोधित प्रकारांतर"
       ],
       "Mail list unsubscribed": [
         "मेल सूची सदस्यता समाप्त"

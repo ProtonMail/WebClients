@@ -46,7 +46,7 @@
         "Activare recuperare"
       ],
       "Active": [
-        "Activ"
+        "Active"
       ],
       "Add": [
         "Adăugare"
@@ -329,17 +329,11 @@
       "Contract composer": [
         "Restrângere editor de mesaje"
       ],
-      "Copy": [
-        "Copiere"
-      ],
       "Copy address": [
         "Copiere adresă"
       ],
       "Copy addresses": [
         "Copiere adrese"
-      ],
-      "Copy alias “${ name }”": [
-        "Copiază aliasul „${ name }”"
       ],
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
@@ -1526,11 +1520,6 @@
       "Trust": [
         "Aprobare"
       ],
-      "Trust key": [
-        "Aprobare cheie",
-        "Aprobare cheie",
-        "Aprobare cheie"
-      ],
       "Trust public key": [
         "Aprobare cheie publică"
       ],
@@ -1656,6 +1645,9 @@
       ],
       "Verify account": [
         "Verificare cont"
+      ],
+      "Verify now": [
+        "Verificare acum"
       ],
       "View": [
         "Afișare"
@@ -2202,6 +2194,107 @@
       ],
       "Yearly": [
         "Anual"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Activat"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresa este deja utilizată de un utilizator din afara propriei organizații. Contactați serviciul de asistență pentru clienți pentru a rezolva această problemă."
+      ],
+      "All": [
+        "Toate"
+      ],
+      "Calendar": [
+        "Calendar"
+      ],
+      "Configure migration": [
+        "Configurare migrare"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Contactați-vă administratorul pentru a începe o migrare."
+      ],
+      "Contacts": [
+        "Contacte"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Starea migrării datelor din Google Workspace către ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Mesaje"
+      ],
+      "Errors": [
+        "Erori"
+      ],
+      "Estimated size": [
+        "Mărime estimată"
+      ],
+      "Find out what can be migrated.": [
+        "Aflați ce poate fi migrat."
+      ],
+      "Has errors": [
+        "Are erori"
+      ],
+      "In progress": [
+        "În derulare"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresa membrului nu a fost găsită. Contactați serviciul de asistență pentru clienți pentru a rezolva această problemă."
+      ],
+      "Migrate": [
+        "Migrare"
+      ],
+      "Migrated": [
+        "Migrat"
+      ],
+      "Migration status": [
+        "Stare migrare"
+      ],
+      "Missing organization private key": [
+        "Cheia privată a organizației lipsește."
+      ],
+      "Missing organization public key": [
+        "Cheia publică a organizației lipsește."
+      ],
+      "No users to display": [
+        "Nu există utilizatori de afișat."
+      ],
+      "Not activated": [
+        "Neactivat"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizația nu dispune de suficiente licențe disponibile."
+      ],
+      "Organization does not have enough storage available": [
+        "Organizația nu are suficient spațiu de stocare disponibil."
+      ],
+      "Pending": [
+        "În așteptare"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selectați exact ce doriți să migrați. Se va aplica tuturor utilizatorilor organizației."
+      ],
+      "Select users to migrate": [
+        "Selectați utilizatorii pentru migrare"
+      ],
+      "Size": [
+        "Mărime"
+      ],
+      "Status": [
+        "Stare"
+      ],
+      "User": [
+        "Utilizator"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Utilizatori care și-au accesat contul ${ BRAND_NAME }"
+      ],
+      "What are you migrating?": [
+        "Ce migrați?"
+      ],
+      "You": [
+        "Eu"
       ]
     },
     "Browser": {
@@ -4163,8 +4256,8 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Asigurați-vă că puteți încă să vă accesați contul și datele chiar dacă vă pierdeți parola ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Pentru o tranziție lină la ${ BRAND_NAME }, importați-vă datele din Google, Outlook și altele."
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Pentru o înrolare fără probleme a echipei la ${ BRAND_NAME }, importați-vă datele din Google, Outlook și altele."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Pentru acces nelimitat la asistentul de scriere și nu numai, achiziționați ${ BRAND_NAME } Duo."
@@ -4706,6 +4799,9 @@
       "Aliases could not be loaded": [
         "Aliasurile nu au putut fi salvate."
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Tot spațiul de stocare a fost alocat. Reduceți spațiul alocat altor utilizatori."
+      ],
       "Amount above the maximum.": [
         "Sumă peste cea maximă acceptată."
       ],
@@ -5036,6 +5132,15 @@
       "Please complete the billing details": [
         "Completați detaliile de facturare."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configurația un domeniu personal înainte de a adăuga adrese."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Configurați un nume de domeniu personal înainte de a adăuga utilizatori la organizație."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Activați suportul pentru utilizatori multipli înainte de a adăuga utilizatori la organizație."
+      ],
       "Please enter a valid postal code": [
         "Introduceți un cod poștal valid."
       ],
@@ -5076,6 +5181,9 @@
       ],
       "Please try generating the text again": [
         "Încercați să generați din nou textul."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Migrați la un plan de afaceri cu mai mult de un utilizator pentru a destiona mai mulți utilizatori."
       ],
       "Port is required": [
         "Portul este obligatoriu"
@@ -5331,6 +5439,12 @@
       "You have reached the number of contacts limit for your account": [
         "Ați atins limita numărului de contacte disponibil pentru acest cont."
       ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Ați folosit toate adresele disponibile în plan. Modificați-vă planul pentru a adăuga o adresă nouă sau dezactivați o adresă din cont."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Ați folosit toate numele de utilizator din plan. Treceți la un plan cu plată superior pentru a adăuga un utilizator nou."
+      ],
       "You must set a name": [
         "Trebuie specificat un nume"
       ],
@@ -5548,9 +5662,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Această pagină nu s-a putut încărca. Reîmprospătați-o sau verificați conexiunea la internet."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Când este activată o parolă suplimentară, gestionarea alias-ului se poate face numai în ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Încă nu aveți niciun contact. Începeți prin a crea un contact nou."
@@ -6877,6 +6988,11 @@
         "Mesaje: ${ total }",
         "Mesaje: ${ total }"
       ],
+      "${ total } user found": [
+        "Utilizatori găsiți: ${ total }",
+        "Utilizatori găsiți: ${ total }",
+        "Utilizatori găsiți: ${ total }"
+      ],
       "${ trackersCount } email tracker blocked": [
         "Instrumente de urmărire din e-mail blocate: ${ trackersCount }",
         "Instrumente de urmărire din e-mail blocate: ${ trackersCount }",
@@ -6933,23 +7049,17 @@
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Autoconectare**: deschide și conectează VPN-ul imediat ce dispozitivul pornește."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Invitați persoane** la ${ BRAND_NAME } cu legătura web personală de recomandare."
+      ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Întrerupătorul de conexiune**: oprește divulgările de date prin blocarea conexiunii dacă VPN-ul cade în mod neașteptat."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Pasul 1:** Invitați persoane la ${ BRAND_NAME } cu legătura web personală de recomandare."
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Aceștia primesc ${ refereeRewardAmount }** în credite dacă se abonează."
       ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Pasul 2:** Persoanele invitate vor primi 2 săptămâni gratuite pentru planul ${ BRAND_NAME } ales."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Pasul 2:** Persoanele invitate primesc 2 săptămâni gratuite pentru planul ales."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Pasul 3:** Obțineți ${ referrerRewardAmount } în credite pentru fiecare persoană care se abonează la un plan."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Pasul 3:** Obțineți ${ referrerRewardAmount } credite pentru fiecare persoană care se abonează la un plan."
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Primiți ${ referrerRewardAmount }** în credite pentru fiecare persoană care se abonează."
       ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } spațiu bonus"
@@ -7166,6 +7276,9 @@
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
         "Ștergere automată mesaje mai vechi de 30 de zile din „Gunoi” și „Nedorite”."
       ],
+      "Automatically sort incoming emails into categories": [
+        "Sortare automată pe categorii mesaje sosite"
+      ],
       "Awaiting transaction": [
         "Se așteaptă tranzacția"
       ],
@@ -7286,9 +7399,6 @@
       "Copy the link to clipboard": [
         "Copiați legătura în memorie"
       ],
-      "Copy to clipboard": [
-        "Copiere în memorie"
-      ],
       "Copy your referral link": [
         "Copiere legătură web de recomandare"
       ],
@@ -7382,6 +7492,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Vă amintiți parola? ${ verifyButton }"
       ],
       "Do you want to download this attachment anyway?": [
         "Doriți totuși să descărcați acest atașament?",
@@ -7614,6 +7727,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Pentru mai multe rezultate, încercați să căutați în conținutul mesajelor."
       ],
+      "Forgot password?": [
+        "Ați uitat parola?"
+      ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "Evaluare gratuită pentru ${ ASSISTANT_TRIAL_TIME_DAYS } zi",
         "Evaluare gratuită pentru ${ ASSISTANT_TRIAL_TIME_DAYS } zile",
@@ -7768,7 +7884,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8072,6 +8190,9 @@
       ],
       "Password must have:": [
         "Parola trebuie să conțină:"
+      ],
+      "Password verified": [
+        "Parolă verificată"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Plățile sunt protejate de criptarea TLS și de legile de confidențialitate elvețiene."
@@ -8676,6 +8797,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Pentru a vă ajuta să vă amintiți parola, vă vom solicita să o introduceți periodic. Vi se va solicita mai rar în timp."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Pentru a importa evenimente, mai întâi creați un calendar în ${ CALENDAR_APP_NAME }. Aici vor apărea evenimentele după importare."
       ],
@@ -8900,6 +9024,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Veți primi o notificare la finalizarea importării."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Vă vom reaminti să vă verificați din nou parola mai târziu."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Se va trimite trimite un nou cod de verificare la ${ strong }."
@@ -9506,6 +9633,16 @@
         "Marcare cu stea"
       ]
     },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Comutare la ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Comutare la ${ MAIL_APP_NAME }"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Action shortcuts": [
         "Combinații de taste acțiuni"
@@ -9518,6 +9655,9 @@
       ],
       "Composer shortcuts": [
         "Combinații de taste editor mesaje"
+      ],
+      "Desktop app navigation": [
+        "Navigare în aplicațiile desktop"
       ],
       "Folder shortcuts": [
         "Combinații de taste foldere"
@@ -9802,6 +9942,9 @@
       ],
       "Email address": [
         "Adresă e-mail"
+      ],
+      "Email categories": [
+        "Categorii de mesaje"
       ],
       "Email format": [
         "Format e-mail"
@@ -11823,7 +11966,7 @@
         "Ștergeți automat mesajele mai vechi de 30 de zile din gunoi și cele nedorite."
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Transferați automat mesajele trimise spre contul ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
+        "Transferați automat mesajele trimise spre contul din ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "În prezent, trimiterea mesajelor promoționale sau programate grupate nu este acceptată. Vă recomandăm să utilizați un furnizor dedicat de servicii de e-mail pentru acest caz de utilizare."
@@ -12723,7 +12866,7 @@
         "TVA ${ rate }%"
       ],
       "terms and conditions": [
-        "termenii și condițiile"
+        "termeni și condiții"
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoire.",
@@ -13063,6 +13206,9 @@
       "San Francisco": [
         "San Francisco"
       ],
+      "Search": [
+        "Căutare"
+      ],
       "Search date, name, email address, or subject line": [
         "Căutare dată, nume, adresă de e-mail sau subiect"
       ],
@@ -13071,6 +13217,9 @@
       ],
       "Search for name or email": [
         "Căutare după nume sau e-mail"
+      ],
+      "Search for users or addresses": [
+        "Căutare utilizator sau adresă"
       ],
       "Search messages": [
         "Căutare mesaje"
@@ -13358,6 +13507,78 @@
         "OFERTĂ PRIMĂVERII"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Valorificați oferta"
+      ],
+      "Summer Sale": [
+        "Reduceri de vară"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/lună"
+      ],
+      "15 GB storage": [
+        "15 GB de spațiu de stocare"
+      ],
+      "2 TB data storage": [
+        "2 TB de spațiu de stocare pentru date"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de spațiu de stocare: de 40 de ori planul actual"
+      ],
+      "3 TB data storage": [
+        "3 TB de spațiu de stocare pentru date"
+      ],
+      "500 GB storage": [
+        "500 GB de spațiu de stocare"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Toate caracteristicile premium ale ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Toate caracteristicile premium ale ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Reducerile se bazează pe prețurile lunare standard. Abonamentul dvs. se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Acces complet la ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Conturi individuale pentru 6 utilizatori"
+      ],
+      "Individual accounts for you and a partner": [
+        "Conturi individuale pentru dvs. și un partener"
+      ],
+      "Online document and spreadsheet editor": [
+        "Editor conectat de documente și foi de calcul"
+      ],
+      "Recover previous file versions": [
+        "Recuperați versiunile anterioare ale fișierelor"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protecție mai puternică împotriva amenințărilor cibernetice"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Treceți la planul nostru anual și economisiți ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Număr nelimitat de foldere, etichete și filtre"
+      ],
+      "Use your own email domain": [
+        "Utilizați propriul domeniu de e-mail"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "pentru 12 luni"
+      ],
+      "SUMMER SALE": [
+        "REDUCERI DE VARĂ"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Mesaj criptat bilateral și semnat"
@@ -13527,46 +13748,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Toate aliasurile"
-      ],
       "Create alias": [
         "Creare alias"
-      ],
-      "Create an alias": [
-        "Creați un alias"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Generați aliasuri din mers și gestionați-vă ușor aliasurile și parolele."
-      ],
-      "Hide-my-email aliases": [
-        "Aliasuri hide-my-email"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Aliasurile hide-my-email vă permit să vă înscrieți pe site-uri online fără a vă partaja adresa reală de e-mail. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Alias nou"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Deschidere ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Protejați-vă identitatea online"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Încercați ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Folosit pentru cumpărături pe Amazon etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Când vi se solicită adresa de e-mail furnizați acest alias. Aliasurile sunt furnizate de către ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(va deschide ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -14947,9 +15136,6 @@
       "Address verification disabled": [
         "Verificare adresă dezactivată"
       ],
-      "Alias copied to clipboard": [
-        "Alias copiat în memorie"
-      ],
       "Alias saved and copied": [
         "Alias salvat și copiat"
       ],
@@ -15040,9 +15226,6 @@
       ],
       "Labels applied.": [
         "Etichete aplicate."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Ultimele aliasuri modificate stocate în cel mai vechi seif"
       ],
       "Mail list unsubscribed": [
         "Dezabonare de la lista de e-mailuri reușită."
@@ -15957,6 +16140,9 @@
       "Message will expire": [
         "Mesajul va expira"
       ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrați-vă organizația la ${ BRAND_NAME }"
+      ],
       "Minicalendar": [
         "Minicalendar"
       ],
@@ -16311,6 +16497,9 @@
       "Summary": [
         "Sumar"
       ],
+      "Summer Sale": [
+        "Promoție de vară"
+      ],
       "This field cannot be empty": [
         "Acest câmp nu poate fi gol."
       ],
@@ -16387,6 +16576,9 @@
       ],
       "Verification failed": [
         "Verificarea a eșuat"
+      ],
+      "Verify your password": [
+        "Verificați-vă parola"
       ],
       "Verifying your card...": [
         "Verificare card..."
