@@ -22,6 +22,8 @@ import { PostApplicationError } from '../Application/ApplicationEvent'
 import { c } from 'ttag'
 import { downloadExport } from '../UseCase/ExportAndDownload'
 import { decompressDocumentUpdate, isCompressedDocumentUpdate } from '../utils/document-update-compression'
+import type { SheetsStorageService } from '../Services/SheetsStorageService'
+import { SheetsPatchesType } from '../Database/SheetsDBSchema'
 
 export interface EditorControllerInterface {
   getCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<string | null>
@@ -49,6 +51,12 @@ export interface EditorControllerInterface {
   handleFileMenuAction(action: FileMenuAction): Promise<void>
   focusSpreadsheet(): void
   applyUpdate(update: Uint8Array<ArrayBuffer>): Promise<void>
+  storeSpreadsheetPatches(patches: unknown, updateHash: string, type?: SheetsPatchesType): Promise<void>
+  hasBasePatches(): Promise<boolean>
+  downloadSpreadsheetPatches(): Promise<void>
+  removeSpreadsheetPatches(): Promise<void>
+  generateSpreadsheetPatches(): Promise<unknown>
+  applyPatches(patches: unknown): Promise<void>
 }
 
 /** Allows the UI to invoke methods on the editor. */
@@ -59,6 +67,7 @@ export class EditorController implements EditorControllerInterface {
     private readonly logger: LoggerInterface,
     private readonly documentState: DocumentState | PublicDocumentState,
     private eventBus: InternalEventBusInterface,
+    private sheetsStorageService?: SheetsStorageService,
   ) {
     documentState.subscribeToProperty('realtimeReadyToBroadcast', (value) => {
       if (this.editorInvoker && value) {
@@ -503,5 +512,94 @@ export class EditorController implements EditorControllerInterface {
       type: { wrapper: 'du' },
       content: update,
     })
+  }
+
+  async storeSpreadsheetPatches(patches: object, updateHash: string, type = SheetsPatchesType.Delta): Promise<void> {
+    if (!this.editorInvoker) {
+      throw new Error('Attempting to store spreadsheet patches before editor invoker is initialized')
+    }
+    if (!this.sheetsStorageService) {
+      throw new Error('Sheets storage service not initialized')
+    }
+
+    const result = await this.sheetsStorageService.savePatches({
+      document: this.documentState.nodeMeta,
+      patches,
+      updateHash,
+      timestamp: Date.now(),
+      type,
+    })
+    if (result.isFailed()) {
+      this.logger.error('Failed to store spreadsheet patches', { error: result.getError() })
+    }
+  }
+
+  async hasBasePatches(): Promise<boolean> {
+    if (!this.editorInvoker) {
+      throw new Error('Attempting to check if base patches exist before editor invoker is initialized')
+    }
+    if (!this.sheetsStorageService) {
+      throw new Error('Sheets storage service not initialized')
+    }
+    const result = await this.sheetsStorageService.hasBasePatches({ document: this.documentState.nodeMeta })
+    if (result.isFailed()) {
+      throw new Error('Failed to check if base patches exist')
+    }
+    return result.getValue()
+  }
+
+  async downloadSpreadsheetPatches(): Promise<void> {
+    if (!this.editorInvoker) {
+      throw new Error('Attempting to download spreadsheet patches before editor invoker is initialized')
+    }
+    if (!this.sheetsStorageService) {
+      throw new Error('Sheets storage service not initialized')
+    }
+
+    const patches = await this.sheetsStorageService.getDecryptedPatches({
+      document: this.documentState.nodeMeta,
+    })
+    if (patches.isFailed()) {
+      throw new Error('Failed to get patches')
+    }
+
+    const stringifiedPatches = JSON.stringify(patches.getValue())
+    const blob = new Blob([stringifiedPatches], { type: 'application/json' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = 'spreadsheet-patches.json'
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
+  async removeSpreadsheetPatches(): Promise<void> {
+    if (!this.editorInvoker) {
+      throw new Error('Attempting to remove spreadsheet patches before editor invoker is initialized')
+    }
+    if (!this.sheetsStorageService) {
+      throw new Error('Sheets storage service not initialized')
+    }
+
+    const result = await this.sheetsStorageService.removePatches({ document: this.documentState.nodeMeta })
+    if (result.isFailed()) {
+      this.logger.error('Failed to remove spreadsheet patches', { error: result.getError() })
+    }
+  }
+
+  async generateSpreadsheetPatches(): Promise<unknown> {
+    if (!this.editorInvoker) {
+      throw new Error('Attempting to generate spreadsheet patches before editor invoker is initialized')
+    }
+
+    return this.editorInvoker.generateSpreadsheetPatches()
+  }
+
+  async applyPatches(patches: unknown): Promise<void> {
+    if (!this.editorInvoker) {
+      throw new Error('Attempting to apply patches before editor invoker is initialized')
+    }
+
+    await this.editorInvoker.applyPatches(patches)
   }
 }
