@@ -149,14 +149,13 @@ export interface MemberReadyForManualUnprivatization extends Member {
     Unprivatization: MemberUnprivatizationManualApproveState;
 }
 
-export type EnhancedMember = Member &
-    (
-        | { addressState: 'stale' | 'partial' | 'pending' | 'rejected' }
-        | {
-              addressState: 'full';
-              Addresses: Address[];
-          }
-    ) & {
-        roleState?: 'stale' | 'pending' | 'rejected' | 'full';
-        UserOrganizationRoles?: RoleAssignment[];
-    };
+type MemberAddressState =
+    | { addressState: 'stale' | 'partial' | 'pending' | 'rejected' }
+    | { addressState: 'full'; Addresses: Address[] };
+
+type MemberRoleState = {
+    roleState: 'initial' | 'stale' | 'pending' | 'rejected' | 'full';
+    UserOrganizationRoles: RoleAssignment[];
+};
+
+export type EnhancedMember = Member & MemberAddressState & MemberRoleState;

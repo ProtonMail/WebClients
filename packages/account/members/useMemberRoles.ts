@@ -33,7 +33,7 @@ export const useMemberRoles = ({ members }: { members: EnhancedMember[] | undefi
             return;
         }
         members.forEach((member) => {
-            if (!member.roleState || member.roleState === 'stale') {
+            if (member.roleState === 'initial' || member.roleState === 'stale') {
                 dispatch(getMemberRoles({ member })).catch(noop);
             }
         });
