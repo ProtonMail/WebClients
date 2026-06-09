@@ -44,7 +44,7 @@ export const ItemA11yActivator = ({
 }: ItemA11yActivatorProps) => (
     <button
         type="button"
-        className="item-a11y-activator absolute inset-0 z-1"
+        className="item-a11y-activator absolute inset-0 z-1 w-full h-full"
         style={{ background: 'transparent', border: 0, padding: 0, cursor: 'default' }}
         aria-label={ariaLabel}
         aria-pressed={isSelected}
