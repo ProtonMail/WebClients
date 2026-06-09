@@ -259,7 +259,7 @@ const routesDefinition = {
                     icon: 'shield',
                     to: '/authentication-security',
                     isVisible: ({ context }) =>
-                        context.canHaveOrganization &&
+                        !!context.permissions['account.security_policy.read'] &&
                         context.hasOrganizationAccess &&
                         context.organizationHasSecurityFeatures,
                     sections: [
@@ -298,7 +298,7 @@ const routesDefinition = {
                             to: '/single-sign-on',
                             isVisible: ({ context }) =>
                                 !!(
-                                    context.canHaveOrganization &&
+                                    context.permissions['account.sso_config.read'] &&
                                     (planSupportsSSO(context.organization?.PlanName, !!context.flags?.SsoForPbs) ||
                                         upsellPlanSSO(context.organization?.PlanName)) &&
                                     (context.hasActiveOrganization || context.hasActiveOrganizationKey)
