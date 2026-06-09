@@ -324,17 +324,11 @@
       "Contract composer": [
         "Ukončit režim celé obrazovky"
       ],
-      "Copy": [
-        "Kopírovat"
-      ],
       "Copy address": [
         "Kopírovat adresu"
       ],
       "Copy addresses": [
         "Kopírovat adresy"
-      ],
-      "Copy alias “${ name }”": [
-        "Kopírovat alias \"${ name }\""
       ],
       "Copy email to clipboard": [
         "Zkopírovat e-mail do schránky"
@@ -1519,10 +1513,7 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
+        "Důvěřovat klíči"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -2208,6 +2199,44 @@
       ],
       "Yearly": [
         "Ročně"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Kalendář"
+      ],
+      "Configure migration": [
+        "Nastavte migraci"
+      ],
+      "Contacts": [
+        "Kontakty"
+      ],
+      "Estimated size": [
+        "Odhadovaná velikost"
+      ],
+      "Has errors": [
+        "Má chyby"
+      ],
+      "In progress": [
+        "Probíhá"
+      ],
+      "Migration status": [
+        "Stav migrace"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizace nemá dostatek volných licencí"
+      ],
+      "Organization does not have enough storage available": [
+        "Organizace nemá dostatečně velké úložiště"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "User": [
+        "Uživatel"
+      ],
+      "What are you migrating?": [
+        "Co migrujete?"
       ]
     },
     "Browser": {
@@ -4171,9 +4200,6 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Zajistěte si přístup ke svému účtu a datům i v případě ztráty hesla ${ BRAND_NAME }."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Pro bezproblémový přechod na ${ BRAND_NAME } importujte data ze služeb Google, Outlook a dalších."
-      ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Pro neomezený přístup k asistentovi psaní a dalším možnostem přejděte na ${ BRAND_NAME } Duo."
       ],
@@ -4702,6 +4728,9 @@
       "Aliases could not be loaded": [
         "Aliasy se nepodařilo načíst"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Celé úložiště již bylo přiděleno. Zmenšete prosím přidělený prostor ostatním uživatelům."
+      ],
       "Amount above the maximum.": [
         "Hodnota je vyšší než maximální částka."
       ],
@@ -5035,6 +5064,15 @@
       "Please complete the billing details": [
         "Prosím, doplňte fakturační údaje"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Před přidáním adres nastavte vlastní doménu."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Před přidáním uživatelů do Vaši organizace si prosím nastavte vlastní doménu."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Zapněte prosím podporu pro více uživatelů před přidáváním uživatelů do vaší organizace."
+      ],
       "Please enter a valid postal code": [
         "Zadejte prosím platné poštovní směrovací číslo"
       ],
@@ -5076,6 +5114,9 @@
       ],
       "Please try generating the text again": [
         "Zkuste prosím text vygenerovat znovu"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Chcete-li spravovat více uživatelů, přejděte na firemní tarif."
       ],
       "Port is required": [
         "Port je povinná položka"
@@ -5332,6 +5373,12 @@
       "You have reached the number of contacts limit for your account": [
         "Dosáhli jste limitu počtu kontaktů vašeho účtu"
       ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Využili jste všechny adresy ve vašem tarifu. Prosím navyšte svůj tarif, abyste mohli přidat novou adresu, nebo deaktivujte některou z adres ve svém účtu."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Limit počtu uživatelů ve vašem tarifu byl vyčerpán. Přejděte na vyšší tarif, abyste mohli přidat dalšího uživatele."
+      ],
       "You must set a name": [
         "Musíte nastavit jméno"
       ],
@@ -5551,9 +5598,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Tuto stránku se nám nepodařilo načíst. Aktualizujte prosím stránku nebo zkontrolujte svoje internetové připojení."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Pokud je povoleno dodatečné heslo, lze správu aliasů provádět pouze v ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Zatím nemáte žádný kontakt. Začněte vytvořením nového kontaktu"
@@ -6924,6 +6968,12 @@
         "${ total } zpráv",
         "${ total } zpráv"
       ],
+      "${ total } user found": [
+        "Nalezen ${ total } uživatel",
+        "Nalezeni ${ total } uživatelé",
+        "Nalezeno ${ total } uživatelů",
+        "Nalezeno ${ total } uživatelů"
+      ],
       "${ trackersCount } email tracker blocked": [
         "${ trackersCount } sledovací prvek e-mailu zablokován",
         "${ trackersCount } sledovací prvky e-mailu zablokovány",
@@ -6986,21 +7036,6 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: Zabraňuje úniku dat zablokováním internetu v případě neočekávaného výpadku VPN."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Krok 1:** Pozvěte své přátele do ${ BRAND_NAME } pomocí svého doporučujícího odkazu."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Krok 2:** Vaši přátelé získají 2 týdny zdarma na jejich zvoleném tarifu ${ BRAND_NAME }."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Krok 2:** Vaši přátelé získají 2 týdny zdarma na svém tarifu."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Krok 3:** Získejte ${ referrerRewardAmount } kreditů za každého přítele, který se přihlásí k odběru tarifu."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Krok 3:** Získejte ${ referrerRewardAmount } kreditů za každou osobu, která se přihlásí k odběru tarifu."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového místa na disku"
@@ -7340,9 +7375,6 @@
       ],
       "Copy the link to clipboard": [
         "Kopírovat odkaz do schránky"
-      ],
-      "Copy to clipboard": [
-        "Kopírovat do schránky"
       ],
       "Copy your referral link": [
         "Kopírovat váš doporučující odkaz"
@@ -7822,7 +7854,10 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -13137,6 +13172,9 @@
       "San Francisco": [
         "San Francisco"
       ],
+      "Search": [
+        "Vyhledat"
+      ],
       "Search date, name, email address, or subject line": [
         "Vyhledávání podle data, jména, e-mailové adresy nebo předmětu zprávy"
       ],
@@ -13436,6 +13474,78 @@
         "JARNÍ VÝPRODEJ"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Využít nabídku"
+      ],
+      "Summer Sale": [
+        "Letní výprodej"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/měsíčně"
+      ],
+      "15 GB storage": [
+        "15GB úložiště"
+      ],
+      "2 TB data storage": [
+        "2TB datové úložiště"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200GB úložiště: 40× váš současný plán"
+      ],
+      "3 TB data storage": [
+        "3TB datové úložiště"
+      ],
+      "500 GB storage": [
+        "500GB úložiště"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce služeb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce služeb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Slevy vycházejí ze standardních měsíčních cen. Vaše předplatné se na konci fakturačního cyklu obnoví za standardní roční sazbu."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Plný přístup k ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuální účty pro 6 uživatelů"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuální účty pro vás a partnera"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online editor dokumentů a tabulek"
+      ],
+      "Recover previous file versions": [
+        "Obnova předchozích verzí souborů"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnější ochrana proti kybernetickým hrozbám"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Přejděte na náš roční plán a ušetřete ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Use your own email domain": [
+        "Používejte svou vlastní e-mailovou doménu"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "na 12 měsíců"
+      ],
+      "SUMMER SALE": [
+        "LETNÍ VÝPRODEJ"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Podepsaná zpráva s koncovým šifrováním"
@@ -13609,46 +13719,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Všechny aliasy"
-      ],
       "Create alias": [
         "Vytvořit alias"
-      ],
-      "Create an alias": [
-        "Vytvořit alias"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Vygenerujte aliasy za běhu a jednoduše spravujte svoje aliasy a hesla."
-      ],
-      "Hide-my-email aliases": [
-        "Aliasy Hide-my-email"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Aliasy Hide-my-email vám umožní zaregistrovat se do online služeb, aniž byste museli sdílet svou hlavní e-mailovou adresu. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Nový alias"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Otevřít ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Chraňte svou digitální identitu"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Vyzkoušejte ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Použito na Amazonu pro nakupování, atd."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Když se vás zeptají na e-mailovou adresu, dejte jim místo toho tento alias. Aliasy jsou poskytovány ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(otevře ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -15088,9 +15166,6 @@
       "Address verification disabled": [
         "Ověření adresy deaktivováno"
       ],
-      "Alias copied to clipboard": [
-        "Alias byl zkopírován do schránky"
-      ],
       "Alias saved and copied": [
         "Alias uložen a zkopírován"
       ],
@@ -15183,9 +15258,6 @@
       ],
       "Labels applied.": [
         "Štítky použity."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Naposledy upravené aliasy uložené ve vašem nejstarším trezoru"
       ],
       "Mail list unsubscribed": [
         "Odhlášeno z e-mailového seznamu"

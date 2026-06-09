@@ -319,9 +319,6 @@
       "Copy addresses": [
         "Címek másolása"
       ],
-      "Copy alias “${ name }”": [
-        "„${ name }” e-mail álnév másolása"
-      ],
       "Copy email to clipboard": [
         "E-mail másolása a vágólapra"
       ],
@@ -1472,8 +1469,7 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Kulcs megjelölése megbízhatóként",
-        "Kulcsok megjelölése megbízhatóként"
+        "Megbízható kulcs"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -3879,9 +3875,6 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Biztosítsa be, hogy továbbra is hozzáférhessen a fiókjához és az adataihoz, még akkor is, ha elveszíti a ${ BRAND_NAME } jelszavát."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "A zökkenőmentes átálláshoz a ${ BRAND_NAME }-ra, importálja adatait a Google-ból, az Outlook-ból és más forrásokból."
-      ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Ha korlátlan hozzáférést szeretne a szövegíró asszisztenshez és más funkciókhoz, frissítsen ${ BRAND_NAME } Duo verzióra."
       ],
@@ -4306,6 +4299,9 @@
       "Aliases could not be loaded": [
         "Az e-mail álnevek betöltése nem sikerült"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Minden tárhely terület kiosztásra került. Kérjük csökkentse más felhasználók tárhelyét."
+      ],
       "Amount above the maximum.": [
         "Túl magas összeg."
       ],
@@ -4603,6 +4599,15 @@
       "Please activate your search again": [
         "Aktiválja újra a keresést"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Címek létrehozása előtt, állítson be egy saját domain nevet."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Vegyen fel egy saját domain nevet, mielőtt felhasználókat venne fel a szervezethez."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Engedélyezze a többfelhasználós módot, mielőtt felhasználókat venne fel a szervezethez."
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Javítsa ki a megjelölt hibát a folytatáshoz.",
         "Javítsa ki a megjelölt hibákat a folytatáshoz."
@@ -4630,6 +4635,9 @@
       ],
       "Please try generating the text again": [
         "Próbálja meg újragenerálni a szöveget"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Váltson egy üzleti csomagra, egynél több felhasználval, hogy több felhasználót kezelhessen."
       ],
       "Port is required": [
         "A port megadása szükséges"
@@ -4851,6 +4859,9 @@
       "You have reached the number of contacts limit for your account": [
         "Elérte a fiókhoz létrehozható névjegyek maximális számát"
       ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Valamennyi, az előfizetéséhez rendelkezésére álló felhasználót elhasználta. Több felhasználó létrehozásához váltson nagyobb csomagra."
+      ],
       "You must set a name": [
         "Meg kell adnia egy nevet"
       ],
@@ -5057,9 +5068,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nem sikerült az oldal betöltése. Frissítse az oldalt vagy ellenőrizze az internetkapcsolatát."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Ha az extra jelszó engedélyezve van, az e-mail álnév kezelése csak a ${ PASS_APP_NAME } alkalmazásban végezhető el."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Még nincs névjegy. Hozzon létre egyet"
@@ -6304,21 +6312,6 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Vészkapcsoló**: Megállítja az adatszivárgást azáltal, hogy blokkolja az internetet, ha a VPN kapcsolat váratlanul megszakad."
       ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**1. lépés:** Hívja meg barátait a ${ BRAND_NAME } szolgáltatásba az ajánlói hivatkozásával."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**2. lépés:** Az ismerősei 2 ingyenes hetet kapnak a választott ${ BRAND_NAME } csomagjukhoz."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**2. lépés:** Az ismerősei 2 ingyenes hetet kapnak a csomagjukhoz."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**3. lépés:** Kap ${ referrerRewardAmount } Kreditet minden ismerőse után, aki előfizet egy csomagra."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**3. lépés:** ${ referrerRewardAmount } kreditet kap minden személy után, aki előfizet egy csomagra."
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bónusz tárterület"
       ],
@@ -7065,6 +7058,7 @@
         "Inicializálás…"
       ],
       "Insert image": [
+        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -11854,6 +11848,9 @@
       "Postal code": [
         "Irányítószám"
       ],
+      "Search": [
+        "Keresés"
+      ],
       "Search date, name, email address, or subject line": [
         "Keresés dátum, név, e-mail cím vagy tárgy alapján"
       ],
@@ -12009,6 +12006,78 @@
         "Hivatalos e-mail tőle: ${ BRAND_NAME }"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Szerezze meg az ajánlatot"
+      ],
+      "Summer Sale": [
+        "Nyári akció"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/hónap"
+      ],
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "2 TB data storage": [
+        "2 TB adattárhely"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB tárhely: a jelenlegi csomag negyvenszerese"
+      ],
+      "3 TB data storage": [
+        "3 TB adattárhely"
+      ],
+      "500 GB storage": [
+        "500 GB tárhely"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "A ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME } összes prémium funkciója"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "A ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME } összes prémium funkciója"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "A kedvezmények a standard havi árakon alapulnak. Az előfizetése a standard éves díjjal fog megújulni, amikor a számlázási ciklus véget ér."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Teljes hozzáférés a ${ VPN_APP_NAME } szolgáltatáshoz"
+      ],
+      "Individual accounts for 6 users": [
+        "Egyéni fiókok 6 felhasználó számára"
+      ],
+      "Individual accounts for you and a partner": [
+        "Egyéni fiókok Önnek és partnerének"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online dokumentum- és táblázatszerkesztő"
+      ],
+      "Recover previous file versions": [
+        "Régebbi fájlverziók helyreállítása"
+      ],
+      "Stronger protection against cyber threats": [
+        "Erősebb védelem a kiberfenyegetésekkel szemben"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Váltson éves csomagunkra, és takarítson meg ${ toYearlyDiscountAmount } összeget!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Korlátlan számú mappa, címke és szűrő"
+      ],
+      "Use your own email domain": [
+        "Saját e-mail domain használata"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12 hónapra"
+      ],
+      "SUMMER SALE": [
+        "NYÁRI AKCIÓ"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Végpontok közt titkosított és aláírt üzenet"
@@ -12146,46 +12215,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Minden e-mail álnév"
-      ],
       "Create alias": [
         "E-mail álnév létrehozása"
-      ],
-      "Create an alias": [
-        "E-mail álnév létrehozása"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Készítsen álneveket menet közben, és könnyen kezelje álneveit és jelszavait."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email álnevek"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email álnevek lehetővé teszik, hogy online feliratkozzon dolgokra anélkül, hogy megosztaná az e-mail címét. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Új e-mail álnév"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } megnyitása"
-      ],
-      "Protect your online identity": [
-        "Védje meg az online személyazonosságát"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Próbálja ki ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Amazonon vásárláshoz használatos, stb."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Ha megkérdezik az e-mail címét, adja meg helyette ezt az álnevet. Az álneveket a ${ passLink } biztosítja."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(meg fogja nyitni ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -13462,9 +13499,6 @@
       "Address verification disabled": [
         "Cím ellenőrzés kikapcsolva"
       ],
-      "Alias copied to clipboard": [
-        "Az e-mail álnév a vágólapra lett másolva"
-      ],
       "Alias saved and copied": [
         "Az e-mail álnév mentve és másolva"
       ],
@@ -13553,9 +13587,6 @@
       ],
       "Labels applied.": [
         "Címkék alkalmazva."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Az utoljára módosított e-mail álnevek a legrégebbi tárolóban találhatók."
       ],
       "Mail list unsubscribed": [
         "Leiratkozva a levelezési listáról"

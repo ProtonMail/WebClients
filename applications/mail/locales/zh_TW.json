@@ -333,9 +333,6 @@
       "Copy addresses": [
         "複製電郵位址"
       ],
-      "Copy alias “${ name }”": [
-        "複製別名 \"${ name }\""
-      ],
       "Copy email to clipboard": [
         "複製電郵位址至剪貼簿"
       ],
@@ -1494,9 +1491,6 @@
       "Trust": [
         "信任"
       ],
-      "Trust key": [
-        "信任金鑰"
-      ],
       "Trust public key": [
         "信任公開金鑰"
       ],
@@ -2124,6 +2118,17 @@
       ],
       "Yearly": [
         "每年"
+      ]
+    },
+    "BOSS": {
+      "Member address not found. Please contact customer support to resolve this": [
+        "未發現成員的位址。請聯繫客戶支援服務以協助解決問題。"
+      ],
+      "Missing organization private key": [
+        "缺少組織私有密鑰"
+      ],
+      "Missing organization public key": [
+        "缺少組織公用密鑰"
       ]
     },
     "Browser": {
@@ -4544,6 +4549,9 @@
       "Aliases could not be loaded": [
         "無法載入別名"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "所有儲存空間已被分配。請減少分配給其他使用者的儲存空間。"
+      ],
       "Amount above the maximum.": [
         "金額高於上限。"
       ],
@@ -4847,6 +4855,15 @@
       "Please complete the billing details": [
         "請完成付款詳細資料"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "您需要先設定好自訂網域才能新增電子郵件。"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "請先設置一個自訂網域，然後才加入使用者到您的組織。"
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "請先啟用多使用者支援，然後才加入使用者到您的組織。"
+      ],
       "Please enter a valid postal code": [
         "請輸入有效的郵遞區號"
       ],
@@ -4885,6 +4902,9 @@
       ],
       "Please try generating the text again": [
         "請重新生成"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "請升級至選用多於 1 位使用者的企業方案，以便管理多位使用者。"
       ],
       "Port is required": [
         "通訊埠為必填"
@@ -5120,6 +5140,9 @@
       "You have reached the number of contacts limit for your account": [
         "您的帳號已達聯絡人數量限制"
       ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "您已使用您的方案中所有使用者。請升級您的方案以加入使用者。"
+      ],
       "You must set a name": [
         "您必須設定名稱"
       ],
@@ -5333,9 +5356,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "我們無法載入此頁面。請重新整理頁面或檢查您的網際網路連線。"
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "啟用額外密碼時，別名管理只能在 ${ PASS_APP_NAME } 中進行。"
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "您尚未有任何聯絡人。立即開始創建一個新的聯絡人"
@@ -6536,6 +6556,9 @@
       "${ total } message": [
         "${ total } 封郵件"
       ],
+      "${ total } user found": [
+        "找到 ${ total } 位使用者"
+      ],
       "${ trackersCount } email tracker blocked": [
         "${ trackersCount } 電郵追蹤程式已攔截"
       ],
@@ -6577,21 +6600,6 @@
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**自動連線**：在您開啟裝置時，即可開啟並連線至 VPN。"
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**第一步：**使用您的推薦連結邀請朋友加入 ${ BRAND_NAME }。"
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**第二步：**您的朋友將取得 ${ BRAND_NAME } 方案的 2 週免費。"
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**第二步：**您的朋友將取得該方案的 2 週免費。"
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**第三步：**每當有朋友訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**第三步：**每當有使用者訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
@@ -6898,9 +6906,6 @@
       ],
       "Copy the link to clipboard": [
         "複製連結到剪貼簿"
-      ],
-      "Copy to clipboard": [
-        "複製到剪貼簿"
       ],
       "Copy your referral link": [
         "複製您的推介連結"
@@ -7344,7 +7349,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖像"
+        "插入影像"
       ],
       "Insert link": [
         "插入連結"
@@ -12347,6 +12352,9 @@
       "San Francisco": [
         "舊金山"
       ],
+      "Search": [
+        "搜尋"
+      ],
       "Search date, name, email address, or subject line": [
         "搜尋日期、名稱、電子郵件位址或主旨"
       ],
@@ -12634,6 +12642,78 @@
         "春季特賣"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "取得優惠"
+      ],
+      "Summer Sale": [
+        "夏季特賣"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/每月"
+      ],
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "2 TB data storage": [
+        "2 TB 資料儲存空間"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 儲存空間：您目前方案的 40 倍"
+      ],
+      "3 TB data storage": [
+        "3 TB 資料儲存空間"
+      ],
+      "500 GB storage": [
+        "500 GB 儲存空間"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣以標準月費定價為基礎。您的訂閱將在帳單週期結束時以標準年費率續訂。"
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "完整存取 ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "6 位使用者的個人帳號"
+      ],
+      "Individual accounts for you and a partner": [
+        "供您與夥伴使用的個人帳號"
+      ],
+      "Online document and spreadsheet editor": [
+        "線上文件和試算表編輯器"
+      ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
+      ],
+      "Stronger protection against cyber threats": [
+        "針對網路威脅的更強大保護"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "切換至我們的年度方案並節省 ${ toYearlyDiscountAmount }！"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "資料夾、標籤與篩選器無上限"
+      ],
+      "Use your own email domain": [
+        "使用您自己的電子郵件網域"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12 個月"
+      ],
+      "SUMMER SALE": [
+        "夏季特賣"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "端對端加密並簽署郵件"
@@ -12766,46 +12846,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "全部別名"
-      ],
       "Create alias": [
         "創建別名"
-      ],
-      "Create an alias": [
-        "建立一個別名"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "隨時生成信箱別名，輕鬆管理別名與密碼。"
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email 別名"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email 別名可以讓您在註冊帳號時不再需要分享您真實的電子郵件地址。 ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "新增别名"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "開啟 ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "保護你的線上身分"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "嘗試${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "於Amazon購物時等…"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "當網站要求您輸入電子郵件時，給他們別名就好。 別名由 ${ passLink } 提供。"
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(轉開 ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -14026,9 +14074,6 @@
       "Address verification disabled": [
         "位址驗證已停用"
       ],
-      "Alias copied to clipboard": [
-        "已複製別名到剪貼簿"
-      ],
       "Alias saved and copied": [
         "已成功儲存及複製別名"
       ],
@@ -14115,9 +14160,6 @@
       ],
       "Labels applied.": [
         "標籤已套用。"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "最後修改的別名已儲存到您最舊的保險庫"
       ],
       "Mail list unsubscribed": [
         "已從郵寄清單取消訂閱"

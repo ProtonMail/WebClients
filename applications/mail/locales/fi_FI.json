@@ -319,17 +319,11 @@
       "Contract composer": [
         "Supista viestin kirjoitus"
       ],
-      "Copy": [
-        "Kopioi"
-      ],
       "Copy address": [
         "Kopioi osoite"
       ],
       "Copy addresses": [
         "Kopioi osoitteet"
-      ],
-      "Copy alias “${ name }”": [
-        "Kopioi alias \"${ name }\""
       ],
       "Copy email to clipboard": [
         "Kopioi sähköpostiosoite leikepöydälle"
@@ -1507,10 +1501,6 @@
       "Trust": [
         "Luota"
       ],
-      "Trust key": [
-        "Luota avaimeen",
-        "Luota avaimiin"
-      ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
       ],
@@ -2121,6 +2111,44 @@
       ],
       "Yearly": [
         "Vuosittain"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Kalenteri"
+      ],
+      "Configure migration": [
+        "Määritä siirto"
+      ],
+      "Contacts": [
+        "Yhteystiedot"
+      ],
+      "Estimated size": [
+        "Arvioitu koko"
+      ],
+      "Has errors": [
+        "Virheitä"
+      ],
+      "In progress": [
+        "Käynnissä"
+      ],
+      "Migration status": [
+        "Siirron tila"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisaatiolla ei ole tarpeeksi paikkoja saatavilla"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisaatiolla ei ole tarpeeksi tallennustilaa"
+      ],
+      "Status": [
+        "Tila"
+      ],
+      "User": [
+        "Käyttäjä"
+      ],
+      "What are you migrating?": [
+        "Mitä olet siirtämässä?"
       ]
     },
     "Browser": {
@@ -4050,9 +4078,6 @@
       "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
         "Varmista, että pääset edelleen käsiksi tiliisi ja tietoihisi, vaikka kadottaisit ${ BRAND_NAME } -salasanasi."
       ],
-      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Voit siirtyä ${ BRAND_NAME }iin saumattomasti tuomalla tietosi Googlesta, Outlookista ja muualta."
-      ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Saat rajattoman pääsyn kirjoitusavustajaan ja muuhun, päivitä ${ BRAND_NAME } Duoon."
       ],
@@ -4549,6 +4574,9 @@
       "Aliases could not be loaded": [
         "Aliaksia ei voitu ladata"
       ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Kaikki tallennustila on varattu. Vähennä muille käyttäjille varattua tallennustilaa."
+      ],
       "Amount above the maximum.": [
         "Summa on enimmäismäärää suurempi."
       ],
@@ -4867,6 +4895,15 @@
       "Please complete the billing details": [
         "Täydennä laskutustiedot"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Määritä oma verkkotunnus ennen kuin lisäät osoitteita."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Määritä oma verkkotunnus ennen kuin lisäät organisaatioosi käyttäjiä."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Ota usean käyttäjän tuki käyttöön ennen kuin lisäät käyttäjiä organisaatioosi."
+      ],
       "Please enter a valid postal code": [
         "Syötä kelvollinen postinumero"
       ],
@@ -4906,6 +4943,9 @@
       ],
       "Please try generating the text again": [
         "Yritä luoda teksti uudelleen"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Hallitaksesi useita käyttäjiä, päivitä yritystilaukseen, joka sisältää enemmän kuin yhden käyttäjän."
       ],
       "Port is required": [
         "Portti vaaditaan"
@@ -4991,6 +5031,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Joidenkin tunnisteiden nimet ylittävät ${ MAIL_APP_NAME }n enimmäismerkkimäärän. Muuta nimiä muokkaamalla tuontia."
+      ],
+      "Something went wrong while converting the address": [
+        "Jotain meni vikaan muutettaessa osoitetta"
       ],
       "Something went wrong while creating the address": [
         "Jotain meni vikaan luotaessa osoitetta"
@@ -5150,6 +5193,12 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Olet saavuttanut tilisi yhteystietojen enimmäismäärän"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Olet käyttänyt kaikki tilauksesi osoitteet. Päivitä tilauksesi lisätäksesi uuden osoitteen tai ota osoite pois käytöstä tililtäsi."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Olet kuluttanut tilaukseesi sisältyvän käyttäjäkiintiön. Lisää uusia käyttäjiä päivittämällä tilauksesi."
       ],
       "You must set a name": [
         "Nimi on asetettava"
@@ -5360,9 +5409,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Sivua ei voitu ladata. Päivitä sivu tai tarkista Internet-yhteytesi."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Lisäsalasanan ollessa käytössä, voidaan aliaksia hallita vain ${ PASS_APP_NAME }issa."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Sinulla ei vielä ole yhteystietoja. Aloita luomalla uusi yhteystieto"
@@ -6615,6 +6661,10 @@
         "${ total } viesti",
         "${ total } viestiä"
       ],
+      "${ total } user found": [
+        "Löytyi ${ total } käyttäjä",
+        "${ total } käyttäjää löytyi"
+      ],
       "${ trackersCount } email tracker blocked": [
         "${ trackersCount } sähköpostiseuranta estetty",
         "${ trackersCount } sähköpostiseurantaa estetty"
@@ -6663,21 +6713,6 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Tappokytkin**: Estää tietovuodot katkaisemalla Internet-yhteytesi, jos VPN-yhteys katkeaa yllättäen."
-      ],
-      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
-        "**Vaihe 1:** Kutsu kaverisi ${ BRAND_NAME }:iin suosittelulinkilläsi."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Vaihe 2:** Kaverisi saavat valitsemansa ${ BRAND_NAME }-tilauksen ilmaiseksi kahdeksi viikoksi."
-      ],
-      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Vaihe 2:** Kaverisi saavat kahden viikon ilmaisen tilauksen."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Vaihe 3:** Ansaitse ${ referrerRewardAmount } krediittiä jokaista tilauksen hankkivaa kaveria kohden."
-      ],
-      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Vaihe 3:** Ansaitse ${ referrerRewardAmount } krediitteinä jokaista tilauksen hankkivaa kaveria kohden."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } lisätallennustilaa"
@@ -7000,9 +7035,6 @@
       ],
       "Copy the link to clipboard": [
         "Kopioi linkki leikepöydälle"
-      ],
-      "Copy to clipboard": [
-        "Kopioi leikepöydälle"
       ],
       "Copy your referral link": [
         "Kopioi suosittelulinkkisi"
@@ -7457,7 +7489,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -12474,6 +12507,9 @@
       "San Francisco": [
         "San Francisco"
       ],
+      "Search": [
+        "Etsi"
+      ],
       "Search date, name, email address, or subject line": [
         "Etsi päiväystä, nimeä, sähköpostiosoitetta tai aiheriviä"
       ],
@@ -12748,6 +12784,78 @@
         "KEVÄTALE"
       ]
     },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Hyödynnä tarjous"
+      ],
+      "Summer Sale": [
+        "Kesäale"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/kk"
+      ],
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "2 TB data storage": [
+        "2 Tt:n tiedontallennus"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 Gt tallennustilaa: 40x nykyinen tilauksesi"
+      ],
+      "3 TB data storage": [
+        "3 Tt:n tiedontallennus"
+      ],
+      "500 GB storage": [
+        "500 Gt tallennustilaa"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Kaikki sovellusten ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME } premium-ominaisuudet"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Kaikki sovellusten ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME } premium-ominaisuudet"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Alennukset perustuvat normaaliin kuukausihintaan. Tilauksesi uusiutuu laskutusjakson päättyessä normaalilla vuosihinnalla."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Täysi ${ VPN_APP_NAME } -käyttöoikeus"
+      ],
+      "Individual accounts for 6 users": [
+        "Henkilökohtaiset tilit 6 käyttäjälle"
+      ],
+      "Individual accounts for you and a partner": [
+        "Henkilökohtaiset tilit sinulle ja kumppanille"
+      ],
+      "Online document and spreadsheet editor": [
+        "Yhdistetty asiakirjojen ja laskentataulukoiden muokkausohjelma"
+      ],
+      "Recover previous file versions": [
+        "Palauta aiempia tiedostoversioita"
+      ],
+      "Stronger protection against cyber threats": [
+        "Vahvempi suoja kyberuhkia vastaan"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Vaihda vuositilaukseemme ja säästä ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Rajattomasti kansioita, tunnisteita ja suodattimia"
+      ],
+      "Use your own email domain": [
+        "Käytä omaa sähköpostin verkkotunnusta"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12 kuukaudeksi"
+      ],
+      "SUMMER SALE": [
+        "KESÄALE"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Päästä päähän -salattu ja allekirjoitettu viesti"
@@ -12901,46 +13009,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Kaikki aliakset"
-      ],
       "Create alias": [
         "Luo alias"
-      ],
-      "Create an alias": [
-        "Luo alias"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Luo uusia aliaksia lennossa, ja hallitse niitä sekä salasanojasi helposti."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-aliakset"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email-aliasten avulla voit rekisteröityä verkkopalveluihin jakamatta todellista sähköpostiosoitettasi. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Uusi alias"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Avaa ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Suojaa verkkoidentiteettisi"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Kokeile ${ PASS_APP_NAME }ia"
       ],
       "Used on Amazon for shopping, etc.": [
         "Käytetään Amazonissa ostoksiin jne."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Kun sähköpostiosoitettasi pyydetään, anna osoitteesi sijaan tämä alias. Aliakset tarjoaa ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(avaa ${ PASS_APP_NAME }in)"
       ]
     },
     "Security Center - Action": {
@@ -14244,9 +14320,6 @@
       "Address verification disabled": [
         "Osoitevahvistus ei ole käytössä"
       ],
-      "Alias copied to clipboard": [
-        "Alias kopioitiin leikepöydälle"
-      ],
       "Alias saved and copied": [
         "Alias tallennettiin ja kopioitiin"
       ],
@@ -14335,9 +14408,6 @@
       ],
       "Labels applied.": [
         "Tunnisteet määritettiin."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Viimeksi muokatut vanhimmassa holvissasi olevat aliakset"
       ],
       "Mail list unsubscribed": [
         "Sähköpostitilaus on lopetettu"
