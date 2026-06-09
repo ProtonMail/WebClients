@@ -6,7 +6,9 @@ import { c } from 'ttag';
 
 import type { SamlState } from '@proton/account';
 import { disableSCIMAction, setupSCIMAction } from '@proton/account/samlSSO/actions';
+import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
@@ -65,6 +67,11 @@ const SCIMSettingsSection = ({ domain, onShowVerifyDomain, hasSsoConfig, scimInf
     const dispatch = baseUseDispatch<ThunkDispatch<SamlState, ProtonThunkArguments, Action>>();
     const { createNotification } = useNotifications();
 
+    const [permissions] = useOrgPermissions();
+    const canCreate = !!permissions?.['account.sso_config.create'];
+    const canUpdate = !!permissions?.['account.sso_config.update'];
+    const canDelete = !!permissions?.['account.sso_config.delete'];
+
     const [setupSCIMModalProps, setSetupSCIMModalOpen, renderSetupSCIMModal] = useModalState();
     const [regenerateSCIMModalProps, setRegenerateSCIMModalOpen, renderRegenerateSCIMModal] = useModalState();
     const [disableSCIMModalProps, setDisableSCIMModalOpen, renderDisableSCIMModal] = useModalState();
@@ -119,34 +126,42 @@ const SCIMSettingsSection = ({ domain, onShowVerifyDomain, hasSsoConfig, scimInf
                                             />
                                         ) : (
                                             <div>
-                                                <Button
-                                                    color="norm"
-                                                    shape="outline"
-                                                    className="shrink-0 grow-0"
-                                                    onClick={() => {
-                                                        const run = async () => {
-                                                            const result = await dispatch(
-                                                                setupSCIMAction({
-                                                                    type: 'setup',
-                                                                    api,
-                                                                })
-                                                            );
-                                                            setLocalSCIMConfiguration({
-                                                                ...result,
-                                                                type: 'setup',
-                                                                ssoAppInfo,
-                                                            });
-                                                            setSetupSCIMModalOpen(true);
-                                                            createNotification({
-                                                                text: c('Info').t`SCIM token active`,
-                                                            });
-                                                        };
-                                                        void withLoadingSCIM(run());
-                                                    }}
-                                                    loading={loadingSCIM}
+                                                <Tooltip
+                                                    title={!canCreate ? c('Label').t`You don't have permissions` : null}
+                                                    openDelay={100}
                                                 >
-                                                    {c('scim: Action').t`Configure SCIM`}
-                                                </Button>
+                                                    <span>
+                                                        <Button
+                                                            color="norm"
+                                                            shape="outline"
+                                                            className="shrink-0 grow-0"
+                                                            onClick={() => {
+                                                                const run = async () => {
+                                                                    const result = await dispatch(
+                                                                        setupSCIMAction({
+                                                                            type: 'setup',
+                                                                            api,
+                                                                        })
+                                                                    );
+                                                                    setLocalSCIMConfiguration({
+                                                                        ...result,
+                                                                        type: 'setup',
+                                                                        ssoAppInfo,
+                                                                    });
+                                                                    setSetupSCIMModalOpen(true);
+                                                                    createNotification({
+                                                                        text: c('Info').t`SCIM token active`,
+                                                                    });
+                                                                };
+                                                                void withLoadingSCIM(run());
+                                                            }}
+                                                            loading={loadingSCIM}
+                                                            disabled={!canCreate}
+                                                        >
+                                                            {c('scim: Action').t`Configure SCIM`}
+                                                        </Button>
+                                                    </span>
+                                                </Tooltip>
                                             </div>
                                         )}
                                     </SettingsLayout>
@@ -190,24 +205,44 @@ const SCIMSettingsSection = ({ domain, onShowVerifyDomain, hasSsoConfig, scimInf
                                         <div className="border rounded p-4 flex items-start lg:flex-nowrap gap-2">
                                             {c('scim: Info')
                                                 .t`If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.`}
-                                            <Button
-                                                color="weak"
-                                                shape="outline"
-                                                size="small"
-                                                className="shrink-0 grow-0"
-                                                onClick={() => setRegenerateSCIMModalOpen(true)}
-                                                loading={loadingSCIM}
+                                            <Tooltip
+                                                title={!canUpdate ? c('Label').t`You don't have permissions` : null}
+                                                openDelay={100}
                                             >
-                                                <IcArrowRotateRight className="shrink-0 mr-1" />
-                                                {c('scim: Action').t`Generate new token`}
-                                            </Button>
+                                                <span>
+                                                    <Button
+                                                        color="weak"
+                                                        shape="outline"
+                                                        size="small"
+                                                        className="shrink-0 grow-0"
+                                                        onClick={() => setRegenerateSCIMModalOpen(true)}
+                                                        loading={loadingSCIM}
+                                                        disabled={!canUpdate}
+                                                    >
+                                                        <IcArrowRotateRight className="shrink-0 mr-1" />
+                                                        {c('scim: Action').t`Generate new token`}
+                                                    </Button>
+                                                </span>
+                                            </Tooltip>
                                         </div>
                                     </SettingsLayoutRight>
                                 </SettingsLayout>
 
-                                <Button color="danger" shape="outline" onClick={() => setDisableSCIMModalOpen(true)}>
-                                    {c('scim: Action').t`Disable SCIM integration`}
-                                </Button>
+                                <Tooltip
+                                    title={!canDelete ? c('Label').t`You don't have permissions` : null}
+                                    openDelay={100}
+                                >
+                                    <span>
+                                        <Button
+                                            color="danger"
+                                            shape="outline"
+                                            onClick={() => setDisableSCIMModalOpen(true)}
+                                            disabled={!canDelete}
+                                        >
+                                            {c('scim: Action').t`Disable SCIM integration`}
+                                        </Button>
+                                    </span>
+                                </Tooltip>
                             </>
                         );
                     })()}
