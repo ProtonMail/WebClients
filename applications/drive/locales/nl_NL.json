@@ -1293,6 +1293,12 @@
       ],
       "Get the deal": [
         "Pak deze deal"
+      ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "Probeer ${ BRAND_NAME } Werkruimte"
+      ],
+      "Verify now": [
+        "Nu verifiëren"
       ]
     },
     "Action: Docs": {
@@ -3140,6 +3146,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Uw gratis ${ MAIL_APP_NAME }-account wordt geleverd met beperkte opslagruimte, dus we importeren alleen uw meest recente Gmail-e-mails."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Voor een naadloze introductie van uw team bij ${ BRAND_NAME } importeert u uw gegevens uit Google, Outlook en anderen."
       ]
     },
     "description": {
@@ -4110,6 +4119,12 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "U heeft het maximale aantal gebruikers bereikt dat uw huidige abonnement toestaat. Upgrade uw abonnement om een nieuwe gebruiker toe te voegen."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Controleer of uw ABN geregistreerd is voor grensoverschrijdende BTW"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "BTW-nummer moet beginnen met ${ prefixes }"
       ]
     },
     "error": {
@@ -7289,6 +7304,36 @@
       "${ total } user found": [
         "${ total } gebruiker gevonden",
         "${ total } gebruikers gevonden"
+      ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "${ BRAND_NAME } Workspace stelt uw team in staat efficiënt samen te werken zonder ooit de gegevens van uw bedrijf in gevaar te brengen."
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Nodig uw vrienden uit** voor ${ BRAND_NAME } met uw verwijzingslink."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Ze krijgen ${ refereeRewardAmount }** aan credits als ze zich abonneren."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**U krijgt ${ referrerRewardAmount }** aan credits voor elke vriend die zich abonneert."
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Weet u uw wachtwoord nog? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "Wachtwoord vergeten?"
+      ],
+      "One encrypted suite. Full business protection.": [
+        "Eén gecodeerde suite. Volledige bedrijfsbescherming."
+      ],
+      "Password verified": [
+        "Wachtwoord is geverifieerd"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Om u te helpen uw wachtwoord te onthouden, vragen wij u dit periodiek in te voeren. We vragen u in de loop van de tijd minder."
+      ],
+      "We'll remind you to verify your password again later": [
+        "We herinneren u er later aan om uw wachtwoord opnieuw te controleren"
       ]
     },
     "info": {
@@ -8136,6 +8181,9 @@
       ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } tekens"
+      ],
+      "Asset": [
+        "Bezit"
       ]
     },
     "Label for contact group color": {
@@ -13722,6 +13770,12 @@
       ],
       "Summer Sale": [
         "Zomeruitverkoop"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migreer uw organisatie naar ${ BRAND_NAME }"
+      ],
+      "Verify your password": [
+        "Controleer uw wachtwoord"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14172,6 +14226,90 @@
       ],
       "You": [
         "U"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Gegevensmigratiestatus van Google Workspace naar ${ BRAND_NAME }"
+      ],
+      "Migrate": [
+        "Migreer"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selecteer precies wat u wilt migreren. Het is van toepassing op alle organisatiegebruikers."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Gebruikers die toegang hebben gehad tot hun ${ BRAND_NAME }-account"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Pak de aanbieding"
+      ],
+      "Summer Sale": [
+        "Zomer Sale"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/maandelijks"
+      ],
+      "15 GB storage": [
+        "15 GB opslag"
+      ],
+      "2 TB data storage": [
+        "2 TB dataopslag"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB opslag: 40x uw huidige abonnement"
+      ],
+      "3 TB data storage": [
+        "3 TB dataopslag"
+      ],
+      "500 GB storage": [
+        "500 GB opslag"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium-functies van ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium-functies van ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus eindigt."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Volledige toegang tot ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Afzonderlijke accounts voor 6 gebruikers"
+      ],
+      "Individual accounts for you and a partner": [
+        "Afzonderlijke accounts voor u en een partner"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online document- en spreadsheetbewerker"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Stronger protection against cyber threats": [
+        "Krachtigere bescherming tegen cyberdreigingen"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Stap over op ons jaarabonnement en bespaar ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Onbeperkte mappen, labels en filters"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "gedurende 12 maanden"
+      ],
+      "SUMMER SALE": [
+        "ZOMER SALE"
       ]
     }
   }
