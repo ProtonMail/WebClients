@@ -9,6 +9,7 @@ import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import type { Attachment } from '../../types';
 import { ComposerMode, type Message } from '../../types';
+import { Blobs } from '../Blobs/Blobs';
 import { ComposerComponent } from '../Composer/ComposerComponent';
 import { FilesManagementView } from '../Files';
 import { FilePreviewModal } from '../Files/Common/FilePreviewModal';
@@ -118,7 +119,7 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                             <LumoCatAnimation isGhostMode={isGhostChatMode} />
                             <LumoMainText isSmallScreen={isSmallScreen} isGhostMode={isGhostChatMode} />
                         </div>
-                        <div className="composer-container md:px-4 w-full">
+                        <div className="composer-container md:px-4 w-full relative">
                             <ComposerComponent
                                 composerMode={ComposerMode.NEW_CONVERSATION}
                                 handleSendMessage={handleSendMessage}
@@ -142,6 +143,7 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                                     )
                                 }
                             />
+                            <Blobs />
                         </div>
                         <WhatsNew />
                     </div>
