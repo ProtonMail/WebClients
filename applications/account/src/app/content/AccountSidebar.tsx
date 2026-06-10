@@ -1,4 +1,4 @@
-import type { ComponentProps, JSX } from 'react';
+import type { JSX } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -18,7 +18,7 @@ import { Tree } from '@proton/components/components/sidebar/nav/Tree';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, MEET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { SidebarToggle } from '@proton/vpn/components/Sidebar/Toggle';
-import type { useB2BAdminSidebarFeature } from '@proton/vpn/hooks/useB2BAdminSidebarFeature';
+import { useB2BAdminNavigation, useNavigationRef } from '@proton/vpn/contexts/navigation';
 
 import SidebarListWrapper from '../containers/SidebarListWrapper';
 import CalendarSettingsSidebar from '../containers/calendar/CalendarSettingsSidebar';
@@ -31,20 +31,12 @@ interface AccountSidebarProps {
     expanded: boolean;
     onToggleExpand: () => void;
     routes: Routes;
-    adminSidebar?: ReturnType<typeof useB2BAdminSidebarFeature>;
-    navigationRef: ComponentProps<typeof Sidebar>['navigationRef'];
 }
 
-const AccountSidebar = ({
-    app,
-    appSlug,
-    logo,
-    expanded,
-    onToggleExpand,
-    routes,
-    adminSidebar,
-    navigationRef,
-}: AccountSidebarProps) => {
+const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }: AccountSidebarProps) => {
+    const adminSidebar = useB2BAdminNavigation();
+    const navigationRef = useNavigationRef();
+
     const backButtonCopy = {
         [APPS.PROTONMAIL]: c('Navigation').t`Inbox`,
         [APPS.PROTONCALENDAR]: c('Navigation').t`Calendar`,
