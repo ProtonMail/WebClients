@@ -3,6 +3,8 @@ import { type ReactNode, useState } from 'react';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { UpsellModalTypes } from '@proton/meet/types/types';
+import upsellExpiredMeetingModalIcon from '@proton/styles/assets/img/meet/upsell-expired-meeting-modal-icon.svg';
 import upsellModalIcon from '@proton/styles/assets/img/meet/upsell-modal-icon.svg';
 
 import { CTAModalShell } from '../shared/CTAModalShell';
@@ -16,10 +18,22 @@ type EndCallModalShellProps = {
     rejoin?: () => void;
     title: ReactNode;
     subtitle: ReactNode;
+    upsellModalType?: UpsellModalTypes;
 };
 
-export const EndCallModalShell = ({ open, onClose, actions, rejoin, title, subtitle }: EndCallModalShellProps) => {
+export const EndCallModalShell = ({
+    open,
+    onClose,
+    actions,
+    rejoin,
+    title,
+    subtitle,
+    upsellModalType,
+}: EndCallModalShellProps) => {
     const [isFinished, setIsFinished] = useState(false);
+    const isExpired =
+        upsellModalType === UpsellModalTypes.MeetingExpiredHostPaid ||
+        upsellModalType === UpsellModalTypes.MeetingExpiredHostFree;
 
     const onSubmit = () => {
         setIsFinished(true);
@@ -35,7 +49,7 @@ export const EndCallModalShell = ({ open, onClose, actions, rejoin, title, subti
             onClose={onClose}
             icon={
                 <img
-                    src={upsellModalIcon}
+                    src={isExpired ? upsellExpiredMeetingModalIcon : upsellModalIcon}
                     alt=""
                     className="w-custom h-custom"
                     style={{ '--w-custom': '4.5em', '--h-custom': '4.5em' }}
@@ -62,7 +76,7 @@ export const EndCallModalShell = ({ open, onClose, actions, rejoin, title, subti
                     )}
                 </>
             }
-            footer={<FeedbackForm onClose={onClose} onSubmit={onSubmit} />}
+            footer={isExpired ? <></> : <FeedbackForm onClose={onClose} onSubmit={onSubmit} />}
         />
     );
 };
