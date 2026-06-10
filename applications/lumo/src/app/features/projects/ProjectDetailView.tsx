@@ -16,6 +16,7 @@ import { FilesManagementView } from '../../components/Files';
 import ConfirmDeleteModal from '../../components/Modals/ConfirmDeleteModal';
 import { type ConversationGroup, SelectableConversationList } from '../../components/SelectableConversationList';
 import { usePersonalization } from '../../hooks';
+import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
@@ -72,6 +73,7 @@ const ProjectDetailViewInner = () => {
     const [conversationToDelete, setConversationToDelete] = useState<string | null>(null);
     const sidebarModal = useModalStateObject();
     const driveBrowserModal = useModalStateObject();
+    const { isSmallScreen: isMobileViewport } = useIsLumoSmallScreen();
 
     const { personalization } = usePersonalization();
     const {
@@ -477,15 +479,15 @@ const ProjectDetailViewInner = () => {
                     />
                 )}
 
-            {deleteConversationModal.render && (
-                <ConfirmDeleteModal
-                    {...deleteConversationModal.modalProps}
-                    handleDelete={() => {
-                        confirmDeleteConversation();
-                        deleteConversationModal.openModal(false);
-                    }}
-                />
-            )}
+                {deleteConversationModal.render && (
+                    <ConfirmDeleteModal
+                        {...deleteConversationModal.modalProps}
+                        handleDelete={() => {
+                            confirmDeleteConversation();
+                            deleteConversationModal.openModal(false);
+                        }}
+                    />
+                )}
 
                 {/* Drive Browser Modal */}
                 {driveBrowserModal.render && (
