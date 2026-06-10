@@ -18,7 +18,6 @@ import {LUMO_SHORT_APP_NAME} from "@proton/shared/lib/constants";
 interface ToolMenuDropdownProps extends Pick<MenuDropdownProps, 'isOpen' | 'anchorRef' | 'onClose'> {
     onClickCreateImageOption: () => void;
     canUseAgents?: boolean;
-    isAgent?: boolean;
 }
 
 export const ToolMenuDropdown = ({
@@ -27,7 +26,6 @@ export const ToolMenuDropdown = ({
     onClose,
     onClickCreateImageOption,
     canUseAgents = false,
-    isAgent = false,
 }: ToolMenuDropdownProps) => {
     const { isWebSearchButtonToggled, handleWebSearchButtonClick } = useWebSearch();
     const { imageTools: isImageToolsFlagEnabled, customAgents: isCustomAgentsFlagEnabled } = useLumoFlags();
@@ -47,7 +45,7 @@ export const ToolMenuDropdown = ({
             getLabel: () => c('collider_2025: Action').t`Create image`,
             onClick: onClickCreateImageOption,
             onClose: onClose,
-            canShow: isImageToolsFlagEnabled && !isAgent,
+            canShow: isImageToolsFlagEnabled,
         },
         {
             iconName: 'robot' as IconName,
