@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton, useNotifications } from '@proton/components';
+import { ToolbarButton, useNotifications } from '@proton/components';
+import { IcGrid3 } from '@proton/icons/icons/IcGrid3';
+import { IcListBullets } from '@proton/icons/icons/IcListBullets';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
 import { useUserSettings } from '../../../../modules/userSettings';
@@ -25,10 +27,11 @@ const LayoutButton = () => {
         <ToolbarButton
             onClick={handleClick}
             icon={
-                <Icon
-                    name={layout === LayoutSetting.Grid ? 'list-bullets' : 'grid-3'}
-                    alt={layout === LayoutSetting.Grid ? c('Action').t`Grid layout` : 'List layout'}
-                />
+                layout === LayoutSetting.Grid ? (
+                    <IcListBullets alt={c('Action').t`Grid layout`} />
+                ) : (
+                    <IcGrid3 alt={c('Action').t`List layout`} />
+                )
             }
             data-testid="toolbar-layout"
             title={c('Title').t`Change layout`}

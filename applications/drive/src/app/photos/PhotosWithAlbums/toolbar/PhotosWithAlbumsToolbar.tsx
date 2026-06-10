@@ -22,9 +22,13 @@ import {
 import { MemberRole, getDriveForPhotos } from '@proton/drive/index';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import useLoading from '@proton/hooks/useLoading';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
@@ -116,19 +120,19 @@ const AlbumGalleryDropdownButton = ({
                     )}
                     {showUploadButton && <PhotosUploadButton type="dropdown" albumNodeUid={albumNodeUid} />}
                     <DropdownMenuButton className="text-left flex items-center flex-nowrap" onClick={onShowDetails}>
-                        <Icon className="mr-2" name="info-circle" />
+                        <IcInfoCircle className="mr-2" />
                         {c('Action').t`Details`}
                     </DropdownMenuButton>
 
                     {showDeleteAlbumButton && (
                         <DropdownMenuButton className="text-left flex items-center flex-nowrap" onClick={onDelete}>
-                            <Icon className="mr-2" name="trash" />
+                            <IcTrash className="mr-2" />
                             {c('Action').t`Delete album`}
                         </DropdownMenuButton>
                     )}
                     {showLeaveAlbumButton && (
                         <DropdownMenuButton className="text-left flex items-center flex-nowrap" onClick={onLeave}>
-                            <Icon className="mr-2" name="cross-big" />
+                            <IcCrossBig className="mr-2" />
                             {c('Action').t`Leave album`}
                         </DropdownMenuButton>
                     )}
@@ -310,13 +314,7 @@ const ToolbarRightActionsAlbumGallery = ({
                     onClick={handleDownloadClick}
                     data-testid="toolbar-download-album"
                     title={c('Action').t`Download`}
-                    icon={
-                        <Icon
-                            name="arrow-down-line"
-                            className={clsx(!showIconOnly && 'mr-2')}
-                            alt={c('Action').t`Download`}
-                        />
-                    }
+                    icon={<IcArrowDownLine className={clsx(!showIconOnly && 'mr-2')} alt={c('Action').t`Download`} />}
                 >
                     <span className={clsx(showIconOnly && 'sr-only')}>{c('Action').t`Download`}</span>
                 </ToolbarButton>

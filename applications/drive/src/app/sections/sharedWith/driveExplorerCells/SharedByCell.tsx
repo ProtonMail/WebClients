@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { UserAvatar, UserAvatarSizeEnum } from '@proton/atoms/UserAvatar/UserAvatar';
-import { Icon } from '@proton/components';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -29,7 +29,7 @@ export const SharedByCell = ({ displayName, isPublicLink = false, className }: S
                         '--max-h-custom': '1.75rem',
                     }}
                 >
-                    <Icon className="color-weak" name="globe" />
+                    <IcGlobe className="color-weak" />
                 </Avatar>
                 <span className="text-ellipsis color-weak">{c('Info').t`Public link`}</span>
             </div>

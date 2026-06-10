@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { Icon, useModalTwoStatic } from '@proton/components'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { useModalTwoStatic } from '@proton/components';
+import { IcFire } from '@proton/icons/icons/IcFire';
 
 import { useLockedVolume } from '../../../../legacy/store';
 import FilesRecoveryModal from '../../modals/FilesRecoveryModal/FilesRecoveryModal';
@@ -17,9 +18,8 @@ const FileRecoveryIcon = ({ className }: Props) => {
     return hasVolumesForRestore ? (
         <>
             <Tooltip title={c('Title').t`You have inaccessible files`}>
-                <Icon
+                <IcFire
                     color="red"
-                    name="fire"
                     className={className}
                     onClick={(e) => {
                         e.preventDefault();

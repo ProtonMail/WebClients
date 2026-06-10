@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import type { ModalStateProps } from '@proton/components';
-import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, useModalTwoStatic } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, useModalTwoStatic } from '@proton/components';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
@@ -14,8 +15,7 @@ function SuggestBusinessModal({ ...modalProps }: ModalStateProps) {
     return (
         <ModalTwo {...modalProps} size="large">
             <div style={{ backgroundColor: '#1B1341' }}>
-                <Icon
-                    name="cross-big"
+                <IcCrossBig
                     className="absolute right-0 top-0 m-4 cursor-pointer"
                     color="white"
                     onClick={modalProps.onClose}

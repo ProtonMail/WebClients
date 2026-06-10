@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { DropdownMenuButton, Icon } from '@proton/components';
+import { DropdownMenuButton } from '@proton/components';
+import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 
 interface Props {
     onClick: () => void;
@@ -13,7 +14,7 @@ interface Props {
 export const CreateNewFolderButton = ({ onClick }: Props) => {
     return (
         <DropdownMenuButton className="text-left flex items-center" onClick={onClick} data-testid="dropdown-new-folder">
-            <Icon className="mr-2" name="folder-plus" />
+            <IcFolderPlus className="mr-2" />
             <span>{
                 // translator: Action button in sidebar dropdown to create a new folder
                 c('Action').t`New folder`
