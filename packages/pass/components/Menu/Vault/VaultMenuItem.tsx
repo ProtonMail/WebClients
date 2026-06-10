@@ -29,7 +29,6 @@ import noop from '@proton/utils/noop';
 
 type Props = {
     canDelete: boolean;
-    canEdit: boolean;
     canInvite: boolean;
     canLeave: boolean;
     canManage: boolean;
@@ -55,19 +54,7 @@ const handleClickEvent = (handler?: () => void) => (evt: React.MouseEvent) => {
 };
 
 export const VaultMenuItem = memo(
-    ({
-        canDelete,
-        canEdit,
-        canInvite,
-        canLeave,
-        canManage,
-        canMove,
-        count,
-        label,
-        selected,
-        vault,
-        onAction = noop,
-    }: Props) => {
+    ({ canDelete, canInvite, canLeave, canManage, canMove, count, label, selected, vault, onAction = noop }: Props) => {
         const vaultActions = useVaultActions();
         const inviteActions = useInviteActions();
         const { moveMany } = useItemsActions();
@@ -76,7 +63,7 @@ export const VaultMenuItem = memo(
         const plan = useSelector(selectPassPlan);
         const access = useSelector(selectAccess(vault.shareId));
 
-        const withActions = canEdit || canDelete || canInvite || canManage || canLeave || canMove;
+        const withActions = canDelete || canInvite || canManage || canLeave || canMove;
 
         const onManage = pipe(() => inviteActions.manageVaultAccess(vault.shareId), onAction);
         const onEdit = pipe(() => vaultActions.edit(vault), onAction);
@@ -176,13 +163,14 @@ export const VaultMenuItem = memo(
                 quickActions={
                     withActions
                         ? [
-                              <DropdownMenuButton
-                                  key="vault-edit"
-                                  disabled={!onEdit}
-                                  label={c('Action').t`Edit vault`}
-                                  icon="pen"
-                                  onClick={handleClickEvent(onEdit)}
-                              />,
+                              canManage && (
+                                  <DropdownMenuButton
+                                      key="vault-edit"
+                                      label={c('Action').t`Edit vault`}
+                                      icon="pen"
+                                      onClick={handleClickEvent(onEdit)}
+                                  />
+                              ),
 
                               vault.shared && (
                                   <DropdownMenuButton
