@@ -99,14 +99,16 @@ im.$media-expressions: $media-expressions;
 }
 
 html:is(
-		[lang^='de'],
-		[lang^='it'],
-		[lang^='cs'],
-		[lang^='nl'],
 		[lang^='ja'],
 		[lang^='ko'],
-		[lang^='pl'],
-		[lang^='ru'],
+		[lang^='zh'],
+		[lang^='id'],
+		[lang^='kab'],
+		[lang='es'],
+		[lang='pt-PT'],
+		[lang^='vi'],
+		[lang^='th'],
+		[lang^='fil'],
 		[lang^='tr']
 	)
 	.summerSaleTitle {
