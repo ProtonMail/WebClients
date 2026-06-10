@@ -20,12 +20,14 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcPassShieldOk } from '@proton/icons/icons/IcPassShieldOk';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { ForkType } from '@proton/shared/lib/authentication/fork';
 import { APPS, APPS_CONFIGURATION, BRAND_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { getShopURL } from '@proton/shared/lib/helpers/url';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
@@ -220,6 +222,7 @@ const SwitchAccountButton = () => {
 
 const UserDropdownContent = () => {
     const { APP_NAME } = useConfig();
+    const isZendeskAIAgentEnabled = useFlag('EnableZenDeskAIAgent');
     const [uid] = useState(generateUID('dropdown'));
     const { viewportWidth } = useActiveBreakpoint();
     const {
@@ -352,16 +355,25 @@ const UserDropdownContent = () => {
 
                     {onOpenChat && (
                         <div className="block">
-                            <button
-                                type="button"
-                                className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration hover:color-norm"
-                                onClick={() => {
-                                    closeUserDropdown();
-                                    onOpenChat();
-                                }}
+                            <Tooltip
+                                title={
+                                    isZendeskAIAgentEnabled
+                                        ? c('Tooltip').t`Instant AI assistance, human expert on hand!`
+                                        : ''
+                                }
                             >
-                                {c('Action').t`Chat with us`}
-                            </button>
+                                <button
+                                    type="button"
+                                    className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration hover:color-norm"
+                                    onClick={() => {
+                                        closeUserDropdown();
+                                        onOpenChat();
+                                    }}
+                                >
+                                    {c('Action').t`Chat with us`}
+                                    {isZendeskAIAgentEnabled && <IcInfoCircle className="ml-2 color-primary" />}
+                                </button>
+                            </Tooltip>
                         </div>
                     )}
 
