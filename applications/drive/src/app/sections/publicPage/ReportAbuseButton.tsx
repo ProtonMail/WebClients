@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcFlagFilled } from '@proton/icons/icons/IcFlagFilled';
 
 interface ReportAbuseButtonProps {
     className?: string;
@@ -21,7 +21,7 @@ export default function ReportAbuseButton({ onClick, className }: ReportAbuseBut
                 icon
                 onClick={onClick}
             >
-                <Icon className="color-weak" name="flag-filled" alt={c('Action').t`Report an issue`} />
+                <IcFlagFilled className="color-weak" alt={c('Action').t`Report an issue`} />
             </Button>
         </Tooltip>
     );

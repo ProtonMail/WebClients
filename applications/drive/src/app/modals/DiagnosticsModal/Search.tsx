@@ -18,7 +18,7 @@ import {
     Tabs,
     useModalState,
 } from '@proton/components';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcArrowUp } from '@proton/icons/icons/IcArrowUp';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { SORT_DIRECTION as SORT } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -575,8 +575,7 @@ function IndexExportTable({ entries, onRemove }: { entries: ExportedEntry[]; onR
                                     <span className="inline-flex flex-nowrap items-center gap-1">
                                         {col.label}
                                         {sort.key === col.key && (
-                                            <Icon
-                                                name="arrow-up"
+                                            <IcArrowUp
                                                 size={3}
                                                 className={sort.direction === SORT.DESC ? 'rotateX-180' : ''}
                                             />
