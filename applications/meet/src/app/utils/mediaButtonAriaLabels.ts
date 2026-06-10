@@ -15,7 +15,7 @@ export const getMicrophoneButtonAriaLabel = ({
     if (noDeviceDetected) {
         return c('Info').t`No microphone detected`;
     }
-    return isEnabled ? c('Info').t`Turn off microphone` : c('Info').t`Turn on microphone`;
+    return isEnabled ? c('Info').t`Mute microphone` : c('Info').t`Unmute microphone`;
 };
 
 export const getCameraButtonAriaLabel = ({
