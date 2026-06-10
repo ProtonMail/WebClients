@@ -220,9 +220,6 @@ export const storeDeviceRecovery = async ({
     });
 };
 
-export const getIsDeviceRecoveryAvailable: typeof getIsRecoveryFileAvailable = (args) =>
-    getIsRecoveryFileAvailable(args);
-
 export const getIsDeviceRecoveryEnabled = (userSettings: UserSettings, authentication: AuthenticationStore) => {
     return userSettings.DeviceRecovery && authentication.getTrusted();
 };
