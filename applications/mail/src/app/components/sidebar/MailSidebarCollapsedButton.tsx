@@ -3,8 +3,9 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
+import { IcFolder } from '@proton/icons/icons/IcFolder';
+import { IcTags } from '@proton/icons/icons/IcTags';
 import { isCustomFolder, isCustomLabel } from '@proton/mail/helpers/location';
 import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
@@ -57,7 +58,11 @@ export const MailSidebarCollapsedButton = ({ type, onClick, title }: Props) => {
                     onClick={onClick}
                     className="flex items-center relative navigation-link-header-group-link mx-auto w-full"
                 >
-                    <Icon name={type === 'folders' ? 'folder' : 'tags'} alt={title} className="mx-auto" />
+                    {type === 'folders' ? (
+                        <IcFolder alt={title} className="mx-auto" />
+                    ) : (
+                        <IcTags alt={title} className="mx-auto" />
+                    )}
                     {unread && (
                         <span className="navigation-counter-item shrink-0">
                             <span className="sr-only">

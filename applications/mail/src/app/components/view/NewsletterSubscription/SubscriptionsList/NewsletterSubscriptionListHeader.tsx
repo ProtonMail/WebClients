@@ -7,6 +7,7 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import { IcListArrowDown } from '@proton/icons/icons/IcListArrowDown';
 import type { IconName } from '@proton/icons/types';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
@@ -99,7 +100,7 @@ const SortingDropdownMenu = () => {
                 className="shrink-0 self-end"
                 aria-disabled={selectedTabSubCount === 0}
             >
-                <Icon name="list-arrow-down" alt={c('Action').t`Change sorting`} />
+                <IcListArrowDown alt={c('Action').t`Change sorting`} />
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <p className="m-0 py-2 px-4 text-sm color-weak">Sort by</p>

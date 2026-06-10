@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
@@ -56,7 +56,7 @@ export const CategoryCard = ({ categoryID, flagValue, audienceType }: Props) => 
         <div className="w-fit-content h-auto shrink-0 m-4 px-3 py-2 bg-norm rounded shadow-norm flex items-center gap-2 justify-space-between">
             <p className="m-0 text-sm color-weak">{categoryDescription}</p>
             <Button onClick={handleHide} shape="ghost" color="weak" size="tiny" icon className="border-none">
-                <Icon name="cross-big" alt={c('Action').t`Close`} />
+                <IcCrossBig alt={c('Action').t`Close`} />
             </Button>
         </div>
     );

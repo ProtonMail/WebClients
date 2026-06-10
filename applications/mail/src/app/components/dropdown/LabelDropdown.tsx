@@ -7,7 +7,6 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import SearchInput from '@proton/components/components/input/SearchInput';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -16,6 +15,8 @@ import LabelsUpsellModal from '@proton/components/components/upsell/modals/Label
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useLoading } from '@proton/hooks';
+import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
+import { IcTag } from '@proton/icons/icons/IcTag';
 import { isCustomLabel } from '@proton/mail/helpers/location';
 import { useLabels } from '@proton/mail/store/labels/hooks';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
@@ -382,7 +383,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
                         data-testid="label-dropdown:add-label"
                         data-prevent-arrow-navigation
                     >
-                        <Icon name="tag" alt={c('Action').t`Create label`} /> <span aria-hidden="true">+</span>
+                        <IcTag alt={c('Action').t`Create label`} /> <span aria-hidden="true">+</span>
                     </Button>
                 </Tooltip>
             </div>
@@ -421,7 +422,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
                                 data-testid={`label-dropdown:label-${Name}`}
                                 onClick={() => handleApplyDirectly(ID)}
                             >
-                                <Icon name="circle-filled" size={4} color={Color} className="shrink-0 relative mx-2" />
+                                <IcCircleFilled size={4} color={Color} className="shrink-0 relative mx-2" />
                                 <span className="text-ellipsis">
                                     <Mark value={search}>{Name}</Mark>
                                 </span>
