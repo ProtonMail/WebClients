@@ -11,7 +11,8 @@
         "pretty": "prettier --write $(find lib -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "test": "TZ=UTC vitest",
         "test:ci": "yarn test --run --silent=passed-only",
-        "test:watch": "yarn test --watch"
+        "test:watch": "yarn test --watch",
+        "generate-date-fns-locales-map": "node lib/i18n/generateDateFnsLocaleMap.ts lib/i18n/dateFnsLocaleMap.ts && prettier --write lib/i18n/dateFnsLocaleMap.ts"
     },
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",

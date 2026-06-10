@@ -23,10 +23,6 @@ jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     loadCryptoWorker: jest.fn(),
 }));
 
-jest.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
-    __esModule: true,
-}));
-
 jest.mock('loglevel');
 jest.mock('@proton/pass/lib/core/ui.proxy');
 jest.mock('@proton/pass/lib/core/core.proxy');

@@ -10,7 +10,6 @@ global.crypto.subtle = require('crypto').webcrypto.subtle;
 global.HTMLCanvasElement.prototype.getContext = jest.fn();
 
 jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({ __esModule: true, loadCryptoWorker: jest.fn() }));
-jest.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({ __esModule: true }));
 
 jest.mock('proton-authenticator/lib/logger');
 jest.mock('proton-authenticator/lib/app/env', () => ({ config: { API_URL: 'https://proton.test' } }));
