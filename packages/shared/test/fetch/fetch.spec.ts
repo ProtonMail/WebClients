@@ -26,19 +26,19 @@ describe('fetch', () => {
     let preFormData: typeof FormData;
 
     beforeEach(() => {
-        preFetch = global.fetch;
-        preFormData = global.FormData;
-        global.FormData = FormDataMock;
+        preFetch = globalThis.fetch;
+        preFormData = globalThis.FormData;
+        globalThis.FormData = FormDataMock;
     });
 
     afterEach(() => {
-        global.fetch = preFetch;
-        global.FormData = preFormData;
+        globalThis.fetch = preFetch;
+        globalThis.FormData = preFormData;
     });
 
     const setup = (fn: any) => {
-        const spy = jasmine.createSpy('fetch').and.callFake(fn);
-        global.fetch = spy;
+        const spy = vi.fn(fn);
+        globalThis.fetch = spy as unknown as typeof fetch;
         return spy;
     };
 
@@ -71,9 +71,9 @@ describe('fetch', () => {
             },
         };
         await protonFetch(config).then((response) => response.json());
-        expect(spy.calls.all()[0].args).toEqual([
+        expect(spy.mock.calls[0]).toEqual([
             new URL(config.url),
-            jasmine.objectContaining({
+            expect.objectContaining({
                 mode: 'cors',
                 credentials: 'include',
                 redirect: 'follow',
@@ -97,9 +97,9 @@ describe('fetch', () => {
         await protonFetch(config).then((response) => response.json());
         const fd = new FormData();
         fd.append('foo', 'bar');
-        expect(spy.calls.all()[0].args).toEqual([
+        expect(spy.mock.calls[0]).toEqual([
             new URL(config.url),
-            jasmine.objectContaining({
+            expect.objectContaining({
                 mode: 'cors',
                 credentials: 'include',
                 redirect: 'follow',
@@ -115,8 +115,8 @@ describe('fetch', () => {
             url: 'http://foo.com/',
             suppress: [123],
         };
-        await expectAsync(protonFetch(config)).toBeRejectedWith(
-            jasmine.objectContaining({
+        await expect(protonFetch(config)).rejects.toEqual(
+            expect.objectContaining({
                 name: 'StatusCodeError',
                 message: '',
                 status: 400,

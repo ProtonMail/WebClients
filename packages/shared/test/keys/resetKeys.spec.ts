@@ -51,13 +51,13 @@ describe('reset keys v2', () => {
         expect(addressKeysPayload.length).toEqual(1); // only one (v4) key should be generated
         for (const payload of addressKeysPayload) {
             expect(payload).toEqual({
-                AddressID: jasmine.any(String),
-                PrivateKey: jasmine.any(String),
-                Token: jasmine.any(String),
-                Signature: jasmine.any(String),
+                AddressID: expect.any(String),
+                PrivateKey: expect.any(String),
+                Token: expect.any(String),
+                Signature: expect.any(String),
                 SignedKeyList: {
-                    Data: jasmine.any(String),
-                    Signature: jasmine.any(String),
+                    Data: expect.any(String),
+                    Signature: expect.any(String),
                 },
             });
 
@@ -97,13 +97,13 @@ describe('reset keys v2', () => {
         expect(addressKeysPayload.length).toEqual(2); // one v4 and one v6 key should be generated
         addressKeysPayload.forEach((payload) => {
             expect(payload).toEqual({
-                AddressID: jasmine.any(String),
-                PrivateKey: jasmine.any(String),
-                Token: jasmine.any(String),
-                Signature: jasmine.any(String),
+                AddressID: expect.any(String),
+                PrivateKey: expect.any(String),
+                Token: expect.any(String),
+                Signature: expect.any(String),
                 SignedKeyList: {
-                    Data: jasmine.any(String),
-                    Signature: jasmine.any(String),
+                    Data: expect.any(String),
+                    Signature: expect.any(String),
                 },
             });
         });

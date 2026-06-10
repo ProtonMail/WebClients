@@ -2,7 +2,7 @@ import { generateUserKey } from '../../lib/keys';
 
 describe('user keys', () => {
     it('should throw if generated key cannot decrypt', async () => {
-        await expectAsync(
+        await expect(
             generateUserKey({
                 passphrase: '123',
                 keyGenConfig: {
@@ -10,6 +10,6 @@ describe('user keys', () => {
                     subkeys: [],
                 },
             })
-        ).toBeRejectedWithError(/Unexpected key generation issue/);
+        ).rejects.toThrow(/Unexpected key generation issue/);
     });
 });

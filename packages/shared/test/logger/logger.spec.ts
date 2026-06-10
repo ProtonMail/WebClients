@@ -1,23 +1,23 @@
-import log from 'loglevel';
-
 import { type AesGcmCryptoKey, generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
+import log from 'loglevel';
+import type { Mock, MockInstance } from 'vitest';
 
 import { Logger, logger, loggerManager } from '../../lib/logger/logger';
+
+// Increase timeout for async operations
+vi.setConfig({ testTimeout: 15000 });
 
 describe('Logger', () => {
     const testLoggers: Logger[] = [];
     let mockEncryptionKey: AesGcmCryptoKey;
 
-    // Increase timeout for async operations
-    jasmine.DEFAULT_TIMEOUT_INTERVAL = 15000;
-
     // Mock document methods for download functionality
-    let mockCreateElement: jasmine.Spy;
-    let mockClick: jasmine.Spy;
+    let mockCreateElement: MockInstance;
+    let mockClick: Mock;
 
     // Mock URL methods
-    let mockCreateObjectURL: jasmine.Spy;
-    let mockRevokeObjectURL: jasmine.Spy;
+    let mockCreateObjectURL: Mock;
+    let mockRevokeObjectURL: Mock;
 
     beforeAll(async () => {
         mockEncryptionKey = await generateAndImportKey();
@@ -25,7 +25,7 @@ describe('Logger', () => {
 
     beforeEach(async () => {
         // Setup mocks
-        mockClick = jasmine.createSpy('click');
+        mockClick = vi.fn();
         const mockElement = {
             href: '',
             download: '',
@@ -33,12 +33,12 @@ describe('Logger', () => {
             click: mockClick,
         } as unknown as HTMLElement;
 
-        mockCreateElement = spyOn(document, 'createElement').and.returnValue(mockElement as any);
-        spyOn(document.body, 'appendChild').and.returnValue(mockElement as HTMLElement);
-        spyOn(document.body, 'removeChild').and.returnValue(mockElement as HTMLElement);
+        mockCreateElement = vi.spyOn(document, 'createElement').mockReturnValue(mockElement as any);
+        vi.spyOn(document.body, 'appendChild').mockReturnValue(mockElement as HTMLElement);
+        vi.spyOn(document.body, 'removeChild').mockReturnValue(mockElement as HTMLElement);
 
-        mockCreateObjectURL = jasmine.createSpy('createObjectURL').and.returnValue('blob:test');
-        mockRevokeObjectURL = jasmine.createSpy('revokeObjectURL');
+        mockCreateObjectURL = vi.fn().mockReturnValue('blob:test');
+        mockRevokeObjectURL = vi.fn();
         URL.createObjectURL = mockCreateObjectURL;
         URL.revokeObjectURL = mockRevokeObjectURL;
 
@@ -80,7 +80,7 @@ describe('Logger', () => {
             const testLogger = new Logger('test');
             testLoggers.push(testLogger);
 
-            expect(testLogger).toEqual(jasmine.any(Logger));
+            expect(testLogger).toEqual(expect.any(Logger));
             expect(testLogger.getName()).toBe('test');
             expect(testLogger.isInitialized()).toBe(false);
         });
@@ -104,7 +104,7 @@ describe('Logger', () => {
         it('should not reinitialize already initialized logger', async () => {
             const testLogger = new Logger('test');
             testLoggers.push(testLogger);
-            const consoleSpy = spyOn(console, 'warn');
+            const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
 
             await testLogger.initialize({
                 encryptionKey: mockEncryptionKey,
@@ -168,9 +168,16 @@ describe('Logger', () => {
                 loggerID: '',
             });
 
-            await new Promise((resolve) => setTimeout(resolve, 10));
-
-            const logs = await testLogger.getLogs();
+            // `processPendingLogs` is fire-and-forget and writes through the persistence plugin.
+            // Poll a few times to give the async writes a chance to flush.
+            let logs = '';
+            for (let attempt = 0; attempt < 20; attempt++) {
+                await new Promise((resolve) => setTimeout(resolve, 50));
+                logs = await testLogger.getLogs();
+                if (logs.includes('Pre-init message')) {
+                    break;
+                }
+            }
             expect(logs).toContain('Pre-init message');
         });
 
@@ -437,7 +444,7 @@ describe('Logger', () => {
 
     describe('Default Logger Export', () => {
         it('should export default logger instance', () => {
-            expect(logger).toEqual(jasmine.any(Logger));
+            expect(logger).toEqual(expect.any(Logger));
             expect(logger.getName()).toBe('default');
         });
 
@@ -481,13 +488,8 @@ describe('Logger', () => {
             expect(testLogger.isInitialized()).toBe(true);
         });
 
-        it('should handle storage fallback scenarios', async () => {
-            // Skip this test in browser environment where indexedDB is read-only
-            if (typeof window !== 'undefined' && typeof window.indexedDB !== 'undefined') {
-                pending('Skipped in browser environment due to read-only indexedDB');
-                return;
-            }
-
+        // Skipped in browser environment due to read-only indexedDB
+        it.skip('should handle storage fallback scenarios', async () => {
             const testLogger = new Logger('fallback-test');
             testLoggers.push(testLogger);
 
@@ -577,10 +579,8 @@ describe('Logger', () => {
             }).toThrow(new Error('Cannot assign logging methods: loglevel instance not created'));
         });
 
-        it('should discover and clean up multiple logger databases', async () => {
-            // Always skip this test for now due to complexity with test environment
-            // The actual functionality works but requires proper IndexedDB setup
-            pending('Skipped - requires proper IndexedDB environment setup');
-        });
+        // Skipped - requires proper IndexedDB environment setup
+        // The actual functionality works but requires proper IndexedDB setup
+        it.skip('should discover and clean up multiple logger databases', async () => {});
     });
 });
