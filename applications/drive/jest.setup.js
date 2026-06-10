@@ -70,10 +70,6 @@ HTMLCanvasElement.prototype.toBlob = jest.fn((callback) => {
     callback(new Blob(['abc']));
 });
 
-jest.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
-    __esModule: true,
-}));
-
 // Mock VPN flag to prevent those issues
 // TypeError: require.context is not a function
 // > 1 | const flags = require.context('@proton/styles/assets/img/flags', true, /.svg$/);

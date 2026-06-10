@@ -2,18 +2,7 @@ import { default as enGBLocale } from 'date-fns/locale/en-GB';
 import { default as enUSLocale } from 'date-fns/locale/en-US';
 import { default as faIRLocale } from 'date-fns/locale/fa-IR';
 
-import type { DateFnsLocaleMap } from '../interfaces/Locale';
-import { getProtonConfig } from '../interfaces/config';
-
-const dateFnsLocaleMap: DateFnsLocaleMap = Object.fromEntries(
-    getProtonConfig().LOCALES_DATE_FNS.map((locale) => [
-        locale.replace('-', '_'),
-        () =>
-            import(
-                /* webpackChunkName: "date-fns/[request]" */ `../../../../node_modules/date-fns/locale/${locale}/index.js`
-            ).then((m) => m.default ?? m),
-    ])
-);
+import { dateFnsLocaleMap } from './dateFnsLocaleMap';
 
 export { enUSLocale };
 export { enGBLocale };
