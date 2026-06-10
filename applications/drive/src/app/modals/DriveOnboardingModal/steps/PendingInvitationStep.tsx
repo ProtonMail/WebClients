@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Icon } from '@proton/components';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
+import { IcClockCircleFilled } from '@proton/icons/icons/IcClockCircleFilled';
 import type { IconName } from '@proton/icons/types';
 
 import { Container } from '../Container';
@@ -46,11 +48,11 @@ export const PendingInvitationStep = () => {
                                         <Icon name={icon} size={6} />
                                         {text}
                                     </div>
-                                    <Icon
-                                        size={6}
-                                        className={isDone ? 'color-success' : 'color-warning'}
-                                        name={isDone ? 'checkmark-circle-filled' : 'clock-circle-filled'}
-                                    />
+                                    {isDone ? (
+                                        <IcCheckmarkCircleFilled size={6} className="color-success" />
+                                    ) : (
+                                        <IcClockCircleFilled size={6} className="color-warning" />
+                                    )}
                                 </div>
                                 {!isLastStep && <div className="steps-line p-4 ml-8" />}
                             </Fragment>
