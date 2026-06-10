@@ -1,4 +1,3 @@
-import type { RefObject } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import type { SectionConfig, SidebarConfig } from '@proton/components';
@@ -12,7 +11,7 @@ import { Tree } from '@proton/components/components/sidebar/nav/Tree';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { SidebarToggle } from '@proton/vpn/components/Sidebar/Toggle';
-import type { useB2BAdminSidebarFeature } from '@proton/vpn/hooks/useB2BAdminSidebarFeature';
+import { useB2BAdminNavigation, useNavigationRef } from '@proton/vpn/contexts/navigation';
 
 import VpnSidebarVersion from './containers/VpnSidebarVersion';
 
@@ -25,18 +24,11 @@ type CoupledParentProps = {
 type Props = {
     routes: Record<string, SectionConfig>;
     organizationRoutes: SidebarConfig;
-    adminSidebarFeature: ReturnType<typeof useB2BAdminSidebarFeature>;
-    navigationRef: RefObject<HTMLDivElement>;
 } & CoupledParentProps;
 
-export const VPNSidebar = ({
-    routes,
-    organizationRoutes,
-    sidebarExpanded,
-    onSidebarToggle,
-    adminSidebarFeature,
-    navigationRef,
-}: Props) => {
+export const VPNSidebar = ({ routes, organizationRoutes, sidebarExpanded, onSidebarToggle }: Props) => {
+    const adminSidebarFeature = useB2BAdminNavigation();
+    const navigationRef = useNavigationRef();
     const { pathname } = useLocation();
 
     if (adminSidebarFeature.loading) {
