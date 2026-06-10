@@ -25,12 +25,16 @@ export type ThumbnailData = {
  *   returns false the item is skipped and no status is set.
  * - `revisionUid` is optional. When omitted the store/cache is keyed by
  *   `nodeUid` instead. This should be used only for single-revision nodes (e.g. photos).
+ * - `usePersistentCache` opts the thumbnail into the encrypted IndexedDB cache:
+ *   it is read from the cache before hitting the SDK, and written back on load.
+ *   Defaults to false.
  */
 export interface ThumbnailRequest {
     nodeUid: string;
     revisionUid?: string;
     thumbnailTypes?: ('hd' | 'sd')[];
     shouldLoad?: () => boolean;
+    usePersistentCache?: boolean;
 }
 
 export type DriveClient = Pick<ProtonDriveClient, 'iterateThumbnails'>;

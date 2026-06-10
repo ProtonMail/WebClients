@@ -147,6 +147,7 @@ export const AlbumsCard: FC<Props> = ({ style, nodeUid, onClick, onShare, onRena
             nodeUid: coverNodeUid,
             shouldLoad: () => Boolean(ref.current),
             thumbnailTypes: ['sd', 'hd'],
+            usePersistentCache: true,
         });
     }, [coverNodeUid]);
 
