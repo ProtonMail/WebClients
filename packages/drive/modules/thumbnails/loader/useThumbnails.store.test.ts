@@ -1,3 +1,4 @@
+import { getCachedThumbnail, setCachedThumbnail } from '../encryptedThumbnailCache';
 import { loadThumbnail } from '../index';
 import type { DriveClient } from './types';
 import { useThumbnailsStore } from './useThumbnails.store';
@@ -5,6 +6,14 @@ import { useThumbnailsStore } from './useThumbnails.store';
 jest.mock('../../../legacy/errorHandling', () => ({
     handleSdkError: jest.fn(),
 }));
+
+jest.mock('../encryptedThumbnailCache', () => ({
+    getCachedThumbnail: jest.fn(async () => undefined),
+    setCachedThumbnail: jest.fn(async () => undefined),
+}));
+
+const mockGetCachedThumbnail = jest.mocked(getCachedThumbnail);
+const mockSetCachedThumbnail = jest.mocked(setCachedThumbnail);
 
 global.URL.createObjectURL = jest.fn(() => 'blob:mock-url');
 global.URL.revokeObjectURL = jest.fn();
@@ -198,6 +207,56 @@ describe('useThumbnailsStore', () => {
                 expect(useThumbnailsStore.getState().getThumbnail('node-1')?.sdStatus).toBe('loaded');
                 expect(jest.mocked(drive.iterateThumbnails)).toHaveBeenCalledTimes(1);
             });
+        });
+    });
+
+    describe('persistent cache (usePersistentCache)', () => {
+        it('serves a cache hit without calling the SDK', async () => {
+            mockGetCachedThumbnail.mockResolvedValueOnce(new Uint8Array([7, 7, 7]) as Uint8Array<ArrayBuffer>);
+            const drive = makeDrive([]);
+
+            loadThumbnail(drive, { nodeUid: 'node-1', revisionUid: 'rev-1', usePersistentCache: true });
+            await flushBatch();
+
+            expect(mockGetCachedThumbnail).toHaveBeenCalledWith('rev-1', 'sd');
+            expect(jest.mocked(drive.iterateThumbnails)).not.toHaveBeenCalled();
+            expect(useThumbnailsStore.getState().getThumbnail('rev-1')?.sdStatus).toBe('loaded');
+            expect(useThumbnailsStore.getState().getThumbnail('rev-1')?.sdUrl).toBe('blob:mock-url');
+        });
+
+        it('fetches a miss from the SDK and writes it to the cache', async () => {
+            const drive = makeDrive([{ nodeUid: 'node-1', ok: true, thumbnail: new Uint8Array([1, 2, 3]) }]);
+
+            loadThumbnail(drive, { nodeUid: 'node-1', revisionUid: 'rev-1', usePersistentCache: true });
+            await flushBatch();
+
+            expect(jest.mocked(drive.iterateThumbnails)).toHaveBeenCalledTimes(1);
+            expect(mockSetCachedThumbnail).toHaveBeenCalledWith('rev-1', 'sd', new Uint8Array([1, 2, 3]));
+        });
+
+        it('caches HD too (type follows the batch)', async () => {
+            const drive = makeDrive([{ nodeUid: 'node-1', ok: true, thumbnail: new Uint8Array([4]) }]);
+
+            loadThumbnail(drive, {
+                nodeUid: 'node-1',
+                revisionUid: 'rev-1',
+                thumbnailTypes: ['hd'],
+                usePersistentCache: true,
+            });
+            await flushBatch();
+
+            expect(mockGetCachedThumbnail).toHaveBeenCalledWith('rev-1', 'hd');
+            expect(mockSetCachedThumbnail).toHaveBeenCalledWith('rev-1', 'hd', new Uint8Array([4]));
+        });
+
+        it('does not touch the cache when usePersistentCache is not set', async () => {
+            const drive = makeDrive([{ nodeUid: 'node-1', ok: true, thumbnail: new Uint8Array([1]) }]);
+
+            loadThumbnail(drive, { nodeUid: 'node-1', revisionUid: 'rev-1' });
+            await flushBatch();
+
+            expect(mockGetCachedThumbnail).not.toHaveBeenCalled();
+            expect(mockSetCachedThumbnail).not.toHaveBeenCalled();
         });
     });
 });
