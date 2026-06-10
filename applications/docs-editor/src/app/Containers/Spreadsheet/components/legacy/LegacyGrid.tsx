@@ -3,7 +3,7 @@ import { CanvasGrid } from '@rowsncolumns/spreadsheet'
 import { GRID_THEME_PROPS, FUNCTION_DESCRIPTIONS } from '../../constants'
 import { ChartComponent } from '@rowsncolumns/charts'
 import { isDevOrBlack } from '@proton/utils/env'
-import { useEffect, useRef } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import { type ProtonSheetsUIStoreSetters, useUI } from '../../ui-store'
 import { CellTooltip } from '../misc/CellTooltip'
 import { GridFooter } from '../GridFooter/GridFooter'
@@ -14,6 +14,27 @@ const exposeCanvasGrid = (
   instance: CanvasGridMethods | null,
   setters: ProtonSheetsUIStoreSetters['legacy'],
   activeSheetId: number,
+  snapshot: {
+    activeSheetId: number
+    activeCell: unknown
+    selections: unknown
+    merges: unknown
+    frozenColumnCount: number
+    frozenRowCount: number
+    view: {
+      formulaBarEnabled: boolean
+      gridLinesEnabled: boolean
+    }
+    zoomValue: number
+    data: {
+      hasFilter: boolean
+      dataValidations: unknown
+    }
+    sheets: {
+      activeId: number
+      list: unknown
+    }
+  },
 ) => {
   // Force exposure for e2e testing - always expose in any development-like environment
   const shouldExpose = typeof window !== 'undefined' && instance && isDevOrBlack()
@@ -55,6 +76,7 @@ const exposeCanvasGrid = (
           return null
         }
       },
+      getSpreadsheetSnapshot: () => snapshot,
     }
   }
 }
@@ -62,16 +84,57 @@ const exposeCanvasGrid = (
 export function LegacyGrid() {
   const canvasGridRef = useRef<CanvasGridMethods | null>(null)
   const activeSheetId = useUI((ui) => ui.legacy.activeSheetId)
+  const activeCell = useUI((ui) => ui.legacy.activeCell)
+  const selections = useUI((ui) => ui.legacy.selections)
+  const merges = useUI((ui) => ui.legacy.merges)
+  const frozenColumnCount = useUI((ui) => ui.legacy.frozenColumnCount ?? 0)
+  const frozenRowCount = useUI((ui) => ui.legacy.frozenRowCount ?? 0)
+  const formulaBarEnabled = useUI((ui) => ui.view.formulaBar.enabled)
+  const gridLinesEnabled = useUI((ui) => ui.view.gridLines.enabled)
+  const zoomValue = useUI((ui) => ui.zoom.value)
+  const hasFilter = useUI((ui) => ui.data.hasFilter)
+  const dataValidations = useUI((ui) => ui.legacy.dataValidations)
+  const sheetList = useUI((ui) => ui.sheets.list)
+  const activeSheetListId = useUI((ui) => ui.sheets.activeId)
   const isReadonly = useUI((ui) => ui.info.isReadonly)
+  const snapshot = useMemo(
+    () => ({
+      activeSheetId,
+      activeCell,
+      selections,
+      merges,
+      frozenColumnCount,
+      frozenRowCount,
+      view: { formulaBarEnabled, gridLinesEnabled },
+      zoomValue,
+      data: { hasFilter, dataValidations },
+      sheets: { activeId: activeSheetListId, list: sheetList },
+    }),
+    [
+      activeCell,
+      activeSheetId,
+      activeSheetListId,
+      dataValidations,
+      formulaBarEnabled,
+      frozenColumnCount,
+      frozenRowCount,
+      gridLinesEnabled,
+      hasFilter,
+      merges,
+      selections,
+      sheetList,
+      zoomValue,
+    ],
+  )
 
   const setters = useUI.$.legacy
   const ref = (instance: CanvasGridMethods | null) => {
     canvasGridRef.current = instance
-    exposeCanvasGrid(instance, setters, activeSheetId)
+    exposeCanvasGrid(instance, setters, activeSheetId, snapshot)
   }
   useEffect(() => {
-    exposeCanvasGrid(canvasGridRef.current, setters, activeSheetId)
-  }, [setters, activeSheetId])
+    exposeCanvasGrid(canvasGridRef.current, setters, activeSheetId, snapshot)
+  }, [setters, activeSheetId, snapshot])
 
   const getSeriesValuesFromRange = useUI((ui) => ui.legacy.getSeriesValuesFromRange)
   const getDomainValuesFromRange = useUI((ui) => ui.legacy.getDomainValuesFromRange)
