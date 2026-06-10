@@ -316,6 +316,7 @@ enum MeetFeatureFlag {
     MeetShowReloadTrackButton = 'MeetShowReloadTrackButton',
     MeetH264 = 'MeetH264',
     MeetMultipleRecording = 'MeetMultipleRecording',
+    MeetRecordingWebCodecs = 'MeetRecordingWebCodecs',
     MeetEnableAudioMixing = 'MeetEnableAudioMixing',
     MeetEnableSpatialAudio = 'MeetEnableSpatialAudio',
     MeetPreSharedKey = 'MeetPreSharedKey',

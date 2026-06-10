@@ -8,7 +8,7 @@ export enum StorageMessageType {
 
 export type StorageWorkerMessage =
     | { type: StorageMessageType.INIT; id: string; data: { fileExtension: string } }
-    | { type: StorageMessageType.ADD_CHUNK; id: string; data: { chunkBuffer: ArrayBuffer } }
+    | { type: StorageMessageType.ADD_CHUNK; id: string; data: { chunkBuffer: ArrayBuffer; position?: number } }
     | { type: StorageMessageType.FINALIZE; id: string }
     | { type: StorageMessageType.CLEAR; id: string }
     | { type: StorageMessageType.CLOSE; id: string };

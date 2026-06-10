@@ -20,6 +20,7 @@ export const createChunkWatchdog = ({
     intervalMs = DEFAULT_INTERVAL_MS,
     primingThresholdMs = DEFAULT_PRIMING_THRESHOLD_MS,
     stallThresholdMs = DEFAULT_STALL_THRESHOLD_MS,
+    isWebCodecs,
 }: ChunkWatchdogOptions): ChunkWatchdog => {
     let interval: ReturnType<typeof setInterval> | null = null;
     let startedAt = 0;
@@ -42,6 +43,7 @@ export const createChunkWatchdog = ({
             console.error(
                 `[MeetingRecorder] watchdog: no chunk with data in the last ${Math.round(sinceLastChunk)}ms (${phase})`,
                 {
+                    isWebCodecs,
                     recordingCodec,
                     mediaRecorderState,
                     chunksWithData: snapshot.chunkCount,
@@ -49,16 +51,22 @@ export const createChunkWatchdog = ({
                     firstChunkAt: snapshot.firstChunkAt,
                 }
             );
-            reportMeetError('MeetingRecording Error: watchdog detected stalled MediaRecorder', {
-                context: {
-                    recordingCodec,
-                    mediaRecorderState,
-                    chunksWithData: snapshot.chunkCount,
-                    emptyChunks: snapshot.emptyChunkCount,
-                    sinceLastChunkMs: Math.round(sinceLastChunk),
-                    phase,
-                },
-            });
+            reportMeetError(
+                isWebCodecs
+                    ? 'MeetingRecording Error WebCodecs: watchdog detected stalled MediaRecorder'
+                    : 'MeetingRecording Error: watchdog detected stalled MediaRecorder',
+                {
+                    context: {
+                        isWebCodecs,
+                        recordingCodec,
+                        mediaRecorderState,
+                        chunksWithData: snapshot.chunkCount,
+                        emptyChunks: snapshot.emptyChunkCount,
+                        sinceLastChunkMs: Math.round(sinceLastChunk),
+                        phase,
+                    },
+                }
+            );
         }
 
         if (sinceLastChunk <= threshold && warned) {
