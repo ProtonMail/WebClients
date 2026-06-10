@@ -9,6 +9,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { IcArrowLeftAndUp } from '@proton/icons/icons/IcArrowLeftAndUp';
 import type { IconName } from '@proton/icons/types';
 import { ASSISTANT_PROMPT_SIZE_LIMIT } from '@proton/llm/lib';
 
@@ -187,8 +188,7 @@ const ComposerAssistantCustomInput = ({
                             onClick={handleSubmit}
                             className="ml-auto"
                         >
-                            <Icon
-                                name="arrow-left-and-up"
+                            <IcArrowLeftAndUp
                                 className="rotateZ-270 composer-assistant-special-color"
                                 alt={c('Action').t`Generate text`}
                             />
