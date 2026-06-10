@@ -38,6 +38,7 @@ import { setAudioSessionType } from '@proton/meet/utils/iosAudioSession';
 import { TimeoutError, withTimeout } from '@proton/meet/utils/withTimeout';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useStableCallback } from '../../hooks/useStableCallback';
 import { preloadBackgroundProcessorAssets } from '../../processors/background-processor/createBackgroundProcessor';
@@ -80,6 +81,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     const preferredCameraId = useMeetSelector(selectPreferredCameraId);
     const preferredMicrophoneId = useMeetSelector(selectPreferredMicrophoneId);
     const preferredSpeakerId = useMeetSelector(selectPreferredSpeakerId);
+    const isUseSimpleSegmentationEnabled = useFlag('MeetUseSimpleSegmentation');
 
     const { getMicrophoneVolumeAnalysis, initializeMicrophoneVolumeAnalysis, cleanupMicrophoneVolumeAnalysis } =
         useMicrophoneVolumeAnalysis();
@@ -177,7 +179,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         isVideoEnabled,
         facingMode,
         isBackgroundBlurSupported,
-    } = useVideoToggle(switchActiveDevice);
+    } = useVideoToggle({ switchActiveDevice, isUseSimpleSegmentationEnabled });
 
     const { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled } = useAudioToggle(switchActiveDevice);
 
@@ -188,6 +190,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         facingMode: 'user',
         isBackgroundBlurSupported,
         backgroundBlur,
+        isUseSimpleSegmentationEnabled,
         room,
     });
 
@@ -501,8 +504,8 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     }, [cleanupPreviews, room]);
 
     useEffect(() => {
-        void preloadBackgroundProcessorAssets();
-    }, []);
+        void preloadBackgroundProcessorAssets(isUseSimpleSegmentationEnabled);
+    }, [isUseSimpleSegmentationEnabled]);
 
     return (
         <MediaManagementContext.Provider

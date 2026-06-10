@@ -11,41 +11,46 @@ import {
     preloadBackgroundBlurAssets,
 } from './MulticlassBackgroundProcessor';
 
-const lowEnd = isLowEndDevice();
+const SIMPLE_SEGMENTATION_MODEL_PATH = '/assets/background-blur/selfie_segmenter.tflite';
+const MULTICLASS_SEGMENTATION_MODEL_PATH = '/assets/background-blur/selfie_multiclass_256x256.tflite';
 
-const backgroundProcessorOptions: BackgroundProcessorOptions = {
+const getBackgroundProcessorOptions = (useSimpleSegmentation: boolean): BackgroundProcessorOptions => ({
     assetPaths: {
         tasksVisionFileSet: '/assets/background-blur',
-        modelAssetPath: lowEnd
-            ? '/assets/background-blur/selfie_segmenter.tflite'
-            : '/assets/background-blur/selfie_multiclass_256x256.tflite',
-        // Fall back to the lightweight model when the GPU delegate is unavailable
-        cpuModelAssetPath: '/assets/background-blur/selfie_segmenter.tflite',
+        modelAssetPath: useSimpleSegmentation ? SIMPLE_SEGMENTATION_MODEL_PATH : MULTICLASS_SEGMENTATION_MODEL_PATH,
     },
-    // Run segmentation every other frame on low-end devices; reuse the previous mask in between
-    segmentEveryNFrames: lowEnd ? 2 : 1,
-};
+});
 
-export const createBackgroundProcessor = (): BackgroundBlurProcessor | null => {
+export const createBackgroundProcessor = (isUseSimpleSegmentationEnabled: boolean): BackgroundBlurProcessor | null => {
     if (!supportsBackgroundProcessors() || isMobile()) {
         return null;
     }
 
     try {
+        const lowEndDevice = isLowEndDevice();
+        const useSimpleSegmentation = lowEndDevice || isUseSimpleSegmentationEnabled;
+
+        const backgroundProcessorOptions = getBackgroundProcessorOptions(useSimpleSegmentation);
         const modernProcessorsSupported = supportsModernBackgroundProcessors();
         const dynamicProcessorOptions = { maxFps: modernProcessorsSupported ? 30 : 20 };
-        return BackgroundBlur(60, undefined, { ...backgroundProcessorOptions, ...dynamicProcessorOptions });
+        return BackgroundBlur(60, undefined, {
+            ...backgroundProcessorOptions,
+            ...dynamicProcessorOptions,
+            isLowEndDevice: lowEndDevice,
+        });
     } catch {
         return null;
     }
 };
 
-export const preloadBackgroundProcessorAssets = async () => {
+export const preloadBackgroundProcessorAssets = async (isUseSimpleSegmentationEnabled: boolean) => {
     if (!supportsBackgroundProcessors() || isMobile()) {
         return;
     }
 
     try {
+        const useSimpleSegmentation = isLowEndDevice() || isUseSimpleSegmentationEnabled;
+        const backgroundProcessorOptions = getBackgroundProcessorOptions(useSimpleSegmentation);
         await preloadBackgroundBlurAssets(backgroundProcessorOptions.assetPaths);
     } catch (error) {
         // Preload failed, but don't block - will retry when user enables blur
