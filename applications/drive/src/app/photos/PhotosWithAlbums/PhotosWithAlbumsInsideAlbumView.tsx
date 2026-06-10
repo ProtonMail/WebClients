@@ -86,6 +86,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
             nodeUid: nodeUid,
             shouldLoad: shouldProcess,
             thumbnailTypes: ['sd'],
+            usePersistentCache: true,
         });
     }, []);
 
