@@ -1,7 +1,8 @@
 import type { Ref } from 'react';
 import { forwardRef } from 'react';
 
-import Icon from '@proton/components/components/icon/Icon';
+import { IcShield2 } from '@proton/icons/icons/IcShield2';
+import { IcShield2CheckFilled } from '@proton/icons/icons/IcShield2CheckFilled';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
@@ -21,19 +22,16 @@ const SpyTrackerIcon = (
         <span data-testid="privacy:icon-number-of-trackers">{numberOfTrackers > 99 ? '99+' : numberOfTrackers}</span>
     );
 
-    const icon = (
-        <Icon
-            name={needsMoreProtection ? 'shield-2' : 'shield-2-check-filled'}
-            size={4}
-            alt={title}
-            data-testid="privacy:tracker-icon"
-            className={clsx(
-                needsMoreProtection ? 'color-weak' : 'color-primary',
-                'relative inline-flex item-spy-tracker-link items-center',
-                isStandaloneIcon && 'mr-0.5',
-                className
-            )}
-        />
+    const iconClassName = clsx(
+        needsMoreProtection ? 'color-weak' : 'color-primary',
+        'relative inline-flex item-spy-tracker-link items-center',
+        isStandaloneIcon && 'mr-0.5',
+        className
+    );
+    const icon = needsMoreProtection ? (
+        <IcShield2 size={4} alt={title} data-testid="privacy:tracker-icon" className={iconClassName} />
+    ) : (
+        <IcShield2CheckFilled size={4} alt={title} data-testid="privacy:tracker-icon" className={iconClassName} />
     );
 
     return (

@@ -4,8 +4,8 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import { FeatureCode, useFeature } from '@proton/features';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import type { MessageStateWithData, OutsideKey } from '@proton/mail/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
@@ -246,7 +246,7 @@ const AttachmentList = ({
                                 size="small"
                                 data-testid="attachment-list:download-all"
                             >
-                                <Icon name="arrow-down-line" alt={c('Action').t`Download all attachments`} />
+                                <IcArrowDownLine alt={c('Action').t`Download all attachments`} />
                             </Button>
                         </Tooltip>
                     </div>

@@ -10,6 +10,8 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import { FeatureCode, useFeatures } from '@proton/features';
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
+import { IcFilingCabinet } from '@proton/icons/icons/IcFilingCabinet';
 import { getCategoryData } from '@proton/mail/features/categoriesView/categoriesHelpers';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
@@ -175,7 +177,7 @@ const MessageDetailsModal = ({
                     )}
                     <div className="mb-2 flex flex-nowrap" data-testid="message-details:date">
                         <span className="mr-2 flex">
-                            <Icon name="calendar-grid" className="m-auto" alt={c('Label').t`Date:`} />
+                            <IcCalendarGrid className="m-auto" alt={c('Label').t`Date:`} />
                         </span>
                         <span className="pl-1 flex-1 text-ellipsis">
                             <ItemDate element={message.data} labelID={labelID} mode="full" />
@@ -218,7 +220,7 @@ const MessageDetailsModal = ({
                     )}
                     <div className="mb-2 flex flex-nowrap" data-testid="message-details:size">
                         <span className="mr-2 flex">
-                            <Icon name="filing-cabinet" className="m-auto" alt={c('Label').t`Size:`} />
+                            <IcFilingCabinet className="m-auto" alt={c('Label').t`Size:`} />
                         </span>
                         <span className="pl-1 flex-1 text-ellipsis" title={sizeText}>
                             {sizeText}

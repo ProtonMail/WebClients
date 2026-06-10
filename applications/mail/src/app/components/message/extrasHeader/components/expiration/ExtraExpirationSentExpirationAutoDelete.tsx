@@ -1,5 +1,6 @@
 import { Banner } from '@proton/atoms/Banner/Banner';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcHourglass } from '@proton/icons/icons/IcHourglass';
+import { IcTrashClock } from '@proton/icons/icons/IcTrashClock';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 
 import useExpiration from '../../../../../hooks/useExpiration';
@@ -16,7 +17,7 @@ const ExtraExpirationSentExpirationAutoDelete = ({ message, autoDelete }: Props)
         <Banner
             data-testid="expiration-banner"
             variant={expiresInLessThan24Hours ? 'danger' : 'info-outline'}
-            icon={<Icon name={autoDelete ? 'trash-clock' : 'hourglass'} />}
+            icon={autoDelete ? <IcTrashClock /> : <IcHourglass />}
         >
             {expirationMessage}
         </Banner>
