@@ -136,6 +136,7 @@ enum AccountFlag {
     UnauthLost2FA = 'UnauthLost2FA',
     UnauthedForgotPassword = 'UnauthedForgotPassword',
     UserGroupsScimGroups = 'UserGroupsScimGroups',
+    EnableZenDeskAIAgent = 'EnableZenDeskAIAgent',
 }
 
 enum PaymentsFlag {
