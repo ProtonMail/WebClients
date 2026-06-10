@@ -1,26 +1,20 @@
 import type { Dispatch, SetStateAction } from 'react';
-import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
-import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { toMap } from '@proton/shared/lib/helpers/object';
-import type { LabelCount } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import useScheduleSendFeature from '../../components/composer/actions/scheduleSend/useScheduleSendFeature';
 import { SCHEDULED_MESSAGES_LIMIT } from '../../constants';
-import { isConversationMode } from '../../helpers/mailSettings';
 import { updateScheduled } from '../../store/messages/scheduled/scheduledActions';
+import { useMailboxCounter } from '../mailboxCounter/useMailboxCounter';
 import { useSendVerifications } from './useSendVerifications';
 
 interface Props {
@@ -49,14 +43,10 @@ export const useScheduleSend = ({
     const { canScheduleSend } = useScheduleSendFeature();
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
 
-    const location = useLocation();
     const dispatch = useMailDispatch();
 
     const [waitBeforeScheduleModalProps, setWaitBeforeScheduleModalOpen] = useModalState();
 
-    const [mailSettings] = useMailSettings();
-    const [conversationCounts, loadingConversationCounts] = useConversationCounts();
-    const [messageCounts, loadingMessageCounts] = useMessageCounts();
     const { preliminaryVerifications } = useSendVerifications(
         handleNoRecipients,
         handleNoSubjects,
@@ -64,14 +54,8 @@ export const useScheduleSend = ({
         handleNoReplyEmail
     );
 
-    const referenceCount = toMap(
-        isConversationMode(MAILBOX_LABEL_IDS.SCHEDULED, mailSettings, location) ? conversationCounts : messageCounts,
-        'LabelID'
-    ) as { [labelID: string]: LabelCount };
-
-    const scheduleCount = referenceCount[MAILBOX_LABEL_IDS.SCHEDULED];
-
-    const loadingScheduleCount = loadingConversationCounts || loadingMessageCounts;
+    const { getLocationCount, loading } = useMailboxCounter();
+    const scheduleCount = getLocationCount(MAILBOX_LABEL_IDS.SCHEDULED);
 
     const modal = (
         <Prompt
@@ -137,7 +121,7 @@ export const useScheduleSend = ({
     return {
         canScheduleSend: canScheduleSend && (isRetentionPoliciesEnabled || !hasExpiration),
         scheduleCount,
-        loadingScheduleCount,
+        loadingScheduleCount: loading,
         handleScheduleSendModal,
         handleScheduleSend,
         modal,
