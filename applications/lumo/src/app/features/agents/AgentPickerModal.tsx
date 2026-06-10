@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -11,7 +12,11 @@ import {
     ModalTwoHeader,
     useModalStateObject,
 } from '@proton/components';
-import { clsx } from 'clsx';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcPen } from '@proton/icons/icons/IcPen';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { IcSquares } from '@proton/icons/icons/IcSquares';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { useConversationAgent } from '../../hooks/useConversationAgent';
 import { useCustomAgents } from '../../hooks/useCustomAgents';
@@ -21,7 +26,6 @@ import type { CustomAgent } from '../../redux/slices/lumoUserSettings';
 import { AgentModal } from './AgentModal';
 import { DEFAULT_AGENT_ICON } from './constants';
 import { getAgentByline, isAgentEditable } from './registry';
-import {BRAND_NAME} from "@proton/shared/lib/constants";
 
 interface AgentPickerModalProps {
     /** Current conversation id, if a conversation already exists. */
@@ -74,6 +78,7 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
 
     const filteredAgents = useMemo(() => {
         const byFilter: CustomAgent[] =
+            // eslint-disable-next-line no-nested-ternary
             filter === 'mine'
                 ? personalAgents
                 : filter === 'default'
@@ -188,9 +193,7 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                                                 className="flex items-center justify-center shrink-0 w-custom"
                                                 style={{ '--w-custom': '1.5rem' } as React.CSSProperties}
                                             >
-                                                {isActive && (
-                                                    <Icon name="checkmark" size={4} className="color-primary" />
-                                                )}
+                                                {isActive && <IcCheckmark size={4} className="color-primary" />}
                                             </span>
                                             {editable ? (
                                                 <Button
@@ -201,7 +204,7 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                                                     title={c('collider_2025:Action').t`Edit agent`}
                                                     aria-label={c('collider_2025:Action').t`Edit agent`}
                                                 >
-                                                    <Icon name="pen" size={4} />
+                                                    <IcPen size={4} />
                                                 </Button>
                                             ) : (
                                                 <Button
@@ -212,7 +215,7 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                                                     title={c('collider_2025:Action').t`Make a copy`}
                                                     aria-label={c('collider_2025:Action').t`Make a copy`}
                                                 >
-                                                    <Icon name="squares" size={4} />
+                                                    <IcSquares size={4} />
                                                 </Button>
                                             )}
                                         </div>
@@ -228,7 +231,7 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                         className="flex items-center justify-center gap-2 mb-2"
                         onClick={() => openEditor(undefined)}
                     >
-                        <Icon name="plus" size={4} />
+                        <IcPlus size={4} />
                         {c('collider_2025:Action').t`New agent`}
                     </Button>
                 </ModalTwoContent>
