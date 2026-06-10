@@ -30,19 +30,25 @@ import { useRecordingCodec } from './hooks/useRecordingCodec';
 import { useRecordingScene } from './hooks/useRecordingScene';
 import { useRecordingStatusPublish } from './hooks/useRecordingStatusPublish';
 import { useTrackPublishedSubscriber } from './hooks/useTrackPublishedSubscriber';
+import { isWebCodecsRecordingSupported } from './mediaEncoder/capabilities';
 import { RecordingSession } from './recordingSession/recordingSession';
 
 export const useMeetingRecorder = () => {
+    const isMeetMultipleRecordingEnabled = useFlag('MeetMultipleRecording');
+    const isWebCodecsRecordingEnabled = useFlag('MeetRecordingWebCodecs');
+
     const hasRecordingPermissions = useHaveRecordingPermissions();
     const isRecordingSupported = useIsRecordingSupported();
-    const recordingCodec = useRecordingCodec(hasRecordingPermissions && isRecordingSupported);
+    const recordingCodec = useRecordingCodec({
+        enabled: hasRecordingPermissions && isRecordingSupported,
+        isWebCodecs: isWebCodecsRecordingEnabled,
+    });
 
     const room = useRoomContext();
     const dispatch = useMeetDispatch();
     const { reportMeetError } = useMeetErrorReporting();
     const { createNotification } = useNotifications();
 
-    const isMeetMultipleRecordingEnabled = useFlag('MeetMultipleRecording');
     const isLocalRecording = useMeetSelector(selectIsLocalParticipantRecording);
 
     const isLargerThanMd = useIsLargerThanMd();
@@ -122,6 +128,7 @@ export const useMeetingRecorder = () => {
         try {
             const session = new RecordingSession({
                 codec: recordingCodec,
+                isWebCodecs: isWebCodecsRecordingEnabled && isWebCodecsRecordingSupported(),
                 reportMeetError,
                 onRuntimeError: () => {
                     void cleanupSession();
@@ -165,6 +172,7 @@ export const useMeetingRecorder = () => {
         reportMeetError,
         cleanupSession,
         isMeetMultipleRecordingEnabled,
+        isWebCodecsRecordingEnabled,
         dispatch,
         room,
         publishRecordingStatus,

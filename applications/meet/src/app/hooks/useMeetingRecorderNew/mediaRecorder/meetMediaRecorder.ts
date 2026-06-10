@@ -1,5 +1,8 @@
+import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
+
 import { getFallbackCodec } from '../codec/getSupportedCodec';
 import type { RecordingCodec } from '../codec/types';
+import type { RecorderAPI } from '../types';
 import type { MeetMediaRecorderOptions } from './types';
 
 const VIDEO_BITS_PER_SECOND = 2_000_000;
@@ -14,33 +17,47 @@ const TIMESLICE_MS = 500;
 // The instance owns one recording session: call `start()` once, then `stop()`.
 // Get the active codec via `getActiveCodec()` (it may differ from the primary
 // after a fallback).
-export class MeetMediaRecorder {
+export class MeetMediaRecorder implements RecorderAPI {
     private mediaRecorder: MediaRecorder | null = null;
     private combinedStream: MediaStream;
     private activeCodec: RecordingCodec;
-    private options: MeetMediaRecorderOptions;
+    private reportMeetError: ReportMeetError;
+    private onChunk: (chunk: Blob) => void;
+    private onEmptyChunk: () => void;
+    private onRuntimeError: (error: Error | null) => void;
 
-    constructor(options: MeetMediaRecorderOptions) {
-        this.options = options;
-        this.activeCodec = options.primaryCodec;
-        this.combinedStream = new MediaStream([...options.videoTracks, ...options.audioTracks]);
+    constructor({
+        audioTracks,
+        videoTracks,
+        codec,
+        onChunk,
+        onEmptyChunk,
+        onRuntimeError,
+        reportMeetError,
+    }: MeetMediaRecorderOptions) {
+        this.reportMeetError = reportMeetError;
+        this.activeCodec = codec;
+        this.onChunk = onChunk;
+        this.onEmptyChunk = onEmptyChunk;
+        this.onRuntimeError = onRuntimeError;
+        this.combinedStream = new MediaStream([...videoTracks, ...audioTracks]);
     }
 
     public async start(): Promise<void> {
         try {
-            this.mediaRecorder = this.createConfiguredRecorder(this.options.primaryCodec.mimeType);
+            this.mediaRecorder = this.createConfiguredRecorder(this.activeCodec.mimeType);
             await this.startRecorder(this.mediaRecorder);
         } catch (error) {
             if (error instanceof DOMException && error.name === 'EncodingError') {
                 const fallbackCodec = getFallbackCodec();
                 // eslint-disable-next-line no-console
                 console.error('[MeetingRecorder] EncodingError with codec, retrying with fallback', {
-                    failed: this.options.primaryCodec,
+                    failed: this.activeCodec,
                     fallback: fallbackCodec,
                     error,
                 });
-                this.options.reportMeetError('MeetingRecording Error: EncodingError, retrying with fallback codec', {
-                    context: { failed: this.options.primaryCodec, fallback: fallbackCodec },
+                this.reportMeetError('MeetingRecording Error: EncodingError, retrying with fallback codec', {
+                    context: { failed: this.activeCodec, fallback: fallbackCodec },
                 });
 
                 this.activeCodec = fallbackCodec;
@@ -56,7 +73,7 @@ export class MeetMediaRecorder {
         // needed (it would have rejected the start promise).
         this.mediaRecorder.onerror = (event) => {
             const error = (event as ErrorEvent).error;
-            this.options.onRuntimeError(error ?? null);
+            this.onRuntimeError(error ?? null);
         };
     }
 
@@ -105,11 +122,11 @@ export class MeetMediaRecorder {
                 if (recorder.state !== 'recording') {
                     return;
                 }
-                this.options.onEmptyChunk();
+                this.onEmptyChunk();
                 return;
             }
 
-            this.options.onChunk(event.data);
+            this.onChunk(event.data);
         };
 
         return recorder;

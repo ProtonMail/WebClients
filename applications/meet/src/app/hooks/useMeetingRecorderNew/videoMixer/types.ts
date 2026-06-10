@@ -1,5 +1,7 @@
 import type { Participant, Track } from 'livekit-client';
 
+import type { AudioTapSamples } from '../mediaEncoder/types';
+
 export enum VideoMixerMessageType {
     INIT = 'init',
     RENDER = 'render',
@@ -8,7 +10,9 @@ export enum VideoMixerMessageType {
     STOP = 'stop',
     START_TRACK_CAPTURE = 'startTrackCapture',
     STOP_TRACK_CAPTURE = 'stopTrackCapture',
-    REQUEST_FRAME_COUNT = 'requestFrameCount',
+    START_ENCODER = 'startEncoder',
+    STOP_ENCODER = 'stopEncoder',
+    PROVIDE_AUDIO_SAMPLES = 'provideAudioSamples',
 }
 
 export interface RecordingTrackInfo {
@@ -55,4 +59,6 @@ export type VideoMixerWorkerMessage =
     | { type: VideoMixerMessageType.STOP }
     | { type: VideoMixerMessageType.START_TRACK_CAPTURE; trackData: TrackCaptureData }
     | { type: VideoMixerMessageType.STOP_TRACK_CAPTURE; trackId: string }
-    | { type: VideoMixerMessageType.REQUEST_FRAME_COUNT };
+    | { type: VideoMixerMessageType.START_ENCODER }
+    | { type: VideoMixerMessageType.STOP_ENCODER }
+    | { type: VideoMixerMessageType.PROVIDE_AUDIO_SAMPLES; samples: AudioTapSamples };
