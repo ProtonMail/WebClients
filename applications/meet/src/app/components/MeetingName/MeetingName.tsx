@@ -9,6 +9,7 @@ import { selectIsGuestAdmin, selectRoomName } from '@proton/meet/store/slices';
 import { selectShowDuration } from '@proton/meet/store/slices/uiStateSlice';
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { PLANS } from '@proton/payments/core/constants.ts';
+import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
@@ -26,6 +27,8 @@ interface MeetingNameProps {
     classNames?: { root?: string; name?: string; duration?: string };
 }
 
+const ESCALATION_THRESHOLDS_MS = [10 * MINUTE, 2 * MINUTE, 30 * SECOND];
+
 const CTAContainer = ({ children }: { children: React.ReactNode }) => {
     const meetCountdownUpsellEnabled = useFlag('MeetCountdownUpsell');
     const showRemainingTimeEnabled = useFlag('MeetRemainingTime');
@@ -33,7 +36,7 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
     const anchorRef = useRef<HTMLDivElement>(null);
     const { isPaidUser, isSubUser, hasSubscriptionWithoutMeet } = useMeetSelector(selectSubscriptionStatus);
 
-    const { timeLeftMs, isExpiringSoon } = useMeetingDuration();
+    const { timeLeftMs } = useMeetingDuration();
 
     const [showRemainingTime, setShowRemainingTime] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
@@ -49,9 +52,19 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
         </time>
     );
 
+    const triggeredEscalationsRef = useRef<Set<number>>(new Set());
+
     useEffect(() => {
-        setShowRemainingTime(isExpiringSoon && showRemainingTimeEnabled);
-    }, [isExpiringSoon, showRemainingTimeEnabled]);
+        if (!showRemainingTimeEnabled || timeLeftMs <= 0) {
+            return;
+        }
+        for (const threshold of ESCALATION_THRESHOLDS_MS) {
+            if (timeLeftMs <= threshold && !triggeredEscalationsRef.current.has(threshold)) {
+                triggeredEscalationsRef.current.add(threshold);
+                setShowRemainingTime(true);
+            }
+        }
+    }, [timeLeftMs, showRemainingTimeEnabled]);
 
     const handleMouseEnter = () => {
         if (canOpenDropdown) {
