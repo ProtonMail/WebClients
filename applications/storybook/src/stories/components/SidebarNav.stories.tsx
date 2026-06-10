@@ -4,7 +4,9 @@ import { MemoryRouter } from 'react-router-dom';
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { Sidebar } from '@proton/components/components/sidebar/nav';
-import { Icon } from '@proton/components/index';
+import { IcFileLines } from '@proton/icons/icons/IcFileLines';
+import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 
 const withMemoryWrapper = (Story: React.ComponentType) => (
     <MemoryRouter>
@@ -50,7 +52,7 @@ export const FullNestedSidebar: Story = {
                         <Sidebar.Branch.Content>
                             <Sidebar.Branch defaultOpen>
                                 <Sidebar.Branch.Header>
-                                    <Icon name="file-lines" />
+                                    <IcFileLines />
                                     <Sidebar.Branch.Text>Design</Sidebar.Branch.Text>
                                     <Sidebar.Branch.Trigger rotation={{ open: 180 }} name="chevron-down" />
                                 </Sidebar.Branch.Header>
@@ -64,38 +66,38 @@ export const FullNestedSidebar: Story = {
                                         <Sidebar.Leaf.Text>components.fig</Sidebar.Leaf.Text>
                                     </Sidebar.Leaf>
                                     <Sidebar.Leaf to="/some-link">
-                                        <Icon name="file-lines" />
+                                        <IcFileLines />
                                         <Sidebar.Leaf.Text>icons.fig</Sidebar.Leaf.Text>
                                     </Sidebar.Leaf>
                                 </Sidebar.Branch.Content>
                             </Sidebar.Branch>
                             <Sidebar.Branch>
                                 <Sidebar.Branch.Header>
-                                    <Icon name="file-lines" />
+                                    <IcFileLines />
                                     <Sidebar.Branch.Text>Docs</Sidebar.Branch.Text>
                                     <Sidebar.Branch.Trigger rotation={{ open: 180 }} name="chevron-down" />
                                 </Sidebar.Branch.Header>
                                 <Sidebar.Branch.Content>
                                     <Sidebar.Leaf to="/some-link">
-                                        <Icon name="file-lines" />
+                                        <IcFileLines />
                                         <Sidebar.Leaf.Text>overview.md</Sidebar.Leaf.Text>
                                     </Sidebar.Leaf>
                                     <Sidebar.Leaf to="/some-link">
-                                        <Icon name="file-lines" />
+                                        <IcFileLines />
                                         <Sidebar.Leaf.Text>api.md</Sidebar.Leaf.Text>
                                     </Sidebar.Leaf>
                                     <Sidebar.Leaf to="/some-link">
-                                        <Icon name="file-lines" />
+                                        <IcFileLines />
                                         <Sidebar.Leaf.Text>changelog.md</Sidebar.Leaf.Text>
                                     </Sidebar.Leaf>
                                 </Sidebar.Branch.Content>
                             </Sidebar.Branch>
                             <Sidebar.Leaf to="/some-link">
-                                <Icon name="file-lines" />
+                                <IcFileLines />
                                 <Sidebar.Leaf.Text>README.md</Sidebar.Leaf.Text>
                             </Sidebar.Leaf>
                             <Sidebar.Leaf to="some-workspace">
-                                <Icon name="meet-settings" />
+                                <IcMeetSettings />
                                 <Sidebar.Leaf.Text>workspace.json</Sidebar.Leaf.Text>
                             </Sidebar.Leaf>
                         </Sidebar.Branch.Content>
@@ -110,52 +112,52 @@ export const FullNestedSidebar: Story = {
                         <Sidebar.Branch.Content>
                             <Sidebar.Branch>
                                 <Sidebar.Branch.Header>
-                                    <Icon name="file-lines" />
+                                    <IcFileLines />
                                     <Sidebar.Branch.Text>Frontend</Sidebar.Branch.Text>
                                     <Sidebar.Branch.Trigger />
                                 </Sidebar.Branch.Header>
                                 <Sidebar.Branch.Content>
                                     <Sidebar.Leaf to="/some-link">
-                                        <Icon name="file-lines" />
+                                        <IcFileLines />
                                         <Sidebar.Leaf.Text>App.tsx</Sidebar.Leaf.Text>
                                     </Sidebar.Leaf>
                                     <Sidebar.Leaf to="/some-link">
-                                        <Icon name="file-lines" />
+                                        <IcFileLines />
                                         <Sidebar.Leaf.Text>router.ts</Sidebar.Leaf.Text>
                                     </Sidebar.Leaf>
                                     <Sidebar.Leaf to="/some-link">
-                                        <Icon name="file-lines" />
+                                        <IcFileLines />
                                         <Sidebar.Leaf.Text>theme.ts</Sidebar.Leaf.Text>
                                     </Sidebar.Leaf>
                                 </Sidebar.Branch.Content>
                             </Sidebar.Branch>
                             <Sidebar.Branch>
                                 <Sidebar.Branch.Header>
-                                    <Icon name="file-lines" />
+                                    <IcFileLines />
                                     <Sidebar.Branch.Text>Backend</Sidebar.Branch.Text>
                                     <Sidebar.Branch.Trigger />
                                 </Sidebar.Branch.Header>
                                 <Sidebar.Branch.Content>
                                     <Sidebar.Leaf to="/some-link">
-                                        <Icon name="file-lines" />
+                                        <IcFileLines />
                                         <Sidebar.Leaf.Text>server.ts</Sidebar.Leaf.Text>
                                     </Sidebar.Leaf>
                                     <Sidebar.Leaf to="/some-link">
-                                        <Icon name="file-lines" />
+                                        <IcFileLines />
                                         <Sidebar.Leaf.Text>db.ts</Sidebar.Leaf.Text>
                                     </Sidebar.Leaf>
                                     <Sidebar.Leaf to="/some-link">
-                                        <Icon name="file-lines" />
+                                        <IcFileLines />
                                         <Sidebar.Leaf.Text>auth.ts</Sidebar.Leaf.Text>
                                     </Sidebar.Leaf>
                                 </Sidebar.Branch.Content>
                             </Sidebar.Branch>
                             <Sidebar.Leaf to="/some-link">
-                                <Icon name="file-lines" />
+                                <IcFileLines />
                                 <Sidebar.Leaf.Text>package.json</Sidebar.Leaf.Text>
                             </Sidebar.Leaf>
                             <Sidebar.Leaf to="/some-link">
-                                <Icon name="file-lines" />
+                                <IcFileLines />
                                 <Sidebar.Leaf.Text>.env</Sidebar.Leaf.Text>
                             </Sidebar.Leaf>
                         </Sidebar.Branch.Content>
@@ -170,52 +172,52 @@ export const FullNestedSidebar: Story = {
                         <Sidebar.Branch.Content>
                             <Sidebar.Branch>
                                 <Sidebar.Branch.Header>
-                                    <Icon name="file-lines" />
+                                    <IcFileLines />
                                     <Sidebar.Branch.Text>Engineering</Sidebar.Branch.Text>
                                     <Sidebar.Branch.Trigger />
                                 </Sidebar.Branch.Header>
                                 <Sidebar.Branch.Content>
                                     <Sidebar.Leaf to="/some-link">
-                                        <Icon name="users" />
+                                        <IcUsers />
                                         <Sidebar.Leaf.Text>Alice</Sidebar.Leaf.Text>
                                     </Sidebar.Leaf>
                                     <Sidebar.Leaf to="/some-link">
-                                        <Icon name="users" />
+                                        <IcUsers />
                                         <Sidebar.Leaf.Text>Bob</Sidebar.Leaf.Text>
                                     </Sidebar.Leaf>
                                     <Sidebar.Leaf to="/some-link">
-                                        <Icon name="users" />
+                                        <IcUsers />
                                         <Sidebar.Leaf.Text>Carol</Sidebar.Leaf.Text>
                                     </Sidebar.Leaf>
                                 </Sidebar.Branch.Content>
                             </Sidebar.Branch>
                             <Sidebar.Branch>
                                 <Sidebar.Branch.Header>
-                                    <Icon name="file-lines" />
+                                    <IcFileLines />
                                     <Sidebar.Branch.Text>Design</Sidebar.Branch.Text>
                                     <Sidebar.Branch.Trigger />
                                 </Sidebar.Branch.Header>
                                 <Sidebar.Branch.Content>
                                     <Sidebar.Leaf to="/some-link">
-                                        <Icon name="users" />
+                                        <IcUsers />
                                         <Sidebar.Leaf.Text>Diana</Sidebar.Leaf.Text>
                                     </Sidebar.Leaf>
                                     <Sidebar.Leaf to="/some-link">
-                                        <Icon name="users" />
+                                        <IcUsers />
                                         <Sidebar.Leaf.Text>Evan</Sidebar.Leaf.Text>
                                     </Sidebar.Leaf>
                                     <Sidebar.Leaf to="/some-link">
-                                        <Icon name="users" />
+                                        <IcUsers />
                                         <Sidebar.Leaf.Text>Fiona</Sidebar.Leaf.Text>
                                     </Sidebar.Leaf>
                                 </Sidebar.Branch.Content>
                             </Sidebar.Branch>
                             <Sidebar.Leaf to="/some-link">
-                                <Icon name="meet-settings" />
+                                <IcMeetSettings />
                                 <Sidebar.Leaf.Text>Permissions</Sidebar.Leaf.Text>
                             </Sidebar.Leaf>
                             <Sidebar.Leaf to="/some-link">
-                                <Icon name="meet-settings" />
+                                <IcMeetSettings />
                                 <Sidebar.Leaf.Text>Notifications</Sidebar.Leaf.Text>
                             </Sidebar.Leaf>
                         </Sidebar.Branch.Content>
