@@ -32,9 +32,6 @@ export const bookingGuestBootstrap = async (): Promise<BookingGuestBootstrapResu
     const authentication = createAuthentication({ initialAuth: false });
     init({ config, authentication, locales });
 
-    // TODO is this needed?
-    //telemetry.init({ config, uid: authentication.UID});
-
     initMainHost();
     initSafariFontFixClassnames();
 
