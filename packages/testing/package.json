@@ -63,7 +63,8 @@
         "./lib/vitest/mockUseNotifications": "./lib/vitest/mockUseNotifications.ts",
         "./lib/vitest/mockUseOrganization": "./lib/vitest/mockUseOrganization.ts",
         "./lib/vitest/mockUseUser": "./lib/vitest/mockUseUser.ts",
-        "./lib/vitest/mockUseUserKeys": "./lib/vitest/mockUseUserKeys.ts"
+        "./lib/vitest/mockUseUserKeys": "./lib/vitest/mockUseUserKeys.ts",
+        "./configs/vitest.config": "./configs/vitest.config.ts"
     },
     "scripts": {
         "check-types": "tsc",
@@ -75,6 +76,7 @@
         "cross-fetch": "^4.1.0",
         "eslint": "^9.39.4",
         "msw": "2.12.14",
-        "typescript": "^6.0.2"
+        "typescript": "^6.0.2",
+        "vitest": "^4.1.7"
     }
 }
