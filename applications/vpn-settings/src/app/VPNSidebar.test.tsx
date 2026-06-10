@@ -1,4 +1,3 @@
-import { createRef } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
 import { fireEvent, render, screen } from '@testing-library/react';
@@ -9,6 +8,7 @@ import * as hooks from '@proton/account/user/hooks';
 import * as helper from '@proton/components/containers/layout/helper';
 import type { SectionConfig, SidebarConfig } from '@proton/components/index';
 import type { SidebarTree } from '@proton/nav/types/sidebar';
+import * as navigation from '@proton/vpn/contexts/navigation';
 
 import { VPNSidebar } from './VPNSidebar';
 
@@ -44,6 +44,10 @@ vi.mock('@proton/components/containers/layout/helper', () => ({
     getIsSectionAvailable: vi.fn(),
     getSectionPath: vi.fn(),
 }));
+vi.mock('@proton/vpn/contexts/navigation', () => ({
+    useB2BAdminNavigation: vi.fn(),
+    useNavigationRef: vi.fn(() => ({ current: null })),
+}));
 
 const renderWithRouter = (ui: React.ReactElement) => render(<MemoryRouter>{ui}</MemoryRouter>);
 
@@ -70,15 +74,18 @@ describe('VPNSidebar', () => {
 
     it('shows loader when subscription or organization are loading', () => {
         (orgHooks.useOrganization as Mock).mockReturnValue([{}, true]);
+        (navigation.useB2BAdminNavigation as Mock).mockReturnValue({
+            loading: true,
+            enabled: false,
+            routes: undefined,
+        });
 
         renderWithRouter(
             <VPNSidebar
-                navigationRef={createRef()}
                 sidebarExpanded={false}
                 onSidebarToggle={() => {}}
                 routes={routesMock}
                 organizationRoutes={organizationRoutesMock}
-                adminSidebarFeature={{ loading: true, enabled: false, routes: undefined }}
             />
         );
         expect(screen.getByRole('progressbar')).toBeInTheDocument();
@@ -86,18 +93,18 @@ describe('VPNSidebar', () => {
     });
 
     it('renders old sidebar when admin feature is disabled', () => {
+        (navigation.useB2BAdminNavigation as Mock).mockReturnValue({
+            enabled: false as const,
+            loading: false,
+            routes: undefined,
+        });
+
         renderWithRouter(
             <VPNSidebar
-                navigationRef={createRef()}
                 sidebarExpanded={false}
                 onSidebarToggle={() => {}}
                 routes={routesMock}
                 organizationRoutes={organizationRoutesMock}
-                adminSidebarFeature={{
-                    enabled: false as const,
-                    loading: false,
-                    routes: undefined,
-                }}
             />
         );
         expect(screen.getByTestId('sidebar-nav')).toBeInTheDocument();
@@ -121,21 +128,21 @@ describe('VPNSidebar', () => {
             ],
         };
 
+        (navigation.useB2BAdminNavigation as Mock).mockReturnValue({
+            enabled: true,
+            loading: false,
+            sidebar: { status: true, toggle: vi.fn() },
+            spotlight: { isOn: true, setOff: vi.fn() },
+            routes: resolved,
+            settings: [],
+        });
+
         renderWithRouter(
             <VPNSidebar
-                navigationRef={createRef()}
                 sidebarExpanded={false}
                 onSidebarToggle={() => {}}
                 routes={routesMock}
                 organizationRoutes={organizationRoutesMock}
-                adminSidebarFeature={{
-                    enabled: true,
-                    loading: false,
-                    sidebar: { status: true, toggle: vi.fn() },
-                    spotlight: { isOn: true, setOff: vi.fn() },
-                    routes: resolved,
-                    settings: [],
-                }}
             />
         );
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
@@ -149,32 +156,32 @@ describe('VPNSidebar', () => {
     it('toggles new sidebar when toggle is clicked', () => {
         const toggle = vi.fn();
 
+        (navigation.useB2BAdminNavigation as Mock).mockReturnValue({
+            enabled: true,
+            loading: false,
+            sidebar: { status: false, toggle },
+            spotlight: { isOn: false, setOff: vi.fn() },
+            routes: {
+                items: [
+                    {
+                        id: 'admin',
+                        label: 'Admin',
+                        to: '/admin',
+                        children: undefined,
+                        icon: undefined,
+                        meta: {},
+                    },
+                ],
+            },
+            settings: [],
+        });
+
         renderWithRouter(
             <VPNSidebar
-                navigationRef={createRef()}
                 sidebarExpanded={false}
                 onSidebarToggle={() => {}}
                 routes={routesMock}
                 organizationRoutes={organizationRoutesMock}
-                adminSidebarFeature={{
-                    enabled: true,
-                    loading: false,
-                    sidebar: { status: false, toggle },
-                    spotlight: { isOn: false, setOff: vi.fn() },
-                    routes: {
-                        items: [
-                            {
-                                id: 'admin',
-                                label: 'Admin',
-                                to: '/admin',
-                                children: undefined,
-                                icon: undefined,
-                                meta: {},
-                            },
-                        ],
-                    },
-                    settings: [],
-                }}
             />
         );
         const uiToggle = screen.getByRole('switch');
