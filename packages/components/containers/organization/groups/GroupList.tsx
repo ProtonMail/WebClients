@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
+import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
@@ -31,14 +31,13 @@ const getSortedGroups = (input: string, groups: Group[]) => {
 };
 
 const GroupList = () => {
-    const [user] = useUser();
-    const { isFrozen, uiState, groups, selectedGroup, actions, getSerializedGroup, groupRolesMap } = useGroupsManagement();
+    const { isFrozen, uiState, groups, selectedGroup, actions, getSerializedGroup, groupRolesMap } =
+        useGroupsManagement();
     const { hasUsableDomain } = useGroupAvailableAddressDomains();
-    const isAdmin = user?.isAdmin;
-
-    const canCreateGroup = isAdmin && hasUsableDomain && !isFrozen;
-    const [showSearchInput, setShowSearchInput] = useState(!canCreateGroup);
+    const [permissions] = useOrgPermissions();
+    const canCreateGroup = !!permissions?.['account.group.create'] && hasUsableDomain && !isFrozen;
     const [searchInput, setSearchInput] = useState<string>('');
+    const [showSearchInput, setShowSearchInput] = useState(!canCreateGroup);
 
     const sideBarPlaceholder = (
         <div className="flex justify-center items-center w-full m-auto overflow-x-auto p-3 h-full">
