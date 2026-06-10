@@ -7,6 +7,7 @@ import Dropdown, { DropdownBorderRadius } from '@proton/components/components/dr
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+// eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IcCheckmarkStrong } from '@proton/icons/icons/IcCheckmarkStrong';

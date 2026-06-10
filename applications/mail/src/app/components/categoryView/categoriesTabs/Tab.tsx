@@ -3,6 +3,7 @@ import { NavLink, useHistory } from 'react-router-dom';
 import { clsx } from 'clsx';
 import { c, msgid } from 'ttag';
 
+// eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import Icon from '@proton/components/components/icon/Icon';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
