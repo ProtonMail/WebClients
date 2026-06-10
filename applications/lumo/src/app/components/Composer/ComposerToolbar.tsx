@@ -170,7 +170,7 @@ export const ComposerToolbar = ({
         <div className="flex flex-row flex-nowrap items-center justify-space-between w-full mt-1">
             <div className="flex flex-row flex-nowrap items-center gap-1 pl-2">
                 <UploadMenuSection {...uploadSectionProps} />
-                {isToolsFlagEnabled && !isCreateImageMode && (
+                {isToolsFlagEnabled && !isCreateImageMode && !isAgent && (
                     <>
                         <Button
                             ref={toolsButtonRef}
@@ -191,7 +191,6 @@ export const ComposerToolbar = ({
                             onClose={() => setShowToolsMenu(false)}
                             onClickCreateImageOption={() => onCreateImageModeChange(true)}
                             canUseAgents={canUseAgents}
-                            isAgent={isAgent}
                         />
                     </>
                 )}
@@ -223,7 +222,8 @@ export const ComposerToolbar = ({
                         <IcMicrophone size={6} />
                     </Button>
                 </div>
-                {isImageToolsFlagEnabled && !isAgent &&
+                {isImageToolsFlagEnabled &&
+                    !isAgent &&
                     (isCreateImageMode ? (
                         <AspectRatioDropdown selectedRatio={selectedAspectRatio} onSelect={onAspectRatioChange} />
                     ) : (
