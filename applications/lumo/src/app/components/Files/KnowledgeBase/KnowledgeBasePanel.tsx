@@ -4,8 +4,10 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/components';
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcFile } from '@proton/icons/icons/IcFile';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
@@ -468,6 +470,8 @@ export const KnowledgeBasePanel = ({
         autoRetrievedAttachments.length === 0 &&
         !linkedDriveFolder;
 
+    const IndicatorIcon = showKnowledgeExplanation ? IcChevronUp : IcChevronDown;
+
     return (
         <>
             <div className={panelClassName} ref={filesContainerRef}>
@@ -543,14 +547,14 @@ export const KnowledgeBasePanel = ({
                                     />
                                 )}
 
-                            <ManualAttachmentsSection
-                                currentAttachments={currentAttachments}
-                                activeHistoricalFiles={activeHistoricalFiles}
-                                onView={handleFileClick}
-                                onViewFile={onViewFile}
-                                onRemove={(id) => dispatch(locallyDeleteAttachmentFromLocalRequest(id))}
-                                onExclude={handleExcludeHistoricalFile}
-                            />
+                                <ManualAttachmentsSection
+                                    currentAttachments={currentAttachments}
+                                    activeHistoricalFiles={activeHistoricalFiles}
+                                    onView={handleFileClick}
+                                    onViewFile={onViewFile}
+                                    onRemove={(id) => dispatch(locallyDeleteAttachmentFromLocalRequest(id))}
+                                    onExclude={handleExcludeHistoricalFile}
+                                />
 
                                 <ExcludedFilesSection
                                     excludedAutoRetrieved={excludedAutoRetrieved}
@@ -576,7 +580,6 @@ export const KnowledgeBasePanel = ({
                             className="shrink-0 mt-2 border border-weak rounded-lg overflow-hidden"
                             style={{ height: showKnowledgeExplanation ? '8.75rem' : '5rem' }}
                         >
-                            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                             <button
                                 type="button"
                                 className="flex flex-row items-center gap-2 cursor-pointer p-3"
@@ -586,11 +589,7 @@ export const KnowledgeBasePanel = ({
                                 <h4 className="m-0 text-sm text-bold flex-1">
                                     {c('collider_2025: Info').t`File capacity for this conversation`}
                                 </h4>
-                                <Icon
-                                    name={showKnowledgeExplanation ? 'chevron-up' : 'chevron-down'}
-                                    size={4}
-                                    className="color-weak shrink-0"
-                                />
+                                <IndicatorIcon size={4} className="color-weak shrink-0" />
                             </button>
 
                             {showKnowledgeExplanation && (
