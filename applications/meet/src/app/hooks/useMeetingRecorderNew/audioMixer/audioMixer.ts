@@ -1,5 +1,7 @@
 import type { TrackReference } from '@livekit/components-react';
 
+import type { AudioTapSamples } from '../mediaEncoder/types';
+
 // Delays at which we re-apply the latest audio source set. The browser
 // sometimes attaches the new track to the AudioContext slightly after the
 // publication switch notifies us, so reapplying once or twice shortly after
@@ -21,10 +23,13 @@ export class AudioMixer {
     private destinationStream: MediaStream;
     private audioSourceNodes: Map<string, { source: MediaStreamAudioSourceNode; stream: MediaStream }>;
     private resyncTimers: Set<ReturnType<typeof setTimeout>> = new Set();
+    private workletNode: AudioWorkletNode | null = null;
+    private workletSink: GainNode | null = null;
 
     constructor() {
         this.audioSourceNodes = new Map();
-        this.audioContext = new AudioContext();
+        // 48 kHz: the AAC encoder rejects the hardware's native rate on some devices (e.g. 96 kHz).
+        this.audioContext = new AudioContext({ sampleRate: 48000 });
 
         this.audioCompressor = this.audioContext.createDynamicsCompressor();
         this.audioCompressor.threshold.value = -24;
@@ -142,12 +147,29 @@ export class AudioMixer {
         return this.destinationStream.getAudioTracks();
     }
 
-    public getAudioContextCurrentTimeMs(): number {
-        return this.audioContext.currentTime * 1000;
+    // Taps the mixed audio via an AudioWorklet, a parallel branch into a muted sink,
+    // so the main mix is untouched.
+    public async startWorkletTap(onSamples: (samples: AudioTapSamples) => void): Promise<void> {
+        await this.audioContext.audioWorklet.addModule('/assets/recording/recorderTapWorklet.js');
+        this.workletNode = new AudioWorkletNode(this.audioContext, 'recorder-tap');
+        this.workletNode.port.onmessage = (event: MessageEvent<AudioTapSamples>) => onSamples(event.data);
+        this.workletSink = this.audioContext.createGain();
+        this.workletSink.gain.value = 0;
+        this.audioCompressor.connect(this.workletNode);
+        this.workletNode.connect(this.workletSink);
+        this.workletSink.connect(this.audioContext.destination);
+    }
+
+    public stopWorkletTap(): void {
+        this.workletNode?.disconnect();
+        this.workletSink?.disconnect();
+        this.workletNode = null;
+        this.workletSink = null;
     }
 
     public cleanup() {
         this.cancelPendingResyncs();
+        this.stopWorkletTap();
         document.removeEventListener('visibilitychange', this.handleVisibilityChange);
 
         this.audioSourceNodes.forEach(({ source }) => {

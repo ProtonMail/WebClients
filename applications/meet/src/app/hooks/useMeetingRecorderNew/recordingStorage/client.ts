@@ -83,21 +83,32 @@ export class RecordingStorageClient {
         await this.send({ type: StorageMessageType.INIT, data: { fileExtension: this.fileExtension } });
     }
 
-    async addChunk(chunk: Blob): Promise<void> {
+    // `position` is set by the WebCodecs path (mediabunny gives an explicit byte
+    // offset per chunk); the MediaRecorder path omits it and the worker appends.
+    async addChunk(chunk: Blob | Uint8Array<ArrayBuffer>, position?: number): Promise<void> {
         if (!this.worker) {
             throw new Error('Worker not initialized');
         }
 
-        // Track the full write so finalize/clear can drain in-flight chunks
-        // and avoid racing the worker's writable.close() with a pending
-        // writable.write() (the worker's onmessage handler is async and does
-        // not serialize messages by itself).
+        const getChunkBuffer = async () => {
+            if (chunk instanceof Blob) {
+                return chunk.arrayBuffer();
+            }
+
+            if (chunk.byteOffset === 0 && chunk.byteLength === chunk.buffer.byteLength) {
+                return chunk.buffer;
+            }
+
+            return chunk.slice().buffer;
+        };
+
         const writePromise = (async () => {
-            const chunkBuffer = await chunk.arrayBuffer();
-            await this.send({ type: StorageMessageType.ADD_CHUNK, data: { chunkBuffer } }, [chunkBuffer]);
+            const chunkBuffer = await getChunkBuffer();
+            await this.send({ type: StorageMessageType.ADD_CHUNK, data: { chunkBuffer, position } }, [chunkBuffer]);
         })();
 
         this.pendingChunkWrites.add(writePromise);
+
         try {
             await writePromise;
         } finally {
