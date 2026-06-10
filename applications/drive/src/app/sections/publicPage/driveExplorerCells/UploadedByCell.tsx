@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { UserAvatar, UserAvatarSizeEnum } from '@proton/atoms/UserAvatar/UserAvatar';
-import { Icon } from '@proton/components';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -29,7 +29,7 @@ export const UploadedByCell = ({ displayName, className }: UploadedByCellProps) 
                         '--max-h-custom': '1.75rem',
                     }}
                 >
-                    <Icon className="color-weak" name="user" />
+                    <IcUser className="color-weak" />
                 </Avatar>
                 <span className="text-ellipsis color-weak">{c('Info').t`Anonymous`}</span>
             </div>

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -20,7 +20,7 @@ export function GoBackButton() {
             onClick={handleGoBack}
             data-testid="public-preview:button:close"
         >
-            <Icon className="mr-2 rtl:mirror" name="arrow-left" />
+            <IcArrowLeft className="mr-2 rtl:mirror" />
             {c('Action').t`Go back`}
         </Button>
     );

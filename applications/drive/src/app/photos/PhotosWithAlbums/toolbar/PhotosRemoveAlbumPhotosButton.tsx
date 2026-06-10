@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { DropdownMenuButton, Icon, ToolbarButton } from '@proton/components';
+import { DropdownMenuButton, ToolbarButton } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import clsx from '@proton/utils/clsx';
 
 export const PhotosRemoveAlbumPhotosButton = ({
@@ -26,7 +27,7 @@ export const PhotosRemoveAlbumPhotosButton = ({
         >
             {/* // TODO: We should update the toolbar component to prevent doing this everywhere */}
             {isLoading && <CircleLoader className={clsx(!showIconOnly && 'm-px mr-2')} />}
-            {!isLoading && <Icon className={clsx(!showIconOnly && 'mr-2')} name="trash" />}
+            {!isLoading && <IcTrash className={clsx(!showIconOnly && 'mr-2')} />}
             <span className={clsx(showIconOnly && 'sr-only', isLoading && !showIconOnly && 'ml-px')}>{c('Action')
                 .t`Remove from album`}</span>
         </ButtonComp>

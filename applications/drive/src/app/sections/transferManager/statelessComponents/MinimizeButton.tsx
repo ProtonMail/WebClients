@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import clsx from '@proton/utils/clsx';
 
 type Props = {
@@ -25,7 +25,7 @@ export const MinimizeButton = ({ onClick, isMinimized }: Props) => {
                 data-testid="drive-transfers-manager:minimize"
                 aria-controls="transfer-manager"
             >
-                <Icon className={clsx(['icon-size-4.5', isMinimized && 'rotateX-180'])} name="chevron-down" />
+                <IcChevronDown className={clsx(['icon-size-4.5', isMinimized && 'rotateX-180'])} />
                 <span className="sr-only">{minMaxTitle}</span>
             </Button>
         </Tooltip>

@@ -5,10 +5,10 @@ import { c } from 'ttag';
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
+import { IcLightLightbulb } from '@proton/icons/icons/IcLightLightbulb';
 import { COUPON_CODES, CYCLE, PLANS, type SubscriptionEstimation } from '@proton/payments';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { DRIVE_PRICING_PAGE, DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls';
@@ -82,7 +82,7 @@ export const CreateAccountButton = ({ isMobile = false }: CreateAccountButtonPro
             href={UPSELL_LINK}
             target="_blank"
         >
-            <Icon className="mr-2" name="light-lightbulb" />
+            <IcLightLightbulb className="mr-2" />
             {hasPriceData && c('Action').t`Get secure storage for ${simplePriceString}`}
         </ButtonLike>
     ) : (
