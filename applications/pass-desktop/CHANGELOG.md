@@ -1,3 +1,9 @@
+### Version 1.38.0
+
+- Add "Check for update" button with update progress and restart prompt [macOS/Windows]
+- Support MSIX installer for Intune-based enterprise deployment [Windows]
+- Fix app icon on Wayland window manager [Linux]
+
 ### Version 1.37.0
 
 - Support unlocking chromium extension with biometrics using Mac desktop app
