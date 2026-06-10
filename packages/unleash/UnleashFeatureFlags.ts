@@ -324,6 +324,7 @@ enum MeetFeatureFlag {
     MeetDynacast = 'MeetDynacast',
     MeetSimulcast = 'MeetSimulcast',
     MeetMeetingTimeout = 'MeetMeetingTimeout',
+    MeetUseSimpleSegmentation = 'MeetUseSimpleSegmentation',
     MeetingRecorderRefactor = 'MeetingRecorderRefactor',
     MeetCoreWorker = 'MeetCoreWorker',
 }
