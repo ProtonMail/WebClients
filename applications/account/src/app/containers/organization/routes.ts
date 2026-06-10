@@ -101,6 +101,7 @@ export const getOrganizationAppRoutes = ({
     const hasGroups = (groups?.length ?? 0) > 0;
     const canShowGroupsSection =
         isUserGroupsFeatureEnabled &&
+        (permissions['account.group.read'] || !!isGroupOwner) &&
         !!organization &&
         (hasGroups ||
             (hasActiveOrganizationKey &&
@@ -215,7 +216,7 @@ export const getOrganizationAppRoutes = ({
             to: '/user-groups',
             icon: 'pass-group',
             noTitle: true,
-            available: (isAdmin || !!isGroupOwner) && canShowGroupsSection,
+            available: canShowGroupsSection,
             subsections: [
                 {
                     id: 'groups-management',
