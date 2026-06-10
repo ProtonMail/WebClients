@@ -13,6 +13,7 @@ export function manageEventsSubscription() {
 
   return function subscribeToEvents(
     drive: ProtonDriveClient,
+    treeEventScopeId: string,
     logger: LoggerInterface,
     recentsListener: DriveListener,
     trashedListener: DriveListener,
@@ -21,22 +22,15 @@ export function manageEventsSubscription() {
     let shouldAbort = false
 
     drive
-      .getMyFilesRootFolder()
-      .then(async (maybeMyFiles) => {
-        if (shouldAbort) {
-          return
+      .subscribeToTreeEvents(treeEventScopeId, async (event) => {
+        try {
+          await recentsListener(event)
+          await trashedListener(event)
+        } catch (error: any) {
+          logger.error('Failed to handle SDK event', error)
         }
-
-        const myFiles = maybeMyFiles.ok ? maybeMyFiles.value : maybeMyFiles.error
-        const newSubscription = await drive.subscribeToTreeEvents(myFiles.treeEventScopeId, async (event) => {
-          try {
-            await recentsListener(event)
-            await trashedListener(event)
-          } catch (error: any) {
-            logger.error('Failed to handle SDK event', error)
-          }
-        })
-
+      })
+      .then((newSubscription) => {
         if (shouldAbort) {
           newSubscription.dispose()
         } else {
