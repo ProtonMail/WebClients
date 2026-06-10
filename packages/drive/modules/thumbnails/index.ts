@@ -13,6 +13,7 @@ export type { ThumbnailError } from './generator/thumbnailError';
 export { generateThumbnail } from './generator/thumbnailGenerator';
 export type { ThumbnailResult } from './generator/utils';
 export { canHtmlVideoPlay } from './generator/handlers/videoHandler';
+export { useInitEncryptedThumbnailCache } from './encryptedThumbnailCache';
 
 export const loadThumbnail = (drive: DriveClient, params: ThumbnailRequest) => {
     return useThumbnailsStore.getState().loadThumbnail(drive, params);

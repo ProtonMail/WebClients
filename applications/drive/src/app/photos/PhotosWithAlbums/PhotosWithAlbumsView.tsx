@@ -72,6 +72,7 @@ export const PhotosWithAlbumsView = () => {
             nodeUid: nodeUid,
             shouldLoad: shouldProcess,
             thumbnailTypes: ['sd'],
+            usePersistentCache: true,
         });
     }, []);
 
