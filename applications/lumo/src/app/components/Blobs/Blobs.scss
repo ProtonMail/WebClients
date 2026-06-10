@@ -1,0 +1,111 @@
+@use '~@proton/styles/scss/lib/em' as *;
+
+.lumo--blobs {
+	$teal: #14c8c0;
+	$blue: #2196f3;
+	$indigo: #5b4fe0;
+	$magenta: #c94fa0;
+	$peach: #ff9576;
+	$radius: em(90);
+	$blur: em(40);
+	$opacity: 0.5;
+	$speed: 5s;
+
+	position: absolute;
+	inset-block-start: 0%;
+	inset-inline-start: 0%;
+	inline-size: 100%;
+	block-size: 150%;
+	margin: auto;
+	z-index: -1;
+	pointer-events: none;
+
+	&-overlay {
+		position: absolute;
+		inset-block-start: -50%;
+		inset-inline-start: -25%;
+		inline-size: 150%;
+		block-size: 200%;
+		z-index: 1;
+	}
+
+	&-gradient {
+		position: relative;
+		overflow: hidden;
+		inline-size: 100%;
+		block-size: 100%;
+		border-radius: $radius;
+		filter: blur($blur);
+		opacity: $opacity;
+		background: linear-gradient(90deg, $teal 0%, $blue 28%, $indigo 56%, $magenta 80%, $peach 100%);
+		background-size: 200% 200%;
+		transform-origin: top;
+		animation:
+			/** Grow in from nothing then start animation */
+			blobs-grow-in 0.4s ease-out both,
+			blobs-shift $speed ease-in-out infinite alternate;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+		}
+
+		&::before {
+			background:
+				radial-gradient(60% 90% at 50% 50%, $teal, transparent 70%),
+				radial-gradient(55% 80% at 50% 50%, $blue, transparent 70%);
+			animation: blobs-scan-left $speed ease-in-out infinite alternate;
+		}
+
+		&::after {
+			background:
+				radial-gradient(60% 90% at 50% 50%, $magenta, transparent 70%),
+				radial-gradient(55% 80% at 50% 50%, $peach, transparent 70%);
+			animation: blobs-scan-right ($speed * 0.8) ease-in-out infinite alternate;
+		}
+	}
+
+	@keyframes blobs-grow-in {
+		from {
+			transform: scale(0);
+			opacity: 0;
+		}
+
+		to {
+			transform: scale(1);
+			opacity: $opacity;
+		}
+	}
+
+	@keyframes blobs-shift {
+		from {
+			background-position: 0% 50%;
+		}
+
+		to {
+			background-position: 100% 50%;
+		}
+	}
+
+	@keyframes blobs-scan-left {
+		from {
+			transform: translateX(50%) scale(1);
+		}
+
+		to {
+			transform: translateX(-50%) scale(1.5);
+		}
+	}
+
+	@keyframes blobs-scan-right {
+		from {
+			transform: translateX(-50%) scale(1.5);
+		}
+
+		to {
+			transform: translateX(50%) scale(1);
+		}
+	}
+}
