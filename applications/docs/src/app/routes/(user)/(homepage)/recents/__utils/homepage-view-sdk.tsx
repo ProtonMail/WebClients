@@ -1,10 +1,11 @@
 import { RecentDocumentsItem } from '@proton/docs-core'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
+import type { DegradedNode, NodeEntity } from '@proton/drive'
 import { getDrive } from '@proton/drive'
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
-import { useEffect, useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useRouteMatch } from 'react-router'
 import { useApplication } from '~/utils/application-context'
 import { HOMEPAGE_TRASH_PATH } from '../../../__components/AppContainer'
@@ -27,6 +28,8 @@ import {
 import { useRecents } from './use-recents'
 import { useTrashed } from './use-trashed'
 import { manageEventsSubscription } from './manage-events-subscription'
+import { c } from 'ttag'
+import useNotifications from '@proton/components/hooks/useNotifications'
 
 const subscribeToEvents = manageEventsSubscription()
 
@@ -34,6 +37,7 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
   const drive = getDrive()
 
   const { logger } = useApplication()
+  const { createNotification } = useNotifications()
 
   const [search, setSearch] = useSearch()
   const [recentsSort, setRecentsSort] = useRecentsSort()
@@ -63,19 +67,44 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
     [fetchTrashed, isTrashRoute, updateRecentDocuments],
   )
 
-  useEffect(
-    () => subscribeToEvents(drive, logger, recentsListener, trashedListener),
-    [drive, recentsListener, trashedListener, logger],
-  )
+  // Loading it once here to avoid doing it every time we subscribe
+  const [myFilesNode, setMyFilesNode] = useState<NodeEntity | DegradedNode>()
+  useEffect(() => {
+    drive
+      .getMyFilesRootFolder()
+      .then((maybeMyFiles) => {
+        setMyFilesNode(maybeMyFiles.ok ? maybeMyFiles.value : maybeMyFiles.error)
+      })
+      .catch(() => {
+        createNotification({
+          type: 'error',
+          text: c('Error').t`Failed to load 'My files' folder`,
+        })
+      })
+  }, [createNotification, drive])
+
+  useEffect(() => {
+    // Do not subscribe if we don't have treeEventScopeId yet
+    if (!myFilesNode) {
+      return
+    }
+    return subscribeToEvents(drive, myFilesNode.treeEventScopeId, logger, recentsListener, trashedListener)
+  }, [drive, recentsListener, trashedListener, logger, myFilesNode])
 
   const state = useMemo(() => {
     if (isTrashRoute) {
       return buildTrashState(trashedDocumentItems, isTrashLoading)
     } else if (search && search.length > 0) {
-      return buildSearchState(search, isRecentsUpdating, recentDocumentsInitialized, recentDocuments, type)
+      return buildSearchState(
+        search,
+        isRecentsUpdating,
+        recentDocumentsInitialized,
+        Object.values(recentDocuments),
+        type,
+      )
     } else {
       return buildRecentsState(
-        recentDocuments,
+        Object.values(recentDocuments),
         recentDocumentsInitialized,
         isRecentsUpdating,
         recentsSort,

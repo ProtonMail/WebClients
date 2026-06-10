@@ -1,4 +1,6 @@
-import type { MaybeNode, ProtonDriveClient } from '@proton/drive'
+import { MemberRole, type DegradedNode, type MaybeNode, type NodeEntity, type ProtonDriveClient } from '@proton/drive'
+import { findUserAddress } from '@proton/shared/lib/helpers/address'
+import type { Address } from '@proton/shared/lib/interfaces'
 
 export async function getFullPath(drive: ProtonDriveClient, nodeUid: string) {
   const path: string[] = []
@@ -51,10 +53,10 @@ export function extractNodeUid(node: MaybeNode) {
   return node.ok ? node.value.uid : node.error.uid
 }
 
-export async function isSharedWithUser(drive: ProtonDriveClient, user: { Email: string }, nodeUid: string) {
-  const sharingInfo = await drive.getSharingInfo(nodeUid)
-  const currentUserSharingMembership = sharingInfo?.members.find((member) => {
-    return member.inviteeEmail === user.Email
-  })
-  return !!currentUserSharingMembership
+export function getIsSharedWithMe(node: NodeEntity | DegradedNode, addresses: Address[] | undefined) {
+  const ownerEmail = node.ownedBy.email
+  const ownerIsCurrentUser = !!findUserAddress(ownerEmail, addresses)
+  const isSharedDirectly = node.isShared && node.directRole !== MemberRole.Inherited && !ownerIsCurrentUser
+  const isSharedIndirectly = !node.isShared && node.directRole === MemberRole.Inherited && !ownerIsCurrentUser
+  return isSharedDirectly || isSharedIndirectly
 }
