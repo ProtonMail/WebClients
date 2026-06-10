@@ -1718,6 +1718,9 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Verify now": [
+        "Nu verifiëren"
       ]
     },
     "action": {
@@ -4329,6 +4332,15 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Voor een naadloze introductie van uw team bij ${ BRAND_NAME } importeert u uw gegevens uit Google, Outlook en anderen."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Als een bericht in de verkeerde categorie verschijnt, verplaatst u het eenvoudig naar de juiste categorie. Klik met de rechtermuisknop op een bericht om een ​​nieuwe categorie te kiezen, of sleep het bericht naar de plek waar het thuishoort."
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "U bent een van de eersten die onze nieuwe categorieweergave uitprobeert voordat deze wordt gelanceerd. Uw feedback helpt bij het verbeteren van de manier waarop Proton Mail e-mails voor iedereen sorteert."
       ]
     },
     "description": {
@@ -5293,6 +5305,36 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Uw zoekopdracht leverde te veel resultaten op. Verfijn uw zoekopdracht en probeer het opnieuw."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Alle opslagruimte is reeds toegewezen. Beperk de toegewezen opslagruimte van andere gebruikers."
+      ],
+      "Please check if your ABN is registered for cross-border VAT": [
+        "Controleer of uw ABN geregistreerd is voor grensoverschrijdende BTW"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configureer eerst een eigen domein voordat u adressen toevoegt."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Configureer een eigen domein om gebruikers aan uw organisatie toe te voegen."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Activeer multi-user ondersteuning voordat u gebruikers toevoegt aan uw organisatie."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Upgrade naar een zakelijk abonnement met meer dan 1 gebruiker om meerdere gebruikers te beheren."
+      ],
+      "Something went wrong while converting the address": [
+        "Er is iets misgegaan tijdens het aanmaken van het adres"
+      ],
+      "VAT number must start with ${ prefixes }": [
+        "BTW-nummer moet beginnen met ${ prefixes }"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "U heeft alle adressen in uw abonnement gebruikt. Upgrade uw abonnement om een nieuw adres toe te voegen of schakel een adres in uw account uit."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "U heeft het maximale aantal gebruikers bereikt dat uw huidige abonnement toestaat. Upgrade uw abonnement om een nieuwe gebruiker toe te voegen."
       ]
     },
     "error": {
@@ -9080,6 +9122,37 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
+      ],
+      "${ total } user found": [
+        "${ total } gebruiker gevonden",
+        "${ total } gebruikers gevonden"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Nodig uw vrienden uit** voor ${ BRAND_NAME } met uw verwijzingslink."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Ze krijgen ${ refereeRewardAmount }** aan credits als ze zich abonneren."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**U krijgt ${ referrerRewardAmount }** aan credits voor elke vriend die zich abonneert."
+      ],
+      "Automatically sort incoming emails into categories": [
+        "Sorteer binnenkomende e-mails automatisch in categorieën"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Weet u uw wachtwoord nog? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "Wachtwoord vergeten?"
+      ],
+      "Password verified": [
+        "Wachtwoord is geverifieerd"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Om u te helpen uw wachtwoord te onthouden, vragen wij u dit periodiek in te voeren. We vragen u in de loop van de tijd minder."
+      ],
+      "We'll remind you to verify your password again later": [
+        "We herinneren u er later aan om uw wachtwoord opnieuw te controleren"
       ]
     },
     "info": {
@@ -9357,6 +9430,9 @@
       ],
       "Message shortcuts": [
         "Berichtsneltoetsen"
+      ],
+      "Desktop app navigation": [
+        "Navigatie via desktop-app"
       ]
     },
     "Label": {
@@ -10154,6 +10230,9 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Email categories": [
+        "E-mailcategorieën"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12916,6 +12995,12 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Search": [
+        "Zoeken"
+      ],
+      "Search for users or addresses": [
+        "Naar gebruikers of adressen zoeken"
       ]
     },
     "Placeholder for contact group name": {
@@ -16142,6 +16227,15 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Help mee de toekomst van e-mailcategorieën vorm te geven in ${ MAIL_APP_NAME }"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migreer uw organisatie naar ${ BRAND_NAME }"
+      ],
+      "Verify your password": [
+        "Controleer uw wachtwoord"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16728,6 +16822,180 @@
       ],
       "Passcode:": [
         "Toegangscode:"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Geactiveerd"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Calendar": [
+        "Agenda"
+      ],
+      "Configure migration": [
+        "Migratie configureren"
+      ],
+      "Contact your administrator to start a migration.": [
+        "Neem contact op met uw beheerder om een ​​migratie te starten."
+      ],
+      "Contacts": [
+        "Contacten"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Gegevensmigratiestatus van Google Workspace naar ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "E-mails"
+      ],
+      "Estimated size": [
+        "Geschatte grootte."
+      ],
+      "Has errors": [
+        "Bevat fouten"
+      ],
+      "In progress": [
+        "Bezig"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Lidadres niet gevonden. Neem contact op met de klantenservice om dit op te lossen"
+      ],
+      "Migrate": [
+        "Migreer"
+      ],
+      "Migrated": [
+        "Gemigreerd"
+      ],
+      "Migration status": [
+        "Migratiestatus"
+      ],
+      "Missing organization private key": [
+        "Ontbrekende privésleutel van de organisatie"
+      ],
+      "Missing organization public key": [
+        "Ontbrekende openbare sleutel van de organisatie"
+      ],
+      "No users to display": [
+        "Geen gebruikers om weer te geven"
+      ],
+      "Not activated": [
+        "Niet geactiveerd"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisatie heeft onvoldoende licenties beschikbaar"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisatie heeft onvoldoende opslagruimte beschikbaar"
+      ],
+      "Pending": [
+        "In behandeling"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selecteer precies wat u wilt migreren. Het is van toepassing op alle organisatiegebruikers."
+      ],
+      "Select users to migrate": [
+        "Selecteer gebruikers om te migreren"
+      ],
+      "Size": [
+        "Grootte"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Gebruiker"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Gebruikers die toegang hebben gehad tot hun ${ BRAND_NAME }-account"
+      ],
+      "What are you migrating?": [
+        "Wat migreert u?"
+      ],
+      "You": [
+        "U"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Schakel over naar ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Schakel over naar ${ MAIL_APP_NAME }"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Pak de aanbieding"
+      ],
+      "Summer Sale": [
+        "Zomer Sale"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/maandelijks"
+      ],
+      "15 GB storage": [
+        "15 GB opslag"
+      ],
+      "2 TB data storage": [
+        "2 TB dataopslag"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB opslag: 40x uw huidige abonnement"
+      ],
+      "3 TB data storage": [
+        "3 TB dataopslag"
+      ],
+      "500 GB storage": [
+        "500 GB opslag"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium-functies van ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium-functies van ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus eindigt."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Volledige toegang tot ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Afzonderlijke accounts voor 6 gebruikers"
+      ],
+      "Individual accounts for you and a partner": [
+        "Afzonderlijke accounts voor u en een partner"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online document- en spreadsheetbewerker"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Stronger protection against cyber threats": [
+        "Krachtigere bescherming tegen cyberdreigingen"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Stap over op ons jaarabonnement en bespaar ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Onbeperkte mappen, labels en filters"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "gedurende 12 maanden"
+      ],
+      "SUMMER SALE": [
+        "ZOMER SALE"
       ]
     }
   }

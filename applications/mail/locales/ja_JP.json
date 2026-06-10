@@ -5166,6 +5166,27 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "一致する項目が多すぎるため、検索対象をより絞り込んでもう一度お試しください。"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "すべてのストレージ容量が割り当てられています。他のユーザーに割り当てられたストレージ容量を小さくしてください。"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "アドレスを追加する前にカスタム ドメインを構成してください。"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "ユーザーを組織に追加する前に、独自ドメインを設定してください。"
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "組織にユーザーを追加する前に、マルチユーザー対応を有効にしてください。"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "複数のユーザーを管理するには、複数のユーザーを含むビジネスプランにアップグレードしてください。"
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "現在のプランで使用可能なアドレス数の上限に達しました。アドレスを追加するにはプランをアップグレードするか、アカウントに登録済みのアドレスを無効にしてください。"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "現在のプランでのユーザー数の上限に達しました。新規ユーザーを追加するにはアップグレードしてください。"
       ]
     },
     "error": {
@@ -8762,6 +8783,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "${ total } user found": [
+        "${ total } 人のユーザーが見つかりました"
       ]
     },
     "info": {
@@ -12458,6 +12482,9 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Search": [
+        "検索"
       ]
     },
     "Placeholder for contact group name": {
@@ -16100,6 +16127,107 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "カレンダー"
+      ],
+      "Configure migration": [
+        "移行を設定"
+      ],
+      "Contacts": [
+        "連絡先"
+      ],
+      "Estimated size": [
+        "推定サイズ"
+      ],
+      "Migration status": [
+        "移行ステータス"
+      ],
+      "Organization does not have enough seats available": [
+        "組織には十分なシートがありません"
+      ],
+      "Organization does not have enough storage available": [
+        "組織には十分なストレージがありません"
+      ],
+      "User": [
+        "ユーザー"
+      ],
+      "What are you migrating?": [
+        "何を移行しますか？"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "特典を利用する"
+      ],
+      "Summer Sale": [
+        "サマーセール"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/月"
+      ],
+      "15 GB storage": [
+        "15 GB ストレージ"
+      ],
+      "2 TB data storage": [
+        "2 TB データストレージ"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB ストレージで現在のプランの40倍に"
+      ],
+      "3 TB data storage": [
+        "3 TB データストレージ"
+      ],
+      "500 GB storage": [
+        "500 GB ストレージ"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、および${ CALENDAR_SHORT_APP_NAME }のすべてのプレミアム機能"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、および${ CALENDAR_SHORT_APP_NAME }のすべてのプレミアム機能"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "割引は通常の月額料金を基準に適用されています。サブスクリプションは、請求期間終了後に通常の年額料金で更新されます。"
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME }へのフルアクセス"
+      ],
+      "Individual accounts for 6 users": [
+        "6ユーザー分の個別アカウント"
+      ],
+      "Individual accounts for you and a partner": [
+        "お客様用とパートナー様用の個別アカウント"
+      ],
+      "Online document and spreadsheet editor": [
+        "オンラインのドキュメントおよびスプレッドシートエディター"
+      ],
+      "Recover previous file versions": [
+        "ファイルの以前のバージョンを復元"
+      ],
+      "Stronger protection against cyber threats": [
+        "サイバー脅威に対するより強力な保護"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "年間プランに切り替えて、${ toYearlyDiscountAmount }お得に！"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "無制限のフォルダー、ラベル、フィルター"
+      ],
+      "Use your own email domain": [
+        "独自のメールドメインを使用"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12か月プラン"
+      ],
+      "SUMMER SALE": [
+        "サマーセール"
       ]
     }
   }
