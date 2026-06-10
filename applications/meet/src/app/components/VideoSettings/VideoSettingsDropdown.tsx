@@ -83,6 +83,7 @@ const VideoSettingsDropdownComponent = ({
                             onChange={() => {
                                 void withLoadingBackgroundBlur(toggleBackgroundBlur());
                             }}
+                            withTooltip
                         />
                     </div>
                 </div>

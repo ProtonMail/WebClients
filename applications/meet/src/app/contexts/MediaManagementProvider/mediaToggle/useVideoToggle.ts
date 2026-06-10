@@ -32,7 +32,12 @@ const getVideoTrackPublications = (localParticipant: LocalParticipant) => {
     );
 };
 
-export const useVideoToggle = (switchActiveDevice: SwitchActiveDevice) => {
+interface UseVideoToggleParams {
+    switchActiveDevice: SwitchActiveDevice;
+    isUseSimpleSegmentationEnabled: boolean;
+}
+
+export const useVideoToggle = ({ switchActiveDevice, isUseSimpleSegmentationEnabled }: UseVideoToggleParams) => {
     const { reportMeetError: reportError } = useMeetErrorReporting();
 
     const dispatch = useMeetDispatch();
@@ -283,12 +288,12 @@ export const useVideoToggle = (switchActiveDevice: SwitchActiveDevice) => {
     }, [localParticipant, backgroundBlur]);
 
     useEffect(() => {
-        backgroundBlurProcessorInstanceRef.current = createBackgroundProcessor();
+        backgroundBlurProcessorInstanceRef.current = createBackgroundProcessor(isUseSimpleSegmentationEnabled);
         return () => {
             backgroundBlurProcessorInstanceRef.current?.disable?.();
             void backgroundBlurProcessorInstanceRef.current?.destroy?.();
         };
-    }, []);
+    }, [isUseSimpleSegmentationEnabled]);
 
     // Too frequent toggling can freeze the page completely
     const debouncedToggleBackgroundBlur = useMemo(
