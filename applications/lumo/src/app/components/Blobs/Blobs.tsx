@@ -3,7 +3,11 @@ import { useEffect, useRef } from 'react';
 
 import type { MaybeNull } from '@proton/pass/types/utils';
 
+import { useLumoTheme } from '../../providers';
+
 import './Blobs.scss';
+
+const DOT_COLOR_CSS_VAR = '--background-main-canvas';
 
 const DOTS = {
     /** Distance between neighbouring dot centres. Larger = sparser grid. */
@@ -11,9 +15,13 @@ const DOTS = {
     /** Radius of each dot. */
     radius: 1.5,
     /** Dot colour. */
-    color: '#FFFFFF',
+    // color: '#FFFFFF',
     /** Opacity of the brightest dot (0–1). Dots fade out towards the edges. */
     maxOpacity: 1,
+};
+
+const getDotColor = () => {
+    return getComputedStyle(document.documentElement).getPropertyValue(DOT_COLOR_CSS_VAR).trim() || '#FFFFFF';
 };
 
 const renderDots = (canvas: MaybeNull<HTMLCanvasElement>) => {
@@ -34,7 +42,7 @@ const renderDots = (canvas: MaybeNull<HTMLCanvasElement>) => {
     const maxDistance = Math.hypot(centerX, centerY);
 
     ctx.clearRect(0, 0, width, height);
-    ctx.fillStyle = DOTS.color;
+    ctx.fillStyle = getDotColor();
 
     for (let y = spacing / 2; y < height; y += spacing) {
         for (let x = spacing / 2; x < width; x += spacing) {
@@ -54,17 +62,24 @@ const renderDots = (canvas: MaybeNull<HTMLCanvasElement>) => {
 
 export const Blobs: FC = () => {
     const ref = useRef<HTMLCanvasElement>(null);
+    const { theme } = useLumoTheme();
 
     useEffect(() => {
         const canvas = ref.current;
-        if (!canvas) return;
+        if (!canvas) {
+            return;
+        }
 
         renderDots(canvas);
 
-        const observer = new ResizeObserver(() => renderDots(canvas));
+        const observer = new ResizeObserver(() => {
+            renderDots(canvas);
+        });
         observer.observe(canvas);
-        return () => observer.disconnect();
-    }, []);
+        return () => {
+            observer.disconnect();
+        };
+    }, [theme]);
 
     return (
         <div className="lumo--blobs" aria-hidden="true">
