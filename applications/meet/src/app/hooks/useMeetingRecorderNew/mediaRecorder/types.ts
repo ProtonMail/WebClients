@@ -5,7 +5,7 @@ import type { RecordingCodec } from '../codec/types';
 export interface MeetMediaRecorderOptions {
     audioTracks: MediaStreamTrack[];
     videoTracks: MediaStreamTrack[];
-    primaryCodec: RecordingCodec;
+    codec: RecordingCodec;
     onChunk: (chunk: Blob) => void;
     onEmptyChunk: () => void;
     onRuntimeError: (error: Error | null) => void;

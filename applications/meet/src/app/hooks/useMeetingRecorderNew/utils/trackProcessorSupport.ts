@@ -7,7 +7,6 @@ export const supportsTrackProcessor = () => {
 
 export const createMediaStreamTrackProcessor = (track: MediaStreamTrack) => {
     try {
-        // @ts-expect-error - MediaStreamTrackProcessor is not yet in TypeScript types
         return new MediaStreamTrackProcessor({ track });
     } catch {
         return null;
