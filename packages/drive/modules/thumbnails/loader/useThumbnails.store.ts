@@ -2,6 +2,7 @@ import { ThumbnailType } from '@protontech/drive-sdk';
 import { create } from 'zustand';
 
 import { handleSdkError } from '../../../legacy/errorHandling';
+import { getCachedThumbnail, setCachedThumbnail } from '../encryptedThumbnailCache';
 import { logger } from './logger';
 import type { DriveClient, ThumbnailData, ThumbnailRequest } from './types';
 
@@ -108,33 +109,62 @@ const processBatch = async (
 
     const statusKey = getStatusKey(batch.thumbnailType);
     const urlKey = getUrlKey(batch.thumbnailType);
+    const cacheType = isHdType(batch.thumbnailType) ? 'hd' : 'sd';
 
     batch.isProcessing = true;
     const allItems = Array.from(batch.pendingItems.values());
     allItems.forEach((item) => batch.pendingItems.delete(item.nodeUid));
-    const itemsToProcess = allItems.filter(shouldProcess);
+    let itemsToProcess = allItems.filter(shouldProcess);
+
+    // Read-through persistent cache: for items that opted in via `usePersistentCache`,
+    // serve them from the encrypted cache and only fetch the misses from the SDK.
+    if (itemsToProcess.some((item) => item.usePersistentCache)) {
+        const lookups = await Promise.all(
+            itemsToProcess.map(async (item) => ({
+                item,
+                cached: item.usePersistentCache ? await getCachedThumbnail(storeKeyOf(item), cacheType) : undefined,
+            }))
+        );
+        const misses: ThumbnailRequest[] = [];
+        for (const { item, cached } of lookups) {
+            if (cached && shouldProcess(item)) {
+                const url = URL.createObjectURL(new Blob([cached], { type: 'image/jpeg' }));
+                attempted.add(attemptedKey(storeKeyOf(item), batch.thumbnailType));
+                setThumbnailData(storeKeyOf(item), { [statusKey]: 'loaded', [urlKey]: url });
+                logger.debug(`Thumbnail loaded from cache: ${storeKeyOf(item)}`);
+            } else {
+                misses.push(item);
+            }
+        }
+        itemsToProcess = misses;
+    }
+
     const uidsToProcess = itemsToProcess.map((item) => item.nodeUid);
 
     logger.debug(`Processing batch of ${uidsToProcess.length} thumbnails (type: ${batch.thumbnailType})`);
 
     try {
-        for await (const thumbnailResult of drive.iterateThumbnails(uidsToProcess, batch.thumbnailType)) {
-            const item = itemsToProcess.find((item) => item.nodeUid === thumbnailResult.nodeUid);
-            if (!item || !shouldProcess(item)) {
-                continue;
-            }
+        if (uidsToProcess.length > 0) {
+            for await (const thumbnailResult of drive.iterateThumbnails(uidsToProcess, batch.thumbnailType)) {
+                const item = itemsToProcess.find((item) => item.nodeUid === thumbnailResult.nodeUid);
+                if (!item || !shouldProcess(item)) {
+                    continue;
+                }
 
-            attempted.add(attemptedKey(storeKeyOf(item), batch.thumbnailType));
+                attempted.add(attemptedKey(storeKeyOf(item), batch.thumbnailType));
 
-            if (thumbnailResult.ok) {
-                const url = URL.createObjectURL(
-                    new Blob([thumbnailResult.thumbnail as Uint8Array<ArrayBuffer>], { type: 'image/jpeg' })
-                );
-                setThumbnailData(storeKeyOf(item), { [statusKey]: 'loaded', [urlKey]: url });
-                logger.debug(`Thumbnail loaded: ${storeKeyOf(item)} (type: ${batch.thumbnailType})`);
-            } else {
-                setThumbnailData(storeKeyOf(item), { [statusKey]: 'loaded' });
-                logger.debug(`Thumbnail not available: ${storeKeyOf(item)} (type: ${batch.thumbnailType})`);
+                if (thumbnailResult.ok) {
+                    const thumbnailBytes = thumbnailResult.thumbnail as Uint8Array<ArrayBuffer>;
+                    const url = URL.createObjectURL(new Blob([thumbnailBytes], { type: 'image/jpeg' }));
+                    setThumbnailData(storeKeyOf(item), { [statusKey]: 'loaded', [urlKey]: url });
+                    if (item.usePersistentCache) {
+                        void setCachedThumbnail(storeKeyOf(item), cacheType, thumbnailBytes);
+                    }
+                    logger.debug(`Thumbnail loaded: ${storeKeyOf(item)} (type: ${batch.thumbnailType})`);
+                } else {
+                    setThumbnailData(storeKeyOf(item), { [statusKey]: 'loaded' });
+                    logger.debug(`Thumbnail not available: ${storeKeyOf(item)} (type: ${batch.thumbnailType})`);
+                }
             }
         }
     } catch (error) {
