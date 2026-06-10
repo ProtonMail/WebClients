@@ -45,6 +45,7 @@
         "react-redux": "^9.2.0"
     },
     "devDependencies": {
+        "@proton/testing": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
         "@vitest/coverage-v8": "^4.1.7",

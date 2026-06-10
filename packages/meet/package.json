@@ -26,6 +26,7 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
+        "@proton/testing": "workspace:packages/testing",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
         "@vitejs/plugin-react": "^6.0.2",
