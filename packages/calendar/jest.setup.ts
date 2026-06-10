@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom/jest-globals';
 
 import '@proton/testing/lib/mockMatchMedia';
+import '@proton/testing/lib/mockTelemetry';
 import '@proton/testing/lib/mockUnleash';
 
 window.ResizeObserver = jest.fn().mockImplementation(() => ({
