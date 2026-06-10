@@ -2,17 +2,11 @@ import type { PropsWithChildren } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    Dropdown,
-    DropdownMenu,
-    DropdownSizeUnit,
-    Icon,
-    SidebarPrimaryButton,
-    usePopperAnchor,
-} from '@proton/components';
+import { Dropdown, DropdownMenu, DropdownSizeUnit, SidebarPrimaryButton, usePopperAnchor } from '@proton/components';
 import { generateNodeUid } from '@proton/drive/index';
 import { useCreateFolderModal } from '@proton/drive/modals/createFolderModal';
 import { uploadManager } from '@proton/drive/modules/upload';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
@@ -62,7 +56,7 @@ export const ActionMenuButton = ({ disabled, className, collapsed }: PropsWithCh
                 )}
                 onClick={toggle}
             >
-                <Icon className={clsx(!collapsed && 'mr-2', collapsed && 'flex mx-auto')} name="plus" />
+                <IcPlus className={clsx(!collapsed && 'mr-2', collapsed && 'flex mx-auto')} />
                 {!collapsed && (
                     <>
                         {

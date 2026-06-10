@@ -7,7 +7,6 @@ import type { ModalStateProps } from '@proton/components';
 import {
     DriveLogo,
     Form,
-    Icon,
     InputFieldTwo,
     ModalTwo,
     ModalTwoContent,
@@ -16,6 +15,7 @@ import {
     useApi,
     useModalTwoStatic,
 } from '@proton/components';
+import { IcGift } from '@proton/icons/icons/IcGift';
 import { PLANS } from '@proton/payments';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCheckEmailAvailability } from '@proton/shared/lib/api/user';
@@ -151,7 +151,7 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
                     value={email}
                 />
                 <span className="flex items-center gap-1">
-                    <Icon className="color-primary" name="gift" />
+                    <IcGift className="color-primary" />
                     {c('Info').t`Free 5GB encrypted storage to get started`}
                 </span>
             </ModalTwoContent>
