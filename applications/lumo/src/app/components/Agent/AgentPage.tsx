@@ -30,7 +30,7 @@ import {
 import type { CustomAgent } from '../../redux/slices/lumoUserSettings';
 import { ComposerMode, type ConversationId, ConversationStatus } from '../../types';
 import { ComposerComponent } from '../Composer/ComposerComponent';
-import ConversationComponent from '../Conversation/ConversationComponent';
+import AgentConversationComponent from './AgentConversationComponent';
 
 import '../Conversation/Conversation.scss';
 
@@ -151,13 +151,12 @@ const AgentPageInner = () => {
                         />
                     </div>
                 ) : (
-                    <ConversationComponent
+                    <AgentConversationComponent
                         key={curConversationId}
                         conversation={conversation}
                         isGenerating={isGenerating}
                         isProcessingAttachment={isProcessingAttachment}
                         initialQuery={initialQuery || undefined}
-                        isAgent
                     />
                 )}
             </div>
