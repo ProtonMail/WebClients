@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useRef } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import { Redirect, Route, Switch, matchPath, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -59,6 +59,7 @@ import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SETUP_ADDRESS_PATH, VPN_TV_PATHS, VPN_TV_PATH_WITH_CODE } from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
@@ -68,7 +69,7 @@ import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 import { GetStartedOnboarding } from '@proton/vpn/components/Onboarding';
 import { TVContainer, TvContainerSignedIn } from '@proton/vpn/components/tv';
-import { useB2BAdminSidebarFeature } from '@proton/vpn/hooks/useB2BAdminSidebarFeature';
+import { NavigationProvider, useB2BAdminNavigation } from '@proton/vpn/contexts/navigation';
 
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
 import { recoveryIds } from '../containers/account/recoveryIds';
@@ -161,6 +162,21 @@ const getDefaultRedirect = (accountRoutes: ReturnType<typeof getRoutes>['account
         }
     });
     return config?.to || '';
+};
+
+const SettingsSearchArea = ({ app, routes }: { app: APP_NAMES; routes: ReturnType<typeof getRoutes> }) => {
+    const { viewportWidth } = useActiveBreakpoint();
+    const adminSidebar = useB2BAdminNavigation();
+
+    if (!viewportWidth['>=large']) {
+        return null;
+    }
+
+    if (adminSidebar.enabled && adminSidebar.sidebar.status) {
+        return <AutocompleteSettingsSearch options={adminSidebar.settings} />;
+    }
+
+    return <SettingsSearch routes={routes} app={app} />;
 };
 
 const MainContainer = () => {
@@ -377,24 +393,6 @@ const MainContainer = () => {
         </TopBanners>
     );
 
-    const navigationRef = useRef<HTMLDivElement>(null);
-    const adminSidebar = useB2BAdminSidebarFeature({
-        prefix: pathPrefix,
-        navigationRef,
-    });
-
-    const settingsSearch = () => {
-        if (!viewportWidth['>=large']) {
-            return null;
-        }
-
-        if (adminSidebar.enabled && adminSidebar.sidebar.status) {
-            return <AutocompleteSettingsSearch options={adminSidebar.settings} />;
-        }
-
-        return <SettingsSearch routes={routes} app={app} />;
-    };
-
     const header = (
         <PrivateHeader
             userDropdown={<UserDropdown app={app} sessionOptions={{ path: pathPrefix }} />}
@@ -404,7 +402,7 @@ const MainContainer = () => {
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isSmallViewport={viewportWidth['<=small']}
-            actionArea={settingsSearch()}
+            actionArea={<SettingsSearchArea app={app} routes={routes} />}
             app={app}
             onBoardingButton={app === APPS.PROTONVPN_SETTINGS && <GetStartedOnboarding />}
         />
@@ -418,8 +416,6 @@ const MainContainer = () => {
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             routes={routes}
-            adminSidebar={adminSidebar}
-            navigationRef={navigationRef}
         />
     );
 
@@ -520,98 +516,100 @@ const MainContainer = () => {
 
     return (
         <SubscriptionModalProvider app={app}>
-            <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
-                <AccountStartupModals />
-                <FeatureTour />
-                <Switch>
-                    <Route path={anyAccountAppRoute}>
-                        <AccountSettingsRouter
-                            app={app}
-                            path={pathPrefix}
-                            accountAppRoutes={routes.account}
-                            redirect={redirect}
-                        />
-                    </Route>
-                    <Route path={[getTrustedContactRoute(`/${appSlug}`), getTrustedContactRoute()]}>
-                        <Redirect
-                            to={`/${appSlug}${routes.account.routes.recovery.to}${location.search}${location.hash || `#${recoveryIds.emergencyAccess}`}`}
-                        />
-                    </Route>
-                    <Route path={anyOrganizationAppRoute}>
-                        <OrganizationSettingsRouter
-                            app={app}
-                            path={pathPrefix}
-                            organizationAppRoutes={routes.organization}
-                            redirect={redirect}
-                            user={user}
-                            organization={organization}
-                            subscription={subscription}
-                        />
-                    </Route>
-                    <Route path={anyMspAppRoute}>
-                        <MspSettingsRouter path={pathPrefix} mspAppRoutes={routes.msp} redirect={redirect} />
-                    </Route>
-                    <Route path={`/${appSlug}${CANCEL_ROUTE}`}>
-                        <CancellationReminderSection app={app} />
-                    </Route>
-                    <Route path={`/${mailSlug}`}>
-                        <Suspense fallback={<PrivateMainAreaLoading />}>
-                            <MailSettingsRouter mailAppRoutes={routes.mail} redirect={redirect} />
-                        </Suspense>
-                    </Route>
-                    <Route path={`/${calendarSlug}`}>
-                        <Suspense fallback={<PrivateMainAreaLoading />}>
-                            <ContactEmailsProvider>
-                                <CalendarSettingsRouter
-                                    user={user}
-                                    subscription={subscription}
-                                    calendarAppRoutes={routes.calendar}
-                                    redirect={redirect}
-                                />
-                            </ContactEmailsProvider>
-                        </Suspense>
-                    </Route>
-                    <Route path={`/${vpnSlug}`}>
-                        <Suspense fallback={<PrivateMainAreaLoading />}>
-                            <VpnSettingsRouter vpnAppRoutes={routes.vpn} redirect={redirect} />
-                        </Suspense>
-                    </Route>
-                    <Route path={`/${driveSlug}`}>
-                        <Suspense fallback={<PrivateMainAreaLoading />}>
-                            <DriveSettingsRouter driveAppRoutes={routes.drive} redirect={redirect} />
-                        </Suspense>
-                    </Route>
-                    <Route path={`/${docsSlug}`}>
-                        <Suspense fallback={<PrivateMainAreaLoading />}>
-                            <DocsSettingsRouter docsAppRoutes={routes.docs} redirect={redirect} />
-                        </Suspense>
-                    </Route>
-                    <Route path={`/${walletSlug}`}>
-                        <Suspense fallback={<PrivateMainAreaLoading />}>
-                            <WalletSettingsRouter walletAppRoutes={routes.wallet} redirect={redirect} />
-                        </Suspense>
-                    </Route>
-                    <Route path={`/${passSlug}`}>
-                        <Suspense fallback={<PrivateMainAreaLoading />}>
-                            <PassSettingsRouter passAppRoutes={routes.pass} redirect={redirect} />
-                        </Suspense>
-                    </Route>
-                    <Route path={`/${meetSlug}`}>
-                        <Suspense fallback={<PrivateMainAreaLoading />}>
-                            <MeetSettingsRouter meetAppRoutes={routes.meet} redirect={redirect} />
-                        </Suspense>
-                    </Route>
-                    <Route path={`/${authenticatorSlug}`}>
-                        <Suspense fallback={<PrivateMainAreaLoading />}>
-                            <AuthenticatorSettingsRouter
-                                authenticatorAppRoutes={routes.authenticator}
+            <NavigationProvider prefix={pathPrefix}>
+                <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
+                    <AccountStartupModals />
+                    <FeatureTour />
+                    <Switch>
+                        <Route path={anyAccountAppRoute}>
+                            <AccountSettingsRouter
+                                app={app}
+                                path={pathPrefix}
+                                accountAppRoutes={routes.account}
                                 redirect={redirect}
                             />
-                        </Suspense>
-                    </Route>
-                    {redirect}
-                </Switch>
-            </PrivateAppContainer>
+                        </Route>
+                        <Route path={[getTrustedContactRoute(`/${appSlug}`), getTrustedContactRoute()]}>
+                            <Redirect
+                                to={`/${appSlug}${routes.account.routes.recovery.to}${location.search}${location.hash || `#${recoveryIds.emergencyAccess}`}`}
+                            />
+                        </Route>
+                        <Route path={anyOrganizationAppRoute}>
+                            <OrganizationSettingsRouter
+                                app={app}
+                                path={pathPrefix}
+                                organizationAppRoutes={routes.organization}
+                                redirect={redirect}
+                                user={user}
+                                organization={organization}
+                                subscription={subscription}
+                            />
+                        </Route>
+                        <Route path={anyMspAppRoute}>
+                            <MspSettingsRouter path={pathPrefix} mspAppRoutes={routes.msp} redirect={redirect} />
+                        </Route>
+                        <Route path={`/${appSlug}${CANCEL_ROUTE}`}>
+                            <CancellationReminderSection app={app} />
+                        </Route>
+                        <Route path={`/${mailSlug}`}>
+                            <Suspense fallback={<PrivateMainAreaLoading />}>
+                                <MailSettingsRouter mailAppRoutes={routes.mail} redirect={redirect} />
+                            </Suspense>
+                        </Route>
+                        <Route path={`/${calendarSlug}`}>
+                            <Suspense fallback={<PrivateMainAreaLoading />}>
+                                <ContactEmailsProvider>
+                                    <CalendarSettingsRouter
+                                        user={user}
+                                        subscription={subscription}
+                                        calendarAppRoutes={routes.calendar}
+                                        redirect={redirect}
+                                    />
+                                </ContactEmailsProvider>
+                            </Suspense>
+                        </Route>
+                        <Route path={`/${vpnSlug}`}>
+                            <Suspense fallback={<PrivateMainAreaLoading />}>
+                                <VpnSettingsRouter vpnAppRoutes={routes.vpn} redirect={redirect} />
+                            </Suspense>
+                        </Route>
+                        <Route path={`/${driveSlug}`}>
+                            <Suspense fallback={<PrivateMainAreaLoading />}>
+                                <DriveSettingsRouter driveAppRoutes={routes.drive} redirect={redirect} />
+                            </Suspense>
+                        </Route>
+                        <Route path={`/${docsSlug}`}>
+                            <Suspense fallback={<PrivateMainAreaLoading />}>
+                                <DocsSettingsRouter docsAppRoutes={routes.docs} redirect={redirect} />
+                            </Suspense>
+                        </Route>
+                        <Route path={`/${walletSlug}`}>
+                            <Suspense fallback={<PrivateMainAreaLoading />}>
+                                <WalletSettingsRouter walletAppRoutes={routes.wallet} redirect={redirect} />
+                            </Suspense>
+                        </Route>
+                        <Route path={`/${passSlug}`}>
+                            <Suspense fallback={<PrivateMainAreaLoading />}>
+                                <PassSettingsRouter passAppRoutes={routes.pass} redirect={redirect} />
+                            </Suspense>
+                        </Route>
+                        <Route path={`/${meetSlug}`}>
+                            <Suspense fallback={<PrivateMainAreaLoading />}>
+                                <MeetSettingsRouter meetAppRoutes={routes.meet} redirect={redirect} />
+                            </Suspense>
+                        </Route>
+                        <Route path={`/${authenticatorSlug}`}>
+                            <Suspense fallback={<PrivateMainAreaLoading />}>
+                                <AuthenticatorSettingsRouter
+                                    authenticatorAppRoutes={routes.authenticator}
+                                    redirect={redirect}
+                                />
+                            </Suspense>
+                        </Route>
+                        {redirect}
+                    </Switch>
+                </PrivateAppContainer>
+            </NavigationProvider>
         </SubscriptionModalProvider>
     );
 };
