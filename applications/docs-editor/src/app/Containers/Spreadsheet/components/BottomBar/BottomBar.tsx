@@ -97,7 +97,7 @@ const SheetSwitcher = memo(function SheetSwitcher() {
   const mounted = Ariakit.useStoreState(menu, 'mounted')
 
   return (
-    <div className="py-0.5">
+    <div className="shrink-0 py-0.5">
       <Ariakit.MenuProvider store={menu}>
         <Ariakit.MenuButton render={<IconButton legacyIconName="hamburger">{s('All sheets')}</IconButton>} />
         {mounted && <SheetSwitcherMenu />}
