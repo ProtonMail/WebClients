@@ -298,6 +298,7 @@ export const DeviceSettings = ({
                         noBorder={false}
                         buttonStyle={circleButtonStyle}
                         ariaLabel={microphoneButtonAriaLabel}
+                        ariaPressed={microphoneHasWarning ? undefined : isMicrophoneEnabled}
                     />
 
                     <CircleButton
@@ -310,6 +311,7 @@ export const DeviceSettings = ({
                         noBorder={false}
                         buttonStyle={circleButtonStyle}
                         ariaLabel={cameraButtonAriaLabel}
+                        ariaPressed={cameraHasWarning ? undefined : isCameraEnabled}
                     />
                 </div>
             </div>
