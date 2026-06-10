@@ -48,7 +48,6 @@ export const supportsTrackProcessor = () => {
 export const createMediaStreamTrackProcessor = (track: MediaStreamTrack) => {
     try {
         // In Safari, MediaStreamTrackProcessor is available in Worker context
-        // @ts-expect-error - MediaStreamTrackProcessor is not yet in TypeScript types
         return new MediaStreamTrackProcessor({ track });
     } catch (error) {
         return null;

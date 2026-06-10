@@ -11,6 +11,7 @@ export interface ChunkWatchdogOptions {
     intervalMs?: number;
     primingThresholdMs?: number;
     stallThresholdMs?: number;
+    isWebCodecs: boolean;
 }
 
 export interface ChunkWatchdog {

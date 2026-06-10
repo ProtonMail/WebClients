@@ -15916,6 +15916,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/dom-mediacapture-transform@npm:^0.1.11":
+  version: 0.1.11
+  resolution: "@types/dom-mediacapture-transform@npm:0.1.11"
+  dependencies:
+    "@types/dom-webcodecs": "npm:*"
+  checksum: 10/7e989c819db9378d5317683c4a9a99bc66397430fff07491faffce47f3b8d81039ccbce74ad93aa9f0bf527f30e1ac06466e9b6bdbeafbb620544560365e3ea2
+  languageName: node
+  linkType: hard
+
+"@types/dom-webcodecs@npm:*":
+  version: 0.1.18
+  resolution: "@types/dom-webcodecs@npm:0.1.18"
+  checksum: 10/889ffea2c849ed3d23a2486b9eb3ad4da038cacc2bfe538da87e19cf9cad3c98fd29046e36c21725f01bb75d556eec85119ad39575a455d8b1529be95660c966
+  languageName: node
+  linkType: hard
+
+"@types/dom-webcodecs@npm:0.1.13":
+  version: 0.1.13
+  resolution: "@types/dom-webcodecs@npm:0.1.13"
+  checksum: 10/99cb227416725efd4b22175ef18988ae3fc728480fe6ed2192777d7dba52d18af540b4df49fcfa3cf73753d1dcf9d5399b089702bde215d78679284848b078f7
+  languageName: node
+  linkType: hard
+
 "@types/eslint-plugin-jsx-a11y@npm:^6.10.1":
   version: 6.10.1
   resolution: "@types/eslint-plugin-jsx-a11y@npm:6.10.1"
@@ -36461,6 +36484,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mediabunny@npm:^1.0.0":
+  version: 1.45.4
+  resolution: "mediabunny@npm:1.45.4"
+  dependencies:
+    "@types/dom-mediacapture-transform": "npm:^0.1.11"
+    "@types/dom-webcodecs": "npm:0.1.13"
+  checksum: 10/021683247cd0dc110bcf32f8e4cbb78d188e9ecb54a53daba75ab81523f97a24427aaf075bdfc1aad744f9ff00f11658b5afa42463c5bb2167473edf28b20911
+  languageName: node
+  linkType: hard
+
 "mem@npm:^4.3.0":
   version: 4.3.0
   resolution: "mem@npm:4.3.0"
@@ -41988,6 +42021,7 @@ __metadata:
     eslint: "npm:^9.39.4"
     happy-dom: "npm:^20.9.0"
     livekit-client: "npm:2.18.9"
+    mediabunny: "npm:^1.0.0"
     prettier: "npm:^3.8.3"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
