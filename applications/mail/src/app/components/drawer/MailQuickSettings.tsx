@@ -15,6 +15,7 @@ import { QuickSettingsRequestNotifications } from '@proton/components/components
 import QuickSettingsSectionRow from '@proton/components/components/drawer/views/quickSettings/QuickSettingsSectionRow';
 import DrawerAppScrollContainer from '@proton/components/components/drawer/views/shared/DrawerAppScrollContainer';
 import DrawerAppSection from '@proton/components/components/drawer/views/shared/DrawerAppSection';
+// eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import Icon from '@proton/components/components/icon/Icon';
 import { KeyTransparencyDetailsModal } from '@proton/components/components/keyTransparency';
 import Info from '@proton/components/components/link/Info';
