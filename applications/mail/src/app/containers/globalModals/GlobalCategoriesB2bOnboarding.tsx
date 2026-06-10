@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
@@ -12,6 +11,7 @@ import useApi from '@proton/components/hooks/useApi';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import useLoading from '@proton/hooks/useLoading';
+import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { updateMailCategoryView } from '@proton/shared/lib/api/mailSettings';
 import { MAILBOX_LABEL_IDS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -102,7 +102,7 @@ export const GlobalCategoriesB2bOnboarding = () => {
                             ).t`Continue without categories`}</Button>
                         </div>
                         <div className="flex justify-center">
-                            <Icon name="lock-filled" className="color-hint" />
+                            <IcLockFilled className="color-hint" />
                             <p className="text-sm text-center color-weak m-0 mt-1">{c('Info')
                                 .t`Categories work just like spam filters. ${MAIL_APP_NAME} never reads your emails or shares your data.`}</p>
                         </div>

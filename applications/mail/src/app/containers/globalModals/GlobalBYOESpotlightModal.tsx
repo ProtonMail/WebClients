@@ -3,13 +3,13 @@ import { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { IcLightLightbulb } from '@proton/icons/icons/IcLightLightbulb';
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import byoeSpolightImg from '@proton/styles/assets/img/illustrations/byoe-spotlight.svg';
 
@@ -73,7 +73,7 @@ export const GlobalBYOESpotlightModal = () => {
                             </div>
                             {forwardingCount > 0 && (
                                 <div className="border border-weak rounded flex flex-nowrap gap-2 p-3 color-weak text-left">
-                                    <Icon className="flex shrink-0 mt-0.5 mb-auto" name="light-lightbulb" />
+                                    <IcLightLightbulb className="flex shrink-0 mt-0.5 mb-auto" />
                                     <div>
                                         {c('Description').ngettext(
                                             msgid`You're forwarding emails from ${forwardingCount} Gmail address. By connecting it, you'll be able to both receive and reply in ${MAIL_APP_NAME}`,

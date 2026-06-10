@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Radio from '@proton/components/components/input/Radio';
 import SearchInput from '@proton/components/components/input/SearchInput';
@@ -17,6 +16,7 @@ import type { LabelModel } from '@proton/components/containers/labels/modals/Edi
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useLoading } from '@proton/hooks';
+import { IcFolder } from '@proton/icons/icons/IcFolder';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { useFolders } from '@proton/mail/store/labels/hooks';
@@ -226,7 +226,7 @@ const MoveDropdown = ({
                         data-testid="folder-dropdown:add-folder"
                         data-prevent-arrow-navigation
                     >
-                        <Icon name="folder" alt={c('Action').t`Create folder`} /> <span aria-hidden="true">+</span>
+                        <IcFolder alt={c('Action').t`Create folder`} /> <span aria-hidden="true">+</span>
                     </Button>
                 </Tooltip>
             </div>

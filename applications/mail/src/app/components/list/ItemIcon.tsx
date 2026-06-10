@@ -1,5 +1,7 @@
 import Icon from '@proton/components/components/icon/Icon';
 import useFolderColor from '@proton/components/hooks/useFolderColor';
+import { IcFolder } from '@proton/icons/icons/IcFolder';
+import { IcFolderFilled } from '@proton/icons/icons/IcFolderFilled';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 
 import type { FolderInfo } from '../../helpers/labels';
@@ -16,7 +18,11 @@ const ItemIcon = ({ folderInfo }: Props) => {
         return <Icon name={folderInfo.icon} alt={folderInfo.name} />;
     }
 
-    return <Icon name={color ? 'folder-filled' : 'folder'} color={color} alt={folderInfo.name} />;
+    return color ? (
+        <IcFolderFilled color={color} alt={folderInfo.name} />
+    ) : (
+        <IcFolder color={color} alt={folderInfo.name} />
+    );
 };
 
 export default ItemIcon;
