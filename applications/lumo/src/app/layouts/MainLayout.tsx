@@ -1,5 +1,4 @@
 import { type ReactNode, lazy } from 'react';
-import { useLocation } from 'react-router-dom';
 
 import HighLoadWarning from '../components/Notifications/HighLoadWarning';
 import { RightDrawer } from '../components/RightDrawer';
@@ -11,7 +10,6 @@ import { useIsGuest } from '../providers/IsGuestProvider';
 import { RightPanelProvider, useRightPanel } from '../providers/RightPanelProvider';
 import { SearchModalProvider, useSearchModal } from '../providers/SearchModalProvider';
 import { SidebarProvider } from '../providers/SidebarProvider';
-import { MainLayoutAnimatedBackground } from './MainLayoutAnimatedBackground';
 import LumoSidebar from './sidebar/LumoSidebar';
 
 import './MainLayout.scss';
@@ -25,18 +23,14 @@ interface Props {
 const MainLayoutContent = ({ children }: Props) => {
     const { openSearchModal } = useSearchModal();
     const { isOpen, toggle } = useRightPanel();
-    const location = useLocation();
 
     useGuestMigrationNotification();
     useResourceLimitNotifications();
 
     useKeyboardShortcuts({ onOpenSearch: openSearchModal });
 
-    const isRootRoute = location.pathname === '/';
-
     return (
         <div className="outer-layout-background relative reset4print flex flex-row h-full w-full overflow-hidden">
-            <MainLayoutAnimatedBackground hidden={!isRootRoute} />
             <div className="inner-layout-background absolute top-0 left-0 w-full h-full no-print">
                 <div className="flex flex-column flex-nowrap h-full flex-1 reset4print">
                     <div className="main-layout-component flex flex-row flex-nowrap flex-1 min-h-0 w-full reset4print relative md:p-2 md:gap-2">
