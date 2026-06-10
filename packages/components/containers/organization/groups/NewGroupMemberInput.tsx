@@ -2,8 +2,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import AddressesAutocompleteTwo from '@proton/components/components/v2/addressesAutocomplete/AddressesAutocomplete';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { RECIPIENT_TYPES } from '@proton/shared/lib/constants';
@@ -32,11 +34,14 @@ export const NewGroupMemberInput = ({
 }: Props) => {
     const { getMemberPublicKeys } = useGroupKeys();
     const { createNotification } = useNotifications();
+    const [permissions] = useOrgPermissions();
     const existingGroupMembers = convertGroupMemberToRecipient(groupMembers);
     const recipients = [...existingGroupMembers, ...newGroupMembers];
     const [processing, setProcessing] = useState(false);
+
     const [query, setQuery] = useState('');
     const [contactEmails, loading] = useMemberContactEmailsRemote(query, groupId);
+    const canReadUsers = !!permissions?.['account.user.read'];
 
     const handleAddRecipients = async (newRecipients: Recipient[]) => {
         setProcessing(true);
@@ -70,25 +75,35 @@ export const NewGroupMemberInput = ({
     };
 
     return (
-        <>
-            <AddressesAutocompleteTwo
-                id="group-autocomplete"
-                autoFocus
-                label={c('Label').t`Invite people`}
-                suffix={(processing || loading) && <CircleLoader size="small" />}
-                recipients={recipients}
-                onAddRecipients={handleAddRecipients}
-                contactEmails={contactEmails}
-                onChange={(value) => setQuery(value.trim())}
-                validate={emailValidator}
-                placeholder={c('Label').t`Enter name or email address`}
-                hasAddOnBlur
-                hasEmailPasting
-                inputClassName="p-3"
-            />
-            <Button color="norm" shape="ghost" size="small" className="p-1 mt-1" onClick={onAddAllOrgMembers}>
-                {c('Label').t`Add all organization members`}
-            </Button>
-        </>
+        <Tooltip title={!canReadUsers ? c('Label').t`You don't have permissions` : undefined} openDelay={100}>
+            <span>
+                <AddressesAutocompleteTwo
+                    id="group-autocomplete"
+                    autoFocus
+                    disabled={!canReadUsers}
+                    label={c('Label').t`Invite people`}
+                    suffix={(processing || loading) && <CircleLoader size="small" />}
+                    recipients={recipients}
+                    onAddRecipients={handleAddRecipients}
+                    contactEmails={contactEmails}
+                    onChange={(value) => setQuery(value.trim())}
+                    validate={emailValidator}
+                    placeholder={c('Label').t`Enter name or email address`}
+                    hasAddOnBlur
+                    hasEmailPasting
+                    inputClassName="p-3"
+                />
+                <Button
+                    color="norm"
+                    shape="ghost"
+                    size="small"
+                    className="p-1 mt-1"
+                    onClick={onAddAllOrgMembers}
+                    disabled={!canReadUsers}
+                >
+                    {c('Label').t`Add all organization members`}
+                </Button>
+            </span>
+        </Tooltip>
     );
 };

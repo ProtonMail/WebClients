@@ -156,7 +156,8 @@ const routesDefinition = {
                             id: 'organization.org-and-people.groups',
                             label: () => c('Title').t`Groups`,
                             to: '/user-groups',
-                            isVisible: ({ context }) => !context.needsOrgSetup,
+                            isVisible: ({ context }) =>
+                                !context.needsOrgSetup && !!context.permissions['account.group.read'],
                         },
                         {
                             id: 'organization.org-and-people.access-control',
