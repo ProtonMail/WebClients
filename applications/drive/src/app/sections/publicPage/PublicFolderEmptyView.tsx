@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcFileArrowInUp } from '@proton/icons/icons/IcFileArrowInUp';
+import { IcFolderArrowUp } from '@proton/icons/icons/IcFolderArrowUp';
 import emptySvg from '@proton/styles/assets/img/illustrations/empty-my-files.svg';
 import clsx from '@proton/utils/clsx';
 
@@ -25,11 +26,11 @@ export const PublicFolderEmptyView = ({ onUploadFile, onUploadFolder, uploadEnab
                 {uploadEnabled && (
                     <div className="flex gap-3 justify-center">
                         <Button className="flex items-center" onClick={onUploadFolder} size="medium">
-                            <Icon className="mr-2" name="folder-arrow-up" size={4} />
+                            <IcFolderArrowUp className="mr-2" size={4} />
                             {c('Action').t`Upload folder`}
                         </Button>
                         <Button className="flex items-center" onClick={onUploadFile} size="medium">
-                            <Icon className="mr-2" name="file-arrow-in-up" size={4} />
+                            <IcFileArrowInUp className="mr-2" size={4} />
                             {c('Action').t`Upload files`}
                         </Button>
                     </div>
