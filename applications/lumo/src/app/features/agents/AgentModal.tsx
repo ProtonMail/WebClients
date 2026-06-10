@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import {
-    Icon,
     InputFieldTwo,
     ModalTwo,
     ModalTwoContent,
@@ -14,6 +13,7 @@ import {
     Toggle,
 } from '@proton/components';
 import type { ModalStateProps } from '@proton/components';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useCustomAgents } from '../../hooks/useCustomAgents';
@@ -55,14 +55,11 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
             setHidden(!!existing?.hidden);
             setConversationStarters(existing?.conversationStarters ?? []);
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [modalProps.open, agentId]);
 
     // Always render one trailing empty field so there's a row to type into, up to the max.
     const starterFields =
-        conversationStarters.length < MAX_CONVERSATION_STARTERS
-            ? [...conversationStarters, '']
-            : conversationStarters;
+        conversationStarters.length < MAX_CONVERSATION_STARTERS ? [...conversationStarters, ''] : conversationStarters;
 
     const handleStarterChange = (index: number, value: string) => {
         setConversationStarters((prev) => {
@@ -104,9 +101,7 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
     };
 
     const isSaveDisabled = !name.trim();
-    const title = existing
-        ? c('collider_2025:Title').t`Edit agent`
-        : c('collider_2025:Title').t`Create agent`;
+    const title = existing ? c('collider_2025:Title').t`Edit agent` : c('collider_2025:Title').t`Create agent`;
 
     return (
         <ModalTwo {...modalProps} onClose={handleClose} size="large">
@@ -195,7 +190,7 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
                                             title={c('collider_2025:Action').t`Remove`}
                                             aria-label={c('collider_2025:Action').t`Remove`}
                                         >
-                                            <Icon name="cross" size={4} />
+                                            <IcCross size={4} />
                                         </Button>
                                     </div>
                                 );
