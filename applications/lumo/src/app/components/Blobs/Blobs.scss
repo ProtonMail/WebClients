@@ -67,6 +67,19 @@
 		}
 	}
 
+	&--static &-gradient {
+		animation: none;
+		opacity: $opacity;
+		transform: scale(1);
+		background-position: 50% 50%;
+
+		&::before,
+		&::after {
+			animation: none;
+			transform: translateX(0) scale(1.25);
+		}
+	}
+
 	@keyframes blobs-grow-in {
 		from {
 			transform: scale(0);
