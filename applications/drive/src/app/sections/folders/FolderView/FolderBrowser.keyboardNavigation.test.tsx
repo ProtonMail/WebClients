@@ -68,22 +68,6 @@ jest.mock('@proton/drive/modals/sharingModal', () => ({
     }),
 }));
 
-// jest.setup.js mocks dateFnLocales to an empty module, which leaves
-// `dateLocale` in @proton/shared/lib/i18n as undefined. The modified-time cell
-// (rendered at >=large breakpoint) reads dateLocale.code via <TimeIntl> and
-// crashes. Override dateFnLocales here to supply the real enUS locale.
-jest.mock('@proton/shared/lib/i18n/dateFnLocales', () => {
-    const enUS = require('date-fns/locale/en-US').default ?? require('date-fns/locale/en-US');
-    return {
-        __esModule: true,
-        enUSLocale: enUS,
-        enGBLocale: enUS,
-        faIRLocale: enUS,
-        getDateFnLocale: () => enUS,
-        default: {},
-    };
-});
-
 function makeFolderItem(i: number, overrides: Partial<FolderViewItem> = {}): FolderViewItem {
     return {
         uid: `vol-1~link-${i}`,

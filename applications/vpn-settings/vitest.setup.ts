@@ -102,17 +102,6 @@ vi.mock('@proton/components/components/modalTwo/BackdropContainer', () => ({
 // Silence JDOM warnings triggered by emoji-mart
 HTMLCanvasElement.prototype.getContext = vi.fn() as unknown as typeof HTMLCanvasElement.prototype.getContext;
 
-// Avoid loading the heavy date-fns locale bundle. Vitest validates named exports against
-// the mock, so every export the consumers read is stubbed here.
-vi.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
-    __esModule: true,
-    enUSLocale: {},
-    enGBLocale: {},
-    faIRLocale: {},
-    getDateFnLocale: vi.fn(() => ({})),
-    default: {},
-}));
-
 vi.mock('@proton/llm/lib/hooks/useAssistant.tsx', () => {
     return {
         __esModule: true,

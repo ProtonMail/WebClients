@@ -55,11 +55,6 @@ vi.mock('@proton/components/components/modalTwo/BackdropContainer', () => ({
 // @ts-ignore
 HTMLCanvasElement.prototype.getContext = vi.fn();
 
-vi.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
-    __esModule: true,
-    enUSLocale: { code: 'en-US' },
-}));
-
 vi.mock('@proton/components/components/input/TelInput', () => ({
     __esModule: true,
     default: () => null,
