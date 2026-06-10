@@ -1,6 +1,5 @@
 import { enUS } from 'date-fns/locale';
 
-import type { ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import truncate from '@proton/utils/truncate';
 
@@ -1434,7 +1433,7 @@ END:VCALENDAR`;
             const [timeZoneIgnoredError, supportedEvent] = await getSupportedEventsOrErrors(
                 generateVcalSetup('Asia/Seoul', 'Europe/Brussels', ['America/New_York'])
             );
-            expect(timeZoneIgnoredError).toEqual(new Error('Time zone component ignored') as ImportEventError);
+            expect(timeZoneIgnoredError).toMatchObject({ message: 'Time zone component ignored' });
             expect(supportedEvent).toEqual(localizedVevent('Europe/Brussels'));
         });
 
@@ -1442,7 +1441,7 @@ END:VCALENDAR`;
             const [timeZoneIgnoredError, supportedEvent] = await getSupportedEventsOrErrors(
                 generateVcalSetup('Asia/Seoul', '', ['Europe/Vilnius'])
             );
-            expect(timeZoneIgnoredError).toEqual(new Error('Time zone component ignored') as ImportEventError);
+            expect(timeZoneIgnoredError).toMatchObject({ message: 'Time zone component ignored' });
             expect(supportedEvent).toEqual(localizedVevent('Europe/Vilnius'));
         });
 
@@ -1450,8 +1449,8 @@ END:VCALENDAR`;
             const [timeZoneIgnoredError, supportedEvent] = await getSupportedEventsOrErrors(
                 generateVcalSetup('Asia/Seoul', 'Moon/Tranquility', ['Europe/Vilnius'])
             );
-            expect(timeZoneIgnoredError).toEqual(new Error('Time zone component ignored') as ImportEventError);
-            expect(supportedEvent).toEqual(new Error('Calendar time zone not supported') as ImportEventError);
+            expect(timeZoneIgnoredError).toMatchObject({ message: 'Time zone component ignored' });
+            expect(supportedEvent).toMatchObject({ message: 'Calendar time zone not supported' });
         });
 
         it('when there is no vtimezone nor x-wr-timezone (fall back to primary time zone)', async () => {
@@ -1503,8 +1502,8 @@ END:VCALENDAR`;
             const [timeZoneIgnoredError1, timeZoneIgnoredError2, supportedEvent] = await getSupportedEventsOrErrors(
                 generateVcalSetup('Asia/Seoul', '', ['Europe/Vilnius', 'America/New_York'])
             );
-            expect(timeZoneIgnoredError1).toEqual(new Error('Time zone component ignored') as ImportEventError);
-            expect(timeZoneIgnoredError2).toEqual(new Error('Time zone component ignored') as ImportEventError);
+            expect(timeZoneIgnoredError1).toMatchObject({ message: 'Time zone component ignored' });
+            expect(timeZoneIgnoredError2).toMatchObject({ message: 'Time zone component ignored' });
             expect(supportedEvent).toEqual({
                 component: 'vevent',
                 uid: { value: 'test-uid' },
@@ -1858,7 +1857,7 @@ END:VALARM
 END:VEVENT
 END:VCALENDAR`;
         const ics = new File([new Blob([icsString])], 'invite.ics');
-        await expectAsync(parseIcs(ics)).toBeRejectedWithError(
+        await expect(parseIcs(ics)).rejects.toThrow(
             'Your file "invite.ics" has an invalid method and cannot be imported.'
         );
     });

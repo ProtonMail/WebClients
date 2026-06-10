@@ -25,28 +25,28 @@ describe('active keys', () => {
                 ID: 'a',
                 primary: 1,
                 flags: 3,
-                privateKey: jasmine.any(Object),
-                publicKey: jasmine.any(Object),
-                fingerprint: jasmine.any(String),
-                sha256Fingerprints: jasmine.any(Array),
+                privateKey: expect.any(Object),
+                publicKey: expect.any(Object),
+                fingerprint: expect.any(String),
+                sha256Fingerprints: expect.any(Array),
             },
             {
                 ID: 'b',
                 primary: 0,
                 flags: 3,
-                privateKey: jasmine.any(Object),
-                publicKey: jasmine.any(Object),
-                fingerprint: jasmine.any(String),
-                sha256Fingerprints: jasmine.any(Array),
+                privateKey: expect.any(Object),
+                publicKey: expect.any(Object),
+                fingerprint: expect.any(String),
+                sha256Fingerprints: expect.any(Array),
             },
             {
                 ID: 'c',
                 primary: 0,
                 flags: 3,
-                privateKey: jasmine.any(Object),
-                publicKey: jasmine.any(Object),
-                fingerprint: jasmine.any(String),
-                sha256Fingerprints: jasmine.any(Array),
+                privateKey: expect.any(Object),
+                publicKey: expect.any(Object),
+                fingerprint: expect.any(String),
+                sha256Fingerprints: expect.any(Array),
             },
         ]);
         expect(activeKeys.v6).toEqual([]);
@@ -112,46 +112,46 @@ describe('active keys', () => {
                 ID: 'a',
                 primary: 0,
                 flags: 3,
-                privateKey: jasmine.any(Object),
-                publicKey: jasmine.any(Object),
-                fingerprint: jasmine.any(String),
-                sha256Fingerprints: jasmine.any(Array),
+                privateKey: expect.any(Object),
+                publicKey: expect.any(Object),
+                fingerprint: expect.any(String),
+                sha256Fingerprints: expect.any(Array),
             },
             {
                 ID: 'b',
                 primary: 1,
                 flags: 3,
-                privateKey: jasmine.any(Object),
-                publicKey: jasmine.any(Object),
-                fingerprint: jasmine.any(String),
-                sha256Fingerprints: jasmine.any(Array),
+                privateKey: expect.any(Object),
+                publicKey: expect.any(Object),
+                fingerprint: expect.any(String),
+                sha256Fingerprints: expect.any(Array),
             },
             {
                 ID: 'c',
                 primary: 0,
                 flags: 2,
-                privateKey: jasmine.any(Object),
-                publicKey: jasmine.any(Object),
-                fingerprint: jasmine.any(String),
-                sha256Fingerprints: jasmine.any(Array),
+                privateKey: expect.any(Object),
+                publicKey: expect.any(Object),
+                fingerprint: expect.any(String),
+                sha256Fingerprints: expect.any(Array),
             },
             {
                 ID: 'd',
                 primary: 0,
                 flags: 3,
-                privateKey: jasmine.any(Object),
-                publicKey: jasmine.any(Object),
-                fingerprint: jasmine.any(String),
-                sha256Fingerprints: jasmine.any(Array),
+                privateKey: expect.any(Object),
+                publicKey: expect.any(Object),
+                fingerprint: expect.any(String),
+                sha256Fingerprints: expect.any(Array),
             },
             {
                 ID: 'e',
                 primary: 0,
                 flags: 0,
-                privateKey: jasmine.any(Object),
-                publicKey: jasmine.any(Object),
-                fingerprint: jasmine.any(String),
-                sha256Fingerprints: jasmine.any(Array),
+                privateKey: expect.any(Object),
+                publicKey: expect.any(Object),
+                fingerprint: expect.any(String),
+                sha256Fingerprints: expect.any(Array),
             },
         ]);
         expect(activeKeys.v6).toEqual([]);
@@ -199,28 +199,28 @@ describe('active keys', () => {
                 ID: 'a',
                 primary: 0,
                 flags: 7,
-                privateKey: jasmine.any(Object),
-                publicKey: jasmine.any(Object),
-                fingerprint: jasmine.any(String),
-                sha256Fingerprints: jasmine.any(Array),
+                privateKey: expect.any(Object),
+                publicKey: expect.any(Object),
+                fingerprint: expect.any(String),
+                sha256Fingerprints: expect.any(Array),
             },
             {
                 ID: 'b',
                 primary: 1,
                 flags: 7,
-                privateKey: jasmine.any(Object),
-                publicKey: jasmine.any(Object),
-                fingerprint: jasmine.any(String),
-                sha256Fingerprints: jasmine.any(Array),
+                privateKey: expect.any(Object),
+                publicKey: expect.any(Object),
+                fingerprint: expect.any(String),
+                sha256Fingerprints: expect.any(Array),
             },
             {
                 ID: 'c',
                 primary: 0,
                 flags: 6,
-                privateKey: jasmine.any(Object),
-                publicKey: jasmine.any(Object),
-                fingerprint: jasmine.any(String),
-                sha256Fingerprints: jasmine.any(Array),
+                privateKey: expect.any(Object),
+                publicKey: expect.any(Object),
+                fingerprint: expect.any(String),
+                sha256Fingerprints: expect.any(Array),
             },
         ]);
         expect(activeKeys.v6).toEqual([]);
@@ -249,28 +249,28 @@ describe('active keys', () => {
                 ID: 'a',
                 primary: 1,
                 flags: 3,
-                privateKey: jasmine.any(Object),
-                publicKey: jasmine.any(Object),
-                fingerprint: jasmine.any(String),
-                sha256Fingerprints: jasmine.any(Array),
+                privateKey: expect.any(Object),
+                publicKey: expect.any(Object),
+                fingerprint: expect.any(String),
+                sha256Fingerprints: expect.any(Array),
             },
             {
                 ID: 'b',
                 primary: 0,
                 flags: 3,
-                privateKey: jasmine.any(Object),
-                publicKey: jasmine.any(Object),
-                fingerprint: jasmine.any(String),
-                sha256Fingerprints: jasmine.any(Array),
+                privateKey: expect.any(Object),
+                publicKey: expect.any(Object),
+                fingerprint: expect.any(String),
+                sha256Fingerprints: expect.any(Array),
             },
             {
                 ID: 'c',
                 primary: 0,
                 flags: 1,
-                privateKey: jasmine.any(Object),
-                publicKey: jasmine.any(Object),
-                fingerprint: jasmine.any(String),
-                sha256Fingerprints: jasmine.any(Array),
+                privateKey: expect.any(Object),
+                publicKey: expect.any(Object),
+                fingerprint: expect.any(String),
+                sha256Fingerprints: expect.any(Array),
             },
         ]);
         expect(activeKeys.v6).toEqual([]);
@@ -325,28 +325,28 @@ describe('active keys', () => {
                 ID: 'a',
                 primary: 1,
                 flags: 3,
-                privateKey: jasmine.any(Object),
-                publicKey: jasmine.any(Object),
-                fingerprint: jasmine.any(String),
-                sha256Fingerprints: jasmine.any(Array),
+                privateKey: expect.any(Object),
+                publicKey: expect.any(Object),
+                fingerprint: expect.any(String),
+                sha256Fingerprints: expect.any(Array),
             },
             {
                 ID: 'b',
                 primary: 0,
                 flags: 3,
-                privateKey: jasmine.any(Object),
-                publicKey: jasmine.any(Object),
-                fingerprint: jasmine.any(String),
-                sha256Fingerprints: jasmine.any(Array),
+                privateKey: expect.any(Object),
+                publicKey: expect.any(Object),
+                fingerprint: expect.any(String),
+                sha256Fingerprints: expect.any(Array),
             },
             {
                 ID: 'c',
                 primary: 0,
                 flags: 3,
-                privateKey: jasmine.any(Object),
-                publicKey: jasmine.any(Object),
-                fingerprint: jasmine.any(String),
-                sha256Fingerprints: jasmine.any(Array),
+                privateKey: expect.any(Object),
+                publicKey: expect.any(Object),
+                fingerprint: expect.any(String),
+                sha256Fingerprints: expect.any(Array),
             },
         ]);
         expect(activeKeys.v6).toEqual([]);
@@ -368,7 +368,7 @@ describe('active keys', () => {
         const address = { Email: 'a@a.com', Type: ADDRESS_TYPE.TYPE_ORIGINAL } as Address;
 
         // guard against multiple primary keys with the same version (v4)
-        await expectAsync(
+        await expect(
             getSignedKeyList(
                 {
                     v4: await Promise.all([
@@ -393,10 +393,10 @@ describe('active keys', () => {
                 address,
                 async () => {}
             )
-        ).toBeRejectedWithError(/Unexpected number of primary keys/);
+        ).rejects.toThrow(/Unexpected number of primary keys/);
 
         // guard against more than one v4 primary key
-        await expectAsync(
+        await expect(
             getSignedKeyList(
                 {
                     v4: await Promise.all([
@@ -422,10 +422,10 @@ describe('active keys', () => {
                 address,
                 async () => {}
             )
-        ).toBeRejectedWithError(/Unexpected number of primary keys/);
+        ).rejects.toThrow(/Unexpected number of primary keys/);
 
         // guard against standalone primary v6 key
-        await expectAsync(
+        await expect(
             getSignedKeyList(
                 {
                     v4: await Promise.all([
@@ -449,7 +449,7 @@ describe('active keys', () => {
                 address,
                 async () => {}
             )
-        ).toBeRejectedWithError(/Unexpected number of primary keys/);
+        ).rejects.toThrow(/Unexpected number of primary keys/);
 
         // one primary v4 and v6 key is allowed
         const signedKeyList = await getSignedKeyList(
@@ -489,19 +489,19 @@ describe('active keys', () => {
                 ID: 'a',
                 primary: 1,
                 flags: 3,
-                privateKey: jasmine.any(Object),
-                publicKey: jasmine.any(Object),
-                fingerprint: jasmine.any(String),
-                sha256Fingerprints: jasmine.any(Array),
+                privateKey: expect.any(Object),
+                publicKey: expect.any(Object),
+                fingerprint: expect.any(String),
+                sha256Fingerprints: expect.any(Array),
             },
             {
                 ID: 'c',
                 primary: 0,
                 flags: 3,
-                privateKey: jasmine.any(Object),
-                publicKey: jasmine.any(Object),
-                fingerprint: jasmine.any(String),
-                sha256Fingerprints: jasmine.any(Array),
+                privateKey: expect.any(Object),
+                publicKey: expect.any(Object),
+                fingerprint: expect.any(String),
+                sha256Fingerprints: expect.any(Array),
             },
         ]);
         expect(activeKeys.v6).toEqual([
@@ -509,10 +509,10 @@ describe('active keys', () => {
                 ID: 'b',
                 primary: 1,
                 flags: 3,
-                privateKey: jasmine.any(Object),
-                publicKey: jasmine.any(Object),
-                fingerprint: jasmine.any(String),
-                sha256Fingerprints: jasmine.any(Array),
+                privateKey: expect.any(Object),
+                publicKey: expect.any(Object),
+                fingerprint: expect.any(String),
+                sha256Fingerprints: expect.any(Array),
             },
         ]);
     });
