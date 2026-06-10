@@ -2,8 +2,8 @@ import { BatchQueue } from '../../lib/helpers/batchQueue';
 
 describe('BatchQueue', () => {
     it('should be able to add items to the queue and flush them automatically', async () => {
-        jasmine.clock().install();
-        const fakeCallback = jasmine.createSpy('fakeCallback');
+        vi.useFakeTimers();
+        const fakeCallback = vi.fn();
         const queue = new BatchQueue<number>({
             batchSize: 5,
             flushCallback: fakeCallback,
@@ -21,47 +21,49 @@ describe('BatchQueue', () => {
 
         queue.add(6);
 
-        jasmine.clock().tick(510);
+        vi.advanceTimersByTime(510);
 
         expect(fakeCallback).toHaveBeenCalledTimes(2);
         expect(fakeCallback).toHaveBeenCalledWith([6]);
 
-        jasmine.clock().uninstall();
+        vi.useRealTimers();
     });
 
     it('should handle synchronous errors in the flush callback', () => {
-        const fakeCallback = jasmine.createSpy('fakeCallback').and.throwError('test');
+        const fakeCallback = vi.fn(() => {
+            throw new Error('test');
+        });
         const queue = new BatchQueue<number>({
             batchSize: 5,
             flushCallback: fakeCallback,
             flushIntervalMs: 500,
         });
-        spyOn(queue, 'flush').and.callThrough();
+        vi.spyOn(queue, 'flush');
 
         queue.add(1);
 
-        expect(() => queue.flush()).not.toThrowError();
+        expect(() => queue.flush()).not.toThrow();
 
         expect(fakeCallback).toHaveBeenCalledTimes(1);
-        expect(fakeCallback).toThrowError('test');
+        expect(fakeCallback).toThrow('test');
     });
 
     it('should handle asynchronous errors in the flush callback', async () => {
         const fakeError = new Error('test');
 
-        const fakeCallback = jasmine.createSpy('fakeCallback').and.returnValue(Promise.reject(fakeError));
+        const fakeCallback = vi.fn().mockReturnValue(Promise.reject(fakeError));
         const queue = new BatchQueue<number>({
             batchSize: 5,
             flushCallback: fakeCallback,
             flushIntervalMs: 500,
         });
-        spyOn(queue, 'flush').and.callThrough();
+        vi.spyOn(queue, 'flush');
 
         queue.add(1);
 
-        expect(() => queue.flush()).not.toThrowError();
+        expect(() => queue.flush()).not.toThrow();
 
         expect(fakeCallback).toHaveBeenCalledTimes(1);
-        await expectAsync(fakeCallback()).toBeRejectedWith(fakeError);
+        await expect(fakeCallback()).rejects.toEqual(fakeError);
     });
 });

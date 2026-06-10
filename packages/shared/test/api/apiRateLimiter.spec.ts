@@ -34,7 +34,7 @@ describe('ApiRateLimiter', () => {
             rateLimiter.enable();
 
             const fixedNow = 1710000000000;
-            spyOn(Date, 'now').and.returnValue(fixedNow);
+            vi.spyOn(Date, 'now').mockReturnValue(fixedNow);
 
             rateLimiter.recordCallOrThrow('https://api.example.com/test');
 

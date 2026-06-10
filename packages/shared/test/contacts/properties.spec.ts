@@ -297,7 +297,7 @@ describe('readCSV', () => {
             const [contact] = results[i].rest;
             const properties = getVCardProperties(contact);
             for (const expectation of testCase.propertyExpectations) {
-                expect(properties).toContain(jasmine.objectContaining(expectation));
+                expect(properties).toContainEqual(expect.objectContaining(expectation));
             }
         }
     });

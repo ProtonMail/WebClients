@@ -261,7 +261,7 @@ describe('reactivate keys', () => {
     it('reactivate user keys and the connected address keys', async () => {
         const { keyPassword, keyReactivationRecords, User, Addresses, userKeys, expectedAddressKeysReactivated } =
             await getSetup1();
-        const api = jasmine.createSpy('api').and.returnValues(Promise.resolve(), Promise.resolve());
+        const api = vi.fn().mockReturnValueOnce(Promise.resolve()).mockReturnValueOnce(Promise.resolve());
         const result = await reactivateKeysProcess({
             api,
             user: User,
@@ -271,23 +271,23 @@ describe('reactivate keys', () => {
             keyPassword,
             keyTransparencyVerify: async () => {},
         });
-        expect(api.calls.count()).toEqual(1);
+        expect(api.mock.calls.length).toEqual(1);
         expect(result.details).toEqual([
             { id: '2', type: 'success' },
             { id: 'c', type: 'success' },
             { id: 'd', type: 'success' },
         ]);
-        const keyReactivationCall = api.calls.argsFor(0)[0];
+        const keyReactivationCall = api.mock.calls[0][0];
         expect(keyReactivationCall).toEqual({
             url: 'core/v4/keys/user/2',
             method: 'put',
-            data: jasmine.objectContaining({
-                PrivateKey: jasmine.any(String),
+            data: expect.objectContaining({
+                PrivateKey: expect.any(String),
                 AddressKeyFingerprints: expectedAddressKeysReactivated.map((x) => x.getFingerprint()),
                 SignedKeyLists: {
                     [Addresses[0].ID]: {
-                        Data: jasmine.any(String),
-                        Signature: jasmine.any(String),
+                        Data: expect.any(String),
+                        Signature: expect.any(String),
                     },
                 },
             }),
@@ -297,7 +297,7 @@ describe('reactivate keys', () => {
     it('reactivate user keys and the connected address keys, and legacy address keys', async () => {
         const { keyPassword, keyReactivationRecords, User, Addresses, userKeys, expectedAddressKeysReactivated } =
             await getSetup2();
-        const api = jasmine.createSpy('api').and.returnValues(Promise.resolve(), Promise.resolve());
+        const api = vi.fn().mockReturnValueOnce(Promise.resolve()).mockReturnValueOnce(Promise.resolve());
         const result = await reactivateKeysProcess({
             api,
             user: User,
@@ -313,56 +313,56 @@ describe('reactivate keys', () => {
             { id: 'b', type: 'success' },
             { id: 'a2', type: 'success' },
             { id: 'b2', type: 'success' },
-            { id: 'b1', error: jasmine.objectContaining({ message: 'User key inactive' }), type: 'error' },
+            { id: 'b1', error: expect.objectContaining({ message: 'User key inactive' }), type: 'error' },
             { id: 'c1', type: 'success' },
             { id: 'c2', type: 'success' },
         ]);
 
-        expect(api.calls.count()).toEqual(3);
+        expect(api.mock.calls.length).toEqual(3);
 
-        expect(api.calls.argsFor(0)[0]).toEqual({
+        expect(api.mock.calls[0][0]).toEqual({
             url: 'core/v4/keys/user/2',
             method: 'put',
-            data: jasmine.objectContaining({
-                PrivateKey: jasmine.any(String),
+            data: expect.objectContaining({
+                PrivateKey: expect.any(String),
                 AddressKeyFingerprints: expectedAddressKeysReactivated.map((x) => x.getFingerprint()),
                 SignedKeyLists: {
                     [Addresses[0].ID]: {
-                        Data: jasmine.any(String),
-                        Signature: jasmine.any(String),
+                        Data: expect.any(String),
+                        Signature: expect.any(String),
                     },
                     [Addresses[2].ID]: {
-                        Data: jasmine.any(String),
-                        Signature: jasmine.any(String),
+                        Data: expect.any(String),
+                        Signature: expect.any(String),
                     },
                 },
             }),
         });
 
-        expect(api.calls.argsFor(1)[0]).toEqual({
+        expect(api.mock.calls[1][0]).toEqual({
             url: 'core/v4/keys/address/c1',
             method: 'put',
             data: {
-                Token: jasmine.any(String),
-                Signature: jasmine.any(String),
-                PrivateKey: jasmine.any(String),
+                Token: expect.any(String),
+                Signature: expect.any(String),
+                PrivateKey: expect.any(String),
                 SignedKeyList: {
-                    Data: jasmine.any(String),
-                    Signature: jasmine.any(String),
+                    Data: expect.any(String),
+                    Signature: expect.any(String),
                 },
             },
         });
 
-        expect(api.calls.argsFor(2)[0]).toEqual({
+        expect(api.mock.calls[2][0]).toEqual({
             url: 'core/v4/keys/address/c2',
             method: 'put',
             data: {
-                Token: jasmine.any(String),
-                Signature: jasmine.any(String),
-                PrivateKey: jasmine.any(String),
+                Token: expect.any(String),
+                Signature: expect.any(String),
+                PrivateKey: expect.any(String),
                 SignedKeyList: {
-                    Data: jasmine.any(String),
-                    Signature: jasmine.any(String),
+                    Data: expect.any(String),
+                    Signature: expect.any(String),
                 },
             },
         });
@@ -371,7 +371,7 @@ describe('reactivate keys', () => {
     it('reactivate user keys and the connected address keys', async () => {
         const { keyPassword, keyReactivationRecords, User, Addresses, userKeys, expectedAddressKeysReactivated } =
             await getSetup3();
-        const api = jasmine.createSpy('api').and.callFake(() => Promise.resolve());
+        const api = vi.fn((args: any) => Promise.resolve(args));
         const result = await reactivateKeysProcess({
             api,
             user: User,
@@ -387,18 +387,18 @@ describe('reactivate keys', () => {
             { id: 'b', type: 'success' },
         ]);
 
-        expect(api.calls.count()).toEqual(1);
+        expect(api.mock.calls.length).toEqual(1);
 
-        expect(api.calls.argsFor(0)[0]).toEqual({
+        expect(api.mock.calls[0][0]).toEqual({
             url: 'core/v4/keys/user/2',
             method: 'put',
-            data: jasmine.objectContaining({
-                PrivateKey: jasmine.any(String),
+            data: expect.objectContaining({
+                PrivateKey: expect.any(String),
                 AddressKeyFingerprints: expectedAddressKeysReactivated.map((x) => x.getFingerprint()),
                 SignedKeyLists: {
                     [Addresses[0].ID]: {
-                        Data: jasmine.any(String),
-                        Signature: jasmine.any(String),
+                        Data: expect.any(String),
+                        Signature: expect.any(String),
                     },
                 },
             }),

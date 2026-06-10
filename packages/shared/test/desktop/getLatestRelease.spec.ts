@@ -15,22 +15,22 @@ describe('getLatestRelease', () => {
 
         it('should get alpha release, when local is alpha', () => {
             expect(getLatestRelease('alpha', releaseList)).toEqual(
-                jasmine.objectContaining({ CategoryName: RELEASE_CATEGORIES.ALPHA })
+                expect.objectContaining({ CategoryName: RELEASE_CATEGORIES.ALPHA })
             );
         });
         it('should get beta release, when local is beta', () => {
             expect(getLatestRelease('beta', releaseList)).toEqual(
-                jasmine.objectContaining({ CategoryName: RELEASE_CATEGORIES.EARLY_ACCESS })
+                expect.objectContaining({ CategoryName: RELEASE_CATEGORIES.EARLY_ACCESS })
             );
         });
         it('should get stable release, when local is default', () => {
             expect(getLatestRelease('default', releaseList)).toEqual(
-                jasmine.objectContaining({ CategoryName: RELEASE_CATEGORIES.STABLE })
+                expect.objectContaining({ CategoryName: RELEASE_CATEGORIES.STABLE })
             );
         });
         it('should get stable release, when local is undefined', () => {
             expect(getLatestRelease(undefined, releaseList)).toEqual(
-                jasmine.objectContaining({ CategoryName: RELEASE_CATEGORIES.STABLE })
+                expect.objectContaining({ CategoryName: RELEASE_CATEGORIES.STABLE })
             );
         });
     });
@@ -45,22 +45,22 @@ describe('getLatestRelease', () => {
 
         it('should get beta release, when local is alpha', () => {
             expect(getLatestRelease('alpha', releaseList)).toEqual(
-                jasmine.objectContaining({ CategoryName: RELEASE_CATEGORIES.EARLY_ACCESS })
+                expect.objectContaining({ CategoryName: RELEASE_CATEGORIES.EARLY_ACCESS })
             );
         });
         it('should get beta release, when local is beta', () => {
             expect(getLatestRelease('beta', releaseList)).toEqual(
-                jasmine.objectContaining({ CategoryName: RELEASE_CATEGORIES.EARLY_ACCESS })
+                expect.objectContaining({ CategoryName: RELEASE_CATEGORIES.EARLY_ACCESS })
             );
         });
         it('should get stable release, when local is default', () => {
             expect(getLatestRelease('default', releaseList)).toEqual(
-                jasmine.objectContaining({ CategoryName: RELEASE_CATEGORIES.STABLE })
+                expect.objectContaining({ CategoryName: RELEASE_CATEGORIES.STABLE })
             );
         });
         it('should get stable release, when local is undefined', () => {
             expect(getLatestRelease(undefined, releaseList)).toEqual(
-                jasmine.objectContaining({ CategoryName: RELEASE_CATEGORIES.STABLE })
+                expect.objectContaining({ CategoryName: RELEASE_CATEGORIES.STABLE })
             );
         });
     });
@@ -74,27 +74,27 @@ describe('getLatestRelease', () => {
 
         it('should get stable release, when local is alpha', () => {
             expect(getLatestRelease('alpha', releaseList)).toEqual(
-                jasmine.objectContaining({ CategoryName: RELEASE_CATEGORIES.STABLE })
+                expect.objectContaining({ CategoryName: RELEASE_CATEGORIES.STABLE })
             );
         });
         it('should get stable release, when local is beta', () => {
             expect(getLatestRelease('beta', releaseList)).toEqual(
-                jasmine.objectContaining({ CategoryName: RELEASE_CATEGORIES.STABLE })
+                expect.objectContaining({ CategoryName: RELEASE_CATEGORIES.STABLE })
             );
         });
         it('should get stable release, when local is default', () => {
             expect(getLatestRelease('default', releaseList)).toEqual(
-                jasmine.objectContaining({ CategoryName: RELEASE_CATEGORIES.STABLE })
+                expect.objectContaining({ CategoryName: RELEASE_CATEGORIES.STABLE })
             );
         });
         it('should get stable release, when local is undefined', () => {
             expect(getLatestRelease(undefined, releaseList)).toEqual(
-                jasmine.objectContaining({ CategoryName: RELEASE_CATEGORIES.STABLE })
+                expect.objectContaining({ CategoryName: RELEASE_CATEGORIES.STABLE })
             );
         });
 
         it('should get highest version', () => {
-            expect(getLatestRelease('default', releaseList)).toEqual(jasmine.objectContaining({ Version: '1.0.0' }));
+            expect(getLatestRelease('default', releaseList)).toEqual(expect.objectContaining({ Version: '1.0.0' }));
         });
     });
 });

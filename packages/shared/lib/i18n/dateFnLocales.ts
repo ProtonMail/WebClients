@@ -9,9 +9,9 @@ const dateFnsLocaleMap: DateFnsLocaleMap = Object.fromEntries(
     getProtonConfig().LOCALES_DATE_FNS.map((locale) => [
         locale.replace('-', '_'),
         () =>
-            import(/* webpackChunkName: "date-fns/[request]" */ `date-fns/locale/${locale}/index.js`).then(
-                (m) => m.default ?? m
-            ),
+            import(
+                /* webpackChunkName: "date-fns/[request]" */ `../../../../node_modules/date-fns/locale/${locale}/index.js`
+            ).then((m) => m.default ?? m),
     ])
 );
 
