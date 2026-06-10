@@ -49,7 +49,6 @@ export const VaultMenu: FC<Props> = ({ render, onAction = noop }) => {
                         count={vault.count}
                         label={vault.content.name}
                         selected={scope === 'share' && selectedShareId === vault.shareId}
-                        canEdit={isShareManageable(vault)}
                         canMove={isWritableVault(vault) && vault.count > 0}
                         canDelete={vault.owner}
                         canInvite={!vault.shared}
