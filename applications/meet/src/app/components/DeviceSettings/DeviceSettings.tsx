@@ -36,6 +36,7 @@ import { useMediaManagementContext } from '../../contexts/MediaManagementProvide
 import { useDeviceLoading } from '../../hooks/useDeviceLoading';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { supportsSetSinkId } from '../../utils/browser';
+import { getCameraButtonAriaLabel, getMicrophoneButtonAriaLabel } from '../../utils/mediaButtonAriaLabels';
 import { getParticipantDisplayColorsByIndex } from '../../utils/participantDisplayColors/getParticipantDisplayColorsByIndex';
 import { AudioSettingsDropdown } from '../AudioSettings/AudioSettingsDropdown';
 import { DeviceSelect } from '../DeviceSelect/DeviceSelect';
@@ -100,6 +101,18 @@ export const DeviceSettings = ({
 
     const cameraHasWarning = noCameraPermission || noCameraDetected;
     const microphoneHasWarning = noMicrophonePermission || noMicrophoneDetected;
+
+    const microphoneButtonAriaLabel = getMicrophoneButtonAriaLabel({
+        hasPermission: !noMicrophonePermission,
+        noDeviceDetected: noMicrophoneDetected,
+        isEnabled: isMicrophoneEnabled,
+    });
+
+    const cameraButtonAriaLabel = getCameraButtonAriaLabel({
+        hasPermission: !noCameraPermission,
+        noDeviceDetected: noCameraDetected,
+        isEnabled: isCameraEnabled,
+    });
 
     const isLargerThanMd = useIsLargerThanMd();
 
@@ -248,6 +261,7 @@ export const DeviceSettings = ({
                                 '--w-custom': '2.25rem',
                                 '--h-custom': '2.25rem',
                             }}
+                            aria-label={c('Alt').t`Rotate camera`}
                             onClick={() => {
                                 handleRotateCamera();
                             }}
@@ -283,6 +297,7 @@ export const DeviceSettings = ({
                         indicatorStatus={microphoneHasWarning ? 'danger' : 'default'}
                         noBorder={false}
                         buttonStyle={circleButtonStyle}
+                        ariaLabel={microphoneButtonAriaLabel}
                     />
 
                     <CircleButton
@@ -294,6 +309,7 @@ export const DeviceSettings = ({
                         indicatorStatus={cameraHasWarning ? 'danger' : 'default'}
                         noBorder={false}
                         buttonStyle={circleButtonStyle}
+                        ariaLabel={cameraButtonAriaLabel}
                     />
                 </div>
             </div>
