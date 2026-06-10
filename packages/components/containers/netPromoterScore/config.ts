@@ -1,4 +1,4 @@
-import { CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { NPSApplication, type NetPromoterScoreConfig } from './interface';
 
@@ -11,7 +11,10 @@ export const npsConfig: Record<string, NetPromoterScoreConfig> = {
     },
     [NPSApplication.WebCalendar]: {
         appName: CALENDAR_APP_NAME,
-    },    
+    },
+    [NPSApplication.WebDrive]: {
+        appName: DRIVE_APP_NAME,
+    },
     [NPSApplication.DesktopCalendar]: {
         appName: CALENDAR_APP_NAME,
     },
