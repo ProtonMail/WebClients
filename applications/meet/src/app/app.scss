@@ -191,6 +191,18 @@ $profile-colors:
 			max-inline-size: calc(100vw - 3rem) !important;
 		}
 	}
+
+	/*
+		The settings toggle rows use `container-type: inline-size` (.setting-container) for the
+		responsive label font-size. That applies inline-size containment, which makes the row
+		contribute zero width to this content-sized (shrink-to-fit) dropdown. When the rest of the
+		content is narrow (e.g. the video dropdown), Firefox then collapses the dropdown to its
+		min-width and the `overflow-x: hidden` clips the toggle, making it unclickable. Disabling
+		containment here lets the row size the dropdown; the Settings panel keeps it.
+	*/
+	.setting-container {
+		container-type: normal;
+	}
 }
 
 .notifications-container {

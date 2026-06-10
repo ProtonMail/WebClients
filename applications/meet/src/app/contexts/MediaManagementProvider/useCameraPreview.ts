@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import type { LocalVideoTrack, Room } from 'livekit-client';
 import { createLocalVideoTrack } from 'livekit-client';
@@ -17,6 +17,7 @@ interface UseCameraPreviewParams {
     facingMode: 'environment' | 'user';
     isBackgroundBlurSupported: boolean;
     backgroundBlur: boolean;
+    isUseSimpleSegmentationEnabled: boolean;
     room: Room;
 }
 
@@ -25,6 +26,7 @@ export const useCameraPreview = ({
     facingMode,
     isBackgroundBlurSupported,
     backgroundBlur,
+    isUseSimpleSegmentationEnabled,
     room,
 }: UseCameraPreviewParams) => {
     const previewTrackRef = useRef<LocalVideoTrack | null>(null);
@@ -52,33 +54,36 @@ export const useCameraPreview = ({
         }
     };
 
-    const applyPreviewBackgroundBlurPreference = async (enable: boolean) => {
-        const videoTrack = previewTrackRef.current;
+    const applyPreviewBackgroundBlurPreference = useCallback(
+        async (enable: boolean) => {
+            const videoTrack = previewTrackRef.current;
 
-        if (!backgroundBlurProcessorInstanceRef.current) {
-            backgroundBlurProcessorInstanceRef.current = createBackgroundProcessor();
-        }
+            if (!backgroundBlurProcessorInstanceRef.current) {
+                backgroundBlurProcessorInstanceRef.current = createBackgroundProcessor(isUseSimpleSegmentationEnabled);
+            }
 
-        if (!backgroundBlurProcessorInstanceRef.current || !videoTrack || !enable) {
-            backgroundBlurProcessorInstanceRef.current?.disable?.();
-            return;
-        }
+            if (!backgroundBlurProcessorInstanceRef.current || !videoTrack || !enable) {
+                backgroundBlurProcessorInstanceRef.current?.disable?.();
+                return;
+            }
 
-        if (processorAttachInProgress.current) {
-            return;
-        }
+            if (processorAttachInProgress.current) {
+                return;
+            }
 
-        processorAttachInProgress.current = true;
-        try {
-            const processor = await ensureBackgroundBlurProcessor(
-                videoTrack,
-                backgroundBlurProcessorInstanceRef.current
-            );
-            processor?.enable?.();
-        } finally {
-            processorAttachInProgress.current = false;
-        }
-    };
+            processorAttachInProgress.current = true;
+            try {
+                const processor = await ensureBackgroundBlurProcessor(
+                    videoTrack,
+                    backgroundBlurProcessorInstanceRef.current
+                );
+                processor?.enable?.();
+            } finally {
+                processorAttachInProgress.current = false;
+            }
+        },
+        [isUseSimpleSegmentationEnabled]
+    );
 
     const handlePreviewCameraToggle = async (videoElement: HTMLVideoElement) => {
         await cleanupPreviewTrack();
@@ -145,18 +150,18 @@ export const useCameraPreview = ({
         }
     };
 
-    const handlePreviewBackgroundBlurPreferenceUpdate = async () => {
+    const handlePreviewBackgroundBlurPreferenceUpdate = useCallback(async () => {
         if (!isBackgroundBlurSupported) {
             backgroundBlurProcessorInstanceRef.current?.disable?.();
             return;
         }
 
         void applyPreviewBackgroundBlurPreference(backgroundBlur);
-    };
+    }, [applyPreviewBackgroundBlurPreference, backgroundBlur, isBackgroundBlurSupported]);
 
     useEffect(() => {
         void handlePreviewBackgroundBlurPreferenceUpdate();
-    }, [backgroundBlur, isBackgroundBlurSupported]);
+    }, [handlePreviewBackgroundBlurPreferenceUpdate]);
 
     return {
         handlePreviewCameraToggle,
