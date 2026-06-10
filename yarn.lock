@@ -11420,7 +11420,7 @@ __metadata:
     "@protontech/crypto": "npm:*"
     "@protontech/mimemessage": "npm:~v1.1.4"
     "@protontech/mutex-browser": "npm:^1.0.5"
-    "@protontech/telemetry": "npm:^1.0.5"
+    "@protontech/telemetry": "npm:^2.0.0"
     "@protontech/tidy-url": "npm:^1.18.5"
     "@protontech/timezone-support": "npm:^2.1.0"
     "@scure/base": "npm:^2.2.0"
@@ -11745,10 +11745,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@protontech/telemetry@npm:^1.0.5":
-  version: 1.0.5
-  resolution: "@protontech/telemetry@npm:1.0.5"
-  checksum: 10/84a6990aec328e315ab1b89a36d9d082193610979c20ab1bed315f4965391465d13cdc44d1203310044ec08d4e0144aaf3ca4a42e6f2ac7d23b5056d8f7efcc7
+"@protontech/telemetry@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@protontech/telemetry@npm:2.0.0"
+  checksum: 10/586b683945fc73c3ab92df2353bc2252909e64b5b6b739fca2b5bc0a899f31b4081d5784f3a4f7e4a4141c909ad06b22f3297d812325e977b488840f5bc67bb3
   languageName: node
   linkType: hard
 

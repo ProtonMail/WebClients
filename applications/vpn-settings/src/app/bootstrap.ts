@@ -79,6 +79,7 @@ export const bootstrapApp = async ({
                     form: false,
                     performance: false,
                     modal: false,
+                    exit: false,
                 },
                 overridenPageTitle: 'VPN Settings',
             });

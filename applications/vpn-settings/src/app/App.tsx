@@ -48,7 +48,18 @@ const bootstrapApp = () => {
     const privateApp = Boolean(session);
 
     if (!privateApp) {
-        telemetry.init({ config, uid: authentication.UID });
+        telemetry.init({
+            config,
+            uid: authentication.UID,
+            eventOptions: {
+                pageView: true,
+                click: true,
+                form: true,
+                performance: true,
+                modal: true,
+                exit: true,
+            },
+        });
     }
 
     return {
