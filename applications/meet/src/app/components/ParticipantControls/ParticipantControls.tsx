@@ -42,6 +42,7 @@ import { useMediaManagementContext } from '../../contexts/MediaManagementProvide
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
+import { getCameraButtonAriaLabel, getMicrophoneButtonAriaLabel } from '../../utils/mediaButtonAriaLabels';
 import { AudioPlaybackPrompt } from '../AudioPlaybackPrompt/AudioPlaybackPrompt';
 import { AudioSettings } from '../AudioSettings/AudioSettings';
 import { ChatButton } from '../ChatButton';
@@ -119,31 +120,19 @@ export const ParticipantControls = () => {
 
     const microphoneHasWarning = !hasMicrophonePermission || microphones.length === 0;
 
-    let microphoneTooltipTitle;
-    if (microphoneHasWarning) {
-        if (!hasMicrophonePermission) {
-            microphoneTooltipTitle = c('Info').t`Permission denied`;
-        } else {
-            microphoneTooltipTitle = c('Info').t`No microphone detected`;
-        }
-    } else {
-        microphoneTooltipTitle = isMicrophoneEnabled
-            ? c('Info').t`Turn off microphone`
-            : c('Info').t`Turn on microphone`;
-    }
+    const microphoneTooltipTitle = getMicrophoneButtonAriaLabel({
+        hasPermission: hasMicrophonePermission,
+        noDeviceDetected: microphones.length === 0,
+        isEnabled: isMicrophoneEnabled,
+    });
 
     const cameraHasWarning = !hasCameraPermission || cameras.length === 0;
 
-    let cameraTooltipTitle;
-    if (cameraHasWarning) {
-        if (!hasCameraPermission) {
-            cameraTooltipTitle = c('Info').t`Permission denied`;
-        } else {
-            cameraTooltipTitle = c('Info').t`No camera detected`;
-        }
-    } else {
-        cameraTooltipTitle = isCameraEnabled ? c('Info').t`Turn off camera` : c('Info').t`Turn on camera`;
-    }
+    const cameraTooltipTitle = getCameraButtonAriaLabel({
+        hasPermission: hasCameraPermission,
+        noDeviceDetected: cameras.length === 0,
+        isEnabled: isCameraEnabled,
+    });
 
     return (
         <div className="w-full flex flex-nowrap flex-column relative">
@@ -193,7 +182,7 @@ export const ParticipantControls = () => {
                                 }}
                                 Content={AudioSettings}
                                 popUp={PopUpControls.Microphone}
-                                ariaLabel={c('Alt').t`Toggle microphone`}
+                                ariaLabel={microphoneTooltipTitle}
                                 secondaryAriaLabel={c('Alt').t`Audio settings`}
                                 hasWarning={microphoneHasWarning}
                                 tooltipTitle={microphoneTooltipTitle}
@@ -233,7 +222,7 @@ export const ParticipantControls = () => {
                                 }}
                                 Content={VideoSettings}
                                 popUp={PopUpControls.Camera}
-                                ariaLabel={c('Alt').t`Toggle camera`}
+                                ariaLabel={cameraTooltipTitle}
                                 secondaryAriaLabel={c('Alt').t`Video settings`}
                                 hasWarning={cameraHasWarning}
                                 tooltipTitle={cameraTooltipTitle}
@@ -270,7 +259,7 @@ export const ParticipantControls = () => {
                                 }}
                                 indicatorContent={microphoneHasWarning ? '!' : undefined}
                                 indicatorStatus={microphoneHasWarning ? 'warning' : 'success'}
-                                ariaLabel={c('Alt').t`Toggle microphone`}
+                                ariaLabel={microphoneTooltipTitle}
                             />
                             <CircleButton
                                 IconComponent={isCameraEnabled ? IcMeetCamera : IcMeetCameraOff}
@@ -298,6 +287,7 @@ export const ParticipantControls = () => {
                                 }}
                                 indicatorContent={cameraHasWarning ? '!' : undefined}
                                 indicatorStatus={cameraHasWarning ? 'warning' : 'success'}
+                                ariaLabel={cameraTooltipTitle}
                             />
                         </>
                     )}
