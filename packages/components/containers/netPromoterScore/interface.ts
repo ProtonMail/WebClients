@@ -3,6 +3,7 @@ import type { Feature } from '@proton/features/interface';
 export enum NPSApplication {
     WebMail = 'web-mail',
     WebCalendar = 'web-calendar',
+    WebDrive = 'web-drive',
     DesktopMail = 'desktop-mail',
     DesktopCalendar = 'desktop-calendar',
 }
