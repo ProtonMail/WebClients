@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import useDebounceInput from '@proton/components/components/input/useDebounceInput';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -15,6 +14,8 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { create } from '@proton/shared/lib/api/labels';
@@ -232,7 +233,7 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
                     label={c('Label').t`Move messages to`}
                     data-prevent-arrow-navigation
                     assistContainerClassName="h-2"
-                    prefix={<Icon name="magnifier" />}
+                    prefix={<IcMagnifier />}
                     placeholder={c('Placeholder').t`Filter folders`}
                 />
                 <div className="modal-move-folder-list">
@@ -258,7 +259,7 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
                                             {folder.Name}
                                         </span>
                                         {selectedFolder?.ID === folder.ID && (
-                                            <Icon name="checkmark" className="text-success shrink-0 mt-0.5" />
+                                            <IcCheckmark className="text-success shrink-0 mt-0.5" />
                                         )}
                                     </div>
                                 </Button>
