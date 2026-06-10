@@ -1037,6 +1037,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "Explore ${ MEET_SHORT_APP_NAME }"
+      ],
+      "Verify now": [
+        "Verificar agora"
       ]
     },
     "action": {
@@ -4122,6 +4128,27 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Sua conexão do Zoom expirou. Reconecte-se para continuar."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Todo o espaço de armazenamento foi alocado. Reduza o armazenamento alocado para outros usuários."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configure um domínio personalizado antes de adicionar endereços."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Configure um domínio personalizado antes de adicionar usuários à sua organização."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Ative o suporte a múltiplos usuários antes de adicionar usuários à sua organização."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Atualize para um plano de negócios com mais de 1 usuário para gerenciar vários usuários."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Você usou todos os endereços do seu plano. Faça o upgrade do seu plano para adicionar um novo endereço ou desative um endereço na sua conta."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Você usou todos os usuários do seu plano. Faça o upgrade do seu plano para adicionar um novo usuário."
       ]
     },
     "error": {
@@ -6630,6 +6657,19 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Você atingiu o limite de agendamentos (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ total } user found": [
+        "${ total } usuário encontrado",
+        "${ total } usuários encontrados"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Você lembra sua senha ? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "Esqueceu sua senha?"
+      ],
+      "Password verified": [
+        "Senha verificada"
       ]
     },
     "info": {
@@ -6753,6 +6793,9 @@
       ],
       "WKD": [
         "WKD"
+      ],
+      "Fallback": [
+        "Alternativa"
       ]
     },
     "Keyboard shortcut name": {
@@ -9964,6 +10007,12 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Search": [
+        "Pesquisar"
+      ],
+      "Search for users or addresses": [
+        "Pesquisar por um usuários ou endereços"
       ]
     },
     "Placeholder for contact group name": {
@@ -12527,6 +12576,15 @@
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migre sua organização para a ${ BRAND_NAME }"
+      ],
+      "Summer Sale": [
+        "Promoção de verão"
+      ],
+      "Verify your password": [
+        "Verificar sua senha"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13109,6 +13167,174 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Ativado"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "O endereço já é usado por um usuário fora da sua organização. Entre em contato com o suporte ao cliente para resolver isso"
+      ],
+      "All": [
+        "Todos"
+      ],
+      "Calendar": [
+        "Calendário"
+      ],
+      "Configure migration": [
+        "Configurar migração"
+      ],
+      "Contacts": [
+        "Contatos"
+      ],
+      "Emails": [
+        "E-mails"
+      ],
+      "Errors": [
+        "Errors"
+      ],
+      "Estimated size": [
+        "Tempo estimado"
+      ],
+      "Find out what can be migrated.": [
+        "Descubra o que pode ser migrado."
+      ],
+      "Has errors": [
+        "Tem erros"
+      ],
+      "In progress": [
+        "Em processo"
+      ],
+      "Migrate": [
+        "Migrar"
+      ],
+      "Migrated": [
+        "Migrado"
+      ],
+      "Migration status": [
+        "Status da migração"
+      ],
+      "Missing organization private key": [
+        "Falta a chave privada da organização"
+      ],
+      "Missing organization public key": [
+        "Falta a chave pública da organização"
+      ],
+      "No users to display": [
+        "Nenhum usuário para exibir"
+      ],
+      "Not activated": [
+        "Não ativado"
+      ],
+      "Organization does not have enough seats available": [
+        "A organização não tem licenças suficientes disponíveis"
+      ],
+      "Organization does not have enough storage available": [
+        "A organização não tem armazenamento suficientes disponíveis"
+      ],
+      "Pending": [
+        "Pendente"
+      ],
+      "Select users to migrate": [
+        "Selecione os usuários a serem migrados"
+      ],
+      "Size": [
+        "Tamanho"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Usuário"
+      ],
+      "What are you migrating?": [
+        "O que você está migrando?"
+      ],
+      "You": [
+        "Você"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Alterar para ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Alternar para ${ MAIL_APP_NAME }"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Aproveitar a oferta"
+      ],
+      "Summer Sale": [
+        "Oferta Especial"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mês"
+      ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "2 TB data storage": [
+        "2 TB de armazenamento de dados"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de armazenamento: 40x o seu plano atual"
+      ],
+      "3 TB data storage": [
+        "3 TB de armazenamento de dados"
+      ],
+      "500 GB storage": [
+        "500 GB de armazenamento"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todos os recursos premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todos os recursos premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Os descontos são baseados nos preços mensais padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Acesso total ao ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Contas individuais para 6 usuários"
+      ],
+      "Individual accounts for you and a partner": [
+        "Contas individuais para você e um parceiro"
+      ],
+      "Online document and spreadsheet editor": [
+        "Editor on-line de documentos e planilhas"
+      ],
+      "Recover previous file versions": [
+        "Recupere versões anteriores de arquivos"
+      ],
+      "Stronger protection against cyber threats": [
+        "Proteção mais forte contra ameaças cibernéticas"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Mude para o nosso plano anual e economize ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, marcadores e filtros ilimitados"
+      ],
+      "Use your own email domain": [
+        "Use seu próprio domínio de e-mail"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "por 12 meses"
+      ],
+      "SUMMER SALE": [
+        "OFERTA ESPECIAL"
       ]
     }
   }

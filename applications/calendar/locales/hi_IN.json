@@ -2956,6 +2956,24 @@
       ],
       "Your import will not be processed.": [
         "आपका आयात संसाधित नहीं किया जाएगा।"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "सभी भंडारण स्थान आवंटित किया गया है। कृपया अन्य उपयोगकर्ताओं को आवंटित संग्रहण कम करें।"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "कृपया पता जोड़ने से पहले एक कस्टम डोमेन कॉन्फ़िगर करें।"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "अपने संगठन में उपयोगकर्ताओं को जोड़ने से पहले कृपया एक कस्टम डोमेन कॉन्फ़िगर करें।"
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "कृपया अपने संगठन में उपयोगकर्ताओं को जोड़ने से पहले बहु-उपयोगकर्ता समर्थन सक्षम करें।"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "कई-यूज़र संभालने के लिए कृपया 1 से ज़्यादा यूज़र वाले बिज़नेस प्लान पे अपग्रेड करें।"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "आपने अपनी योजना में सभी उपयोगकर्ताओं का उपयोग किया है। कृपया एक नया उपयोगकर्ता जोड़ने के लिए अपनी योजना को अपग्रेड करें।"
       ]
     },
     "Error accepting calendar invitation": {
@@ -7015,6 +7033,9 @@
       ],
       "ZIP code": [
         "ज़िप कोड"
+      ],
+      "Search": [
+        "खोजें"
       ]
     },
     "Placeholder for contact group name": {
@@ -9169,6 +9190,78 @@
     "Zoom Meeting": {
       "Passcode:": [
         "पासकोड:"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "सौदा पाएं"
+      ],
+      "Summer Sale": [
+        "समर सेल"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/महीना"
+      ],
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
+      ],
+      "2 TB data storage": [
+        "2 टीबी डेटा स्टोरेज"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 जीबी स्टोरेज: आपके मौजूदा प्लैन से 40 गुना ज़्यादा"
+      ],
+      "3 TB data storage": [
+        "3 टीबी डेटा स्टोरेज"
+      ],
+      "500 GB storage": [
+        "500 जीबी स्टोरेज"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME } की सभी प्रीमियम खासियतें"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME } की सभी प्रीमियम खासियतें"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "छूट मानक मासिक कीमतों पर आधारित है। बिल साइकिल समाप्त होने पर आपकी सदस्यता का नवीनीकरण मानक वार्षिक दर पर होगा।"
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } का पूरा एक्सेस"
+      ],
+      "Individual accounts for 6 users": [
+        "6 उपयोगकर्ताओं के लिए अलग-अलग खाते"
+      ],
+      "Individual accounts for you and a partner": [
+        "आपके और आपके पार्टनर के लिए अलग-अलग खाते"
+      ],
+      "Online document and spreadsheet editor": [
+        "ऑनलाइन दस्तावेज़ और स्प्रेडशीट एडिटर"
+      ],
+      "Recover previous file versions": [
+        "फ़ाइलों के पिछले वर्शन रिकवर करें"
+      ],
+      "Stronger protection against cyber threats": [
+        "साइबर खतरों से बेहतर सुरक्षा"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "हमारे वार्षिक प्लैन पर स्विच करें और ${ toYearlyDiscountAmount } बचाएं!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "असीमित फोल्डर, लेबल, और फिल्टर"
+      ],
+      "Use your own email domain": [
+        "अपने खुद के ईमेल डोमेन का इस्तेमाल करें"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "12 महीनों के लिए"
+      ],
+      "SUMMER SALE": [
+        "समर सेल"
       ]
     }
   }

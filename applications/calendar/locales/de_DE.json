@@ -1037,6 +1037,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Verify now": [
+        "Jetzt verifizieren"
       ]
     },
     "action": {
@@ -3245,6 +3248,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Um dein Team nahtlos bei ${ BRAND_NAME } einzubinden, importiere deine Daten aus Google, Outlook und anderen Quellen."
       ]
     },
     "description": {
@@ -4137,6 +4143,27 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Deine Zoom-Verbindung ist abgelaufen. Bitte verbinde dich erneut, um fortzufahren."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Der gesamte Speicherplatz wurde zugeordnet. Bitte reduziere den anderen Benutzern zugewiesenen Speicherplatz."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Bitte richte eine eigene Domain ein, bevor du Adressen hinzufügst."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Bitte konfiguriere eine eigene Domain, bevor du Benutzer zu deiner Organisation hinzufügst."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Bitte aktiviere die Mehrbenutzerunterstützung, bevor du Benutzer zu deiner Organisation hinzufügst."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Bitte upgrade auf ein Business-Abonnement mit mehr als einem Benutzer, um mehrere Benutzer zu verwalten."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Alle E-Mail-Adressen in deinem Abonnement wurden bereits verwendet. Bitte upgrade dein Abonnement, um eine neue E-Mail-Adresse hinzuzufügen, oder deaktiviere eine E-Mail-Adresse in deinem Konto."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Du hast die max. Anzahl von Benutzern in deinem Abonnement ausgeschöpft. Bitte upgrade dein Abonnement, um weitere Benutzer hinzuzufügen."
       ]
     },
     "error": {
@@ -6651,6 +6678,34 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du hast das Limit für Buchungsplätze erreicht (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ total } user found": [
+        "${ total } Benutzer gefunden",
+        "${ total } Benutzer gefunden"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Lade deine Freunde** mit deinem Empfehlungs-Link zu ${ BRAND_NAME } ein."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Sie erhalten ${ refereeRewardAmount }** Guthaben, wenn sie abonnieren."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Du erhältst ${ referrerRewardAmount }** Guthaben für jeden Freund, der abonniert."
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Erinnerst du dich an dein Passwort? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "Passwort vergessen?"
+      ],
+      "Password verified": [
+        "Passwort verifiziert"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Damit du dir dein Passwort besser merken kannst, bitten wir dich, es in regelmäßigen Abständen einzugeben. Mit der Zeit wirst du immer seltener dazu aufgefordert."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Wir werden dich später daran erinnern, dein Passwort erneut zu bestätigen"
       ]
     },
     "info": {
@@ -6820,6 +6875,9 @@
       ],
       "View options": [
         "Optionen anzeigen"
+      ],
+      "Desktop app navigation": [
+        "Desktop-App-Navigation"
       ]
     },
     "Knowledge base link label": {
@@ -9994,6 +10052,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Search": [
+        "Suchen"
       ]
     },
     "Placeholder for contact group name": {
@@ -12557,6 +12618,12 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Deine Organisation nach ${ BRAND_NAME } migrieren"
+      ],
+      "Verify your password": [
+        "Passwort bestätigen"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13139,6 +13206,135 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "BOSS": {
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Übernahme konfigurieren"
+      ],
+      "Contacts": [
+        "Kontakte"
+      ],
+      "Estimated size": [
+        "Geschätzte Größe"
+      ],
+      "Has errors": [
+        "Hat Fehler"
+      ],
+      "In progress": [
+        "In Bearbeitung"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "E-Mail-Adresse des Mitglieds fehlt. Bitte kontaktiere den Kundensupport, um das zu beheben."
+      ],
+      "Migration status": [
+        "Migrationsstatus"
+      ],
+      "Missing organization private key": [
+        "Privater Schlüssel der Organisation fehlt"
+      ],
+      "Missing organization public key": [
+        "Öffentlicher Schlüssel der Organisation fehlt"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisation hat nicht genügend Lizenzen verfügbar"
+      ],
+      "Organization does not have enough storage available": [
+        "Die Organisation hat nicht genügend Speicherplatz verfügbar"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "User": [
+        "Benutzer"
+      ],
+      "What are you migrating?": [
+        "Was übernimmst du?"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Zu ${ CALENDAR_APP_NAME } wechseln"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Zu ${ MAIL_APP_NAME } wechseln"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Deal sichern"
+      ],
+      "Summer Sale": [
+        "Sommer Sale"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/Monat"
+      ],
+      "15 GB storage": [
+        "15 GB Speicher"
+      ],
+      "2 TB data storage": [
+        "2 TB Datenspeicher"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB Speicher: 40-mal dein aktuelles Abonnement"
+      ],
+      "3 TB data storage": [
+        "3 TB Datenspeicher"
+      ],
+      "500 GB storage": [
+        "500 GB Speicher"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle Premium-Funktionen von ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle Premium-Funktionen von ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Die Rabatte basieren auf den monatlichen Standardpreisen. Dein Abonnement wird am Ende des Abrechnungszeitraums zum jährlichen Standardtarif verlängert."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Voller Zugriff auf ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Eigene Konten für 6 Benutzer"
+      ],
+      "Individual accounts for you and a partner": [
+        "Eigene Konten für dich und einen Partner"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online-Dokumenten- und Tabelleneditor"
+      ],
+      "Recover previous file versions": [
+        "Stelle frühere Dateiversionen wieder her"
+      ],
+      "Stronger protection against cyber threats": [
+        "Stärkerer Schutz vor Cyber-Bedrohungen"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Wechsle zu unserem jährlichen Abonnement und spare ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
+      ],
+      "Use your own email domain": [
+        "Nutze deine eigene E-Mail-Domain"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "für 12 Monate"
+      ],
+      "SUMMER SALE": [
+        "SOMMER SALE"
       ]
     }
   }

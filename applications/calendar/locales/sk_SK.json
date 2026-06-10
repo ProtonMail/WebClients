@@ -1045,6 +1045,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná skúšobná verzia desktopovej aplikácie končí dňa ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "Preskúmajte ${ MEET_SHORT_APP_NAME }"
+      ],
+      "Verify now": [
+        "Overiť teraz"
       ]
     },
     "action": {
@@ -3301,6 +3307,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
+      ],
+      "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "Aby sa váš tím bez problémov zapojil do ${ BRAND_NAME }, importujte svoje údaje z Google, Outlooku a ďalších zdrojov."
       ]
     },
     "description": {
@@ -4217,6 +4226,27 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Vaše pripojenie k Zoom vypršalo. Pripojte sa znova pre pokračovanie, prosím."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Všetok úložný priestor bol pridelený. Zmenšite prosím úložný priestor pridelený iným používateľom."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Pred pridaním adries nastavte vlastnú doménu."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Pred pridaním používateľov do svojej organizácie nakonfigurujte vlastnú doménu."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Pred pridaním používateľov do organizácie povoľte podporu viacerých používateľov."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Ak chcete spravovať viacerých používateľov, prejdite na obchodný plán s viac ako 1 používateľom."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
+        "Využili ste všetky adresy vo vašom pláne. Navýšte, prosím, svoj plán, aby ste mohli pridať novú adresu alebo deaktivujte nejakú adresu vo vašom účte."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Limit počtu používateľov vo vašom pláne bol vyčerpaný. Prejdite na vyšší plán, ak chcete pridať ďalšieho používateľa."
       ]
     },
     "error": {
@@ -6833,6 +6863,36 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Dosiahli ste limit rezervačných slotov (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ total } user found": [
+        "${ total } nájdený používateľ",
+        "${ total } nájdení používatelia",
+        "${ total } nájdených používateľov",
+        "${ total } nájdených používateľov"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Pozvite svojich priateľov** do ${ BRAND_NAME } pomocou svojho odporúčacieho odkazu."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "Ak sa prihlásia k odberu, získajú **${ refereeRewardAmount }** kreditov."
+      ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "Za každého priateľa, ktorý sa prihlási k odberu, získate kredit v hodnote **${ referrerRewardAmount }**."
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Pamätáte si svoje heslo? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "Zabudli ste heslo?"
+      ],
+      "Password verified": [
+        "Heslo overené"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "Aby sme vám pomohli nezabudnúť heslo, budeme vás pravidelne žiadať o jeho zadanie. Časom vás o to budeme žiadať čoraz menej."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Neskôr vám pripomenieme, aby ste si heslo overili ešte raz"
       ]
     },
     "info": {
@@ -7010,6 +7070,9 @@
       ],
       "View options": [
         "Možnosti zobrazenia"
+      ],
+      "Desktop app navigation": [
+        "Navigácia v desktopovej aplikácii"
       ]
     },
     "Knowledge base link label": {
@@ -10340,6 +10403,12 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Search": [
+        "Hľadať"
+      ],
+      "Search for users or addresses": [
+        "Hľadať používateľov alebo adresy"
       ]
     },
     "Placeholder for contact group name": {
@@ -12919,6 +12988,15 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Presuňte svoju organizáciu do ${ BRAND_NAME }"
+      ],
+      "Summer Sale": [
+        "Letná zľava"
+      ],
+      "Verify your password": [
+        "Overte svoje heslo"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13589,6 +13667,186 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "BOSS": {
+      "Activated": [
+        "Aktivované"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresu už používa používateľ mimo vašej organizácie. Kontaktujte zákaznícku podporu, aby ste to vyriešili."
+      ],
+      "All": [
+        "Všetko"
+      ],
+      "Calendar": [
+        "Kalendár"
+      ],
+      "Configure migration": [
+        "Nastaviť migráciu"
+      ],
+      "Contacts": [
+        "Kontakty"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Stav migrácie dát z Google Workspace do ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Emaily"
+      ],
+      "Errors": [
+        "Chyby"
+      ],
+      "Estimated size": [
+        "Odhadovaná veľkosť"
+      ],
+      "Find out what can be migrated.": [
+        "Zistite, čo je možné preniesť."
+      ],
+      "Has errors": [
+        "Má chyby"
+      ],
+      "In progress": [
+        "Prebieha"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresa člena nebola nájdená. Na vyriešenie tohto problému kontaktujte zákaznícku podporu."
+      ],
+      "Migrate": [
+        "Migrovať"
+      ],
+      "Migrated": [
+        "Presunuté"
+      ],
+      "Migration status": [
+        "Stav migrácie"
+      ],
+      "Missing organization private key": [
+        "Chýba súkromný kľúč organizácie"
+      ],
+      "Missing organization public key": [
+        "Chýba verejný kľúč organizácie"
+      ],
+      "No users to display": [
+        "Nie sú žiadni používatelia na zobrazenie"
+      ],
+      "Not activated": [
+        "Neaktivované"
+      ],
+      "Organization does not have enough seats available": [
+        "Organizaícia nemá dostatok voľných licencií"
+      ],
+      "Organization does not have enough storage available": [
+        "Organzácia nemá dostatok úložného priestoru"
+      ],
+      "Pending": [
+        "Čakajúce"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Vyberte presne to, čo chcete preniesť. Zmena sa uplatní na všetkých používateľov v organizácii."
+      ],
+      "Select users to migrate": [
+        "Vyberte používateľov na presun"
+      ],
+      "Size": [
+        "Veľkosť"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "User": [
+        "Používateľ"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Používatelia, ktorí sa prihlásili do svojho ${ BRAND_NAME } účtu"
+      ],
+      "What are you migrating?": [
+        "Čo migrujete?"
+      ],
+      "You": [
+        "Vy"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "Prepnúť do ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "Prepnúť do ${ MAIL_APP_NAME }"
+      ]
+    },
+    "q2campaign2026: Action": {
+      "Get the deal": [
+        "Využite ponuku"
+      ],
+      "Summer Sale": [
+        "Letný výpredaj"
+      ]
+    },
+    "q2campaign2026: Info": {
+      "/month": [
+        "/mesačným"
+      ],
+      "15 GB storage": [
+        "15 GB úložisko"
+      ],
+      "2 TB data storage": [
+        "2 TB dátové úložisko"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB úložisko: 40x váš súčasný plán"
+      ],
+      "3 TB data storage": [
+        "3 TB dátové úložisko"
+      ],
+      "500 GB storage": [
+        "500 GB úložisko"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všetky prémiové funkcie služieb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všetky prémiové funkcie služieb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zľavy vychádzajú zo štandardných mesačných cien. Po skončení fakturačného obdobia sa vaše predplatné obnoví za štandardnú ročnú sadzbu."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Plný prístup k službe ${ VPN_APP_NAME }"
+      ],
+      "Individual accounts for 6 users": [
+        "Samostatné účty pre 6 používateľov"
+      ],
+      "Individual accounts for you and a partner": [
+        "Samostatné účty pre vás a partnera"
+      ],
+      "Online document and spreadsheet editor": [
+        "Online editor dokumentov a tabuliek"
+      ],
+      "Recover previous file versions": [
+        "Obnovte predchádzajúce verzie súborov"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnejšia ochrana pred kybernetickými hrozbami"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Prejdite na náš ročný plán a ušetrite ${ toYearlyDiscountAmount }!"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neobmedzený počet priečinkov, štítkov a filtrov"
+      ],
+      "Use your own email domain": [
+        "Používajte vlastnú emailovú doménu"
+      ]
+    },
+    "q2campaign2026: Title": {
+      "for 12 months": [
+        "na 12 mesiacov"
+      ],
+      "SUMMER SALE": [
+        "LETNÝ VÝPREDAJ"
       ]
     }
   }
