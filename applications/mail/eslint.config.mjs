@@ -2,6 +2,7 @@ import { defineConfig } from 'eslint/config';
 
 import defaultConfig from '@proton/eslint-config-proton/all';
 import { atomsPackage, componentsPackage, createBarrelConfig, iconsPackage } from '@proton/eslint-config-proton/barrel';
+import { iconRestrictedImports } from '@proton/eslint-config-proton/icon';
 
 export default defineConfig([
     defaultConfig,
@@ -39,6 +40,7 @@ export default defineConfig([
                     ],
                 },
             ],
+            '@typescript-eslint/no-restricted-imports': ['error', { paths: iconRestrictedImports }],
             // TODO: Remove this rule once the cycle dependency is fixed
             'import/no-cycle': 'off',
         },

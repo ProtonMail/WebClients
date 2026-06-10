@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import Icon from '@proton/components/components/icon/Icon';
 import useFolderColor from '@proton/components/hooks/useFolderColor';
 import { IcFolder } from '@proton/icons/icons/IcFolder';
