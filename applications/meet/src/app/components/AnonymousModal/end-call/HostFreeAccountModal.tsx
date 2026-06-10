@@ -30,9 +30,15 @@ export const HostFreeAccountModal = ({ open, onClose, rejoin, action, upsellModa
                 </Button>
             }
             rejoin={isExpired ? undefined : rejoin}
-            title={isExpired ? c('Info').t`Your free meeting has ended` : c('Info').t`You left the meeting`}
-            subtitle={c('Info')
-                .t`Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.`}
+            title={isExpired ? c('Info').t`Meeting time is up` : c('Info').t`You left the meeting`}
+            subtitle={
+                isExpired
+                    ? c('Info')
+                          .t`This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.`
+                    : c('Info')
+                          .t`Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.`
+            }
+            upsellModalType={upsellModalType}
         />
     );
 };
