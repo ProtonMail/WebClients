@@ -54,13 +54,18 @@ class OPFSWorkerStorage {
         }
     }
 
-    async addChunk(chunkBuffer: ArrayBuffer): Promise<void> {
+    async addChunk(chunkBuffer: ArrayBuffer, position?: number): Promise<void> {
         if (this.syncAccessHandle) {
-            const bytesWritten = this.syncAccessHandle.write(chunkBuffer, { at: this.filePosition });
-            this.filePosition += bytesWritten;
+            const at = position ?? this.filePosition;
+            const bytesWritten = this.syncAccessHandle.write(chunkBuffer, { at });
+            this.filePosition = Math.max(this.filePosition, at + bytesWritten);
             this.syncAccessHandle.flush();
         } else if (this.writable) {
-            await this.writable.write(chunkBuffer);
+            if (position !== undefined) {
+                await this.writable.write({ type: 'write', position, data: chunkBuffer });
+            } else {
+                await this.writable.write(chunkBuffer);
+            }
         } else {
             throw new Error('No writable stream or sync handle available');
         }
@@ -124,7 +129,7 @@ self.onmessage = async (event: MessageEvent<StorageWorkerMessage>) => {
             }
 
             case StorageMessageType.ADD_CHUNK: {
-                await storage.addChunk(message.data.chunkBuffer);
+                await storage.addChunk(message.data.chunkBuffer, message.data.position);
                 const response: StorageWorkerResponse = { type: StorageWorkerResponseType.SUCCESS, id };
                 self.postMessage(response);
                 break;

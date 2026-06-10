@@ -1,5 +1,6 @@
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 
+import type { AudioTapSamples } from '../mediaEncoder/types';
 import { forwardWorkerLog } from '../workerLogger';
 import { CANVAS_HEIGHT, CANVAS_WIDTH, RECORDING_FPS } from './constants';
 import { type TrackCapture, startTrackCapture } from './trackCapture';
@@ -23,8 +24,8 @@ export class VideoMixerClient {
     private canvasStream: MediaStream;
     private trackCaptures: Map<string, TrackCapture> = new Map();
     private reportMeetError: ReportMeetError;
-    private videoFrameCount = 0;
-    private pendingFrameCountResolve: ((count: number) => void) | null = null;
+    private encoderOnChunk: ((data: Uint8Array<ArrayBuffer>, position: number) => void) | null = null;
+    private encoderDoneResolve: (() => void) | null = null;
 
     constructor({
         initialScene,
@@ -49,10 +50,12 @@ export class VideoMixerClient {
                 return;
             }
 
-            if (event.data?.type === 'frameCountReport') {
-                this.videoFrameCount = event.data.count;
-                this.pendingFrameCountResolve?.(event.data.count);
-                this.pendingFrameCountResolve = null;
+            const message = event.data;
+            if (message?.type === 'encoderChunk') {
+                this.encoderOnChunk?.(message.data, message.position);
+            } else if (message?.type === 'encoderDone') {
+                this.encoderDoneResolve?.();
+                this.encoderDoneResolve = null;
             }
         };
 
@@ -72,6 +75,10 @@ export class VideoMixerClient {
                     lineno: event.lineno,
                 },
             });
+
+            // Unblock a pending stopEncoder so stop() doesn't hang on a dead worker.
+            this.encoderDoneResolve?.();
+            this.encoderDoneResolve = null;
         };
 
         const offscreen = this.canvas.transferControlToOffscreen();
@@ -128,20 +135,20 @@ export class VideoMixerClient {
         return this.canvasStream.getVideoTracks();
     }
 
-    public requestFinalFrameCount(): Promise<number> {
+    public startEncoder(onChunk: (data: Uint8Array<ArrayBuffer>, position: number) => void): void {
+        this.encoderOnChunk = onChunk;
+        this.worker.postMessage({ type: VideoMixerMessageType.START_ENCODER });
+    }
+
+    public stopEncoder(): Promise<void> {
         return new Promise((resolve) => {
-            const timeout = setTimeout(() => {
-                this.pendingFrameCountResolve = null;
-                resolve(this.videoFrameCount);
-            }, 500);
-
-            this.pendingFrameCountResolve = (count) => {
-                clearTimeout(timeout);
-                resolve(count);
-            };
-
-            this.worker.postMessage({ type: VideoMixerMessageType.REQUEST_FRAME_COUNT });
+            this.encoderDoneResolve = resolve;
+            this.worker.postMessage({ type: VideoMixerMessageType.STOP_ENCODER });
         });
+    }
+
+    public provideAudioSamples(samples: AudioTapSamples): void {
+        this.worker.postMessage({ type: VideoMixerMessageType.PROVIDE_AUDIO_SAMPLES, samples });
     }
 
     public cleanup(): void {
