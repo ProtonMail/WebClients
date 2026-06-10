@@ -4,6 +4,7 @@ import { Navigate, Route, Routes, useLocation } from 'react-router-dom-v5-compat
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import {
     GlobalLoader,
     GlobalLoaderProvider,
@@ -18,6 +19,7 @@ import { getDrive, getDriveForPhotos, splitNodeUid, useDrive } from '@proton/dri
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { logging } from '@proton/drive/modules/logging';
 import { driveMetrics } from '@proton/drive/modules/metrics';
+import { useInitEncryptedThumbnailCache } from '@proton/drive/modules/thumbnails';
 import { useLoading } from '@proton/hooks';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -86,8 +88,19 @@ function InitContainer() {
     const drawerWidth = useDrawerWidth();
     const driveWebASVEnabled = useFlag('DriveWebRecoveryASV');
     const [subscription] = useSubscription();
+    const getUserKeys = useGetUserKeys();
+    const [user] = useUser();
+    const isEncryptedThumbnailCacheEnabled = useFlag('DriveWebEncryptedThumbnailCache');
+
     // Bootstrap search module.
     useSearchModule();
+
+    // Initialise the encrypted thumbnail cache for the current user.
+    useInitEncryptedThumbnailCache({
+        getUserKeys,
+        userId: user?.ID,
+        isEnabled: isEncryptedThumbnailCacheEnabled,
+    });
 
     useActivePing();
     useReactRouterNavigationLog();
