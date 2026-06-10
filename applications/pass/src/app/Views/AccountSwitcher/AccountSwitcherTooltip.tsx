@@ -10,8 +10,8 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useRerender } from '@proton/pass/hooks/useRerender';
@@ -72,7 +72,7 @@ export const AccountSwitcherTooltip: FC<AccountSwitcherTooltipProps> = ({ childr
                         }
                     >
                         <span className="flex gap-2 items-center px-2">
-                            <Icon name="user-plus" />
+                            <IcUserPlus />
                             {c('Action').t`Add account`}
                         </span>
                     </ButtonLike>

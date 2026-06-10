@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { TopBar } from '@proton/pass/components/Layout/Bar/TopBar';
 import { PASS_DESKTOP_CHANGELOG_URL, PASS_LINUX_DOWNLOAD_URL, PASS_LINUX_VERSION_URL } from '@proton/pass/constants';
@@ -53,7 +53,7 @@ export const LinuxUpdateBar: FC = () => {
     }, []);
 
     const changelogLink = (
-        <Href href={PASS_DESKTOP_CHANGELOG_URL} key="eslint-autofix-CAAF0E">
+        <Href href={PASS_DESKTOP_CHANGELOG_URL} key="changeLogLink">
             {
                 // translator: the text here is a link for the full sentence "The changelog can be found here."
                 c('Info').t`here`
@@ -63,7 +63,7 @@ export const LinuxUpdateBar: FC = () => {
 
     return (
         <TopBar breakpoint="md" visible={show} onClose={() => setShow(false)}>
-            <Icon name="arrows-rotate" size={6} />
+            <IcArrowsRotate size={6} />
             <div>
                 <span className="text-bold mr-1">{c('Info').t`New version ${latestVersion} is available.`}</span>
                 <span className="color-weak">{c('Info').jt`The changelog can be found ${changelogLink}.`}</span>
