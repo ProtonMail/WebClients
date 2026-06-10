@@ -1,3 +1,13 @@
+### Version 1.38.0
+
+- Support login autofill in iframes (banking, OAuth, and payment forms)
+- Support cross-origin passkey requests via WebAuthn well-known resolution
+- Support pause lists configured by organization admins
+- Add "Exclude from monitoring" option in Pass Monitor
+- Add admin panel shortcut in extension menu for organization admins
+- Improve autosave prompt with editable item title
+- Fix autofill overlay clickjacking vulnerability
+
 ### Version 1.37.2
 
 - Fix B2B initial onboarding lock setup blocking activity probe
