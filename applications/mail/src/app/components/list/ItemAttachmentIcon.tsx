@@ -4,6 +4,7 @@ import { createElement } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+// eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import Icon from '@proton/components/components/icon/Icon';
 import { useFeature } from '@proton/features/index';
 import { FeatureCode } from '@proton/features/interface';

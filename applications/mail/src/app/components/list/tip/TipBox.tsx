@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+// eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import Icon from '@proton/components/components/icon/Icon';
 import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
 import type { CustomNotificationProps } from '@proton/components/containers/notifications/interfaces';
