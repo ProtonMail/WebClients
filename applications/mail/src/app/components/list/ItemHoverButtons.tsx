@@ -4,10 +4,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import { useLoading } from '@proton/hooks';
 import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
+import { IcEnvelopeDot } from '@proton/icons/icons/IcEnvelopeDot';
+import { IcEnvelopeOpen } from '@proton/icons/icons/IcEnvelopeOpen';
+import { IcStar } from '@proton/icons/icons/IcStar';
+import { IcStarFilled } from '@proton/icons/icons/IcStarFilled';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -120,10 +123,6 @@ const ItemHoverButtons = ({ element, labelID, className, onBack, hasStar = true,
         );
     };
 
-    const unreadIcon = isUnread ? 'envelope-open' : 'envelope-dot';
-    const unreadAlt = isUnread ? c('Title').t`Mark as read` : c('Title').t`Mark as unread`;
-
-    const starIcon = isStarred ? 'star-filled' : 'star';
     const starAlt = isElementMessage(element)
         ? isStarred
             ? c('Alt').t`Unstar message`
@@ -149,9 +148,16 @@ const ItemHoverButtons = ({ element, labelID, className, onBack, hasStar = true,
                     className
                 )}
             >
-                <Tooltip title={unreadAlt} tooltipClassName="pointer-events-none">
+                <Tooltip
+                    title={isUnread ? c('Title').t`Mark as read` : c('Title').t`Mark as unread`}
+                    tooltipClassName="pointer-events-none"
+                >
                     <Button icon shape="ghost" size={size} className="color-inherit" onClick={handleMarkAs}>
-                        <Icon name={unreadIcon} alt={unreadAlt} />
+                        {isUnread ? (
+                            <IcEnvelopeOpen alt={c('Title').t`Mark as read`} />
+                        ) : (
+                            <IcEnvelopeDot alt={c('Title').t`Mark as unread`} />
+                        )}
                     </Button>
                 </Tooltip>
                 {labelID === MAILBOX_LABEL_IDS.TRASH ? (
@@ -210,7 +216,7 @@ const ItemHoverButtons = ({ element, labelID, className, onBack, hasStar = true,
                             )}
                             aria-pressed={isStarred}
                         >
-                            <Icon name={starIcon} alt={buttonTxt} />
+                            {isStarred ? <IcStarFilled alt={buttonTxt} /> : <IcStar alt={buttonTxt} />}
                         </Button>
                     </Tooltip>
                 )}

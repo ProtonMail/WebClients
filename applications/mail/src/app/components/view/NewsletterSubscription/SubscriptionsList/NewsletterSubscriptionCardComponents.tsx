@@ -1,14 +1,14 @@
-import type { PropsWithChildren } from 'react';
+import type { PropsWithChildren, ReactNode } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import FiltersUpsellModal from '@proton/components/components/upsell/modals/FiltersUpsellModal';
 import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
-import type { IconName } from '@proton/icons/types';
+import { IcEnvelopeDot } from '@proton/icons/icons/IcEnvelopeDot';
+import { IcInbox } from '@proton/icons/icons/IcInbox';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
@@ -46,13 +46,13 @@ export const SubscriptionCardTitle = ({ subscription }: PropsWithNewsletterSubsc
 };
 
 interface SubscriptionStatProps extends PropsWithChildren {
-    iconName: IconName;
+    icon: ReactNode;
 }
 
-const SubscriptionStat = ({ iconName, children }: SubscriptionStatProps) => {
+const SubscriptionStat = ({ icon, children }: SubscriptionStatProps) => {
     return (
         <div className="flex flex-row items-stretch flex-nowrap items-center gap-2">
-            <Icon name={iconName} className="shrink-0" />
+            {icon}
             <span>{children}</span>
         </div>
     );
@@ -64,7 +64,7 @@ export const SubscriptionCardStats = ({ subscription }: PropsWithNewsletterSubsc
     return (
         <div className="flex flex-column gap-2 text-sm color-weak" data-testid="subscription-card-stats">
             {subscription.UnreadMessageCount !== undefined ? (
-                <SubscriptionStat iconName="envelope-dot">
+                <SubscriptionStat icon={<IcEnvelopeDot className="shrink-0" />}>
                     {c('Info').ngettext(
                         msgid`${subscription.UnreadMessageCount} unread`,
                         `${subscription.UnreadMessageCount} unread`,
@@ -74,7 +74,7 @@ export const SubscriptionCardStats = ({ subscription }: PropsWithNewsletterSubsc
             ) : null}
 
             {receivedMessagesCount !== undefined ? (
-                <SubscriptionStat iconName="inbox">
+                <SubscriptionStat icon={<IcInbox className="shrink-0" />}>
                     {c('Info').ngettext(
                         msgid`${receivedMessagesCount} email last month`,
                         `${receivedMessagesCount} emails last month`,
