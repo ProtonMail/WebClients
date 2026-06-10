@@ -1,8 +1,11 @@
 import type { FC } from 'react';
 import { useEffect, useRef } from 'react';
 
+import { clsx } from 'clsx';
+
 import type { MaybeNull } from '@proton/pass/types/utils';
 
+import { useLumoAnimatedBackground } from '../../hooks/useLumoAnimatedBackground';
 import { useLumoTheme } from '../../providers';
 
 import './Blobs.scss';
@@ -63,6 +66,7 @@ const renderDots = (canvas: MaybeNull<HTMLCanvasElement>) => {
 export const Blobs: FC = () => {
     const ref = useRef<HTMLCanvasElement>(null);
     const { theme } = useLumoTheme();
+    const { isAnimatedBackgroundEnabled } = useLumoAnimatedBackground();
 
     useEffect(() => {
         const canvas = ref.current;
@@ -82,7 +86,7 @@ export const Blobs: FC = () => {
     }, [theme]);
 
     return (
-        <div className="lumo--blobs" aria-hidden="true">
+        <div className={clsx('lumo--blobs', !isAnimatedBackgroundEnabled && 'lumo--blobs--static')} aria-hidden="true">
             <canvas className="lumo--blobs-overlay" ref={ref} />
             <div className="lumo--blobs-gradient" />
         </div>
