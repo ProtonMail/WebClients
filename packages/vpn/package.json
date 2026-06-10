@@ -18,7 +18,8 @@
         "./components/VPNDownloadSection": "./src/components/VPNDownloadSection/DownloadAndInfoSection.tsx",
         "./components/VPNClientsSection": "./src/components/VPNClientsSection/index.tsx",
         "./definitions/routes": "./src/definitions/routes.ts",
-        "./hooks/useB2BAdminSidebarFeature": "./src/hooks/useB2BAdminSidebarFeature.ts"
+        "./hooks/useB2BAdminSidebarFeature": "./src/hooks/useB2BAdminSidebarFeature.ts",
+        "./contexts/navigation": "./src/contexts/NavigationContext.tsx"
     },
     "main": "./src/index.ts",
     "scripts": {
