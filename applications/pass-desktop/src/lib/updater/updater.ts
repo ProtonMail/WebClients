@@ -215,8 +215,10 @@ export const startUpdater = (session: Session) => {
     });
 
     autoUpdater.on('update-not-available', () => {
-        logger.log('[Update] No updates available.');
-        setUpdateStore({ status: UpdateStatus.Idle });
+        // We only run the autoUpdater when we think there is an update from version.json
+        // So it's considered an error if we try and there are none
+        logger.log('[Update] Update announced but not available from the feed.');
+        setUpdateStore({ status: UpdateStatus.Error, errorType: UpdateErrorType.InstallFailed, progress: null });
     });
 
     // check for updates right away and keep checking later
