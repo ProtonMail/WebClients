@@ -1,10 +1,14 @@
 import useConfig from '@proton/components/hooks/useConfig';
 import { APPS } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { useFlag } from '@proton/unleash/useFlag';
 
 export const useCanEnableChat = (user: UserModel) => {
-    const canEnableChat = user.hasPaidVpn;
     const { APP_NAME } = useConfig();
+    const isZendeskAIAgentEnabled = useFlag('EnableZenDeskAIAgent');
 
-    return APP_NAME === APPS.PROTONVPN_SETTINGS && canEnableChat;
+    if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
+        return isZendeskAIAgentEnabled || user.hasPaidVpn;
+    }
+    return false;
 };
