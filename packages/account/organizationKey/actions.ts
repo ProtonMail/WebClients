@@ -65,6 +65,7 @@ import type { KtState } from '../kt';
 import { getKTUserContext } from '../kt/actions';
 import { getMemberAddresses, membersThunk } from '../members';
 import { userKeysThunk } from '../userKeys';
+import type { RoleChangeClassification } from './classifyRoleChange';
 import { type OrganizationKeyState, organizationKeyThunk } from './index';
 
 const keyGenConfig = KEYGEN_CONFIGS[KEYGEN_TYPES.CURVE25519];
@@ -292,16 +293,10 @@ const getReEncryptedMemberTokens = async ({
     });
 };
 
-type ConfirmPromotionMemberAction = {
-    type: 'confirm-promote';
-    payload: PromoteGlobalSSOPayload | MemberKeyPayload;
-    prompt: boolean;
+export type MemberEditPayload = {
+    classification: RoleChangeClassification;
+    payload: PromoteGlobalSSOPayload | MemberKeyPayload | null;
 };
-type ConfirmDemotionMemberAction = {
-    type: 'confirm-demote';
-    payload: PromoteGlobalSSOPayload | null;
-};
-export type MemberPromptAction = ConfirmPromotionMemberAction | ConfirmDemotionMemberAction;
 
 const getPromoteGlobalSSOPayload = ({
     member,
@@ -323,76 +318,51 @@ const getPromoteGlobalSSOPayload = ({
 
 export const getMemberEditPayload = ({
     member,
-    memberDiff,
+    classification,
     api,
 }: {
     member: EnhancedMember;
-    memberDiff: Partial<{
-        role: MEMBER_ROLE;
-    }>;
+    classification: RoleChangeClassification;
     api: Api;
 }): ThunkAction<
-    Promise<MemberPromptAction | null>,
+    Promise<PromoteGlobalSSOPayload | MemberKeyPayload | null>,
     KtState & OrganizationKeyState,
     ProtonThunkArguments,
     UnknownAction
 > => {
     return async (dispatch) => {
+        if (classification.kind === 'demote') {
+            return member.SSO && !getIsMemberSetup(member)
+                ? getPromoteGlobalSSOPayload({
+                      member,
+                      memberAddresses: await dispatch(getMemberAddresses({ member, retry: true })),
+                  })
+                : null;
+        }
+
+        // Non-passwordless promotions commit directly, no prompt and no key packet payload.
+        if (classification.via === 'no-payload') {
+            return null;
+        }
+
+        const memberAddresses = await dispatch(getMemberAddresses({ member, retry: true }));
+
+        if (classification.via === 'sso') {
+            return getPromoteGlobalSSOPayload({ member, memberAddresses });
+        }
+
         const organizationKey = await dispatch(organizationKeyThunk());
-        const passwordlessMode = getIsPasswordless(organizationKey?.Key);
 
-        if (memberDiff.role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
-            const payload =
-                member.SSO && !getIsMemberSetup(member)
-                    ? getPromoteGlobalSSOPayload({
-                          member,
-                          memberAddresses: await dispatch(getMemberAddresses({ member, retry: true })),
-                      })
-                    : null;
-            return {
-                type: 'confirm-demote',
-                payload,
-            };
-        }
-
-        if (memberDiff.role === MEMBER_ROLE.ORGANIZATION_ADMIN && passwordlessMode) {
-            const memberAddresses = await dispatch(getMemberAddresses({ member, retry: true }));
-
-            if (member.SSO && !getIsMemberSetup(member)) {
-                return {
-                    type: 'confirm-promote',
-                    payload: getPromoteGlobalSSOPayload({ member, memberAddresses }),
-                    prompt: true,
-                };
-            }
-
-            const payload = await getMemberKeyPayload({
-                organizationKey,
-                mode: {
-                    type: 'email',
-                    ktUserContext: await dispatch(getKTUserContext()),
-                },
-                api,
-                member,
-                memberAddresses,
-            });
-
-            if (member.Private === MEMBER_PRIVATE.UNREADABLE) {
-                return {
-                    type: 'confirm-promote',
-                    payload,
-                    prompt: true,
-                };
-            }
-
-            return {
-                type: 'confirm-promote',
-                payload,
-                prompt: false,
-            };
-        }
-
-        return null;
+        return getMemberKeyPayload({
+            organizationKey,
+            mode: {
+                type: 'email',
+                ktUserContext: await dispatch(getKTUserContext()),
+            },
+            api,
+            member,
+            memberAddresses,
+        });
     };
 };
 
