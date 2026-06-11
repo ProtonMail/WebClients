@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Info from '@proton/components/components/link/Info';
 import { SetupOrgSpotlight } from '@proton/components/containers/account/spotlights/passB2bOnboardingSpotlights/PassB2bOnboardingSpotlights';
 import {
@@ -21,40 +22,43 @@ export const MembersTableHeader = ({
     searchInput: ReactNode;
     membersHook: UseUserMemberActions;
 }) => {
+    const createUserButtonWithTooltip = (
+        <Tooltip title={!meta.canAddUser ? c('Label').t`You don't have permissions` : undefined} openDelay={100}>
+            <span>
+                <Button color="norm" disabled={meta.disableAddUserButton} onClick={actions.handleAddUser}>
+                    {c('Action').t`Add user`}
+                </Button>
+            </span>
+        </Tooltip>
+    );
     return (
         <div className="mb-4 flex items-start">
             <div className="mb-2 w-full lg:w-custom" style={{ '--lg-w-custom': '24em' }}>
                 {searchInput}
             </div>
             <div className="flex items-center mb-2 gap-2 ml-0 lg:ml-auto">
-                {!meta.showAddAddress ? (
-                    <>
-                        {meta.hasSetupActiveOrganizationWithKeys && (
-                            <SetupOrgSpotlight app={app}>
-                                <Button
-                                    color="norm"
-                                    disabled={meta.disableAddUserButton}
-                                    onClick={actions.handleAddUser}
-                                >
-                                    {c('Action').t`Add user`}
-                                </Button>
-                            </SetupOrgSpotlight>
-                        )}
-                    </>
-                ) : (
+                {!meta.showAddAddress && meta.hasSetupActiveOrganizationWithKeys && (
+                    <SetupOrgSpotlight app={app}>{createUserButtonWithTooltip}</SetupOrgSpotlight>
+                )}
+                {meta.showAddAddress && (
                     <>
                         {meta.isOrgAFamilyPlan ? (
-                            <Button
-                                color="norm"
-                                disabled={meta.disableInviteUserButton}
-                                onClick={actions.handleInviteUser}
+                            <Tooltip
+                                title={!meta.canAddUser ? c('Label').t`You don't have permissions` : undefined}
+                                openDelay={100}
                             >
-                                {c('Action').t`Invite user`}
-                            </Button>
+                                <span>
+                                    <Button
+                                        color="norm"
+                                        disabled={meta.disableInviteUserButton}
+                                        onClick={actions.handleInviteUser}
+                                    >
+                                        {c('Action').t`Invite user`}
+                                    </Button>
+                                </span>
+                            </Tooltip>
                         ) : (
-                            <Button color="norm" disabled={meta.disableAddUserButton} onClick={actions.handleAddUser}>
-                                {c('Action').t`Add user`}
-                            </Button>
+                            createUserButtonWithTooltip
                         )}
 
                         {/* Only family and visionary can invite existing Proton users */}
@@ -70,15 +74,22 @@ export const MembersTableHeader = ({
                                 />
                             ))}
 
-                        {meta.hasMaxAddresses ? (
-                            <Button
-                                shape="outline"
-                                disabled={meta.disableAddAddressButton}
-                                onClick={() => actions.handleAddAddress()}
+                        {meta.hasMaxAddresses && (
+                            <Tooltip
+                                title={!meta.canUpdateUser ? c('Label').t`You don't have permissions` : undefined}
+                                openDelay={100}
                             >
-                                {c('Action').t`Add address`}
-                            </Button>
-                        ) : null}
+                                <span>
+                                    <Button
+                                        shape="outline"
+                                        disabled={meta.disableAddAddressButton}
+                                        onClick={() => actions.handleAddAddress()}
+                                    >
+                                        {c('Action').t`Add address`}
+                                    </Button>
+                                </span>
+                            </Tooltip>
+                        )}
                     </>
                 )}
             </div>
