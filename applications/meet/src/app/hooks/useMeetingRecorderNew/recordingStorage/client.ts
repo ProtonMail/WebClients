@@ -80,7 +80,10 @@ export class RecordingStorageClient {
             this.pendingMessages.clear();
         };
 
-        await this.send({ type: StorageMessageType.INIT, data: { fileExtension: this.fileExtension } });
+        await this.send({
+            type: StorageMessageType.INIT,
+            data: { fileExtension: this.fileExtension },
+        });
     }
 
     // `position` is set by the WebCodecs path (mediabunny gives an explicit byte
@@ -138,10 +141,10 @@ export class RecordingStorageClient {
             await new Promise((resolve) => setTimeout(resolve, 50));
         }
 
-        const root = await navigator.storage.getDirectory();
+        const directory = await navigator.storage.getDirectory();
         const files = await Promise.all(
             fileNames.map(async (name) => {
-                const fileHandle = await root.getFileHandle(name);
+                const fileHandle = await directory.getFileHandle(name);
                 return fileHandle.getFile();
             })
         );

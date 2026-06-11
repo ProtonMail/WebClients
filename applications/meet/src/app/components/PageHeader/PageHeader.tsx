@@ -19,6 +19,7 @@ import clsx from '@proton/utils/clsx';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
 import { MeetSignIn } from '../SignIn/SignIn';
+import { SettingsDropdown } from './SettingsDropdown';
 
 import './PageHeader.scss';
 
@@ -117,16 +118,19 @@ export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: Pa
                                     </Button>
                                 </>
                             ) : (
-                                <UserDropdown
-                                    app={APPS.PROTONMEET}
-                                    logoutRedirectUrl={`${location.pathname}${location.hash}`}
-                                    extraSessionForkData={{ returnUrl: switchAccountReturnPath }}
-                                    sessionOptions={
-                                        switchAccountReturnPath
-                                            ? { path: switchAccountReturnPath, target: '_self' }
-                                            : undefined
-                                    }
-                                />
+                                <>
+                                    <UserDropdown
+                                        app={APPS.PROTONMEET}
+                                        logoutRedirectUrl={`${location.pathname}${location.hash}`}
+                                        extraSessionForkData={{ returnUrl: switchAccountReturnPath }}
+                                        sessionOptions={
+                                            switchAccountReturnPath
+                                                ? { path: switchAccountReturnPath, target: '_self' }
+                                                : undefined
+                                        }
+                                    />
+                                    <SettingsDropdown />
+                                </>
                             )}
                             {(isJoinPage || isSchedulePage) && (
                                 <CloseButton onClose={() => history.push('/dashboard')} />
