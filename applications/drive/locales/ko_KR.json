@@ -1098,9 +1098,6 @@
       "Upload and share files": [
         "파일 업로드 및 공유하기"
       ],
-      "Upload anyway": [
-        "무시하고 업로드"
-      ],
       "Upload file": [
         "파일 업로드"
       ],
@@ -3262,9 +3259,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\"이(가) 이미 존재합니다"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } 외부 계정에 연결할 수 없었습니다."
       ],
@@ -3484,9 +3478,6 @@
       "Failed to update public share node": [
         "공개 공유 노드 업데이트 실패"
       ],
-      "File cannot be merged with folder": [
-        "파일을 폴더와 병합할 수 없음"
-      ],
       "First name is too long": [
         "이름이 너무 깁니다."
       ],
@@ -3621,9 +3612,6 @@
       ],
       "Payment process not supported": [
         "지원하지 않는 결제수단"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "사진 업로드가 일시적으로 비활성화되었습니다. 나중에 다시 시도해 주십시오."
       ],
       "Please activate your search again": [
         "다시 검색을 활성화 해주세요"
@@ -3787,24 +3775,6 @@
       "The minimum donation amount is ${ price }": [
         "최소 기부 금액은 ${ price }입니다."
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "원본 파일의 새로운 리비전이 아직 업로드되지 않았습니다, 나중에 다시 시도해 주세요"
-      ],
-      "The original file has missing active revision": [
-        "원본 파일에 활성화된 수정본이 없습니다"
-      ],
-      "The original file has missing hash key": [
-        "원본 파일에 해시 키가 없습니다"
-      ],
-      "The original file has missing session key": [
-        "원본 파일에 세션 키가 없습니다"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "원본 파일이 아직 업로드되지 않았습니다, 나중에 다시 시도해 주세요"
-      ],
-      "The original folder not found": [
-        "원본 폴더를 찾을 수 없음"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "외부 계정에 너무 많은 폴더가 있습니다. 일부 폴더를 삭제하려면 사용자 지정 가져오기를 설정하세요."
       ],
@@ -3858,9 +3828,6 @@
       ],
       "Upload failed": [
         "업로드 실패"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "이 폴더에 대한 업로드가 일시적으로 비활성화 되었습니다."
       ],
       "Username must begin with a letter or digit": [
         "사용자명은 문자로 시작해야 합니다"
@@ -5411,9 +5378,6 @@
       "for ${ price }": [
         "${ price }으로"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "최상의 결과를 얻으려면 스트리밍 및 메모리를 많이 사용하는 활동을 피하거나 파일을 나누어 업로드하세요."
-      ],
       "Free 5GB encrypted storage to get started": [
         "시작하기 위한 5GB 무료 암호화 스토리지"
       ],
@@ -6158,9 +6122,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "이제 ${ defaultEmailAddress }가 메시지를 보내는 주소입니다."
       ],
-      "This item already exists in your library": [
-        "이 항목은 이미 라이브러리에 존재합니다."
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "일부 항목이 사진 라이브러리에 저장되지 않았습니다. 앨범에서 삭제하면 해당 항목에 영구적으로 접근할 수 없게 됩니다."
       ],
@@ -6200,26 +6161,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "이 작업은 선택된 항목을 영구적으로 삭제합니다."
       ],
-      "This will replace the existing file with the folder": [
-        "이는 기존 파일을 폴더로 대체하게 됩니다"
-      ],
       "This will replace the existing folder or file with the file": [
         "기존 폴더 또는 파일을 파일로 대체하게 됩니다"
       ],
       "This will replace the existing folder or file with the folder": [
         "기존 폴더 또는 파일을 폴더로 대체하게 됩니다"
       ],
-      "This will replace the existing folder with the file": [
-        "이는 기존 폴더를 파일로 대체하게 됩니다"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "현재 로그인된 모든 계정에서 로그아웃하게 됩니다."
-      ],
-      "This will upload a new version of the file": [
-        "새로운 버전의 파일로 업로드 됩니다"
-      ],
-      "This will upload a new version of the folder": [
-        "새로운 버전의 폴더로 업로드됩니다"
       ],
       "Time": [
         "시간"
@@ -6274,18 +6223,6 @@
       ],
       "Tracking": [
         "트래킹"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "파일 \"${ name }\" 의 이동 취소됨"
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "폴더 \"${ name }\" 의 이동 취소됨"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "파일 \"${ file.name }\" 의 이동 생략됨"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "폴더 \"${ folderName }\" 의 이동 생략됨"
       ],
       "Trash": [
         "휴지통"
@@ -6343,9 +6280,6 @@
       ],
       "Uploading": [
         "업로드 중"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "한 번에 수백 개의 파일을 업로드하면 성능에 영향을 미칠 수 있습니다."
       ],
       "Uppercase and lowercase letters": [
         "대소문자"
@@ -7102,12 +7036,6 @@
       "Keep both": [
         "둘 다 유지"
       ],
-      "Keep both files": [
-        "두 파일 유지"
-      ],
-      "Keep both folders": [
-        "두 폴더 유지"
-      ],
       "Label messages as": [
         "메시지에 다음으로 라벨 지정"
       ],
@@ -7251,12 +7179,6 @@
       ],
       "Region": [
         "시/도"
-      ],
-      "Replace existing file": [
-        "기존 파일 대체"
-      ],
-      "Replace existing folder": [
-        "기존 폴더 대체"
       ],
       "Replace existing folder or file": [
         "기존 폴더 또는 파일 대체"
@@ -8907,14 +8829,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" 를 휴지통으로 이동하는데 실패했습니다"
       ],
-      "\"${ name }\" failed to be saved": [
-        "\"${ name }\"을(를) 생성할 수 없습니다"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" 이(가) 휴지통으로 이동됨"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\"이(가) 성공적으로 저장되었습니다"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\"의 이름을 변경할 수 없습니다"
@@ -9039,18 +8955,6 @@
       "Failed to rename device": [
         "기기 이름 변경 실패"
       ],
-      "Failed to upload files: ${ err }": [
-        "파일 업로드 실패: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "\"${ filename }\" 및 ${ count }개의 파일 및 폴더가 이미 업로드 중입니다"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "파일 또는 폴더 \"${ filename }\"이(가) 이미 업로드 중입니다"
-      ],
-      "File or folder is missing a name": [
-        "파일 또는 폴더에 이름이 없습니다"
-      ],
       "File removed": [
         "파일 삭제됨"
       ],
@@ -9068,9 +8972,6 @@
       ],
       "Move ${ n } item": [
         "항목 ${ n }개 이동"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "${ formattedTotal }을(를) 업로드할 공간이 없습니다"
       ],
       "Public link access updated": [
         "공개 링크 접근이 업데이트되었습니다."
@@ -9908,6 +9809,9 @@
       ],
       "External key automatically fetched via WKD.": [
         "외부 키가 자동적으로 WKD를 통해 가져와졌습니다."
+      ],
+      "This key is used for message verification": [
+        "이 키는 메시지 검증에 사용됩니다."
       ],
       "This key is used to encrypt messages to this contact": [
         "이 키는 이 연락처에 암호화된 메시지를 보내는데 사용했습니다."
@@ -12022,12 +11926,6 @@
       "Drop to upload": [
         "여기로 끌어서 업로드"
       ],
-      "Duplicate file found": [
-        "중복 파일 발견됨"
-      ],
-      "Duplicate folder found": [
-        "중복 폴더 발견됨"
-      ],
       "Edit billing address": [
         "청구 주소 수정"
       ],
@@ -12328,9 +12226,6 @@
       "PayPal verification failed": [
         "PayPal 인증 실패"
       ],
-      "Performance might be affected": [
-        "성능에 영향을 줄 수 있음"
-      ],
       "Phone numbers": [
         "전화번호"
       ],
@@ -12588,9 +12483,6 @@
       ],
       "Uploaded": [
         "업로드 완료"
-      ],
-      "Uploading a large file or folder": [
-        "큰 파일 또는 폴더 업로드 중"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "데이터 개인정보 보호를 위해 ${ VPN_SHORT_APP_NAME } 사용하기"

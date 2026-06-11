@@ -1125,9 +1125,6 @@
       "Upload and share files": [
         "上传并分享文件"
       ],
-      "Upload anyway": [
-        "仍然上传"
-      ],
       "Upload file": [
         "上传文件"
       ],
@@ -3376,9 +3373,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" 已存在"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } 无法连接到您的外部账户"
       ],
@@ -3604,9 +3598,6 @@
       "Failed to update public share node": [
         "更新公开共享节点失败"
       ],
-      "File cannot be merged with folder": [
-        "文件无法与文件夹合并"
-      ],
       "First name is too long": [
         "名字太长。"
       ],
@@ -3744,9 +3735,6 @@
       ],
       "Payment process not supported": [
         "不支持此支付流程"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "照片上传暂时被禁用。请稍后再试"
       ],
       "Please activate your search again": [
         "请重新开启全文搜索"
@@ -3913,24 +3901,6 @@
       "The minimum donation amount is ${ price }": [
         "最低捐赠金额为 ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "原始文件的新修订版本尚未上传，请稍后再试。"
-      ],
-      "The original file has missing active revision": [
-        "原始文件缺少活动修订版本"
-      ],
-      "The original file has missing hash key": [
-        "原始文件缺少哈希密钥"
-      ],
-      "The original file has missing session key": [
-        "原始文件缺少会话密钥"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "原始文件尚未上传，请稍后再试。"
-      ],
-      "The original folder not found": [
-        "未找到原始文件夹"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "待导入账户的文件夹过多，请自定义导入内容并删除部分文件夹。"
       ],
@@ -3984,9 +3954,6 @@
       ],
       "Upload failed": [
         "上传失败"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "此文件夹的上传功能暂时被禁止"
       ],
       "Username must begin with a letter or digit": [
         "用户名必须以字母或数字开头"
@@ -5603,9 +5570,6 @@
       "for ${ price }": [
         "仅需 ${ price }"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "为了获得最佳效果，请避免流式传输和内存密集型活动，或将上传分成较小的批次。"
-      ],
       "For just ${ bundlePlanPriceInline }": [
         "仅需 ${ bundlePlanPriceInline }"
       ],
@@ -6419,9 +6383,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "现在您的 ${ defaultEmailAddress } 将可用于发送新的电子邮件。"
       ],
-      "This item already exists in your library": [
-        "该项目已存在于您的库中"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "某些所选项目未保存在照片资料库中。如果从该相册中删除这些项目，您将永久无法访问它们。"
       ],
@@ -6461,26 +6422,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "这将永久删除您上传的选定项目。"
       ],
-      "This will replace the existing file with the folder": [
-        "这将用该文件夹替换现有文件"
-      ],
       "This will replace the existing folder or file with the file": [
         "此操作将用此文件替换现有的文件夹或文件"
       ],
       "This will replace the existing folder or file with the folder": [
         "此操作将用此文件夹替换现有的文件夹或文件"
       ],
-      "This will replace the existing folder with the file": [
-        "这将用该文件替换现有文件夹"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "此操作将退出当前登录的所有账户。"
-      ],
-      "This will upload a new version of the file": [
-        "这将上传文件的新版本"
-      ],
-      "This will upload a new version of the folder": [
-        "这将上传文件夹的新版本"
       ],
       "Time": [
         "时间"
@@ -6538,18 +6487,6 @@
       ],
       "Tracking": [
         "追踪中"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "已取消文件“${ name }”的传输"
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "已取消文件夹“${ name }”的传输"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "已跳过文件“${ file.name }”的传输"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "已跳过文件夹“${ folderName }”的传输"
       ],
       "Trash": [
         "回收站"
@@ -6616,9 +6553,6 @@
       ],
       "Uploading": [
         "正在上传"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "一次上传数百个文件可能会影响性能。"
       ],
       "Uppercase and lowercase letters": [
         "大写字母和小写字母"
@@ -7420,12 +7354,6 @@
       "Keep both": [
         "都保留"
       ],
-      "Keep both files": [
-        "保留两个文件"
-      ],
-      "Keep both folders": [
-        "保留两个文件夹"
-      ],
       "Label messages as": [
         "给导入的邮件加标签"
       ],
@@ -7581,12 +7509,6 @@
       ],
       "Region": [
         "区域"
-      ],
-      "Replace existing file": [
-        "替换现有文件"
-      ],
-      "Replace existing folder": [
-        "替换现有文件夹"
       ],
       "Replace existing folder or file": [
         "替换现有文件夹或文件"
@@ -9300,14 +9222,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" 移到回收站失败"
       ],
-      "\"${ name }\" failed to be saved": [
-        "${ name } 保存失败"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" 已移动到回收站"
-      ],
-      "\"${ name }\" saved successfully": [
-        "${ name } 已成功保存"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" 重命名失败"
@@ -9450,18 +9366,6 @@
       "Failed to rename device": [
         "无法重命名设备"
       ],
-      "Failed to upload files: ${ err }": [
-        "上传文件失败：${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "文件或文件夹“${ filename }”以及其他 ${ count } 项正在上传中"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "文件或文件夹“${ filename }”正在上传中"
-      ],
-      "File or folder is missing a name": [
-        "文件或文件夹缺少名称"
-      ],
       "File removed": [
         "文件已删除"
       ],
@@ -9479,9 +9383,6 @@
       ],
       "Move ${ n } item": [
         "移动 ${ n } 个项目"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "没有足够的空间来上传这 ${ formattedTotal }"
       ],
       "Public link access updated": [
         "公共链接访问已更新"
@@ -12369,12 +12270,6 @@
       "Drop to upload": [
         "拖拽文件并上传"
       ],
-      "Duplicate file found": [
-        "发现重复文件"
-      ],
-      "Duplicate folder found": [
-        "发现重复文件夹"
-      ],
       "Edit billing address": [
         "编辑账单地址"
       ],
@@ -12684,9 +12579,6 @@
       "PayPal verification failed": [
         "PayPal 验证失败"
       ],
-      "Performance might be affected": [
-        "性能可能会受到影响"
-      ],
       "Phone numbers": [
         "电话号码"
       ],
@@ -12947,9 +12839,6 @@
       ],
       "Uploaded": [
         "上传时间"
-      ],
-      "Uploading a large file or folder": [
-        "上传大文件或文件夹"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "使用 ${ VPN_SHORT_APP_NAME } 保护隐私"

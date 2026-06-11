@@ -472,9 +472,6 @@
       "Stop recording and download.": [
         "Stop met opnemen en download de video."
       ],
-      "Toggle camera": [
-        "Camera in-/uitschakelen"
-      ],
       "Toggle chat": [
         "Chat aan/uit"
       ],
@@ -483,9 +480,6 @@
       ],
       "Toggle meeting details": [
         "Vergaderingsgegevens in-/uitschakelen"
-      ],
-      "Toggle microphone": [
-        "Microfoon in-/uitschakelen"
       ],
       "Toggle participants": [
         "Deelnemers in-/uitschakelen"
@@ -1806,6 +1800,9 @@
       "camera": [
         "camera"
       ],
+      "Camera permission denied": [
+        "Cameratoegang geweigerd"
+      ],
       "Chat with everyone": [
         "Chat met iedereen"
       ],
@@ -2028,6 +2025,9 @@
       "Meeting recordings aren’t supported in Firefox.": [
         "Video-opnames worden niet ondersteund in Firefox."
       ],
+      "Meeting time is up": [
+        "De vergadertijd is voorbij"
+      ],
       "Meeting unlocked. Participants can join again.": [
         "Vergadering ontgrendeld. Deelnemers kunnen opnieuw deelnemen."
       ],
@@ -2042,6 +2042,9 @@
       ],
       "Microphone effects": [
         "Microfoon effecten"
+      ],
+      "Microphone permission denied": [
+        "Microfoontoegang geweigerd"
       ],
       "My meetings": [
         "Mijn vergaderingen"
@@ -2102,9 +2105,6 @@
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Plak uw ${ MEET_APP_NAME } link om deel te nemen aan een veilige vergadering"
-      ],
-      "Permission denied": [
-        "Toestemming geweigerd"
       ],
       "Permissions not given.": [
         "Machtigingen niet verleend."
@@ -2228,6 +2228,9 @@
       ],
       "This meeting is password protected": [
         "Deze vergadering is beveiligd met een wachtwoord"
+      ],
+      "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
+        "Deze bijeenkomst bereikte de tijdslimiet van een gratis plan. Upgrade om de lengte van uw vergadering bij toekomstige gesprekken te verlengen."
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Deze vergadering is geopend in de desktop-app ${ MEET_APP_NAME }."
@@ -2360,12 +2363,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
-      ],
-      "Your free meeting has ended": [
-        "Uw gratis vergadering is afgelopen"
-      ],
-      "Your meeting has ended": [
-        "Uw vergadering is afgelopen"
       ],
       "Your meeting is ready": [
         "Uw vergadering is gereed"
@@ -3066,6 +3063,9 @@
       ],
       "Generate a new meeting link. The current link will stop working.": [
         "Genereer een nieuwe vergaderlink. De huidige link zal niet meer werken."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Directe AI-hulp, menselijke expert bij de hand!"
       ],
       "Recurring meeting": [
         "Terugkerende vergadering"

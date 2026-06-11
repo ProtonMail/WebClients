@@ -900,6 +900,9 @@
       "Verify account": [
         "Bekræft konto"
       ],
+      "Verify now": [
+        "Bekræft nu"
+      ],
       "View": [
         "Vis"
       ],
@@ -1832,6 +1835,9 @@
       ],
       "Canada": [
         "Canada"
+      ],
+      "Canary Islands": [
+        "De Kanariske Øer"
       ],
       "Cape Verde": [
         "Kap Verde"
@@ -3101,6 +3107,9 @@
       ],
       "Failed to fetch sharing info": [
         "Kunne ikke hente delingsoplysninger"
+      ],
+      "Failed to load 'My files' folder": [
+        "Kunne ikke indlæse 'Mine filer'-mappen"
       ],
       "Failed to load document details": [
         "Kunne ikke indlæse dokument-detaljer"
@@ -4699,6 +4708,9 @@
       "Display word count": [
         "Vis antal ord"
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Kan du huske din adgangskode? ${ verifyButton }"
+      ],
       "Document is in trash": [
         "Dokumentet er i papirkurven"
       ],
@@ -4810,9 +4822,6 @@
       "Failing signatures will be re-signed by you": [
         "Manglende signaturer vil blive genunderskrevet af dig."
       ],
-      "Favorites": [
-        "Favoritter"
-      ],
       "File \"${ name }\" was deleted during download": [
         "Filen \"${ name }\" blev slettet under download"
       ],
@@ -4842,6 +4851,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "For de bedste resultater bør du undgå streaming og hukommelsesintensive aktiviteter eller dele dit upload op i mindre bidder."
+      ],
+      "Forgot password?": [
+        "Glemt din adgangskode?"
       ],
       "Free 5GB encrypted storage to get started": [
         "Gratis 5 GB krypteret lagerplads til at starte med"
@@ -5115,6 +5127,9 @@
       "Password must have:": [
         "Adgangskoden skal have:"
       ],
+      "Password verified": [
+        "Adgangskode bekræftet"
+      ],
       "Pending invitations": [
         "Afventende invitationer"
       ],
@@ -5147,6 +5162,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Vælg venligst de mapper, du ønsker at importere:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Vælg venligst de labels, du ønsker at importere:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Vælg hvilken eller hvilke e-mail-adresser der skal tilføjes til ${ groupCount } gruppe.",
@@ -5414,6 +5432,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "For at hjælpe dig med at huske din adgangskode, beder vi dig om at indtaste den en gang imellem. Vi spørger dig mindre og mindre efterhånden."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "For at importere begivenheder, skal du først oprette en kalender i ${ CALENDAR_APP_NAME }. Det er her, at begivenhederne vises efter importen."
       ],
@@ -5506,6 +5527,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Vi giver dig besked, når importen er færdig."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Vi minder dig om at bekræfte din adgangskode igen senere"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
@@ -7786,6 +7810,9 @@
       "\"${ name }\" failed to be saved": [
         "\"${ name }\" kunne ikke gemmes"
       ],
+      "\"${ name }\" moved": [
+        "\"${ name }\" flyttet"
+      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" flyttet til papirkurv"
       ],
@@ -8217,9 +8244,6 @@
       ]
     },
     "Page title": {
-      "Favorites": [
-        "Favoritter"
-      ],
       "Recents": [
         "Seneste"
       ],
@@ -10477,6 +10501,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Brug ${ VPN_SHORT_APP_NAME } for at beskytte dine data"
       ],
+      "Verify your password": [
+        "Bekræft din adgangskode"
+      ],
       "VPN explained": [
         "VPN forklaret"
       ],
@@ -10567,6 +10594,9 @@
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserer automatisk nogle e-mails som f.eks. Sociale netværk eller Promoveringer. Du kan vælge, hvor du vil importere disse e-mails til."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Lynhurtig AI-assistance med en menneskelig ekspert, der sidder klar!"
       ],
       "Load image": [
         "Indlæs billede"

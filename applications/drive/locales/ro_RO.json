@@ -92,6 +92,9 @@
       "Add photos": [
         "Adaugă fotografii"
       ],
+      "Add storage": [
+        "Adăugare stocare"
+      ],
       "Add to \"${ name }\" (${ photoCount } photo)": [
         "Adăugare în „${ name }” (${ photoCount } fotografie)",
         "Adăugare în „${ name }” (${ photoCount } fotografii)",
@@ -1134,9 +1137,6 @@
       ],
       "Upload and share files": [
         "Încărcați și partajați fișiere"
-      ],
-      "Upload anyway": [
-        "Încărcare așa"
       ],
       "Upload file": [
         "Încărcare fișier"
@@ -3420,9 +3420,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "„${ sanitizedName }” există deja"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } nu se poate conecta la contul extern."
       ],
@@ -3654,9 +3651,6 @@
       "Failed to update public share node": [
         "Nu s-a putut actualiza nodul de partajare publică."
       ],
-      "File cannot be merged with folder": [
-        "Fișierul nu poate fi îmbinat cu folderul."
-      ],
       "First name is too long": [
         "Prenumele este prea lung."
       ],
@@ -3800,9 +3794,6 @@
       ],
       "Payment process not supported": [
         "Metoda de plată nu este acceptată."
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Încărcarea fotografiilor este momentan dezactivată. Reîncercați mai târziu."
       ],
       "Please activate your search again": [
         "Reactivați căutarea."
@@ -3973,24 +3964,6 @@
       "The minimum donation amount is ${ price }": [
         "Suma minimă de donație este de ${ price }."
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Noua revizie a fișierului original nu a fost încărcată încă,. Reîncercați mai târziu."
-      ],
-      "The original file has missing active revision": [
-        "Fișierul original nu are revizia activă."
-      ],
-      "The original file has missing hash key": [
-        "Fișierul original are cheia hash lipsă."
-      ],
-      "The original file has missing session key": [
-        "Fișierul original nu are cheia de sesiune."
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Fișierul original nu este încă încărcat. Reîncercați mai târziu."
-      ],
-      "The original folder not found": [
-        "Folderul original nu a fost găsit."
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Aveți prea multe foldere în contul extern. Modificați opțiunile de importare pentru a șterge unele foldere."
       ],
@@ -4044,9 +4017,6 @@
       ],
       "Upload failed": [
         "Încărcare eșuată."
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Încărcarea pentru acest folder este temporar dezactivată."
       ],
       "Username must begin with a letter or digit": [
         "Numele de utilizator trebuie să înceapă cu o literă sau cifră."
@@ -5769,9 +5739,6 @@
       "for ${ price }": [
         "cu ${ price }"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Pentru cele mai bune rezultate, evitați activitățile de redare în flux și cele care necesită multă memorie sau împărțiți încărcarea în mai puține fișiere."
-      ],
       "For just ${ bundlePlanPriceInline }": [
         "Pentru doar ${ bundlePlanPriceInline }"
       ],
@@ -6601,9 +6568,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aceasta este acum ${ defaultEmailAddress } pentru trimiterea de mesaje noi."
       ],
-      "This item already exists in your library": [
-        "Articolul există deja în librăria proprie."
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Acest articol nu este salvat în librăria de fotografii. Dacă îl eliminați din acest album, veți pierde definitiv accesul la el.",
         "Unele din articolele selectate nu sunt salvate în librăria de fotografii. Dacă le eliminați din acest album, veți pierde definitiv accesul la ele.",
@@ -6645,26 +6609,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "Aceasta va șterge permanent articolele încărcate."
       ],
-      "This will replace the existing file with the folder": [
-        "Aceasta va înlocui fișierul existent cu folderul."
-      ],
       "This will replace the existing folder or file with the file": [
         "Aceasta va înlocui folderul existent sau fișierul cu fișierul"
       ],
       "This will replace the existing folder or file with the folder": [
         "Aceasta va înlocui folderul sau fișierul existent cu folderul"
       ],
-      "This will replace the existing folder with the file": [
-        "Aceasta va înlocui folderul existent cu fișierul."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Aceasta vă va deconectat din toate conturile conectate acum."
-      ],
-      "This will upload a new version of the file": [
-        "Aceasta va încărca o nouă versiune a fișierului."
-      ],
-      "This will upload a new version of the folder": [
-        "Aceasta va încărca o nouă versiune a folderului."
       ],
       "Time": [
         "Ora"
@@ -6723,18 +6675,6 @@
       "Tracking": [
         "Urmăritori"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Transfer anulat pentru fișierul „${ name }”."
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Transfer anulat pentru folderul „${ name }”."
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Transfer ignorat pentru fișierul „${ file.name }”."
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Transfer ignorat pentru folderul „${ folderName }”."
-      ],
       "Trash": [
         "Gunoi"
       ],
@@ -6786,6 +6726,9 @@
       "Upgrade or clear space anytime to bring over the rest": [
         "Modificați abonamentul sau goliți spațiul de stocare pentru a le aduce și pe restul."
       ],
+      "Upgrade to get more storage space": [
+        "Treceți la alt plan pentru a avea mai mult spațiu"
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Îmbunătățiți contul pentru a vă menține beneficiile din ${ planTitle }."
       ],
@@ -6800,9 +6743,6 @@
       ],
       "Uploading": [
         "Se incarcă"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Încărcarea simultană a sute de fișiere poate avea un impact asupra performanței."
       ],
       "Uppercase and lowercase letters": [
         "Litere mari și mici"
@@ -7344,6 +7284,9 @@
       "Apply to all unverified items": [
         "Se aplică tuturor articolelor neverificate"
       ],
+      "Asset": [
+        "Resursă"
+      ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
       ],
@@ -7634,12 +7577,6 @@
       "Keep both": [
         "Păstrare ambele"
       ],
-      "Keep both files": [
-        "Păstrare ambele fișiere"
-      ],
-      "Keep both folders": [
-        "Păstrare ambele foldere"
-      ],
       "Label messages as": [
         "Etichetare mesaje cu"
       ],
@@ -7714,6 +7651,9 @@
       ],
       "New password": [
         "Parola nouă"
+      ],
+      "Non-consensual intimate imagery": [
+        "Imagini intime fără consimțământ"
       ],
       "Not active": [
         "Inactiv"
@@ -7795,12 +7735,6 @@
       ],
       "Region": [
         "Județ"
-      ],
-      "Replace existing file": [
-        "Înlocuire fișier existent"
-      ],
-      "Replace existing folder": [
-        "Înlocuire folder existent"
       ],
       "Replace existing folder or file": [
         "Înlocuire folder sau fișier existent"
@@ -9599,14 +9533,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "„${ name }” nu a putut fi mutat în «Gunoi»."
       ],
-      "\"${ name }\" failed to be saved": [
-        "„${ name }” nu s-a putut salva."
-      ],
       "\"${ name }\" moved to trash": [
         "„${ name }” a fost mutat în «Gunoi»."
-      ],
-      "\"${ name }\" saved successfully": [
-        "„${ name }” a fost salvat."
       ],
       "\"${ newName }\" failed to be renamed": [
         "„${ newName }” nu a reușit să fie redenumit."
@@ -9787,20 +9715,6 @@
       "Failed to rename device": [
         "Redenumirea dispozitivului a eșuat."
       ],
-      "Failed to upload files: ${ err }": [
-        "Nu s-a reușit încărcarea fișierelor: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Fișierul sau folderul „${ filename }” și încă unul se încarcă deja.",
-        "Fișierul sau folderul „${ filename }” și încă alte ${ count } se încarcă deja.",
-        "Fișierul sau folderul „${ filename }” și încă alte ${ count } se încarcă deja."
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Fișierul sau folderul „${ filename }” se încarcă deja."
-      ],
-      "File or folder is missing a name": [
-        "Fișier sau folder fără nume."
-      ],
       "File removed": [
         "Fișierul a fost eliminat."
       ],
@@ -9824,9 +9738,6 @@
         "Mutare ${ n } element.",
         "Mutare ${ n } articole.",
         "Mutare ${ n } de articole."
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Nu este suficient spațiu pentru a încărca ${ formattedTotal }."
       ],
       "Public link access updated": [
         "Accesul la legătura web publică s-a actualizat."
@@ -12930,12 +12841,6 @@
       "Drop to upload": [
         "Plasați aici pentru încărcare"
       ],
-      "Duplicate file found": [
-        "S-au găsit fișiere duplicate"
-      ],
-      "Duplicate folder found": [
-        "S-au găsit foldere duplicate"
-      ],
       "Edit billing address": [
         "Editare adresă de facturare"
       ],
@@ -13240,6 +13145,9 @@
       "Other names": [
         "Alte nume"
       ],
+      "Out of storage space": [
+        "Spațiu insuficient"
+      ],
       "Payment failed": [
         "Plată eșuată"
       ],
@@ -13248,9 +13156,6 @@
       ],
       "PayPal verification failed": [
         "Verificarea PayPal a eșuat"
-      ],
-      "Performance might be affected": [
-        "Performanța ar putea fi afectată"
       ],
       "Phone numbers": [
         "Numere de telefon"
@@ -13514,9 +13419,6 @@
       ],
       "Uploaded": [
         "Încărcat"
-      ],
-      "Uploading a large file or folder": [
-        "Se încarcă un fișier sau folder mare"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilizați ${ VPN_SHORT_APP_NAME } pentru confidențialitatea datelor"

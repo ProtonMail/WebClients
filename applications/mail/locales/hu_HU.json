@@ -319,6 +319,9 @@
       "Copy addresses": [
         "Címek másolása"
       ],
+      "Copy alias “${ name }”": [
+        "„${ name }” e-mail álnév másolása"
+      ],
       "Copy email to clipboard": [
         "E-mail másolása a vágólapra"
       ],
@@ -1714,6 +1717,10 @@
       "${ price } per user": [
         "${ price } felhasználónként"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licenc",
+        "${ seats } ${ MEET_APP_NAME } licenc"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } írási segéd licenc",
         "${ seats } írási segéd licenc"
@@ -1962,6 +1969,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } hónap",
+        "${ n } hónap"
+      ],
+      "${ n } year": [
+        "${ n } év",
+        "${ n } év"
+      ],
       "1 month": [
         "1 hónap"
       ],
@@ -2441,6 +2456,10 @@
       "${ users } user": [
         "${ users } felhasználó",
         "${ users } felhasználó"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Összesen, ${ cycle } hónapra",
+        "Összesen, ${ cycle } hónapra"
       ],
       "Total": [
         "Összesen"
@@ -3866,6 +3885,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "Több évnyi e-mail számára elegendő hely, mellékletekkel és további lehetőségek."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Biztosítson biztonságos hozzáférést a szervezeti adatokhoz, még akkor is, ha a csapata távolról dolgozik vagy nyilvános Wi-Fi-t használ."
       ],
@@ -4470,6 +4492,9 @@
       "Invalid code": [
         "Érvénytelen kód"
       ],
+      "Invalid coupon": [
+        "Érvénytelen kupon"
+      ],
       "Invalid email address": [
         "Érvénytelen e-mail cím"
       ],
@@ -4599,6 +4624,9 @@
       "Please activate your search again": [
         "Aktiválja újra a keresést"
       ],
+      "Please complete the billing details": [
+        "Adja meg a számlázási adatokat"
+      ],
       "Please configure a custom domain before adding addresses.": [
         "Címek létrehozása előtt, állítson be egy saját domain nevet."
       ],
@@ -4674,6 +4702,9 @@
       ],
       "re-activate the previous key": [
         "újra aktiválhatja az előző kulcsot"
+      ],
+      "re-importing": [
+        "újraimportálás"
       ],
       "Removed duplicate recipient: ${ recipents }": [
         "Kettőzött címzett eltávolítása: ${ recipents }",
@@ -4790,6 +4821,9 @@
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "A mező tartalma hosszabb a megengedett maximum ${ maximumLength } karakternél."
+      ],
+      "This field is invalid": [
+        "Ez a mező érvénytelen"
       ],
       "This field is required": [
         "A mező kitöltése kötelező"
@@ -5068,6 +5102,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nem sikerült az oldal betöltése. Frissítse az oldalt vagy ellenőrizze az internetkapcsolatát."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Ha az extra jelszó engedélyezve van, az e-mail álnév kezelése csak a ${ PASS_APP_NAME } alkalmazásban végezhető el."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Még nincs névjegy. Hozzon létre egyet"
@@ -5355,6 +5392,11 @@
       "Terabyte": [
         "Terabájt",
         "Terabájt"
+      ]
+    },
+    "Filter": {
+      "Filter": [
+        "Szűrő"
       ]
     },
     "Filter Actions": {
@@ -6410,6 +6452,10 @@
       ],
       "All your changes will be lost.": [
         "A változtatások el fognak veszni."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Az összes névjegye importálásra kerül, maximum ${ maxContact } darabig",
+        "Az összes névjegye importálásra kerül, maximum ${ maxContact } darabig"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logó"
@@ -7488,6 +7534,9 @@
       "Recipient: ": [
         "Címzett: "
       ],
+      "RECOMMENDED": [
+        "JAVASOLT"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "A helyreállítási információk megmaradnak ezen az eszközön, kivéve ha törli."
       ],
@@ -8341,6 +8390,10 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "A levél tartalmazza a \"${ attachmentsFoundKeyword }\" kifejezést, de nem csatolt mellékletet. Biztos, hogy elküldi így a levelet?"
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Ezután a számlázás ${ renewCycle } havonta történik, ${ renewAmountStr } összeggel. Bármikor lemondhatja.",
+        "Ezután a számlázás ${ renewCycle } havonta történik, ${ renewAmountStr } összeggel. Bármikor lemondhatja."
+      ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Engedélyezte a továbbítást a következő ${ MAX_SYNC_PAID_USER } Gmail címen. Ha újat szeretne hozzáadni, először tiltsa le az egyiket.",
         "Engedélyezte a továbbítást a következő ${ MAX_SYNC_PAID_USER } Gmail címeken. Ha újat szeretne hozzáadni, először tiltsa le az egyiket."
@@ -8871,6 +8924,9 @@
       ],
       "Category": [
         "Kategória"
+      ],
+      "Category:": [
+        "Kategória:"
       ],
       "CC": [
         "Másolat"
@@ -9908,6 +9964,18 @@
       ],
       "Trash": [
         "Lomtár"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } licenc",
+        "${ seats } ${ MEET_APP_NAME } licenc"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licencet tartalmaz",
+        "${ seats } licencet tartalmaz"
       ]
     },
     "Message": {
@@ -11587,12 +11655,24 @@
       "terms and conditions": [
         "felhasználási feltételek"
       ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "A kedvezmény ${ renewalsWithCoupon } megújításra érvényes.",
+        "A kedvezmény ${ renewalsWithCoupon } megújításra érvényes."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "A kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja.",
+        "A kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja."
+      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "A kedvezményes ár az első ${ subscriptionLength } hónapra érvényes.",
         "A kedvezményes ár az első ${ subscriptionLength } hónapra érvényes."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "A kedvezményes ár az első hónapra érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "A ${ priceWithDiscount } kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja.",
+        "A ${ priceWithDiscount } kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "A kedvezményes ${ priceWithDiscount } ár az első ${ subscriptionLength } hónapra érvényes.",
@@ -12006,6 +12086,11 @@
         "Hivatalos e-mail tőle: ${ BRAND_NAME }"
       ]
     },
+    "Provider option": {
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
     "q2campaign2026: Action": {
       "Get the deal": [
         "Szerezze meg az ajánlatot"
@@ -12215,14 +12300,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Minden e-mail álnév"
+      ],
       "Create alias": [
         "E-mail álnév létrehozása"
+      ],
+      "Create an alias": [
+        "E-mail álnév létrehozása"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Készítsen álneveket menet közben, és könnyen kezelje álneveit és jelszavait."
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email álnevek"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email álnevek lehetővé teszik, hogy online feliratkozzon dolgokra anélkül, hogy megosztaná az e-mail címét. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Új e-mail álnév"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } megnyitása"
+      ],
+      "Protect your online identity": [
+        "Védje meg az online személyazonosságát"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Próbálja ki ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Amazonon vásárláshoz használatos, stb."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Ha megkérdezik az e-mail címét, adja meg helyette ezt az álnevet. Az álneveket a ${ passLink } biztosítja."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(meg fogja nyitni ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -12525,6 +12642,11 @@
         "${ ownerName } által megosztva"
       ]
     },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Megnyitás ebben: ${ appName }"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "PGP titkosított üzenet. A feladó ellenőrzése sikertelen: ${ verificationErrorsMessage }"
@@ -12591,6 +12713,9 @@
       ],
       "Smallest first": [
         "Kisebbek előre"
+      ],
+      "Sort by": [
+        "Rendezés"
       ]
     },
     "specialoffer: Action": {
@@ -13499,6 +13624,9 @@
       "Address verification disabled": [
         "Cím ellenőrzés kikapcsolva"
       ],
+      "Alias copied to clipboard": [
+        "Az e-mail álnév a vágólapra lett másolva"
+      ],
       "Alias saved and copied": [
         "Az e-mail álnév mentve és másolva"
       ],
@@ -13587,6 +13715,9 @@
       ],
       "Labels applied.": [
         "Címkék alkalmazva."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Az utoljára módosított e-mail álnevek a legrégebbi tárolóban találhatók."
       ],
       "Mail list unsubscribed": [
         "Leiratkozva a levelezési listáról"
@@ -14192,6 +14323,9 @@
       ],
       "Desktop": [
         "Asztali számítógép"
+      ],
+      "Disconnected from Gmail": [
+        "Leválasztva a Gmailről"
       ],
       "Discover your subscription benefits": [
         "Fedezze fel az előfizetése előnyeit"

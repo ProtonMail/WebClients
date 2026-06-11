@@ -6241,6 +6241,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "새 인증 코드를 요청하기 전에 스팸 폴더를 확인하고 ${ strong } 이(가) 올바른 주소인지 확인하세요."
       ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "새로운 인증 코드를 보내드리기 전에, ${ EmailOrPhoneNumber }(으)로 전송된 메시지가 스팸함에 있는지 확인해 주세요."
+      ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "${ MAIL_APP_NAME }에서 사용자 지정 도메인 주소에 대한 이메일을 받기 전에, DNS 콘솔(사용자 지정 도메인을 구매한 플랫폼에 위치)에 다음 두 개의 MX 레코드를 추가해야 합니다. 예시와 몇 가지 유용한 팁을 찾을 수 있습니다 ${ kbLink }."
       ],
@@ -6390,6 +6393,9 @@
       ],
       "Data recoverable on this device": [
         "이 장치에서 데이터 복구 가능"
+      ],
+      "Data recoverable with recovery phrase": [
+        "복구 키로 데이터 복구 가능"
       ],
       "dedicated servers": [
         "전용 서버"
@@ -6717,6 +6723,9 @@
       ],
       "High Priority": [
         "중요도 높음"
+      ],
+      "How to perform a signed-in reset": [
+        "로그인 상태에서 재설정을 사용하는 방법"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "인증 주장에 서명하기 위한 신원 제공자의 공개 키입니다. 인증 제공자로부터 인증서 해시값을 다운로드하거나 복사할 수 있는 장소가 있어야 합니다. 텍스트 영역 입력란에 인증서 해시를 붙여넣기만 하면 됩니다."
@@ -9449,11 +9458,6 @@
       ],
       "To: ${ to }": [
         "받는 사람: ${ to }"
-      ]
-    },
-    "Lable": {
-      "Select an identity provider to start": [
-        "시작하려면 신원 제공자 (SSO) 선택하기"
       ]
     },
     "Limit of calendars reached": {
@@ -15874,6 +15878,9 @@
       ],
       "Select data to import": [
         "불러올 데이터 선택"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }로 Gmail을 주고 받기"
       ],
       "Send email reminders?": [
         "이메일 알리미를 전송할까요?"

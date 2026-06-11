@@ -334,6 +334,9 @@
       "Copy addresses": [
         "Kopya adresleri"
       ],
+      "Copy alias “${ name }”": [
+        "“${ name }” takma adını kopyala"
+      ],
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
       ],
@@ -3348,6 +3351,9 @@
       "Canada": [
         "Kanada"
       ],
+      "Canary Islands": [
+        "Kanarya Adaları"
+      ],
       "Cape Verde": [
         "Yeşil Burun Adaları"
       ],
@@ -5621,6 +5627,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Bu sayfa yüklenemedi. Lütfen sayfayı yenileyin veya internet bağlantınızı denetleyin."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Ek parola kullanıldığında, takma ad yönetimi yalnızca ${ PASS_APP_NAME } içinden yapılabilir."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Henüz herhangi bir kişiniz yok. Bir kişi ekleyerek başlayın"
@@ -8120,6 +8129,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Lütfen içe aktarmak istediğiniz klasörleri seçin:"
+      ],
+      "Please select the labels you would like to import:": [
+        "İçe aktarmak istediğiniz etiketleri seçin:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Lütfen eklemek istediğiniz bağlantı türünü seçin ve tüm alanları doldurun."
@@ -13533,14 +13545,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Tüm takma adlar"
+      ],
       "Create alias": [
         "Takma ad oluştur"
+      ],
+      "Create an alias": [
+        "Takma ad oluştur"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Anında takma adlar oluşturun ve takma adlarınız ile parolalarınızı kolayca yönetin."
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email takma adları"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email takma adları, e-posta adresinizi paylaşmadan çevrim içi hesaplar açmanızı sağlar. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Yeni takma ad"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } uygulamasını aç"
+      ],
+      "Protect your online identity": [
+        "Çevrim içi kimliğinizi koruyun"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } uygulamasını deneyin"
       ],
       "Used on Amazon for shopping, etc.": [
         "Amazon alışverişleri için kullanıldı gibi."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "E-posta adresiniz sorulduğunda, bunun yerine bu takma adı verin. Takma adlar ${ passLink } tarafından sağlanır."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(${ PASS_APP_NAME } açılacak)"
       ]
     },
     "Security Center - Action": {
@@ -14862,6 +14906,9 @@
       "Address verification disabled": [
         "Adres doğrulama özelliği kapalı"
       ],
+      "Alias copied to clipboard": [
+        "Takma ad panoya kopyalandı"
+      ],
       "Alias saved and copied": [
         "Takma ad kaydedildi ve kopyalandı"
       ],
@@ -14950,6 +14997,9 @@
       ],
       "Labels applied.": [
         "Etiketler uygulandı."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "En eski kasanızda bulunan son değiştirilmiş takma adlar"
       ],
       "Mail list unsubscribed": [
         "E-posta listesi aboneliğini sonlandırdınız"
@@ -16400,6 +16450,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Anında yapay zeka desteği ile uzmanlar her zaman yanınızda!"
       ],
       "Load image": [
         "Görsel yükle"

@@ -4345,6 +4345,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "تتجاوز بعض أسماء التسميات الخاصة بك الحد الأقصى لعدد الأحرف في ${ MAIL_APP_NAME }. يرجى تخصيص الاستيراد لتعديل هذه الأسماء."
       ],
+      "Something went wrong while converting the address": [
+        "حدث خطأ ما أثناء تحويل العنوان"
+      ],
       "Something went wrong while creating the address": [
         "حدث خطأ ما أثناء إنشاء العنوان"
       ],
@@ -9590,6 +9593,9 @@
       "Second password": [
         "كلمة المرور الثانية"
       ],
+      "Select an identity provider to start": [
+        "حدد مزود هوية للبدء"
+      ],
       "Select which Gmail address to connect": [
         "حدد عنوان Gmail للاتصال"
       ],
@@ -9846,11 +9852,6 @@
         "إلى ${ to }"
       ]
     },
-    "Lable": {
-      "Select an identity provider to start": [
-        "حدد موفر هوية للبدء"
-      ]
-    },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "لإضافة تقويم جديد، أزل تقويمًا موجودًا."
@@ -9910,6 +9911,9 @@
       ],
       "Forgot username?": [
         "نسيت اسم المستخدم؟"
+      ],
+      "Frequent sign-in problems": [
+        "مشاكل متكررة في تسجيل الدخول"
       ],
       "Get ${ BRAND_NAME } Pass": [
         "احصل على ${ BRAND_NAME } Pass"
@@ -15455,6 +15459,12 @@
       ],
       "Password copied to clipboard": [
         "تم نسخ كلمة المرور إلى الحافظة"
+      ],
+      "Password reminders disabled": [
+        "تم تعطيل تذكيرات كلمة المرور"
+      ],
+      "Password reminders enabled": [
+        "تمكين تذكيرات كلمة المرور"
       ],
       "Password updated": [
         "تم تحديث كلمة السر"

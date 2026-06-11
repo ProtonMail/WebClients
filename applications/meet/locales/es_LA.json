@@ -472,9 +472,6 @@
       "Stop recording and download.": [
         "Detener la grabación y descargar."
       ],
-      "Toggle camera": [
-        "Alternar cámara"
-      ],
       "Toggle chat": [
         "Alternar chat"
       ],
@@ -483,9 +480,6 @@
       ],
       "Toggle meeting details": [
         "Alternar detalles de la reunión"
-      ],
-      "Toggle microphone": [
-        "Alternar micrófono"
       ],
       "Toggle participants": [
         "Alternar participantes"
@@ -1812,6 +1806,9 @@
       "camera": [
         "cámara"
       ],
+      "Camera permission denied": [
+        "Permiso de cámara denegado"
+      ],
       "Chat with everyone": [
         "Chatear con todos"
       ],
@@ -2034,6 +2031,9 @@
       "Meeting recordings aren’t supported in Firefox.": [
         "Firefox no admite la grabación de reuniones."
       ],
+      "Meeting time is up": [
+        "Se agotó el tiempo de reunión"
+      ],
       "Meeting unlocked. Participants can join again.": [
         "Reunión desbloqueada. Los participantes pueden unirse de nuevo."
       ],
@@ -2048,6 +2048,9 @@
       ],
       "Microphone effects": [
         "Efectos de micrófono"
+      ],
+      "Microphone permission denied": [
+        "Permiso de micrófono denegado"
       ],
       "My meetings": [
         "Mis reuniones"
@@ -2108,9 +2111,6 @@
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Pegue su enlace de ${ MEET_APP_NAME } para unirse a una reunión segura"
-      ],
-      "Permission denied": [
-        "Permiso denegado"
       ],
       "Permissions not given.": [
         "Permisos no otorgados."
@@ -2240,6 +2240,9 @@
       ],
       "This meeting is password protected": [
         "Esta reunión está protegida con contraseña"
+      ],
+      "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
+        "Esta reunión alcanzó el límite de tiempo del plan gratuito. Actualice para extender el tiempo de reunión en futuras llamadas."
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Esta reunión fue abierta en la aplicación de escritorio de ${ MEET_APP_NAME }."
@@ -2372,12 +2375,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "El correo electrónico sólo se usará para esta verificación única."
-      ],
-      "Your free meeting has ended": [
-        "Su reunión gratuita ha finalizado"
-      ],
-      "Your meeting has ended": [
-        "Su reunión ha finalizado"
       ],
       "Your meeting is ready": [
         "Su reunión ya está lista"
@@ -3078,6 +3075,9 @@
       ],
       "Generate a new meeting link. The current link will stop working.": [
         "Generar un nuevo enlace para la reunión. El enlace actual dejará de funcionar."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Asistencia IA inmediata, experto humano a su disposición!"
       ],
       "Recurring meeting": [
         "Reunión recurrente"
