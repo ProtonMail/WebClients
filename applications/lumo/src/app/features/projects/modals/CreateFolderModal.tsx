@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { c } from 'ttag';
 
@@ -16,6 +16,7 @@ import noop from '@proton/utils/noop';
 
 import type { DriveBrowserHandle } from '../../../components/Files/DriveBrowser/DriveBrowser';
 import { useDriveSDK } from '../../../hooks/useDriveSDK';
+import { useUncontrolledField } from '../../../hooks/useUncontrolledField';
 
 interface CreateFolderModalProps {
     open: boolean;
@@ -27,17 +28,17 @@ interface CreateFolderModalProps {
 export const CreateFolderModal = ({ open, folderId, driveBrowserRef, onClose }: CreateFolderModalProps) => {
     const { createNotification } = useNotifications();
     const { createFolder } = useDriveSDK();
-    const [folderName, setFolderName] = useState('');
+    const folderName = useUncontrolledField<HTMLInputElement>('');
     const [loading, withLoading] = useLoading();
 
     const handleClose = () => {
-        setFolderName('');
+        folderName.reset('');
         onClose();
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        const trimmedFolderName = folderName.trim();
+        const trimmedFolderName = folderName.getValue().trim();
         if (!trimmedFolderName) return;
 
         try {
@@ -46,7 +47,7 @@ export const CreateFolderModal = ({ open, folderId, driveBrowserRef, onClose }: 
                 text: c('collider_2025:Success').t`Folder "${trimmedFolderName}" created successfully`,
                 type: 'success',
             });
-            setFolderName('');
+            folderName.reset('');
             onClose();
             driveBrowserRef.current?.triggerRefresh();
         } catch (error) {
@@ -70,12 +71,11 @@ export const CreateFolderModal = ({ open, folderId, driveBrowserRef, onClose }: 
             <ModalTwoHeader closeButtonProps={{ disabled: loading }} title={c('Title').t`Create a new folder`} />
             <ModalTwoContent>
                 <InputFieldTwo
+                    {...folderName.bind}
                     id="folder-name"
                     autoFocus
-                    value={folderName}
                     label={c('Label').t`Folder name`}
                     placeholder={c('Placeholder').t`Enter a new folder name`}
-                    onChange={(e) => setFolderName(e.target.value)}
                     required
                 />
             </ModalTwoContent>
@@ -83,7 +83,7 @@ export const CreateFolderModal = ({ open, folderId, driveBrowserRef, onClose }: 
                 <Button type="button" onClick={handleClose} disabled={loading}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <Button color="norm" type="submit" loading={loading} disabled={!folderName.trim()}>
+                <Button color="norm" type="submit" loading={loading} disabled={!folderName.value.trim()}>
                     {c('Action').t`Create`}
                 </Button>
             </ModalTwoFooter>
