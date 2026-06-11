@@ -1,13 +1,12 @@
 import type { FC } from 'react';
 
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 
 export const Checkmark: FC<{ on: boolean }> = ({ on = false }) => {
-    return (
-        <Icon
-            name={on ? 'checkmark-circle-filled' : 'checkmark-circle'}
-            color={on ? 'var(--signal-success)' : 'var(--interaction-weak-major-3)'}
-            size={6}
-        />
+    return on ? (
+        <IcCheckmarkCircleFilled color="var(--signal-success)" size={6} />
+    ) : (
+        <IcCheckmarkCircle color="var(--interaction-weak-major-3)" size={6} />
     );
 };
