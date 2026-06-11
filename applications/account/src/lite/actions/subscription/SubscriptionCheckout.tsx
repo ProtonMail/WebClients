@@ -28,6 +28,7 @@ interface Props {
     onClose: () => void;
     subscription: Subscription | FreeSubscription;
     minimumCycle?: number;
+    disablePlanSelection: boolean;
 }
 
 const SubscriptionCheckoutWithPayments = ({
@@ -38,6 +39,7 @@ const SubscriptionCheckoutWithPayments = ({
     onClose,
     subscription,
     minimumCycle,
+    disablePlanSelection,
 }: Props) => {
     const { initialize, plansMap, selectNewPlan } = usePayments();
     const api = useSilentApi();
@@ -114,6 +116,7 @@ const SubscriptionCheckoutWithPayments = ({
                 availableCurrencies={availableCurrencies}
                 shouldDisableCurrencySelection={shouldDisableCurrencySelection}
                 onChangePlan={() => onStepChange(SUBSCRIPTION_STEPS.PLAN_SELECTION)}
+                disablePlanSelection={disablePlanSelection}
             />
             {!lifetimePlan && <SubscriptionCheckoutBillingCycleSection minimumCycle={minimumCycle} />}
             <SubscriptionCheckoutAddonSection initialCoupon={checkoutModel.coupon} />
