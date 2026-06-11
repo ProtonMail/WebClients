@@ -2,6 +2,8 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
@@ -129,13 +131,18 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
                 {statusInfo.text}
             </span>
 
-            {shouldShowDirection && (
-                <Icon
-                    name={type === TransferType.Download ? 'arrow-down-line' : 'arrow-up-line'}
-                    className={clsx(['shrink-0 ml-2', isTransferDone(transfer) && 'md:hidden'])}
-                    alt={progressTitle}
-                />
-            )}
+            {shouldShowDirection &&
+                (type === TransferType.Download ? (
+                    <IcArrowDownLine
+                        className={clsx(['shrink-0 ml-2', isTransferDone(transfer) && 'md:hidden'])}
+                        alt={progressTitle}
+                    />
+                ) : (
+                    <IcArrowUpLine
+                        className={clsx(['shrink-0 ml-2', isTransferDone(transfer) && 'md:hidden'])}
+                        alt={progressTitle}
+                    />
+                ))}
 
             {/* Hidden Info for screen readers */}
             <span className="sr-only" aria-atomic="true" aria-live="assertive">
