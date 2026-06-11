@@ -1244,6 +1244,9 @@
       ],
       "Get the deal": [
         "取得優惠"
+      ],
+      "Verify now": [
+        "立即驗證"
       ]
     },
     "Action: Sheets": {
@@ -6770,6 +6773,12 @@
       ],
       "${ total } user found": [
         "找到 ${ total } 位使用者"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "您記得您的密碼嗎? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "忘記密碼?"
       ]
     },
     "info": {
@@ -11376,6 +11385,9 @@
       ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ MEET_SHORT_APP_NAME } 、和 ${ LUMO_APP_NAME } 與頂級質子版功能"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe撰寫幫手"
       ]
     },
     "subscription reminder": {
@@ -12703,6 +12715,12 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "我們無法確認此檔案內容是由 ${ claimedContentAuthor } 上傳。原因是 ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "Summer Sale": [
+        "夏季促銷"
+      ],
+      "Verify your password": [
+        "驗證您的密碼"
       ]
     },
     "Today icon tooltip in mini calendar": {
