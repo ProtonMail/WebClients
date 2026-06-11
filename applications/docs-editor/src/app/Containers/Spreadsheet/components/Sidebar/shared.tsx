@@ -13,6 +13,7 @@ export interface SidebarDialogStore {
 
 export interface SidebarDialogContextValue {
   sidebarDialog: SidebarDialogStore
+  titleId: string
 }
 
 export const SidebarDialogContext = createContext<SidebarDialogContextValue | undefined>(undefined)
