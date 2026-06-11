@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
+import { IcEye } from '@proton/icons/icons/IcEye';
+import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
 
 import type { Props } from './Input';
 import Input from './Input';
@@ -28,7 +29,7 @@ const PasswordInput = ({ disabled = false, ...rest }: Props) => {
                     type="button"
                     onClick={toggle}
                 >
-                    <Icon className="m-auto" name={type === 'password' ? 'eye' : 'eye-slash'} />
+                    {type === 'password' ? <IcEye className="m-auto" /> : <IcEyeSlash className="m-auto" />}
                 </button>
             }
             {...rest}

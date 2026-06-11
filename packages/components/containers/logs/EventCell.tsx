@@ -1,5 +1,8 @@
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
+import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import { IcPassShieldFillDanger } from '@proton/icons/icons/IcPassShieldFillDanger';
+import { IcShield2CheckFilled } from '@proton/icons/icons/IcShield2CheckFilled';
 import type { AuthLog } from '@proton/shared/lib/authlog';
 import { AuthLogStatus } from '@proton/shared/lib/authlog';
 import clsx from '@proton/utils/clsx';
@@ -15,18 +18,16 @@ const getIcon = (status: AuthLogStatus, isB2B: boolean) => {
         case AuthLogStatus.Attempt:
             return <IcExclamationCircleFilled className="align-text-bottom color-warning" />;
         case AuthLogStatus.Failure:
-            return (
-                <Icon
-                    className="align-text-bottom color-danger"
-                    name={isB2B ? 'pass-shield-fill-danger' : 'cross-circle-filled'}
-                />
+            return isB2B ? (
+                <IcPassShieldFillDanger className="align-text-bottom color-danger" />
+            ) : (
+                <IcCrossCircleFilled className="align-text-bottom color-danger" />
             );
     }
-    return (
-        <Icon
-            className="align-text-bottom color-success"
-            name={isB2B ? 'shield-2-check-filled' : 'checkmark-circle-filled'}
-        />
+    return isB2B ? (
+        <IcShield2CheckFilled className="align-text-bottom color-success" />
+    ) : (
+        <IcCheckmarkCircleFilled className="align-text-bottom color-success" />
     );
 };
 
