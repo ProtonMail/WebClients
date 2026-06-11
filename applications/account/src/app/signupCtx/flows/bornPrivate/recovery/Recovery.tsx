@@ -1,10 +1,7 @@
 import { useState } from 'react';
-import { Redirect, useHistory, useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
-import { useFlagsStatus } from '@proton/unleash/proxy';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { type MetaTags, useMetaTags } from '../../../../useMetaTags';
 import type { ActivationFormState } from '../activation/ActivationForm';
@@ -36,8 +33,6 @@ const Recovery = ({ metaTags }: RecoveryProps) => {
     useMetaTags(metaTags);
     const location = useLocation<RecoveryLocationState>();
     const history = useHistory();
-    const { flagsReady } = useFlagsStatus();
-    const isBornPrivateActivationRecoveryEnabled = useFlag('BornPrivateActivationRecovery');
     const initialReservedEmail = location.state?.reservedEmail || '';
     const activationFormState = location.state?.activationFormState;
 
@@ -46,18 +41,6 @@ const Recovery = ({ metaTags }: RecoveryProps) => {
         reservedEmail: initialReservedEmail,
         parentEmail: '',
     });
-
-    if (!flagsReady) {
-        return (
-            <div className="flex items-center justify-center h-full w-full">
-                <CircleLoader size="large" />
-            </div>
-        );
-    }
-
-    if (!isBornPrivateActivationRecoveryEnabled) {
-        return <Redirect to={SSO_PATHS.LOGIN} />;
-    }
 
     const handleContinueFromEmail = (reservedEmail: string, parentEmail: string) => {
         setRecoveryState((prev) => {

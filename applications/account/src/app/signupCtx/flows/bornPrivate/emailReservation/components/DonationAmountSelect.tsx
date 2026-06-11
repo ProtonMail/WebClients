@@ -24,7 +24,6 @@ interface DonationAmountSelectProps {
     donationAmount: DonationValue;
     setDonationAmount: React.Dispatch<React.SetStateAction<number>>;
     isSubmitting: boolean;
-    showCurrencySelector: boolean;
 }
 
 const DonationAmountSelect = ({
@@ -33,7 +32,6 @@ const DonationAmountSelect = ({
     donationAmount,
     setDonationAmount,
     isSubmitting,
-    showCurrencySelector,
 }: DonationAmountSelectProps) => {
     const [selectedButton, setSelectedButton] = useState<DonationValue | undefined>(donationAmount);
     const [showInput, setShowInput] = useState(false);
@@ -87,18 +85,16 @@ const DonationAmountSelect = ({
         <div className="mt-8">
             <div className="flex justify-space-between items-center">
                 <label className="text-semibold">{c('Label').t`Donation amount`}</label>
-                {showCurrencySelector && (
-                    <CurrencySelector
-                        disabled={isSubmitting}
-                        mode="select-two"
-                        currency={currency}
-                        currencies={DONATION_CURRENCIES}
-                        onSelect={onCurrencyChange}
-                        unstyled
-                        fullWidth={false}
-                        className="color-primary text-bold"
-                    />
-                )}
+                <CurrencySelector
+                    disabled={isSubmitting}
+                    mode="select-two"
+                    currency={currency}
+                    currencies={DONATION_CURRENCIES}
+                    onSelect={onCurrencyChange}
+                    unstyled
+                    fullWidth={false}
+                    className="color-primary text-bold"
+                />
             </div>
             <div role="radiogroup" id="donationSelect" className="unstyled m-0 mt-1 flex flex-row gap-2">
                 {DONATION_AMOUNTS_MINOR_UNITS.map((amount: number) => {
