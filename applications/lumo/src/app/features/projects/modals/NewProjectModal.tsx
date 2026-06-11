@@ -7,6 +7,7 @@ import { InputFieldTwo, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeade
 import type { ModalStateProps } from '@proton/components';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { useUncontrolledField } from '../../../hooks/useUncontrolledField';
 import { IconPicker } from '../components/IconPicker';
 import { DEFAULT_PROJECT_ICON, getIconFromProjectName } from '../constants';
 import { useProjectActions } from '../hooks/useProjectActions';
@@ -27,29 +28,19 @@ export const NewProjectModal = ({
     initialIcon,
     ...modalProps 
 }: NewProjectModalProps) => {
-    const [projectName, setProjectName] = useState('');
-    const [projectInstructions, setProjectInstructions] = useState('');
-    const [selectedIcon, setSelectedIcon] = useState<string>(DEFAULT_PROJECT_ICON);
-    const [userSelectedIcon, setUserSelectedIcon] = useState(false);
+    const projectName = useUncontrolledField<HTMLInputElement>(initialName || '');
+    const projectInstructions = useUncontrolledField<HTMLTextAreaElement>(initialInstructions || '');
+    const [selectedIcon, setSelectedIcon] = useState<string>(initialIcon || DEFAULT_PROJECT_ICON);
+    const [userSelectedIcon, setUserSelectedIcon] = useState(!!initialIcon);
     const { createProject } = useProjectActions();
-
-    // Populate initial values when modal opens
-    useEffect(() => {
-        if (modalProps.open) {
-            setProjectName(initialName || '');
-            setProjectInstructions(initialInstructions || '');
-            setSelectedIcon(initialIcon || DEFAULT_PROJECT_ICON);
-            setUserSelectedIcon(!!initialIcon);
-        }
-    }, [modalProps.open, initialName, initialInstructions, initialIcon]);
 
     // Auto-suggest icon based on project name (only if user hasn't manually selected)
     useEffect(() => {
-        if (!userSelectedIcon && projectName.trim()) {
-            const suggestedIcon = getIconFromProjectName(projectName);
+        if (!userSelectedIcon && projectName.value.trim()) {
+            const suggestedIcon = getIconFromProjectName(projectName.value);
             setSelectedIcon(suggestedIcon);
         }
-    }, [projectName, userSelectedIcon]);
+    }, [projectName.value, userSelectedIcon]);
 
     const handleIconSelect = (icon: string) => {
         setSelectedIcon(icon);
@@ -57,16 +48,17 @@ export const NewProjectModal = ({
     };
 
     const handleCancel = () => {
-        setProjectName('');
-        setProjectInstructions('');
-        setSelectedIcon(DEFAULT_PROJECT_ICON);
-        setUserSelectedIcon(false);
         modalProps.onClose?.();
     };
 
     const handleCreateProject = async () => {
         try {
-            const { spaceId } = await createProject(projectName, projectInstructions, [], selectedIcon);
+            const { spaceId } = await createProject(
+                projectName.getValue(),
+                projectInstructions.getValue(),
+                [],
+                selectedIcon
+            );
 
             // Close modal and call callback
             handleCancel();
@@ -77,7 +69,7 @@ export const NewProjectModal = ({
         }
     };
 
-    const isCreateDisabled = !projectName.trim();
+    const isCreateDisabled = !projectName.value.trim();
 
     return (
         <>
@@ -90,10 +82,9 @@ export const NewProjectModal = ({
                         <div className="flex flex-nowrap items-center border border-weak rounded-lg p-1">
                             <IconPicker selectedIcon={selectedIcon} onSelectIcon={handleIconSelect} />
                             <InputFieldTwo
+                                {...projectName.bind}
                                 id="project-name"
                                 placeholder={c('collider_2025:Placeholder').t`Holiday planner`}
-                                value={projectName}
-                                onValue={setProjectName}
                                 autoFocus={false}
                                 maxLength={100}
                                 unstyled
@@ -107,11 +98,10 @@ export const NewProjectModal = ({
                                 {c('collider_2025:Label').t`Project Instructions (optional)`}
                             </label>
                             <TextAreaTwo
+                                {...projectInstructions.bind}
                                 id="project-instructions"
                                 placeholder={c('collider_2025:Placeholder').t`Add instructions about the tone, style, and persona you want ${LUMO_SHORT_APP_NAME} to adopt.`}
-                                value={projectInstructions}
                                 className='border border-weak rounded-lg'
-                                onValue={setProjectInstructions}
                                 rows={5}
                             />
                         </div>
