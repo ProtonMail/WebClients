@@ -38,6 +38,10 @@ const exposeCanvasGrid = (
       resolved: string
       currency: unknown
     }
+    dimensions: {
+      rowMetadata: unknown
+      columnMetadata: unknown
+    }
     sheets: {
       activeId: number
       list: unknown
@@ -111,6 +115,8 @@ export function LegacyGrid() {
   const localeValue = useUI((ui) => ui.locale.value ?? 'auto')
   const localeResolved = useUI((ui) => ui.locale.resolved)
   const localeCurrency = useUI((ui) => ui.locale.currency)
+  const rowMetadata = useUI((ui) => ui.legacy.rowMetadata)
+  const columnMetadata = useUI((ui) => ui.legacy.columnMetadata)
   const sheetList = useUI((ui) => ui.sheets.list)
   const sheetListIncludingHidden = useUI((ui) => ui.sheets.listIncludingHidden)
   const activeSheetListId = useUI((ui) => ui.sheets.activeId)
@@ -135,6 +141,7 @@ export function LegacyGrid() {
         resolved: localeResolved,
         currency: localeCurrency,
       },
+      dimensions: { rowMetadata, columnMetadata },
     }),
     [
       activeCell,
@@ -152,7 +159,9 @@ export function LegacyGrid() {
       localeCurrency,
       localeResolved,
       localeValue,
+      columnMetadata,
       merges,
+      rowMetadata,
       selections,
       sheetList,
       sheetListIncludingHidden,
