@@ -267,6 +267,29 @@ describe("captureTopLevelRejection", () => {
         );
     });
 
+    it("collapses Node syscall errors to a stable title", () => {
+        const path = "/Users/alicia/Library/Application Support/Proton Mail/config.json.tmp-112147235";
+        const error = Object.assign(new Error(`ENOSPC: no space left on device, open '${path}'`), {
+            code: "ENOSPC",
+            syscall: "open",
+            errno: -28,
+            path,
+        });
+
+        captureTopLevelRejection(error);
+
+        expect(reportException).not.toHaveBeenCalled();
+        expect(reportMessage).toHaveBeenCalledWith(
+            "ENOSPC during open",
+            expect.objectContaining({
+                level: "fatal",
+                error,
+                tags: { origin: "uncaughtException" },
+                extras: expect.objectContaining({ path, errno: -28, originalMessage: error.message }),
+            }),
+        );
+    });
+
     it("shows error dialog", () => {
         captureTopLevelRejection(new Error("fatal"));
 
