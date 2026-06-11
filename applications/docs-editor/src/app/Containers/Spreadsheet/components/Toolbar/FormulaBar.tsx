@@ -96,6 +96,7 @@ function RangeSelector() {
   return (
     <div className="flex w-32 items-center py-0.5">
       <input
+        aria-label={s('Range selector')}
         type="text"
         value={value}
         ref={inputRef}
@@ -239,6 +240,7 @@ function FormulaBarContent() {
       <div className="border-weak flex items-center border-x px-1 text-sm font-normal italic">fx</div>
       <div className="flex max-h-8 flex-1 items-center overflow-auto py-1">
         <FormulaBarInput
+          aria-label={s('Formula bar')}
           className="border-none bg-[white] text-sm font-normal focus:ring-0"
           sheetId={useUI((ui) => ui.legacy.activeSheetId)}
           activeCell={useUI((ui) => ui.legacy.activeCell)}
@@ -253,7 +255,9 @@ function FormulaBarContent() {
 function strings() {
   return {
     'Add new': c('sheets_2025:Range selector menu').t`Add new`,
+    'Formula bar': c('sheets_2025:Formula bar').t`Formula bar`,
     'Named ranges': c('sheets_2025:Range selector menu').t`Named ranges`,
+    'Range selector': c('sheets_2025:Range selector').t`Range selector`,
     Tables: c('sheets_2025:Range selector menu').t`Tables`,
     Sheets: c('sheets_2025:Range selector menu').t`Sheets`,
   }

@@ -570,9 +570,13 @@ export function useProtonSheetsUIState(
       logger.info('action: create chart', state.activeSheetId, state.activeCell)
       return state.chartsState.onCreateChart(state.activeSheetId, state.activeCell, state.selections)
     }),
-    formula: useEvent((formula: string) =>
-      state.grid.makeEditable?.(state.activeSheetId, state.activeCell, `=${formula}(`, true),
-    ),
+    formula: useEvent((formula: string) => {
+      const value = `=${formula}(`
+      const cell = state.activeCell
+
+      state.grid.makeEditable?.(state.activeSheetId, cell, value, true)
+      state.grid.setEditorValue?.(value, undefined, state.activeSheetId, cell)
+    }),
     link: useEvent(() => view.insertLinkDialog.open()),
     // TODO: probably want to customize (or, at least, localize) the default options
     dropdown: useEvent(() => {
