@@ -1,3 +1,4 @@
+import { KEY_LENGTH_BYTES } from '@protontech/crypto/subtle/aesGcm.ts';
 import type { AnyAction, Middleware } from '@reduxjs/toolkit';
 import { createMemoryHistory } from 'history';
 import createSagaMiddleware from 'redux-saga';
@@ -5,7 +6,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 import * as bootstrap from '@proton/account/bootstrap';
 import { createUnleash } from '@proton/account/bootstrap';
-import { KEY_LENGTH_BYTES } from '@protontech/crypto/subtle/aesGcm.ts';
 import createApi from '@proton/shared/lib/api/createApi';
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import type { ProtonConfig, User } from '@proton/shared/lib/interfaces';
@@ -205,7 +205,6 @@ export async function setupTestEnvironment({
         CLIENT_TYPE: 1,
         CLIENT_SECRET: 'test-secret',
         LOCALES: {},
-        LOCALES_DATE_FNS: [],
         SSO_URL: '',
         LOGICAL_SCSS: true,
     };

@@ -226,7 +226,7 @@ describe('email', () => {
 
     describe('getEmailTo', () => {
         it('should always return a string', () => {
-            expect(getEmailTo('mailto:')).toBeInstanceOf(String);
+            expect(typeof getEmailTo('mailto:')).toBe('string');
         });
     });
 

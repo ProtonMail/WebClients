@@ -1,8 +1,6 @@
 import { join } from 'path';
 import { sync } from 'execa';
 
-import { getDateFnsLocales } from './locales';
-
 import type { AppConfig, ProtonPackOptions, WebpackOptions } from './interface';
 
 const getGitBranch = () => {
@@ -119,7 +117,6 @@ export const getWebpackOptions = (envArguments: WebpackEnvArguments, extra: Extr
         COMMIT: buildData.commit,
         DATE_VERSION: buildData.date,
         LOCALES: LOCALES,
-        LOCALES_DATE_FNS: getDateFnsLocales(),
         LOGICAL_SCSS: logicalScss,
         SENTRY_DESKTOP_DSN: appData.sentryDesktopDsn ?? '',
         SENTRY_DSN: appData.sentryDsn,
