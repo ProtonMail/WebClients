@@ -67,6 +67,7 @@ export const getOrganizationAppRoutes = ({
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
     const isOrgActive = organization?.State === ORGANIZATION_STATE.ACTIVE;
+    const isOrgDelinquent = organization?.State === ORGANIZATION_STATE.DELINQUENT;
     const isOrgConfigured = hasOrganizationKey || hasOrganization;
     const hasActiveOrganizationKey = isOrgActive && hasOrganizationKey;
     const hasActiveOrganization = isOrgActive && hasOrganization;
@@ -110,17 +111,20 @@ export const getOrganizationAppRoutes = ({
                     isUserGroupsPassBusinessEnabled,
                     hasGroups,
                 })));
+
+    const hasUsedMembers = (organization?.UsedMembers ?? 0) > 1;
     const canShowUsersAndAddressesSection =
         permissions['account.user.read'] &&
-        // The user must have a plan that supports multi-user
-        hasMemberCapablePlan &&
-        // If the organization is not active (end of subscription without renewal), we allow users to access this page to delete sub users
-        (isOrgActive || (organization?.UsedMembers ?? 0) > 1) &&
         // The org must be setup to allow users to access this page
-        isOrgConfigured;
+        isOrgConfigured &&
+        // If the organization is not active (end of subscription without renewal), we allow users to access this page to delete sub users
+        ((isOrgDelinquent && hasUsedMembers) ||
+            // The user must have an active (non-delinquent) plan that supports multi-user
+            (isOrgActive && hasMemberCapablePlan));
 
     const hasMeetPlan = hasMeetBusiness(subscription) || hasMeet(subscription);
 
+    const hasUsedDomains = (organization?.UsedDomains ?? 0) > 0;
     const canShowDomainNamesSection =
         // user.hasPaidMail is needed, because for example VPN B2B doesn't need domains by design
         // NOTE: This configuration is tied with the mail/routes.tsx domains availability
@@ -128,7 +132,7 @@ export const getOrganizationAppRoutes = ({
         // Don't use user.hasPaidMeet otherwise we will show domain names section to every user with Meet addon
         (hasOrganizationKey && hasMeetPlan) ||
         // If the organization is not active (end of subscription without renewal), we allow users to access this page to delete domains
-        (!isOrgActive && (organization?.UsedDomains ?? 0) > 0);
+        (isOrgDelinquent && hasUsedDomains);
 
     const canShowScribeSection = Boolean(
         isScribeEnabled &&
