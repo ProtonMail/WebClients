@@ -17142,6 +17142,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/wicg-file-system-access@npm:2023.10.7":
+  version: 2023.10.7
+  resolution: "@types/wicg-file-system-access@npm:2023.10.7"
+  checksum: 10/25c1249d2714de2fa16ad3203e3748debd66451bd785405623847da0174abd7196955caf821869c54fed254174076a69173b80b26206794a01d5d53946c6107c
+  languageName: node
+  linkType: hard
+
 "@types/wrap-ansi@npm:^3.0.0":
   version: 3.0.0
   resolution: "@types/wrap-ansi@npm:3.0.0"
@@ -42012,6 +42019,7 @@ __metadata:
     "@types/react": "npm:^18.3.28"
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-router-dom": "npm:^5.3.3"
+    "@types/wicg-file-system-access": "npm:2023.10.7"
     "@vitejs/plugin-react": "npm:^6.0.2"
     "@vitest/coverage-v8": "npm:^4.1.7"
     "@vitest/ui": "npm:3.2.4"
