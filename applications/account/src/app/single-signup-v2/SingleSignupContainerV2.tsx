@@ -210,6 +210,7 @@ const SingleSignupContainerV2 = ({
                 SSO_PATHS.LUMO_SIGNUP_B2B,
                 SSO_PATHS.MEET_SIGNUP_B2B,
                 SSO_PATHS.BUSINESS_SIGNUP,
+                SSO_PATHS.BUSINESS_SIGNUP_GENERIC,
             ].includes(location.pathname as any)
         ) {
             return Audience.B2B;

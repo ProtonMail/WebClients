@@ -450,6 +450,7 @@ const PublicAppInteractive = ({
                                                 SSO_PATHS.START,
                                                 SSO_PATHS.REFERRAL_PLAN_SELECTION,
                                                 SSO_PATHS.BUSINESS_SIGNUP,
+                                                SSO_PATHS.BUSINESS_SIGNUP_GENERIC,
                                                 SSO_PATHS.CALENDAR_SIGNUP,
                                                 SSO_PATHS.CALENDAR_SIGNUP_B2B,
                                                 SSO_PATHS.MAIL_SIGNUP,
