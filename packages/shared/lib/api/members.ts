@@ -122,7 +122,10 @@ export const checkMemberAddressAvailability = (data: { Local: string; Domain: st
     data,
 });
 
-export const createMemberAddress = (memberID: string, data: { Local: string; Domain: string }) => ({
+export const createMemberAddress = (
+    memberID: string,
+    data: { Local: string; Domain: string; DisableE2EE?: boolean }
+) => ({
     method: 'post',
     url: `core/v4/members/${memberID}/addresses`,
     data,

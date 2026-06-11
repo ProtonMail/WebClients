@@ -465,14 +465,15 @@ const createAddressesForMember = async ({
 }: {
     member: Member;
     api: Api;
-    addresses: { Local: string; Domain: string }[];
+    addresses: { Local: string; Domain: string; DisableE2EE?: boolean }[];
 }) => {
     const memberAddresses: Address[] = [];
-    for (const { Local, Domain } of addresses) {
+    for (const { Local, Domain, DisableE2EE } of addresses) {
         const { Address } = await api<{ Address: Address }>(
             createMemberAddress(member.ID, {
                 Local,
                 Domain,
+                DisableE2EE,
             })
         );
         memberAddresses.push(Address);
