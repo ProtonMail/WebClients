@@ -33,7 +33,8 @@ export const getThemeFromLocation = (
         pathname === SSO_PATHS.MAIL_SIGNUP_B2B ||
         pathname === SSO_PATHS.DRIVE_SIGNUP_B2B ||
         pathname === SSO_PATHS.LUMO_SIGNUP_B2B ||
-        pathname === SSO_PATHS.BUSINESS_SIGNUP
+        pathname === SSO_PATHS.BUSINESS_SIGNUP ||
+        pathname === SSO_PATHS.BUSINESS_SIGNUP_GENERIC
     ) {
         return {
             DarkTheme: ThemeTypes.Storefront,
