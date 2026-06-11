@@ -749,7 +749,12 @@ const Step1 = ({
         if (isPorkbunPayment) {
             return;
         }
-        if (hasPlanSelector && location.pathname !== SSO_PATHS.BUSINESS_SIGNUP) {
+        if (
+            hasPlanSelector &&
+            ![SSO_PATHS.BUSINESS_SIGNUP, SSO_PATHS.BUSINESS_SIGNUP_GENERIC].some(
+                (pathname) => location.pathname === pathname
+            )
+        ) {
             return (
                 <AudienceTabs
                     audience={audience}
