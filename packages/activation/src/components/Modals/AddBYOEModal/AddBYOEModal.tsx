@@ -7,6 +7,7 @@ import byoeConnectGmail from '@proton/styles/assets/img/illustrations/byoe-conne
 import byoeForwarding from '@proton/styles/assets/img/illustrations/byoe-forwarding.svg';
 import byoeProfiling from '@proton/styles/assets/img/illustrations/byoe-profiling.svg';
 import stopHandSign from '@proton/styles/assets/img/illustrations/stop-hand-sign.svg';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import './AddBYOEModal.scss';
 
@@ -18,6 +19,7 @@ interface Props extends Omit<ModalProps, 'onSubmit'> {
 
 const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, ...rest }: Props) => {
     const { onClose } = rest;
+    const emailDedupDisabled = useFlag('InboxImportDedupByAddressKillSwitch');
 
     return (
         <ModalTwo
@@ -34,8 +36,13 @@ const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, ...rest }: Props) =
                     <h1 className="text-break text-4xl text-wrap-balance">
                         <strong>{c('Title').t`Bring your Gmail into ${MAIL_APP_NAME}`}</strong>
                     </h1>
-                    <div className="color-weak text-lg text-wrap-balance">{c('Description')
-                        .t`We'll bring in your old emails and connect your Gmail to ${MAIL_APP_NAME} so new messages appear automatically`}</div>
+                    <div className="color-weak text-lg text-wrap-balance">
+                        {emailDedupDisabled
+                            ? c('Description')
+                                  .t`We'll bring in your old emails and connect your Gmail to ${MAIL_APP_NAME} so new messages appear automatically`
+                            : c('Description')
+                                  .t`We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings`}
+                    </div>
                     <div className="flex flex-column items-center gap-4">
                         <SignInWithGoogle
                             onClick={() => onSubmit()}
