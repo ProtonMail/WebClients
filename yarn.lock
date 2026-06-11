@@ -3205,6 +3205,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@electron/get@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "@electron/get@npm:5.0.0"
+  dependencies:
+    debug: "npm:^4.1.1"
+    env-paths: "npm:^3.0.0"
+    graceful-fs: "npm:^4.2.11"
+    progress: "npm:^2.0.3"
+    semver: "npm:^7.6.3"
+    sumchecker: "npm:^3.0.1"
+    undici: "npm:^7.24.4"
+  dependenciesMeta:
+    undici:
+      optional: true
+  checksum: 10/b69a1874c80f2164e99f8fbab1916bd4f4bfd038310b7bcdadaebc5290f4b9cd61347286a71ed01a74863b14fd31d8def1bd3a6f2eac1d2324a6b0268b1bf309
+  languageName: node
+  linkType: hard
+
 "@electron/node-gyp@git+https://github.com/electron/node-gyp.git#06b29aafb7708acef8b3669835c8a7857ebc92d2":
   version: 10.2.0-electron.1
   resolution: "@electron/node-gyp@https://github.com/electron/node-gyp.git#commit=06b29aafb7708acef8b3669835c8a7857ebc92d2"
@@ -26107,16 +26125,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron@npm:40.10.2":
-  version: 40.10.2
-  resolution: "electron@npm:40.10.2"
+"electron@npm:42.3.3":
+  version: 42.3.3
+  resolution: "electron@npm:42.3.3"
   dependencies:
-    "@electron/get": "npm:^2.0.0"
+    "@electron/get": "npm:^5.0.0"
     "@types/node": "npm:^24.9.0"
     extract-zip: "npm:^2.0.1"
   bin:
     electron: cli.js
-  checksum: 10/e4d1edf3fe1b52a0d233d4922f0c3098c8f3059cabc1ecf835d842cb0fd1110550d649a2683d8e230dbcb74cf87602cffa43a7ba2310aeb404953a2e6cd20e42
+    install-electron: install.js
+  checksum: 10/3d44c372e3e6814772e67befbd3b6b89a27417e5d8ebebc3b72ea21dc583533b4407a5189c2ad82200fbf4b8981fc7bec0e0b1d999718abd049c9392f952c0d9
   languageName: node
   linkType: hard
 
@@ -41445,7 +41464,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     css-loader: "npm:^7.1.4"
     dotenv: "npm:^17.4.2"
-    electron: "npm:40.10.2"
+    electron: "npm:42.3.3"
     electron-log: "npm:^5.4.3"
     electron-squirrel-startup: "npm:^1.0.1"
     electron-store: "npm:^8.2.0"
@@ -49610,10 +49629,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:^7.25.0":
-  version: 7.25.0
-  resolution: "undici@npm:7.25.0"
-  checksum: 10/038d3568c72bb976e3cc389284f7f1cc64cd70d578300e4676a449fbcb624a35fe99ac127b5f3729f18b8246d6c090444ab61b1b67736bb88f52a3e913d76bf8
+"undici@npm:^7.24.4, undici@npm:^7.25.0":
+  version: 7.27.2
+  resolution: "undici@npm:7.27.2"
+  checksum: 10/d44f730157713fd2d36a1e98f44aa7661af2188a898b57a85c694013da312fd0c188515e64a59c6bbd4b1f5a79c20b6c564134d06b3ec2f574c990726987e73a
   languageName: node
   linkType: hard
 
