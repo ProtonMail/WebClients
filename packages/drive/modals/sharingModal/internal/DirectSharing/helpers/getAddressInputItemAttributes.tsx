@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, Loader } from '@proton/components';
+import { Loader } from '@proton/components';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 
 import type { ShareInvitee } from '../interfaces';
@@ -19,11 +20,7 @@ export const getAddressInputItemAttributes = ({ isLoading, error, email, isExter
         return {
             icon: (
                 <div className="flex items-center shrink-0 ml-2">
-                    <Icon
-                        name="exclamation-circle-filled"
-                        className="color-danger"
-                        data-testid="invite-address-error"
-                    />
+                    <IcExclamationCircleFilled className="color-danger" data-testid="invite-address-error" />
                 </div>
             ),
             iconTooltip: error.message,
