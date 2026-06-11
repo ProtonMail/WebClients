@@ -6,7 +6,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { InputProps } from '@proton/atoms/Input/Input';
 import { Input } from '@proton/atoms/Input/Input';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcEye } from '@proton/icons/icons/IcEye';
+import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
 
 type PasswordType = 'password' | 'text';
 
@@ -45,7 +46,7 @@ const PasswordInputTwoBase = (
                         size="small"
                         icon
                     >
-                        <Icon className="m-auto" name={type === 'password' ? 'eye' : 'eye-slash'} />
+                        {type === 'password' ? <IcEye className="m-auto" /> : <IcEyeSlash className="m-auto" />}
                     </Button>
                 </>
             }

@@ -1,6 +1,7 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
+import type { PublicKeyReference } from '@protontech/crypto';
 import { c, msgid } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
@@ -8,7 +9,6 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { useGetDecryptedPassphraseAndCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import AddressesInput, { AddressesInputItem } from '@proton/components/components/addressesInput/AddressesInput';
-import Icon from '@proton/components/components/icon/Icon';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import Loader from '@proton/components/components/loader/Loader';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -23,9 +23,10 @@ import { useKeyTransparencyContext } from '@proton/components/containers/keyTran
 import useApi from '@proton/components/hooks/useApi';
 import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { PublicKeyReference } from '@protontech/crypto';
 import { useLoading } from '@proton/hooks';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
+import { IcLockCheckFilled } from '@proton/icons/icons/IcLockCheckFilled';
+import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 import { addMember } from '@proton/shared/lib/api/calendars';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
@@ -244,7 +245,11 @@ const getAddressInputItemAttributes = ({ loading, error, Address, isKeyPinned }:
     return {
         icon: (
             <span className="inline-flex pl-2 shrink-0 my-auto">
-                <Icon size={4} name={isKeyPinned ? 'lock-check-filled' : 'lock-filled'} className={'color-info'} />
+                {isKeyPinned ? (
+                    <IcLockCheckFilled size={4} className={'color-info'} />
+                ) : (
+                    <IcLockFilled size={4} className={'color-info'} />
+                )}
             </span>
         ),
         iconTooltip: isKeyPinned
