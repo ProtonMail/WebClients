@@ -1,14 +1,12 @@
 import { AppsDropdown, Logo, MimeIcon, useActiveBreakpoint, useConfig, UserDropdown } from '@proton/components'
 import { IcEye } from '@proton/icons/icons/IcEye'
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled'
-import { IcUserPlus } from '@proton/icons/icons/IcUserPlus'
 import { APPS } from '@proton/shared/lib/constants'
 import { DocumentTitleDropdown } from './DocumentTitleDropdown/DocumentTitleDropdown'
 import { DocumentActiveUsers } from './DocumentActiveUsers'
 import { ConnectionStatus } from './ConnectionStatus'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
-import { Button } from '@proton/atoms/Button/Button'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { CommentsButton } from './CommentsButton'
 import { c } from 'ttag'
@@ -31,8 +29,8 @@ import clsx from '@proton/utils/clsx'
 import { useIsSheetsEditorEnabled, useSharingModalDriveSdkEnabled } from '~/utils/flags'
 import { getDocsReportContextLines } from '~/utils/report-context'
 import { useSharingModal } from '@proton/drive/public/sharingModal'
-import { generateNodeUid, getDrive } from '@proton/drive'
 import { WorkspacePromoBanner } from '../../DocumentViewer/WorkspacePromoBanner'
+import { HeaderShareButton } from './HeaderShareButton'
 
 function getWindowLocationExcludingDomain() {
   return stripLocalBasenameFromPathname(window.location.pathname) + window.location.search + window.location.hash
@@ -159,12 +157,12 @@ function DocsHeaderForDocument({
 }: DocsHeaderForDocumentProps) {
   const { publicContext } = useDocsContext()
   const { APP_VERSION, CLIENT_TYPE } = useConfig()
-  const role = useMemo(() => documentState.getProperty('userRole'), [documentState])
   const isHomepageEnabled = useFlag('DocsHomepageEnabled')
 
   const sharingModalDriveSdkEnabled = useSharingModalDriveSdkEnabled()
   const { showSharingModal, sharingModal } = useSharingModal()
 
+  const role = documentState.getProperty('userRole')
   const { volumeId, nodeId } = documentState.getProperty('decryptedNode')
 
   const icon = (
@@ -223,22 +221,13 @@ function DocsHeaderForDocument({
               <DocumentActiveUsers className="mr-2 hidden md:flex" />
 
               {documentState.getProperty('userRole').canShare() && (
-                <Button
-                  shape="ghost"
-                  className="flex flex-nowrap items-center gap-2 border !border-[transparent] head-max-849:!mr-2 head-max-849:!border head-max-849:!border-[--border-norm] head-max-849:!px-[0.5em]"
-                  data-testid="share-button"
-                  onClick={() =>
-                    sharingModalDriveSdkEnabled
-                      ? showSharingModal({
-                          drive: getDrive(),
-                          nodeUid: generateNodeUid(volumeId, nodeId),
-                        })
-                      : authenticatedController?.openDocumentSharingModal()
-                  }
-                >
-                  <IcUserPlus />
-                  <span className="leading-none head-max-849:!sr-only">{c('Action').t`Share`}</span>
-                </Button>
+                <HeaderShareButton
+                  sharingModalDriveSdkEnabled={sharingModalDriveSdkEnabled}
+                  showSharingModal={showSharingModal}
+                  volumeId={volumeId}
+                  nodeId={nodeId}
+                  authenticatedController={authenticatedController}
+                />
               )}
             </>
           )}
