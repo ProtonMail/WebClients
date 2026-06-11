@@ -32,21 +32,32 @@ im.$media-expressions: $media-expressions;
 // TODO: need to investigate why this only works here
 // @import './layouts/sidebar/Sidebar.scss';
 
+// TODO: might not need ABC arizona
+
 .main-text {
-	font-family: Syne, Inter, system-ui, sans-serif;
-	font-size: rem(36);
+	font-family: 'ABC Arizona Flare', 'ABC Arizona', Syne, Inter, system-ui, sans-serif;
+	font-size: rem(32);
+	font-weight: normal;
+	line-height: rem(38);
+	letter-spacing: -1.28px;
 	font-feature-settings: 'ss04';
 
 	@include im.media('<=medium') {
-		font-size: rem(36);
+		font-size: rem(28);
+		line-height: rem(34);
+		letter-spacing: -1.12px;
 	}
 
 	@container maintext (width < 16rem) {
-		font-size: rem(24);
+		font-size: rem(22);
+		line-height: rem(26);
+		letter-spacing: -0.88px;
 	}
 
 	&.small {
-		font-size: rem(22);
+		font-size: rem(20);
+		line-height: rem(24);
+		letter-spacing: -0.8px;
 	}
 }
 
