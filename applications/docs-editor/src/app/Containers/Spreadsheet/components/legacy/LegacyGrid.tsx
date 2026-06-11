@@ -31,6 +31,13 @@ const exposeCanvasGrid = (
       dataValidations: unknown
     }
     charts: unknown
+    locale: {
+      account: string
+      auto: string
+      value: string
+      resolved: string
+      currency: unknown
+    }
     sheets: {
       activeId: number
       list: unknown
@@ -99,6 +106,11 @@ export function LegacyGrid() {
   const hasFilter = useUI((ui) => ui.data.hasFilter)
   const dataValidations = useUI((ui) => ui.legacy.dataValidations)
   const charts = useUI((ui) => ui.legacy.charts)
+  const localeAccount = useUI((ui) => ui.locale.account)
+  const localeAuto = useUI((ui) => ui.locale.auto)
+  const localeValue = useUI((ui) => ui.locale.value ?? 'auto')
+  const localeResolved = useUI((ui) => ui.locale.resolved)
+  const localeCurrency = useUI((ui) => ui.locale.currency)
   const sheetList = useUI((ui) => ui.sheets.list)
   const sheetListIncludingHidden = useUI((ui) => ui.sheets.listIncludingHidden)
   const activeSheetListId = useUI((ui) => ui.sheets.activeId)
@@ -116,6 +128,13 @@ export function LegacyGrid() {
       data: { hasFilter, dataValidations },
       sheets: { activeId: activeSheetListId, list: sheetList, listIncludingHidden: sheetListIncludingHidden },
       charts,
+      locale: {
+        account: localeAccount,
+        auto: localeAuto,
+        value: localeValue,
+        resolved: localeResolved,
+        currency: localeCurrency,
+      },
     }),
     [
       activeCell,
@@ -128,6 +147,11 @@ export function LegacyGrid() {
       frozenRowCount,
       gridLinesEnabled,
       hasFilter,
+      localeAccount,
+      localeAuto,
+      localeCurrency,
+      localeResolved,
+      localeValue,
       merges,
       selections,
       sheetList,
