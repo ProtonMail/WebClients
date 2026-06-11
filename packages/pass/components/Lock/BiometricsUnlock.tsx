@@ -4,8 +4,9 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcFingerprint } from '@proton/icons/icons/IcFingerprint';
+import { IcPassLockmodeBiometrics } from '@proton/icons/icons/IcPassLockmodeBiometrics';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useOffline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
@@ -63,7 +64,7 @@ export const BiometricsUnlock: FC<Props> = ({ offlineEnabled }) => {
             disabled={disabled}
             onClick={onUnlock}
         >
-            <Icon name={isMac() ? 'fingerprint' : 'pass-lockmode-biometrics'} className="mr-1" />
+            {isMac() ? <IcFingerprint className="mr-1" /> : <IcPassLockmodeBiometrics className="mr-1" />}
             {c('Action').t`Unlock`}
         </Button>
     );
