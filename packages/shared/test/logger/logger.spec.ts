@@ -125,8 +125,6 @@ describe('Logger', () => {
                 "Logger 'test' already initialized, ignoring subsequent initialization"
             );
             expect(testLogger.getEncryptionContextString()).toBe('test-app#test');
-
-            // Spy automatically restored by Jasmine
         });
 
         it('should create separate loglevel instances', async () => {
