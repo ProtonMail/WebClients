@@ -314,6 +314,7 @@ enum MeetFeatureFlag {
     MeetH264 = 'MeetH264',
     MeetMultipleRecording = 'MeetMultipleRecording',
     MeetRecordingWebCodecs = 'MeetRecordingWebCodecs',
+    MeetRecordingRecoveryUI = 'MeetRecordingRecoveryUI',
     MeetEnableAudioMixing = 'MeetEnableAudioMixing',
     MeetEnableSpatialAudio = 'MeetEnableSpatialAudio',
     MeetPreSharedKey = 'MeetPreSharedKey',
