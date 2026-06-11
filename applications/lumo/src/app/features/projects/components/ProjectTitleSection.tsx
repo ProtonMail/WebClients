@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,6 +8,7 @@ import { IcFolderOpen } from '@proton/icons/icons/IcFolderOpen';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 
+import { useUncontrolledField } from '../../../hooks/useUncontrolledField';
 import { useProjectActions } from '../hooks/useProjectActions';
 
 interface ProjectTitleSectionProps {
@@ -24,8 +25,8 @@ export const ProjectTitleSection = ({
     onDeleteProject,
 }: ProjectTitleSectionProps) => {
     const [isEditingTitle, setIsEditingTitle] = useState(false);
-    const [editedTitle, setEditedTitle] = useState('');
-    const titleInputRef = useRef<HTMLInputElement>(null);
+    const titleField = useUncontrolledField<HTMLInputElement>(projectName);
+    const titleInputRef = titleField.bind.ref;
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { navigateToAllProjects } = useProjectActions();
 
@@ -34,15 +35,14 @@ export const ProjectTitleSection = ({
             titleInputRef.current.focus();
             titleInputRef.current.select();
         }
-    }, [isEditingTitle]);
+    }, [isEditingTitle, titleInputRef]);
 
     const handleStartEditing = () => {
-        setEditedTitle(projectName);
         setIsEditingTitle(true);
     };
 
     const handleSave = () => {
-        const trimmedTitle = editedTitle.trim();
+        const trimmedTitle = titleField.getValue().trim();
         if (trimmedTitle && trimmedTitle !== projectName) {
             onSaveTitle(trimmedTitle);
         }
@@ -55,7 +55,6 @@ export const ProjectTitleSection = ({
             handleSave();
         } else if (e.key === 'Escape') {
             setIsEditingTitle(false);
-            setEditedTitle(projectName);
         }
     };
 
@@ -64,11 +63,11 @@ export const ProjectTitleSection = ({
             <Icon name={categoryIcon as any} size={6} className="project-detail-title-icon shrink-0" />
             {isEditingTitle ? (
                 <input
-                    ref={titleInputRef}
+                    {...titleField.bind}
+                    // Remount per edit (conditional render) keeps defaultValue in sync with the latest name
+                    defaultValue={projectName}
                     type="text"
                     className="project-detail-title-input text-2xl"
-                    value={editedTitle}
-                    onChange={(e) => setEditedTitle(e.target.value)}
                     onBlur={handleSave}
                     onKeyDown={handleKeyDown}
                     maxLength={100}

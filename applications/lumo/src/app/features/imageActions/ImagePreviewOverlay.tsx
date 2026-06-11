@@ -4,6 +4,7 @@ import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcCross } from '@proton/icons/icons/IcCross';
 
