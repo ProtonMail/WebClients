@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useOrganization } from '@proton/account/organization/hooks';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import { GetStartedButton } from '@proton/components/components/topnavbar/GetStartedButton';
 import { SetupOrganizationNameModal } from '@proton/components/containers/organization/SetupOrganizationNameModal';
@@ -14,7 +13,7 @@ import { useOnboarding } from '../../hooks/useOnboarding';
 import { ONBOARDING_STEPS } from '../../types/Onboarding';
 import { OnboardedQuickActions } from './OnboardedQuickActions';
 
-const GetStartedOnboardingInner = ({ organization }: { organization: OrganizationExtended }) => {
+export const GetStartedOnboardingInner = ({ organization }: { organization: OrganizationExtended }) => {
     const { createNotification } = useNotifications();
     const [isBusinessOnboarded, onboarded, completed] = useOnboarding();
     const onOrganizationNameSetup = useOnOrganizationNameSetup();
@@ -57,7 +56,5 @@ const GetStartedOnboardingInner = ({ organization }: { organization: Organizatio
 };
 
 export const GetStartedOnboarding = () => {
-    const [organization] = useOrganization();
-
-    return organization ? <GetStartedOnboardingInner organization={organization} /> : null;
+    return null;
 };
