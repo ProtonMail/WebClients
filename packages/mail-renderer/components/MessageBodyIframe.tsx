@@ -5,9 +5,9 @@ import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ThemeContextInterface } from '@proton/components/containers/themes/ThemeProvider';
 import useSyncIframeStyles from '@proton/components/containers/themes/useSyncIframeStyles';
+import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import MessageBodyImages from '@proton/mail-renderer/components/MessageBodyImages';
 import getIframeSandboxAttributes from '@proton/mail-renderer/helpers/getIframeSandboxAttributes';
 import useIframeAfterBlockquote from '@proton/mail-renderer/hooks/useIframeAfterBlockquote';
@@ -139,7 +139,7 @@ const MessageBodyIframe = ({
                             }}
                             data-testid="message-view:expand-codeblock"
                         >
-                            <Icon name="three-dots-horizontal" size={3.5} className="m-auto" />
+                            <IcThreeDotsHorizontal size={3.5} className="m-auto" />
                             <span className="proton-sr-only">
                                 {showBlockquote
                                     ? c('Info').t`Hide original message`
