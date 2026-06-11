@@ -89,7 +89,6 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
     return (
         <>
             <LumoLayoutWithDrawer
-                appearance={{ solidBackground: false }}
                 header={{ component: isGuest ? <PublicHeader /> : null }}
                 drawer={{ disabled: true }}
                 // drawer={{
