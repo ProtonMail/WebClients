@@ -1062,9 +1062,6 @@
       "Upload and share files": [
         "Unggah dan bagikan file"
       ],
-      "Upload anyway": [
-        "Tetap unggah"
-      ],
       "Upload file": [
         "Unggah file"
       ],
@@ -3107,9 +3104,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" sudah ada"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } tidak dapat terhubung ke akun eksternal Anda"
       ],
@@ -3305,9 +3299,6 @@
       "Failed to update public share node": [
         "Gagal memperbarui node berbagi publik"
       ],
-      "File cannot be merged with folder": [
-        "Berkas tidak dapat digabungkan dengan folder"
-      ],
       "First name is too long": [
         "Nama depan terlalu panjang"
       ],
@@ -3436,9 +3427,6 @@
       ],
       "Payment process not supported": [
         "Proses pembayaran tidak didukung"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Unggahan foto untuk sementara dinonaktifkan. Silakan coba lagi nanti"
       ],
       "Please activate your search again": [
         "Silakan aktifkan pencarian Anda kembali"
@@ -3584,24 +3572,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Jumlah kredit minimum yang dapat ditambahkan adalah ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Revisi baru file asli belum diunggah. Silakan coba lagi nanti"
-      ],
-      "The original file has missing active revision": [
-        "File asli memiliki revisi aktif yang hilang"
-      ],
-      "The original file has missing hash key": [
-        "Terdapat kunci hash yang hilang pada file asli"
-      ],
-      "The original file has missing session key": [
-        "Terdapat kunci sesi yang hilang pada file asli"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "File asli belum diunggah. Silakan coba lagi nanti"
-      ],
-      "The original folder not found": [
-        "Folder asli tidak ditemukan"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Ada terlalu banyak folder di dalam akun eksternal Anda. Mohon sesuaikan parameter impor Anda agar sebagian folder dapat terhapus."
       ],
@@ -3652,9 +3622,6 @@
       ],
       "Upload failed": [
         "Unggahan gagal"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Unggahan bagi folder ini untuk sementara dinonaktifkan"
       ],
       "Username must begin with a letter or digit": [
         "Nama pengguna harus dimulai dengan huruf atau angka"
@@ -5122,9 +5089,6 @@
       "Folders you sync from your computer will appear here.": [
         "Folder yang Anda sinkronkan dari komputer Anda akan muncul pada layar ini."
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Untuk hasil terbaik, hindari streaming dan aktivitas yang membutuhkan banyak memori, atau bagi unggahan Anda menjadi beberapa kelompok kecil."
-      ],
       "Free 5GB encrypted storage to get started": [
         "Ruang penyimpanan terenkripsi 5GB gratis untuk memulai"
       ],
@@ -5836,9 +5800,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Alamat ini kini merupakan ${ defaultEmailAddress } Anda untuk mengirim pesan baru."
       ],
-      "This item already exists in your library": [
-        "Item ini telah ada pada pustaka Anda"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Item yang dipilih tidak tersimpan dalam pustaka Foto Anda. Jika Anda menghapusnya dari album ini, Anda akan kehilangan akses secara permanen."
       ],
@@ -5872,26 +5833,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "Tindakan ini akan menghapus item terpilih yang telah Anda unggah secara permanen."
       ],
-      "This will replace the existing file with the folder": [
-        "Tindakan ini akan menggantikan file yang ada dengan folder."
-      ],
       "This will replace the existing folder or file with the file": [
         "Tindakan ini akan mengganti folder atau file yang telah ada dengan file ini"
       ],
       "This will replace the existing folder or file with the folder": [
         "Tindakan ini akan mengganti folder atau file yang telah ada dengan folder ini"
       ],
-      "This will replace the existing folder with the file": [
-        "Ini akan menggantikan folder yang ada dengan file tersebut."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Tindakan ini akan mengeluarkan seluruh akun milik Anda yang sedang terhubung masuk."
-      ],
-      "This will upload a new version of the file": [
-        "Ini akan mengunggah versi baru dari file tersebut"
-      ],
-      "This will upload a new version of the folder": [
-        "Dengan ini, versi baru folder akan diunggah"
       ],
       "Time": [
         "Waktu"
@@ -5941,18 +5890,6 @@
       "Tracking": [
         "Pelacakan"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Transfer file \"${ name }\" dibatalkan"
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Transfer folder \"${ name }\" dibatalkan"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Transfer untuk file \"${ file.name }\" dilewati"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Transfer untuk folder \"${ folderName }\" dilewati"
-      ],
       "Trash": [
         "Sampah"
       ],
@@ -6000,9 +5937,6 @@
       ],
       "Uploading": [
         "Mengunggah"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Mengunggah ratusan file sekaligus dapat berdampak pada kinerja."
       ],
       "Uppercase and lowercase letters": [
         "Huruf besar dan kecil"
@@ -6702,12 +6636,6 @@
       "Keep both": [
         "Pertahankan keduanya"
       ],
-      "Keep both files": [
-        "Pertahankan kedua file"
-      ],
-      "Keep both folders": [
-        "Pertahankan kedua folder"
-      ],
       "Label messages as": [
         "Labeli pesan sebagai"
       ],
@@ -6839,12 +6767,6 @@
       ],
       "Region": [
         "Provinsi"
-      ],
-      "Replace existing file": [
-        "Gantikan file yang telah ada"
-      ],
-      "Replace existing folder": [
-        "Gantikan folder yang telah ada"
       ],
       "Replace existing folder or file": [
         "Ganti folder atau file yang telah ada"
@@ -8485,14 +8407,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" gagal dipindahkan ke sampah"
       ],
-      "\"${ name }\" failed to be saved": [
-        "\"${ name }\" gagal disimpan"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" dipindahkan ke sampah"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" berhasil disimpan"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Nama \"${ newName }\" gagal diubah"
@@ -8617,18 +8533,6 @@
       "Failed to rename device": [
         "Gagal mengganti nama perangkat"
       ],
-      "Failed to upload files: ${ err }": [
-        "Gagal mengunggah file: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "File atau folder \"${ filename }\" dan ${ count } lainnya sedang dalam proses pengunggahan"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "File atau folder \"${ filename }\" sedang dalam proses pengunggahan"
-      ],
-      "File or folder is missing a name": [
-        "File atau folder belum dinamai"
-      ],
       "File removed": [
         "File dihapus"
       ],
@@ -8646,9 +8550,6 @@
       ],
       "Move ${ n } item": [
         "Pindahkan ${ n } item"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Kapasitas penyimpanan tidak cukup untuk menampung ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Akses tautan publik diperbarui"
@@ -11383,12 +11284,6 @@
       "Drop to upload": [
         "Lepaskan untuk mengunggah"
       ],
-      "Duplicate file found": [
-        "Ditemukan file duplikat"
-      ],
-      "Duplicate folder found": [
-        "Ditemukan folder duplikat"
-      ],
       "Edit billing address": [
         "Edit alamat penagihan"
       ],
@@ -11683,9 +11578,6 @@
       "PayPal verification failed": [
         "Verifikasi PayPal gagal"
       ],
-      "Performance might be affected": [
-        "Performa mungkin akan terdampak"
-      ],
       "Phone numbers": [
         "Nomor telepon"
       ],
@@ -11925,9 +11817,6 @@
       ],
       "Uploaded": [
         "Diunggah"
-      ],
-      "Uploading a large file or folder": [
-        "Mengunggah file atau folder berukuran besar"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Gunakan ${ VPN_SHORT_APP_NAME } untuk privasi data"

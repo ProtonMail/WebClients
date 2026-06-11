@@ -91,6 +91,9 @@
       "Add photos": [
         "Afegeix fotos"
       ],
+      "Add storage": [
+        "Afegiu emmagatzematge"
+      ],
       "Add to \"${ name }\" (${ photoCount } photo)": [
         "Afegiu (${ photoCount } foto) a \"${ name }\"",
         "Afegiu (${ photoCount } fotos) a \"${ name }\""
@@ -620,6 +623,9 @@
       "Let's talk": [
         "Parlem-ne"
       ],
+      "List layout": [
+        "Disseny de la llista"
+      ],
       "Load": [
         "Carrega"
       ],
@@ -1129,9 +1135,6 @@
       ],
       "Upload and share files": [
         "Carrega i comparteix fitxers"
-      ],
-      "Upload anyway": [
-        "Carrega de totes maneres"
       ],
       "Upload file": [
         "Puja un fitxer"
@@ -2259,6 +2262,9 @@
       ],
       "Canada": [
         "Canadà"
+      ],
+      "Canary Islands": [
+        "Illes Canàries"
       ],
       "Cape Verde": [
         "Cap Verd"
@@ -3398,9 +3404,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "«${ sanitizedName }» ja existeix."
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } no es pot connectar al vostre compte extern"
       ],
@@ -3629,9 +3632,6 @@
       "Failed to update public share node": [
         "No s'ha pogut actualitzar el node de compartició públic"
       ],
-      "File cannot be merged with folder": [
-        "Un fitxer no es pot fusionar amb una carpeta"
-      ],
       "First name is too long": [
         "El nom és massa llarg."
       ],
@@ -3772,9 +3772,6 @@
       ],
       "Payment process not supported": [
         "Procés de pagament no soportat"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "La càrrega de fotos està temporalment desactivada. Torneu a provar més tard."
       ],
       "Please activate your search again": [
         "Activeu de nou la vostra cerca."
@@ -3943,24 +3940,6 @@
       "The minimum donation amount is ${ price }": [
         "La donació mínima és de ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "La nova revisió del fitxer original encara no s'ha carregat. Proveu-ho més tard"
-      ],
-      "The original file has missing active revision": [
-        "El fitxer original té una revisió activa perduda"
-      ],
-      "The original file has missing hash key": [
-        "El fitxer original té una clau de hash perduda"
-      ],
-      "The original file has missing session key": [
-        "El fitxer original té una clau de sessió perduda"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "El fitxer original encara no s'ha carregat. Torneu-ho a provar més tard"
-      ],
-      "The original folder not found": [
-        "No s'ha trobat la carpeta original"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hi ha massa carpetes al vostre compte extern. Personalitzeu la importació per eliminar algunes carpetes."
       ],
@@ -4014,9 +3993,6 @@
       ],
       "Upload failed": [
         "No s'ha pogut carregar"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "La càrrega d'aquesta carpeta està temporalment desactivada"
       ],
       "Username must begin with a letter or digit": [
         "El nom d'usuari ha de començar amb una lletra o un dígit."
@@ -5686,9 +5662,6 @@
       "for ${ price }": [
         "per ${ price }"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Per a obtenir els millors resultats, eviteu activitats d'estríming i que consumeixin molta memòria o dividiu la càrrega en lots més petits."
-      ],
       "For just ${ bundlePlanPriceInline }": [
         "Per només ${ bundlePlanPriceInline }"
       ],
@@ -6175,6 +6148,9 @@
       "Please select the folders you would like to import:": [
         "Seleccioneu les carpetes que voleu importar:"
       ],
+      "Please select the labels you would like to import:": [
+        "Seleccioneu les etiquetes que voleu importar:"
+      ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupCount } grup.",
         "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupCount } grups."
@@ -6510,9 +6486,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aquesta és ara la vostra ${ defaultEmailAddress } per enviar missatges nous."
       ],
-      "This item already exists in your library": [
-        "Aquest element ja existeix a la biblioteca"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Aquest element no està desat a la vostra biblioteca de fotos. Si l'elimineu d'aquest àlbum, perdreu l'accés a ell de manera permanent.",
         "Alguns dels elements seleccionats no estan desats a la vostra biblioteca de fotos. Si els elimineu d'aquest àlbum, perdreu l'accés a ells de manera permanent."
@@ -6553,26 +6526,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "Això eliminarà permanentment els elements seleccionats que heu carregat."
       ],
-      "This will replace the existing file with the folder": [
-        "Això substituirà el fitxer existent per la carpeta"
-      ],
       "This will replace the existing folder or file with the file": [
         "Això substituirà la carpeta o el fitxer actual per aquest fitxer"
       ],
       "This will replace the existing folder or file with the folder": [
         "Això substituirà la carpeta o el fitxer actual per aquesta carpeta"
       ],
-      "This will replace the existing folder with the file": [
-        "Això substituirà la carpeta existent pel fitxer"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Això tancarà la sessió de tots els comptes als quals teniu sessió iniciada actualment"
-      ],
-      "This will upload a new version of the file": [
-        "Això carregarà una nova versió del fitxer"
-      ],
-      "This will upload a new version of the folder": [
-        "Això carregarà una nova versió de la carpeta"
       ],
       "Time": [
         "Hora"
@@ -6631,18 +6592,6 @@
       "Tracking": [
         "Seguiment"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "S'ha cancel·lat la transferència del fitxer \"${ name }\""
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "S'ha cancel·lat la transferència de la carpeta \"${ name }\""
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "S'ha saltat la transferència del fitxer \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "S'ha saltat la transferència de la carpeta \"${ folderName }\""
-      ],
       "Trash": [
         "Paperera"
       ],
@@ -6694,6 +6643,9 @@
       "Upgrade or clear space anytime to bring over the rest": [
         "Milloreu de pla o allibereu espai en qualsevol moment per portar la resta"
       ],
+      "Upgrade to get more storage space": [
+        "Milloreu per obtenir més espai d'emmagatzematge"
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Actualitzeu el pla per conservar els vostres avantatges de ${ planTitle }."
       ],
@@ -6708,9 +6660,6 @@
       ],
       "Uploading": [
         "S'està pujant"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "La càrrega de centenars de fitxers alhora pot tenir un impacte en el rendiment."
       ],
       "Uppercase and lowercase letters": [
         "Lletres majúscules i minúscules"
@@ -7533,12 +7482,6 @@
       "Keep both": [
         "Mantén tots dos"
       ],
-      "Keep both files": [
-        "Mantén tots dos fitxers"
-      ],
-      "Keep both folders": [
-        "Mantén totes dues carpetes"
-      ],
       "Label messages as": [
         "Etiquetar els missatges com"
       ],
@@ -7613,6 +7556,9 @@
       ],
       "New password": [
         "Contrasenya nova"
+      ],
+      "Non-consensual intimate imagery": [
+        "Imatges íntimes no consentides"
       ],
       "Not active": [
         "No està actiu"
@@ -7694,12 +7640,6 @@
       ],
       "Region": [
         "Regió"
-      ],
-      "Replace existing file": [
-        "Substitueix el fitxer existent"
-      ],
-      "Replace existing folder": [
-        "Substitueix la carpeta existent"
       ],
       "Replace existing folder or file": [
         "Substituïu la carpeta o el fitxer existent"
@@ -9514,14 +9454,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "No s'ha pogut moure \"${ name }\" a la paperera."
       ],
-      "\"${ name }\" failed to be saved": [
-        "No s'ha pogut desar \"${ name }\""
-      ],
       "\"${ name }\" moved to trash": [
         "S'ha mogut «${ name }» a la paperera"
-      ],
-      "\"${ name }\" saved successfully": [
-        "S'ha desat \"${ name }\""
       ],
       "\"${ newName }\" failed to be renamed": [
         "No s'ha pogut canviar el nom de \"${ newName }\""
@@ -9683,19 +9617,6 @@
       "Failed to rename device": [
         "No s'ha pogut canviar el nom del dispositiu"
       ],
-      "Failed to upload files: ${ err }": [
-        "Error carregant fitxers: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "El fitxer o carpeta \"${ filename }\" i ${ count } altre ja s'estan carregant",
-        "El fitxer o carpeta \"${ filename }\" i ${ count } altres ja s'estan carregant"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "El fitxer o carpeta \"${ filename }\" ja s'està carregant"
-      ],
-      "File or folder is missing a name": [
-        "Falta un nom pel fitxer o carpeta"
-      ],
       "File removed": [
         "S'ha esborrat el fitxer."
       ],
@@ -9716,9 +9637,6 @@
       "Move ${ n } item": [
         "Mou ${ n } element",
         "Mou ${ n } elements"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "No hi ha prou espai per carregar ${ formattedTotal }"
       ],
       "Public link access updated": [
         "S'ha actualitzat l'accés a l'enllaç públic."
@@ -12666,12 +12584,6 @@
       "Drop to upload": [
         "Arrossegueu per a carregar"
       ],
-      "Duplicate file found": [
-        "Trobat un fitxer duplicat"
-      ],
-      "Duplicate folder found": [
-        "Carpeta duplicada trobada"
-      ],
       "Edit billing address": [
         "Edita l'adreça de la factura"
       ],
@@ -12974,6 +12886,9 @@
       "Other names": [
         "Altres noms"
       ],
+      "Out of storage space": [
+        "Us heu quedat sense espai d'emmagatzematge"
+      ],
       "Payment failed": [
         "El pagament no s'ha pogut processar."
       ],
@@ -12982,9 +12897,6 @@
       ],
       "PayPal verification failed": [
         "La verificació de PayPal no s'ha pogut completar."
-      ],
-      "Performance might be affected": [
-        "El rendiment podria veure's perjudicat"
       ],
       "Phone numbers": [
         "Números de telèfon"
@@ -13248,9 +13160,6 @@
       "Uploaded": [
         "Carregat"
       ],
-      "Uploading a large file or folder": [
-        "Càrrega d'un fitxer o carpeta gran"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilitzeu ${ VPN_SHORT_APP_NAME } per a la privacitat de les dades"
       ],
@@ -13425,6 +13334,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si heu comprat un codi regal o n'heu rebut un del nostre equip de suport, escriviu-lo aquí."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Assistència immediata de la IA, amb una persona experta a la vostra disposició!"
       ],
       "Load image": [
         "Carrega la imatge"
