@@ -3,7 +3,8 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcFingerprint } from '@proton/icons/icons/IcFingerprint';
+import { IcPassLockmodeBiometrics } from '@proton/icons/icons/IcPassLockmodeBiometrics';
 import { useOffline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { useAutoDesktopUnlock } from '@proton/pass/hooks/auth/useDesktopUnlock';
 import { isMac } from '@proton/shared/lib/helpers/browser';
@@ -29,7 +30,7 @@ export const DesktopUnlock: FC<Props> = ({ offlineEnabled, onOffline }) => {
                 disabled={loading || offline}
                 onClick={() => onUnlock().catch(noop)}
             >
-                <Icon name={isMac() ? 'fingerprint' : 'pass-lockmode-biometrics'} className="mr-1" />
+                {isMac() ? <IcFingerprint className="mr-1" /> : <IcPassLockmodeBiometrics className="mr-1" />}
                 {c('Action').t`Unlock`}
             </Button>
 
