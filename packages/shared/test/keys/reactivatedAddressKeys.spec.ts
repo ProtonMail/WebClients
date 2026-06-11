@@ -95,7 +95,7 @@ describe('reactivate address keys', () => {
             userKeyWithValidUserID.key.privateKey,
             fallbackEmail
         );
-        expect(replaced).toBeFalse();
+        expect(replaced).toBe(false);
         expect(key.getUserIDs().length).toBe(1);
         expect(key.getUserIDs()[0]).toEqual(userKeyWithValidUserID.key.publicKey.getUserIDs()[0]);
     });
@@ -109,7 +109,7 @@ describe('reactivate address keys', () => {
             keyWithEmptyUserID,
             fallbackEmail
         );
-        expect(replaced).toBeTrue();
+        expect(replaced).toBe(true);
         expect(key.getUserIDs().length).toBe(1);
         expect(key.getUserIDs()[0]).toEqual(`${fallbackEmail} <${fallbackEmail}>`);
     });
@@ -142,10 +142,10 @@ describe('reactivate address keys', () => {
             keyTransparencyVerify: async () => {},
         });
         expect(result).toEqual(
-            jasmine.objectContaining({
+            expect.objectContaining({
                 address: Address,
-                reactivatedKeys: jasmine.any(Array),
-                signedKeyList: jasmine.any(Object),
+                reactivatedKeys: expect.any(Array),
+                signedKeyList: expect.any(Object),
             })
         );
     });
@@ -162,12 +162,12 @@ describe('reactivate address keys', () => {
         });
         const payload = await getAddressReactivationPayload([result]);
         expect(payload).toEqual(
-            jasmine.objectContaining({
+            expect.objectContaining({
                 AddressKeyFingerprints: [...addressKeys.slice(2).map(({ privateKey }) => privateKey.getFingerprint())],
                 SignedKeyLists: {
                     [Address.ID]: {
-                        Data: jasmine.any(String),
-                        Signature: jasmine.any(String),
+                        Data: expect.any(String),
+                        Signature: expect.any(String),
                     },
                 },
             })
@@ -185,27 +185,27 @@ describe('reactivate address keys', () => {
             keyTransparencyVerify: async () => {},
         });
         expect(JSON.parse(result[0].signedKeyList?.Data || '')).toEqual([
-            { Primary: 1, Flags: 3, Fingerprint: jasmine.any(String), SHA256Fingerprints: jasmine.any(Array) },
-            { Primary: 0, Flags: 3, Fingerprint: jasmine.any(String), SHA256Fingerprints: jasmine.any(Array) },
+            { Primary: 1, Flags: 3, Fingerprint: expect.any(String), SHA256Fingerprints: expect.any(Array) },
+            { Primary: 0, Flags: 3, Fingerprint: expect.any(String), SHA256Fingerprints: expect.any(Array) },
             {
                 Primary: 0,
                 Flags: 1,
-                Fingerprint: jasmine.any(String),
-                SHA256Fingerprints: jasmine.any(Array),
+                Fingerprint: expect.any(String),
+                SHA256Fingerprints: expect.any(Array),
             },
         ]);
         expect(JSON.parse(result[1].signedKeyList?.Data || '')).toEqual([
-            { Primary: 1, Flags: 1, Fingerprint: jasmine.any(String), SHA256Fingerprints: jasmine.any(Array) },
+            { Primary: 1, Flags: 1, Fingerprint: expect.any(String), SHA256Fingerprints: expect.any(Array) },
             {
                 Primary: 0,
                 Flags: 0,
-                Fingerprint: jasmine.any(String),
-                SHA256Fingerprints: jasmine.any(Array),
+                Fingerprint: expect.any(String),
+                SHA256Fingerprints: expect.any(Array),
             },
         ]);
         const payload = await getAddressReactivationPayload(result);
         expect(payload).toEqual(
-            jasmine.objectContaining({
+            expect.objectContaining({
                 AddressKeyFingerprints: [
                     ...[addressKeys1[2], addressKeys2[0], addressKeys2[1]].map(({ privateKey }) =>
                         privateKey.getFingerprint()
@@ -213,12 +213,12 @@ describe('reactivate address keys', () => {
                 ],
                 SignedKeyLists: {
                     [Addresses[0].ID]: {
-                        Data: jasmine.any(String),
-                        Signature: jasmine.any(String),
+                        Data: expect.any(String),
+                        Signature: expect.any(String),
                     },
                     [Addresses[1].ID]: {
-                        Data: jasmine.any(String),
-                        Signature: jasmine.any(String),
+                        Data: expect.any(String),
+                        Signature: expect.any(String),
                     },
                 },
             })

@@ -16,12 +16,12 @@ describe('promise', () => {
             const cb = (value) => {
                 return resultMap[value];
             };
-            const spy = jasmine.createSpy('result').and.callFake(cb);
+            const spy = vi.fn(cb);
             const promise = runChunksDelayed(chunks, spy, 100);
             await wait(80);
-            expect(spy.calls.all().length).toEqual(2);
+            expect(spy.mock.calls.length).toEqual(2);
             const result = await promise;
-            expect(spy.calls.all().length).toEqual(4);
+            expect(spy.mock.calls.length).toEqual(4);
             expect(result).toEqual(['foo', 'bar', 'baz', 'qux']);
         });
     });

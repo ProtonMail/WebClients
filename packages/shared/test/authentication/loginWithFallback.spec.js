@@ -45,7 +45,7 @@ describe('login with fallback', () => {
         });
 
         expect(authVersion).toEqual(4);
-        expect(result).toEqual(jasmine.objectContaining({ foo: 'bar' }));
+        expect(result).toEqual(expect.objectContaining({ foo: 'bar' }));
         expect(authCalls).toEqual(1);
     });
 
@@ -62,7 +62,6 @@ describe('login with fallback', () => {
             if (url === 'core/v4/auth') {
                 apiCalls.push(args);
                 if (apiCalls.length === 1) {
-                    // eslint-disable-next-line
                     return Promise.reject({ data: { Code: 8002 } });
                 }
                 return Promise.resolve(
@@ -81,7 +80,7 @@ describe('login with fallback', () => {
         });
 
         expect(authVersion).toEqual(0);
-        expect(result).toEqual(jasmine.objectContaining({ foo: 'bar' }));
+        expect(result).toEqual(expect.objectContaining({ foo: 'bar' }));
         expect(apiCalls.length).toEqual(2);
     });
 
@@ -94,7 +93,6 @@ describe('login with fallback', () => {
             }
 
             if (url === 'core/v4/auth') {
-                // eslint-disable-next-line
                 return Promise.reject({ data: { Code: 8002 } });
             }
         };
@@ -104,7 +102,7 @@ describe('login with fallback', () => {
             credentials: { username: 'test', password: '123' },
         });
 
-        await expectAsync(promise).toBeRejectedWith({
+        await expect(promise).rejects.toEqual({
             data: { Code: 8002 },
         });
     });
@@ -119,7 +117,7 @@ describe('login with fallback', () => {
 
             if (url === 'core/v4/auth') {
                 authCalls++;
-                // eslint-disable-next-line
+
                 return Promise.reject({ data: { Code: 8002 } });
             }
         };
@@ -129,7 +127,7 @@ describe('login with fallback', () => {
             credentials: { username: 'test', password: '123' },
         });
 
-        await expectAsync(promise).toBeRejectedWith({
+        await expect(promise).rejects.toEqual({
             data: { Code: 8002 },
         });
 

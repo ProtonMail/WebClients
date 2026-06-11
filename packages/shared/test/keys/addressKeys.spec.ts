@@ -10,7 +10,7 @@ import {
 
 describe('address keys', () => {
     it('should throw if generated key cannot decrypt', async () => {
-        await expectAsync(
+        await expect(
             generateAddressKey({
                 passphrase: '123',
                 keyGenConfig: {
@@ -18,7 +18,7 @@ describe('address keys', () => {
                     subkeys: [],
                 },
             })
-        ).toBeRejectedWithError(/Unexpected key generation issue/);
+        ).rejects.toThrow(/Unexpected key generation issue/);
     });
 
     it('should generate address key tokens', async () => {
@@ -27,9 +27,9 @@ describe('address keys', () => {
         });
         const result = await generateAddressKeyTokens(privateKey);
         expect(result).toEqual({
-            token: jasmine.any(String),
-            encryptedToken: jasmine.stringMatching(/-----BEGIN PGP MESSAGE-----.*/),
-            signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/),
+            token: expect.any(String),
+            encryptedToken: expect.stringMatching(/-----BEGIN PGP MESSAGE-----.*/),
+            signature: expect.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/),
         });
         const decryptedResult = await decryptAddressKeyToken({
             Token: result.encryptedToken,
@@ -49,10 +49,10 @@ describe('address keys', () => {
         });
         const result = await generateAddressKeyTokens(privateKey, organizationKey);
         expect(result).toEqual({
-            token: jasmine.any(String),
-            encryptedToken: jasmine.stringMatching(/-----BEGIN PGP MESSAGE-----.*/),
-            signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/),
-            organizationSignature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/),
+            token: expect.any(String),
+            encryptedToken: expect.stringMatching(/-----BEGIN PGP MESSAGE-----.*/),
+            signature: expect.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/),
+            organizationSignature: expect.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/),
         });
         const decryptedResult = await decryptAddressKeyToken({
             Token: result.encryptedToken,

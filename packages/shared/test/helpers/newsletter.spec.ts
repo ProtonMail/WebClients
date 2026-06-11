@@ -5,33 +5,33 @@ describe('newsletter', () => {
         describe('When only currentNews is provided as number', () => {
             it('should return correct value', () => {
                 // 001000010001 -> Inbox News is enabled
-                expect(isGlobalFeatureNewsEnabled(529)).toBeTrue();
+                expect(isGlobalFeatureNewsEnabled(529)).toBe(true);
 
                 // 000100100010 -> No news enabled
-                expect(isGlobalFeatureNewsEnabled(290)).toBeFalse();
+                expect(isGlobalFeatureNewsEnabled(290)).toBe(false);
             });
         });
 
         describe('When only currentNews is provided as object', () => {
             it('should return correct value', () => {
-                expect(isGlobalFeatureNewsEnabled({ InboxNews: true, Beta: true, Business: true })).toBeTrue();
+                expect(isGlobalFeatureNewsEnabled({ InboxNews: true, Beta: true, Business: true })).toBe(true);
 
-                expect(isGlobalFeatureNewsEnabled({ Beta: true, Business: true })).toBeFalse();
+                expect(isGlobalFeatureNewsEnabled({ Beta: true, Business: true })).toBe(false);
             });
         });
 
         describe('When both currentNews and updatedNews are provided', () => {
             describe('When updated value is defined', () => {
                 it('should return true (number)', () => {
-                    expect(isGlobalFeatureNewsEnabled(17, 529)).toBeTrue();
+                    expect(isGlobalFeatureNewsEnabled(17, 529)).toBe(true);
                 });
 
                 it('should return true (object)', () => {
-                    expect(isGlobalFeatureNewsEnabled({ Beta: true, Business: true }, { DriveNews: true })).toBeTrue();
+                    expect(isGlobalFeatureNewsEnabled({ Beta: true, Business: true }, { DriveNews: true })).toBe(true);
                 });
 
                 it('should return false (number)', () => {
-                    expect(isGlobalFeatureNewsEnabled(529, 17)).toBeFalse();
+                    expect(isGlobalFeatureNewsEnabled(529, 17)).toBe(false);
                 });
 
                 it('should return false (object)', () => {
@@ -40,7 +40,7 @@ describe('newsletter', () => {
                             { Beta: true, Business: true, InboxNews: true },
                             { InboxNews: false }
                         )
-                    ).toBeFalse();
+                    ).toBe(false);
                 });
             });
 
@@ -48,7 +48,7 @@ describe('newsletter', () => {
                 it('should return true', () => {
                     expect(
                         isGlobalFeatureNewsEnabled({ Beta: true, Business: true, VpnNews: true }, { Business: false })
-                    ).toBeTrue();
+                    ).toBe(true);
                 });
 
                 it('should return false', () => {
@@ -57,7 +57,7 @@ describe('newsletter', () => {
                             { Beta: true, Business: true, InboxNews: false },
                             { Business: false }
                         )
-                    ).toBeFalse();
+                    ).toBe(false);
                 });
             });
         });

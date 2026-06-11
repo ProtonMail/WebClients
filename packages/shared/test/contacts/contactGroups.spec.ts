@@ -28,7 +28,7 @@ const changes = {
     group1: true,
 };
 
-const onLimitReached = jasmine.createSpy();
+const onLimitReached = vi.fn();
 
 describe('contactGroups', () => {
     describe('getContactGroupsDelayedSaveChanges', () => {

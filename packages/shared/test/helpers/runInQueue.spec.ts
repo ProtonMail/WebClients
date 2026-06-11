@@ -3,11 +3,7 @@ import runInQueue from '../../lib/helpers/runInQueue';
 
 describe('runInQueue', () => {
     it('should execute every function', async () => {
-        const executors = [
-            jasmine.createSpy().and.resolveTo(1),
-            jasmine.createSpy().and.resolveTo(2),
-            jasmine.createSpy().and.resolveTo(3),
-        ];
+        const executors = [vi.fn().mockResolvedValue(1), vi.fn().mockResolvedValue(2), vi.fn().mockResolvedValue(3)];
         await runInQueue(executors);
         executors.forEach((executor) => {
             expect(executor).toHaveBeenCalledTimes(1);
@@ -18,7 +14,7 @@ describe('runInQueue', () => {
         const maxThreads = 3;
 
         const getExecutor = (delay: number) =>
-            jasmine.createSpy().and.callFake(() => {
+            vi.fn(() => {
                 return new Promise<number>((resolve) => setTimeout(() => resolve(delay), delay));
             });
 
@@ -31,7 +27,7 @@ describe('runInQueue', () => {
             getExecutor(600),
         ];
         const expectToHaveExecuted = (count: number) =>
-            expect(executors.filter((fn) => fn.calls.all().length === 1).length).toEqual(count);
+            expect(executors.filter((fn) => fn.mock.calls.length === 1).length).toEqual(count);
 
         const promises = runInQueue<number>(executors, maxThreads);
         expectToHaveExecuted(3);
