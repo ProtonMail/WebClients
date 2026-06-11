@@ -406,7 +406,7 @@ const ComposerComponentInner = ({
                             isAgent={isAgent}
                         />
                     </div>
-                    <div className="mt-1.5">{optionalElementBelowComposer}</div>
+                    {optionalElementBelowComposer && <div className="mt-1.5">{optionalElementBelowComposer}</div>}
                     {/* {isGuest && (
                         <TermsAndConditions className={clsx('m-0', isAgent ? 'text-center' : 'hidden md:block')} />
                     )} */}
