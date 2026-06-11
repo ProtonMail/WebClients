@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { PasswordStrength } from '@proton/pass/components/Password/PasswordStrength';
 import { usePasswordStrength } from '@proton/pass/hooks/monitor/usePasswordStrength';
 import type { PasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
@@ -45,7 +46,7 @@ export const PasswordGenerator: FC<PasswordGeneratorResult> = (props) => {
             <div className="flex justify-end">
                 <Button shape="ghost" onClick={() => setShowAdvanced((advanced) => !advanced)}>
                     <span className="flex items-center color-weak text-sm">
-                        <Icon name={showAdvanced ? 'cross' : 'cog-wheel'} className="mr-1" />
+                        {showAdvanced ? <IcCross className="mr-1" /> : <IcCogWheel className="mr-1" />}
                         {showAdvanced ? c('Action').t`Close advanced options` : c('Action').t`Advanced options`}
                     </span>
                 </Button>

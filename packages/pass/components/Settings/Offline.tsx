@@ -4,7 +4,8 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
+import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
 import { WithFeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { useOfflineSetup } from '@proton/pass/hooks/auth/useOfflineSetup';
 import { selectOfflineEnabled } from '@proton/pass/store/selectors';
@@ -24,10 +25,11 @@ const OfflineSection: FC = () => {
         <>
             <SettingsPanel title={c('Label').t`Offline mode`}>
                 <div className="flex gap-2 flex-row items-start">
-                    <Icon
-                        name={enabled ? 'checkmark-circle-filled' : 'cross-circle-filled'}
-                        className={clsx('shrink-0 mt-0.5', signalColor)}
-                    />
+                    {enabled ? (
+                        <IcCheckmarkCircleFilled className={clsx('shrink-0 mt-0.5', signalColor)} />
+                    ) : (
+                        <IcCrossCircleFilled className={clsx('shrink-0 mt-0.5', signalColor)} />
+                    )}
                     <div className="flex-1 flex gap-3">
                         <div>
                             <span className={clsx('block', signalColor)}>
