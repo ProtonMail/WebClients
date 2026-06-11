@@ -1,7 +1,21 @@
 import type { SortOrder } from './date';
-import { dateIsoToHuman, dateToUnixTimestamp, isoToUnixTimestamp, sleep, sortByDate } from './date';
+import { dateIsoToHuman, dateToUnixTimestamp, formatShortDate, isoToUnixTimestamp, sleep, sortByDate } from './date';
 
 describe('Date utilities', () => {
+    describe('formatShortDate', () => {
+        it('should format ISO date strings with short month, day, and year', () => {
+            expect(formatShortDate('2023-06-17T11:44:02.000Z', 'en-US')).toBe('Jun 17, 2023');
+        });
+
+        it('should format Date instances', () => {
+            expect(formatShortDate(new Date(2023, 5, 17), 'en-US')).toBe('Jun 17, 2023');
+        });
+
+        it('should adapt formatting to the provided locale', () => {
+            expect(formatShortDate(new Date(2023, 5, 17), 'it')).toBe('17 giu 2023');
+        });
+    });
+
     describe('dateIsoToHuman', () => {
         it('should format ISO date string to human readable format', () => {
             const isoDate = '2023-12-25T15:30:45.000Z';
