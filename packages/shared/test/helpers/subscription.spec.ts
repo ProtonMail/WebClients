@@ -25,8 +25,6 @@ import {
 } from '@proton/payments';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 
-// still uses Karma. The payments data specifically don't need jest, so it's safe to impoet it directly
-
 let subscription: Subscription;
 let defaultPlan: SubscriptionPlan;
 

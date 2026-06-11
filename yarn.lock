@@ -10789,9 +10789,7 @@ __metadata:
     "@protontech/crypto": "npm:*"
     "@swc/jest": "npm:^0.2.39"
     "@testing-library/react-hooks": "npm:^8.0.1"
-    "@types/jasmine": "npm:^5.1.15"
     eslint: "npm:^9.39.4"
-    eslint-plugin-jasmine: "npm:^4.2.2"
     idb: "npm:^8.0.3"
     jest: "npm:^30.4.2"
     playwright: "patch:playwright@npm%3A1.58.2#~/.yarn/patches/playwright-npm-1.58.2-0c12daad27.patch"
@@ -16175,13 +16173,6 @@ __metadata:
   dependencies:
     "@types/istanbul-lib-report": "npm:*"
   checksum: 10/93eb18835770b3431f68ae9ac1ca91741ab85f7606f310a34b3586b5a34450ec038c3eed7ab19266635499594de52ff73723a54a72a75b9f7d6a956f01edee95
-  languageName: node
-  linkType: hard
-
-"@types/jasmine@npm:^5.1.15":
-  version: 5.1.15
-  resolution: "@types/jasmine@npm:5.1.15"
-  checksum: 10/e86a962c153ff91ffe3c65a633578a5e3f6e065e58268c00e839b03dac6792b1e0a2afca216ccfa1e31647e49ef1a935332242350dca91a2940ad883643abd04
   languageName: node
   linkType: hard
 
@@ -27165,13 +27156,6 @@ __metadata:
   peerDependencies:
     eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8 || ^9
   checksum: 10/1bacf4967e9ebf99e12176a795f0d6d3a87d1c9a030c2207f27b267e10d96a1220be2647504c7fc13ab543cdf13ffef4b8f5620e0447032dba4ff0d3922f7c9e
-  languageName: node
-  linkType: hard
-
-"eslint-plugin-jasmine@npm:^4.2.2":
-  version: 4.2.2
-  resolution: "eslint-plugin-jasmine@npm:4.2.2"
-  checksum: 10/a87b6e9614cbec1f576824563984f6c19ce8dde009034e83e23f23faf5ab70f15d9447d0e05ab3c4f7bd45d380638f0fdf088201ec58c8d3c00c84809da13a93
   languageName: node
   linkType: hard
 
