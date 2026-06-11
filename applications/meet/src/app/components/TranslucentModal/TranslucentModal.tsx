@@ -1,6 +1,8 @@
 import { ModalTwo } from '@proton/components/index';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import brand from '@proton/styles/assets/img/meet/brand-dual-colors.svg';
+import clsx from '@proton/utils/clsx';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
 
@@ -18,7 +20,12 @@ export const TranslucentModal = ({
     headerButtons?: React.ReactNode;
 }) => (
     <ModalTwo open={open} onClose={onClose} rootClassName="translucent-modal" size="full" fullscreen>
-        <div className="w-full meet-container-padding-x overflow-y-auto h-full flex flex-column relative">
+        <div
+            className={clsx(
+                'w-full meet-container-padding-x overflow-y-auto h-full flex flex-column relative',
+                isElectronApp && 'pt-4'
+            )}
+        >
             <div className="flex justify-space-between items-center pt-5 pb-5 sticky top-0 header-container">
                 <div className="header-container-background" />
                 <img src={brand} alt={MEET_APP_NAME} className="h-custom" style={{ '--h-custom': '2.5rem' }} />
