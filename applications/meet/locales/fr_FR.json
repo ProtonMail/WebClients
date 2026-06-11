@@ -472,9 +472,6 @@
       "Stop recording and download.": [
         "Arrêter l'enregistrement et télécharger."
       ],
-      "Toggle camera": [
-        "Activer/Désactiver la caméra"
-      ],
       "Toggle chat": [
         "Afficher/Masquer le chat"
       ],
@@ -483,9 +480,6 @@
       ],
       "Toggle meeting details": [
         "Afficher/masquer les détails de la réunion"
-      ],
-      "Toggle microphone": [
-        "Activer/Désactiver le microphone"
       ],
       "Toggle participants": [
         "Afficher/Masquer les participants"
@@ -1812,6 +1806,9 @@
       "camera": [
         "Caméra"
       ],
+      "Camera permission denied": [
+        "L'autorisation d'accéder à la caméra a été refusée."
+      ],
       "Chat with everyone": [
         "Discuter avec tout le monde"
       ],
@@ -2034,6 +2031,9 @@
       "Meeting recordings aren’t supported in Firefox.": [
         "Les enregistrements de réunions ne sont pas pris en charge dans Firefox."
       ],
+      "Meeting time is up": [
+        "La réunion est terminée."
+      ],
       "Meeting unlocked. Participants can join again.": [
         "La réunion est déverrouillée. Les participants peuvent se reconnecter."
       ],
@@ -2048,6 +2048,9 @@
       ],
       "Microphone effects": [
         "Effets du microphone"
+      ],
+      "Microphone permission denied": [
+        "L'autorisation d'accéder au microphone a été refusée."
       ],
       "My meetings": [
         "Mes réunions"
@@ -2108,9 +2111,6 @@
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Insérez votre lien ${ MEET_APP_NAME } pour rejoindre une réunion sécurisée"
-      ],
-      "Permission denied": [
-        "Permission refusée"
       ],
       "Permissions not given.": [
         "Autorisations non accordées."
@@ -2240,6 +2240,9 @@
       ],
       "This meeting is password protected": [
         "Cette réunion est protégée par un mot de passe"
+      ],
+      "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
+        "Cette réunion a atteint la limite de durée prévue dans le forfait gratuit. Passez à un forfait supérieur pour prolonger la durée de vos prochaines réunions."
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Cette réunion a été ouverte dans l'application de bureau ${ MEET_APP_NAME }."
@@ -2372,12 +2375,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Votre adresse e-mail ne sera utilisée que pour cette vérification unique."
-      ],
-      "Your free meeting has ended": [
-        "Votre réunion gratuite est terminée."
-      ],
-      "Your meeting has ended": [
-        "Votre réunion est terminée."
       ],
       "Your meeting is ready": [
         "Votre réunion est prête"
@@ -3078,6 +3075,9 @@
       ],
       "Generate a new meeting link. The current link will stop working.": [
         "Générer un nouveau lien de réunion. Le lien actuel cessera de fonctionner."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Une assistance IA immédiate, avec un expert à votre disposition !"
       ],
       "Recurring meeting": [
         "Réunion récurrente"
