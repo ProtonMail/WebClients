@@ -23,14 +23,13 @@ const useIsESEnabledElectron = () => {
         }
 
         const conversationCount = counterMap[MAILBOX_LABEL_IDS.INBOX];
-        const { Total } = conversationCount ?? {};
-        if (typeof Total === 'undefined') {
+        if (typeof conversationCount.Total !== 'number') {
             setIsInboxEnabledInbox(false);
             return;
         }
 
         const threshold = inboxThreshold?.Value || 0;
-        setIsInboxEnabledInbox(threshold >= Total);
+        setIsInboxEnabledInbox(threshold >= conversationCount.Total);
     }, [inboxThreshold, counterMap, isElectron]);
 
     return { isESEnabledInbox };
