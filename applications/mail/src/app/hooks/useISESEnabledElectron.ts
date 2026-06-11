@@ -2,34 +2,35 @@ import { useEffect, useState } from 'react';
 
 import useIsInboxElectronApp from '@proton/components/hooks/useIsInboxElectronApp';
 import { FeatureCode, useFeature } from '@proton/features';
-import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+
+import { useMailboxCounter } from './mailboxCounter/useMailboxCounter';
 
 /**
  * Helps determine if ES should be enabled depending on feature flag and conversation counts
  */
 const useIsESEnabledElectron = () => {
     const { isElectron } = useIsInboxElectronApp();
-    const [conversationCounts] = useConversationCounts();
+    const { counterMap } = useMailboxCounter();
     const { feature: inboxThreshold } = useFeature<number>(FeatureCode.ElectronESInboxThreshold);
 
     const [isESEnabledInbox, setIsInboxEnabledInbox] = useState(false);
 
     useEffect(() => {
-        if (!conversationCounts || !isElectron) {
+        if (!isElectron) {
             setIsInboxEnabledInbox(false);
             return;
         }
 
-        const { Total } = conversationCounts.find((count) => count.LabelID === '0') ?? {};
-        if (typeof Total === 'undefined') {
+        const conversationCount = counterMap[MAILBOX_LABEL_IDS.INBOX];
+        if (typeof conversationCount.Total !== 'number') {
             setIsInboxEnabledInbox(false);
             return;
         }
 
         const threshold = inboxThreshold?.Value || 0;
-        setIsInboxEnabledInbox(threshold >= Total);
-        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-99999
-    }, [inboxThreshold, conversationCounts]);
+        setIsInboxEnabledInbox(threshold >= conversationCount.Total);
+    }, [inboxThreshold, counterMap, isElectron]);
 
     return { isESEnabledInbox };
 };

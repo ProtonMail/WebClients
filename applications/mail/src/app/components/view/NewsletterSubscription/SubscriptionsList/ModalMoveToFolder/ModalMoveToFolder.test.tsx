@@ -9,6 +9,8 @@ import { ModalMoveToFolder } from './ModalMoveToFolder';
 
 jest.mock('@proton/mail/store/labels/hooks', () => ({
     useFolders: jest.fn(),
+    useLabels: jest.fn(() => [[], false]),
+    useSystemFolders: jest.fn(() => [[], false]),
 }));
 
 const mockUseFolders = jest.requireMock('@proton/mail/store/labels/hooks').useFolders;

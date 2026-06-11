@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
+// eslint-disable-next-line no-restricted-imports
 import { useConversationCounts, useGetConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
+// eslint-disable-next-line no-restricted-imports
 import { useGetMessageCounts, useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';

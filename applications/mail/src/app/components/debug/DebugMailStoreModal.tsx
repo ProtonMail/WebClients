@@ -8,7 +8,9 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { Tab } from '@proton/components/components/tabs/Tabs';
 import { Tabs } from '@proton/components/components/tabs/Tabs';
 import useNotifications from '@proton/components/hooks/useNotifications';
+// eslint-disable-next-line no-restricted-imports
 import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
+// eslint-disable-next-line no-restricted-imports
 import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
