@@ -6,6 +6,7 @@ import { getJoiningLinkHref } from '@proton/account/orgJoiningLink/helpers';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Copy from '@proton/components/components/button/Copy';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -92,17 +93,12 @@ Then, when everyone has made the move, we will retire Gmail. We'll remind you be
                     <InputFieldTwo
                         id="invitation-link"
                         value={activationLink}
-                        className="bg-weak flex-1 border-weak pr-6 color-weak"
+                        className="bg-weak flex-1 border-weak color-weak"
                         readOnly
                         assistContainerClassName="assist-container--no-min-height m-0"
-                    />
-                    <Copy
-                        shape="ghost"
-                        color="norm"
-                        value={activationLink}
-                        onCopy={handleCopy}
-                        size="small"
-                        className="absolute right-0 top-0 p-2"
+                        suffix={
+                            <Copy shape="ghost" color="norm" value={activationLink} onCopy={handleCopy} size="small" />
+                        }
                     />
                 </div>
             </div>
@@ -112,34 +108,50 @@ Then, when everyone has made the move, we will retire Gmail. We'll remind you be
                     .t`Invitation message`}</label>
                 <div
                     className={clsx(
-                        'relative bg-weak rounded py-2 px-3 border border-weak overflow-hidden',
+                        'relative bg-weak rounded p-2 px-3 border border-weak overflow-hidden',
                         messageExpanded ? 'max-h-auto' : 'max-h-custom'
                     )}
                     style={{ '--max-h-custom': '2.25rem' }}
                 >
-                    {messageTemplate}
-
                     {messageRef.current && (
-                        <div className="absolute right-0 top-0">
-                            <Button
-                                shape="ghost"
-                                color="norm"
-                                icon
-                                className="p-2"
-                                onClick={() => setMessageExpanded(!messageExpanded)}
+                        <div
+                            className="float-right ml-1 mt-custom pt-0.5 mr-custom"
+                            style={{
+                                '--mt-custom': 'calc( -1 * var(--space-2) + (var(--space-0-5) / 2)  )',
+                                '--mr-custom': 'calc( -1 * var(--space-1) )',
+                            }}
+                        >
+                            <Tooltip
+                                title={
+                                    messageExpanded
+                                        ? c('BOSS').t`Collapse invitation message`
+                                        : c('BOSS').t`Expand invitation message`
+                                }
                             >
-                                {messageExpanded ? <IcArrowsToCenter /> : <IcArrowsFromCenter />}
-                            </Button>
+                                <Button
+                                    shape="ghost"
+                                    color="norm"
+                                    icon
+                                    size="small"
+                                    onClick={() => setMessageExpanded(!messageExpanded)}
+                                >
+                                    {messageExpanded ? (
+                                        <IcArrowsToCenter alt={c('BOSS').t`Collapse invitation message`} />
+                                    ) : (
+                                        <IcArrowsFromCenter alt={c('BOSS').t`Expand invitation message`} />
+                                    )}
+                                </Button>
+                            </Tooltip>
                             <Copy
                                 shape="ghost"
                                 color="norm"
                                 value={messageRef.current}
                                 onCopy={handleCopy}
                                 size="small"
-                                className="p-2"
                             />
                         </div>
                     )}
+                    {messageTemplate}
                 </div>
             </div>
 
