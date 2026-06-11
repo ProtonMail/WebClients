@@ -12829,6 +12829,9 @@
     "password_reminder": {
       "If you forget your password, you may lose access to your encrypted data.": [
         "Hvis du glemmer passordet ditt, kan du miste tilgangen til de krypterte dataene dine."
+      ],
+      "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
+        "Sørg for at du husker eller lagrer passordet ditt sikkert, da det er nøkkelen til å dekryptere dataene dine."
       ]
     },
     "password_reset: info": {
@@ -13846,6 +13849,9 @@
       ],
       "your subscription": [
         "abonnementet ditt"
+      ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
+        "Jeg har brukt ${ BRAND_NAME } og tenkte du kanskje ville like det. Det er en sikker e-post-, skylagrings-, passordbehandlings- og VPN-tjeneste som beskytter personvernet ditt. Registrer deg med denne lenken for å få ${ refereeRewardAmount } i rabatt på ditt neste abonnement: ${ referralLink }"
       ]
     },
     "Remove organization logo": {
