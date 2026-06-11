@@ -4,7 +4,8 @@ import { type ReactNode, useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcEye } from '@proton/icons/icons/IcEye';
+import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
 import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
@@ -47,7 +48,7 @@ const HideButton = ({ hidden, onClick }: { hidden: boolean; onClick: () => void 
         shape="ghost"
         title={hidden ? c('Action').t`Show` : c('Action').t`Hide`}
     >
-        <Icon size={5} name={hidden ? 'eye' : 'eye-slash'} />
+        {hidden ? <IcEye size={5} /> : <IcEyeSlash size={5} />}
     </Button>
 );
 
