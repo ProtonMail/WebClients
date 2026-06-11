@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
+import { IcMoon } from '@proton/icons/icons/IcMoon';
+import { IcSun } from '@proton/icons/icons/IcSun';
 import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 import clsx from '@proton/utils/clsx';
@@ -35,7 +36,7 @@ const ThemeSyncModeCard = ({
         <div className={clsx('border rounded-lg p-4', className)}>
             <div className={clsx(size !== 'small' && 'flex justify-space-between flex-nowrap gap-2', 'mb-4')}>
                 <div className="flex items-center flex-nowrap gap-2">
-                    <Icon name={mode === 'light' ? 'sun' : 'moon'} className="shrink-0" />
+                    {mode === 'light' ? <IcSun className="shrink-0" /> : <IcMoon className="shrink-0" />}
                     <span className={clsx(active && 'text-semibold')}>
                         {mode === 'light' ? c('Title').t`Day theme` : c('Title').t`Night theme`}
                         {active && ` ${c('Title').t`(active)`}`}
