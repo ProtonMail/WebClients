@@ -472,9 +472,6 @@
       "Stop recording and download.": [
         "Kaydı durdur ve indir."
       ],
-      "Toggle camera": [
-        "Kamerayı aç/kapat"
-      ],
       "Toggle chat": [
         "Sohbeti aç/kapat"
       ],
@@ -483,9 +480,6 @@
       ],
       "Toggle meeting details": [
         "Görüşme ayrıntılarını aç/kapat"
-      ],
-      "Toggle microphone": [
-        "Mikrofonu aç/kapat"
       ],
       "Toggle participants": [
         "Katılımcıları aç/kapat"
@@ -1812,6 +1806,9 @@
       "camera": [
         "kamera"
       ],
+      "Camera permission denied": [
+        "Kameraya erişme izni verilmedi"
+      ],
       "Chat with everyone": [
         "Herkesle sohbet edin"
       ],
@@ -2034,6 +2031,9 @@
       "Meeting recordings aren’t supported in Firefox.": [
         "Firefox üzerinde görüşme kaydı desteklenmiyor."
       ],
+      "Meeting time is up": [
+        "Görüşmenin zamanı doldu"
+      ],
       "Meeting unlocked. Participants can join again.": [
         "Görüşmenin kilidi açıldı. Katılımcılar yine katılabilir"
       ],
@@ -2048,6 +2048,9 @@
       ],
       "Microphone effects": [
         "Mikrofon etkileri"
+      ],
+      "Microphone permission denied": [
+        "Mikrofona erişme izni verilmedi"
       ],
       "My meetings": [
         "Görüşmelerim"
@@ -2108,9 +2111,6 @@
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Güvenli bir görüşmeye katılmak için ${ MEET_APP_NAME } bağlantınızı yapıştırın."
-      ],
-      "Permission denied": [
-        "İzin verilmedi"
       ],
       "Permissions not given.": [
         "İzinler verilmemiş."
@@ -2240,6 +2240,9 @@
       ],
       "This meeting is password protected": [
         "Bu görüşme parola ile korunuyor"
+      ],
+      "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
+        "Bu görüşme ücretsiz tarifenin zaman sınırına ulaştı. Gelecek görüşmelerinizde toplantı süresini uzatmak için tarifenizi yükseltin."
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Bu görüşme ${ MEET_APP_NAME } bilgisayar uygulamasında açıldı."
@@ -2372,12 +2375,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
-      ],
-      "Your free meeting has ended": [
-        "Ücretsiz görüşmeniz sona erdi"
-      ],
-      "Your meeting has ended": [
-        "Görüşmeniz sona erdi"
       ],
       "Your meeting is ready": [
         "Görüşmeniz hazır"
@@ -3078,6 +3075,9 @@
       ],
       "Generate a new meeting link. The current link will stop working.": [
         "Yeni bir görüşme bağlantısı oluşturun. Var olan bağlantı artık çalışmayacak."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Anında yapay zeka desteği ile uzmanlar her zaman yanınızda!"
       ],
       "Recurring meeting": [
         "Yinelenen görüşme"
