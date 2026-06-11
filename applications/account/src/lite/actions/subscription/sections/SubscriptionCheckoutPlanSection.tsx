@@ -28,6 +28,7 @@ interface Props {
     shouldDisableCurrencySelection: boolean;
     availableCurrencies: readonly Currency[];
     hasSavedPaymentMethods: boolean;
+    disablePlanSelection: boolean;
 }
 
 const SubscriptionCheckoutPlanSection = ({
@@ -35,6 +36,7 @@ const SubscriptionCheckoutPlanSection = ({
     shouldDisableCurrencySelection,
     availableCurrencies,
     hasSavedPaymentMethods,
+    disablePlanSelection,
 }: Props) => {
     const {
         checkoutUi,
@@ -243,8 +245,12 @@ const SubscriptionCheckoutPlanSection = ({
         <>
             <div className="flex align-middle items-center justify-between w-full my-4">
                 <div className="flex align-middle items-center flex-1 gap-3 ">
-                    <h2 className="text-2xl text-bold">{c('Label').t`Your plan`}</h2>
-                    <InlineLinkButton onClick={onChangePlan}>{c('Action').t`Change`}</InlineLinkButton>
+                    <h2 className="text-2xl text-bold">
+                        {couponConfig?.checkoutSubtitle?.() ?? c('Label').t`Your plan`}
+                    </h2>
+                    {!disablePlanSelection && (
+                        <InlineLinkButton onClick={onChangePlan}>{c('Action').t`Change`}</InlineLinkButton>
+                    )}
                 </div>
                 <div className="shrink-0">
                     <CurrencySelector
