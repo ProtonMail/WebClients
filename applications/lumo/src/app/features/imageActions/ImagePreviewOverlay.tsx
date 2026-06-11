@@ -159,7 +159,10 @@ export const ImagePreviewOverlay = ({
                         onClick={onClose}
                     >
                         {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
-                        <div className="image-preview-shell" onClick={(e) => e.stopPropagation()}>
+                        <div
+                            className="image-preview-shell flex flex-column max-h-full"
+                            onClick={(e) => e.stopPropagation()}
+                        >
                             <Button
                                 className="image-preview-close shrink-0 bg-norm"
                                 icon
@@ -170,7 +173,7 @@ export const ImagePreviewOverlay = ({
                             >
                                 <IcCross size={4} />
                             </Button>
-                            <div className="image-preview-container bg-norm flex flex-column items-center justify-center p-6 pb-8 rounded-xxl gap-6">
+                            <div className="image-preview-container bg-norm flex flex-column flex-nowrap items-center justify-center p-6 pb-8 rounded-xxl gap-6 max-h-full">
                                 {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
                                 <img
                                     src={imageDataUrl}
