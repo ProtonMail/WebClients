@@ -1,49 +1,67 @@
-export const RECORDING_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
+export const RECORDING_MAX_AGE_MS = 30 * 24 * 60 * 60 * 1000; // 7 days
 
 // Matches `recording-<timestamp>.<ext>` as written by the storage worker.
 const RECORDING_FILENAME_RE = /^recording-(\d+)\./;
 
+// Removes expired `recording-*` files directly under the given directory.
+const purgeRecordingsInDirectory = async (directory: FileSystemDirectoryHandle, cutoff: number): Promise<void> => {
+    for await (const [name, handle] of directory.entries()) {
+        if (handle.kind !== 'file') {
+            continue;
+        }
+
+        const match = name.match(RECORDING_FILENAME_RE);
+        if (!match) {
+            continue;
+        }
+
+        const timestamp = Number(match[1]);
+        if (!Number.isFinite(timestamp) || timestamp > cutoff) {
+            continue;
+        }
+
+        try {
+            await directory.removeEntry(name);
+        } catch (error) {
+            // File may be locked by an active recording in another tab — skip.
+            // eslint-disable-next-line no-console
+            console.error('Purge old recordings: Failed to remove recording file', error);
+        }
+    }
+};
+
 export const purgeOldRecordings = async (maxAgeMs: number): Promise<void> => {
-    let fileSystemDirectoryHandle: FileSystemDirectoryHandle;
+    let root: FileSystemDirectoryHandle;
     try {
-        fileSystemDirectoryHandle = await navigator.storage.getDirectory();
+        root = await navigator.storage.getDirectory();
     } catch (error) {
         // eslint-disable-next-line no-console
         console.error('Purge old recordings: Failed to get storage directory', error);
         return;
     }
 
-    const entries = fileSystemDirectoryHandle.entries();
-
-    if (!entries) {
-        return;
-    }
-
     const cutoff = Date.now() - maxAgeMs;
 
     try {
-        for await (const [name, handle] of entries) {
-            if (handle.kind !== 'file') {
-                continue;
-            }
+        const subdirectories: FileSystemDirectoryHandle[] = [];
+        let hasRootLevelRecording = false;
 
-            const match = name.match(RECORDING_FILENAME_RE);
-            if (!match) {
-                continue;
+        for await (const [name, handle] of root.entries()) {
+            if (handle.kind === 'directory') {
+                // Recordings live under a per-user subdirectory.
+                subdirectories.push(handle);
+            } else if (RECORDING_FILENAME_RE.test(name)) {
+                // Legacy recordings written directly at the OPFS root.
+                hasRootLevelRecording = true;
             }
+        }
 
-            const timestamp = Number(match[1]);
-            if (!Number.isFinite(timestamp) || timestamp > cutoff) {
-                continue;
-            }
+        if (hasRootLevelRecording) {
+            await purgeRecordingsInDirectory(root, cutoff);
+        }
 
-            try {
-                await fileSystemDirectoryHandle.removeEntry(name);
-            } catch (error) {
-                // File may be locked by an active recording in another tab — skip.
-                // eslint-disable-next-line no-console
-                console.error('Purge old recordings: Failed to remove recording file', error);
-            }
+        for (const directory of subdirectories) {
+            await purgeRecordingsInDirectory(directory, cutoff);
         }
     } catch (error) {
         // Iteration failed (eviction, quota error). Best-effort: don't block boot.
