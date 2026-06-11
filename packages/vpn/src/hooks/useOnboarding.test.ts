@@ -67,6 +67,25 @@ describe('useOnboarding', () => {
         expect(mockGetIsBusinessOnboarded).not.toHaveBeenCalled();
     });
 
+    it.each`
+        name            | keys
+        ${'My company'} | ${1}
+        ${'My company'} | ${0}
+        ${undefined}    | ${1}
+    `(
+        'resolves to Dismissed when the backend reports not onboarded but the org is already set up (name $name, keys $keys)',
+        async ({ name, keys }) => {
+            mockGetIsBusinessOnboarded.mockResolvedValue(false);
+            mockUseOrganization.mockReturnValue([{ ...organization, Name: name, HasKeys: keys }, false] as ReturnType<
+                typeof useOrganization
+            >);
+
+            const { result } = renderHook(() => useOnboarding());
+
+            await waitFor(() => expect(result.current[0]).toBe(ONBOARDING_STEPS.Dismissed));
+        }
+    );
+
     it('resolves to Onboarded when the business has already interacted', async () => {
         mockGetIsBusinessOnboarded.mockResolvedValue(true);
 
