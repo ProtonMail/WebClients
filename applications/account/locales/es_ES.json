@@ -139,6 +139,9 @@
       "Add public holidays": [
         "Añadir calendario de días festivos"
       ],
+      "Add recovery options": [
+        "Añadir opciones de recuperación"
+      ],
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "Añadir un enlace de referidos en la firma de ${ MAIL_APP_NAME }"
       ],
@@ -1216,6 +1219,9 @@
       "Review": [
         "Verificar"
       ],
+      "Review recovery options": [
+        "Revisar opciones de recuperación"
+      ],
       "Revoke": [
         "Revocar"
       ],
@@ -1350,6 +1356,9 @@
       ],
       "Set up a custom domain": [
         "Configurar un dominio personalizado"
+      ],
+      "Set up account recovery": [
+        "Configurar la recuperación de la cuenta"
       ],
       "Set up auto-forwarding from Gmail": [
         "Configurar el reenvío automático desde Gmail"
@@ -1890,6 +1899,38 @@
     "Admin": {
       "admin": [
         "administrador"
+      ]
+    },
+    "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 nuevos roles de administrador"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurar las políticas de seguridad, la retención de datos y la infraestructura de VPN, y gestionar los registros de auditoría."
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "Delega la gestión asignando roles de administrador específicos. Da a cada administrador solo el acceso que necesita. De esta forma se aplica el principio de mínimo privilegio, lo que protege a tu organización frente a cuentas comprometidas y errores accidentales."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "Delega la gestión con el rol de administrador adecuado."
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Gestionar todos los usuarios, grupos, almacenamiento, seguridad, facturación, registros de auditoría y configuraciones del sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestionar los usuarios, grupos y almacenamiento de todos los miembros, asignar roles y distribuir licencias."
+      ],
+      "New: Control admin access for individual users": [
+        "Nuevo: controla el acceso de administrador para usuarios individuales"
+      ],
+      "Organization admin:": [
+        "Administrador de la organización:"
+      ],
+      "Security admin:": [
+        "Administrador de seguridad:"
+      ],
+      "User admin:": [
+        "Administrador de usuarios:"
       ]
     },
     "AdminRole_Info": {
@@ -3555,6 +3596,9 @@
       ]
     },
     "Country name": {
+      "Abkhazia": [
+        "Abjasia"
+      ],
       "Afghanistan": [
         "Afganistán"
       ],
@@ -3564,6 +3608,9 @@
       "Algeria": [
         "Argelia"
       ],
+      "American Samoa": [
+        "Samoa Americana"
+      ],
       "Andorra": [
         "Andorra"
       ],
@@ -3572,6 +3619,9 @@
       ],
       "Anguilla": [
         "Anguila"
+      ],
+      "Antarctica": [
+        "Antártida"
       ],
       "Antigua and Barbuda": [
         "Antigua y Barbuda"
@@ -3584,6 +3634,9 @@
       ],
       "Aruba": [
         "Aruba"
+      ],
+      "Ascension Island": [
+        "Isla Ascensión"
       ],
       "Australia": [
         "Australia"
@@ -3626,6 +3679,9 @@
       ],
       "Bolivia": [
         "Bolivia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Caribe Neerlandés"
       ],
       "Bosnia and Herzegovina": [
         "Bosnia Herzegovina"
@@ -3702,6 +3758,9 @@
       "Congo (The Democratic Republic of the)": [
         "Congo (República Democrática)"
       ],
+      "Congo, Democratic Republic of the": [
+        "Congo, República Democrática del"
+      ],
       "Cook Islands": [
         "Islas Cook"
       ],
@@ -3759,14 +3818,23 @@
       "Estonia": [
         "Estonia"
       ],
+      "Eswatini": [
+        "Suazilandia"
+      ],
       "Ethiopia": [
         "Etiopía"
+      ],
+      "Falkland Islands": [
+        "Islas Malvinas"
       ],
       "Falkland Islands (Malvinas)": [
         "Islas Falkland (Malvinas)"
       ],
       "Faroe Islands": [
         "Islas Faroe"
+      ],
+      "Federated States of Micronesia": [
+        "Estados Federados de Micronesia"
       ],
       "Fiji": [
         "Fiyi"
@@ -3816,6 +3884,9 @@
       "Guadeloupe": [
         "Guadalupe"
       ],
+      "Guam": [
+        "Guam"
+      ],
       "Guatemala": [
         "Guatemala"
       ],
@@ -3858,6 +3929,12 @@
       "Indonesia": [
         "Indonesia"
       ],
+      "International": [
+        "Internacional"
+      ],
+      "Iran": [
+        "Irán"
+      ],
       "Iraq": [
         "Irak"
       ],
@@ -3866,6 +3943,9 @@
       ],
       "Islamic Republic of Iran": [
         "República Islámica de Irán"
+      ],
+      "Isle of Man": [
+        "Isla de Man"
       ],
       "Israel": [
         "Israel"
@@ -3878,6 +3958,9 @@
       ],
       "Japan": [
         "Japón"
+      ],
+      "Jersey": [
+        "Jersey"
       ],
       "Jordan": [
         "Jordania"
@@ -3909,6 +3992,9 @@
       "Lao People's Democratic Republic": [
         "Laos, República Democrática Popular"
       ],
+      "Laos": [
+        "Laos"
+      ],
       "Latvia": [
         "Letonia"
       ],
@@ -3920,6 +4006,9 @@
       ],
       "Liberia": [
         "Liberia"
+      ],
+      "Libya": [
+        "Líbia"
       ],
       "Libyan Arab Jamahiriya": [
         "Libia (Yamahiriya Árabe)"
@@ -4029,8 +4118,14 @@
       "Norfolk Island": [
         "Isla Norfolk"
       ],
+      "North Korea": [
+        "Corea del Norte"
+      ],
       "North Macedonia": [
         "Macedonia del Norte"
+      ],
+      "Northern Mariana Islands": [
+        "Islas Marianas del Norte"
       ],
       "Norway": [
         "Noruega"
@@ -4089,6 +4184,9 @@
       "Rwanda": [
         "Ruanda"
       ],
+      "Saint Barthélemy": [
+        "San Bartolomé"
+      ],
       "Saint Helena": [
         "Santa Helena"
       ],
@@ -4097,6 +4195,9 @@
       ],
       "Saint Lucia": [
         "Santa Lucía"
+      ],
+      "Saint Martin (French Part)": [
+        "San Martín (parte francesa)"
       ],
       "Saint Pierre and Miquelon": [
         "San Pedro y Miquelón"
@@ -4131,6 +4232,9 @@
       "Singapore": [
         "Singapur"
       ],
+      "Sint Maarten": [
+        "San Martín"
+      ],
       "Slovakia": [
         "Eslovaquia"
       ],
@@ -4148,6 +4252,12 @@
       ],
       "South Georgia and the South Sandwich Islands": [
         "Islas Georgias del Sur y Sándwich del Sur"
+      ],
+      "South Korea": [
+        "Corea del Sur"
+      ],
+      "South Ossetia": [
+        "Osetia del Sur"
       ],
       "South Sudan": [
         "Sudán del Sur"
@@ -4176,6 +4286,9 @@
       "Switzerland": [
         "Suiza"
       ],
+      "Syria": [
+        "Siria"
+      ],
       "Syrian Arab Republic": [
         "Siria, República Árabe"
       ],
@@ -4185,11 +4298,17 @@
       "Tajikistan": [
         "Tayikistán"
       ],
+      "Tanzania": [
+        "Tanzania"
+      ],
       "Tanzania, United Republic of": [
         "Tanzania, República Unida"
       ],
       "Thailand": [
         "Tailandia"
+      ],
+      "Timor-Leste": [
+        "Timor Oriental"
       ],
       "Togo": [
         "Togo"
@@ -4202,6 +4321,9 @@
       ],
       "Trinidad and Tobago": [
         "Trinidad y Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristán de Acuña"
       ],
       "Tunisia": [
         "Túnez"
@@ -4233,6 +4355,9 @@
       "United States": [
         "Estados Unidos"
       ],
+      "United States Minor Outlying Islands": [
+        "Islas Ultramarinas Menores de Estados Unidos"
+      ],
       "Uruguay": [
         "Uruguay"
       ],
@@ -4248,6 +4373,12 @@
       "Vietnam": [
         "Vietnam"
       ],
+      "Virgin Islands, British": [
+        "Islas Vírgenes Británicas"
+      ],
+      "Virgin Islands, U.S.": [
+        "Islas Vírgenes de los Estados Unidos."
+      ],
       "Wallis and Futuna": [
         "Wallis y Futuna"
       ],
@@ -4262,6 +4393,9 @@
       ],
       "Zimbabwe": [
         "Zimbabue"
+      ],
+      "Åland Islands": [
+        "Islas Aland"
       ]
     },
     "Country select label": {
@@ -13464,6 +13598,9 @@
       "Secure password generator": [
         "Generador de contraseñas seguro"
       ],
+      "Select an identity provider to start": [
+        "Selecciona un proveedor de identidad para empezar"
+      ],
       "Select Linux platform": [
         "Seleccionar la distribución Linux"
       ],
@@ -13902,11 +14039,6 @@
       ],
       "To: ${ to }": [
         "Para: ${ to }"
-      ]
-    },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Selecciona un proveedor de identidad para empezar"
       ]
     },
     "Limit of calendars reached": {
@@ -18299,6 +18431,54 @@
     "Recovery score": {
       "Add more options to avoid getting locked out of your account.": [
         "Añade más opciones para evitar perder el acceso a tu cuenta."
+      ],
+      "Check your access to your recovery options": [
+        "Comprueba tu acceso a las opciones de recuperación"
+      ],
+      "Critical": [
+        "Crítico"
+      ],
+      "Don’t get locked out of your ${ BRAND_NAME } Account": [
+        "No te quedes sin acceso a tu cuenta de ${ BRAND_NAME }"
+      ],
+      "Recoverability": [
+        "Recuperación"
+      ],
+      "Take precautions to avoid losing access": [
+        "Toma precauciones para evitar perder el acceso"
+      ],
+      "You're fully protected. A periodic review keeps everything working as your devices and contacts change over time.": [
+        "Tu protección es total. Una revisión periódica mantiene todo en funcionamiento a medida que tus dispositivos y contactos cambian con el tiempo."
+      ],
+      "You're partly there, but not safe yet. A forgotten password could still mean losing your emails, files, and passwords.": [
+        "Ya estás a mitad de camino, pero todavía no estás a salvo. Olvidar la contraseña puede suponer perder tus correos electrónicos, archivos y contraseñas."
+      ],
+      "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
+        "Todavía corres un gran riesgo. Si olvidas tu contraseña, puedes perder de forma permanente tus correos electrónicos, archivos y contraseñas."
+      ],
+      "You're well covered, but there are still gaps. More recovery options give you a stronger safety net if you ever lose your password.": [
+        "Tu protección es buena, pero todavía quedan algunos huecos. Disponer de más opciones de recuperación te ofrece una red de seguridad más sólida si alguna vez pierdes tu contraseña."
+      ],
+      "Your account and data can be recovered": [
+        "Tu cuenta y tus datos se pueden recuperar"
+      ],
+      "Your account has no recovery options set up. If you lose your password, you'll permanently lose access to your emails, files, and passwords.": [
+        "Tu cuenta no tiene configuradas opciones de recuperación. Si pierdes tu contraseña, pierdes de forma permanente el acceso a tus correos electrónicos, archivos y contraseñas."
+      ],
+      "Your account isn't fully protected. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Tu cuenta no está totalmente protegida. Olvidar la contraseña todavía puede suponer perder el acceso a tus correos electrónicos, archivos y contraseñas."
+      ],
+      "Your recovery setup is barely there. If you lose your password, you could permanently lose access to your emails, files, and passwords.": [
+        "Tu configuración de recuperación es mínima. Si pierdes tu contraseña, puedes perder de forma permanente el acceso a tus correos electrónicos, archivos y contraseñas."
+      ],
+      "Your recovery setup is excellent. Keep your options up to date so they still work when you need them.": [
+        "Tu configuración de recuperación es excelente. Mantén tus opciones actualizadas para que sigan funcionando cuando las necesites."
+      ],
+      "Your recovery setup is incomplete. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Tu configuración de recuperación está incompleta. Olvidar la contraseña todavía puede suponer perder el acceso a tus correos electrónicos, archivos y contraseñas."
+      ],
+      "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
+        "Tu configuración de recuperación es sólida, aunque quedan algunos huecos por cerrar. Cada opción que añades refuerza tu red de seguridad."
       ]
     },
     "RecoveryPhrase: Action": {
@@ -20950,6 +21130,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } y ${ LUMO_APP_NAME } con funciones premium"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } con características prémium"
       ],
@@ -21207,6 +21393,10 @@
       ],
       "Version history": [
         "Historial de versiones"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videollamadas de hasta ${ PAID_PREMIUM_MAX_PARTICIPANTS } participante",
+        "Videollamadas de hasta ${ PAID_PREMIUM_MAX_PARTICIPANTS } participantes"
       ],
       "Watch the interview": [
         "Ve la entrevista"
@@ -22897,6 +23087,9 @@
       ],
       "Open pagination": [
         "Abrir paginación"
+      ],
+      "OpenVpn": [
+        "OpenVPN"
       ],
       "OpenVPN": [
         "OpenVPN"
