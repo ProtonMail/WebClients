@@ -1099,9 +1099,6 @@
       "Upload and share files": [
         "ფაილების ატვირთვა და გაზიარება"
       ],
-      "Upload anyway": [
-        "მაინც ატვირთვა"
-      ],
       "Upload file": [
         "ფაილის ატვირთვა"
       ],
@@ -3226,9 +3223,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" უკვე არსებობს"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } თქვენს გარე ანგარიშს ვერ დაუკავშირდა"
       ],
@@ -3435,9 +3429,6 @@
       "Failed to update public share node": [
         "საჯარო ზიარის კვანძის განახლება ჩავარდა"
       ],
-      "File cannot be merged with folder": [
-        "ფაილი არ შეიძლება საქაღალდეს შეერწყას"
-      ],
       "First name is too long": [
         "სახელი ძალიან გრძელია"
       ],
@@ -3575,9 +3566,6 @@
       ],
       "Payment process not supported": [
         "გადახდის პროცესის მხარდაჭერა არ არსებობს"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "სურათების ატვირთვა დროებით გათიშულია. მოგვიანებით სცადეთ"
       ],
       "Please activate your search again": [
         "თავიდან ჩართეთ შემცველობაში ძებნის ფუნქცია"
@@ -3725,24 +3713,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "დამატებადი თანხის მინიმალური რაოდენობაა ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "საწყისის ფაილი ახალი რევიზია ჯერ ატვირთული არაა. მოგვიანებით სცადეთ"
-      ],
-      "The original file has missing active revision": [
-        "საწყის ფაილს აქტიური რევიზია აკლია"
-      ],
-      "The original file has missing hash key": [
-        "პირველად ფაილს აკლია hash გასაღები"
-      ],
-      "The original file has missing session key": [
-        "პირველად ფაილს აკლია სესიის გასაღები"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "საწყისი ფაილი ჯერ ატვირთული არაა. მოგვიანებით სცადეთ"
-      ],
-      "The original folder not found": [
-        "საწყისი საქაღალდე ნაპოვნი არაა"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "თქვენს გარე ანგარიშზე, მეტისმეტად, ბევრი საქაღალდეა. გთხოვთ, ხელით მიუთითოთ შემოსატანი საქაღალდეები."
       ],
@@ -3796,9 +3766,6 @@
       ],
       "Upload failed": [
         "ატვირთვა ჩავარდა"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "ამ საქაღალდისთვის ატვირთვა დროებით გათიშულია"
       ],
       "Username must begin with a letter or digit": [
         "მომხმარებლის სახელი ასოთი ან ციფრით უნდა იწყებოდეს"
@@ -5326,9 +5293,6 @@
       "for ${ price }": [
         "${ price }-ისთვის"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "საუკეთესო შედეგისთვის, მოერიდეთ სტრიმინგს და მეხსიერების ინტენსიურ აქტივობებს, ან დაყავით თქვენი ატვირთვა მცირე ნაკრებებად."
-      ],
       "Free 5GB encrypted storage to get started": [
         "უფასო 5გბ დაშიფრული საცავი დასაწყისისთვის"
       ],
@@ -6044,9 +6008,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "ეს ახლა თქვენი ${ defaultEmailAddress }-ია ახალი შეტყობინებების გასაგზავნად."
       ],
-      "This item already exists in your library": [
-        "ეს ელემენტი თქვენს ბიბლიოთეკაში უკვე არსებობს"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "ბმული მიდის ვებგვერდამდე, რომელმაც შეიძლება მოიპაროს თქვენი ისეთი ინფორმაცია, როგორიცაა პაროლები და საკრედიტო ბარათის დეტალები."
       ],
@@ -6074,26 +6035,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "ეს სამუდამოდ წაშლის თქვენს მიერ ატვირთულ ელემენტებს."
       ],
-      "This will replace the existing file with the folder": [
-        "ეს არსებულ ფაილს საქაღალდით ჩაანაცვლებს"
-      ],
       "This will replace the existing folder or file with the file": [
         "ეს არსებულ საქაღალდეს ან ფაილს ფაილით ჩაანაცვლებს"
       ],
       "This will replace the existing folder or file with the folder": [
         "ეს არსებულ საქაღალდეს ან ფაილს საქაღალდით ჩაანაცვლებს"
       ],
-      "This will replace the existing folder with the file": [
-        "ეს არსებულ საქაღალდეს ფაილით ჩაანაცვლებს"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "ეს გამოგიყვანთ ყველა ანგარიშიდან, სადაც შესული ბრძანდებით."
-      ],
-      "This will upload a new version of the file": [
-        "ეს ფაილის ახალ ვერსიას ატვირთავს"
-      ],
-      "This will upload a new version of the folder": [
-        "ეს საქაღალდის ახალ ვერსიას ატვირთავს"
       ],
       "Time": [
         "დრო"
@@ -6139,18 +6088,6 @@
       ],
       "Tracking": [
         "ტრეკინგი"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "\"${ name }\"-ის გადაცემა გაუქმებულია"
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "\"${ name }\"-ის გადაცემა გაუქმებულია"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "\"${ file.name }\"-ის გადაცემა გამოტოვებულია"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "\"${ folderName }\"-ის გადაცემა გამოტოვებულია"
       ],
       "Trash": [
         "ნაგვის ყუთი"
@@ -6205,9 +6142,6 @@
       ],
       "Uploading": [
         "იტვირთება"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "ასობით ფაილის ერთდროულ ატვირთვამ შეიძლება, წარმადობაზე გავლენა იქონიოს."
       ],
       "Uppercase and lowercase letters": [
         "დიდი და პატარა ასოები"
@@ -6922,12 +6856,6 @@
       "Keep both": [
         "ორივეს შენარჩუნება"
       ],
-      "Keep both files": [
-        "ორივე ფაილის შენარჩუნება"
-      ],
-      "Keep both folders": [
-        "ორივე საქაღადის შენარჩუნება"
-      ],
       "Label messages as": [
         "შეტყობინებების მონიშვნა, როგორც"
       ],
@@ -7068,12 +6996,6 @@
       ],
       "Region": [
         "რაიონი"
-      ],
-      "Replace existing file": [
-        "არსებული ფაილის ჩანაცვლება"
-      ],
-      "Replace existing folder": [
-        "არსებული საქაღალდის ჩანაცვლება"
       ],
       "Replace existing folder or file": [
         "არსებული საქაღალდის ან ფაილის ჩანაცვლება"
@@ -8707,14 +8629,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\"-ის ნაგავის ყუთში გადატანის შეცდომა"
       ],
-      "\"${ name }\" failed to be saved": [
-        "\"${ name }\"-ის შენახვის შეცდომა"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" ნაგვის ყუთში ჩავარდა"
-      ],
-      "\"${ name }\" saved successfully": [
-        "${ name } წარმატებით იქნა შენახული"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\"-ის გადარქმევის შეცდომა"
@@ -8853,19 +8769,6 @@
       "Failed to rename device": [
         "მოწყობილობის სახელის გადარქმევა ჩავარდა"
       ],
-      "Failed to upload files: ${ err }": [
-        "ფაილების ატვირთვის შეცდომა: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "ფაილის ან საქაღალდის \"${ filename }\" და ${ count } სხვის ატვირთვა უკვე მიმდინარეობს",
-        "ფაილის ან საქაღალდის \"${ filename }\" და ${ count } სხვის ატვირთვა უკვე მიმდინარეობს"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "ფაილის ან საქაღალდის \"${ filename }\" ატვირთვა უკვე მიმდინარეობს"
-      ],
-      "File or folder is missing a name": [
-        "ფაილს ან საქაღალდეს არ აქვს სახელი"
-      ],
       "File removed": [
         "ფაილი წაიშალა"
       ],
@@ -8886,9 +8789,6 @@
       "Move ${ n } item": [
         "${ n } ელემენტის გადატანა",
         "${ n } ელემენტის გადატანა"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "არასაკმარისი ადგილი ${ formattedTotal }-ის ასატვირთად"
       ],
       "Public link access updated": [
         "საჯარო ბმულის წვდომა განახლდა"
@@ -11663,12 +11563,6 @@
       "Drop to upload": [
         "ასატვირთად გადმოათრიეთ ზედ"
       ],
-      "Duplicate file found": [
-        "ნაპოვნია ფაილის ასლი"
-      ],
-      "Duplicate folder found": [
-        "ნაპოვნია საქაღალდის ასლი"
-      ],
       "Edit billing address": [
         "გადახდის მისამართის ჩასწორება"
       ],
@@ -11968,9 +11862,6 @@
       "PayPal verification failed": [
         "PayPal-ით გადახდის შეცდომა"
       ],
-      "Performance might be affected": [
-        "გავლენა ექნება წარმადობაზე"
-      ],
       "Phone numbers": [
         "ტელეფონის ნომრები"
       ],
@@ -12226,9 +12117,6 @@
       ],
       "Uploaded": [
         "ატვირთულია"
-      ],
-      "Uploading a large file or folder": [
-        "დიდი ფაილის ან საქაღალდის ატვირთვა"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "გამოიყენეთ ${ VPN_SHORT_APP_NAME } მონაცემთა კონფიდენციალობისთვის"

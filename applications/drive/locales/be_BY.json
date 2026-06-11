@@ -93,6 +93,9 @@
       "Add photos": [
         "Дадаць фатаграфіі"
       ],
+      "Add storage": [
+        "Павялічыць сховішча"
+      ],
       "Add to \"${ name }\" (${ photoCount } photo)": [
         "Дадаць у \"${ name }\" (${ photoCount } фатаграфія)",
         "Дадаць у \"${ name }\" (${ photoCount } фатаграфіі)",
@@ -630,6 +633,9 @@
       "Let's talk": [
         "Звяжыцеся з намі"
       ],
+      "List layout": [
+        "Макет спіса"
+      ],
       "Load": [
         "Загрузіць"
       ],
@@ -1139,9 +1145,6 @@
       ],
       "Upload and share files": [
         "Запампаваць і абагуліць файлы"
-      ],
-      "Upload anyway": [
-        "Запампаваць усё роўна"
       ],
       "Upload file": [
         "Запампаваць файл"
@@ -2304,6 +2307,9 @@
       "Canada": [
         "Канада"
       ],
+      "Canary Islands": [
+        "Канарскія астравы"
+      ],
       "Cape Verde": [
         "Каба-Вердэ"
       ],
@@ -3442,9 +3448,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" ужо існуе"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } не можа падключыцца да вашага знешняга ўліковага запісу"
       ],
@@ -3679,9 +3682,6 @@
       "Failed to update public share node": [
         "Не ўдалося абнавіць публічны вузел абагульвання"
       ],
-      "File cannot be merged with folder": [
-        "Немагчыма аб'яднаць файл з папкай"
-      ],
       "First name is too long": [
         "Занадта доўгае імя"
       ],
@@ -3828,9 +3828,6 @@
       ],
       "Payment process not supported": [
         "Апрацоўка плацяжу не падтрымліваецца"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Запампоўванне фатаграфій часова адключана. Паспрабуйце яшчэ раз пазней"
       ],
       "Please activate your search again": [
         "Актывуйце пошук яшчэ раз"
@@ -4003,24 +4000,6 @@
       "The minimum donation amount is ${ price }": [
         "Мінімальная сума ахвяравання складае ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Новая рэдакцыя арыгінальнага файла пакуль не запампавана. Паспрабуйце яшчэ раз пазней"
-      ],
-      "The original file has missing active revision": [
-        "У арыгінальным файле адсутнічае актыўная рэдакцыя"
-      ],
-      "The original file has missing hash key": [
-        "У арыгінальным файле адсутнічае хэш-ключ"
-      ],
-      "The original file has missing session key": [
-        "У арыгінальным файле адсутнічае ключ сеанса"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Арыгінальны файл пакуль не запампаваны. Паспрабуйце яшчэ раз пазней"
-      ],
-      "The original folder not found": [
-        "Арыгінальная папка не знойдзена"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "У вашым знешнім уліковым запісе занадта шмат папак. Наладзьце імпартаванне, каб выдаліць некаторыя папкі."
       ],
@@ -4074,9 +4053,6 @@
       ],
       "Upload failed": [
         "Збой запампоўвання"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Запампоўванне для гэтай папкі часова адключана"
       ],
       "Username must begin with a letter or digit": [
         "Імя карыстальніка павінна пачынацца з літары або лічбы"
@@ -5852,9 +5828,6 @@
       "for ${ price }": [
         "за ${ price }"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Абмяжуйце аперацыі, якія звязаны з праглядам трансляцый і інтэнсіўным спажываннем памяці, або запампоўвайце свае даныя пакетамі меншага аб'ёму."
-      ],
       "For just ${ bundlePlanPriceInline }": [
         "Усяго за ${ bundlePlanPriceInline }"
       ],
@@ -6353,6 +6326,9 @@
       "Please select the folders you would like to import:": [
         "Выберыце папкі для імпартавання:"
       ],
+      "Please select the labels you would like to import:": [
+        "Выберыце меткі для імпартавання:"
+      ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Выберыце, які адрас або адрасы электроннай пошты неабходна дадаць у ${ groupCount } групу.",
         "Выберыце, які адрас або адрасы электроннай пошты неабходна дадаць у ${ groupCount } групы.",
@@ -6692,9 +6668,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Цяпер гэта ваш ${ defaultEmailAddress } для адпраўкі новых паведамленняў."
       ],
-      "This item already exists in your library": [
-        "Гэты элемент ужо існуе ў вашай бібліятэцы"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Гэты элемент не захаваны ў вашай бібліятэцы фатаграфій. Вы незваротна згубіце доступ да яго, калі выдаліце з гэтага альбома.",
         "Некаторыя выбарныя элементы не захаваны ў вашай бібліятэцы фатаграфій. Вы незваротна згубіце доступ да іх, калі выдаліце з гэтага альбома.",
@@ -6737,26 +6710,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "Гэта незваротна выдаліць выбраныя элементы, якія вы запампавалі."
       ],
-      "This will replace the existing file with the folder": [
-        "Гэта заменіць існуючы файл папкай"
-      ],
       "This will replace the existing folder or file with the file": [
         "Гэта дзеянне прывядзе да замены існуючай папкі або файла файлам"
       ],
       "This will replace the existing folder or file with the folder": [
         "Гэта дзеянне прывядзе да замены існуючай папкі або файла папкай"
       ],
-      "This will replace the existing folder with the file": [
-        "Гэта заменіць існуючую папку файлам"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Гэта правядзе да выхаду з усіх уліковых запісаў у якіх вы ў цяперашні час аўтарызаваныя."
-      ],
-      "This will upload a new version of the file": [
-        "Гэта дзеянне прывядзе да запампоўвання новай версіі файла"
-      ],
-      "This will upload a new version of the folder": [
-        "Гэта запампуе новую версію папкі"
       ],
       "Time": [
         "Час"
@@ -6815,18 +6776,6 @@
       "Tracking": [
         "Адсочванне"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Перадача скасавана для файла \"${ name }\""
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Перадача скасавана для папкі \"${ name }\""
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Перадача прапушчана для файла ${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Перадача прапушчана для папкі \"${ folderName }\""
-      ],
       "Trash": [
         "Сметніца"
       ],
@@ -6878,6 +6827,9 @@
       "Upgrade or clear space anytime to bring over the rest": [
         "Палепшыце свой тарыфны план або вызваліце месца ў сховішчы, каб перанесці астатняе"
       ],
+      "Upgrade to get more storage space": [
+        "Палепшыце тарыфны план, каб атрымаць больш месца ў сховішчы."
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Палепшыць тарыфны план, каб захаваць перавагі ${ planTitle }."
       ],
@@ -6892,9 +6844,6 @@
       ],
       "Uploading": [
         "Запампоўванне"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Запампоўванне сотняў файлаў адначасова можа паўплываць на прадукцыйнасць."
       ],
       "Uppercase and lowercase letters": [
         "Маленькія і вялікія літары"
@@ -7744,12 +7693,6 @@
       "Keep both": [
         "Пакінуць абодва"
       ],
-      "Keep both files": [
-        "Пакінуць абодва файлы"
-      ],
-      "Keep both folders": [
-        "Пакінуць абедзве папкі"
-      ],
       "Label messages as": [
         "Пазначыць паведамленні як"
       ],
@@ -7824,6 +7767,9 @@
       ],
       "New password": [
         "Новы пароль"
+      ],
+      "Non-consensual intimate imagery": [
+        "Інтымныя відарысы без згоды"
       ],
       "Not active": [
         "Не актыўна"
@@ -7905,12 +7851,6 @@
       ],
       "Region": [
         "Вобласць"
-      ],
-      "Replace existing file": [
-        "Замяніць бягучы файл"
-      ],
-      "Replace existing folder": [
-        "Замяніць існуючую папку"
       ],
       "Replace existing folder or file": [
         "Замяніць існуючую папку або файл"
@@ -9801,14 +9741,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "Не ўдалося перамясціць у сметніцу \"${ name }\""
       ],
-      "\"${ name }\" failed to be saved": [
-        "Не ўдалося захаваць\"${ name }\""
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" перамешчаны ў сметніцу"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" паспяхова захаваны"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Не ўдалося перайменаваць \"${ newName }\""
@@ -10008,21 +9942,6 @@
       "Failed to rename device": [
         "Не ўдалося перайменаваць прыладу"
       ],
-      "Failed to upload files: ${ err }": [
-        "Не ўдалося запампаваць файлы: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Файл або папка \"${ filename }\" і яшчэ ${ count } ужо запампоўваюцца",
-        "Файл або папка \"${ filename }\" і яшчэ ${ count } ужо запампоўваюцца",
-        "Файл або папка \"${ filename }\" і яшчэ ${ count } ужо запампоўваюцца",
-        "Файл або папка \"${ filename }\" і яшчэ ${ count } ужо запампоўваюцца"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Файл або папка \"${ filename }\" ужо запампаваны"
-      ],
-      "File or folder is missing a name": [
-        "Адсутнічае назва папкі або файла"
-      ],
       "File removed": [
         "Файл выдалены"
       ],
@@ -10049,9 +9968,6 @@
         "Перамясціць ${ n } элементы",
         "Перамясціць ${ n } элементаў",
         "Перамясціць ${ n } элементаў"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Недастаткова месца для запампоўвання ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Доступ да публічнай спасылкі абноўлены"
@@ -13119,12 +13035,6 @@
       "Drop to upload": [
         "Перацягніце, каб запампаваць"
       ],
-      "Duplicate file found": [
-        "Знойдзены дублікат файла"
-      ],
-      "Duplicate folder found": [
-        "Знойдзены дублікат папкі"
-      ],
       "Edit billing address": [
         "Рэдагаваць адрас аплаты"
       ],
@@ -13431,6 +13341,9 @@
       "Other names": [
         "Іншыя імёны"
       ],
+      "Out of storage space": [
+        "Адсутнічае месца для захоўвання"
+      ],
       "Payment failed": [
         "Збой плацяжу"
       ],
@@ -13439,9 +13352,6 @@
       ],
       "PayPal verification failed": [
         "Не ўдалося ажыццявіць праверку PayPal"
-      ],
-      "Performance might be affected": [
-        "Можа паўплываць на прадукцыйнасць"
       ],
       "Phone numbers": [
         "Нумары тэлефонаў"
@@ -13707,9 +13617,6 @@
       "Uploaded": [
         "Запампавана"
       ],
-      "Uploading a large file or folder": [
-        "Запампоўванне вялікага файла або папкі"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Скарыстацца ${ VPN_SHORT_APP_NAME } для захавання прыватнасці даных"
       ],
@@ -13884,6 +13791,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Калі вы купілі падарункавы код або атрымалі яго ад нашай каманды падтрымкі, то яго можна ўвесці тут."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Імгненная дапамога ШІ і нашых экспертаў!"
       ],
       "Load image": [
         "Загрузіць відарыс"

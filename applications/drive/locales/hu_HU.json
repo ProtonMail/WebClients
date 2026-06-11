@@ -1024,9 +1024,6 @@
       "Upload and share files": [
         "Fájlok feltöltése és megosztása"
       ],
-      "Upload anyway": [
-        "Feltöltés mindenképpen"
-      ],
       "Upload file": [
         "Fájl feltöltése"
       ],
@@ -1139,6 +1136,10 @@
       ],
       "${ price } per user": [
         "${ price } felhasználónként"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licenc",
+        "${ seats } ${ MEET_APP_NAME } licenc"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } írási segéd licenc",
@@ -1303,6 +1304,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } hónap",
+        "${ n } hónap"
+      ],
+      "${ n } year": [
+        "${ n } év",
+        "${ n } év"
+      ],
       "1 month": [
         "1 hónap"
       ],
@@ -1505,6 +1514,10 @@
       "${ users } user": [
         "${ users } felhasználó",
         "${ users } felhasználó"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Összesen, ${ cycle } hónapra",
+        "Összesen, ${ cycle } hónapra"
       ],
       "Total": [
         "Összesen"
@@ -2633,6 +2646,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "Több évnyi e-mail számára elegendő hely, mellékletekkel és további lehetőségek."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Biztosítson biztonságos hozzáférést a szervezeti adatokhoz, még akkor is, ha a csapata távolról dolgozik vagy nyilvános Wi-Fi-t használ."
       ],
@@ -2943,9 +2959,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" már létezik"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } nem tudd kapcsolódni az ön külső fiókjaihoz."
       ],
@@ -3122,9 +3135,6 @@
       "Failed to update public share node": [
         "Nem sikerült frissíteni a nyilvános megosztási csomópontot"
       ],
-      "File cannot be merged with folder": [
-        "Fájl nem egyesíthető mappával"
-      ],
       "First name is too long": [
         "A keresztnév túl hosszú"
       ],
@@ -3154,6 +3164,9 @@
       ],
       "Invalid code": [
         "Érvénytelen kód"
+      ],
+      "Invalid coupon": [
+        "Érvénytelen kupon"
       ],
       "Invalid email address": [
         "Érvénytelen e-mail cím"
@@ -3251,11 +3264,11 @@
       "Payment process not supported": [
         "Fizetési folyamat nem támogatott"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "A fényképek feltöltése ideiglenesen le van tiltva. Kérjük, próbálja meg később újra."
-      ],
       "Please activate your search again": [
         "Aktiválja újra a keresést"
+      ],
+      "Please complete the billing details": [
+        "Adja meg a számlázási adatokat"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Címek létrehozása előtt, állítson be egy saját domain nevet."
@@ -3385,24 +3398,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Legalább ${ price } kredit feltöltése szükséges"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Az eredeti fájl új verziója még nincs feltöltve, próbálja meg később"
-      ],
-      "The original file has missing active revision": [
-        "Az eredeti fájlnak nincs aktív verziója"
-      ],
-      "The original file has missing hash key": [
-        "Az eredeti fájlnak nincs ellenőrzőösszeg kulcsa"
-      ],
-      "The original file has missing session key": [
-        "Az eredeti fájlnak nincs munkafolyamat kulcsa"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Az eredeti fájl még nincs feltöltve, próbálja meg később"
-      ],
-      "The original folder not found": [
-        "Az eredeti mappa nem található"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Túl sok mappa van a külső e-mail fiókban. Módosítsa az importálás beállításait, hogy néhány mappát töröljön."
       ],
@@ -3411,6 +3406,9 @@
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "A mező tartalma hosszabb a megengedett maximum ${ maximumLength } karakternél."
+      ],
+      "This field is invalid": [
+        "Ez a mező érvénytelen"
       ],
       "This field is required": [
         "A mező kitöltése kötelező"
@@ -3444,9 +3442,6 @@
       ],
       "Unknown payment token status": [
         "Ismeretlen fizetési token állapot"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "A mappa feltöltése ideiglenesen le van tiltva"
       ],
       "Username must begin with a letter or digit": [
         "Felhasználónévnek betűvel vagy számmal kell kezdődnie"
@@ -4573,6 +4568,10 @@
       "All your changes will be lost.": [
         "A változtatások el fognak veszni."
       ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Az összes névjegye importálásra kerül, maximum ${ maxContact } darabig",
+        "Az összes névjegye importálásra kerül, maximum ${ maxContact } darabig"
+      ],
       "Also try looking in Trash.": [
         "Próbálja megnézni a lomtárban."
       ],
@@ -4902,9 +4901,6 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "Itt jelennek meg a számítógépéről szinkronizált mappák."
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "A legjobb eredményért addig ne videózzon vagy végezzem memóriaigényes műveletet, vagy darabolja a feltöltését kisebb részekre."
       ],
       "Free 5GB encrypted storage to get started": [
         "Ingyen 5GB titkosított tárhely a kezdéshez"
@@ -5374,6 +5370,9 @@
       "Ready to add some photos?": [
         "Készen áll néhány fénykép hozzáadására?"
       ],
+      "RECOMMENDED": [
+        "JAVASOLT"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "A helyreállítási információk megmaradnak ezen az eszközön, kivéve ha törli."
       ],
@@ -5591,9 +5590,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Ez mostantól az ${ defaultEmailAddress } az új üzenetek küldéséhez."
       ],
-      "This item already exists in your library": [
-        "Ez az elem már létezik a könyvtárban"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Ez az elem nincs mentve a Fotók könyvtárában. Ha eltávolítja ebből az albumból, véglegesen elveszíti a hozzáférést.",
         "A kiválasztott elemek egy része nincs elmentve a Fotók könyvtárában. Ha eltávolítja őket ebből az albumból, véglegesen elveszíti a hozzáférést."
@@ -5625,20 +5621,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "Ez véglegesen törli a kiválasztott, feltöltött elemeket."
       ],
-      "This will replace the existing file with the folder": [
-        "Ez lecseréli a meglévő fájl a mappával"
-      ],
-      "This will replace the existing folder with the file": [
-        "Ez lecseréli a meglévő mappát a fájllal"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Ez minden jelenleg bejelentkezett fiókjából kilépteti."
-      ],
-      "This will upload a new version of the file": [
-        "Ez a fájl egy új változatát fogja feltölteni"
-      ],
-      "This will upload a new version of the folder": [
-        "Ez a mappa egy új változatát fogja feltölteni"
       ],
       "Time": [
         "Idő"
@@ -5685,18 +5669,6 @@
       "Tracking": [
         "Nyomkövetés"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "\"${ name }\" fájl átvitele megszakítva"
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "\"${ name }\" mappa átvitele megszakítva"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "\"${ file.name }\" fájl átvitele átugorva"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "\"${ folderName }\" mappa átvitele átugorva"
-      ],
       "Trash": [
         "Lomtár"
       ],
@@ -5741,9 +5713,6 @@
       ],
       "Uploading": [
         "Feltöltés"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Fájlok százainak egyszerre való feltöltése fennakadásokat okozhat."
       ],
       "Uppercase and lowercase letters": [
         "Kis- és nagybetűk"
@@ -5947,6 +5916,10 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nem kerül felszámításra, ha ${ trialEndsOnFormatted } előtt lemondja."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Ezután a számlázás ${ renewCycle } havonta történik, ${ renewAmountStr } összeggel. Bármikor lemondhatja.",
+        "Ezután a számlázás ${ renewCycle } havonta történik, ${ renewAmountStr } összeggel. Bármikor lemondhatja."
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Ön készül visszautasítani a ${ invitationName } albumhoz való csatlakozásra szóló meghívást. Ha folytatja, nem fog tudni hozzáférni, hacsak a tulajdonos nem hívja meg újra. Biztos, hogy folytatni szeretné?"
@@ -6410,12 +6383,6 @@
       "Keep both": [
         "Mindkettő megtartása"
       ],
-      "Keep both files": [
-        "Tartsa meg mindkét fájlt"
-      ],
-      "Keep both folders": [
-        "Tartsa meg mindkét mappát"
-      ],
       "Label messages as": [
         "Üzenetek megjelölése címkével"
       ],
@@ -6547,12 +6514,6 @@
       ],
       "Region": [
         "Régió"
-      ],
-      "Replace existing file": [
-        "Cserélje le a meglévő fájlt"
-      ],
-      "Replace existing folder": [
-        "Cserélje le a meglévő mappát"
       ],
       "Reveal password": [
         "Jelszó felfedése"
@@ -6972,6 +6933,18 @@
       ],
       "for ${ price }": [
         "${ price } áron"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } licenc",
+        "${ seats } ${ MEET_APP_NAME } licenc"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licencet tartalmaz",
+        "${ seats } licencet tartalmaz"
       ]
     },
     "Message": {
@@ -8105,14 +8078,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" áthelyezése a lomtárba nem sikerült"
       ],
-      "\"${ name }\" failed to be saved": [
-        "\"${ name }\" mentése nem sikerült"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" áthelyezve a lomtárba"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" sikeresen mentve"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" átnevezése nem sikerült"
@@ -8235,19 +8202,6 @@
       "Failed to rename device": [
         "Nem sikerült átnevezni az eszközt"
       ],
-      "Failed to upload files: ${ err }": [
-        "Fájlok feltöltése nem sikerült: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "A fájl vagy mappa \"${ filename }\" és ${ count } másik már feltöltés alatt van",
-        "A fájl vagy mappa \"${ filename }\" és ${ count } másik már feltöltés alatt van"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "A fájl vagy mappa \"${ filename }\" már feltöltés alatt van"
-      ],
-      "File or folder is missing a name": [
-        "A fájl vagy mappa neve hiányzik"
-      ],
       "File removed": [
         "Fájl törölve"
       ],
@@ -8268,9 +8222,6 @@
       "Move ${ n } item": [
         "${ n } elem áthelyezése",
         "${ n } elem áthelyezése"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Nincs elég hely a feltöltéshez: ${ formattedTotal }"
       ],
       "Public link access updated": [
         "A nyilvános hivatkozás hozzáférés frissítve"
@@ -8825,12 +8776,24 @@
       "terms and conditions": [
         "felhasználási feltételek"
       ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "A kedvezmény ${ renewalsWithCoupon } megújításra érvényes.",
+        "A kedvezmény ${ renewalsWithCoupon } megújításra érvényes."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "A kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja.",
+        "A kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja."
+      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "A kedvezményes ár az első ${ subscriptionLength } hónapra érvényes.",
         "A kedvezményes ár az első ${ subscriptionLength } hónapra érvényes."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "A kedvezményes ár az első hónapra érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "A ${ priceWithDiscount } kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja.",
+        "A ${ priceWithDiscount } kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "A kedvezményes ${ priceWithDiscount } ár az első ${ subscriptionLength } hónapra érvényes.",
@@ -9185,6 +9148,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Hivatalos e-mail tőle: ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q2campaign2026: Action": {
@@ -9569,6 +9537,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "${ ownerName } által megosztva"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Megnyitás ebben: ${ appName }"
       ]
     },
     "Signing preference for emails": {
@@ -10873,6 +10846,9 @@
       "Discard changes?": [
         "Módosítások elvetése?"
       ],
+      "Disconnected from Gmail": [
+        "Leválasztva a Gmailről"
+      ],
       "Downgrade account": [
         "Váltás kisebb csomagra"
       ],
@@ -10899,12 +10875,6 @@
       ],
       "Drop to upload": [
         "Húzza a fájlokat ide a feltöltéshez"
-      ],
-      "Duplicate file found": [
-        "Duplikált fájl"
-      ],
-      "Duplicate folder found": [
-        "Duplikált mappa"
       ],
       "Edit billing address": [
         "Számlázási cím szerkesztése"
@@ -11180,9 +11150,6 @@
       "PayPal verification failed": [
         "A PayPal ellenőrzés sikertelen"
       ],
-      "Performance might be affected": [
-        "Hatással lehet a teljesítményre"
-      ],
       "Phone numbers": [
         "Telefonszámok"
       ],
@@ -11402,9 +11369,6 @@
       ],
       "Uploaded": [
         "Feltöltve"
-      ],
-      "Uploading a large file or folder": [
-        "Nagy fájl vagy mappa feltöltése"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Használja a(z) ${ VPN_SHORT_APP_NAME } alkalmazást az adatok védelmének biztosításához"

@@ -2779,6 +2779,9 @@
       "Canada": [
         "Канада"
       ],
+      "Canary Islands": [
+        "Канарскія астравы"
+      ],
       "Cape Verde": [
         "Каба-Вердэ"
       ],
@@ -4771,6 +4774,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Назвы некаторых вашых метак перавышаюць максімальнае абмежаванне па колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
+      ],
+      "Something went wrong while converting the address": [
+        "Нешта пайшло не так пры пераўтварэнні адраса"
       ],
       "Something went wrong while creating the address": [
         "Нешта пайшло не так пры стварэнні адраса"
@@ -8136,6 +8142,9 @@
       "Please select the folders you would like to import:": [
         "Выберыце папкі для імпартавання:"
       ],
+      "Please select the labels you would like to import:": [
+        "Выберыце меткі для імпартавання:"
+      ],
       "Please specify...": [
         "Вызначыце..."
       ],
@@ -10335,6 +10344,9 @@
       "See your team's availability": [
         "Прагляд даступнасці вашай каманды"
       ],
+      "Select an identity provider to start": [
+        "Выберыце пастаўшчыка пасведчанняў, каб пачаць"
+      ],
       "Select which Gmail address to connect": [
         "Выберыце, які адрас Gmail неабходна падключыць"
       ],
@@ -10623,11 +10635,6 @@
         "Каму: ${ to }"
       ]
     },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Выберыце пастаўшчыка пасведчанняў, каб пачаць"
-      ]
-    },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "Выдаліце адзін з існуючых календароў, каб дадаць новы."
@@ -10696,6 +10703,9 @@
       ],
       "Forgot username?": [
         "Забылі імя карыстальніка?"
+      ],
+      "Frequent sign-in problems": [
+        "Частыя праблемы ўваходу"
       ],
       "Get ${ BRAND_NAME } Pass": [
         "Атрымаць ${ BRAND_NAME } Pass"
@@ -16394,6 +16404,12 @@
       "Password copied to clipboard": [
         "Пароль скапіяваны ў буфер абмену"
       ],
+      "Password reminders disabled": [
+        "Напамін пароля адключаны"
+      ],
+      "Password reminders enabled": [
+        "Напамін пароля ўключаны"
+      ],
       "Password updated": [
         "Пароль абноўлены"
       ],
@@ -18157,6 +18173,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Уключае прафесійную электронную пошту @yourdomain.com, воблачнае сховішча з сумесным рэдагаваннем дакументаў, расклад і відэаканферэнцыі, менеджар пароляў, а таксама бяспечны ${ VPN_SHORT_APP_NAME } і многае іншае."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Імгненная дапамога ШІ і нашых экспертаў!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Удзельнікі, якія не выкарыстоўваюць 2ФА, атрымаюць ліст з просьбай уключыць яе як мага хутчэй. Карыстальнікі з адзіным уваходам напамін на сваю электронную пошту не атрымаюць."

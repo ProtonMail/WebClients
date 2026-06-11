@@ -2682,6 +2682,9 @@
       "Canada": [
         "Kanada"
       ],
+      "Canary Islands": [
+        "Kanarische Inseln"
+      ],
       "Cape Verde": [
         "Kap Verde"
       ],
@@ -4654,6 +4657,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Einige deiner Kategorienamen überschreiten die maximale Zeichenanzahl von ${ MAIL_APP_NAME }. Bitte passe den Import an, um diese Namen zu bearbeiten."
+      ],
+      "Something went wrong while converting the address": [
+        "Bei der Umwandlung der E-Mail-Adresse ist ein Fehler aufgetreten"
       ],
       "Something went wrong while creating the address": [
         "Beim Erstellen der E-Mail-Adresse ist ein Fehler aufgetreten"
@@ -7874,6 +7880,9 @@
       "Please select the folders you would like to import:": [
         "Bitte die zu importierenden Ordner auswählen:"
       ],
+      "Please select the labels you would like to import:": [
+        "Bitte wähle jene Kategorien aus, die du importieren möchtest:"
+      ],
       "Please specify...": [
         "Bitte präzisieren ..."
       ],
@@ -10025,6 +10034,9 @@
       "See your team's availability": [
         "Verfügbarkeit des Teams anzeigen"
       ],
+      "Select an identity provider to start": [
+        "Wähle einen Identitätsanbieter, um anzufangen"
+      ],
       "Select which Gmail address to connect": [
         "Wähle, welche Gmail-Adresse verbunden werden soll"
       ],
@@ -10309,11 +10321,6 @@
         "An: ${ to }"
       ]
     },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Wähle einen Identitätsanbieter, um anzufangen"
-      ]
-    },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "Um einen neuen Kalender hinzuzufügen, entferne einen bestehenden."
@@ -10382,6 +10389,9 @@
       ],
       "Forgot username?": [
         "Benutzernamen vergessen?"
+      ],
+      "Frequent sign-in problems": [
+        "Häufige Probleme bei der Anmeldung"
       ],
       "Get ${ BRAND_NAME } Pass": [
         "Hol dir ${ BRAND_NAME } Pass"
@@ -15948,6 +15958,12 @@
       "Password copied to clipboard": [
         "Passwort in die Zwischenablage kopiert."
       ],
+      "Password reminders disabled": [
+        "Passwort-Erinnerungen deaktiviert"
+      ],
+      "Password reminders enabled": [
+        "Passwort-Erinnerungen aktiviert"
+      ],
       "Password updated": [
         "Passwort aktualisiert"
       ],
@@ -17684,6 +17700,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Beinhaltet professionelle E-Mail-Adressen unter @yourdomain.com, Cloud-Speicher mit Funktionen zur gemeinsamen Dokumentbearbeitung, Terminplanung und Videokonferenzen, Passwortverwaltung, ein sicheres ${ VPN_SHORT_APP_NAME } und vieles mehr."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Sofortige KI-Unterstützung, menschliche Experten stehen bereit."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Mitglieder, die keine 2FA verwenden, erhalten eine E-Mail, in der sie aufgefordert werden, diese so bald wie möglich zu aktivieren. Single Sign-On-Benutzer, erhalten diese Aufforderung nicht."

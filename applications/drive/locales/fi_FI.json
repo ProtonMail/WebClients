@@ -88,6 +88,9 @@
       "Add photos": [
         "Lisää kuvia"
       ],
+      "Add storage": [
+        "Lisää tallennustilaa"
+      ],
       "Add to \"${ name }\" (${ photoCount } photo)": [
         "Lisää albumiin \"${ name }\" (${ photoCount } kuva)",
         "Lisää albumiin \"${ name }\" (${ photoCount } kuvaa)"
@@ -614,6 +617,9 @@
       "Let's talk": [
         "Keskustellaan"
       ],
+      "List layout": [
+        "Listanäkymä"
+      ],
       "Load": [
         "Lataa"
       ],
@@ -1111,9 +1117,6 @@
       ],
       "Upload and share files": [
         "Lähetä ja jaa tiedostoja"
-      ],
-      "Upload anyway": [
-        "Tallenna silti"
       ],
       "Upload file": [
         "Tallenna tiedosto"
@@ -2121,6 +2124,9 @@
       ],
       "Canada": [
         "Kanada"
+      ],
+      "Canary Islands": [
+        "Kanariansaaret"
       ],
       "Cape Verde": [
         "Kap Verde"
@@ -3216,9 +3222,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" on jo olemassa"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } ei voi yhdistää ulkoiseen tiliisi"
       ],
@@ -3414,9 +3417,6 @@
       "Failed to update public share node": [
         "Julkisen jakosolmun päivittäminen epäonnistui."
       ],
-      "File cannot be merged with folder": [
-        "Tiedostoa ei voida yhdistää kansioon"
-      ],
       "First name is too long": [
         "Etunimi on liian pitkä"
       ],
@@ -3554,9 +3554,6 @@
       ],
       "Payment process not supported": [
         "Maksutapahtumaa ei tueta"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Kuvien lähetys on väliaikaisesti pois käytöstä. Yritä myöhemmin uudelleen"
       ],
       "Please activate your search again": [
         "Aktivoi hakusi uudelleen"
@@ -3719,24 +3716,6 @@
       "The minimum donation amount is ${ price }": [
         "Lahjoituksen vähimmäismäärä on ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Alkuperäisen tiedoston uutta versiota ei ole vielä tallennettu. Yritä myöhemmin uudelleen"
-      ],
-      "The original file has missing active revision": [
-        "Alkuperäiseltä tiedostolta puuttuu aktiivinen versio"
-      ],
-      "The original file has missing hash key": [
-        "Alkuperäiseltä tiedostolta puuttuu hajautusarvon avain"
-      ],
-      "The original file has missing session key": [
-        "Alkuperäiseltä tiedostolta puuttuu istunnon avain"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Alkuperäistä tiedostoa ei ole vielä tallennettu. Yritä myöhemmin uudelleen"
-      ],
-      "The original folder not found": [
-        "Alkuperäistä kansiota ei löytynyt"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Ulkoisella tililläsi on liian monta kansiota. Muokkaa tuontia tai poista joitakin kansioita."
       ],
@@ -3787,9 +3766,6 @@
       ],
       "Upload failed": [
         "Lähetys epäonnistui"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Tallennus tähän kansioon on tilapäisesti poistettu estetty"
       ],
       "Username must begin with a letter or digit": [
         "Käyttäjätunnuksen on alettava kirjaimella tai numerolla"
@@ -5359,9 +5335,6 @@
       "for ${ price }": [
         "hintaan ${ price }"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Parasta lopputulosta varten, vältä suoratoistoa ja keskusmuistia kuormittavia toimintoja tai jaa tallennuksesi pienempiin eriin."
-      ],
       "Free 5GB encrypted storage to get started": [
         "5 Gt ilmaista salattua tallennustilaa päästäksesi alkuun"
       ],
@@ -5800,6 +5773,9 @@
       "Please select the folders you would like to import:": [
         "Valitse tuotavat kansiot:"
       ],
+      "Please select the labels you would like to import:": [
+        "Valitse tuotavat nimikkeet:"
+      ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Valitse ${ groupCount } ryhmään lisättävä(t) sähköpostiosoite tai -osoitteet.",
         "Valitse ${ groupCount } ryhmään lisättävä(t) sähköpostiosoite tai -osoitteet."
@@ -6108,9 +6084,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Tämä on nyt ${ defaultEmailAddress } uusien viestien lähettämistä varten."
       ],
-      "This item already exists in your library": [
-        "Kohde löytyy jo kirjastostasi"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Tätä kohdetta ei ole tallennettu valokuvakirjastoosi. Jos poistat sen tästä albumista, menetät pääsyn siihen pysyvästi.",
         "Osaa valituista kohteista ei ole tallennettu Kuvat-kirjastoosi. Jos poistat ne tästä albumista, menetät pääsyn niihin pysyvästi."
@@ -6148,26 +6121,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "Tämä poistaa lähettämäsi valitut kohteet pysyvästi."
       ],
-      "This will replace the existing file with the folder": [
-        "Tämä korvaa olemassa olevan tiedoston kansiolla"
-      ],
       "This will replace the existing folder or file with the file": [
         "Tämä korvaa olemassa olevan kansion tai tiedoston tiedostolla"
       ],
       "This will replace the existing folder or file with the folder": [
         "Tämä korvaa olemassa olevan kansion tai tiedoston kansiolla"
       ],
-      "This will replace the existing folder with the file": [
-        "Tämä korvaa olemassa olevan kansion tiedostolla"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Tämä kirjaa sinut ulos kaikilta tileiltä, jolle olet tällä hetkellä kirjautunut."
-      ],
-      "This will upload a new version of the file": [
-        "Tallentaa tiedostosta uuden version"
-      ],
-      "This will upload a new version of the folder": [
-        "Tämä tallentaa kansiosta uuden version"
       ],
       "Time": [
         "Aika"
@@ -6223,18 +6184,6 @@
       "Tracking": [
         "Seuranta"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Tiedoston \"${ name }\" siirto peruttiin"
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Kansion \"${ name }\" siirto peruttiin"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Tiedoston \"${ file.name }\" siirto ohitettiin"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Kansion \"${ folderName }\" siirto ohitettiin"
-      ],
       "Trash": [
         "Roskakori"
       ],
@@ -6277,6 +6226,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Päivitä nyt hankkiaksesi premium-ominaisuudet, -tuotteet ja -tallennustila erikoishintaan"
       ],
+      "Upgrade to get more storage space": [
+        "Päivitä saadaksesi lisää tallennustilaa"
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Päivitä säilyttääksesi ${ planTitle } tilauksesi edut."
       ],
@@ -6291,9 +6243,6 @@
       ],
       "Uploading": [
         "Tallennetaan"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Satojen tiedostojen samanaikainen tallennus voi vaikuttaa suorituskykyyn."
       ],
       "Uppercase and lowercase letters": [
         "Isot ja pienet kirjaimet"
@@ -7047,12 +6996,6 @@
       "Keep both": [
         "Säilytä molemmat"
       ],
-      "Keep both files": [
-        "Säilytä molemmat tiedostot"
-      ],
-      "Keep both folders": [
-        "Säilytä molemmat kansiot"
-      ],
       "Label messages as": [
         "Merkitse viestit tunnisteella"
       ],
@@ -7115,6 +7058,9 @@
       ],
       "New password": [
         "Uusi salasana"
+      ],
+      "Non-consensual intimate imagery": [
+        "Intiimit kuvat ilman kuvattavan suostumusta"
       ],
       "Not active": [
         "Ei aktiivinen"
@@ -7193,12 +7139,6 @@
       ],
       "Region": [
         "Alue"
-      ],
-      "Replace existing file": [
-        "Korvaa olemassa oleva tiedosto"
-      ],
-      "Replace existing folder": [
-        "Korvaa olemassa oleva kansio"
       ],
       "Replace existing folder or file": [
         "Korvaa olemassa oleva kansio tai tiedosto"
@@ -8875,14 +8815,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "Kohteen \"${ name }\" siirto roskakoriin epäonnistui"
       ],
-      "\"${ name }\" failed to be saved": [
-        "Kohteen \"${ name }\" tallennus epäonnistui"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" siirrettiin roskakoriin"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" tallennettiin"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Kohteen \"${ newName }\" uudelleennimeäminen epäonnistui"
@@ -9037,19 +8971,6 @@
       "Failed to rename device": [
         "Laitteen nimeäminen uudelleen epäonnistui"
       ],
-      "Failed to upload files: ${ err }": [
-        "Tiedostojen tallennus epäonnistui: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Tiedostoa tai kansiota \"${ filename }\" ja ${ count } muuta tallennetaan jo",
-        "Tiedostoa tai kansiota \"${ filename }\" ja ${ count } muuta tallennetaan jo"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Tiedostoa tai kansiota \"${ filename }\" tallennetaan jo"
-      ],
-      "File or folder is missing a name": [
-        "Tiedostolta tai kansiolta puuttuu nimi"
-      ],
       "File removed": [
         "Tiedosto poistettiin"
       ],
@@ -9070,9 +8991,6 @@
       "Move ${ n } item": [
         "Siirrä ${ n } kohde",
         "Siirrä ${ n } kohdetta"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Tila ei riitä ${ formattedTotal } tiedoston tallennukseen"
       ],
       "Public link access updated": [
         "Julkisen linkin käyttöoikeus päivitetty"
@@ -11970,12 +11888,6 @@
       "Drop to upload": [
         "Lataa pudottamalla"
       ],
-      "Duplicate file found": [
-        "Havaittiin tiedoston kaksoiskappale"
-      ],
-      "Duplicate folder found": [
-        "Löydettiin kansion kaksoiskappale"
-      ],
       "Edit billing address": [
         "Muokkaa laskutusosoitetta"
       ],
@@ -12266,6 +12178,9 @@
       "Other names": [
         "Muut nimet"
       ],
+      "Out of storage space": [
+        "Tallennustila loppunut"
+      ],
       "Payment failed": [
         "Maksu epäonnistui"
       ],
@@ -12274,9 +12189,6 @@
       ],
       "PayPal verification failed": [
         "PayPal-vahvistus epäonnistui"
-      ],
-      "Performance might be affected": [
-        "Voi vaikuttaa suorituskykyyn"
       ],
       "Phone numbers": [
         "Puhelinnumerot"
@@ -12531,9 +12443,6 @@
       "Uploaded": [
         "Tallennettu"
       ],
-      "Uploading a large file or folder": [
-        "Suuren tiedoston tai kansion tallennus"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Käytä ${ VPN_SHORT_APP_NAME }:ää tietosuojaa varten"
       ],
@@ -12693,6 +12602,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Mikäli ostit lahjakoodin tai sait sellaisen tueltamme, voit syöttää sen tähän."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Välitön tekoälyapu, ihmisasiantuntija valmiina auttamaan!"
       ],
       "Load image": [
         "Lataa kuva"

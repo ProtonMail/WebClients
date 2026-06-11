@@ -1041,9 +1041,6 @@
       "Upload and share files": [
         "Prześlij i udostępnij pliki"
       ],
-      "Upload anyway": [
-        "Prześlij mimo to"
-      ],
       "Upload file": [
         "Prześlij plik"
       ],
@@ -2935,9 +2932,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" już istnieje"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } nie może połączyć się z kontem zewnętrznym"
       ],
@@ -3127,9 +3121,6 @@
       "Failed to update public share node": [
         "Nie udało się zaktualizować publicznego węzła udostępniania"
       ],
-      "File cannot be merged with folder": [
-        "Plik nie może zostać scalony z folderem"
-      ],
       "First name is too long": [
         "Imię jest zbyt długie"
       ],
@@ -3261,9 +3252,6 @@
       ],
       "Payment process not supported": [
         "Przetwarzanie płatności nie jest obsługiwane"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Przesyłanie zdjęć jest tymczasowo wyłączone. Spróbuj ponownie później"
       ],
       "Please activate your search again": [
         "Włącz ponownie wyszukiwanie"
@@ -3412,24 +3400,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimalna kwota doładowania wynosi ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Nowa rewizja oryginalnego pliku nie została przesłana. Spróbuj ponownie później"
-      ],
-      "The original file has missing active revision": [
-        "Oryginalny plik nie posiada aktywnej rewizji"
-      ],
-      "The original file has missing hash key": [
-        "Oryginalny plik nie posiada kryptograficznego skrótu klucza"
-      ],
-      "The original file has missing session key": [
-        "Oryginalny plik nie posiada klucza sesji"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Oryginalny plik nie został przesłany. Spróbuj ponownie później"
-      ],
-      "The original folder not found": [
-        "Oryginalny folder nie został znaleziony"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Posiadasz zbyt wiele folderów na swoim koncie zewnętrznym. Dostosuj proces importowania, aby usunąć niektóre foldery."
       ],
@@ -3474,9 +3444,6 @@
       ],
       "Unknown payment token status": [
         "Token statusu płatności jest nieznany"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Przesyłanie tego folderu jest tymczasowo wyłączone"
       ],
       "Username must begin with a letter or digit": [
         "Nazwa użytkownika musi zaczynać się literą lub cyfrą"
@@ -5028,9 +4995,6 @@
       "Folders you sync from your computer will appear here.": [
         "Tutaj pojawią się foldery zsynchronizowane z urządzeniem."
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Ogranicz aktywność wymagającą dużej ilości pamięci (jak streaming) lub prześlij dane partiami."
-      ],
       "Free 5GB encrypted storage to get started": [
         "Darmowe 5 GB zaszyfrowanej przestrzeni dyskowej na początek"
       ],
@@ -5727,9 +5691,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "To Twój ${ defaultEmailAddress } do wysyłania nowych wiadomości."
       ],
-      "This item already exists in your library": [
-        "Ten element już istnieje"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Element nie jest zapisany w bibliotece zdjęć. Usunięcie go z albumu spowoduje trwałą utratę dostępu do niego.",
         "Niektóre elementy nie są zapisane w bibliotece zdjęć. Usunięcie ich z albumu spowoduje trwałą utratę dostępu do nich.",
@@ -5763,20 +5724,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "Spowoduje to trwałe usunięcie zaznaczonych elementów."
       ],
-      "This will replace the existing file with the folder": [
-        "Spowoduje to zastąpienie obecnego pliku folderem"
-      ],
-      "This will replace the existing folder with the file": [
-        "Spowoduje to zastąpienie obecnego folderu plikiem"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Ta czynność spowoduje wylogowanie ze wszystkich kont."
-      ],
-      "This will upload a new version of the file": [
-        "Spowoduje to przesłanie nowej wersji pliku"
-      ],
-      "This will upload a new version of the folder": [
-        "Spowoduje to przesłanie nowej wersji folderu"
       ],
       "Time": [
         "Czas"
@@ -5826,18 +5775,6 @@
       "Tracking": [
         "Śledzenie"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Transfer pliku \"${ name }\" został anulowany"
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Transfer folderu \"${ name }\" został anulowany"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Transfer pliku \"${ file.name }\" został pominięty"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Transfer folderu \"${ folderName }\" został pominięty"
-      ],
       "Trash": [
         "Kosz"
       ],
@@ -5879,9 +5816,6 @@
       ],
       "Uploading": [
         "Przesyłanie"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Przesyłanie dużej liczby plików na raz może wpłynąć na wydajność."
       ],
       "Uppercase and lowercase letters": [
         "Wielkie i małe litery"
@@ -6581,12 +6515,6 @@
       "Keep both": [
         "Zachowaj oba"
       ],
-      "Keep both files": [
-        "Zachowaj oba pliki"
-      ],
-      "Keep both folders": [
-        "Zachowaj oba foldery"
-      ],
       "Label messages as": [
         "Oznacz wiadomości etykietą"
       ],
@@ -6718,12 +6646,6 @@
       ],
       "Region": [
         "Województwo"
-      ],
-      "Replace existing file": [
-        "Zastąp obecny plik"
-      ],
-      "Replace existing folder": [
-        "Zastąp obecny folder"
       ],
       "Reveal password": [
         "Pokaż hasło"
@@ -8394,14 +8316,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "Przenoszenie elementu \"${ name }\" do kosza nie powiodło się"
       ],
-      "\"${ name }\" failed to be saved": [
-        "Nie udało się zapisać pliku \"${ name }\""
-      ],
       "\"${ name }\" moved to trash": [
         "Element \"${ name }\" został przeniesiony do kosza"
-      ],
-      "\"${ name }\" saved successfully": [
-        "Plik \"${ name }\" został zapisany"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Zmiana nazwy \"${ newName }\" nie powiodła się"
@@ -8544,21 +8460,6 @@
       "Failed to rename device": [
         "Nie udało się zmienić nazwy urządzenia"
       ],
-      "Failed to upload files: ${ err }": [
-        "Nie udało się przesłać plików: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Plik lub folder \"${ filename }\" i ${ count } inny jest już przesyłany",
-        "Plik lub folder \"${ filename }\" i ${ count } inne są już przesyłane",
-        "Plik lub folder \"${ filename }\" i ${ count } innych są już przesyłane",
-        "Plik lub folder \"${ filename }\" i ${ count } innych są już przesyłane"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Plik lub folder \"${ filename }\" jest już przesyłany"
-      ],
-      "File or folder is missing a name": [
-        "Plik lub folder nie posiada nazwy"
-      ],
       "File removed": [
         "Plik został usunięty"
       ],
@@ -8585,9 +8486,6 @@
         "Przenieś ${ n } elementy",
         "Przenieś ${ n } elementów",
         "Przenieś ${ n } elementów"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Brak przestrzeni dyskowej do przesłania ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Link został zaktualizowany"
@@ -11358,12 +11256,6 @@
       "Drop to upload": [
         "Upuść, aby przesłać"
       ],
-      "Duplicate file found": [
-        "Zduplikowany plik został znaleziony"
-      ],
-      "Duplicate folder found": [
-        "Zduplikowany folder został znaleziony"
-      ],
       "Edit billing address": [
         "Edytuj adres rozliczeniowy"
       ],
@@ -11643,9 +11535,6 @@
       "PayPal verification failed": [
         "Weryfikacja płatności PayPal nie powiodła się"
       ],
-      "Performance might be affected": [
-        "Może to wpłynąć na wydajność"
-      ],
       "Phone numbers": [
         "Numery telefonów"
       ],
@@ -11867,9 +11756,6 @@
       ],
       "Uploaded": [
         "Przesłano"
-      ],
-      "Uploading a large file or folder": [
-        "Przesyłanie większego pliku lub folderu"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Użyj ${ VPN_SHORT_APP_NAME } dla prywatności danych"

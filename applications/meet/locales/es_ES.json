@@ -53,6 +53,9 @@
       "Continue without camera": [
         "Continuar sin cámara"
       ],
+      "Continue without mic and camera": [
+        "Continuar sin micrófono ni cámara"
+      ],
       "Continue without microphone": [
         "Continuar sin micrófono"
       ],
@@ -466,9 +469,6 @@
       "Stop recording and download.": [
         "Detener la grabación y descargar."
       ],
-      "Toggle camera": [
-        "Activar/Desactivar cámara"
-      ],
       "Toggle chat": [
         "Mostrar/Ocultar Chat"
       ],
@@ -477,9 +477,6 @@
       ],
       "Toggle meeting details": [
         "Abrir/cerrar detalles de la reunión"
-      ],
-      "Toggle microphone": [
-        "Alternar micrófono"
       ],
       "Toggle participants": [
         "Ocultar participantes"
@@ -2039,9 +2036,6 @@
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Pega tu enlace de ${ MEET_APP_NAME } para unirte a una reunión segura"
       ],
-      "Permission denied": [
-        "Permiso denegado"
-      ],
       "Permissions not given.": [
         "Faltan los permisos."
       ],
@@ -2272,6 +2266,18 @@
       ],
       "Your always available meeting room": [
         "Tu sala de reuniones siempre disponible"
+      ],
+      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
+        "Tu navegador ha bloqueado el acceso a la cámara y al micrófono. Para habilitarlos, actualiza los ajustes del navegador y vuelve a unirte a la llamada."
+      ],
+      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
+        "Tu navegador ha bloqueado el acceso a la cámara. Para habilitarla, actualiza los ajustes del navegador y vuelve a unirte a la llamada."
+      ],
+      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
+        "Tu navegador ha bloqueado el acceso al micrófono. Para habilitarlo, actualiza los ajustes del navegador y vuelve a unirte a la llamada."
+      ],
+      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
+        "Tu navegador ha bloqueado el acceso al uso compartido de pantalla. Para habilitarlo, actualiza los ajustes del navegador y vuelve a unirte a la llamada."
       ],
       "Your browser or device isn’t supported": [
         "Tu navegador o dispositivo no es compatible"
@@ -2776,6 +2782,12 @@
       "Available Speakers": [
         "Altavoces disponibles"
       ],
+      "Camera and microphone are blocked": [
+        "Se han bloqueado la cámara y el micrófono"
+      ],
+      "Camera is blocked": [
+        "La cámara está bloqueada"
+      ],
       "Chat": [
         "Chat"
       ],
@@ -2858,6 +2870,9 @@
       "Messaging Layer Security": [
         "Seguridad de capa de mensajería (MLS)"
       ],
+      "Microphone is blocked": [
+        "El micrófono está bloqueado"
+      ],
       "Minicalendar": [
         "Minicalendario"
       ],
@@ -2893,6 +2908,9 @@
       ],
       "Schedule a meeting": [
         "Programar una reunión"
+      ],
+      "Screen share is blocked": [
+        "Se ha bloqueado el uso compartido de pantalla"
       ],
       "Secure meeting": [
         "Reunión segura"
