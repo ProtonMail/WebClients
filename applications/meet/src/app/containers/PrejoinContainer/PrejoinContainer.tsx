@@ -144,7 +144,7 @@ export const PrejoinContainer = ({
 
     return (
         <div className="h-full overflow-y-auto relative flex flex-column flex-nowrap">
-            {!isGuest && <OpenDesktopAppBanner meetingLink={shareLink} />}
+            <OpenDesktopAppBanner meetingLink={shareLink} />
             {isLoading && <div className="w-full h-full absolute top-0 left-0 z-up" />}
             <div className="w-full meet-container-padding-x shrink-0">
                 <PageHeader showAppSwitcher={false} isInstantJoin={isInstantJoin} />
