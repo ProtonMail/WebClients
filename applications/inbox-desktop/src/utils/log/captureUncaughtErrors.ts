@@ -28,6 +28,19 @@ export function isChromiumLoadError(reason: unknown): reason is ChromiumLoadErro
     );
 }
 
+// Node syscall errors (fs/net/dns), embed the path, so without a stable
+// title Sentry will open a new issue for each unique path.
+export type NodeSyscallError = Error & { code: string; syscall: string; errno: number; path?: string };
+
+export function isNodeSyscallError(reason: unknown): reason is NodeSyscallError {
+    return (
+        reason instanceof Error &&
+        typeof (reason as Partial<NodeSyscallError>).code === "string" &&
+        typeof (reason as Partial<NodeSyscallError>).syscall === "string" &&
+        typeof (reason as Partial<NodeSyscallError>).errno === "number"
+    );
+}
+
 // ERR_ABORTED and ERR_FAILED are dominated by lifecycle teardown (superseded navigation,
 // view destroyed, window closed), not real bugs.
 const SKIPPED_CHROMIUM_CODES = new Set(["ERR_ABORTED", "ERR_FAILED"]);
@@ -104,7 +117,19 @@ export function captureTopLevelRejection(reason: unknown, origin?: NodeJS.Uncaug
 
     mainLogger.error("uncaughtException", reason, origin);
 
-    if (reason instanceof Error) {
+    if (isNodeSyscallError(reason)) {
+        // Stable title so Sentry collapses ENOSPC/ENOENT/EACCES/... across users and paths.
+        sentryReport.reportMessage(`${reason.code} during ${reason.syscall}`, {
+            level: "fatal",
+            error: reason,
+            tags: { origin: origin ?? "uncaughtException" },
+            extras: {
+                path: reason.path,
+                errno: reason.errno,
+                originalMessage: reason.message,
+            },
+        });
+    } else if (reason instanceof Error) {
         sentryReport.reportException(reason, {
             tags: { origin: origin ?? "uncaughtException" },
         });
