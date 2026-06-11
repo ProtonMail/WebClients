@@ -111,6 +111,7 @@ export const getOrganizationAppRoutes = ({
                     hasGroups,
                 })));
     const canShowUsersAndAddressesSection =
+        permissions['account.user.read'] &&
         // The user must have a plan that supports multi-user
         hasMemberCapablePlan &&
         // If the organization is not active (end of subscription without renewal), we allow users to access this page to delete sub users
@@ -194,7 +195,7 @@ export const getOrganizationAppRoutes = ({
             text: hasExternalMemberCapableB2BPlan ? c('Title').t`Users` : c('Title').t`Users and addresses`,
             to: '/users-addresses',
             icon: 'users',
-            available: canHaveOrganization && canShowUsersAndAddressesSection,
+            available: canShowUsersAndAddressesSection,
             subsections: [
                 {
                     id: 'schedule-call',

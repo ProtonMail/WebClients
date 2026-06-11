@@ -3,8 +3,10 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import FileInput from '@proton/components/components/input/FileInput';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -36,6 +38,8 @@ const UploadCSVFileButton = ({
     const { createNotification } = useNotifications();
     const [errorModalProps, setErrorModalOpen, renderErrorModal] = useModalState();
     const [errors, setErrors] = useState<ReactNode[]>([]);
+    const [permissions] = useOrgPermissions();
+    const canCreate = !!permissions?.['account.user.create'];
 
     const csvTemplateButton = (
         <InlineLinkButton
@@ -172,22 +176,30 @@ const UploadCSVFileButton = ({
                     </div>
                 </CsvFormatErrorModal>
             )}
-            <FileInput
-                className={className}
-                accept=".csv"
-                onChange={async ({ target }) => {
-                    if (target.files && target.files.length) {
-                        setImporting(true);
-                        const files = Array.from(target.files);
-                        await handleFiles(files);
-                        setImporting(false);
-                    }
-                }}
-                loading={importing}
-                color={color}
+            <Tooltip
+                title={!canCreate ? c('Info').t`You do not have permission to create users.` : undefined}
+                openDelay={100}
             >
-                {children}
-            </FileInput>
+                <span>
+                    <FileInput
+                        className={className}
+                        accept=".csv"
+                        disabled={!canCreate}
+                        onChange={async ({ target }) => {
+                            if (target.files && target.files.length) {
+                                setImporting(true);
+                                const files = Array.from(target.files);
+                                await handleFiles(files);
+                                setImporting(false);
+                            }
+                        }}
+                        loading={importing}
+                        color={color}
+                    >
+                        {children}
+                    </FileInput>
+                </span>
+            </Tooltip>
         </>
     );
 };
