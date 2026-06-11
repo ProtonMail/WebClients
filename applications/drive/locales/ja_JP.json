@@ -1095,9 +1095,6 @@
       "Upload and share files": [
         "ファイルをアップロードして共有"
       ],
-      "Upload anyway": [
-        "とにかくアップロード"
-      ],
       "Upload file": [
         "ファイルをアップロード"
       ],
@@ -3241,9 +3238,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "「${ sanitizedName }」はすでに存在しています"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } から外部アカウントに接続できません"
       ],
@@ -3457,9 +3451,6 @@
       "Failed to update public share node": [
         "公開共有ノードの更新に失敗しました"
       ],
-      "File cannot be merged with folder": [
-        "ファイルはフォルダーと統合することができません"
-      ],
       "First name is too long": [
         "名前が長すぎます。"
       ],
@@ -3594,9 +3585,6 @@
       ],
       "Payment process not supported": [
         "支払い処理がサポートされていません"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "写真のアップロードは一時的に無効になっています。 後でもう一度試してください"
       ],
       "Please activate your search again": [
         "検索を再度有効にしてください"
@@ -3748,24 +3736,6 @@
       "The minimum donation amount is ${ price }": [
         "最低寄付金額は ${ price } です。"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "元のファイルの新しいリビジョンのアップロードは完了していません、後ほど再度お試しください"
-      ],
-      "The original file has missing active revision": [
-        "元のファイルの有効なリビジョンがありません"
-      ],
-      "The original file has missing hash key": [
-        "元のファイルのハッシュキーがありません"
-      ],
-      "The original file has missing session key": [
-        "元のファイルのセッションキーがありません"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "元のファイルのアップロードは完了していません、後ほど再度お試しください"
-      ],
-      "The original folder not found": [
-        "元のフォルダーが見つかりません"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "外部アカウントのフォルダが多すぎます。インポートをカスタマイズしてフォルダをいくつか削除してください。"
       ],
@@ -3819,9 +3789,6 @@
       ],
       "Upload failed": [
         "アップロードに失敗しました"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "このフォルダのアップロードは一時的に無効です"
       ],
       "Username must begin with a letter or digit": [
         "ユーザー名は英字か数字で始めなければいけません"
@@ -5360,9 +5327,6 @@
       "for ${ price }": [
         "${ price }で"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "最適な結果を得るには、ストリーミングやメモリ消費の大きな処理を避けるか、より小さな処理単位にアップロードを分割してください。"
-      ],
       "Free 5GB encrypted storage to get started": [
         "無料の5GB暗号化ストレージで始めましょう"
       ],
@@ -6095,9 +6059,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "これは新しいメッセージを送信するための${ defaultEmailAddress }です。"
       ],
-      "This item already exists in your library": [
-        "このアイテムはすでにライブラリに存在します"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "選択したアイテムのいくつかは写真ライブラリに保存されていません。このアルバムから削除すると、それらへのアクセスが永久に失われます。"
       ],
@@ -6137,26 +6098,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "アップロードした選択したアイテムは完全に削除されます。"
       ],
-      "This will replace the existing file with the folder": [
-        "既存のファイルをフォルダーで置き換えます"
-      ],
       "This will replace the existing folder or file with the file": [
         "既存のフォルダまたはファイルをファイルで置き換えます"
       ],
       "This will replace the existing folder or file with the folder": [
         "既存のフォルダまたはファイルをフォルダで置き換えます"
       ],
-      "This will replace the existing folder with the file": [
-        "既存のフォルダーをファイルで置き換えます"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "これにより、現在ログインしているすべてのアカウントからサインアウトされます。"
-      ],
-      "This will upload a new version of the file": [
-        "ファイルの新しいバージョンをアップロードします"
-      ],
-      "This will upload a new version of the folder": [
-        "フォルダーの新しいバージョンをアップロードします"
       ],
       "Time": [
         "時間"
@@ -6208,18 +6157,6 @@
       ],
       "Tracking": [
         "追跡"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "ファイル「${ name }」の転送をキャンセルしました"
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "フォルダー「${ name }」の転送をキャンセルしました"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "ファイル「${ file.name }」の転送をスキップしました"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "フォルダー「${ folderName }」の転送をスキップしました"
       ],
       "Trash": [
         "ごみ箱"
@@ -6274,9 +6211,6 @@
       ],
       "Uploading": [
         "アップロード中"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "同時にたくさんのファイルをアップロードすると、動作が遅くなる可能性があります。"
       ],
       "Uppercase and lowercase letters": [
         "大文字と小文字"
@@ -7018,12 +6952,6 @@
       "Keep both": [
         "両方を保持"
       ],
-      "Keep both files": [
-        "両方のファイルを保持"
-      ],
-      "Keep both folders": [
-        "両方のフォルダーを保持"
-      ],
       "Label messages as": [
         "メッセージにつけるラベル"
       ],
@@ -7164,12 +7092,6 @@
       ],
       "Region": [
         "都道府県"
-      ],
-      "Replace existing file": [
-        "既存のファイルを置き換え"
-      ],
-      "Replace existing folder": [
-        "既存のフォルダーを置き換え"
       ],
       "Replace existing folder or file": [
         "既存のフォルダまたはファイルを置き換え"
@@ -8805,14 +8727,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "「${ name }」のごみ箱への移動に失敗しました"
       ],
-      "\"${ name }\" failed to be saved": [
-        "「${ name }」の保存に失敗しました"
-      ],
       "\"${ name }\" moved to trash": [
         "「${ name }」がごみ箱に移動されました"
-      ],
-      "\"${ name }\" saved successfully": [
-        "「${ name }」を正常にを保存しました"
       ],
       "\"${ newName }\" failed to be renamed": [
         "「${ newName }」に名前を変更できませんでした"
@@ -8937,18 +8853,6 @@
       "Failed to rename device": [
         "デバイス名の変更に失敗しました"
       ],
-      "Failed to upload files: ${ err }": [
-        "ファイルのアップロードに失敗しました: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "ファイルまたはフォルダ「${ filename }」とその他 ${ count }件はすでにアップロード中です"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "ファイルまたはフォルダ \"${ filename }\" は既にアップロードされています"
-      ],
-      "File or folder is missing a name": [
-        "ファイルまたはフォルダーに名前がありません"
-      ],
       "File removed": [
         "ファイルが削除されました"
       ],
@@ -8966,9 +8870,6 @@
       ],
       "Move ${ n } item": [
         "${ n } 件のアイテムの移動"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "${ formattedTotal }をアップロードする容量がありません"
       ],
       "Public link access updated": [
         "公開リンクのアクセスが更新されました"
@@ -11908,12 +11809,6 @@
       "Drop to upload": [
         "ドロップしてアップロード"
       ],
-      "Duplicate file found": [
-        "重複しているファイルが見つかりました"
-      ],
-      "Duplicate folder found": [
-        "重複しているフォルダーが見つかりました"
-      ],
       "Edit billing address": [
         "請求先住所を編集"
       ],
@@ -12211,9 +12106,6 @@
       "PayPal verification failed": [
         "PayPal 認証に失敗しました。"
       ],
-      "Performance might be affected": [
-        "動作が少し遅くなる可能性があります。"
-      ],
       "Phone numbers": [
         "電話番号"
       ],
@@ -12468,9 +12360,6 @@
       ],
       "Uploaded": [
         "アップロード日時"
-      ],
-      "Uploading a large file or folder": [
-        "大きなファイルまたはフォルダーをアップロードしています"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "データプライバシーのために ${ VPN_SHORT_APP_NAME } を使用する"

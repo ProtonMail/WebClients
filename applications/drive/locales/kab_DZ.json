@@ -735,9 +735,6 @@
       "Upgrade now": [
         "Sali aswir tura"
       ],
-      "Upload anyway": [
-        "Sali-d akken yebɣu yili"
-      ],
       "Upload file": [
         "Sali afaylu"
       ],
@@ -2050,9 +2047,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" yella yakan"
-      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Tzemreḍ daɣen ad tesneqdeḍ ${ statusPageLink }"
       ],
@@ -2127,9 +2121,6 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Tuccḍa di tuqqna ar API Bitcoin."
-      ],
-      "File cannot be merged with folder": [
-        "Afaylu ur yezmir ara ad yemmezdi d ukaram"
       ],
       "Folder name cannot be empty.": [
         "Isem n ukaram ur ilaq ara ad yili d ilem."
@@ -2312,24 +2303,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Azal amezyan maḍi n usmad i izemren ad yettwarnu d ${ price }"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Acegger amaynut n ufaylu agejdan urɛad i d-yulk, ttxil-k ɛreḍ tikkelt niḍen tixki"
-      ],
-      "The original file has missing active revision": [
-        "Ixuṣṣ ucegger i ufaylu agejdan"
-      ],
-      "The original file has missing hash key": [
-        "Txuṣṣ tsarut n udway i ufaylu agejdan"
-      ],
-      "The original file has missing session key": [
-        "Txuṣṣ tsarut n tiɣimit i ufaylu agejdan"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Afaylu agejdan urɛad i d-yulk, ttxil-k ɛreḍ tikkelt niḍen tixki"
-      ],
-      "The original folder not found": [
-        "Ur yettwaf ara ukaram agejdan"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Aṭas n yikaramen i yellan deg umiḍan azɣaray. Ttxil-k·m sagen akatar i wakken ad tekkseḍ kra n yikaramen."
@@ -3701,18 +3674,6 @@
       "Total VPN connections": [
         "Asemday n tuqqniwin VPN"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Awelleh yettwasefsex i ufaylu \"${ name }\""
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Awelleh yettwasefsex i ukaram \"${ name }\""
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Awelleh yettwazgel i ufaylu \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Awelleh yettwazgel i ukaram \"${ folderName }\""
-      ],
       "Trash": [
         "Taqecwalt"
       ],
@@ -3739,9 +3700,6 @@
       ],
       "Uploading": [
         "Azdam"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Asili n tmiḍa n yifuyla ɣef tikkelt yezmer ad iḍur tamellit."
       ],
       "username": [
         "isem n useqdac"
@@ -4187,12 +4145,6 @@
       "Keep both": [
         "Eǧǧ isin"
       ],
-      "Keep both files": [
-        "Eǧǧ ifuyla isin"
-      ],
-      "Keep both folders": [
-        "Eǧǧ ikaramen isin"
-      ],
       "Label messages as": [
         "Semmi i yiznan am"
       ],
@@ -4306,12 +4258,6 @@
       ],
       "Region": [
         "Tamnaḍt"
-      ],
-      "Replace existing file": [
-        "Semselsi afaylu yellan"
-      ],
-      "Replace existing folder": [
-        "Semselsi akaram yellan"
       ],
       "Reveal password": [
         "Sken awal uffir"
@@ -4975,14 +4921,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name } d awezɣi ad yettwarr ɣer tqecwalt"
       ],
-      "\"${ name }\" failed to be saved": [
-        "Asekles n \"${ name }\" ur yeddi ara"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" imutti ɣer tqecwalt"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" yettwasekles akken iwata"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Abeddel n yisem n \"${ newName }\" ur yeddi ara"
@@ -5062,19 +5002,6 @@
       "Failed to move, please try again": [
         "Asmutti ur yeddi, ttxil ɛreḍ tikkelt-nniḍen"
       ],
-      "Failed to upload files: ${ err }": [
-        "Yecceḍ usali n yifuyla: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Afaylu neɣ akaram \"${ filename }\" d ${ count } wiyeḍ yuli-d yakan",
-        "Akaram neɣ afaylu \"${ filename }\" d ${ count } wiyaḍ ulin-d yakan"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Akaram neɣ afaylu \"${ filename }\" yuli-d yakan"
-      ],
-      "File or folder is missing a name": [
-        "Afaylu neɣ akaram ixuṣṣ-as yisem"
-      ],
       "Link copied to clipboard": [
         "Aseɣwen yettwanɣel ɣer ɣefwafus"
       ],
@@ -5085,9 +5012,6 @@
       "Move ${ n } item": [
         "Smutti ${ n } uferdis",
         "Smutti ${ n } yiferdisen"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Ulac tallunt i usali n ${ formattedTotal }"
       ],
       "The link to your item was deleted": [
         "Aseɣwen ɣer uferdis-inek m yettwakkes"
@@ -6209,12 +6133,6 @@
       "Drop to upload": [
         "Ẓuɣer asali"
       ],
-      "Duplicate file found": [
-        "Afaylu uslig yettwaf"
-      ],
-      "Duplicate folder found": [
-        "Dossier doublon trouvé"
-      ],
       "Edit contact": [
         "Ẓreg anermis"
       ],
@@ -6518,9 +6436,6 @@
       ],
       "Uploaded": [
         "Yuli"
-      ],
-      "Uploading a large file or folder": [
-        "Asali n ufaylu neɣ n ukaram ameqqran"
       ],
       "Verification failed": [
         "Icceḍ usenqed"

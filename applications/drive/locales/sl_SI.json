@@ -1038,9 +1038,6 @@
       "Upload and share files": [
         "Naloži in deli datoteke"
       ],
-      "Upload anyway": [
-        "Vseeno naloži"
-      ],
       "Upload file": [
         "Naloži datoteko"
       ],
@@ -3091,9 +3088,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "»${ sanitizedName }« že obstaja"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } se ne more povezati z vašim zunanjim računom"
       ],
@@ -3289,9 +3283,6 @@
       "Failed to update public share node": [
         "Ni uspelo posodobiti vozlišča javne povezave"
       ],
-      "File cannot be merged with folder": [
-        "Datoteke ni mogoče združiti z mapo"
-      ],
       "First name is too long": [
         "Ime je predolgo"
       ],
@@ -3435,9 +3426,6 @@
       ],
       "Payment process not supported": [
         "Postopek plačila ni podprt"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Nalaganje fotografij je začasno onemogočeno. Prosimo, poskusite kasneje"
       ],
       "Please activate your search again": [
         "Prosimo, ponovno aktivirajte iskanje."
@@ -3589,24 +3577,6 @@
       "The minimum donation amount is ${ price }": [
         "Najmanjši znesek donacije je ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Nova različica izvirne datoteke še ni naložena, poskusite znova pozneje"
-      ],
-      "The original file has missing active revision": [
-        "Izvirni datoteki manjka aktivna revizija"
-      ],
-      "The original file has missing hash key": [
-        "Izvirni datoteki manjka zgoščevalni ključ"
-      ],
-      "The original file has missing session key": [
-        "Izvirni datoteki manjka ključ seje"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Izvirna datoteka še ni naložena, poskusite znova pozneje"
-      ],
-      "The original folder not found": [
-        "Izvirne mape ni mogoče najti"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "V vašem zunanjem računu je preveč map. Prilagodite uvoz in izbrišite nekaj map."
       ],
@@ -3657,9 +3627,6 @@
       ],
       "Upload failed": [
         "Nalaganje ni uspelo"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Nalaganje v to mapo je začasno onemogočeno."
       ],
       "Username must begin with a letter or digit": [
         "Uporabniško ime se mora začeti s črko ali številko"
@@ -5255,9 +5222,6 @@
       "for ${ price }": [
         "za ${ price }"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Za najboljše rezultate se izogibajte pretakanju in dejavnostim, ki zahtevajo veliko pomnilnika, ali pa nalaganje razdelite na manjše sklope."
-      ],
       "Free 5GB encrypted storage to get started": [
         "Brezplačna šifrirana shramba v velikosti 5 GB za začetek"
       ],
@@ -5981,9 +5945,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "To je zdaj vaš naslov ${ defaultEmailAddress } za pošiljanje novih sporočil."
       ],
-      "This item already exists in your library": [
-        "Ta predmet že obstaja v vaši knjižnici"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Ta predmet ni shranjen v vaši knjižnici s fotografijami. Če jo odstranite iz tega albuma, boste izgubili dostop do nje.",
         "Nekateri izbrani predmeti niso shranjeni v vaši knjižnici s fotografijami. Če jih odstranite iz tega albuma, boste izgubili dostop do njih.",
@@ -6023,26 +5984,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "To dejanje bo trajno izbrisalo izbrane predmete, ki ste jih naložili."
       ],
-      "This will replace the existing file with the folder": [
-        "To bo zamenjalo obstoječo datoteko z mapo"
-      ],
       "This will replace the existing folder or file with the file": [
         "To bo zamenjalo obstoječo mapo ali datoteko z datoteko"
       ],
       "This will replace the existing folder or file with the folder": [
         "To bo zamenjalo obstoječo mapo ali datoteko z mapo"
       ],
-      "This will replace the existing folder with the file": [
-        "To bo zamenjalo obstoječo mapo z datoteko"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "S tem se boste odjavili iz vseh računov, v katere ste trenutno prijavljeni."
-      ],
-      "This will upload a new version of the file": [
-        "To bo naložilo novo različico datoteke"
-      ],
-      "This will upload a new version of the folder": [
-        "S tem boste naložili novo različico mape"
       ],
       "Time": [
         "Čas"
@@ -6095,18 +6044,6 @@
       "Tracking": [
         "Sledenje"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Prenos za datoteko »${ name }« je preklican"
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Prenos za mapo »${ name }« je preklican"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Prenos je preskočen za datoteko \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Prenos je preskočen za mapo \"${ folderName }\""
-      ],
       "Trash": [
         "Smetnjak"
       ],
@@ -6157,9 +6094,6 @@
       ],
       "Uploading": [
         "Nalaganje"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Nalaganje več sto datotek hkrati lahko vpliva na zmogljivost."
       ],
       "Uppercase and lowercase letters": [
         "Velike in male črke"
@@ -6907,12 +6841,6 @@
       "Keep both": [
         "Obdrži oboje"
       ],
-      "Keep both files": [
-        "Obdrži obe datoteki"
-      ],
-      "Keep both folders": [
-        "Obdrži obe mapi"
-      ],
       "Label messages as": [
         "Dodaj sporočilom oznako"
       ],
@@ -7050,12 +6978,6 @@
       ],
       "Region": [
         "Regija"
-      ],
-      "Replace existing file": [
-        "Zamenjaj obstoječo datoteko"
-      ],
-      "Replace existing folder": [
-        "Zamenjaj obstoječo mapo"
       ],
       "Replace existing folder or file": [
         "Zamenjaj obstoječo mapo ali datoteko"
@@ -8729,14 +8651,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "»${ name }« ni bilo mogoče premakniti v smetnjak"
       ],
-      "\"${ name }\" failed to be saved": [
-        "»${ name }« ni bilo mogoče shraniti"
-      ],
       "\"${ name }\" moved to trash": [
         "»${ name }« premaknjen v smetnjak"
-      ],
-      "\"${ name }\" saved successfully": [
-        "»${ name }« je uspešno shranjen"
       ],
       "\"${ newName }\" failed to be renamed": [
         "»${ newName }« ni bilo mogoče preimenovati"
@@ -8870,21 +8786,6 @@
       "Failed to rename device": [
         "Naprave ni bilo mogoče preimenovati."
       ],
-      "Failed to upload files: ${ err }": [
-        "Datotek ni bilo mogoče naložiti: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Datoteka ali mapa »${ filename }« in ${ count } drugo se že nalaga",
-        "Datoteka ali mapa »${ filename }« in ${ count } drugi se že nalagata",
-        "Datoteka ali mapa »${ filename }« in ${ count } drugi se že nalagajo",
-        "Datoteka ali mapa »${ filename }« in ${ count } drugih se že nalaga"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Datoteka ali mapa »${ filename }« se že nalaga"
-      ],
-      "File or folder is missing a name": [
-        "Datoteki ali mapi manjka ime"
-      ],
       "File removed": [
         "Datoteka je odstranjena."
       ],
@@ -8911,9 +8812,6 @@
         "Premakni ${ n } predmeta",
         "Premakni ${ n } predmete",
         "Premakni ${ n } predmete"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Ni dovolj prostora za nalaganje ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Dostop do javne povezave posodobljen"
@@ -11595,12 +11493,6 @@
       "Drop to upload": [
         "Spusti za nalaganje"
       ],
-      "Duplicate file found": [
-        "Najdene so podvojene datoteke"
-      ],
-      "Duplicate folder found": [
-        "Najdene so podvojene mape"
-      ],
       "Edit billing address": [
         "Uredi naslov za izstavitev računa"
       ],
@@ -11880,9 +11772,6 @@
       "PayPal verification failed": [
         "Preverjanje plačila s PayPal ni uspelo"
       ],
-      "Performance might be affected": [
-        "To lahko vpliva na delovanje"
-      ],
       "Phone numbers": [
         "Telefonske številke"
       ],
@@ -12119,9 +12008,6 @@
       ],
       "Uploaded": [
         "Naloženo"
-      ],
-      "Uploading a large file or folder": [
-        "Nalaganje velike datoteke ali mape"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Uporabljajte ${ VPN_SHORT_APP_NAME } za zasebnost podatkov"

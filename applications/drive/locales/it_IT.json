@@ -1084,9 +1084,6 @@
       "Upload and share files": [
         "Carica e condividi file"
       ],
-      "Upload anyway": [
-        "Carica comunque"
-      ],
       "Upload file": [
         "Carica file"
       ],
@@ -3200,9 +3197,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "«${ sanitizedName }» esiste già."
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } non può connettersi al tuo account esterno"
       ],
@@ -3413,9 +3407,6 @@
       "Failed to update public share node": [
         "Impossibile aggiornare il nodo di condivisione pubblico"
       ],
-      "File cannot be merged with folder": [
-        "Il file non può essere unito alla cartella"
-      ],
       "First name is too long": [
         "Il nome è troppo lungo"
       ],
@@ -3550,9 +3541,6 @@
       ],
       "Payment process not supported": [
         "Processo di pagamento non supportato"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Il caricamento delle foto è temporaneamente disabilitato. Riprova più tardi."
       ],
       "Please activate your search again": [
         "Attiva nuovamente la tua ricerca"
@@ -3712,24 +3700,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "L'importo minimo di credito che può essere aggiunto è di ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "La nuova revisione del file originale non è ancora stata caricata, riprova più tardi"
-      ],
-      "The original file has missing active revision": [
-        "Il file originale ha una revisione attiva mancante"
-      ],
-      "The original file has missing hash key": [
-        "Il file originale ha una chiave hash mancante"
-      ],
-      "The original file has missing session key": [
-        "Il file originale ha una chiave di sessione mancante"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Il file originale non è ancora stato caricato, riprova più tardi"
-      ],
-      "The original folder not found": [
-        "La cartella originale non è stata trovata"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Ci sono troppe cartelle nel tuo account esterno. Personalizza l'importazione per eliminare alcune cartelle."
       ],
@@ -3783,9 +3753,6 @@
       ],
       "Upload failed": [
         "Caricamento non riuscito"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Il caricamento per questa cartella è temporaneamente disabilitato"
       ],
       "Username must begin with a letter or digit": [
         "Il nome utente deve iniziare con una lettera o un numero."
@@ -5325,9 +5292,6 @@
       "Folders you sync from your computer will appear here.": [
         "Le cartelle che sincronizzi dal tuo computer appariranno qui."
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Per ottenere risultati migliori, evita lo streaming e le attività che richiedono molta memoria o suddividi il caricamento in batch più piccoli."
-      ],
       "Free 5GB encrypted storage to get started": [
         "5 GB di spazio di archiviazione crittografato gratuito per iniziare"
       ],
@@ -6073,9 +6037,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Questo ora è il tuo ${ defaultEmailAddress } per l'invio di nuovi messaggi."
       ],
-      "This item already exists in your library": [
-        "Questo elemento è già presente nella tua libreria"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Questo elemento non è salvato nella tua libreria Foto. Se lo rimuovi da questo album, perderai definitivamente l'accesso.",
         "Alcuni degli elementi non sono salvati nella tua libreria Foto. Se li rimuovi da questo album, perderai definitivamente l'accesso."
@@ -6116,26 +6077,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "Questo eliminerà definitivamente gli elementi selezionati che hai caricato."
       ],
-      "This will replace the existing file with the folder": [
-        "Questo sostituirà il file esistente con la cartella."
-      ],
       "This will replace the existing folder or file with the file": [
         "Questo sostituirà la cartella o il file esistente con il file."
       ],
       "This will replace the existing folder or file with the folder": [
         "Questo sostituirà il file o la cartella esistente con la cartella."
       ],
-      "This will replace the existing folder with the file": [
-        "Questo sostituirà la cartella esistente con il file."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Verrai disconnesso da tutti gli account attualmente connessi."
-      ],
-      "This will upload a new version of the file": [
-        "Si importerà una nuova versione del file."
-      ],
-      "This will upload a new version of the folder": [
-        "Si importerà una nuova versione della cartella."
       ],
       "Time": [
         "Ora"
@@ -6188,18 +6137,6 @@
       "Tracking": [
         "Monitoraggio"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Trasferimento annullato per il file \"${ name }\""
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Trasferimento annullato per la cartella \"${ name }\""
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Trasferimento ignorato per il file \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Trasferimento ignorato per la cartella \"${ folderName }\""
-      ],
       "Trash": [
         "Cestino"
       ],
@@ -6250,9 +6187,6 @@
       ],
       "Uploading": [
         "Caricamento"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Caricare centinaia di file in una sola volta può avere un impatto sulle prestazioni."
       ],
       "Uppercase and lowercase letters": [
         "Lettere maiuscole e minuscole"
@@ -6992,12 +6926,6 @@
       "Keep both": [
         "Tieni entrambi"
       ],
-      "Keep both files": [
-        "Mantieni entrambi i file"
-      ],
-      "Keep both folders": [
-        "Mantieni entrambe le cartella"
-      ],
       "Label messages as": [
         "Etichetta messaggi come"
       ],
@@ -7138,12 +7066,6 @@
       ],
       "Region": [
         "Regione"
-      ],
-      "Replace existing file": [
-        "Sostituisci il file esistente"
-      ],
-      "Replace existing folder": [
-        "Sostituisci la cartella esistente"
       ],
       "Replace existing folder or file": [
         "Sostituisci la cartella esistente o il file"
@@ -8877,14 +8799,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "Spostamento di \"${ name }\" nel cestino non riuscito"
       ],
-      "\"${ name }\" failed to be saved": [
-        "Salvataggio di \"${ name }\" non riuscito"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" spostato nel cestino"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" salvato con successo"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Rinominazione di \"${ newName }\" non riuscita"
@@ -9034,19 +8950,6 @@
       "Failed to rename device": [
         "Impossibile rinominare il dispositivo"
       ],
-      "Failed to upload files: ${ err }": [
-        "Caricamento dei file non riuscito: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Il file o la cartella \"${ filename }\" e ${ count } altro sono già in caricamento",
-        "Il file o la cartella \"${ filename }\" e ${ count } altri sono già in caricamento"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Il file o la cartella \"${ filename }\" è già in fase di caricamento"
-      ],
-      "File or folder is missing a name": [
-        "Al file o alla cartella manca un nome"
-      ],
       "File removed": [
         "File rimosso"
       ],
@@ -9067,9 +8970,6 @@
       "Move ${ n } item": [
         "Sposta ${ n } elemento",
         "Sposta ${ n } elementi"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Spazio insufficiente per caricare ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Accesso al collegamento pubblico aggiornato"
@@ -11985,12 +11885,6 @@
       "Drop to upload": [
         "Trascina per caricare"
       ],
-      "Duplicate file found": [
-        "File duplicato trovato"
-      ],
-      "Duplicate folder found": [
-        "Cartella duplicata trovata"
-      ],
       "Edit billing address": [
         "Modifica indirizzo di fatturazione"
       ],
@@ -12293,9 +12187,6 @@
       "PayPal verification failed": [
         "Verifica PayPal non riuscita"
       ],
-      "Performance might be affected": [
-        "Le prestazioni potrebbero risentirne"
-      ],
       "Phone numbers": [
         "Numeri di telefono"
       ],
@@ -12545,9 +12436,6 @@
       ],
       "Uploaded": [
         "Caricato"
-      ],
-      "Uploading a large file or folder": [
-        "File di grandi dimensioni o cartella in caricamento."
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Usa ${ VPN_SHORT_APP_NAME } per la privacy dei dati"

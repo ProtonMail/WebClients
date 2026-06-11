@@ -91,6 +91,9 @@
       "Add photos": [
         "Ajouter des photos"
       ],
+      "Add storage": [
+        "Ajouter de l'espace de stockage"
+      ],
       "Add to \"${ name }\" (${ photoCount } photo)": [
         "Ajouter à « ${ name } » (${ photoCount } photo)",
         "Ajouter à « ${ name } » (${ photoCount } photos)"
@@ -620,6 +623,9 @@
       "Let's talk": [
         "Parlons-nous"
       ],
+      "List layout": [
+        "Disposition en liste"
+      ],
       "Load": [
         "Charger"
       ],
@@ -1129,9 +1135,6 @@
       ],
       "Upload and share files": [
         "Importer et partager des fichiers"
-      ],
-      "Upload anyway": [
-        "Importer quand même"
       ],
       "Upload file": [
         "Importer un fichier"
@@ -2259,6 +2262,9 @@
       ],
       "Canada": [
         "Canada"
+      ],
+      "Canary Islands": [
+        "Îles Canaries"
       ],
       "Cape Verde": [
         "Cap-Vert"
@@ -3398,9 +3404,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "« ${ sanitizedName } » existe déjà."
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } ne parvient pas à se connecter à votre compte externe."
       ],
@@ -3629,9 +3632,6 @@
       "Failed to update public share node": [
         "La mise à jour du nœud de partage public n'a pas abouti."
       ],
-      "File cannot be merged with folder": [
-        "Le fichier ne peut pas être fusionné avec le dossier."
-      ],
       "First name is too long": [
         "Le prénom est trop long."
       ],
@@ -3772,9 +3772,6 @@
       ],
       "Payment process not supported": [
         "Le traitement du paiement n'est pas pris en charge."
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Le chargement de photos est temporairement désactivé. Réessayez plus tard."
       ],
       "Please activate your search again": [
         "Veuillez réactiver votre recherche."
@@ -3943,24 +3940,6 @@
       "The minimum donation amount is ${ price }": [
         "Le montant minimum du don est de ${ price }."
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "La nouvelle révision du fichier d'origine n'est pas encore chargée, nous vous invitons à réessayer plus tard."
-      ],
-      "The original file has missing active revision": [
-        "Il manque une révision active pour le fichier d'origine."
-      ],
-      "The original file has missing hash key": [
-        "Il manque une clé de hachage pour le fichier d'origine."
-      ],
-      "The original file has missing session key": [
-        "Il manque une clé de session pour le fichier d'origine."
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Le fichier d'origine n'est pas encore chargé, nous vous invitons à réessayer plus tard."
-      ],
-      "The original folder not found": [
-        "Le dossier d'origine est introuvable."
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Il y a trop de dossiers dans votre compte externe. Nous vous invitons à personnaliser l'importation pour supprimer certains dossiers."
       ],
@@ -4014,9 +3993,6 @@
       ],
       "Upload failed": [
         "L'importation n'a pas abouti."
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "L'importation de ce dossier a été temporairement désactivée."
       ],
       "Username must begin with a letter or digit": [
         "Le nom d'utilisateur doit commencer par une lettre ou un chiffre."
@@ -5686,9 +5662,6 @@
       "for ${ price }": [
         "pour ${ price }"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Pour de meilleurs résultats, évitez les activités de streaming et gourmandes en mémoire ou réduisez la taille de votre envoi."
-      ],
       "For just ${ bundlePlanPriceInline }": [
         "Pour seulement ${ bundlePlanPriceInline }"
       ],
@@ -6175,6 +6148,9 @@
       "Please select the folders you would like to import:": [
         "Sélectionnez les dossiers que vous voulez importer :"
       ],
+      "Please select the labels you would like to import:": [
+        "Veuillez sélectionner les labels que vous souhaitez importer :"
+      ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Sélectionnez l'adresse ou les adresses e-mail à ajouter à ${ groupCount } groupe.",
         "Sélectionnez l'adresse ou les adresses e-mail à ajouter à ${ groupCount } groupes."
@@ -6510,9 +6486,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Ceci est désormais votre ${ defaultEmailAddress } pour envoyer de nouveaux messages."
       ],
-      "This item already exists in your library": [
-        "Cet élément existe déjà dans votre bibliothèque."
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Cet élément n'est pas enregistré dans votre bibliothèque de photos. Si vous le supprimez de cet album, vous n'y aurez plus accès de manière permanente.",
         "Certains des éléments sélectionnés ne sont pas enregistrés dans votre bibliothèque de photos. Si vous les supprimez de cet album, vous n'y aurez plus accès de manière permanente."
@@ -6553,26 +6526,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "Ceci supprimera définitivement les éléments sélectionnés que vous avez importés."
       ],
-      "This will replace the existing file with the folder": [
-        "Cela remplacera le fichier existant par le dossier."
-      ],
       "This will replace the existing folder or file with the file": [
         "Cela remplacera le dossier ou le fichier existant par le fichier."
       ],
       "This will replace the existing folder or file with the folder": [
         "Cela remplacera le dossier ou le fichier existant par le dossier."
       ],
-      "This will replace the existing folder with the file": [
-        "Cela remplacera le dossier existant par le fichier."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Ceci vous déconnectera de tous les comptes actuellement connectés."
-      ],
-      "This will upload a new version of the file": [
-        "Cela importera une nouvelle version du fichier."
-      ],
-      "This will upload a new version of the folder": [
-        "Cela importera une nouvelle version du dossier."
       ],
       "Time": [
         "Heure"
@@ -6631,18 +6592,6 @@
       "Tracking": [
         "Traqueurs"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Le transfert a été annulé pour le fichier « ${ name } »."
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Le transfert a été annulé pour le dossier « ${ name } »."
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Le transfert a été ignoré pour le fichier « ${ file.name } »."
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Le transfert a été ignoré pour le dossier « ${ folderName } »."
-      ],
       "Trash": [
         "Corbeille"
       ],
@@ -6694,6 +6643,9 @@
       "Upgrade or clear space anytime to bring over the rest": [
         "Changer d'abonnement ou libérer de l'espace à tout moment pour transférer le reste"
       ],
+      "Upgrade to get more storage space": [
+        "Mettez à niveau pour obtenir davantage d'espace de stockage"
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Passez à la version supérieure pour conserver vos avantages de ${ planTitle }."
       ],
@@ -6708,9 +6660,6 @@
       ],
       "Uploading": [
         "Chargement en cours"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Le téléchargement de centaines de fichiers en même temps peut réduire les performances."
       ],
       "Uppercase and lowercase letters": [
         "Lettres majuscules et minuscules"
@@ -7533,12 +7482,6 @@
       "Keep both": [
         "Garder les deux"
       ],
-      "Keep both files": [
-        "Garder les deux fichiers"
-      ],
-      "Keep both folders": [
-        "Garder les deux dossiers"
-      ],
       "Label messages as": [
         "Labelliser les messages"
       ],
@@ -7613,6 +7556,9 @@
       ],
       "New password": [
         "Nouveau mot de passe"
+      ],
+      "Non-consensual intimate imagery": [
+        "Images intimes non consenties"
       ],
       "Not active": [
         "Inactif"
@@ -7694,12 +7640,6 @@
       ],
       "Region": [
         "Région"
-      ],
-      "Replace existing file": [
-        "Remplacer le fichier existant"
-      ],
-      "Replace existing folder": [
-        "Remplacer le dossier existant"
       ],
       "Replace existing folder or file": [
         "Remplacer le dossier ou le fichier existant"
@@ -9514,14 +9454,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "« ${ name } » n'a pas pu être déplacé dans le dossier Corbeille."
       ],
-      "\"${ name }\" failed to be saved": [
-        "« ${ name } » n'a pas pu être enregistré."
-      ],
       "\"${ name }\" moved to trash": [
         "« ${ name } » a été déplacé dans le dossier Corbeille."
-      ],
-      "\"${ name }\" saved successfully": [
-        "« ${ name } » a été enregistré."
       ],
       "\"${ newName }\" failed to be renamed": [
         "« ${ newName } » n'a pas pu être renommé."
@@ -9683,19 +9617,6 @@
       "Failed to rename device": [
         "Le nom de l'appareil n'a pas pu être modifié."
       ],
-      "Failed to upload files: ${ err }": [
-        "Les fichiers n'ont pas pu être chargés : ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Le fichier ou dossier « ${ filename } » et ${ count } autre sont déjà en cours de chargement.",
-        "Le fichier ou dossier « ${ filename } » et ${ count } autres sont déjà en cours de chargement."
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Le fichier ou dossier « ${ filename } » est déjà en cours de chargement."
-      ],
-      "File or folder is missing a name": [
-        "Le fichier ou le dossier n'a pas de nom."
-      ],
       "File removed": [
         "Le fichier a été retiré."
       ],
@@ -9716,9 +9637,6 @@
       "Move ${ n } item": [
         "Déplacer ${ n } élément",
         "Déplacer ${ n } éléments"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "L'espace est insuffisant pour charger ${ formattedTotal }."
       ],
       "Public link access updated": [
         "L'accès au lien public a été mis à jour."
@@ -12762,12 +12680,6 @@
       "Drop to upload": [
         "Déposer pour charger"
       ],
-      "Duplicate file found": [
-        "Un fichier en double a été trouvé."
-      ],
-      "Duplicate folder found": [
-        "Un dossier portant le même nom a été trouvé."
-      ],
       "Edit billing address": [
         "Modifier l'adresse de facturation"
       ],
@@ -13070,6 +12982,9 @@
       "Other names": [
         "Autres noms"
       ],
+      "Out of storage space": [
+        "À court d'espace de stockage"
+      ],
       "Payment failed": [
         "Le paiement n'a pas abouti."
       ],
@@ -13078,9 +12993,6 @@
       ],
       "PayPal verification failed": [
         "La vérification PayPal n'a pas abouti."
-      ],
-      "Performance might be affected": [
-        "Ceci peut affecter les performances."
       ],
       "Phone numbers": [
         "Numéros de téléphone"
@@ -13344,9 +13256,6 @@
       "Uploaded": [
         "Importé"
       ],
-      "Uploading a large file or folder": [
-        "Chargement d'un fichier ou d'un dossier volumineux"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilisez ${ VPN_SHORT_APP_NAME } pour la confidentialité des données"
       ],
@@ -13521,6 +13430,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si vous avez acheté un code-cadeau ou si vous en avez reçu un de notre équipe support, vous pouvez le saisir ici."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Une assistance IA immédiate, avec un expert à votre disposition !"
       ],
       "Load image": [
         "Charger l'image"

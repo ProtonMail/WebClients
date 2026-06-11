@@ -91,6 +91,9 @@
       "Add photos": [
         "Lägg till foton"
       ],
+      "Add storage": [
+        "Lägg till lagringsutrymme"
+      ],
       "Add to \"${ name }\" (${ photoCount } photo)": [
         "Lägg till i ”${ name }” (${ photoCount } foto)",
         "Lägg till i ”${ name }” (${ photoCount } foton)"
@@ -620,6 +623,9 @@
       "Let's talk": [
         "Låt oss prata!"
       ],
+      "List layout": [
+        "Listlayout"
+      ],
       "Load": [
         "Ladda"
       ],
@@ -1126,9 +1132,6 @@
       ],
       "Upload and share files": [
         "Ladda upp och dela filer"
-      ],
-      "Upload anyway": [
-        "Ladda upp ändå"
       ],
       "Upload file": [
         "Ladda upp fil"
@@ -3362,9 +3365,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "”${ sanitizedName }” finns redan"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } kan inte ansluta till ditt externa konto"
       ],
@@ -3593,9 +3593,6 @@
       "Failed to update public share node": [
         "Misslyckades att uppdatera offentlig delningsnod"
       ],
-      "File cannot be merged with folder": [
-        "Fil kan inte slås samman med mapp"
-      ],
       "First name is too long": [
         "Förnamn är för långt"
       ],
@@ -3733,9 +3730,6 @@
       ],
       "Payment process not supported": [
         "Betalningsprocessen stöds inte"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Fotouppladdning är tillfälligt inaktiverad. Försök igen senare"
       ],
       "Please activate your search again": [
         "Aktivera din sökning igen"
@@ -3889,24 +3883,6 @@
       "The minimum donation amount is ${ price }": [
         "Minsta donationsbelopp är ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Den nya versionen av originalfilen är inte uppladdad ännu, försök igen senare"
-      ],
-      "The original file has missing active revision": [
-        "Originalfilen saknar aktiv version"
-      ],
-      "The original file has missing hash key": [
-        "Originalfilen saknar hashnyckel"
-      ],
-      "The original file has missing session key": [
-        "Originalfilen saknar sessionsnyckel"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Originalfilen har inte laddats upp ännu, försök igen senare"
-      ],
-      "The original folder not found": [
-        "Originalmappen hittades inte"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Det finns för många mappar i ditt externa konto. Anpassa importen för att ta bort vissa mappar."
       ],
@@ -3960,9 +3936,6 @@
       ],
       "Upload failed": [
         "Uppladdning misslyckades"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Uppladdning för denna mapp är tillfälligt inaktiverad"
       ],
       "Username must begin with a letter or digit": [
         "Användarnamn måste börja med en bokstav eller siffra"
@@ -5111,6 +5084,9 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill-switch**: Stoppar dataläckage genom att blockera ditt internet om VPN:et oväntat slutar fungera."
       ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Du får ${ referrerRewardAmount }** i krediter för varje vän som prenumererar."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
       ],
@@ -5598,9 +5574,6 @@
       ],
       "for ${ price }": [
         "för ${ price }"
-      ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "För bästa resultat bör du undvika streaming och minneskrävande aktiviteter eller dela upp din uppladdning i mindre partier."
       ],
       "For just ${ bundlePlanPriceInline }": [
         "För endast ${ bundlePlanPriceInline }"
@@ -6408,9 +6381,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Detta är nu din ${ defaultEmailAddress } för att skicka nya meddelanden."
       ],
-      "This item already exists in your library": [
-        "Detta objekt finns redan i ditt bibliotek"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Detta objekt är inte sparat i ditt fotobibliotek. Om du tar bort det från detta album förlorar du åtkomst till det permanent.",
         "Några av de valda objekten sparas inte i ditt fotobibliotek. Om du tar bort dem från detta album förlorar du åtkomsten till dem permanent."
@@ -6451,26 +6421,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "Detta kommer ta bort de valda objekten du laddade upp permanent."
       ],
-      "This will replace the existing file with the folder": [
-        "Detta kommer ersätta den befintliga filen med mappen"
-      ],
       "This will replace the existing folder or file with the file": [
         "Detta kommer ersätta den befintliga mappen eller filen med filen"
       ],
       "This will replace the existing folder or file with the folder": [
         "Detta kommer ersätta den befintliga mappen eller filen med mappen"
       ],
-      "This will replace the existing folder with the file": [
-        "Detta kommer ersätta den befintliga mappen med filen"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Detta kommer logga ut dig på alla konton som du för närvarande är inloggad på."
-      ],
-      "This will upload a new version of the file": [
-        "Detta kommer ladda upp en ny version av filen"
-      ],
-      "This will upload a new version of the folder": [
-        "Detta kommer ladda upp en ny version av mappen"
       ],
       "Time": [
         "Tid"
@@ -6523,18 +6481,6 @@
       "Tracking": [
         "Spårning"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Överföringen avbröts för filen \"${ name }\""
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Överföringen avbröts för mapp ”${ name }”"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Överföringen hoppades över för filen \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Överföring hoppades över för mapp ”${ folderName }”"
-      ],
       "Trash": [
         "Papperskorg"
       ],
@@ -6586,6 +6532,9 @@
       "Upgrade or clear space anytime to bring over the rest": [
         "Uppgradera eller frigör utrymme när som helst för att flytta över resten"
       ],
+      "Upgrade to get more storage space": [
+        "Uppgradera för att skaffa mer lagringsutrymme"
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Uppgradera för att behålla dina ${ planTitle }-förmåner."
       ],
@@ -6600,9 +6549,6 @@
       ],
       "Uploading": [
         "Laddar upp"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Att ladda upp hundratals filer på samma gång kan påverka prestandan."
       ],
       "Uppercase and lowercase letters": [
         "Stora och små bokstäver"
@@ -7385,12 +7331,6 @@
       "Keep both": [
         "Behåll båda"
       ],
-      "Keep both files": [
-        "Behåll båda filerna"
-      ],
-      "Keep both folders": [
-        "Behåll båda mapparna"
-      ],
       "Label messages as": [
         "Märk meddelanden som"
       ],
@@ -7543,12 +7483,6 @@
       ],
       "Region": [
         "Region"
-      ],
-      "Replace existing file": [
-        "Ersätt befintlig fil"
-      ],
-      "Replace existing folder": [
-        "Ersätt befintlig mapp"
       ],
       "Replace existing folder or file": [
         "Ersätt befintlig mapp eller fil"
@@ -9337,14 +9271,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "“${ name }“ misslyckades att flyttas till papperskorg"
       ],
-      "\"${ name }\" failed to be saved": [
-        "”${ name }” kunde inte sparas"
-      ],
       "\"${ name }\" moved to trash": [
         "“${ name }“ flyttades till papperskorgen"
-      ],
-      "\"${ name }\" saved successfully": [
-        "”${ name }” har sparats"
       ],
       "\"${ newName }\" failed to be renamed": [
         "“${ newName }“ misslyckades att namnändras"
@@ -9506,19 +9434,6 @@
       "Failed to rename device": [
         "Misslyckades att byta namn på enhet"
       ],
-      "Failed to upload files: ${ err }": [
-        "Misslyckades att ladda upp filer: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Filen eller mappen \"${ filename }\" och ${ count } andra laddas redan upp",
-        "Filen eller mappen \"${ filename }\" och ${ count } andra laddas redan upp"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Fil eller mapp ”${ filename }” laddas redan upp"
-      ],
-      "File or folder is missing a name": [
-        "Fil eller mapp saknar ett namn"
-      ],
       "File removed": [
         "Fil borttagen"
       ],
@@ -9539,9 +9454,6 @@
       "Move ${ n } item": [
         "Flytta ${ n } objekt",
         "Flytta ${ n } objekt"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Inte tillräckligt med utrymme för att ladda upp ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Offentlig länkåtkomst uppdaterad"
@@ -12567,12 +12479,6 @@
       "Drop to upload": [
         "Släpp för att ladda upp"
       ],
-      "Duplicate file found": [
-        "Dubblettfil hittades"
-      ],
-      "Duplicate folder found": [
-        "Dubblettmapp hittades"
-      ],
       "Edit billing address": [
         "Redigera faktureringsadress"
       ],
@@ -12878,9 +12784,6 @@
       "PayPal verification failed": [
         "Verifiering av PayPal misslyckades"
       ],
-      "Performance might be affected": [
-        "Prestanda kan påverkas"
-      ],
       "Phone numbers": [
         "Telefonnummer"
       ],
@@ -13139,9 +13042,6 @@
       ],
       "Uploaded": [
         "Uppladdat"
-      ],
-      "Uploading a large file or folder": [
-        "Laddar upp en stor fil eller mapp"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Använd ${ VPN_SHORT_APP_NAME } för dataintegritet"

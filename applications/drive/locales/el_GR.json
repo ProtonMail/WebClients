@@ -91,6 +91,9 @@
       "Add photos": [
         "Προσθήκη φωτογραφιών"
       ],
+      "Add storage": [
+        "Προσθήκη αποθηκευτικού χώρου"
+      ],
       "Add to \"${ name }\" (${ photoCount } photo)": [
         "Προσθήκη στο \"${ name }\" (${ photoCount } φωτογραφία)",
         "Προσθήκη στο \"${ name }\" (${ photoCount } φωτογραφίες)"
@@ -620,6 +623,9 @@
       "Let's talk": [
         "Ας μιλήσουμε"
       ],
+      "List layout": [
+        "Διάταξη λίστας"
+      ],
       "Load": [
         "Φόρτωση"
       ],
@@ -1129,9 +1135,6 @@
       ],
       "Upload and share files": [
         "Μεταφορτώστε και μοιραστείτε αρχεία"
-      ],
-      "Upload anyway": [
-        "Ανέβασμα οπωσδήποτε"
       ],
       "Upload file": [
         "Ανέβασμα αρχείου"
@@ -2259,6 +2262,9 @@
       ],
       "Canada": [
         "Καναδάς"
+      ],
+      "Canary Islands": [
+        "Κανάρια Νησιά"
       ],
       "Cape Verde": [
         "Πράσινο Ακρωτήριo"
@@ -3398,9 +3404,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "Το όνομα \"${ sanitizedName }\" υπάρχει ήδη"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "Το ${ BRAND_NAME } δεν μπορεί να συνδεθεί στον εξωτερικό λογαριασμό σας"
       ],
@@ -3629,9 +3632,6 @@
       "Failed to update public share node": [
         "Αποτυχία ενημέρωσης δημόσιου κόμβου κοινοποίησης"
       ],
-      "File cannot be merged with folder": [
-        "Ένα αρχείο δεν γίνεται να συγχωνευθεί με φάκελο"
-      ],
       "First name is too long": [
         "Το όνομα είναι πολύ μεγάλο"
       ],
@@ -3772,9 +3772,6 @@
       ],
       "Payment process not supported": [
         "Η διαδικασία πληρωμής δεν υποστηρίζεται"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Η μεταφόρτωση φωτογραφιών είναι προσωρινά απενεργοποιημένη. Προσπαθήστε ξανά αργότερα"
       ],
       "Please activate your search again": [
         "Παρακαλούμε ενεργοποιήστε ξανά την αναζήτησή σας"
@@ -3943,24 +3940,6 @@
       "The minimum donation amount is ${ price }": [
         "Το ελάχιστο ποσό δωρεάς είναι ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Η νέα αναθεώρηση του πρωτότυπου αρχείου δεν έχει μεταφορτωθεί ακόμα, παρακαλούμε δοκιμάστε αργότερα"
-      ],
-      "The original file has missing active revision": [
-        "Το πρωτότυπο αρχείο δεν διαθέτει ενεργή αναθεώρηση"
-      ],
-      "The original file has missing hash key": [
-        "Το πρωτότυπο αρχείο δεν έχει κλειδί hash"
-      ],
-      "The original file has missing session key": [
-        "Το πρωτότυπο αρχείο δεν έχει κλειδί συνεδρίας"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Το πρωτότυπο αρχείο δεν έχει ανέβει ακόμα, παρακαλούμε δοκιμάστε ξανά αργότερα"
-      ],
-      "The original folder not found": [
-        "Ο αρχικός φάκελος δεν βρέθηκε"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Υπερβολικός αριθμός φακέλων στον εξωτερικό λογαριασμό σας. Παρακαλούμε προσαρμόστε την εισαγωγή, προς διαγραφή μερικών φακέλων."
       ],
@@ -4014,9 +3993,6 @@
       ],
       "Upload failed": [
         "Αποτυχία μεταφόρτωσης"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Η μεταφόρτωση για αυτόν τον φάκελο είναι προσωρινά απενεργοποιημένη"
       ],
       "Username must begin with a letter or digit": [
         "Το όνομα χρήστη πρέπει να ξεκινά με ένα γράμμα ή ένα ψηφίο"
@@ -5686,9 +5662,6 @@
       "for ${ price }": [
         "για ${ price }"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Για καλύτερα αποτελέσματα, αποφύγετε ροή ή απαιτητικές σε μνήμη δραστηριότητες ή χωρίστε τη μεταφόρτωση σε μικρότερες παρτίδες."
-      ],
       "For just ${ bundlePlanPriceInline }": [
         "Μόνο για ${ bundlePlanPriceInline }"
       ],
@@ -6510,9 +6483,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Αυτή είναι τώρα η ${ defaultEmailAddress } για την αποστολή νέων μηνυμάτων."
       ],
-      "This item already exists in your library": [
-        "Αυτό το στοιχείο υπάρχει ήδη στη βιβλιοθήκη σας"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Αυτό το στοιχείο δεν είναι αποθηκευμένο στη βιβλιοθήκη Φωτογραφιών σας. Αν το αφαιρέσετε από αυτό το άλμπουμ, θα χάσετε οριστικά την πρόσβαση σε αυτό.",
         "Ορισμένα από τα επιλεγμένα στοιχεία δεν είναι αποθηκευμένα στη βιβλιοθήκη Φωτογραφιών σας. Αν τα αφαιρέσετε από αυτό το άλμπουμ, θα χάσετε οριστικά την πρόσβαση σε αυτά."
@@ -6553,26 +6523,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "Αυτό θα διαγράψει οριστικά τα επιλεγμένα στοιχεία που ανεβάσατε."
       ],
-      "This will replace the existing file with the folder": [
-        "Αυτό θα αντικαταστήσει το υπάρχον αρχείο με το φάκελο"
-      ],
       "This will replace the existing folder or file with the file": [
         "Αυτό θα αντικαταστήσει τον υπάρχοντα φάκελο ή το αρχείο με το αρχείο"
       ],
       "This will replace the existing folder or file with the folder": [
         "Αυτό θα αντικαταστήσει τον υπάρχοντα φάκελο ή το αρχείο με το φάκελο"
       ],
-      "This will replace the existing folder with the file": [
-        "Αυτό θα αντικαταστήσει τον υπάρχοντα φάκελο με το αρχείο"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Αυτό θα σας αποσυνδέσει από όλους τους λογαριασμούς που είναι συνδεδεμένοι αυτήν τη στιγμή."
-      ],
-      "This will upload a new version of the file": [
-        "Αυτό θα ανεβάσει μια νέα έκδοση του αρχείου"
-      ],
-      "This will upload a new version of the folder": [
-        "Αυτό θα ανεβάσει μια νέα έκδοση του φακέλου"
       ],
       "Time": [
         "Ώρα"
@@ -6631,18 +6589,6 @@
       "Tracking": [
         "Παρακολούθηση"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Ακυρώθηκε η μεταφορά του αρχείου \"${ name }\""
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Η μεταφορά του φακέλου \"${ name }\" ακυρώθηκε"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Η μεταφορά του αρχείου \"${ file.name }\" παραλείφθηκε"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Η μεταφορά του φακέλου \"${ folderName }\" παραλείφθηκε"
-      ],
       "Trash": [
         "Διαγραμμένα"
       ],
@@ -6694,6 +6640,9 @@
       "Upgrade or clear space anytime to bring over the rest": [
         "Αναβαθμίστε ή εκκενώστε χώρο οποιαδήποτε στιγμή για να φέρετε τα υπόλοιπα"
       ],
+      "Upgrade to get more storage space": [
+        "Αναβαθμίστε για να αποκτήσετε περισσότερο χώρο αποθήκευσης"
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Αναβαθμίστε για να διατηρήσετε τα ${ planTitle } προνόμιά σας."
       ],
@@ -6708,9 +6657,6 @@
       ],
       "Uploading": [
         "Γίνεται μεταφόρτωση"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Το ανέβασμα εκατοντάδων αρχείων με τη μία ενδέχεται να μειώσει τις επιδόσεις."
       ],
       "Uppercase and lowercase letters": [
         "Κεφαλαία και πεζά γράμματα"
@@ -7530,12 +7476,6 @@
       "Keep both": [
         "Κρατήστε και τα δύο"
       ],
-      "Keep both files": [
-        "Κρατήστε και τα δύο αρχεία"
-      ],
-      "Keep both folders": [
-        "Κρατήστε και τους δύο φακέλους"
-      ],
       "Label messages as": [
         "Επισήμανση μηνυμάτων ως"
       ],
@@ -7610,6 +7550,9 @@
       ],
       "New password": [
         "Νέος κωδικός"
+      ],
+      "Non-consensual intimate imagery": [
+        "Μη συναινετικές προσωπικές εικόνες"
       ],
       "Not active": [
         "Μη ενεργό"
@@ -7691,12 +7634,6 @@
       ],
       "Region": [
         "Περιοχή"
-      ],
-      "Replace existing file": [
-        "Αντικατάσταση υπάρχοντος αρχείου"
-      ],
-      "Replace existing folder": [
-        "Αντικατάσταση υπάρχοντος φακέλου"
       ],
       "Replace existing folder or file": [
         "Αντικατάσταση υπάρχοντος φακέλου ή αρχείου"
@@ -9454,14 +9391,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "Αποτυχία μετακίνησης του \"${ name }\" στα Διαγραμμένα"
       ],
-      "\"${ name }\" failed to be saved": [
-        "Το \"${ name }\" απέτυχε να αποθηκευτεί"
-      ],
       "\"${ name }\" moved to trash": [
         "Το \"${ name }\" μετακινήθηκε στα Διαγραμμένα"
-      ],
-      "\"${ name }\" saved successfully": [
-        "Το \"${ name }\" αποθηκεύτηκε με επιτυχία"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Αποτυχία μετονομασίας σε \"${ newName }\""
@@ -9623,19 +9554,6 @@
       "Failed to rename device": [
         "Αποτυχία μετονομασίας συσκευής"
       ],
-      "Failed to upload files: ${ err }": [
-        "Αποτυχία μεταφόρτωσης αρχείων: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Το αρχείο ή ο φάκελος \"${ filename }\" και ${ count } άλλο ήδη μεταφορτώνονται",
-        "Το αρχείο ή ο φάκελος \"${ filename }\" και ${ count } άλλα ήδη μεταφορτώνονται"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Το αρχείο ή ο φάκελος \"${ filename }\" ήδη μεταφορτώνεται"
-      ],
-      "File or folder is missing a name": [
-        "Το αρχείο ή ο φάκελος στερείται ονόματος"
-      ],
       "File removed": [
         "Το αρχείο αφαιρέθηκε"
       ],
@@ -9656,9 +9574,6 @@
       "Move ${ n } item": [
         "Μετακίνηση ${ n } στοιχείου",
         "Μετακίνηση ${ n } στοιχείων"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Δεν υπάρχει αρκετός χώρος για αποστολή ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Ενημερώθηκε η πρόσβαση σε δημόσιο σύνδεσμο"
@@ -12606,12 +12521,6 @@
       "Drop to upload": [
         "Αποθέστε εδώ για ανέβασμα"
       ],
-      "Duplicate file found": [
-        "Βρέθηκε ομώνυμο αρχείο"
-      ],
-      "Duplicate folder found": [
-        "Βρέθηκε ομώνυμος φάκελος"
-      ],
       "Edit billing address": [
         "Επεξεργασία διεύθυνσης χρέωσης"
       ],
@@ -12914,6 +12823,9 @@
       "Other names": [
         "Άλλα ονόματα"
       ],
+      "Out of storage space": [
+        "Εξάντληση χώρου αποθήκευσης"
+      ],
       "Payment failed": [
         "Αποτυχία πληρωμής"
       ],
@@ -12922,9 +12834,6 @@
       ],
       "PayPal verification failed": [
         "Η επαλήθευση PayPal απέτυχε"
-      ],
-      "Performance might be affected": [
-        "Ίσως επηρεαστεί η απόδοση"
       ],
       "Phone numbers": [
         "Αριθμοί Τηλεφώνου"
@@ -13187,9 +13096,6 @@
       ],
       "Uploaded": [
         "Ανέβηκε"
-      ],
-      "Uploading a large file or folder": [
-        "Αποστολή μεγάλου αρχείου ή φακέλου"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Χρησιμοποιήστε το ${ VPN_SHORT_APP_NAME } για την προστασία των προσωπικών δεδομένων σας"
