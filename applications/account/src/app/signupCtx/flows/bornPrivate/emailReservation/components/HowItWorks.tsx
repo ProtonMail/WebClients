@@ -5,14 +5,12 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import { getMinDonationAmount } from '@proton/payments/core/amount-limits';
 import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { getDonationCurrency } from '../helpers/emailReservationHelpers';
 
 const HowItWorks = () => {
-    const isBornPrivateEuropeEnabled = useFlag('BornPrivateEurope');
     const { paymentStatus } = usePayments();
-    const currency = isBornPrivateEuropeEnabled ? getDonationCurrency(paymentStatus?.CountryCode) : 'USD';
+    const currency = getDonationCurrency(paymentStatus?.CountryCode);
     const minimumDonation = getSimplePriceString(currency, getMinDonationAmount(currency));
 
     const getSteps = () => [

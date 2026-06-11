@@ -23,7 +23,6 @@ import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContext
 import { revoke } from '@proton/shared/lib/api/auth';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
-import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import BornPrivateFeatures from '../../components/BornPrivateFeatures';
@@ -85,11 +84,8 @@ const FLOW_ID = 'reservation-donation';
 
 const Donation = ({ formData, onBack, onDonationSuccess }: DonationProps) => {
     const { parentEmail, reservedAccount } = formData;
-    const isBornPrivateEuropeEnabled = useFlag('BornPrivateEurope');
     const { paymentStatus } = usePayments();
-    const [currency, setCurrency] = useState<Currency>(
-        isBornPrivateEuropeEnabled ? getDonationCurrency(paymentStatus?.CountryCode) : 'USD'
-    );
+    const [currency, setCurrency] = useState<Currency>(getDonationCurrency(paymentStatus?.CountryCode));
     const [donationAmount, setDonationAmount] = useState(DEFAULT_DONATION_AMOUNT);
     const payments = usePaymentOptimistic();
     const [submitting, withSubmitting] = useLoading();
@@ -351,7 +347,6 @@ const Donation = ({ formData, onBack, onDonationSuccess }: DonationProps) => {
                         donationAmount={donationAmount}
                         setDonationAmount={setDonationAmount}
                         isSubmitting={submitting || donationProcessing}
-                        showCurrencySelector={isBornPrivateEuropeEnabled}
                     />
                     <PaymentWrapper {...paymentFacade} noMaxWidth hideFirstLabel taxCountry={taxCountry} />
                     <BornPrivateFormFooter step={Steps.Donation} totalSteps={TOTAL_STEPS} stackedFullWidth>
