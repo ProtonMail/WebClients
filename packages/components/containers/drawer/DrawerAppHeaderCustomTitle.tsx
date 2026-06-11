@@ -3,7 +3,8 @@ import { useRef } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { Color } from '@proton/components/components/button/ButtonGroup';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
+import { IcChevronUpFilled } from '@proton/icons/icons/IcChevronUpFilled';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 
 import { useHotkeys } from '../../hooks/useHotkeys';
@@ -47,7 +48,7 @@ const DrawerAppHeaderCustomTitle = ({
                 aria-expanded={dropdownExpanded}
             >
                 {dropdownTitle}
-                <Icon name={dropdownExpanded ? 'chevron-up-filled' : 'chevron-down-filled'} className="ml-1" />
+                {dropdownExpanded ? <IcChevronUpFilled className="ml-1" /> : <IcChevronDownFilled className="ml-1" />}
             </Button>
         </div>
     );
