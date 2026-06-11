@@ -29,6 +29,7 @@ const exposeCanvasGrid = (
     data: {
       hasFilter: boolean
       dataValidations: unknown
+      conditionalFormats: unknown
     }
     charts: unknown
     locale: {
@@ -117,6 +118,7 @@ export function LegacyGrid() {
   const localeCurrency = useUI((ui) => ui.locale.currency)
   const rowMetadata = useUI((ui) => ui.legacy.rowMetadata)
   const columnMetadata = useUI((ui) => ui.legacy.columnMetadata)
+  const conditionalFormats = useUI((ui) => ui.legacy.conditionalFormats)
   const sheetList = useUI((ui) => ui.sheets.list)
   const sheetListIncludingHidden = useUI((ui) => ui.sheets.listIncludingHidden)
   const activeSheetListId = useUI((ui) => ui.sheets.activeId)
@@ -131,7 +133,7 @@ export function LegacyGrid() {
       frozenRowCount,
       view: { formulaBarEnabled, gridLinesEnabled },
       zoomValue,
-      data: { hasFilter, dataValidations },
+      data: { hasFilter, dataValidations, conditionalFormats },
       sheets: { activeId: activeSheetListId, list: sheetList, listIncludingHidden: sheetListIncludingHidden },
       charts,
       locale: {
@@ -148,6 +150,7 @@ export function LegacyGrid() {
       activeSheetId,
       activeSheetListId,
       charts,
+      conditionalFormats,
       dataValidations,
       formulaBarEnabled,
       frozenColumnCount,
