@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 
 import '@proton/testing/lib/mockMatchMedia';
+import '@proton/testing/lib/mockTelemetry';
 
 // Suppress console noise from drive-sdk telemetry during tests.
 jest.spyOn(console, 'debug').mockImplementation(() => {});
