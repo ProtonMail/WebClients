@@ -28,6 +28,7 @@ interface ToggleButtonProps {
     }) => JSX.Element;
     popUp: PopUpControls;
     ariaLabel?: string;
+    ariaPressed?: boolean;
     secondaryAriaLabel?: string;
     hasWarning?: boolean;
     tooltipTitle?: string;
@@ -43,6 +44,7 @@ export const ToggleButton = ({
     onPopupButtonClick,
     Content,
     ariaLabel,
+    ariaPressed,
     secondaryAriaLabel,
     hasWarning,
     tooltipTitle,
@@ -101,6 +103,7 @@ export const ToggleButton = ({
                     onClick={onClick}
                     onMouseUp={(e) => (e.currentTarget as HTMLButtonElement).blur()}
                     aria-label={ariaLabel}
+                    aria-pressed={ariaPressed}
                     disabled={loading}
                 >
                     {getToggleIcon()}
