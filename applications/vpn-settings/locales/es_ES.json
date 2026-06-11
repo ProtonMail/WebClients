@@ -1423,6 +1423,38 @@
         "administrador"
       ]
     },
+    "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 nuevos roles de administrador"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurar las políticas de seguridad, la retención de datos y la infraestructura de VPN, y gestionar los registros de auditoría."
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "Delega la gestión asignando roles de administrador específicos. Da a cada administrador solo el acceso que necesita. De esta forma se aplica el principio de mínimo privilegio, lo que protege a tu organización frente a cuentas comprometidas y errores accidentales."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "Delega la gestión con el rol de administrador adecuado."
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Gestionar todos los usuarios, grupos, almacenamiento, seguridad, facturación, registros de auditoría y configuraciones del sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestionar los usuarios, grupos y almacenamiento de todos los miembros, asignar roles y distribuir licencias."
+      ],
+      "New: Control admin access for individual users": [
+        "Nuevo: controla el acceso de administrador para usuarios individuales"
+      ],
+      "Organization admin:": [
+        "Administrador de la organización:"
+      ],
+      "Security admin:": [
+        "Administrador de seguridad:"
+      ],
+      "User admin:": [
+        "Administrador de usuarios:"
+      ]
+    },
     "AdminRole_Info": {
       "A role is a group of permissions that you can assign to the members of your organization.": [
         "Un rol es un grupo de permisos que puedes asignar a los miembros de tu organización."
@@ -9347,6 +9379,9 @@
       "Second password": [
         "Segunda contraseña"
       ],
+      "Select an identity provider to start": [
+        "Selecciona un proveedor de identidad para empezar"
+      ],
       "Send crash reports": [
         "Enviar informes de error"
       ],
@@ -9596,11 +9631,6 @@
       ],
       "To: ${ to }": [
         "Para: ${ to }"
-      ]
-    },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Selecciona un proveedor de identidad para empezar"
       ]
     },
     "Limit of calendars reached": {
@@ -14561,6 +14591,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } y ${ LUMO_APP_NAME } con funciones premium"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } con características prémium"
       ],
@@ -14818,6 +14854,10 @@
       ],
       "Version history": [
         "Historial de versiones"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videollamadas de hasta ${ PAID_PREMIUM_MAX_PARTICIPANTS } participante",
+        "Videollamadas de hasta ${ PAID_PREMIUM_MAX_PARTICIPANTS } participantes"
       ],
       "Watch the interview": [
         "Ve la entrevista"
@@ -16050,6 +16090,9 @@
       ],
       "Open pagination": [
         "Abrir paginación"
+      ],
+      "OpenVpn": [
+        "OpenVPN"
       ],
       "OpenVPN configuration files": [
         "Archivos de configuración de OpenVPN"

@@ -1137,6 +1137,10 @@
       "${ price } per user": [
         "${ price } felhasználónként"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licenc",
+        "${ seats } ${ MEET_APP_NAME } licenc"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } írási segéd licenc",
         "${ seats } írási segéd licenc"
@@ -1459,6 +1463,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } hónap",
+        "${ n } hónap"
+      ],
+      "${ n } year": [
+        "${ n } év",
+        "${ n } év"
+      ],
       "1 month": [
         "1 hónap"
       ],
@@ -1715,6 +1727,10 @@
       "${ users } user": [
         "${ users } felhasználó",
         "${ users } felhasználó"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Összesen, ${ cycle } hónapra",
+        "Összesen, ${ cycle } hónapra"
       ],
       "Total": [
         "Összesen"
@@ -2939,6 +2955,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "Több évnyi e-mail számára elegendő hely, mellékletekkel és további lehetőségek."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Biztosítson biztonságos hozzáférést a szervezeti adatokhoz, még akkor is, ha a csapata távolról dolgozik vagy nyilvános Wi-Fi-t használ."
       ],
@@ -3573,6 +3592,9 @@
       "Invalid code": [
         "Érvénytelen kód"
       ],
+      "Invalid coupon": [
+        "Érvénytelen kupon"
+      ],
       "Invalid domain": [
         "Érvénytelen domain név"
       ],
@@ -3657,6 +3679,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "Fizetés jelenleg nem lehetséges, kérjük, próbálja meg később"
+      ],
+      "Please complete the billing details": [
+        "Adja meg a számlázási adatokat"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Címek létrehozása előtt, állítson be egy saját domain nevet."
@@ -3799,6 +3824,9 @@
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "A mező tartalma hosszabb a megengedett maximum ${ maximumLength } karakternél."
+      ],
+      "This field is invalid": [
+        "Ez a mező érvénytelen"
       ],
       "This field is required": [
         "A mező kitöltése kötelező"
@@ -5446,6 +5474,10 @@
       "All your changes will be lost.": [
         "A változtatások el fognak veszni."
       ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Az összes névjegye importálásra kerül, maximum ${ maxContact } darabig",
+        "Az összes névjegye importálásra kerül, maximum ${ maxContact } darabig"
+      ],
       "Allocated": [
         "Lefoglalva"
       ],
@@ -6473,6 +6505,9 @@
       "Recently used servers:": [
         "Nemrég használt szerverek:"
       ],
+      "RECOMMENDED": [
+        "JAVASOLT"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Megbízható eszközökön javasolt. ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -7308,6 +7343,10 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Nem fogja tudni helyreállítani az zárolt adatait, a letöltött helyreállítási fájlokkal. Ez az eszköz alapú helyreállítást is érvényteleníti."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Ezután a számlázás ${ renewCycle } havonta történik, ${ renewAmountStr } összeggel. Bármikor lemondhatja.",
+        "Ezután a számlázás ${ renewCycle } havonta történik, ${ renewAmountStr } összeggel. Bármikor lemondhatja."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Engedélyezte a továbbítást a következő ${ MAX_SYNC_PAID_USER } Gmail címen. Ha újat szeretne hozzáadni, először tiltsa le az egyiket.",
@@ -8392,11 +8431,6 @@
         "Címzett: ${ to }"
       ]
     },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Válasszon ki egy identitás szolgáltatót az indításhoz"
-      ]
-    },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "Újabb naptár hozzáadásához töröljön egy meglévőt."
@@ -8754,6 +8788,18 @@
       ],
       "Get ${ planTitle } for ${ discountedPriceElement }": [
         "${ planTitle } megszerzése ${ discountedPriceElement } áron"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } licenc",
+        "${ seats } ${ MEET_APP_NAME } licenc"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licencet tartalmaz",
+        "${ seats } licencet tartalmaz"
       ]
     },
     "Member action": {
@@ -10633,12 +10679,24 @@
       "terms and conditions": [
         "felhasználási feltételek"
       ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "A kedvezmény ${ renewalsWithCoupon } megújításra érvényes.",
+        "A kedvezmény ${ renewalsWithCoupon } megújításra érvényes."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "A kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja.",
+        "A kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja."
+      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "A kedvezményes ár az első ${ subscriptionLength } hónapra érvényes.",
         "A kedvezményes ár az első ${ subscriptionLength } hónapra érvényes."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "A kedvezményes ár az első hónapra érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "A ${ priceWithDiscount } kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja.",
+        "A ${ priceWithDiscount } kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "A kedvezményes ${ priceWithDiscount } ár az első ${ subscriptionLength } hónapra érvényes.",
@@ -11017,6 +11075,11 @@
       ],
       "Unknown": [
         "Ismeretlen"
+      ]
+    },
+    "Provider option": {
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q2campaign2026: Action": {
@@ -11803,6 +11866,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "${ ownerName } által megosztva"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Megnyitás ebben: ${ appName }"
       ]
     },
     "Signup": {
@@ -13634,6 +13702,9 @@
       ],
       "Discard changes?": [
         "Módosítások elvetése?"
+      ],
+      "Disconnected from Gmail": [
+        "Leválasztva a Gmailről"
       ],
       "Domain names": [
         "Domain nevek"
