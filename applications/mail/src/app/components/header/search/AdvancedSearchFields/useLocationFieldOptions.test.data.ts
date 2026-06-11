@@ -69,6 +69,7 @@ export const expectedAll = [
             Notify: 1,
             Expanded: 0,
             subfolders: [],
+            LastUnseenMessageEventID: null,
         },
     },
     {
@@ -158,6 +159,7 @@ export const expectedGrouped: ItemsGroup = [
                     Notify: 1,
                     Expanded: 0,
                     subfolders: [],
+                    LastUnseenMessageEventID: null,
                 },
             },
         ],
