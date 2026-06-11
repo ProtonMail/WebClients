@@ -7,6 +7,7 @@ import useApi from '@proton/components/hooks/useApi';
 import { useDeclarativeLocalState } from '@proton/components/hooks/useDeclarativeLocalState.ts';
 import { getIsVpnB2BPlan } from '@proton/payments';
 import { removeItem } from '@proton/shared/lib/helpers/storage';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
@@ -15,26 +16,42 @@ import { getIsBusinessOnboarded, setBusinessOnboarded } from '../apis/onboarding
 import type { OnboardingStep } from '../types/Onboarding';
 import { ONBOARDING_STEPS } from '../types/Onboarding';
 
-const useIsEligibleForOnboarding = () => {
+type Org = { organization?: OrganizationExtended };
+
+const useIsEligibleForOnboarding = ({ organization }: Org) => {
     const [user] = useUser();
-    const [organization] = useOrganization();
 
     return isAdmin(user) && !!organization?.PlanName && getIsVpnB2BPlan(organization.PlanName);
 };
 
-const resolveOnboardingStep = async ({ api }: { api: ReturnType<typeof useApi> }): Promise<OnboardingStep> => {
-    const isOnboarded = await getIsBusinessOnboarded({ api });
-    return isOnboarded ? ONBOARDING_STEPS.Onboarded : ONBOARDING_STEPS.NotOnboarded;
+const resolveOnboardingStep = async ({
+    api,
+    organization,
+}: { api: ReturnType<typeof useApi> } & Org): Promise<OnboardingStep> => {
+    const isOrgOnboarded = await getIsBusinessOnboarded({ api });
+    if (isOrgOnboarded) {
+        return ONBOARDING_STEPS.Onboarded;
+    }
+
+    const isOrgSetup = organization?.Name || organization?.HasKeys;
+
+    return isOrgSetup ? ONBOARDING_STEPS.Dismissed : ONBOARDING_STEPS.NotOnboarded;
 };
 
 export const useOnboarding = () => {
-    const isEligibleForOnboarding = useIsEligibleForOnboarding();
+    const [organization] = useOrganization();
+
+    const isEligibleForOnboarding = useIsEligibleForOnboarding({ organization });
     const [step, setStep] = useDeclarativeLocalState<OnboardingStep>(Onboarding.onboardingKey);
     const api = useApi();
     const location = useLocation();
 
     const hasPromptParam = new URLSearchParams(location.search).has('prompt');
     const onceHandlerRef = useRef(false);
+
+    useEffect(() => {
+        onceHandlerRef.current = false;
+    }, [organization]);
     useEffect(() => {
         if (step === ONBOARDING_STEPS.Dismissed) {
             return;
@@ -49,8 +66,8 @@ export const useOnboarding = () => {
         }
 
         onceHandlerRef.current = true;
-        resolveOnboardingStep({ api }).then(setStep).catch(noop);
-    }, [isEligibleForOnboarding, hasPromptParam, api]);
+        resolveOnboardingStep({ api, organization }).then(setStep).catch(noop);
+    }, [isEligibleForOnboarding, organization, hasPromptParam, api]);
 
     const onboarded = () => {
         setStep(ONBOARDING_STEPS.Onboarded);
