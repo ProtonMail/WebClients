@@ -128,7 +128,7 @@ const ConversationComponent = ({
             >
                 <>
                     <div className="lumo-chat-container flex flex-row flex-nowrap flex-1 relative reset4print overflow-hidden gap-2">
-                        <div className="outer conversation-page-component flex flex-column flex-nowrap flex-1 reset4print overflow-hidden bg-norm rounded-xl">
+                        <div className="outer conversation-page-component flex flex-column flex-nowrap flex-1 reset4print overflow-hidden rounded-xl">
                             <MessageChainComponent
                                 messageChainRef={messageChainRef}
                                 messageChain={messageChain}
