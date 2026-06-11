@@ -7,15 +7,15 @@
 	$magenta: #c94fa0;
 	$peach: #ff9576;
 	$radius: em(90);
-	$blur: em(40);
-	$opacity: 0.5;
+	$blur: em(30);
+	$opacity: 0.33;
 	$speed: 4s;
 
 	position: absolute;
 	inset-block-start: 0%;
 	inset-inline-start: 0%;
 	inline-size: 100%;
-	block-size: 150%;
+	block-size: 125%;
 	margin: auto;
 	z-index: -1;
 	pointer-events: none;
@@ -51,20 +51,6 @@
 			position: absolute;
 			inset: 0;
 		}
-
-		&::before {
-			background:
-				radial-gradient(60% 90% at 50% 50%, $teal, transparent 70%),
-				radial-gradient(55% 80% at 50% 50%, $blue, transparent 70%);
-			animation: blobs-scan-left $speed ease-in-out infinite alternate;
-		}
-
-		&::after {
-			background:
-				radial-gradient(60% 90% at 50% 50%, $magenta, transparent 70%),
-				radial-gradient(55% 80% at 50% 50%, $peach, transparent 70%);
-			animation: blobs-scan-right ($speed * 0.8) ease-in-out infinite alternate;
-		}
 	}
 
 	&--static &-gradient {
@@ -99,26 +85,6 @@
 
 		to {
 			background-position: 100% 50%;
-		}
-	}
-
-	@keyframes blobs-scan-left {
-		from {
-			transform: translateX(50%) scale(1);
-		}
-
-		to {
-			transform: translateX(-50%) scale(1.5);
-		}
-	}
-
-	@keyframes blobs-scan-right {
-		from {
-			transform: translateX(-50%) scale(1.5);
-		}
-
-		to {
-			transform: translateX(50%) scale(1);
 		}
 	}
 }
