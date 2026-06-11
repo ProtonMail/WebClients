@@ -1453,6 +1453,10 @@
       "${ price } per user": [
         "${ price } felhasználónként"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licenc",
+        "${ seats } ${ MEET_APP_NAME } licenc"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } írási segéd licenc",
         "${ seats } írási segéd licenc"
@@ -1829,6 +1833,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } hónap",
+        "${ n } hónap"
+      ],
+      "${ n } year": [
+        "${ n } év",
+        "${ n } év"
+      ],
       "1 month": [
         "1 hónap"
       ],
@@ -2205,6 +2217,10 @@
       "${ users } user": [
         "${ users } felhasználó",
         "${ users } felhasználó"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Összesen, ${ cycle } hónapra",
+        "Összesen, ${ cycle } hónapra"
       ],
       "Total": [
         "Összesen"
@@ -2598,6 +2614,9 @@
       ]
     },
     "Country name": {
+      "Abkhazia": [
+        "Abházia"
+      ],
       "Afghanistan": [
         "Afganisztán"
       ],
@@ -2607,6 +2626,9 @@
       "Algeria": [
         "Algéria"
       ],
+      "American Samoa": [
+        "Amerikai Szamoa"
+      ],
       "Andorra": [
         "Andorra"
       ],
@@ -2615,6 +2637,9 @@
       ],
       "Anguilla": [
         "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarktisz"
       ],
       "Antigua and Barbuda": [
         "Antigua és Barbuda"
@@ -2627,6 +2652,9 @@
       ],
       "Aruba": [
         "Aruba"
+      ],
+      "Ascension Island": [
+        "Ascension-sziget"
       ],
       "Australia": [
         "Ausztrália"
@@ -2669,6 +2697,9 @@
       ],
       "Bolivia": [
         "Bolívia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sint Eustatius és Saba"
       ],
       "Bosnia and Herzegovina": [
         "Bosznia-Hercegovina"
@@ -2745,6 +2776,9 @@
       "Congo (The Democratic Republic of the)": [
         "Kongói Demokratikus Köztársaság"
       ],
+      "Congo, Democratic Republic of the": [
+        "Kongói Demokratikus Köztársaság"
+      ],
       "Cook Islands": [
         "Cook-szigetek"
       ],
@@ -2802,14 +2836,23 @@
       "Estonia": [
         "Észtország"
       ],
+      "Eswatini": [
+        "Szváziföld"
+      ],
       "Ethiopia": [
         "Etiópia"
+      ],
+      "Falkland Islands": [
+        "Aland-szigetek"
       ],
       "Falkland Islands (Malvinas)": [
         "Falkland-szigetek (Malvinas)"
       ],
       "Faroe Islands": [
         "Feröer-szigetek"
+      ],
+      "Federated States of Micronesia": [
+        "Mikronéziai Szövetségi Államok"
       ],
       "Fiji": [
         "Fidzsi-szigetek"
@@ -2859,6 +2902,9 @@
       "Guadeloupe": [
         "Guadeloupe"
       ],
+      "Guam": [
+        "Guam"
+      ],
       "Guatemala": [
         "Guatemala"
       ],
@@ -2901,6 +2947,12 @@
       "Indonesia": [
         "Indonézia"
       ],
+      "International": [
+        "Nemzetközi"
+      ],
+      "Iran": [
+        "Irán"
+      ],
       "Iraq": [
         "Irak"
       ],
@@ -2909,6 +2961,9 @@
       ],
       "Islamic Republic of Iran": [
         "Irán"
+      ],
+      "Isle of Man": [
+        "Mann"
       ],
       "Israel": [
         "Izrael"
@@ -2921,6 +2976,9 @@
       ],
       "Japan": [
         "Japán"
+      ],
+      "Jersey": [
+        "Jersey"
       ],
       "Jordan": [
         "Jordánia"
@@ -2952,6 +3010,9 @@
       "Lao People's Democratic Republic": [
         "Laoszi Népi Demokratikus Köztársaság"
       ],
+      "Laos": [
+        "Laosz"
+      ],
       "Latvia": [
         "Lettország"
       ],
@@ -2963,6 +3024,9 @@
       ],
       "Liberia": [
         "Libéria"
+      ],
+      "Libya": [
+        "Líbia"
       ],
       "Libyan Arab Jamahiriya": [
         "Líbiai Arab Dzsamahirija"
@@ -3072,6 +3136,12 @@
       "Norfolk Island": [
         "Norfolk-sziget"
       ],
+      "North Korea": [
+        "Észak-Korea"
+      ],
+      "Northern Mariana Islands": [
+        "Északi-Mariana-szigetek"
+      ],
       "Norway": [
         "Norvégia"
       ],
@@ -3129,6 +3199,9 @@
       "Rwanda": [
         "Ruanda"
       ],
+      "Saint Barthélemy": [
+        "Saint-Barthélemy"
+      ],
       "Saint Helena": [
         "Szent Ilona-sziget"
       ],
@@ -3137,6 +3210,9 @@
       ],
       "Saint Lucia": [
         "Szent Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Saint Martin (francia rész)"
       ],
       "Saint Pierre and Miquelon": [
         "Saint-Pierre és Miquelon"
@@ -3171,6 +3247,9 @@
       "Singapore": [
         "Szingapúr"
       ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
       "Slovakia": [
         "Szlovákia"
       ],
@@ -3188,6 +3267,12 @@
       ],
       "South Georgia and the South Sandwich Islands": [
         "Déli-Georgia és Déli-Sandwich-szigetek"
+      ],
+      "South Korea": [
+        "Dél-Korea"
+      ],
+      "South Ossetia": [
+        "Dél-Oszétia"
       ],
       "South Sudan": [
         "Dél-szudáni Köztársaság"
@@ -3216,6 +3301,9 @@
       "Switzerland": [
         "Svájc"
       ],
+      "Syria": [
+        "Szíria"
+      ],
       "Syrian Arab Republic": [
         "Sziriai Arab Köztársaság"
       ],
@@ -3225,11 +3313,17 @@
       "Tajikistan": [
         "Tádzsikisztán"
       ],
+      "Tanzania": [
+        "Tanzánia"
+      ],
       "Tanzania, United Republic of": [
         "Tanzánia"
       ],
       "Thailand": [
         "Thaiföld"
+      ],
+      "Timor-Leste": [
+        "Kelet-Timor"
       ],
       "Togo": [
         "Togo"
@@ -3242,6 +3336,9 @@
       ],
       "Trinidad and Tobago": [
         "Trinidad és Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
       ],
       "Tunisia": [
         "Tunézia"
@@ -3273,6 +3370,9 @@
       "United States": [
         "Amerikai Egyesült Államok"
       ],
+      "United States Minor Outlying Islands": [
+        "USA Amerikai Csendes-óceáni szigetek"
+      ],
       "Uruguay": [
         "Uruguay"
       ],
@@ -3288,6 +3388,12 @@
       "Vietnam": [
         "Vietnám"
       ],
+      "Virgin Islands, British": [
+        "Brit Virgin-szigetek"
+      ],
+      "Virgin Islands, U.S.": [
+        "Amerikai Virgin-szigetek"
+      ],
       "Wallis and Futuna": [
         "Wallis és Futuna"
       ],
@@ -3302,6 +3408,9 @@
       ],
       "Zimbabwe": [
         "Zimbabwe"
+      ],
+      "Åland Islands": [
+        "Aland-szigetek"
       ]
     },
     "Country select label": {
@@ -3555,6 +3664,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Több évnyi e-mail számára elegendő hely, mellékletekkel és további lehetőségek."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Biztosítson biztonságos hozzáférést a szervezeti adatokhoz, még akkor is, ha a csapata távolról dolgozik vagy nyilvános Wi-Fi-t használ."
@@ -4465,6 +4577,9 @@
       "Invalid code": [
         "Érvénytelen kód"
       ],
+      "Invalid coupon": [
+        "Érvénytelen kupon"
+      ],
       "Invalid domain": [
         "Érvénytelen domain név"
       ],
@@ -4573,6 +4688,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "Fizetés jelenleg nem lehetséges, kérjük, próbálja meg később"
+      ],
+      "Please complete the billing details": [
+        "Adja meg a számlázási adatokat"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Címek létrehozása előtt, állítson be egy saját domain nevet."
@@ -4740,6 +4858,9 @@
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "A mező tartalma hosszabb a megengedett maximum ${ maximumLength } karakternél."
+      ],
+      "This field is invalid": [
+        "Ez a mező érvénytelen"
       ],
       "This field is required": [
         "A mező kitöltése kötelező"
@@ -6780,6 +6901,10 @@
       "All your changes will be lost.": [
         "A változtatások el fognak veszni."
       ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Az összes névjegye importálásra kerül, maximum ${ maxContact } darabig",
+        "Az összes névjegye importálásra kerül, maximum ${ maxContact } darabig"
+      ],
       "Allocated": [
         "Lefoglalva"
       ],
@@ -8065,6 +8190,9 @@
       "Recently used servers:": [
         "Nemrég használt szerverek:"
       ],
+      "RECOMMENDED": [
+        "JAVASOLT"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Megbízható eszközökön javasolt. ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -9081,6 +9209,10 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Nem fogja tudni helyreállítani az zárolt adatait, a letöltött helyreállítási fájlokkal. Ez az eszköz alapú helyreállítást is érvényteleníti."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Ezután a számlázás ${ renewCycle } havonta történik, ${ renewAmountStr } összeggel. Bármikor lemondhatja.",
+        "Ezután a számlázás ${ renewCycle } havonta történik, ${ renewAmountStr } összeggel. Bármikor lemondhatja."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Engedélyezte a továbbítást a következő ${ MAX_SYNC_PAID_USER } Gmail címen. Ha újat szeretne hozzáadni, először tiltsa le az egyiket.",
@@ -10777,11 +10909,6 @@
         "Címzett: ${ to }"
       ]
     },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Válasszon ki egy identitás szolgáltatót az indításhoz"
-      ]
-    },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "Újabb naptár hozzáadásához töröljön egy meglévőt."
@@ -11237,7 +11364,17 @@
         "Ez a funkció átmenetileg nem elérhető."
       ]
     },
+    "meet_2025: Addon": {
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } licenc",
+        "${ seats } ${ MEET_APP_NAME } licenc"
+      ]
+    },
     "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licencet tartalmaz",
+        "${ seats } licencet tartalmaz"
+      ],
       "Secure calendar": [
         "Biztonságos naptár"
       ]
@@ -13694,12 +13831,24 @@
       "terms and conditions": [
         "felhasználási feltételek"
       ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "A kedvezmény ${ renewalsWithCoupon } megújításra érvényes.",
+        "A kedvezmény ${ renewalsWithCoupon } megújításra érvényes."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "A kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja.",
+        "A kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja."
+      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "A kedvezményes ár az első ${ subscriptionLength } hónapra érvényes.",
         "A kedvezményes ár az első ${ subscriptionLength } hónapra érvényes."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "A kedvezményes ár az első hónapra érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "A ${ priceWithDiscount } kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja.",
+        "A ${ priceWithDiscount } kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "A kedvezményes ${ priceWithDiscount } ár az első ${ subscriptionLength } hónapra érvényes.",
@@ -14136,6 +14285,11 @@
       ],
       "Unknown": [
         "Ismeretlen"
+      ]
+    },
+    "Provider option": {
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q2campaign2026: Action": {
@@ -15186,6 +15340,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "${ ownerName } által megosztva"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Megnyitás ebben: ${ appName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -17548,6 +17707,9 @@
       ],
       "Discard changes?": [
         "Módosítások elvetése?"
+      ],
+      "Disconnected from Gmail": [
+        "Leválasztva a Gmailről"
       ],
       "Display name and signature": [
         "Megjelenített név és aláírás"
