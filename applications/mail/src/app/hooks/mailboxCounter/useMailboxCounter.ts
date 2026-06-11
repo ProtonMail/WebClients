@@ -1,4 +1,7 @@
+// We need the counters in this file because this is where we compute their values
+// eslint-disable-next-line no-restricted-imports
 import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
+// eslint-disable-next-line no-restricted-imports
 import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { useFolders, useLabels, useSystemFolders } from '@proton/mail/store/labels/hooks';
 import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
