@@ -1130,9 +1130,6 @@
       "Upload and share files": [
         "Last opp og del filer"
       ],
-      "Upload anyway": [
-        "Last opp uansett"
-      ],
       "Upload file": [
         "Last opp fil"
       ],
@@ -3383,9 +3380,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "«${ sanitizedName }» finnes allerede"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } kan ikke koble til den eksterne kontoen"
       ],
@@ -3614,9 +3608,6 @@
       "Failed to update public share node": [
         "Kunne ikke oppdatere offentlig delingsnode"
       ],
-      "File cannot be merged with folder": [
-        "Fil kan ikke slås sammen med mappe"
-      ],
       "First name is too long": [
         "Fornavnet er for langt"
       ],
@@ -3757,9 +3748,6 @@
       ],
       "Payment process not supported": [
         "Betalingsprosess støttes ikke"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Opplasting av bilder er midlertidig deaktivert, prøv igjen senere."
       ],
       "Please activate your search again": [
         "Aktiver søket ditt på nytt"
@@ -3928,24 +3916,6 @@
       "The minimum donation amount is ${ price }": [
         "Minimumbeløpet for donasjon er ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Den nye revisjonen av opprinnelige fil er ikke lastet opp enda, forsøk på nytt senere."
-      ],
-      "The original file has missing active revision": [
-        "Den opprinnelige filen mangler aktiv revisjon"
-      ],
-      "The original file has missing hash key": [
-        "Den opprinnelige filen mangler hashnøkkel"
-      ],
-      "The original file has missing session key": [
-        "Den opprinnelige filen mangler øktsnøkkel"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Den opprinnelige filen er ikke lastet opp enda, forsøk igjen senere."
-      ],
-      "The original folder not found": [
-        "Den opprinnelige mappen ble ikke funnet"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Det er for mange mapper i din eksterne konto. Tilpass importen for å slette noen mapper."
       ],
@@ -3999,9 +3969,6 @@
       ],
       "Upload failed": [
         "Opplasting mislyktes"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Opplasting for denne mappen er midlertidig deaktivert"
       ],
       "Username must begin with a letter or digit": [
         "Brukernavn må begynne med en bokstav eller ett tall"
@@ -5671,9 +5638,6 @@
       "for ${ price }": [
         "for ${ price }"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Du får best resultat hvis du unngår strømming og minneintensive oppgaver, eller deler opp opplastingen i mindre grupper."
-      ],
       "For just ${ bundlePlanPriceInline }": [
         "For kun ${ bundlePlanPriceInline }"
       ],
@@ -6495,9 +6459,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dette er nå din ${ defaultEmailAddress } for å sende nye meldinger."
       ],
-      "This item already exists in your library": [
-        "Dette elementet finnes allerede i biblioteket ditt"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Dette elementet lagres ikke i Bilder-biblioteket. Hvis du fjerner det fra dette albumet, mister du tilgangen til det permanent.",
         "Noen av de markerte elementene arkiveres ikke i Bilder-biblioteket. Hvis du fjerner dem fra dette albumet, mister du tilgangen til dem permanent."
@@ -6538,26 +6499,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "Dette vil slette de valgte elementene du lastet opp permanent."
       ],
-      "This will replace the existing file with the folder": [
-        "Dette vil erstatte den eksisterende filen med mappen"
-      ],
       "This will replace the existing folder or file with the file": [
         "Dette vil erstatte den eksisterende mappen eller filen med filen"
       ],
       "This will replace the existing folder or file with the folder": [
         "Dette vil erstatte den eksisterende mappen eller filen med mappen"
       ],
-      "This will replace the existing folder with the file": [
-        "Dette vil erstatte den eksisterende mappen med filen"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Dette vil logge deg ut av alle kontoer som for øyeblikket er logget på."
-      ],
-      "This will upload a new version of the file": [
-        "Dette vil laste opp en ny versjon av filen"
-      ],
-      "This will upload a new version of the folder": [
-        "Dette vil laste opp en ny versjon av mappen"
       ],
       "Time": [
         "Tid"
@@ -6615,18 +6564,6 @@
       ],
       "Tracking": [
         "Sporing"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Overføring avbrutt for fil \"${ name }\""
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Overføring avbrutt for mappe \"${ name }\""
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Overføring hoppet over for fil \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Overføring hoppet over for mappe \"${ folderName }\""
       ],
       "Trash": [
         "Papirkurv"
@@ -6693,9 +6630,6 @@
       ],
       "Uploading": [
         "Laster opp"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Opplasting av hundrevis av filer samtidig kan ha innvirkning på ytelsen."
       ],
       "Uppercase and lowercase letters": [
         "Store og små bokstaver"
@@ -7515,12 +7449,6 @@
       "Keep both": [
         "Behold begge"
       ],
-      "Keep both files": [
-        "Behold begge filene"
-      ],
-      "Keep both folders": [
-        "Behold begge mappene"
-      ],
       "Label messages as": [
         "Merk meldinger som"
       ],
@@ -7676,12 +7604,6 @@
       ],
       "Region": [
         "Region"
-      ],
-      "Replace existing file": [
-        "Erstatt eksisterende fil"
-      ],
-      "Replace existing folder": [
-        "Erstatt eksisterende mappe"
       ],
       "Replace existing folder or file": [
         "Erstatt eksisterende mappe eller fil"
@@ -9496,14 +9418,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" kunne ikke flyttes til papirkurven"
       ],
-      "\"${ name }\" failed to be saved": [
-        "\"${ name }\" kunne ikke lagres"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" flyttet til papirkurven"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" lagret"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" kunne ikke gis nytt navn"
@@ -9665,19 +9581,6 @@
       "Failed to rename device": [
         "Kan ikke gi nytt navn til enhet"
       ],
-      "Failed to upload files: ${ err }": [
-        "Kunne ikke laste opp filer: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Fil eller mappe \"${ filename }\" og ${ count } annen lastes allerede opp",
-        "Fil eller mappe \"${ filename }\" og ${ count } andre lastes allerede opp"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Fil eller mappe \"${ filename }\" lastes allerede opp"
-      ],
-      "File or folder is missing a name": [
-        "Fil eller mappe mangler et navn"
-      ],
       "File removed": [
         "Fil fjernet"
       ],
@@ -9698,9 +9601,6 @@
       "Move ${ n } item": [
         "Flytt ${ n } element",
         "Flytt ${ n } elementer"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Ikke nok ledig plass til å laste opp ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Offentlig koblingstilgang oppdatert"
@@ -12744,12 +12644,6 @@
       "Drop to upload": [
         "Slipp for å laste opp"
       ],
-      "Duplicate file found": [
-        "Duplikatfil funnet"
-      ],
-      "Duplicate folder found": [
-        "Duplikatmappe funnet"
-      ],
       "Edit billing address": [
         "Rediger faktureringsadresse"
       ],
@@ -13061,9 +12955,6 @@
       "PayPal verification failed": [
         "PayPal-bekreftelse mislyktes"
       ],
-      "Performance might be affected": [
-        "Det kan gå utover ytelsen"
-      ],
       "Phone numbers": [
         "Telefonnumre"
       ],
@@ -13325,9 +13216,6 @@
       ],
       "Uploaded": [
         "Lastet opp"
-      ],
-      "Uploading a large file or folder": [
-        "Laster opp en stor fil eller mappe"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Bruk ${ VPN_SHORT_APP_NAME } for personvern"

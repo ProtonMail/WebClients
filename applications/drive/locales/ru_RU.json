@@ -981,9 +981,6 @@
       "Upload and share files": [
         "Загружайте и делитесь файлами"
       ],
-      "Upload anyway": [
-        "Все равно загрузить"
-      ],
       "Upload file": [
         "Загрузить файл"
       ],
@@ -2825,9 +2822,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" уже существует"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } не может подключиться к вашему внешнему аккаунту"
       ],
@@ -2978,9 +2972,6 @@
       "Failed to load the STL preview": [
         "Не удалось загрузить предварительный просмотр STL"
       ],
-      "File cannot be merged with folder": [
-        "Файл не может быть объединен с папкой"
-      ],
       "First name is too long": [
         "Имя слишком длинное"
       ],
@@ -3112,9 +3103,6 @@
       ],
       "Payment process not supported": [
         "Процесс оплаты не поддерживается"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Загрузка фотографий временно отключена. Повторите попытку позже"
       ],
       "Please activate your search again": [
         "Активируйте поиск снова"
@@ -3251,24 +3239,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Минимальная сумма кредита, которая может быть добавлена, составляет ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Новая версия исходного файла еще не загружена, пожалуйста, повторите попытку позже"
-      ],
-      "The original file has missing active revision": [
-        "В исходном файле отсутствует активная версия"
-      ],
-      "The original file has missing hash key": [
-        "У исходного файла отсутствует ключ хэша"
-      ],
-      "The original file has missing session key": [
-        "В исходном файле отсутствует ключ сеанса"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Исходный файл еще не загружен, пожалуйста, повторите попытку позже"
-      ],
-      "The original folder not found": [
-        "Исходная папка не найдена"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "В вашей внешнем аккаунте слишком много папок. Пожалуйста, настройте импорт, чтобы удалить некоторые папки."
       ],
@@ -3307,9 +3277,6 @@
       ],
       "Unknown payment token status": [
         "Неизвестный статус платежного токена"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Загрузка из этой папки временно отключена"
       ],
       "Username must begin with a letter or digit": [
         "Имя пользователя должно начинаться с буквы или цифры"
@@ -4787,9 +4754,6 @@
       "Folders you sync from your computer will appear here.": [
         "Здесь появятся папки, синхронизированные с компьютером."
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Для достижения наилучших результатов избегайте просмотра трансляций и действий, требующих большого объема памяти, или разделите загрузку на более мелкие пакеты."
-      ],
       "Free 5GB encrypted storage to get started": [
         "Бесплатное зашифрованное хранилище объемом 5ГБ для начала работы"
       ],
@@ -5447,9 +5411,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Теперь это ваш ${ defaultEmailAddress } для отправки новых сообщений."
       ],
-      "This item already exists in your library": [
-        "Этот элемент уже существует в вашей библиотеке"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Этот элемент не сохранен в вашей библиотеке Фото. Если вы удалите его из этого альбома, вы навсегда потеряете к нему доступ.",
         "Некоторые из выбранных элементов не сохранены в библиотеке Фото. Если вы удалите их из этого альбома, вы навсегда потеряете к ним доступ.",
@@ -5483,20 +5444,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "Это навсегда удалит загруженные вами выбранные элементы"
       ],
-      "This will replace the existing file with the folder": [
-        "Это заменит существующий файл на папку"
-      ],
-      "This will replace the existing folder with the file": [
-        "Это заменит существующую папку файлом"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "В результате вы выйдете из всех аккаунтов, в которые вы на данный момент вошли."
-      ],
-      "This will upload a new version of the file": [
-        "При этом будет загружена новая версия файла"
-      ],
-      "This will upload a new version of the folder": [
-        "Будет загружена новая версия папки"
       ],
       "Time": [
         "Время"
@@ -5543,18 +5492,6 @@
       "Tracking": [
         "Отслеживание"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Отменена передача файла \"${ name }\""
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Отменена передача паки \"${ name }\""
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Пропущена передача файла \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Пропущена передача папки \"${ folderName }\""
-      ],
       "Trash": [
         "Корзина"
       ],
@@ -5596,9 +5533,6 @@
       ],
       "Uploading": [
         "Загрузка"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Одновременная загрузка сотен файлов может повлиять на производительность."
       ],
       "Uppercase and lowercase letters": [
         "Заглавные и строчные буквы"
@@ -6256,12 +6190,6 @@
       "Keep both": [
         "Оставить оба"
       ],
-      "Keep both files": [
-        "Оставить оба файла"
-      ],
-      "Keep both folders": [
-        "Оставить обе папки"
-      ],
       "Label messages as": [
         "Отметить сообщения как"
       ],
@@ -6393,12 +6321,6 @@
       ],
       "Region": [
         "Регион"
-      ],
-      "Replace existing file": [
-        "Заменить существующий файл"
-      ],
-      "Replace existing folder": [
-        "Заменить существующую папку"
       ],
       "Reveal password": [
         "Показать пароль"
@@ -7968,14 +7890,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "Не удалось переместить в корзину \"${ name }\""
       ],
-      "\"${ name }\" failed to be saved": [
-        "\"${ name }\" не удалось сохранить"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" перемещено в корзину"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" успешно сохранено"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Не удалось переименовать \"${ newName }\""
@@ -8106,21 +8022,6 @@
       "Failed to remove the file": [
         "Не удалось удалить файл"
       ],
-      "Failed to upload files: ${ err }": [
-        "Не удалось загрузить файлы: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Файл или папка \"${ filename }\" и ${ count } других уже загружаются",
-        "Файл или папка \"${ filename }\" и ${ count } других уже загружаются",
-        "Файл или папка \"${ filename }\" и ${ count } других уже загружаются",
-        "Файл или папка \"${ filename }\" и ${ count } других уже загружаются"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Файл или папка \"${ filename }\" уже загружается"
-      ],
-      "File or folder is missing a name": [
-        "У папки или файла отсутствует имя"
-      ],
       "File removed": [
         "Файл удалён"
       ],
@@ -8147,9 +8048,6 @@
         "Переместить ${ n } элемента",
         "Переместить ${ n } элементов",
         "Переместить ${ n } элементов"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Недостаточно места для загрузки ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Доступ к публичной ссылке обновлен"
@@ -10688,12 +10586,6 @@
       "Drop to upload": [
         "Перетащите для выгрузки"
       ],
-      "Duplicate file found": [
-        "Найден дубликат файла"
-      ],
-      "Duplicate folder found": [
-        "Найден дубликат папки"
-      ],
       "Edit billing address": [
         "Изменить платежный адрес"
       ],
@@ -10955,9 +10847,6 @@
       "PayPal verification failed": [
         "Сбой проверки PayPal"
       ],
-      "Performance might be affected": [
-        "Это может отразиться на производительности"
-      ],
       "Phone numbers": [
         "Hомера телефонов"
       ],
@@ -11155,9 +11044,6 @@
       ],
       "Uploaded": [
         "Загружено"
-      ],
-      "Uploading a large file or folder": [
-        "Загрузка большого файла или папки"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Используйте ${ VPN_SHORT_APP_NAME } для обеспечения конфиденциальности данных"

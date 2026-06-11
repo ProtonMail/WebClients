@@ -1122,9 +1122,6 @@
       "Upload and share files": [
         "Nahrát a sdílet soubory"
       ],
-      "Upload anyway": [
-        "Přesto nahrát"
-      ],
       "Upload file": [
         "Nahrát soubor"
       ],
@@ -3337,9 +3334,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" již existuje"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } se nemůže připojit k vašemu externímu účtu"
       ],
@@ -3574,9 +3568,6 @@
       "Failed to update public share node": [
         "Nepodařilo se aktualizovat veřejný uzel sdílení"
       ],
-      "File cannot be merged with folder": [
-        "Soubor nelze sloučit se složkou"
-      ],
       "First name is too long": [
         "Křestní jméno je příliš dlouhé"
       ],
@@ -3720,9 +3711,6 @@
       ],
       "Payment process not supported": [
         "Platební proces není podporován"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Nahrávání fotek je dočasně vypnuté. Zkuste to prosíme později."
       ],
       "Please activate your search again": [
         "Prosím, aktivujte znovu vyhledávání"
@@ -3892,24 +3880,6 @@
       "The minimum donation amount is ${ price }": [
         "Minimální výše daru je ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Nová revize původního souboru ještě nebyla nahrána, zkuste to prosím později"
-      ],
-      "The original file has missing active revision": [
-        "V původním souboru chybí aktivní revize"
-      ],
-      "The original file has missing hash key": [
-        "V původním souboru chybí hash klíč"
-      ],
-      "The original file has missing session key": [
-        "V původním souboru chybí klíč relace"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Původní soubor ještě nebyl nahrán, zkuste to prosím později"
-      ],
-      "The original folder not found": [
-        "Původní složka nebyla nalezena"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Na vašem externím účtu je příliš mnoho složek. Upravte prosím import pro odstranění některých složek."
       ],
@@ -3963,9 +3933,6 @@
       ],
       "Upload failed": [
         "Nahrávání selhalo"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Nahrávání pro tuto složku je dočasně zakázáno"
       ],
       "Username must begin with a letter or digit": [
         "Uživatelské jméno musí začínat písmenem nebo číslicí"
@@ -5687,9 +5654,6 @@
       "for ${ price }": [
         "za ${ price }"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Chcete-li dosáhnout nejlepších výsledků, vyhněte se streamování a činnostem náročným na paměť nebo rozdělte nahrávání na menší části."
-      ],
       "Free 5GB encrypted storage to get started": [
         "5 GB bezplatného šifrovaného úložného prostoru"
       ],
@@ -6476,9 +6440,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Toto je nyní vaše ${ defaultEmailAddress } pro odesílání nových zpráv."
       ],
-      "This item already exists in your library": [
-        "Tato položka již ve vaší knihovně existuje"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Tato položka není uložena ve vaší knihovně fotek. Pokud ji z tohoto alba odeberete, ztratíte k ní trvale přístup.",
         "Tyto položky nejsou uloženy ve vaší knihovně fotek. Pokud je z tohoto alba odeberete, ztratíte k nim trvale přístup.",
@@ -6521,26 +6482,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "Tímto trvale smažete vybrané položky, které jste nahráli."
       ],
-      "This will replace the existing file with the folder": [
-        "Tímto se nahradí existující soubor složkou"
-      ],
       "This will replace the existing folder or file with the file": [
         "Tímto se nahradí existující složka nebo soubor souborem"
       ],
       "This will replace the existing folder or file with the folder": [
         "Tímto se nahradí existující složka nebo soubor složkou"
       ],
-      "This will replace the existing folder with the file": [
-        "Tímto se nahradí existující složka souborem"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Toto vás odhlásí od všech aktuálně přihlášených účtů."
-      ],
-      "This will upload a new version of the file": [
-        "Tímto se nahraje nová verze souboru"
-      ],
-      "This will upload a new version of the folder": [
-        "Tímto se nahraje nová verze složky"
       ],
       "Time": [
         "Čas"
@@ -6595,18 +6544,6 @@
       ],
       "Tracking": [
         "Sledování"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Přenos zrušen pro soubor \"${ name }\""
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Přenos zrušen pro složku \"${ name }\""
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Přenos vynechán pro soubor \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Přenos vynechán pro složku \"${ folderName }\""
       ],
       "Trash": [
         "Koš"
@@ -6664,9 +6601,6 @@
       ],
       "Uploading": [
         "Nahrávání"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Nahrávání stovek souborů najednou, může zapříčinit snížení výkonu."
       ],
       "Uppercase and lowercase letters": [
         "Velká a malá písmena"
@@ -7462,12 +7396,6 @@
       "Keep both": [
         "Ponechat obě"
       ],
-      "Keep both files": [
-        "Ponechat oba soubory"
-      ],
-      "Keep both folders": [
-        "Ponechat obě složky"
-      ],
       "Label messages as": [
         "Označit zprávy jako"
       ],
@@ -7611,12 +7539,6 @@
       ],
       "Region": [
         "Kraj"
-      ],
-      "Replace existing file": [
-        "Nahradit existující soubor"
-      ],
-      "Replace existing folder": [
-        "Nahradit existující složku"
       ],
       "Replace existing folder or file": [
         "Nahradit existující složku nebo soubor"
@@ -9432,14 +9354,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" se nepodařilo přesunout do koše"
       ],
-      "\"${ name }\" failed to be saved": [
-        "\"${ name }\" se nepodařilo uložit"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" přesunuto do koše"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" úspěšně uloženo"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" se nepodařilo přejmenovat"
@@ -9627,21 +9543,6 @@
       "Failed to rename device": [
         "Zařízení se nepodařilo přejmenovat"
       ],
-      "Failed to upload files: ${ err }": [
-        "Nepodařilo se nahrát soubory: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Soubor nebo složka \"${ filename }\" a ${ count } další se již nahrávají",
-        "Soubor nebo složka \"${ filename }\" a ${ count } další se již nahrávají",
-        "Soubor nebo složka \"${ filename }\" a ${ count } dalších se již nahrávají",
-        "Soubor nebo složka \"${ filename }\" a ${ count } dalších se již nahrávají"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Soubor nebo složka \"${ filename }\" se již nahrává"
-      ],
-      "File or folder is missing a name": [
-        "Souboru nebo složce chybí název"
-      ],
       "File removed": [
         "Soubor odebrán"
       ],
@@ -9668,9 +9569,6 @@
         "Přesunout ${ n } položky",
         "Přesunout ${ n } položek",
         "Přesunout ${ n } položek"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Není dostatek místa pro nahrání ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Veřejný přístup k odkazům aktualizován"
@@ -12819,12 +12717,6 @@
       "Drop to upload": [
         "Přetáhnout a nahrát"
       ],
-      "Duplicate file found": [
-        "Byl nalezen duplicitní soubor"
-      ],
-      "Duplicate folder found": [
-        "Byl nalezena duplicitní složka"
-      ],
       "Edit billing address": [
         "Úprava fakturační adresy"
       ],
@@ -13134,9 +13026,6 @@
       "PayPal verification failed": [
         "Ověření platby PayPal se nezdařilo"
       ],
-      "Performance might be affected": [
-        "Může být ovlivněn výkon"
-      ],
       "Phone numbers": [
         "Telefonní čísla"
       ],
@@ -13397,9 +13286,6 @@
       ],
       "Uploaded": [
         "Nahráno"
-      ],
-      "Uploading a large file or folder": [
-        "Nahrávání velkého souboru nebo složky"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Použít ${ VPN_SHORT_APP_NAME } pro ochranu soukromí"

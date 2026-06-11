@@ -91,6 +91,9 @@
       "Add photos": [
         "Adicionar fotos"
       ],
+      "Add storage": [
+        "Adicionar armazenamento"
+      ],
       "Add to \"${ name }\" (${ photoCount } photo)": [
         "Adicionar para \"${ name }\" (${ photoCount } foto)",
         "Adicionar para \"${ name }\" (${ photoCount } fotos)"
@@ -620,6 +623,9 @@
       "Let's talk": [
         "Vamos conversar"
       ],
+      "List layout": [
+        "Exibição em lista"
+      ],
       "Load": [
         "Carregar"
       ],
@@ -1129,9 +1135,6 @@
       ],
       "Upload and share files": [
         "Enviar e compartilhar arquivo"
-      ],
-      "Upload anyway": [
-        "Enviar assim mesmo"
       ],
       "Upload file": [
         "Enviar arquivo"
@@ -3377,9 +3380,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" já existe"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } não pode se conectar na sua conta externa"
       ],
@@ -3608,9 +3608,6 @@
       "Failed to update public share node": [
         "Erro ao atualizar o nó de compartilhamento público"
       ],
-      "File cannot be merged with folder": [
-        "Não é possível mesclar o arquivo com a pasta."
-      ],
       "First name is too long": [
         "Primeiro nome é muito longo"
       ],
@@ -3751,9 +3748,6 @@
       ],
       "Payment process not supported": [
         "Processo de pagamento não suportado"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "O envio de fotos está temporariamente desativado. Tente novamente mais tarde."
       ],
       "Please activate your search again": [
         "Ative a pesquisa novamente."
@@ -3913,24 +3907,6 @@
       "The minimum donation amount is ${ price }": [
         "O valor mínimo da doação é de ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "A nova revisão do arquivo original ainda não foi carregada. Tente novamente mais tarde."
-      ],
-      "The original file has missing active revision": [
-        "O arquivo original está faltando uma revisão ativa"
-      ],
-      "The original file has missing hash key": [
-        "O arquivo original falta uma chave hash"
-      ],
-      "The original file has missing session key": [
-        "O arquivo original está faltando uma chave de sessão"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "O arquivo original ainda não foi carregado. Tente novamente mais tarde."
-      ],
-      "The original folder not found": [
-        "A pasta original não foi encontrada"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Existem muitas pastas em sua conta externa. Personalize a importação para excluir algumas pastas."
       ],
@@ -3984,9 +3960,6 @@
       ],
       "Upload failed": [
         "Falha no envio"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "O envio para essa pasta está temporariamente desativado"
       ],
       "Username must begin with a letter or digit": [
         "O nome de usuário deve começar com uma letra ou dígito"
@@ -5638,9 +5611,6 @@
       "for ${ price }": [
         "por ${ price }"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Para obter melhores resultados, evite streaming e atividades que consomem muita memória ou divida seu carregamento em lotes menores."
-      ],
       "For just ${ bundlePlanPriceInline }": [
         "por apenas ${ bundlePlanPriceInline }"
       ],
@@ -6444,9 +6414,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Este é agora o seu ${ defaultEmailAddress } para enviar novas mensagens."
       ],
-      "This item already exists in your library": [
-        "Esse item já existe na sua biblioteca"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Este item não está salvo na sua biblioteca de Fotos. Se você removê-lo deste álbum, perderá o acesso a ele permanentemente.",
         "Alguns dos itens selecionados não são salvos na sua biblioteca de Fotos. Se você removê-los deste álbum, perderá o acesso a eles permanentemente."
@@ -6487,26 +6454,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "Isso excluirá permanentemente os itens selecionados que você enviou."
       ],
-      "This will replace the existing file with the folder": [
-        "Isso substituirá o arquivo existente pela pasta"
-      ],
       "This will replace the existing folder or file with the file": [
         "Isso substituirá a pasta ou arquivo existente pelo arquivo"
       ],
       "This will replace the existing folder or file with the folder": [
         "Isso substituirá a pasta ou arquivo existente pelo arquivo"
       ],
-      "This will replace the existing folder with the file": [
-        "Isso substituirá a pasta existente pelo arquivo"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Isto irá te desconectar de todas as contas atualmente conectadas."
-      ],
-      "This will upload a new version of the file": [
-        "Isso carregará uma nova versão do arquivo"
-      ],
-      "This will upload a new version of the folder": [
-        "Isso carregará uma nova versão da pasta."
       ],
       "Time": [
         "Hora"
@@ -6562,18 +6517,6 @@
       "Tracking": [
         "Rastreamento"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "A transferência do arquivo \"${ name }\" foi cancelado"
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "A transferência da pasta \"${ name }\" foi cancelada"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "A transferência do arquivo \"${ file.name }\" foi ignorada"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "A transferência da pasta \"${ folderName }\" foi ignorada"
-      ],
       "Trash": [
         "Lixeira"
       ],
@@ -6622,6 +6565,9 @@
       "Upgrade or clear space anytime to bring over the rest": [
         "Faça upgrade ou limpe espaço em qualquer momento para importar o resto"
       ],
+      "Upgrade to get more storage space": [
+        "Faça upgrade para obter mais espaço de armazenamento."
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Faça upgrade para manter seus benefícios ${ planTitle }."
       ],
@@ -6636,9 +6582,6 @@
       ],
       "Uploading": [
         "Enviando"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Enviar centenas de arquivos de uma só vez pode ter impacto no desempenho."
       ],
       "Uppercase and lowercase letters": [
         "Letras maiúsculas e minúsculas:"
@@ -7146,6 +7089,9 @@
       "Apply to all unverified items": [
         "Aplicar a todos os itens não verificados"
       ],
+      "Asset": [
+        "Ativo"
+      ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
       ],
@@ -7435,12 +7381,6 @@
       "Keep both": [
         "Manter ambos"
       ],
-      "Keep both files": [
-        "Manter ambos arquivos"
-      ],
-      "Keep both folders": [
-        "Manter ambas as pastas"
-      ],
       "Label messages as": [
         "Marcar mensagens como"
       ],
@@ -7515,6 +7455,9 @@
       ],
       "New password": [
         "Nova senha"
+      ],
+      "Non-consensual intimate imagery": [
+        "Imagens íntimas não consensuais"
       ],
       "Not active": [
         "Não ativo"
@@ -7596,12 +7539,6 @@
       ],
       "Region": [
         "Estado"
-      ],
-      "Replace existing file": [
-        "Substituir pasta existente"
-      ],
-      "Replace existing folder": [
-        "Substituir pasta existente"
       ],
       "Replace existing folder or file": [
         "Substituir pasta ou arquivo existente"
@@ -9410,14 +9347,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "Não foi possível mover \"${ name }\" para a lixeira."
       ],
-      "\"${ name }\" failed to be saved": [
-        "Não foi possível salvar \"${ name }\"."
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" movido para a lixeira"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" salvo"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Não foi possível mudar o nome de \"${ newName }\"."
@@ -9575,19 +9506,6 @@
       "Failed to rename device": [
         "Erro ao renomear dispositivo"
       ],
-      "Failed to upload files: ${ err }": [
-        "Erro ao enviar arquivos: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "O arquivo ou a pasta \"${ filename }\" e ${ count } mais já estão sendo enviados.",
-        "O arquivo ou a pasta \"${ filename }\" e ${ count } mais já estão sendo enviados."
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "O arquivo ou pasta \"${ filename }\" já está sendo enviado"
-      ],
-      "File or folder is missing a name": [
-        "Arquivo ou pasta sem nome"
-      ],
       "File removed": [
         "Arquivo removido"
       ],
@@ -9608,9 +9526,6 @@
       "Move ${ n } item": [
         "Mover ${ n } item",
         "Mover ${ n } itens"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Não há espaço suficiente para fazer o envio de ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Acesso ao link público atualizado"
@@ -12651,12 +12566,6 @@
       "Drop to upload": [
         "Solte para enviar"
       ],
-      "Duplicate file found": [
-        "Arquivo duplicado encontrado"
-      ],
-      "Duplicate folder found": [
-        "Pasta duplicada encontrada"
-      ],
       "Edit billing address": [
         "Editar o endereço de cobrança"
       ],
@@ -12959,6 +12868,9 @@
       "Other names": [
         "Outros nomes"
       ],
+      "Out of storage space": [
+        "Sem espaço de armazenamento"
+      ],
       "Payment failed": [
         "Erro no pagamento"
       ],
@@ -12967,9 +12879,6 @@
       ],
       "PayPal verification failed": [
         "Ocorreu um erro na verificação do PayPal"
-      ],
-      "Performance might be affected": [
-        "O desempenho pode ser afetado"
       ],
       "Phone numbers": [
         "Números de telefone"
@@ -13232,9 +13141,6 @@
       ],
       "Uploaded": [
         "Enviado"
-      ],
-      "Uploading a large file or folder": [
-        "Carregar um arquivo ou pasta grande"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Usar o ${ VPN_SHORT_APP_NAME } para a privacidade de dados"

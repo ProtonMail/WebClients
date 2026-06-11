@@ -93,6 +93,9 @@
       "Add photos": [
         "Pridať fotografie"
       ],
+      "Add storage": [
+        "Zväčšiť úložisko"
+      ],
       "Add to \"${ name }\" (${ photoCount } photo)": [
         "Pridať do \"${ name }\" (${ photoCount } fotografiu)",
         "Pridať do \"${ name }\" (${ photoCount } fotografie)",
@@ -1139,9 +1142,6 @@
       ],
       "Upload and share files": [
         "Nahrávanie a zdieľanie súborov"
-      ],
-      "Upload anyway": [
-        "Napriek tomu nahrať"
       ],
       "Upload file": [
         "Nahrať súbor"
@@ -3442,9 +3442,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "„${ sanitizedName }“ už existuje"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } sa nedokáže pripojiť k vášmu externému účtu."
       ],
@@ -3679,9 +3676,6 @@
       "Failed to update public share node": [
         "Nepodarilo sa aktualizovať uzol verejného zdieľania"
       ],
-      "File cannot be merged with folder": [
-        "Súbor nie je možné zlúčiť s priečinkom"
-      ],
       "First name is too long": [
         "Meno je príliš dlhé"
       ],
@@ -3828,9 +3822,6 @@
       ],
       "Payment process not supported": [
         "Proces platby nie je podporovaný"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Nahrávanie fotografií je dočasne nedostupné. Skúste to prosím, neskôr."
       ],
       "Please activate your search again": [
         "Aktivujte znovu vyhľadávanie"
@@ -4003,24 +3994,6 @@
       "The minimum donation amount is ${ price }": [
         "Minimálna výška daru je ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Nová kontrola originálneho súboru ešte nie je nahratá, skúste to znova neskôr, prosím"
-      ],
-      "The original file has missing active revision": [
-        "Pôvodnému súboru chýbajú aktívne revízie"
-      ],
-      "The original file has missing hash key": [
-        "Originálnemu súboru chýba hash kľúč"
-      ],
-      "The original file has missing session key": [
-        "Pôvodnému súboru chýba kľúč relácie"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Pôvodný súbor ešte nie je nahratý, skúste to znova neskôr, prosím"
-      ],
-      "The original folder not found": [
-        "Pôvodný priečinok nebol nájdený"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Na vašom externom účte je príliš veľa priečinkov. Upravte import na zmazanie niektorých priečinkov, prosím."
       ],
@@ -4074,9 +4047,6 @@
       ],
       "Upload failed": [
         "Nahrávanie zlyhalo"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Nahrávanie do tohto priečinka je dočasne deaktivované"
       ],
       "Username must begin with a letter or digit": [
         "Používateľské meno musí začínať písmenom alebo číslom"
@@ -5852,9 +5822,6 @@
       "for ${ price }": [
         "za ${ price }"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Na dosiahnutie najlepších výsledkov sa vyhnite streamovaniu a činnostiam náročným na pamäť alebo rozdeľte nahrávanie na menšie časti."
-      ],
       "For just ${ bundlePlanPriceInline }": [
         "Len za ${ bundlePlanPriceInline }"
       ],
@@ -6692,9 +6659,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Toto je teraz vaša ${ defaultEmailAddress } pre odosielanie nových správ."
       ],
-      "This item already exists in your library": [
-        "Táto položka už vo vašej knižnici existuje"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Táto položka nie je uložená vo vašej knižnici fotografií. Ak ju z tohto albumu odstránite, natrvalo k nej stratíte prístup.",
         "Niektoré z vybraných položiek nie sú uložené vo vašej knižnici fotografií. Ak ich z tohto albumu odstránite, natrvalo k nim stratíte prístup.",
@@ -6737,26 +6701,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "Týmto sa natrvalo odstránia vybrané položky, ktoré ste nahrali."
       ],
-      "This will replace the existing file with the folder": [
-        "Týmto sa existujúci súbor nahradí zvoleným priečinkom"
-      ],
       "This will replace the existing folder or file with the file": [
         "Týmto sa nahradí existujúci priečinok alebo súbor súborom"
       ],
       "This will replace the existing folder or file with the folder": [
         "Týmto sa nahradí existujúci priečinok alebo súbor priečinkom"
       ],
-      "This will replace the existing folder with the file": [
-        "Týmto sa existujúci priečinok nahradí zvoleným súborom"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Týmto sa odhlásite zo všetkých aktuálne prihlásených účtov."
-      ],
-      "This will upload a new version of the file": [
-        "Týmto sa nahrá nová verzia súboru"
-      ],
-      "This will upload a new version of the folder": [
-        "Týmto sa nahrá nová verzia priečinka"
       ],
       "Time": [
         "Čas"
@@ -6815,18 +6767,6 @@
       "Tracking": [
         "Sledovanie"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Prenos súboru „${ name }“ zrušený"
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Prenos priečinku „${ name }“ zrušený"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Prenos súboru „${ file.name }“ vynechaný"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Prenos priečinku „${ folderName }“ vynechaný"
-      ],
       "Trash": [
         "Kôš"
       ],
@@ -6878,6 +6818,9 @@
       "Upgrade or clear space anytime to bring over the rest": [
         "Kedykoľvek môžete zvýšiť úroveň alebo uvoľniť miesto, aby ste mohli preniesť zvyšok"
       ],
+      "Upgrade to get more storage space": [
+        "Upgradujte a získajte viac úložného priestoru"
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Zvýšte si úroveň, aby ste si zachovali svoje ${ planTitle } výhody."
       ],
@@ -6892,9 +6835,6 @@
       ],
       "Uploading": [
         "Nahrávanie"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Nahrávanie stoviek súborov naraz môže znížiť výkonnosť."
       ],
       "Uppercase and lowercase letters": [
         "Veľké a malé písmená"
@@ -7450,6 +7390,9 @@
       "Apply to all unverified items": [
         "Použiť na všetky neoverené položky"
       ],
+      "Asset": [
+        "Aktívum"
+      ],
       "Attach screenshot(s)": [
         "Priložiť snímok(ky) obrazovky"
       ],
@@ -7741,12 +7684,6 @@
       "Keep both": [
         "Ponechať oba"
       ],
-      "Keep both files": [
-        "Ponechať oba súbory"
-      ],
-      "Keep both folders": [
-        "Ponechať oba priečinky"
-      ],
       "Label messages as": [
         "Označiť správy ako"
       ],
@@ -7821,6 +7758,9 @@
       ],
       "New password": [
         "Nové heslo"
+      ],
+      "Non-consensual intimate imagery": [
+        "Intímne snímky bez súhlasu"
       ],
       "Not active": [
         "Neaktívne"
@@ -7902,12 +7842,6 @@
       ],
       "Region": [
         "Kraj"
-      ],
-      "Replace existing file": [
-        "Nahradiť existujúci súbor"
-      ],
-      "Replace existing folder": [
-        "Nahradiť existujúci priečinok"
       ],
       "Replace existing folder or file": [
         "Nahradiť existujúci priečinok alebo súbor"
@@ -9747,14 +9681,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "„${ name }“ sa nepodarilo presunúť do koša"
       ],
-      "\"${ name }\" failed to be saved": [
-        "„${ name }“ sa nepodarilo uložiť"
-      ],
       "\"${ name }\" moved to trash": [
         "„${ name }“ presunuté do koša"
-      ],
-      "\"${ name }\" saved successfully": [
-        "„${ name }“ úspešne uložené"
       ],
       "\"${ newName }\" failed to be renamed": [
         "„${ newName }“ sa nepodarilo premenovať"
@@ -9954,21 +9882,6 @@
       "Failed to rename device": [
         "Premenovanie zariadenia zlyhalo"
       ],
-      "Failed to upload files: ${ err }": [
-        "Nepodarilo sa nahrať súbory: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Súbor alebo priečinok \"${ filename }\" a ${ count } ďalší sa už nahráva",
-        "Súbor alebo priečinok \"${ filename }\" a ${ count } ďalšie sa už nahrávajú",
-        "Súbor alebo priečinok \"${ filename }\" a ${ count } ďalších sa už nahráva",
-        "Súbor alebo priečinok \"${ filename }\" a ${ count } ďalších sa už nahráva"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Súbor alebo priečinok „${ filename }“ už sa nahráva"
-      ],
-      "File or folder is missing a name": [
-        "Súboru alebo priečinku chýba názov"
-      ],
       "File removed": [
         "Súbor bol odstránený"
       ],
@@ -9995,9 +9908,6 @@
         "Presunúť ${ n } položky",
         "Presunúť ${ n } položiek",
         "Presunúť ${ n } položiek"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Nedostatok miesta na nahratie ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Verejný prístupový odkaz bol aktualizovaný"
@@ -13065,12 +12975,6 @@
       "Drop to upload": [
         "Pretiahnuť a nahrať"
       ],
-      "Duplicate file found": [
-        "Nájdený duplicitný súbor"
-      ],
-      "Duplicate folder found": [
-        "Nájdený duplicitný priečinok"
-      ],
       "Edit billing address": [
         "Upraviť fakturačnú adresu"
       ],
@@ -13377,6 +13281,9 @@
       "Other names": [
         "Ostatné mená"
       ],
+      "Out of storage space": [
+        "Nedostatok ukladacieho priestoru"
+      ],
       "Payment failed": [
         "Platba zlyhala"
       ],
@@ -13385,9 +13292,6 @@
       ],
       "PayPal verification failed": [
         "Overenie platby PayPal zlyhalo"
-      ],
-      "Performance might be affected": [
-        "Môže byť ovplyvnený výkon"
       ],
       "Phone numbers": [
         "Telefónne čísla"
@@ -13652,9 +13556,6 @@
       ],
       "Uploaded": [
         "Nahrané"
-      ],
-      "Uploading a large file or folder": [
-        "Nahrávanie veľkého súboru alebo priečinka"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Používajte ${ VPN_SHORT_APP_NAME } na ochranu osobných údajov"

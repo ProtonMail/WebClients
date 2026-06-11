@@ -91,6 +91,9 @@
       "Add photos": [
         "Agregar fotos"
       ],
+      "Add storage": [
+        "Añadir almacenamiento"
+      ],
       "Add to \"${ name }\" (${ photoCount } photo)": [
         "Añadir a «${ name }» (${ photoCount } foto)",
         "Añadir a «${ name }» (${ photoCount } fotos)"
@@ -1129,9 +1132,6 @@
       ],
       "Upload and share files": [
         "Cargar y compartir archivos"
-      ],
-      "Upload anyway": [
-        "Cargar de todos modos"
       ],
       "Upload file": [
         "Cargar archivo"
@@ -2259,6 +2259,9 @@
       ],
       "Canada": [
         "Canadá"
+      ],
+      "Canary Islands": [
+        "Islas Canarias"
       ],
       "Cape Verde": [
         "Cabo Verde"
@@ -3398,9 +3401,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "«${ sanitizedName }» ya existe."
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } no se puede conectar a la cuenta externa"
       ],
@@ -3629,9 +3629,6 @@
       "Failed to update public share node": [
         "Error al actualizar el nodo compartido público"
       ],
-      "File cannot be merged with folder": [
-        "El archivo no puede combinarse con la carpeta"
-      ],
       "First name is too long": [
         "El nombre es demasiado largo"
       ],
@@ -3772,9 +3769,6 @@
       ],
       "Payment process not supported": [
         "Proceso de pago no soportado"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "La carga de fotos está temporalmente desactivada. Intente de nuevo más tarde."
       ],
       "Please activate your search again": [
         "Active de nuevo la búsqueda"
@@ -3943,24 +3937,6 @@
       "The minimum donation amount is ${ price }": [
         "El importe mínimo de la donación es de ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "La revisión nueva del archivo original aún no se ha cargado, intente de nuevo más tarde"
-      ],
-      "The original file has missing active revision": [
-        "Al archivo original le falta una revisión activa"
-      ],
-      "The original file has missing hash key": [
-        "Al archivo original le falta una clave hash"
-      ],
-      "The original file has missing session key": [
-        "Al archivo original le falta una clave de sesión"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "El archivo original aún no se ha cargado, intente de nuevo más tarde"
-      ],
-      "The original folder not found": [
-        "No se encontró la carpeta original"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hay demasiadas carpetas en la cuenta externa. Personalice la importación para eliminar algunas carpetas."
       ],
@@ -4014,9 +3990,6 @@
       ],
       "Upload failed": [
         "Error de carga"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "La carga para esta carpeta está desactivada temporalmente."
       ],
       "Username must begin with a letter or digit": [
         "El nombre de usuario debe comenzar con una letra o dígito"
@@ -5686,9 +5659,6 @@
       "for ${ price }": [
         "por ${ price }"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Para mejores resultados, evite las actividades de streaming o demandantes de memoria, o divida la carga de archivos en lotes más pequeños."
-      ],
       "For just ${ bundlePlanPriceInline }": [
         "Por solo ${ bundlePlanPriceInline }"
       ],
@@ -6175,6 +6145,9 @@
       "Please select the folders you would like to import:": [
         "Seleccione las carpetas que quiere importar:"
       ],
+      "Please select the labels you would like to import:": [
+        "Seleccione las etiquetas que desee importar:"
+      ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Seleccione qué dirección o direcciones de correo agregar al grupo ${ groupCount }.",
         "Seleccione qué dirección o direcciones de correo agregar a los grupos ${ groupCount }."
@@ -6510,9 +6483,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Esta es ahora su ${ defaultEmailAddress } para enviar mensajes nuevos."
       ],
-      "This item already exists in your library": [
-        "Este elemento ya existe en su librería"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Este elemento no está guardado en su biblioteca de fotos. Si lo elimina de este álbum, perderá el acceso a él de forma permanente.",
         "Algunos de los elementos seleccionados no están guardados en su biblioteca de fotos. Si los elimina de este álbum, perderá el acceso a ellos de forma permanente."
@@ -6553,26 +6523,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "Esto eliminará permanentemente los elementos seleccionados cargados."
       ],
-      "This will replace the existing file with the folder": [
-        "Esto reemplazará el archivo existente con la carpeta"
-      ],
       "This will replace the existing folder or file with the file": [
         "Esto reemplazará la carpeta o el archivo existentes con el archivo"
       ],
       "This will replace the existing folder or file with the folder": [
         "Esto reemplazará la carpeta o el archivo existente con la carpeta"
       ],
-      "This will replace the existing folder with the file": [
-        "Esto reemplazará la carpeta existente con el archivo"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Esto cerrará la sesión de todas las cuentas con la sesión activa."
-      ],
-      "This will upload a new version of the file": [
-        "Esto cargará una nueva versión del archivo"
-      ],
-      "This will upload a new version of the folder": [
-        "Esto cargará una nueva versión de la carpeta."
       ],
       "Time": [
         "Hora"
@@ -6631,18 +6589,6 @@
       "Tracking": [
         "Rastreadores"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Transferencia cancelada para el archivo \"${ name }\""
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Se canceló la transferencia para la carpeta «${ name }»."
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Transferencia omitida para el archivo \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Transferencia omitida para la carpeta \"${ folderName }\""
-      ],
       "Trash": [
         "Papelera"
       ],
@@ -6694,6 +6640,9 @@
       "Upgrade or clear space anytime to bring over the rest": [
         "Actualice o libere espacio en cualquier momento para importar el resto"
       ],
+      "Upgrade to get more storage space": [
+        "Actualice su plan para obtener más espacio de almacenamiento"
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Mejore para mantener sus beneficios de ${ planTitle }."
       ],
@@ -6708,9 +6657,6 @@
       ],
       "Uploading": [
         "Cargando"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Cargar cientos de archivos a la vez puede tener un impacto en el rendimiento."
       ],
       "Uppercase and lowercase letters": [
         "Letras mayúsculas y minúsculas"
@@ -7241,6 +7187,9 @@
       "Apply to all unverified items": [
         "Aplicar a todos los elementos no verificados"
       ],
+      "Asset": [
+        "Activo"
+      ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s)"
       ],
@@ -7530,12 +7479,6 @@
       "Keep both": [
         "Mantener ambos"
       ],
-      "Keep both files": [
-        "Mantener ambos archivos"
-      ],
-      "Keep both folders": [
-        "Mantener ambas carpetas"
-      ],
       "Label messages as": [
         "Etiquetar mensajes como"
       ],
@@ -7610,6 +7553,9 @@
       ],
       "New password": [
         "Contraseña nueva"
+      ],
+      "Non-consensual intimate imagery": [
+        "Imagenes íntimas no consensuadas"
       ],
       "Not active": [
         "No activo"
@@ -7691,12 +7637,6 @@
       ],
       "Region": [
         "Estado"
-      ],
-      "Replace existing file": [
-        "Reemplazar archivo existente"
-      ],
-      "Replace existing folder": [
-        "Reemplazar carpeta existente"
       ],
       "Replace existing folder or file": [
         "Reemplazar la carpeta o el archivo existente"
@@ -9511,14 +9451,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "Error al mover \"${ name }\" a la papelera"
       ],
-      "\"${ name }\" failed to be saved": [
-        "Error al guardar \"${ name }\""
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" movido a la papelera"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" guardado"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Error al renombrar \"${ newName }\""
@@ -9680,19 +9614,6 @@
       "Failed to rename device": [
         "Error al renombrar dispositivo"
       ],
-      "Failed to upload files: ${ err }": [
-        "Error al cargar los archivos: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "El archivo o carpeta \"${ filename }\" y ${ count } más ya se están cargando",
-        "El archivo o carpeta \"${ filename }\" y ${ count } más ya se están cargando"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "El archivo o carpeta \"${ filename }\" ya se está cargando"
-      ],
-      "File or folder is missing a name": [
-        "Falta el nombre del archivo o carpeta"
-      ],
       "File removed": [
         "Archivo eliminado"
       ],
@@ -9713,9 +9634,6 @@
       "Move ${ n } item": [
         "Mover ${ n } elemento",
         "Mover ${ n } elementos"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "No hay espacio suficiente para cargar ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Se actualizó el acceso al enlace público."
@@ -12759,12 +12677,6 @@
       "Drop to upload": [
         "Soltar para cargar"
       ],
-      "Duplicate file found": [
-        "Archivo duplicado encontrado"
-      ],
-      "Duplicate folder found": [
-        "Carpeta duplicada encontrada"
-      ],
       "Edit billing address": [
         "Editar la dirección de la factura"
       ],
@@ -13067,6 +12979,9 @@
       "Other names": [
         "Otros nombres"
       ],
+      "Out of storage space": [
+        "No queda espacio de almacenamiento"
+      ],
       "Payment failed": [
         "Error con el pago"
       ],
@@ -13075,9 +12990,6 @@
       ],
       "PayPal verification failed": [
         "Error con la verificación de PayPal"
-      ],
-      "Performance might be affected": [
-        "El rendimiento puede verse afectado"
       ],
       "Phone numbers": [
         "Números de teléfono"
@@ -13341,9 +13253,6 @@
       "Uploaded": [
         "Cargado"
       ],
-      "Uploading a large file or folder": [
-        "Cargando un archivo grande o carpeta"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Use ${ VPN_SHORT_APP_NAME } para la privacidad de los datos"
       ],
@@ -13518,6 +13427,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si compó un código de regalo o recibió uno de nuestro equipo de soporte, puede ingresarlo aquí."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Asistencia IA inmediata, experto humano a su disposición!"
       ],
       "Load image": [
         "Cargar imagen"

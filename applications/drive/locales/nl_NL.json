@@ -91,6 +91,9 @@
       "Add photos": [
         "Foto's toevoegen"
       ],
+      "Add storage": [
+        "Opslagruimte toevoegen"
+      ],
       "Add to \"${ name }\" (${ photoCount } photo)": [
         "Toevoegen aan \"${ name }\" (${ photoCount } foto)",
         "Toevoegen aan \"${ name }\" (${ photoCount } foto's)"
@@ -620,6 +623,9 @@
       "Let's talk": [
         "Laten we praten!"
       ],
+      "List layout": [
+        "Lijstweergave"
+      ],
       "Load": [
         "Laden"
       ],
@@ -1129,9 +1135,6 @@
       ],
       "Upload and share files": [
         "Bestanden uploaden en delen"
-      ],
-      "Upload anyway": [
-        "Toch uploaden"
       ],
       "Upload file": [
         "Bestand uploaden"
@@ -2250,6 +2253,9 @@
       ],
       "Canada": [
         "Canada"
+      ],
+      "Canary Islands": [
+        "Canarische Eilanden"
       ],
       "Cape Verde": [
         "Kaapverdië"
@@ -3389,9 +3395,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" bestaat al"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } kan geen verbinding maken met uw externe account"
       ],
@@ -3620,9 +3623,6 @@
       "Failed to update public share node": [
         "Bijwerken van openbaar gedeeld knooppunt is mislukt"
       ],
-      "File cannot be merged with folder": [
-        "Bestand kan niet worden samengevoegd met map"
-      ],
       "First name is too long": [
         "Voornaam is te lang"
       ],
@@ -3763,9 +3763,6 @@
       ],
       "Payment process not supported": [
         "Betalingsproces niet ondersteund"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Foto-upload is tijdelijk uitgeschakeld. Probeer het later opnieuw"
       ],
       "Please activate your search again": [
         "Activeer het zoeken opnieuw"
@@ -3934,24 +3931,6 @@
       "The minimum donation amount is ${ price }": [
         "Het minimale donatiebedrag is ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "De nieuwe revisie van het originele bestand is nog niet geüpload, probeer het later nog eens"
-      ],
-      "The original file has missing active revision": [
-        "Het originele bestand heeft geen actieve revisie"
-      ],
-      "The original file has missing hash key": [
-        "Het originele bestand heeft geen hash sleutel"
-      ],
-      "The original file has missing session key": [
-        "In het originele bestand ontbreekt de sessiesleutel"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Het originele bestand is nog niet geüpload, probeer het later nog eens"
-      ],
-      "The original folder not found": [
-        "De originele map niet gevonden"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Er zijn te veel mappen op uw externe account. Pas de import aan om enkele mappen te verwijderen."
       ],
@@ -4005,9 +3984,6 @@
       ],
       "Upload failed": [
         "Opladen mislukt"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Uploaden voor deze map is tijdelijk uitgeschakeld"
       ],
       "Username must begin with a letter or digit": [
         "Gebruikersnaam moet met een letter of cijfer beginnen"
@@ -5677,9 +5653,6 @@
       "for ${ price }": [
         "voor ${ price }"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Vermijd streaming en andere geheugenintensieve activiteiten of splits je upload op in kleinere delen voor het beste resultaat."
-      ],
       "For just ${ bundlePlanPriceInline }": [
         "Voor maar ${ bundlePlanPriceInline }"
       ],
@@ -6166,6 +6139,9 @@
       "Please select the folders you would like to import:": [
         "Selecteer de mappen die u wilt importeren:"
       ],
+      "Please select the labels you would like to import:": [
+        "Selecteer de labels die u wilt importeren:"
+      ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Selecteer welk e-mailadres u wilt toevoegen aan ${ groupCount } groep.",
         "Selecteer welke e-mailadressen u wilt toevoegen aan ${ groupCount } groepen."
@@ -6501,9 +6477,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dit is nu uw ${ defaultEmailAddress } voor het verzenden van nieuwe berichten."
       ],
-      "This item already exists in your library": [
-        "Dit item bestaat al in uw bibliotheek"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Dit item is niet opgeslagen in uw Foto's bibliotheek. Als u het verwijdert uit dit album, verliest u toegang tot het item.",
         "Sommige van de geselecteerde items zijn niet opgeslagen in uw Foto's bibliotheek. Als u ze verwijdert uit dit album, verliest u toegang tot de items."
@@ -6544,26 +6517,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "Deze actie zal de geselecteerde items die u heeft opgeladen definitief verwijderen."
       ],
-      "This will replace the existing file with the folder": [
-        "Dit zal het bestaande bestand vervangen door de map"
-      ],
       "This will replace the existing folder or file with the file": [
         "Dit zal de bestaande map of het bestand vervangen door het bestand."
       ],
       "This will replace the existing folder or file with the folder": [
         "Dit zal de bestaande map of het bestand vervangen door de map"
       ],
-      "This will replace the existing folder with the file": [
-        "Dit zal de bestaande map vervangen door het bestand"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Dit zal u uitloggen uit alle accounts die momenteel zijn ingelogd."
-      ],
-      "This will upload a new version of the file": [
-        "Dit zal een nieuwe versie van het bestand uploaden."
-      ],
-      "This will upload a new version of the folder": [
-        "Dit zal een nieuwe versie van de map uploaden"
       ],
       "Time": [
         "Tijd"
@@ -6622,18 +6583,6 @@
       "Tracking": [
         "Tracking"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Overdracht geannuleerd voor bestand \"${ name }\""
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Overdracht geannuleerd voor map \"${ name }\""
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Overdracht overgeslagen voor bestand \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Overdracht overgeslagen voor map \"${ folderName }\""
-      ],
       "Trash": [
         "Prullenbak"
       ],
@@ -6685,6 +6634,9 @@
       "Upgrade or clear space anytime to bring over the rest": [
         "Upgrade of maak op elk gewenst moment ruimte vrij om de rest over te brengen"
       ],
+      "Upgrade to get more storage space": [
+        "Upgrade om meer opslagruimte te krijgen."
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Upgraden om uw ${ planTitle } voordelen te behouden."
       ],
@@ -6699,9 +6651,6 @@
       ],
       "Uploading": [
         "Aan het uploaden"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Het uploaden van honderden bestanden in één keer kan een prestatieeffect hebben."
       ],
       "Uppercase and lowercase letters": [
         "Hoofdletters en kleine letters"
@@ -7521,12 +7470,6 @@
       "Keep both": [
         "Beide behouden"
       ],
-      "Keep both files": [
-        "Beide bestanden behouden"
-      ],
-      "Keep both folders": [
-        "Beide folders behouden"
-      ],
       "Label messages as": [
         "Berichten labelen als"
       ],
@@ -7601,6 +7544,9 @@
       ],
       "New password": [
         "Nieuw wachtwoord"
+      ],
+      "Non-consensual intimate imagery": [
+        "Intieme beelden zonder wederzijdse toestemming"
       ],
       "Not active": [
         "Niet actief"
@@ -7682,12 +7628,6 @@
       ],
       "Region": [
         "Regio/Provincie"
-      ],
-      "Replace existing file": [
-        "Bestaand bestand vervangen"
-      ],
-      "Replace existing folder": [
-        "Bestaande map vervangen"
       ],
       "Replace existing folder or file": [
         "Bestaande map of bestand vervangen"
@@ -9445,14 +9385,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" kon niet verplaatst worden naar prullenbak"
       ],
-      "\"${ name }\" failed to be saved": [
-        "\"${ name }\" kon niet worden opgeslagen"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" verplaatst naar de prullenbak"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" succesvol aangemaakt"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" kon niet worden hernoemd"
@@ -9614,19 +9548,6 @@
       "Failed to rename device": [
         "Hernoemen van apparaat is mislukt"
       ],
-      "Failed to upload files: ${ err }": [
-        "Het uploaden van bestanden is mislukt: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Bestand of map \"${ filename }\" en ${ count } andere zijn al aan het uploaden",
-        "Bestand of map \"${ filename }\" en ${ count } andere zijn al aan het uploaden"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Bestand of map \"${ filename }\" is al aan het uploaden"
-      ],
-      "File or folder is missing a name": [
-        "Bestand of map heeft geen naam"
-      ],
       "File removed": [
         "Bestand verwijderd"
       ],
@@ -9647,9 +9568,6 @@
       "Move ${ n } item": [
         "Verplaats ${ n } item",
         "Verplaats ${ n } items"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Onvoldoende ruimte om ${ formattedTotal } te uploaden"
       ],
       "Public link access updated": [
         "Toegang publieke link aangepast"
@@ -12693,12 +12611,6 @@
       "Drop to upload": [
         "Sleep hier om te uploaden"
       ],
-      "Duplicate file found": [
-        "Duplicaat bestand gevonden"
-      ],
-      "Duplicate folder found": [
-        "Duplicate map gevonden"
-      ],
       "Edit billing address": [
         "Factuuradres bewerken"
       ],
@@ -13001,6 +12913,9 @@
       "Other names": [
         "Andere namen"
       ],
+      "Out of storage space": [
+        "Geen opslagruimte meer"
+      ],
       "Payment failed": [
         "Betaling mislukt"
       ],
@@ -13009,9 +12924,6 @@
       ],
       "PayPal verification failed": [
         "PayPal verificatie mislukt"
-      ],
-      "Performance might be affected": [
-        "Prestaties kunnen beïnvloed zijn"
       ],
       "Phone numbers": [
         "Telefoonnummers"
@@ -13275,9 +13187,6 @@
       "Uploaded": [
         "Geüpload"
       ],
-      "Uploading a large file or folder": [
-        "Groot bestand of map aan het uploaden"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Gebruik ${ VPN_SHORT_APP_NAME } voor data privacy"
       ],
@@ -13452,6 +13361,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Als u een geschenkcode heeft gekocht of een heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Directe AI-hulp, menselijke expert bij de hand!"
       ],
       "Load image": [
         "Laad foto"

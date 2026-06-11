@@ -91,6 +91,9 @@
       "Add photos": [
         "Fotoğraf ekle"
       ],
+      "Add storage": [
+        "Depolama alanı ekle"
+      ],
       "Add to \"${ name }\" (${ photoCount } photo)": [
         "\"${ name }\" albümüne ekle (${ photoCount } fotoğraf)",
         "\"${ name }\" albümüne ekle (${ photoCount } fotoğraf)"
@@ -620,6 +623,9 @@
       "Let's talk": [
         "Hadi konuşalım!"
       ],
+      "List layout": [
+        "Liste yerleşimi"
+      ],
       "Load": [
         "Yükle"
       ],
@@ -1129,9 +1135,6 @@
       ],
       "Upload and share files": [
         "Dosyaları yükleyin ve paylaşın"
-      ],
-      "Upload anyway": [
-        "Yine de yükle"
       ],
       "Upload file": [
         "Dosya yükle"
@@ -2259,6 +2262,9 @@
       ],
       "Canada": [
         "Kanada"
+      ],
+      "Canary Islands": [
+        "Kanarya Adaları"
       ],
       "Cape Verde": [
         "Yeşil Burun Adaları"
@@ -3398,9 +3404,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" zaten var"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } dış hesabınızla bağlantı kuramadı"
       ],
@@ -3629,9 +3632,6 @@
       "Failed to update public share node": [
         "Herkese açık paylaşım noktası güncellenemedi"
       ],
-      "File cannot be merged with folder": [
-        "Dosya klasörle birleştirilemez"
-      ],
       "First name is too long": [
         "Ad çok uzun"
       ],
@@ -3772,9 +3772,6 @@
       ],
       "Payment process not supported": [
         "Ödeme işlemi desteklenmiyor"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Fotoğraf yükleme özelliği geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Please activate your search again": [
         "Lütfen arama özelliğini yeniden açın"
@@ -3943,24 +3940,6 @@
       "The minimum donation amount is ${ price }": [
         "En az bağış tutarı ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Özgün dosyanın yeni düzeltmesi henüz yüklenmemiş. Lütfen bir süre sonra yeniden deneyin"
-      ],
-      "The original file has missing active revision": [
-        "Özgün dosyanın etkin düzeltmesi eksik"
-      ],
-      "The original file has missing hash key": [
-        "Özgün dosyanın karma anahtarı eksik"
-      ],
-      "The original file has missing session key": [
-        "Özgün dosyanın oturum anahtarı eksik"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Özgün dosya henüz yüklenmemiş. Lütfen bir süre sonra yeniden deneyin"
-      ],
-      "The original folder not found": [
-        "Özgün klasör bulunamadı"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Dış hesabınızda çok fazla klasör var. Lütfen bazı klasörleri silmek için içe aktarma işlemini özelleştirin."
       ],
@@ -4014,9 +3993,6 @@
       ],
       "Upload failed": [
         "Yüklenemedi"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Bu klasöre yüklemeler geçici olarak yapılamıyor"
       ],
       "Username must begin with a letter or digit": [
         "Kullanıcı adı bir harf ya da rakam ile başlamalı"
@@ -5686,9 +5662,6 @@
       "for ${ price }": [
         "${ price } karşılığında"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "En iyi sonucu almak için yayın akışları ve fazla bellek kullanılması gereken etkinliklerden kaçının ya da yüklemenizi daha küçük gruplara ayırın."
-      ],
       "For just ${ bundlePlanPriceInline }": [
         "Yalnızca ${ bundlePlanPriceInline }"
       ],
@@ -6175,6 +6148,9 @@
       "Please select the folders you would like to import:": [
         "Lütfen içe aktarmak istediğiniz klasörleri seçin:"
       ],
+      "Please select the labels you would like to import:": [
+        "İçe aktarmak istediğiniz etiketleri seçin:"
+      ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Lütfen ${ groupCount } gruba eklenecek e-posta adresini ya da adreslerini seçin.",
         "Lütfen ${ groupCount } gruba eklenecek e-posta adresini ya da adreslerini seçin."
@@ -6510,9 +6486,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Artık yeni iletileri göndermek için ${ defaultEmailAddress } budur."
       ],
-      "This item already exists in your library": [
-        "Bu öge kitaplığınızda zaten var"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Bu öge Fotoğraflar kitaplığınızda kayıtlı değil. Ögeyi bu albümden kaldırırsanız, ögeye erişiminizi kalıcı olarak kaybedersiniz.",
         "Seçilmiş ögelerin bazıları Fotoğraflar kitaplığınızda kayıtlı değil. Ögeleri bu albümden kaldırırsanız, ögelere erişiminizi kalıcı olarak kaybedersiniz."
@@ -6553,26 +6526,14 @@
       "This will permanently delete the selected items you uploaded.": [
         "Bu işlem yüklediğiniz seçilmiş ögeleri kalıcı olarak silecek."
       ],
-      "This will replace the existing file with the folder": [
-        "Bu işlem var olan dosyayı klasör ile değiştirir"
-      ],
       "This will replace the existing folder or file with the file": [
         "Bu işlem var olan klasörü ya da dosyayı bu dosyayla değiştirir"
       ],
       "This will replace the existing folder or file with the folder": [
         "Bu işlem yeni klasörü var olan klasörün veya dosyanın üzerine yazar"
       ],
-      "This will replace the existing folder with the file": [
-        "Bu işlem var olan klasörü dosya ile değiştirir"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
-      ],
-      "This will upload a new version of the file": [
-        "Bu işlem dosyaya yeni bir sürüm yükler"
-      ],
-      "This will upload a new version of the folder": [
-        "Bu işlem klasörün yeni bir sürümünü yükler"
       ],
       "Time": [
         "Zaman"
@@ -6631,18 +6592,6 @@
       "Tracking": [
         "İzleme"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "\"${ name }\" dosyasının aktarımı iptal edildi"
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "\"${ name }\" klasörünün aktarımı iptal edildi"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "\"${ file.name }\" dosyasının aktarımı atlandı"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "\"${ folderName }\" klasörünün aktarımı atlandı"
-      ],
       "Trash": [
         "Çöp kutusu"
       ],
@@ -6694,6 +6643,9 @@
       "Upgrade or clear space anytime to bring over the rest": [
         "Geri kalanları aktarmak için istediğiniz zaman tarifenizi yükseltin ya da yer açın"
       ],
+      "Upgrade to get more storage space": [
+        "Daha fazla depolama alanı edinmek için tarifenizi yükseltin"
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } avantajlarınızı korumak için tarifenizi yükseltin."
       ],
@@ -6708,9 +6660,6 @@
       ],
       "Uploading": [
         "Yükleniyor"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Yüzlerce dosyanın aynı anda yüklenmesi başarımı etkileyebilir."
       ],
       "Uppercase and lowercase letters": [
         "Büyük ve küçük harfler"
@@ -7530,12 +7479,6 @@
       "Keep both": [
         "İkisi de tutulsun"
       ],
-      "Keep both files": [
-        "İki dosya da tutulsun"
-      ],
-      "Keep both folders": [
-        "İki klasör de tutulsun"
-      ],
       "Label messages as": [
         "İletiler şu şekilde etiketlensin"
       ],
@@ -7610,6 +7553,9 @@
       ],
       "New password": [
         "Yeni parola"
+      ],
+      "Non-consensual intimate imagery": [
+        "Rızası olmayan kişinin samimi görüntüleri"
       ],
       "Not active": [
         "Etkin değil"
@@ -7691,12 +7637,6 @@
       ],
       "Region": [
         "Bölge"
-      ],
-      "Replace existing file": [
-        "Var olan dosya değiştirilsin"
-      ],
-      "Replace existing folder": [
-        "Var olan klasör değiştirilsin"
       ],
       "Replace existing folder or file": [
         "Var olan klasörün veya dosyanın üzerine yaz"
@@ -9454,14 +9394,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" çöpe atılamadı"
       ],
-      "\"${ name }\" failed to be saved": [
-        "\"${ name }\" kaydedilemedi"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" çöpe atıldı"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" kaydedildi"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" yeniden adlandırılamadı"
@@ -9623,19 +9557,6 @@
       "Failed to rename device": [
         "Aygıt yeniden adlandırılamadı"
       ],
-      "Failed to upload files: ${ err }": [
-        "Dosyalar yüklenemedi: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "\"${ filename }\" dosya ya da klasörü ile ${ count } diğeri zaten yükleniyor",
-        "\"${ filename }\" dosya ya da klasörü ile ${ count } diğeri zaten yükleniyor"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "\"${ filename }\" dosya ya da klasörü zaten yükleniyor"
-      ],
-      "File or folder is missing a name": [
-        "Dosya ya da klasörün adı eksik"
-      ],
       "File removed": [
         "Dosya kaldırıldı"
       ],
@@ -9656,9 +9577,6 @@
       "Move ${ n } item": [
         "${ n } ögeyi taşı",
         "${ n } ögeyi taşı"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "${ formattedTotal } yüklemek için yeterli alan yok"
       ],
       "Public link access updated": [
         "Herkese açık bağlantı erişimi güncellendi"
@@ -12702,12 +12620,6 @@
       "Drop to upload": [
         "Yüklemek için bırakın"
       ],
-      "Duplicate file found": [
-        "Çift dosya bulundu"
-      ],
-      "Duplicate folder found": [
-        "Çift klasör bulundu"
-      ],
       "Edit billing address": [
         "Fatura adresini düzenle"
       ],
@@ -13010,6 +12922,9 @@
       "Other names": [
         "Diğer adlar"
       ],
+      "Out of storage space": [
+        "Depolama alanı yetersiz"
+      ],
       "Payment failed": [
         "Ödeme yapılamadı"
       ],
@@ -13018,9 +12933,6 @@
       ],
       "PayPal verification failed": [
         "PayPal doğrulaması başarısız oldu"
-      ],
-      "Performance might be affected": [
-        "Başarım etkilenebilir"
       ],
       "Phone numbers": [
         "Telefon numaraları"
@@ -13284,9 +13196,6 @@
       "Uploaded": [
         "Yüklenme"
       ],
-      "Uploading a large file or folder": [
-        "Büyük bir dosya ya da klasör yükleniyor"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Veri gizliliği için ${ VPN_SHORT_APP_NAME } kullanın"
       ],
@@ -13461,6 +13370,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Anında yapay zeka desteği ile uzmanlar her zaman yanınızda!"
       ],
       "Load image": [
         "Görsel yükle"
