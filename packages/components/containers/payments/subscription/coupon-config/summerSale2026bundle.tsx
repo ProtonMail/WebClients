@@ -3,7 +3,9 @@ import { c } from 'ttag';
 import Price from '@proton/components/components/price/Price';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
+import { getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
 
+import { getShortBillingText } from '../helpers';
 import type { CouponConfig } from './interface';
 
 export const summerSale2026BundleConfig: CouponConfig = {
@@ -21,7 +23,17 @@ export const summerSale2026BundleConfig: CouponConfig = {
             </Price>
         );
     },
+    cycleTitle: ({ cycle }, config) => {
+        const plan = getPlanFromPlanIDs(config.plansMap, config.planIDs);
+        const planTitle = plan?.Title;
+        if (!planTitle) {
+            return undefined; // falls back to the default cycle title
+        }
+
+        return `${planTitle} ${getShortBillingText(cycle, config.planIDs)}`;
+    },
     availableCycles: [CYCLE.YEARLY],
     disableCurrencySelector: true,
-    hideLumoAddonBanner: false,
+    hideLumoAddonBanner: true,
+    hideMeetAddonBanner: true,
 };
