@@ -1,10 +1,12 @@
 import type { FormEvent } from 'react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
 import {
-    type MemberPromptAction,
+    type MemberKeyPayload,
+    type PromoteGlobalSSOPayload,
+    classifyRoleChange,
     editMember,
     getMemberAddresses,
     getMemberEditPayload,
@@ -17,12 +19,12 @@ import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useOrganizationRoles } from '@proton/account/organizationRoles/hooks';
 import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
 import { Button } from '@proton/atoms/Button/Button';
-import { Card } from '@proton/atoms/Card/Card';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import useModalState, { type ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
@@ -37,14 +39,7 @@ import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import {
-    BRAND_NAME,
-    LUMO_APP_NAME,
-    MEMBER_PRIVATE,
-    MEMBER_ROLE,
-    MEMBER_SUBSCRIBER,
-    NAME_PLACEHOLDER,
-} from '@proton/shared/lib/constants';
+import { LUMO_APP_NAME, MEMBER_PRIVATE, MEMBER_ROLE, NAME_PLACEHOLDER } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
@@ -57,6 +52,7 @@ import noop from '@proton/utils/noop';
 
 import Addresses from '../addresses/Addresses';
 import LumoUpdateSubscriptionButton from '../payments/subscription/lumo/LumoUpdateSubscriptionButton';
+import MemberRoleChangePrompt from './MemberRoleChangePrompt';
 import MemberStorageSelector from './MemberStorageSelector';
 import MemberToggleContainer from './MemberToggleContainer';
 import SubUserCreateHint from './SubUserCreateHint';
@@ -125,60 +121,6 @@ const getMemberStateFromMember = (member: Member): MemberState => {
     };
 };
 
-const getMemberKeyPacketPayload = (memberAction: MemberPromptAction | null) => {
-    return memberAction ? memberAction.payload : null;
-};
-
-const ConfirmAdminPromotionPrompt = ({
-    memberPromptAction,
-    onConfirm,
-    ...confirmPromotionModalProps
-}: {
-    onConfirm: () => void;
-    memberPromptAction: MemberPromptAction | null;
-} & ModalStateProps) => {
-    const memberKeyPacketPayload = getMemberKeyPacketPayload(memberPromptAction);
-    if (!memberKeyPacketPayload) {
-        return null;
-    }
-    const { member, email } = memberKeyPacketPayload;
-    const name = member.Name;
-    return (
-        <Prompt
-            title={c('Title').t`Change role`}
-            buttons={[
-                <Button
-                    color="norm"
-                    onClick={() => {
-                        confirmPromotionModalProps.onClose();
-                        onConfirm();
-                    }}
-                >{c('Action').t`Make admin`}</Button>,
-                <Button
-                    onClick={() => {
-                        confirmPromotionModalProps.onClose();
-                    }}
-                >{c('Action').t`Cancel`}</Button>,
-            ]}
-            {...confirmPromotionModalProps}
-        >
-            <div className="mb-2">
-                {c('Info').t`Are you sure you want to give administrative privileges to this user?`}
-            </div>
-            <Card rounded className="text-break">
-                <div className="text-bold">{name}</div>
-                {email !== name && <div>{email}</div>}
-            </Card>
-            {memberKeyPacketPayload.type === 'promote-global-sso' && (
-                <div className="mt-2">
-                    {c('unprivatization')
-                        .t`To gain administrator rights, they will have to set a backup password the next time they sign in to ${BRAND_NAME}.`}
-                </div>
-            )}
-        </Prompt>
-    );
-};
-
 const SubUserEditModal = ({
     member,
     allowStorageConfiguration,
@@ -203,9 +145,7 @@ const SubUserEditModal = ({
         renderConfirmRemoveUnprivatization,
     ] = useModalState();
     const [confirmPrivatizationProps, setConfirmPrivatizationModal, renderConfirmPrivatization] = useModalState();
-    const [confirmDemotionModalProps, setConfirmDemotionModal, renderConfirmDemotion] = useModalState();
-    const [confirmPromotionModalProps, setConfirmPromotionModal, renderConfirmPromotion] = useModalState();
-    const memberPromptActionRef = useRef<MemberPromptAction | null>(null);
+    const [roleChangePrompt, showRoleChangePrompt] = useModalTwo(MemberRoleChangePrompt);
     const passwordlessMode = getIsPasswordless(organizationKey?.Key);
 
     // We want to keep AI enabled if all seats are taken but the user already has a seat
@@ -277,9 +217,10 @@ const SubUserEditModal = ({
         updateModel({ ...model, ...partial });
     };
 
-    const handleUpdateMember = async (memberDiff: Parameters<typeof editMember>[0]['memberDiff']) => {
-        const memberKeyPacketPayload = getMemberKeyPacketPayload(memberPromptActionRef.current);
-
+    const handleUpdateMember = async (
+        memberDiff: Parameters<typeof editMember>[0]['memberDiff'],
+        memberKeyPacketPayload: PromoteGlobalSSOPayload | MemberKeyPayload | null = null
+    ) => {
         const result = await dispatch(
             editMember({
                 member,
@@ -296,6 +237,43 @@ const SubUserEditModal = ({
             createNotification({ text: c('Success').t`User updated` });
         }
         return result.diff;
+    };
+
+    const confirmRoleChange = async (
+        targetRole: MEMBER_ROLE
+    ): Promise<{ confirmed: boolean; keyPacketPayload: PromoteGlobalSSOPayload | MemberKeyPayload | null }> => {
+        const classification = classifyRoleChange({
+            member,
+            targetRole,
+            isPasswordlessOrg: passwordlessMode,
+        });
+
+        const keyPacketPayload = await dispatch(
+            getMemberEditPayload({
+                member,
+                classification,
+                api: silentApi,
+            })
+        );
+
+        if (!classification.requiresPrompt) {
+            return { confirmed: true, keyPacketPayload };
+        }
+
+        const confirmed = await showRoleChangePrompt({
+            action: { classification, payload: keyPacketPayload },
+            subscriber: member.Subscriber,
+        });
+        return { confirmed, keyPacketPayload };
+    };
+
+    const handleToggleLegacyOrgAdminToggle = async (makeAdmin: boolean) => {
+        const newRole = makeAdmin ? MEMBER_ROLE.ORGANIZATION_ADMIN : MEMBER_ROLE.ORGANIZATION_MEMBER;
+        const { confirmed, keyPacketPayload } = await confirmRoleChange(newRole);
+        if (!confirmed) {
+            return;
+        }
+        await handleUpdateMember({ role: newRole }, keyPacketPayload);
     };
 
     const handleClose = submitting ? undefined : rest.onClose;
@@ -396,37 +374,9 @@ const SubUserEditModal = ({
                                 loading={loadingRole}
                                 checked={hasToggledAdmin}
                                 onChange={({ target }) => {
-                                    const run = async (memberDiff: { role: MEMBER_ROLE }) => {
-                                        const result = await dispatch(
-                                            getMemberEditPayload({
-                                                member,
-                                                memberDiff,
-                                                api: silentApi,
-                                            })
-                                        );
-
-                                        memberPromptActionRef.current = result;
-
-                                        if (result?.type === 'confirm-promote') {
-                                            if (result.prompt) {
-                                                setConfirmPromotionModal(true);
-                                                return;
-                                            }
-                                        }
-
-                                        if (result?.type === 'confirm-demote') {
-                                            setConfirmDemotionModal(true);
-                                            return;
-                                        }
-
-                                        await handleUpdateMember(memberDiff);
-                                    };
-
-                                    const newRole = target.checked
-                                        ? MEMBER_ROLE.ORGANIZATION_ADMIN
-                                        : MEMBER_ROLE.ORGANIZATION_MEMBER;
-
-                                    withLoadingRole(run({ role: newRole })).catch(errorHandler);
+                                    withLoadingRole(handleToggleLegacyOrgAdminToggle(target.checked)).catch(
+                                        errorHandler
+                                    );
                                 }}
                             />
                         }
@@ -651,45 +601,7 @@ const SubUserEditModal = ({
                     </div>
                 </Prompt>
             )}
-            {renderConfirmDemotion && (
-                <Prompt
-                    title={c('Title').t`Change role`}
-                    buttons={[
-                        <Button
-                            color="danger"
-                            loading={submitting}
-                            onClick={() => {
-                                confirmDemotionModalProps.onClose();
-                                withLoadingRole(handleUpdateMember({ role: MEMBER_ROLE.ORGANIZATION_MEMBER })).catch(
-                                    errorHandler
-                                );
-                            }}
-                        >{c('Action').t`Remove`}</Button>,
-                        <Button
-                            onClick={() => {
-                                confirmDemotionModalProps.onClose();
-                            }}
-                        >{c('Action').t`Cancel`}</Button>,
-                    ]}
-                    {...confirmDemotionModalProps}
-                >
-                    {member.Subscriber === MEMBER_SUBSCRIBER.PAYER
-                        ? c('Info')
-                              .t`This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.`
-                        : c('Info').t`Are you sure you want to remove administrative privileges from this user?`}
-                </Prompt>
-            )}
-            {renderConfirmPromotion && (
-                <ConfirmAdminPromotionPrompt
-                    onConfirm={() => {
-                        withLoadingRole(handleUpdateMember({ role: MEMBER_ROLE.ORGANIZATION_ADMIN })).catch(
-                            errorHandler
-                        );
-                    }}
-                    memberPromptAction={memberPromptActionRef.current}
-                    {...confirmPromotionModalProps}
-                />
-            )}
+            {roleChangePrompt}
             <Modal
                 as="form"
                 size="large"
