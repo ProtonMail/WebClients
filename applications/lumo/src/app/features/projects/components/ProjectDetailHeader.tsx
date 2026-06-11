@@ -1,12 +1,9 @@
-import { useEffect, useState } from 'react';
-
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 
-import { useUncontrolledField } from '../../../hooks/useUncontrolledField';
 import ProjectSettingsButton from '../ProjectSettingsButton';
 import { ProjectTitleSection } from './ProjectTitleSection';
 
@@ -31,39 +28,6 @@ export const ProjectDetailHeader = ({
     onSaveTitle,
     onDeleteProject,
 }: ProjectDetailHeaderProps) => {
-    const [isEditingTitle, setIsEditingTitle] = useState(false);
-    const titleField = useUncontrolledField<HTMLInputElement>(projectName);
-    const titleInputRef = titleField.bind.ref;
-    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-
-    useEffect(() => {
-        if (isEditingTitle && titleInputRef.current) {
-            titleInputRef.current.focus();
-            titleInputRef.current.select();
-        }
-    }, [isEditingTitle, titleInputRef]);
-
-    const handleStartEditing = () => {
-        setIsEditingTitle(true);
-    };
-
-    const handleSave = () => {
-        const trimmedTitle = titleField.getValue().trim();
-        if (trimmedTitle && trimmedTitle !== projectName) {
-            onSaveTitle(trimmedTitle);
-        }
-        setIsEditingTitle(false);
-    };
-
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            handleSave();
-        } else if (e.key === 'Escape') {
-            setIsEditingTitle(false);
-        }
-    };
-
     return (
         <div
             className={clsx(
@@ -99,9 +63,6 @@ export const ProjectDetailHeader = ({
                     onSaveTitle={onSaveTitle}
                     onDeleteProject={onDeleteProject}
                 />
-                {/* {...titleField.bind}
-                // Remount per edit (conditional render) keeps defaultValue in sync with the latest name defaultValue=
-                {projectName} */}
             </div>
         </div>
     );
