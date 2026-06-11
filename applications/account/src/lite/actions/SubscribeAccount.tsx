@@ -459,6 +459,7 @@ const SubscribeAccount = ({
                                                                 step: nextStep,
                                                             })
                                                         }
+                                                        disablePlanSelection={disablePlanSelectionValue}
                                                     />
                                                 ) : (
                                                     <>
