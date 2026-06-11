@@ -11,7 +11,6 @@ im.$media-expressions: $media-expressions;
 	flex-direction: column;
 	block-size: 100%;
 	overflow: hidden;
-	background-color: var(--background-norm);
 }
 
 // ── Tab toggle bar ─────────────────────────────────────────────────────────────
@@ -179,7 +178,6 @@ im.$media-expressions: $media-expressions;
 	inline-size: 100%;
 	block-size: 100%;
 	pointer-events: none;
-	background: linear-gradient(180deg, rgb(255 255 255 / 0) 80.95%, var(--background-norm, #fff) 95.24%);
 }
 
 // ── Composer wrapper ──────────────────────────────────────────────────────────
@@ -187,176 +185,6 @@ im.$media-expressions: $media-expressions;
 .gallery-composer-wrapper {
 	inline-size: 100%;
 }
-
-// // ── Discover panel ────────────────────────────────────────────────────────────
-
-// .gallery-discover {
-// 	display: flex;
-// 	flex-direction: column;
-// 	gap: 8px;
-// }
-
-// .gallery-discover__header {
-// 	display: flex;
-// 	align-items: center;
-// 	justify-content: space-between;
-// }
-
-// .gallery-discover__header-actions {
-// 	display: flex;
-// 	align-items: center;
-// 	gap: 4px;
-// }
-
-// .gallery-discover__title {
-// 	font-size: 11px;
-// 	font-weight: 600;
-// 	color: var(--text-hint);
-// 	text-transform: uppercase;
-// 	letter-spacing: 0.07em;
-// }
-
-// .gallery-discover__shuffle {
-// 	display: flex;
-// 	align-items: center;
-// 	justify-content: center;
-// 	inline-size: 22px;
-// 	block-size: 22px;
-// 	border-radius: 6px;
-// 	border: none;
-// 	background: none;
-// 	color: var(--text-hint);
-// 	cursor: pointer;
-// 	transition:
-// 		color 0.12s,
-// 		background 0.12s;
-
-// 	&:hover {
-// 		color: var(--text-norm);
-// 		background: var(--interaction-default-hover);
-// 	}
-
-// 	&:focus-visible {
-// 		outline: 2px solid var(--focus-ring);
-// 		outline-offset: 2px;
-// 	}
-// }
-
-// .gallery-discover__toggle {
-// 	font-size: 11px;
-// 	font-weight: 500;
-// 	color: var(--text-hint);
-// 	background: none;
-// 	border: none;
-// 	cursor: pointer;
-// 	padding-block: 2px;
-// 	padding-inline: 4px;
-// 	border-radius: 4px;
-// 	transition: color 0.12s;
-
-// 	&:hover {
-// 		color: var(--text-norm);
-// 	}
-
-// 	&:focus-visible {
-// 		outline: 2px solid var(--focus-ring);
-// 		outline-offset: 2px;
-// 	}
-// }
-
-// .gallery-discover__grid {
-// 	display: grid;
-// 	grid-template-columns: repeat(3, 1fr);
-// 	gap: 4px;
-
-// 	@include im.media('<=xsmall') {
-// 		grid-template-columns: repeat(2, 1fr);
-// 	}
-// }
-
-// ── Suggestion card ───────────────────────────────────────────────────────────
-
-// .gallery-suggestion-card {
-// 	display: flex;
-// 	flex-direction: column;
-// 	border-radius: 12px;
-// 	border: 1px solid var(--border-weak);
-// 	overflow: hidden;
-// 	background: var(--background-norm);
-// 	cursor: pointer;
-// 	text-align: start;
-// 	box-shadow: 0 1px 3px rgb(0 0 0 / 0.06);
-// 	transition:
-// 		box-shadow 0.18s,
-// 		transform 0.18s,
-// 		border-color 0.18s;
-
-// 	&:hover {
-// 		box-shadow: 0 6px 20px rgb(0 0 0 / 0.12);
-// 		transform: translateY(-3px);
-// 		border-color: var(--border-norm);
-// 	}
-
-// 	&:focus-visible {
-// 		outline: 2px solid var(--focus-ring);
-// 		outline-offset: 2px;
-// 	}
-// }
-
-// .gallery-suggestion-card__img-wrap {
-// 	position: relative;
-// 	display: block;
-// 	aspect-ratio: 4 / 5;
-// 	overflow: hidden;
-// 	flex-shrink: 0;
-// }
-
-// .gallery-suggestion-card__img {
-// 	inline-size: 100%;
-// 	block-size: 100%;
-// 	object-fit: cover;
-// 	display: block;
-// 	filter: grayscale(100%);
-// 	transition: all 0.25s ease;
-
-// 	.gallery-suggestion-card:hover & {
-// 		transform: scale(1.05);
-// 		filter: grayscale(0%);
-// 	}
-// }
-
-// // Pill badge overlaid on the bottom-left of the image
-// .gallery-suggestion-card__badge {
-// 	position: absolute;
-// 	inset-block-end: 7px;
-// 	inset-inline-start: 7px;
-// 	display: inline-flex;
-// 	align-items: center;
-// 	gap: 4px;
-// 	padding-block: 3px;
-// 	padding-inline: 6px 8px;
-// 	border-radius: 9999px;
-// 	background: var(--background-norm);
-// 	backdrop-filter: blur(6px);
-// 	font-size: 10px;
-// 	font-weight: bold;
-// 	color: var(--text-norm);
-// 	text-transform: uppercase;
-// 	letter-spacing: 0.06em;
-// 	pointer-events: none;
-// }
-
-// .gallery-suggestion-card__body {
-// 	padding-block: 8px 10px;
-// 	padding-inline: 10px;
-// }
-
-// .gallery-suggestion-card__title {
-// 	font-size: 13px;
-// 	font-weight: 600;
-// 	color: var(--text-norm);
-// 	line-height: 1.35;
-// }
 
 .gallery-created {
 	display: flex;

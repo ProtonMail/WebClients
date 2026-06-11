@@ -27,29 +27,20 @@ interface DrawerConfig {
 }
 
 /**
- * Configuration for the visual appearance of the layout
- */
-interface AppearanceConfig {
-    solidBackground?: boolean;
-}
-
-/**
  * Props interface for the LumoLayoutWithDrawer component
  */
 interface LumoLayoutWithDrawerProps {
     children: React.ReactNode;
     header?: HeaderConfig;
     drawer?: DrawerConfig;
-    appearance?: AppearanceConfig;
 }
 
-export const LumoLayoutWithDrawer = ({ children, header, drawer, appearance }: LumoLayoutWithDrawerProps) => {
+export const LumoLayoutWithDrawer = ({ children, header, drawer }: LumoLayoutWithDrawerProps) => {
     const { close, open, isOpen } = useRightPanel();
 
     // Extract configurations with defaults
     const headerConfig = header || {};
     const drawerConfig = drawer || {};
-    const appearanceConfig = appearance || {};
 
     const { component: headerComponent, leftButton: leftHeaderButton, showNewChatButton = false } = headerConfig;
 
@@ -60,8 +51,6 @@ export const LumoLayoutWithDrawer = ({ children, header, drawer, appearance }: L
         disabled: withoutDrawerToggle = false,
         defaultOpened = false,
     } = drawerConfig;
-
-    const { solidBackground = true } = appearanceConfig;
 
     // Automatically close panel if this layout doesn't support panels
     useEffect(() => {
@@ -82,8 +71,8 @@ export const LumoLayoutWithDrawer = ({ children, header, drawer, appearance }: L
     return (
         <div
             className={clsx(
-                'lumo-layout-container relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto rounded-xl',
-                solidBackground && 'bg-norm'
+                'lumo-layout-container relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto rounded-xl'
+                // solidBackground && 'bg-norm'
             )}
         >
             <Header
