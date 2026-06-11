@@ -52,6 +52,7 @@ const exposeCanvasGrid = (
           const effectiveValue = setters.getEffectiveValue(activeSheetId, rowIndex, columnIndex)
           const formattedValue = setters.getFormattedValue(activeSheetId, rowIndex, columnIndex)
           const effectiveFormat = setters.getEffectiveFormat(activeSheetId, rowIndex, columnIndex)
+          const hyperlink = setters.getHyperlink(activeSheetId, rowIndex, columnIndex)
 
           // Return a proper CellData object structure
           const result = {
@@ -59,6 +60,7 @@ const exposeCanvasGrid = (
             effectiveValue,
             formattedValue,
             effectiveFormat,
+            hyperlink,
           }
           return result
         } catch (e) {
