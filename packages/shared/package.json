@@ -9,9 +9,10 @@
         "i18n:validate": "proton-i18n validate lint-functions lib",
         "lint": "eslint --quiet",
         "pretty": "prettier --write $(find lib -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
-        "test": "NODE_ENV=test karma start test/karma.conf.js",
-        "test:ci": "yarn test",
-        "test:watch": "npm test -- --auto-watch --no-single-run"
+        "test": "TZ=UTC vitest",
+        "test:ci": "yarn test --run --silent=passed-only",
+        "test:watch": "yarn test --watch",
+        "generate-date-fns-locales-map": "node lib/i18n/generateDateFnsLocaleMap.ts lib/i18n/dateFnsLocaleMap.ts && prettier --write lib/i18n/dateFnsLocaleMap.ts"
     },
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
@@ -45,30 +46,17 @@
         "zod": "^3.25.76"
     },
     "devDependencies": {
-        "@babel/plugin-transform-runtime": "^7.28.5",
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/i18n": "workspace:^",
         "@proton/types": "workspace:^",
         "@types/file-saver": "^2.0.5",
-        "@types/jasmine": "^5.1.15",
-        "@types/karma-junit-reporter": "^2.0.4",
+        "@vitest/browser-playwright": "^4.1.6",
         "@webgpu/types": "^0.1.70",
         "eslint": "^9.39.4",
-        "eslint-plugin-jasmine": "^4.2.2",
-        "jasmine": "^5.13.0",
-        "jasmine-core": "^5.13.0",
-        "karma": "^6.4.4",
-        "karma-chrome-launcher": "^3.2.0",
-        "karma-jasmine": "^5.1.0",
-        "karma-junit-reporter": "^2.0.1",
-        "karma-spec-reporter": "^0.0.36",
-        "karma-webpack": "^5.0.1",
         "playwright": "patch:playwright@npm%3A1.58.2#~/.yarn/patches/playwright-npm-1.58.2-0c12daad27.patch",
         "prettier": "^3.8.3",
-        "ts-loader": "^9.5.7",
         "ttag": "^1.8.12",
         "typescript": "^6.0.2",
-        "url-loader": "^4.1.1",
-        "webpack": "^5.106.2"
+        "vitest": "^4.1.6"
     }
 }

@@ -88,7 +88,6 @@ describe('eligibilityChecker helpers', () => {
         COMMIT: '',
         DATE_VERSION: '',
         LOCALES: {},
-        LOCALES_DATE_FNS: [],
         SENTRY_DSN: '',
         SSO_URL: '',
         VERSION_PATH: '',

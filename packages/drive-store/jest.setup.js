@@ -42,10 +42,6 @@ HTMLCanvasElement.prototype.toBlob = jest.fn((callback) => {
     callback(new Blob(['abc']));
 });
 
-jest.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
-    __esModule: true,
-}));
-
 jest.mock('@proton/raw-images', () => ({
     __esModule: true,
 }));

@@ -1,5 +1,6 @@
 import type { PublicKeyReference, SessionKey } from '@protontech/crypto';
 import { CryptoProxy, toPublicKeyReference } from '@protontech/crypto';
+
 import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import { omit } from '@proton/shared/lib/helpers/object';
@@ -88,15 +89,10 @@ const getVevent = (hasColor = false): VcalVeventComponent => {
     };
 };
 
-interface CreateCalendarEventData
-    extends RequireSome<
-        Partial<Omit<CreateOrUpdateCalendarEventData, 'Permissions'>>,
-        | 'SharedEventContent'
-        | 'CalendarEventContent'
-        | 'AttendeesEventContent'
-        | 'SharedKeyPacket'
-        | 'CalendarKeyPacket'
-    > {
+interface CreateCalendarEventData extends RequireSome<
+    Partial<Omit<CreateOrUpdateCalendarEventData, 'Permissions'>>,
+    'SharedEventContent' | 'CalendarEventContent' | 'AttendeesEventContent' | 'SharedKeyPacket' | 'CalendarKeyPacket'
+> {
     AddressKeyPacket: string | null;
 }
 
@@ -184,7 +180,7 @@ describe('calendar encryption', () => {
             const isEncryptedToEachKey = expectedEncryptionKeys.every((encryptionKey) =>
                 encryptionKey.getKeyIDs().some((keyID) => encryptionKeyIDs.includes(keyID))
             );
-            expect(isEncryptedToEachKey).toBeTrue();
+            expect(isEncryptedToEachKey).toBe(true);
         };
 
         const dummyProdId = 'Proton Calendar';
@@ -206,7 +202,7 @@ describe('calendar encryption', () => {
         });
 
         expect(eventWithoutDefaultNotifications).toEqual({
-            SharedKeyPacket: jasmine.any(String),
+            SharedKeyPacket: expect.any(String),
             SharedEventContent: [
                 {
                     Type: 2,
@@ -214,28 +210,28 @@ describe('calendar encryption', () => {
                         'BEGIN:VEVENT\r\nUID:123\r\nDTSTAMP:20191211T121212Z\r\nDTSTART:20191211T121212Z\r\nDTEND:20191212T121212Z\r\nEND:VEVENT',
                         dummyProdId
                     ),
-                    Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/),
+                    Signature: expect.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/),
                 },
                 {
                     Type: 3,
-                    Data: jasmine.any(String),
-                    Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
+                    Data: expect.any(String),
+                    Signature: expect.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
             ],
-            CalendarKeyPacket: jasmine.any(String),
+            CalendarKeyPacket: expect.any(String),
             CalendarEventContent: [
                 {
                     Type: 3,
-                    Data: jasmine.any(String),
-                    Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
+                    Data: expect.any(String),
+                    Signature: expect.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
             ],
             Notifications: [{ Type: 1, Trigger: '-PT15H' }],
             AttendeesEventContent: [
                 {
                     Type: 3,
-                    Data: jasmine.any(String),
-                    Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
+                    Data: expect.any(String),
+                    Signature: expect.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
             ],
             Attendees: [
@@ -247,12 +243,12 @@ describe('calendar encryption', () => {
             VideoConferencingData: null,
         });
 
-        checkEncryptionKeyIDs(eventWithoutDefaultNotifications.SharedKeyPacket!, [calendarKey]);
-        checkEncryptionKeyIDs(eventWithoutDefaultNotifications.CalendarKeyPacket!, [calendarKey]);
+        await checkEncryptionKeyIDs(eventWithoutDefaultNotifications.SharedKeyPacket!, [calendarKey]);
+        await checkEncryptionKeyIDs(eventWithoutDefaultNotifications.CalendarKeyPacket!, [calendarKey]);
         // the following data should not include encrypted session key data
-        checkEncryptionKeyIDs(eventWithoutDefaultNotifications.SharedEventContent![1].Data, []);
-        checkEncryptionKeyIDs(eventWithoutDefaultNotifications.CalendarEventContent![0].Data, []);
-        checkEncryptionKeyIDs(eventWithoutDefaultNotifications.AttendeesEventContent![0].Data, []);
+        await checkEncryptionKeyIDs(eventWithoutDefaultNotifications.SharedEventContent![1].Data, []);
+        await checkEncryptionKeyIDs(eventWithoutDefaultNotifications.CalendarEventContent![0].Data, []);
+        await checkEncryptionKeyIDs(eventWithoutDefaultNotifications.AttendeesEventContent![0].Data, []);
 
         // with default notifications
         const eventWithDefaultNotifications = await createCalendarEvent({
@@ -265,7 +261,7 @@ describe('calendar encryption', () => {
         });
 
         expect(eventWithDefaultNotifications).toEqual({
-            SharedKeyPacket: jasmine.any(String),
+            SharedKeyPacket: expect.any(String),
             SharedEventContent: [
                 {
                     Type: 2,
@@ -273,28 +269,28 @@ describe('calendar encryption', () => {
                         'BEGIN:VEVENT\r\nUID:123\r\nDTSTAMP:20191211T121212Z\r\nDTSTART:20191211T121212Z\r\nDTEND:20191212T121212Z\r\nEND:VEVENT',
                         dummyProdId
                     ),
-                    Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/),
+                    Signature: expect.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/),
                 },
                 {
                     Type: 3,
-                    Data: jasmine.any(String),
-                    Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
+                    Data: expect.any(String),
+                    Signature: expect.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
             ],
-            CalendarKeyPacket: jasmine.any(String),
+            CalendarKeyPacket: expect.any(String),
             CalendarEventContent: [
                 {
                     Type: 3,
-                    Data: jasmine.any(String),
-                    Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
+                    Data: expect.any(String),
+                    Signature: expect.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
             ],
             Notifications: null,
             AttendeesEventContent: [
                 {
                     Type: 3,
-                    Data: jasmine.any(String),
-                    Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
+                    Data: expect.any(String),
+                    Signature: expect.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
             ],
             Attendees: [
@@ -306,12 +302,12 @@ describe('calendar encryption', () => {
             VideoConferencingData: null,
         });
 
-        checkEncryptionKeyIDs(eventWithDefaultNotifications.SharedKeyPacket!, [calendarKey]);
-        checkEncryptionKeyIDs(eventWithDefaultNotifications.CalendarKeyPacket!, [calendarKey]);
+        await checkEncryptionKeyIDs(eventWithDefaultNotifications.SharedKeyPacket!, [calendarKey]);
+        await checkEncryptionKeyIDs(eventWithDefaultNotifications.CalendarKeyPacket!, [calendarKey]);
         // the following data should not include encrypted session key data
-        checkEncryptionKeyIDs(eventWithDefaultNotifications.SharedEventContent![1].Data, []);
-        checkEncryptionKeyIDs(eventWithDefaultNotifications.CalendarEventContent![0].Data, []);
-        checkEncryptionKeyIDs(eventWithDefaultNotifications.AttendeesEventContent![0].Data, []);
+        await checkEncryptionKeyIDs(eventWithDefaultNotifications.SharedEventContent![1].Data, []);
+        await checkEncryptionKeyIDs(eventWithDefaultNotifications.CalendarEventContent![0].Data, []);
+        await checkEncryptionKeyIDs(eventWithDefaultNotifications.AttendeesEventContent![0].Data, []);
 
         setVcalProdId('');
     });
