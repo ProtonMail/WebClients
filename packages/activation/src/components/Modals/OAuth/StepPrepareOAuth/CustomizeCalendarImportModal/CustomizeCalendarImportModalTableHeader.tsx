@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 import useAvailableAddresses from '@proton/activation/src/hooks/useAvailableAddresses';
 import { selectOauthImportStateImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { Icon } from '@proton/components';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
@@ -71,10 +71,7 @@ const CustomizeCalendarImportModalTableHeader = ({
                 {selectedCalendarsTotal > 0 && (
                     <div className={clsx(['flex', calendarLimitReached ? 'color-danger' : 'color-weak'])}>
                         {calendarLimitReached && (
-                            <Icon
-                                name="exclamation-circle-filled"
-                                className="color-danger self-center mr-2"
-                            />
+                            <IcExclamationCircleFilled className="color-danger self-center mr-2" />
                         )}
                         {importSummaryRenderer()}
                     </div>
