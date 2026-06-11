@@ -33,6 +33,7 @@ const exposeCanvasGrid = (
     sheets: {
       activeId: number
       list: unknown
+      listIncludingHidden: unknown
     }
   },
 ) => {
@@ -95,6 +96,7 @@ export function LegacyGrid() {
   const hasFilter = useUI((ui) => ui.data.hasFilter)
   const dataValidations = useUI((ui) => ui.legacy.dataValidations)
   const sheetList = useUI((ui) => ui.sheets.list)
+  const sheetListIncludingHidden = useUI((ui) => ui.sheets.listIncludingHidden)
   const activeSheetListId = useUI((ui) => ui.sheets.activeId)
   const isReadonly = useUI((ui) => ui.info.isReadonly)
   const snapshot = useMemo(
@@ -108,7 +110,7 @@ export function LegacyGrid() {
       view: { formulaBarEnabled, gridLinesEnabled },
       zoomValue,
       data: { hasFilter, dataValidations },
-      sheets: { activeId: activeSheetListId, list: sheetList },
+      sheets: { activeId: activeSheetListId, list: sheetList, listIncludingHidden: sheetListIncludingHidden },
     }),
     [
       activeCell,
@@ -123,6 +125,7 @@ export function LegacyGrid() {
       merges,
       selections,
       sheetList,
+      sheetListIncludingHidden,
       zoomValue,
     ],
   )
