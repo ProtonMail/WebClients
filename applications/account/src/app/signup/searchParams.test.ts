@@ -18,9 +18,19 @@ describe('search params helper', () => {
             expectation: { product: undefined, productParam: 'business' },
         },
         {
+            params: 'plan=bundlebiz2025',
+            pathname: '/business/signup',
+            expectation: { product: undefined, productParam: 'business' },
+        },
+        {
+            params: 'plan=bundlebiz2025',
+            pathname: '/signup/business',
+            expectation: { product: undefined, productParam: 'business' },
+        },
+        {
             params: 'plan=bundlepro2024',
             pathname: '/business/signup',
-            expectation: { product: SERVICES.mail, productParam: 'business' },
+            expectation: { product: undefined, productParam: 'business' },
         },
         {
             params: 'plan=mailbiz2024',
@@ -43,7 +53,7 @@ describe('search params helper', () => {
             expectation: { product: SERVICES.mail, productParam: SERVICES.mail },
         },
         {
-            params: '',
+            params: 'plan=vpn2022',
             pathname: '/mail/signup',
             expectation: { product: SERVICES.mail, productParam: SERVICES.mail },
         },
