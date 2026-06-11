@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -18,6 +18,14 @@ import './TroubleshootWithLumo.scss';
 // `theme` makes the embedded Lumo surface match this page's light/dark appearance.
 const buildLumoSrc = (theme: 'light' | 'dark') =>
     getAppHref(`/agent?skill=proton-account-recovery&theme=${theme}`, APPS.PROTONLUMO);
+
+// Lets other parts of the sign-in surface (e.g. the "Get help from Lumo" link in the login form)
+// open this panel even though they live in a separate React subtree.
+export const TROUBLESHOOT_WITH_LUMO_OPEN_EVENT = 'proton:troubleshoot-with-lumo:open';
+
+export const openTroubleshootWithLumo = () => {
+    window.dispatchEvent(new CustomEvent(TROUBLESHOOT_WITH_LUMO_OPEN_EVENT));
+};
 
 // Bottom-right entry point on the sign-in page. Opens the account-protection Lumo agent in a
 // floating, non-blocking panel. Unlike a modal, the panel lets users keep following recovery
@@ -39,6 +47,16 @@ const TroubleshootWithLumo = () => {
         }
         setIsOpen(true);
     };
+
+    // Allows external entry points (e.g. the login form's "Get help from Lumo" link) to open the
+    // panel. Only wired up when the feature is enabled so the event is a no-op otherwise.
+    useEffect(() => {
+        if (!lumoSignInHelperEnabled) {
+            return;
+        }
+        window.addEventListener(TROUBLESHOOT_WITH_LUMO_OPEN_EVENT, open);
+        return () => window.removeEventListener(TROUBLESHOOT_WITH_LUMO_OPEN_EVENT, open);
+    });
 
     // Gated behind the rollout flag: when off, no Lumo entry point appears on the sign-in page.
     if (!lumoSignInHelperEnabled) {
