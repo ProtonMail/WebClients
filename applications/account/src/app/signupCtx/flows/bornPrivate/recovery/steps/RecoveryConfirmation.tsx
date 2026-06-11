@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { Icon } from '@proton/components';
+import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 
 import BornPrivateHeader from '../../components/BornPrivateHeader';
@@ -21,7 +21,7 @@ const RecoveryConfirmation = () => {
                     }
                     style={{ '--md-max-w-custom': '32rem' }}
                 >
-                    <Icon name="checkmark-circle" size={12} className="color-primary mb-4" />
+                    <IcCheckmarkCircle size={12} className="color-primary mb-4" />
                     <p className="m-0 text-lg" style={{ lineHeight: 1.4 }}>
                         {c('Info')
                             .t`If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.`}
