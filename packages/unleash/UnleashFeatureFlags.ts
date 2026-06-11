@@ -320,6 +320,7 @@ enum MeetFeatureFlag {
     MeetMeetingTimeout = 'MeetMeetingTimeout',
     MeetingRecorderRefactor = 'MeetingRecorderRefactor',
     MeetCoreWorker = 'MeetCoreWorker',
+    MeetEnableScreenShareAudio = 'MeetEnableScreenShareAudio',
 }
 
 enum LumoFeatureFlag {
