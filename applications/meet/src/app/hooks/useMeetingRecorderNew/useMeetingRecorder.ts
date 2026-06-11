@@ -31,6 +31,7 @@ import { useRecordingScene } from './hooks/useRecordingScene';
 import { useRecordingStatusPublish } from './hooks/useRecordingStatusPublish';
 import { useTrackPublishedSubscriber } from './hooks/useTrackPublishedSubscriber';
 import { isWebCodecsRecordingSupported } from './mediaEncoder/capabilities';
+import { downloadRecordingFileToDisk } from './recordingDownload';
 import { RecordingSession } from './recordingSession/recordingSession';
 
 export const useMeetingRecorder = () => {
@@ -223,24 +224,8 @@ export const useMeetingRecorder = () => {
                 throw new Error('Recording download failed: empty or missing blob');
             }
 
-            const blob = new Blob(artifact.files, { type: artifact.mimeType });
-            if (blob.size === 0) {
-                reportMeetError('MeetingRecording Error: Recording download failed: empty or missing blob', {
-                    context: { blobSize: 0 },
-                });
-                throw new Error('Recording download failed: empty or missing blob');
-            }
-
             try {
-                const url = URL.createObjectURL(blob);
-                const extension = codecForDownload?.extension ?? 'webm';
-
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `meeting-recording-${new Date().toISOString()}.${extension}`;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
+                await downloadRecordingFileToDisk(artifact, codecForDownload);
             } catch (error) {
                 reportMeetError('MeetingRecording Error: Failed to download recording', {
                     context: {

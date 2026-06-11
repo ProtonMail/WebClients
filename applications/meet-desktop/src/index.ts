@@ -19,6 +19,7 @@ import { handleWebContents } from "./utils/view/webContents";
 import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
 import { initializeSentry } from "./utils/sentry";
 import { setRequestPermission, extendAppVersionHeader } from "./utils/session";
+import { confirmQuitWithActiveDownloads, trackDownloads } from "./utils/downloads";
 import { captureTopLevelRejection, captureUncaughtErrors } from "./utils/log/captureUncaughtErrors";
 import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
 import {
@@ -79,7 +80,13 @@ import { handleIPCCalls } from "./ipc/main";
 
     app.setAppUserModelId(pkg.config.appUserModelId);
 
-    app.on("before-quit", () => {
+    app.on("before-quit", (event) => {
+        // Don't lose a recording that is still being written to disk.
+        if (!confirmQuitWithActiveDownloads()) {
+            event.preventDefault();
+            return;
+        }
+
         const mainWindow = getMainWindow();
 
         if (!mainWindow || mainWindow.isDestroyed() || updateDownloaded) {
@@ -159,5 +166,6 @@ import { handleIPCCalls } from "./ipc/main";
 
     setRequestPermission();
     extendAppVersionHeader();
+    trackDownloads();
     handleIPCCalls();
 })().catch(captureTopLevelRejection);
