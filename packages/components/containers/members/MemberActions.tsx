@@ -13,6 +13,7 @@ import type {
     Member,
     Organization,
     PartialMemberAddress,
+    Permission,
     UserModel,
 } from '@proton/shared/lib/interfaces';
 import { MEMBER_STATE, MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
@@ -61,6 +62,7 @@ export const MagicLinkMemberActions = ({
 };
 
 export const getMemberPermissions = ({
+    permissions,
     appName,
     user,
     addresses,
@@ -70,23 +72,24 @@ export const getMemberPermissions = ({
     disableMemberSignIn,
     ssoDomainsSet,
 }: {
-    ssoDomainsSet: ReturnType<typeof getSSODomainsSet>;
-    addresses: PartialMemberAddress[] | undefined;
+    permissions: Record<Permission, boolean> | null;
     appName: APP_NAMES;
     user: UserModel;
     member: Member;
+    addresses: PartialMemberAddress[] | undefined;
     organization?: Organization;
     organizationKey?: CachedOrganizationKey;
     disableMemberSignIn: boolean;
+    ssoDomainsSet: ReturnType<typeof getSSODomainsSet>;
 }) => {
     const hasSetupOrganizationWithKeys = hasOrganizationSetupWithKeys(organization);
     const hasSetupOrganization = hasOrganizationSetup(organization);
     const isOrganizationDelinquent = organization?.State === ORGANIZATION_STATE.DELINQUENT;
 
-    const canDelete = !member.Self;
-    const canEdit = hasSetupOrganization || hasSetupOrganizationWithKeys;
-    // TODO: define more specific permission for managing member state
-    const canUpdateMemberState = !member.Self && member.Type === MEMBER_TYPE.MANAGED;
+    const hasUpdatePermission = !!permissions?.['account.user.update'];
+    const canDelete = !member.Self && !!permissions?.['account.user.delete'];
+    const canEdit = hasSetupOrganization || (hasSetupOrganizationWithKeys && hasUpdatePermission);
+    const canUpdateMemberState = !member.Self && member.Type === MEMBER_TYPE.MANAGED && hasUpdatePermission;
 
     const hasUnprivatization = Boolean(member.Unprivatization);
 
@@ -94,14 +97,15 @@ export const getMemberPermissions = ({
         !hasUnprivatization &&
         getCanGenerateMemberKeysPermissions(user, organizationKey) &&
         getShouldSetupMemberKeys(member) &&
-        addresses?.length;
+        addresses?.length &&
+        hasUpdatePermission;
 
     const isNonPrivate = member.Private === MEMBER_PRIVATE.READABLE;
     const isPrivate = member.Private === MEMBER_PRIVATE.UNREADABLE;
     const isMemberSetup = getIsMemberSetup(member);
     const isSelf = Boolean(member.Self);
     const isEnabled = getIsMemberEnabled(member);
-    const canRevokeSessions = !member.Self && isNonPrivate;
+    const canRevokeSessions = !member.Self && isNonPrivate && hasUpdatePermission;
 
     const canLogin =
         !disableMemberSignIn &&
@@ -123,10 +127,11 @@ export const getMemberPermissions = ({
         isMemberSetup &&
         !!organizationKey?.privateKey &&
         addresses &&
-        addresses.length > 0;
+        addresses.length > 0 &&
+        hasUpdatePermission;
 
     const isMemberSSO = Boolean(member.SSO);
-    const canAddAddress = !isMemberSSO && addresses && addresses.length === 0;
+    const canAddAddress = !isMemberSSO && addresses && addresses.length === 0 && !!permissions?.['account.user.update'];
 
     const hasSSOAddress = Boolean(
         ssoDomainsSet.size &&
@@ -136,13 +141,14 @@ export const getMemberPermissions = ({
             return ssoDomainsSet.has(domain.toLowerCase());
         })
     );
-    const canDetachSSO = isMemberSSO && isMemberSetup;
+    const canDetachSSO = isMemberSSO && isMemberSetup && !!permissions?.['account.user.update'];
     const canAttachSSO = Boolean(
         !isMemberSSO &&
         isMemberSetup &&
         // Private admins will first perform unprivatization for themselves)
         (isNonPrivate || (isPrivate && isSelf && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN)) &&
-        hasSSOAddress
+        hasSSOAddress &&
+        !!permissions?.['account.user.update']
     );
 
     return {
