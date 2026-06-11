@@ -302,6 +302,7 @@ describe('importerHasErrors test check and general behavior', () => {
                 Order: 1,
                 ParentID: '',
                 Notify: 1,
+                LastUnseenMessageEventID: null,
             },
         ];
         const calendars: VisualCalendar[] = [];
@@ -349,6 +350,7 @@ describe('importerHasErrors test check and general behavior', () => {
                 Order: 1,
                 ParentID: '',
                 Notify: 1,
+                LastUnseenMessageEventID: null,
             },
         ];
         const calendars: VisualCalendar[] = [];
@@ -396,6 +398,7 @@ describe('importerHasErrors test check and general behavior', () => {
                 Order: 1,
                 ParentID: '',
                 Notify: 1,
+                LastUnseenMessageEventID: null,
             },
         ];
         const calendars: VisualCalendar[] = [];
@@ -434,6 +437,7 @@ describe('importerHasErrors test check and general behavior', () => {
                 Order: 1,
                 ParentID: '',
                 Notify: 1,
+                LastUnseenMessageEventID: null,
             },
         ];
         const calendars: VisualCalendar[] = [];
@@ -495,6 +499,7 @@ describe('importerHasErrors test for Gmail imports', () => {
                 Type: 1,
                 Order: 1,
                 Path: 'Social',
+                LastUnseenMessageEventID: null,
             },
         ];
         const folders: Folder[] = [
@@ -508,6 +513,7 @@ describe('importerHasErrors test for Gmail imports', () => {
                 Order: 1,
                 ParentID: '',
                 Notify: 1,
+                LastUnseenMessageEventID: null,
             },
         ];
         const calendars: VisualCalendar[] = [];
@@ -553,6 +559,7 @@ describe('importerHasErrors test for Gmail imports', () => {
                 Type: 1,
                 Order: 1,
                 Path: 'Social',
+                LastUnseenMessageEventID: null,
             },
         ];
         const folders: Folder[] = [
@@ -566,6 +573,7 @@ describe('importerHasErrors test for Gmail imports', () => {
                 Order: 1,
                 ParentID: '',
                 Notify: 1,
+                LastUnseenMessageEventID: null,
             },
         ];
         const calendars: VisualCalendar[] = [];
