@@ -392,16 +392,17 @@ im.$media-expressions: $media-expressions;
 }
 
 .inspiration-discover__item {
-	display: flex;
-	align-items: center;
-	gap: 12px;
-	padding-block: 16px;
-	padding-inline: 16px;
-	border-radius: 10px;
-	border: none;
+	// display: flex;
+	// align-items: center;
+	// gap: 12px;
+	// padding-block: 16px;
+	// padding-inline: 16px;
+	// border-radius: 10px;
+	// border: none;
 	background: none;
-	cursor: pointer;
-	text-align: start;
+
+	// cursor: pointer;
+	// text-align: start;
 	transition: background 0.12s;
 
 	&:hover {
@@ -416,8 +417,8 @@ im.$media-expressions: $media-expressions;
 
 .inspiration-discover__thumb-wrap {
 	flex-shrink: 0;
-	inline-size: 52px;
-	block-size: 52px;
+	inline-size: 70px;
+	block-size: 70px;
 	border-radius: 8px;
 	overflow: hidden;
 	background: var(--background-strong);
