@@ -4598,9 +4598,6 @@
       "Failing signatures will be re-signed by you": [
         "실패한 서명이 사용자로 재서명됩니다."
       ],
-      "Favorites": [
-        "즐겨찾기"
-      ],
       "File \"${ name }\" was deleted during download": [
         "파일 \"${ name }\"는 다은로드 도중 삭제되었습니다"
       ],
@@ -7867,9 +7864,6 @@
       ]
     },
     "Page title": {
-      "Favorites": [
-        "즐겨찾기"
-      ],
       "Recents": [
         "최근"
       ],
@@ -8023,6 +8017,9 @@
       ],
       "External key automatically fetched via WKD.": [
         "외부 키가 자동적으로 WKD를 통해 가져와졌습니다."
+      ],
+      "This key is used for message verification": [
+        "이 키는 메시지 검증에 사용됩니다."
       ],
       "This key is used to encrypt messages to this contact": [
         "이 키는 이 연락처에 암호화된 메시지를 보내는데 사용했습니다."

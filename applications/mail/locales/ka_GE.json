@@ -322,6 +322,9 @@
       "Copy addresses": [
         "მისამართების კოპირება"
       ],
+      "Copy alias “${ name }”": [
+        "ფსევდონიმის \"${ name }\" კოპირება"
+      ],
       "Copy email to clipboard": [
         "ელფოსტის მისამართის ბაფერში კოპირება"
       ],
@@ -5325,6 +5328,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "ეს გვერდი ვერ ჩავტვირთეთ. განაახლეთ ეს გვერდი ან შეამოწმეთ თქვენი ინტერნეტკავშირი."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "როცა დამატებითი პაროლი ჩართულია, ფსევდონიმების მართვა, მხოლოდ, ${ PASS_APP_NAME }-ში შეგიძლიათ."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "კონტაქტები ჯერ არ გაქვთ. დაიწყეთ მათი შექმნა"
@@ -12668,14 +12674,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "ყველა ფსევდონიმი"
+      ],
       "Create alias": [
         "ფსევდონიმის შექმნა"
+      ],
+      "Create an alias": [
+        "ფსევდონიმის შექმნა"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "დააგენერირეთ ფსევდონიმები მუშაობისას და ადვილად მართეთ თქვენი ფსევდონიმები და პაროლები."
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-ის ფსევდონიმები"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email ფსევდონიმები საშუალებას გაძლევთ, დარეგისტრირდეთ ინტერნეტ-რესურსებზე თქვენი ნამდვილი ელფოსტის მისამართის გაზიარების გარეშე. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "ახალი ფსევდონიმი"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }-ის გახსნა"
+      ],
+      "Protect your online identity": [
+        "დაცავით თქვენი იდენტობა ინტერნეტში"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "სცადეთ ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "გამოიყენება Amazon-ზე შოპინგისთვის და ა.შ."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "როცა გკითხავენ ელფოსტის მისამართს, ეს ფსევდონიმი მიეცით. ფსევდონიმები უზრუნველყოფილია პროგრამით ${ passLink }."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(გახსნის ${ PASS_APP_NAME }-ს)"
       ]
     },
     "Security Center - Action": {
@@ -13966,6 +14004,9 @@
       "Address verification disabled": [
         "მისამართის შემოწმება გამორთულია"
       ],
+      "Alias copied to clipboard": [
+        "ფსევდონიმი კოპირებულია ბუფერში"
+      ],
       "Alias saved and copied": [
         "ფსევდონიმი შენახული და კოპირებულია"
       ],
@@ -14054,6 +14095,9 @@
       ],
       "Labels applied.": [
         "ჭდეები გადატარებულია."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "ბოლოს შეცვლილი ფსევდონიმები თქვენს უძველეს საცავშია შენახული"
       ],
       "Mail list unsubscribed": [
         "საფოსტო სიის გამოწერა გაუქმდა"

@@ -26,8 +26,15 @@
       "Apply": [
         "Aplicar"
       ],
+      "Are you sure you want to delete ${ count } conversation?": [
+        "¿Confirma que desea eliminar ${ count } conversación?",
+        "¿En verdad desea eliminar ${ count } conversaciones?"
+      ],
       "Are you sure you want to delete all conversations?": [
         "¿Confirma que desea eliminar todas las conversaciones?"
+      ],
+      "Are you sure you want to delete this conversation?": [
+        "¿Confirma que desea eliminar esta conversación?"
       ],
       "Attach screenshot(s)": [
         "Adjuntar una o varias capturas de pantalla"
@@ -115,6 +122,10 @@
       ],
       "Delete": [
         "Eliminar"
+      ],
+      "Delete ${ count } conversation?": [
+        "Eliminar ${ count } conversación?",
+        "Eliminar ${ count } conversaciones?"
       ],
       "Delete ${ token.Name }": [
         "Eliminar ${ token.Name }"
@@ -3327,6 +3338,12 @@
       "All messages and chat history": [
         "Todos los mensajes y el historial de chat"
       ],
+      "Any images generated in these conversations will also be deleted.": [
+        "Toda imagen generada en estas conversaciones también se eliminarán."
+      ],
+      "Any images generated in this conversation will also be deleted.": [
+        "Toda imagen generada en esta conversación también se eliminará."
+      ],
       "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
         "¿En verdad desea eliminar «${ project.name }»? Esta acción no se puede deshacer."
       ],
@@ -4193,6 +4210,9 @@
       ],
       "Canada": [
         "Canadá"
+      ],
+      "Canary Islands": [
+        "Islas Canarias"
       ],
       "Cape Verde": [
         "Cabo Verde"
@@ -9142,6 +9162,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si compó un código de regalo o recibió uno de nuestro equipo de soporte, puede ingresarlo aquí."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Asistencia IA inmediata, experto humano a su disposición!"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nuevo ciclo de suscripción comienza el ${ formattedTime }"

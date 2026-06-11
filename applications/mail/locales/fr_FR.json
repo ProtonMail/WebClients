@@ -334,6 +334,9 @@
       "Copy addresses": [
         "Copier les adresses"
       ],
+      "Copy alias “${ name }”": [
+        "Copier l'alias « ${ name } »"
+      ],
       "Copy email to clipboard": [
         "Copier l’adresse e-mail dans le presse-papiers"
       ],
@@ -3348,6 +3351,9 @@
       "Canada": [
         "Canada"
       ],
+      "Canary Islands": [
+        "Îles Canaries"
+      ],
       "Cape Verde": [
         "Cap-Vert"
       ],
@@ -5621,6 +5627,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nous n'avons pas pu charger cette page. Actualisez la page ou vérifiez votre connexion internet."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Lorsque le mot de passe supplémentaire est activé, la gestion des alias ne peut se faire que dans ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Vous n'avez pas encore de contact. Commencez par créer un nouveau contact."
@@ -8120,6 +8129,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Sélectionnez les dossiers que vous voulez importer :"
+      ],
+      "Please select the labels you would like to import:": [
+        "Veuillez sélectionner les labels que vous souhaitez importer :"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Sélectionnez le type de lien que vous voulez insérer et remplissez tous les champs."
@@ -13533,14 +13545,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Tous les alias"
+      ],
       "Create alias": [
         "Créer un alias"
+      ],
+      "Create an alias": [
+        "Créer un alias"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Créez des alias à la demande et gérez facilement vos alias et vos mots de passe."
+      ],
+      "Hide-my-email aliases": [
+        "Alias « hide-my-email »"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Les alias « hide-my-email » vous permettent de vous inscrire à des sites ou newsletters sans partager votre adresse e-mail. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Nouvel alias"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Ouvrir ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Protégez votre identité en ligne"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Essayer ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Utilisé par exemple sur Amazon pour vos achats."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Lorsque vous devez renseigner votre adresse e-mail, donnez cet alias à la place. Les alias sont fournis par ${ passLink }."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(ceci ouvrira ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -14862,6 +14906,9 @@
       "Address verification disabled": [
         "L'adresse de vérification a été désactivée."
       ],
+      "Alias copied to clipboard": [
+        "L'alias a été copié dans le presse-papiers."
+      ],
       "Alias saved and copied": [
         "L'alias a été enregistré et copié."
       ],
@@ -14950,6 +14997,9 @@
       ],
       "Labels applied.": [
         "Les labels ont été appliqués."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Derniers alias modifiés stockés dans votre coffre-fort le plus ancien"
       ],
       "Mail list unsubscribed": [
         "Le désabonnement de la liste de diffusion a été effectué."
@@ -16400,6 +16450,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si vous avez acheté un code-cadeau ou si vous en avez reçu un de notre équipe support, vous pouvez le saisir ici."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Une assistance IA immédiate, avec un expert à votre disposition !"
       ],
       "Load image": [
         "Charger l'image"

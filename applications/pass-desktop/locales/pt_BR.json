@@ -1125,6 +1125,9 @@
       "Failed to change mailbox": [
         "Não foi possível alterar a caixa de correio"
       ],
+      "Failed to create access token": [
+        "Falha ao criar o token de acesso"
+      ],
       "Failed to create domain": [
         "Não foi possível criar um domínio"
       ],
@@ -2146,8 +2149,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outra pasta apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"

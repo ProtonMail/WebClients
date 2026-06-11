@@ -1089,9 +1089,6 @@
       "Upload and share files": [
         "上傳並共享檔案"
       ],
-      "Upload anyway": [
-        "仍要上載"
-      ],
       "Upload file": [
         "上載檔案"
       ],
@@ -3206,9 +3203,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "「${ sanitizedName }」已存在"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME }無法連接外部帳號"
       ],
@@ -3398,9 +3392,6 @@
       "Failed to resend invitation": [
         "失敗重新傳送邀請"
       ],
-      "File cannot be merged with folder": [
-        "檔案無法與資料夾合併"
-      ],
       "First name is too long": [
         "名字太長"
       ],
@@ -3538,9 +3529,6 @@
       ],
       "Payment process not supported": [
         "不支援此付款程序"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "照片上載暫時停用。請稍後再試"
       ],
       "Please activate your search again": [
         "請再次啟用搜尋"
@@ -3686,24 +3674,6 @@
       "The minimum donation amount is ${ price }": [
         "最低捐款金額為 ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "原始檔案的新修訂版本尚未上載，請稍後再試"
-      ],
-      "The original file has missing active revision": [
-        "原始檔案缺少檔案修訂"
-      ],
-      "The original file has missing hash key": [
-        "原始檔案缺少雜湊金鑰"
-      ],
-      "The original file has missing session key": [
-        "原始檔案缺少工作階段金鑰"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "原始檔案尚未上載，請稍後再試"
-      ],
-      "The original folder not found": [
-        "找不到原始資料夾"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "待匯入的外部帳號裡資料夾過多，請自訂匯入內容並刪除部份資料夾。"
       ],
@@ -3754,9 +3724,6 @@
       ],
       "Upload failed": [
         "上傳失敗"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "上傳此資料夾已暫時關閉"
       ],
       "Username must begin with a letter or digit": [
         "使用者名稱的開頭必須為字母或數字"
@@ -5275,9 +5242,6 @@
       "for ${ price }": [
         "為 ${ price }"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "為取得最佳結果，請避免串流與記憶體密集型活動，或是將您的上傳分割為較小的批次。"
-      ],
       "For just ${ bundlePlanPriceInline }": [
         "只要 ${ bundlePlanPriceInline }"
       ],
@@ -6013,9 +5977,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "此為您新傳送新電子郵件的${ defaultEmailAddress }"
       ],
-      "This item already exists in your library": [
-        "此項目已存在於資料庫"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此連結指向的網站可能試圖竊取您的資訊，例如密碼或信用卡細節 。"
       ],
@@ -6043,20 +6004,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "此將會永久刪除所有選取的上傳項目。"
       ],
-      "This will replace the existing file with the folder": [
-        "這將會使用資料夾取代既有檔案"
-      ],
-      "This will replace the existing folder with the file": [
-        "這將會使用檔案取代既有資料夾"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "這麼做會把您所有已登入的帳號登出。"
-      ],
-      "This will upload a new version of the file": [
-        "這將會上傳新版本的檔案"
-      ],
-      "This will upload a new version of the folder": [
-        "這將會上傳新版本的資料夾"
       ],
       "Time": [
         "時間"
@@ -6102,18 +6051,6 @@
       ],
       "Tracking": [
         "追蹤"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "已取消檔案「${ name }」的傳輸"
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "已取消資料夾「${ name }」的傳輸"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "已跳過檔案「${ file.name }」的傳輸"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "已跳過資料夾「${ folderName }」的傳輸"
       ],
       "Trash": [
         "垃圾桶"
@@ -6171,9 +6108,6 @@
       ],
       "Uploading": [
         "正在上載"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "同一時間上載數以百計的檔案或會有礙效能。"
       ],
       "Uppercase and lowercase letters": [
         "大寫及小寫字母"
@@ -6906,12 +6840,6 @@
       "Keep both": [
         "兩者皆保留"
       ],
-      "Keep both files": [
-        "保留這兩個檔案"
-      ],
-      "Keep both folders": [
-        "保留這兩個資料夾"
-      ],
       "Label messages as": [
         "將郵件加上標籤"
       ],
@@ -7061,12 +6989,6 @@
       ],
       "Region": [
         "地區"
-      ],
-      "Replace existing file": [
-        "取代已存在的檔案"
-      ],
-      "Replace existing folder": [
-        "取代已存在的資料夾"
       ],
       "Replace existing folder or file": [
         "取代已存在的資料夾或檔案"
@@ -8744,14 +8666,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "「${ name }」無法移動到垃圾桶"
       ],
-      "\"${ name }\" failed to be saved": [
-        "「${ name }」儲存失敗"
-      ],
       "\"${ name }\" moved to trash": [
         "「${ name }」已移動到垃圾桶"
-      ],
-      "\"${ name }\" saved successfully": [
-        "「${ name }」已成功儲存"
       ],
       "\"${ newName }\" failed to be renamed": [
         "「${ newName }」重新命名失敗"
@@ -8882,18 +8798,6 @@
       "Failed to rename device": [
         "無法重新命名裝置"
       ],
-      "Failed to upload files: ${ err }": [
-        "上載檔案失敗：${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "檔案或資料夾「${ filename }」以及其它 ${ count } 正在上載中"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "檔案或資料夾「${ filename }」正在上載中"
-      ],
-      "File or folder is missing a name": [
-        "檔案或資料夾缺少名稱"
-      ],
       "File removed": [
         "檔案已移除"
       ],
@@ -8911,9 +8815,6 @@
       ],
       "Move ${ n } item": [
         "移動 ${ n } 個項目"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "空間不足，無法上載 ${ formattedTotal }"
       ],
       "Public link access updated": [
         "公開網址已更新存取權"
@@ -11727,12 +11628,6 @@
       "Drop to upload": [
         "拖放到此處以上傳"
       ],
-      "Duplicate file found": [
-        "找到重複檔案"
-      ],
-      "Duplicate folder found": [
-        "找到重複資料夾"
-      ],
       "Edit billing address": [
         "編輯帳單地址"
       ],
@@ -12015,9 +11910,6 @@
       "PayPal verification failed": [
         "PayPal 驗證失敗"
       ],
-      "Performance might be affected": [
-        "效能可能會受到影響"
-      ],
       "Phone numbers": [
         "手機號碼"
       ],
@@ -12257,9 +12149,6 @@
       ],
       "Uploaded": [
         "已上載"
-      ],
-      "Uploading a large file or folder": [
-        "上傳大檔案或資料夾"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"

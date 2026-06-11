@@ -840,9 +840,6 @@
       "Upgrade now": [
         "Покращити"
       ],
-      "Upload anyway": [
-        "Все одно вивантажити"
-      ],
       "Upload file": [
         "Вивантажити файл"
       ],
@@ -2549,9 +2546,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" вже існує"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } не може під'єднатися до вашого зовнішнього облікового запису"
       ],
@@ -2684,9 +2678,6 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Зовнішні запрошення тимчасово вимкнені. Спробуйте ще раз пізніше"
       ],
-      "File cannot be merged with folder": [
-        "Не можна об'єднувати файл з текою"
-      ],
       "First name is too long": [
         "Ім'я занадто довге"
       ],
@@ -2818,9 +2809,6 @@
       ],
       "Payment process not supported": [
         "Обробка платежу не підтримується"
-      ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Вивантаження фотографій тимчасово вимкнено. Повторіть спробу пізніше"
       ],
       "Please activate your search again": [
         "Повторно активуйте пошук"
@@ -2969,24 +2957,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Найменша сума, яку можна додати — ${ price }"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Нову версію оригінального файлу ще не вивантажено. Спробуйте знову пізніше"
-      ],
-      "The original file has missing active revision": [
-        "Оригінальний файл не має активної редакції"
-      ],
-      "The original file has missing hash key": [
-        "Оригінальний файл не має ключа хешу"
-      ],
-      "The original file has missing session key": [
-        "Оригінальний файл не має ключа сеансу"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Оригінальний файл ще не вивантажено. Спробуйте знову пізніше"
-      ],
-      "The original folder not found": [
-        "Оригінальну теку не знайдено"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "У вашому зовнішньому обліковому записі надто багато тек. Будь ласка, налаштуйте імпорт для видалення деяких тек."
       ],
@@ -3022,9 +2992,6 @@
       ],
       "Unknown payment token status": [
         "Невідомий стан платіжного токена"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Вивантаження для цієї теки тимчасово вимкнено"
       ],
       "Username must begin with a letter or digit": [
         "Ім'я користувача повинно починатися з літери або цифри"
@@ -4401,9 +4368,6 @@
       "Folders you sync from your computer will appear here.": [
         "Тут з'являться теки, які ви синхронізуєте з комп'ютера."
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "Щоб досягти найкращих результатів, уникайте потокової трансляції та інших дій, які потребують багато пам'яті, або розбивайте вивантаження на менші частини."
-      ],
       "Free 5GB encrypted storage to get started": [
         "Безплатно 5Гб зашифрованого сховища для початку"
       ],
@@ -4947,9 +4911,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Тепер це ваша ${ defaultEmailAddress } для надсилання нових повідомлень."
       ],
-      "This item already exists in your library": [
-        "Цей елемент вже існує у вашій бібліотеці"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Це посилання веде на вебсайт, який, можливо, намагається викрасти ваші дані, як-от паролі та дані кредитної картки."
       ],
@@ -4959,20 +4920,8 @@
       "This month": [
         "Цього місяця"
       ],
-      "This will replace the existing file with the folder": [
-        "Це призведе до заміни наявного файлу текою"
-      ],
-      "This will replace the existing folder with the file": [
-        "Це призведе до заміни наявної теки файлом"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Ви вийдете з усіх облікових записів, до яких наразі увійшли."
-      ],
-      "This will upload a new version of the file": [
-        "Це призведе до вивантаження нової версії файлу"
-      ],
-      "This will upload a new version of the folder": [
-        "Це вивантажить нову версію теки"
       ],
       "Time": [
         "Час"
@@ -5016,18 +4965,6 @@
       "Total VPN connections": [
         "Усього VPN-з'єднань"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Передавання скасовано для файлу \"${ name }\""
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "Передавання скасовано для теки \"${ name }\""
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Пропущено передавання для файлу \"${ file.name }\""
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "Пропущено передавання для теки \"${ folderName }\""
-      ],
       "Trash": [
         "Смітник"
       ],
@@ -5069,9 +5006,6 @@
       ],
       "Uploading": [
         "Вивантаження"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Завантаження сотень файлів одразу може вплинути на швидкодію."
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Скористайтеся цією формою, щоб повідомити нас про невідповідні, незаконні,\nабо іншим чином шкідливі спільні файли. Ви збираєтеся повідомити:"
@@ -5673,12 +5607,6 @@
       "Keep both": [
         "Зберегти обидва"
       ],
-      "Keep both files": [
-        "Зберегти обидва файли"
-      ],
-      "Keep both folders": [
-        "Зберегти обидві теки"
-      ],
       "Label messages as": [
         "Позначити повідомлення"
       ],
@@ -5801,12 +5729,6 @@
       ],
       "Region": [
         "Область"
-      ],
-      "Replace existing file": [
-        "Замінити наявний файл"
-      ],
-      "Replace existing folder": [
-        "Замінити наявну теку"
       ],
       "Reveal password": [
         "Показати пароль"
@@ -7304,14 +7226,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" не вдалося перемістити до смітника"
       ],
-      "\"${ name }\" failed to be saved": [
-        "Не вдалося зберегти \"${ name }\""
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" переміщено до смітника"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" успішно збережено"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" не вдалося перейменувати"
@@ -7439,21 +7355,6 @@
       "Failed to remove the file": [
         "Не вдалося вилучити файл"
       ],
-      "Failed to upload files: ${ err }": [
-        "Не вдалося вивантажити файли: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються",
-        "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються",
-        "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються",
-        "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Файл чи тека \"${ filename }\" вже вивантажується"
-      ],
-      "File or folder is missing a name": [
-        "Файл чи тека не мають назви"
-      ],
       "File removed": [
         "Файл вилучено"
       ],
@@ -7480,9 +7381,6 @@
         "Перемістити ${ n } елементи",
         "Перемістити ${ n } елементів",
         "Перемістити ${ n } елементів"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "Недостатньо місця для вивантаження ${ formattedTotal }"
       ],
       "Public link access updated": [
         "Доступ до публічного посилання оновлено"
@@ -9724,12 +9622,6 @@
       "Drop to upload": [
         "Перетягніть для вивантаження"
       ],
-      "Duplicate file found": [
-        "Знайдено дублікат файлу"
-      ],
-      "Duplicate folder found": [
-        "Знайдено дублікат теки"
-      ],
       "Edit contact": [
         "Змінити контакт"
       ],
@@ -9925,9 +9817,6 @@
       "PayPal verification failed": [
         "Не вдалося пройти перевірку PayPal"
       ],
-      "Performance might be affected": [
-        "Може знизитися швидкодія"
-      ],
       "Phone numbers": [
         "Номери телефонів"
       ],
@@ -10095,9 +9984,6 @@
       ],
       "Uploaded": [
         "Вивантажено"
-      ],
-      "Uploading a large file or folder": [
-        "Вивантаження великого файлу або теки"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Використовуйте ${ VPN_SHORT_APP_NAME } для приватності даних"

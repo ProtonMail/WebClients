@@ -854,9 +854,6 @@
       "Upgrade now": [
         "अभी अपग्रेड करें"
       ],
-      "Upload anyway": [
-        "फिर भी अपलोड करें"
-      ],
       "Upload file": [
         "फाइल अपलोड करें"
       ],
@@ -2280,9 +2277,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" पहले से मौजूद है"
-      ],
       "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
         "${ DRIVE_APP_NAME } को अपडेट किया गया है। कृपया पृष्ठ को पुनश्चर्या करें।"
       ],
@@ -2389,9 +2383,6 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "बाहरी आमंत्रण फिलहाल अक्षम हैं। कृपया बाद में फिर से कोशिश करें"
-      ],
-      "File cannot be merged with folder": [
-        "फाइल को फोल्डर के साथ मिलाया नहीं जा सकता है"
       ],
       "First name is too long": [
         "पहला नाम बहुत लंबा है"
@@ -2507,9 +2498,6 @@
       "Payment process not supported": [
         "भुगतान प्रक्रिया समर्थित नहीं है"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "तस्वीर अपलोड अस्थायी रूप से अक्षम किया गया है। कृपया बाद में पुन: प्रयास करें"
-      ],
       "Please activate your search again": [
         "कृपया अपना खोज वापिस सक्षम करें"
       ],
@@ -2620,24 +2608,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "जोड़ने के लिए क्रेडिट रकम कम-से-कम ${ price } होना चाहिए"
       ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "असली फाइल का नया संशोधन अभी तक अपलोड नहीं किया गया है, कृपया बाद में वापिस कोशिश करें"
-      ],
-      "The original file has missing active revision": [
-        "असली फाइल में सक्रिय संशोधन गुम है"
-      ],
-      "The original file has missing hash key": [
-        "असली फाइल में हैश चाबी गुम है"
-      ],
-      "The original file has missing session key": [
-        "असली फाइल में सत्र चाबी गुम है"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "असली फाइल अभी तक अपलोड नहीं की गई है, कृपया बाद में वापिस कोशिश करें"
-      ],
-      "The original folder not found": [
-        "असली फोल्डर नहीं मिला"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "आपके बाहरी खाते में बहुत सारे फ़ोल्डर हैं। कृपया कुछ फ़ोल्डरों को हटाने के लिए आयात को अनुकूलित करें।"
       ],
@@ -2670,9 +2640,6 @@
       ],
       "Unknown payment token status": [
         "अज्ञात भुगतान टोकन स्थिति"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "इस फ़ोल्डर में अपलोड फिलहाल अक्षम है"
       ],
       "Username must begin with a letter or digit": [
         "यूज़रनेम अक्षर या अंकसे शुरु होना चाहिए"
@@ -3874,9 +3841,6 @@
       "Folders you sync from your computer will appear here.": [
         "आपके कंप्यूटर से सिंक किए फोल्डर इधर दिखेंगे।"
       ],
-      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
-        "सबसे बेहतर प्रदर्शन के लिए मेमरी पे भारी काम स्ट्रीम करने से बचे या अपने अपलोड को छोटे हिस्सो में बांट दें।"
-      ],
       "Free 5GB encrypted storage to get started": [
         "शुरू करने के लिए Free 5GB एन्क्रिप्ट किया स्टोरेज"
       ],
@@ -4387,9 +4351,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "यह अब आपके नए संदेश भेजने के लिए आपका ${ defaultEmailAddress } है।"
       ],
-      "This item already exists in your library": [
-        "यह मद पहले से ही आपकी संग्रहण में मौजूद है"
-      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "यह आइटम आपकी Photos लाइब्रेरी में सहेजा नहीं गया है। अगर आप इसे इस एल्बम से हटाते हैं, तो आपको इसकी पहुँच हमेशा के लिए खो जाएगी।",
         "इस एल्बम में चयनित कुछ आइटम आपकी Photos लाइब्रेरी में सहेजे नहीं गए हैं। अगर आप इन्हें इस एल्बम से हटाते हैं, तो आपको इनकी पहुँच हमेशा के लिए खो जाएगी।"
@@ -4415,20 +4376,8 @@
       "This will permanently delete the selected items you uploaded.": [
         "यह आपके द्वारा अपलोड किए गए चयनित आइटमों को स्थायी रूप से मिटा देगा।"
       ],
-      "This will replace the existing file with the folder": [
-        "यह मौजूदा फ़ाइल को फ़ोल्डर के साथ बदल देगा।"
-      ],
-      "This will replace the existing folder with the file": [
-        "यह मौजूदा फ़ोल्डर को फ़ाइल के साथ बदल देगा।"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "इससे आप वर्तमान में लॉग इन सभी खातों से साइन आउट हो जाएंगे।"
-      ],
-      "This will upload a new version of the file": [
-        "ये फ़ाइल का एक नया संस्करण अपलोड करेगा"
-      ],
-      "This will upload a new version of the folder": [
-        "यह फ़ोल्डर का एक नई संस्करण अपलोड करेगा"
       ],
       "Time": [
         "समय"
@@ -4472,18 +4421,6 @@
       "Total VPN connections": [
         "कुल VPN कनेक्शन"
       ],
-      "Transfer canceled for file \"${ name }\"": [
-        "\"${ name }\" फ़ाइल के लिए स्थानांतरण रद्द किया गया"
-      ],
-      "Transfer canceled for folder \"${ name }\"": [
-        "\"${ name }\" फ़ोल्डर के लिए स्थानांतरण रद्द किया गया"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "\"${ file.name }\" फ़ाइल के लिए स्थानांतरण छोड़ दिया गया"
-      ],
-      "Transfer skipped for folder \"${ folderName }\"": [
-        "\"${ folderName }\" फ़ोल्डर के लिए स्थानांतरण छोड़ दिया गया"
-      ],
       "Trash": [
         "कचरा"
       ],
@@ -4525,9 +4462,6 @@
       ],
       "Uploading": [
         "अपलोड हो रहा है"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "एक साथ सैकड़ों फ़ाइलें अपलोड करने से कार्यप्रदर्शन प्रभावित हो सकता है।"
       ],
       "Uppercase and lowercase letters": [
         "बड़े और छोटे अक्षर"
@@ -5077,12 +5011,6 @@
       "Keep both": [
         "दोनों रखें"
       ],
-      "Keep both files": [
-        "दोनों फ़ाइलें रखें"
-      ],
-      "Keep both folders": [
-        "दोनों फ़ोल्डर रखें"
-      ],
       "Label messages as": [
         "संदेशों को लेबल करें"
       ],
@@ -5211,12 +5139,6 @@
       ],
       "Region": [
         "क्षेत्र"
-      ],
-      "Replace existing file": [
-        "मौजूदा फ़ाइल को बदलें"
-      ],
-      "Replace existing folder": [
-        "मौजूदा फ़ोल्डर को बदलें"
       ],
       "Reveal password": [
         "पासवर्ड प्रकट"
@@ -6442,14 +6364,8 @@
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" कचरे में ले जाने में असफल"
       ],
-      "\"${ name }\" failed to be saved": [
-        "\"${ name }\" सेव करने में असफल"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" कचरे में ले गए"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" सेव किया गया"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" का नाम बदलने में असफल"
@@ -6557,19 +6473,6 @@
       "Failed to remove the file": [
         "फ़ाइल हटाने में असफल"
       ],
-      "Failed to upload files: ${ err }": [
-        "फाइलें अपलोड करने में असफल: ${ err }"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "फाइल या फोल्डर \"${ filename }\" और ${ count } अन्य पहले से ही अपलोड हो रहे हैं",
-        "फाइल या फोल्डर \"${ filename }\" और ${ count } अन्य पहले से ही अपलोड हो रहे हैं"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "फाइल या फोल्डर \"${ filename }\" पहले से ही अपलोड हो रहा है"
-      ],
-      "File or folder is missing a name": [
-        "फाइल या फोल्डर का कोई नाम नहीं है"
-      ],
       "File removed": [
         "फ़ाइल हटा दी गई"
       ],
@@ -6590,9 +6493,6 @@
       "Move ${ n } item": [
         "${ n } चीज़ ले जाए",
         "${ n } चीज़े ले जाए"
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        "${ formattedTotal } अपलोड करने के लिए जगह काफी नहीं"
       ],
       "Public link access updated": [
         "सार्वजनिक लिंक एक्सेस अपडेट किया गया"
@@ -8292,12 +8192,6 @@
       "Drop to upload": [
         "अपलोड के लिए छोड़े"
       ],
-      "Duplicate file found": [
-        "एक जैसे फाइल मिले"
-      ],
-      "Duplicate folder found": [
-        "एक जैसे फोल्डर मिले"
-      ],
       "Edit billing address": [
         "बिलिंग पता संपादित करें"
       ],
@@ -8479,9 +8373,6 @@
       "PayPal verification failed": [
         "पेपाल सत्यापन विफल रहा"
       ],
-      "Performance might be affected": [
-        "प्रदर्शन पे असर हो सकता है"
-      ],
       "Phone numbers": [
         "फोन नंबर"
       ],
@@ -8653,9 +8544,6 @@
       ],
       "Uploaded": [
         "अपलोड किए गए"
-      ],
-      "Uploading a large file or folder": [
-        "बड़ी फ़ाइल या फ़ोल्डर अपलोड करना"
       ],
       "Verification failed": [
         "सत्यापन असफल"

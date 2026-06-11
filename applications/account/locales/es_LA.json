@@ -156,6 +156,9 @@
       "Add public holidays": [
         "Agregar días festivos"
       ],
+      "Add recovery options": [
+        "Agregar opciones de recuperación"
+      ],
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "Añadir un enlace de referidos en la firma de ${ MAIL_APP_NAME }"
       ],
@@ -1380,6 +1383,9 @@
       "Review": [
         "Revisar"
       ],
+      "Review recovery options": [
+        "Revisar opciones de recuperación"
+      ],
       "Revoke": [
         "Revocar"
       ],
@@ -1538,6 +1544,9 @@
       ],
       "Set up a custom domain": [
         "Configurar un dominio personalizado"
+      ],
+      "Set up account recovery": [
+        "Configurar recuperación de cuenta"
       ],
       "Set up auto-forwarding from Gmail": [
         "Configurar el reenvío automático desde Gmail"
@@ -4204,6 +4213,9 @@
       ]
     },
     "Country name": {
+      "Abkhazia": [
+        "Abjasia"
+      ],
       "Afghanistan": [
         "Afganistán"
       ],
@@ -4213,6 +4225,9 @@
       "Algeria": [
         "Argelia"
       ],
+      "American Samoa": [
+        "Samoa Americana"
+      ],
       "Andorra": [
         "Andorra"
       ],
@@ -4221,6 +4236,9 @@
       ],
       "Anguilla": [
         "Anguila"
+      ],
+      "Antarctica": [
+        "Antártida"
       ],
       "Antigua and Barbuda": [
         "Antigua y Barbuda"
@@ -4233,6 +4251,9 @@
       ],
       "Aruba": [
         "Aruba"
+      ],
+      "Ascension Island": [
+        "Isla Ascensión"
       ],
       "Australia": [
         "Australia"
@@ -4276,6 +4297,9 @@
       "Bolivia": [
         "Bolivia"
       ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Caribe Neerlandés"
+      ],
       "Bosnia and Herzegovina": [
         "Bosnia Herzegovina"
       ],
@@ -4315,6 +4339,9 @@
       "Canada": [
         "Canadá"
       ],
+      "Canary Islands": [
+        "Islas Canarias"
+      ],
       "Cape Verde": [
         "Cabo Verde"
       ],
@@ -4349,6 +4376,9 @@
         "Congo"
       ],
       "Congo (The Democratic Republic of the)": [
+        "RD del Congo"
+      ],
+      "Congo, Democratic Republic of the": [
         "RD del Congo"
       ],
       "Cook Islands": [
@@ -4408,14 +4438,23 @@
       "Estonia": [
         "Estonia"
       ],
+      "Eswatini": [
+        "Suazilandia"
+      ],
       "Ethiopia": [
         "Etiopía"
+      ],
+      "Falkland Islands": [
+        "Islas Malvinas"
       ],
       "Falkland Islands (Malvinas)": [
         "Islas Falkland (Malvinas)"
       ],
       "Faroe Islands": [
         "Islas Faroe"
+      ],
+      "Federated States of Micronesia": [
+        "EF de Micronesia"
       ],
       "Fiji": [
         "Fiyi"
@@ -4465,6 +4504,9 @@
       "Guadeloupe": [
         "Guadalupe"
       ],
+      "Guam": [
+        "Guam"
+      ],
       "Guatemala": [
         "Guatemala"
       ],
@@ -4507,6 +4549,12 @@
       "Indonesia": [
         "Indonesia"
       ],
+      "International": [
+        "Internacional"
+      ],
+      "Iran": [
+        "Irán"
+      ],
       "Iraq": [
         "Irak"
       ],
@@ -4515,6 +4563,9 @@
       ],
       "Islamic Republic of Iran": [
         "República Islámica de Irán"
+      ],
+      "Isle of Man": [
+        "Isla de Man"
       ],
       "Israel": [
         "Israel"
@@ -4527,6 +4578,9 @@
       ],
       "Japan": [
         "Japón"
+      ],
+      "Jersey": [
+        "Jersey"
       ],
       "Jordan": [
         "Jordania"
@@ -4558,6 +4612,9 @@
       "Lao People's Democratic Republic": [
         "RPD de Laos"
       ],
+      "Laos": [
+        "Laos"
+      ],
       "Latvia": [
         "Letonia"
       ],
@@ -4569,6 +4626,9 @@
       ],
       "Liberia": [
         "Liberia"
+      ],
+      "Libya": [
+        "Libia"
       ],
       "Libyan Arab Jamahiriya": [
         "Libia"
@@ -4678,8 +4738,14 @@
       "Norfolk Island": [
         "Isla Norfolk"
       ],
+      "North Korea": [
+        "Corea del Norte"
+      ],
       "North Macedonia": [
         "Macedonia del Norte"
+      ],
+      "Northern Mariana Islands": [
+        "Islas Marianas del Norte"
       ],
       "Norway": [
         "Noruega"
@@ -4738,6 +4804,9 @@
       "Rwanda": [
         "Ruanda"
       ],
+      "Saint Barthélemy": [
+        "San Bartolomé"
+      ],
       "Saint Helena": [
         "Santa Helena"
       ],
@@ -4746,6 +4815,9 @@
       ],
       "Saint Lucia": [
         "Santa Lucía"
+      ],
+      "Saint Martin (French Part)": [
+        "San Martín (parte francesa)"
       ],
       "Saint Pierre and Miquelon": [
         "San Pedro y Miquelón"
@@ -4780,6 +4852,9 @@
       "Singapore": [
         "Singapur"
       ],
+      "Sint Maarten": [
+        "San Martín"
+      ],
       "Slovakia": [
         "Eslovaquia"
       ],
@@ -4797,6 +4872,12 @@
       ],
       "South Georgia and the South Sandwich Islands": [
         "Islas Georgias del Sur y Sándwich del Sur"
+      ],
+      "South Korea": [
+        "Corea del Sur"
+      ],
+      "South Ossetia": [
+        "Osetia del Sur"
       ],
       "South Sudan": [
         "Sudán del Sur"
@@ -4825,6 +4906,9 @@
       "Switzerland": [
         "Suiza"
       ],
+      "Syria": [
+        "Siria"
+      ],
       "Syrian Arab Republic": [
         "Siria"
       ],
@@ -4834,11 +4918,17 @@
       "Tajikistan": [
         "Tayikistán"
       ],
+      "Tanzania": [
+        "Tanzania"
+      ],
       "Tanzania, United Republic of": [
         "RU de Tanzania"
       ],
       "Thailand": [
         "Tailandia"
+      ],
+      "Timor-Leste": [
+        "Timor Oriental"
       ],
       "Togo": [
         "Togo"
@@ -4851,6 +4941,9 @@
       ],
       "Trinidad and Tobago": [
         "Trinidad y Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristán de Acuña"
       ],
       "Tunisia": [
         "Túnez"
@@ -4882,6 +4975,9 @@
       "United States": [
         "Estados Unidos"
       ],
+      "United States Minor Outlying Islands": [
+        "Islas Ultramarinas Menores de Estados Unidos"
+      ],
       "Uruguay": [
         "Uruguay"
       ],
@@ -4897,6 +4993,12 @@
       "Vietnam": [
         "Vietnam"
       ],
+      "Virgin Islands, British": [
+        "Islas Vírgenes Británicas"
+      ],
+      "Virgin Islands, U.S.": [
+        "Islas Vírgenes de EE. UU."
+      ],
       "Wallis and Futuna": [
         "Wallis y Futuna"
       ],
@@ -4911,6 +5013,9 @@
       ],
       "Zimbabwe": [
         "Zimbabue"
+      ],
+      "Åland Islands": [
+        "Islas Aland"
       ]
     },
     "Country select label": {
@@ -7455,6 +7560,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Algunos nombres de etiquetas exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación y edite estos nombres."
+      ],
+      "Something went wrong while converting the address": [
+        "Se ha producido un error al convertir la dirección"
       ],
       "Something went wrong while creating the address": [
         "Algo salió mal al crear la dirección"
@@ -11860,6 +11968,9 @@
       "Please select the folders you would like to import:": [
         "Seleccione las carpetas que quiere importar:"
       ],
+      "Please select the labels you would like to import:": [
+        "Seleccione las etiquetas que desee importar:"
+      ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Seleccione el tipo de enlace que quiere insertar y complete todos los campos."
       ],
@@ -15302,6 +15413,9 @@
       "See your team's availability": [
         "Ver la disponibilidad de su equipo"
       ],
+      "Select an identity provider to start": [
+        "Seleccione un proveedor de identidad para empezar"
+      ],
       "Select Linux package format": [
         "Seleccione el formato de paquete de Linux"
       ],
@@ -15846,11 +15960,6 @@
         "Para: ${ to }"
       ]
     },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Seleccione un proveedor de identidad para empezar"
-      ]
-    },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "Para agregar un calendario, elimine uno existente."
@@ -15937,6 +16046,9 @@
       ],
       "Forgot username?": [
         "¿Olvidó el nombre de usuario?"
+      ],
+      "Frequent sign-in problems": [
+        "Problemas frecuentes de inicio de sesión"
       ],
       "General": [
         "General"
@@ -20522,6 +20634,15 @@
       "Awesome. Keep your options up-to-date for stronger protection.": [
         "Magnifico. Mantenga sus opciones actualizadas para una protección robusta."
       ],
+      "Check your access to your recovery options": [
+        "Revise el acceso a sus opciones de recuperación."
+      ],
+      "Critical": [
+        "Crítico"
+      ],
+      "Don’t get locked out of your ${ BRAND_NAME } Account": [
+        "No se quede sin acceso a su cuenta de ${ BRAND_NAME }"
+      ],
       "Good start. Add more options for a stronger protection.": [
         "Buen comienzo. Añada más opciones para una protección más robusta."
       ],
@@ -20540,6 +20661,9 @@
       "Partial": [
         "Parcial"
       ],
+      "Recoverability": [
+        "Recuperabilidad"
+      ],
       "Recovery score: ${ score }": [
         "Puntuación de recuperación: ${ score }"
       ],
@@ -20552,11 +20676,47 @@
       "Strong": [
         "Segura"
       ],
+      "Take precautions to avoid losing access": [
+        "¡Tome precauciones para evitar pérdida de acceso!"
+      ],
       "Unprotected": [
         "Sin protección"
       ],
       "Weak": [
         "Débil"
+      ],
+      "You're fully protected. A periodic review keeps everything working as your devices and contacts change over time.": [
+        "Tiene protección total. Una revisión periódica mantendrá todo en orden cuando sus dispositivos y contactos cambien con el tiempo."
+      ],
+      "You're partly there, but not safe yet. A forgotten password could still mean losing your emails, files, and passwords.": [
+        "Casi, pero su cuenta aún no es segura. Una contraseña olvidada aún puede significar perder sus correos electrónicos, archivos y contraseñas."
+      ],
+      "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
+        "Tiene un alto riesgo. Si olvida su contraseña, puede perder permanentemente sus correos electrónicos, archivos y contraseñas."
+      ],
+      "You're well covered, but there are still gaps. More recovery options give you a stronger safety net if you ever lose your password.": [
+        "Su cuenta está cubierta, pero tiene algunas brechas. Más opciones de recuperación le brindan una red de seguridad más sólida en caso de perder su contraseña."
+      ],
+      "Your account and data can be recovered": [
+        "La cuenta y sus datos pueden recuperarse"
+      ],
+      "Your account has no recovery options set up. If you lose your password, you'll permanently lose access to your emails, files, and passwords.": [
+        "Su cuenta no tiene opciones de recuperación configuradas. Si pierde su contraseña, perderá el acceso permanentemente a sus correos electrónicos, archivos y contraseñas."
+      ],
+      "Your account isn't fully protected. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Su cuenta no está totalmente protegida. Una contraseña olvidada aún puede significar perder el acceso a sus correos electrónicos, archivos y contraseñas."
+      ],
+      "Your recovery setup is barely there. If you lose your password, you could permanently lose access to your emails, files, and passwords.": [
+        "Apenas tiene opciones de recuperación configuradas. Si pierde su contraseña, puede perder el acceso permanentemente a sus correos electrónicos, archivos y contraseñas."
+      ],
+      "Your recovery setup is excellent. Keep your options up to date so they still work when you need them.": [
+        "Su configuración de recuperación es excelente. Mantenga sus opciones actualizadas para que funcionen sin problemas en caso de que lo necesite."
+      ],
+      "Your recovery setup is incomplete. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Su configuración de recuperación está incompleta. Una contraseña olvidada aún puede significar perder el acceso a sus correos electrónicos, archivos y contraseñas."
+      ],
+      "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
+        "Su configuración de recuperación es sólida, con pocas brechas por cerrar. Cada opción que agregue hace su red de seguridad más fuerte."
       ]
     },
     "Recovery score item": {
@@ -24237,6 +24397,12 @@
       "Password copied to clipboard": [
         "Contraseña copiada al portapapeles."
       ],
+      "Password reminders disabled": [
+        "Recordatorios de contraseña desactivados"
+      ],
+      "Password reminders enabled": [
+        "Recordatorios de contraseña activados"
+      ],
       "Password updated": [
         "Contraseña actualizada"
       ],
@@ -26815,6 +26981,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Incluye correo electrónico profesional en @sudominio.com, almacenamiento en la nube con edición colaborativa de documentos, programación y videoconferencias, gestión de contraseñas, una VPN segura de ${ VPN_SHORT_APP_NAME } y más."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Asistencia IA inmediata, experto humano a su disposición!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Los miembros que no usen 2FA recibirán un correo electrónico pidiendo que lo activen tan pronto como sea posible. Los usuarios con inicio de sesión único no recibirán el recordatorio por correo electrónico."

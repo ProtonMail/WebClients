@@ -334,6 +334,9 @@
       "Copy addresses": [
         "Adressen kopiëren"
       ],
+      "Copy alias “${ name }”": [
+        "Kopieer alias \"${ name }\""
+      ],
       "Copy email to clipboard": [
         "E-mailadres kopiëren naar klembord"
       ],
@@ -3339,6 +3342,9 @@
       "Canada": [
         "Canada"
       ],
+      "Canary Islands": [
+        "Canarische Eilanden"
+      ],
       "Cape Verde": [
         "Kaapverdië"
       ],
@@ -5612,6 +5618,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "We konden deze pagina niet laden. Ververs de pagina of controleer uw internetverbinding."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Wanneer extra wachtwoord is ingeschakeld, kan aliasbeheer alleen worden gedaan in ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "U hebt nog geen contactpersonen. Start met het aanmaken van een contactpersoon"
@@ -8111,6 +8120,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Selecteer de mappen die u wilt importeren:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Selecteer de labels die u wilt importeren:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Selecteer het soort link dat u wil invoeren en vul alle velden in."
@@ -13524,14 +13536,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Alle aliassen"
+      ],
       "Create alias": [
         "Alias aanmaken"
+      ],
+      "Create an alias": [
+        "Alias aanmaken"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Genereer aliassen in een handomdraai en beheer gemakkelijk uw aliassen en wachtwoorden."
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-aliassen"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Met Hide-my-email aliassen kunt u zich online aanmelden voor zaken zonder uw e-mailadres te delen. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Nieuwe alias"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Open ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Bescherm uw online-identiteit"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Probeer ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Gebruikt in Amazon voor winkelen enz."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Wanneer uw e-mailadres gevraagd wordt, geef dan deze alias op. Aliassen worden geleverd door ${ passLink }."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(${ PASS_APP_NAME } zal openen)"
       ]
     },
     "Security Center - Action": {
@@ -14853,6 +14897,9 @@
       "Address verification disabled": [
         "Adresverificatie uitgeschakeld"
       ],
+      "Alias copied to clipboard": [
+        "Alias gekopieerd naar klembord"
+      ],
       "Alias saved and copied": [
         "Alias opgeslagen en gekopieerd"
       ],
@@ -14941,6 +14988,9 @@
       ],
       "Labels applied.": [
         "Labels toegepast."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Laatst gewijzigde aliassen opgeslagen in uw oudste kluis"
       ],
       "Mail list unsubscribed": [
         "Afgemeld van nieuwsbrieven"
@@ -16391,6 +16441,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Als u een geschenkcode heeft gekocht of een heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Directe AI-hulp, menselijke expert bij de hand!"
       ],
       "Load image": [
         "Laad foto"

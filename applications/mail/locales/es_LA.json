@@ -334,6 +334,9 @@
       "Copy addresses": [
         "Copiar direcciones"
       ],
+      "Copy alias “${ name }”": [
+        "Copiar el alias «${ name }»"
+      ],
       "Copy email to clipboard": [
         "Copiar correo al portapapeles"
       ],
@@ -3348,6 +3351,9 @@
       "Canada": [
         "Canadá"
       ],
+      "Canary Islands": [
+        "Islas Canarias"
+      ],
       "Cape Verde": [
         "Cabo Verde"
       ],
@@ -5232,6 +5238,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Algunos nombres de etiquetas exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación y edite estos nombres."
       ],
+      "Something went wrong while converting the address": [
+        "Se ha producido un error al convertir la dirección"
+      ],
       "Something went wrong while creating the address": [
         "Algo salió mal al crear la dirección"
       ],
@@ -5618,6 +5627,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No pudimos cargar esta página. Actualice la página o revise la conexión a internet."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Cuando la contraseña adicional está activada, la gestión de alias solo puede hacerse en ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Aún no tiene ningún contacto. Comience creando un contacto nuevo"
@@ -8117,6 +8129,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Seleccione las carpetas que quiere importar:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Seleccione las etiquetas que desee importar:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Seleccione el tipo de enlace que quiere insertar y complete todos los campos."
@@ -13530,14 +13545,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Todos los alias"
+      ],
       "Create alias": [
         "Crear un alias"
+      ],
+      "Create an alias": [
+        "Crear un alias"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Genere alias rápidamente, y administre fácilmente sus alias y contraseñas."
+      ],
+      "Hide-my-email aliases": [
+        "Alias de hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Los alias de hide-my-email le permiten registrarse en sitios sin compartir la dirección de correo electrónico. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Nuevo alias"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Abrir ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Proteja su identidad en línea"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Pruebe ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Usado para compras en Amazon, etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Cuando se le pida la dirección de correo electrónico, indique este alias en su lugar. Los alias son proporcionados por ${ passLink }"
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(abrirá ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -14859,6 +14906,9 @@
       "Address verification disabled": [
         "Verificación de dirección desactivada"
       ],
+      "Alias copied to clipboard": [
+        "Alias copiado al portapapeles"
+      ],
       "Alias saved and copied": [
         "Alias guardado y copiado"
       ],
@@ -14947,6 +14997,9 @@
       ],
       "Labels applied.": [
         "Etiquetas aplicadas."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Los últimos alias modificados están guardados en su bóveda más antigua"
       ],
       "Mail list unsubscribed": [
         "Lista de correo desinscrita"
@@ -16397,6 +16450,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si compó un código de regalo o recibió uno de nuestro equipo de soporte, puede ingresarlo aquí."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Asistencia IA inmediata, experto humano a su disposición!"
       ],
       "Load image": [
         "Cargar imagen"
