@@ -3183,6 +3183,9 @@
       ],
       "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
         "Vi flytter til ${ BRAND_NAME }, den sikre e-posttjenesten.\nOg ${ BRAND_NAME }-kontoen din er klar til å bli gjort krav på.\nKlikk ${ inviteLink }.\nSkriv inn e-postadressen din, så sender vi en kode til Gmail-kontoen din.\nBruk den til å angi passordet ditt – så er ${ BRAND_NAME }-kontoen din.\nI en liten stund vil begge fungere side om side. ${ BRAND_NAME } og Gmail.\nTil slutt, når alle har fullført flyttingen, avvikler vi Gmail. Vi gir deg en påminnelse før det skjer."
+      ],
+      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
+        "Du er nesten ferdig. Du må konfigurere domenet ditt til å motta e-postene direkte på ${ BRAND_NAME }. Når dette er bekreftet, vil teamet ditt slutte å motta nye e-poster på Gmail, og overføringen vil være fullført."
       ]
     },
     "breadcrumb": {
@@ -19332,6 +19335,9 @@
     "password_reminder": {
       "If you forget your password, you may lose access to your encrypted data.": [
         "Hvis du glemmer passordet ditt, kan du miste tilgangen til de krypterte dataene dine."
+      ],
+      "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
+        "Sørg for at du husker eller lagrer passordet ditt sikkert, da det er nøkkelen til å dekryptere dataene dine."
       ]
     },
     "password_reset: info": {
@@ -20538,6 +20544,9 @@
       ],
       "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
         "Gjenopprettingsoppsettet ditt er solid, med noen få hull igjen å tette. Hvert alternativ du legger til gjør sikkerhetsnettet ditt sterkere."
+      ],
+      "Your recovery setup is incomplete. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Gjenopprettingsoppsettet ditt er ufullstendig. Et glemt passord kan fortsatt bety at du mister tilgangen til e-postene, filene og passordene dine."
       ]
     },
     "Recovery score item": {
@@ -20720,6 +20729,9 @@
       ],
       "your subscription": [
         "abonnementet ditt"
+      ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
+        "Jeg har brukt ${ BRAND_NAME } og tenkte du kanskje ville like det. Det er en sikker e-post-, skylagrings-, passordbehandlings- og VPN-tjeneste som beskytter personvernet ditt. Registrer deg med denne lenken for å få ${ refereeRewardAmount } i rabatt på ditt neste abonnement: ${ referralLink }"
       ]
     },
     "Remark about a key type option": {

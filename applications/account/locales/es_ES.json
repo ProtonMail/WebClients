@@ -1674,6 +1674,12 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Continue with Free": [
+        "Seguir con el plan gratuito"
+      ],
+      "Sign out of ${ tokens[0].Account }": [
+        "Cierra sesión en ${ tokens[0].Account }"
       ]
     },
     "action": {
@@ -2758,6 +2764,156 @@
       ],
       "What are you migrating?": [
         "¿Qué estás migrando?"
+      ],
+      "${ BRAND_NAME } Easy Switch": [
+        "${ BRAND_NAME } Easy Switch"
+      ],
+      "${ relevantCount } of ${ totalCount }": [
+        "${ relevantCount } de ${ totalCount }"
+      ],
+      "Accounts migrated": [
+        "Cuentas migradas"
+      ],
+      "Add your organization email domain to ${ BRAND_NAME }.": [
+        "Añade el dominio de correo electrónico de tu organización a ${ BRAND_NAME }."
+      ],
+      "All migrated user accounts are ready to be invited to your ${ BRAND_NAME } organization.": [
+        "Todas las cuentas de usuario migradas ya están listas para que las invites a tu organización de ${ BRAND_NAME }."
+      ],
+      "An unknown error ocurred. Please refresh the page and try again": [
+        "Ha ocurrido un error desconocido. Actualiza la página e inténtalo de nuevo."
+      ],
+      "Collapse step": [
+        "Contraer paso"
+      ],
+      "Configure users": [
+        "Configurar usuarios"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host.": [
+        "Copia el siguiente código y pégalo en la sección DNS del proveedor de tu dominio."
+      ],
+      "Creating accounts. Going private": [
+        "Crear cuentas. Pasarse a la privacidad"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Estado de la migración de datos de Google Workspace a ${ BRAND_NAME }"
+      ],
+      "Domain provider": [
+        "Proveedor de dominios"
+      ],
+      "Don’t know where to start? Watch how to update your DNS on ${ registrarLink }": [
+        "¿No sabes por dónde empezar? Mira cómo actualizar tu DNS en ${ registrarLink }."
+      ],
+      "Emails": [
+        "Correos electrónicos"
+      ],
+      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
+        "Todo el mundo recibe el mismo enlace de invitación. Accede a la página, introduce su correo electrónico y llega un código de verificación a su bandeja de entrada de Gmail. Desde ahí, configura su contraseña de ${ BRAND_NAME }."
+      ],
+      "Expand step": [
+        "Expandir paso"
+      ],
+      "Final step": [
+        "Último paso"
+      ],
+      "Get help and useful tips for other domain providers ${ here }": [
+        "Encuentra ayuda y consejos útiles para otros proveedores de dominios ${ here }."
+      ],
+      "Import completed successfully": [
+        "La importación se completó correctamente"
+      ],
+      "Import details": [
+        "Importar detalles"
+      ],
+      "Invitation link": [
+        "Enlace de invitación"
+      ],
+      "Invitation message": [
+        "Mensaje de invitación"
+      ],
+      "invite link": [
+        "enlace de invitación"
+      ],
+      "It can take up to 24 hours for these changes to propagate.": [
+        "Estos cambios pueden tardar hasta 24 horas en propagarse."
+      ],
+      "Migrate": [
+        "Migrar"
+      ],
+      "Migrate accounts": [
+        "Migrar cuentas"
+      ],
+      "Migrate accounts to ${ BRAND_NAME }": [
+        "Migrar cuentas a ${ BRAND_NAME }"
+      ],
+      "Migrated accounts": [
+        "Cuentas migradas"
+      ],
+      "Migration summary": [
+        "Resumen de migración"
+      ],
+      "Need help?": [
+        "¿Necesitas ayuda?"
+      ],
+      "Not detected correctly? Choose your provider from the list.": [
+        "¿No se ha detectado correctamente? Elige tu proveedor de la lista."
+      ],
+      "Onboard your team": [
+        "Incorpora a tu equipo"
+      ],
+      "Please don’t close or refresh this window.": [
+        "No cierres ni actualices esta ventana."
+      ],
+      "Reauthenticate your Google Workspace account to start a migration": [
+        "Vuelve a autenticar tu cuenta de Google Workspace para iniciar una migración."
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selecciona exactamente lo que quieres migrar. Se aplica a todo el equipo de la organización."
+      ],
+      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
+        "Selecciona las cuentas que quieres traer a ${ BRAND_NAME }. Puedes migrar toda tu organización hoy mismo o empezar poco a poco y traer el resto cuando quieras."
+      ],
+      "Sign-in with a Google Workspace administrator account for ${ BRAND_NAME } to setup the migration.": [
+        "Inicia sesión con una cuenta de administrador de Google Workspace de ${ BRAND_NAME } para configurar la migración."
+      ],
+      "Skip": [
+        "Omitir"
+      ],
+      "Skipped ${ count } contact due to incompatibilities": [
+        "Se ha omitido ${ count } contacto debido a incompatibilidades",
+        "Se han omitido ${ count } contactos debido a incompatibilidades"
+      ],
+      "Skipped ${ count } email due to incompatibilities": [
+        "Se ha omitido ${ count } correo electrónico debido a incompatibilidades",
+        "Se han omitido ${ count } correos electrónicos debido a incompatibilidades"
+      ],
+      "Skipped ${ count } event due to incompatibilities": [
+        "Se ha omitido ${ count } evento debido a incompatibilidades",
+        "Se han omitido ${ count } eventos debido a incompatibilidades"
+      ],
+      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the Google Workspace Marketplace. After installing it, come back here to continue.": [
+        "Para traer los datos de tu organización a ${ BRAND_NAME }, instala ${ BRAND_NAME } Easy Switch desde el Google Workspace Marketplace. Una vez instalado, vuelve aquí para continuar."
+      ],
+      "Users activated": [
+        "Usuarios activados"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Quienes han accedido a su cuenta de ${ BRAND_NAME }"
+      ],
+      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Quienes no hayan reclamado su cuenta antes de que se finalice la migración necesitan solicitar un restablecimiento de contraseña al administrador de su organización de ${ BRAND_NAME }."
+      ],
+      "Waiting for MX...": [
+        "Esperando el registro MX..."
+      ],
+      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
+        "Nos pasamos a ${ BRAND_NAME }, el servicio de correo electrónico seguro.\nY tu cuenta de ${ BRAND_NAME } ya está lista para ti.\nHaz clic en ${ inviteLink }. Introduce tu dirección de correo electrónico y te enviamos un código a tu cuenta de Gmail.\nÚsalo para configurar tu contraseña y tu cuenta de ${ BRAND_NAME } ya es tuya.\nDurante un tiempo, ambas opciones funcionan a la vez: ${ BRAND_NAME } y Gmail.\nDespués, cuando todo el mundo se haya mudado, retiramos Gmail. Te avisamos antes de que ocurra."
+      ],
+      "We’re creating your accounts and importing your data now. Every email, every event is yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Se están creando tus cuentas e importando tus datos ahora. Cada correo electrónico, cada evento es solo tuyo. Visible solo para tu equipo. Ni nosotros ni nadie más."
+      ],
+      "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.": [
+        "Ya casi has terminado. Necesitas configurar tu dominio para recibir tus correos directamente en ${ BRAND_NAME }. Una vez confirmado, tu equipo deja de recibir nuevos correos en Gmail y la migración se completa."
       ]
     },
     "breadcrumb": {
@@ -4798,6 +4954,21 @@
       ],
       "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
         "Puedes unificar tus direcciones en una sola cuenta principal de ${ BRAND_NAME } siguiendo nuestra guía de ayuda."
+      ],
+      "Available storage: ${ storageText }": [
+        "Almacenamiento disponible: ${ storageText }"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Espacio de sobra para años de correos electrónicos, archivos adjuntos y mucho más."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Desbloquea 15 GB de almacenamiento por solo ${ config.offerPrice }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Tu cuenta gratuita de ${ MAIL_APP_NAME } tiene almacenamiento limitado, así que solo se importa ${ newUserStorageText } de tus mensajes de Gmail más recientes."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Tu cuenta gratuita de ${ MAIL_APP_NAME } tiene almacenamiento limitado, así que solo se importan tus correos electrónicos de Gmail más recientes."
       ]
     },
     "description": {
@@ -5245,6 +5416,9 @@
       ],
       "90m": [
         "90m"
+      ],
+      "15 minutes": [
+        "15 minutos"
       ]
     },
     "Easy switch": {
@@ -7494,6 +7668,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Alias hide-my-email ilimitados"
+      ],
+      "10+ premium features": [
+        "Más de 10 funciones prémium"
+      ],
+      "Custom email domain": [
+        "Dominio de correo electrónico personalizado"
+      ],
+      "Email addresses": [
+        "Direcciones de correo electrónico"
+      ],
+      "Storage": [
+        "Almacenamiento"
       ]
     },
     "Features": {
@@ -11989,6 +12175,18 @@
       ],
       "Please select the labels you would like to import:": [
         "Selecciona las etiquetas que quieres importar:"
+      ],
+      "Editing requires permission": [
+        "Necesitas permiso para editar"
+      ],
+      "Included": [
+        "Incluido"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Mejora tu plan en cualquier momento para traer el resto."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Mejora tu plan o libera espacio en cualquier momento para traer el resto."
       ]
     },
     "info": {
@@ -13901,6 +14099,9 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "You don't have permissions": [
+        "No tienes permisos para ver esta sección."
       ]
     },
     "label": {
@@ -14292,6 +14493,9 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ],
+      "Help & support": [
+        "Ayuda y asistencia"
       ]
     },
     "Link (Scribe)": {
@@ -23733,6 +23937,15 @@
       ],
       "Your subscriptions": [
         "Tus suscripciones"
+      ],
+      "Continue with free storage": [
+        "Continúa con el almacenamiento gratuito"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Consigue más almacenamiento con ${ MAIL_APP_NAME } Plus"
+      ],
+      "Summer Sale": [
+        "Descuento de verano"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25092,6 +25305,25 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "Label for domain setup": {
+      "Priority": [
+        "Prioridad"
+      ],
+      "Status": [
+        "Estado"
+      ],
+      "Use default value (e.g. “@”)": [
+        "Usa el valor predeterminado (por ejemplo, «@»)"
+      ]
+    },
+    "Setting": {
+      "Get updates about comments via email": [
+        "Recibe actualizaciones sobre los comentarios por correo"
+      ],
+      "Include document name in email notifications": [
+        "Incluir el nombre del documento en tus notificaciones por correo"
       ]
     }
   }

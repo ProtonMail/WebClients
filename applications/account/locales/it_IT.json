@@ -1845,6 +1845,10 @@
       ],
       "Writing assistant seats": [
         "Posti dell'assistente alla scrittura"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licenza ${ MEET_APP_NAME }",
+        "${ seats } licenze ${ MEET_APP_NAME }"
       ]
     },
     "Address action": {
@@ -12073,6 +12077,10 @@
       ],
       "Zoom meeting": [
         "Meeting Zoom"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crea un cloud sicuro per ${ memberCount } membro",
+        "Crea un cloud sicuro per ${ memberCount } membri"
       ]
     },
     "info": {
@@ -14808,6 +14816,10 @@
       "Up to ${ n } participant": [
         "Fino a ${ n } partecipante",
         "Fino a ${ n } partecipanti"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videoconferenze, ${ n } partecipante",
+        "Videoconferenze, ${ n } partecipanti"
       ]
     },
     "meet_2025: Info": {
@@ -14843,6 +14855,10 @@
       ],
       "Strict no-logs policy": [
         "Rigida politica contro i registri"
+      ],
+      "${ seats } seat included": [
+        "${ seats } licenza inclusa",
+        "${ seats } licenze incluse"
       ]
     },
     "meet_signup_2025: title": {
@@ -16259,6 +16275,10 @@
       "Support for ${ n } custom email domain": [
         "Supporto per ${ n } dominio email personalizzato",
         "Supporto per ${ n } domini email personalizzati"
+      ],
+      "${ n } country": [
+        "${ n } paese",
+        "${ n } paesi"
       ]
     },
     "news": {
@@ -21364,6 +21384,10 @@
       ],
       "Your own short @pm.me email alias": [
         "Il tuo alias email breve @pm.me"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videoconferenze, fino a ${ PAID_PREMIUM_MAX_PARTICIPANTS } partecipante",
+        "Videoconferenze, fino a ${ PAID_PREMIUM_MAX_PARTICIPANTS } partecipanti"
       ]
     },
     "subscription reminder": {
@@ -23661,6 +23685,9 @@
       ],
       "Your subscriptions": [
         "I tuoi abbonamenti"
+      ],
+      "Summer Sale": [
+        "Saldi estivi"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

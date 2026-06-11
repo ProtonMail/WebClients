@@ -4787,6 +4787,12 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "あなたのプランでは、合計${ MAX_SYNC_PAID_USER }件のGmailアドレスをサポートしています。"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "メールや添付ファイル、その他のデータを何年分も保存できる十分な容量があります。"
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "たった${ config.offerPrice }で15GBの容量をアンロック。"
       ]
     },
     "description": {
@@ -11829,6 +11835,12 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "${ memberCount } 人のメンバーのために安全なクラウドを作成"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "残りを持ち越すためにいつでもアップグレードできます"
       ]
     },
     "info": {
@@ -12316,6 +12328,9 @@
       ],
       "View options": [
         "表示オプション"
+      ],
+      "Desktop app navigation": [
+        "デスクトップアプリナビゲーション"
       ]
     },
     "Keys actions": {
@@ -13831,6 +13846,9 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "個人のメールも、仕事のメールも、さらに重要な更新や通知も"
       ]
     },
     "label": {
@@ -15483,6 +15501,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "${ n }個の予約ページの予定されたスケジュール"
       ]
     },
     "new_plans: feature highlight": {
@@ -15958,6 +15979,9 @@
       ],
       "Support for ${ n } custom email domain": [
         "${ n } 個のカスタムドメインメールアドレスのサポート"
+      ],
+      "${ n } country": [
+        "${ n } カ国"
       ]
     },
     "news": {
@@ -21118,6 +21142,9 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "${ PAID_PREMIUM_MAX_PARTICIPANTS }人まで参加可能なビデオ会議"
       ]
     },
     "subscription reminder": {
@@ -23331,6 +23358,9 @@
       ],
       "Your subscriptions": [
         "あなたのサブスクリプション"
+      ],
+      "Summer Sale": [
+        "サマーセール"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24691,6 +24721,11 @@
       ],
       "Yearly, ${ untilString }": [
         "毎年、${ untilString }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }に切り替える"
       ]
     }
   }
