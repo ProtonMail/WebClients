@@ -16,10 +16,12 @@ import config from './config';
 import { DashboardContainer } from './containers/DashboardContainer/DashboardContainer';
 import { GuestDashboardContainer } from './containers/DashboardContainer/GuestDashboardContainer';
 import { GuestContainer } from './containers/GuestContainer';
+import { ManageRecordingsContainer } from './containers/ManageRecordingsContainer/ManageRecordingsContainer';
 import { WrappedProtonMeetContainer } from './containers/ProtonMeetContainer/WrappedProtonMeetContainer';
 import { ProviderContainer } from './containers/ProviderContainer';
 import { getPublicToken } from './hooks/srp/usePublicToken';
 import { useMeetFunnelTelemetry } from './hooks/useMeetFunnelTelemetry';
+import { useIsRecordingSupported } from './hooks/useMeetingRecorderNew/hooks/useIsRecordingSupported';
 
 // @ts-ignore
 import meetTheme from './styles/meet.theme.css';
@@ -35,7 +37,16 @@ const MeetAppTelemetry = () => {
     return null;
 };
 
-const routes = ['join', 'dashboard'];
+const useMeetRoutes = () => {
+    const isRecordingRecoveryUIEnabled = useFlag('MeetRecordingRecoveryUI');
+    const isRecordingSupported = useIsRecordingSupported();
+
+    return [
+        'join',
+        'dashboard',
+        ...(isRecordingSupported && isRecordingRecoveryUIEnabled ? ['manage-recordings'] : []),
+    ];
+};
 
 const landingPageRoute = '/start-free-meeting';
 
@@ -64,6 +75,7 @@ const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
 
     const history = useHistory();
     const location = useLocation();
+    const routes = useMeetRoutes();
 
     useEffect(() => {
         if (location.pathname.length < 2 && hasInitialized.current) {
@@ -139,6 +151,7 @@ export const App = () => {
                             <ComingSoonWrapper>
                                 <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
                                 <Route path="/dashboard" component={DashboardContainer} />
+                                <Route path="/manage-recordings" component={ManageRecordingsContainer} />
                             </ComingSoonWrapper>
                         </RedirectWrapper>
                     </ProviderContainer>
