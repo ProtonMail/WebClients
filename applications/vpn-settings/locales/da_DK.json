@@ -1229,6 +1229,9 @@
       "Verify domain": [
         "Bekræft domæne"
       ],
+      "Verify now": [
+        "Bekræft nu"
+      ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Bekræft domænet ${ unverifiedSSODomain.DomainName }"
       ],
@@ -2729,6 +2732,9 @@
       ],
       "Canada": [
         "Canada"
+      ],
+      "Canary Islands": [
+        "De Kanariske Øer"
       ],
       "Cape Verde": [
         "Kap Verde"
@@ -4702,6 +4708,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne overskrider ${ MAIL_APP_NAME }'s maksimale tegngrænse. Tilpas venligst importen for at ændre disse navne."
+      ],
+      "Something went wrong while converting the address": [
+        "Noget gik galt under konverteringen af adressen"
       ],
       "Something went wrong while creating the address": [
         "Noget gik galt under oprettelsen af adressen"
@@ -7048,6 +7057,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Glem IKKE denne adgangskode. Glemmer du den, vil du ikke være i stand til at administrere din organisation."
       ],
+      "Do you remember your password? ${ verifyButton }": [
+        "Kan du huske din adgangskode? ${ verifyButton }"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Vil du tilbagekalde alle andre sessioner end den nuværende?"
       ],
@@ -7279,6 +7291,9 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "For brugere, som skifter til ${ MAIL_APP_NAME } fra en anden e-mailtjeneste, skal du vælge fanen ${ boldAddresses } og tilføje alle aktive e-mailadresser, før du ændrer MX-posten for at sikre en problemfri overgang."
+      ],
+      "Forgot password?": [
+        "Glemt din adgangskode?"
       ],
       "Free trial": [
         "Gratis prøveperiode"
@@ -7860,6 +7875,9 @@
       "Password must have:": [
         "Adgangskoden skal have:"
       ],
+      "Password verified": [
+        "Adgangskode bekræftet"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet af TLS-kryptering og schweizisk lovgivning om beskyttelse af privatlivets fred."
       ],
@@ -7871,6 +7889,9 @@
       ],
       "per month, billed at ${ price }": [
         "per måned, faktureret til ${ price }"
+      ],
+      "Periodically prompts you to verify your ${ BRAND_NAME } password to ensure you don't forget it. You'll be asked less frequently over time.": [
+        "Beder dig om at bekræfte din ${ BRAND_NAME }-adgangskode en gang imellem for at sikre, at du ikke glemmer den. Du vil blive spurgt mindre og mindre efterhånden."
       ],
       "Please add a password for the user on row": [
         "Tilføj en adgangskode til brugeren på række",
@@ -7912,6 +7933,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Vælg venligst de mapper, du ønsker at importere:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Vælg venligst de labels, du ønsker at importere:"
       ],
       "Please specify...": [
         "Angiv venligst..."
@@ -8467,6 +8491,9 @@
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "For at holde din konto sikker skal vi sikre os at det faktisk er dig der prøver at logge ind."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "For at hjælpe dig med at huske din adgangskode, beder vi dig om at indtaste den en gang imellem. Vi spørger dig mindre og mindre efterhånden."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "For at importere begivenheder, skal du først oprette en kalender i ${ CALENDAR_APP_NAME }. Det er her, at begivenhederne vises efter importen."
       ],
@@ -8733,6 +8760,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Vi giver dig besked, når importen er færdig."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Vi minder dig om at bekræfte din adgangskode igen senere"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
@@ -9941,6 +9971,9 @@
       "Password": [
         "Adgangskode"
       ],
+      "Password reminders": [
+        "Adgangskodepåmindelser"
+      ],
       "Password strength": [
         "Adgangskodestyrke"
       ],
@@ -10054,6 +10087,9 @@
       ],
       "See your team's availability": [
         "Se dit teams tilgængelighed"
+      ],
+      "Select an identity provider to start": [
+        "Vælg en identitetsudbyder for at begynde"
       ],
       "Select which Gmail address to connect": [
         "Vælg hvilken Gmail-adresse der skal forbindes"
@@ -10339,11 +10375,6 @@
         "Til: ${ to }"
       ]
     },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Vælg en identitetsudbyder for at starte"
-      ]
-    },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "For at tilføje en ny kalender, skal du fjerne en eksisterende kalender."
@@ -10412,6 +10443,9 @@
       ],
       "Forgot username?": [
         "Glemt brugernavn?"
+      ],
+      "Frequent sign-in problems": [
+        "Typiske login-problemer"
       ],
       "Get ${ BRAND_NAME } Pass": [
         "Få ${ BRAND_NAME } Pass"
@@ -12817,6 +12851,20 @@
       ],
       "Limited-time deal.": [
         "Tidsbegrænset tilbud."
+      ]
+    },
+    "password_reminder": {
+      "If you forget your password, you may lose access to your encrypted data.": [
+        "Du kan miste adgang til dine krypterede data, hvis du glemmer din adgangskode."
+      ],
+      "Make sure you memorize or securely store your password as it's the key to decrypt your data.": [
+        "Sørg for at du husker din adgangskode eller opbevarer den sikkert, da den er nøglen til at dekryptere dine data."
+      ],
+      "Turn off password reminders?": [
+        "Slå adgangskodepåmindelser fra?"
+      ],
+      "Turn off reminders": [
+        "Slå påmindelser fra"
       ]
     },
     "password_reset: info": {
@@ -15970,6 +16018,12 @@
       "Password copied to clipboard": [
         "Adgangskode kopieret til udklipsholder"
       ],
+      "Password reminders disabled": [
+        "Adgangskodepåmindelser deaktiveret"
+      ],
+      "Password reminders enabled": [
+        "Adgangskodepåmindelser aktiveret"
+      ],
       "Password updated": [
         "Adgangskode opdateret"
       ],
@@ -17483,6 +17537,9 @@
       "Verify it’s you": [
         "Bekræft at det er dig"
       ],
+      "Verify your password": [
+        "Bekræft din adgangskode"
+      ],
       "Verifying your card...": [
         "Bekræfter dit kort..."
       ],
@@ -17706,6 +17763,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Inkluderer professionelle e-mails med @ditdomæne.com, lagerplads i skyen med dokumenter der kan samarbejdes om, planlægning og afholdelse af videomøder, adgangskodehåndtering, en sikker ${ VPN_SHORT_APP_NAME }, og mere."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Lynhurtig AI-assistance med en menneskelig ekspert, der sidder klar!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Medlemmer, der ikke bruger tofaktorgodkendelse, vil modtage en e-mail, der beder dem aktivere det hurtigst muligt. Enkeltlogonbrugere vil ikke modtage e-mailpåmindelsen."

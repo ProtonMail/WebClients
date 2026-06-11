@@ -2733,6 +2733,9 @@
       "Canada": [
         "Καναδάς"
       ],
+      "Canary Islands": [
+        "Κανάρια Νησιά"
+      ],
       "Cape Verde": [
         "Πράσινο Ακρωτήριo"
       ],
@@ -4705,6 +4708,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Κάποια από τα ονόματα ετικετών σας υπερβαίνουν το μέγιστο όριο χαρακτήρων του ${ MAIL_APP_NAME }. Παρακαλούμε προσαρμόστε την εισαγωγή για να διορθώσετε αυτά τα ονόματα."
+      ],
+      "Something went wrong while converting the address": [
+        "Κάτι πήγε στραβά κατά τη μετατροπή της διεύθυνσης"
       ],
       "Something went wrong while creating the address": [
         "Κάτι πήγε στραβά κατά τη δημιουργία της διεύθυνσης"
@@ -10079,6 +10085,9 @@
       "See your team's availability": [
         "Δείτε τη διαθεσιμότητα της ομάδας σας"
       ],
+      "Select an identity provider to start": [
+        "Επιλέξτε μια υπηρεσία ταυτοποίησης για να ξεκινήσετε"
+      ],
       "Select which Gmail address to connect": [
         "Επιλέξτε ποια διεύθυνση Gmail να συνδεθεί"
       ],
@@ -10363,11 +10372,6 @@
         "Προς: ${ to }"
       ]
     },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Επιλέξτε μια υπηρεσία ταυτοποίησης για να ξεκινήσετε"
-      ]
-    },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "Για να προσθέσετε ένα νέο ημερολόγιο, καταργήστε ένα υπάρχον."
@@ -10436,6 +10440,9 @@
       ],
       "Forgot username?": [
         "Ξεχάσατε το όνομα χρήστη;"
+      ],
+      "Frequent sign-in problems": [
+        "Συχνά προβλήματα σύνδεσης"
       ],
       "Get ${ BRAND_NAME } Pass": [
         "Αποκτήστε το ${ BRAND_NAME } Pass"
@@ -15911,6 +15918,12 @@
       ],
       "Password copied to clipboard": [
         "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
+      ],
+      "Password reminders disabled": [
+        "Οι υπενθυμίσεις κωδικού πρόσβασης απενεργοποιήθηκαν"
+      ],
+      "Password reminders enabled": [
+        "Οι υπενθυμίσεις κωδικού πρόσβασης ενεργοποιήθηκαν"
       ],
       "Password updated": [
         "Ο κωδικός πρόσβασης ενημερώθηκε"
