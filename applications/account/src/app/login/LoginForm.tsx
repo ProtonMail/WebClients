@@ -28,6 +28,7 @@ import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCirc
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcQrCode } from '@proton/icons/icons/IcQrCode';
 import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
+import { IcLifeRing } from "@proton/icons/icons/IcLifeRing";
 import { auth, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -39,7 +40,7 @@ import type {
     SSOInfoResponse,
 } from '@proton/shared/lib/authentication/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, LUMO_SHORT_APP_NAME} from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -50,9 +51,11 @@ import noop from '@proton/utils/noop';
 
 import type { Paths } from '../content/helper';
 import SupportDropdown from '../public/SupportDropdown';
+import { openTroubleshootWithLumo } from '../public/TroubleshootWithLumo';
 import { defaultPersistentKey } from '../public/helper';
 import { RememberMode } from './LoginContainer';
 import SignupButton from './SignupButton';
+
 
 export interface LoginFormRef {
     getIsLoading: () => boolean;
@@ -393,6 +396,7 @@ const LoginForm = ({
     };
 
     const unauthedForgotPasswordEnabled = useFlag('UnauthedForgotPassword');
+    const lumoSignInHelperEnabled = useFlag('LumoSignInHelp');
     const urlParams = new URLSearchParams();
 
     if (username) {
@@ -717,6 +721,16 @@ const LoginForm = ({
                                                     </Link>
                                                 )
                                             }
+                                            {lumoSignInHelperEnabled && (
+                                                <button
+                                                    type="button"
+                                                    onClick={() => openTroubleshootWithLumo()}
+                                                    className="dropdown-item-link w-full px-4 py-2 flex flex-nowrap gap-2 items-center text-no-decoration text-left"
+                                                >
+                                                    <IcLifeRing />
+                                                    {c('Link').t`Get help from ${LUMO_SHORT_APP_NAME}`}
+                                                </button>
+                                            )}
                                             <hr className="m-0" />
                                             <Href
                                                 href={getKnowledgeBaseUrl('/common-login-problems')}
