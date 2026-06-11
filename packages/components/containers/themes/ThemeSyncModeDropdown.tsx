@@ -5,7 +5,8 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcMoon } from '@proton/icons/icons/IcMoon';
+import { IcSun } from '@proton/icons/icons/IcSun';
 import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 import clsx from '@proton/utils/clsx';
@@ -39,10 +40,14 @@ const ThemeSyncModeDropdown = ({ mode, className, themeIdentifier, list, onChang
     );
 
     return (
-        <div className={clsx('', className)}>
-            <div className={clsx('flex justify-space-between flex-nowrap gap-2 mb-2')}>
+        <div className={className}>
+            <div className="flex justify-space-between flex-nowrap gap-2 mb-2">
                 <div className="flex items-center flex-nowrap gap-2 text-sm">
-                    <Icon name={mode === 'light' ? 'sun' : 'moon'} className={clsx('color-weak shrink-0')} />
+                    {mode === 'light' ? (
+                        <IcSun className="color-weak shrink-0" />
+                    ) : (
+                        <IcMoon className="color-weak shrink-0" />
+                    )}
                     <span className="color-weak">
                         {mode === 'light' ? c('Title').t`Day theme` : c('Title').t`Night theme`}
                     </span>

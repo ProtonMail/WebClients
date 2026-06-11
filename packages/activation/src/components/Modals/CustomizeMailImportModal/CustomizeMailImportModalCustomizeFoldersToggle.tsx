@@ -1,7 +1,9 @@
 import { EasyTrans } from '@proton/activation/src/helpers/easyTrans';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon, Label, Row } from '@proton/components';
+import { Label, Row } from '@proton/components';
+import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
+import { IcChevronUpFilled } from '@proton/icons/icons/IcChevronUpFilled';
 import { IcFolders } from '@proton/icons/icons/IcFolders';
 import { IcTags } from '@proton/icons/icons/IcTags';
 
@@ -36,11 +38,11 @@ const CustomizeMailImportModalCustomizeFoldersToggle = ({
                                 <span>{t.partialCount(selectedFoldersCount)}</span>
                             )}
                         </span>
-                        <Icon
-                            alt={t.manage()}
-                            name={organizeFolderVisible ? 'chevron-up-filled' : 'chevron-down-filled'}
-                            className="ml-2"
-                        />
+                        {organizeFolderVisible ? (
+                            <IcChevronUpFilled alt={t.manage()} className="ml-2" />
+                        ) : (
+                            <IcChevronDownFilled alt={t.manage()} className="ml-2" />
+                        )}
                     </Button>
                 </Tooltip>
             </Row>
