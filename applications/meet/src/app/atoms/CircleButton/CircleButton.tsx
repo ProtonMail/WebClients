@@ -22,6 +22,7 @@ interface CircleButtonProps {
     iconViewPort?: string;
     variant?: CircleButtonVariant;
     ariaLabel?: string;
+    ariaPressed?: boolean;
     noBorder?: boolean;
     tooltipTitle?: string;
     anchorRef?: RefObject<HTMLButtonElement>;
@@ -40,6 +41,7 @@ export const CircleButton = ({
     iconViewPort,
     variant = 'default',
     ariaLabel,
+    ariaPressed,
     noBorder = true,
     tooltipTitle,
     anchorRef,
@@ -80,6 +82,7 @@ export const CircleButton = ({
                 )}
                 onClick={onClick}
                 aria-label={ariaLabel}
+                aria-pressed={ariaPressed}
                 ref={anchorRef}
                 style={buttonStyle}
                 disabled={disabled || loading}
