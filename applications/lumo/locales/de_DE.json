@@ -26,8 +26,15 @@
       "Apply": [
         "Übernehmen"
       ],
+      "Are you sure you want to delete ${ count } conversation?": [
+        "Bist du sicher, dass du ${ count } Unterhaltung löschen möchtest?",
+        "Bist du sicher, dass du ${ count } Unterhaltungen löschen möchtest?"
+      ],
       "Are you sure you want to delete all conversations?": [
         "Bist du sicher, dass du alle Unterhaltungen löschen möchtest?"
+      ],
+      "Are you sure you want to delete this conversation?": [
+        "Bist du sicher, dass du diese Unterhaltung löschen möchtest?"
       ],
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
@@ -115,6 +122,10 @@
       ],
       "Delete": [
         "Löschen"
+      ],
+      "Delete ${ count } conversation?": [
+        "${ count } Unterhaltung löschen?",
+        "${ count } Unterhaltungen löschen?"
       ],
       "Delete ${ token.Name }": [
         "„${ token.Name }“ löschen"
@@ -3023,6 +3034,12 @@
       "All messages and chat history": [
         "Alle Nachrichten und Chatverläufe"
       ],
+      "Any images generated in these conversations will also be deleted.": [
+        "Alle in diesen Unterhaltungen erstellten Bilder werden ebenfalls gelöscht."
+      ],
+      "Any images generated in this conversation will also be deleted.": [
+        "Alle in dieser Unterhaltung erstellten Bilder werden ebenfalls gelöscht."
+      ],
       "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
         "Möchtest du \"${ project.name }\" wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden."
       ],
@@ -3814,6 +3831,9 @@
       ],
       "Canada": [
         "Kanada"
+      ],
+      "Canary Islands": [
+        "Kanarische Inseln"
       ],
       "Cape Verde": [
         "Kap Verde"
@@ -8677,6 +8697,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Wenn du einen Geschenkgutschein erworben oder von unserem Support-Team erhalten hast, kannst du ihn hier eingeben."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Sofortige KI-Unterstützung, menschliche Experten stehen bereit."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Der neue Abonnementzyklus beginnt am ${ formattedTime }."
