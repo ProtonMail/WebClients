@@ -10,6 +10,8 @@ import { NewsletterSubscriptionCardActiveFilter } from './NewsletterSubscription
 
 jest.mock('@proton/mail/store/labels/hooks', () => ({
     useFolders: () => [[{ ID: 'custom-folder-1', Name: 'Custom Folder 1' }], false],
+    useLabels: () => [[], false],
+    useSystemFolders: () => [[], false],
 }));
 
 jest.mock('@proton/mail/store/filters/hooks');
