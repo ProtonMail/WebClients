@@ -6,11 +6,61 @@
 	cursor: pointer;
 	min-inline-size: 0;
 
-	&:hover {
-		border-color: var(--border-norm);
-		box-shadow: 0 2px 8px rgb(0 0 0 / 0.08);
-		transform: translateY(-2px);
+	// Reset ButtonLike defaults so our layout and padding rules take over
+	&.button {
+		display: flex;
+		justify-content: flex-start;
+		align-items: stretch;
+		font-size: inherit;
+		line-height: inherit;
+		padding: 0;
 	}
+
+	// &:hover {
+	// 	border-color: var(--border-norm);
+	// 	box-shadow: 0 2px 8px rgb(0 0 0 / 0.08);
+	// 	transform: translateY(-2px);
+	// }
+}
+
+.project-card--list-row {
+	flex-direction: row;
+	align-items: center;
+	gap: 0;
+	padding-block: 12px;
+	padding-inline: 8px;
+	border-block-end: 1px solid var(--border-weak);
+	border-radius: 6px;
+	transform: none;
+	box-shadow: none;
+
+	&:hover {
+		background-color: var(--background-weak);
+		border-color: var(--border-weak);
+		box-shadow: none;
+		transform: none;
+	}
+}
+
+.project-card-main {
+	display: flex;
+	align-items: center;
+	flex: 1;
+	gap: 8px;
+	min-inline-size: 0;
+}
+
+.project-card-end {
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+	min-inline-size: 110px;
+	justify-content: flex-end;
+}
+
+.project-card-date {
+	font-size: 13px;
+	color: var(--text-weak);
 }
 
 .project-card-header {
@@ -18,7 +68,7 @@
 	justify-content: space-between;
 	align-items: flex-start;
 	gap: 8px;
-	height: 30px;
+	block-size: 30px;
 }
 
 .project-card-title-row {
@@ -79,7 +129,6 @@
 
 .project-card-description {
 	font-size: 13px;
-	color: var(--text-weak);
 	margin: 0;
 	line-height: 1.4;
 	line-clamp: 2;
