@@ -1449,6 +1449,9 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Verify now": [
+        "立即驗證"
       ]
     },
     "action": {
@@ -9291,6 +9294,12 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
+      ],
+      "Do you remember your password? ${ verifyButton }": [
+        "您記得您的密碼嗎? ${ verifyButton }"
+      ],
+      "Forgot password?": [
+        "忘記密碼?"
       ]
     },
     "info": {
@@ -16516,6 +16525,9 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe撰寫幫手"
       ]
     },
     "subscription reminder": {
@@ -18396,6 +18408,12 @@
       ],
       "Your subscriptions": [
         "您的訂購授權"
+      ],
+      "Summer Sale": [
+        "夏季促銷"
+      ],
+      "Verify your password": [
+        "驗證您的密碼"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -19316,6 +19334,16 @@
       ],
       "Yearly, ${ untilString }": [
         "每年，${ untilString }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "切換至 ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Keyboard shortcut name, switch to Mail": {
+      "Switch to ${ MAIL_APP_NAME }": [
+        "切換至 ${ MAIL_APP_NAME }"
       ]
     }
   }

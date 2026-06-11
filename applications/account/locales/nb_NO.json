@@ -1862,6 +1862,9 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Sign out of ${ tokens[0].Account }": [
+        "Logg av fra ${ tokens[0].Account }"
       ]
     },
     "action": {
@@ -3159,6 +3162,27 @@
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Din nåværende plan tillater opptil ${ maxMembers } bruker. For å migrere flere brukere, legg til flere plasser i abonnementet ditt.",
         "Din nåværende plan tillater opptil ${ maxMembers } brukere. For å migrere flere brukere, legg til flere plasser i abonnementet ditt."
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host.": [
+        "Kopier koden nedenfor og lim den inn i DNS-delen av domeneverten din."
+      ],
+      "Emails": [
+        "E-poster"
+      ],
+      "Import completed successfully": [
+        "Import fullført uten problemer"
+      ],
+      "Invitation message": [
+        "Melding i invitasjon"
+      ],
+      "Need help?": [
+        "Trenger du hjelp?"
+      ],
+      "Reauthenticate your Google Workspace account to start a migration": [
+        "Autentiser Google Workspace-kontoen din på nytt for å starte en overføring"
+      ],
+      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your Gmail.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and Gmail.\nThen, when everyone has made the move, we will retire Gmail. We'll remind you before it does.": [
+        "Vi flytter til ${ BRAND_NAME }, den sikre e-posttjenesten.\nOg ${ BRAND_NAME }-kontoen din er klar til å bli gjort krav på.\nKlikk ${ inviteLink }.\nSkriv inn e-postadressen din, så sender vi en kode til Gmail-kontoen din.\nBruk den til å angi passordet ditt – så er ${ BRAND_NAME }-kontoen din.\nI en liten stund vil begge fungere side om side. ${ BRAND_NAME } og Gmail.\nTil slutt, når alle har fullført flyttingen, avvikler vi Gmail. Vi gir deg en påminnelse før det skjer."
       ]
     },
     "breadcrumb": {
@@ -4884,6 +4908,9 @@
       ],
       "Åland Islands": [
         "Åland"
+      ],
+      "Canary Islands": [
+        "Kanariøyene"
       ]
     },
     "Country select label": {
@@ -9514,6 +9541,9 @@
       ],
       "Undo in progress": [
         "Angre pågår"
+      ],
+      "Migrated": [
+        "Migrert"
       ]
     },
     "Import type": {
@@ -13425,6 +13455,9 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "Please select the labels you would like to import:": [
+        "Velg etikettene du vil importere:"
       ]
     },
     "info": {
@@ -15620,6 +15653,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Select an identity provider to start": [
+        "Velg en identitetsleverandør for å starte"
       ]
     },
     "label": {
@@ -16055,6 +16091,9 @@
       ],
       "What’s this?": [
         "Hva er det der?"
+      ],
+      "Frequent sign-in problems": [
+        "Hyppige påloggingsproblemer"
       ]
     },
     "Link (Scribe)": {
@@ -20481,6 +20520,24 @@
       ],
       "Weak": [
         "Svak"
+      ],
+      "Critical": [
+        "Kritisk"
+      ],
+      "You're fully protected. A periodic review keeps everything working as your devices and contacts change over time.": [
+        "Du er fullstendig beskyttet. En periodisk gjennomgang sørger for at alt fungerer ettersom enhetene og kontaktene dine endres over tid."
+      ],
+      "You're partly there, but not safe yet. A forgotten password could still mean losing your emails, files, and passwords.": [
+        "Du er delvis der, men ikke trygg ennå. Et glemt passord kan fortsatt bety at du mister e-postene, filene og passordene dine."
+      ],
+      "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
+        "Du har fortsatt høy risiko. Hvis du glemmer passordet ditt, kan du miste e-poster, filer og passord permanent."
+      ],
+      "Your account isn't fully protected. A forgotten password could still mean losing access to your emails, files, and passwords.": [
+        "Kontoen din er ikke fullstendig beskyttet. Et glemt passord kan fortsatt bety at du mister tilgangen til e-postene, filene og passordene dine."
+      ],
+      "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
+        "Gjenopprettingsoppsettet ditt er solid, med noen få hull igjen å tette. Hvert alternativ du legger til gjør sikkerhetsnettet ditt sterkere."
       ]
     },
     "Recovery score item": {
@@ -24244,6 +24301,12 @@
       ],
       "Your address has been activated": [
         "Adressen din har blitt aktivert"
+      ],
+      "Password reminders disabled": [
+        "Passordpåminnelser deaktivert"
+      ],
+      "Password reminders enabled": [
+        "Passordpåminnelser aktivert"
       ]
     },
     "Success message": {
