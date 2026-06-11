@@ -72,6 +72,12 @@ export const updateLabel = (
     data: { Name, Color, Notify, ParentID, Sticky, Expanded, Display },
 });
 
+export const updateLastEventID = (labelId: string, { LastEventID }: { LastEventID: string }) => ({
+    method: 'POST',
+    url: `core/v4/labels/${labelId}/seen`,
+    data: { LastEventID },
+});
+
 export const deleteLabel = (labelID: string) => ({
     method: 'delete',
     url: `core/v4/labels/${labelID}`,

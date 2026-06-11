@@ -10,6 +10,7 @@ const baseLabel: Label = {
     Type: 4,
     Order: 0,
     Path: '',
+    LastUnseenMessageEventID: null,
 };
 
 describe('helpers', () => {
