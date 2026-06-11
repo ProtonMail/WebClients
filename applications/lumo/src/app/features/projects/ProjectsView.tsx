@@ -10,6 +10,7 @@ import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 
 import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { GuestSignInState } from '../../components/Guest/GuestSignInState/GuestSignInState';
+import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
@@ -35,6 +36,7 @@ export const ProjectsView = () => {
     const myProjects = useProjects();
     const [templateData, setTemplateData] = useState<{ name: string; instructions: string; icon: string } | null>(null);
     const randomProjects = useMemo(() => getRandomProjects(3), []);
+    const { isSmallScreen } = useIsLumoSmallScreen();
 
     const handleCreateProject = () => {
         if (isGuest) {
@@ -79,10 +81,14 @@ export const ProjectsView = () => {
         if (myProjects.length > 0) {
             return (
                 <>
-                    <div className="projects-grid-wrapper">
-                        <div className="projects-grid">
+                    <div className="projects-list-wrapper">
+                        <div className="projects-list-header color-hint hidden md:flex">
+                            <span>{c('collider_2025:Label').t`Name`}</span>
+                            <span>{c('collider_2025:Label').t`Created`}</span>
+                        </div>
+                        <div className="projects-list gap-1">
                             {myProjects.map((project) => (
-                                <ProjectCard key={project.id} project={project} />
+                                <ProjectCard key={project.id} project={project} listRow={!isSmallScreen} />
                             ))}
                         </div>
                     </div>
