@@ -58,11 +58,12 @@ import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import { UserSettingsProvider } from '@proton/drive-store/store'
 import { useDocsContext } from '../context'
 import { useDebugMode } from '~/utils/debug-mode-context'
-import { useIsSheetsEditorEnabled } from '~/utils/flags'
+import { useIsSheetsEditorEnabled, useSharingModalDriveSdkEnabled } from '~/utils/flags'
 import { APPS, SHEETS_APP_NAME } from '@proton/shared/lib/constants'
 import { Button } from '@proton/atoms/Button/Button'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { isLocalEnvironment } from '@proton/utils/env'
+import { useChangeAddressWhenPubliclyShared } from '../useChangeAddressWhenPubliclyShared'
 
 export function useSuggestionsFeatureFlag() {
   const isDisabled = useFlag('DocsSuggestionsDisabled')
@@ -129,6 +130,10 @@ export function DocumentViewer({
    * In private mode, we know the user's role immediately so don't have to wait for the userRole property to settle.
    */
   const renderEditor = !application.isPublicMode ? true : isPublicViewer != undefined
+
+  const sharingModalDriveSdkEnabled = useSharingModalDriveSdkEnabled()
+
+  useChangeAddressWhenPubliclyShared(nodeMeta, documentState)
 
   const { isSuggestionsEnabled } = useSuggestionsFeatureFlag()
   useEffect(() => {
@@ -520,7 +525,8 @@ export function DocumentViewer({
       {documentState &&
         isDocumentState(documentState) &&
         isPrivateNodeMeta(nodeMeta) &&
-        documentState.getProperty('userRole').canReadPublicShareUrl() && (
+        documentState.getProperty('userRole').canReadPublicShareUrl() &&
+        !sharingModalDriveSdkEnabled && (
           <AppendPublicShareKeyMaterialToTitle nodeMeta={nodeMeta} documentState={documentState} />
         )}
 
