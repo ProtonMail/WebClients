@@ -4,12 +4,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import Icon from '@proton/components/components/icon/Icon';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 
@@ -123,7 +124,7 @@ export const ManageRecordingsContainer = () => {
                                         onClick={() => handleDownload(recording)}
                                         title={c('Action').t`Download`}
                                     >
-                                        <Icon name="arrow-down-line" alt={c('Action').t`Download`} />
+                                        <IcArrowDownLine alt={c('Action').t`Download`} />
                                     </Button>
                                     <Button
                                         size="small"
@@ -133,7 +134,7 @@ export const ManageRecordingsContainer = () => {
                                         onClick={() => setRecordingToDelete(recording)}
                                         title={c('Action').t`Delete`}
                                     >
-                                        <Icon name="trash" alt={c('Action').t`Delete`} />
+                                        <IcTrash alt={c('Action').t`Delete`} />
                                     </Button>
                                 </div>,
                             ]}
