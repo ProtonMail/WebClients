@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { selectUnprivatizationState } from '@proton/account/members/unprivatizeMembers';
+import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Info from '@proton/components/components/link/Info';
@@ -45,6 +46,7 @@ export const MembersTable = ({
 }) => {
     const { APP_NAME } = useConfig();
     const unprivatizationMemberState = baseUseSelector(selectUnprivatizationState);
+    const [permissions] = useOrgPermissions();
 
     const tableLabel = [
         '',
@@ -84,6 +86,7 @@ export const MembersTable = ({
         const hasFeaturesColumn = !hasPendingMagicLinkInvite;
 
         const memberPermissions = getMemberPermissions({
+            permissions,
             ssoDomainsSet: models.ssoDomainsSet,
             appName: APP_NAME,
             user: models.user,

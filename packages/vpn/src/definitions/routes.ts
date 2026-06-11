@@ -140,7 +140,8 @@ const routesDefinition = {
                             id: 'organization.org-and-people.users',
                             label: () => c('Title').t`Users`,
                             to: '/users-addresses',
-                            isVisible: ({ context }) => !context.needsOrgSetup,
+                            isVisible: ({ context }) =>
+                                !context.needsOrgSetup && !!context.permissions['account.user.read'],
                             sections: [
                                 {
                                     id: 'organization.org-and-people.users.multi-user-creation',

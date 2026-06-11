@@ -22,6 +22,7 @@ import { getSSODomainsSet } from '@proton/account/samlSSO/helper';
 import { useSamlSSO } from '@proton/account/samlSSO/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useOrgPermissions } from '@proton/account/userPermissions/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useAccountSpotlights } from '@proton/components/containers/account/spotlights/AccountSpotlightsProvider';
 import AddressModal from '@proton/components/containers/addresses/AddressModal';
@@ -83,6 +84,7 @@ export const useMemberActions = ({
     const { value: memberRolesMap } = useMemberRoles({ members });
     const api = useSilentApi();
     const dispatch = useDispatch();
+    const [permissions, loadingPermissions] = useOrgPermissions();
 
     const {
         passOnboardingSpotlights: { setupOrgSpotlight },
@@ -163,20 +165,29 @@ export const useMemberActions = ({
         hasPassBusiness(subscription) ||
         hasVPNPassProfessional(subscription);
 
+    const canAddUser = !!permissions?.['account.user.create'];
     const disableAddUserButton =
         loadingSubscription ||
         loadingOrganization ||
         loadingCustomDomains ||
-        (organization?.UsedMembers || 0) >= (organization?.MaxMembers || 0);
+        loadingPermissions ||
+        (organization?.UsedMembers || 0) >= (organization?.MaxMembers || 0) ||
+        !canAddUser;
 
     const showAddAddress = !hasExternalMemberCapableB2BPlan || hasPassB2BPlan || hasMeetB2BPlanAndVerifiedCustomDomain;
 
     const hasReachedInvitationLimit = organization?.InvitationsRemaining === 0;
     const disableInviteUserButton =
-        loadingSubscription || loadingOrganization || loadingCustomDomains || hasReachedInvitationLimit;
+        loadingSubscription || loadingOrganization || loadingCustomDomains || hasReachedInvitationLimit || !canAddUser;
 
     const loadingAddAddresses = loadingOrganization || loadingCustomDomains || loadingMembers;
-    const disableAddAddressButton = loadingAddAddresses || organization?.State === ORGANIZATION_STATE.DELINQUENT;
+    const canUpdateUser = !!permissions?.['account.user.update'];
+    const disableAddAddressButton =
+        loadingAddAddresses ||
+        loadingPermissions ||
+        organization?.State === ORGANIZATION_STATE.DELINQUENT ||
+        !canUpdateUser;
+    const canDeleteUser = !!permissions?.['account.user.delete'];
 
     const hasSetupActiveOrganizationWithKeys =
         organization?.State === ORGANIZATION_STATE.ACTIVE && hasOrganizationSetupWithKeys(organization);
@@ -525,9 +536,12 @@ export const useMemberActions = ({
         isOrgAFamilyPlan,
         useEmail,
         hasExternalMemberCapableB2BPlan,
+        canAddUser,
         disableAddUserButton,
         showAddAddress,
         canInviteProtonUsers,
+        canUpdateUser,
+        canDeleteUser,
         disableInviteUserButton,
         disableAddAddressButton,
         hasSetupActiveOrganizationWithKeys,
