@@ -148,7 +148,7 @@ export const ProjectsView = () => {
                         className="flex flex-row flex-nowrap justify-space-between w-full my-4 mx-auto max-w-custom"
                         style={{ '--max-w-custom': '900px' }}
                     >
-                        <h1 className="projects-title">{c('collider_2025:Title').t`Projects`}</h1>
+                        <h1 className="main-text">{c('collider_2025:Title').t`My Projects`}</h1>
                         <Button color="norm" onClick={handleCreateProject} disabled={isGuest}>
                             <span className="flex items-center flex-nowrap">
                                 <IcPlus className="mr-2" />
