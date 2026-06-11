@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcHamburger } from '@proton/icons/icons/IcHamburger';
 import type { IconSize } from '@proton/icons/types';
 
 interface Props extends ButtonProps {
@@ -25,11 +26,11 @@ const Hamburger = ({ sidebarId, expanded = true, onToggle, iconSize = 4, ...rest
             title={expanded ? c('Action').t`Close navigation` : c('Action').t`Open navigation`}
             icon
         >
-            <Icon
-                size={iconSize}
-                name={expanded ? 'cross' : 'hamburger'}
-                alt={expanded ? c('Action').t`Close navigation` : c('Action').t`Open navigation`}
-            />
+            {expanded ? (
+                <IcCross size={iconSize} alt={c('Action').t`Close navigation`} />
+            ) : (
+                <IcHamburger size={iconSize} alt={c('Action').t`Open navigation`} />
+            )}
         </Button>
     );
 };

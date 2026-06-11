@@ -4,8 +4,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import useApi from '@proton/components/hooks/useApi';
+import { IcChevronsLeft } from '@proton/icons/icons/IcChevronsLeft';
+import { IcChevronsRight } from '@proton/icons/icons/IcChevronsRight';
 import { updateHideDrawer } from '@proton/shared/lib/api/settings';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -55,10 +56,11 @@ const DrawerVisibilityButton = ({ spotlightSeenRef }: Props) => {
                     onClick={handleClick}
                     aria-expanded={showDrawerSidebar}
                 >
-                    <Icon
-                        name={showDrawerSidebar ? 'chevrons-right' : 'chevrons-left'}
-                        alt={c('Action').t`Show side panel`}
-                    />
+                    {showDrawerSidebar ? (
+                        <IcChevronsRight alt={c('Action').t`Show side panel`} />
+                    ) : (
+                        <IcChevronsLeft alt={c('Action').t`Show side panel`} />
+                    )}
                 </Button>
             </span>
         </Tooltip>
