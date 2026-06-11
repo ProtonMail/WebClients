@@ -141,7 +141,7 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                   }
                 }}
               >
-                <Select />
+                <Select aria-label={s('Chart type')} />
                 <SelectPopover sameWidth className="py-2">
                   {CHART_TYPES.map(([category, types]) => {
                     return (
@@ -177,6 +177,7 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
             <FormGroup>
               <FormLabel>{s('Chart title')}</FormLabel>
               <Input
+                aria-label={s('Chart title')}
                 value={formValue?.spec.title ?? ''}
                 onChange={(e) => form.setValue('spec.title', e.target.value)}
               />
@@ -186,6 +187,7 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
               <FormLabel>{s('Chart data range')}</FormLabel>
               <div className="flex items-center">
                 <FormulaInput
+                  aria-label={s('Chart data range')}
                   onChange={(value) => {
                     form.setValue('spec.dataRange', formulaToRange(value) as SheetRange | undefined)
                   }}
@@ -267,6 +269,7 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                                 </Button>
                               </div>
                               <Input
+                                aria-label={`${s('Series')} ${domainIdx + 1} ${s('Name')}`}
                                 placeholder={s('Enter title')}
                                 value={domain.dataLabel ?? ''}
                                 onChange={(e) => form.setValue(`spec.series.${domainIdx}.dataLabel`, e.target.value)}
@@ -276,6 +279,7 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                             <FormGroup>
                               <div className="flex items-center">
                                 <FormulaInput
+                                  aria-label={`${s('Series')} ${domainIdx + 1} ${s('Range')}`}
                                   key={`${domainIdx}-${sourceIdx}-series`}
                                   value={source}
                                   onChange={(value) => {
@@ -301,7 +305,7 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                                     form.setValue(`spec.series.${domainIdx}.aggregateType`, aggregateType || undefined)
                                   }}
                                 >
-                                  <Select />
+                                  <Select aria-label={`${s('Series')} ${domainIdx + 1} ${s('Aggregate')}`} />
                                   <SelectPopover sameWidth>
                                     <Ariakit.SelectGroup className="py-2">
                                       <SelectItem value="">None</SelectItem>
@@ -329,6 +333,7 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                       return (
                         <div key={sourceIdx} className="flex items-center">
                           <FormulaInput
+                            aria-label={`${s('Horizontal (category) axis labels')} ${domainIndex + 1}`}
                             value={source}
                             onChange={(value) => {
                               form.setValue(
@@ -350,6 +355,7 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                 <FormGroup>
                   <FormLabel>{s('Vertical axis title')}</FormLabel>
                   <Input
+                    aria-label={s('Vertical axis title')}
                     value={formValue?.spec.verticalAxisTitle ?? ''}
                     onChange={(e) => form.setValue(`spec.verticalAxisTitle`, e.target.value)}
                     placeholder={s('Vertical axis title')}
@@ -359,6 +365,7 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                 <FormGroup>
                   <FormLabel>{s('Horizontal axis title')}</FormLabel>
                   <Input
+                    aria-label={s('Horizontal axis title')}
                     value={formValue?.spec.horizontalAxisTitle ?? ''}
                     onChange={(e) => form.setValue(`spec.horizontalAxisTitle`, e.target.value)}
                     placeholder={s('Horizontal axis title')}
