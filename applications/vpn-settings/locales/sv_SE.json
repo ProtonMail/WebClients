@@ -530,6 +530,9 @@
       "Get Deal": [
         "Ta erbjudandet"
       ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Få hjälp från ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Get in touch": [
         "Kontakta oss"
       ],
@@ -6431,6 +6434,9 @@
       "**This will disable 2-factor authentication.**": [
         "**Detta kommer inaktivera tvåfaktorsautentisering.**"
       ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Du får ${ referrerRewardAmount }** i krediter för varje vän som prenumererar."
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Mer",
         "+ ${ invisibleCount } Mer"
@@ -9852,6 +9858,9 @@
       "See your team's availability": [
         "Se ditt teams tillgänglighet"
       ],
+      "Select an identity provider to start": [
+        "Välj en identitetsleverantör att starta"
+      ],
       "Select which Gmail address to connect": [
         "Välj vilken Gmail-adress att ansluta"
       ],
@@ -10136,11 +10145,6 @@
         "Till: ${ to }"
       ]
     },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Välj en identitetsleverantör att starta"
-      ]
-    },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "För att lägga till en ny kalender, ta bort en befintlig."
@@ -10206,6 +10210,9 @@
       ],
       "Forgot username?": [
         "Glömt användarnamn?"
+      ],
+      "Frequent sign-in problems": [
+        "Vanliga inloggningsproblem"
       ],
       "Get ${ BRAND_NAME } Pass": [
         "Skaffa ${ BRAND_NAME } Pass"
@@ -13536,6 +13543,9 @@
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Njut av **${ planTitle }** gratis fram till **${ textDate }**."
+      ],
+      "Give ${ refereeRewardAmount }, get ${ referrerRewardAmount }": [
+        "Ge ${ refereeRewardAmount }, få ${ referrerRewardAmount }"
       ],
       "How your free trial works:": [
         "Hur din gratis provperiod fungerar:"

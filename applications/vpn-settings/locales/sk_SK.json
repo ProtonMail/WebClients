@@ -4772,6 +4772,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Niektoré z vašich názvov štítkov prekračujú maximálny limit znakov pre ${ MAIL_APP_NAME }. Prispôsobte import na úpravu týchto názvov."
       ],
+      "Something went wrong while converting the address": [
+        "Pri prevode adresy došlo k chybe"
+      ],
       "Something went wrong while creating the address": [
         "Pri vytváraní adresy došlo k chybe"
       ],
@@ -10335,6 +10338,9 @@
       "See your team's availability": [
         "Pozrite si dostupnosť vášho tímu"
       ],
+      "Select an identity provider to start": [
+        "Na začiatok vyberte poskytovateľa identity"
+      ],
       "Select which Gmail address to connect": [
         "Vyberte, ktorú Gmailovú adresu chcete pripojiť"
       ],
@@ -10623,11 +10629,6 @@
         "Komu: ${ to }"
       ]
     },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Na začiatok vyberte poskytovateľa identity"
-      ]
-    },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "Aby ste pridali nový kalendár, odstráňte už existujúci kalendár."
@@ -10696,6 +10697,9 @@
       ],
       "Forgot username?": [
         "Zabudli ste používateľské meno?"
+      ],
+      "Frequent sign-in problems": [
+        "Časté problémy s prihlásením"
       ],
       "Get ${ BRAND_NAME } Pass": [
         "Získajte ${ BRAND_NAME } Pass"
@@ -16393,6 +16397,12 @@
       ],
       "Password copied to clipboard": [
         "Heslo bolo skopírované do schránky"
+      ],
+      "Password reminders disabled": [
+        "Funkcia pripomenutia hesla je zakázaná"
+      ],
+      "Password reminders enabled": [
+        "Funkcia pripomenutia hesla je povolená"
       ],
       "Password updated": [
         "Heslo bolo aktualizované"

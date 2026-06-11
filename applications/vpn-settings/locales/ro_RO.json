@@ -4739,6 +4739,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Unele nume de etichete depășesc limita maximă admisă de caractere din ${ MAIL_APP_NAME }. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
+      "Something went wrong while converting the address": [
+        "Ceva nu a mers bine în timpul convertirii adresei."
+      ],
       "Something went wrong while creating the address": [
         "Ceva nu a mers bine în timpul creării adresei."
       ],
@@ -10207,6 +10210,9 @@
       "See your team's availability": [
         "Vedeți disponibilitatea echipei"
       ],
+      "Select an identity provider to start": [
+        "Selectați un furnizor de identitate pentru a începe"
+      ],
       "Select which Gmail address to connect": [
         "Selectați ce adresă Gmail doriți să conectați"
       ],
@@ -10493,11 +10499,6 @@
         "Către: ${ to }"
       ]
     },
-    "Lable": {
-      "Select an identity provider to start": [
-        "Selectați un furnizor de identitate pentru a începe"
-      ]
-    },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "Pentru a adăuga un calendar, eliminați altul existent."
@@ -10566,6 +10567,9 @@
       ],
       "Forgot username?": [
         "Ați uitat numele de utilizator?"
+      ],
+      "Frequent sign-in problems": [
+        "Probleme de conectare frecvente"
       ],
       "Get ${ BRAND_NAME } Pass": [
         "Luați ${ BRAND_NAME } Pass"
@@ -16248,6 +16252,12 @@
       ],
       "Password copied to clipboard": [
         "Parola a fost copiată în memorie."
+      ],
+      "Password reminders disabled": [
+        "Mementouri pentru parolă dezactivate"
+      ],
+      "Password reminders enabled": [
+        "Mementouri pentru parolă activate"
       ],
       "Password updated": [
         "Parolă actualizată"
