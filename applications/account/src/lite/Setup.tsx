@@ -61,6 +61,7 @@ const initializeTelemetry = (config: ProtonConfig, UID: string) => {
             form: false,
             performance: false,
             modal: false,
+            exit: false,
         },
         overridenPageTitle: 'Account',
     });
