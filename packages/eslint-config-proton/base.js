@@ -254,7 +254,6 @@ export default defineConfig(
                         // Others
                         '**/cypress.config.{js,ts}',
                         '**/eslint.config.{js,mjs}',
-                        '**/karma.conf.{js,ts}',
                     ],
                     optionalDependencies: false,
                     peerDependencies: false,
