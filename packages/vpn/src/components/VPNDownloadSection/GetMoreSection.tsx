@@ -38,11 +38,14 @@ export const GetMoreSection = () => {
     const userHasPlusPlanWithoutVPN = hasAnyPlusWithoutVPN(subscription);
     const sections: DashboardMoreInfoSection[] = [
         {
+            id: 'get-round-clock-protection',
             title: () => c('Blog').t`Get round-the-clock protection`,
             description: () => c('Blog').t`Enable kill switch and auto-connect in your VPN settings.`,
             image: roundTheClockProtection,
+            cardAction: undefined,
         },
         {
+            id: 'watch-favorite-movies-shows',
             title: () => c('Blog').t`Watch your favorite movies and TV shows`,
             tag: (
                 <DashboardMoreInfoSectionTag
@@ -57,8 +60,10 @@ export const GetMoreSection = () => {
                     : c('Blog').t`Stream from all major platforms with ${PLAN_NAMES[PLANS.VPN2024]}.`,
             image: tv,
             link: !hasPaidVpn(user) ? '/vpn/upgrade' : undefined,
+            cardAction: !hasPaidVpn(user) ? 'internal_nav' : undefined,
         },
         {
+            id: 'working-sensitive-data',
             title: () => c('Blog').t`Working with sensitive data?`,
             tag: (
                 <DashboardMoreInfoSectionTag
@@ -71,9 +76,11 @@ export const GetMoreSection = () => {
                 c('Blog').t`Protect your company from data breaches and make remote work safer with an enterprise VPN.`,
             image: sensitiveData,
             link: 'https://proton.me/business/vpn',
+            cardAction: 'external_link',
         },
         userHasPlusPlanWithoutVPN
             ? {
+                  id: 'connect-device-at-once',
                   title: () => c('Blog').t`Connect ${VPN_CONNECTIONS} devices at once`,
                   tag: (
                       <DashboardMoreInfoSectionTag
@@ -87,15 +94,18 @@ export const GetMoreSection = () => {
                           .t`Protect all your household devices at the same time with ${PLAN_NAMES[PLANS.BUNDLE]}.`,
                   image: family,
                   onClick: () => handleUnlimitedUpsell(),
+                  cardAction: 'upsell_modal',
               }
             : {
+                  id: 'protect-your-household',
                   title: () => c('Blog').t`Protect your whole household with 1 device`,
                   tag: <DashboardMoreInfoSectionTag key="advanced-label" text={c('Label').t`Advanced`} />,
                   description: () => c('Blog').t`Learn how to enable ${VPN_APP_NAME} on your router.`,
                   image: household,
                   link: 'https://protonvpn.com/support/installing-protonvpn-on-a-router?srsltid=AfmBOop2RjZzvRqhNW0eEQaVNEr1LMgRGdbHuLcvuZ1owoKhK-1iEGqS',
+                  cardAction: 'external_link',
               },
     ];
 
-    return <DashboardMoreInfoSections sections={sections} />;
+    return <DashboardMoreInfoSections sections={sections} app={APPS.PROTONVPN_SETTINGS} />;
 };

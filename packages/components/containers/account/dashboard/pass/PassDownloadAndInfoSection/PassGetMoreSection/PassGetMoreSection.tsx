@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { DashboardMoreInfoSection } from '../../../shared/DashboardMoreInfoSection/DashboardMoreInfoSection';
 import {
@@ -17,6 +17,7 @@ import spamFreeEmail from './illustrations/spam-free-email.svg';
 const PassGetMoreSection = () => {
     const sections: DashboardMoreInfoSection[] = [
         {
+            id: 'protect-your-family-easy-sharing',
             tag: (
                 <DashboardMoreInfoSectionTag
                     key="protect-family-label"
@@ -28,8 +29,10 @@ const PassGetMoreSection = () => {
             description: () => c('Blog').t`Learn how to make account sharing simple for any family member.`,
             image: protectFamily,
             link: 'https://proton.me/pass/family',
+            cardAction: 'external_link',
         },
         {
+            id: 'spam-free-email',
             title: () => c('Blog').t`Keep your email spam-free`,
             tag: (
                 <DashboardMoreInfoSectionTag
@@ -41,8 +44,10 @@ const PassGetMoreSection = () => {
             description: () => c('Blog').t`Sign up for services without sharing your email with aliases.`,
             image: spamFreeEmail,
             link: 'https://proton.me/pass/aliases',
+            cardAction: 'external_link',
         },
         {
+            id: 'data-breaches',
             title: () => c('Blog').t`Worried about data breaches?`,
             tag: (
                 <DashboardMoreInfoSectionTag
@@ -54,8 +59,10 @@ const PassGetMoreSection = () => {
             description: () => c('Blog').t`Protect your company with strong passwords and safe sharing.`,
             image: dataBreach,
             link: 'https://proton.me/business/pass',
+            cardAction: 'external_link',
         },
         {
+            id: 'share-account-datails-without-risk',
             title: () => c('Blog').t`Share your account details, without risking a hack`,
             tag: (
                 <DashboardMoreInfoSectionTag
@@ -68,10 +75,11 @@ const PassGetMoreSection = () => {
                 c('Blog').t`Learn how to share a single item, an encrypted link or a vault through ${PASS_APP_NAME}.`,
             image: shareAccountDetails,
             link: 'https://proton.me/pass/password-sharing',
+            cardAction: 'external_link',
         },
     ];
 
-    return <DashboardMoreInfoSections sections={sections} />;
+    return <DashboardMoreInfoSections sections={sections} app={APPS.PROTONPASS} />;
 };
 
 export default PassGetMoreSection;
