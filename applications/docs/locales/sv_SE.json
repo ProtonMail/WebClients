@@ -4430,6 +4430,9 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill-switch**: Stoppar dataläckage genom att blockera ditt internet om VPN:et oväntat slutar fungera."
       ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Du får ${ referrerRewardAmount }** i krediter för varje vän som prenumererar."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
       ],
@@ -4764,9 +4767,6 @@
       ],
       "Failing signatures will be re-signed by you": [
         "Misslyckade signaturer kommer att signeras igen till dig"
-      ],
-      "Favorites": [
-        "Favoriter"
       ],
       "File \"${ name }\" was deleted during download": [
         "Fil “${ name }“ togs bort under nedladdningen"
@@ -8193,9 +8193,6 @@
       ]
     },
     "Page title": {
-      "Favorites": [
-        "Favoriter"
-      ],
       "Recents": [
         "Senaste"
       ],
