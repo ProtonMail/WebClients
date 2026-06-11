@@ -564,29 +564,9 @@ export const convertBYOEAddress = ({
     addressID: string;
 }): ThunkAction<Promise<Address | undefined>, RequiredState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
-        const addresses = await dispatch(addressesThunk());
         const api = getSilentApi(extra.api);
 
         const { Address } = await api<{ Address: Address }>(convertToBYOEAddressApi(addressID));
-
-        const userSettings = await dispatch(userSettingsThunk());
-        const userKeys = await dispatch(userKeysThunk());
-        const { keyTransparencyVerify, keyTransparencyCommit } = createKTVerifier({
-            ktActivation: dispatch(getKTActivation()),
-            api,
-            config: extra.config,
-        });
-        await missingKeysSelfProcess({
-            api,
-            userKeys,
-            addresses,
-            addressesToGenerate: [Address],
-            password: extra.authentication.getPassword(),
-            keyGenConfigForV4Keys: KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
-            supportV6Keys: !!userSettings.Flags.SupportPgpV6Keys,
-            keyTransparencyVerify,
-        });
-        await keyTransparencyCommit(await dispatch(userThunk()), userKeys);
 
         const [, result] = await Promise.all([
             dispatch(userThunk({ cache: CacheType.None })),
