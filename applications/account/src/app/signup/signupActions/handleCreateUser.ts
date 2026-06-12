@@ -40,11 +40,13 @@ export const handleCreateUser = async ({
     api,
     hvMode,
     invite,
+    visitorId,
 }: {
     cache: SignupCacheResult;
     api: Api;
     hvMode?: SignupHumanVerification;
     invite?: SignupInviteParameters;
+    visitorId: string | undefined;
 }): Promise<SignupActionResponse> => {
     const {
         accountData: { signupType, username, email, password, payload },
@@ -129,6 +131,7 @@ export const handleCreateUser = async ({
                     },
                     api,
                     hvMode,
+                    visitorId,
                 });
             }
             throw error;
@@ -163,6 +166,7 @@ export const handleCreateUser = async ({
                                     };
                                 }
                             })(),
+                            VisitorId: visitorId,
                             ...getPaymentTokenForExternalUsers(hvMode, paymentToken),
                         },
                         productParam

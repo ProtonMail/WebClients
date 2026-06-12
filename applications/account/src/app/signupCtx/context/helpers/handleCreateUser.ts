@@ -47,6 +47,7 @@ export const handleCreateUser = async ({
     clientType,
     api,
     invite,
+    visitorId,
     hvMode,
 }: {
     accountData: AccountData;
@@ -57,6 +58,7 @@ export const handleCreateUser = async ({
     productParam: ProductParam | undefined;
     api: Api;
     invite: SignupInviteParameters | undefined;
+    visitorId: string | undefined;
     hvMode: SignupHumanVerification | undefined;
 }): Promise<{ user: User; humanVerificationResult: HumanVerificationResult | undefined }> => {
     const { username, email, password, signupType, payload } = accountData;
@@ -138,6 +140,7 @@ export const handleCreateUser = async ({
                                     };
                                 }
                             })(),
+                            VisitorId: visitorId,
                             ...getPaymentTokenForExternalUsers(hvMode, paymentToken),
                         },
                         productParam
