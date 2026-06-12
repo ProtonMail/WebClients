@@ -98,6 +98,37 @@ export const addGroupMember = (
     data,
 });
 
+interface AddGroupMemberKeysBaseParameters {
+    Email: string;
+    AddressSignaturePacket: string;
+}
+
+interface AddInternalGroupMemberKeysBaseParameters extends AddGroupMemberKeysBaseParameters {
+    GroupMemberAddressPrivateKey: string;
+    ProxyInstances: ProxyInstances[];
+}
+
+interface AddInternalNonPrivateGroupMemberKeysParameters extends AddInternalGroupMemberKeysBaseParameters {
+    Token: string;
+    Signature: string;
+}
+
+interface AddInternalGroupMemberKeysParameters extends AddInternalGroupMemberKeysBaseParameters {
+    ActivationToken: string;
+}
+
+export const addGroupMemberKeys = (
+    groupMemberID: string,
+    data:
+        | AddGroupMemberKeysBaseParameters
+        | AddInternalNonPrivateGroupMemberKeysParameters
+        | AddInternalGroupMemberKeysParameters
+) => ({
+    method: 'post',
+    url: `core/v4/groups/members/${groupMemberID}/keys`,
+    data,
+});
+
 export const updateGroupMember = (
     groupMemberID: string,
     groupMemberParams: { GroupID: string; Permissions: GroupPermissions }
