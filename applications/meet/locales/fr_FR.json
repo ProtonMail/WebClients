@@ -101,6 +101,9 @@
       "Done": [
         "Terminé"
       ],
+      "Download": [
+        "Télécharger"
+      ],
       "Download app": [
         "Télécharger l’application"
       ],
@@ -1494,14 +1497,23 @@
       "Failed to delete event": [
         "Impossible de supprimer l'événement"
       ],
+      "Failed to delete recording": [
+        "La suppression de l'enregistrement n'a pas abouti."
+      ],
       "Failed to delete room": [
         "La suppression de la salle n'a pas abouti."
+      ],
+      "Failed to download recording": [
+        "Le téléchargement de l'enregistrement n'a pas abouti."
       ],
       "Failed to edit room name": [
         "Impossible de modifier le nom de la salle"
       ],
       "Failed to join meeting. Please try again later.": [
         "Impossible de rejoindre la réunion. Veuillez réessayer plus tard."
+      ],
+      "Failed to load recordings": [
+        "Le chargement des enregistrements n'a pas abouti."
       ],
       "Failed to lock meeting": [
         "La réunion n'a pas pu être verrouillée"
@@ -1647,6 +1659,46 @@
     "fido2: Label": {
       "Security key": [
         "Clé de sécurité"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "octet",
+        "octets"
+      ],
+      "GB": [
+        "Go"
+      ],
+      "KB": [
+        "Ko"
+      ],
+      "MB": [
+        "Mo"
+      ],
+      "TB": [
+        "To"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Octet",
+        "Octets"
+      ],
+      "Gigabyte": [
+        "Gigaoctet",
+        "Gigaoctets"
+      ],
+      "Kilobyte": [
+        "Kilooctet",
+        "Kilooctets"
+      ],
+      "Megabyte": [
+        "Megaoctet",
+        "Megaoctets"
+      ],
+      "Terabyte": [
+        "Téraoctet",
+        "Téraoctets"
       ]
     },
     "Font face option": {
@@ -2052,6 +2104,9 @@
       "Microphone permission denied": [
         "L'autorisation d'accéder au microphone a été refusée."
       ],
+      "Mute microphone": [
+        "Couper le microphone"
+      ],
       "My meetings": [
         "Mes réunions"
       ],
@@ -2081,6 +2136,9 @@
       ],
       "No publications": [
         "Aucune publication"
+      ],
+      "No recordings found on this device.": [
+        "Aucun enregistrement n'a été trouvé sur cet appareil."
       ],
       "No remote participants": [
         "Aucun participant distant"
@@ -2148,6 +2206,9 @@
       "Recording": [
         "Enregistrement en cours"
       ],
+      "Recording deleted": [
+        "L'enregistrement a été supprimé."
+      ],
       "Recording in progress": [
         "Enregistrement en cours"
       ],
@@ -2156,6 +2217,9 @@
       ],
       "Recording will begin and attendees will be notified.": [
         "L'enregistrement commencera et les participants seront notifiés."
+      ],
+      "Recordings are stored locally in your browser. Download any you want to keep, they are automatically deleted after 30 days.": [
+        "Les enregistrements sont stockés localement dans votre navigateur. Téléchargez ceux que vous souhaitez conserver, car ils sont automatiquement supprimés au bout de 30 jours."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
@@ -2247,6 +2311,9 @@
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Cette réunion a été ouverte dans l'application de bureau ${ MEET_APP_NAME }."
       ],
+      "This recording will be permanently deleted from this device. This action cannot be undone.": [
+        "Cet enregistrement sera supprimé définitivement de cet appareil. Cette action est irréversible."
+      ],
       "This will end the meeting for all participants and stop your screen sharing.": [
         "Ceci mettra fin à la réunion pour tous les participants et arrêtera le partage de votre écran."
       ],
@@ -2277,14 +2344,8 @@
       "Turn off camera": [
         "Éteindre la caméra"
       ],
-      "Turn off microphone": [
-        "Désactiver le microphone"
-      ],
       "Turn on camera": [
         "Activer la caméra"
-      ],
-      "Turn on microphone": [
-        "Activer le microphone"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Nous n'avons pas vous reconnecter à la réunion. Veuillez rejoindre ou quitter."
@@ -2294,6 +2355,9 @@
       ],
       "Unlock ${ unlimitedMeeting } and premium features": [
         "Débloquez les ${ unlimitedMeeting } et les fonctionnalités premium"
+      ],
+      "Unmute microphone": [
+        "Réactiver le microphone"
       ],
       "Upgrade to record your meetings locally.": [
         "Changer d'abonnement pour enregistrer vos réunions localement."
@@ -2489,6 +2553,9 @@
       ],
       "Last used": [
         "Dernière utilisation"
+      ],
+      "Manage recordings": [
+        "Gérer les enregistrements"
       ],
       "Meeting ID": [
         "Identifiant de la réunion"
@@ -2848,6 +2915,20 @@
         "La vérification a abouti."
       ]
     },
+    "Table header": {
+      "Actions": [
+        "Actions"
+      ],
+      "Date": [
+        "Date"
+      ],
+      "Name": [
+        "Nom"
+      ],
+      "Size": [
+        "Taille"
+      ]
+    },
     "Title": {
       "Account restricted": [
         "Compte restreint"
@@ -2902,6 +2983,9 @@
       ],
       "Debug Overlay": [
         "Superposition de débogage"
+      ],
+      "Delete recording?": [
+        "Supprimer l'enregistrement ?"
       ],
       "Enter your password": [
         "Saisissez votre mot de passe"
@@ -2999,6 +3083,9 @@
       ],
       "Record this meeting": [
         "Enregistrer cette réunion"
+      ],
+      "Recordings": [
+        "Enregistrements"
       ],
       "Remote Participants": [
         "Participants distants"

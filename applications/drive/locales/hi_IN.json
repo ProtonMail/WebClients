@@ -141,6 +141,12 @@
       "Choose a file or drag it here": [
         "कोई फाइल चुनें या उसे यहां खीच के लाएं"
       ],
+      "Claim this address": [
+        "इस पते पर दावा करें"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "अपने मुफ़्त ${ BRAND_NAME } पते पर दावा करें"
+      ],
       "Clear": [
         "साफ करें"
       ],
@@ -197,6 +203,9 @@
       ],
       "Continue transfers": [
         "ट्रांस्फर जारी रखें"
+      ],
+      "Continue with Free": [
+        "मुफ़्त के साथ जारी रखें"
       ],
       "Continue with Google": [
         "Google के साथ जारी रखें"
@@ -595,6 +604,9 @@
       ],
       "Reconnect": [
         "वापस जुड़ें"
+      ],
+      "Reconnect to Gmail": [
+        "Gmail से फिर से कनेक्ट करें"
       ],
       "Recover data": [
         "डाटा रिकवर करें"
@@ -2133,14 +2145,23 @@
       ]
     },
     "Description": {
+      "Available storage: ${ storageText }": [
+        "उपलब्ध स्टोरेज: ${ storageText }"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "संपर्कों को डिक्रिप्ट किया जा रहा है… इसमें कुछ मिनट लग सकते हैं। जब प्रक्रिया पूरी हो जाती है, तो आप निर्यात किए गए अपने सभी संपर्कों के साथ फ़ाइल डाउनलोड करने में सक्षम होंगे।"
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्क मिटाए जा रहे हैं... इसमें कुछ मिनट लग सकते हैं. जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "${ connectedAddressText } पर भेजे गए ईमेल अब ${ MAIL_APP_NAME } में दिखाई देंगे।"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्कों को एन्क्रिप्ट और आयात किया जा रहा है... इसमें कुछ मिनट लग सकते हैं. जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "वर्षों के ईमेल, अटैचमेंट और बहुत कुछ के लिए पर्याप्त जगह।"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "ऐसा लगता है कि आप जिस संपर्क सूची को आयात कर रहे हैं उसमें कुछ समूह हैं। कृपया समीक्षा करें कि इन समूहों को कैसे आयात किया जाना चाहिए।"
@@ -2148,11 +2169,32 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्कों को मर्ज किया जा रहा है... इसमें कुछ मिनट लग सकते हैं। जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "ऐसा तब हो सकता है यदि अनुमतियाँ हटा दी गई हों या आपका पासवर्ड बदल गया हो।"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "${ BRAND_NAME } में Gmail संदेश प्राप्त करना और भेजना जारी रखने के लिए, कृपया अपना खाता फिर से कनेक्ट करें।"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME } में Gmail संदेश प्राप्त करना और भेजना जारी रखने के लिए, कृपया अपने खाते फिर से कनेक्ट करें।"
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "आपके खाते की सर्वोत्तम सुरक्षा सुनिश्चित करने के लिए, एक पुनर्प्राप्ति वाक्यांश सेट करें।"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "केवल ${ config.offerPrice } में 15 जीबी स्टोरेज अनलॉक करें।"
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "संपर्कों के बीच विलय प्राथमिकता को रैंक करने के लिए ड्रैग एंड ड्रॉप का उपयोग करें। उन संपर्कों को अनचेक करें जिन्हें आप मर्ज नहीं करना चाहते हैं।"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "हम अब ${ boldEmails } को एक्सेस नहीं कर सकते।"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "नए संदेशों के लिए जगह आरक्षित रखने के लिए हम 80% स्टोरेज पर आयात रोक देंगे।"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "हमने Gmail से आपके ईमेल आयात करना शुरू कर दिया है। पूरा होने पर हम आपको सूचित करेंगे।"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "आप iCal फॉर्मैट (ICS फाइल) में इवेंट आयात कर सकते है। फाइल ज़्यादा-से-ज़्यादा ${ MAX_IMPORT_FILE_SIZE_STRING } साइज़ का होना चाहिए और ज़्यादा-से-ज़्यादा ${ MAX_IMPORT_EVENTS_STRING } तक इवेंट रखा हो सकता है। अगर आपका फाइल ज़्यादा बड़ा है, तो उसे छोटे फाइलों में तोड़े।"
@@ -2160,11 +2202,20 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "आप उन संपर्कों को हटाने के लिए चिह्नित कर सकते हैं जिन्हें आप न तो विलय करने के लिए नहीं चाहते हैं और न ही रखने के लिए। विलय बटन क्लिक करने के बाद ही हटाना होगा"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "अब आप इस पते का उपयोग करके ${ BRAND_NAME } से ईमेल भेज सकते हैं।"
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "आपका खाता और डेटा पुनर्प्राप्ति विधियाँ सेट हैं और 2FA सक्षम है।"
       ],
       "Your account and data recovery methods are set.": [
         "आपका खाता और डेटा पुनर्प्राप्ति विधियाँ सेट हैं।"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "आपका मुफ़्त ${ MAIL_APP_NAME } खाता सीमित स्टोरेज के साथ आता है इसलिए हम आपके सबसे हाल के Gmail संदेशों में से केवल ${ newUserStorageText } ही आयात करेंगे"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "आपका मुफ़्त ${ MAIL_APP_NAME } खाता सीमित स्टोरेज के साथ आता है इसलिए हम केवल आपके सबसे हाल के Gmail ईमेल ही आयात करेंगे।"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2572,6 +2623,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "आपके कुछ लेबल नाम ${ MAIL_APP_NAME } की अधिकतम वर्ण सीमा से अधिक हैं। कृपया इन नामों को संपादित करने के लिए आयात को अनुकूलित करें।"
       ],
+      "Something went wrong while fetching available domains": [
+        "उपलब्ध डोमेन लाते समय कुछ गलत हो गया"
+      ],
       "Something went wrong. Please try again.": [
         "कुछ गलती हो गई। कृपया वापिस कोशिश करें।"
       ],
@@ -2963,6 +3017,18 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ प्रीमियम खासियतें"
+      ],
+      "Custom email domain": [
+        "कस्टम ईमेल डोमेन"
+      ],
+      "Email addresses": [
+        "ईमेल पते"
+      ],
+      "Storage": [
+        "स्टोरेज"
+      ],
       "Unlimited hide-my-email aliases": [
         "असीमित Hide-my-email नकलीनाम"
       ]
@@ -3795,6 +3861,9 @@
       "End-to-end encrypted": [
         "शुरु-से-अंत तक एन्क्रिप्ट किया"
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "पूरी तरह से निजी और एन्क्रिप्ट किया गया संचार सुनिश्चित करें। अपने मुफ़्त ${ BRAND_NAME } ईमेल पते पर अभी दावा करें।"
+      ],
       "Enter password": [
         "पासवर्ड डाले"
       ],
@@ -3904,6 +3973,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "अगले चरण में, आप बिटकॉइन पते का उपयोग करके राशि जमा करने में सक्षम होंगे।"
+      ],
+      "Included": [
+        "शामिल है"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "${ totalProgressToShow } में से ${ esProgress } चीज़े लिस्ट कर रहे"
@@ -4451,8 +4523,14 @@
       "Updating drive search...": [
         "ड्राइव खोज अपडेट कर रहे..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "बाकी को लाने के लिए किसी भी समय अपग्रेड करें"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "विशेष मूल्य पर प्रीमियम सुविधाएं, उत्पाद और संग्रहण प्राप्त करने के लिए अभी अपग्रेड करें"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "बाकी को लाने के लिए किसी भी समय अपग्रेड करें या जगह खाली करें"
       ],
       "upgrade your storage": [
         "स्टोरेज अपग्रेड करें"
@@ -6521,6 +6599,9 @@
       "You stopped sharing this item": [
         "आपने इस चीज़ को साझा करना बंद कर दिया है"
       ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "आपका ${ BRAND_NAME } पता उपयोग करने के लिए तैयार है"
+      ],
       "Your old files will be deleted in 72 hours": [
         "आपकी पुरानी फाइलें 72 घंटों में मिटा दी जाएंगी"
       ],
@@ -8082,6 +8163,9 @@
       "Check for malicious files": [
         "दुर्भावनापूर्ण फाइलों की जांच करें"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "अपने ${ MAIL_APP_NAME } पते पर दावा करें"
+      ],
       "Clearing data": [
         "डेटा साफ़ करना"
       ],
@@ -8102,6 +8186,9 @@
       ],
       "Contacts": [
         "संपर्क"
+      ],
+      "Continue with free storage": [
+        "मुफ़्त स्टोरेज के साथ जारी रखें"
       ],
       "Continue with partial import?": [
         "आंशिक आयात जारी रखें?"
@@ -8174,6 +8261,9 @@
       "Discard changes?": [
         "बदलाव रद्द करें?"
       ],
+      "Disconnected from Gmail": [
+        "Gmail से डिस्कनेक्ट हो गया"
+      ],
       "Downgrade account": [
         "खाते को डाउनग्रेड करें"
       ],
@@ -8245,6 +8335,9 @@
       ],
       "Get more from your VPN": [
         "अपने VPN से और पाएं"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "${ MAIL_APP_NAME } Plus के साथ अधिक स्टोरेज प्राप्त करें"
       ],
       "Get the apps": [
         "ऐप प्राप्त करें"
@@ -8509,6 +8602,9 @@
       "Summary": [
         "सार"
       ],
+      "Summer Sale": [
+        "समर सेल"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "इस फाइल का हस्ताक्षर गुम या अमान्य हैं। जाएं मेन्यू (⋮) → जानकारी ज़्यादा जानने के लिए।"
       ],
@@ -8562,6 +8658,9 @@
       ],
       "Warning: suspected fake website": [
         "चेतावनी: संदिग्ध फर्जी वेबसाइट"
+      ],
+      "You are all set": [
+        "आप पूरी तरह तैयार हैं"
       ],
       "You can now create unlimited folders and labels": [
         "अब आप असीमित फोल्डर और लेबल बना सकते हैं"

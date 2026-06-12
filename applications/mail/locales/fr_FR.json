@@ -1520,7 +1520,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -4367,6 +4368,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Nous apporterons vos anciens messages et connecterons votre Gmail à ${ MAIL_APP_NAME } afin que les nouveaux messages apparaissent automatiquement"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Nous allons importer vos anciens messages, ignorer les doublons et nous connecter à votre compte Gmail afin que vos nouveaux messages s'affichent automatiquement. Vous pouvez annuler l'importation à tout moment dans les paramètres d'Easy Switch."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Nous avons commencé à importer vos messages depuis Gmail. Nous vous préviendrons lorsque l'opération sera terminée."
@@ -7770,8 +7774,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -16248,7 +16251,7 @@
         "Résumé"
       ],
       "Summer Sale": [
-        "Soldes d'été"
+        "Offre estivale"
       ],
       "This field cannot be empty": [
         "Ce champ ne doit pas être vide."

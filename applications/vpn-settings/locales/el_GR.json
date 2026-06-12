@@ -287,9 +287,6 @@
       "Create new policy": [
         "Δημιουργία νέας πολιτικής"
       ],
-      "Create organization": [
-        "Δημιουργία οργανισμού"
-      ],
       "Create users": [
         "Δημιουργία χρηστών"
       ],
@@ -2187,14 +2184,8 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Προσθήκη χρηστών χειροκίνητα"
-      ],
       "Close": [
         "Κλείσιμο"
-      ],
-      "Configure your network": [
-        "Διαμορφώστε το δίκτυό σας"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Συνεχίστε να χρησιμοποιείτε ${ MAIL_APP_NAME }."
@@ -2214,29 +2205,17 @@
       "Discover and set up features": [
         "Ανακαλύψτε και ρυθμίστε δυνατότητες"
       ],
-      "Invite your team": [
-        "Προσκαλέστε την ομάδα σας"
-      ],
-      "Manage global VPN permissions": [
-        "Διαχείριση παγκόσμιων δικαιωμάτων VPN"
-      ],
       "Maybe later": [
         "Ίσως αργότερα"
       ],
       "Remind me later": [
         "Υπενθύμιση αργότερα"
       ],
-      "Secure your organization": [
-        "Ασφαλίστε τον οργανισμό σας"
-      ],
       "Send": [
         "Αποστολή"
       ],
       "Set up other features": [
         "Ρύθμιση άλλων δυνατοτήτων"
-      ],
-      "Set up SSO": [
-        "Ρύθμιση SSO"
       ],
       "Take a tour": [
         "Κάντε μια περιήγηση"
@@ -3591,23 +3570,14 @@
       "Connect your CRM, website, printers, and more.": [
         "Συνδέστε το CRM, την ιστοσελίδα, τους εκτυπωτές σας και άλλα."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Δημιουργήστε μια Πύλη για να παρέχετε στους χρήστες σας πρόσβαση στους πόρους τεχνολογίας πληροφοριών μέσω αποκλειστικών διακομιστών."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Δημιουργήστε μια σύσκεψη Zoom και προσθέστε λεπτομέρειες συμμετοχής στην εκδήλωσή σας με ένα κλικ."
       ],
       "Create groups you can email with a single address.": [
         "Δημιουργήστε ομάδες στις οποίες μπορείτε να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου με μία μόνο ηλεκτρονική διεύθυνση."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Δημιουργήστε νέους λογαριασμούς χρηστών ή εισαγάγετε χρήστες με SSO (ενιαία σύνδεση) προμήθεια SCIM."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Δημιουργήστε πολιτικές ώστε να ορίσετε ποιος μπορεί να συνδεθεί στους κοινόχρηστους διακομιστές κάθε χώρας."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Αποφασίστε ποιοι χρήστες μπορούν να συνδεθούν σε καθεμία από τις 120+ τοποθεσίες των κοινόχρηστων διακομιστών μας."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Αποκτήστε εύκολα πρόσβαση στην ηλεκτρονική σας διεύθυνση και το ημερολόγιό σας σε υπολογιστή και κινητό."
@@ -3668,9 +3638,6 @@
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Πώς υποστηρίξαμε τους τοπικούς ακτιβιστές όταν απειλήθηκε η ιδιωτικότητα και η ελευθερία του λόγου."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Εάν δεν το έχετε κάνει ήδη, ενεργοποιήστε μερικές μεθόδους ανάκτησης για να βεβαιωθείτε ότι δε θα χάσετε ποτέ την πρόσβαση στο ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Φαίνεται ότι η λίστα επαφών που εισάγετε περιέχει κάποιες ομάδες. Παρακαλούμε εξετάστε τον τρόπο εισαγωγής αυτών των ομάδων."
@@ -3750,6 +3717,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Θα εισαγάγουμε τα παλιά σας μηνύματα ηλεκτρονικού ταχυδρομείου και θα συνδέσουμε το Gmail σας με το ${ MAIL_APP_NAME } ώστε τα νέα μηνύματα να εμφανίζονται αυτόματα"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Θα εισαγάγουμε τα παλιά σας email, θα παραλείψουμε τα διπλότυπα και θα συνδεθούμε στο Gmail σας, ώστε τα νέα μηνύματα να εμφανίζονται αυτόματα. Μπορείτε να αναιρέσετε την εισαγωγή ανά πάσα στιγμή στις ρυθμίσεις του Easy Switch."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Ξεκινήσαμε την εισαγωγή των ηλεκτρονικών μηνυμάτων σας από το Gmail. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
@@ -7328,9 +7298,6 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα προσωπικά δεδομένα έχουν διαρρεύσει. ${ learnMoreLinkNoBreach }"
       ],
-      "Get started": [
-        "Ας ξεκινήσουμε"
-      ],
       "Get started with the referral link above.": [
         "Ξεκινήστε με τον σύνδεσμο παραπομπής παραπάνω."
       ],
@@ -7934,6 +7901,9 @@
       "Please select the folders you would like to import:": [
         "Παρακαλούμε επιλέξτε τους φακέλους που θα θέλετε να εισάγετε:"
       ],
+      "Please select the labels you would like to import:": [
+        "Επιλέξτε τις ετικέτες που θέλετε να εισάγετε:"
+      ],
       "Please specify...": [
         "Παρακαλούμε καθορίστε..."
       ],
@@ -8143,9 +8113,6 @@
       ],
       "Set up your organization": [
         "Ρυθμίστε τον οργανισμό σας"
-      ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Ρυθμίστε την οργάνωσή σας και ξεκινήστε να προστατεύετε τα δεδομένα σας με μερικά απλά βήματα."
       ],
       "Setting up ${ feature }…": [
         "Ρύθμιση ${ feature }…"
@@ -8927,6 +8894,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Δεν μπορείτε να προτείνετε χρήστες του ${ MAIL_APP_NAME }."
       ],
+      "You do not have permission to create users.": [
+        "Δεν έχετε δικαίωμα δημιουργίας χρηστών."
+      ],
       "You don't have any referrals.": [
         "Δεν έχετε καμία παραπομπή."
       ],
@@ -9227,19 +9197,9 @@
         "Μόνο για ανάγνωση"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "Έτσι θα εμφανίζεται ο οργανισμός σας στους χρήστες. Μπορείτε να το αλλάξετε ανά πάσα στιγμή."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Μη έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Ποιο είναι το όνομα του οργανισμού σας;"
       ]
     },
     "invitation status": {
@@ -10449,6 +10409,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Απόκτηση ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Λάβετε βοήθεια από την ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Ομάδες"
@@ -13352,9 +13315,6 @@
       "Enter a name": [
         "Πληκτρολογήστε ένα όνομα"
       ],
-      "Enter name": [
-        "Εισάγετε όνομα"
-      ],
       "example@domain.com": [
         "example@domain.com"
       ],
@@ -14012,6 +13972,28 @@
       ],
       "Edit retention rule": [
         "Επεξεργασία κανόνα διατήρησης"
+      ]
+    },
+    "Role": {
+      "Organization Admin": [
+        "Διαχειριστής Οργανισμού"
+      ],
+      "Security Admin": [
+        "Διαχειριστής Ασφαλείας"
+      ],
+      "User Admin": [
+        "Διαχειριστής Χρηστών"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Διαμορφώστε πολιτικές ασφαλείας, διατήρηση δεδομένων και υποδομή VPN, και διαχειριστείτε τα αρχεία ελέγχου."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Διαχειριστείτε όλους τους χρήστες, τις ομάδες, την ασφάλεια, τη χρέωση και τις διαμορφώσεις συστήματος."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Διαχειριστείτε χρήστες, ομάδες και χώρο αποθήκευσης για όλα τα μέλη, αναθέστε ρόλους και κατανεμήστε άδειες χρήσης."
       ]
     },
     "Safety review": {
@@ -16682,9 +16664,6 @@
       "Disconnected from Gmail": [
         "Αποσυνδεδεμένο από το Gmail"
       ],
-      "Dismiss setup checklist": [
-        "Απόρριψη λίστας ελέγχου εγκατάστασης"
-      ],
       "Domain names": [
         "Ονόματα τομέων"
       ],
@@ -16844,9 +16823,6 @@
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Αποκτήστε περισσότερο χώρο αποθήκευσης με το ${ MAIL_APP_NAME } Plus"
-      ],
-      "Get started": [
-        "Ας ξεκινήσουμε"
       ],
       "Get the apps": [
         "Αποκτήστε τις εφαρμογές"
@@ -17313,7 +17289,7 @@
         "Περίληψη"
       ],
       "Summer Sale": [
-        "Καλοκαιρινές Εκπτώσεις"
+        "Καλοκαιρινές εκπτώσεις"
       ],
       "Support your compliance objectives": [
         "Υποστηρίξτε τους στόχους συμμόρφωσης σας"
@@ -17467,9 +17443,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Καλώς ορίσατε στο ${ BRAND_NAME } για Business"
-      ],
-      "Welcome to ${ planName }": [
-        "Καλώς ήρθατε στο ${ planName }"
       ],
       "What changes if you switch to the Free plan": [
         "Τι αλλάζει αν μεταβείτε στο Free πλάνο"
@@ -17665,6 +17638,9 @@
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Περιλαμβάνει επαγγελματικό ηλεκτρονικό ταχυδρομείο στο @yourdomain.com, αποθήκευση στο cloud με συνεργατική επεξεργασία εγγράφων, προγραμματισμό και βιντεοδιάσκεψη, διαχείριση κωδικών πρόσβασης, ένα ασφαλές ${ VPN_SHORT_APP_NAME } και πολλά άλλα."
       ],
+      "Instant AI assistance, human expert on hand!": [
+        "Άμεση βοήθεια με Τεχνητή Νοημοσύνη, ανθρώπινος εμπειρογνώμονας διαθέσιμος!"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Τα μέλη που δε χρησιμοποιούν το 2FA θα λάβουν ένα μήνυμα ηλεκτρονικού ταχυδρομείου που θα τους ζητά να το ενεργοποιήσουν το συντομότερο δυνατό. Οι χρήστες καθολικής σύνδεσης δε θα λάβουν την υπενθύμιση ηλεκτρονικού ταχυδρομείου."
       ],
@@ -17766,8 +17742,8 @@
       "User is a group": [
         "Ο χρήστης είναι μια ομάδα"
       ],
-      "via ${ groupName }": [
-        "μέσω ${ groupName }"
+      "via ${ groupNames }": [
+        "μέσω ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "Αναμονή για αποδοχή της πρόσκλησης από τον χρήστη"

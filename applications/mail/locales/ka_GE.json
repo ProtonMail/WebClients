@@ -1495,6 +1495,10 @@
       "Trust": [
         "ნდობა"
       ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
+      ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
       ],
@@ -4185,6 +4189,12 @@
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "ამ ელფოსტაში ცნობილი ტრეკერები და ტრეკინგის ბმულები აღმოჩენლი არაა."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "ჩვენ გადმოვიტანთ თქვენს ძველ ელფოსტას და დავაკავშირებთ თქვენს Gmail-ს ${ MAIL_APP_NAME }-თან, რათა ახალი შეტყობინებები ავტომატურად გამოჩნდეს"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "ჩვენ მოვახდენთ თქვენი ძველი ელფოსტის იმპორტს, გამოვტოვებთ დუბლიკატებს და დავუკავშირდებით თქვენს Gmail-ს, რათა ახალი შეტყობინებები ავტომატურად გამოჩნდეს. იმპორტის დაბრუნება ნებისმიერ დროს შეგიძლიათ Easy Switch-ის პარამეტრებში"
       ],
       "When do you want your message to be sent?": [
         "როდის გნებავთ შეტყობინების გაგზავნა?"
@@ -7339,8 +7349,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
-        "გამოსახულებების ჩასმა"
+        "გამოსახულების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -11568,6 +11577,12 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "გადმოიტანეთ თქვენი ელფოსტა ${ MAIL_APP_NAME }-ში"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "გადმოიტანეთ თქვენი არსებული ელფოსტა ${ MAIL_APP_NAME }-ში, რათა ყველაფერი ერთი პირადი შემოსულებიდან მართოთ."
+      ],
       "Choose a provider": [
         "აირჩიეთ პროვაიდერი"
       ],
@@ -15222,6 +15237,9 @@
       "Self-destruct message": [
         "შეტყობინების თვითგანადგურება"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "გააგზავნეთ და მიიღეთ Gmail ${ MAIL_APP_NAME }-ის გამოყენებით"
+      ],
       "Send email": [
         "ელ-ფოსტის გაგზავნა"
       ],
@@ -15316,7 +15334,7 @@
         "შეჯამება"
       ],
       "Summer Sale": [
-        "საზაფხულო ფასდაკლება"
+        "ზაფხულის ფასდაკლება"
       ],
       "This field cannot be empty": [
         "ეს ველი ცარიელი ვერ იქნება"

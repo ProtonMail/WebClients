@@ -248,9 +248,6 @@
       "Create new policy": [
         "Gumawa ng bagong patakaran"
       ],
-      "Create organization": [
-        "Gumawa ng organisasyon"
-      ],
       "Create users": [
         "Gumawa ng mga user"
       ],
@@ -328,6 +325,9 @@
       ],
       "Discard Changes": [
         "Itapon ang mga Pagbabago"
+      ],
+      "Disconnect": [
+        "I-disconnect"
       ],
       "Discover ${ planName }": [
         "Tuklasin ang ${ planName }"
@@ -3236,8 +3236,20 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Gamitin ang gabay na ito upang agad na makinabang ang organisasyon mula sa nangungunang encryption at privacy ecosystem ng ${ BRAND_NAME }."
       ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Dadalhin ang mga lumang email at ikokonekta ang Gmail sa ${ MAIL_APP_NAME } para awtomatikong lumabas ang mga bagong mensahe"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "I-import ang mga lumang email, lalaktawan ang mga duplicate, at ikokonekta sa Gmail para awtomatikong lumabas ang mga bagong mensahe. Maaaring i-undo ang pag-import anumang oras sa mga setting ng Easy Switch"
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Maaari kang mag-import ng mga kaganapan sa iCal format (ICS file). Ang file ay dapat may maximum na laki na ${ MAX_IMPORT_FILE_SIZE_STRING } at may hanggang ${ MAX_IMPORT_EVENTS_STRING } na kaganapan. Kung mas malaki ang iyong file, hatiin ito sa mas maliliit na file."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Maaari pa ring mag-login gamit ang address na ito at muling kumonekta anumang oras."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Hindi na magagamit ang ${ address.Email } para makatanggap at magpadala ng mga email sa ${ BRAND_NAME }. Tandaan din na ang mga mensaheng ipinadala sa address na ito mula sa ${ BRAND_NAME } ay hindi na magiging end-to-end na naka-encrypt."
       ]
     },
     "description": {
@@ -7977,19 +7989,9 @@
         "Tingnan lamang"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "Ganito lilitaw ang iyong organisasyon sa mga user. Maaari itong baguhin anumang oras."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Hindi valid na email address"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Ano ang pangalan ng organisasyon?"
       ]
     },
     "invitation status": {
@@ -11606,9 +11608,6 @@
       "End date": [
         "Petsa ng pagtatapos"
       ],
-      "Enter name": [
-        "Ilagay ang pangalan"
-      ],
       "example@domain.com": [
         "example@domain.com"
       ],
@@ -14397,6 +14396,9 @@
       "Are you sure you want to close the preview?": [
         "Sigurado ka bang gusto mong isara ang preview?"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "Sigurado bang nais i-disconnect ang address na ito?"
+      ],
       "Are you sure?": [
         "Sigurado ka ba?"
       ],
@@ -15040,6 +15042,9 @@
       "Select contact group": [
         "Piliin ang grupo ng contact"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Magpadala at tumanggap ng Gmail gamit ang ${ MAIL_APP_NAME }"
+      ],
       "Send email reminders?": [
         "Magpadala ng mga paalala sa email?"
       ],
@@ -15142,6 +15147,9 @@
       ],
       "Summary": [
         "Buod"
+      ],
+      "Summer Sale": [
+        "Sale sa Tag-araw"
       ],
       "Switch to one-password mode": [
         "Lumipat sa one-password mode"
@@ -15259,9 +15267,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Maligayang pagdating sa ${ BRAND_NAME } for Business"
-      ],
-      "Welcome to ${ planName }": [
-        "Maligayang pagdating sa ${ planName }"
       ],
       "What is an alias?": [
         "Ano ang alias?"

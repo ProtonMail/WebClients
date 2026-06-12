@@ -292,6 +292,9 @@
       "Connect to video conferencing": [
         "Connettiti alla videoconferenza"
       ],
+      "Connect your email": [
+        "Connetti la tua email"
+      ],
       "Contact group": [
         "Gruppo di contatti"
       ],
@@ -303,6 +306,9 @@
       ],
       "Continue with categories": [
         "Continua senza categorie"
+      ],
+      "Continue with Free": [
+        "Continua con la versione gratuita"
       ],
       "Continue with Google": [
         "Continua con Google"
@@ -1495,6 +1501,10 @@
       "Trust": [
         "Considera attendibile"
       ],
+      "Trust key": [
+        "chiave attendibile",
+        "chiavi attendibili"
+      ],
       "Trust public key": [
         "Chiave pubblica attendibile"
       ],
@@ -1758,6 +1768,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licenza ${ LUMO_APP_NAME }",
         "${ seats } licenze ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licenza ${ MEET_APP_NAME }",
+        "${ seats } licenze ${ MEET_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } posto dell'assistente alla scrittura",
@@ -4028,6 +4042,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Riordina automaticamente i tuoi messaggi in arrivo prima che raggiungano la tua casella di posta."
       ],
+      "Available storage: ${ storageText }": [
+        "Archiviazione disponibile: ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Blocca la capacità di Google di creare un profilo su di te. ${ MAIL_APP_NAME } non può vedere cosa fai in Gmail."
       ],
@@ -4066,6 +4083,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Crittografia e importazione dei contatti... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Abbastanza spazio per anni di email, allegati e altro."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Garantisci un accesso sicuro ai dati dell'organizzazione, anche se il tuo team è da remoto o utilizza una rete WiFi pubblica."
@@ -4112,6 +4132,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Leggi, rispondi e gestisci Gmail da ${ MAIL_APP_NAME }"
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Invia e ricevi messaggi Gmail direttamente in ${ MAIL_APP_NAME }. Connetti il tuo indirizzo in ${ addressesSettingsLink }."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separa diversi aspetti della tua vita con più indirizzi email e sblocca più funzioni premium quando effettui l'upgrade."
@@ -4165,6 +4188,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Attiva la protezione dai tracker email per impedire agli inserzionisti e ad altri soggetti di tracciare la tua posizione geografica e la tua attività online."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Sblocca 15 GB di archiviazione a soli ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Effettua l'upgrade a ${ planName } per connettere fino a ${ MAX_SYNC_PAID_USER } account"
       ],
@@ -4186,8 +4212,17 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Non abbiamo trovato alcun tracker o URL di tracciamento noto in questa email."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Metteremo in pausa le importazioni all'80% dell'archiviazione per riservare spazio per i nuovi messaggi."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Importeremo le tue vecchie email e connetteremo il tuo Gmail a ${ MAIL_APP_NAME } in modo che i nuovi messaggi appaiano automaticamente"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Importeremo le tue vecchie email, ignoreremo i duplicati e ci connetteremo al tuo Gmail in modo che i nuovi messaggi appaiano automaticamente. Puoi annullare l'importazione in qualsiasi momento nelle impostazioni di Easy Switch."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Abbiamo iniziato a importare le tue email da Gmail. Ti faremo sapere quando avremo finito."
       ],
       "When do you want your message to be sent?": [
         "Quando vuoi che il messaggio venga inviato?"
@@ -4233,6 +4268,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "I tuoi metodi di recupero dell'account e dei dati sono impostati."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Il tuo account gratuito ${ MAIL_APP_NAME } ha un'archiviazione limitata, quindi importeremo solo ${ newUserStorageText } dei tuoi messaggi Gmail più recenti"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Il tuo account gratuito ${ MAIL_APP_NAME } ha un'archiviazione limitata, quindi importeremo solo le tue email di Gmail più recenti."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Il tuo piano supporta ${ MAX_SYNC_FREE_USER } indirizzo Gmail.",
@@ -5029,6 +5070,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alcuni nomi delle etichette superano il limite massimo di caratteri di ${ MAIL_APP_NAME }. Personalizza l'importazione per modificare questi nomi."
       ],
+      "Something went wrong while converting the address": [
+        "Si è verificato un errore durante la conversione dell'indirizzo"
+      ],
       "Something went wrong while creating the address": [
         "Si è verificato un errore durante la creazione dell'indirizzo"
       ],
@@ -5633,11 +5677,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ funzionalità premium"
+      ],
+      "Custom email domain": [
+        "Dominio email personalizzato"
+      ],
+      "Email addresses": [
+        "Indirizzi email"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Archiviazione cloud crittografata per foto e documenti"
       ],
       "More premium features": [
         "Altre  funzionalità premium"
+      ],
+      "Storage": [
+        "Archiviazione"
       ],
       "Unlimited hide-my-email aliases": [
         "Alias Hide-my-email illimitati"
@@ -5696,6 +5752,11 @@
       "Terabyte": [
         "Terabyte",
         "Terabyte"
+      ]
+    },
+    "Filter": {
+      "Filter": [
+        "﻿Filtra"
       ]
     },
     "Filter Actions": {
@@ -7012,6 +7073,10 @@
       "Create a new contact group": [
         "Crea nuovo gruppo di contatti"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crea un cloud sicuro per ${ memberCount } membro",
+        "Crea un cloud sicuro per ${ memberCount } membri"
+      ],
       "Create in": [
         "Crea in"
       ],
@@ -7408,6 +7473,9 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Includi la tua richiesta e la risposta per aiutarci a migliorare l'accuratezza."
       ],
+      "Included": [
+        "Incluso"
+      ],
       "Included for free with your plan": [
         "Incluso gratuitamente nel tuo piano"
       ],
@@ -7436,8 +7504,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -8411,8 +8478,14 @@
       "Updating message content search...": [
         "Aggiornamento della ricerca nel contenuto dei messaggi..."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Effettua l'upgrade in qualsiasi momento per trasferire il resto"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Effettua l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Effettua l'upgrade o libera spazio in qualsiasi momento per trasferire il resto"
       ],
       "Upgrade to ${ plan } to unlock": [
         "Effettua l'upgrade a ${ plan } per sbloccare"
@@ -9299,6 +9372,9 @@
       "Category": [
         "Categoria"
       ],
+      "Category:": [
+        "Categoria:"
+      ],
       "CC": [
         "CC"
       ],
@@ -9689,6 +9765,9 @@
       "Payment method": [
         "Metodo di pagamento"
       ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Email personali e di lavoro, e in più importanti aggiornamenti e notifiche"
+      ],
       "PGP scheme": [
         "Schema PGP"
       ],
@@ -9760,6 +9839,9 @@
       ],
       "Sender": [
         "Mittente"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Condividi le tue disponibilità con le pagine di prenotazione in ${ CALENDAR_APP_NAME }, e organizza riunioni sicure con ${ MEET_APP_NAME }."
       ],
       "Sign emails": [
         "Firma email"
@@ -10422,6 +10504,16 @@
       "Up to ${ n } participant": [
         "Fino a ${ n } partecipante",
         "Fino a ${ n } partecipanti"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videoconferenze, ${ n } partecipante",
+        "Videoconferenze, ${ n } partecipanti"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licenza inclusa",
+        "${ seats } licenze incluse"
       ]
     },
     "Message": {
@@ -11504,6 +11596,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } paese",
+        "${ n } paesi"
+      ],
       "Access advanced VPN features": [
         "Accedi a funzionalità VPN avanzate"
       ],
@@ -11751,6 +11847,9 @@
     "Onboarding List Placeholder": {
       "Bring your emails into ${ MAIL_APP_NAME }": [
         "Porta le tue email su ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Porta le tue email esistenti su ${ MAIL_APP_NAME } in modo da poter gestire tutto da un'unica posta in arrivo privata."
       ],
       "Choose a provider": [
         "Scegli un provider"
@@ -12371,6 +12470,9 @@
       ],
       "External key automatically fetched via WKD.": [
         "Chiave esterna caricata automaticamente tramite WKD."
+      ],
+      "This key is used for message verification": [
+        "Questa chiave è usata per la verifica dei messaggi"
       ],
       "This key is used to encrypt messages to this contact": [
         "Questa chiave viene utilizzata per crittografare i messaggi a questo contatto"
@@ -13402,6 +13504,9 @@
       ],
       "Smallest first": [
         "Meno grande prima"
+      ],
+      "Sort by": [
+        "Ordina per"
       ]
     },
     "specialoffer: Action": {
@@ -14115,6 +14220,10 @@
       ],
       "Version history": [
         "Cronologia delle versioni"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videoconferenze, fino a ${ PAID_PREMIUM_MAX_PARTICIPANTS } partecipante",
+        "Videoconferenze, fino a ${ PAID_PREMIUM_MAX_PARTICIPANTS } partecipanti"
       ],
       "Watch the interview": [
         "Guarda l'intervista"
@@ -14936,6 +15045,9 @@
       "Contacts": [
         "Contatti"
       ],
+      "Continue with free storage": [
+        "Continua con l'archiviazione gratuita"
+      ],
       "Continue with partial import?": [
         "Continuare con l'importazione parziale?"
       ],
@@ -15141,6 +15253,9 @@
       ],
       "Get more from your VPN": [
         "Ottieni di più dalla tua VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Ottieni più archiviazione con ${ MAIL_APP_NAME } Plus"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Ottieni le app ${ appName[APP_NAME] }"
@@ -15631,6 +15746,9 @@
       ],
       "Summary": [
         "Riepilogo"
+      ],
+      "Summer Sale": [
+        "Saldi estivi"
       ],
       "This field cannot be empty": [
         "Campo necessario"

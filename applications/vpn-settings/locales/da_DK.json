@@ -287,9 +287,6 @@
       "Create new policy": [
         "Opret ny politik"
       ],
-      "Create organization": [
-        "Opret organisation"
-      ],
       "Create users": [
         "Opret brugere"
       ],
@@ -2187,14 +2184,8 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Tilføj brugere manuelt"
-      ],
       "Close": [
         "Luk"
-      ],
-      "Configure your network": [
-        "Konfigurer dit netværk"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
@@ -2214,29 +2205,17 @@
       "Discover and set up features": [
         "Udforsk og konfigurer funktioner"
       ],
-      "Invite your team": [
-        "Inviter dit team"
-      ],
-      "Manage global VPN permissions": [
-        "Administrer globale VPN-tilladelser"
-      ],
       "Maybe later": [
         "Måske senere"
       ],
       "Remind me later": [
         "Påmind mig senere"
       ],
-      "Secure your organization": [
-        "Beskyt din organisation"
-      ],
       "Send": [
         "Send"
       ],
       "Set up other features": [
         "Konfigurer andre funktioner"
-      ],
-      "Set up SSO": [
-        "Konfigurer SSO"
       ],
       "Take a tour": [
         "Tag en tour"
@@ -3591,23 +3570,14 @@
       "Connect your CRM, website, printers, and more.": [
         "Forbind din CRM, dit websted, dine printere og mere."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Opret en gateway for at give dine brugere adgang til dine IT-ressourcer via dedikerede servere."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Opret et Zoom-møde, og tilføj deltageroplysninger til din begivenhed med et enkelt klik."
       ],
       "Create groups you can email with a single address.": [
         "Opret grupper, som du kan sende e-mails til med én enkelt adresse."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Opret nye brugerkonti eller importér brugere med SSO (single sign-on) SCIM-provisionering."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Opret politikker for at afgøre, hvem der kan forbinde til delte servere i hvert land."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Bestem hvilke brugere der kan forbinde til hver af vores 120+ delte serverplaceringer."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Tilgå nemt din e-mail og kalender på desktop og mobil."
@@ -3668,9 +3638,6 @@
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Sådan støttede vi lokale aktivister, da privatliv og ytringsfriheden blev truet."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Hvis du ikke allerede har gjort det kan du aktivere nogle gendannelsesmetoder for at sikre, at du aldrig mister adgangen til ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
@@ -3750,6 +3717,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Vi importerer dine gamle e-mails og forbinder din Gmail til ${ MAIL_APP_NAME }, så nye beskeder vises automatisk"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Vi importerer Deres gamle e-mails, springer dubletter over og forbinder til Deres Gmail, så nye beskeder vises automatisk. De kan til enhver tid fortryde importen i indstillingerne for Easy Switch."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Vi er begyndt at importere din e-mails fra Gmail. Vi giver dig besked når det er færdigt."
@@ -7328,9 +7298,6 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Få besked, hvis din adgangskode eller øvrige personlige data er blevet lækket. ${ learnMoreLinkNoBreach }"
       ],
-      "Get started": [
-        "Kom i gang"
-      ],
       "Get started with the referral link above.": [
         "Kom i gang med henvisningslinket ovenfor."
       ],
@@ -8146,9 +8113,6 @@
       ],
       "Set up your organization": [
         "Konfigurer din organisation"
-      ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Konfigurer din organisation, og begynd at beskytte dine data med få enkle trin."
       ],
       "Setting up ${ feature }…": [
         "Konfigurerer ${ feature }…"
@@ -9230,19 +9194,9 @@
         "Kun visning"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "Sådan vises din organisation for brugerne. Du kan altid ændre det."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Ikke en gyldig e-mailadresse"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Hvad er navnet på din organisation?"
       ]
     },
     "invitation status": {
@@ -13355,9 +13309,6 @@
       "Enter a name": [
         "Indtast et navn"
       ],
-      "Enter name": [
-        "Indtast navn"
-      ],
       "example@domain.com": [
         "eksempel@domæne.dk"
       ],
@@ -16781,9 +16732,6 @@
       "Disconnected from Gmail": [
         "Forbindelsen til Gmail er afbrudt"
       ],
-      "Dismiss setup checklist": [
-        "Skjul konfigurationstjekliste"
-      ],
       "Domain names": [
         "Domænenavne"
       ],
@@ -16943,9 +16891,6 @@
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Få mere lagerplads med ${ MAIL_APP_NAME } Plus"
-      ],
-      "Get started": [
-        "Kom i gang"
       ],
       "Get the apps": [
         "Hent appsene"
@@ -17412,7 +17357,7 @@
         "Sammenfatning"
       ],
       "Summer Sale": [
-        "Sommertilbud"
+        "Sommerudsalg"
       ],
       "Support your compliance objectives": [
         "Støt dine compliance-målsætninger"
@@ -17566,9 +17511,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Velkommen til ${ BRAND_NAME } for Business"
-      ],
-      "Welcome to ${ planName }": [
-        "Velkommen til ${ planName }."
       ],
       "What changes if you switch to the Free plan": [
         "Hvad der ændrer sig hvis du skifter til det gratis abonnement"
@@ -17867,9 +17809,6 @@
       ],
       "User is a group": [
         "Brugeren er en gruppe"
-      ],
-      "via ${ groupName }": [
-        "via ${ groupName }"
       ],
       "Waiting for user to accept the invitation": [
         "Venter på, at brugeren accepterer invitationen"

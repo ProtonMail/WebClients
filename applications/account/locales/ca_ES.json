@@ -462,9 +462,6 @@
       "Create new policy": [
         "Crea una política"
       ],
-      "Create organization": [
-        "Creeu l'organització"
-      ],
       "Create recovery phrase": [
         "Creeu una frase de recuperació"
       ],
@@ -2972,6 +2969,9 @@
       "Calendar": [
         "Calendari"
       ],
+      "Collapse invitation message": [
+        "Plegar el missatge d'invitació"
+      ],
       "Collapse step": [
         "Plegueu el pas"
       ],
@@ -3031,6 +3031,9 @@
       ],
       "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their Gmail inbox. From there, they set their ${ BRAND_NAME } password.": [
         "Tothom rep el mateix enllaç d'invitació. Visitaran la pàgina, introduiran el seu correu electrònic i rebran un codi de verificació a la seva bústia d'entrada de Gmail. Des d'allà, establiran la seva contrasenya de ${ BRAND_NAME }."
+      ],
+      "Expand invitation message": [
+        "Expandir el missatge d'invitació"
       ],
       "Expand step": [
         "Desplegueu el pas"
@@ -3395,17 +3398,11 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Afegiu usuaris manualment"
-      ],
       "Cancel": [
         "Cancel·leu-ho"
       ],
       "Close": [
         "Tanca"
-      ],
-      "Configure your network": [
-        "Configureu la vostra xarxa"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua utilitzant ${ MAIL_APP_NAME }."
@@ -3428,12 +3425,6 @@
       "Got it": [
         "Entesos"
       ],
-      "Invite your team": [
-        "Convideu el vostre equip"
-      ],
-      "Manage global VPN permissions": [
-        "Gestioneu els permisos de la VPN global"
-      ],
       "Maybe later": [
         "Potser més tard"
       ],
@@ -3443,17 +3434,11 @@
       "Remind me later": [
         "Recorda-m'ho més tard"
       ],
-      "Secure your organization": [
-        "Protegiu la vostra organització"
-      ],
       "Send": [
         "Enviar"
       ],
       "Set up other features": [
         "Configureu altres característiques"
-      ],
-      "Set up SSO": [
-        "Configureu l'SSO"
       ],
       "Sign in": [
         "Inicieu sessió"
@@ -5319,9 +5304,6 @@
       "Connect your CRM, website, printers, and more.": [
         "Connecteu el CRM, lloc web, impressores i molt més."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Creeu una passarel·la per donar accés als usuaris als vostres recursos de TI mitjançant servidors dedicats."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Creeu una reunió a Zoom i afegiu els detalls de participació a l'esdeveniment en un clic."
       ],
@@ -5331,14 +5313,8 @@
       "Create groups you can email with a single address.": [
         "Creeu grups als quals podeu enviar correus amb una única adreça."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Creeu nous comptes d'usuari o importeu usuaris amb l'aprovisionament SCIM d'SSO (inici de sessió únic)."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Creeu polítiques per a decidir qui es pot connectar als servidors compartits de cada país."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Decidiu quins usuaris es poden connectar a cadascuna de les nostres més de 120 ubicacions de servidors compartits."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Accediu fàcilment al vostre correu i calendari a l'escriptori i al mòbil."
@@ -5402,9 +5378,6 @@
       ],
       "How you unlock your encrypted data if you lose your password.": [
         "Com desbloquejar les vostres dades xifrades si perdeu la contrasenya."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Si encara no ho heu fet, habiliteu alguns mètodes de recuperació per assegurar-vos que mai no perdreu l'accés a ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
@@ -5508,6 +5481,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Importarem els vostres correus antics i connectarem el vostre Gmail a ${ MAIL_APP_NAME } perquè els missatges nous apareguin automàticament"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Importarem els vostres correus electrònics antics, ometrem els duplicats i ens connectarem al vostre Gmail perquè els missatges nous apareguin automàticament. Podreu desactivar la importació en qualsevol moment a la configuració d'Easy Switch."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Hem començat a importar els vostres correus electrònics des de Gmail. Us avisarem quan hagi acabat."
@@ -11130,9 +11106,6 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Rebeu una notificació si la vostra contrasenya o altres dades personals han estat filtrades. ${ learnMoreLinkNoBreach }"
       ],
-      "Get started": [
-        "Primers passos"
-      ],
       "Get started with the referral link above.": [
         "Comenceu amb l'enllaç de recomanació anterior."
       ],
@@ -12220,9 +12193,6 @@
       "Set up your organization": [
         "Configuració de la vostra organització"
       ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Configureu la vostra organització i comenceu a protegir les vostres dades en pocs passos senzills."
-      ],
       "Setting successfully saved": [
         "S'ha desat la configuració correctament"
       ],
@@ -13286,6 +13256,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "No heu establert un mètode de recuperació i per tant la recuperació del compte serà impossible si oblideu la vostra contrasenya. Voleu procedir sense mètode de recuperació?"
       ],
+      "You do not have permission to create users.": [
+        "No teniu permís per crear usuaris."
+      ],
       "You do not have permission to perform this action": [
         "No teniu permís per a realitzar aquesta acció."
       ],
@@ -13662,11 +13635,6 @@
         "Només lectura"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "Així és com es mostrarà la vostra organització als usuaris. Ho podeu canviar en qualsevol moment."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "No és una adreça de correu electrònic vàlida."
@@ -13680,11 +13648,6 @@
     "Input placeholder": {
       "Add label": [
         "Afegeix etiqueta"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Quin és el nom de la vostra organització?"
       ]
     },
     "invitation status": {
@@ -16052,6 +16015,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Obtén ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Obtenir ajuda de ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Grups"
@@ -19999,9 +19965,6 @@
       "Enter a name": [
         "Introduïu un nom"
       ],
-      "Enter name": [
-        "Introduïu un nom"
-      ],
       "example@domain.com": [
         "exemple@domini.com"
       ],
@@ -21064,6 +21027,28 @@
       ],
       "Edit retention rule": [
         "Edita la regla de conservació"
+      ]
+    },
+    "Role": {
+      "Organization Admin": [
+        "Administrador/a de l'organització"
+      ],
+      "Security Admin": [
+        "Administrador/a de seguretat"
+      ],
+      "User Admin": [
+        "Administrador/a d'usuaris"
+      ]
+    },
+    "Role description": {
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configureu les polítiques de seguretat, la retenció de dades i la infraestructura VPN, i gestioneu els registres d'auditoria."
+      ],
+      "Manage all users, groups, security, billing, and system configurations.": [
+        "Gestioneu tots els usuaris, grups, seguretat, facturació i configuracions del sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestioneu els usuaris, els grups i l'emmagatzematge de tots els membres, assigneu rols i adjudiqueu llicències."
       ]
     },
     "Safety review": {
@@ -25353,9 +25338,6 @@
       "Disconnected from Gmail": [
         "Esteu desconnectat de Gmail"
       ],
-      "Dismiss setup checklist": [
-        "Descartar la llista de verificació de configuració"
-      ],
       "Display name and signature": [
         "Nom per a mostrar i signatura"
       ],
@@ -25644,9 +25626,6 @@
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Aconseguiu més emmagatzematge amb ${ MAIL_APP_NAME } Plus"
-      ],
-      "Get started": [
-        "Primers passos"
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Obtingueu l'aplicació a tots els vostres dispositius i gaudiu d'un accés segur i fluid des de qualsevol lloc."
@@ -26559,9 +26538,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Us donem la benvinguda a ${ BRAND_NAME } for Business"
       ],
-      "Welcome to ${ planName }": [
-        "Us donem la benvinguda a ${ planName }"
-      ],
       "Welcome to your new password manager!": [
         "Us donem la benvinguda al vostre nou gestor de contrasenyes!"
       ],
@@ -27077,8 +27053,8 @@
       "User is a group": [
         "L'usuari és un grup"
       ],
-      "via ${ groupName }": [
-        "mitjançant ${ groupName }"
+      "via ${ groupNames }": [
+        "mitjançant ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "S'està esperant que l'usuari accepti la invitació."

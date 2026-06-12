@@ -287,9 +287,6 @@
       "Create new policy": [
         "Nieuwe policy aanmaken"
       ],
-      "Create organization": [
-        "Organisatie aanmaken"
-      ],
       "Create users": [
         "Gebruikers aanmaken"
       ],
@@ -2170,9 +2167,6 @@
       "Close": [
         "Sluiten"
       ],
-      "Configure your network": [
-        "Configureer uw netwerk"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Blijf ${ MAIL_APP_NAME } gebruiken."
       ],
@@ -2191,12 +2185,6 @@
       "Discover and set up features": [
         "Ontdek en configureer functies"
       ],
-      "Invite your team": [
-        "Nodig uw team uit"
-      ],
-      "Manage global VPN permissions": [
-        "Globale VPN-machtigingen beheren"
-      ],
       "Maybe later": [
         "Misschien later"
       ],
@@ -2208,9 +2196,6 @@
       ],
       "Set up other features": [
         "Andere functies instellen"
-      ],
-      "Set up SSO": [
-        "SSO instellen"
       ],
       "Take a tour": [
         "Volg een rondleiding"
@@ -3565,23 +3550,14 @@
       "Connect your CRM, website, printers, and more.": [
         "Verbind uw CRM, website, printers en meer."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Maak een Gateway aan om uw gebruikers toegang te geven tot uw IT-middelen via toegewijde servers."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Maak een Zoom vergadering en voeg aansluitgegevens met één klik toe aan uw evenement."
       ],
       "Create groups you can email with a single address.": [
         "Maak groepen aan die u een e-mail kunt sturen met één enkel adres."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Nieuwe gebruikersaccounts aanmaken of gebruikers importeren met SSO (single sign-on) SCIM-provisioning."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Maak policies aan om te bepalen wie in elk land kan verbinden met de gedeelde servers."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Bepaal welke gebruikers verbinding kunnen maken met elk van onze meer dan 120 gedeelde serverlocaties."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Krijg eenvoudig toegang tot uw e-mail en agenda op desktop en mobiel."
@@ -3639,9 +3615,6 @@
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Hoe we lokale activisten hebben ondersteund toen privacy en vrijheid van meningsuiting werd bedreigd."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Als u dat nog niet hebt gedaan, schakel dan enkele herstelmethoden in om ervoor te zorgen dat u nooit de toegang tot ${ VPN_APP_NAME } verliest."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Het lijkt erop dat de contactenlijst die u importeert enkele groepen bevat. Bekijk hoe deze groepen moeten worden geïmporteerd."
@@ -3721,6 +3694,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "We halen uw oude e-mails op en koppelen uw Gmail-account aan ${ MAIL_APP_NAME }, zodat nieuwe berichten automatisch worden weergegeven"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "We importeren uw oude e-mails, slaan duplicaten over en verbinden met uw Gmail, zodat nieuwe berichten automatisch verschijnen. U kunt de import altijd ongedaan maken in de instellingen van Easy Switch."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "We zijn begonnen met het importeren van uw e-mails uit Gmail. We laten het u weten als het klaar is."
@@ -7278,9 +7254,6 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Ontvang een melding als uw wachtwoord of andere persoonlijke gegevens gelekt zijn. ${ learnMoreLinkNoBreach }"
       ],
-      "Get started": [
-        "Aan de slag"
-      ],
       "Get started with the referral link above.": [
         "Ga aan de slag met de verwijzingskoppeling hierboven."
       ],
@@ -8093,9 +8066,6 @@
       ],
       "Set up your organization": [
         "Stel uw organisatie in"
-      ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Richt uw organisatie in en begin in een paar eenvoudige stappen met het beschermen van uw gegevens."
       ],
       "Setting up ${ feature }…": [
         "Instellen van ${ feature }…"
@@ -9171,19 +9141,9 @@
         "Alleen bekijken"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "Zo verschijnt uw organisatie aan gebruikers. U kunt dit op elk moment wijzigen."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Geen geldig e-mailadres"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Wat is de naam van uw organisatie?"
       ]
     },
     "invitation status": {
@@ -13278,9 +13238,6 @@
       "Enter a name": [
         "Voer een naam in"
       ],
-      "Enter name": [
-        "Voer naam in"
-      ],
       "example@domain.com": [
         "voorbeeld@domein.com"
       ],
@@ -16701,9 +16658,6 @@
       "Disconnected from Gmail": [
         "Ontkoppeld van Gmail"
       ],
-      "Dismiss setup checklist": [
-        "Setup-checklist negeren"
-      ],
       "Domain names": [
         "Domeinnamen"
       ],
@@ -16863,9 +16817,6 @@
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Krijg meer opslagruimte met ${ MAIL_APP_NAME } Plus"
-      ],
-      "Get started": [
-        "Aan de slag"
       ],
       "Get the apps": [
         "Verkrijg de apps"
@@ -17332,7 +17283,7 @@
         "Overzicht"
       ],
       "Summer Sale": [
-        "Zomeruitverkoop"
+        "Zomer Sale"
       ],
       "Support your compliance objectives": [
         "Ondersteun uw compliancedoelstellingen"
@@ -17486,9 +17437,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Welkom bij ${ BRAND_NAME } voor Business"
-      ],
-      "Welcome to ${ planName }": [
-        "Welkom bij ${ planName }"
       ],
       "What changes if you switch to the Free plan": [
         "Wat verandert er als u overstapt naar het gratis abonnement"
@@ -17784,9 +17732,6 @@
       ],
       "User is a group": [
         "Gebruiker is een groep"
-      ],
-      "via ${ groupName }": [
-        "via ${ groupName }"
       ],
       "Waiting for user to accept the invitation": [
         "Wachten tot gebruiker de uitnodiging accepteert"

@@ -1520,7 +1520,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -2254,6 +2255,9 @@
       ],
       "Pending": [
         "Väntar"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
       ],
       "Select users to migrate": [
         "Välj användare att migrera"
@@ -3333,6 +3337,9 @@
       "Canada": [
         "Kanada"
       ],
+      "Canary Islands": [
+        "Kanarieöarna"
+      ],
       "Cape Verde": [
         "Kap Verde"
       ],
@@ -4207,6 +4214,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterar och importerar kontakter... Detta kan ta några minuter. När processen är slutförd kan du stänga detta fönster."
       ],
+      "Enough room for years of emails, attachments and more.": [
+        "Tillräckligt med plats för åratal av e-post, bilagor och mer."
+      ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Säkerställ säker åtkomst till organisationens data, även om ditt team är på distans eller använder offentligt WiFi."
       ],
@@ -4224,6 +4234,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Hjälp ditt team att säkert lagra lösenord till känslig företags- och klientinformation."
+      ],
+      "If a message appears in the wrong category, simply move it to the right one. Right-click a message to choose a new category, or drag and drop it where it belongs.": [
+        "Om ett meddelande visas i fel kategori flyttar du det helt enkelt till rätt kategori. Högerklicka på ett meddelande för att välja en ny kategori, eller dra och släpp det där det hör hemma."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det verkar som kontaktlistan du importerar innehåller några grupper. Granska hur dessa grupper ska importeras."
@@ -4338,8 +4351,14 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Vi importerar din gamla e-post och ansluter din Gmail till ${ MAIL_APP_NAME } så nya meddelanden visas automatiskt"
       ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Vi importerar dina gamla e-postmeddelanden, hoppar över dubbletter och ansluter till ditt Gmail så att nya meddelanden visas automatiskt. Du kan ångra importen när som helst i inställningarna för Easy Switch."
+      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Vi har börjat importera din e-post från Gmail. Vi meddelar dig när det är klart."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Tråkigt att du lämnar oss. Om du har en stund över skulle vi verkligen uppskatta att höra varför du vill avbryta Din feedback hjälper oss att göra ${ BRAND_NAME } bättre för alla."
       ],
       "When do you want your message to be sent?": [
         "När vill du att ditt meddelande ska skickas?"
@@ -4386,6 +4405,12 @@
       "Your account and data recovery methods are set.": [
         "Ditt konto och dataåterställningsmetoder är inställda."
       ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ditt kostnadsfria ${ MAIL_APP_NAME }-konto har begränsat lagringsutrymme, så vi kommer bara att importera ${ newUserStorageText } av dina senaste Gmail-meddelanden"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ditt kostnadsfria ${ MAIL_APP_NAME }-konto har begränsat lagringsutrymme, så vi kommer bara att importera dina senaste Gmail-e-postmeddelanden."
+      ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Ditt paket stöder ${ MAX_SYNC_FREE_USER } Gmail-adress.",
         "Ditt paket stöder ${ MAX_SYNC_FREE_USER } Gmail-adresser."
@@ -4393,6 +4418,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Ditt paket stöder totalt ${ MAX_SYNC_PAID_USER } Gmail-adress",
         "Ditt paket stöder ett totalt antal av ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
+        "Du är bland de första som får prova vår nya kategorivy innan den lanseras. Din feedback hjälper till att förbättra hur Proton Mail sorterar e-post för alla."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
@@ -5183,6 +5211,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Vissa av dina etikettnamn överskrider ${ MAIL_APP_NAME }s maximalt antal tillåtna tecken. Anpassa importen för att redigera dessa namn."
+      ],
+      "Something went wrong while converting the address": [
+        "Något gick fel när adressen konverterades"
       ],
       "Something went wrong while creating the address": [
         "Något gick fel när adressen skapades"
@@ -6887,6 +6918,9 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill-switch**: Stoppar dataläckage genom att blockera ditt internet om VPN:et oväntat slutar fungera."
       ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**De får ${ refereeRewardAmount }** i krediter om de prenumererar."
+      ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Du får ${ referrerRewardAmount }** i krediter för varje vän som prenumererar."
       ],
@@ -7689,8 +7723,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8045,6 +8078,9 @@
       ],
       "Please select the folders you would like to import:": [
         "Välj mapparna du vill importera:"
+      ],
+      "Please select the labels you would like to import:": [
+        "Välj etiketterna du vill importera:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Välj den typ av länk du vill infoga och fyll i alla fält."
@@ -8586,6 +8622,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
       ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "För att hjälpa dig att komma ihåg ditt lösenord kommer vi att be dig ange det regelbundet. Vi ber dig att ange det mindre med tiden."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "För att importera händelser, skapa först en kalender i ${ CALENDAR_APP_NAME }. Det är här händelserna kommer att visas efter importen."
       ],
@@ -8810,6 +8849,9 @@
       ],
       "We'll notify you when the import is done.": [
         "Vi aviserar dig när importen är klar."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Vi kommer påminna dig om att verifiera ditt lösenord igen senare"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi skickar en ny verifieringskod till ${ strong }"
@@ -9970,6 +10012,9 @@
       ],
       "Payment method": [
         "Betalningsmetod"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Personlig och arbetsrelaterad e-post, plus viktiga uppdateringar och aviseringar"
       ],
       "PGP scheme": [
         "PGP-schema"
@@ -12726,6 +12771,9 @@
       ],
       "This contact currently signs messages with this key": [
         "Denna kontakt signerar för närvarande meddelanden med denna nyckel"
+      ],
+      "This key is used for message verification": [
+        "Denna nyckel används för meddelandeverifiering"
       ],
       "This key is used to encrypt messages to this contact": [
         "Denna nyckel används för att kryptera meddelanden till denna kontakt"
@@ -15590,6 +15638,9 @@
       "Help center": [
         "Hjälpcenter"
       ],
+      "Help shape the future of email categories in ${ MAIL_APP_NAME }": [
+        "Hjälp till att forma framtiden för e-postkategorier i ${ MAIL_APP_NAME }"
+      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Dölj din e-post med ${ PASS_APP_NAME }"
       ],
@@ -15723,6 +15774,9 @@
       ],
       "Message will expire": [
         "Meddelande kommer löpa ut"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrera din organisation till ${ BRAND_NAME }"
       ],
       "Minicalendar": [
         "Minikalender"

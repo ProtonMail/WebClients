@@ -204,6 +204,12 @@
       "Choose a file or drag it here": [
         "Выберите файл или перетащите его сюда"
       ],
+      "Claim this address": [
+        "Получить этот адрес"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Получите бесплатный адрес ${ BRAND_NAME }"
+      ],
       "Clear": [
         "Очистить"
       ],
@@ -276,6 +282,9 @@
       "Connect to video conferencing": [
         "Подключайтесь к видеоконференциям"
       ],
+      "Connect your email": [
+        "Подключить электронную почту"
+      ],
       "Contact group": [
         "Группа контактов"
       ],
@@ -284,6 +293,9 @@
       ],
       "Continue import": [
         "Продолжить импорт"
+      ],
+      "Continue with Free": [
+        "Продолжить бесплатно"
       ],
       "Continue with Google": [
         "Продолжить с Google"
@@ -975,6 +987,9 @@
       "Open navigation": [
         "Открыть панель навигации"
       ],
+      "Or use a different Gmail address": [
+        "Или использовать другой адрес Gmail"
+      ],
       "Ordered list": [
         "Нумерованный список"
       ],
@@ -1040,6 +1055,9 @@
       ],
       "Reconnect": [
         "Переподключиться"
+      ],
+      "Reconnect to Gmail": [
+        "Переподключить Gmail"
       ],
       "Recover data": [
         "Восстановить данные"
@@ -1402,7 +1420,10 @@
         "Доверять"
       ],
       "Trust key": [
-        "Доверять ключу"
+        "Доверенный ключ",
+        "Доверенных ключа",
+        "Доверенных ключей",
+        "Доверенных ключей"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -1508,6 +1529,9 @@
       ],
       "Use this": [
         "Использовать"
+      ],
+      "Use this Gmail address": [
+        "Использовать этот адрес Gmail"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Используйте мышь для изменения размера просмотра. Если вы используете клавиатуру, для изменения размера можно использовать клавиши со стрелками влево и вправо."
@@ -3734,6 +3758,12 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Автоматическая сортировка сообщений, прежде чем они попадут во входящие."
       ],
+      "Available storage: ${ storageText }": [
+        "Доступный объем хранилища: ${ storageText }"
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Заблокируйте возможность Google составлять ваш профиль. Gmail не увидит, что вы делаете в ${ MAIL_APP_NAME }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Сначала настройте это, чтобы активировать вашу организацию и настроить ваш адрес электронной почты."
       ],
@@ -3761,11 +3791,17 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Легко синхронизируйте файлы с облаком с настольного компьютера и получайте к ним доступ с мобильного устройства."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Письма, отправленные на ${ connectedAddressText }, теперь будут появляться в ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Поощряйте использование двухфакторной аутентификации в вашей организации для обеспечения дополнительной безопасности."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Достаточно места для писем, вложений и многого другого на годы вперед."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Обеспечьте защищенный доступ к данным организации, даже если ваша команда работает удаленно или использует публичный WiFi."
@@ -3800,11 +3836,20 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Новые письма от ${ senderEmailAddress } не будут доставлены и будут безвозвратно удалены."
       ],
+      "No ads. No trackers.": [
+        "Без рекламы. Без трекеров."
+      ],
       "No folders": [
         "Нет папок"
       ],
       "No labels": [
         "Нет ярлыков"
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Читайте, отвечайте и управляйте почтой Gmail прямо из ${ MAIL_APP_NAME }"
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Отправляйте и получайте сообщения Gmail прямо в ${ MAIL_APP_NAME }. Подключите свой адрес в ${ addressesSettingsLink }."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Выделите различные аспекты своей жизни с помощью нескольких адресов электронной почты и получите доступ к дополнительным функциям при обновлении тарифа."
@@ -3820,6 +3865,15 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Упростите синхронизацию и планирование с общими календарями."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Это могло произойти, если были отозваны разрешения или изменился ваш пароль."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Чтобы продолжить получать и отправлять сообщения Gmail в ${ BRAND_NAME }, пожалуйста, переподключите свой аккаунт."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Чтобы продолжить получать и отправлять сообщения Gmail в ${ BRAND_NAME }, пожалуйста, переподключите свои аккаунты."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Чтобы продолжить пользоваться помощником по написанию, добавьте его к своей подписке."
@@ -3839,6 +3893,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Включите защиту от отслеживания электронной почты, чтобы предотвратить слежку рекламодателей и других лиц за вашим местоположением и активностью в сети."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Получите 15 ГБ пространства всего за ${ config.offerPrice }."
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Обновитесь до ${ activatePmUser } для получения более короткого и запоминаемого адреса электронной почты в дополнение к текущему."
       ],
@@ -3851,8 +3908,23 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Воспользуйтесь этим руководством, чтобы ваша организация начала быстро получать выгоду от лучшей в отрасли экосистемы шифрования и приватности ${ BRAND_NAME }."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Мы больше не можем получить доступ к ${ boldEmails }."
+      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Мы не нашли никаких известных трекеров и отслеживающих ссылок в этом сообщении."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Мы приостановим импорт при заполнении хранилища на 80%, чтобы зарезервировать место для новых сообщений."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Мы перенесем ваши старые письма и подключим ваш Gmail к ${ MAIL_APP_NAME }, чтобы новые сообщения появлялись автоматически"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Мы импортируем ваши старые электронные письма, пропустим дубликаты и подключим ваш Gmail, чтобы новые сообщения появлялись автоматически. Вы можете отменить импорт в любое время в настройках Easy Switch"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Мы начали импорт ваших писем из Gmail. Мы сообщим вам, когда он завершится."
       ],
       "When do you want your message to be sent?": [
         "Когда вы хотите, чтобы ваше сообщение было отправлено?"
@@ -3863,17 +3935,32 @@
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
         "С настраиваемым откладыванием вы можете скрыть письма и установить их повторное появление в лучшее время."
       ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "У вас уже настроена пересылка с адреса Gmail в ${ MAIL_APP_NAME }. Подключите его ниже, чтобы отправлять и получать электронные письма непосредственно из ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "У вас уже настроена пересылка с адресов Gmail в ${ MAIL_APP_NAME }. Подключите один из них ниже, чтобы отправлять и получать электронные письма непосредственно из ${ MAIL_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можете импортировать события в формате iCal (ICS файл). Размер файла не должен быть более ${ MAX_IMPORT_FILE_SIZE_STRING } и иметь не более ${ MAX_IMPORT_EVENTS_STRING } событий. Если ваш файл больше, разделите его на меньшие файлы."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Вы можете отметить для удаления те контакты, которые не хотите ни объединять, ни оставлять. Удаление будет происходить только после нажатия кнопки «Объединить»."
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Теперь вы можете отправлять электронные письма из ${ BRAND_NAME }, используя этот адрес."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Ваш аккаунт и методы восстановления данных настроены, а двухфакторная идентификация включена."
       ],
       "Your account and data recovery methods are set.": [
         "Ваш аккаунт и методы восстановления данных настроены."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ваш бесплатный аккаунт ${ MAIL_APP_NAME } имеет ограниченный объем хранилища, поэтому мы импортируем только последние сообщения Gmail общим объемом ${ newUserStorageText }"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ваш бесплатный аккаунт ${ MAIL_APP_NAME } имеет ограниченный объем хранилища, поэтому мы импортируем только ваши самые последние письма из Gmail."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
@@ -4131,6 +4218,9 @@
       ],
       "Add at least one condition": [
         "Добавьте хотя бы одно условие"
+      ],
+      "Address is already added to your account": [
+        "Адрес уже добавлен в ваш аккаунт"
       ],
       "Address primary private key not found": [
         "Основной закрытый ключ для адреса не найден"
@@ -4566,6 +4656,15 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Некоторые из ваших имен ярлыков превышают максимальный лимит символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
+      ],
+      "Something went wrong while converting the address": [
+        "Что-то пошло не так при конвертации адреса"
+      ],
+      "Something went wrong while creating the address": [
+        "Что-то пошло не так при создании адреса"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Что-то пошло не так при получении доступных доменов"
       ],
       "Something went wrong. Please try again.": [
         "Что-то пошло не так. Пожалуйста, попробуйте еще раз."
@@ -5136,6 +5235,18 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "Более 10 платных функций"
+      ],
+      "Custom email domain": [
+        "Собственный домен электронной почты"
+      ],
+      "Email addresses": [
+        "Адреса электронной почты"
+      ],
+      "Storage": [
+        "Хранилище"
+      ],
       "Unlimited hide-my-email aliases": [
         "Неограниченное количество псевдонимов hide-my-email"
       ]
@@ -6301,6 +6412,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Проверка адреса доверяемыми ключами для этого адреса включена. Чтобы получить возможность отправки на этот адрес, сначала включите режим доверия публичным ключам, которые можно применять для отправки."
       ],
+      "Addresses settings": [
+        "Настройки адресов"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Рекламодатели отслеживают ваш просмотр веб-страниц, чтобы показывать целевую рекламу. ${ VPN_APP_NAME } блокирует трекеры и рекламу, делая ваше подключение быстрее и улучшая работу в Интернете."
       ],
@@ -6763,6 +6877,9 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Наслаждайтесь более быстрой и сфокусированной отправкой электронных писем с помощью настольного приложения."
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Обеспечьте полную конфиденциальность и шифрование переписки. Получите бесплатный адрес электронной почты ${ BRAND_NAME } прямо сейчас."
+      ],
       "Enter the code from your authenticator app": [
         "Введите код из приложения-аутентификатора"
       ],
@@ -6961,6 +7078,9 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Укажите свою просьбу и ответ, чтобы помочь нам повысить точность."
       ],
+      "Included": [
+        "Включено"
+      ],
       "Included for free with your plan": [
         "Включено бесплатно в ваш тариф"
       ],
@@ -6971,10 +7091,7 @@
         "Инициализация…"
       ],
       "Insert image": [
-        "Вставить изображение",
-        "Вставить изображения",
-        "Вставить изображения",
-        "Вставить изображения"
+        "Вставить изображение"
       ],
       "Insert link": [
         "Вставить ссылку"
@@ -7894,8 +8011,14 @@
       "Updating message content search...": [
         "Обновление поиска по содержимому сообщения…"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Улучшите тарифный план в любое время, чтобы перенести остальное"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Улучшить сейчас, чтобы получить платные функции, программное обеспечение и хранилище по специальной цене"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Улучшите тарифный план или освободите место в любое время, чтобы перенести остальное"
       ],
       "Upgrade to add more addresses to your account.": [
         "Улучшите аккаунт, чтобы добавить больше адресов."
@@ -9133,6 +9256,9 @@
       ],
       "Search in": [
         "Искать в"
+      ],
+      "Select which Gmail address to connect": [
+        "Выберите адрес Gmail для подключения"
       ],
       "Send auto-reply": [
         "Отправить автоответ"
@@ -10880,6 +11006,9 @@
       ],
       "Trial started": [
         "Начат пробный период"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Ваш адрес ${ BRAND_NAME } готов к использованию"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10987,6 +11116,14 @@
       ],
       "Storage": [
         "Хранилище"
+      ]
+    },
+    "Onboarding List Placeholder": {
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Перенесите свои электронные письма в ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Перенесите свои существующие электронные письма в ${ MAIL_APP_NAME }, чтобы вы могли управлять всем из одного конфиденциального почтового ящика."
       ]
     },
     "Onboarding modal": {
@@ -13878,6 +14015,9 @@
       "Block sender": [
         "Заблокировать отправителя"
       ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Перенесите Gmail в ${ MAIL_APP_NAME }"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Отменить подписку ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -13901,6 +14041,9 @@
       ],
       "Change password": [
         "Изменить пароль"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Получите свой адрес ${ MAIL_APP_NAME }"
       ],
       "Clearing data": [
         "Очистка данных"
@@ -13934,6 +14077,9 @@
       ],
       "Contacts": [
         "Контакты"
+      ],
+      "Continue with free storage": [
+        "Продолжить с бесплатным хранилищем"
       ],
       "Continue with partial import?": [
         "Продолжить частичный импорт?"
@@ -14031,6 +14177,9 @@
       "Desktop": [
         "Для настольных компьютеров"
       ],
+      "Disconnected from Gmail": [
+        "Соединение с Gmail разорвано"
+      ],
       "Discover your subscription benefits": [
         "Откройте для себя преимущества подписки"
       ],
@@ -14126,6 +14275,9 @@
       ],
       "Get more from your VPN": [
         "Получите больше от VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Получите больше места в хранилище с ${ MAIL_APP_NAME } Plus"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Получить приложения ${ appName[APP_NAME] }"
@@ -14496,6 +14648,9 @@
       "Self-destruct message": [
         "Самоуничтожающееся сообщение"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Отправляйте и получайте почту Gmail в ${ MAIL_APP_NAME }"
+      ],
       "Send email": [
         "Отправить электронное письмо"
       ],
@@ -14586,6 +14741,9 @@
       "Summary": [
         "Сводка"
       ],
+      "Summer Sale": [
+        "Летние скидки"
+      ],
       "This field cannot be empty": [
         "Это поле не может быть пустым"
       ],
@@ -14637,6 +14795,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Используйте ${ VPN_SHORT_APP_NAME } для обеспечения конфиденциальности данных"
       ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Безопасно используйте Gmail в ${ MAIL_APP_NAME }"
+      ],
       "Verification error": [
         "Ошибка подтверждения"
       ],
@@ -14681,6 +14842,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Когда важнее всего использовать VPN?"
+      ],
+      "You are all set": [
+        "Всё готово"
       ],
       "You can now create unlimited folders and labels": [
         "Теперь вы можете создавать неограниченное количество папок и ярлыков."

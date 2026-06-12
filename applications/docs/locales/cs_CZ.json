@@ -213,6 +213,9 @@
       "Continue to ${ planOrAppName }": [
         "Pokračovat na ${ planOrAppName }"
       ],
+      "Continue with Free": [
+        "Pokračovat zdarma"
+      ],
       "Continue with Google": [
         "Pokračovat skrze Google"
       ],
@@ -2537,6 +2540,9 @@
       "Automatically forward incoming email to another email address.": [
         "Automatické přeposílání příchozích e-mailů na jinou e-mailovou adresu."
       ],
+      "Available storage: ${ storageText }": [
+        "Dostupné úložiště: ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Při konfiguraci nejprve aktivujte svou organizaci a přizpůsobte e-mailovou adresu."
       ],
@@ -2566,6 +2572,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Dostatek místa pro e-maily, přílohy a další na dlouhé roky."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Zajistěte bezpečný přístup k datům organizace, i když je váš tým vzdálený nebo používá veřejnou Wi-Fi."
@@ -2624,6 +2633,9 @@
       "To start, give your organization a name.": [
         "Nejprve pojmenujte vaši organizaci."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Odemkněte si 15 GB úložiště za pouhých ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Navyšte na ${ planName } pro zachování sdílení souborů s přístupem k úpravám"
       ],
@@ -2635,6 +2647,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Již nemáme přístup k ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Při zaplnění úložiště na 80 % importy pozastavíme, abychom vyhradili místo pro nové zprávy."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Zahájili jsme import vašich e-mailů z Gmailu. Jakmile bude dokončen, dáme vám vědět."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Je nám líto, že odcházíte. Pokud máte chvilku, oceníme, pokud nám sdělíte důvod zrušení. Vaše zpětná vazba pomáhá vylepšovat ${ BRAND_NAME } pro všechny."
@@ -2656,6 +2674,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Váš účet a metody obnovy dat jsou nastaveny."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Váš bezplatný účet ${ MAIL_APP_NAME } má omezené úložiště, takže naimportujeme pouze ${ newUserStorageText } vašich nejnovějších zpráv z Gmailu"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Váš bezplatný účet ${ MAIL_APP_NAME } má omezené úložiště, takže naimportujeme pouze vaše nejnovější e-maily z Gmailu."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
@@ -3811,11 +3835,23 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "10+ prémiových funkcí"
+      ],
+      "Custom email domain": [
+        "Vlastní e-mailová doména"
+      ],
+      "Email addresses": [
+        "E-mailové adresy"
+      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Šifrované cloudové úložiště pro soubory, fotky a dokumenty"
       ],
       "More premium features": [
         "Další prémiové funkce"
+      ],
+      "Storage": [
+        "Úložiště"
       ],
       "Unlimited hide-my-email aliases": [
         "Neomezený počet aliasů Hide-my-email"
@@ -4898,6 +4934,9 @@
       "In restrictive countries": [
         "V restriktivních zemích"
       ],
+      "Included": [
+        "Zahrnuto"
+      ],
       "Inherited from parent folder": [
         "Převzato z nadřazené složky"
       ],
@@ -5213,12 +5252,6 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Nastavením PGP si můžete posílat koncově šifrované e-maily i s uživateli, kteří nejsou klienti ${ BRAND_NAME } a používají kompatibilní PGP službu."
       ],
-      "Settings update failed": [
-        "Aktualizace nastavení selhala"
-      ],
-      "Settings updated": [
-        "Nastavení aktualizováno"
-      ],
       "Share via link settings": [
         "Sdílet nastavení pomocí odkazu"
       ],
@@ -5429,8 +5462,14 @@
       "Update recent documents": [
         "Aktualizovat nedávné dokumenty"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Kdykoli upgradujte, abyste přenesli i zbytek"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Kdykoli upgradujte nebo uvolněte místo, abyste přenesli i zbytek"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Navyšte tarif a zachovejte si své výhody ${ planTitle }."
@@ -10149,6 +10188,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Continue with free storage": [
+        "Pokračovat s bezplatným úložištěm"
+      ],
       "Continue with partial import?": [
         "Pokračovat s částečným importem?"
       ],
@@ -10319,6 +10361,9 @@
       ],
       "Get more from your VPN": [
         "Získejte více ze své VPN"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Získejte více úložiště s ${ MAIL_APP_NAME } Plus"
       ],
       "Get the apps": [
         "Získat aplikace"
