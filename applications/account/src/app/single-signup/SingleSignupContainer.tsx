@@ -701,6 +701,7 @@ const SingleSignupContainer = ({
                                     cache,
                                     api: silentApi,
                                     hvMode: SignupHumanVerification.DEFERRED,
+                                    visitorId: signupParameters.visitorId,
                                 });
                                 setModelDiff({
                                     subscriptionData: result.cache.subscriptionData,

@@ -158,6 +158,8 @@ export const getSignupSearchParams = (
     const city = searchParams.get('city') || undefined;
     const streetAddress = searchParams.get('streetAddress') || undefined;
 
+    const visitorId = searchParams.get('visitorId') || undefined;
+
     return {
         email,
         coupon,
@@ -183,6 +185,7 @@ export const getSignupSearchParams = (
         vatNumber,
         city,
         streetAddress,
+        visitorId,
     };
 };
 
