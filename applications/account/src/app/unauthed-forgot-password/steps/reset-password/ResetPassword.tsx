@@ -6,6 +6,8 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { UserNameWithIcon } from '../../../components/username/UserNameWithIcon';
 import SetPasswordWithPolicyForm from '../../../login/SetPasswordWithPolicyForm';
@@ -93,7 +95,18 @@ export const ResetPassword = () => {
                 method: mnemonicData ? 'mnemonic' : ownershipVerificationMethod,
                 step: 'setNewPassword',
             });
-            errorHandler(error);
+
+            const apiError = getApiError(error);
+            const apiErrorMessage = getApiErrorMessage(error);
+            if (apiError.code === API_CUSTOM_ERROR_CODES.INVALID_VALUE && apiErrorMessage) {
+                createNotification({
+                    type: 'error',
+                    text: c('Error').t`Invalid reset token. Please refresh the page and try again.`,
+                    expiration: 30_000,
+                });
+            } else {
+                errorHandler(error);
+            }
         }
     };
 
