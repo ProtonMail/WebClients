@@ -2,27 +2,30 @@ import { type FC, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { patchOrganizationImporter } from '@proton/activation/src/api/api';
-import { type ApiImporterOrganization, ApiImporterOrganizationState } from '@proton/activation/src/api/api.interface';
+import { ApiImporterOrganizationState } from '@proton/activation/src/api/api.interface';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import Checkbox from '@proton/components/components/input/Checkbox';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import {
+    BorderedContainer,
+    BorderedContainerItem,
+} from '@proton/components/components/BorderedStackedGroup/BorderedContainer';
 import useLoading from '@proton/hooks/useLoading';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { MX_STATE } from '@proton/shared/lib/interfaces';
 
+import { completeMigration } from '../../thunk';
 import type { MigrationModel } from '../../types';
 import { useProviderUsers } from '../../useProviderUsers';
-import { LazyLottie } from '../LazyLottie';
+import MigratingModal from '../MigrationAssistant/MigratingModal';
 import DNSGroupRecords, { type DNSGroup } from './DNSGroupRecords';
 import type { StepComponentProps } from './MigrationSetup';
 
 const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) => {
     const model = migrationConfiguration as MigrationModel;
+    const dispatch = useDispatch();
 
-    const api = useSilentApi();
     const [providerUsers] = useProviderUsers(model.domainName);
     const [loading, withLoading] = useLoading();
     const [confirmed, setConfirmed] = useState(false);
@@ -32,14 +35,14 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
             return;
         }
 
-        await api<ApiImporterOrganization>(
-            patchOrganizationImporter(model.importerOrganizationId!, {
-                State: ApiImporterOrganizationState.COMPLETED,
+        const { State: state } = await dispatch(
+            completeMigration({
+                importerOrganizationId: model.importerOrganizationId,
+                providerUsers: providerUsers ?? [],
             })
-        )
-            .then(({ State }) => State)
-            .catch(() => model.state)
-            .then((state) => model.update({ state }));
+        ).unwrap();
+
+        model.update({ state });
     };
 
     const handleSaveAndExit = () => withLoading(handleFinalize());
@@ -94,7 +97,7 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
                         size="medium"
                         className="rounded-lg"
                     >
-                        {c('Action').t`Save & exit`}
+                        {c('Action').t`Save & finish`}
                     </Button>
                 </div>
             </div>
@@ -119,26 +122,30 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
                 {c('BOSS')
                     .t`You're almost done, you need to configure your domain to receive your emails directly on ${BRAND_NAME}. Once confirmed, your team will stop receiving new emails on Gmail and the migration will be completed.`}
             </p>
-            <LazyLottie
-                style={{ padding: '0 10rem' }}
-                autoPlay
-                getAnimationData={() => import('../../animations/providerSwitch.json')}
-                loop={true}
-            />
             <p className="color-weak">{c('BOSS')
                 .t`Copy the below code and paste it in the DNS section of your domain host.`}</p>
             <DNSGroupRecords group={group} />
-            <Checkbox
-                id="confirm-mx-records"
-                className="items-center text-normal"
-                checked={confirmed}
-                onChange={(e) => setConfirmed(e.target.checked)}
-            >
-                <div className="px-2">
-                    <p className="m-0">{c('Label').t`Confirm MX records added`}</p>
-                    <span className="color-weak text-sm">{c('Info').t`Required to proceed to the next step`}</span>
-                </div>
-            </Checkbox>
+            <BorderedContainer className="mb-4 mt-2">
+                <BorderedContainerItem
+                    className="flex flex-row flex-nowrap items-center gap-2 justify-space-between"
+                    paddingClassName="py-2 px-5"
+                >
+                    <div>
+                        <p className="m-0 text-semibold">{c('Label').t`Confirm MX records added`}</p>
+                        <span className="color-weak text-sm">{c('Info').t`Required to complete the migration`}</span>
+                    </div>
+
+                    <Button
+                        disabled={confirmed}
+                        color="norm"
+                        className="text-semibold rounded-lg"
+                        size="medium"
+                        onClick={() => setConfirmed(true)}
+                    >{c('BOSS').t`Confirm`}</Button>
+                </BorderedContainerItem>
+            </BorderedContainer>
+
+            {loading && <MigratingModal variant="completing" />}
         </div>
     );
 };
