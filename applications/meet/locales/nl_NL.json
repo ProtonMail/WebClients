@@ -101,6 +101,9 @@
       "Done": [
         "Klaar"
       ],
+      "Download": [
+        "Downloaden"
+      ],
       "Download app": [
         "App downloaden"
       ],
@@ -1649,6 +1652,46 @@
         "Beveiligingssleutel"
       ]
     },
+    "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyt",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Systeem standaard"
@@ -2265,14 +2308,8 @@
       "Turn off camera": [
         "Camera uitschakelen"
       ],
-      "Turn off microphone": [
-        "Microfoon uitschakelen"
-      ],
       "Turn on camera": [
         "Zet camera aan"
-      ],
-      "Turn on microphone": [
-        "Microfoon inschakelen"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Het lukt niet om opnieuw verbinding te maken met de vergadering. Probeer opnieuw deel te nemen of verlaat de vergadering."
@@ -2834,6 +2871,14 @@
       ],
       "Verification successful": [
         "Verificatie gelukt"
+      ]
+    },
+    "Table header": {
+      "Actions": [
+        "Acties"
+      ],
+      "Name": [
+        "Naam"
       ]
     },
     "Title": {
