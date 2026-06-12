@@ -132,6 +132,12 @@
       "Choose a file or drag it here": [
         "Виберіть файл або перетягніть його сюди"
       ],
+      "Claim this address": [
+        "Отримати цю адресу"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Отримайте безкоштовну адресу ${ BRAND_NAME }"
+      ],
       "Clear data": [
         "Стерти дані"
       ],
@@ -173,6 +179,9 @@
       ],
       "Continue import": [
         "Продовжити імпорт"
+      ],
+      "Continue with Free": [
+        "Продовжити безкоштовно"
       ],
       "Continue with Google": [
         "Продовжити з Google"
@@ -503,6 +512,9 @@
       ],
       "Reconnect": [
         "Відновити з'єднання"
+      ],
+      "Reconnect to Gmail": [
+        "Повторно підключитися до Gmail"
       ],
       "Recover data": [
         "Відновити дані"
@@ -2060,6 +2072,9 @@
       "Also included": [
         "Також включено"
       ],
+      "Available storage: ${ storageText }": [
+        "Доступне сховище: ${ storageText }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Щоб активувати вашу організацію та налаштувати вашу адресу електронної пошти, спочатку налаштуйте це."
       ],
@@ -2072,8 +2087,14 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Видалення контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Електронні листи, надіслані на ${ connectedAddressText }, тепер з'являтимуться в ${ MAIL_APP_NAME }."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Достатньо місця для електронних листів, вкладень та багато чого іншого на роки вперед."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Отримуйте сповіщення, якщо ваш пароль або інші дані отримали витік зі стороннього сервісу."
@@ -2093,14 +2114,35 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Налаштуйте спосіб відновлення, щоб запобігти втраті доступу до облікового запису."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Це може статися, якщо дозволи було вилучено або ваш пароль змінився."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Щоб і надалі отримувати й надсилати повідомлення Gmail у ${ BRAND_NAME }, повторно підключіть свій обліковий запис."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Щоб і надалі отримувати й надсилати повідомлення Gmail у ${ BRAND_NAME }, повторно підключіть свої облікові записи."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Для гарантування максимальної безпеки вашого облікового запису налаштуйте фразу відновлення."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Щоб імпортувати свої контакти з Google або Outlook, ${ easySwitchLink }."
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Розблокуйте 15 ГБ сховища всього за ${ config.offerPrice }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Ми більше не маємо доступу до ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Ми призупинимо імпорт, коли сховище буде заповнено на 80%, щоб зберегти місце для нових повідомлень."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Ми почали імпортувати ваші електронні листи з Gmail. Ми повідомимо вас, коли процес завершиться."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "З контактними групами ви можете відправляти листи всім у групі одним натисканням."
@@ -2111,11 +2153,20 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Ви можете позначити ті контакти, які ви не хочете ані об'єднувати, ані зберігати. Видалення відбудеться лише після натискання кнопки об'єднання"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Тепер ви можете надсилати електронні листи з ${ BRAND_NAME }, використовуючи цю адресу."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Ваш обліковий запис і способи відновлення налаштовано, а двоетапну автентифікацію ввімкнено."
       ],
       "Your account and data recovery methods are set.": [
         "Ваш обліковий запис і способи відновлення налаштовано."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ваш безкоштовний обліковий запис ${ MAIL_APP_NAME } має обмежений обсяг сховища, тому ми імпортуємо лише ${ newUserStorageText } ваших найновіших повідомлень Gmail"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ваш безкоштовний обліковий запис ${ MAIL_APP_NAME } має обмежений обсяг сховища, тому ми імпортуємо лише ваші найновіші електронні листи з Gmail."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ви вже створили 10 псевдонімів. Отримайте необмежені псевдоніми та 500 ГБ сховища з ${ BRAND_NAME } Unlimited."
@@ -2619,6 +2670,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Назви деяких ваших міток перевищують обмеження кількості символів ${ MAIL_APP_NAME }. Будь ласка, налаштуйте імпорт для зміни цих назв."
       ],
+      "Something went wrong while fetching available domains": [
+        "Під час отримання доступних доменів сталася помилка"
+      ],
       "Something went wrong. Please try again.": [
         "Сталася помилка. Повторіть спробу пізніше."
       ],
@@ -3099,6 +3153,18 @@
       ]
     },
     "Feature": {
+      "10+ premium features": [
+        "Понад 10 преміумфункцій"
+      ],
+      "Custom email domain": [
+        "Власний домен електронної пошти"
+      ],
+      "Email addresses": [
+        "Адреси електронної пошти"
+      ],
+      "Storage": [
+        "Сховище"
+      ],
       "Unlimited hide-my-email aliases": [
         "Необмежена кількість псевдонімів Hide-my-email"
       ]
@@ -3901,6 +3967,9 @@
       "End-to-end encrypted.": [
         "Наскрізно зашифровано."
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Забезпечте повністю приватне й зашифроване спілкування. Отримайте безкоштовну адресу електронної пошти ${ BRAND_NAME } просто зараз."
+      ],
       "Enter password": [
         "Введіть пароль"
       ],
@@ -4017,6 +4086,9 @@
       ],
       "In restrictive countries": [
         "У країнах із обмеженнями"
+      ],
+      "Included": [
+        "Включено"
       ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
@@ -4285,12 +4357,6 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ${ BRAND_NAME }, які використовують PGP-сумісну службу."
       ],
-      "Settings update failed": [
-        "Не вдалося оновити налаштування"
-      ],
-      "Settings updated": [
-        "Налаштування оновлено"
-      ],
       "Share via link settings": [
         "Налаштування посилання для спільного доступу"
       ],
@@ -4420,8 +4486,14 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "На жаль, схоже що неможливо розшифрувати файл або його вміст."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Покращте тарифний план у будь-який час, щоб перенести решту"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Покращте тарифний план або очистьте місце в будь-який час, щоб перенести решту"
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Завантаження сотень файлів одразу може вплинути на швидкодію."
@@ -6604,6 +6676,9 @@
       "You stopped sharing this item": [
         "Ви припинили спільний доступ для цього елемента"
       ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Ваша адреса ${ BRAND_NAME } готова до використання"
+      ],
       "Your settings failed to be saved": [
         "Ваші налаштування не вдалося зберегти"
       ],
@@ -8087,6 +8162,9 @@
       "Change password": [
         "Змінити пароль"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Отримайте адресу ${ MAIL_APP_NAME }"
+      ],
       "Clearing data": [
         "Стирання даних"
       ],
@@ -8107,6 +8185,9 @@
       ],
       "Contacts": [
         "Контакти"
+      ],
+      "Continue with free storage": [
+        "Продовжити з безкоштовним сховищем"
       ],
       "Continue with partial import?": [
         "Продовжити частковий імпорт?"
@@ -8186,6 +8267,9 @@
       "Discard changes?": [
         "Відхилити зміни?"
       ],
+      "Disconnected from Gmail": [
+        "Від'єднано від Gmail"
+      ],
       "Docs": [
         "Документи"
       ],
@@ -8251,6 +8335,9 @@
       ],
       "Exporting contacts": [
         "Експортування контактів"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Отримайте більше місця у сховищі з ${ MAIL_APP_NAME } Plus"
       ],
       "Get the apps": [
         "Отримати програми"
@@ -8479,6 +8566,9 @@
       ],
       "Warning: suspected fake website": [
         "Попередження: імовірно підроблений вебсайт"
+      ],
+      "You are all set": [
+        "Усе готово"
       ],
       "You have no folders yet": [
         "У вас поки немає тек"
