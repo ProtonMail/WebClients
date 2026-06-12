@@ -58,7 +58,7 @@ export const createBasicAuthController = (): BasicAuthController => {
             const enabled = selectAutofillSettings(ctx.service.store.getState()).basicAuth ?? false;
             if (!(authorized && enabled)) return { cancel: false };
 
-            const items = ctx.service.autofill.getLoginCandidates({ url });
+            const items = ctx.service.autofill.getLoginCandidates({ url, strict: true });
             return resolveCredentials({ items, url, attempt });
         } finally {
             authRequests.set(requestId, attempt + 1);
