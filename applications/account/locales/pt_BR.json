@@ -462,9 +462,6 @@
       "Create new policy": [
         "Criar uma política"
       ],
-      "Create organization": [
-        "Criar organização"
-      ],
       "Create recovery phrase": [
         "Criar frase de recuperação"
       ],
@@ -3289,17 +3286,11 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Adicionar usuários manualmente"
-      ],
       "Cancel": [
         "Cancelar"
       ],
       "Close": [
         "Fechar"
-      ],
-      "Configure your network": [
-        "Configurar sua rede"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar usando ${ MAIL_APP_NAME }."
@@ -3322,12 +3313,6 @@
       "Got it": [
         "Entendi"
       ],
-      "Invite your team": [
-        "Convidar sua equipe"
-      ],
-      "Manage global VPN permissions": [
-        "Gerenciar permissões globais da VPN"
-      ],
       "Maybe later": [
         "Talvez mais tarde"
       ],
@@ -3337,17 +3322,11 @@
       "Remind me later": [
         "Lembre-me mais tarde"
       ],
-      "Secure your organization": [
-        "Proteja sua organização"
-      ],
       "Send": [
         "Enviar"
       ],
       "Set up other features": [
         "Configure outros recursos"
-      ],
-      "Set up SSO": [
-        "Configurar SSO"
       ],
       "Sign in": [
         "Iniciar sessão"
@@ -4226,6 +4205,9 @@
       ],
       "Canada": [
         "Canadá"
+      ],
+      "Canary Islands": [
+        "Ilhas Canárias"
       ],
       "Cape Verde": [
         "Cabo Verde"
@@ -5147,6 +5129,9 @@
       ]
     },
     "Description": {
+      "${ BRAND_NAME }'s end-to-end encryption means only you can unlock your data. Set up recovery options now to ensure you never lose access.": [
+        "A criptografia de ponta a ponta da ${ BRAND_NAME } garante que só você possa acessar seus dados. Configure agora as opções de recuperação para garantir que você nunca perca o acesso."
+      ],
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } em ${ DRIVE_APP_NAME } permite que você colabore com outras pessoas em um ambiente seguro e criptografado."
       ],
@@ -5198,9 +5183,6 @@
       "Connect your CRM, website, printers, and more.": [
         "\"Conecte seu CRM, site, impressoras e outros dispositivos."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Crie um Gateway para dar aos seus usuários acesso aos seus recursos de TI através de servidores dedicados."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Crie uma reunião no Zoom e adicione detalhes de participação ao seu evento com um clique."
       ],
@@ -5210,14 +5192,8 @@
       "Create groups you can email with a single address.": [
         "Crie grupos que podem ser contatados por meio de um único endereço de e-mail."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Criar novas contas de usuário ou importar usuários com provisionamento SCIM de SSO (autenticação única)."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Crie políticas para decidir quem pode se conectar a servidores compartilhados em cada país."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Decida quais usuários podem conectar a cada uma das nossas mais de 120 localizações de servidor compartilhadas."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Tenha acesso facilitado ao seu e-mail e calendário, tanto no computador quanto em dispositivos móveis."
@@ -5242,6 +5218,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Criptografando e importando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Espaço suficiente para anos de e-mails, anexos e muito mais."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Garanta o acesso seguro aos dados da organização, mesmo que sua equipe esteja trabalhando remotamente ou utilizando redes Wi-Fi públicas."
@@ -5273,8 +5252,8 @@
       "How we supported local activists when privacy and free speech were threatened.": [
         "Como apoiamos ativistas locais quando a privacidade e a liberdade de expressão foram ameaçadas."
       ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Se você ainda não tiver feito isso, ative alguns métodos de recuperação para garantir que você nunca perca acesso ao ${ VPN_APP_NAME }."
+      "How you unlock your encrypted data if you lose your password.": [
+        "Como desbloquear seus dados criptografados caso perca sua senha."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contatos que você está importando contém alguns grupos. Verifique como esses grupos devem ser importados."
@@ -5293,6 +5272,9 @@
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Crie seu próprio rodapé de e-mail - mostre sua marca exclusiva, não a nossa."
+      ],
+      "Methods that include both password reset and data recovery.": [
+        "Métodos que incluem tanto a redefinição de senha quanto a recuperação de dados."
       ],
       "No ads. No trackers.": [
         "Sem anúncios. Sem rastreadores."
@@ -5320,6 +5302,9 @@
       ],
       "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
         "Isso permite recuperar o acesso na sua conta da ${ BRAND_NAME } mas não recupera seus dados criptografados."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Isso pode acontecer se as permissões foram removidas ou se a sua senha foi alterada."
       ],
       "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
         "Para conectar um endereço Gmail diferente, remova os endereços extras do Gmail que estão sendo encaminhados para ${ BRAND_NAME }."
@@ -5370,11 +5355,17 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Importaremos seus e-mails antigos e conectar seu Gmail ao ${ MAIL_APP_NAME } para que as novas mensagens apareçam automaticamente"
       ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Vamos importar seus e-mails antigos, pular duplicatas e conectar ao seu Gmail para que as novas mensagens apareçam automaticamente. Você pode desfazer a importação a qualquer momento nas configurações do Easy Switch."
+      ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Iniciamos a importar seus e-mails do Gmail. Avisaremos quando terminar."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Lamentamos sua saída. Se tiver um momento, gostaríamos muito de saber o motivo do cancelamento. Seu feedback nos ajuda a fazer a ${ BRAND_NAME } ainda melhor para todos."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Com as novas categorias de e-mail, apenas mensagens importantes chegam à sua caixa de entrada principal. As categorias funcionam exatamente como filtros de spam. O ${ MAIL_APP_NAME } nunca lê seus e-mails ou compartilha seus dados."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Você já possui um endereço do Gmail encaminhando para o ${ MAIL_APP_NAME }. Conecte-o abaixo para enviar e receber mensagens diretamente no ${ MAIL_APP_NAME }."
@@ -5396,6 +5387,12 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Você agora pode enviar e-mails da ${ BRAND_NAME } usando este endereço."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Você ainda pode fazer login com este endereço e se reconectar a qualquer momento."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Você não poderá mais usar ${ address.Email } para receber e enviar e-mails em ${ BRAND_NAME }. Observe também que as mensagens enviadas para este endereço a partir de ${ BRAND_NAME } não serão mais criptografadas de ponta a ponta."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Você está encaminhando ${ numAddressesOrSync } endereço do Gmail para o ${ MAIL_APP_NAME }.",
@@ -7390,6 +7387,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos seus nomes de marcadores excederam o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
+      ],
+      "Something went wrong while converting the address": [
+        "Ocorreu um erro ao converter o endereço"
       ],
       "Something went wrong while creating the address": [
         "Algo deu errado ao criar o endereço"
@@ -9811,8 +9811,14 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importe seus códigos existentes** de outros aplicativos de A2F, como o Google Autenticador"
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Convide seus amigos** para ${ BRAND_NAME } com seu link de indicação."
+      ],
       "**Sync codes** to all your devices": [
         "**Sincronizar códigos** para todos os seus dispositivos"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**Eles ganham ${ refereeRewardAmount }** em créditos se se inscreverem."
       ],
       "**This will disable 2-factor authentication.**": [
         "**Isso desativará a autenticação de 2 fatores.**"
@@ -9820,8 +9826,17 @@
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Isso desativará os encaminhamentos de e-mail criptografados de ponta a ponta:** você pode configurá-los novamente mais tarde."
       ],
+      "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
+        "**Ganhe ${ referrerRewardAmount }** créditos para cada amigo que se inscrever."
+      ],
+      "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
+        "**O e-mail de recuperação, por si só, não permite que você recupere seus dados criptografados** após redefinir sua senha."
+      ],
       "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
         "**Seus métodos de recuperação serão invalidados:** você pode gerar novos dados de recuperação mais tarde."
+      ],
+      "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
+        "**O telefone de recuperação, por si só, não permite que você recupere seus dados criptografados** após redefinir sua senha."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } mais",
@@ -9893,6 +9908,9 @@
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Adicionar ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Add 1 to 5 people who you trust and can contact easily. They will be able to reset your password for you by signing in to your account. They must already have a ${ BRAND_NAME } Account.": [
+        "Adicione de 1 a 5 pessoas em quem você confia e com quem possa entrar em contato facilmente. Elas poderão redefinir sua senha ao acessarem sua conta. Elas já devem ter uma conta da ${ BRAND_NAME }."
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adicione um endereço de e-mail @pm.me na sua conta. Este domínio simples e curto significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privado\""
@@ -10891,9 +10909,6 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Seja notificado se a sua senha ou outros dados pessoais foram vazados. ${ learnMoreLinkNoBreach }"
       ],
-      "Get started": [
-        "Começar"
-      ],
       "Get started with the referral link above.": [
         "Comece com o link de referência acima."
       ],
@@ -11225,6 +11240,12 @@
       ],
       "Item updated in vault": [
         "Item atualizado no cofre"
+      ],
+      "It’s often the easiest way to recover your account if you’re signed in.": [
+        "Muitas vezes, essa é a maneira mais fácil de recuperar sua conta se você estiver conectado."
+      ],
+      "It’s the only way to instantly recover everything, so make sure you keep it somewhere safe but accessible.": [
+        "É a única maneira de recuperar tudo instantaneamente, por isso certifique-se de guardá-la em um local seguro, mas de fácil acesso."
       ],
       "JCB logo": [
         "Logotipo JCB"
@@ -11941,9 +11962,6 @@
       "Set up your organization": [
         "Configure a sua organização"
       ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Configure sua organização e comece a proteger seus dados em poucos passos simples."
-      ],
       "Setting successfully saved": [
         "A configuração foi salva"
       ],
@@ -12346,6 +12364,9 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Isso permitirá que o PayPal seja usado para pagar sua assinatura da ${ BRAND_NAME }. Iremos redirecioná-lo para o PayPal em uma nova guia do navegador. Se você usar bloqueadores de pop-up, desative-os para continuar."
       ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
+        "Isso permitirá que você acesse sua conta da ${ BRAND_NAME } de forma rápida e segura para alterar sua senha."
+      ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Isto irá excluir permanentemente os dados e todos os endereços de e-mail associados a estes usuários."
       ],
@@ -12682,6 +12703,12 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Recomendamos usar os aplicativos oficiais do ${ VPN_APP_NAME } quando possível."
       ],
+      "We can use your recovery email to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "Podemos usar seu e-mail de recuperação para enviar um código de verificação para redefinir sua senha e para entrar em contato com você caso detectemos atividades suspeitas."
+      ],
+      "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "Podemos usar seu telefone de recuperação para enviar um código de verificação para redefinir sua senha e para entrar em contato com você caso detectemos atividades suspeitas."
+      ],
       "We couldn't complete the transaction. Please try again.": [
         "Não foi possível concluir a transação. Tente novamente."
       ],
@@ -12726,6 +12753,9 @@
       ],
       "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
         "Armazenamos um arquivo de backup neste navegador porque você permitiu a recuperação de dados neste ${ deviceLink }. Se o arquivo de backup for válido, você recuperará imediatamente o acesso total ou parcial aos seus dados criptografados."
+      ],
+      "We strongly recommend that everyone enable recovery by recovery phrase.": [
+        "Recomendamos enfaticamente que todos ativem a recuperação por frase de recuperação."
       ],
       "We use 3-D Secure to protect your payments": [
         "Usamos 3-D Secure para proteger seus pagamentos"
@@ -13188,6 +13218,9 @@
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Suas alterações recentes foram publicadas. Elas ficarão visíveis para os usuários nas próximas horas."
       ],
+      "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Seu arquivo de recuperação restaurará o acesso a e-mails, contatos, arquivos, senhas e quaisquer outros dados criptografados em sua conta após uma redefinição de senha."
+      ],
       "Your recovery phrase": [
         "Sua frase de recuperação"
       ],
@@ -13329,11 +13362,6 @@
         "Somente leitura"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "É assim que sua organização aparecerá para os usuários. Você pode mudar isso a qualquer momento."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Não é um endereço de e-mail válido"
@@ -13347,11 +13375,6 @@
     "Input placeholder": {
       "Add label": [
         "Adicionar marcador"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Qual é o nome da sua organização?"
       ]
     },
     "invitation status": {
@@ -15350,6 +15373,9 @@
       ],
       "Vulnerable password": [
         "Senha vulnerável"
+      ],
+      "We securely stored recovery information on this device.": [
+        "Armazenamos com segurança as informações de recuperação neste dispositivo."
       ],
       "Weak": [
         "Fraco"
@@ -19634,9 +19660,6 @@
       "Enter a name": [
         "Insira um nome"
       ],
-      "Enter name": [
-        "Inserir nome"
-      ],
       "example@domain.com": [
         "exemplo@dominio.com"
       ],
@@ -20289,6 +20312,9 @@
       ],
       "Weak": [
         "Fraco"
+      ],
+      "Your account and data can be recovered": [
+        "Sua conta e dados podem ser recuperados"
       ]
     },
     "Recovery score item": {
@@ -20428,6 +20454,9 @@
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Aproveite o **${ planTitle }** gratuitamente até **${ textDate }**."
+      ],
+      "Give ${ refereeRewardAmount }, get ${ referrerRewardAmount }": [
+        "Dê ${ refereeRewardAmount }, receba ${ referrerRewardAmount }"
       ],
       "How your free trial works:": [
         "Como funciona seu teste gratuito:"
@@ -21076,6 +21105,9 @@
       "Add options": [
         "Adicionar opções"
       ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Adicione pessoas em quem você confia e com quem possa entrar em contato facilmente. Seu contato de emergência poderá acessar sua conta e redefinir sua senha para você, se necessário."
+      ],
       "Add phone number": [
         "Adicionar número de telefone"
       ],
@@ -21183,6 +21215,9 @@
       ],
       "Here's how you increased your account protection:": [
         "Veja como você aumentou a segurança da sua conta:"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Se você perder o acesso à sua conta da ${ BRAND_NAME }, permitirá que você inicie sessão e recupere seus dados. Essa é a única maneira de restaurar tudo instantaneamente, portanto, certifique-se de guardá-la em um local seguro."
       ],
       "Later": [
         "Mais tarde"
@@ -23873,6 +23908,9 @@
       "Password copied to clipboard": [
         "A senha foi copiada para a área de transferências."
       ],
+      "Password reminders disabled": [
+        "Lembretes de senhas desativados"
+      ],
       "Password reminders enabled": [
         "Lembretes de senhas ativados"
       ],
@@ -24928,9 +24966,6 @@
       "Disconnected from Gmail": [
         "Desconectado do Gmail"
       ],
-      "Dismiss setup checklist": [
-        "Dispensar lista de verificação de configuração"
-      ],
       "Display name and signature": [
         "Nome de exibição e assinatura"
       ],
@@ -25219,9 +25254,6 @@
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Obtenha mais armazenamento com ${ MAIL_APP_NAME } Plus"
-      ],
-      "Get started": [
-        "Começar"
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Obtenha o aplicativo em todos os seus dispositivos e desfrute de acesso seguro e contínuo em qualquer lugar."
@@ -25937,7 +25969,7 @@
         "Resumo"
       ],
       "Summer Sale": [
-        "Promoção de verão"
+        "Oferta Especial"
       ],
       "Support ticket closed": [
         "Ticket de suporte fechado"
@@ -26133,9 +26165,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Boas-vindas ao ${ BRAND_NAME } for Business"
-      ],
-      "Welcome to ${ planName }": [
-        "Bem-vindo ao ${ planName }"
       ],
       "Welcome to your new password manager!": [
         "Bem-vindo ao seu novo gerenciador de senhas!"
@@ -26625,8 +26654,8 @@
       "User is a group": [
         "Usuário é um grupo"
       ],
-      "via ${ groupName }": [
-        "via ${ groupName }"
+      "via ${ groupNames }": [
+        "via ${ groupNames }"
       ],
       "Waiting for user to accept the invitation": [
         "Esperando o usuário aceitar o convite"

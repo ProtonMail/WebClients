@@ -156,6 +156,9 @@
       "Choose my own password": [
         "Fren awal-iw uffir"
       ],
+      "Claim this address": [
+        "Suter tansa-agi"
+      ],
       "Clear all formatting": [
         "Sfeḍ akk imasalen"
       ],
@@ -314,6 +317,9 @@
       ],
       "Discard Changes": [
         "Aggi Isniflen"
+      ],
+      "Disconnect": [
+        "Kkes tuqqna"
       ],
       "Dismiss": [
         "Zgel"
@@ -620,6 +626,9 @@
       ],
       "Or": [
         "Neɣ"
+      ],
+      "Or use a different Gmail address": [
+        "Neɣ seqdec tansa n Gmail nniḍen"
       ],
       "Ordered list": [
         "Tabdart n usmizwer"
@@ -978,6 +987,9 @@
       "Use recovery code": [
         "Seqdec tangalt n tririt"
       ],
+      "Use this Gmail address": [
+        "Seqdec tansa-agi n Gmail"
+      ],
       "Use your current email instead": [
         "Seqdec tansa-k•m tamirant deg umḍiq"
       ],
@@ -1113,6 +1125,9 @@
       ],
       "Disabled": [
         "Yensa"
+      ],
+      "Disconnected": [
+        "Yekkes tuqqna"
       ],
       "External": [
         "Azɣaray"
@@ -2618,8 +2633,23 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Akka d-yettban tabdart n yinermisen i d-tketreḍ deg-s kra n yigrawen. Ttxil-k·m senqed amek i ilaq ad d-ttwaktaren yigrawen-a."
       ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "A d-nawi imaylen-ik iqdacen u ad nqqen Gmail-ik ɣer ${ MAIL_APP_NAME } iwakken iznan imaynuten ad d-ttbanen s ttawil n tumanut"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "A nsserṛeḥ imaylen-ik iqdacen, ad nezgel ayen yettwalesen, u ad nqqen ɣer Gmail-ik iwakken iznan imaynuten ad d-ttbanen s ttawil n tumanut. Tizmired ad tsewtid aserṛeḥ melmi i k-yehwa deg yiɣewwaren n Easy Switch"
+      ],
+      "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "S tiggayin timaynutin n yimaylen, d izenan yesɛan azal kan i d-yettawḍen ɣer tnakat-ik n unermas tagejdant. Tiggayin xeddment am yimsizdigen n yispamen. ${ MAIL_APP_NAME } leɛmer yeɣra imaylen-ik neɣ ibḍa isefka-ik."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Tzemreḍ ad d-tketreḍ tidyanin s umasal (afaylu ICS).\nAfaylu ilaq ad yesɛu teɣzi tafellayt n ${ MAX_IMPORT_FILE_SIZE_STRING } rnu ad yili deg-s alamma ${ MAX_IMPORT_EVENTS_STRING } n tedyanin.\nMa yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t d ifuyla meẓẓiyen."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Tzemreḍ ad tkecmeḍ s tansa-agi u ad t-id-tqqneḍ tallit i k-yehhwan."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Ur ttuɣaleḍ ara ad tzemreḍ ad tseqdceḍ ${ address.Email } i urmes d uzen n yimaylen di ${ BRAND_NAME }. Ẓer daɣen belli iznan yettwaznen ɣer tansa-a seg ${ BRAND_NAME } ur ttuɣalen ara d wid yettwawgelhen seg yixef ɣer yixef."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4309,6 +4339,11 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Fren ${ boldExport } i usifeḍ n uwitay am ufaylu ICS."
+      ]
+    },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        "Tebɣiḍ s tidet ad tserḥeḍ tasarut tusligt? Usserṛeḥ n tsarut tusligt i d-yettwanulfan s war taɣellist neɣ i deg tella tuffɣa n yisali yezmer ad d-yawi axasfay i tɣellist n yimaylen-ik.\n\nTtxil-k, ẓer daɣen d akken tasarut tazayezt icudden ɣer tsarut-a tusligt ad tili i yal yiwen seg uqeddac-nneɣ n tsura. Ma yella tasarut deg-s isalen n yiman-ik (am yisem-ik n tidet) ur tebɣiḍ ara ad d-tessufeḍ, di textiri, ẓreg-itt uqbel ad t-tserḥeḍ."
       ]
     },
     "Import status": {
@@ -6709,6 +6744,12 @@
     "Label (end date/advanced search)": {
       "To": [
         "I"
+      ]
+    },
+    "Label BYOE": {
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ byoeAddressesAvailableCount } seg ${ maxBYOEAddresses } n tansa n yimayl i yellan",
+        "${ byoeAddressesAvailableCount } seg ${ maxBYOEAddresses } n tansiwin n yimayl i yellan"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9766,6 +9807,9 @@
       "Are you sure you want to close?": [
         "D tidet tebɣiḍ ad t-tmedleḍ?"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "Tettedreḍ tebɣiḍ ad tekkseḍ tuqqna n tansa-agi?"
+      ],
       "Are you sure?": [
         "Tetḥeqqeḍ?"
       ],
@@ -10422,6 +10466,9 @@
       ],
       "Summary": [
         "Agzul"
+      ],
+      "Summer Sale": [
+        "Tanzayt n unebdu"
       ],
       "Switch account": [
         "Beddel amiḍan"
