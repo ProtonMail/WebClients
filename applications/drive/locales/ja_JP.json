@@ -1256,6 +1256,9 @@
       ],
       "Get the deal": [
         "割引をゲット"
+      ],
+      "Continue with Free": [
+        "無料で続行"
       ]
     },
     "Action: Docs": {
@@ -3057,6 +3060,36 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "${ BRAND_NAME } から、このアドレスを使用してメールを送信できるようになりました。"
+      ],
+      "Available storage: ${ storageText }": [
+        "利用可能なストレージ: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "${ connectedAddressText }宛てに送信されたメールが${ MAIL_APP_NAME }に表示されるようになります。"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "メールや添付ファイル、その他のデータを何年分も保存できる十分な容量があります。"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "これは、権限が削除されたか、お客様のパスワードが変更された場合に発生する可能性があります。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "${ BRAND_NAME }でGmailのメッセージの送受信を継続するには、アカウントを再接続してください。"
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "たった${ config.offerPrice }で15GBの容量をアンロック。"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "新規メッセージ用の容量を確保するため、ストレージ容量が80%に達した時点でインポートを一時停止します。"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Gmailからのメールのインポートを開始しました。完了次第お知らせいたします。"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "お客様の無料の${ MAIL_APP_NAME }アカウントはストレージ容量が限られているため、直近のGmailメッセージから${ newUserStorageText }分のみインポートされます。"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "お客様の無料の${ MAIL_APP_NAME }アカウントはストレージ容量が限られているため、直近のGmailメールのみがインポートされます。"
       ]
     },
     "description": {
@@ -3991,6 +4024,9 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "現在のプランでのユーザー数の上限に達しました。新規ユーザーを追加するにはアップグレードしてください。"
+      ],
+      "Something went wrong while fetching available domains": [
+        "利用可能なドメインのフェッチ中にエラーが発生しました"
       ]
     },
     "error": {
@@ -4382,6 +4418,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "無制限の Hide-my-email エイリアス"
+      ],
+      "10+ premium features": [
+        "10個以上のプレミアム機能"
+      ],
+      "Custom email domain": [
+        "カスタムメールドメイン"
+      ],
+      "Email addresses": [
+        "メールアドレス"
+      ],
+      "Storage": [
+        "ストレージ"
       ]
     },
     "Features": {
@@ -6920,6 +6968,18 @@
       ],
       "${ total } user found": [
         "${ total } 人のユーザーが見つかりました"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "${ memberCount } 人のメンバーのために安全なクラウドを作成"
+      ],
+      "Included": [
+        "含まれています"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "残りを持ち越すためにいつでもアップグレードできます"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "残りのメールを取り込むには、いつでもアップグレードするか容量を空けてください"
       ]
     },
     "info": {
@@ -8713,6 +8773,9 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "広告やウイルスから保護してくれるVPN"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "${ n }個の予約ページの予定されたスケジュール"
       ]
     },
     "new_plans: feature highlight": {
@@ -9122,6 +9185,9 @@
       ],
       "Support for ${ n } custom email domain": [
         "${ n } 個のカスタムドメインメールアドレスのサポート"
+      ],
+      "${ n } country": [
+        "${ n } カ国"
       ]
     },
     "Notification": {
@@ -9439,6 +9505,9 @@
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" を共有しました"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "${ BRAND_NAME }アドレスの準備が整いました"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10228,6 +10297,9 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "この鍵を「信頼しない」ことをおすすめします。"
+      ],
+      "This key is used for message verification": [
+        "このキーはメッセージの認証に使用されています"
       ]
     },
     "PGP key warning": {
@@ -11596,6 +11668,9 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "${ PAID_PREMIUM_MAX_PARTICIPANTS }人まで参加可能なビデオ会議"
       ]
     },
     "subscription reminder": {
@@ -12998,6 +13073,18 @@
       ],
       "Disconnected from Gmail": [
         "Gmailから切断しました"
+      ],
+      "Continue with free storage": [
+        "無料のストレージのまま続行"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "${ MAIL_APP_NAME } Plusでストレージ容量を増やす"
+      ],
+      "Summer Sale": [
+        "サマーセール"
+      ],
+      "You are all set": [
+        "準備が完了しました"
       ]
     },
     "Today icon tooltip in mini calendar": {

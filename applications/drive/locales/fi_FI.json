@@ -1284,6 +1284,9 @@
       ],
       "List layout": [
         "Listanäkymä"
+      ],
+      "Continue with Free": [
+        "Jatka maksuttomalla"
       ]
     },
     "Action: Docs": {
@@ -3031,6 +3034,27 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Voit nyt lähettää sähköposteja ${ BRAND_NAME }:sta tällä osoitteella."
+      ],
+      "Available storage: ${ storageText }": [
+        "Käytettävissä oleva tallennustila: ${ storageText }"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Tarpeeksi tilaa vuosien sähköposteille, liitteille ja muulle."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Avaa 15 Gt tallennustilaa vain hintaan ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Pysäytämme tuonnit, kun tallennustilasta on käytössä 80 %, varataksemme tilaa uusille viesteille."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Olemme aloittaneet sähköpostienne tuomisen Gmailista. Ilmoitamme teille, kun se on valmis."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Maksuttomaan ${ MAIL_APP_NAME }-tiliinne kuuluu rajoitetusti tallennustilaa, joten tuomme vain ${ newUserStorageText } viimeisimmistä Gmail-viesteistänne"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Maksuttomaan ${ MAIL_APP_NAME }-tiliinne kuuluu rajoitetusti tallennustilaa, joten tuomme vain viimeisimmät Gmail-sähköpostinne."
       ]
     },
     "description": {
@@ -4336,6 +4360,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Rajattomasti Hide-my-email-aliaksia"
+      ],
+      "10+ premium features": [
+        "Yli 10 premium-ominaisuutta"
+      ],
+      "Custom email domain": [
+        "Mukautettu sähköpostin verkkotunnus"
+      ],
+      "Email addresses": [
+        "Sähköpostiosoitteet"
+      ],
+      "Storage": [
+        "Tallennustila"
       ]
     },
     "Features": {
@@ -6952,6 +6988,15 @@
       ],
       "Please select the labels you would like to import:": [
         "Valitse tuotavat nimikkeet:"
+      ],
+      "Included": [
+        "Sisältyy"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Päivitä milloin tahansa tuodaksesi loputkin"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Päivitä tai tyhjennä tilaa milloin tahansa tuodaksesi loputkin"
       ]
     },
     "info": {
@@ -13081,6 +13126,15 @@
       ],
       "Out of storage space": [
         "Tallennustila loppunut"
+      ],
+      "Continue with free storage": [
+        "Jatka maksuttoman tallennustilan käyttöä"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Hanki lisää tallennustilaa ${ MAIL_APP_NAME } Plus -tilauksella"
+      ],
+      "Summer Sale": [
+        "Kesäale"
       ]
     },
     "Today icon tooltip in mini calendar": {

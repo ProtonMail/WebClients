@@ -1281,6 +1281,12 @@
       ],
       "Try ${ BRAND_NAME } Workspace": [
         "Prueba ${ BRAND_NAME } Workspace"
+      ],
+      "Continue with Free": [
+        "Seguir con el plan gratuito"
+      ],
+      "Reconnect to Gmail": [
+        "Reconectar a Gmail"
       ]
     },
     "Action: Docs": {
@@ -2903,6 +2909,9 @@
       ],
       "Åland Islands": [
         "Islas Aland"
+      ],
+      "Canary Islands": [
+        "Islas Canarias"
       ]
     },
     "customer_support.feature.all": {
@@ -3092,6 +3101,45 @@
       ],
       "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
         "Para una incorporación perfecta de tu equipo a ${ BRAND_NAME }, importa tus datos desde Google, Outlook y otras plataformas."
+      ],
+      "Available storage: ${ storageText }": [
+        "Almacenamiento disponible: ${ storageText }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Los correos electrónicos enviados a ${ connectedAddressText } ahora se mostrarán en ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Espacio de sobra para años de correos electrónicos, archivos adjuntos y mucho más."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Esto puede ocurrir si se eliminaron los permisos o si cambió tu contraseña."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Para seguir recibiendo y enviando mensajes de Gmail en ${ BRAND_NAME }, vuelve a conectar tu cuenta."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Para seguir recibiendo y enviando mensajes de Gmail en ${ BRAND_NAME }, vuelve a conectar tus cuentas."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Desbloquea 15 GB de almacenamiento por solo ${ config.offerPrice }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Ya no podemos acceder a ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Pausaremos las importaciones al llegar al 80 % de almacenamiento para reservar espacio para nuevos mensajes."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Hemos empezado a importar tus correos electrónicos de Gmail. Te avisaremos cuando haya terminado."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Ya puedes enviar correos electrónicos desde ${ BRAND_NAME } usando esta dirección."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Tu cuenta gratuita de ${ MAIL_APP_NAME } tiene almacenamiento limitado, así que solo se importa ${ newUserStorageText } de tus mensajes de Gmail más recientes."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Tu cuenta gratuita de ${ MAIL_APP_NAME } tiene almacenamiento limitado, así que solo se importan tus correos electrónicos de Gmail más recientes."
       ]
     },
     "description": {
@@ -4046,6 +4094,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "El número de IVA debe empezar por ${ prefixes }."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Algo salió mal al obtener los dominios disponibles"
       ]
     },
     "error": {
@@ -4440,6 +4491,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Alias hide-my-email ilimitados"
+      ],
+      "10+ premium features": [
+        "Más de 10 funciones prémium"
+      ],
+      "Custom email domain": [
+        "Dominio de correo electrónico personalizado"
+      ],
+      "Email addresses": [
+        "Direcciones de correo electrónico"
+      ],
+      "Storage": [
+        "Almacenamiento"
       ]
     },
     "Features": {
@@ -7106,6 +7169,18 @@
       ],
       "Upgrade to get more storage space": [
         "Mejora tu plan para obtener más espacio de almacenamiento"
+      ],
+      "Included": [
+        "Incluido"
+      ],
+      "Please select the labels you would like to import:": [
+        "Selecciona las etiquetas que quieres importar:"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Mejora tu plan en cualquier momento para traer el resto."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Mejora tu plan o libera espacio en cualquier momento para traer el resto."
       ]
     },
     "info": {
@@ -9788,6 +9863,9 @@
       ],
       "Your settings have been changed successfully": [
         "Se ha modificado tu configuración."
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Tu dirección de ${ BRAND_NAME } ya está lista para usar"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13447,6 +13525,18 @@
       ],
       "Out of storage space": [
         "No queda espacio de almacenamiento"
+      ],
+      "Continue with free storage": [
+        "Continúa con el almacenamiento gratuito"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Consigue más almacenamiento con ${ MAIL_APP_NAME } Plus"
+      ],
+      "Summer Sale": [
+        "Descuento de verano"
+      ],
+      "You are all set": [
+        "Ya está todo listo"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13547,6 +13637,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Hemos enviado una invitación para acceder al elemento."
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Asistencia de IA al instante y un experto humano a tu disposición."
       ]
     },
     "tooltip": {
@@ -13848,6 +13941,21 @@
       ],
       "What are you migrating?": [
         "¿Qué estás migrando?"
+      ],
+      "Data migration status from Google Workspace to ${ BRAND_NAME }": [
+        "Estado de la migración de datos de Google Workspace a ${ BRAND_NAME }"
+      ],
+      "Emails": [
+        "Correos electrónicos"
+      ],
+      "Migrate": [
+        "Migrar"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Selecciona exactamente lo que quieres migrar. Se aplica a todo el equipo de la organización."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Quienes han accedido a su cuenta de ${ BRAND_NAME }"
       ]
     },
     "Notitication": {
