@@ -1658,6 +1658,18 @@
       ],
       "Zoom out": [
         "Pomniejsz"
+      ],
+      "Continue with Free": [
+        "Kontynuuj z wersją bezpłatną"
+      ],
+      "Or use a different Gmail address": [
+        "Lub użyj innego adresu Gmail"
+      ],
+      "Reconnect to Gmail": [
+        "Połącz ponownie z Gmailem"
+      ],
+      "Use this Gmail address": [
+        "Użyj tego adresu Gmail"
       ]
     },
     "action": {
@@ -4001,6 +4013,66 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
+      ],
+      "Available storage: ${ storageText }": [
+        "Dostępna przestrzeń dyskowa: ${ storageText }"
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Zablokuj Google możliwość profilowania Cię. Gmail nie widzi, co robisz w ${ MAIL_APP_NAME }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Wiadomości wysyłane na adres ${ connectedAddressText } będą teraz pojawiać się w ${ MAIL_APP_NAME }."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Wystarczająco dużo miejsca na lata wiadomości, załączników i nie tylko."
+      ],
+      "No ads. No trackers.": [
+        "Bez reklam. Bez elementów śledzących."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Czytaj, odpowiadaj i bądź na bieżąco z Gmailem bezpośrednio w ${ MAIL_APP_NAME }"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Może się tak zdarzyć, jeśli uprawnienia zostały usunięte lub zmieniło się Twoje hasło."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Aby nadal odbierać i wysyłać wiadomości Gmail w ${ BRAND_NAME }, połącz ponownie swoje konto."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Aby nadal odbierać i wysyłać wiadomości Gmail w ${ BRAND_NAME }, połącz ponownie swoje konta."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Odblokuj 15 GB przestrzeni dyskowej za jedyne ${ config.offerPrice }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nie mamy już dostępu do ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Wstrzymamy importowanie przy 80% zapełnienia przestrzeni dyskowej, aby zarezerwować miejsce na nowe wiadomości."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Przeniesiemy Twoje stare wiadomości i połączymy Twój Gmail z ${ MAIL_APP_NAME }, aby nowe wiadomości pojawiały się automatycznie"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Zaimportujemy Twoje stare wiadomości, pominiemy duplikaty i połączymy się z Twoim kontem Gmail, aby nowe wiadomości pojawiały się automatycznie. Możesz cofnąć import w dowolnym momencie w ustawieniach Easy Switch"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Rozpoczęliśmy importowanie Twoich wiadomości z Gmaila. Damy Ci znać, gdy się zakończy."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Masz już adres Gmail przekazujący wiadomości do ${ MAIL_APP_NAME }. Połącz go poniżej, aby wysyłać i odbierać wiadomości bezpośrednio z ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Masz już adresy Gmail przekazujące wiadomości do ${ MAIL_APP_NAME }. Połącz jeden z nich poniżej, aby wysyłać i odbierać wiadomości bezpośrednio z ${ MAIL_APP_NAME }."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Możesz teraz wysyłać wiadomości z ${ BRAND_NAME }, używając tego adresu."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Twoje bezpłatne konto ${ MAIL_APP_NAME } ma ograniczoną przestrzeń dyskową, dlatego zaimportujemy tylko ${ newUserStorageText } najnowszych wiadomości z Gmaila"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Twoje bezpłatne konto ${ MAIL_APP_NAME } ma ograniczoną przestrzeń dyskową, dlatego zaimportujemy tylko najnowsze wiadomości z Gmaila."
       ]
     },
     "description": {
@@ -4881,6 +4953,18 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Wykorzystano limit liczby użytkowników w obecnym planie. Ulepsz plan, aby dodać nowego użytkownika."
+      ],
+      "Address is already added to your account": [
+        "Adres został już dodany do Twojego konta"
+      ],
+      "Something went wrong while converting the address": [
+        "Coś poszło nie tak podczas konwertowania adresu"
+      ],
+      "Something went wrong while creating the address": [
+        "Coś poszło nie tak podczas tworzenia adresu"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Coś poszło nie tak podczas pobierania dostępnych domen"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5288,6 +5372,18 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Nieograniczona liczba aliasów hide-my-email"
+      ],
+      "10+ premium features": [
+        "Ponad 10 funkcji premium"
+      ],
+      "Custom email domain": [
+        "Niestandardowa domena e-mail"
+      ],
+      "Email addresses": [
+        "Adresy e-mail"
+      ],
+      "Storage": [
+        "Przestrzeń dyskowa"
       ]
     },
     "Features": {
@@ -8662,6 +8758,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od uporządkowanej skrzynki odbiorczej dzieli Cię kilka kliknięć"
+      ],
+      "Included": [
+        "W pakiecie"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Ulepsz konto w dowolnym momencie, aby przenieść resztę"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Ulepsz konto lub zwolnij miejsce w dowolnym momencie, aby przenieść resztę"
       ]
     },
     "info": {
@@ -9626,6 +9731,9 @@
       ],
       "ZIP code": [
         "Kod pocztowy"
+      ],
+      "Select which Gmail address to connect": [
+        "Wybierz adres Gmail, który chcesz połączyć"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11290,6 +11398,9 @@
       ],
       "Trial started": [
         "Wersja próbna została rozpoczęta"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Twój adres ${ BRAND_NAME } jest gotowy do użycia"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15221,6 +15332,27 @@
       ],
       "Your shorter address is now ready": [
         "Krótszy adres jest już gotowy"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Prnieś swój Gmail do ${ MAIL_APP_NAME }"
+      ],
+      "Continue with free storage": [
+        "Kontynuuj z bezpłatną przestrzenią dyskową"
+      ],
+      "Disconnected from Gmail": [
+        "Rozłączono z Gmailem"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Zyskaj więcej przestrzeni dyskowej dzięki ${ MAIL_APP_NAME } Plus"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Wysyłaj i odbieraj wiadomości Gmail za pomocą ${ MAIL_APP_NAME }"
+      ],
+      "Summer Sale": [
+        "Letnie promocje"
+      ],
+      "You are all set": [
+        "Wszystko gotowe"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15977,6 +16109,14 @@
       ],
       "SUMMER SALE": [
         "LETNIE PROMOCJE"
+      ]
+    },
+    "Onboarding List Placeholder": {
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Przenieś swoje wiadomości do ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Przenieś swoje dotychczasowe wiadomości do ${ MAIL_APP_NAME }, aby móc zarządzać wszystkim z jednej prywatnej skrzynki odbiorczej."
       ]
     }
   }

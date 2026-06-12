@@ -4154,6 +4154,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "ჩვენ გადმოვიტანთ თქვენს ძველ ელფოსტას და დავაკავშირებთ თქვენს Gmail-ს ${ MAIL_APP_NAME }-თან, რათა ახალი შეტყობინებები ავტომატურად გამოჩნდეს"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "ჩვენ მოვახდენთ თქვენი ძველი ელფოსტის იმპორტს, გამოვტოვებთ დუბლიკატებს და დავუკავშირდებით თქვენს Gmail-ს, რათა ახალი შეტყობინებები ავტომატურად გამოჩნდეს. იმპორტის დაბრუნება ნებისმიერ დროს შეგიძლიათ Easy Switch-ის პარამეტრებში"
       ]
     },
     "description": {
@@ -11535,6 +11541,12 @@
       ],
       "Skip for now": [
         "ჯეჯერობით გამოტოვება"
+      ],
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "გადმოიტანეთ თქვენი ელფოსტა ${ MAIL_APP_NAME }-ში"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "გადმოიტანეთ თქვენი არსებული ელფოსტა ${ MAIL_APP_NAME }-ში, რათა ყველაფერი ერთი პირადი შემოსულებიდან მართოთ."
       ]
     },
     "Onboarding modal": {
@@ -15346,7 +15358,10 @@
         "დაგზავნის სიები"
       ],
       "Summer Sale": [
-        "საზაფხულო ფასდაკლება"
+        "ზაფხულის ფასდაკლება"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "გააგზავნეთ და მიიღეთ Gmail ${ MAIL_APP_NAME }-ის გამოყენებით"
       ]
     },
     "Today icon tooltip in mini calendar": {

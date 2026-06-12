@@ -1661,6 +1661,21 @@
       ],
       "Zoom out": [
         "Távolítás"
+      ],
+      "Connect your email": [
+        "Csatlakoztassa az e-mail-címét"
+      ],
+      "Continue with Free": [
+        "Folytatás az ingyenes verzióval"
+      ],
+      "Or use a different Gmail address": [
+        "Vagy egy másik Gmail-cím használata"
+      ],
+      "Reconnect to Gmail": [
+        "Kapcsolódjon újra a Gmailhez"
+      ],
+      "Use this Gmail address": [
+        "Ezen Gmail-cím használata"
       ]
     },
     "action": {
@@ -4003,6 +4018,66 @@
       ],
       "Enough room for years of emails, attachments and more.": [
         "Több évnyi e-mail számára elegendő hely, mellékletekkel és további lehetőségek."
+      ],
+      "Available storage: ${ storageText }": [
+        "Elérhető tárhely: ${ storageText }"
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Akadályozza meg, hogy a Google profilt készítsen Önről. A Gmail nem láthatja, mit tesz a ${ MAIL_APP_NAME } alkalmazásban."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "A(z) ${ connectedAddressText } címre küldött e-mailek mostantól megjelennek a ${ MAIL_APP_NAME } alkalmazásban."
+      ],
+      "No ads. No trackers.": [
+        "Nincsenek hirdetések. Nincsenek követők."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Olvassa, válaszolja meg és tartsa kézben Gmail-üzeneteit a ${ MAIL_APP_NAME } alkalmazáson belül"
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Küldjön és fogadjon Gmail-üzeneteket közvetlenül a ${ MAIL_APP_NAME } alkalmazásban. Csatlakoztassa a címét itt: ${ addressesSettingsLink }."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Ez olyankor fordulhat elő, ha az engedélyeket eltávolították, vagy megváltozott a jelszava."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Ahhoz, hogy továbbra is fogadhasson és küldhessen Gmail-üzeneteket a ${ BRAND_NAME } szolgáltatásban, kérjük, csatlakoztassa újra a fiókját."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Ahhoz, hogy továbbra is fogadhasson és küldhessen Gmail-üzeneteket a ${ BRAND_NAME } szolgáltatásban, kérjük, csatlakoztassa újra a fiókjait."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Oldjon fel 15 GB tárhelyet mindössze ${ config.offerPrice } áron."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Már nincs hozzáférésünk a következőhöz: ${ boldEmails }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Az importálást 80%-os tárhelytelítettségnél szüneteltetjük, hogy helyet biztosítsunk az új üzeneteknek."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Áthozzuk a régi e-mailjeit, és összekapcsoljuk a Gmailjét a ${ MAIL_APP_NAME } alkalmazással, így az új üzenetek automatikusan megjelennek"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Importáljuk a régi e-mailjeit, átugorjuk a duplikátumokat, és kapcsolódunk a Gmail-fiókjához, hogy az új üzenetek automatikusan megjelenjenek. Az importálást bármikor visszavonhatja az Easy Switch beállításaiban"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Elindítottuk az e-mailjei importálását a Gmailből. Értesíteni fogjuk, ha befejeződött."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Már van egy Gmail-címe, amely továbbítja a leveleket a ${ MAIL_APP_NAME } alkalmazásba. Csatlakoztassa alább, hogy közvetlenül a ${ MAIL_APP_NAME } alkalmazásból küldhessen és fogadhasson e-maileket."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Már vannak olyan Gmail-címei, amelyek továbbítják a leveleket a ${ MAIL_APP_NAME } alkalmazásba. Csatlakoztasson egyet alább, hogy közvetlenül a ${ MAIL_APP_NAME } alkalmazásból küldhessen és fogadhasson e-maileket."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Mostantól küldhet e-maileket a ${ BRAND_NAME } szolgáltatásból erről a címről."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Az ingyenes ${ MAIL_APP_NAME }-fiókja korlátozott tárhellyel rendelkezik, ezért csak a legutóbbi Gmail-üzeneteiből importálunk ${ newUserStorageText } mennyiséget"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Az ingyenes ${ MAIL_APP_NAME }-fiókja korlátozott tárhellyel rendelkezik, ezért csak a legutóbbi Gmail e-mailjeit importáljuk."
       ]
     },
     "description": {
@@ -4914,6 +4989,18 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Valamennyi, az előfizetéséhez rendelkezésére álló felhasználót elhasználta. Több felhasználó létrehozásához váltson nagyobb csomagra."
+      ],
+      "Address is already added to your account": [
+        "A cím már hozzá van adva a fiókjához"
+      ],
+      "Something went wrong while converting the address": [
+        "Hiba történt a cím átalakítása közben"
+      ],
+      "Something went wrong while creating the address": [
+        "Hiba történt a cím létrehozása közben"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Hiba történt az elérhető domainnevek lekérése közben"
       ]
     },
     "error": {
@@ -5341,6 +5428,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Korlátlan számú hide-my-email álnév"
+      ],
+      "10+ premium features": [
+        "10+ prémium funkció"
+      ],
+      "Custom email domain": [
+        "Egyéni e-mail-domainnév"
+      ],
+      "Email addresses": [
+        "E-mail-címek"
+      ],
+      "Storage": [
+        "Tárhely"
       ]
     },
     "Features": {
@@ -8514,6 +8613,15 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Ezután a számlázás ${ renewCycle } havonta történik, ${ renewAmountStr } összeggel. Bármikor lemondhatja.",
         "Ezután a számlázás ${ renewCycle } havonta történik, ${ renewAmountStr } összeggel. Bármikor lemondhatja."
+      ],
+      "Included": [
+        "Tartalmazza"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Frissítsen bármikor a többi áthozatalához"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Bármikor frissíthet nagyobb csomagra vagy szabadíthat fel helyet a többi áthozatalához"
       ]
     },
     "info": {
@@ -9525,6 +9633,9 @@
       ],
       "Category:": [
         "Kategória:"
+      ],
+      "Select which Gmail address to connect": [
+        "Válassza ki a csatlakoztatni kívánt Gmail-címet"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11131,6 +11242,9 @@
       ],
       "Trial started": [
         "A próbaidőszak elkezdődött"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "A(z) ${ BRAND_NAME }-címe használatra kész"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11261,6 +11375,12 @@
     "Onboarding List Placeholder": {
       "Maybe later": [
         "Talán később"
+      ],
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Hozza át e-mailjeit a ${ MAIL_APP_NAME } alkalmazásba"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Hozza át meglévő e-mailjeit a ${ MAIL_APP_NAME } alkalmazásba, hogy mindent egyetlen privát beérkezett üzenetek mappából kezelhessen."
       ]
     },
     "Onboarding modal": {
@@ -14953,6 +15073,27 @@
       ],
       "Disconnected from Gmail": [
         "Leválasztva a Gmailről"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Hozza át a Gmailjét a ${ MAIL_APP_NAME } alkalmazásba"
+      ],
+      "Continue with free storage": [
+        "Folytatás az ingyenes tárhellyel"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Szerezzen több tárhelyet a ${ MAIL_APP_NAME } Plus segítségével"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Gmail-üzenetek küldése és fogadása a ${ MAIL_APP_NAME } alkalmazással"
+      ],
+      "Summer Sale": [
+        "Nyári akció"
+      ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Használja biztonságosan a Gmailt a ${ MAIL_APP_NAME } alkalmazásban"
+      ],
+      "You are all set": [
+        "Minden készen áll"
       ]
     },
     "Today icon tooltip in mini calendar": {

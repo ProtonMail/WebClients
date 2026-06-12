@@ -1676,6 +1676,15 @@
       ],
       "Verify now": [
         "Verificar agora"
+      ],
+      "Continue with Free": [
+        "Continuar com a versão gratuita"
+      ],
+      "Or use a different Gmail address": [
+        "Ou utilizar um endereço do Gmail diferente"
+      ],
+      "Use this Gmail address": [
+        "Utilizar este endereço do Gmail"
       ]
     },
     "action": {
@@ -4043,6 +4052,33 @@
       ],
       "You’re among the first to try our new category view before it launches. Your feedback will help improve how Proton Mail sorts emails for everyone.": [
         "Está entre os primeiros a experimentar a nossa nova vista por categoria antes do seu lançamento. Os seus comentários ajudarão a melhorar a forma como o Proton Mail organiza os e-mails para todos os utilizadores."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Os e-mails enviados para ${ connectedAddressText } serão agora mostrados no ${ MAIL_APP_NAME }."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Leia, responda e mantenha-se a par do Gmail a partir do ${ MAIL_APP_NAME }"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Isto pode acontecer se as permissões tiverem sido removidas ou se a sua palavra-passe tiver sido alterada."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Para continuar a receber e a enviar mensagens do Gmail no ${ BRAND_NAME }, volte a ligar a sua conta."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Iremos colocar as importações em pausa aos 80% de armazenamento para reservar espaço para novas mensagens."
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Iremos importar os seus e-mails antigos, ignorar duplicados e ligar ao seu Gmail para que as novas mensagens apareçam automaticamente. Pode desfazer a importação a qualquer momento nas definições do Easy Switch"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Começámos a importar os seus e-mails do Gmail. Avisá-lo-emos quando estiver concluído."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Já tem endereços do Gmail a encaminhar para o ${ MAIL_APP_NAME }. Ligue um abaixo para enviar e receber e-mails diretamente a partir do ${ MAIL_APP_NAME }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "A sua conta gratuita do ${ MAIL_APP_NAME } tem armazenamento limitado, pelo que apenas iremos importar os seus e-mails mais recentes do Gmail."
       ]
     },
     "description": {
@@ -4940,6 +4976,15 @@
       ],
       "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
         "Não é possível desencriptar a sua mensagem. Se eliminou alguma das chaves dos seus endereços, experimente ${ reimportKeyLink }. ${ learnMoreLink }"
+      ],
+      "Something went wrong while converting the address": [
+        "Ocorreu um erro ao converter o endereço"
+      ],
+      "Something went wrong while creating the address": [
+        "Ocorreu um erro ao criar o endereço"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Ocorreu um erro ao obter os domínios disponíveis"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5365,6 +5410,9 @@
       ],
       "Storage": [
         "Armazenamento"
+      ],
+      "10+ premium features": [
+        "Mais de 10 funcionalidades premium"
       ]
     },
     "Features": {
@@ -8569,6 +8617,9 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
         "A sua próxima data de faturação é ${ renewalTime }. Pode cancelar a qualquer momento."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Atualize ou limpe espaço a qualquer momento para trazer o resto"
       ]
     },
     "info": {
@@ -11233,6 +11284,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Frase-passe copiada para a área de transferência"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "O seu endereço do ${ BRAND_NAME } está pronto a usar"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15149,6 +15203,18 @@
       ],
       "Your newsletters in one place": [
         "As suas newsletters num único local"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Traga o seu Gmail para o ${ MAIL_APP_NAME }"
+      ],
+      "Continue with free storage": [
+        "Continuar com o armazenamento gratuito"
+      ],
+      "Summer Sale": [
+        "Saldos de Verão"
+      ],
+      "You are all set": [
+        "Está tudo pronto"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15959,6 +16025,9 @@
       ],
       "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
         "Mude os serviços que utiliza diariamente para o seu endereço ${ BRAND_NAME } para maior segurança e privacidade."
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Traga os seus e-mails existentes para o ${ MAIL_APP_NAME } para poder gerir tudo a partir de uma caixa de entrada privada."
       ]
     },
     "Payments.error": {

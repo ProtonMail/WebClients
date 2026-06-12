@@ -1700,6 +1700,15 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Connect your email": [
+        "Yhdistä sähköpostinne"
+      ],
+      "Continue with Free": [
+        "Jatka maksuttomalla"
+      ],
+      "Or use a different Gmail address": [
+        "Tai käytä toista Gmail-osoitetta"
       ]
     },
     "action": {
@@ -3850,6 +3859,9 @@
       ],
       "Åland Islands": [
         "Ahvenanmaa"
+      ],
+      "Canary Islands": [
+        "Kanariansaaret"
       ]
     },
     "customer_support.feature.all": {
@@ -4218,6 +4230,33 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
+      ],
+      "Available storage: ${ storageText }": [
+        "Käytettävissä oleva tallennustila: ${ storageText }"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Tarpeeksi tilaa vuosien sähköposteille, liitteille ja muulle."
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Lähetä ja vastaanota Gmail-viestejä suoraan palvelussa ${ MAIL_APP_NAME }. Yhdistä osoitteenne kohdassa ${ addressesSettingsLink }."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Avaa 15 Gt tallennustilaa vain hintaan ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Pysäytämme tuonnit, kun tallennustilasta on käytössä 80 %, varataksemme tilaa uusille viesteille."
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Tuomme vanhat sähköpostinne, ohitamme kaksoiskappaleet ja yhdistämme Gmail-tiliinne, jotta uudet viestit tulevat näkyviin automaattisesti. Voitte kumota tuonnin milloin tahansa Easy Switch -asetuksissa"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Olemme aloittaneet sähköpostienne tuomisen Gmailista. Ilmoitamme teille, kun se on valmis."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Maksuttomaan ${ MAIL_APP_NAME }-tiliinne kuuluu rajoitetusti tallennustilaa, joten tuomme vain ${ newUserStorageText } viimeisimmistä Gmail-viesteistänne"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Maksuttomaan ${ MAIL_APP_NAME }-tiliinne kuuluu rajoitetusti tallennustilaa, joten tuomme vain viimeisimmät Gmail-sähköpostinne."
       ]
     },
     "description": {
@@ -5619,6 +5658,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Rajattomasti Hide-my-email-aliaksia"
+      ],
+      "10+ premium features": [
+        "Yli 10 premium-ominaisuutta"
+      ],
+      "Custom email domain": [
+        "Mukautettu sähköpostin verkkotunnus"
+      ],
+      "Email addresses": [
+        "Sähköpostiosoitteet"
+      ],
+      "Storage": [
+        "Tallennustila"
       ]
     },
     "Features": {
@@ -8905,6 +8956,18 @@
       "${ total } user found": [
         "Löytyi ${ total } käyttäjä",
         "${ total } käyttäjää löytyi"
+      ],
+      "Included": [
+        "Sisältyy"
+      ],
+      "Please select the labels you would like to import:": [
+        "Valitse tuotavat nimikkeet:"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Päivitä milloin tahansa tuodaksesi loputkin"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Päivitä tai tyhjennä tilaa milloin tahansa tuodaksesi loputkin"
       ]
     },
     "info": {
@@ -11784,6 +11847,9 @@
       ],
       "Some popular services": [
         "Jotkut suositut palvelut"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Tuokaa nykyiset sähköpostinne palveluun ${ MAIL_APP_NAME }, jotta voitte hallita kaikkea yhdestä yksityisestä saapuneet-kansiosta."
       ]
     },
     "Onboarding modal": {
@@ -15734,6 +15800,15 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "Continue with free storage": [
+        "Jatka maksuttoman tallennustilan käyttöä"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Hanki lisää tallennustilaa ${ MAIL_APP_NAME } Plus -tilauksella"
+      ],
+      "Summer Sale": [
+        "Kesäale"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15828,6 +15903,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lataa julkinen avain mahdollistaaksesi päästä päähän -salattujen viestien lähetyksen tähän osoitteeseen"
+      ],
+      "Instant AI assistance, human expert on hand!": [
+        "Välitön tekoälyapu, ihmisasiantuntija valmiina auttamaan!"
       ]
     },
     "tooltip": {

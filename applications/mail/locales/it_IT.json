@@ -1694,6 +1694,12 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Connect your email": [
+        "Connetti la tua email"
+      ],
+      "Continue with Free": [
+        "Continua con la versione gratuita"
       ]
     },
     "action": {
@@ -1791,6 +1797,10 @@
       ],
       "Writing assistant seats": [
         "Posti dell'assistente alla scrittura"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licenza ${ MEET_APP_NAME }",
+        "${ seats } licenze ${ MEET_APP_NAME }"
       ]
     },
     "Alert": {
@@ -4225,6 +4235,33 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
+      ],
+      "Available storage: ${ storageText }": [
+        "Archiviazione disponibile: ${ storageText }"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Abbastanza spazio per anni di email, allegati e altro."
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Invia e ricevi messaggi Gmail direttamente in ${ MAIL_APP_NAME }. Connetti il tuo indirizzo in ${ addressesSettingsLink }."
+      ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Sblocca 15 GB di archiviazione a soli ${ config.offerPrice }."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Metteremo in pausa le importazioni all'80% dell'archiviazione per riservare spazio per i nuovi messaggi."
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Importeremo le tue vecchie email, ignoreremo i duplicati e ci connetteremo al tuo Gmail in modo che i nuovi messaggi appaiano automaticamente. Puoi annullare l'importazione in qualsiasi momento nelle impostazioni di Easy Switch."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Abbiamo iniziato a importare le tue email da Gmail. Ti faremo sapere quando avremo finito."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Il tuo account gratuito ${ MAIL_APP_NAME } ha un'archiviazione limitata, quindi importeremo solo ${ newUserStorageText } dei tuoi messaggi Gmail più recenti"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Il tuo account gratuito ${ MAIL_APP_NAME } ha un'archiviazione limitata, quindi importeremo solo le tue email di Gmail più recenti."
       ]
     },
     "description": {
@@ -5192,6 +5229,9 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Hai utilizzato tutti gli utenti del tuo piano. Per favore effettua l'upgrade del tuo piano per aggiungere un nuovo utente."
+      ],
+      "Something went wrong while converting the address": [
+        "Si è verificato un errore durante la conversione dell'indirizzo"
       ]
     },
     "error": {
@@ -5622,6 +5662,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Alias Hide-my-email illimitati"
+      ],
+      "10+ premium features": [
+        "10+ funzionalità premium"
+      ],
+      "Custom email domain": [
+        "Dominio email personalizzato"
+      ],
+      "Email addresses": [
+        "Indirizzi email"
+      ],
+      "Storage": [
+        "Archiviazione"
       ]
     },
     "Features": {
@@ -8867,6 +8919,19 @@
       "${ total } user found": [
         "${ total } utente trovato",
         "${ total } utenti trovati"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Crea un cloud sicuro per ${ memberCount } membro",
+        "Crea un cloud sicuro per ${ memberCount } membri"
+      ],
+      "Included": [
+        "Incluso"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "Effettua l'upgrade in qualsiasi momento per trasferire il resto"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Effettua l'upgrade o libera spazio in qualsiasi momento per trasferire il resto"
       ]
     },
     "info": {
@@ -9908,6 +9973,15 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Category:": [
+        "Categoria:"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Email personali e di lavoro, e in più importanti aggiornamenti e notifiche"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Condividi le tue disponibilità con le pagine di prenotazione in ${ CALENDAR_APP_NAME }, e organizza riunioni sicure con ${ MEET_APP_NAME }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10420,6 +10494,10 @@
       "Up to ${ n } participant": [
         "Fino a ${ n } partecipante",
         "Fino a ${ n } partecipanti"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videoconferenze, ${ n } partecipante",
+        "Videoconferenze, ${ n } partecipanti"
       ]
     },
     "Message": {
@@ -11548,6 +11626,10 @@
       "Support for ${ n } custom email domain": [
         "Supporto per ${ n } dominio email personalizzato",
         "Supporto per ${ n } domini email personalizzati"
+      ],
+      "${ n } country": [
+        "${ n } paese",
+        "${ n } paesi"
       ]
     },
     "Notification": {
@@ -11764,6 +11846,9 @@
       ],
       "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
         "Passa i servizi che usi ogni giorno al tuo indirizzo ${ BRAND_NAME } per una maggiore sicurezza e privacy."
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Porta le tue email esistenti su ${ MAIL_APP_NAME } in modo da poter gestire tutto da un'unica posta in arrivo privata."
       ]
     },
     "Onboarding modal": {
@@ -12375,6 +12460,9 @@
       ],
       "We recommend that you \"untrust\" this key.": [
         "Ti consigliamo di \"non considerare attendibile\" questa chiave."
+      ],
+      "This key is used for message verification": [
+        "Questa chiave è usata per la verifica dei messaggi"
       ]
     },
     "PGP key warning": {
@@ -13328,6 +13416,9 @@
       ],
       "Smallest first": [
         "Meno grande prima"
+      ],
+      "Sort by": [
+        "Ordina per"
       ]
     },
     "specialoffer: Action": {
@@ -14068,6 +14159,10 @@
       ],
       "Your own short @pm.me email alias": [
         "Il tuo alias email breve @pm.me"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videoconferenze, fino a ${ PAID_PREMIUM_MAX_PARTICIPANTS } partecipante",
+        "Videoconferenze, fino a ${ PAID_PREMIUM_MAX_PARTICIPANTS } partecipanti"
       ]
     },
     "subscription reminder": {
@@ -15706,6 +15801,15 @@
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
+      ],
+      "Continue with free storage": [
+        "Continua con l'archiviazione gratuita"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Ottieni più archiviazione con ${ MAIL_APP_NAME } Plus"
+      ],
+      "Summer Sale": [
+        "Saldi estivi"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16393,6 +16497,17 @@
       ],
       "SUMMER SALE": [
         "SALDI ESTIVI"
+      ]
+    },
+    "Filter": {
+      "Filter": [
+        "﻿Filtra"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licenza inclusa",
+        "${ seats } licenze incluse"
       ]
     }
   }
