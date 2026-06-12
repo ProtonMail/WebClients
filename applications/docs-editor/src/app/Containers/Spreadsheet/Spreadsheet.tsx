@@ -185,7 +185,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     onEditorLoadResult(TranslatedResult.ok())
   }, [onEditorLoadResult])
 
-  const { onInsertFile, importExcelFile, importCSVFile, calculateNow } = state
+  const { onInsertFile, importExcelFile, importCSVFile, calculateNow, writeBasePatchIfNecessary } = state
   const handleExcelFileImport = useCallback(
     async (file: File, type: 'excel' | 'ods') => {
       setImportType(type)
@@ -205,8 +205,9 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
         disableEvaluation: requiresRecalc,
         shouldResetCellDependencyGraph: true,
       })
+      void writeBasePatchIfNecessary().catch(console.error)
     },
-    [calculateNow, docState, generateStatePatches, importExcelFile, state.yjsState],
+    [calculateNow, docState, generateStatePatches, importExcelFile, state.yjsState, writeBasePatchIfNecessary],
   )
   useEffect(() => {
     if (!editorInitializationConfig) {

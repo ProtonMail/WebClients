@@ -319,7 +319,7 @@ function useYjsState({ localState, spreadsheetState, docState }: YjsStateDepende
 
 function applyPatchToLocalState(patches: SpreadsheetPatch) {
   useLocalSpreadsheetState.setState((state) => {
-    return {
+    const newState = {
       ...state,
       sheetData: patches.sheetData ? applyPatchesImmer(state.sheetData, patches.sheetData.patches) : state.sheetData,
       sheets: patches.sheets ? applyPatchesImmer(state.sheets, patches.sheets.patches) : state.sheets,
@@ -344,6 +344,13 @@ function applyPatchToLocalState(patches: SpreadsheetPatch) {
         ? applyPatchesImmer(state.sharedStrings, patches.sharedStrings.patches)
         : state.sharedStrings,
     }
+    if (!(newState.cellXfs instanceof Map)) {
+      newState.cellXfs = state.cellXfs
+    }
+    if (!(newState.sharedStrings instanceof Map)) {
+      newState.sharedStrings = state.sharedStrings
+    }
+    return newState
   })
 }
 
@@ -424,31 +431,34 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
 
   const { pushPatches, hasBasePatchesStored } = deps
   const wroteBasePatch = useRef(false)
+  const writeBasePatchIfNecessary = useCallback(async () => {
+    // Only the first caller that sees no base patch claims the write.
+    if (!wroteBasePatch.current) {
+      const hasBasePatches = await hasBasePatchesStored()
+      // Re-check the ref after the await in case another update claimed it
+      // while we were waiting on the IndexedDB round-trip.
+      if (!hasBasePatches && !wroteBasePatch.current) {
+        wroteBasePatch.current = true // set synchronously before the async write
+        const baseState = { ...useLocalSpreadsheetState.getState() }
+        for (const key of Object.keys(baseState)) {
+          if (typeof baseState[key as keyof LocalState] === 'function') {
+            delete baseState[key as keyof LocalState]
+          }
+          if ((key === 'cellXfs' || key === 'sharedStrings') && baseState[key]) {
+            ;(baseState as any)[key] = Object.fromEntries(baseState[key].entries()) as unknown as
+              | CellXfs
+              | SharedStrings
+          }
+        }
+        pushPatches([[structuredClone(baseState), null]], '', SheetsPatchesType.Base)
+      }
+    }
+  }, [hasBasePatchesStored, pushPatches])
   useEffect(() => {
     async function handleUpdatePropagation(update: Uint8Array<ArrayBuffer>) {
       const patches = structuredClone(latestPatches.current.shift())
       if (patches) {
-        // Only the first caller that sees no base patch claims the write.
-        if (!wroteBasePatch.current) {
-          const hasBasePatches = await hasBasePatchesStored()
-          // Re-check the ref after the await in case another update claimed it
-          // while we were waiting on the IndexedDB round-trip.
-          if (!hasBasePatches && !wroteBasePatch.current) {
-            wroteBasePatch.current = true // set synchronously before the async write
-            const baseState = { ...useLocalSpreadsheetState.getState() }
-            for (const key of Object.keys(baseState)) {
-              if (typeof baseState[key as keyof LocalState] === 'function') {
-                delete baseState[key as keyof LocalState]
-              }
-              if ((key === 'cellXfs' || key === 'sharedStrings') && baseState[key]) {
-                ;(baseState as any)[key] = Object.fromEntries(baseState[key].entries()) as unknown as
-                  | CellXfs
-                  | SharedStrings
-              }
-            }
-            pushPatches([[structuredClone(baseState), null]], '', SheetsPatchesType.Base)
-          }
-        }
+        await writeBasePatchIfNecessary()
         const hash = await getBufferHash(update)
         pushPatches(patches, hash)
       }
@@ -457,7 +467,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     return () => {
       deps.docState.removeUpdatePropagationListener(handleUpdatePropagation)
     }
-  }, [deps.docState, hasBasePatchesStored, pushPatches])
+  }, [deps.docState, hasBasePatchesStored, pushPatches, writeBasePatchIfNecessary])
 
   const previousLocaleResolved = useRef(localeResolved)
   const { receivedEverythingFromRTS } = useSyncedState()
@@ -628,6 +638,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     kv,
     locale,
     applyPatches,
+    writeBasePatchIfNecessary,
   }
 }
 export type ProtonSheetsState = ReturnType<typeof useProtonSheetsState>
