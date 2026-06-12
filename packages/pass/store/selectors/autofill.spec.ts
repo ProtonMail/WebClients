@@ -71,6 +71,36 @@ describe('Autofill selectors', () => {
             const candidates = selectAutofillLoginCandidates(parseUrl('https://domain-of-hidden-share.com'))(state);
             expect(candidates.length).toEqual(0);
         });
+
+        describe('strict option', () => {
+            /* https://sub.domain.google.com */
+            const item4 = state.items.byShareId.share3.item4;
+            /* https://my.sub.domain.google.com */
+            const item5 = state.items.byShareId.share3.item5;
+
+            test('should not return sibling-subdomain items in strict mode', () => {
+                const candidates = selectAutofillLoginCandidates({
+                    ...parseUrl('https://account.google.com'),
+                    strict: true,
+                })(state);
+                expect(candidates).not.toContain(item4);
+                expect(candidates).not.toContain(item5);
+            });
+
+            test('should return sibling-subdomain items without strict option', () => {
+                const candidates = selectAutofillLoginCandidates(parseUrl('https://account.google.com'))(state);
+                expect(candidates).toContain(item4);
+                expect(candidates).toContain(item5);
+            });
+
+            test('should return the exact host item in strict mode', () => {
+                const candidates = selectAutofillLoginCandidates({
+                    ...parseUrl('https://sub.domain.google.com'),
+                    strict: true,
+                })(state);
+                expect(candidates).toContain(item4);
+            });
+        });
     });
 
     describe('selectOTPCandidate', () => {
