@@ -12,7 +12,7 @@ import { selectCategories } from './index';
 // We know categories are labels
 export const selectCategoriesLabel = createSelector([selectCategories], (categories): Label[] => {
     const raw = categories.value ?? [];
-    const onlyCategories = raw.filter((label) => isCategoryLabel(label.ID));
+    const onlyCategories = raw.filter((label): label is Label => isCategoryLabel(label.ID));
     return sortSystemCategories(onlyCategories);
 });
 

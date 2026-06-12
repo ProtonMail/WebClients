@@ -8,6 +8,7 @@ export interface Label {
     Path: string;
     Display?: number;
     Notify?: number;
+    LastUnseenMessageEventID: number | null;
 }
 
 export interface LabelCount {
