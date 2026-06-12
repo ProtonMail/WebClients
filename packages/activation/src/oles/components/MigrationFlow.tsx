@@ -7,13 +7,10 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import usePrevious from '@proton/hooks/usePrevious';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { getDomainRegistrar } from '@proton/shared/lib/api/domains';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { DomainRegistrar } from '@proton/shared/lib/interfaces';
 
 import { ApiImporterOrganizationState } from '../../api/api.interface';
 import { EASY_SWITCH_FEATURES, OAUTH_PROVIDER } from '../../interface';
@@ -46,7 +43,6 @@ const SETUP_DEFAULTS: MigrationConfiguration = {
 };
 
 const MigrationFlow = () => {
-    const api = useSilentApi();
     const dispatch = useDispatch();
     const [customDomains] = useCustomDomains();
     const [importerOrganizations] = useImporterOrganizations();
@@ -104,18 +100,6 @@ const MigrationFlow = () => {
         connectionState,
         update: onUpdate,
     };
-
-    useEffect(() => {
-        void (async () => {
-            if (!domain) {
-                onUpdate({ domainRegistrarId: undefined });
-                return;
-            }
-
-            const { RegistrarID } = await api<DomainRegistrar>(getDomainRegistrar(domain.ID));
-            onUpdate({ domainRegistrarId: RegistrarID ?? undefined });
-        })();
-    }, [domain]);
 
     const prevModelState = usePrevious(model.state);
     useEffect(() => {

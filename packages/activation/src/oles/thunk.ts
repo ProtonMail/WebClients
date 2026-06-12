@@ -3,29 +3,40 @@ import { c } from 'ttag';
 
 import { type AddressKeysState, addressKeysThunk } from '@proton/account/addressKeys';
 import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
-import { createAddress } from '@proton/account/addresses/actions';
+import { orderAddresses } from '@proton/account/addresses/actions';
 import type { KtState } from '@proton/account/kt';
+import { getKTActivation } from '@proton/account/kt/actions';
 import { UnavailableAddressesError, getMemberAddresses, membersThunk } from '@proton/account/members';
 import { createMember } from '@proton/account/members/actions';
 import { decryptTemporaryPassword, encryptTemporaryPassword } from '@proton/account/orgJoiningLink/helpers';
 import { organizationThunk } from '@proton/account/organization';
 import { type OrganizationKeyState, organizationKeyThunk } from '@proton/account/organizationKey';
 import type { ProtonDomainsState } from '@proton/account/protonDomains';
+import { userThunk } from '@proton/account/user';
 import type { UserInvitationsState } from '@proton/account/userInvitations';
-import type { UserSettingsState } from '@proton/account/userSettings';
+import { userKeysThunk } from '@proton/account/userKeys';
+import { type UserSettingsState, userSettingsThunk } from '@proton/account/userSettings';
 import { type CalendarsState, calendarsThunk } from '@proton/calendar/calendars';
+import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { createCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { authMember, updateQuota } from '@proton/shared/lib/api/members';
+import { authMember, createMemberAddress, updateQuota } from '@proton/shared/lib/api/members';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
 import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { DEFAULT_CALENDAR } from '@proton/shared/lib/calendar/constants';
 import { setupCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/setupCalendarKeys';
-import { MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
+import {
+    ADDRESS_FLAGS,
+    DEFAULT_KEYGEN_TYPE,
+    KEYGEN_CONFIGS,
+    MEMBER_PRIVATE,
+    MEMBER_ROLE,
+} from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import {
     type Address,
@@ -33,19 +44,28 @@ import {
     CreateMemberMode,
     type Domain,
     type KeyPair,
+    type KeyTransparencyVerify,
     type Member,
 } from '@proton/shared/lib/interfaces';
 import type { Calendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import { setAddressFlagsHelper } from '@proton/shared/lib/keys/addressFlagsHelper';
 import { getDecryptedAddressKeys } from '@proton/shared/lib/keys/getDecryptedAddressKeys';
 import { getDecryptedUserKeys } from '@proton/shared/lib/keys/getDecryptedUserKeys';
+import { missingKeysSelfProcess } from '@proton/shared/lib/keys/missingKeysSelfProcess';
 import getRandomString from '@proton/utils/getRandomString';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { createJoiningLink, createOrganizationImporter, createOrganizationImporterMigration } from '../api';
+import {
+    createJoiningLink,
+    createOrganizationImporter,
+    createOrganizationImporterMigration,
+    patchOrganizationImporter,
+} from '../api';
 import {
     ApiImportProvider,
     type ApiImporterOrganization,
+    ApiImporterOrganizationState,
     type ApiImporterOrganizationUser,
     type ApiJoiningLinkData,
 } from '../api/api.interface';
@@ -201,6 +221,15 @@ type CreateMigrationBatchResult = {
     results: Address[];
 };
 
+const getPersistedApi = (api: Api) => {
+    return <T>(config: any) =>
+        api<T>({
+            ...config,
+            data: config.data ? { ...config.data, PersistPasswordScope: true } : undefined,
+            silence: true,
+        });
+};
+
 export const createMigrationBatch = createAsyncThunk<
     CreateMigrationBatchResult,
     CreateMigrationBatchParams,
@@ -212,17 +241,15 @@ export const createMigrationBatch = createAsyncThunk<
         { dispatch, extra }
     ) => {
         const errors: CreateMigrationBatchResult['errors'] = [];
-        const api = <T>(config: any) =>
-            extra.api<T>({
-                ...config,
-                data: config.data ? { ...config.data, PersistPasswordScope: true } : undefined,
-                silence: true,
-            });
+        const api = getPersistedApi(extra.api);
 
-        const [organization, members, orgKey] = await Promise.all([
+        const [organization, members, orgKey, ktUser, ktUserKeys, userSettings] = await Promise.all([
             dispatch(organizationThunk()),
             dispatch(membersThunk()),
             dispatch(organizationKeyThunk()),
+            dispatch(userThunk()),
+            dispatch(userKeysThunk()),
+            dispatch(userSettingsThunk()),
         ]);
 
         if (!orgKey.privateKey) {
@@ -277,16 +304,39 @@ export const createMigrationBatch = createAsyncThunk<
                 let selfAddress = membersAddresses[selfMember.ID].find((a) => isSelf(a.Email));
                 if (!selfAddress) {
                     const [Local, Domain] = getEmailParts(oauthToken.Account);
-                    const address = await dispatch(
-                        createAddress({
-                            member: selfMember,
-                            setDefault: true,
-                            emailAddressParts: {
-                                Local,
-                                Domain,
-                            },
+                    const { Address: address } = await api<{ Address: Address }>(
+                        createMemberAddress(selfMember.ID, {
+                            Local,
+                            Domain,
+                            DisableE2EE: true,
                         })
                     );
+
+                    const { keyTransparencyVerify, keyTransparencyCommit } = createKTVerifier({
+                        config: extra.config,
+                        api,
+                        ktActivation: dispatch(getKTActivation()),
+                    });
+
+                    await missingKeysSelfProcess({
+                        api,
+                        userKeys: ktUserKeys,
+                        addresses: membersAddresses[selfMember.ID],
+                        addressesToGenerate: [address],
+                        password: extra.authentication.getPassword(),
+                        keyGenConfigForV4Keys: KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
+                        supportV6Keys: !!userSettings.Flags.SupportPgpV6Keys,
+                        keyTransparencyVerify,
+                    });
+
+                    await keyTransparencyCommit(ktUser, ktUserKeys);
+
+                    await dispatch(
+                        orderAddresses({ member: selfMember, addresses: [address, ...membersAddresses[selfMember.ID]] })
+                    );
+
+                    await dispatch(getMemberAddresses({ member: selfMember, cache: CacheType.None, retry: true }));
+
                     selfAddress = address;
                     membersAddresses[selfMember.ID] = [address];
                 }
@@ -296,7 +346,8 @@ export const createMigrationBatch = createAsyncThunk<
                 );
 
                 if (!calendars.length) {
-                    const getAddressKeys = (addressID: string) => dispatch(addressKeysThunk({ addressID }));
+                    const getAddressKeys = (addressID: string) =>
+                        dispatch(addressKeysThunk({ addressID, cache: CacheType.None }));
                     await createDefaultCalendar(api, getAddressKeys, selfAddress.ID);
                 }
             } catch (err: any) {
@@ -317,7 +368,8 @@ export const createMigrationBatch = createAsyncThunk<
                                 {
                                     Domain,
                                     Local,
-                                },
+                                    DisableE2EE: true,
+                                } as { Domain: string; Local: string }, // DisableE2EE not exposed in the createMember API
                             ],
                             invitationEmail: '',
                             private: MEMBER_PRIVATE.READABLE,
@@ -355,6 +407,7 @@ export const createMigrationBatch = createAsyncThunk<
                         publicKey: orgKey.publicKey,
                         privateKey: orgKey.privateKey,
                     });
+
                 await createDefaultCalendar(memberApi, getAddressKeys, address.ID);
                 await memberApi(revoke()).catch(noop);
 
@@ -392,3 +445,97 @@ export const createMigrationBatch = createAsyncThunk<
         };
     }
 );
+
+const enableAddressE2EE = async ({
+    api,
+    address,
+    getAddressKeys,
+    keyTransparencyVerify,
+}: {
+    api: Api;
+    address: Address;
+    getAddressKeys: ReturnType<typeof useGetAddressKeys>;
+    keyTransparencyVerify: KeyTransparencyVerify;
+}) => {
+    const addressKeys = await getAddressKeys(address.ID);
+
+    return setAddressFlagsHelper({
+        encryptionDisabled: false,
+        expectSignatureDisabled: false,
+        addressKeys,
+        address,
+        keyTransparencyVerify,
+        api,
+    });
+};
+
+export const completeMigration = createAsyncThunk<
+    ApiImporterOrganization,
+    { importerOrganizationId: string; providerUsers: ApiImporterOrganizationUser[] },
+    ThunkApi<KtState & OrganizationKeyState>
+>('oles/completeMigration', async ({ providerUsers, importerOrganizationId }, { dispatch, extra }) => {
+    const [members, orgKey] = await Promise.all([dispatch(membersThunk()), dispatch(organizationKeyThunk())]);
+
+    if (!orgKey.privateKey) {
+        throw new Error(c('BOSS').t`Missing organization private key`);
+    }
+
+    if (!orgKey.publicKey) {
+        throw new Error(c('BOSS').t`Missing organization public key`);
+    }
+
+    const api = getPersistedApi(extra.api);
+
+    const { keyTransparencyVerify } = createKTVerifier({
+        api,
+        ktActivation: dispatch(getKTActivation()),
+        config: extra.config,
+    });
+
+    const migratedUsers = providerUsers.filter((u) => u.ImporterOrganizationUser);
+
+    const membersWithAddresses = await Promise.all(
+        members.map(async (member) => ({
+            member,
+            address: await dispatch(getMemberAddresses({ member, cache: CacheType.None })).then((addresses) =>
+                addresses.find((a) => hasBit(a.Flags, ADDRESS_FLAGS.FLAG_DISABLE_E2EE))
+            ),
+        }))
+    );
+
+    const selfMigration = membersWithAddresses.find(({ member }) => member.Self);
+
+    if (selfMigration?.member && selfMigration?.address) {
+        await enableAddressE2EE({
+            api,
+            address: selfMigration.address,
+            getAddressKeys: (addressID) => dispatch(addressKeysThunk({ addressID })),
+            keyTransparencyVerify,
+        });
+    }
+
+    for (const user of migratedUsers) {
+        const { member, address } = membersWithAddresses.find((m) => m.address?.Email === user.Email) ?? {};
+
+        if (!member || !address || member.Self) {
+            continue;
+        }
+
+        const memberApi = await getMemberApi(api, member);
+
+        await enableAddressE2EE({
+            getAddressKeys: () => getMemberAddressKeys(memberApi, address, orgKey),
+            api: memberApi,
+            address,
+            keyTransparencyVerify,
+        });
+
+        await memberApi(revoke()).catch(noop);
+    }
+
+    return api<ApiImporterOrganization>(
+        patchOrganizationImporter(importerOrganizationId!, {
+            State: ApiImporterOrganizationState.COMPLETED,
+        })
+    );
+});
