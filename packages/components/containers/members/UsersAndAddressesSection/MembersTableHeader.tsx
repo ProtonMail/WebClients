@@ -3,8 +3,8 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Info from '@proton/components/components/link/Info';
+import withPermissionGuard from '@proton/components/components/orgPermissions/withPermissionGuard';
 import { SetupOrgSpotlight } from '@proton/components/containers/account/spotlights/passB2bOnboardingSpotlights/PassB2bOnboardingSpotlights';
 import {
     getInvitationAcceptLimit,
@@ -12,6 +12,9 @@ import {
 } from '@proton/components/containers/members/UsersAndAddressesSection/helper';
 import type { UseUserMemberActions } from '@proton/components/containers/members/UsersAndAddressesSection/useMemberActions';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+
+const GuardedAddUserButton = withPermissionGuard('account.user.create')(Button);
+const GuardedAddAddressButton = withPermissionGuard('account.user.update')(Button);
 
 export const MembersTableHeader = ({
     app,
@@ -23,13 +26,9 @@ export const MembersTableHeader = ({
     membersHook: UseUserMemberActions;
 }) => {
     const createUserButtonWithTooltip = (
-        <Tooltip title={!meta.canAddUser ? c('Label').t`You don't have permissions` : undefined} openDelay={100}>
-            <span>
-                <Button color="norm" disabled={meta.disableAddUserButton} onClick={actions.handleAddUser}>
-                    {c('Action').t`Add user`}
-                </Button>
-            </span>
-        </Tooltip>
+        <GuardedAddUserButton color="norm" disabled={meta.disableAddUserButton} onClick={actions.handleAddUser}>
+            {c('Action').t`Add user`}
+        </GuardedAddUserButton>
     );
     return (
         <div className="mb-4 flex items-start">
@@ -43,20 +42,13 @@ export const MembersTableHeader = ({
                 {meta.showAddAddress && (
                     <>
                         {meta.isOrgAFamilyPlan ? (
-                            <Tooltip
-                                title={!meta.canAddUser ? c('Label').t`You don't have permissions` : undefined}
-                                openDelay={100}
+                            <GuardedAddUserButton
+                                color="norm"
+                                disabled={meta.disableInviteUserButton}
+                                onClick={actions.handleInviteUser}
                             >
-                                <span>
-                                    <Button
-                                        color="norm"
-                                        disabled={meta.disableInviteUserButton}
-                                        onClick={actions.handleInviteUser}
-                                    >
-                                        {c('Action').t`Invite user`}
-                                    </Button>
-                                </span>
-                            </Tooltip>
+                                {c('Action').t`Invite user`}
+                            </GuardedAddUserButton>
                         ) : (
                             createUserButtonWithTooltip
                         )}
@@ -75,20 +67,13 @@ export const MembersTableHeader = ({
                             ))}
 
                         {meta.hasMaxAddresses && (
-                            <Tooltip
-                                title={!meta.canUpdateUser ? c('Label').t`You don't have permissions` : undefined}
-                                openDelay={100}
+                            <GuardedAddAddressButton
+                                shape="outline"
+                                disabled={meta.disableAddAddressButton}
+                                onClick={() => actions.handleAddAddress()}
                             >
-                                <span>
-                                    <Button
-                                        shape="outline"
-                                        disabled={meta.disableAddAddressButton}
-                                        onClick={() => actions.handleAddAddress()}
-                                    >
-                                        {c('Action').t`Add address`}
-                                    </Button>
-                                </span>
-                            </Tooltip>
+                                {c('Action').t`Add address`}
+                            </GuardedAddAddressButton>
                         )}
                     </>
                 )}
