@@ -459,9 +459,6 @@
       "Create new policy": [
         "Neue Richtlinie erstellen"
       ],
-      "Create organization": [
-        "Organisation erstellen"
-      ],
       "Create recovery phrase": [
         "Wiederherstellungsphrase erstellen"
       ],
@@ -2921,6 +2918,9 @@
       "Calendar": [
         "Kalender"
       ],
+      "Collapse invitation message": [
+        "Einladungsnachricht einklappen"
+      ],
       "Configure migration": [
         "Übernahme konfigurieren"
       ],
@@ -2932,6 +2932,9 @@
       ],
       "Estimated size": [
         "Geschätzte Größe"
+      ],
+      "Expand invitation message": [
+        "Einladungsnachricht erweitern"
       ],
       "Failed to load OAuth": [
         "OAuth konnte nicht geladen werden"
@@ -3121,17 +3124,11 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Benutzer manuell hinzufügen"
-      ],
       "Cancel": [
         "Abbrechen"
       ],
       "Close": [
         "Schliessen"
-      ],
-      "Configure your network": [
-        "Dein Netzwerk konfigurieren"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } weiterhin verwenden."
@@ -3154,12 +3151,6 @@
       "Got it": [
         "Verstanden"
       ],
-      "Invite your team": [
-        "Team einladen"
-      ],
-      "Manage global VPN permissions": [
-        "Globale VPN-Berechtigungen verwalten"
-      ],
       "Maybe later": [
         "Vielleicht später"
       ],
@@ -3169,17 +3160,11 @@
       "Remind me later": [
         "Später erneut fragen"
       ],
-      "Secure your organization": [
-        "Deine Organisation sichern"
-      ],
       "Send": [
         "Senden"
       ],
       "Set up other features": [
         "Andere Funktionen einrichten"
-      ],
-      "Set up SSO": [
-        "SSO einrichten"
       ],
       "Sign in": [
         "Anmelden"
@@ -5045,9 +5030,6 @@
       "Connect your CRM, website, printers, and more.": [
         "Verbinde dein CRM, deine Website, Drucker und mehr."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Ein Gateway erstellen, damit deine Benutzer über dedizierte Server Zugriff auf deine IT-Ressourcen erhalten."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Erstelle ein Zoom-Meeting und füge deine Veranstaltung mit einem Klick Details zur Teilnahme hinzu."
       ],
@@ -5057,14 +5039,8 @@
       "Create groups you can email with a single address.": [
         "Erstelle Gruppen, an die du E-Mails mit einer einzigen Adresse senden kannst."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Neue Benutzerkonten erstellen oder Benutzer mit SSO (Single-Sign-on) SCIM-Provisionierung importieren."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Erstelle Richtlinien, um zu entscheiden, wer sich mit gemeinsamen Servern in jedem Land verbinden darf."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Festlegen, welche Benutzer sich mit jedem unserer über 120 gemeinsam genutzten Server-Standorte verbinden können."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Greife einfach auf deine E-Mails und deinen Kalender auf dem Desktop und Mobilgerät zu."
@@ -5125,9 +5101,6 @@
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Wie wir lokale Aktivisten unterstützt haben, als die Privatsphäre und die Redefreiheit bedroht waren."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Falls du es noch nicht getan hast, aktiviere einige Wiederherstellungsmethoden, um sicherzustellen, dass du niemals den Zugriff auf ${ VPN_APP_NAME } verlierst."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Die Kontaktliste, die du importieren möchtest, enthält anscheinend Gruppen. Bitte lege fest, wie diese Gruppen importiert werden sollen."
@@ -5228,6 +5201,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Wir holen deine alten E-Mails und verbinden dein Gmail mit ${ MAIL_APP_NAME }, damit neue Nachrichten automatisch angezeigt werden"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Wir importieren deine alten E-Mails, überspringen Duplikate und verbinden uns mit deinem Gmail, damit neue Nachrichten automatisch erscheinen. Du kannst den Import in den Easy Switch-Einstellungen jederzeit rückgängig machen."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Wir haben mit dem Import deiner E-Mails von Gmail begonnen. Wir benachrichtigen dich, wenn der Vorgang abgeschlossen ist."
@@ -10807,9 +10783,6 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Lass dich benachrichtigen, wenn dein Passwort oder andere persönliche Daten bekannt geworden sind. ${ learnMoreLinkNoBreach }"
       ],
-      "Get started": [
-        "Erste Schritte"
-      ],
       "Get started with the referral link above.": [
         "Leg los mit dem Empfehlungslink oben."
       ],
@@ -11887,9 +11860,6 @@
       ],
       "Set up your organization": [
         "Organisation einrichten"
-      ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Deine Organisation einrichten und beginnen, deine Daten in ein paar einfachen Schritten zu schützen."
       ],
       "Setting successfully saved": [
         "Einstellungen erfolgreich gespeichert"
@@ -13309,11 +13279,6 @@
         "Nur anzeigen"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "So wird deine Organisation den Benutzern erscheinen. Du kannst es jederzeit ändern."
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "Keine gültige E-Mail-Adresse"
@@ -13327,11 +13292,6 @@
     "Input placeholder": {
       "Add label": [
         "Kategorie hinzuf."
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Wie heißt deine Organisation?"
       ]
     },
     "invitation status": {
@@ -15658,6 +15618,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } holen"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Hol dir Hilfe von ${ LUMO_SHORT_APP_NAME }"
       ],
       "Groups": [
         "Gruppen"
@@ -19594,9 +19557,6 @@
         "Enddatum"
       ],
       "Enter a name": [
-        "Name eingeben"
-      ],
-      "Enter name": [
         "Name eingeben"
       ],
       "example@domain.com": [
@@ -24716,9 +24676,6 @@
       "Disconnected from Gmail": [
         "Von Gmail getrennt"
       ],
-      "Dismiss setup checklist": [
-        "Einrichtungs-Checkliste verwerfen"
-      ],
       "Display name and signature": [
         "Anzeigename und Signatur"
       ],
@@ -25004,9 +24961,6 @@
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Mehr Speicherplatz mit ${ MAIL_APP_NAME } Plus erhalten"
-      ],
-      "Get started": [
-        "Erste Schritte"
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Hol dir die App auf all deine Geräte und genieße überall sicheren, nahtlosen Zugriff."
@@ -25706,6 +25660,9 @@
       "Summary": [
         "Zusammenfassung"
       ],
+      "Summer Sale": [
+        "Sommer Sale"
+      ],
       "Support ticket closed": [
         "Support-Ticket geschlossen"
       ],
@@ -25900,9 +25857,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Willkommen bei ${ BRAND_NAME } for Business"
-      ],
-      "Welcome to ${ planName }": [
-        "Willkommen bei ${ planName }"
       ],
       "Welcome to your new password manager!": [
         "Willkommen bei deinem neuen Passwort-Manager!"
@@ -26397,9 +26351,6 @@
       ],
       "User is a group": [
         "Benutzer ist eine Gruppe"
-      ],
-      "via ${ groupName }": [
-        "über ${ groupName }"
       ],
       "Waiting for user to accept the invitation": [
         "Warten auf die Annahme der Einladung durch den Benutzer"

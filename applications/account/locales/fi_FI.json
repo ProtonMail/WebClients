@@ -316,6 +316,9 @@
       "Connect your ${ BRAND_NAME } Account": [
         "Yhdistä ${ BRAND_NAME }-tilisi"
       ],
+      "Connect your email": [
+        "Yhdistä sähköpostinne"
+      ],
       "Connected": [
         "Yhdistetty"
       ],
@@ -342,6 +345,9 @@
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Jatka tilillä ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
+      "Continue with Free": [
+        "Jatka maksuttomalla"
       ],
       "Continue with Google": [
         "Jatka Googlella"
@@ -411,9 +417,6 @@
       ],
       "Create new policy": [
         "Luo uusi käytäntö"
-      ],
-      "Create organization": [
-        "Luo organisaatio"
       ],
       "Create users": [
         "Luo käyttäjiä"
@@ -1065,6 +1068,9 @@
       ],
       "Or remove forwarding address": [
         "Tai poista välitysosoite"
+      ],
+      "Or use a different Gmail address": [
+        "Tai käytä toista Gmail-osoitetta"
       ],
       "Ordered list": [
         "Järjestetty lista"
@@ -1862,6 +1868,9 @@
       "Disabled": [
         "Ei käytössä"
       ],
+      "Disconnected": [
+        "Katkaistu"
+      ],
       "External": [
         "Ulkoinen"
       ],
@@ -2387,6 +2396,9 @@
       "Calendar": [
         "Kalenteri"
       ],
+      "Collapse invitation message": [
+        "Piilota kutsuviesti"
+      ],
       "Configure migration": [
         "Määritä siirto"
       ],
@@ -2395,6 +2407,9 @@
       ],
       "Estimated size": [
         "Arvioitu koko"
+      ],
+      "Expand invitation message": [
+        "Laajenna kutsuviesti"
       ],
       "Failed to load OAuth": [
         "OAuthin lataaminen epäonnistui"
@@ -4305,6 +4320,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Lajittele saapuvat viestisi automaattisesti, ennen kuin ne saapuvat postilaatikkoosi."
       ],
+      "Available storage: ${ storageText }": [
+        "Käytettävissä oleva tallennustila: ${ storageText }"
+      ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Estä Googlen mahdollisuus profiloida sinua. Gmail ei näe, mitä teet ${ MAIL_APP_NAME }-palvelussa"
       ],
@@ -4346,6 +4364,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja salataan ja tuodaan... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Tarpeeksi tilaa vuosien sähköposteille, liitteille ja muulle."
       ],
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "Varmista ensiluokkainen tietoturva tilillesi ${ PROTON_SENTINEL_NAME } -ohjelmalla."
@@ -4423,6 +4444,9 @@
       "Track the status and activity of your referrals": [
         "Seuraa suosittelujesi tilaa ja toimintaa"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "Avaa 15 Gt tallennustilaa vain hintaan ${ config.offerPrice }."
+      ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Päivitä ${ planName } -tilaukseen yhdistääksesi jopa ${ MAX_SYNC_PAID_USER } tiliä"
       ],
@@ -4435,8 +4459,20 @@
       "We can't access ${ boldEmails } anymore.": [
         "Emme voi enää käyttää ${ boldEmails } -osoitteita."
       ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Pysäytämme tuonnit, kun tallennustilasta on käytössä 80 %, varataksemme tilaa uusille viesteille."
+      ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Tuomme vanhat sähköpostisi ja yhdistämme Gmail-tilisi ${ MAIL_APP_NAME } -sovellukseen, jotta uudet viestit näkyvät automaattisesti"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "Tuomme vanhat sähköpostinne, ohitamme kaksoiskappaleet ja yhdistämme Gmail-tiliinne, jotta uudet viestit tulevat näkyviin automaattisesti. Voitte kumota tuonnin milloin tahansa Easy Switch -asetuksissa"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Olemme aloittaneet sähköpostienne tuomisen Gmailista. Ilmoitamme teille, kun se on valmis."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Uusien sähköpostiluokkien ansiosta vain tärkeät viestit päätyvät ensisijaiseen saapuneet-kansioonne. Luokat toimivat aivan kuten roskapostisuodattimet. ${ MAIL_APP_NAME } ei koskaan lue sähköpostejanne tai jaa tietojanne."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Sinulla on jo Gmail-osoite, joka ohjataan ${ MAIL_APP_NAME } -sovellukseen. Yhdistä se alla, jotta voit lähettää ja vastaanottaa sähköposteja suoraan ${ MAIL_APP_NAME } -sovelluksesta."
@@ -4466,6 +4502,12 @@
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Olet liittänyt yhden ulkoisen tilin osoitteen sovellukseen ${ MAIL_APP_NAME }."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Maksuttomaan ${ MAIL_APP_NAME }-tiliinne kuuluu rajoitetusti tallennustilaa, joten tuomme vain ${ newUserStorageText } viimeisimmistä Gmail-viesteistänne"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Maksuttomaan ${ MAIL_APP_NAME }-tiliinne kuuluu rajoitetusti tallennustilaa, joten tuomme vain viimeisimmät Gmail-sähköpostinne."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Pakettisi tukee ${ MAX_SYNC_FREE_USER } Gmail-osoitteen.",
@@ -6824,6 +6866,9 @@
         "${ MaxVPN } VPN-yhteys",
         "${ MaxVPN } VPN-yhteyttä"
       ],
+      "10+ premium features": [
+        "Yli 10 premium-ominaisuutta"
+      ],
       "Access to all countries": [
         "Kaikkien maiden käyttöoikeus"
       ],
@@ -6840,6 +6885,12 @@
       ],
       "Continue": [
         "Jatka"
+      ],
+      "Custom email domain": [
+        "Mukautettu sähköpostin verkkotunnus"
+      ],
+      "Email addresses": [
+        "Sähköpostiosoitteet"
       ],
       "Encrypted cloud storage for files, photos and documents": [
         "Salattu pilvipalvelu tiedostoillesi, kuvillesi ja asiakirjoillesi"
@@ -6858,6 +6909,9 @@
       ],
       "Secure streaming support": [
         "Turvallisen suoratoiston tuki"
+      ],
+      "Storage": [
+        "Tallennustila"
       ],
       "Torrenting support (P2P)": [
         "Torrent-tuki (P2P)"
@@ -7873,6 +7927,11 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Valitse ${ boldExport } viedäksesi kalenterin ICS-tiedostona."
+      ]
+    },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        "Haluatteko varmasti tuoda yksityisen avaimen? Turvattomasti luodun tai vuotaneen yksityisen avaimen tuominen voi vaarantaa sähköpostienne turvallisuuden.\n\nHuomatkaa myös, että tätä yksityistä avainta vastaava julkinen avain on julkisesti saatavilla avainpalvelimestamme. Jos avain sisältää henkilötietoja (kuten koko nimenne), joita ette halua julkaista, muokatkaa avainta ennen sen tuomista."
       ]
     },
     "Import provider": {
@@ -9300,6 +9359,9 @@
       "Include device, location, and IP details": [
         "Sisällytä laite-, sijainti- ja IP-tiedot"
       ],
+      "Included": [
+        "Sisältyy"
+      ],
       "Increase your account security by verifying your email address.": [
         "Paranna tilisi suojausta vahvistamalla sähköpostiosoitteesi."
       ],
@@ -10562,8 +10624,14 @@
       "Unverified email address.": [
         "Vahvistamaton sähköpostiosoite."
       ],
+      "Upgrade anytime to bring over the rest": [
+        "Päivitä milloin tahansa tuodaksesi loputkin"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Päivitä nyt hankkiaksesi premium-ominaisuudet, -tuotteet ja -tallennustila erikoishintaan"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Päivitä tai tyhjennä tilaa milloin tahansa tuodaksesi loputkin"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Päivitä säilyttääksesi ${ planTitle } tilauksesi edut."
@@ -11265,11 +11333,6 @@
     "Input placeholder": {
       "Add label": [
         "Lisää tunniste"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "Mikä on organisaatiosi nimi?"
       ]
     },
     "invitation status": {
@@ -13256,6 +13319,9 @@
       ],
       "Get ${ VPN_APP_NAME }": [
         "Hanki ${ VPN_APP_NAME }"
+      ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Hanki apua ${ LUMO_SHORT_APP_NAME }:sta"
       ],
       "Groups": [
         "Ryhmät"
@@ -16808,9 +16874,6 @@
         "Lopetuspäivä"
       ],
       "Enter a name": [
-        "Syötä nimi"
-      ],
-      "Enter name": [
         "Syötä nimi"
       ],
       "example@domain.com": [
@@ -20885,6 +20948,9 @@
       "Contact us": [
         "Ota yhteyttä"
       ],
+      "Continue with free storage": [
+        "Jatka maksuttoman tallennustilan käyttöä"
+      ],
       "Continue with partial import?": [
         "Jatketaanko osittaista tuontia?"
       ],
@@ -21298,6 +21364,9 @@
       ],
       "Get more from your VPN": [
         "Saa enemmän VPN-yhteydestäsi"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "Hanki lisää tallennustilaa ${ MAIL_APP_NAME } Plus -tilauksella"
       ],
       "Get the apps": [
         "Hanki sovellukset"
@@ -21889,6 +21958,9 @@
       "Summary": [
         "Yhteenveto"
       ],
+      "Summer Sale": [
+        "Kesäale"
+      ],
       "Support ticket closed": [
         "Tukipyyntö on suljettu"
       ],
@@ -22023,9 +22095,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Tervetuloa ${ BRAND_NAME } for Businessiin"
-      ],
-      "Welcome to ${ planName }": [
-        "Tervetuloa ${ planName }:ään"
       ],
       "Welcome to your new password manager!": [
         "Tervetuloa uuteen salasanahallintaasi!"
@@ -22394,9 +22463,6 @@
       ],
       "User is a group": [
         "Käyttäjä on ryhmä"
-      ],
-      "via ${ groupName }": [
-        "${ groupName } kautta"
       ],
       "Waiting for user to accept the invitation": [
         "Odotetaan, että käyttäjä hyväksyy kutsun"

@@ -315,6 +315,9 @@
       "Connect your ${ BRAND_NAME } Account": [
         "เชื่อมต่อบัญชี ${ BRAND_NAME }"
       ],
+      "Connect your email": [
+        "เชื่อมต่ออีเมล"
+      ],
       "Connected": [
         "เชื่อมต่อแล้ว"
       ],
@@ -335,6 +338,9 @@
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "ดำเนินการต่อด้วย ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
+      "Continue with Free": [
+        "ใช้งานเวอร์ชันฟรีต่อไป"
       ],
       "Continue with Google": [
         "ดำเนินการต่อกับ Google"
@@ -407,9 +413,6 @@
       ],
       "Create new policy": [
         "สร้างนโยบายใหม่"
-      ],
-      "Create organization": [
-        "สร้างองค์กร"
       ],
       "Create users": [
         "สร้างผู้ใช้"
@@ -521,6 +524,9 @@
       ],
       "Discard Changes": [
         "ละทิ้งการเปลี่ยนแปลง"
+      ],
+      "Disconnect": [
+        "ยกเลิกการเชื่อมต่อ"
       ],
       "Discover ${ planName }": [
         "ค้นพบ ${ planName }"
@@ -1100,6 +1106,9 @@
       ],
       "Reconnect": [
         "เชื่อมต่ออีกครั้ง"
+      ],
+      "Reconnect to Gmail": [
+        "เชื่อมต่อกับ Gmail อีกครั้ง"
       ],
       "Recover data": [
         "กู้ข้อมูลคืน"
@@ -4482,8 +4491,14 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "จัดเรียงข้อความขาเข้าโดยอัตโนมัติก่อนที่จะถึงกล่องขาเข้า"
       ],
+      "Available storage: ${ storageText }": [
+        "พื้นที่จัดเก็บที่ใช้งานได้: ${ storageText }"
+      ],
       "Available with ${ title }": [
         "ใช้งานได้กับ ${ title }"
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "บล็อกไม่ให้ Google สร้างโปรไฟล์ข้อมูล Gmail จะไม่สามารถเห็นการใช้งานใน ${ MAIL_APP_NAME }"
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "กำหนดค่าสิ่งนี้ก่อนเพื่อเปิดใช้งานองค์กรและปรับแต่งที่อยู่อีเมล"
@@ -4509,6 +4524,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "ซิงค์ไฟล์ไปยังคลาวด์จากเดสก์ท็อปและเข้าถึงได้จากอุปกรณ์เคลื่อนที่อย่างง่ายดาย"
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "อีเมลที่ส่งไปยัง ${ connectedAddressText } จะแสดงใน ${ MAIL_APP_NAME } แล้ว"
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "เปิดใช้งาน ${ PROTON_SENTINEL_NAME } เพื่อเข้าถึงคุณสมบัติเหล่านี้"
       ],
@@ -4523,6 +4541,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "กำลังเข้ารหัสและนำเข้ารายชื่อติดต่อ... อาจใช้เวลาสักครู่ สามารถปิดหน้านี้ได้เมื่อกระบวนการสิ้นสุด"
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "มีพื้นที่เพียงพอสำหรับอีเมล ไฟล์แนบ และอื่นๆ อีกหลายปี"
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "รับรองการเข้าถึงข้อมูลองค์กรอย่างปลอดภัย แม้ว่าทีมจะทำงานระยะไกลหรือใช้ WiFi สาธารณะ"
@@ -4560,8 +4581,14 @@
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "ปรับแต่งส่วนท้ายอีเมลให้เป็นของตัวเอง — แสดงแบรนด์ที่เป็นเอกลักษณ์ ไม่ใช่ของเรา"
       ],
+      "No ads. No trackers.": [
+        "ไม่มีโฆษณา ไม่มีตัวติดตาม"
+      ],
       "No one in your organization can connect to shared servers.": [
         "ไม่มีใครในองค์กรที่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ที่แชร์ได้"
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "อ่าน ตอบกลับ และติดตามความเคลื่อนไหวของ Gmail ได้จากภายใน ${ MAIL_APP_NAME }"
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "ตั้งค่าบัญชีสำหรับผู้ใช้ทุกคนและเชิญให้เข้าร่วม ${ BRAND_NAME }"
@@ -4572,6 +4599,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "ทำให้การซิงค์และการจัดตารางเวลาง่ายขึ้นด้วยปฏิทินที่แชร์"
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "กรณีนี้อาจเกิดขึ้นหากสิทธิ์การใช้งานถูกลบออกหรือรหัสผ่านถูกเปลี่ยน"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "เพื่อรับและส่งข้อความ Gmail ใน ${ BRAND_NAME } ต่อไป โปรดเชื่อมต่อบัญชีอีกครั้ง"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "เพื่อรับและส่งข้อความ Gmail ใน ${ BRAND_NAME } ต่อไป โปรดเชื่อมต่อบัญชีต่างๆ อีกครั้ง"
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "เพื่อนำเข้ารายชื่อผู้ติดต่อของคุณจาก Google หรือ Outlook, ${ easySwitchLink }"
       ],
@@ -4581,11 +4617,38 @@
       "Track the status and activity of your referrals": [
         "ติดตามสถานะและกิจกรรมของการแนะนำของคุณ"
       ],
+      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
+        "ปลดล็อกพื้นที่จัดเก็บข้อมูลขนาด 15 GB ในราคาเพียง ${ config.offerPrice }"
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "อัปเกรดเพื่อรับ ${ activatePmUser } สำหรับที่อยู่อีเมลที่สั้นและจดจำง่าย นอกเหนือจากที่อยู่ปัจจุบัน"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "ใช้คู่มือนี้เพื่อให้องค์กรได้รับประโยชน์ทันทีจากระบบนิเวศความเป็นส่วนตัวและการเข้ารหัสลับชั้นนำของอุตสาหกรรมของ ${ BRAND_NAME }"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "ไม่สามารถเข้าถึง ${ boldEmails } ได้อีกต่อไป"
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "จะหยุดการนำเข้าชั่วคราวเมื่อพื้นที่จัดเก็บถึง 80% เพื่อสำรองพื้นที่สำหรับข้อความใหม่"
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "จะนำเข้าอีเมลเก่าและเชื่อมต่อ Gmail กับ ${ MAIL_APP_NAME } เพื่อให้ข้อความใหม่แสดงขึ้นโดยอัตโนมัติ"
+      ],
+      "We'll import your old emails, skip duplicates, and connect to your Gmail so new messages appear automatically. You can undo the import anytime in Easy Switch settings": [
+        "จะนำเข้าอีเมลเก่า ข้ามรายการซ้ำ และเชื่อมต่อไปยัง Gmail เพื่อให้ข้อความใหม่ปรากฏขึ้นโดยอัตโนมัติ สามารถเลิกทำการนำเข้าได้ทุกเมื่อในการตั้งค่า Easy Switch"
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "เริ่มนำเข้าอีเมลจาก Gmail แล้ว จะแจ้งให้ทราบเมื่อดำเนินการเสร็จสิ้น"
+      ],
+      "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "ด้วยหมวดหมู่อีเมลใหม่ เฉพาะข้อความสำคัญเท่านั้นที่จะเข้ามายังกล่องขาเข้าหลัก หมวดหมู่ต่าง ๆ ทำงานเหมือนกับตัวกรองสแปม ${ MAIL_APP_NAME } ไม่เคยอ่านอีเมลหรือแชร์ข้อมูล"
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "มีที่อยู่ Gmail ที่ส่งต่อมายัง ${ MAIL_APP_NAME } อยู่แล้ว เชื่อมต่อที่อยู่ดังกล่าวที่ด้านล่างเพื่อส่งและรับอีเมลโดยตรงผ่าน ${ MAIL_APP_NAME }"
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "มีที่อยู่ Gmail ที่ส่งต่อมายัง ${ MAIL_APP_NAME } อยู่แล้ว เชื่อมต่อที่อยู่ใดที่อยู่หนึ่งด้านล่างเพื่อส่งและรับอีเมลโดยตรงผ่าน ${ MAIL_APP_NAME }"
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "คุณสามารถปรับแต่งรายการโดเมนที่ฟังก์ชันอัตโนมัติบางอย่างในส่วนขยายเบราว์เซอร์ ${ PASS_APP_NAME } (ป้อนอัตโนมัติ, แนะนำอัตโนมัติ, บันทึกอัตโนมัติ) ไม่ควรทำงาน"
@@ -4595,6 +4658,21 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "สามารถนำเข้ากิจกรรมในรูปแบบ iCal (ไฟล์ ICS) ไฟล์ควรมีขนาดสูงสุด ${ MAX_IMPORT_FILE_SIZE_STRING } และมีกิจกรรมไม่เกิน ${ MAX_IMPORT_EVENTS_STRING } กิจกรรม หากไฟล์มีขนาดใหญ่กว่านี้ โปรดแบ่งเป็นไฟล์ย่อย"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "สามารถส่งอีเมลจาก ${ BRAND_NAME } โดยใช้ที่อยู่นี้ได้แล้ว"
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "ยังคงสามารถเข้าสู่ระบบด้วยที่อยู่นี้และเชื่อมต่อใหม่ได้ทุกเมื่อ"
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "จะไม่สามารถใช้ ${ address.Email } เพื่อรับและส่งอีเมลใน ${ BRAND_NAME } ได้อีกต่อไป นอกจากนี้ โปรดทราบว่าข้อความที่ส่งไปยังที่อยู่นี้จาก ${ BRAND_NAME } จะไม่ได้รับการเข้ารหัสลับจากต้นทางถึงปลายทางอีกต่อไป"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "บัญชี ${ MAIL_APP_NAME } แบบฟรีมีพื้นที่จัดเก็บที่จำกัด ดังนั้นจะนำเข้าเฉพาะข้อความ Gmail ล่าสุดขนาด ${ newUserStorageText } เท่านั้น"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "บัญชี ${ MAIL_APP_NAME } แบบฟรีมีพื้นที่จัดเก็บที่จำกัด ดังนั้นจะนำเข้าเฉพาะอีเมล Gmail ล่าสุดเท่านั้น"
       ]
     },
     "description": {
@@ -5845,6 +5923,9 @@
       "Address cannot be yours": [
         "ที่อยู่ต้องไม่ใช่ของคุณ"
       ],
+      "Address is already added to your account": [
+        "เพิ่มที่อยู่นี้ในบัญชีแล้ว"
+      ],
       "Address primary private key not found": [
         "ไม่พบคีย์ส่วนตัวของที่อยู่หลัก"
       ],
@@ -6273,6 +6354,15 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "บางชื่อป้ายกำกับของคุณเกินขีดจำกัดจำนวนตัวอักษรสูงสุดของ ${ MAIL_APP_NAME } แล้วโปรดปรับแก้การนำเข้าเพื่อแก้ไขชื่อเหล่านี้"
+      ],
+      "Something went wrong while converting the address": [
+        "เกิดข้อผิดพลาดขณะแปลงที่อยู่"
+      ],
+      "Something went wrong while creating the address": [
+        "เกิดข้อผิดพลาดขณะสร้างที่อยู่"
+      ],
+      "Something went wrong while fetching available domains": [
+        "เกิดข้อผิดพลาดขณะดึงข้อมูลโดเมนที่มีอยู่"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "มีบางอย่างผิดปกติ โปรด ${ refresh } หน้าจอที่กำลังใช้งานนี้เพื่อดำเนินการต่อ ถ้าคุณยังเห็นข้อความแจ้งเตือนข้อผิดพลาดนี้ โปรดติดต่อ ${ supportTeam } ของเรา"
@@ -7099,6 +7189,9 @@
       "${ MaxVPN } VPN connection": [
         "มีจำนวนของการเชื่อมต่อของ VPN เป็นจำนวน ${ MaxVPN }"
       ],
+      "10+ premium features": [
+        "คุณสมบัติพรีเมียม 10+ รายการ"
+      ],
       "Access to all countries": [
         "เข้าถึงได้ทุกประเทศ"
       ],
@@ -7113,6 +7206,12 @@
       ],
       "Continue": [
         "ดำเนินการต่อไป"
+      ],
+      "Custom email domain": [
+        "โดเมนอีเมลแบบกำหนดเอง"
+      ],
+      "Email addresses": [
+        "ที่อยู่อีเมล"
       ],
       "Encrypted cloud storage for files, photos and documents": [
         "พื้นที่จัดเก็บคลาวด์ที่เข้ารหัสสำหรับไฟล์ รูปภาพ และเอกสาร"
@@ -7131,6 +7230,9 @@
       ],
       "Secure streaming support": [
         "การสนับสนุนด้านการสตรีมมิ่งที่ปลอดภัย"
+      ],
+      "Storage": [
+        "พื้นที่จัดเก็บ"
       ],
       "Torrenting support (P2P)": [
         "การสนับสนุนด้านการแชร์ไฟล์ (P2P)"
@@ -9473,6 +9575,9 @@
       "Include device, location, and IP details": [
         "รวมรายละเอียดอุปกรณ์ ตำแหน่ง และ IP"
       ],
+      "Included": [
+        "รวมอยู่ด้วย"
+      ],
       "Increase your account security by verifying your email address.": [
         "เพิ่มความปลอดภัยให้บัญชีของคุณด้วยการยืนยันที่อยู่อีเมลของคุณ"
       ],
@@ -10745,8 +10850,14 @@
       "Unverified email address.": [
         "ที่อยู่อีเมลที่ยังไม่ยืนยัน"
       ],
+      "Upgrade anytime to bring over the rest": [
+        "อัปเกรดได้ทุกเมื่อเพื่อนำเข้าส่วนที่เหลือ"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "อัปเกรดตอนนี้เพื่อรับคุณสมบัติพรีเมียม ผลิตภัณฑ์ และพื้นที่จัดเก็บในราคาพิเศษ"
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "อัปเกรดหรือล้างพื้นที่ได้ทุกเมื่อเพื่อนำเข้าส่วนที่เหลือ"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "อัปเกรดเพื่อเพิ่มที่อยู่ @pm.me ที่สั้นลงในบัญชีเพื่อให้แชร์ได้ง่ายขึ้น โดยย่อมาจาก “${ MAIL_APP_NAME } me” หรือ “Private Message me”"
@@ -11432,11 +11543,6 @@
         "ดูเท่านั้น"
       ]
     },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "นี่คือลักษณะที่องค์กรจะปรากฏต่อผู้ใช้ คุณสามารถเปลี่ยนได้ตลอดเวลา"
-      ]
-    },
     "Input Error": {
       "Not a valid email address": [
         "ไม่ใช่ที่อยู่อีเมลที่ถูกต้อง"
@@ -11450,11 +11556,6 @@
     "Input placeholder": {
       "Add label": [
         "เพิ่มป้ายกำกับ"
-      ]
-    },
-    "Input title": {
-      "What is your organization's name?": [
-        "ชื่อองค์กรของคุณคืออะไร?"
       ]
     },
     "invitation status": {
@@ -12992,6 +13093,9 @@
       ],
       "Select Linux platform": [
         "เลือกแพลตฟอร์ม Linux"
+      ],
+      "Select which Gmail address to connect": [
+        "เลือกที่อยู่ Gmail ที่ต้องการเชื่อมต่อ"
       ],
       "Send auto-reply": [
         "ส่งข้อความแบบอัตโนมัติ"
@@ -15503,6 +15607,9 @@
       "Two-factor authentication is not required anymore": [
         "ไม่จำเป็นต้องใช้การยืนยันตัวตนผ่านสองขั้นตอนอีกต่อไป"
       ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "ที่อยู่ ${ BRAND_NAME } พร้อมใช้งานแล้ว"
+      ],
       "Zoom video conferencing settings have been updated": [
         "การตั้งค่าการประชุมทางวิดีโอ Zoom ได้รับการอัปเดตแล้ว"
       ]
@@ -17049,9 +17156,6 @@
       ],
       "End date": [
         "วันที่สิ้นสุด"
-      ],
-      "Enter name": [
-        "ป้อนชื่อ"
       ],
       "example@domain.com": [
         "example@domain.com"
@@ -21020,6 +21124,9 @@
       "Are you sure you want to close?": [
         "คุณแน่ใจหรือไม่ว่าต้องการปิด?"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "แน่ใจหรือไม่ว่าต้องการยกเลิกการเชื่อมต่อที่อยู่นี้"
+      ],
       "Are you sure?": [
         "คุณแน่ใจหรือไม่?"
       ],
@@ -21043,6 +21150,9 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge สำหรับ ${ platform }"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "นำ Gmail เข้ามาใน ${ MAIL_APP_NAME }"
       ],
       "Browser extensions": [
         "ส่วนขยายเบราว์เซอร์"
@@ -21148,6 +21258,9 @@
       ],
       "Contact us": [
         "ติดต่อเรา"
+      ],
+      "Continue with free storage": [
+        "ใช้งานพื้นที่จัดเก็บแบบฟรีต่อไป"
       ],
       "Continue with partial import?": [
         "ดำเนินการต่อด้วยการนำเข้าบางส่วนหรือไม่?"
@@ -21331,6 +21444,9 @@
       ],
       "Discard changes?": [
         "ยกเลิกการเปลี่ยนแปลง?"
+      ],
+      "Disconnected from Gmail": [
+        "ยกเลิกการเชื่อมต่อกับ Gmail แล้ว"
       ],
       "Display name and signature": [
         "แสดงชื่อและลายเซ็น"
@@ -21589,6 +21705,9 @@
       ],
       "Get more from your VPN": [
         "รับประโยชน์มากขึ้นจาก VPN ของคุณ"
+      ],
+      "Get more storage with ${ MAIL_APP_NAME } Plus": [
+        "รับพื้นที่จัดเก็บเพิ่มขึ้นด้วย ${ MAIL_APP_NAME } Plus"
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "รับแอปบนอุปกรณ์ทั้งหมดและเพลิดเพลินกับการเข้าถึงที่ปลอดภัยและราบรื่นได้ทุกที่"
@@ -22031,6 +22150,9 @@
       "Select when you want this notification to be sent": [
         "โปรดเลือกการแจ้งเตือนเมื่อคุณต้องการจะส่งการแจ้งเตือนนี้"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "ส่งและรับ Gmail ผ่าน ${ MAIL_APP_NAME }"
+      ],
       "Send email reminders?": [
         "ส่งอีเมลแจ้งเตือนหรือไม่?"
       ],
@@ -22174,6 +22296,9 @@
       ],
       "Summary": [
         "สรุป"
+      ],
+      "Summer Sale": [
+        "โปรโมชันฤดูร้อน"
       ],
       "Support ticket closed": [
         "ปิดคำร้องฝ่ายสนับสนุนแล้ว"
@@ -22331,9 +22456,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "ยินดีต้อนรับสู่ ${ BRAND_NAME } สำหรับธุรกิจ"
       ],
-      "Welcome to ${ planName }": [
-        "ยินดีต้อนรับสู่ ${ planName }"
-      ],
       "Welcome to your new password manager!": [
         "ยินดีต้อนรับสู่โปรแกรมจัดการรหัสผ่านใหม่!"
       ],
@@ -22348,6 +22470,9 @@
       ],
       "WireGuard configuration": [
         "การกำหนดค่า WireGuard"
+      ],
+      "You are all set": [
+        "ตั้งค่าเรียบร้อยแล้ว"
       ],
       "You can now create unlimited folders and labels": [
         "ตอนนี้สามารถสร้างโฟลเดอร์และป้ายกำกับได้ไม่จำกัด"
