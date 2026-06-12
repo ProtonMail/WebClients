@@ -208,6 +208,9 @@ export { default as NewFeatureTag } from './components/newFeatureTag/NewFeatureT
 export type { IsActiveInEnvironmentContainer } from './components/newFeatureTag/NewFeatureTag';
 export { default as useNewFeatureTag } from './components/newFeatureTag/useNewFeatureTag';
 export { default as Option } from './components/option/Option';
+export { default as PermissionBanner } from './components/orgPermissions/PermissionBanner';
+export { default as PermissionTooltip } from './components/orgPermissions/PermissionTooltip';
+export { default as withPermissionGuard } from './components/orgPermissions/withPermissionGuard';
 export { default as Pagination } from './components/pagination/Pagination';
 export { default as usePagination } from './components/pagination/usePagination';
 export { default as usePaginationAsync } from './components/pagination/usePaginationAsync';
