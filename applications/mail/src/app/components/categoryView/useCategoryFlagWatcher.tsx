@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useHistory, useLocation } from 'react-router';
 
 import { conversationCountsThunk } from '@proton/mail/store/counts/conversationCountsSlice';
@@ -30,8 +30,15 @@ export const useCategoryFlagWatcher = () => {
     const dispatch = useMailDispatch();
     const categoryView = useCategoriesView();
 
-    // Counts must be re-fetched when the category view setting changes
+    const isFirstRun = useRef(true);
+
+    // Counts must be re-fetched when the category view setting changes and it's not the first mount
     useEffect(() => {
+        if (isFirstRun.current) {
+            isFirstRun.current = false;
+            return;
+        }
+
         void dispatch(conversationCountsThunk({ cache: CacheType.None }));
         void dispatch(messageCountsThunk({ cache: CacheType.None }));
     }, [categoryView.categoryViewAccess, dispatch]);
