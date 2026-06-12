@@ -1157,6 +1157,9 @@
       ],
       "Verify now": [
         "Verificar agora"
+      ],
+      "Continue with Free": [
+        "Continuar com a versão gratuita"
       ]
     },
     "Actions": {
@@ -2758,6 +2761,24 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
         "A sua conta gratuita do ${ MAIL_APP_NAME }inclui armazenamento limitado, pelo que importaremos apenas ${ newUserStorageText }das suas mensagens Gmail mais recentes"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Os e-mails enviados para ${ connectedAddressText } serão agora mostrados no ${ MAIL_APP_NAME }."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Isto pode acontecer se as permissões tiverem sido removidas ou se a sua palavra-passe tiver sido alterada."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Para continuar a receber e a enviar mensagens do Gmail no ${ BRAND_NAME }, volte a ligar a sua conta."
+      ],
+      "We will pause imports at 80% storage to reserve space for new messages.": [
+        "Iremos colocar as importações em pausa aos 80% de armazenamento para reservar espaço para novas mensagens."
+      ],
+      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
+        "Começámos a importar os seus e-mails do Gmail. Avisá-lo-emos quando estiver concluído."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "A sua conta gratuita do ${ MAIL_APP_NAME } tem armazenamento limitado, pelo que apenas iremos importar os seus e-mails mais recentes do Gmail."
       ]
     },
     "description": {
@@ -3536,6 +3557,9 @@
       ],
       "VAT number must start with ${ prefixes }": [
         "O número de IVA deve começar por ${ prefixes }"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Ocorreu um erro ao obter os domínios disponíveis"
       ]
     },
     "Error importing calendar": {
@@ -3925,6 +3949,9 @@
       ],
       "Storage": [
         "Armazenamento"
+      ],
+      "10+ premium features": [
+        "Mais de 10 funcionalidades premium"
       ]
     },
     "Features": {
@@ -6322,6 +6349,9 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
         "A sua próxima data de faturação é ${ renewalTime }. Pode cancelar a qualquer momento."
+      ],
+      "Upgrade or clear space anytime to bring over the rest": [
+        "Atualize ou limpe espaço a qualquer momento para trazer o resto"
       ]
     },
     "info": {
@@ -8733,6 +8763,9 @@
       ],
       "Your settings have been changed successfully": [
         "As suas definições foram alteradas."
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "O seu endereço do ${ BRAND_NAME } está pronto a usar"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11951,6 +11984,15 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "A sua subscrição do ${ planTitle } começou."
+      ],
+      "Continue with free storage": [
+        "Continuar com o armazenamento gratuito"
+      ],
+      "Summer Sale": [
+        "Saldos de Verão"
+      ],
+      "You are all set": [
+        "Está tudo pronto"
       ]
     },
     "Today icon tooltip in mini calendar": {

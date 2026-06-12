@@ -3034,6 +3034,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "您免費的 ${ MAIL_APP_NAME } 帳號儲存空間有限所以我們將只匯入您最新的 Gmail 電子郵。"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "您的免費 ${ MAIL_APP_NAME } 帳號儲存空間有限，因此我們只會匯入 ${ newUserStorageText } 您最近的 Gmail 訊息"
       ]
     },
     "description": {
@@ -3903,6 +3906,9 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "您已使用您的方案中所有使用者。請升級您的方案以加入使用者。"
+      ],
+      "Something went wrong while fetching available domains": [
+        "擷取可用網域時發生錯誤"
       ]
     },
     "error": {
@@ -6779,6 +6785,9 @@
       ],
       "Forgot password?": [
         "忘記密碼?"
+      ],
+      "Upgrade anytime to bring over the rest": [
+        "隨時升級以匯入其餘內容"
       ]
     },
     "info": {
@@ -12717,7 +12726,7 @@
         "我們無法確認此檔案內容是由 ${ claimedContentAuthor } 上傳。原因是 ${ activeRevision.contentAuthor.error.error }"
       ],
       "Summer Sale": [
-        "夏季促銷"
+        "夏季特賣"
       ],
       "Verify your password": [
         "驗證您的密碼"

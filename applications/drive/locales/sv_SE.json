@@ -1302,6 +1302,9 @@
       ],
       "List layout": [
         "Listlayout"
+      ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "Prova ${ BRAND_NAME } Workspace"
       ]
     },
     "Action: Docs": {
@@ -2915,6 +2918,9 @@
       ],
       "Åland Islands": [
         "Åland"
+      ],
+      "Canary Islands": [
+        "Kanarieöarna"
       ]
     },
     "customer_support.feature.all": {
@@ -3128,6 +3134,18 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Du kan nu skicka e-post från ${ BRAND_NAME } med denna adress."
+      ],
+      "Enough room for years of emails, attachments and more.": [
+        "Tillräckligt med plats för åratal av e-post, bilagor och mer."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Tråkigt att du lämnar oss. Om du har en stund över skulle vi verkligen uppskatta att höra varför du vill avbryta Din feedback hjälper oss att göra ${ BRAND_NAME } bättre för alla."
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
+        "Ditt kostnadsfria ${ MAIL_APP_NAME }-konto har begränsat lagringsutrymme, så vi kommer bara att importera ${ newUserStorageText } av dina senaste Gmail-meddelanden"
+      ],
+      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
+        "Ditt kostnadsfria ${ MAIL_APP_NAME }-konto har begränsat lagringsutrymme, så vi kommer bara att importera dina senaste Gmail-e-postmeddelanden."
       ]
     },
     "description": {
@@ -4074,6 +4092,9 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har använt alla användare i ditt paket. Uppgradera ditt paket för att lägga till en ny användare."
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Något gick fel med sök: Inte tillräckligt lagringsutrymme."
       ]
     },
     "error": {
@@ -7221,6 +7242,18 @@
       ],
       "Upgrade to get more storage space": [
         "Uppgradera för att skaffa mer lagringsutrymme"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**De får ${ refereeRewardAmount }** i krediter om de prenumererar."
+      ],
+      "Please select the labels you would like to import:": [
+        "Välj etiketterna du vill importera:"
+      ],
+      "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
+        "För att hjälpa dig att komma ihåg ditt lösenord kommer vi att be dig ange det regelbundet. Vi ber dig att ange det mindre med tiden."
+      ],
+      "We'll remind you to verify your password again later": [
+        "Vi kommer påminna dig om att verifiera ditt lösenord igen senare"
       ]
     },
     "info": {
@@ -10811,6 +10844,9 @@
       ],
       "This key is used to encrypt messages to this contact on older apps": [
         "Denna nyckel används för att kryptera meddelanden till denna kontakt i äldre appar"
+      ],
+      "This key is used for message verification": [
+        "Denna nyckel används för meddelandeverifiering"
       ]
     },
     "PGP key warning": {
@@ -13668,6 +13704,12 @@
       ],
       "Verify your password": [
         "Verifiera ditt lösenord"
+      ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Migrera din organisation till ${ BRAND_NAME }"
+      ],
+      "Out of storage space": [
+        "Slut på lagringsutrymme"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14103,6 +14145,9 @@
       ],
       "You": [
         "Du"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
       ]
     },
     "q2campaign2026: Action": {
