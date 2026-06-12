@@ -84,7 +84,7 @@ export const useMemberActions = ({
     const { value: memberRolesMap } = useMemberRoles({ members });
     const api = useSilentApi();
     const dispatch = useDispatch();
-    const [permissions, loadingPermissions] = useOrgPermissions();
+    const [, loadingPermissions] = useOrgPermissions();
 
     const {
         passOnboardingSpotlights: { setupOrgSpotlight },
@@ -165,29 +165,22 @@ export const useMemberActions = ({
         hasPassBusiness(subscription) ||
         hasVPNPassProfessional(subscription);
 
-    const canAddUser = !!permissions?.['account.user.create'];
     const disableAddUserButton =
         loadingSubscription ||
         loadingOrganization ||
         loadingCustomDomains ||
         loadingPermissions ||
-        (organization?.UsedMembers || 0) >= (organization?.MaxMembers || 0) ||
-        !canAddUser;
+        (organization?.UsedMembers || 0) >= (organization?.MaxMembers || 0);
 
     const showAddAddress = !hasExternalMemberCapableB2BPlan || hasPassB2BPlan || hasMeetB2BPlanAndVerifiedCustomDomain;
 
     const hasReachedInvitationLimit = organization?.InvitationsRemaining === 0;
     const disableInviteUserButton =
-        loadingSubscription || loadingOrganization || loadingCustomDomains || hasReachedInvitationLimit || !canAddUser;
+        loadingSubscription || loadingOrganization || loadingCustomDomains || hasReachedInvitationLimit;
 
     const loadingAddAddresses = loadingOrganization || loadingCustomDomains || loadingMembers;
-    const canUpdateUser = !!permissions?.['account.user.update'];
     const disableAddAddressButton =
-        loadingAddAddresses ||
-        loadingPermissions ||
-        organization?.State === ORGANIZATION_STATE.DELINQUENT ||
-        !canUpdateUser;
-    const canDeleteUser = !!permissions?.['account.user.delete'];
+        loadingAddAddresses || loadingPermissions || organization?.State === ORGANIZATION_STATE.DELINQUENT;
 
     const hasSetupActiveOrganizationWithKeys =
         organization?.State === ORGANIZATION_STATE.ACTIVE && hasOrganizationSetupWithKeys(organization);
@@ -536,12 +529,9 @@ export const useMemberActions = ({
         isOrgAFamilyPlan,
         useEmail,
         hasExternalMemberCapableB2BPlan,
-        canAddUser,
         disableAddUserButton,
         showAddAddress,
         canInviteProtonUsers,
-        canUpdateUser,
-        canDeleteUser,
         disableInviteUserButton,
         disableAddAddressButton,
         hasSetupActiveOrganizationWithKeys,
